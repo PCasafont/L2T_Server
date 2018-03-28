@@ -15,6 +15,7 @@
 
 package l2server.gameserver.datatables;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.model.L2EnchantSkillLearn;
 import l2server.gameserver.model.L2Skill;
@@ -28,8 +29,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import gnu.trove.TIntObjectHashMap;
 
 public class EnchantCostsTable
 {
@@ -171,83 +170,76 @@ public class EnchantCostsTable
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "enchantSkillCosts.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		int count = 0;
 		_enchantSkillTrees.clear();
 		_enchantDetails.clear();
 
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode enchantNode : n.getChildren())
-				{
-					if (enchantNode.getName().equalsIgnoreCase("enchantRange"))
-					{
-						int startLevel = enchantNode.getInt("startLevel");
-						int maxLevel = enchantNode.getInt("maxLevel");
-						int normalBook = enchantNode.getInt("normalBook");
-						int safeBook = enchantNode.getInt("safeBook");
-						int changeBook = enchantNode.getInt("changeBook");
-						int untrainBook = enchantNode.getInt("untrainBook");
-						int immortalBook = enchantNode.getInt("immortalBook");
-						EnchantSkillRange range =
-								new EnchantSkillRange(startLevel, maxLevel, normalBook, safeBook, changeBook,
-										untrainBook, immortalBook);
-						for (int lvl = startLevel; lvl < maxLevel; lvl++)
-						{
-							_enchantRanges.put(lvl, range);
-						}
-					}
-					else if (enchantNode.getName().equalsIgnoreCase("enchant"))
-					{
-						String[] levels = enchantNode.getString("level").split(",");
-						int adena = enchantNode.getInt("adena");
-						int sp = 0;//enchantNode.getInt("sp");
+        for (XmlNode enchantNode : doc.getChildren())
+        {
+            if (enchantNode.getName().equalsIgnoreCase("enchantRange"))
+            {
+                int startLevel = enchantNode.getInt("startLevel");
+                int maxLevel = enchantNode.getInt("maxLevel");
+                int normalBook = enchantNode.getInt("normalBook");
+                int safeBook = enchantNode.getInt("safeBook");
+                int changeBook = enchantNode.getInt("changeBook");
+                int untrainBook = enchantNode.getInt("untrainBook");
+                int immortalBook = enchantNode.getInt("immortalBook");
+                EnchantSkillRange range =
+                        new EnchantSkillRange(startLevel, maxLevel, normalBook, safeBook, changeBook,
+                                untrainBook, immortalBook);
+                for (int lvl = startLevel; lvl < maxLevel; lvl++)
+                {
+                    _enchantRanges.put(lvl, range);
+                }
+            }
+            else if (enchantNode.getName().equalsIgnoreCase("enchant"))
+            {
+                String[] levels = enchantNode.getString("level").split(",");
+                int adena = enchantNode.getInt("adena");
+                int sp = 0;//enchantNode.getInt("sp");
 
-						if (Config.isServer(Config.TENKAI_LEGACY))
-						{
-							adena = (int) Math.sqrt(adena);
-						}
+                if (Config.isServer(Config.TENKAI_LEGACY))
+                {
+                    adena = (int) Math.sqrt(adena);
+                }
 
-						for (String ls : levels)
-						{
-							int enchLvl = Integer.valueOf(ls);
-							EnchantSkillRange range = _enchantRanges.get(enchLvl - 1);
-							if (range == null)
-							{
-								continue;
-							}
+                for (String ls : levels)
+                {
+                    int enchLvl = Integer.valueOf(ls);
+                    EnchantSkillRange range = _enchantRanges.get(enchLvl - 1);
+                    if (range == null)
+                    {
+                        continue;
+                    }
 
-							byte[] rate = new byte[30];
-							for (int i = 0; i < 30; i++)
-							{
-								int playerLvl = 85 + i;
-								// Hardcoded calculation of the enchant chances
-								rate[i] = (byte) (playerLvl - (enchLvl - 1) % 10 * 5);
-								if (i - enchLvl < 3)
-								{
-									rate[i] -= 30;
-								}
+                    byte[] rate = new byte[30];
+                    for (int i = 0; i < 30; i++)
+                    {
+                        int playerLvl = 85 + i;
+                        // Hardcoded calculation of the enchant chances
+                        rate[i] = (byte) (playerLvl - (enchLvl - 1) % 10 * 5);
+                        if (i - enchLvl < 3)
+                        {
+                            rate[i] -= 30;
+                        }
 
-								if (rate[i] < 0)
-								{
-									rate[i] = 0;
-								}
-								else if (rate[i] > 100)
-								{
-									rate[i] = 100;
-								}
-							}
+                        if (rate[i] < 0)
+                        {
+                            rate[i] = 0;
+                        }
+                        else if (rate[i] > 100)
+                        {
+                            rate[i] = 100;
+                        }
+                    }
 
-							EnchantSkillDetail esd = new EnchantSkillDetail(enchLvl, adena, sp, rate, range);
-							addEnchantDetail(esd);
-						}
-					}
-				}
-			}
+                    EnchantSkillDetail esd = new EnchantSkillDetail(enchLvl, adena, sp, rate, range);
+                    addEnchantDetail(esd);
+                }
+            }
 		}
 
-		Log.info("EnchantGroupsTable: Loaded " + count + " groups.");
+		Log.info("EnchantGroupsTable: Loaded " + _enchantDetails.size() + " enchant details.");
 	}
 
 	public int addNewRouteForSkill(int skillId, int maxLvL, int route)

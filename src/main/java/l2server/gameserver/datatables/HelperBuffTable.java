@@ -79,67 +79,61 @@ public class HelperBuffTable
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "helperBuffTable.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("buff"))
-					{
-						StatsSet helperBuffDat = new StatsSet();
-						helperBuffDat.set("skillID", d.getInt("skillId"));
-						helperBuffDat.set("skillLevel", d.getInt("skillLevel"));
-						int lowerLevel = d.getInt("lowerLevel");
-						helperBuffDat.set("lowerLevel", lowerLevel);
-						int upperLevel = d.getInt("upperLevel");
-						helperBuffDat.set("upperLevel", upperLevel);
-						boolean isMagicClass = d.getBool("isMagic");
-						helperBuffDat.set("isMagicClass", isMagicClass);
-						boolean forSummon = d.getBool("forSummon");
-						helperBuffDat.set("forSummon", forSummon);
+for (XmlNode d : doc.getChildren())
+        {
+            if (d.getName().equalsIgnoreCase("buff"))
+            {
+                StatsSet helperBuffDat = new StatsSet();
+                helperBuffDat.set("skillID", d.getInt("skillId"));
+                helperBuffDat.set("skillLevel", d.getInt("skillLevel"));
+                int lowerLevel = d.getInt("lowerLevel");
+                helperBuffDat.set("lowerLevel", lowerLevel);
+                int upperLevel = d.getInt("upperLevel");
+                helperBuffDat.set("upperLevel", upperLevel);
+                boolean isMagicClass = d.getBool("isMagic");
+                helperBuffDat.set("isMagicClass", isMagicClass);
+                boolean forSummon = d.getBool("forSummon");
+                helperBuffDat.set("forSummon", forSummon);
 
-						if (!isMagicClass)
-						{
-							if (lowerLevel < _physicClassLowestLevel)
-							{
-								_physicClassLowestLevel = lowerLevel;
-							}
+                if (!isMagicClass)
+                {
+                    if (lowerLevel < _physicClassLowestLevel)
+                    {
+                        _physicClassLowestLevel = lowerLevel;
+                    }
 
-							if (upperLevel > _physicClassHighestLevel)
-							{
-								_physicClassHighestLevel = upperLevel;
-							}
-						}
-						else
-						{
-							if (lowerLevel < _magicClassLowestLevel)
-							{
-								_magicClassLowestLevel = lowerLevel;
-							}
+                    if (upperLevel > _physicClassHighestLevel)
+                    {
+                        _physicClassHighestLevel = upperLevel;
+                    }
+                }
+                else
+                {
+                    if (lowerLevel < _magicClassLowestLevel)
+                    {
+                        _magicClassLowestLevel = lowerLevel;
+                    }
 
-							if (upperLevel > _magicClassHighestLevel)
-							{
-								_magicClassHighestLevel = upperLevel;
-							}
-						}
-						if (forSummon)
-						{
-							if (lowerLevel < _servitorLowestLevel)
-							{
-								_servitorLowestLevel = lowerLevel;
-							}
+                    if (upperLevel > _magicClassHighestLevel)
+                    {
+                        _magicClassHighestLevel = upperLevel;
+                    }
+                }
+                if (forSummon)
+                {
+                    if (lowerLevel < _servitorLowestLevel)
+                    {
+                        _servitorLowestLevel = lowerLevel;
+                    }
 
-							if (upperLevel > _servitorHighestLevel)
-							{
-								_servitorHighestLevel = upperLevel;
-							}
-						}
-						L2HelperBuff template = new L2HelperBuff(helperBuffDat);
-						_helperBuff.add(template);
-					}
-				}
-			}
+                    if (upperLevel > _servitorHighestLevel)
+                    {
+                        _servitorHighestLevel = upperLevel;
+                    }
+                }
+                L2HelperBuff template = new L2HelperBuff(helperBuffDat);
+                _helperBuff.add(template);
+            }
 		}
 		Log.info("HelperBuffTable: Loaded: " + _helperBuff.size() + " buffs!");
 	}

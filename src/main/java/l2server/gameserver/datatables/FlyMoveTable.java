@@ -65,87 +65,81 @@ public class FlyMoveTable implements Reloadable
 		XmlDocument doc = new XmlDocument(file);
 
 		int count = 0;
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				L2WorldRegion[][] worldRegions = L2World.getInstance().getAllWorldRegions();
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("move"))
-					{
-						int id = d.getInt("id");
-						int x = d.getInt("x");
-						int y = d.getInt("y");
-						int z = d.getInt("z");
+        L2WorldRegion[][] worldRegions = L2World.getInstance().getAllWorldRegions();
+        for (XmlNode d : doc.getChildren())
+        {
+            if (d.getName().equalsIgnoreCase("move"))
+            {
+                int id = d.getInt("id");
+                int x = d.getInt("x");
+                int y = d.getInt("y");
+                int z = d.getInt("z");
 
-						L2FlyMoveZone zone = new L2FlyMoveZone(id);
-						zone.setZone(new ZoneCylinder(x, y, z - 100, z + 200, 40));
+                L2FlyMoveZone zone = new L2FlyMoveZone(id);
+                zone.setZone(new ZoneCylinder(x, y, z - 100, z + 200, 40));
 
-						L2FlyMove move = new L2FlyMove(id);
+                L2FlyMove move = new L2FlyMove(id);
 
-						for (XmlNode moveNode : d.getChildren())
-						{
-							if (moveNode.getName().equalsIgnoreCase("choose"))
-							{
-								int at = moveNode.getInt("at");
-								L2FlyMoveChoose c = move.new L2FlyMoveChoose(at);
-								for (XmlNode optionNode : moveNode.getChildren())
-								{
-									if (optionNode.getName().equalsIgnoreCase("option"))
-									{
-										int start = optionNode.getInt("start");
-										int end = optionNode.getInt("end");
-										int last = optionNode.getInt("last", -1);
-										L2FlyMoveOption o = move.new L2FlyMoveOption(start, end, last);
+                for (XmlNode moveNode : d.getChildren())
+                {
+                    if (moveNode.getName().equalsIgnoreCase("choose"))
+                    {
+                        int at = moveNode.getInt("at");
+                        L2FlyMoveChoose c = move.new L2FlyMoveChoose(at);
+                        for (XmlNode optionNode : moveNode.getChildren())
+                        {
+                            if (optionNode.getName().equalsIgnoreCase("option"))
+                            {
+                                int start = optionNode.getInt("start");
+                                int end = optionNode.getInt("end");
+                                int last = optionNode.getInt("last", -1);
+                                L2FlyMoveOption o = move.new L2FlyMoveOption(start, end, last);
 
-										c.addOption(o);
-									}
-								}
-								move.addChoose(at, c);
-							}
-							else if (moveNode.getName().equalsIgnoreCase("step"))
-							{
-								id = moveNode.getInt("id");
-								x = moveNode.getInt("x");
-								y = moveNode.getInt("y");
-								z = moveNode.getInt("z");
-								Point3D p = new Point3D(x, y, z);
+                                c.addOption(o);
+                            }
+                        }
+                        move.addChoose(at, c);
+                    }
+                    else if (moveNode.getName().equalsIgnoreCase("step"))
+                    {
+                        id = moveNode.getInt("id");
+                        x = moveNode.getInt("x");
+                        y = moveNode.getInt("y");
+                        z = moveNode.getInt("z");
+                        Point3D p = new Point3D(x, y, z);
 
-								move.addStep(id, p);
-							}
-						}
+                        move.addStep(id, p);
+                    }
+                }
 
-						zone.setFlyMove(move);
-						ZoneManager.getInstance().addZone(zone.getId(), zone);
+                zone.setFlyMove(move);
+                ZoneManager.getInstance().addZone(zone.getId(), zone);
 
-						// Register the zone into any world region it
-						// intersects with...
-						int ax, ay, bx, by;
-						for (x = 0; x < worldRegions.length; x++)
-						{
-							for (y = 0; y < worldRegions[x].length; y++)
-							{
-								ax = x - L2World.OFFSET_X << L2World.SHIFT_BY;
-								bx = x + 1 - L2World.OFFSET_X << L2World.SHIFT_BY;
-								ay = y - L2World.OFFSET_Y << L2World.SHIFT_BY;
-								by = y + 1 - L2World.OFFSET_Y << L2World.SHIFT_BY;
+                // Register the zone into any world region it
+                // intersects with...
+                int ax, ay, bx, by;
+                for (x = 0; x < worldRegions.length; x++)
+                {
+                    for (y = 0; y < worldRegions[x].length; y++)
+                    {
+                        ax = x - L2World.OFFSET_X << L2World.SHIFT_BY;
+                        bx = x + 1 - L2World.OFFSET_X << L2World.SHIFT_BY;
+                        ay = y - L2World.OFFSET_Y << L2World.SHIFT_BY;
+                        by = y + 1 - L2World.OFFSET_Y << L2World.SHIFT_BY;
 
-								if (zone.getZone().intersectsRectangle(ax, bx, ay, by))
-								{
-									if (Config.DEBUG)
-									{
-										Log.info("Zone (" + move.getId() + ") added to: " + x + " " + y);
-									}
-									worldRegions[x][y].addZone(zone);
-								}
-							}
-						}
-						count++;
-					}
-				}
-			}
-		}
+                        if (zone.getZone().intersectsRectangle(ax, bx, ay, by))
+                        {
+                            if (Config.DEBUG)
+                            {
+                                Log.info("Zone (" + move.getId() + ") added to: " + x + " " + y);
+                            }
+                            worldRegions[x][y].addZone(zone);
+                        }
+                    }
+                }
+                count++;
+            }
+        }
 
 		Log.info("FlyMoveTable: Loaded " + count + " fly moves.");
 	}

@@ -4,7 +4,6 @@ L2Tenkai's L2j server fork, based on its Interlude version (started 2008) and ha
 
 ## Getting Started
 
-
 ### Prerequisites
 
 * [Intellij IDEA](https://www.jetbrains.com/idea/download)

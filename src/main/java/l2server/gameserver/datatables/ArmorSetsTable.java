@@ -19,6 +19,8 @@
 
 package l2server.gameserver.datatables;
 
+import gnu.trove.TIntIntHashMap;
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
@@ -28,9 +30,6 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
-
-import gnu.trove.TIntIntHashMap;
-import gnu.trove.TIntObjectHashMap;
 
 /**
  * @author Pere
@@ -58,44 +57,38 @@ public class ArmorSetsTable implements Reloadable
 	{
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "armorSets.xml");
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getChildren())
+		for (XmlNode d : doc.getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("armorSet"))
-					{
-						int id = d.getInt("id");
-						int parts = d.getInt("parts");
+            if (d.getName().equalsIgnoreCase("armorSet"))
+            {
+                int id = d.getInt("id");
+                int parts = d.getInt("parts");
 
-						TIntIntHashMap skills = new TIntIntHashMap();
-						int enchant6Skill = 0, shieldSkill = 0;
+                TIntIntHashMap skills = new TIntIntHashMap();
+                int enchant6Skill = 0, shieldSkill = 0;
 
-						for (XmlNode skillNode : d.getChildren())
-						{
-							if (skillNode.getName().equalsIgnoreCase("skill"))
-							{
-								int skillId = skillNode.getInt("id");
-								int levels = skillNode.getInt("levels");
-								skills.put(skillId, levels);
-							}
-							else if (skillNode.getName().equalsIgnoreCase("enchant6Skill"))
-							{
-								enchant6Skill = skillNode.getInt("id");
-							}
-							else if (skillNode.getName().equalsIgnoreCase("shieldSkill"))
-							{
-								shieldSkill = skillNode.getInt("id");
-							}
-						}
+                for (XmlNode skillNode : d.getChildren())
+                {
+                    if (skillNode.getName().equalsIgnoreCase("skill"))
+                    {
+                        int skillId = skillNode.getInt("id");
+                        int levels = skillNode.getInt("levels");
+                        skills.put(skillId, levels);
+                    }
+                    else if (skillNode.getName().equalsIgnoreCase("enchant6Skill"))
+                    {
+                        enchant6Skill = skillNode.getInt("id");
+                    }
+                    else if (skillNode.getName().equalsIgnoreCase("shieldSkill"))
+                    {
+                        shieldSkill = skillNode.getInt("id");
+                    }
+                }
 
-						_armorSets.put(id, new L2ArmorSet(id, parts, skills, enchant6Skill, shieldSkill));
-					}
-				}
-				Log.info("ArmorSetsTable: Loaded " + _armorSets.size() + " armor sets.");
-			}
-		}
+                _armorSets.put(id, new L2ArmorSet(id, parts, skills, enchant6Skill, shieldSkill));
+            }
+        }
+        Log.info("ArmorSetsTable: Loaded " + _armorSets.size() + " armor sets.");
 
 		return true;
 	}

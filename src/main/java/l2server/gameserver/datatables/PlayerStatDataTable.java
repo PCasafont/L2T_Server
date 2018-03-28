@@ -63,7 +63,7 @@ public class PlayerStatDataTable
 		_regenData.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/regenData.xml");
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getFirstChild().getChildren())
+		for (XmlNode n : doc.getChildren())
 		{
 			if (!n.getName().equalsIgnoreCase("regen"))
 			{
@@ -82,7 +82,7 @@ public class PlayerStatDataTable
 		_classMaxData.clear();
 		file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/classStats.xml");
 		doc = new XmlDocument(file);
-		for (XmlNode n : doc.getFirstChild().getChildren())
+		for (XmlNode n : doc.getChildren())
 		{
 			if (!n.getName().equalsIgnoreCase("class"))
 			{

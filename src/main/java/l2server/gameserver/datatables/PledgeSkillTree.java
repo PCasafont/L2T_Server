@@ -58,61 +58,55 @@ public class PledgeSkillTree
 		if (file.exists())
 		{
 			XmlDocument doc = new XmlDocument(file);
-			for (XmlNode n : doc.getChildren())
+			for (XmlNode d : doc.getChildren())
 			{
-				if ("skill_tree".equalsIgnoreCase(n.getName()))
-				{
-					for (XmlNode d : n.getChildren())
-					{
-						if (d.getName().equalsIgnoreCase("skill"))
-						{
-							int skillId;
-							int skillLvl;
-							int clanLvl;
-							int reputation;
+                if (d.getName().equalsIgnoreCase("skill"))
+                {
+                    int skillId;
+                    int skillLvl;
+                    int clanLvl;
+                    int reputation;
 
-							if (!d.hasAttribute("id"))
-							{
-								Log.severe("[PledgeSkillTree] Missing id, skipping");
-								continue;
-							}
-							skillId = d.getInt("id");
+                    if (!d.hasAttribute("id"))
+                    {
+                        Log.severe("[PledgeSkillTree] Missing id, skipping");
+                        continue;
+                    }
+                    skillId = d.getInt("id");
 
-							if (!d.hasAttribute("level"))
-							{
-								Log.severe("[PledgeSkillTree] Missing level, skipping");
-								continue;
-							}
-							skillLvl = d.getInt("level");
+                    if (!d.hasAttribute("level"))
+                    {
+                        Log.severe("[PledgeSkillTree] Missing level, skipping");
+                        continue;
+                    }
+                    skillLvl = d.getInt("level");
 
-							if (!d.hasAttribute("reputation"))
-							{
-								Log.severe("[PledgeSkillTree] Missing reputation, skipping");
-								continue;
-							}
-							reputation = d.getInt("reputation");
+                    if (!d.hasAttribute("reputation"))
+                    {
+                        Log.severe("[PledgeSkillTree] Missing reputation, skipping");
+                        continue;
+                    }
+                    reputation = d.getInt("reputation");
 
-							if (!d.hasAttribute("clanLevel"))
-							{
-								Log.severe("[PledgeSkillTree] Missing clan_level, skipping");
-								continue;
-							}
-							clanLvl = d.getInt("clanLevel");
+                    if (!d.hasAttribute("clanLevel"))
+                    {
+                        Log.severe("[PledgeSkillTree] Missing clan_level, skipping");
+                        continue;
+                    }
+                    clanLvl = d.getInt("clanLevel");
 
-							L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
-							if (skill == null)
-							{
-								Log.severe("[PledgeSkillTree] Skill " + skillId + " not exist, skipping");
-								continue;
-							}
+                    L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
+                    if (skill == null)
+                    {
+                        Log.severe("[PledgeSkillTree] Skill " + skillId + " not exist, skipping");
+                        continue;
+                    }
 
-							_skillTree.put(SkillTable.getSkillHashCode(skill),
-									new L2PledgeSkillLearn(skillId, skillLvl, clanLvl, reputation));
-						}
-					}
-				}
-			}
-		}
+                    _skillTree.put(SkillTable.getSkillHashCode(skill),
+                            new L2PledgeSkillLearn(skillId, skillLvl, clanLvl, reputation));
+                }
+            }
+        }
 		Log.info(getClass().getSimpleName() + ": Loaded " + _skillTree.size() + " Pledge Skills");
 	}
 

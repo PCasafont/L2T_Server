@@ -155,7 +155,7 @@ public class MainTownManager
 		}
 
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode townNode : doc.getFirstChild().getChildren())
+		for (XmlNode townNode : doc.getChildren())
 		{
 			if (!townNode.getName().equalsIgnoreCase("town"))
 			{

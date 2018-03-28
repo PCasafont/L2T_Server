@@ -113,7 +113,7 @@ public class GameServerTable
 		try
 		{
 			XmlDocument doc = new XmlDocument(new File(Config.DATA_FOLDER + "servername.xml"));
-			for (XmlNode node : doc.getFirstChild().getChildren())
+			for (XmlNode node : doc.getChildren())
 			{
 				if (node.getName().equals("server"))
 				{

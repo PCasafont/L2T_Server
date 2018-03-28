@@ -75,205 +75,199 @@ public class PlayerClassTable implements Reloadable
 		XmlDocument doc = new XmlDocument(file);
 
 		int count = 0;
-		for (XmlNode n : doc.getChildren())
+		for (XmlNode classNode : doc.getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode classNode : n.getChildren())
-				{
-					if (classNode.getName().equalsIgnoreCase("class"))
-					{
-						int id = classNode.getInt("id");
-						String name = classNode.getString("name");
-						int parentId = classNode.getInt("parentId", -1);
-						int awakensTo = classNode.getInt("awakensTo", -1);
-						boolean isMage = classNode.getBool("isMage", false);
-						int raceId = classNode.getInt("raceId", -1);
-						int level = classNode.getInt("level");
+            if (classNode.getName().equalsIgnoreCase("class"))
+            {
+                int id = classNode.getInt("id");
+                String name = classNode.getString("name");
+                int parentId = classNode.getInt("parentId", -1);
+                int awakensTo = classNode.getInt("awakensTo", -1);
+                boolean isMage = classNode.getBool("isMage", false);
+                int raceId = classNode.getInt("raceId", -1);
+                int level = classNode.getInt("level");
 
-						PlayerClass cl =
-								new PlayerClass(id, name, _classes.get(parentId), awakensTo, isMage, raceId, level);
+                PlayerClass cl =
+                        new PlayerClass(id, name, _classes.get(parentId), awakensTo, isMage, raceId, level);
 
-						if (cl.getParent() != null)
-						{
-							cl.getSkills().putAll(cl.getParent().getSkills());
-						}
+                if (cl.getParent() != null)
+                {
+                    cl.getSkills().putAll(cl.getParent().getSkills());
+                }
 
-						if (classNode.hasAttribute("pickSkillsFrom"))
-						{
-							PlayerClass pickSkillsFrom = _classes.get(classNode.getInt("pickSkillsFrom"));
-							cl.getSkills().putAll(pickSkillsFrom.getSkills());
-						}
+                if (classNode.hasAttribute("pickSkillsFrom"))
+                {
+                    PlayerClass pickSkillsFrom = _classes.get(classNode.getInt("pickSkillsFrom"));
+                    cl.getSkills().putAll(pickSkillsFrom.getSkills());
+                }
 
-						for (XmlNode subNode : classNode.getChildren())
-						{
-							if (subNode.getName().equalsIgnoreCase("skill"))
-							{
-								int skillId = subNode.getInt("id");
-								String[] levels = subNode.getString("level").split(",");
-								int reqSp = subNode.getInt("reqSp");
-								int minLevel = subNode.getInt("minLevel");
-								int minDualLevel = subNode.getInt("minDualLevel", 0);
-								boolean learnFromPanel = subNode.getBool("learnFromPanel", true);
-								boolean learnFromFS = subNode.getBool("learnFromFS", false);
-								boolean isTransfer = subNode.getBool("isTransfer", false);
-								boolean autoGet = subNode.getBool("autoGet", false);
+                for (XmlNode subNode : classNode.getChildren())
+                {
+                    if (subNode.getName().equalsIgnoreCase("skill"))
+                    {
+                        int skillId = subNode.getInt("id");
+                        String[] levels = subNode.getString("level").split(",");
+                        int reqSp = subNode.getInt("reqSp");
+                        int minLevel = subNode.getInt("minLevel");
+                        int minDualLevel = subNode.getInt("minDualLevel", 0);
+                        boolean learnFromPanel = subNode.getBool("learnFromPanel", true);
+                        boolean learnFromFS = subNode.getBool("learnFromFS", false);
+                        boolean isTransfer = subNode.getBool("isTransfer", false);
+                        boolean autoGet = subNode.getBool("autoGet", false);
 
-								for (String mls : levels)
-								{
-									int skillLevel = Integer.valueOf(mls);
-									long hash = SkillTable.getSkillHashCode(skillId, skillLevel);
-									L2SkillLearn sl =
-											new L2SkillLearn(skillId, skillLevel, reqSp, minLevel, minDualLevel,
-													learnFromPanel, learnFromFS, isTransfer, autoGet);
+                        for (String mls : levels)
+                        {
+                            int skillLevel = Integer.valueOf(mls);
+                            long hash = SkillTable.getSkillHashCode(skillId, skillLevel);
+                            L2SkillLearn sl =
+                                    new L2SkillLearn(skillId, skillLevel, reqSp, minLevel, minDualLevel,
+                                            learnFromPanel, learnFromFS, isTransfer, autoGet);
 
-									for (XmlNode reqNode : subNode.getChildren())
-									{
-										if (reqNode.getName().equalsIgnoreCase("reqSkill"))
-										{
-											int reqSkillId = reqNode.getInt("id");
-											sl.addCostSkill(reqSkillId);
-										}
-									}
+                            for (XmlNode reqNode : subNode.getChildren())
+                            {
+                                if (reqNode.getName().equalsIgnoreCase("reqSkill"))
+                                {
+                                    int reqSkillId = reqNode.getInt("id");
+                                    sl.addCostSkill(reqSkillId);
+                                }
+                            }
 
-									cl.addSkill(hash, sl);
-									_minSkillLevels.put(hash, minLevel);
-								}
-							}
-							else if (subNode.getName().equalsIgnoreCase("skillReplacement"))
-							{
-								int skillId = subNode.getInt("id");
-								int replacedBy = subNode.getInt("replacedBy");
-								Map<Long, L2SkillLearn> skills = new HashMap<>();
-								skills.putAll(cl.getSkills());
-								for (long hash : skills.keySet())
-								{
-									L2SkillLearn sl = cl.getSkills().get(hash);
-									if (sl.getId() == skillId)
-									{
-										cl.getSkills().remove(hash);
-										cl.addSkill(SkillTable.getSkillHashCode(replacedBy, sl.getLevel()),
-												new L2SkillLearn(replacedBy, sl.getLevel(), sl.getSpCost(),
-														sl.getMinLevel(), sl.getMinDualLevel(), sl.isLearnedFromPanel(),
-														sl.isLearnedByFS(), sl.isTransferSkill(), sl.isAutoGetSkill()));
-									}
-								}
-							}
-							else if (subNode.getName().equalsIgnoreCase("skillRemoval"))
-							{
-								int skillId = subNode.getInt("id");
-								Map<Long, L2SkillLearn> skills = new HashMap<>();
-								skills.putAll(cl.getSkills());
-								for (long hash : skills.keySet())
-								{
-									L2SkillLearn sl = cl.getSkills().get(hash);
-									if (sl.getId() == skillId)
-									{
-										cl.getSkills().remove(hash);
-									}
-								}
-							}
-						}
+                            cl.addSkill(hash, sl);
+                            _minSkillLevels.put(hash, minLevel);
+                        }
+                    }
+                    else if (subNode.getName().equalsIgnoreCase("skillReplacement"))
+                    {
+                        int skillId = subNode.getInt("id");
+                        int replacedBy = subNode.getInt("replacedBy");
+                        Map<Long, L2SkillLearn> skills = new HashMap<>();
+                        skills.putAll(cl.getSkills());
+                        for (long hash : skills.keySet())
+                        {
+                            L2SkillLearn sl = cl.getSkills().get(hash);
+                            if (sl.getId() == skillId)
+                            {
+                                cl.getSkills().remove(hash);
+                                cl.addSkill(SkillTable.getSkillHashCode(replacedBy, sl.getLevel()),
+                                        new L2SkillLearn(replacedBy, sl.getLevel(), sl.getSpCost(),
+                                                sl.getMinLevel(), sl.getMinDualLevel(), sl.isLearnedFromPanel(),
+                                                sl.isLearnedByFS(), sl.isTransferSkill(), sl.isAutoGetSkill()));
+                            }
+                        }
+                    }
+                    else if (subNode.getName().equalsIgnoreCase("skillRemoval"))
+                    {
+                        int skillId = subNode.getInt("id");
+                        Map<Long, L2SkillLearn> skills = new HashMap<>();
+                        skills.putAll(cl.getSkills());
+                        for (long hash : skills.keySet())
+                        {
+                            L2SkillLearn sl = cl.getSkills().get(hash);
+                            if (sl.getId() == skillId)
+                            {
+                                cl.getSkills().remove(hash);
+                            }
+                        }
+                    }
+                }
 
-						// Remove low level skills
-						if (cl.getLevel() == 85 && cl.getRace() != Race.Ertheia)
-						{
-							Set<Integer> toRemove = new HashSet<>();
-							for (long hash : cl.getSkills().keySet())
-							{
-								L2SkillLearn sl = cl.getSkills().get(hash);
-								if (sl.getMinLevel() < 85)
-								{
-									toRemove.add(sl.getId());
-								}
-								else
-								{
-									toRemove.remove(sl.getId());
-								}
-							}
+                // Remove low level skills
+                if (cl.getLevel() == 85 && cl.getRace() != Race.Ertheia)
+                {
+                    Set<Integer> toRemove = new HashSet<>();
+                    for (long hash : cl.getSkills().keySet())
+                    {
+                        L2SkillLearn sl = cl.getSkills().get(hash);
+                        if (sl.getMinLevel() < 85)
+                        {
+                            toRemove.add(sl.getId());
+                        }
+                        else
+                        {
+                            toRemove.remove(sl.getId());
+                        }
+                    }
 
-							Map<Long, L2SkillLearn> skills = new HashMap<>();
-							skills.putAll(cl.getSkills());
-							for (long hash : skills.keySet())
-							{
-								L2SkillLearn sl = cl.getSkills().get(hash);
-								if (toRemove.contains(sl.getId()))
-								{
-									cl.getSkills().remove(hash);
-								}
-							}
-						}
+                    Map<Long, L2SkillLearn> skills = new HashMap<>();
+                    skills.putAll(cl.getSkills());
+                    for (long hash : skills.keySet())
+                    {
+                        L2SkillLearn sl = cl.getSkills().get(hash);
+                        if (toRemove.contains(sl.getId()))
+                        {
+                            cl.getSkills().remove(hash);
+                        }
+                    }
+                }
 
-						if (Config.isServer(Config.TENKAI))
-						{
-							// Copy the map keys so that we avoid a concurrent modification exception
-							Set<Long> skillHashes = new HashSet<>(cl.getSkills().keySet());
-							for (long hash : skillHashes)
-							{
-								L2SkillLearn sl = cl.getSkills().get(hash);
-								for (int reqSkillId : sl.getCostSkills())
-								{
-									long reqHash = SkillTable.getSkillHashCode(reqSkillId, 1);
-									if (cl.getParent() != null && cl.getParent().getSkills().containsKey(reqHash))
-									{
-										L2SkillLearn rsl;
-										if (!cl.getSkills().containsKey(reqHash))
-										{
-											rsl = new L2SkillLearn(reqSkillId, 1, 1, 85, 0, true, false, false, false);
-											rsl.setIsRemember(true);
-											cl.addSkill(reqHash, rsl);
-											for (int lv = 2;
-												 cl.getParent().getSkills()
-														 .containsKey(SkillTable.getSkillHashCode(reqSkillId, lv));
-												 lv++)
-											{
-												cl.addSkill(SkillTable.getSkillHashCode(reqSkillId, lv),
-														new L2SkillLearn(reqSkillId, lv, 1, 85, 0, true, false, false,
-																false));
-											}
-										}
-										else
-										{
-											rsl = cl.getSkills().get(reqHash);
-										}
+                if (Config.isServer(Config.TENKAI))
+                {
+                    // Copy the map keys so that we avoid a concurrent modification exception
+                    Set<Long> skillHashes = new HashSet<>(cl.getSkills().keySet());
+                    for (long hash : skillHashes)
+                    {
+                        L2SkillLearn sl = cl.getSkills().get(hash);
+                        for (int reqSkillId : sl.getCostSkills())
+                        {
+                            long reqHash = SkillTable.getSkillHashCode(reqSkillId, 1);
+                            if (cl.getParent() != null && cl.getParent().getSkills().containsKey(reqHash))
+                            {
+                                L2SkillLearn rsl;
+                                if (!cl.getSkills().containsKey(reqHash))
+                                {
+                                    rsl = new L2SkillLearn(reqSkillId, 1, 1, 85, 0, true, false, false, false);
+                                    rsl.setIsRemember(true);
+                                    cl.addSkill(reqHash, rsl);
+                                    for (int lv = 2;
+                                         cl.getParent().getSkills()
+                                                 .containsKey(SkillTable.getSkillHashCode(reqSkillId, lv));
+                                         lv++)
+                                    {
+                                        cl.addSkill(SkillTable.getSkillHashCode(reqSkillId, lv),
+                                                new L2SkillLearn(reqSkillId, lv, 1, 85, 0, true, false, false,
+                                                        false));
+                                    }
+                                }
+                                else
+                                {
+                                    rsl = cl.getSkills().get(reqHash);
+                                }
 
-										rsl.addCostSkill(sl.getId());
-									}
-								}
-							}
-						}
+                                rsl.addCostSkill(sl.getId());
+                            }
+                        }
+                    }
+                }
 
-						_classes.put(id, cl);
-						count++;
-					}
-					else if (classNode.getName().equalsIgnoreCase("skill"))
-					{
-						int skillId = classNode.getInt("id");
-						String[] levels = classNode.getString("level").split(",");
-						int reqSp = classNode.getInt("reqSp");
-						int minLevel = classNode.getInt("minLevel");
-						int minDualLevel = classNode.getInt("minDualLevel", 0);
-						boolean learnFromPanel = classNode.getBool("learnFromPanel", true);
-						boolean learnFromFS = classNode.getBool("learnFromFS", false);
-						boolean isTransfer = classNode.getBool("isTransfer", false);
-						boolean autoGet = classNode.getBool("autoGet", false);
+                _classes.put(id, cl);
+                count++;
+            }
+            else if (classNode.getName().equalsIgnoreCase("skill"))
+            {
+                int skillId = classNode.getInt("id");
+                String[] levels = classNode.getString("level").split(",");
+                int reqSp = classNode.getInt("reqSp");
+                int minLevel = classNode.getInt("minLevel");
+                int minDualLevel = classNode.getInt("minDualLevel", 0);
+                boolean learnFromPanel = classNode.getBool("learnFromPanel", true);
+                boolean learnFromFS = classNode.getBool("learnFromFS", false);
+                boolean isTransfer = classNode.getBool("isTransfer", false);
+                boolean autoGet = classNode.getBool("autoGet", false);
 
-						for (String mls : levels)
-						{
-							int skillLevel = Integer.valueOf(mls);
-							long hash = SkillTable.getSkillHashCode(skillId, skillLevel);
-							for (int PlayerClass : _classes.keySet())
-							{
-								_classes.get(PlayerClass).addSkill(hash,
-										new L2SkillLearn(skillId, skillLevel, reqSp, minLevel, minDualLevel,
-												learnFromPanel, learnFromFS, isTransfer, autoGet));
-							}
-							_minSkillLevels.put(hash, minLevel);
-						}
-					}
-				}
-			}
-		}
+                for (String mls : levels)
+                {
+                    int skillLevel = Integer.valueOf(mls);
+                    long hash = SkillTable.getSkillHashCode(skillId, skillLevel);
+                    for (int PlayerClass : _classes.keySet())
+                    {
+                        _classes.get(PlayerClass).addSkill(hash,
+                                new L2SkillLearn(skillId, skillLevel, reqSp, minLevel, minDualLevel,
+                                        learnFromPanel, learnFromFS, isTransfer, autoGet));
+                    }
+                    _minSkillLevels.put(hash, minLevel);
+                }
+            }
+        }
 		Log.info("PlayerClassTable: loaded " + count + " classes.");
 
 		if (Config.IS_CLASSIC)

@@ -15,6 +15,7 @@
 
 package l2server.gameserver.datatables;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.model.L2PetData;
 import l2server.gameserver.model.L2PetLevelData;
@@ -25,8 +26,6 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
-
-import gnu.trove.TIntObjectHashMap;
 
 public class PetDataTable
 {
@@ -51,9 +50,7 @@ public class PetDataTable
 		if (file.exists())
 		{
 			XmlDocument doc = new XmlDocument(file);
-
-			XmlNode n = doc.getFirstChild();
-			for (XmlNode d : n.getChildren())
+			for (XmlNode d : doc.getChildren())
 			{
 				if (d.getName().equals("pet"))
 				{

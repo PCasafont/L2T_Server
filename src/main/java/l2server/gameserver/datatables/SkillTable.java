@@ -13,6 +13,8 @@
 
 package l2server.gameserver.datatables;
 
+import gnu.trove.TIntIntHashMap;
+import gnu.trove.TLongObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
@@ -28,9 +30,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
-
-import gnu.trove.TIntIntHashMap;
-import gnu.trove.TLongObjectHashMap;
 
 /**
  *
@@ -105,44 +104,38 @@ public class SkillTable implements Reloadable
 		for (File f : validFiles)
 		{
 			XmlDocument doc = new XmlDocument(f);
-			for (XmlNode n : doc.getChildren())
+			for (XmlNode d : doc.getChildren())
 			{
-				if (n.getName().equalsIgnoreCase("list"))
-				{
-					for (XmlNode d : n.getChildren())
-					{
-						if (d.getName().equalsIgnoreCase("skill"))
-						{
-							SkillParser skill = new SkillParser(d);
-							try
-							{
-								skill.parse();
-								for (L2Skill s : skill.getSkills().values())
-								{
-									_skills.put(getSkillHashCode(s.getId(), s.getLevel(), s.getEnchantRouteId(),
-											s.getEnchantLevel()), s);
-									if (s.getEnchantRouteId() > 0)
-									{
-										_enchantable.add(s.getId());
-										continue;
-									}
+                if (d.getName().equalsIgnoreCase("skill"))
+                {
+                    SkillParser skill = new SkillParser(d);
+                    try
+                    {
+                        skill.parse();
+                        for (L2Skill s : skill.getSkills().values())
+                        {
+                            _skills.put(getSkillHashCode(s.getId(), s.getLevel(), s.getEnchantRouteId(),
+                                    s.getEnchantLevel()), s);
+                            if (s.getEnchantRouteId() > 0)
+                            {
+                                _enchantable.add(s.getId());
+                                continue;
+                            }
 
-									// only non-enchanted skills
-									final int maxLvl = _skillMaxLevel.get(s.getId());
-									if (s.getLevelHash() > maxLvl)
-									{
-										_skillMaxLevel.put(s.getId(), s.getLevelHash());
-									}
-								}
-							}
-							catch (Exception e)
-							{
-								Log.log(Level.WARNING, "Cannot create skill id " + skill.getId(), e);
-							}
-						}
-					}
-				}
-			}
+                            // only non-enchanted skills
+                            final int maxLvl = _skillMaxLevel.get(s.getId());
+                            if (s.getLevelHash() > maxLvl)
+                            {
+                                _skillMaxLevel.put(s.getId(), s.getLevelHash());
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Log.log(Level.WARNING, "Cannot create skill id " + skill.getId(), e);
+                    }
+                }
+            }
 		}
 
 		// Reloading as well FrequentSkill enumeration values

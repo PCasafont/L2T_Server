@@ -15,6 +15,9 @@
 
 package l2server;
 
+import gnu.trove.TIntArrayList;
+import gnu.trove.TIntFloatHashMap;
+import gnu.trove.TIntIntHashMap;
 import l2server.gameserver.util.FloodProtectorConfig;
 import l2server.log.Log;
 import l2server.util.L2Properties;
@@ -22,15 +25,7 @@ import l2server.util.StringUtil;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.LineNumberReader;
-import java.io.OutputStream;
+import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.math.BigInteger;
@@ -41,10 +36,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import gnu.trove.TIntArrayList;
-import gnu.trove.TIntFloatHashMap;
-import gnu.trove.TIntIntHashMap;
 
 public final class Config
 {
@@ -1238,7 +1229,7 @@ public final class Config
 		try
 		{
 			XmlDocument doc = new XmlDocument(new File(fileName));
-			for (XmlNode n : doc.getFirstChild().getChildren())
+			for (XmlNode n : doc.getChildren())
 			{
 				if (n.getName().equalsIgnoreCase("config"))
 				{

@@ -15,6 +15,7 @@
 
 package l2server.gameserver.datatables;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
@@ -25,8 +26,6 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
-
-import gnu.trove.TIntObjectHashMap;
 
 /**
  * This class ...
@@ -62,94 +61,88 @@ public class HennaTable implements Reloadable
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "henna.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode hennaNode : n.getChildren())
-				{
-					if (hennaNode.getName().equalsIgnoreCase("henna"))
-					{
-						StatsSet hennaDat = new StatsSet();
-						int id = hennaNode.getInt("symbolId");
+		for (XmlNode hennaNode : doc.getChildren())
+        {
+            if (hennaNode.getName().equalsIgnoreCase("henna"))
+            {
+                StatsSet hennaDat = new StatsSet();
+                int id = hennaNode.getInt("symbolId");
 
-						hennaDat.set("symbolId", id);
-						hennaDat.set("dyeId", hennaNode.getInt("dyeId"));
-						hennaDat.set("name", hennaNode.getString("name"));
-						if (hennaNode.hasAttribute("price"))
-						{
-							hennaDat.set("price", hennaNode.getLong("price"));
-						}
-						if (hennaNode.hasAttribute("STR"))
-						{
-							hennaDat.set("STR", hennaNode.getInt("STR"));
-						}
-						if (hennaNode.hasAttribute("CON"))
-						{
-							hennaDat.set("CON", hennaNode.getInt("CON"));
-						}
-						if (hennaNode.hasAttribute("DEX"))
-						{
-							hennaDat.set("DEX", hennaNode.getInt("DEX"));
-						}
-						if (hennaNode.hasAttribute("INT"))
-						{
-							hennaDat.set("INT", hennaNode.getInt("INT"));
-						}
-						if (hennaNode.hasAttribute("WIT"))
-						{
-							hennaDat.set("WIT", hennaNode.getInt("WIT"));
-						}
-						if (hennaNode.hasAttribute("MEN"))
-						{
-							hennaDat.set("MEN", hennaNode.getInt("MEN"));
-						}
-						if (hennaNode.hasAttribute("LUC"))
-						{
-							hennaDat.set("LUC", hennaNode.getInt("LUC"));
-						}
-						if (hennaNode.hasAttribute("CHA"))
-						{
-							hennaDat.set("CHA", hennaNode.getInt("CHA"));
-						}
-						if (hennaNode.hasAttribute("elemId"))
-						{
-							hennaDat.set("elemId", hennaNode.getInt("elemId"));
-						}
-						if (hennaNode.hasAttribute("elemVal"))
-						{
-							hennaDat.set("elemVal", hennaNode.getInt("elemVal"));
-						}
+                hennaDat.set("symbolId", id);
+                hennaDat.set("dyeId", hennaNode.getInt("dyeId"));
+                hennaDat.set("name", hennaNode.getString("name"));
+                if (hennaNode.hasAttribute("price"))
+                {
+                    hennaDat.set("price", hennaNode.getLong("price"));
+                }
+                if (hennaNode.hasAttribute("STR"))
+                {
+                    hennaDat.set("STR", hennaNode.getInt("STR"));
+                }
+                if (hennaNode.hasAttribute("CON"))
+                {
+                    hennaDat.set("CON", hennaNode.getInt("CON"));
+                }
+                if (hennaNode.hasAttribute("DEX"))
+                {
+                    hennaDat.set("DEX", hennaNode.getInt("DEX"));
+                }
+                if (hennaNode.hasAttribute("INT"))
+                {
+                    hennaDat.set("INT", hennaNode.getInt("INT"));
+                }
+                if (hennaNode.hasAttribute("WIT"))
+                {
+                    hennaDat.set("WIT", hennaNode.getInt("WIT"));
+                }
+                if (hennaNode.hasAttribute("MEN"))
+                {
+                    hennaDat.set("MEN", hennaNode.getInt("MEN"));
+                }
+                if (hennaNode.hasAttribute("LUC"))
+                {
+                    hennaDat.set("LUC", hennaNode.getInt("LUC"));
+                }
+                if (hennaNode.hasAttribute("CHA"))
+                {
+                    hennaDat.set("CHA", hennaNode.getInt("CHA"));
+                }
+                if (hennaNode.hasAttribute("elemId"))
+                {
+                    hennaDat.set("elemId", hennaNode.getInt("elemId"));
+                }
+                if (hennaNode.hasAttribute("elemVal"))
+                {
+                    hennaDat.set("elemVal", hennaNode.getInt("elemVal"));
+                }
 
-						if (hennaNode.hasAttribute("time"))
-						{
-							hennaDat.set("time", hennaNode.getLong("time"));
-						}
-						if (hennaNode.hasAttribute("fourthSlot"))
-						{
-							hennaDat.set("fourthSlot", hennaNode.getBool("fourthSlot"));
-						}
-						if (hennaNode.hasAttribute("skills"))
-						{
-							hennaDat.set("skills", hennaNode.getString("skills"));
-						}
+                if (hennaNode.hasAttribute("time"))
+                {
+                    hennaDat.set("time", hennaNode.getLong("time"));
+                }
+                if (hennaNode.hasAttribute("fourthSlot"))
+                {
+                    hennaDat.set("fourthSlot", hennaNode.getBool("fourthSlot"));
+                }
+                if (hennaNode.hasAttribute("skills"))
+                {
+                    hennaDat.set("skills", hennaNode.getString("skills"));
+                }
 
-						L2Henna henna = new L2Henna(hennaDat);
+                L2Henna henna = new L2Henna(hennaDat);
 
-						for (XmlNode allowedClassNode : hennaNode.getChildren())
-						{
-							if (allowedClassNode.getName().equalsIgnoreCase("allowedClass"))
-							{
-								int classId = allowedClassNode.getInt("id");
-								PlayerClassTable.getInstance().getClassById(classId).addAllowedDye(henna);
-							}
-						}
+                for (XmlNode allowedClassNode : hennaNode.getChildren())
+                {
+                    if (allowedClassNode.getName().equalsIgnoreCase("allowedClass"))
+                    {
+                        int classId = allowedClassNode.getInt("id");
+                        PlayerClassTable.getInstance().getClassById(classId).addAllowedDye(henna);
+                    }
+                }
 
-						_henna.put(id, henna);
-					}
-				}
-			}
-		}
+                _henna.put(id, henna);
+            }
+        }
 		Log.info("HennaTable: Loaded " + _henna.size() + " Templates.");
 	}
 

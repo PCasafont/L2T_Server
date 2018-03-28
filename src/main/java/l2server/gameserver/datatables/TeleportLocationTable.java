@@ -15,6 +15,7 @@
 
 package l2server.gameserver.datatables;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
@@ -24,8 +25,6 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
-
-import gnu.trove.TIntObjectHashMap;
 
 /**
  * This class ...
@@ -58,34 +57,28 @@ public class TeleportLocationTable implements Reloadable
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "teleports.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode n : doc.getChildren())
+		for (XmlNode d : doc.getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("tele"))
-					{
-						L2TeleportLocation teleport = new L2TeleportLocation();
+            if (d.getName().equalsIgnoreCase("tele"))
+            {
+                L2TeleportLocation teleport = new L2TeleportLocation();
 
-						teleport.setTeleId(d.getInt("id"));
-						teleport.setDescription(d.getString("description"));
-						teleport.setLocX(d.getInt("x"));
-						teleport.setLocY(d.getInt("y"));
-						teleport.setLocZ(d.getInt("z"));
+                teleport.setTeleId(d.getInt("id"));
+                teleport.setDescription(d.getString("description"));
+                teleport.setLocX(d.getInt("x"));
+                teleport.setLocY(d.getInt("y"));
+                teleport.setLocZ(d.getInt("z"));
 
-						teleport.setPrice(d.getInt("price", 0));
-						if (Config.isServer(Config.TENKAI_LEGACY))
-						{
-							teleport.setPrice((int) Math.sqrt(d.getInt("price", 0)));
-						}
-						teleport.setIsForNoble(d.getBool("fornoble", false));
-						teleport.setItemId(d.getInt("itemId", 57));
+                teleport.setPrice(d.getInt("price", 0));
+                if (Config.isServer(Config.TENKAI_LEGACY))
+                {
+                    teleport.setPrice((int) Math.sqrt(d.getInt("price", 0)));
+                }
+                teleport.setIsForNoble(d.getBool("fornoble", false));
+                teleport.setItemId(d.getInt("itemId", 57));
 
-						_teleports.put(teleport.getTeleId(), teleport);
-					}
-				}
-			}
+                _teleports.put(teleport.getTeleId(), teleport);
+            }
 		}
 
 		Log.info("TeleportLocationTable: Loaded " + _teleports.size() + " Teleport Location Templates.");

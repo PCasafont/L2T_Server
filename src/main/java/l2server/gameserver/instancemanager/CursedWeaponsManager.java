@@ -109,56 +109,50 @@ public class CursedWeaponsManager
 			}
 
 			XmlDocument doc = new XmlDocument(file);
-			for (XmlNode n : doc.getChildren())
+			for (XmlNode d : doc.getChildren())
 			{
-				if (n.getName().equalsIgnoreCase("list"))
-				{
-					for (XmlNode d : n.getChildren())
-					{
-						if (d.getName().equalsIgnoreCase("item"))
-						{
-							int id = d.getInt("id");
-							int skillId = d.getInt("skillId");
-							String name = d.getString("name");
+                if (d.getName().equalsIgnoreCase("item"))
+                {
+                    int id = d.getInt("id");
+                    int skillId = d.getInt("skillId");
+                    String name = d.getString("name");
 
-							CursedWeapon cw = new CursedWeapon(id, skillId, name);
+                    CursedWeapon cw = new CursedWeapon(id, skillId, name);
 
-							int val;
-							for (XmlNode cd : d.getChildren())
-							{
-								if (cd.getName().equalsIgnoreCase("dropRate"))
-								{
-									val = cd.getInt("val");
-									cw.setDropRate(val);
-								}
-								else if (cd.getName().equalsIgnoreCase("duration"))
-								{
-									val = cd.getInt("val");
-									cw.setDuration(val);
-								}
-								else if (cd.getName().equalsIgnoreCase("durationLost"))
-								{
-									val = cd.getInt("val");
-									cw.setDurationLost(val);
-								}
-								else if (cd.getName().equalsIgnoreCase("disapearChance"))
-								{
-									val = cd.getInt("val");
-									cw.setDisapearChance(val);
-								}
-								else if (cd.getName().equalsIgnoreCase("stageKills"))
-								{
-									val = cd.getInt("val");
-									cw.setStageKills(val);
-								}
-							}
+                    int val;
+                    for (XmlNode cd : d.getChildren())
+                    {
+                        if (cd.getName().equalsIgnoreCase("dropRate"))
+                        {
+                            val = cd.getInt("val");
+                            cw.setDropRate(val);
+                        }
+                        else if (cd.getName().equalsIgnoreCase("duration"))
+                        {
+                            val = cd.getInt("val");
+                            cw.setDuration(val);
+                        }
+                        else if (cd.getName().equalsIgnoreCase("durationLost"))
+                        {
+                            val = cd.getInt("val");
+                            cw.setDurationLost(val);
+                        }
+                        else if (cd.getName().equalsIgnoreCase("disapearChance"))
+                        {
+                            val = cd.getInt("val");
+                            cw.setDisapearChance(val);
+                        }
+                        else if (cd.getName().equalsIgnoreCase("stageKills"))
+                        {
+                            val = cd.getInt("val");
+                            cw.setStageKills(val);
+                        }
+                    }
 
-							// Store cursed weapon
-							_cursedWeapons.put(id, cw);
-						}
-					}
-				}
-			}
+                    // Store cursed weapon
+                    _cursedWeapons.put(id, cw);
+                }
+            }
 
 			if (Config.DEBUG)
 			{

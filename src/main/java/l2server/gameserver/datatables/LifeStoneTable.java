@@ -201,75 +201,67 @@ public class LifeStoneTable
 			}
 
 			XmlDocument doc = new XmlDocument(file);
-			for (XmlNode n : doc.getChildren())
-			{
-				if (!n.getName().equalsIgnoreCase("list"))
-				{
-					continue;
-				}
+            for (XmlNode stoneNode : doc.getChildren())
+            {
+                if (!stoneNode.getName().equalsIgnoreCase("lifeStone"))
+                {
+                    continue;
+                }
 
-				for (XmlNode stoneNode : n.getChildren())
-				{
-					if (!stoneNode.getName().equalsIgnoreCase("lifeStone"))
-					{
-						continue;
-					}
+                int id = stoneNode.getInt("id");
+                int grade = stoneNode.getInt("grade");
+                int level = stoneNode.getInt("level");
+                LifeStone lifeStone = new LifeStone(grade, level);
 
-					int id = stoneNode.getInt("id");
-					int grade = stoneNode.getInt("grade");
-					int level = stoneNode.getInt("level");
-					LifeStone lifeStone = new LifeStone(grade, level);
+                for (XmlNode groupNode : stoneNode.getChildren())
+                {
+                    if (!groupNode.getName().equalsIgnoreCase("augmentGroup"))
+                    {
+                        continue;
+                    }
 
-					for (XmlNode groupNode : stoneNode.getChildren())
-					{
-						if (!groupNode.getName().equalsIgnoreCase("augmentGroup"))
-						{
-							continue;
-						}
+                    String[] weaponTypes = groupNode.getString("weaponType").split(",");
+                    int order = groupNode.getInt("order");
 
-						String[] weaponTypes = groupNode.getString("weaponType").split(",");
-						int order = groupNode.getInt("order");
+                    List<EnchantEffectSet> sets = new ArrayList<>();
+                    for (XmlNode setNode : groupNode.getChildren())
+                    {
+                        if (!setNode.getName().equalsIgnoreCase("augments"))
+                        {
+                            continue;
+                        }
 
-						List<EnchantEffectSet> sets = new ArrayList<>();
-						for (XmlNode setNode : groupNode.getChildren())
-						{
-							if (!setNode.getName().equalsIgnoreCase("augments"))
-							{
-								continue;
-							}
+                        String[] ids = setNode.getString("ids").split(",");
+                        float chance = setNode.getFloat("chance");
+                        List<EnchantEffect> augments = new ArrayList<>();
+                        for (String idRange : ids)
+                        {
+                            if (idRange.contains("-"))
+                            {
+                                int start = Integer.parseInt(idRange.substring(0, idRange.indexOf("-")));
+                                int end = Integer.parseInt(idRange.substring(idRange.indexOf("-") + 1));
+                                for (int augmentId = start; augmentId <= end; augmentId++)
+                                {
+                                    augments.add(EnchantEffectTable.getInstance().getEffect(augmentId));
+                                }
+                            }
+                            else
+                            {
+                                augments.add(EnchantEffectTable.getInstance().getEffect(Integer.parseInt(idRange)));
+                            }
+                        }
 
-							String[] ids = setNode.getString("ids").split(",");
-							float chance = setNode.getFloat("chance");
-							List<EnchantEffect> augments = new ArrayList<>();
-							for (String idRange : ids)
-							{
-								if (idRange.contains("-"))
-								{
-									int start = Integer.parseInt(idRange.substring(0, idRange.indexOf("-")));
-									int end = Integer.parseInt(idRange.substring(idRange.indexOf("-") + 1));
-									for (int augmentId = start; augmentId <= end; augmentId++)
-									{
-										augments.add(EnchantEffectTable.getInstance().getEffect(augmentId));
-									}
-								}
-								else
-								{
-									augments.add(EnchantEffectTable.getInstance().getEffect(Integer.parseInt(idRange)));
-								}
-							}
+                        sets.add(new EnchantEffectSet(augments, chance));
+                    }
 
-							sets.add(new EnchantEffectSet(augments, chance));
-						}
+                    for (String weaponType : weaponTypes)
+                    {
+                        lifeStone.setEffectGroup(weaponType, order, new EnchantEffectGroup(sets));
+                    }
+                }
 
-						for (String weaponType : weaponTypes)
-						{
-							lifeStone.setEffectGroup(weaponType, order, new EnchantEffectGroup(sets));
-						}
-					}
-
-					_lifeStones.put(id, lifeStone);
-				}
-			}
+                _lifeStones.put(id, lifeStone);
+            }
 
 			Log.info("LifeStoneTable: Loaded " + _lifeStones.size() + " life stones.");
 		}

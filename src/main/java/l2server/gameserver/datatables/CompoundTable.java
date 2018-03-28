@@ -91,7 +91,7 @@ public class CompoundTable implements Reloadable
 		XmlDocument doc = new XmlDocument(file);
 		_combinations.clear();
 
-		for (XmlNode d : doc.getFirstChild().getChildren())
+		for (XmlNode d : doc.getChildren())
 		{
 			if (d.getName().equalsIgnoreCase("combination"))
 			{

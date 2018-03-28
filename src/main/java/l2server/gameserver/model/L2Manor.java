@@ -392,76 +392,69 @@ public class L2Manor
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "seeds.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		//list
-		for (XmlNode n : doc.getChildren())
+		//castle
+		for (XmlNode d : doc.getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				//castle
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("castle"))
-					{
-						int castleId = d.getInt("id");
-						//crop
-						for (XmlNode c : d.getChildren())
-						{
-							if (c.getName().equalsIgnoreCase("crop"))
-							{
-								int cropId = c.getInt("id");
-								int seedId = 0;
-								int matureId = 0;
-								int type1R = 0;
-								int type2R = 0;
-								boolean isAlt = false;
-								int level = 0;
-								int limitSeeds = 0;
-								int limitCrops = 0;
+            if (d.getName().equalsIgnoreCase("castle"))
+            {
+                int castleId = d.getInt("id");
+                //crop
+                for (XmlNode c : d.getChildren())
+                {
+                    if (c.getName().equalsIgnoreCase("crop"))
+                    {
+                        int cropId = c.getInt("id");
+                        int seedId = 0;
+                        int matureId = 0;
+                        int type1R = 0;
+                        int type2R = 0;
+                        boolean isAlt = false;
+                        int level = 0;
+                        int limitSeeds = 0;
+                        int limitCrops = 0;
 
-								//attrib
-								for (XmlNode a : c.getChildren())
-								{
-									if (a.getName().equalsIgnoreCase("seed_id"))
-									{
-										seedId = a.getInt("val");
-									}
-									else if (a.getName().equalsIgnoreCase("mature_id"))
-									{
-										matureId = a.getInt("val");
-									}
-									else if (a.getName().equalsIgnoreCase("reward1"))
-									{
-										type1R = a.getInt("val");
-									}
-									else if (a.getName().equalsIgnoreCase("reward2"))
-									{
-										type2R = a.getInt("val");
-									}
-									else if (a.getName().equalsIgnoreCase("alternative"))
-									{
-										isAlt = a.getInt("val") == 1;
-									}
-									else if (a.getName().equalsIgnoreCase("level"))
-									{
-										level = a.getInt("val");
-									}
-									else if (a.getName().equalsIgnoreCase("limit_seed"))
-									{
-										limitSeeds = a.getInt("val");
-									}
-									else if (a.getName().equalsIgnoreCase("limit_crops"))
-									{
-										limitCrops = a.getInt("val");
-									}
-								}
+                        //attrib
+                        for (XmlNode a : c.getChildren())
+                        {
+                            if (a.getName().equalsIgnoreCase("seed_id"))
+                            {
+                                seedId = a.getInt("val");
+                            }
+                            else if (a.getName().equalsIgnoreCase("mature_id"))
+                            {
+                                matureId = a.getInt("val");
+                            }
+                            else if (a.getName().equalsIgnoreCase("reward1"))
+                            {
+                                type1R = a.getInt("val");
+                            }
+                            else if (a.getName().equalsIgnoreCase("reward2"))
+                            {
+                                type2R = a.getInt("val");
+                            }
+                            else if (a.getName().equalsIgnoreCase("alternative"))
+                            {
+                                isAlt = a.getInt("val") == 1;
+                            }
+                            else if (a.getName().equalsIgnoreCase("level"))
+                            {
+                                level = a.getInt("val");
+                            }
+                            else if (a.getName().equalsIgnoreCase("limit_seed"))
+                            {
+                                limitSeeds = a.getInt("val");
+                            }
+                            else if (a.getName().equalsIgnoreCase("limit_crops"))
+                            {
+                                limitCrops = a.getInt("val");
+                            }
+                        }
 
-								SeedData seed = new SeedData(level, cropId, matureId);
-								seed.setData(seedId, type1R, type2R, castleId, isAlt, limitSeeds, limitCrops);
-								_seeds.put(seed.getId(), seed);
-							}
-						}
-					}
-				}
+                        SeedData seed = new SeedData(level, cropId, matureId);
+                        seed.setData(seedId, type1R, type2R, castleId, isAlt, limitSeeds, limitCrops);
+                        _seeds.put(seed.getId(), seed);
+                    }
+                }
 			}
 			Log.info(getClass().getSimpleName() + ": Loaded " + _seeds.size() + " Seeds.");
 		}

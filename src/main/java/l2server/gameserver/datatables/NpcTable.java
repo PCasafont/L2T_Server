@@ -148,7 +148,7 @@ public class NpcTable
 				}
 
 				XmlDocument doc = new XmlDocument(f);
-				for (XmlNode npcNode : doc.getFirstChild().getChildren())
+				for (XmlNode npcNode : doc.getChildren())
 				{
 					if (npcNode.getName().equalsIgnoreCase("npc"))
 					{

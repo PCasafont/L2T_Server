@@ -15,6 +15,7 @@
 
 package l2server.gameserver.datatables;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.ClanHallManager;
@@ -32,8 +33,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
-
-import gnu.trove.TIntObjectHashMap;
 
 public class DoorTable
 {
@@ -67,31 +66,25 @@ public class DoorTable
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "doorData.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode n : doc.getChildren())
+		for (XmlNode d : doc.getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("doors"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("door"))
-					{
-						int id = d.getInt("id");
-						StatsSet set = new StatsSet();
-						set.set("id", id);
-						for (XmlNode bean : d.getChildren())
-						{
-							if (bean.getName().equalsIgnoreCase("set"))
-							{
-								String name = bean.getString("name");
-								String value = bean.getString("val");
-								set.set(name, value);
-							}
-						}
-						makeDoor(id, set);
-					}
-				}
-			}
-		}
+            if (d.getName().equalsIgnoreCase("door"))
+            {
+                int id = d.getInt("id");
+                StatsSet set = new StatsSet();
+                set.set("id", id);
+                for (XmlNode bean : d.getChildren())
+                {
+                    if (bean.getName().equalsIgnoreCase("set"))
+                    {
+                        String name = bean.getString("name");
+                        String value = bean.getString("val");
+                        set.set(name, value);
+                    }
+                }
+                makeDoor(id, set);
+            }
+        }
 		Log.info("DoorTable: Loaded " + _doors.size() + " Door Templates for " + _regions.size() + " regions.");
 	}
 

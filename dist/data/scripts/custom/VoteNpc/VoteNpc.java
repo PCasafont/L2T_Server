@@ -63,7 +63,7 @@ public class VoteNpc extends Quest
 		XmlDocument doc = new XmlDocument(file);
 		for (XmlNode n : doc.getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("list"))
+			if (n.getName().equa.getChildren())
 			{
 				for (XmlNode d : n.getChildren())
 				{

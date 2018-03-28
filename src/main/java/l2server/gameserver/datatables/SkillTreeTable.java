@@ -100,7 +100,7 @@ public class SkillTreeTable
 		XmlDocument doc = new XmlDocument(file);
 
 		int prevSkillId = -1;
-		for (XmlNode n : doc.getFirstChild().getChildren())
+		for (XmlNode n : doc.getChildren())
 		{
 			if (n.getName().equalsIgnoreCase("skill"))
 			{
@@ -137,7 +137,7 @@ public class SkillTreeTable
 		doc = new XmlDocument(file);
 
 		prevSkillId = -1;
-		for (XmlNode n : doc.getFirstChild().getChildren())
+		for (XmlNode n : doc.getChildren())
 		{
 			if (n.getName().equalsIgnoreCase("skill"))
 			{
@@ -163,7 +163,7 @@ public class SkillTreeTable
 		doc = new XmlDocument(file);
 
 		prevSkillId = -1;
-		for (XmlNode n : doc.getFirstChild().getChildren())
+		for (XmlNode n : doc.getChildren())
 		{
 			if (n.getName().equalsIgnoreCase("skill"))
 			{

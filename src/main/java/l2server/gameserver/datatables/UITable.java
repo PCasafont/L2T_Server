@@ -56,46 +56,34 @@ public class UITable
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "uiCatsEn.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode n : doc.getChildren())
+		for (XmlNode d : doc.getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("category"))
-					{
-						int cat = d.getInt("cat");
-						int cmd = d.getInt("cmd");
-						insertCategory(cat, cmd);
-					}
-				}
-			}
-		}
+            if (d.getName().equalsIgnoreCase("category"))
+            {
+                int cat = d.getInt("cat");
+                int cmd = d.getInt("cmd");
+                insertCategory(cat, cmd);
+            }
+        }
 	}
 
 	private void parseKeyData()
 	{
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "uiKeysEn.xml");
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getChildren())
+		for (XmlNode d : doc.getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("key"))
-					{
-						int cat = d.getInt("cat");
-						int cmd = d.getInt("cmd");
-						int key = d.getInt("key");
-						int tk1 = d.getInt("tk1");
-						int tk2 = d.getInt("tk2");
-						int shw = d.getInt("shw");
-						insertKey(cat, cmd, key, tk1, tk2, shw);
-					}
-				}
-			}
-		}
+            if (d.getName().equalsIgnoreCase("key"))
+            {
+                int cat = d.getInt("cat");
+                int cmd = d.getInt("cmd");
+                int key = d.getInt("key");
+                int tk1 = d.getInt("tk1");
+                int tk2 = d.getInt("tk2");
+                int shw = d.getInt("shw");
+                insertKey(cat, cmd, key, tk1, tk2, shw);
+            }
+        }
 	}
 
 	private void insertCategory(int cat, int cmd)
