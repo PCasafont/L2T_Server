@@ -254,7 +254,7 @@ public final class UserInfo extends L2GameServerPacket
 		buffer.putInt(RaidBossPointsManager.getInstance().getPointsByOwnerId(player.getObjectId())); // Raid points
 
 		// Unknown
-		buffer.putShort((short) 9);
+		buffer.putShort((short) 11);
 		buffer.put((byte) player.getInventory().getMaxTalismanCount());
 		buffer.put((byte) player.getInventory().getMaxJewelryCount());
 		buffer.put((byte) player.getTeam());
@@ -262,7 +262,10 @@ public final class UserInfo extends L2GameServerPacket
 				(byte) 0); //Player floor effects: 0 nothing, 1 red circle (intense), 2 white circle, 3 red circle (pale)
 		buffer.put((byte) 0);
 		buffer.put((byte) 0);
-		buffer.put((byte) 0);
+        buffer.put((byte) 0);
+        //Salvation
+        buffer.put((byte) 0);
+        buffer.put((byte) 0);
 
 		// Movement flags
 		buffer.putShort((short) 4);

@@ -202,10 +202,14 @@ public class FarmZoneManager
 						{
 							String name = farmNode.getString("farmZone");
 							FarmZone farmZone = _farmZones.get(name);
-							for (L2NpcTemplate mob : farmZone.getMobs())
-							{
-								mobs.add(mob);
-							}
+							if (farmZone != null) {
+                                for (L2NpcTemplate mob : farmZone.getMobs())
+                                {
+                                    mobs.add(mob);
+                                }
+                            } else {
+                                Log.warning("Could not find farm zone " + name);
+                            }
 						}
 						else if (farmNode.hasAttribute("levelRange"))
 						{
