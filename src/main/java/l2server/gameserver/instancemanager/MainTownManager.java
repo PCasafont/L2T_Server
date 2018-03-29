@@ -142,7 +142,7 @@ public class MainTownManager
 
 	private void load()
 	{
-		if (!Config.isServer(Config.TENKAI_LEGACY))
+		if (Config.isServer(Config.TENKAI_LEGACY))
 		{
 			return;
 		}

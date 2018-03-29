@@ -78,35 +78,26 @@ public class EventsManager implements Reloadable
 
 		XmlDocument doc = new XmlDocument(new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "eventsConfig.xml"));
 		int locCount = 0;
-		for (XmlNode n : doc.getChildren())
+		for (XmlNode node : doc.getChildren())
 		{
-			if (!n.getName().equals("list"))
-			{
-				continue;
-			}
+            if (node.getName().equals("location"))
+            {
+                EventLocation loc = new EventLocation(node);
+                _locations.put(loc.getId(), loc);
 
-			for (XmlNode node : n.getChildren())
-			{
-				if (node.getName().equals("location"))
-				{
-					EventLocation loc = new EventLocation(node);
-					_locations.put(loc.getId(), loc);
-
-					locCount++;
-				}
-			}
-		}
+                locCount++;
+            }
+        }
 
 		Log.info("Events Manager: loaded " + locCount + " locations");
 	}
 
 	public EventLocation getRandomLocation()
 	{
-		EventLocation loc = _locations.get(Rnd.get(100));
-		while (loc == null)
-		{
-			loc = _locations.get(Rnd.get(100));
-		}
+		EventLocation loc;
+		do {
+		    loc = _locations.get(Rnd.get(100));
+		} while (loc == null);
 		return loc;
 	}
 

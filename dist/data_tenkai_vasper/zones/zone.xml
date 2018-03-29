@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<list enabled="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="zones.xsd">
+<list enabled="true">
     <!-- Monster Race Track -->
     <zone name="dion_monster_race1" type="DerbyTrackZone" shape="NPoly" minZ="-3652" maxZ="-3452">
         <!-- [20_23] -->

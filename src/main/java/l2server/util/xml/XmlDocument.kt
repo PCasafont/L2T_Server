@@ -20,7 +20,11 @@ class XmlDocument {
 		}
 
 		val stream = FileInputStream(file)
-		root = load(stream)
+		try {
+			root = load(stream)
+		} catch (e: Exception) {
+			throw RuntimeException("Failed to load XML file $file", e)
+		}
 	}
 
 	constructor(stream: InputStream) {
