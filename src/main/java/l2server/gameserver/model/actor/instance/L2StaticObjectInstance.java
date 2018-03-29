@@ -39,10 +39,10 @@ public class L2StaticObjectInstance extends L2Character
 	 */
 	public static final int INTERACTION_DISTANCE = 150;
 
-	private int _staticObjectId;
-	private int _meshIndex = 0; // 0 - static objects, alternate static objects
-	private int _type = -1; // 0 - map signs, 1 - throne , 2 - arena signs
-	private ShowTownMap _map;
+	private int staticObjectId;
+	private int meshIndex = 0; // 0 - static objects, alternate static objects
+	private int type = -1; // 0 - map signs, 1 - throne , 2 - arena signs
+	private ShowTownMap map;
 
 	@Override
 	protected L2CharacterAI initAI()
@@ -55,7 +55,7 @@ public class L2StaticObjectInstance extends L2Character
 	 */
 	public int getStaticObjectId()
 	{
-		return _staticObjectId;
+		return staticObjectId;
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class L2StaticObjectInstance extends L2Character
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2StaticObjectInstance);
-		_staticObjectId = staticId;
+		staticObjectId = staticId;
 	}
 
 	@Override
@@ -105,22 +105,22 @@ public class L2StaticObjectInstance extends L2Character
 
 	public int getType()
 	{
-		return _type;
+		return type;
 	}
 
 	public void setType(int type)
 	{
-		_type = type;
+		this.type = type;
 	}
 
 	public void setMap(String texture, int x, int y)
 	{
-		_map = new ShowTownMap("town_map." + texture, x, y);
+		map = new ShowTownMap("town_map." + texture, x, y);
 	}
 
 	public ShowTownMap getMap()
 	{
-		return _map;
+		return map;
 	}
 
 	@Override
@@ -176,7 +176,7 @@ public class L2StaticObjectInstance extends L2Character
 	 */
 	public void setMeshIndex(int meshIndex)
 	{
-		_meshIndex = meshIndex;
+		this.meshIndex = meshIndex;
 		this.broadcastPacket(new StaticObject(this));
 	}
 
@@ -189,7 +189,7 @@ public class L2StaticObjectInstance extends L2Character
 	 */
 	public int getMeshIndex()
 	{
-		return _meshIndex;
+		return meshIndex;
 	}
 
 	@Override

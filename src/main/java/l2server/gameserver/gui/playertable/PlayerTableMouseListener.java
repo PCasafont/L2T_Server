@@ -16,23 +16,23 @@ import javax.swing.JPopupMenu;
  */
 public class PlayerTableMouseListener implements MouseListener, ActionListener
 {
-	private JPopupMenu _popupMenu;
-	private PlayerTablePane _parent;
+	private JPopupMenu popupMenu;
+	private PlayerTablePane parent;
 
 	public PlayerTableMouseListener(PlayerTablePane parent)
 	{
-		_parent = parent;
-		_popupMenu = new JPopupMenu();
+		this.parent = parent;
+		popupMenu = new JPopupMenu();
 
 		/*JMenuItem itemOpenGo = new JMenuItem("Do not show this");
 		itemOpenGo.setActionCommand("mark");
 		itemOpenGo.addActionListener(this);
-		_popupMenu.add(itemOpenGo);
+		popupMenu.add(itemOpenGo);
 
 		JMenuItem itemOpen = new JMenuItem("Mark Yellow (What is this for??)");
 		itemOpen.setActionCommand("yellow");
 		itemOpen.addActionListener(this);
-		_popupMenu.add(itemOpen);*/
+		popupMenu.add(itemOpen);*/
 	}
 
 	/* (non-Javadoc)
@@ -56,8 +56,8 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 	{
 		/*if (e.getActionCommand().equals("yellow"))
 		{
-			JTable table = _parent.getPlayerTable();
-			/*int row = _parent.getSelectedPacketindex();
+			JTable table = parent.getPlayerTable();
+			/*int row = parent.getSelectedPacketindex();
 			//int col = table.columnAtPoint(e.getPoint());
 			boolean val = !((PacketTableModel) table.getModel()).getIsMarked(row);
 			((PacketTableModel) table.getModel()).setIsMarked(row, val);
@@ -103,10 +103,10 @@ public class PlayerTableMouseListener implements MouseListener, ActionListener
 
 	private void checkPopup(MouseEvent e)
 	{
-		_parent.setTableSelectByMouseEvent(e);
+		parent.setTableSelectByMouseEvent(e);
 		if (e.isPopupTrigger())
 		{
-			_popupMenu.show(_parent.getPlayerTable(), e.getX(), e.getY());
+			popupMenu.show(parent.getPlayerTable(), e.getX(), e.getY());
 		}
 	}
 }

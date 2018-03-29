@@ -43,18 +43,18 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 	@SuppressWarnings("unused")
 	private static final long serialVersionUID = 1L;
 
-	private final JFrame _frame;
+	private final JFrame frame;
 
-	JTableModel _dtm;
-	JProgressBar _progressBar;
+	JTableModel dtm;
+	JProgressBar progressBar;
 
-	public JTable _gsTable;
+	public JTable gsTable;
 
 	public GUserInterface(ResourceBundle bundle)
 	{
 		super(bundle);
 
-		_frame = new JFrame();
+		frame = new JFrame();
 		getFrame().setTitle(getBundle().getString("toolName"));
 		getFrame().setSize(600, 400);
 		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -98,13 +98,13 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 		String name = getBundle().getString("gsName");
 		String action = getBundle().getString("gsAction");
 
-		_dtm = new JTableModel(new Object[]{"ID", name, action});
-		_gsTable = new JTable(_dtm);
-		_gsTable.addMouseListener(new JTableButtonMouseListener(_gsTable));
+		dtm = new JTableModel(new Object[]{"ID", name, action});
+		gsTable = new JTable(dtm);
+		gsTable.addMouseListener(new JTableButtonMouseListener(gsTable));
 
-		_gsTable.getColumnModel().getColumn(0).setMaxWidth(30);
+		gsTable.getColumnModel().getColumn(0).setMaxWidth(30);
 
-		TableColumn actionCollumn = _gsTable.getColumnModel().getColumn(2);
+		TableColumn actionCollumn = gsTable.getColumnModel().getColumn(2);
 		actionCollumn.setCellRenderer(new ButtonCellRenderer());
 
 		cons.fill = GridBagConstraints.BOTH;
@@ -115,11 +115,11 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 		cons.gridwidth = 2;
 		JLayeredPane layer = new JLayeredPane();
 		layer.setLayout(new BoxLayout(layer, BoxLayout.PAGE_AXIS));
-		layer.add(new JScrollPane(_gsTable), 0);
-		_progressBar = new JProgressBar();
-		_progressBar.setIndeterminate(true);
-		_progressBar.setVisible(false);
-		layer.add(_progressBar, BorderLayout.CENTER, 1);
+		layer.add(new JScrollPane(gsTable), 0);
+		progressBar = new JProgressBar();
+		progressBar.setIndeterminate(true);
+		progressBar.setVisible(false);
+		layer.add(progressBar, BorderLayout.CENTER, 1);
 		//layer.setV
 		getFrame().add(layer, cons);
 
@@ -149,11 +149,11 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 	public void load()
 	{
 
-		SwingUtilities.invokeLater(() -> _progressBar.setVisible(true));
+		SwingUtilities.invokeLater(() -> progressBar.setVisible(true));
 
 		super.load();
 
-		SwingUtilities.invokeLater(() -> _progressBar.setVisible(false));
+		SwingUtilities.invokeLater(() -> progressBar.setVisible(false));
 	}
 
 	/**
@@ -196,7 +196,7 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 					System.exit(1);
 				}
 				// reset
-				_dtm.setRowCount(0);
+				dtm.setRowCount(0);
 
 				for (final int id : GameServerTable.getInstance().getRegisteredGameServers().keySet())
 				{
@@ -223,7 +223,7 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 							}
 						}
 					});
-					_dtm.addRow(new Object[]{id, name, button});
+					dtm.addRow(new Object[]{id, name, button});
 				}
 			});
 		}
@@ -276,7 +276,7 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 	 */
 	public JFrame getFrame()
 	{
-		return _frame;
+		return frame;
 	}
 
 	class ButtonCellRenderer implements TableCellRenderer
@@ -300,26 +300,26 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 	 */
 	class JTableButtonMouseListener implements MouseListener
 	{
-		private final JTable _table;
+		private final JTable table;
 
 		public JTableButtonMouseListener(JTable table)
 		{
-			_table = table;
+			this.table = table;
 		}
 
 		private void forwardEvent(MouseEvent e)
 		{
-			TableColumnModel columnModel = _table.getColumnModel();
+			TableColumnModel columnModel = table.getColumnModel();
 			int column = columnModel.getColumnIndexAtX(e.getX());
-			int row = e.getY() / _table.getRowHeight();
+			int row = e.getY() / table.getRowHeight();
 			Object value;
 
-			if (row >= _table.getRowCount() || row < 0 || column >= _table.getColumnCount() || column < 0)
+			if (row >= table.getRowCount() || row < 0 || column >= table.getColumnCount() || column < 0)
 			{
 				return;
 			}
 
-			value = _table.getValueAt(row, column);
+			value = table.getValueAt(row, column);
 
 			if (value instanceof JButton)
 			{
@@ -328,7 +328,7 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 				{
 					b.getModel().setPressed(true);
 					b.getModel().setArmed(true);
-					_table.repaint();
+					table.repaint();
 				}
 				else if (e.getID() == MouseEvent.MOUSE_RELEASED)
 				{

@@ -39,7 +39,7 @@ public class BattleSoldier extends L2AttackableAIScript
 			{-113600, 237167, -3045} //4
 	};
 
-	private static List<L2NpcWalkerNode> _route = new ArrayList<L2NpcWalkerNode>();
+	private static List<L2NpcWalkerNode> route = new ArrayList<L2NpcWalkerNode>();
 
 	public BattleSoldier(int id, String name, String descr)
 	{
@@ -51,7 +51,7 @@ public class BattleSoldier extends L2AttackableAIScript
 
 		for (int[] coord : WALK_ROUTE)
 		{
-			_route.add(new L2NpcWalkerNode(coord[0], coord[1], coord[2], 0, "", true));
+			route.add(new L2NpcWalkerNode(coord[0], coord[1], coord[2], 0, "", true));
 		}
 
 		addSpawn(BATTLE_SOLDIER, -115199, 237369, -3088, 0, true, 0);
@@ -76,15 +76,15 @@ public class BattleSoldier extends L2AttackableAIScript
 	@Override
 	public final String onSpawn(L2Npc npc)
 	{
-		L2NpcWalkerAI _battleSoldierAI = new L2NpcWalkerAI(npc);
+		L2NpcWalkerAI battleSoldierAI = new L2NpcWalkerAI(npc);
 
-		npc.setAI(_battleSoldierAI);
+		npc.setAI(battleSoldierAI);
 
 		npc.setIsInvul(true);
 
-		_battleSoldierAI.initializeRoute(_route, null);
+		battleSoldierAI.initializeRoute(route, null);
 
-		_battleSoldierAI.walkToLocation();
+		battleSoldierAI.walkToLocation();
 
 		return super.onSpawn(npc);
 	}

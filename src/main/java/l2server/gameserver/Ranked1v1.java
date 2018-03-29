@@ -34,7 +34,7 @@ public class Ranked1v1
     public static final int timeEach = 2;
     public static Vector<L2PcInstance> players = new Vector<>();
     public static Map<L2PcInstance, Long> fighters = new HashMap<L2PcInstance, Long>();
-    public  static Vector<Integer> _fight = new Vector<>();
+    public  static Vector<Integer> fight = new Vector<>();
     public  ScheduledFuture<?> t;
 
     public void checkRegistered()
@@ -520,12 +520,12 @@ return;
 
     public static Ranked1v1 getInstance()
     {
-        return SingletonHolder._instance;
+        return SingletonHolder.instance;
     }
 
     private static class SingletonHolder
     {
-        protected static final Ranked1v1 _instance = new Ranked1v1();
+        protected static final Ranked1v1 instance = new Ranked1v1();
     }
 
     protected class Event implements Runnable

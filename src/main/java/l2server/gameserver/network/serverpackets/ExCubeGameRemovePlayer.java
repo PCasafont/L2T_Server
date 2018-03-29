@@ -27,8 +27,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExCubeGameRemovePlayer extends L2GameServerPacket
 {
-	L2PcInstance _player;
-	boolean _isRedTeam;
+	L2PcInstance player;
+	boolean isRedTeam;
 
 	/**
 	 * Remove Player from Minigame Waiting List
@@ -38,8 +38,8 @@ public class ExCubeGameRemovePlayer extends L2GameServerPacket
 	 */
 	public ExCubeGameRemovePlayer(L2PcInstance player, boolean isRedTeam)
 	{
-		_player = player;
-		_isRedTeam = isRedTeam;
+		this.player = player;
+		this.isRedTeam = isRedTeam;
 	}
 
 	/* (non-Javadoc)
@@ -50,7 +50,7 @@ public class ExCubeGameRemovePlayer extends L2GameServerPacket
 	{
 		writeD(0xffffffff);
 
-		writeD(_isRedTeam ? 0x01 : 0x00);
-		writeD(_player.getObjectId());
+		writeD(isRedTeam ? 0x01 : 0x00);
+		writeD(player.getObjectId());
 	}
 }

@@ -25,24 +25,24 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ShowTownMap extends L2GameServerPacket
 {
-	private String _texture;
-	private int _x;
-	private int _y;
+	private String texture;
+	private int x;
+	private int y;
 
 	/**
 	 */
 	public ShowTownMap(String texture, int x, int y)
 	{
-		_texture = texture;
-		_x = x;
-		_y = y;
+		this.texture = texture;
+		this.x = x;
+		this.y = y;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(_texture);
-		writeD(_x);
-		writeD(_y);
+		writeS(texture);
+		writeD(x);
+		writeD(y);
 	}
 }

@@ -24,7 +24,7 @@ import java.util.Hashtable;
  */
 public class ScriptEngine
 {
-	protected EngineInterface _utils = FaenorInterface.getInstance();
+	protected EngineInterface utils = FaenorInterface.getInstance();
 	public static final Hashtable<String, ParserFactory> parserFactories = new Hashtable<>();
 
 	protected static Parser createParser(String name) throws ParserNotCreatedException

@@ -76,7 +76,7 @@ public class AdminSpawn implements IAdminCommandHandler
 			"admin_spawn_debug_print",
 			"admin_spawn_debug_print_menu"
 	};
-	public static Logger _log = Logger.getLogger(AdminSpawn.class.getName());
+	public static Logger log = Logger.getLogger(AdminSpawn.class.getName());
 
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
@@ -336,14 +336,14 @@ public class AdminSpawn implements IAdminCommandHandler
 		{
 			default:
 			case 0:
-				_log.info("('',1," + i + "," + x + "," + y + "," + z + ",0,0," + h + ",60,0,0),");
+				log.info("('',1," + i + "," + x + "," + y + "," + z + ",0,0," + h + ",60,0,0),");
 				break;
 			case 1:
-				_log.info("<spawn npcId=\"" + i + "\" x=\"" + x + "\" y=\"" + y + "\" z=\"" + z + "\" heading=\"" + h +
+				log.info("<spawn npcId=\"" + i + "\" x=\"" + x + "\" y=\"" + y + "\" z=\"" + z + "\" heading=\"" + h +
 						"\" respawn=\"0\" />");
 				break;
 			case 2:
-				_log.info("{ " + i + ", " + x + ", " + y + ", " + z + ", " + h + " },");
+				log.info("{ " + i + ", " + x + ", " + y + ", " + z + ", " + h + " },");
 				break;
 		}
 	}

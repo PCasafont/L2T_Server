@@ -36,9 +36,9 @@ public final class L2ArtefactInstance extends L2Npc
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR>
 	 * <BR>
-	 * <li>Call the L2Character constructor to set the _template of the
+	 * <li>Call the L2Character constructor to set the template of the
 	 * L2ArtefactInstance (copy skills from template to object and link
-	 * _calculators to NPC_STD_CALCULATOR)</li> <li>Set the name of the
+	 * calculators to NPC_STD_CALCULATOR)</li> <li>Set the name of the
 	 * L2ArtefactInstance</li> <li>Create a RandomAnimation Task that will be
 	 * launched after the calculated delay if the server allow it</li><BR>
 	 * <BR>

@@ -28,11 +28,11 @@ import java.util.logging.Level;
  */
 public class PcRefund extends ItemContainer
 {
-	private L2PcInstance _owner;
+	private L2PcInstance owner;
 
 	public PcRefund(L2PcInstance owner)
 	{
-		_owner = owner;
+		this.owner = owner;
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class PcRefund extends ItemContainer
 	@Override
 	public L2PcInstance getOwner()
 	{
-		return _owner;
+		return owner;
 	}
 
 	@Override
@@ -62,9 +62,9 @@ public class PcRefund extends ItemContainer
 			if (getSize() > 12)
 			{
 				L2ItemInstance removedItem = null;
-				synchronized (_items)
+				synchronized (items)
 				{
-					removedItem = _items.remove(0);
+					removedItem = items.remove(0);
 				}
 
 				if (removedItem != null)
@@ -90,7 +90,7 @@ public class PcRefund extends ItemContainer
 	{
 		try
 		{
-			for (L2ItemInstance item : _items.values())
+			for (L2ItemInstance item : items.values())
 			{
 				if (item != null)
 				{
@@ -103,7 +103,7 @@ public class PcRefund extends ItemContainer
 		{
 			Log.log(Level.SEVERE, "deleteMe()", e);
 		}
-		_items.clear();
+		items.clear();
 	}
 
 	@Override

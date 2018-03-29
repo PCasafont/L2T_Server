@@ -22,193 +22,193 @@ package l2server.gameserver.model;
  */
 public class L2PetLevelData
 {
-	private int _ownerExpTaken;
-	private long _petMaxExp;
-	private int _petMaxHP;
-	private int _petMaxMP;
-	private int _petPAtk;
-	private int _petPDef;
-	private int _petMAtk;
-	private int _petMDef;
-	private int _petMaxFeed;
-	private int _petFeedBattle;
-	private int _petFeedNormal;
-	private int _petRegenHP;
-	private int _petRegenMP;
-	private short _petSoulShot;
-	private short _petSpiritShot;
+	private int ownerExpTaken;
+	private long petMaxExp;
+	private int petMaxHP;
+	private int petMaxMP;
+	private int petPAtk;
+	private int petPDef;
+	private int petMAtk;
+	private int petMDef;
+	private int petMaxFeed;
+	private int petFeedBattle;
+	private int petFeedNormal;
+	private int petRegenHP;
+	private int petRegenMP;
+	private short petSoulShot;
+	private short petSpiritShot;
 
 	//  Max Exp
 	public long getPetMaxExp()
 	{
-		return _petMaxExp;
+		return petMaxExp;
 	}
 
 	public void setPetMaxExp(long pPetMaxExp)
 	{
-		_petMaxExp = pPetMaxExp;
+		petMaxExp = pPetMaxExp;
 	}
 
 	public int getOwnerExpTaken()
 	{
-		return _ownerExpTaken;
+		return ownerExpTaken;
 	}
 
 	public void setOwnerExpTaken(int pOwnerExpTaken)
 	{
-		_ownerExpTaken = pOwnerExpTaken;
+		ownerExpTaken = pOwnerExpTaken;
 	}
 
 	//  Max HP
 	public int getPetMaxHP()
 	{
-		return _petMaxHP;
+		return petMaxHP;
 	}
 
 	public void setPetMaxHP(int pPetMaxHP)
 	{
-		_petMaxHP = pPetMaxHP;
+		petMaxHP = pPetMaxHP;
 	}
 
 	//  Max Mp
 	public int getPetMaxMP()
 	{
-		return _petMaxMP;
+		return petMaxMP;
 	}
 
 	public void setPetMaxMP(int pPetMaxMP)
 	{
-		_petMaxMP = pPetMaxMP;
+		petMaxMP = pPetMaxMP;
 	}
 
 	//  PAtk
 	public int getPetPAtk()
 	{
-		return _petPAtk;
+		return petPAtk;
 	}
 
 	public void setPetPAtk(int pPetPAtk)
 	{
-		_petPAtk = pPetPAtk;
+		petPAtk = pPetPAtk;
 	}
 
 	//  PDef
 	public int getPetPDef()
 	{
-		return _petPDef;
+		return petPDef;
 	}
 
 	public void setPetPDef(int pPetPDef)
 	{
-		_petPDef = pPetPDef;
+		petPDef = pPetPDef;
 	}
 
 	//  MAtk
 	public int getPetMAtk()
 	{
-		return _petMAtk;
+		return petMAtk;
 	}
 
 	public void setPetMAtk(int pPetMAtk)
 	{
-		_petMAtk = pPetMAtk;
+		petMAtk = pPetMAtk;
 	}
 
 	//  MDef
 	public int getPetMDef()
 	{
-		return _petMDef;
+		return petMDef;
 	}
 
 	public void setPetMDef(int pPetMDef)
 	{
-		_petMDef = pPetMDef;
+		petMDef = pPetMDef;
 	}
 
 	//  MaxFeed
 	public int getPetMaxFeed()
 	{
-		return _petMaxFeed;
+		return petMaxFeed;
 	}
 
 	public void setPetMaxFeed(int pPetMaxFeed)
 	{
-		_petMaxFeed = pPetMaxFeed;
+		petMaxFeed = pPetMaxFeed;
 	}
 
 	//  Normal Feed
 	public int getPetFeedNormal()
 	{
-		return _petFeedNormal;
+		return petFeedNormal;
 	}
 
 	public void setPetFeedNormal(int pPetFeedNormal)
 	{
-		_petFeedNormal = pPetFeedNormal;
+		petFeedNormal = pPetFeedNormal;
 	}
 
 	//  Battle Feed
 	public int getPetFeedBattle()
 	{
-		return _petFeedBattle;
+		return petFeedBattle;
 	}
 
 	public void setPetFeedBattle(int pPetFeedBattle)
 	{
-		_petFeedBattle = pPetFeedBattle;
+		petFeedBattle = pPetFeedBattle;
 	}
 
 	//  Regen HP
 	public int getPetRegenHP()
 	{
-		return _petRegenHP;
+		return petRegenHP;
 	}
 
 	public void setPetRegenHP(int pPetRegenHP)
 	{
-		_petRegenHP = pPetRegenHP;
+		petRegenHP = pPetRegenHP;
 	}
 
 	//  Regen MP
 	public int getPetRegenMP()
 	{
-		return _petRegenMP;
+		return petRegenMP;
 	}
 
 	public void setPetRegenMP(int pPetRegenMP)
 	{
-		_petRegenMP = pPetRegenMP;
+		petRegenMP = pPetRegenMP;
 	}
 
 	/**
-	 * @return the _petSoulShot
+	 * @return the petSoulShot
 	 */
 	public short getPetSoulShot()
 	{
-		return _petSoulShot;
+		return petSoulShot;
 	}
 
 	/**
-	 * @param soulShot the _petSoulShot to set
+	 * @param soulShot the petSoulShot to set
 	 */
 	public void setPetSoulShot(short soulShot)
 	{
-		_petSoulShot = soulShot;
+		petSoulShot = soulShot;
 	}
 
 	/**
-	 * @return the _petSpiritShot
+	 * @return the petSpiritShot
 	 */
 	public short getPetSpiritShot()
 	{
-		return _petSpiritShot;
+		return petSpiritShot;
 	}
 
 	/**
-	 * @param spiritShot the _petSpiritShot to set
+	 * @param spiritShot the petSpiritShot to set
 	 */
 	public void setPetSpiritShot(short spiritShot)
 	{
-		_petSpiritShot = spiritShot;
+		petSpiritShot = spiritShot;
 	}
 }

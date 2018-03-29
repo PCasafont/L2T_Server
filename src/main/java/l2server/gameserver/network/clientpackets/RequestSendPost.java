@@ -57,12 +57,12 @@ public final class RequestSendPost extends L2GameClientPacket
 	private static final int MESSAGE_FEE = 100;
 	private static final int MESSAGE_FEE_PER_SLOT = 1000; // 100 adena message fee + 1000 per each item slot
 
-	private String _receiver;
-	private boolean _isCod;
-	private String _subject;
-	private String _text;
-	private AttachmentItem _items[] = null;
-	private long _reqAdena;
+	private String receiver;
+	private boolean isCod;
+	private String subject;
+	private String text;
+	private AttachmentItem items[] = null;
+	private long reqAdena;
 
 	public RequestSendPost()
 	{
@@ -71,35 +71,35 @@ public final class RequestSendPost extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		_receiver = readS();
-		_isCod = readD() != 0;
-		_subject = readS();
-		_text = readS();
+		receiver = readS();
+		isCod = readD() != 0;
+		subject = readS();
+		text = readS();
 
 		int attachCount = readD();
 		if (attachCount < 0 || attachCount > Config.MAX_ITEM_IN_PACKET ||
-				attachCount * BATCH_LENGTH + 8 != _buf.remaining())
+				attachCount * BATCH_LENGTH + 8 != buf.remaining())
 		{
 			return;
 		}
 
 		if (attachCount > 0)
 		{
-			_items = new AttachmentItem[attachCount];
+			items = new AttachmentItem[attachCount];
 			for (int i = 0; i < attachCount; i++)
 			{
 				int objectId = readD();
 				long count = readQ();
 				if (objectId < 1 || count < 0)
 				{
-					_items = null;
+					items = null;
 					return;
 				}
-				_items[i] = new AttachmentItem(objectId, count);
+				items[i] = new AttachmentItem(objectId, count);
 			}
 		}
 
-		_reqAdena = readQ();
+		reqAdena = readQ();
 	}
 
 	@Override
@@ -118,9 +118,9 @@ public final class RequestSendPost extends L2GameClientPacket
 
 		if (!Config.ALLOW_ATTACHMENTS)
 		{
-			_items = null;
-			_isCod = false;
-			_reqAdena = 0;
+			items = null;
+			isCod = false;
+			reqAdena = 0;
 		}
 
 		if (!activeChar.getAccessLevel().allowTransaction())
@@ -129,7 +129,7 @@ public final class RequestSendPost extends L2GameClientPacket
 			return;
 		}
 
-		if (!activeChar.isInsideZone(ZONE_PEACE) && _items != null)
+		if (!activeChar.isInsideZone(ZONE_PEACE) && items != null)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_FORWARD_NOT_IN_PEACE_ZONE));
 			return;
@@ -153,52 +153,52 @@ public final class RequestSendPost extends L2GameClientPacket
 			return;
 		}
 
-		if (_receiver.length() > MAX_RECV_LENGTH)
+		if (receiver.length() > MAX_RECV_LENGTH)
 		{
 			activeChar
 					.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALLOWED_LENGTH_FOR_RECIPIENT_EXCEEDED));
 			return;
 		}
 
-		if (_subject.length() > MAX_SUBJ_LENGTH)
+		if (subject.length() > MAX_SUBJ_LENGTH)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALLOWED_LENGTH_FOR_TITLE_EXCEEDED));
 			return;
 		}
 
-		if (_text.length() > MAX_TEXT_LENGTH)
+		if (text.length() > MAX_TEXT_LENGTH)
 		{
 			// not found message for this
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALLOWED_LENGTH_FOR_TITLE_EXCEEDED));
 			return;
 		}
 
-		if (_items != null && _items.length > MAX_ATTACHMENTS)
+		if (items != null && items.length > MAX_ATTACHMENTS)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_SELECTION_POSSIBLE_UP_TO_8));
 			return;
 		}
 
-		if (_reqAdena < 0 || _reqAdena > MAX_ADENA)
+		if (reqAdena < 0 || reqAdena > MAX_ADENA)
 		{
 			return;
 		}
 
-		if (_isCod)
+		if (isCod)
 		{
-			if (_reqAdena == 0)
+			if (reqAdena == 0)
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PAYMENT_AMOUNT_NOT_ENTERED));
 				return;
 			}
-			if (_items == null || _items.length == 0)
+			if (items == null || items.length == 0)
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PAYMENT_REQUEST_NO_ITEM));
 				return;
 			}
 		}
 
-		final int receiverId = CharNameTable.getInstance().getIdByName(_receiver);
+		final int receiverId = CharNameTable.getInstance().getIdByName(receiver);
 		if (receiverId <= 0)
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.RECIPIENT_NOT_EXIST));
@@ -213,32 +213,32 @@ public final class RequestSendPost extends L2GameClientPacket
 
 		L2AccessLevel accessLevel;
 		final int level = CharNameTable.getInstance().getAccessLevelById(receiverId);
-		if (level == AccessLevels._masterAccessLevelNum)
+		if (level == AccessLevels.masterAccessLevelNum)
 		{
-			accessLevel = AccessLevels._masterAccessLevel;
+			accessLevel = AccessLevels.masterAccessLevel;
 		}
-		else if (level == AccessLevels._userAccessLevelNum)
+		else if (level == AccessLevels.userAccessLevelNum)
 		{
-			accessLevel = AccessLevels._userAccessLevel;
+			accessLevel = AccessLevels.userAccessLevel;
 		}
 		else
 		{
 			accessLevel = AccessLevels.getInstance().getAccessLevel(level);
 			if (accessLevel == null)
 			{
-				accessLevel = AccessLevels._userAccessLevel;
+				accessLevel = AccessLevels.userAccessLevel;
 			}
 		}
 
 		if (accessLevel.isGm() && !activeChar.getAccessLevel().isGm())
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_MAIL_GM_C1);
-			sm.addString(_receiver);
+			sm.addString(receiver);
 			activeChar.sendPacket(sm);
 			return;
 		}
 
-		if (activeChar.isInJail() && (Config.JAIL_DISABLE_TRANSACTION && _items != null || Config.JAIL_DISABLE_CHAT))
+		if (activeChar.isInJail() && (Config.JAIL_DISABLE_TRANSACTION && items != null || Config.JAIL_DISABLE_CHAT))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_FORWARD_NOT_IN_PEACE_ZONE));
 			return;
@@ -247,7 +247,7 @@ public final class RequestSendPost extends L2GameClientPacket
 		if (BlockList.isInBlockList(receiverId, activeChar.getObjectId()))
 		{
 			activeChar.sendPacket(
-					SystemMessage.getSystemMessage(SystemMessageId.C1_BLOCKED_YOU_CANNOT_MAIL).addString(_receiver));
+					SystemMessage.getSystemMessage(SystemMessageId.C1_BLOCKED_YOU_CANNOT_MAIL).addString(receiver));
 			return;
 		}
 
@@ -269,9 +269,9 @@ public final class RequestSendPost extends L2GameClientPacket
 			return;
 		}
 
-		Message msg = new Message(activeChar.getObjectId(), receiverId, _isCod, _subject, _text, _reqAdena);
+		Message msg = new Message(activeChar.getObjectId(), receiverId, isCod, subject, text, reqAdena);
 
-		Util.logToFile(activeChar.getName() + " is sending a Mail[" + msg.getId() + "] to " + _receiver + ".",
+		Util.logToFile(activeChar.getName() + " is sending a Mail[" + msg.getId() + "] to " + receiver + ".",
 				"Logs/Mails/" + activeChar.getName() + "_Sent_Mails", "txt", true, true);
 
 		if (removeItems(activeChar, msg))
@@ -287,9 +287,9 @@ public final class RequestSendPost extends L2GameClientPacket
 		long currentAdena = player.getAdena();
 		long fee = MESSAGE_FEE;
 
-		if (_items != null)
+		if (items != null)
 		{
-			for (AttachmentItem i : _items)
+			for (AttachmentItem i : items)
 			{
 				// Check validity of requested item
 				L2ItemInstance item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "attach");
@@ -321,7 +321,7 @@ public final class RequestSendPost extends L2GameClientPacket
 			return false;
 		}
 
-		if (_items == null)
+		if (items == null)
 		{
 			Util.logToFile("- Mail has no attachments. Sending.", "Logs/Mails/" + player.getName() + "_Sent_Mails",
 					"txt", true, false);
@@ -346,7 +346,7 @@ public final class RequestSendPost extends L2GameClientPacket
 
 		// Proceed to the transfer
 		InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
-		for (AttachmentItem i : _items)
+		for (AttachmentItem i : items)
 		{
 			// Check validity of requested item
 			L2ItemInstance oldItem = player.checkItemManipulation(i.getObjectId(), i.getCount(), "attach");
@@ -412,23 +412,23 @@ public final class RequestSendPost extends L2GameClientPacket
 
 	private static class AttachmentItem
 	{
-		private final int _objectId;
-		private final long _count;
+		private final int objectId;
+		private final long count;
 
 		public AttachmentItem(int id, long num)
 		{
-			_objectId = id;
-			_count = num;
+			objectId = id;
+			count = num;
 		}
 
 		public int getObjectId()
 		{
-			return _objectId;
+			return objectId;
 		}
 
 		public long getCount()
 		{
-			return _count;
+			return count;
 		}
 	}
 

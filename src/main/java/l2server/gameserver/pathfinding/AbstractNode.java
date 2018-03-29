@@ -17,32 +17,32 @@ package l2server.gameserver.pathfinding;
 
 public abstract class AbstractNode
 {
-	private AbstractNodeLoc _loc;
-	private AbstractNode _parent;
+	private AbstractNodeLoc loc;
+	private AbstractNode parent;
 
 	public AbstractNode(AbstractNodeLoc loc)
 	{
-		_loc = loc;
+		this.loc = loc;
 	}
 
 	public void setParent(AbstractNode p)
 	{
-		_parent = p;
+		parent = p;
 	}
 
 	public AbstractNode getParent()
 	{
-		return _parent;
+		return parent;
 	}
 
 	public AbstractNodeLoc getLoc()
 	{
-		return _loc;
+		return loc;
 	}
 
 	public void setLoc(AbstractNodeLoc l)
 	{
-		_loc = l;
+		loc = l;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public abstract class AbstractNode
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (_loc == null ? 0 : _loc.hashCode());
+		result = prime * result + (loc == null ? 0 : loc.hashCode());
 		return result;
 	}
 
@@ -76,14 +76,14 @@ public abstract class AbstractNode
 			return false;
 		}
 		final AbstractNode other = (AbstractNode) obj;
-		if (_loc == null)
+		if (loc == null)
 		{
-			if (other._loc != null)
+			if (other.loc != null)
 			{
 				return false;
 			}
 		}
-		else if (!_loc.equals(other._loc))
+		else if (!loc.equals(other.loc))
 		{
 			return false;
 		}

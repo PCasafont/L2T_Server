@@ -32,22 +32,22 @@ public class AskJoinAlly extends L2GameServerPacket
 {
 	//
 
-	private String _requestorName;
-	private int _requestorObjId;
+	private String requestorName;
+	private int requestorObjId;
 
 	/**
 	 *
 	 */
 	public AskJoinAlly(int requestorObjId, String requestorName)
 	{
-		_requestorName = requestorName;
-		_requestorObjId = requestorObjId;
+		this.requestorName = requestorName;
+		this.requestorObjId = requestorObjId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_requestorObjId);
-		writeS(_requestorName);
+		writeD(requestorObjId);
+		writeS(requestorName);
 	}
 }

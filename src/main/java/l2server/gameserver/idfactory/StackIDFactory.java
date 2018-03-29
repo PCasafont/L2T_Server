@@ -34,16 +34,16 @@ import java.util.logging.Level;
 public class StackIDFactory extends IdFactory
 {
 
-	private int _curOID;
-	private int _tempOID;
+	private int curOID;
+	private int tempOID;
 
-	private Stack<Integer> _freeOIDStack = new Stack<>();
+	private Stack<Integer> freeOIDStack = new Stack<>();
 
 	protected StackIDFactory()
 	{
 		super();
-		_curOID = FIRST_OID;
-		_tempOID = FIRST_OID;
+		curOID = FIRST_OID;
+		tempOID = FIRST_OID;
 
 		Connection con = null;
 		try
@@ -54,9 +54,9 @@ public class StackIDFactory extends IdFactory
 			int[] tmp_obj_ids = extractUsedObjectIDTable();
 			if (tmp_obj_ids.length > 0)
 			{
-				_curOID = tmp_obj_ids[tmp_obj_ids.length - 1];
+				curOID = tmp_obj_ids[tmp_obj_ids.length - 1];
 			}
-			Log.info("Max Id = " + _curOID);
+			Log.info("Max Id = " + curOID);
 
 			int N = tmp_obj_ids.length;
 			for (int idx = 0; idx < N; idx++)
@@ -64,9 +64,9 @@ public class StackIDFactory extends IdFactory
 				N = insertUntil(tmp_obj_ids, idx, N, con);
 			}
 
-			_curOID++;
-			Log.info("IdFactory: Next usable Object ID is: " + _curOID);
-			_initialized = true;
+			curOID++;
+			Log.info("IdFactory: Next usable Object ID is: " + curOID);
+			initialized = true;
 		}
 		catch (Exception e)
 		{
@@ -81,9 +81,9 @@ public class StackIDFactory extends IdFactory
 	private int insertUntil(int[] tmp_obj_ids, int idx, int N, Connection con) throws SQLException
 	{
 		int id = tmp_obj_ids[idx];
-		if (id == _tempOID)
+		if (id == tempOID)
 		{
-			_tempOID++;
+			tempOID++;
 			return N;
 		}
 		// check these IDs not present in DB
@@ -92,8 +92,8 @@ public class StackIDFactory extends IdFactory
 			for (String check : ID_CHECKS)
 			{
 				PreparedStatement ps = con.prepareStatement(check);
-				ps.setInt(1, _tempOID);
-				//ps.setInt(1, _curOID);
+				ps.setInt(1, tempOID);
+				//ps.setInt(1, curOID);
 				ps.setInt(2, id);
 				ResultSet rs = ps.executeQuery();
 				if (rs.next())
@@ -107,43 +107,43 @@ public class StackIDFactory extends IdFactory
 			}
 		}
 
-		//int hole = id - _curOID;
-		int hole = id - _tempOID;
+		//int hole = id - curOID;
+		int hole = id - tempOID;
 		if (hole > N - idx)
 		{
 			hole = N - idx;
 		}
 		for (int i = 1; i <= hole; i++)
 		{
-			//log.info("Free ID added " + (_tempOID));
-			_freeOIDStack.push(_tempOID);
-			_tempOID++;
-			//_curOID++;
+			//log.info("Free ID added " + (tempOID));
+			freeOIDStack.push(tempOID);
+			tempOID++;
+			//curOID++;
 		}
 		if (hole < N - idx)
 		{
-			_tempOID++;
+			tempOID++;
 		}
 		return N - hole;
 	}
 
 	public static IdFactory getInstance()
 	{
-		return _instance;
+		return instance;
 	}
 
 	@Override
 	public synchronized int getNextId()
 	{
 		int id;
-		if (!_freeOIDStack.empty())
+		if (!freeOIDStack.empty())
 		{
-			id = _freeOIDStack.pop();
+			id = freeOIDStack.pop();
 		}
 		else
 		{
-			id = _curOID;
-			_curOID = _curOID + 1;
+			id = curOID;
+			curOID = curOID + 1;
 		}
 		return id;
 	}
@@ -154,12 +154,12 @@ public class StackIDFactory extends IdFactory
 	@Override
 	public synchronized void releaseId(int id)
 	{
-		_freeOIDStack.push(id);
+		freeOIDStack.push(id);
 	}
 
 	@Override
 	public int size()
 	{
-		return FREE_OBJECT_ID_SIZE - _curOID + FIRST_OID + _freeOIDStack.size();
+		return FREE_OBJECT_ID_SIZE - curOID + FIRST_OID + freeOIDStack.size();
 	}
 }

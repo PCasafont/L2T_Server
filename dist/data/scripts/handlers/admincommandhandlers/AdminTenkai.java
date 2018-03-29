@@ -57,8 +57,8 @@ import java.util.StringTokenizer;
  */
 public class AdminTenkai implements IAdminCommandHandler
 {
-	private static List<SpawnInfo> _deletedSpawns = new ArrayList<SpawnInfo>();
-	private static List<Integer> _mobIds = new ArrayList<Integer>();
+	private static List<SpawnInfo> deletedSpawns = new ArrayList<SpawnInfo>();
+	private static List<Integer> mobIds = new ArrayList<Integer>();
 
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_chess_start",
@@ -432,13 +432,13 @@ public class AdminTenkai implements IAdminCommandHandler
 					continue;
 				}
 
-				for (SpawnInfo deleted : _deletedSpawns)
+				for (SpawnInfo deleted : deletedSpawns)
 				{
 					if (!line.contains(
 							deleted.getId() + "," + deleted.getX() + "," + deleted.getY() + "," + deleted.getZ()))
 					{
 						writeOutput.println(line);
-						_deletedSpawns.remove(deleted);
+						deletedSpawns.remove(deleted);
 						Log.warning(
 								deleted.getId() + "," + deleted.getX() + "," + deleted.getY() + "," + deleted.getZ());
 						break;
@@ -456,9 +456,9 @@ public class AdminTenkai implements IAdminCommandHandler
 		}
 		
 		/*for (int id : mobIds)
-			_log.warning("" + id);*/
+			log.warning("" + id);*/
 
-		for (SpawnInfo parser : _deletedSpawns)
+		for (SpawnInfo parser : deletedSpawns)
 		{
 			Log.warning(parser.getId() + "," + parser.getX() + "," + parser.getY() + "," + parser.getZ() + ",0,0,");
 		}
@@ -474,9 +474,9 @@ public class AdminTenkai implements IAdminCommandHandler
 			{
 				L2Npc target = (L2Npc) obj;
 
-				if (!_mobIds.contains(target.getNpcId()))
+				if (!mobIds.contains(target.getNpcId()))
 				{
-					_mobIds.add(target.getNpcId());
+					mobIds.add(target.getNpcId());
 				}
 
 				L2Spawn spawn = target.getSpawn();
@@ -486,7 +486,7 @@ public class AdminTenkai implements IAdminCommandHandler
 					continue;
 				}
 
-				_deletedSpawns.add(new SpawnInfo(target.getNpcId(), spawn.getX(), spawn.getY(), spawn.getZ()));
+				deletedSpawns.add(new SpawnInfo(target.getNpcId(), spawn.getX(), spawn.getY(), spawn.getZ()));
 
 				target.deleteMe();
 
@@ -506,14 +506,14 @@ public class AdminTenkai implements IAdminCommandHandler
 		{
 			L2Npc target = (L2Npc) obj;
 
-			if (!_mobIds.contains(target.getNpcId()))
+			if (!mobIds.contains(target.getNpcId()))
 			{
-				_mobIds.add(target.getNpcId());
+				mobIds.add(target.getNpcId());
 			}
 
 			L2Spawn spawn = target.getSpawn();
 
-			_deletedSpawns.add(new SpawnInfo(target.getNpcId(), spawn.getX(), spawn.getY(), spawn.getZ()));
+			deletedSpawns.add(new SpawnInfo(target.getNpcId(), spawn.getX(), spawn.getY(), spawn.getZ()));
 
 			target.deleteMe();
 
@@ -531,37 +531,37 @@ public class AdminTenkai implements IAdminCommandHandler
 
 	private class SpawnInfo
 	{
-		private int _id = 0;
-		private int _x = 0;
-		private int _y = 0;
-		private int _z = 0;
+		private int id;
+		private int x;
+		private int y;
+		private int z;
 
 		public SpawnInfo(int ID, int X, int Y, int Z)
 		{
-			_id = ID;
-			_x = X;
-			_y = Y;
-			_z = Z;
+			id = ID;
+			x = X;
+			y = Y;
+			z = Z;
 		}
 
 		private int getId()
 		{
-			return _id;
+			return id;
 		}
 
 		private int getX()
 		{
-			return _x;
+			return x;
 		}
 
 		private int getY()
 		{
-			return _y;
+			return y;
 		}
 
 		private int getZ()
 		{
-			return _z;
+			return z;
 		}
 	}
 
@@ -624,7 +624,7 @@ public class AdminTenkai implements IAdminCommandHandler
 			//<spawn npcId="80329" x="-185556" y="146669" z="-15314" heading="467" respawn="20" />
 			Log.warning("<spawn npcId=\"" + template1.NpcId + "\"  x=\"" + spawn.getX() + "\" y=\"" + spawn.getY() +
 					"\" z=\"" + spawn.getZ() + "\" heading=\"" + spawn.getHeading() + "\" respawn=\"20\" />");
-			//_log.warning(spawn.getX() + ", " + spawn.getY() + ", " + spawn.getZ() + ", " + spawn.getHeading());
+			//log.warning(spawn.getX() + ", " + spawn.getY() + ", " + spawn.getZ() + ", " + spawn.getHeading());
 		}
 		catch (Exception e)
 		{

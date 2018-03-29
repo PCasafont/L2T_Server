@@ -23,15 +23,15 @@ class Quest (JQuest) :
            if party.getMemberCount() != 2: return "only-two.htm"
            if not player.isNoble(): return "only-noble.htm"
            if player.isInOlympiadMode(): return "nooly.htm"
-           if player._inEventTvT: return "noevt.htm"
-           if player._inEventDM: return "noevt.htm"
-           if player._inEventCTF: return "noevt.htm"
+           if player.inEventTvT: return "noevt.htm"
+           if player.inEventDM: return "noevt.htm"
+           if player.inEventCTF: return "noevt.htm"
            assist = party.getPartyMembers()[1] # get the last player in party
            if not assist.isNoble(): return "only-noble.htm"
            if assist.isInOlympiadMode(): return "nooly.htm"
-           if assist._inEventTvT: return "noevt.htm"
-           if assist._inEventDM: return "noevt.htm"
-           if assist._inEventCTF: return "noevt.htm"
+           if assist.inEventTvT: return "noevt.htm"
+           if assist.inEventDM: return "noevt.htm"
+           if assist.inEventCTF: return "noevt.htm"
            if Event.getInstance().register(player, assist):
               return "registered.htm"
         elif event == "2":

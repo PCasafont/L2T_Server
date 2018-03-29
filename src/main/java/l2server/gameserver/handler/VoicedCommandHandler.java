@@ -28,16 +28,16 @@ import gnu.trove.TIntObjectHashMap;
 public class VoicedCommandHandler
 {
 
-	private TIntObjectHashMap<IVoicedCommandHandler> _datatable;
+	private TIntObjectHashMap<IVoicedCommandHandler> datatable;
 
 	public static VoicedCommandHandler getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private VoicedCommandHandler()
 	{
-		_datatable = new TIntObjectHashMap<>();
+		datatable = new TIntObjectHashMap<>();
 	}
 
 	public void registerVoicedCommandHandler(IVoicedCommandHandler handler)
@@ -49,7 +49,7 @@ public class VoicedCommandHandler
 			{
 				Log.fine("Adding handler for command " + id);
 			}
-			_datatable.put(id.hashCode(), handler);
+			datatable.put(id.hashCode(), handler);
 		}
 	}
 
@@ -62,9 +62,9 @@ public class VoicedCommandHandler
 		}
 		if (Config.DEBUG)
 		{
-			Log.fine("getting handler for command: " + command + " -> " + (_datatable.get(command.hashCode()) != null));
+			Log.fine("getting handler for command: " + command + " -> " + (datatable.get(command.hashCode()) != null));
 		}
-		return _datatable.get(command.hashCode());
+		return datatable.get(command.hashCode());
 	}
 
 	/**
@@ -72,12 +72,12 @@ public class VoicedCommandHandler
 	 */
 	public int size()
 	{
-		return _datatable.size();
+		return datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final VoicedCommandHandler _instance = new VoicedCommandHandler();
+		protected static final VoicedCommandHandler instance = new VoicedCommandHandler();
 	}
 }

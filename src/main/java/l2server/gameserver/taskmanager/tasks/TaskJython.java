@@ -27,7 +27,7 @@ import org.python.util.PythonInterpreter;
 public class TaskJython extends Task
 {
 	public static final String NAME = "jython";
-	private final PythonInterpreter _python = new PythonInterpreter();
+	private final PythonInterpreter python = new PythonInterpreter();
 
 	/**
 	 * @see l2server.gameserver.taskmanager.Task#getName()
@@ -44,8 +44,8 @@ public class TaskJython extends Task
 	@Override
 	public void onTimeElapsed(ExecutedTask task)
 	{
-		_python.cleanup();
-		_python.exec("import sys");
-		_python.execfile(Config.DATA_FOLDER + "scripts/cron/" + task.getParams()[2]);
+		python.cleanup();
+		python.exec("import sys");
+		python.execfile(Config.DATA_FOLDER + "scripts/cron/" + task.getParams()[2]);
 	}
 }

@@ -31,25 +31,25 @@ import java.sql.ResultSet;
  */
 public class L2StatueInstance extends L2Npc
 {
-	private int _recordId;
-	private int _socialId;
-	private int _socialFrame;
-	private L2PcTemplate _template;
-	private int _sex;
-	private int _hairStyle;
-	private int _hairColor;
-	private int _face;
-	private int _necklace = 0;
-	private int _head = 0;
-	private int _rHand = 0;
-	private int _lHand = 0;
-	private int _gloves = 0;
-	private int _chest = 0;
-	private int _pants = 0;
-	private int _boots = 0;
-	private int _cloak = 0;
-	private int _hair1 = 0;
-	private int _hair2 = 0;
+	private int recordId;
+	private int socialId;
+	private int socialFrame;
+	private L2PcTemplate template;
+	private int sex;
+	private int hairStyle;
+	private int hairColor;
+	private int face;
+	private int necklace = 0;
+	private int head = 0;
+	private int rHand = 0;
+	private int lHand = 0;
+	private int gloves = 0;
+	private int chest = 0;
+	private int pants = 0;
+	private int boots = 0;
+	private int cloak = 0;
+	private int hair1 = 0;
+	private int hair2 = 0;
 
 	/*
 	 * To create 1 instance:
@@ -59,16 +59,16 @@ public class L2StatueInstance extends L2Npc
 		ss.set("type", "L2Npc");
 		ss.set("name", "");
 		L2NpcTemplate t = new L2NpcTemplate(ss);
-		new L2StatueInstance(IdFactory.getInstance().getNextId(), t, 0, _charObjId, _x, _y, _z, 0);
+		new L2StatueInstance(IdFactory.getInstance().getNextId(), t, 0, charObjId, x, y, z, 0);
 	 */
 
 	public L2StatueInstance(int objectId, L2NpcTemplate template, int recordId, int playerObjId, int x, int y, int z, int heading)
 	{
 		super(objectId, template);
 
-		_recordId = recordId;
-		_socialId = 0;
-		_socialFrame = 0;
+		this.recordId = recordId;
+		socialId = 0;
+		socialFrame = 0;
 
 		setInstanceType(InstanceType.L2StatueInstance);
 
@@ -85,11 +85,11 @@ public class L2StatueInstance extends L2Npc
 			if (rs.next())
 			{
 				setName(rs.getString("char_name"));
-				_template = CharTemplateTable.getInstance().getTemplate(rs.getInt("templateId"));
-				_sex = rs.getInt("sex");
-				_hairStyle = rs.getInt("hairStyle");
-				_hairColor = rs.getInt("hairColor");
-				_face = rs.getInt("face");
+                this.template = CharTemplateTable.getInstance().getTemplate(rs.getInt("templateId"));
+				sex = rs.getInt("sex");
+				hairStyle = rs.getInt("hairStyle");
+				hairColor = rs.getInt("hairColor");
+				face = rs.getInt("face");
 			}
 			rs.close();
 			st.close();
@@ -102,37 +102,37 @@ public class L2StatueInstance extends L2Npc
 				switch (rs.getInt("loc_data"))
 				{
 					case Inventory.PAPERDOLL_NECK:
-						_necklace = rs.getInt("item_id");
+						necklace = rs.getInt("item_id");
 						break;
 					case Inventory.PAPERDOLL_HEAD:
-						_head = rs.getInt("item_id");
+						head = rs.getInt("item_id");
 						break;
 					case Inventory.PAPERDOLL_RHAND:
-						_rHand = rs.getInt("item_id");
+						rHand = rs.getInt("item_id");
 						break;
 					case Inventory.PAPERDOLL_LHAND:
-						_lHand = rs.getInt("item_id");
+						lHand = rs.getInt("item_id");
 						break;
 					case Inventory.PAPERDOLL_GLOVES:
-						_gloves = rs.getInt("item_id");
+						gloves = rs.getInt("item_id");
 						break;
 					case Inventory.PAPERDOLL_CHEST:
-						_chest = rs.getInt("item_id");
+						chest = rs.getInt("item_id");
 						break;
 					case Inventory.PAPERDOLL_LEGS:
-						_pants = rs.getInt("item_id");
+						pants = rs.getInt("item_id");
 						break;
 					case Inventory.PAPERDOLL_FEET:
-						_boots = rs.getInt("item_id");
+						boots = rs.getInt("item_id");
 						break;
 					case Inventory.PAPERDOLL_CLOAK:
-						_cloak = rs.getInt("item_id");
+						cloak = rs.getInt("item_id");
 						break;
 					case Inventory.PAPERDOLL_HAIR:
-						_hair1 = rs.getInt("item_id");
+						hair1 = rs.getInt("item_id");
 						break;
 					case Inventory.PAPERDOLL_HAIR2:
-						_hair2 = rs.getInt("item_id");
+						hair2 = rs.getInt("item_id");
 						break;
 				}
 			}
@@ -155,7 +155,7 @@ public class L2StatueInstance extends L2Npc
 			}
 		}
 
-		if (_template != null)
+		if (template != null)
 		{
 			setXYZ(x, y, z);
 			setHeading(heading);
@@ -169,101 +169,101 @@ public class L2StatueInstance extends L2Npc
 
 	public int getRecordId()
 	{
-		return _recordId;
+		return recordId;
 	}
 
 	public int getSocialId()
 	{
-		return _socialId;
+		return socialId;
 	}
 
 	public int getSocialFrame()
 	{
-		return _socialFrame;
+		return socialFrame;
 	}
 
 	public int getClassId()
 	{
-		return _template.startingClassId;
+		return template.startingClassId;
 	}
 
 	public int getRace()
 	{
-		return _template.race.ordinal();
+		return template.race.ordinal();
 	}
 
 	public int getSex()
 	{
-		return _sex;
+		return sex;
 	}
 
 	public int getHairStyle()
 	{
-		return _hairStyle;
+		return hairStyle;
 	}
 
 	public int getHairColor()
 	{
-		return _hairColor;
+		return hairColor;
 	}
 
 	public int getFace()
 	{
-		return _face;
+		return face;
 	}
 
 	public int getNecklace()
 	{
-		return _necklace;
+		return necklace;
 	}
 
 	public int getHead()
 	{
-		return _head;
+		return head;
 	}
 
 	public int getRHand()
 	{
-		return _rHand;
+		return rHand;
 	}
 
 	public int getLHand()
 	{
-		return _lHand;
+		return lHand;
 	}
 
 	public int getGloves()
 	{
-		return _gloves;
+		return gloves;
 	}
 
 	public int getChest()
 	{
-		return _chest;
+		return chest;
 	}
 
 	public int getPants()
 	{
-		return _pants;
+		return pants;
 	}
 
 	public int getBoots()
 	{
-		return _boots;
+		return boots;
 	}
 
 	public int getCloak()
 	{
-		return _cloak;
+		return cloak;
 	}
 
 	public int getHair1()
 	{
-		return _hair1;
+		return hair1;
 	}
 
 	public int getHair2()
 	{
-		return _hair2;
+		return hair2;
 	}
 }

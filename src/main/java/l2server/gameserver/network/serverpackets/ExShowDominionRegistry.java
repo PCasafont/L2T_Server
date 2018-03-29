@@ -5,44 +5,44 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExShowDominionRegistry extends L2GameServerPacket
 {
-	private int _currentTime;
-	private String _territoryOwner;
-	private String _ownerAlliance;
-	private int _territoryCount;
-	private int _territoryId;
-	private int _mercRequest;
-	private int _clanRequest;
-	private String _ownerClan;
-	private int _warTime;
+	private int currentTime;
+	private String territoryOwner;
+	private String ownerAlliance;
+	private int territoryCount;
+	private int territoryId;
+	private int mercRequest;
+	private int clanRequest;
+	private String ownerClan;
+	private int warTime;
 
 	public ExShowDominionRegistry(int currentTime, String territoryOwner, String ownerAlliance, int territoryCount, int territoryId, int mercRequest, int clanRequest, String ownerClan, int warTime)
 	{
-		_currentTime = currentTime;
-		_territoryOwner = territoryOwner;
-		_ownerAlliance = ownerAlliance;
-		_territoryCount = territoryCount;
-		_territoryId = territoryId;
-		_mercRequest = mercRequest;
-		_clanRequest = clanRequest;
-		_ownerClan = ownerClan;
-		_warTime = warTime;
+		this.currentTime = currentTime;
+		this.territoryOwner = territoryOwner;
+		this.ownerAlliance = ownerAlliance;
+		this.territoryCount = territoryCount;
+		this.territoryId = territoryId;
+		this.mercRequest = mercRequest;
+		this.clanRequest = clanRequest;
+		this.ownerClan = ownerClan;
+		this.warTime = warTime;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeD(_currentTime);
-		writeS(_territoryOwner);
-		writeS(_ownerAlliance);
+		writeD(currentTime);
+		writeS(territoryOwner);
+		writeS(ownerAlliance);
 		writeD(0x00); // unk2
 		writeD(0x00); // unk3
-		writeD(_territoryCount);
-		writeD(_territoryId);
-		writeD(_mercRequest);
+		writeD(territoryCount);
+		writeD(territoryId);
+		writeD(mercRequest);
 		writeD(0x00); // unk1
-		writeD(_clanRequest);
-		writeS(_ownerClan);
-		writeD(_warTime);
+		writeD(clanRequest);
+		writeS(ownerClan);
+		writeD(warTime);
 	}
 }
 

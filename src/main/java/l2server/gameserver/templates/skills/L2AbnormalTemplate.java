@@ -31,7 +31,7 @@ import java.util.logging.Logger;
  */
 public class L2AbnormalTemplate
 {
-	static Logger _log = Logger.getLogger(L2AbnormalTemplate.class.getName());
+	static Logger log = Logger.getLogger(L2AbnormalTemplate.class.getName());
 
 	public final Condition applayCond;
 	public final int counter;

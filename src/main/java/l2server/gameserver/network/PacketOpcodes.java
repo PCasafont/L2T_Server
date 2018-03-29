@@ -29,7 +29,7 @@ public class PacketOpcodes
 	public static final Map<Class<?>, byte[]> ClientPackets = new HashMap<>();
 	public static final Map<Class<?>, byte[]> ServerPackets = new HashMap<>();
 
-	private static long _lastModified = 0;
+	private static long lastModified = 0;
 
 	static
 	{
@@ -48,7 +48,7 @@ public class PacketOpcodes
 			public void run()
 			{
 				File f = new File(Config.DATAPACK_ROOT, PROTOCOL_FILE);
-				if (!f.isDirectory() && f.lastModified() > _lastModified)
+				if (!f.isDirectory() && f.lastModified() > lastModified)
 				{
 					load();
 					//Log.info("Updated the protocols from the file " + f.getName());
@@ -99,7 +99,7 @@ public class PacketOpcodes
 		Log.info("PacketOpcodes: Loaded " + ClientPackets.size() + " Client Packets and " + ServerPackets.size() +
 				" Server Packets.");
 
-		_lastModified = file.lastModified();
+		lastModified = file.lastModified();
 
 		/*File dir = new File(Config.DATAPACK_ROOT, "java/l2server/gameserver/network/clientpackets");
 		File[] files = dir.listFiles();

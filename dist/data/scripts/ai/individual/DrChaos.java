@@ -37,14 +37,14 @@ public class DrChaos extends Quest
 	private static final int DOCTER_CHAOS = 32033;
 	private static final int STRANGE_MACHINE = 32032;
 	private static final int CHAOS_GOLEM = 25512;
-	private static boolean _IsGolemSpawned;
+	private static boolean IsGolemSpawned;
 
 	public DrChaos(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
 
 		addFirstTalkId(32033);
-		_IsGolemSpawned = false;
+		IsGolemSpawned = false;
 	}
 
 	public L2Npc findTemplate(int npcId)
@@ -96,10 +96,10 @@ public class DrChaos extends Quest
 		{
 			player.teleToLocation(94832, -112624, -3304);
 			npc.teleToLocation(-113091, -243942, -15536);
-			if (!_IsGolemSpawned)
+			if (!IsGolemSpawned)
 			{
 				L2Npc golem = addSpawn(CHAOS_GOLEM, 94640, -112496, -3336, 0, false, 0);
-				_IsGolemSpawned = true;
+				IsGolemSpawned = true;
 				startQuestTimer("6", 1000, golem, player);
 				player.sendPacket(new PlaySound(1, "Rm03_A", 0, 0, 0, 0, 0));
 			}

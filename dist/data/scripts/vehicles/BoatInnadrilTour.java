@@ -31,7 +31,7 @@ import java.util.logging.Logger;
  */
 public class BoatInnadrilTour implements Runnable
 {
-	private static final Logger _log = Logger.getLogger(BoatInnadrilTour.class.getName());
+	private static final Logger log = Logger.getLogger(BoatInnadrilTour.class.getName());
 
 	// Time: 1867s
 	private static final VehiclePathPoint[] TOUR = {
@@ -71,8 +71,8 @@ public class BoatInnadrilTour implements Runnable
 
 	private static final VehiclePathPoint DOCK = TOUR[TOUR.length - 1];
 
-	private final L2BoatInstance _boat;
-	private int _cycle = 0;
+	private final L2BoatInstance boat;
+	private int cycle = 0;
 
 	private final CreatureSay ARRIVED_AT_INNADRIL;
 	private final CreatureSay LEAVE_INNADRIL5;
@@ -90,7 +90,7 @@ public class BoatInnadrilTour implements Runnable
 
 	public BoatInnadrilTour(L2BoatInstance boat)
 	{
-		_boat = boat;
+		this.boat = boat;
 
 		ARRIVED_AT_INNADRIL = new CreatureSay(0, Say2.BOAT, 801, 998);
 		LEAVE_INNADRIL5 = new CreatureSay(0, Say2.BOAT, 801, 999);
@@ -105,7 +105,7 @@ public class BoatInnadrilTour implements Runnable
 		ARRIVAL1 = new CreatureSay(0, Say2.BOAT, 801, 1175);
 
 		INNADRIL_SOUND =
-				new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat.getObjectId(), DOCK.x, DOCK.y, DOCK.z);
+				new PlaySound(0, "itemsound.ship_arrival_departure", 1, boat.getObjectId(), DOCK.x, DOCK.y, DOCK.z);
 	}
 
 	@Override
@@ -113,7 +113,7 @@ public class BoatInnadrilTour implements Runnable
 	{
 		try
 		{
-			switch (_cycle)
+			switch (cycle)
 			{
 				case 0:
 					BoatManager.getInstance().broadcastPacket(DOCK, DOCK, LEAVE_INNADRIL5);
@@ -129,8 +129,8 @@ public class BoatInnadrilTour implements Runnable
 					break;
 				case 3:
 					BoatManager.getInstance().broadcastPackets(DOCK, DOCK, LEAVING_INNADRIL, INNADRIL_SOUND);
-					_boat.payForRide(0, 1, 107092, 219098, -3952);
-					_boat.executePath(TOUR);
+					boat.payForRide(0, 1, 107092, 219098, -3952);
+					boat.executePath(TOUR);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 650000);
 					break;
 				case 4:
@@ -157,15 +157,15 @@ public class BoatInnadrilTour implements Runnable
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 300000);
 					break;
 			}
-			_cycle++;
-			if (_cycle > 9)
+			cycle++;
+			if (cycle > 9)
 			{
-				_cycle = 0;
+				cycle = 0;
 			}
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, e.getMessage());
+			log.log(Level.WARNING, e.getMessage());
 		}
 	}
 

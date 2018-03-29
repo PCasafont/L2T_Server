@@ -29,8 +29,8 @@ import l2server.gameserver.model.zone.L2SpawnZone;
  */
 public class L2CastleZone extends L2SpawnZone
 {
-	private int _castleId;
-	private Castle _castle = null;
+	private int castleId;
+	private Castle castle = null;
 
 	public L2CastleZone(int id)
 	{
@@ -42,7 +42,7 @@ public class L2CastleZone extends L2SpawnZone
 	{
 		if (name.equals("castleId"))
 		{
-			_castleId = Integer.parseInt(value);
+			castleId = Integer.parseInt(value);
 		}
 		else
 		{
@@ -85,7 +85,7 @@ public class L2CastleZone extends L2SpawnZone
 	 */
 	public void banishForeigners(int owningClanId)
 	{
-		for (L2Character temp : _characterList.values())
+		for (L2Character temp : characterList.values())
 		{
 			if (!(temp instanceof L2PcInstance))
 			{
@@ -108,15 +108,15 @@ public class L2CastleZone extends L2SpawnZone
 
 	public int getCastleId()
 	{
-		return _castleId;
+		return castleId;
 	}
 
 	private Castle getCastle()
 	{
-		if (_castle == null)
+		if (castle == null)
 		{
-			_castle = CastleManager.getInstance().getCastleById(_castleId);
+			castle = CastleManager.getInstance().getCastleById(castleId);
 		}
-		return _castle;
+		return castle;
 	}
 }

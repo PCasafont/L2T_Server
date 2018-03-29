@@ -22,22 +22,22 @@ import java.util.ArrayList;
  */
 public class L2ExtractableSkill
 {
-	private final long _hash;
-	private final ArrayList<L2ExtractableProductItem> _product;
+	private final long hash;
+	private final ArrayList<L2ExtractableProductItem> product;
 
 	public L2ExtractableSkill(long hash, ArrayList<L2ExtractableProductItem> products)
 	{
-		_hash = hash;
-		_product = products;
+		this.hash = hash;
+		product = products;
 	}
 
 	public long getSkillHash()
 	{
-		return _hash;
+		return hash;
 	}
 
 	public ArrayList<L2ExtractableProductItem> getProductItemsArray()
 	{
-		return _product;
+		return product;
 	}
 }

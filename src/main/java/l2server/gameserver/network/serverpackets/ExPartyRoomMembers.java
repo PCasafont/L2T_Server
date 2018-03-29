@@ -24,33 +24,33 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExPartyRoomMembers extends L2GameServerPacket
 {
-	private final PartyMatchRoom _room;
-	private final int _mode;
+	private final PartyMatchRoom room;
+	private final int mode;
 
 	public ExPartyRoomMembers(L2PcInstance player, PartyMatchRoom room, int mode)
 	{
-		_room = room;
-		_mode = mode;
+		this.room = room;
+		this.mode = mode;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_mode);
-		writeD(_room.getMembers());
-		for (L2PcInstance _member : _room.getPartyMembers())
+		writeD(mode);
+		writeD(room.getMembers());
+		for (L2PcInstance member : room.getPartyMembers())
 		{
-			writeD(_member.getObjectId());
-			writeS(_member.getName());
-			writeD(_member.getClassId());
-			writeD(_member.getLevel());
-			writeD(TownManager.getClosestLocation(_member));
-			if (_room.getOwner().equals(_member))
+			writeD(member.getObjectId());
+			writeS(member.getName());
+			writeD(member.getClassId());
+			writeD(member.getLevel());
+			writeD(TownManager.getClosestLocation(member));
+			if (room.getOwner().equals(member))
 			{
 				writeD(1);
 			}
-			else if (_room.getOwner().isInParty() && _member.isInParty() &&
-					_room.getOwner().getParty().getPartyLeaderOID() == _member.getParty().getPartyLeaderOID())
+			else if (room.getOwner().isInParty() && member.isInParty() &&
+					room.getOwner().getParty().getPartyLeaderOID() == member.getParty().getPartyLeaderOID())
 			{
 				writeD(2);
 			}

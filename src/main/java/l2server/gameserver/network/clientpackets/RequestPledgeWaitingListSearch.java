@@ -23,22 +23,22 @@ import l2server.gameserver.network.serverpackets.ExPledgeWaitingListSearch;
  */
 public final class RequestPledgeWaitingListSearch extends L2GameClientPacket
 {
-	private int _minLevel;
-	private int _maxLevel;
-	private int _role;
-	private int _sortBy;
-	private boolean _desc;
-	private String _name;
+	private int minLevel;
+	private int maxLevel;
+	private int role;
+	private int sortBy;
+	private boolean desc;
+	private String name;
 
 	@Override
 	protected void readImpl()
 	{
-		_minLevel = readD();
-		_maxLevel = readD();
-		_role = readD();
-		_name = readS();
-		_sortBy = readD();
-		_desc = readD() == 1;
+		minLevel = readD();
+		maxLevel = readD();
+		role = readD();
+		name = readS();
+		sortBy = readD();
+		desc = readD() == 1;
 	}
 
 	@Override
@@ -55,6 +55,6 @@ public final class RequestPledgeWaitingListSearch extends L2GameClientPacket
 			return;
 		}
 
-		sendPacket(new ExPledgeWaitingListSearch(_minLevel, _maxLevel, _role, _sortBy, _desc, _name));
+		sendPacket(new ExPledgeWaitingListSearch(minLevel, maxLevel, role, sortBy, desc, name));
 	}
 }

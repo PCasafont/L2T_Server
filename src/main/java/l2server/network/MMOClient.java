@@ -26,16 +26,16 @@ import java.nio.ByteBuffer;
  */
 public abstract class MMOClient<T extends MMOConnection<?>>
 {
-	private final T _con;
+	private final T con;
 
 	public MMOClient(final T con)
 	{
-		_con = con;
+		this.con = con;
 	}
 
 	public T getConnection()
 	{
-		return _con;
+		return con;
 	}
 
 	public abstract boolean decrypt(final ByteBuffer buf, final int size);

@@ -26,13 +26,13 @@ import l2server.gameserver.templates.StatsSet;
 
 public final class L2SkillSignetCasttime extends L2Skill
 {
-	public int _effectNpcId;
+	public int effectNpcId;
 	public int effectId;
 
 	public L2SkillSignetCasttime(StatsSet set)
 	{
 		super(set);
-		_effectNpcId = set.getInteger("effectNpcId", -1);
+		effectNpcId = set.getInteger("effectNpcId", -1);
 		effectId = set.getInteger("effectId", -1);
 	}
 

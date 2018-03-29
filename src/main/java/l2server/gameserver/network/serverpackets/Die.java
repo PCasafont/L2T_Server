@@ -39,39 +39,39 @@ import l2server.gameserver.model.entity.Fort;
  */
 public class Die extends L2GameServerPacket
 {
-	private int _charObjId;
-	private boolean _canTeleport;
-	private boolean _sweepable;
-	private boolean _allowFixedRess;
-	private L2Clan _clan;
-	L2Character _activeChar;
+	private int charObjId;
+	private boolean canTeleport;
+	private boolean sweepable;
+	private boolean allowFixedRess;
+	private L2Clan clan;
+	L2Character activeChar;
 
 	/**
 	 * @param cha
 	 */
 	public Die(L2Character cha)
 	{
-		_activeChar = cha;
+		activeChar = cha;
 
-		_canTeleport =
+		canTeleport =
 				!(cha instanceof L2PcInstance && ((L2PcInstance) cha).isPlayingEvent() || cha.isPendingRevive()) ||
 						cha.getX() == 0 && cha.getY() == 0;
 
-		_charObjId = cha.getObjectId();
+		charObjId = cha.getObjectId();
 
 		if (cha instanceof L2Attackable)
 		{
-			_sweepable = ((L2Attackable) cha).isSweepActive();
+			sweepable = ((L2Attackable) cha).isSweepActive();
 		}
 		else if (cha instanceof L2PcInstance)
 		{
 			L2PcInstance player = (L2PcInstance) cha;
-			_allowFixedRess = player.getAccessLevel().allowFixedRes();
-			_clan = player.getClan();
+			allowFixedRess = player.getAccessLevel().allowFixedRes();
+			clan = player.getClan();
 
-			if (_canTeleport && player.getIsInsideGMEvent())
+			if (canTeleport && player.getIsInsideGMEvent())
 			{
-				_canTeleport = false;
+				canTeleport = false;
 			}
 		}
 
@@ -84,7 +84,7 @@ public class Die extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_charObjId);
+		writeD(charObjId);
 		// NOTE:
 		// 6d 00 00 00 00 - to nearest village
 		// 6d 01 00 00 00 - to hide away
@@ -93,20 +93,20 @@ public class Die extends L2GameServerPacket
 		// sweepable
 		// 6d 04 00 00 00 - FIXED
 
-		writeD(_canTeleport ? 0x01 : 0); // 6d 00 00 00 00 - to nearest village
-		if (_canTeleport && _clan != null)
+		writeD(canTeleport ? 0x01 : 0); // 6d 00 00 00 00 - to nearest village
+		if (canTeleport && clan != null)
 		{
 			boolean isInCastleDefense = false;
 			boolean isInFortDefense = false;
 
 			L2SiegeClan siegeClan = null;
-			Castle castle = CastleManager.getInstance().getCastle(_activeChar);
-			Fort fort = FortManager.getInstance().getFort(_activeChar);
+			Castle castle = CastleManager.getInstance().getCastle(activeChar);
+			Fort fort = FortManager.getInstance().getFort(activeChar);
 			if (castle != null && castle.getSiege().getIsInProgress())
 			{
 				//siege in progress
-				siegeClan = castle.getSiege().getAttackerClan(_clan);
-				if (siegeClan == null && castle.getSiege().checkIsDefender(_clan))
+				siegeClan = castle.getSiege().getAttackerClan(clan);
+				if (siegeClan == null && castle.getSiege().checkIsDefender(clan))
 				{
 					isInCastleDefense = true;
 				}
@@ -114,28 +114,28 @@ public class Die extends L2GameServerPacket
 			else if (fort != null && fort.getSiege().getIsInProgress())
 			{
 				//siege in progress
-				siegeClan = fort.getSiege().getAttackerClan(_clan);
-				if (siegeClan == null && fort.getSiege().checkIsDefender(_clan))
+				siegeClan = fort.getSiege().getAttackerClan(clan);
+				if (siegeClan == null && fort.getSiege().checkIsDefender(clan))
 				{
 					isInFortDefense = true;
 				}
 			}
 
-			writeD(_clan.getHasHideout() > 0 ? 0x01 : 0x00); // 6d 01 00 00 00 - to hide away
-			writeD(_clan.getHasCastle() > 0 || isInCastleDefense ? 0x01 : 0x00); // 6d 02 00 00 00 - to castle
+			writeD(clan.getHasHideout() > 0 ? 0x01 : 0x00); // 6d 01 00 00 00 - to hide away
+			writeD(clan.getHasCastle() > 0 || isInCastleDefense ? 0x01 : 0x00); // 6d 02 00 00 00 - to castle
 			writeD(siegeClan != null && !isInCastleDefense && !isInFortDefense && !siegeClan.getFlag().isEmpty() ?
 					0x01 : 0x00); // 6d 03 00 00 00 - to siege HQ
-			writeD(_sweepable ? 0x01 : 0x00); // sweepable  (blue glow)
-			writeD(_allowFixedRess ? 0x01 : 0x00); // 6d 04 00 00 00 - to FIXED
-			writeD(_clan.getHasFort() > 0 || isInFortDefense ? 0x01 : 0x00); // 6d 05 00 00 00 - to fortress
+			writeD(sweepable ? 0x01 : 0x00); // sweepable  (blue glow)
+			writeD(allowFixedRess ? 0x01 : 0x00); // 6d 04 00 00 00 - to FIXED
+			writeD(clan.getHasFort() > 0 || isInFortDefense ? 0x01 : 0x00); // 6d 05 00 00 00 - to fortress
 		}
 		else
 		{
 			writeD(0x00); // 6d 01 00 00 00 - to hide away
 			writeD(0x00); // 6d 02 00 00 00 - to castle
 			writeD(0x00); // 6d 03 00 00 00 - to siege HQ
-			writeD(_sweepable ? 0x01 : 0x00); // sweepable  (blue glow)
-			writeD(_allowFixedRess ? 0x01 : 0x00); // 6d 04 00 00 00 - to FIXED
+			writeD(sweepable ? 0x01 : 0x00); // sweepable  (blue glow)
+			writeD(allowFixedRess ? 0x01 : 0x00); // 6d 04 00 00 00 - to FIXED
 			writeD(0x00); // 6d 05 00 00 00 - to fortress
 		}
 		//TODO: protocol 152

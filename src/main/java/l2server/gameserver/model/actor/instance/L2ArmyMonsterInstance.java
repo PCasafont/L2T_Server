@@ -16,16 +16,16 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
  */
 public final class L2ArmyMonsterInstance extends L2MonsterInstance
 {
-	private MoveTask _mt2;
-	private int _type;
-	private int _movesDone = 0;
-	private boolean _isDoingAMove = false;
-	private boolean _isTheLastMob = false;
+	private MoveTask mt2;
+	private int type;
+	private int movesDone = 0;
+	private boolean isDoingAMove = false;
+	private boolean isTheLastMob = false;
 
 	public L2ArmyMonsterInstance(int objectId, L2NpcTemplate template)
 	{
 		super(objectId, template);
-		_type = getNpcId() % 10;
+		type = getNpcId() % 10;
 		setIsInvul(true);
 		setTitle(template.Title);
 	}
@@ -36,13 +36,13 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
 		getSpawn().setY(y);
 		getSpawn().setZ(z);
 
-		if (_isDoingAMove)
+		if (isDoingAMove)
 		{
-			_mt2 = new MoveTask(x, y, z);
+			mt2 = new MoveTask(x, y, z);
 		}
 		else
 		{
-			_isDoingAMove = true;
+			isDoingAMove = true;
 			MoveTask mt = new MoveTask(x, y, z);
 			ThreadPoolManager.getInstance().scheduleGeneral(mt, 1000L);
 		}
@@ -50,19 +50,19 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
 
 	public void stopMove()
 	{
-		_isDoingAMove = false;
-		_movesDone++;
-		if (_movesDone == 1)
+		isDoingAMove = false;
+		movesDone++;
+		if (movesDone == 1)
 		{
-			if (_type == 0)
+			if (type == 0)
 			{
 				shout("TO YOUR POSITIONS!");
 				CommanderPatienceTask pt = new CommanderPatienceTask();
 				ThreadPoolManager.getInstance().scheduleGeneral(pt, 200000L);
 			}
-			ThreadPoolManager.getInstance().scheduleGeneral(_mt2, 1000L);
+			ThreadPoolManager.getInstance().scheduleGeneral(mt2, 1000L);
 		}
-		else if (_movesDone == 2 && _isTheLastMob)
+		else if (movesDone == 2 && isTheLastMob)
 		{
 			MonsterInvasion.getInstance().startInvasionFight();
 		}
@@ -71,26 +71,26 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
 
 	class MoveTask implements Runnable
 	{
-		protected int _x;
-		protected int _y;
-		protected int _z;
+		protected int x;
+		protected int y;
+		protected int z;
 
 		protected MoveTask(int x, int y, int z)
 		{
-			_x = x;
-			_y = y;
-			_z = z;
+			this.x = x;
+			this.y = y;
+			this.z = z;
 		}
 
 		@Override
 		public void run()
 		{
 			if (getAI().getIntention() != CtrlIntention.AI_INTENTION_MOVE_TO &&
-					(Math.abs(getX() - _x) > 5 || Math.abs(getY() - _y) > 5))
+					(Math.abs(getX() - x) > 5 || Math.abs(getY() - y) > 5))
 			{
-				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(_x, _y, _z, 0));
+				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(x, y, z, 0));
 			}
-			if (Math.abs(getX() - _x) > 5 || Math.abs(getY() - _y) > 5)
+			if (Math.abs(getX() - x) > 5 || Math.abs(getY() - y) > 5)
 			{
 				ThreadPoolManager.getInstance().scheduleGeneral(this, 1000L);
 			}
@@ -127,7 +127,7 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
 
 	public void setIsTheLastMob(boolean last)
 	{
-		_isTheLastMob = last;
+		isTheLastMob = last;
 	}
 
 	@Override
@@ -138,7 +138,7 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
 			return false;
 		}
 
-		if (_type == 0)
+		if (type == 0)
 		{
 			shout("WE'LL BE BACK!");
 			MonsterInvasion.getInstance().onCommanderDeath();
@@ -164,7 +164,7 @@ public final class L2ArmyMonsterInstance extends L2MonsterInstance
 	@Override
 	public boolean isAggressive()
 	{
-		if (_type == 0)
+		if (type == 0)
 		{
 			return false;
 		}

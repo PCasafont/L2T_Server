@@ -51,11 +51,11 @@ import java.util.logging.Level;
 public final class Broadcast
 {
 	/**
-	 * Send a packet to all L2PcInstance in the _KnownPlayers of the L2Character that have the Character targetted.<BR><BR>
+	 * Send a packet to all L2PcInstance in the KnownPlayers of the L2Character that have the Character targetted.<BR><BR>
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR>
-	 * L2PcInstance in the detection area of the L2Character are identified in <B>_knownPlayers</B>.<BR>
-	 * In order to inform other players of state modification on the L2Character, server just need to go through _knownPlayers to send Server->Client Packet<BR><BR>
+	 * L2PcInstance in the detection area of the L2Character are identified in <B>knownPlayers</B>.<BR>
+	 * In order to inform other players of state modification on the L2Character, server just need to go through knownPlayers to send Server->Client Packet<BR><BR>
 	 * <p>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packet to this L2Character (to do this use method toSelfAndKnownPlayers)</B></FONT><BR><BR>
 	 */
@@ -83,15 +83,15 @@ public final class Broadcast
 	}
 
 	/**
-	 * Send a packet to all L2PcInstance in the _KnownPlayers of the
+	 * Send a packet to all L2PcInstance in the KnownPlayers of the
 	 * L2Character.<BR>
 	 * <BR>
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR>
 	 * L2PcInstance in the detection area of the L2Character are identified in
-	 * <B>_knownPlayers</B>.<BR>
+	 * <B>knownPlayers</B>.<BR>
 	 * In order to inform other players of state modification on the
-	 * L2Character, server just need to go through _knownPlayers to send
+	 * L2Character, server just need to go through knownPlayers to send
 	 * Server->Client Packet<BR>
 	 * <BR>
 	 * <p>
@@ -150,15 +150,15 @@ public final class Broadcast
 	}
 
 	/**
-	 * Send a packet to all L2PcInstance in the _KnownPlayers (in the specified
+	 * Send a packet to all L2PcInstance in the KnownPlayers (in the specified
 	 * radius) of the L2Character.<BR>
 	 * <BR>
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR>
 	 * L2PcInstance in the detection area of the L2Character are identified in
-	 * <B>_knownPlayers</B>.<BR>
+	 * <B>knownPlayers</B>.<BR>
 	 * In order to inform other players of state modification on the
-	 * L2Character, server just needs to go through _knownPlayers to send
+	 * L2Character, server just needs to go through knownPlayers to send
 	 * Server->Client Packet and check the distance between the targets.<BR>
 	 * <BR>
 	 * <p>
@@ -188,11 +188,11 @@ public final class Broadcast
 	}
 
 	/**
-	 * Send a packet to all L2PcInstance in the _KnownPlayers of the L2Character and to the specified character.<BR><BR>
+	 * Send a packet to all L2PcInstance in the KnownPlayers of the L2Character and to the specified character.<BR><BR>
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR>
-	 * L2PcInstance in the detection area of the L2Character are identified in <B>_knownPlayers</B>.<BR>
-	 * In order to inform other players of state modification on the L2Character, server just need to go through _knownPlayers to send Server->Client Packet<BR><BR>
+	 * L2PcInstance in the detection area of the L2Character are identified in <B>knownPlayers</B>.<BR>
+	 * In order to inform other players of state modification on the L2Character, server just need to go through knownPlayers to send Server->Client Packet<BR><BR>
 	 */
 	public static void toSelfAndKnownPlayers(L2Character character, L2GameServerPacket mov)
 	{
@@ -234,7 +234,7 @@ public final class Broadcast
 	 * Send a packet to all L2PcInstance present in the world.<BR><BR>
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR>
-	 * In order to inform other players of state modification on the L2Character, server just need to go through _allPlayers to send Server->Client Packet<BR><BR>
+	 * In order to inform other players of state modification on the L2Character, server just need to go through allPlayers to send Server->Client Packet<BR><BR>
 	 * <p>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packet to this L2Character (to do this use method toSelfAndKnownPlayers)</B></FONT><BR><BR>
 	 */

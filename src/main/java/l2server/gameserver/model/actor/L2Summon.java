@@ -78,13 +78,13 @@ import java.util.logging.Level;
 
 public abstract class L2Summon extends L2Playable
 {
-	protected L2PcInstance _owner;
-	private int _attackRange = 36; //Melee range
-	private boolean _follow = true;
-	private boolean _previousFollowStatus = true;
+	protected L2PcInstance owner;
+	private int attackRange = 36; //Melee range
+	private boolean follow = true;
+	private boolean previousFollowStatus = true;
 
-	private double _chargedSoulShot;
-	private double _chargedSpiritShot;
+	private double chargedSoulShot;
+	private double chargedSpiritShot;
 
 	//  /!\ BLACK MAGIC /!\
 	// we dont have walk speed in pet data so for now use runspd / 3
@@ -97,8 +97,8 @@ public abstract class L2Summon extends L2Playable
 
 		setInstanceId(owner.getInstanceId()); // set instance to same as owner
 
-		_showSummonAnimation = true;
-		_owner = owner;
+		showSummonAnimation = true;
+		this.owner = owner;
 		getAI();
 
 		setXYZInvisible(owner.getX() + 20, owner.getY() + 20, owner.getZ() + 100);
@@ -293,7 +293,7 @@ public abstract class L2Summon extends L2Playable
 
 	public final L2PcInstance getOwner()
 	{
-		return _owner;
+		return owner;
 	}
 
 	public final int getNpcId()
@@ -332,12 +332,12 @@ public abstract class L2Summon extends L2Playable
 
 	public void setChargedSoulShot(double shotType)
 	{
-		_chargedSoulShot = shotType;
+		chargedSoulShot = shotType;
 	}
 
 	public void setChargedSpiritShot(double shotType)
 	{
-		_chargedSpiritShot = shotType;
+		chargedSpiritShot = shotType;
 	}
 
 	public void followOwner()
@@ -411,7 +411,7 @@ public abstract class L2Summon extends L2Playable
 	@Override
 	public void onDecay()
 	{
-		deleteMe(_owner);
+		deleteMe(owner);
 	}
 
 	@Override
@@ -436,16 +436,16 @@ public abstract class L2Summon extends L2Playable
 		final boolean needHpUpdate = needHpUpdate(352);
 
 		// Check if a party is in progress and party window update is usefull
-		L2Party party = _owner.getParty();
+		L2Party party = owner.getParty();
 		if (party != null && needHpUpdate)
 		{
 			// Send the Server->Client packet PartySmallWindowUpdate with current HP, MP and Level to all other L2PcInstance of the Party
 			//PartySmallWindowUpdate update = new PartySmallWindowUpdate(this);
-			//party.broadcastToPartyMembers(_owner, update);
-			party.broadcastToPartyMembers(_owner, su);
+			//party.broadcastToPartyMembers(owner, update);
+			party.broadcastToPartyMembers(owner, su);
 		}
 
-		_owner.sendPacket(su);
+		owner.sendPacket(su);
 	}
 
 	public void deleteMe(L2PcInstance owner)
@@ -555,7 +555,7 @@ public abstract class L2Summon extends L2Playable
 
 	public int getAttackRange()
 	{
-		return _attackRange;
+		return attackRange;
 	}
 
 	public void setAttackRange(int range)
@@ -564,13 +564,13 @@ public abstract class L2Summon extends L2Playable
 		{
 			range = 36;
 		}
-		_attackRange = range;
+		attackRange = range;
 	}
 
 	public void setFollowStatus(boolean state)
 	{
-		_follow = state;
-		if (_follow)
+		follow = state;
+		if (follow)
 		{
 			getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, getOwner());
 		}
@@ -582,23 +582,23 @@ public abstract class L2Summon extends L2Playable
 
 	public boolean getFollowStatus()
 	{
-		return _follow;
+		return follow;
 	}
 
 	@Override
 	public boolean isAutoAttackable(L2Character attacker)
 	{
-		return _owner.isAutoAttackable(attacker);
+		return owner.isAutoAttackable(attacker);
 	}
 
 	public double getChargedSoulShot()
 	{
-		return _chargedSoulShot;
+		return chargedSoulShot;
 	}
 
 	public double getChargedSpiritShot()
 	{
-		return _chargedSpiritShot;
+		return chargedSpiritShot;
 	}
 
 	public int getControlObjectId()
@@ -664,13 +664,13 @@ public abstract class L2Summon extends L2Playable
 	@Override
 	public L2Party getParty()
 	{
-		if (_owner == null)
+		if (owner == null)
 		{
 			return null;
 		}
 		else
 		{
-			return _owner.getParty();
+			return owner.getParty();
 		}
 	}
 
@@ -680,13 +680,13 @@ public abstract class L2Summon extends L2Playable
 	@Override
 	public boolean isInParty()
 	{
-		if (_owner == null)
+		if (owner == null)
 		{
 			return false;
 		}
 		else
 		{
-			return _owner.getParty() != null;
+			return owner.getParty() != null;
 		}
 	}
 
@@ -875,7 +875,7 @@ public abstract class L2Summon extends L2Playable
 		// Notify the AI with AI_INTENTION_CAST and target
 		getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target);
 
-		_owner.disableSkill(skill, skill.getReuseDelay());
+		owner.disableSkill(skill, skill.getReuseDelay());
 		return true;
 	}
 
@@ -886,9 +886,9 @@ public abstract class L2Summon extends L2Playable
 
 		if (value)
 		{
-			_previousFollowStatus = getFollowStatus();
+			previousFollowStatus = getFollowStatus();
 			// if immobilized temporarly disable follow mode
-			if (_previousFollowStatus)
+			if (previousFollowStatus)
 			{
 				setFollowStatus(false);
 			}
@@ -896,13 +896,13 @@ public abstract class L2Summon extends L2Playable
 		else
 		{
 			// if not more immobilized restore previous follow mode
-			setFollowStatus(_previousFollowStatus);
+			setFollowStatus(previousFollowStatus);
 		}
 	}
 
 	public void setOwner(L2PcInstance newOwner)
 	{
-		_owner = newOwner;
+		owner = newOwner;
 	}
 
 	@Override
@@ -984,7 +984,7 @@ public abstract class L2Summon extends L2Playable
 
 		super.doCast(skill);
 
-		setTarget(_owner.getTarget());
+		setTarget(owner.getTarget());
 		if (getTarget() != null)
 		{
 			getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, getTarget());

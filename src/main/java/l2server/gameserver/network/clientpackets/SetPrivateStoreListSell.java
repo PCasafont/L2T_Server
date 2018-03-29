@@ -40,20 +40,20 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 
 	private static final int BATCH_LENGTH = 20; // length of the one item
 
-	private boolean _packageSale;
-	private Item[] _items = null;
+	private boolean packageSale;
+	private Item[] items = null;
 
 	@Override
 	protected void readImpl()
 	{
-		_packageSale = readD() == 1;
+		packageSale = readD() == 1;
 		int count = readD();
-		if (count < 1 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
+		if (count < 1 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
 		{
 			return;
 		}
 
-		_items = new Item[count];
+		items = new Item[count];
 		for (int i = 0; i < count; i++)
 		{
 			int itemId = readD();
@@ -62,10 +62,10 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 
 			if (itemId < 1 || cnt < 1 || price < 0)
 			{
-				_items = null;
+				items = null;
 				return;
 			}
-			_items[i] = new Item(itemId, cnt, price);
+			items[i] = new Item(itemId, cnt, price);
 		}
 	}
 
@@ -78,7 +78,7 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 			return;
 		}
 
-		if (_items == null)
+		if (items == null)
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_ITEM_COUNT));
 			player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
@@ -95,23 +95,23 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 		if (AttackStanceTaskManager.getInstance().getAttackStanceTask(player) || player.isInDuel())
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_OPERATE_PRIVATE_STORE_DURING_COMBAT));
-			player.sendPacket(new PrivateStoreManageListSell(player, _packageSale));
+			player.sendPacket(new PrivateStoreManageListSell(player, packageSale));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
 		if (player.isInsideZone(L2Character.ZONE_NOSTORE))
 		{
-			player.sendPacket(new PrivateStoreManageListSell(player, _packageSale));
+			player.sendPacket(new PrivateStoreManageListSell(player, packageSale));
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PRIVATE_STORE_HERE));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
 		// Check maximum number of allowed slots for pvt shops
-		if (_items.length > player.getPrivateSellStoreLimit())
+		if (items.length > player.getPrivateSellStoreLimit())
 		{
-			player.sendPacket(new PrivateStoreManageListSell(player, _packageSale));
+			player.sendPacket(new PrivateStoreManageListSell(player, packageSale));
 			player.sendPacket(
 					SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EXCEEDED_QUANTITY_THAT_CAN_BE_INPUTTED));
 			return;
@@ -122,7 +122,7 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 			if (!(c instanceof L2PcInstance &&
 					((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
 			{
-				player.sendPacket(new PrivateStoreManageListSell(player, _packageSale));
+				player.sendPacket(new PrivateStoreManageListSell(player, packageSale));
 				player.sendMessage("Try to put your store a little further from " + c.getName() + ", please.");
 				return;
 			}
@@ -130,10 +130,10 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 
 		TradeList tradeList = player.getSellList();
 		tradeList.clear();
-		tradeList.setPackaged(_packageSale);
+		tradeList.setPackaged(packageSale);
 
 		long totalCost = player.getAdena();
-		for (Item i : _items)
+		for (Item i : items)
 		{
 			if (!i.addToTradeList(tradeList))
 			{
@@ -157,7 +157,7 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 
 		player.sitDown();
 
-		if (_packageSale)
+		if (packageSale)
 		{
 			player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_PACKAGE_SELL);
 		}
@@ -168,7 +168,7 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 
 		player.broadcastUserInfo();
 
-		if (_packageSale)
+		if (packageSale)
 		{
 			player.broadcastPacket(new ExPrivateStoreSetWholeMsg(player));
 		}
@@ -180,31 +180,31 @@ public class SetPrivateStoreListSell extends L2GameClientPacket
 
 	private static class Item
 	{
-		private final int _itemId;
-		private final long _count;
-		private final long _price;
+		private final int itemId;
+		private final long count;
+		private final long price;
 
 		public Item(int id, long num, long pri)
 		{
-			_itemId = id;
-			_count = num;
-			_price = pri;
+			itemId = id;
+			count = num;
+			price = pri;
 		}
 
 		public boolean addToTradeList(TradeList list)
 		{
-			if (MAX_ADENA / _count < _price)
+			if (MAX_ADENA / count < price)
 			{
 				return false;
 			}
 
-			list.addItem(_itemId, _count, _price);
+			list.addItem(itemId, count, price);
 			return true;
 		}
 
 		public long getPrice()
 		{
-			return _count * _price;
+			return count * price;
 		}
 	}
 }

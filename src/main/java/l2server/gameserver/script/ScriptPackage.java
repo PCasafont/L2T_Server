@@ -27,15 +27,15 @@ import java.util.zip.ZipFile;
  */
 public class ScriptPackage
 {
-	private List<ScriptDocument> _scriptFiles;
-	private List<String> _otherFiles;
-	private String _name;
+	private List<ScriptDocument> scriptFiles;
+	private List<String> otherFiles;
+	private String name;
 
 	public ScriptPackage(ZipFile pack)
 	{
-		_scriptFiles = new ArrayList<>();
-		_otherFiles = new ArrayList<>();
-		_name = pack.getName();
+		scriptFiles = new ArrayList<>();
+		otherFiles = new ArrayList<>();
+		name = pack.getName();
 		addFiles(pack);
 	}
 
@@ -44,7 +44,7 @@ public class ScriptPackage
 	 */
 	public List<String> getOtherFiles()
 	{
-		return _otherFiles;
+		return otherFiles;
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class ScriptPackage
 	 */
 	public List<ScriptDocument> getScriptFiles()
 	{
-		return _scriptFiles;
+		return scriptFiles;
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class ScriptPackage
 				try
 				{
 					ScriptDocument newScript = new ScriptDocument(entry.getName(), pack.getInputStream(entry));
-					_scriptFiles.add(newScript);
+					scriptFiles.add(newScript);
 				}
 				catch (IOException e1)
 				{
@@ -76,7 +76,7 @@ public class ScriptPackage
 			}
 			else if (!entry.isDirectory())
 			{
-				_otherFiles.add(entry.getName());
+				otherFiles.add(entry.getName());
 			}
 		}
 	}
@@ -86,7 +86,7 @@ public class ScriptPackage
 	 */
 	public String getName()
 	{
-		return _name;
+		return name;
 	}
 
 	@Override

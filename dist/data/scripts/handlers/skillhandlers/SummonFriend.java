@@ -33,7 +33,7 @@ import java.util.logging.Level;
  */
 public class SummonFriend implements ISkillHandler
 {
-	//private static Logger _log = Logger.getLogger(SummonFriend.class.getName());
+	//private static Logger log = Logger.getLogger(SummonFriend.class.getName());
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.SUMMON_FRIEND};
 
 	/**
@@ -102,7 +102,7 @@ public class SummonFriend implements ISkillHandler
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "", e);
+			log.log(Level.SEVERE, "", e);
 		}
 	}
 

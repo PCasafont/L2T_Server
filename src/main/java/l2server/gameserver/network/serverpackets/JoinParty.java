@@ -31,18 +31,18 @@ public final class JoinParty extends L2GameServerPacket
 {
 	//
 
-	private int _response;
+	private int response;
 
 	/**
 	 */
 	public JoinParty(int response)
 	{
-		_response = response;
+		this.response = response;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_response);
+		writeD(response);
 	}
 }

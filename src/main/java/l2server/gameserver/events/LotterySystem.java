@@ -53,12 +53,12 @@ import java.util.concurrent.ScheduledFuture;
 
 public class LotterySystem
 {
-	private static Map<Integer, List<Integer>> _allNumbers = new HashMap<>();
+	private static Map<Integer, List<Integer>> allNumbers = new HashMap<>();
 	private static final String LOAD_LOTTERY = "SELECT `ownerId`, `numbers` FROM `lottery_data`";
 	private static final String SAVE_LOTTERY =
 			"INSERT INTO lottery_data(ownerId, numbers) VALUES (?, ?) ON DUPLICATE KEY UPDATE numbers=?";
-	private static long _collectedCoins = 0;
-	protected static ScheduledFuture<?> _saveTask;
+	private static long collectedCoins = 0;
+	protected static ScheduledFuture<?> saveTask;
 
 	public void buyNumber(L2PcInstance pl, int number)
 	{
@@ -73,9 +73,9 @@ public class LotterySystem
 		}
 
 		List<Integer> numbers = new ArrayList<>();
-		if (_allNumbers.get(pl.getObjectId()) != null)
+		if (allNumbers.get(pl.getObjectId()) != null)
 		{
-			numbers = _allNumbers.get(pl.getObjectId());
+			numbers = allNumbers.get(pl.getObjectId());
 			if (numbers.contains(number))
 			{
 				pl.sendMessage("You already have this number!");
@@ -96,15 +96,15 @@ public class LotterySystem
 			return;
 		}
 
-		_collectedCoins += Config.CUSTOM_LOTTERY_PRICE_AMOUNT;
+		collectedCoins += Config.CUSTOM_LOTTERY_PRICE_AMOUNT;
 		numbers.add(number);
-		_allNumbers.put(pl.getObjectId(), numbers);
+		allNumbers.put(pl.getObjectId(), numbers);
 		pl.sendMessage("You bought the number " + number + " correctly!");
 
 		CustomCommunityBoard.getInstance().parseCmd("_bbscustom;lottery", pl);
 
 		//Manage few announcements
-		long totalReward = _collectedCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER;
+		long totalReward = collectedCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER;
 		if (totalReward % 100000000 == 0)
 		{
 			Announcements.getInstance().announceToAll("Lottery System: The next prize has been reached: " +
@@ -115,10 +115,10 @@ public class LotterySystem
 	public void giveRewardsAndReset()
 	{
 		int luckyNumber = Rnd.get(1, 99);
-		long totalCoins = _collectedCoins;
+		long totalCoins = collectedCoins;
 
 		List<String> winnerNames = new ArrayList<>();
-		for (Map.Entry<Integer, List<Integer>> entry : _allNumbers.entrySet())
+		for (Map.Entry<Integer, List<Integer>> entry : allNumbers.entrySet())
 		{
 			if (entry == null)
 			{
@@ -137,7 +137,7 @@ public class LotterySystem
 		if (winnerNames.isEmpty())
 		{
 			Announcements.getInstance().announceToAll(
-					"Lottery System: The Lottery ends with: " + _allNumbers.size() + " participants! " + luckyNumber +
+					"Lottery System: The Lottery ends with: " + allNumbers.size() + " participants! " + luckyNumber +
 							" was the winner number, no one won the lottery! Let's see if you're luckier the next time!");
 		}
 		else
@@ -165,20 +165,20 @@ public class LotterySystem
 
 			// Announce
 			Announcements.getInstance().announceToAll(
-					"Lottery System: The Lotery ends with: " + _allNumbers.size() + " participants (" +
+					"Lottery System: The Lotery ends with: " + allNumbers.size() + " participants (" +
 							totalCoins / Config.CUSTOM_LOTTERY_PRICE_AMOUNT + " numbers bought)! " + luckyNumber +
 							" is the winner number! " + winnerNames.size() + " winners has been rewarded with: " +
 							NumberFormat.getNumberInstance(Locale.US).format(eachReward) + " Adena!");
 
 			Log.info("LotterySystem: " + luckyNumber + " was the winner number, lottery ends with total coins: " +
-					totalCoins + " and " + winnerNames.size() + " winners (" + _allNumbers.size() +
+					totalCoins + " and " + winnerNames.size() + " winners (" + allNumbers.size() +
 					" participants), with: " + eachReward + " coins for each player!");
 		}
 
 		Log.warning("Lottery System: Cleaning info...!");
 
-		_allNumbers.clear();
-		_collectedCoins = 0;
+		allNumbers.clear();
+		collectedCoins = 0;
 
 		truncateTable();
 	}
@@ -225,8 +225,8 @@ public class LotterySystem
 					numbers.add(Integer.valueOf(st.nextToken().trim()));
 				}
 
-				_allNumbers.put(rs.getInt("ownerId"), numbers);
-				_collectedCoins += numbers.size() * Config.CUSTOM_LOTTERY_PRICE_AMOUNT;
+				allNumbers.put(rs.getInt("ownerId"), numbers);
+				collectedCoins += numbers.size() * Config.CUSTOM_LOTTERY_PRICE_AMOUNT;
 			}
 			rs.close();
 			statement.close();
@@ -240,12 +240,12 @@ public class LotterySystem
 			L2DatabaseFactory.close(con);
 		}
 
-		_saveTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::saveData, 3600000, 3600000);
+		saveTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::saveData, 3600000, 3600000);
 	}
 
 	public void saveData()
 	{
-		if (_allNumbers.isEmpty())
+		if (allNumbers.isEmpty())
 		{
 			return;
 		}
@@ -257,7 +257,7 @@ public class LotterySystem
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = null;
 
-			for (Map.Entry<Integer, List<Integer>> entry : _allNumbers.entrySet())
+			for (Map.Entry<Integer, List<Integer>> entry : allNumbers.entrySet())
 			{
 				if (entry == null)
 				{
@@ -293,17 +293,17 @@ public class LotterySystem
 
 	public long getTotalCoins()
 	{
-		return _collectedCoins;
+		return collectedCoins;
 	}
 
 	public long getTotalPrize()
 	{
-		return _collectedCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER;
+		return collectedCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER;
 	}
 
 	public String getAvailableNumbers(L2PcInstance pl)
 	{
-		List<Integer> playerNumbers = _allNumbers.get(pl.getObjectId());
+		List<Integer> playerNumbers = allNumbers.get(pl.getObjectId());
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("<table width=320>");
@@ -351,13 +351,13 @@ public class LotterySystem
 
 	public static LotterySystem getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final LotterySystem _instance = new LotterySystem();
+		protected static final LotterySystem instance = new LotterySystem();
 	}
 
 	public NpcHtmlMessage parseLotteryPanel(L2PcInstance pl, NpcHtmlMessage htmlPage)

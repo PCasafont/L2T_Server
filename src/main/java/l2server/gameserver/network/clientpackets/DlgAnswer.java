@@ -31,16 +31,16 @@ import l2server.log.Log;
 public final class DlgAnswer extends L2GameClientPacket
 {
 
-	private int _messageId;
-	private int _answer;
-	private int _requesterId;
+	private int messageId;
+	private int answer;
+	private int requesterId;
 
 	@Override
 	protected void readImpl()
 	{
-		_messageId = readD();
-		_answer = readD();
-		_requesterId = readD();
+		messageId = readD();
+		answer = readD();
+		requesterId = readD();
 	}
 
 	@Override
@@ -54,41 +54,41 @@ public final class DlgAnswer extends L2GameClientPacket
 
 		if (Config.DEBUG)
 		{
-			Log.fine(getType() + ": Answer accepted. Message ID " + _messageId + ", answer " + _answer +
-					", Requester ID " + _requesterId);
+			Log.fine(getType() + ": Answer accepted. Message ID " + messageId + ", answer " + answer +
+					", Requester ID " + requesterId);
 		}
-		if (_messageId == SystemMessageId.RESSURECTION_REQUEST_BY_C1_FOR_S2_XP.getId() ||
-				_messageId == SystemMessageId.RESURRECT_USING_CHARM_OF_COURAGE.getId())
+		if (messageId == SystemMessageId.RESSURECTION_REQUEST_BY_C1_FOR_S2_XP.getId() ||
+				messageId == SystemMessageId.RESURRECT_USING_CHARM_OF_COURAGE.getId())
 		{
-			activeChar.reviveAnswer(_answer);
+			activeChar.reviveAnswer(answer);
 		}
-		else if (_messageId == SystemMessageId.C1_WISHES_TO_SUMMON_YOU_FROM_S2_DO_YOU_ACCEPT.getId())
+		else if (messageId == SystemMessageId.C1_WISHES_TO_SUMMON_YOU_FROM_S2_DO_YOU_ACCEPT.getId())
 		{
-			activeChar.teleportAnswer(_answer, _requesterId);
+			activeChar.teleportAnswer(answer, requesterId);
 		}
-		else if (_messageId == SystemMessageId.S1.getId())
+		else if (messageId == SystemMessageId.S1.getId())
 		{
 			if (Config.L2JMOD_ALLOW_WEDDING && activeChar.isEngageRequest())
 			{
-				activeChar.engageAnswer(_answer);
+				activeChar.engageAnswer(answer);
 			}
 			else if (activeChar.isMobSummonRequest())
 			{
-				activeChar.mobSummonAnswer(_answer);
+				activeChar.mobSummonAnswer(answer);
 			}
 			else if (activeChar.isMobSummonExchangeRequest())
 			{
-				activeChar.mobSummonExchangeAnswer(_answer);
+				activeChar.mobSummonExchangeAnswer(answer);
 			}
 			else if (activeChar.isChessChallengeRequest())
 			{
-				activeChar.chessChallengeAnswer(_answer);
+				activeChar.chessChallengeAnswer(answer);
 			}
 			else
 			{
 				String _command = activeChar.getAdminConfirmCmd();
 				activeChar.setAdminConfirmCmd(null);
-				if (_answer == 0)
+				if (answer == 0)
 				{
 					return;
 				}
@@ -105,13 +105,13 @@ public final class DlgAnswer extends L2GameClientPacket
 				}
 			}
 		}
-		else if (_messageId == SystemMessageId.WOULD_YOU_LIKE_TO_OPEN_THE_GATE.getId())
+		else if (messageId == SystemMessageId.WOULD_YOU_LIKE_TO_OPEN_THE_GATE.getId())
 		{
-			activeChar.gatesAnswer(_answer, 1);
+			activeChar.gatesAnswer(answer, 1);
 		}
-		else if (_messageId == SystemMessageId.WOULD_YOU_LIKE_TO_CLOSE_THE_GATE.getId())
+		else if (messageId == SystemMessageId.WOULD_YOU_LIKE_TO_CLOSE_THE_GATE.getId())
 		{
-			activeChar.gatesAnswer(_answer, 0);
+			activeChar.gatesAnswer(answer, 0);
 		}
 	}
 }

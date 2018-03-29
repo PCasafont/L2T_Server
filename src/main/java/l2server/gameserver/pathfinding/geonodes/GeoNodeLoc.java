@@ -23,15 +23,15 @@ import l2server.gameserver.pathfinding.AbstractNodeLoc;
  */
 public class GeoNodeLoc extends AbstractNodeLoc
 {
-	private final short _x;
-	private final short _y;
-	private final short _z;
+	private final short x;
+	private final short y;
+	private final short z;
 
 	public GeoNodeLoc(short x, short y, short z)
 	{
-		_x = x;
-		_y = y;
-		_z = z;
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	@Override
 	public int getX()
 	{
-		return L2World.MAP_MIN_X + _x * 128 + 48;
+		return L2World.MAP_MIN_X + x * 128 + 48;
 	}
 
 	/**
@@ -49,7 +49,7 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	@Override
 	public int getY()
 	{
-		return L2World.MAP_MIN_Y + _y * 128 + 48;
+		return L2World.MAP_MIN_Y + y * 128 + 48;
 	}
 
 	/**
@@ -58,7 +58,7 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	@Override
 	public short getZ()
 	{
-		return _z;
+		return z;
 	}
 
 	@Override
@@ -70,13 +70,13 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	@Override
 	public int getNodeX()
 	{
-		return _x;
+		return x;
 	}
 
 	@Override
 	public int getNodeY()
 	{
-		return _y;
+		return y;
 	}
 
 	/**
@@ -87,9 +87,9 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + _x;
-		result = prime * result + _y;
-		result = prime * result + _z;
+		result = prime * result + x;
+		result = prime * result + y;
+		result = prime * result + z;
 		return result;
 	}
 
@@ -112,14 +112,14 @@ public class GeoNodeLoc extends AbstractNodeLoc
 			return false;
 		}
 		final GeoNodeLoc other = (GeoNodeLoc) obj;
-		if (_x != other._x)
+		if (x != other.x)
 		{
 			return false;
 		}
-		if (_y != other._y)
+		if (y != other.y)
 		{
 			return false;
 		}
-		return _z == other._z;
+		return z == other.z;
 	}
 }

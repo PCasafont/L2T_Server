@@ -27,11 +27,11 @@ import l2server.gameserver.templates.skills.L2EffectType;
 public class EtcStatusUpdate extends L2GameServerPacket
 {
 
-	private L2PcInstance _activeChar;
+	private L2PcInstance activeChar;
 
 	public EtcStatusUpdate(L2PcInstance activeChar)
 	{
-		_activeChar = activeChar;
+		this.activeChar = activeChar;
 	}
 
 	/**
@@ -40,17 +40,17 @@ public class EtcStatusUpdate extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{ // several icons to a separate line (0 = disabled)
-		writeC(_activeChar.getCharges()); // 1-7 increase force, lvl
-		writeC(_activeChar.getWeightPenalty()); // 1-4 weight penalty, lvl (1=50%, 2=66.6%, 3=80%, 4=100%)
-		writeC(_activeChar.getMessageRefusal() || _activeChar.isChatBanned() || _activeChar.isSilenceMode() ? 1 :
+		writeC(activeChar.getCharges()); // 1-7 increase force, lvl
+		writeC(activeChar.getWeightPenalty()); // 1-4 weight penalty, lvl (1=50%, 2=66.6%, 3=80%, 4=100%)
+		writeC(activeChar.getMessageRefusal() || activeChar.isChatBanned() || activeChar.isSilenceMode() ? 1 :
 				0); // 1 = block all chat
-		writeC(_activeChar.isInsideZone(L2Character.ZONE_DANGERAREA) ? 1 : 0); // 1 = danger area
-		writeC(_activeChar.getExpertiseWeaponPenalty()); // Weapon Grade Penalty [1-4]
-		writeC(_activeChar.getExpertiseArmorPenalty()); // Armor Grade Penalty [1-4]
-		writeC(_activeChar.isAffected(L2EffectType.CHARMOFCOURAGE.getMask()) ? 1 :
+		writeC(activeChar.isInsideZone(L2Character.ZONE_DANGERAREA) ? 1 : 0); // 1 = danger area
+		writeC(activeChar.getExpertiseWeaponPenalty()); // Weapon Grade Penalty [1-4]
+		writeC(activeChar.getExpertiseArmorPenalty()); // Armor Grade Penalty [1-4]
+		writeC(activeChar.isAffected(L2EffectType.CHARMOFCOURAGE.getMask()) ? 1 :
 				0); // 1 = charm of courage (allows resurrection on the same spot upon death on the siege battlefield)
-		writeC(0x00);//writeD(_activeChar.getDeathPenaltyBuffLevel()); // 1-15 death penalty, lvl (combat ability decreased due to death)
-		writeC(_activeChar.getSouls());
+		writeC(0x00);//writeD(activeChar.getDeathPenaltyBuffLevel()); // 1-15 death penalty, lvl (combat ability decreased due to death)
+		writeC(activeChar.getSouls());
 		writeC(0x00); // ???
 	}
 }

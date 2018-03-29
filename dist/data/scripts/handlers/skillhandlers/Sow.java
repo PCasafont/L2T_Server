@@ -38,7 +38,7 @@ import java.util.logging.Logger;
  */
 public class Sow implements ISkillHandler
 {
-	private static Logger _log = Logger.getLogger(Sow.class.getName());
+	private static Logger log = Logger.getLogger(Sow.class.getName());
 
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.SOW};
 
@@ -61,7 +61,7 @@ public class Sow implements ISkillHandler
 
 		if (Config.DEBUG)
 		{
-			_log.info("Casting sow");
+			log.info("Casting sow");
 		}
 
 		L2MonsterInstance target;
@@ -140,7 +140,7 @@ public class Sow implements ISkillHandler
 		}
 
 		// 5% decrease in chance if player level
-		// is more than +/- 5 levels to _target's_ level
+		// is more than +/- 5 levels to target's_ level
 		int diff = levelPlayer - levelTarget;
 		if (diff < 0)
 		{

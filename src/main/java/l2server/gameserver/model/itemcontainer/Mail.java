@@ -32,13 +32,13 @@ import java.util.logging.Level;
  */
 public class Mail extends ItemContainer
 {
-	private final int _ownerId;
-	private int _messageId;
+	private final int ownerId;
+	private int messageId;
 
 	public Mail(int objectId, int messageId)
 	{
-		_ownerId = objectId;
-		_messageId = messageId;
+		ownerId = objectId;
+		this.messageId = messageId;
 	}
 
 	@Override
@@ -61,13 +61,13 @@ public class Mail extends ItemContainer
 
 	public int getMessageId()
 	{
-		return _messageId;
+		return messageId;
 	}
 
 	public void setNewMessageId(int messageId)
 	{
-		_messageId = messageId;
-		for (L2ItemInstance item : _items.values())
+		this.messageId = messageId;
+		for (L2ItemInstance item : items.values())
 		{
 			if (item == null)
 			{
@@ -82,7 +82,7 @@ public class Mail extends ItemContainer
 
 	public void returnToWh(ItemContainer wh)
 	{
-		for (L2ItemInstance item : _items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item == null)
 			{
@@ -103,7 +103,7 @@ public class Mail extends ItemContainer
 	protected void addItem(L2ItemInstance item)
 	{
 		super.addItem(item);
-		item.setLocation(getBaseLocation(), _messageId);
+		item.setLocation(getBaseLocation(), messageId);
 	}
 
 	/*
@@ -112,7 +112,7 @@ public class Mail extends ItemContainer
 	@Override
 	public void updateDatabase()
 	{
-		for (L2ItemInstance item : _items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null)
 			{
@@ -172,6 +172,6 @@ public class Mail extends ItemContainer
 	@Override
 	public int getOwnerId()
 	{
-		return _ownerId;
+		return ownerId;
 	}
 }

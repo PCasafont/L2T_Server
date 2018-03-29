@@ -30,18 +30,18 @@ import l2server.gameserver.model.L2Clan.RankPrivs;
  */
 public class PledgePowerGradeList extends L2GameServerPacket
 {
-	private RankPrivs[] _privs;
+	private RankPrivs[] privs;
 
 	public PledgePowerGradeList(RankPrivs[] privs)
 	{
-		_privs = privs;
+		this.privs = privs;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_privs.length);
-		for (RankPrivs temp : _privs)
+		writeD(privs.length);
+		for (RankPrivs temp : privs)
 		{
 			writeD(temp.getRank());
 			writeD(temp.getParty());

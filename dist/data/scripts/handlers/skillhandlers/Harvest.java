@@ -38,7 +38,7 @@ import java.util.logging.Logger;
  */
 public class Harvest implements ISkillHandler
 {
-	private static Logger _log = Logger.getLogger(Harvest.class.getName());
+	private static Logger log = Logger.getLogger(Harvest.class.getName());
 
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.HARVEST};
 
@@ -62,7 +62,7 @@ public class Harvest implements ISkillHandler
 
 		if (Config.DEBUG)
 		{
-			_log.info("Casting harvest");
+			log.info("Casting harvest");
 		}
 
 		L2MonsterInstance target;

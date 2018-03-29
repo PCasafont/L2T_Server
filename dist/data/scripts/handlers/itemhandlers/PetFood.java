@@ -69,7 +69,7 @@ public class PetFood implements IItemHandler
 				useFood(playable, 2916, item);
 				break;
 			default:
-				_log.warning("Pet Food Id: " + itemId + " without handler!");
+				log.warning("Pet Food Id: " + itemId + " without handler!");
 				break;
 		}
 	}

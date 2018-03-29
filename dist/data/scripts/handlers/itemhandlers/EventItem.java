@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 
 public class EventItem implements IItemHandler
 {
-	private static final Logger _log = Logger.getLogger(EventItem.class.getName());
+	private static final Logger log = Logger.getLogger(EventItem.class.getName());
 
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
@@ -44,7 +44,7 @@ public class EventItem implements IItemHandler
 				useBlockCheckerItem(activeChar, item);
 				break;
 			default:
-				_log.warning("EventItemHandler: Item with id: " + itemId + " is not handled");
+				log.warning("EventItemHandler: Item with id: " + itemId + " is not handled");
 		}
 	}
 
@@ -87,7 +87,7 @@ public class EventItem implements IItemHandler
 		}
 		else
 		{
-			_log.warning(
+			log.warning(
 					"Char: " + castor.getName() + "[" + castor.getObjectId() + "] has unknown block checker arena");
 		}
 	}

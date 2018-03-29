@@ -31,20 +31,20 @@ import ai.group_template.L2AttackableAIScript;
 
 public class Legah extends L2AttackableAIScript
 {
-	private static final int _legah = 19475;
-	private static final int _legahMinion = 23332; //One-armed Zombie
+	private static final int legah = 19475;
+	private static final int legahMinion = 23332; //One-armed Zombie
 
 	public Legah(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		addKillId(_legah);
+		addKillId(legah);
 	}
 
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		addSpawn(_legahMinion, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
+		addSpawn(legahMinion, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
 
 		return super.onKill(npc, killer, isPet);
 	}

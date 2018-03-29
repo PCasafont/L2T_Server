@@ -89,7 +89,7 @@ import java.util.logging.Logger;
  */
 public class AdminEditChar implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminEditChar.class.getName());
+	private static Logger log = Logger.getLogger(AdminEditChar.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_edit_character", "admin_current_player", "admin_nokarma",
@@ -264,7 +264,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warning("Set karma error: " + e);
+					log.warning("Set karma error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setkarma <new_karma_value>");
 			}
@@ -294,7 +294,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warning("Set pk error: " + e);
+					log.warning("Set pk error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setpk <pk_count>");
 			}
@@ -324,7 +324,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warning("Set pvp error: " + e);
+					log.warning("Set pvp error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setpvp <pvp_count>");
 			}
@@ -354,7 +354,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warning("Set Fame error: " + e);
+					log.warning("Set Fame error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setfame <new_fame_value>");
 			}
@@ -1068,7 +1068,7 @@ public class AdminEditChar implements IAdminCommandHandler
 						").");
 		if (Config.DEBUG)
 		{
-			_log.fine("[SET KARMA] [GM]" + activeChar.getName() + " Changed karma for " + player.getName() + " from (" +
+			log.fine("[SET KARMA] [GM]" + activeChar.getName() + " Changed karma for " + player.getName() + " from (" +
 					oldKarma + ") to (" + newKarma + ").");
 		}
 	}
@@ -1134,7 +1134,7 @@ public class AdminEditChar implements IAdminCommandHandler
 
 		if (Config.DEBUG)
 		{
-			_log.fine("[GM]" + activeChar.getName() + " changed stats of " + player.getName() + ". " + " HP: " + hpval +
+			log.fine("[GM]" + activeChar.getName() + " changed stats of " + player.getName() + ". " + " HP: " + hpval +
 					" MP: " + mpval + " CP: " + cpval + " PvP: " + pvpflagval + " / " + pvpkillsval);
 		}
 

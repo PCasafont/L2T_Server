@@ -51,7 +51,7 @@ import java.util.logging.Logger;
  */
 public class AdminSkill implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminSkill.class.getName());
+	private static Logger log = Logger.getLogger(AdminSkill.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_show_skills",
@@ -419,7 +419,7 @@ public class AdminSkill implements IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "", e);
+				log.log(Level.WARNING, "", e);
 			}
 			if (skill != null)
 			{
@@ -432,7 +432,7 @@ public class AdminSkill implements IAdminCommandHandler
 				activeChar.sendMessage("You gave the skill " + name + " to " + player.getName() + ".");
 				if (Config.DEBUG)
 				{
-					_log.fine("[GM]" + activeChar.getName() + " gave skill " + name + " to " + player.getName() + ".");
+					log.fine("[GM]" + activeChar.getName() + " gave skill " + name + " to " + player.getName() + ".");
 				}
 				activeChar.sendSkillList();
 			}
@@ -467,7 +467,7 @@ public class AdminSkill implements IAdminCommandHandler
 			activeChar.sendMessage("You removed the skill " + skillname + " from " + player.getName() + ".");
 			if (Config.DEBUG)
 			{
-				_log.fine("[GM]" + activeChar.getName() + " removed skill " + skillname + " from " + player.getName() +
+				log.fine("[GM]" + activeChar.getName() + " removed skill " + skillname + " from " + player.getName() +
 						".");
 			}
 			activeChar.sendSkillList();

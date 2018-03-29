@@ -165,38 +165,38 @@ public class DenOfEvil extends L2AttackableAIScript
 
 	private void spawnEyes()
 	{
-		for (int[] _spawn : _eye_spawn)
+		for (int[] spawn : _eye_spawn)
 		{
-			addSpawn(_eye_ids[Rnd.get(0, _eye_ids.length - 1)], _spawn[0], _spawn[1], _spawn[2], _spawn[3], false, 0);
+			addSpawn(_eye_ids[Rnd.get(0, _eye_ids.length - 1)], spawn[0], spawn[1], spawn[2], spawn[3], false, 0);
 		}
 	}
 
 	private class RespawnNewEye implements Runnable
 	{
-		private int _x, _y, _z, _h;
+		private int x, y, z, h;
 
 		public RespawnNewEye(int x, int y, int z, int h)
 		{
-			_x = x;
-			_y = y;
-			_z = z;
-			_h = h;
+			this.x = x;
+			this.y = y;
+			this.z = z;
+			this.h = h;
 		}
 
 		@Override
 		public void run()
 		{
-			addSpawn(_eye_ids[Rnd.get(0, _eye_ids.length - 1)], _x, _y, _z, _h, false, 0);
+			addSpawn(_eye_ids[Rnd.get(0, _eye_ids.length - 1)], x, y, z, h, false, 0);
 		}
 	}
 
 	private class KashaDestruction implements Runnable
 	{
-		L2EffectZone _zone;
+		L2EffectZone zone;
 
 		public KashaDestruction(L2EffectZone zone)
 		{
-			_zone = zone;
+			this.zone = zone;
 		}
 
 		/* (non-Javadoc)
@@ -208,7 +208,7 @@ public class DenOfEvil extends L2AttackableAIScript
 			for (int i = _skill_id; i <= _skill_id + 4; i = i + 2)
 			{
 				// test 3 skills if some is lvl 4
-				if (_zone.getSkillLevel(i) > 3)
+				if (zone.getSkillLevel(i) > 3)
 				{
 					destroyZone();
 					break;
@@ -218,7 +218,7 @@ public class DenOfEvil extends L2AttackableAIScript
 
 		private void destroyZone()
 		{
-			for (L2Character character : _zone.getCharactersInside().values())
+			for (L2Character character : zone.getCharactersInside().values())
 			{
 				if (character == null)
 				{
@@ -248,7 +248,7 @@ public class DenOfEvil extends L2AttackableAIScript
 			}
 			for (int i = _skill_id; i <= _skill_id + 4; i = i + 2)
 			{
-				_zone.removeSkill(i);
+				zone.removeSkill(i);
 			}
 		}
 	}

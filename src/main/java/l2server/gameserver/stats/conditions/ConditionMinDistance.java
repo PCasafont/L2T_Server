@@ -24,7 +24,7 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionMinDistance extends Condition
 {
-	private final int _sqDistance;
+	private final int sqDistance;
 
 	/**
 	 * Instantiates a new condition min distance.
@@ -33,7 +33,7 @@ public class ConditionMinDistance extends Condition
 	 */
 	public ConditionMinDistance(int sqDistance)
 	{
-		_sqDistance = sqDistance;
+		this.sqDistance = sqDistance;
 	}
 
 	/* (non-Javadoc)
@@ -46,6 +46,6 @@ public class ConditionMinDistance extends Condition
 		{
 			return false;
 		}
-		return env.player.getDistanceSq(env.target) >= _sqDistance;
+		return env.player.getDistanceSq(env.target) >= sqDistance;
 	}
 }

@@ -29,7 +29,7 @@ import java.util.logging.Logger;
 
 public interface IItemHandler
 {
-	Logger _log = Logger.getLogger(IItemHandler.class.getName());
+	Logger log = Logger.getLogger(IItemHandler.class.getName());
 
 	/**
 	 * Launch task associated to the item.

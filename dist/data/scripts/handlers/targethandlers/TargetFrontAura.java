@@ -51,7 +51,7 @@ public class TargetFrontAura implements ISkillTargetTypeHandler
 
 		L2PcInstance src = activeChar.getActingPlayer();
 
-		// Go through the L2Character _knownList
+		// Go through the L2Character knownList
 		Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
 		//synchronized (activeChar.getKnownList().getKnownObjects())
 		{

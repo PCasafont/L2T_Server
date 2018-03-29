@@ -32,50 +32,50 @@ import java.util.Calendar;
 public class ExFriendDetailInfo extends L2GameServerPacket
 {
 
-	private L2PcInstance _player;
-	int _friendObjId;
-	private String _name;
-	private int _isOnline;
-	private int _level;
-	private int _classId;
-	private int _clanId;
-	private int _clanCrestId;
-	private String _clanName;
-	private int _allyId;
-	private int _allyCrestId;
-	private String _allyName;
-	private int _createdMonth;
-	private int _createdDay;
-	private long _lastLogin;
-	private String _memo;
+	private L2PcInstance player;
+	int friendObjId;
+	private String name;
+	private int isOnline;
+	private int level;
+	private int classId;
+	private int clanId;
+	private int clanCrestId;
+	private String clanName;
+	private int allyId;
+	private int allyCrestId;
+	private String allyName;
+	private int createdMonth;
+	private int createdDay;
+	private long lastLogin;
+	private String memo;
 
 	public ExFriendDetailInfo(L2PcInstance activeChar, String charName)
 	{
-		_player = activeChar;
-		_friendObjId = CharNameTable.getInstance().getIdByName(charName);
-		_name = charName;
-		_isOnline = L2World.getInstance().getPlayer(_friendObjId) != null &&
-				L2World.getInstance().getPlayer(_friendObjId).isOnline() ? 1 : 0;
-		_memo = activeChar.getFriendMemo(_friendObjId);
-		if (_isOnline == 1)
+		player = activeChar;
+		friendObjId = CharNameTable.getInstance().getIdByName(charName);
+		name = charName;
+		isOnline = L2World.getInstance().getPlayer(friendObjId) != null &&
+				L2World.getInstance().getPlayer(friendObjId).isOnline() ? 1 : 0;
+		memo = activeChar.getFriendMemo(friendObjId);
+		if (isOnline == 1)
 		{
-			L2PcInstance friend = L2World.getInstance().getPlayer(_friendObjId);
-			_level = friend.getLevel();
-			_classId = friend.getClassId();
-			_clanId = friend.getClanId();
-			_clanCrestId = friend.getClanCrestId();
-			_clanName = friend.getClan() != null ? friend.getClan().getName() : "";
-			_allyId = friend.getAllyId();
-			_allyCrestId = friend.getAllyCrestId();
-			_allyName = friend.getClan() != null ? friend.getClan().getAllyName() : "";
+			L2PcInstance friend = L2World.getInstance().getPlayer(friendObjId);
+			level = friend.getLevel();
+			classId = friend.getClassId();
+			clanId = friend.getClanId();
+			clanCrestId = friend.getClanCrestId();
+			clanName = friend.getClan() != null ? friend.getClan().getName() : "";
+			allyId = friend.getAllyId();
+			allyCrestId = friend.getAllyCrestId();
+			allyName = friend.getClan() != null ? friend.getClan().getAllyName() : "";
 			Calendar createDate = Calendar.getInstance();
 			createDate.setTimeInMillis(friend.getCreateTime());
-			_createdMonth = createDate.get(Calendar.MONTH) + 1;
-			_createdDay = createDate.get(Calendar.DAY_OF_MONTH);
+			createdMonth = createDate.get(Calendar.MONTH) + 1;
+			createdDay = createDate.get(Calendar.DAY_OF_MONTH);
 		}
 		else
 		{
-			offlineFriendInfo(_friendObjId);
+			offlineFriendInfo(friendObjId);
 		}
 	}
 
@@ -97,10 +97,10 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 			while (rset.next())
 			{
 				level = rset.getByte("level");
-				_classId = rset.getInt("classid");
+				classId = rset.getInt("classid");
 				bClassId = rset.getInt("base_class");
-				_clanId = rset.getInt("clanid");
-				_lastLogin = rset.getLong("lastAccess");
+				clanId = rset.getInt("clanid");
+				lastLogin = rset.getLong("lastAccess");
 				createDate = rset.getLong("createTime");
 			}
 			statement.execute();
@@ -117,7 +117,7 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 		{
 			L2DatabaseFactory.close(con);
 		}
-		if (_classId != bClassId)
+		if (classId != bClassId)
 		{
 			try
 			{
@@ -127,12 +127,12 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 				PreparedStatement statement =
 						con.prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
 				statement.setInt(1, objId);
-				statement.setInt(2, _classId);
+				statement.setInt(2, classId);
 				ResultSet rset = statement.executeQuery();
 
 				while (rset.next())
 				{
-					_level = rset.getByte("level");
+					this.level = rset.getByte("level");
 				}
 
 				statement.execute();
@@ -151,9 +151,9 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 		}
 		else
 		{
-			_level = level;
+			this.level = level;
 		}
-		if (_clanId != 0)
+		if (clanId != 0)
 		{
 			try
 			{
@@ -161,15 +161,15 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 				con = L2DatabaseFactory.getInstance().getConnection();
 
 				PreparedStatement statement = con.prepareStatement("SELECT * FROM clan_data WHERE clan_id=?");
-				statement.setInt(1, _clanId);
+				statement.setInt(1, clanId);
 				ResultSet rset = statement.executeQuery();
 				while (rset.next())
 				{
-					_clanName = rset.getString("clan_name");
-					_clanCrestId = rset.getInt("crest_id");
-					_allyId = rset.getInt("ally_id");
-					_allyName = rset.getString("ally_name");
-					_allyCrestId = rset.getInt("ally_crest_id");
+					clanName = rset.getString("clan_name");
+					clanCrestId = rset.getInt("crest_id");
+					allyId = rset.getInt("ally_id");
+					allyName = rset.getString("ally_name");
+					allyCrestId = rset.getInt("ally_crest_id");
 				}
 				statement.execute();
 				rset.close();
@@ -187,28 +187,28 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 		}
 		Calendar c = Calendar.getInstance();
 		c.setTimeInMillis(createDate);
-		_createdMonth = c.get(Calendar.MONTH) + 1;
-		_createdDay = c.get(Calendar.DAY_OF_MONTH);
+		createdMonth = c.get(Calendar.MONTH) + 1;
+		createdDay = c.get(Calendar.DAY_OF_MONTH);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_player.getObjectId()); // Character ID
-		writeS(_name); // Name
-		writeD(_isOnline); // Online
-		writeD(_isOnline == 1 ? _friendObjId : 0x00); // Friend OID
-		writeH(_level); // Level
-		writeH(_classId); // Class
-		writeD(_clanId); // Pledge ID
-		writeD(_clanCrestId); // Pledge crest ID
-		writeS(_clanName); // Pledge name
-		writeD(_allyId); // Alliance ID
-		writeD(_allyCrestId); // Alliance crest ID
-		writeS(_allyName); // Alliance name
-		writeC(_createdMonth); // Creation month
-		writeC(_createdDay); // Creation day
-		writeD(_isOnline == 1 ? -1 : (int) (System.currentTimeMillis() - _lastLogin) / 1000);
-		writeS(_memo); // Memo
+		writeD(player.getObjectId()); // Character ID
+		writeS(name); // Name
+		writeD(isOnline); // Online
+		writeD(isOnline == 1 ? friendObjId : 0x00); // Friend OID
+		writeH(level); // Level
+		writeH(classId); // Class
+		writeD(clanId); // Pledge ID
+		writeD(clanCrestId); // Pledge crest ID
+		writeS(clanName); // Pledge name
+		writeD(allyId); // Alliance ID
+		writeD(allyCrestId); // Alliance crest ID
+		writeS(allyName); // Alliance name
+		writeC(createdMonth); // Creation month
+		writeC(createdDay); // Creation day
+		writeD(isOnline == 1 ? -1 : (int) (System.currentTimeMillis() - lastLogin) / 1000);
+		writeS(memo); // Memo
 	}
 }

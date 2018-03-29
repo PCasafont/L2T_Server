@@ -50,29 +50,29 @@ import java.util.List;
 public class Istina extends L2AttackableAIScript
 {
     //Quest
-    private static final boolean _debug = false;
-    private static final String _qn = "Istina";
+    private static final boolean debug = false;
+    private static final String qn = "Istina";
 
     //Id's
-    private static final int _acidDummyNpc = 18919;
-    private static final int _boxgMagicPower = 30371;
-    private static final int _istinaCrystal = 37506;
-    private static final int _sealingEnergy = 19036;
-    private static final int _energyDevice = 17608;
-    private static final int _istinasCreationId = 23125;
-    //private static final int	_failedCreation		= 23037;
-    private static final int _taklacanId = 23030;
-    private static final int _torumbaId = 23031;
-    private static final int _dopagen = 23032;
-    private static final int _effectRedCircle = 14220101;
-    private static final int _effectBlueCircle = 14220102;
-    private static final int _effectGreenCircle = 14220103;
-    private static final int _ballistaId = 19021;
-    private static final int _rumieseEnterId = 33293;
-    private static final int _rumieseInnerId = 33151;
-    private static final int[] _all_mobs = {29195, 29196, _ballistaId, _sealingEnergy};
-    private static final int[] _minionIds = {_taklacanId, _torumbaId, _dopagen};
-    private static final int[] _templates = {169, 170};
+    private static final int acidDummyNpc = 18919;
+    private static final int boxgMagicPower = 30371;
+    private static final int istinaCrystal = 37506;
+    private static final int sealingEnergy = 19036;
+    private static final int energyDevice = 17608;
+    private static final int istinasCreationId = 23125;
+    //private static final int	failedCreation		= 23037;
+    private static final int taklacanId = 23030;
+    private static final int torumbaId = 23031;
+    private static final int dopagen = 23032;
+    private static final int effectRedCircle = 14220101;
+    private static final int effectBlueCircle = 14220102;
+    private static final int effectGreenCircle = 14220103;
+    private static final int ballistaId = 19021;
+    private static final int rumieseEnterId = 33293;
+    private static final int rumieseInnerId = 33151;
+    private static final int[] _all_mobs = {29195, 29196, ballistaId, sealingEnergy};
+    private static final int[] minionIds = {taklacanId, torumbaId, dopagen};
+    private static final int[] templates = {169, 170};
     private static final int _ZONE_BLUE_ID = 60021;
     private static final int _ZONE_RED_ID = 60022;
     private static final int _ZONE_GREEN_ID = 60020;
@@ -86,11 +86,11 @@ public class Istina extends L2AttackableAIScript
     private static final L2ZoneType _ZONE_GREEN = ZoneManager.getInstance().getZoneById(_ZONE_GREEN_ID);
 
     //Skills
-    private static final L2Skill _energyControlDevice = SkillTable.getInstance().getInfo(14224, 1);
-    private static final L2Skill _flood = SkillTable.getInstance().getInfo(14220, 1);
-    private static final L2Skill _deathBlow = SkillTable.getInstance().getInfo(14219, 1);
-    private static final L2Skill _dummyAcidEruption = SkillTable.getInstance().getInfo(14222, 1);
-    private static final L2Skill _dummyEndAcidEruption = SkillTable.getInstance().getInfo(14223, 1);
+    private static final L2Skill energyControlDevice = SkillTable.getInstance().getInfo(14224, 1);
+    private static final L2Skill flood = SkillTable.getInstance().getInfo(14220, 1);
+    private static final L2Skill deathBlow = SkillTable.getInstance().getInfo(14219, 1);
+    private static final L2Skill dummyAcidEruption = SkillTable.getInstance().getInfo(14222, 1);
+    private static final L2Skill dummyEndAcidEruption = SkillTable.getInstance().getInfo(14223, 1);
     private static final L2Skill _manifestation_red = SkillTable.getInstance().getInfo(_manifestation_red_id, 1);
     private static final L2Skill _manifestation_blue = SkillTable.getInstance().getInfo(_manifestation_blue_id, 1);
     private static final L2Skill _manifestation_green = SkillTable.getInstance().getInfo(_manifestarion_green_id, 1);
@@ -98,7 +98,7 @@ public class Istina extends L2AttackableAIScript
             {_manifestation_red, _manifestation_blue, _manifestation_green};
 
     //Cords
-    private static final Location[] _playerEnter = {
+    private static final Location[] playerEnter = {
             new Location(-177100, 141730, -11264),
             new Location(-176802, 142267, -11269),
             new Location(-177235, 142597, -11264),
@@ -106,7 +106,7 @@ public class Istina extends L2AttackableAIScript
             new Location(-177124, 142264, -11269)
     };
 
-    private static final Location[] _minionLocs = {
+    private static final Location[] minionLocs = {
             new Location(-178695, 147188, -11391, 3992),
             new Location(-175462, 147184, -11391, 27931),
             new Location(-176437, 149527, -11391, 44860)
@@ -149,12 +149,12 @@ public class Istina extends L2AttackableAIScript
         addEnterZoneId(_ZONE_BLUE_ID);
         addEnterZoneId(_ZONE_RED_ID);
         addEnterZoneId(_ZONE_GREEN_ID);
-        addTalkId(_rumieseEnterId);
-        addStartNpc(_rumieseEnterId);
-        addTalkId(_rumieseInnerId);
-        addStartNpc(_rumieseInnerId);
-        addFirstTalkId(_rumieseInnerId);
-        addSpellFinishedId(_acidDummyNpc);
+        addTalkId(rumieseEnterId);
+        addStartNpc(rumieseEnterId);
+        addTalkId(rumieseInnerId);
+        addStartNpc(rumieseInnerId);
+        addFirstTalkId(rumieseInnerId);
+        addSpellFinishedId(acidDummyNpc);
 
         for (int mob : _all_mobs)
         {
@@ -167,7 +167,7 @@ public class Istina extends L2AttackableAIScript
     @Override
     public String onFirstTalk(L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onFirstTalk: " + player.getName());
         }
@@ -185,7 +185,7 @@ public class Istina extends L2AttackableAIScript
         if (wrld != null && wrld instanceof IstinaWorld)
         {
             IstinaWorld world = (IstinaWorld) wrld;
-            if (npc.getNpcId() == _rumieseInnerId)
+            if (npc.getNpcId() == rumieseInnerId)
             {
                 if (world.status == 8)
                 {
@@ -203,7 +203,7 @@ public class Istina extends L2AttackableAIScript
     @Override
     public String onSkillSee(L2Npc npc, L2PcInstance player, L2Skill skill, L2Object[] targets, boolean isPet)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onSkillSee: " + skill.getName());
         }
@@ -232,7 +232,7 @@ public class Istina extends L2AttackableAIScript
                     int casterCount = 0;
                     for (L2PcInstance players : npc.getKnownList().getKnownPlayers().values())
                     {
-                        if (players.getTarget() == npc && players.getLastSkillCast() == _energyControlDevice)
+                        if (players.getTarget() == npc && players.getLastSkillCast() == energyControlDevice)
                         {
                             casterCount++;
                         }
@@ -242,7 +242,7 @@ public class Istina extends L2AttackableAIScript
                     {
                         if (casterCount >= 7)
                         {
-                            L2Abnormal eff = npc.getFirstEffect(_flood);
+                            L2Abnormal eff = npc.getFirstEffect(flood);
                             if (eff != null)
                             {
                                 eff.exit();
@@ -252,7 +252,7 @@ public class Istina extends L2AttackableAIScript
                                     .sendPacket(world.instanceId, new ExShowScreenMessage(1811175, 0, true, 5000));
                         }
                     }
-                    else if (npc.getNpcId() == _sealingEnergy)
+                    else if (npc.getNpcId() == sealingEnergy)
                     {
                         if (npc.isCastingNow() && casterCount > 0) //Npc should be casting
                         {
@@ -268,7 +268,7 @@ public class Istina extends L2AttackableAIScript
     @Override
     public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onSpellFinished: " + skill.getName());
         }
@@ -322,16 +322,16 @@ public class Istina extends L2AttackableAIScript
                         for (int i = 1; i <= (world.isHardMode ? Rnd.get(2, 3) : Rnd.get(2, 5)); i++)
                         {
                             L2PcInstance target = instPlayers.get(Rnd.get(instPlayers.size()));
-                            if (_debug)
+                            if (debug)
                             {
                                 Log.warning(getName() + ": Acid Target: " + target.getName());
                             }
 
                             L2Npc dummyAcid =
-                                    addSpawn(_acidDummyNpc, target.getX(), target.getY(), target.getZ(), -1, true, 0,
+                                    addSpawn(acidDummyNpc, target.getX(), target.getY(), target.getZ(), -1, true, 0,
                                             false, world.instanceId);
                             dummyAcid.setTarget(dummyAcid);
-                            dummyAcid.doCast(_dummyAcidEruption);
+                            dummyAcid.doCast(dummyAcidEruption);
                         }
                         break;
 
@@ -340,12 +340,12 @@ public class Istina extends L2AttackableAIScript
                         break;
                 }
             }
-            else if (npc.getNpcId() == _acidDummyNpc)
+            else if (npc.getNpcId() == acidDummyNpc)
             {
                 if (skill.getId() == 14222)//Acid Eruption
                 {
                     npc.setTarget(npc);
-                    npc.doCast(_dummyEndAcidEruption);
+                    npc.doCast(dummyEndAcidEruption);
                 }
             }
         }
@@ -378,7 +378,7 @@ public class Istina extends L2AttackableAIScript
                         new ExShowScreenMessage(1811187, 0, true, 5000)); //Istina's Mark shines above the head.
 
                 world.Istina.setTarget(player);
-                world.Istina.doCast(_deathBlow);
+                world.Istina.doCast(deathBlow);
                 break;
             }
         }
@@ -387,7 +387,7 @@ public class Istina extends L2AttackableAIScript
     @Override
     public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
@@ -417,7 +417,7 @@ public class Istina extends L2AttackableAIScript
                 {
                     door.openMe();
                 }
-                startQuestTimer("stage_1_intro", _debug ? 60000 : 5 * 60000, null, player);
+                startQuestTimer("stage_1_intro", debug ? 60000 : 5 * 60000, null, player);
             }
             else if (event.equalsIgnoreCase("stage_1_intro"))
             {
@@ -484,9 +484,9 @@ public class Istina extends L2AttackableAIScript
                                 }
 
                                 InstanceManager.getInstance()
-                                        .sendPacket(world.instanceId, new EventTrigger(_effectBlueCircle, true));
+                                        .sendPacket(world.instanceId, new EventTrigger(effectBlueCircle, true));
                                 InstanceManager.getInstance()
-                                        .sendPacket(world.instanceId, new EventTrigger(_effectGreenCircle, true));
+                                        .sendPacket(world.instanceId, new EventTrigger(effectGreenCircle, true));
 
                                 world.zone = zoneInUse.USE_ZONE_RED;
                                 break;
@@ -499,9 +499,9 @@ public class Istina extends L2AttackableAIScript
                                 }
 
                                 InstanceManager.getInstance()
-                                        .sendPacket(world.instanceId, new EventTrigger(_effectRedCircle, true));
+                                        .sendPacket(world.instanceId, new EventTrigger(effectRedCircle, true));
                                 InstanceManager.getInstance()
-                                        .sendPacket(world.instanceId, new EventTrigger(_effectGreenCircle, true));
+                                        .sendPacket(world.instanceId, new EventTrigger(effectGreenCircle, true));
 
                                 world.zone = zoneInUse.USE_ZONE_BLUE;
                                 break;
@@ -514,9 +514,9 @@ public class Istina extends L2AttackableAIScript
                                 }
 
                                 InstanceManager.getInstance()
-                                        .sendPacket(world.instanceId, new EventTrigger(_effectRedCircle, true));
+                                        .sendPacket(world.instanceId, new EventTrigger(effectRedCircle, true));
                                 InstanceManager.getInstance()
-                                        .sendPacket(world.instanceId, new EventTrigger(_effectBlueCircle, true));
+                                        .sendPacket(world.instanceId, new EventTrigger(effectBlueCircle, true));
 
                                 world.zone = zoneInUse.USE_ZONE_GREEN;
                                 break;
@@ -524,7 +524,7 @@ public class Istina extends L2AttackableAIScript
 
                         startQuestTimer("stage_all_turnOffCircleEffect", 15000, npc, null);
 
-                        if (_debug)
+                        if (debug)
                         {
                             Log.warning(getName() + ": onSpellFinished: Zone in use is: " + world.zone);
                         }
@@ -561,7 +561,7 @@ public class Istina extends L2AttackableAIScript
                     {
                         for (int a = 0; a < Rnd.get(1, 3); a++)
                         {
-                            L2Npc sealingEnergy = addSpawn(_sealingEnergy, world.Istina.getX(), world.Istina.getY(),
+                            L2Npc sealingEnergy = addSpawn(this.sealingEnergy, world.Istina.getX(), world.Istina.getY(),
                                     world.Istina.getZ(), 0, true, 180000, true, world.instanceId);
                             sealingEnergy.setIsInvul(true);
                         }
@@ -585,11 +585,11 @@ public class Istina extends L2AttackableAIScript
                                             2000)); //Istina calls her creatures with tremendous anger.
 
                             //Taklacan, Torumba, Dopagen
-                            for (Location minionLoc : _minionLocs)
+                            for (Location minionLoc : minionLocs)
                             {
                                 for (int a = 0; a < Rnd.get(2, 3); a++)
                                 {
-                                    addSpawn(_minionIds[Rnd.get(_minionIds.length)], minionLoc.getX(), minionLoc.getY(),
+                                    addSpawn(minionIds[Rnd.get(minionIds.length)], minionLoc.getX(), minionLoc.getY(),
                                             minionLoc.getZ(), minionLoc.getHeading(), false, 0, true, world.instanceId);
                                 }
                             }
@@ -599,7 +599,7 @@ public class Istina extends L2AttackableAIScript
                         //Istina's Creation
                         for (int a = 0; a < Rnd.get(3, 5); a++)
                         {
-                            addSpawn(_istinasCreationId, world.Istina.getX(), world.Istina.getY(), world.Istina.getZ(),
+                            addSpawn(istinasCreationId, world.Istina.getX(), world.Istina.getY(), world.Istina.getZ(),
                                     0, true, 0, true, world.instanceId);
                         }
                     }
@@ -611,12 +611,12 @@ public class Istina extends L2AttackableAIScript
                 world.status = 5;
 
                 world.Ballista =
-                        addSpawn(_ballistaId, -177119, 146889, -11384, 16571, false, 0, false, world.instanceId);
+                        addSpawn(ballistaId, -177119, 146889, -11384, 16571, false, 0, false, world.instanceId);
                 world.Ballista.disableCoreAI(true);
                 world.Ballista.setIsInvul(true);
                 world.Ballista.setIsParalyzed(true);
 
-                addSpawn(_rumieseInnerId, -177028, 146879, -11384, 22754, false, 0, false, world.instanceId);
+                addSpawn(rumieseInnerId, -177028, 146879, -11384, 22754, false, 0, false, world.instanceId);
 
                 //Spam messages
                 InstanceManager.getInstance().sendDelayedPacketToInstance(world.instanceId, 3,
@@ -669,7 +669,7 @@ public class Istina extends L2AttackableAIScript
                     int time = 0;
                     double chanceToKillIstina = world.currBallistDamage * 100 / world.maxBallistDamage;
 
-                    if (_debug)
+                    if (debug)
                     {
                         Log.warning(getName() + ": Chance to kill istina: " + chanceToKillIstina);
                     }
@@ -695,7 +695,7 @@ public class Istina extends L2AttackableAIScript
                     }
 
                     InstanceManager.getInstance().setInstanceReuse(world.instanceId, world.templateId,
-                            world.templateId == _templates[0] ? false : true);
+                            world.templateId == templates[0] ? false : true);
                     InstanceManager.getInstance().finishInstance(world.instanceId, true);
 
                     startQuestTimer("stage_last_boss_drop", time - 1200, npc, null);
@@ -707,23 +707,23 @@ public class Istina extends L2AttackableAIScript
                 {
                     case USE_ZONE_RED:
                         InstanceManager.getInstance()
-                                .sendPacket(world.instanceId, new EventTrigger(_effectBlueCircle, false));
+                                .sendPacket(world.instanceId, new EventTrigger(effectBlueCircle, false));
                         InstanceManager.getInstance()
-                                .sendPacket(world.instanceId, new EventTrigger(_effectGreenCircle, false));
+                                .sendPacket(world.instanceId, new EventTrigger(effectGreenCircle, false));
                         break;
 
                     case USE_ZONE_GREEN:
                         InstanceManager.getInstance()
-                                .sendPacket(world.instanceId, new EventTrigger(_effectBlueCircle, false));
+                                .sendPacket(world.instanceId, new EventTrigger(effectBlueCircle, false));
                         InstanceManager.getInstance()
-                                .sendPacket(world.instanceId, new EventTrigger(_effectRedCircle, false));
+                                .sendPacket(world.instanceId, new EventTrigger(effectRedCircle, false));
                         break;
 
                     case USE_ZONE_BLUE:
                         InstanceManager.getInstance()
-                                .sendPacket(world.instanceId, new EventTrigger(_effectRedCircle, false));
+                                .sendPacket(world.instanceId, new EventTrigger(effectRedCircle, false));
                         InstanceManager.getInstance()
-                                .sendPacket(world.instanceId, new EventTrigger(_effectGreenCircle, false));
+                                .sendPacket(world.instanceId, new EventTrigger(effectGreenCircle, false));
                         break;
                     default:
                 }
@@ -731,7 +731,7 @@ public class Istina extends L2AttackableAIScript
             else if (event.equalsIgnoreCase("stage_last_boss_drop"))
             {
                 //Spawn Rumiese
-                addSpawn(_rumieseInnerId, -177120, 147860, -11388, 49201, false, 0, false, world.instanceId);
+                addSpawn(rumieseInnerId, -177120, 147860, -11388, 49201, false, 0, false, world.instanceId);
 
                 if (world.status == 8) //Only if istina is killed
                 {
@@ -746,7 +746,7 @@ public class Istina extends L2AttackableAIScript
                             randomPlayer = L2World.getInstance().getPlayer(objId);
                             if (randomPlayer != null && randomPlayer.getInstanceId() == world.instanceId)
                             {
-                                if (_debug)
+                                if (debug)
                                 {
                                     Log.warning(
                                             getName() + ": " + randomPlayer.getName() + " will be used as a killer!");
@@ -777,11 +777,11 @@ public class Istina extends L2AttackableAIScript
                         {
                             world.rewardedPlayers.add(player);
 
-                            player.addItem(_qn, _boxgMagicPower, 1, npc, true);
+                            player.addItem(qn, boxgMagicPower, 1, npc, true);
 
                             if (world.isHardMode)
                             {
-                                player.addItem(_qn, _istinaCrystal, 1, npc, true);
+                                player.addItem(qn, istinaCrystal, 1, npc, true);
                             }
                         }
                         else
@@ -793,8 +793,8 @@ public class Istina extends L2AttackableAIScript
             }
         }
 
-        if (npc != null && npc.getNpcId() == _rumieseEnterId && Util.isDigit(event) &&
-                Util.contains(_templates, Integer.valueOf(event)))
+        if (npc != null && npc.getNpcId() == rumieseEnterId && Util.isDigit(event) &&
+                Util.contains(templates, Integer.valueOf(event)))
         {
             try
             {
@@ -819,7 +819,7 @@ public class Istina extends L2AttackableAIScript
             return null;
         }
 
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAttack: " + attacker.getName());
         }
@@ -845,7 +845,7 @@ public class Istina extends L2AttackableAIScript
                             npc, null);
                 }
             }
-            else if (npc.getNpcId() == _ballistaId)
+            else if (npc.getNpcId() == ballistaId)
             {
                 if (world.status == 6)
                 {
@@ -871,12 +871,12 @@ public class Istina extends L2AttackableAIScript
     @Override
     public final String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
-        if (npc.getNpcId() == _rumieseEnterId)
+        if (npc.getNpcId() == rumieseEnterId)
         {
             return "Rumiese.html";
         }
@@ -887,7 +887,7 @@ public class Istina extends L2AttackableAIScript
     @Override
     public String onEnterZone(L2Character character, L2ZoneType zone)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onEnterZone: " + character.getName());
         }
@@ -985,13 +985,13 @@ public class Istina extends L2AttackableAIScript
         {
             int minPlayers = template_id == 170 ? Config.ISTINA_MIN_PLAYERS : Config.ISTINA_MIN_PLAYERS / 2;
             int maxLevel = template_id == 170 ? Config.MAX_LEVEL : 99;
-            if (!_debug && !InstanceManager.getInstance()
+            if (!debug && !InstanceManager.getInstance()
                     .checkInstanceConditions(player, template_id, minPlayers, 35, 92, maxLevel))
             {
                 return;
             }
 
-            final int instanceId = InstanceManager.getInstance().createDynamicInstance(_qn + ".xml");
+            final int instanceId = InstanceManager.getInstance().createDynamicInstance(qn + ".xml");
             world = new IstinaWorld();
             world.instanceId = instanceId;
             world.templateId = template_id;
@@ -1002,7 +1002,7 @@ public class Istina extends L2AttackableAIScript
             setupIDs((IstinaWorld) world, template_id);
 
             List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
-            if (_debug)
+            if (debug)
             {
                 allPlayers.add(player);
             }
@@ -1024,14 +1024,14 @@ public class Istina extends L2AttackableAIScript
 
                 world.allowed.add(enterPlayer.getObjectId());
 
-                if (enterPlayer.getInventory().getItemByItemId(_energyDevice) == null)
+                if (enterPlayer.getInventory().getItemByItemId(energyDevice) == null)
                 {
-                    enterPlayer.addItem(_qn, _energyDevice, 1, enterPlayer, true);
+                    enterPlayer.addItem(qn, energyDevice, 1, enterPlayer, true);
                 }
 
                 enterPlayer.stopAllEffectsExceptThoseThatLastThroughDeath();
                 enterPlayer.setInstanceId(instanceId);
-                enterPlayer.teleToLocation(_playerEnter[Rnd.get(0, _playerEnter.length - 1)], true);
+                enterPlayer.teleToLocation(playerEnter[Rnd.get(0, playerEnter.length - 1)], true);
             }
 
             startQuestTimer("stage_0_open_doors", 5000, null, player);
@@ -1067,6 +1067,6 @@ public class Istina extends L2AttackableAIScript
 
     public static void main(String[] args)
     {
-        new Istina(-1, _qn, "instances/GrandBosses");
+        new Istina(-1, qn, "instances/GrandBosses");
     }
 }

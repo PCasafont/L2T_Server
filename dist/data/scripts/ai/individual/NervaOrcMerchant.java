@@ -37,14 +37,14 @@ import ai.group_template.L2AttackableAIScript;
 
 public class NervaOrcMerchant extends L2AttackableAIScript
 {
-	private static final int _merchant = 23320;
+	private static final int merchant = 23320;
 
 	public NervaOrcMerchant(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		addAttackId(_merchant);
-		addSpawnId(_merchant);
+		addAttackId(merchant);
+		addSpawnId(merchant);
 
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
@@ -53,7 +53,7 @@ public class NervaOrcMerchant extends L2AttackableAIScript
 				continue;
 			}
 
-			if (spawn.getNpcId() == _merchant)
+			if (spawn.getNpcId() == merchant)
 			{
 				this.notifySpawn(spawn.getNpc());
 			}

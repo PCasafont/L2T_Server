@@ -16,18 +16,18 @@ import gov.nasa.worldwind.formats.dds.DDSConverter;
  */
 public class ImageTable
 {
-	private static ImageTable _instance;
+	private static ImageTable instance;
 
-	private static Map<Integer, PledgeCrest> _images = new HashMap<>();
+	private static Map<Integer, PledgeCrest> images = new HashMap<>();
 
 	public static ImageTable getInstance()
 	{
-		if (_instance == null)
+		if (instance == null)
 		{
-			_instance = new ImageTable();
+			instance = new ImageTable();
 		}
 
-		return _instance;
+		return instance;
 	}
 
 	private ImageTable()
@@ -57,7 +57,7 @@ public class ImageTable
 
 				id = Integer.valueOf(imgName.substring(0, imgName.length() - 4));
 				byte[] array = DDSConverter.convertToDDS(image).array();
-				_images.put(id, new PledgeCrest(id, array));
+				images.put(id, new PledgeCrest(id, array));
 			}
 		}
 		catch (Exception e)
@@ -80,7 +80,7 @@ public class ImageTable
 				}
 				id = Integer.valueOf(image.getName().substring(0, image.getName().length() - 4));
 				byte[] array = DDSConverter.convertToDDS(image).array();
-				_images.put(id, new PledgeCrest(id, array));
+				images.put(id, new PledgeCrest(id, array));
 			}
 		}
 		catch (Exception e)
@@ -89,16 +89,16 @@ public class ImageTable
 			e.printStackTrace();
 		}
 
-		Log.info("ImageTable: Loaded " + _images.size() + " custom images.");
+		Log.info("ImageTable: Loaded " + images.size() + " custom images.");
 	}
 
 	public void sendImages(L2PcInstance player)
 	{
-		for (int imageId : _images.keySet())
+		for (int imageId : images.keySet())
 		{
-			if (_images.get(imageId) != null)
+			if (images.get(imageId) != null)
 			{
-				player.sendPacket(_images.get(imageId));
+				player.sendPacket(images.get(imageId));
 			}
 		}
 	}

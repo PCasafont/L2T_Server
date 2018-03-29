@@ -99,8 +99,8 @@ public class AdminTest implements IAdminCommandHandler
 	private static final String[] ADMIN_COMMANDS =
 			{"admin_stats", "admin_skill_test", "admin_known", "admin_test", "admin_do"};
 
-	private List<L2NpcTemplate> _npcTemplates = new ArrayList<L2NpcTemplate>();
-	private List<Location> _coords = new ArrayList<Location>();
+	private List<L2NpcTemplate> npcTemplates = new ArrayList<L2NpcTemplate>();
+	private List<Location> coords = new ArrayList<Location>();
 
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.L2PcInstance)
@@ -723,19 +723,19 @@ public class AdminTest implements IAdminCommandHandler
 			}
 			else if (secondaryCommand.equals("GrabPosition"))
 			{
-				_coords.add(new Location(activeChar.getX(), activeChar.getY(), activeChar.getZ()));
+				coords.add(new Location(activeChar.getX(), activeChar.getY(), activeChar.getZ()));
 
 				activeChar.sendMessage("Recorded current position.");
 			}
 			else if (secondaryCommand.equals("ClearPositions"))
 			{
-				_coords.clear();
+				coords.clear();
 
 				activeChar.sendMessage("Cleared recorded positions.");
 			}
 			else if (secondaryCommand.equals("PrintPositions"))
 			{
-				for (Location l : _coords)
+				for (Location l : coords)
 				{
 					System.out.println("<node X=\"" + l.getX() + "\" Y=\"" + l.getY() + "\" />");
 				}
@@ -748,25 +748,25 @@ public class AdminTest implements IAdminCommandHandler
 					{
 						final L2MonsterInstance monster = (L2MonsterInstance) obj;
 
-						if (_npcTemplates.contains(monster.getTemplate()))
+						if (npcTemplates.contains(monster.getTemplate()))
 						{
 							continue;
 						}
 
-						_npcTemplates.add(monster.getTemplate());
+						npcTemplates.add(monster.getTemplate());
 						activeChar.sendMessage("Added " + monster.getName() + ".");
 					}
 				}
 			}
 			else if (secondaryCommand.equals("ClearNpcs"))
 			{
-				_npcTemplates.clear();
+				npcTemplates.clear();
 
 				activeChar.sendMessage("Templates cleared.");
 			}
 			else if (secondaryCommand.equals("PrintDropsForNpcs"))
 			{
-				for (L2NpcTemplate npcTemplate : _npcTemplates)
+				for (L2NpcTemplate npcTemplate : npcTemplates)
 				{
 					System.out.println("\t<npc id='" + npcTemplate.NpcId + "'> <!-- " + npcTemplate.getName() + " -->");
 					System.out.println("\t\t<droplist>");
@@ -1229,19 +1229,19 @@ public class AdminTest implements IAdminCommandHandler
 			caster = (L2Character) target;
 		}
 
-		L2Skill _skill = SkillTable.getInstance().getInfo(id, 1);
-		if (_skill != null)
+		L2Skill skill = SkillTable.getInstance().getInfo(id, 1);
+		if (skill != null)
 		{
 			caster.setTarget(activeChar);
 			if (msu)
 			{
 				caster.broadcastPacket(
-						new MagicSkillUse(caster, activeChar, id, 1, _skill.getHitTime(), _skill.getReuseDelay(),
-								_skill.getReuseHashCode(), 0, 0));
+						new MagicSkillUse(caster, activeChar, id, 1, skill.getHitTime(), skill.getReuseDelay(),
+								skill.getReuseHashCode(), 0, 0));
 			}
 			else
 			{
-				caster.doCast(_skill);
+				caster.doCast(skill);
 			}
 		}
 	}

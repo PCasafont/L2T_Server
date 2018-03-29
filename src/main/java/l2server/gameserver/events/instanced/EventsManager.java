@@ -32,24 +32,24 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class EventsManager implements Reloadable
 {
-	public static EventsManager _instance = null;
+	public static EventsManager instance = null;
 
-	private HashMap<Integer, EventLocation> _locations = new HashMap<>();
+	private HashMap<Integer, EventLocation> locations = new HashMap<>();
 
-	private EventManagerTask _task;
-	private ConcurrentHashMap<Integer, EventInstance> _instances = new ConcurrentHashMap<>();
-	private int _nextInstanceId = 1;
+	private EventManagerTask task;
+	private ConcurrentHashMap<Integer, EventInstance> instances = new ConcurrentHashMap<>();
+	private int nextInstanceId = 1;
 
-	private EventConfig _currentConfig = null;
-	private Map<Integer, L2PcInstance> _registeredPlayers = new HashMap<>();
+	private EventConfig currentConfig = null;
+	private Map<Integer, L2PcInstance> registeredPlayers = new HashMap<>();
 
 	public static EventsManager getInstance()
 	{
-		if (_instance == null)
+		if (instance == null)
 		{
-			_instance = new EventsManager();
+			instance = new EventsManager();
 		}
-		return _instance;
+		return instance;
 	}
 
 	public void start()
@@ -64,17 +64,17 @@ public class EventsManager implements Reloadable
 		loadConfig();
 		ReloadableManager.getInstance().register("eventLocations", this);
 
-		_task = new EventManagerTask();
-		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(_task, 10000L, 60000L);
+		task = new EventManagerTask();
+		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(task, 10000L, 60000L);
 
-		_currentConfig = new EventConfig();
+		currentConfig = new EventConfig();
 
 		Log.info("Instanced Events started.");
 	}
 
 	public void loadConfig()
 	{
-		_locations.clear();
+		locations.clear();
 
 		XmlDocument doc = new XmlDocument(new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "eventsConfig.xml"));
 		int locCount = 0;
@@ -83,7 +83,7 @@ public class EventsManager implements Reloadable
             if (node.getName().equals("location"))
             {
                 EventLocation loc = new EventLocation(node);
-                _locations.put(loc.getId(), loc);
+                locations.put(loc.getId(), loc);
 
                 locCount++;
             }
@@ -96,28 +96,28 @@ public class EventsManager implements Reloadable
 	{
 		EventLocation loc;
 		do {
-		    loc = _locations.get(Rnd.get(100));
+		    loc = locations.get(Rnd.get(100));
 		} while (loc == null);
 		return loc;
 	}
 
 	public EventLocation getLocation(int id)
 	{
-		return _locations.get(id);
+		return locations.get(id);
 	}
 
 	public EventManagerTask getTask()
 	{
-		return _task;
+		return task;
 	}
 
 	class EventManagerTask implements Runnable
 	{
-		private int _minutesToStart;
+		private int minutesToStart;
 
 		public EventManagerTask()
 		{
-			_minutesToStart = Config.INSTANCED_EVENT_INTERVAL;
+			minutesToStart = Config.INSTANCED_EVENT_INTERVAL;
 		}
 
 		@Override
@@ -126,7 +126,7 @@ public class EventsManager implements Reloadable
 			List<Integer> toRemove = new ArrayList<>();
 			try
 			{
-				for (EventInstance event : _instances.values())
+				for (EventInstance event : instances.values())
 				{
 					if (event == null)
 					{
@@ -142,17 +142,17 @@ public class EventsManager implements Reloadable
 			catch (Exception e)
 			{
 				e.printStackTrace();
-				_instances.clear();
+				instances.clear();
 			}
 
 			for (int eventId : toRemove)
 			{
-				_instances.remove(eventId);
+				instances.remove(eventId);
 			}
 
-			_minutesToStart--;
+			minutesToStart--;
 
-			if (_minutesToStart <= 0)
+			if (minutesToStart <= 0)
 			{
 				// Prepare an instance
 				if (!prepare())
@@ -161,13 +161,13 @@ public class EventsManager implements Reloadable
 							.announceToAll("The event could not start because it lacked registered players.");
 				}
 
-				_currentConfig = new EventConfig();
-				_minutesToStart = Config.INSTANCED_EVENT_INTERVAL;
+				currentConfig = new EventConfig();
+				minutesToStart = Config.INSTANCED_EVENT_INTERVAL;
 			}
-			else if (_minutesToStart == 10 || _minutesToStart == 5 || _minutesToStart == 2 || _minutesToStart == 1)
+			else if (minutesToStart == 10 || minutesToStart == 5 || minutesToStart == 2 || minutesToStart == 1)
 			{
 				// Auto join!
-				/*if (_minutesToStart == 1)
+				/*if (minutesToStart == 1)
                 {
 					for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 					{
@@ -179,8 +179,8 @@ public class EventsManager implements Reloadable
 				}*/
 
 				Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(
-						"The " + _currentConfig.getEventName() + " will start in " + _minutesToStart + " minute" +
-								(_minutesToStart > 1 ? "s" : "") + ".", 5000));
+						"The " + currentConfig.getEventName() + " will start in " + minutesToStart + " minute" +
+								(minutesToStart > 1 ? "s" : "") + ".", 5000));
 				ThreadPoolManager.getInstance().scheduleGeneral(() -> Broadcast.toAllOnlinePlayers(
 						new ExShowScreenMessage("Use the Community Board's (ALT+B) \"Join Events\" menu to join.",
 								5000)), 5000L);
@@ -189,31 +189,31 @@ public class EventsManager implements Reloadable
 
 		public int getMinutesToStart()
 		{
-			return _minutesToStart;
+			return minutesToStart;
 		}
 	}
 
 	public EventConfig getCurrentConfig()
 	{
-		return _currentConfig;
+		return currentConfig;
 	}
 
 	public Map<Integer, L2PcInstance> getRegisteredPlayers()
 	{
-		return _registeredPlayers;
+		return registeredPlayers;
 	}
 
 	private boolean prepare()
 	{
-		if (_registeredPlayers.isEmpty())
+		if (registeredPlayers.isEmpty())
 		{
 			return false;
 		}
 
 		// First sort the registered players
-		int[][] sorted = new int[_registeredPlayers.size()][2];
+		int[][] sorted = new int[registeredPlayers.size()][2];
 		int i = 0;
-		for (L2PcInstance player : _registeredPlayers.values())
+		for (L2PcInstance player : registeredPlayers.values())
 		{
 			if (player == null || OlympiadManager.getInstance().isRegisteredInComp(player) ||
 					player.isInOlympiadMode() || player.isOlympiadStart() || player.isFlyingMounted() ||
@@ -258,13 +258,13 @@ public class EventsManager implements Reloadable
 			{
 				group.add(sorted[i + j][0]);
 
-				//if (Config.isServer(Config.TENKAI) && j >= _currentConfig.getLocation().getMaxPlayers())
+				//if (Config.isServer(Config.TENKAI) && j >= currentConfig.getLocation().getMaxPlayers())
 				//	break;
 
 				j++;
 			}
 
-			if (j < _currentConfig.getMinPlayers())
+			if (j < currentConfig.getMinPlayers())
 			{
 				if (!groups.isEmpty())
 				{
@@ -281,18 +281,18 @@ public class EventsManager implements Reloadable
 		// And finally create the event instances according to the generated groups
 		for (List<Integer> group : groups)
 		{
-			EventInstance ei = createInstance(_nextInstanceId++, group, _currentConfig);
+			EventInstance ei = createInstance(nextInstanceId++, group, currentConfig);
 			if (ei != null)
 			{
-				_instances.put(ei.getId(), ei);
+				instances.put(ei.getId(), ei);
 				Announcements.getInstance().announceToAll(
-						"Event registrations closed.");// The next event will be a " + _currentConfig.getEventString() + ". Type .event to join.");
+						"Event registrations closed.");// The next event will be a " + currentConfig.getEventString() + ". Type .event to join.");
 
 				for (EventTeam team : ei.getTeams())
 				{
 					for (int memberId : team.getParticipatedPlayers().keySet())
 					{
-						_registeredPlayers.remove(memberId);
+						registeredPlayers.remove(memberId);
 					}
 				}
 			}
@@ -416,7 +416,7 @@ public class EventsManager implements Reloadable
 			return false;
 		}
 
-		_registeredPlayers.put(playerInstance.getObjectId(), playerInstance);
+		registeredPlayers.put(playerInstance.getObjectId(), playerInstance);
 
 		return true;
 	}
@@ -442,7 +442,7 @@ public class EventsManager implements Reloadable
 
 	public boolean removeParticipant(int playerObjectId)
 	{
-		if (_registeredPlayers.remove(playerObjectId) != null)
+		if (registeredPlayers.remove(playerObjectId) != null)
 		{
 			return true;
 		}
@@ -481,14 +481,14 @@ public class EventsManager implements Reloadable
 		}
 
 		//PvP Event
-		result = result.replace("%pvpEventName%", _currentConfig.getEventName());
-		result = result.replace("%pvpEventLocation%", _currentConfig.getEventLocationName());
+		result = result.replace("%pvpEventName%", currentConfig.getEventName());
+		result = result.replace("%pvpEventLocation%", currentConfig.getEventLocationName());
 		result = result.replace("%pvpEventTime%",
-				_task.getMinutesToStart() + " minute" + (_task.getMinutesToStart() > 1 ? "s" : ""));
-		result = result.replace("%pvpEventId%", String.valueOf(_currentConfig.getEventImageId()));
-		result = result.replace("%pvpInfoLink%", String.valueOf(_currentConfig.getType()));
+				task.getMinutesToStart() + " minute" + (task.getMinutesToStart() > 1 ? "s" : ""));
+		result = result.replace("%pvpEventId%", String.valueOf(currentConfig.getEventImageId()));
+		result = result.replace("%pvpInfoLink%", String.valueOf(currentConfig.getType()));
 
-		if (_registeredPlayers.isEmpty())
+		if (registeredPlayers.isEmpty())
 		{
 			result = result.replace("%pvpEventPlayers%", "");
 			result = result.replace("Registered Players for the Event", "");
@@ -513,19 +513,19 @@ public class EventsManager implements Reloadable
 		}
 
 		//Observe part?
-		if (_instances.isEmpty())
+		if (instances.isEmpty())
 		{
 			result = result.replace("Current Observable Events", "");
 			result = result.replace("%observeEvents%", "");
 		}
 		else
 		{
-			int remaining = _instances.size();
+			int remaining = instances.size();
 			int pageCheck = 1;
 			int total = 1;
 			String eventString = "";
 
-			for (EventInstance event : _instances.values())
+			for (EventInstance event : instances.values())
 			{
 				if (!event.isState(EventState.STARTED))
 				{
@@ -573,12 +573,12 @@ public class EventsManager implements Reloadable
 	{
 		String result = "";
 
-		if (_registeredPlayers.isEmpty())
+		if (registeredPlayers.isEmpty())
 		{
 			return result;
 		}
 
-		for (L2PcInstance participant : _registeredPlayers.values())
+		for (L2PcInstance participant : registeredPlayers.values())
 		{
 			if (participant == null)
 			{
@@ -632,7 +632,7 @@ public class EventsManager implements Reloadable
 
 	public int getParticipantEventId(int playerObjectId)
 	{
-		for (EventInstance event : _instances.values())
+		for (EventInstance event : instances.values())
 		{
 			if (event.isPlayerParticipant(playerObjectId))
 			{
@@ -644,7 +644,7 @@ public class EventsManager implements Reloadable
 
 	public EventInstance getParticipantEvent(int playerObjectId)
 	{
-		for (EventInstance event : _instances.values())
+		for (EventInstance event : instances.values())
 		{
 			if (event.isPlayerParticipant(playerObjectId))
 			{
@@ -686,12 +686,12 @@ public class EventsManager implements Reloadable
 
 	public boolean isPlayerParticipant(int playerObjectId)
 	{
-		if (_registeredPlayers.containsKey(playerObjectId))
+		if (registeredPlayers.containsKey(playerObjectId))
 		{
 			return true;
 		}
 
-		for (EventInstance event : _instances.values())
+		for (EventInstance event : instances.values())
 		{
 			if (event.isPlayerParticipant(playerObjectId))
 			{
@@ -762,7 +762,7 @@ public class EventsManager implements Reloadable
 			return false;
 		}
 
-		for (L2PcInstance registered : _registeredPlayers.values())
+		for (L2PcInstance registered : registeredPlayers.values())
 		{
 			if (registered == null)
 			{
@@ -780,7 +780,7 @@ public class EventsManager implements Reloadable
 
 		//TODO LasTravel: Hwid check don't work if we don't have LG
         /*String hwId = player.getClient().getHWId();
-		for (L2PcInstance registered : _registeredPlayers.values())
+		for (L2PcInstance registered : registeredPlayers.values())
 		{
 			if (registered.getClient() != null
 					&& registered.getClient().getHWId() != null
@@ -792,41 +792,41 @@ public class EventsManager implements Reloadable
 
 	/**
 	 * @param activeChar
-	 * @param _command
+	 * @param command
 	 */
-	public void handleBypass(L2PcInstance activeChar, String _command)
+	public void handleBypass(L2PcInstance activeChar, String command)
 	{
 		if (activeChar == null)
 		{
 			return;
 		}
 
-		if (_command.startsWith("InstancedEventJoin"))
+		if (command.startsWith("InstancedEventJoin"))
 		{
 			join(activeChar);
 		}
-		else if (_command.equals("InstancedEventLeave"))
+		else if (command.equals("InstancedEventLeave"))
 		{
 			leave(activeChar);
 		}
-		else if (_command.startsWith("InstancedEventObserve"))
+		else if (command.startsWith("InstancedEventObserve"))
 		{
-			int eventId = Integer.valueOf(_command.substring(22));
-			if (_instances.get(eventId) != null)
+			int eventId = Integer.valueOf(command.substring(22));
+			if (instances.get(eventId) != null)
 			{
-				_instances.get(eventId).observe(activeChar);
+				instances.get(eventId).observe(activeChar);
 			}
 		}
 		
-		/*else if (_command.startsWith("InstancedEventParticipation"))
+		/*else if (command.startsWith("InstancedEventParticipation"))
 		{
-			int eventId = Integer.valueOf(_command.substring(25));
+			int eventId = Integer.valueOf(command.substring(25));
 			if (Events.getInstance().Events.getInstance().get(eventId) != null)
 				Events.getInstance().Events.getInstance().get(eventId).join(activeChar);
 		}
-		else if (_command.startsWith("InstancedEventStatus"))
+		else if (command.startsWith("InstancedEventStatus"))
 		{
-			int eventId = Integer.valueOf(_command.substring(18));
+			int eventId = Integer.valueOf(command.substring(18));
 			if (Events.getInstance().Events.getInstance().get(eventId) != null)
 				Events.getInstance().Events.getInstance().get(eventId).eventInfo(activeChar);
 		}*/
@@ -835,7 +835,7 @@ public class EventsManager implements Reloadable
 	@Override
 	public boolean reload()
 	{
-		_locations.clear();
+		locations.clear();
 		loadConfig();
 		return true;
 	}

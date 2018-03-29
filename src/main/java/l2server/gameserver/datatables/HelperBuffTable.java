@@ -37,29 +37,29 @@ public class HelperBuffTable
 	/**
 	 * The table containing all Buff of the Newbie Helper
 	 */
-	private List<L2HelperBuff> _helperBuff;
+	private List<L2HelperBuff> helperBuff;
 
 	/**
 	 * The player level since Newbie Helper can give the fisrt buff <BR>
 	 * Used to generate message : "Come back here when you have reached level ...")
 	 */
-	private int _magicClassLowestLevel = 100;
-	private int _physicClassLowestLevel = 100;
+	private int magicClassLowestLevel = 100;
+	private int physicClassLowestLevel = 100;
 
 	/**
 	 * The player level above which Newbie Helper won't give any buff <BR>
 	 * Used to generate message : "Only novice character of level ... or less can receive my support magic.")
 	 */
-	private int _magicClassHighestLevel = 1;
-	private int _physicClassHighestLevel = 1;
+	private int magicClassHighestLevel = 1;
+	private int physicClassHighestLevel = 1;
 
-	private int _servitorLowestLevel = 100;
+	private int servitorLowestLevel = 100;
 
-	private int _servitorHighestLevel = 1;
+	private int servitorHighestLevel = 1;
 
 	public static HelperBuffTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class HelperBuffTable
 	 */
 	private HelperBuffTable()
 	{
-		_helperBuff = new ArrayList<>();
+		helperBuff = new ArrayList<>();
 		restoreHelperBuffData();
 	}
 
@@ -97,45 +97,45 @@ for (XmlNode d : doc.getChildren())
 
                 if (!isMagicClass)
                 {
-                    if (lowerLevel < _physicClassLowestLevel)
+                    if (lowerLevel < physicClassLowestLevel)
                     {
-                        _physicClassLowestLevel = lowerLevel;
+                        physicClassLowestLevel = lowerLevel;
                     }
 
-                    if (upperLevel > _physicClassHighestLevel)
+                    if (upperLevel > physicClassHighestLevel)
                     {
-                        _physicClassHighestLevel = upperLevel;
+                        physicClassHighestLevel = upperLevel;
                     }
                 }
                 else
                 {
-                    if (lowerLevel < _magicClassLowestLevel)
+                    if (lowerLevel < magicClassLowestLevel)
                     {
-                        _magicClassLowestLevel = lowerLevel;
+                        magicClassLowestLevel = lowerLevel;
                     }
 
-                    if (upperLevel > _magicClassHighestLevel)
+                    if (upperLevel > magicClassHighestLevel)
                     {
-                        _magicClassHighestLevel = upperLevel;
+                        magicClassHighestLevel = upperLevel;
                     }
                 }
                 if (forSummon)
                 {
-                    if (lowerLevel < _servitorLowestLevel)
+                    if (lowerLevel < servitorLowestLevel)
                     {
-                        _servitorLowestLevel = lowerLevel;
+                        servitorLowestLevel = lowerLevel;
                     }
 
-                    if (upperLevel > _servitorHighestLevel)
+                    if (upperLevel > servitorHighestLevel)
                     {
-                        _servitorHighestLevel = upperLevel;
+                        servitorHighestLevel = upperLevel;
                     }
                 }
                 L2HelperBuff template = new L2HelperBuff(helperBuffDat);
-                _helperBuff.add(template);
+                helperBuff.add(template);
             }
 		}
-		Log.info("HelperBuffTable: Loaded: " + _helperBuff.size() + " buffs!");
+		Log.info("HelperBuffTable: Loaded: " + helperBuff.size() + " buffs!");
 	}
 
 	/**
@@ -143,7 +143,7 @@ for (XmlNode d : doc.getChildren())
 	 */
 	public List<L2HelperBuff> getHelperBuffTable()
 	{
-		return _helperBuff;
+		return helperBuff;
 	}
 
 	/**
@@ -151,7 +151,7 @@ for (XmlNode d : doc.getChildren())
 	 */
 	public int getMagicClassHighestLevel()
 	{
-		return _magicClassHighestLevel;
+		return magicClassHighestLevel;
 	}
 
 	/**
@@ -159,7 +159,7 @@ for (XmlNode d : doc.getChildren())
 	 */
 	public int getMagicClassLowestLevel()
 	{
-		return _magicClassLowestLevel;
+		return magicClassLowestLevel;
 	}
 
 	/**
@@ -167,7 +167,7 @@ for (XmlNode d : doc.getChildren())
 	 */
 	public int getPhysicClassHighestLevel()
 	{
-		return _physicClassHighestLevel;
+		return physicClassHighestLevel;
 	}
 
 	/**
@@ -175,7 +175,7 @@ for (XmlNode d : doc.getChildren())
 	 */
 	public int getPhysicClassLowestLevel()
 	{
-		return _physicClassLowestLevel;
+		return physicClassLowestLevel;
 	}
 
 	/**
@@ -183,7 +183,7 @@ for (XmlNode d : doc.getChildren())
 	 */
 	public int getServitorLowestLevel()
 	{
-		return _servitorLowestLevel;
+		return servitorLowestLevel;
 	}
 
 	/**
@@ -191,12 +191,12 @@ for (XmlNode d : doc.getChildren())
 	 */
 	public int getServitorHighestLevel()
 	{
-		return _servitorHighestLevel;
+		return servitorHighestLevel;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final HelperBuffTable _instance = new HelperBuffTable();
+		protected static final HelperBuffTable instance = new HelperBuffTable();
 	}
 }

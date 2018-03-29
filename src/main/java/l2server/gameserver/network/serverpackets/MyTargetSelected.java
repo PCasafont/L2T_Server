@@ -35,22 +35,22 @@ package l2server.gameserver.network.serverpackets;
  */
 public class MyTargetSelected extends L2GameServerPacket
 {
-	private int _objectId;
-	private int _color;
+	private int objectId;
+	private int color;
 
 	/**
 	 */
 	public MyTargetSelected(int objectId, int color)
 	{
-		_objectId = objectId;
-		_color = color;
+		this.objectId = objectId;
+		this.color = color;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_objectId);
-		writeH(_color);
+		writeD(objectId);
+		writeH(color);
 		writeD(0x00);
 	}
 }

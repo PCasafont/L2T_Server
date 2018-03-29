@@ -72,47 +72,47 @@ public final class ChanceCondition
 		ON_EXIT(EVT_ON_EXIT), // You kill an enemy
 		ON_KILL(EVT_KILL);
 
-		private final int _mask;
+		private final int mask;
 
 		TriggerType(int mask)
 		{
-			_mask = mask;
+			this.mask = mask;
 		}
 
 		public final boolean check(int event)
 		{
-			return (_mask & event) != 0; // Trigger (sub-)type contains event (sub-)type
+			return (mask & event) != 0; // Trigger (sub-)type contains event (sub-)type
 		}
 	}
 
-	private final TriggerType _triggerType;
-	private final double _chance;
-	private final double _critChance;
-	private final int _mindmg;
-	private final byte[] _elements;
-	private final int[] _activationSkills;
-	private final boolean _pvpOnly;
+	private final TriggerType triggerType;
+	private final double chance;
+	private final double critChance;
+	private final int mindmg;
+	private final byte[] elements;
+	private final int[] activationSkills;
+	private final boolean pvpOnly;
 
 	private ChanceCondition(TriggerType trigger, double chance, int mindmg, byte[] elements, int[] activationSkills, boolean pvpOnly)
 	{
-		_triggerType = trigger;
-		_chance = chance;
-		_mindmg = mindmg;
-		_elements = elements;
-		_pvpOnly = pvpOnly;
-		_activationSkills = activationSkills;
-		_critChance = -1;
+		triggerType = trigger;
+		this.chance = chance;
+		this.mindmg = mindmg;
+		this.elements = elements;
+		this.pvpOnly = pvpOnly;
+		this.activationSkills = activationSkills;
+		critChance = -1;
 	}
 
 	private ChanceCondition(TriggerType trigger, double chance, double critChance, int mindmg, byte[] elements, int[] activationSkills, boolean pvpOnly)
 	{
-		_triggerType = trigger;
-		_chance = chance;
-		_mindmg = mindmg;
-		_elements = elements;
-		_pvpOnly = pvpOnly;
-		_activationSkills = activationSkills;
-		_critChance = critChance;
+		triggerType = trigger;
+		this.chance = chance;
+		this.mindmg = mindmg;
+		this.elements = elements;
+		this.pvpOnly = pvpOnly;
+		this.activationSkills = activationSkills;
+		this.critChance = critChance;
 	}
 
 	public static ChanceCondition parse(StatsSet set)
@@ -202,24 +202,24 @@ public final class ChanceCondition
 
 	public boolean trigger(int event, int damage, boolean crit, byte element, boolean playable, L2Skill skill)
 	{
-		if (_pvpOnly && !playable)
+		if (pvpOnly && !playable)
 		{
 			return false;
 		}
 
-		if (_elements != null && Arrays.binarySearch(_elements, element) < 0)
+		if (elements != null && Arrays.binarySearch(elements, element) < 0)
 		{
 			return false;
 		}
 
-		if (_activationSkills != null)
+		if (activationSkills != null)
 		{
 			if (skill == null)
 			{
 				return false;
 			}
 
-			if (Arrays.binarySearch(_activationSkills, skill.getId()) < 0)
+			if (Arrays.binarySearch(activationSkills, skill.getId()) < 0)
 			{
 				return false;
 			}
@@ -227,29 +227,29 @@ public final class ChanceCondition
 
 		// if the skill has "activationMinDamage" set to be higher than -1(default)
 		// and if "activationMinDamage" is still higher than the recieved damage, the skill wont trigger
-		if (_mindmg > -1 && _mindmg > damage)
+		if (mindmg > -1 && mindmg > damage)
 		{
 			return false;
 		}
 
-		if (!crit || _critChance == -1)
+		if (!crit || critChance == -1)
 		{
-			return _triggerType.check(event) && (_chance < 0 || Rnd.get(100) < _chance);
+			return triggerType.check(event) && (chance < 0 || Rnd.get(100) < chance);
 		}
 		else
 		{
-			return _triggerType.check(event) && (_critChance < 0 || Rnd.get(100) < _critChance);
+			return triggerType.check(event) && (critChance < 0 || Rnd.get(100) < critChance);
 		}
 	}
 
 	public TriggerType getTriggerType()
 	{
-		return _triggerType;
+		return triggerType;
 	}
 
 	@Override
 	public String toString()
 	{
-		return "Trigger[" + _chance + ";" + _triggerType.toString() + "]";
+		return "Trigger[" + chance + ";" + triggerType.toString() + "]";
 	}
 }

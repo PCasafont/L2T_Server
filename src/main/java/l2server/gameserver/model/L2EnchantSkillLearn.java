@@ -27,19 +27,19 @@ import gnu.trove.TIntHashSet;
  */
 public final class L2EnchantSkillLearn
 {
-	private final int _id;
-	private final int _baseLvl;
-	private final TIntHashSet _enchantRoutes = new TIntHashSet();
+	private final int id;
+	private final int baseLvl;
+	private final TIntHashSet enchantRoutes = new TIntHashSet();
 
 	public L2EnchantSkillLearn(int id, int baseLvl)
 	{
-		_id = id;
-		_baseLvl = baseLvl;
+		this.id = id;
+		this.baseLvl = baseLvl;
 	}
 
 	public void addNewEnchantRoute(int route)
 	{
-		_enchantRoutes.add(route);
+		enchantRoutes.add(route);
 	}
 
 	/**
@@ -47,7 +47,7 @@ public final class L2EnchantSkillLearn
 	 */
 	public int getId()
 	{
-		return _id;
+		return id;
 	}
 
 	/**
@@ -55,17 +55,17 @@ public final class L2EnchantSkillLearn
 	 */
 	public int getBaseLevel()
 	{
-		return _baseLvl;
+		return baseLvl;
 	}
 
 	public int[] getAllRoutes()
 	{
-		return _enchantRoutes.toArray();
+		return enchantRoutes.toArray();
 	}
 
 	public boolean isMaxEnchant(int route, int level)
 	{
-		if (route < 1 || !_enchantRoutes.contains(route))
+		if (route < 1 || !enchantRoutes.contains(route))
 		{
 			return false;
 		}
@@ -76,7 +76,7 @@ public final class L2EnchantSkillLearn
 
 	public EnchantSkillDetail getEnchantSkillDetail(int route, int level)
 	{
-		if (route < 1 || !_enchantRoutes.contains(route))
+		if (route < 1 || !enchantRoutes.contains(route))
 		{
 			return null;
 		}

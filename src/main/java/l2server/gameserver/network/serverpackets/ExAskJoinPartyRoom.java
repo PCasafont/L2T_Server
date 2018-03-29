@@ -22,16 +22,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExAskJoinPartyRoom extends L2GameServerPacket
 {
-	private String _charName;
+	private String charName;
 
 	public ExAskJoinPartyRoom(String charName)
 	{
-		_charName = charName;
+		this.charName = charName;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(_charName);
+		writeS(charName);
 	}
 }

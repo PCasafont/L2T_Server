@@ -68,35 +68,35 @@ public class NodesManager
 	
 	class OwnNodeCastFinalizer implements Runnable
 	{
-		private L2PcInstance _player;
-		private L2Npc _npc;
-		private L2Node _node;
+		private L2PcInstance player;
+		private L2Npc npc;
+		private L2Node node;
 		
 		OwnNodeCastFinalizer(L2PcInstance player, L2Npc npc, L2Node node)
 		{
-			_player = player;
-			_npc = npc;
-			_node = node;
+			this.player = player;
+			this.npc = npc;
+			this.node = node;
 		}
 		
 		@Override
 		public void run()
 		{
-			if (_player.isCastingNow())
+			if (player.isCastingNow())
 			{
-				_player.sendPacket(new MagicSkillLaunched(_player, 11030, 1));
-				_player.setIsCastingNow(false);
+				player.sendPacket(new MagicSkillLaunched(player, 11030, 1));
+				player.setIsCastingNow(false);
 				
-				if (_player.getTarget() == _npc && !_npc.isDead() &&
-						Util.checkIfInRange(1000, _player, _npc, true))
+				if (player.getTarget() == npc && !npc.isDead() &&
+						Util.checkIfInRange(1000, player, npc, true))
 				{
-					String name = _player.getName();
-					if (_player.getActingPlayer() != null)
+					String name = player.getName();
+					if (player.getActingPlayer() != null)
 					{
-						name = _player.getActingPlayer().getName();
+						name = player.getActingPlayer().getName();
 					}
 					Announcements.getInstance().announceToAll(name + " new owner!");
-					_node.AddOwner(_player);
+					node.AddOwner(player);
 				}
 			}
 		}
@@ -105,11 +105,11 @@ public class NodesManager
 	
 	public static NodesManager getInstance()
 	{
-		return NodesManager.SingletonHolder._instance;
+		return NodesManager.SingletonHolder.instance;
 	}
 	
 	private static class SingletonHolder
 	{
-		protected static final NodesManager _instance = new NodesManager();
+		protected static final NodesManager instance = new NodesManager();
 	}
 }

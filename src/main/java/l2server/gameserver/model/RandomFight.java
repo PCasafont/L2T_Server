@@ -335,12 +335,12 @@ public class RandomFight
 
     public static l2server.gameserver.model.RandomFight getInstance()
     {
-        return SingletonHolder._instance;
+        return SingletonHolder.instance;
     }
 
     private static class SingletonHolder
     {
-        protected static final l2server.gameserver.model.RandomFight _instance = new l2server.gameserver.model.RandomFight();
+        protected static final l2server.gameserver.model.RandomFight instance = new l2server.gameserver.model.RandomFight();
     }
 
     protected class Event implements Runnable

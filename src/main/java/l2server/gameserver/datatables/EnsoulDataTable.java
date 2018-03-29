@@ -38,11 +38,11 @@ public class EnsoulDataTable
 {
 	public static EnsoulDataTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
-	private final Map<Integer, EnsoulEffect> _effects = new HashMap<>();
-	private final Map<Integer, SoulCrystal> _crystals = new HashMap<>();
+	private final Map<Integer, EnsoulEffect> effects = new HashMap<>();
+	private final Map<Integer, SoulCrystal> crystals = new HashMap<>();
 
 	// =========================================================
 	// Constructor
@@ -83,10 +83,10 @@ public class EnsoulDataTable
                 }
             }
 
-            _effects.put(id, effect);
+            effects.put(id, effect);
         }
 
-		Log.info("EnsoulDataTable: Loaded " + _effects.size() + " ensoul effects.");
+		Log.info("EnsoulDataTable: Loaded " + effects.size() + " ensoul effects.");
 
 		file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "ensoul/crystals.xml");
 		if (!file.exists())
@@ -110,23 +110,23 @@ public class EnsoulDataTable
             for (XmlNode effectNode : crystalNode.getChildren())
             {
                 int effectId = effectNode.getInt("id");
-                sc.addEffect(_effects.get(effectId));
+                sc.addEffect(effects.get(effectId));
             }
 
-            _crystals.put(id, sc);
+            crystals.put(id, sc);
         }
 
-		Log.info("EnsoulDataTable: Loaded " + _crystals.size() + " soul crystals.");
+		Log.info("EnsoulDataTable: Loaded " + crystals.size() + " soul crystals.");
 	}
 
 	public final EnsoulEffect getEffect(int id)
 	{
-		return _effects.get(id);
+		return effects.get(id);
 	}
 
 	public final SoulCrystal getCrystal(int id)
 	{
-		return _crystals.get(id);
+		return crystals.get(id);
 	}
 
 	private FuncTemplate parseFunc(XmlNode n)
@@ -145,6 +145,6 @@ public class EnsoulDataTable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final EnsoulDataTable _instance = new EnsoulDataTable();
+		protected static final EnsoulDataTable instance = new EnsoulDataTable();
 	}
 }

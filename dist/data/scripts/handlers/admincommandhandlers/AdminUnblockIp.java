@@ -31,7 +31,7 @@ import java.util.logging.Logger;
 public class AdminUnblockIp implements IAdminCommandHandler
 {
 
-	private static final Logger _log = Logger.getLogger(AdminTeleport.class.getName());
+	private static final Logger log = Logger.getLogger(AdminTeleport.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {"admin_unblockip"};
 
@@ -71,7 +71,7 @@ public class AdminUnblockIp implements IAdminCommandHandler
 	private boolean unblockIp(String ipAddress, L2PcInstance activeChar)
 	{
 		//LoginServerThread.getInstance().unBlockip(ipAddress);
-		_log.warning("IP removed by GM " + activeChar.getName());
+		log.warning("IP removed by GM " + activeChar.getName());
 		return true;
 	}
 }

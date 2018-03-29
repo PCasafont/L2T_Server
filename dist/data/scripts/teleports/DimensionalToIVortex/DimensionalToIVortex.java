@@ -30,19 +30,19 @@ import java.util.Map;
  */
 public class DimensionalToIVortex extends Quest
 {
-	private static final String _qn = "DimensionalToIVortex";
-	private static final int[] _dimensionalVortexNpcs = {30952, 30953, 30954};
-	private static final int[] _dimensionalStoneNpcs = {30949, 30950, 30951};
-	private static final int _greenDimensionalStone = 4401;
-	private static final int _blueDimensionalStone = 4402;
-	private static final int _redDimensionalStone = 4403;
-	private static Map<Integer, Location> _teleports = new HashMap<Integer, Location>(10);
+	private static final String qn = "DimensionalToIVortex";
+	private static final int[] dimensionalVortexNpcs = {30952, 30953, 30954};
+	private static final int[] dimensionalStoneNpcs = {30949, 30950, 30951};
+	private static final int greenDimensionalStone = 4401;
+	private static final int blueDimensionalStone = 4402;
+	private static final int redDimensionalStone = 4403;
+	private static Map<Integer, Location> teleports = new HashMap<Integer, Location>(10);
 
 	public DimensionalToIVortex(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
 
-		for (int npcId : _dimensionalVortexNpcs)
+		for (int npcId : dimensionalVortexNpcs)
 		{
 			addStartNpc(npcId);
 
@@ -51,23 +51,23 @@ public class DimensionalToIVortex extends Quest
 			addFirstTalkId(npcId);
 		}
 
-		for (int npcId : _dimensionalStoneNpcs)
+		for (int npcId : dimensionalStoneNpcs)
 		{
 			addStartNpc(npcId);
 
 			addTalkId(npcId);
 		}
 
-		_teleports.put(1, new Location(114679, 13436, -5101));
-		_teleports.put(2, new Location(114665, 12697, -3609));
-		_teleports.put(3, new Location(111249, 16031, -2127));
-		_teleports.put(4, new Location(114605, 19371, -645));
-		_teleports.put(5, new Location(117996, 16103, 843));
-		_teleports.put(6, new Location(114743, 19707, 1947));
-		_teleports.put(7, new Location(114552, 12354, 2957));
-		_teleports.put(8, new Location(110963, 16147, 3967));
-		_teleports.put(9, new Location(117356, 18462, 4977));
-		_teleports.put(10, new Location(118250, 15858, 5897));
+		teleports.put(1, new Location(114679, 13436, -5101));
+		teleports.put(2, new Location(114665, 12697, -3609));
+		teleports.put(3, new Location(111249, 16031, -2127));
+		teleports.put(4, new Location(114605, 19371, -645));
+		teleports.put(5, new Location(117996, 16103, 843));
+		teleports.put(6, new Location(114743, 19707, 1947));
+		teleports.put(7, new Location(114552, 12354, 2957));
+		teleports.put(8, new Location(110963, 16147, 3967));
+		teleports.put(9, new Location(117356, 18462, 4977));
+		teleports.put(10, new Location(118250, 15858, 5897));
 	}
 
 	@Override
@@ -91,20 +91,20 @@ public class DimensionalToIVortex extends Quest
 
 			if (event.equalsIgnoreCase("buyGreenStone"))
 			{
-				stoneId = _greenDimensionalStone;
+				stoneId = greenDimensionalStone;
 			}
 			else if (event.equalsIgnoreCase("buyBlueStone"))
 			{
-				stoneId = _blueDimensionalStone;
+				stoneId = blueDimensionalStone;
 			}
 			else
 			{
-				stoneId = _redDimensionalStone;
+				stoneId = redDimensionalStone;
 			}
 
-			if (player.destroyItemByItemId(_qn, 57, 10000, player, true))
+			if (player.destroyItemByItemId(qn, 57, 10000, player, true))
 			{
-				player.addItem(_qn, stoneId, 1, npc, true);
+				player.addItem(qn, stoneId, 1, npc, true);
 			}
 		}
 		else
@@ -115,24 +115,24 @@ public class DimensionalToIVortex extends Quest
 
 			if (teleportId >= 1 && teleportId <= 3)
 			{
-				stoneId = _greenDimensionalStone;
+				stoneId = greenDimensionalStone;
 			}
 			else if (teleportId >= 4 && teleportId <= 6)
 			{
-				stoneId = _blueDimensionalStone;
+				stoneId = blueDimensionalStone;
 			}
 			else
 			{
-				stoneId = _redDimensionalStone;
+				stoneId = redDimensionalStone;
 			}
 
-			if (!player.destroyItemByItemId(_qn, stoneId, 1, player, true))
+			if (!player.destroyItemByItemId(qn, stoneId, 1, player, true))
 			{
 				return "no.html";
 			}
 			else
 			{
-				player.teleToLocation(_teleports.get(teleportId), true);
+				player.teleToLocation(teleports.get(teleportId), true);
 			}
 		}
 
@@ -141,6 +141,6 @@ public class DimensionalToIVortex extends Quest
 
 	public static void main(String[] args)
 	{
-		new DimensionalToIVortex(-1, _qn, "teleports");
+		new DimensionalToIVortex(-1, qn, "teleports");
 	}
 }

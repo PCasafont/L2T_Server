@@ -20,16 +20,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExUnreadMailCount extends L2GameServerPacket
 {
-	private final int _count;
+	private final int count;
 
 	public ExUnreadMailCount(int count)
 	{
-		_count = count;
+		this.count = count;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_count);
+		writeD(count);
 	}
 }

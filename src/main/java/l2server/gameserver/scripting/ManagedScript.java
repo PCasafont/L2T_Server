@@ -27,13 +27,13 @@ import javax.script.ScriptException;
  */
 public abstract class ManagedScript
 {
-	private File _scriptFile;
-	private long _lastLoadTime;
-	private boolean _isActive;
+	private File scriptFile;
+	private long lastLoadTime;
+	private boolean isActive;
 
 	public ManagedScript()
 	{
-		_scriptFile = L2ScriptEngineManager.getInstance().getCurrentLoadingScript();
+		scriptFile = L2ScriptEngineManager.getInstance().getCurrentLoadingScript();
 		setLastLoadTime(System.currentTimeMillis());
 	}
 
@@ -64,12 +64,12 @@ public abstract class ManagedScript
 
 	public void setActive(boolean status)
 	{
-		_isActive = status;
+		isActive = status;
 	}
 
 	public boolean isActive()
 	{
-		return _isActive;
+		return isActive;
 	}
 
 	/**
@@ -77,7 +77,7 @@ public abstract class ManagedScript
 	 */
 	public File getScriptFile()
 	{
-		return _scriptFile;
+		return scriptFile;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public abstract class ManagedScript
 	 */
 	protected void setLastLoadTime(long lastLoadTime)
 	{
-		_lastLoadTime = lastLoadTime;
+		this.lastLoadTime = lastLoadTime;
 	}
 
 	/**
@@ -93,7 +93,7 @@ public abstract class ManagedScript
 	 */
 	protected long getLastLoadTime()
 	{
-		return _lastLoadTime;
+		return lastLoadTime;
 	}
 
 	public abstract String getScriptName();

@@ -36,14 +36,14 @@ public class SiegeGuardManager
 
 	// =========================================================
 	// Data Field
-	private Castle _castle;
-	private List<L2Spawn> _siegeGuardSpawn = new ArrayList<>();
+	private Castle castle;
+	private List<L2Spawn> siegeGuardSpawn = new ArrayList<>();
 
 	// =========================================================
 	// Constructor
 	public SiegeGuardManager(Castle castle)
 	{
-		_castle = castle;
+		this.castle = castle;
 	}
 
 	// =========================================================
@@ -155,7 +155,7 @@ public class SiegeGuardManager
 			boolean isHired = getCastle().getOwnerId() > 0;
 			if (isHired)
 			{
-				int hiredCount = 0, hiredMax = MercTicketManager.getInstance().getMaxAllowedMerc(_castle.getCastleId());
+				int hiredCount = 0, hiredMax = MercTicketManager.getInstance().getMaxAllowedMerc(castle.getCastleId());
 				loadSiegeGuard();
 				for (L2Spawn spawn : getSiegeGuardSpawn())
 				{
@@ -240,7 +240,7 @@ public class SiegeGuardManager
 					spawn1.setHeading(rs.getInt("heading"));
 					spawn1.setRespawnDelay(rs.getInt("respawnDelay"));
 
-					_siegeGuardSpawn.add(spawn1);
+					siegeGuardSpawn.add(spawn1);
 				}
 				else
 				{
@@ -305,11 +305,11 @@ public class SiegeGuardManager
 
 	public final Castle getCastle()
 	{
-		return _castle;
+		return castle;
 	}
 
 	public final List<L2Spawn> getSiegeGuardSpawn()
 	{
-		return _siegeGuardSpawn;
+		return siegeGuardSpawn;
 	}
 }

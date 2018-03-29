@@ -22,21 +22,21 @@ package l2server.gameserver.model;
  */
 public class L2TeleportLocation
 {
-	private int _teleId;
-	private int _locX;
-	private int _locY;
-	private int _locZ;
-	private int _price;
-	private boolean _forNoble;
-	private int _itemId;
-	private String _description;
+	private int teleId;
+	private int locX;
+	private int locY;
+	private int locZ;
+	private int price;
+	private boolean forNoble;
+	private int itemId;
+	private String description;
 
 	/**
 	 * @param id
 	 */
 	public void setTeleId(int id)
 	{
-		_teleId = id;
+		teleId = id;
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class L2TeleportLocation
 	 */
 	public void setLocX(int locX)
 	{
-		_locX = locX;
+		this.locX = locX;
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class L2TeleportLocation
 	 */
 	public void setLocY(int locY)
 	{
-		_locY = locY;
+		this.locY = locY;
 	}
 
 	/**
@@ -60,7 +60,7 @@ public class L2TeleportLocation
 	 */
 	public void setLocZ(int locZ)
 	{
-		_locZ = locZ;
+		this.locZ = locZ;
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class L2TeleportLocation
 	 */
 	public void setPrice(int price)
 	{
-		_price = price;
+		this.price = price;
 	}
 
 	/**
@@ -76,7 +76,7 @@ public class L2TeleportLocation
 	 */
 	public void setIsForNoble(boolean val)
 	{
-		_forNoble = val;
+		forNoble = val;
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class L2TeleportLocation
 	 */
 	public void setItemId(int val)
 	{
-		_itemId = val;
+		itemId = val;
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class L2TeleportLocation
 	 */
 	public int getTeleId()
 	{
-		return _teleId;
+		return teleId;
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class L2TeleportLocation
 	 */
 	public int getLocX()
 	{
-		return _locX;
+		return locX;
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class L2TeleportLocation
 	 */
 	public int getLocY()
 	{
-		return _locY;
+		return locY;
 	}
 
 	/**
@@ -116,7 +116,7 @@ public class L2TeleportLocation
 	 */
 	public int getLocZ()
 	{
-		return _locZ;
+		return locZ;
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class L2TeleportLocation
 	 */
 	public int getPrice()
 	{
-		return _price;
+		return price;
 	}
 
 	/**
@@ -132,7 +132,7 @@ public class L2TeleportLocation
 	 */
 	public boolean getIsForNoble()
 	{
-		return _forNoble;
+		return forNoble;
 	}
 
 	/**
@@ -140,16 +140,16 @@ public class L2TeleportLocation
 	 */
 	public int getItemId()
 	{
-		return _itemId;
+		return itemId;
 	}
 
 	public void setDescription(String description)
 	{
-		_description = description;
+		this.description = description;
 	}
 
 	public String getDescription()
 	{
-		return _description;
+		return description;
 	}
 }

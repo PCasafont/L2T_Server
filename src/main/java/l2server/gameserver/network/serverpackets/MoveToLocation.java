@@ -28,30 +28,30 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public final class MoveToLocation extends L2GameServerPacket
 {
-	private int _charObjId, _x, _y, _z, _xDst, _yDst, _zDst;
+	private int charObjId, x, y, z, xDst, yDst, zDst;
 
 	public MoveToLocation(L2Character cha)
 	{
-		_charObjId = cha.getObjectId();
-		_x = cha.getX();
-		_y = cha.getY();
-		_z = cha.getZ();
-		_xDst = cha.getXdestination();
-		_yDst = cha.getYdestination();
-		_zDst = cha.getZdestination();
+		charObjId = cha.getObjectId();
+		x = cha.getX();
+		y = cha.getY();
+		z = cha.getZ();
+		xDst = cha.getXdestination();
+		yDst = cha.getYdestination();
+		zDst = cha.getZdestination();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_charObjId);
+		writeD(charObjId);
 
-		writeD(_xDst);
-		writeD(_yDst);
-		writeD(_zDst);
+		writeD(xDst);
+		writeD(yDst);
+		writeD(zDst);
 
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
+		writeD(x);
+		writeD(y);
+		writeD(z);
 	}
 }

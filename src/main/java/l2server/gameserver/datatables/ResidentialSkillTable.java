@@ -18,8 +18,8 @@ import java.util.ArrayList;
 public class ResidentialSkillTable
 {
 
-	private static ResidentialSkillTable _instance = null;
-	private static TIntObjectHashMap<ArrayList<L2Skill>> _list;
+	private static ResidentialSkillTable instance = null;
+	private static TIntObjectHashMap<ArrayList<L2Skill>> list;
 
 	ResidentialSkillTable()
 	{
@@ -28,7 +28,7 @@ public class ResidentialSkillTable
 
 	private void load()
 	{
-		_list = new TIntObjectHashMap<>();
+		list = new TIntObjectHashMap<>();
 
 		if (Config.IS_CLASSIC)
 		{
@@ -54,27 +54,27 @@ public class ResidentialSkillTable
                     continue;
                 }
 
-                if (!_list.containsKey(entityId))
+                if (!list.containsKey(entityId))
                 {
                     ArrayList<L2Skill> aux = new ArrayList<>();
                     aux.add(sk);
-                    _list.put(entityId, aux);
+                    list.put(entityId, aux);
                 }
                 else
                 {
-                    _list.get(entityId).add(sk);
+                    list.get(entityId).add(sk);
                 }
             }
         }
 
-		Log.info("ResidentialSkillTable: Loaded " + _list.size() + " entities with associated skills.");
+		Log.info("ResidentialSkillTable: Loaded " + list.size() + " entities with associated skills.");
 	}
 
 	public ArrayList<L2Skill> getSkills(int entityId)
 	{
-		if (_list.containsKey(entityId))
+		if (list.containsKey(entityId))
 		{
-			return _list.get(entityId);
+			return list.get(entityId);
 		}
 
 		return null;
@@ -82,11 +82,11 @@ public class ResidentialSkillTable
 
 	public static ResidentialSkillTable getInstance()
 	{
-		if (_instance == null)
+		if (instance == null)
 		{
-			_instance = new ResidentialSkillTable();
+			instance = new ResidentialSkillTable();
 		}
 
-		return _instance;
+		return instance;
 	}
 }

@@ -172,7 +172,7 @@ public class OlympiadManagerLink implements IBypassHandler
 						}
 						break;
 					default:
-						_log.warning("Olympiad System: Couldnt send packet for request " + val);
+						log.warning("Olympiad System: Couldnt send packet for request " + val);
 						break;
 				}
 			}
@@ -188,7 +188,7 @@ public class OlympiadManagerLink implements IBypassHandler
 
 				if (params[1] == null)
 				{
-					_log.warning("Olympiad Buffer Warning: npcId = " + target.getNpcId() +
+					log.warning("Olympiad Buffer Warning: npcId = " + target.getNpcId() +
 							" has no buffGroup set in the bypass for the buff selected.");
 					return false;
 				}
@@ -293,14 +293,14 @@ public class OlympiadManagerLink implements IBypassHandler
 						activeChar.sendPacket(new ExHeroList());
 						break;
 					default:
-						_log.warning("Olympiad System: Couldnt send packet for request " + val);
+						log.warning("Olympiad System: Couldnt send packet for request " + val);
 						break;
 				}
 			}
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.INFO, "Exception in " + e.getMessage(), e);
+			log.log(Level.INFO, "Exception in " + e.getMessage(), e);
 		}
 
 		return true;

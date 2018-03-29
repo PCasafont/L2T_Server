@@ -28,7 +28,7 @@ import java.util.logging.Level;
 
 public class ClanHallAuctionManager
 {
-	private List<Auction> _auctions;
+	private List<Auction> auctions;
 
 	private static final String[] ITEM_INIT_DATA = {
 			"(22, 0, 'NPC', 'NPC Clan', 'ClanHall', 22, 0, 'Moonstone Hall', 1, 20000000, 0, 1164841200000)",
@@ -134,19 +134,19 @@ public class ClanHallAuctionManager
 
 	public static ClanHallAuctionManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private ClanHallAuctionManager()
 	{
 		Log.info("Initializing AuctionManager");
-		_auctions = new ArrayList<>();
+		auctions = new ArrayList<>();
 		load();
 	}
 
 	public void reload()
 	{
-		_auctions.clear();
+		auctions.clear();
 		load();
 	}
 
@@ -162,7 +162,7 @@ public class ClanHallAuctionManager
 			rs = statement.executeQuery();
 			while (rs.next())
 			{
-				_auctions.add(new Auction(rs.getInt("id")));
+				auctions.add(new Auction(rs.getInt("id")));
 			}
 			statement.close();
 			Log.info("Loaded: " + getAuctions().size() + " auction(s)");
@@ -204,7 +204,7 @@ public class ClanHallAuctionManager
 
 	public final List<Auction> getAuctions()
 	{
-		return _auctions;
+		return auctions;
 	}
 
 	/**
@@ -233,7 +233,7 @@ public class ClanHallAuctionManager
 					con.prepareStatement("REPLACE INTO `clanhall_auction` VALUES " + ITEM_INIT_DATA[i]);
 			statement.execute();
 			statement.close();
-			_auctions.add(new Auction(id));
+			auctions.add(new Auction(id));
 			Log.info("Created auction for ClanHall: " + id);
 		}
 		catch (Exception e)
@@ -249,6 +249,6 @@ public class ClanHallAuctionManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ClanHallAuctionManager _instance = new ClanHallAuctionManager();
+		protected static final ClanHallAuctionManager instance = new ClanHallAuctionManager();
 	}
 }

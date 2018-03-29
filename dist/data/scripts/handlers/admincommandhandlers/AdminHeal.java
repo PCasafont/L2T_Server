@@ -36,7 +36,7 @@ import java.util.logging.Logger;
  */
 public class AdminHeal implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminRes.class.getName());
+	private static Logger log = Logger.getLogger(AdminRes.class.getName());
 	private static final String[] ADMIN_COMMANDS = {"admin_heal"};
 
 	@Override
@@ -58,7 +58,7 @@ public class AdminHeal implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warning("Heal error: " + e);
+					log.warning("Heal error: " + e);
 				}
 				activeChar.sendMessage("Incorrect target/radius specified.");
 			}
@@ -132,7 +132,7 @@ public class AdminHeal implements IAdminCommandHandler
 			}
 			if (Config.DEBUG)
 			{
-				_log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") healed character " +
+				log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") healed character " +
 						target.getName());
 			}
 		}

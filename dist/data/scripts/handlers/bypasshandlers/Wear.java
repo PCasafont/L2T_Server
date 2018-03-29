@@ -58,7 +58,7 @@ public class Wear implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			_log.info("Exception in " + getClass().getSimpleName());
+			log.info("Exception in " + getClass().getSimpleName());
 		}
 		return false;
 	}
@@ -69,7 +69,7 @@ public class Wear implements IBypassHandler
 
 		if (Config.DEBUG)
 		{
-			_log.fine("Showing wearlist");
+			log.fine("Showing wearlist");
 		}
 
 		L2TradeList list = TradeController.getInstance().getBuyList(val);
@@ -81,7 +81,7 @@ public class Wear implements IBypassHandler
 		}
 		else
 		{
-			_log.warning("no buylist with id:" + val);
+			log.warning("no buylist with id:" + val);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 		}
 	}

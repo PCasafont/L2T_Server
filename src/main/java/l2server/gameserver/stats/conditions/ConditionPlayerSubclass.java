@@ -23,7 +23,7 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerSubclass extends Condition
 {
-	private final boolean _val;
+	private final boolean val;
 
 	/**
 	 * Instantiates a new condition player subclass.
@@ -32,7 +32,7 @@ public class ConditionPlayerSubclass extends Condition
 	 */
 	public ConditionPlayerSubclass(boolean val)
 	{
-		_val = val;
+		this.val = val;
 	}
 
 	/* (non-Javadoc)
@@ -41,6 +41,6 @@ public class ConditionPlayerSubclass extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return !(env.player instanceof L2PcInstance) || ((L2PcInstance) env.player).isSubClassActive() == _val;
+		return !(env.player instanceof L2PcInstance) || ((L2PcInstance) env.player).isSubClassActive() == val;
 	}
 }

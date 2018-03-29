@@ -29,18 +29,18 @@ public final class RequestSiegeAttackerList extends L2GameClientPacket
 
 	//
 
-	private int _castleId;
+	private int castleId;
 
 	@Override
 	protected void readImpl()
 	{
-		_castleId = readD();
+		castleId = readD();
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		Castle castle = CastleManager.getInstance().getCastleById(_castleId);
+		Castle castle = CastleManager.getInstance().getCastleById(castleId);
 		if (castle == null)
 		{
 			return;

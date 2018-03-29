@@ -31,8 +31,8 @@ import java.util.Map;
 
 public class BoatManager
 {
-	private Map<Integer, L2BoatInstance> _boats = new HashMap<>();
-	private boolean[] _docksBusy = new boolean[3];
+	private Map<Integer, L2BoatInstance> boats = new HashMap<>();
+	private boolean[] docksBusy = new boolean[3];
 
 	public static final int TALKING_ISLAND = 1;
 	public static final int GLUDIN_HARBOR = 2;
@@ -40,14 +40,14 @@ public class BoatManager
 
 	public static BoatManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private BoatManager()
 	{
-		for (int i = 0; i < _docksBusy.length; i++)
+		for (int i = 0; i < docksBusy.length; i++)
 		{
-			_docksBusy[i] = false;
+			docksBusy[i] = false;
 		}
 	}
 
@@ -97,7 +97,7 @@ public class BoatManager
 		npcDat.set("mDef", 100);
 		L2CharTemplate template = new L2CharTemplate(npcDat);
 		L2BoatInstance boat = new L2BoatInstance(IdFactory.getInstance().getNextId(), template);
-		_boats.put(boat.getObjectId(), boat);
+		boats.put(boat.getObjectId(), boat);
 		boat.setHeading(heading);
 		boat.setXYZInvisible(x, y, z);
 		boat.spawnMe();
@@ -110,7 +110,7 @@ public class BoatManager
 	 */
 	public L2BoatInstance getBoat(int boatId)
 	{
-		return _boats.get(boatId);
+		return boats.get(boatId);
 	}
 
 	/**
@@ -123,7 +123,7 @@ public class BoatManager
 	{
 		try
 		{
-			_docksBusy[h] = value;
+			docksBusy[h] = value;
 		}
 		catch (ArrayIndexOutOfBoundsException ignored)
 		{
@@ -140,7 +140,7 @@ public class BoatManager
 	{
 		try
 		{
-			return _docksBusy[h];
+			return docksBusy[h];
 		}
 		catch (ArrayIndexOutOfBoundsException e)
 		{
@@ -220,6 +220,6 @@ public class BoatManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final BoatManager _instance = new BoatManager();
+		protected static final BoatManager instance = new BoatManager();
 	}
 }

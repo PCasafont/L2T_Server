@@ -25,11 +25,11 @@ public class ExChangeAttributeInfo extends L2GameServerPacket
 	private int attributeOID;
 	private int attributes;
 
-	public ExChangeAttributeInfo(int _attributeOID, int _itemOID, int _attribute)
+	public ExChangeAttributeInfo(int attributeOID, int itemOID, int attribute)
 	{
-		itemOID = _itemOID;
-		attributeOID = _attributeOID;
-		attributes = _attribute;
+		this.itemOID = itemOID;
+		this.attributeOID = attributeOID;
+		attributes = attribute;
 	}
 
 	@Override

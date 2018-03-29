@@ -53,11 +53,11 @@ public class IniaParser
 	
 	public static IniaParser getInstance()
 	{
-		return IniaParser.SingletonHolder._instance;
+		return IniaParser.SingletonHolder.instance;
 	}
 	
 	private static class SingletonHolder
 	{
-		protected static final IniaParser _instance = new IniaParser();
+		protected static final IniaParser instance = new IniaParser();
 	}
 }

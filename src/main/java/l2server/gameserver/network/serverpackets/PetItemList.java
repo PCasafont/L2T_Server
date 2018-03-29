@@ -28,14 +28,14 @@ import l2server.log.Log;
 public class PetItemList extends L2ItemListPacket
 {
 
-	private L2PetInstance _activeChar;
+	private L2PetInstance activeChar;
 
 	public PetItemList(L2PetInstance character)
 	{
-		_activeChar = character;
+		activeChar = character;
 		if (Config.DEBUG)
 		{
-			L2ItemInstance[] items = _activeChar.getInventory().getItems();
+			L2ItemInstance[] items = activeChar.getInventory().getItems();
 			for (L2ItemInstance temp : items)
 			{
 				Log.fine("item:" + temp.getItem().getName() + " type1:" + temp.getItem().getType1() + " type2:" +
@@ -47,7 +47,7 @@ public class PetItemList extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		L2ItemInstance[] items = _activeChar.getInventory().getItems();
+		L2ItemInstance[] items = activeChar.getInventory().getItems();
 		int count = items.length;
 		writeH(count);
 

@@ -31,12 +31,12 @@ import l2server.log.Log;
 public final class TradeDone extends L2GameClientPacket
 {
 
-	private int _response;
+	private int response;
 
 	@Override
 	protected void readImpl()
 	{
-		_response = readD();
+		response = readD();
 	}
 
 	@Override
@@ -68,7 +68,7 @@ public final class TradeDone extends L2GameClientPacket
 			return;
 		}
 
-		if (_response == 1)
+		if (response == 1)
 		{
 			if (trade.getPartner() == null || L2World.getInstance().getPlayer(trade.getPartner().getObjectId()) == null)
 			{

@@ -51,20 +51,20 @@ public class RequestSetCrop extends L2GameClientPacket
 
 	private static final int BATCH_LENGTH = 21; // length of the one item
 
-	private int _manorId;
-	private Crop[] _items = null;
+	private int manorId;
+	private Crop[] items = null;
 
 	@Override
 	protected void readImpl()
 	{
-		_manorId = readD();
+		manorId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
 		{
 			return;
 		}
 
-		_items = new Crop[count];
+		items = new Crop[count];
 		for (int i = 0; i < count; i++)
 		{
 			int itemId = readD();
@@ -73,17 +73,17 @@ public class RequestSetCrop extends L2GameClientPacket
 			int type = readC();
 			if (itemId < 1 || sales < 0 || price < 0)
 			{
-				_items = null;
+				items = null;
 				return;
 			}
-			_items[i] = new Crop(itemId, sales, price, type);
+			items[i] = new Crop(itemId, sales, price, type);
 		}
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		if (_items == null)
+		if (items == null)
 		{
 			return;
 		}
@@ -96,7 +96,7 @@ public class RequestSetCrop extends L2GameClientPacket
 		}
 
 		// check castle owner
-		Castle currentCastle = CastleManager.getInstance().getCastleById(_manorId);
+		Castle currentCastle = CastleManager.getInstance().getCastleById(manorId);
 		if (currentCastle.getOwnerId() != player.getClanId())
 		{
 			return;
@@ -124,8 +124,8 @@ public class RequestSetCrop extends L2GameClientPacket
 			return;
 		}
 
-		List<CropProcure> crops = new ArrayList<>(_items.length);
-		for (Crop i : _items)
+		List<CropProcure> crops = new ArrayList<>(items.length);
+		for (Crop i : items)
 		{
 			CropProcure s = i.getCrop();
 			if (s == null)
@@ -147,27 +147,27 @@ public class RequestSetCrop extends L2GameClientPacket
 
 	private static class Crop
 	{
-		private final int _itemId;
-		private final long _sales;
-		private final long _price;
-		private final int _type;
+		private final int itemId;
+		private final long sales;
+		private final long price;
+		private final int type;
 
 		public Crop(int id, long s, long p, int t)
 		{
-			_itemId = id;
-			_sales = s;
-			_price = p;
-			_type = t;
+			itemId = id;
+			sales = s;
+			price = p;
+			type = t;
 		}
 
 		public CropProcure getCrop()
 		{
-			if (_sales != 0 && MAX_ADENA / _sales < _price)
+			if (sales != 0 && MAX_ADENA / sales < price)
 			{
 				return null;
 			}
 
-			return CastleManorManager.getInstance().getNewCropProcure(_itemId, _sales, _type, _price, _sales);
+			return CastleManorManager.getInstance().getNewCropProcure(itemId, sales, type, price, sales);
 		}
 	}
 }

@@ -37,13 +37,13 @@ import l2server.gameserver.templates.skills.L2EffectType;
 
 public abstract class L2Playable extends L2Character
 {
-	private L2Character _lockedTarget = null;
+	private L2Character lockedTarget = null;
 
 	/**
 	 * Constructor of L2PlayableInstance (use L2Character constructor).<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Call the L2Character constructor to create an empty _skills slot and link copy basic Calculator set to this L2PlayableInstance </li><BR><BR>
+	 * <li>Call the L2Character constructor to create an empty skills slot and link copy basic Calculator set to this L2PlayableInstance </li><BR><BR>
 	 *
 	 * @param objectId Identifier of the object to initialized
 	 * @param template The L2CharTemplate to apply to the L2PlayableInstance
@@ -272,7 +272,7 @@ public abstract class L2Playable extends L2Character
 	// after resurrect
 	public final boolean isNoblesseBlessed()
 	{
-		return _effects.isAffected(L2EffectType.NOBLESSE_BLESSING.getMask()) && !getActingPlayer().getIsInsideGMEvent();
+		return effects.isAffected(L2EffectType.NOBLESSE_BLESSING.getMask()) && !getActingPlayer().getIsInsideGMEvent();
 	}
 
 	public final void stopNoblesseBlessing(L2Abnormal effect)
@@ -291,7 +291,7 @@ public abstract class L2Playable extends L2Character
 	// Support for Soul of the Phoenix and Salvation skills
 	public final boolean isPhoenixBlessed()
 	{
-		return _effects.isAffected(L2EffectType.PHOENIX_BLESSING.getMask());
+		return effects.isAffected(L2EffectType.PHOENIX_BLESSING.getMask());
 	}
 
 	public final void stopPhoenixBlessing(L2Abnormal effect)
@@ -313,13 +313,13 @@ public abstract class L2Playable extends L2Character
 	 */
 	public boolean isSilentMoving()
 	{
-		return _effects.isAffected(L2EffectType.SILENT_MOVE.getMask());
+		return effects.isAffected(L2EffectType.SILENT_MOVE.getMask());
 	}
 
 	// for Newbie Protection Blessing skill, keeps you safe from an attack by a chaotic character >= 10 levels apart from you
 	public final boolean getProtectionBlessing()
 	{
-		return _effects.isAffected(L2EffectType.PROTECTION_BLESSING.getMask());
+		return effects.isAffected(L2EffectType.PROTECTION_BLESSING.getMask());
 	}
 
 	/**
@@ -341,7 +341,7 @@ public abstract class L2Playable extends L2Character
 	//Charm of Luck - During a Raid/Boss war, decreased chance for death penalty
 	public final boolean getCharmOfLuck()
 	{
-		return _effects.isAffected(L2EffectType.CHARM_OF_LUCK.getMask());
+		return effects.isAffected(L2EffectType.CHARM_OF_LUCK.getMask());
 	}
 
 	public final void stopCharmOfLuck(L2Abnormal effect)
@@ -361,22 +361,22 @@ public abstract class L2Playable extends L2Character
 	@Override
 	public void updateEffectIcons(boolean partyOnly)
 	{
-		_effects.updateEffectIcons(partyOnly);
+		effects.updateEffectIcons(partyOnly);
 	}
 
 	public boolean isLockedTarget()
 	{
-		return _lockedTarget != null;
+		return lockedTarget != null;
 	}
 
 	public L2Character getLockedTarget()
 	{
-		return _lockedTarget;
+		return lockedTarget;
 	}
 
 	public void setLockedTarget(L2Character cha)
 	{
-		_lockedTarget = cha;
+		lockedTarget = cha;
 	}
 
 	L2PcInstance transferDmgTo;

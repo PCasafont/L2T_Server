@@ -36,16 +36,16 @@ import java.util.logging.Level;
  */
 public class RequestServerLogin extends L2LoginClientPacket
 {
-	private int _skey1;
-	private int _skey2;
-	private int _serverId;
+	private int skey1;
+	private int skey2;
+	private int serverId;
 
 	/**
 	 * @return
 	 */
 	public int getSessionKey1()
 	{
-		return _skey1;
+		return skey1;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class RequestServerLogin extends L2LoginClientPacket
 	 */
 	public int getSessionKey2()
 	{
-		return _skey2;
+		return skey2;
 	}
 
 	/**
@@ -61,17 +61,17 @@ public class RequestServerLogin extends L2LoginClientPacket
 	 */
 	public int getServerID()
 	{
-		return _serverId;
+		return serverId;
 	}
 
 	@Override
 	public boolean readImpl()
 	{
-		if (super._buf.remaining() >= 9)
+		if (super.buf.remaining() >= 9)
 		{
-			_skey1 = readD();
-			_skey2 = readD();
-			_serverId = readC();
+			skey1 = readD();
+			skey2 = readD();
+			serverId = readC();
 			return true;
 		}
 		else
@@ -88,13 +88,13 @@ public class RequestServerLogin extends L2LoginClientPacket
 		SessionKey sk = getClient().getSessionKey();
 
 		// if we didnt showed the license we cant check these values
-		if (!Config.SHOW_LICENCE || sk.checkLoginPair(_skey1, _skey2))
+		if (!Config.SHOW_LICENCE || sk.checkLoginPair(skey1, skey2))
 		{
-			//System.out.println("Logging Into Server " + _serverId);
+			//System.out.println("Logging Into Server " + serverId);
 			int logIntoDimensionId = 0;
-			if (_serverId == 32)
+			if (serverId == 32)
 			{
-				_serverId = 31;
+				serverId = 31;
 
 				logIntoDimensionId = 1;
 
@@ -106,7 +106,7 @@ public class RequestServerLogin extends L2LoginClientPacket
 				}*/
 			}
 
-			if (LoginController.getInstance().isLoginPossible(getClient(), _serverId))
+			if (LoginController.getInstance().isLoginPossible(getClient(), serverId))
 			{
 				getClient().setJoinedGS(true);
 				getClient().sendPacket(new PlayOk(sk));

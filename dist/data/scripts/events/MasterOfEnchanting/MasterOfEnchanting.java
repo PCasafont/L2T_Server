@@ -37,7 +37,7 @@ public class MasterOfEnchanting extends Quest
 	private static final int _master_yogi_staff = 13539;
 	private static final int _master_yogi_scroll = 13540;
 
-	private static final int _adena = 57;
+	private static final int adena = 57;
 	private static final int _staff_price = 1000000;
 	private static final int _scroll_24_price = 5000000;
 	private static final int _scroll_24_time = 6;
@@ -49,7 +49,7 @@ public class MasterOfEnchanting extends Quest
 	private static final int[] _hat_event_reward = {13518, 13519, 13522};
 	private static final int[] _crystal_reward = {9570, 9571, 9572};
 
-	private static final int[][] _spawns = {
+	private static final int[][] spawns = {
 			{16111, 142850, -2707, 16000},
 			{17275, 145000, -3037, 25000},
 			{83037, 149324, -3470, 44000},
@@ -93,9 +93,9 @@ public class MasterOfEnchanting extends Quest
 		addStartNpc(_master_yogi);
 		addFirstTalkId(_master_yogi);
 		addTalkId(_master_yogi);
-		for (int[] _spawn : _spawns)
+		for (int[] spawn : spawns)
 		{
-			addSpawn(_master_yogi, _spawn[0], _spawn[1], _spawn[2], _spawn[3], false, 0);
+			addSpawn(_master_yogi, spawn[0], spawn[1], spawn[2], spawn[3], false, 0);
 		}
 	}
 
@@ -109,9 +109,9 @@ public class MasterOfEnchanting extends Quest
 		htmltext = event;
 		if (event.equalsIgnoreCase("buy_staff"))
 		{
-			if (st.getQuestItemsCount(_master_yogi_staff) == 0 && st.getQuestItemsCount(_adena) > _staff_price)
+			if (st.getQuestItemsCount(_master_yogi_staff) == 0 && st.getQuestItemsCount(adena) > _staff_price)
 			{
-				st.takeItems(_adena, _staff_price);
+				st.takeItems(adena, _staff_price);
 				st.giveItems(_master_yogi_staff, 1);
 				htmltext = "32599-staffbuyed.htm";
 			}
@@ -131,9 +131,9 @@ public class MasterOfEnchanting extends Quest
 			}
 			if (_curr_time > _reuse_time)
 			{
-				if (st.getQuestItemsCount(_adena) > _scroll_24_price)
+				if (st.getQuestItemsCount(adena) > _scroll_24_price)
 				{
-					st.takeItems(_adena, _scroll_24_price);
+					st.takeItems(adena, _scroll_24_price);
 					st.giveItems(_master_yogi_scroll, 24);
 					q.saveGlobalQuestVar(player.getAccountName(),
 							Long.toString(System.currentTimeMillis() + _scroll_24_time * 3600000));
@@ -169,9 +169,9 @@ public class MasterOfEnchanting extends Quest
 				{
 					// Little glitch. There is no SystemMessage with seconds only.
 					// If time is less than 1 minute player can buy scrolls
-					if (st.getQuestItemsCount(_adena) > _scroll_24_price)
+					if (st.getQuestItemsCount(adena) > _scroll_24_price)
 					{
-						st.takeItems(_adena, _scroll_24_price);
+						st.takeItems(adena, _scroll_24_price);
 						st.giveItems(_master_yogi_scroll, 24);
 						q.saveGlobalQuestVar(player.getAccountName(),
 								Long.toString(System.currentTimeMillis() + _scroll_24_time * 3600000));
@@ -186,9 +186,9 @@ public class MasterOfEnchanting extends Quest
 		}
 		else if (event.equalsIgnoreCase("buy_scroll_1"))
 		{
-			if (st.getQuestItemsCount(_adena) > _scroll_1_price)
+			if (st.getQuestItemsCount(adena) > _scroll_1_price)
 			{
-				st.takeItems(_adena, _scroll_1_price);
+				st.takeItems(adena, _scroll_1_price);
 				st.giveItems(_master_yogi_scroll, 1);
 				htmltext = "32599-scroll-ok.htm";
 			}
@@ -199,9 +199,9 @@ public class MasterOfEnchanting extends Quest
 		}
 		else if (event.equalsIgnoreCase("buy_scroll_10"))
 		{
-			if (st.getQuestItemsCount(_adena) > _scroll_10_price)
+			if (st.getQuestItemsCount(adena) > _scroll_10_price)
 			{
-				st.takeItems(_adena, _scroll_10_price);
+				st.takeItems(adena, _scroll_10_price);
 				st.giveItems(_master_yogi_scroll, 10);
 				htmltext = "32599-scroll-ok.htm";
 			}

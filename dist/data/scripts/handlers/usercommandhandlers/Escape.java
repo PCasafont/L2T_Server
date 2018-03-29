@@ -141,32 +141,32 @@ public class Escape implements IUserCommandHandler
 
 	static class EscapeFinalizer implements Runnable
 	{
-		private L2PcInstance _activeChar;
+		private L2PcInstance activeChar;
 
 		EscapeFinalizer(L2PcInstance activeChar)
 		{
-			_activeChar = activeChar;
+			this.activeChar = activeChar;
 		}
 
 		@Override
 		public void run()
 		{
-			if (_activeChar.isDead())
+			if (activeChar.isDead())
 			{
 				return;
 			}
 
-			_activeChar.enableAllSkills();
-			_activeChar.setIsCastingNow(false);
-			_activeChar.setInstanceId(0);
+			activeChar.enableAllSkills();
+			activeChar.setIsCastingNow(false);
+			activeChar.setInstanceId(0);
 
 			try
 			{
-				_activeChar.teleToLocation(MapRegionTable.TeleportWhereType.Town);
+				activeChar.teleToLocation(MapRegionTable.TeleportWhereType.Town);
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "", e);
+				log.log(Level.SEVERE, "", e);
 			}
 		}
 	}

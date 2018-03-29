@@ -36,14 +36,14 @@ import java.util.concurrent.ScheduledFuture;
 
 public class ClanGuardian extends L2AttackableAIScript
 {
-    private static final int _clanGuardian = 15053;
-    private static final L2Skill _clanGuardianRecovery = SkillTable.getInstance().getInfo(19018, 1);
+    private static final int clanGuardian = 15053;
+    private static final L2Skill clanGuardianRecovery = SkillTable.getInstance().getInfo(19018, 1);
 
     public ClanGuardian(int id, String name, String descr)
     {
         super(id, name, descr);
 
-        addSpawnId(_clanGuardian);
+        addSpawnId(clanGuardian);
     }
 
     @Override
@@ -58,41 +58,41 @@ public class ClanGuardian extends L2AttackableAIScript
 
     class ClanGuardianAI implements Runnable
     {
-        private L2Summon _clanGuardian;
-        private L2PcInstance _owner;
-        private ScheduledFuture<?> _schedule = null;
+        private L2Summon clanGuardian;
+        private L2PcInstance owner;
+        private ScheduledFuture<?> schedule = null;
 
         protected ClanGuardianAI(L2Summon npc)
         {
-            _clanGuardian = npc;
-            _owner = npc.getOwner();
+            clanGuardian = npc;
+            owner = npc.getOwner();
         }
 
         public void setSchedule(ScheduledFuture<?> schedule)
         {
-            _schedule = schedule;
+            this.schedule = schedule;
         }
 
         @Override
         public void run()
         {
-            if (_clanGuardian == null || _clanGuardian.isDead() || !_owner.getSummons().contains(_clanGuardian))
+            if (clanGuardian == null || clanGuardian.isDead() || !owner.getSummons().contains(clanGuardian))
             {
-                if (_schedule != null)
+                if (schedule != null)
                 {
-                    _schedule.cancel(true);
+                    schedule.cancel(true);
                     return;
                 }
             }
 
-            Collection<L2PcInstance> _players = _clanGuardian.getKnownList().getKnownPlayersInRadius(500);
+            Collection<L2PcInstance> players = clanGuardian.getKnownList().getKnownPlayersInRadius(500);
 
-            for (L2PcInstance player : _players)
+            for (L2PcInstance player : players)
             {
-                if (isValidTarget(player, _clanGuardian))
+                if (isValidTarget(player, clanGuardian))
                 {
-                    _clanGuardian.setTarget(player);
-                    _clanGuardian.doCast(_clanGuardianRecovery);
+                    clanGuardian.setTarget(player);
+                    clanGuardian.doCast(clanGuardianRecovery);
                 }
             }
         }

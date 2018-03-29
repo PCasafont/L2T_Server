@@ -21,11 +21,11 @@ import l2server.gameserver.stats.Env;
 
 public class ConditionPlayerSurvivalEvent extends Condition
 {
-	private final boolean _val;
+	private final boolean val;
 
 	public ConditionPlayerSurvivalEvent(boolean val)
 	{
-		_val = val;
+		this.val = val;
 	}
 
 	@Override
@@ -35,9 +35,9 @@ public class ConditionPlayerSurvivalEvent extends Condition
 		if (player == null || !player.isPlayingEvent() ||
 				!(player.getEvent().isType(EventType.Survival) && player.getEvent().isType(EventType.TeamSurvival)))
 		{
-			return !_val;
+			return !val;
 		}
 
-		return _val;
+		return val;
 	}
 }

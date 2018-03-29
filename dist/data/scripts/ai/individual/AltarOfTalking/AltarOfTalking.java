@@ -16,28 +16,28 @@ import java.util.Map;
 
 public class AltarOfTalking extends Quest
 {
-    private static final int _margueriteId = 80245;
-    private static final String _qn = "AltarOfTalking";
-    private static Map<Integer, Boolean> _spawnInfo = new HashMap<Integer, Boolean>(3);
-    private static final int[] _raidIds = {80248, 80247, 80246};
-    private static final int[] _stoneIds = {20770, 20771, 20772};
-    private static final int _altarOfTalkingId = 80245;
+    private static final int margueriteId = 80245;
+    private static final String qn = "AltarOfTalking";
+    private static Map<Integer, Boolean> spawnInfo = new HashMap<Integer, Boolean>(3);
+    private static final int[] raidIds = {80248, 80247, 80246};
+    private static final int[] stoneIds = {20770, 20771, 20772};
+    private static final int altarOfTalkingId = 80245;
 
     public AltarOfTalking(int questId, String name, String descr)
     {
         super(questId, name, descr);
 
-        addSpawn(_margueriteId, -119771, 246318, -1237, 843, false, 0);
+        addSpawn(margueriteId, -119771, 246318, -1237, 843, false, 0);
 
 
-        addFirstTalkId(_altarOfTalkingId);
-        addStartNpc(_altarOfTalkingId);
-        addTalkId(_altarOfTalkingId);
+        addFirstTalkId(altarOfTalkingId);
+        addStartNpc(altarOfTalkingId);
+        addTalkId(altarOfTalkingId);
 
-        for (int i : _raidIds)
+        for (int i : raidIds)
         {
             addKillId(i);
-            _spawnInfo.put(i, false);
+            spawnInfo.put(i, false);
         }
     }
 
@@ -54,17 +54,17 @@ public class AltarOfTalking extends Quest
         {
             int bossId = Integer.valueOf(event.split(" ")[1]);
             int stoneId = 0;
-            if (bossId == _raidIds[0])
+            if (bossId == raidIds[0])
             {
-                stoneId = _stoneIds[0];
+                stoneId = stoneIds[0];
             }
-            else if (bossId == _raidIds[1])
+            else if (bossId == raidIds[1])
             {
-                stoneId = _stoneIds[1];
+                stoneId = stoneIds[1];
             }
             else
             {
-                stoneId = _stoneIds[2];
+                stoneId = stoneIds[2];
             }
 
             if (stoneId == 0) //Cheating?
@@ -72,16 +72,16 @@ public class AltarOfTalking extends Quest
                 return null;
             }
 
-            synchronized (_spawnInfo)
+            synchronized (spawnInfo)
             {
-                if (!_spawnInfo.get(bossId))
+                if (!spawnInfo.get(bossId))
                 {
-                    if (!player.destroyItemByItemId(_qn, stoneId, 1, player, true))
+                    if (!player.destroyItemByItemId(qn, stoneId, 1, player, true))
                     {
                         return stoneId + "-no.html";
                     }
                     Announcements.getInstance().announceToAll("Marguerite: Mooooooh!");
-                    _spawnInfo.put(bossId, true); //Boss is spawned
+                    spawnInfo.put(bossId, true); //Boss is spawned
 
 
                     L2Attackable boss =
@@ -101,9 +101,9 @@ public class AltarOfTalking extends Quest
     @Override
     public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        synchronized (_spawnInfo)
+        synchronized (spawnInfo)
         {
-            _spawnInfo.put(npc.getNpcId(), false);
+            spawnInfo.put(npc.getNpcId(), false);
 
         }
         Announcements.getInstance().announceToAll("Marguerite: MOOOOOOOOOH!");
@@ -112,6 +112,6 @@ public class AltarOfTalking extends Quest
 
     public static void main(String[] args)
     {
-        new AltarOfTalking(-1, _qn, "ai/individual");
+        new AltarOfTalking(-1, qn, "ai/individual");
     }
 }

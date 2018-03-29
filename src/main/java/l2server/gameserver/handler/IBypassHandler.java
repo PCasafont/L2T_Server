@@ -25,7 +25,7 @@ import java.util.logging.Logger;
  */
 public interface IBypassHandler
 {
-	Logger _log = Logger.getLogger(IBypassHandler.class.getName());
+	Logger log = Logger.getLogger(IBypassHandler.class.getName());
 
 	/**
 	 * this is the worker method that is called when someone uses an bypass command

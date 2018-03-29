@@ -42,21 +42,21 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 	public static String qn = "Q10327_IntruderWhoWantsTheBookOfGiants";
 
 	// NPC
-	private int _pantheon = 32972;
-	private int _guard = 33004;
-	private int _book = 33126;
-	private int _intruder = 23121;
+	private int pantheon = 32972;
+	private int guard = 33004;
+	private int book = 33126;
+	private int intruder = 23121;
 
-	private int _bookItem = 17575;
+	private int bookItem = 17575;
 
 	public Q10327_IntruderWhoWantsTheBookOfGiants(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(_pantheon);
-		addTalkId(_pantheon);
-		addFirstTalkId(_guard);
-		addFirstTalkId(_book);
-		addSkillSeeId(_guard);
+		addStartNpc(pantheon);
+		addTalkId(pantheon);
+		addFirstTalkId(guard);
+		addFirstTalkId(book);
+		addSkillSeeId(guard);
 	}
 
 	@Override
@@ -70,7 +70,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _pantheon)
+		if (npc.getNpcId() == pantheon)
 		{
 			if (event.equalsIgnoreCase("32972-03.htm"))
 			{
@@ -84,16 +84,16 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 
 				int[] bookIds = new int[4];
 				st.set("guardId", String.valueOf(
-						addSpawn(_guard, -114710, 245457, -7968, 49152, false, 0, false, player.getObjectId())
+						addSpawn(guard, -114710, 245457, -7968, 49152, false, 0, false, player.getObjectId())
 								.getObjectId()));
 				bookIds[0] =
-						addSpawn(_book, -113757, 244686, -7952, 0, false, 0, false, player.getObjectId()).getObjectId();
+						addSpawn(book, -113757, 244686, -7952, 0, false, 0, false, player.getObjectId()).getObjectId();
 				bookIds[1] =
-						addSpawn(_book, -115672, 244683, -7952, 0, false, 0, false, player.getObjectId()).getObjectId();
+						addSpawn(book, -115672, 244683, -7952, 0, false, 0, false, player.getObjectId()).getObjectId();
 				bookIds[2] =
-						addSpawn(_book, -114714, 245750, -7952, 0, false, 0, false, player.getObjectId()).getObjectId();
+						addSpawn(book, -114714, 245750, -7952, 0, false, 0, false, player.getObjectId()).getObjectId();
 				bookIds[3] =
-						addSpawn(_book, -114706, 243605, -7952, 0, false, 0, false, player.getObjectId()).getObjectId();
+						addSpawn(book, -114706, 243605, -7952, 0, false, 0, false, player.getObjectId()).getObjectId();
 
 				st.set("giantsBookId", String.valueOf(bookIds[Rnd.get(4)]));
 
@@ -105,7 +105,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 			{
 				player.sendPacket(new ExShowScreenMessage(11022201, 0, true, 7000));
 				st.unset("cond");
-				st.takeItems(_bookItem, -1);
+				st.takeItems(bookItem, -1);
 				st.giveItems(112, 2);
 				st.giveItems(57, 16000);
 				st.addExpAndSp(7800, 3500);
@@ -130,26 +130,26 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 			return null;
 		}
 
-		if (npc.getNpcId() == _guard)
+		if (npc.getNpcId() == guard)
 		{
 			if (st.getInt("cond") < 3 && player.getInstanceId() == player.getObjectId())
 			{
 				htmltext = "33004-01.htm";
 			}
 		}
-		else if (npc.getNpcId() == _book)
+		else if (npc.getNpcId() == book)
 		{
 			if (st.getInt("cond") == 1 && st.getInt("giantsBookId") == npc.getObjectId())
 			{
 				htmltext = "33126-01.htm";
 				st.set("cond", "2");
-				st.giveItems(_bookItem, 1);
+				st.giveItems(bookItem, 1);
 				st.playSound("ItemSound.quest_middle");
 				player.sendPacket(new ExShowScreenMessage(1032322, 0, true, 7000));
 				final L2Npc intruder1 =
-						addSpawn(_intruder, -114835, 244966, -7976, 16072, false, 0, false, player.getObjectId());
+						addSpawn(intruder, -114835, 244966, -7976, 16072, false, 0, false, player.getObjectId());
 				final L2Npc intruder2 =
-						addSpawn(_intruder, -114564, 244954, -7976, 16072, false, 0, false, player.getObjectId());
+						addSpawn(intruder, -114564, 244954, -7976, 16072, false, 0, false, player.getObjectId());
 				final L2GuardInstance guard = (L2GuardInstance) L2World.getInstance().findObject(st.getInt("guardId"));
 				guard.setRunning();
 
@@ -227,7 +227,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _pantheon)
+		if (npc.getNpcId() == pantheon)
 		{
 			switch (st.getState())
 			{

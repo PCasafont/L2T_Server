@@ -85,12 +85,12 @@ public class ArenaManager
 
 	public static ArenaManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ArenaManager _instance = new ArenaManager();
+		protected static final ArenaManager instance = new ArenaManager();
 	}
 }

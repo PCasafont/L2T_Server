@@ -26,8 +26,8 @@ public enum L2ArmorType implements L2ItemType
 	//L2J CUSTOM
 	SHIELD("Shield");
 
-	final int _mask;
-	final String _name;
+	final int mask;
+	final String name;
 
 	/**
 	 * Constructor of the L2ArmorType.
@@ -36,8 +36,8 @@ public enum L2ArmorType implements L2ItemType
 	 */
 	L2ArmorType(String name)
 	{
-		_mask = 1 << ordinal() + L2WeaponType.values().length;
-		_name = name;
+		mask = 1 << ordinal() + L2WeaponType.values().length;
+		this.name = name;
 	}
 
 	/**
@@ -48,7 +48,7 @@ public enum L2ArmorType implements L2ItemType
 	@Override
 	public int mask()
 	{
-		return _mask;
+		return mask;
 	}
 
 	/**
@@ -59,6 +59,6 @@ public enum L2ArmorType implements L2ItemType
 	@Override
 	public String toString()
 	{
-		return _name;
+		return name;
 	}
 }

@@ -20,29 +20,29 @@ package l2server.gameserver.model;
  */
 public class L2ExtractableProductItem
 {
-	private final int[] _id;
-	private final int[] _ammount;
-	private final double _chance;
+	private final int[] id;
+	private final int[] ammount;
+	private final double chance;
 
 	public L2ExtractableProductItem(int[] id, int[] ammount, double chance)
 	{
-		_id = id;
-		_ammount = ammount;
-		_chance = chance;
+		this.id = id;
+		this.ammount = ammount;
+		this.chance = chance;
 	}
 
 	public int[] getId()
 	{
-		return _id;
+		return id;
 	}
 
 	public int[] getAmmount()
 	{
-		return _ammount;
+		return ammount;
 	}
 
 	public double getChance()
 	{
-		return _chance;
+		return chance;
 	}
 }

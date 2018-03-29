@@ -38,7 +38,7 @@ public class DarkWaterDragon extends L2AttackableAIScript
 	private static HashSet<Integer> secondSpawn = new HashSet<Integer>();
 	//Used to track if second Shades were already spawned
 	private static HashSet<Integer> myTrackingSet = new HashSet<Integer>(); //Used to track instances of npcs
-	private static ConcurrentHashMap<Integer, L2PcInstance> _idmap = new ConcurrentHashMap<Integer, L2PcInstance>();
+	private static ConcurrentHashMap<Integer, L2PcInstance> idmap = new ConcurrentHashMap<Integer, L2PcInstance>();
 	//Used to track instances of npcs
 
 	public DarkWaterDragon(int id, String name, String descr)
@@ -96,7 +96,7 @@ public class DarkWaterDragon extends L2AttackableAIScript
 				cancelQuestTimer("4", npc, null);
 
 				myTrackingSet.remove(npc.getObjectId());
-				player = _idmap.remove(npc.getObjectId());
+				player = idmap.remove(npc.getObjectId());
 				if (player != null) //You never know ...
 				{
 					((L2Attackable) npc).doItemDrop(NpcTable.getInstance().getTemplate(18485), player);
@@ -118,7 +118,7 @@ public class DarkWaterDragon extends L2AttackableAIScript
 					cancelQuestTimer("3", npc, null);
 					cancelQuestTimer("4", npc, null);
 					myTrackingSet.remove(npc.getObjectId());
-					_idmap.remove(npc.getObjectId());
+					idmap.remove(npc.getObjectId());
 				}
 				npc.reduceCurrentHp(500, npc, null); //poison kills Fafurion if he is not healed
 			}
@@ -170,7 +170,7 @@ public class DarkWaterDragon extends L2AttackableAIScript
 			secondSpawn.remove(npcObjId);
 			L2Attackable faf = (L2Attackable) this.addSpawn(FAFURION, npc.getX(), npc.getY(), npc.getZ(), 0, false,
 					0); //spawns Fafurion Kindred when Dard Water Dragon is dead
-			_idmap.put(faf.getObjectId(), killer);
+			idmap.put(faf.getObjectId(), killer);
 		}
 		else if (npcId == FAFURION)
 		{
@@ -185,7 +185,7 @@ public class DarkWaterDragon extends L2AttackableAIScript
 			cancelQuestTimer("3", npc, null);
 			cancelQuestTimer("4", npc, null);
 			myTrackingSet.remove(npcObjId);
-			_idmap.remove(npcObjId);
+			idmap.remove(npcObjId);
 		}
 		return super.onKill(npc, killer, isPet);
 	}

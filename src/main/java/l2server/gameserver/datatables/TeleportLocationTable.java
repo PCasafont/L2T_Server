@@ -34,11 +34,11 @@ import java.io.File;
 public class TeleportLocationTable implements Reloadable
 {
 
-	private TIntObjectHashMap<L2TeleportLocation> _teleports;
+	private TIntObjectHashMap<L2TeleportLocation> teleports;
 
 	public static TeleportLocationTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private TeleportLocationTable()
@@ -51,7 +51,7 @@ public class TeleportLocationTable implements Reloadable
 	@Override
 	public boolean reload()
 	{
-		_teleports = new TIntObjectHashMap<>();
+		teleports = new TIntObjectHashMap<>();
 		boolean success = true;
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "teleports.xml");
@@ -77,11 +77,11 @@ public class TeleportLocationTable implements Reloadable
                 teleport.setIsForNoble(d.getBool("fornoble", false));
                 teleport.setItemId(d.getInt("itemId", 57));
 
-                _teleports.put(teleport.getTeleId(), teleport);
+                teleports.put(teleport.getTeleId(), teleport);
             }
 		}
 
-		Log.info("TeleportLocationTable: Loaded " + _teleports.size() + " Teleport Location Templates.");
+		Log.info("TeleportLocationTable: Loaded " + teleports.size() + " Teleport Location Templates.");
 
 		return success;
 	}
@@ -101,12 +101,12 @@ public class TeleportLocationTable implements Reloadable
 	 */
 	public L2TeleportLocation getTemplate(int id)
 	{
-		return _teleports.get(id);
+		return teleports.get(id);
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final TeleportLocationTable _instance = new TeleportLocationTable();
+		protected static final TeleportLocationTable instance = new TeleportLocationTable();
 	}
 }

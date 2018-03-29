@@ -31,12 +31,12 @@ public final class RequestFriendInvite extends L2GameClientPacket
 {
 	//
 
-	private String _name;
+	private String name;
 
 	@Override
 	protected void readImpl()
 	{
-		_name = readS();
+		name = readS();
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public final class RequestFriendInvite extends L2GameClientPacket
 			return;
 		}
 
-		final L2PcInstance friend = L2World.getInstance().getPlayer(_name);
+		final L2PcInstance friend = L2World.getInstance().getPlayer(name);
 
 		SystemMessage sm;
 
@@ -83,7 +83,7 @@ public final class RequestFriendInvite extends L2GameClientPacket
 		{
 			// Player already is in your friendlist
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_ALREADY_IN_FRIENDS_LIST);
-			sm.addString(_name);
+			sm.addString(name);
 			activeChar.sendPacket(sm);
 			return;
 		}
@@ -93,14 +93,14 @@ public final class RequestFriendInvite extends L2GameClientPacket
 			// requets to become friend
 			activeChar.onTransactionRequest(friend);
 			sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_REQUESTED_C1_TO_BE_FRIEND);
-			sm.addString(_name);
+			sm.addString(name);
 			FriendAddRequest ajf = new FriendAddRequest(activeChar.getName());
 			friend.sendPacket(ajf);
 		}
 		else
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_BUSY_TRY_LATER);
-			sm.addString(_name);
+			sm.addString(name);
 		}
 
 		activeChar.sendPacket(sm);

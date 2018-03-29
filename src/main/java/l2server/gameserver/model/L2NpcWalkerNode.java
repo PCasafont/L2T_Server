@@ -23,15 +23,15 @@ import l2server.gameserver.network.NpcStringId;
  */
 public class L2NpcWalkerNode
 {
-	private int _chatId = 0;
-	private int _moveX;
-	private int _moveY;
-	private int _moveZ;
-	private int _delay;
+	private int chatId = 0;
+	private int moveX;
+	private int moveY;
+	private int moveZ;
+	private int delay;
 	@SuppressWarnings("unused")
-	private NpcStringId _npcString;
-	private String _chatText;
-	private boolean _running;
+	private NpcStringId npcString;
+	private String chatText;
+	private boolean running;
 
 	public L2NpcWalkerNode(int moveX, int moveY, int moveZ, int delay, String chatText, boolean running)
 	{
@@ -40,59 +40,59 @@ public class L2NpcWalkerNode
 
 	public L2NpcWalkerNode(int x, int y, int z, int delay, NpcStringId npcString, String chatText, boolean running)
 	{
-		_moveX = x;
-		_moveY = y;
-		_moveZ = z;
-		_delay = delay;
-		_npcString = npcString;
-		_chatText = chatText;
-		if (_chatText.startsWith("#"))
+		moveX = x;
+		moveY = y;
+		moveZ = z;
+		this.delay = delay;
+		this.npcString = npcString;
+		this.chatText = chatText;
+		if (chatText.startsWith("#"))
 		{
-			_chatId = Integer.parseInt(_chatText.substring(1));
+			chatId = Integer.parseInt(chatText.substring(1));
 		}
-		else if (_chatText.trim().isEmpty())
+		else if (chatText.trim().isEmpty())
 		{
-			_chatText = null;
+			chatText = null;
 		}
-		_running = running;
+		this.running = running;
 	}
 
 	public String getChatText()
 	{
-		if (_chatId != 0)
+		if (chatId != 0)
 		{
 			throw new IllegalStateException("Chat id is defined for walker route!");
 		}
-		return _chatText;
+		return chatText;
 	}
 
 	public int getMoveX()
 	{
-		return _moveX;
+		return moveX;
 	}
 
 	public int getMoveY()
 	{
-		return _moveY;
+		return moveY;
 	}
 
 	public int getMoveZ()
 	{
-		return _moveZ;
+		return moveZ;
 	}
 
 	public int getDelay()
 	{
-		return _delay;
+		return delay;
 	}
 
 	public boolean getRunning()
 	{
-		return _running;
+		return running;
 	}
 
 	public int getChatId()
 	{
-		return _chatId;
+		return chatId;
 	}
 }

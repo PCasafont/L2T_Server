@@ -22,18 +22,18 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public abstract class L2Transformation implements Cloneable, Runnable
 {
-	private final int _id;
-	private final int _graphicalId;
-	private double _collisionRadius;
-	private double _collisionHeight;
-	private final boolean _isStance;
+	private final int id;
+	private final int graphicalId;
+	private double collisionRadius;
+	private double collisionHeight;
+	private final boolean isStance;
 
 	public static final int TRANSFORM_ZARICHE = 301;
 	public static final int TRANSFORM_AKAMANAH = 302;
 
 	protected static final int[] EMPTY_ARRAY = {};
 
-	private L2PcInstance _player;
+	private L2PcInstance player;
 
 	/**
 	 * @param id              Internal id that server will use to associate this transformation
@@ -43,11 +43,11 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	 */
 	public L2Transformation(int id, int graphicalId, double collisionRadius, double collisionHeight)
 	{
-		_id = id;
-		_graphicalId = graphicalId;
-		_collisionRadius = collisionRadius;
-		_collisionHeight = collisionHeight;
-		_isStance = false;
+		this.id = id;
+		this.graphicalId = graphicalId;
+		this.collisionRadius = collisionRadius;
+		this.collisionHeight = collisionHeight;
+		isStance = false;
 	}
 
 	/**
@@ -66,9 +66,9 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	 */
 	public L2Transformation(int id)
 	{
-		_id = id;
-		_graphicalId = id;
-		_isStance = true;
+		this.id = id;
+		graphicalId = id;
+		isStance = true;
 	}
 
 	/**
@@ -76,7 +76,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	 */
 	public int getId()
 	{
-		return _id;
+		return id;
 	}
 
 	/**
@@ -84,7 +84,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	 */
 	public int getGraphicalId()
 	{
-		return _graphicalId;
+		return graphicalId;
 	}
 
 	/**
@@ -94,7 +94,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	 */
 	public boolean isStance()
 	{
-		return _isStance;
+		return isStance;
 	}
 
 	/**
@@ -104,9 +104,9 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	{
 		if (isStance())
 		{
-			return _player.getCollisionRadius();
+			return player.getCollisionRadius();
 		}
-		return _collisionRadius;
+		return collisionRadius;
 	}
 
 	/**
@@ -116,9 +116,9 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	{
 		if (isStance())
 		{
-			return _player.getCollisionHeight();
+			return player.getCollisionHeight();
 		}
-		return _collisionHeight;
+		return collisionHeight;
 	}
 
 	// Scriptable Events
@@ -131,7 +131,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	 */
 	private void setPlayer(L2PcInstance player)
 	{
-		_player = player;
+		this.player = player;
 	}
 
 	/**
@@ -139,7 +139,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	 */
 	public L2PcInstance getPlayer()
 	{
-		return _player;
+		return player;
 	}
 
 	public void start()
@@ -203,7 +203,7 @@ public abstract class L2Transformation implements Cloneable, Runnable
 	@Override
 	public String toString()
 	{
-		return getClass().getSimpleName() + " [_id=" + _id + ", _graphicalId=" + _graphicalId + ", _collisionRadius=" +
-				_collisionRadius + ", _collisionHeight=" + _collisionHeight + ", _isStance=" + _isStance + "]";
+		return getClass().getSimpleName() + " [_id=" + id + ", _graphicalId=" + graphicalId + ", _collisionRadius=" +
+				collisionRadius + ", _collisionHeight=" + collisionHeight + ", _isStance=" + isStance + "]";
 	}
 }

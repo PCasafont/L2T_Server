@@ -26,12 +26,12 @@ import l2server.gameserver.templates.StatsSet;
 
 public class L2SkillAgathion extends L2Skill
 {
-	private int _npcId;
+	private int npcId;
 
 	public L2SkillAgathion(StatsSet set)
 	{
 		super(set);
-		_npcId = set.getInteger("npcId", 0);
+		npcId = set.getInteger("npcId", 0);
 	}
 
 	@Override
@@ -58,7 +58,7 @@ public class L2SkillAgathion extends L2Skill
 			return;
 		}
 
-		activeChar.setAgathionId(_npcId);
+		activeChar.setAgathionId(npcId);
 		activeChar.broadcastUserInfo();
 	}
 }

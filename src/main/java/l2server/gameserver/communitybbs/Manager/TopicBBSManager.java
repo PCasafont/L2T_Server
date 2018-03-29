@@ -38,18 +38,18 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class TopicBBSManager extends BaseBBSManager
 {
-	private final List<Topic> _table;
-	private final Map<Forum, Integer> _maxId;
+	private final List<Topic> table;
+	private final Map<Forum, Integer> maxId;
 
 	protected TopicBBSManager()
 	{
-		_table = new ArrayList<>();
-		_maxId = new ConcurrentHashMap<>();
+		table = new ArrayList<>();
+		maxId = new ConcurrentHashMap<>();
 	}
 
 	public void addTopic(Topic tt)
 	{
-		_table.add(tt);
+		table.add(tt);
 	}
 
 	/**
@@ -57,17 +57,17 @@ public class TopicBBSManager extends BaseBBSManager
 	 */
 	public void delTopic(Topic topic)
 	{
-		_table.remove(topic);
+		table.remove(topic);
 	}
 
 	public void setMaxID(int id, Forum f)
 	{
-		_maxId.put(f, id);
+		maxId.put(f, id);
 	}
 
 	public int getMaxID(Forum f)
 	{
-		Integer i = _maxId.get(f);
+		Integer i = maxId.get(f);
 		if (i == null)
 		{
 			return 0;
@@ -77,7 +77,7 @@ public class TopicBBSManager extends BaseBBSManager
 
 	public Topic getTopicByID(int idf)
 	{
-		for (Topic t : _table)
+		for (Topic t : table)
 		{
 			if (t.getID() == idf)
 			{
@@ -404,11 +404,11 @@ public class TopicBBSManager extends BaseBBSManager
 
 	public static TopicBBSManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private static class SingletonHolder
 	{
-		protected static final TopicBBSManager _instance = new TopicBBSManager();
+		protected static final TopicBBSManager instance = new TopicBBSManager();
 	}
 }

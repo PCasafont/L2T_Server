@@ -22,25 +22,25 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExAutoSoulShot extends L2GameServerPacket
 {
-	private int _itemId;
-	private int _enable;
-	private int _type;
+	private int itemId;
+	private int enable;
+	private int type;
 
 	/**
 	 * 0xfe:0x12 ExAutoSoulShot		 (ch)dd
 	 */
 	public ExAutoSoulShot(int itemId, int enable, int type)
 	{
-		_itemId = itemId;
-		_enable = enable;
-		_type = type;
+		this.itemId = itemId;
+		this.enable = enable;
+		this.type = type;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{ // sub id
-		writeD(_itemId);
-		writeD(_enable);
-		writeD(_type);
+		writeD(itemId);
+		writeD(enable);
+		writeD(type);
 	}
 }

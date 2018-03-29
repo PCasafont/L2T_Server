@@ -35,7 +35,7 @@ import java.util.logging.Logger;
  */
 public class AdminRes implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminRes.class.getName());
+	private static Logger log = Logger.getLogger(AdminRes.class.getName());
 	private static final String[] ADMIN_COMMANDS = {"admin_res", "admin_res_monster"};
 
 	@Override
@@ -117,7 +117,7 @@ public class AdminRes implements IAdminCommandHandler
 
 		if (Config.DEBUG)
 		{
-			_log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") resurrected character " +
+			log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") resurrected character " +
 					obj.getObjectId());
 		}
 	}

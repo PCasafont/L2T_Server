@@ -12,24 +12,24 @@ import java.util.ArrayList;
  */
 public class EventLocation
 {
-	private final int _id;
-	private final String _name;
-	private final ArrayList<Point3D> _spawns;
-	private final int _globalZ;
-	private final int _maxTeamPlayers;
-	private final boolean _hill;
+	private final int id;
+	private final String name;
+	private final ArrayList<Point3D> spawns;
+	private final int globalZ;
+	private final int maxTeamPlayers;
+	private final boolean hill;
 
-	private L2TenkaiEventZone _zone = null;
+	private L2TenkaiEventZone zone = null;
 
 	public EventLocation(XmlNode node)
 	{
-		_id = node.getInt("id");
-		_name = node.getString("name");
-		_globalZ = node.getInt("globalZ");
-		_maxTeamPlayers = node.getInt("maxTeamPlayers");
-		_hill = node.getBool("hill", false);
+		id = node.getInt("id");
+		name = node.getString("name");
+		globalZ = node.getInt("globalZ");
+		maxTeamPlayers = node.getInt("maxTeamPlayers");
+		hill = node.getBool("hill", false);
 
-		_spawns = new ArrayList<>();
+		spawns = new ArrayList<>();
 		for (XmlNode subNode : node.getChildren())
 		{
 			if (subNode.getName().equals("spawn"))
@@ -37,51 +37,51 @@ public class EventLocation
 				int x = subNode.getInt("x");
 				int y = subNode.getInt("y");
 				int z = subNode.getInt("z");
-				_spawns.add(new Point3D(x, y, z));
+				spawns.add(new Point3D(x, y, z));
 			}
 		}
 	}
 
 	public int getMaxPlayers()
 	{
-		return _maxTeamPlayers * _spawns.size();
+		return maxTeamPlayers * spawns.size();
 	}
 
 	public int getId()
 	{
-		return _id;
+		return id;
 	}
 
 	public String getName()
 	{
-		return _name;
+		return name;
 	}
 
 	public boolean isHill()
 	{
-		return _hill;
+		return hill;
 	}
 
 	public int getGlobalZ()
 	{
-		return _globalZ;
+		return globalZ;
 	}
 
 	public int getTeamCount()
 	{
-		return _spawns.size();
+		return spawns.size();
 	}
 
 	public int getMaxTeamPlayers()
 	{
-		return _maxTeamPlayers;
+		return maxTeamPlayers;
 	}
 
 	public Point3D getSpawn(int id)
 	{
-		if (id < _spawns.size())
+		if (id < spawns.size())
 		{
-			return _spawns.get(id);
+			return spawns.get(id);
 		}
 
 		return new Point3D(0, 0, 0);
@@ -89,11 +89,11 @@ public class EventLocation
 
 	public L2TenkaiEventZone getZone()
 	{
-		if (_zone == null)
+		if (zone == null)
 		{
-			_zone = ZoneManager.getInstance().getZoneById(_id + L2TenkaiEventZone.BASE_ID, L2TenkaiEventZone.class);
+			zone = ZoneManager.getInstance().getZoneById(id + L2TenkaiEventZone.BASE_ID, L2TenkaiEventZone.class);
 		}
 
-		return _zone;
+		return zone;
 	}
 }

@@ -15,6 +15,7 @@
 
 package l2server.gameserver;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.ItemTable;
@@ -41,8 +42,6 @@ import java.util.List;
 import java.util.Properties;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
-
-import gnu.trove.TIntObjectHashMap;
 
 /**
  * @author Pere
@@ -435,8 +434,8 @@ public class SqlToXml
 
 		public SpawnLine(int npcId, SpawnData point)
 		{
-			NpcId = npcId;
-			Point = point;
+			this.NpcId = npcId;
+			this.Point = point;
 		}
 	}
 
@@ -774,14 +773,14 @@ public class SqlToXml
 				content += "\t<specificSpawnList name=\"" + fort.getName() + "_defending_commanders\">\r\n";
 				for (int i = 1; i < 5; i++)
 				{
-					String _spawnParams =
+					String spawnParams =
 							siegeSettings.getProperty(fort.getName().replace(" ", "") + "Commander" + i, "");
-					if (_spawnParams.length() == 0)
+					if (spawnParams.length() == 0)
 					{
 						break;
 					}
 
-					StringTokenizer st = new StringTokenizer(_spawnParams.trim(), ",");
+					StringTokenizer st = new StringTokenizer(spawnParams.trim(), ",");
 					int x = Integer.parseInt(st.nextToken());
 					int y = Integer.parseInt(st.nextToken());
 					int z = Integer.parseInt(st.nextToken());

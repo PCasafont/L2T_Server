@@ -36,15 +36,15 @@ import java.util.StringTokenizer;
 
 public class PostBBSManager extends BaseBBSManager
 {
-	private final Map<Topic, Post> _postByTopic = new HashMap<>();
+	private final Map<Topic, Post> postByTopic = new HashMap<>();
 
 	public Post getGPosttByTopic(Topic t)
 	{
-		Post post = _postByTopic.get(t);
+		Post post = postByTopic.get(t);
 		if (post == null)
 		{
 			post = new Post(t);
-			_postByTopic.put(t, post);
+			postByTopic.put(t, post);
 		}
 		return post;
 	}
@@ -54,12 +54,12 @@ public class PostBBSManager extends BaseBBSManager
 	 */
 	public void delPostByTopic(Topic t)
 	{
-		_postByTopic.remove(t);
+		postByTopic.remove(t);
 	}
 
 	public void addPostByTopic(Post p, Topic t)
 	{
-		_postByTopic.putIfAbsent(t, p);
+		postByTopic.putIfAbsent(t, p);
 	}
 
 	@Override
@@ -272,11 +272,11 @@ public class PostBBSManager extends BaseBBSManager
 
 	public static PostBBSManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private static class SingletonHolder
 	{
-		protected static final PostBBSManager _instance = new PostBBSManager();
+		protected static final PostBBSManager instance = new PostBBSManager();
 	}
 }

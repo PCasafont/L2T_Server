@@ -64,7 +64,7 @@ public class L2GuardInstance extends L2Attackable
 	 * Constructor of L2GuardInstance (use L2Character and L2NpcInstance constructor).<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Call the L2Character constructor to set the _template of the L2GuardInstance (copy skills from template to object and link _calculators to NPC_STD_CALCULATOR) </li>
+	 * <li>Call the L2Character constructor to set the template of the L2GuardInstance (copy skills from template to object and link calculators to NPC_STD_CALCULATOR) </li>
 	 * <li>Set the name of the L2GuardInstance</li>
 	 * <li>Create a RandomAnimation Task that will be launched after the calculated delay if the server allow it </li><BR><BR>
 	 *
@@ -101,7 +101,7 @@ public class L2GuardInstance extends L2Attackable
 	}
 
 	/**
-	 * Notify the L2GuardInstance to return to its home location (AI_INTENTION_MOVE_TO) and clear its _aggroList.<BR><BR>
+	 * Notify the L2GuardInstance to return to its home location (AI_INTENTION_MOVE_TO) and clear its aggroList.<BR><BR>
 	 */
 	@Override
 	public void returnHome()
@@ -170,8 +170,8 @@ public class L2GuardInstance extends L2Attackable
 	 * <li>Send a Server->Client packet ValidateLocation to correct the L2GuardInstance position and heading on the client </li><BR><BR>
 	 * <p>
 	 * <B><U> Actions on second click on the L2GuardInstance (Attack it/Interact with it)</U> :</B><BR><BR>
-	 * <li>If L2PcInstance is in the _aggroList of the L2GuardInstance, set the L2PcInstance Intention to AI_INTENTION_ATTACK</li>
-	 * <li>If L2PcInstance is NOT in the _aggroList of the L2GuardInstance, set the L2PcInstance Intention to AI_INTENTION_INTERACT (after a distance verification) and show message</li><BR><BR>
+	 * <li>If L2PcInstance is in the aggroList of the L2GuardInstance, set the L2PcInstance Intention to AI_INTENTION_ATTACK</li>
+	 * <li>If L2PcInstance is NOT in the aggroList of the L2GuardInstance, set the L2PcInstance Intention to AI_INTENTION_INTERACT (after a distance verification) and show message</li><BR><BR>
 	 * <p>
 	 * <B><U> Example of use </U> :</B><BR><BR>
 	 * <li> Client packet : Action, AttackRequest</li><BR><BR>
@@ -207,7 +207,7 @@ public class L2GuardInstance extends L2Attackable
 		}
 		else if (interact)
 		{
-			// Check if the L2PcInstance is in the _aggroList of the L2GuardInstance
+			// Check if the L2PcInstance is in the aggroList of the L2GuardInstance
 			if (containsTarget(player) || isAutoAttackable(player))
 			{
 				if (Config.DEBUG)
@@ -228,7 +228,7 @@ public class L2GuardInstance extends L2Attackable
 				}
 				else
 				{
-					// Send a Server->Client packet SocialAction to the all L2PcInstance on the _knownPlayer of the L2NpcInstance
+					// Send a Server->Client packet SocialAction to the all L2PcInstance on the knownPlayer of the L2NpcInstance
 					// to display a social action of the L2GuardInstance on their client
 					SocialAction sa = new SocialAction(getObjectId(), Rnd.nextInt(8));
 					broadcastPacket(sa);

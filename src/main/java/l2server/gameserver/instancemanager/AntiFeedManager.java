@@ -33,18 +33,18 @@ public class AntiFeedManager
 	public static final int OLYMPIAD_ID = 1;
 	public static final int TVT_ID = 2;
 
-	private Map<Integer, Long> _lastDeathTimes;
-	private TIntObjectHashMap<Map<Integer, Connections>> _eventIPs;
+	private Map<Integer, Long> lastDeathTimes;
+	private TIntObjectHashMap<Map<Integer, Connections>> eventIPs;
 
 	public static AntiFeedManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private AntiFeedManager()
 	{
-		_lastDeathTimes = new ConcurrentHashMap<>();
-		_eventIPs = new TIntObjectHashMap<>();
+		lastDeathTimes = new ConcurrentHashMap<>();
+		eventIPs = new TIntObjectHashMap<>();
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class AntiFeedManager
 	 */
 	public final void setLastDeathTime(int objectId)
 	{
-		_lastDeathTimes.put(objectId, System.currentTimeMillis());
+		lastDeathTimes.put(objectId, System.currentTimeMillis());
 	}
 
 	/**
@@ -144,7 +144,7 @@ public class AntiFeedManager
 	 */
 	public final void clear()
 	{
-		_lastDeathTimes.clear();
+		lastDeathTimes.clear();
 	}
 
 	/**
@@ -155,9 +155,9 @@ public class AntiFeedManager
 	 */
 	public final void registerEvent(int eventId)
 	{
-		if (!_eventIPs.containsKey(eventId))
+		if (!eventIPs.containsKey(eventId))
 		{
-			_eventIPs.put(eventId, new HashMap<>());
+			eventIPs.put(eventId, new HashMap<>());
 		}
 	}
 
@@ -194,7 +194,7 @@ public class AntiFeedManager
         if (client == null)
 			return false; // unable to determine IP address
 
-		final Map<Integer, Connections> event = _eventIPs.get(eventId);
+		final Map<Integer, Connections> event = eventIPs.get(eventId);
 		if (event == null)
 			return false; // no such event registered
 
@@ -232,7 +232,7 @@ public class AntiFeedManager
 			return false; // unable to determine IP address
 		}
 
-		final Map<Integer, Connections> event = _eventIPs.get(eventId);
+		final Map<Integer, Connections> event = eventIPs.get(eventId);
 		if (event == null)
 		{
 			return false; // no such event registered
@@ -267,7 +267,7 @@ public class AntiFeedManager
 		}
 
 		final Integer addrHash = client.getConnectionAddress().hashCode();
-		_eventIPs.forEachValue(new DisconnectProcedure(addrHash));
+		eventIPs.forEachValue(new DisconnectProcedure(addrHash));
 	}
 
 	/**
@@ -277,7 +277,7 @@ public class AntiFeedManager
 	 */
 	public final void clear(int eventId)
 	{
-		final Map<Integer, Connections> event = _eventIPs.get(eventId);
+		final Map<Integer, Connections> event = eventIPs.get(eventId);
 		if (event != null)
 		{
 			event.clear();
@@ -317,7 +317,7 @@ public class AntiFeedManager
 
 	private static final class Connections
 	{
-		private int _num = 0;
+		private int num = 0;
 
 		/**
 		 * Returns true if successfully incremented number of connections
@@ -326,9 +326,9 @@ public class AntiFeedManager
 		@SuppressWarnings("unused")
 		public final synchronized boolean testAndIncrement(int max)
 		{
-			if (_num < max)
+			if (num < max)
 			{
-				_num++;
+				num++;
 				return true;
 			}
 			return false;
@@ -339,35 +339,35 @@ public class AntiFeedManager
 		 */
 		public final synchronized boolean testAndDecrement()
 		{
-			if (_num > 0)
+			if (num > 0)
 			{
-				_num--;
+				num--;
 			}
 
-			return _num == 0;
+			return num == 0;
 		}
 	}
 
 	private static final class DisconnectProcedure implements TObjectProcedure<Map<Integer, Connections>>
 	{
-		private final Integer _addrHash;
+		private final Integer addrHash;
 
 		public DisconnectProcedure(Integer addrHash)
 		{
-			_addrHash = addrHash;
+			this.addrHash = addrHash;
 		}
 
 		@Override
 		public final boolean execute(Map<Integer, Connections> event)
 		{
-			final Connections conns = event.get(_addrHash);
+			final Connections conns = event.get(addrHash);
 			if (conns != null)
 			{
 				synchronized (event)
 				{
 					if (conns.testAndDecrement())
 					{
-						event.remove(_addrHash);
+						event.remove(addrHash);
 					}
 				}
 			}
@@ -378,6 +378,6 @@ public class AntiFeedManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final AntiFeedManager _instance = new AntiFeedManager();
+		protected static final AntiFeedManager instance = new AntiFeedManager();
 	}
 }

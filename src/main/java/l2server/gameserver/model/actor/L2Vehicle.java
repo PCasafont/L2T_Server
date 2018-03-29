@@ -50,13 +50,13 @@ import java.util.logging.Level;
  */
 public abstract class L2Vehicle extends L2Character
 {
-	protected int _dockId = 0;
-	protected final ArrayList<L2PcInstance> _passengers = new ArrayList<>();
-	protected Location _oustLoc = null;
-	private Runnable _engine = null;
+	protected int dockId = 0;
+	protected final ArrayList<L2PcInstance> passengers = new ArrayList<>();
+	protected Location oustLoc = null;
+	private Runnable engine = null;
 
-	protected VehiclePathPoint[] _currentPath = null;
-	protected int _runState = 0;
+	protected VehiclePathPoint[] currentPath = null;
+	protected int runState = 0;
 
 	public L2Vehicle(int objectId, L2CharTemplate template)
 	{
@@ -82,30 +82,30 @@ public abstract class L2Vehicle extends L2Character
 
 	public boolean canBeControlled()
 	{
-		return _engine == null;
+		return engine == null;
 	}
 
 	public void registerEngine(Runnable r)
 	{
-		_engine = r;
+		engine = r;
 	}
 
 	public void runEngine(int delay)
 	{
-		if (_engine != null)
+		if (engine != null)
 		{
-			ThreadPoolManager.getInstance().scheduleGeneral(_engine, delay);
+			ThreadPoolManager.getInstance().scheduleGeneral(engine, delay);
 		}
 	}
 
 	public void executePath(VehiclePathPoint[] path)
 	{
-		_runState = 0;
-		_currentPath = path;
+		runState = 0;
+		currentPath = path;
 
-		if (_currentPath != null && _currentPath.length > 0)
+		if (currentPath != null && currentPath.length > 0)
 		{
-			final VehiclePathPoint point = _currentPath[0];
+			final VehiclePathPoint point = currentPath[0];
 			if (point.moveSpeed > 0)
 			{
 				getStat().setMoveSpeed(point.moveSpeed);
@@ -124,20 +124,20 @@ public abstract class L2Vehicle extends L2Character
 	@Override
 	public boolean moveToNextRoutePoint()
 	{
-		_move = null;
+		move = null;
 
-		if (_currentPath != null)
+		if (currentPath != null)
 		{
-			_runState++;
-			if (_runState < _currentPath.length)
+			runState++;
+			if (runState < currentPath.length)
 			{
-				final VehiclePathPoint point = _currentPath[_runState];
+				final VehiclePathPoint point = currentPath[runState];
 				if (!isMovementDisabled())
 				{
 					if (point.moveSpeed == 0)
 					{
 						teleToLocation(point.x, point.y, point.z, point.rotationSpeed, false);
-						_currentPath = null;
+						currentPath = null;
 					}
 					else
 					{
@@ -153,10 +153,10 @@ public abstract class L2Vehicle extends L2Character
 						MoveData m = new MoveData();
 						m.disregardingGeodata = false;
 						m.onGeodataPathIndex = -1;
-						m._xDestination = point.x;
-						m._yDestination = point.y;
-						m._zDestination = point.z;
-						m._heading = 0;
+						m.xDestination = point.x;
+						m.yDestination = point.y;
+						m.zDestination = point.z;
+						m.heading = 0;
 
 						final double dx = point.x - getX();
 						final double dy = point.y - getY();
@@ -166,8 +166,8 @@ public abstract class L2Vehicle extends L2Character
 							setHeading(Util.calculateHeadingFrom(getX(), getY(), point.x, point.y));
 						}
 
-						m._moveStartTime = TimeController.getGameTicks();
-						_move = m;
+						m.moveStartTime = TimeController.getGameTicks();
+						move = m;
 
 						TimeController.getInstance().registerMovingObject(this);
 						return true;
@@ -176,7 +176,7 @@ public abstract class L2Vehicle extends L2Character
 			}
 			else
 			{
-				_currentPath = null;
+				currentPath = null;
 			}
 		}
 
@@ -204,27 +204,27 @@ public abstract class L2Vehicle extends L2Character
 
 	public boolean isInDock()
 	{
-		return _dockId > 0;
+		return dockId > 0;
 	}
 
 	public int getDockId()
 	{
-		return _dockId;
+		return dockId;
 	}
 
 	public void setInDock(int d)
 	{
-		_dockId = d;
+		dockId = d;
 	}
 
 	public void setOustLoc(Location loc)
 	{
-		_oustLoc = loc;
+		oustLoc = loc;
 	}
 
 	public Location getOustLoc()
 	{
-		return _oustLoc != null ? _oustLoc :
+		return oustLoc != null ? oustLoc :
 				MapRegionTable.getInstance().getTeleToLocation(this, MapRegionTable.TeleportWhereType.Town);
 	}
 
@@ -232,8 +232,8 @@ public abstract class L2Vehicle extends L2Character
 	{
 		L2PcInstance player;
 
-		// Use iterator because oustPlayer will try to remove player from _passengers
-		final Iterator<L2PcInstance> iter = _passengers.iterator();
+		// Use iterator because oustPlayer will try to remove player from passengers
+		final Iterator<L2PcInstance> iter = passengers.iterator();
 		while (iter.hasNext())
 		{
 			player = iter.next();
@@ -254,7 +254,7 @@ public abstract class L2Vehicle extends L2Character
 
 	public boolean addPassenger(L2PcInstance player)
 	{
-		if (player == null || _passengers.contains(player))
+		if (player == null || passengers.contains(player))
 		{
 			return false;
 		}
@@ -265,7 +265,7 @@ public abstract class L2Vehicle extends L2Character
 			return false;
 		}
 
-		_passengers.add(player);
+		passengers.add(player);
 		return true;
 	}
 
@@ -273,7 +273,7 @@ public abstract class L2Vehicle extends L2Character
 	{
 		try
 		{
-			_passengers.remove(player);
+			passengers.remove(player);
 		}
 		catch (Exception ignored)
 		{
@@ -282,17 +282,17 @@ public abstract class L2Vehicle extends L2Character
 
 	public boolean isEmpty()
 	{
-		return _passengers.isEmpty();
+		return passengers.isEmpty();
 	}
 
 	public List<L2PcInstance> getPassengers()
 	{
-		return _passengers;
+		return passengers;
 	}
 
 	public void broadcastToPassengers(L2GameServerPacket sm)
 	{
-		for (L2PcInstance player : _passengers)
+		for (L2PcInstance player : passengers)
 		{
 			if (player != null)
 			{
@@ -350,7 +350,7 @@ public abstract class L2Vehicle extends L2Character
 	{
 		final boolean result = super.updatePosition(gameTicks);
 
-		for (L2PcInstance player : _passengers)
+		for (L2PcInstance player : passengers)
 		{
 			if (player != null && player.getVehicle() == this)
 			{
@@ -374,7 +374,7 @@ public abstract class L2Vehicle extends L2Character
 
 		getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 
-		for (L2PcInstance player : _passengers)
+		for (L2PcInstance player : passengers)
 		{
 			if (player != null)
 			{
@@ -398,7 +398,7 @@ public abstract class L2Vehicle extends L2Character
 	@Override
 	public void stopMove(L2CharPosition pos, boolean updateKnownObjects)
 	{
-		_move = null;
+		move = null;
 		if (pos != null)
 		{
 			setXYZ(pos.x, pos.y, pos.z);
@@ -415,7 +415,7 @@ public abstract class L2Vehicle extends L2Character
 	@Override
 	public void deleteMe()
 	{
-		_engine = null;
+		engine = null;
 
 		try
 		{
@@ -463,7 +463,7 @@ public abstract class L2Vehicle extends L2Character
 			Log.log(Level.SEVERE, "Failed cleaning knownlist.", e);
 		}
 
-		// Remove L2Object object from _allObjects of L2World
+		// Remove L2Object object from allObjects of L2World
 		L2World.getInstance().removeObject(this);
 
 		super.deleteMe();
@@ -513,9 +513,9 @@ public abstract class L2Vehicle extends L2Character
 	@Override
 	public void setAI(L2CharacterAI newAI)
 	{
-		if (_ai == null)
+		if (ai == null)
 		{
-			_ai = newAI;
+			ai = newAI;
 		}
 	}
 }

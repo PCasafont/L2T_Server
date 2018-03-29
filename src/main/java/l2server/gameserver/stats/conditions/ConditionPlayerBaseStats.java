@@ -27,8 +27,8 @@ import l2server.gameserver.stats.Env;
 public class ConditionPlayerBaseStats extends Condition
 {
 
-	private final BaseStat _stat;
-	private final int _value;
+	private final BaseStat stat;
+	private final int value;
 
 	/**
 	 * Instantiates a new condition player base stats.
@@ -40,8 +40,8 @@ public class ConditionPlayerBaseStats extends Condition
 	public ConditionPlayerBaseStats(L2Character player, BaseStat stat, int value)
 	{
 		super();
-		_stat = stat;
-		_value = value;
+		this.stat = stat;
+		this.value = value;
 	}
 
 	/**
@@ -59,24 +59,24 @@ public class ConditionPlayerBaseStats extends Condition
 			return false;
 		}
 		L2PcInstance player = (L2PcInstance) env.player;
-		switch (_stat)
+		switch (stat)
 		{
 			case Int:
-				return player.getINT() >= _value;
+				return player.getINT() >= value;
 			case Str:
-				return player.getSTR() >= _value;
+				return player.getSTR() >= value;
 			case Con:
-				return player.getCON() >= _value;
+				return player.getCON() >= value;
 			case Dex:
-				return player.getDEX() >= _value;
+				return player.getDEX() >= value;
 			case Men:
-				return player.getMEN() >= _value;
+				return player.getMEN() >= value;
 			case Wit:
-				return player.getWIT() >= _value;
+				return player.getWIT() >= value;
 			case Cha:
-				return player.getCHA() >= _value;
+				return player.getCHA() >= value;
 			case Luc:
-				return player.getLUC() >= _value;
+				return player.getLUC() >= value;
 		}
 		return false;
 	}

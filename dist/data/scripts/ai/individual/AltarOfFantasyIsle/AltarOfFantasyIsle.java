@@ -16,28 +16,28 @@ import java.util.Map;
 
 public class AltarOfFantasyIsle extends Quest
 {
-    private static final int _jisooId = 91003;
-    private static final String _qn = "AltarOfFantasyIsle";
-    private static Map<Integer, Boolean> _spawnInfo = new HashMap<Integer, Boolean>(3);
-    private static final int[] _raidIds = {91004, 91005, 80246};
-    private static final int[] _stoneIds = {9743, 1261, 20772};
-    private static final int _altarofFantasyIsleId = 91003;
+    private static final int jisooId = 91003;
+    private static final String qn = "AltarOfFantasyIsle";
+    private static Map<Integer, Boolean> spawnInfo = new HashMap<Integer, Boolean>(3);
+    private static final int[] raidIds = {91004, 91005, 80246};
+    private static final int[] stoneIds = {9743, 1261, 20772};
+    private static final int altarofFantasyIsleId = 91003;
 
     public AltarOfFantasyIsle(int questId, String name, String descr)
     {
         super(questId, name, descr);
 
-        addSpawn(_jisooId, -44247, 75489, -3654, 843, false, 0);
+        addSpawn(jisooId, -44247, 75489, -3654, 843, false, 0);
 
 
-        addFirstTalkId(_altarofFantasyIsleId);
-        addStartNpc(_altarofFantasyIsleId);
-        addTalkId(_altarofFantasyIsleId);
+        addFirstTalkId(altarofFantasyIsleId);
+        addStartNpc(altarofFantasyIsleId);
+        addTalkId(altarofFantasyIsleId);
 
-        for (int i : _raidIds)
+        for (int i : raidIds)
         {
             addKillId(i);
-            _spawnInfo.put(i, false);
+            spawnInfo.put(i, false);
         }
     }
 	
@@ -54,17 +54,17 @@ public class AltarOfFantasyIsle extends Quest
         {
 	        int bossId = Integer.valueOf(event.split(" ")[1]);
 	        int stoneId = 0;
-	        if (bossId == _raidIds[0])
+	        if (bossId == raidIds[0])
 	        {
-		        stoneId = _stoneIds[0];
+		        stoneId = stoneIds[0];
 	        }
-	        else if (bossId == _raidIds[1])
+	        else if (bossId == raidIds[1])
 	        {
-	        	stoneId = _stoneIds[1];
+	        	stoneId = stoneIds[1];
             }
 	        else
 	        {
-		        stoneId = _stoneIds[2];
+		        stoneId = stoneIds[2];
 	        }
 	        
             if (stoneId == 0) //Cheating?
@@ -72,15 +72,15 @@ public class AltarOfFantasyIsle extends Quest
                 return null;
             }
 
-            synchronized (_spawnInfo)
+            synchronized (spawnInfo)
             {
-            	if (!_spawnInfo.get(bossId))
-                    if (!player.destroyItemByItemId(_qn, stoneId, 1, player, true))
+            	if (!spawnInfo.get(bossId))
+                    if (!player.destroyItemByItemId(qn, stoneId, 1, player, true))
                     {
                         return stoneId + "-no.html";
                     }
                     Announcements.getInstance().announceToAll("Jisoo: One of the Descendants has been summoned... Death is coming...");
-                    _spawnInfo.put(bossId, true); //Boss is spawned
+                    spawnInfo.put(bossId, true); //Boss is spawned
 
                     L2Attackable boss =
                             (L2Attackable) addSpawn(bossId, npc.getX(), npc.getY() + 200, npc.getZ(), 0, false, 0,
@@ -100,9 +100,9 @@ public class AltarOfFantasyIsle extends Quest
     @Override
     public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        synchronized (_spawnInfo)
+        synchronized (spawnInfo)
         {
-            _spawnInfo.put(npc.getNpcId(), false);
+            spawnInfo.put(npc.getNpcId(), false);
 
         }
         Announcements.getInstance().announceToAll("Descendant: Ughnnn... This... can't be... happening! Nooooo!");
@@ -116,6 +116,6 @@ public class AltarOfFantasyIsle extends Quest
 	
 	public static void main(String[] args)
     {
-        new AltarOfFantasyIsle(-1, _qn, "ai/individual");
+        new AltarOfFantasyIsle(-1, qn, "ai/individual");
     }
 }

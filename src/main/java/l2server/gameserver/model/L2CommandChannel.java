@@ -35,19 +35,19 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class L2CommandChannel
 {
-	private final List<L2Party> _partys;
-	private L2PcInstance _commandLeader = null;
-	private int _channelLvl;
+	private final List<L2Party> partys;
+	private L2PcInstance commandLeader = null;
+	private int channelLvl;
 
 	/**
 	 * Creates a New Command Channel and Add the Leaders party to the CC
 	 */
 	public L2CommandChannel(L2PcInstance leader)
 	{
-		_commandLeader = leader;
-		_partys = new CopyOnWriteArrayList<>();
-		_partys.add(leader.getParty());
-		_channelLvl = leader.getParty().getLevel();
+		commandLeader = leader;
+		partys = new CopyOnWriteArrayList<>();
+		partys.add(leader.getParty());
+		channelLvl = leader.getParty().getLevel();
 		leader.getParty().setCommandChannel(this);
 		leader.getParty()
 				.broadcastToPartyMembers(SystemMessage.getSystemMessage(SystemMessageId.COMMAND_CHANNEL_FORMED));
@@ -66,10 +66,10 @@ public class L2CommandChannel
 		// Update the CCinfo for existing players
 		broadcastToChannelMembers(new ExMPCCPartyInfoUpdate(party, 1));
 
-		_partys.add(party);
-		if (party.getLevel() > _channelLvl)
+		partys.add(party);
+		if (party.getLevel() > channelLvl)
 		{
-			_channelLvl = party.getLevel();
+			channelLvl = party.getLevel();
 		}
 		party.setCommandChannel(this);
 		party.broadcastToPartyMembers(SystemMessage.getSystemMessage(SystemMessageId.JOINED_COMMAND_CHANNEL));
@@ -86,18 +86,18 @@ public class L2CommandChannel
 			return;
 		}
 
-		_partys.remove(party);
-		_channelLvl = 0;
-		for (L2Party pty : _partys)
+		partys.remove(party);
+		channelLvl = 0;
+		for (L2Party pty : partys)
 		{
-			if (pty.getLevel() > _channelLvl)
+			if (pty.getLevel() > channelLvl)
 			{
-				_channelLvl = pty.getLevel();
+				channelLvl = pty.getLevel();
 			}
 		}
 		party.setCommandChannel(null);
 		party.broadcastToPartyMembers(new ExCloseMPCC());
-		if (_partys.size() < 2)
+		if (partys.size() < 2)
 		{
 			broadcastToChannelMembers(SystemMessage.getSystemMessage(SystemMessageId.COMMAND_CHANNEL_DISBANDED));
 			disbandChannel();
@@ -114,9 +114,9 @@ public class L2CommandChannel
 	 */
 	public void disbandChannel()
 	{
-		if (_partys != null)
+		if (partys != null)
 		{
-			for (L2Party party : _partys)
+			for (L2Party party : partys)
 			{
 				if (party != null)
 				{
@@ -124,7 +124,7 @@ public class L2CommandChannel
 				}
 			}
 		}
-		_partys.clear();
+		partys.clear();
 	}
 
 	/**
@@ -133,7 +133,7 @@ public class L2CommandChannel
 	public int getMemberCount()
 	{
 		int count = 0;
-		for (L2Party party : _partys)
+		for (L2Party party : partys)
 		{
 			if (party != null)
 			{
@@ -148,9 +148,9 @@ public class L2CommandChannel
 	 */
 	public void broadcastToChannelMembers(L2GameServerPacket gsp)
 	{
-		if (_partys != null && !_partys.isEmpty())
+		if (partys != null && !partys.isEmpty())
 		{
-			for (L2Party party : _partys)
+			for (L2Party party : partys)
 			{
 				if (party != null)
 				{
@@ -162,9 +162,9 @@ public class L2CommandChannel
 
 	public void broadcastCSToChannelMembers(CreatureSay gsp, L2PcInstance broadcaster)
 	{
-		if (_partys != null && !_partys.isEmpty())
+		if (partys != null && !partys.isEmpty())
 		{
-			for (L2Party party : _partys)
+			for (L2Party party : partys)
 			{
 				if (party != null)
 				{
@@ -179,7 +179,7 @@ public class L2CommandChannel
 	 */
 	public List<L2Party> getPartys()
 	{
-		return _partys;
+		return partys;
 	}
 
 	/**
@@ -200,14 +200,14 @@ public class L2CommandChannel
 	 */
 	public int getLevel()
 	{
-		return _channelLvl;
+		return channelLvl;
 	}
 
 	/**
 	 */
 	public void setChannelLeader(L2PcInstance leader)
 	{
-		_commandLeader = leader;
+		commandLeader = leader;
 	}
 
 	/**
@@ -215,7 +215,7 @@ public class L2CommandChannel
 	 */
 	public L2PcInstance getChannelLeader()
 	{
-		return _commandLeader;
+		return commandLeader;
 	}
 
 	/**
@@ -233,6 +233,6 @@ public class L2CommandChannel
 
 	public final boolean isInChannel(final L2Party party)
 	{
-		return _partys.contains(party);
+		return partys.contains(party);
 	}
 }

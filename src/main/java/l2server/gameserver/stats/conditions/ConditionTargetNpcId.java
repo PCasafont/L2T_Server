@@ -26,7 +26,7 @@ import java.util.ArrayList;
  */
 public class ConditionTargetNpcId extends Condition
 {
-	private final ArrayList<Integer> _npcIds;
+	private final ArrayList<Integer> npcIds;
 
 	/**
 	 * Instantiates a new condition target npc id.
@@ -35,7 +35,7 @@ public class ConditionTargetNpcId extends Condition
 	 */
 	public ConditionTargetNpcId(ArrayList<Integer> npcIds)
 	{
-		_npcIds = npcIds;
+		this.npcIds = npcIds;
 	}
 
 	/* (non-Javadoc)
@@ -46,12 +46,12 @@ public class ConditionTargetNpcId extends Condition
 	{
 		if (env.target instanceof L2Npc)
 		{
-			return _npcIds.contains(((L2Npc) env.target).getNpcId());
+			return npcIds.contains(((L2Npc) env.target).getNpcId());
 		}
 
 		if (env.target instanceof L2DoorInstance)
 		{
-			return _npcIds.contains(((L2DoorInstance) env.target).getDoorId());
+			return npcIds.contains(((L2DoorInstance) env.target).getDoorId());
 		}
 
 		return false;

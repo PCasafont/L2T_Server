@@ -24,38 +24,38 @@ import l2server.gameserver.model.L2RecipeList;
  */
 public class RecipeBookItemList extends L2GameServerPacket
 {
-	private L2RecipeList[] _recipes;
-	private boolean _isDwarvenCraft;
-	private int _maxMp;
+	private L2RecipeList[] recipes;
+	private boolean isDwarvenCraft;
+	private int maxMp;
 
 	public RecipeBookItemList(boolean isDwarvenCraft, int maxMp)
 	{
-		_isDwarvenCraft = isDwarvenCraft;
-		_maxMp = maxMp;
+		this.isDwarvenCraft = isDwarvenCraft;
+		this.maxMp = maxMp;
 	}
 
 	public void addRecipes(L2RecipeList[] recipeBook)
 	{
-		_recipes = recipeBook;
+		recipes = recipeBook;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_isDwarvenCraft ? 0x00 : 0x01); //0 = Dwarven - 1 = Common
-		writeD(_maxMp);
+		writeD(isDwarvenCraft ? 0x00 : 0x01); //0 = Dwarven - 1 = Common
+		writeD(maxMp);
 
-		if (_recipes == null)
+		if (recipes == null)
 		{
 			writeD(0);
 		}
 		else
 		{
-			writeD(_recipes.length);//number of items in recipe book
+			writeD(recipes.length);//number of items in recipe book
 
-			for (int i = 0; i < _recipes.length; i++)
+			for (int i = 0; i < recipes.length; i++)
 			{
-				L2RecipeList temp = _recipes[i];
+				L2RecipeList temp = recipes[i];
 				writeD(temp.getId());
 				writeD(i + 1);
 			}

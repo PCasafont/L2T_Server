@@ -140,7 +140,7 @@ public class DarkCloudMansion extends Quest
 	private static int W6 = 24230012; //Wall 6
 	private static int W7 = 24230013; //Wall 7*/
 
-	private static int[] _spawnChat = {
+	private static int[] spawnChat = {
 			1800043, // I'm the real one!
 			1800044, // Pick me!
 			1800045, // Trust me!
@@ -148,20 +148,20 @@ public class DarkCloudMansion extends Quest
 			1800047 // Don't be fooled! Don't be fooled! I'm the real one!!
 	};
 
-	private static int[] _decayChat = {
+	private static int[] decayChat = {
 			1800051, // I'm the real one! Phew!!
 			1800052, // Can't you even find out?
 			1800053 // Find me!
 	};
 
-	private static int[] _successChat = {
+	private static int[] successChat = {
 			1800054, // Huh?! How did you know it was me?
 			1800055, // Excellent choice! Teehee!
 			1800056, // You've done well!
 			1800057 // Oh... very sensible?
 	};
 
-	private static int[] _faildChat = {
+	private static int[] faildChat = {
 			1800049, // You've been fooled!
 			1800050 // Sorry, but...I'm the fake one.
 	};
@@ -652,12 +652,12 @@ public class DarkCloudMansion extends Quest
 			if (temp[idx] == 1 && Rnd.get(100) < 95)
 			{
 				thisnpc.npc.broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(),
-						_spawnChat[Rnd.get(_spawnChat.length)]));
+						spawnChat[Rnd.get(spawnChat.length)]));
 			}
 			else if (temp[idx] != 1 && Rnd.get(100) < 67)
 			{
 				thisnpc.npc.broadcastPacket(new NpcSay(thisnpc.npc.getObjectId(), 0, thisnpc.npc.getNpcId(),
-						_spawnChat[Rnd.get(_spawnChat.length)]));
+						spawnChat[Rnd.get(spawnChat.length)]));
 			}
 			idx++;
 		}
@@ -744,7 +744,7 @@ public class DarkCloudMansion extends Quest
 					if (mob.status == 1)
 					{
 						mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(),
-								_successChat[Rnd.get(_successChat.length)]));
+								successChat[Rnd.get(successChat.length)]));
 						FifthRoom.founded += 1;
 						startQuestTimer("decayMe", 1500, npc, player);
 					}
@@ -752,7 +752,7 @@ public class DarkCloudMansion extends Quest
 					{
 						FifthRoom.reset = 1;
 						mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(),
-								_faildChat[Rnd.get(_faildChat.length)]));
+								faildChat[Rnd.get(faildChat.length)]));
 						startQuestTimer("decayChatBelethSamples", 4000, npc, player);
 						startQuestTimer("decayBelethSamples", 4500, npc, player);
 					}
@@ -923,7 +923,7 @@ public class DarkCloudMansion extends Quest
 					if (mob.status == 1)
 					{
 						mob.npc.broadcastPacket(new NpcSay(mob.npc.getObjectId(), 0, mob.npc.getNpcId(),
-								_decayChat[Rnd.get(_decayChat.length)]));
+								decayChat[Rnd.get(decayChat.length)]));
 					}
 				}
 			}

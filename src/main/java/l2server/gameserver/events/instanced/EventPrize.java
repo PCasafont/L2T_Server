@@ -26,44 +26,44 @@ import java.util.List;
  */
 public abstract class EventPrize
 {
-	protected final float _chance;
-	protected final boolean _dependsOnPerformance;
+	protected final float chance;
+	protected final boolean dependsOnPerformance;
 
 	public EventPrize(XmlNode node)
 	{
-		_chance = node.getFloat("chance");
-		_dependsOnPerformance = node.getBool("dependsOnPerformance", false);
+		chance = node.getFloat("chance");
+		dependsOnPerformance = node.getBool("dependsOnPerformance", false);
 	}
 
 	public abstract EventPrizeItem getItem();
 
 	public static class EventPrizeItem extends EventPrize
 	{
-		private final int _id;
-		private final int _min;
-		private final int _max;
+		private final int id;
+		private final int min;
+		private final int max;
 
 		public EventPrizeItem(XmlNode node)
 		{
 			super(node);
-			_id = node.getInt("id");
-			_min = node.getInt("min");
-			_max = node.getInt("max");
+			id = node.getInt("id");
+			min = node.getInt("min");
+			max = node.getInt("max");
 		}
 
 		public int getId()
 		{
-			return _id;
+			return id;
 		}
 
 		public int getMin()
 		{
-			return _min;
+			return min;
 		}
 
 		public int getMax()
 		{
-			return _max;
+			return max;
 		}
 
 		@Override
@@ -75,7 +75,7 @@ public abstract class EventPrize
 
 	public static class EventPrizeCategory extends EventPrize
 	{
-		private final List<EventPrizeItem> _items = new ArrayList<>();
+		private final List<EventPrizeItem> items = new ArrayList<>();
 
 		public EventPrizeCategory(XmlNode node)
 		{
@@ -84,7 +84,7 @@ public abstract class EventPrize
 			{
 				if (subNode.getName().equalsIgnoreCase("item"))
 				{
-					_items.add(new EventPrizeItem(subNode));
+					items.add(new EventPrizeItem(subNode));
 				}
 			}
 		}
@@ -94,7 +94,7 @@ public abstract class EventPrize
 		{
 			float rnd = Rnd.get(100000) / 1000.0f;
 			float percent = 0.0f;
-			for (EventPrizeItem item : _items)
+			for (EventPrizeItem item : items)
 			{
 				percent += item.getChance();
 				if (percent > rnd)
@@ -103,17 +103,17 @@ public abstract class EventPrize
 				}
 			}
 
-			return _items.get(0);
+			return items.get(0);
 		}
 	}
 
 	public float getChance()
 	{
-		return _chance;
+		return chance;
 	}
 
 	public boolean dependsOnPerformance()
 	{
-		return _dependsOnPerformance;
+		return dependsOnPerformance;
 	}
 }

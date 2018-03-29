@@ -30,7 +30,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class L2FlyMoveZone extends L2ZoneType
 {
-	private L2FlyMove _flyMove;
+	private L2FlyMove flyMove;
 
 	public L2FlyMoveZone(int id)
 	{
@@ -39,7 +39,7 @@ public class L2FlyMoveZone extends L2ZoneType
 
 	public void setFlyMove(L2FlyMove move)
 	{
-		_flyMove = move;
+		flyMove = move;
 	}
 
 	@Override
@@ -64,7 +64,7 @@ public class L2FlyMoveZone extends L2ZoneType
 			return;
 		}
 
-		player.setFlyMove(_flyMove);
+		player.setFlyMove(flyMove);
 
 		ThreadPoolManager.getInstance().scheduleGeneral(new FlyMoveStartSendTask((L2PcInstance) character), 10L);
 	}
@@ -86,24 +86,24 @@ public class L2FlyMoveZone extends L2ZoneType
 
 	private class FlyMoveStartSendTask implements Runnable
 	{
-		L2PcInstance _player;
+		L2PcInstance player;
 
 		public FlyMoveStartSendTask(L2PcInstance player)
 		{
-			_player = player;
+			this.player = player;
 		}
 
 		@Override
 		public void run()
 		{
-			if (!isCharacterInZone(_player))
+			if (!isCharacterInZone(player))
 			{
 				return;
 			}
 
-			if (!(_player.isPerformingFlyMove() && _player.isChoosingFlyMove()))
+			if (!(player.isPerformingFlyMove() && player.isChoosingFlyMove()))
 			{
-				_player.sendPacket(new ExNotifyFlyMoveStart());
+				player.sendPacket(new ExNotifyFlyMoveStart());
 			}
 
 			ThreadPoolManager.getInstance().scheduleGeneral(this, 1000L);

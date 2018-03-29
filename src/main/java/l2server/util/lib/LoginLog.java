@@ -32,13 +32,13 @@ import java.util.logging.Logger;
 
 public class LoginLog
 {
-	private static final Logger _log = Logger.getLogger(LoginLog.class.getName());
+	private static final Logger log = Logger.getLogger(LoginLog.class.getName());
 
 	public static void add(String text, String cat)
 	{
 		/*
-         * Logger _log = logs.get(cat); if (_log == null) { _log =
-		 * Logger.getLogger(cat); logs.put(cat, _log); }
+         * Logger log = logs.get(cat); if (log == null) { log =
+		 * Logger.getLogger(cat); logs.put(cat, log); }
 		 */
 
 		String date = new SimpleDateFormat("yy.MM.dd H:mm:ss").format(new Date());
@@ -55,7 +55,7 @@ public class LoginLog
 		}
 		catch (IOException e)
 		{
-			_log.log(Level.WARNING, "Error saving logfile: ", e);
+			log.log(Level.WARNING, "Error saving logfile: ", e);
 		}
 		finally
 		{

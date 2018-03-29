@@ -36,32 +36,32 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 public class L2SiegeFlagInstance extends L2Npc
 {
-	private L2Clan _clan;
-	private L2PcInstance _player;
-	private Siegable _siege;
-	private final boolean _isAdvanced;
-	private boolean _canTalk;
+	private L2Clan clan;
+	private L2PcInstance player;
+	private Siegable siege;
+	private final boolean isAdvanced;
+	private boolean canTalk;
 
 	public L2SiegeFlagInstance(L2PcInstance player, int objectId, L2NpcTemplate template, boolean advanced, boolean outPost)
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2SiegeFlagInstance);
 
-		_clan = player.getClan();
-		_player = player;
-		_canTalk = true;
-		_siege = SiegeManager.getInstance().getSiege(_player.getX(), _player.getY(), _player.getZ());
-		if (_siege == null)
+		clan = player.getClan();
+		this.player = player;
+		canTalk = true;
+		siege = SiegeManager.getInstance().getSiege(player.getX(), player.getY(), player.getZ());
+		if (siege == null)
 		{
-			_siege = FortSiegeManager.getInstance().getSiege(_player.getX(), _player.getY(), _player.getZ());
+			siege = FortSiegeManager.getInstance().getSiege(player.getX(), player.getY(), player.getZ());
 		}
-		if (_clan == null || _siege == null)
+		if (clan == null || siege == null)
 		{
 			throw new NullPointerException(getClass().getSimpleName() + ": Initialization failed.");
 		}
 		else
 		{
-			L2SiegeClan sc = _siege.getAttackerClan(_clan);
+			L2SiegeClan sc = siege.getAttackerClan(clan);
 			if (sc == null)
 			{
 				throw new NullPointerException(getClass().getSimpleName() + ": Cannot find siege clan.");
@@ -71,7 +71,7 @@ public class L2SiegeFlagInstance extends L2Npc
 				sc.addFlag(this);
 			}
 		}
-		_isAdvanced = advanced;
+		isAdvanced = advanced;
 		getStatus();
 		setIsInvul(false);
 	}
@@ -83,7 +83,7 @@ public class L2SiegeFlagInstance extends L2Npc
 	public L2SiegeFlagInstance(L2PcInstance player, int objectId, L2NpcTemplate template)
 	{
 		super(objectId, template);
-		_isAdvanced = false;
+		isAdvanced = false;
 	}
 
 	@Override
@@ -105,9 +105,9 @@ public class L2SiegeFlagInstance extends L2Npc
 		{
 			return false;
 		}
-		if (_siege != null && _clan != null)
+		if (siege != null && clan != null)
 		{
-			L2SiegeClan sc = _siege.getAttackerClan(_clan);
+			L2SiegeClan sc = siege.getAttackerClan(clan);
 			if (sc != null)
 			{
 				sc.removeFlag(this);
@@ -166,7 +166,7 @@ public class L2SiegeFlagInstance extends L2Npc
 
 	public boolean isAdvancedHeadquarter()
 	{
-		return _isAdvanced;
+		return isAdvanced;
 	}
 
 	@Override
@@ -189,20 +189,20 @@ public class L2SiegeFlagInstance extends L2Npc
 		{
 			if (getCastle() != null && getCastle().getSiege().getIsInProgress())
 			{
-				if (_clan != null)
+				if (clan != null)
 				{
 					// send warning to owners of headquarters that theirs base is under attack
-					_clan.broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.BASE_UNDER_ATTACK));
+					clan.broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.BASE_UNDER_ATTACK));
 					setCanTalk(false);
 					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleTalkTask(), 20000);
 				}
 			}
 			else if (getFort() != null && getFort().getSiege().getIsInProgress())
 			{
-				if (_clan != null)
+				if (clan != null)
 				{
 					// send warning to owners of headquarters that theirs base is under attack
-					_clan.broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.BASE_UNDER_ATTACK));
+					clan.broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.BASE_UNDER_ATTACK));
 					setCanTalk(false);
 					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleTalkTask(), 20000);
 				}
@@ -226,11 +226,11 @@ public class L2SiegeFlagInstance extends L2Npc
 
 	void setCanTalk(boolean val)
 	{
-		_canTalk = val;
+		canTalk = val;
 	}
 
 	private boolean canTalk()
 	{
-		return _canTalk;
+		return canTalk;
 	}
 }

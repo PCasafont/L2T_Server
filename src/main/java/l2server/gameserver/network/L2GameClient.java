@@ -68,7 +68,7 @@ import java.util.logging.Logger;
  */
 public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> implements Runnable
 {
-	protected static final Logger _logAccounting = Logger.getLogger("accounting");
+	protected static final Logger logAccounting = Logger.getLogger("accounting");
 
 	/**
 	 * CONNECTED	- client has just connected
@@ -82,70 +82,70 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		CONNECTED, AUTHED, IN_GAME
 	}
 
-	private GameClientState _state;
+	private GameClientState state;
 
 	// Info
-	private final InetAddress _addr;
-	private String _accountName;
-	private SessionKey _sessionId;
-	private L2PcInstance _activeChar;
-	private ReentrantLock _activeCharLock = new ReentrantLock();
-	private SecondaryPasswordAuth _secondaryAuth;
+	private final InetAddress addr;
+	private String accountName;
+	private SessionKey sessionId;
+	private L2PcInstance activeChar;
+	private ReentrantLock activeCharLock = new ReentrantLock();
+	private SecondaryPasswordAuth secondaryAuth;
 
-	private boolean _isAuthedGG;
-	private long _connectionStartTime;
-	private CharSelectInfoPackage[] _charSlotMapping = null;
+	private boolean isAuthedGG;
+	private long connectionStartTime;
+	private CharSelectInfoPackage[] charSlotMapping = null;
 
 	// floodprotectors
-	private final FloodProtectors _floodProtectors = new FloodProtectors(this);
+	private final FloodProtectors floodProtectors = new FloodProtectors(this);
 
 	// Task
-	protected ScheduledFuture<?> _autoSaveInDB;
-	protected ScheduledFuture<?> _cleanupTask = null;
+	protected ScheduledFuture<?> autoSaveInDB;
+	protected ScheduledFuture<?> cleanupTask = null;
 
-	private L2GameServerPacket _aditionalClosePacket;
+	private L2GameServerPacket aditionalClosePacket;
 
-	private GameCrypt _crypt;
+	private GameCrypt crypt;
 
-	private ClientStats _stats;
+	private ClientStats stats;
 
-	private boolean _isDetached = false;
+	private boolean isDetached = false;
 
-	private boolean _protocolOk;
-	private int _protocolVersion;
+	private boolean protocolOk;
+	private int protocolVersion;
 
-	private final ArrayBlockingQueue<ReceivablePacket<L2GameClient>> _packetQueue;
-	private ReentrantLock _queueLock = new ReentrantLock();
+	private final ArrayBlockingQueue<ReceivablePacket<L2GameClient>> packetQueue;
+	private ReentrantLock queueLock = new ReentrantLock();
 
 	private int[][] trace;
 
-	private String _hwId;
+	private String hwId;
 
-	private boolean _blockDisconnectTask;
+	private boolean blockDisconnectTask;
 
 	public L2GameClient(MMOConnection<L2GameClient> con)
 	{
 		super(con);
-		_state = GameClientState.CONNECTED;
-		_connectionStartTime = System.currentTimeMillis();
-		_crypt = new GameCrypt();
-		_stats = new ClientStats();
+		state = GameClientState.CONNECTED;
+		connectionStartTime = System.currentTimeMillis();
+		crypt = new GameCrypt();
+		stats = new ClientStats();
 
-		_packetQueue = new ArrayBlockingQueue<>(Config.CLIENT_PACKET_QUEUE_SIZE);
+		packetQueue = new ArrayBlockingQueue<>(Config.CLIENT_PACKET_QUEUE_SIZE);
 
 		if (Config.CHAR_STORE_INTERVAL > 0)
 		{
-			_autoSaveInDB = ThreadPoolManager.getInstance()
+			autoSaveInDB = ThreadPoolManager.getInstance()
 					.scheduleGeneralAtFixedRate(new AutoSaveTask(), 300000L, Config.CHAR_STORE_INTERVAL * 60000L);
 		}
 		else
 		{
-			_autoSaveInDB = null;
+			autoSaveInDB = null;
 		}
 
 		try
 		{
-			_addr = con != null ? con.getInetAddress() : InetAddress.getLocalHost();
+			addr = con != null ? con.getInetAddress() : InetAddress.getLocalHost();
 		}
 		catch (UnknownHostException e)
 		{
@@ -157,27 +157,27 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	{
 		byte[] key;
 		key = BlowFishKeygen.getRandomKey();
-		_crypt.setKey(key);
+		crypt.setKey(key);
 		return key;
 	}
 
 	public GameClientState getState()
 	{
-		return _state;
+		return state;
 	}
 
 	public void setState(GameClientState pState)
 	{
-		if (_state != pState)
+		if (state != pState)
 		{
-			_state = pState;
-			_packetQueue.clear();
+			state = pState;
+			packetQueue.clear();
 		}
 	}
 
 	public ClientStats getStats()
 	{
-		return _stats;
+		return stats;
 	}
 
 	/**
@@ -186,39 +186,39 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	 */
 	public InetAddress getConnectionAddress()
 	{
-		return _addr;
+		return addr;
 	}
 
 	public long getConnectionStartTime()
 	{
-		return _connectionStartTime;
+		return connectionStartTime;
 	}
 
 	@Override
 	public boolean decrypt(ByteBuffer buf, int size)
 	{
-		_crypt.decrypt(buf.array(), buf.position(), size);
+		crypt.decrypt(buf.array(), buf.position(), size);
 		return true;
 	}
 
 	@Override
 	public boolean encrypt(final ByteBuffer buf, final int size)
 	{
-		_crypt.encrypt(buf.array(), buf.position(), size);
+		crypt.encrypt(buf.array(), buf.position(), size);
 		buf.position(buf.position() + size);
 		return true;
 	}
 
 	public L2PcInstance getActiveChar()
 	{
-		return _activeChar;
+		return activeChar;
 	}
 
 	public void setActiveChar(L2PcInstance pActiveChar)
 	{
-		_activeChar = pActiveChar;
+		activeChar = pActiveChar;
 		//JIV remove - done on spawn
-		/*if (_activeChar != null)
+		/*if (activeChar != null)
         {
 			L2World.getInstance().storeObject(getActiveChar());
 		}*/
@@ -226,52 +226,52 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 
 	public ReentrantLock getActiveCharLock()
 	{
-		return _activeCharLock;
+		return activeCharLock;
 	}
 
 	public FloodProtectors getFloodProtectors()
 	{
-		return _floodProtectors;
+		return floodProtectors;
 	}
 
 	public void setGameGuardOk(boolean val)
 	{
-		_isAuthedGG = val;
+		isAuthedGG = val;
 	}
 
 	public boolean isAuthedGG()
 	{
-		return _isAuthedGG;
+		return isAuthedGG;
 	}
 
 	public void setAccountName(String pAccountName)
 	{
-		_accountName = pAccountName;
+		accountName = pAccountName;
 
 		if (Config.SECOND_AUTH_ENABLED)
 		{
-			_secondaryAuth = new SecondaryPasswordAuth(this);
+			secondaryAuth = new SecondaryPasswordAuth(this);
 		}
 	}
 
 	public String getAccountName()
 	{
-		return _accountName;
+		return accountName;
 	}
 
 	public void setSessionId(SessionKey sk)
 	{
-		_sessionId = sk;
+		sessionId = sk;
 	}
 
 	public SessionKey getSessionId()
 	{
-		return _sessionId;
+		return sessionId;
 	}
 
 	public void sendPacket(L2GameServerPacket gsp)
 	{
-		if (_isDetached) // Temp fix for stuck characters in the loading screen
+		if (isDetached) // Temp fix for stuck characters in the loading screen
 		{
 			return;
 		}
@@ -294,12 +294,12 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 
 	public boolean isDetached()
 	{
-		return _isDetached;
+		return isDetached;
 	}
 
 	public void setDetached(boolean b)
 	{
-		_isDetached = b;
+		isDetached = b;
 	}
 
 	/**
@@ -374,7 +374,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 
 				LogRecord record = new LogRecord(Level.WARNING, "Delete");
 				record.setParameters(new Object[]{objid, L2GameClient.this});
-				_logAccounting.log(record);
+				logAccounting.log(record);
 			}
 
 			return answer;
@@ -450,7 +450,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 
 		LogRecord record = new LogRecord(Level.WARNING, "Restore");
 		record.setParameters(new Object[]{objid, L2GameClient.this});
-		_logAccounting.log(record);
+		logAccounting.log(record);
 	}
 
 	public static void deleteCharByObjId(int objid)
@@ -714,21 +714,21 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	 */
 	public void setCharSelection(CharSelectInfoPackage[] chars)
 	{
-		_charSlotMapping = chars;
+		charSlotMapping = chars;
 	}
 
 	public CharSelectInfoPackage getCharSelection(int charslot)
 	{
-		if (_charSlotMapping == null || charslot < 0 || charslot >= _charSlotMapping.length)
+		if (charSlotMapping == null || charslot < 0 || charslot >= charSlotMapping.length)
 		{
 			return null;
 		}
-		return _charSlotMapping[charslot];
+		return charSlotMapping[charslot];
 	}
 
 	public SecondaryPasswordAuth getSecondaryAuth()
 	{
-		return _secondaryAuth;
+		return secondaryAuth;
 	}
 
 	public void close(L2GameServerPacket gsp, boolean blockDisconnectTask)
@@ -738,7 +738,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			return; // offline shop
 		}
 
-		_blockDisconnectTask = blockDisconnectTask;
+		this.blockDisconnectTask = blockDisconnectTask;
 
 		if (blockDisconnectTask)
 		{
@@ -751,8 +751,8 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	public final void cancelAutoSave()
 	{
 		// we are going to mannually save the char bellow thus we can force the cancel
-		ScheduledFuture<?> future = _autoSaveInDB;
-		_autoSaveInDB = null;
+		ScheduledFuture<?> future = autoSaveInDB;
+		autoSaveInDB = null;
 		if (future != null)
 		{
 			future.cancel(false);
@@ -765,9 +765,9 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		{
 			return; // offline shop
 		}
-		if (_aditionalClosePacket != null)
+		if (aditionalClosePacket != null)
 		{
-			getConnection().close(new L2GameServerPacket[]{_aditionalClosePacket, gsp});
+			getConnection().close(new L2GameServerPacket[]{aditionalClosePacket, gsp});
 		}
 		else
 		{
@@ -805,13 +805,13 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	{
 		LogRecord record = new LogRecord(Level.WARNING, "Disconnected abnormally");
 		record.setParameters(new Object[]{L2GameClient.this});
-		_logAccounting.log(record);
+		logAccounting.log(record);
 	}
 
 	@Override
 	protected void onDisconnection()
 	{
-		if (_blockDisconnectTask)
+		if (blockDisconnectTask)
 		{
 			cancelAutoSave();
 			return;
@@ -833,15 +833,15 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	 */
 	public void closeNow()
 	{
-		_isDetached = true; // prevents more packets execution
+		isDetached = true; // prevents more packets execution
 		close(ServerClose.STATIC_PACKET);
 		synchronized (this)
 		{
-			if (_cleanupTask != null)
+			if (cleanupTask != null)
 			{
 				cancelCleanup();
 			}
-			_cleanupTask = ThreadPoolManager.getInstance().scheduleGeneral(new CleanupTask(), 0); //instant
+			cleanupTask = ThreadPoolManager.getInstance().scheduleGeneral(new CleanupTask(), 0); //instant
 		}
 	}
 
@@ -884,7 +884,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		@Override
 		public void run()
 		{
-			if (_blockDisconnectTask)
+			if (blockDisconnectTask)
 			{
 				cancelAutoSave();
 				return;
@@ -955,7 +955,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 
 						LogRecord record = new LogRecord(Level.INFO, "Entering offline mode");
 						record.setParameters(new Object[]{L2GameClient.this});
-						_logAccounting.log(record);
+						logAccounting.log(record);
 						return;
 					}
 
@@ -1027,9 +1027,9 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		{
 			synchronized (this)
 			{
-				if (_cleanupTask == null)
+				if (cleanupTask == null)
 				{
-					_cleanupTask =
+					cleanupTask =
 							ThreadPoolManager.getInstance().scheduleGeneral(new CleanupTask(), fast ? 5 : 15000L);
 				}
 			}
@@ -1051,10 +1051,10 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			try
 			{
 				// we are going to manually save the char below thus we can force the cancel
-				if (_autoSaveInDB != null)
+				if (autoSaveInDB != null)
 				{
-					_autoSaveInDB.cancel(true);
-					//ThreadPoolManager.getInstance().removeGeneral((Runnable) _autoSaveInDB);
+					autoSaveInDB.cancel(true);
+					//ThreadPoolManager.getInstance().removeGeneral((Runnable) autoSaveInDB);
 				}
 
 				L2PcInstance player = getActiveChar();
@@ -1093,7 +1093,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		@Override
 		public void run()
 		{
-			if (_autoSaveInDB == null)
+			if (autoSaveInDB == null)
 			{
 				return;
 			}
@@ -1120,34 +1120,34 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 
 	public boolean isProtocolOk()
 	{
-		return _protocolOk;
+		return protocolOk;
 	}
 
 	public void setProtocolOk(boolean b)
 	{
-		_protocolOk = b;
+		protocolOk = b;
 	}
 
 	public int getProtocolVersion()
 	{
-		return _protocolVersion;
+		return protocolVersion;
 	}
 
 	public void setProtocolVersion(int version)
 	{
-		_protocolVersion = version;
+		protocolVersion = version;
 	}
 
 	public boolean handleCheat(String punishment)
 	{
-		if (_activeChar != null)
+		if (activeChar != null)
 		{
-			Util.handleIllegalPlayerAction(_activeChar, toString() + ": " + punishment, Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(activeChar, toString() + ": " + punishment, Config.DEFAULT_PUNISH);
 			return true;
 		}
 
-		Logger _logAudit = Logger.getLogger("audit");
-		_logAudit.log(Level.INFO, "AUDIT: Client " + toString() + " kicked for reason: " + punishment);
+		Logger logAudit = Logger.getLogger("audit");
+		logAudit.log(Level.INFO, "AUDIT: Client " + toString() + " kicked for reason: " + punishment);
 		closeNow();
 		return false;
 	}
@@ -1158,13 +1158,13 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	 */
 	public boolean dropPacket()
 	{
-		if (_isDetached) // detached clients can't receive any packets
+		if (isDetached) // detached clients can't receive any packets
 		{
 			return true;
 		}
 
 		// flood protection
-		if (getStats().countPacket(_packetQueue.size()))
+		if (getStats().countPacket(packetQueue.size()))
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return true;
@@ -1184,7 +1184,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			closeNow();
 			return;
 		}
-		if (_state == GameClientState.CONNECTED) // in CONNECTED state kick client immediately
+		if (state == GameClientState.CONNECTED) // in CONNECTED state kick client immediately
 		{
 			if (Config.PACKET_HANDLER_DEBUG)
 			{
@@ -1205,7 +1205,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			closeNow();
 			return;
 		}
-		if (_state == GameClientState.CONNECTED) // in CONNECTED state kick client immediately
+		if (state == GameClientState.CONNECTED) // in CONNECTED state kick client immediately
 		{
 			if (Config.PACKET_HANDLER_DEBUG)
 			{
@@ -1228,7 +1228,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			return;
 		}
 
-		if (!_packetQueue.offer(packet))
+		if (!packetQueue.offer(packet))
 		{
 			if (getStats().countQueueOverflow())
 			{
@@ -1243,14 +1243,14 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			return;
 		}
 
-		if (_queueLock.isLocked()) // already processing
+		if (queueLock.isLocked()) // already processing
 		{
 			return;
 		}
 
 		try
 		{
-			if (_state == GameClientState.CONNECTED)
+			if (state == GameClientState.CONNECTED)
 			{
 				if (getStats().processedPackets > 3)
 				{
@@ -1282,7 +1282,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	@Override
 	public void run()
 	{
-		if (!_queueLock.tryLock())
+		if (!queueLock.tryLock())
 		{
 			return;
 		}
@@ -1292,15 +1292,15 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			int count = 0;
 			while (true)
 			{
-				final ReceivablePacket<L2GameClient> packet = _packetQueue.poll();
+				final ReceivablePacket<L2GameClient> packet = packetQueue.poll();
 				if (packet == null) // queue is empty
 				{
 					return;
 				}
 
-				if (_isDetached) // clear queue immediately after detach
+				if (isDetached) // clear queue immediately after detach
 				{
-					_packetQueue.clear();
+					packetQueue.clear();
 					return;
 				}
 
@@ -1323,7 +1323,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		}
 		finally
 		{
-			_queueLock.unlock();
+			queueLock.unlock();
 		}
 	}
 
@@ -1339,27 +1339,27 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 
 	public void setHWId(String hwId)
 	{
-		_hwId = hwId;
+		this.hwId = hwId;
 	}
 
 	public String getHWId()
 	{
-		return _hwId;
+		return hwId;
 	}
 
 	private boolean cancelCleanup()
 	{
-		Future<?> task = _cleanupTask;
+		Future<?> task = cleanupTask;
 		if (task != null)
 		{
-			_cleanupTask = null;
+			cleanupTask = null;
 			return task.cancel(true);
 		}
 		return false;
 	}
 
-	public void setAditionalClosePacket(L2GameServerPacket _aditionalClosePacket)
+	public void setAditionalClosePacket(L2GameServerPacket aditionalClosePacket)
 	{
-		this._aditionalClosePacket = _aditionalClosePacket;
+		this.aditionalClosePacket = aditionalClosePacket;
 	}
 }

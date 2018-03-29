@@ -45,43 +45,43 @@ public final class SystemMessage extends L2GameServerPacket
 
 	private static final class SMParam
 	{
-		private final byte _type;
-		private final Object _value;
+		private final byte type;
+		private final Object value;
 
 		public SMParam(final byte type, final Object value)
 		{
-			_type = type;
-			_value = value;
+			this.type = type;
+			this.value = value;
 		}
 
 		public final byte getType()
 		{
-			return _type;
+			return type;
 		}
 
 		public final Object getValue()
 		{
-			return _value;
+			return value;
 		}
 
 		public final String getStringValue()
 		{
-			return (String) _value;
+			return (String) value;
 		}
 
 		public final int getIntValue()
 		{
-			return (Integer) _value;
+			return (Integer) value;
 		}
 
 		public final long getLongValue()
 		{
-			return (Long) _value;
+			return (Long) value;
 		}
 
 		public final int[] getIntArrayValue()
 		{
-			return (int[]) _value;
+			return (int[]) value;
 		}
 	}
 
@@ -143,15 +143,15 @@ public final class SystemMessage extends L2GameServerPacket
 		return getSystemMessage(SystemMessageId.getSystemMessageId(id));
 	}
 
-	private final SystemMessageId _smId;
-	private SMParam[] _params;
-	private int _paramIndex;
+	private final SystemMessageId smId;
+	private SMParam[] params;
+	private int paramIndex;
 
 	private SystemMessage(final SystemMessageId smId)
 	{
 		final int paramCount = smId.getParamCount();
-		_smId = smId;
-		_params = paramCount != 0 ? new SMParam[paramCount] : EMPTY_PARAM_ARRAY;
+		this.smId = smId;
+		params = paramCount != 0 ? new SMParam[paramCount] : EMPTY_PARAM_ARRAY;
 	}
 
 	/**
@@ -167,14 +167,14 @@ public final class SystemMessage extends L2GameServerPacket
 
 	private void append(final SMParam param)
 	{
-		if (_paramIndex >= _params.length)
+		if (paramIndex >= params.length)
 		{
-			_params = Arrays.copyOf(_params, _paramIndex + 1);
-			_smId.setParamCount(_paramIndex + 1);
-			Log.log(Level.INFO, "Wrong parameter count '" + (_paramIndex + 1) + "' for SystemMessageId: " + _smId);
+			params = Arrays.copyOf(params, paramIndex + 1);
+			smId.setParamCount(paramIndex + 1);
+			Log.log(Level.INFO, "Wrong parameter count '" + (paramIndex + 1) + "' for SystemMessageId: " + smId);
 		}
 
-		_params[_paramIndex++] = param;
+		params[paramIndex++] = param;
 	}
 
 	public final SystemMessage addString(final String text)
@@ -364,29 +364,29 @@ public final class SystemMessage extends L2GameServerPacket
 
 	public final SystemMessageId getSystemMessageId()
 	{
-		return _smId;
+		return smId;
 	}
 
 	public final SystemMessage getLocalizedMessage(final String lang)
 	{
-		if (_smId == SystemMessageId.S1)
+		if (smId == SystemMessageId.S1)
 		{
 			return this;
 		}
 
-		final SMLocalisation sml = _smId.getLocalisation(lang);
+		final SMLocalisation sml = smId.getLocalisation(lang);
 		if (sml == null)
 		{
 			return this;
 		}
 
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1);
-		final Object[] params = new Object[_paramIndex];
+		final Object[] params = new Object[paramIndex];
 
 		SMParam param;
-		for (int i = 0; i < _paramIndex; i++)
+		for (int i = 0; i < paramIndex; i++)
 		{
-			param = _params[i];
+			param = this.params[i];
 
 			switch (param.getType())
 			{
@@ -476,13 +476,13 @@ public final class SystemMessage extends L2GameServerPacket
 	{
 		out.println(0x62);
 
-		out.println(_smId.getId());
-		out.println(_paramIndex);
+		out.println(smId.getId());
+		out.println(paramIndex);
 
 		SMParam param;
-		for (int i = 0; i < _paramIndex; i++)
+		for (int i = 0; i < paramIndex; i++)
 		{
-			param = _params[i];
+			param = params[i];
 			out.println(param.getType());
 
 			switch (param.getType())
@@ -535,13 +535,13 @@ public final class SystemMessage extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeH(_smId.getId());
-		writeC(_paramIndex);
+		writeH(smId.getId());
+		writeC(paramIndex);
 
 		SMParam param;
-		for (int i = 0; i < _paramIndex; i++)
+		for (int i = 0; i < paramIndex; i++)
 		{
-			param = _params[i];
+			param = params[i];
 			writeC(param.getType());
 
 			switch (param.getType())

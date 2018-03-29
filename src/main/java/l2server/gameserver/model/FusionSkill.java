@@ -31,32 +31,32 @@ import java.util.concurrent.Future;
 public final class FusionSkill
 {
 
-	protected int _skillCastRange;
-	protected int _fusionId;
-	protected int _fusionLevel;
-	protected L2Character _caster;
-	protected L2Character _target;
-	protected Future<?> _geoCheckTask;
+	protected int skillCastRange;
+	protected int fusionId;
+	protected int fusionLevel;
+	protected L2Character caster;
+	protected L2Character target;
+	protected Future<?> geoCheckTask;
 
 	public L2Character getCaster()
 	{
-		return _caster;
+		return caster;
 	}
 
 	public L2Character getTarget()
 	{
-		return _target;
+		return target;
 	}
 
 	public FusionSkill(L2Character caster, L2Character target, L2Skill skill)
 	{
-		_skillCastRange = skill.getCastRange();
-		_caster = caster;
-		_target = target;
-		_fusionId = skill.getTriggeredId();
-		_fusionLevel = skill.getTriggeredLevel();
+		skillCastRange = skill.getCastRange();
+		this.caster = caster;
+		this.target = target;
+		fusionId = skill.getTriggeredId();
+		fusionLevel = skill.getTriggeredLevel();
 
-		L2Abnormal effect = _target.getFirstEffect(_fusionId);
+		L2Abnormal effect = target.getFirstEffect(fusionId);
 		if (effect != null)
 		{
 			for (L2Effect eff : effect.getEffects())
@@ -69,24 +69,24 @@ public final class FusionSkill
 		}
 		else
 		{
-			L2Skill force = SkillTable.getInstance().getInfo(_fusionId, _fusionLevel);
+			L2Skill force = SkillTable.getInstance().getInfo(fusionId, fusionLevel);
 			if (force != null)
 			{
-				force.getEffects(_caster, _target, null);
+				force.getEffects(caster, target, null);
 			}
 			else
 			{
-				Log.warning("Triggered skill [" + _fusionId + ";" + _fusionLevel + "] not found!");
+				Log.warning("Triggered skill [" + fusionId + ";" + fusionLevel + "] not found!");
 			}
 		}
-		_geoCheckTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new GeoCheckTask(), 1000, 1000);
+		geoCheckTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new GeoCheckTask(), 1000, 1000);
 	}
 
 	public void onCastAbort()
 	{
-		_caster.setFusionSkill(null);
-		_caster.setContinuousDebuffTargets(null);
-		L2Abnormal effect = _target.getFirstEffect(_fusionId);
+		caster.setFusionSkill(null);
+		caster.setContinuousDebuffTargets(null);
+		L2Abnormal effect = target.getFirstEffect(fusionId);
 		if (effect != null)
 		{
 			for (L2Effect eff : effect.getEffects())
@@ -98,7 +98,7 @@ public final class FusionSkill
 			}
 		}
 
-		_geoCheckTask.cancel(true);
+		geoCheckTask.cancel(true);
 	}
 
 	public class GeoCheckTask implements Runnable
@@ -108,14 +108,14 @@ public final class FusionSkill
 		{
 			try
 			{
-				if (!Util.checkIfInRange(_skillCastRange, _caster, _target, true))
+				if (!Util.checkIfInRange(skillCastRange, caster, target, true))
 				{
-					_caster.abortCast();
+					caster.abortCast();
 				}
 
-				if (!GeoData.getInstance().canSeeTarget(_caster, _target))
+				if (!GeoData.getInstance().canSeeTarget(caster, target))
 				{
-					_caster.abortCast();
+					caster.abortCast();
 				}
 			}
 			catch (Exception e)

@@ -27,12 +27,12 @@ import l2server.gameserver.network.serverpackets.ExCompoundTwoFail;
  */
 public final class RequestCompoundOne extends L2GameClientPacket
 {
-	private int _objId;
+	private int objId;
 
 	@Override
 	protected void readImpl()
 	{
-		_objId = readD();
+		objId = readD();
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public final class RequestCompoundOne extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance compoundItem = activeChar.getInventory().getItemByObjectId(_objId);
+		L2ItemInstance compoundItem = activeChar.getInventory().getItemByObjectId(objId);
 		if (compoundItem == null)
 		{
 			sendPacket(new ExCompoundTwoFail());

@@ -24,17 +24,17 @@ import l2server.gameserver.templates.StatsSet;
 
 public class L2SkillAppearance extends L2Skill
 {
-	private final int _faceId;
-	private final int _hairColorId;
-	private final int _hairStyleId;
+	private final int faceId;
+	private final int hairColorId;
+	private final int hairStyleId;
 
 	public L2SkillAppearance(StatsSet set)
 	{
 		super(set);
 
-		_faceId = set.getInteger("faceId", -1);
-		_hairColorId = set.getInteger("hairColorId", -1);
-		_hairStyleId = set.getInteger("hairStyleId", -1);
+		faceId = set.getInteger("faceId", -1);
+		hairColorId = set.getInteger("hairColorId", -1);
+		hairStyleId = set.getInteger("hairStyleId", -1);
 	}
 
 	@Override
@@ -51,9 +51,9 @@ public class L2SkillAppearance extends L2Skill
 						targetPlayer.getRace() == Race.Kamael || targetPlayer.getRace() == Race.Ertheia ? 2 : 3;
 				int maxFace = 3;
 
-				int faceId = _faceId;
-				int hairStyleId = _hairStyleId;
-				int hairColorId = _hairColorId;
+				int faceId = this.faceId;
+				int hairStyleId = this.hairStyleId;
+				int hairColorId = this.hairColorId;
 
 				if (hairStyleId > maxHairStyle)
 				{

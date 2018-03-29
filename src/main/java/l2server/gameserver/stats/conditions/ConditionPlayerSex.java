@@ -24,7 +24,7 @@ import l2server.gameserver.stats.Env;
 public class ConditionPlayerSex extends Condition
 {
 	//male 0 fmale 1
-	private final int _sex;
+	private final int sex;
 
 	/**
 	 * Instantiates a new condition player sex.
@@ -33,7 +33,7 @@ public class ConditionPlayerSex extends Condition
 	 */
 	public ConditionPlayerSex(int sex)
 	{
-		_sex = sex;
+		this.sex = sex;
 	}
 
 	/* (non-Javadoc)
@@ -42,6 +42,6 @@ public class ConditionPlayerSex extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		return (((L2PcInstance) env.player).getAppearance().getSex() ? 1 : 0) == _sex;
+		return (((L2PcInstance) env.player).getAppearance().getSex() ? 1 : 0) == sex;
 	}
 }

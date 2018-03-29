@@ -25,18 +25,18 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public final class AllyDismiss extends L2GameClientPacket
 {
 
-	private String _clanName;
+	private String clanName;
 
 	@Override
 	protected void readImpl()
 	{
-		_clanName = readS();
+		clanName = readS();
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		if (_clanName == null)
+		if (clanName == null)
 		{
 			return;
 		}
@@ -61,7 +61,7 @@ public final class AllyDismiss extends L2GameClientPacket
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FEATURE_ONLY_FOR_ALLIANCE_LEADER));
 			return;
 		}
-		L2Clan clan = ClanTable.getInstance().getClanByName(_clanName);
+		L2Clan clan = ClanTable.getInstance().getClanByName(clanName);
 		if (clan == null)
 		{
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLAN_DOESNT_EXISTS));

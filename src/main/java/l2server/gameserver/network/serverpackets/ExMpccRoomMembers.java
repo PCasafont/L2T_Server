@@ -5,19 +5,19 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExMpccRoomMembers extends L2GameServerPacket
 {
-	private int _unk;
-	private int _listsize;
+	private int unk;
+	private int listsize;
 
 	public ExMpccRoomMembers(int unk, int listsize)
 	{
-		_unk = unk;
-		_listsize = listsize;
+		this.unk = unk;
+		this.listsize = listsize;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeD(_unk);
-		writeD(_listsize);
+		writeD(unk);
+		writeD(listsize);
 	}
 }

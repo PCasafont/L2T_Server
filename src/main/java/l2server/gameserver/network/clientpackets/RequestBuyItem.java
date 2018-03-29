@@ -47,30 +47,30 @@ public final class RequestBuyItem extends L2GameClientPacket
 
 	private static final int BATCH_LENGTH = 12; // length of the one item
 
-	private int _listId;
-	private Item[] _items = null;
+	private int listId;
+	private Item[] items = null;
 
 	@Override
 	protected void readImpl()
 	{
-		_listId = readD();
+		listId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
 		{
 			return;
 		}
 
-		_items = new Item[count];
+		items = new Item[count];
 		for (int i = 0; i < count; i++)
 		{
 			int itemId = readD();
 			long cnt = readQ();
 			if (itemId < 1 || cnt < 1)
 			{
-				_items = null;
+				items = null;
 				return;
 			}
-			_items[i] = new Item(itemId, cnt);
+			items[i] = new Item(itemId, cnt);
 		}
 	}
 
@@ -89,7 +89,7 @@ public final class RequestBuyItem extends L2GameClientPacket
 			return;
 		}
 
-		if (_items == null)
+		if (items == null)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -152,12 +152,12 @@ public final class RequestBuyItem extends L2GameClientPacket
 				{
 					Util.handleIllegalPlayerAction(player,
 							"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-									" sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
+									" sent a false BuyList list_id " + listId, Config.DEFAULT_PUNISH);
 					return;
 				}
 				for (L2TradeList tradeList : lists)
 				{
-					if (tradeList.getListId() == _listId)
+					if (tradeList.getListId() == listId)
 					{
 						list = tradeList;
 					}
@@ -165,30 +165,30 @@ public final class RequestBuyItem extends L2GameClientPacket
 			}
 			else
 			{
-				list = TradeController.getInstance().getBuyList(_listId);
+				list = TradeController.getInstance().getBuyList(listId);
 			}
 		}
 		else
 		{
-			list = TradeController.getInstance().getBuyList(_listId);
+			list = TradeController.getInstance().getBuyList(listId);
 		}
 
 		if (list == null)
 		{
 			Util.handleIllegalPlayerAction(player,
 					"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-							" sent a false BuyList list_id " + _listId, Config.DEFAULT_PUNISH);
+							" sent a false BuyList list_id " + listId, Config.DEFAULT_PUNISH);
 			return;
 		}
 
-		_listId = list.getListId();
+		listId = list.getListId();
 
 		long subTotal = 0;
 
 		// Check for buylist validity and calculates summary values
 		long slots = 0;
 		long weight = 0;
-		for (Item i : _items)
+		for (Item i : items)
 		{
 			long price = -1;
 
@@ -197,7 +197,7 @@ public final class RequestBuyItem extends L2GameClientPacket
 			{
 				Util.handleIllegalPlayerAction(player,
 						"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-								" sent a false BuyList list_id " + _listId + " and item_id " + i.getItemId(),
+								" sent a false BuyList list_id " + listId + " and item_id " + i.getItemId(),
 						Config.DEFAULT_PUNISH);
 				return;
 			}
@@ -308,14 +308,14 @@ public final class RequestBuyItem extends L2GameClientPacket
 		}
 
 		// Proceed the purchase
-		for (Item i : _items)
+		for (Item i : items)
 		{
 			L2TradeItem tradeItem = list.getItemById(i.getItemId());
 			if (tradeItem == null)
 			{
 				Util.handleIllegalPlayerAction(player,
 						"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-								" sent a false BuyList list_id " + _listId + " and item_id " + i.getItemId(),
+								" sent a false BuyList list_id " + listId + " and item_id " + i.getItemId(),
 						Config.DEFAULT_PUNISH);
 				continue;
 			}
@@ -347,23 +347,23 @@ public final class RequestBuyItem extends L2GameClientPacket
 
 	private static class Item
 	{
-		private final int _itemId;
-		private final long _count;
+		private final int itemId;
+		private final long count;
 
 		public Item(int id, long num)
 		{
-			_itemId = id;
-			_count = num;
+			itemId = id;
+			count = num;
 		}
 
 		public int getItemId()
 		{
-			return _itemId;
+			return itemId;
 		}
 
 		public long getCount()
 		{
-			return _count;
+			return count;
 		}
 	}
 }

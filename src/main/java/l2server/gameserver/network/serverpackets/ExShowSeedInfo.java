@@ -46,13 +46,13 @@ import java.util.List;
  */
 public class ExShowSeedInfo extends L2GameServerPacket
 {
-	private List<SeedProduction> _seeds;
-	private int _manorId;
+	private List<SeedProduction> seeds;
+	private int manorId;
 
 	public ExShowSeedInfo(int manorId, List<SeedProduction> seeds)
 	{
-		_manorId = manorId;
-		_seeds = seeds;
+		this.manorId = manorId;
+		this.seeds = seeds;
 	}
 
 	@Override
@@ -60,15 +60,15 @@ public class ExShowSeedInfo extends L2GameServerPacket
 	{ // Id
 		writeH(0x24); // SubId
 		writeC(0);
-		writeD(_manorId); // Manor ID
+		writeD(manorId); // Manor ID
 		writeD(0);
-		if (_seeds == null)
+		if (seeds == null)
 		{
 			writeD(0);
 			return;
 		}
-		writeD(_seeds.size());
-		for (SeedProduction seed : _seeds)
+		writeD(seeds.size());
+		for (SeedProduction seed : seeds)
 		{
 			writeD(seed.getId()); // Seed id
 			writeQ(seed.getCanProduce()); // Left to buy

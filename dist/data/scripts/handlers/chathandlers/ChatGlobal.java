@@ -15,6 +15,7 @@
 
 package handlers.chathandlers;
 
+import gnu.trove.TIntIntHashMap;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.gui.ConsoleTab;
 import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
@@ -31,8 +32,6 @@ import l2server.gameserver.stats.Stats;
 
 import java.util.Collection;
 
-import gnu.trove.TIntIntHashMap;
-
 /**
  * Global chat handler.
  *
@@ -42,7 +41,7 @@ public class ChatGlobal implements IChatHandler
 {
 	private static final int[] COMMAND_IDS = {25};
 
-	private TIntIntHashMap _messages = new TIntIntHashMap();
+	private TIntIntHashMap messages = new TIntIntHashMap();
 
 	public ChatGlobal()
 	{
@@ -51,9 +50,9 @@ public class ChatGlobal implements IChatHandler
 			@Override
 			public void run()
 			{
-				synchronized (_messages)
+				synchronized (messages)
 				{
-					_messages.clear();
+					messages.clear();
 				}
 			}
 		}, 1000L, 24L * 3600L * 1000L);
@@ -73,15 +72,15 @@ public class ChatGlobal implements IChatHandler
 		}
 
 		int messages = 0;
-		synchronized (_messages)
+		synchronized (this.messages)
 		{
-			if (_messages.containsKey(activeChar.getObjectId()))
+			if (this.messages.containsKey(activeChar.getObjectId()))
 			{
-				messages = _messages.get(activeChar.getObjectId());
+				messages = this.messages.get(activeChar.getObjectId());
 			}
 
 			messages++;
-			_messages.put(activeChar.getObjectId(), messages);
+            this.messages.put(activeChar.getObjectId(), messages);
 		}
 
 		int maxMessages = 40 + (int) activeChar.calcStat(Stats.GLOBAL_CHAT, 0, activeChar, null);

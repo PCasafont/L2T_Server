@@ -23,7 +23,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public final class ExBasicActionList extends L2GameServerPacket
 {
 
-	public static final int[] _actionsOnTransform = {
+	public static final int[] actionsOnTransform = {
 			1,
 			2,
 			3,
@@ -160,44 +160,44 @@ public final class ExBasicActionList extends L2GameServerPacket
 			1097,
 			1098
 	};
-	public static final int[] _defaultActionList;
+	public static final int[] defaultActionList;
 
 	static
 	{
 		int count1 = 91; // 0 <-> (count1 - 1) // Action 91 id is not sent in retail
 		int count2 = 156; // 1000 <-> (1000 + count2 - 1) //Update by rocknow
 		int count3 = 17; // 5000 <-> (5000 + count3 - 1) //Update by rocknow
-		_defaultActionList = new int[count1 + count2 + count3];
+		defaultActionList = new int[count1 + count2 + count3];
 
 		for (int i = 0; i < count1; i++)
 		{
-			_defaultActionList[i] = i;
+			defaultActionList[i] = i;
 		}
 
 		for (int i = 0; i < count2; i++)
 		{
-			_defaultActionList[count1 + i] = 1000 + i;
+			defaultActionList[count1 + i] = 1000 + i;
 		}
 
 		for (int i = 0; i < count3; i++)
 		{
-			_defaultActionList[count1 + count2 + i] = 5000 + i;
+			defaultActionList[count1 + count2 + i] = 5000 + i;
 		}
 	}
 
-	private static final ExBasicActionList STATIC_PACKET_TRANSFORMED = new ExBasicActionList(_actionsOnTransform);
-	private static final ExBasicActionList STATIC_PACKET = new ExBasicActionList(_defaultActionList);
+	private static final ExBasicActionList STATIC_PACKET_TRANSFORMED = new ExBasicActionList(actionsOnTransform);
+	private static final ExBasicActionList STATIC_PACKET = new ExBasicActionList(defaultActionList);
 
 	public static ExBasicActionList getStaticPacket(final L2PcInstance player)
 	{
 		return player.isTransformed() ? STATIC_PACKET_TRANSFORMED : STATIC_PACKET;
 	}
 
-	private final int[] _actionIds;
+	private final int[] actionIds;
 
 	private ExBasicActionList(final int[] actionIds)
 	{
-		_actionIds = actionIds;
+		this.actionIds = actionIds;
 	}
 
     /*
@@ -210,10 +210,10 @@ public final class ExBasicActionList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_actionIds.length);
-		for (int _actionId : _actionIds)
+		writeD(actionIds.length);
+		for (int actionId : actionIds)
 		{
-			writeD(_actionId);
+			writeD(actionId);
 		}
 	}
 }

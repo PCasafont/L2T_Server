@@ -39,17 +39,17 @@ import l2server.log.Log;
 public final class RequestJoinParty extends L2GameClientPacket
 {
 
-	private String _name;
-	private int _itemDistribution;
+	private String name;
+	private int itemDistribution;
 
 	@Override
 	protected void readImpl()
 	{
-		_name = readS();
-		_itemDistribution = readD();
-		if (_itemDistribution < 0)
+		name = readS();
+		itemDistribution = readD();
+		if (itemDistribution < 0)
 		{
-			_itemDistribution = 0;
+			itemDistribution = 0;
 		}
 	}
 
@@ -57,7 +57,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2PcInstance requestor = getClient().getActiveChar();
-		L2PcInstance target = L2World.getInstance().getPlayer(_name);
+		L2PcInstance target = L2World.getInstance().getPlayer(name);
 
 		if (requestor == null)
 		{
@@ -243,7 +243,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 		{
 			if (!target.isInParty())
 			{
-				requestor.setParty(new L2Party(requestor, _itemDistribution));
+				requestor.setParty(new L2Party(requestor, itemDistribution));
 				target.joinParty(requestor.getParty());
 			}
 			else if (target.getParty().getMemberCount() < Config.MAX_MEMBERS_IN_PARTY)
@@ -256,10 +256,10 @@ public final class RequestJoinParty extends L2GameClientPacket
 
 		if (!target.isProcessingRequest())
 		{
-			requestor.setParty(new L2Party(requestor, _itemDistribution));
+			requestor.setParty(new L2Party(requestor, itemDistribution));
 
 			requestor.onTransactionRequest(target);
-			target.sendPacket(new AskJoinParty(requestor.getName(), _itemDistribution));
+			target.sendPacket(new AskJoinParty(requestor.getName(), itemDistribution));
 			requestor.getParty().setPendingInvitation(true);
 
 			if (Config.DEBUG)

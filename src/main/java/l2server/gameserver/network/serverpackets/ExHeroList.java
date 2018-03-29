@@ -40,11 +40,11 @@ import java.util.Map;
  */
 public class ExHeroList extends L2GameServerPacket
 {
-	private Map<Integer, HeroInfo> _heroList;
+	private Map<Integer, HeroInfo> heroList;
 
 	public ExHeroList()
 	{
-		_heroList = HeroesManager.getInstance().getHeroes();
+		heroList = HeroesManager.getInstance().getHeroes();
 	}
 
 	/* (non-Javadoc)
@@ -53,9 +53,9 @@ public class ExHeroList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_heroList.size());
+		writeD(heroList.size());
 
-		for (HeroInfo hero : _heroList.values())
+		for (HeroInfo hero : heroList.values())
 		{
 			writeS(hero.getName());
 			writeD(hero.getClassId());

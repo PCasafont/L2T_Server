@@ -29,19 +29,19 @@ public class TransformationManager
 
 	public static TransformationManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
-	private TIntObjectHashMap<L2Transformation> _transformations;
+	private TIntObjectHashMap<L2Transformation> transformations;
 
 	private TransformationManager()
 	{
-		_transformations = new TIntObjectHashMap<>();
+		transformations = new TIntObjectHashMap<>();
 	}
 
 	public void report()
 	{
-		Log.info("Loaded: " + _transformations.size() + " transformations.");
+		Log.info("Loaded: " + transformations.size() + " transformations.");
 	}
 
 	public boolean transformPlayer(int id, L2PcInstance player)
@@ -61,18 +61,18 @@ public class TransformationManager
 
 	public L2Transformation getTransformationById(int id)
 	{
-		return _transformations.get(id);
+		return transformations.get(id);
 	}
 
 	public L2Transformation registerTransformation(L2Transformation transformation)
 	{
-		return _transformations.put(transformation.getId(), transformation);
+		return transformations.put(transformation.getId(), transformation);
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final TransformationManager _instance = new TransformationManager();
+		protected static final TransformationManager instance = new TransformationManager();
 	}
 
 	/**

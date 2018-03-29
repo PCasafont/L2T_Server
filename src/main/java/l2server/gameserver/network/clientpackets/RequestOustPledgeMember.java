@@ -32,14 +32,14 @@ import java.util.logging.Logger;
  */
 public final class RequestOustPledgeMember extends L2GameClientPacket
 {
-	static Logger _log = Logger.getLogger(RequestOustPledgeMember.class.getName());
+	static Logger log = Logger.getLogger(RequestOustPledgeMember.class.getName());
 
-	private String _target;
+	private String target;
 
 	@Override
 	protected void readImpl()
 	{
-		_target = readS();
+		target = readS();
 	}
 
 	@Override
@@ -60,7 +60,7 @@ public final class RequestOustPledgeMember extends L2GameClientPacket
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
 			return;
 		}
-		if (activeChar.getName().equalsIgnoreCase(_target))
+		if (activeChar.getName().equalsIgnoreCase(target))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_DISMISS_YOURSELF));
 			return;
@@ -68,10 +68,10 @@ public final class RequestOustPledgeMember extends L2GameClientPacket
 
 		L2Clan clan = activeChar.getClan();
 
-		L2ClanMember member = clan.getClanMember(_target);
+		L2ClanMember member = clan.getClanMember(target);
 		if (member == null)
 		{
-			Log.warning("Target (" + _target + ") is not member of the clan");
+			Log.warning("Target (" + target + ") is not member of the clan");
 			return;
 		}
 		if (member.isOnline() && member.getPlayerInstance().isInCombat())
@@ -96,7 +96,7 @@ public final class RequestOustPledgeMember extends L2GameClientPacket
 				SystemMessage.getSystemMessage(SystemMessageId.YOU_MUST_WAIT_BEFORE_ACCEPTING_A_NEW_MEMBER));
 
 		// Remove the Player From the Member list
-		clan.broadcastToOnlineMembers(new PledgeShowMemberListDelete(_target));
+		clan.broadcastToOnlineMembers(new PledgeShowMemberListDelete(target));
 
 		if (member.isOnline())
 		{

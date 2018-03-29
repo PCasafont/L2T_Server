@@ -28,16 +28,16 @@ import gnu.trove.TIntObjectHashMap;
 public class UserCommandHandler
 {
 
-	private TIntObjectHashMap<IUserCommandHandler> _datatable;
+	private TIntObjectHashMap<IUserCommandHandler> datatable;
 
 	public static UserCommandHandler getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private UserCommandHandler()
 	{
-		_datatable = new TIntObjectHashMap<>();
+		datatable = new TIntObjectHashMap<>();
 	}
 
 	public void registerUserCommandHandler(IUserCommandHandler handler)
@@ -49,7 +49,7 @@ public class UserCommandHandler
 			{
 				Log.fine("Adding handler for user command " + id);
 			}
-			_datatable.put(id, handler);
+			datatable.put(id, handler);
 		}
 	}
 
@@ -59,7 +59,7 @@ public class UserCommandHandler
 		{
 			Log.fine("getting handler for user command: " + userCommand);
 		}
-		return _datatable.get(userCommand);
+		return datatable.get(userCommand);
 	}
 
 	/**
@@ -67,12 +67,12 @@ public class UserCommandHandler
 	 */
 	public int size()
 	{
-		return _datatable.size();
+		return datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final UserCommandHandler _instance = new UserCommandHandler();
+		protected static final UserCommandHandler instance = new UserCommandHandler();
 	}
 }

@@ -230,68 +230,68 @@ public class AdminFightCalculator implements IAdminCommandHandler
 
 		for (int i = 0; i < 10000; i++)
 		{
-			boolean _miss1 = Formulas.calcHitMiss(npc1, npc2);
-			if (_miss1)
+			boolean miss1 = Formulas.calcHitMiss(npc1, npc2);
+			if (miss1)
 			{
 				miss1++;
 			}
-			byte _shld1 = Formulas.calcShldUse(npc1, npc2, null, false);
-			if (_shld1 > 0)
+			byte shld1 = Formulas.calcShldUse(npc1, npc2, null, false);
+			if (shld1 > 0)
 			{
 				shld1++;
 			}
-			boolean _crit1 = Formulas.calcCrit(npc1.getCriticalHit(npc2, null), npc2);
-			if (_crit1)
+			boolean crit1 = Formulas.calcCrit(npc1.getCriticalHit(npc2, null), npc2);
+			if (crit1)
 			{
 				crit1++;
 			}
 
-			double _patk1 = npc1.getPAtk(npc2);
-			_patk1 += npc1.getRandomDamageMultiplier();
-			patk1 += _patk1;
+			double patk1 = npc1.getPAtk(npc2);
+			patk1 += npc1.getRandomDamageMultiplier();
+			patk1 += patk1;
 
-			double _pdef1 = npc1.getPDef(npc2);
-			pdef1 += _pdef1;
+			double pdef1 = npc1.getPDef(npc2);
+			pdef1 += pdef1;
 
-			if (!_miss1)
+			if (!miss1)
 			{
 				npc1.setAttackingBodypart();
-				double _dmg1 = Formulas.calcPhysDam(npc1, npc2, _shld1, _crit1, false, L2ItemInstance.CHARGED_NONE);
-				dmg1 += _dmg1;
+				double dmg1 = Formulas.calcPhysDam(npc1, npc2, shld1, crit1, false, L2ItemInstance.CHARGED_NONE);
+				dmg1 += dmg1;
 				npc1.abortAttack();
 			}
 		}
 
 		for (int i = 0; i < 10000; i++)
 		{
-			boolean _miss2 = Formulas.calcHitMiss(npc2, npc1);
-			if (_miss2)
+			boolean miss2 = Formulas.calcHitMiss(npc2, npc1);
+			if (miss2)
 			{
 				miss2++;
 			}
-			byte _shld2 = Formulas.calcShldUse(npc2, npc1, null, false);
-			if (_shld2 > 0)
+			byte shld2 = Formulas.calcShldUse(npc2, npc1, null, false);
+			if (shld2 > 0)
 			{
 				shld2++;
 			}
-			boolean _crit2 = Formulas.calcCrit(npc2.getCriticalHit(npc1, null), npc1);
-			if (_crit2)
+			boolean crit2 = Formulas.calcCrit(npc2.getCriticalHit(npc1, null), npc1);
+			if (crit2)
 			{
 				crit2++;
 			}
 
-			double _patk2 = npc2.getPAtk(npc1);
-			_patk2 *= npc2.getRandomDamageMultiplier();
-			patk2 += _patk2;
+			double patk2 = npc2.getPAtk(npc1);
+			patk2 *= npc2.getRandomDamageMultiplier();
+			patk2 += patk2;
 
-			double _pdef2 = npc2.getPDef(npc1);
-			pdef2 += _pdef2;
+			double pdef2 = npc2.getPDef(npc1);
+			pdef2 += pdef2;
 
-			if (!_miss2)
+			if (!miss2)
 			{
 				npc2.setAttackingBodypart();
-				double _dmg2 = Formulas.calcPhysDam(npc2, npc1, _shld2, _crit2, false, L2ItemInstance.CHARGED_NONE);
-				dmg2 += _dmg2;
+				double dmg2 = Formulas.calcPhysDam(npc2, npc1, shld2, crit2, false, L2ItemInstance.CHARGED_NONE);
+				dmg2 += dmg2;
 				npc2.abortAttack();
 			}
 		}

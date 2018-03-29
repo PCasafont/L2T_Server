@@ -338,16 +338,16 @@ public enum Stats
 
 	public static final int NUM_STATS = values().length;
 
-	private String _value;
+	private String value;
 
 	public String getValue()
 	{
-		return _value;
+		return value;
 	}
 
 	Stats(String s)
 	{
-		_value = s;
+		value = s;
 	}
 
 	public static Stats fromString(String name)

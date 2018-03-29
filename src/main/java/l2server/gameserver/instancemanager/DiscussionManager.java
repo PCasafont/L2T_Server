@@ -20,62 +20,62 @@ import java.util.List;
 
 public class DiscussionManager
 {
-	private List<Integer> _voted = new ArrayList<>();
-	private int[] _votes = new int[10];
-	private boolean _votesEnabled = false;
-	private boolean _globalChatDisabled = false;
+	private List<Integer> voted = new ArrayList<>();
+	private int[] votes = new int[10];
+	private boolean votesEnabled = false;
+	private boolean globalChatDisabled = false;
 
 	public static DiscussionManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	public boolean vote(int objectId, byte option)
 	{
-		if (_voted.contains(objectId))
+		if (voted.contains(objectId))
 		{
 			return false;
 		}
-		_voted.add(objectId);
-		_votes[option]++;
+		voted.add(objectId);
+		votes[option]++;
 		return true;
 	}
 
 	public void startVotations()
 	{
-		_voted.clear();
-		for (int i = 0; i < _votes.length; i++)
+		voted.clear();
+		for (int i = 0; i < votes.length; i++)
 		{
-			_votes[i] = 0;
+			votes[i] = 0;
 		}
-		_votesEnabled = true;
+		votesEnabled = true;
 	}
 
 	public int[] endVotations()
 	{
-		_voted.clear();
-		_votesEnabled = false;
-		return _votes;
+		voted.clear();
+		votesEnabled = false;
+		return votes;
 	}
 
 	public boolean areVotesEnabled()
 	{
-		return _votesEnabled;
+		return votesEnabled;
 	}
 
 	public void setGlobalChatDisabled(boolean chatDisabled)
 	{
-		_globalChatDisabled = chatDisabled;
+		globalChatDisabled = chatDisabled;
 	}
 
 	public boolean isGlobalChatDisabled()
 	{
-		return _globalChatDisabled;
+		return globalChatDisabled;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final DiscussionManager _instance = new DiscussionManager();
+		protected static final DiscussionManager instance = new DiscussionManager();
 	}
 }

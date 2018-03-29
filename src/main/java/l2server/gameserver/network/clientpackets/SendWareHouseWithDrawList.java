@@ -44,35 +44,35 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 
 	private static final int BATCH_LENGTH = 12; // length of the one item
 
-	private WarehouseItem _items[] = null;
+	private WarehouseItem items[] = null;
 
 	@Override
 	protected void readImpl()
 	{
 		final int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
 		{
 			return;
 		}
 
-		_items = new WarehouseItem[count];
+		items = new WarehouseItem[count];
 		for (int i = 0; i < count; i++)
 		{
 			int objId = readD();
 			long cnt = readQ();
 			if (objId < 1 || cnt < 0)
 			{
-				_items = null;
+				items = null;
 				return;
 			}
-			_items[i] = new WarehouseItem(objId, cnt);
+			items[i] = new WarehouseItem(objId, cnt);
 		}
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		if (_items == null)
+		if (items == null)
 		{
 			return;
 		}
@@ -148,7 +148,7 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 		int weight = 0;
 		int slots = 0;
 
-		for (WarehouseItem i : _items)
+		for (WarehouseItem i : items)
 		{
 			// Calculate needed slots
 			L2ItemInstance item = warehouse.getItemByObjectId(i.getObjectId());
@@ -187,7 +187,7 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 
 		// Proceed to the transfer
 		InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
-		for (WarehouseItem i : _items)
+		for (WarehouseItem i : items)
 		{
 			L2ItemInstance oldItem = warehouse.getItemByObjectId(i.getObjectId());
 			if (oldItem == null || oldItem.getCount() < i.getCount())
@@ -235,23 +235,23 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 
 	private static class WarehouseItem
 	{
-		private final int _objectId;
-		private final long _count;
+		private final int objectId;
+		private final long count;
 
 		public WarehouseItem(int id, long num)
 		{
-			_objectId = id;
-			_count = num;
+			objectId = id;
+			count = num;
 		}
 
 		public int getObjectId()
 		{
-			return _objectId;
+			return objectId;
 		}
 
 		public long getCount()
 		{
-			return _count;
+			return count;
 		}
 	}
 }

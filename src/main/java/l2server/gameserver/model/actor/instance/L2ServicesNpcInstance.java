@@ -664,11 +664,11 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 					{
 						/*
 						 * This isn't good! modifySubClass() removed subclass from memory
-						 * we must update _classIndex! Else IndexOutOfBoundsException can turn
+						 * we must update classIndex! Else IndexOutOfBoundsException can turn
 						 * up some place down the line along with other seemingly unrelated
 						 * problems.
 						 */
-						player.setActiveClass(0); // Also updates _classIndex plus switching _classid to baseclass.
+						player.setActiveClass(0); // Also updates classIndex plus switching classid to baseclass.
 
 						player.sendMessage(
 								"The sub class could not be added, you have been reverted to your base class.");
@@ -956,9 +956,9 @@ public final class L2ServicesNpcInstance extends L2NpcInstance
 			String varFormat = castle.getName() + "_tendency";
 			String value = GlobalVariablesManager.getInstance().getStoredVariable(varFormat);
 
-			long _currTime = System.currentTimeMillis();
-			long _reuseTime = value == null ? 0 : Long.parseLong(value);
-			if (_currTime > _reuseTime)
+			long currTime = System.currentTimeMillis();
+			long reuseTime = value == null ? 0 : Long.parseLong(value);
+			if (currTime > reuseTime)
 			{
 				if (castle.getTendency() == Castle.TENDENCY_LIGHT)
 				{

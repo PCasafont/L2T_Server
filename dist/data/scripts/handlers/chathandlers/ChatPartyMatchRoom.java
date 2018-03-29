@@ -38,13 +38,13 @@ public class ChatPartyMatchRoom implements IChatHandler
 	{
 		if (activeChar.isInPartyMatchRoom())
 		{
-			PartyMatchRoom _room = PartyMatchRoomList.getInstance().getPlayerRoom(activeChar);
-			if (_room != null)
+			PartyMatchRoom room = PartyMatchRoomList.getInstance().getPlayerRoom(activeChar);
+			if (room != null)
 			{
 				CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
-				for (L2PcInstance _member : _room.getPartyMembers())
+				for (L2PcInstance member : room.getPartyMembers())
 				{
-					_member.sendPacket(cs);
+					member.sendPacket(cs);
 				}
 			}
 		}

@@ -32,10 +32,10 @@ import l2server.util.Rnd;
 public class Q463_IMustBeaGenius extends Quest
 {
 	private static final String qn = "463_IMustBeaGenius";
-	private static final int _gutenhagen = 32069;
+	private static final int gutenhagen = 32069;
 	private static final int _corpse_log = 15510;
-	private static final int _collection = 15511;
-	private static final int[] _mobs = {22801, 22802, 22804, 22805, 22807, 22808, 22809, 22810, 22811, 22812};
+	private static final int collection = 15511;
+	private static final int[] mobs = {22801, 22802, 22804, 22805, 22807, 22808, 22809, 22810, 22811, 22812};
 
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
@@ -48,7 +48,7 @@ public class Q463_IMustBeaGenius extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _gutenhagen)
+		if (npc.getNpcId() == gutenhagen)
 		{
 			if (event.equalsIgnoreCase("32069-03.htm"))
 			{
@@ -56,22 +56,22 @@ public class Q463_IMustBeaGenius extends Quest
 				st.setState(State.STARTED);
 				st.set("cond", "1");
 				// Generate random daily number for player
-				int _number = Rnd.get(500, 600);
-				st.set("number", String.valueOf(_number));
+				int number = Rnd.get(500, 600);
+				st.set("number", String.valueOf(number));
 				// Set drop for mobs
-				for (int _mob : _mobs)
+				for (int mob : mobs)
 				{
-					int _rand = Rnd.get(-2, 4);
-					if (_rand == 0)
+					int rand = Rnd.get(-2, 4);
+					if (rand == 0)
 					{
-						_rand = 5;
+						rand = 5;
 					}
-					st.set(String.valueOf(_mob), String.valueOf(_rand));
+					st.set(String.valueOf(mob), String.valueOf(rand));
 				}
 				// One with higher chance
-				st.set(String.valueOf(_mobs[Rnd.get(0, _mobs.length - 1)]), String.valueOf(Rnd.get(1, 100)));
+				st.set(String.valueOf(mobs[Rnd.get(0, mobs.length - 1)]), String.valueOf(Rnd.get(1, 100)));
 				htmltext = getHtm(st.getPlayer().getHtmlPrefix(), "32069-03.htm");
-				htmltext = htmltext.replace("%num%", String.valueOf(_number));
+				htmltext = htmltext.replace("%num%", String.valueOf(number));
 			}
 			else if (event.equalsIgnoreCase("32069-05.htm"))
 			{
@@ -83,11 +83,11 @@ public class Q463_IMustBeaGenius extends Quest
 				st.addExpAndSp(317961, 25427);
 				st.unset("cond");
 				st.unset("number");
-				for (int _mob : _mobs)
+				for (int mob : mobs)
 				{
-					st.unset(String.valueOf(_mob));
+					st.unset(String.valueOf(mob));
 				}
-				st.takeItems(_collection, -1);
+				st.takeItems(collection, -1);
 				st.playSound("ItemSound.quest_finish");
 				st.exitQuest(false);
 			}
@@ -105,7 +105,7 @@ public class Q463_IMustBeaGenius extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _gutenhagen)
+		if (npc.getNpcId() == gutenhagen)
 		{
 			switch (st.getState())
 			{
@@ -146,30 +146,30 @@ public class Q463_IMustBeaGenius extends Quest
 			return null;
 		}
 
-		if (st.getState() == State.STARTED && st.getInt("cond") == 1 && Util.contains(_mobs, npc.getNpcId()))
+		if (st.getState() == State.STARTED && st.getInt("cond") == 1 && Util.contains(mobs, npc.getNpcId()))
 		{
 			int _day_number = st.getInt("number");
-			int _number = st.getInt(String.valueOf(npc.getNpcId()));
+			int number = st.getInt(String.valueOf(npc.getNpcId()));
 
-			if (_number > 0)
+			if (number > 0)
 			{
-				st.giveItems(_corpse_log, _number);
+				st.giveItems(_corpse_log, number);
 				st.playSound("ItemSound.quest_itemget");
 				npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(),
-						"Att... attack... " + player.getName() + "... Ro... rogue... " + _number + ".."));
+						"Att... attack... " + player.getName() + "... Ro... rogue... " + number + ".."));
 			}
-			else if (_number < 0 && st.getQuestItemsCount(_corpse_log) + _number > 0)
+			else if (number < 0 && st.getQuestItemsCount(_corpse_log) + number > 0)
 			{
-				st.takeItems(_corpse_log, Math.abs(_number));
+				st.takeItems(_corpse_log, Math.abs(number));
 				st.playSound("ItemSound.quest_itemget");
 				npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(),
-						"Att... attack... " + player.getName() + "... Ro... rogue... " + _number + ".."));
+						"Att... attack... " + player.getName() + "... Ro... rogue... " + number + ".."));
 			}
 
 			if (st.getQuestItemsCount(_corpse_log) == _day_number)
 			{
 				st.takeItems(_corpse_log, -1);
-				st.giveItems(_collection, 1);
+				st.giveItems(collection, 1);
 				st.set("cond", "2");
 			}
 		}
@@ -180,11 +180,11 @@ public class Q463_IMustBeaGenius extends Quest
 	{
 		super(questId, name, descr);
 
-		addStartNpc(_gutenhagen);
-		addTalkId(_gutenhagen);
-		for (int _mob : _mobs)
+		addStartNpc(gutenhagen);
+		addTalkId(gutenhagen);
+		for (int mob : mobs)
 		{
-			addKillId(_mob);
+			addKillId(mob);
 		}
 	}
 

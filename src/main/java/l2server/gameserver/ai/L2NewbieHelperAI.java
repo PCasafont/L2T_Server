@@ -33,7 +33,7 @@ import java.util.List;
  */
 public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 {
-	private List<Integer> _alreadyBuffed = new ArrayList<>();
+	private List<Integer> alreadyBuffed = new ArrayList<>();
 
 	public L2NewbieHelperAI(L2Character creature)
 	{
@@ -58,7 +58,7 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 		for (L2Character activeChar : npc.getKnownList().getKnownCharacters())
 		{
 			if (activeChar == null || !(activeChar instanceof L2Playable) ||
-					_alreadyBuffed.contains(activeChar.getObjectId()) && activeChar.getAllEffects().length > 0)
+					alreadyBuffed.contains(activeChar.getObjectId()) && activeChar.getAllEffects().length > 0)
 			{
 				continue;
 			}
@@ -142,7 +142,7 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 				}
 			}
 
-			_alreadyBuffed.add(playable.getObjectId());
+			alreadyBuffed.add(playable.getObjectId());
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
 			{
 				@Override
@@ -159,7 +159,7 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 						return;
 					}
 
-					_alreadyBuffed.remove((Integer) playable.getObjectId());
+					alreadyBuffed.remove((Integer) playable.getObjectId());
 				}
 			}, 600000L);
 		}

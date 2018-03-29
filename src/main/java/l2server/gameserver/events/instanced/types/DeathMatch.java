@@ -29,7 +29,7 @@ public class DeathMatch extends EventInstance
 	public void calculateRewards()
 	{
 		List<L2PcInstance> sorted = new ArrayList<>();
-		for (L2PcInstance playerInstance : _teams[0].getParticipatedPlayers().values())
+		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values())
 		{
 			boolean added = false;
 			int index = 0;
@@ -59,10 +59,10 @@ public class DeathMatch extends EventInstance
 	public String getRunningInfo(L2PcInstance player)
 	{
 		String html = "";
-		if (_teams[0].getParticipatedPlayerCount() > 0)
+		if (teams[0].getParticipatedPlayerCount() > 0)
 		{
 			html += "Participants' points:<br>";
-			for (L2PcInstance participant : _teams[0].getParticipatedPlayers().values())
+			for (L2PcInstance participant : teams[0].getParticipatedPlayers().values())
 			{
 				if (participant != null)
 				{
@@ -86,7 +86,7 @@ public class DeathMatch extends EventInstance
 			return;
 		}
 
-		new EventTeleporter(killedPlayer, _teams[0].getCoords(), false, false);
+		new EventTeleporter(killedPlayer, teams[0].getCoords(), false, false);
 
 		if (killerCharacter == null)
 		{

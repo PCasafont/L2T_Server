@@ -26,40 +26,40 @@ import java.util.List;
 public final class NpcSay extends L2GameServerPacket
 {
 	// cddddS
-	private int _objectId;
-	private int _textType;
-	private int _npcId;
-	private String _text;
-	private int _npcString;
-	private List<String> _parameters;
+	private int objectId;
+	private int textType;
+	private int npcId;
+	private String text;
+	private int npcString;
+	private List<String> parameters;
 
 	/**
 	 */
 	public NpcSay(int objectId, int messageType, int npcId, String text)
 	{
-		_objectId = objectId;
-		_textType = messageType;
-		_npcId = 1000000 + npcId;
-		_npcString = -1;
-		_text = text;
+		this.objectId = objectId;
+		textType = messageType;
+		this.npcId = 1000000 + npcId;
+		npcString = -1;
+		this.text = text;
 	}
 
 	public NpcSay(int objectId, int messageType, int npcId, int npcString)
 	{
-		_objectId = objectId;
-		_textType = messageType;
-		_npcId = 1000000 + npcId;
-		_npcString = npcString;
-		_text = null;
+		this.objectId = objectId;
+		textType = messageType;
+        this.npcId = 1000000 + npcId;
+		this.npcString = npcString;
+		text = null;
 	}
 
 	public NpcSay(int objectId, int messageType, int npcId, NpcStringId npcStringId)
 	{
-		_objectId = objectId;
-		_textType = messageType;
-		_npcId = 1000000 + npcId;
-		_npcString = npcStringId.getId();
-		_text = null;
+		this.objectId = objectId;
+		textType = messageType;
+        this.npcId = 1000000 + npcId;
+		npcString = npcStringId.getId();
+		text = null;
 	}
 
 	/**
@@ -69,29 +69,29 @@ public final class NpcSay extends L2GameServerPacket
 	 */
 	public void addStringParameter(String text)
 	{
-		if (_parameters == null)
+		if (parameters == null)
 		{
-			_parameters = new ArrayList<>();
+			parameters = new ArrayList<>();
 		}
-		_parameters.add(text);
+		parameters.add(text);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_objectId);
-		writeD(_textType);
-		writeD(_npcId);
-		writeD(_npcString);
-		if (_npcString == -1)
+		writeD(objectId);
+		writeD(textType);
+		writeD(npcId);
+		writeD(npcString);
+		if (npcString == -1)
 		{
-			writeS(_text);
+			writeS(text);
 		}
 		else
 		{
-			if (_parameters != null)
+			if (parameters != null)
 			{
-				for (String s : _parameters)
+				for (String s : parameters)
 				{
 					writeS(s);
 				}

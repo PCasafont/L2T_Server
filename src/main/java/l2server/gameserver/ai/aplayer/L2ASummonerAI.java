@@ -62,17 +62,17 @@ public class L2ASummonerAI extends L2APlayerAI
 			return true;
 		}
 
-		if (_player.getCurrentMp() > _player.getMaxMp() * 0.7 || _player.getCurrentHp() < _player.getMaxHp() * 0.5 ||
-				_player.getTarget() instanceof L2Playable)
+		if (player.getCurrentMp() > player.getMaxMp() * 0.7 || player.getCurrentHp() < player.getMaxHp() * 0.5 ||
+				player.getTarget() instanceof L2Playable)
 		{
-			for (L2Skill skill : _player.getAllSkills())
+			for (L2Skill skill : player.getAllSkills())
 			{
 				if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE)
 				{
 					continue;
 				}
 
-				if (_player.useMagic(skill, true, false))
+				if (player.useMagic(skill, true, false))
 				{
 					break;
 				}

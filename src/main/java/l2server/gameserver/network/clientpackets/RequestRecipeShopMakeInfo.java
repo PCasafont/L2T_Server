@@ -29,14 +29,14 @@ public final class RequestRecipeShopMakeInfo extends L2GameClientPacket
 {
 	//
 
-	private int _playerObjectId;
-	private int _recipeId;
+	private int playerObjectId;
+	private int recipeId;
 
 	@Override
 	protected void readImpl()
 	{
-		_playerObjectId = readD();
-		_recipeId = readD();
+		playerObjectId = readD();
+		recipeId = readD();
 	}
 
 	@Override
@@ -48,12 +48,12 @@ public final class RequestRecipeShopMakeInfo extends L2GameClientPacket
 			return;
 		}
 
-		final L2PcInstance shop = L2World.getInstance().getPlayer(_playerObjectId);
+		final L2PcInstance shop = L2World.getInstance().getPlayer(playerObjectId);
 		if (shop == null || shop.getPrivateStoreType() != 5)
 		{
 			return;
 		}
 
-		player.sendPacket(new RecipeShopItemInfo(shop, _recipeId));
+		player.sendPacket(new RecipeShopItemInfo(shop, recipeId));
 	}
 }

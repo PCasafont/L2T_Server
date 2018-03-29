@@ -30,12 +30,12 @@ import java.util.Collection;
 
 public class GiantScouts extends L2AttackableAIScript
 {
-	private static final int _scouts[] = {22668, 22669};
+	private static final int scouts[] = {22668, 22669};
 
 	public GiantScouts(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		for (int id : _scouts)
+		for (int id : scouts)
 		{
 			addAggroRangeEnterId(id);
 		}

@@ -24,20 +24,20 @@ import instances.DimensionalDoor.DimensionalDoor;
  *         Blood Thirst
  *         <p>
  *         Source:
- *         - https://www.youtube.com/watch?v=t-rLTz-_ACE
+ *         - https://www.youtube.com/watch?v=t-rLTz-ACE
  *         - https://www.youtube.com/watch?v=ElaX6oM5l1g
  */
 
 public class BloodThirst extends L2AttackableAIScript
 {
     //Quest
-    private static final boolean _debug = false;
-    private static final String _qn = "BloodThirst";
+    private static final boolean debug = false;
+    private static final String qn = "BloodThirst";
 
     //Ids
-    private static final int _instanceTemplateId = 505;
-    private static final int _bloodThirstId = 27481;
-    private static final int _reuseMinutes = 1440;
+    private static final int instanceTemplateId = 505;
+    private static final int bloodThirstId = 27481;
+    private static final int reuseMinutes = 1440;
 
     public BloodThirst(int questId, String name, String descr)
     {
@@ -46,12 +46,12 @@ public class BloodThirst extends L2AttackableAIScript
         addTalkId(DimensionalDoor.getNpcManagerId());
         addStartNpc(DimensionalDoor.getNpcManagerId());
 
-        addKillId(_bloodThirstId);
+        addKillId(bloodThirstId);
     }
 
     private class BloodThirstWorld extends InstanceWorld
     {
-        private L2Npc _bloodThirst;
+        private L2Npc bloodThirst;
 
         private BloodThirstWorld()
         {
@@ -61,7 +61,7 @@ public class BloodThirst extends L2AttackableAIScript
     @Override
     public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
@@ -89,8 +89,8 @@ public class BloodThirst extends L2AttackableAIScript
                 InstanceManager.getInstance().stopWholeInstance(world.instanceId);
                 InstanceManager.getInstance().showVidToInstance(109, world.instanceId);
 
-                world._bloodThirst =
-                        addSpawn(_bloodThirstId, 56167, -186938, -7944, 16383, false, 0, true, world.instanceId);
+                world.bloodThirst =
+                        addSpawn(bloodThirstId, 56167, -186938, -7944, 16383, false, 0, true, world.instanceId);
 
                 for (L2Spawn iSpawn : SpawnTable.getInstance().getSpecificSpawns("blood_thirst"))
                 {
@@ -135,7 +135,7 @@ public class BloodThirst extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
@@ -144,12 +144,12 @@ public class BloodThirst extends L2AttackableAIScript
         if (tmpworld instanceof BloodThirstWorld)
         {
             BloodThirstWorld world = (BloodThirstWorld) tmpworld;
-            if (npc == world._bloodThirst)
+            if (npc == world.bloodThirst)
             {
-                player.addItem(_qn, DimensionalDoor.getDimensionalDoorRewardId(),
+                player.addItem(qn, DimensionalDoor.getDimensionalDoorRewardId(),
                        10, player, true);
 
-                InstanceManager.getInstance().setInstanceReuse(world.instanceId, _instanceTemplateId, _reuseMinutes);
+                InstanceManager.getInstance().setInstanceReuse(world.instanceId, instanceTemplateId, reuseMinutes);
                 InstanceManager.getInstance().finishInstance(world.instanceId, true);
             }
         }
@@ -159,14 +159,14 @@ public class BloodThirst extends L2AttackableAIScript
     @Override
     public final String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
         if (npc.getNpcId() == DimensionalDoor.getNpcManagerId())
         {
-            return _qn + ".html";
+            return qn + ".html";
         }
 
         return super.onTalk(npc, player);
@@ -198,13 +198,13 @@ public class BloodThirst extends L2AttackableAIScript
         }
         else
         {
-            if (!_debug && !InstanceManager.getInstance()
-                    .checkInstanceConditions(player, _instanceTemplateId, 1, 1, 99, Config.MAX_LEVEL))
+            if (!debug && !InstanceManager.getInstance()
+                    .checkInstanceConditions(player, instanceTemplateId, 1, 1, 99, Config.MAX_LEVEL))
             {
                 return;
             }
 
-            final int instanceId = InstanceManager.getInstance().createDynamicInstance(_qn + ".xml");
+            final int instanceId = InstanceManager.getInstance().createDynamicInstance(qn + ".xml");
             world = new BloodThirstWorld();
             world.instanceId = instanceId;
             world.status = 0;
@@ -229,6 +229,6 @@ public class BloodThirst extends L2AttackableAIScript
 
     public static void main(String[] args)
     {
-        new BloodThirst(-1, _qn, "instances/DimensionalDoor");
+        new BloodThirst(-1, qn, "instances/DimensionalDoor");
     }
 }

@@ -26,16 +26,16 @@ import gnu.trove.TIntObjectHashMap;
  */
 public class SkillHandler
 {
-	private TIntObjectHashMap<ISkillHandler> _datatable;
+	private TIntObjectHashMap<ISkillHandler> datatable;
 
 	public static SkillHandler getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private SkillHandler()
 	{
-		_datatable = new TIntObjectHashMap<>();
+		datatable = new TIntObjectHashMap<>();
 	}
 
 	public void registerSkillHandler(ISkillHandler handler)
@@ -43,13 +43,13 @@ public class SkillHandler
 		L2SkillType[] types = handler.getSkillIds();
 		for (L2SkillType t : types)
 		{
-			_datatable.put(t.ordinal(), handler);
+			datatable.put(t.ordinal(), handler);
 		}
 	}
 
 	public ISkillHandler getSkillHandler(L2SkillType skillType)
 	{
-		return _datatable.get(skillType.ordinal());
+		return datatable.get(skillType.ordinal());
 	}
 
 	/**
@@ -57,12 +57,12 @@ public class SkillHandler
 	 */
 	public int size()
 	{
-		return _datatable.size();
+		return datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final SkillHandler _instance = new SkillHandler();
+		protected static final SkillHandler instance = new SkillHandler();
 	}
 }

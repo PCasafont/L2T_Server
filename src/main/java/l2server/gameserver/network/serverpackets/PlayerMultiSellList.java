@@ -40,33 +40,33 @@ import l2server.gameserver.templates.item.L2Item;
  */
 public final class PlayerMultiSellList extends L2GameServerPacket
 {
-	private L2PcInstance _player;
+	private L2PcInstance player;
 
 	public PlayerMultiSellList(L2PcInstance player)
 	{
-		_player = player;
+		this.player = player;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		writeC(0x00);
-		writeD(_player.getObjectId()); // list id
+		writeD(player.getObjectId()); // list id
 		writeC(0x00);
 		writeD(1); // page started from 1
 		writeD(1); // finished
 		writeD(PAGE_SIZE); // size of pages
-		writeD(_player.getCustomSellList().getItemCount()); //list length
+		writeD(player.getCustomSellList().getItemCount()); //list length
 		writeC(0x00); // Old or modern format
 		writeD(0x00);
 
 		int i = 1;
-		for (TradeItem item : _player.getCustomSellList().getItems())
+		for (TradeItem item : player.getCustomSellList().getItems())
 		{
 			if (item.getAppearance() > 0)
 			{
 				L2Item app = ItemTable.getInstance().getTemplate(item.getAppearance());
-				getClient().sendPacket(new CreatureSay(_player.getObjectId(), Say2.TELL, _player.getName(),
+				getClient().sendPacket(new CreatureSay(player.getObjectId(), Say2.TELL, player.getName(),
 						"WARNING: The " + item.getItem().getName() + " has appearance of " + app.getName() + "!"));
 			}
 
@@ -142,10 +142,10 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 			i++;
 		}
 
-		if (_player.getClient() != null && _player.getClient().isDetached() && _player.getCustomSellList() != null &&
-				_player.getCustomSellList().getItemCount() == 0)
+		if (player.getClient() != null && player.getClient().isDetached() && player.getCustomSellList() != null &&
+				player.getCustomSellList().getItemCount() == 0)
 		{
-			_player.logout();
+			player.logout();
 		}
 	}
 

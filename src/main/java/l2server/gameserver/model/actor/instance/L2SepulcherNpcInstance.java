@@ -45,9 +45,9 @@ import java.util.concurrent.Future;
  */
 public class L2SepulcherNpcInstance extends L2Npc
 {
-	protected Future<?> _closeTask = null;
-	protected Future<?> _spawnNextMysteriousBoxTask = null;
-	protected Future<?> _spawnMonsterTask = null;
+	protected Future<?> closeTask = null;
+	protected Future<?> spawnNextMysteriousBoxTask = null;
+	protected Future<?> spawnMonsterTask = null;
 
 	private static final String HTML_FILE_PATH = "SepulcherNpc/";
 	private static final int HALLS_KEY = 7260;
@@ -58,21 +58,21 @@ public class L2SepulcherNpcInstance extends L2Npc
 		setInstanceType(InstanceType.L2SepulcherNpcInstance);
 		setShowSummonAnimation(true);
 
-		if (_closeTask != null)
+		if (closeTask != null)
 		{
-			_closeTask.cancel(true);
+			closeTask.cancel(true);
 		}
-		if (_spawnNextMysteriousBoxTask != null)
+		if (spawnNextMysteriousBoxTask != null)
 		{
-			_spawnNextMysteriousBoxTask.cancel(true);
+			spawnNextMysteriousBoxTask.cancel(true);
 		}
-		if (_spawnMonsterTask != null)
+		if (spawnMonsterTask != null)
 		{
-			_spawnMonsterTask.cancel(true);
+			spawnMonsterTask.cancel(true);
 		}
-		_closeTask = null;
-		_spawnNextMysteriousBoxTask = null;
-		_spawnMonsterTask = null;
+		closeTask = null;
+		spawnNextMysteriousBoxTask = null;
+		spawnMonsterTask = null;
 	}
 
 	@Override
@@ -85,20 +85,20 @@ public class L2SepulcherNpcInstance extends L2Npc
 	@Override
 	public void deleteMe()
 	{
-		if (_closeTask != null)
+		if (closeTask != null)
 		{
-			_closeTask.cancel(true);
-			_closeTask = null;
+			closeTask.cancel(true);
+			closeTask = null;
 		}
-		if (_spawnNextMysteriousBoxTask != null)
+		if (spawnNextMysteriousBoxTask != null)
 		{
-			_spawnNextMysteriousBoxTask.cancel(true);
-			_spawnNextMysteriousBoxTask = null;
+			spawnNextMysteriousBoxTask.cancel(true);
+			spawnNextMysteriousBoxTask = null;
 		}
-		if (_spawnMonsterTask != null)
+		if (spawnMonsterTask != null)
 		{
-			_spawnMonsterTask.cancel(true);
-			_spawnMonsterTask = null;
+			spawnMonsterTask.cancel(true);
+			spawnMonsterTask = null;
 		}
 		super.deleteMe();
 	}
@@ -185,7 +185,7 @@ public class L2SepulcherNpcInstance extends L2Npc
 				else
 				{
 					// Send a Server->Client packet SocialAction to the all
-					// L2PcInstance on the _knownPlayer of the L2NpcInstance
+					// L2PcInstance on the knownPlayer of the L2NpcInstance
 					// to display a social action of the L2NpcInstance on their
 					// client
 					SocialAction sa = new SocialAction(getObjectId(), Rnd.get(8));
@@ -232,11 +232,11 @@ public class L2SepulcherNpcInstance extends L2Npc
 			case 31487:
 				setIsInvul(false);
 				reduceCurrentHp(getMaxHp() + 1, player, null);
-				if (_spawnMonsterTask != null)
+				if (spawnMonsterTask != null)
 				{
-					_spawnMonsterTask.cancel(true);
+					spawnMonsterTask.cancel(true);
 				}
-				_spawnMonsterTask = ThreadPoolManager.getInstance().scheduleEffect(new SpawnMonster(getNpcId()), 3500);
+				spawnMonsterTask = ThreadPoolManager.getInstance().scheduleEffect(new SpawnMonster(getNpcId()), 3500);
 				break;
 
 			case 31455:
@@ -380,31 +380,31 @@ public class L2SepulcherNpcInstance extends L2Npc
 	public void openNextDoor(int npcId)
 	{
 		int doorId = FourSepulchersManager.getInstance().getHallGateKeepers().get(npcId);
-		DoorTable _doorTable = DoorTable.getInstance();
-		_doorTable.getDoor(doorId).openMe();
+		DoorTable doorTable = DoorTable.getInstance();
+		doorTable.getDoor(doorId).openMe();
 
-		if (_closeTask != null)
+		if (closeTask != null)
 		{
-			_closeTask.cancel(true);
+			closeTask.cancel(true);
 		}
-		_closeTask = ThreadPoolManager.getInstance().scheduleEffect(new CloseNextDoor(doorId), 10000);
-		if (_spawnNextMysteriousBoxTask != null)
+		closeTask = ThreadPoolManager.getInstance().scheduleEffect(new CloseNextDoor(doorId), 10000);
+		if (spawnNextMysteriousBoxTask != null)
 		{
-			_spawnNextMysteriousBoxTask.cancel(true);
+			spawnNextMysteriousBoxTask.cancel(true);
 		}
-		_spawnNextMysteriousBoxTask =
+		spawnNextMysteriousBoxTask =
 				ThreadPoolManager.getInstance().scheduleEffect(new SpawnNextMysteriousBox(npcId), 0);
 	}
 
 	private static class CloseNextDoor implements Runnable
 	{
-		final DoorTable _DoorTable = DoorTable.getInstance();
+		final DoorTable DoorTable = this.DoorTable.getInstance();
 
-		private int _DoorId;
+		private int DoorId;
 
 		public CloseNextDoor(int doorId)
 		{
-			_DoorId = doorId;
+			this.DoorId = DoorId;
 		}
 
 		@Override
@@ -412,7 +412,7 @@ public class L2SepulcherNpcInstance extends L2Npc
 		{
 			try
 			{
-				_DoorTable.getDoor(_DoorId).closeMe();
+				DoorTable.getDoor(DoorId).closeMe();
 			}
 			catch (Exception e)
 			{
@@ -423,33 +423,33 @@ public class L2SepulcherNpcInstance extends L2Npc
 
 	private static class SpawnNextMysteriousBox implements Runnable
 	{
-		private int _NpcId;
+		private int NpcId;
 
 		public SpawnNextMysteriousBox(int npcId)
 		{
-			_NpcId = npcId;
+			this.NpcId = NpcId;
 		}
 
 		@Override
 		public void run()
 		{
-			FourSepulchersManager.getInstance().spawnMysteriousBox(_NpcId);
+			FourSepulchersManager.getInstance().spawnMysteriousBox(NpcId);
 		}
 	}
 
 	private static class SpawnMonster implements Runnable
 	{
-		private int _NpcId;
+		private int NpcId;
 
 		public SpawnMonster(int npcId)
 		{
-			_NpcId = npcId;
+			this.NpcId = NpcId;
 		}
 
 		@Override
 		public void run()
 		{
-			FourSepulchersManager.getInstance().spawnMonster(_NpcId);
+			FourSepulchersManager.getInstance().spawnMonster(NpcId);
 		}
 	}
 

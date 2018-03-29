@@ -88,7 +88,7 @@ public class ClassChange implements ISkillHandler
 
 		if (!player.getFloodProtectors().getSubclass().tryPerformAction("change subclass"))
 		{
-			_log.warning("Player " + player.getName() + " has performed a subclass change too fast");
+			log.warning("Player " + player.getName() + " has performed a subclass change too fast");
 			return;
 		}
 

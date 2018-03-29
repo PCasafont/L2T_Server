@@ -21,115 +21,15 @@ import l2server.ServerMode;
 import l2server.gameserver.cache.CrestCache;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
-import l2server.gameserver.datatables.AbilityTable;
-import l2server.gameserver.datatables.AccessLevels;
-import l2server.gameserver.datatables.AdminCommandAccessRights;
-import l2server.gameserver.datatables.ArmorSetsTable;
-import l2server.gameserver.datatables.BeautyTable;
-import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.datatables.CharTemplateTable;
-import l2server.gameserver.datatables.ClanTable;
-import l2server.gameserver.datatables.ComboSkillTable;
-import l2server.gameserver.datatables.CompoundTable;
-import l2server.gameserver.datatables.CoreMessageTable;
-import l2server.gameserver.datatables.DoorTable;
-import l2server.gameserver.datatables.EnchantCostsTable;
-import l2server.gameserver.datatables.EnchantEffectTable;
-import l2server.gameserver.datatables.EnchantHPBonusData;
-import l2server.gameserver.datatables.EnchantMultiSellTable;
-import l2server.gameserver.datatables.EnsoulDataTable;
-import l2server.gameserver.datatables.EventDroplist;
-import l2server.gameserver.datatables.ExtraDropTable;
-import l2server.gameserver.datatables.FishTable;
-import l2server.gameserver.datatables.FlyMoveTable;
-import l2server.gameserver.datatables.GMSkillTable;
-import l2server.gameserver.datatables.GlobalDropTable;
-import l2server.gameserver.datatables.HelperBuffTable;
-import l2server.gameserver.datatables.HennaTable;
-import l2server.gameserver.datatables.HeroSkillTable;
-import l2server.gameserver.datatables.ImageTable;
-import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.datatables.LifeStoneTable;
-import l2server.gameserver.datatables.MapRegionTable;
-import l2server.gameserver.datatables.MerchantPriceConfigTable;
-import l2server.gameserver.datatables.MultiSell;
-import l2server.gameserver.datatables.NobleSkillTable;
-import l2server.gameserver.datatables.NpcTable;
-import l2server.gameserver.datatables.NpcWalkersTable;
-import l2server.gameserver.datatables.OfflineTradersTable;
-import l2server.gameserver.datatables.PetDataTable;
-import l2server.gameserver.datatables.PlayerStatDataTable;
-import l2server.gameserver.datatables.PledgeSkillTree;
-import l2server.gameserver.datatables.ResidentialSkillTable;
-import l2server.gameserver.datatables.ScenePlayerDataTable;
-import l2server.gameserver.datatables.ShuttleTable;
-import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.datatables.SkillTreeTable;
-import l2server.gameserver.datatables.SpawnTable;
-import l2server.gameserver.datatables.StaticObjects;
-import l2server.gameserver.datatables.SubPledgeSkillTree;
-import l2server.gameserver.datatables.SummonItemsData;
-import l2server.gameserver.datatables.TeleportLocationTable;
-import l2server.gameserver.datatables.UITable;
-import l2server.gameserver.events.DamageManager;
-import l2server.gameserver.events.HiddenChests;
-import l2server.gameserver.events.LotterySystem;
-import l2server.gameserver.events.MonsterInvasion;
-import l2server.gameserver.events.RankingKillInfo;
+import l2server.gameserver.datatables.*;
+import l2server.gameserver.events.*;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.geoeditorcon.GeoEditorListener;
 import l2server.gameserver.gui.ServerGui;
-import l2server.gameserver.handler.AdminCommandHandler;
-import l2server.gameserver.handler.ChatHandler;
-import l2server.gameserver.handler.ItemHandler;
-import l2server.gameserver.handler.SkillHandler;
-import l2server.gameserver.handler.UserCommandHandler;
-import l2server.gameserver.handler.VoicedCommandHandler;
+import l2server.gameserver.handler.*;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.instancemanager.AirShipManager;
-import l2server.gameserver.instancemanager.AntiFeedManager;
-import l2server.gameserver.instancemanager.BoatManager;
-import l2server.gameserver.instancemanager.CastleManager;
-import l2server.gameserver.instancemanager.CastleManorManager;
-import l2server.gameserver.instancemanager.ClanHallAuctionManager;
-import l2server.gameserver.instancemanager.ClanHallManager;
-import l2server.gameserver.instancemanager.ClanRecruitManager;
-import l2server.gameserver.instancemanager.CoupleManager;
-import l2server.gameserver.instancemanager.CursedWeaponsManager;
-import l2server.gameserver.instancemanager.CustomAuctionManager;
-import l2server.gameserver.instancemanager.CustomOfflineBuffersManager;
-import l2server.gameserver.instancemanager.CustomWorldAltars;
-import l2server.gameserver.instancemanager.DayNightSpawnManager;
-import l2server.gameserver.instancemanager.FarmZoneManager;
-import l2server.gameserver.instancemanager.FortManager;
-import l2server.gameserver.instancemanager.FortSiegeManager;
-import l2server.gameserver.instancemanager.FourSepulchersManager;
-import l2server.gameserver.instancemanager.GMEventManager;
-import l2server.gameserver.instancemanager.GlobalVariablesManager;
-import l2server.gameserver.instancemanager.GraciaSeedsManager;
-import l2server.gameserver.instancemanager.GrandBossManager;
-import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.instancemanager.ItemAuctionManager;
-import l2server.gameserver.instancemanager.ItemsOnGroundManager;
-import l2server.gameserver.instancemanager.MailManager;
-import l2server.gameserver.instancemanager.MainTownManager;
-import l2server.gameserver.instancemanager.MentorManager;
-import l2server.gameserver.instancemanager.MercTicketManager;
-import l2server.gameserver.instancemanager.OfflineAdminCommandsManager;
-import l2server.gameserver.instancemanager.PartySearchManager;
-import l2server.gameserver.instancemanager.PetitionManager;
-import l2server.gameserver.instancemanager.QuestManager;
-import l2server.gameserver.instancemanager.RaidBossPointsManager;
-import l2server.gameserver.instancemanager.SiegeManager;
-import l2server.gameserver.instancemanager.TenkaiAuctionManager;
-import l2server.gameserver.instancemanager.TransformationManager;
-import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.AutoChatHandler;
-import l2server.gameserver.model.AutoSpawnHandler;
-import l2server.gameserver.model.L2Manor;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.PartyMatchRoomList;
-import l2server.gameserver.model.PartyMatchWaitingList;
+import l2server.gameserver.instancemanager.*;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.entity.ClanWarManager;
 import l2server.gameserver.model.olympiad.HeroesManager;
 import l2server.gameserver.model.olympiad.Olympiad;
@@ -149,7 +49,8 @@ import l2server.network.CoreConfig;
 import l2server.util.DeadLockDetector;
 import l2server.util.IPv4Filter;
 
-import java.awt.Toolkit;
+import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -160,17 +61,15 @@ import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.LogManager;
 
-import javax.swing.UIManager;
-
 public class Server
 {
-	private final Core<L2GameClient> _selectorThread;
-	private final L2GamePacketHandler _gamePacketHandler;
-	private final DeadLockDetector _deadDetectThread;
-	private final IdFactory _idFactory;
+	private final Core<L2GameClient> selectorThread;
+	private final L2GamePacketHandler gamePacketHandler;
+	private final DeadLockDetector deadDetectThread;
+	private final IdFactory idFactory;
 	public static Server gameServer;
 	public static ServerGui gui;
-	private LoginServerThread _loginThread;
+	private LoginServerThread loginThread;
 	public static final Calendar dateTimeServerStarted = Calendar.getInstance();
 
 	public long getUsedMemoryMB()
@@ -180,17 +79,17 @@ public class Server
 
 	public Core<L2GameClient> getSelectorThread()
 	{
-		return _selectorThread;
+		return selectorThread;
 	}
 
 	public L2GamePacketHandler getL2GamePacketHandler()
 	{
-		return _gamePacketHandler;
+		return gamePacketHandler;
 	}
 
 	public DeadLockDetector getDeadLockDetectorThread()
 	{
-		return _deadDetectThread;
+		return deadDetectThread;
 	}
 
 	public Server() throws Exception
@@ -234,9 +133,9 @@ public class Server
 		gameServer = this;
 		Log.finest("used mem:" + getUsedMemoryMB() + "MB");
 
-		_idFactory = IdFactory.getInstance();
+		idFactory = IdFactory.getInstance();
 
-		if (!_idFactory.isInitialized())
+		if (!idFactory.isInitialized())
 		{
 			Log.severe("Could not read object IDs from DB. Please Check Your Data.");
 			throw new Exception("Could not initialize the ID factory");
@@ -552,13 +451,13 @@ public class Server
 
 		if (Config.DEADLOCK_DETECTOR)
 		{
-			_deadDetectThread = new DeadLockDetector();
-			_deadDetectThread.setDaemon(true);
-			_deadDetectThread.start();
+			deadDetectThread = new DeadLockDetector();
+			deadDetectThread.setDaemon(true);
+			deadDetectThread.start();
 		}
 		else
 		{
-			_deadDetectThread = null;
+			deadDetectThread = null;
 		}
 
 		//LameGuard.getInstance();
@@ -572,8 +471,8 @@ public class Server
 		Log.info("GameServer Started, free memory " + freeMem + " Mb of " + totalMem + " Mb");
 		Toolkit.getDefaultToolkit().beep();
 
-		_loginThread = LoginServerThread.getInstance();
-		_loginThread.start();
+		loginThread = LoginServerThread.getInstance();
+		loginThread.start();
 
 		final CoreConfig sc = new CoreConfig();
 		sc.MAX_READ_PER_PASS = Config.MMO_MAX_READ_PER_PASS;
@@ -581,8 +480,8 @@ public class Server
 		sc.SLEEP_TIME = Config.MMO_SELECTOR_SLEEP_TIME;
 		sc.HELPER_BUFFER_COUNT = Config.MMO_HELPER_BUFFER_COUNT;
 
-		_gamePacketHandler = new L2GamePacketHandler();
-		_selectorThread = new Core<>(sc, _gamePacketHandler, _gamePacketHandler, _gamePacketHandler, new IPv4Filter());
+		gamePacketHandler = new L2GamePacketHandler();
+		selectorThread = new Core<>(sc, gamePacketHandler, gamePacketHandler, gamePacketHandler, new IPv4Filter());
 
 		InetAddress bindAddress = null;
 		if (!Config.GAMESERVER_HOSTNAME.equals("*"))
@@ -601,14 +500,14 @@ public class Server
 
 		try
 		{
-			_selectorThread.openServerSocket(bindAddress, Config.PORT_GAME);
+			selectorThread.openServerSocket(bindAddress, Config.PORT_GAME);
 		}
 		catch (IOException e)
 		{
 			Log.log(Level.SEVERE, "FATAL: Failed to open server socket. Reason: " + e.getMessage(), e);
 			System.exit(1);
 		}
-		_selectorThread.start();
+		selectorThread.start();
 		Log.info("Maximum Numbers of Connected Players: " + Config.MAXIMUM_ONLINE_USERS);
 		long serverLoadEnd = System.currentTimeMillis();
 		Log.info("Server Loaded in " + (serverLoadEnd - serverLoadStart) / 1000 + " seconds");
@@ -623,13 +522,13 @@ public class Server
         gameServer = this;
     }
 
-	static long _t = 0;
+	static long t = 0;
 
 	public static void printSection(String s)
 	{
-		//if (_t > 0)
-		//	Log.info("Time spent in last section: " + (t - _t) / 1000 + "s");
-		_t = System.currentTimeMillis();
+		//if (t > 0)
+		//	Log.info("Time spent in last section: " + (t - t) / 1000 + "s");
+		t = System.currentTimeMillis();
 
 		s = "=[ " + s + " ]";
 		while (s.length() < 78)

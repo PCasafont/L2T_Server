@@ -63,7 +63,7 @@ public class PlayerHelp implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.INFO, "Exception in " + e.getMessage(), e);
+			log.log(Level.INFO, "Exception in " + e.getMessage(), e);
 		}
 		return true;
 	}

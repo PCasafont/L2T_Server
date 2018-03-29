@@ -26,48 +26,48 @@ import java.util.List;
  */
 public class EnsoulEffect
 {
-	private final int _id;
-	private final String _name;
-	private final int _group;
-	private final int _stage;
-	private final List<Func> _funcs = new ArrayList<>();
+	private final int id;
+	private final String name;
+	private final int group;
+	private final int stage;
+	private final List<Func> funcs = new ArrayList<>();
 
 	public EnsoulEffect(int id, String name, int group, int stage)
 	{
-		_id = id;
-		_name = name;
-		_group = group;
-		_stage = stage;
+		this.id = id;
+		this.name = name;
+		this.group = group;
+		this.stage = stage;
 	}
 
 	public void addFunc(Func func)
 	{
-		_funcs.add(func);
+		funcs.add(func);
 	}
 
 	public int getId()
 	{
-		return _id;
+		return id;
 	}
 
 	public String getName()
 	{
-		return _name;
+		return name;
 	}
 
 	public int getGroup()
 	{
-		return _group;
+		return group;
 	}
 
 	public int getStage()
 	{
-		return _stage;
+		return stage;
 	}
 
 	public void applyBonus(L2PcInstance player)
 	{
-		for (Func f : _funcs)
+		for (Func f : funcs)
 		{
 			player.addStatFunc(f);
 		}

@@ -45,9 +45,9 @@ import java.util.List;
 public class FriendList extends L2GameServerPacket
 {
 	//
-	private List<FriendInfo> _info;
-	private int _level = 0;
-	private int _classId = 0;
+	private List<FriendInfo> info;
+	private int level = 0;
+	private int classId = 0;
 	private String memo;
 
 	private static class FriendInfo
@@ -70,7 +70,7 @@ public class FriendList extends L2GameServerPacket
 
 	public FriendList(L2PcInstance player)
 	{
-		_info = new ArrayList<>(player.getFriendList().size());
+		info = new ArrayList<>(player.getFriendList().size());
 		for (int objId : player.getFriendList())
 		{
 			memo = player.getFriendMemo(objId);
@@ -83,22 +83,22 @@ public class FriendList extends L2GameServerPacket
 			}
 			if (online)
 			{
-				_level = player1.getLevel();
-				_classId = player1.getClassId();
+				level = player1.getLevel();
+				classId = player1.getClassId();
 			}
 			else
 			{
 				offlineFriendInfo(objId);
 			}
-			_info.add(new FriendInfo(objId, name, online, _level, _classId));
+			info.add(new FriendInfo(objId, name, online, level, classId));
 		}
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_info.size());
-		for (FriendInfo info : _info)
+		writeD(info.size());
+		for (FriendInfo info : info)
 		{
 			writeD(info.objId); // character id
 			writeS(info.name);
@@ -128,7 +128,7 @@ public class FriendList extends L2GameServerPacket
 			while (rset.next())
 			{
 				level = rset.getByte("level");
-				_classId = rset.getInt("classid");
+				classId = rset.getInt("classid");
 				bClassId = rset.getInt("base_class");
 			}
 			rset.close();
@@ -143,7 +143,7 @@ public class FriendList extends L2GameServerPacket
 		{
 			L2DatabaseFactory.close(con);
 		}
-		if (_classId != bClassId)
+		if (classId != bClassId)
 		{
 			try
 			{
@@ -153,12 +153,12 @@ public class FriendList extends L2GameServerPacket
 				PreparedStatement statement =
 						con.prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
 				statement.setInt(1, objId);
-				statement.setInt(2, _classId);
+				statement.setInt(2, classId);
 				ResultSet rset = statement.executeQuery();
 
 				while (rset.next())
 				{
-					_level = rset.getByte("level");
+                    this.level = rset.getByte("level");
 				}
 
 				rset.close();
@@ -176,7 +176,7 @@ public class FriendList extends L2GameServerPacket
 		}
 		else
 		{
-			_level = level;
+			this.level = level;
 		}
 	}
 }

@@ -27,7 +27,7 @@ import java.util.List;
 public class DestroyTheGolem extends EventInstance
 {
 
-	private boolean _golemsSpawned = false;
+	private boolean golemsSpawned = false;
 
 	public DestroyTheGolem(int id, EventConfig config)
 	{
@@ -42,7 +42,7 @@ public class DestroyTheGolem extends EventInstance
 			return false;
 		}
 
-		if (!_golemsSpawned)
+		if (!golemsSpawned)
 		{
 			spawnGolems();
 		}
@@ -54,12 +54,12 @@ public class DestroyTheGolem extends EventInstance
 	public void calculateRewards()
 	{
 		EventTeam team;
-		if (_config.getLocation().getTeamCount() != 4)
+		if (config.getLocation().getTeamCount() != 4)
 		{
-			if (_teams[0].getPoints() == _teams[1].getPoints())
+			if (teams[0].getPoints() == teams[1].getPoints())
 			{
 				// Check if one of the teams have no more players left
-				if (_teams[0].getParticipatedPlayerCount() == 0 || _teams[1].getParticipatedPlayerCount() == 0)
+				if (teams[0].getParticipatedPlayerCount() == 0 || teams[1].getParticipatedPlayerCount() == 0)
 				{
 					// set state to rewarding
 					setState(EventState.REWARDING);
@@ -81,9 +81,9 @@ public class DestroyTheGolem extends EventInstance
 			setState(EventState.REWARDING);
 
 			// Get team which has more points
-			team = _teams[_teams[0].getPoints() > _teams[1].getPoints() ? 0 : 1];
+			team = teams[teams[0].getPoints() > teams[1].getPoints() ? 0 : 1];
 
-			if (team == _teams[0])
+			if (team == teams[0])
 			{
 				rewardTeams(0);
 			}
@@ -96,29 +96,29 @@ public class DestroyTheGolem extends EventInstance
 		{
 			// Set state REWARDING so nobody can point anymore
 			setState(EventState.REWARDING);
-			if (_teams[0].getPoints() > _teams[1].getPoints() && _teams[0].getPoints() > _teams[2].getPoints() &&
-					_teams[0].getPoints() > _teams[3].getPoints())
+			if (teams[0].getPoints() > teams[1].getPoints() && teams[0].getPoints() > teams[2].getPoints() &&
+					teams[0].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(0);
-				team = _teams[0];
+				team = teams[0];
 			}
-			else if (_teams[1].getPoints() > _teams[0].getPoints() && _teams[1].getPoints() > _teams[2].getPoints() &&
-					_teams[1].getPoints() > _teams[3].getPoints())
+			else if (teams[1].getPoints() > teams[0].getPoints() && teams[1].getPoints() > teams[2].getPoints() &&
+					teams[1].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(1);
-				team = _teams[1];
+				team = teams[1];
 			}
-			else if (_teams[2].getPoints() > _teams[0].getPoints() && _teams[2].getPoints() > _teams[1].getPoints() &&
-					_teams[2].getPoints() > _teams[3].getPoints())
+			else if (teams[2].getPoints() > teams[0].getPoints() && teams[2].getPoints() > teams[1].getPoints() &&
+					teams[2].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(2);
-				team = _teams[2];
+				team = teams[2];
 			}
-			else if (_teams[3].getPoints() > _teams[0].getPoints() && _teams[3].getPoints() > _teams[1].getPoints() &&
-					_teams[3].getPoints() > _teams[2].getPoints())
+			else if (teams[3].getPoints() > teams[0].getPoints() && teams[3].getPoints() > teams[1].getPoints() &&
+					teams[3].getPoints() > teams[2].getPoints())
 			{
 				rewardTeams(3);
-				team = _teams[3];
+				team = teams[3];
 			}
 			else
 			{
@@ -142,7 +142,7 @@ public class DestroyTheGolem extends EventInstance
 	public String getRunningInfo(L2PcInstance player)
 	{
 		String html = "";
-		for (EventTeam team : _teams)
+		for (EventTeam team : teams)
 		{
 			if (team.getParticipatedPlayerCount() > 0)
 			{
@@ -205,28 +205,28 @@ public class DestroyTheGolem extends EventInstance
 			assistant.addEventPoints(1);
 		}
 
-		new EventTeleporter(killedPlayer, _teams[killedTeamId].getCoords(), false, false);
+		new EventTeleporter(killedPlayer, teams[killedTeamId].getCoords(), false, false);
 	}
 
 	private void spawnGolems()
 	{
-		spawnGolem(_teams[0]);
-		spawnGolem(_teams[1]);
-		if (_config.getLocation().getTeamCount() == 4)
+		spawnGolem(teams[0]);
+		spawnGolem(teams[1]);
+		if (config.getLocation().getTeamCount() == 4)
 		{
-			spawnGolem(_teams[2]);
-			spawnGolem(_teams[3]);
+			spawnGolem(teams[2]);
+			spawnGolem(teams[3]);
 		}
-		_golemsSpawned = true;
+		golemsSpawned = true;
 	}
 
 	private void unspawnGolems()
 	{
-		for (EventTeam team : _teams)
+		for (EventTeam team : teams)
 		{
 			unspawnGolem(team);
 		}
-		_golemsSpawned = false;
+		golemsSpawned = false;
 	}
 
 	private void spawnGolem(EventTeam team)
@@ -239,13 +239,13 @@ public class DestroyTheGolem extends EventInstance
 
 			int x = 0;
 			int y = 0;
-			for (int i = 0; i < _config.getLocation().getTeamCount(); i++)
+			for (int i = 0; i < config.getLocation().getTeamCount(); i++)
 			{
-				x += _teams[i].getCoords().getX();
-				y += _teams[i].getCoords().getY();
+				x += teams[i].getCoords().getX();
+				y += teams[i].getCoords().getY();
 			}
-			x /= _config.getLocation().getTeamCount();
-			y /= _config.getLocation().getTeamCount();
+			x /= config.getLocation().getTeamCount();
+			y /= config.getLocation().getTeamCount();
 
 			int heading = (int) Math
 					.round(Math.atan2(y - team.getCoords().getY(), x - team.getCoords().getX()) / Math.PI * 32768);
@@ -266,7 +266,7 @@ public class DestroyTheGolem extends EventInstance
 			team.getGolemSpawn().startRespawn();
 			team.getGolemSpawn().doSpawn();
 			L2EventGolemInstance golem = (L2EventGolemInstance) team.getGolemSpawn().getNpc();
-			int maxHp = 25 * getParticipatedPlayersCount() / _config.getLocation().getTeamCount();
+			int maxHp = 25 * getParticipatedPlayersCount() / config.getLocation().getTeamCount();
 			golem.setMaxHp(maxHp);
 			golem.setCurrentHp(golem.getMaxHp());
 			golem.setTeam(team);

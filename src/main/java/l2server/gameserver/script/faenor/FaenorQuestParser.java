@@ -108,7 +108,7 @@ public class FaenorQuestParser extends FaenorParser
 			Log.info("Adding Drop to NpcID: " + npcID);
 		}
 
-		_bridge.addQuestDrop(npcID, itemID, min, max, chance, questID, states);
+		bridge.addQuestDrop(npcID, itemID, min, max, chance, questID, states);
 	}
 
 	static class FaenorQuestParserFactory extends ParserFactory

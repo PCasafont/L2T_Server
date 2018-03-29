@@ -21,22 +21,22 @@ package l2server.gameserver.network.serverpackets;
 public class ExChangePostState extends L2GameServerPacket
 {
 
-	private boolean _receivedBoard;
-	private int[] _changedMsgIds;
-	private int _changeId;
+	private boolean receivedBoard;
+	private int[] changedMsgIds;
+	private int changeId;
 
 	public ExChangePostState(boolean receivedBoard, int[] changedMsgIds, int changeId)
 	{
-		_receivedBoard = receivedBoard;
-		_changedMsgIds = changedMsgIds;
-		_changeId = changeId;
+		this.receivedBoard = receivedBoard;
+		this.changedMsgIds = changedMsgIds;
+		this.changeId = changeId;
 	}
 
 	public ExChangePostState(boolean receivedBoard, int changedMsgId, int changeId)
 	{
-		_receivedBoard = receivedBoard;
-		_changedMsgIds = new int[]{changedMsgId};
-		_changeId = changeId;
+		this.receivedBoard = receivedBoard;
+		changedMsgIds = new int[]{changedMsgId};
+		this.changeId = changeId;
 	}
 
 	/* (non-Javadoc)
@@ -45,12 +45,12 @@ public class ExChangePostState extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_receivedBoard ? 1 : 0);
-		writeD(_changedMsgIds.length);
-		for (int postId : _changedMsgIds)
+		writeD(receivedBoard ? 1 : 0);
+		writeD(changedMsgIds.length);
+		for (int postId : changedMsgIds)
 		{
 			writeD(postId); // postId
-			writeD(_changeId); // state
+			writeD(changeId); // state
 		}
 	}
 }

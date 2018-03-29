@@ -24,11 +24,11 @@ import javax.script.ScriptContext;
 
 public class Expression
 {
-	private final ScriptContext _context;
+	private final ScriptContext context;
 	@SuppressWarnings("unused")
-	private final String _lang;
+	private final String lang;
 	@SuppressWarnings("unused")
-	private final String _code;
+	private final String code;
 
 	public static Object eval(String lang, String code)
 	{
@@ -71,16 +71,16 @@ public class Expression
 
 	private Expression(ScriptContext pContext, String pLang, String pCode)
 	{
-		_context = pContext;
-		_lang = pLang;
-		_code = pCode;
+		context = pContext;
+		lang = pLang;
+		code = pCode;
 	}
 
 	public <T> void addDynamicVariable(String name, T value)
 	{
 		try
 		{
-			_context.setAttribute(name, value, ScriptContext.ENGINE_SCOPE);
+			context.setAttribute(name, value, ScriptContext.ENGINE_SCOPE);
 		}
 		catch (Exception e)
 		{
@@ -92,7 +92,7 @@ public class Expression
 	{
 		try
 		{
-			_context.removeAttribute(name, ScriptContext.ENGINE_SCOPE);
+			context.removeAttribute(name, ScriptContext.ENGINE_SCOPE);
 		}
 		catch (Exception e)
 		{

@@ -25,8 +25,8 @@ public class ExEnchantSkillList extends L2GameServerPacket
 		NORMAL, SAFE, UNTRAIN, CHANGE_ROUTE,
 	}
 
-	private final EnchantSkillType _type;
-	private final List<Skill> _skills;
+	private final EnchantSkillType type;
+	private final List<Skill> skills;
 
 	static class Skill
 	{
@@ -42,13 +42,13 @@ public class ExEnchantSkillList extends L2GameServerPacket
 
 	public void addSkill(int id, int level)
 	{
-		_skills.add(new Skill(id, level));
+		skills.add(new Skill(id, level));
 	}
 
 	public ExEnchantSkillList(EnchantSkillType type)
 	{
-		_type = type;
-		_skills = new ArrayList<>();
+		this.type = type;
+		skills = new ArrayList<>();
 	}
 
 	/* (non-Javadoc)
@@ -57,9 +57,9 @@ public class ExEnchantSkillList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_type.ordinal());
-		writeD(_skills.size());
-		for (Skill sk : _skills)
+		writeD(type.ordinal());
+		writeD(skills.size());
+		for (Skill sk : skills)
 		{
 			writeD(sk.id);
 			writeD(sk.nextLevel);

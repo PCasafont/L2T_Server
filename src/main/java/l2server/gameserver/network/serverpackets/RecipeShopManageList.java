@@ -31,32 +31,32 @@ import java.util.List;
 public class RecipeShopManageList extends L2GameServerPacket
 {
 
-	private L2PcInstance _seller;
-	private boolean _isDwarven;
-	private L2RecipeList[] _recipes;
+	private L2PcInstance seller;
+	private boolean isDwarven;
+	private L2RecipeList[] recipes;
 
 	public RecipeShopManageList(L2PcInstance seller, boolean isDwarven)
 	{
-		_seller = seller;
-		_isDwarven = isDwarven;
+		this.seller = seller;
+		this.isDwarven = isDwarven;
 
-		if (_isDwarven && _seller.hasDwarvenCraft())
+		if (isDwarven && seller.hasDwarvenCraft())
 		{
-			_recipes = _seller.getDwarvenRecipeBook();
+			recipes = seller.getDwarvenRecipeBook();
 		}
 		else
 		{
-			_recipes = _seller.getCommonRecipeBook();
+			recipes = seller.getCommonRecipeBook();
 		}
 
 		// clean previous recipes
-		if (_seller.getCreateList() != null)
+		if (seller.getCreateList() != null)
 		{
-			L2ManufactureList list = _seller.getCreateList();
+			L2ManufactureList list = seller.getCreateList();
 			List<L2ManufactureItem> toIterate = new ArrayList<>(list.getList());
 			for (L2ManufactureItem item : toIterate)
 			{
-				if (item.isDwarven() != _isDwarven || !seller.hasRecipeList(item.getRecipeId()))
+				if (item.isDwarven() != isDwarven || !seller.hasRecipeList(item.getRecipeId()))
 				{
 					list.getList().remove(item);
 				}
@@ -67,33 +67,33 @@ public class RecipeShopManageList extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_seller.getObjectId());
-		writeD((int) _seller.getAdena());
-		writeD(_isDwarven ? 0x00 : 0x01);
+		writeD(seller.getObjectId());
+		writeD((int) seller.getAdena());
+		writeD(isDwarven ? 0x00 : 0x01);
 
-		if (_recipes == null)
+		if (recipes == null)
 		{
 			writeD(0);
 		}
 		else
 		{
-			writeD(_recipes.length);//number of items in recipe book
+			writeD(recipes.length);//number of items in recipe book
 
-			for (int i = 0; i < _recipes.length; i++)
+			for (int i = 0; i < recipes.length; i++)
 			{
-				L2RecipeList temp = _recipes[i];
+				L2RecipeList temp = recipes[i];
 				writeD(temp.getId());
 				writeD(i + 1);
 			}
 		}
 
-		if (_seller.getCreateList() == null)
+		if (seller.getCreateList() == null)
 		{
 			writeD(0);
 		}
 		else
 		{
-			L2ManufactureList list = _seller.getCreateList();
+			L2ManufactureList list = seller.getCreateList();
 			writeD(list.size());
 
 			for (L2ManufactureItem item : list.getList())

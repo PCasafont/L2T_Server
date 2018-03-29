@@ -20,16 +20,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public final class ExWorldChatCnt extends L2GameServerPacket
 {
-	private int _count;
+	private int count;
 
 	public ExWorldChatCnt(int count)
 	{
-		_count = count;
+		this.count = count;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_count);
+		writeD(count);
 	}
 }

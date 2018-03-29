@@ -44,40 +44,40 @@ public class LifeStoneTable
 {
 	public static final class EnchantEffectSet
 	{
-		private final List<EnchantEffect> _enchantEffects;
-		private final float _chance;
+		private final List<EnchantEffect> enchantEffects;
+		private final float chance;
 
 		public EnchantEffectSet(List<EnchantEffect> effects, float chance)
 		{
-			_enchantEffects = effects;
-			_chance = chance;
+			enchantEffects = effects;
+			this.chance = chance;
 		}
 
 		public final EnchantEffect getRandomEnchantEffect()
 		{
-			return _enchantEffects.get(Rnd.get(_enchantEffects.size()));
+			return enchantEffects.get(Rnd.get(enchantEffects.size()));
 		}
 
 		public final float getChance()
 		{
-			return _chance;
+			return chance;
 		}
 	}
 
 	public static final class EnchantEffectGroup
 	{
-		private final List<EnchantEffectSet> _effects;
+		private final List<EnchantEffectSet> effects;
 
 		public EnchantEffectGroup(List<EnchantEffectSet> effects)
 		{
-			_effects = effects;
+			this.effects = effects;
 		}
 
 		public final EnchantEffect getRandomEffect()
 		{
 			float random = Rnd.get(10000) / 100.0f;
 			float current = 0.0f;
-			for (EnchantEffectSet set : _effects)
+			for (EnchantEffectSet set : effects)
 			{
 				if (random < current + set.getChance())
 				{
@@ -87,7 +87,7 @@ public class LifeStoneTable
 				current += set.getChance();
 			}
 
-			return _effects.get(0).getRandomEnchantEffect();
+			return effects.get(0).getRandomEnchantEffect();
 		}
 	}
 
@@ -96,38 +96,38 @@ public class LifeStoneTable
 		// lifestone level to player level table
 		private static final int[] LEVELS = {46, 49, 52, 55, 58, 61, 64, 67, 70, 76, 80, 82, 84, 85, 95, 99};
 
-		private final int _grade;
-		private final int _level;
-		private final Map<String, EnchantEffectGroup[]> _effects = new HashMap<>();
+		private final int grade;
+		private final int level;
+		private final Map<String, EnchantEffectGroup[]> effects = new HashMap<>();
 
 		public LifeStone(int grade, int level)
 		{
-			_grade = grade;
-			_level = level;
+			this.grade = grade;
+			this.level = level;
 		}
 
 		public final int getLevel()
 		{
-			return _level;
+			return level;
 		}
 
 		public final int getGrade()
 		{
-			return _grade;
+			return grade;
 		}
 
 		public final int getPlayerLevel()
 		{
-			return LEVELS[_level];
+			return LEVELS[level];
 		}
 
 		public final void setEffectGroup(String type, int order, EnchantEffectGroup group)
 		{
-			EnchantEffectGroup[] augments = _effects.get(type);
+			EnchantEffectGroup[] augments = effects.get(type);
 			if (augments == null)
 			{
 				augments = new EnchantEffectGroup[2];
-				_effects.put(type, augments);
+				effects.put(type, augments);
 			}
 
 			augments[order] = group;
@@ -135,7 +135,7 @@ public class LifeStoneTable
 
 		public final EnchantEffect getRandomEffect(String type, int order)
 		{
-			EnchantEffectGroup[] augments = _effects.get(type);
+			EnchantEffectGroup[] augments = effects.get(type);
 			if (augments == null || augments[order] == null)
 			{
 				Log.warning("Null augment: " + type + ", " + order);
@@ -148,7 +148,7 @@ public class LifeStoneTable
 
 	public static LifeStoneTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	public static final int GRADE_NONE = 0;
@@ -165,7 +165,7 @@ public class LifeStoneTable
 	protected static final int GEMSTONE_A = 2133;
 	protected static final int GEMSTONE_R = 19440;
 
-	private final Map<Integer, LifeStone> _lifeStones = new HashMap<>();
+	private final Map<Integer, LifeStone> lifeStones = new HashMap<>();
 
 	// =========================================================
 	// Constructor
@@ -176,7 +176,7 @@ public class LifeStoneTable
 
 	public final void load()
 	{
-		_lifeStones.clear();
+		lifeStones.clear();
 
 		// Load the skillmap
 		// Note: the skillmap data is only used when generating new augmentations
@@ -260,10 +260,10 @@ public class LifeStoneTable
                     }
                 }
 
-                _lifeStones.put(id, lifeStone);
+                lifeStones.put(id, lifeStone);
             }
 
-			Log.info("LifeStoneTable: Loaded " + _lifeStones.size() + " life stones.");
+			Log.info("LifeStoneTable: Loaded " + lifeStones.size() + " life stones.");
 		}
 		catch (Exception e)
 		{
@@ -306,7 +306,7 @@ public class LifeStoneTable
 
 	public final LifeStone getLifeStone(int itemId)
 	{
-		return _lifeStones.get(itemId);
+		return lifeStones.get(itemId);
 	}
 
 	/*
@@ -619,6 +619,6 @@ public class LifeStoneTable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final LifeStoneTable _instance = new LifeStoneTable();
+		protected static final LifeStoneTable instance = new LifeStoneTable();
 	}
 }

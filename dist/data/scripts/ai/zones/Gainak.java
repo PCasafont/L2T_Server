@@ -42,21 +42,21 @@ import l2server.util.Rnd;
 
 public class Gainak extends Quest
 {
-	private static final int _siegeEffect = 20140700;
-	private static boolean _isInSiege = false;
-	private static final int _gainakPeaceZoneId = 60018;
-	private static final int _gainakSiegeZoneId = 60019;
-	private static final L2PeaceZone _gainakPeaceZone =
-			ZoneManager.getInstance().getZoneById(_gainakPeaceZoneId, L2PeaceZone.class);
-	private static final L2SiegeZone _gainakSiegeZone =
-			ZoneManager.getInstance().getZoneById(_gainakSiegeZoneId, L2SiegeZone.class);
+	private static final int siegeEffect = 20140700;
+	private static boolean isInSiege = false;
+	private static final int gainakPeaceZoneId = 60018;
+	private static final int gainakSiegeZoneId = 60019;
+	private static final L2PeaceZone gainakPeaceZone =
+			ZoneManager.getInstance().getZoneById(gainakPeaceZoneId, L2PeaceZone.class);
+	private static final L2SiegeZone gainakSiegeZone =
+			ZoneManager.getInstance().getZoneById(gainakSiegeZoneId, L2SiegeZone.class);
 
 	public Gainak(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
 
-		addDieZoneId(_gainakSiegeZoneId);
-		addEnterZoneId(_gainakSiegeZoneId);
+		addDieZoneId(gainakSiegeZoneId);
+		addEnterZoneId(gainakSiegeZoneId);
 
 		startQuestTimer("gainak_change", getTimeBetweenSieges() * 60000, null, null);
 	}
@@ -81,9 +81,9 @@ public class Gainak extends Quest
 	{
 		if (character instanceof L2PcInstance)
 		{
-			if (_isInSiege)
+			if (isInSiege)
 			{
-				character.broadcastPacket(new EventTrigger(_siegeEffect, true));
+				character.broadcastPacket(new EventTrigger(siegeEffect, true));
 			}
 		}
 		return null;
@@ -92,7 +92,7 @@ public class Gainak extends Quest
 	@Override
 	public String onDieZone(L2Character character, L2Character killer, L2ZoneType zone)
 	{
-		if (_isInSiege)
+		if (isInSiege)
 		{
 			L2PcInstance player = killer.getActingPlayer();
 			if (player != null)
@@ -108,17 +108,17 @@ public class Gainak extends Quest
 	{
 		if (event.equalsIgnoreCase("gainak_change"))
 		{
-			if (_isInSiege)
+			if (isInSiege)
 			{
 				SpawnTable.getInstance().despawnSpecificTable("gainak_siege");
 
-				_isInSiege = false;
+				isInSiege = false;
 
-				_gainakPeaceZone.setZoneEnabled(true);
-				_gainakSiegeZone.setIsActive(false);
-				_gainakSiegeZone.updateZoneStatusForCharactersInside();
-				_gainakPeaceZone.broadcastPacket(new EventTrigger(_siegeEffect, false));
-				_gainakPeaceZone.broadcastPacket(new ExShowScreenMessage(1600066, 0, true, 5000));
+				gainakPeaceZone.setZoneEnabled(true);
+				gainakSiegeZone.setIsActive(false);
+				gainakSiegeZone.updateZoneStatusForCharactersInside();
+				gainakPeaceZone.broadcastPacket(new EventTrigger(siegeEffect, false));
+				gainakPeaceZone.broadcastPacket(new ExShowScreenMessage(1600066, 0, true, 5000));
 
 				startQuestTimer("gainak_change", getTimeBetweenSieges() * 60000, null, null);
 
@@ -130,13 +130,13 @@ public class Gainak extends Quest
 			{
 				SpawnTable.getInstance().spawnSpecificTable("gainak_siege");
 
-				_isInSiege = true;
+				isInSiege = true;
 
-				_gainakPeaceZone.setZoneEnabled(false);
-				_gainakSiegeZone.setIsActive(true);
-				_gainakSiegeZone.updateZoneStatusForCharactersInside();
-				_gainakSiegeZone.broadcastPacket(new EventTrigger(_siegeEffect, true));
-				_gainakSiegeZone.broadcastPacket(new ExShowScreenMessage(1600063, 0, true, 5000));
+				gainakPeaceZone.setZoneEnabled(false);
+				gainakSiegeZone.setIsActive(true);
+				gainakSiegeZone.updateZoneStatusForCharactersInside();
+				gainakSiegeZone.broadcastPacket(new EventTrigger(siegeEffect, true));
+				gainakSiegeZone.broadcastPacket(new ExShowScreenMessage(1600063, 0, true, 5000));
 
 				startQuestTimer("gainak_change", getSiegeDuration() * 60000, null, null);
 

@@ -33,10 +33,10 @@ import java.util.logging.Level;
 
 /**
  * <p>This class is made to handle all the ThreadPools used in L2j.</p>
- * <p>Scheduled Tasks can either be sent to a {@link #_generalScheduledThreadPool "general"} or {@link #_effectsScheduledThreadPool "effects"} {@link ScheduledThreadPoolExecutor ScheduledThreadPool}:
+ * <p>Scheduled Tasks can either be sent to a {@link #generalScheduledThreadPool "general"} or {@link #effectsScheduledThreadPool "effects"} {@link ScheduledThreadPoolExecutor ScheduledThreadPool}:
  * The "effects" one is used for every effects (skills, hp/mp regen ...) while the "general" one is used for
  * everything else that needs to be scheduled.<br>
- * There also is an {@link #_aiScheduledThreadPool "ai"} {@link ScheduledThreadPoolExecutor ScheduledThreadPool} used for AI Tasks.</p>
+ * There also is an {@link #aiScheduledThreadPool "ai"} {@link ScheduledThreadPoolExecutor ScheduledThreadPool} used for AI Tasks.</p>
  * <p>Tasks can be sent to {@link ScheduledThreadPoolExecutor ScheduledThreadPool} either with:
  * <ul>
  * <li>{@link #scheduleEffect(Runnable, long)} : for effects Tasks that needs to be executed only once.</li>
@@ -53,8 +53,8 @@ import java.util.logging.Level;
  * <p>For all Tasks that should be executed with no delay asynchronously in a ThreadPool there also are usual {@link ThreadPoolExecutor ThreadPools}
  * that can grow/shrink according to their load.:
  * <ul>
- * <li>{@link #_generalPacketsThreadPool GeneralPackets} where most packets handler are executed.</li>
- * <li>{@link #_ioPacketsThreadPool I/O Packets} where all the i/o packets are executed.</li>
+ * <li>{@link #generalPacketsThreadPool GeneralPackets} where most packets handler are executed.</li>
+ * <li>{@link #ioPacketsThreadPool I/O Packets} where all the i/o packets are executed.</li>
  * <li>There will be an AI ThreadPool where AI events should be executed</li>
  * <li>A general ThreadPool where everything else that needs to run asynchronously with no delay should be executed ({@link l2server.gameserver.model.actor.knownlist KnownList} updates, SQL updates/inserts...)?</li>
  * </ul>
@@ -67,11 +67,11 @@ public class ThreadPoolManager
 
 	private static final class RunnableWrapper implements Runnable
 	{
-		private final Runnable _r;
+		private final Runnable r;
 
 		public RunnableWrapper(final Runnable r)
 		{
-			_r = r;
+			this.r = r;
 		}
 
 		@Override
@@ -79,7 +79,7 @@ public class ThreadPoolManager
 		{
 			try
 			{
-				_r.run();
+				r.run();
 			}
 			catch (final Throwable e)
 			{
@@ -93,43 +93,43 @@ public class ThreadPoolManager
 		}
 	}
 
-	private ScheduledThreadPoolExecutor _effectsScheduledThreadPool;
-	private ScheduledThreadPoolExecutor _generalScheduledThreadPool;
-	private ScheduledThreadPoolExecutor _aiScheduledThreadPool;
-	private ThreadPoolExecutor _generalPacketsThreadPool;
-	private ThreadPoolExecutor _ioPacketsThreadPool;
-	private ThreadPoolExecutor _generalThreadPool;
+	private ScheduledThreadPoolExecutor effectsScheduledThreadPool;
+	private ScheduledThreadPoolExecutor generalScheduledThreadPool;
+	private ScheduledThreadPoolExecutor aiScheduledThreadPool;
+	private ThreadPoolExecutor generalPacketsThreadPool;
+	private ThreadPoolExecutor ioPacketsThreadPool;
+	private ThreadPoolExecutor generalThreadPool;
 
 	/**
 	 * temp workaround for VM issue
 	 */
 	private static final long MAX_DELAY = Long.MAX_VALUE / 1000000 / 2;
 
-	private boolean _shutdown;
+	private boolean shutdown;
 
 	public static ThreadPoolManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private ThreadPoolManager()
 	{
-		_effectsScheduledThreadPool = new ScheduledThreadPoolExecutor(Config.THREAD_P_EFFECTS,
+		effectsScheduledThreadPool = new ScheduledThreadPoolExecutor(Config.THREAD_P_EFFECTS,
 				new PriorityThreadFactory("EffectsSTPool", Thread.NORM_PRIORITY));
-		_generalScheduledThreadPool = new ScheduledThreadPoolExecutor(Config.THREAD_P_GENERAL,
+		generalScheduledThreadPool = new ScheduledThreadPoolExecutor(Config.THREAD_P_GENERAL,
 				new PriorityThreadFactory("GeneralSTPool", Thread.NORM_PRIORITY));
-		_ioPacketsThreadPool =
+		ioPacketsThreadPool =
 				new ThreadPoolExecutor(Config.IO_PACKET_THREAD_CORE_SIZE, Integer.MAX_VALUE, 5L, TimeUnit.SECONDS,
 						new LinkedBlockingQueue<>(),
 						new PriorityThreadFactory("I/O Packet Pool", Thread.NORM_PRIORITY + 1));
-		_generalPacketsThreadPool = new ThreadPoolExecutor(Config.GENERAL_PACKET_THREAD_CORE_SIZE,
+		generalPacketsThreadPool = new ThreadPoolExecutor(Config.GENERAL_PACKET_THREAD_CORE_SIZE,
 				Config.GENERAL_PACKET_THREAD_CORE_SIZE + 2, 15L, TimeUnit.SECONDS, new LinkedBlockingQueue<>(),
 				new PriorityThreadFactory("Normal Packet Pool", Thread.NORM_PRIORITY + 1));
-		_generalThreadPool =
+		generalThreadPool =
 				new ThreadPoolExecutor(Config.GENERAL_THREAD_CORE_SIZE, Config.GENERAL_THREAD_CORE_SIZE + 2, 5L,
 						TimeUnit.SECONDS, new LinkedBlockingQueue<>(),
 						new PriorityThreadFactory("General Pool", Thread.NORM_PRIORITY));
-		_aiScheduledThreadPool = new ScheduledThreadPoolExecutor(Config.AI_MAX_THREAD,
+		aiScheduledThreadPool = new ScheduledThreadPoolExecutor(Config.AI_MAX_THREAD,
 				new PriorityThreadFactory("AISTPool", Thread.NORM_PRIORITY));
 
 		scheduleGeneralAtFixedRate(new PurgeTask(), 10 * 60 * 1000L, 5 * 60 * 1000L);
@@ -153,7 +153,7 @@ public class ThreadPoolManager
 		try
 		{
 			delay = ThreadPoolManager.validateDelay(delay);
-			return _effectsScheduledThreadPool.schedule(new RunnableWrapper(r), delay, TimeUnit.MILLISECONDS);
+			return effectsScheduledThreadPool.schedule(new RunnableWrapper(r), delay, TimeUnit.MILLISECONDS);
 		}
 		catch (RejectedExecutionException e)
 		{
@@ -167,7 +167,7 @@ public class ThreadPoolManager
 		{
 			delay = ThreadPoolManager.validateDelay(delay);
 			initial = ThreadPoolManager.validateDelay(initial);
-			return _effectsScheduledThreadPool
+			return effectsScheduledThreadPool
 					.scheduleAtFixedRate(new RunnableWrapper(r), initial, delay, TimeUnit.MILLISECONDS);
 		}
 		catch (RejectedExecutionException e)
@@ -179,7 +179,7 @@ public class ThreadPoolManager
 	@Deprecated
 	public boolean removeEffect(RunnableScheduledFuture<?> r)
 	{
-		return _effectsScheduledThreadPool.remove(r);
+		return effectsScheduledThreadPool.remove(r);
 	}
 
 	public ScheduledFuture<?> scheduleGeneral(Runnable r, long delay)
@@ -187,7 +187,7 @@ public class ThreadPoolManager
 		try
 		{
 			delay = ThreadPoolManager.validateDelay(delay);
-			return _generalScheduledThreadPool.schedule(new RunnableWrapper(r), delay, TimeUnit.MILLISECONDS);
+			return generalScheduledThreadPool.schedule(new RunnableWrapper(r), delay, TimeUnit.MILLISECONDS);
 		}
 		catch (RejectedExecutionException e)
 		{
@@ -201,7 +201,7 @@ public class ThreadPoolManager
 		{
 			delay = ThreadPoolManager.validateDelay(delay);
 			initial = ThreadPoolManager.validateDelay(initial);
-			return _generalScheduledThreadPool
+			return generalScheduledThreadPool
 					.scheduleAtFixedRate(new RunnableWrapper(r), initial, delay, TimeUnit.MILLISECONDS);
 		}
 		catch (RejectedExecutionException e)
@@ -213,7 +213,7 @@ public class ThreadPoolManager
 	@Deprecated
 	public boolean removeGeneral(RunnableScheduledFuture<?> r)
 	{
-		return _generalScheduledThreadPool.remove(r);
+		return generalScheduledThreadPool.remove(r);
 	}
 
 	public ScheduledFuture<?> scheduleAi(Runnable r, long delay)
@@ -221,7 +221,7 @@ public class ThreadPoolManager
 		try
 		{
 			delay = ThreadPoolManager.validateDelay(delay);
-			return _aiScheduledThreadPool.schedule(new RunnableWrapper(r), delay, TimeUnit.MILLISECONDS);
+			return aiScheduledThreadPool.schedule(new RunnableWrapper(r), delay, TimeUnit.MILLISECONDS);
 		}
 		catch (RejectedExecutionException e)
 		{
@@ -235,7 +235,7 @@ public class ThreadPoolManager
 		{
 			delay = ThreadPoolManager.validateDelay(delay);
 			initial = ThreadPoolManager.validateDelay(initial);
-			return _aiScheduledThreadPool
+			return aiScheduledThreadPool
 					.scheduleAtFixedRate(new RunnableWrapper(r), initial, delay, TimeUnit.MILLISECONDS);
 		}
 		catch (RejectedExecutionException e)
@@ -246,27 +246,27 @@ public class ThreadPoolManager
 
 	public void executePacket(Runnable pkt)
 	{
-		_generalPacketsThreadPool.execute(pkt);
+		generalPacketsThreadPool.execute(pkt);
 	}
 
 	public void executeCommunityPacket(Runnable r)
 	{
-		_generalPacketsThreadPool.execute(r);
+		generalPacketsThreadPool.execute(r);
 	}
 
 	public void executeIOPacket(Runnable pkt)
 	{
-		_ioPacketsThreadPool.execute(pkt);
+		ioPacketsThreadPool.execute(pkt);
 	}
 
 	public void executeTask(Runnable r)
 	{
-		_generalThreadPool.execute(r);
+		generalThreadPool.execute(r);
 	}
 
 	public void executeAi(Runnable r)
 	{
-		_aiScheduledThreadPool.execute(new RunnableWrapper(r));
+		aiScheduledThreadPool.execute(new RunnableWrapper(r));
 	}
 
 	public String[] getStats()
@@ -274,108 +274,108 @@ public class ThreadPoolManager
 		return new String[]{
 				"STP:",
 				" + Effects:",
-				" |- ActiveThreads:   " + _effectsScheduledThreadPool.getActiveCount(),
-				" |- getCorePoolSize: " + _effectsScheduledThreadPool.getCorePoolSize(),
-				" |- PoolSize:		" + _effectsScheduledThreadPool.getPoolSize(),
-				" |- MaximumPoolSize: " + _effectsScheduledThreadPool.getMaximumPoolSize(),
-				" |- CompletedTasks:  " + _effectsScheduledThreadPool.getCompletedTaskCount(),
-				" |- ScheduledTasks:  " + (_effectsScheduledThreadPool.getTaskCount() -
-						_effectsScheduledThreadPool.getCompletedTaskCount()),
+				" |- ActiveThreads:   " + effectsScheduledThreadPool.getActiveCount(),
+				" |- getCorePoolSize: " + effectsScheduledThreadPool.getCorePoolSize(),
+				" |- PoolSize:		" + effectsScheduledThreadPool.getPoolSize(),
+				" |- MaximumPoolSize: " + effectsScheduledThreadPool.getMaximumPoolSize(),
+				" |- CompletedTasks:  " + effectsScheduledThreadPool.getCompletedTaskCount(),
+				" |- ScheduledTasks:  " + (effectsScheduledThreadPool.getTaskCount() -
+						effectsScheduledThreadPool.getCompletedTaskCount()),
 				" | -------",
 				" + General:",
-				" |- ActiveThreads:   " + _generalScheduledThreadPool.getActiveCount(),
-				" |- getCorePoolSize: " + _generalScheduledThreadPool.getCorePoolSize(),
-				" |- PoolSize:		" + _generalScheduledThreadPool.getPoolSize(),
-				" |- MaximumPoolSize: " + _generalScheduledThreadPool.getMaximumPoolSize(),
-				" |- CompletedTasks:  " + _generalScheduledThreadPool.getCompletedTaskCount(),
-				" |- ScheduledTasks:  " + (_generalScheduledThreadPool.getTaskCount() -
-						_generalScheduledThreadPool.getCompletedTaskCount()),
+				" |- ActiveThreads:   " + generalScheduledThreadPool.getActiveCount(),
+				" |- getCorePoolSize: " + generalScheduledThreadPool.getCorePoolSize(),
+				" |- PoolSize:		" + generalScheduledThreadPool.getPoolSize(),
+				" |- MaximumPoolSize: " + generalScheduledThreadPool.getMaximumPoolSize(),
+				" |- CompletedTasks:  " + generalScheduledThreadPool.getCompletedTaskCount(),
+				" |- ScheduledTasks:  " + (generalScheduledThreadPool.getTaskCount() -
+						generalScheduledThreadPool.getCompletedTaskCount()),
 				" | -------",
 				" + AI:",
-				" |- ActiveThreads:   " + _aiScheduledThreadPool.getActiveCount(),
-				" |- getCorePoolSize: " + _aiScheduledThreadPool.getCorePoolSize(),
-				" |- PoolSize:		" + _aiScheduledThreadPool.getPoolSize(),
-				" |- MaximumPoolSize: " + _aiScheduledThreadPool.getMaximumPoolSize(),
-				" |- CompletedTasks:  " + _aiScheduledThreadPool.getCompletedTaskCount(),
+				" |- ActiveThreads:   " + aiScheduledThreadPool.getActiveCount(),
+				" |- getCorePoolSize: " + aiScheduledThreadPool.getCorePoolSize(),
+				" |- PoolSize:		" + aiScheduledThreadPool.getPoolSize(),
+				" |- MaximumPoolSize: " + aiScheduledThreadPool.getMaximumPoolSize(),
+				" |- CompletedTasks:  " + aiScheduledThreadPool.getCompletedTaskCount(),
 				" |- ScheduledTasks:  " +
-						(_aiScheduledThreadPool.getTaskCount() - _aiScheduledThreadPool.getCompletedTaskCount()),
+						(aiScheduledThreadPool.getTaskCount() - aiScheduledThreadPool.getCompletedTaskCount()),
 				"TP:",
 				" + Packets:",
-				" |- ActiveThreads:   " + _generalPacketsThreadPool.getActiveCount(),
-				" |- getCorePoolSize: " + _generalPacketsThreadPool.getCorePoolSize(),
-				" |- MaximumPoolSize: " + _generalPacketsThreadPool.getMaximumPoolSize(),
-				" |- LargestPoolSize: " + _generalPacketsThreadPool.getLargestPoolSize(),
-				" |- PoolSize:		" + _generalPacketsThreadPool.getPoolSize(),
-				" |- CompletedTasks:  " + _generalPacketsThreadPool.getCompletedTaskCount(),
-				" |- QueuedTasks:	 " + _generalPacketsThreadPool.getQueue().size(),
+				" |- ActiveThreads:   " + generalPacketsThreadPool.getActiveCount(),
+				" |- getCorePoolSize: " + generalPacketsThreadPool.getCorePoolSize(),
+				" |- MaximumPoolSize: " + generalPacketsThreadPool.getMaximumPoolSize(),
+				" |- LargestPoolSize: " + generalPacketsThreadPool.getLargestPoolSize(),
+				" |- PoolSize:		" + generalPacketsThreadPool.getPoolSize(),
+				" |- CompletedTasks:  " + generalPacketsThreadPool.getCompletedTaskCount(),
+				" |- QueuedTasks:	 " + generalPacketsThreadPool.getQueue().size(),
 				" | -------",
 				" + I/O Packets:",
-				" |- ActiveThreads:   " + _ioPacketsThreadPool.getActiveCount(),
-				" |- getCorePoolSize: " + _ioPacketsThreadPool.getCorePoolSize(),
-				" |- MaximumPoolSize: " + _ioPacketsThreadPool.getMaximumPoolSize(),
-				" |- LargestPoolSize: " + _ioPacketsThreadPool.getLargestPoolSize(),
-				" |- PoolSize:		" + _ioPacketsThreadPool.getPoolSize(),
-				" |- CompletedTasks:  " + _ioPacketsThreadPool.getCompletedTaskCount(),
-				" |- QueuedTasks:	 " + _ioPacketsThreadPool.getQueue().size(),
+				" |- ActiveThreads:   " + ioPacketsThreadPool.getActiveCount(),
+				" |- getCorePoolSize: " + ioPacketsThreadPool.getCorePoolSize(),
+				" |- MaximumPoolSize: " + ioPacketsThreadPool.getMaximumPoolSize(),
+				" |- LargestPoolSize: " + ioPacketsThreadPool.getLargestPoolSize(),
+				" |- PoolSize:		" + ioPacketsThreadPool.getPoolSize(),
+				" |- CompletedTasks:  " + ioPacketsThreadPool.getCompletedTaskCount(),
+				" |- QueuedTasks:	 " + ioPacketsThreadPool.getQueue().size(),
 				" | -------",
 				" + General Tasks:",
-				" |- ActiveThreads:   " + _generalThreadPool.getActiveCount(),
-				" |- getCorePoolSize: " + _generalThreadPool.getCorePoolSize(),
-				" |- MaximumPoolSize: " + _generalThreadPool.getMaximumPoolSize(),
-				" |- LargestPoolSize: " + _generalThreadPool.getLargestPoolSize(),
-				" |- PoolSize:		" + _generalThreadPool.getPoolSize(),
-				" |- CompletedTasks:  " + _generalThreadPool.getCompletedTaskCount(),
-				" |- QueuedTasks:	 " + _generalThreadPool.getQueue().size(),
+				" |- ActiveThreads:   " + generalThreadPool.getActiveCount(),
+				" |- getCorePoolSize: " + generalThreadPool.getCorePoolSize(),
+				" |- MaximumPoolSize: " + generalThreadPool.getMaximumPoolSize(),
+				" |- LargestPoolSize: " + generalThreadPool.getLargestPoolSize(),
+				" |- PoolSize:		" + generalThreadPool.getPoolSize(),
+				" |- CompletedTasks:  " + generalThreadPool.getCompletedTaskCount(),
+				" |- QueuedTasks:	 " + generalThreadPool.getQueue().size(),
 				" | -------"
 		};
 	}
 
 	private static class PriorityThreadFactory implements ThreadFactory
 	{
-		private int _prio;
-		private String _name;
-		private AtomicInteger _threadNumber = new AtomicInteger(1);
-		private ThreadGroup _group;
+		private int prio;
+		private String name;
+		private AtomicInteger threadNumber = new AtomicInteger(1);
+		private ThreadGroup group;
 
 		public PriorityThreadFactory(String name, int prio)
 		{
-			_prio = prio;
-			_name = name;
-			_group = new ThreadGroup(_name);
+			this.prio = prio;
+			this.name = name;
+			group = new ThreadGroup(name);
 		}
 
 		@Override
 		public Thread newThread(Runnable r)
 		{
-			Thread t = new Thread(_group, r);
-			t.setName(_name + "-" + _threadNumber.getAndIncrement());
-			t.setPriority(_prio);
+			Thread t = new Thread(group, r);
+			t.setName(name + "-" + threadNumber.getAndIncrement());
+			t.setPriority(prio);
 			return t;
 		}
 
 		public ThreadGroup getGroup()
 		{
-			return _group;
+			return group;
 		}
 	}
 
 	public void shutdown()
 	{
-		_shutdown = true;
+		shutdown = true;
 		try
 		{
-			_generalPacketsThreadPool.awaitTermination(1, TimeUnit.SECONDS);
-			_ioPacketsThreadPool.awaitTermination(1, TimeUnit.SECONDS);
-			_effectsScheduledThreadPool.awaitTermination(1, TimeUnit.SECONDS);
-			_generalScheduledThreadPool.awaitTermination(1, TimeUnit.SECONDS);
-			_aiScheduledThreadPool.awaitTermination(1, TimeUnit.SECONDS);
-			_generalThreadPool.awaitTermination(1, TimeUnit.SECONDS);
-			_generalPacketsThreadPool.shutdown();
-			_ioPacketsThreadPool.shutdown();
-			_effectsScheduledThreadPool.shutdown();
-			_generalScheduledThreadPool.shutdown();
-			_aiScheduledThreadPool.shutdown();
-			_generalThreadPool.shutdown();
+			generalPacketsThreadPool.awaitTermination(1, TimeUnit.SECONDS);
+			ioPacketsThreadPool.awaitTermination(1, TimeUnit.SECONDS);
+			effectsScheduledThreadPool.awaitTermination(1, TimeUnit.SECONDS);
+			generalScheduledThreadPool.awaitTermination(1, TimeUnit.SECONDS);
+			aiScheduledThreadPool.awaitTermination(1, TimeUnit.SECONDS);
+			generalThreadPool.awaitTermination(1, TimeUnit.SECONDS);
+			generalPacketsThreadPool.shutdown();
+			ioPacketsThreadPool.shutdown();
+			effectsScheduledThreadPool.shutdown();
+			generalScheduledThreadPool.shutdown();
+			aiScheduledThreadPool.shutdown();
+			generalThreadPool.shutdown();
 			Log.info("All ThreadPools are now stopped");
 		}
 		catch (InterruptedException e)
@@ -386,23 +386,23 @@ public class ThreadPoolManager
 
 	public boolean isShutdown()
 	{
-		return _shutdown;
+		return shutdown;
 	}
 
 	public void purge()
 	{
-		_effectsScheduledThreadPool.purge();
-		_generalScheduledThreadPool.purge();
-		_aiScheduledThreadPool.purge();
-		_ioPacketsThreadPool.purge();
-		_generalPacketsThreadPool.purge();
-		_generalThreadPool.purge();
+		effectsScheduledThreadPool.purge();
+		generalScheduledThreadPool.purge();
+		aiScheduledThreadPool.purge();
+		ioPacketsThreadPool.purge();
+		generalPacketsThreadPool.purge();
+		generalThreadPool.purge();
 	}
 
 	public String getPacketStats()
 	{
 		final StringBuilder sb = new StringBuilder(1000);
-		ThreadFactory tf = _generalPacketsThreadPool.getThreadFactory();
+		ThreadFactory tf = generalPacketsThreadPool.getThreadFactory();
 		if (tf instanceof PriorityThreadFactory)
 		{
 			PriorityThreadFactory ptf = (PriorityThreadFactory) tf;
@@ -410,7 +410,7 @@ public class ThreadPoolManager
 			Thread[] threads = new Thread[count + 2];
 			ptf.getGroup().enumerate(threads);
 			StringUtil.append(sb, "General Packet Thread Pool:\r\n" + "Tasks in the queue: ",
-					String.valueOf(_generalPacketsThreadPool.getQueue().size()),
+					String.valueOf(generalPacketsThreadPool.getQueue().size()),
 					"\r\n" + "Showing threads stack trace:\r\n" + "There should be ", String.valueOf(count),
 					" Threads\r\n");
 			for (Thread t : threads)
@@ -436,7 +436,7 @@ public class ThreadPoolManager
 	public String getIOPacketStats()
 	{
 		final StringBuilder sb = new StringBuilder(1000);
-		ThreadFactory tf = _ioPacketsThreadPool.getThreadFactory();
+		ThreadFactory tf = ioPacketsThreadPool.getThreadFactory();
 
 		if (tf instanceof PriorityThreadFactory)
 		{
@@ -445,7 +445,7 @@ public class ThreadPoolManager
 			Thread[] threads = new Thread[count + 2];
 			ptf.getGroup().enumerate(threads);
 			StringUtil.append(sb, "I/O Packet Thread Pool:\r\n" + "Tasks in the queue: ",
-					String.valueOf(_ioPacketsThreadPool.getQueue().size()),
+					String.valueOf(ioPacketsThreadPool.getQueue().size()),
 					"\r\n" + "Showing threads stack trace:\r\n" + "There should be ", String.valueOf(count),
 					" Threads\r\n");
 
@@ -473,7 +473,7 @@ public class ThreadPoolManager
 	public String getGeneralStats()
 	{
 		final StringBuilder sb = new StringBuilder(1000);
-		ThreadFactory tf = _generalThreadPool.getThreadFactory();
+		ThreadFactory tf = generalThreadPool.getThreadFactory();
 
 		if (tf instanceof PriorityThreadFactory)
 		{
@@ -482,7 +482,7 @@ public class ThreadPoolManager
 			Thread[] threads = new Thread[count + 2];
 			ptf.getGroup().enumerate(threads);
 			StringUtil.append(sb, "General Thread Pool:\r\n" + "Tasks in the queue: ",
-					String.valueOf(_generalThreadPool.getQueue().size()),
+					String.valueOf(generalThreadPool.getQueue().size()),
 					"\r\n" + "Showing threads stack trace:\r\n" + "There should be ", String.valueOf(count),
 					" Threads\r\n");
 
@@ -515,15 +515,15 @@ public class ThreadPoolManager
 		@Override
 		public void run()
 		{
-			_effectsScheduledThreadPool.purge();
-			_generalScheduledThreadPool.purge();
-			_aiScheduledThreadPool.purge();
+			effectsScheduledThreadPool.purge();
+			generalScheduledThreadPool.purge();
+			aiScheduledThreadPool.purge();
 		}
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ThreadPoolManager _instance = new ThreadPoolManager();
+		protected static final ThreadPoolManager instance = new ThreadPoolManager();
 	}
 }

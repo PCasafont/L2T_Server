@@ -43,18 +43,18 @@ public class LoginCrypt
 			(byte) 0x6c
 	};
 
-	private NewCrypt _staticCrypt = new NewCrypt(STATIC_BLOWFISH_KEY);
-	private NewCrypt _crypt;
+	private NewCrypt staticCrypt = new NewCrypt(STATIC_BLOWFISH_KEY);
+	private NewCrypt crypt;
 	private boolean _static = true;
 
 	public void setKey(byte[] key)
 	{
-		_crypt = new NewCrypt(key);
+		crypt = new NewCrypt(key);
 	}
 
 	public boolean decrypt(byte[] raw, final int offset, final int size) throws IOException
 	{
-		_crypt.decrypt(raw, offset, size);
+		crypt.decrypt(raw, offset, size);
 		return NewCrypt.verifyChecksum(raw, offset, size);
 	}
 
@@ -71,7 +71,7 @@ public class LoginCrypt
 			// padding
 			size += 8 - size % 8;
 			NewCrypt.encXORPass(raw, offset, size, Rnd.nextInt());
-			_staticCrypt.crypt(raw, offset, size);
+			staticCrypt.crypt(raw, offset, size);
 
 			_static = false;
 		}
@@ -80,7 +80,7 @@ public class LoginCrypt
 			// padding
 			size += 8 - size % 8;
 			NewCrypt.appendChecksum(raw, offset, size);
-			_crypt.crypt(raw, offset, size);
+			crypt.crypt(raw, offset, size);
 		}
 		return size;
 	}

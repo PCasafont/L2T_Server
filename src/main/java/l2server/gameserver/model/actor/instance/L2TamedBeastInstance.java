@@ -48,20 +48,20 @@ import java.util.concurrent.Future;
 // The (mostly optional) AI on feeding the spawn is handled by the datapack ai script
 public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 {
-	private int _foodSkillId;
+	private int foodSkillId;
 	private static final int MAX_DISTANCE_FROM_HOME = 30000;
 	private static final int MAX_DISTANCE_FROM_OWNER = 2000;
 	private static final int MAX_DURATION = 1200000; // 20 minutes
 	private static final int DURATION_CHECK_INTERVAL = 60000; // 1 minute
 	private static final int DURATION_INCREASE_INTERVAL = 20000; // 20 secs (gained upon feeding)
 	private static final int BUFF_INTERVAL = 5000; // 5 seconds
-	private int _remainingTime = MAX_DURATION;
-	private int _homeX, _homeY, _homeZ;
-	private L2PcInstance _owner;
-	private Future<?> _buffTask = null;
-	private Future<?> _durationCheckTask = null;
-	private static boolean _isFreyaBeast;
-	private List<L2Skill> _beastSkills = null;
+	private int remainingTime = MAX_DURATION;
+	private int homeX, homeY, homeZ;
+	private L2PcInstance owner;
+	private Future<?> buffTask = null;
+	private Future<?> durationCheckTask = null;
+	private static boolean isFreyaBeast;
+	private List<L2Skill> beastSkills = null;
 
 	public L2TamedBeastInstance(int objectId, L2NpcTemplate template)
 	{
@@ -73,7 +73,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 	public L2TamedBeastInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, int foodSkillId, int x, int y, int z)
 	{
 		super(objectId, template);
-		_isFreyaBeast = false;
+		isFreyaBeast = false;
 		setInstanceType(InstanceType.L2TamedBeastInstance);
 		setCurrentHp(getMaxHp());
 		setCurrentMp(getMaxMp());
@@ -86,7 +86,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 	public L2TamedBeastInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, int food, int x, int y, int z, boolean isFreyaBeast)
 	{
 		super(objectId, template);
-		_isFreyaBeast = isFreyaBeast;
+		this.isFreyaBeast = isFreyaBeast;
 		setInstanceType(InstanceType.L2TamedBeastInstance);
 		setCurrentHp(getMaxHp());
 		setCurrentMp(getMaxMp());
@@ -96,30 +96,30 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 		setOwner(owner);
 		if (isFreyaBeast)
 		{
-			getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _owner);
+			getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, owner);
 		}
 	}
 
 	public void onReceiveFood()
 	{
 		// Eating food extends the duration by 20secs, to a max of 20minutes
-		_remainingTime = _remainingTime + DURATION_INCREASE_INTERVAL;
-		if (_remainingTime > MAX_DURATION)
+		remainingTime = remainingTime + DURATION_INCREASE_INTERVAL;
+		if (remainingTime > MAX_DURATION)
 		{
-			_remainingTime = MAX_DURATION;
+			remainingTime = MAX_DURATION;
 		}
 	}
 
 	public Point3D getHome()
 	{
-		return new Point3D(_homeX, _homeY, _homeZ);
+		return new Point3D(homeX, homeY, homeZ);
 	}
 
 	public void setHome(int x, int y, int z)
 	{
-		_homeX = x;
-		_homeY = y;
-		_homeZ = z;
+		homeX = x;
+		homeY = y;
+		homeZ = z;
 	}
 
 	public void setHome(L2Character c)
@@ -129,32 +129,32 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 
 	public int getRemainingTime()
 	{
-		return _remainingTime;
+		return remainingTime;
 	}
 
 	public void setRemainingTime(int duration)
 	{
-		_remainingTime = duration;
+		remainingTime = duration;
 	}
 
 	public int getFoodType()
 	{
-		return _foodSkillId;
+		return foodSkillId;
 	}
 
 	public void setFoodType(int foodItemId)
 	{
 		if (foodItemId > 0)
 		{
-			_foodSkillId = foodItemId;
+			foodSkillId = foodItemId;
 
 			// start the duration checks
 			// start the buff tasks
-			if (_durationCheckTask != null)
+			if (durationCheckTask != null)
 			{
-				_durationCheckTask.cancel(true);
+				durationCheckTask.cancel(true);
 			}
-			_durationCheckTask = ThreadPoolManager.getInstance()
+			durationCheckTask = ThreadPoolManager.getInstance()
 					.scheduleGeneralAtFixedRate(new CheckDuration(this), DURATION_CHECK_INTERVAL,
 							DURATION_CHECK_INTERVAL);
 		}
@@ -169,56 +169,56 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 		}
 
 		getAI().stopFollow();
-		if (_buffTask != null)
+		if (buffTask != null)
 		{
-			_buffTask.cancel(true);
+			buffTask.cancel(true);
 		}
-		if (_durationCheckTask != null)
+		if (durationCheckTask != null)
 		{
-			_durationCheckTask.cancel(true);
+			durationCheckTask.cancel(true);
 		}
 
 		// clean up variables
-		if (_owner != null && _owner.getTrainedBeasts() != null)
+		if (owner != null && owner.getTrainedBeasts() != null)
 		{
-			_owner.getTrainedBeasts().remove(this);
+			owner.getTrainedBeasts().remove(this);
 		}
-		_buffTask = null;
-		_durationCheckTask = null;
-		_owner = null;
-		_foodSkillId = 0;
-		_remainingTime = 0;
+		buffTask = null;
+		durationCheckTask = null;
+		owner = null;
+		foodSkillId = 0;
+		remainingTime = 0;
 		return true;
 	}
 
 	@Override
 	public boolean isAutoAttackable(L2Character attacker)
 	{
-		return !_isFreyaBeast;
+		return !isFreyaBeast;
 	}
 
 	public boolean isFreyaBeast()
 	{
-		return _isFreyaBeast;
+		return isFreyaBeast;
 	}
 
 	public void addBeastSkill(L2Skill skill)
 	{
-		if (_beastSkills == null)
+		if (beastSkills == null)
 		{
-			_beastSkills = new ArrayList<>();
+			beastSkills = new ArrayList<>();
 		}
-		_beastSkills.add(skill);
+		beastSkills.add(skill);
 	}
 
 	public void castBeastSkills()
 	{
-		if (_owner == null || _beastSkills == null)
+		if (owner == null || beastSkills == null)
 		{
 			return;
 		}
 		int delay = 100;
-		for (L2Skill skill : _beastSkills)
+		for (L2Skill skill : beastSkills)
 		{
 			ThreadPoolManager.getInstance().scheduleGeneral(new buffCast(skill), delay);
 			delay += 100 + skill.getHitTime();
@@ -228,23 +228,23 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 
 	private class buffCast implements Runnable
 	{
-		private L2Skill _skill;
+		private L2Skill skill;
 
 		public buffCast(L2Skill skill)
 		{
-			_skill = skill;
+			this.skill = skill;
 		}
 
 		@Override
 		public void run()
 		{
-			if (_skill == null)
+			if (skill == null)
 			{
-				getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _owner);
+				getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, owner);
 			}
 			else
 			{
-				sitCastAndFollow(_skill, _owner);
+				sitCastAndFollow(skill, owner);
 			}
 		}
 	}
@@ -252,7 +252,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 	@Override
 	public L2PcInstance getOwner()
 	{
-		return _owner;
+		return owner;
 	}
 
 	@Override
@@ -260,7 +260,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 	{
 		if (owner != null)
 		{
-			_owner = owner;
+			this.owner = owner;
 			setTitle(owner.getName());
 			// broadcast the new title
 			setShowSummonAnimation(true);
@@ -269,9 +269,9 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 			owner.addTrainedBeast(this);
 
 			// always and automatically follow the owner.
-			getAI().startFollow(_owner, 100);
+			getAI().startFollow(owner, 100);
 
-			if (!_isFreyaBeast)
+			if (!isFreyaBeast)
 			{
 				// instead of calculating this value each time, let's get this now and pass it on
 				int totalBuffsAvailable = 0;
@@ -285,11 +285,11 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 				}
 
 				// start the buff tasks
-				if (_buffTask != null)
+				if (buffTask != null)
 				{
-					_buffTask.cancel(true);
+					buffTask.cancel(true);
 				}
-				_buffTask = ThreadPoolManager.getInstance()
+				buffTask = ThreadPoolManager.getInstance()
 						.scheduleGeneralAtFixedRate(new CheckOwnerBuffs(this, totalBuffsAvailable), BUFF_INTERVAL,
 								BUFF_INTERVAL);
 			}
@@ -302,30 +302,30 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 
 	public boolean isTooFarFromHome()
 	{
-		return !this.isInsideRadius(_homeX, _homeY, _homeZ, MAX_DISTANCE_FROM_HOME, true, true);
+		return !this.isInsideRadius(homeX, homeY, homeZ, MAX_DISTANCE_FROM_HOME, true, true);
 	}
 
 	@Override
 	public void deleteMe()
 	{
-		if (_buffTask != null)
+		if (buffTask != null)
 		{
-			_buffTask.cancel(true);
+			buffTask.cancel(true);
 		}
-		_durationCheckTask.cancel(true);
+		durationCheckTask.cancel(true);
 		stopHpMpRegeneration();
 
 		// clean up variables
-		if (_owner != null && _owner.getTrainedBeasts() != null)
+		if (owner != null && owner.getTrainedBeasts() != null)
 		{
-			_owner.getTrainedBeasts().remove(this);
+			owner.getTrainedBeasts().remove(this);
 		}
 		setTarget(null);
-		_buffTask = null;
-		_durationCheckTask = null;
-		_owner = null;
-		_foodSkillId = 0;
-		_remainingTime = 0;
+		buffTask = null;
+		durationCheckTask = null;
+		owner = null;
+		foodSkillId = 0;
+		remainingTime = 0;
 
 		// remove the spawn
 		super.deleteMe();
@@ -336,19 +336,19 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 	public void onOwnerGotAttacked(L2Character attacker)
 	{
 		// check if the owner is no longer around...if so, despawn
-		if (_owner == null || !_owner.isOnline())
+		if (owner == null || !owner.isOnline())
 		{
 			deleteMe();
 			return;
 		}
 		// if the owner is too far away, stop anything else and immediately run towards the owner.
-		if (!_owner.isInsideRadius(this, MAX_DISTANCE_FROM_OWNER, true, true))
+		if (!owner.isInsideRadius(this, MAX_DISTANCE_FROM_OWNER, true, true))
 		{
-			getAI().startFollow(_owner);
+			getAI().startFollow(owner);
 			return;
 		}
 		// if the owner is dead, do nothing...
-		if (_owner.isDead() || _isFreyaBeast)
+		if (owner.isDead() || isFreyaBeast)
 		{
 			return;
 		}
@@ -359,7 +359,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 			return;
 		}
 
-		float HPRatio = (float) _owner.getCurrentHp() / _owner.getMaxHp();
+		float HPRatio = (float) owner.getCurrentHp() / owner.getMaxHp();
 
 		// if the owner has a lot of HP, then debuff the enemy with a random debuff among the available skills
 		// use of more than one debuff at this moment is acceptable
@@ -402,7 +402,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 								skill.getSkillType() == L2SkillType.MANAHEAL_PERCENT ||
 								skill.getSkillType() == L2SkillType.MANARECHARGE))
 				{
-					sitCastAndFollow(skill, _owner);
+					sitCastAndFollow(skill, owner);
 					return;
 				}
 			}
@@ -425,41 +425,41 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 
 		setTarget(target);
 		doCast(skill);
-		getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _owner);
+		getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, owner);
 	}
 
 	private static class CheckDuration implements Runnable
 	{
-		private L2TamedBeastInstance _tamedBeast;
+		private L2TamedBeastInstance tamedBeast;
 
 		CheckDuration(L2TamedBeastInstance tamedBeast)
 		{
-			_tamedBeast = tamedBeast;
+			this.tamedBeast = tamedBeast;
 		}
 
 		@Override
 		public void run()
 		{
-			int foodTypeSkillId = _tamedBeast.getFoodType();
-			L2PcInstance owner = _tamedBeast.getOwner();
+			int foodTypeSkillId = tamedBeast.getFoodType();
+			L2PcInstance owner = tamedBeast.getOwner();
 
 			L2ItemInstance item = null;
-			if (_isFreyaBeast)
+			if (isFreyaBeast)
 			{
 				item = owner.getInventory().getItemByItemId(foodTypeSkillId);
 				if (item != null && item.getCount() >= 1)
 				{
-					owner.destroyItem("BeastMob", item, 1, _tamedBeast, true);
-					_tamedBeast.broadcastPacket(new SocialAction(_tamedBeast.getObjectId(), 3));
+					owner.destroyItem("BeastMob", item, 1, tamedBeast, true);
+					tamedBeast.broadcastPacket(new SocialAction(tamedBeast.getObjectId(), 3));
 				}
 				else
 				{
-					_tamedBeast.deleteMe();
+					tamedBeast.deleteMe();
 				}
 			}
 			else
 			{
-				_tamedBeast.setRemainingTime(_tamedBeast.getRemainingTime() - DURATION_CHECK_INTERVAL);
+				tamedBeast.setRemainingTime(tamedBeast.getRemainingTime() - DURATION_CHECK_INTERVAL);
 				// I tried to avoid this as much as possible...but it seems I can't avoid hardcoding
 				// ids further, except by carrying an additional variable just for these two lines...
 				// Find which food item needs to be consumed.
@@ -476,8 +476,8 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 				if (item != null && item.getCount() >= 1)
 				{
 					L2Object oldTarget = owner.getTarget();
-					owner.setTarget(_tamedBeast);
-					L2Object[] targets = {_tamedBeast};
+					owner.setTarget(tamedBeast);
+					L2Object[] targets = {tamedBeast};
 
 					// emulate a call to the owner using food, but bypass all checks for range, etc
 					// this also causes a call to the AI tasks handling feeding, which may call onReceiveFood as required.
@@ -488,21 +488,21 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 				{
 					// if the owner has no food, the beast immediately despawns, except when it was only
 					// newly spawned.  Newly spawned beasts can last up to 5 minutes
-					if (_tamedBeast.getRemainingTime() < MAX_DURATION - 300000)
+					if (tamedBeast.getRemainingTime() < MAX_DURATION - 300000)
 					{
-						_tamedBeast.setRemainingTime(-1);
+						tamedBeast.setRemainingTime(-1);
 					}
 				}
 				/* There are too many conflicting reports about whether distance from home should
                  * be taken into consideration.  Disabled for now.
 				 *
-				if (_tamedBeast.isTooFarFromHome())
-					_tamedBeast.setRemainingTime(-1);
+				if (tamedBeast.isTooFarFromHome())
+					tamedBeast.setRemainingTime(-1);
 				 */
 
-				if (_tamedBeast.getRemainingTime() <= 0)
+				if (tamedBeast.getRemainingTime() <= 0)
 				{
-					_tamedBeast.deleteMe();
+					tamedBeast.deleteMe();
 				}
 			}
 		}
@@ -510,19 +510,19 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 
 	private class CheckOwnerBuffs implements Runnable
 	{
-		private L2TamedBeastInstance _tamedBeast;
-		private int _numBuffs;
+		private L2TamedBeastInstance tamedBeast;
+		private int numBuffs;
 
 		CheckOwnerBuffs(L2TamedBeastInstance tamedBeast, int numBuffs)
 		{
-			_tamedBeast = tamedBeast;
-			_numBuffs = numBuffs;
+			this.tamedBeast = tamedBeast;
+			this.numBuffs = numBuffs;
 		}
 
 		@Override
 		public void run()
 		{
-			L2PcInstance owner = _tamedBeast.getOwner();
+			L2PcInstance owner = tamedBeast.getOwner();
 
 			// check if the owner is no longer around...if so, despawn
 			if (owner == null || !owner.isOnline())
@@ -549,11 +549,11 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 
 			int totalBuffsOnOwner = 0;
 			int i = 0;
-			int rand = Rnd.get(_numBuffs);
+			int rand = Rnd.get(numBuffs);
 			L2Skill buffToGive = null;
 
 			// get this npc's skills:  getSkills()
-			HashMap<Integer, L2Skill> skills = (HashMap<Integer, L2Skill>) _tamedBeast.getTemplate().getSkills();
+			HashMap<Integer, L2Skill> skills = (HashMap<Integer, L2Skill>) tamedBeast.getTemplate().getSkills();
 
 			for (L2Skill skill : skills.values())
 			{
@@ -571,11 +571,11 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 				}
 			}
 			// if the owner has less than 60% of this beast's available buff, cast a random buff
-			if (_numBuffs * 2 / 3 > totalBuffsOnOwner)
+			if (numBuffs * 2 / 3 > totalBuffsOnOwner)
 			{
-				_tamedBeast.sitCastAndFollow(buffToGive, owner);
+				tamedBeast.sitCastAndFollow(buffToGive, owner);
 			}
-			getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _tamedBeast.getOwner());
+			getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, tamedBeast.getOwner());
 		}
 	}
 

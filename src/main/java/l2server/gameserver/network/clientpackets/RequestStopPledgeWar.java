@@ -30,12 +30,12 @@ public final class RequestStopPledgeWar extends L2GameClientPacket
 {
 	//
 
-	private String _pledgeName;
+	private String pledgeName;
 
 	@Override
 	protected void readImpl()
 	{
-		_pledgeName = readS();
+		pledgeName = readS();
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public final class RequestStopPledgeWar extends L2GameClientPacket
 			return;
 		}
 
-		L2Clan clan = ClanTable.getInstance().getClanByName(_pledgeName);
+		L2Clan clan = ClanTable.getInstance().getClanByName(pledgeName);
 		if (clan == null)
 		{
 			player.sendMessage("No such clan.");

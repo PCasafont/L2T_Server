@@ -39,7 +39,7 @@ import java.util.logging.Logger;
  */
 public class AdminKill implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminKill.class.getName());
+	private static Logger log = Logger.getLogger(AdminKill.class.getName());
 	private static final String[] ADMIN_COMMANDS = {"admin_kill", "admin_kill_monster"};
 
 	@Override
@@ -158,7 +158,7 @@ public class AdminKill implements IAdminCommandHandler
 		}
 		if (Config.DEBUG)
 		{
-			_log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ")" + " killed character " +
+			log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ")" + " killed character " +
 					target.getObjectId());
 		}
 	}

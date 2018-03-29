@@ -20,7 +20,7 @@ import l2server.gameserver.util.Util;
 
 public class GuillotineFortress extends L2AttackableAIScript
 {
-	private static final int[] _npcIds = {
+	private static final int[] npcIds = {
 			23199,
 			23200,
 			23201,
@@ -38,7 +38,7 @@ public class GuillotineFortress extends L2AttackableAIScript
 			23212,
 			23242
 	};
-	private static final L2Skill _chaosShield = SkillTable.getInstance().getInfo(15090, 1);
+	private static final L2Skill chaosShield = SkillTable.getInstance().getInfo(15090, 1);
 
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet, L2Skill skill)
@@ -70,7 +70,7 @@ public class GuillotineFortress extends L2AttackableAIScript
 	@Override
 	public String onSpawn(L2Npc npc)
 	{
-		npc.doCast(_chaosShield);
+		npc.doCast(chaosShield);
 
 		return super.onSpawn(npc);
 	}
@@ -79,7 +79,7 @@ public class GuillotineFortress extends L2AttackableAIScript
 	{
 		super(questId, name, descr);
 
-		for (int id : _npcIds)
+		for (int id : npcIds)
 		{
 			addAttackId(id);
 
@@ -93,7 +93,7 @@ public class GuillotineFortress extends L2AttackableAIScript
 				continue;
 			}
 
-			if (Util.contains(_npcIds, spawn.getNpcId()))
+			if (Util.contains(npcIds, spawn.getNpcId()))
 			{
 				notifySpawn(spawn.getNpc());
 			}

@@ -26,19 +26,19 @@ import l2server.gameserver.model.zone.L2ZoneType;
  */
 public class L2PeaceZone extends L2ZoneType
 {
-	boolean _enabled;
+	boolean enabled;
 
 	public L2PeaceZone(int id)
 	{
 		super(id);
 
-		_enabled = true;
+		enabled = true;
 	}
 
 	@Override
 	protected void onEnter(L2Character character)
 	{
-		if (!_enabled)
+		if (!enabled)
 		{
 			return;
 		}
@@ -69,12 +69,12 @@ public class L2PeaceZone extends L2ZoneType
 
 	public boolean isEnabled()
 	{
-		return _enabled;
+		return enabled;
 	}
 
 	public void setZoneEnabled(boolean val)
 	{
-		_enabled = val;
+		enabled = val;
 
 		for (L2Character chara : getCharactersInside().values())
 		{
@@ -83,7 +83,7 @@ public class L2PeaceZone extends L2ZoneType
 				continue;
 			}
 
-			if (_enabled)
+			if (enabled)
 			{
 				onEnter(chara);
 			}

@@ -23,8 +23,8 @@ import l2server.util.Rnd;
 public class LuckyChests extends EventInstance
 {
 
-	private boolean _chestsSpawned = false;
-	private L2Spawn[] _chestSpawns = new L2Spawn[200];
+	private boolean chestsSpawned = false;
+	private L2Spawn[] chestSpawns = new L2Spawn[200];
 
 	public LuckyChests(int id, EventConfig config)
 	{
@@ -39,7 +39,7 @@ public class LuckyChests extends EventInstance
 			return false;
 		}
 
-		if (!_chestsSpawned)
+		if (!chestsSpawned)
 		{
 			spawnChests();
 		}
@@ -51,12 +51,12 @@ public class LuckyChests extends EventInstance
 	public void calculateRewards()
 	{
 		EventTeam team;
-		if (_config.getLocation().getTeamCount() != 4)
+		if (config.getLocation().getTeamCount() != 4)
 		{
-			if (_teams[0].getPoints() == _teams[1].getPoints())
+			if (teams[0].getPoints() == teams[1].getPoints())
 			{
 				// Check if one of the teams have no more players left
-				if (_teams[0].getParticipatedPlayerCount() == 0 || _teams[1].getParticipatedPlayerCount() == 0)
+				if (teams[0].getParticipatedPlayerCount() == 0 || teams[1].getParticipatedPlayerCount() == 0)
 				{
 					// set state to rewarding
 					setState(EventState.REWARDING);
@@ -78,9 +78,9 @@ public class LuckyChests extends EventInstance
 			setState(EventState.REWARDING);
 
 			// Get team which has more points
-			team = _teams[_teams[0].getPoints() > _teams[1].getPoints() ? 0 : 1];
+			team = teams[teams[0].getPoints() > teams[1].getPoints() ? 0 : 1];
 
-			if (team == _teams[0])
+			if (team == teams[0])
 			{
 				rewardTeams(0);
 			}
@@ -93,29 +93,29 @@ public class LuckyChests extends EventInstance
 		{
 			// Set state REWARDING so nobody can point anymore
 			setState(EventState.REWARDING);
-			if (_teams[0].getPoints() > _teams[1].getPoints() && _teams[0].getPoints() > _teams[2].getPoints() &&
-					_teams[0].getPoints() > _teams[3].getPoints())
+			if (teams[0].getPoints() > teams[1].getPoints() && teams[0].getPoints() > teams[2].getPoints() &&
+					teams[0].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(0);
-				team = _teams[0];
+				team = teams[0];
 			}
-			else if (_teams[1].getPoints() > _teams[0].getPoints() && _teams[1].getPoints() > _teams[2].getPoints() &&
-					_teams[1].getPoints() > _teams[3].getPoints())
+			else if (teams[1].getPoints() > teams[0].getPoints() && teams[1].getPoints() > teams[2].getPoints() &&
+					teams[1].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(1);
-				team = _teams[1];
+				team = teams[1];
 			}
-			else if (_teams[2].getPoints() > _teams[0].getPoints() && _teams[2].getPoints() > _teams[1].getPoints() &&
-					_teams[2].getPoints() > _teams[3].getPoints())
+			else if (teams[2].getPoints() > teams[0].getPoints() && teams[2].getPoints() > teams[1].getPoints() &&
+					teams[2].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(2);
-				team = _teams[2];
+				team = teams[2];
 			}
-			else if (_teams[3].getPoints() > _teams[0].getPoints() && _teams[3].getPoints() > _teams[1].getPoints() &&
-					_teams[3].getPoints() > _teams[2].getPoints())
+			else if (teams[3].getPoints() > teams[0].getPoints() && teams[3].getPoints() > teams[1].getPoints() &&
+					teams[3].getPoints() > teams[2].getPoints())
 			{
 				rewardTeams(3);
-				team = _teams[3];
+				team = teams[3];
 			}
 			else
 			{
@@ -139,7 +139,7 @@ public class LuckyChests extends EventInstance
 	public String getRunningInfo(L2PcInstance player)
 	{
 		String html = "";
-		for (EventTeam team : _teams)
+		for (EventTeam team : teams)
 		{
 			if (team.getParticipatedPlayerCount() > 0)
 			{
@@ -213,7 +213,7 @@ public class LuckyChests extends EventInstance
 			return;
 		}
 
-		new EventTeleporter(killedPlayerInstance, _teams[killedTeamId].getCoords(), false, false);
+		new EventTeleporter(killedPlayerInstance, teams[killedTeamId].getCoords(), false, false);
 	}
 
 	private void spawnChests()
@@ -227,37 +227,37 @@ public class LuckyChests extends EventInstance
 			{
 				chestAmount = 200;
 			}
-			else if (_config.getLocation().getTeamCount() == 4)
+			else if (config.getLocation().getTeamCount() == 4)
 			{
-				chestAmount = _teams[0].getParticipatedPlayerCount() * 10;
+				chestAmount = teams[0].getParticipatedPlayerCount() * 10;
 			}
 			else
 			{
-				chestAmount = _teams[0].getParticipatedPlayerCount() * 5;
+				chestAmount = teams[0].getParticipatedPlayerCount() * 5;
 			}
 			int i;
 			for (i = 0; i < chestAmount && i < 200; i++)
 			{
-				_chestSpawns[i] = new L2Spawn(tmpl);
+				chestSpawns[i] = new L2Spawn(tmpl);
 
-				int[] pos = _config.getLocation().getZone().getZone().getRandomPoint();
-				_chestSpawns[i].setX(pos[0]);
-				_chestSpawns[i].setY(pos[1]);
-				_chestSpawns[i].setZ(pos[2]);
-				_chestSpawns[i].setHeading(Rnd.get(65536));
-				_chestSpawns[i].setRespawnDelay(10);
-				_chestSpawns[i].setInstanceId(getInstanceId());
+				int[] pos = config.getLocation().getZone().getZone().getRandomPoint();
+				chestSpawns[i].setX(pos[0]);
+				chestSpawns[i].setY(pos[1]);
+				chestSpawns[i].setZ(pos[2]);
+				chestSpawns[i].setHeading(Rnd.get(65536));
+				chestSpawns[i].setRespawnDelay(10);
+				chestSpawns[i].setInstanceId(getInstanceId());
 
-				SpawnTable.getInstance().addNewSpawn(_chestSpawns[i], false);
+				SpawnTable.getInstance().addNewSpawn(chestSpawns[i], false);
 
-				_chestSpawns[i].stopRespawn();
-				_chestSpawns[i].doSpawn();
+				chestSpawns[i].stopRespawn();
+				chestSpawns[i].doSpawn();
 			}
-			_chestsSpawned = true;
+			chestsSpawned = true;
 		}
 		catch (Exception e)
 		{
-			Log.warning("Chest event exception (" + _config.getLocation().getName() + "):");
+			Log.warning("Chest event exception (" + config.getLocation().getName() + "):");
 			e.printStackTrace();
 		}
 	}
@@ -267,14 +267,14 @@ public class LuckyChests extends EventInstance
 		int i;
 		for (i = 0; i < 200; i++)
 		{
-			if (_chestSpawns[i] != null)
+			if (chestSpawns[i] != null)
 			{
-				_chestSpawns[i].getNpc().deleteMe();
-				_chestSpawns[i].stopRespawn();
-				SpawnTable.getInstance().deleteSpawn(_chestSpawns[i], false);
+				chestSpawns[i].getNpc().deleteMe();
+				chestSpawns[i].stopRespawn();
+				SpawnTable.getInstance().deleteSpawn(chestSpawns[i], false);
 			}
 		}
-		_chestsSpawned = false;
+		chestsSpawned = false;
 	}
 
 	class UnspawnChestsTask implements Runnable

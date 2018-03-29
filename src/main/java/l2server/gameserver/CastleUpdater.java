@@ -30,13 +30,13 @@ import java.util.logging.Level;
  */
 public class CastleUpdater implements Runnable
 {
-	private L2Clan _clan;
-	private int _runCount = 0;
+	private L2Clan clan;
+	private int runCount = 0;
 
 	public CastleUpdater(L2Clan clan, int runCount)
 	{
-		_clan = clan;
-		_runCount = runCount;
+		this.clan = clan;
+		this.runCount = runCount;
 	}
 
 	@Override
@@ -45,13 +45,13 @@ public class CastleUpdater implements Runnable
 		try
 		{
 			// Move current castle treasury to clan warehouse every 2 hour
-			ItemContainer warehouse = _clan.getWarehouse();
-			if (warehouse != null && _clan.getHasCastle() > 0)
+			ItemContainer warehouse = clan.getWarehouse();
+			if (warehouse != null && clan.getHasCastle() > 0)
 			{
-				Castle castle = CastleManager.getInstance().getCastleById(_clan.getHasCastle());
+				Castle castle = CastleManager.getInstance().getCastleById(clan.getHasCastle());
 				if (!Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 				{
-					if (_runCount % Config.ALT_MANOR_SAVE_PERIOD_RATE == 0)
+					if (runCount % Config.ALT_MANOR_SAVE_PERIOD_RATE == 0)
 					{
 						castle.saveSeedData();
 						castle.saveCropData();
@@ -61,7 +61,7 @@ public class CastleUpdater implements Runnable
 						}
 					}
 				}
-				CastleUpdater cu = new CastleUpdater(_clan, ++_runCount);
+				CastleUpdater cu = new CastleUpdater(clan, ++runCount);
 				ThreadPoolManager.getInstance().scheduleGeneral(cu, 3600000);
 			}
 		}

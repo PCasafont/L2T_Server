@@ -27,8 +27,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExCubeGameChangeTeam extends L2GameServerPacket
 {
-	L2PcInstance _player;
-	boolean _fromRedTeam;
+	L2PcInstance player;
+	boolean fromRedTeam;
 
 	/**
 	 * Move Player from Team x to Team y
@@ -38,8 +38,8 @@ public class ExCubeGameChangeTeam extends L2GameServerPacket
 	 */
 	public ExCubeGameChangeTeam(L2PcInstance player, boolean fromRedTeam)
 	{
-		_player = player;
-		_fromRedTeam = fromRedTeam;
+		this.player = player;
+		this.fromRedTeam = fromRedTeam;
 	}
 
 	/* (non-Javadoc)
@@ -48,8 +48,8 @@ public class ExCubeGameChangeTeam extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_player.getObjectId());
-		writeD(_fromRedTeam ? 0x01 : 0x00);
-		writeD(_fromRedTeam ? 0x00 : 0x01);
+		writeD(player.getObjectId());
+		writeD(fromRedTeam ? 0x01 : 0x00);
+		writeD(fromRedTeam ? 0x00 : 0x01);
 	}
 }

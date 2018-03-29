@@ -44,7 +44,7 @@ import java.util.logging.Level;
 public class L2ContactList
 {
 	private final L2PcInstance activeChar;
-	private final List<String> _contacts;
+	private final List<String> contacts;
 
 	private final String QUERY_ADD = "INSERT INTO character_contacts (charId, contactId) VALUES (?, ?)";
 	private final String QUERY_REMOVE = "DELETE FROM character_contacts WHERE charId = ? and contactId = ?";
@@ -53,13 +53,13 @@ public class L2ContactList
 	public L2ContactList(L2PcInstance player)
 	{
 		activeChar = player;
-		_contacts = new CopyOnWriteArrayList<>();
+		contacts = new CopyOnWriteArrayList<>();
 		restore();
 	}
 
 	public void restore()
 	{
-		_contacts.clear();
+		contacts.clear();
 
 		Connection con = null;
 
@@ -82,7 +82,7 @@ public class L2ContactList
 					continue;
 				}
 
-				_contacts.add(contactName);
+				contacts.add(contactName);
 			}
 
 			rset.close();
@@ -103,7 +103,7 @@ public class L2ContactList
 		SystemMessage sm;
 
 		int contactId = CharNameTable.getInstance().getIdByName(name);
-		if (_contacts.contains(name))
+		if (contacts.contains(name))
 		{
 			activeChar.sendPacket(SystemMessageId.NAME_ALREADY_EXIST_ON_CONTACT_LIST);
 			return false;
@@ -113,7 +113,7 @@ public class L2ContactList
 			activeChar.sendPacket(SystemMessageId.CANNOT_ADD_YOUR_NAME_ON_CONTACT_LIST);
 			return false;
 		}
-		else if (_contacts.size() >= 100)
+		else if (contacts.size() >= 100)
 		{
 			activeChar.sendPacket(SystemMessageId.CONTACT_LIST_LIMIT_REACHED);
 			return false;
@@ -127,7 +127,7 @@ public class L2ContactList
 		}
 		else
 		{
-			for (String contactName : _contacts)
+			for (String contactName : contacts)
 			{
 				if (contactName.equalsIgnoreCase(name))
 				{
@@ -147,7 +147,7 @@ public class L2ContactList
 			statement.execute();
 			statement.close();
 
-			_contacts.add(name);
+			contacts.add(name);
 
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_SUCCESSFULLY_ADDED_TO_CONTACT_LIST);
 			sm.addString(name);
@@ -168,7 +168,7 @@ public class L2ContactList
 	{
 		int contactId = CharNameTable.getInstance().getIdByName(name);
 
-		if (!_contacts.contains(name))
+		if (!contacts.contains(name))
 		{
 			activeChar.sendPacket(SystemMessageId.NAME_NOT_REGISTERED_ON_CONTACT_LIST);
 			return;
@@ -180,7 +180,7 @@ public class L2ContactList
 			return;
 		}
 
-		_contacts.remove(name);
+		contacts.remove(name);
 
 		Connection con = null;
 
@@ -208,6 +208,6 @@ public class L2ContactList
 
 	public List<String> getAllContacts()
 	{
-		return _contacts;
+		return contacts;
 	}
 }

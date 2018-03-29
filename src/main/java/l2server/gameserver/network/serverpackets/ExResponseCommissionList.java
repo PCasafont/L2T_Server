@@ -24,21 +24,21 @@ public class ExResponseCommissionList extends L2GameServerPacket
 {
 
 	@SuppressWarnings("unused")
-	private L2PcInstance _player;
+	private L2PcInstance player;
 	@SuppressWarnings("unused")
-	private long _category;
+	private long category;
 	@SuppressWarnings("unused")
-	private int _type;
+	private int type;
 	@SuppressWarnings("unused")
-	private int _grade;
+	private int grade;
 	@SuppressWarnings("unused")
-	private String _search;
+	private String search;
 	@SuppressWarnings("unused")
-	private boolean _yourAuction;
+	private boolean yourAuction;
 	@SuppressWarnings("unused")
-	private int _yourAuctionsSize = 0;
+	private int yourAuctionsSize = 0;
 	@SuppressWarnings("unused")
-	private int _categories[][] = {
+	private int categories[][] = {
 			{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18},
 			{19, 20, 21, 22, 23, 24, 25, 26, 27, 28},
 			{29, 30, 31, 32, 33, 34},
@@ -49,18 +49,18 @@ public class ExResponseCommissionList extends L2GameServerPacket
 
 	public ExResponseCommissionList(L2PcInstance player, long category, int type, int grade, String searchName)
 	{
-		_player = player;
-		_category = category;
-		_type = type;
-		_grade = grade;
-		_search = searchName;
-		_yourAuction = false;
+		this.player = player;
+		this.category = category;
+		this.type = type;
+		this.grade = grade;
+		search = searchName;
+		yourAuction = false;
 	}
 
 	public ExResponseCommissionList(L2PcInstance player)
 	{
-		_player = player;
-		_yourAuction = true;
+		this.player = player;
+		yourAuction = true;
 	}
 
 	@Override
@@ -68,85 +68,85 @@ public class ExResponseCommissionList extends L2GameServerPacket
 	{
 		/*writeC(0xFE);
         writeH(0xF7);
-		if (_yourAuction)
+		if (yourAuction)
 		{
-			writeD(_yourAuctionsSize <= 0 ? -2 : 0x02);
+			writeD(yourAuctionsSize <= 0 ? -2 : 0x02);
 			writeD((int)(System.currentTimeMillis()/1000));
 			writeD(0x00);
-			writeD(_yourAuctionsSize);
-			for (Auctions auction : _am.getAuctions())
-				if (auction.getPlayerID() == _player.getObjectId())
+			writeD(yourAuctionsSize);
+			for (Auctions auction : am.getAuctions())
+				if (auction.getPlayerID() == player.getObjectId())
 					writeItems(auction);
 		}
 		else
 		{
-			writeD(_search != null && _category == 100 && _am.getAuctionsSizeById(_grade,  _search) > 0 ? 3 : _am.getAuctionsSizeById(_grade,  _search) <= 0 || _am.getAuctionsSizeById(_category, _grade, _search) <= 0 ? -1 : 3);
+			writeD(search != null && category == 100 && am.getAuctionsSizeById(grade,  search) > 0 ? 3 : am.getAuctionsSizeById(grade,  search) <= 0 || am.getAuctionsSizeById(category, grade, search) <= 0 ? -1 : 3);
 			writeD((int)(System.currentTimeMillis()/1000));
 			writeD(0x00);
-			if (_category > 60 && _category < 66 || _category == 101)
+			if (category > 60 && category < 66 || category == 101)
 			{
-				writeD(_am.getAuctionsSizeById(_category, _grade, _search));
-				for (Auctions auction : _am.getAuctions())
+				writeD(am.getAuctionsSizeById(category, grade, search));
+				for (Auctions auction : am.getAuctions())
 				{
-					int cat = _category == 101 ? 0 : (int)(_category%60);
-					for (int ID : _categories[cat])
+					int cat = category == 101 ? 0 : (int)(category%60);
+					for (int ID : categories[cat])
 					{
-						if (_grade == -1 && _search.equals(""))
+						if (grade == -1 && search.equals(""))
 						{
 							if (auction.getCategory() == ID)
 								writeItems(auction);
 						}
-						else if (_grade != -1)
+						else if (grade != -1)
 						{
-							if (_search.equals(""))
-								if (auction.getCategory() == ID && _grade == auction.getItem().getItem().getCrystalType())
+							if (search.equals(""))
+								if (auction.getCategory() == ID && grade == auction.getItem().getItem().getCrystalType())
 									writeItems(auction);
-							if (!_search.equals(""))
-								if (auction.getCategory() == ID && _grade == auction.getItem().getItem().getCrystalType() && auction.getItem().getName().contains(_search))
+							if (!search.equals(""))
+								if (auction.getCategory() == ID && grade == auction.getItem().getItem().getCrystalType() && auction.getItem().getName().contains(search))
 									writeItems(auction);
 						}
-						else if (!_search.equals(""))
-							if (auction.getCategory() == ID && auction.getItem().getName().contains(_search))
+						else if (!search.equals(""))
+							if (auction.getCategory() == ID && auction.getItem().getName().contains(search))
 								writeItems(auction);
 					}
 				}
 			}
-			else if (_category < 60)
+			else if (category < 60)
 			{
-				writeD(_am.getAuctionsSizeById(_category, _grade, _search)); // Auction count, maybe items putted in auction???
-				for (Auctions auction : _am.getAuctions())
+				writeD(am.getAuctionsSizeById(category, grade, search)); // Auction count, maybe items putted in auction???
+				for (Auctions auction : am.getAuctions())
 				{
-					if (_grade == -1 && _search.equals(""))
+					if (grade == -1 && search.equals(""))
 					{
-						if (auction.getCategory() == _category)
+						if (auction.getCategory() == category)
 							writeItems(auction);
 					}
-					else if (_grade != -1)
+					else if (grade != -1)
 					{
-						if (_search.equals(""))
-							if (auction.getCategory() == _category && _grade == auction.getItem().getItem().getCrystalType())
+						if (search.equals(""))
+							if (auction.getCategory() == category && grade == auction.getItem().getItem().getCrystalType())
 								writeItems(auction);
-						if (!_search.equals(""))
-							if (auction.getCategory() == _category && _grade == auction.getItem().getItem().getCrystalType() && auction.getItem().getName().contains(_search))
+						if (!search.equals(""))
+							if (auction.getCategory() == category && grade == auction.getItem().getItem().getCrystalType() && auction.getItem().getName().contains(search))
 								writeItems(auction);
 					}
-					else if (!_search.equals(""))
-						if (auction.getCategory() == _category && auction.getItem().getName().contains(_search))
+					else if (!search.equals(""))
+						if (auction.getCategory() == category && auction.getItem().getName().contains(search))
 							writeItems(auction);
 				}
 			}
 			else
 			{
-				if (_search != null)
+				if (search != null)
 				{
-					writeD(_am.getAuctionsSizeById(_grade, _search)); // Auction count, maybe items putted in auction???
-					for (Auctions auction : _am.getAuctions())
+					writeD(am.getAuctionsSizeById(grade, search)); // Auction count, maybe items putted in auction???
+					for (Auctions auction : am.getAuctions())
 					{
-							if (_grade == -1)
-								if (auction.getItem().getName().contains(_search))
+							if (grade == -1)
+								if (auction.getItem().getName().contains(search))
 									writeItems(auction);
-							if (_grade != -1)
-								if (_grade == auction.getItem().getItem().getCrystalType() && auction.getItem().getName().contains(_search))
+							if (grade != -1)
+								if (grade == auction.getItem().getItem().getCrystalType() && auction.getItem().getName().contains(search))
 									writeItems(auction);
 					}
 				}

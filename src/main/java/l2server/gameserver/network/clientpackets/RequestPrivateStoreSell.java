@@ -33,19 +33,19 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 
 	private static final int BATCH_LENGTH = 32; // length of the one item
 
-	private int _storePlayerId;
-	private ItemRequest[] _items = null;
+	private int storePlayerId;
+	private ItemRequest[] items = null;
 
 	@Override
 	protected void readImpl()
 	{
-		_storePlayerId = readD();
+		storePlayerId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != _buf.remaining())
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
 		{
 			return;
 		}
-		_items = new ItemRequest[count];
+		items = new ItemRequest[count];
 
 		for (int i = 0; i < count; i++)
 		{
@@ -59,10 +59,10 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 
 			if (objectId < 1 || itemId < 1 || cnt < 1 || price < 0)
 			{
-				_items = null;
+				items = null;
 				return;
 			}
-			_items[i] = new ItemRequest(objectId, itemId, cnt, price);
+			items[i] = new ItemRequest(objectId, itemId, cnt, price);
 		}
 	}
 
@@ -75,7 +75,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 			return;
 		}
 
-		if (_items == null)
+		if (items == null)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -87,7 +87,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 			return;
 		}
 
-		L2PcInstance object = L2World.getInstance().getPlayer(_storePlayerId);
+		L2PcInstance object = L2World.getInstance().getPlayer(storePlayerId);
 		if (object == null)
 		{
 			return;
@@ -123,7 +123,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 			return;
 		}
 
-		if (!storeList.privateStoreSell(player, _items))
+		if (!storeList.privateStoreSell(player, items))
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			Log.warning("PrivateStore sell has failed due to invalid list or request. Player: " + player.getName() +

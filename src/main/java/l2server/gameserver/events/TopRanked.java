@@ -23,7 +23,7 @@ import java.util.logging.Level;
  */
 public class TopRanked
 {
-    private StartTask _task;
+    private StartTask task;
 
 
     public int getRankedPoints(int id)
@@ -192,8 +192,8 @@ public class TopRanked
             {
                 nextStartTime.add(Calendar.DAY_OF_MONTH, 7);
             }
-            _task = new StartTask(nextStartTime.getTimeInMillis());
-            ThreadPoolManager.getInstance().executeTask(_task);
+            task = new StartTask(nextStartTime.getTimeInMillis());
+            ThreadPoolManager.getInstance().executeTask(task);
         }
         catch (Exception e)
         {
@@ -203,14 +203,14 @@ public class TopRanked
 
     public StartTask getStartTask()
     {
-        return _task;
+        return task;
     }
 
     public void showInfo(L2PcInstance activeChar)
     {
         Calendar now = Calendar.getInstance();
         Calendar startTime = Calendar.getInstance();
-        startTime.setTimeInMillis(_task.getStartTime());
+        startTime.setTimeInMillis(task.getStartTime());
         String time;
         if (now.get(Calendar.DAY_OF_MONTH) == startTime.get(Calendar.DAY_OF_MONTH))
         {
@@ -221,7 +221,7 @@ public class TopRanked
             time = "many days";
         }
         time += " at " + startTime.get(Calendar.HOUR_OF_DAY) + ":" + startTime.get(Calendar.MINUTE);
-        long toStart = _task.getStartTime() - System.currentTimeMillis();
+        long toStart = task.getStartTime() - System.currentTimeMillis();
         int hours = (int) (toStart / 3600000);
         int minutes = (int) (toStart / 60000) % 60;
         if (hours > 0 || minutes > 0)
@@ -242,22 +242,22 @@ public class TopRanked
 
     class StartTask implements Runnable
     {
-        private long _startTime;
+        private long startTime;
 
         public StartTask(long startTime)
         {
-            _startTime = startTime;
+            this.startTime = startTime;
         }
 
         public long getStartTime()
         {
-            return _startTime;
+            return startTime;
         }
 
         @Override
         public void run()
         {
-            int delay = (int) Math.round((_startTime - System.currentTimeMillis()) / 1000.0);
+            int delay = (int) Math.round((startTime - System.currentTimeMillis()) / 1000.0);
 
             if (delay > 0)
             {
@@ -274,12 +274,12 @@ public class TopRanked
 
     public static TopRanked getInstance()
     {
-        return SingletonHolder._instance;
+        return SingletonHolder.instance;
     }
 
     private static class SingletonHolder
     {
-        protected static final TopRanked _instance = new TopRanked();
+        protected static final TopRanked instance = new TopRanked();
     }
 
 

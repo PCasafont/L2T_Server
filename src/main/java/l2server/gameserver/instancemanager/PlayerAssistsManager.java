@@ -36,17 +36,17 @@ public class PlayerAssistsManager
 		public Map<L2PcInstance, Long> HelpTimers = new HashMap<>();
 	}
 
-	Map<Integer, PlayerInfo> _players = new HashMap<>();
+	Map<Integer, PlayerInfo> players = new HashMap<>();
 
 	public void updateAttackTimer(L2PcInstance attacker, L2PcInstance target)
 	{
-		synchronized (_players)
+		synchronized (players)
 		{
-			PlayerInfo playerInfo = _players.get(target.getObjectId());
+			PlayerInfo playerInfo = players.get(target.getObjectId());
 			if (playerInfo == null)
 			{
 				playerInfo = new PlayerInfo();
-				_players.put(target.getObjectId(), playerInfo);
+				players.put(target.getObjectId(), playerInfo);
 			}
 
 			synchronized (playerInfo)
@@ -59,13 +59,13 @@ public class PlayerAssistsManager
 
 	public void updateHelpTimer(L2PcInstance helper, L2PcInstance target)
 	{
-		synchronized (_players)
+		synchronized (players)
 		{
-			PlayerInfo playerInfo = _players.get(target.getObjectId());
+			PlayerInfo playerInfo = players.get(target.getObjectId());
 			if (playerInfo == null)
 			{
 				playerInfo = new PlayerInfo();
-				_players.put(target.getObjectId(), playerInfo);
+				players.put(target.getObjectId(), playerInfo);
 			}
 
 			synchronized (playerInfo)
@@ -80,9 +80,9 @@ public class PlayerAssistsManager
 	{
 		long curTime = System.currentTimeMillis();
 		Set<L2PcInstance> assistants = new HashSet<>();
-		if (killer != null && _players.containsKey(killer.getObjectId()))
+		if (killer != null && players.containsKey(killer.getObjectId()))
 		{
-			PlayerInfo killerInfo = _players.get(killer.getObjectId());
+			PlayerInfo killerInfo = players.get(killer.getObjectId());
 
 			// Gather the assistants
 			List<L2PcInstance> toDeleteList = new ArrayList<>();
@@ -105,9 +105,9 @@ public class PlayerAssistsManager
 			}
 		}
 
-		if (victim != null && _players.containsKey(victim.getObjectId()))
+		if (victim != null && players.containsKey(victim.getObjectId()))
 		{
-			PlayerInfo victimInfo = _players.get(victim.getObjectId());
+			PlayerInfo victimInfo = players.get(victim.getObjectId());
 
 			// Gather more assistants
 			for (L2PcInstance assistant : victimInfo.AttackTimers.keySet())
@@ -115,9 +115,9 @@ public class PlayerAssistsManager
 				if (victimInfo.AttackTimers.get(assistant) > curTime)
 				{
 					assistants.add(assistant);
-					if (_players.containsKey(assistant.getObjectId()))
+					if (players.containsKey(assistant.getObjectId()))
 					{
-						PlayerInfo assistantInfo = _players.get(assistant.getObjectId());
+						PlayerInfo assistantInfo = players.get(assistant.getObjectId());
 
 						// Gather the assistant's assistants
 						List<L2PcInstance> toDeleteList = new ArrayList<>();
@@ -155,12 +155,12 @@ public class PlayerAssistsManager
 
 	public static PlayerAssistsManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final PlayerAssistsManager _instance = new PlayerAssistsManager();
+		protected static final PlayerAssistsManager instance = new PlayerAssistsManager();
 	}
 }

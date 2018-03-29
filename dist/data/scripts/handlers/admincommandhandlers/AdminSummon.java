@@ -27,7 +27,7 @@ import java.util.logging.Logger;
  */
 public class AdminSummon implements IAdminCommandHandler
 {
-	Logger _log = Logger.getLogger(AdminSummon.class.getName());
+	Logger log = Logger.getLogger(AdminSummon.class.getName());
 
 	public static final String[] ADMIN_COMMANDS = {"admin_summon"};
 
@@ -71,7 +71,7 @@ public class AdminSummon implements IAdminCommandHandler
 			if (!AdminCommandAccessRights.getInstance().hasAccess(subCommand, activeChar.getAccessLevel()))
 			{
 				activeChar.sendMessage("You don't have the access right to use this command!");
-				_log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
+				log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
 						", but have no access to it!");
 				return false;
 			}
@@ -84,7 +84,7 @@ public class AdminSummon implements IAdminCommandHandler
 			if (!AdminCommandAccessRights.getInstance().hasAccess(subCommand, activeChar.getAccessLevel()))
 			{
 				activeChar.sendMessage("You don't have the access right to use this command!");
-				_log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
+				log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
 						", but have no access to it!");
 				return false;
 			}

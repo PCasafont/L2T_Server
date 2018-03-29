@@ -23,12 +23,12 @@ import l2server.gameserver.network.serverpackets.ExFriendDetailInfo;
  */
 public class RequestFriendDetailInfo extends L2GameClientPacket
 {
-	String _charName;
+	String charName;
 
 	@Override
 	protected void readImpl()
 	{
-		_charName = readS();
+		charName = readS();
 	}
 
 	@Override
@@ -40,6 +40,6 @@ public class RequestFriendDetailInfo extends L2GameClientPacket
 		{
 			return;
 		}
-		activeChar.sendPacket(new ExFriendDetailInfo(activeChar, _charName));
+		activeChar.sendPacket(new ExFriendDetailInfo(activeChar, charName));
 	}
 }

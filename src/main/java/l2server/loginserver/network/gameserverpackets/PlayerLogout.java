@@ -28,7 +28,7 @@ import java.util.logging.Logger;
  */
 public class PlayerLogout extends BaseRecievePacket
 {
-	protected static Logger _log = Logger.getLogger(PlayerLogout.class.getName());
+	protected static Logger log = Logger.getLogger(PlayerLogout.class.getName());
 
 	/**
 	 * @param decrypt

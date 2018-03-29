@@ -39,7 +39,7 @@ import l2server.gameserver.templates.skills.L2SkillType;
  */
 public class Sweep implements ISkillHandler
 {
-	//private static Logger _log = Logger.getLogger(Sweep.class.getName());
+	//private static Logger log = Logger.getLogger(Sweep.class.getName());
 
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.SWEEP};
 

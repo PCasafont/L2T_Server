@@ -28,7 +28,7 @@ import java.util.List;
 public class NewCharacterSuccess extends L2GameServerPacket
 {
 	// dddddddddddddddddddd
-	private List<L2PcTemplate> _chars = new ArrayList<>();
+	private List<L2PcTemplate> chars = new ArrayList<>();
 
 	public NewCharacterSuccess()
 	{
@@ -37,15 +37,15 @@ public class NewCharacterSuccess extends L2GameServerPacket
 
 	public void addChar(L2PcTemplate template)
 	{
-		_chars.add(template);
+		chars.add(template);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_chars.size());
+		writeD(chars.size());
 
-		for (L2PcTemplate temp : _chars)
+		for (L2PcTemplate temp : chars)
 		{
 			if (temp == null)
 			{

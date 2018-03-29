@@ -47,7 +47,7 @@ import java.util.logging.Logger;
  */
 public class Blow implements ISkillHandler
 {
-	private static final Logger _logDamage = Logger.getLogger("damage");
+	private static final Logger logDamage = Logger.getLogger("damage");
 
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.BLOW};
 
@@ -229,7 +229,7 @@ public class Blow implements ISkillHandler
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[]{activeChar, " did damage ", (int) damage, skill, " to ", target});
 					record.setLoggerName("pdam");
-					_logDamage.log(record);
+					logDamage.log(record);
 				}
 
 				int reflectedDamage = 0;

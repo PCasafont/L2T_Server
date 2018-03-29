@@ -31,7 +31,7 @@ import java.util.logging.Logger;
  */
 public class AdminInvul implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminInvul.class.getName());
+	private static Logger log = Logger.getLogger(AdminInvul.class.getName());
 	private static final String[] ADMIN_COMMANDS = {"admin_invul", "admin_setinvul"};
 
 	@Override
@@ -72,7 +72,7 @@ public class AdminInvul implements IAdminCommandHandler
 			text = activeChar.getName() + " is now mortal";
 			if (Config.DEBUG)
 			{
-				_log.fine("GM: Gm removed invul mode from character " + activeChar.getName() + "(" +
+				log.fine("GM: Gm removed invul mode from character " + activeChar.getName() + "(" +
 						activeChar.getObjectId() + ")");
 			}
 		}
@@ -82,7 +82,7 @@ public class AdminInvul implements IAdminCommandHandler
 			text = activeChar.getName() + " is now invulnerable";
 			if (Config.DEBUG)
 			{
-				_log.fine("GM: Gm activated invul mode for character " + activeChar.getName() + "(" +
+				log.fine("GM: Gm activated invul mode for character " + activeChar.getName() + "(" +
 						activeChar.getObjectId() + ")");
 			}
 		}

@@ -54,14 +54,14 @@ public class GameGuardReply extends L2GameClientPacket
 			(byte) 0xc5,
 			};
 
-	private byte[] _reply = new byte[8];
+	private byte[] reply = new byte[8];
 
 	@Override
 	protected void readImpl()
 	{
-		readB(_reply, 0, 4);
+		readB(reply, 0, 4);
 		readD();
-		readB(_reply, 4, 4);
+		readB(reply, 4, 4);
 	}
 
 	@Override
@@ -71,7 +71,7 @@ public class GameGuardReply extends L2GameClientPacket
 		try
 		{
 			MessageDigest md = MessageDigest.getInstance("SHA");
-			byte[] result = md.digest(_reply);
+			byte[] result = md.digest(reply);
 			if (Arrays.equals(result, VALID))
 			{
 				client.setGameGuardOk(true);

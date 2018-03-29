@@ -79,9 +79,9 @@ import gnu.trove.TIntIntHashMap;
 
 public class L2Attackable extends L2Npc
 {
-	private boolean _isRaid = false;
-	private boolean _isRaidMinion = false;
-	private boolean _champion = false;
+	private boolean isRaid = false;
+	private boolean isRaidMinion = false;
+	private boolean champion = false;
 
 	/**
 	 * This class contains all AggroInfo of the L2Attackable against the attacker L2Character.
@@ -93,53 +93,53 @@ public class L2Attackable extends L2Npc
 	 */
 	public static final class AggroInfo
 	{
-		private final L2Character _attacker;
-		private int _hate = 0;
-		private int _damage = 0;
+		private final L2Character attacker;
+		private int hate = 0;
+		private int damage = 0;
 
 		public AggroInfo(L2Character pAttacker)
 		{
-			_attacker = pAttacker;
+			attacker = pAttacker;
 		}
 
 		public final L2Character getAttacker()
 		{
-			return _attacker;
+			return attacker;
 		}
 
 		public final int getHate()
 		{
-			return _hate;
+			return hate;
 		}
 
 		public final int checkHate(L2Attackable owner)
 		{
-			if (_attacker.isAlikeDead() || !_attacker.isVisible() || !owner.getKnownList().knowsObject(_attacker))
+			if (attacker.isAlikeDead() || !attacker.isVisible() || !owner.getKnownList().knowsObject(attacker))
 			{
-				_hate = 0;
+				hate = 0;
 			}
 
-			return _hate;
+			return hate;
 		}
 
 		public final void addHate(int value)
 		{
-			_hate = (int) Math.min(_hate + (long) value, 999999999);
+			hate = (int) Math.min(hate + (long) value, 999999999);
 		}
 
 		public final void stopHate()
 		{
-			_hate = 0;
+			hate = 0;
 		}
 
 		public final int getDamage()
 		{
-			return _damage;
+			return damage;
 		}
 
 		public final void addDamage(int value)
 		{
-			_damage = (int) Math.min(_damage + (long) value, 999999999);
+			damage = (int) Math.min(damage + (long) value, 999999999);
 		}
 
 		@Override
@@ -152,7 +152,7 @@ public class L2Attackable extends L2Npc
 
 			if (obj instanceof AggroInfo)
 			{
-				return ((AggroInfo) obj).getAttacker() == _attacker;
+				return ((AggroInfo) obj).getAttacker() == attacker;
 			}
 
 			return false;
@@ -161,7 +161,7 @@ public class L2Attackable extends L2Npc
 		@Override
 		public final int hashCode()
 		{
-			return _attacker.getObjectId();
+			return attacker.getObjectId();
 		}
 	}
 
@@ -174,19 +174,19 @@ public class L2Attackable extends L2Npc
 	 */
 	protected static final class RewardInfo
 	{
-		protected L2Character _attacker;
+		protected L2Character attacker;
 
-		protected int _dmg = 0;
+		protected int dmg = 0;
 
 		public RewardInfo(L2Character pAttacker, int pDmg)
 		{
-			_attacker = pAttacker;
-			_dmg = pDmg;
+			attacker = pAttacker;
+			dmg = pDmg;
 		}
 
 		public void addDamage(int pDmg)
 		{
-			_dmg += pDmg;
+			dmg += pDmg;
 		}
 
 		@Override
@@ -199,7 +199,7 @@ public class L2Attackable extends L2Npc
 
 			if (obj instanceof RewardInfo)
 			{
-				return ((RewardInfo) obj)._attacker == _attacker;
+				return ((RewardInfo) obj).attacker == attacker;
 			}
 
 			return false;
@@ -208,7 +208,7 @@ public class L2Attackable extends L2Npc
 		@Override
 		public int hashCode()
 		{
-			return _attacker.getObjectId();
+			return attacker.getObjectId();
 		}
 	}
 
@@ -220,13 +220,13 @@ public class L2Attackable extends L2Npc
 	 */
 	public static final class AbsorberInfo
 	{
-		public int _objId;
-		public double _absorbedHP;
+		public int objId;
+		public double absorbedHP;
 
 		AbsorberInfo(int objId, double pAbsorbedHP)
 		{
-			_objId = objId;
-			_absorbedHP = pAbsorbedHP;
+			this.objId = objId;
+			absorbedHP = pAbsorbedHP;
 		}
 
 		@Override
@@ -239,7 +239,7 @@ public class L2Attackable extends L2Npc
 
 			if (obj instanceof AbsorberInfo)
 			{
-				return ((AbsorberInfo) obj)._objId == _objId;
+				return ((AbsorberInfo) obj).objId == objId;
 			}
 
 			return false;
@@ -248,62 +248,62 @@ public class L2Attackable extends L2Npc
 		@Override
 		public int hashCode()
 		{
-			return _objId;
+			return objId;
 		}
 	}
 
 	public static final class RewardItem
 	{
-		protected int _itemId;
+		protected int itemId;
 
-		protected long _count;
+		protected long count;
 
 		public RewardItem(int itemId, long count)
 		{
-			_itemId = itemId;
-			_count = count;
+			this.itemId = itemId;
+			this.count = count;
 		}
 
 		public int getItemId()
 		{
-			return _itemId;
+			return itemId;
 		}
 
 		public long getCount()
 		{
-			return _count;
+			return count;
 		}
 	}
 
-	private ConcurrentHashMap<L2Character, AggroInfo> _aggroList = new ConcurrentHashMap<>();
+	private ConcurrentHashMap<L2Character, AggroInfo> aggroList = new ConcurrentHashMap<>();
 
 	public final ConcurrentHashMap<L2Character, AggroInfo> getAggroList()
 	{
-		return _aggroList;
+		return aggroList;
 	}
 
-	private boolean _isReturningToSpawnPoint = false;
+	private boolean isReturningToSpawnPoint = false;
 
 	public final boolean isReturningToSpawnPoint()
 	{
-		return _isReturningToSpawnPoint;
+		return isReturningToSpawnPoint;
 	}
 
 	public final void setisReturningToSpawnPoint(boolean value)
 	{
-		_isReturningToSpawnPoint = value;
+		isReturningToSpawnPoint = value;
 	}
 
-	private boolean _canReturnToSpawnPoint = true;
+	private boolean canReturnToSpawnPoint = true;
 
 	public final boolean canReturnToSpawnPoint()
 	{
-		return _canReturnToSpawnPoint;
+		return canReturnToSpawnPoint;
 	}
 
 	public final void setCanReturnToSpawnPoint(boolean value)
 	{
-		_canReturnToSpawnPoint = value;
+		canReturnToSpawnPoint = value;
 	}
 
 	public boolean canSeeThroughSilentMove()
@@ -319,43 +319,43 @@ public class L2Attackable extends L2Npc
 		}
 	}
 
-	private RewardItem[] _sweepItems;
+	private RewardItem[] sweepItems;
 
-	private RewardItem[] _harvestItems;
-	private boolean _seeded;
-	private int _seedType = 0;
-	private int _seederObjId = 0;
+	private RewardItem[] harvestItems;
+	private boolean seeded;
+	private int seedType = 0;
+	private int seederObjId = 0;
 
-	private boolean _overhit;
+	private boolean overhit;
 
-	private double _overhitDamage;
+	private double overhitDamage;
 
-	private L2Character _overhitAttacker;
+	private L2Character overhitAttacker;
 
-	private L2CommandChannel _firstCommandChannelAttacked = null;
-	private CommandChannelTimer _commandChannelTimer = null;
-	private long _commandChannelLastAttack = 0;
+	private L2CommandChannel firstCommandChannelAttacked = null;
+	private CommandChannelTimer commandChannelTimer = null;
+	private long commandChannelLastAttack = 0;
 
-	private boolean _absorbed;
+	private boolean absorbed;
 
-	private ConcurrentHashMap<Integer, AbsorberInfo> _absorbersList = new ConcurrentHashMap<>();
+	private ConcurrentHashMap<Integer, AbsorberInfo> absorbersList = new ConcurrentHashMap<>();
 
-	private boolean _mustGiveExpSp;
+	private boolean mustGiveExpSp;
 
 	/**
 	 * True if a Dwarf has used Spoil on this L2NpcInstance
 	 */
-	private boolean _isSpoil = false;
+	private boolean isSpoil = false;
 
-	private int _isSpoiledBy = 0;
+	private int isSpoiledBy = 0;
 
-	protected int _onKillDelay = 3000;
+	protected int onKillDelay = 3000;
 
 	/**
 	 * Constructor of L2Attackable (use L2Character and L2NpcInstance constructor).
 	 * <p>
 	 * Actions:
-	 * Call the L2Character constructor to set the _template of the L2Attackable (copy skills from template to object and link _calculators to NPC_STD_CALCULATOR)
+	 * Call the L2Character constructor to set the template of the L2Attackable (copy skills from template to object and link calculators to NPC_STD_CALCULATOR)
 	 * Set the name of the L2Attackable
 	 * Create a RandomAnimation Task that will be launched after the calculated delay if the server allow it
 	 *
@@ -366,7 +366,7 @@ public class L2Attackable extends L2Npc
 		super(objectId, template);
 		setInstanceType(InstanceType.L2Attackable);
 		setIsInvul(false);
-		_mustGiveExpSp = true;
+		mustGiveExpSp = true;
 	}
 
 	@Override
@@ -491,7 +491,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Reduce the current HP of the L2Attackable, update its _aggroList and launch the doDie Task if necessary.
+	 * Reduce the current HP of the L2Attackable, update its aggroList and launch the doDie Task if necessary.
 	 *
 	 * @param attacker The L2Character who attacks
 	 * @param awake    The awake state (If True : stop sleeping)
@@ -503,29 +503,29 @@ public class L2Attackable extends L2Npc
 				attacker.getParty().isInCommandChannel() &&
 				attacker.getParty().getCommandChannel().meetRaidWarCondition(this))
 		{
-			if (_firstCommandChannelAttacked == null) //looting right isn't set
+			if (firstCommandChannelAttacked == null) //looting right isn't set
 			{
 				synchronized (this)
 				{
-					if (_firstCommandChannelAttacked == null)
+					if (firstCommandChannelAttacked == null)
 					{
-						_firstCommandChannelAttacked = attacker.getParty().getCommandChannel();
-						if (_firstCommandChannelAttacked != null)
+						firstCommandChannelAttacked = attacker.getParty().getCommandChannel();
+						if (firstCommandChannelAttacked != null)
 						{
-							_commandChannelTimer = new CommandChannelTimer(this);
-							_commandChannelLastAttack = System.currentTimeMillis();
+							commandChannelTimer = new CommandChannelTimer(this);
+							commandChannelLastAttack = System.currentTimeMillis();
 							ThreadPoolManager.getInstance()
-									.scheduleGeneral(_commandChannelTimer, 10000); // check for last attack
-							_firstCommandChannelAttacked.broadcastToChannelMembers(
+									.scheduleGeneral(commandChannelTimer, 10000); // check for last attack
+							firstCommandChannelAttacked.broadcastToChannelMembers(
 									new CreatureSay(0, Say2.PARTYROOM_ALL, "",
 											"You have looting rights!")); //TODO: retail msg
 						}
 					}
 				}
 			}
-			else if (attacker.getParty().getCommandChannel().equals(_firstCommandChannelAttacked)) //is in same channel
+			else if (attacker.getParty().getCommandChannel().equals(firstCommandChannelAttacked)) //is in same channel
 			{
-				_commandChannelLastAttack = System.currentTimeMillis(); // update last attack time
+				commandChannelLastAttack = System.currentTimeMillis(); // update last attack time
 			}
 		}
 
@@ -534,7 +534,7 @@ public class L2Attackable extends L2Npc
 			return;
 		}
 
-		// Add damage and hate to the attacker AggroInfo of the L2Attackable _aggroList
+		// Add damage and hate to the attacker AggroInfo of the L2Attackable aggroList
 		if (attacker != null)
 		{
 			addDamage(attacker, (int) damage, skill);
@@ -562,12 +562,12 @@ public class L2Attackable extends L2Npc
 
 	public void setMustRewardExpSp(boolean value)
 	{
-		_mustGiveExpSp = value;
+		mustGiveExpSp = value;
 	}
 
 	public boolean getMustRewardExpSP()
 	{
-		return _mustGiveExpSp;
+		return mustGiveExpSp;
 	}
 
 	/**
@@ -618,7 +618,7 @@ public class L2Attackable extends L2Npc
 					{
 						ThreadPoolManager.getInstance()
 								.scheduleEffect(new OnKillNotifyTask(this, quest, player, killer instanceof L2Summon),
-										Math.min(_onKillDelay, quest.getOnKillDelay(getNpcId())));
+										Math.min(onKillDelay, quest.getOnKillDelay(getNpcId())));
 					}
 				}
 			}
@@ -634,23 +634,23 @@ public class L2Attackable extends L2Npc
 
 	protected static class OnKillNotifyTask implements Runnable
 	{
-		private L2Attackable _attackable;
-		private Quest _quest;
-		private L2PcInstance _killer;
-		private boolean _isPet;
+		private L2Attackable attackable;
+		private Quest quest;
+		private L2PcInstance killer;
+		private boolean isPet;
 
 		public OnKillNotifyTask(L2Attackable attackable, Quest quest, L2PcInstance killer, boolean isPet)
 		{
-			_attackable = attackable;
-			_quest = quest;
-			_killer = killer;
-			_isPet = isPet;
+			this.attackable = attackable;
+			this.quest = quest;
+			this.killer = killer;
+			this.isPet = isPet;
 		}
 
 		@Override
 		public void run()
 		{
-			_quest.notifyKill(_attackable, _killer, _isPet);
+			quest.notifyKill(attackable, killer, isPet);
 		}
 	}
 
@@ -685,7 +685,7 @@ public class L2Attackable extends L2Npc
 			// While Interating over This Map Removing Object is Not Allowed
 			//synchronized (getAggroList())
 			{
-				// Go through the _aggroList of the L2Attackable
+				// Go through the aggroList of the L2Attackable
 				for (AggroInfo info : getAggroList().values())
 				{
 					if (info == null)
@@ -746,7 +746,7 @@ public class L2Attackable extends L2Npc
 						{
 							if (rewards.containsKey(member))
 							{
-								damage += rewards.get(member)._dmg;
+								damage += rewards.get(member).dmg;
 							}
 						}
 
@@ -801,10 +801,10 @@ public class L2Attackable extends L2Npc
 					penalty = 0;
 
 					// Attacker to be rewarded
-					attacker = reward._attacker;
+					attacker = reward.attacker;
 
 					// Total amount of damage done
-					damage = reward._dmg;
+					damage = reward.dmg;
 
 					// If the attacker is a Pet, get the party of the owner
 					if (attacker instanceof L2PetInstance)
@@ -943,7 +943,7 @@ public class L2Attackable extends L2Npc
 							{
 								if (Util.checkIfInRange(Config.ALT_PARTY_RANGE, this, pl, true))
 								{
-									partyDmg += reward2._dmg; // Add L2PcInstance damages to party damages
+									partyDmg += reward2.dmg; // Add L2PcInstance damages to party damages
 									rewardedMembers.add(pl);
 
 									if (pl.getLevel() > partyLvl)
@@ -991,7 +991,7 @@ public class L2Attackable extends L2Npc
 								{
 									if (Util.checkIfInRange(Config.ALT_PARTY_RANGE, this, summon, true))
 									{
-										partyDmg += reward2._dmg; // Add summon damages to party damages
+										partyDmg += reward2.dmg; // Add summon damages to party damages
 										rewardedMembers.add(summon);
 
 										if (summon.getLevel() > partyLvl)
@@ -1078,7 +1078,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Add damage and hate to the attacker AggroInfo of the L2Attackable _aggroList.
+	 * Add damage and hate to the attacker AggroInfo of the L2Attackable aggroList.
 	 *
 	 * @param attacker The L2Character that gave damages to this L2Attackable
 	 * @param damage   The number of damages given by the attacker L2Character
@@ -1126,7 +1126,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Add damage and hate to the attacker AggroInfo of the L2Attackable _aggroList.
+	 * Add damage and hate to the attacker AggroInfo of the L2Attackable aggroList.
 	 *
 	 * @param attacker The L2Character that gave damages to this L2Attackable
 	 * @param damage   The number of damages given by the attacker L2Character
@@ -1161,7 +1161,7 @@ public class L2Attackable extends L2Npc
 		}
 
 		L2PcInstance targetPlayer = attacker.getActingPlayer();
-		// Get the AggroInfo of the attacker L2Character from the _aggroList of the L2Attackable
+		// Get the AggroInfo of the attacker L2Character from the aggroList of the L2Attackable
 		AggroInfo ai = getAggroList().get(attacker);
 
 		if (ai == null)
@@ -1287,7 +1287,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Clears _aggroList hate of the L2Character without removing from the list.
+	 * Clears aggroList hate of the L2Character without removing from the list.
 	 */
 	public void stopHating(L2Character target)
 	{
@@ -1303,7 +1303,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Return the most hated L2Character of the L2Attackable _aggroList.
+	 * Return the most hated L2Character of the L2Attackable aggroList.
 	 */
 	public L2Character getMostHated()
 	{
@@ -1337,7 +1337,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Return the 2 most hated L2Character of the L2Attackable _aggroList.
+	 * Return the 2 most hated L2Character of the L2Attackable aggroList.
 	 */
 	public List<L2Character> get2MostHated()
 	{
@@ -1409,7 +1409,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Return the hate level of the L2Attackable against this L2Character contained in _aggroList.
+	 * Return the hate level of the L2Attackable against this L2Character contained in aggroList.
 	 *
 	 * @param target The L2Character whose hate level must be returned
 	 */
@@ -1827,10 +1827,10 @@ public class L2Attackable extends L2Npc
 				}
 				sweepList.add(item);
 			}
-			// Set the table _sweepItems of this L2Attackable
+			// Set the table sweepItems of this L2Attackable
 			if (!sweepList.isEmpty())
 			{
-				_sweepItems = sweepList.toArray(new RewardItem[sweepList.size()]);
+				sweepItems = sweepList.toArray(new RewardItem[sweepList.size()]);
 			}
 		}
 
@@ -1943,13 +1943,13 @@ public class L2Attackable extends L2Npc
 
 		ThreadPoolManager.getInstance().scheduleGeneral(() ->
 		{
-			if (isSpoil() && _sweepItems != null && player.getCurrentClass().getLevel() >= 85)
+			if (isSpoil() && sweepItems != null && player.getCurrentClass().getLevel() >= 85)
 			{
 				final L2PcInstance spoiler = L2World.getInstance().getPlayer(getIsSpoiledBy());
 				if (spoiler != null && Util.checkIfInRange(900, L2Attackable.this, spoiler, false))
 				{
 					setSpoil(false);
-					for (RewardItem ritem : _sweepItems)
+					for (RewardItem ritem : sweepItems)
 					{
 						if (spoiler.isInParty())
 						{
@@ -2014,7 +2014,7 @@ public class L2Attackable extends L2Npc
 					long count = item.getCount();
 					if (count > 1)
 					{
-						item._count = 1;
+						item.count = 1;
 						for (int i = 0; i < count; i++)
 						{
 							dropItem(player, item);
@@ -2193,7 +2193,7 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Return True if the _aggroList of this L2Attackable is Empty.
+	 * Return True if the aggroList of this L2Attackable is Empty.
 	 */
 	public boolean noTarget()
 	{
@@ -2201,9 +2201,9 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Return True if the _aggroList of this L2Attackable contains the L2Character.
+	 * Return True if the aggroList of this L2Attackable contains the L2Character.
 	 *
-	 * @param player The L2Character searched in the _aggroList of the L2Attackable
+	 * @param player The L2Character searched in the aggroList of the L2Attackable
 	 */
 	public boolean containsTarget(L2Character player)
 	{
@@ -2211,16 +2211,16 @@ public class L2Attackable extends L2Npc
 	}
 
 	/**
-	 * Clear the _aggroList of the L2Attackable.
+	 * Clear the aggroList of the L2Attackable.
 	 */
 	public void clearAggroList()
 	{
 		getAggroList().clear();
 
 		// clear overhit values
-		_overhit = false;
-		_overhitDamage = 0;
-		_overhitAttacker = null;
+		overhit = false;
+		overhitDamage = 0;
+		overhitAttacker = null;
 	}
 
 	/**
@@ -2228,7 +2228,7 @@ public class L2Attackable extends L2Npc
 	 */
 	public boolean isSweepActive()
 	{
-		return _sweepItems != null;
+		return sweepItems != null;
 	}
 
 	/**
@@ -2236,8 +2236,8 @@ public class L2Attackable extends L2Npc
 	 */
 	public synchronized RewardItem[] takeSweep()
 	{
-		RewardItem[] sweep = _sweepItems;
-		_sweepItems = null;
+		RewardItem[] sweep = sweepItems;
+		sweepItems = null;
 		return sweep;
 	}
 
@@ -2246,8 +2246,8 @@ public class L2Attackable extends L2Npc
 	 */
 	public synchronized RewardItem[] takeHarvest()
 	{
-		RewardItem[] harvest = _harvestItems;
-		_harvestItems = null;
+		RewardItem[] harvest = harvestItems;
+		harvestItems = null;
 		return harvest;
 	}
 
@@ -2258,7 +2258,7 @@ public class L2Attackable extends L2Npc
 	 */
 	public void overhitEnabled(boolean status)
 	{
-		_overhit = status;
+		overhit = status;
 	}
 
 	/**
@@ -2277,13 +2277,13 @@ public class L2Attackable extends L2Npc
 			// we didn't killed the mob with the over-hit strike. (it wasn't really an over-hit strike)
 			// let's just clear all the over-hit related values
 			overhitEnabled(false);
-			_overhitDamage = 0;
-			_overhitAttacker = null;
+			overhitDamage = 0;
+			overhitAttacker = null;
 			return;
 		}
 		overhitEnabled(true);
-		_overhitDamage = overhitDmg;
-		_overhitAttacker = attacker;
+		overhitDamage = overhitDmg;
+		overhitAttacker = attacker;
 	}
 
 	/**
@@ -2293,7 +2293,7 @@ public class L2Attackable extends L2Npc
 	 */
 	public L2Character getOverhitAttacker()
 	{
-		return _overhitAttacker;
+		return overhitAttacker;
 	}
 
 	/**
@@ -2303,7 +2303,7 @@ public class L2Attackable extends L2Npc
 	 */
 	public double getOverhitDamage()
 	{
-		return _overhitDamage;
+		return overhitDamage;
 	}
 
 	/**
@@ -2311,7 +2311,7 @@ public class L2Attackable extends L2Npc
 	 */
 	public boolean isOverhit()
 	{
-		return _overhit;
+		return overhit;
 	}
 
 	/**
@@ -2319,7 +2319,7 @@ public class L2Attackable extends L2Npc
 	 */
 	public void absorbSoul()
 	{
-		_absorbed = true;
+		absorbed = true;
 	}
 
 	/**
@@ -2327,11 +2327,11 @@ public class L2Attackable extends L2Npc
 	 */
 	public boolean isAbsorbed()
 	{
-		return _absorbed;
+		return absorbed;
 	}
 
 	/**
-	 * Adds an attacker that successfully absorbed the soul of this L2Attackable into the _absorbersList.
+	 * Adds an attacker that successfully absorbed the soul of this L2Attackable into the absorbersList.
 	 * <p>
 	 * Params:
 	 * attacker - a valid L2PcInstance
@@ -2344,19 +2344,19 @@ public class L2Attackable extends L2Npc
 	 */
 	public void addAbsorber(L2PcInstance attacker)
 	{
-		// If we have no _absorbersList initiated, do it
-		AbsorberInfo ai = _absorbersList.get(attacker.getObjectId());
+		// If we have no absorbersList initiated, do it
+		AbsorberInfo ai = absorbersList.get(attacker.getObjectId());
 
-		// If the L2Character attacker isn't already in the _absorbersList of this L2Attackable, add it
+		// If the L2Character attacker isn't already in the absorbersList of this L2Attackable, add it
 		if (ai == null)
 		{
 			ai = new AbsorberInfo(attacker.getObjectId(), getCurrentHp());
-			_absorbersList.put(attacker.getObjectId(), ai);
+			absorbersList.put(attacker.getObjectId(), ai);
 		}
 		else
 		{
-			ai._objId = attacker.getObjectId();
-			ai._absorbedHP = getCurrentHp();
+			ai.objId = attacker.getObjectId();
+			ai.absorbedHP = getCurrentHp();
 		}
 
 		// Set this L2Attackable as absorbed
@@ -2365,13 +2365,13 @@ public class L2Attackable extends L2Npc
 
 	public void resetAbsorbList()
 	{
-		_absorbed = false;
-		_absorbersList.clear();
+		absorbed = false;
+		absorbersList.clear();
 	}
 
 	public ConcurrentHashMap<Integer, AbsorberInfo> getAbsorbersList()
 	{
-		return _absorbersList;
+		return absorbersList;
 	}
 
 	/**
@@ -2483,15 +2483,15 @@ public class L2Attackable extends L2Npc
 		// Clear all aggro char from list
 		clearAggroList();
 		// Clear Harvester Rewrard List
-		_harvestItems = null;
+		harvestItems = null;
 		// Clear mod Seeded stat
-		_seeded = false;
-		_seedType = 0;
-		_seederObjId = 0;
+		seeded = false;
+		seedType = 0;
+		seederObjId = 0;
 		// Clear overhit value
 		overhitEnabled(false);
 
-		_sweepItems = null;
+		sweepItems = null;
 		resetAbsorbList();
 
 		setWalking();
@@ -2511,7 +2511,7 @@ public class L2Attackable extends L2Npc
 	 */
 	public boolean isSpoil()
 	{
-		return _isSpoil;
+		return isSpoil;
 	}
 
 	/**
@@ -2519,29 +2519,29 @@ public class L2Attackable extends L2Npc
 	 */
 	public void setSpoil(boolean isSpoil)
 	{
-		_isSpoil = isSpoil;
+		this.isSpoil = isSpoil;
 	}
 
 	public final int getIsSpoiledBy()
 	{
-		return _isSpoiledBy;
+		return isSpoiledBy;
 	}
 
 	public final void setIsSpoiledBy(int value)
 	{
-		_isSpoiledBy = value;
+		isSpoiledBy = value;
 	}
 
-	private boolean _canBeSweeped = true;
+	private boolean canBeSweeped = true;
 
 	public final boolean canBeSweeped()
 	{
-		return _canBeSweeped;
+		return canBeSweeped;
 	}
 
 	public final void setCanBeSweeped(final boolean canBeSweeped)
 	{
-		_canBeSweeped = canBeSweeped;
+		this.canBeSweeped = canBeSweeped;
 	}
 
 	/**
@@ -2549,9 +2549,9 @@ public class L2Attackable extends L2Npc
 	 */
 	public void setSeeded(L2PcInstance seeder)
 	{
-		if (_seedType != 0 && _seederObjId == seeder.getObjectId())
+		if (seedType != 0 && seederObjId == seeder.getObjectId())
 		{
-			setSeeded(_seedType, seeder.getLevel());
+			setSeeded(seedType, seeder.getLevel());
 		}
 	}
 
@@ -2563,17 +2563,17 @@ public class L2Attackable extends L2Npc
 	 */
 	public void setSeeded(int id, L2PcInstance seeder)
 	{
-		if (!_seeded)
+		if (!seeded)
 		{
-			_seedType = id;
-			_seederObjId = seeder.getObjectId();
+			seedType = id;
+			seederObjId = seeder.getObjectId();
 		}
 	}
 
 	private void setSeeded(int id, int seederLvl)
 	{
-		_seeded = true;
-		_seedType = id;
+		seeded = true;
+		seedType = id;
 		int count = 1;
 
 		Map<Integer, L2Skill> skills = getTemplate().getSkills();
@@ -2612,7 +2612,7 @@ public class L2Attackable extends L2Npc
 			}
 		}
 
-		int diff = getLevel() - (L2Manor.getInstance().getSeedLevel(_seedType) - 5);
+		int diff = getLevel() - (L2Manor.getInstance().getSeedLevel(seedType) - 5);
 
 		// hi-lvl mobs bonus
 		if (diff > 0)
@@ -2622,24 +2622,24 @@ public class L2Attackable extends L2Npc
 
 		ArrayList<RewardItem> harvested = new ArrayList<>();
 
-		harvested.add(new RewardItem(L2Manor.getInstance().getCropType(_seedType), count * Config.RATE_DROP_MANOR));
+		harvested.add(new RewardItem(L2Manor.getInstance().getCropType(seedType), count * Config.RATE_DROP_MANOR));
 
-		_harvestItems = harvested.toArray(new RewardItem[harvested.size()]);
+		harvestItems = harvested.toArray(new RewardItem[harvested.size()]);
 	}
 
 	public int getSeederId()
 	{
-		return _seederObjId;
+		return seederObjId;
 	}
 
 	public int getSeedType()
 	{
-		return _seedType;
+		return seedType;
 	}
 
 	public boolean isSeeded()
 	{
-		return _seeded;
+		return seeded;
 	}
 
 	/**
@@ -2650,7 +2650,7 @@ public class L2Attackable extends L2Npc
 	 */
 	public final void setOnKillDelay(int delay)
 	{
-		_onKillDelay = delay;
+		onKillDelay = delay;
 	}
 
 	/**
@@ -2671,47 +2671,47 @@ public class L2Attackable extends L2Npc
 
 	protected void setCommandChannelTimer(CommandChannelTimer commandChannelTimer)
 	{
-		_commandChannelTimer = commandChannelTimer;
+		this.commandChannelTimer = commandChannelTimer;
 	}
 
 	public CommandChannelTimer getCommandChannelTimer()
 	{
-		return _commandChannelTimer;
+		return commandChannelTimer;
 	}
 
 	public L2CommandChannel getFirstCommandChannelAttacked()
 	{
-		return _firstCommandChannelAttacked;
+		return firstCommandChannelAttacked;
 	}
 
 	public void setFirstCommandChannelAttacked(L2CommandChannel firstCommandChannelAttacked)
 	{
-		_firstCommandChannelAttacked = firstCommandChannelAttacked;
+		this.firstCommandChannelAttacked = firstCommandChannelAttacked;
 	}
 
 	/**
-	 * @return the _commandChannelLastAttack
+	 * @return the commandChannelLastAttack
 	 */
 	public long getCommandChannelLastAttack()
 	{
-		return _commandChannelLastAttack;
+		return commandChannelLastAttack;
 	}
 
 	/**
-	 * @param channelLastAttack the _commandChannelLastAttack to set
+	 * @param channelLastAttack the commandChannelLastAttack to set
 	 */
 	public void setCommandChannelLastAttack(long channelLastAttack)
 	{
-		_commandChannelLastAttack = channelLastAttack;
+		commandChannelLastAttack = channelLastAttack;
 	}
 
 	private static class CommandChannelTimer implements Runnable
 	{
-		private L2Attackable _monster;
+		private L2Attackable monster;
 
 		public CommandChannelTimer(L2Attackable monster)
 		{
-			_monster = monster;
+			this.monster = monster;
 		}
 
 		/**
@@ -2720,12 +2720,12 @@ public class L2Attackable extends L2Npc
 		@Override
 		public void run()
 		{
-			if (System.currentTimeMillis() - _monster.getCommandChannelLastAttack() >
+			if (System.currentTimeMillis() - monster.getCommandChannelLastAttack() >
 					Config.LOOT_RAIDS_PRIVILEGE_INTERVAL * 1000)
 			{
-				_monster.setCommandChannelTimer(null);
-				_monster.setFirstCommandChannelAttacked(null);
-				_monster.setCommandChannelLastAttack(0);
+				monster.setCommandChannelTimer(null);
+				monster.setFirstCommandChannelAttacked(null);
+				monster.setCommandChannelLastAttack(0);
 			}
 			else
 			{
@@ -2789,7 +2789,7 @@ public class L2Attackable extends L2Npc
 	@Override
 	public boolean isRaid()
 	{
-		return _isRaid;
+		return isRaid;
 	}
 
 	/**
@@ -2799,7 +2799,7 @@ public class L2Attackable extends L2Npc
 	 */
 	public void setIsRaid(boolean isRaid)
 	{
-		_isRaid = isRaid;
+		this.isRaid = isRaid;
 	}
 
 	/**
@@ -2809,14 +2809,14 @@ public class L2Attackable extends L2Npc
 	 */
 	public void setIsRaidMinion(boolean val)
 	{
-		_isRaid = val;
-		_isRaidMinion = val;
+		isRaid = val;
+		isRaidMinion = val;
 	}
 
 	@Override
 	public boolean isRaidMinion()
 	{
-		return _isRaidMinion;
+		return isRaidMinion;
 	}
 
 	@Override
@@ -2835,13 +2835,13 @@ public class L2Attackable extends L2Npc
 
 	public void setChampion(boolean champ)
 	{
-		_champion = champ;
+		champion = champ;
 	}
 
 	@Override
 	public boolean isChampion()
 	{
-		return _champion;
+		return champion;
 	}
 
 	public void escape(String message)
@@ -2873,24 +2873,24 @@ public class L2Attackable extends L2Npc
 
 	private static class EscapeFinalizer implements Runnable
 	{
-		private L2Attackable _mob;
+		private L2Attackable mob;
 
 		EscapeFinalizer(L2Attackable mob)
 		{
-			_mob = mob;
+			this.mob = mob;
 		}
 
 		@Override
 		public void run()
 		{
-			_mob.enableAllSkills();
-			_mob.setIsCastingNow(false);
-			if (!_mob.isRaid())
+			mob.enableAllSkills();
+			mob.setIsCastingNow(false);
+			if (!mob.isRaid())
 			{
-				_mob.setCurrentHpMp(_mob.getMaxHp(), _mob.getMaxMp());
+				mob.setCurrentHpMp(mob.getMaxHp(), mob.getMaxMp());
 			}
-			_mob.setIsInvul(false);
-			_mob.teleToLocation(_mob.getSpawn().getX(), _mob.getSpawn().getY(), _mob.getSpawn().getZ());
+			mob.setIsInvul(false);
+			mob.teleToLocation(mob.getSpawn().getX(), mob.getSpawn().getY(), mob.getSpawn().getZ());
 		}
 	}
 

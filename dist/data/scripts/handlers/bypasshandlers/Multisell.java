@@ -46,7 +46,7 @@ public class Multisell implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			_log.info("Exception in " + getClass().getSimpleName());
+			log.info("Exception in " + getClass().getSimpleName());
 		}
 		return false;
 	}

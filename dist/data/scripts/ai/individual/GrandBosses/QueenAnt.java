@@ -56,17 +56,17 @@ import java.util.List;
 public class QueenAnt extends L2AttackableAIScript
 {
     //Quest
-    private static final boolean _debug = false;
-    private static final String _qn = "QueenAnt";
+    private static final boolean debug = false;
+    private static final String qn = "QueenAnt";
 
     //Id's
-    private static final int _queenAntId = 29001;
-    private static final int _larvaId = 29002;
-    private static final int _nurseId = 29003;
-    private static final int _guardId = 29004;
-    private static final int _royalId = 29005;
-    private static final int[] _allMobs = {_queenAntId, _larvaId, _nurseId, _guardId, _royalId};
-    private static final L2BossZone _bossZone = GrandBossManager.getInstance().getZone(-21610, 181594, -5734);
+    private static final int queenAntId = 29001;
+    private static final int larvaId = 29002;
+    private static final int nurseId = 29003;
+    private static final int guardId = 29004;
+    private static final int royalId = 29005;
+    private static final int[] allMobs = {queenAntId, larvaId, nurseId, guardId, royalId};
+    private static final L2BossZone bossZone = GrandBossManager.getInstance().getZone(-21610, 181594, -5734);
 
     //Skills
     private static final SkillHolder HEAL1 = new SkillHolder(4020, 1);
@@ -74,16 +74,16 @@ public class QueenAnt extends L2AttackableAIScript
     private static final SkillHolder CURSE = new SkillHolder(4215, 1);
 
     //Others
-    private List<L2MonsterInstance> _nurses = new ArrayList<L2MonsterInstance>(5);
-    private static long _LastAction;
-    private static L2Npc _queenAnt;
-    private static L2Npc _larvaAnt;
+    private List<L2MonsterInstance> nurses = new ArrayList<L2MonsterInstance>(5);
+    private static long LastAction;
+    private static L2Npc queenAnt;
+    private static L2Npc larvaAnt;
 
     public QueenAnt(int id, String name, String descr)
     {
         super(id, name, descr);
 
-        for (int i : _allMobs)
+        for (int i : allMobs)
         {
             addAttackId(i);
             addSpawnId(i);
@@ -91,17 +91,17 @@ public class QueenAnt extends L2AttackableAIScript
             addAggroRangeEnterId(i);
         }
 
-        addEnterZoneId(_bossZone.getId());
-        addFactionCallId(_nurseId);
+        addEnterZoneId(bossZone.getId());
+        addFactionCallId(nurseId);
 
         //Unlock
-        startQuestTimer("unlock_queen_ant", GrandBossManager.getInstance().getUnlockTime(_queenAntId), null, null);
+        startQuestTimer("unlock_queen_ant", GrandBossManager.getInstance().getUnlockTime(queenAntId), null, null);
     }
 
     @Override
     public final String onEnterZone(L2Character character, L2ZoneType zone)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onEnterZone: " + character.getName());
         }
@@ -149,43 +149,43 @@ public class QueenAnt extends L2AttackableAIScript
     @Override
     public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
 
         if (event.equalsIgnoreCase("unlock_queen_ant"))
         {
-            _queenAnt = addSpawn(_queenAntId, -21610, 181594, -5734, 0, false, 0);
+            queenAnt = addSpawn(queenAntId, -21610, 181594, -5734, 0, false, 0);
 
-            GrandBossManager.getInstance().addBoss((L2GrandBossInstance) _queenAnt);
+            GrandBossManager.getInstance().addBoss((L2GrandBossInstance) queenAnt);
 
-            GrandBossManager.getInstance().setBossStatus(_queenAntId, GrandBossManager.getInstance().ALIVE);
+            GrandBossManager.getInstance().setBossStatus(queenAntId, GrandBossManager.getInstance().ALIVE);
 
-            _queenAnt.broadcastPacket(
-                    new PlaySound(1, "BS02_D", 1, _queenAnt.getObjectId(), _queenAnt.getX(), _queenAnt.getY(),
-                            _queenAnt.getZ()));
+            queenAnt.broadcastPacket(
+                    new PlaySound(1, "BS02_D", 1, queenAnt.getObjectId(), queenAnt.getX(), queenAnt.getY(),
+                            queenAnt.getZ()));
 
-            _larvaAnt = addSpawn(_larvaId, -21600, 179482, -5846, Rnd.get(360), false, 0);
+            larvaAnt = addSpawn(larvaId, -21600, 179482, -5846, Rnd.get(360), false, 0);
 
             if (Rnd.get(100) < 33)
             {
-                _bossZone.movePlayersTo(-19480, 187344, -5600);
+                bossZone.movePlayersTo(-19480, 187344, -5600);
             }
             else if (Rnd.get(100) < 50)
             {
-                _bossZone.movePlayersTo(-17928, 180912, -5520);
+                bossZone.movePlayersTo(-17928, 180912, -5520);
             }
             else
             {
-                _bossZone.movePlayersTo(-23808, 182368, -5600);
+                bossZone.movePlayersTo(-23808, 182368, -5600);
             }
 
             startQuestTimer("queen_ant_heal_process", 1000, null, null, true);
         }
         else if (event.equalsIgnoreCase("check_activity_task"))
         {
-            if (!GrandBossManager.getInstance().isActive(_queenAntId, _LastAction))
+            if (!GrandBossManager.getInstance().isActive(queenAntId, LastAction))
             {
                 notifyEvent("end_queenAnt", null, null);
             }
@@ -198,9 +198,9 @@ public class QueenAnt extends L2AttackableAIScript
                 activityTimer.cancel();
             }
 
-            if (GrandBossManager.getInstance().getBossStatus(_queenAntId) != GrandBossManager.getInstance().DEAD)
+            if (GrandBossManager.getInstance().getBossStatus(queenAntId) != GrandBossManager.getInstance().DEAD)
             {
-                GrandBossManager.getInstance().setBossStatus(_queenAntId, GrandBossManager.getInstance().ALIVE);
+                GrandBossManager.getInstance().setBossStatus(queenAntId, GrandBossManager.getInstance().ALIVE);
             }
         }
         else if (event.equalsIgnoreCase("player_kick"))
@@ -210,10 +210,10 @@ public class QueenAnt extends L2AttackableAIScript
         else if (event.equalsIgnoreCase("queen_ant_heal_process"))
         {
             boolean notCasting;
-            final boolean larvaNeedHeal = _larvaAnt != null && _larvaAnt.getCurrentHp() < _larvaAnt.getMaxHp();
-            final boolean queenNeedHeal = _queenAnt != null && _queenAnt.getCurrentHp() < _queenAnt.getMaxHp();
+            final boolean larvaNeedHeal = larvaAnt != null && larvaAnt.getCurrentHp() < larvaAnt.getMaxHp();
+            final boolean queenNeedHeal = queenAnt != null && queenAnt.getCurrentHp() < queenAnt.getMaxHp();
 
-            List<L2MonsterInstance> toIterate = new ArrayList<L2MonsterInstance>(_nurses);
+            List<L2MonsterInstance> toIterate = new ArrayList<L2MonsterInstance>(nurses);
             for (L2MonsterInstance nurse : toIterate)
             {
                 if (nurse == null || nurse.isDead() || nurse.isCastingNow())
@@ -225,9 +225,9 @@ public class QueenAnt extends L2AttackableAIScript
 
                 if (larvaNeedHeal)
                 {
-                    if (nurse.getTarget() != _larvaAnt || notCasting)
+                    if (nurse.getTarget() != larvaAnt || notCasting)
                     {
-                        nurse.setTarget(_larvaAnt);
+                        nurse.setTarget(larvaAnt);
                         nurse.useMagic(Rnd.nextBoolean() ? HEAL1.getSkill() : HEAL2.getSkill());
                     }
                     continue;
@@ -235,14 +235,14 @@ public class QueenAnt extends L2AttackableAIScript
 
                 if (queenNeedHeal)
                 {
-                    if (nurse.getLeader() == _larvaAnt) // skip larva's minions
+                    if (nurse.getLeader() == larvaAnt) // skip larva's minions
                     {
                         continue;
                     }
 
-                    if (nurse.getTarget() != _queenAnt || notCasting)
+                    if (nurse.getTarget() != queenAnt || notCasting)
                     {
-                        nurse.setTarget(_queenAnt);
+                        nurse.setTarget(queenAnt);
                         nurse.useMagic(HEAL1.getSkill());
                     }
                     continue;
@@ -262,33 +262,33 @@ public class QueenAnt extends L2AttackableAIScript
     @Override
     public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAttack: " + npc.getName());
         }
 
-        _LastAction = System.currentTimeMillis();
+        LastAction = System.currentTimeMillis();
 
-        if (GrandBossManager.getInstance().getBossStatus(_queenAntId) == GrandBossManager.getInstance().ALIVE)
+        if (GrandBossManager.getInstance().getBossStatus(queenAntId) == GrandBossManager.getInstance().ALIVE)
         {
-            GrandBossManager.getInstance().setBossStatus(_queenAntId, GrandBossManager.getInstance().FIGHTING);
+            GrandBossManager.getInstance().setBossStatus(queenAntId, GrandBossManager.getInstance().FIGHTING);
 
             startQuestTimer("check_activity_task", 60000, null, null, true);
         }
 
         //Anti BUGGERS
-        if (!_bossZone.isInsideZone(attacker)) //Character attacking out of zone
+        if (!bossZone.isInsideZone(attacker)) //Character attacking out of zone
         {
             attacker.doDie(null);
 
-            if (_debug)
+            if (debug)
             {
                 Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
                         " out of the boss zone!");
             }
         }
 
-        if (!_bossZone.isInsideZone(npc)) //Npc moved out of the zone
+        if (!bossZone.isInsideZone(npc)) //Npc moved out of the zone
         {
             L2Spawn spawn = npc.getSpawn();
 
@@ -297,7 +297,7 @@ public class QueenAnt extends L2AttackableAIScript
                 npc.teleToLocation(spawn.getX(), spawn.getY(), spawn.getZ());
             }
 
-            if (_debug)
+            if (debug)
             {
                 Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() +
                         " wich is out of the boss zone!");
@@ -309,31 +309,31 @@ public class QueenAnt extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
 
-        if (npc.getNpcId() == _queenAntId)
+        if (npc.getNpcId() == queenAntId)
         {
-            GrandBossManager.getInstance().notifyBossKilled(_queenAntId);
+            GrandBossManager.getInstance().notifyBossKilled(queenAntId);
 
             notifyEvent("end_queenAnt", null, null);
 
-            _queenAnt.broadcastPacket(
-                    new PlaySound(1, "BS02_D", 1, _queenAnt.getObjectId(), _queenAnt.getX(), _queenAnt.getY(),
-                            _queenAnt.getZ()));
+            queenAnt.broadcastPacket(
+                    new PlaySound(1, "BS02_D", 1, queenAnt.getObjectId(), queenAnt.getX(), queenAnt.getY(),
+                            queenAnt.getZ()));
 
-            startQuestTimer("unlock_queen_ant", GrandBossManager.getInstance().getUnlockTime(_queenAntId), null, null);
+            startQuestTimer("unlock_queen_ant", GrandBossManager.getInstance().getUnlockTime(queenAntId), null, null);
 
-            _nurses.clear();
-            _larvaAnt.deleteMe();
-            _larvaAnt = null;
-            _queenAnt = null;
+            nurses.clear();
+            larvaAnt.deleteMe();
+            larvaAnt = null;
+            queenAnt = null;
         }
-        else if (_queenAnt != null && !_queenAnt.isAlikeDead())
+        else if (queenAnt != null && !queenAnt.isAlikeDead())
         {
-            if (npc.getNpcId() == _royalId)
+            if (npc.getNpcId() == royalId)
             {
                 L2MonsterInstance mob = (L2MonsterInstance) npc;
                 if (mob.getLeader() != null)
@@ -341,10 +341,10 @@ public class QueenAnt extends L2AttackableAIScript
                     mob.getLeader().getMinionList().onMinionDie(mob, (280 + Rnd.get(40)) * 1000);
                 }
             }
-            else if (npc.getNpcId() == _nurseId)
+            else if (npc.getNpcId() == nurseId)
             {
                 L2MonsterInstance mob = (L2MonsterInstance) npc;
-                _nurses.remove(mob);
+                nurses.remove(mob);
                 if (mob.getLeader() != null)
                 {
                     mob.getLeader().getMinionList().onMinionDie(mob, 10000);
@@ -361,20 +361,20 @@ public class QueenAnt extends L2AttackableAIScript
         final L2MonsterInstance mob = (L2MonsterInstance) npc;
         switch (npc.getNpcId())
         {
-            case _larvaId:
+            case larvaId:
                 mob.setIsImmobilized(true);
                 mob.setIsMortal(false);
                 mob.setIsRaidMinion(true);
                 break;
 
-            case _nurseId:
+            case nurseId:
                 mob.disableCoreAI(true);
                 mob.setIsRaidMinion(true);
-                _nurses.add(mob);
+                nurses.add(mob);
                 break;
 
-            case _royalId:
-            case _guardId:
+            case royalId:
+            case guardId:
                 mob.setIsRaidMinion(true);
                 break;
         }
@@ -425,6 +425,6 @@ public class QueenAnt extends L2AttackableAIScript
 
     public static void main(String[] args)
     {
-        new QueenAnt(-1, _qn, "ai/individual/GrandBosses");
+        new QueenAnt(-1, qn, "ai/individual/GrandBosses");
     }
 }

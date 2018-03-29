@@ -25,25 +25,25 @@ import java.util.List;
  */
 public class ExShowFortressSiegeInfo extends L2GameServerPacket
 {
-	private int _fortId;
-	private int _size;
-	private Fort _fort;
-	private int _csize;
-	private int _csize2;
+	private int fortId;
+	private int size;
+	private Fort fort;
+	private int csize;
+	private int csize2;
 
 	/**
 	 */
 	public ExShowFortressSiegeInfo(Fort fort)
 	{
-		_fort = fort;
-		_fortId = fort.getFortId();
-		_size = fort.getFortSize();
+		this.fort = fort;
+		fortId = fort.getFortId();
+		size = fort.getFortSize();
 		List<L2Spawn> commanders = fort.getCommanderSpawns();
 		if (commanders != null)
 		{
-			_csize = commanders.size();
+			csize = commanders.size();
 		}
-		_csize2 = _fort.getCommanderSpawns().size();
+		csize2 = fort.getCommanderSpawns().size();
 	}
 
     /*
@@ -56,14 +56,14 @@ public class ExShowFortressSiegeInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_fortId); // Fortress Id
-		writeD(_size); // Total Barracks Count
-		if (_csize > 0)
+		writeD(fortId); // Fortress Id
+		writeD(size); // Total Barracks Count
+		if (csize > 0)
 		{
-			switch (_csize)
+			switch (csize)
 			{
 				case 3:
-					switch (_csize2)
+					switch (csize2)
 					{
 						case 0:
 							writeD(0x03);
@@ -80,7 +80,7 @@ public class ExShowFortressSiegeInfo extends L2GameServerPacket
 					}
 					break;
 				case 4: // TODO: change 4 to 5 once control room supported
-					switch (_csize2)
+					switch (csize2)
 					// TODO: once control room supported, update writeD(0x0x) to support 5th room
 					{
 						case 0:
@@ -104,7 +104,7 @@ public class ExShowFortressSiegeInfo extends L2GameServerPacket
 		}
 		else
 		{
-			for (int i = 0; i < _size; i++)
+			for (int i = 0; i < size; i++)
 			{
 				writeD(0x00);
 			}

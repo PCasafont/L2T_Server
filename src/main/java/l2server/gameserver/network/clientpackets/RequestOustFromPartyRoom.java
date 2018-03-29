@@ -31,12 +31,12 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public final class RequestOustFromPartyRoom extends L2GameClientPacket
 {
 
-	private int _charid;
+	private int charid;
 
 	@Override
 	protected void readImpl()
 	{
-		_charid = readD();
+		charid = readD();
 	}
 
 	@Override
@@ -48,19 +48,19 @@ public final class RequestOustFromPartyRoom extends L2GameClientPacket
 			return;
 		}
 
-		L2PcInstance member = L2World.getInstance().getPlayer(_charid);
+		L2PcInstance member = L2World.getInstance().getPlayer(charid);
 		if (member == null)
 		{
 			return;
 		}
 
-		PartyMatchRoom _room = PartyMatchRoomList.getInstance().getPlayerRoom(member);
-		if (_room == null)
+		PartyMatchRoom room = PartyMatchRoomList.getInstance().getPlayerRoom(member);
+		if (room == null)
 		{
 			return;
 		}
 
-		if (_room.getOwner() != activeChar)
+		if (room.getOwner() != activeChar)
 		{
 			return;
 		}
@@ -72,7 +72,7 @@ public final class RequestOustFromPartyRoom extends L2GameClientPacket
 		}
 		else
 		{
-			_room.deleteMember(member);
+			room.deleteMember(member);
 			member.setPartyRoom(0);
 			member.sendPacket(new ExClosePartyRoom());
 			member.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.OUSTED_FROM_PARTY_ROOM));
