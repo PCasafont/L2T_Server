@@ -25,18 +25,18 @@ public class Ex2ndPasswordVerify extends L2GameServerPacket
 	public static final int PASSWORD_WRONG = 0x01;
 	public static final int PASSWORD_BAN = 0x02;
 
-	int _wrongTentatives, _mode;
+	int wrongTentatives, mode;
 
 	public Ex2ndPasswordVerify(int mode, int wrongTentatives)
 	{
-		_mode = mode;
-		_wrongTentatives = wrongTentatives;
+		this.mode = mode;
+		this.wrongTentatives = wrongTentatives;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_mode);
-		writeD(_wrongTentatives);
+		writeD(mode);
+		writeD(wrongTentatives);
 	}
 }

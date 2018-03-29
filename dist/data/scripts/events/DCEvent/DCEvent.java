@@ -25,30 +25,30 @@ import java.util.Map;
 public class DCEvent extends Quest
 {
     //Config
-    private static final boolean _exChangeOnly = false;
-    private static int _timeToEndInvasion = 1; //Minutes
-    private static final int _npcId = 92000;
-    private static final int[] _invaderIds = {92011, 92010};
-    private static final int _boosId = 92011;
+    private static final boolean exChangeOnly = false;
+    private static int timeToEndInvasion = 1; //Minutes
+    private static final int npcId = 92000;
+    private static final int[] invaderIds = {92011, 92010};
+    private static final int boosId = 92011;
 
     //Vars
-    private static Long _nextInvasion;
-    private static L2PcInstance _player;
-    private static boolean _isUnderInvasion = false;
-    private Map<Integer, invaderInfo> _attackInfo = new HashMap<Integer, invaderInfo>();
-    private ArrayList<L2Character> _invaders = new ArrayList<L2Character>();
-    private ArrayList<L2Character> _registered = new ArrayList<L2Character>();
-    private Map<L2Character, Integer> _testPlayer = new HashMap<L2Character, Integer>();
+    private static Long nextInvasion;
+    private static L2PcInstance player;
+    private static boolean isUnderInvasion = false;
+    private Map<Integer, invaderInfo> attackInfo = new HashMap<Integer, invaderInfo>();
+    private ArrayList<L2Character> invaders = new ArrayList<L2Character>();
+    private ArrayList<L2Character> registered = new ArrayList<L2Character>();
+    private Map<L2Character, Integer> testPlayer = new HashMap<L2Character, Integer>();
 
     public DCEvent(int id, String name, String descr)
     {
         super(id, name, descr);
 
-        addStartNpc(_npcId);
-        addTalkId(_npcId);
-        addFirstTalkId(_npcId);
+        addStartNpc(npcId);
+        addTalkId(npcId);
+        addFirstTalkId(npcId);
 
-        for (int mob : _invaderIds)
+        for (int mob : invaderIds)
         {
             addAttackId(mob);
             addKillId(mob);
@@ -58,49 +58,49 @@ public class DCEvent extends Quest
 
     private class invaderInfo
     {
-        private Long _attackedTime;
-        private int _playerId;
-        private String _externalIP;
-        private String _internalIP;
+        private Long attackedTime;
+        private int playerId;
+        private String externalIP;
+        private String internalIP;
 
         private invaderInfo(int playerId, String externalIP, String internalIP)
         {
-            _playerId = playerId;
-            _externalIP = externalIP;
-            _internalIP = internalIP;
+            this.playerId = playerId;
+            this.externalIP = externalIP;
+            this.internalIP = internalIP;
             setAttackedTime();
         }
 
         private long getAttackedTime()
         {
-            return _attackedTime;
+            return attackedTime;
         }
 
         private void setAttackedTime()
         {
-            _attackedTime = System.currentTimeMillis();
+            attackedTime = System.currentTimeMillis();
         }
 
         private int getPlayerId()
         {
-            return _playerId;
+            return playerId;
         }
 
         private String getExternalIP()
         {
-            return _externalIP;
+            return externalIP;
         }
 
         private String getInternalIP()
         {
-            return _internalIP;
+            return internalIP;
         }
 
         private void updateInfo(int playerId, String externalIP, String internalIP)
         {
-            _playerId = playerId;
-            _externalIP = externalIP;
-            _internalIP = internalIP;
+            this.playerId = playerId;
+            this.externalIP = externalIP;
+            this.internalIP = internalIP;
             setAttackedTime();
         }
     }
@@ -112,14 +112,14 @@ public class DCEvent extends Quest
     {
 
 
-        L2Npc inv = addSpawn(_invaderIds[Rnd.get(_invaderIds.length)], npc.getX() + Rnd.get(100),
+        L2Npc inv = addSpawn(invaderIds[Rnd.get(invaderIds.length)], npc.getX() + Rnd.get(100),
                 npc.getY() + Rnd.get(100), npc.getZ(), 0, false, 0);
-        _invaders.add(inv);
-        int points = _testPlayer.get(player);
+        invaders.add(inv);
+        int points = testPlayer.get(player);
         int toAdd = 1;
 
 
-        _testPlayer.replace(player, points + toAdd);
+        testPlayer.replace(player, points + toAdd);
 
         return "";
     }
@@ -127,7 +127,7 @@ public class DCEvent extends Quest
     @Override
     public String onDieZone(L2Character character, L2Character killer, L2ZoneType zone)
     {
-        if (_isUnderInvasion)
+        if (isUnderInvasion)
         {
             L2PcInstance player = killer.getActingPlayer();
             if (player != null)
@@ -142,7 +142,7 @@ public class DCEvent extends Quest
     @Override
     public String onFirstTalk(L2Npc npc, L2PcInstance player)
     {
-        if (_isUnderInvasion)
+        if (isUnderInvasion)
         {
             StringBuilder tb = new StringBuilder();
             tb.append("<html><center><font color=\"3D81A8\">Melonis!</font></center><br1>Hi " +
@@ -152,7 +152,7 @@ public class DCEvent extends Quest
             {
                 tb.append("<html><center> <br> GM Panel<br><Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Quest DCEvent end_invasion\">Stop event</Button>");
             }
-            NpcHtmlMessage msg = new NpcHtmlMessage(_npcId);
+            NpcHtmlMessage msg = new NpcHtmlMessage(npcId);
             msg.setHtml(tb.toString());
             player.sendPacket(msg);
             return ("");
@@ -167,33 +167,33 @@ public class DCEvent extends Quest
     {
         if (event.startsWith("trySpawnBoss"))
         {
-            _timeToEndInvasion = Integer.valueOf(event.split(" ")[1]);
+            timeToEndInvasion = Integer.valueOf(event.split(" ")[1]);
 
-            int _price = 0;
-            if (_timeToEndInvasion == 5)
+            int price = 0;
+            if (timeToEndInvasion == 5)
             {
-                _price = 5;
+                price = 5;
             }
-            else if (_timeToEndInvasion == 10)
+            else if (timeToEndInvasion == 10)
             {
-                _price = 8;
+                price = 8;
             }
-            else if (_timeToEndInvasion == 15)
+            else if (timeToEndInvasion == 15)
             {
-                _price = 12;
+                price = 12;
             }
-            if (!player.destroyItemByItemId("coin", 4037, _price, player, true))
+            if (!player.destroyItemByItemId("coin", 4037, price, player, true))
             {
                 StringBuilder tb = new StringBuilder();
                 tb.append("<html><center><font color=\"3D81A8\">Melonis!</font></center><br1>Sorry " +
-                        player.getName() + " but I need  <font color=LEVEL>" + _price + "</font> Coins of luck<br>");
-                NpcHtmlMessage msg = new NpcHtmlMessage(_npcId);
+                        player.getName() + " but I need  <font color=LEVEL>" + price + "</font> Coins of luck<br>");
+                NpcHtmlMessage msg = new NpcHtmlMessage(npcId);
                 msg.setHtml(tb.toString());
                 player.sendPacket(msg);
                 return ("");
             }
             Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(
-                    player.getName() + " started the dragon claw event for  " + _timeToEndInvasion + " minutes !", 7000));
+                    player.getName() + " started the dragon claw event for  " + timeToEndInvasion + " minutes !", 7000));
 
             startQuestTimer("start_invasion", 1, null, null);
         }
@@ -201,8 +201,8 @@ public class DCEvent extends Quest
         {
             player.teleToLocation(-54481, -69402, -3416, true);
 
-            _testPlayer.put(player, 0);
-            _registered.add(player);
+            testPlayer.put(player, 0);
+            registered.add(player);
         }
         else if (event.equalsIgnoreCase("teleport_back"))
         {
@@ -219,14 +219,14 @@ public class DCEvent extends Quest
         }
         else if (event.startsWith("start_invasion"))
         {
-            if (_isUnderInvasion)
+            if (isUnderInvasion)
             {
                 return "";
             }
 
-            _isUnderInvasion = true;
+            isUnderInvasion = true;
 
-            addSpawn(_npcId, -114358, 253164, -1541, 24266, false, _timeToEndInvasion);
+            addSpawn(npcId, -114358, 253164, -1541, 24266, false, timeToEndInvasion);
 
             int minX = -53749;
             int maxX = -55287;
@@ -244,15 +244,15 @@ public class DCEvent extends Quest
                     int y2 = (int) (radius * Math.sin(i * 0.618));
 
                     L2Npc inv =
-                            addSpawn(_invaderIds[Rnd.get(_invaderIds.length)], x, y, -3416 + 20, -1,
+                            addSpawn(invaderIds[Rnd.get(invaderIds.length)], x, y, -3416 + 20, -1,
                                     false, 0, false, 0);
 
-                    _invaders.add(inv);
+                    invaders.add(inv);
                 }
                 radius += 300;
             }
 
-            startQuestTimer(event.equalsIgnoreCase("start_invasion") ? "end_invasion" : "end_invasion_gm", _timeToEndInvasion * 60000, null, null);
+            startQuestTimer(event.equalsIgnoreCase("start_invasion") ? "end_invasion" : "end_invasion_gm", timeToEndInvasion * 60000, null, null);
         }
         else if (event.startsWith("spawn_boss"))
         {
@@ -260,12 +260,12 @@ public class DCEvent extends Quest
 
 
             startQuestTimer("delete_boss", 60000, null, null);
-            L2Npc boss = addSpawn(_boosId, -54481, -69402, -3416, 0, false, 0, true);
-            _invaders.add(boss);
+            L2Npc boss = addSpawn(boosId, -54481, -69402, -3416, 0, false, 0, true);
+            invaders.add(boss);
         }
         else if (event.startsWith("delete_boss"))
         {
-            for (L2Character delete : _invaders)
+            for (L2Character delete : invaders)
             {
                 if (delete == null)
                 {
@@ -274,7 +274,7 @@ public class DCEvent extends Quest
                 delete.deleteMe();
             }
 
-            for (L2Character test : _registered)
+            for (L2Character test : registered)
             {
                 if (test == null)
                 {
@@ -282,15 +282,15 @@ public class DCEvent extends Quest
                 }
                 test.teleToLocation(-114435, 253417, -1546, true);
             }
-            _invaders.clear();
-            _registered.clear();
-            _attackInfo.clear();
+            invaders.clear();
+            registered.clear();
+            attackInfo.clear();
             Announcements.getInstance().announceToAll("FINISHED");
-            _isUnderInvasion = false;
+            isUnderInvasion = false;
         }
         else if (event.startsWith("end_invasion"))
         {
-            _isUnderInvasion = false;
+            isUnderInvasion = false;
 
             if (event.equalsIgnoreCase("end_invasion_gm_force"))
             {
@@ -301,7 +301,7 @@ public class DCEvent extends Quest
                 }
             }
 
-            for (L2Character chara : _invaders)
+            for (L2Character chara : invaders)
             {
                 if (chara == null)
                 {
@@ -310,7 +310,7 @@ public class DCEvent extends Quest
                 chara.deleteMe();
             }
 
-            for (Map.Entry<L2Character, Integer> ontest : _testPlayer.entrySet())
+            for (Map.Entry<L2Character, Integer> ontest : testPlayer.entrySet())
             {
                 if (ontest == null)
                 {
@@ -319,18 +319,18 @@ public class DCEvent extends Quest
                 L2Character toTp = ontest.getKey();
                 int totalPoints = ontest.getValue();
 
-                L2PcInstance _oui = (L2PcInstance) ontest.getKey();
+                L2PcInstance oui = (L2PcInstance) ontest.getKey();
                 Announcements.getInstance().announceToAll("Player : " + toTp.getName() + " Points 1" + totalPoints);
-                _oui.addItem("coin", 36414, totalPoints, _oui, true);
+                oui.addItem("coin", 36414, totalPoints, oui, true);
                 toTp.teleToLocation(-114435, 253417, -1546, true);
             }
 
 
 
-            _registered.clear();
-            _invaders.clear();
-            _attackInfo.clear();
-            _isUnderInvasion = false;
+            registered.clear();
+            invaders.clear();
+            attackInfo.clear();
+            isUnderInvasion = false;
             Announcements.getInstance().announceToAll("Event finished !");
 
             //Only schedule the next invasion if is not started by a GM

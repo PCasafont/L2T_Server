@@ -38,16 +38,16 @@ import java.sql.PreparedStatement;
  */
 public final class RequestSendFriendMsg extends L2GameClientPacket
 {
-	//private static Logger _logChat = Logger.getLogger("chat");
+	//private static Logger logChat = Logger.getLogger("chat");
 
-	private String _message;
-	private String _reciever;
+	private String message;
+	private String reciever;
 
 	@Override
 	protected void readImpl()
 	{
-		_message = readS();
-		_reciever = readS();
+		message = readS();
+		reciever = readS();
 	}
 
 	@Override
@@ -59,12 +59,12 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 			return;
 		}
 
-		if (_message == null || _message.isEmpty() || _message.length() > 300)
+		if (message == null || message.isEmpty() || message.length() > 300)
 		{
 			return;
 		}
 
-		final L2PcInstance targetPlayer = L2World.getInstance().getPlayer(_reciever);
+		final L2PcInstance targetPlayer = L2World.getInstance().getPlayer(reciever);
 		if (targetPlayer == null || !targetPlayer.getFriendList().contains(activeChar.getObjectId()))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME));
@@ -84,8 +84,8 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 				statement.setLong(1, System.currentTimeMillis());
 				statement.setString(2, "TELL");
 				statement.setString(3, activeChar.getName());
-				statement.setString(4, _reciever);
-				statement.setString(5, _message);
+				statement.setString(4, reciever);
+				statement.setString(5, message);
 				statement.execute();
 				statement.close();
 			}
@@ -97,13 +97,13 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 			{
 				L2DatabaseFactory.close(con);
 			}
-			/*LogRecord record = new LogRecord(Level.INFO, _message);
+			/*LogRecord record = new LogRecord(Level.INFO, message);
             record.setLoggerName("chat");
-			record.setParameters(new Object[]{"PRIV_MSG", "[" + activeChar.getName() + " to "+ _reciever +"]"});
+			record.setParameters(new Object[]{"PRIV_MSG", "[" + activeChar.getName() + " to "+ reciever +"]"});
 
-			_logChat.log(record);*/
+			logChat.log(record);*/
 		}
 
-		targetPlayer.sendPacket(new L2FriendSay(activeChar.getName(), _reciever, _message));
+		targetPlayer.sendPacket(new L2FriendSay(activeChar.getName(), reciever, message));
 	}
 }

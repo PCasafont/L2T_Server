@@ -76,7 +76,7 @@ public class Teleport implements IBypassHandler
 			}
 			catch (Exception e)
 			{
-				_log.warning("L2Teleporter - " + target.getName() + "(" + target.getNpcId() +
+				log.warning("L2Teleporter - " + target.getName() + "(" + target.getNpcId() +
 						") - failed to parse raw teleport coordinates from html");
 				e.printStackTrace();
 			}

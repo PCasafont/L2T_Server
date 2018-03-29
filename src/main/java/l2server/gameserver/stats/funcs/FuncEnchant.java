@@ -25,12 +25,12 @@ import l2server.gameserver.templates.item.L2WeaponType;
 
 public class FuncEnchant extends Func
 {
-	private Lambda _lambda;
+	private Lambda lambda;
 
 	public FuncEnchant(Stats pStat, Object owner, Lambda lambda)
 	{
 		super(pStat, owner);
-		_lambda = lambda;
+		this.lambda = lambda;
 	}
 
 	@Override
@@ -84,7 +84,7 @@ public class FuncEnchant extends Func
 			}
 		}
 
-		double baseAddVal = _lambda.calc(env);
+		double baseAddVal = lambda.calc(env);
 		if (baseAddVal > 0.0)
 		{
 			env.value += baseAddVal * overenchant;

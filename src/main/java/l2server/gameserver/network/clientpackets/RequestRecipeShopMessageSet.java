@@ -32,12 +32,12 @@ public class RequestRecipeShopMessageSet extends L2GameClientPacket
 
 	private static final int MAX_MSG_LENGTH = 29;
 
-	private String _name;
+	private String name;
 
 	@Override
 	protected void readImpl()
 	{
-		_name = readS();
+		name = readS();
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public class RequestRecipeShopMessageSet extends L2GameClientPacket
 			return;
 		}
 
-		if (_name != null && _name.length() > MAX_MSG_LENGTH)
+		if (name != null && name.length() > MAX_MSG_LENGTH)
 		{
 			Util.handleIllegalPlayerAction(player,
 					"Player " + player.getName() + " tried to overflow recipe shop message", Config.DEFAULT_PUNISH);
@@ -58,7 +58,7 @@ public class RequestRecipeShopMessageSet extends L2GameClientPacket
 
 		if (player.getCreateList() != null)
 		{
-			player.getCreateList().setStoreName(_name);
+			player.getCreateList().setStoreName(name);
 		}
 
 		player.sendPacket(new RecipeShopMsg(player));

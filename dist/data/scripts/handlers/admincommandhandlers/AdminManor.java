@@ -41,7 +41,7 @@ import java.util.StringTokenizer;
  */
 public class AdminManor implements IAdminCommandHandler
 {
-	private static final String[] _adminCommands = {
+	private static final String[] adminCommands = {
 			"admin_manor",
 			"admin_manor_approve",
 			"admin_manor_setnext",
@@ -145,7 +145,7 @@ public class AdminManor implements IAdminCommandHandler
 	@Override
 	public String[] getAdminCommandList()
 	{
-		return _adminCommands;
+		return adminCommands;
 	}
 
 	private String formatTime(long millis)

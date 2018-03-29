@@ -75,11 +75,11 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private JTabbedPane _tabPane = new JTabbedPane();
+	private JTabbedPane tabPane = new JTabbedPane();
 
-	private List<ConfigFile> _configs = new ArrayList<>();
+	private List<ConfigFile> configs = new ArrayList<>();
 
-	private ResourceBundle _bundle;
+	private ResourceBundle bundle;
 
 	/**
 	 * @param args
@@ -151,7 +151,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		cons.weighty = 1;
 		loadConfigs();
 		buildInterface();
-		this.add(_tabPane, cons);
+		this.add(tabPane, cons);
 	}
 
 	private JButton createToolButton(String image, String text, String action)
@@ -222,7 +222,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			cons.gridy++;
 			cons.weighty = 1;
 			panel.add(new JLabel(), cons); // filler
-			_tabPane.addTab(cf.getName(), new JScrollPane(panel));
+			tabPane.addTab(cf.getName(), new JScrollPane(panel));
 		}
 	}
 
@@ -377,25 +377,25 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 
 	static class ConfigFile
 	{
-		private File _file;
-		private String _name;
-		private final List<ConfigComment> _configs = new ArrayList<>();
+		private File file;
+		private String name;
+		private final List<ConfigComment> configs = new ArrayList<>();
 
 		public ConfigFile(File file)
 		{
-			_file = file;
+			this.file = file;
 			int lastIndex = file.getName().lastIndexOf('.');
 			setName(file.getName().substring(0, lastIndex));
 		}
 
 		public void addConfigProperty(String name, Object value, ValueType type, String comments)
 		{
-			_configs.add(new ConfigProperty(name, value, type, comments));
+			configs.add(new ConfigProperty(name, value, type, comments));
 		}
 
 		public void addConfigComment(String comment)
 		{
-			_configs.add(new ConfigComment(comment));
+			configs.add(new ConfigComment(comment));
 		}
 
 		public void addConfigProperty(String name, Object value, String comments)
@@ -405,7 +405,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 
 		public List<ConfigComment> getConfigProperties()
 		{
-			return _configs;
+			return configs;
 		}
 
 		/**
@@ -413,7 +413,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		 */
 		public void setName(String name)
 		{
-			_name = name;
+			this.name = name;
 		}
 
 		/**
@@ -421,7 +421,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		 */
 		public String getName()
 		{
-			return _name;
+			return name;
 		}
 
 		public void save() throws IOException
@@ -429,8 +429,8 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			BufferedWriter bufWriter = null;
 			try
 			{
-				bufWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(_file)));
-				for (ConfigComment cc : _configs)
+				bufWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file)));
+				for (ConfigComment cc : configs)
 				{
 					cc.save(bufWriter);
 				}
@@ -447,14 +447,14 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		class ConfigComment
 		{
 
-			private String _comments;
+			private String comments;
 
 			/**
 			 * @param comments
 			 */
 			public ConfigComment(String comments)
 			{
-				_comments = comments;
+				this.comments = comments;
 			}
 
 			/**
@@ -462,7 +462,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 */
 			public String getComments()
 			{
-				return _comments;
+				return comments;
 			}
 
 			/**
@@ -470,7 +470,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 */
 			public void setComments(String comments)
 			{
-				_comments = comments;
+				this.comments = comments;
 			}
 
 			public void save(Writer writer) throws IOException
@@ -485,10 +485,10 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 
 		class ConfigProperty extends ConfigComment
 		{
-			private String _propname;
-			private Object _value;
-			private ValueType _type;
-			private JComponent _component;
+			private String propname;
+			private Object value;
+			private ValueType type;
+			private JComponent component;
 
 			/**
 			 * @param name
@@ -503,9 +503,9 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 				{
 					throw new IllegalArgumentException("Value Instance Type doesn't match the type argument.");
 				}
-				_propname = name;
-				_type = type;
-				_value = value;
+				propname = name;
+				this.type = type;
+				this.value = value;
 			}
 
 			/**
@@ -513,7 +513,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 */
 			public String getName()
 			{
-				return _propname;
+				return propname;
 			}
 
 			/**
@@ -521,7 +521,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 */
 			public String getDisplayName()
 			{
-				return unCamelize(_propname);
+				return unCamelize(propname);
 			}
 
 			/**
@@ -529,7 +529,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 */
 			public void setName(String name)
 			{
-				_propname = name;
+				propname = name;
 			}
 
 			/**
@@ -537,7 +537,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 */
 			public Object getValue()
 			{
-				return _value;
+				return value;
 			}
 
 			/**
@@ -545,7 +545,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 */
 			public void setValue(String value)
 			{
-				_value = value;
+				this.value = value;
 			}
 
 			/**
@@ -553,7 +553,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 */
 			public ValueType getType()
 			{
-				return _type;
+				return type;
 			}
 
 			/**
@@ -561,16 +561,16 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 */
 			public void setType(ValueType type)
 			{
-				_type = type;
+				this.type = type;
 			}
 
 			public JComponent getValueComponent()
 			{
-				if (_component == null)
+				if (component == null)
 				{
-					_component = createValueComponent();
+					component = createValueComponent();
 				}
-				return _component;
+				return component;
 			}
 
 			public JComponent createValueComponent()
@@ -649,11 +649,11 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		IPv4(Inet4Address.class),
 		STRING(String.class);
 
-		private final Class<?> _type;
+		private final Class<?> type;
 
 		ValueType(Class<?> type)
 		{
-			_type = type;
+			this.type = type;
 		}
 
 		/**
@@ -661,7 +661,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		 */
 		public Class<?> getType()
 		{
-			return _type;
+			return type;
 		}
 
 		public static ValueType firstTypeMatch(Object value)
@@ -732,7 +732,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	 */
 	public void setConfigs(List<ConfigFile> configs)
 	{
-		_configs = configs;
+		this.configs = configs;
 	}
 
 	/**
@@ -740,7 +740,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	 */
 	public List<ConfigFile> getConfigs()
 	{
-		return _configs;
+		return configs;
 	}
 
 	/**
@@ -771,7 +771,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	 */
 	public void setBundle(ResourceBundle bundle)
 	{
-		_bundle = bundle;
+		this.bundle = bundle;
 	}
 
 	/**
@@ -779,6 +779,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	 */
 	public ResourceBundle getBundle()
 	{
-		return _bundle;
+		return bundle;
 	}
 }

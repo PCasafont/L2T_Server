@@ -25,17 +25,17 @@ import l2server.gameserver.model.entity.ClanWarManager.ClanWar.WarState;
  */
 public class PledgeReceiveWarList extends L2GameServerPacket
 {
-	private L2Clan _clan;
+	private L2Clan clan;
 	@SuppressWarnings("unused")
-	private int _tab;
-	private int _scores;
-	private int _pkedPlayers;
-	private int _state;
+	private int tab;
+	private int scores;
+	private int pkedPlayers;
+	private int state;
 
 	public PledgeReceiveWarList(L2Clan clan, int tab)
 	{
-		_clan = clan;
-		_tab = tab;
+		this.clan = clan;
+		this.tab = tab;
 	}
 
 	/**
@@ -44,61 +44,61 @@ public class PledgeReceiveWarList extends L2GameServerPacket
 	protected final void writeImpl()
 	{
 		writeD(0); // ???
-		writeD(_clan.getWars().size());
+		writeD(clan.getWars().size());
 
-		for (ClanWar war : _clan.getWars())
+		for (ClanWar war : clan.getWars())
 		{
-			L2Clan other = war.getClan1() != _clan ? war.getClan1() : war.getClan2();
+			L2Clan other = war.getClan1() != clan ? war.getClan1() : war.getClan2();
 
-			_state = 0;
+			state = 0;
 			if (war.getElapsedTime() >= Config.PREPARE_NORMAL_WAR_PERIOD * 24 * 3600 &&
 					war.getState() == WarState.DECLARED)
 			{
-				_state = 1;
+				state = 1;
 			}
 			else if (war.getState() == WarState.STARTED)
 			{
-				_state = 2;
+				state = 2;
 			}
 			else if (war.getState() == WarState.REPOSE)
 			{
 				if (war.getTie())
 				{
-					_state = 5;
+					state = 5;
 				}
-				else if (war.getWinner() == _clan)
+				else if (war.getWinner() == clan)
 				{
-					_state = 3;
+					state = 3;
 				}
-				else if (war.getLoser() == _clan)
+				else if (war.getLoser() == clan)
 				{
-					_state = 4;
+					state = 4;
 				}
 			}
 
-			_scores = 0;
-			_pkedPlayers = 0;
-			if (_clan == war.getClan1())
+			scores = 0;
+			pkedPlayers = 0;
+			if (clan == war.getClan1())
 			{
-				_scores = war.getClan1Scores();
+				scores = war.getClan1Scores();
 			}
-			else if (_clan == war.getClan2())
+			else if (clan == war.getClan2())
 			{
-				_scores = war.getClan2Scores();
+				scores = war.getClan2Scores();
 			}
 
 			// Needs confirmation, show only for clan which declared war or for both!
-			if (_state < 2)
+			if (state < 2)
 			{
-				_pkedPlayers = 5 - war.getClan1DeathsForClanWar();
+				pkedPlayers = 5 - war.getClan1DeathsForClanWar();
 			}
 
 			writeS(other.getName());
-			writeD(_state); // 0: Declaration; 1: Blood Declaration; 2: At war; 3: Victory; 4: Defeat; 5: Tie
+			writeD(state); // 0: Declaration; 1: Blood Declaration; 2: At war; 3: Victory; 4: Defeat; 5: Tie
 			writeD(war.getElapsedTime()); // Time elapsed in seconds
-			writeD(_scores); // Scores.
-			writeD(_scores); // Scores in information. Needs confirmation if this is true scores in information.
-			writeD(_pkedPlayers); // Players PK'ed by other clan.
+			writeD(scores); // Scores.
+			writeD(scores); // Scores in information. Needs confirmation if this is true scores in information.
+			writeD(pkedPlayers); // Players PK'ed by other clan.
 		}
 	}
 }

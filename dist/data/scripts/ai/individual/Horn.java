@@ -34,15 +34,15 @@ import ai.group_template.L2AttackableAIScript;
 
 public class Horn extends L2AttackableAIScript
 {
-	private static final int[] _hornIds = {19460, 19461, 19462};
-	private static final int _chaosHorn = 23348;
-	private static final int _poras = 23335;
+	private static final int[] hornIds = {19460, 19461, 19462};
+	private static final int chaosHorn = 23348;
+	private static final int poras = 23335;
 
 	public Horn(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		for (int a : _hornIds)
+		for (int a : hornIds)
 		{
 			addKillId(a);
 		}
@@ -70,14 +70,14 @@ public class Horn extends L2AttackableAIScript
 			case 19461: //Blue
 				for (int a = 0; a < 5; a++)
 				{
-					addSpawn(_chaosHorn, npc.getX(), npc.getY(), npc.getZ(), 0, true, 60000, true);
+					addSpawn(chaosHorn, npc.getX(), npc.getY(), npc.getZ(), 0, true, 60000, true);
 				}
 				break;
 
 			case 19462: //Red
 				for (int a = 0; a < 8; a++)
 				{
-					addSpawn(_poras, npc.getX(), npc.getY(), npc.getZ(), 0, true, 60000, false);
+					addSpawn(poras, npc.getX(), npc.getY(), npc.getZ(), 0, true, 60000, false);
 				}
 				break;
 		}

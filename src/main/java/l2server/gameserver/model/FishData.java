@@ -17,46 +17,46 @@ package l2server.gameserver.model;
 
 public class FishData
 {
-	private int _id;
-	private int _level;
-	private String _name;
-	private int _hp;
-	private int _hpRegen;
-	private int _type;
-	private int _group;
-	private int _fishGuts;
-	private int _gutsCheckTime;
-	private int _waitTime;
-	private int _combatTime;
+	private int id;
+	private int level;
+	private String name;
+	private int hp;
+	private int hpRegen;
+	private int type;
+	private int group;
+	private int fishGuts;
+	private int gutsCheckTime;
+	private int waitTime;
+	private int combatTime;
 
 	public FishData(int id, int lvl, String name, int HP, int HpRegen, int type, int group, int fish_guts, int guts_check_time, int wait_time, int combat_time)
 	{
-		_id = id;
-		_level = lvl;
-		_name = name.intern();
-		_hp = HP;
-		_hpRegen = HpRegen;
-		_type = type;
-		_group = group;
-		_fishGuts = fish_guts;
-		_gutsCheckTime = guts_check_time;
-		_waitTime = wait_time;
-		_combatTime = combat_time;
+		this.id = id;
+		level = lvl;
+		this.name = name.intern();
+		this.hp = HP;
+		this.hpRegen = HpRegen;
+		this.type = type;
+		this.group = group;
+		fishGuts = fish_guts;
+		gutsCheckTime = guts_check_time;
+		waitTime = wait_time;
+		combatTime = combat_time;
 	}
 
 	public FishData(FishData copyOf)
 	{
-		_id = copyOf.getId();
-		_level = copyOf.getLevel();
-		_name = copyOf.getName();
-		_hp = copyOf.getHP();
-		_hpRegen = copyOf.getHpRegen();
-		_type = copyOf.getType();
-		_group = copyOf.getGroup();
-		_fishGuts = copyOf.getFishGuts();
-		_gutsCheckTime = copyOf.getGutsCheckTime();
-		_waitTime = copyOf.getWaitTime();
-		_combatTime = copyOf.getCombatTime();
+		id = copyOf.getId();
+		level = copyOf.getLevel();
+		name = copyOf.getName();
+		hp = copyOf.getHP();
+		hpRegen = copyOf.getHpRegen();
+		type = copyOf.getType();
+		group = copyOf.getGroup();
+		fishGuts = copyOf.getFishGuts();
+		gutsCheckTime = copyOf.getGutsCheckTime();
+		waitTime = copyOf.getWaitTime();
+		combatTime = copyOf.getCombatTime();
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class FishData
 	 */
 	public int getId()
 	{
-		return _id;
+		return id;
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class FishData
 	 */
 	public int getLevel()
 	{
-		return _level;
+		return level;
 	}
 
 	/**
@@ -80,51 +80,51 @@ public class FishData
 	 */
 	public String getName()
 	{
-		return _name;
+		return name;
 	}
 
 	public int getHP()
 	{
-		return _hp;
+		return hp;
 	}
 
 	public int getHpRegen()
 	{
-		return _hpRegen;
+		return hpRegen;
 	}
 
 	public int getType()
 	{
-		return _type;
+		return type;
 	}
 
 	public int getGroup()
 	{
-		return _group;
+		return group;
 	}
 
 	public int getFishGuts()
 	{
-		return _fishGuts;
+		return fishGuts;
 	}
 
 	public int getGutsCheckTime()
 	{
-		return _gutsCheckTime;
+		return gutsCheckTime;
 	}
 
 	public int getWaitTime()
 	{
-		return _waitTime;
+		return waitTime;
 	}
 
 	public int getCombatTime()
 	{
-		return _combatTime;
+		return combatTime;
 	}
 
 	public void setType(int type)
 	{
-		_type = type;
+		this.type = type;
 	}
 }

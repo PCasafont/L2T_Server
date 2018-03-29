@@ -67,13 +67,13 @@ public abstract class IdFactory
 			"DELETE FROM character_skills_save WHERE restore_type = 1 AND systime <= ?"
 	};
 
-	protected boolean _initialized;
+	protected boolean initialized;
 
 	public static final int FIRST_OID = 0x10000000;
 	public static final int LAST_OID = 0x7FFFFFFF;
 	public static final int FREE_OBJECT_ID_SIZE = LAST_OID - FIRST_OID;
 
-	protected static final IdFactory _instance;
+	protected static final IdFactory instance;
 
 	protected IdFactory()
 	{
@@ -89,16 +89,16 @@ public abstract class IdFactory
 		{
 			case Compaction:
 				throw new UnsupportedOperationException("Compaction IdFactory is disabled.");
-				//_instance = new CompactionIDFactory();
+				//instance = new CompactionIDFactory();
 				//break;
 			case BitSet:
-				_instance = new BitSetIDFactory();
+				instance = new BitSetIDFactory();
 				break;
 			case Stack:
-				_instance = new StackIDFactory();
+				instance = new StackIDFactory();
 				break;
 			default:
-				_instance = null;
+				instance = null;
 				break;
 		}
 	}
@@ -336,12 +336,12 @@ public abstract class IdFactory
 
 	public boolean isInitialized()
 	{
-		return _initialized;
+		return initialized;
 	}
 
 	public static IdFactory getInstance()
 	{
-		return _instance;
+		return instance;
 	}
 
 	public abstract int getNextId();

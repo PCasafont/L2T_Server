@@ -36,11 +36,11 @@ public class EventDroplist
 	/**
 	 * The table containing all DataDrop object
 	 */
-	private List<DateDrop> _allNpcDateDrops;
+	private List<DateDrop> allNpcDateDrops;
 
 	public static EventDroplist getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	public static class DateDrop
@@ -76,7 +76,7 @@ public class EventDroplist
 	 */
 	private EventDroplist()
 	{
-		_allNpcDateDrops = new ArrayList<>();
+		allNpcDateDrops = new ArrayList<>();
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class EventDroplist
 		date.max = count[1];
 		date.chance = chance;
 
-		_allNpcDateDrops.add(date);
+		allNpcDateDrops.add(date);
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class EventDroplist
 	{
 		List<DateDrop> list = new ArrayList<>();
 
-		for (DateDrop drop : _allNpcDateDrops)
+		for (DateDrop drop : allNpcDateDrops)
 		{
 			Date currentDate = new Date();
 			//Logozo.info("From: "+drop.from+" To: "+drop.to+" Now: "+ currentDate);
@@ -124,6 +124,6 @@ public class EventDroplist
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final EventDroplist _instance = new EventDroplist();
+		protected static final EventDroplist instance = new EventDroplist();
 	}
 }

@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model.quest;
 
+import gnu.trove.TIntIntHashMap;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.TimeController;
@@ -28,16 +29,7 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExShowQuestMark;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.PlaySound;
-import l2server.gameserver.network.serverpackets.QuestList;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.network.serverpackets.TutorialCloseHtml;
-import l2server.gameserver.network.serverpackets.TutorialEnableClientEvent;
-import l2server.gameserver.network.serverpackets.TutorialShowHtml;
-import l2server.gameserver.network.serverpackets.TutorialShowQuestionMark;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.stats.Stats;
 import l2server.log.Log;
 import l2server.util.Rnd;
@@ -50,8 +42,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 
-import gnu.trove.TIntIntHashMap;
-
 /**
  * @author Luis Arias
  */
@@ -61,29 +51,29 @@ public final class QuestState
 	/**
 	 * Quest associated to the QuestState
 	 */
-	private final String _questName;
+	private final String questName;
 
 	/**
 	 * Player who engaged the quest
 	 */
-	private final L2PcInstance _player;
+	private final L2PcInstance player;
 
 	/**
 	 * State of the quest
 	 */
-	private byte _state;
+	private byte state;
 
 	/**
 	 * List of couples (variable for quest,value of the variable for quest)
 	 */
-	private Map<String, String> _vars;
+	private Map<String, String> vars;
 
 	/**
 	 * boolean flag letting QuestStateManager know to exit quest when cleaning up
 	 */
-	private boolean _isExitQuestOnCleanUp = false;
+	private boolean isExitQuestOnCleanUp = false;
 
-	private TIntIntHashMap _npcLogs = new TIntIntHashMap();
+	private TIntIntHashMap npcLogs = new TIntIntHashMap();
 
 	/**
 	 * Constructor of the QuestState : save the quest in the list of quests of the player.<BR/><BR/>
@@ -100,19 +90,19 @@ public final class QuestState
 	 */
 	public QuestState(Quest quest, L2PcInstance player, byte state)
 	{
-		_questName = quest.getName();
-		_player = player;
+		questName = quest.getName();
+		this.player = player;
 
 		// Save the state of the quest for the player in the player's list of quest onwed
 		getPlayer().setQuestState(this);
 
 		// set the state of the quest
-		_state = state;
+		this.state = state;
 	}
 
 	public String getQuestName()
 	{
-		return _questName;
+		return questName;
 	}
 
 	/**
@@ -122,7 +112,7 @@ public final class QuestState
 	 */
 	public Quest getQuest()
 	{
-		return QuestManager.getInstance().getQuest(_questName);
+		return QuestManager.getInstance().getQuest(questName);
 	}
 
 	/**
@@ -132,7 +122,7 @@ public final class QuestState
 	 */
 	public L2PcInstance getPlayer()
 	{
-		return _player;
+		return player;
 	}
 
 	/**
@@ -142,7 +132,7 @@ public final class QuestState
 	 */
 	public byte getState()
 	{
-		return _state;
+		return state;
 	}
 
 	/**
@@ -190,10 +180,10 @@ public final class QuestState
 	public Object setState(byte state)
 	{
 		// set new state if it is not already in that state
-		if (_state != state)
+		if (state != state)
 		{
 			final boolean newQuest = isCreated();
-			_state = state;
+			this.state = state;
 
 			if (newQuest)
 			{
@@ -212,9 +202,9 @@ public final class QuestState
 	public Object setStateAndNotSave(byte state)
 	{
 		// set new state if it is not already in that state
-		if (_state != state)
+		if (state != state)
 		{
-			_state = state;
+			this.state = state;
 			getPlayer().sendPacket(new QuestList());
 		}
 		return state;
@@ -229,9 +219,9 @@ public final class QuestState
 	 */
 	public String setInternal(String var, String val)
 	{
-		if (_vars == null)
+		if (vars == null)
 		{
-			_vars = new ConcurrentHashMap<>();
+			vars = new ConcurrentHashMap<>();
 		}
 
 		if (val == null)
@@ -239,7 +229,7 @@ public final class QuestState
 			val = "";
 		}
 
-		_vars.put(var, val);
+		vars.put(var, val);
 		return val;
 	}
 
@@ -259,9 +249,9 @@ public final class QuestState
 	 */
 	public String set(String var, String val)
 	{
-		if (_vars == null)
+		if (vars == null)
 		{
-			_vars = new HashMap<>();
+			vars = new HashMap<>();
 		}
 
 		if (val == null)
@@ -270,7 +260,7 @@ public final class QuestState
 		}
 
 		// HashMap.put() returns previous value associated with specified key, or null if there was no mapping for key.
-		String old = _vars.put(var, val);
+		String old = vars.put(var, val);
 
 		if (old != null)
 		{
@@ -429,12 +419,12 @@ public final class QuestState
 	 */
 	public String unset(String var)
 	{
-		if (_vars == null)
+		if (vars == null)
 		{
 			return null;
 		}
 
-		String old = _vars.remove(var);
+		String old = vars.remove(var);
 
 		if (old != null)
 		{
@@ -462,7 +452,7 @@ public final class QuestState
 			PreparedStatement statement;
 			statement =
 					con.prepareStatement("REPLACE INTO character_quest_global_data (charId,var,value) VALUES (?,?,?)");
-			statement.setInt(1, _player.getObjectId());
+			statement.setInt(1, player.getObjectId());
 			statement.setString(2, var);
 			statement.setString(3, value);
 			statement.executeUpdate();
@@ -498,7 +488,7 @@ public final class QuestState
 			PreparedStatement statement;
 			statement =
 					con.prepareStatement("SELECT value FROM character_quest_global_data WHERE charId = ? AND var = ?");
-			statement.setInt(1, _player.getObjectId());
+			statement.setInt(1, player.getObjectId());
 			statement.setString(2, var);
 			ResultSet rs = statement.executeQuery();
 			if (rs.first())
@@ -532,7 +522,7 @@ public final class QuestState
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement;
 			statement = con.prepareStatement("DELETE FROM character_quest_global_data WHERE charId = ? AND var = ?");
-			statement.setInt(1, _player.getObjectId());
+			statement.setInt(1, player.getObjectId());
 			statement.setString(2, var);
 			statement.executeUpdate();
 			statement.close();
@@ -555,12 +545,12 @@ public final class QuestState
 	 */
 	public String get(String var)
 	{
-		if (_vars == null)
+		if (vars == null)
 		{
 			return null;
 		}
 
-		return _vars.get(var);
+		return vars.get(var);
 	}
 
 	/**
@@ -571,12 +561,12 @@ public final class QuestState
 	 */
 	public int getInt(String var)
 	{
-		if (_vars == null)
+		if (vars == null)
 		{
 			return 0;
 		}
 
-		final String variable = _vars.get(var);
+		final String variable = vars.get(var);
 		if (variable == null || variable.length() == 0)
 		{
 			return 0;
@@ -684,9 +674,9 @@ public final class QuestState
 			return;
 		}
 
-		L2ItemInstance _tmpItem = ItemTable.getInstance().createDummyItem(itemId);
+		L2ItemInstance tmpItem = ItemTable.getInstance().createDummyItem(itemId);
 
-		if (_tmpItem == null)
+		if (tmpItem == null)
 		{
 			return;
 		}
@@ -697,9 +687,9 @@ public final class QuestState
 		}
 		else if (Config.RATE_QUEST_REWARD_USE_MULTIPLIERS)
 		{
-			if (_tmpItem.isEtcItem())
+			if (tmpItem.isEtcItem())
 			{
-				switch (_tmpItem.getEtcItem().getItemType())
+				switch (tmpItem.getEtcItem().getItemType())
 				{
 					case POTION:
 						count = (long) (count * Config.RATE_QUEST_REWARD_POTION);
@@ -1094,7 +1084,7 @@ public final class QuestState
 	 */
 	public final boolean isExitQuestOnCleanUp()
 	{
-		return _isExitQuestOnCleanUp;
+		return isExitQuestOnCleanUp;
 	}
 
 	/**
@@ -1104,7 +1094,7 @@ public final class QuestState
 	 */
 	public void setIsExitQuestOnCleanUp(boolean isExitQuestOnCleanUp)
 	{
-		_isExitQuestOnCleanUp = isExitQuestOnCleanUp;
+		this.isExitQuestOnCleanUp = isExitQuestOnCleanUp;
 	}
 
 	/**
@@ -1232,7 +1222,7 @@ public final class QuestState
 	public QuestState exitQuest(boolean repeatable)
 	{
 		// remove this quest from the notifyDeath list of this character if its on this list
-		_player.removeNotifyQuestOfDeath(this);
+		player.removeNotifyQuestOfDeath(this);
 
 		if (isCompleted() || isCreated())
 		{
@@ -1258,14 +1248,14 @@ public final class QuestState
 			getPlayer().delQuestState(getQuestName());
 			Quest.deleteQuestInDb(this);
 
-			_vars = null;
+			vars = null;
 		}
 		else
 		{
 			// Otherwise, delete variables for quest and update database (quest CANNOT be created again => not repeatable)
-			if (_vars != null)
+			if (vars != null)
 			{
-				Map<String, String> toIterate = new HashMap<>(_vars);
+				Map<String, String> toIterate = new HashMap<>(vars);
 				for (String var : toIterate.keySet())
 				{
 					unset(var);
@@ -1319,23 +1309,23 @@ public final class QuestState
 
 	public TIntIntHashMap getNpcLogs()
 	{
-		return _npcLogs;
+		return npcLogs;
 	}
 
 	public int getNpcLog(int npcId)
 	{
-		return _npcLogs.get(npcId);
+		return npcLogs.get(npcId);
 	}
 
 	public void increaseNpcLog(int npcId)
 	{
-		if (!_npcLogs.contains(npcId))
+		if (!npcLogs.contains(npcId))
 		{
-			_npcLogs.put(npcId, 1);
+			npcLogs.put(npcId, 1);
 		}
 		else
 		{
-			_npcLogs.put(npcId, _npcLogs.get(npcId) + 1);
+			npcLogs.put(npcId, npcLogs.get(npcId) + 1);
 		}
 	}
 }

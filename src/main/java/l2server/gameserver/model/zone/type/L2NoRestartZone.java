@@ -28,8 +28,8 @@ import l2server.gameserver.model.zone.L2ZoneType;
  */
 public class L2NoRestartZone extends L2ZoneType
 {
-	private int _restartAllowedTime = 0;
-	private boolean _enabled = true;
+	private int restartAllowedTime = 0;
+	private boolean enabled = true;
 
 	public L2NoRestartZone(int id)
 	{
@@ -41,11 +41,11 @@ public class L2NoRestartZone extends L2ZoneType
 	{
 		if (name.equalsIgnoreCase("EnabledByDefault"))
 		{
-			_enabled = Boolean.parseBoolean(value);
+			enabled = Boolean.parseBoolean(value);
 		}
 		else if (name.equalsIgnoreCase("restartAllowedTime"))
 		{
-			_restartAllowedTime = Integer.parseInt(value);
+			restartAllowedTime = Integer.parseInt(value);
 		}
 		else if (name.equalsIgnoreCase("restartTime"))
 		{
@@ -68,7 +68,7 @@ public class L2NoRestartZone extends L2ZoneType
 	@Override
 	protected void onEnter(L2Character character)
 	{
-		if (!_enabled)
+		if (!enabled)
 		{
 			return;
 		}
@@ -89,7 +89,7 @@ public class L2NoRestartZone extends L2ZoneType
 	@Override
 	protected void onExit(L2Character character)
 	{
-		if (!_enabled)
+		if (!enabled)
 		{
 			return;
 		}
@@ -114,27 +114,27 @@ public class L2NoRestartZone extends L2ZoneType
 
 	public int getRestartAllowedTime()
 	{
-		return _restartAllowedTime;
+		return restartAllowedTime;
 	}
 
 	public void setRestartAllowedTime(int time)
 	{
-		_restartAllowedTime = time;
+		restartAllowedTime = time;
 	}
 
 	private static class TeleportTask implements Runnable
 	{
-		private final L2PcInstance _player;
+		private final L2PcInstance player;
 
 		public TeleportTask(L2PcInstance player)
 		{
-			_player = player;
+			this.player = player;
 		}
 
 		@Override
 		public void run()
 		{
-			_player.teleToLocation(TeleportWhereType.Town);
+			player.teleToLocation(TeleportWhereType.Town);
 		}
 	}
 }

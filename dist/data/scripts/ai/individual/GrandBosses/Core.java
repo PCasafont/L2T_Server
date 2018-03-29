@@ -36,43 +36,43 @@ import ai.group_template.L2AttackableAIScript;
 public class Core extends L2AttackableAIScript
 {
     //Quest
-    private static final boolean _debug = false;
+    private static final boolean debug = false;
 
     //Id's
-    private static final int _coreId = 29006;
+    private static final int coreId = 29006;
 
     //Vars
-    private static long _LastAction;
-    private static boolean _alreadyAttacked = false;
+    private static long LastAction;
+    private static boolean alreadyAttacked = false;
 
     public Core(int id, String name, String descr)
     {
         super(id, name, descr);
 
-        addAttackId(_coreId);
-        addKillId(_coreId);
+        addAttackId(coreId);
+        addKillId(coreId);
 
         //Unlock
-        startQuestTimer("unlock_core", GrandBossManager.getInstance().getUnlockTime(_coreId), null, null);
+        startQuestTimer("unlock_core", GrandBossManager.getInstance().getUnlockTime(coreId), null, null);
     }
 
     @Override
     public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
 
         if (event.equalsIgnoreCase("unlock_core"))
         {
-            _alreadyAttacked = false;
+            alreadyAttacked = false;
 
-            L2GrandBossInstance core = (L2GrandBossInstance) addSpawn(_coreId, 17726, 108915, -6480, 0, false, 0);
+            L2GrandBossInstance core = (L2GrandBossInstance) addSpawn(coreId, 17726, 108915, -6480, 0, false, 0);
 
             GrandBossManager.getInstance().addBoss(core);
 
-            GrandBossManager.getInstance().setBossStatus(_coreId, GrandBossManager.getInstance().ALIVE);
+            GrandBossManager.getInstance().setBossStatus(coreId, GrandBossManager.getInstance().ALIVE);
         }
         else if (event.equalsIgnoreCase("end_core"))
         {
@@ -82,16 +82,16 @@ public class Core extends L2AttackableAIScript
                 activityTimer.cancel();
             }
 
-            _alreadyAttacked = false;
+            alreadyAttacked = false;
 
-            if (GrandBossManager.getInstance().getBossStatus(_coreId) != GrandBossManager.getInstance().DEAD)
+            if (GrandBossManager.getInstance().getBossStatus(coreId) != GrandBossManager.getInstance().DEAD)
             {
-                GrandBossManager.getInstance().setBossStatus(_coreId, GrandBossManager.getInstance().ALIVE);
+                GrandBossManager.getInstance().setBossStatus(coreId, GrandBossManager.getInstance().ALIVE);
             }
         }
         else if (event.equalsIgnoreCase("check_activity_task"))
         {
-            if (!GrandBossManager.getInstance().isActive(_coreId, _LastAction))
+            if (!GrandBossManager.getInstance().isActive(coreId, LastAction))
             {
                 notifyEvent("end_core", null, null);
             }
@@ -102,23 +102,23 @@ public class Core extends L2AttackableAIScript
     @Override
     public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAttack: " + npc.getName());
         }
 
-        if (npc.getNpcId() == _coreId)
+        if (npc.getNpcId() == coreId)
         {
-            _LastAction = System.currentTimeMillis();
+            LastAction = System.currentTimeMillis();
 
-            if (GrandBossManager.getInstance().getBossStatus(_coreId) == GrandBossManager.getInstance().ALIVE)
+            if (GrandBossManager.getInstance().getBossStatus(coreId) == GrandBossManager.getInstance().ALIVE)
             {
-                GrandBossManager.getInstance().setBossStatus(_coreId, GrandBossManager.getInstance().FIGHTING);
+                GrandBossManager.getInstance().setBossStatus(coreId, GrandBossManager.getInstance().FIGHTING);
 
                 startQuestTimer("check_activity_task", 60000, null, null, true);
             }
 
-            if (_alreadyAttacked)
+            if (alreadyAttacked)
             {
                 if (Rnd.get(100) == 0)
                 {
@@ -128,7 +128,7 @@ public class Core extends L2AttackableAIScript
             }
             else
             {
-                _alreadyAttacked = true;
+                alreadyAttacked = true;
                 npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(),
                         1000001)); // A non-permitted target has been discovered.
                 npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(),
@@ -141,27 +141,27 @@ public class Core extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
 
-        if (npc.getNpcId() == _coreId)
+        if (npc.getNpcId() == coreId)
         {
-            GrandBossManager.getInstance().notifyBossKilled(_coreId);
+            GrandBossManager.getInstance().notifyBossKilled(coreId);
 
             notifyEvent("end_core", null, null);
 
             npc.broadcastPacket(new PlaySound(1, "BS02_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
-            npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, _coreId, 1000004)); // A fatal error has occurred.
-            npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, _coreId, 1000005)); // System is being shut down...
-            npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, _coreId, 1000006)); // ......
+            npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, coreId, 1000004)); // A fatal error has occurred.
+            npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, coreId, 1000005)); // System is being shut down...
+            npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, coreId, 1000006)); // ......
 
             //Exit Cubics
             addSpawn(31842, 16502, 110165, -6394, 0, false, 900000);
             addSpawn(31842, 18948, 110166, -6397, 0, false, 900000);
 
-            startQuestTimer("unlock_core", GrandBossManager.getInstance().getUnlockTime(_coreId), null, null);
+            startQuestTimer("unlock_core", GrandBossManager.getInstance().getUnlockTime(coreId), null, null);
         }
         return super.onKill(npc, killer, isPet);
     }

@@ -24,18 +24,18 @@ public final class AutoAttackStart extends L2GameServerPacket
 {
 	// dh
 
-	private int _targetObjId;
+	private int targetObjId;
 
 	/**
 	 */
 	public AutoAttackStart(int targetId)
 	{
-		_targetObjId = targetId;
+		targetObjId = targetId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_targetObjId);
+		writeD(targetObjId);
 	}
 }

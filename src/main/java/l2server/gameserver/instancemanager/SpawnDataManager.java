@@ -41,7 +41,7 @@ public class SpawnDataManager
 		public int currentMp;
 	}
 
-	private Map<String, DbSpawnData> _dbSpawnData = new HashMap<>();
+	private Map<String, DbSpawnData> dbSpawnData = new HashMap<>();
 
 	public SpawnDataManager()
 	{
@@ -65,7 +65,7 @@ public class SpawnDataManager
 				dbsd.currentHp = rset.getInt("current_hp");
 				dbsd.currentMp = rset.getInt("current_mp");
 
-				_dbSpawnData.put(rset.getString("name"), dbsd);
+				dbSpawnData.put(rset.getString("name"), dbsd);
 			}
 
 			rset.close();
@@ -88,8 +88,8 @@ public class SpawnDataManager
 
 	public DbSpawnData popDbSpawnData(String dbName)
 	{
-		DbSpawnData dbsd = _dbSpawnData.get(dbName);
-		_dbSpawnData.remove(dbName);
+		DbSpawnData dbsd = dbSpawnData.get(dbName);
+		dbSpawnData.remove(dbName);
 		return dbsd;
 	}
 
@@ -140,12 +140,12 @@ public class SpawnDataManager
 
 	public static SpawnDataManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final SpawnDataManager _instance = new SpawnDataManager();
+		protected static final SpawnDataManager instance = new SpawnDataManager();
 	}
 }

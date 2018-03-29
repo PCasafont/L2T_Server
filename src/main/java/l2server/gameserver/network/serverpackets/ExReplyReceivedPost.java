@@ -26,18 +26,18 @@ import l2server.log.Log;
 public class ExReplyReceivedPost extends L2ItemListPacket
 {
 
-	private Message _msg;
-	private L2ItemInstance[] _items = null;
+	private Message msg;
+	private L2ItemInstance[] items = null;
 
 	public ExReplyReceivedPost(Message msg)
 	{
-		_msg = msg;
+		this.msg = msg;
 		if (msg.hasAttachments())
 		{
 			final ItemContainer attachments = msg.getAttachments();
 			if (attachments != null && attachments.getSize() > 0)
 			{
-				_items = attachments.getItems();
+				items = attachments.getItems();
 			}
 			else
 			{
@@ -53,8 +53,8 @@ public class ExReplyReceivedPost extends L2ItemListPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_msg.getSendBySystem());
-		if (_msg.getSendBySystem() == Message.SendBySystem.SYSTEM.ordinal())
+		writeD(msg.getSendBySystem());
+		if (msg.getSendBySystem() == Message.SendBySystem.SYSTEM.ordinal())
 		{
 			writeD(0x00);// unknown1
 			writeD(0x00);// unknown2
@@ -64,37 +64,37 @@ public class ExReplyReceivedPost extends L2ItemListPacket
 			writeD(0x00);// unknown6
 			writeD(0x00);// unknown7
 			writeD(0x00);// unknown8
-			writeD(_msg.getSystemMessage1());
-			writeD(_msg.getSystemMessage2());
+			writeD(msg.getSystemMessage1());
+			writeD(msg.getSystemMessage2());
 		}
 
-		writeD(_msg.getId());
-		writeD(_msg.isLocked() ? 1 : 0);
+		writeD(msg.getId());
+		writeD(msg.isLocked() ? 1 : 0);
 		writeD(0x00); //Unknown
-		writeS(_msg.getSenderName());
-		writeS(_msg.getSubject());
-		writeS(_msg.getContent());
+		writeS(msg.getSenderName());
+		writeS(msg.getSubject());
+		writeS(msg.getContent());
 
-		if (_items != null && _items.length > 0)
+		if (items != null && items.length > 0)
 		{
-			writeD(_items.length);
-			for (L2ItemInstance item : _items)
+			writeD(items.length);
+			for (L2ItemInstance item : items)
 			{
 				writeItem(item);
 				writeD(item.getObjectId());
 			}
-			_items = null;
+			items = null;
 		}
 		else
 		{
 			writeD(0x00);
 		}
 
-		writeQ(_msg.getReqAdena());
-		writeD(_msg.hasAttachments() ? 1 : 0);
-		writeD(_msg.getSendBySystem() > 0 ? 0x00 : 0x01);
-		writeD(_msg.getReceiverId());
+		writeQ(msg.getReqAdena());
+		writeD(msg.hasAttachments() ? 1 : 0);
+		writeD(msg.getSendBySystem() > 0 ? 0x00 : 0x01);
+		writeD(msg.getReceiverId());
 
-		_msg = null;
+		msg = null;
 	}
 }

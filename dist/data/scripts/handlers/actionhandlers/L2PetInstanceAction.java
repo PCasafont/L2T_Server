@@ -55,7 +55,7 @@ public class L2PetInstanceAction implements IActionHandler
 		{
 			if (Config.DEBUG)
 			{
-				_log.fine("new target selected:" + target.getObjectId());
+				log.fine("new target selected:" + target.getObjectId());
 			}
 
 			// Set the target of the L2PcInstance activeChar

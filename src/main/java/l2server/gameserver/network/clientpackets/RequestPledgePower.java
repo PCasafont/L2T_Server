@@ -23,23 +23,23 @@ import java.util.logging.Logger;
 
 public final class RequestPledgePower extends L2GameClientPacket
 {
-	static Logger _log = Logger.getLogger(ManagePledgePower.class.getName());
-	private int _rank;
-	private int _action;
-	private int _privs;
+	static Logger log = Logger.getLogger(ManagePledgePower.class.getName());
+	private int rank;
+	private int action;
+	private int privs;
 
 	@Override
 	protected void readImpl()
 	{
-		_rank = readD();
-		_action = readD();
-		if (_action == 2)
+		rank = readD();
+		action = readD();
+		if (action == 2)
 		{
-			_privs = readD();
+			privs = readD();
 		}
 		else
 		{
-			_privs = 0;
+			privs = 0;
 		}
 	}
 
@@ -52,11 +52,11 @@ public final class RequestPledgePower extends L2GameClientPacket
 			return;
 		}
 
-		if (_action == 2)
+		if (action == 2)
 		{
 			if (player.getClan() != null && player.isClanLeader())
 			{
-				if (_rank == 9)
+				if (rank == 9)
 				{
 					//The rights below cannot be bestowed upon Academy members:
 					//Join a clan or be dismissed
@@ -65,15 +65,15 @@ public final class RequestPledgePower extends L2GameClientPacket
 					//Clan war, right to dismiss, set functions
 					//Auction, manage taxes, attack/defend registration, mercenary management
 					//=> Leaves only CP_CL_VIEW_WAREHOUSE, CP_CH_OPEN_DOOR, CP_CS_OPEN_DOOR?
-					_privs = (_privs & L2Clan.CP_CL_VIEW_WAREHOUSE) + (_privs & L2Clan.CP_CH_OPEN_DOOR) +
-							(_privs & L2Clan.CP_CS_OPEN_DOOR);
+					privs = (privs & L2Clan.CP_CL_VIEW_WAREHOUSE) + (privs & L2Clan.CP_CH_OPEN_DOOR) +
+							(privs & L2Clan.CP_CS_OPEN_DOOR);
 				}
-				player.getClan().setRankPrivs(_rank, _privs);
+				player.getClan().setRankPrivs(rank, privs);
 			}
 		}
 		else
 		{
-			ManagePledgePower mpp = new ManagePledgePower(getClient().getActiveChar().getClan(), _action, _rank);
+			ManagePledgePower mpp = new ManagePledgePower(getClient().getActiveChar().getClan(), action, rank);
 			player.sendPacket(mpp);
 		}
 	}

@@ -29,7 +29,7 @@ public class IOPRace extends Quest
 	private static final int STAMP = 10013;
 	private static final int KEY = 9694;
 
-	private int _player = -1;
+	private int player = -1;
 
 	public IOPRace(int id, String name, String descr)
 	{
@@ -52,11 +52,11 @@ public class IOPRace extends Quest
 		{
 			return "32349-notavailable.htm";
 		}
-		else if (_player != -1 && _player == player.getObjectId() && st.getQuestItemsCount(STAMP) == 4)
+		else if (this.player != -1 && this.player == player.getObjectId() && st.getQuestItemsCount(STAMP) == 4)
 		{
 			return "32349-return.htm";
 		}
-		else if (_player != -1)
+		else if (this.player != -1)
 		{
 			return "32349-notavailable.htm";
 		}
@@ -74,7 +74,7 @@ public class IOPRace extends Quest
 			st = newQuestState(player);
 		}
 
-		if (_player == -1)
+		if (this.player == -1)
 		{
 			// clean old data
 			player.stopSkillEffects(5239);
@@ -104,7 +104,7 @@ public class IOPRace extends Quest
 			}
 
 			startQuestTimer("timer", 1800000, null, null); // 30 min
-			_player = player.getObjectId();
+            this.player = player.getObjectId();
 		}
 
 		return null;
@@ -117,12 +117,12 @@ public class IOPRace extends Quest
 
 		if (event.equalsIgnoreCase("timer"))
 		{
-			_player = -1;
+            this.player = -1;
 			return null;
 		}
 		else if (event.equalsIgnoreCase("finish"))
 		{
-			if (_player == player.getObjectId())
+			if (this.player == player.getObjectId())
 			{
 				QuestState st = player.getQuestState(getName());
 				st.giveItems(KEY, 3);

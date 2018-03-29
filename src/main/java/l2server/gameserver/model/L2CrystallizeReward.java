@@ -20,29 +20,29 @@ package l2server.gameserver.model;
  */
 public class L2CrystallizeReward
 {
-	private final int _itemId;
-	private final int _count;
-	private final double _chance;
+	private final int itemId;
+	private final int count;
+	private final double chance;
 
 	public L2CrystallizeReward(int itemId, int count, double chance)
 	{
-		_itemId = itemId;
-		_count = count;
-		_chance = chance;
+		this.itemId = itemId;
+		this.count = count;
+		this.chance = chance;
 	}
 
 	public int getItemId()
 	{
-		return _itemId;
+		return itemId;
 	}
 
 	public int getCount()
 	{
-		return _count;
+		return count;
 	}
 
 	public double getChance()
 	{
-		return _chance;
+		return chance;
 	}
 }

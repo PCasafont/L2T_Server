@@ -30,12 +30,12 @@ import l2server.log.Log;
 public final class RequestPetUseItem extends L2GameClientPacket
 {
 
-	private int _objectId;
+	private int objectId;
 
 	@Override
 	protected void readImpl()
 	{
-		_objectId = readD();
+		objectId = readD();
 		//TODO: implement me properly
 		//readQ();
 		//readD();
@@ -61,7 +61,7 @@ public final class RequestPetUseItem extends L2GameClientPacket
 			return;
 		}
 
-		final L2ItemInstance item = pet.getInventory().getItemByObjectId(_objectId);
+		final L2ItemInstance item = pet.getInventory().getItemByObjectId(objectId);
 		if (item == null)
 		{
 			return;
@@ -77,7 +77,7 @@ public final class RequestPetUseItem extends L2GameClientPacket
 
 		if (Config.DEBUG)
 		{
-			Log.finest(activeChar.getObjectId() + ": pet use item " + _objectId);
+			Log.finest(activeChar.getObjectId() + ": pet use item " + objectId);
 		}
 
 		if (!item.isEquipped())

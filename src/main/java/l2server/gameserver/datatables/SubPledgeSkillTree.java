@@ -32,7 +32,7 @@ import java.util.Iterator;
  */
 public class SubPledgeSkillTree
 {
-	private TLongObjectHashMap<SubUnitSkill> _skilltree = new TLongObjectHashMap<>();
+	private TLongObjectHashMap<SubUnitSkill> skilltree = new TLongObjectHashMap<>();
 
 	public SubPledgeSkillTree()
 	{
@@ -41,7 +41,7 @@ public class SubPledgeSkillTree
 
 	public static SubPledgeSkillTree getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	public static class SubUnitSkill
@@ -95,7 +95,7 @@ public class SubPledgeSkillTree
 
 	private void load()
 	{
-		_skilltree.clear();
+		skilltree.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "skilltrees/subpledgeskilltree.xml");
 		if (file.exists())
 		{
@@ -160,23 +160,23 @@ public class SubPledgeSkillTree
                         continue;
                     }
 
-                    _skilltree.put(SkillTable.getSkillHashCode(skill),
+                    skilltree.put(SkillTable.getSkillHashCode(skill),
                             new SubUnitSkill(skill, clanLvl, reputation, itemId, count));
                 }
             }
         }
-		Log.info(getClass().getSimpleName() + ": Loaded " + _skilltree.size() + " SubUnit Skills");
+		Log.info(getClass().getSimpleName() + ": Loaded " + skilltree.size() + " SubUnit Skills");
 	}
 
 	public SubUnitSkill getSkill(long skillhash)
 	{
-		return _skilltree.get(skillhash);
+		return skilltree.get(skillhash);
 	}
 
 	public SubUnitSkill[] getAvailableSkills(L2Clan clan)
 	{
 		ArrayList<SubUnitSkill> list = new ArrayList<>();
-		for (Object obj : _skilltree.getValues())
+		for (Object obj : skilltree.getValues())
 		{
 			SubUnitSkill skill = (SubUnitSkill) obj;
 			if (skill.getClanLvl() <= clan.getLevel())
@@ -201,6 +201,6 @@ public class SubPledgeSkillTree
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final SubPledgeSkillTree _instance = new SubPledgeSkillTree();
+		protected static final SubPledgeSkillTree instance = new SubPledgeSkillTree();
 	}
 }

@@ -27,18 +27,18 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 {
 
-	private int _isMemberSelected;
-	private String _memberName;
-	private int _newPledgeType;
-	private String _selectedMember;
+	private int isMemberSelected;
+	private String memberName;
+	private int newPledgeType;
+	private String selectedMember;
 
 	@Override
 	protected void readImpl()
 	{
-		_isMemberSelected = readD();
-		_memberName = readS();
-		_newPledgeType = readD();
-		_selectedMember = readS();
+		isMemberSelected = readD();
+		memberName = readS();
+		newPledgeType = readD();
+		selectedMember = readS();
 	}
 
 	/**
@@ -52,7 +52,7 @@ public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 			return;
 		}
 
-		if (_isMemberSelected == 0 && _memberName.length() == 0)
+		if (isMemberSelected == 0 && memberName.length() == 0)
 		{
 			activeChar.sendMessage("You did not select any member.");
 			return;
@@ -71,7 +71,7 @@ public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 			return;
 		}
 
-		final L2ClanMember member1 = clan.getClanMember(_memberName);
+		final L2ClanMember member1 = clan.getClanMember(memberName);
 		if (member1 == null || member1.getObjectId() == clan.getLeaderId())
 		{
 			activeChar.sendMessage("The selected member could not be found.");
@@ -79,16 +79,16 @@ public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 		}
 
 		final int oldPledgeType = member1.getPledgeType();
-		if (oldPledgeType == _newPledgeType)
+		if (oldPledgeType == newPledgeType)
 		{
 			activeChar.sendMessage(member1.getName() + " is already in the selected squad.");
 			return;
 		}
 
-		member1.setPledgeType(_newPledgeType);
-		if (_selectedMember.length() != 0)
+		member1.setPledgeType(newPledgeType);
+		if (selectedMember.length() != 0)
 		{
-			final L2ClanMember member2 = clan.getClanMember(_selectedMember);
+			final L2ClanMember member2 = clan.getClanMember(selectedMember);
 			if (member2 == null || member2.getObjectId() == clan.getLeaderId())
 			{
 				activeChar.sendMessage("You did not select the member to swap " + member1.getName() + " with.");

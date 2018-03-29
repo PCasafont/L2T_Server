@@ -26,14 +26,14 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class RequestPledgeSetMemberPowerGrade extends L2GameClientPacket
 {
-	private String _member;
-	private int _powerGrade;
+	private String member;
+	private int powerGrade;
 
 	@Override
 	protected void readImpl()
 	{
-		_member = readS();
-		_powerGrade = readD();
+		member = readS();
+		powerGrade = readD();
 	}
 
 	/**
@@ -58,7 +58,7 @@ public final class RequestPledgeSetMemberPowerGrade extends L2GameClientPacket
 			return;
 		}
 
-		final L2ClanMember member = clan.getClanMember(_member);
+		final L2ClanMember member = clan.getClanMember(this.member);
 		if (member == null)
 		{
 			return;
@@ -76,7 +76,7 @@ public final class RequestPledgeSetMemberPowerGrade extends L2GameClientPacket
 			return;
 		}
 
-		member.setPowerGrade(_powerGrade);
+		member.setPowerGrade(powerGrade);
 		clan.broadcastClanStatus();
 	}
 }

@@ -30,7 +30,7 @@ import java.util.logging.Logger;
 
 public interface ISkillHandler
 {
-	Logger _log = Logger.getLogger(ISkillHandler.class.getName());
+	Logger log = Logger.getLogger(ISkillHandler.class.getName());
 
 	/**
 	 * this is the worker method that is called when using an item.

@@ -32,14 +32,14 @@ import ai.group_template.L2AttackableAIScript;
 
 public class Mandragora extends L2AttackableAIScript
 {
-	private static final int[] _mandragoras = {23240, 23241};
-	private static final int[] _sumonedMandragoras = {23210, 23211};
+	private static final int[] mandragoras = {23240, 23241};
+	private static final int[] sumonedMandragoras = {23210, 23211};
 
 	public Mandragora(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		for (int a : _mandragoras)
+		for (int a : mandragoras)
 		{
 			addAttackId(a);
 		}
@@ -51,7 +51,7 @@ public class Mandragora extends L2AttackableAIScript
 		npc.deleteMe();
 
 		L2Npc mandragora =
-				addSpawn(_sumonedMandragoras[Rnd.get(_sumonedMandragoras.length)], npc.getX(), npc.getY(), npc.getZ(),
+				addSpawn(sumonedMandragoras[Rnd.get(sumonedMandragoras.length)], npc.getX(), npc.getY(), npc.getZ(),
 						npc.getHeading(), false, 60000);
 
 		mandragora.setTarget(attacker);

@@ -71,40 +71,40 @@ public class CustomCommunityBoard
 
 	// Other
 	private static List<cmboard> cmboard_info = new ArrayList<>();
-	private static List<Object> _raidIds = new ArrayList<>();
-	private static List<Object> _bossIds = new ArrayList<>();
+	private static List<Object> raidIds = new ArrayList<>();
+	private static List<Object> bossIds = new ArrayList<>();
 
 	private class cmboard
 	{
-		private String _postDate;
-		private String _postTitle;
-		private String _postUrl;
+		private String postDate;
+		private String postTitle;
+		private String postUrl;
 
 		private String getDate()
 		{
-			long timestamp = Long.parseLong(_postDate);
+			long timestamp = Long.parseLong(postDate);
 			return new SimpleDateFormat("dd/MM/yyyy").format(new Date(timestamp * 1000));
 		}
 
 		private String getUrl()
 		{
-			return _postUrl;
+			return postUrl;
 		}
 
 		private String getTitle()
 		{
-			if (_postTitle.length() > 40)
+			if (postTitle.length() > 40)
 			{
-				_postTitle = _postTitle.substring(0, 40) + "...";
+				postTitle = postTitle.substring(0, 40) + "...";
 			}
-			return _postTitle.replace("&#33;", "!");
+			return postTitle.replace("&#33;", "!");
 		}
 
 		private cmboard(String date, String title, String postUrl)
 		{
-			_postDate = date;
-			_postTitle = title;
-			_postUrl = postUrl;
+			postDate = date;
+			postTitle = title;
+			this.postUrl = postUrl;
 		}
 	}
 
@@ -351,7 +351,7 @@ public class CustomCommunityBoard
 		}
 
 		raidIds = sortByValue(raidIds, false);
-		_raidIds.addAll(raidIds.keySet());
+        this.raidIds.addAll(raidIds.keySet());
 		Map<Object, Long> bossIds = new HashMap<>();
 
 		Connection con = null;
@@ -385,7 +385,7 @@ public class CustomCommunityBoard
 		}
 
 		bossIds = sortByValue(bossIds, true);
-		_bossIds.addAll(bossIds.keySet());
+        this.bossIds.addAll(bossIds.keySet());
 	}
 
 	public String getCustomGrandBossInfo()
@@ -405,7 +405,7 @@ public class CustomCommunityBoard
 		int spawnTime = 0;
 		int randomSpawnTime = 0;
 
-		for (Object id : _bossIds)
+		for (Object id : bossIds)
 		{
 			int bossId = (Integer) id;
 			if (bossId == 29054 || bossId == 29065)
@@ -540,7 +540,7 @@ public class CustomCommunityBoard
 				"<html><body>%menu%<br><center><table><tr><td><img src=\"icon.etc_alphabet_r_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_a_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_i_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_d_i00\" width=32 height=32></td><td></td><td></td><td></td><td></td><td><img src=\"icon.etc_alphabet_i_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_n_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_f_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_o_i00\" width=32 height=32></td></tr></table></center><br><br>");
 
 		int maxBossesPerPage = 15;
-		int bossSize = _raidIds.size();
+		int bossSize = raidIds.size();
 		int maxPages = bossSize / maxBossesPerPage;
 		if (bossSize > maxBossesPerPage * maxPages)
 		{
@@ -567,7 +567,7 @@ public class CustomCommunityBoard
 		Long respawn = null; // Just the respawn time
 		for (int i = pageStart; i < pageEnd; i++)
 		{
-			npc = NpcTable.getInstance().getTemplate((Integer) _raidIds.get(i));
+			npc = NpcTable.getInstance().getTemplate((Integer) raidIds.get(i));
 			if (npc == null)
 			{
 				continue;
@@ -1561,10 +1561,10 @@ public class CustomCommunityBoard
 		sb.append(
 				"<html><body>%menu%<br><center><table><tr><td><img src=\"icon.etc_alphabet_P_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_l_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_a_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_y_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_e_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_r_i00\" width=32 height=32></td><td></td><td></td><td></td><td></td><td><img src=\"icon.etc_alphabet_S_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_h_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_o_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_p_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_s_i00\" width=32 height=32></td></tr></table></center><br><br>");
 
-		List<L2PcInstance> _shops = L2World.getInstance().getAllPlayerShops();
+		List<L2PcInstance> shops = L2World.getInstance().getAllPlayerShops();
 
 		int maxPlayersPerPage = 20;
-		int playersSize = _shops.size();
+		int playersSize = shops.size();
 		int maxPages = playersSize / maxPlayersPerPage;
 		if (playersSize > maxPlayersPerPage * maxPages)
 		{
@@ -1591,7 +1591,7 @@ public class CustomCommunityBoard
 
 		for (int i = pageStart; i < pageEnd; i++)
 		{
-			L2PcInstance shop = _shops.get(i);
+			L2PcInstance shop = shops.get(i);
 			if (type == 1 && shop.getPrivateStoreType() != 3 || type == 10 && shop.getPrivateStoreType() != 10 ||
 					type == 2 && shop.getPrivateStoreType() != 1 || type == 3 && shop.getPrivateStoreType() != 5)
 			{
@@ -1899,12 +1899,12 @@ public class CustomCommunityBoard
 
 	public static CustomCommunityBoard getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final CustomCommunityBoard _instance = new CustomCommunityBoard();
+		protected static final CustomCommunityBoard instance = new CustomCommunityBoard();
 	}
 }

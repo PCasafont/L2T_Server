@@ -26,59 +26,59 @@ public class L2AccessLevel
 	/**
 	 * The access level<br>
 	 */
-	private int _accessLevel = 0;
+	private int accessLevel = 0;
 	/**
 	 * The access level name<br>
 	 */
-	private String _name = null;
+	private String name = null;
 	/**
 	 * Child access levels
 	 */
-	L2AccessLevel[] _childsAccessLevel = null;
+	L2AccessLevel[] childsAccessLevel = null;
 	/**
 	 * Child access levels
 	 */
-	private String _childs = null;
+	private String childs = null;
 	/**
 	 * The name color for the access level<br>
 	 */
-	private int _nameColor = 0;
+	private int nameColor = 0;
 	/**
 	 * The title color for the access level<br>
 	 */
-	private int _titleColor = 0;
+	private int titleColor = 0;
 	/**
 	 * Flag to determine if the access level has gm access<br>
 	 */
-	private boolean _isGm = false;
+	private boolean isGm = false;
 	/**
 	 * Flag for peace zone attack
 	 */
-	private boolean _allowPeaceAttack = false;
+	private boolean allowPeaceAttack = false;
 	/**
 	 * Flag for fixed res
 	 */
-	private boolean _allowFixedRes = false;
+	private boolean allowFixedRes = false;
 	/**
 	 * Flag for transactions
 	 */
-	private boolean _allowTransaction = false;
+	private boolean allowTransaction = false;
 	/**
 	 * Flag for AltG commands
 	 */
-	private boolean _allowAltG = false;
+	private boolean allowAltG = false;
 	/**
 	 * Flag to give damage
 	 */
-	private boolean _giveDamage = false;
+	private boolean giveDamage = false;
 	/**
 	 * Flag to take aggro
 	 */
-	private boolean _takeAggro = false;
+	private boolean takeAggro = false;
 	/**
 	 * Flag to gain exp in party
 	 */
-	private boolean _gainExp = false;
+	private boolean gainExp = false;
 
 	/**
 	 * Initializes members<br><br>
@@ -99,19 +99,19 @@ public class L2AccessLevel
 	 */
 	public L2AccessLevel(int accessLevel, String name, int nameColor, int titleColor, String childs, boolean isGm, boolean allowPeaceAttack, boolean allowFixedRes, boolean allowTransaction, boolean allowAltG, boolean giveDamage, boolean takeAggro, boolean gainExp)
 	{
-		_accessLevel = accessLevel;
-		_name = name;
-		_nameColor = nameColor;
-		_titleColor = titleColor;
-		_childs = childs;
-		_isGm = isGm;
-		_allowPeaceAttack = allowPeaceAttack;
-		_allowFixedRes = allowFixedRes;
-		_allowTransaction = allowTransaction;
-		_allowAltG = allowAltG;
-		_giveDamage = giveDamage;
-		_takeAggro = takeAggro;
-		_gainExp = gainExp;
+		this.accessLevel = accessLevel;
+		this.name = name;
+		this.nameColor = nameColor;
+		this.titleColor = titleColor;
+		this.childs = childs;
+		this.isGm = isGm;
+		this.allowPeaceAttack = allowPeaceAttack;
+		this.allowFixedRes = allowFixedRes;
+		this.allowTransaction = allowTransaction;
+		this.allowAltG = allowAltG;
+		this.giveDamage = giveDamage;
+		this.takeAggro = takeAggro;
+		this.gainExp = gainExp;
 	}
 
 	/**
@@ -121,7 +121,7 @@ public class L2AccessLevel
 	 */
 	public int getLevel()
 	{
-		return _accessLevel;
+		return accessLevel;
 	}
 
 	/**
@@ -131,7 +131,7 @@ public class L2AccessLevel
 	 */
 	public String getName()
 	{
-		return _name;
+		return name;
 	}
 
 	/**
@@ -141,7 +141,7 @@ public class L2AccessLevel
 	 */
 	public int getNameColor()
 	{
-		return _nameColor;
+		return nameColor;
 	}
 
 	/**
@@ -151,7 +151,7 @@ public class L2AccessLevel
 	 */
 	public int getTitleColor()
 	{
-		return _titleColor;
+		return titleColor;
 	}
 
 	/**
@@ -161,7 +161,7 @@ public class L2AccessLevel
 	 */
 	public boolean isGm()
 	{
-		return _isGm;
+		return isGm;
 	}
 
 	/**
@@ -171,7 +171,7 @@ public class L2AccessLevel
 	 */
 	public boolean allowPeaceAttack()
 	{
-		return _allowPeaceAttack;
+		return allowPeaceAttack;
 	}
 
 	/**
@@ -181,7 +181,7 @@ public class L2AccessLevel
 	 */
 	public boolean allowFixedRes()
 	{
-		return _allowFixedRes;
+		return allowFixedRes;
 	}
 
 	/**
@@ -191,7 +191,7 @@ public class L2AccessLevel
 	 */
 	public boolean allowTransaction()
 	{
-		return _allowTransaction;
+		return allowTransaction;
 	}
 
 	/**
@@ -201,7 +201,7 @@ public class L2AccessLevel
 	 */
 	public boolean allowAltG()
 	{
-		return _allowAltG;
+		return allowAltG;
 	}
 
 	/**
@@ -211,7 +211,7 @@ public class L2AccessLevel
 	 */
 	public boolean canGiveDamage()
 	{
-		return _giveDamage;
+		return giveDamage;
 	}
 
 	/**
@@ -221,7 +221,7 @@ public class L2AccessLevel
 	 */
 	public boolean canTakeAggro()
 	{
-		return _takeAggro;
+		return takeAggro;
 	}
 
 	/**
@@ -231,7 +231,7 @@ public class L2AccessLevel
 	 */
 	public boolean canGainExp()
 	{
-		return _gainExp;
+		return gainExp;
 	}
 
 	/**
@@ -242,15 +242,15 @@ public class L2AccessLevel
 	 */
 	public boolean hasChildAccess(L2AccessLevel accessLevel)
 	{
-		if (_childsAccessLevel == null)
+		if (childsAccessLevel == null)
 		{
-			if (_childs == null)
+			if (childs == null)
 			{
 				return false;
 			}
 
-			setChildAccess(_childs);
-			for (L2AccessLevel childAccess : _childsAccessLevel)
+			setChildAccess(childs);
+			for (L2AccessLevel childAccess : childsAccessLevel)
 			{
 				if (childAccess != null &&
 						(childAccess.getLevel() == accessLevel.getLevel() || childAccess.hasChildAccess(accessLevel)))
@@ -261,7 +261,7 @@ public class L2AccessLevel
 		}
 		else
 		{
-			for (L2AccessLevel childAccess : _childsAccessLevel)
+			for (L2AccessLevel childAccess : childsAccessLevel)
 			{
 				if (childAccess != null &&
 						(childAccess.getLevel() == accessLevel.getLevel() || childAccess.hasChildAccess(accessLevel)))
@@ -277,7 +277,7 @@ public class L2AccessLevel
 	{
 		String[] childsSplit = childs.split(";");
 
-		_childsAccessLevel = new L2AccessLevel[childsSplit.length];
+		childsAccessLevel = new L2AccessLevel[childsSplit.length];
 
 		for (int i = 0; i < childsSplit.length; ++i)
 		{
@@ -291,12 +291,12 @@ public class L2AccessLevel
 
 			if (accessLevelInst.hasChildAccess(this))
 			{
-				Log.warning("AccessLevel: Child access tree overlapping for " + _name + " and " +
+				Log.warning("AccessLevel: Child access tree overlapping for " + name + " and " +
 						accessLevelInst.getName());
 				continue;
 			}
 
-			_childsAccessLevel[i] = accessLevelInst;
+			childsAccessLevel[i] = accessLevelInst;
 		}
 	}
 }

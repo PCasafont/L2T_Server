@@ -33,11 +33,11 @@ import java.util.zip.ZipFile;
  */
 public class JarClassLoader extends ClassLoader
 {
-	HashSet<String> _jars = new HashSet<>();
+	HashSet<String> jars = new HashSet<>();
 
 	public void addJarFile(String filename)
 	{
-		_jars.add(filename);
+		jars.add(filename);
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public class JarClassLoader extends ClassLoader
 	private byte[] loadClassData(String name) throws IOException
 	{
 		byte[] classData = null;
-		for (String jarFile : _jars)
+		for (String jarFile : jars)
 		{
 			ZipFile zipFile = null;
 			DataInputStream zipStream = null;
@@ -103,7 +103,7 @@ public class JarClassLoader extends ClassLoader
 		}
 		if (classData == null)
 		{
-			throw new IOException("class not found in " + _jars);
+			throw new IOException("class not found in " + jars);
 		}
 		return classData;
 	}

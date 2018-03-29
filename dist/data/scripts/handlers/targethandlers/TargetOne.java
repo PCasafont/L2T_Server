@@ -34,7 +34,7 @@ import java.util.logging.Logger;
  */
 public class TargetOne implements ISkillTargetTypeHandler
 {
-	protected static final Logger _log = Logger.getLogger(TargetOne.class.getName());
+	protected static final Logger log = Logger.getLogger(TargetOne.class.getName());
 
 	@Override
 	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
@@ -73,7 +73,7 @@ public class TargetOne implements ISkillTargetTypeHandler
 				}
 				else
 				{
-					_log.log(Level.INFO, "TargetOne: Target is Incorrect for Player - " + activeChar.getName());
+					log.log(Level.INFO, "TargetOne: Target is Incorrect for Player - " + activeChar.getName());
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 					return null;
 				}

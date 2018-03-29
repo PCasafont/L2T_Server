@@ -27,25 +27,25 @@ import l2server.util.Rnd;
  */
 public class PavelArchaic extends L2AttackableAIScript
 {
-	private static final int[] _mobs1 = {22801, 22804};
-	private static final int[] _mobs2 = {18917};
+	private static final int[] mobs1 = {22801, 22804};
+	private static final int[] mobs2 = {18917};
 
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
-		if (!npc.isDead() && Util.contains(_mobs2, npc.getNpcId()))
+		if (!npc.isDead() && Util.contains(mobs2, npc.getNpcId()))
 		{
 			npc.doDie(attacker);
 
 			if (Rnd.get(100) < 40)
 			{
-				L2Attackable _golem1 =
+				L2Attackable golem1 =
 						(L2Attackable) addSpawn(22801, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0);
-				attackPlayer(_golem1, attacker);
+				attackPlayer(golem1, attacker);
 
-				L2Attackable _golem2 =
+				L2Attackable golem2 =
 						(L2Attackable) addSpawn(22804, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0);
-				attackPlayer(_golem2, attacker);
+				attackPlayer(golem2, attacker);
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isPet);
@@ -54,12 +54,12 @@ public class PavelArchaic extends L2AttackableAIScript
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		if (Util.contains(_mobs1, npc.getNpcId()))
+		if (Util.contains(mobs1, npc.getNpcId()))
 		{
-			L2Attackable _golem =
+			L2Attackable golem =
 					(L2Attackable) addSpawn(npc.getNpcId() + 1, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(),
 							false, 0);
-			attackPlayer(_golem, killer);
+			attackPlayer(golem, killer);
 		}
 		return super.onKill(npc, killer, isPet);
 	}
@@ -74,8 +74,8 @@ public class PavelArchaic extends L2AttackableAIScript
 	public PavelArchaic(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		registerMobs(_mobs1, QuestEventType.ON_KILL);
-		registerMobs(_mobs2, QuestEventType.ON_ATTACK);
+		registerMobs(mobs1, QuestEventType.ON_KILL);
+		registerMobs(mobs2, QuestEventType.ON_ATTACK);
 	}
 
 	public static void main(String[] args)

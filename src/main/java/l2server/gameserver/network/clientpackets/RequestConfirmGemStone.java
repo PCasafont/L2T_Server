@@ -30,20 +30,20 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestConfirmGemStone extends L2GameClientPacket
 {
-	private int _targetItemObjId;
-	private int _refinerItemObjId;
-	private int _gemstoneItemObjId;
-	private long _gemStoneCount;
+	private int targetItemObjId;
+	private int refinerItemObjId;
+	private int gemstoneItemObjId;
+	private long gemStoneCount;
 
 	/**
 	 */
 	@Override
 	protected void readImpl()
 	{
-		_targetItemObjId = readD();
-		_refinerItemObjId = readD();
-		_gemstoneItemObjId = readD();
-		_gemStoneCount = readQ();
+		targetItemObjId = readD();
+		refinerItemObjId = readD();
+		gemstoneItemObjId = readD();
+		gemStoneCount = readQ();
 	}
 
 	/**
@@ -56,17 +56,17 @@ public final class RequestConfirmGemStone extends L2GameClientPacket
 		{
 			return;
 		}
-		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItemObjId);
+		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(targetItemObjId);
 		if (targetItem == null)
 		{
 			return;
 		}
-		L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(_refinerItemObjId);
+		L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(refinerItemObjId);
 		if (refinerItem == null)
 		{
 			return;
 		}
-		L2ItemInstance gemStoneItem = activeChar.getInventory().getItemByObjectId(_gemstoneItemObjId);
+		L2ItemInstance gemStoneItem = activeChar.getInventory().getItemByObjectId(gemstoneItemObjId);
 		if (gemStoneItem == null)
 		{
 			return;
@@ -86,13 +86,13 @@ public final class RequestConfirmGemStone extends L2GameClientPacket
 			return;
 		}
 
-		if (_gemStoneCount != LifeStoneTable.getGemStoneCount(targetItem.getItem().getItemGrade(), ls.getGrade()))
+		if (gemStoneCount != LifeStoneTable.getGemStoneCount(targetItem.getItem().getItemGrade(), ls.getGrade()))
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.GEMSTONE_QUANTITY_IS_INCORRECT));
 			return;
 		}
 
-		activeChar.sendPacket(new ExPutCommissionResultForVariationMake(_gemstoneItemObjId, _gemStoneCount,
+		activeChar.sendPacket(new ExPutCommissionResultForVariationMake(gemstoneItemObjId, gemStoneCount,
 				gemStoneItem.getItemId()));
 	}
 }

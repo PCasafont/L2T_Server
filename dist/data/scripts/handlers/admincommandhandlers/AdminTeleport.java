@@ -62,7 +62,7 @@ import java.util.logging.Logger;
  */
 public class AdminTeleport implements IAdminCommandHandler
 {
-	private static final Logger _log = Logger.getLogger(AdminTeleport.class.getName());
+	private static final Logger log = Logger.getLogger(AdminTeleport.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_show_moves",
@@ -152,7 +152,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			{
 				if (Config.DEBUG)
 				{
-					_log.info("admin_walk: " + e);
+					log.info("admin_walk: " + e);
 				}
 			}
 		}
@@ -635,7 +635,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			if (template1 == null)
 			{
 				activeChar.sendMessage("Incorrect monster template.");
-				_log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' template.");
+				log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' template.");
 				return;
 			}
 
@@ -643,7 +643,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			if (spawn == null)
 			{
 				activeChar.sendMessage("Incorrect monster spawn.");
-				_log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' spawn.");
+				log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' spawn.");
 				return;
 			}
 			int respawnTime = spawn.getRespawnDelay() / 1000;
@@ -679,8 +679,8 @@ public class AdminTeleport implements IAdminCommandHandler
 
 				if (Config.DEBUG)
 				{
-					_log.fine("Spawn at X=" + spawn.getX() + " Y=" + spawn.getY() + " Z=" + spawn.getZ());
-					_log.warning("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") moved NPC " +
+					log.fine("Spawn at X=" + spawn.getX() + " Y=" + spawn.getY() + " Z=" + spawn.getZ());
+					log.warning("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") moved NPC " +
 							target.getObjectId());
 				}
 			}

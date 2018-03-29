@@ -39,20 +39,20 @@ public class ValidatePosition extends L2GameClientPacket
 		return TaskPriority.PR_HIGH;
 	}
 
-	private int _x;
-	private int _y;
-	private int _z;
-	private int _heading;
-	private int _data; // vehicle id
+	private int x;
+	private int y;
+	private int z;
+	private int heading;
+	private int data; // vehicle id
 
 	@Override
 	protected void readImpl()
 	{
-		_x = readD();
-		_y = readD();
-		_z = readD();
-		_heading = readD();
-		_data = readD();
+		x = readD();
+		y = readD();
+		z = readD();
+		heading = readD();
+		data = readD();
 	}
 
 	@Override
@@ -70,11 +70,11 @@ public class ValidatePosition extends L2GameClientPacket
 
 		if (Config.DEVELOPER)
 		{
-			Log.fine("client pos: " + _x + " " + _y + " " + _z + " head " + _heading);
+			Log.fine("client pos: " + x + " " + y + " " + z + " head " + heading);
 			Log.fine("server pos: " + realX + " " + realY + " " + realZ + " head " + activeChar.getHeading());
 		}
 
-		if (_x == 0 && _y == 0)
+		if (x == 0 && y == 0)
 		{
 			if (realX != 0) // in this case this seems like a client error
 			{
@@ -89,13 +89,13 @@ public class ValidatePosition extends L2GameClientPacket
 		{
 			if (Config.COORD_SYNCHRONIZE == 2)
 			{
-				dx = _x - activeChar.getInVehiclePosition().getX();
-				dy = _y - activeChar.getInVehiclePosition().getY();
-				dz = _z - activeChar.getInVehiclePosition().getZ();
+				dx = x - activeChar.getInVehiclePosition().getX();
+				dy = y - activeChar.getInVehiclePosition().getY();
+				dz = z - activeChar.getInVehiclePosition().getZ();
 				diffSq = dx * dx + dy * dy;
 				if (diffSq > 250000)
 				{
-					sendPacket(new GetOnVehicle(activeChar.getObjectId(), _data, activeChar.getInVehiclePosition()));
+					sendPacket(new GetOnVehicle(activeChar.getObjectId(), data, activeChar.getInVehiclePosition()));
 				}
 			}
 			return;
@@ -104,36 +104,36 @@ public class ValidatePosition extends L2GameClientPacket
 		{
 			/*if (Config.COORD_SYNCHRONIZE == 2)
             {
-				dx = _x - activeChar.getInVehiclePosition().getX();
-				dy = _y - activeChar.getInVehiclePosition().getY();
-				dz = _z - activeChar.getInVehiclePosition().getZ();
+				dx = x - activeChar.getInVehiclePosition().getX();
+				dy = y - activeChar.getInVehiclePosition().getY();
+				dz = z - activeChar.getInVehiclePosition().getZ();
 				diffSq = (dx*dx + dy*dy);
 				if (diffSq > 250000)
-					sendPacket(new GetOnVehicle(activeChar.getObjectId(), _data, activeChar.getInBoatPosition()));
+					sendPacket(new GetOnVehicle(activeChar.getObjectId(), data, activeChar.getInBoatPosition()));
 			}*/
 			return;
 		}
 
-		if (activeChar.isFalling(_z))
+		if (activeChar.isFalling(z))
 		{
 			return; // disable validations during fall to avoid "jumping"
 		}
 
-		dx = _x - realX;
-		dy = _y - realY;
-		dz = _z - realZ;
+		dx = x - realX;
+		dy = y - realY;
+		dz = z - realZ;
 		diffSq = dx * dx + dy * dy;
 
 		/*L2Party party = activeChar.getParty();
-		if (party != null && activeChar.getLastPartyPositionDistance(_x, _y, _z) > 150)
+		if (party != null && activeChar.getLastPartyPositionDistance(x, y, z) > 150)
 		{
-			activeChar.setLastPartyPosition(_x, _y, _z);
+			activeChar.setLastPartyPosition(x, y, z);
 			party.broadcastToPartyMembers(activeChar,new PartyMemberPosition(activeChar));
 		}*/
 
 		if (activeChar.isFlying() || activeChar.isInsideZone(L2Character.ZONE_WATER))
 		{
-			activeChar.setXYZ(realX, realY, _z);
+			activeChar.setXYZ(realX, realY, z);
 			if (diffSq > 90000) // validate packet, may also cause z bounce if close to land
 			{
 				activeChar.sendPacket(new ValidateLocation(activeChar));
@@ -144,30 +144,30 @@ public class ValidatePosition extends L2GameClientPacket
 			if (Config.COORD_SYNCHRONIZE == -1) // Only Z coordinate synched to server,
 			// mainly used when no geodata but can be used also with geodata
 			{
-				activeChar.setXYZ(realX, realY, _z);
+				activeChar.setXYZ(realX, realY, z);
 				return;
 			}
 			if (Config.COORD_SYNCHRONIZE == 1) // Trusting also client x,y coordinates (should not be used with geodata)
 			{
 				if (!activeChar.isMoving() ||
-						!activeChar.validateMovementHeading(_heading)) // Heading changed on client = possible obstacle
+						!activeChar.validateMovementHeading(heading)) // Heading changed on client = possible obstacle
 				{
 					// character is not moving, take coordinates from client
 					if (diffSq < 2500) // 50*50 - attack won't work fluently if even small differences are corrected
 					{
-						activeChar.setXYZ(realX, realY, _z);
+						activeChar.setXYZ(realX, realY, z);
 					}
 					else
 					{
-						activeChar.setXYZ(_x, _y, _z);
+						activeChar.setXYZ(x, y, z);
 					}
 				}
 				else
 				{
-					activeChar.setXYZ(realX, realY, _z);
+					activeChar.setXYZ(realX, realY, z);
 				}
 
-				activeChar.setHeading(_heading);
+				activeChar.setHeading(heading);
 				return;
 			}
 			// Sync 2 (or other),
@@ -177,12 +177,12 @@ public class ValidatePosition extends L2GameClientPacket
 			// Important: this code part must work together with L2Character.updatePosition
 			if (Config.GEODATA > 0 && (diffSq > 40000 || Math.abs(dz) > 100))
 			{
-				//if ((_z - activeChar.getClientZ()) < 200 && Math.abs(activeChar.getLastServerPosition().getZ()-realZ) > 70)
+				//if ((z - activeChar.getClientZ()) < 200 && Math.abs(activeChar.getLastServerPosition().getZ()-realZ) > 70)
 
-				if (Math.abs(dz) > 100 && Math.abs(dz) < 1500 && Math.abs(_z - activeChar.getClientZ()) < 800)
+				if (Math.abs(dz) > 100 && Math.abs(dz) < 1500 && Math.abs(z - activeChar.getClientZ()) < 800)
 				{
-					activeChar.setXYZ(realX, realY, _z);
-					realZ = _z;
+					activeChar.setXYZ(realX, realY, z);
+					realZ = z;
 				}
 				else
 				{
@@ -196,10 +196,10 @@ public class ValidatePosition extends L2GameClientPacket
 			}
 		}
 
-		activeChar.setClientX(_x);
-		activeChar.setClientY(_y);
-		activeChar.setClientZ(_z);
-		activeChar.setClientHeading(_heading); // No real need to validate heading.
+		activeChar.setClientX(x);
+		activeChar.setClientY(y);
+		activeChar.setClientZ(z);
+		activeChar.setClientHeading(heading); // No real need to validate heading.
 		activeChar.setLastServerPosition(realX, realY, realZ);
 	}
 

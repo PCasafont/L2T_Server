@@ -43,7 +43,7 @@ import java.util.logging.Level;
  */
 public abstract class ItemContainer
 {
-	protected final Map<Integer, L2ItemInstance> _items = new ConcurrentHashMap<>();
+	protected final Map<Integer, L2ItemInstance> items = new ConcurrentHashMap<>();
 
 	protected abstract L2Character getOwner();
 
@@ -71,7 +71,7 @@ public abstract class ItemContainer
 	 */
 	public int getSize()
 	{
-		return _items.size();
+		return items.size();
 	}
 
 	/**
@@ -81,9 +81,9 @@ public abstract class ItemContainer
 	 */
 	public L2ItemInstance[] getItems()
 	{
-		synchronized (_items)
+		synchronized (items)
 		{
-			return _items.values().toArray(new L2ItemInstance[_items.size()]);
+			return items.values().toArray(new L2ItemInstance[items.size()]);
 		}
 	}
 
@@ -95,7 +95,7 @@ public abstract class ItemContainer
 	 */
 	public L2ItemInstance getItemByItemId(int itemId)
 	{
-		for (L2ItemInstance item : _items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null && item.getItemId() == itemId)
 			{
@@ -115,7 +115,7 @@ public abstract class ItemContainer
 	public List<L2ItemInstance> getItemsByItemId(int itemId)
 	{
 		List<L2ItemInstance> returnList = new ArrayList<>();
-		for (L2ItemInstance item : _items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null && item.getItemId() == itemId)
 			{
@@ -135,7 +135,7 @@ public abstract class ItemContainer
 	 */
 	public L2ItemInstance getItemByItemId(int itemId, L2ItemInstance itemToIgnore)
 	{
-		for (L2ItemInstance item : _items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null && item.getItemId() == itemId && !item.equals(itemToIgnore))
 			{
@@ -154,7 +154,7 @@ public abstract class ItemContainer
 	 */
 	public L2ItemInstance getItemByObjectId(int objectId)
 	{
-		for (L2ItemInstance item : _items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item == null)
 			{
@@ -189,7 +189,7 @@ public abstract class ItemContainer
 	{
 		long count = 0;
 
-		for (L2ItemInstance item : _items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item.getItemId() == itemId && (item.getEnchantLevel() == enchantLevel || enchantLevel < 0) &&
 					(includeEquipped || !item.isEquipped()))
@@ -546,7 +546,7 @@ public abstract class ItemContainer
 	 */
 	public synchronized void destroyAllItems(String process, L2PcInstance actor, Object reference)
 	{
-		for (L2ItemInstance item : _items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null)
 			{
@@ -562,7 +562,7 @@ public abstract class ItemContainer
 	{
 		long count = 0;
 
-		for (L2ItemInstance item : _items.values())
+		for (L2ItemInstance item : items.values())
 		{
 			if (item != null && item.getItemId() == 57)
 			{
@@ -581,9 +581,9 @@ public abstract class ItemContainer
 	 */
 	protected void addItem(L2ItemInstance item)
 	{
-		synchronized (_items)
+		synchronized (items)
 		{
-			_items.put(item.getObjectId(), item);
+			items.put(item.getObjectId(), item);
 		}
 	}
 
@@ -594,9 +594,9 @@ public abstract class ItemContainer
 	 */
 	protected boolean removeItem(L2ItemInstance item)
 	{
-		synchronized (_items)
+		synchronized (items)
 		{
-			return _items.remove(item.getObjectId()) != null;
+			return items.remove(item.getObjectId()) != null;
 		}
 	}
 
@@ -620,8 +620,8 @@ public abstract class ItemContainer
 		{
 			Log.log(Level.SEVERE, "deletedMe()", e);
 		}
-		List<L2Object> items = new ArrayList<>(_items.values());
-		_items.clear();
+		List<L2Object> items = new ArrayList<>(this.items.values());
+		items.clear();
 
 		L2World.getInstance().removeObjects(items);
 	}
@@ -633,7 +633,7 @@ public abstract class ItemContainer
 	{
 		if (getOwner() != null)
 		{
-			for (L2ItemInstance item : _items.values())
+			for (L2ItemInstance item : items.values())
 			{
 				if (item != null)
 				{

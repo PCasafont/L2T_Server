@@ -30,19 +30,19 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
  */
 public final class RequestPetGetItem extends L2GameClientPacket
 {
-	private int _objectId;
+	private int objectId;
 
 	@Override
 	protected void readImpl()
 	{
-		_objectId = readD();
+		objectId = readD();
 	}
 
 	@Override
 	protected void runImpl()
 	{
 		L2World world = L2World.getInstance();
-		L2ItemInstance item = (L2ItemInstance) world.findObject(_objectId);
+		L2ItemInstance item = (L2ItemInstance) world.findObject(objectId);
 		if (item == null || getClient().getActiveChar() == null)
 		{
 			return;

@@ -25,28 +25,28 @@ import java.util.Map;
 public class SurpriseEvent extends Quest
 {
 	//Config
-	private static final boolean _exChangeOnly = false;
-	private static final int _startInvasionEach = 48; //Hours
-	private static final int _timeToEndInvasion = 10; //Minutes
-	private static final int _rewardRandomPlayerEach = 48; //Hours
-	private static final int _santaTalksEach = 12; //Hours
-	private static final int _santaId = 91000;
-	private static final int _secondSantaId = 104;
-	private static final int[] _invaderIds = {91001};
+	private static final boolean exChangeOnly = false;
+	private static final int startInvasionEach = 48; //Hours
+	private static final int timeToEndInvasion = 10; //Minutes
+	private static final int rewardRandomPlayerEach = 48; //Hours
+	private static final int santaTalksEach = 12; //Hours
+	private static final int santaId = 91000;
+	private static final int secondSantaId = 104;
+	private static final int[] invaderIds = {91001};
 	public int nb_box = 3;
 	public int save = nb_box;
 
 	//Vars
-	private static Long _nextInvasion;
-	private static Long _nextSantaReward;
-	private static String _lastSantaRewardedName;
-	private static L2PcInstance _player;
-	private static L2Npc _santa;
-	private static boolean _isUnderInvasion = false;
-	private Map<Integer, invaderInfo> _attackInfo = new HashMap<Integer, invaderInfo>();
-	private ArrayList<L2Character> _invaders = new ArrayList<L2Character>();
-	private ArrayList<String> _rewardedPlayers = new ArrayList<String>(); //IP based
-	private static final int[][] _randomRewards = {
+	private static Long nextInvasion;
+	private static Long nextSantaReward;
+	private static String lastSantaRewardedName;
+	private static L2PcInstance player;
+	private static L2Npc santa;
+	private static boolean isUnderInvasion = false;
+	private Map<Integer, invaderInfo> attackInfo = new HashMap<Integer, invaderInfo>();
+	private ArrayList<L2Character> invaders = new ArrayList<L2Character>();
+	private ArrayList<String> rewardedPlayers = new ArrayList<String>(); //IP based
+	private static final int[][] randomRewards = {
 			//Item Id, ammount
 			{57, 250000000}, // Adena
 			{36414, 10}, // Dragon Claw
@@ -63,7 +63,7 @@ public class SurpriseEvent extends Quest
 			{"Coin Of Luck"}
 
 	};
-	private static final int _loc[][] = {
+	private static final int loc[][] = {
 			{-115528, 252701, -1497},
 			{-116654, 253371, -1500},
 			{-117617, 253961, -1534},
@@ -83,11 +83,11 @@ public class SurpriseEvent extends Quest
 	{
 		super(id, name, descr);
 
-		addStartNpc(_santaId);
-		addTalkId(_santaId);
-		addFirstTalkId(_santaId);
+		addStartNpc(santaId);
+		addTalkId(santaId);
+		addFirstTalkId(santaId);
 
-		for (int mob : _invaderIds)
+		for (int mob : invaderIds)
 		{
 			addAttackId(mob);
 			addKillId(mob);
@@ -98,49 +98,49 @@ public class SurpriseEvent extends Quest
 
 	private class invaderInfo
 	{
-		private Long _attackedTime;
-		private int _playerId;
-		private String _externalIP;
-		private String _internalIP;
+		private Long attackedTime;
+		private int playerId;
+		private String externalIP;
+		private String internalIP;
 
 		private invaderInfo(int playerId, String externalIP, String internalIP)
 		{
-			_playerId = playerId;
-			_externalIP = externalIP;
-			_internalIP = internalIP;
+			this.playerId = playerId;
+			this.externalIP = externalIP;
+			this.internalIP = internalIP;
 			setAttackedTime();
 		}
 
 		private long getAttackedTime()
 		{
-			return _attackedTime;
+			return attackedTime;
 		}
 
 		private void setAttackedTime()
 		{
-			_attackedTime = System.currentTimeMillis();
+			attackedTime = System.currentTimeMillis();
 		}
 
 		private int getPlayerId()
 		{
-			return _playerId;
+			return playerId;
 		}
 
 		private String getExternalIP()
 		{
-			return _externalIP;
+			return externalIP;
 		}
 
 		private String getInternalIP()
 		{
-			return _internalIP;
+			return internalIP;
 		}
 
 		private void updateInfo(int playerId, String externalIP, String internalIP)
 		{
-			_playerId = playerId;
-			_externalIP = externalIP;
-			_internalIP = internalIP;
+			this.playerId = playerId;
+			this.externalIP = externalIP;
+			this.internalIP = internalIP;
 			setAttackedTime();
 		}
 	}
@@ -153,20 +153,20 @@ public class SurpriseEvent extends Quest
 
 
 
-		synchronized (_attackInfo)
+		synchronized (attackInfo)
 		{
-			invaderInfo info = _attackInfo.get(npc.getObjectId()); //Get the attack info from this npc
+			invaderInfo info = attackInfo.get(npc.getObjectId()); //Get the attack info from this npc
 
 
 
-			for (Map.Entry<Integer, invaderInfo> _info : _attackInfo.entrySet())
+			for (Map.Entry<Integer, invaderInfo> entry : attackInfo.entrySet())
 			{
-				if (_info == null)
+				if (entry == null)
 				{
 					continue;
 				}
 
-				invaderInfo i = _info.getValue();
+				invaderInfo i = entry.getValue();
 				if (i == null)
 				{
 					continue;
@@ -180,7 +180,7 @@ public class SurpriseEvent extends Quest
 				//Add the correct info
 				info = new invaderInfo(player.getObjectId(), player.getExternalIP(), player.getInternalIP());
 				//Insert to the map
-				_attackInfo.put(npc.getObjectId(), info);
+				attackInfo.put(npc.getObjectId(), info);
 			}
 			else
 			{
@@ -219,19 +219,19 @@ public class SurpriseEvent extends Quest
 		}
 		else
 		{
-			_attackInfo.remove(npc.getObjectId()); //Delete the stored info for this npc
-			int random = Rnd.get(_randomRewards.length);
-			player.addItem("Surpise Event", _randomRewards[random][0], _randomRewards[random][1], player, true);
+			attackInfo.remove(npc.getObjectId()); //Delete the stored info for this npc
+			int random = Rnd.get(randomRewards.length);
+			player.addItem("Surpise Event", randomRewards[random][0], randomRewards[random][1], player, true);
 			L2Character chara = (L2Character) player.getTarget();
 			chara.deleteMe();
 			nb_box--;
 			Announcements.getInstance().announceToAll("A box has been found by " + player.getName() + "!");
 			//for(int k=0; k<_reward_name[random].length; k++)
-			//	Announcements.getInstance().announceToAll( player.getName() + " found : " + _randomRewards[random][1] + " " +  _reward_name[random][k]);
+			//	Announcements.getInstance().announceToAll( player.getName() + " found : " + randomRewards[random][1] + " " +  _reward_name[random][k]);
 			Announcements.getInstance().announceToAll("Boxes left :  " + nb_box + "!");
 			if (nb_box <= 0)
 			{
-				for (L2Character charaa : _invaders)
+				for (L2Character charaa : invaders)
 				{
 					if (charaa == null)
 					{
@@ -239,9 +239,9 @@ public class SurpriseEvent extends Quest
 					}
 					charaa.deleteMe();
 				}
-				_invaders.clear();
-				_attackInfo.clear();
-				_isUnderInvasion = false;
+				invaders.clear();
+				attackInfo.clear();
+				isUnderInvasion = false;
 				Announcements.getInstance().announceToAll("All the boxes have been found!");
 				nb_box = 3;
 			}
@@ -259,12 +259,12 @@ public class SurpriseEvent extends Quest
 
 
 
-		synchronized (_attackInfo)
+		synchronized (attackInfo)
 		{
-			invaderInfo info = _attackInfo.get(npc.getObjectId()); //Get the attack info
+			invaderInfo info = attackInfo.get(npc.getObjectId()); //Get the attack info
 			if (info != null)
 			{
-				_attackInfo.remove(npc.getObjectId()); //Delete the stored info for this npc
+				attackInfo.remove(npc.getObjectId()); //Delete the stored info for this npc
 			}
 
 
@@ -282,7 +282,7 @@ public class SurpriseEvent extends Quest
 				player.getName() +
 				" If you give me some <font color=LEVEL>Milk</font> I can give you some gifts! Take all what you can!<br>");
 
-		if (_exChangeOnly)
+		if (exChangeOnly)
 		{
 			tb.append(
 					"This event is currently working in exchange mode, there are no more invasions or free gifts, you can only exchange your Milk.<br>");
@@ -291,14 +291,14 @@ public class SurpriseEvent extends Quest
 		{
 			tb.append(
 					"You can get <font color=LEVEL>Milk</font> while participating in the <font color=LEVEL>Cow invasion</font> each <font color=LEVEL>" +
-							_startInvasionEach + "</font> hours.<br>");
+							startInvasionEach + "</font> hours.<br>");
 			tb.append(
 					"<font color=LEVEL>King of the cows</font> will also visit <font color=LEVEL>randomly</font> each <font color=LEVEL>" +
-							_rewardRandomPlayerEach +
+							rewardRandomPlayerEach +
 							"</font> hours an <font color=LEVEL>active</font> player and will give special random gifts!<br>");
 
 			tb.append("<font color=LEVEL>Last random player rewarded: " +
-					(_lastSantaRewardedName == null ? "None Yet" : _lastSantaRewardedName) + "</font><br>");
+					(lastSantaRewardedName == null ? "None Yet" : lastSantaRewardedName) + "</font><br>");
 
 
 		}
@@ -309,7 +309,7 @@ public class SurpriseEvent extends Quest
 				"_multisell SurpriseEvent_event_shop\"><font color=c2dceb>View the event shop.</font></a><br1>");
 		tb.append("<br>");
 
-		/*if (!_exChangeOnly)
+		/*if (!exChangeOnly)
 		{
 			tb.append("<font color=\"3D81A8\">Free Effects:</font><br1>");
 			tb.append(
@@ -337,7 +337,7 @@ public class SurpriseEvent extends Quest
 
 		tb.append("</body></html>");
 
-		NpcHtmlMessage msg = new NpcHtmlMessage(_santaId);
+		NpcHtmlMessage msg = new NpcHtmlMessage(santaId);
 		msg.setHtml(tb.toString());
 		player.sendPacket(msg);
 
@@ -352,35 +352,35 @@ public class SurpriseEvent extends Quest
 
 		if (event.startsWith("start_invasion"))
 		{
-			if (_isUnderInvasion)
+			if (isUnderInvasion)
 			{
 				return "";
 			}
 
-			_isUnderInvasion = true;
+			isUnderInvasion = true;
 
 	nb_box = 3;
 
 			for (int i = 0; i < nb_box; i++)
 			{
-				int r = Rnd.get(_loc.length);
-				L2Npc inv = addSpawn(_invaderIds[Rnd.get(_invaderIds.length)], _loc[r][0], _loc[r][1], _loc[r][2] + 20, -1, false, 0);
+				int r = Rnd.get(loc.length);
+				L2Npc inv = addSpawn(invaderIds[Rnd.get(invaderIds.length)], loc[r][0], loc[r][1], loc[r][2] + 20, -1, false, 0);
 				inv.setIsImmobilized(true);
 				inv.setIsMortal(false);
-				_invaders.add(inv);
+				invaders.add(inv);
 			}
 
 
 			Announcements.getInstance().announceToAll(nb_box	+ " box(es) has spawned in Talking Island !");
 			Announcements.getInstance()
-					.announceToAll("You will have : " + _timeToEndInvasion + " minutes to find them !");
+					.announceToAll("You will have : " + timeToEndInvasion + " minutes to find them !");
 			Announcements.getInstance().announceToAll("Hit the box with your HANDS to win !");
 			startQuestTimer(event.equalsIgnoreCase("start_invasion") ? "end_invasion" : "end_invasion_gm",
-					_timeToEndInvasion * 60000, null, null);
+					timeToEndInvasion * 60000, null, null);
 		}
 		else if (event.startsWith("end_invasion"))
 		{
-			_isUnderInvasion = false;
+			isUnderInvasion = false;
 
 			if (event.equalsIgnoreCase("end_invasion_gm_force"))
 			{
@@ -391,7 +391,7 @@ public class SurpriseEvent extends Quest
 				}
 			}
 
-			for (L2Character chara : _invaders)
+			for (L2Character chara : invaders)
 			{
 				if (chara == null)
 				{
@@ -400,16 +400,16 @@ public class SurpriseEvent extends Quest
 				chara.deleteMe();
 			}
 
-			_invaders.clear();
-			_attackInfo.clear();
+			invaders.clear();
+			attackInfo.clear();
 
 			Announcements.getInstance().announceToAll("");
 
 			//Only schedule the next invasion if is not started by a GM
 			if (!event.startsWith("end_invasion_gm"))
 			{
-				startQuestTimer("start_invasion", _startInvasionEach * 3600000, null, null);
-				_nextInvasion = System.currentTimeMillis() + _startInvasionEach * 3600000;
+				startQuestTimer("start_invasion", startInvasionEach * 3600000, null, null);
+				nextInvasion = System.currentTimeMillis() + startInvasionEach * 3600000;
 			}
 		}
 		return "";

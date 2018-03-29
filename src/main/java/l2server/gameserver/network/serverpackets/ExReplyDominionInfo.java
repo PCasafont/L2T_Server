@@ -5,17 +5,17 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExReplyDominionInfo extends L2GameServerPacket
 {
-	private int _dominonCount;
+	private int dominonCount;
 
 	public ExReplyDominionInfo(int dominonCount)
 	{
-		_dominonCount = dominonCount;
+		this.dominonCount = dominonCount;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeD(_dominonCount);
+		writeD(dominonCount);
 	}
 }
 

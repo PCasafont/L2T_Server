@@ -26,9 +26,9 @@ public final class L2TransformSkillLearn
 	private final int _race_id;
 	private final int _skill_id;
 	private final int _item_id;
-	private final int _level;
+	private final int level;
 
-	private final int _sp;
+	private final int sp;
 	private final int _min_level;
 
 	public L2TransformSkillLearn(int race_id, int skill_id, int item_id, int level, int sp, int min_level)
@@ -36,8 +36,8 @@ public final class L2TransformSkillLearn
 		_race_id = race_id;
 		_skill_id = skill_id;
 		_item_id = item_id;
-		_level = level;
-		_sp = sp;
+		this.level = level;
+		this.sp = sp;
 		_min_level = min_level;
 	}
 
@@ -54,7 +54,7 @@ public final class L2TransformSkillLearn
 	 */
 	public int getLevel()
 	{
-		return _level;
+		return level;
 	}
 
 	/**
@@ -70,7 +70,7 @@ public final class L2TransformSkillLearn
 	 */
 	public int getSpCost()
 	{
-		return _sp;
+		return sp;
 	}
 
 	public int getRace()

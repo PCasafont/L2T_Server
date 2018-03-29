@@ -51,13 +51,13 @@ import java.util.logging.Level;
  */
 public class ZoneManager
 {
-	//private final HashMap<Integer, L2ZoneType> _zones = new HashMap<Integer, L2ZoneType>();
-	private final Map<Class<? extends L2ZoneType>, Map<Integer, ? extends L2ZoneType>> _classZones = new HashMap<>();
-	private int _lastDynamicId = 300000;
+	//private final HashMap<Integer, L2ZoneType> zones = new HashMap<Integer, L2ZoneType>();
+	private final Map<Class<? extends L2ZoneType>, Map<Integer, ? extends L2ZoneType>> classZones = new HashMap<>();
+	private int lastDynamicId = 300000;
 
 	public static ZoneManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	// =========================================================
@@ -108,7 +108,7 @@ public class ZoneManager
 		Log.info("Loading zones...");
 		Connection con = null;
 		PreparedStatement statement = null;
-		_classZones.clear();
+		classZones.clear();
 
 		// Get the world regions
 		L2WorldRegion[][] worldRegions = L2World.getInstance().getAllWorldRegions();
@@ -175,7 +175,7 @@ public class ZoneManager
                             }
                             else
                             {
-                                zoneId = _lastDynamicId++;
+                                zoneId = lastDynamicId++;
                             }
 
                             zoneName = d.getString("name", "");
@@ -465,13 +465,13 @@ public class ZoneManager
 			L2DatabaseFactory.close(con);
 		}
 
-		Log.info("Zone: loaded " + _classZones.size() + " zone classes and " + getSize() + " zones.");
+		Log.info("Zone: loaded " + classZones.size() + " zone classes and " + getSize() + " zones.");
 	}
 
 	public int getSize()
 	{
 		int i = 0;
-		for (Map<Integer, ? extends L2ZoneType> map : _classZones.values())
+		for (Map<Integer, ? extends L2ZoneType> map : classZones.values())
 		{
 			i += map.size();
 		}
@@ -480,7 +480,7 @@ public class ZoneManager
 
 	public boolean checkId(int id)
 	{
-		for (Map<Integer, ? extends L2ZoneType> map : _classZones.values())
+		for (Map<Integer, ? extends L2ZoneType> map : classZones.values())
 		{
 			if (map.containsKey(id))
 			{
@@ -498,13 +498,13 @@ public class ZoneManager
 	@SuppressWarnings("unchecked")
 	public <T extends L2ZoneType> void addZone(Integer id, T zone)
 	{
-		//_zones.put(id, zone);
-		Map<Integer, T> map = (Map<Integer, T>) _classZones.get(zone.getClass());
+		//zones.put(id, zone);
+		Map<Integer, T> map = (Map<Integer, T>) classZones.get(zone.getClass());
 		if (map == null)
 		{
 			map = new LinkedHashMap<>();
 			map.put(id, zone);
-			_classZones.put(zone.getClass(), map);
+			classZones.put(zone.getClass(), map);
 		}
 		else
 		{
@@ -523,7 +523,7 @@ public class ZoneManager
 	public Collection<L2ZoneType> getAllZones()
 	{
 		ArrayList<L2ZoneType> zones = new ArrayList<>();
-		for (Map<Integer, ? extends L2ZoneType> map : _classZones.values())
+		for (Map<Integer, ? extends L2ZoneType> map : classZones.values())
 		{
 			zones.addAll(map.values());
 		}
@@ -540,7 +540,7 @@ public class ZoneManager
 	@SuppressWarnings("unchecked")
 	public <T extends L2ZoneType> Collection<T> getAllZones(Class<T> zoneType)
 	{
-		return (Collection<T>) _classZones.get(zoneType).values();
+		return (Collection<T>) classZones.get(zoneType).values();
 	}
 
 	/**
@@ -552,7 +552,7 @@ public class ZoneManager
 	 */
 	public L2ZoneType getZoneById(int id)
 	{
-		for (Map<Integer, ? extends L2ZoneType> map : _classZones.values())
+		for (Map<Integer, ? extends L2ZoneType> map : classZones.values())
 		{
 			if (map.containsKey(id))
 			{
@@ -565,7 +565,7 @@ public class ZoneManager
 	@SuppressWarnings("unchecked")
 	public <T extends L2ZoneType> T getZoneByName(String name, Class<T> type)
 	{
-		for (L2ZoneType zones : _classZones.get(type).values())
+		for (L2ZoneType zones : classZones.get(type).values())
 		{
 			if (zones == null)
 			{
@@ -589,7 +589,7 @@ public class ZoneManager
 	@SuppressWarnings("unchecked")
 	public <T extends L2ZoneType> T getZoneById(int id, Class<T> zoneType)
 	{
-		return (T) _classZones.get(zoneType).get(id);
+		return (T) classZones.get(zoneType).get(id);
 	}
 
 	/**
@@ -735,7 +735,7 @@ public class ZoneManager
 		if (zone == null)
 		{
 			double closestdis = Double.MAX_VALUE;
-			for (T temp : (Collection<T>) _classZones.get(type).values())
+			for (T temp : (Collection<T>) classZones.get(type).values())
 			{
 				double distance = temp.getDistanceToZone(obj);
 				if (distance < closestdis)
@@ -755,6 +755,6 @@ public class ZoneManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ZoneManager _instance = new ZoneManager();
+		protected static final ZoneManager instance = new ZoneManager();
 	}
 }

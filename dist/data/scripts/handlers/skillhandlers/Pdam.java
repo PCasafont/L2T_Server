@@ -51,8 +51,8 @@ import java.util.logging.Logger;
 
 public class Pdam implements ISkillHandler
 {
-	private static final Logger _log = Logger.getLogger(Pdam.class.getName());
-	private static final Logger _logDamage = Logger.getLogger("damage");
+	private static final Logger log = Logger.getLogger(Pdam.class.getName());
+	private static final Logger logDamage = Logger.getLogger("damage");
 
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.PDAM, L2SkillType.FATAL};
 
@@ -71,7 +71,7 @@ public class Pdam implements ISkillHandler
 
 		if (Config.DEBUG)
 		{
-			_log.fine("Begin Skill processing in Pdam.java " + skill.getSkillType());
+			log.fine("Begin Skill processing in Pdam.java " + skill.getSkillType());
 		}
 
 		L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
@@ -321,7 +321,7 @@ public class Pdam implements ISkillHandler
 						LogRecord record = new LogRecord(Level.INFO, "");
 						record.setParameters(new Object[]{activeChar, " did damage ", damage, skill, " to ", target});
 						record.setLoggerName("pdam");
-						_logDamage.log(record);
+						logDamage.log(record);
 					}
 
 					// Possibility of a lethal strike

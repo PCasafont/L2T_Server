@@ -22,8 +22,8 @@ import l2server.util.Rnd;
  * In a group mob, there are one master called RaidBoss and several slaves called Minions.
  * <p>
  * <B><U> Data</U> :</B><BR><BR>
- * <li>_minionId : The Identifier of the L2Minion to spawn </li>
- * <li>_minionAmount :  The number of this Minion Type to spawn </li><BR><BR>
+ * <li>minionId : The Identifier of the L2Minion to spawn </li>
+ * <li>minionAmount :  The number of this Minion Type to spawn </li><BR><BR>
  */
 public class L2MinionData
 {
@@ -31,23 +31,23 @@ public class L2MinionData
 	/**
 	 * The Identifier of the L2Minion
 	 */
-	private int _minionId;
+	private int minionId;
 
 	/**
 	 * The number of this Minion Type to spawn
 	 */
-	private int _minionAmount;
-	private int _minionAmountMin;
-	private int _minionAmountMax;
-	private int _respawnTime;
-	private int _maxRespawn;
+	private int minionAmount;
+	private int minionAmountMin;
+	private int minionAmountMax;
+	private int respawnTime;
+	private int maxRespawn;
 
 	/**
 	 * Set the Identifier of the Minion to spawn.<BR><BR>
 	 */
 	public void setMinionId(int id)
 	{
-		_minionId = id;
+		minionId = id;
 	}
 
 	/**
@@ -55,7 +55,7 @@ public class L2MinionData
 	 */
 	public int getMinionId()
 	{
-		return _minionId;
+		return minionId;
 	}
 
 	/**
@@ -65,7 +65,7 @@ public class L2MinionData
 	 */
 	public void setAmountMin(int amountMin)
 	{
-		_minionAmountMin = amountMin;
+		minionAmountMin = amountMin;
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class L2MinionData
 	 */
 	public void setAmountMax(int amountMax)
 	{
-		_minionAmountMax = amountMax;
+		minionAmountMax = amountMax;
 	}
 
 	/**
@@ -85,17 +85,17 @@ public class L2MinionData
 	 */
 	public void setAmount(int amount)
 	{
-		_minionAmount = amount;
+		minionAmount = amount;
 	}
 
 	public int getAmountMin()
 	{
-		return _minionAmountMin;
+		return minionAmountMin;
 	}
 
 	public int getAmountMax()
 	{
-		return _minionAmountMax;
+		return minionAmountMax;
 	}
 
 	/**
@@ -103,42 +103,42 @@ public class L2MinionData
 	 */
 	public int getAmount()
 	{
-		if (_minionAmountMax > _minionAmountMin)
+		if (minionAmountMax > minionAmountMin)
 		{
-			_minionAmount = Rnd.get(_minionAmountMin, _minionAmountMax);
-			return _minionAmount;
+			minionAmount = Rnd.get(minionAmountMin, minionAmountMax);
+			return minionAmount;
 		}
 		else
 		{
-			return _minionAmountMin;
+			return minionAmountMin;
 		}
 	}
 
 	public int getRespawnTime()
 	{
-		if (_respawnTime > 0 && _respawnTime < 15)
+		if (respawnTime > 0 && respawnTime < 15)
 		{
 			return 15;
 		}
 
-		return _respawnTime;
+		return respawnTime;
 	}
 
 	public void setRespawnTime(final int respawnTime)
 	{
-		_respawnTime = respawnTime;
+		this.respawnTime = respawnTime;
 	}
 
 	public int getMaxRespawn()
 	{
-		//if (_maxRespawn > 5)
+		//if (maxRespawn > 5)
 		//	return 5;
 
-		return _maxRespawn;
+		return maxRespawn;
 	}
 
 	public void setMaxRespawn(final int maxRespawn)
 	{
-		_maxRespawn = maxRespawn;
+		this.maxRespawn = maxRespawn;
 	}
 }

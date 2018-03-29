@@ -24,8 +24,8 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExEventMatchMessage extends L2GameServerPacket
 {
-	private int _type;
-	private String _message;
+	private int type;
+	private String message;
 
 	/**
 	 * Create an event match message.
@@ -35,8 +35,8 @@ public class ExEventMatchMessage extends L2GameServerPacket
 	 */
 	public ExEventMatchMessage(int type, String message)
 	{
-		_type = type;
-		_message = message;
+		this.type = type;
+		this.message = message;
 	}
 
 	/* (non-Javadoc)
@@ -45,7 +45,7 @@ public class ExEventMatchMessage extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(_type);
-		writeS(_message);
+		writeC(type);
+		writeS(message);
 	}
 }

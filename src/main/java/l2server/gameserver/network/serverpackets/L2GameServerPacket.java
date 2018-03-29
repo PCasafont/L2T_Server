@@ -27,14 +27,14 @@ import java.util.logging.Level;
  */
 public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
 {
-	protected int _invisibleCharacter = 0;
+	protected int invisibleCharacter = 0;
 
 	/**
 	 * @return True if packet originated from invisible character.
 	 */
 	public int getInvisibleCharacter()
 	{
-		return _invisibleCharacter;
+		return invisibleCharacter;
 	}
 
 	/**
@@ -45,7 +45,7 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
 	 */
 	public void setInvisibleCharacter(final int objectId)
 	{
-		_invisibleCharacter = objectId;
+		invisibleCharacter = objectId;
 	}
 
 	/**

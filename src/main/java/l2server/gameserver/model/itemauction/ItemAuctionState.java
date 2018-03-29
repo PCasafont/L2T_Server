@@ -22,16 +22,16 @@ public enum ItemAuctionState
 {
 	CREATED((byte) 0), STARTED((byte) 1), FINISHED((byte) 2);
 
-	private final byte _stateId;
+	private final byte stateId;
 
 	ItemAuctionState(final byte stateId)
 	{
-		_stateId = stateId;
+		this.stateId = stateId;
 	}
 
 	public byte getStateId()
 	{
-		return _stateId;
+		return stateId;
 	}
 
 	public static ItemAuctionState stateForStateId(final byte stateId)

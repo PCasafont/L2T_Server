@@ -23,27 +23,27 @@ import java.util.List;
 public class HennaEquipList extends L2GameServerPacket
 {
 
-	private L2PcInstance _player;
-	private List<L2Henna> _hennaEquipList;
+	private L2PcInstance player;
+	private List<L2Henna> hennaEquipList;
 
 	public HennaEquipList(L2PcInstance player, List<L2Henna> hennaEquipList)
 	{
-		_player = player;
-		_hennaEquipList = hennaEquipList;
+		this.player = player;
+		this.hennaEquipList = hennaEquipList;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeQ(_player.getAdena()); //activeChar current amount of adena
+		writeQ(player.getAdena()); //activeChar current amount of adena
 		writeD(4); //available equip slot
-		writeD(_hennaEquipList.size());
+		writeD(hennaEquipList.size());
 
-		for (L2Henna temp : _hennaEquipList)
+		for (L2Henna temp : hennaEquipList)
 		{
 			// Player must have at least one dye in inventory
 			// to be able to see the henna that can be applied with it.
-			if (_player.getInventory().getItemByItemId(temp.getDyeId()) != null)
+			if (player.getInventory().getItemByItemId(temp.getDyeId()) != null)
 			{
 				writeD(temp.getSymbolId()); //symbolId
 				writeD(temp.getDyeId()); //itemId of dye

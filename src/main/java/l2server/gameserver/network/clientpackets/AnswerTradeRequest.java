@@ -31,12 +31,12 @@ public final class AnswerTradeRequest extends L2GameClientPacket
 {
 	//
 
-	private int _response;
+	private int response;
 
 	@Override
 	protected void readImpl()
 	{
-		_response = readD();
+		response = readD();
 	}
 
 	@Override
@@ -91,7 +91,7 @@ public final class AnswerTradeRequest extends L2GameClientPacket
 			return;
 		}
 
-		if (_response == 1 && !partner.isRequestExpired())
+		if (response == 1 && !partner.isRequestExpired())
 		{
 			player.startTrade(partner);
 		}

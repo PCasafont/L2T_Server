@@ -43,9 +43,9 @@ import java.util.ArrayList;
  */
 public class L2SiegeZone extends L2ZoneType
 {
-	private int _siegableId = -1;
-	private Siegable _siege = null;
-	private boolean _isActiveSiege = false;
+	private int siegableId = -1;
+	private Siegable siege = null;
+	private boolean isActiveSiege = false;
 	private static final int DISMOUNT_DELAY = 5;
 
 	public L2SiegeZone(int id)
@@ -59,25 +59,25 @@ public class L2SiegeZone extends L2ZoneType
 		switch (name)
 		{
 			case "castleId":
-				if (_siegableId != -1)
+				if (siegableId != -1)
 				{
 					throw new IllegalArgumentException("Siege object already defined!");
 				}
-				_siegableId = Integer.parseInt(value);
+				siegableId = Integer.parseInt(value);
 				break;
 			case "fortId":
-				if (_siegableId != -1)
+				if (siegableId != -1)
 				{
 					throw new IllegalArgumentException("Siege object already defined!");
 				}
-				_siegableId = Integer.parseInt(value);
+				siegableId = Integer.parseInt(value);
 				break;
 			case "clanHallId":
-				if (_siegableId != -1)
+				if (siegableId != -1)
 				{
 					throw new IllegalArgumentException("Siege object already defined!");
 				}
-				_siegableId = Integer.parseInt(value);
+				siegableId = Integer.parseInt(value);
 				//TODO clan hall siege
 				break;
 			default:
@@ -89,7 +89,7 @@ public class L2SiegeZone extends L2ZoneType
 	@Override
 	protected void onEnter(L2Character character)
 	{
-		if (_isActiveSiege)
+		if (isActiveSiege)
 		{
 			character.setInsideZone(L2Character.ZONE_PVP, true);
 			character.setInsideZone(L2Character.ZONE_SIEGE, true);
@@ -97,17 +97,17 @@ public class L2SiegeZone extends L2ZoneType
 
 			if (character instanceof L2PcInstance)
 			{
-				if (((L2PcInstance) character).isRegisteredOnThisSiegeField(_siegableId) ||
+				if (((L2PcInstance) character).isRegisteredOnThisSiegeField(siegableId) ||
 						character.isGM())
 				{
 					((L2PcInstance) character).setIsInSiege(true); // in siege
-					if (_siege != null && _siege.giveFame())
+					if (siege != null && siege.giveFame())
 					{
 						((L2PcInstance) character)
-								.startFameTask(_siege.getFameFrequency() * 1000, _siege.getFameAmount());
+								.startFameTask(siege.getFameFrequency() * 1000, siege.getFameAmount());
 					}
 				}
-				else if (_siegableId > 100 && !character.isGM())
+				else if (siegableId > 100 && !character.isGM())
 				{
 					character.sendMessage("You are not registered at this siege!");
 					character
@@ -131,7 +131,7 @@ public class L2SiegeZone extends L2ZoneType
 		character.setInsideZone(L2Character.ZONE_PVP, false);
 		character.setInsideZone(L2Character.ZONE_SIEGE, false);
 		character.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, false);
-		if (_isActiveSiege)
+		if (isActiveSiege)
 		{
 			if (character instanceof L2PcInstance)
 			{
@@ -153,10 +153,10 @@ public class L2SiegeZone extends L2ZoneType
 			activeChar.stopFameTask();
 			activeChar.setIsInSiege(false);
 
-			if (_siege instanceof FortSiege && activeChar.getInventory().getItemByItemId(9819) != null)
+			if (siege instanceof FortSiege && activeChar.getInventory().getItemByItemId(9819) != null)
 			{
 				// drop combat flag
-				Fort fort = FortManager.getInstance().getFortById(_siegableId);
+				Fort fort = FortManager.getInstance().getFortById(siegableId);
 				if (fort != null)
 				{
 					FortSiegeManager.getInstance().dropCombatFlag(activeChar, fort.getFortId());
@@ -182,11 +182,11 @@ public class L2SiegeZone extends L2ZoneType
 	{
 		super.onDieInside(character, killer);
 
-		if (_isActiveSiege)
+		if (isActiveSiege)
 		{
 			// debuff participants only if they die inside siege zone
 			if (character instanceof L2PcInstance &&
-					((L2PcInstance) character).isRegisteredOnThisSiegeField(_siegableId))
+					((L2PcInstance) character).isRegisteredOnThisSiegeField(siegableId))
 			{
 				int lvl = 1;
 				final L2Abnormal e = character.getFirstEffect(5660);
@@ -211,9 +211,9 @@ public class L2SiegeZone extends L2ZoneType
 
 	public void updateZoneStatusForCharactersInside()
 	{
-		if (_isActiveSiege)
+		if (isActiveSiege)
 		{
-			for (L2Character character : _characterList.values())
+			for (L2Character character : characterList.values())
 			{
 				if (character != null)
 				{
@@ -223,7 +223,7 @@ public class L2SiegeZone extends L2ZoneType
 		}
 		else
 		{
-			for (L2Character character : _characterList.values())
+			for (L2Character character : characterList.values())
 			{
 				if (character == null)
 				{
@@ -258,7 +258,7 @@ public class L2SiegeZone extends L2ZoneType
 	 */
 	public void announceToPlayers(String message)
 	{
-		for (L2Character temp : _characterList.values())
+		for (L2Character temp : characterList.values())
 		{
 			if (temp instanceof L2PcInstance)
 			{
@@ -276,7 +276,7 @@ public class L2SiegeZone extends L2ZoneType
 	{
 		ArrayList<L2PcInstance> players = new ArrayList<>();
 
-		for (L2Character temp : _characterList.values())
+		for (L2Character temp : characterList.values())
 		{
 			if (temp instanceof L2PcInstance)
 			{
@@ -289,22 +289,22 @@ public class L2SiegeZone extends L2ZoneType
 
 	public int getSiegeObjectId()
 	{
-		return _siegableId;
+		return siegableId;
 	}
 
 	public boolean isActive()
 	{
-		return _isActiveSiege;
+		return isActiveSiege;
 	}
 
 	public void setIsActive(boolean val)
 	{
-		_isActiveSiege = val;
+		isActiveSiege = val;
 	}
 
 	public void setSiegeInstance(Siegable siege)
 	{
-		_siege = siege;
+		this.siege = siege;
 	}
 
 	/**
@@ -314,7 +314,7 @@ public class L2SiegeZone extends L2ZoneType
 	 */
 	public void banishForeigners(L2Clan owningClan)
 	{
-		for (L2Character temp : _characterList.values())
+		for (L2Character temp : characterList.values())
 		{
 			if (!(temp instanceof L2PcInstance))
 			{

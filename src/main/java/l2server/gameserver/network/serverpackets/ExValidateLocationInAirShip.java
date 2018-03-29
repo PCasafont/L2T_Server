@@ -23,13 +23,13 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExValidateLocationInAirShip extends L2GameServerPacket
 {
-	private L2PcInstance _activeChar;
+	private L2PcInstance activeChar;
 	private int shipId, x, y, z, h;
 
 	public ExValidateLocationInAirShip(L2PcInstance player)
 	{
-		_activeChar = player;
-		shipId = _activeChar.getAirShip().getObjectId();
+		activeChar = player;
+		shipId = activeChar.getAirShip().getObjectId();
 		x = player.getInVehiclePosition().getX();
 		y = player.getInVehiclePosition().getY();
 		z = player.getInVehiclePosition().getZ();
@@ -39,7 +39,7 @@ public class ExValidateLocationInAirShip extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_activeChar.getObjectId());
+		writeD(activeChar.getObjectId());
 		writeD(shipId);
 		writeD(x);
 		writeD(y);

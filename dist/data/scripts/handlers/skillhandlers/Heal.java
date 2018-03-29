@@ -126,11 +126,11 @@ public class Heal implements ISkillHandler
 
 					((L2Summon) activeChar).setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
 				}
-				else if (activeChar instanceof L2Npc && ((L2Npc) activeChar)._spiritshotcharged)
+				else if (activeChar instanceof L2Npc && ((L2Npc) activeChar).spiritshotcharged)
 				{
 					mAtkMul = 4;
 
-					((L2Npc) activeChar)._spiritshotcharged = false;
+					((L2Npc) activeChar).spiritshotcharged = false;
 				}
 
 				baseHeal = power + Math.sqrt(mAtkMul * activeChar.getMAtk(activeChar, skill));

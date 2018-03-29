@@ -63,24 +63,24 @@ public final class LoginFail extends L2LoginServerPacket
 		REASON_CERTIFICATION_DAILY_USE_EXCEEDED(0x37),
 		REASON_CERTIFICATION_UNDERWAY_TRY_AGAIN_LATER(0x38);
 
-		private final int _code;
+		private final int code;
 
 		LoginFailReason(int code)
 		{
-			_code = code;
+			this.code = code;
 		}
 
 		public final int getCode()
 		{
-			return _code;
+			return code;
 		}
 	}
 
-	private LoginFailReason _reason;
+	private LoginFailReason reason;
 
 	public LoginFail(LoginFailReason reason)
 	{
-		_reason = reason;
+		this.reason = reason;
 	}
 
 	/**
@@ -89,6 +89,6 @@ public final class LoginFail extends L2LoginServerPacket
 	protected void write()
 	{
 		writeC(0x01);
-		writeC(_reason.getCode());
+		writeC(reason.getCode());
 	}
 }

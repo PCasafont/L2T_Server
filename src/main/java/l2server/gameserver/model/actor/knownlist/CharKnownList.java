@@ -30,9 +30,9 @@ import java.util.stream.Collectors;
 
 public class CharKnownList extends ObjectKnownList
 {
-	private Map<Integer, L2PcInstance> _knownPlayers;
-	private Map<Integer, L2Summon> _knownSummons;
-	private Map<Integer, Integer> _knownRelations;
+	private Map<Integer, L2PcInstance> knownPlayers;
+	private Map<Integer, L2Summon> knownSummons;
+	private Map<Integer, Integer> knownRelations;
 
 	public CharKnownList(L2Character activeChar)
 	{
@@ -60,9 +60,9 @@ public class CharKnownList extends ObjectKnownList
 	}
 
 	/**
-	 * Return True if the L2PcInstance is in _knownPlayer of the L2Character.<BR><BR>
+	 * Return True if the L2PcInstance is in knownPlayer of the L2Character.<BR><BR>
 	 *
-	 * @param player The L2PcInstance to search in _knownPlayer
+	 * @param player The L2PcInstance to search in knownPlayer
 	 */
 	public final boolean knowsThePlayer(L2PcInstance player)
 	{
@@ -70,7 +70,7 @@ public class CharKnownList extends ObjectKnownList
 	}
 
 	/**
-	 * Remove all L2Object from _knownObjects and _knownPlayer of the L2Character then cancel Attack or Cast and notify AI.
+	 * Remove all L2Object from knownObjects and knownPlayer of the L2Character then cancel Attack or Cast and notify AI.
 	 */
 	@Override
 	public final void removeAllKnownObjects()
@@ -80,7 +80,7 @@ public class CharKnownList extends ObjectKnownList
 		getKnownRelations().clear();
 		getKnownSummons().clear();
 
-		// Set _target of the L2Character to null
+		// Set target of the L2Character to null
 		// Cancel Attack or Cast
 		getActiveChar().setTarget(null);
 
@@ -241,29 +241,29 @@ public class CharKnownList extends ObjectKnownList
 
 	public final Map<Integer, L2PcInstance> getKnownPlayers()
 	{
-		if (_knownPlayers == null)
+		if (knownPlayers == null)
 		{
-			_knownPlayers = new ConcurrentHashMap<>();
+			knownPlayers = new ConcurrentHashMap<>();
 		}
-		return _knownPlayers;
+		return knownPlayers;
 	}
 
 	public final Map<Integer, Integer> getKnownRelations()
 	{
-		if (_knownRelations == null)
+		if (knownRelations == null)
 		{
-			_knownRelations = new ConcurrentHashMap<>();
+			knownRelations = new ConcurrentHashMap<>();
 		}
-		return _knownRelations;
+		return knownRelations;
 	}
 
 	public final Map<Integer, L2Summon> getKnownSummons()
 	{
-		if (_knownSummons == null)
+		if (knownSummons == null)
 		{
-			_knownSummons = new ConcurrentHashMap<>();
+			knownSummons = new ConcurrentHashMap<>();
 		}
-		return _knownSummons;
+		return knownSummons;
 	}
 
 	public final Collection<L2PcInstance> getKnownPlayersInRadius(long radius)

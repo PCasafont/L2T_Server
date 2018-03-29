@@ -17,16 +17,16 @@ package l2server.gameserver.network.serverpackets;
 
 public class TutorialEnableClientEvent extends L2GameServerPacket
 {
-	private int _eventId = 0;
+	private int eventId = 0;
 
 	public TutorialEnableClientEvent(int event)
 	{
-		_eventId = event;
+		eventId = event;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_eventId);
+		writeD(eventId);
 	}
 }

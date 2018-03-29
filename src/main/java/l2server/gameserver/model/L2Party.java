@@ -83,20 +83,20 @@ public class L2Party
 	public static final byte ITEM_ORDER = 3;
 	public static final byte ITEM_ORDER_SPOIL = 4;
 
-	private final CopyOnWriteArrayList<L2PcInstance> _members;
-	private boolean _pendingInvitation = false;
-	private long _pendingInviteTimeout;
-	private int _partyLvl = 0;
-	private int _itemDistribution = 0;
-	private int _itemLastLoot = 0;
-	private L2CommandChannel _commandChannel = null;
-	private byte _requestChangeLoot = -1;
-	private List<Integer> _changeLootAnswers = null;
-	private long _requestChangeLootTimer = 0;
-	private Future<?> _checkTask = null;
-	private Future<?> _positionBroadcastTask = null;
-	private PartyMemberPosition _positionPacket;
-	private boolean _disbanding = false;
+	private final CopyOnWriteArrayList<L2PcInstance> members;
+	private boolean pendingInvitation = false;
+	private long pendingInviteTimeout;
+	private int partyLvl = 0;
+	private int itemDistribution = 0;
+	private int itemLastLoot = 0;
+	private L2CommandChannel commandChannel = null;
+	private byte requestChangeLoot = -1;
+	private List<Integer> changeLootAnswers = null;
+	private long requestChangeLootTimer = 0;
+	private Future<?> checkTask = null;
+	private Future<?> positionBroadcastTask = null;
+	private PartyMemberPosition positionPacket;
+	private boolean disbanding = false;
 
 	/**
 	 * The message type send to the party members.
@@ -113,10 +113,10 @@ public class L2Party
 	 */
 	public L2Party(L2PcInstance leader, int itemDistribution)
 	{
-		_members = new CopyOnWriteArrayList<>();
-		_itemDistribution = itemDistribution;
+		members = new CopyOnWriteArrayList<>();
+		this.itemDistribution = itemDistribution;
 		getPartyMembers().add(leader);
-		_partyLvl = leader.getLevel();
+		partyLvl = leader.getLevel();
 	}
 
 	/**
@@ -136,7 +136,7 @@ public class L2Party
 	 */
 	public boolean getPendingInvitation()
 	{
-		return _pendingInvitation;
+		return pendingInvitation;
 	}
 
 	/**
@@ -145,8 +145,8 @@ public class L2Party
 	 */
 	public void setPendingInvitation(boolean val)
 	{
-		_pendingInvitation = val;
-		_pendingInviteTimeout =
+		pendingInvitation = val;
+		pendingInviteTimeout =
 				TimeController.getGameTicks() + L2PcInstance.REQUEST_TIMEOUT * TimeController.TICKS_PER_SECOND;
 	}
 
@@ -158,7 +158,7 @@ public class L2Party
 	 */
 	public boolean isInvitationRequestExpired()
 	{
-		return !(_pendingInviteTimeout > TimeController.getGameTicks());
+		return !(pendingInviteTimeout > TimeController.getGameTicks());
 	}
 
 	/**
@@ -168,7 +168,7 @@ public class L2Party
 	 */
 	public final CopyOnWriteArrayList<L2PcInstance> getPartyMembers()
 	{
-		return _members;
+		return members;
 	}
 
 	/**
@@ -206,14 +206,14 @@ public class L2Party
 	{
 		for (int i = 0; i < getMemberCount(); i++)
 		{
-			if (++_itemLastLoot >= getMemberCount())
+			if (++itemLastLoot >= getMemberCount())
 			{
-				_itemLastLoot = 0;
+				itemLastLoot = 0;
 			}
 			L2PcInstance member;
 			try
 			{
-				member = getPartyMembers().get(_itemLastLoot);
+				member = getPartyMembers().get(itemLastLoot);
 				if (member.getInventory().validateCapacityByItemId(ItemId) &&
 						Util.checkIfInRange(Config.ALT_PARTY_RANGE2, target, member, true))
 				{
@@ -238,7 +238,7 @@ public class L2Party
 	{
 		L2PcInstance looter = player;
 
-		switch (_itemDistribution)
+		switch (itemDistribution)
 		{
 			case ITEM_RANDOM:
 				if (!spoil)
@@ -360,7 +360,7 @@ public class L2Party
 				getLeader().closeWaitingSubstitute();
 			}
 		}
-		if (_requestChangeLoot != -1)
+		if (requestChangeLoot != -1)
 		{
 			finishLootRequest(false); // cancel on invite
 		}
@@ -416,9 +416,9 @@ public class L2Party
 
 		//add player to party, adjust party level
 		getPartyMembers().add(player);
-		if (player.getLevel() > _partyLvl)
+		if (player.getLevel() > partyLvl)
 		{
-			_partyLvl = player.getLevel();
+			partyLvl = player.getLevel();
 		}
 
 		// update partySpelled
@@ -445,9 +445,9 @@ public class L2Party
 			player.sendPacket(new ExOpenMPCC());
 		}
 
-		if (_positionBroadcastTask == null)
+		if (positionBroadcastTask == null)
 		{
-			_positionBroadcastTask = ThreadPoolManager.getInstance()
+			positionBroadcastTask = ThreadPoolManager.getInstance()
 					.scheduleGeneralAtFixedRate(new PositionBroadcast(), PARTY_POSITION_BROADCAST / 2,
 							PARTY_POSITION_BROADCAST);
 		}
@@ -474,7 +474,7 @@ public class L2Party
 		if (getPartyMembers().contains(player))
 		{
 			boolean isLeader = isLeader(player);
-			if (!_disbanding)
+			if (!disbanding)
 			{
 				if (getPartyMembers().size() == 2 ||
 						isLeader && !Config.ALT_LEAVE_PARTY_LEADER && type != messageType.Disconnected)
@@ -585,17 +585,17 @@ public class L2Party
 						DuelManager.getInstance().onRemoveFromParty(leader);
 					}
 				}
-				if (_checkTask != null)
+				if (checkTask != null)
 				{
-					_checkTask.cancel(true);
-					_checkTask = null;
+					checkTask.cancel(true);
+					checkTask = null;
 				}
-				if (_positionBroadcastTask != null)
+				if (positionBroadcastTask != null)
 				{
-					_positionBroadcastTask.cancel(false);
-					_positionBroadcastTask = null;
+					positionBroadcastTask.cancel(false);
+					positionBroadcastTask = null;
 				}
-				_members.clear();
+				members.clear();
 			}
 		}
 	}
@@ -605,11 +605,11 @@ public class L2Party
 	 */
 	public void disbandParty()
 	{
-		_disbanding = true;
-		if (_members != null)
+		disbanding = true;
+		if (members != null)
 		{
 			broadcastToPartyMembers(SystemMessage.getSystemMessage(SystemMessageId.PARTY_DISPERSED));
-			for (L2PcInstance member : _members)
+			for (L2PcInstance member : members)
 			{
 				if (member != null)
 				{
@@ -650,12 +650,12 @@ public class L2Party
 					msg.addString(getLeader().getName());
 					broadcastToPartyMembers(msg);
 					broadcastToPartyMembersNewLeader();
-					if (isInCommandChannel() && temp.equals(_commandChannel.getChannelLeader()))
+					if (isInCommandChannel() && temp.equals(commandChannel.getChannelLeader()))
 					{
-						_commandChannel.setChannelLeader(getLeader());
+						commandChannel.setChannelLeader(getLeader());
 						msg = SystemMessage.getSystemMessage(SystemMessageId.COMMAND_CHANNEL_LEADER_NOW_C1);
-						msg.addString(_commandChannel.getChannelLeader().getName());
-						_commandChannel.broadcastToChannelMembers(msg);
+						msg.addString(commandChannel.getChannelLeader().getName());
+						commandChannel.broadcastToChannelMembers(msg);
 					}
 					if (player.isInPartyMatchRoom())
 					{
@@ -1057,7 +1057,7 @@ public class L2Party
 				newLevel = member.getLevel();
 			}
 		}
-		_partyLvl = newLevel;
+		partyLvl = newLevel;
 	}
 
 	private List<L2Playable> getValidMembers(List<L2Playable> members, int topLvl)
@@ -1171,34 +1171,34 @@ public class L2Party
 
 	public int getLevel()
 	{
-		return _partyLvl;
+		return partyLvl;
 	}
 
 	public int getLootDistribution()
 	{
-		return _itemDistribution;
+		return itemDistribution;
 	}
 
 	public boolean isInCommandChannel()
 	{
-		return _commandChannel != null;
+		return commandChannel != null;
 	}
 
 	public L2CommandChannel getCommandChannel()
 	{
-		return _commandChannel;
+		return commandChannel;
 	}
 
 	public void setCommandChannel(L2CommandChannel channel)
 	{
-		_commandChannel = channel;
+		commandChannel = channel;
 	}
 
 	public L2PcInstance getLeader()
 	{
 		try
 		{
-			return _members.get(0);
+			return members.get(0);
 		}
 		catch (NoSuchElementException e)
 		{
@@ -1208,9 +1208,9 @@ public class L2Party
 
 	public void requestLootChange(byte type)
 	{
-		if (_requestChangeLoot != -1)
+		if (requestChangeLoot != -1)
 		{
-			if (System.currentTimeMillis() > _requestChangeLootTimer)
+			if (System.currentTimeMillis() > requestChangeLootTimer)
 			{
 				finishLootRequest(false); // timeout 45sec, guess
 			}
@@ -1219,11 +1219,11 @@ public class L2Party
 				return;
 			}
 		}
-		_requestChangeLoot = type;
+		requestChangeLoot = type;
 		int additionalTime = L2PcInstance.REQUEST_TIMEOUT * 3000;
-		_requestChangeLootTimer = System.currentTimeMillis() + additionalTime;
-		_changeLootAnswers = new ArrayList<>();
-		_checkTask = ThreadPoolManager.getInstance()
+		requestChangeLootTimer = System.currentTimeMillis() + additionalTime;
+		changeLootAnswers = new ArrayList<>();
+		checkTask = ThreadPoolManager.getInstance()
 				.scheduleGeneralAtFixedRate(new ChangeLootCheck(), additionalTime + 1000, 5000);
 		broadcastToPartyMembers(getLeader(), new ExAskModifyPartyLooting(getLeader().getName(), type));
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.REQUESTING_APPROVAL_CHANGE_PARTY_LOOT_S1);
@@ -1233,11 +1233,11 @@ public class L2Party
 
 	public synchronized void answerLootChangeRequest(L2PcInstance member, boolean answer)
 	{
-		if (_requestChangeLoot == -1)
+		if (requestChangeLoot == -1)
 		{
 			return;
 		}
-		if (_changeLootAnswers.contains(member.getObjectId()))
+		if (changeLootAnswers.contains(member.getObjectId()))
 		{
 			return;
 		}
@@ -1246,8 +1246,8 @@ public class L2Party
 			finishLootRequest(false);
 			return;
 		}
-		_changeLootAnswers.add(member.getObjectId());
-		if (_changeLootAnswers.size() >= getMemberCount() - 1)
+		changeLootAnswers.add(member.getObjectId());
+		if (changeLootAnswers.size() >= getMemberCount() - 1)
 		{
 			finishLootRequest(true);
 		}
@@ -1255,22 +1255,22 @@ public class L2Party
 
 	private synchronized void finishLootRequest(boolean success)
 	{
-		if (_requestChangeLoot == -1)
+		if (requestChangeLoot == -1)
 		{
 			return;
 		}
 
-		if (_checkTask != null)
+		if (checkTask != null)
 		{
-			_checkTask.cancel(false);
-			_checkTask = null;
+			checkTask.cancel(false);
+			checkTask = null;
 		}
 		if (success)
 		{
-			broadcastToPartyMembers(new ExSetPartyLooting(1, _requestChangeLoot));
-			_itemDistribution = _requestChangeLoot;
+			broadcastToPartyMembers(new ExSetPartyLooting(1, requestChangeLoot));
+			itemDistribution = requestChangeLoot;
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PARTY_LOOT_CHANGED_S1);
-			sm.addSystemString(LOOT_SYSSTRINGS[_requestChangeLoot]);
+			sm.addSystemString(LOOT_SYSSTRINGS[requestChangeLoot]);
 			broadcastToPartyMembers(sm);
 		}
 		else
@@ -1278,15 +1278,15 @@ public class L2Party
 			broadcastToPartyMembers(new ExSetPartyLooting(0, (byte) 0));
 			broadcastToPartyMembers(SystemMessage.getSystemMessage(SystemMessageId.PARTY_LOOT_CHANGE_CANCELLED));
 		}
-		_requestChangeLoot = -1;
-		_requestChangeLootTimer = 0;
+		requestChangeLoot = -1;
+		requestChangeLootTimer = 0;
 	}
 
-	private L2Character _target;
+	private L2Character target;
 
 	public L2Character getTarget()
 	{
-		return _target;
+		return target;
 	}
 
 	public void think()
@@ -1335,22 +1335,22 @@ public class L2Party
 			}
 		}
 
-		if (_target != null && _target.isVisible() && !_target.isDead() &&
-				leader.getDistanceSq(_target) < 2000 * 2000 && _target.isAutoAttackable(leader) && allies.size() > 0 &&
-				(!playerFound && _target instanceof L2ApInstance || !(_target instanceof L2ApInstance)))
+		if (target != null && target.isVisible() && !target.isDead() &&
+				leader.getDistanceSq(target) < 2000 * 2000 && target.isAutoAttackable(leader) && allies.size() > 0 &&
+				(!playerFound && target instanceof L2ApInstance || !(target instanceof L2ApInstance)))
 		{
-			//_target = null;
+			//target = null;
 			return;
 		}
 		else
 		{
-			_target = null;
+			target = null;
 		}
 
 		// Balance check
 		/*if (allies.size() * 2 < enemies.size())
 		{
-			_target = null;
+			target = null;
 			return;
 		}*/
 
@@ -1366,7 +1366,7 @@ public class L2Party
 							enemy.getLastSkillCast() != null && enemy.getLastSkillCast().isOffensive()) &&
 							leader.getDistanceSq(enemy) < 2000 * 2000)
 					{
-						_target = enemy;
+						target = enemy;
 						return;
 					}
 				}
@@ -1376,11 +1376,11 @@ public class L2Party
 		if (enemies.size() == 0)
 		{
 			// If there's some member with PvP flag yet, return
-			for (L2PcInstance member : _members)
+			for (L2PcInstance member : members)
 			{
 				if (member.getPvpFlag() > 0)
 				{
-					_target = null;
+					target = null;
 					return;
 				}
 			}
@@ -1402,12 +1402,12 @@ public class L2Party
 
 				if (count > 5 || clans.size() < 2)
 				{
-					for (L2PcInstance member : _members)
+					for (L2PcInstance member : members)
 						member.teleToLocation(mostPvP.getX() + Rnd.get(200), mostPvP.getY() + Rnd.get(200), mostPvP.getZ());
 				}
 			}*/
 
-			for (L2PcInstance member : _members)
+			for (L2PcInstance member : members)
 			{
 				member.teleToLocation(-24501, 187976, -3975, true);
 				member.setPvpFlagLasts(System.currentTimeMillis() + Config.PVP_NORMAL_TIME);
@@ -1427,7 +1427,7 @@ public class L2Party
 
 			if (!(enemy instanceof L2PcInstance))
 			{
-				if (_target == null && enemy.isInCombat() && enemy.getDistanceSq(leader) < closest)
+				if (target == null && enemy.isInCombat() && enemy.getDistanceSq(leader) < closest)
 				{
 					closest = enemy.getDistanceSq(leader);
 					worstMob = enemy;
@@ -1469,13 +1469,13 @@ public class L2Party
 
 		//Log.info(worstEnemy);
 
-		if (worstEnemy == null && _target == null)
+		if (worstEnemy == null && target == null)
 		{
-			_target = worstMob;
+			target = worstMob;
 			return;
 		}
 
-		_target = worstEnemy;
+		target = worstEnemy;
 	}
 
 	private class ChangeLootCheck implements Runnable
@@ -1483,7 +1483,7 @@ public class L2Party
 		@Override
 		public void run()
 		{
-			if (System.currentTimeMillis() > _requestChangeLootTimer)
+			if (System.currentTimeMillis() > requestChangeLootTimer)
 			{
 				finishLootRequest(false);
 			}
@@ -1495,25 +1495,25 @@ public class L2Party
 		@Override
 		public void run()
 		{
-			if (_positionPacket == null)
+			if (positionPacket == null)
 			{
-				_positionPacket = new PartyMemberPosition(L2Party.this);
+				positionPacket = new PartyMemberPosition(L2Party.this);
 			}
 			else
 			{
-				_positionPacket.reuse(L2Party.this);
+				positionPacket.reuse(L2Party.this);
 			}
-			broadcastToPartyMembers(_positionPacket);
+			broadcastToPartyMembers(positionPacket);
 		}
 	}
 
-	private TIntIntHashMap _taggedChars = new TIntIntHashMap();
+	private TIntIntHashMap taggedChars = new TIntIntHashMap();
 
 	public int getTaggedChar(int tagId)
 	{
-		for (int objId : _taggedChars.keys())
+		for (int objId : taggedChars.keys())
 		{
-			if (_taggedChars.get(objId) == tagId)
+			if (taggedChars.get(objId) == tagId)
 			{
 				return objId;
 			}
@@ -1523,31 +1523,31 @@ public class L2Party
 
 	public int getTag(int charObjId)
 	{
-		if (!_taggedChars.containsKey(charObjId))
+		if (!taggedChars.containsKey(charObjId))
 		{
 			return 0;
 		}
-		return _taggedChars.get(charObjId);
+		return taggedChars.get(charObjId);
 	}
 
 	public int tagCharacter(int charObjId, int tagId)
 	{
-		if (_taggedChars.containsKey(charObjId) && _taggedChars.get(charObjId) == tagId)
+		if (taggedChars.containsKey(charObjId) && taggedChars.get(charObjId) == tagId)
 		{
-			_taggedChars.remove(charObjId);
+			taggedChars.remove(charObjId);
 			return 0;
 		}
 
-		for (int charId : _taggedChars.keys())
+		for (int charId : taggedChars.keys())
 		{
-			if (_taggedChars.get(charId) == tagId)
+			if (taggedChars.get(charId) == tagId)
 			{
-				_taggedChars.remove(charId);
+				taggedChars.remove(charId);
 				broadcastToPartyMembers(new ExTacticalSign(charId, 0));
 			}
 		}
 
-		_taggedChars.put(charObjId, tagId);
+		taggedChars.put(charObjId, tagId);
 		return tagId;
 	}
 
@@ -1558,9 +1558,9 @@ public class L2Party
 			return -1;
 		}
 
-		for (int i = _members.size(); i-- > 0; )
+		for (int i = members.size(); i-- > 0; )
 		{
-			final L2PcInstance member = _members.get(i);
+			final L2PcInstance member = members.get(i);
 			if (member != null && member == player)
 			{
 				return i;

@@ -33,14 +33,14 @@ import l2server.util.Rnd;
 public class RequestExEnchantItemAttribute extends L2GameClientPacket
 {
 
-	private int _objectId;
-	private long _count;
+	private int objectId;
+	private long count;
 
 	@Override
 	protected void readImpl()
 	{
-		_objectId = readD();
-		_count = readQ();
+		objectId = readD();
+		count = readQ();
 	}
 
 	@Override
@@ -52,7 +52,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 			return;
 		}
 
-		enchantItemAttribute(player, _objectId, _count);
+		enchantItemAttribute(player, objectId, count);
 	}
 
 	public static void enchantItemAttribute(L2PcInstance player, int itemObjId, long count)
@@ -201,7 +201,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		for (int i = 0; i < count && succeeded < maxCount; i++)
 		{
 			boolean success = false;
-			switch (Elementals.getItemElemental(stoneId)._type)
+			switch (Elementals.getItemElemental(stoneId).type)
 			{
 				case Stone:
 				case Roughore:
@@ -320,11 +320,11 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 
 		if (item.isWeapon())
 		{
-			return Elementals.WEAPON_VALUES[elementItem._type._maxLevel];
+			return Elementals.WEAPON_VALUES[elementItem.type.maxLevel];
 		}
 		else
 		{
-			return Elementals.ARMOR_VALUES[elementItem._type._maxLevel];
+			return Elementals.ARMOR_VALUES[elementItem.type.maxLevel];
 		}
 	}
 

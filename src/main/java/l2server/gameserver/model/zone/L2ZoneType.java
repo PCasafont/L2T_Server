@@ -48,36 +48,36 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public abstract class L2ZoneType
 {
-	private final int _id;
-	protected L2ZoneForm _zone;
-	protected ConcurrentHashMap<Integer, L2Character> _characterList;
+	private final int id;
+	protected L2ZoneForm zone;
+	protected ConcurrentHashMap<Integer, L2Character> characterList;
 
 	/**
 	 * Parameters to affect specific characters
 	 */
-	private boolean _checkAffected = false;
+	private boolean checkAffected = false;
 
-	private String _name = null;
-	private int _minLvl;
-	private int _maxLvl;
-	private int[] _race;
-	private int[] _class;
-	private char _classType;
-	private Map<Quest.QuestEventType, ArrayList<Quest>> _questEvents;
-	private InstanceType _target = InstanceType.L2Character; // default all chars
+	private String name = null;
+	private int minLvl;
+	private int maxLvl;
+	private int[] race;
+	private int[] clazz;
+	private char classType;
+	private Map<Quest.QuestEventType, ArrayList<Quest>> questEvents;
+	private InstanceType target = InstanceType.L2Character; // default all chars
 
 	protected L2ZoneType(int id)
 	{
-		_id = id;
-		_characterList = new ConcurrentHashMap<>();
+		this.id = id;
+		characterList = new ConcurrentHashMap<>();
 
-		_minLvl = 0;
-		_maxLvl = 0xFF;
+		minLvl = 0;
+		maxLvl = 0xFF;
 
-		_classType = 0;
+		classType = 0;
 
-		_race = null;
-		_class = null;
+		race = null;
+        clazz = null;
 	}
 
 	/**
@@ -85,7 +85,7 @@ public abstract class L2ZoneType
 	 */
 	public int getId()
 	{
-		return _id;
+		return id;
 	}
 
 	/**
@@ -95,81 +95,81 @@ public abstract class L2ZoneType
 	 */
 	public void setParameter(String name, String value)
 	{
-		_checkAffected = true;
+		checkAffected = true;
 
 		// Zone name
 		switch (name)
 		{
 			case "name":
-				_name = value;
+				name = value;
 				break;
 			// Minimum level
 			case "affectedLvlMin":
-				_minLvl = Integer.parseInt(value);
+				minLvl = Integer.parseInt(value);
 				break;
 			// Maximum level
 			case "affectedLvlMax":
-				_maxLvl = Integer.parseInt(value);
+				maxLvl = Integer.parseInt(value);
 				break;
 			// Affected Races
 			case "affectedRace":
 				// Create a new array holding the affected race
-				if (_race == null)
+				if (race == null)
 				{
-					_race = new int[1];
-					_race[0] = Integer.parseInt(value);
+					race = new int[1];
+					race[0] = Integer.parseInt(value);
 				}
 				else
 				{
-					int[] temp = new int[_race.length + 1];
+					int[] temp = new int[race.length + 1];
 
 					int i = 0;
-					for (; i < _race.length; i++)
+					for (; i < race.length; i++)
 					{
-						temp[i] = _race[i];
+						temp[i] = race[i];
 					}
 
 					temp[i] = Integer.parseInt(value);
 
-					_race = temp;
+					race = temp;
 				}
 				break;
 			// Affected classes
 			case "affectedClassId":
 				// Create a new array holding the affected classIds
-				if (_class == null)
+				if (clazz == null)
 				{
-					_class = new int[1];
-					_class[0] = Integer.parseInt(value);
+                    clazz = new int[1];
+                    clazz[0] = Integer.parseInt(value);
 				}
 				else
 				{
-					int[] temp = new int[_class.length + 1];
+					int[] temp = new int[clazz.length + 1];
 
 					int i = 0;
-					for (; i < _class.length; i++)
+					for (; i < clazz.length; i++)
 					{
-						temp[i] = _class[i];
+						temp[i] = clazz[i];
 					}
 
 					temp[i] = Integer.parseInt(value);
 
-					_class = temp;
+                    clazz = temp;
 				}
 				break;
 			// Affected class type
 			case "affectedClassType":
 				if (value.equals("Fighter"))
 				{
-					_classType = 1;
+					classType = 1;
 				}
 				else
 				{
-					_classType = 2;
+					classType = 2;
 				}
 				break;
 			case "targetClass":
-				_target = Enum.valueOf(InstanceType.class, value);
+				target = Enum.valueOf(InstanceType.class, value);
 				break;
 			default:
 				Log.info(getClass().getSimpleName() + ": Unknown parameter - " + name + " in zone: " + getId());
@@ -186,13 +186,13 @@ public abstract class L2ZoneType
 	private boolean isAffected(L2Character character)
 	{
 		// Check lvl
-		if (character.getLevel() < _minLvl || character.getLevel() > _maxLvl)
+		if (character.getLevel() < minLvl || character.getLevel() > maxLvl)
 		{
 			return false;
 		}
 
 		// check obj class
-		if (!character.isInstanceType(_target))
+		if (!character.isInstanceType(target))
 		{
 			return false;
 		}
@@ -200,27 +200,27 @@ public abstract class L2ZoneType
 		if (character instanceof L2PcInstance)
 		{
 			// Check class type
-			if (_classType != 0)
+			if (classType != 0)
 			{
 				if (((L2PcInstance) character).isMageClass())
 				{
-					if (_classType == 1)
+					if (classType == 1)
 					{
 						return false;
 					}
 				}
-				else if (_classType == 2)
+				else if (classType == 2)
 				{
 					return false;
 				}
 			}
 
 			// Check race
-			if (_race != null)
+			if (race != null)
 			{
 				boolean ok = false;
 
-				for (int element : _race)
+				for (int element : race)
 				{
 					if (((L2PcInstance) character).getRace().ordinal() == element)
 					{
@@ -236,13 +236,13 @@ public abstract class L2ZoneType
 			}
 
 			// Check class
-			if (_class != null)
+			if (clazz != null)
 			{
 				boolean ok = false;
 
-				for (int _clas : _class)
+				for (int clas : clazz)
 				{
-					if (((L2PcInstance) character).getCurrentClass().getId() == _clas)
+					if (((L2PcInstance) character).getCurrentClass().getId() == clas)
 					{
 						ok = true;
 						break;
@@ -265,11 +265,11 @@ public abstract class L2ZoneType
 	 */
 	public void setZone(L2ZoneForm zone)
 	{
-		if (_zone != null)
+		if (this.zone != null)
 		{
 			throw new IllegalStateException("Zone already set");
 		}
-		_zone = zone;
+		this.zone = zone;
 	}
 
 	/**
@@ -279,7 +279,7 @@ public abstract class L2ZoneType
 	 */
 	public L2ZoneForm getZone()
 	{
-		return _zone;
+		return zone;
 	}
 
 	/**
@@ -289,7 +289,7 @@ public abstract class L2ZoneType
 	 */
 	public void setName(String name)
 	{
-		_name = name;
+		this.name = name;
 	}
 
 	/**
@@ -299,7 +299,7 @@ public abstract class L2ZoneType
 	 */
 	public String getName()
 	{
-		return _name;
+		return name;
 	}
 
 	/**
@@ -310,25 +310,19 @@ public abstract class L2ZoneType
 	 */
 	public boolean isInsideZone(int x, int y)
 	{
-		return _zone.isInsideZone(x, y, _zone.getHighZ());
+		return zone.isInsideZone(x, y, zone.getHighZ());
 	}
 
 	/**
 	 * Checks if the given coordinates are within the zone
-	 *
-	 * @param x
-	 * @param y
-	 * @param z
 	 */
 	public boolean isInsideZone(int x, int y, int z)
 	{
-		return _zone.isInsideZone(x, y, z);
+		return zone.isInsideZone(x, y, z);
 	}
 
 	/**
 	 * Checks if the given object is inside the zone.
-	 *
-	 * @param object
 	 */
 	public boolean isInsideZone(L2Object object)
 	{
@@ -348,7 +342,7 @@ public abstract class L2ZoneType
 	public void revalidateInZone(L2Character character)
 	{
 		// If the character can't be affected by this zone return
-		if (_checkAffected)
+		if (checkAffected)
 		{
 			if (!isAffected(character))
 			{
@@ -360,7 +354,7 @@ public abstract class L2ZoneType
 		if (isInsideZone(character.getX(), character.getY(), character.getZ()))
 		{
 			// Was the character not yet inside this zone?
-			if (!_characterList.containsKey(character.getObjectId()))
+			if (!characterList.containsKey(character.getObjectId()))
 			{
 				ArrayList<Quest> quests = getQuestByEvent(Quest.QuestEventType.ON_ENTER_ZONE);
 				if (quests != null)
@@ -371,14 +365,14 @@ public abstract class L2ZoneType
 					}
 				}
 
-				_characterList.put(character.getObjectId(), character);
+				characterList.put(character.getObjectId(), character);
 				onEnter(character);
 			}
 		}
 		else
 		{
 			// Was the character inside this zone?
-			if (_characterList.containsKey(character.getObjectId()))
+			if (characterList.containsKey(character.getObjectId()))
 			{
 				ArrayList<Quest> quests = getQuestByEvent(Quest.QuestEventType.ON_EXIT_ZONE);
 				if (quests != null)
@@ -388,7 +382,7 @@ public abstract class L2ZoneType
 						quest.notifyExitZone(character, this);
 					}
 				}
-				_characterList.remove(character.getObjectId());
+				characterList.remove(character.getObjectId());
 				onExit(character);
 			}
 		}
@@ -402,7 +396,7 @@ public abstract class L2ZoneType
 	 */
 	public void removeCharacter(L2Character character)
 	{
-		if (_characterList.containsKey(character.getObjectId()))
+		if (characterList.containsKey(character.getObjectId()))
 		{
 			ArrayList<Quest> quests = getQuestByEvent(Quest.QuestEventType.ON_EXIT_ZONE);
 			if (quests != null)
@@ -412,7 +406,7 @@ public abstract class L2ZoneType
 					quest.notifyExitZone(character, this);
 				}
 			}
-			_characterList.remove(character.getObjectId());
+			characterList.remove(character.getObjectId());
 			onExit(character);
 		}
 	}
@@ -425,7 +419,7 @@ public abstract class L2ZoneType
 	 */
 	public boolean isCharacterInZone(L2Character character)
 	{
-		return _characterList.containsKey(character.getObjectId());
+		return characterList.containsKey(character.getObjectId());
 	}
 
 	protected abstract void onEnter(L2Character character);
@@ -434,7 +428,7 @@ public abstract class L2ZoneType
 
 	public void onDieInside(L2Character character, L2Character killer)
 	{
-		if (_characterList.containsKey(character.getObjectId()))
+		if (characterList.containsKey(character.getObjectId()))
 		{
 			ArrayList<Quest> quests = getQuestByEvent(Quest.QuestEventType.ON_DIE_ZONE);
 			if (quests != null)
@@ -451,16 +445,16 @@ public abstract class L2ZoneType
 
 	public ConcurrentHashMap<Integer, L2Character> getCharactersInside()
 	{
-		return _characterList;
+		return characterList;
 	}
 
 	public void addQuestEvent(Quest.QuestEventType EventType, Quest q)
 	{
-		if (_questEvents == null)
+		if (questEvents == null)
 		{
-			_questEvents = new HashMap<>();
+			questEvents = new HashMap<>();
 		}
-		ArrayList<Quest> questByEvents = _questEvents.get(EventType);
+		ArrayList<Quest> questByEvents = questEvents.get(EventType);
 		if (questByEvents == null)
 		{
 			questByEvents = new ArrayList<>();
@@ -469,16 +463,16 @@ public abstract class L2ZoneType
 		{
 			questByEvents.add(q);
 		}
-		_questEvents.put(EventType, questByEvents);
+		questEvents.put(EventType, questByEvents);
 	}
 
 	public ArrayList<Quest> getQuestByEvent(Quest.QuestEventType EventType)
 	{
-		if (_questEvents == null)
+		if (questEvents == null)
 		{
 			return null;
 		}
-		return _questEvents.get(EventType);
+		return questEvents.get(EventType);
 	}
 
 	/**
@@ -486,12 +480,12 @@ public abstract class L2ZoneType
 	 */
 	public void broadcastPacket(L2GameServerPacket packet)
 	{
-		if (_characterList.isEmpty())
+		if (characterList.isEmpty())
 		{
 			return;
 		}
 
-		for (L2Character character : _characterList.values())
+		for (L2Character character : characterList.values())
 		{
 			if (character != null && character instanceof L2PcInstance)
 			{
@@ -502,19 +496,19 @@ public abstract class L2ZoneType
 
 	public InstanceType getTargetType()
 	{
-		return _target;
+		return target;
 	}
 
 	public void setTargetType(InstanceType type)
 	{
-		_target = type;
-		_checkAffected = true;
+		target = type;
+		checkAffected = true;
 	}
 
 	@Override
 	public String toString()
 	{
-		return getClass().getSimpleName() + " [" + _id + "]";
+		return getClass().getSimpleName() + " [" + id + "]";
 	}
 
 	public void visualizeZone(L2PcInstance viewer)
@@ -532,7 +526,7 @@ public abstract class L2ZoneType
 	public List<L2PcInstance> getPlayersInside()
 	{
 		List<L2PcInstance> players = new ArrayList<>();
-		for (L2Character ch : _characterList.values())
+		for (L2Character ch : characterList.values())
 		{
 			if (ch != null && ch instanceof L2PcInstance)
 			{
@@ -546,7 +540,7 @@ public abstract class L2ZoneType
 	public List<L2Npc> getNpcsInside()
 	{
 		List<L2Npc> npcs = new ArrayList<>();
-		for (L2Character ch : _characterList.values())
+		for (L2Character ch : characterList.values())
 		{
 			if (ch == null || ch instanceof L2Playable || ch instanceof L2BoatInstance ||
 					!(ch instanceof L2Attackable) && !(ch instanceof L2NpcInstance))
@@ -572,7 +566,7 @@ public abstract class L2ZoneType
 
 	public void stopWholeZone()
 	{
-		for (L2Character ch : _characterList.values())
+		for (L2Character ch : characterList.values())
 		{
 			if (ch == null)
 			{
@@ -606,7 +600,7 @@ public abstract class L2ZoneType
 
 	public void startWholeZone()
 	{
-		for (L2Character ch : _characterList.values())
+		for (L2Character ch : characterList.values())
 		{
 			if (ch == null)
 			{
@@ -626,12 +620,12 @@ public abstract class L2ZoneType
 
 	public void oustAllPlayers()
 	{
-		if (_characterList.isEmpty())
+		if (characterList.isEmpty())
 		{
 			return;
 		}
 
-		for (L2Character character : _characterList.values())
+		for (L2Character character : characterList.values())
 		{
 			if (character == null)
 			{

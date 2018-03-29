@@ -35,7 +35,7 @@ import java.util.logging.Logger;
 
 public class ExtractableItems implements IItemHandler
 {
-	private static Logger _log = Logger.getLogger(ItemTable.class.getName());
+	private static Logger log = Logger.getLogger(ItemTable.class.getName());
 
 	@Override
 	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
@@ -53,7 +53,7 @@ public class ExtractableItems implements IItemHandler
 
 		if (exitem == null)
 		{
-			_log.info("No extractable data defined for " + etcitem);
+			log.info("No extractable data defined for " + etcitem);
 			return;
 		}
 

@@ -23,12 +23,12 @@ public final class RequestHennaRemoveList extends L2GameClientPacket
 
 	// This is just a trigger packet...
 	@SuppressWarnings("unused")
-	private int _unknown;
+	private int unknown;
 
 	@Override
 	protected void readImpl()
 	{
-		_unknown = readD(); // ??
+		unknown = readD(); // ??
 	}
 
 	@Override

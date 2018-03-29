@@ -8,12 +8,12 @@ import l2server.log.Log;
 public class RequestBRProductInfo extends L2GameClientPacket
 {
 	@SuppressWarnings("unused")
-	private int _productId;
+	private int productId;
 
 	@Override
 	public void readImpl()
 	{
-		_productId = readD();
+		productId = readD();
 	}
 
 	@Override

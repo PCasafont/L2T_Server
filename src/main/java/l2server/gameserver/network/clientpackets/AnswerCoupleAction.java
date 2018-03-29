@@ -29,37 +29,37 @@ import l2server.gameserver.util.Util;
 public class AnswerCoupleAction extends L2GameClientPacket
 {
 
-	private int _charObjId;
-	private int _actionId;
-	private int _answer;
+	private int charObjId;
+	private int actionId;
+	private int answer;
 
 	@Override
 	protected void readImpl()
 	{
-		_actionId = readD();
-		_answer = readD();
-		_charObjId = readD();
+		actionId = readD();
+		answer = readD();
+		charObjId = readD();
 	}
 
 	@Override
 	protected void runImpl()
 	{
 		L2PcInstance activeChar = getClient().getActiveChar();
-		L2PcInstance target = L2World.getInstance().getPlayer(_charObjId);
+		L2PcInstance target = L2World.getInstance().getPlayer(charObjId);
 		if (activeChar == null || target == null)
 		{
 			return;
 		}
-		if (target.getMultiSocialTarget() != activeChar.getObjectId() || target.getMultiSociaAction() != _actionId)
+		if (target.getMultiSocialTarget() != activeChar.getObjectId() || target.getMultiSociaAction() != actionId)
 		{
 			return;
 		}
-		if (_answer == 0) // cancel
+		if (answer == 0) // cancel
 		{
 			target.setMultiSocialAction(0, 0);
 			target.sendPacket(SystemMessageId.COUPLE_ACTION_DENIED);
 		}
-		else if (_answer == 1) // approve
+		else if (answer == 1) // approve
 		{
 			double distance = activeChar.getPlanDistanceSq(target);
 			if (distance > 2000 || distance < 70)
@@ -74,10 +74,10 @@ public class AnswerCoupleAction extends L2GameClientPacket
 			heading = Util.calculateHeadingFrom(target, activeChar);
 			target.setHeading(heading);
 			target.broadcastPacket(new ExRotation(target.getObjectId(), heading));
-			activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), _actionId));
-			target.broadcastPacket(new SocialAction(target.getObjectId(), _actionId));
+			activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), actionId));
+			target.broadcastPacket(new SocialAction(target.getObjectId(), actionId));
 		}
-		else if (_answer == -1) // refused
+		else if (answer == -1) // refused
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_SET_TO_REFUSE_COUPLE_ACTIONS);
 			sm.addPcName(activeChar);

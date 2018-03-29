@@ -32,13 +32,13 @@ import java.util.concurrent.TimeUnit;
  */
 public class SelectorHelper implements IMMOExecutor<L2LoginClient>, IClientFactory<L2LoginClient>, IAcceptFilter
 {
-	private ThreadPoolExecutor _generalPacketsThreadPool;
-	private IPv4Filter _ipv4filter;
+	private ThreadPoolExecutor generalPacketsThreadPool;
+	private IPv4Filter ipv4filter;
 
 	public SelectorHelper()
 	{
-		_generalPacketsThreadPool = new ThreadPoolExecutor(4, 6, 15L, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
-		_ipv4filter = new IPv4Filter();
+		generalPacketsThreadPool = new ThreadPoolExecutor(4, 6, 15L, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
+		ipv4filter = new IPv4Filter();
 	}
 
 	/**
@@ -46,7 +46,7 @@ public class SelectorHelper implements IMMOExecutor<L2LoginClient>, IClientFacto
 	@Override
 	public void execute(ReceivablePacket<L2LoginClient> packet)
 	{
-		_generalPacketsThreadPool.execute(packet);
+		generalPacketsThreadPool.execute(packet);
 	}
 
 	/**
@@ -64,6 +64,6 @@ public class SelectorHelper implements IMMOExecutor<L2LoginClient>, IClientFacto
 	@Override
 	public boolean accept(SocketChannel sc)
 	{
-		return _ipv4filter.accept(sc) && !LoginController.getInstance().isBannedAddress(sc.socket().getInetAddress());
+		return ipv4filter.accept(sc) && !LoginController.getInstance().isBannedAddress(sc.socket().getInetAddress());
 	}
 }

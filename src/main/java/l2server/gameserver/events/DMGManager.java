@@ -79,17 +79,17 @@ public class DMGManager
 
 		public void setdmg(int classid, int newdmg, String newname, int playerid, String externalip, String internalip)
 		{
-			Classid = classid;
+			this.Classid = classid;
 
-			NewDmg = newdmg;
+			this.NewDmg = newdmg;
 
-			NewName = newname;
+			this.NewName = newname;
 
-			PlayerId = playerid;
+			this.PlayerId = playerid;
 
-			externalIP = externalip;
+			this.externalIP = externalip;
 
-			internalIP = internalip;
+			this.internalIP = internalip;
 		}
 
 		public void setDmg(int dmg)

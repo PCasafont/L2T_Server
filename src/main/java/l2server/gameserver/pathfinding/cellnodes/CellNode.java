@@ -20,9 +20,9 @@ import l2server.gameserver.pathfinding.AbstractNodeLoc;
 
 public class CellNode extends AbstractNode
 {
-	private CellNode _next = null;
-	private boolean _isInUse = true;
-	private float _cost = -1000;
+	private CellNode next = null;
+	private boolean isInUse = true;
+	private float cost = -1000;
 
 	public CellNode(AbstractNodeLoc loc)
 	{
@@ -31,39 +31,39 @@ public class CellNode extends AbstractNode
 
 	public boolean isInUse()
 	{
-		return _isInUse;
+		return isInUse;
 	}
 
 	public void setInUse()
 	{
-		_isInUse = true;
+		isInUse = true;
 	}
 
 	public CellNode getNext()
 	{
-		return _next;
+		return next;
 	}
 
 	public void setNext(CellNode next)
 	{
-		_next = next;
+		this.next = next;
 	}
 
 	public float getCost()
 	{
-		return _cost;
+		return cost;
 	}
 
 	public void setCost(double cost)
 	{
-		_cost = (float) cost;
+		this.cost = (float) cost;
 	}
 
 	public void free()
 	{
 		setParent(null);
-		_cost = -1000;
-		_isInUse = false;
-		_next = null;
+		cost = -1000;
+		isInUse = false;
+		next = null;
 	}
 }

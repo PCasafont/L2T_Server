@@ -43,21 +43,21 @@ public class Message
 	public static final int READED = 1;
 	public static final int REJECTED = 2;
 
-	private final int _messageId, _senderId, _receiverId;
-	private final long _expiration;
-	private String _senderName = null;
-	private String _receiverName = null;
-	private final String _subject, _content;
-	private boolean _unread, _returned;
-	private int _sendBySystem;
-	private boolean _deletedBySender;
-	private boolean _deletedByReceiver;
-	private long _reqAdena;
-	private boolean _hasAttachments;
-	private Mail _attachments = null;
-	private ScheduledFuture<?> _unloadTask = null;
-	private int _systemMessage1 = 0;
-	private int _systemMessage2 = 0;
+	private final int messageId, senderId, receiverId;
+	private final long expiration;
+	private String senderName = null;
+	private String receiverName = null;
+	private final String subject, content;
+	private boolean unread, returned;
+	private int sendBySystem;
+	private boolean deletedBySender;
+	private boolean deletedByReceiver;
+	private long reqAdena;
+	private boolean hasAttachments;
+	private Mail attachments = null;
+	private ScheduledFuture<?> unloadTask = null;
+	private int systemMessage1 = 0;
+	private int systemMessage2 = 0;
 
 	public enum SendBySystem
 	{
@@ -69,21 +69,21 @@ public class Message
 	 */
 	public Message(ResultSet rset) throws SQLException
 	{
-		_messageId = rset.getInt("messageId");
-		_senderId = rset.getInt("senderId");
-		_receiverId = rset.getInt("receiverId");
-		_subject = rset.getString("subject");
-		_content = rset.getString("content");
-		_expiration = rset.getLong("expiration");
-		_reqAdena = rset.getLong("reqAdena");
-		_hasAttachments = rset.getBoolean("hasAttachments");
-		_unread = rset.getBoolean("isUnread");
-		_deletedBySender = rset.getBoolean("isDeletedBySender");
-		_deletedByReceiver = rset.getBoolean("isDeletedByReceiver");
-		_sendBySystem = rset.getInt("sendBySystem");
-		_returned = rset.getBoolean("isReturned");
-		_systemMessage1 = rset.getInt("systemMessage1");
-		_systemMessage2 = rset.getInt("systemMessage2");
+		messageId = rset.getInt("messageId");
+		senderId = rset.getInt("senderId");
+		receiverId = rset.getInt("receiverId");
+		subject = rset.getString("subject");
+		content = rset.getString("content");
+		expiration = rset.getLong("expiration");
+		reqAdena = rset.getLong("reqAdena");
+		hasAttachments = rset.getBoolean("hasAttachments");
+		unread = rset.getBoolean("isUnread");
+		deletedBySender = rset.getBoolean("isDeletedBySender");
+		deletedByReceiver = rset.getBoolean("isDeletedByReceiver");
+		sendBySystem = rset.getInt("sendBySystem");
+		returned = rset.getBoolean("isReturned");
+		systemMessage1 = rset.getInt("systemMessage1");
+		systemMessage2 = rset.getInt("systemMessage2");
 	}
 
 	/*
@@ -91,18 +91,18 @@ public class Message
 	 */
 	public Message(int senderId, int receiverId, boolean isCod, String subject, String text, long reqAdena)
 	{
-		_messageId = IdFactory.getInstance().getNextId();
-		_senderId = senderId;
-		_receiverId = receiverId;
-		_subject = subject;
-		_content = text;
-		_expiration = isCod ? System.currentTimeMillis() + COD_EXPIRATION * 3600000 :
+		messageId = IdFactory.getInstance().getNextId();
+		this.senderId = senderId;
+		this.receiverId = receiverId;
+		this.subject = subject;
+		content = text;
+		expiration = isCod ? System.currentTimeMillis() + COD_EXPIRATION * 3600000 :
 				System.currentTimeMillis() + EXPIRATION * 3600000;
-		_hasAttachments = false;
-		_unread = true;
-		_deletedBySender = false;
-		_deletedByReceiver = false;
-		_reqAdena = reqAdena;
+		hasAttachments = false;
+		unread = true;
+		deletedBySender = false;
+		deletedByReceiver = false;
+		this.reqAdena = reqAdena;
 	}
 
 	/*
@@ -110,19 +110,19 @@ public class Message
 	 */
 	public Message(int receiverId, String subject, String content, SendBySystem sendBySystem)
 	{
-		_messageId = IdFactory.getInstance().getNextId();
-		_senderId = -1;
-		_receiverId = receiverId;
-		_subject = subject;
-		_content = content;
-		_expiration = System.currentTimeMillis() + EXPIRATION * 3600000;
-		_reqAdena = 0;
-		_hasAttachments = false;
-		_unread = true;
-		_deletedBySender = true;
-		_deletedByReceiver = false;
-		_sendBySystem = sendBySystem.ordinal();
-		_returned = false;
+		messageId = IdFactory.getInstance().getNextId();
+		senderId = -1;
+		this.receiverId = receiverId;
+		this.subject = subject;
+		this.content = content;
+		expiration = System.currentTimeMillis() + EXPIRATION * 3600000;
+		reqAdena = 0;
+		hasAttachments = false;
+		unread = true;
+		deletedBySender = true;
+		deletedByReceiver = false;
+        this.sendBySystem = sendBySystem.ordinal();
+		returned = false;
 	}
 
 	/*
@@ -130,21 +130,21 @@ public class Message
 	 */
 	public Message(int receiverId, String subject, String content, int systemMessage1, int systemMessage2)
 	{
-		_messageId = IdFactory.getInstance().getNextId();
-		_senderId = -1;
-		_receiverId = receiverId;
-		_subject = subject;
-		_content = content;
-		_expiration = System.currentTimeMillis() + EXPIRATION * 3600000;
-		_reqAdena = 0;
-		_hasAttachments = false;
-		_unread = true;
-		_deletedBySender = true;
-		_deletedByReceiver = false;
-		_sendBySystem = 5;
-		_returned = false;
-		_systemMessage1 = systemMessage1;
-		_systemMessage2 = systemMessage2;
+		messageId = IdFactory.getInstance().getNextId();
+		senderId = -1;
+		this.receiverId = receiverId;
+		this.subject = subject;
+		this.content = content;
+		expiration = System.currentTimeMillis() + EXPIRATION * 3600000;
+		reqAdena = 0;
+		hasAttachments = false;
+		unread = true;
+		deletedBySender = true;
+		deletedByReceiver = false;
+		sendBySystem = 5;
+		returned = false;
+		this.systemMessage1 = systemMessage1;
+		this.systemMessage2 = systemMessage2;
 	}
 
 	/*
@@ -152,23 +152,23 @@ public class Message
 	 */
 	public Message(Message msg)
 	{
-		_messageId = IdFactory.getInstance().getNextId();
-		_senderId = msg.getSenderId();
-		_receiverId = msg.getSenderId();
-		_subject = "";
-		_content = "";
-		_expiration = System.currentTimeMillis() + EXPIRATION * 3600000;
-		_unread = true;
-		_deletedBySender = true;
-		_deletedByReceiver = false;
-		_sendBySystem = SendBySystem.NONE.ordinal();
-		_returned = true;
-		_reqAdena = 0;
-		_hasAttachments = true;
-		_attachments = msg.getAttachments();
+		messageId = IdFactory.getInstance().getNextId();
+		senderId = msg.getSenderId();
+		receiverId = msg.getSenderId();
+		subject = "";
+		content = "";
+		expiration = System.currentTimeMillis() + EXPIRATION * 3600000;
+		unread = true;
+		deletedBySender = true;
+		deletedByReceiver = false;
+		sendBySystem = SendBySystem.NONE.ordinal();
+		returned = true;
+		reqAdena = 0;
+		hasAttachments = true;
+		attachments = msg.getAttachments();
 		msg.removeAttachments();
-		_attachments.setNewMessageId(_messageId);
-		_unloadTask = ThreadPoolManager.getInstance().scheduleGeneral(new AttachmentsUnloadTask(this),
+		attachments.setNewMessageId(messageId);
+		unloadTask = ThreadPoolManager.getInstance().scheduleGeneral(new AttachmentsUnloadTask(this),
 				UNLOAD_ATTACHMENTS_INTERVAL + Rnd.get(UNLOAD_ATTACHMENTS_INTERVAL));
 	}
 
@@ -177,267 +177,267 @@ public class Message
 		PreparedStatement stmt = con.prepareStatement(
 				"INSERT INTO messages (messageId, senderId, receiverId, subject, content, expiration, reqAdena, hasAttachments, isUnread, isDeletedBySender, isDeletedByReceiver, sendBySystem, isReturned, systemMessage1, systemMessage2) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-		stmt.setInt(1, msg._messageId);
-		stmt.setInt(2, msg._senderId);
-		stmt.setInt(3, msg._receiverId);
-		stmt.setString(4, msg._subject);
-		stmt.setString(5, msg._content);
-		stmt.setLong(6, msg._expiration);
-		stmt.setLong(7, msg._reqAdena);
-		stmt.setString(8, String.valueOf(msg._hasAttachments));
-		stmt.setString(9, String.valueOf(msg._unread));
-		stmt.setString(10, String.valueOf(msg._deletedBySender));
-		stmt.setString(11, String.valueOf(msg._deletedByReceiver));
-		stmt.setInt(12, msg._sendBySystem);
-		stmt.setString(13, String.valueOf(msg._returned));
-		stmt.setInt(14, msg._systemMessage1);
-		stmt.setInt(15, msg._systemMessage2);
+		stmt.setInt(1, msg.messageId);
+		stmt.setInt(2, msg.senderId);
+		stmt.setInt(3, msg.receiverId);
+		stmt.setString(4, msg.subject);
+		stmt.setString(5, msg.content);
+		stmt.setLong(6, msg.expiration);
+		stmt.setLong(7, msg.reqAdena);
+		stmt.setString(8, String.valueOf(msg.hasAttachments));
+		stmt.setString(9, String.valueOf(msg.unread));
+		stmt.setString(10, String.valueOf(msg.deletedBySender));
+		stmt.setString(11, String.valueOf(msg.deletedByReceiver));
+		stmt.setInt(12, msg.sendBySystem);
+		stmt.setString(13, String.valueOf(msg.returned));
+		stmt.setInt(14, msg.systemMessage1);
+		stmt.setInt(15, msg.systemMessage2);
 
 		return stmt;
 	}
 
 	public final int getId()
 	{
-		return _messageId;
+		return messageId;
 	}
 
 	public final int getSenderId()
 	{
-		return _senderId;
+		return senderId;
 	}
 
 	public final int getReceiverId()
 	{
-		return _receiverId;
+		return receiverId;
 	}
 
 	public final String getSenderName()
 	{
-		if (_senderName == null)
+		if (senderName == null)
 		{
-			if (_sendBySystem != 0)
+			if (sendBySystem != 0)
 			{
 				return "****";
 			}
 
-			_senderName = CharNameTable.getInstance().getNameById(_senderId);
-			if (_senderName == null)
+			senderName = CharNameTable.getInstance().getNameById(senderId);
+			if (senderName == null)
 			{
-				_senderName = "";
+				senderName = "";
 			}
 		}
-		return _senderName;
+		return senderName;
 	}
 
 	public final String getReceiverName()
 	{
-		if (_receiverName == null)
+		if (receiverName == null)
 		{
-			_receiverName = CharNameTable.getInstance().getNameById(_receiverId);
-			if (_receiverName == null)
+			receiverName = CharNameTable.getInstance().getNameById(receiverId);
+			if (receiverName == null)
 			{
-				_receiverName = "";
+				receiverName = "";
 			}
 		}
-		return _receiverName;
+		return receiverName;
 	}
 
 	public final String getSubject()
 	{
-		return _subject;
+		return subject;
 	}
 
 	public final String getContent()
 	{
-		return _content;
+		return content;
 	}
 
 	public final boolean isLocked()
 	{
-		return _reqAdena > 0;
+		return reqAdena > 0;
 	}
 
 	public final long getExpiration()
 	{
-		return _expiration;
+		return expiration;
 	}
 
 	public final int getExpirationSeconds()
 	{
-		return (int) (_expiration / 1000);
+		return (int) (expiration / 1000);
 	}
 
 	public final boolean isUnread()
 	{
-		return _unread;
+		return unread;
 	}
 
 	public final void markAsRead()
 	{
-		if (_unread)
+		if (unread)
 		{
-			_unread = false;
-			MailManager.getInstance().markAsReadInDb(_messageId);
+			unread = false;
+			MailManager.getInstance().markAsReadInDb(messageId);
 		}
 	}
 
 	public final boolean isDeletedBySender()
 	{
-		return _deletedBySender;
+		return deletedBySender;
 	}
 
 	public final void setDeletedBySender()
 	{
-		if (!_deletedBySender)
+		if (!deletedBySender)
 		{
-			_deletedBySender = true;
-			if (_deletedByReceiver)
+			deletedBySender = true;
+			if (deletedByReceiver)
 			{
-				MailManager.getInstance().deleteMessageInDb(_messageId);
+				MailManager.getInstance().deleteMessageInDb(messageId);
 			}
 			else
 			{
-				MailManager.getInstance().markAsDeletedBySenderInDb(_messageId);
+				MailManager.getInstance().markAsDeletedBySenderInDb(messageId);
 			}
 		}
 	}
 
 	public final boolean isDeletedByReceiver()
 	{
-		return _deletedByReceiver;
+		return deletedByReceiver;
 	}
 
 	public final void setDeletedByReceiver()
 	{
-		if (!_deletedByReceiver)
+		if (!deletedByReceiver)
 		{
-			_deletedByReceiver = true;
-			if (_deletedBySender)
+			deletedByReceiver = true;
+			if (deletedBySender)
 			{
-				MailManager.getInstance().deleteMessageInDb(_messageId);
+				MailManager.getInstance().deleteMessageInDb(messageId);
 			}
 			else
 			{
-				MailManager.getInstance().markAsDeletedByReceiverInDb(_messageId);
+				MailManager.getInstance().markAsDeletedByReceiverInDb(messageId);
 			}
 		}
 	}
 
 	public final int getSendBySystem()
 	{
-		return _sendBySystem;
+		return sendBySystem;
 	}
 
 	public final int getSystemMessage1()
 	{
-		return _systemMessage1;
+		return systemMessage1;
 	}
 
 	public final int getSystemMessage2()
 	{
-		return _systemMessage2;
+		return systemMessage2;
 	}
 
 	public final boolean isReturned()
 	{
-		return _returned;
+		return returned;
 	}
 
 	public final void setIsReturned(boolean val)
 	{
-		_returned = val;
+		returned = val;
 	}
 
 	public final long getReqAdena()
 	{
-		return _reqAdena;
+		return reqAdena;
 	}
 
 	public final synchronized Mail getAttachments()
 	{
-		if (!_hasAttachments)
+		if (!hasAttachments)
 		{
 			return null;
 		}
 
-		if (_attachments == null)
+		if (attachments == null)
 		{
-			int objId = _senderId;
+			int objId = senderId;
 			if (objId < 0)
 			{
-				objId = _receiverId;
+				objId = receiverId;
 			}
-			_attachments = new Mail(objId, _messageId);
-			_attachments.restore();
-			_unloadTask = ThreadPoolManager.getInstance().scheduleGeneral(new AttachmentsUnloadTask(this),
+			attachments = new Mail(objId, messageId);
+			attachments.restore();
+			unloadTask = ThreadPoolManager.getInstance().scheduleGeneral(new AttachmentsUnloadTask(this),
 					UNLOAD_ATTACHMENTS_INTERVAL + Rnd.get(UNLOAD_ATTACHMENTS_INTERVAL));
 		}
-		return _attachments;
+		return attachments;
 	}
 
 	public final boolean hasAttachments()
 	{
-		return _hasAttachments;
+		return hasAttachments;
 	}
 
 	public final synchronized void removeAttachments()
 	{
-		if (_attachments != null)
+		if (attachments != null)
 		{
-			_attachments = null;
-			_hasAttachments = false;
-			MailManager.getInstance().removeAttachmentsInDb(_messageId);
-			if (_unloadTask != null)
+			attachments = null;
+			hasAttachments = false;
+			MailManager.getInstance().removeAttachmentsInDb(messageId);
+			if (unloadTask != null)
 			{
-				_unloadTask.cancel(false);
+				unloadTask.cancel(false);
 			}
 		}
 	}
 
 	public final synchronized Mail createAttachments()
 	{
-		if (_hasAttachments || _attachments != null)
+		if (hasAttachments || attachments != null)
 		{
 			return null;
 		}
 
-		int objId = _senderId;
+		int objId = senderId;
 		if (objId < 0)
 		{
-			objId = _receiverId;
+			objId = receiverId;
 		}
-		_attachments = new Mail(objId, _messageId);
-		_hasAttachments = true;
-		_unloadTask = ThreadPoolManager.getInstance().scheduleGeneral(new AttachmentsUnloadTask(this),
+		attachments = new Mail(objId, messageId);
+		hasAttachments = true;
+		unloadTask = ThreadPoolManager.getInstance().scheduleGeneral(new AttachmentsUnloadTask(this),
 				UNLOAD_ATTACHMENTS_INTERVAL + Rnd.get(UNLOAD_ATTACHMENTS_INTERVAL));
-		return _attachments;
+		return attachments;
 	}
 
 	protected final synchronized void unloadAttachments()
 	{
-		if (_attachments != null)
+		if (attachments != null)
 		{
-			_attachments.deleteMe();
-			_attachments = null;
+			attachments.deleteMe();
+			attachments = null;
 		}
 	}
 
 	static class AttachmentsUnloadTask implements Runnable
 	{
-		private Message _msg;
+		private Message msg;
 
 		AttachmentsUnloadTask(Message msg)
 		{
-			_msg = msg;
+			this.msg = msg;
 		}
 
 		@Override
 		public void run()
 		{
-			if (_msg != null)
+			if (msg != null)
 			{
-				_msg.unloadAttachments();
-				_msg = null;
+				msg.unloadAttachments();
+				msg = null;
 			}
 		}
 	}

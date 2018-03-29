@@ -35,14 +35,14 @@ import java.util.logging.Level;
 
 public class L2SkillSiegeFlag extends L2Skill
 {
-	private final boolean _isAdvanced;
-	private final boolean _isOutpost;
+	private final boolean isAdvanced;
+	private final boolean isOutpost;
 
 	public L2SkillSiegeFlag(StatsSet set)
 	{
 		super(set);
-		_isAdvanced = set.getBool("isAdvanced", false);
-		_isOutpost = set.getBool("isOutpost", false);
+		isAdvanced = set.getBool("isAdvanced", false);
+		isOutpost = set.getBool("isOutpost", false);
 	}
 
 	/**
@@ -63,7 +63,7 @@ public class L2SkillSiegeFlag extends L2Skill
 			return;
 		}
 
-		if (!checkIfOkToPlaceFlag(player, true, _isOutpost))
+		if (!checkIfOkToPlaceFlag(player, true, isOutpost))
 		{
 			return;
 		}
@@ -73,7 +73,7 @@ public class L2SkillSiegeFlag extends L2Skill
 		{
 			// Spawn a new flag
 			L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, IdFactory.getInstance().getNextId(),
-					NpcTable.getInstance().getTemplate(35062), _isAdvanced, false);
+					NpcTable.getInstance().getTemplate(35062), isAdvanced, false);
 			flag.setTitle(player.getClan().getName());
 			flag.setCurrentHpMp(flag.getMaxHp(), flag.getMaxMp());
 			flag.setHeading(player.getHeading());

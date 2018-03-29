@@ -27,12 +27,12 @@ public final class RequestChangePartyLeader extends L2GameClientPacket
 
 	//
 
-	private String _name;
+	private String name;
 
 	@Override
 	protected void readImpl()
 	{
-		_name = readS();
+		name = readS();
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public final class RequestChangePartyLeader extends L2GameClientPacket
 
 		if (activeChar.isInParty() && activeChar.getParty().isLeader(activeChar))
 		{
-			activeChar.getParty().changePartyLeader(_name);
+			activeChar.getParty().changePartyLeader(name);
 		}
 	}
 }

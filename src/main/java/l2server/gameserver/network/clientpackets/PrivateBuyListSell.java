@@ -8,21 +8,21 @@ import l2server.log.Log;
 public class PrivateBuyListSell extends L2GameClientPacket
 {
 	@SuppressWarnings("unused")
-	private int _adena;
+	private int adena;
 	@SuppressWarnings("unused")
-	private int _isPackageSale;
+	private int isPackageSale;
 	@SuppressWarnings("unused")
-	private int _listSize;
+	private int listSize;
 	@SuppressWarnings("unused")
-	private int _objectId;
+	private int objectId;
 
 	@Override
 	public void readImpl()
 	{
-		_adena = readD();
-		_isPackageSale = readD();
-		_listSize = readD();
-		_objectId = readD();
+		adena = readD();
+		isPackageSale = readD();
+		listSize = readD();
+		objectId = readD();
 	}
 
 	@Override

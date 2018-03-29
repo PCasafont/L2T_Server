@@ -37,7 +37,7 @@ import java.util.List;
  */
 public final class SkillList extends L2GameServerPacket
 {
-	private List<Skill> _skills;
+	private List<Skill> skills;
 
 	static class Skill
 	{
@@ -61,20 +61,20 @@ public final class SkillList extends L2GameServerPacket
 
 	public SkillList()
 	{
-		_skills = new ArrayList<>();
+		skills = new ArrayList<>();
 	}
 
 	public void addSkill(int id, int level, int reuseGroup, boolean passive, boolean disabled, boolean enchanted)
 	{
-		_skills.add(new Skill(id, level, reuseGroup, passive, disabled, enchanted));
+		skills.add(new Skill(id, level, reuseGroup, passive, disabled, enchanted));
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_skills.size());
+		writeD(skills.size());
 
-		for (Skill temp : _skills)
+		for (Skill temp : skills)
 		{
 			writeD(temp.passive ? 1 : 0);
 			writeD(temp.level);

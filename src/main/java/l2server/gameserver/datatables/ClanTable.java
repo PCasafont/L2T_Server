@@ -81,24 +81,24 @@ class ClanByMemberCountComparator implements Comparator<L2Clan>
  */
 public class ClanTable
 {
-	private Map<Integer, L2Clan> _clans;
+	private Map<Integer, L2Clan> clans;
 
 	// Tenkai custom - block recruiting if requesting clan is too big compared to others
-	private L2Clan[] _topClansByMemberCount = new L2Clan[10];
+	private L2Clan[] topClansByMemberCount = new L2Clan[10];
 
 	public L2Clan[] getTopTenClansByMemberCount()
 	{
-		return _topClansByMemberCount;
+		return topClansByMemberCount;
 	}
 
 	public static ClanTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	public L2Clan[] getClans()
 	{
-		return _clans.values().toArray(new L2Clan[_clans.size()]);
+		return clans.values().toArray(new L2Clan[clans.size()]);
 	}
 
 	private ClanTable()
@@ -109,7 +109,7 @@ public class ClanTable
 			ForumsBBSManager.getInstance().initRoot();
 		}
 
-		_clans = new HashMap<>();
+		clans = new HashMap<>();
 		L2Clan clan;
 		Connection con = null;
 		try
@@ -125,7 +125,7 @@ public class ClanTable
 			while (result.next())
 			{
 				int clanId = result.getInt("clan_id");
-				_clans.put(clanId, new L2Clan(clanId));
+				clans.put(clanId, new L2Clan(clanId));
 				clan = getClan(clanId);
 				if (clan.getDissolvingExpiryTime() != 0)
 				{
@@ -160,13 +160,13 @@ public class ClanTable
 	{
 		Comparator<L2Clan> byMemberCount = new ClanByMemberCountComparator();
 
-		ArrayList<L2Clan> sortedClans = new ArrayList<>(_clans.values());
+		ArrayList<L2Clan> sortedClans = new ArrayList<>(clans.values());
 		Collections.sort(sortedClans, byMemberCount);
 
 		List<L2Clan> temp = sortedClans.subList(0, Math.min(10, sortedClans.size()));
-		for (int i = 0; i < _topClansByMemberCount.length && i < temp.size(); i++)
+		for (int i = 0; i < topClansByMemberCount.length && i < temp.size(); i++)
 		{
-			_topClansByMemberCount[i] = temp.get(i);
+			topClansByMemberCount[i] = temp.get(i);
 		}
 	}
 
@@ -177,7 +177,7 @@ public class ClanTable
 	public L2Clan getClan(int clanId)
 	{
 
-		return _clans.get(clanId);
+		return clans.get(clanId);
 	}
 
 	public L2Clan getClanByName(String clanName)
@@ -273,7 +273,7 @@ public class ClanTable
 			Log.fine("New clan created: " + clan.getClanId() + " " + clan.getName());
 		}
 
-		_clans.put(clan.getClanId(), clan);
+		clans.put(clan.getClanId(), clan);
 
 		//should be update packet only
 		player.sendPacket(new PledgeShowInfoUpdate(clan));
@@ -352,7 +352,7 @@ public class ClanTable
 			clan.removeClanMember(member.getObjectId(), 0);
 		}
 
-		_clans.remove(clanId);
+		clans.remove(clanId);
 		IdFactory.getInstance().releaseId(clanId);
 
 		Connection con = null;
@@ -456,12 +456,12 @@ public class ClanTable
 	 */
 	private void allianceCheck()
 	{
-		for (L2Clan clan : _clans.values())
+		for (L2Clan clan : clans.values())
 		{
 			int allyId = clan.getAllyId();
 			if (allyId != 0 && clan.getClanId() != allyId)
 			{
-				if (!_clans.containsKey(allyId))
+				if (!clans.containsKey(allyId))
 				{
 					clan.setAllyId(0);
 					clan.setAllyName(null);
@@ -475,7 +475,7 @@ public class ClanTable
 
 	public void storeClanScore()
 	{
-		for (L2Clan clan : _clans.values())
+		for (L2Clan clan : clans.values())
 		{
 			clan.updateClanScoreInDB();
 		}
@@ -484,6 +484,6 @@ public class ClanTable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ClanTable _instance = new ClanTable();
+		protected static final ClanTable instance = new ClanTable();
 	}
 }

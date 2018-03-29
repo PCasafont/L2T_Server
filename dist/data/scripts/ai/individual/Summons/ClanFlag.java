@@ -39,15 +39,15 @@ import java.util.concurrent.ScheduledFuture;
 
 public class ClanFlag extends L2AttackableAIScript
 {
-	private static final int _clanFlagId = 19269;
-	private static final L2Skill _clanRising = SkillTable.getInstance().getInfo(15095, 1);
-	private static final L2Skill _clanCurse = SkillTable.getInstance().getInfo(15096, 1);
+	private static final int clanFlagId = 19269;
+	private static final L2Skill clanRising = SkillTable.getInstance().getInfo(15095, 1);
+	private static final L2Skill clanCurse = SkillTable.getInstance().getInfo(15096, 1);
 
 	public ClanFlag(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		addSpawnId(_clanFlagId);
+		addSpawnId(clanFlagId);
 	}
 
 	@Override
@@ -64,37 +64,37 @@ public class ClanFlag extends L2AttackableAIScript
 
 	class ClanFlagAI implements Runnable
 	{
-		private L2Npc _clanFlag;
-		private ScheduledFuture<?> _schedule = null;
+		private L2Npc clanFlag;
+		private ScheduledFuture<?> schedule = null;
 
 		protected ClanFlagAI(L2Npc npc)
 		{
-			_clanFlag = npc;
+			clanFlag = npc;
 		}
 
 		public void setSchedule(ScheduledFuture<?> schedule)
 		{
-			_schedule = schedule;
+			this.schedule = schedule;
 		}
 
 		@Override
 		public void run()
 		{
-			if (_clanFlag == null || _clanFlag.isDead() || _clanFlag.isDecayed())
+			if (clanFlag == null || clanFlag.isDead() || clanFlag.isDecayed())
 			{
-				if (_schedule != null)
+				if (schedule != null)
 				{
-					_schedule.cancel(true);
+					schedule.cancel(true);
 					return;
 				}
 			}
 
-			_clanFlag.setTitle(_clanFlag.getOwner().getClan().getName());
+			clanFlag.setTitle(clanFlag.getOwner().getClan().getName());
 
-			Collection<L2PcInstance> players = _clanFlag.getKnownList().getKnownPlayersInRadius(2000);
+			Collection<L2PcInstance> players = clanFlag.getKnownList().getKnownPlayersInRadius(2000);
 			for (L2PcInstance player : players)
 			{
-				doAction(player, _clanFlag);
+				doAction(player, clanFlag);
 			}
 		}
 	}
@@ -123,11 +123,11 @@ public class ClanFlag extends L2AttackableAIScript
 
 		if (target.getClan() == npc.getOwner().getClan())
 		{
-			_clanRising.getEffects(npc, target);
+			clanRising.getEffects(npc, target);
 		}
 		else
 		{
-			_clanCurse.getEffects(npc, target);
+			clanCurse.getEffects(npc, target);
 		}
 	}
 

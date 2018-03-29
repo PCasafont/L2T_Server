@@ -31,7 +31,7 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 {
 	private static final String qn = "148_PathtoBecominganExaltedMercenary";
 	// NPCs
-	private static final int[] _merc = {36481, 36482, 36483, 36484, 36485, 36486, 36487, 36488, 36489};
+	private static final int[] merc = {36481, 36482, 36483, 36484, 36485, 36486, 36487, 36488, 36489};
 	// Items
 	private static final int _cert_elite = 13767;
 	private static final int _cert_top_elite = 13768;
@@ -47,7 +47,7 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 			return htmltext;
 		}
 
-		if (Util.contains(_merc, npc.getNpcId()))
+		if (Util.contains(merc, npc.getNpcId()))
 		{
 			if (event.equalsIgnoreCase("exalted-00b.htm"))
 			{
@@ -73,12 +73,12 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 			return htmltext;
 		}
 
-		if (Util.contains(_merc, npc.getNpcId()))
+		if (Util.contains(merc, npc.getNpcId()))
 		{
 			switch (st.getState())
 			{
 				case State.CREATED:
-					QuestState _prev = player.getQuestState("147_PathtoBecominganEliteMercenary");
+					QuestState prev = player.getQuestState("147_PathtoBecominganEliteMercenary");
 					if (player.getClan() != null && player.getClan().getHasCastle() > 0)
 					{
 						htmltext = "castle.htm";
@@ -89,7 +89,7 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 					}
 					else
 					{
-						if (_prev != null && _prev.getState() == State.COMPLETED)
+						if (prev != null && prev.getState() == State.COMPLETED)
 						{
 							htmltext = "exalted-00a.htm";
 						}
@@ -126,10 +126,10 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 	{
 		super(questId, name, descr);
 
-		for (int _npc : _merc)
+		for (int npc : merc)
 		{
-			addStartNpc(_npc);
-			addTalkId(_npc);
+			addStartNpc(npc);
+			addTalkId(npc);
 		}
 	}
 

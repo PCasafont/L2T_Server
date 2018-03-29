@@ -37,49 +37,49 @@ import java.util.logging.Level;
 public final class AuthLogin extends L2GameClientPacket
 {
 	// loginName + keys must match what the loginserver used.
-	private String _loginName;
-	private int _playKey1;
-	private int _playKey2;
-	private int _loginKey1;
-	private int _loginKey2;
+	private String loginName;
+	private int playKey1;
+	private int playKey2;
+	private int loginKey1;
+	private int loginKey2;
 
 	/**
 	 */
 	@Override
 	protected void readImpl()
 	{
-		_loginName = readS().toLowerCase();
-		_playKey2 = readD();
-		_playKey1 = readD();
-		_loginKey1 = readD();
-		_loginKey2 = readD();
+		loginName = readS().toLowerCase();
+		playKey2 = readD();
+		playKey1 = readD();
+		loginKey1 = readD();
+		loginKey2 = readD();
 	}
 
 	@Override
 	protected void runImpl()
 	{
 		final L2GameClient client = getClient();
-		if (_loginName.length() == 0 || !client.isProtocolOk())
+		if (loginName.length() == 0 || !client.isProtocolOk())
 		{
 			client.close((L2GameServerPacket) null);
 			return;
 		}
-		SessionKey key = new SessionKey(_loginKey1, _loginKey2, _playKey1, _playKey2);
+		SessionKey key = new SessionKey(loginKey1, loginKey2, playKey1, playKey2);
 		if (Config.DEBUG)
 		{
-			Log.info("user:" + _loginName);
+			Log.info("user:" + loginName);
 			Log.info("key:" + key);
 		}
 
 		// avoid potential exploits
 		if (client.getAccountName() == null)
 		{
-			if (!_loginName.equalsIgnoreCase("IdEmpty"))
+			if (!loginName.equalsIgnoreCase("IdEmpty"))
 			{
-				client.setAccountName(_loginName);
-				LoginServerThread.getInstance().addGameServerLogin(_loginName, client);
+				client.setAccountName(loginName);
+				LoginServerThread.getInstance().addGameServerLogin(loginName, client);
 			}
-			LoginServerThread.getInstance().addWaitingClientAndSendRequest(_loginName, client, key);
+			LoginServerThread.getInstance().addWaitingClientAndSendRequest(loginName, client, key);
 		}
 		//sendVitalityInfo(client);
 	}
@@ -102,7 +102,7 @@ public final class AuthLogin extends L2GameClientPacket
 				ResultSet rs = statement.executeQuery();
 				if (rs.next())
 				{
-					_vitalityItemsUsed = Integer.parseInt(rs.getString("value"));
+					vitalityItemsUsed = Integer.parseInt(rs.getString("value"));
 				}
 				else
 				{

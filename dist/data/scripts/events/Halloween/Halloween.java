@@ -479,12 +479,12 @@ public class Halloween extends Quest
 				count += round;
 			}
 
-			L2ItemInstance _item = null;
+			L2ItemInstance item = null;
 			for (int a = 1; a <= count; a++)
 			{
-				_item = ItemTable.getInstance().createItem(qn, doorGuildCoin, 1, null, npc);
-				_item.setInstanceId(instanceId);
-				_item.dropMe(npc, npc.getX() + Rnd.get(100), npc.getY() + Rnd.get(100), npc.getZ() + 50);
+				item = ItemTable.getInstance().createItem(qn, doorGuildCoin, 1, null, npc);
+				item.setInstanceId(instanceId);
+				item.dropMe(npc, npc.getX() + Rnd.get(100), npc.getY() + Rnd.get(100), npc.getZ() + 50);
 			}
 		}
 
@@ -492,11 +492,11 @@ public class Halloween extends Quest
 		{
 			cancelQuestTimers("stop_event");
 
-			L2ItemInstance _item = null;
+			L2ItemInstance item = null;
 			for (int a = 1; a <= 2000; a++)
 			{
-				_item = ItemTable.getInstance().createItem(qn, doorGuildCoin, 1, null, npc);
-				_item.dropMe(npc, npc.getX() + Rnd.get(500), npc.getY() + Rnd.get(500), npc.getZ() + 50);
+				item = ItemTable.getInstance().createItem(qn, doorGuildCoin, 1, null, npc);
+				item.dropMe(npc, npc.getX() + Rnd.get(500), npc.getY() + Rnd.get(500), npc.getZ() + 50);
 			}
 
 			InstanceManager.getInstance().finishInstance(instanceId, true);

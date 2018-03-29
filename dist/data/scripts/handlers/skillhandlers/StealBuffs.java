@@ -259,7 +259,7 @@ public class StealBuffs implements ISkillHandler
 				}
 				catch (RuntimeException e)
 				{
-					_log.log(Level.WARNING,
+					log.log(Level.WARNING,
 							"Cannot steal effect: " + eff + " Stealer: " + activeChar + " Stolen: " + target, e);
 				}
 			}
@@ -317,7 +317,7 @@ public class StealBuffs implements ISkillHandler
 		}
 		else if (activeChar instanceof L2Npc)
 		{
-			((L2Npc) activeChar)._spiritshotcharged = false;
+			((L2Npc) activeChar).spiritshotcharged = false;
 		}
 	}
 

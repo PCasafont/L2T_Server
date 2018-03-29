@@ -26,7 +26,7 @@ import java.nio.ByteBuffer;
  */
 public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractPacket<T> implements Runnable
 {
-	NioNetStringBuffer _sbuf;
+	NioNetStringBuffer sbuf;
 
 	protected ReceivablePacket()
 	{
@@ -46,7 +46,7 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	 */
 	protected final void readB(final byte[] dst)
 	{
-		_buf.get(dst);
+		buf.get(dst);
 	}
 
 	/**
@@ -60,7 +60,7 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	 */
 	protected final void readB(final byte[] dst, final int offset, final int len)
 	{
-		_buf.get(dst, offset, len);
+		buf.get(dst, offset, len);
 	}
 
 	/**
@@ -71,7 +71,7 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	 */
 	protected final int readC()
 	{
-		return _buf.get() & 0xFF;
+		return buf.get() & 0xFF;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	 */
 	protected final int readH()
 	{
-		return _buf.getShort() & 0xFFFF;
+		return buf.getShort() & 0xFFFF;
 	}
 
 	/**
@@ -93,7 +93,7 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	 */
 	protected final int readD()
 	{
-		return _buf.getInt();
+		return buf.getInt();
 	}
 
 	/**
@@ -104,7 +104,7 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	 */
 	protected final long readQ()
 	{
-		return _buf.getLong();
+		return buf.getLong();
 	}
 
 	/**
@@ -115,7 +115,7 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	 */
 	protected final double readF()
 	{
-		return _buf.getDouble();
+		return buf.getDouble();
 	}
 
 	/**
@@ -125,15 +125,15 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	 */
 	protected final String readS()
 	{
-		_sbuf.clear();
+		sbuf.clear();
 
 		char ch;
-		while ((ch = _buf.getChar()) != 0)
+		while ((ch = buf.getChar()) != 0)
 		{
-			_sbuf.append(ch);
+			sbuf.append(ch);
 		}
 
-		return _sbuf.toString();
+		return sbuf.toString();
 	}
 
 	/**
@@ -145,8 +145,8 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	 */
 	public void setBuffers(ByteBuffer data, T client, NioNetStringBuffer sBuffer)
 	{
-		_buf = data;
-		_client = client;
-		_sbuf = sBuffer;
+		buf = data;
+		this.client = client;
+		sbuf = sBuffer;
 	}
 }

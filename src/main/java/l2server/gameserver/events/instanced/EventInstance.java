@@ -49,28 +49,28 @@ public abstract class EventInstance
 		INACTIVE, READY, STARTED, REWARDING
 	}
 
-	protected final EventConfig _config;
-	protected final int _id;
-	protected final int _instanceId;
+	protected final EventConfig config;
+	protected final int id;
+	protected final int instanceId;
 
-	protected EventTeam[] _teams = new EventTeam[4];
-	protected EventState _state = EventState.INACTIVE;
+	protected EventTeam[] teams = new EventTeam[4];
+	protected EventState state = EventState.INACTIVE;
 
-	private int _participants;
+	private int participants;
 
-	private long _startTime = 0;
+	private long startTime = 0;
 
 	public EventInstance(int id, EventConfig config)
 	{
-		_id = id;
-		_config = config;
-		_teams[0] = new EventTeam(0, config.getTeamName(0), _config.getLocation().getSpawn(0));
-		_teams[1] = new EventTeam(1, config.getTeamName(1), _config.getLocation().getSpawn(1));
-		_teams[2] = new EventTeam(2, config.getTeamName(2), _config.getLocation().getSpawn(2));
-		_teams[3] = new EventTeam(3, config.getTeamName(3), _config.getLocation().getSpawn(3));
+		this.id = id;
+		this.config = config;
+		teams[0] = new EventTeam(0, config.getTeamName(0), config.getLocation().getSpawn(0));
+		teams[1] = new EventTeam(1, config.getTeamName(1), config.getLocation().getSpawn(1));
+		teams[2] = new EventTeam(2, config.getTeamName(2), config.getLocation().getSpawn(2));
+		teams[3] = new EventTeam(3, config.getTeamName(3), config.getLocation().getSpawn(3));
 
-		_instanceId = id + 40000;
-		InstanceManager.getInstance().createInstance(_instanceId);
+		instanceId = id + 40000;
+		InstanceManager.getInstance().createInstance(instanceId);
 		setState(EventState.READY);
 
 		ThreadPoolManager.getInstance()
@@ -82,7 +82,7 @@ public abstract class EventInstance
 
 	public boolean startFight()
 	{
-		for (EventTeam team : _teams)
+		for (EventTeam team : teams)
 		{
 			for (L2PcInstance player : team.getParticipatedPlayers().values())
 			{
@@ -95,56 +95,56 @@ public abstract class EventInstance
 			}
 		}
 
-		if (_id != 100)
+		if (id != 100)
 		{
 			// Check for enough participants
-			if (!_config.isAllVsAll())
+			if (!config.isAllVsAll())
 			{
-				if (_config.getLocation().getTeamCount() != 4)
+				if (config.getLocation().getTeamCount() != 4)
 				{
-					if (_teams[0].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS ||
-							_teams[1].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS)
+					if (teams[0].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS ||
+							teams[1].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS)
 					{
 						// Set state INACTIVE
 						setState(EventState.INACTIVE);
 						// Cleanup of teams
-						_teams[0].onEventNotStarted();
-						_teams[1].onEventNotStarted();
+						teams[0].onEventNotStarted();
+						teams[1].onEventNotStarted();
 						return false;
 					}
 				}
 				else
 				{
-					if (_teams[0].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS ||
-							_teams[1].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS ||
-							_teams[2].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS ||
-							_teams[3].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS)
+					if (teams[0].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS ||
+							teams[1].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS ||
+							teams[2].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS ||
+							teams[3].getParticipatedPlayerCount() < Config.INSTANCED_EVENT_MIN_PLAYERS_IN_TEAMS)
 					{
 						// Set state INACTIVE
 						setState(EventState.INACTIVE);
 						// Cleanup of teams
-						_teams[0].onEventNotStarted();
-						_teams[1].onEventNotStarted();
-						_teams[2].onEventNotStarted();
-						_teams[3].onEventNotStarted();
+						teams[0].onEventNotStarted();
+						teams[1].onEventNotStarted();
+						teams[2].onEventNotStarted();
+						teams[3].onEventNotStarted();
 						return false;
 					}
 				}
 			}
 			else
 			{
-				if (_teams[0].getParticipatedPlayerCount() < 2)
+				if (teams[0].getParticipatedPlayerCount() < 2)
 				{
 					setState(EventState.INACTIVE);
-					_teams[0].onEventNotStarted();
+					teams[0].onEventNotStarted();
 					return false;
 				}
-				_participants = _teams[0].getParticipatedPlayerCount();
+				participants = teams[0].getParticipatedPlayerCount();
 			}
 		}
 
 		// Iterate over all teams
-		for (EventTeam team : _teams)
+		for (EventTeam team : teams)
 		{
 			int divider = 7;
 			if (team.getParticipatedPlayerCount() > 2)
@@ -190,7 +190,7 @@ public abstract class EventInstance
 					playerInstance.removeSkillReuse(true);
 
 					playerInstance.leaveParty();
-					if (!_config.isAllVsAll())
+					if (!config.isAllVsAll())
 					{
 						// Add the player into the current party or create it if it still doesn't exist
 						if (parties[currentParty] == null)
@@ -214,10 +214,10 @@ public abstract class EventInstance
 			}
 		}
 
-		Announcements.getInstance().announceToAll("The " + _config.getEventName() + " has started.");
+		Announcements.getInstance().announceToAll("The " + config.getEventName() + " has started.");
 
-		if (!_config.isType(EventType.TeamSurvival) && !_config.isType(EventType.Survival) &&
-				!_config.isType(EventType.SimonSays))
+		if (!config.isType(EventType.TeamSurvival) && !config.isType(EventType.Survival) &&
+				!config.isType(EventType.SimonSays))
 		{
 			ThreadPoolManager.getInstance()
 					.scheduleGeneral(this::stopFight, 60000L * Config.INSTANCED_EVENT_RUNNING_TIME);
@@ -225,14 +225,14 @@ public abstract class EventInstance
 
 		// Set state STARTED
 		setState(EventState.STARTED);
-		_startTime = System.currentTimeMillis();
+		startTime = System.currentTimeMillis();
 
 		return true;
 	}
 
 	public long getStartTime()
 	{
-		return _startTime;
+		return startTime;
 	}
 
 	public abstract void calculateRewards();
@@ -260,10 +260,10 @@ public abstract class EventInstance
 		EventTeam winner = null;
 		if (winnerTeam >= 0)
 		{
-			winner = _teams[winnerTeam];
+			winner = teams[winnerTeam];
 		}
 
-		for (EventTeam team : _teams)
+		for (EventTeam team : teams)
 		{
 			int totalPoints = 0;
 			for (L2PcInstance player : team.getParticipatedPlayers().values())
@@ -277,7 +277,7 @@ public abstract class EventInstance
 			float teamMultiplier = 0.5f;
 			if (team == winner)
 			{
-				if (_config.getLocation().getTeamCount() == 4)
+				if (config.getLocation().getTeamCount() == 4)
 				{
 					teamMultiplier = 2.5f;
 				}
@@ -374,7 +374,7 @@ public abstract class EventInstance
 				totalPoints = 1;
 			}
 
-			float performanceMultiplier = player.getEventPoints() * ((float) _participants / (float) totalPoints);
+			float performanceMultiplier = player.getEventPoints() * ((float) participants / (float) totalPoints);
 			EventPrizesTable.getInstance().rewardPlayer("InstancedEvents", player, 1.0f, performanceMultiplier);
 
 			StatusUpdate statusUpdate = new StatusUpdate(player);
@@ -401,11 +401,11 @@ public abstract class EventInstance
 
 	public void stopFight()
 	{
-		//Announcements.getInstance().announceToAll("The " + _config.getEventName() + " has ended.");
+		//Announcements.getInstance().announceToAll("The " + config.getEventName() + " has ended.");
 		calculateRewards();
 
 		// Iterate over all teams
-		for (EventTeam team : _teams)
+		for (EventTeam team : teams)
 		{
 			for (L2PcInstance playerInstance : team.getParticipatedPlayers().values())
 			{
@@ -424,12 +424,12 @@ public abstract class EventInstance
 		}
 
 		// Cleanup of teams
-		_teams[0].cleanMe();
-		_teams[1].cleanMe();
-		if (_config.getLocation().getTeamCount() == 4)
+		teams[0].cleanMe();
+		teams[1].cleanMe();
+		if (config.getLocation().getTeamCount() == 4)
 		{
-			_teams[2].cleanMe();
-			_teams[3].cleanMe();
+			teams[2].cleanMe();
+			teams[3].cleanMe();
 		}
 
 		ThreadPoolManager.getInstance().scheduleGeneral(() ->
@@ -449,23 +449,23 @@ public abstract class EventInstance
 
 		playerInstance.setEvent(this);
 		byte teamId = 0;
-		if (_config.isAllVsAll())
+		if (config.isAllVsAll())
 		{
-			return _teams[teamId].addPlayer(playerInstance);
+			return teams[teamId].addPlayer(playerInstance);
 		}
 
 		if (playerInstance.getCurrentClass().getId() == 146)
 		{
-			if (_config.getLocation().getTeamCount() == 2)
+			if (config.getLocation().getTeamCount() == 2)
 			{
 				// Check to which team the player should be added
-				if (_teams[0].getHealersCount() == _teams[1].getHealersCount())
+				if (teams[0].getHealersCount() == teams[1].getHealersCount())
 				{
 					teamId = (byte) Rnd.get(2);
 				}
 				else
 				{
-					teamId = (byte) (_teams[0].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() ?
+					teamId = (byte) (teams[0].getParticipatedPlayerCount() > teams[1].getParticipatedPlayerCount() ?
 							1 : 0);
 				}
 			}
@@ -474,24 +474,24 @@ public abstract class EventInstance
 				int minHealers = 50;
 				for (byte i = 0; i < 4; i++)
 				{
-					if (_teams[i].getHealersCount() < minHealers)
+					if (teams[i].getHealersCount() < minHealers)
 					{
 						teamId = i;
-						minHealers = _teams[i].getHealersCount();
+						minHealers = teams[i].getHealersCount();
 					}
 				}
 			}
 		}
-		else if (_config.getLocation().getTeamCount() == 2)
+		else if (config.getLocation().getTeamCount() == 2)
 		{
 			// Check to which team the player should be added
-			if (_teams[0].getParticipatedPlayerCount() == _teams[1].getParticipatedPlayerCount())
+			if (teams[0].getParticipatedPlayerCount() == teams[1].getParticipatedPlayerCount())
 			{
 				teamId = (byte) Rnd.get(2);
 			}
 			else
 			{
-				teamId = (byte) (_teams[0].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() ? 1 :
+				teamId = (byte) (teams[0].getParticipatedPlayerCount() > teams[1].getParticipatedPlayerCount() ? 1 :
 						0);
 			}
 		}
@@ -499,79 +499,79 @@ public abstract class EventInstance
 		{
 			// Check to which team the player should be added
 
-			if (_teams[0].getParticipatedPlayerCount() < _teams[1].getParticipatedPlayerCount() &&
-					_teams[0].getParticipatedPlayerCount() < _teams[2].getParticipatedPlayerCount() &&
-					_teams[0].getParticipatedPlayerCount() < _teams[3].getParticipatedPlayerCount())
+			if (teams[0].getParticipatedPlayerCount() < teams[1].getParticipatedPlayerCount() &&
+					teams[0].getParticipatedPlayerCount() < teams[2].getParticipatedPlayerCount() &&
+					teams[0].getParticipatedPlayerCount() < teams[3].getParticipatedPlayerCount())
 			{
 				teamId = (byte) 0;
 			}
-			else if (_teams[1].getParticipatedPlayerCount() < _teams[0].getParticipatedPlayerCount() &&
-					_teams[1].getParticipatedPlayerCount() < _teams[2].getParticipatedPlayerCount() &&
-					_teams[1].getParticipatedPlayerCount() < _teams[3].getParticipatedPlayerCount())
+			else if (teams[1].getParticipatedPlayerCount() < teams[0].getParticipatedPlayerCount() &&
+					teams[1].getParticipatedPlayerCount() < teams[2].getParticipatedPlayerCount() &&
+					teams[1].getParticipatedPlayerCount() < teams[3].getParticipatedPlayerCount())
 			{
 				teamId = (byte) 1;
 			}
-			else if (_teams[2].getParticipatedPlayerCount() < _teams[0].getParticipatedPlayerCount() &&
-					_teams[2].getParticipatedPlayerCount() < _teams[1].getParticipatedPlayerCount() &&
-					_teams[2].getParticipatedPlayerCount() < _teams[3].getParticipatedPlayerCount())
+			else if (teams[2].getParticipatedPlayerCount() < teams[0].getParticipatedPlayerCount() &&
+					teams[2].getParticipatedPlayerCount() < teams[1].getParticipatedPlayerCount() &&
+					teams[2].getParticipatedPlayerCount() < teams[3].getParticipatedPlayerCount())
 			{
 				teamId = (byte) 2;
 			}
-			else if (_teams[3].getParticipatedPlayerCount() < _teams[0].getParticipatedPlayerCount() &&
-					_teams[3].getParticipatedPlayerCount() < _teams[1].getParticipatedPlayerCount() &&
-					_teams[3].getParticipatedPlayerCount() < _teams[2].getParticipatedPlayerCount())
+			else if (teams[3].getParticipatedPlayerCount() < teams[0].getParticipatedPlayerCount() &&
+					teams[3].getParticipatedPlayerCount() < teams[1].getParticipatedPlayerCount() &&
+					teams[3].getParticipatedPlayerCount() < teams[2].getParticipatedPlayerCount())
 			{
 				teamId = (byte) 3;
 			}
 
-			else if (_teams[0].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() &&
-					_teams[2].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() &&
-					_teams[1].getParticipatedPlayerCount() == _teams[3].getParticipatedPlayerCount())
+			else if (teams[0].getParticipatedPlayerCount() > teams[1].getParticipatedPlayerCount() &&
+					teams[2].getParticipatedPlayerCount() > teams[1].getParticipatedPlayerCount() &&
+					teams[1].getParticipatedPlayerCount() == teams[3].getParticipatedPlayerCount())
 			{
 				while (teamId == 0 || teamId == 2)
 				{
 					teamId = (byte) Rnd.get(4);
 				}
 			}
-			else if (_teams[0].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() &&
-					_teams[3].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() &&
-					_teams[1].getParticipatedPlayerCount() == _teams[2].getParticipatedPlayerCount())
+			else if (teams[0].getParticipatedPlayerCount() > teams[1].getParticipatedPlayerCount() &&
+					teams[3].getParticipatedPlayerCount() > teams[1].getParticipatedPlayerCount() &&
+					teams[1].getParticipatedPlayerCount() == teams[2].getParticipatedPlayerCount())
 			{
 				while (teamId == 0 || teamId == 3)
 				{
 					teamId = (byte) Rnd.get(4);
 				}
 			}
-			else if (_teams[0].getParticipatedPlayerCount() > _teams[2].getParticipatedPlayerCount() &&
-					_teams[1].getParticipatedPlayerCount() > _teams[2].getParticipatedPlayerCount() &&
-					_teams[2].getParticipatedPlayerCount() == _teams[3].getParticipatedPlayerCount())
+			else if (teams[0].getParticipatedPlayerCount() > teams[2].getParticipatedPlayerCount() &&
+					teams[1].getParticipatedPlayerCount() > teams[2].getParticipatedPlayerCount() &&
+					teams[2].getParticipatedPlayerCount() == teams[3].getParticipatedPlayerCount())
 			{
 				while (teamId == 0 || teamId == 1)
 				{
 					teamId = (byte) Rnd.get(4);
 				}
 			}
-			else if (_teams[0].getParticipatedPlayerCount() < _teams[1].getParticipatedPlayerCount() &&
-					_teams[0].getParticipatedPlayerCount() < _teams[3].getParticipatedPlayerCount() &&
-					_teams[0].getParticipatedPlayerCount() == _teams[2].getParticipatedPlayerCount())
+			else if (teams[0].getParticipatedPlayerCount() < teams[1].getParticipatedPlayerCount() &&
+					teams[0].getParticipatedPlayerCount() < teams[3].getParticipatedPlayerCount() &&
+					teams[0].getParticipatedPlayerCount() == teams[2].getParticipatedPlayerCount())
 			{
 				while (teamId == 1 || teamId == 3)
 				{
 					teamId = (byte) Rnd.get(4);
 				}
 			}
-			else if (_teams[0].getParticipatedPlayerCount() < _teams[1].getParticipatedPlayerCount() &&
-					_teams[0].getParticipatedPlayerCount() < _teams[2].getParticipatedPlayerCount() &&
-					_teams[0].getParticipatedPlayerCount() == _teams[3].getParticipatedPlayerCount())
+			else if (teams[0].getParticipatedPlayerCount() < teams[1].getParticipatedPlayerCount() &&
+					teams[0].getParticipatedPlayerCount() < teams[2].getParticipatedPlayerCount() &&
+					teams[0].getParticipatedPlayerCount() == teams[3].getParticipatedPlayerCount())
 			{
 				while (teamId == 1 || teamId == 2)
 				{
 					teamId = (byte) Rnd.get(4);
 				}
 			}
-			else if (_teams[0].getParticipatedPlayerCount() < _teams[2].getParticipatedPlayerCount() &&
-					_teams[0].getParticipatedPlayerCount() < _teams[3].getParticipatedPlayerCount() &&
-					_teams[0].getParticipatedPlayerCount() == _teams[1].getParticipatedPlayerCount())
+			else if (teams[0].getParticipatedPlayerCount() < teams[2].getParticipatedPlayerCount() &&
+					teams[0].getParticipatedPlayerCount() < teams[3].getParticipatedPlayerCount() &&
+					teams[0].getParticipatedPlayerCount() == teams[1].getParticipatedPlayerCount())
 			{
 				while (teamId == 2 || teamId == 3)
 				{
@@ -579,36 +579,36 @@ public abstract class EventInstance
 				}
 			}
 
-			else if (_teams[0].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() &&
-					_teams[0].getParticipatedPlayerCount() > _teams[2].getParticipatedPlayerCount() &&
-					_teams[0].getParticipatedPlayerCount() > _teams[3].getParticipatedPlayerCount())
+			else if (teams[0].getParticipatedPlayerCount() > teams[1].getParticipatedPlayerCount() &&
+					teams[0].getParticipatedPlayerCount() > teams[2].getParticipatedPlayerCount() &&
+					teams[0].getParticipatedPlayerCount() > teams[3].getParticipatedPlayerCount())
 			{
 				while (teamId == 0)
 				{
 					teamId = (byte) Rnd.get(4);
 				}
 			}
-			else if (_teams[1].getParticipatedPlayerCount() > _teams[0].getParticipatedPlayerCount() &&
-					_teams[1].getParticipatedPlayerCount() > _teams[2].getParticipatedPlayerCount() &&
-					_teams[1].getParticipatedPlayerCount() > _teams[3].getParticipatedPlayerCount())
+			else if (teams[1].getParticipatedPlayerCount() > teams[0].getParticipatedPlayerCount() &&
+					teams[1].getParticipatedPlayerCount() > teams[2].getParticipatedPlayerCount() &&
+					teams[1].getParticipatedPlayerCount() > teams[3].getParticipatedPlayerCount())
 			{
 				while (teamId == 1)
 				{
 					teamId = (byte) Rnd.get(4);
 				}
 			}
-			else if (_teams[2].getParticipatedPlayerCount() > _teams[0].getParticipatedPlayerCount() &&
-					_teams[2].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() &&
-					_teams[2].getParticipatedPlayerCount() > _teams[3].getParticipatedPlayerCount())
+			else if (teams[2].getParticipatedPlayerCount() > teams[0].getParticipatedPlayerCount() &&
+					teams[2].getParticipatedPlayerCount() > teams[1].getParticipatedPlayerCount() &&
+					teams[2].getParticipatedPlayerCount() > teams[3].getParticipatedPlayerCount())
 			{
 				while (teamId == 2)
 				{
 					teamId = (byte) Rnd.get(4);
 				}
 			}
-			else if (_teams[3].getParticipatedPlayerCount() > _teams[0].getParticipatedPlayerCount() &&
-					_teams[3].getParticipatedPlayerCount() > _teams[1].getParticipatedPlayerCount() &&
-					_teams[3].getParticipatedPlayerCount() > _teams[2].getParticipatedPlayerCount())
+			else if (teams[3].getParticipatedPlayerCount() > teams[0].getParticipatedPlayerCount() &&
+					teams[3].getParticipatedPlayerCount() > teams[1].getParticipatedPlayerCount() &&
+					teams[3].getParticipatedPlayerCount() > teams[2].getParticipatedPlayerCount())
 			{
 				teamId = (byte) Rnd.get(3);
 			}
@@ -619,7 +619,7 @@ public abstract class EventInstance
 			}
 		}
 
-		return _teams[teamId].addPlayer(playerInstance);
+		return teams[teamId].addPlayer(playerInstance);
 	}
 
 	public boolean removeParticipant(int playerObjectId)
@@ -631,7 +631,7 @@ public abstract class EventInstance
 		if (teamId != -1)
 		{
 			// Remove the player from team
-			_teams[teamId].removePlayer(playerObjectId);
+			teams[teamId].removePlayer(playerObjectId);
 			return true;
 		}
 
@@ -640,7 +640,7 @@ public abstract class EventInstance
 
 	public void sendToAllParticipants(L2GameServerPacket packet)
 	{
-		for (L2PcInstance playerInstance : _teams[0].getParticipatedPlayers().values())
+		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values())
 		{
 			if (playerInstance != null)
 			{
@@ -648,7 +648,7 @@ public abstract class EventInstance
 			}
 		}
 
-		for (L2PcInstance playerInstance : _teams[1].getParticipatedPlayers().values())
+		for (L2PcInstance playerInstance : teams[1].getParticipatedPlayers().values())
 		{
 			if (playerInstance != null)
 			{
@@ -656,16 +656,16 @@ public abstract class EventInstance
 			}
 		}
 
-		if (_config.getLocation().getTeamCount() == 4)
+		if (config.getLocation().getTeamCount() == 4)
 		{
-			for (L2PcInstance playerInstance : _teams[2].getParticipatedPlayers().values())
+			for (L2PcInstance playerInstance : teams[2].getParticipatedPlayers().values())
 			{
 				if (playerInstance != null)
 				{
 					playerInstance.sendPacket(packet);
 				}
 			}
-			for (L2PcInstance playerInstance : _teams[3].getParticipatedPlayers().values())
+			for (L2PcInstance playerInstance : teams[3].getParticipatedPlayers().values())
 			{
 				if (playerInstance != null)
 				{
@@ -705,15 +705,15 @@ public abstract class EventInstance
 
 	public String getInfo(L2PcInstance player)
 	{
-		String html = "<center><font color=\"LEVEL\">" + _config.getEventString() + "</font></center><br>";
+		String html = "<center><font color=\"LEVEL\">" + config.getEventString() + "</font></center><br>";
 		if (isState(EventState.READY))
 		{
-			if (_config.isAllVsAll())
+			if (config.isAllVsAll())
 			{
-				if (_teams[0].getParticipatedPlayerCount() > 0)
+				if (teams[0].getParticipatedPlayerCount() > 0)
 				{
 					html += "Participants:<br>";
-					for (L2PcInstance participant : _teams[0].getParticipatedPlayers().values())
+					for (L2PcInstance participant : teams[0].getParticipatedPlayers().values())
 					{
 						if (participant != null)
 						{
@@ -725,7 +725,7 @@ public abstract class EventInstance
 			}
 			else
 			{
-				for (EventTeam team : _teams)
+				for (EventTeam team : teams)
 				{
 					if (team.getParticipatedPlayerCount() > 0)
 					{
@@ -784,21 +784,21 @@ public abstract class EventInstance
 		int x;
 		int y;
 		int z;
-		if (_config.getLocation().getZone() == null)
+		if (config.getLocation().getZone() == null)
 		{
-			int rndTm = Rnd.get(_config.getLocation().getTeamCount());
-			x = _config.getLocation().getSpawn(rndTm).getX();
-			y = _config.getLocation().getSpawn(rndTm).getY();
-			z = GeoData.getInstance().getHeight(x, y, _config.getLocation().getGlobalZ());
+			int rndTm = Rnd.get(config.getLocation().getTeamCount());
+			x = config.getLocation().getSpawn(rndTm).getX();
+			y = config.getLocation().getSpawn(rndTm).getY();
+			z = GeoData.getInstance().getHeight(x, y, config.getLocation().getGlobalZ());
 		}
 		else
 		{
-			int[] pos = _config.getLocation().getZone().getZone().getRandomPoint();
+			int[] pos = config.getLocation().getZone().getZone().getRandomPoint();
 			x = pos[0];
 			y = pos[1];
 			z = GeoData.getInstance().getHeight(pos[0], pos[1], pos[2]);
 		}
-		playerInstance.setInstanceId(_instanceId);
+		playerInstance.setInstanceId(instanceId);
 		playerInstance.enterEventObserverMode(x, y, z);
 	}
 
@@ -828,7 +828,7 @@ public abstract class EventInstance
 		}
 
 		return !(playerTeam == targetPlayerTeam && playerInstance.getObjectId() != targetPlayerObjectId &&
-				_config.isPvp());
+				config.isPvp());
 
 	}
 
@@ -880,83 +880,83 @@ public abstract class EventInstance
 
 	public boolean isType(EventType type)
 	{
-		return _config.getType() == type;
+		return config.getType() == type;
 	}
 
 	public EventType getType()
 	{
-		return _config.getType();
+		return config.getType();
 	}
 
 	public void setState(EventState state)
 	{
-		_state = state;
+		this.state = state;
 	}
 
 	public boolean isState(EventState state)
 	{
-		return _state == state;
+		return state == state;
 	}
 
 	public byte getParticipantTeamId(int playerObjectId)
 	{
-		if (_config.getLocation().getTeamCount() != 4)
+		if (config.getLocation().getTeamCount() != 4)
 		{
-			return (byte) (_teams[0].containsPlayer(playerObjectId) ? 0 :
-					_teams[1].containsPlayer(playerObjectId) ? 1 : -1);
+			return (byte) (teams[0].containsPlayer(playerObjectId) ? 0 :
+					teams[1].containsPlayer(playerObjectId) ? 1 : -1);
 		}
 		else
 		{
-			return (byte) (_teams[0].containsPlayer(playerObjectId) ? 0 : _teams[1].containsPlayer(playerObjectId) ? 1 :
-					_teams[2].containsPlayer(playerObjectId) ? 2 : _teams[3].containsPlayer(playerObjectId) ? 3 : -1);
+			return (byte) (teams[0].containsPlayer(playerObjectId) ? 0 : teams[1].containsPlayer(playerObjectId) ? 1 :
+					teams[2].containsPlayer(playerObjectId) ? 2 : teams[3].containsPlayer(playerObjectId) ? 3 : -1);
 		}
 	}
 
 	public EventTeam getParticipantTeam(int playerObjectId)
 	{
-		if (_config.getLocation().getTeamCount() != 4)
+		if (config.getLocation().getTeamCount() != 4)
 		{
-			return _teams[0].containsPlayer(playerObjectId) ? _teams[0] :
-					_teams[1].containsPlayer(playerObjectId) ? _teams[1] : null;
+			return teams[0].containsPlayer(playerObjectId) ? teams[0] :
+					teams[1].containsPlayer(playerObjectId) ? teams[1] : null;
 		}
 		else
 		{
-			return _teams[0].containsPlayer(playerObjectId) ? _teams[0] :
-					_teams[1].containsPlayer(playerObjectId) ? _teams[1] :
-							_teams[2].containsPlayer(playerObjectId) ? _teams[2] :
-									_teams[3].containsPlayer(playerObjectId) ? _teams[3] : null;
+			return teams[0].containsPlayer(playerObjectId) ? teams[0] :
+					teams[1].containsPlayer(playerObjectId) ? teams[1] :
+							teams[2].containsPlayer(playerObjectId) ? teams[2] :
+									teams[3].containsPlayer(playerObjectId) ? teams[3] : null;
 		}
 	}
 
 	public EventTeam getParticipantEnemyTeam(int playerObjectId)
 	{
-		if (_config.getLocation().getTeamCount() != 4)
+		if (config.getLocation().getTeamCount() != 4)
 		{
-			return _teams[0].containsPlayer(playerObjectId) ? _teams[1] :
-					_teams[1].containsPlayer(playerObjectId) ? _teams[0] : null;
+			return teams[0].containsPlayer(playerObjectId) ? teams[1] :
+					teams[1].containsPlayer(playerObjectId) ? teams[0] : null;
 		}
 		else
 		{
-			return _teams[0].containsPlayer(playerObjectId) ? _teams[1] :
-					_teams[1].containsPlayer(playerObjectId) ? _teams[0] :
-							_teams[2].containsPlayer(playerObjectId) ? _teams[3] :
-									_teams[3].containsPlayer(playerObjectId) ? _teams[2] : null;
+			return teams[0].containsPlayer(playerObjectId) ? teams[1] :
+					teams[1].containsPlayer(playerObjectId) ? teams[0] :
+							teams[2].containsPlayer(playerObjectId) ? teams[3] :
+									teams[3].containsPlayer(playerObjectId) ? teams[2] : null;
 		}
 	}
 
 	public Point3D getParticipantTeamCoordinates(int playerObjectId)
 	{
-		if (_config.getLocation().getTeamCount() != 4)
+		if (config.getLocation().getTeamCount() != 4)
 		{
-			return _teams[0].containsPlayer(playerObjectId) ? _teams[0].getCoords() :
-					_teams[1].containsPlayer(playerObjectId) ? _teams[1].getCoords() : null;
+			return teams[0].containsPlayer(playerObjectId) ? teams[0].getCoords() :
+					teams[1].containsPlayer(playerObjectId) ? teams[1].getCoords() : null;
 		}
 		else
 		{
-			return _teams[0].containsPlayer(playerObjectId) ? _teams[0].getCoords() :
-					_teams[1].containsPlayer(playerObjectId) ? _teams[1].getCoords() :
-							_teams[2].containsPlayer(playerObjectId) ? _teams[2].getCoords() :
-									_teams[3].containsPlayer(playerObjectId) ? _teams[3].getCoords() : null;
+			return teams[0].containsPlayer(playerObjectId) ? teams[0].getCoords() :
+					teams[1].containsPlayer(playerObjectId) ? teams[1].getCoords() :
+							teams[2].containsPlayer(playerObjectId) ? teams[2].getCoords() :
+									teams[3].containsPlayer(playerObjectId) ? teams[3].getCoords() : null;
 		}
 	}
 
@@ -967,14 +967,14 @@ public abstract class EventInstance
 			return false;
 		}
 
-		if (_config.getLocation().getTeamCount() != 4)
+		if (config.getLocation().getTeamCount() != 4)
 		{
-			return _teams[0].containsPlayer(playerObjectId) || _teams[1].containsPlayer(playerObjectId);
+			return teams[0].containsPlayer(playerObjectId) || teams[1].containsPlayer(playerObjectId);
 		}
 		else
 		{
-			return _teams[0].containsPlayer(playerObjectId) || _teams[1].containsPlayer(playerObjectId) ||
-					_teams[2].containsPlayer(playerObjectId) || _teams[3].containsPlayer(playerObjectId);
+			return teams[0].containsPlayer(playerObjectId) || teams[1].containsPlayer(playerObjectId) ||
+					teams[2].containsPlayer(playerObjectId) || teams[3].containsPlayer(playerObjectId);
 		}
 	}
 
@@ -984,31 +984,31 @@ public abstract class EventInstance
 		//	return 0;
 
 		int count = 0;
-		for (int teamId = 0; teamId < _config.getLocation().getTeamCount(); teamId++)
+		for (int teamId = 0; teamId < config.getLocation().getTeamCount(); teamId++)
 		{
-			count += _teams[teamId].getParticipatedPlayerCount();
+			count += teams[teamId].getParticipatedPlayerCount();
 		}
 		return count;
 	}
 
 	protected L2PcInstance selectRandomParticipant()
 	{
-		return _teams[0].selectRandomParticipant();
+		return teams[0].selectRandomParticipant();
 	}
 
 	public int getId()
 	{
-		return _id;
+		return id;
 	}
 
 	public EventConfig getConfig()
 	{
-		return _config;
+		return config;
 	}
 
 	public int getInstanceId()
 	{
-		return _instanceId;
+		return instanceId;
 	}
 
 	public void setImportant(L2PcInstance player, boolean important)
@@ -1018,7 +1018,7 @@ public abstract class EventInstance
 			return;
 		}
 
-		if (_config.getLocation().getTeamCount() != 4 || _config.isAllVsAll())
+		if (config.getLocation().getTeamCount() != 4 || config.isAllVsAll())
 		{
 			player.setTeam(getParticipantTeamId(player.getObjectId()) + 1);
 			player.getAppearance().setNameColor(Integer.decode("0xFFFFFF"));
@@ -1057,6 +1057,6 @@ public abstract class EventInstance
 
 	public EventTeam[] getTeams()
 	{
-		return _teams;
+		return teams;
 	}
 }

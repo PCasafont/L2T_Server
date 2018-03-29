@@ -29,10 +29,10 @@ import l2server.gameserver.model.actor.L2Npc;
  */
 public class MonRaceInfo extends L2GameServerPacket
 {
-	private int _unknown1;
-	private int _unknown2;
-	private L2Npc[] _monsters;
-	private int[][] _speeds;
+	private int unknown1;
+	private int unknown2;
+	private L2Npc[] monsters;
+	private int[][] speeds;
 
 	public MonRaceInfo(int unknown1, int unknown2, L2Npc[] monsters, int[][] speeds)
 	{
@@ -42,10 +42,10 @@ public class MonRaceInfo extends L2GameServerPacket
 		 * 13765 -1 in middle of race
 		 * -1 0 to end the race
 		 */
-		_unknown1 = unknown1;
-		_unknown2 = unknown2;
-		_monsters = monsters;
-		_speeds = speeds;
+		this.unknown1 = unknown1;
+		this.unknown2 = unknown2;
+		this.monsters = monsters;
+		this.speeds = speeds;
 	}
 
 	//  0xf3;EtcStatusUpdatePacket;ddddd
@@ -53,29 +53,29 @@ public class MonRaceInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_unknown1);
-		writeD(_unknown2);
+		writeD(unknown1);
+		writeD(unknown2);
 		writeD(8);
 
 		for (int i = 0; i < 8; i++)
 		{
-			//Logozo.info("MOnster "+(i+1)+" npcid "+_monsters[i].getNpcTemplate().getNpcId());
-			writeD(_monsters[i].getObjectId()); //npcObjectID
-			writeD(_monsters[i].getTemplate().NpcId + 1000000); //npcID
+			//Logozo.info("MOnster "+(i+1)+" npcid "+monsters[i].getNpcTemplate().getNpcId());
+			writeD(monsters[i].getObjectId()); //npcObjectID
+			writeD(monsters[i].getTemplate().NpcId + 1000000); //npcID
 			writeD(14107); //origin X
 			writeD(181875 + 58 * (7 - i)); //origin Y
 			writeD(-3566); //origin Z
 			writeD(12080); //end X
 			writeD(181875 + 58 * (7 - i)); //end Y
 			writeD(-3566); //end Z
-			writeF(_monsters[i].getTemplate().fCollisionHeight); //coll. height
-			writeF(_monsters[i].getTemplate().fCollisionRadius); //coll. radius
+			writeF(monsters[i].getTemplate().fCollisionHeight); //coll. height
+			writeF(monsters[i].getTemplate().fCollisionRadius); //coll. radius
 			writeD(120); // ?? unknown
 			for (int j = 0; j < 20; j++)
 			{
-				if (_unknown1 == 0)
+				if (unknown1 == 0)
 				{
-					writeC(_speeds[i][j]);
+					writeC(speeds[i][j]);
 				}
 				else
 				{

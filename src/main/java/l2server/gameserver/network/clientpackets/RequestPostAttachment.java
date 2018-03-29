@@ -41,12 +41,12 @@ import l2server.gameserver.util.Util;
 public final class RequestPostAttachment extends L2GameClientPacket
 {
 
-	private int _msgId;
+	private int msgId;
 
 	@Override
 	protected void readImpl()
 	{
-		_msgId = readD();
+		msgId = readD();
 	}
 
 	@Override
@@ -110,7 +110,7 @@ public final class RequestPostAttachment extends L2GameClientPacket
 			return;
 		}
 
-		final Message msg = MailManager.getInstance().getMessage(_msgId);
+		final Message msg = MailManager.getInstance().getMessage(msgId);
 		if (msg == null)
 		{
 			return;
@@ -305,7 +305,7 @@ public final class RequestPostAttachment extends L2GameClientPacket
 			sender.sendPacket(sm);
 		}
 
-		activeChar.sendPacket(new ExChangePostState(true, _msgId, Message.READED));
+		activeChar.sendPacket(new ExChangePostState(true, msgId, Message.READED));
 		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MAIL_SUCCESSFULLY_RECEIVED));
 	}
 

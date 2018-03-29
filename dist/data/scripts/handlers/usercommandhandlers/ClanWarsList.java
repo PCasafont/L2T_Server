@@ -53,29 +53,29 @@ public class ClanWarsList implements IUserCommandHandler
 
 		SystemMessage sm;
 
-		List<L2Clan> _clanList;
+		List<L2Clan> clanList;
 
 		if (id == 88)
 		{
 			// Attack List
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLANS_YOU_DECLARED_WAR_ON));
-			_clanList = clan.getDeclaredWars();
+			clanList = clan.getDeclaredWars();
 		}
 		else if (id == 89)
 		{
 			// Under Attack List
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLANS_THAT_HAVE_DECLARED_WAR_ON_YOU));
-			_clanList = clan.getUnderAttackWars();
+			clanList = clan.getUnderAttackWars();
 		}
 		else
 		// ID = 90
 		{
 			// War List
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WAR_LIST));
-			_clanList = clan.getWarList();
+			clanList = clan.getWarList();
 		}
 
-		for (L2Clan warClan : _clanList)
+		for (L2Clan warClan : clanList)
 		{
 			if (warClan.getAllyId() > 0)
 			{

@@ -25,12 +25,12 @@ public class L2AdminCommandAccessRight
 	/**
 	 * The admin command<br>
 	 */
-	private String _adminCommand = null;
+	private String adminCommand = null;
 	/**
 	 * The access levels which can use the admin command<br>
 	 */
-	private L2AccessLevel[] _accessLevels = null;
-	private boolean _requireConfirm;
+	private L2AccessLevel[] accessLevels = null;
+	private boolean requireConfirm;
 
 	/**
 	 * Initialized members
@@ -40,23 +40,23 @@ public class L2AdminCommandAccessRight
 	 */
 	public L2AdminCommandAccessRight(String adminCommand, String accessLevels, boolean confirm)
 	{
-		_adminCommand = adminCommand;
-		_requireConfirm = confirm;
+		this.adminCommand = adminCommand;
+		requireConfirm = confirm;
 
 		String[] accessLevelsSplit = accessLevels.split(",");
 		int numLevels = accessLevelsSplit.length;
 
-		_accessLevels = new L2AccessLevel[numLevels];
+        this.accessLevels = new L2AccessLevel[numLevels];
 
 		for (int i = 0; i < numLevels; ++i)
 		{
 			try
 			{
-				_accessLevels[i] = AccessLevels.getInstance().getAccessLevel(Integer.parseInt(accessLevelsSplit[i]));
+                this.accessLevels[i] = AccessLevels.getInstance().getAccessLevel(Integer.parseInt(accessLevelsSplit[i]));
 			}
 			catch (NumberFormatException nfe)
 			{
-				_accessLevels[i] = null;
+                this.accessLevels[i] = null;
 			}
 		}
 	}
@@ -68,7 +68,7 @@ public class L2AdminCommandAccessRight
 	 */
 	public String getAdminCommand()
 	{
-		return _adminCommand;
+		return adminCommand;
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class L2AdminCommandAccessRight
 	 */
 	public boolean hasAccess(L2AccessLevel characterAccessLevel)
 	{
-		for (L2AccessLevel accessLevel : _accessLevels)
+		for (L2AccessLevel accessLevel : accessLevels)
 		{
 			if (accessLevel != null && (accessLevel.getLevel() == characterAccessLevel.getLevel() ||
 					characterAccessLevel.hasChildAccess(accessLevel)))
@@ -93,6 +93,6 @@ public class L2AdminCommandAccessRight
 
 	public boolean getRequireConfirm()
 	{
-		return _requireConfirm;
+		return requireConfirm;
 	}
 }

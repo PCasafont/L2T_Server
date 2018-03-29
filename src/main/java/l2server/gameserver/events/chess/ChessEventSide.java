@@ -12,50 +12,50 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
  */
 public class ChessEventSide
 {
-	private byte _id;
+	private byte id;
 
-	private int _startX;
-	private int _startY;
-	private int _startZ;
+	private int startX;
+	private int startY;
+	private int startZ;
 
-	private L2PcInstance _player;
+	private L2PcInstance player;
 
-	private int _endX;
-	private int _endY;
-	private int _endZ;
+	private int endX;
+	private int endY;
+	private int endZ;
 
-	private int[][] _board;
+	private int[][] board;
 
-	private L2Spawn[] _pieceSpawns;
+	private L2Spawn[] pieceSpawns;
 
-	private L2ChessPieceInstance _king;
+	private L2ChessPieceInstance king;
 
-	private boolean _canTheKingBeKilled = false;
+	private boolean canTheKingBeKilled = false;
 
-	private boolean _hasWon = false;
+	private boolean hasWon = false;
 
 	public ChessEventSide(byte id)
 	{
-		_id = id;
-		_pieceSpawns = new L2Spawn[16];
-		_board = new int[8][8];
+		this.id = id;
+		pieceSpawns = new L2Spawn[16];
+		board = new int[8][8];
 		for (int i = 0; i < 8; i++)
 		{
 			for (int j = 0; j < 8; j++)
 			{
-				_board[i][j] = 0;
+				board[i][j] = 0;
 			}
 		}
 		if (id == 0)
 		{
-			_startX = -60215;
+			startX = -60215;
 		}
 		else
 		{
-			_startX = -59800;
+			startX = -59800;
 		}
-		_startY = -59595;
-		_startZ = -1932;
+		startY = -59595;
+		startZ = -1932;
 	}
 
 	public boolean setPlayer(L2PcInstance playerInstance)
@@ -65,24 +65,24 @@ public class ChessEventSide
 			return false;
 		}
 		removePlayer();
-		_player = playerInstance;
-		_player.setTeam(getId() + 1);
-		//_player.broadcastUserInfo();
-		_endX = _player.getX();
-		_endY = _player.getY();
-		_endZ = _player.getZ();
-		_player.teleToLocation(_startX, _startY, _startZ);
+		player = playerInstance;
+		player.setTeam(getId() + 1);
+		//player.broadcastUserInfo();
+		endX = player.getX();
+		endY = player.getY();
+		endZ = player.getZ();
+		player.teleToLocation(startX, startY, startZ);
 		return true;
 	}
 
 	public void removePlayer()
 	{
-		if (_player != null)
+		if (player != null)
 		{
-			_player.setTeam(0);
-			//_player.broadcastUserInfo();
-			_player.teleToLocation(_endX, _endY, _endZ);
-			_player = null;
+			player.setTeam(0);
+			//player.broadcastUserInfo();
+			player.teleToLocation(endX, endY, endZ);
+			player = null;
 		}
 	}
 
@@ -100,37 +100,37 @@ public class ChessEventSide
 
 	public boolean containsPlayer(int playerObjectId)
 	{
-		return _player != null && _player.getObjectId() == playerObjectId;
+		return player != null && player.getObjectId() == playerObjectId;
 	}
 
 	public byte getId()
 	{
-		return _id;
+		return id;
 	}
 
 	public L2PcInstance getPlayer()
 	{
-		return _player;
+		return player;
 	}
 
 	public L2Spawn getPieceSpawn(int i)
 	{
-		return _pieceSpawns[i];
+		return pieceSpawns[i];
 	}
 
 	public void setPieceSpawn(L2Spawn spawn, int i)
 	{
-		_pieceSpawns[i] = spawn;
+		pieceSpawns[i] = spawn;
 	}
 
 	public int[][] getBoard()
 	{
-		return _board;
+		return board;
 	}
 
 	public void setBoard(int i, int j, int value)
 	{
-		_board[i][j] = value;
+		board[i][j] = value;
 	}
 
 	public void spawnPieces()
@@ -215,28 +215,28 @@ public class ChessEventSide
 					leftX += costatCasella * 7;
 					heading = 32768;
 				}
-				_pieceSpawns[i] = new L2Spawn(tmpl);
+				pieceSpawns[i] = new L2Spawn(tmpl);
 
-				_pieceSpawns[i].setX(baseX + leftX);
-				_pieceSpawns[i].setY(baseY + i * costatCasella - downY);
-				_pieceSpawns[i].setZ(baseZ);
-				_pieceSpawns[i].setHeading(heading);
+				pieceSpawns[i].setX(baseX + leftX);
+				pieceSpawns[i].setY(baseY + i * costatCasella - downY);
+				pieceSpawns[i].setZ(baseZ);
+				pieceSpawns[i].setHeading(heading);
 
-				SpawnTable.getInstance().addNewSpawn(_pieceSpawns[i], false);
+				SpawnTable.getInstance().addNewSpawn(pieceSpawns[i], false);
 
-				_pieceSpawns[i].stopRespawn();
-				_pieceSpawns[i].doSpawn();
-				//_pieceSpawns[i].getNpc().spawnMe(_pieceSpawns[i].getNpc().getX(), _pieceSpawns[i].getNpc().getY(), _pieceSpawns[i].getNpc().getZ());
-				L2ChessPieceInstance piece = (L2ChessPieceInstance) _pieceSpawns[i].getNpc();
+				pieceSpawns[i].stopRespawn();
+				pieceSpawns[i].doSpawn();
+				//pieceSpawns[i].getNpc().spawnMe(pieceSpawns[i].getNpc().getX(), pieceSpawns[i].getNpc().getY(), pieceSpawns[i].getNpc().getZ());
+				L2ChessPieceInstance piece = (L2ChessPieceInstance) pieceSpawns[i].getNpc();
 				if (piece.getType() == 6)
 				{
-					_king = piece;
+					king = piece;
 				}
 			}
 			for (i = 0; i < 8; i++)
 			{
-				_board[i][0] = 1;
-				_board[i][1] = 1;
+				board[i][0] = 1;
+				board[i][1] = 1;
 				getEnemy().setBoard(i, 6, 2);
 				getEnemy().setBoard(i, 7, 2);
 			}
@@ -252,13 +252,13 @@ public class ChessEventSide
 		int i;
 		for (i = 0; i < 16; i++)
 		{
-			if (_pieceSpawns[i] != null)
+			if (pieceSpawns[i] != null)
 			{
-				_pieceSpawns[i].getNpc().deleteMe();
-				_pieceSpawns[i].getNpc().deleteMe();
-				_pieceSpawns[i].getNpc().deleteMe();
-				_pieceSpawns[i].stopRespawn();
-				SpawnTable.getInstance().deleteSpawn(_pieceSpawns[i], true);
+				pieceSpawns[i].getNpc().deleteMe();
+				pieceSpawns[i].getNpc().deleteMe();
+				pieceSpawns[i].getNpc().deleteMe();
+				pieceSpawns[i].stopRespawn();
+				SpawnTable.getInstance().deleteSpawn(pieceSpawns[i], true);
 			}
 		}
 	}
@@ -268,11 +268,11 @@ public class ChessEventSide
 		int i;
 		for (i = 0; i < 16; i++)
 		{
-			if (_pieceSpawns[i] != null)
+			if (pieceSpawns[i] != null)
 			{
-				_pieceSpawns[i].stopRespawn();
-				_pieceSpawns[i].getNpc().doDie(_pieceSpawns[i].getNpc());
-				SpawnTable.getInstance().deleteSpawn(_pieceSpawns[i], true);
+				pieceSpawns[i].stopRespawn();
+				pieceSpawns[i].getNpc().doDie(pieceSpawns[i].getNpc());
+				SpawnTable.getInstance().deleteSpawn(pieceSpawns[i], true);
 			}
 		}
 	}
@@ -294,12 +294,12 @@ public class ChessEventSide
 
 	public boolean containsAPlayer()
 	{
-		return _player != null;
+		return player != null;
 	}
 
 	public ChessEventSide getEnemy()
 	{
-		if (_id == 0)
+		if (id == 0)
 		{
 			return ChessEvent.getSide(1);
 		}
@@ -321,21 +321,21 @@ public class ChessEventSide
 
 	public L2ChessPieceInstance getKing()
 	{
-		return _king;
+		return king;
 	}
 
 	public void setCanTheKingBeKilled(boolean canTheKingBeKilled)
 	{
-		_canTheKingBeKilled = canTheKingBeKilled;
+		this.canTheKingBeKilled = canTheKingBeKilled;
 	}
 
 	public boolean canTheKingBeKilled(boolean check)
 	{
 		if (!check)
 		{
-			return _canTheKingBeKilled;
+			return canTheKingBeKilled;
 		}
-		_canTheKingBeKilled = false;
+		canTheKingBeKilled = false;
 		for (int i = 0; i < 8; i++)
 		{
 			for (L2ChessPieceInstance piece : ChessEvent.getBoard(getId())[i])
@@ -343,20 +343,20 @@ public class ChessEventSide
 				if (piece != null && piece.getType() != 6 && piece.getSide().getId() != getId() &&
 						piece.canKillTheKing())
 				{
-					_canTheKingBeKilled = true;
+					canTheKingBeKilled = true;
 				}
 			}
 		}
-		return _canTheKingBeKilled;
+		return canTheKingBeKilled;
 	}
 
 	public boolean hasWon()
 	{
-		return _hasWon;
+		return hasWon;
 	}
 
 	public void setHasWon(boolean hasWon)
 	{
-		_hasWon = hasWon;
+		this.hasWon = hasWon;
 	}
 }

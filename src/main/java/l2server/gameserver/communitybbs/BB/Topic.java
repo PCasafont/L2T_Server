@@ -29,27 +29,27 @@ public class Topic
 	public static final int MORMAL = 0;
 	public static final int MEMO = 1;
 
-	private int _id;
-	private int _forumId;
-	private String _topicName;
-	private long _date;
-	private String _ownerName;
-	private int _ownerId;
-	private int _type;
-	private int _cReply;
+	private int id;
+	private int forumId;
+	private String topicName;
+	private long date;
+	private String ownerName;
+	private int ownerId;
+	private int type;
+	private int cReply;
 
 	/**
 	 */
 	public Topic(ConstructorType ct, int id, int fid, String name, long date, String oname, int oid, int type, int Creply)
 	{
-		_id = id;
-		_forumId = fid;
-		_topicName = name;
-		_date = date;
-		_ownerName = oname;
-		_ownerId = oid;
-		_type = type;
-		_cReply = Creply;
+		this.id = id;
+		forumId = fid;
+		topicName = name;
+		this.date = date;
+		ownerName = oname;
+		ownerId = oid;
+		this.type = type;
+		cReply = Creply;
 		TopicBBSManager.getInstance().addTopic(this);
 
 		if (ct == ConstructorType.CREATE)
@@ -70,14 +70,14 @@ public class Topic
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(
 					"INSERT INTO topic (topic_id,topic_forum_id,topic_name,topic_date,topic_ownername,topic_ownerid,topic_type,topic_reply) values (?,?,?,?,?,?,?,?)");
-			statement.setInt(1, _id);
-			statement.setInt(2, _forumId);
-			statement.setString(3, _topicName);
-			statement.setLong(4, _date);
-			statement.setString(5, _ownerName);
-			statement.setInt(6, _ownerId);
-			statement.setInt(7, _type);
-			statement.setInt(8, _cReply);
+			statement.setInt(1, id);
+			statement.setInt(2, forumId);
+			statement.setString(3, topicName);
+			statement.setLong(4, date);
+			statement.setString(5, ownerName);
+			statement.setInt(6, ownerId);
+			statement.setInt(7, type);
+			statement.setInt(8, cReply);
 			statement.execute();
 			statement.close();
 		}
@@ -101,12 +101,12 @@ public class Topic
 	 */
 	public int getID()
 	{
-		return _id;
+		return id;
 	}
 
 	public int getForumID()
 	{
-		return _forumId;
+		return forumId;
 	}
 
 	/**
@@ -114,12 +114,12 @@ public class Topic
 	 */
 	public String getName()
 	{
-		return _topicName;
+		return topicName;
 	}
 
 	public String getOwnerName()
 	{
-		return _ownerName;
+		return ownerName;
 	}
 
 	/**
@@ -155,6 +155,6 @@ public class Topic
 	 */
 	public long getDate()
 	{
-		return _date;
+		return date;
 	}
 }

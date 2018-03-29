@@ -24,18 +24,18 @@ import l2server.gameserver.network.serverpackets.ExPledgeRecruitApplyInfo;
  */
 public final class RequestPledgeRecruitBoardAccess extends L2GameClientPacket
 {
-	private int _action;
-	private int _karma;
-	private String _introduction;
-	private String _largeIntroduction;
+	private int action;
+	private int karma;
+	private String introduction;
+	private String largeIntroduction;
 
 	@Override
 	protected void readImpl()
 	{
-		_action = readD();
-		_karma = readD();
-		_introduction = readS();
-		_largeIntroduction = readS();
+		action = readD();
+		karma = readD();
+		introduction = readS();
+		largeIntroduction = readS();
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public final class RequestPledgeRecruitBoardAccess extends L2GameClientPacket
 			return;
 		}
 
-		switch (_action)
+		switch (action)
 		{
 			case 0:
 				if (ClanRecruitManager.getInstance().removeClan(activeChar.getClan()))
@@ -57,14 +57,14 @@ public final class RequestPledgeRecruitBoardAccess extends L2GameClientPacket
 				break;
 			case 1:
 				if (ClanRecruitManager.getInstance()
-						.addClan(activeChar.getClan(), _karma, _introduction, _largeIntroduction))
+						.addClan(activeChar.getClan(), karma, introduction, largeIntroduction))
 				{
 					sendPacket(new ExPledgeRecruitApplyInfo(1));
 				}
 				break;
 			case 2:
 				ClanRecruitManager.getInstance()
-						.updateClan(activeChar.getClan(), _karma, _introduction, _largeIntroduction);
+						.updateClan(activeChar.getClan(), karma, introduction, largeIntroduction);
 				break;
 		}
 	}

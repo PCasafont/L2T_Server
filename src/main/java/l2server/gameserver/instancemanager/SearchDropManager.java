@@ -39,29 +39,29 @@ import java.util.Map.Entry;
 
 public class SearchDropManager
 {
-	private static Map<Integer, Drops> _allDrops = new HashMap<>();
+	private static Map<Integer, Drops> allDrops = new HashMap<>();
 
 	private class Drops
 	{
-		private int _itemId;
-		private String _iemName;
-		private String _itemIcon;
-		private List<L2NpcTemplate> _droppedBy = new ArrayList<>();
-		private List<L2NpcTemplate> _spoilBy = new ArrayList<>();
+		private int itemId;
+		private String iemName;
+		private String itemIcon;
+		private List<L2NpcTemplate> droppedBy = new ArrayList<>();
+		private List<L2NpcTemplate> spoilBy = new ArrayList<>();
 
 		private Drops(int itemId, L2NpcTemplate npc, boolean isSpoil)
 		{
-			_itemId = itemId;
+			this.itemId = itemId;
 			L2Item temp = ItemTable.getInstance().getTemplate(itemId);
-			_iemName = temp.getName();
-			_itemIcon = temp.getIcon();
+			iemName = temp.getName();
+			itemIcon = temp.getIcon();
 			if (isSpoil)
 			{
-				_spoilBy.add(npc);
+				spoilBy.add(npc);
 			}
 			else
 			{
-				_droppedBy.add(npc);
+				droppedBy.add(npc);
 			}
 		}
 
@@ -69,35 +69,35 @@ public class SearchDropManager
 		{
 			if (isSpoil)
 			{
-				return _spoilBy;
+				return spoilBy;
 			}
-			return _droppedBy;
+			return droppedBy;
 		}
 
 		private int getItemId()
 		{
-			return _itemId;
+			return itemId;
 		}
 
 		private String getName()
 		{
-			return _iemName;
+			return iemName;
 		}
 
 		private String getIcon()
 		{
-			return _itemIcon;
+			return itemIcon;
 		}
 
 		private void addMonster(L2NpcTemplate t, boolean isSpoil)
 		{
 			if (isSpoil)
 			{
-				_spoilBy.add(t);
+				spoilBy.add(t);
 			}
 			else
 			{
-				_droppedBy.add(t);
+				droppedBy.add(t);
 			}
 		}
 	}
@@ -106,7 +106,7 @@ public class SearchDropManager
 	{
 		List<Drops> toReturn = new ArrayList<>();
 		List<String> itemNames = new ArrayList<>();
-		for (Entry<Integer, Drops> i : _allDrops.entrySet())
+		for (Entry<Integer, Drops> i : allDrops.entrySet())
 		{
 			Drops d = i.getValue();
 			if (d.getName().toLowerCase().trim().contains(name.toLowerCase()))
@@ -188,35 +188,35 @@ public class SearchDropManager
 		for (Entry<L2DropData, Float> i : drops.entrySet())
 		{
 			L2DropData data = i.getKey();
-			if (_allDrops.containsKey(data.getItemId()))
+			if (allDrops.containsKey(data.getItemId()))
 			{
-				_allDrops.get(data.getItemId()).addMonster(temp, false);
+				allDrops.get(data.getItemId()).addMonster(temp, false);
 			}
 			else
 			{
 				Drops d = new Drops(data.getItemId(), temp, false);
-				_allDrops.put(data.getItemId(), d);
+				allDrops.put(data.getItemId(), d);
 			}
 		}
 
 		for (Entry<L2DropData, Float> i : spoilDrop.entrySet())
 		{
 			L2DropData data = i.getKey();
-			if (_allDrops.containsKey(data.getItemId()))
+			if (allDrops.containsKey(data.getItemId()))
 			{
-				_allDrops.get(data.getItemId()).addMonster(temp, true);
+				allDrops.get(data.getItemId()).addMonster(temp, true);
 			}
 			else
 			{
 				Drops d = new Drops(data.getItemId(), temp, true);
-				_allDrops.put(data.getItemId(), d);
+				allDrops.put(data.getItemId(), d);
 			}
 		}
 	}
 
 	public String getDrops(L2PcInstance player, int itemId, boolean isSpoil, int pageToShow)
 	{
-		Drops i = _allDrops.get(itemId);
+		Drops i = allDrops.get(itemId);
 		if (i == null)
 		{
 			return "ERROR";
@@ -374,7 +374,7 @@ public class SearchDropManager
 
 	public void overrideDrops(L2NpcTemplate temp)
 	{
-		for (Entry<Integer, Drops> i : _allDrops.entrySet())
+		for (Entry<Integer, Drops> i : allDrops.entrySet())
 		{
 			Drops d = i.getValue();
 			List<L2NpcTemplate> dropped = new ArrayList<>(d.getDroppedBy(false));
@@ -399,12 +399,12 @@ public class SearchDropManager
 
 	public static SearchDropManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final SearchDropManager _instance = new SearchDropManager();
+		protected static final SearchDropManager instance = new SearchDropManager();
 	}
 }

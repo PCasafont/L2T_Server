@@ -29,7 +29,7 @@ import java.util.logging.Logger;
  */
 public class DeluxeKey implements ISkillHandler
 {
-	private static Logger _log = Logger.getLogger(DeluxeKey.class.getName());
+	private static Logger log = Logger.getLogger(DeluxeKey.class.getName());
 
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.DELUXE_KEY_UNLOCK};
 
@@ -51,7 +51,7 @@ public class DeluxeKey implements ISkillHandler
 			return;
 		}
 
-		_log.fine("Delux key casting succeded.");
+		log.fine("Delux key casting succeded.");
 
 		// This is just a dummy skill handler for the golden food and crystal food skills,
 		// since the AI responce onSkillUse handles the rest.

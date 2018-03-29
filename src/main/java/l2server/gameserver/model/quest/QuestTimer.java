@@ -54,31 +54,31 @@ public class QuestTimer
 
 	// =========================================================
 	// Data Field
-	private boolean _isActive = true;
-	private String _name;
-	private Quest _quest;
-	private L2Npc _npc;
-	private L2PcInstance _player;
-	private boolean _isRepeating;
-	private ScheduledFuture<?> _schedular;
+	private boolean isActive = true;
+	private String name;
+	private Quest quest;
+	private L2Npc npc;
+	private L2PcInstance player;
+	private boolean isRepeating;
+	private ScheduledFuture<?> schedular;
 
 	// =========================================================
 	// Constructor
 	public QuestTimer(Quest quest, String name, long time, L2Npc npc, L2PcInstance player, boolean repeating)
 	{
-		_name = name;
-		_quest = quest;
-		_player = player;
-		_npc = npc;
-		_isRepeating = repeating;
+		this.name = name;
+		this.quest = quest;
+		this.player = player;
+		this.npc = npc;
+		isRepeating = repeating;
 		if (repeating)
 		{
-			_schedular = ThreadPoolManager.getInstance()
+			schedular = ThreadPoolManager.getInstance()
 					.scheduleGeneralAtFixedRate(new ScheduleTimerTask(), time, time); // Prepare auto end task
 		}
 		else
 		{
-			_schedular = ThreadPoolManager.getInstance()
+			schedular = ThreadPoolManager.getInstance()
 					.scheduleGeneral(new ScheduleTimerTask(), time); // Prepare auto end task
 		}
 	}
@@ -97,11 +97,11 @@ public class QuestTimer
 	// Method - Public
 	public void cancel()
 	{
-		_isActive = false;
+		isActive = false;
 
-		if (_schedular != null)
+		if (schedular != null)
 		{
-			_schedular.cancel(false);
+			schedular.cancel(false);
 		}
 
 		getQuest().removeQuestTimer(this);
@@ -132,37 +132,37 @@ public class QuestTimer
 	// Property - Public
 	public final boolean getIsActive()
 	{
-		return _isActive;
+		return isActive;
 	}
 
 	public final boolean getIsRepeating()
 	{
-		return _isRepeating;
+		return isRepeating;
 	}
 
 	public final Quest getQuest()
 	{
-		return _quest;
+		return quest;
 	}
 
 	public final String getName()
 	{
-		return _name;
+		return name;
 	}
 
 	public final L2Npc getNpc()
 	{
-		return _npc;
+		return npc;
 	}
 
 	public final L2PcInstance getPlayer()
 	{
-		return _player;
+		return player;
 	}
 
 	@Override
 	public final String toString()
 	{
-		return _name;
+		return name;
 	}
 }

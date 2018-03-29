@@ -6,12 +6,12 @@ package l2server.gameserver.network.clientpackets;
 public class RequestBRProductList extends L2GameClientPacket
 {
 	@SuppressWarnings("unused")
-	private int _unk;
+	private int unk;
 
 	@Override
 	public void readImpl()
 	{
-		_unk = readD();
+		unk = readD();
 	}
 
 	@Override

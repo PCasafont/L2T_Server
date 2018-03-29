@@ -25,12 +25,12 @@ public final class RequestRecipeItemMakeSelf extends L2GameClientPacket
 {
 	//
 
-	private int _id;
+	private int id;
 
 	@Override
 	protected void readImpl()
 	{
-		_id = readD();
+		id = readD();
 	}
 
 	@Override
@@ -59,6 +59,6 @@ public final class RequestRecipeItemMakeSelf extends L2GameClientPacket
 			return;
 		}
 
-		RecipeController.getInstance().requestMakeItem(activeChar, _id);
+		RecipeController.getInstance().requestMakeItem(activeChar, id);
 	}
 }

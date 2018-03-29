@@ -20,9 +20,9 @@ import java.util.List;
 
 public class L2RandomMinionData
 {
-	private List<Integer> _randomMinionIds = new ArrayList<>();
-	private List<Integer> _lastSpawnedMinionIds = new ArrayList<>();
-	private int _minionAmount;
+	private List<Integer> randomMinionIds = new ArrayList<>();
+	private List<Integer> lastSpawnedMinionIds = new ArrayList<>();
+	private int minionAmount;
 
 	public L2RandomMinionData()
 	{
@@ -35,38 +35,38 @@ public class L2RandomMinionData
 	 */
 	public L2RandomMinionData(L2RandomMinionData rhs)
 	{
-		_randomMinionIds = new ArrayList<>(rhs._randomMinionIds);
-		_lastSpawnedMinionIds = new ArrayList<>(rhs._lastSpawnedMinionIds);
-		_minionAmount = rhs._minionAmount;
+		randomMinionIds = new ArrayList<>(rhs.randomMinionIds);
+		lastSpawnedMinionIds = new ArrayList<>(rhs.lastSpawnedMinionIds);
+		minionAmount = rhs.minionAmount;
 	}
 
 	public void addMinionId(int id)
 	{
-		_randomMinionIds.add(id);
+		randomMinionIds.add(id);
 	}
 
 	public void addLastSpawnedMinionId(int id)
 	{
-		_lastSpawnedMinionIds.add(id);
+		lastSpawnedMinionIds.add(id);
 	}
 
 	public List<Integer> getMinionIds()
 	{
-		return _randomMinionIds;
+		return randomMinionIds;
 	}
 
 	public List<Integer> getLastSpawnedMinionIds()
 	{
-		return _lastSpawnedMinionIds;
+		return lastSpawnedMinionIds;
 	}
 
 	public void setAmount(int amount)
 	{
-		_minionAmount = amount;
+		minionAmount = amount;
 	}
 
 	public int getAmount()
 	{
-		return _minionAmount;
+		return minionAmount;
 	}
 }

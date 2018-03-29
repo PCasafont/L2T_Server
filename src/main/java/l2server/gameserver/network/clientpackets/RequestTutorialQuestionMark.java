@@ -21,12 +21,12 @@ import l2server.gameserver.model.quest.QuestState;
 public class RequestTutorialQuestionMark extends L2GameClientPacket
 {
 	//
-	int _number = 0;
+	int number = 0;
 
 	@Override
 	protected void readImpl()
 	{
-		_number = readD();
+		number = readD();
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class RequestTutorialQuestionMark extends L2GameClientPacket
 		QuestState qs = player.getQuestState("Q255_Tutorial");
 		if (qs != null)
 		{
-			qs.getQuest().notifyEvent("QM" + _number + "", null, player);
+			qs.getQuest().notifyEvent("QM" + number + "", null, player);
 		}
 	}
 }

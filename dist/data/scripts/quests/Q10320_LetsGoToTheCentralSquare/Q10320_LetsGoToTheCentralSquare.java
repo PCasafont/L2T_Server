@@ -32,15 +32,15 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 	public static String qn = "Q10320_LetsGoToTheCentralSquare";
 
 	// NPC
-	private int _pantheon = 32972;
-	private int _theodore = 32975;
+	private int pantheon = 32972;
+	private int theodore = 32975;
 
 	public Q10320_LetsGoToTheCentralSquare(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(_pantheon);
-		addTalkId(_pantheon);
-		addTalkId(_theodore);
+		addStartNpc(pantheon);
+		addTalkId(pantheon);
+		addTalkId(theodore);
 	}
 
 	@Override
@@ -54,7 +54,7 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _pantheon && event.equalsIgnoreCase("32972-03.htm"))
+		if (npc.getNpcId() == pantheon && event.equalsIgnoreCase("32972-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
@@ -63,7 +63,7 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 			// Reset video if it was shown before
 			st.deleteGlobalQuestVar("ZoneVid523400");
 		}
-		else if (npc.getNpcId() == _theodore && event.equalsIgnoreCase("32975-02.htm") && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == theodore && event.equalsIgnoreCase("32975-02.htm") && st.getInt("cond") == 1)
 		{
 			st.unset("cond");
 			st.giveItems(57, 3000);
@@ -87,7 +87,7 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _pantheon)
+		if (npc.getNpcId() == pantheon)
 		{
 			switch (st.getState())
 			{
@@ -109,7 +109,7 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == _theodore && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == theodore && st.getInt("cond") == 1)
 		{
 			htmltext = "32975-01.htm";
 		}

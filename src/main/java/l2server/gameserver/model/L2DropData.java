@@ -29,20 +29,20 @@ public class L2DropData
 {
 	public static final int MAX_CHANCE = 100;
 
-	private int _itemId;
-	private int _minDrop;
-	private int _maxDrop;
-	private float _chance;
-	private String _questID = null;
-	private String[] _stateID = null;
-	private boolean _custom = false;
+	private int itemId;
+	private int minDrop;
+	private int maxDrop;
+	private float chance;
+	private String questID = null;
+	private String[] stateID = null;
+	private boolean custom = false;
 
 	public L2DropData(int itemId, int min, int max, float chance)
 	{
-		_itemId = itemId;
-		_minDrop = min;
-		_maxDrop = max;
-		_chance = chance;
+		this.itemId = itemId;
+		minDrop = min;
+		maxDrop = max;
+		this.chance = chance;
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class L2DropData
 	 */
 	public int getItemId()
 	{
-		return _itemId;
+		return itemId;
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class L2DropData
 	 */
 	public void setItemId(int itemId)
 	{
-		_itemId = itemId;
+		this.itemId = itemId;
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class L2DropData
 	 */
 	public int getMinDrop()
 	{
-		return _minDrop;
+		return minDrop;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class L2DropData
 	 */
 	public int getMaxDrop()
 	{
-		return _maxDrop;
+		return maxDrop;
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class L2DropData
 	 */
 	public float getChance()
 	{
-		return _chance;
+		return chance;
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class L2DropData
 	 */
 	public void setMinDrop(int mindrop)
 	{
-		_minDrop = mindrop;
+		this.minDrop = mindrop;
 	}
 
 	/**
@@ -112,7 +112,7 @@ public class L2DropData
 	 */
 	public void setMaxDrop(int maxdrop)
 	{
-		_maxDrop = maxdrop;
+		this.maxDrop = maxdrop;
 	}
 
 	/**
@@ -122,7 +122,7 @@ public class L2DropData
 	 */
 	public void setChance(int chance)
 	{
-		_chance = chance;
+		this.chance = chance;
 	}
 
 	/**
@@ -132,7 +132,7 @@ public class L2DropData
 	 */
 	public String[] getStateIDs()
 	{
-		return _stateID;
+		return stateID;
 	}
 
 	/**
@@ -142,7 +142,7 @@ public class L2DropData
 	 */
 	public void addStates(String[] list)
 	{
-		_stateID = list;
+		stateID = list;
 	}
 
 	/**
@@ -152,7 +152,7 @@ public class L2DropData
 	 */
 	public String getQuestID()
 	{
-		return _questID;
+		return questID;
 	}
 
 	/**
@@ -160,7 +160,7 @@ public class L2DropData
 	 */
 	public void setQuestID(String questID)
 	{
-		_questID = questID;
+		this.questID = questID;
 	}
 
 	/**
@@ -170,17 +170,17 @@ public class L2DropData
 	 */
 	public boolean isQuestDrop()
 	{
-		return _questID != null && _stateID != null;
+		return questID != null && stateID != null;
 	}
 
 	public void setCustom()
 	{
-		_custom = true;
+		custom = true;
 	}
 
 	public boolean isCustom()
 	{
-		return _custom;
+		return custom;
 	}
 
 	/**
@@ -209,7 +209,7 @@ public class L2DropData
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + _itemId;
+		result = prime * result + itemId;
 		return result;
 	}
 
@@ -232,6 +232,6 @@ public class L2DropData
 			return false;
 		}
 		final L2DropData other = (L2DropData) obj;
-		return _itemId == other._itemId;
+		return itemId == other.itemId;
 	}
 }

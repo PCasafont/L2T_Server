@@ -52,10 +52,10 @@ import java.util.stream.Collectors;
  */
 public class ArtificialPlayersManager implements Reloadable
 {
-	List<L2ApInstance> _players = new ArrayList<>();
+	List<L2ApInstance> players = new ArrayList<>();
 
-	ScheduledFuture<?> _pvpCheck = null;
-	List<L2Party> _partiesSent = new ArrayList<>();
+	ScheduledFuture<?> pvpCheck = null;
+	List<L2Party> partiesSent = new ArrayList<>();
 
 	private ArtificialPlayersManager()
 	{
@@ -65,13 +65,13 @@ public class ArtificialPlayersManager implements Reloadable
 
 	public static ArtificialPlayersManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@Override
 	public boolean reload()
 	{
-		_players.clear();
+		players.clear();
 
 		Connection con = null;
 		try
@@ -98,7 +98,7 @@ public class ArtificialPlayersManager implements Reloadable
 				//player.setAI(null);
 				//player.getAI();
 
-				_players.add(player);
+				players.add(player);
 			}
 		}
 		catch (Exception e)
@@ -119,22 +119,22 @@ public class ArtificialPlayersManager implements Reloadable
 
 		//createRandomParty();
 
-		Log.info("Loaded " + _players.size() + " artificial players.");
+		Log.info("Loaded " + players.size() + " artificial players.");
 
-		if (_pvpCheck != null)
+		if (pvpCheck != null)
 		{
-			_pvpCheck.cancel(false);
+			pvpCheck.cancel(false);
 		}
 
-		_pvpCheck = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
+		pvpCheck = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
 		{
-			for (L2Party party : _partiesSent)
+			for (L2Party party : partiesSent)
 			{
 				party.getPartyMembers().forEach(L2PcInstance::deleteMe);
 			}
 
-			_partiesSent.clear();
-			if (_partiesSent.isEmpty())
+			partiesSent.clear();
+			if (partiesSent.isEmpty())
 			{
 				return;
 			}
@@ -182,7 +182,7 @@ public class ArtificialPlayersManager implements Reloadable
 
 			if (biggestAlly - smallestAlly > 5)
 			{
-				while (_partiesSent.size() * 7 < biggestAlly)
+				while (partiesSent.size() * 7 < biggestAlly)
 				{
 					L2Party party = createRandomParty();
 					for (L2PcInstance member : party.getPartyMembers())
@@ -191,12 +191,12 @@ public class ArtificialPlayersManager implements Reloadable
 						member.setPvpFlagLasts(System.currentTimeMillis() + Config.PVP_NORMAL_TIME);
 						member.startPvPFlag();
 					}
-					_partiesSent.add(party);
+					partiesSent.add(party);
 				}
 			}
 			else if (pvpers < 5)
 			{
-				while (_partiesSent.size() < 2)
+				while (partiesSent.size() < 2)
 				{
 					L2Party party = createRandomParty();
 					for (L2PcInstance member : party.getPartyMembers())
@@ -204,12 +204,12 @@ public class ArtificialPlayersManager implements Reloadable
 						member.teleToLocation(-24501, 187976, -3975, true);
 						member.startPvPFlag();
 					}
-					_partiesSent.add(party);
+					partiesSent.add(party);
 				}
 			}
-			else if (_partiesSent.size() > 0 && pvpers > 20)
+			else if (partiesSent.size() > 0 && pvpers > 20)
 			{
-				L2Party party = _partiesSent.remove(0);
+				L2Party party = partiesSent.remove(0);
 				party.getPartyMembers().forEach(L2PcInstance::deleteMe);
 			}
 		}, 100000L, 100000L);
@@ -317,7 +317,7 @@ public class ArtificialPlayersManager implements Reloadable
 
 		//player.setOnlineStatus(true, false);
 		//player.spawnMe();
-		_players.add(player);
+		players.add(player);
 
 		return player;
 	}
@@ -330,7 +330,7 @@ public class ArtificialPlayersManager implements Reloadable
 	public L2Party createParty(List<Integer> classCombination)
 	{
 		List<L2ApInstance> available =
-				_players.stream().filter(player -> player.getParty() == null).collect(Collectors.toList());
+				players.stream().filter(player -> player.getParty() == null).collect(Collectors.toList());
 
 		List<L2ApInstance> members = new ArrayList<>();
 		available.stream().filter(player -> classCombination.contains(player.getClassId())).forEachOrdered(player ->
@@ -421,13 +421,13 @@ public class ArtificialPlayersManager implements Reloadable
 
 	public List<L2ApInstance> getAllAPlayers()
 	{
-		return _players;
+		return players;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ArtificialPlayersManager _instance = new ArtificialPlayersManager();
+		protected static final ArtificialPlayersManager instance = new ArtificialPlayersManager();
 	}
 
 	@Override

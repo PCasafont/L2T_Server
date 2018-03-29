@@ -5,22 +5,22 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExEventMatchSpelledInfo extends L2GameServerPacket
 {
-	private int _numberofeffects;
-	private int _type;
-	private int _objectID;
+	private int numberofeffects;
+	private int type;
+	private int objectID;
 
 	public ExEventMatchSpelledInfo(int numberofeffects, int type, int objectID)
 	{
-		_numberofeffects = numberofeffects;
-		_type = type;
-		_objectID = objectID;
+		this.numberofeffects = numberofeffects;
+		this.type = type;
+		this.objectID = objectID;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeD(_numberofeffects);
-		writeD(_type);
-		writeD(_objectID);
+		writeD(numberofeffects);
+		writeD(type);
+		writeD(objectID);
 	}
 }

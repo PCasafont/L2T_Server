@@ -37,18 +37,18 @@ import ai.group_template.L2AttackableAIScript;
 
 public class BloodyHorn extends L2AttackableAIScript
 {
-	private static final int _bloodyHorn = 19463;
-	private static final int[] _debufSkills = {15537, 15538, 15539, 15540};
+	private static final int bloodyHorn = 19463;
+	private static final int[] debufSkills = {15537, 15538, 15539, 15540};
 
 	public BloodyHorn(int id, String name, String descr)
 	{
 		super(id, name, descr);
 
-		addFirstTalkId(_bloodyHorn);
+		addFirstTalkId(bloodyHorn);
 
-		addSpawnId(_bloodyHorn);
+		addSpawnId(bloodyHorn);
 
-		addSpellFinishedId(_bloodyHorn);
+		addSpellFinishedId(bloodyHorn);
 
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
 		{
@@ -57,7 +57,7 @@ public class BloodyHorn extends L2AttackableAIScript
 				continue;
 			}
 
-			if (spawn.getNpcId() == _bloodyHorn)
+			if (spawn.getNpcId() == bloodyHorn)
 			{
 				notifySpawn(spawn.getNpc());
 			}
@@ -81,7 +81,7 @@ public class BloodyHorn extends L2AttackableAIScript
 
 			int level = Rnd.get(1, 2);
 
-			npc.doCast(SkillTable.getInstance().getInfo(_debufSkills[Rnd.get(_debufSkills.length)], level));
+			npc.doCast(SkillTable.getInstance().getInfo(debufSkills[Rnd.get(debufSkills.length)], level));
 
 			player.sendPacket(new ExShowScreenMessage(level == 1 ? 1802313 : 1802306, 2, 3000));
 		}

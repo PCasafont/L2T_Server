@@ -90,7 +90,7 @@ public class PrivateWarehouse implements IBypassHandler
 
 				if (Config.DEBUG)
 				{
-					_log.fine("Source: L2WarehouseInstance.java; Player: " + activeChar.getName() +
+					log.fine("Source: L2WarehouseInstance.java; Player: " + activeChar.getName() +
 							"; Command: showDepositWindow; Message: Showing items to deposit.");
 				}
 
@@ -102,7 +102,7 @@ public class PrivateWarehouse implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			_log.info("Exception in " + getClass().getSimpleName());
+			log.info("Exception in " + getClass().getSimpleName());
 		}
 		return false;
 	}
@@ -130,7 +130,7 @@ public class PrivateWarehouse implements IBypassHandler
 
 		if (Config.DEBUG)
 		{
-			_log.fine("Source: L2WarehouseInstance.java; Player: " + player.getName() +
+			log.fine("Source: L2WarehouseInstance.java; Player: " + player.getName() +
 					"; Command: showRetrieveWindow; Message: Showing stored items.");
 		}
 	}

@@ -34,24 +34,24 @@ import java.util.logging.Level;
 
 public class L2SkillTeleport extends L2Skill
 {
-	private final String _recallType;
-	private final Location _loc;
+	private final String recallType;
+	private final Location loc;
 
 	public L2SkillTeleport(StatsSet set)
 	{
 		super(set);
 
-		_recallType = set.getString("recallType", "");
+		recallType = set.getString("recallType", "");
 		String coords = set.getString("teleCoords", null);
 		if (coords != null)
 		{
 			String[] valuesSplit = coords.split(",");
-			_loc = new Location(Integer.parseInt(valuesSplit[0]), Integer.parseInt(valuesSplit[1]),
+			loc = new Location(Integer.parseInt(valuesSplit[0]), Integer.parseInt(valuesSplit[1]),
 					Integer.parseInt(valuesSplit[2]));
 		}
 		else
 		{
-			_loc = null;
+			loc = null;
 		}
 	}
 
@@ -143,30 +143,30 @@ public class L2SkillTeleport extends L2Skill
 				Location loc = null;
 				if (getSkillType() == L2SkillType.TELEPORT)
 				{
-					if (_loc != null)
+					if (this.loc != null)
 					{
 						// target is not player OR player is not flying or flymounted
 						// TODO: add check for gracia continent coords
 						if (!(target instanceof L2PcInstance) ||
 								!(target.isFlying() || ((L2PcInstance) target).isFlyingMounted()))
 						{
-							loc = _loc;
+							loc = this.loc;
 						}
 					}
 				}
 				else
 				{
-					if (_recallType.equalsIgnoreCase("Castle"))
+					if (recallType.equalsIgnoreCase("Castle"))
 					{
 						loc = MapRegionTable.getInstance()
 								.getTeleToLocation(target, MapRegionTable.TeleportWhereType.Castle);
 					}
-					else if (_recallType.equalsIgnoreCase("ClanHall"))
+					else if (recallType.equalsIgnoreCase("ClanHall"))
 					{
 						loc = MapRegionTable.getInstance()
 								.getTeleToLocation(target, MapRegionTable.TeleportWhereType.ClanHall);
 					}
-					else if (_recallType.equalsIgnoreCase("Fortress"))
+					else if (recallType.equalsIgnoreCase("Fortress"))
 					{
 						loc = MapRegionTable.getInstance()
 								.getTeleToLocation(target, MapRegionTable.TeleportWhereType.Fortress);

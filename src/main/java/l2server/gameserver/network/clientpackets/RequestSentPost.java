@@ -32,12 +32,12 @@ import l2server.gameserver.util.Util;
 public final class RequestSentPost extends L2GameClientPacket
 {
 
-	private int _msgId;
+	private int msgId;
 
 	@Override
 	protected void readImpl()
 	{
-		_msgId = readD();
+		msgId = readD();
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public final class RequestSentPost extends L2GameClientPacket
 			return;
 		}
 
-		Message msg = MailManager.getInstance().getMessage(_msgId);
+		Message msg = MailManager.getInstance().getMessage(msgId);
 		if (msg == null)
 		{
 			return;

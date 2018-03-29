@@ -16301,7 +16301,7 @@ public final class SystemMessageId
 	 * ID: 3881<br>
 	 * Message: You cannot redeem it because you don't have  points.
 	 */
-	public static final SystemMessageId YOU_CANNOT_REDEEM_IT_BECAUSE_YOU_DONT_HAVE__POINTS;
+	public static final SystemMessageId YOU_CANNOT_REDEEM_IT_BECAUSE_YOU_DONT_HAVE_POINTS;
 
 	/**
 	 * ID: 3882<br>
@@ -21184,7 +21184,7 @@ public final class SystemMessageId
 		S1_HAS_ACCEPTED_THE_REQUEST = new SystemMessageId(3878);
 		THE_NUMBER_OF_CLAN_REQUEST_POINTS_HAS_INCREASED_TO_S1 = new SystemMessageId(3879);
 		A_CLAN_REQUEST_QUEST_IS_IN_PROGRESS = new SystemMessageId(3880);
-		YOU_CANNOT_REDEEM_IT_BECAUSE_YOU_DONT_HAVE__POINTS = new SystemMessageId(3881);
+		YOU_CANNOT_REDEEM_IT_BECAUSE_YOU_DONT_HAVE_POINTS = new SystemMessageId(3881);
 		BECAUSE_S1_DIED_S2_S3_IS_DESTROYED = new SystemMessageId(3882);
 		IF_YOU_CANCEL_A_DECLARED_WAR_YOU_WILL_LOSE_5000_CLAN_REPUTATION = new SystemMessageId(3883);
 		WAITING_FOR_THE_EVENT_KALIELS_BLESSING_TO_START = new SystemMessageId(3887);
@@ -21706,36 +21706,36 @@ public final class SystemMessageId
 		}
 	}
 
-	private final int _id;
-	private String _name;
-	private byte _params;
-	private SMLocalisation[] _localisations;
-	private SystemMessage _staticSystemMessage;
+	private final int id;
+	private String name;
+	private byte params;
+	private SMLocalisation[] localisations;
+	private SystemMessage staticSystemMessage;
 
 	private SystemMessageId(final int id)
 	{
-		_id = id;
-		_localisations = EMPTY_SML_ARRAY;
+		this.id = id;
+		localisations = EMPTY_SML_ARRAY;
 	}
 
 	public final int getId()
 	{
-		return _id;
+		return id;
 	}
 
 	private void setName(final String name)
 	{
-		_name = name;
+		this.name = name;
 	}
 
 	public final String getName()
 	{
-		return _name;
+		return name;
 	}
 
 	public final int getParamCount()
 	{
-		return _params;
+		return params;
 	}
 
 	/**
@@ -21757,18 +21757,18 @@ public final class SystemMessageId
 
 		if (params != 0)
 		{
-			_staticSystemMessage = null;
+			staticSystemMessage = null;
 		}
 
-		_params = (byte) params;
+        this.params = (byte) params;
 	}
 
 	public final SMLocalisation getLocalisation(final String lang)
 	{
 		SMLocalisation sml;
-		for (int i = _localisations.length; i-- > 0; )
+		for (int i = localisations.length; i-- > 0; )
 		{
-			sml = _localisations[i];
+			sml = localisations[i];
 			if (sml.getLanguage().hashCode() == lang.hashCode())
 			{
 				return sml;
@@ -21779,25 +21779,25 @@ public final class SystemMessageId
 
 	public final void attachLocalizedText(final String lang, final String text)
 	{
-		final int length = _localisations.length;
-		final SMLocalisation[] localisations = Arrays.copyOf(_localisations, length + 1);
+		final int length = localisations.length;
+		final SMLocalisation[] localisations = Arrays.copyOf(this.localisations, length + 1);
 		localisations[length] = new SMLocalisation(lang, text);
-		_localisations = localisations;
+		this.localisations = localisations;
 	}
 
 	public final void removeAllLocalisations()
 	{
-		_localisations = EMPTY_SML_ARRAY;
+		localisations = EMPTY_SML_ARRAY;
 	}
 
 	public final SystemMessage getStaticSystemMessage()
 	{
-		return _staticSystemMessage;
+		return staticSystemMessage;
 	}
 
 	public final void setStaticSystemMessage(final SystemMessage sm)
 	{
-		_staticSystemMessage = sm;
+		staticSystemMessage = sm;
 	}
 
 	@Override
@@ -21808,23 +21808,23 @@ public final class SystemMessageId
 
 	public static final class SMLocalisation
 	{
-		private final String _lang;
-		private final Builder _builder;
+		private final String lang;
+		private final Builder builder;
 
 		public SMLocalisation(final String lang, final String text)
 		{
-			_lang = lang;
-			_builder = newBuilder(text);
+			this.lang = lang;
+			builder = newBuilder(text);
 		}
 
 		public final String getLanguage()
 		{
-			return _lang;
+			return lang;
 		}
 
 		public final String getLocalisation(final Object... params)
 		{
-			return _builder.toString(params);
+			return builder.toString(params);
 		}
 	}
 
@@ -21845,11 +21845,11 @@ public final class SystemMessageId
 	 */
 	private static final class BuilderContainer implements Builder
 	{
-		private final Builder[] _builders;
+		private final Builder[] builders;
 
 		public BuilderContainer(final Builder[] builders)
 		{
-			_builders = builders;
+			this.builders = builders;
 		}
 
 		@Override
@@ -21861,7 +21861,7 @@ public final class SystemMessageId
 		@Override
 		public final String toString(final Object... params)
 		{
-			final int buildersLength = _builders.length;
+			final int buildersLength = builders.length;
 			final int paramsLength = params.length;
 			final String[] builds = new String[buildersLength];
 
@@ -21872,7 +21872,7 @@ public final class SystemMessageId
 			{
 				for (i = buildersLength; i-- > 0; )
 				{
-					builder = _builders[i];
+					builder = builders[i];
 					paramIndex = builder.getIndex();
 					build = paramIndex != -1 && paramIndex < paramsLength ? builder.toString(params[paramIndex]) :
 							builder.toString();
@@ -21884,7 +21884,7 @@ public final class SystemMessageId
 			{
 				for (i = buildersLength; i-- > 0; )
 				{
-					build = _builders[i].toString();
+					build = builders[i].toString();
 					buildTextLen += build.length();
 					builds[i] = build;
 				}
@@ -21910,11 +21910,11 @@ public final class SystemMessageId
 	 */
 	private static final class BuilderText implements Builder
 	{
-		private final String _text;
+		private final String text;
 
 		public BuilderText(final String text)
 		{
-			_text = text;
+			this.text = text;
 		}
 
 		@Override
@@ -21938,7 +21938,7 @@ public final class SystemMessageId
 		@Override
 		public final String toString()
 		{
-			return _text;
+			return text;
 		}
 	}
 
@@ -21947,7 +21947,7 @@ public final class SystemMessageId
 	 */
 	private static final class BuilderObject implements Builder
 	{
-		private final int _index;
+		private final int index;
 
 		public BuilderObject(final int id)
 		{
@@ -21956,7 +21956,7 @@ public final class SystemMessageId
 				throw new RuntimeException("Illegal id " + id);
 			}
 
-			_index = id - 1;
+			index = id - 1;
 		}
 
 		@Override
@@ -21979,13 +21979,13 @@ public final class SystemMessageId
 		@Override
 		public final int getIndex()
 		{
-			return _index;
+			return index;
 		}
 
 		@Override
 		public final String toString()
 		{
-			return "[PARAM-" + (_index + 1) + "]";
+			return "[PARAM-" + (index + 1) + "]";
 		}
 	}
 
@@ -21994,24 +21994,24 @@ public final class SystemMessageId
 	 */
 	private static final class FastStringBuilder
 	{
-		private final char[] _array;
-		private int _len;
+		private final char[] array;
+		private int len;
 
 		public FastStringBuilder(final int capacity)
 		{
-			_array = new char[capacity];
+			array = new char[capacity];
 		}
 
 		public final void append(final String text)
 		{
-			text.getChars(0, text.length(), _array, _len);
-			_len += text.length();
+			text.getChars(0, text.length(), array, len);
+			len += text.length();
 		}
 
 		@Override
 		public final String toString()
 		{
-			return new String(_array);
+			return new String(array);
 		}
 	}
 }

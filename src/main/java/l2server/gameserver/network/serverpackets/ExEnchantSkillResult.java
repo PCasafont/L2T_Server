@@ -28,11 +28,11 @@ public class ExEnchantSkillResult extends L2GameServerPacket
 		return result ? STATIC_PACKET_TRUE : STATIC_PACKET_FALSE;
 	}
 
-	private boolean _enchanted;
+	private boolean enchanted;
 
 	public ExEnchantSkillResult(boolean enchanted)
 	{
-		_enchanted = enchanted;
+		this.enchanted = enchanted;
 	}
 
     /*
@@ -45,6 +45,6 @@ public class ExEnchantSkillResult extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_enchanted ? 1 : 0);
+		writeD(enchanted ? 1 : 0);
 	}
 }

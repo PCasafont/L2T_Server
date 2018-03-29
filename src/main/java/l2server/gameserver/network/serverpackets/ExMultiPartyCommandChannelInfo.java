@@ -24,11 +24,11 @@ import l2server.gameserver.model.L2Party;
  */
 public class ExMultiPartyCommandChannelInfo extends L2GameServerPacket
 {
-	private L2CommandChannel _channel;
+	private L2CommandChannel channel;
 
 	public ExMultiPartyCommandChannelInfo(L2CommandChannel channel)
 	{
-		_channel = channel;
+		this.channel = channel;
 	}
 
     /*
@@ -41,19 +41,19 @@ public class ExMultiPartyCommandChannelInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		if (_channel == null)
+		if (channel == null)
 		{
 			return;
 		}
 
 		// L2PcInstance player = this.getClient().getActiveChar();
 
-		writeS(_channel.getChannelLeader().getName()); // Channelowner
+		writeS(channel.getChannelLeader().getName()); // Channelowner
 		writeD(0); // Channelloot 0 or 1
-		writeD(_channel.getMemberCount());
+		writeD(channel.getMemberCount());
 
-		writeD(_channel.getPartys().size());
-		for (L2Party p : _channel.getPartys())
+		writeD(channel.getPartys().size());
+		for (L2Party p : channel.getPartys())
 		{
 			writeS(p.getLeader().getName()); // Leadername
 			writeD(p.getPartyLeaderOID()); // Leaders ObjId

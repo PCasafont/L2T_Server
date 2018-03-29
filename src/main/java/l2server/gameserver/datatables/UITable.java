@@ -32,23 +32,23 @@ import java.util.Map;
  */
 public class UITable
 {
-	private Map<Integer, List<ActionKey>> _storedKeys;
-	private Map<Integer, List<Integer>> _storedCategories;
+	private Map<Integer, List<ActionKey>> storedKeys;
+	private Map<Integer, List<Integer>> storedCategories;
 
 	public static UITable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private UITable()
 	{
-		_storedKeys = new HashMap<>();
-		_storedCategories = new HashMap<>();
+		storedKeys = new HashMap<>();
+		storedCategories = new HashMap<>();
 
 		parseCatData();
 		parseKeyData();
-		Log.info("UITable: Loaded " + _storedCategories.size() + " Categories.");
-		Log.info("UITable: Loaded " + _storedKeys.size() + " Keys.");
+		Log.info("UITable: Loaded " + storedCategories.size() + " Categories.");
+		Log.info("UITable: Loaded " + storedKeys.size() + " Keys.");
 	}
 
 	private void parseCatData()
@@ -88,46 +88,46 @@ public class UITable
 
 	private void insertCategory(int cat, int cmd)
 	{
-		if (_storedCategories.containsKey(cat))
+		if (storedCategories.containsKey(cat))
 		{
-			_storedCategories.get(cat).add(cmd);
+			storedCategories.get(cat).add(cmd);
 		}
 		else
 		{
 			List<Integer> tmp = new ArrayList<>();
 			tmp.add(cmd);
-			_storedCategories.put(cat, tmp);
+			storedCategories.put(cat, tmp);
 		}
 	}
 
 	private void insertKey(int cat, int cmdId, int key, int tgKey1, int tgKey2, int show)
 	{
 		ActionKey tmk = new ActionKey(cat, cmdId, key, tgKey1, tgKey2, show);
-		if (_storedKeys.containsKey(cat))
+		if (storedKeys.containsKey(cat))
 		{
-			_storedKeys.get(cat).add(tmk);
+			storedKeys.get(cat).add(tmk);
 		}
 		else
 		{
 			List<ActionKey> tmp = new ArrayList<>();
 			tmp.add(tmk);
-			_storedKeys.put(cat, tmp);
+			storedKeys.put(cat, tmp);
 		}
 	}
 
 	public Map<Integer, List<Integer>> getCategories()
 	{
-		return _storedCategories;
+		return storedCategories;
 	}
 
 	public Map<Integer, List<ActionKey>> getKeys()
 	{
-		return _storedKeys;
+		return storedKeys;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final UITable _instance = new UITable();
+		protected static final UITable instance = new UITable();
 	}
 }

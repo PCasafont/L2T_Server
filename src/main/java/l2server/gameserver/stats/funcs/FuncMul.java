@@ -20,12 +20,12 @@ import l2server.gameserver.stats.Stats;
 
 public class FuncMul extends Func
 {
-	private final Lambda _lambda;
+	private final Lambda lambda;
 
 	public FuncMul(Stats pStat, Object owner, Lambda lambda)
 	{
 		super(pStat, owner);
-		_lambda = lambda;
+		this.lambda = lambda;
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class FuncMul extends Func
 	{
 		if (cond == null || cond.test(env))
 		{
-			env.value *= _lambda.calc(env);
+			env.value *= lambda.calc(env);
 		}
 	}
 }

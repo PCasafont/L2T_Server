@@ -172,16 +172,16 @@ public class Base64
 	/* Determine which ALPHABET to use. */
 	static
 	{
-		byte[] __bytes;
+		byte[] _bytes;
 		try
 		{
-			__bytes = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".getBytes(PREFERRED_ENCODING);
+			_bytes = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".getBytes(PREFERRED_ENCODING);
 		} // end try
 		catch (java.io.UnsupportedEncodingException use)
 		{
-			__bytes = _NATIVE_ALPHABET; // Fall back to native encoding
+			_bytes = _NATIVE_ALPHABET; // Fall back to native encoding
 		} // end catch
-		ALPHABET = __bytes;
+		ALPHABET = _bytes;
 	} // end static
 
 	/**

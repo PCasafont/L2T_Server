@@ -41,32 +41,32 @@ import java.util.List;
 public class Teredor extends L2AttackableAIScript
 {
     //Quest
-    private static final boolean _debug = false;
-    private static final String _qn = "Teredor";
+    private static final boolean debug = false;
+    private static final String qn = "Teredor";
 
     //Id's
-    private static final int _templateID = 160;
-    private static final int _teredor = 25785;
-    private static final int _filaur = 30535;
-    private static final int _egg1 = 19023;
-    private static final int _egg2 = 18996;
-    private static final int _eliteMillipede = 19015;
-    private static final int _teredorTransparent1 = 18998;
-    private static final int _adventureGuildsman = 33385;
-    private static final int[] _eggMinions = {18993, 19016, 19000, 18995, 18994};
-    private static final int[] _allMobs = {18993, 19016, 19000, 18995, 18994, 19023, 25785, 18996, 19015, 19024};
+    private static final int templateID = 160;
+    private static final int teredor = 25785;
+    private static final int filaur = 30535;
+    private static final int egg1 = 19023;
+    private static final int egg2 = 18996;
+    private static final int eliteMillipede = 19015;
+    private static final int teredorTransparent1 = 18998;
+    private static final int adventureGuildsman = 33385;
+    private static final int[] eggMinions = {18993, 19016, 19000, 18995, 18994};
+    private static final int[] allMobs = {18993, 19016, 19000, 18995, 18994, 19023, 25785, 18996, 19015, 19024};
 
     //Skills
-    private static final L2Skill _teredorFluInfection = SkillTable.getInstance().getInfo(14113, 1);
+    private static final L2Skill teredorFluInfection = SkillTable.getInstance().getInfo(14113, 1);
 
     //Spawns
-    private static final int[] _adventureSpawn = {177228, -186305, -3800, 339};
+    private static final int[] adventureSpawn = {177228, -186305, -3800, 339};
 
     //Others
-    private static List<L2NpcWalkerNode> _route = new ArrayList<L2NpcWalkerNode>();
+    private static List<L2NpcWalkerNode> route = new ArrayList<L2NpcWalkerNode>();
 
     //Cords
-    private static final Location[] _playerEnter = {
+    private static final Location[] playerEnter = {
             new Location(186933, -173534, -3878),
             new Location(186787, -173618, -3878),
             new Location(186907, -173708, -3878),
@@ -74,7 +74,7 @@ public class Teredor extends L2AttackableAIScript
             new Location(186998, -173579, -3878)
     };
 
-    private static final int[][] _walkRoutes = {
+    private static final int[][] walkRoutes = {
             {177127, -185282, -3804, 19828},
             {177138, -184701, -3804, 16417},
             {176616, -184448, -3796, 29126},
@@ -105,30 +105,30 @@ public class Teredor extends L2AttackableAIScript
     {
         super(questId, name, descr);
 
-        addTalkId(_adventureGuildsman);
-        addTalkId(_filaur);
-        addStartNpc(_filaur);
-        addSpellFinishedId(_teredor);
-        addAggroRangeEnterId(_egg1);
-        addAggroRangeEnterId(_egg2);
-        addAggroRangeEnterId(_teredorTransparent1);
+        addTalkId(adventureGuildsman);
+        addTalkId(filaur);
+        addStartNpc(filaur);
+        addSpellFinishedId(teredor);
+        addAggroRangeEnterId(egg1);
+        addAggroRangeEnterId(egg2);
+        addAggroRangeEnterId(teredorTransparent1);
 
-        for (int id : _allMobs)
+        for (int id : allMobs)
         {
             addKillId(id);
             addAttackId(id);
         }
 
-        for (int[] coord : _walkRoutes)
+        for (int[] coord : walkRoutes)
         {
-            _route.add(new L2NpcWalkerNode(coord[0], coord[1], coord[2], 0, "", true));
+            route.add(new L2NpcWalkerNode(coord[0], coord[1], coord[2], 0, "", true));
         }
     }
 
     @Override
     public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onSpellFinished: " + skill.getName());
         }
@@ -151,13 +151,13 @@ public class Teredor extends L2AttackableAIScript
         if (wrld != null && wrld instanceof TeredorWorld)
         {
             TeredorWorld world = (TeredorWorld) wrld;
-            if (npc.getNpcId() == _teredor && skill.getId() == 14112) //Teredor Poison
+            if (npc.getNpcId() == teredor && skill.getId() == 14112) //Teredor Poison
             {
                 for (L2PcInstance players : L2World.getInstance().getAllPlayers().values())
                 {
                     if (players != null && players.getInstanceId() == world.instanceId)
                     {
-                        addSpawn(_teredorTransparent1, players.getX(), players.getY(), players.getZ(), 0, false, 0,
+                        addSpawn(teredorTransparent1, players.getX(), players.getY(), players.getZ(), 0, false, 0,
                                 true, world.instanceId);
                     }
                 }
@@ -169,7 +169,7 @@ public class Teredor extends L2AttackableAIScript
     @Override
     public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
@@ -194,7 +194,7 @@ public class Teredor extends L2AttackableAIScript
             TeredorWorld world = (TeredorWorld) wrld;
             if (event.equalsIgnoreCase("stage_1_spawn_boss"))
             {
-                world.Teredor = addSpawn(_teredor, 177228, -186305, -3800, 59352, false, 0, false, world.instanceId);
+                world.Teredor = addSpawn(teredor, 177228, -186305, -3800, 59352, false, 0, false, world.instanceId);
 
                 startBossWalk(world);
             }
@@ -207,7 +207,7 @@ public class Teredor extends L2AttackableAIScript
                 if (npc != null && !npc.isDead() && npc.getTarget() != null)
                 {
                     spawnMinions(world, npc, npc.getTarget().getActingPlayer(),
-                            _eggMinions[Rnd.get(_eggMinions.length)], 1);
+                            eggMinions[Rnd.get(eggMinions.length)], 1);
                 }
             }
         }
@@ -229,7 +229,7 @@ public class Teredor extends L2AttackableAIScript
     @Override
     public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAttack: " + attacker.getName());
         }
@@ -238,7 +238,7 @@ public class Teredor extends L2AttackableAIScript
         if (tmpWorld instanceof TeredorWorld)
         {
             final TeredorWorld world = (TeredorWorld) tmpWorld;
-            if (npc.getNpcId() == _teredor)
+            if (npc.getNpcId() == teredor)
             {
                 if (world.bossIsInPause && world.bossIsReady)
                 {
@@ -246,7 +246,7 @@ public class Teredor extends L2AttackableAIScript
 
                     stopBossWalk(world);
 
-                    spawnMinions(world, npc, attacker, _eliteMillipede, 3);
+                    spawnMinions(world, npc, attacker, eliteMillipede, 3);
                 }
                 else if (!world.bossIsInPause && world.bossIsReady &&
                         (world.status == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.85 ||
@@ -270,7 +270,7 @@ public class Teredor extends L2AttackableAIScript
     @Override
     public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAggroRangeEnter: " + player.getName());
         }
@@ -278,13 +278,13 @@ public class Teredor extends L2AttackableAIScript
         InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
         if (tmpworld instanceof TeredorWorld)
         {
-            if ((npc.getNpcId() == _egg1 || npc.getNpcId() == _egg2) && npc.getDisplayEffect() == 0)
+            if ((npc.getNpcId() == egg1 || npc.getNpcId() == egg2) && npc.getDisplayEffect() == 0)
             {
-                if (npc.getNpcId() == _egg1)
+                if (npc.getNpcId() == egg1)
                 {
                     npc.setDisplayEffect(3);
                 }
-                else if (npc.getNpcId() == _egg2)
+                else if (npc.getNpcId() == egg2)
                 {
                     npc.setDisplayEffect(2);
                 }
@@ -294,15 +294,15 @@ public class Teredor extends L2AttackableAIScript
                 //Custom but funny
                 if (Rnd.get(100) > 30)
                 {
-                    npc.doCast(_teredorFluInfection);
+                    npc.doCast(teredorFluInfection);
                 }
 
                 startQuestTimer("stage_all_egg", 5000, npc, null); // 5sec?
             }
-            else if (npc.getNpcId() == _teredorTransparent1)
+            else if (npc.getNpcId() == teredorTransparent1)
             {
                 npc.setTarget(player);
-                npc.doCast(_teredorFluInfection);
+                npc.doCast(teredorFluInfection);
             }
         }
         return super.onAggroRangeEnter(npc, player, isPet);
@@ -311,7 +311,7 @@ public class Teredor extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
@@ -320,10 +320,10 @@ public class Teredor extends L2AttackableAIScript
         if (tmpworld instanceof TeredorWorld)
         {
             TeredorWorld world = (TeredorWorld) tmpworld;
-            if (npc.getNpcId() == _teredor)
+            if (npc.getNpcId() == teredor)
             {
-                addSpawn(_adventureGuildsman, _adventureSpawn[0], _adventureSpawn[1], _adventureSpawn[2],
-                        _adventureSpawn[3], false, 0, false, world.instanceId);
+                addSpawn(adventureGuildsman, adventureSpawn[0], adventureSpawn[1], adventureSpawn[2],
+                        adventureSpawn[3], false, 0, false, world.instanceId);
 
                 //Check if any char is moving if yes spawn random millipede's
                 for (int objId : world.allowed)
@@ -333,11 +333,11 @@ public class Teredor extends L2AttackableAIScript
                     if (target != null && target.isOnline() && target.getInstanceId() == world.instanceId &&
                             target.isMoving())
                     {
-                        spawnMinions(world, npc, target, _eliteMillipede, Rnd.get(6));
+                        spawnMinions(world, npc, target, eliteMillipede, Rnd.get(6));
                         break;
                     }
                 }
-                InstanceManager.getInstance().setInstanceReuse(world.instanceId, _templateID, 5);
+                InstanceManager.getInstance().setInstanceReuse(world.instanceId, templateID, 5);
                 InstanceManager.getInstance().finishInstance(world.instanceId, true);
             }
         }
@@ -347,16 +347,16 @@ public class Teredor extends L2AttackableAIScript
     @Override
     public final String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
-        if (npc.getNpcId() == _filaur)
+        if (npc.getNpcId() == filaur)
         {
             return "Filaur.html";
         }
-        else if (npc.getNpcId() == _adventureGuildsman)
+        else if (npc.getNpcId() == adventureGuildsman)
         {
             player.setInstanceId(0);
             player.teleToLocation(85636, -142530, -1336, true);
@@ -384,7 +384,7 @@ public class Teredor extends L2AttackableAIScript
         world.Teredor.setIsRunning(true);
         world.teredorWalkAI = new L2NpcWalkerAI(world.Teredor);
         world.Teredor.setAI(world.teredorWalkAI);
-        world.teredorWalkAI.initializeRoute(_route, null);
+        world.teredorWalkAI.initializeRoute(route, null);
         world.teredorWalkAI.walkToLocation();
     }
 
@@ -435,22 +435,22 @@ public class Teredor extends L2AttackableAIScript
         }
         else
         {
-            if (!_debug && !InstanceManager.getInstance()
-                    .checkInstanceConditions(player, _templateID, Config.TEREDOR_MIN_PLAYERS, 7, 81, 95))
+            if (!debug && !InstanceManager.getInstance()
+                    .checkInstanceConditions(player, templateID, Config.TEREDOR_MIN_PLAYERS, 7, 81, 95))
             {
                 return;
             }
 
-            final int instanceId = InstanceManager.getInstance().createDynamicInstance(_qn + ".xml");
+            final int instanceId = InstanceManager.getInstance().createDynamicInstance(qn + ".xml");
             world = new TeredorWorld();
             world.instanceId = instanceId;
-            world.templateId = _templateID;
+            world.templateId = templateID;
             world.status = 0;
 
             InstanceManager.getInstance().addWorld(world);
 
             List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
-            if (_debug)
+            if (debug)
             {
                 allPlayers.add(player);
             }
@@ -470,12 +470,12 @@ public class Teredor extends L2AttackableAIScript
 
                 enterPlayer.stopAllEffectsExceptThoseThatLastThroughDeath();
                 enterPlayer.setInstanceId(instanceId);
-                enterPlayer.teleToLocation(_playerEnter[Rnd.get(0, _playerEnter.length - 1)], true);
+                enterPlayer.teleToLocation(playerEnter[Rnd.get(0, playerEnter.length - 1)], true);
             }
 
             startQuestTimer("stage_1_spawn_boss", 5000, null, player);
 
-            Log.fine(getName() + ": [" + _templateID + "] instance started: " + instanceId + " created by player: " +
+            Log.fine(getName() + ": [" + templateID + "] instance started: " + instanceId + " created by player: " +
                     player.getName());
             return;
         }
@@ -483,6 +483,6 @@ public class Teredor extends L2AttackableAIScript
 
     public static void main(String[] args)
     {
-        new Teredor(-1, _qn, "instances/RaidBosses");
+        new Teredor(-1, qn, "instances/RaidBosses");
     }
 }

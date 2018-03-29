@@ -20,7 +20,7 @@ class PlayerTableModel extends AbstractTableModel
 
 	private static final String[] columnNames = {"Id", "Name", "Level"};
 
-	private L2PcInstance[] _players = new L2PcInstance[]{};
+	private L2PcInstance[] players = new L2PcInstance[]{};
 
 	public PlayerTableModel()
 	{
@@ -35,7 +35,7 @@ class PlayerTableModel extends AbstractTableModel
 	@Override
 	public int getRowCount()
 	{
-		return _players.length;
+		return players.length;
 	}
 
 	@Override
@@ -50,11 +50,11 @@ class PlayerTableModel extends AbstractTableModel
 		switch (col)
 		{
 			case 0:
-				return _players[row].getObjectId();
+				return players[row].getObjectId();
 			case 1:
-				return _players[row].getName();
+				return players[row].getName();
 			case 2:
-				return _players[row].getLevel();
+				return players[row].getLevel();
 		}
 		return "";
 	}
@@ -83,12 +83,12 @@ class PlayerTableModel extends AbstractTableModel
 		ServerGui.Frame.setTitle(
 				"L2 Server [" + Config.SERVER_NAME + "] | Players online: " + playerCount + " | Offline shops: " +
 						shopCount + " | Total: " + (playerCount + shopCount));
-		if (players.length == _players.length && !(players.length > 0 && players[0] == _players[0]))
+		if (players.length == players.length && !(players.length > 0 && players[0] == players[0]))
 		{
 			return false;
 		}
 
-		_players = players;
+		this.players = players;
 		return true;
 	}
 }

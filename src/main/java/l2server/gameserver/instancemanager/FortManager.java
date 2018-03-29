@@ -31,11 +31,11 @@ import java.util.List;
 
 public class FortManager implements InstanceListManager
 {
-	private List<Fort> _forts = new ArrayList<>();
+	private List<Fort> forts = new ArrayList<>();
 
 	public static FortManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private FortManager()
@@ -86,9 +86,9 @@ public class FortManager implements InstanceListManager
 				}
 			}
 
-			_forts.add(fort);
+			forts.add(fort);
 		}
-		Log.info("Loaded: " + _forts.size() + " forts");
+		Log.info("Loaded: " + forts.size() + " forts");
 	}
 
 	public final int findNearestFortIndex(L2Object obj)
@@ -103,9 +103,9 @@ public class FortManager implements InstanceListManager
 		{
 			double distance;
 			Fort fort;
-			for (int i = 0; i < _forts.size(); i++)
+			for (int i = 0; i < forts.size(); i++)
 			{
-				fort = _forts.get(i);
+				fort = forts.get(i);
 				if (fort == null)
 				{
 					continue;
@@ -125,7 +125,7 @@ public class FortManager implements InstanceListManager
 	// Property - Public
 	public final Fort getFortById(int fortId)
 	{
-		for (Fort f : _forts)
+		for (Fort f : forts)
 		{
 			if (f.getFortId() == fortId)
 			{
@@ -137,7 +137,7 @@ public class FortManager implements InstanceListManager
 
 	public final Fort getFortByOwner(L2Clan clan)
 	{
-		for (Fort f : _forts)
+		for (Fort f : forts)
 		{
 			if (f.getOwnerClan() == clan)
 			{
@@ -149,7 +149,7 @@ public class FortManager implements InstanceListManager
 
 	public final Fort getFort(String name)
 	{
-		for (Fort f : _forts)
+		for (Fort f : forts)
 		{
 			if (f.getName().equalsIgnoreCase(name.trim()))
 			{
@@ -161,7 +161,7 @@ public class FortManager implements InstanceListManager
 
 	public final Fort getFort(int x, int y, int z)
 	{
-		for (Fort f : _forts)
+		for (Fort f : forts)
 		{
 			if (f.checkIfInZone(x, y, z))
 			{
@@ -179,9 +179,9 @@ public class FortManager implements InstanceListManager
 	public final int getFortIndex(int fortId)
 	{
 		Fort fort;
-		for (int i = 0; i < _forts.size(); i++)
+		for (int i = 0; i < forts.size(); i++)
 		{
-			fort = _forts.get(i);
+			fort = forts.get(i);
 			if (fort != null && fort.getFortId() == fortId)
 			{
 				return i;
@@ -198,9 +198,9 @@ public class FortManager implements InstanceListManager
 	public final int getFortIndex(int x, int y, int z)
 	{
 		Fort fort;
-		for (int i = 0; i < _forts.size(); i++)
+		for (int i = 0; i < forts.size(); i++)
 		{
-			fort = _forts.get(i);
+			fort = forts.get(i);
 			if (fort != null && fort.checkIfInZone(x, y, z))
 			{
 				return i;
@@ -211,7 +211,7 @@ public class FortManager implements InstanceListManager
 
 	public final List<Fort> getForts()
 	{
-		return _forts;
+		return forts;
 	}
 
 	@Override
@@ -222,7 +222,7 @@ public class FortManager implements InstanceListManager
 	@Override
 	public void activateInstances()
 	{
-		for (final Fort fort : _forts)
+		for (final Fort fort : forts)
 		{
 			fort.activateInstance();
 		}
@@ -231,6 +231,6 @@ public class FortManager implements InstanceListManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final FortManager _instance = new FortManager();
+		protected static final FortManager instance = new FortManager();
 	}
 }

@@ -224,11 +224,11 @@ public class QuestLink implements IBypassHandler
 			{
 				if (content != null)
 				{
-					_log.fine("Showing quest window for quest " + questId + " html path: " + path);
+					log.fine("Showing quest window for quest " + questId + " html path: " + path);
 				}
 				else
 				{
-					_log.fine("File not exists for quest " + questId + " html path: " + path);
+					log.fine("File not exists for quest " + questId + " html path: " + path);
 				}
 			}
 		}

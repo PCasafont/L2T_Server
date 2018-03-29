@@ -27,22 +27,22 @@ import java.util.logging.Level;
  */
 public class GeoEditorListener extends Thread
 {
-	private static GeoEditorListener _instance;
+	private static GeoEditorListener instance;
 	private static final int PORT = 9011;
 
-	private ServerSocket _serverSocket;
-	private static GeoEditorThread _geoEditor;
+	private ServerSocket serverSocket;
+	private static GeoEditorThread geoEditor;
 
 	public static GeoEditorListener getInstance()
 	{
 		synchronized (GeoEditorListener.class)
 		{
-			if (_instance == null)
+			if (instance == null)
 			{
 				try
 				{
-					_instance = new GeoEditorListener();
-					_instance.start();
+					instance = new GeoEditorListener();
+					instance.start();
 					Log.info("GeoEditorListener Initialized.");
 				}
 				catch (IOException e)
@@ -52,22 +52,22 @@ public class GeoEditorListener extends Thread
 				}
 			}
 		}
-		return _instance;
+		return instance;
 	}
 
 	private GeoEditorListener() throws IOException
 	{
-		_serverSocket = new ServerSocket(PORT);
+		serverSocket = new ServerSocket(PORT);
 	}
 
 	public GeoEditorThread getThread()
 	{
-		return _geoEditor;
+		return geoEditor;
 	}
 
 	public String getStatus()
 	{
-		if (_geoEditor != null && _geoEditor.isWorking())
+		if (geoEditor != null && geoEditor.isWorking())
 		{
 			return "Geoeditor connected.";
 		}
@@ -82,16 +82,16 @@ public class GeoEditorListener extends Thread
 		{
 			while (true)
 			{
-				connection = _serverSocket.accept();
-				if (_geoEditor != null && _geoEditor.isWorking())
+				connection = serverSocket.accept();
+				if (geoEditor != null && geoEditor.isWorking())
 				{
 					Log.warning("Geoeditor already connected!");
 					connection.close();
 					continue;
 				}
 				Log.info("Received geoeditor connection from: " + connection.getInetAddress().getHostAddress());
-				_geoEditor = new GeoEditorThread(connection);
-				_geoEditor.start();
+				geoEditor = new GeoEditorThread(connection);
+				geoEditor.start();
 			}
 		}
 		catch (Exception e)
@@ -109,7 +109,7 @@ public class GeoEditorListener extends Thread
 		{
 			try
 			{
-				_serverSocket.close();
+				serverSocket.close();
 			}
 			catch (IOException io)
 			{

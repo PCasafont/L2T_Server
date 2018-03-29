@@ -26,12 +26,12 @@ import l2server.gameserver.network.serverpackets.ExItemAuctionInfoPacket;
  */
 public final class RequestInfoItemAuction extends L2GameClientPacket
 {
-	private int _instanceId;
+	private int instanceId;
 
 	@Override
 	protected final void readImpl()
 	{
-		_instanceId = super.readD();
+		instanceId = super.readD();
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public final class RequestInfoItemAuction extends L2GameClientPacket
 			return;
 		}
 
-		final ItemAuctionInstance instance = ItemAuctionManager.getInstance().getManagerInstance(_instanceId);
+		final ItemAuctionInstance instance = ItemAuctionManager.getInstance().getManagerInstance(instanceId);
 		if (instance == null)
 		{
 			return;

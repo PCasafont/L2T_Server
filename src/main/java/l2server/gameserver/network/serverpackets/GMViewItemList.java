@@ -25,33 +25,33 @@ import l2server.gameserver.model.actor.instance.L2PetInstance;
 public class GMViewItemList extends L2ItemListPacket
 {
 	//
-	private L2ItemInstance[] _items;
-	private int _limit;
-	private String _playerName;
+	private L2ItemInstance[] items;
+	private int limit;
+	private String playerName;
 
 	public GMViewItemList(L2PcInstance cha)
 	{
-		_items = cha.getInventory().getItems();
-		_playerName = cha.getName();
-		_limit = cha.getInventoryLimit();
+		items = cha.getInventory().getItems();
+		playerName = cha.getName();
+		limit = cha.getInventoryLimit();
 	}
 
 	public GMViewItemList(L2PetInstance cha)
 	{
-		_items = cha.getInventory().getItems();
-		_playerName = cha.getName();
-		_limit = cha.getInventoryLimit();
+		items = cha.getInventory().getItems();
+		playerName = cha.getName();
+		limit = cha.getInventoryLimit();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(_playerName);
-		writeD(_limit); // inventory limit
+		writeS(playerName);
+		writeD(limit); // inventory limit
 		writeH(0x01); // show window ??
-		writeH(_items.length);
+		writeH(items.length);
 
-		for (L2ItemInstance item : _items)
+		for (L2ItemInstance item : items)
 		{
 			writeItem(item);
 		}

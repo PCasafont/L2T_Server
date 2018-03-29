@@ -35,7 +35,7 @@ import java.util.logging.Logger;
  */
 public class AdminShop implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminShop.class.getName());
+	private static Logger log = Logger.getLogger(AdminShop.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {"admin_buy", "admin_gmshop"};
 
@@ -75,7 +75,7 @@ public class AdminShop implements IAdminCommandHandler
 		}
 		catch (Exception e)
 		{
-			_log.warning("admin buylist failed:" + command);
+			log.warning("admin buylist failed:" + command);
 		}
 
 		L2TradeList list = TradeController.getInstance().getBuyList(val);
@@ -86,13 +86,13 @@ public class AdminShop implements IAdminCommandHandler
 			activeChar.sendPacket(new ExSellList(activeChar, list, 0, false));
 			if (Config.DEBUG)
 			{
-				_log.fine(
+				log.fine(
 						"GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") opened GM shop id " + val);
 			}
 		}
 		else
 		{
-			_log.warning("no buylist with id:" + val);
+			log.warning("no buylist with id:" + val);
 		}
 		activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 	}

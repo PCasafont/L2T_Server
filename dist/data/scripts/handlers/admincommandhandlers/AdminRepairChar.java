@@ -31,7 +31,7 @@ import java.util.logging.Logger;
  */
 public class AdminRepairChar implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminRepairChar.class.getName());
+	private static Logger log = Logger.getLogger(AdminRepairChar.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {"admin_restore", "admin_repair"};
 
@@ -99,7 +99,7 @@ public class AdminRepairChar implements IAdminCommandHandler
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "could not repair char:", e);
+			log.log(Level.WARNING, "could not repair char:", e);
 		}
 		finally
 		{

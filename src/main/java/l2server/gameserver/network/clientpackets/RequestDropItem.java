@@ -37,20 +37,20 @@ import l2server.log.Log;
 public final class RequestDropItem extends L2GameClientPacket
 {
 
-	private int _objectId;
-	private long _count;
-	private int _x;
-	private int _y;
-	private int _z;
+	private int objectId;
+	private long count;
+	private int x;
+	private int y;
+	private int z;
 
 	@Override
 	protected void readImpl()
 	{
-		_objectId = readD();
-		_count = readQ();
-		_x = readD();
-		_y = readD();
-		_z = readD();
+		objectId = readD();
+		count = readQ();
+		x = readD();
+		y = readD();
+		z = readD();
 	}
 
 	@Override
@@ -67,9 +67,9 @@ public final class RequestDropItem extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
+		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(objectId);
 
-		if (item == null || _count == 0 || !activeChar.validateItemManipulation(_objectId, "drop") ||
+		if (item == null || count == 0 || !activeChar.validateItemManipulation(objectId, "drop") ||
 				!Config.ALLOW_DISCARDITEM && !activeChar.isGM() ||
 				!item.isDropable() && !(activeChar.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS) ||
 				item.getItemType() == L2EtcItemType.PET_COLLAR && activeChar.havePetInvItems() ||
@@ -84,7 +84,7 @@ public final class RequestDropItem extends L2GameClientPacket
 			return;
 		}
 
-		if (_count > item.getCount())
+		if (count > item.getCount())
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
 			return;
@@ -96,20 +96,20 @@ public final class RequestDropItem extends L2GameClientPacket
 			return;
 		}
 
-		if (_count < 0)
+		if (count < 0)
 		{
 			Util.handleIllegalPlayerAction(activeChar,
 					"[RequestDropItem] Character " + activeChar.getName() + " of account " +
-							activeChar.getAccountName() + " tried to drop item with oid " + _objectId +
+							activeChar.getAccountName() + " tried to drop item with oid " + objectId +
 							" but has count < 0!", Config.DEFAULT_PUNISH);
 			return;
 		}
 
-		if (!item.isStackable() && _count > 1)
+		if (!item.isStackable() && count > 1)
 		{
 			Util.handleIllegalPlayerAction(activeChar,
 					"[RequestDropItem] Character " + activeChar.getName() + " of account " +
-							activeChar.getAccountName() + " tried to drop non-stackable item with oid " + _objectId +
+							activeChar.getAccountName() + " tried to drop non-stackable item with oid " + objectId +
 							" but has count > 1!", Config.DEFAULT_PUNISH);
 			return;
 		}
@@ -176,7 +176,7 @@ public final class RequestDropItem extends L2GameClientPacket
 			return;
 		}
 
-		if (!activeChar.isInsideRadius(_x, _y, 150, false) || Math.abs(_z - activeChar.getZ()) > 50)
+		if (!activeChar.isInsideRadius(x, y, 150, false) || Math.abs(z - activeChar.getZ()) > 50)
 		{
 			if (Config.DEBUG)
 			{
@@ -194,7 +194,7 @@ public final class RequestDropItem extends L2GameClientPacket
 
 		if (Config.DEBUG)
 		{
-			Log.fine("requested drop item " + _objectId + " (" + item.getCount() + ") at " + _x + "/" + _y + "/" + _z);
+			Log.fine("requested drop item " + objectId + " (" + item.getCount() + ") at " + x + "/" + y + "/" + z);
 		}
 
 		if (item.isEquipped())
@@ -214,11 +214,11 @@ public final class RequestDropItem extends L2GameClientPacket
 			activeChar.sendPacket(il);
 		}
 
-		L2ItemInstance dropedItem = activeChar.dropItem("Drop", _objectId, _count, _x, _y, _z, null, false);
+		L2ItemInstance dropedItem = activeChar.dropItem("Drop", objectId, count, x, y, z, null, false);
 
 		if (Config.DEBUG)
 		{
-			Log.fine("dropping " + _objectId + " item(" + _count + ") at: " + _x + " " + _y + " " + _z);
+			Log.fine("dropping " + objectId + " item(" + count + ") at: " + x + " " + y + " " + z);
 		}
 
 		// activeChar.broadcastUserInfo();
@@ -234,7 +234,7 @@ public final class RequestDropItem extends L2GameClientPacket
 
 		/*if (dropedItem != null && dropedItem.getItemId() == 57 && dropedItem.getCount() >= 1000000)
 		{
-			String msg = "Character (" + activeChar.getName() + ") has dropped (" + dropedItem.getCount() + ")adena at (" + _x + "," + _y + "," + _z + ")";
+			String msg = "Character (" + activeChar.getName() + ") has dropped (" + dropedItem.getCount() + ")adena at (" + x + "," + y + "," + z + ")";
 			Log.warning(msg);
 			GmListTable.broadcastMessageToGMs(msg);
 		}*/

@@ -22,19 +22,19 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExBrLoadEventTopRankers extends L2GameServerPacket
 {
-	private int _eventId;
-	private int _day;
-	private int _count;
-	private int _bestScore;
-	private int _myScore;
+	private int eventId;
+	private int day;
+	private int count;
+	private int bestScore;
+	private int myScore;
 
 	public ExBrLoadEventTopRankers(int eventId, int day, int count, int bestScore, int myScore)
 	{
-		_eventId = eventId;
-		_day = day;
-		_count = count;
-		_bestScore = bestScore;
-		_myScore = myScore;
+		this.eventId = eventId;
+		this.day = day;
+		this.count = count;
+		this.bestScore = bestScore;
+		this.myScore = myScore;
 	}
 
 	/* (non-Javadoc)
@@ -43,10 +43,10 @@ public class ExBrLoadEventTopRankers extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_eventId);
-		writeD(_day);
-		writeD(_count);
-		writeD(_bestScore);
-		writeD(_myScore);
+		writeD(eventId);
+		writeD(day);
+		writeD(count);
+		writeD(bestScore);
+		writeD(myScore);
 	}
 }

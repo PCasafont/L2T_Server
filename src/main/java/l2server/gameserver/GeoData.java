@@ -43,7 +43,7 @@ public class GeoData
 
 	public static GeoData getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	// Public Methods
@@ -189,6 +189,6 @@ public class GeoData
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final GeoData _instance = Config.GEODATA > 0 ? GeoEngine.getInstance() : new GeoData(true);
+		protected static final GeoData instance = Config.GEODATA > 0 ? GeoEngine.getInstance() : new GeoData(true);
 	}
 }

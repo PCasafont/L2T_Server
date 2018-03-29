@@ -29,12 +29,12 @@ import l2server.gameserver.templates.item.L2Item;
  */
 public final class RequestPutTargetForItemAppearance extends L2GameClientPacket
 {
-	private int _objectId;
+	private int objectId;
 
 	@Override
 	protected void readImpl()
 	{
-		_objectId = readD();
+		objectId = readD();
 	}
 
 	/**
@@ -54,7 +54,7 @@ public final class RequestPutTargetForItemAppearance extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance item = player.getInventory().getItemByObjectId(_objectId);
+		L2ItemInstance item = player.getInventory().getItemByObjectId(objectId);
 		if (item == null)
 		{
 			return;

@@ -5,11 +5,11 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExBRGamePoint extends L2GameServerPacket
 {
-	private int _userId;
+	private int userId;
 
 	public ExBRGamePoint(int userId)
 	{
-		_userId = userId;
+		this.userId = userId;
 	}
 
 	@Override
@@ -18,6 +18,6 @@ public class ExBRGamePoint extends L2GameServerPacket
 		writeD(0x00); // unk2
 		writeD(0x00); // unk3
 		writeD(0x00); // unk1
-		writeD(_userId);
+		writeD(userId);
 	}
 }

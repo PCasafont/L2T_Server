@@ -22,12 +22,12 @@ package l2server.gameserver.model;
  */
 public final class TradeItem
 {
-	private int _objectId;
-	private int _itemId;
-	private long _price;
-	private long _storePrice;
-	private long _count;
-	private int _enchantLevel;
+	private int objectId;
+	private int itemId;
+	private long price;
+	private long storePrice;
+	private long count;
+	private int enchantLevel;
 
 	public TradeItem()
 	{
@@ -35,61 +35,61 @@ public final class TradeItem
 
 	public void setObjectId(int id)
 	{
-		_objectId = id;
+		objectId = id;
 	}
 
 	public int getObjectId()
 	{
-		return _objectId;
+		return objectId;
 	}
 
 	public void setItemId(int id)
 	{
-		_itemId = id;
+		itemId = id;
 	}
 
 	public int getItemId()
 	{
-		return _itemId;
+		return itemId;
 	}
 
 	public void setOwnersPrice(long price)
 	{
-		_price = price;
+		this.price = price;
 	}
 
 	public long getOwnersPrice()
 	{
-		return _price;
+		return price;
 	}
 
 	public void setstorePrice(long price)
 	{
-		_storePrice = price;
+		storePrice = price;
 	}
 
 	public long getStorePrice()
 	{
-		return _storePrice;
+		return storePrice;
 	}
 
 	public void setCount(long count)
 	{
-		_count = count;
+		this.count = count;
 	}
 
 	public long getCount()
 	{
-		return _count;
+		return count;
 	}
 
 	public void setEnchantLevel(int enchant)
 	{
-		_enchantLevel = enchant;
+		enchantLevel = enchant;
 	}
 
 	public int getEnchantLevel()
 	{
-		return _enchantLevel;
+		return enchantLevel;
 	}
 }

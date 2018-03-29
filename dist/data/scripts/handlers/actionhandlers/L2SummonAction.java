@@ -80,7 +80,7 @@ public class L2SummonAction implements IActionHandler
 		{
 			if (Config.DEBUG)
 			{
-				_log.fine("new target selected:" + target.getObjectId());
+				log.fine("new target selected:" + target.getObjectId());
 			}
 
 			if (((L2Summon) target).getTemplate().Targetable || ((L2Summon) target).getOwner() == activeChar)

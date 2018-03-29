@@ -24,8 +24,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class GMSkillTable
 {
-	private static final L2Skill[] _gmSkills = new L2Skill[34];
-	private static final int[] _gmSkillsId =
+	private static final L2Skill[] gmSkills = new L2Skill[34];
+	private static final int[] gmSkillsId =
 			{14779, 14780, 14781, 14782, 14783, 14784, 14785, 14786, 14787, 14788, 14789, 14790, 14993, 14994, 14995};
 
 	private GMSkillTable()
@@ -35,25 +35,25 @@ public class GMSkillTable
 			return;
 		}
 
-		for (int i = 0; i < _gmSkillsId.length; i++)
+		for (int i = 0; i < gmSkillsId.length; i++)
 		{
-			_gmSkills[i] = SkillTable.getInstance().getInfo(_gmSkillsId[i], 1);
+			gmSkills[i] = SkillTable.getInstance().getInfo(gmSkillsId[i], 1);
 		}
 	}
 
 	public static GMSkillTable getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	public L2Skill[] getGMSkills()
 	{
-		return _gmSkills;
+		return gmSkills;
 	}
 
 	public static boolean isGMSkill(int skillid)
 	{
-		for (int id : _gmSkillsId)
+		for (int id : gmSkillsId)
 		{
 			if (id == skillid)
 			{
@@ -75,6 +75,6 @@ public class GMSkillTable
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final GMSkillTable _instance = new GMSkillTable();
+		protected static final GMSkillTable instance = new GMSkillTable();
 	}
 }

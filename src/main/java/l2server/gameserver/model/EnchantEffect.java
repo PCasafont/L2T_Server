@@ -27,61 +27,61 @@ import java.util.List;
  */
 public class EnchantEffect
 {
-	private final int _id;
-	private final int _rarity;
-	private final int _slot;
+	private final int id;
+	private final int rarity;
+	private final int slot;
 
-	private int _skillId = 0;
-	private int _skillLevel = 0;
-	private final List<Func> _funcs = new ArrayList<>();
+	private int skillId = 0;
+	private int skillLevel = 0;
+	private final List<Func> funcs = new ArrayList<>();
 
 	public EnchantEffect(int id, int rarity, int slot)
 	{
-		_id = id;
-		_rarity = rarity;
-		_slot = slot;
+		this.id = id;
+		this.rarity = rarity;
+		this.slot = slot;
 	}
 
 	public void setSkill(int skillId, int skillLevel)
 	{
-		_skillId = skillId;
-		_skillLevel = skillLevel;
+		this.skillId = skillId;
+		this.skillLevel = skillLevel;
 	}
 
 	public void addFunc(Func func)
 	{
-		_funcs.add(func);
+		funcs.add(func);
 	}
 
 	public int getId()
 	{
-		return _id;
+		return id;
 	}
 
 	public int getRarity()
 	{
-		return _rarity;
+		return rarity;
 	}
 
 	public int getSlot()
 	{
-		return _slot;
+		return slot;
 	}
 
 	public L2Skill getSkill()
 	{
-		if (_skillId == 0)
+		if (skillId == 0)
 		{
 			return null;
 		}
 
-		return SkillTable.getInstance().getInfo(_skillId, _skillLevel);
+		return SkillTable.getInstance().getInfo(skillId, skillLevel);
 	}
 
 	public void applyBonus(L2PcInstance player)
 	{
 		player.removeStatsOwner(this);
-		for (Func f : _funcs)
+		for (Func f : funcs)
 		{
 			player.addStatFunc(f);
 		}

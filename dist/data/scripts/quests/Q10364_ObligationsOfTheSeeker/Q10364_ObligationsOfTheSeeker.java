@@ -32,22 +32,22 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 	public static String qn = "Q10364_ObligationsOfTheSeeker";
 
 	// NPC
-	private int _celin = 33451;
-	private int _walter = 33452;
-	private int _dep = 33453;
-	private int _mob = 22994;
+	private int celin = 33451;
+	private int walter = 33452;
+	private int dep = 33453;
+	private int mob = 22994;
 
 	// Item
-	private int _paper = 17578; //TODO mob/s?
+	private int paper = 17578; //TODO mob/s?
 
 	public Q10364_ObligationsOfTheSeeker(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(_celin);
-		addTalkId(_celin);
-		addTalkId(_walter);
-		addTalkId(_dep);
-		addKillId(_mob);
+		addStartNpc(celin);
+		addTalkId(celin);
+		addTalkId(walter);
+		addTalkId(dep);
+		addKillId(mob);
 	}
 
 	@Override
@@ -61,21 +61,21 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _celin && event.equalsIgnoreCase("33451-03.htm"))
+		if (npc.getNpcId() == celin && event.equalsIgnoreCase("33451-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		if (npc.getNpcId() == _walter && event.equalsIgnoreCase("33452-04.htm"))
+		if (npc.getNpcId() == walter && event.equalsIgnoreCase("33452-04.htm"))
 		{
 			st.set("cond", "2");
 			st.playSound("ItemSound.quest_middle");
 		}
-		else if (npc.getNpcId() == _dep && event.equalsIgnoreCase("33453-03.htm") && st.getInt("cond") == 3)
+		else if (npc.getNpcId() == dep && event.equalsIgnoreCase("33453-03.htm") && st.getInt("cond") == 3)
 		{
 			st.unset("cond");
-			st.takeItems(_paper, -1);
+			st.takeItems(paper, -1);
 			st.giveItems(1060, 50);
 			st.giveItems(57, 55000);
 			st.giveItems(19, 1);
@@ -99,7 +99,7 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _celin)
+		if (npc.getNpcId() == celin)
 		{
 			switch (st.getState())
 			{
@@ -121,11 +121,11 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == _walter && st.getInt("cond") == 1)
+		else if (npc.getNpcId() == walter && st.getInt("cond") == 1)
 		{
 			htmltext = "33452-01.htm";
 		}
-		else if (npc.getNpcId() == _dep && st.getInt("cond") == 3)
+		else if (npc.getNpcId() == dep && st.getInt("cond") == 3)
 		{
 			htmltext = "33453-01.htm";
 		}
@@ -141,13 +141,13 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 			return null;
 		}
 
-		if (npc.getNpcId() == _mob && st.getQuestItemsCount(_paper) < 5)
+		if (npc.getNpcId() == mob && st.getQuestItemsCount(paper) < 5)
 		{
-			st.giveItems(_paper, 1);
+			st.giveItems(paper, 1);
 			st.playSound("ItemSound.quest_itemget");
 		}
 
-		if (st.getQuestItemsCount(_paper) == 5)
+		if (st.getQuestItemsCount(paper) == 5)
 		{
 			st.set("cond", "3");
 			st.playSound("ItemSound.quest_middle");

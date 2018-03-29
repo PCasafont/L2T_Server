@@ -31,8 +31,8 @@ public final class OlympiadAnnouncer implements Runnable
 {
 	private static final int OLY_MANAGER = 31688;
 
-	private List<L2Spawn> _managers = new ArrayList<>();
-	private int _currentStadium = 0;
+	private List<L2Spawn> managers = new ArrayList<>();
+	private int currentStadium = 0;
 
 	public OlympiadAnnouncer()
 	{
@@ -40,7 +40,7 @@ public final class OlympiadAnnouncer implements Runnable
 		{
 			if (spawn != null && spawn.getNpcId() == OLY_MANAGER)
 			{
-				_managers.add(spawn);
+				managers.add(spawn);
 			}
 		}
 	}
@@ -49,14 +49,14 @@ public final class OlympiadAnnouncer implements Runnable
 	public void run()
 	{
 		OlympiadGameTask task;
-		for (int i = OlympiadGameManager.getInstance().getNumberOfStadiums(); --i >= 0; _currentStadium++)
+		for (int i = OlympiadGameManager.getInstance().getNumberOfStadiums(); --i >= 0; currentStadium++)
 		{
-			if (_currentStadium >= OlympiadGameManager.getInstance().getNumberOfStadiums())
+			if (currentStadium >= OlympiadGameManager.getInstance().getNumberOfStadiums())
 			{
-				_currentStadium = 0;
+				currentStadium = 0;
 			}
 
-			task = OlympiadGameManager.getInstance().getOlympiadTask(_currentStadium);
+			task = OlympiadGameManager.getInstance().getOlympiadTask(currentStadium);
 			if (task != null && task.getGame() != null && task.needAnnounce())
 			{
 				int msg;
@@ -77,7 +77,7 @@ public final class OlympiadAnnouncer implements Runnable
 
 				L2Npc manager;
 				NpcSay packet;
-				for (L2Spawn spawn : _managers)
+				for (L2Spawn spawn : managers)
 				{
 					manager = spawn.getNpc();
 					if (manager != null)

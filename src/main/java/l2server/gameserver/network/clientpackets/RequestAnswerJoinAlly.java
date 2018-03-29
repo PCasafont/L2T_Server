@@ -34,12 +34,12 @@ public final class RequestAnswerJoinAlly extends L2GameClientPacket
 {
 	//
 
-	private int _response;
+	private int response;
 
 	@Override
 	protected void readImpl()
 	{
-		_response = readD();
+		response = readD();
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public final class RequestAnswerJoinAlly extends L2GameClientPacket
 			return;
 		}
 
-		if (_response == 0)
+		if (response == 0)
 		{
 			activeChar
 					.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_DID_NOT_RESPOND_TO_ALLY_INVITATION));

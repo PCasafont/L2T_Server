@@ -28,12 +28,12 @@ import l2server.gameserver.network.serverpackets.TargetUnselected;
 public final class RequestTargetCancel extends L2GameClientPacket
 {
 
-	private int _unselect;
+	private int unselect;
 
 	@Override
 	protected void readImpl()
 	{
-		_unselect = readH();
+		unselect = readH();
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public final class RequestTargetCancel extends L2GameClientPacket
 			return;
 		}
 
-		if (_unselect == 0)
+		if (unselect == 0)
 		{
 			if (activeChar.isCastingNow() && activeChar.canAbortCast())
 			{

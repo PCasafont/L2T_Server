@@ -36,11 +36,11 @@ import java.util.logging.Logger;
  */
 public final class IllegalPlayerAction implements Runnable
 {
-	private static Logger _logAudit = Logger.getLogger("audit");
+	private static Logger logAudit = Logger.getLogger("audit");
 
-	private String _message;
-	private int _punishment;
-	private L2PcInstance _actor;
+	private String message;
+	private int punishment;
+	private L2PcInstance actor;
 
 	public static final int PUNISH_BROADCAST = 1;
 	public static final int PUNISH_KICK = 2;
@@ -49,23 +49,23 @@ public final class IllegalPlayerAction implements Runnable
 
 	public IllegalPlayerAction(L2PcInstance actor, String message, int punishment)
 	{
-		_message = message;
-		_punishment = punishment;
-		_actor = actor;
+		this.message = message;
+		this.punishment = punishment;
+		this.actor = actor;
 
 		switch (punishment)
 		{
 			case PUNISH_KICK:
-				_actor.sendMessage("You will be kicked for illegal action, GM informed.");
+				actor.sendMessage("You will be kicked for illegal action, GM informed.");
 				break;
 			case PUNISH_KICKBAN:
-				//_actor.setAccessLevel(-100);
-				_actor.setAccountAccesslevel(-100);
-				_actor.sendMessage("You are banned for illegal action, GM informed.");
+				//actor.setAccessLevel(-100);
+				actor.setAccountAccesslevel(-100);
+				actor.sendMessage("You are banned for illegal action, GM informed.");
 				break;
 			case PUNISH_JAIL:
-				_actor.sendMessage("Illegal action performed!");
-				_actor.sendMessage("You will be teleported to GM Consultation Service area and jailed.");
+				actor.sendMessage("Illegal action performed!");
+				actor.sendMessage("You will be teleported to GM Consultation Service area and jailed.");
 				break;
 		}
 	}
@@ -73,30 +73,30 @@ public final class IllegalPlayerAction implements Runnable
 	@Override
 	public void run()
 	{
-		if (_actor.isGM())
+		if (actor.isGM())
 		{
 			return;
 		}
 
-		LogRecord record = new LogRecord(Level.INFO, "AUDIT:" + _message);
+		LogRecord record = new LogRecord(Level.INFO, "AUDIT:" + message);
 		record.setLoggerName("audit");
-		record.setParameters(new Object[]{_actor, _punishment});
-		_logAudit.log(record);
+		record.setParameters(new Object[]{actor, punishment});
+		logAudit.log(record);
 
-		Broadcast.toGameMasters(_message);
+		Broadcast.toGameMasters(message);
 
-		switch (_punishment)
+		switch (punishment)
 		{
 			case PUNISH_BROADCAST:
 				return;
 			case PUNISH_KICK:
-				_actor.logout(false);
+				actor.logout(false);
 				break;
 			case PUNISH_KICKBAN:
-				_actor.logout();
+				actor.logout();
 				break;
 			case PUNISH_JAIL:
-				_actor.setPunishLevel(L2PcInstance.PunishLevel.JAIL, Config.DEFAULT_PUNISH_PARAM);
+				actor.setPunishLevel(L2PcInstance.PunishLevel.JAIL, Config.DEFAULT_PUNISH_PARAM);
 				break;
 		}
 	}

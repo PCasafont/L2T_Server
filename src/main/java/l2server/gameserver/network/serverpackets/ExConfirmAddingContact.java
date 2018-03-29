@@ -24,13 +24,13 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExConfirmAddingContact extends L2GameServerPacket
 {
-	private final String _charName;
-	private final boolean _added;
+	private final String charName;
+	private final boolean added;
 
 	public ExConfirmAddingContact(String charName, boolean added)
 	{
-		_charName = charName;
-		_added = added;
+		this.charName = charName;
+		this.added = added;
 	}
 
 	/* (non-Javadoc)
@@ -39,7 +39,7 @@ public class ExConfirmAddingContact extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeS(_charName);
-		writeD(_added ? 0x01 : 0x00);
+		writeS(charName);
+		writeD(added ? 0x01 : 0x00);
 	}
 }

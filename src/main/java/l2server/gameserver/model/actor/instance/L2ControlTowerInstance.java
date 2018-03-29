@@ -31,7 +31,7 @@ import java.util.List;
 
 public class L2ControlTowerInstance extends L2Npc
 {
-	private List<L2Spawn> _guards;
+	private List<L2Spawn> guards;
 
 	public L2ControlTowerInstance(int objectId, L2NpcTemplate template)
 	{
@@ -109,9 +109,9 @@ public class L2ControlTowerInstance extends L2Npc
 		{
 			getCastle().getSiege().killedCT(this);
 
-			if (_guards != null && !_guards.isEmpty())
+			if (guards != null && !guards.isEmpty())
 			{
-				for (L2Spawn spawn : _guards)
+				for (L2Spawn spawn : guards)
 				{
 					if (spawn == null)
 					{
@@ -126,7 +126,7 @@ public class L2ControlTowerInstance extends L2Npc
 					{
 					}
 				}
-				_guards.clear();
+				guards.clear();
 			}
 		}
 		return super.doDie(killer);
@@ -139,17 +139,17 @@ public class L2ControlTowerInstance extends L2Npc
 
 	public final List<L2Spawn> getGuards()
 	{
-		if (_guards == null)
+		if (guards == null)
 		{
 			synchronized (this)
 			{
-				if (_guards == null)
+				if (guards == null)
 				{
-					_guards = new ArrayList<>();
+					guards = new ArrayList<>();
 				}
 			}
 		}
 
-		return _guards;
+		return guards;
 	}
 }

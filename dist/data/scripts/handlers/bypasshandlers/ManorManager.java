@@ -203,7 +203,7 @@ public class ManorManager implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			_log.info(e.getMessage());
+			log.info(e.getMessage());
 		}
 		return false;
 	}

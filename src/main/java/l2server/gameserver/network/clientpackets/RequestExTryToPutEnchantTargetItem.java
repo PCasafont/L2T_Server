@@ -31,7 +31,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket
 {
 
-	private int _objectId = 0;
+	private int objectId = 0;
 
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
@@ -39,7 +39,7 @@ public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		_objectId = readD();
+		objectId = readD();
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket
 	{
 		L2PcInstance activeChar = getClient().getActiveChar();
 
-		if (_objectId == 0)
+		if (objectId == 0)
 		{
 			return;
 		}
@@ -65,7 +65,7 @@ public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket
 			return;
 		}
 
-		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
+		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(objectId);
 		L2ItemInstance scroll = activeChar.getActiveEnchantItem();
 
 		if (item == null || scroll == null)

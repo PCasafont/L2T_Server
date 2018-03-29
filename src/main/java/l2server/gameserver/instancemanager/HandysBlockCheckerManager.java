@@ -48,16 +48,16 @@ public final class HandysBlockCheckerManager
 	 */
 
 	// All the participants and their team classifed by arena
-	private static ArenaParticipantsHolder[] _arenaPlayers;
+	private static ArenaParticipantsHolder[] arenaPlayers;
 
 	// Arena votes to start the game
-	private static TIntIntHashMap _arenaVotes = new TIntIntHashMap();
+	private static TIntIntHashMap arenaVotes = new TIntIntHashMap();
 
 	// Arena Status, True = is being used, otherwise, False
-	private static HashMap<Integer, Boolean> _arenaStatus;
+	private static HashMap<Integer, Boolean> arenaStatus;
 
 	// Registration request penalty (10 seconds)
-	private static ArrayList<Integer> _registrationPenalty = new ArrayList<>();
+	private static ArrayList<Integer> registrationPenalty = new ArrayList<>();
 
 	/**
 	 * Return the number of event-start votes for the spcified
@@ -68,7 +68,7 @@ public final class HandysBlockCheckerManager
 	 */
 	public synchronized int getArenaVotes(int arenaId)
 	{
-		return _arenaVotes.get(arenaId);
+		return arenaVotes.get(arenaId);
 	}
 
 	/**
@@ -79,8 +79,8 @@ public final class HandysBlockCheckerManager
 	 */
 	public synchronized void increaseArenaVotes(int arena)
 	{
-		int newVotes = _arenaVotes.get(arena) + 1;
-		ArenaParticipantsHolder holder = _arenaPlayers[arena];
+		int newVotes = arenaVotes.get(arena) + 1;
+		ArenaParticipantsHolder holder = arenaPlayers[arena];
 
 		if (newVotes > holder.getAllPlayers().size() / 2 && !holder.getEvent().isStarted())
 		{
@@ -97,7 +97,7 @@ public final class HandysBlockCheckerManager
 		}
 		else
 		{
-			_arenaVotes.put(arena, newVotes);
+			arenaVotes.put(arena, newVotes);
 		}
 	}
 
@@ -109,19 +109,19 @@ public final class HandysBlockCheckerManager
 	 */
 	public synchronized void clearArenaVotes(int arena)
 	{
-		_arenaVotes.put(arena, 0);
+		arenaVotes.put(arena, 0);
 	}
 
 	private HandysBlockCheckerManager()
 	{
 		// Initialize arena status
-		if (_arenaStatus == null)
+		if (arenaStatus == null)
 		{
-			_arenaStatus = new HashMap<>();
-			_arenaStatus.put(0, false);
-			_arenaStatus.put(1, false);
-			_arenaStatus.put(2, false);
-			_arenaStatus.put(3, false);
+			arenaStatus = new HashMap<>();
+			arenaStatus.put(0, false);
+			arenaStatus.put(1, false);
+			arenaStatus.put(2, false);
+			arenaStatus.put(3, false);
 		}
 	}
 
@@ -133,7 +133,7 @@ public final class HandysBlockCheckerManager
 	 */
 	public ArenaParticipantsHolder getHolder(int arena)
 	{
-		return _arenaPlayers[arena];
+		return arenaPlayers[arena];
 	}
 
 	/**
@@ -141,11 +141,11 @@ public final class HandysBlockCheckerManager
 	 */
 	public void startUpParticipantsQueue()
 	{
-		_arenaPlayers = new ArenaParticipantsHolder[4];
+		arenaPlayers = new ArenaParticipantsHolder[4];
 
 		for (int i = 0; i < 4; ++i)
 		{
-			_arenaPlayers[i] = new ArenaParticipantsHolder(i);
+			arenaPlayers[i] = new ArenaParticipantsHolder(i);
 		}
 	}
 
@@ -158,7 +158,7 @@ public final class HandysBlockCheckerManager
 	 */
 	public boolean addPlayerToArena(L2PcInstance player, int arenaId)
 	{
-		ArenaParticipantsHolder holder = _arenaPlayers[arenaId];
+		ArenaParticipantsHolder holder = arenaPlayers[arenaId];
 
 		synchronized (holder)
 		{
@@ -166,7 +166,7 @@ public final class HandysBlockCheckerManager
 
 			for (int i = 0; i < 4; i++)
 			{
-				if (_arenaPlayers[i].getAllPlayers().contains(player))
+				if (arenaPlayers[i].getAllPlayers().contains(player))
 				{
 					SystemMessage msg = SystemMessage
 							.getSystemMessage(SystemMessageId.C1_IS_ALREADY_REGISTERED_ON_THE_MATCH_WAITING_LIST);
@@ -208,7 +208,7 @@ public final class HandysBlockCheckerManager
 			}
 			 */
 
-			if (_registrationPenalty.contains(player.getObjectId()))
+			if (registrationPenalty.contains(player.getObjectId()))
 			{
 				player.sendPacket(
 						SystemMessage.getSystemMessage(SystemMessageId.CANNOT_REQUEST_REGISTRATION_10_SECS_AFTER));
@@ -240,7 +240,7 @@ public final class HandysBlockCheckerManager
 	 */
 	public void removePlayer(L2PcInstance player, int arenaId, int team)
 	{
-		ArenaParticipantsHolder holder = _arenaPlayers[arenaId];
+		ArenaParticipantsHolder holder = arenaPlayers[arenaId];
 		synchronized (holder)
 		{
 			boolean isRed = team == 0;
@@ -256,9 +256,9 @@ public final class HandysBlockCheckerManager
 			}
 
 			Integer objId = player.getObjectId();
-			if (!_registrationPenalty.contains(objId))
+			if (!registrationPenalty.contains(objId))
 			{
-				_registrationPenalty.add(objId);
+				registrationPenalty.add(objId);
 			}
 			schedulePenaltyRemoval(objId);
 		}
@@ -274,11 +274,11 @@ public final class HandysBlockCheckerManager
 	 */
 	public void changePlayerToTeam(L2PcInstance player, int arena, int team)
 	{
-		ArenaParticipantsHolder holder = _arenaPlayers[arena];
+		ArenaParticipantsHolder holder = arenaPlayers[arena];
 
 		synchronized (holder)
 		{
-			boolean isFromRed = holder._redPlayers.contains(player);
+			boolean isFromRed = holder.redPlayers.contains(player);
 
 			if (isFromRed && holder.getBlueTeamSize() == 6)
 			{
@@ -313,7 +313,7 @@ public final class HandysBlockCheckerManager
 	 */
 	public synchronized void clearPaticipantQueueByArenaId(int arenaId)
 	{
-		_arenaPlayers[arenaId].clearPlayers();
+		arenaPlayers[arenaId].clearPlayers();
 	}
 
 	/**
@@ -328,7 +328,7 @@ public final class HandysBlockCheckerManager
 		{
 			return false;
 		}
-		return _arenaStatus.get(arenaId);
+		return arenaStatus.get(arenaId);
 	}
 
 	/**
@@ -338,7 +338,7 @@ public final class HandysBlockCheckerManager
 	 */
 	public void setArenaBeingUsed(int arenaId)
 	{
-		_arenaStatus.put(arenaId, true);
+		arenaStatus.put(arenaId, true);
 	}
 
 	/**
@@ -349,7 +349,7 @@ public final class HandysBlockCheckerManager
 	 */
 	public void setArenaFree(int arenaId)
 	{
-		_arenaStatus.put(arenaId, false);
+		arenaStatus.put(arenaId, false);
 	}
 
 	/**
@@ -388,44 +388,44 @@ public final class HandysBlockCheckerManager
 
 	public static HandysBlockCheckerManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private static class SingletonHolder
 	{
-		private static HandysBlockCheckerManager _instance = new HandysBlockCheckerManager();
+		private static HandysBlockCheckerManager instance = new HandysBlockCheckerManager();
 	}
 
 	public class ArenaParticipantsHolder
 	{
-		int _arena;
-		List<L2PcInstance> _redPlayers;
-		List<L2PcInstance> _bluePlayers;
-		BlockCheckerEngine _engine;
+		int arena;
+		List<L2PcInstance> redPlayers;
+		List<L2PcInstance> bluePlayers;
+		BlockCheckerEngine engine;
 
 		public ArenaParticipantsHolder(int arena)
 		{
-			_arena = arena;
-			_redPlayers = new ArrayList<>(6);
-			_bluePlayers = new ArrayList<>(6);
-			_engine = new BlockCheckerEngine(this, _arena);
+			this.arena = arena;
+			redPlayers = new ArrayList<>(6);
+			bluePlayers = new ArrayList<>(6);
+			engine = new BlockCheckerEngine(this, arena);
 		}
 
 		public List<L2PcInstance> getRedPlayers()
 		{
-			return _redPlayers;
+			return redPlayers;
 		}
 
 		public List<L2PcInstance> getBluePlayers()
 		{
-			return _bluePlayers;
+			return bluePlayers;
 		}
 
 		public ArrayList<L2PcInstance> getAllPlayers()
 		{
 			ArrayList<L2PcInstance> all = new ArrayList<>(12);
-			all.addAll(_redPlayers);
-			all.addAll(_bluePlayers);
+			all.addAll(redPlayers);
+			all.addAll(bluePlayers);
 			return all;
 		}
 
@@ -433,11 +433,11 @@ public final class HandysBlockCheckerManager
 		{
 			if (team == 0)
 			{
-				_redPlayers.add(player);
+				redPlayers.add(player);
 			}
 			else
 			{
-				_bluePlayers.add(player);
+				bluePlayers.add(player);
 			}
 		}
 
@@ -445,21 +445,21 @@ public final class HandysBlockCheckerManager
 		{
 			if (team == 0)
 			{
-				_redPlayers.remove(player);
+				redPlayers.remove(player);
 			}
 			else
 			{
-				_bluePlayers.remove(player);
+				bluePlayers.remove(player);
 			}
 		}
 
 		public int getPlayerTeam(L2PcInstance player)
 		{
-			if (_redPlayers.contains(player))
+			if (redPlayers.contains(player))
 			{
 				return 0;
 			}
-			else if (_bluePlayers.contains(player))
+			else if (bluePlayers.contains(player))
 			{
 				return 1;
 			}
@@ -471,21 +471,21 @@ public final class HandysBlockCheckerManager
 
 		public int getRedTeamSize()
 		{
-			return _redPlayers.size();
+			return redPlayers.size();
 		}
 
 		public int getBlueTeamSize()
 		{
-			return _bluePlayers.size();
+			return bluePlayers.size();
 		}
 
 		public void broadCastPacketToTeam(L2GameServerPacket packet)
 		{
-			for (L2PcInstance p : _redPlayers)
+			for (L2PcInstance p : redPlayers)
 			{
 				p.sendPacket(packet);
 			}
-			for (L2PcInstance p : _bluePlayers)
+			for (L2PcInstance p : bluePlayers)
 			{
 				p.sendPacket(packet);
 			}
@@ -493,24 +493,24 @@ public final class HandysBlockCheckerManager
 
 		public void clearPlayers()
 		{
-			_redPlayers.clear();
-			_bluePlayers.clear();
+			redPlayers.clear();
+			bluePlayers.clear();
 		}
 
 		public BlockCheckerEngine getEvent()
 		{
-			return _engine;
+			return engine;
 		}
 
 		public void updateEvent()
 		{
-			_engine.updatePlayersOnStart(this);
+			engine.updatePlayersOnStart(this);
 		}
 
 		private void checkAndShuffle()
 		{
-			int redSize = _redPlayers.size();
-			int blueSize = _bluePlayers.size();
+			int redSize = redPlayers.size();
+			int blueSize = bluePlayers.size();
 			if (redSize > blueSize + 1)
 			{
 				broadCastPacketToTeam(
@@ -518,12 +518,12 @@ public final class HandysBlockCheckerManager
 				int needed = redSize - (blueSize + 1);
 				for (int i = 0; i < needed + 1; i++)
 				{
-					L2PcInstance plr = _redPlayers.get(i);
+					L2PcInstance plr = redPlayers.get(i);
 					if (plr == null)
 					{
 						continue;
 					}
-					changePlayerToTeam(plr, _arena, 1);
+					changePlayerToTeam(plr, arena, 1);
 				}
 			}
 			else if (blueSize > redSize + 1)
@@ -533,12 +533,12 @@ public final class HandysBlockCheckerManager
 				int needed = blueSize - (redSize + 1);
 				for (int i = 0; i < needed + 1; i++)
 				{
-					L2PcInstance plr = _bluePlayers.get(i);
+					L2PcInstance plr = bluePlayers.get(i);
 					if (plr == null)
 					{
 						continue;
 					}
-					changePlayerToTeam(plr, _arena, 0);
+					changePlayerToTeam(plr, arena, 0);
 				}
 			}
 		}
@@ -563,7 +563,7 @@ public final class HandysBlockCheckerManager
 		{
 			try
 			{
-				_registrationPenalty.remove(objectId);
+				registrationPenalty.remove(objectId);
 			}
 			catch (Exception e)
 			{

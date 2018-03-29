@@ -26,7 +26,7 @@ public class PvpZone
     public static State state = State.INACTIVE;
     public static Vector<L2PcInstance> players = new Vector<>();
     public static Vector<L2PcInstance> fighters = new Vector<>();
-    public static Vector<Integer> _fight = new Vector<>();
+    public static Vector<Integer> fight = new Vector<>();
 
     protected void openRegistrations()
     {
@@ -198,7 +198,7 @@ public class PvpZone
             Announcements.getInstance().announceToAll("PvP Zone has closed.");
             players.clear();
             fighters.clear();
-            _fight.clear();
+            fight.clear();
             revert();
             clean();
         }
@@ -234,7 +234,7 @@ public class PvpZone
 
 
         players.clear();
-        _fight.clear();
+        fight.clear();
         state = State.INACTIVE;
 
     }
@@ -247,12 +247,12 @@ public class PvpZone
 
     public static PvpZone getInstance()
     {
-        return SingletonHolder._instance;
+        return SingletonHolder.instance;
     }
 
     private static class SingletonHolder
     {
-        protected static final PvpZone _instance = new PvpZone();
+        protected static final PvpZone instance = new PvpZone();
     }
 
 

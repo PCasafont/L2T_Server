@@ -25,10 +25,9 @@ import l2server.loginserver.network.serverpackets.LoginFail;
 import l2server.loginserver.network.serverpackets.LoginOk;
 import l2server.loginserver.network.serverpackets.ServerList;
 
+import javax.crypto.Cipher;
 import java.security.GeneralSecurityException;
 import java.util.logging.Level;
-
-import javax.crypto.Cipher;
 
 /**
  * Format: x
@@ -37,18 +36,18 @@ import javax.crypto.Cipher;
  */
 public class RequestAuthLogin extends L2LoginClientPacket
 {
-	private byte[] _raw = new byte[256];
+	private byte[] raw = new byte[256];
 
-	private String _user;
-	private String _password;
-	private int _ncotp;
+	private String user;
+	private String password;
+	private int ncotp;
 
 	/**
 	 * @return
 	 */
 	public String getPassword()
 	{
-		return _password;
+		return password;
 	}
 
 	/**
@@ -56,20 +55,20 @@ public class RequestAuthLogin extends L2LoginClientPacket
 	 */
 	public String getUser()
 	{
-		return _user;
+		return user;
 	}
 
 	public int getOneTimePassword()
 	{
-		return _ncotp;
+		return ncotp;
 	}
 
 	@Override
 	public boolean readImpl()
 	{
-		if (super._buf.remaining() >= 256)
+		if (super.buf.remaining() >= 256)
 		{
-			readB(_raw);
+			readB(raw);
 			return true;
 		}
 		else
@@ -88,8 +87,8 @@ public class RequestAuthLogin extends L2LoginClientPacket
 		{
 			Cipher rsaCipher = Cipher.getInstance("RSA/ECB/nopadding");
 			rsaCipher.init(Cipher.DECRYPT_MODE, client.getRSAPrivateKey());
-			decrypted = rsaCipher.doFinal(_raw, 0x00, 0x80);
-			decrypted2 = rsaCipher.doFinal(_raw, 0x80, 0x80);
+			decrypted = rsaCipher.doFinal(raw, 0x00, 0x80);
+			decrypted2 = rsaCipher.doFinal(raw, 0x80, 0x80);
 		}
 		catch (GeneralSecurityException e)
 		{
@@ -97,25 +96,25 @@ public class RequestAuthLogin extends L2LoginClientPacket
 			return;
 		}
 
-		_user = new String(decrypted, 0x4E, 14).trim();
-		_user = _user.toLowerCase();
-		_password = new String(decrypted2, 0x5C, 16).trim();
-		_ncotp = decrypted[0x7c];
-		_ncotp |= decrypted[0x7d] << 8;
-		_ncotp |= decrypted[0x7e] << 16;
-		_ncotp |= decrypted[0x7f] << 24;
+		user = new String(decrypted, 0x4E, 14).trim();
+		user = user.toLowerCase();
+		password = new String(decrypted2, 0x5C, 16).trim();
+		ncotp = decrypted[0x7c];
+		ncotp |= decrypted[0x7d] << 8;
+		ncotp |= decrypted[0x7e] << 16;
+		ncotp |= decrypted[0x7f] << 24;
 
 		LoginController lc = LoginController.getInstance();
 		/*try
 		{*/
-			LoginController.AuthLoginResult result = lc.tryAuthLogin(_user, _password, client);
+			LoginController.AuthLoginResult result = lc.tryAuthLogin(user, password, client);
 			switch (result)
 			{
 				case AUTH_SUCCESS:
-					client.setAccount(_user);
-					lc.getCharactersOnAccount(_user);
+					client.setAccount(user);
+					lc.getCharactersOnAccount(user);
 					client.setState(L2LoginClient.LoginClientState.AUTHED_LOGIN);
-					client.setSessionKey(lc.assignSessionKeyToClient(_user, client));
+					client.setSessionKey(lc.assignSessionKeyToClient(user, client));
 					if (Config.SHOW_LICENCE)
 					{
 						client.sendPacket(new LoginOk(getClient().getSessionKey()));
@@ -146,25 +145,25 @@ public class RequestAuthLogin extends L2LoginClientPacket
 					break;
 				case ALREADY_ON_LS:
 					L2LoginClient oldClient;
-					if ((oldClient = lc.getAuthedClient(_user)) != null)
+					if ((oldClient = lc.getAuthedClient(user)) != null)
 					{
 						// kick the other client
 						oldClient.close(LoginFail.LoginFailReason.REASON_ACCOUNT_IN_USE);
-						lc.removeAuthedLoginClient(_user);
+						lc.removeAuthedLoginClient(user);
 					}
 					// kick also current client
 					client.close(LoginFail.LoginFailReason.REASON_ACCOUNT_IN_USE);
 					break;
 				case ALREADY_ON_GS:
 					GameServerTable.GameServerInfo gsi;
-					if ((gsi = lc.getAccountOnGameServer(_user)) != null)
+					if ((gsi = lc.getAccountOnGameServer(user)) != null)
 					{
 						client.close(LoginFail.LoginFailReason.REASON_ACCOUNT_IN_USE);
 
 						// kick from there
 						if (gsi.isAuthed())
 						{
-							gsi.getGameServerThread().kickPlayer(_user);
+							gsi.getGameServerThread().kickPlayer(user);
 						}
 					}
 					break;

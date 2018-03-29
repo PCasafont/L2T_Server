@@ -22,11 +22,11 @@ import l2server.gameserver.model.actor.L2Summon;
  */
 public class ExPartyPetWindowUpdate extends L2GameServerPacket
 {
-	private final L2Summon _summon;
+	private final L2Summon summon;
 
 	public ExPartyPetWindowUpdate(L2Summon summon)
 	{
-		_summon = summon;
+		this.summon = summon;
 	}
 
     /*
@@ -39,15 +39,15 @@ public class ExPartyPetWindowUpdate extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_summon.getObjectId());
-		writeD(_summon.getTemplate().TemplateId + 1000000);
-		writeD(_summon.getSummonType());
-		writeD(_summon.getOwner().getObjectId());
-		writeS(_summon.getName());
-		writeD((int) _summon.getCurrentHp());
-		writeD(_summon.getMaxVisibleHp());
-		writeD((int) _summon.getCurrentMp());
-		writeD(_summon.getMaxMp());
-		writeD(_summon.getLevel());
+		writeD(summon.getObjectId());
+		writeD(summon.getTemplate().TemplateId + 1000000);
+		writeD(summon.getSummonType());
+		writeD(summon.getOwner().getObjectId());
+		writeS(summon.getName());
+		writeD((int) summon.getCurrentHp());
+		writeD(summon.getMaxVisibleHp());
+		writeD((int) summon.getCurrentMp());
+		writeD(summon.getMaxMp());
+		writeD(summon.getLevel());
 	}
 }

@@ -38,8 +38,8 @@ import l2server.log.Log;
 
 public class L2DefenderInstance extends L2Attackable
 {
-	private Castle _castle = null; // the castle which the instance should defend
-	private Fort _fort = null; // the fortress which the instance should defend
+	private Castle castle = null; // the castle which the instance should defend
+	private Fort fort = null; // the fortress which the instance should defend
 
 	public L2DefenderInstance(int objectId, L2NpcTemplate template)
 	{
@@ -86,9 +86,9 @@ public class L2DefenderInstance extends L2Attackable
 		L2PcInstance player = attacker.getActingPlayer();
 
 		// Check if siege is in progress
-		if (_fort != null && _fort.getZone().isActive() || _castle != null && _castle.getZone().isActive())
+		if (fort != null && fort.getZone().isActive() || castle != null && castle.getZone().isActive())
 		{
-			int activeSiegeId = _fort != null ? _fort.getFortId() : _castle != null ? _castle.getCastleId() : 0;
+			int activeSiegeId = fort != null ? fort.getFortId() : castle != null ? castle.getCastleId() : 0;
 
 			// Check if player is an enemy of this defender npc
 			if (player != null && (player.getSiegeState() == 2 && !player.isRegisteredOnThisSiegeField(activeSiegeId) ||
@@ -142,9 +142,9 @@ public class L2DefenderInstance extends L2Attackable
 	{
 		super.onSpawn();
 
-		_fort = FortManager.getInstance().getFort(getX(), getY(), getZ());
-		_castle = CastleManager.getInstance().getCastle(getX(), getY(), getZ());
-		if (_fort == null && _castle == null)
+		fort = FortManager.getInstance().getFort(getX(), getY(), getZ());
+		castle = CastleManager.getInstance().getCastle(getX(), getY(), getZ());
+		if (fort == null && castle == null)
 		{
 			Log.warning("L2DefenderInstance spawned outside of Fortress or Castle Zone! NpcId: " + getNpcId() + " x=" +
 					getX() + " y=" + getY() + " z=" + getZ());
@@ -224,9 +224,9 @@ public class L2DefenderInstance extends L2Attackable
 			{
 				L2PcInstance player = attacker.getActingPlayer();
 				// Check if siege is in progress
-				if (_fort != null && _fort.getZone().isActive() || _castle != null && _castle.getZone().isActive())
+				if (fort != null && fort.getZone().isActive() || castle != null && castle.getZone().isActive())
 				{
-					int activeSiegeId = _fort != null ? _fort.getFortId() : _castle != null ? _castle.getCastleId() : 0;
+					int activeSiegeId = fort != null ? fort.getFortId() : castle != null ? castle.getCastleId() : 0;
 					if (player != null &&
 							(player.getSiegeState() == 2 && player.isRegisteredOnThisSiegeField(activeSiegeId)))
 					{

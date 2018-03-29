@@ -244,11 +244,11 @@ public class Elpy
 	
 	public static Elpy getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 	
 	private static class SingletonHolder
 	{
-		protected static final Elpy _instance = new Elpy();
+		protected static final Elpy instance = new Elpy();
 	}
 }

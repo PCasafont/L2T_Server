@@ -25,37 +25,37 @@ import java.util.Map;
  */
 public class BossManager
 {
-	private static Map<Integer, L2RaidBossInstance> _bosses = new HashMap<>();
+	private static Map<Integer, L2RaidBossInstance> bosses = new HashMap<>();
 
 	public static BossManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	public void registerBoss(L2RaidBossInstance boss)
 	{
-		_bosses.put(boss.getNpcId(), boss);
+		bosses.put(boss.getNpcId(), boss);
 	}
 
 	public Map<Integer, L2RaidBossInstance> getBosses()
 	{
-		return _bosses;
+		return bosses;
 	}
 
 	public L2RaidBossInstance getBoss(int id)
 	{
-		return _bosses.get(id);
+		return bosses.get(id);
 	}
 
 	public boolean isAlive(int id)
 	{
-		L2RaidBossInstance boss = _bosses.get(id);
+		L2RaidBossInstance boss = bosses.get(id);
 		return boss != null && !boss.isDead();
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final BossManager _instance = new BossManager();
+		protected static final BossManager instance = new BossManager();
 	}
 }

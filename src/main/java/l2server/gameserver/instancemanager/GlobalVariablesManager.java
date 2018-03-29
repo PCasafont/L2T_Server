@@ -31,11 +31,11 @@ public class GlobalVariablesManager
 	private static final String SAVE_VAR =
 			"INSERT INTO global_variables (var,value) VALUES (?,?) ON DUPLICATE KEY UPDATE value=?";
 
-	private final Map<String, String> _variablesMap;
+	private final Map<String, String> variablesMap;
 
 	private GlobalVariablesManager()
 	{
-		_variablesMap = new HashMap<>();
+		variablesMap = new HashMap<>();
 
 		loadVars();
 	}
@@ -57,7 +57,7 @@ public class GlobalVariablesManager
 				var = rset.getString(1);
 				value = rset.getString(2);
 
-				_variablesMap.put(var, value);
+				variablesMap.put(var, value);
 			}
 			rset.close();
 			statement.close();
@@ -81,11 +81,11 @@ public class GlobalVariablesManager
 			con = L2DatabaseFactory.getInstance().getConnection();
 			statement = con.prepareStatement(SAVE_VAR);
 
-			for (String var : _variablesMap.keySet())
+			for (String var : variablesMap.keySet())
 			{
 				statement.setString(1, var);
-				statement.setString(2, _variablesMap.get(var));
-				statement.setString(3, _variablesMap.get(var));
+				statement.setString(2, variablesMap.get(var));
+				statement.setString(3, variablesMap.get(var));
 				statement.execute();
 			}
 			statement.close();
@@ -103,27 +103,27 @@ public class GlobalVariablesManager
 
 	public void storeVariable(String var, String value)
 	{
-		_variablesMap.put(var, value);
+		variablesMap.put(var, value);
 	}
 
 	public boolean isVariableStored(String var)
 	{
-		return _variablesMap.containsKey(var);
+		return variablesMap.containsKey(var);
 	}
 
 	public String getStoredVariable(String var)
 	{
-		return _variablesMap.get(var);
+		return variablesMap.get(var);
 	}
 
 	public static GlobalVariablesManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final GlobalVariablesManager _instance = new GlobalVariablesManager();
+		protected static final GlobalVariablesManager instance = new GlobalVariablesManager();
 	}
 }

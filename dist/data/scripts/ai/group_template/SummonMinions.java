@@ -32,7 +32,7 @@ public class SummonMinions extends L2AttackableAIScript
 {
 	private static int HasSpawned;
 	private static TIntHashSet myTrackingSet = new TIntHashSet(); //Used to track instances of npcs
-	private ConcurrentHashMap<Integer, ArrayList<L2PcInstance>> _attackersList =
+	private ConcurrentHashMap<Integer, ArrayList<L2PcInstance>> attackersList =
 			new ConcurrentHashMap<Integer, ArrayList<L2PcInstance>>();
 	private static final TIntObjectHashMap<int[]> MINIONS = new TIntObjectHashMap<int[]>();
 
@@ -129,33 +129,33 @@ public class SummonMinions extends L2AttackableAIScript
 						{
 							for (L2PcInstance member : attacker.getParty().getPartyMembers())
 							{
-								if (_attackersList.get(npcObjId) == null)
+								if (attackersList.get(npcObjId) == null)
 								{
 									ArrayList<L2PcInstance> player = new ArrayList<L2PcInstance>();
 									player.add(member);
-									_attackersList.put(npcObjId, player);
+									attackersList.put(npcObjId, player);
 								}
-								else if (!_attackersList.get(npcObjId).contains(member))
+								else if (!attackersList.get(npcObjId).contains(member))
 								{
-									_attackersList.get(npcObjId).add(member);
+									attackersList.get(npcObjId).add(member);
 								}
 							}
 						}
 						else
 						{
-							if (_attackersList.get(npcObjId) == null)
+							if (attackersList.get(npcObjId) == null)
 							{
 								ArrayList<L2PcInstance> player = new ArrayList<L2PcInstance>();
 								player.add(attacker);
-								_attackersList.put(npcObjId, player);
+								attackersList.put(npcObjId, player);
 							}
-							else if (!_attackersList.get(npcObjId).contains(attacker))
+							else if (!attackersList.get(npcObjId).contains(attacker))
 							{
-								_attackersList.get(npcObjId).add(attacker);
+								attackersList.get(npcObjId).add(attacker);
 							}
 						}
 						if (attacker.getParty() != null && attacker.getParty().getMemberCount() > 2 ||
-								_attackersList.get(npcObjId).size() > 2) //Just to make sure..
+								attackersList.get(npcObjId).size() > 2) //Just to make sure..
 						{
 							HasSpawned = 0;
 							for (int val : MINIONS.get(npcId))
@@ -218,9 +218,9 @@ public class SummonMinions extends L2AttackableAIScript
 				myTrackingSet.remove(npcObjId);
 			}
 		}
-		if (_attackersList.get(npcObjId) != null)
+		if (attackersList.get(npcObjId) != null)
 		{
-			_attackersList.get(npcObjId).clear();
+			attackersList.get(npcObjId).clear();
 		}
 		return super.onKill(npc, killer, isPet);
 	}

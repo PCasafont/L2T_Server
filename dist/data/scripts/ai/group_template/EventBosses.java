@@ -35,13 +35,13 @@ import java.util.Map;
 
 public class EventBosses extends L2AttackableAIScript
 {
-	private static boolean _isBossActive = false;
-	private static int _bossStatus = 0;
-	private static final L2Skill _knightFrenzy = SkillTable.getInstance().getInfo(10025, 4);
-	private static final L2Skill _finalUltimateDefense = SkillTable.getInstance().getInfo(10017, 4);
-	private static Map<L2PcInstance, String> _attackerIps = new HashMap<L2PcInstance, String>();
+	private static boolean isBossActive = false;
+	private static int bossStatus = 0;
+	private static final L2Skill knightFrenzy = SkillTable.getInstance().getInfo(10025, 4);
+	private static final L2Skill finalUltimateDefense = SkillTable.getInstance().getInfo(10017, 4);
+	private static Map<L2PcInstance, String> attackerIps = new HashMap<L2PcInstance, String>();
 
-	private static final String[][] _individualDrop = {
+	private static final String[][] individualDrop = {
 			//Boss id, itemId, chance, min, max;
 			{"80106", "10314,5,1,1;4357,100,2000,8000;"},
 			//Beleth:	Ring of Beleth, Seal of Shilen
@@ -101,26 +101,26 @@ public class EventBosses extends L2AttackableAIScript
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet, L2Skill skill)
 	{
-		if (!_attackerIps.containsValue(player.getExternalIP()))
+		if (!attackerIps.containsValue(player.getExternalIP()))
 		{
-			_attackerIps.put(player, player.getExternalIP());
+			attackerIps.put(player, player.getExternalIP());
 		}
 
-		if (_bossStatus == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.15)
+		if (bossStatus == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.15)
 		{
-			_bossStatus = 1;
+			bossStatus = 1;
 
 			npc.broadcastPacket(new CreatureSay(npc.getObjectId(), 0, npc.getName(), "WooooooooaHHH!"));
 
-			_knightFrenzy.getEffects(npc, npc);
+			knightFrenzy.getEffects(npc, npc);
 		}
-		else if (_bossStatus == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
+		else if (bossStatus == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
 		{
-			_bossStatus = 2;
+			bossStatus = 2;
 
 			npc.broadcastPacket(new CreatureSay(npc.getObjectId(), 0, npc.getName(), "NOO! NOOO!!"));
 
-			_finalUltimateDefense.getEffects(npc, npc);
+			finalUltimateDefense.getEffects(npc, npc);
 		}
 
 		return super.onAttack(npc, player, damage, isPet, skill);
@@ -131,7 +131,7 @@ public class EventBosses extends L2AttackableAIScript
 	{
 		if (npc != null && npc.getInstanceId() == 0)
 		{
-			for (Map.Entry<L2PcInstance, String> playerInfo : _attackerIps.entrySet())
+			for (Map.Entry<L2PcInstance, String> playerInfo : attackerIps.entrySet())
 			{
 				if (playerInfo == null)
 				{
@@ -148,7 +148,7 @@ public class EventBosses extends L2AttackableAIScript
 
 				boolean rewarded = false;
 
-				for (String[] i : _individualDrop)
+				for (String[] i : individualDrop)
 				{
 					if (Integer.valueOf(i[0]) == npc.getNpcId()) //Id found
 					{
@@ -196,11 +196,11 @@ public class EventBosses extends L2AttackableAIScript
 			}
 
 			//End event
-			_isBossActive = false;
+			isBossActive = false;
 
-			_bossStatus = 0;
+			bossStatus = 0;
 
-			_attackerIps.clear();
+			attackerIps.clear();
 		}
 
 		return super.onKill(npc, player, isPet);
@@ -215,7 +215,7 @@ public class EventBosses extends L2AttackableAIScript
 
 			spawn.stopRespawn();
 
-			if (_isBossActive) //Already active
+			if (isBossActive) //Already active
 			{
 				npc.deleteMe();
 
@@ -230,9 +230,9 @@ public class EventBosses extends L2AttackableAIScript
 
 			npc.broadcastPacket(new CreatureSay(npc.getObjectId(), 1, npc.getName(), "Is the time to die noobs!"));
 
-			_isBossActive = true;
+			isBossActive = true;
 
-			_bossStatus = 0;
+			bossStatus = 0;
 		}
 
 		return super.onSpawn(npc);

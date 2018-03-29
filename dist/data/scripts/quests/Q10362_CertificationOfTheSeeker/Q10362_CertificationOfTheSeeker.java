@@ -32,19 +32,19 @@ public class Q10362_CertificationOfTheSeeker extends Quest
 	public static String qn = "Q10362_CertificationOfTheSeeker";
 
 	// NPC
-	private int _chesha = 33449;
-	private int _nagel = 33450;
-	private int _mob1 = 22992;
-	private int _mob2 = 22991;
+	private int chesha = 33449;
+	private int nagel = 33450;
+	private int mob1 = 22992;
+	private int mob2 = 22991;
 
 	public Q10362_CertificationOfTheSeeker(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(_chesha);
-		addTalkId(_chesha);
-		addTalkId(_nagel);
-		addKillId(_mob1);
-		addKillId(_mob2);
+		addStartNpc(chesha);
+		addTalkId(chesha);
+		addTalkId(nagel);
+		addKillId(mob1);
+		addKillId(mob2);
 	}
 
 	@Override
@@ -58,13 +58,13 @@ public class Q10362_CertificationOfTheSeeker extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _chesha && event.equalsIgnoreCase("33449-03.htm"))
+		if (npc.getNpcId() == chesha && event.equalsIgnoreCase("33449-03.htm"))
 		{
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		else if (npc.getNpcId() == _nagel && event.equalsIgnoreCase("33450-03.htm") && st.getInt("cond") == 3)
+		else if (npc.getNpcId() == nagel && event.equalsIgnoreCase("33450-03.htm") && st.getInt("cond") == 3)
 		{
 			st.unset("cond");
 			st.giveItems(1060, 50);
@@ -90,7 +90,7 @@ public class Q10362_CertificationOfTheSeeker extends Quest
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == _chesha)
+		if (npc.getNpcId() == chesha)
 		{
 			switch (st.getState())
 			{
@@ -125,7 +125,7 @@ public class Q10362_CertificationOfTheSeeker extends Quest
 					break;
 			}
 		}
-		else if (npc.getNpcId() == _nagel && st.getInt("cond") == 3)
+		else if (npc.getNpcId() == nagel && st.getInt("cond") == 3)
 		{
 			htmltext = "33450-01.htm";
 		}
@@ -141,20 +141,20 @@ public class Q10362_CertificationOfTheSeeker extends Quest
 			return null;
 		}
 
-		if (npc.getNpcId() == _mob1 && st.getNpcLog(_mob1) < 10)
+		if (npc.getNpcId() == mob1 && st.getNpcLog(mob1) < 10)
 		{
-			st.increaseNpcLog(_mob1);
+			st.increaseNpcLog(mob1);
 			st.playSound("ItemSound.quest_itemget");
 			player.sendPacket(new ExQuestNpcLogList(st));
 		}
-		else if (npc.getNpcId() == _mob2 && st.getNpcLog(_mob2) < 5)
+		else if (npc.getNpcId() == mob2 && st.getNpcLog(mob2) < 5)
 		{
-			st.increaseNpcLog(_mob2);
+			st.increaseNpcLog(mob2);
 			st.playSound("ItemSound.quest_itemget");
 			player.sendPacket(new ExQuestNpcLogList(st));
 		}
 
-		if (st.getNpcLog(_mob1) == 10 && st.getNpcLog(_mob2) == 5)
+		if (st.getNpcLog(mob1) == 10 && st.getNpcLog(mob2) == 5)
 		{
 			st.set("cond", "2");
 			st.playSound("ItemSound.quest_middle");

@@ -38,7 +38,7 @@ import java.util.Map;
  */
 public class EventPrizesTable implements Reloadable
 {
-	private final Map<String, List<EventPrize>> _prizes = new HashMap<>();
+	private final Map<String, List<EventPrize>> prizes = new HashMap<>();
 
 	private EventPrizesTable()
 	{
@@ -49,7 +49,7 @@ public class EventPrizesTable implements Reloadable
 
 	public void load()
 	{
-		_prizes.clear();
+		prizes.clear();
 
 		XmlDocument doc = new XmlDocument(new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "eventPrizes.xml"));
 		int przCount = 0;
@@ -70,11 +70,11 @@ public class EventPrizesTable implements Reloadable
 				String name = prizeNode.getString("name");
 				for (XmlNode node : prizeNode.getChildren())
 				{
-					List<EventPrize> list = _prizes.get(name);
+					List<EventPrize> list = prizes.get(name);
 					if (list == null)
 					{
 						list = new ArrayList<>();
-						_prizes.put(name, list);
+						prizes.put(name, list);
 					}
 
 					if (node.getName().equalsIgnoreCase("prizeItem"))
@@ -91,12 +91,12 @@ public class EventPrizesTable implements Reloadable
 			}
 		}
 
-		Log.info("Event Prizes Table: loaded " + przCount + " prizes in " + _prizes.size() + " categories.");
+		Log.info("Event Prizes Table: loaded " + przCount + " prizes in " + prizes.size() + " categories.");
 	}
 
 	public void rewardPlayer(String prizeName, L2PcInstance player, float teamMultiplier, float performanceMultiplier)
 	{
-		List<EventPrize> list = _prizes.get(prizeName);
+		List<EventPrize> list = prizes.get(prizeName);
 		if (list == null)
 		{
 			return;
@@ -158,15 +158,15 @@ public class EventPrizesTable implements Reloadable
 		return "Event prizes reloaded";
 	}
 
-	private static EventPrizesTable _instance;
+	private static EventPrizesTable instance;
 
 	public static EventPrizesTable getInstance()
 	{
-		if (_instance == null)
+		if (instance == null)
 		{
-			_instance = new EventPrizesTable();
+			instance = new EventPrizesTable();
 		}
 
-		return _instance;
+		return instance;
 	}
 }

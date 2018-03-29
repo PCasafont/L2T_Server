@@ -21,13 +21,13 @@ package l2server.gameserver.network.serverpackets;
 public class ExLoadStatWorldRank extends L2GameServerPacket
 {
 
-	private int _pid1;
-	private int _pid2;
+	private int pid1;
+	private int pid2;
 
 	public ExLoadStatWorldRank(int pid1, int pid2)
 	{
-		_pid1 = pid1;
-		_pid2 = pid2;
+		this.pid1 = pid1;
+		this.pid2 = pid2;
 	}
 
 	/* (non-Javadoc)
@@ -41,14 +41,14 @@ public class ExLoadStatWorldRank extends L2GameServerPacket
 			return;
 		}
 
-		//Map<Integer, Long> lastMap = MuseumManager.getInstance().getRanking(_pid1, _pid2, true);
-		//Map<Integer, Long> overallMap = MuseumManager.getInstance().getRanking(_pid1, _pid2, false);
+		//Map<Integer, Long> lastMap = MuseumManager.getInstance().getRanking(pid1, pid2, true);
+		//Map<Integer, Long> overallMap = MuseumManager.getInstance().getRanking(pid1, pid2, false);
 
-		writeD(_pid1);
-		writeD(_pid2);
+		writeD(pid1);
+		writeD(pid2);
 		/*writeD(lastMap.size() < 100 ? lastMap.size() : 100);
         int position = 1;
-		boolean isClanStatistic = MuseumStatistic.get(_pid1, _pid2).toString().toLowerCase().contains("clan");
+		boolean isClanStatistic = MuseumStatistic.get(pid1, pid2).toString().toLowerCase().contains("clan");
 		for (Integer key : lastMap.keySet())
 		{
 			writeH(position);

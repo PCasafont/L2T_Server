@@ -20,12 +20,12 @@ import l2server.gameserver.model.quest.QuestState;
 
 public class RequestTutorialPassCmdToServer extends L2GameClientPacket
 {
-	String _bypass = null;
+	String bypass = null;
 
 	@Override
 	protected void readImpl()
 	{
-		_bypass = readS();
+		bypass = readS();
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class RequestTutorialPassCmdToServer extends L2GameClientPacket
 		QuestState qs = player.getQuestState("Q255_Tutorial");
 		if (qs != null)
 		{
-			qs.getQuest().notifyEvent(_bypass, null, player);
+			qs.getQuest().notifyEvent(bypass, null, player);
 		}
 	}
 }

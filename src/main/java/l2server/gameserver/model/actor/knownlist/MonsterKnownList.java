@@ -91,10 +91,10 @@ public class MonsterKnownList extends AttackableKnownList
 
 		if (getActiveChar().isVisible() && getKnownPlayers().isEmpty() && getKnownSummons().isEmpty())
 		{
-			// Clear the _aggroList of the L2MonsterInstance
+			// Clear the aggroList of the L2MonsterInstance
 			getActiveChar().clearAggroList();
 
-			// Remove all L2Object from _knownObjects and _knownPlayer of the L2MonsterInstance then cancel Attak or Cast and notify AI
+			// Remove all L2Object from knownObjects and knownPlayer of the L2MonsterInstance then cancel Attak or Cast and notify AI
 			//removeAllKnownObjects();
 		}
 

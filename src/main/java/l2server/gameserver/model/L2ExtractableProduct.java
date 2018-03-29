@@ -20,10 +20,10 @@ package l2server.gameserver.model;
  */
 public class L2ExtractableProduct
 {
-	private final int _id;
-	private final int _min;
-	private final int _max;
-	private final int _chance;
+	private final int id;
+	private final int min;
+	private final int max;
+	private final int chance;
 
 	/**
 	 * Create Extractable product
@@ -35,29 +35,29 @@ public class L2ExtractableProduct
 	 */
 	public L2ExtractableProduct(int id, int min, int max, double chance)
 	{
-		_id = id;
-		_min = min;
-		_max = max;
-		_chance = (int) (chance * 1000);
+		this.id = id;
+		this.min = min;
+		this.max = max;
+        this.chance = (int) (chance * 1000);
 	}
 
 	public int getId()
 	{
-		return _id;
+		return id;
 	}
 
 	public int getMin()
 	{
-		return _min;
+		return min;
 	}
 
 	public int getMax()
 	{
-		return _max;
+		return max;
 	}
 
 	public int getChance()
 	{
-		return _chance;
+		return chance;
 	}
 }

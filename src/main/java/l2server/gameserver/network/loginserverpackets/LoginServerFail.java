@@ -30,7 +30,7 @@ public class LoginServerFail extends BaseRecievePacket
 			"Not authed",
 			"Reason: already logged in"
 	};
-	private int _reason;
+	private int reason;
 
 	/**
 	 * @param decrypt
@@ -38,16 +38,16 @@ public class LoginServerFail extends BaseRecievePacket
 	public LoginServerFail(byte[] decrypt)
 	{
 		super(decrypt);
-		_reason = readC();
+		reason = readC();
 	}
 
 	public String getReasonString()
 	{
-		return REASONS[_reason];
+		return REASONS[reason];
 	}
 
 	public int getReason()
 	{
-		return _reason;
+		return reason;
 	}
 }

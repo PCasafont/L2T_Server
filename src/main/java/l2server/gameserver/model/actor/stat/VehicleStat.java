@@ -19,8 +19,8 @@ import l2server.gameserver.model.actor.L2Vehicle;
 
 public class VehicleStat extends CharStat
 {
-	private float _moveSpeed = 0;
-	private int _rotationSpeed = 0;
+	private float moveSpeed = 0;
+	private int rotationSpeed = 0;
 
 	public VehicleStat(L2Vehicle activeChar)
 	{
@@ -30,21 +30,21 @@ public class VehicleStat extends CharStat
 	@Override
 	public float getMoveSpeed()
 	{
-		return _moveSpeed;
+		return moveSpeed;
 	}
 
 	public final void setMoveSpeed(float speed)
 	{
-		_moveSpeed = speed;
+		moveSpeed = speed;
 	}
 
 	public final int getRotationSpeed()
 	{
-		return _rotationSpeed;
+		return rotationSpeed;
 	}
 
 	public final void setRotationSpeed(int speed)
 	{
-		_rotationSpeed = speed;
+		rotationSpeed = speed;
 	}
 }

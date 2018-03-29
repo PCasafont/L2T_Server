@@ -24,8 +24,8 @@ import java.util.List;
 public class FieldDomination extends EventInstance
 {
 
-	private boolean _FDflagsSpawned = false;
-	private L2Spawn[] _FDFlagSpawns = new L2Spawn[5];
+	private boolean FDflagsSpawned = false;
+	private L2Spawn[] FDFlagSpawns = new L2Spawn[5];
 
 	public FieldDomination(int id, EventConfig config)
 	{
@@ -40,7 +40,7 @@ public class FieldDomination extends EventInstance
 			return false;
 		}
 
-		if (!_FDflagsSpawned)
+		if (!FDflagsSpawned)
 		{
 			spawnFlags();
 		}
@@ -53,18 +53,18 @@ public class FieldDomination extends EventInstance
 	{
 		for (int i = 0; i < 5; i++)
 		{
-			if (_FDFlagSpawns[i] != null && ((L2EventFlagInstance) _FDFlagSpawns[i].getNpc()).getTeam() != null)
+			if (FDFlagSpawns[i] != null && ((L2EventFlagInstance) FDFlagSpawns[i].getNpc()).getTeam() != null)
 			{
-				((L2EventFlagInstance) _FDFlagSpawns[i].getNpc()).getTeam().increasePoints();
+				((L2EventFlagInstance) FDFlagSpawns[i].getNpc()).getTeam().increasePoints();
 			}
 		}
 		EventTeam team;
-		if (_config.getLocation().getTeamCount() != 4)
+		if (config.getLocation().getTeamCount() != 4)
 		{
-			if (_teams[0].getPoints() == _teams[1].getPoints())
+			if (teams[0].getPoints() == teams[1].getPoints())
 			{
 				// Check if one of the teams have no more players left
-				if (_teams[0].getParticipatedPlayerCount() == 0 || _teams[1].getParticipatedPlayerCount() == 0)
+				if (teams[0].getParticipatedPlayerCount() == 0 || teams[1].getParticipatedPlayerCount() == 0)
 				{
 					// set state to rewarding
 					setState(EventState.REWARDING);
@@ -86,9 +86,9 @@ public class FieldDomination extends EventInstance
 			setState(EventState.REWARDING);
 
 			// Get team which has more points
-			team = _teams[_teams[0].getPoints() > _teams[1].getPoints() ? 0 : 1];
+			team = teams[teams[0].getPoints() > teams[1].getPoints() ? 0 : 1];
 
-			if (team == _teams[0])
+			if (team == teams[0])
 			{
 				rewardTeams(0);
 			}
@@ -101,29 +101,29 @@ public class FieldDomination extends EventInstance
 		{
 			// Set state REWARDING so nobody can point anymore
 			setState(EventState.REWARDING);
-			if (_teams[0].getPoints() > _teams[1].getPoints() && _teams[0].getPoints() > _teams[2].getPoints() &&
-					_teams[0].getPoints() > _teams[3].getPoints())
+			if (teams[0].getPoints() > teams[1].getPoints() && teams[0].getPoints() > teams[2].getPoints() &&
+					teams[0].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(0);
-				team = _teams[0];
+				team = teams[0];
 			}
-			else if (_teams[1].getPoints() > _teams[0].getPoints() && _teams[1].getPoints() > _teams[2].getPoints() &&
-					_teams[1].getPoints() > _teams[3].getPoints())
+			else if (teams[1].getPoints() > teams[0].getPoints() && teams[1].getPoints() > teams[2].getPoints() &&
+					teams[1].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(1);
-				team = _teams[1];
+				team = teams[1];
 			}
-			else if (_teams[2].getPoints() > _teams[0].getPoints() && _teams[2].getPoints() > _teams[1].getPoints() &&
-					_teams[2].getPoints() > _teams[3].getPoints())
+			else if (teams[2].getPoints() > teams[0].getPoints() && teams[2].getPoints() > teams[1].getPoints() &&
+					teams[2].getPoints() > teams[3].getPoints())
 			{
 				rewardTeams(2);
-				team = _teams[2];
+				team = teams[2];
 			}
-			else if (_teams[3].getPoints() > _teams[0].getPoints() && _teams[3].getPoints() > _teams[1].getPoints() &&
-					_teams[3].getPoints() > _teams[2].getPoints())
+			else if (teams[3].getPoints() > teams[0].getPoints() && teams[3].getPoints() > teams[1].getPoints() &&
+					teams[3].getPoints() > teams[2].getPoints())
 			{
 				rewardTeams(3);
-				team = _teams[3];
+				team = teams[3];
 			}
 			else
 			{
@@ -131,7 +131,7 @@ public class FieldDomination extends EventInstance
 				return;
 			}
 		}
-		if (team.getPoints() > _config.getLocation().getTeamCount())
+		if (team.getPoints() > config.getLocation().getTeamCount())
 		{
 			Announcements.getInstance()
 					.announceToAll("The event has ended. Team " + team.getName() + " won by owning all the flags.");
@@ -159,9 +159,9 @@ public class FieldDomination extends EventInstance
 		String flagStatus;
 		for (int i = 0; i < 5; i++)
 		{
-			if (_FDFlagSpawns[i] != null && _FDFlagSpawns[i].getNpc() != null)
+			if (FDFlagSpawns[i] != null && FDFlagSpawns[i].getNpc() != null)
 			{
-				flag = (L2EventFlagInstance) _FDFlagSpawns[i].getNpc();
+				flag = (L2EventFlagInstance) FDFlagSpawns[i].getNpc();
 				if (flag.getTeam() == null)
 				{
 					flagStatus = "Neutral";
@@ -173,7 +173,7 @@ public class FieldDomination extends EventInstance
 				int id = i + 1;
 				if (id == 5)
 				{
-					id = _config.getLocation().getTeamCount() + 1;
+					id = config.getLocation().getTeamCount() + 1;
 				}
 				html += "Flag " + id + " status: " + flagStatus + ".<br>";
 			}
@@ -213,38 +213,38 @@ public class FieldDomination extends EventInstance
 			assistant.addEventPoints(1);
 		}
 
-		new EventTeleporter(killedPlayer, _teams[killedTeamId].getCoords(), false, false);
+		new EventTeleporter(killedPlayer, teams[killedTeamId].getCoords(), false, false);
 	}
 
 	private void spawnFlags()
 	{
-		spawnNeutralFlag(_teams[0]);
-		spawnNeutralFlag(_teams[1]);
-		if (_config.getLocation().getTeamCount() == 4)
+		spawnNeutralFlag(teams[0]);
+		spawnNeutralFlag(teams[1]);
+		if (config.getLocation().getTeamCount() == 4)
 		{
-			spawnNeutralFlag(_teams[2]);
-			spawnNeutralFlag(_teams[3]);
+			spawnNeutralFlag(teams[2]);
+			spawnNeutralFlag(teams[3]);
 		}
 		spawnNeutralFlag(null);
-		_FDflagsSpawned = true;
+		FDflagsSpawned = true;
 	}
 
 	private void unspawnFlags()
 	{
 		for (int i = 0; i < 5; i++)
 		{
-			if (_FDFlagSpawns[i] != null)
+			if (FDFlagSpawns[i] != null)
 			{
-				if (_FDFlagSpawns[i].getNpc() != null)
+				if (FDFlagSpawns[i].getNpc() != null)
 				{
-					((L2EventFlagInstance) _FDFlagSpawns[i].getNpc()).shouldBeDeleted();
-					_FDFlagSpawns[i].getNpc().deleteMe();
+					((L2EventFlagInstance) FDFlagSpawns[i].getNpc()).shouldBeDeleted();
+					FDFlagSpawns[i].getNpc().deleteMe();
 				}
-				_FDFlagSpawns[i].stopRespawn();
-				SpawnTable.getInstance().deleteSpawn(_FDFlagSpawns[i], true);
+				FDFlagSpawns[i].stopRespawn();
+				SpawnTable.getInstance().deleteSpawn(FDFlagSpawns[i], true);
 			}
 		}
-		_FDflagsSpawned = false;
+		FDflagsSpawned = false;
 	}
 
 	public void spawnNeutralFlag(EventTeam team)
@@ -255,13 +255,13 @@ public class FieldDomination extends EventInstance
 		{
 			int x = 0;
 			int y = 0;
-			for (int i = 0; i < _config.getLocation().getTeamCount(); i++)
+			for (int i = 0; i < config.getLocation().getTeamCount(); i++)
 			{
-				x += _teams[i].getCoords().getX();
-				y += _teams[i].getCoords().getY();
+				x += teams[i].getCoords().getX();
+				y += teams[i].getCoords().getY();
 			}
-			x /= _config.getLocation().getTeamCount();
-			y /= _config.getLocation().getTeamCount();
+			x /= config.getLocation().getTeamCount();
+			y /= config.getLocation().getTeamCount();
 
 			int heading = 0;
 
@@ -271,7 +271,7 @@ public class FieldDomination extends EventInstance
 			{
 				flagSpawn.setX(x);
 				flagSpawn.setY(y);
-				flagSpawn.setZ(_config.getLocation().getGlobalZ());
+				flagSpawn.setZ(config.getLocation().getGlobalZ());
 			}
 			else
 			{
@@ -296,11 +296,11 @@ public class FieldDomination extends EventInstance
 			flagSpawn.doSpawn();
 			if (team == null)
 			{
-				_FDFlagSpawns[4] = flagSpawn;
+				FDFlagSpawns[4] = flagSpawn;
 			}
 			else
 			{
-				_FDFlagSpawns[team.getFlagId() - 44004] = flagSpawn;
+				FDFlagSpawns[team.getFlagId() - 44004] = flagSpawn;
 			}
 
 			L2EventFlagInstance flag = (L2EventFlagInstance) flagSpawn.getNpc();
@@ -325,13 +325,13 @@ public class FieldDomination extends EventInstance
 		{
 			int x = 0;
 			int y = 0;
-			for (int i = 0; i < _config.getLocation().getTeamCount(); i++)
+			for (int i = 0; i < config.getLocation().getTeamCount(); i++)
 			{
-				x += _teams[i].getCoords().getX();
-				y += _teams[i].getCoords().getY();
+				x += teams[i].getCoords().getX();
+				y += teams[i].getCoords().getY();
 			}
-			x /= _config.getLocation().getTeamCount();
-			y /= _config.getLocation().getTeamCount();
+			x /= config.getLocation().getTeamCount();
+			y /= config.getLocation().getTeamCount();
 
 			int heading = 0;
 			if (!(flag.getX() == x && flag.getY() == y))
@@ -380,14 +380,14 @@ public class FieldDomination extends EventInstance
 			boolean allFlagsOwned = true;
 			for (int i = 0; i < 5; i++)
 			{
-				if (_FDFlagSpawns[i] != null)
+				if (FDFlagSpawns[i] != null)
 				{
-					if (_FDFlagSpawns[i].getX() == flagSpawn.getX() && _FDFlagSpawns[i].getY() == flagSpawn.getY())
+					if (FDFlagSpawns[i].getX() == flagSpawn.getX() && FDFlagSpawns[i].getY() == flagSpawn.getY())
 					{
-						_FDFlagSpawns[i] = flagSpawn;
+						FDFlagSpawns[i] = flagSpawn;
 					}
-					if (((L2EventFlagInstance) _FDFlagSpawns[i].getNpc()).getTeam() == null || team == null ||
-							((L2EventFlagInstance) _FDFlagSpawns[i].getNpc()).getTeam().getFlagId() != team.getFlagId())
+					if (((L2EventFlagInstance) FDFlagSpawns[i].getNpc()).getTeam() == null || team == null ||
+							((L2EventFlagInstance) FDFlagSpawns[i].getNpc()).getTeam().getFlagId() != team.getFlagId())
 					{
 						allFlagsOwned = false;
 					}

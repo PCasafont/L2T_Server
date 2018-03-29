@@ -34,12 +34,12 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public final class RequestPetitionCancel extends L2GameClientPacket
 {
 
-	//private int _unknown;
+	//private int unknown;
 
 	@Override
 	protected void readImpl()
 	{
-		//_unknown = readD(); This is pretty much a trigger packet.
+		//unknown = readD(); This is pretty much a trigger packet.
 	}
 
 	@Override

@@ -38,33 +38,33 @@ import java.util.List;
 public class Spezion extends L2AttackableAIScript
 {
     //Quest
-    private static final String _qn = "Spezion";
-    private static final boolean _debug = false;
+    private static final String qn = "Spezion";
+    private static final boolean debug = false;
 
     //Ids
-    private static final int _fakeSpezion = 25868;
-    private static final int _spezionHeadstone = 32945;
-    private static final int[] _cannonIds = {32939, 32940, 32941, 32942};
-    private static final int[] _allMobs = {25779, 25780, 25781, 25782, 25867, 25872, 25873, 25874};
-    private static final Location _enterCords = new Location(175475, 145044, -11897);
-    private static final int _giantCannonball = 17611;
-    private static final L2Skill _cannonBlast = SkillTable.getInstance().getInfo(14175, 1);
+    private static final int fakeSpezion = 25868;
+    private static final int spezionHeadstone = 32945;
+    private static final int[] cannonIds = {32939, 32940, 32941, 32942};
+    private static final int[] allMobs = {25779, 25780, 25781, 25782, 25867, 25872, 25873, 25874};
+    private static final Location enterCords = new Location(175475, 145044, -11897);
+    private static final int giantCannonball = 17611;
+    private static final L2Skill cannonBlast = SkillTable.getInstance().getInfo(14175, 1);
 
     public Spezion(int questId, String name, String descr)
     {
         super(questId, name, descr);
 
-        addTalkId(_spezionHeadstone);
-        addStartNpc(_spezionHeadstone);
+        addTalkId(spezionHeadstone);
+        addStartNpc(spezionHeadstone);
 
-        for (int a : _cannonIds)
+        for (int a : cannonIds)
         {
             addTalkId(a);
             addStartNpc(a);
             addSpellFinishedId(a);
         }
 
-        for (int a : _allMobs)
+        for (int a : allMobs)
         {
             addAttackId(a);
             addKillId(a);
@@ -93,7 +93,7 @@ public class Spezion extends L2AttackableAIScript
     @Override
     public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onKill: " + npc.getName());
         }
@@ -128,17 +128,17 @@ public class Spezion extends L2AttackableAIScript
     @Override
     public final String onTalk(L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onTalk: " + player.getName());
         }
 
         int npcId = npc.getNpcId();
-        if (npcId == _spezionHeadstone)
+        if (npcId == spezionHeadstone)
         {
             return "HeadStone.html";
         }
-        else if (Util.contains(_cannonIds, npc.getNpcId()))
+        else if (Util.contains(cannonIds, npc.getNpcId()))
         {
             if (npc.getInstanceId() != 0)
             {
@@ -152,7 +152,7 @@ public class Spezion extends L2AttackableAIScript
     @Override
     public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onSpellFinished: " + skill.getName());
         }
@@ -175,9 +175,9 @@ public class Spezion extends L2AttackableAIScript
         if (wrld != null && wrld instanceof PrisonOfDarknessWorld)
         {
             PrisonOfDarknessWorld world = (PrisonOfDarknessWorld) wrld;
-            if (Util.contains(_cannonIds, npc.getNpcId()))
+            if (Util.contains(cannonIds, npc.getNpcId()))
             {
-                if (skill == _cannonBlast)
+                if (skill == cannonBlast)
                 {
                     npc.setTitle("Empty Cannon");
                     npc.broadcastPacket(new NicknameChanged(npc));
@@ -205,7 +205,7 @@ public class Spezion extends L2AttackableAIScript
     @Override
     public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
     {
-        if (_debug)
+        if (debug)
         {
             Log.warning(getName() + ": onAdvEvent: " + event);
         }
@@ -256,7 +256,7 @@ public class Spezion extends L2AttackableAIScript
                 //Fake Invul Spezions
                 for (int i = 0; i < 3; i++)
                 {
-                    L2Npc fakeSpezion = addSpawn(_fakeSpezion, world.spezionBoss.getX(), world.spezionBoss.getY(),
+                    L2Npc fakeSpezion = addSpawn(this.fakeSpezion, world.spezionBoss.getX(), world.spezionBoss.getY(),
                             world.spezionBoss.getZ(), 0, true, 0, false, world.instanceId);
                     world.fakeMonsters.add(fakeSpezion);
                     fakeSpezion.setIsInvul(true);
@@ -331,7 +331,7 @@ public class Spezion extends L2AttackableAIScript
                     return "Nope, not right now.";
                 }
 
-                long cannonBallCount = player.getInventory().getInventoryItemCount(_giantCannonball, 0);
+                long cannonBallCount = player.getInventory().getInventoryItemCount(giantCannonball, 0);
                 if (cannonBallCount == 0)
                 {
                     return npc.getTemplate().TemplateId + "-1.html";
@@ -341,16 +341,16 @@ public class Spezion extends L2AttackableAIScript
                         Util.checkIfInRange(1300, npc, world.spezionBoss, false) &&
                         GeoData.getInstance().canSeeTarget(npc, world.spezionBoss))
                 {
-                    player.destroyItemByItemId(_qn, _giantCannonball, 1, npc, true);
-                    player.getInventory().destroyItem(_qn, _giantCannonball, 1, player, player);
+                    player.destroyItemByItemId(qn, giantCannonball, 1, npc, true);
+                    player.getInventory().destroyItem(qn, giantCannonball, 1, player, player);
 
                     npc.setTitle("Loading Cannon");
                     npc.broadcastPacket(new NicknameChanged(npc));
                     npc.setTarget(world.spezionBoss);
-                    npc.doCast(_cannonBlast);
+                    npc.doCast(cannonBlast);
                 }
 
-                if (_debug)
+                if (debug)
                 {
                     Log.warning(getName() + ": Range: " +
                             Util.calculateDistance(npc.getX(), npc.getY(), world.spezionBoss.getX(),
@@ -390,7 +390,7 @@ public class Spezion extends L2AttackableAIScript
             {
                 if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
                 {
-                    player.deleteAllItemsById(_giantCannonball);
+                    player.deleteAllItemsById(giantCannonball);
                     player.setInstanceId(world.instanceId);
                     player.teleToLocation(175373, 144292, -11818);
                 }
@@ -400,13 +400,13 @@ public class Spezion extends L2AttackableAIScript
         }
         else
         {
-            if (!_debug && !InstanceManager.getInstance()
+            if (!debug && !InstanceManager.getInstance()
                     .checkInstanceConditions(player, template_id, Config.SPEZION_MIN_PLAYERS, 7, 92, 99))
             {
                 return;
             }
 
-            final int instanceId = InstanceManager.getInstance().createDynamicInstance(_qn + ".xml");
+            final int instanceId = InstanceManager.getInstance().createDynamicInstance(qn + ".xml");
             world = new PrisonOfDarknessWorld();
             world.instanceId = instanceId;
             world.status = 0;
@@ -416,7 +416,7 @@ public class Spezion extends L2AttackableAIScript
             setupIDs((PrisonOfDarknessWorld) world, template_id);
 
             List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
-            if (_debug)
+            if (debug)
             {
                 allPlayers.add(player);
             }
@@ -435,9 +435,9 @@ public class Spezion extends L2AttackableAIScript
                 world.allowed.add(enterPlayer.getObjectId());
 
                 enterPlayer.stopAllEffectsExceptThoseThatLastThroughDeath();
-                enterPlayer.deleteAllItemsById(_giantCannonball);
+                enterPlayer.deleteAllItemsById(giantCannonball);
                 enterPlayer.setInstanceId(instanceId);
-                enterPlayer.teleToLocation(_enterCords, true);
+                enterPlayer.teleToLocation(enterCords, true);
             }
 
             startQuestTimer("stage_1_start", 60000, null, player);
@@ -471,6 +471,6 @@ public class Spezion extends L2AttackableAIScript
 
     public static void main(String[] args)
     {
-        new Spezion(-1, _qn, "instances/RaidBosses");
+        new Spezion(-1, qn, "instances/RaidBosses");
     }
 }

@@ -35,14 +35,14 @@ import java.util.concurrent.ScheduledFuture;
 
 public class WarpedSpace extends L2AttackableAIScript
 {
-    private static final int _gravityCoreId = 13432;
-    private static final L2Skill _spatialTrap = SkillTable.getInstance().getInfo(30528, 1);
+    private static final int gravityCoreId = 13432;
+    private static final L2Skill spatialTrap = SkillTable.getInstance().getInfo(30528, 1);
 
     public WarpedSpace(int id, String name, String descr)
     {
         super(id, name, descr);
 
-        addSpawnId(_gravityCoreId);
+        addSpawnId(gravityCoreId);
     }
 
     @Override
@@ -59,26 +59,26 @@ public class WarpedSpace extends L2AttackableAIScript
 
     class WarpedSpaceAI implements Runnable
     {
-        private L2Npc _gravityCore;
-        private ScheduledFuture<?> _schedule = null;
+        private L2Npc gravityCore;
+        private ScheduledFuture<?> schedule = null;
 
         protected WarpedSpaceAI(L2Npc npc)
         {
-            _gravityCore = npc;
+            gravityCore = npc;
         }
 
         public void setSchedule(ScheduledFuture<?> schedule)
         {
-            _schedule = schedule;
+            this.schedule = schedule;
         }
 
         @Override
         public void run()
         {
-            if (_gravityCore == null || _gravityCore.isDead() || _gravityCore.isDecayed() ||
-                    _gravityCore.getOwner().isAlikeDead())
+            if (gravityCore == null || gravityCore.isDead() || gravityCore.isDecayed() ||
+                    gravityCore.getOwner().isAlikeDead())
             {
-                for (L2Character ch : _gravityCore.getKnownList().getKnownCharactersInRadius(175))
+                for (L2Character ch : gravityCore.getKnownList().getKnownCharactersInRadius(175))
                 {
                     if (ch.getFirstEffect(L2AbnormalType.SPATIAL_TRAP) != null)
                     {
@@ -86,26 +86,26 @@ public class WarpedSpace extends L2AttackableAIScript
                     }
                 }
 
-                if (_schedule != null)
+                if (schedule != null)
                 {
-                    _schedule.cancel(true);
+                    schedule.cancel(true);
                     return;
                 }
             }
 
-            for (L2Character ch : _gravityCore.getKnownList().getKnownCharactersInRadius(175))
+            for (L2Character ch : gravityCore.getKnownList().getKnownCharactersInRadius(175))
             {
-                if (ch.getFirstEffect(_spatialTrap.getId()) != null)
+                if (ch.getFirstEffect(spatialTrap.getId()) != null)
                 {
                     continue;
                 }
-                else if (_gravityCore.getOwner() == ch)
+                else if (gravityCore.getOwner() == ch)
                 {
-                    SkillTable.getInstance().getInfo(30527, 1).getEffects(_gravityCore, ch);
+                    SkillTable.getInstance().getInfo(30527, 1).getEffects(gravityCore, ch);
                     continue;
                 }
 
-                _spatialTrap.getEffects(_gravityCore, ch);
+                spatialTrap.getEffects(gravityCore, ch);
             }
         }
     }

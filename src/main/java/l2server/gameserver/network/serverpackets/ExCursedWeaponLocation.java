@@ -26,11 +26,11 @@ import java.util.List;
  */
 public class ExCursedWeaponLocation extends L2GameServerPacket
 {
-	private List<CursedWeaponInfo> _cursedWeaponInfo;
+	private List<CursedWeaponInfo> cursedWeaponInfo;
 
 	public ExCursedWeaponLocation(List<CursedWeaponInfo> cursedWeaponInfo)
 	{
-		_cursedWeaponInfo = cursedWeaponInfo;
+		this.cursedWeaponInfo = cursedWeaponInfo;
 	}
 
 	/**
@@ -38,10 +38,10 @@ public class ExCursedWeaponLocation extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		if (!_cursedWeaponInfo.isEmpty())
+		if (!cursedWeaponInfo.isEmpty())
 		{
-			writeD(_cursedWeaponInfo.size());
-			for (CursedWeaponInfo w : _cursedWeaponInfo)
+			writeD(cursedWeaponInfo.size());
+			for (CursedWeaponInfo w : cursedWeaponInfo)
 			{
 				writeD(w.id);
 				writeD(w.activated);

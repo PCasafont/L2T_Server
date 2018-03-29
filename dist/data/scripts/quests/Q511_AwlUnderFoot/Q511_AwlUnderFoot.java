@@ -49,7 +49,7 @@ public final class Q511_AwlUnderFoot extends Quest
 	public static class FortDungeon
 	{
 		private final int INSTANCEID;
-		private long _reEnterTime = 0;
+		private long reEnterTime = 0;
 
 		public FortDungeon(int iId)
 		{
@@ -63,12 +63,12 @@ public final class Q511_AwlUnderFoot extends Quest
 
 		public long getReEnterTime()
 		{
-			return _reEnterTime;
+			return reEnterTime;
 		}
 
 		public void setReEnterTime(long time)
 		{
-			_reEnterTime = time;
+			reEnterTime = time;
 		}
 	}
 
@@ -77,7 +77,7 @@ public final class Q511_AwlUnderFoot extends Quest
 	private static final long REENTERTIME = 14400000;
 	private static final long RAID_SPAWN_DELAY = 120000;
 
-	private TIntObjectHashMap<FortDungeon> _fortDungeons = new TIntObjectHashMap<FortDungeon>(21);
+	private TIntObjectHashMap<FortDungeon> fortDungeons = new TIntObjectHashMap<FortDungeon>(21);
 
 	// QUEST ITEMS
 	private static final int DL_MARK = 9797;
@@ -198,11 +198,11 @@ public final class Q511_AwlUnderFoot extends Quest
 
 	private class spawnRaid implements Runnable
 	{
-		private FAUWorld _world;
+		private FAUWorld world;
 
 		public spawnRaid(FAUWorld world)
 		{
-			_world = world;
+			this.world = world;
 		}
 
 		@Override
@@ -211,11 +211,11 @@ public final class Q511_AwlUnderFoot extends Quest
 			try
 			{
 				int spawnId;
-				if (_world.status == 0)
+				if (world.status == 0)
 				{
 					spawnId = RAIDS1[Rnd.get(RAIDS1.length)];
 				}
-				else if (_world.status == 1)
+				else if (world.status == 1)
 				{
 					spawnId = RAIDS2[Rnd.get(RAIDS2.length)];
 				}
@@ -223,7 +223,7 @@ public final class Q511_AwlUnderFoot extends Quest
 				{
 					spawnId = RAIDS3[Rnd.get(RAIDS3.length)];
 				}
-				L2Npc raid = addSpawn(spawnId, 53319, 245814, -6576, 0, false, 0, false, _world.instanceId);
+				L2Npc raid = addSpawn(spawnId, 53319, 245814, -6576, 0, false, 0, false, world.instanceId);
 				if (raid instanceof L2RaidBossInstance)
 				{
 					((L2RaidBossInstance) raid).setUseRaidCurse(false);
@@ -239,7 +239,7 @@ public final class Q511_AwlUnderFoot extends Quest
 	private String checkFortCondition(L2PcInstance player, L2Npc npc, boolean isEnter)
 	{
 		Fort fortress = npc.getFort();
-		FortDungeon dungeon = _fortDungeons.get(npc.getNpcId());
+		FortDungeon dungeon = fortDungeons.get(npc.getNpcId());
 		if (player == null || fortress == null || dungeon == null)
 		{
 			return "FortressWarden-01.htm";
@@ -284,7 +284,7 @@ public final class Q511_AwlUnderFoot extends Quest
 			tele[0] = 53322;
 			tele[1] = 246380;
 			tele[2] = -6580;
-			return enterInstance(player, "fortdungeon.xml", tele, _fortDungeons.get(npc.getNpcId()),
+			return enterInstance(player, "fortdungeon.xml", tele, fortDungeons.get(npc.getNpcId()),
 					checkFortCondition(player, npc, true));
 		}
 		QuestState st = player.getQuestState(qn);
@@ -333,7 +333,7 @@ public final class Q511_AwlUnderFoot extends Quest
 			{
 				cond = st.getInt("cond");
 			}
-			if (_fortDungeons.containsKey(npcId) && cond == 0)
+			if (fortDungeons.containsKey(npcId) && cond == 0)
 			{
 				if (player.getLevel() >= 60)
 				{
@@ -345,7 +345,7 @@ public final class Q511_AwlUnderFoot extends Quest
 					st.exitQuest(true);
 				}
 			}
-			else if (_fortDungeons.containsKey(npcId) && cond > 0 && st.getState() == State.STARTED)
+			else if (fortDungeons.containsKey(npcId) && cond > 0 && st.getState() == State.STARTED)
 			{
 				long count = st.getQuestItemsCount(DL_MARK);
 				if (cond == 1 && count > 0)
@@ -430,29 +430,29 @@ public final class Q511_AwlUnderFoot extends Quest
 	public Q511_AwlUnderFoot(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		_fortDungeons.put(35666, new FortDungeon(22));
-		_fortDungeons.put(35698, new FortDungeon(23));
-		_fortDungeons.put(35735, new FortDungeon(24));
-		_fortDungeons.put(35767, new FortDungeon(25));
-		_fortDungeons.put(35804, new FortDungeon(26));
-		_fortDungeons.put(35835, new FortDungeon(27));
-		_fortDungeons.put(35867, new FortDungeon(28));
-		_fortDungeons.put(35904, new FortDungeon(29));
-		_fortDungeons.put(35936, new FortDungeon(30));
-		_fortDungeons.put(35974, new FortDungeon(31));
-		_fortDungeons.put(36011, new FortDungeon(32));
-		_fortDungeons.put(36043, new FortDungeon(33));
-		_fortDungeons.put(36081, new FortDungeon(34));
-		_fortDungeons.put(36118, new FortDungeon(35));
-		_fortDungeons.put(36149, new FortDungeon(36));
-		_fortDungeons.put(36181, new FortDungeon(37));
-		_fortDungeons.put(36219, new FortDungeon(38));
-		_fortDungeons.put(36257, new FortDungeon(39));
-		_fortDungeons.put(36294, new FortDungeon(40));
-		_fortDungeons.put(36326, new FortDungeon(41));
-		_fortDungeons.put(36364, new FortDungeon(42));
+		fortDungeons.put(35666, new FortDungeon(22));
+		fortDungeons.put(35698, new FortDungeon(23));
+		fortDungeons.put(35735, new FortDungeon(24));
+		fortDungeons.put(35767, new FortDungeon(25));
+		fortDungeons.put(35804, new FortDungeon(26));
+		fortDungeons.put(35835, new FortDungeon(27));
+		fortDungeons.put(35867, new FortDungeon(28));
+		fortDungeons.put(35904, new FortDungeon(29));
+		fortDungeons.put(35936, new FortDungeon(30));
+		fortDungeons.put(35974, new FortDungeon(31));
+		fortDungeons.put(36011, new FortDungeon(32));
+		fortDungeons.put(36043, new FortDungeon(33));
+		fortDungeons.put(36081, new FortDungeon(34));
+		fortDungeons.put(36118, new FortDungeon(35));
+		fortDungeons.put(36149, new FortDungeon(36));
+		fortDungeons.put(36181, new FortDungeon(37));
+		fortDungeons.put(36219, new FortDungeon(38));
+		fortDungeons.put(36257, new FortDungeon(39));
+		fortDungeons.put(36294, new FortDungeon(40));
+		fortDungeons.put(36326, new FortDungeon(41));
+		fortDungeons.put(36364, new FortDungeon(42));
 
-		for (int i : _fortDungeons.keys())
+		for (int i : fortDungeons.keys())
 		{
 			addStartNpc(i);
 			addTalkId(i);

@@ -27,32 +27,32 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public final class ShortCutInit extends L2GameServerPacket
 {
 
-	private L2ShortCut[] _shortCuts;
-	private L2PcInstance _activeChar;
+	private L2ShortCut[] shortCuts;
+	private L2PcInstance activeChar;
 
 	public ShortCutInit(L2PcInstance activeChar)
 	{
-		_activeChar = activeChar;
+		this.activeChar = activeChar;
 
-		if (_activeChar == null)
+		if (activeChar == null)
 		{
 			return;
 		}
 
-		_shortCuts = _activeChar.getAllShortCuts();
+		shortCuts = activeChar.getAllShortCuts();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_shortCuts.length);
+		writeD(shortCuts.length);
 
 		if (getClient().getActiveChar() != null)
 		{
-			getClient().getActiveChar().sendSysMessage("Shortcuts Length = " + _shortCuts.length);
+			getClient().getActiveChar().sendSysMessage("Shortcuts Length = " + shortCuts.length);
 		}
 
-		for (L2ShortCut sc : _shortCuts)
+		for (L2ShortCut sc : shortCuts)
 		{
 			if (sc == null)
 			{

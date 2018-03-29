@@ -33,13 +33,13 @@ import l2server.util.Point3D;
 public class MoveToLocationInAirShip extends L2GameClientPacket
 {
 
-	private int _shipId;
-	private int _targetX;
-	private int _targetY;
-	private int _targetZ;
-	private int _originX;
-	private int _originY;
-	private int _originZ;
+	private int shipId;
+	private int targetX;
+	private int targetY;
+	private int targetZ;
+	private int originX;
+	private int originY;
+	private int originZ;
 
 	public TaskPriority getPriority()
 	{
@@ -49,13 +49,13 @@ public class MoveToLocationInAirShip extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		_shipId = readD();
-		_targetX = readD();
-		_targetY = readD();
-		_targetZ = readD();
-		_originX = readD();
-		_originY = readD();
-		_originZ = readD();
+		shipId = readD();
+		targetX = readD();
+		targetY = readD();
+		targetZ = readD();
+		originX = readD();
+		originY = readD();
+		originZ = readD();
 	}
 
 	@Override
@@ -67,9 +67,9 @@ public class MoveToLocationInAirShip extends L2GameClientPacket
 			return;
 		}
 
-		if (_targetX == _originX && _targetY == _originY && _targetZ == _originZ)
+		if (targetX == originX && targetY == originY && targetZ == originZ)
 		{
-			activeChar.sendPacket(new StopMoveInVehicle(activeChar, _shipId));
+			activeChar.sendPacket(new StopMoveInVehicle(activeChar, shipId));
 			return;
 		}
 
@@ -93,13 +93,13 @@ public class MoveToLocationInAirShip extends L2GameClientPacket
 		}
 
 		final L2AirShipInstance airShip = activeChar.getAirShip();
-		if (airShip.getObjectId() != _shipId)
+		if (airShip.getObjectId() != shipId)
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
-		activeChar.setInVehiclePosition(new Point3D(_targetX, _targetY, _targetZ));
+		activeChar.setInVehiclePosition(new Point3D(targetX, targetY, targetZ));
 		activeChar.broadcastPacket(new ExMoveToLocationInAirShip(activeChar));
 	}
 }

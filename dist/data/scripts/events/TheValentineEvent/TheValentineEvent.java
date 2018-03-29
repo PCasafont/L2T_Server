@@ -30,10 +30,10 @@ import l2server.gameserver.model.quest.State;
  */
 public class TheValentineEvent extends Quest
 {
-	private static final int _npc = 4301;
-	private static final int _recipe = 20191;
+	private static final int npc = 4301;
+	private static final int recipe = 20191;
 
-	private static final int[][] _spawns = {
+	private static final int[][] spawns = {
 			{87792, -142240, -1343, 44000},
 			{87616, -140688, -1542, 16500},
 			{114733, -178691, -821, 0},
@@ -80,12 +80,12 @@ public class TheValentineEvent extends Quest
 	public TheValentineEvent(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
-		addStartNpc(_npc);
-		addFirstTalkId(_npc);
-		addTalkId(_npc);
-		for (int[] _spawn : _spawns)
+		addStartNpc(npc);
+		addFirstTalkId(npc);
+		addTalkId(npc);
+		for (int[] spawn : spawns)
 		{
-			addSpawn(_npc, _spawn[0], _spawn[1], _spawn[2], _spawn[3], false, 0);
+			addSpawn(npc, spawn[0], spawn[1], spawn[2], spawn[3], false, 0);
 		}
 	}
 
@@ -104,7 +104,7 @@ public class TheValentineEvent extends Quest
 			}
 			else
 			{
-				st.giveItems(_recipe, 1);
+				st.giveItems(recipe, 1);
 				st.playSound("Itemsound.quest_itemget");
 				st.setState(State.COMPLETED);
 			}

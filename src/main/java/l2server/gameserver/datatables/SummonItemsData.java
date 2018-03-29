@@ -30,16 +30,16 @@ import java.io.File;
 
 public class SummonItemsData
 {
-	private TIntObjectHashMap<L2SummonItem> _summonitems;
+	private TIntObjectHashMap<L2SummonItem> summonitems;
 
 	public static SummonItemsData getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private SummonItemsData()
 	{
-		_summonitems = new TIntObjectHashMap<>();
+		summonitems = new TIntObjectHashMap<>();
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "summonItems.xml");
 		XmlDocument doc = new XmlDocument(file);
@@ -54,24 +54,24 @@ public class SummonItemsData
                 int despawnTime = d.getInt("despawn", -1);
 
                 L2SummonItem summonitem = new L2SummonItem(itemId, npcId, summonType, despawnTime);
-                _summonitems.put(itemId, summonitem);
+                summonitems.put(itemId, summonitem);
             }
         }
 
-		Log.info("Summon items data: Loaded " + _summonitems.size() + " summon items.");
+		Log.info("Summon items data: Loaded " + summonitems.size() + " summon items.");
 	}
 
 	public L2SummonItem getSummonItem(int itemId)
 	{
-		return _summonitems.get(itemId);
+		return summonitems.get(itemId);
 	}
 
 	public int[] itemIDs()
 	{
-		int size = _summonitems.size();
+		int size = summonitems.size();
 		int[] result = new int[size];
 		int i = 0;
-		for (Object si : _summonitems.getValues())
+		for (Object si : summonitems.getValues())
 		{
 			result[i++] = ((L2SummonItem) si).getItemId();
 		}
@@ -81,6 +81,6 @@ public class SummonItemsData
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final SummonItemsData _instance = new SummonItemsData();
+		protected static final SummonItemsData instance = new SummonItemsData();
 	}
 }

@@ -32,16 +32,16 @@ import l2server.util.Rnd;
  */
 public class L2SkillCreateItem extends L2Skill
 {
-	private final int[] _createItemId;
-	private final int _createItemCount;
-	private final int _randomCount;
+	private final int[] createItemId;
+	private final int createItemCount;
+	private final int randomCount;
 
 	public L2SkillCreateItem(StatsSet set)
 	{
 		super(set);
-		_createItemId = set.getIntegerArray("create_item_id");
-		_createItemCount = set.getInteger("create_item_count", 0);
-		_randomCount = set.getInteger("random_count", 1);
+		createItemId = set.getIntegerArray("create_item_id");
+		createItemCount = set.getInteger("create_item_count", 0);
+		randomCount = set.getInteger("random_count", 1);
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class L2SkillCreateItem extends L2Skill
 		}
 		if (activeChar instanceof L2Playable)
 		{
-			if (_createItemId == null || _createItemCount == 0)
+			if (createItemId == null || createItemCount == 0)
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_PREPARED_FOR_REUSE);
 				sm.addSkillName(this);
@@ -65,15 +65,15 @@ public class L2SkillCreateItem extends L2Skill
 				return;
 			}
 
-			int count = _createItemCount + Rnd.nextInt(_randomCount);
-			int rndid = Rnd.nextInt(_createItemId.length);
+			int count = createItemCount + Rnd.nextInt(randomCount);
+			int rndid = Rnd.nextInt(createItemId.length);
 			if (activeChar instanceof L2PcInstance)
 			{
-				player.addItem("Skill", _createItemId[rndid], count, activeChar, true);
+				player.addItem("Skill", createItemId[rndid], count, activeChar, true);
 			}
 			else if (activeChar instanceof L2PetInstance)
 			{
-				activeChar.getInventory().addItem("Skill", _createItemId[rndid], count, player, activeChar);
+				activeChar.getInventory().addItem("Skill", createItemId[rndid], count, player, activeChar);
 				player.sendPacket(new PetItemList((L2PetInstance) activeChar));
 			}
 		}

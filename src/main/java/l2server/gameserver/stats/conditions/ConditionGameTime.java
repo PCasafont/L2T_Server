@@ -34,8 +34,8 @@ public class ConditionGameTime extends Condition
 		NIGHT
 	}
 
-	private final CheckGameTime _check;
-	private final boolean _required;
+	private final CheckGameTime check;
+	private final boolean required;
 
 	/**
 	 * Instantiates a new condition game time.
@@ -45,8 +45,8 @@ public class ConditionGameTime extends Condition
 	 */
 	public ConditionGameTime(CheckGameTime check, boolean required)
 	{
-		_check = check;
-		_required = required;
+		this.check = check;
+		this.required = required;
 	}
 
 	/**
@@ -59,11 +59,11 @@ public class ConditionGameTime extends Condition
 	@Override
 	public boolean testImpl(Env env)
 	{
-		switch (_check)
+		switch (check)
 		{
 			case NIGHT:
-				return TimeController.getInstance().isNowNight() == _required;
+				return TimeController.getInstance().isNowNight() == required;
 		}
-		return !_required;
+		return !required;
 	}
 }

@@ -41,14 +41,14 @@ public class CoupleManager
 
 	public static CoupleManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	// =========================================================
 
 	// =========================================================
 	// Data Field
-	private ArrayList<Couple> _couples;
+	private ArrayList<Couple> couples;
 
 	// =========================================================
 	// Method - Public
@@ -111,13 +111,13 @@ public class CoupleManager
 		{
 			if (player1.getPartnerId() == 0 && player2.getPartnerId() == 0)
 			{
-				int _player1id = player1.getObjectId();
-				int _player2id = player2.getObjectId();
+				int player1id = player1.getObjectId();
+				int player2id = player2.getObjectId();
 
 				Couple _new = new Couple(player1, player2);
 				getCouples().add(_new);
-				player1.setPartnerId(_player2id);
-				player2.setPartnerId(_player1id);
+				player1.setPartnerId(player2id);
+				player2.setPartnerId(player1id);
 				player1.setCoupleId(_new.getId());
 				player2.setCoupleId(_new.getId());
 			}
@@ -165,16 +165,16 @@ public class CoupleManager
 
 	public final ArrayList<Couple> getCouples()
 	{
-		if (_couples == null)
+		if (couples == null)
 		{
-			_couples = new ArrayList<>();
+			couples = new ArrayList<>();
 		}
-		return _couples;
+		return couples;
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final CoupleManager _instance = new CoupleManager();
+		protected static final CoupleManager instance = new CoupleManager();
 	}
 }

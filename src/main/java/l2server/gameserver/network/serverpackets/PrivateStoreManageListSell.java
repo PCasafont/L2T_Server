@@ -34,40 +34,40 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class PrivateStoreManageListSell extends L2ItemListPacket
 {
-	private int _objId;
-	private long _playerAdena;
-	private boolean _packageSale;
-	private TradeList.TradeItem[] _itemList;
-	private TradeList.TradeItem[] _sellList;
+	private int objId;
+	private long playerAdena;
+	private boolean packageSale;
+	private TradeList.TradeItem[] itemList;
+	private TradeList.TradeItem[] sellList;
 
 	public PrivateStoreManageListSell(L2PcInstance player, boolean isPackageSale)
 	{
-		_objId = player.getObjectId();
-		_playerAdena = player.getAdena();
+		objId = player.getObjectId();
+		playerAdena = player.getAdena();
 		player.getSellList().updateItems();
-		_packageSale = isPackageSale;
-		_itemList = player.getInventory().getAvailableItems(player.getSellList());
-		_sellList = player.getSellList().getItems();
+		packageSale = isPackageSale;
+		itemList = player.getInventory().getAvailableItems(player.getSellList());
+		sellList = player.getSellList().getItems();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		//section 1
-		writeD(_objId);
-		writeD(_packageSale ? 1 : 0); // Package sell
-		writeQ(_playerAdena);
+		writeD(objId);
+		writeD(packageSale ? 1 : 0); // Package sell
+		writeQ(playerAdena);
 
 		//section2
-		writeD(_itemList.length); //for potential sells
-		for (TradeList.TradeItem item : _itemList)
+		writeD(itemList.length); //for potential sells
+		for (TradeList.TradeItem item : itemList)
 		{
 			writeItem(item);
 			writeQ(item.getItem().getReferencePrice() * 2);
 		}
 		//section 3
-		writeD(_sellList.length); //count for any items already added for sell
-		for (TradeList.TradeItem item : _sellList)
+		writeD(sellList.length); //count for any items already added for sell
+		for (TradeList.TradeItem item : sellList)
 		{
 			writeItem(item);
 

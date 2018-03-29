@@ -15,6 +15,7 @@
 
 package l2server.gameserver;
 
+import gnu.trove.TShortObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.model.L2Object;
@@ -28,13 +29,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
 import l2server.util.Point3D;
 
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.LineNumberReader;
-import java.io.RandomAccessFile;
+import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.IntBuffer;
@@ -42,8 +37,6 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
-
-import gnu.trove.TShortObjectHashMap;
 
 /**
  * @author -Nemesiss-
@@ -56,13 +49,13 @@ public class GeoEngine extends GeoData
 	private static final byte SOUTH = 4;
 	private static final byte NORTH = 8;
 	private static final byte NSWE_ALL = 15;
-	private static TShortObjectHashMap<MappedByteBuffer> _geodata = new TShortObjectHashMap<>();
-	private static TShortObjectHashMap<IntBuffer> _geodataIndex = new TShortObjectHashMap<>();
-	private static BufferedOutputStream _geoBugsOut;
+	private static TShortObjectHashMap<MappedByteBuffer> geodata = new TShortObjectHashMap<>();
+	private static TShortObjectHashMap<IntBuffer> geodataIndex = new TShortObjectHashMap<>();
+	private static BufferedOutputStream geoBugsOut;
 
 	public static GeoEngine getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private GeoEngine()
@@ -261,8 +254,8 @@ public class GeoEngine extends GeoData
 		String out = rx + ";" + ry + ";" + bx + ";" + by + ";" + cx + ";" + cy + ";" + gm.getZ() + ";" + comment + "\n";
 		try
 		{
-			_geoBugsOut.write(out.getBytes());
-			_geoBugsOut.flush();
+			geoBugsOut.write(out.getBytes());
+			geoBugsOut.flush();
 			gm.sendMessage("GeoData bug saved!");
 		}
 		catch (Exception e)
@@ -285,7 +278,7 @@ public class GeoEngine extends GeoData
 		int gx = x - L2World.MAP_MIN_X >> 4;
 		int gy = y - L2World.MAP_MIN_Y >> 4;
 		short region = getRegionOffset(gx, gy);
-		return _geodata.contains(region);
+		return geodata.contains(region);
 	}
 
 	private static boolean canSee(int x, int y, double z, int tx, int ty, int tz)
@@ -311,7 +304,7 @@ public class GeoEngine extends GeoData
 				short region = getRegionOffset(x, y);
 				// geodata is loaded for region and mobs should have correct Z coordinate...
 				// so there would likely be a floor in between the two
-				if (_geodata.contains(region))
+				if (geodata.contains(region))
 				{
 					return false;
 				}
@@ -450,7 +443,7 @@ public class GeoEngine extends GeoData
 				short region = getRegionOffset(x, y);
 				// geodata is loaded for region and mobs should have correct Z coordinate...
 				// so there would likely be a floor in between the two
-				if (_geodata.get(region) != null)
+				if (geodata.get(region) != null)
 				{
 					return false;
 				}
@@ -783,7 +776,7 @@ public class GeoEngine extends GeoData
 		{
 			File geo_bugs = new File("./data/geodata/geo_bugs.txt");
 
-			_geoBugsOut = new BufferedOutputStream(new FileOutputStream(geo_bugs, true));
+			geoBugsOut = new BufferedOutputStream(new FileOutputStream(geo_bugs, true));
 		}
 		catch (Exception e)
 		{
@@ -791,14 +784,14 @@ public class GeoEngine extends GeoData
 			throw new Error("Failed to Load geo_bugs.txt File.");
 		}
 
-		Log.info("Loaded " + _geodata.size() + " geo files!");
+		Log.info("Loaded " + geodata.size() + " geo files!");
 	}
 
 	public static void unloadGeodata(byte rx, byte ry)
 	{
 		short regionoffset = (short) ((rx << 5) + ry);
-		_geodataIndex.remove(regionoffset);
-		_geodata.remove(regionoffset);
+		geodataIndex.remove(regionoffset);
+		geodata.remove(regionoffset);
 	}
 
 	public static boolean loadGeodataFile(byte rx, byte ry)
@@ -865,9 +858,9 @@ public class GeoEngine extends GeoData
 						}
 					}
 				}
-				_geodataIndex.put(regionoffset, indexs);
+				geodataIndex.put(regionoffset, indexs);
 			}
-			_geodata.put(regionoffset, geo);
+			geodata.put(regionoffset, geo);
 
 			file.close();
 
@@ -935,7 +928,7 @@ public class GeoEngine extends GeoData
 		int blockX = getBlock(x);
 		int blockY = getBlock(y);
 		int index = 0;
-		final IntBuffer idx = _geodataIndex.get(region);
+		final IntBuffer idx = geodataIndex.get(region);
 		//Geodata without index - it is just empty so index can be calculated on the fly
 		if (idx == null)
 		{
@@ -947,7 +940,7 @@ public class GeoEngine extends GeoData
 			index = idx.get((blockX << 8) + blockY);
 		}
 		//Buffer that Contains current Region GeoData
-		ByteBuffer geo = _geodata.get(region);
+		ByteBuffer geo = geodata.get(region);
 		if (geo == null)
 		{
 			if (Config.DEBUG)
@@ -969,7 +962,7 @@ public class GeoEngine extends GeoData
 		int blockX = getBlock(geox);
 		int blockY = getBlock(geoy);
 		int cellX, cellY, index;
-		final IntBuffer idx = _geodataIndex.get(region);
+		final IntBuffer idx = geodataIndex.get(region);
 		//Geodata without index - it is just empty so index can be calculated on the fly
 		if (idx == null)
 		{
@@ -981,7 +974,7 @@ public class GeoEngine extends GeoData
 			index = idx.get((blockX << 8) + blockY);
 		}
 		//Buffer that Contains current Region GeoData
-		ByteBuffer geo = _geodata.get(region);
+		ByteBuffer geo = geodata.get(region);
 		if (geo == null)
 		{
 			if (Config.DEBUG)
@@ -1057,7 +1050,7 @@ public class GeoEngine extends GeoData
 		int blockY = getBlock(geoy);
 		int cellX, cellY, index;
 		//Geodata without index - it is just empty so index can be calculated on the fly
-		final IntBuffer idx = _geodataIndex.get(region);
+		final IntBuffer idx = geodataIndex.get(region);
 		if (idx == null)
 		{
 			index = ((blockX << 8) + blockY) * 3;
@@ -1068,7 +1061,7 @@ public class GeoEngine extends GeoData
 			index = idx.get((blockX << 8) + blockY);
 		}
 		//Buffer that Contains current Region GeoData
-		ByteBuffer geo = _geodata.get(region);
+		ByteBuffer geo = geodata.get(region);
 		if (geo == null)
 		{
 			if (Config.DEBUG)
@@ -1146,7 +1139,7 @@ public class GeoEngine extends GeoData
 		int blockY = getBlock(geoy);
 		int cellX, cellY, index;
 		short temph = Short.MIN_VALUE;
-		final IntBuffer idx = _geodataIndex.get(region);
+		final IntBuffer idx = geodataIndex.get(region);
 		//Geodata without index - it is just empty so index can be calculated on the fly
 		if (idx == null)
 		{
@@ -1158,7 +1151,7 @@ public class GeoEngine extends GeoData
 			index = idx.get((blockX << 8) + blockY);
 		}
 		//Buffer that Contains current Region GeoData
-		ByteBuffer geo = _geodata.get(region);
+		ByteBuffer geo = geodata.get(region);
 		if (geo == null)
 		{
 			if (Config.DEBUG)
@@ -1262,7 +1255,7 @@ public class GeoEngine extends GeoData
 		short NSWE = 0;
 
 		int index = 0;
-		final IntBuffer idx = _geodataIndex.get(region);
+		final IntBuffer idx = geodataIndex.get(region);
 		//Geodata without index - it is just empty so index can be calculated on the fly
 		if (idx == null)
 		{
@@ -1274,7 +1267,7 @@ public class GeoEngine extends GeoData
 			index = idx.get((blockX << 8) + blockY);
 		}
 		//Buffer that Contains current Region GeoData
-		ByteBuffer geo = _geodata.get(region);
+		ByteBuffer geo = geodata.get(region);
 		if (geo == null)
 		{
 			if (Config.DEBUG)
@@ -1378,7 +1371,7 @@ public class GeoEngine extends GeoData
 		short NSWE = 0;
 
 		int index;
-		final IntBuffer idx = _geodataIndex.get(region);
+		final IntBuffer idx = geodataIndex.get(region);
 		//Geodata without index - it is just empty so index can be calculated on the fly
 		if (idx == null)
 		{
@@ -1390,7 +1383,7 @@ public class GeoEngine extends GeoData
 			index = idx.get((blockX << 8) + blockY);
 		}
 		//Buffer that Contains current Region GeoData
-		ByteBuffer geo = _geodata.get(region);
+		ByteBuffer geo = geodata.get(region);
 		if (geo == null)
 		{
 			if (Config.DEBUG)
@@ -1555,7 +1548,7 @@ public class GeoEngine extends GeoData
 		short NSWE = 0;
 
 		int index = 0;
-		final IntBuffer idx = _geodataIndex.get(region);
+		final IntBuffer idx = geodataIndex.get(region);
 		//Geodata without index - it is just empty so index can be calculated on the fly
 		if (idx == null)
 		{
@@ -1567,7 +1560,7 @@ public class GeoEngine extends GeoData
 			index = idx.get((blockX << 8) + blockY);
 		}
 		//Buffer that Contains current Region GeoData
-		ByteBuffer geo = _geodata.get(region);
+		ByteBuffer geo = geodata.get(region);
 		if (geo == null)
 		{
 			if (Config.DEBUG)
@@ -1648,7 +1641,7 @@ public class GeoEngine extends GeoData
 		int cellX, cellY;
 
 		int index = 0;
-		final IntBuffer idx = _geodataIndex.get(region);
+		final IntBuffer idx = geodataIndex.get(region);
 		//Geodata without index - it is just empty so index can be calculated on the fly
 		if (idx == null)
 		{
@@ -1660,7 +1653,7 @@ public class GeoEngine extends GeoData
 			index = idx.get((blockX << 8) + blockY);
 		}
 		//Buffer that Contains current Region GeoData
-		ByteBuffer geo = _geodata.get(region);
+		ByteBuffer geo = geodata.get(region);
 		if (geo == null)
 		{
 			if (Config.DEBUG)
@@ -1773,6 +1766,6 @@ public class GeoEngine extends GeoData
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final GeoEngine _instance = new GeoEngine();
+		protected static final GeoEngine instance = new GeoEngine();
 	}
 }

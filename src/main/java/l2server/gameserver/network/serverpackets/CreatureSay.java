@@ -26,70 +26,70 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public final class CreatureSay extends L2GameServerPacket
 {
 	// ddSS
-	private int _objectId;
-	private int _textType;
-	private String _charName = null;
-	private int _charId = 0;
-	private String _text = null;
-	private int _msgId = -1;
-	private byte _level = 0;
+	private int objectId;
+	private int textType;
+	private String charName = null;
+	private int charId = 0;
+	private String text = null;
+	private int msgId = -1;
+	private byte level = 0;
 
 	/**
 	 */
 	public CreatureSay(int objectId, int messageType, String charName, String text)
 	{
-		_objectId = objectId;
-		_textType = messageType;
-		_charName = charName;
-		_text = text;
+		this.objectId = objectId;
+		textType = messageType;
+		this.charName = charName;
+		this.text = text;
 	}
 
 	public CreatureSay(L2Character activeChar, int messageType, String charName, String text)
 	{
-		_objectId = activeChar.getObjectId();
-		_textType = messageType;
-		_charName = charName;
-		_text = text;
-		_level = (byte) activeChar.getLevel();
+		objectId = activeChar.getObjectId();
+		textType = messageType;
+		this.charName = charName;
+		this.text = text;
+		level = (byte) activeChar.getLevel();
 	}
 
 	public CreatureSay(int objectId, int messageType, int charId, int msgId)
 	{
-		_objectId = objectId;
-		_textType = messageType;
-		_charId = charId;
-		_msgId = msgId;
+		this.objectId = objectId;
+		textType = messageType;
+		this.charId = charId;
+		this.msgId = msgId;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_objectId);
-		writeD(_textType);
-		if (_charName != null)
+		writeD(objectId);
+		writeD(textType);
+		if (charName != null)
 		{
-			writeS(_charName);
+			writeS(charName);
 		}
 		else
 		{
-			writeD(_charId);
+			writeD(charId);
 		}
-		writeD(_msgId);
-		if (_text != null)
+		writeD(msgId);
+		if (text != null)
 		{
-			writeS(_text);
+			writeS(text);
 		}
 		writeC(0x00);
-		writeC(_level);
+		writeC(level);
 	}
 
 	@Override
 	public final void runImpl()
 	{
-		L2PcInstance _pci = getClient().getActiveChar();
-		if (_pci != null)
+		L2PcInstance pci = getClient().getActiveChar();
+		if (pci != null)
 		{
-			_pci.broadcastSnoop(_textType, _charName, _text);
+			pci.broadcastSnoop(textType, charName, text);
 		}
 	}
 }

@@ -25,58 +25,58 @@ import l2server.gameserver.model.actor.L2Character;
 
 public final class Location
 {
-	private int _x;
-	private int _y;
-	private int _z;
-	private int _heading;
+	private int x;
+	private int y;
+	private int z;
+	private int heading;
 
 	public Location(int x, int y, int z)
 	{
-		_x = x;
-		_y = y;
-		_z = z;
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 
 	public Location(L2Object obj)
 	{
-		_x = obj.getX();
-		_y = obj.getY();
-		_z = obj.getZ();
+		x = obj.getX();
+		y = obj.getY();
+		z = obj.getZ();
 	}
 
 	public Location(L2Character obj)
 	{
-		_x = obj.getX();
-		_y = obj.getY();
-		_z = obj.getZ();
-		_heading = obj.getHeading();
+		x = obj.getX();
+		y = obj.getY();
+		z = obj.getZ();
+		heading = obj.getHeading();
 	}
 
 	public Location(int x, int y, int z, int heading)
 	{
-		_x = x;
-		_y = y;
-		_z = z;
-		_heading = heading;
+		this.x = x;
+		this.y = y;
+		this.z = z;
+		this.heading = heading;
 	}
 
 	public int getX()
 	{
-		return _x;
+		return x;
 	}
 
 	public int getY()
 	{
-		return _y;
+		return y;
 	}
 
 	public int getZ()
 	{
-		return _z;
+		return z;
 	}
 
 	public int getHeading()
 	{
-		return _heading;
+		return heading;
 	}
 }

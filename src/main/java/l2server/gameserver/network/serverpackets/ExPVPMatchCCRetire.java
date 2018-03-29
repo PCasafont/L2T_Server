@@ -5,16 +5,16 @@ package l2server.gameserver.network.serverpackets;
  */
 public class ExPVPMatchCCRetire extends L2GameServerPacket
 {
-	private int _unk;
+	private int unk;
 
 	public ExPVPMatchCCRetire(int unk)
 	{
-		_unk = unk;
+		this.unk = unk;
 	}
 
 	@Override
 	public void writeImpl()
 	{
-		writeD(_unk);
+		writeD(unk);
 	}
 }

@@ -28,11 +28,11 @@ public class ExNoticePostSent extends L2GameServerPacket
 		return result ? STATIC_PACKET_TRUE : STATIC_PACKET_FALSE;
 	}
 
-	boolean _showAnim;
+	boolean showAnim;
 
 	public ExNoticePostSent(boolean showAnimation)
 	{
-		_showAnim = showAnimation;
+		showAnim = showAnimation;
 	}
 
 	/* (non-Javadoc)
@@ -41,6 +41,6 @@ public class ExNoticePostSent extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_showAnim ? 0x01 : 0x00);
+		writeD(showAnim ? 0x01 : 0x00);
 	}
 }

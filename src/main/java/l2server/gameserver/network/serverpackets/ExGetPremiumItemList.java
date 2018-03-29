@@ -29,27 +29,27 @@ import java.util.Map.Entry;
 public class ExGetPremiumItemList extends L2GameServerPacket
 {
 
-	private L2PcInstance _activeChar;
+	private L2PcInstance activeChar;
 
-	private Map<Integer, L2PremiumItem> _map;
+	private Map<Integer, L2PremiumItem> map;
 
 	public ExGetPremiumItemList(L2PcInstance activeChar)
 	{
-		_activeChar = activeChar;
-		_map = _activeChar.getPremiumItemList();
+		this.activeChar = activeChar;
+		map = activeChar.getPremiumItemList();
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		if (!_map.isEmpty())
+		if (!map.isEmpty())
 		{
-			writeD(_map.size());
-			for (Entry<Integer, L2PremiumItem> entry : _map.entrySet())
+			writeD(map.size());
+			for (Entry<Integer, L2PremiumItem> entry : map.entrySet())
 			{
 				L2PremiumItem item = entry.getValue();
 				writeD(entry.getKey());
-				writeD(_activeChar.getObjectId());
+				writeD(activeChar.getObjectId());
 				writeD(item.getItemId());
 				writeQ(item.getCount());
 				writeD(0);

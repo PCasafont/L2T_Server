@@ -106,16 +106,16 @@ public final class Formulas
 
 	static class FuncAddLevel3 extends Func
 	{
-		static final FuncAddLevel3[] _instancies = new FuncAddLevel3[Stats.NUM_STATS];
+		static final FuncAddLevel3[] instancies = new FuncAddLevel3[Stats.NUM_STATS];
 
 		static Func getInstance(Stats stat)
 		{
 			int pos = stat.ordinal();
-			if (_instancies[pos] == null)
+			if (instancies[pos] == null)
 			{
-				_instancies[pos] = new FuncAddLevel3(stat);
+				instancies[pos] = new FuncAddLevel3(stat);
 			}
-			return _instancies[pos];
+			return instancies[pos];
 		}
 
 		private FuncAddLevel3(Stats pStat)
@@ -138,16 +138,16 @@ public final class Formulas
 
 	static class FuncMultLevelMod extends Func
 	{
-		static final FuncMultLevelMod[] _instancies = new FuncMultLevelMod[Stats.NUM_STATS];
+		static final FuncMultLevelMod[] instancies = new FuncMultLevelMod[Stats.NUM_STATS];
 
 		static Func getInstance(Stats stat)
 		{
 			int pos = stat.ordinal();
-			if (_instancies[pos] == null)
+			if (instancies[pos] == null)
 			{
-				_instancies[pos] = new FuncMultLevelMod(stat);
+				instancies[pos] = new FuncMultLevelMod(stat);
 			}
-			return _instancies[pos];
+			return instancies[pos];
 		}
 
 		private FuncMultLevelMod(Stats pStat)
@@ -170,7 +170,7 @@ public final class Formulas
 
 	static class FuncMultRegenResting extends Func
 	{
-		static final FuncMultRegenResting[] _instancies = new FuncMultRegenResting[Stats.NUM_STATS];
+		static final FuncMultRegenResting[] instancies = new FuncMultRegenResting[Stats.NUM_STATS];
 
 		/**
 		 * Return the Func object corresponding to the state concerned.<BR><BR>
@@ -179,12 +179,12 @@ public final class Formulas
 		{
 			int pos = stat.ordinal();
 
-			if (_instancies[pos] == null)
+			if (instancies[pos] == null)
 			{
-				_instancies[pos] = new FuncMultRegenResting(stat);
+				instancies[pos] = new FuncMultRegenResting(stat);
 			}
 
-			return _instancies[pos];
+			return instancies[pos];
 		}
 
 		/**
@@ -869,7 +869,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -901,7 +901,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -933,7 +933,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -965,7 +965,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -997,7 +997,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -1029,7 +1029,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -1061,7 +1061,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -1093,7 +1093,7 @@ public final class Formulas
 		@Override
 		public void calc(Env env)
 		{
-			//			L2PcTemplate t = (L2PcTemplate)env._player.getTemplate();
+			//			L2PcTemplate t = (L2PcTemplate)env.player.getTemplate();
 			L2PcInstance pc = (L2PcInstance) env.player;
 			if (pc != null)
 			{
@@ -1230,7 +1230,7 @@ public final class Formulas
 	 * A calculator is created to manage and dynamically calculate the effect of a character property (ex : MAX_HP, REGENERATE_HP_RATE...).
 	 * In fact, each calculator is a table of Func object in which each Func represents a mathematic function : <BR><BR>
 	 * <p>
-	 * FuncAtkAccuracy -> Math.sqrt(_player.getDEX())*6+_player.getLevel()<BR><BR>
+	 * FuncAtkAccuracy -> Math.sqrt(player.getDEX())*6+player.getLevel()<BR><BR>
 	 * <p>
 	 * To reduce cache memory use, L2NPCInstances who don't have skills share the same Calculator set called <B>NPC_STD_CALCULATOR</B>.<BR><BR>
 	 */
@@ -1296,7 +1296,7 @@ public final class Formulas
 	 * A calculator is created to manage and dynamically calculate the effect of a character property (ex : MAX_HP, REGENERATE_HP_RATE...).
 	 * In fact, each calculator is a table of Func object in which each Func represents a mathematic function : <BR><BR>
 	 * <p>
-	 * FuncAtkAccuracy -> Math.sqrt(_player.getDEX())*6+_player.getLevel()<BR><BR>
+	 * FuncAtkAccuracy -> Math.sqrt(player.getDEX())*6+player.getLevel()<BR><BR>
 	 *
 	 * @param cha L2PcInstance or L2Summon that must obtain basic Func objects
 	 */
@@ -1689,7 +1689,7 @@ public final class Formulas
 
 		if (attacker instanceof L2Npc)
 		{
-			if (((L2Npc) attacker)._soulshotcharged)
+			if (((L2Npc) attacker).soulshotcharged)
 			{
 				ssBonus = L2ItemInstance.CHARGED_SOULSHOT;
 			}
@@ -1698,7 +1698,7 @@ public final class Formulas
 				ssBonus = L2ItemInstance.CHARGED_NONE;
 			}
 
-			((L2Npc) attacker)._soulshotcharged = false;
+			((L2Npc) attacker).soulshotcharged = false;
 		}
 
 		switch (shld)
@@ -2039,7 +2039,7 @@ public final class Formulas
 
 		if (attacker instanceof L2Npc)
 		{
-			if (((L2Npc) attacker)._soulshotcharged)
+			if (((L2Npc) attacker).soulshotcharged)
 			{
 				ssBonus = L2ItemInstance.CHARGED_SOULSHOT;
 			}
@@ -2048,7 +2048,7 @@ public final class Formulas
 				ssBonus = L2ItemInstance.CHARGED_NONE;
 			}
 
-			((L2Npc) attacker)._soulshotcharged = false;
+			((L2Npc) attacker).soulshotcharged = false;
 		}
 
 		switch (shld)
@@ -2662,7 +2662,7 @@ public final class Formulas
 		// AI SpiritShot
 		if (attacker instanceof L2Npc)
 		{
-			if (((L2Npc) attacker)._spiritshotcharged)
+			if (((L2Npc) attacker).spiritshotcharged)
 			{
 				ssMul = L2ItemInstance.CHARGED_SPIRITSHOT;
 			}
@@ -2671,7 +2671,7 @@ public final class Formulas
 				ssMul = L2ItemInstance.CHARGED_NONE;
 			}
 
-			((L2Npc) attacker)._spiritshotcharged = false;
+			((L2Npc) attacker).spiritshotcharged = false;
 		}
 
 		switch (shld)
@@ -4340,7 +4340,7 @@ public final class Formulas
 		// AI SpiritShot
 		if (attacker instanceof L2Npc)
 		{
-			if (((L2Npc) attacker)._spiritshotcharged)
+			if (((L2Npc) attacker).spiritshotcharged)
 			{
 				ssMul = L2ItemInstance.CHARGED_SPIRITSHOT;
 			}
@@ -4348,7 +4348,7 @@ public final class Formulas
 			{
 				ssMul = L2ItemInstance.CHARGED_NONE;
 			}
-			((L2Npc) attacker)._spiritshotcharged = false;
+			((L2Npc) attacker).spiritshotcharged = false;
 		}
 		//Mana Burnt = (SQR(M.Atk)*Power*(Target Max MP/97))/M.Def
 		double mAtk = attacker.getMAtk(target, skill);

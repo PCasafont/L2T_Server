@@ -28,11 +28,11 @@ import gnu.trove.TIntObjectHashMap;
 public class ChatHandler
 {
 
-	private TIntObjectHashMap<IChatHandler> _datatable;
+	private TIntObjectHashMap<IChatHandler> datatable;
 
 	public static ChatHandler getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class ChatHandler
 	 */
 	private ChatHandler()
 	{
-		_datatable = new TIntObjectHashMap<>();
+		datatable = new TIntObjectHashMap<>();
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class ChatHandler
 			{
 				Log.fine("Adding handler for chat type " + id);
 			}
-			_datatable.put(id, handler);
+			datatable.put(id, handler);
 		}
 	}
 
@@ -69,7 +69,7 @@ public class ChatHandler
 	 */
 	public IChatHandler getChatHandler(int chatType)
 	{
-		return _datatable.get(chatType);
+		return datatable.get(chatType);
 	}
 
 	/**
@@ -79,12 +79,12 @@ public class ChatHandler
 	 */
 	public int size()
 	{
-		return _datatable.size();
+		return datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final ChatHandler _instance = new ChatHandler();
+		protected static final ChatHandler instance = new ChatHandler();
 	}
 }

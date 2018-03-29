@@ -26,7 +26,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public final class RequestDismissAlly extends L2GameClientPacket
 {
-	//static Logger _log = Logger.getLogger(RequestDismissAlly.class.getName());
+	//static Logger log = Logger.getLogger(RequestDismissAlly.class.getName());
 
 	@Override
 	protected void readImpl()

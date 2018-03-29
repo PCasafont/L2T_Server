@@ -24,7 +24,7 @@ import java.util.ArrayList;
  */
 public class ServerStatus extends BaseSendablePacket
 {
-	private ArrayList<Attribute> _attributes;
+	private ArrayList<Attribute> attributes;
 
 	public static final String[] STATUS_STRING = {"Auto", "Good", "Normal", "Full", "Down", "Gm Only"};
 
@@ -73,12 +73,12 @@ public class ServerStatus extends BaseSendablePacket
 
 	public ServerStatus()
 	{
-		_attributes = new ArrayList<>();
+		attributes = new ArrayList<>();
 	}
 
 	public void addAttribute(int id, int value)
 	{
-		_attributes.add(new Attribute(id, value));
+		attributes.add(new Attribute(id, value));
 	}
 
 	/* (non-Javadoc)
@@ -88,8 +88,8 @@ public class ServerStatus extends BaseSendablePacket
 	public byte[] getContent()
 	{
 		writeC(0x06);
-		writeD(_attributes.size());
-		for (Attribute temp : _attributes)
+		writeD(attributes.size());
+		for (Attribute temp : attributes)
 		{
 			writeD(temp.id);
 			writeD(temp.value);

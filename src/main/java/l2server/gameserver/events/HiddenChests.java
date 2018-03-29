@@ -21,19 +21,19 @@ import l2server.util.Rnd;
  */
 public class HiddenChests
 {
-	public static HiddenChests _instance = null;
+	public static HiddenChests instance = null;
 
 	private static final int SPECIAL_CHEST_COUNT = 5;
-	private L2Spawn[] _specialChestSpawns = new L2Spawn[SPECIAL_CHEST_COUNT];
-	private HiddenChestsTask[] _specialChestTasks = new HiddenChestsTask[SPECIAL_CHEST_COUNT];
+	private L2Spawn[] specialChestSpawns = new L2Spawn[SPECIAL_CHEST_COUNT];
+	private HiddenChestsTask[] specialChestTasks = new HiddenChestsTask[SPECIAL_CHEST_COUNT];
 
 	public static HiddenChests getInstance()
 	{
-		if (_instance == null)
+		if (instance == null)
 		{
-			_instance = new HiddenChests();
+			instance = new HiddenChests();
 		}
-		return _instance;
+		return instance;
 	}
 
 	public void spawnChests()
@@ -108,11 +108,11 @@ public class HiddenChests
 
 				chestSpawn.getNpc().setName(name);
 
-				_specialChestTasks[i] =
+				specialChestTasks[i] =
 						new HiddenChestsTask(i, System.currentTimeMillis() + 3600000L * 5 + Rnd.get(3600000 * 3));
-				ThreadPoolManager.getInstance().executeTask(_specialChestTasks[i]);
+				ThreadPoolManager.getInstance().executeTask(specialChestTasks[i]);
 
-				_specialChestSpawns[i] = chestSpawn;
+				specialChestSpawns[i] = chestSpawn;
 			}
 		}
 		catch (Exception e)
@@ -137,7 +137,7 @@ public class HiddenChests
 		}
 
 		int index = 0;
-		for (L2Spawn scs : _specialChestSpawns)
+		for (L2Spawn scs : specialChestSpawns)
 		{
 			if (scs != null && scs.getNpc() != null && scs.getNpc() == chest)
 			{
@@ -146,7 +146,7 @@ public class HiddenChests
 			index++;
 		}
 
-		if (index >= _specialChestSpawns.length)
+		if (index >= specialChestSpawns.length)
 		{
 			Log.warning("ERROR: NPC " + chest.getObjectId() + " is not in the chest spawns list.");
 			chest.deleteMe();
@@ -154,11 +154,11 @@ public class HiddenChests
 			return;
 		}
 
-		final int respawnTime = _specialChestSpawns[index].getRespawnDelay() / 1000;
+		final int respawnTime = specialChestSpawns[index].getRespawnDelay() / 1000;
 		chest.deleteMe();
-		_specialChestSpawns[index].stopRespawn();
-		SpawnTable.getInstance().deleteSpawn(_specialChestSpawns[index], false);
-		_specialChestSpawns[index] = null;
+		specialChestSpawns[index].stopRespawn();
+		SpawnTable.getInstance().deleteSpawn(specialChestSpawns[index], false);
+		specialChestSpawns[index] = null;
 
 		final int fIndex = index;
 
@@ -232,7 +232,7 @@ public class HiddenChests
 
 				chestSpawn.getNpc().setName(name);
 
-				_specialChestTasks[fIndex].setStartTime(System.currentTimeMillis() + 3600000L * 5);
+				specialChestTasks[fIndex].setStartTime(System.currentTimeMillis() + 3600000L * 5);
 
 				if (delayed)
 				{
@@ -240,7 +240,7 @@ public class HiddenChests
 							" has respawned! Use .treasure for hints to find it.");
 				}
 
-				_specialChestSpawns[fIndex] = chestSpawn;
+				specialChestSpawns[fIndex] = chestSpawn;
 			}
 			catch (Exception e)
 			{
@@ -261,7 +261,7 @@ public class HiddenChests
 		boolean someChest = false;
 		for (int i = 0; i < SPECIAL_CHEST_COUNT; i++)
 		{
-			L2Spawn chest = _specialChestSpawns[i];
+			L2Spawn chest = specialChestSpawns[i];
 			if (chest == null)
 			{
 				continue;
@@ -325,18 +325,18 @@ public class HiddenChests
 
 	class HiddenChestsTask implements Runnable
 	{
-		private int _index;
-		private long _startTime;
+		private int index;
+		private long startTime;
 
 		public HiddenChestsTask(int index, long startTime)
 		{
-			_index = index;
-			_startTime = startTime;
+			this.index = index;
+			this.startTime = startTime;
 		}
 
 		public void setStartTime(long startTime)
 		{
-			_startTime = startTime;
+			this.startTime = startTime;
 		}
 
 		/**
@@ -345,11 +345,11 @@ public class HiddenChests
 		@Override
 		public void run()
 		{
-			long delay = _startTime - System.currentTimeMillis();
+			long delay = startTime - System.currentTimeMillis();
 
-			if (delay < 1000 && _specialChestSpawns[_index] != null)
+			if (delay < 1000 && specialChestSpawns[index] != null)
 			{
-				moveChest(_specialChestSpawns[_index].getNpc(), false);
+				moveChest(specialChestSpawns[index].getNpc(), false);
 				ThreadPoolManager.getInstance().scheduleGeneral(this, System.currentTimeMillis() + 3600000L * 6);
 			}
 			else
@@ -361,36 +361,36 @@ public class HiddenChests
 
 	class OpenChestCastFinalizer implements Runnable
 	{
-		private L2PcInstance _player;
-		private L2Npc _chest;
+		private L2PcInstance player;
+		private L2Npc chest;
 
 		OpenChestCastFinalizer(L2PcInstance player, L2Npc chest)
 		{
-			_player = player;
-			_chest = chest;
+			this.player = player;
+			this.chest = chest;
 		}
 
 		@Override
 		public void run()
 		{
-			if (_player.isCastingNow())
+			if (player.isCastingNow())
 			{
-				_player.sendPacket(new MagicSkillLaunched(_player, 11030, 1));
-				_player.setIsCastingNow(false);
+				player.sendPacket(new MagicSkillLaunched(player, 11030, 1));
+				player.setIsCastingNow(false);
 
-				if (_player.getTarget() == _chest && !_chest.isDead() &&
-						Util.checkIfInRange(1000, _player, _chest, true))
+				if (player.getTarget() == chest && !chest.isDead() &&
+						Util.checkIfInRange(1000, player, chest, true))
 				{
-					String name = _player.getName();
-					if (_player.getActingPlayer() != null)
+					String name = player.getName();
+					if (player.getActingPlayer() != null)
 					{
-						name = _player.getActingPlayer().getName();
+						name = player.getActingPlayer().getName();
 					}
 					Announcements.getInstance().announceToAll(name + " has opened a treasure chest!");
-					_chest.reduceCurrentHp(_chest.getMaxHp() + 1, _player, null);
+					chest.reduceCurrentHp(chest.getMaxHp() + 1, player, null);
 
 					ThreadPoolManager.getInstance()
-							.scheduleGeneral(() -> HiddenChests.getInstance().moveChest(_chest, !_player.isGM()),
+							.scheduleGeneral(() -> HiddenChests.getInstance().moveChest(chest, !player.isGM()),
 									5000L);
 				}
 			}

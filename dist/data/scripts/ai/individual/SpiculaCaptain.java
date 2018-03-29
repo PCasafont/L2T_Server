@@ -27,7 +27,7 @@ import ai.group_template.L2AttackableAIScript;
 
 public class SpiculaCaptain extends L2AttackableAIScript
 {
-	private static final int _captain = 23275;
+	private static final int captain = 23275;
 
 	public SpiculaCaptain(int id, String name, String descr)
 	{
@@ -40,7 +40,7 @@ public class SpiculaCaptain extends L2AttackableAIScript
 				continue;
 			}
 
-			if (spawn.getNpcId() == _captain)
+			if (spawn.getNpcId() == captain)
 			{
 				spawn.getNpc().setShowSummonAnimation(true);
 

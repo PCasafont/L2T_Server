@@ -570,12 +570,12 @@ public class Ranked2v2
 
     public static Ranked2v2 getInstance()
     {
-        return SingletonHolder._instance;
+        return SingletonHolder.instance;
     }
 
     private static class SingletonHolder
     {
-        protected static final Ranked2v2 _instance = new Ranked2v2();
+        protected static final Ranked2v2 instance = new Ranked2v2();
     }
 
     protected class Event implements Runnable

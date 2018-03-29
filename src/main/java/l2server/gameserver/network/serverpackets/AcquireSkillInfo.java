@@ -34,8 +34,8 @@ import java.util.List;
  */
 public class AcquireSkillInfo extends L2GameServerPacket
 {
-	private List<Req> _reqs;
-	private int _id, _level, _spCost, _mode;
+	private List<Req> reqs;
+	private int id, level, spCost, mode;
 
 	private static class Req
 	{
@@ -55,29 +55,29 @@ public class AcquireSkillInfo extends L2GameServerPacket
 
 	public AcquireSkillInfo(int id, int level, int spCost, int mode)
 	{
-		_reqs = new ArrayList<>();
-		_id = id;
-		_level = level;
-		_spCost = spCost;
-		_mode = mode;
+		reqs = new ArrayList<>();
+		this.id = id;
+		this.level = level;
+		this.spCost = spCost;
+		this.mode = mode;
 	}
 
 	public void addRequirement(int type, int id, int count, int unk)
 	{
-		_reqs.add(new Req(type, id, count, unk));
+		reqs.add(new Req(type, id, count, unk));
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_id);
-		writeD(_level);
-		writeQ(_spCost);
-		writeD(_mode); //c4
+		writeD(id);
+		writeD(level);
+		writeQ(spCost);
+		writeD(mode); //c4
 
-		writeD(_reqs.size());
+		writeD(reqs.size());
 
-		for (Req temp : _reqs)
+		for (Req temp : reqs)
 		{
 			writeD(temp.type);
 			writeD(temp.itemId);

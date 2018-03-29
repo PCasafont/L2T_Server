@@ -32,17 +32,17 @@ public final class AuctionDateGenerator
 
 	private static final long MILLIS_IN_WEEK = TimeUnit.MILLISECONDS.convert(7, TimeUnit.DAYS);
 
-	private final Calendar _calendar;
+	private final Calendar calendar;
 
-	private int _interval;
+	private int interval;
 	private int _day_of_week;
 	private int _hour_of_day;
 	private int _minute_of_hour;
 
 	public AuctionDateGenerator(final StatsSet config) throws IllegalArgumentException
 	{
-		_calendar = Calendar.getInstance();
-		_interval = config.getInteger(FIELD_INTERVAL, -1);
+		calendar = Calendar.getInstance();
+		interval = config.getInteger(FIELD_INTERVAL, -1);
 		_day_of_week = config.getInteger(FIELD_DAY_OF_WEEK, -1);
 		_hour_of_day = config.getInteger(FIELD_HOUR_OF_DAY, -1);
 		_minute_of_hour = config.getInteger(FIELD_MINUTE_OF_HOUR, -1);
@@ -54,19 +54,19 @@ public final class AuctionDateGenerator
 
 	public synchronized final long nextDate(final long date)
 	{
-		_calendar.setTimeInMillis(date);
-		_calendar.set(Calendar.MILLISECOND, 0);
-		_calendar.set(Calendar.SECOND, 0);
+		calendar.setTimeInMillis(date);
+		calendar.set(Calendar.MILLISECOND, 0);
+		calendar.set(Calendar.SECOND, 0);
 
-		_calendar.set(Calendar.MINUTE, _minute_of_hour);
-		_calendar.set(Calendar.HOUR_OF_DAY, _hour_of_day);
+		calendar.set(Calendar.MINUTE, _minute_of_hour);
+		calendar.set(Calendar.HOUR_OF_DAY, _hour_of_day);
 		if (_day_of_week > 0)
 		{
-			_calendar.set(Calendar.DAY_OF_WEEK, _day_of_week);
-			return calcDestTime(_calendar.getTimeInMillis(), date, MILLIS_IN_WEEK);
+			calendar.set(Calendar.DAY_OF_WEEK, _day_of_week);
+			return calcDestTime(calendar.getTimeInMillis(), date, MILLIS_IN_WEEK);
 		}
 
-		return calcDestTime(_calendar.getTimeInMillis(), date, TimeUnit.MILLISECONDS.convert(_interval, TimeUnit.DAYS));
+		return calcDestTime(calendar.getTimeInMillis(), date, TimeUnit.MILLISECONDS.convert(interval, TimeUnit.DAYS));
 	}
 
 	private long calcDestTime(long time, final long date, final long add)
@@ -86,14 +86,14 @@ public final class AuctionDateGenerator
 	{
 		if (_day_of_week < 1 || _day_of_week > 7)
 		{
-			if (defaultValue == -1 && _interval < 1)
+			if (defaultValue == -1 && interval < 1)
 			{
 				throw new IllegalArgumentException("Illegal params for '" + FIELD_DAY_OF_WEEK + "': " +
 						(_day_of_week == -1 ? "not found" : _day_of_week));
 			}
 			_day_of_week = defaultValue;
 		}
-		else if (_interval > 1)
+		else if (interval > 1)
 		{
 			throw new IllegalArgumentException("Illegal params for '" + FIELD_INTERVAL + "' and '" + FIELD_DAY_OF_WEEK +
 					"': you can use only one, not both");

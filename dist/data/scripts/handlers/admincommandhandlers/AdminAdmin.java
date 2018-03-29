@@ -57,7 +57,7 @@ import java.util.logging.Logger;
  */
 public class AdminAdmin implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminAdmin.class.getName());
+	private static Logger log = Logger.getLogger(AdminAdmin.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {
 			"admin_admin",
@@ -136,7 +136,7 @@ public class AdminAdmin implements IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				_log.warning("An error occured while ending olympiad: " + e);
+				log.warning("An error occured while ending olympiad: " + e);
 			}
 			activeChar.sendMessage("Heroes formed");
 		}
@@ -313,7 +313,7 @@ public class AdminAdmin implements IAdminCommandHandler
 			catch (Exception e)
 			{
 				activeChar.sendMessage("An error occured while reloading " + type + " !");
-				_log.warning("An error occured while reloading " + type + ": ");
+				log.warning("An error occured while reloading " + type + ": ");
 				e.printStackTrace();
 			}
 		}

@@ -32,12 +32,12 @@ import java.nio.ByteOrder;
  */
 public final class UserInfo extends L2GameServerPacket
 {
-	private int _objectId;
-	private byte[] _data;
+	private int objectId;
+	private byte[] data;
 
 	public UserInfo(L2PcInstance player)
 	{
-		_objectId = player.getObjectId();
+		objectId = player.getObjectId();
 
 		ByteBuffer buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -291,15 +291,15 @@ public final class UserInfo extends L2GameServerPacket
 
 		int size = buffer.position();
 		buffer.position(0);
-		_data = new byte[size];
-		buffer.get(_data, 0, size);
+		data = new byte[size];
+		buffer.get(data, 0, size);
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_objectId);
-		writeD(_data.length);
-		writeB(_data);
+		writeD(objectId);
+		writeD(data.length);
+		writeB(data);
 	}
 }

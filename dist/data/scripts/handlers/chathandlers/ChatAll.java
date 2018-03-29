@@ -39,7 +39,7 @@ public class ChatAll implements IChatHandler
 {
 	private static final int[] COMMAND_IDS = {0};
 
-	private static Logger _log = Logger.getLogger(ChatAll.class.getName());
+	private static Logger log = Logger.getLogger(ChatAll.class.getName());
 
 	/**
 	 * Handle chat type 'all'
@@ -65,7 +65,7 @@ public class ChatAll implements IChatHandler
 				command = text.substring(1);
 				if (Config.DEBUG)
 				{
-					_log.info("Command: " + command);
+					log.info("Command: " + command);
 				}
 				vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler(command);
 			}
@@ -78,7 +78,7 @@ public class ChatAll implements IChatHandler
 			{
 				if (Config.DEBUG)
 				{
-					_log.warning("No handler registered for bypass '" + command + "'");
+					log.warning("No handler registered for bypass '" + command + "'");
 				}
 				vcd_used = false;
 			}

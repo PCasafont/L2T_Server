@@ -24,11 +24,11 @@ import l2server.gameserver.stats.Env;
  */
 public class ConditionPlayerHasSummon extends Condition
 {
-	private final boolean _value;
+	private final boolean value;
 
 	public ConditionPlayerHasSummon(boolean value)
 	{
-		_value = value;
+		this.value = value;
 	}
 
 	/* (non-Javadoc)
@@ -46,10 +46,10 @@ public class ConditionPlayerHasSummon extends Condition
 		{
 			if (!summon.isDead())
 			{
-				return _value;
+				return value;
 			}
 		}
 
-		return !_value;
+		return !value;
 	}
 }

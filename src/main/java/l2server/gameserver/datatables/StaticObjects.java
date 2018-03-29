@@ -30,18 +30,18 @@ import gnu.trove.TIntObjectHashMap;
 
 public class StaticObjects
 {
-	private TIntObjectHashMap<L2StaticObjectInstance> _staticObjects;
+	private TIntObjectHashMap<L2StaticObjectInstance> staticObjects;
 
 	public static StaticObjects getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private StaticObjects()
 	{
-		_staticObjects = new TIntObjectHashMap<>();
+		staticObjects = new TIntObjectHashMap<>();
 		parseData();
-		Log.info("StaticObject: Loaded " + _staticObjects.size() + " StaticObject Templates.");
+		Log.info("StaticObject: Loaded " + staticObjects.size() + " StaticObject Templates.");
 	}
 
 	private void parseData()
@@ -109,19 +109,19 @@ public class StaticObjects
 				obj.setMap(texture, map_x, map_y);
 				obj.spawnMe();
 
-				_staticObjects.put(obj.getStaticObjectId(), obj);
+				staticObjects.put(obj.getStaticObjectId(), obj);
 			}
 		}
 	}
 
 	public L2StaticObjectInstance getObject(int id)
 	{
-		return _staticObjects.get(id);
+		return staticObjects.get(id);
 	}
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final StaticObjects _instance = new StaticObjects();
+		protected static final StaticObjects instance = new StaticObjects();
 	}
 }

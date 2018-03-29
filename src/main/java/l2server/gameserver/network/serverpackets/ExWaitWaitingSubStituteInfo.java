@@ -21,17 +21,17 @@ package l2server.gameserver.network.serverpackets;
 public class ExWaitWaitingSubStituteInfo extends L2GameServerPacket
 {
 
-	boolean _turnOn;
+	boolean turnOn;
 
 	public ExWaitWaitingSubStituteInfo(boolean turnOn)
 	{
-		_turnOn = turnOn;
+		this.turnOn = turnOn;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_turnOn ? 0x01 : 0x00);
+		writeD(turnOn ? 0x01 : 0x00);
 		writeD(0x00); // TODO: Unknown
 	}
 }

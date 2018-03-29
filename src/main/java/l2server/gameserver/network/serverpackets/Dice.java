@@ -22,34 +22,34 @@ package l2server.gameserver.network.serverpackets;
  */
 public class Dice extends L2GameServerPacket
 {
-	private int _charObjId;
-	private int _itemId;
-	private int _number;
-	private int _x;
-	private int _y;
-	private int _z;
+	private int charObjId;
+	private int itemId;
+	private int number;
+	private int x;
+	private int y;
+	private int z;
 
 	/**
 	 * 0xd4 Dice		 dddddd
 	 */
 	public Dice(int charObjId, int itemId, int number, int x, int y, int z)
 	{
-		_charObjId = charObjId;
-		_itemId = itemId;
-		_number = number;
-		_x = x;
-		_y = y;
-		_z = z;
+		this.charObjId = charObjId;
+		this.itemId = itemId;
+		this.number = number;
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_charObjId); //object id of player
-		writeD(_itemId); //	item id of dice (spade)  4625,4626,4627,4628
-		writeD(_number); //number rolled
-		writeD(_x); //x
-		writeD(_y); //y
-		writeD(_z); //z
+		writeD(charObjId); //object id of player
+		writeD(itemId); //	item id of dice (spade)  4625,4626,4627,4628
+		writeD(number); //number rolled
+		writeD(x); //x
+		writeD(y); //y
+		writeD(z); //z
 	}
 }

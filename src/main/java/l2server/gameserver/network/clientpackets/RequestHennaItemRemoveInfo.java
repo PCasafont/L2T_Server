@@ -28,14 +28,14 @@ import l2server.gameserver.templates.item.L2Henna;
 public final class RequestHennaItemRemoveInfo extends L2GameClientPacket
 {
 
-	private int _symbolId;
+	private int symbolId;
 
 	// format  cd
 
 	@Override
 	protected void readImpl()
 	{
-		_symbolId = readD();
+		symbolId = readD();
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public final class RequestHennaItemRemoveInfo extends L2GameClientPacket
 			return;
 		}
 
-		L2Henna template = HennaTable.getInstance().getTemplate(_symbolId);
+		L2Henna template = HennaTable.getInstance().getTemplate(symbolId);
 		if (template == null)
 		{
 			return;

@@ -15,26 +15,26 @@ import java.util.Map;
  */
 public class CoreMessageTable
 {
-	private static CoreMessageTable _instance;
+	private static CoreMessageTable instance;
 
-	private static Map<Integer, CoreMessage> _messages = new HashMap<>();
+	private static Map<Integer, CoreMessage> messages = new HashMap<>();
 
 	public static CoreMessageTable getInstance()
 	{
-		if (_instance == null)
+		if (instance == null)
 		{
-			_instance = new CoreMessageTable();
+			instance = new CoreMessageTable();
 		}
 
-		return _instance;
+		return instance;
 	}
 
 	private CoreMessageTable()
 	{
 		CoreMessage cm = new CoreMessage("(Unknown Text)");
-		_messages.put(-1, cm);
+		messages.put(-1, cm);
 		cm = new CoreMessage("$s1");
-		_messages.put(0, cm);
+		messages.put(0, cm);
 		readMessageTable();
 	}
 
@@ -49,29 +49,29 @@ public class CoreMessageTable
 			{
 				int id = n.getInt("id");
 				String text = n.getString("text");
-				_messages.put(id, new CoreMessage(text));
+				messages.put(id, new CoreMessage(text));
 			}
 		}
 
-		Log.info("Message Table: Loading " + _messages.size() + " Core Messages Sucessfully");
+		Log.info("Message Table: Loading " + messages.size() + " Core Messages Sucessfully");
 	}
 
 	public CoreMessage getMessage(int id)
 	{
-		if (_messages.containsKey(id))
+		if (messages.containsKey(id))
 		{
-			return _messages.get(id);
+			return messages.get(id);
 		}
 		else
 		{
 			Log.warning("Unknown text: " + id);
-			return _messages.get(-1);
+			return messages.get(-1);
 		}
 	}
 
 	public void reload()
 	{
-		_messages.clear();
+		messages.clear();
 		readMessageTable();
 	}
 }

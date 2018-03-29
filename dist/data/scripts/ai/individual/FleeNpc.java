@@ -26,13 +26,13 @@ import ai.group_template.L2AttackableAIScript;
 
 public class FleeNpc extends L2AttackableAIScript
 {
-	private int[] _npcId = {20432, 22228, 18150, 18151, 18152, 18153, 18154, 18155, 18156, 18157};
+	private int[] npcId = {20432, 22228, 18150, 18151, 18152, 18153, 18154, 18155, 18156, 18157};
 
 	public FleeNpc(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
 
-		for (int element : _npcId)
+		for (int element : npcId)
 		{
 			addEventId(element, Quest.QuestEventType.ON_ATTACK);
 		}

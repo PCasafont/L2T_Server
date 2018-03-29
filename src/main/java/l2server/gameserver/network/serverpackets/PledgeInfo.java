@@ -32,19 +32,19 @@ import l2server.gameserver.model.L2Clan;
  */
 public class PledgeInfo extends L2GameServerPacket
 {
-	private L2Clan _clan;
+	private L2Clan clan;
 
 	public PledgeInfo(L2Clan clan)
 	{
-		_clan = clan;
+		this.clan = clan;
 	}
 
 	@Override
 	protected final void writeImpl()
 	{
 		writeD(Config.SERVER_ID); // server id?
-		writeD(_clan.getClanId());
-		writeS(_clan.getName());
-		writeS(_clan.getAllyName());
+		writeD(clan.getClanId());
+		writeS(clan.getName());
+		writeS(clan.getAllyName());
 	}
 }

@@ -23,12 +23,12 @@ import l2server.util.network.BaseRecievePacket;
  */
 public class RequestCharacters extends BaseRecievePacket
 {
-	private String _account;
+	private String account;
 
 	public RequestCharacters(byte[] decrypt)
 	{
 		super(decrypt);
-		_account = readS();
+		account = readS();
 	}
 
 	/**
@@ -36,6 +36,6 @@ public class RequestCharacters extends BaseRecievePacket
 	 */
 	public String getAccount()
 	{
-		return _account;
+		return account;
 	}
 }

@@ -20,12 +20,12 @@ import l2server.gameserver.network.serverpackets.ExResponseBeautyListPacket;
 
 public final class RequestBeautyList extends L2GameClientPacket
 {
-	//private int _unknown;
+	//private int unknown;
 
 	@Override
 	protected final void readImpl()
 	{
-		//_unknown = readD();
+		//unknown = readD();
 	}
 
 	@Override

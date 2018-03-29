@@ -43,8 +43,8 @@ import java.util.Map;
 public final class PetitionManager
 {
 
-	private Map<Integer, Petition> _pendingPetitions;
-	private Map<Integer, Petition> _completedPetitions;
+	private Map<Integer, Petition> pendingPetitions;
+	private Map<Integer, Petition> completedPetitions;
 
 	private enum PetitionState
 	{
@@ -74,46 +74,46 @@ public final class PetitionManager
 
 	public static PetitionManager getInstance()
 	{
-		return SingletonHolder._instance;
+		return SingletonHolder.instance;
 	}
 
 	private class Petition
 	{
-		private long _submitTime = System.currentTimeMillis();
+		private long submitTime = System.currentTimeMillis();
 
-		private int _id;
-		private PetitionType _type;
-		private PetitionState _state = PetitionState.Pending;
-		private String _content;
+		private int id;
+		private PetitionType type;
+		private PetitionState state = PetitionState.Pending;
+		private String content;
 
-		private List<CreatureSay> _messageLog = new ArrayList<>();
+		private List<CreatureSay> messageLog = new ArrayList<>();
 
-		private L2PcInstance _petitioner;
-		private L2PcInstance _responder;
+		private L2PcInstance petitioner;
+		private L2PcInstance responder;
 
 		public Petition(L2PcInstance petitioner, String petitionText, int petitionType)
 		{
 			petitionType--;
-			_id = IdFactory.getInstance().getNextId();
+			id = IdFactory.getInstance().getNextId();
 			if (petitionType >= PetitionType.values().length)
 			{
 				Log.warning(
 						"PetitionManager:Petition : invalid petition type (received type was +1) : " + petitionType);
 			}
-			_type = PetitionType.values()[petitionType];
-			_content = petitionText;
+			type = PetitionType.values()[petitionType];
+			content = petitionText;
 
-			_petitioner = petitioner;
+			this.petitioner = petitioner;
 		}
 
 		protected boolean addLogMessage(CreatureSay cs)
 		{
-			return _messageLog.add(cs);
+			return messageLog.add(cs);
 		}
 
 		protected List<CreatureSay> getLogMessages()
 		{
-			return _messageLog;
+			return messageLog;
 		}
 
 		public boolean endPetitionConsultation(PetitionState endState)
@@ -156,37 +156,37 @@ public final class PetitionManager
 
 		public String getContent()
 		{
-			return _content;
+			return content;
 		}
 
 		public int getId()
 		{
-			return _id;
+			return id;
 		}
 
 		public L2PcInstance getPetitioner()
 		{
-			return _petitioner;
+			return petitioner;
 		}
 
 		public L2PcInstance getResponder()
 		{
-			return _responder;
+			return responder;
 		}
 
 		public long getSubmitTime()
 		{
-			return _submitTime;
+			return submitTime;
 		}
 
 		public PetitionState getState()
 		{
-			return _state;
+			return state;
 		}
 
 		public String getTypeAsString()
 		{
-			return _type.toString().replace("_", " ");
+			return type.toString().replace("_", " ");
 		}
 
 		public void sendPetitionerPacket(L2GameServerPacket responsePacket)
@@ -216,7 +216,7 @@ public final class PetitionManager
 
 		public void setState(PetitionState state)
 		{
-			_state = state;
+			this.state = state;
 		}
 
 		public void setResponder(L2PcInstance respondingAdmin)
@@ -226,15 +226,15 @@ public final class PetitionManager
 				return;
 			}
 
-			_responder = respondingAdmin;
+			responder = respondingAdmin;
 		}
 	}
 
 	private PetitionManager()
 	{
 		Log.info("Initializing PetitionManager");
-		_pendingPetitions = new HashMap<>();
-		_completedPetitions = new HashMap<>();
+		pendingPetitions = new HashMap<>();
+		completedPetitions = new HashMap<>();
 	}
 
 	public void clearCompletedPetitions()
@@ -356,12 +356,12 @@ public final class PetitionManager
 
 	protected Map<Integer, Petition> getCompletedPetitions()
 	{
-		return _completedPetitions;
+		return completedPetitions;
 	}
 
 	protected Map<Integer, Petition> getPendingPetitions()
 	{
-		return _pendingPetitions;
+		return pendingPetitions;
 	}
 
 	public int getPendingPetitionCount()
@@ -674,6 +674,6 @@ public final class PetitionManager
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
 	{
-		protected static final PetitionManager _instance = new PetitionManager();
+		protected static final PetitionManager instance = new PetitionManager();
 	}
 }

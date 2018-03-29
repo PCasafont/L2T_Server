@@ -6,12 +6,12 @@ package l2server.gameserver.network.clientpackets;
 public class NCGuardSendDataToServer extends L2GameClientPacket
 {
 	@SuppressWarnings("unused")
-	private int _size;
+	private int size;
 
 	@Override
 	public void readImpl()
 	{
-		_size = readD();
+		size = readD();
 		readB(new byte[1]); // data (TODO: check size)
 	}
 

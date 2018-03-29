@@ -32,12 +32,12 @@ public final class CharacterDelete extends L2GameClientPacket
 {
 
 	// cd
-	private int _charSlot;
+	private int charSlot;
 
 	@Override
 	protected void readImpl()
 	{
-		_charSlot = readD();
+		charSlot = readD();
 	}
 
 	@Override
@@ -51,12 +51,12 @@ public final class CharacterDelete extends L2GameClientPacket
 
 		if (Config.DEBUG)
 		{
-			Log.fine("deleting slot:" + _charSlot);
+			Log.fine("deleting slot:" + charSlot);
 		}
 
 		try
 		{
-			byte answer = getClient().markToDeleteChar(_charSlot);
+			byte answer = getClient().markToDeleteChar(charSlot);
 
 			switch (answer)
 			{
