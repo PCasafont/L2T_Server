@@ -43,7 +43,7 @@ public class CoreMessageTable
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "coreMessages.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode n : doc.getFirstChild().getChildren())
+		for (XmlNode n : doc.getChildren())
 		{
 			if (n.getName().equalsIgnoreCase("coreMessage"))
 			{

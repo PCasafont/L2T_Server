@@ -282,30 +282,29 @@ public class MultiSell implements Reloadable
 		int entryId = 1;
 		ListContainer list = new ListContainer();
 
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				list.setApplyTaxes(n.getBool("applyTaxes", false));
-				list.setMaintainEnchantment(n.getBool("maintainEnchantment", false));
-				list.setIsChance(n.getBool("isChance", false));
-				list.setTimeLimit(n.getInt("timeLimit", 0));
+		XmlNode n = doc.getRoot();
+        if (n.getName().equalsIgnoreCase("list"))
+        {
+            list.setApplyTaxes(n.getBool("applyTaxes", false));
+            list.setMaintainEnchantment(n.getBool("maintainEnchantment", false));
+            list.setIsChance(n.getBool("isChance", false));
+            list.setTimeLimit(n.getInt("timeLimit", 0));
 
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("item"))
-					{
-						MultiSellEntry e = parseEntry(d, entryId++);
-						list.getEntries().add(e);
-					}
-				}
-			}
-			else if (n.getName().equalsIgnoreCase("item"))
-			{
-				MultiSellEntry e = parseEntry(n, entryId++);
-				list.getEntries().add(e);
-			}
-		}
+            for (XmlNode d : n.getChildren())
+            {
+                if (d.getName().equalsIgnoreCase("item"))
+                {
+                    MultiSellEntry e = parseEntry(d, entryId++);
+                    list.getEntries().add(e);
+                }
+            }
+        }
+        else if (n.getName().equalsIgnoreCase("item"))
+        {
+            MultiSellEntry e = parseEntry(n, entryId);
+            list.getEntries().add(e);
+            throw new RuntimeException();
+        }
 
 		return list;
 	}

@@ -250,101 +250,95 @@ public class RecipeController
 			List<L2RecipeStatInstance> recipeStatUseList = new ArrayList<>();
 			List<L2RecipeStatInstance> recipeAltStatChangeList = new ArrayList<>();
 
-			for (XmlNode n : doc.getChildren())
-			{
-				if (n.getName().equalsIgnoreCase("list"))
-				{
-					recipesFile:
-					for (XmlNode d : n.getChildren())
-					{
-						if (d.getName().equalsIgnoreCase("item"))
-						{
-							recipePartList.clear();
-							recipeStatUseList.clear();
-							recipeAltStatChangeList.clear();
-							int id = -1;
-							boolean haveRare = false;
-							StatsSet set = new StatsSet();
+            recipesFile:
+            for (XmlNode d : doc.getChildren())
+            {
+                if (d.getName().equalsIgnoreCase("item"))
+                {
+                    recipePartList.clear();
+                    recipeStatUseList.clear();
+                    recipeAltStatChangeList.clear();
+                    int id = -1;
+                    boolean haveRare = false;
+                    StatsSet set = new StatsSet();
 
-							id = d.getInt("id");
-							set.set("id", id);
-							set.set("recipeId", d.getInt("recipeId"));
-							set.set("recipeName", d.getString("name"));
-							set.set("craftLevel", d.getInt("craftLevel"));
-							set.set("isDwarvenRecipe", d.getString("type").equalsIgnoreCase("dwarven"));
-							set.set("successRate", d.getInt("successRate"));
+                    id = d.getInt("id");
+                    set.set("id", id);
+                    set.set("recipeId", d.getInt("recipeId"));
+                    set.set("recipeName", d.getString("name"));
+                    set.set("craftLevel", d.getInt("craftLevel"));
+                    set.set("isDwarvenRecipe", d.getString("type").equalsIgnoreCase("dwarven"));
+                    set.set("successRate", d.getInt("successRate"));
 
-							for (XmlNode c : d.getChildren())
-							{
-								if (c.getName().equalsIgnoreCase("statUse"))
-								{
-									String statName = c.getString("name");
-									int value = c.getInt("value");
-									try
-									{
-										recipeStatUseList.add(new L2RecipeStatInstance(statName, value));
-									}
-									catch (Exception e)
-									{
-										Log.severe(
-												"Error in StatUse parameter for recipe item id: " + id + ", skipping");
-										continue recipesFile;
-									}
-								}
-								else if (c.getName().equalsIgnoreCase("altStatChange"))
-								{
-									String statName = c.getString("name");
-									int value = c.getInt("value");
-									try
-									{
-										recipeAltStatChangeList.add(new L2RecipeStatInstance(statName, value));
-									}
-									catch (Exception e)
-									{
-										Log.severe("Error in AltStatChange parameter for recipe item id: " + id +
-												", skipping");
-										continue recipesFile;
-									}
-								}
-								else if (c.getName().equalsIgnoreCase("ingredient"))
-								{
-									int ingId = c.getInt("id");
-									int ingCount = c.getInt("count");
-									recipePartList.add(new L2RecipeInstance(ingId, ingCount));
-								}
-								else if (c.getName().equalsIgnoreCase("production"))
-								{
-									set.set("itemId", c.getInt("id"));
-									set.set("count", c.getInt("count"));
-								}
-								else if (c.getName().equalsIgnoreCase("productionRare"))
-								{
-									set.set("rareItemId", c.getInt("id"));
-									set.set("rareCount", c.getInt("count"));
-									set.set("rarity", c.getInt("rarity"));
-									haveRare = true;
-								}
-							}
+                    for (XmlNode c : d.getChildren())
+                    {
+                        if (c.getName().equalsIgnoreCase("statUse"))
+                        {
+                            String statName = c.getString("name");
+                            int value = c.getInt("value");
+                            try
+                            {
+                                recipeStatUseList.add(new L2RecipeStatInstance(statName, value));
+                            }
+                            catch (Exception e)
+                            {
+                                Log.severe(
+                                        "Error in StatUse parameter for recipe item id: " + id + ", skipping");
+                                continue recipesFile;
+                            }
+                        }
+                        else if (c.getName().equalsIgnoreCase("altStatChange"))
+                        {
+                            String statName = c.getString("name");
+                            int value = c.getInt("value");
+                            try
+                            {
+                                recipeAltStatChangeList.add(new L2RecipeStatInstance(statName, value));
+                            }
+                            catch (Exception e)
+                            {
+                                Log.severe("Error in AltStatChange parameter for recipe item id: " + id +
+                                        ", skipping");
+                                continue recipesFile;
+                            }
+                        }
+                        else if (c.getName().equalsIgnoreCase("ingredient"))
+                        {
+                            int ingId = c.getInt("id");
+                            int ingCount = c.getInt("count");
+                            recipePartList.add(new L2RecipeInstance(ingId, ingCount));
+                        }
+                        else if (c.getName().equalsIgnoreCase("production"))
+                        {
+                            set.set("itemId", c.getInt("id"));
+                            set.set("count", c.getInt("count"));
+                        }
+                        else if (c.getName().equalsIgnoreCase("productionRare"))
+                        {
+                            set.set("rareItemId", c.getInt("id"));
+                            set.set("rareCount", c.getInt("count"));
+                            set.set("rarity", c.getInt("rarity"));
+                            haveRare = true;
+                        }
+                    }
 
-							L2RecipeList recipeList = new L2RecipeList(set, haveRare);
-							for (L2RecipeInstance recipePart : recipePartList)
-							{
-								recipeList.addRecipe(recipePart);
-							}
-							for (L2RecipeStatInstance recipeStatUse : recipeStatUseList)
-							{
-								recipeList.addStatUse(recipeStatUse);
-							}
-							for (L2RecipeStatInstance recipeAltStatChange : recipeAltStatChangeList)
-							{
-								recipeList.addAltStatChange(recipeAltStatChange);
-							}
+                    L2RecipeList recipeList = new L2RecipeList(set, haveRare);
+                    for (L2RecipeInstance recipePart : recipePartList)
+                    {
+                        recipeList.addRecipe(recipePart);
+                    }
+                    for (L2RecipeStatInstance recipeStatUse : recipeStatUseList)
+                    {
+                        recipeList.addStatUse(recipeStatUse);
+                    }
+                    for (L2RecipeStatInstance recipeAltStatChange : recipeAltStatChangeList)
+                    {
+                        recipeList.addAltStatChange(recipeAltStatChange);
+                    }
 
-							_lists.put(id, recipeList);
-						}
-					}
-				}
-			}
+                    _lists.put(id, recipeList);
+                }
+            }
 		}
 		else
 		{

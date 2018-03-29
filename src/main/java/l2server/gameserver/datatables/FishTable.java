@@ -46,7 +46,7 @@ public class FishTable
 		XmlDocument doc = new XmlDocument(file);
 
 		int count = 0;
-		for (XmlNode n : doc.getFirstChild().getChildren())
+		for (XmlNode n : doc.getChildren())
 		{
 			if (n.getName().equalsIgnoreCase("fish"))
 			{

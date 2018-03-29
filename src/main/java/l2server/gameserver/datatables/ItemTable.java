@@ -15,8 +15,6 @@
 
 package l2server.gameserver.datatables;
 
-import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.Reloadable;
@@ -34,12 +32,7 @@ import l2server.gameserver.stats.ItemParser;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.stats.funcs.FuncTemplate;
 import l2server.gameserver.stats.funcs.LambdaConst;
-import l2server.gameserver.templates.item.L2Armor;
-import l2server.gameserver.templates.item.L2ArmorType;
-import l2server.gameserver.templates.item.L2EtcItem;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.gameserver.templates.item.L2Weapon;
-import l2server.gameserver.templates.item.L2WeaponType;
+import l2server.gameserver.templates.item.*;
 import l2server.gameserver.util.GMAudit;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
@@ -48,13 +41,11 @@ import l2server.util.xml.XmlNode;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
+
+import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
 
 /**
  * This class ...
@@ -195,47 +186,41 @@ public class ItemTable implements Reloadable
 		for (File f : validFiles)
 		{
 			XmlDocument doc = new XmlDocument(f);
-			for (XmlNode n : doc.getChildren())
-			{
-				if (n.getName().equalsIgnoreCase("list"))
-				{
-					for (XmlNode d : n.getChildren())
-					{
-						if (d.getName().equalsIgnoreCase("item"))
-						{
-							ItemParser item = new ItemParser(d);
-							try
-							{
-								ItemParser original = items.get(item.getId());
-								if (original != null)
-								{
-									item.parse(original);
-								}
-								else
-								{
-									item.parse();
-								}
+			for (XmlNode d : doc.getChildren())
+            {
+                if (d.getName().equalsIgnoreCase("item"))
+                {
+                    ItemParser item = new ItemParser(d);
+                    try
+                    {
+                        ItemParser original = items.get(item.getId());
+                        if (original != null)
+                        {
+                            item.parse(original);
+                        }
+                        else
+                        {
+                            item.parse();
+                        }
 
-								if (Config.isServer(Config.TENKAI) && item.getItem() instanceof L2Weapon &&
-										(item.getName().contains("Antharas") || item.getName().contains("Valakas") ||
-												item.getName().contains("Lindvior")))
-								{
-									item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.PHYS_ATTACK,
-											new LambdaConst(50.0)));
-									item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.MAGIC_ATTACK,
-											new LambdaConst(30.0)));
-								}
+                        if (Config.isServer(Config.TENKAI) && item.getItem() instanceof L2Weapon &&
+                                (item.getName().contains("Antharas") || item.getName().contains("Valakas") ||
+                                        item.getName().contains("Lindvior")))
+                        {
+                            item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.PHYS_ATTACK,
+                                    new LambdaConst(50.0)));
+                            item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.MAGIC_ATTACK,
+                                    new LambdaConst(30.0)));
+                        }
 
-								items.put(item.getId(), item);
-							}
-							catch (Exception e)
-							{
-								Log.log(Level.WARNING, "Cannot create item " + item.getId(), e);
-							}
-						}
-					}
-				}
-			}
+                        items.put(item.getId(), item);
+                    }
+                    catch (Exception e)
+                    {
+                        Log.log(Level.WARNING, "Cannot create item " + item.getId(), e);
+                    }
+                }
+            }
 		}
 
 		for (ItemParser item : items.values())

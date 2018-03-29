@@ -142,134 +142,130 @@ public class Q350_EnhanceYourWeapon extends Quest
 			}
 
 			XmlDocument doc = new XmlDocument(file);
-			XmlNode first = doc.getFirstChild();
-			if (first != null && "list".equalsIgnoreCase(first.getName()))
-			{
-				for (XmlNode n : first.getChildren())
-				{
-					if (n.getName().equalsIgnoreCase("crystal"))
-					{
-						for (XmlNode d : n.getChildren())
-						{
-							if (d.getName().equalsIgnoreCase("item"))
-							{
-								if (!d.hasAttribute("itemId"))
-								{
-									Log.severe("[EnhanceYourWeapon] Missing itemId in Crystal List, skipping");
-									continue;
-								}
-								int itemId = d.getInt("itemId");
+            for (XmlNode n : doc.getChildren())
+            {
+                if (n.getName().equalsIgnoreCase("crystal"))
+                {
+                    for (XmlNode d : n.getChildren())
+                    {
+                        if (d.getName().equalsIgnoreCase("item"))
+                        {
+                            if (!d.hasAttribute("itemId"))
+                            {
+                                Log.severe("[EnhanceYourWeapon] Missing itemId in Crystal List, skipping");
+                                continue;
+                            }
+                            int itemId = d.getInt("itemId");
 
-								if (!d.hasAttribute("level"))
-								{
-									Log.severe("[EnhanceYourWeapon] Missing level in Crystal List itemId: " + itemId +
-											", skipping");
-									continue;
-								}
-								int level = d.getInt("level");
+                            if (!d.hasAttribute("level"))
+                            {
+                                Log.severe("[EnhanceYourWeapon] Missing level in Crystal List itemId: " + itemId +
+                                        ", skipping");
+                                continue;
+                            }
+                            int level = d.getInt("level");
 
-								if (!d.hasAttribute("leveledItemId"))
-								{
-									Log.severe("[EnhanceYourWeapon] Missing leveledItemId in Crystal List itemId: " +
-											itemId + ", skipping");
-									continue;
-								}
-								int leveledItemId = d.getInt("leveledItemId");
+                            if (!d.hasAttribute("leveledItemId"))
+                            {
+                                Log.severe("[EnhanceYourWeapon] Missing leveledItemId in Crystal List itemId: " +
+                                        itemId + ", skipping");
+                                continue;
+                            }
+                            int leveledItemId = d.getInt("leveledItemId");
 
-								_soulCrystals.put(itemId, new SoulCrystal(level, itemId, leveledItemId));
-							}
-						}
-					}
-					else if (n.getName().equalsIgnoreCase("npc"))
-					{
-						for (XmlNode d : n.getChildren())
-						{
-							if (d.getName().equalsIgnoreCase("item"))
-							{
-								if (!d.hasAttribute("npcId"))
-								{
-									Log.severe("[EnhanceYourWeapon] Missing npcId in NPC List, skipping");
-									continue;
-								}
-								int npcId = d.getInt("npcId");
+                            _soulCrystals.put(itemId, new SoulCrystal(level, itemId, leveledItemId));
+                        }
+                    }
+                }
+                else if (n.getName().equalsIgnoreCase("npc"))
+                {
+                    for (XmlNode d : n.getChildren())
+                    {
+                        if (d.getName().equalsIgnoreCase("item"))
+                        {
+                            if (!d.hasAttribute("npcId"))
+                            {
+                                Log.severe("[EnhanceYourWeapon] Missing npcId in NPC List, skipping");
+                                continue;
+                            }
+                            int npcId = d.getInt("npcId");
 
-								HashMap<Integer, LevelingInfo> temp = new HashMap<Integer, LevelingInfo>();
+                            HashMap<Integer, LevelingInfo> temp = new HashMap<Integer, LevelingInfo>();
 
-								for (XmlNode cd : d.getChildren())
-								{
-									boolean isSkillNeeded = false;
-									// int chance = 5;
-									int chance = 25; // TnS chance for absorbing soul: 25% (Luna)
-									AbsorbCrystalType absorbType = AbsorbCrystalType.LAST_HIT;
+                            for (XmlNode cd : d.getChildren())
+                            {
+                                boolean isSkillNeeded = false;
+                                // int chance = 5;
+                                int chance = 25; // TnS chance for absorbing soul: 25% (Luna)
+                                AbsorbCrystalType absorbType = AbsorbCrystalType.LAST_HIT;
 
-									if (cd.getName().equalsIgnoreCase("detail"))
-									{
-										if (cd.hasAttribute("absorbType"))
-										{
-											absorbType =
-													Enum.valueOf(AbsorbCrystalType.class, cd.getString("absorbType"));
-										}
+                                if (cd.getName().equalsIgnoreCase("detail"))
+                                {
+                                    if (cd.hasAttribute("absorbType"))
+                                    {
+                                        absorbType =
+                                                Enum.valueOf(AbsorbCrystalType.class, cd.getString("absorbType"));
+                                    }
 
-										if (cd.hasAttribute("chance"))
-										{
-											chance = cd.getInt("chance") * CHANCE_MULTIPLIER >= 100 ? 100 :
-													cd.getInt("chance") * CHANCE_MULTIPLIER;
-										}
-										//chance = cd.getInt("chance");
+                                    if (cd.hasAttribute("chance"))
+                                    {
+                                        chance = cd.getInt("chance") * CHANCE_MULTIPLIER >= 100 ? 100 :
+                                                cd.getInt("chance") * CHANCE_MULTIPLIER;
+                                    }
+                                    //chance = cd.getInt("chance");
 
-										if (cd.hasAttribute("skill"))
-										{
-											isSkillNeeded = cd.getBool("skill");
-										}
+                                    if (cd.hasAttribute("skill"))
+                                    {
+                                        isSkillNeeded = cd.getBool("skill");
+                                    }
 
-										if (!cd.hasAttribute("maxLevel") && !cd.hasAttribute("levelList"))
-										{
-											Log.severe(
-													"[EnhanceYourWeapon] Missing maxlevel/levelList in NPC List npcId: " +
-															npcId + ", skipping");
-											continue;
-										}
-										LevelingInfo info = new LevelingInfo(absorbType, isSkillNeeded, chance);
-										if (cd.hasAttribute("maxLevel"))
-										{
-											int maxLevel = cd.getInt("maxLevel");
-											for (int i = 0; i <= maxLevel; i++)
-											{
-												temp.put(i, info);
-											}
-										}
-										else
-										{
-											StringTokenizer st = new StringTokenizer(cd.getString("levelList"), ",");
-											int tokenCount = st.countTokens();
-											for (int i = 0; i < tokenCount; i++)
-											{
-												Integer value = Integer.decode(st.nextToken().trim());
-												if (value == null)
-												{
-													Log.severe("[EnhanceYourWeapon] Bad Level value!! npcId: " + npcId +
-															" token: " + i);
-													value = 0;
-												}
-												temp.put(value, info);
-											}
-										}
-									}
-								}
+                                    if (!cd.hasAttribute("maxLevel") && !cd.hasAttribute("levelList"))
+                                    {
+                                        Log.severe(
+                                                "[EnhanceYourWeapon] Missing maxlevel/levelList in NPC List npcId: " +
+                                                        npcId + ", skipping");
+                                        continue;
+                                    }
+                                    LevelingInfo info = new LevelingInfo(absorbType, isSkillNeeded, chance);
+                                    if (cd.hasAttribute("maxLevel"))
+                                    {
+                                        int maxLevel = cd.getInt("maxLevel");
+                                        for (int i = 0; i <= maxLevel; i++)
+                                        {
+                                            temp.put(i, info);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        StringTokenizer st = new StringTokenizer(cd.getString("levelList"), ",");
+                                        int tokenCount = st.countTokens();
+                                        for (int i = 0; i < tokenCount; i++)
+                                        {
+                                            Integer value = Integer.decode(st.nextToken().trim());
+                                            if (value == null)
+                                            {
+                                                Log.severe("[EnhanceYourWeapon] Bad Level value!! npcId: " + npcId +
+                                                        " token: " + i);
+                                                value = 0;
+                                            }
+                                            temp.put(value, info);
+                                        }
+                                    }
+                                }
+                            }
 
-								if (temp.isEmpty())
-								{
-									Log.severe(
-											"[EnhanceYourWeapon] No leveling info for npcId: " + npcId + ", skipping");
-									continue;
-								}
-								_npcLevelingInfos.put(npcId, temp);
-							}
-						}
-					}
-				}
-			}
-		}
+                            if (temp.isEmpty())
+                            {
+                                Log.severe(
+                                        "[EnhanceYourWeapon] No leveling info for npcId: " + npcId + ", skipping");
+                                continue;
+                            }
+                            _npcLevelingInfos.put(npcId, temp);
+                        }
+                    }
+                }
+            }
+        }
 		catch (Exception e)
 		{
 			Log.log(Level.WARNING, "[EnhanceYourWeapon] Could not parse data.xml file: " + e.getMessage(), e);

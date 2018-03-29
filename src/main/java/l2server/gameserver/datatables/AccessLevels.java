@@ -15,6 +15,7 @@
 
 package l2server.gameserver.datatables;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.model.L2AccessLevel;
 import l2server.log.Log;
@@ -22,8 +23,6 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
-
-import gnu.trove.TIntObjectHashMap;
 
 /**
  * @author FBIagent<br>
@@ -82,7 +81,7 @@ public class AccessLevels
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "accessLevels.xml");
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getFirstChild().getChildren())
+		for (XmlNode n : doc.getChildren())
 		{
 			if (n.getName().equalsIgnoreCase("accessLevel"))
 			{

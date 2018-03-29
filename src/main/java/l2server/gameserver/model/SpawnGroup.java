@@ -52,7 +52,7 @@ public class SpawnGroup
 				int amount = subNode.getInt("amount");
 				int respawn = subNode.getInt("respawn");
 				int randomRespawn = subNode.getInt("randomRespawn", 0);
-				String dbName = subNode.getString("dbName", null);
+				String dbName = subNode.getString("dbName", "");
 
 				L2NpcTemplate t = NpcTable.getInstance().getTemplate(npcId);
 				if (t == null)

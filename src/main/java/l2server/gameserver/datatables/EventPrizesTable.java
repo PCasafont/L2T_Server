@@ -52,12 +52,6 @@ public class EventPrizesTable implements Reloadable
 		_prizes.clear();
 
 		XmlDocument doc = new XmlDocument(new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "eventPrizes.xml"));
-		if (doc.getFirstChild() == null)
-		{
-			Log.warning("An error occured while loading the Event Locations.");
-			return;
-		}
-
 		int przCount = 0;
 		for (XmlNode n : doc.getChildren())
 		{

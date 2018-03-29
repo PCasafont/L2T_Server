@@ -99,30 +99,24 @@ public class CreatureInvasion extends Quest
 		}
 
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getChildren())
+		for (XmlNode d : doc.getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("drop"))
-					{
-						String category = d.getString("category");
-						List<DropChances> dropChances = new ArrayList<DropChances>();
+            if (d.getName().equalsIgnoreCase("drop"))
+            {
+                String category = d.getString("category");
+                List<DropChances> dropChances = new ArrayList<DropChances>();
 
-						for (XmlNode b : d.getChildren())
-						{
-							int itemId = b.getInt("itemId");
-							long min = b.getLong("min");
-							long max = b.getLong("max");
-							int chance = b.getInt("chance");
-							dropChances.add(new DropChances(itemId, min, max, chance));
-						}
-						_dropInfo.put(category, dropChances);
-					}
-				}
-			}
-		}
+                for (XmlNode b : d.getChildren())
+                {
+                    int itemId = b.getInt("itemId");
+                    long min = b.getLong("min");
+                    long max = b.getLong("max");
+                    int chance = b.getInt("chance");
+                    dropChances.add(new DropChances(itemId, min, max, chance));
+                }
+                _dropInfo.put(category, dropChances);
+            }
+        }
 		Log.info(getName() + ": Loaded " + _dropInfo.size() + " drop categories!");
 	}
 

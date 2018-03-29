@@ -15,6 +15,7 @@
 
 package l2server.gameserver.datatables;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.stats.Stats;
@@ -28,8 +29,6 @@ import l2server.util.xml.XmlNode;
 import java.io.File;
 import java.util.Collection;
 import java.util.StringTokenizer;
-
-import gnu.trove.TIntObjectHashMap;
 
 /**
  * @author MrPoke
@@ -63,44 +62,38 @@ public class EnchantHPBonusData
 		if (file.exists())
 		{
 			XmlDocument doc = new XmlDocument(file);
-			for (XmlNode n : doc.getChildren())
-			{
-				if (n.getName().equalsIgnoreCase("list"))
-				{
-					for (XmlNode d : n.getChildren())
-					{
-						if (d.getName().equalsIgnoreCase("enchantHP"))
-						{
-							if (!d.hasAttribute("grade"))
-							{
-								Log.severe("[EnchantHPBonusData] Missing grade, skipping");
-								continue;
-							}
-							int grade = d.getInt("grade");
+			for (XmlNode d : doc.getChildren())
+            {
+                if (d.getName().equalsIgnoreCase("enchantHP"))
+                {
+                    if (!d.hasAttribute("grade"))
+                    {
+                        Log.severe("[EnchantHPBonusData] Missing grade, skipping");
+                        continue;
+                    }
+                    int grade = d.getInt("grade");
 
-							if (!d.hasAttribute("values"))
-							{
-								Log.severe("[EnchantHPBonusData] Missing bonus id: " + grade + ", skipping");
-								continue;
-							}
-							StringTokenizer st = new StringTokenizer(d.getString("values"), ",");
-							int tokenCount = st.countTokens();
-							Integer[] bonus = new Integer[tokenCount];
-							for (int i = 0; i < tokenCount; i++)
-							{
-								Integer value = Integer.decode(st.nextToken().trim());
-								if (value == null)
-								{
-									Log.severe("[EnchantHPBonusData] Bad Hp value!! grade: " + grade + " token: " + i);
-									value = 0;
-								}
-								bonus[i] = value;
-							}
-							_armorHPBonus.put(grade, bonus);
-						}
-					}
-				}
-			}
+                    if (!d.hasAttribute("values"))
+                    {
+                        Log.severe("[EnchantHPBonusData] Missing bonus id: " + grade + ", skipping");
+                        continue;
+                    }
+                    StringTokenizer st = new StringTokenizer(d.getString("values"), ",");
+                    int tokenCount = st.countTokens();
+                    Integer[] bonus = new Integer[tokenCount];
+                    for (int i = 0; i < tokenCount; i++)
+                    {
+                        Integer value = Integer.decode(st.nextToken().trim());
+                        if (value == null)
+                        {
+                            Log.severe("[EnchantHPBonusData] Bad Hp value!! grade: " + grade + " token: " + i);
+                            value = 0;
+                        }
+                        bonus[i] = value;
+                    }
+                    _armorHPBonus.put(grade, bonus);
+                }
+            }
 			if (_armorHPBonus.isEmpty())
 			{
 				return;

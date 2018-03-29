@@ -87,58 +87,56 @@ public class hitConditionBonus
 		{
 			XmlDocument doc = new XmlDocument(file);
 			String name;
-			for (XmlNode list : doc.getChildren())
-			{
-				if (list.getName().equalsIgnoreCase("hitConditionBonus") || list.getName().equalsIgnoreCase("list"))
-				{
-					for (XmlNode cond : list.getChildren())
-					{
-						int bonus = 0;
-						name = cond.getName();
-						try
-						{
-							if (cond.hasAttributes())
-							{
-								bonus = cond.getInt("val");
-							}
-						}
-						catch (Exception e)
-						{
-							Log.log(Level.WARNING, "[hitConditionBonus] Could not parse condition: " + e.getMessage(),
-									e);
-						}
-						finally
-						{
-							if ("front".equals(name))
-							{
-								frontBonus = bonus;
-							}
-							else if ("side".equals(name))
-							{
-								sideBonus = bonus;
-							}
-							else if ("back".equals(name))
-							{
-								backBonus = bonus;
-							}
-							else if ("high".equals(name))
-							{
-								highBonus = bonus;
-							}
-							else if ("low".equals(name))
-							{
-								lowBonus = bonus;
-							}
-							else if ("dark".equals(name))
-							{
-								darkBonus = bonus;
-							}
-							//else if ("rain".equals(name))
-							//rainBonus = bonus;
-						}
-					}
-				}
-			}
+			XmlNode list = doc.getRoot();
+            if (list.getName().equalsIgnoreCase("hitConditionBonus") || list.getName().equalsIgnoreCase("list"))
+            {
+                for (XmlNode cond : list.getChildren())
+                {
+                    int bonus = 0;
+                    name = cond.getName();
+                    try
+                    {
+                        if (cond.hasAttributes())
+                        {
+                            bonus = cond.getInt("val");
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Log.log(Level.WARNING, "[hitConditionBonus] Could not parse condition: " + e.getMessage(),
+                                e);
+                    }
+                    finally
+                    {
+                        if ("front".equals(name))
+                        {
+                            frontBonus = bonus;
+                        }
+                        else if ("side".equals(name))
+                        {
+                            sideBonus = bonus;
+                        }
+                        else if ("back".equals(name))
+                        {
+                            backBonus = bonus;
+                        }
+                        else if ("high".equals(name))
+                        {
+                            highBonus = bonus;
+                        }
+                        else if ("low".equals(name))
+                        {
+                            lowBonus = bonus;
+                        }
+                        else if ("dark".equals(name))
+                        {
+                            darkBonus = bonus;
+                        }
+                        //else if ("rain".equals(name))
+                        //rainBonus = bonus;
+                    }
+                }
+            }
 		}
 		else
 		{

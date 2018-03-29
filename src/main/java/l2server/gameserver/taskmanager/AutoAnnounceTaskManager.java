@@ -46,24 +46,18 @@ public class AutoAnnounceTaskManager
 		}
 		int count = 0;
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getChildren())
+		for (XmlNode d : doc.getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("announce"))
-					{
-						String text = d.getString("text");
-						int initial = d.getInt("initial");
-						int reuse = d.getInt("reuse");
+            if (d.getName().equalsIgnoreCase("announce"))
+            {
+                String text = d.getString("text");
+                int initial = d.getInt("initial");
+                int reuse = d.getInt("reuse");
 
-						ThreadPoolManager.getInstance()
-								.scheduleGeneralAtFixedRate(new AutoAnnouncement(text), initial * 60000, reuse * 60000);
-						count++;
-					}
-				}
-			}
+                ThreadPoolManager.getInstance()
+                        .scheduleGeneralAtFixedRate(new AutoAnnouncement(text), initial * 60000, reuse * 60000);
+                count++;
+            }
 		}
 		Log.info("AutoAnnouncements: Loaded: " + count + " auto announcements!");
 	}

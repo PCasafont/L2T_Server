@@ -983,9 +983,9 @@ public abstract class StatsParser
 
 	protected Lambda getLambda(XmlNode node, Object template)
 	{
-		String val = node.getString("val", null);
-		if (val != null)
+		if (node.hasAttribute("val"))
 		{
+            String val = node.getString("val");
 			if (val.charAt(0) == '$')
 			{
 				if (val.equalsIgnoreCase("$player_level"))

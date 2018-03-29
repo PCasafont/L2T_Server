@@ -15,6 +15,7 @@
 
 package l2server.gameserver.instancemanager;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.itemauction.ItemAuctionInstance;
@@ -29,8 +30,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
-
-import gnu.trove.TIntObjectHashMap;
 
 /**
  * @author Forsaiken
@@ -87,27 +86,21 @@ public final class ItemAuctionManager
 		try
 		{
 			XmlDocument doc = new XmlDocument(file);
-			for (XmlNode na : doc.getChildren())
-			{
-				if (na.getName().equalsIgnoreCase("list"))
-				{
-					for (XmlNode nb : na.getChildren())
-					{
-						if (nb.getName().equalsIgnoreCase("instance"))
-						{
-							final int instanceId = nb.getInt("id");
+			for (XmlNode nb : doc.getChildren())
+            {
+                if (nb.getName().equalsIgnoreCase("instance"))
+                {
+                    final int instanceId = nb.getInt("id");
 
-							if (_managerInstances.containsKey(instanceId))
-							{
-								throw new Exception("Dublicated instanceId " + instanceId);
-							}
+                    if (_managerInstances.containsKey(instanceId))
+                    {
+                        throw new Exception("Dublicated instanceId " + instanceId);
+                    }
 
-							final ItemAuctionInstance instance = new ItemAuctionInstance(instanceId, _auctionIds, nb);
-							_managerInstances.put(instanceId, instance);
-						}
-					}
-				}
-			}
+                    final ItemAuctionInstance instance = new ItemAuctionInstance(instanceId, _auctionIds, nb);
+                    _managerInstances.put(instanceId, instance);
+                }
+            }
 			Log.info("ItemAuctionManager: Loaded " + _managerInstances.size() + " instance(s).");
 		}
 		catch (Exception e)

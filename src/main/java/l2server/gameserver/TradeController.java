@@ -90,94 +90,88 @@ public class TradeController implements Reloadable
 			}
 
 			XmlDocument doc = new XmlDocument(file);
-			for (XmlNode n : doc.getChildren())
+			for (XmlNode d : doc.getChildren())
 			{
-				if (n.getName().equalsIgnoreCase("list"))
-				{
-					for (XmlNode d : n.getChildren())
-					{
-						if (d.getName().equalsIgnoreCase("shop"))
-						{
-							int id = d.getInt("id");
-							int npcId = d.getInt("npcId");
+                if (d.getName().equalsIgnoreCase("shop"))
+                {
+                    int id = d.getInt("id");
+                    int npcId = d.getInt("npcId");
 
-							if (_lists.containsKey(id))
-							{
-								continue;
-							}
+                    if (_lists.containsKey(id))
+                    {
+                        continue;
+                    }
 
-							L2TradeList buy = new L2TradeList(id);
+                    L2TradeList buy = new L2TradeList(id);
 
-							L2NpcTemplate npcTemplate = NpcTable.getInstance().getTemplate(npcId);
-							if (npcTemplate == null)
-							{
-								if (npcId != -1)
-								{
-									Log.warning("No template found for NpcId " + npcId);
-								}
+                    L2NpcTemplate npcTemplate = NpcTable.getInstance().getTemplate(npcId);
+                    if (npcTemplate == null)
+                    {
+                        if (npcId != -1)
+                        {
+                            Log.warning("No template found for NpcId " + npcId);
+                        }
 
-								continue;
-							}
+                        continue;
+                    }
 
-							for (XmlNode shopNode : d.getChildren())
-							{
-								if (shopNode.getName().equalsIgnoreCase("item"))
-								{
-									int itemId = shopNode.getInt("id");
+                    for (XmlNode shopNode : d.getChildren())
+                    {
+                        if (shopNode.getName().equalsIgnoreCase("item"))
+                        {
+                            int itemId = shopNode.getInt("id");
 
-									final L2Item itemTemplate = ItemTable.getInstance().getTemplate(itemId);
-									if (itemTemplate == null)
-									{
-										Log.warning("Skipping itemId: " + itemId + " on buylistId: " + id +
-												", missing data for that item.");
-										continue;
-									}
+                            final L2Item itemTemplate = ItemTable.getInstance().getTemplate(itemId);
+                            if (itemTemplate == null)
+                            {
+                                Log.warning("Skipping itemId: " + itemId + " on buylistId: " + id +
+                                        ", missing data for that item.");
+                                continue;
+                            }
 
-									L2TradeItem item = new L2TradeItem(id, itemId);
-									long price = shopNode.getLong("price", -1);
-									int count = shopNode.getInt("count", -1);
-									int time = shopNode.getInt("time", 0);
-									if (price <= -1)
-									{
-										price = itemTemplate.getReferencePrice();
-										if (price == 0 && npcId != -1)
-										{
-											Log.warning(
-													"ItemId: " + itemId + " on buylistId: " + id + " has price = 0!");
-										}
-									}
+                            L2TradeItem item = new L2TradeItem(id, itemId);
+                            long price = shopNode.getLong("price", -1);
+                            int count = shopNode.getInt("count", -1);
+                            int time = shopNode.getInt("time", 0);
+                            if (price <= -1)
+                            {
+                                price = itemTemplate.getReferencePrice();
+                                if (price == 0 && npcId != -1)
+                                {
+                                    Log.warning(
+                                            "ItemId: " + itemId + " on buylistId: " + id + " has price = 0!");
+                                }
+                            }
 
-									if (Config.DEBUG)
-									{
-										// debug
-										double diff = (double) price /
-												ItemTable.getInstance().getTemplate(itemId).getReferencePrice();
-										if (diff < 0.8 || diff > 1.2)
-										{
-											Log.severe("PRICING DEBUG: TradeListId: " + id + " -  ItemId: " + itemId +
-													" (" + ItemTable.getInstance().getTemplate(itemId).getName() +
-													") diff: " + diff + " - Price: " + price + " - Reference: " +
-													ItemTable.getInstance().getTemplate(itemId).getReferencePrice());
-										}
-									}
+                            if (Config.DEBUG)
+                            {
+                                // debug
+                                double diff = (double) price /
+                                        ItemTable.getInstance().getTemplate(itemId).getReferencePrice();
+                                if (diff < 0.8 || diff > 1.2)
+                                {
+                                    Log.severe("PRICING DEBUG: TradeListId: " + id + " -  ItemId: " + itemId +
+                                            " (" + ItemTable.getInstance().getTemplate(itemId).getName() +
+                                            ") diff: " + diff + " - Price: " + price + " - Reference: " +
+                                            ItemTable.getInstance().getTemplate(itemId).getReferencePrice());
+                                }
+                            }
 
-									item.setPrice(price);
+                            item.setPrice(price);
 
-									item.setRestoreDelay(time);
-									item.setMaxCount(count);
+                            item.setRestoreDelay(time);
+                            item.setMaxCount(count);
 
-									buy.addItem(item);
+                            buy.addItem(item);
 
-									itemTemplate.setSalePrice(0);
-								}
-							}
+                            itemTemplate.setSalePrice(0);
+                        }
+                    }
 
-							buy.setNpcId(npcId);
-							_lists.put(id, buy);
-						}
-					}
-				}
-			}
+                    buy.setNpcId(npcId);
+                    _lists.put(id, buy);
+                }
+            }
 		}
 
 		Log.info("TradeController: Loaded " + _lists.size() + " Buylists.");

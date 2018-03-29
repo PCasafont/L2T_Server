@@ -205,7 +205,7 @@ public class SpawnTable
 			try
 			{
 				XmlDocument doc = new XmlDocument(f);
-				List<L2Spawn> spawns = loadSpawns(doc.getFirstChild(), true);
+				List<L2Spawn> spawns = loadSpawns(doc.getRoot(), true);
 				//for (L2Spawn spawn : spawns)
 				//	spawn.doSpawn();
 				_spawnTable.addAll(spawns);
@@ -275,7 +275,7 @@ public class SpawnTable
 
 				int respawn = npcNode.getInt("respawn");
 				int randomRespawn = npcNode.getInt("randomRespawn", 0);
-				String dbName = npcNode.getString("dbName", null);
+				String dbName = npcNode.getString("dbName", "");
 
 				L2NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
 				if (template == null)

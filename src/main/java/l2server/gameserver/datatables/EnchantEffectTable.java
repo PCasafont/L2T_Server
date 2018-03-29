@@ -77,59 +77,51 @@ public class EnchantEffectTable
 			try
 			{
 				XmlDocument doc = new XmlDocument(f);
-				for (XmlNode n : doc.getChildren())
-				{
-					if (!n.getName().equalsIgnoreCase("list"))
-					{
-						continue;
-					}
+                for (XmlNode e : doc.getChildren())
+                {
+                    if (!e.getName().equalsIgnoreCase("effect"))
+                    {
+                        continue;
+                    }
 
-					for (XmlNode e : n.getChildren())
-					{
-						if (!e.getName().equalsIgnoreCase("effect"))
-						{
-							continue;
-						}
+                    int id = e.getInt("id");
+                    int rarity = e.getInt("rarity");
+                    int slot = e.getInt("slot");
+                    EnchantEffect effect = new EnchantEffect(id, rarity, slot);
 
-						int id = e.getInt("id");
-						int rarity = e.getInt("rarity");
-						int slot = e.getInt("slot");
-						EnchantEffect effect = new EnchantEffect(id, rarity, slot);
+                    for (XmlNode effectNode : e.getChildren())
+                    {
+                        if (effectNode.getName().equalsIgnoreCase("skill"))
+                        {
+                            int skillId = effectNode.getInt("id");
+                            int skillLevel = effectNode.getInt("level");
+                            effect.setSkill(skillId, skillLevel);
+                            continue;
+                        }
 
-						for (XmlNode effectNode : e.getChildren())
-						{
-							if (effectNode.getName().equalsIgnoreCase("skill"))
-							{
-								int skillId = effectNode.getInt("id");
-								int skillLevel = effectNode.getInt("level");
-								effect.setSkill(skillId, skillLevel);
-								continue;
-							}
+                        String stat = effectNode.getString("stat", "");
+                        double val = effectNode.getDouble("val", 0.0);
+                        Func func = null;
+                        if (effectNode.getName().equalsIgnoreCase("add"))
+                        {
+                            func = new FuncAdd(Stats.fromString(stat), effect, new LambdaConst(val));
+                        }
+                        else if (effectNode.getName().equalsIgnoreCase("baseAdd"))
+                        {
+                            func = new FuncBaseAdd(Stats.fromString(stat), effect, new LambdaConst(val));
+                        }
+                        else if (effectNode.getName().equalsIgnoreCase("addPercent"))
+                        {
+                            func = new FuncAddPercent(Stats.fromString(stat), effect, new LambdaConst(val));
+                        }
 
-							String stat = effectNode.getString("stat", "");
-							double val = effectNode.getDouble("val", 0.0);
-							Func func = null;
-							if (effectNode.getName().equalsIgnoreCase("add"))
-							{
-								func = new FuncAdd(Stats.fromString(stat), effect, new LambdaConst(val));
-							}
-							else if (effectNode.getName().equalsIgnoreCase("baseAdd"))
-							{
-								func = new FuncBaseAdd(Stats.fromString(stat), effect, new LambdaConst(val));
-							}
-							else if (effectNode.getName().equalsIgnoreCase("addPercent"))
-							{
-								func = new FuncAddPercent(Stats.fromString(stat), effect, new LambdaConst(val));
-							}
+                        if (func != null)
+                        {
+                            effect.addFunc(func);
+                        }
+                    }
 
-							if (func != null)
-							{
-								effect.addFunc(func);
-							}
-						}
-
-						_effects.put(id, effect);
-					}
+                    _effects.put(id, effect);
 				}
 			}
 			catch (Exception e)

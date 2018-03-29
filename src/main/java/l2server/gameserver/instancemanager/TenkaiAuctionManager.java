@@ -649,50 +649,44 @@ public class TenkaiAuctionManager implements Reloadable
 		}
 
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("currency"))
-					{
-						int position = d.getInt("position");
-						int itemId = d.getInt("itemId");
-						_currencies.put(itemId, new CurrencyInfo(position, itemId));
-					}
-					else if (d.getName().equalsIgnoreCase("auction"))
-					{
-						int auctionId = d.getInt("id");
-						String[] itemIds = d.getString("itemId").split(",");
-						int[] itemId = new int[itemIds.length];
-						for (int i = 0; i < itemId.length; i++)
-						{
-							itemId[i] = Integer.parseInt(itemIds[i]);
-						}
-						int count = d.getInt("count");
-						int repeatTime = d.getInt("repeatTime") * 3600; // It's in hours
-						int randomRepeatTime = d.getInt("randomRepeatTime") * 3600; // It's in hours
-						int initialCurrencyId = d.getInt("initialCurrencyId");
-						int initialPrice = d.getInt("initialPrice");
-						int initialDuration = d.getInt("initialDuration") * 3600; // It's in hours
-						boolean acceptAllCoins = d.getBool("acceptAllCoins", true);
-						AuctionTemplate itemAuction = _auctionTemplates.get(auctionId);
-						if (itemAuction != null)
-						{
-							itemAuction.overrideInfo(itemId, count, repeatTime, randomRepeatTime, initialCurrencyId,
-									initialPrice, initialDuration, acceptAllCoins);
-						}
-						else
-						{
-							_auctionTemplates.put(auctionId,
-									new AuctionTemplate(auctionId, itemId, count, repeatTime, randomRepeatTime,
-											initialCurrencyId, initialPrice, initialDuration, acceptAllCoins));
-						}
-					}
-				}
-			}
-		}
+		for (XmlNode d : doc.getChildren())
+        {
+            if (d.getName().equalsIgnoreCase("currency"))
+            {
+                int position = d.getInt("position");
+                int itemId = d.getInt("itemId");
+                _currencies.put(itemId, new CurrencyInfo(position, itemId));
+            }
+            else if (d.getName().equalsIgnoreCase("auction"))
+            {
+                int auctionId = d.getInt("id");
+                String[] itemIds = d.getString("itemId").split(",");
+                int[] itemId = new int[itemIds.length];
+                for (int i = 0; i < itemId.length; i++)
+                {
+                    itemId[i] = Integer.parseInt(itemIds[i]);
+                }
+                int count = d.getInt("count");
+                int repeatTime = d.getInt("repeatTime") * 3600; // It's in hours
+                int randomRepeatTime = d.getInt("randomRepeatTime") * 3600; // It's in hours
+                int initialCurrencyId = d.getInt("initialCurrencyId");
+                int initialPrice = d.getInt("initialPrice");
+                int initialDuration = d.getInt("initialDuration") * 3600; // It's in hours
+                boolean acceptAllCoins = d.getBool("acceptAllCoins", true);
+                AuctionTemplate itemAuction = _auctionTemplates.get(auctionId);
+                if (itemAuction != null)
+                {
+                    itemAuction.overrideInfo(itemId, count, repeatTime, randomRepeatTime, initialCurrencyId,
+                            initialPrice, initialDuration, acceptAllCoins);
+                }
+                else
+                {
+                    _auctionTemplates.put(auctionId,
+                            new AuctionTemplate(auctionId, itemId, count, repeatTime, randomRepeatTime,
+                                    initialCurrencyId, initialPrice, initialDuration, acceptAllCoins));
+                }
+            }
+        }
 
 		Log.info("ItemAuction: Loaded: " + _auctionTemplates.size() + " auctions!");
 	}

@@ -80,31 +80,21 @@ public class PacketOpcodes
 		ServerPackets.clear();
 
 		XmlDocument doc = new XmlDocument(file);
+		XmlNode n = doc.getRoot();
+        if (n.getName().equals("protocol"))
+        {
+            for (XmlNode d : n.getChildren())
+            {
+                if (!d.getName().equals("packetfamilly"))
+                {
+                    continue;
+                }
 
-		if (doc.getFirstChild() == null)
-		{
-			Log.warning("An error occured while loading PacketOpcodes.");
-			return;
-		}
+                boolean isClientPacket = d.getString("way").equalsIgnoreCase("ClientPackets");
+                parsePacketFamily(d, isClientPacket, new byte[0], isClientPacket ? ClientPacketsFamily : null);
+            }
+        }
 
-		for (XmlNode n : doc.getChildren())
-		{
-			if (!n.getName().equals("protocol"))
-			{
-				continue;
-			}
-
-			for (XmlNode d : n.getChildren())
-			{
-				if (!d.getName().equals("packetfamilly"))
-				{
-					continue;
-				}
-
-				boolean isClientPacket = d.getString("way").equalsIgnoreCase("ClientPackets");
-				parsePacketFamily(d, isClientPacket, new byte[0], isClientPacket ? ClientPacketsFamily : null);
-			}
-		}
 
 		Log.info("PacketOpcodes: Loaded " + ClientPackets.size() + " Client Packets and " + ServerPackets.size() +
 				" Server Packets.");

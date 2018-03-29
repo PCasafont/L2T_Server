@@ -41,25 +41,19 @@ public class ScenePlayerDataTable implements Reloadable
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "scenePlayerData.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("scene"))
-					{
-						int id = d.getInt("id");
+		for (XmlNode d : doc.getChildren())
+        {
+            if (d.getName().equalsIgnoreCase("scene"))
+            {
+                int id = d.getInt("id");
 
-						int time = d.getInt("time");
+                int time = d.getInt("time");
 
-						_sceneDataTable.put(id, time);
-					}
-				}
+                _sceneDataTable.put(id, time);
+            }
+        }
 
-				Log.info("ScenePlayerTable: Loaded: " + _sceneDataTable.size() + " scenes!");
-			}
-		}
+        Log.info("ScenePlayerTable: Loaded: " + _sceneDataTable.size() + " scenes!");
 
 		return false;
 	}

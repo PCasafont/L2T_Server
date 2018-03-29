@@ -49,7 +49,7 @@ public class StaticObjects
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "staticObjects.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode d : doc.getFirstChild().getChildren())
+		for (XmlNode d : doc.getChildren())
 		{
 			if (d.getName().equalsIgnoreCase("object"))
 			{

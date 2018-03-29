@@ -15,19 +15,15 @@
 
 package instances.SeedOfDestruction;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.GraciaSeedsManager;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2CommandChannel;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2Territory;
-import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
@@ -48,16 +44,10 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
-
-import gnu.trove.TIntObjectHashMap;
 
 /**
  * TODO:
@@ -191,187 +181,183 @@ public class Stage1 extends Quest
 			}
 
 			XmlDocument doc = new XmlDocument(file);
-			XmlNode first = doc.getFirstChild();
-			if (first != null && "list".equalsIgnoreCase(first.getName()))
-			{
-				for (XmlNode n : first.getChildren())
+			for (XmlNode n : doc.getChildren())
 				{
-					if (n.getName().equalsIgnoreCase("npc"))
-					{
-						for (XmlNode d : n.getChildren())
-						{
-							if (d.getName().equalsIgnoreCase("spawn"))
-							{
-								if (!d.hasAttribute("npcId"))
-								{
-									Log.severe("[Seed of Destruction] Missing npcId in npc List, skipping");
-									continue;
-								}
-								int npcId = d.getInt("npcId");
+                if (n.getName().equalsIgnoreCase("npc"))
+                {
+                    for (XmlNode d : n.getChildren())
+                    {
+                        if (d.getName().equalsIgnoreCase("spawn"))
+                        {
+                            if (!d.hasAttribute("npcId"))
+                            {
+                                Log.severe("[Seed of Destruction] Missing npcId in npc List, skipping");
+                                continue;
+                            }
+                            int npcId = d.getInt("npcId");
 
-								if (!d.hasAttribute("flag"))
-								{
-									Log.severe("[Seed of Destruction] Missing flag in npc List npcId: " + npcId +
-											", skipping");
-									continue;
-								}
-								int flag = d.getInt("flag");
-								if (!_spawnList.contains(flag))
-								{
-									_spawnList.put(flag, new ArrayList<SODSpawn>());
-								}
+                            if (!d.hasAttribute("flag"))
+                            {
+                                Log.severe("[Seed of Destruction] Missing flag in npc List npcId: " + npcId +
+                                        ", skipping");
+                                continue;
+                            }
+                            int flag = d.getInt("flag");
+                            if (!_spawnList.contains(flag))
+                            {
+                                _spawnList.put(flag, new ArrayList<SODSpawn>());
+                            }
 
-								for (XmlNode cd : d.getChildren())
-								{
-									if (cd.getName().equalsIgnoreCase("loc"))
-									{
-										SODSpawn spw = new SODSpawn();
-										spw.npcId = npcId;
+                            for (XmlNode cd : d.getChildren())
+                            {
+                                if (cd.getName().equalsIgnoreCase("loc"))
+                                {
+                                    SODSpawn spw = new SODSpawn();
+                                    spw.npcId = npcId;
 
-										if (cd.hasAttribute("x"))
-										{
-											spw.x = cd.getInt("x");
-										}
-										else
-										{
-											continue;
-										}
+                                    if (cd.hasAttribute("x"))
+                                    {
+                                        spw.x = cd.getInt("x");
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
 
-										if (cd.hasAttribute("y"))
-										{
-											spw.x = cd.getInt("y");
-										}
-										else
-										{
-											continue;
-										}
+                                    if (cd.hasAttribute("y"))
+                                    {
+                                        spw.x = cd.getInt("y");
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
 
-										if (cd.hasAttribute("z"))
-										{
-											spw.x = cd.getInt("z");
-										}
-										else
-										{
-											continue;
-										}
+                                    if (cd.hasAttribute("z"))
+                                    {
+                                        spw.x = cd.getInt("z");
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
 
-										if (cd.hasAttribute("heading"))
-										{
-											spw.h = cd.getInt("heading");
-										}
-										else
-										{
-											continue;
-										}
+                                    if (cd.hasAttribute("heading"))
+                                    {
+                                        spw.h = cd.getInt("heading");
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
 
-										spw.isNeededNextFlag = cd.getBool("mustKill", false);
-										if (spw.isNeededNextFlag)
-										{
-											_mustKillMobsId.add(npcId);
-										}
-										_spawnList.get(flag).add(spw);
-										spawnCount++;
-									}
-									else if (cd.getName().equalsIgnoreCase("zone"))
-									{
-										SODSpawn spw = new SODSpawn();
-										spw.npcId = npcId;
-										spw.isZone = true;
+                                    spw.isNeededNextFlag = cd.getBool("mustKill", false);
+                                    if (spw.isNeededNextFlag)
+                                    {
+                                        _mustKillMobsId.add(npcId);
+                                    }
+                                    _spawnList.get(flag).add(spw);
+                                    spawnCount++;
+                                }
+                                else if (cd.getName().equalsIgnoreCase("zone"))
+                                {
+                                    SODSpawn spw = new SODSpawn();
+                                    spw.npcId = npcId;
+                                    spw.isZone = true;
 
-										if (cd.hasAttribute("id"))
-										{
-											spw.zone = cd.getInt("id");
-										}
-										else
-										{
-											continue;
-										}
+                                    if (cd.hasAttribute("id"))
+                                    {
+                                        spw.zone = cd.getInt("id");
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
 
-										if (cd.hasAttribute("count"))
-										{
-											spw.count = cd.getInt("count");
-										}
-										else
-										{
-											continue;
-										}
+                                    if (cd.hasAttribute("count"))
+                                    {
+                                        spw.count = cd.getInt("count");
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
 
-										spw.isNeededNextFlag = cd.getBool("mustKill", false);
-										if (spw.isNeededNextFlag)
-										{
-											_mustKillMobsId.add(npcId);
-										}
-										_spawnList.get(flag).add(spw);
-										spawnCount++;
-									}
-								}
-							}
-						}
-					}
-					else if (n.getName().equalsIgnoreCase("spawnZones"))
-					{
-						for (XmlNode d : n.getChildren())
-						{
-							if (d.getName().equalsIgnoreCase("zone"))
-							{
-								if (!d.hasAttribute("id"))
-								{
-									Log.severe("[Seed of Destruction] Missing id in spawnZones List, skipping");
-									continue;
-								}
-								int id = d.getInt("id");
+                                    spw.isNeededNextFlag = cd.getBool("mustKill", false);
+                                    if (spw.isNeededNextFlag)
+                                    {
+                                        _mustKillMobsId.add(npcId);
+                                    }
+                                    _spawnList.get(flag).add(spw);
+                                    spawnCount++;
+                                }
+                            }
+                        }
+                    }
+                }
+                else if (n.getName().equalsIgnoreCase("spawnZones"))
+                {
+                    for (XmlNode d : n.getChildren())
+                    {
+                        if (d.getName().equalsIgnoreCase("zone"))
+                        {
+                            if (!d.hasAttribute("id"))
+                            {
+                                Log.severe("[Seed of Destruction] Missing id in spawnZones List, skipping");
+                                continue;
+                            }
+                            int id = d.getInt("id");
 
-								if (!d.hasAttribute("minZ"))
-								{
-									Log.severe("[Seed of Destruction] Missing minZ in spawnZones List id: " + id +
-											", skipping");
-									continue;
-								}
-								int minz = d.getInt("minZ");
+                            if (!d.hasAttribute("minZ"))
+                            {
+                                Log.severe("[Seed of Destruction] Missing minZ in spawnZones List id: " + id +
+                                        ", skipping");
+                                continue;
+                            }
+                            int minz = d.getInt("minZ");
 
-								if (!d.hasAttribute("maxZ"))
-								{
-									Log.severe("[Seed of Destruction] Missing maxZ in spawnZones List id: " + id +
-											", skipping");
-									continue;
-								}
-								int maxz = d.getInt("maxZ");
-								L2Territory ter = new L2Territory(id);
+                            if (!d.hasAttribute("maxZ"))
+                            {
+                                Log.severe("[Seed of Destruction] Missing maxZ in spawnZones List id: " + id +
+                                        ", skipping");
+                                continue;
+                            }
+                            int maxz = d.getInt("maxZ");
+                            L2Territory ter = new L2Territory(id);
 
-								for (XmlNode cd : d.getChildren())
-								{
-									if (cd.getName().equalsIgnoreCase("point"))
-									{
-										int x, y;
-										if (cd.hasAttribute("x"))
-										{
-											x = cd.getInt("x");
-										}
-										else
-										{
-											continue;
-										}
+                            for (XmlNode cd : d.getChildren())
+                            {
+                                if (cd.getName().equalsIgnoreCase("point"))
+                                {
+                                    int x, y;
+                                    if (cd.hasAttribute("x"))
+                                    {
+                                        x = cd.getInt("x");
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
 
-										if (cd.hasAttribute("y"))
-										{
-											y = cd.getInt("y");
-										}
-										else
-										{
-											continue;
-										}
+                                    if (cd.hasAttribute("y"))
+                                    {
+                                        y = cd.getInt("y");
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
 
-										ter.add(x, y, minz, maxz, 0);
-									}
-								}
+                                    ter.add(x, y, minz, maxz, 0);
+                                }
+                            }
 
-								_spawnZoneList.put(id, ter);
-							}
-						}
-					}
-				}
-			}
-		}
+                            _spawnZoneList.put(id, ter);
+                        }
+                    }
+                }
+            }
+        }
 		catch (Exception e)
 		{
 			Log.log(Level.WARNING, "[Seed of Destruction] Could not parse data.xml file: " + e.getMessage(), e);

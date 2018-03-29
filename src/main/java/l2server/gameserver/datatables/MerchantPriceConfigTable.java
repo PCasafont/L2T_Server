@@ -74,7 +74,7 @@ public class MerchantPriceConfigTable implements InstanceListManager
 			int defaultPriceConfigId;
 			XmlDocument doc = new XmlDocument(file);
 
-			XmlNode n = doc.getFirstChild();
+			XmlNode n = doc.getRoot();
 			if (!n.hasAttribute("defaultPriceConfig"))
 			{
 				throw new IllegalStateException("merchantPriceConfig must define an 'defaultPriceConfig'");

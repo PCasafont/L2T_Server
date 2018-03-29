@@ -15,6 +15,7 @@
 
 package l2server.gameserver.datatables;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
@@ -22,8 +23,6 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
-
-import gnu.trove.TIntObjectHashMap;
 
 /**
  * @author Pere
@@ -106,32 +105,26 @@ public class AbilityTable
 	{
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "abilities.xml");
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getChildren())
+		for (XmlNode abilityNode : doc.getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode abilityNode : n.getChildren())
-				{
-					if (abilityNode.getName().equalsIgnoreCase("ability"))
-					{
-						int type = abilityNode.getInt("type");
-						int skillId = abilityNode.getInt("skillId");
-						int maxLevel = abilityNode.getInt("maxLevel");
-						int reqPoints = abilityNode.getInt("reqPoints");
+            if (abilityNode.getName().equalsIgnoreCase("ability"))
+            {
+                int type = abilityNode.getInt("type");
+                int skillId = abilityNode.getInt("skillId");
+                int maxLevel = abilityNode.getInt("maxLevel");
+                int reqPoints = abilityNode.getInt("reqPoints");
 
-						int reqSkill = 0;
-						int reqSkillLvl = 0;
-						if (abilityNode.hasAttribute("reqSkill"))
-						{
-							reqSkill = abilityNode.getInt("reqSkill");
-							reqSkillLvl = abilityNode.getInt("reqSkillLvl");
-						}
+                int reqSkill = 0;
+                int reqSkillLvl = 0;
+                if (abilityNode.hasAttribute("reqSkill"))
+                {
+                    reqSkill = abilityNode.getInt("reqSkill");
+                    reqSkillLvl = abilityNode.getInt("reqSkillLvl");
+                }
 
-						_abilities.put(skillId, new Ability(type, skillId, maxLevel, reqPoints, reqSkill, reqSkillLvl));
-					}
-				}
-			}
-		}
+                _abilities.put(skillId, new Ability(type, skillId, maxLevel, reqPoints, reqSkill, reqSkillLvl));
+            }
+        }
 
 		Log.info("AbilityTable: Loaded " + _abilities.size() + " abilities.");
 	}

@@ -70,7 +70,7 @@ public class EnchantMultiSellTable implements Reloadable
 		File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/enchantMultiSell.xml");
 		XmlDocument doc = new XmlDocument(file);
 		int currentCategoryId = 1;
-		for (XmlNode categoryNode : doc.getFirstChild().getChildren())
+		for (XmlNode categoryNode : doc.getChildren())
 		{
 			if (!categoryNode.getName().equalsIgnoreCase("category"))
 			{

@@ -15,6 +15,7 @@
 
 package l2server.gameserver.datatables;
 
+import gnu.trove.TLongObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2Skill;
@@ -25,8 +26,6 @@ import l2server.util.xml.XmlNode;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
-
-import gnu.trove.TLongObjectHashMap;
 
 /**
  * @author JIV
@@ -101,77 +100,71 @@ public class SubPledgeSkillTree
 		if (file.exists())
 		{
 			XmlDocument doc = new XmlDocument(file);
-			for (XmlNode n : doc.getChildren())
+			for (XmlNode d : doc.getChildren())
 			{
-				if ("skill_tree".equalsIgnoreCase(n.getName()))
-				{
-					for (XmlNode d : n.getChildren())
-					{
-						if (d.getName().equalsIgnoreCase("skill"))
-						{
-							int skillId;
-							int skillLvl;
-							int clanLvl;
-							int reputation;
-							int itemId;
-							int count;
+                if (d.getName().equalsIgnoreCase("skill"))
+                {
+                    int skillId;
+                    int skillLvl;
+                    int clanLvl;
+                    int reputation;
+                    int itemId;
+                    int count;
 
-							if (!d.hasAttribute("id"))
-							{
-								Log.severe("[SubPledgeSkillTree] Missing id, skipping");
-								continue;
-							}
-							skillId = d.getInt("id");
+                    if (!d.hasAttribute("id"))
+                    {
+                        Log.severe("[SubPledgeSkillTree] Missing id, skipping");
+                        continue;
+                    }
+                    skillId = d.getInt("id");
 
-							if (!d.hasAttribute("level"))
-							{
-								Log.severe("[SubPledgeSkillTree] Missing level, skipping");
-								continue;
-							}
-							skillLvl = d.getInt("level");
+                    if (!d.hasAttribute("level"))
+                    {
+                        Log.severe("[SubPledgeSkillTree] Missing level, skipping");
+                        continue;
+                    }
+                    skillLvl = d.getInt("level");
 
-							if (!d.hasAttribute("reputation"))
-							{
-								Log.severe("[SubPledgeSkillTree] Missing reputation, skipping");
-								continue;
-							}
-							reputation = d.getInt("level");
+                    if (!d.hasAttribute("reputation"))
+                    {
+                        Log.severe("[SubPledgeSkillTree] Missing reputation, skipping");
+                        continue;
+                    }
+                    reputation = d.getInt("level");
 
-							if (!d.hasAttribute("clanLevel"))
-							{
-								Log.severe("[SubPledgeSkillTree] Missing clan_level, skipping");
-								continue;
-							}
-							clanLvl = d.getInt("clanLevel");
+                    if (!d.hasAttribute("clanLevel"))
+                    {
+                        Log.severe("[SubPledgeSkillTree] Missing clan_level, skipping");
+                        continue;
+                    }
+                    clanLvl = d.getInt("clanLevel");
 
-							if (!d.hasAttribute("itemId"))
-							{
-								Log.severe("[SubPledgeSkillTree] Missing itemId, skipping");
-								continue;
-							}
-							itemId = d.getInt("itemId");
+                    if (!d.hasAttribute("itemId"))
+                    {
+                        Log.severe("[SubPledgeSkillTree] Missing itemId, skipping");
+                        continue;
+                    }
+                    itemId = d.getInt("itemId");
 
-							if (!d.hasAttribute("count"))
-							{
-								Log.severe("[SubPledgeSkillTree] Missing count, skipping");
-								continue;
-							}
-							count = d.getInt("count");
+                    if (!d.hasAttribute("count"))
+                    {
+                        Log.severe("[SubPledgeSkillTree] Missing count, skipping");
+                        continue;
+                    }
+                    count = d.getInt("count");
 
-							L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
-							if (skill == null)
-							{
-								Log.severe("[SubPledgeSkillTree] Skill " + skillId + " not exist, skipping");
-								continue;
-							}
+                    L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
+                    if (skill == null)
+                    {
+                        Log.severe("[SubPledgeSkillTree] Skill " + skillId + " not exist, skipping");
+                        continue;
+                    }
 
-							_skilltree.put(SkillTable.getSkillHashCode(skill),
-									new SubUnitSkill(skill, clanLvl, reputation, itemId, count));
-						}
-					}
-				}
-			}
-		}
+                    _skilltree.put(SkillTable.getSkillHashCode(skill),
+                            new SubUnitSkill(skill, clanLvl, reputation, itemId, count));
+                }
+            }
+        }
 		Log.info(getClass().getSimpleName() + ": Loaded " + _skilltree.size() + " SubUnit Skills");
 	}
 

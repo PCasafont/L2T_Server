@@ -374,61 +374,55 @@ public class CustomWorldAltars
 	{
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "scripts/ai/WorldAltars/WorldAltars.xml");
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("respawnInfo"))
-					{
-						_baseRespawnMinutes = d.getInt("baseRespawnMinutes");
-						_randomRespawnMinutes = d.getInt("randomRespawnMinutes");
-						_cursedChance = d.getInt("cursedChance");
-					}
-					else if (d.getName().equalsIgnoreCase("possibleSpawns"))
-					{
-						for (XmlNode a : d.getChildren())
-						{
-							if (a.getName().equalsIgnoreCase("spawn"))
-							{
-								String name = a.getString("name");
-								int zoneId = a.getInt("zoneId");
-								int x = a.getInt("x");
-								int y = a.getInt("y");
-								int z = a.getInt("z");
-								int heading = a.getInt("heading");
-								_spawnInfo.add(new AltarsSpawns(name, zoneId, new Location(x, y, z, heading)));
-							}
-						}
-					}
-					else if (d.getName().equalsIgnoreCase("altars"))
-					{
-						for (XmlNode a : d.getChildren())
-						{
-							if (a.getName().equalsIgnoreCase("altar"))
-							{
-								String name = a.getString("name");
-								int imageId = a.getInt("imageId");
-								int altarId = a.getInt("altarId");
-								_altarsList.add(new WorldAltarsInfo(imageId, name, altarId));
-							}
-						}
-					}
-					else if (d.getName().equalsIgnoreCase("bosses"))
-					{
-						for (XmlNode a : d.getChildren())
-						{
-							if (a.getName().equalsIgnoreCase("boss"))
-							{
-								int bossId = a.getInt("id");
-								_bosssIds.add(bossId);
-							}
-						}
-					}
-				}
-			}
-		}
+		for (XmlNode d : doc.getChildren())
+        {
+            if (d.getName().equalsIgnoreCase("respawnInfo"))
+            {
+                _baseRespawnMinutes = d.getInt("baseRespawnMinutes");
+                _randomRespawnMinutes = d.getInt("randomRespawnMinutes");
+                _cursedChance = d.getInt("cursedChance");
+            }
+            else if (d.getName().equalsIgnoreCase("possibleSpawns"))
+            {
+                for (XmlNode a : d.getChildren())
+                {
+                    if (a.getName().equalsIgnoreCase("spawn"))
+                    {
+                        String name = a.getString("name");
+                        int zoneId = a.getInt("zoneId");
+                        int x = a.getInt("x");
+                        int y = a.getInt("y");
+                        int z = a.getInt("z");
+                        int heading = a.getInt("heading");
+                        _spawnInfo.add(new AltarsSpawns(name, zoneId, new Location(x, y, z, heading)));
+                    }
+                }
+            }
+            else if (d.getName().equalsIgnoreCase("altars"))
+            {
+                for (XmlNode a : d.getChildren())
+                {
+                    if (a.getName().equalsIgnoreCase("altar"))
+                    {
+                        String name = a.getString("name");
+                        int imageId = a.getInt("imageId");
+                        int altarId = a.getInt("altarId");
+                        _altarsList.add(new WorldAltarsInfo(imageId, name, altarId));
+                    }
+                }
+            }
+            else if (d.getName().equalsIgnoreCase("bosses"))
+            {
+                for (XmlNode a : d.getChildren())
+                {
+                    if (a.getName().equalsIgnoreCase("boss"))
+                    {
+                        int bossId = a.getInt("id");
+                        _bosssIds.add(bossId);
+                    }
+                }
+            }
+        }
 
 		Log.info("WorldAltars: Loaded: " + _spawnInfo.size() + " altar spawns, " + _altarsList.size() + " altars and " +
 				_bosssIds.size() + " bosses!");

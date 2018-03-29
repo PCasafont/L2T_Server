@@ -1,5 +1,6 @@
 package l2server.gameserver.datatables;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
@@ -10,8 +11,6 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
-
-import gnu.trove.TIntObjectHashMap;
 
 public class EnchantItemTable implements Reloadable
 {
@@ -281,41 +280,35 @@ public class EnchantItemTable implements Reloadable
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "enchantItems.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("enchantScroll"))
-					{
-						int id = d.getInt("id");
-						EnchantTargetType targetType = EnchantTargetType.valueOf(d.getString("targetType"));
-						int grade = ItemTable._crystalTypes.get(d.getString("grade", "none"));
-						boolean isBlessed = d.getBool("isBlessed", false);
-						boolean isCrystal = d.getBool("isCrystal", false);
-						boolean isSafe = d.getBool("isSafe", false);
-						int maxLevel = d.getInt("maxLevel", 0);
-						int extraChance = d.getInt("extraChance", 0);
-						int onlyOnItem = d.getInt("onlyOnItem", 0);
+		for (XmlNode d : doc.getChildren())
+        {
+            if (d.getName().equalsIgnoreCase("enchantScroll"))
+            {
+                int id = d.getInt("id");
+                EnchantTargetType targetType = EnchantTargetType.valueOf(d.getString("targetType"));
+                int grade = ItemTable._crystalTypes.get(d.getString("grade", "none"));
+                boolean isBlessed = d.getBool("isBlessed", false);
+                boolean isCrystal = d.getBool("isCrystal", false);
+                boolean isSafe = d.getBool("isSafe", false);
+                int maxLevel = d.getInt("maxLevel", 0);
+                int extraChance = d.getInt("extraChance", 0);
+                int onlyOnItem = d.getInt("onlyOnItem", 0);
 
-						_scrolls.put(id, new EnchantScroll(targetType, isBlessed, isCrystal, isSafe, grade, maxLevel,
-								extraChance, onlyOnItem));
-					}
-					else if (d.getName().equalsIgnoreCase("enchantSupportItem"))
-					{
-						int id = d.getInt("id");
-						EnchantTargetType targetType = EnchantTargetType.valueOf(d.getString("targetType"));
-						int grade = ItemTable._crystalTypes.get(d.getString("grade", "none"));
-						int maxLevel = d.getInt("maxLevel", 0);
-						int extraChance = d.getInt("extraChance", 0);
-						int onlyOnItem = d.getInt("onlyOnItem", 0);
+                _scrolls.put(id, new EnchantScroll(targetType, isBlessed, isCrystal, isSafe, grade, maxLevel,
+                        extraChance, onlyOnItem));
+            }
+            else if (d.getName().equalsIgnoreCase("enchantSupportItem"))
+            {
+                int id = d.getInt("id");
+                EnchantTargetType targetType = EnchantTargetType.valueOf(d.getString("targetType"));
+                int grade = ItemTable._crystalTypes.get(d.getString("grade", "none"));
+                int maxLevel = d.getInt("maxLevel", 0);
+                int extraChance = d.getInt("extraChance", 0);
+                int onlyOnItem = d.getInt("onlyOnItem", 0);
 
-						_supports.put(id, new EnchantSupportItem(targetType, grade, maxLevel, extraChance, onlyOnItem));
-					}
-				}
-			}
-		}
+                _supports.put(id, new EnchantSupportItem(targetType, grade, maxLevel, extraChance, onlyOnItem));
+            }
+        }
 
 		return true;
 	}

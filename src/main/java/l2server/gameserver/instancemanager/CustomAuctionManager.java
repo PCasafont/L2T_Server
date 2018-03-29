@@ -18,24 +18,18 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.xml.XmlDocument;
+import l2server.util.xml.XmlNode;
 
+import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-
-import javax.xml.parsers.DocumentBuilderFactory;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
 
 /**
  * @author LasTravel
@@ -583,90 +577,56 @@ public class CustomAuctionManager
 			return;
 		}
 
-		Document doc = null;
-		try
-		{
-			doc = factory.newDocumentBuilder().parse(file);
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
+		XmlDocument doc = new XmlDocument(file);
+		for (XmlNode d : doc.getChildren())
+        {
+            if (d.getName().equalsIgnoreCase("auction"))
+            {
+                int auctionId = d.getInt("id");
 
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
-		{
-			if (n.getNodeName().equalsIgnoreCase("list"))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if (d.getNodeName().equalsIgnoreCase("auction"))
-					{
-						int auctionId = Integer.parseInt(d.getAttributes().getNamedItem("id").getNodeValue());
+                int count = d.getInt("count");
+                int repeatTime = d.getInt("repeatTime", 0) * 3600; // It's in hours
+                int randomRepeatTime = d.getInt("randomRepeatTime", 0) * 3600; // It's in hours
+                int initialCurrencyId = d.getInt("initialCurrencyId");
+                int highestCurrencyId = d.getInt("highestCurrencyId", 0);
+                int initialPrice = d.getInt("initialPrice", 0);
+                int initialDuration = d.getInt("initialDuration") * 3600; // It's in hours
 
-						int count = Integer.parseInt(d.getAttributes().getNamedItem("count").getNodeValue());
-						int repeatTime = d.getAttributes().getNamedItem("repeatTime") == null ? 0 :
-								Integer.parseInt(d.getAttributes().getNamedItem("repeatTime").getNodeValue()) *
-										3600; // It's in hours
-						int randomRepeatTime = d.getAttributes().getNamedItem("randomRepeatTime") == null ? 0 :
-								Integer.parseInt(d.getAttributes().getNamedItem("randomRepeatTime").getNodeValue()) *
-										3600; // It's in hours
-						int initialCurrencyId =
-								Integer.parseInt(d.getAttributes().getNamedItem("initialCurrencyId").getNodeValue());
-						int highestCurrencyId = 0;
+                int[] auctionItems = null;
+                if (!d.hasAttribute("itemId"))
+                {
+                    List<Integer> itemIds = new ArrayList<>();
+                    for (XmlNode e : d.getChildren("item")) {
+                        itemIds.add(e.getInt("id"));
+                    }
 
-						if (d.getAttributes().getNamedItem("highestCurrencyId") != null)
-						{
-							highestCurrencyId = Integer.parseInt(
-									d.getAttributes().getNamedItem("highestCurrencyId").getNodeValue());
-						}
+                    auctionItems = new int[itemIds.size()];
+                    Iterator<Integer> iter = itemIds.iterator();
+                    for (int i = 0; iter.hasNext(); i++)
+                    {
+                        auctionItems[i] = iter.next();
+                    }
 
-						int initialPrice =
-								Integer.parseInt(d.getAttributes().getNamedItem("initialPrice").getNodeValue());
-						int initialDuration =
-								Integer.parseInt(d.getAttributes().getNamedItem("initialDuration").getNodeValue()) *
-										3600; // It's in hours
+                    System.out.println("Loaded " + auctionItems.length + " for new format auction.");
+                }
+                else
+                {
+                    String[] itemIds = d.getString("itemId").split(",");
+                    auctionItems = new int[itemIds.length];
+                    for (int i = 0; i < auctionItems.length; i++)
+                    {
+                        auctionItems[i] = Integer.parseInt(itemIds[i]);
+                    }
 
-						int[] auctionItems = null;
-						if (d.getAttributes().getNamedItem("itemId") == null)
-						{
-							List<Integer> itemIds = new ArrayList<>();
-							for (Node e = d.getFirstChild(); e != null; e = e.getNextSibling())
-							{
-								if (e.getNodeName().equalsIgnoreCase("item"))
-								{
-									itemIds.add(Integer.parseInt(e.getAttributes().getNamedItem("id").getNodeValue()));
-								}
-							}
+                    System.out.println("Loaded " + auctionItems.length + " for old format auction.");
+                }
 
-							auctionItems = new int[itemIds.size()];
-							Iterator<Integer> iter = itemIds.iterator();
-							for (int i = 0; iter.hasNext(); i++)
-							{
-								auctionItems[i] = iter.next();
-							}
-
-							System.out.println("Loaded " + auctionItems.length + " for new format auction.");
-						}
-						else
-						{
-							String[] itemIds = d.getAttributes().getNamedItem("itemId").getNodeValue().split(",");
-							auctionItems = new int[itemIds.length];
-							for (int i = 0; i < auctionItems.length; i++)
-							{
-								auctionItems[i] = Integer.parseInt(itemIds[i]);
-							}
-
-							System.out.println("Loaded " + auctionItems.length + " for old format auction.");
-						}
-
-						AuctionTemplate itemAuction =
-								new AuctionTemplate(auctionId, auctionItems, count, repeatTime, randomRepeatTime,
-										initialCurrencyId, highestCurrencyId, initialPrice, initialDuration, !reload);
-						_auctionTemplates.put(auctionId, itemAuction);
-					}
-				}
-			}
-		}
+                AuctionTemplate itemAuction =
+                        new AuctionTemplate(auctionId, auctionItems, count, repeatTime, randomRepeatTime,
+                                initialCurrencyId, highestCurrencyId, initialPrice, initialDuration, !reload);
+                _auctionTemplates.put(auctionId, itemAuction);
+            }
+        }
 
 		Log.info("ItemAuction: Loaded: " + _auctionTemplates.size() + " auctions!");
 

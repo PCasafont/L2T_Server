@@ -1,5 +1,6 @@
 package l2server.gameserver.datatables;
 
+import gnu.trove.TIntIntHashMap;
 import l2server.Config;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
@@ -14,8 +15,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
-
-import gnu.trove.TIntIntHashMap;
 
 /**
  * @author Pere
@@ -187,39 +186,33 @@ public class GlobalDropTable implements Reloadable
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "globalDrops.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("globalDrop"))
-					{
-						String description = d.getString("description");
-						int chance = (int) (d.getFloat("chance") * 1000.0f);
-						int minAmount = d.getInt("minAmount", 1);
-						int maxAmount = d.getInt("maxAmount", 1);
-						int mobId = d.getInt("mobId", 0);
-						int minLevel = d.getInt("minLevel", 1);
-						int maxLevel = d.getInt("maxLevel", 100);
-						boolean raidOnly = d.getBool("raidOnly", false);
-						int maxDailyCount = d.getInt("maxDailyCount", 0);
+		for (XmlNode d : doc.getChildren())
+        {
+            if (d.getName().equalsIgnoreCase("globalDrop"))
+            {
+                String description = d.getString("description");
+                int chance = (int) (d.getFloat("chance") * 1000.0f);
+                int minAmount = d.getInt("minAmount", 1);
+                int maxAmount = d.getInt("maxAmount", 1);
+                int mobId = d.getInt("mobId", 0);
+                int minLevel = d.getInt("minLevel", 1);
+                int maxLevel = d.getInt("maxLevel", 100);
+                boolean raidOnly = d.getBool("raidOnly", false);
+                int maxDailyCount = d.getInt("maxDailyCount", 0);
 
-						GlobalDropCategory drop =
-								new GlobalDropCategory(description, chance, minAmount, maxAmount, mobId, minLevel,
-										maxLevel, raidOnly, maxDailyCount);
-						for (XmlNode propertyNode : d.getChildren())
-						{
-							if (propertyNode.getName().equalsIgnoreCase("item"))
-							{
-								int itemId = propertyNode.getInt("id");
-								drop.addItem(itemId);
-							}
-						}
-						_globalDropCategories.add(drop);
-					}
-				}
-			}
+                GlobalDropCategory drop =
+                        new GlobalDropCategory(description, chance, minAmount, maxAmount, mobId, minLevel,
+                                maxLevel, raidOnly, maxDailyCount);
+                for (XmlNode propertyNode : d.getChildren())
+                {
+                    if (propertyNode.getName().equalsIgnoreCase("item"))
+                    {
+                        int itemId = propertyNode.getInt("id");
+                        drop.addItem(itemId);
+                    }
+                }
+                _globalDropCategories.add(drop);
+            }
 		}
 
 		if (_resetSchedule != null)

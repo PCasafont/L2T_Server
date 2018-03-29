@@ -66,116 +66,109 @@ public final class CharTemplateTable implements Reloadable
 
 		XmlDocument doc = new XmlDocument(file);
 		int count = 0;
-		for (XmlNode n : doc.getChildren())
+		for (XmlNode d : doc.getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
+            if (d.getName().equalsIgnoreCase("race"))
+            {
+                int raceId = d.getInt("id");
+                String raceName = d.getString("name");
+                for (XmlNode raceNode : d.getChildren())
+                {
+                    if (raceNode.getName().equalsIgnoreCase("template"))
+                    {
+                        StatsSet set = new StatsSet();
+                        set.set("raceId", raceId);
+                        set.set("raceName", raceName);
+                        set.set("isMage", raceNode.getString("type").equalsIgnoreCase("mage"));
+                        set.set("startingClassId", raceNode.getInt("startingClassId"));
+                        set.set("STR", raceNode.getInt("STR"));
+                        set.set("CON", raceNode.getInt("CON"));
+                        set.set("DEX", raceNode.getInt("DEX"));
+                        set.set("INT", raceNode.getInt("INT"));
+                        set.set("WIT", raceNode.getInt("WIT"));
+                        set.set("MEN", raceNode.getInt("MEN"));
+                        set.set("LUC", raceNode.getInt("LUC"));
+                        set.set("CHA", raceNode.getInt("CHA"));
+                        set.set("hpReg", 1.5);
+                        set.set("mpReg", 0.9);
+                        set.set("pAtk", raceNode.getInt("basePAtk"));
+                        set.set("mAtk", raceNode.getInt("baseMAtk"));
+                        set.set("pDef", raceNode.getInt("basePDef"));
+                        set.set("mDef", raceNode.getInt("baseMDef"));
+                        set.set("pAtkSpd", raceNode.getInt("basePAtkSpd"));
+                        set.set("mAtkSpd", raceNode.getInt("baseMAtkSpd"));
+                        set.set("pCritRate", raceNode.getInt("baseCritical") / 10);
+                        set.set("runSpd", raceNode.getInt("baseMoveSpd"));
+                        set.set("walkSpd", raceNode.getInt("baseMoveSpd") * 70 / 100);
+                        set.set("shldDef", 0);
+                        set.set("shldRate", 0);
+                        set.set("atkRange", 40);
 
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("race"))
-					{
-						int raceId = d.getInt("id");
-						String raceName = d.getString("name");
-						for (XmlNode raceNode : d.getChildren())
-						{
-							if (raceNode.getName().equalsIgnoreCase("template"))
-							{
-								StatsSet set = new StatsSet();
-								set.set("raceId", raceId);
-								set.set("raceName", raceName);
-								set.set("isMage", raceNode.getString("type").equalsIgnoreCase("mage"));
-								set.set("startingClassId", raceNode.getInt("startingClassId"));
-								set.set("STR", raceNode.getInt("STR"));
-								set.set("CON", raceNode.getInt("CON"));
-								set.set("DEX", raceNode.getInt("DEX"));
-								set.set("INT", raceNode.getInt("INT"));
-								set.set("WIT", raceNode.getInt("WIT"));
-								set.set("MEN", raceNode.getInt("MEN"));
-								set.set("LUC", raceNode.getInt("LUC"));
-								set.set("CHA", raceNode.getInt("CHA"));
-								set.set("hpReg", 1.5);
-								set.set("mpReg", 0.9);
-								set.set("pAtk", raceNode.getInt("basePAtk"));
-								set.set("mAtk", raceNode.getInt("baseMAtk"));
-								set.set("pDef", raceNode.getInt("basePDef"));
-								set.set("mDef", raceNode.getInt("baseMDef"));
-								set.set("pAtkSpd", raceNode.getInt("basePAtkSpd"));
-								set.set("mAtkSpd", raceNode.getInt("baseMAtkSpd"));
-								set.set("pCritRate", raceNode.getInt("baseCritical") / 10);
-								set.set("runSpd", raceNode.getInt("baseMoveSpd"));
-								set.set("walkSpd", raceNode.getInt("baseMoveSpd") * 70 / 100);
-								set.set("shldDef", 0);
-								set.set("shldRate", 0);
-								set.set("atkRange", 40);
+                        set.set("collisionRadius", raceNode.getFloat("mColRadius"));
+                        set.set("collisionHeight", raceNode.getFloat("mColHeight"));
+                        set.set("collisionRadiusFemale", raceNode.getFloat("fColRadius"));
+                        set.set("collisionHeightFemale", raceNode.getFloat("fColHeight"));
 
-								set.set("collisionRadius", raceNode.getFloat("mColRadius"));
-								set.set("collisionHeight", raceNode.getFloat("mColHeight"));
-								set.set("collisionRadiusFemale", raceNode.getFloat("fColRadius"));
-								set.set("collisionHeightFemale", raceNode.getFloat("fColHeight"));
+                        set.set("startX", raceNode.getInt("startX"));
+                        set.set("startY", raceNode.getInt("startY"));
+                        set.set("startZ", raceNode.getInt("startZ"));
+                        set.set("startRandom", raceNode.getInt("startRandom"));
 
-								set.set("startX", raceNode.getInt("startX"));
-								set.set("startY", raceNode.getInt("startY"));
-								set.set("startZ", raceNode.getInt("startZ"));
-								set.set("startRandom", raceNode.getInt("startRandom"));
+                        L2PcTemplate ct = new L2PcTemplate(set);
 
-								L2PcTemplate ct = new L2PcTemplate(set);
+                        for (XmlNode itemNode : raceNode.getChildren())
+                        {
+                            if (itemNode.getName().equalsIgnoreCase("creationItem"))
+                            {
+                                int itemId = itemNode.getInt("id");
+                                int amount = itemNode.getInt("count");
+                                boolean equipped = itemNode.getBool("equipped");
 
-								for (XmlNode itemNode : raceNode.getChildren())
-								{
-									if (itemNode.getName().equalsIgnoreCase("creationItem"))
-									{
-										int itemId = itemNode.getInt("id");
-										int amount = itemNode.getInt("count");
-										boolean equipped = itemNode.getBool("equipped");
+                                if (ItemTable.getInstance().getTemplate(itemId) != null)
+                                {
+                                    ct.addItem(itemId, amount, equipped);
+                                }
+                                else
+                                {
+                                    Log.warning(
+                                            "races: No data for itemId: " + itemId + " defined for race id " +
+                                                    raceId);
+                                }
+                            }
+                        }
 
-										if (ItemTable.getInstance().getTemplate(itemId) != null)
-										{
-											ct.addItem(itemId, amount, equipped);
-										}
-										else
-										{
-											Log.warning(
-													"races: No data for itemId: " + itemId + " defined for race id " +
-															raceId);
-										}
-									}
-								}
+                        _templates[ct.race.ordinal() * 2 + (ct.isMage ? 1 : 0)] = ct;
+                        count++;
+                    }
+                    else if (raceNode.getName().equalsIgnoreCase("skill"))
+                    {
+                        _templates[raceId * 2].addSkill(raceNode.getInt("id"));
+                        _templates[raceId * 2 + 1].addSkill(raceNode.getInt("id"));
+                    }
+                }
+            }
+            else if (d.getName().equalsIgnoreCase("creationItem"))
+            {
+                int itemId = d.getInt("id");
+                int amount = d.getInt("count");
+                boolean equipped = d.getBool("equipped");
 
-								_templates[ct.race.ordinal() * 2 + (ct.isMage ? 1 : 0)] = ct;
-								count++;
-							}
-							else if (raceNode.getName().equalsIgnoreCase("skill"))
-							{
-								_templates[raceId * 2].addSkill(raceNode.getInt("id"));
-								_templates[raceId * 2 + 1].addSkill(raceNode.getInt("id"));
-							}
-						}
-					}
-					else if (d.getName().equalsIgnoreCase("creationItem"))
-					{
-						int itemId = d.getInt("id");
-						int amount = d.getInt("count");
-						boolean equipped = d.getBool("equipped");
-
-						if (ItemTable.getInstance().getTemplate(itemId) != null)
-						{
-							for (L2PcTemplate pct : _templates)
-							{
-								if (pct != null)
-								{
-									pct.addItem(itemId, amount, equipped);
-								}
-							}
-						}
-						else
-						{
-							Log.warning("races: No data for itemId: " + itemId + " defined for all the pc templates");
-						}
-					}
-				}
-			}
-		}
+                if (ItemTable.getInstance().getTemplate(itemId) != null)
+                {
+                    for (L2PcTemplate pct : _templates)
+                    {
+                        if (pct != null)
+                        {
+                            pct.addItem(itemId, amount, equipped);
+                        }
+                    }
+                }
+                else
+                {
+                    Log.warning("races: No data for itemId: " + itemId + " defined for all the pc templates");
+                }
+            }
+        }
 		Log.info("CharTemplateTable: Loaded " + count + " Character Templates.");
 	}
 

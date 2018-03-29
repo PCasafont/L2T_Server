@@ -77,12 +77,6 @@ public class EventsManager implements Reloadable
 		_locations.clear();
 
 		XmlDocument doc = new XmlDocument(new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "eventsConfig.xml"));
-		if (doc.getFirstChild() == null)
-		{
-			Log.warning("An error occured while loading the Event Locations.");
-			return;
-		}
-
 		int locCount = 0;
 		for (XmlNode n : doc.getChildren())
 		{

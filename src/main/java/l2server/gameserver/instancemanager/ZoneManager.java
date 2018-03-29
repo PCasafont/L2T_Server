@@ -157,303 +157,301 @@ public class ZoneManager
 			for (File f : hash)
 			{
 				XmlDocument doc = new XmlDocument(f);
-				for (XmlNode n : doc.getChildren())
-				{
-					if (n.getName().equalsIgnoreCase("list"))
-					{
-						if (!n.getBool("enabled", false))
-						{
-							continue;
-						}
+				XmlNode n = doc.getRoot();
+                if (n.getName().equalsIgnoreCase("list"))
+                {
+                    if (!n.getBool("enabled", false))
+                    {
+                        continue;
+                    }
 
-						for (XmlNode d : n.getChildren())
-						{
-							if (d.getName().equalsIgnoreCase("zone"))
-							{
-								if (d.hasAttribute("id"))
-								{
-									zoneId = d.getInt("id");
-								}
-								else
-								{
-									zoneId = _lastDynamicId++;
-								}
+                    for (XmlNode d : n.getChildren())
+                    {
+                        if (d.getName().equalsIgnoreCase("zone"))
+                        {
+                            if (d.hasAttribute("id"))
+                            {
+                                zoneId = d.getInt("id");
+                            }
+                            else
+                            {
+                                zoneId = _lastDynamicId++;
+                            }
 
-								zoneName = d.getString("name", null);
+                            zoneName = d.getString("name", "");
 
-								if (d.hasAttribute("minZ"))
-								{
-									minZ = d.getInt("minZ");
-								}
-								else
-								{
-									Log.warning(
-											"ZoneData: Missing minZ for zone: " + zoneId + " in file: " + f.getName());
-									continue;
-								}
+                            if (d.hasAttribute("minZ"))
+                            {
+                                minZ = d.getInt("minZ");
+                            }
+                            else
+                            {
+                                Log.warning(
+                                        "ZoneData: Missing minZ for zone: " + zoneId + " in file: " + f.getName());
+                                continue;
+                            }
 
-								if (d.hasAttribute("maxZ"))
-								{
-									maxZ = d.getInt("maxZ");
-								}
-								else
-								{
-									Log.warning(
-											"ZoneData: Missing maxZ for zone: " + zoneId + " in file: " + f.getName());
-									continue;
-								}
+                            if (d.hasAttribute("maxZ"))
+                            {
+                                maxZ = d.getInt("maxZ");
+                            }
+                            else
+                            {
+                                Log.warning(
+                                        "ZoneData: Missing maxZ for zone: " + zoneId + " in file: " + f.getName());
+                                continue;
+                            }
 
-								if (d.hasAttribute("type"))
-								{
-									zoneType = d.getString("type");
-								}
-								else
-								{
-									Log.warning(
-											"ZoneData: Missing type for zone: " + zoneId + " in file: " + f.getName());
-									continue;
-								}
+                            if (d.hasAttribute("type"))
+                            {
+                                zoneType = d.getString("type");
+                            }
+                            else
+                            {
+                                Log.warning(
+                                        "ZoneData: Missing type for zone: " + zoneId + " in file: " + f.getName());
+                                continue;
+                            }
 
-								if (d.hasAttribute("shape"))
-								{
-									zoneShape = d.getString("shape");
-								}
-								else
-								{
-									Log.warning(
-											"ZoneData: Missing shape for zone: " + zoneId + " in file: " + f.getName());
-									continue;
-								}
+                            if (d.hasAttribute("shape"))
+                            {
+                                zoneShape = d.getString("shape");
+                            }
+                            else
+                            {
+                                Log.warning(
+                                        "ZoneData: Missing shape for zone: " + zoneId + " in file: " + f.getName());
+                                continue;
+                            }
 
-								// Create the zone
-								Class<?> newZone;
-								try
-								{
-									newZone = Class.forName("l2server.gameserver.model.zone.type.L2" + zoneType);
-								}
-								catch (ClassNotFoundException e)
-								{
-									Log.warning(
-											"ZoneData: No such zone type: " + zoneType + " in file: " + f.getName());
-									continue;
-								}
+                            // Create the zone
+                            Class<?> newZone;
+                            try
+                            {
+                                newZone = Class.forName("l2server.gameserver.model.zone.type.L2" + zoneType);
+                            }
+                            catch (ClassNotFoundException e)
+                            {
+                                Log.warning(
+                                        "ZoneData: No such zone type: " + zoneType + " in file: " + f.getName());
+                                continue;
+                            }
 
-								Constructor<?> zoneConstructor = newZone.getConstructor(int.class);
-								L2ZoneType temp = (L2ZoneType) zoneConstructor.newInstance(zoneId);
+                            Constructor<?> zoneConstructor = newZone.getConstructor(int.class);
+                            L2ZoneType temp = (L2ZoneType) zoneConstructor.newInstance(zoneId);
 
-								// Get the zone shape from sql
-								try
-								{
-									coords = null;
-									int[] point;
-									ArrayList<int[]> rs = new ArrayList<>();
+                            // Get the zone shape from sql
+                            try
+                            {
+                                coords = null;
+                                int[] point;
+                                ArrayList<int[]> rs = new ArrayList<>();
 
-									// loading from XML first
-									for (XmlNode cd : d.getChildren())
-									{
-										if (cd.getName().equalsIgnoreCase("node"))
-										{
-											point = new int[2];
-											point[0] = cd.getInt("X");
-											point[1] = cd.getInt("Y");
-											rs.add(point);
-										}
-									}
+                                // loading from XML first
+                                for (XmlNode cd : d.getChildren())
+                                {
+                                    if (cd.getName().equalsIgnoreCase("node"))
+                                    {
+                                        point = new int[2];
+                                        point[0] = cd.getInt("X");
+                                        point[1] = cd.getInt("Y");
+                                        rs.add(point);
+                                    }
+                                }
 
-									// does not try to load dynamic zoneId from sql
-									if (rs.size() == 0 && zoneId < 300000)
-									{
-										// loading from SQL
-										try
-										{
-											statement.setInt(1, zoneId);
-											ResultSet rset = statement.executeQuery();
-											while (rset.next())
-											{
-												point = new int[2];
-												point[0] = rset.getInt("x");
-												point[1] = rset.getInt("y");
-												rs.add(point);
-											}
-											rset.close();
-										}
-										finally
-										{
-											statement.clearParameters();
-										}
-									}
+                                // does not try to load dynamic zoneId from sql
+                                if (rs.size() == 0 && zoneId < 300000)
+                                {
+                                    // loading from SQL
+                                    try
+                                    {
+                                        statement.setInt(1, zoneId);
+                                        ResultSet rset = statement.executeQuery();
+                                        while (rset.next())
+                                        {
+                                            point = new int[2];
+                                            point[0] = rset.getInt("x");
+                                            point[1] = rset.getInt("y");
+                                            rs.add(point);
+                                        }
+                                        rset.close();
+                                    }
+                                    finally
+                                    {
+                                        statement.clearParameters();
+                                    }
+                                }
 
-									coords = rs.toArray(new int[rs.size()][]);
+                                coords = rs.toArray(new int[rs.size()][]);
 
-									if (coords == null || coords.length == 0)
-									{
-										Log.warning("ZoneData: missing data for zone: " + zoneId +
-												" in both XML and SQL, file: " + f.getName());
-										continue;
-									}
+                                if (coords == null || coords.length == 0)
+                                {
+                                    Log.warning("ZoneData: missing data for zone: " + zoneId +
+                                            " in both XML and SQL, file: " + f.getName());
+                                    continue;
+                                }
 
-									// Create this zone. Parsing for cuboids is a
-									// bit different than for other polygons
-									// cuboids need exactly 2 points to be defined.
-									// Other polygons need at least 3 (one per
-									// vertex)
-									if (zoneShape.equalsIgnoreCase("Cuboid"))
-									{
-										if (coords.length == 2)
-										{
-											temp.setZone(new ZoneCuboid(coords[0][0], coords[1][0], coords[0][1],
-													coords[1][1], minZ, maxZ));
-										}
-										else
-										{
-											Log.warning(
-													"ZoneData: Missing cuboid vertex in sql data for zone: " + zoneId +
-															" in file: " + f.getName());
-											continue;
-										}
-									}
-									else if (zoneShape.equalsIgnoreCase("NPoly"))
-									{
-										// nPoly needs to have at least 3 vertices
-										if (coords.length > 2)
-										{
-											final int[] aX = new int[coords.length];
-											final int[] aY = new int[coords.length];
-											for (int i = 0; i < coords.length; i++)
-											{
-												aX[i] = coords[i][0];
-												aY[i] = coords[i][1];
-											}
+                                // Create this zone. Parsing for cuboids is a
+                                // bit different than for other polygons
+                                // cuboids need exactly 2 points to be defined.
+                                // Other polygons need at least 3 (one per
+                                // vertex)
+                                if (zoneShape.equalsIgnoreCase("Cuboid"))
+                                {
+                                    if (coords.length == 2)
+                                    {
+                                        temp.setZone(new ZoneCuboid(coords[0][0], coords[1][0], coords[0][1],
+                                                coords[1][1], minZ, maxZ));
+                                    }
+                                    else
+                                    {
+                                        Log.warning(
+                                                "ZoneData: Missing cuboid vertex in sql data for zone: " + zoneId +
+                                                        " in file: " + f.getName());
+                                        continue;
+                                    }
+                                }
+                                else if (zoneShape.equalsIgnoreCase("NPoly"))
+                                {
+                                    // nPoly needs to have at least 3 vertices
+                                    if (coords.length > 2)
+                                    {
+                                        final int[] aX = new int[coords.length];
+                                        final int[] aY = new int[coords.length];
+                                        for (int i = 0; i < coords.length; i++)
+                                        {
+                                            aX[i] = coords[i][0];
+                                            aY[i] = coords[i][1];
+                                        }
 
-											int minX = L2World.MAP_MAX_X;
-											int maxX = L2World.MAP_MIN_X;
-											int minY = L2World.MAP_MAX_Y;
-											int maxY = L2World.MAP_MIN_Y;
-											for (int i = 0; i < coords.length; i++)
-											{
-												if (aX[i] < minX)
-												{
-													minX = aX[i];
-												}
-												if (aX[i] > maxX)
-												{
-													maxX = aX[i];
-												}
-												if (aY[i] < minY)
-												{
-													minY = aY[i];
-												}
-												if (aY[i] > maxY)
-												{
-													maxY = aY[i];
-												}
-											}
+                                        int minX = L2World.MAP_MAX_X;
+                                        int maxX = L2World.MAP_MIN_X;
+                                        int minY = L2World.MAP_MAX_Y;
+                                        int maxY = L2World.MAP_MIN_Y;
+                                        for (int i = 0; i < coords.length; i++)
+                                        {
+                                            if (aX[i] < minX)
+                                            {
+                                                minX = aX[i];
+                                            }
+                                            if (aX[i] > maxX)
+                                            {
+                                                maxX = aX[i];
+                                            }
+                                            if (aY[i] < minY)
+                                            {
+                                                minY = aY[i];
+                                            }
+                                            if (aY[i] > maxY)
+                                            {
+                                                maxY = aY[i];
+                                            }
+                                        }
 
-											temp.setZone(new ZoneNPoly(aX, aY, minZ, maxZ, minX, maxX, minY, maxY));
-										}
-										else
-										{
-											Log.warning("ZoneData: Bad data for zone: " + zoneId + " in file: " +
-													f.getName());
-											continue;
-										}
-									}
-									else if (zoneShape.equalsIgnoreCase("Cylinder"))
-									{
-										// A Cylinder zone requires a center point
-										// at x,y and a radius
-										final int zoneRad = d.getInt("rad");
-										if (coords.length == 1 && zoneRad > 0)
-										{
-											temp.setZone(
-													new ZoneCylinder(coords[0][0], coords[0][1], minZ, maxZ, zoneRad));
-										}
-										else
-										{
-											Log.warning("ZoneData: Bad data for zone: " + zoneId + " in file: " +
-													f.getName());
-											continue;
-										}
-									}
-									else
-									{
-										Log.warning(
-												"ZoneData: Unknown shape: " + zoneShape + " in file: " + f.getName());
-										continue;
-									}
-								}
-								catch (Exception e)
-								{
-									Log.log(Level.WARNING,
-											"ZoneData: Failed to load zone " + zoneId + " coordinates: " +
-													e.getMessage(), e);
-								}
+                                        temp.setZone(new ZoneNPoly(aX, aY, minZ, maxZ, minX, maxX, minY, maxY));
+                                    }
+                                    else
+                                    {
+                                        Log.warning("ZoneData: Bad data for zone: " + zoneId + " in file: " +
+                                                f.getName());
+                                        continue;
+                                    }
+                                }
+                                else if (zoneShape.equalsIgnoreCase("Cylinder"))
+                                {
+                                    // A Cylinder zone requires a center point
+                                    // at x,y and a radius
+                                    final int zoneRad = d.getInt("rad");
+                                    if (coords.length == 1 && zoneRad > 0)
+                                    {
+                                        temp.setZone(
+                                                new ZoneCylinder(coords[0][0], coords[0][1], minZ, maxZ, zoneRad));
+                                    }
+                                    else
+                                    {
+                                        Log.warning("ZoneData: Bad data for zone: " + zoneId + " in file: " +
+                                                f.getName());
+                                        continue;
+                                    }
+                                }
+                                else
+                                {
+                                    Log.warning(
+                                            "ZoneData: Unknown shape: " + zoneShape + " in file: " + f.getName());
+                                    continue;
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                Log.log(Level.WARNING,
+                                        "ZoneData: Failed to load zone " + zoneId + " coordinates: " +
+                                                e.getMessage(), e);
+                            }
 
-								// Check for additional parameters
-								for (XmlNode cd : d.getChildren())
-								{
-									if (cd.getName().equalsIgnoreCase("stat"))
-									{
-										String name = cd.getString("name");
-										String val = cd.getString("val");
+                            // Check for additional parameters
+                            for (XmlNode cd : d.getChildren())
+                            {
+                                if (cd.getName().equalsIgnoreCase("stat"))
+                                {
+                                    String name = cd.getString("name");
+                                    String val = cd.getString("val");
 
-										temp.setParameter(name, val);
-									}
-									else if (cd.getName().equalsIgnoreCase("spawn") && temp instanceof L2SpawnZone)
-									{
-										int spawnX = cd.getInt("X");
-										int spawnY = cd.getInt("Y");
-										int spawnZ = cd.getInt("Z");
+                                    temp.setParameter(name, val);
+                                }
+                                else if (cd.getName().equalsIgnoreCase("spawn") && temp instanceof L2SpawnZone)
+                                {
+                                    int spawnX = cd.getInt("X");
+                                    int spawnY = cd.getInt("Y");
+                                    int spawnZ = cd.getInt("Z");
 
-										if (cd.getBool("isChaotic", false))
-										{
-											((L2SpawnZone) temp).addChaoticSpawn(spawnX, spawnY, spawnZ);
-										}
-										else if (!cd.getBool("isPvP", false) || Config.isServer(Config.TENKAI))
-										{
-											((L2SpawnZone) temp).addSpawn(spawnX, spawnY, spawnZ);
-										}
-									}
-								}
-								if (checkId(zoneId))
-								{
-									Log.config("Caution: Zone (" + zoneId + ") from file: " + f.getName() +
-											" overrides previous definition.");
-								}
+                                    if (cd.getBool("isChaotic", false))
+                                    {
+                                        ((L2SpawnZone) temp).addChaoticSpawn(spawnX, spawnY, spawnZ);
+                                    }
+                                    else if (!cd.getBool("isPvP", false) || Config.isServer(Config.TENKAI))
+                                    {
+                                        ((L2SpawnZone) temp).addSpawn(spawnX, spawnY, spawnZ);
+                                    }
+                                }
+                            }
+                            if (checkId(zoneId))
+                            {
+                                Log.config("Caution: Zone (" + zoneId + ") from file: " + f.getName() +
+                                        " overrides previous definition.");
+                            }
 
-								if (zoneName != null && !zoneName.isEmpty())
-								{
-									temp.setName(zoneName);
-								}
+                            if (!zoneName.isEmpty())
+                            {
+                                temp.setName(zoneName);
+                            }
 
-								addZone(zoneId, temp);
+                            addZone(zoneId, temp);
 
-								// Register the zone into any world region it
-								// intersects with...
-								// currently 11136 test for each zone :>
-								int ax, ay, bx, by;
-								for (int x = 0; x < worldRegions.length; x++)
-								{
-									for (int y = 0; y < worldRegions[x].length; y++)
-									{
-										ax = x - L2World.OFFSET_X << L2World.SHIFT_BY;
-										bx = x + 1 - L2World.OFFSET_X << L2World.SHIFT_BY;
-										ay = y - L2World.OFFSET_Y << L2World.SHIFT_BY;
-										by = y + 1 - L2World.OFFSET_Y << L2World.SHIFT_BY;
+                            // Register the zone into any world region it
+                            // intersects with...
+                            // currently 11136 test for each zone :>
+                            int ax, ay, bx, by;
+                            for (int x = 0; x < worldRegions.length; x++)
+                            {
+                                for (int y = 0; y < worldRegions[x].length; y++)
+                                {
+                                    ax = x - L2World.OFFSET_X << L2World.SHIFT_BY;
+                                    bx = x + 1 - L2World.OFFSET_X << L2World.SHIFT_BY;
+                                    ay = y - L2World.OFFSET_Y << L2World.SHIFT_BY;
+                                    by = y + 1 - L2World.OFFSET_Y << L2World.SHIFT_BY;
 
-										if (temp.getZone().intersectsRectangle(ax, bx, ay, by))
-										{
-											if (Config.DEBUG)
-											{
-												Log.info("Zone (" + zoneId + ") added to: " + x + " " + y);
-											}
-											worldRegions[x][y].addZone(temp);
-										}
-									}
-								}
-							}
-						}
-					}
+                                    if (temp.getZone().intersectsRectangle(ax, bx, ay, by))
+                                    {
+                                        if (Config.DEBUG)
+                                        {
+                                            Log.info("Zone (" + zoneId + ") added to: " + x + " " + y);
+                                        }
+                                        worldRegions[x][y].addZone(temp);
+                                    }
+                                }
+                            }
+                        }
+                    }
 				}
 			}
 		}

@@ -2149,115 +2149,109 @@ public class GMEventManager
 		}
 
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("currency"))
-					{
-						int itemId = d.getInt("itemId");
-						_currencies.put(itemId, new CurrencyInfo(itemId));
-					}
-					else if (d.getName().equalsIgnoreCase("event"))
-					{
-						String name = d.getString("name");
-						String description = d.getString("description");
-						String locationName = d.getString("location");
-						String[] doors = d.hasAttribute("doors") ? d.getString("doors").split(",") : null;
-						String[] arenaZoneNames = d.getString("arenaZones").split(",");
-						String[] peaceZoneNames = d.getString("peaceZones").split(",");
-						String[] spawnTeamOneCords = d.getString("spawnTeamOne").split(",");
-						String[] spawnTeamTwoCords = d.getString("spawnTeamTwo").split(",");
-						String[] spawnBufferTeamOneCords = d.getString("spawnBufferTeamOne").split(",");
-						String[] spawnBufferTeamTwoCords = d.getString("spawnBufferTeamTwo").split(",");
-						String[] eventSpawnCords = d.getString("eventSpawn").split(",");
-						String[] arenaSignsIds =
-								d.hasAttribute("arenaSigns") ? d.getString("arenaSigns").split(",") : null;
-						String[] arenaSignSpawnOne =
-								d.hasAttribute("arenaSignSpawnOne") ? d.getString("arenaSignSpawnOne").split(",") :
-										null;
-						String[] arenaSignSpawnTwo =
-								d.hasAttribute("arenaSignSpawnTwo") ? d.getString("arenaSignSpawnTwo").split(",") :
-										null;
+		for (XmlNode d : doc.getChildren())
+        {
+            if (d.getName().equalsIgnoreCase("currency"))
+            {
+                int itemId = d.getInt("itemId");
+                _currencies.put(itemId, new CurrencyInfo(itemId));
+            }
+            else if (d.getName().equalsIgnoreCase("event"))
+            {
+                String name = d.getString("name");
+                String description = d.getString("description");
+                String locationName = d.getString("location");
+                String[] doors = d.hasAttribute("doors") ? d.getString("doors").split(",") : null;
+                String[] arenaZoneNames = d.getString("arenaZones").split(",");
+                String[] peaceZoneNames = d.getString("peaceZones").split(",");
+                String[] spawnTeamOneCords = d.getString("spawnTeamOne").split(",");
+                String[] spawnTeamTwoCords = d.getString("spawnTeamTwo").split(",");
+                String[] spawnBufferTeamOneCords = d.getString("spawnBufferTeamOne").split(",");
+                String[] spawnBufferTeamTwoCords = d.getString("spawnBufferTeamTwo").split(",");
+                String[] eventSpawnCords = d.getString("eventSpawn").split(",");
+                String[] arenaSignsIds =
+                        d.hasAttribute("arenaSigns") ? d.getString("arenaSigns").split(",") : null;
+                String[] arenaSignSpawnOne =
+                        d.hasAttribute("arenaSignSpawnOne") ? d.getString("arenaSignSpawnOne").split(",") :
+                                null;
+                String[] arenaSignSpawnTwo =
+                        d.hasAttribute("arenaSignSpawnTwo") ? d.getString("arenaSignSpawnTwo").split(",") :
+                                null;
 
-						List<Integer> doorList = new ArrayList<>();
-						List<L2ArenaZone> arenaZones = new ArrayList<>();
-						List<L2PeaceZone> peaceZones = new ArrayList<>();
-						List<Integer> arenaSignList = new ArrayList<>();
-						List<Location> arenaSignSpawnList = new ArrayList<>();
+                List<Integer> doorList = new ArrayList<>();
+                List<L2ArenaZone> arenaZones = new ArrayList<>();
+                List<L2PeaceZone> peaceZones = new ArrayList<>();
+                List<Integer> arenaSignList = new ArrayList<>();
+                List<Location> arenaSignSpawnList = new ArrayList<>();
 
-						if (doors != null)
-						{
-							for (String door : doors)
-							{
-								doorList.add(Integer.valueOf(door));
-							}
-						}
+                if (doors != null)
+                {
+                    for (String door : doors)
+                    {
+                        doorList.add(Integer.valueOf(door));
+                    }
+                }
 
-						for (String zone : arenaZoneNames)
-						{
-							arenaZones.add(ZoneManager.getInstance().getZoneByName(zone, L2ArenaZone.class));
-						}
+                for (String zone : arenaZoneNames)
+                {
+                    arenaZones.add(ZoneManager.getInstance().getZoneByName(zone, L2ArenaZone.class));
+                }
 
-						for (String zone : peaceZoneNames)
-						{
-							peaceZones.add(ZoneManager.getInstance().getZoneByName(zone, L2PeaceZone.class));
-						}
+                for (String zone : peaceZoneNames)
+                {
+                    peaceZones.add(ZoneManager.getInstance().getZoneByName(zone, L2PeaceZone.class));
+                }
 
-						if (arenaSignsIds != null)
-						{
-							for (String sign : arenaSignsIds)
-							{
-								arenaSignList.add(Integer.valueOf(sign));
-							}
-						}
+                if (arenaSignsIds != null)
+                {
+                    for (String sign : arenaSignsIds)
+                    {
+                        arenaSignList.add(Integer.valueOf(sign));
+                    }
+                }
 
-						if (arenaSignSpawnOne != null)
-						{
-							arenaSignSpawnList.add(new Location(Integer.valueOf(arenaSignSpawnOne[0]),
-									Integer.valueOf(arenaSignSpawnOne[1]), Integer.valueOf(arenaSignSpawnOne[2])));
-						}
-						if (arenaSignSpawnTwo != null)
-						{
-							arenaSignSpawnList.add(new Location(Integer.valueOf(arenaSignSpawnTwo[0]),
-									Integer.valueOf(arenaSignSpawnTwo[1]), Integer.valueOf(arenaSignSpawnTwo[2])));
-						}
+                if (arenaSignSpawnOne != null)
+                {
+                    arenaSignSpawnList.add(new Location(Integer.valueOf(arenaSignSpawnOne[0]),
+                            Integer.valueOf(arenaSignSpawnOne[1]), Integer.valueOf(arenaSignSpawnOne[2])));
+                }
+                if (arenaSignSpawnTwo != null)
+                {
+                    arenaSignSpawnList.add(new Location(Integer.valueOf(arenaSignSpawnTwo[0]),
+                            Integer.valueOf(arenaSignSpawnTwo[1]), Integer.valueOf(arenaSignSpawnTwo[2])));
+                }
 
-						Location spawnTeamOne = new Location(Integer.valueOf(spawnTeamOneCords[0]),
-								Integer.valueOf(spawnTeamOneCords[1]), Integer.valueOf(spawnTeamOneCords[2]),
-								Integer.valueOf(spawnTeamOneCords[3]));
-						Location spawnTeamTwo = new Location(Integer.valueOf(spawnTeamTwoCords[0]),
-								Integer.valueOf(spawnTeamTwoCords[1]), Integer.valueOf(spawnTeamTwoCords[2]),
-								Integer.valueOf(spawnTeamTwoCords[3]));
-						Location bufferSpawnTeamOne = new Location(Integer.valueOf(spawnBufferTeamOneCords[0]),
-								Integer.valueOf(spawnBufferTeamOneCords[1]),
-								Integer.valueOf(spawnBufferTeamOneCords[2]),
-								Integer.valueOf(spawnBufferTeamOneCords[3]));
-						Location bufferSpawnTeamTwo = new Location(Integer.valueOf(spawnBufferTeamTwoCords[0]),
-								Integer.valueOf(spawnBufferTeamTwoCords[1]),
-								Integer.valueOf(spawnBufferTeamTwoCords[2]),
-								Integer.valueOf(spawnBufferTeamTwoCords[3]));
-						Location eventSpawmn =
-								new Location(Integer.valueOf(eventSpawnCords[0]), Integer.valueOf(eventSpawnCords[1]),
-										Integer.valueOf(eventSpawnCords[2]), Integer.valueOf(eventSpawnCords[3]));
+                Location spawnTeamOne = new Location(Integer.valueOf(spawnTeamOneCords[0]),
+                        Integer.valueOf(spawnTeamOneCords[1]), Integer.valueOf(spawnTeamOneCords[2]),
+                        Integer.valueOf(spawnTeamOneCords[3]));
+                Location spawnTeamTwo = new Location(Integer.valueOf(spawnTeamTwoCords[0]),
+                        Integer.valueOf(spawnTeamTwoCords[1]), Integer.valueOf(spawnTeamTwoCords[2]),
+                        Integer.valueOf(spawnTeamTwoCords[3]));
+                Location bufferSpawnTeamOne = new Location(Integer.valueOf(spawnBufferTeamOneCords[0]),
+                        Integer.valueOf(spawnBufferTeamOneCords[1]),
+                        Integer.valueOf(spawnBufferTeamOneCords[2]),
+                        Integer.valueOf(spawnBufferTeamOneCords[3]));
+                Location bufferSpawnTeamTwo = new Location(Integer.valueOf(spawnBufferTeamTwoCords[0]),
+                        Integer.valueOf(spawnBufferTeamTwoCords[1]),
+                        Integer.valueOf(spawnBufferTeamTwoCords[2]),
+                        Integer.valueOf(spawnBufferTeamTwoCords[3]));
+                Location eventSpawmn =
+                        new Location(Integer.valueOf(eventSpawnCords[0]), Integer.valueOf(eventSpawnCords[1]),
+                                Integer.valueOf(eventSpawnCords[2]), Integer.valueOf(eventSpawnCords[3]));
 
-						_predefinedEvents.put(name,
-								new Event(name, description, locationName, doorList, arenaZones, peaceZones,
-										spawnTeamOne, spawnTeamTwo, bufferSpawnTeamOne, bufferSpawnTeamTwo, eventSpawmn,
-										arenaSignSpawnList, arenaSignList));
-					}
-					else if (d.getName().equalsIgnoreCase("subEvent"))
-					{
-						String eventName = d.getString("eventName");
-						String startBypass = d.getString("startBypass");
-						String endBypass = d.getString("endBypass");
-						_subEvents.put(eventName, new SubEvent(eventName, startBypass, endBypass));
-					}
-				}
-			}
-		}
+                _predefinedEvents.put(name,
+                        new Event(name, description, locationName, doorList, arenaZones, peaceZones,
+                                spawnTeamOne, spawnTeamTwo, bufferSpawnTeamOne, bufferSpawnTeamTwo, eventSpawmn,
+                                arenaSignSpawnList, arenaSignList));
+            }
+            else if (d.getName().equalsIgnoreCase("subEvent"))
+            {
+                String eventName = d.getString("eventName");
+                String startBypass = d.getString("startBypass");
+                String endBypass = d.getString("endBypass");
+                _subEvents.put(eventName, new SubEvent(eventName, startBypass, endBypass));
+            }
+        }
 
 		Log.info("GMEventManager: loaded " + _predefinedEvents.size() + " predefinied events " + _currencies.size() +
 				" bet currencies and " + _subEvents.size() + " sub events!");

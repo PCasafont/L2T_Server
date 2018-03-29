@@ -19,6 +19,7 @@
 
 package l2server.gameserver.datatables;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.model.L2SummonItem;
 import l2server.log.Log;
@@ -26,8 +27,6 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
-
-import gnu.trove.TIntObjectHashMap;
 
 public class SummonItemsData
 {
@@ -45,25 +44,19 @@ public class SummonItemsData
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "summonItems.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode n : doc.getChildren())
+		for (XmlNode d : doc.getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("list"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("item"))
-					{
-						int itemId = d.getInt("id");
-						int npcId = d.getInt("npcId");
-						byte summonType = (byte) d.getInt("summonType");
-						int despawnTime = d.getInt("despawn", -1);
+            if (d.getName().equalsIgnoreCase("item"))
+            {
+                int itemId = d.getInt("id");
+                int npcId = d.getInt("npcId");
+                byte summonType = (byte) d.getInt("summonType");
+                int despawnTime = d.getInt("despawn", -1);
 
-						L2SummonItem summonitem = new L2SummonItem(itemId, npcId, summonType, despawnTime);
-						_summonitems.put(itemId, summonitem);
-					}
-				}
-			}
-		}
+                L2SummonItem summonitem = new L2SummonItem(itemId, npcId, summonType, despawnTime);
+                _summonitems.put(itemId, summonitem);
+            }
+        }
 
 		Log.info("Summon items data: Loaded " + _summonitems.size() + " summon items.");
 	}

@@ -20,6 +20,7 @@ import l2server.gameserver.model.L2AccessLevel;
 import l2server.gameserver.model.L2AdminCommandAccessRight;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
+import l2server.util.xml.XmlNode;
 
 import java.io.File;
 import java.util.HashMap;
@@ -63,15 +64,16 @@ public class AdminCommandAccessRights
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "adminCommands.xml");
 
 		XmlDocument doc = new XmlDocument(file);
-		doc.getChildren().stream().filter(n -> n.getName().equalsIgnoreCase("list")).forEachOrdered(
-				n -> n.getChildren().stream().filter(d -> d.getName().equalsIgnoreCase("command")).forEachOrdered(d ->
-				{
-					String adminCommand = d.getString("name");
-					String accessLevels = d.getString("accessLevels");
-					boolean confirm = d.getBool("configmDlg", false);
-					_adminCommandAccessRights
-							.put(adminCommand, new L2AdminCommandAccessRight(adminCommand, accessLevels, confirm));
-				}));
+		for (XmlNode n : doc.getChildren()) {
+            n.getChildren().stream().filter(d -> d.getName().equalsIgnoreCase("command")).forEachOrdered(d ->
+            {
+                String adminCommand = d.getString("name");
+                String accessLevels = d.getString("accessLevels");
+                boolean confirm = d.getBool("configmDlg", false);
+                _adminCommandAccessRights
+                        .put(adminCommand, new L2AdminCommandAccessRight(adminCommand, accessLevels, confirm));
+            });
+        }
 
 		Log.info("AdminCommandAccessRights: Loaded " + _adminCommandAccessRights.size() + " from xml.");
 	}

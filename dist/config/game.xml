@@ -3053,7 +3053,7 @@
     <config name="CustomLotteryRewardMultplier" var="CUSTOM_LOTTERY_REWARD_MULTIPLIER" default="1" />
 
     <!-- Custom Damage Manager (Event) -->
-    <config name="EnableCustomDamageManager" var="ENABLE_CUSTOM_DAMAGE_MANAGER" default="true" />
+    <config name="EnableCustomDamageManager" var="ENABLE_CUSTOM_DAMAGE_MANAGER" default="false" />
     <config name="CustomDamageManagerRewardId" var="CUSTOM_DAMAGE_MANAGER_REWARD_ID" default="37559" />
     <config name="CustomDamageManagerRewardAmount" var="CUSTOM_DAMAGE_MANAGER_REWARD_AMOUNT" default="5" />
 

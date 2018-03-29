@@ -119,26 +119,20 @@ public class SquadSkills extends Quest
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "skillTrees/subPledgeSkillTree.xml");
 
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getChildren())
+		for (XmlNode d : doc.getChildren())
 		{
-			if (n.getName().equalsIgnoreCase("skill_tree"))
-			{
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("skill"))
-					{
-						int id = d.getInt("id");
-						int level = d.getInt("level");
-						int clanLevel = d.getInt("clanLevel");
-						int reputation = d.getInt("reputation");
-						int itemId = d.getInt("itemId");
-						int count = d.getInt("count");
+            if (d.getName().equalsIgnoreCase("skill"))
+            {
+                int id = d.getInt("id");
+                int level = d.getInt("level");
+                int clanLevel = d.getInt("clanLevel");
+                int reputation = d.getInt("reputation");
+                int itemId = d.getInt("itemId");
+                int count = d.getInt("count");
 
-						_skillInfo.add(new SkillInfo(id, level, clanLevel, reputation, itemId, count));
-					}
-				}
-			}
-		}
+                _skillInfo.add(new SkillInfo(id, level, clanLevel, reputation, itemId, count));
+            }
+        }
 	}
 
 	private class SkillInfo
