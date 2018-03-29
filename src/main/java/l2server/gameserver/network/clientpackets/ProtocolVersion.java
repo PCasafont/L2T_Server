@@ -45,7 +45,7 @@ public class ProtocolVersion extends L2GameClientPacket
 			client.closeNow();
 			return;
 		}
-		else if (_version == 64)
+		else if (_version == 140)
 		{
 			client.setProtocolOk(true);
 			KeyPacket pk = new KeyPacket(client.enableCrypt(), 1);
