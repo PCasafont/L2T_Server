@@ -20,69 +20,62 @@ import l2server.gameserver.templates.item.L2Item;
 /**
  * @author Pere
  */
-public abstract class L2ItemListPacket extends L2GameServerPacket
-{
-	public interface ItemInstanceInfo
-	{
+public abstract class L2ItemListPacket extends L2GameServerPacket {
+	public interface ItemInstanceInfo {
 		int getObjectId();
-
+		
 		L2Item getItem();
-
+		
 		int getLocationSlot();
-
+		
 		long getCount();
-
+		
 		boolean isEquipped();
-
+		
 		int getEnchantLevel();
-
+		
 		int getMana();
-
+		
 		int getRemainingTime();
-
+		
 		boolean isSoulEnhanced();
-
+		
 		int[] getEnsoulEffectIds();
-
+		
 		int[] getEnsoulSpecialEffectIds();
-
+		
 		boolean isAugmented();
-
+		
 		long getAugmentationBonus();
-
+		
 		boolean isElementEnchanted();
-
+		
 		byte getAttackElementType();
-
+		
 		int getAttackElementPower();
-
+		
 		int getElementDefAttr(byte i);
-
+		
 		int getAppearance();
 	}
-
-	protected void writeItem(ItemInstanceInfo item)
-	{
+	
+	protected void writeItem(ItemInstanceInfo item) {
 		byte mask = 0x00;
-		if (item.isAugmented())
-		{
+		if (item.isAugmented()) {
 			mask |= 0x01;
 		}
-		if (item.isElementEnchanted())
-		{
+		if (item.isElementEnchanted()) {
 			mask |= 0x02;
 		}
-		if (item.getAppearance() != 0)
-		{
+		if (item.getAppearance() != 0) {
 			mask |= 0x08;
 		}
-		if (item.isSoulEnhanced())
-		{
+		if (item.isSoulEnhanced()) {
 			mask |= 0x10;
 		}
-
+		
 		writeC(mask); // mask
-
+		
 		writeD(item.getObjectId());
 		writeD(item.getItem().getItemId());
 		writeC(item.getLocationSlot());
@@ -93,47 +86,40 @@ public abstract class L2ItemListPacket extends L2GameServerPacket
 		writeH(item.getEnchantLevel()); // enchant level
 		writeD(item.getMana());
 		writeD(item.getRemainingTime());
-
+		
 		writeC(0x01); // ???
-
-		if (item.isAugmented())
-		{
+		
+		if (item.isAugmented()) {
 			writeQ(item.getAugmentationBonus());
 		}
-
-		if (item.isElementEnchanted())
-		{
+		
+		if (item.isElementEnchanted()) {
 			writeH(item.getAttackElementType());
 			writeH(item.getAttackElementPower());
-			for (byte i = 0; i < 6; i++)
-			{
+			for (byte i = 0; i < 6; i++) {
 				writeH(item.getElementDefAttr(i));
 			}
 		}
-
+		
 		// Enchant Effects
 		//writeD(0x00);
 		//writeD(0x00);
 		//writeD(0x00);
-
-		if (item.getAppearance() != 0)
-		{
+		
+		if (item.getAppearance() != 0) {
 			writeD(item.getAppearance());
 		}
-
+		
 		// Big crap to avoid having 2 different arrays
-		if (item.isSoulEnhanced())
-		{
+		if (item.isSoulEnhanced()) {
 			int[] ensoulEffects = item.getEnsoulEffectIds();
 			int[] ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
 			writeC(ensoulEffects.length);
-			for (int effect : ensoulEffects)
-			{
+			for (int effect : ensoulEffects) {
 				writeD(effect);
 			}
 			writeC(ensoulSpecialEffects.length);
-			for (int effect : ensoulSpecialEffects)
-			{
+			for (int effect : ensoulSpecialEffects) {
 				writeD(effect);
 			}
 		}

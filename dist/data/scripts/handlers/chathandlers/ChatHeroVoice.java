@@ -32,38 +32,28 @@ import java.util.Collection;
  *
  * @author durgus
  */
-public class ChatHeroVoice implements IChatHandler
-{
+public class ChatHeroVoice implements IChatHandler {
 	private static final int[] COMMAND_IDS = {17};
 
 	/**
 	 * Handle chat type 'hero voice'
 	 */
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-	{
-		if (activeChar.isHero() && !EventsManager.getInstance().isPlayerParticipant(activeChar.getObjectId()) &&
-				activeChar.getEvent() == null || activeChar.isGM())
-		{
-			if (!activeChar.isGM())
-			{
-				if (DiscussionManager.getInstance().isGlobalChatDisabled())
-				{
+	public void handleChat(int type, L2PcInstance activeChar, String target, String text) {
+		if (activeChar.isHero() && !EventsManager.getInstance().isPlayerParticipant(activeChar.getObjectId()) && activeChar.getEvent() == null ||
+				activeChar.isGM()) {
+			if (!activeChar.isGM()) {
+				if (DiscussionManager.getInstance().isGlobalChatDisabled()) {
 					activeChar.sendMessage("Global chat is disabled right now.");
 					return;
-				}
-				else if (!activeChar.getFloodProtectors().getHeroVoice().tryPerformAction("hero voice"))
-				{
-					activeChar.sendMessage(
-							"Action failed. Heroes are only able to speak in the global channel once every 10 seconds.");
+				} else if (!activeChar.getFloodProtectors().getHeroVoice().tryPerformAction("hero voice")) {
+					activeChar.sendMessage("Action failed. Heroes are only able to speak in the global channel once every 10 seconds.");
 					return;
 				}
 			}
 
-			for (int i = 0; i < text.length(); i++)
-			{
-				if ((text.charAt(i) & (char) 0xff00) != 0)
-				{
+			for (int i = 0; i < text.length(); i++) {
+				if ((text.charAt(i) & (char) 0xff00) != 0) {
 					text = text.substring(0, i) + text.substring(i + 1);
 				}
 			}
@@ -71,21 +61,17 @@ public class ChatHeroVoice implements IChatHandler
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
 
 			Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-			for (L2PcInstance player : pls)
-			{
-				if (player == null)
-				{
+			for (L2PcInstance player : pls) {
+				if (player == null) {
 					continue;
 				}
 
-				if (!BlockList.isBlocked(player, activeChar))
-				{
+				if (!BlockList.isBlocked(player, activeChar)) {
 					player.sendPacket(cs);
 				}
 			}
 
-			while (text.contains("Type=") && text.contains("Title="))
-			{
+			while (text.contains("Type=") && text.contains("Title=")) {
 				int index1 = text.indexOf("Type=");
 				int index2 = text.indexOf("Title=") + 6;
 				text = text.substring(0, index1) + text.substring(index2);
@@ -101,8 +87,7 @@ public class ChatHeroVoice implements IChatHandler
 	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
 	 */
 	@Override
-	public int[] getChatTypeList()
-	{
+	public int[] getChatTypeList() {
 		return COMMAND_IDS;
 	}
 }

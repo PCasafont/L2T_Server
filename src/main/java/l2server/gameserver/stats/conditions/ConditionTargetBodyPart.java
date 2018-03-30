@@ -25,8 +25,7 @@ import l2server.gameserver.templates.item.L2Item;
  *
  * @author mkizub
  */
-public class ConditionTargetBodyPart extends Condition
-{
+public class ConditionTargetBodyPart extends Condition {
 
 	private L2Armor armor;
 
@@ -35,8 +34,7 @@ public class ConditionTargetBodyPart extends Condition
 	 *
 	 * @param armor the armor
 	 */
-	public ConditionTargetBodyPart(L2Armor armor)
-	{
+	public ConditionTargetBodyPart(L2Armor armor) {
 		this.armor = armor;
 	}
 
@@ -44,17 +42,14 @@ public class ConditionTargetBodyPart extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		// target is attacker
-		if (env.target == null)
-		{
+		if (env.target == null) {
 			return true;
 		}
 		int bodypart = env.target.getAttackingBodyPart();
 		int armor_part = armor.getBodyPart();
-		switch (bodypart)
-		{
+		switch (bodypart) {
 			case Inventory.PAPERDOLL_CHEST:
 				return (armor_part & (L2Item.SLOT_CHEST | L2Item.SLOT_FULL_ARMOR | L2Item.SLOT_UNDERWEAR)) != 0;
 			case Inventory.PAPERDOLL_LEGS:

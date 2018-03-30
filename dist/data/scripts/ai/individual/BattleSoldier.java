@@ -15,11 +15,10 @@
 
 package ai.individual;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.L2NpcWalkerAI;
 import l2server.gameserver.model.L2NpcWalkerNode;
 import l2server.gameserver.model.actor.L2Npc;
-
-import ai.group_template.L2AttackableAIScript;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,12 +27,10 @@ import java.util.List;
  * @author LasTravel
  */
 
-public class BattleSoldier extends L2AttackableAIScript
-{
+public class BattleSoldier extends L2AttackableAIScript {
 	private static final int BATTLE_SOLDIER = 33119;
 
-	private static final int[][] WALK_ROUTE = {
-			{-115692, 235946, -3091}, {-115692, 235946, -3091}, //1
+	private static final int[][] WALK_ROUTE = {{-115692, 235946, -3091}, {-115692, 235946, -3091}, //1
 			{-114140, 235556, -3091}, //2
 			{-113477, 236672, -3045}, //3
 			{-113600, 237167, -3045} //4
@@ -41,16 +38,14 @@ public class BattleSoldier extends L2AttackableAIScript
 
 	private static List<L2NpcWalkerNode> route = new ArrayList<L2NpcWalkerNode>();
 
-	public BattleSoldier(int id, String name, String descr)
-	{
+	public BattleSoldier(int id, String name, String descr) {
 		super(id, name, descr);
 
 		addSpawnId(BATTLE_SOLDIER);
 
 		addEventId(BATTLE_SOLDIER, QuestEventType.ON_ARRIVED);
 
-		for (int[] coord : WALK_ROUTE)
-		{
+		for (int[] coord : WALK_ROUTE) {
 			route.add(new L2NpcWalkerNode(coord[0], coord[1], coord[2], 0, "", true));
 		}
 
@@ -58,15 +53,11 @@ public class BattleSoldier extends L2AttackableAIScript
 	}
 
 	@Override
-	public String onArrived(final L2NpcWalkerAI guideAI)
-	{
-		if (guideAI.getCurrentPos() == 4)
-		{
+	public String onArrived(final L2NpcWalkerAI guideAI) {
+		if (guideAI.getCurrentPos() == 4) {
 			guideAI.getActor().decayMe();
 			addSpawn(BATTLE_SOLDIER, -115199, 237369, -3088, 0, true, 0);
-		}
-		else
-		{
+		} else {
 			guideAI.walkToLocation();
 			guideAI.setWaiting(false);
 		}
@@ -74,8 +65,7 @@ public class BattleSoldier extends L2AttackableAIScript
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
+	public final String onSpawn(L2Npc npc) {
 		L2NpcWalkerAI battleSoldierAI = new L2NpcWalkerAI(npc);
 
 		npc.setAI(battleSoldierAI);
@@ -89,8 +79,7 @@ public class BattleSoldier extends L2AttackableAIScript
 		return super.onSpawn(npc);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new BattleSoldier(-1, "BattleSoldier", "ai");
 	}
 }

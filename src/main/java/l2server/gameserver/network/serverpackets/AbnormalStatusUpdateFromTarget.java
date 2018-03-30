@@ -24,21 +24,18 @@ import java.util.List;
 /**
  * @author Pere
  */
-public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
-{
+public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket {
 	private L2Character character;
 	private List<Effect> effects;
-
-	private static class Effect
-	{
+	
+	private static class Effect {
 		protected int skillId;
 		protected int level;
 		protected int comboId;
 		protected int duration;
 		protected int effector;
-
-		public Effect(int pSkillId, int pLevel, int pComboId, int pDuration, int pEffector)
-		{
+		
+		public Effect(int pSkillId, int pLevel, int pComboId, int pDuration, int pEffector) {
 			skillId = pSkillId;
 			level = pLevel;
 			comboId = pComboId;
@@ -46,64 +43,52 @@ public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket
 			effector = pEffector;
 		}
 	}
-
-	public AbnormalStatusUpdateFromTarget(L2Character c)
-	{
+	
+	public AbnormalStatusUpdateFromTarget(L2Character c) {
 		character = c;
 		effects = new ArrayList<>();
-
-		for (L2Abnormal e : c.getAllEffects())
-		{
-			if (e == null || !e.getShowIcon())
-			{
+		
+		for (L2Abnormal e : c.getAllEffects()) {
+			if (e == null || !e.getShowIcon()) {
 				continue;
 			}
-
-			switch (e.getType())
-			{
+			
+			switch (e.getType()) {
 				case CHARGE: // handled by EtcStatusUpdate
 				case SIGNET_GROUND:
 					continue;
 			}
-
-			if (e.getInUse())
-			{
+			
+			if (e.getInUse()) {
 				e.addIcon(this);
 			}
 		}
 	}
-
-	public void addEffect(int skillId, int level, int comboId, int duration, int effector)
-	{
-		if (skillId == 2031 || skillId == 2032 || skillId == 2037 || skillId == 26025 || skillId == 26026)
-		{
+	
+	public void addEffect(int skillId, int level, int comboId, int duration, int effector) {
+		if (skillId == 2031 || skillId == 2032 || skillId == 2037 || skillId == 26025 || skillId == 26026) {
 			return;
 		}
-
+		
 		effects.add(new Effect(skillId, level, comboId, duration, effector));
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(character.getObjectId());
-
+		
 		writeH(effects.size());
-
-		for (Effect temp : effects)
-		{
+		
+		for (Effect temp : effects) {
 			writeD(temp.skillId);
 			writeD(temp.level);
 			writeH(temp.comboId);
-			if (temp.duration == -1)
-			{
+			if (temp.duration == -1) {
 				writeH(-1);
-			}
-			else
-			{
+			} else {
 				writeH(temp.duration / 1000 + 1);
 			}
-
+			
 			writeD(temp.effector);
 		}
 	}

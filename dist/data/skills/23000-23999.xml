@@ -299,8 +299,8 @@
 		Level 3: Challenging with 'paper.' Cannot move.
 	-->
 	<skill id="23019" levels="3" name="Paper">
-		<table name="#magicLvl">1 2 3		</table>
-		<table name="#name">Scissors;Rock;Paper		</table>
+		<table name="#magicLvl">1 2 3</table>
+		<table name="#name">Scissors;Rock;Paper</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
@@ -331,7 +331,7 @@
 	</skill>
 	<!-- Presentation of the Turkey's Attack -->
 	<skill id="23021" levels="3" name="Turkey's Attack Paper">
-		<table name="#name">Turkey's Attack Scissors;Turkey's Attack Rock;Turkey's Attack Paper		</table>
+		<table name="#name">Turkey's Attack Scissors;Turkey's Attack Rock;Turkey's Attack Paper</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -350,8 +350,10 @@
 		Level 10: 10th win at the rock-scissors-paper match.
 	-->
 	<skill id="23022" levels="10" name="10th Consecutive Win">
-		<table name="#abnormalLvl">1 2 3 4 5 6 7 8 9 10		</table>
-		<table name="#name">First win;2nd Consecutive Win;3rd Consecutive Win;4th Consecutive Win;5th Consecutive;            Win;6th Consecutive Win;7th Consecutive Win;8th;Consecutive Win;9th Consecutive Win;10th Consecutive Win;        		</table>
+		<table name="#abnormalLvl">1 2 3 4 5 6 7 8 9 10</table>
+		<table name="#name">First win;2nd Consecutive Win;3rd Consecutive Win;4th Consecutive Win;5th Consecutive; Win;6th Consecutive Win;7th
+			Consecutive Win;8th;Consecutive Win;9th Consecutive Win;10th Consecutive Win;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="BUFF" />
@@ -2813,8 +2815,13 @@
 		Level 85: Inflicts a non-attribute attack on the target and momentarily decreases your M. Atk. during PvP. Power 1024.
 	-->
 	<skill id="23210" levels="85" name="Aura Flare">
-		<table name="#mpConsume">9 9 9 9 10 10 10 12 12 13 14 15 15 15 17 17 18 19 19 20 20 20 22 22 23 24 24 25 27 27 28 28 29 30 30 32 33 34 34 35 37 38 38 39 40 42 43 44 44 45 47 48 49 49 50 52 53 54 55 55 57 58 59 60 60 62 63 64 64 65 67 67 68 69 69 70 70 72 73 73 73 74 74 75 75		</table>
-		<table name="#power">60 64 68 73 77 82 87 93 98 104 110 116 122 129 136 142 150 157 165 173 181 189 197 206 215 224 233 243 253 263 273 283 294 305 316 327 338 350 361 373 385 397 410 422 435 447 460 473 486 499 512 525 539 552 565 579 592 605 619 632 645 658 672 685 697 710 723 735 748 760 772 784 795 806 817 830 845 862 884 906 929 952 976 1001 1024		</table>
+		<table name="#mpConsume">9 9 9 9 10 10 10 12 12 13 14 15 15 15 17 17 18 19 19 20 20 20 22 22 23 24 24 25 27 27 28 28 29 30 30 32 33 34 34 35
+			37 38 38 39 40 42 43 44 44 45 47 48 49 49 50 52 53 54 55 55 57 58 59 60 60 62 63 64 64 65 67 67 68 69 69 70 70 72 73 73 73 74 74 75 75
+		</table>
+		<table name="#power">60 64 68 73 77 82 87 93 98 104 110 116 122 129 136 142 150 157 165 173 181 189 197 206 215 224 233 243 253 263 273 283
+			294 305 316 327 338 350 361 373 385 397 410 422 435 447 460 473 486 499 512 525 539 552 565 579 592 605 619 632 645 658 672 685 697 710
+			723 735 748 760 772 784 795 806 817 830 845 862 884 906 929 952 976 1001 1024
+		</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2913,8 +2920,13 @@
 		Level 85: Condenses air to burst flames. Power 1279.
 	-->
 	<skill id="23211" levels="85" name="Prominence">
-		<table name="#mpConsume">9 9 9 9 10 10 10 12 12 13 14 15 15 15 17 17 18 19 19 20 20 20 22 22 23 24 24 25 27 27 28 28 29 30 30 32 33 34 34 35 37 38 38 39 40 42 43 44 44 45 47 48 49 49 50 52 53 54 55 55 57 58 59 60 60 62 63 64 64 65 67 67 68 69 69 70 70 72 73 73 73 74 74 75 75		</table>
-		<table name="#power">75 80 85 91 97 103 109 116 123 130 137 145 153 161 169 178 187 196 206 216 226 236 247 257 269 280 292 304 316 328 341 354 367 381 394 408 423 437 451 466 481 496 512 527 543 559 575 591 607 624 640 657 673 690 707 723 740 757 773 790 806 823 839 856 872 888 903 919 935 950 965 979 994 1008 1022 1037 1056 1077 1104 1132 1161 1190 1220 1251 1279		</table>
+		<table name="#mpConsume">9 9 9 9 10 10 10 12 12 13 14 15 15 15 17 17 18 19 19 20 20 20 22 22 23 24 24 25 27 27 28 28 29 30 30 32 33 34 34 35
+			37 38 38 39 40 42 43 44 44 45 47 48 49 49 50 52 53 54 55 55 57 58 59 60 60 62 63 64 64 65 67 67 68 69 69 70 70 72 73 73 73 74 74 75 75
+		</table>
+		<table name="#power">75 80 85 91 97 103 109 116 123 130 137 145 153 161 169 178 187 196 206 216 226 236 247 257 269 280 292 304 316 328 341
+			354 367 381 394 408 423 437 451 466 481 496 512 527 543 559 575 591 607 624 640 657 673 690 707 723 740 757 773 790 806 823 839 856 872
+			888 903 919 935 950 965 979 994 1008 1022 1037 1056 1077 1104 1132 1161 1190 1220 1251 1279
+		</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3013,7 +3025,10 @@
 		Level 85: Hurls a fireball with a wide range that causes a burning trail. Power 640.
 	-->
 	<skill id="23212" levels="85" name="Flame Strike">
-		<table name="#mpConsume">13 13 13 14 14 15 15 17 17 18 20 22 23 23 24 25 27 28 28 29 29 30 32 33 34 35 37 38 39 40 40 42 43 44 45 47 49 50 52 53 54 55 57 59 60 62 63 65 67 68 69 70 73 74 75 77 79 80 82 83 85 87 88 89 90 93 94 95 97 98 99 100 102 103 104 105 105 107 108 109 109 110 112 112 113		</table>
+		<table name="#mpConsume">13 13 13 14 14 15 15 17 17 18 20 22 23 23 24 25 27 28 28 29 29 30 32 33 34 35 37 38 39 40 40 42 43 44 45 47 49 50 52
+			53 54 55 57 59 60 62 63 65 67 68 69 70 73 74 75 77 79 80 82 83 85 87 88 89 90 93 94 95 97 98 99 100 102 103 104 105 105 107 108 109 109
+			110 112 112 113
+		</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3028,7 +3043,7 @@
 		Level 2: P. Def. decreases momentarily./M. Def./evasion and increases P. Atk./M. Atk./Atk. Spd./Casting Spd./Speed. Effectiveness 2.
 	-->
 	<skill id="23213" levels="2" name="Berserker Spirit">
-		<table name="#mpConsume">30 48		</table>
+		<table name="#mpConsume">30 48</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4190,7 +4205,7 @@
 		Level 2: Norhand is searching for Skooldie. A powerful trace of its voice remains.
 	-->
 	<skill id="23342" levels="2" name="Norhand's High Trace">
-		<table name="#name">Norhand's Trace;Norhand's High Trace		</table>
+		<table name="#name">Norhand's Trace;Norhand's High Trace</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4688,7 +4703,7 @@
 		Level 3: Inflicts 397 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23408" levels="3" name="Borna Destruction">
-		<table name="#mpConsume">125 135 146		</table>
+		<table name="#mpConsume">125 135 146</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4706,7 +4721,7 @@
 		Level 3: Inflicts 397 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23409" levels="3" name="Borna Destruction (Fire)">
-		<table name="#mpConsume">125 135 146		</table>
+		<table name="#mpConsume">125 135 146</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4724,7 +4739,7 @@
 		Level 3: Inflicts 397 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23410" levels="3" name="Borna Destruction (Water)">
-		<table name="#mpConsume">125 135 146		</table>
+		<table name="#mpConsume">125 135 146</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4742,7 +4757,7 @@
 		Level 3: Inflicts 397 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23411" levels="3" name="Borna Destruction (Wind)">
-		<table name="#mpConsume">125 135 146		</table>
+		<table name="#mpConsume">125 135 146</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4760,7 +4775,7 @@
 		Level 3: Inflicts 397 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23412" levels="3" name="Borna Destruction (Earth)">
-		<table name="#mpConsume">125 135 146		</table>
+		<table name="#mpConsume">125 135 146</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4778,7 +4793,7 @@
 		Level 3: Inflicts 397 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23413" levels="3" name="Borna Destruction (4 Attributes)">
-		<table name="#mpConsume">125 135 146		</table>
+		<table name="#mpConsume">125 135 146</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4796,7 +4811,7 @@
 		Level 3: Inflicts 265 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23414" levels="3" name="Borna Storm">
-		<table name="#mpConsume">264 288 315		</table>
+		<table name="#mpConsume">264 288 315</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4814,7 +4829,7 @@
 		Level 3: Inflicts 265 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23415" levels="3" name="Borna Storm (Fire)">
-		<table name="#mpConsume">264 288 315		</table>
+		<table name="#mpConsume">264 288 315</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4832,7 +4847,7 @@
 		Level 3: Inflicts 265 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23416" levels="3" name="Borna Storm (Water)">
-		<table name="#mpConsume">264 288 315		</table>
+		<table name="#mpConsume">264 288 315</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4850,7 +4865,7 @@
 		Level 3: Inflicts 265 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23417" levels="3" name="Borna Storm (Wind)">
-		<table name="#mpConsume">264 288 315		</table>
+		<table name="#mpConsume">264 288 315</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4868,7 +4883,7 @@
 		Level 3: Inflicts 265 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23418" levels="3" name="Borna Storm (Earth)">
-		<table name="#mpConsume">264 288 315		</table>
+		<table name="#mpConsume">264 288 315</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4886,7 +4901,7 @@
 		Level 3: Inflicts 265 magic damage to target and surrounding enemies with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23419" levels="3" name="Borna Storm (4 Attributes)">
-		<table name="#mpConsume">264 288 315		</table>
+		<table name="#mpConsume">264 288 315</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4904,8 +4919,8 @@
 		Level 3: Heals self and surrounding party members with 1230 power. If HP is full, CP is restored with the remaining power.
 	-->
 	<skill id="23420" levels="3" name="Borna Heal">
-		<table name="#mpConsume">277 286 295		</table>
-		<table name="#power">1191 1210 1230		</table>
+		<table name="#mpConsume">277 286 295</table>
+		<table name="#power">1191 1210 1230</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4921,7 +4936,7 @@
 		Level 2: Instantly restores MP of self and surrounding party members based on Lv., up to a max of 143. Also restores 10 MP a sec. for 10 seconds.
 	-->
 	<skill id="23421" levels="2" name="Recharge of Borna">
-		<table name="#mpConsume">390 397		</table>
+		<table name="#mpConsume">390 397</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5078,7 +5093,7 @@
 		Level 3: Inflicts 133 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23436" levels="3" name="Borna Spike">
-		<table name="#mpConsume">45 47 51		</table>
+		<table name="#mpConsume">45 47 51</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5096,7 +5111,7 @@
 		Level 3: Inflicts 133 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23437" levels="3" name="Borna Spike (Fire)">
-		<table name="#mpConsume">45 47 50		</table>
+		<table name="#mpConsume">45 47 50</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5114,7 +5129,7 @@
 		Level 3: Inflicts 133 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23438" levels="3" name="Borna Spike (Water)">
-		<table name="#mpConsume">45 47 60		</table>
+		<table name="#mpConsume">45 47 60</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5132,7 +5147,7 @@
 		Level 3: Inflicts 133 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23439" levels="3" name="Borna Spike (Wind)">
-		<table name="#mpConsume">45 47 50		</table>
+		<table name="#mpConsume">45 47 50</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5150,7 +5165,7 @@
 		Level 3: Inflicts 133 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23440" levels="3" name="Borna Spike (Earth)">
-		<table name="#mpConsume">45 47 50		</table>
+		<table name="#mpConsume">45 47 50</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5168,7 +5183,7 @@
 		Level 3: Inflicts 133 magic damage with one of the 4 attributes bestowed. Over-hit.
 	-->
 	<skill id="23441" levels="3" name="Borna Spike (4 Attributes)">
-		<table name="#mpConsume">45 47 51		</table>
+		<table name="#mpConsume">45 47 51</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -5270,9 +5285,9 @@
 		Level 3: For 30 seconds, P. Def. + 8000, M. Def. + 8000, receive only up to 150 damage, and reflect 150 of received damage back to enemy. Buff Cancel Resistance + 80%.
 	-->
 	<skill id="23451" levels="3" name="(Final Ultimate Defense)">
-		<table name="#def">4000 6000 8000		</table>
-		<table name="#reflect">40 60 80		</table>
-		<table name="#dmgCap">300 200 150		</table>
+		<table name="#def">4000 6000 8000</table>
+		<table name="#reflect">40 60 80</table>
+		<table name="#dmgCap">300 200 150</table>
 		<set name="target" val="TARGET_AROUND_CASTER" />
 		<set name="targetDirection" val="AROUND" />
 		<set name="skillType" val="BUFF" />
@@ -6783,7 +6798,7 @@
 		Level 2: 
 	-->
 	<skill id="23607" levels="3" name="Heal">
-		<table name="#power">30 30 40		</table>
+		<table name="#power">30 30 40</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="HEAL_PERCENT" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7877,7 +7892,7 @@
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<skill id="23715" levels="2" name="Power Strike">
-		<table name="#castRange">40 100		</table>
+		<table name="#castRange">40 100</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -7886,7 +7901,7 @@
 		<set name="effectRange" val="400" />
 	</skill>
 	<skill id="23716" levels="2" name="Power Smash">
-		<table name="#castRange">40 100		</table>
+		<table name="#castRange">40 100</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />

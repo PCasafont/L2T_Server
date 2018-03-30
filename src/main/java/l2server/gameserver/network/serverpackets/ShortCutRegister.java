@@ -33,26 +33,22 @@ import l2server.gameserver.model.L2ShortCut;
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class ShortCutRegister extends L2GameServerPacket
-{
-
+public final class ShortCutRegister extends L2GameServerPacket {
+	
 	private L2ShortCut shortcut;
-
+	
 	/**
 	 * Register new skill shortcut
 	 */
-	public ShortCutRegister(L2ShortCut shortcut)
-	{
+	public ShortCutRegister(L2ShortCut shortcut) {
 		this.shortcut = shortcut;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(shortcut.getType());
 		writeD(shortcut.getSlot() + shortcut.getPage() * 12); // C4 Client
-		switch (shortcut.getType())
-		{
+		switch (shortcut.getType()) {
 			case L2ShortCut.TYPE_ITEM: //1
 				writeD(shortcut.getId());
 				writeD(shortcut.getCharacterType());
@@ -69,9 +65,9 @@ public final class ShortCutRegister extends L2GameServerPacket
 				writeD(shortcut.getCharacterType());
 				break;
 			/* these are same as default case, no need to duplicate, enable if packet get changed
-             */
-            /*	case L2ShortCut.TYPE_ACTION: //3
-             *		writeD(shortcut.getId());
+			 */
+			/*	case L2ShortCut.TYPE_ACTION: //3
+			 *		writeD(shortcut.getId());
 			 *		writeD(shortcut.getUserCommand());
 			 *		break;
 			 *	case L2ShortCut.TYPE_MACRO: //4
@@ -83,8 +79,7 @@ public final class ShortCutRegister extends L2GameServerPacket
 			 *		writeD(shortcut.getUserCommand());
 			 *		break;
 			 */
-			default:
-			{
+			default: {
 				writeD(shortcut.getId());
 				writeD(shortcut.getCharacterType());
 			}

@@ -25,26 +25,20 @@ import l2server.util.Rnd;
 /**
  * * @author Gnacik
  */
-public class PavelArchaic extends L2AttackableAIScript
-{
+public class PavelArchaic extends L2AttackableAIScript {
 	private static final int[] mobs1 = {22801, 22804};
 	private static final int[] mobs2 = {18917};
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
-	{
-		if (!npc.isDead() && Util.contains(mobs2, npc.getNpcId()))
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+		if (!npc.isDead() && Util.contains(mobs2, npc.getNpcId())) {
 			npc.doDie(attacker);
 
-			if (Rnd.get(100) < 40)
-			{
-				L2Attackable golem1 =
-						(L2Attackable) addSpawn(22801, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0);
+			if (Rnd.get(100) < 40) {
+				L2Attackable golem1 = (L2Attackable) addSpawn(22801, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0);
 				attackPlayer(golem1, attacker);
 
-				L2Attackable golem2 =
-						(L2Attackable) addSpawn(22804, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0);
+				L2Attackable golem2 = (L2Attackable) addSpawn(22804, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0);
 				attackPlayer(golem2, attacker);
 			}
 		}
@@ -52,34 +46,27 @@ public class PavelArchaic extends L2AttackableAIScript
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
-		if (Util.contains(mobs1, npc.getNpcId()))
-		{
-			L2Attackable golem =
-					(L2Attackable) addSpawn(npc.getNpcId() + 1, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(),
-							false, 0);
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+		if (Util.contains(mobs1, npc.getNpcId())) {
+			L2Attackable golem = (L2Attackable) addSpawn(npc.getNpcId() + 1, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0);
 			attackPlayer(golem, killer);
 		}
 		return super.onKill(npc, killer, isPet);
 	}
 
-	private void attackPlayer(L2Attackable npc, L2PcInstance player)
-	{
+	private void attackPlayer(L2Attackable npc, L2PcInstance player) {
 		npc.setIsRunning(true);
 		npc.addDamageHate(player, 0, 999);
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 	}
 
-	public PavelArchaic(int questId, String name, String descr)
-	{
+	public PavelArchaic(int questId, String name, String descr) {
 		super(questId, name, descr);
 		registerMobs(mobs1, QuestEventType.ON_KILL);
 		registerMobs(mobs2, QuestEventType.ON_ATTACK);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new PavelArchaic(-1, "PavelArchaic", "ai");
 	}
 }

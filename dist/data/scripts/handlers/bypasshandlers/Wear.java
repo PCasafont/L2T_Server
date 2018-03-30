@@ -26,69 +26,55 @@ import l2server.gameserver.network.serverpackets.ShopPreviewList;
 
 import java.util.StringTokenizer;
 
-public class Wear implements IBypassHandler
-{
+public class Wear implements IBypassHandler {
 	private static final String[] COMMANDS = {"Wear"};
 
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null)
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+		if (target == null) {
 			return false;
 		}
 
-		if (!Config.ALLOW_WEAR)
-		{
+		if (!Config.ALLOW_WEAR) {
 			return false;
 		}
 
-		try
-		{
+		try {
 			StringTokenizer st = new StringTokenizer(command, " ");
 			st.nextToken();
 
-			if (st.countTokens() < 1)
-			{
+			if (st.countTokens() < 1) {
 				return false;
 			}
 
 			showWearWindow(activeChar, Integer.parseInt(st.nextToken()));
 			return true;
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			log.info("Exception in " + getClass().getSimpleName());
 		}
 		return false;
 	}
 
-	private static void showWearWindow(L2PcInstance player, int val)
-	{
+	private static void showWearWindow(L2PcInstance player, int val) {
 		player.tempInventoryDisable();
 
-		if (Config.DEBUG)
-		{
+		if (Config.DEBUG) {
 			log.fine("Showing wearlist");
 		}
 
 		L2TradeList list = TradeController.getInstance().getBuyList(val);
 
-		if (list != null)
-		{
+		if (list != null) {
 			ShopPreviewList bl = new ShopPreviewList(list, player.getAdena(), player.getExpertiseIndex());
 			player.sendPacket(bl);
-		}
-		else
-		{
+		} else {
 			log.warning("no buylist with id:" + val);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 		}
 	}
 
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

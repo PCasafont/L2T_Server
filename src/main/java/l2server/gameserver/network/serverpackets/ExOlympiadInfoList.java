@@ -25,32 +25,25 @@ import java.util.List;
 /**
  * @author Pere
  */
-public class ExOlympiadInfoList extends L2GameServerPacket
-{
+public class ExOlympiadInfoList extends L2GameServerPacket {
 	private List<OlympiadGameTask> tasks;
-
-	public ExOlympiadInfoList()
-	{
+	
+	public ExOlympiadInfoList() {
 		tasks = new ArrayList<>();
-		for (int i = 0; i < 160; i++)
-		{
+		for (int i = 0; i < 160; i++) {
 			OlympiadGameTask task = OlympiadGameManager.getInstance().getOlympiadTask(i);
-			if (task.isRunning())
-			{
+			if (task.isRunning()) {
 				tasks.add(task);
 			}
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(tasks.size());
 		writeD(0x00); // This value makes the list be repeated multiple times
-		for (OlympiadGameTask task : tasks)
-		{
-			if (task == null || task.getGame() == null)
-			{
+		for (OlympiadGameTask task : tasks) {
+			if (task == null || task.getGame() == null) {
 				continue;
 			}
 			writeD(task.getGame().getGameId());
@@ -60,10 +53,9 @@ public class ExOlympiadInfoList extends L2GameServerPacket
 			writeS(task.getGame().getPlayerNames()[1]);
 		}
 	}
-
+	
 	@Override
-	protected final Class<?> getOpCodeClass()
-	{
+	protected final Class<?> getOpCodeClass() {
 		return ExOlympiadMatchList.class;
 	}
 }

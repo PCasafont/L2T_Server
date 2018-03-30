@@ -18,16 +18,14 @@ import java.util.Vector;
  * @author Vasper
  * @since 4/13/2017
  */
-public class NodesManager
-{
+public class NodesManager {
 	private int maxNodes = 4;
 	public int currentNodes;
 	public Vector<L2Node> nodes = new Vector<L2Node>();
 	
-	public boolean SpawnNewNode(L2PcInstance player)
-	{
+	public boolean SpawnNewNode(L2PcInstance player) {
 		
-		L2Node newNode = new L2Node(1999999968, NpcTable.getInstance().getTemplate(95000),1,1, 3);
+		L2Node newNode = new L2Node(1999999968, NpcTable.getInstance().getTemplate(95000), 1, 1, 3);
 
 		currentNodes++;
 		//nodes.add(newNode);
@@ -39,20 +37,16 @@ public class NodesManager
 		return true;
 	}
 	
-	public void tryOwnNode(L2PcInstance activeChar, L2Npc npc)
-	{
-		if (activeChar == null)
-		{
+	public void tryOwnNode(L2PcInstance activeChar, L2Npc npc) {
+		if (activeChar == null) {
 			return;
 		}
 		
-		
 		L2Node node = (L2Node) npc;
 
-		if (node.ownersId.contains(activeChar.getObjectId()))
-		{
+		if (node.ownersId.contains(activeChar.getObjectId())) {
 			activeChar.sendMessage("You're already part of the owners !");
-			return ;
+			return;
 		}
 		
 		activeChar.stopMove(null, false);
@@ -66,33 +60,26 @@ public class NodesManager
 		activeChar.forceIsCasting(TimeController.getGameTicks() + castingMillis / TimeController.MILLIS_IN_TICK);
 	}
 	
-	class OwnNodeCastFinalizer implements Runnable
-	{
+	class OwnNodeCastFinalizer implements Runnable {
 		private L2PcInstance player;
 		private L2Npc npc;
 		private L2Node node;
 		
-		OwnNodeCastFinalizer(L2PcInstance player, L2Npc npc, L2Node node)
-		{
+		OwnNodeCastFinalizer(L2PcInstance player, L2Npc npc, L2Node node) {
 			this.player = player;
 			this.npc = npc;
 			this.node = node;
 		}
 		
 		@Override
-		public void run()
-		{
-			if (player.isCastingNow())
-			{
+		public void run() {
+			if (player.isCastingNow()) {
 				player.sendPacket(new MagicSkillLaunched(player, 11030, 1));
 				player.setIsCastingNow(false);
 				
-				if (player.getTarget() == npc && !npc.isDead() &&
-						Util.checkIfInRange(1000, player, npc, true))
-				{
+				if (player.getTarget() == npc && !npc.isDead() && Util.checkIfInRange(1000, player, npc, true)) {
 					String name = player.getName();
-					if (player.getActingPlayer() != null)
-					{
+					if (player.getActingPlayer() != null) {
 						name = player.getActingPlayer().getName();
 					}
 					Announcements.getInstance().announceToAll(name + " new owner!");
@@ -102,14 +89,11 @@ public class NodesManager
 		}
 	}
 	
-	
-	public static NodesManager getInstance()
-	{
+	public static NodesManager getInstance() {
 		return NodesManager.SingletonHolder.instance;
 	}
 	
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final NodesManager instance = new NodesManager();
 	}
 }

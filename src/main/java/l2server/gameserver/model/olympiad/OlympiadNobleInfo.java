@@ -18,8 +18,7 @@ package l2server.gameserver.model.olympiad;
 /**
  * @author Pere
  */
-public class OlympiadNobleInfo
-{
+public class OlympiadNobleInfo {
 	private final int id;
 	private final String name;
 	private final int classId;
@@ -35,16 +34,24 @@ public class OlympiadNobleInfo
 
 	private boolean toSave = false;
 
-	public OlympiadNobleInfo(int id, String name, int classId)
-	{
+	public OlympiadNobleInfo(int id, String name, int classId) {
 		this.id = id;
 		this.name = name;
 		this.classId = classId;
 		toSave = true;
 	}
 
-	public OlympiadNobleInfo(int id, String name, int classId, int points, int matches, int victories, int defeats, int draws, int classedMatches, int nonClassedMatches, boolean settled)
-	{
+	public OlympiadNobleInfo(int id,
+	                         String name,
+	                         int classId,
+	                         int points,
+	                         int matches,
+	                         int victories,
+	                         int defeats,
+	                         int draws,
+	                         int classedMatches,
+	                         int nonClassedMatches,
+	                         boolean settled) {
 		this.id = id;
 		this.name = name;
 		this.classId = classId;
@@ -59,8 +66,7 @@ public class OlympiadNobleInfo
 		this.settled = settled;
 	}
 
-	public void addWeeklyPoints(int weeklyPoints)
-	{
+	public void addWeeklyPoints(int weeklyPoints) {
 		points += weeklyPoints;
 
 		// Also reset the competitions that the player could do this week
@@ -68,113 +74,91 @@ public class OlympiadNobleInfo
 		nonClassedMatches = 0;
 	}
 
-	public int getId()
-	{
+	public int getId() {
 		return id;
 	}
 
-	public String getName()
-	{
+	public String getName() {
 		return name;
 	}
 
-	public int getClassId()
-	{
+	public int getClassId() {
 		return classId;
 	}
 
-	public int getPoints()
-	{
+	public int getPoints() {
 		return points;
 	}
 
-	public void setPoints(int points)
-	{
+	public void setPoints(int points) {
 		this.points = points;
 	}
 
-	public void increaseMatches()
-	{
+	public void increaseMatches() {
 		matches++;
 	}
 
-	public void increaseVictories()
-	{
+	public void increaseVictories() {
 		victories++;
 	}
 
-	public void increaseDefeats()
-	{
+	public void increaseDefeats() {
 		defeats++;
 	}
 
-	public void increaseDraws()
-	{
+	public void increaseDraws() {
 		draws++;
 	}
 
-	public void increaseClassedMatches()
-	{
+	public void increaseClassedMatches() {
 		classedMatches++;
 	}
 
-	public void increaseNonClassedMatches()
-	{
+	public void increaseNonClassedMatches() {
 		nonClassedMatches++;
 	}
 
-	public int getMatches()
-	{
+	public int getMatches() {
 		return matches;
 	}
 
-	public int getVictories()
-	{
+	public int getVictories() {
 		return victories;
 	}
 
-	public int getDefeats()
-	{
+	public int getDefeats() {
 		return defeats;
 	}
 
-	public int getDraws()
-	{
+	public int getDraws() {
 		return draws;
 	}
 
-	public int getClassedMatches()
-	{
+	public int getClassedMatches() {
 		return classedMatches;
 	}
 
-	public int getNonClassedMatches()
-	{
+	public int getNonClassedMatches() {
 		return nonClassedMatches;
 	}
 
-	public int getMatchesThisWeek()
-	{
+	public int getMatchesThisWeek() {
 		return classedMatches + nonClassedMatches;
 	}
 
-	public boolean isSettled()
-	{
+	public boolean isSettled() {
 		return settled;
 	}
 
-	public void setSettled(boolean settled)
-	{
+	public void setSettled(boolean settled) {
 		this.settled = settled;
 	}
 
-	public boolean isToSave()
-	{
+	public boolean isToSave() {
 		return toSave;
 	}
 
-	public void setToSave(boolean toSave)
-	{
+	public void setToSave(boolean toSave) {
 		this.toSave = toSave;
 	}
 }

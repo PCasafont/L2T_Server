@@ -27,69 +27,51 @@ import l2server.util.xml.XmlNode;
 
 import java.io.File;
 
-public class PetDataTable
-{
+public class PetDataTable {
 
 	private static TIntObjectHashMap<L2PetData> petTable;
 
-	public static PetDataTable getInstance()
-	{
+	public static PetDataTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private PetDataTable()
-	{
+	private PetDataTable() {
 		petTable = new TIntObjectHashMap<>();
 		load();
 	}
 
-	public void load()
-	{
+	public void load() {
 		petTable.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "PetData.xml");
-		if (file.exists())
-		{
+		if (file.exists()) {
 			XmlDocument doc = new XmlDocument(file);
-			for (XmlNode d : doc.getChildren())
-			{
-				if (d.getName().equals("pet"))
-				{
+			for (XmlNode d : doc.getChildren()) {
+				if (d.getName().equals("pet")) {
 					int npcId = d.getInt("id");
 					//index ignored for now
 					L2PetData data = new L2PetData();
-					for (XmlNode p : d.getChildren())
-					{
-						switch (p.getName())
-						{
-							case "set":
-							{
+					for (XmlNode p : d.getChildren()) {
+						switch (p.getName()) {
+							case "set": {
 								String type = p.getString("name");
-								if ("food".equals(type))
-								{
+								if ("food".equals(type)) {
 									String[] values = p.getString("val").split(";");
 									int[] food = new int[values.length];
-									for (int i = 0; i < values.length; i++)
-									{
+									for (int i = 0; i < values.length; i++) {
 										food[i] = Integer.parseInt(values[i]);
 									}
 									data.set_food(food);
-								}
-								else if ("load".equals(type))
-								{
+								} else if ("load".equals(type)) {
 									data.set_load(p.getInt("val"));
-								}
-								else if ("hungry_limit".equals(type))
-								{
+								} else if ("hungry_limit".equals(type)) {
 									data.set_hungry_limit(p.getInt("val"));
 								}
 								//sync_level and evolve ignored
 								break;
 							}
 							case "skills":
-								for (XmlNode s : p.getChildren())
-								{
-									if (s.getName().equals("skill"))
-									{
+								for (XmlNode s : p.getChildren()) {
+									if (s.getName().equals("skill")) {
 										int skillId = s.getInt("skillId");
 										int skillLvl = s.getInt("skillLvl");
 										int minLvl = s.getInt("minLvl");
@@ -98,76 +80,43 @@ public class PetDataTable
 								}
 								break;
 							case "stats":
-								for (XmlNode s : p.getChildren())
-								{
-									if (s.getName().equals("stat"))
-									{
+								for (XmlNode s : p.getChildren()) {
+									if (s.getName().equals("stat")) {
 										int level = s.getInt("level");
 										L2PetLevelData stat = new L2PetLevelData();
-										for (XmlNode bean : s.getChildren())
-										{
-											if (bean.getName().equals("set"))
-											{
+										for (XmlNode bean : s.getChildren()) {
+											if (bean.getName().equals("set")) {
 												String type = bean.getString("name");
 												String value = bean.getString("val");
-												if ("exp".equals(type))
-												{
+												if ("exp".equals(type)) {
 													stat.setPetMaxExp(Long.parseLong(value));
-												}
-												else if ("get_exp_type".equals(type))
-												{
+												} else if ("get_exp_type".equals(type)) {
 													stat.setOwnerExpTaken(Integer.parseInt(value));
-												}
-												else if ("consume_meal_in_battle".equals(type))
-												{
+												} else if ("consume_meal_in_battle".equals(type)) {
 													stat.setPetFeedBattle(Integer.parseInt(value));
-												}
-												else if ("consume_meal_in_normal".equals(type))
-												{
+												} else if ("consume_meal_in_normal".equals(type)) {
 													stat.setPetFeedNormal(Integer.parseInt(value));
-												}
-												else if ("max_meal".equals(type))
-												{
+												} else if ("max_meal".equals(type)) {
 													stat.setPetMaxFeed(Integer.parseInt(value));
-												}
-												else if ("soulshot_count".equals(type))
-												{
+												} else if ("soulshot_count".equals(type)) {
 													stat.setPetSoulShot((short) Integer.parseInt(value));
-												}
-												else if ("spiritshot_count".equals(type))
-												{
+												} else if ("spiritshot_count".equals(type)) {
 													stat.setPetSpiritShot((short) Integer.parseInt(value));
-												}
-												else if ("hp".equals(type))
-												{
+												} else if ("hp".equals(type)) {
 													stat.setPetMaxHP(Integer.parseInt(value));
-												}
-												else if ("mp".equals(type))
-												{
+												} else if ("mp".equals(type)) {
 													stat.setPetMaxMP(Integer.parseInt(value));
-												}
-												else if ("pdef".equals(type))
-												{
+												} else if ("pdef".equals(type)) {
 													stat.setPetPDef(Integer.parseInt(value));
-												}
-												else if ("mdef".equals(type))
-												{
+												} else if ("mdef".equals(type)) {
 													stat.setPetMDef(Integer.parseInt(value));
-												}
-												else if ("patk".equals(type))
-												{
+												} else if ("patk".equals(type)) {
 													stat.setPetPAtk(Integer.parseInt(value));
-												}
-												else if ("matk".equals(type))
-												{
+												} else if ("matk".equals(type)) {
 													stat.setPetMAtk(Integer.parseInt(value));
-												}
-												else if ("hpreg".equals(type))
-												{
+												} else if ("hpreg".equals(type)) {
 													stat.setPetRegenHP(Integer.parseInt(value));
-												}
-												else if ("mpreg".equals(type))
-												{
+												} else if ("mpreg".equals(type)) {
 													stat.setPetRegenMP(Integer.parseInt(value));
 												}
 											}
@@ -181,81 +130,65 @@ public class PetDataTable
 					petTable.put(npcId, data);
 				}
 			}
-		}
-		else
-		{
+		} else {
 			Log.warning("Not found PetData.xml");
 		}
 
 		Log.info(getClass().getSimpleName() + ": Loaded " + petTable.size() + " Pets.");
 	}
 
-	public L2PetLevelData getPetLevelData(int petID, int petLevel)
-	{
+	public L2PetLevelData getPetLevelData(int petID, int petLevel) {
 		return petTable.get(petID).getPetLevelData(petLevel);
 	}
 
-	public L2PetData getPetData(int petID)
-	{
-		if (!petTable.contains(petID))
-		{
+	public L2PetData getPetData(int petID) {
+		if (!petTable.contains(petID)) {
 			Log.info("Missing pet data for npcid: " + petID);
 		}
 		return petTable.get(petID);
 	}
 
-	public int getPetMinLevel(int petID)
-	{
+	public int getPetMinLevel(int petID) {
 		return petTable.get(petID).getMinLevel();
 	}
 
 	/*
 	 * Pets stuffs
 	 */
-	public static boolean isWolf(int npcId)
-	{
+	public static boolean isWolf(int npcId) {
 		return npcId == 12077;
 	}
 
-	public static boolean isEvolvedWolf(int npcId)
-	{
+	public static boolean isEvolvedWolf(int npcId) {
 		return npcId == 16030 || npcId == 16037 || npcId == 16025 || npcId == 16041 || npcId == 16042;
 	}
 
-	public static boolean isSinEater(int npcId)
-	{
+	public static boolean isSinEater(int npcId) {
 		return npcId == 12564;
 	}
 
-	public static boolean isHatchling(int npcId)
-	{
+	public static boolean isHatchling(int npcId) {
 		return npcId > 12310 && npcId < 12314;
 	}
 
-	public static boolean isStrider(int npcId)
-	{
+	public static boolean isStrider(int npcId) {
 		return npcId > 12525 && npcId < 12529 || npcId > 16037 && npcId < 16041 || npcId == 16068;
 	}
 
-	public static boolean isWyvern(int npcId)
-	{
+	public static boolean isWyvern(int npcId) {
 		return npcId == 12621;
 	}
 
-	public static boolean isBaby(int npcId)
-	{
+	public static boolean isBaby(int npcId) {
 		return npcId > 12779 && npcId < 12783;
 	}
 
-	public static boolean isImprovedBaby(int npcId)
-	{
+	public static boolean isImprovedBaby(int npcId) {
 		return npcId > 16033 && npcId < 16037;
 	}
 
-	public static boolean isPetFood(int itemId)
-	{
-		switch (itemId)
-		{
+	public static boolean isPetFood(int itemId) {
+		switch (itemId) {
 			case 2515:
 			case 4038:
 			case 5168:
@@ -274,10 +207,8 @@ public class PetDataTable
 	 * @see L2PetData#getFood()
 	 */
 	@Deprecated
-	public static int[] getFoodItemId(int npcId)
-	{
-		switch (npcId)
-		{
+	public static int[] getFoodItemId(int npcId) {
+		switch (npcId) {
 			case 12077:// Wolf
 			case 12564://Sin Eater
 				return new int[]{2515};
@@ -321,8 +252,7 @@ public class PetDataTable
 		}
 	}
 
-	public static boolean isPetItem(int itemId)
-	{
+	public static boolean isPetItem(int itemId) {
 		L2Item item = ItemTable.getInstance().getTemplate(itemId);
 		return item != null && item.getItemType() == L2EtcItemType.PET_COLLAR;
 
@@ -358,10 +288,8 @@ public class PetDataTable
 		}*/
 	}
 
-	public static int[] getPetItemsByNpc(int npcId)
-	{
-		switch (npcId)
-		{
+	public static int[] getPetItemsByNpc(int npcId) {
+		switch (npcId) {
 			case 12077:// Wolf
 				return new int[]{2375};
 			case 16025:// Great Wolf
@@ -402,7 +330,7 @@ public class PetDataTable
 			case 16034:// Improved Baby Buffalo
 			case 16036:// Improved Baby Cougar
 			case 16035:// Improved Baby Kookaburra
-					return new int[]{10311, 10312, 10313};
+				return new int[]{10311, 10312, 10313};
 
 			// unknown item id.. should never happen
 			default:
@@ -410,21 +338,17 @@ public class PetDataTable
 		}
 	}
 
-	public static boolean isMountable(int npcId)
-	{
-		return npcId == 12526 || npcId == 12527 || npcId == 12528 || npcId == 12621 || npcId == 16037 ||
-				npcId == 16041 || npcId == 16042 || npcId == 16038 || npcId == 16039 || npcId == 16040 ||
-				npcId == 16068; // Guardian Strider
+	public static boolean isMountable(int npcId) {
+		return npcId == 12526 || npcId == 12527 || npcId == 12528 || npcId == 12621 || npcId == 16037 || npcId == 16041 || npcId == 16042 ||
+				npcId == 16038 || npcId == 16039 || npcId == 16040 || npcId == 16068; // Guardian Strider
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final PetDataTable instance = new PetDataTable();
 	}
 
-	public static void main(String... s)
-	{
+	public static void main(String... s) {
 		getInstance();
 	}
 }

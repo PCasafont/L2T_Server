@@ -27,8 +27,7 @@ import java.util.Map;
  *
  * @version $Revision: 1.2.4.2 $ $Date: 2005/03/27 15:29:33 $
  */
-public final class L2SkillLearn
-{
+public final class L2SkillLearn {
 	// these two build the primary key
 	private final int id;
 	private final int level;
@@ -47,8 +46,7 @@ public final class L2SkillLearn
 
 	private boolean isRemember = false;
 
-	public L2SkillLearn(int id, int lvl, int cost, int minLvl, int minDualLvl, boolean panel, boolean fs, boolean transfer, boolean autoget)
-	{
+	public L2SkillLearn(int id, int lvl, int cost, int minLvl, int minDualLvl, boolean panel, boolean fs, boolean transfer, boolean autoget) {
 		this.id = id;
 		level = lvl;
 		minLevel = minLvl;
@@ -63,107 +61,89 @@ public final class L2SkillLearn
 	/**
 	 * @return Returns the id.
 	 */
-	public int getId()
-	{
+	public int getId() {
 		return id;
 	}
 
 	/**
 	 * @return Returns the level.
 	 */
-	public int getLevel()
-	{
+	public int getLevel() {
 		return level;
 	}
 
 	/**
 	 * @return Returns the minLevel.
 	 */
-	public int getMinLevel()
-	{
+	public int getMinLevel() {
 		return minLevel;
 	}
 
-	public int getMinDualLevel()
-	{
+	public int getMinDualLevel() {
 		return minDualLevel;
 	}
 
 	/**
 	 * @return Returns the spCost.
 	 */
-	public int getSpCost()
-	{
+	public int getSpCost() {
 		return spCost;
 	}
 
 	/**
 	 * Return true if skill can be learned by teachers
 	 */
-	public boolean isLearnedFromPanel()
-	{
+	public boolean isLearnedFromPanel() {
 		return learnedFromPanel;
 	}
 
 	/**
 	 * Return true if skill can be learned by forgotten scroll
 	 */
-	public boolean isLearnedByFS()
-	{
+	public boolean isLearnedByFS() {
 		return learnedByFs;
 	}
 
-	public boolean isTransferSkill()
-	{
+	public boolean isTransferSkill() {
 		return isTransfer;
 	}
 
-	public boolean isAutoGetSkill()
-	{
+	public boolean isAutoGetSkill() {
 		return isAutoGet;
 	}
 
-	public void addCostItem(int itemId, int count)
-	{
+	public void addCostItem(int itemId, int count) {
 		costItems.put(itemId, count);
 	}
 
-	public Map<Integer, Integer> getCostItems()
-	{
+	public Map<Integer, Integer> getCostItems() {
 		return costItems;
 	}
 
-	public void addCostSkill(int skillId)
-	{
+	public void addCostSkill(int skillId) {
 		costSkills.add(skillId);
 	}
 
-	public List<Integer> getCostSkills()
-	{
+	public List<Integer> getCostSkills() {
 		return costSkills;
 	}
 
-	public Map<Integer, Integer> getCostSkills(L2PcInstance player)
-	{
+	public Map<Integer, Integer> getCostSkills(L2PcInstance player) {
 		Map<Integer, Integer> costSkills = new HashMap<>();
-		for (int skillId : this.costSkills)
-		{
+		for (int skillId : this.costSkills) {
 			int skillLevel = player.getSkillLevelHash(skillId);
-			if (skillLevel > 0)
-			{
+			if (skillLevel > 0) {
 				costSkills.put(skillId, skillLevel);
 			}
 		}
 		return costSkills;
 	}
 
-	public void setIsRemember(boolean remember)
-	{
+	public void setIsRemember(boolean remember) {
 		isRemember = remember;
 	}
 
-	public boolean isRemember()
-	{
+	public boolean isRemember() {
 		return isRemember;
 	}
 }

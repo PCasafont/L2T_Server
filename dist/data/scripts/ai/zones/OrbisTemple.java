@@ -9,10 +9,8 @@ import l2server.gameserver.model.zone.L2ZoneType;
  * @author LasTravel
  */
 
-public class OrbisTemple extends Quest
-{
-	public OrbisTemple(int id, String name, String descr)
-	{
+public class OrbisTemple extends Quest {
+	public OrbisTemple(int id, String name, String descr) {
 		super(id, name, descr);
 		addEnterZoneId(60011); //Out of Temple ---> 1 Floor
 		addEnterZoneId(60012); //1 Floor ---> Out of Temple
@@ -22,18 +20,15 @@ public class OrbisTemple extends Quest
 		addEnterZoneId(60016); //3 Floor ----> 2 Floor
 
 		//Keep some doors always open
-		for (int a = 26210003; a <= 26210006; a++)
-		{
+		for (int a = 26210003; a <= 26210006; a++) {
 			DoorTable.getInstance().getDoor(a).openMe();
 		}
 	}
 
 	@Override
-	public String onEnterZone(L2Character character, L2ZoneType zone)
-	{
+	public String onEnterZone(L2Character character, L2ZoneType zone) {
 		//System.out.println("Zone Id = " + zone.getId());
-		switch (zone.getId())
-		{
+		switch (zone.getId()) {
 			case 60011:
 				character.teleToLocation(213983, 53250, -8176);
 				break;
@@ -56,8 +51,7 @@ public class OrbisTemple extends Quest
 		return "";
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new OrbisTemple(-1, "OrbisTemple", "ai");
 	}
 }

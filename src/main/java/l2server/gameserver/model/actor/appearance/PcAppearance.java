@@ -19,8 +19,7 @@ import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.model.actor.instance.L2ApInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-public class PcAppearance
-{
+public class PcAppearance {
 	// =========================================================
 	// Data Field
 	private L2PcInstance owner;
@@ -58,8 +57,7 @@ public class PcAppearance
 
 	// =========================================================
 	// Constructor
-	public PcAppearance(int face, int hColor, int hStyle, boolean sex)
-	{
+	public PcAppearance(int face, int hColor, int hStyle, boolean sex) {
 		this.face = face;
 		hairColor = hColor;
 		hairStyle = hStyle;
@@ -75,25 +73,20 @@ public class PcAppearance
 	/**
 	 * @param visibleName The visibleName to set.
 	 */
-	public final void setVisibleName(String visibleName)
-	{
+	public final void setVisibleName(String visibleName) {
 		this.visibleName = visibleName;
 	}
 
 	/**
 	 * @return Returns the visibleName.
 	 */
-	public final String getVisibleName()
-	{
-		if (owner.isPlayingEvent() && (owner.getEvent().getType() == EventType.DeathMatch ||
-				owner.getEvent().getType() == EventType.Survival ||
-				owner.getEvent().getType() == EventType.KingOfTheHill))
-		{
+	public final String getVisibleName() {
+		if (owner.isPlayingEvent() && (owner.getEvent().getType() == EventType.DeathMatch || owner.getEvent().getType() == EventType.Survival ||
+				owner.getEvent().getType() == EventType.KingOfTheHill)) {
 			return "Event Participant";
 		}
 
-		if (visibleName == null)
-		{
+		if (visibleName == null) {
 			visibleName = getOwner().getName();
 		}
 		return visibleName;
@@ -102,40 +95,32 @@ public class PcAppearance
 	/**
 	 * @param visibleTitle The visibleTitle to set.
 	 */
-	public final void setVisibleTitle(String visibleTitle)
-	{
+	public final void setVisibleTitle(String visibleTitle) {
 		this.visibleTitle = visibleTitle;
 	}
 
 	/**
 	 * @return Returns the visibleTitle.
 	 */
-	public final String getVisibleTitle()
-	{
-		if (owner.isPlayingEvent() && (owner.getEvent().getType() == EventType.DeathMatch ||
-				owner.getEvent().getType() == EventType.Survival ||
-				owner.getEvent().getType() == EventType.KingOfTheHill))
-		{
+	public final String getVisibleTitle() {
+		if (owner.isPlayingEvent() && (owner.getEvent().getType() == EventType.DeathMatch || owner.getEvent().getType() == EventType.Survival ||
+				owner.getEvent().getType() == EventType.KingOfTheHill)) {
 			return "";
 		}
 
-		if (owner instanceof L2ApInstance)
-		{
+		if (owner instanceof L2ApInstance) {
 			String title = "L2 Tenkai";
-			if (owner.getParty() != null)
-			{
+			if (owner.getParty() != null) {
 				title += " #" + owner.getParty().getLeader().getObjectId() % 100;
 			}
 			return title;
 		}
 
-		if (visibleTitle == null)
-		{
+		if (visibleTitle == null) {
 			visibleTitle = getOwner().getTitle();
 		}
 
-		if (visibleTitle.equalsIgnoreCase("wtb ballance") || visibleTitle.equalsIgnoreCase("wtb balance"))
-		{
+		if (visibleTitle.equalsIgnoreCase("wtb ballance") || visibleTitle.equalsIgnoreCase("wtb balance")) {
 			return "WTB BRAIN";
 		}
 
@@ -144,125 +129,104 @@ public class PcAppearance
 
 	// =========================================================
 	// Property - Public
-	public final int getFace()
-	{
+	public final int getFace() {
 		return face;
 	}
 
 	/**
 	 */
-	public final void setFace(int value)
-	{
+	public final void setFace(int value) {
 		face = value;
 	}
 
-	public final int getHairColor()
-	{
+	public final int getHairColor() {
 		return hairColor;
 	}
 
 	/**
 	 */
-	public final void setHairColor(int value)
-	{
+	public final void setHairColor(int value) {
 		hairColor = value;
 	}
 
-	public final int getHairStyle()
-	{
+	public final int getHairStyle() {
 		return hairStyle;
 	}
 
 	/**
 	 */
-	public final void setHairStyle(int value)
-	{
+	public final void setHairStyle(int value) {
 		hairStyle = value;
 	}
 
 	/**
 	 * @return true if char is female
 	 */
-	public final boolean getSex()
-	{
+	public final boolean getSex() {
 		return sex;
 	}
 
 	/**
 	 */
-	public final void setSex(boolean isfemale)
-	{
+	public final void setSex(boolean isfemale) {
 		sex = isfemale;
 	}
 
-	public void setInvisible()
-	{
+	public void setInvisible() {
 		invisible = true;
 	}
 
-	public void setVisible()
-	{
+	public void setVisible() {
 		invisible = false;
 	}
 
-	public boolean getInvisible()
-	{
+	public boolean getInvisible() {
 		return invisible;
 	}
 
-	public int getNameColor()
-	{
+	public int getNameColor() {
 		return nameColor;
 	}
 
-	public void setNameColor(int nameColor)
-	{
-		if (nameColor < 0)
-		{
+	public void setNameColor(int nameColor) {
+		if (nameColor < 0) {
 			return;
 		}
 
 		this.nameColor = nameColor;
 	}
 
-	public void setNameColor(int red, int green, int blue)
-	{
+	public void setNameColor(int red, int green, int blue) {
 		nameColor = (red & 0xFF) + ((green & 0xFF) << 8) + ((blue & 0xFF) << 16);
 	}
 
-	public int getTitleColor()
-	{
+	public int getTitleColor() {
 		return titleColor;
 	}
 
-	public void setTitleColor(int titleColor)
-	{
-		if (titleColor < 0)
-		{
+	public void setTitleColor(int titleColor) {
+		if (titleColor < 0) {
 			return;
 		}
 
 		this.titleColor = titleColor;
 	}
 
-	public void setTitleColor(int red, int green, int blue)
-	{
+	public void setTitleColor(int red, int green, int blue) {
 		titleColor = (red & 0xFF) + ((green & 0xFF) << 8) + ((blue & 0xFF) << 16);
 	}
 
 	/**
 	 * @param owner The owner to set.
 	 */
-	public void setOwner(L2PcInstance owner)
-	{
+	public void setOwner(L2PcInstance owner) {
 		this.owner = owner;
 	}
 
 	/**
 	 * @return Returns the owner.
 	 */
-	public L2PcInstance getOwner()
-	{
+	public L2PcInstance getOwner() {
 		return owner;
 	}
 }

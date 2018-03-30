@@ -27,12 +27,12 @@ import l2server.gameserver.templates.skills.L2EffectType;
  *
  * @version $Revision: 1.1.2.1.2.12 $ $Date: 2005/04/11 10:06:07 $
  */
-public abstract class L2Effect
-{
+public abstract class L2Effect {
 
-	public enum EffectState
-	{
-		CREATED, ACTING, FINISHING
+	public enum EffectState {
+		CREATED,
+		ACTING,
+		FINISHING
 	}
 
 	//member effector is the instance of L2Character that cast/used the spell/skill that is
@@ -60,8 +60,7 @@ public abstract class L2Effect
 	 * <font color="FF0000"><b>WARNING: scheduleEffect nolonger inside constructor</b></font><br>
 	 * So you must call it explicitly
 	 */
-	protected L2Effect(Env env, L2EffectTemplate template)
-	{
+	protected L2Effect(Env env, L2EffectTemplate template) {
 		skill = env.skill;
 		//item = env.item == null ? null : env.item.getItem();
 		this.template = template;
@@ -80,8 +79,7 @@ public abstract class L2Effect
 	 * @param env
 	 * @param effect
 	 */
-	protected L2Effect(Env env, L2Effect effect)
-	{
+	protected L2Effect(Env env, L2Effect effect) {
 		template = effect.template;
 		skill = env.skill;
 		effected = env.target;
@@ -89,8 +87,7 @@ public abstract class L2Effect
 		lambda = template.lambda;
 	}
 
-	public final double calc()
-	{
+	public final double calc() {
 		Env env = new Env();
 		env.player = effector;
 		env.target = effected;
@@ -98,18 +95,15 @@ public abstract class L2Effect
 		return lambda.calc(env);
 	}
 
-	public final L2Skill getSkill()
-	{
+	public final L2Skill getSkill() {
 		return skill;
 	}
 
-	public final L2Character getEffector()
-	{
+	public final L2Character getEffector() {
 		return effector;
 	}
 
-	public final L2Character getEffected()
-	{
+	public final L2Character getEffected() {
 		return effected;
 	}
 
@@ -120,47 +114,40 @@ public abstract class L2Effect
 	 * <li>Cancel the effect in the the abnormal effect map of the L2Character </li>
 	 * <li>Stop the task of the L2Effect, remove it and update client magic icon </li><BR><BR>
 	 */
-	public final void exit()
-	{
+	public final void exit() {
 		this.exit(false);
 	}
 
-	public final void exit(boolean preventUpdate)
-	{
+	public final void exit(boolean preventUpdate) {
 		preventExitUpdate = preventUpdate;
 	}
 
 	/**
 	 * returns effect type
 	 */
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.NONE;
 	}
 
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.NONE;
 	}
 
-	public long getEffectMask()
-	{
+	public long getEffectMask() {
 		return getEffectType().getMask();
 	}
 
 	/**
 	 * Notify started
 	 */
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		return true;
 	}
 
 	/**
 	 * Cancel the effect in the the abnormal effect map of the effected L2Character.<BR><BR>
 	 */
-	public void onExit()
-	{
+	public void onExit() {
 	}
 
 	/**
@@ -168,28 +155,23 @@ public abstract class L2Effect
 	 */
 	public abstract boolean onActionTime();
 
-	public int getLevel()
-	{
+	public int getLevel() {
 		return getSkill().getLevelHash();
 	}
 
-	public L2Abnormal getAbnormal()
-	{
+	public L2Abnormal getAbnormal() {
 		return abnormal;
 	}
 
-	public void setAbnormal(L2Abnormal abnormal)
-	{
+	public void setAbnormal(L2Abnormal abnormal) {
 		this.abnormal = abnormal;
 	}
 
-	public L2EffectTemplate getTemplate()
-	{
+	public L2EffectTemplate getTemplate() {
 		return template;
 	}
 
-	public boolean isSelfEffectType()
-	{
+	public boolean isSelfEffectType() {
 		return false;
 	}
 
@@ -198,14 +180,12 @@ public abstract class L2Effect
 	 *
 	 * @return
 	 */
-	protected boolean effectCanBeStolen()
-	{
+	protected boolean effectCanBeStolen() {
 		return false;
 	}
 
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return "L2Effect [_skill=" + skill + ", _type=" + this.getClass().getCanonicalName() + "]";
 	}
 }

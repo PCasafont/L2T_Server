@@ -26,12 +26,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 
-public class ClanHallAuctionManager
-{
+public class ClanHallAuctionManager {
 	private List<Auction> auctions;
 
-	private static final String[] ITEM_INIT_DATA = {
-			"(22, 0, 'NPC', 'NPC Clan', 'ClanHall', 22, 0, 'Moonstone Hall', 1, 20000000, 0, 1164841200000)",
+	private static final String[] ITEM_INIT_DATA = {"(22, 0, 'NPC', 'NPC Clan', 'ClanHall', 22, 0, 'Moonstone Hall', 1, 20000000, 0, 1164841200000)",
 			"(23, 0, 'NPC', 'NPC Clan', 'ClanHall', 23, 0, 'Onyx Hall', 1, 20000000, 0, 1164841200000)",
 			"(24, 0, 'NPC', 'NPC Clan', 'ClanHall', 24, 0, 'Topaz Hall', 1, 20000000, 0, 1164841200000)",
 			"(25, 0, 'NPC', 'NPC Clan', 'ClanHall', 25, 0, 'Ruby Hall', 1, 20000000, 0, 1164841200000)",
@@ -78,177 +76,101 @@ public class ClanHallAuctionManager
 			"(71, 0, 'NPC', 'NPC Clan', 'ClanHall', 71, 0, 'Blue Barracks', 1, 50000000, 0, 1164841200000)",
 			"(72, 0, 'NPC', 'NPC Clan', 'ClanHall', 72, 0, 'Brown Barracks', 1, 50000000, 0, 1164841200000)",
 			"(73, 0, 'NPC', 'NPC Clan', 'ClanHall', 73, 0, 'Black Barracks', 1, 50000000, 0, 1164841200000)",
-			"(74, 0, 'NPC', 'NPC Clan', 'ClanHall', 74, 0, 'Green Barracks', 1, 50000000, 0, 1164841200000)"
-	};
+			"(74, 0, 'NPC', 'NPC Clan', 'ClanHall', 74, 0, 'Green Barracks', 1, 50000000, 0, 1164841200000)"};
 
-	private static final int[] ItemInitDataId = {
-			22,
-			23,
-			24,
-			25,
-			26,
-			27,
-			28,
-			29,
-			30,
-			31,
-			32,
-			33,
-			36,
-			37,
-			38,
-			39,
-			40,
-			41,
-			42,
-			43,
-			44,
-			45,
-			46,
-			47,
-			48,
-			49,
-			50,
-			51,
-			52,
-			53,
-			54,
-			55,
-			56,
-			57,
-			58,
-			59,
-			60,
-			61,
-			65,
-			66,
-			67,
-			68,
-			69,
-			70,
-			71,
-			72,
-			73,
-			74
-	};
+	private static final int[] ItemInitDataId =
+			{22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
+					58, 59, 60, 61, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74};
 
-	public static ClanHallAuctionManager getInstance()
-	{
+	public static ClanHallAuctionManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private ClanHallAuctionManager()
-	{
+	private ClanHallAuctionManager() {
 		Log.info("Initializing AuctionManager");
 		auctions = new ArrayList<>();
 		load();
 	}
 
-	public void reload()
-	{
+	public void reload() {
 		auctions.clear();
 		load();
 	}
 
-	private void load()
-	{
+	private void load() {
 		Connection con = null;
-		try
-		{
+		try {
 			PreparedStatement statement;
 			ResultSet rs;
 			con = L2DatabaseFactory.getInstance().getConnection();
 			statement = con.prepareStatement("SELECT id FROM clanhall_auction ORDER BY id");
 			rs = statement.executeQuery();
-			while (rs.next())
-			{
+			while (rs.next()) {
 				auctions.add(new Auction(rs.getInt("id")));
 			}
 			statement.close();
 			Log.info("Loaded: " + getAuctions().size() + " auction(s)");
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Exception: AuctionManager.load(): " + e.getMessage(), e);
-		}
-
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public final Auction getAuction(int auctionId)
-	{
+	public final Auction getAuction(int auctionId) {
 		int index = getAuctionIndex(auctionId);
-		if (index >= 0)
-		{
+		if (index >= 0) {
 			return getAuctions().get(index);
 		}
 		return null;
 	}
 
-	public final int getAuctionIndex(int auctionId)
-	{
+	public final int getAuctionIndex(int auctionId) {
 		Auction auction;
-		for (int i = 0; i < getAuctions().size(); i++)
-		{
+		for (int i = 0; i < getAuctions().size(); i++) {
 			auction = getAuctions().get(i);
-			if (auction != null && auction.getId() == auctionId)
-			{
+			if (auction != null && auction.getId() == auctionId) {
 				return i;
 			}
 		}
 		return -1;
 	}
 
-	public final List<Auction> getAuctions()
-	{
+	public final List<Auction> getAuctions() {
 		return auctions;
 	}
 
 	/**
 	 * Init Clan NPC aution
 	 */
-	public void initNPC(int id)
-	{
+	public void initNPC(int id) {
 		Connection con = null;
 		int i;
-		for (i = 0; i < ItemInitDataId.length; i++)
-		{
-			if (ItemInitDataId[i] == id)
-			{
+		for (i = 0; i < ItemInitDataId.length; i++) {
+			if (ItemInitDataId[i] == id) {
 				break;
 			}
 		}
-		if (i >= ItemInitDataId.length || ItemInitDataId[i] != id)
-		{
+		if (i >= ItemInitDataId.length || ItemInitDataId[i] != id) {
 			Log.warning("Clan Hall auction not found for Id :" + id);
 			return;
 		}
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement =
-					con.prepareStatement("REPLACE INTO `clanhall_auction` VALUES " + ITEM_INIT_DATA[i]);
+			PreparedStatement statement = con.prepareStatement("REPLACE INTO `clanhall_auction` VALUES " + ITEM_INIT_DATA[i]);
 			statement.execute();
 			statement.close();
 			auctions.add(new Auction(id));
 			Log.info("Created auction for ClanHall: " + id);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Exception: Auction.initNPC(): " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final ClanHallAuctionManager instance = new ClanHallAuctionManager();
 	}
 }

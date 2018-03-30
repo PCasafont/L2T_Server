@@ -28,8 +28,7 @@ import java.util.concurrent.Future;
 /**
  * @author kombat, Forsaiken
  */
-public final class FusionSkill
-{
+public final class FusionSkill {
 
 	protected int skillCastRange;
 	protected int fusionId;
@@ -38,18 +37,15 @@ public final class FusionSkill
 	protected L2Character target;
 	protected Future<?> geoCheckTask;
 
-	public L2Character getCaster()
-	{
+	public L2Character getCaster() {
 		return caster;
 	}
 
-	public L2Character getTarget()
-	{
+	public L2Character getTarget() {
 		return target;
 	}
 
-	public FusionSkill(L2Character caster, L2Character target, L2Skill skill)
-	{
+	public FusionSkill(L2Character caster, L2Character target, L2Skill skill) {
 		skillCastRange = skill.getCastRange();
 		this.caster = caster;
 		this.target = target;
@@ -57,42 +53,30 @@ public final class FusionSkill
 		fusionLevel = skill.getTriggeredLevel();
 
 		L2Abnormal effect = target.getFirstEffect(fusionId);
-		if (effect != null)
-		{
-			for (L2Effect eff : effect.getEffects())
-			{
-				if (eff instanceof EffectFusion)
-				{
+		if (effect != null) {
+			for (L2Effect eff : effect.getEffects()) {
+				if (eff instanceof EffectFusion) {
 					((EffectFusion) eff).increaseEffect();
 				}
 			}
-		}
-		else
-		{
+		} else {
 			L2Skill force = SkillTable.getInstance().getInfo(fusionId, fusionLevel);
-			if (force != null)
-			{
+			if (force != null) {
 				force.getEffects(caster, target, null);
-			}
-			else
-			{
+			} else {
 				Log.warning("Triggered skill [" + fusionId + ";" + fusionLevel + "] not found!");
 			}
 		}
 		geoCheckTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new GeoCheckTask(), 1000, 1000);
 	}
 
-	public void onCastAbort()
-	{
+	public void onCastAbort() {
 		caster.setFusionSkill(null);
 		caster.setContinuousDebuffTargets(null);
 		L2Abnormal effect = target.getFirstEffect(fusionId);
-		if (effect != null)
-		{
-			for (L2Effect eff : effect.getEffects())
-			{
-				if (eff instanceof EffectFusion)
-				{
+		if (effect != null) {
+			for (L2Effect eff : effect.getEffects()) {
+				if (eff instanceof EffectFusion) {
 					((EffectFusion) eff).decreaseForce();
 				}
 			}
@@ -101,25 +85,18 @@ public final class FusionSkill
 		geoCheckTask.cancel(true);
 	}
 
-	public class GeoCheckTask implements Runnable
-	{
+	public class GeoCheckTask implements Runnable {
 		@Override
-		public void run()
-		{
-			try
-			{
-				if (!Util.checkIfInRange(skillCastRange, caster, target, true))
-				{
+		public void run() {
+			try {
+				if (!Util.checkIfInRange(skillCastRange, caster, target, true)) {
 					caster.abortCast();
 				}
 
-				if (!GeoData.getInstance().canSeeTarget(caster, target))
-				{
+				if (!GeoData.getInstance().canSeeTarget(caster, target)) {
 					caster.abortCast();
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				// ignore
 			}
 		}

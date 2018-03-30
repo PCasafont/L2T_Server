@@ -13,24 +13,20 @@ import java.util.Map;
 /**
  * @author Pere
  */
-public class CoreMessageTable
-{
+public class CoreMessageTable {
 	private static CoreMessageTable instance;
 
 	private static Map<Integer, CoreMessage> messages = new HashMap<>();
 
-	public static CoreMessageTable getInstance()
-	{
-		if (instance == null)
-		{
+	public static CoreMessageTable getInstance() {
+		if (instance == null) {
 			instance = new CoreMessageTable();
 		}
 
 		return instance;
 	}
 
-	private CoreMessageTable()
-	{
+	private CoreMessageTable() {
 		CoreMessage cm = new CoreMessage("(Unknown Text)");
 		messages.put(-1, cm);
 		cm = new CoreMessage("$s1");
@@ -38,15 +34,12 @@ public class CoreMessageTable
 		readMessageTable();
 	}
 
-	private void readMessageTable()
-	{
+	private void readMessageTable() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "coreMessages.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("coreMessage"))
-			{
+		for (XmlNode n : doc.getChildren()) {
+			if (n.getName().equalsIgnoreCase("coreMessage")) {
 				int id = n.getInt("id");
 				String text = n.getString("text");
 				messages.put(id, new CoreMessage(text));
@@ -56,21 +49,16 @@ public class CoreMessageTable
 		Log.info("Message Table: Loading " + messages.size() + " Core Messages Sucessfully");
 	}
 
-	public CoreMessage getMessage(int id)
-	{
-		if (messages.containsKey(id))
-		{
+	public CoreMessage getMessage(int id) {
+		if (messages.containsKey(id)) {
 			return messages.get(id);
-		}
-		else
-		{
+		} else {
 			Log.warning("Unknown text: " + id);
 			return messages.get(-1);
 		}
 	}
 
-	public void reload()
-	{
+	public void reload() {
 		messages.clear();
 		readMessageTable();
 	}

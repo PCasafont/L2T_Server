@@ -32,39 +32,35 @@ import java.util.logging.Level;
 
 /**
  * @author UnAfraid & mrTJO
- *         TODO: System Messages:
- *         ADD:
- *         3223: The previous name is being registered. Please try again later.
- *         END OF ADD
- *         DEL
- *         3219: $s1 was successfully deleted from your Contact List.
- *         3217: The name is not currently registered.
- *         END OF DEL
+ * TODO: System Messages:
+ * ADD:
+ * 3223: The previous name is being registered. Please try again later.
+ * END OF ADD
+ * DEL
+ * 3219: $s1 was successfully deleted from your Contact List.
+ * 3217: The name is not currently registered.
+ * END OF DEL
  */
-public class L2ContactList
-{
+public class L2ContactList {
 	private final L2PcInstance activeChar;
 	private final List<String> contacts;
 
 	private final String QUERY_ADD = "INSERT INTO character_contacts (charId, contactId) VALUES (?, ?)";
-	private final String QUERY_REMOVE = "DELETE FROM character_contacts WHERE charId = ? and contactId = ?";
+	private final String QUERY_REMOVE = "DELETE FROM character_contacts WHERE charId = ? AND contactId = ?";
 	private final String QUERY_LOAD = "SELECT contactId FROM character_contacts WHERE charId = ?";
 
-	public L2ContactList(L2PcInstance player)
-	{
+	public L2ContactList(L2PcInstance player) {
 		activeChar = player;
 		contacts = new CopyOnWriteArrayList<>();
 		restore();
 	}
 
-	public void restore()
-	{
+	public void restore() {
 		contacts.clear();
 
 		Connection con = null;
 
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(QUERY_LOAD);
 			statement.setInt(1, activeChar.getObjectId());
@@ -72,13 +68,10 @@ public class L2ContactList
 
 			int contactId;
 			String contactName;
-			while (rset.next())
-			{
+			while (rset.next()) {
 				contactId = rset.getInt(1);
 				contactName = CharNameTable.getInstance().getNameById(contactId);
-				if (contactName == null || Objects.equals(contactName, activeChar.getName()) ||
-						contactId == activeChar.getObjectId())
-				{
+				if (contactName == null || Objects.equals(contactName, activeChar.getName()) || contactId == activeChar.getObjectId()) {
 					continue;
 				}
 
@@ -87,50 +80,34 @@ public class L2ContactList
 
 			rset.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Error found in " + activeChar.getName() + "'s ContactsList: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public boolean add(String name)
-	{
+	public boolean add(String name) {
 		SystemMessage sm;
 
 		int contactId = CharNameTable.getInstance().getIdByName(name);
-		if (contacts.contains(name))
-		{
+		if (contacts.contains(name)) {
 			activeChar.sendPacket(SystemMessageId.NAME_ALREADY_EXIST_ON_CONTACT_LIST);
 			return false;
-		}
-		else if (Objects.equals(activeChar.getName(), name))
-		{
+		} else if (Objects.equals(activeChar.getName(), name)) {
 			activeChar.sendPacket(SystemMessageId.CANNOT_ADD_YOUR_NAME_ON_CONTACT_LIST);
 			return false;
-		}
-		else if (contacts.size() >= 100)
-		{
+		} else if (contacts.size() >= 100) {
 			activeChar.sendPacket(SystemMessageId.CONTACT_LIST_LIMIT_REACHED);
 			return false;
-		}
-		else if (contactId < 1)
-		{
+		} else if (contactId < 1) {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.NAME_S1_NOT_EXIST_TRY_ANOTHER_NAME);
 			sm.addString(name);
 			activeChar.sendPacket(sm);
 			return false;
-		}
-		else
-		{
-			for (String contactName : contacts)
-			{
-				if (contactName.equalsIgnoreCase(name))
-				{
+		} else {
+			for (String contactName : contacts) {
+				if (contactName.equalsIgnoreCase(name)) {
 					activeChar.sendPacket(SystemMessageId.NAME_ALREADY_EXIST_ON_CONTACT_LIST);
 					return false;
 				}
@@ -138,8 +115,7 @@ public class L2ContactList
 		}
 
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(QUERY_ADD);
 			statement.setInt(1, activeChar.getObjectId());
@@ -152,30 +128,21 @@ public class L2ContactList
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_SUCCESSFULLY_ADDED_TO_CONTACT_LIST);
 			sm.addString(name);
 			activeChar.sendPacket(sm);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Error found in " + activeChar.getName() + "'s ContactsList: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		return true;
 	}
 
-	public void remove(String name)
-	{
+	public void remove(String name) {
 		int contactId = CharNameTable.getInstance().getIdByName(name);
 
-		if (!contacts.contains(name))
-		{
+		if (!contacts.contains(name)) {
 			activeChar.sendPacket(SystemMessageId.NAME_NOT_REGISTERED_ON_CONTACT_LIST);
 			return;
-		}
-
-		else if (contactId < 1)
-		{
+		} else if (contactId < 1) {
 			//TODO: Message?
 			return;
 		}
@@ -184,8 +151,7 @@ public class L2ContactList
 
 		Connection con = null;
 
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(QUERY_REMOVE);
 			statement.setInt(1, activeChar.getObjectId());
@@ -195,19 +161,14 @@ public class L2ContactList
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_SUCCESFULLY_DELETED_FROM_CONTACT_LIST);
 			sm.addString(name);
 			activeChar.sendPacket(sm);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Error found in " + activeChar.getName() + "'s ContactsList: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public List<String> getAllContacts()
-	{
+	public List<String> getAllContacts() {
 		return contacts;
 	}
 }

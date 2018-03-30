@@ -1,282 +1,282 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-    <item>
-        <ingredient count="1" id="17832" /> <!-- Bound Requiem Cutter -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="1056500" id="57" /> <!-- Adena -->
-        <ingredient count="43" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17842" /> <!-- Bound Requiem Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="17831" /> <!-- Bound Requiem Shaper -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="1056500" id="57" /> <!-- Adena -->
-        <ingredient count="43" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17843" /> <!-- Bound Requiem Dual Dagger -->
-    </item>
-    <item>
-        <ingredient count="1" id="17834" /> <!-- Bound Requiem Avenger -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="1056500" id="57" /> <!-- Adena -->
-        <ingredient count="43" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17844" /> <!-- Bound Requiem Dual Blunt Weapon -->
-    </item>
-    <item>
-        <ingredient count="1" id="17832" /> <!-- Bound Requiem Cutter -->
-        <ingredient count="1" id="17832" /> <!-- Bound Requiem Cutter -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="1782000" id="57" /> <!-- Adena -->
-        <ingredient count="72" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17876" /> <!-- Bound Apocalypse Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="17831" /> <!-- Bound Requiem Shaper -->
-        <ingredient count="1" id="17831" /> <!-- Bound Requiem Shaper -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="1782000" id="57" /> <!-- Adena -->
-        <ingredient count="72" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17877" /> <!-- Bound Apocalypse Dual Dagger -->
-    </item>
-    <item>
-        <ingredient count="1" id="17834" /> <!-- Bound Requiem Avenger -->
-        <ingredient count="1" id="17834" /> <!-- Bound Requiem Avenger -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="1782000" id="57" /> <!-- Adena -->
-        <ingredient count="72" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17878" /> <!-- Bound Apocalypse Dual Blunt Weapon -->
-    </item>
-    <item>
-        <ingredient count="1" id="17866" /> <!-- Bound Apocalypse Cutter -->
-        <ingredient count="1" id="17866" /> <!-- Bound Apocalypse Cutter -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="23681100" id="57" /> <!-- Adena -->
-        <ingredient count="948" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17910" /> <!-- Bound Specter Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="17865" /> <!-- Bound Apocalypse Shaper -->
-        <ingredient count="1" id="17865" /> <!-- Bound Apocalypse Shaper -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="23681100" id="57" /> <!-- Adena -->
-        <ingredient count="948" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17911" /> <!-- Bound Specter Dual Dagger -->
-    </item>
-    <item>
-        <ingredient count="1" id="17868" /> <!-- Bound Apocalypse Avenger -->
-        <ingredient count="1" id="17868" /> <!-- Bound Apocalypse Avenger -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="23681100" id="57" /> <!-- Adena -->
-        <ingredient count="948" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17912" /> <!-- Bound Specter Dual Blunt Weapon -->
-    </item>
-    <item>
-        <ingredient count="1" id="17900" /> <!-- Bound Specter Cutter -->
-        <ingredient count="1" id="17900" /> <!-- Bound Specter Cutter -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="23681100" id="57" /> <!-- Adena -->
-        <ingredient count="948" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17944" /> <!-- Bound Amaranthine Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="17899" /> <!-- Bound Specter Shaper -->
-        <ingredient count="1" id="17899" /> <!-- Bound Specter Shaper -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="23681100" id="57" /> <!-- Adena -->
-        <ingredient count="948" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17945" /> <!-- Bound Amaranthine Dual Dagger -->
-    </item>
-    <item>
-        <ingredient count="1" id="17902" /> <!-- Bound Specter Avenger -->
-        <ingredient count="1" id="17902" /> <!-- Bound Specter Avenger -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="23681100" id="57" /> <!-- Adena -->
-        <ingredient count="948" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17946" /> <!-- Bound Amaranthine Dual Blunt Weapon -->
-    </item>
-    <item>
-        <ingredient count="1" id="17291" /> <!-- Requiem Cutter -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="7043198" id="57" /> <!-- Adena -->
-        <ingredient count="188" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17301" /> <!-- Requiem Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="17290" /> <!-- Requiem Shaper -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="7043198" id="57" /> <!-- Adena -->
-        <ingredient count="188" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17302" /> <!-- Requiem Dual Dagger -->
-    </item>
-    <item>
-        <ingredient count="1" id="17293" /> <!-- Requiem Avenger -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="7043198" id="57" /> <!-- Adena -->
-        <ingredient count="188" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17303" /> <!-- Requiem Dual Blunt Weapon -->
-    </item>
-    <item>
-        <ingredient count="1" id="17291" /> <!-- Requiem Cutter -->
-        <ingredient count="1" id="17291" /> <!-- Requiem Cutter -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="39578190" id="57" /> <!-- Adena -->
-        <ingredient count="1056" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17335" /> <!-- Apocalypse Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="17290" /> <!-- Requiem Shaper -->
-        <ingredient count="1" id="17290" /> <!-- Requiem Shaper -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="39578190" id="57" /> <!-- Adena -->
-        <ingredient count="1056" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17336" /> <!-- Apocalypse Dual Dagger -->
-    </item>
-    <item>
-        <ingredient count="1" id="17293" /> <!-- Requiem Avenger -->
-        <ingredient count="1" id="17293" /> <!-- Requiem Avenger -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="39578190" id="57" /> <!-- Adena -->
-        <ingredient count="1056" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17337" /> <!-- Apocalypse Dual Blunt Weapon -->
-    </item>
-    <item>
-        <ingredient count="1" id="17325" /> <!-- Apocalypse Cutter -->
-        <ingredient count="1" id="17325" /> <!-- Apocalypse Cutter -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="378898400" id="57" /> <!-- Adena -->
-        <ingredient count="15156" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17393" /> <!-- Specter Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="17324" /> <!-- Apocalypse Shaper -->
-        <ingredient count="1" id="17324" /> <!-- Apocalypse Shaper -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="378898400" id="57" /> <!-- Adena -->
-        <ingredient count="15156" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17394" /> <!-- Specter Dual Dagger -->
-    </item>
-    <item>
-        <ingredient count="1" id="17327" /> <!-- Apocalypse Avenger -->
-        <ingredient count="1" id="17327" /> <!-- Apocalypse Avenger -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="378898400" id="57" /> <!-- Adena -->
-        <ingredient count="15156" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17395" /> <!-- Specter Dual Blunt Weapon -->
-    </item>
-    <item>
-        <ingredient count="1" id="17383" /> <!-- Specter Cutter -->
-        <ingredient count="1" id="17383" /> <!-- Specter Cutter -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="378898400" id="57" /> <!-- Adena -->
-        <ingredient count="15156" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17427" /> <!-- Amaranthine Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="17382" /> <!-- Specter Shaper -->
-        <ingredient count="1" id="17382" /> <!-- Specter Shaper -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="378898400" id="57" /> <!-- Adena -->
-        <ingredient count="15156" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17428" /> <!-- Amaranthine Dual Dagger -->
-    </item>
-    <item>
-        <ingredient count="1" id="17385" /> <!-- Specter Avenger -->
-        <ingredient count="1" id="17385" /> <!-- Specter Avenger -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="378898400" id="57" /> <!-- Adena -->
-        <ingredient count="15156" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17429" /> <!-- Amaranthine Dual Blunt Weapon -->
-    </item>
-    <item>
-        <ingredient count="1" id="17968" /> <!-- Blessed Requiem Cutter -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="8375814" id="57" /> <!-- Adena -->
-        <ingredient count="224" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17978" /> <!-- Blessed Requiem Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="17967" /> <!-- Blessed Requiem Shaper -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="8375814" id="57" /> <!-- Adena -->
-        <ingredient count="224" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17979" /> <!-- Blessed Requiem Dual Dagger -->
-    </item>
-    <item>
-        <ingredient count="1" id="17970" /> <!-- Blessed Requiem Avenger -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="8375814" id="57" /> <!-- Adena -->
-        <ingredient count="224" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="17980" /> <!-- Blessed Requiem Dual Blunt Weapon -->
-    </item>
-    <item>
-        <ingredient count="1" id="17968" /> <!-- Blessed Requiem Cutter -->
-        <ingredient count="1" id="17968" /> <!-- Blessed Requiem Cutter -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="42086194" id="57" /> <!-- Adena -->
-        <ingredient count="1123" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="18012" /> <!-- Blessed Apocalypse Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="17967" /> <!-- Blessed Requiem Shaper -->
-        <ingredient count="1" id="17967" /> <!-- Blessed Requiem Shaper -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="42086194" id="57" /> <!-- Adena -->
-        <ingredient count="1123" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="18013" /> <!-- Blessed Apocalypse Dual Dagger -->
-    </item>
-    <item>
-        <ingredient count="1" id="17970" /> <!-- Blessed Requiem Avenger -->
-        <ingredient count="1" id="17970" /> <!-- Blessed Requiem Avenger -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="42086194" id="57" /> <!-- Adena -->
-        <ingredient count="1123" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="18014" /> <!-- Blessed Apocalypse Dual Blunt Weapon -->
-    </item>
-    <item>
-        <ingredient count="1" id="18002" /> <!-- Blessed Apocalypse Cutter -->
-        <ingredient count="1" id="18002" /> <!-- Blessed Apocalypse Cutter -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="473623000" id="57" /> <!-- Adena -->
-        <ingredient count="18945" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="18046" /> <!-- Blessed Specter Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="18001" /> <!-- Blessed Apocalypse Shaper -->
-        <ingredient count="1" id="18001" /> <!-- Blessed Apocalypse Shaper -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="473623000" id="57" /> <!-- Adena -->
-        <ingredient count="18945" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="18047" /> <!-- Blessed Specter Dual Dagger -->
-    </item>
-    <item>
-        <ingredient count="1" id="18004" /> <!-- Blessed Apocalypse Avenger -->
-        <ingredient count="1" id="18004" /> <!-- Blessed Apocalypse Avenger -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="473623000" id="57" /> <!-- Adena -->
-        <ingredient count="18945" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="18048" /> <!-- Blessed Specter Dual Blunt Weapon -->
-    </item>
-    <item>
-        <ingredient count="1" id="18036" /> <!-- Blessed Specter Cutter -->
-        <ingredient count="1" id="18036" /> <!-- Blessed Specter Cutter -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="473623000" id="57" /> <!-- Adena -->
-        <ingredient count="18945" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="18080" /> <!-- Blessed Amaranthine Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="18035" /> <!-- Blessed Specter Shaper -->
-        <ingredient count="1" id="18035" /> <!-- Blessed Specter Shaper -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="473623000" id="57" /> <!-- Adena -->
-        <ingredient count="18945" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="18081" /> <!-- Blessed Amaranthine Dual Dagger -->
-    </item>
-    <item>
-        <ingredient count="1" id="18038" /> <!-- Blessed Specter Avenger -->
-        <ingredient count="1" id="18038" /> <!-- Blessed Specter Avenger -->
-        <ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
-        <ingredient count="473623000" id="57" /> <!-- Adena -->
-        <ingredient count="18945" id="17371" /> <!-- Crystal (R-grade) -->
-        <production count="1" id="18082" /> <!-- Blessed Amaranthine Dual Blunt Weapon -->
-    </item>
+	<item>
+		<ingredient count="1" id="17832" /> <!-- Bound Requiem Cutter -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="1056500" id="57" /> <!-- Adena -->
+		<ingredient count="43" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17842" /> <!-- Bound Requiem Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="17831" /> <!-- Bound Requiem Shaper -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="1056500" id="57" /> <!-- Adena -->
+		<ingredient count="43" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17843" /> <!-- Bound Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="17834" /> <!-- Bound Requiem Avenger -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="1056500" id="57" /> <!-- Adena -->
+		<ingredient count="43" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17844" /> <!-- Bound Requiem Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="17832" /> <!-- Bound Requiem Cutter -->
+		<ingredient count="1" id="17832" /> <!-- Bound Requiem Cutter -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="1782000" id="57" /> <!-- Adena -->
+		<ingredient count="72" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17876" /> <!-- Bound Apocalypse Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="17831" /> <!-- Bound Requiem Shaper -->
+		<ingredient count="1" id="17831" /> <!-- Bound Requiem Shaper -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="1782000" id="57" /> <!-- Adena -->
+		<ingredient count="72" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17877" /> <!-- Bound Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="17834" /> <!-- Bound Requiem Avenger -->
+		<ingredient count="1" id="17834" /> <!-- Bound Requiem Avenger -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="1782000" id="57" /> <!-- Adena -->
+		<ingredient count="72" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17878" /> <!-- Bound Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="17866" /> <!-- Bound Apocalypse Cutter -->
+		<ingredient count="1" id="17866" /> <!-- Bound Apocalypse Cutter -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="23681100" id="57" /> <!-- Adena -->
+		<ingredient count="948" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17910" /> <!-- Bound Specter Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="17865" /> <!-- Bound Apocalypse Shaper -->
+		<ingredient count="1" id="17865" /> <!-- Bound Apocalypse Shaper -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="23681100" id="57" /> <!-- Adena -->
+		<ingredient count="948" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17911" /> <!-- Bound Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="17868" /> <!-- Bound Apocalypse Avenger -->
+		<ingredient count="1" id="17868" /> <!-- Bound Apocalypse Avenger -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="23681100" id="57" /> <!-- Adena -->
+		<ingredient count="948" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17912" /> <!-- Bound Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="17900" /> <!-- Bound Specter Cutter -->
+		<ingredient count="1" id="17900" /> <!-- Bound Specter Cutter -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="23681100" id="57" /> <!-- Adena -->
+		<ingredient count="948" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17944" /> <!-- Bound Amaranthine Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="17899" /> <!-- Bound Specter Shaper -->
+		<ingredient count="1" id="17899" /> <!-- Bound Specter Shaper -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="23681100" id="57" /> <!-- Adena -->
+		<ingredient count="948" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17945" /> <!-- Bound Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="17902" /> <!-- Bound Specter Avenger -->
+		<ingredient count="1" id="17902" /> <!-- Bound Specter Avenger -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="23681100" id="57" /> <!-- Adena -->
+		<ingredient count="948" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17946" /> <!-- Bound Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="17291" /> <!-- Requiem Cutter -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="7043198" id="57" /> <!-- Adena -->
+		<ingredient count="188" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17301" /> <!-- Requiem Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="17290" /> <!-- Requiem Shaper -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="7043198" id="57" /> <!-- Adena -->
+		<ingredient count="188" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17302" /> <!-- Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="17293" /> <!-- Requiem Avenger -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="7043198" id="57" /> <!-- Adena -->
+		<ingredient count="188" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17303" /> <!-- Requiem Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="17291" /> <!-- Requiem Cutter -->
+		<ingredient count="1" id="17291" /> <!-- Requiem Cutter -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="39578190" id="57" /> <!-- Adena -->
+		<ingredient count="1056" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17335" /> <!-- Apocalypse Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="17290" /> <!-- Requiem Shaper -->
+		<ingredient count="1" id="17290" /> <!-- Requiem Shaper -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="39578190" id="57" /> <!-- Adena -->
+		<ingredient count="1056" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17336" /> <!-- Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="17293" /> <!-- Requiem Avenger -->
+		<ingredient count="1" id="17293" /> <!-- Requiem Avenger -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="39578190" id="57" /> <!-- Adena -->
+		<ingredient count="1056" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17337" /> <!-- Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="17325" /> <!-- Apocalypse Cutter -->
+		<ingredient count="1" id="17325" /> <!-- Apocalypse Cutter -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="378898400" id="57" /> <!-- Adena -->
+		<ingredient count="15156" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17393" /> <!-- Specter Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="17324" /> <!-- Apocalypse Shaper -->
+		<ingredient count="1" id="17324" /> <!-- Apocalypse Shaper -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="378898400" id="57" /> <!-- Adena -->
+		<ingredient count="15156" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17394" /> <!-- Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="17327" /> <!-- Apocalypse Avenger -->
+		<ingredient count="1" id="17327" /> <!-- Apocalypse Avenger -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="378898400" id="57" /> <!-- Adena -->
+		<ingredient count="15156" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17395" /> <!-- Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="17383" /> <!-- Specter Cutter -->
+		<ingredient count="1" id="17383" /> <!-- Specter Cutter -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="378898400" id="57" /> <!-- Adena -->
+		<ingredient count="15156" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17427" /> <!-- Amaranthine Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="17382" /> <!-- Specter Shaper -->
+		<ingredient count="1" id="17382" /> <!-- Specter Shaper -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="378898400" id="57" /> <!-- Adena -->
+		<ingredient count="15156" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17428" /> <!-- Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="17385" /> <!-- Specter Avenger -->
+		<ingredient count="1" id="17385" /> <!-- Specter Avenger -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="378898400" id="57" /> <!-- Adena -->
+		<ingredient count="15156" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17429" /> <!-- Amaranthine Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="17968" /> <!-- Blessed Requiem Cutter -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="8375814" id="57" /> <!-- Adena -->
+		<ingredient count="224" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17978" /> <!-- Blessed Requiem Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="17967" /> <!-- Blessed Requiem Shaper -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="8375814" id="57" /> <!-- Adena -->
+		<ingredient count="224" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17979" /> <!-- Blessed Requiem Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="17970" /> <!-- Blessed Requiem Avenger -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="8375814" id="57" /> <!-- Adena -->
+		<ingredient count="224" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="17980" /> <!-- Blessed Requiem Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="17968" /> <!-- Blessed Requiem Cutter -->
+		<ingredient count="1" id="17968" /> <!-- Blessed Requiem Cutter -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="42086194" id="57" /> <!-- Adena -->
+		<ingredient count="1123" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="18012" /> <!-- Blessed Apocalypse Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="17967" /> <!-- Blessed Requiem Shaper -->
+		<ingredient count="1" id="17967" /> <!-- Blessed Requiem Shaper -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="42086194" id="57" /> <!-- Adena -->
+		<ingredient count="1123" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="18013" /> <!-- Blessed Apocalypse Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="17970" /> <!-- Blessed Requiem Avenger -->
+		<ingredient count="1" id="17970" /> <!-- Blessed Requiem Avenger -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="42086194" id="57" /> <!-- Adena -->
+		<ingredient count="1123" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="18014" /> <!-- Blessed Apocalypse Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="18002" /> <!-- Blessed Apocalypse Cutter -->
+		<ingredient count="1" id="18002" /> <!-- Blessed Apocalypse Cutter -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="473623000" id="57" /> <!-- Adena -->
+		<ingredient count="18945" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="18046" /> <!-- Blessed Specter Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="18001" /> <!-- Blessed Apocalypse Shaper -->
+		<ingredient count="1" id="18001" /> <!-- Blessed Apocalypse Shaper -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="473623000" id="57" /> <!-- Adena -->
+		<ingredient count="18945" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="18047" /> <!-- Blessed Specter Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="18004" /> <!-- Blessed Apocalypse Avenger -->
+		<ingredient count="1" id="18004" /> <!-- Blessed Apocalypse Avenger -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="473623000" id="57" /> <!-- Adena -->
+		<ingredient count="18945" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="18048" /> <!-- Blessed Specter Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient count="1" id="18036" /> <!-- Blessed Specter Cutter -->
+		<ingredient count="1" id="18036" /> <!-- Blessed Specter Cutter -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="473623000" id="57" /> <!-- Adena -->
+		<ingredient count="18945" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="18080" /> <!-- Blessed Amaranthine Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="18035" /> <!-- Blessed Specter Shaper -->
+		<ingredient count="1" id="18035" /> <!-- Blessed Specter Shaper -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="473623000" id="57" /> <!-- Adena -->
+		<ingredient count="18945" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="18081" /> <!-- Blessed Amaranthine Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="18038" /> <!-- Blessed Specter Avenger -->
+		<ingredient count="1" id="18038" /> <!-- Blessed Specter Avenger -->
+		<ingredient count="1" id="30408" /> <!-- Dual Weapon Crafting Stamp (R-grade) -->
+		<ingredient count="473623000" id="57" /> <!-- Adena -->
+		<ingredient count="18945" id="17371" /> <!-- Crystal (R-grade) -->
+		<production count="1" id="18082" /> <!-- Blessed Amaranthine Dual Blunt Weapon -->
+	</item>
 </list>

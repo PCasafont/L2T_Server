@@ -17,10 +17,9 @@ package l2server.gameserver.templates.item;
 
 /**
  * @author mkizub
- *         <BR>Description of Weapon Type
+ * <BR>Description of Weapon Type
  */
-public enum L2WeaponType implements L2ItemType
-{
+public enum L2WeaponType implements L2ItemType {
 	SWORD("Sword"),
 	BLUNT("Blunt"),
 	DAGGER("Dagger"),
@@ -53,8 +52,7 @@ public enum L2WeaponType implements L2ItemType
 	 *
 	 * @param name : String designating the name of the WeaponType
 	 */
-	L2WeaponType(String name)
-	{
+	L2WeaponType(String name) {
 		mask = 1 << ordinal();
 		this.name = name;
 	}
@@ -65,8 +63,7 @@ public enum L2WeaponType implements L2ItemType
 	 * @return int : ID of the item
 	 */
 	@Override
-	public int mask()
-	{
+	public int mask() {
 		return mask;
 	}
 
@@ -76,8 +73,7 @@ public enum L2WeaponType implements L2ItemType
 	 * @return String
 	 */
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return name;
 	}
 

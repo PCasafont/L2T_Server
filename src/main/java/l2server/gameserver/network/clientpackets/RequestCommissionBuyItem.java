@@ -20,27 +20,23 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Erlandys
  */
-public final class RequestCommissionBuyItem extends L2GameClientPacket
-{
-
+public final class RequestCommissionBuyItem extends L2GameClientPacket {
+	
 	@SuppressWarnings("unused")
 	private long auctionID;
 	@SuppressWarnings("unused")
 	private int category;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		auctionID = readQ();
 		category = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 		}
 
 		/*AuctionManager am = AuctionManager.getInstance();

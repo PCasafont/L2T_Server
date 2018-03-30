@@ -15,15 +15,14 @@
 
 package l2server.gameserver.network.serverpackets;
 
-public class ExSendUIEvent extends L2GameServerPacket
-{
+public class ExSendUIEvent extends L2GameServerPacket {
 	private int uiType;
 	private int isIncrease;
 	private int startTime;
 	private int endTime;
 	private String text;
 	private int npcString;
-
+	
 	//UI Types
 	public static int TYPE_COUNT_DOWN = 0;
 	public static int TYPE_REMOVE = 1;
@@ -31,7 +30,7 @@ public class ExSendUIEvent extends L2GameServerPacket
 	public static int TYPE_NORNIL = 5;
 	public static int TYPE_DRACO_INCUBATION_1 = 6;
 	public static int TYPE_DRACO_INCUBATION_2 = 7;
-
+	
 	/**
 	 * Used for cold down types.
 	 *
@@ -41,8 +40,7 @@ public class ExSendUIEvent extends L2GameServerPacket
 	 * @param endTime
 	 * @param text
 	 */
-	public ExSendUIEvent(int uiType, int isIncrease, int startTime, int endTime, String text)
-	{
+	public ExSendUIEvent(int uiType, int isIncrease, int startTime, int endTime, String text) {
 		this.uiType = uiType;
 		this.isIncrease = isIncrease;
 		this.startTime = startTime;
@@ -50,7 +48,7 @@ public class ExSendUIEvent extends L2GameServerPacket
 		this.text = text;
 		npcString = -1;
 	}
-
+	
 	/**
 	 * Used for cold down types.
 	 *
@@ -60,8 +58,7 @@ public class ExSendUIEvent extends L2GameServerPacket
 	 * @param endTime
 	 * @param npcStringId
 	 */
-	public ExSendUIEvent(int uiType, int isIncrease, int startTime, int endTime, int npcStringId)
-	{
+	public ExSendUIEvent(int uiType, int isIncrease, int startTime, int endTime, int npcStringId) {
 		this.uiType = uiType;
 		this.isIncrease = isIncrease;
 		this.startTime = startTime;
@@ -69,7 +66,7 @@ public class ExSendUIEvent extends L2GameServerPacket
 		text = "";
 		npcString = npcStringId;
 	}
-
+	
 	/**
 	 * Used for BAR UIs
 	 *
@@ -78,8 +75,7 @@ public class ExSendUIEvent extends L2GameServerPacket
 	 * @param maxPoints
 	 * @param npcStringId
 	 */
-	public ExSendUIEvent(int uiType, int currentPoints, int maxPoints, int npcStringId)
-	{
+	public ExSendUIEvent(int uiType, int currentPoints, int maxPoints, int npcStringId) {
 		this.uiType = uiType;
 		isIncrease = -1;
 		startTime = currentPoints;
@@ -87,22 +83,19 @@ public class ExSendUIEvent extends L2GameServerPacket
 		text = "";
 		npcString = npcStringId;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
-		if (getClient() == null || getClient().getActiveChar() == null)
-		{
+	protected final void writeImpl() {
+		if (getClient() == null || getClient().getActiveChar() == null) {
 			return;
 		}
-
+		
 		writeD(getClient().getActiveChar().getObjectId());
 		writeD(uiType);
 		writeD(0x00); // unknown
 		writeD(0x00); // unknown
-
-		switch (uiType)
-		{
+		
+		switch (uiType) {
 			case 2:
 				writeS(String.valueOf(startTime)); // Seconds
 				writeS(String.valueOf(endTime)); // % done
@@ -110,9 +103,9 @@ public class ExSendUIEvent extends L2GameServerPacket
 				writeD(0x00); // % symbol on the bar
 				writeD(npcString); //npcString
 				writeD(122520);
-
+				
 				break;
-
+			
 			case 5:
 				writeS(String.valueOf(isIncrease));
 				writeS(String.valueOf(startTime));
@@ -120,9 +113,9 @@ public class ExSendUIEvent extends L2GameServerPacket
 				writeD(0x00);
 				//	writeD(0x00);
 				writeD(npcString);
-
+				
 				break;
-
+			
 			default:
 				writeS(String.valueOf(isIncrease)); // "0": count negative, "1": count positive
 				writeS(String.valueOf(startTime / 60)); // timer starting minute(s)
@@ -130,11 +123,9 @@ public class ExSendUIEvent extends L2GameServerPacket
 				writeD(0x00); // unknown
 				writeD(npcString); // TODO: npcString
 				writeS(text); // text above timer
-				writeS(String.valueOf(
-						endTime / 60)); // timer length minute(s) (timer will disappear 10 seconds before it ends)
-				writeS(String.valueOf(
-						endTime % 60)); // timer length second(s) (timer will disappear 10 seconds before it ends)
-
+				writeS(String.valueOf(endTime / 60)); // timer length minute(s) (timer will disappear 10 seconds before it ends)
+				writeS(String.valueOf(endTime % 60)); // timer length second(s) (timer will disappear 10 seconds before it ends)
+				
 				break;
 		}
 	}

@@ -15,20 +15,17 @@
 
 package l2server.gameserver.network.serverpackets;
 
-public final class SurrenderPledgeWar extends L2GameServerPacket
-{
+public final class SurrenderPledgeWar extends L2GameServerPacket {
 	private String pledgeName;
 	private String playerName;
-
-	public SurrenderPledgeWar(String pledge, String charName)
-	{
+	
+	public SurrenderPledgeWar(String pledge, String charName) {
 		pledgeName = pledge;
 		playerName = charName;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeS(pledgeName);
 		writeS(playerName);
 	}

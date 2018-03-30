@@ -26,31 +26,28 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @author mrTJO
  */
-public class ExCubeGameAddPlayer extends L2GameServerPacket
-{
+public class ExCubeGameAddPlayer extends L2GameServerPacket {
 	L2PcInstance player;
 	boolean isRedTeam;
-
+	
 	/**
 	 * Add Player To Minigame Waiting List
 	 *
 	 * @param player    Player Instance
 	 * @param isRedTeam Is Player from Red Team?
 	 */
-	public ExCubeGameAddPlayer(L2PcInstance player, boolean isRedTeam)
-	{
+	public ExCubeGameAddPlayer(L2PcInstance player, boolean isRedTeam) {
 		this.player = player;
 		this.isRedTeam = isRedTeam;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(0xffffffff);
-
+		
 		writeD(isRedTeam ? 0x01 : 0x00);
 		writeD(player.getObjectId());
 		writeS(player.getName());

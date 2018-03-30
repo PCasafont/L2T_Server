@@ -20,8 +20,7 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.1.4.2 $ $Date: 2005/03/27 15:29:40 $
  */
-public class Dice extends L2GameServerPacket
-{
+public class Dice extends L2GameServerPacket {
 	private int charObjId;
 	private int itemId;
 	private int number;
@@ -32,8 +31,7 @@ public class Dice extends L2GameServerPacket
 	/**
 	 * 0xd4 Dice		 dddddd
 	 */
-	public Dice(int charObjId, int itemId, int number, int x, int y, int z)
-	{
+	public Dice(int charObjId, int itemId, int number, int x, int y, int z) {
 		this.charObjId = charObjId;
 		this.itemId = itemId;
 		this.number = number;
@@ -43,8 +41,7 @@ public class Dice extends L2GameServerPacket
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(charObjId); //object id of player
 		writeD(itemId); //	item id of dice (spade)  4625,4626,4627,4628
 		writeD(number); //number rolled

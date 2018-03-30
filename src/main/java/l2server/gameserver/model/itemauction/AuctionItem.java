@@ -24,8 +24,7 @@ import l2server.gameserver.templates.item.L2Item;
 /**
  * @author Forsaiken
  */
-public final class AuctionItem
-{
+public final class AuctionItem {
 	private final int auctionItemId;
 	private final int auctionLength;
 	private final long auctionInitBid;
@@ -34,8 +33,12 @@ public final class AuctionItem
 	private final long itemCount;
 	private final StatsSet itemExtra;
 
-	public AuctionItem(final int auctionItemId, final int auctionLength, final long auctionInitBid, final int itemId, final long itemCount, final StatsSet itemExtra)
-	{
+	public AuctionItem(final int auctionItemId,
+	                   final int auctionLength,
+	                   final long auctionInitBid,
+	                   final int itemId,
+	                   final long itemCount,
+	                   final StatsSet itemExtra) {
 		this.auctionItemId = auctionItemId;
 		this.auctionLength = auctionLength;
 		this.auctionInitBid = auctionInitBid;
@@ -45,51 +48,41 @@ public final class AuctionItem
 		this.itemExtra = itemExtra;
 	}
 
-	public final boolean checkItemExists()
-	{
+	public final boolean checkItemExists() {
 		final L2Item item = ItemTable.getInstance().getTemplate(itemId);
 		return item != null;
 	}
 
-	public final int getAuctionItemId()
-	{
+	public final int getAuctionItemId() {
 		return auctionItemId;
 	}
 
-	public final int getAuctionLength()
-	{
+	public final int getAuctionLength() {
 		return auctionLength;
 	}
 
-	public final long getAuctionInitBid()
-	{
+	public final long getAuctionInitBid() {
 		return auctionInitBid;
 	}
 
-	public final int getItemId()
-	{
+	public final int getItemId() {
 		return itemId;
 	}
 
-	public final long getItemCount()
-	{
+	public final long getItemCount() {
 		return itemCount;
 	}
 
-	public final L2ItemInstance createNewItemInstance()
-	{
+	public final L2ItemInstance createNewItemInstance() {
 		final L2ItemInstance item = ItemTable.getInstance().createItem("ItemAuction", itemId, itemCount, null, null);
 
 		final int enchantLevel = itemExtra.getInteger("enchant_level", 0);
 		item.setEnchantLevel(enchantLevel);
 
 		final int augmentationId = itemExtra.getInteger("augmentation_id", 0);
-		if (augmentationId != 0)
-		{
-			@SuppressWarnings("unused") final int augmentationSkillId =
-					itemExtra.getInteger("augmentation_skill_id", 0);
-			@SuppressWarnings("unused") final int augmentationSkillLevel =
-					itemExtra.getInteger("augmentation_skill_lvl", 0);
+		if (augmentationId != 0) {
+			@SuppressWarnings("unused") final int augmentationSkillId = itemExtra.getInteger("augmentation_skill_id", 0);
+			@SuppressWarnings("unused") final int augmentationSkillLevel = itemExtra.getInteger("augmentation_skill_lvl", 0);
 			item.setAugmentation(new L2Augmentation(augmentationId));
 		}
 

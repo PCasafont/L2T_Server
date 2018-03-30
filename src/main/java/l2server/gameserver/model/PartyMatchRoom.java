@@ -27,8 +27,7 @@ import java.util.List;
 /**
  * @author Gnacik
  */
-public class PartyMatchRoom
-{
+public class PartyMatchRoom {
 	private int id;
 	private String title;
 	private int loot;
@@ -38,8 +37,7 @@ public class PartyMatchRoom
 	private int maxmem;
 	private final List<L2PcInstance> members = new ArrayList<>();
 
-	public PartyMatchRoom(int id, String title, int loot, int minlvl, int maxlvl, int maxmem, L2PcInstance owner)
-	{
+	public PartyMatchRoom(int id, String title, int loot, int minlvl, int maxlvl, int maxmem, L2PcInstance owner) {
 		this.id = id;
 		this.title = title;
 		this.loot = loot;
@@ -50,38 +48,28 @@ public class PartyMatchRoom
 		members.add(owner);
 	}
 
-	public List<L2PcInstance> getPartyMembers()
-	{
+	public List<L2PcInstance> getPartyMembers() {
 		return members;
 	}
 
-	public void addMember(L2PcInstance player)
-	{
+	public void addMember(L2PcInstance player) {
 		members.add(player);
 	}
 
-	public void deleteMember(L2PcInstance player)
-	{
-		if (player != getOwner())
-		{
+	public void deleteMember(L2PcInstance player) {
+		if (player != getOwner()) {
 			members.remove(player);
 			notifyMembersAboutExit(player);
-		}
-		else if (members.size() == 1)
-		{
+		} else if (members.size() == 1) {
 			PartyMatchRoomList.getInstance().deleteRoom(id);
-		}
-		else
-		{
+		} else {
 			changeLeader(members.get(1));
 			deleteMember(player);
 		}
 	}
 
-	public void notifyMembersAboutExit(L2PcInstance player)
-	{
-		for (L2PcInstance member : getPartyMembers())
-		{
+	public void notifyMembersAboutExit(L2PcInstance player) {
+		for (L2PcInstance member : getPartyMembers()) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_LEFT_PARTY_ROOM);
 			sm.addCharName(player);
 			member.sendPacket(sm);
@@ -89,8 +77,7 @@ public class PartyMatchRoom
 		}
 	}
 
-	public void changeLeader(L2PcInstance newLeader)
-	{
+	public void changeLeader(L2PcInstance newLeader) {
 		// Get current leader
 		L2PcInstance oldLeader = members.get(0);
 		// Remove new leader
@@ -100,88 +87,72 @@ public class PartyMatchRoom
 		// Add old leader as normal member
 		members.add(oldLeader);
 		// Broadcast change
-		for (L2PcInstance member : getPartyMembers())
-		{
+		for (L2PcInstance member : getPartyMembers()) {
 			member.sendPacket(new ExManagePartyRoomMember(newLeader, this, 1));
 			member.sendPacket(new ExManagePartyRoomMember(oldLeader, this, 1));
 			member.sendPacket(SystemMessageId.PARTY_ROOM_LEADER_CHANGED);
 		}
 	}
 
-	public int getId()
-	{
+	public int getId() {
 		return id;
 	}
 
-	public int getLootType()
-	{
+	public int getLootType() {
 		return loot;
 	}
 
-	public int getMinLvl()
-	{
+	public int getMinLvl() {
 		return minlvl;
 	}
 
-	public int getMaxLvl()
-	{
+	public int getMaxLvl() {
 		return maxlvl;
 	}
 
-	public int getLocation()
-	{
+	public int getLocation() {
 		return location;
 	}
 
-	public int getMembers()
-	{
+	public int getMembers() {
 		return members.size();
 	}
 
-	public int getMaxMembers()
-	{
+	public int getMaxMembers() {
 		return maxmem;
 	}
 
-	public String getTitle()
-	{
+	public String getTitle() {
 		return title;
 	}
 
-	public L2PcInstance getOwner()
-	{
+	public L2PcInstance getOwner() {
 		return members.get(0);
 	}
 
 	/* SET  */
 
-	public void setMinLvl(int minlvl)
-	{
+	public void setMinLvl(int minlvl) {
 		this.minlvl = minlvl;
 	}
 
-	public void setMaxLvl(int maxlvl)
-	{
+	public void setMaxLvl(int maxlvl) {
 		this.maxlvl = maxlvl;
 	}
 
-	public void setLocation(int loc)
-	{
+	public void setLocation(int loc) {
 		location = loc;
 	}
 
-	public void setLootType(int loot)
-	{
+	public void setLootType(int loot) {
 		this.loot = loot;
 	}
 
-	public void setMaxMembers(int maxmem)
-	{
+	public void setMaxMembers(int maxmem) {
 		this.maxmem = maxmem;
 	}
 
-	public void setTitle(String title)
-	{
+	public void setTitle(String title) {
 		this.title = title;
 	}
 }

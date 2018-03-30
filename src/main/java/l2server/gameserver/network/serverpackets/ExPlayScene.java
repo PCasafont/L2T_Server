@@ -20,14 +20,12 @@ package l2server.gameserver.network.serverpackets;
  *
  * @author devScarlet & mrTJO
  */
-public class ExPlayScene extends L2GameServerPacket
-{
-
+public class ExPlayScene extends L2GameServerPacket {
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 	}
 }

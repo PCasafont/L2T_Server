@@ -28,8 +28,7 @@ import java.util.logging.Level;
 /**
  * @author Nik
  */
-public class hitConditionBonus
-{
+public class hitConditionBonus {
 
 	private static int frontBonus = 0;
 	private static int sideBonus = 0;
@@ -40,38 +39,28 @@ public class hitConditionBonus
 
 	//private static int rainBonus = 0;
 
-	protected static double getConditionBonus(L2Character attacker, L2Character target)
-	{
+	protected static double getConditionBonus(L2Character attacker, L2Character target) {
 		double mod = 100;
 		// Get high or low bonus
-		if (attacker.getZ() - target.getZ() > 50)
-		{
+		if (attacker.getZ() - target.getZ() > 50) {
 			mod += hitConditionBonus.highBonus;
-		}
-		else if (attacker.getZ() - target.getZ() < -50)
-		{
+		} else if (attacker.getZ() - target.getZ() < -50) {
 			mod += hitConditionBonus.lowBonus;
 		}
 
 		// Get weather bonus
-		if (TimeController.getInstance().isNowNight())
-		{
+		if (TimeController.getInstance().isNowNight()) {
 			mod += hitConditionBonus.darkBonus;
 		}
 		//else if () No rain support yet.
 		//chance += hitConditionBonus.rainBonus;
 
 		// Get side bonus
-		if (attacker.isBehindTarget())
-		{
+		if (attacker.isBehindTarget()) {
 			mod += hitConditionBonus.backBonus;
-		}
-		else if (attacker.isInFrontOfTarget())
-		{
+		} else if (attacker.isInFrontOfTarget()) {
 			mod += hitConditionBonus.frontBonus;
-		}
-		else
-		{
+		} else {
 			mod += hitConditionBonus.sideBonus;
 		}
 
@@ -79,67 +68,43 @@ public class hitConditionBonus
 		return Math.max(mod / 100, 0);
 	}
 
-	static
-	{
+	static {
 		final File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/hitConditionBonus.xml");
 
-		if (file.exists())
-		{
+		if (file.exists()) {
 			XmlDocument doc = new XmlDocument(file);
 			String name;
 			XmlNode list = doc.getRoot();
-            if (list.getName().equalsIgnoreCase("hitConditionBonus") || list.getName().equalsIgnoreCase("list"))
-            {
-                for (XmlNode cond : list.getChildren())
-                {
-                    int bonus = 0;
-                    name = cond.getName();
-                    try
-                    {
-                        if (cond.hasAttributes())
-                        {
-                            bonus = cond.getInt("val");
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Log.log(Level.WARNING, "[hitConditionBonus] Could not parse condition: " + e.getMessage(),
-                                e);
-                    }
-                    finally
-                    {
-                        if ("front".equals(name))
-                        {
-                            frontBonus = bonus;
-                        }
-                        else if ("side".equals(name))
-                        {
-                            sideBonus = bonus;
-                        }
-                        else if ("back".equals(name))
-                        {
-                            backBonus = bonus;
-                        }
-                        else if ("high".equals(name))
-                        {
-                            highBonus = bonus;
-                        }
-                        else if ("low".equals(name))
-                        {
-                            lowBonus = bonus;
-                        }
-                        else if ("dark".equals(name))
-                        {
-                            darkBonus = bonus;
-                        }
-                        //else if ("rain".equals(name))
-                        //rainBonus = bonus;
-                    }
-                }
-            }
-		}
-		else
-		{
+			if (list.getName().equalsIgnoreCase("hitConditionBonus") || list.getName().equalsIgnoreCase("list")) {
+				for (XmlNode cond : list.getChildren()) {
+					int bonus = 0;
+					name = cond.getName();
+					try {
+						if (cond.hasAttributes()) {
+							bonus = cond.getInt("val");
+						}
+					} catch (Exception e) {
+						Log.log(Level.WARNING, "[hitConditionBonus] Could not parse condition: " + e.getMessage(), e);
+					} finally {
+						if ("front".equals(name)) {
+							frontBonus = bonus;
+						} else if ("side".equals(name)) {
+							sideBonus = bonus;
+						} else if ("back".equals(name)) {
+							backBonus = bonus;
+						} else if ("high".equals(name)) {
+							highBonus = bonus;
+						} else if ("low".equals(name)) {
+							lowBonus = bonus;
+						} else if ("dark".equals(name)) {
+							darkBonus = bonus;
+						}
+						//else if ("rain".equals(name))
+						//rainBonus = bonus;
+					}
+				}
+			}
+		} else {
 			throw new Error("[hitConditionBonus] File not found: " + file.getName());
 		}
 	}

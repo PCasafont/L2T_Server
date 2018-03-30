@@ -32,56 +32,40 @@ import java.util.Calendar;
  *
  * @version $Revision: 1.5.2.1.2.4 $ $Date: 2005/04/11 10:06:06 $
  */
-public class AdminShutdown implements IAdminCommandHandler
-{
+public class AdminShutdown implements IAdminCommandHandler {
 	//private static Logger log = Logger.getLogger(AdminShutdown.class.getName());
-
-	private static final String[] ADMIN_COMMANDS =
-			{"admin_server_shutdown", "admin_server_restart", "admin_server_abort"};
-
+	
+	private static final String[] ADMIN_COMMANDS = {"admin_server_shutdown", "admin_server_restart", "admin_server_abort"};
+	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (command.startsWith("admin_server_shutdown"))
-		{
-			try
-			{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		if (command.startsWith("admin_server_shutdown")) {
+			try {
 				int val = Integer.parseInt(command.substring(22));
 				serverShutdown(activeChar, val, false);
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
+			} catch (StringIndexOutOfBoundsException e) {
 				sendHtmlForm(activeChar);
 			}
-		}
-		else if (command.startsWith("admin_server_restart"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_server_restart")) {
+			try {
 				int val = Integer.parseInt(command.substring(21));
 				serverShutdown(activeChar, val, true);
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
+			} catch (StringIndexOutOfBoundsException e) {
 				sendHtmlForm(activeChar);
 			}
-		}
-		else if (command.startsWith("admin_server_abort"))
-		{
+		} else if (command.startsWith("admin_server_abort")) {
 			serverAbort(activeChar);
 		}
-
+		
 		return true;
 	}
-
+	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
-
-	private void sendHtmlForm(L2PcInstance activeChar)
-	{
+	
+	private void sendHtmlForm(L2PcInstance activeChar) {
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		int t = TimeController.getInstance().getGameTime();
 		int h = t / 60;
@@ -91,23 +75,20 @@ public class AdminShutdown implements IAdminCommandHandler
 		cal.set(Calendar.HOUR_OF_DAY, h);
 		cal.set(Calendar.MINUTE, m);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "admin/shutdown.htm");
-
+		
 		int totalPlayers = L2World.getInstance().getAllPlayersCount();
 		int actualPlayers = 0;
-
-		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
-		{
-			if (!player.isOnline())
-			{
+		
+		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
+			if (!player.isOnline()) {
 				continue;
 			}
-
+			
 			actualPlayers++;
 		}
-
+		
 		adminReply.replace("%count%", totalPlayers + " (" + actualPlayers + ")");
-		adminReply.replace("%used%",
-				String.valueOf(Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()));
+		adminReply.replace("%used%", String.valueOf(Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()));
 		adminReply.replace("%xp%", String.valueOf(Config.RATE_XP));
 		adminReply.replace("%sp%", String.valueOf(Config.RATE_SP));
 		adminReply.replace("%adena%", String.valueOf(Config.RATE_DROP_ITEMS_ID.get(57)));
@@ -115,14 +96,12 @@ public class AdminShutdown implements IAdminCommandHandler
 		adminReply.replace("%time%", String.valueOf(format.format(cal.getTime())));
 		activeChar.sendPacket(adminReply);
 	}
-
-	private void serverShutdown(L2PcInstance activeChar, int seconds, boolean restart)
-	{
+	
+	private void serverShutdown(L2PcInstance activeChar, int seconds, boolean restart) {
 		Shutdown.getInstance().startShutdown(activeChar, seconds, restart);
 	}
-
-	private void serverAbort(L2PcInstance activeChar)
-	{
+	
+	private void serverAbort(L2PcInstance activeChar) {
 		Shutdown.getInstance().abort(activeChar);
 	}
 }

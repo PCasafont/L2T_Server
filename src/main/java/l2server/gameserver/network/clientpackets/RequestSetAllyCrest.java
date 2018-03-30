@@ -29,77 +29,63 @@ import java.util.logging.Logger;
 /**
  * Client packet for setting ally crest.
  */
-public final class RequestSetAllyCrest extends L2GameClientPacket
-{
+public final class RequestSetAllyCrest extends L2GameClientPacket {
 	static Logger log = Logger.getLogger(RequestSetAllyCrest.class.getName());
-
+	
 	private int length;
 	private byte[] data;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		length = readD();
-		if (length > 192)
-		{
+		if (length > 192) {
 			return;
 		}
-
+		
 		data = new byte[length];
 		readB(data);
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (length < 0)
-		{
+		
+		if (length < 0) {
 			activeChar.sendMessage("File transfer error.");
 			return;
 		}
-		if (length > 192)
-		{
+		if (length > 192) {
 			activeChar.sendMessage("The ally crest file size was too big (max 192 bytes).");
 			return;
 		}
-
-		if (activeChar.getAllyId() != 0)
-		{
+		
+		if (activeChar.getAllyId() != 0) {
 			L2Clan leaderclan = ClanTable.getInstance().getClan(activeChar.getAllyId());
-
-			if (activeChar.getClanId() != leaderclan.getClanId() || !activeChar.isClanLeader())
-			{
+			
+			if (activeChar.getClanId() != leaderclan.getClanId() || !activeChar.isClanLeader()) {
 				return;
 			}
-
+			
 			boolean remove = false;
-			if (length == 0 || data.length == 0)
-			{
+			if (length == 0 || data.length == 0) {
 				remove = true;
 			}
-
+			
 			int newId = 0;
-			if (!remove)
-			{
+			if (!remove) {
 				newId = IdFactory.getInstance().getNextId();
 			}
-
-			if (!remove && !CrestCache.getInstance().saveAllyCrest(newId, data))
-			{
-				Log.log(Level.INFO,
-						"Error saving crest for ally " + leaderclan.getAllyName() + " [" + leaderclan.getAllyId() +
-								"]");
+			
+			if (!remove && !CrestCache.getInstance().saveAllyCrest(newId, data)) {
+				Log.log(Level.INFO, "Error saving crest for ally " + leaderclan.getAllyName() + " [" + leaderclan.getAllyId() + "]");
 				return;
 			}
-
+			
 			leaderclan.changeAllyCrest(newId, false);
-
+			
 			activeChar.sendPacket(new AllyCrest(newId));
 		}
 	}

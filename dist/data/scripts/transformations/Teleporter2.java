@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class Teleporter2 extends L2Transformation
-{
+public class Teleporter2 extends L2Transformation {
 	private static final int[] SKILLS = {5656, 5657, 5658, 5491, 8248};
 
-	public Teleporter2()
-	{
+	public Teleporter2() {
 		// id, colRadius, colHeight
 		super(107, 8, 25);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 107 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 107 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		/*
         Commented out until we figure out how to remove the skills properly.
 		What happens if a player transforms at level 40, gets the level 40 version of the skill, then somehow levels up?
@@ -50,13 +45,11 @@ public class Teleporter2 extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
         /*
 		Commented out until we figure out how to remove the skills properly.
 		What happens if a player transforms at level 40, gets the level 40 version of the skill, then somehow levels up?
@@ -79,8 +72,7 @@ public class Teleporter2 extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new Teleporter2());
 	}
 }

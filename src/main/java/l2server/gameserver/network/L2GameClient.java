@@ -66,10 +66,9 @@ import java.util.logging.Logger;
  *
  * @author KenM
  */
-public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> implements Runnable
-{
+public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> implements Runnable {
 	protected static final Logger logAccounting = Logger.getLogger("accounting");
-
+	
 	/**
 	 * CONNECTED	- client has just connected
 	 * AUTHED		- client has authed but doesnt has character attached to it yet
@@ -77,13 +76,14 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	 *
 	 * @author KenM
 	 */
-	public enum GameClientState
-	{
-		CONNECTED, AUTHED, IN_GAME
+	public enum GameClientState {
+		CONNECTED,
+		AUTHED,
+		IN_GAME
 	}
-
+	
 	private GameClientState state;
-
+	
 	// Info
 	private final InetAddress addr;
 	private String accountName;
@@ -91,131 +91,113 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	private L2PcInstance activeChar;
 	private ReentrantLock activeCharLock = new ReentrantLock();
 	private SecondaryPasswordAuth secondaryAuth;
-
+	
 	private boolean isAuthedGG;
 	private long connectionStartTime;
 	private CharSelectInfoPackage[] charSlotMapping = null;
-
+	
 	// floodprotectors
 	private final FloodProtectors floodProtectors = new FloodProtectors(this);
-
+	
 	// Task
 	protected ScheduledFuture<?> autoSaveInDB;
 	protected ScheduledFuture<?> cleanupTask = null;
-
+	
 	private L2GameServerPacket aditionalClosePacket;
-
+	
 	private GameCrypt crypt;
-
+	
 	private ClientStats stats;
-
+	
 	private boolean isDetached = false;
-
+	
 	private boolean protocolOk;
 	private int protocolVersion;
-
+	
 	private final ArrayBlockingQueue<ReceivablePacket<L2GameClient>> packetQueue;
 	private ReentrantLock queueLock = new ReentrantLock();
-
+	
 	private int[][] trace;
-
+	
 	private String hwId;
-
+	
 	private boolean blockDisconnectTask;
-
-	public L2GameClient(MMOConnection<L2GameClient> con)
-	{
+	
+	public L2GameClient(MMOConnection<L2GameClient> con) {
 		super(con);
 		state = GameClientState.CONNECTED;
 		connectionStartTime = System.currentTimeMillis();
 		crypt = new GameCrypt();
 		stats = new ClientStats();
-
+		
 		packetQueue = new ArrayBlockingQueue<>(Config.CLIENT_PACKET_QUEUE_SIZE);
-
-		if (Config.CHAR_STORE_INTERVAL > 0)
-		{
-			autoSaveInDB = ThreadPoolManager.getInstance()
-					.scheduleGeneralAtFixedRate(new AutoSaveTask(), 300000L, Config.CHAR_STORE_INTERVAL * 60000L);
-		}
-		else
-		{
+		
+		if (Config.CHAR_STORE_INTERVAL > 0) {
+			autoSaveInDB =
+					ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new AutoSaveTask(), 300000L, Config.CHAR_STORE_INTERVAL * 60000L);
+		} else {
 			autoSaveInDB = null;
 		}
-
-		try
-		{
+		
+		try {
 			addr = con != null ? con.getInetAddress() : InetAddress.getLocalHost();
-		}
-		catch (UnknownHostException e)
-		{
+		} catch (UnknownHostException e) {
 			throw new Error("Unable to determine localhost address.");
 		}
 	}
-
-	public byte[] enableCrypt()
-	{
+	
+	public byte[] enableCrypt() {
 		byte[] key;
 		key = BlowFishKeygen.getRandomKey();
 		crypt.setKey(key);
 		return key;
 	}
-
-	public GameClientState getState()
-	{
+	
+	public GameClientState getState() {
 		return state;
 	}
-
-	public void setState(GameClientState pState)
-	{
-		if (state != pState)
-		{
+	
+	public void setState(GameClientState pState) {
+		if (state != pState) {
 			state = pState;
 			packetQueue.clear();
 		}
 	}
-
-	public ClientStats getStats()
-	{
+	
+	public ClientStats getStats() {
 		return stats;
 	}
-
+	
 	/**
 	 * Returns cached connection IP address, for checking detached clients.
 	 * For loaded offline traders returns localhost address.
 	 */
-	public InetAddress getConnectionAddress()
-	{
+	public InetAddress getConnectionAddress() {
 		return addr;
 	}
-
-	public long getConnectionStartTime()
-	{
+	
+	public long getConnectionStartTime() {
 		return connectionStartTime;
 	}
-
+	
 	@Override
-	public boolean decrypt(ByteBuffer buf, int size)
-	{
+	public boolean decrypt(ByteBuffer buf, int size) {
 		crypt.decrypt(buf.array(), buf.position(), size);
 		return true;
 	}
-
+	
 	@Override
-	public boolean encrypt(final ByteBuffer buf, final int size)
-	{
+	public boolean encrypt(final ByteBuffer buf, final int size) {
 		crypt.encrypt(buf.array(), buf.position(), size);
 		buf.position(buf.position() + size);
 		return true;
 	}
-
-	public L2PcInstance getActiveChar()
-	{
+	
+	public L2PcInstance getActiveChar() {
 		return activeChar;
 	}
-
-	public void setActiveChar(L2PcInstance pActiveChar)
-	{
+	
+	public void setActiveChar(L2PcInstance pActiveChar) {
 		activeChar = pActiveChar;
 		//JIV remove - done on spawn
 		/*if (activeChar != null)
@@ -223,85 +205,71 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			L2World.getInstance().storeObject(getActiveChar());
 		}*/
 	}
-
-	public ReentrantLock getActiveCharLock()
-	{
+	
+	public ReentrantLock getActiveCharLock() {
 		return activeCharLock;
 	}
-
-	public FloodProtectors getFloodProtectors()
-	{
+	
+	public FloodProtectors getFloodProtectors() {
 		return floodProtectors;
 	}
-
-	public void setGameGuardOk(boolean val)
-	{
+	
+	public void setGameGuardOk(boolean val) {
 		isAuthedGG = val;
 	}
-
-	public boolean isAuthedGG()
-	{
+	
+	public boolean isAuthedGG() {
 		return isAuthedGG;
 	}
-
-	public void setAccountName(String pAccountName)
-	{
+	
+	public void setAccountName(String pAccountName) {
 		accountName = pAccountName;
-
-		if (Config.SECOND_AUTH_ENABLED)
-		{
+		
+		if (Config.SECOND_AUTH_ENABLED) {
 			secondaryAuth = new SecondaryPasswordAuth(this);
 		}
 	}
-
-	public String getAccountName()
-	{
+	
+	public String getAccountName() {
 		return accountName;
 	}
-
-	public void setSessionId(SessionKey sk)
-	{
+	
+	public void setSessionId(SessionKey sk) {
 		sessionId = sk;
 	}
-
-	public SessionKey getSessionId()
-	{
+	
+	public SessionKey getSessionId() {
 		return sessionId;
 	}
-
-	public void sendPacket(L2GameServerPacket gsp)
-	{
+	
+	public void sendPacket(L2GameServerPacket gsp) {
 		if (isDetached) // Temp fix for stuck characters in the loading screen
 		{
 			return;
 		}
-
+		
 		// Packets from invisible chars sends only to GMs
-		if (gsp.getInvisibleCharacter() != 0)
-		{
+		if (gsp.getInvisibleCharacter() != 0) {
 			final L2PcInstance activeChar = getActiveChar();
 			final L2PcInstance target = L2World.getInstance().getPlayer(gsp.getInvisibleCharacter());
-
-			if (activeChar != null && target != null && !activeChar.isGM() && !activeChar.isInSameParty(target))
-			{
+			
+			if (activeChar != null && target != null && !activeChar.isGM() && !activeChar.isInSameParty(target)) {
 				return;
 			}
 		}
-
+		
 		getConnection().sendPacket(gsp);
 		gsp.runImpl();
 	}
-
-	public boolean isDetached()
-	{
+	
+	public boolean isDetached() {
 		return isDetached;
 	}
-
-	public void setDetached(boolean b)
-	{
+	
+	public void setDetached(boolean b) {
 		isDetached = b;
 	}
-
+	
 	/**
 	 * Method to handle character deletion
 	 *
@@ -311,112 +279,87 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	 * <li> 1: character is member of a clan, but not clan leader
 	 * <li> 2: character is clan leader
 	 */
-	public byte markToDeleteChar(int charslot)
-	{
+	public byte markToDeleteChar(int charslot) {
 		int objid = getObjectIdForSlot(charslot);
-
-		if (objid < 0)
-		{
+		
+		if (objid < 0) {
 			return -1;
 		}
-
+		
 		Connection con = null;
-
-		try
-		{
+		
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
-
+			
 			PreparedStatement statement = con.prepareStatement("SELECT clanId FROM characters WHERE charId=?");
 			statement.setInt(1, objid);
 			ResultSet rs = statement.executeQuery();
-
+			
 			rs.next();
-
+			
 			int clanId = rs.getInt(1);
 			byte answer = 0;
-			if (clanId != 0)
-			{
+			if (clanId != 0) {
 				L2Clan clan = ClanTable.getInstance().getClan(clanId);
-
-				if (clan == null)
-				{
+				
+				if (clan == null) {
 					answer = 0; // jeezes!
-				}
-				else if (clan.getLeaderId() == objid)
-				{
+				} else if (clan.getLeaderId() == objid) {
 					answer = 2;
-				}
-				else
-				{
+				} else {
 					answer = 1;
 				}
 			}
-
+			
 			rs.close();
 			statement.close();
-
+			
 			// Setting delete time
-			if (answer == 0)
-			{
-				if (Config.DELETE_DAYS == 0)
-				{
+			if (answer == 0) {
+				if (Config.DELETE_DAYS == 0) {
 					deleteCharByObjId(objid);
-				}
-				else
-				{
+				} else {
 					statement = con.prepareStatement("UPDATE characters SET deletetime=? WHERE charId=?");
-					statement.setLong(1,
-							System.currentTimeMillis() + Config.DELETE_DAYS * 86400000L); // 24*60*60*1000 = 86400000
+					statement.setLong(1, System.currentTimeMillis() + Config.DELETE_DAYS * 86400000L); // 24*60*60*1000 = 86400000
 					statement.setInt(2, objid);
 					statement.execute();
 					statement.close();
 				}
-
+				
 				LogRecord record = new LogRecord(Level.WARNING, "Delete");
 				record.setParameters(new Object[]{objid, L2GameClient.this});
 				logAccounting.log(record);
 			}
-
+			
 			return answer;
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Error updating delete time of character.", e);
 			return -1;
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
-
+	
 	/**
 	 * Save the L2PcInstance to the database.
 	 */
-	public void saveCharToDisk()
-	{
-		try
-		{
+	public void saveCharToDisk() {
+		try {
 			L2PcInstance player = L2GameClient.this.getActiveChar();
-			if (player != null)
-			{
+			if (player != null) {
 				player.store();
 				player.storeRecommendations();
-				if (Config.UPDATE_ITEMS_ON_CHAR_STORE)
-				{
+				if (Config.UPDATE_ITEMS_ON_CHAR_STORE) {
 					player.getInventory().updateDatabase();
 					player.getWarehouse().updateDatabase();
 				}
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Error saving character..", e);
 		}
 	}
-
-	public void markRestoredChar(int charslot)
-	{
+	
+	public void markRestoredChar(int charslot) {
 		//have to make sure active character must be nulled
         /*if (getActiveChar() != null)
 		{
@@ -424,942 +367,782 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			if (Config.DEBUG) Logozo.fine("active Char saved");
 			this.setActiveChar(null);
 		}*/
-
+		
 		int objid = getObjectIdForSlot(charslot);
-		if (objid < 0)
-		{
+		if (objid < 0) {
 			return;
 		}
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("UPDATE characters SET deletetime=0 WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Error restoring character.", e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
-
+		
 		LogRecord record = new LogRecord(Level.WARNING, "Restore");
 		record.setParameters(new Object[]{objid, L2GameClient.this});
 		logAccounting.log(record);
 	}
-
-	public static void deleteCharByObjId(int objid)
-	{
-		if (objid < 0)
-		{
+	
+	public static void deleteCharByObjId(int objid) {
+		if (objid < 0) {
 			return;
 		}
-
+		
 		CharNameTable.getInstance().removeName(objid);
-
+		
 		Connection con = null;
-
-		try
-		{
+		
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement;
-
+			
 			statement = con.prepareStatement("DELETE FROM character_abilities WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_ability_points WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_contacts WHERE charId=? OR contactId=?");
 			statement.setInt(1, objid);
 			statement.setInt(2, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_friends WHERE charId=? OR friendId=?");
 			statement.setInt(1, objid);
 			statement.setInt(2, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_hennas WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_instance_time WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_last_summons WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_macroses WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_mentees WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_norestart_zone_time WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_offline_trade WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_offline_trade_items WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_offline_trade_item_prices WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_premium_items WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_quests WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_quest_global_data WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.executeUpdate();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_raid_points WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_recipebook WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_recipeshoplist WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_reco_bonus WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_shortcuts WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_skills WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_skills_save WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_subclasses WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_tpbookmark WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_ui_actions WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM character_ui_categories WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM heroes WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM item_auction_bid WHERE playerObjId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM olympiad_nobles WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM olympiad_fights WHERE charOneId=? OR charTwoId=?");
 			statement.setInt(1, objid);
 			statement.setInt(2, objid);
 			statement.execute();
 			statement.close();
-
-			statement = con.prepareStatement(
-					"DELETE FROM pets WHERE item_obj_id IN (SELECT object_id FROM items WHERE items.owner_id=?)");
+			
+			statement = con.prepareStatement("DELETE FROM pets WHERE item_obj_id IN (SELECT object_id FROM items WHERE items.owner_id=?)");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
-			statement = con.prepareStatement(
-					"DELETE FROM item_attributes WHERE itemId IN (SELECT object_id FROM items WHERE items.owner_id=?)");
+			
+			statement = con.prepareStatement("DELETE FROM item_attributes WHERE itemId IN (SELECT object_id FROM items WHERE items.owner_id=?)");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
-			statement = con.prepareStatement(
-					"DELETE FROM item_elementals WHERE itemId IN (SELECT object_id FROM items WHERE items.owner_id=?)");
+			
+			statement = con.prepareStatement("DELETE FROM item_elementals WHERE itemId IN (SELECT object_id FROM items WHERE items.owner_id=?)");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM items WHERE owner_id=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-
+			
 			statement = con.prepareStatement("DELETE FROM characters WHERE charId=?");
 			statement.setInt(1, objid);
 			statement.execute();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Error deleting character.", e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
-
-	public L2PcInstance loadCharFromDisk(int charslot)
-	{
+	
+	public L2PcInstance loadCharFromDisk(int charslot) {
 		final int objId = getObjectIdForSlot(charslot);
-		if (objId < 0)
-		{
+		if (objId < 0) {
 			return null;
 		}
-
+		
 		L2PcInstance character = L2World.getInstance().getPlayer(objId);
-		if (character != null)
-		{
+		if (character != null) {
 			// exploit prevention, should not happens in normal way
 			Log.severe("Attempt of double login: " + character.getName() + "(" + objId + ") " + getAccountName());
-			if (character.getClient() != null)
-			{
+			if (character.getClient() != null) {
 				character.getClient().closeNow();
-			}
-			else
-			{
+			} else {
 				character.deleteMe();
 			}
 			return null;
 		}
-
+		
 		character = L2PcInstance.load(objId);
-		if (character != null)
-		{
+		if (character != null) {
 			// preinit some values for each login
 			character.setRunning(); // running is default
 			character.standUp(); // standing is default
-
+			
 			character.refreshOverloaded();
 			character.refreshExpertisePenalty();
 			character.setOnlineStatus(true, false);
-		}
-		else
-		{
+		} else {
 			Log.severe("could not restore in slot: " + charslot);
 		}
-
+		
 		//setCharacter(character);
 		return character;
 	}
-
+	
 	/**
 	 * @param chars
 	 */
-	public void setCharSelection(CharSelectInfoPackage[] chars)
-	{
+	public void setCharSelection(CharSelectInfoPackage[] chars) {
 		charSlotMapping = chars;
 	}
-
-	public CharSelectInfoPackage getCharSelection(int charslot)
-	{
-		if (charSlotMapping == null || charslot < 0 || charslot >= charSlotMapping.length)
-		{
+	
+	public CharSelectInfoPackage getCharSelection(int charslot) {
+		if (charSlotMapping == null || charslot < 0 || charslot >= charSlotMapping.length) {
 			return null;
 		}
 		return charSlotMapping[charslot];
 	}
-
-	public SecondaryPasswordAuth getSecondaryAuth()
-	{
+	
+	public SecondaryPasswordAuth getSecondaryAuth() {
 		return secondaryAuth;
 	}
-
-	public void close(L2GameServerPacket gsp, boolean blockDisconnectTask)
-	{
-		if (getConnection() == null)
-		{
+	
+	public void close(L2GameServerPacket gsp, boolean blockDisconnectTask) {
+		if (getConnection() == null) {
 			return; // offline shop
 		}
-
+		
 		this.blockDisconnectTask = blockDisconnectTask;
-
-		if (blockDisconnectTask)
-		{
+		
+		if (blockDisconnectTask) {
 			cancelAutoSave();
 		}
-
+		
 		close(gsp);
 	}
-
-	public final void cancelAutoSave()
-	{
+	
+	public final void cancelAutoSave() {
 		// we are going to mannually save the char bellow thus we can force the cancel
 		ScheduledFuture<?> future = autoSaveInDB;
 		autoSaveInDB = null;
-		if (future != null)
-		{
+		if (future != null) {
 			future.cancel(false);
 		}
 	}
-
-	public void close(L2GameServerPacket gsp)
-	{
-		if (getConnection() == null)
-		{
+	
+	public void close(L2GameServerPacket gsp) {
+		if (getConnection() == null) {
 			return; // offline shop
 		}
-		if (aditionalClosePacket != null)
-		{
+		if (aditionalClosePacket != null) {
 			getConnection().close(new L2GameServerPacket[]{aditionalClosePacket, gsp});
-		}
-		else
-		{
+		} else {
 			getConnection().close(gsp);
 		}
 	}
-
-	public void close(L2GameServerPacket[] gspArray)
-	{
-		if (getConnection() == null)
-		{
+	
+	public void close(L2GameServerPacket[] gspArray) {
+		if (getConnection() == null) {
 			return; // ofline shop
 		}
 		getConnection().close(gspArray);
 	}
-
+	
 	/**
 	 * @param charslot
 	 * @return
 	 */
-	private int getObjectIdForSlot(int charslot)
-	{
+	private int getObjectIdForSlot(int charslot) {
 		final CharSelectInfoPackage info = getCharSelection(charslot);
-		if (info == null)
-		{
-			Log.warning(toString() + " tried to delete Character in slot " + charslot +
-					" but no characters exits at that slot.");
+		if (info == null) {
+			Log.warning(toString() + " tried to delete Character in slot " + charslot + " but no characters exits at that slot.");
 			return -1;
 		}
 		return info.getObjectId();
 	}
-
+	
 	@Override
-	protected void onForcedDisconnection()
-	{
+	protected void onForcedDisconnection() {
 		LogRecord record = new LogRecord(Level.WARNING, "Disconnected abnormally");
 		record.setParameters(new Object[]{L2GameClient.this});
 		logAccounting.log(record);
 	}
-
+	
 	@Override
-	protected void onDisconnection()
-	{
-		if (blockDisconnectTask)
-		{
+	protected void onDisconnection() {
+		if (blockDisconnectTask) {
 			cancelAutoSave();
 			return;
 		}
-
+		
 		// no long running tasks here, do it async
-		try
-		{
+		try {
 			ThreadPoolManager.getInstance().executeTask(new DisconnectTask());
-		}
-		catch (RejectedExecutionException e)
-		{
+		} catch (RejectedExecutionException e) {
 			// server is closing
 		}
 	}
-
+	
 	/**
 	 * Close client connection with {@link ServerClose} packet
 	 */
-	public void closeNow()
-	{
+	public void closeNow() {
 		isDetached = true; // prevents more packets execution
 		close(ServerClose.STATIC_PACKET);
-		synchronized (this)
-		{
-			if (cleanupTask != null)
-			{
+		synchronized (this) {
+			if (cleanupTask != null) {
 				cancelCleanup();
 			}
 			cleanupTask = ThreadPoolManager.getInstance().scheduleGeneral(new CleanupTask(), 0); //instant
 		}
 	}
-
+	
 	/**
 	 * Produces the best possible string representation of this client.
 	 */
 	@Override
-	public String toString()
-	{
-		try
-		{
+	public String toString() {
+		try {
 			InetAddress address = getConnection().getInetAddress();
-			switch (getState())
-			{
+			switch (getState()) {
 				case CONNECTED:
 					return "[IP: " + (address == null ? "disconnected" : address.getHostAddress()) + "]";
 				case AUTHED:
-					return "[Account: " + getAccountName() + " - IP: " +
-							(address == null ? "disconnected" : address.getHostAddress()) + "]";
+					return "[Account: " + getAccountName() + " - IP: " + (address == null ? "disconnected" : address.getHostAddress()) + "]";
 				case IN_GAME:
-					return "[Character: " + (getActiveChar() == null ? "disconnected" :
-							getActiveChar().getName() + "[" + getActiveChar().getObjectId() + "]") + " - Account: " +
-							getAccountName() + " - IP: " +
-							(address == null ? "disconnected" : address.getHostAddress()) + "]";
+					return "[Character: " +
+							(getActiveChar() == null ? "disconnected" : getActiveChar().getName() + "[" + getActiveChar().getObjectId() + "]") +
+							" - Account: " + getAccountName() + " - IP: " + (address == null ? "disconnected" : address.getHostAddress()) + "]";
 				default:
 					throw new IllegalStateException("Missing state on switch");
 			}
-		}
-		catch (NullPointerException e)
-		{
+		} catch (NullPointerException e) {
 			return "[Character read failed due to disconnect]";
 		}
 	}
-
-	class DisconnectTask implements Runnable
-	{
+	
+	class DisconnectTask implements Runnable {
 		/**
 		 * @see java.lang.Runnable#run()
 		 */
 		@Override
-		public void run()
-		{
-			if (blockDisconnectTask)
-			{
+		public void run() {
+			if (blockDisconnectTask) {
 				cancelAutoSave();
 				return;
 			}
 			boolean fast = true;
-			try
-			{
+			try {
 				final L2PcInstance player = getActiveChar();
-				if (player != null && !isDetached())
-				{
+				if (player != null && !isDetached()) {
 					getActiveChar().storeZoneRestartLimitTime();
 					setDetached(true);
-
-					if (offlineModeConditions(getActiveChar()))
-					{
+					
+					if (offlineModeConditions(getActiveChar())) {
 						player.leaveParty();
 						player.setIsInvul(true);
-
-						if (Config.OFFLINE_SET_NAME_COLOR)
-						{
+						
+						if (Config.OFFLINE_SET_NAME_COLOR) {
 							player.getAppearance().setNameColor(Config.OFFLINE_NAME_COLOR);
 							player.broadcastUserInfo();
 						}
-
-						if (player.getOfflineStartTime() == 0)
-						{
+						
+						if (player.getOfflineStartTime() == 0) {
 							player.setOfflineStartTime(System.currentTimeMillis());
 						}
-
+						
 						// Try to reduce the graphical lag from offline shops
-						if (player.getSummons() != null)
-						{
-							for (L2SummonInstance summon : player.getSummons())
-							{
-								if (summon == null)
-								{
+						if (player.getSummons() != null) {
+							for (L2SummonInstance summon : player.getSummons()) {
+								if (summon == null) {
 									continue;
 								}
-
+								
 								summon.unSummon(player);
 							}
 						}
-
-						if (player.getPet() != null)
-						{
+						
+						if (player.getPet() != null) {
 							player.getPet().unSummon(player);
 						}
-
-						if (player.getAgathionId() != 0)
-						{
+						
+						if (player.getAgathionId() != 0) {
 							player.setAgathionId(0);
 							player.broadcastUserInfo();
 						}
-
+						
 						//Turn off toggles
-						for (L2Abnormal eff : player.getAllEffects())
-						{
-							if (eff == null || eff.getSkill() == null)
-							{
+						for (L2Abnormal eff : player.getAllEffects()) {
+							if (eff == null || eff.getSkill() == null) {
 								continue;
 							}
-
-							if (eff.getSkill().isToggle())
-							{
+							
+							if (eff.getSkill().isToggle()) {
 								eff.exit();
 							}
 						}
-
+						
 						LogRecord record = new LogRecord(Level.INFO, "Entering offline mode");
 						record.setParameters(new Object[]{L2GameClient.this});
 						logAccounting.log(record);
 						return;
 					}
-
-					if (player.isInCombat() || player.isLocked())
-					{
+					
+					if (player.isInCombat() || player.isLocked()) {
 						fast = false;
 					}
 				}
-				if (ArenaManager.getInstance().isInFight(player)){
-
+				if (ArenaManager.getInstance().isInFight(player)) {
+					
 					Fighter fighter = ArenaManager.getInstance().getFighter(player);
-					if (fighter != null){
+					if (fighter != null) {
 						fighter.onDisconnect();
 					}
 				}
-
+				
 				cleanMe(fast);
-			}
-			catch (Exception e1)
-			{
+			} catch (Exception e1) {
 				Log.log(Level.WARNING, "Error while disconnecting client.", e1);
 			}
 		}
 	}
-
+	
 	/**
 	 * @param player the player to be check.
 	 * @return {@code true} if the player is allowed to remain as off-line shop.
 	 */
-	private boolean offlineModeConditions(L2PcInstance player)
-	{
+	private boolean offlineModeConditions(L2PcInstance player) {
 		boolean canSetShop = false;
-		if (player.isInOlympiadMode() || player.getInstanceId() != 0 || player.isInJail() ||
-				player.getVehicle() != null || EventsManager.getInstance().isPlayerParticipant(player.getObjectId()) ||
-				player.getEvent() != null)
-		{
+		if (player.isInOlympiadMode() || player.getInstanceId() != 0 || player.isInJail() || player.getVehicle() != null ||
+				EventsManager.getInstance().isPlayerParticipant(player.getObjectId()) || player.getEvent() != null) {
 			return false;
 		}
-
-		if (Config.OFFLINE_TRADE_ENABLE && (player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_SELL ||
-				player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_BUY ||
-				player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_CUSTOM_SELL))
-		{
+		
+		if (Config.OFFLINE_TRADE_ENABLE &&
+				(player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_SELL || player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_BUY ||
+						player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_CUSTOM_SELL)) {
+			canSetShop = true;
+		} else if (Config.OFFLINE_CRAFT_ENABLE &&
+				(player.isInCraftMode() || player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_MANUFACTURE)) {
 			canSetShop = true;
 		}
-		else if (Config.OFFLINE_CRAFT_ENABLE &&
-				(player.isInCraftMode() || player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_MANUFACTURE))
-		{
-			canSetShop = true;
-		}
-
-		if (Config.OFFLINE_MODE_IN_PEACE_ZONE && !player.isInsideZone(L2Character.ZONE_PEACE))
-		{
+		
+		if (Config.OFFLINE_MODE_IN_PEACE_ZONE && !player.isInsideZone(L2Character.ZONE_PEACE)) {
 			canSetShop = false;
 		}
-
+		
 		if (Config.OFFLINE_BUFFERS_ENABLE && !player.isInStoreMode() && player.isInsideZone(L2Character.ZONE_PEACE) &&
-				CustomOfflineBuffersManager.getInstance().setUpOfflineBuffer(player))
-		{
+				CustomOfflineBuffersManager.getInstance().setUpOfflineBuffer(player)) {
 			canSetShop = true;
 		}
-
+		
 		return canSetShop;
 	}
-
-	public void cleanMe(boolean fast)
-	{
-		try
-		{
-			synchronized (this)
-			{
-				if (cleanupTask == null)
-				{
-					cleanupTask =
-							ThreadPoolManager.getInstance().scheduleGeneral(new CleanupTask(), fast ? 5 : 15000L);
+	
+	public void cleanMe(boolean fast) {
+		try {
+			synchronized (this) {
+				if (cleanupTask == null) {
+					cleanupTask = ThreadPoolManager.getInstance().scheduleGeneral(new CleanupTask(), fast ? 5 : 15000L);
 				}
 			}
-		}
-		catch (Exception e1)
-		{
+		} catch (Exception e1) {
 			Log.log(Level.WARNING, "Error during cleanup.", e1);
 		}
 	}
-
-	class CleanupTask implements Runnable
-	{
+	
+	class CleanupTask implements Runnable {
 		/**
 		 * @see java.lang.Runnable#run()
 		 */
 		@Override
-		public void run()
-		{
-			try
-			{
+		public void run() {
+			try {
 				// we are going to manually save the char below thus we can force the cancel
-				if (autoSaveInDB != null)
-				{
+				if (autoSaveInDB != null) {
 					autoSaveInDB.cancel(true);
 					//ThreadPoolManager.getInstance().removeGeneral((Runnable) autoSaveInDB);
 				}
-
+				
 				L2PcInstance player = getActiveChar();
 				if (player != null) // this should only happen on connection loss
 				{
-					if (player.isLocked())
-					{
-						Log.log(Level.WARNING,
-								"Player " + player.getName() + " still performing subclass actions during disconnect.");
+					if (player.isLocked()) {
+						Log.log(Level.WARNING, "Player " + player.getName() + " still performing subclass actions during disconnect.");
 					}
-
+					
 					// prevent closing again
 					player.setClient(null);
-
-					if (player.isOnline() && !Shutdown.getInstance().isShuttingDown())
-					{
+					
+					if (player.isOnline() && !Shutdown.getInstance().isShuttingDown()) {
 						player.deleteMe();
 						AntiFeedManager.getInstance().onDisconnect(L2GameClient.this);
 					}
 				}
 				setActiveChar(null);
-			}
-			catch (Exception e1)
-			{
+			} catch (Exception e1) {
 				Log.log(Level.WARNING, "Error while cleanup client.", e1);
-			}
-			finally
-			{
+			} finally {
 				LoginServerThread.getInstance().sendLogout(getAccountName());
 			}
 		}
 	}
-
-	class AutoSaveTask implements Runnable
-	{
+	
+	class AutoSaveTask implements Runnable {
 		@Override
-		public void run()
-		{
-			if (autoSaveInDB == null)
-			{
+		public void run() {
+			if (autoSaveInDB == null) {
 				return;
 			}
-
-			try
-			{
+			
+			try {
 				L2PcInstance player = getActiveChar();
-				if (player != null && player.isOnline() &&
-						L2World.getInstance().getPlayer(player.getObjectId()) == player) // safety precaution
+				if (player != null && player.isOnline() && L2World.getInstance().getPlayer(player.getObjectId()) == player) // safety precaution
 				{
 					saveCharToDisk();
-					if (player.getPet() != null)
-					{
+					if (player.getPet() != null) {
 						player.getPet().store();
 					}
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.log(Level.SEVERE, "Error on AutoSaveTask.", e);
 			}
 		}
 	}
-
-	public boolean isProtocolOk()
-	{
+	
+	public boolean isProtocolOk() {
 		return protocolOk;
 	}
-
-	public void setProtocolOk(boolean b)
-	{
+	
+	public void setProtocolOk(boolean b) {
 		protocolOk = b;
 	}
-
-	public int getProtocolVersion()
-	{
+	
+	public int getProtocolVersion() {
 		return protocolVersion;
 	}
-
-	public void setProtocolVersion(int version)
-	{
+	
+	public void setProtocolVersion(int version) {
 		protocolVersion = version;
 	}
-
-	public boolean handleCheat(String punishment)
-	{
-		if (activeChar != null)
-		{
+	
+	public boolean handleCheat(String punishment) {
+		if (activeChar != null) {
 			Util.handleIllegalPlayerAction(activeChar, toString() + ": " + punishment, Config.DEFAULT_PUNISH);
 			return true;
 		}
-
+		
 		Logger logAudit = Logger.getLogger("audit");
 		logAudit.log(Level.INFO, "AUDIT: Client " + toString() + " kicked for reason: " + punishment);
 		closeNow();
 		return false;
 	}
-
+	
 	/**
 	 * Returns false if client can receive packets.
 	 * True if detached, or flood detected, or queue overflow detected and queue still not empty.
 	 */
-	public boolean dropPacket()
-	{
+	public boolean dropPacket() {
 		if (isDetached) // detached clients can't receive any packets
 		{
 			return true;
 		}
-
+		
 		// flood protection
-		if (getStats().countPacket(packetQueue.size()))
-		{
+		if (getStats().countPacket(packetQueue.size())) {
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return true;
 		}
-
+		
 		return getStats().dropPacket();
 	}
-
+	
 	/**
 	 * Counts buffer underflow exceptions.
 	 */
-	public void onBufferUnderflow()
-	{
-		if (getStats().countUnderflowException())
-		{
+	public void onBufferUnderflow() {
+		if (getStats().countUnderflowException()) {
 			Log.severe("Client " + toString() + " - Disconnected: Too many buffer underflow exceptions.");
 			closeNow();
 			return;
 		}
 		if (state == GameClientState.CONNECTED) // in CONNECTED state kick client immediately
 		{
-			if (Config.PACKET_HANDLER_DEBUG)
-			{
+			if (Config.PACKET_HANDLER_DEBUG) {
 				Log.severe("Client " + toString() + " - Disconnected, too many buffer underflows in non-authed state.");
 			}
 			closeNow();
 		}
 	}
-
+	
 	/**
 	 * Counts unknown packets
 	 */
-	public void onUnknownPacket()
-	{
-		if (getStats().countUnknownPacket())
-		{
+	public void onUnknownPacket() {
+		if (getStats().countUnknownPacket()) {
 			Log.severe("Client " + toString() + " - Disconnected: Too many unknown packets.");
 			closeNow();
 			return;
 		}
 		if (state == GameClientState.CONNECTED) // in CONNECTED state kick client immediately
 		{
-			if (Config.PACKET_HANDLER_DEBUG)
-			{
+			if (Config.PACKET_HANDLER_DEBUG) {
 				Log.severe("Client " + toString() + " - Disconnected, too many unknown packets in non-authed state.");
 			}
 			closeNow();
 		}
 	}
-
+	
 	/**
 	 * Add packet to the queue and start worker thread if needed
 	 */
-	public void execute(ReceivablePacket<L2GameClient> packet)
-	{
-		if (getStats().countFloods())
-		{
-			Log.severe("Client " + toString() + " - Disconnected, too many floods:" + getStats().longFloods +
-					" long and " + getStats().shortFloods + " short.");
+	public void execute(ReceivablePacket<L2GameClient> packet) {
+		if (getStats().countFloods()) {
+			Log.severe("Client " + toString() + " - Disconnected, too many floods:" + getStats().longFloods + " long and " + getStats().shortFloods +
+					" short.");
 			closeNow();
 			return;
 		}
-
-		if (!packetQueue.offer(packet))
-		{
-			if (getStats().countQueueOverflow())
-			{
+		
+		if (!packetQueue.offer(packet)) {
+			if (getStats().countQueueOverflow()) {
 				Log.severe("Client " + toString() + " - Disconnected, too many queue overflows.");
 				closeNow();
-			}
-			else
-			{
+			} else {
 				sendPacket(ActionFailed.STATIC_PACKET);
 			}
-
+			
 			return;
 		}
-
+		
 		if (queueLock.isLocked()) // already processing
 		{
 			return;
 		}
-
-		try
-		{
-			if (state == GameClientState.CONNECTED)
-			{
-				if (getStats().processedPackets > 3)
-				{
-					if (Config.PACKET_HANDLER_DEBUG)
-					{
+		
+		try {
+			if (state == GameClientState.CONNECTED) {
+				if (getStats().processedPackets > 3) {
+					if (Config.PACKET_HANDLER_DEBUG) {
 						Log.severe("Client " + toString() + " - Disconnected, too many packets in non-authed state.");
 					}
 					closeNow();
 					return;
 				}
-
+				
 				ThreadPoolManager.getInstance().executeIOPacket(this);
-			}
-			else
-			{
+			} else {
 				ThreadPoolManager.getInstance().executePacket(this);
 			}
-		}
-		catch (RejectedExecutionException e)
-		{
+		} catch (RejectedExecutionException e) {
 			// if the server is shutdown we ignore
-			if (!ThreadPoolManager.getInstance().isShutdown())
-			{
+			if (!ThreadPoolManager.getInstance().isShutdown()) {
 				Log.severe("Failed executing: " + packet.getClass().getSimpleName() + " for Client: " + toString());
 			}
 		}
 	}
-
+	
 	@Override
-	public void run()
-	{
-		if (!queueLock.tryLock())
-		{
+	public void run() {
+		if (!queueLock.tryLock()) {
 			return;
 		}
-
-		try
-		{
+		
+		try {
 			int count = 0;
-			while (true)
-			{
+			while (true) {
 				final ReceivablePacket<L2GameClient> packet = packetQueue.poll();
 				if (packet == null) // queue is empty
 				{
 					return;
 				}
-
+				
 				if (isDetached) // clear queue immediately after detach
 				{
 					packetQueue.clear();
 					return;
 				}
-
-				try
-				{
+				
+				try {
 					packet.run();
+				} catch (Exception e) {
+					Log.severe("Exception during execution " + packet.getClass().getSimpleName() + ", client: " + toString() + "," + e.getMessage());
 				}
-				catch (Exception e)
-				{
-					Log.severe("Exception during execution " + packet.getClass().getSimpleName() + ", client: " +
-							toString() + "," + e.getMessage());
-				}
-
+				
 				count++;
-				if (getStats().countBurst(count))
-				{
+				if (getStats().countBurst(count)) {
 					return;
 				}
 			}
-		}
-		finally
-		{
+		} finally {
 			queueLock.unlock();
 		}
 	}
-
-	public void setClientTracert(int[][] tracert)
-	{
+	
+	public void setClientTracert(int[][] tracert) {
 		trace = tracert;
 	}
-
-	public int[][] getTrace()
-	{
+	
+	public int[][] getTrace() {
 		return trace;
 	}
-
-	public void setHWId(String hwId)
-	{
+	
+	public void setHWId(String hwId) {
 		this.hwId = hwId;
 	}
-
-	public String getHWId()
-	{
+	
+	public String getHWId() {
 		return hwId;
 	}
-
-	private boolean cancelCleanup()
-	{
+	
+	private boolean cancelCleanup() {
 		Future<?> task = cleanupTask;
-		if (task != null)
-		{
+		if (task != null) {
 			cleanupTask = null;
 			return task.cancel(true);
 		}
 		return false;
 	}
-
-	public void setAditionalClosePacket(L2GameServerPacket aditionalClosePacket)
-	{
+	
+	public void setAditionalClosePacket(L2GameServerPacket aditionalClosePacket) {
 		this.aditionalClosePacket = aditionalClosePacket;
 	}
 }

@@ -18,26 +18,23 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExTeleportToLocationActivate extends L2GameServerPacket
-{
+public class ExTeleportToLocationActivate extends L2GameServerPacket {
 	private final int objId;
 	private final int x;
 	private final int y;
 	private final int z;
 	private final int heading;
-
-	public ExTeleportToLocationActivate(int objId, int x, int y, int z, int heading)
-	{
+	
+	public ExTeleportToLocationActivate(int objId, int x, int y, int z, int heading) {
 		this.objId = objId;
 		this.x = x;
 		this.y = y;
 		this.z = z;
 		this.heading = heading;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objId);
 		writeD(x);
 		writeD(y);

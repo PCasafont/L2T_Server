@@ -27,27 +27,21 @@ import java.util.List;
 /**
  * @author Pere
  */
-public class SpawnGroup
-{
+public class SpawnGroup {
 	private final int minZ;
 	private final int maxZ;
 	private final L2Territory territory = new L2Territory(0);
 	private final List<L2Spawn> spawns = new ArrayList<>();
 
-	public SpawnGroup(XmlNode node)
-	{
+	public SpawnGroup(XmlNode node) {
 		minZ = node.getInt("minZ");
 		maxZ = node.getInt("maxZ");
-		for (XmlNode subNode : node.getChildren())
-		{
-			if (subNode.getName().equalsIgnoreCase("vertex"))
-			{
+		for (XmlNode subNode : node.getChildren()) {
+			if (subNode.getName().equalsIgnoreCase("vertex")) {
 				int x = subNode.getInt("x");
 				int y = subNode.getInt("y");
 				territory.add(x, y, minZ, maxZ, 0);
-			}
-			else if (subNode.getName().equalsIgnoreCase("spawn"))
-			{
+			} else if (subNode.getName().equalsIgnoreCase("spawn")) {
 				int npcId = subNode.getInt("npcId");
 				int amount = subNode.getInt("amount");
 				int respawn = subNode.getInt("respawn");
@@ -55,16 +49,13 @@ public class SpawnGroup
 				String dbName = subNode.getString("dbName", "");
 
 				L2NpcTemplate t = NpcTable.getInstance().getTemplate(npcId);
-				if (t == null)
-				{
+				if (t == null) {
 					Log.warning("Spawn group: no npc template with id " + npcId);
 					continue;
 				}
 
-				for (int i = 0; i < amount; i++)
-				{
-					try
-					{
+				for (int i = 0; i < amount; i++) {
+					try {
 						L2Spawn spawn = new L2Spawn(t);
 						spawn.setRespawnDelay(respawn);
 						spawn.setRandomRespawnDelay(randomRespawn);
@@ -76,13 +67,10 @@ public class SpawnGroup
 
 						spawns.add(spawn);
 
-						if (t.Type.equals("L2Monster"))
-						{
+						if (t.Type.equals("L2Monster")) {
 							t.addKnownSpawn(spawn);
 						}
-					}
-					catch (Exception e)
-					{
+					} catch (Exception e) {
 						e.printStackTrace();
 					}
 				}
@@ -92,18 +80,15 @@ public class SpawnGroup
 		}
 	}
 
-	public int[] getRandomPoint()
-	{
+	public int[] getRandomPoint() {
 		return territory.getRandomPoint();
 	}
 
-	public L2Territory getTerritory()
-	{
+	public L2Territory getTerritory() {
 		return territory;
 	}
 
-	public List<L2Spawn> getSpawns()
-	{
+	public List<L2Spawn> getSpawns() {
 		return spawns;
 	}
 }

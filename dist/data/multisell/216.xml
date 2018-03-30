@@ -1,136 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-    <item>
-        <ingredient count="1" id="13457" /> <!-- Vesper Cutter -->
-        <ingredient count="1" id="8678" /> <!-- Sirra's Blade -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="7168000" id="57" /> <!-- Adena -->
-        <production count="1" id="52" /> <!-- Vesper Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="9442" /> <!-- Dynasty Sword -->
-        <ingredient count="1" id="2500" /> <!-- Dark Legion's Edge -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="3747300" id="57" /> <!-- Adena -->
-        <production count="1" id="10004" /> <!-- Dynasty Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="10215" /> <!-- Icarus Sawsword -->
-        <ingredient count="1" id="2500" /> <!-- Dark Legion's Edge -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="5172000" id="57" /> <!-- Adena -->
-        <production count="1" id="10415" /> <!-- Icarus Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="80" /> <!-- Tallum Blade -->
-        <ingredient count="1" id="2500" /> <!-- Dark Legion's Edge -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="3240000" id="57" /> <!-- Adena -->
-        <production count="1" id="6580" /> <!-- Tallum Blade*Dark Legion's Edge -->
-    </item>
-    <item>
-        <ingredient count="1" id="11272" /> <!-- Dynasty Sword - Earth -->
-        <ingredient count="1" id="2500" /> <!-- Dark Legion's Edge -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="3747300" id="57" /> <!-- Adena -->
-        <production count="1" id="11251" /> <!-- Dynasty Dualsword - Earth -->
-    </item>
-    <item>
-        <ingredient count="1" id="11305" /> <!-- Icarus Sawsword - Destruction -->
-        <ingredient count="1" id="2500" /> <!-- Dark Legion's Edge -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="5172000" id="57" /> <!-- Adena -->
-        <production count="1" id="11300" /> <!-- Icarus Dualsword - Destruction -->
-    </item>
-    <item>
-        <ingredient count="1" id="11058" /> <!-- Tallum Blade - Destruction -->
-        <ingredient count="1" id="2500" /> <!-- Dark Legion's Edge -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="3240000" id="57" /> <!-- Adena -->
-        <production count="1" id="11234" /> <!-- Tallum Blade*Dark Legion's Edge - Lightning -->
-    </item>
-    <item>
-        <ingredient count="1" id="80" /> <!-- Tallum Blade -->
-        <ingredient count="1" id="11080" /> <!-- Dark Legion's Edge - Thunder -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="3240000" id="57" /> <!-- Adena -->
-        <production count="1" id="11234" /> <!-- Tallum Blade*Dark Legion's Edge - Lightning -->
-    </item>
-    <item>
-        <ingredient count="1" id="9446" /> <!-- Dynasty Knife -->
-        <ingredient count="1" id="236" /> <!-- Soul Separator -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="4395000" id="57" /> <!-- Adena -->
-        <production count="1" id="13882" /> <!-- Dynasty Dual Dagger -->
-    </item>
-    <item>
-        <ingredient count="1" id="10216" /> <!-- Icarus Disperser -->
-        <ingredient count="1" id="236" /> <!-- Soul Separator -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="6089000" id="57" /> <!-- Adena -->
-        <production count="1" id="13883" /> <!-- Icarus Dual Daggers -->
-    </item>
-    <item>
-        <ingredient count="1" id="11247" /> <!-- Dynasty Knife - Great Gale -->
-        <ingredient count="1" id="236" /> <!-- Soul Separator -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="4395000" id="57" /> <!-- Adena -->
-        <production count="1" id="14526" /> <!-- Dynasty Dual Dagger - Great Gale -->
-    </item>
-    <item>
-        <ingredient count="1" id="11301" /> <!-- Icarus Disperser - Confusion -->
-        <ingredient count="1" id="236" /> <!-- Soul Separator -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="6089000" id="57" /> <!-- Adena -->
-        <production count="1" id="14527" /> <!-- Icarus Dual Daggers - Confusion -->
-    </item>
-    <item>
-        <ingredient count="1" id="13460" /> <!-- Vesper Shaper -->
-        <ingredient count="1" id="8682" /> <!-- Naga Storm -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="8577000" id="57" /> <!-- Adena -->
-        <production count="1" id="13884" /> <!-- Vesper Dual Daggers -->
-    </item>
-    <item>
-        <ingredient count="1" id="16042" /> <!-- Vesper Cutter - Thunder -->
-        <ingredient count="1" id="8678" /> <!-- Sirra's Blade -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="7168000" id="57" /> <!-- Adena -->
-        <production count="1" id="16150" /> <!-- Vesper Dualsword - Destruction -->
-    </item>
-    <item>
-        <ingredient count="1" id="16045" /> <!-- Vesper Shaper - Great Gale -->
-        <ingredient count="1" id="8682" /> <!-- Naga Storm -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="8577000" id="57" /> <!-- Adena -->
-        <production count="1" id="16148" /> <!-- Vesper Dual Daggers - Great Gale -->
-    </item>
-    <item>
-        <ingredient count="1" id="15559" /> <!-- Skull Edge -->
-        <ingredient count="1" id="8682" /> <!-- Naga Storm -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="12280000" id="57" /> <!-- Adena -->
-        <production count="1" id="16152" /> <!-- Skull Edge Dual Daggers -->
-    </item>
-    <item>
-        <ingredient count="1" id="15558" /> <!-- Periel Sword -->
-        <ingredient count="1" id="8678" /> <!-- Sirra's Blade -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="9975000" id="57" /> <!-- Adena -->
-        <production count="1" id="16154" /> <!-- Periel Dualsword -->
-    </item>
-    <item>
-        <ingredient count="1" id="15545" /> <!-- Mamba Edge -->
-        <ingredient count="1" id="6367" /> <!-- Angel Slayer -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="17867000" id="57" /> <!-- Adena -->
-        <production count="1" id="16156" /> <!-- Mamba Edge Dual Daggers -->
-    </item>
-    <item>
-        <ingredient count="1" id="15544" /> <!-- Eternal Core Sword -->
-        <ingredient count="1" id="6364" /> <!-- Forgotten Blade -->
-        <ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
-        <ingredient count="13939000" id="57" /> <!-- Adena -->
-        <production count="1" id="16158" /> <!-- Eternal Core Dualsword -->
-    </item>
+	<item>
+		<ingredient count="1" id="13457" /> <!-- Vesper Cutter -->
+		<ingredient count="1" id="8678" /> <!-- Sirra's Blade -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="7168000" id="57" /> <!-- Adena -->
+		<production count="1" id="52" /> <!-- Vesper Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="9442" /> <!-- Dynasty Sword -->
+		<ingredient count="1" id="2500" /> <!-- Dark Legion's Edge -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="3747300" id="57" /> <!-- Adena -->
+		<production count="1" id="10004" /> <!-- Dynasty Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="10215" /> <!-- Icarus Sawsword -->
+		<ingredient count="1" id="2500" /> <!-- Dark Legion's Edge -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="5172000" id="57" /> <!-- Adena -->
+		<production count="1" id="10415" /> <!-- Icarus Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="80" /> <!-- Tallum Blade -->
+		<ingredient count="1" id="2500" /> <!-- Dark Legion's Edge -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="3240000" id="57" /> <!-- Adena -->
+		<production count="1" id="6580" /> <!-- Tallum Blade*Dark Legion's Edge -->
+	</item>
+	<item>
+		<ingredient count="1" id="11272" /> <!-- Dynasty Sword - Earth -->
+		<ingredient count="1" id="2500" /> <!-- Dark Legion's Edge -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="3747300" id="57" /> <!-- Adena -->
+		<production count="1" id="11251" /> <!-- Dynasty Dualsword - Earth -->
+	</item>
+	<item>
+		<ingredient count="1" id="11305" /> <!-- Icarus Sawsword - Destruction -->
+		<ingredient count="1" id="2500" /> <!-- Dark Legion's Edge -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="5172000" id="57" /> <!-- Adena -->
+		<production count="1" id="11300" /> <!-- Icarus Dualsword - Destruction -->
+	</item>
+	<item>
+		<ingredient count="1" id="11058" /> <!-- Tallum Blade - Destruction -->
+		<ingredient count="1" id="2500" /> <!-- Dark Legion's Edge -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="3240000" id="57" /> <!-- Adena -->
+		<production count="1" id="11234" /> <!-- Tallum Blade*Dark Legion's Edge - Lightning -->
+	</item>
+	<item>
+		<ingredient count="1" id="80" /> <!-- Tallum Blade -->
+		<ingredient count="1" id="11080" /> <!-- Dark Legion's Edge - Thunder -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="3240000" id="57" /> <!-- Adena -->
+		<production count="1" id="11234" /> <!-- Tallum Blade*Dark Legion's Edge - Lightning -->
+	</item>
+	<item>
+		<ingredient count="1" id="9446" /> <!-- Dynasty Knife -->
+		<ingredient count="1" id="236" /> <!-- Soul Separator -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="4395000" id="57" /> <!-- Adena -->
+		<production count="1" id="13882" /> <!-- Dynasty Dual Dagger -->
+	</item>
+	<item>
+		<ingredient count="1" id="10216" /> <!-- Icarus Disperser -->
+		<ingredient count="1" id="236" /> <!-- Soul Separator -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="6089000" id="57" /> <!-- Adena -->
+		<production count="1" id="13883" /> <!-- Icarus Dual Daggers -->
+	</item>
+	<item>
+		<ingredient count="1" id="11247" /> <!-- Dynasty Knife - Great Gale -->
+		<ingredient count="1" id="236" /> <!-- Soul Separator -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="4395000" id="57" /> <!-- Adena -->
+		<production count="1" id="14526" /> <!-- Dynasty Dual Dagger - Great Gale -->
+	</item>
+	<item>
+		<ingredient count="1" id="11301" /> <!-- Icarus Disperser - Confusion -->
+		<ingredient count="1" id="236" /> <!-- Soul Separator -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="6089000" id="57" /> <!-- Adena -->
+		<production count="1" id="14527" /> <!-- Icarus Dual Daggers - Confusion -->
+	</item>
+	<item>
+		<ingredient count="1" id="13460" /> <!-- Vesper Shaper -->
+		<ingredient count="1" id="8682" /> <!-- Naga Storm -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="8577000" id="57" /> <!-- Adena -->
+		<production count="1" id="13884" /> <!-- Vesper Dual Daggers -->
+	</item>
+	<item>
+		<ingredient count="1" id="16042" /> <!-- Vesper Cutter - Thunder -->
+		<ingredient count="1" id="8678" /> <!-- Sirra's Blade -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="7168000" id="57" /> <!-- Adena -->
+		<production count="1" id="16150" /> <!-- Vesper Dualsword - Destruction -->
+	</item>
+	<item>
+		<ingredient count="1" id="16045" /> <!-- Vesper Shaper - Great Gale -->
+		<ingredient count="1" id="8682" /> <!-- Naga Storm -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="8577000" id="57" /> <!-- Adena -->
+		<production count="1" id="16148" /> <!-- Vesper Dual Daggers - Great Gale -->
+	</item>
+	<item>
+		<ingredient count="1" id="15559" /> <!-- Skull Edge -->
+		<ingredient count="1" id="8682" /> <!-- Naga Storm -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="12280000" id="57" /> <!-- Adena -->
+		<production count="1" id="16152" /> <!-- Skull Edge Dual Daggers -->
+	</item>
+	<item>
+		<ingredient count="1" id="15558" /> <!-- Periel Sword -->
+		<ingredient count="1" id="8678" /> <!-- Sirra's Blade -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="9975000" id="57" /> <!-- Adena -->
+		<production count="1" id="16154" /> <!-- Periel Dualsword -->
+	</item>
+	<item>
+		<ingredient count="1" id="15545" /> <!-- Mamba Edge -->
+		<ingredient count="1" id="6367" /> <!-- Angel Slayer -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="17867000" id="57" /> <!-- Adena -->
+		<production count="1" id="16156" /> <!-- Mamba Edge Dual Daggers -->
+	</item>
+	<item>
+		<ingredient count="1" id="15544" /> <!-- Eternal Core Sword -->
+		<ingredient count="1" id="6364" /> <!-- Forgotten Blade -->
+		<ingredient count="1" id="5126" /> <!-- Dual Weapon Crafting Stamp -->
+		<ingredient count="13939000" id="57" /> <!-- Adena -->
+		<production count="1" id="16158" /> <!-- Eternal Core Dualsword -->
+	</item>
 </list>

@@ -15,34 +15,28 @@
 
 package ai.individual.Apherus;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-
-import ai.group_template.L2AttackableAIScript;
 
 /**
  * @author LasTravel
  */
 
-public class ApherusLookout extends L2AttackableAIScript
-{
+public class ApherusLookout extends L2AttackableAIScript {
 	private static final int apherusLookout = 22964;
 	private static final int apherusPackage = 19001;
 
-	public ApherusLookout(int id, String name, String descr)
-	{
+	public ApherusLookout(int id, String name, String descr) {
 		super(id, name, descr);
 
 		addKillId(apherusLookout);
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
-		if (npc.getNpcId() == apherusLookout)
-		{
-			for (int a = 0; a < 3; a++)
-			{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+		if (npc.getNpcId() == apherusLookout) {
+			for (int a = 0; a < 3; a++) {
 				L2Npc aPackage = addSpawn(apherusPackage, npc.getX(), npc.getY(), npc.getZ(), 0, true, 120000, false);
 				aPackage.setIsImmobilized(true);
 			}
@@ -51,13 +45,11 @@ public class ApherusLookout extends L2AttackableAIScript
 	}
 
 	@Override
-	public int getOnKillDelay(int npcId)
-	{
+	public int getOnKillDelay(int npcId) {
 		return 0;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new ApherusLookout(-1, "ApherusLookout", "ai/individual");
 	}
 }

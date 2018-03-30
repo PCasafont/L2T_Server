@@ -18,29 +18,24 @@ package l2server.gameserver.network.clientpackets;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.QuestState;
 
-public class RequestTutorialLinkHtml extends L2GameClientPacket
-{
+public class RequestTutorialLinkHtml extends L2GameClientPacket {
 	String bypass;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		readD(); // GoD ???
 		bypass = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
-
+		
 		QuestState qs = player.getQuestState("Q255_Tutorial");
-		if (qs != null)
-		{
+		if (qs != null) {
 			qs.getQuest().notifyEvent(bypass, null, player);
 		}
 	}

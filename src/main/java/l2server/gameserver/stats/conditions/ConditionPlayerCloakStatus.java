@@ -21,8 +21,7 @@ import l2server.gameserver.stats.Env;
 /**
  * The Class ConditionPlayerCloakStatus.
  */
-public class ConditionPlayerCloakStatus extends Condition
-{
+public class ConditionPlayerCloakStatus extends Condition {
 	private final int val;
 
 	/**
@@ -30,8 +29,7 @@ public class ConditionPlayerCloakStatus extends Condition
 	 *
 	 * @param val the val
 	 */
-	public ConditionPlayerCloakStatus(int val)
-	{
+	public ConditionPlayerCloakStatus(int val) {
 		this.val = val;
 	}
 
@@ -39,10 +37,8 @@ public class ConditionPlayerCloakStatus extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 

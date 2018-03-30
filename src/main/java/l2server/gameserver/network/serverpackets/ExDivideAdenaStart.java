@@ -18,14 +18,11 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExDivideAdenaStart extends L2GameServerPacket
-{
-	public ExDivideAdenaStart()
-	{
+public class ExDivideAdenaStart extends L2GameServerPacket {
+	public ExDivideAdenaStart() {
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 	}
 }

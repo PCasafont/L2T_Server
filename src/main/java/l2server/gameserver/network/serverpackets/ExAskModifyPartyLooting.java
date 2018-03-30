@@ -18,21 +18,18 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author JIV
  */
-public class ExAskModifyPartyLooting extends L2GameServerPacket
-{
-
+public class ExAskModifyPartyLooting extends L2GameServerPacket {
+	
 	private String requestor;
 	private byte mode;
-
-	public ExAskModifyPartyLooting(String name, byte mode)
-	{
+	
+	public ExAskModifyPartyLooting(String name, byte mode) {
 		requestor = name;
 		this.mode = mode;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeS(requestor);
 		writeD(mode);
 	}

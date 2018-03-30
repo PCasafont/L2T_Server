@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-    <item>
-        <ingredient count="400" id="37559" /> <!-- Shiny Coin -->
-        <production id="19464" count="1" /> <!-- Blessed Valakas -->
-    </item>
-    <item>
-        <ingredient count="400" id="37559" /> <!-- Shiny Coin -->
-        <production id="19463" count="1" /> <!-- Blessed Antharas -->
-    </item>
-    <item>
-        <ingredient count="400" id="37559" /> <!-- Shiny Coin -->
-        <production id="36946" count="1" /> <!-- Lindvior Earring -->
-    </item>
-    <item>
-        <ingredient count="300" id="37559" /> <!-- Shiny Coin -->
-        <production id="37521" count="1" /> <!-- Baium's Soul -->
-    </item>
-    <item>
-        <ingredient count="300" id="37559" /> <!-- Shiny Coin -->
-        <production id="36254" count="1" /> <!-- Baium's Soul -->
-    </item>
+	<item>
+		<ingredient count="400" id="37559" /> <!-- Shiny Coin -->
+		<production id="19464" count="1" /> <!-- Blessed Valakas -->
+	</item>
+	<item>
+		<ingredient count="400" id="37559" /> <!-- Shiny Coin -->
+		<production id="19463" count="1" /> <!-- Blessed Antharas -->
+	</item>
+	<item>
+		<ingredient count="400" id="37559" /> <!-- Shiny Coin -->
+		<production id="36946" count="1" /> <!-- Lindvior Earring -->
+	</item>
+	<item>
+		<ingredient count="300" id="37559" /> <!-- Shiny Coin -->
+		<production id="37521" count="1" /> <!-- Baium's Soul -->
+	</item>
+	<item>
+		<ingredient count="300" id="37559" /> <!-- Shiny Coin -->
+		<production id="36254" count="1" /> <!-- Baium's Soul -->
+	</item>
 </list>

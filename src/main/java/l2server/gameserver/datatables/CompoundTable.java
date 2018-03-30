@@ -32,40 +32,33 @@ import java.util.Set;
  * @author Pere
  */
 
-public class CompoundTable implements Reloadable
-{
-	public class Combination
-	{
+public class CompoundTable implements Reloadable {
+	public class Combination {
 		private final int item1;
 		private final int item2;
 		private final int result;
 		private final int chance;
 
-		public Combination(int item1, int item2, int result, int chance)
-		{
+		public Combination(int item1, int item2, int result, int chance) {
 			this.item1 = item1;
 			this.item2 = item2;
 			this.result = result;
 			this.chance = chance;
 		}
 
-		public int getItem1()
-		{
+		public int getItem1() {
 			return item1;
 		}
 
-		public int getItem2()
-		{
+		public int getItem2() {
 			return item2;
 		}
 
-		public int getResult()
-		{
+		public int getResult() {
 			return result;
 		}
 
-		public int getChance()
-		{
+		public int getChance() {
 			return chance;
 		}
 	}
@@ -73,28 +66,23 @@ public class CompoundTable implements Reloadable
 	private final Map<Integer, Combination> combinations = new HashMap<>();
 	private final Set<Integer> combinable = new HashSet<>();
 
-	private CompoundTable()
-	{
+	private CompoundTable() {
 		reload();
 		ReloadableManager.getInstance().register("compound", this);
 	}
 
 	@Override
-	public boolean reload()
-	{
+	public boolean reload() {
 		File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/compound.xml");
-		if (!file.exists())
-		{
+		if (!file.exists()) {
 			file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "/compound.xml");
 		}
 
 		XmlDocument doc = new XmlDocument(file);
 		combinations.clear();
 
-		for (XmlNode d : doc.getChildren())
-		{
-			if (d.getName().equalsIgnoreCase("combination"))
-			{
+		for (XmlNode d : doc.getChildren()) {
+			if (d.getName().equalsIgnoreCase("combination")) {
 				int item1 = d.getInt("item1");
 				int item2 = d.getInt("item2");
 				int result = d.getInt("result");
@@ -110,34 +98,28 @@ public class CompoundTable implements Reloadable
 	}
 
 	@Override
-	public String getReloadMessage(boolean success)
-	{
+	public String getReloadMessage(boolean success) {
 		return "Compound table reloaded";
 	}
 
-	public Combination getCombination(int item1, int item2)
-	{
+	public Combination getCombination(int item1, int item2) {
 		return combinations.get(getHash(item1, item2));
 	}
 
-	public boolean isCombinable(int itemId)
-	{
+	public boolean isCombinable(int itemId) {
 		return combinable.contains(itemId);
 	}
 
-	private int getHash(int item1, int item2)
-	{
+	private int getHash(int item1, int item2) {
 		return Math.min(item1, item2) * 100000 + Math.max(item1, item2);
 	}
 
-	public static CompoundTable getInstance()
-	{
+	public static CompoundTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final CompoundTable instance = new CompoundTable();
 	}
 }

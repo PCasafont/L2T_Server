@@ -23,44 +23,34 @@ import java.util.List;
 /**
  * @author KenM
  */
-public class ExShowFortressMapInfo extends L2GameServerPacket
-{
+public class ExShowFortressMapInfo extends L2GameServerPacket {
 	private final Fort fortress;
-
-	public ExShowFortressMapInfo(Fort fortress)
-	{
+	
+	public ExShowFortressMapInfo(Fort fortress) {
 		this.fortress = fortress;
 	}
 
     /*
 	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
-
+	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(fortress.getFortId());
 		writeD(fortress.getSiege().getIsInProgress() ? 1 : 0); // fortress siege status
 		writeD(fortress.getFortSize()); // barracks count
-
+		
 		List<L2Spawn> commanders = fortress.getCommanderSpawns();
-		if (commanders != null && commanders.size() != 0 && fortress.getSiege().getIsInProgress())
-		{
-			switch (commanders.size())
-			{
-				case 3:
-				{
-					for (L2Spawn spawn : commanders)
-					{
-						if (isSpawned(spawn.getNpcId()))
-						{
+		if (commanders != null && commanders.size() != 0 && fortress.getSiege().getIsInProgress()) {
+			switch (commanders.size()) {
+				case 3: {
+					for (L2Spawn spawn : commanders) {
+						if (isSpawned(spawn.getNpcId())) {
 							writeD(0);
-						}
-						else
-						{
+						} else {
 							writeD(1);
 						}
 					}
@@ -69,46 +59,35 @@ public class ExShowFortressMapInfo extends L2GameServerPacket
 				case 4: // TODO: change 4 to 5 once control room supported
 				{
 					int count = 0;
-					for (L2Spawn spawn : commanders)
-					{
+					for (L2Spawn spawn : commanders) {
 						count++;
-						if (count == 4)
-						{
+						if (count == 4) {
 							writeD(1); // TODO: control room emulated
 						}
-						if (isSpawned(spawn.getNpcId()))
-						{
+						if (isSpawned(spawn.getNpcId())) {
 							writeD(0);
-						}
-						else
-						{
+						} else {
 							writeD(1);
 						}
 					}
 					break;
 				}
 			}
-		}
-		else
-		{
-			for (int i = 0; i < fortress.getFortSize(); i++)
-			{
+		} else {
+			for (int i = 0; i < fortress.getFortSize(); i++) {
 				writeD(0);
 			}
 		}
 	}
-
+	
 	/**
 	 * @param npcId
 	 * @return
 	 */
-	private boolean isSpawned(int npcId)
-	{
+	private boolean isSpawned(int npcId) {
 		boolean ret = false;
-		for (L2Spawn spawn : fortress.getCommanderSpawns())
-		{
-			if (spawn.getNpcId() == npcId)
-			{
+		for (L2Spawn spawn : fortress.getCommanderSpawns()) {
+			if (spawn.getNpcId() == npcId) {
 				ret = true;
 			}
 		}

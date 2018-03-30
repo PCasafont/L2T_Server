@@ -50,46 +50,38 @@ import java.util.stream.Collectors;
 /**
  * @author Pere
  */
-public class ArtificialPlayersManager implements Reloadable
-{
+public class ArtificialPlayersManager implements Reloadable {
 	List<L2ApInstance> players = new ArrayList<>();
 
 	ScheduledFuture<?> pvpCheck = null;
 	List<L2Party> partiesSent = new ArrayList<>();
 
-	private ArtificialPlayersManager()
-	{
+	private ArtificialPlayersManager() {
 		reload();
 		ReloadableManager.getInstance().register("aplayers", this);
 	}
 
-	public static ArtificialPlayersManager getInstance()
-	{
+	public static ArtificialPlayersManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	@Override
-	public boolean reload()
-	{
+	public boolean reload() {
 		players.clear();
 
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 
-			PreparedStatement statement =
-					con.prepareStatement("SELECT charId FROM characters WHERE account_name LIKE '!'");
+			PreparedStatement statement = con.prepareStatement("SELECT charId FROM characters WHERE account_name LIKE '!'");
 			ResultSet rset = statement.executeQuery();
 
-			while (rset.next())
-			{
+			while (rset.next()) {
 				int charId = rset.getInt("charId");
 
 				L2ApInstance player = (L2ApInstance) L2World.getInstance().getPlayer(charId);
 
-				if (player == null || !player.isOnline())
-				{
+				if (player == null || !player.isOnline()) {
 					player = (L2ApInstance) L2PcInstance.load(charId);
 					//player.setOnlineStatus(true, false);
 					//player.spawnMe();
@@ -100,19 +92,12 @@ public class ArtificialPlayersManager implements Reloadable
 
 				players.add(player);
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		finally
-		{
-			try
-			{
+		} finally {
+			try {
 				con.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
@@ -121,94 +106,71 @@ public class ArtificialPlayersManager implements Reloadable
 
 		Log.info("Loaded " + players.size() + " artificial players.");
 
-		if (pvpCheck != null)
-		{
+		if (pvpCheck != null) {
 			pvpCheck.cancel(false);
 		}
 
-		pvpCheck = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
-		{
-			for (L2Party party : partiesSent)
-			{
+		pvpCheck = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() -> {
+			for (L2Party party : partiesSent) {
 				party.getPartyMembers().forEach(L2PcInstance::deleteMe);
 			}
 
 			partiesSent.clear();
-			if (partiesSent.isEmpty())
-			{
+			if (partiesSent.isEmpty()) {
 				return;
 			}
 
 			int pvpers = 0;
 			Map<Integer, Integer> allies = new HashMap<>();
-			for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
-			{
-				if (player.getPvpFlag() == 0 || player.isInsideZone(L2Character.ZONE_PEACE) ||
-						player.isInsideZone(L2Character.ZONE_SIEGE) ||
-						player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || player.getInstanceId() != 0)
-				{
+			for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
+				if (player.getPvpFlag() == 0 || player.isInsideZone(L2Character.ZONE_PEACE) || player.isInsideZone(L2Character.ZONE_SIEGE) ||
+						player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || player.getInstanceId() != 0) {
 					continue;
 				}
 
 				pvpers++;
-				if (player instanceof L2ApInstance)
-				{
+				if (player instanceof L2ApInstance) {
 					continue;
 				}
 
-				if (!allies.containsKey(player.getAllyId()))
-				{
+				if (!allies.containsKey(player.getAllyId())) {
 					allies.put(player.getAllyId(), 1);
-				}
-				else
-				{
+				} else {
 					allies.put(player.getAllyId(), allies.get(player.getAllyId()) + 1);
 				}
 			}
 
 			int biggestAlly = 0;
 			int smallestAlly = 100;
-			for (int members : allies.values())
-			{
-				if (members > biggestAlly)
-				{
+			for (int members : allies.values()) {
+				if (members > biggestAlly) {
 					biggestAlly = members;
 				}
-				if (members < smallestAlly)
-				{
+				if (members < smallestAlly) {
 					smallestAlly = members;
 				}
 			}
 
-			if (biggestAlly - smallestAlly > 5)
-			{
-				while (partiesSent.size() * 7 < biggestAlly)
-				{
+			if (biggestAlly - smallestAlly > 5) {
+				while (partiesSent.size() * 7 < biggestAlly) {
 					L2Party party = createRandomParty();
-					for (L2PcInstance member : party.getPartyMembers())
-					{
+					for (L2PcInstance member : party.getPartyMembers()) {
 						member.teleToLocation(-20893, 186060, -4103, true);
 						member.setPvpFlagLasts(System.currentTimeMillis() + Config.PVP_NORMAL_TIME);
 						member.startPvPFlag();
 					}
 					partiesSent.add(party);
 				}
-			}
-			else if (pvpers < 5)
-			{
-				while (partiesSent.size() < 2)
-				{
+			} else if (pvpers < 5) {
+				while (partiesSent.size() < 2) {
 					L2Party party = createRandomParty();
-					for (L2PcInstance member : party.getPartyMembers())
-					{
+					for (L2PcInstance member : party.getPartyMembers()) {
 						member.teleToLocation(-24501, 187976, -3975, true);
 						member.startPvPFlag();
 					}
 					partiesSent.add(party);
 				}
-			}
-			else if (partiesSent.size() > 0 && pvpers > 20)
-			{
+			} else if (partiesSent.size() > 0 && pvpers > 20) {
 				L2Party party = partiesSent.remove(0);
 				party.getPartyMembers().forEach(L2PcInstance::deleteMe);
 			}
@@ -223,42 +185,34 @@ public class ArtificialPlayersManager implements Reloadable
 	 * @param classId the classId of the AP to create
 	 * @return a new (and spawned) L2ApInstance
 	 */
-	public L2ApInstance createChar(int classId)
-	{
+	public L2ApInstance createChar(int classId) {
 		L2PcTemplate template = CharTemplateTable.getInstance().getTemplate(Rnd.get(6) * 2 + Rnd.get(2));
 		PlayerClass cl = PlayerClassTable.getInstance().getClassById(classId);
-		switch (cl.getParent().getAwakeningClassId())
-		{
+		switch (cl.getParent().getAwakeningClassId()) {
 			case 139:
 			case 141:
 			case 145:
 			case 146:
-				while (template != null && template.race == Race.Kamael)
-				{
+				while (template != null && template.race == Race.Kamael) {
 					template = CharTemplateTable.getInstance().getTemplate(Rnd.get(6) * 2 + Rnd.get(2));
 				}
 				break;
 		}
 
 		String name = cl.getName();
-		if (!name.contains("Sayha") && !name.contains("Evis"))
-		{
+		if (!name.contains("Sayha") && !name.contains("Evis")) {
 			name = name.substring(name.indexOf(" ") + 1);
-		}
-		else
-		{
+		} else {
 			template = CharTemplateTable.getInstance().getTemplate(13);
 		}
 
-		if (template == null)
-		{
+		if (template == null) {
 			return null;
 		}
 
 		int objectId = IdFactory.getInstance().getNextId();
-		L2PcInstance newChar = L2PcInstance
-				.create(objectId, template, "!", name, (byte) Rnd.get(5), (byte) Rnd.get(4), (byte) Rnd.get(3),
-						Rnd.get(2) == 0, classId);
+		L2PcInstance newChar =
+				L2PcInstance.create(objectId, template, "!", name, (byte) Rnd.get(5), (byte) Rnd.get(4), (byte) Rnd.get(3), Rnd.get(2) == 0, classId);
 
 		newChar.setCurrentHp(newChar.getMaxHp());
 		newChar.setCurrentCp(newChar.getMaxCp());
@@ -273,34 +227,27 @@ public class ArtificialPlayersManager implements Reloadable
 
 		newChar.getStat().addLevel((byte) 104);
 
-		for (PcTemplateItem ia : template.getItems())
-		{
+		for (PcTemplateItem ia : template.getItems()) {
 			L2ItemInstance item = newChar.getInventory().addItem("Init", ia.getItemId(), ia.getAmount(), newChar, null);
 
-			if (item == null)
-			{
-				Log.warning("Could not create item during char creation: itemId " + ia.getItemId() + ", amount " +
-						ia.getAmount() + ".");
+			if (item == null) {
+				Log.warning("Could not create item during char creation: itemId " + ia.getItemId() + ", amount " + ia.getAmount() + ".");
 				continue;
 			}
 
-			if (item.isEquipable() && ia.isEquipped())
-			{
+			if (item.isEquipable() && ia.isEquipped()) {
 				newChar.getInventory().equipItem(item);
 			}
 		}
 
-		for (int itemId : new int[]{1})
-		{
+		for (int itemId : new int[]{1}) {
 			L2ItemInstance item = newChar.getInventory().addItem("Init", itemId, 1, newChar, null);
 
-			if (item == null)
-			{
+			if (item == null) {
 				continue;
 			}
 
-			if (item.isEquipable())
-			{
+			if (item.isEquipable()) {
 				newChar.getInventory().equipItem(item);
 			}
 		}
@@ -310,8 +257,7 @@ public class ArtificialPlayersManager implements Reloadable
 
 		L2ApInstance player = (L2ApInstance) L2PcInstance.load(objectId);
 
-		if (player == null)
-		{
+		if (player == null) {
 			return null;
 		}
 
@@ -327,36 +273,29 @@ public class ArtificialPlayersManager implements Reloadable
 	 *
 	 * @param classCombination List of ClassIDs
 	 */
-	public L2Party createParty(List<Integer> classCombination)
-	{
-		List<L2ApInstance> available =
-				players.stream().filter(player -> player.getParty() == null).collect(Collectors.toList());
+	public L2Party createParty(List<Integer> classCombination) {
+		List<L2ApInstance> available = players.stream().filter(player -> player.getParty() == null).collect(Collectors.toList());
 
 		List<L2ApInstance> members = new ArrayList<>();
-		available.stream().filter(player -> classCombination.contains(player.getClassId())).forEachOrdered(player ->
-		{
+		available.stream().filter(player -> classCombination.contains(player.getClassId())).forEachOrdered(player -> {
 			members.add(player);
 			classCombination.remove((Integer) player.getClassId());
 		});
 
-		for (Integer classId : classCombination)
-		{
+		for (Integer classId : classCombination) {
 			L2ApInstance newChar = createChar(classId);
-			if (newChar != null)
-			{
+			if (newChar != null) {
 				members.add(newChar);
 			}
 		}
 
-		if (members.size() < 2)
-		{
+		if (members.size() < 2) {
 			return null;
 		}
 
 		L2Party party = new L2Party(members.get(0), L2Party.ITEM_RANDOM);
 
-		for (L2ApInstance member : members)
-		{
+		for (L2ApInstance member : members) {
 			CharNameTable.getInstance().addName(member);
 			member.setOnlineStatus(true, false);
 			member.spawnMe();
@@ -373,8 +312,7 @@ public class ArtificialPlayersManager implements Reloadable
 	 * Create a L2APlayerInstance party with random members
 	 * <b>NOTE:</b> In fact, creates a static party ATM D:
 	 */
-	public L2Party createRandomParty()
-	{
+	public L2Party createRandomParty() {
 		List<Integer> classCombination = new ArrayList<>();
 
 		// The healer is the leader
@@ -419,20 +357,17 @@ public class ArtificialPlayersManager implements Reloadable
 		return createParty(classCombination);
 	}
 
-	public List<L2ApInstance> getAllAPlayers()
-	{
+	public List<L2ApInstance> getAllAPlayers() {
 		return players;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final ArtificialPlayersManager instance = new ArtificialPlayersManager();
 	}
 
 	@Override
-	public String getReloadMessage(boolean success)
-	{
+	public String getReloadMessage(boolean success) {
 		return success ? "Artificial players reloaded!" : "Couldn't reload Artificial Players.";
 	}
 }

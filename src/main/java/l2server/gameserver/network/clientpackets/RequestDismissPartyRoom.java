@@ -22,37 +22,32 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Gnacik
  */
-public class RequestDismissPartyRoom extends L2GameClientPacket
-{
-
+public class RequestDismissPartyRoom extends L2GameClientPacket {
+	
 	private int roomid;
 	@SuppressWarnings("unused")
 	private int data2;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		roomid = readD();
 		data2 = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-
-		if (activeChar == null)
-		{
+		
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		PartyMatchRoom room = PartyMatchRoomList.getInstance().getRoom(roomid);
-
-		if (room == null)
-		{
+		
+		if (room == null) {
 			return;
 		}
-
+		
 		PartyMatchRoomList.getInstance().deleteRoom(roomid);
 	}
 }

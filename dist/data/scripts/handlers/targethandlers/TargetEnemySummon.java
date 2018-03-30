@@ -27,24 +27,19 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 /**
  * @author nBd
  */
-public class TargetEnemySummon implements ISkillTargetTypeHandler
-{
+public class TargetEnemySummon implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		if (target instanceof L2Summon)
-		{
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
+		if (target instanceof L2Summon) {
 			L2Summon targetSummon = (L2Summon) target;
-			if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).getPet() != targetSummon &&
-					!targetSummon.isDead() && !((L2PcInstance) activeChar).getSummons().contains(targetSummon) &&
+			if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).getPet() != targetSummon && !targetSummon.isDead() &&
+					!((L2PcInstance) activeChar).getSummons().contains(targetSummon) &&
 					(targetSummon.getOwner().getPvpFlag() != 0 || targetSummon.getOwner().getReputation() < 0) ||
-					targetSummon.getOwner().isInsideZone(L2Character.ZONE_PVP) &&
-							((L2PcInstance) activeChar).isInsideZone(L2Character.ZONE_PVP) ||
+					targetSummon.getOwner().isInsideZone(L2Character.ZONE_PVP) && ((L2PcInstance) activeChar).isInsideZone(L2Character.ZONE_PVP) ||
 					targetSummon.getOwner().isInDuel() && ((L2PcInstance) activeChar).isInDuel() &&
-							targetSummon.getOwner().getDuelId() == ((L2PcInstance) activeChar).getDuelId())
-			{
+							targetSummon.getOwner().getDuelId() == ((L2PcInstance) activeChar).getDuelId()) {
 				return new L2Character[]{targetSummon};
 			}
 		}
@@ -55,14 +50,12 @@ public class TargetEnemySummon implements ISkillTargetTypeHandler
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
+	public Enum<L2SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub
 		return L2SkillTargetType.TARGET_ENEMY_SUMMON;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetEnemySummon());
 	}
 }

@@ -1,1 +1,2 @@
-alter table `characters` drop `vitality_points`;
+ALTER TABLE `characters`
+  DROP `vitality_points`;

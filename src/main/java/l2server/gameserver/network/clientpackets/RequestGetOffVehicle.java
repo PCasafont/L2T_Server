@@ -23,34 +23,29 @@ import l2server.gameserver.network.serverpackets.StopMoveInVehicle;
 /**
  * @author Maktakien
  */
-public final class RequestGetOffVehicle extends L2GameClientPacket
-{
+public final class RequestGetOffVehicle extends L2GameClientPacket {
 	private int boatId, x, y, z;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		boatId = readD();
 		x = readD();
 		y = readD();
 		z = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-		if (!activeChar.isInBoat() || activeChar.getBoat().getObjectId() != boatId ||
-				activeChar.getBoat().isMoving() || !activeChar.isInsideRadius(x, y, z, 1000, true, false))
-		{
+		if (!activeChar.isInBoat() || activeChar.getBoat().getObjectId() != boatId || activeChar.getBoat().isMoving() ||
+				!activeChar.isInsideRadius(x, y, z, 1000, true, false)) {
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
+		
 		activeChar.broadcastPacket(new StopMoveInVehicle(activeChar, boatId));
 		activeChar.setVehicle(null);
 		activeChar.setInVehiclePosition(null);

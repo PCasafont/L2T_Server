@@ -29,43 +29,39 @@ import l2server.loginserver.network.L2LoginClient;
  * d: unknow
  * s: blowfish key
  */
-public final class Init extends L2LoginServerPacket
-{
+public final class Init extends L2LoginServerPacket {
 	private int sessionId;
-
+	
 	private byte[] publicKey;
 	private byte[] blowfishKey;
-
-	public Init(L2LoginClient client)
-	{
+	
+	public Init(L2LoginClient client) {
 		this(client.getScrambledModulus(), client.getBlowfishKey(), client.getSessionId());
 	}
-
-	public Init(byte[] publickey, byte[] blowfishkey, int sessionId)
-	{
+	
+	public Init(byte[] publickey, byte[] blowfishkey, int sessionId) {
 		this.sessionId = sessionId;
 		this.publicKey = publickey;
 		this.blowfishKey = blowfishkey;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void write()
-	{
+	protected void write() {
 		writeC(0x00); // init packet id
-
+		
 		writeD(sessionId); // session id
 		writeD(0x0000c621); // protocol revision
-
+		
 		writeB(publicKey); // RSA Public Key
-
+		
 		// unk GG related?
 		writeD(0x29DD954E);
 		writeD(0x77C39CFC);
 		writeD(0x97ADB620);
 		writeD(0x07BDE0F7);
-
+		
 		writeB(blowfishKey); // BlowFish key
 		writeC(0x00030402);
 	}

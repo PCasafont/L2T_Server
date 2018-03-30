@@ -15,9 +15,8 @@
 
 package l2server.gameserver.network.serverpackets;
 
-public class SpecialCamera extends L2GameServerPacket
-{
-
+public class SpecialCamera extends L2GameServerPacket {
+	
 	private final int id;
 	private final int dist;
 	private final int yaw;
@@ -28,9 +27,8 @@ public class SpecialCamera extends L2GameServerPacket
 	private final int rise;
 	private final int widescreen;
 	private final int unknown;
-
-	public SpecialCamera(int id, int dist, int yaw, int pitch, int time, int duration)
-	{
+	
+	public SpecialCamera(int id, int dist, int yaw, int pitch, int time, int duration) {
 		this.id = id;
 		this.dist = dist;
 		this.yaw = yaw;
@@ -42,9 +40,8 @@ public class SpecialCamera extends L2GameServerPacket
 		widescreen = 0;
 		unknown = 0;
 	}
-
-	public SpecialCamera(int id, int dist, int yaw, int pitch, int time, int duration, int turn, int rise, int widescreen, int unk)
-	{
+	
+	public SpecialCamera(int id, int dist, int yaw, int pitch, int time, int duration, int turn, int rise, int widescreen, int unk) {
 		this.id = id;
 		this.dist = dist;
 		this.yaw = yaw;
@@ -56,10 +53,9 @@ public class SpecialCamera extends L2GameServerPacket
 		this.widescreen = widescreen;
 		unknown = unk;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(id);
 		writeD(dist);
 		writeD(yaw);

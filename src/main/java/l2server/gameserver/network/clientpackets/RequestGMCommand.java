@@ -19,13 +19,7 @@ import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.network.serverpackets.ExGmViewCharacterInfo;
-import l2server.gameserver.network.serverpackets.GMHennaInfo;
-import l2server.gameserver.network.serverpackets.GMViewItemList;
-import l2server.gameserver.network.serverpackets.GMViewPledgeInfo;
-import l2server.gameserver.network.serverpackets.GMViewSkillInfo;
-import l2server.gameserver.network.serverpackets.GMViewWarehouseWithdrawList;
-import l2server.gameserver.network.serverpackets.GmViewQuestInfo;
+import l2server.gameserver.network.serverpackets.*;
 
 import java.util.logging.Logger;
 
@@ -34,53 +28,44 @@ import java.util.logging.Logger;
  *
  * @version $Revision: 1.1.2.2.2.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestGMCommand extends L2GameClientPacket
-{
+public final class RequestGMCommand extends L2GameClientPacket {
 	static Logger log = Logger.getLogger(RequestGMCommand.class.getName());
-
+	
 	private String targetName;
 	private int command;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		targetName = readS();
 		command = readD();
 		//unknown  = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		// prevent non gm or low level GMs from vieweing player stuff
-		if (!getClient().getActiveChar().isGM() || !getClient().getActiveChar().getAccessLevel().allowAltG())
-		{
+		if (!getClient().getActiveChar().isGM() || !getClient().getActiveChar().getAccessLevel().allowAltG()) {
 			return;
 		}
-
+		
 		L2PcInstance player = L2World.getInstance().getPlayer(targetName);
-		if (player == null)
-		{
-			for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
-			{
-				if (pl != null && pl.getName().equalsIgnoreCase(targetName))
-				{
+		if (player == null) {
+			for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values()) {
+				if (pl != null && pl.getName().equalsIgnoreCase(targetName)) {
 					player = pl;
 					break;
 				}
 			}
 		}
-
+		
 		L2Clan clan = ClanTable.getInstance().getClanByName(targetName);
-
+		
 		// player name was incorrect?
-		if (player == null && (clan == null || command != 6))
-		{
+		if (player == null && (clan == null || command != 6)) {
 			return;
 		}
-
-		switch (command)
-		{
+		
+		switch (command) {
 			case 1: // player status
 			{
 				sendPacket(new ExGmViewCharacterInfo(player));
@@ -89,8 +74,7 @@ public final class RequestGMCommand extends L2GameClientPacket
 			}
 			case 2: // player clan
 			{
-				if (player.getClan() != null)
-				{
+				if (player.getClan() != null) {
 					sendPacket(new GMViewPledgeInfo(player.getClan(), player));
 				}
 				break;
@@ -114,13 +98,11 @@ public final class RequestGMCommand extends L2GameClientPacket
 			case 6: // player warehouse
 			{
 				// gm warehouse view to be implemented
-				if (player != null)
-				{
+				if (player != null) {
 					sendPacket(new GMViewWarehouseWithdrawList(player));
 				}
 				// clan warehouse
-				else
-				{
+				else {
 					sendPacket(new GMViewWarehouseWithdrawList(clan));
 				}
 				break;

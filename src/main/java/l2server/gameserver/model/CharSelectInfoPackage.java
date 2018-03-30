@@ -25,8 +25,7 @@ import l2server.gameserver.templates.chars.L2PcTemplate;
  *
  * @version $Revision: 1.2.2.2.2.4 $ $Date: 2005/03/27 15:29:33 $
  */
-public class CharSelectInfoPackage
-{
+public class CharSelectInfoPackage {
 	private String name;
 	private int objectId = 0;
 	private int charId = 0x00030b7a;
@@ -58,327 +57,263 @@ public class CharSelectInfoPackage
 	private boolean showHat = true;
 	private int vitalityPoints = 0;
 	private int vitalityLevel = 0;
-
+	
 	/**
 	 */
-	public CharSelectInfoPackage(int objectId, String name)
-	{
+	public CharSelectInfoPackage(int objectId, String name) {
 		setObjectId(objectId);
 		this.name = name;
 		paperdoll = PcInventory.restoreVisibleInventory(objectId);
 	}
-
-	public int getObjectId()
-	{
+	
+	public int getObjectId() {
 		return objectId;
 	}
-
-	public void setObjectId(int objectId)
-	{
+	
+	public void setObjectId(int objectId) {
 		this.objectId = objectId;
 	}
-
-	public int getCharId()
-	{
+	
+	public int getCharId() {
 		return charId;
 	}
-
-	public void setCharId(int charId)
-	{
+	
+	public void setCharId(int charId) {
 		this.charId = charId;
 	}
-
-	public int getClanId()
-	{
+	
+	public int getClanId() {
 		return clanId;
 	}
-
-	public void setClanId(int clanId)
-	{
+	
+	public void setClanId(int clanId) {
 		this.clanId = clanId;
 	}
-
-	public int getCurrentClass()
-	{
+	
+	public int getCurrentClass() {
 		return classId;
 	}
-
-	public void setClassId(int classId)
-	{
+	
+	public void setClassId(int classId) {
 		this.classId = classId;
 	}
-
-	public double getCurrentHp()
-	{
+	
+	public double getCurrentHp() {
 		return currentHp;
 	}
-
-	public void setCurrentHp(double currentHp)
-	{
+	
+	public void setCurrentHp(double currentHp) {
 		this.currentHp = currentHp;
 	}
-
-	public double getCurrentMp()
-	{
+	
+	public double getCurrentMp() {
 		return currentMp;
 	}
-
-	public void setCurrentMp(double currentMp)
-	{
+	
+	public void setCurrentMp(double currentMp) {
 		this.currentMp = currentMp;
 	}
-
-	public long getDeleteTimer()
-	{
+	
+	public long getDeleteTimer() {
 		return deleteTimer;
 	}
-
-	public void setDeleteTimer(long deleteTimer)
-	{
+	
+	public void setDeleteTimer(long deleteTimer) {
 		this.deleteTimer = deleteTimer;
 	}
-
-	public long getLastAccess()
-	{
+	
+	public long getLastAccess() {
 		return lastAccess;
 	}
-
-	public void setLastAccess(long lastAccess)
-	{
+	
+	public void setLastAccess(long lastAccess) {
 		this.lastAccess = lastAccess;
 	}
-
-	public long getExp()
-	{
+	
+	public long getExp() {
 		return exp;
 	}
-
-	public void setExp(long exp)
-	{
+	
+	public void setExp(long exp) {
 		this.exp = exp;
 	}
-
-	public int getFace()
-	{
+	
+	public int getFace() {
 		return face;
 	}
-
-	public void setFace(int face)
-	{
+	
+	public void setFace(int face) {
 		this.face = face;
 	}
-
-	public int getHairColor()
-	{
+	
+	public int getHairColor() {
 		return hairColor;
 	}
-
-	public void setHairColor(int hairColor)
-	{
+	
+	public void setHairColor(int hairColor) {
 		this.hairColor = hairColor;
 	}
-
-	public int getHairStyle()
-	{
+	
+	public int getHairStyle() {
 		return hairStyle;
 	}
-
-	public void setHairStyle(int hairStyle)
-	{
+	
+	public void setHairStyle(int hairStyle) {
 		this.hairStyle = hairStyle;
 	}
-
-	public int getPaperdollObjectId(int slot)
-	{
+	
+	public int getPaperdollObjectId(int slot) {
 		return paperdoll[slot][0];
 	}
-
-	public int getPaperdollItemId(int slot)
-	{
+	
+	public int getPaperdollItemId(int slot) {
 		return paperdoll[slot][1];
 	}
-
-	public int getLevel()
-	{
+	
+	public int getLevel() {
 		return level;
 	}
-
-	public void setLevel(int level)
-	{
+	
+	public void setLevel(int level) {
 		this.level = level;
 	}
-
-	public int getMaxHp()
-	{
+	
+	public int getMaxHp() {
 		return maxHp;
 	}
-
-	public void setMaxHp(int maxHp)
-	{
+	
+	public void setMaxHp(int maxHp) {
 		this.maxHp = maxHp;
 	}
-
-	public int getMaxMp()
-	{
+	
+	public int getMaxMp() {
 		return maxMp;
 	}
-
-	public void setMaxMp(int maxMp)
-	{
+	
+	public void setMaxMp(int maxMp) {
 		this.maxMp = maxMp;
 	}
-
-	public String getName()
-	{
+	
+	public String getName() {
 		return name;
 	}
-
-	public void setName(String name)
-	{
+	
+	public void setName(String name) {
 		this.name = name;
 	}
-
-	public L2PcTemplate getTemplate()
-	{
+	
+	public L2PcTemplate getTemplate() {
 		return template;
 	}
-
-	public void setTemplate(L2PcTemplate t)
-	{
+	
+	public void setTemplate(L2PcTemplate t) {
 		template = t;
 	}
-
-	public int getSex()
-	{
+	
+	public int getSex() {
 		return sex;
 	}
-
-	public void setSex(int sex)
-	{
+	
+	public void setSex(int sex) {
 		this.sex = sex;
 	}
-
-	public long getSp()
-	{
+	
+	public long getSp() {
 		return sp;
 	}
-
-	public void setSp(long sp)
-	{
+	
+	public void setSp(long sp) {
 		this.sp = sp;
 	}
-
-	public int getEnchantEffect()
-	{
-		if (paperdoll[Inventory.PAPERDOLL_RHAND][2] > 0)
-		{
+	
+	public int getEnchantEffect() {
+		if (paperdoll[Inventory.PAPERDOLL_RHAND][2] > 0) {
 			return paperdoll[Inventory.PAPERDOLL_RHAND][2];
 		}
 		return paperdoll[Inventory.PAPERDOLL_RHAND][2];
 	}
-
-	public void setReputation(int k)
-	{
+	
+	public void setReputation(int k) {
 		reputation = k;
 	}
-
-	public int getReputation()
-	{
+	
+	public int getReputation() {
 		return reputation;
 	}
-
-	public void setAugmentationId(long augmentationId)
-	{
+	
+	public void setAugmentationId(long augmentationId) {
 		this.augmentationId = augmentationId;
 	}
-
-	public long getAugmentationId()
-	{
+	
+	public long getAugmentationId() {
 		return augmentationId;
 	}
-
-	public void setPkKills(int PkKills)
-	{
+	
+	public void setPkKills(int PkKills) {
 		this.pkKills = PkKills;
 	}
-
-	public int getPkKills()
-	{
+	
+	public int getPkKills() {
 		return pkKills;
 	}
-
-	public void setPvPKills(int PvPKills)
-	{
+	
+	public void setPvPKills(int PvPKills) {
 		this.pvpKills = PvPKills;
 	}
-
-	public int getPvPKills()
-	{
+	
+	public int getPvPKills() {
 		return pvpKills;
 	}
-
-	public int getTransformId()
-	{
+	
+	public int getTransformId() {
 		return transformId;
 	}
-
-	public void setTransformId(int id)
-	{
+	
+	public void setTransformId(int id) {
 		transformId = id;
 	}
-
-	public int getX()
-	{
+	
+	public int getX() {
 		return x;
 	}
-
-	public int getY()
-	{
+	
+	public int getY() {
 		return y;
 	}
-
-	public int getZ()
-	{
+	
+	public int getZ() {
 		return z;
 	}
-
-	public void setX(int x)
-	{
+	
+	public void setX(int x) {
 		this.x = x;
 	}
-
-	public void setY(int y)
-	{
+	
+	public void setY(int y) {
 		this.y = y;
 	}
-
-	public void setZ(int z)
-	{
+	
+	public void setZ(int z) {
 		this.z = z;
 	}
-
-	public boolean isShowingHat()
-	{
+	
+	public boolean isShowingHat() {
 		return showHat;
 	}
-
-	public void setShowHat(boolean showHat)
-	{
+	
+	public void setShowHat(boolean showHat) {
 		this.showHat = showHat;
 	}
-
-	public int getVitalityPoints()
-	{
+	
+	public int getVitalityPoints() {
 		return vitalityPoints;
 	}
-
-	public void setVitalityPoints(int vitalityPoints)
-	{
+	
+	public void setVitalityPoints(int vitalityPoints) {
 		this.vitalityPoints = vitalityPoints;
 	}
-
-	public int getVitalityLevel()
-	{
+	
+	public int getVitalityLevel() {
 		return vitalityLevel;
 	}
 }

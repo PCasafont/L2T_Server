@@ -19,18 +19,14 @@ import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-public class VehicleKnownList extends CharKnownList
-{
-	public VehicleKnownList(L2Character activeChar)
-	{
+public class VehicleKnownList extends CharKnownList {
+	public VehicleKnownList(L2Character activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public int getDistanceToForgetObject(L2Object object)
-	{
-		if (!(object instanceof L2PcInstance))
-		{
+	public int getDistanceToForgetObject(L2Object object) {
+		if (!(object instanceof L2PcInstance)) {
 			return 0;
 		}
 
@@ -38,10 +34,8 @@ public class VehicleKnownList extends CharKnownList
 	}
 
 	@Override
-	public int getDistanceToWatchObject(L2Object object)
-	{
-		if (!(object instanceof L2PcInstance))
-		{
+	public int getDistanceToWatchObject(L2Object object) {
+		if (!(object instanceof L2PcInstance)) {
 			return 0;
 		}
 

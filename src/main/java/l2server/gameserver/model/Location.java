@@ -23,60 +23,51 @@ import l2server.gameserver.model.actor.L2Character;
  * @version $Revision: 1.1.4.1 $ $Date: 2005/03/27 15:29:33 $
  */
 
-public final class Location
-{
+public final class Location {
 	private int x;
 	private int y;
 	private int z;
 	private int heading;
-
-	public Location(int x, int y, int z)
-	{
+	
+	public Location(int x, int y, int z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
-
-	public Location(L2Object obj)
-	{
+	
+	public Location(L2Object obj) {
 		x = obj.getX();
 		y = obj.getY();
 		z = obj.getZ();
 	}
-
-	public Location(L2Character obj)
-	{
+	
+	public Location(L2Character obj) {
 		x = obj.getX();
 		y = obj.getY();
 		z = obj.getZ();
 		heading = obj.getHeading();
 	}
-
-	public Location(int x, int y, int z, int heading)
-	{
+	
+	public Location(int x, int y, int z, int heading) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
 		this.heading = heading;
 	}
-
-	public int getX()
-	{
+	
+	public int getX() {
 		return x;
 	}
-
-	public int getY()
-	{
+	
+	public int getY() {
 		return y;
 	}
-
-	public int getZ()
-	{
+	
+	public int getZ() {
 		return z;
 	}
-
-	public int getHeading()
-	{
+	
+	public int getHeading() {
 		return heading;
 	}
 }

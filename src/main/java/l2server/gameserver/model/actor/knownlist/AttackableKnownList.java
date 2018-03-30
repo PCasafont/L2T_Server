@@ -25,32 +25,26 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 import java.util.Collection;
 
-public class AttackableKnownList extends NpcKnownList
-{
-	public AttackableKnownList(L2Attackable activeChar)
-	{
+public class AttackableKnownList extends NpcKnownList {
+	public AttackableKnownList(L2Attackable activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	protected boolean removeKnownObject(L2Object object, boolean forget)
-	{
-		if (!super.removeKnownObject(object, forget))
-		{
+	protected boolean removeKnownObject(L2Object object, boolean forget) {
+		if (!super.removeKnownObject(object, forget)) {
 			return false;
 		}
 
 		// Remove the L2Object from the aggrolist of the L2Attackable
-		if (object instanceof L2Character)
-		{
+		if (object instanceof L2Character) {
 			getActiveChar().getAggroList().remove(object);
 		}
 		// Set the L2Attackable Intention to AI_INTENTION_IDLE
 		final Collection<L2PcInstance> known = getKnownPlayers().values();
 
 		//FIXME: This is a temporary solution && support for Walking Manager
-		if (getActiveChar().hasAI() && (known == null || known.isEmpty()))
-		{
+		if (getActiveChar().hasAI() && (known == null || known.isEmpty())) {
 			getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
 		}
 
@@ -58,16 +52,13 @@ public class AttackableKnownList extends NpcKnownList
 	}
 
 	@Override
-	public L2Attackable getActiveChar()
-	{
+	public L2Attackable getActiveChar() {
 		return (L2Attackable) super.getActiveChar();
 	}
 
 	@Override
-	public int getDistanceToForgetObject(L2Object object)
-	{
-		if (getActiveChar().getAggroList().get(object) != null)
-		{
+	public int getDistanceToForgetObject(L2Object object) {
+		if (getActiveChar().getAggroList().get(object) != null) {
 			return 3000;
 		}
 
@@ -75,21 +66,16 @@ public class AttackableKnownList extends NpcKnownList
 	}
 
 	@Override
-	public int getDistanceToWatchObject(L2Object object)
-	{
+	public int getDistanceToWatchObject(L2Object object) {
 		if (object instanceof L2NpcInstance && (((L2NpcInstance) object).getClan() == null ||
-				!((L2NpcInstance) object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan())) ||
-				!(object instanceof L2Character))
-		{
+				!((L2NpcInstance) object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan())) || !(object instanceof L2Character)) {
 			return 0;
 		}
 
-		if (object instanceof L2Playable)
-		{
+		if (object instanceof L2Playable) {
 			return object.getKnownList().getDistanceToWatchObject(getActiveObject());
 		}
 
-		return Math.max(300, Math.max(getActiveChar().getAggroRange(),
-				Math.max(getActiveChar().getFactionRange(), getActiveChar().getEnemyRange())));
+		return Math.max(300, Math.max(getActiveChar().getAggroRange(), Math.max(getActiveChar().getFactionRange(), getActiveChar().getEnemyRange())));
 	}
 }

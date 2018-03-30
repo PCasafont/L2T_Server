@@ -27,103 +27,81 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.L2SkillType;
 
-public class Trap implements ISkillHandler
-{
+public class Trap implements ISkillHandler {
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.DETECT_TRAP, L2SkillType.REMOVE_TRAP};
-
+	
 	/**
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (activeChar == null || skill == null)
-		{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+		if (activeChar == null || skill == null) {
 			return;
 		}
-
-		switch (skill.getSkillType())
-		{
-			case DETECT_TRAP:
-			{
-				for (L2Character target : activeChar.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))
-				{
-					if (!(target instanceof L2Trap))
-					{
+		
+		switch (skill.getSkillType()) {
+			case DETECT_TRAP: {
+				for (L2Character target : activeChar.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
+					if (!(target instanceof L2Trap)) {
 						continue;
 					}
-
-					if (target.isAlikeDead())
-					{
+					
+					if (target.isAlikeDead()) {
 						continue;
 					}
-
+					
 					final L2Trap trap = (L2Trap) target;
-
-					if (trap.getLevel() <= skill.getPower())
-					{
+					
+					if (trap.getLevel() <= skill.getPower()) {
 						trap.setDetected(activeChar);
 					}
 				}
 				break;
 			}
-			case REMOVE_TRAP:
-			{
-				for (L2Character target : (L2Character[]) targets)
-				{
-					if (!(target instanceof L2Trap))
-					{
+			case REMOVE_TRAP: {
+				for (L2Character target : (L2Character[]) targets) {
+					if (!(target instanceof L2Trap)) {
 						continue;
 					}
-
-					if (target.isAlikeDead())
-					{
+					
+					if (target.isAlikeDead()) {
 						continue;
 					}
-
+					
 					final L2Trap trap = (L2Trap) target;
-
-					if (!trap.canSee(activeChar))
-					{
-						if (activeChar instanceof L2PcInstance)
-						{
-							((L2PcInstance) activeChar)
-									.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
+					
+					if (!trap.canSee(activeChar)) {
+						if (activeChar instanceof L2PcInstance) {
+							((L2PcInstance) activeChar).sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 						}
 						continue;
 					}
-
-					if (trap.getLevel() > skill.getPower())
-					{
+					
+					if (trap.getLevel() > skill.getPower()) {
 						continue;
 					}
-
-					if (trap.getTemplate().getEventQuests(Quest.QuestEventType.ON_TRAP_ACTION) != null)
-					{
-						for (Quest quest : trap.getTemplate().getEventQuests(Quest.QuestEventType.ON_TRAP_ACTION))
-						{
+					
+					if (trap.getTemplate().getEventQuests(Quest.QuestEventType.ON_TRAP_ACTION) != null) {
+						for (Quest quest : trap.getTemplate().getEventQuests(Quest.QuestEventType.ON_TRAP_ACTION)) {
 							quest.notifyTrapAction(trap, activeChar, TrapAction.TRAP_DISARMED);
 						}
 					}
-
+					
 					trap.unSummon();
-					if (activeChar instanceof L2PcInstance)
-					{
-						((L2PcInstance) activeChar).sendPacket(
-								SystemMessage.getSystemMessage(SystemMessageId.A_TRAP_DEVICE_HAS_BEEN_STOPPED));
+					if (activeChar instanceof L2PcInstance) {
+						((L2PcInstance) activeChar).sendPacket(SystemMessage.getSystemMessage(SystemMessageId.A_TRAP_DEVICE_HAS_BEEN_STOPPED));
 					}
 				}
 			}
 			default:
 		}
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

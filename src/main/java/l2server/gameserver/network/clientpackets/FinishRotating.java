@@ -23,38 +23,31 @@ import l2server.gameserver.network.serverpackets.StopRotation;
  *
  * @version $Revision: 1.1.4.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class FinishRotating extends L2GameClientPacket
-{
+public final class FinishRotating extends L2GameClientPacket {
 
 	private int degree;
 	@SuppressWarnings("unused")
 	private int unknown;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		degree = readD();
 		unknown = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
 		StopRotation sr;
-		if (activeChar.isInAirShip() && activeChar.getAirShip().isCaptain(activeChar))
-		{
+		if (activeChar.isInAirShip() && activeChar.getAirShip().isCaptain(activeChar)) {
 			activeChar.getAirShip().setHeading(degree);
 			sr = new StopRotation(activeChar.getAirShip().getObjectId(), degree, 0);
 			activeChar.getAirShip().broadcastPacket(sr);
-		}
-		else
-		{
+		} else {
 			sr = new StopRotation(activeChar.getObjectId(), degree, 0);
 			activeChar.broadcastPacket(sr);
 		}

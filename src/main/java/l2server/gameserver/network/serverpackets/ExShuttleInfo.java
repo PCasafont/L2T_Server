@@ -21,18 +21,15 @@ import l2server.gameserver.model.actor.instance.L2ShuttleInstance.ShuttleStop;
 /**
  * @author Pere
  */
-public class ExShuttleInfo extends L2GameServerPacket
-{
+public class ExShuttleInfo extends L2GameServerPacket {
 	private final L2ShuttleInstance shuttle;
-
-	public ExShuttleInfo(L2ShuttleInstance shuttle)
-	{
+	
+	public ExShuttleInfo(L2ShuttleInstance shuttle) {
 		this.shuttle = shuttle;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(shuttle.getObjectId());
 		writeD(shuttle.getX());
 		writeD(shuttle.getY());
@@ -40,8 +37,7 @@ public class ExShuttleInfo extends L2GameServerPacket
 		writeD(shuttle.getHeading());
 		writeD(shuttle.getId());
 		writeD(shuttle.getStops().size());
-		for (ShuttleStop door : shuttle.getStops())
-		{
+		for (ShuttleStop door : shuttle.getStops()) {
 			writeD(door.getId());
 			writeD(0x00);
 			writeD(0x00);

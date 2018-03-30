@@ -37,8 +37,7 @@ import java.sql.PreparedStatement;
  *
  * @version $Revision: 1.16.2.12.2.7 $ $Date: 2005/04/11 10:06:11 $
  */
-public final class Say2 extends L2GameClientPacket
-{
+public final class Say2 extends L2GameClientPacket {
 
 	//private static Logger logChat = Logger.getLogger("chat");
 
@@ -69,100 +68,62 @@ public final class Say2 extends L2GameClientPacket
 	public static final int UNK_2 = 24;
 	public static final int GLOBAL = 25;
 
-	private static final String[] CHAT_NAMES = {
-			"ALL",
-			"SHOUT",
-			"TELL",
-			"PARTY",
-			"CLAN",
-			"GM",
-			"PETITION_PLAYER",
-			"PETITION_GM",
-			"TRADE",
-			"ALLIANCE",
-			"ANNOUNCEMENT",
-			//10
-			"BOAT",
-			"L2FRIEND",
-			"MSNCHAT",
-			"PARTYMATCH_ROOM",
-			"PARTYROOM_COMMANDER",
-			"PARTYROOM_ALL",
-			"HERO_VOICE",
-			"CRITICAL_ANNOUNCE",
-			"SCREEN_ANNOUNCE",
-			"BATTLEFIELD",
-			"MPCC_ROOM",
-			"ALL_NOT_RECORDED",
-			"UNK_1",
-			"UNK_2",
-			"GLOBAL"
-	};
+	private static final String[] CHAT_NAMES =
+			{"ALL", "SHOUT", "TELL", "PARTY", "CLAN", "GM", "PETITION_PLAYER", "PETITION_GM", "TRADE", "ALLIANCE", "ANNOUNCEMENT",
+					//10
+					"BOAT", "L2FRIEND", "MSNCHAT", "PARTYMATCH_ROOM", "PARTYROOM_COMMANDER", "PARTYROOM_ALL", "HERO_VOICE", "CRITICAL_ANNOUNCE",
+					"SCREEN_ANNOUNCE", "BATTLEFIELD", "MPCC_ROOM", "ALL_NOT_RECORDED", "UNK_1", "UNK_2", "GLOBAL"};
 
 	private String text;
 	private int type;
 	private String target;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		text = readS();
 		type = readD();
 		target = type == TELL ? readS() : null;
 	}
 
 	@Override
-	protected void runImpl()
-	{
-		if (Config.DEBUG)
-		{
+	protected void runImpl() {
+		if (Config.DEBUG) {
 			Log.info("Say2: Msg Type = '" + type + "' Text = '" + text + "'.");
 		}
 
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
-		if (type < 0 || type >= CHAT_NAMES.length)
-		{
-			Log.warning("Say2: Invalid type: " + type + " Player : " + activeChar.getName() + " text: " +
-					String.valueOf(text));
+		if (type < 0 || type >= CHAT_NAMES.length) {
+			Log.warning("Say2: Invalid type: " + type + " Player : " + activeChar.getName() + " text: " + String.valueOf(text));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			activeChar.logout();
 			return;
 		}
 
-		if (text.isEmpty())
-		{
+		if (text.isEmpty()) {
 			Log.warning(activeChar.getName() + ": sending empty text. Possible packet hack!");
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			activeChar.logout();
 			return;
 		}
 
-		if (!text.contains("Type="))
-		{
+		if (!text.contains("Type=")) {
 			text = text.replaceAll("\\s+", " ");
 		}
 
 		// Even though the client can handle more characters than it's current limit allows, an overflow (critical error) happens if you pass a huge (1000+) message.
 		// April 27, 2009 - Verified on Gracia P2 & Final official client as 105
 		// Allow higher limit if player shift some item (text is longer then)
-		if (!activeChar.isGM() &&
-				(text.indexOf(8) >= 0 && text.length() > 500 || text.indexOf(8) < 0 && text.length() > 105))
-		{
+		if (!activeChar.isGM() && (text.indexOf(8) >= 0 && text.length() > 500 || text.indexOf(8) < 0 && text.length() > 105)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DONT_SPAM));
 			return;
 		}
 
-
-
 		if (activeChar.getName().equals("Elrondd") || activeChar.getName().equals("Quicer") ||
-				activeChar.getHWID().equals("BFEBFBFF0001067A527AC38E") ||
-				activeChar.getHWID().equals("BFEBFBFF000306A9D6038B4D"))
-		{
+				activeChar.getHWID().equals("BFEBFBFF0001067A527AC38E") || activeChar.getHWID().equals("BFEBFBFF000306A9D6038B4D")) {
 			activeChar.sendMessage("Your right to use the chat has been revoked.");
 			return;
 		}
@@ -173,64 +134,48 @@ public final class Say2 extends L2GameClientPacket
 			return;
 		}*/
 
-
 		if (!text.equalsIgnoreCase(".event") && activeChar.isPlayingEvent() &&
-				(activeChar.getEvent().isType(EventType.DeathMatch) ||
-						activeChar.getEvent().isType(EventType.Survival) ||
-						activeChar.getEvent().isType(EventType.KingOfTheHill)))
-		{
+				(activeChar.getEvent().isType(EventType.DeathMatch) || activeChar.getEvent().isType(EventType.Survival) ||
+						activeChar.getEvent().isType(EventType.KingOfTheHill))) {
 			activeChar.sendMessage("You cannot talk during an All vs All PvP Event");
 			return;
 		}
 
-		if (activeChar.isCursedWeaponEquipped() && (type == TRADE || type == SHOUT || type == GLOBAL))
-		{
-			activeChar.sendPacket(SystemMessage.getSystemMessage(
-					SystemMessageId.SHOUT_AND_TRADE_CHAT_CANNOT_BE_USED_WHILE_POSSESSING_CURSED_WEAPON));
+		if (activeChar.isCursedWeaponEquipped() && (type == TRADE || type == SHOUT || type == GLOBAL)) {
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SHOUT_AND_TRADE_CHAT_CANNOT_BE_USED_WHILE_POSSESSING_CURSED_WEAPON));
 			return;
 		}
 
-		if (activeChar.isChatBanned())
-		{
-			if (type == ALL || type == SHOUT || type == TRADE || type == HERO_VOICE || type == GLOBAL)
-			{
+		if (activeChar.isChatBanned()) {
+			if (type == ALL || type == SHOUT || type == TRADE || type == HERO_VOICE || type == GLOBAL) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED));
 				return;
 			}
 		}
 
-		if (activeChar.isInJail() && Config.JAIL_DISABLE_CHAT)
-		{
-			if (type != ALL)
-			{
+		if (activeChar.isInJail() && Config.JAIL_DISABLE_CHAT) {
+			if (type != ALL) {
 				activeChar.sendMessage("You can not chat with players outside of the jail.");
 				return;
 			}
 		}
 
-		if (type == PETITION_PLAYER && activeChar.isGM())
-		{
+		if (type == PETITION_PLAYER && activeChar.isGM()) {
 			type = PETITION_GM;
 		}
 
-		if (Config.LOG_CHAT)
-		{
-			if (type == CLAN && activeChar.getClan() != null)
-			{
+		if (Config.LOG_CHAT) {
+			if (type == CLAN && activeChar.getClan() != null) {
 				target = activeChar.getClan().getName();
-			}
-			else if (type == ALLIANCE && activeChar.getClan() != null)
-			{
+			} else if (type == ALLIANCE && activeChar.getClan() != null) {
 				target = activeChar.getClan().getAllyName();
 			}
 
 			Connection con = null;
-			try
-			{
+			try {
 				con = L2DatabaseFactory.getInstance().getConnection();
 
-				PreparedStatement statement = con.prepareStatement(
-						"REPLACE INTO log_chat(time, type, talker, listener, text) VALUES (?,?,?,?,?);");
+				PreparedStatement statement = con.prepareStatement("REPLACE INTO log_chat(time, type, talker, listener, text) VALUES (?,?,?,?,?);");
 
 				statement.setLong(1, System.currentTimeMillis());
 				statement.setString(2, CHAT_NAMES[type]);
@@ -239,13 +184,9 @@ public final class Say2 extends L2GameClientPacket
 				statement.setString(5, text);
 				statement.execute();
 				statement.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
-			}
-			finally
-			{
+			} finally {
 				L2DatabaseFactory.close(con);
 			}
 
@@ -260,71 +201,56 @@ public final class Say2 extends L2GameClientPacket
 			logChat.log(record);*/
 		}
 
-		if (text.indexOf(8) >= 0 && !parseAndPublishItem(activeChar))
-		{
+		if (text.indexOf(8) >= 0 && !parseAndPublishItem(activeChar)) {
 			return;
 		}
 
 		// Say Filter implementation
-		if (Config.USE_SAY_FILTER)
-		{
+		if (Config.USE_SAY_FILTER) {
 			checkText();
 		}
 
 		IChatHandler handler = ChatHandler.getInstance().getChatHandler(type);
-		if (handler != null)
-		{
+		if (handler != null) {
 			// Elcardia -> Elcopia OP replacement
 			//text = text.replaceAll("([lLiI1][ -._]*[cCkK][ -._]*)[aA4]"
 			//		+ "([ -._]*)[rR]([ -._]*)[dD]", "$1o$2$3p");
 
 			handler.handleChat(type, activeChar, target, text);
-		}
-		else
-		{
+		} else {
 			Log.info("No handler registered for ChatType: " + type + " Player: " + getClient());
 		}
 	}
 
-	private void checkText()
-	{
+	private void checkText() {
 		String filteredText = text;
-		for (String pattern : Config.FILTER_LIST)
-		{
+		for (String pattern : Config.FILTER_LIST) {
 			filteredText = filteredText.replaceAll("(?i)" + pattern, Config.CHAT_FILTER_CHARS);
 		}
 		text = filteredText;
 	}
 
-	private boolean parseAndPublishItem(L2PcInstance owner)
-	{
+	private boolean parseAndPublishItem(L2PcInstance owner) {
 		int pos1 = -1;
-		while ((pos1 = text.indexOf(8, pos1)) > -1)
-		{
+		while ((pos1 = text.indexOf(8, pos1)) > -1) {
 			int pos = text.indexOf("ID=", pos1);
-			if (pos == -1)
-			{
+			if (pos == -1) {
 				return false;
 			}
 			StringBuilder result = new StringBuilder(9);
 			pos += 3;
-			while (Character.isDigit(text.charAt(pos)))
-			{
+			while (Character.isDigit(text.charAt(pos))) {
 				result.append(text.charAt(pos++));
 			}
 			int id = Integer.parseInt(result.toString());
 			L2Object item = L2World.getInstance().findObject(id);
-			if (item instanceof L2ItemInstance)
-			{
-				if (owner.getInventory().getItemByObjectId(id) == null)
-				{
+			if (item instanceof L2ItemInstance) {
+				if (owner.getInventory().getItemByObjectId(id) == null) {
 					Log.info(getClient() + " trying publish item which doesnt own! ID:" + id);
 					return false;
 				}
 				((L2ItemInstance) item).publish();
-			}
-			else
-			{
+			} else {
 				Log.info(getClient() + " trying publish object which is not item! Object:" + item);
 				return false;
 			}
@@ -339,8 +265,7 @@ public final class Say2 extends L2GameClientPacket
 	}
 
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

@@ -28,8 +28,7 @@ import java.util.logging.Logger;
  *
  * @version $Revision: 1.3.2.6.2.4 $ $Date: 2005/04/11 10:06:06 $
  */
-public class AdminUnblockIp implements IAdminCommandHandler
-{
+public class AdminUnblockIp implements IAdminCommandHandler {
 
 	private static final Logger log = Logger.getLogger(AdminTeleport.class.getName());
 
@@ -39,21 +38,15 @@ public class AdminUnblockIp implements IAdminCommandHandler
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 
-		if (command.startsWith("admin_unblockip "))
-		{
-			try
-			{
+		if (command.startsWith("admin_unblockip ")) {
+			try {
 				String ipAddress = command.substring(16);
-				if (unblockIp(ipAddress, activeChar))
-				{
+				if (unblockIp(ipAddress, activeChar)) {
 					activeChar.sendMessage("Removed IP " + ipAddress + " from blocklist!");
 				}
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
+			} catch (StringIndexOutOfBoundsException e) {
 				// Send syntax to the user
 				activeChar.sendMessage("Usage mode: //unblockip <ip>");
 			}
@@ -63,13 +56,11 @@ public class AdminUnblockIp implements IAdminCommandHandler
 	}
 
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 
-	private boolean unblockIp(String ipAddress, L2PcInstance activeChar)
-	{
+	private boolean unblockIp(String ipAddress, L2PcInstance activeChar) {
 		//LoginServerThread.getInstance().unBlockip(ipAddress);
 		log.warning("IP removed by GM " + activeChar.getName());
 		return true;

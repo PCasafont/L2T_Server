@@ -15,24 +15,10 @@
 
 package l2server.gameserver.taskmanager;
 
-import static l2server.gameserver.taskmanager.TaskTypes.TYPE_NONE;
-import static l2server.gameserver.taskmanager.TaskTypes.TYPE_SHEDULED;
-import static l2server.gameserver.taskmanager.TaskTypes.TYPE_TIME;
-
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.taskmanager.tasks.TaskCleanUp;
-import l2server.gameserver.taskmanager.tasks.TaskCustomTasks;
-import l2server.gameserver.taskmanager.tasks.TaskDailyChangeRates;
-import l2server.gameserver.taskmanager.tasks.TaskDailyQuestClean;
-import l2server.gameserver.taskmanager.tasks.TaskGlobalVariablesSave;
-import l2server.gameserver.taskmanager.tasks.TaskJython;
-import l2server.gameserver.taskmanager.tasks.TaskOlympiadSave;
-import l2server.gameserver.taskmanager.tasks.TaskRaidPointsReset;
-import l2server.gameserver.taskmanager.tasks.TaskRecom;
-import l2server.gameserver.taskmanager.tasks.TaskScript;
-import l2server.gameserver.taskmanager.tasks.TaskVitalityReset;
+import l2server.gameserver.taskmanager.tasks.*;
 import l2server.log.Log;
 
 import java.sql.Connection;
@@ -47,24 +33,22 @@ import java.util.HashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 
+import static l2server.gameserver.taskmanager.TaskTypes.*;
+
 /**
  * @author Layane
  */
-public final class TaskManager
-{
+public final class TaskManager {
 
-	protected static final String[] SQL_STATEMENTS = {
-			"SELECT id,task,type,last_activation,param1,param2,param3 FROM global_tasks",
-			"UPDATE global_tasks SET last_activation=? WHERE id=?",
-			"SELECT id FROM global_tasks WHERE task=?",
-			"INSERT INTO global_tasks (task,type,last_activation,param1,param2,param3) VALUES(?,?,?,?,?,?)"
-	};
+	protected static final String[] SQL_STATEMENTS =
+			{"SELECT id,task,type,last_activation,param1,param2,param3 FROM global_tasks", "UPDATE global_tasks SET last_activation=? WHERE id=?",
+					"SELECT id FROM global_tasks WHERE task=?",
+					"INSERT INTO global_tasks (task,type,last_activation,param1,param2,param3) VALUES(?,?,?,?,?,?)"};
 
 	private final HashMap<Integer, Task> tasks = new HashMap<>();
 	protected final ArrayList<ExecutedTask> currentTasks = new ArrayList<>();
 
-	public class ExecutedTask implements Runnable
-	{
+	public class ExecutedTask implements Runnable {
 		int id;
 		long lastActivation;
 		Task task;
@@ -72,8 +56,7 @@ public final class TaskManager
 		String[] params;
 		ScheduledFuture<?> scheduled;
 
-		public ExecutedTask(Task ptask, TaskTypes ptype, ResultSet rset) throws SQLException
-		{
+		public ExecutedTask(Task ptask, TaskTypes ptype, ResultSet rset) throws SQLException {
 			task = ptask;
 			type = ptype;
 			id = rset.getInt("id");
@@ -82,74 +65,59 @@ public final class TaskManager
 		}
 
 		@Override
-		public void run()
-		{
+		public void run() {
 			task.onTimeElapsed(this);
 			lastActivation = System.currentTimeMillis();
 
 			Connection con = null;
 
-			try
-			{
+			try {
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement(SQL_STATEMENTS[1]);
 				statement.setLong(1, lastActivation);
 				statement.setInt(2, id);
 				statement.executeUpdate();
 				statement.close();
-			}
-			catch (SQLException e)
-			{
+			} catch (SQLException e) {
 				Log.log(Level.WARNING, "Cannot updated the Global Task " + id + ": " + e.getMessage(), e);
-			}
-			finally
-			{
+			} finally {
 				L2DatabaseFactory.close(con);
 			}
 
-			if (type == TYPE_SHEDULED || type == TYPE_TIME)
-			{
+			if (type == TYPE_SHEDULED || type == TYPE_TIME) {
 				stopTask();
 			}
 		}
 
 		@Override
-		public boolean equals(Object object)
-		{
+		public boolean equals(Object object) {
 			return id == ((ExecutedTask) object).id;
 		}
 
-		public Task getTask()
-		{
+		public Task getTask() {
 			return task;
 		}
 
-		public TaskTypes getType()
-		{
+		public TaskTypes getType() {
 			return type;
 		}
 
-		public int getId()
-		{
+		public int getId() {
 			return id;
 		}
 
-		public String[] getParams()
-		{
+		public String[] getParams() {
 			return params;
 		}
 
-		public long getLastActivation()
-		{
+		public long getLastActivation() {
 			return lastActivation;
 		}
 
-		public void stopTask()
-		{
+		public void stopTask() {
 			task.onDestroy();
 
-			if (scheduled != null)
-			{
+			if (scheduled != null) {
 				scheduled.cancel(true);
 			}
 
@@ -157,19 +125,16 @@ public final class TaskManager
 		}
 	}
 
-	public static TaskManager getInstance()
-	{
+	public static TaskManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private TaskManager()
-	{
+	private TaskManager() {
 		initialize();
 		startAllTasks();
 	}
 
-	private void initialize()
-	{
+	private void initialize() {
 		registerTask(new TaskCleanUp());
 		registerTask(new TaskScript());
 		registerTask(new TaskJython());
@@ -180,48 +145,39 @@ public final class TaskManager
 		registerTask(new TaskDailyQuestClean());
 		registerTask(new TaskVitalityReset());
 
-		if (Config.isServer(Config.TENKAI))
-		{
+		if (Config.isServer(Config.TENKAI)) {
 			registerTask(new TaskDailyChangeRates());
 			registerTask(new TaskCustomTasks());
 		}
 	}
 
-	public void registerTask(Task task)
-	{
+	public void registerTask(Task task) {
 		int key = task.getName().hashCode();
-		if (!tasks.containsKey(key))
-		{
+		if (!tasks.containsKey(key)) {
 			tasks.put(key, task);
 			task.initialize();
 		}
 	}
 
-	private void startAllTasks()
-	{
+	private void startAllTasks() {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(SQL_STATEMENTS[0]);
 			ResultSet rset = statement.executeQuery();
 
-			while (rset.next())
-			{
+			while (rset.next()) {
 				Task task = tasks.get(rset.getString("task").trim().toLowerCase().hashCode());
 
-				if (task == null)
-				{
+				if (task == null) {
 					continue;
 				}
 
 				TaskTypes type = TaskTypes.valueOf(rset.getString("type"));
 
-				if (type != TYPE_NONE)
-				{
+				if (type != TYPE_NONE) {
 					ExecutedTask current = new ExecutedTask(task, type, rset);
-					if (launchTask(current))
-					{
+					if (launchTask(current)) {
 						currentTasks.add(current);
 					}
 				}
@@ -229,32 +185,23 @@ public final class TaskManager
 
 			rset.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Error while loading Global Task table: " + e.getMessage(), e);
-		}
-		finally
-		{
-			try
-			{
+		} finally {
+			try {
 				L2DatabaseFactory.close(con);
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
 
-	private boolean launchTask(ExecutedTask task)
-	{
+	private boolean launchTask(ExecutedTask task) {
 		final ThreadPoolManager scheduler = ThreadPoolManager.getInstance();
 		final TaskTypes type = task.getType();
 		long delay, interval;
 
-		switch (type)
-		{
+		switch (type) {
 			case TYPE_STARTUP:
 				task.run();
 				return false;
@@ -268,26 +215,21 @@ public final class TaskManager
 				task.scheduled = scheduler.scheduleGeneralAtFixedRate(task, delay, interval);
 				return true;
 			case TYPE_TIME:
-				try
-				{
+				try {
 					Date desired = DateFormat.getInstance().parse(task.getParams()[0]);
 					long diff = desired.getTime() - System.currentTimeMillis();
-					if (diff >= 0)
-					{
+					if (diff >= 0) {
 						task.scheduled = scheduler.scheduleGeneral(task, diff);
 						return true;
 					}
 					Log.info("Task " + task.getId() + " is obsoleted.");
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				break;
 			case TYPE_SPECIAL:
 				ScheduledFuture<?> result = task.getTask().launchSpecial(task);
-				if (result != null)
-				{
+				if (result != null) {
 					task.scheduled = result;
 					return true;
 				}
@@ -296,8 +238,7 @@ public final class TaskManager
 				interval = Long.valueOf(task.getParams()[0]) * 86400000L;
 				String[] hour = task.getParams()[1].split(":");
 
-				if (hour.length != 3)
-				{
+				if (hour.length != 3) {
 					Log.warning("Task " + task.getId() + " has incorrect parameters");
 					return false;
 				}
@@ -306,26 +247,21 @@ public final class TaskManager
 				check.setTimeInMillis(task.getLastActivation() + interval);
 
 				Calendar min = Calendar.getInstance();
-				try
-				{
-					if (Integer.valueOf(task.getParams()[0]) == 7)
-					{
+				try {
+					if (Integer.valueOf(task.getParams()[0]) == 7) {
 						min.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
 					}
 					min.set(Calendar.HOUR_OF_DAY, Integer.parseInt(hour[0]));
 					min.set(Calendar.MINUTE, Integer.parseInt(hour[1]));
 					min.set(Calendar.SECOND, Integer.parseInt(hour[2]));
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					Log.log(Level.WARNING, "Bad parameter on task " + task.getId() + ": " + e.getMessage(), e);
 					return false;
 				}
 
 				delay = min.getTimeInMillis() - System.currentTimeMillis();
 
-				if (check.after(min) || delay < 0)
-				{
+				if (check.after(min) || delay < 0) {
 					delay += interval;
 				}
 
@@ -340,24 +276,20 @@ public final class TaskManager
 		return false;
 	}
 
-	public static boolean addUniqueTask(String task, TaskTypes type, String param1, String param2, String param3)
-	{
+	public static boolean addUniqueTask(String task, TaskTypes type, String param1, String param2, String param3) {
 		return addUniqueTask(task, type, param1, param2, param3, 0);
 	}
 
-	public static boolean addUniqueTask(String task, TaskTypes type, String param1, String param2, String param3, long lastActivation)
-	{
+	public static boolean addUniqueTask(String task, TaskTypes type, String param1, String param2, String param3, long lastActivation) {
 		Connection con = null;
 
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(SQL_STATEMENTS[2]);
 			statement.setString(1, task);
 			ResultSet rset = statement.executeQuery();
 
-			if (!rset.next())
-			{
+			if (!rset.next()) {
 				statement = con.prepareStatement(SQL_STATEMENTS[3]);
 				statement.setString(1, task);
 				statement.setString(2, type.toString());
@@ -372,19 +304,12 @@ public final class TaskManager
 			statement.close();
 
 			return true;
-		}
-		catch (SQLException e)
-		{
+		} catch (SQLException e) {
 			Log.log(Level.WARNING, "Cannot add the unique task: " + e.getMessage(), e);
-		}
-		finally
-		{
-			try
-			{
+		} finally {
+			try {
 				L2DatabaseFactory.close(con);
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
@@ -392,17 +317,14 @@ public final class TaskManager
 		return false;
 	}
 
-	public static boolean addTask(String task, TaskTypes type, String param1, String param2, String param3)
-	{
+	public static boolean addTask(String task, TaskTypes type, String param1, String param2, String param3) {
 		return addTask(task, type, param1, param2, param3, 0);
 	}
 
-	public static boolean addTask(String task, TaskTypes type, String param1, String param2, String param3, long lastActivation)
-	{
+	public static boolean addTask(String task, TaskTypes type, String param1, String param2, String param3, long lastActivation) {
 		Connection con = null;
 
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(SQL_STATEMENTS[3]);
 			statement.setString(1, task);
@@ -415,19 +337,12 @@ public final class TaskManager
 
 			statement.close();
 			return true;
-		}
-		catch (SQLException e)
-		{
+		} catch (SQLException e) {
 			Log.log(Level.WARNING, "Cannot add the task:  " + e.getMessage(), e);
-		}
-		finally
-		{
-			try
-			{
+		} finally {
+			try {
 				L2DatabaseFactory.close(con);
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
@@ -436,8 +351,7 @@ public final class TaskManager
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final TaskManager instance = new TaskManager();
 	}
 }

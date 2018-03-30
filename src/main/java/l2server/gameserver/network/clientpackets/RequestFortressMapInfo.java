@@ -22,25 +22,22 @@ import l2server.gameserver.network.serverpackets.ExShowFortressMapInfo;
 /**
  * @author KenM
  */
-public class RequestFortressMapInfo extends L2GameClientPacket
-{
+public class RequestFortressMapInfo extends L2GameClientPacket {
 	private int fortressId;
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		fortressId = readD();
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		Fort fort = FortManager.getInstance().getFortById(fortressId);
 		sendPacket(new ExShowFortressMapInfo(fort));
 	}

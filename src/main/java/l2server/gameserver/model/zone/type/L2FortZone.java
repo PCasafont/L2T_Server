@@ -26,53 +26,42 @@ import l2server.gameserver.model.zone.L2SpawnZone;
  *
  * @author durgus
  */
-public class L2FortZone extends L2SpawnZone
-{
+public class L2FortZone extends L2SpawnZone {
 	private int fortId;
 
-	public L2FortZone(int id)
-	{
+	public L2FortZone(int id) {
 		super(id);
 	}
 
 	@Override
-	public void setParameter(String name, String value)
-	{
-		if (name.equals("fortId"))
-		{
+	public void setParameter(String name, String value) {
+		if (name.equals("fortId")) {
 			fortId = Integer.parseInt(value);
-		}
-		else
-		{
+		} else {
 			super.setParameter(name, value);
 		}
 	}
 
 	@Override
-	protected void onEnter(L2Character character)
-	{
+	protected void onEnter(L2Character character) {
 		character.setInsideZone(L2Character.ZONE_FORT, true);
 	}
 
 	@Override
-	protected void onExit(L2Character character)
-	{
+	protected void onExit(L2Character character) {
 		character.setInsideZone(L2Character.ZONE_FORT, false);
 	}
 
 	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
+	public void onDieInside(L2Character character, L2Character killer) {
 
 	}
 
 	@Override
-	public void onReviveInside(L2Character character)
-	{
+	public void onReviveInside(L2Character character) {
 	}
 
-	public void updateZoneStatusForCharactersInside()
-	{
+	public void updateZoneStatusForCharactersInside() {
 	}
 
 	/**
@@ -80,26 +69,20 @@ public class L2FortZone extends L2SpawnZone
 	 *
 	 * @param owningClan
 	 */
-	public void banishForeigners(L2Clan owningClan)
-	{
-		for (L2Character temp : characterList.values())
-		{
-			if (!(temp instanceof L2PcInstance))
-			{
+	public void banishForeigners(L2Clan owningClan) {
+		for (L2Character temp : characterList.values()) {
+			if (!(temp instanceof L2PcInstance)) {
 				continue;
 			}
-			if (((L2PcInstance) temp).getClan() == owningClan)
-			{
+			if (((L2PcInstance) temp).getClan() == owningClan) {
 				continue;
 			}
 
-			temp.teleToLocation(
-					MapRegionTable.TeleportWhereType.Town); // TODO: shouldnt be town, its outside of fort
+			temp.teleToLocation(MapRegionTable.TeleportWhereType.Town); // TODO: shouldnt be town, its outside of fort
 		}
 	}
 
-	public int getFortId()
-	{
+	public int getFortId() {
 		return fortId;
 	}
 }

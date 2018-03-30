@@ -20,15 +20,13 @@ import l2server.gameserver.network.serverpackets.ExShowOwnthingPos;
 /**
  * @author JIV
  */
-public class RequestDominionInfo extends L2GameClientPacket
-{
+public class RequestDominionInfo extends L2GameClientPacket {
 
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// nothing
 	}
 
@@ -36,14 +34,12 @@ public class RequestDominionInfo extends L2GameClientPacket
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		sendPacket(new ExShowOwnthingPos());
 	}
 
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

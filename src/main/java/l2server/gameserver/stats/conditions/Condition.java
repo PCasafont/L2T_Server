@@ -22,8 +22,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-public abstract class Condition implements ConditionListener
-{
+public abstract class Condition implements ConditionListener {
 	private ConditionListener listener;
 	private String msg;
 	private int msgId;
@@ -35,8 +34,7 @@ public abstract class Condition implements ConditionListener
 	 *
 	 * @param msg the new message
 	 */
-	public final void setMessage(String msg)
-	{
+	public final void setMessage(String msg) {
 		this.msg = msg;
 	}
 
@@ -45,8 +43,7 @@ public abstract class Condition implements ConditionListener
 	 *
 	 * @return the message
 	 */
-	public final String getMessage()
-	{
+	public final String getMessage() {
 		return msg;
 	}
 
@@ -55,8 +52,7 @@ public abstract class Condition implements ConditionListener
 	 *
 	 * @param msgId the new message id
 	 */
-	public final void setMessageId(int msgId)
-	{
+	public final void setMessageId(int msgId) {
 		this.msgId = msgId;
 	}
 
@@ -65,16 +61,14 @@ public abstract class Condition implements ConditionListener
 	 *
 	 * @return the message id
 	 */
-	public final int getMessageId()
-	{
+	public final int getMessageId() {
 		return msgId;
 	}
 
 	/**
 	 * Adds the name.
 	 */
-	public final void addName()
-	{
+	public final void addName() {
 		addName = true;
 	}
 
@@ -83,8 +77,7 @@ public abstract class Condition implements ConditionListener
 	 *
 	 * @return true, if is adds the name
 	 */
-	public final boolean isAddName()
-	{
+	public final boolean isAddName() {
 		return addName;
 	}
 
@@ -93,8 +86,7 @@ public abstract class Condition implements ConditionListener
 	 *
 	 * @param listener the new listener
 	 */
-	void setListener(ConditionListener listener)
-	{
+	void setListener(ConditionListener listener) {
 		this.listener = listener;
 		notifyChanged();
 	}
@@ -104,8 +96,7 @@ public abstract class Condition implements ConditionListener
 	 *
 	 * @return the listener
 	 */
-	final ConditionListener getListener()
-	{
+	final ConditionListener getListener() {
 		return listener;
 	}
 
@@ -115,11 +106,9 @@ public abstract class Condition implements ConditionListener
 	 * @param env the env
 	 * @return true, if successful
 	 */
-	public final boolean test(Env env)
-	{
+	public final boolean test(Env env) {
 		boolean res = testImpl(env);
-		if (listener != null && res != result)
-		{
+		if (listener != null && res != result) {
 			result = res;
 			notifyChanged();
 		}
@@ -138,10 +127,8 @@ public abstract class Condition implements ConditionListener
 	 * @see l2server.gameserver.stats.conditions.ConditionListener#notifyChanged()
 	 */
 	@Override
-	public void notifyChanged()
-	{
-		if (listener != null)
-		{
+	public void notifyChanged() {
+		if (listener != null) {
 			listener.notifyChanged();
 		}
 	}

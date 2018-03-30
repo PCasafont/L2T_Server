@@ -20,18 +20,15 @@ import l2server.gameserver.model.actor.L2Npc;
 /**
  * @author Pere
  */
-public final class ExNpcStatus extends L2GameServerPacket
-{
+public final class ExNpcStatus extends L2GameServerPacket {
 	private L2Npc npc;
-
-	public ExNpcStatus(L2Npc npc)
-	{
+	
+	public ExNpcStatus(L2Npc npc) {
 		this.npc = npc;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(npc.getObjectId());
 		writeH(4); // Unk
 		writeC(0xff); // Mask

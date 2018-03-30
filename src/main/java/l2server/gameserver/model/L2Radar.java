@@ -23,20 +23,17 @@ import java.util.ArrayList;
 /**
  * @author dalrond
  */
-public final class L2Radar
-{
+public final class L2Radar {
 	private L2PcInstance player;
 	private ArrayList<RadarMarker> markers;
 
-	public L2Radar(L2PcInstance player)
-	{
+	public L2Radar(L2PcInstance player) {
 		this.player = player;
 		markers = new ArrayList<>();
 	}
 
 	// Add a marker to player's radar
-	public void addMarker(int x, int y, int z)
-	{
+	public void addMarker(int x, int y, int z) {
 		RadarMarker newMarker = new RadarMarker(x, y, z);
 
 		markers.add(newMarker);
@@ -45,48 +42,40 @@ public final class L2Radar
 	}
 
 	// Remove a marker from player's radar
-	public void removeMarker(int x, int y, int z)
-	{
+	public void removeMarker(int x, int y, int z) {
 		RadarMarker newMarker = new RadarMarker(x, y, z);
 
 		markers.remove(newMarker);
 		player.sendPacket(new RadarControl(1, 1, x, y, z));
 	}
 
-	public void removeAllMarkers()
-	{
-		for (RadarMarker tempMarker : markers)
-		{
+	public void removeAllMarkers() {
+		for (RadarMarker tempMarker : markers) {
 			player.sendPacket(new RadarControl(2, 2, tempMarker.x, tempMarker.y, tempMarker.z));
 		}
 
 		markers.clear();
 	}
 
-	public void loadMarkers()
-	{
+	public void loadMarkers() {
 		player.sendPacket(new RadarControl(2, 2, player.getX(), player.getY(), player.getZ()));
-		for (RadarMarker tempMarker : markers)
-		{
+		for (RadarMarker tempMarker : markers) {
 			player.sendPacket(new RadarControl(0, 1, tempMarker.x, tempMarker.y, tempMarker.z));
 		}
 	}
 
-	public static class RadarMarker
-	{
+	public static class RadarMarker {
 		// Simple class to model radar points.
 		public int type, x, y, z;
 
-		public RadarMarker(int type, int x, int y, int z)
-		{
+		public RadarMarker(int type, int x, int y, int z) {
 			this.type = type;
 			this.x = x;
 			this.y = y;
 			this.z = z;
 		}
 
-		public RadarMarker(int x, int y, int z)
-		{
+		public RadarMarker(int x, int y, int z) {
 			type = 1;
 			this.x = x;
 			this.y = y;
@@ -97,8 +86,7 @@ public final class L2Radar
 		 * @see java.lang.Object#hashCode()
 		 */
 		@Override
-		public int hashCode()
-		{
+		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
 			result = prime * result + type;
@@ -112,31 +100,24 @@ public final class L2Radar
 		 * @see java.lang.Object#equals(java.lang.Object)
 		 */
 		@Override
-		public boolean equals(Object obj)
-		{
-			if (this == obj)
-			{
+		public boolean equals(Object obj) {
+			if (this == obj) {
 				return true;
 			}
-			if (obj == null)
-			{
+			if (obj == null) {
 				return false;
 			}
-			if (!(obj instanceof RadarMarker))
-			{
+			if (!(obj instanceof RadarMarker)) {
 				return false;
 			}
 			final RadarMarker other = (RadarMarker) obj;
-			if (type != other.type)
-			{
+			if (type != other.type) {
 				return false;
 			}
-			if (x != other.x)
-			{
+			if (x != other.x) {
 				return false;
 			}
-			if (y != other.y)
-			{
+			if (y != other.y) {
 				return false;
 			}
 			return z == other.z;

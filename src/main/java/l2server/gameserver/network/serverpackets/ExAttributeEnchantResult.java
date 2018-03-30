@@ -15,25 +15,22 @@
 
 package l2server.gameserver.network.serverpackets;
 
-public class ExAttributeEnchantResult extends L2GameServerPacket
-{
-
+public class ExAttributeEnchantResult extends L2GameServerPacket {
+	
 	private int addedPower;
 	private int totalPower;
 	private int succeeded;
 	private int failed;
-
-	public ExAttributeEnchantResult(int addedPower, int totalPower, int succeeded, int failed)
-	{
+	
+	public ExAttributeEnchantResult(int addedPower, int totalPower, int succeeded, int failed) {
 		this.addedPower = addedPower;
 		this.totalPower = totalPower;
 		this.succeeded = succeeded;
 		this.failed = failed;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		//writeD(result);
 		writeD(0);
 		writeC(0);

@@ -18,21 +18,18 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author JIV
  */
-public class ExChangeNpcState extends L2GameServerPacket
-{
+public class ExChangeNpcState extends L2GameServerPacket {
 
 	private int objId;
 	private int state;
 
-	public ExChangeNpcState(int objId, int state)
-	{
+	public ExChangeNpcState(int objId, int state) {
 		this.objId = objId;
 		this.state = state;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objId);
 		writeD(state);
 	}

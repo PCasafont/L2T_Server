@@ -20,19 +20,16 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.2.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class JoinPledge extends L2GameServerPacket
-{
+public final class JoinPledge extends L2GameServerPacket {
 
 	private int pledgeId;
 
-	public JoinPledge(int pledgeId)
-	{
+	public JoinPledge(int pledgeId) {
 		this.pledgeId = pledgeId;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(pledgeId);
 	}
 }

@@ -20,11 +20,7 @@ import l2server.gameserver.model.PartyMatchRoomList;
 import l2server.gameserver.model.PartyMatchWaitingList;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.ExPartyRoomMembers;
-import l2server.gameserver.network.serverpackets.ListPartyWaiting;
-import l2server.gameserver.network.serverpackets.PartyMatchDetail;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 
 /**
  * This class ...
@@ -32,67 +28,56 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  * @version $Revision: 1.1.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
 
-public final class RequestPartyMatchConfig extends L2GameClientPacket
-{
-
+public final class RequestPartyMatchConfig extends L2GameClientPacket {
+	
 	private int auto, loc, lvl;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		auto = readD(); //
 		loc = readD(); // Location
 		lvl = readD(); // my level
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-
-		if (activeChar == null)
-		{
+		
+		if (activeChar == null) {
 			return;
 		}
-
-		if (!activeChar.isInPartyMatchRoom() && activeChar.getParty() != null &&
-				activeChar.getParty().getLeader() != activeChar)
-		{
+		
+		if (!activeChar.isInPartyMatchRoom() && activeChar.getParty() != null && activeChar.getParty().getLeader() != activeChar) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_VIEW_PARTY_ROOMS));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
-		if (activeChar.isInPartyMatchRoom())
-		{
+		
+		if (activeChar.isInPartyMatchRoom()) {
 			// If Player is in Room show him room, not list
 			PartyMatchRoomList list = PartyMatchRoomList.getInstance();
-			if (list == null)
-			{
+			if (list == null) {
 				return;
 			}
-
+			
 			PartyMatchRoom room = list.getPlayerRoom(activeChar);
-			if (room == null)
-			{
+			if (room == null) {
 				return;
 			}
-
+			
 			activeChar.sendPacket(new PartyMatchDetail(activeChar, room));
 			activeChar.sendPacket(new ExPartyRoomMembers(activeChar, room, 2));
-
+			
 			activeChar.setPartyRoom(room.getId());
 			//activeChar.setPartyMatching(1);
 			activeChar.broadcastUserInfo();
-		}
-		else
-		{
+		} else {
 			// Add to waiting list
 			PartyMatchWaitingList.getInstance().addPlayer(activeChar);
-
+			
 			// Send Room list
 			ListPartyWaiting matchList = new ListPartyWaiting(activeChar, auto, loc, lvl);
-
+			
 			activeChar.sendPacket(matchList);
 		}
 	}

@@ -28,34 +28,26 @@ import l2server.log.Log;
 import java.util.Calendar;
 import java.util.Map;
 
-public class TaskRaidPointsReset extends Task
-{
+public class TaskRaidPointsReset extends Task {
 	public static final String NAME = "raid_points_reset";
 
 	@Override
-	public String getName()
-	{
+	public String getName() {
 		return NAME;
 	}
 
 	@Override
-	public void onTimeElapsed(ExecutedTask task)
-	{
+	public void onTimeElapsed(ExecutedTask task) {
 		Calendar cal = Calendar.getInstance();
 
-		if (!Config.isServer(Config.TENKAI_LEGACY) && cal.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY)
-		{
+		if (!Config.isServer(Config.TENKAI_LEGACY) && cal.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
 			// reward clan reputation points
 			Map<Integer, Integer> rankList = RaidBossPointsManager.getInstance().getRankList();
-			for (L2Clan c : ClanTable.getInstance().getClans())
-			{
-				for (Map.Entry<Integer, Integer> entry : rankList.entrySet())
-				{
-					if (entry.getValue() <= 100 && c.isMember(entry.getKey()))
-					{
+			for (L2Clan c : ClanTable.getInstance().getClans()) {
+				for (Map.Entry<Integer, Integer> entry : rankList.entrySet()) {
+					if (entry.getValue() <= 100 && c.isMember(entry.getKey())) {
 						int reputation = 0;
-						switch (entry.getValue())
-						{
+						switch (entry.getValue()) {
 							case 1:
 								reputation = Config.RAID_RANKING_1ST;
 								break;
@@ -87,12 +79,9 @@ public class TaskRaidPointsReset extends Task
 								reputation = Config.RAID_RANKING_10TH;
 								break;
 							default:
-								if (entry.getValue() <= 50)
-								{
+								if (entry.getValue() <= 50) {
 									reputation = Config.RAID_RANKING_UP_TO_50TH;
-								}
-								else
-								{
+								} else {
 									reputation = Config.RAID_RANKING_UP_TO_100TH;
 								}
 								break;
@@ -108,8 +97,7 @@ public class TaskRaidPointsReset extends Task
 	}
 
 	@Override
-	public void initialize()
-	{
+	public void initialize() {
 		super.initialize();
 		TaskManager.addUniqueTask(NAME, TaskTypes.TYPE_GLOBAL_TASK, "1", "00:10:00", "");
 	}

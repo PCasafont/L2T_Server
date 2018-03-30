@@ -15,33 +15,27 @@
 
 package l2server.gameserver.pathfinding;
 
-public abstract class AbstractNode
-{
+public abstract class AbstractNode {
 	private AbstractNodeLoc loc;
 	private AbstractNode parent;
 
-	public AbstractNode(AbstractNodeLoc loc)
-	{
+	public AbstractNode(AbstractNodeLoc loc) {
 		this.loc = loc;
 	}
 
-	public void setParent(AbstractNode p)
-	{
+	public void setParent(AbstractNode p) {
 		parent = p;
 	}
 
-	public AbstractNode getParent()
-	{
+	public AbstractNode getParent() {
 		return parent;
 	}
 
-	public AbstractNodeLoc getLoc()
-	{
+	public AbstractNodeLoc getLoc() {
 		return loc;
 	}
 
-	public void setLoc(AbstractNodeLoc l)
-	{
+	public void setLoc(AbstractNodeLoc l) {
 		loc = l;
 	}
 
@@ -49,8 +43,7 @@ public abstract class AbstractNode
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
-	public int hashCode()
-	{
+	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + (loc == null ? 0 : loc.hashCode());
@@ -61,30 +54,22 @@ public abstract class AbstractNode
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
-	public boolean equals(Object obj)
-	{
-		if (this == obj)
-		{
+	public boolean equals(Object obj) {
+		if (this == obj) {
 			return true;
 		}
-		if (obj == null)
-		{
+		if (obj == null) {
 			return false;
 		}
-		if (!(obj instanceof AbstractNode))
-		{
+		if (!(obj instanceof AbstractNode)) {
 			return false;
 		}
 		final AbstractNode other = (AbstractNode) obj;
-		if (loc == null)
-		{
-			if (other.loc != null)
-			{
+		if (loc == null) {
+			if (other.loc != null) {
 				return false;
 			}
-		}
-		else if (!loc.equals(other.loc))
-		{
+		} else if (!loc.equals(other.loc)) {
 			return false;
 		}
 		return true;

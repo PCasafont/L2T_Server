@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `grandboss_list` (
-  `player_id` decimal(11,0) NOT NULL,
-  `zone` decimal(11,0) NOT NULL,
-  PRIMARY KEY (`player_id`,`zone`)
+  `player_id` DECIMAL(11, 0) NOT NULL,
+  `zone`      DECIMAL(11, 0) NOT NULL,
+  PRIMARY KEY (`player_id`, `zone`)
 );

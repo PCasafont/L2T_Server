@@ -20,10 +20,8 @@ import l2server.util.network.BaseSendablePacket;
 /**
  * @author -Wooden-
  */
-public class PlayerAuthResponse extends BaseSendablePacket
-{
-	public PlayerAuthResponse(String account, boolean response)
-	{
+public class PlayerAuthResponse extends BaseSendablePacket {
+	public PlayerAuthResponse(String account, boolean response) {
 		writeC(0x03);
 		writeS(account);
 		writeC(response ? 1 : 0);
@@ -33,8 +31,7 @@ public class PlayerAuthResponse extends BaseSendablePacket
 	 * @see l2server.loginserver.serverpackets.ServerBasePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent()
-	{
+	public byte[] getContent() {
 		return getBytes();
 	}
 }

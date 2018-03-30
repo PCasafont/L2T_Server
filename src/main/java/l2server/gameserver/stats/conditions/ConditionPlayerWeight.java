@@ -23,8 +23,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author Kerberos
  */
-public class ConditionPlayerWeight extends Condition
-{
+public class ConditionPlayerWeight extends Condition {
 
 	private final int weight;
 
@@ -33,8 +32,7 @@ public class ConditionPlayerWeight extends Condition
 	 *
 	 * @param weight the weight
 	 */
-	public ConditionPlayerWeight(int weight)
-	{
+	public ConditionPlayerWeight(int weight) {
 		this.weight = weight;
 	}
 
@@ -42,14 +40,10 @@ public class ConditionPlayerWeight extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (env.player instanceof L2PcInstance)
-		{
-			if (((L2PcInstance) env.player).getMaxLoad() > 0)
-			{
-				int weightproc =
-						((L2PcInstance) env.player).getCurrentLoad() * 100 / ((L2PcInstance) env.player).getMaxLoad();
+	public boolean testImpl(Env env) {
+		if (env.player instanceof L2PcInstance) {
+			if (((L2PcInstance) env.player).getMaxLoad() > 0) {
+				int weightproc = ((L2PcInstance) env.player).getCurrentLoad() * 100 / ((L2PcInstance) env.player).getMaxLoad();
 				return weightproc < weight || ((L2PcInstance) env.player).getDietMode();
 			}
 		}

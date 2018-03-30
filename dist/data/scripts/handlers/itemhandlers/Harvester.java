@@ -30,8 +30,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 /**
  * @author l3x
  */
-public class Harvester implements IItemHandler
-{
+public class Harvester implements IItemHandler {
 	L2PcInstance activeChar;
 	L2MonsterInstance target;
 
@@ -39,22 +38,18 @@ public class Harvester implements IItemHandler
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-		{
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!(playable instanceof L2PcInstance)) {
 			return;
 		}
 
-		if (CastleManorManager.getInstance().isDisabled())
-		{
+		if (CastleManorManager.getInstance().isDisabled()) {
 			return;
 		}
 
 		activeChar = (L2PcInstance) playable;
 
-		if (!(activeChar.getTarget() instanceof L2MonsterInstance))
-		{
+		if (!(activeChar.getTarget() instanceof L2MonsterInstance)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -62,15 +57,13 @@ public class Harvester implements IItemHandler
 
 		target = (L2MonsterInstance) activeChar.getTarget();
 
-		if (target == null || !target.isDead())
-		{
+		if (target == null || !target.isDead()) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
 		L2Skill skill = SkillTable.getInstance().getInfo(2098, 1); //harvesting skill
-		if (skill != null)
-		{
+		if (skill != null) {
 			activeChar.useMagic(skill, false, false);
 		}
 	}

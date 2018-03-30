@@ -35,45 +35,35 @@ import java.util.logging.Level;
  *
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:33 $
  */
-public class ShortCuts
-{
+public class ShortCuts {
 	private L2PcInstance owner;
 	private Map<Integer, Map<Integer, Map<Integer, L2ShortCut>>> shortCuts = new TreeMap<>();
 
 	private boolean hasPresetForCurrentLevel;
 
-	public ShortCuts(L2PcInstance owner)
-	{
+	public ShortCuts(L2PcInstance owner) {
 		this.owner = owner;
 	}
 
-	public L2ShortCut[] getAllShortCuts()
-	{
-		if (!shortCuts.containsKey(owner.getClassIndex()))
-		{
+	public L2ShortCut[] getAllShortCuts() {
+		if (!shortCuts.containsKey(owner.getClassIndex())) {
 			shortCuts.put(owner.getClassIndex(), new HashMap<>());
 		}
 
-		if (!shortCuts.get(owner.getClassIndex()).containsKey(owner.getGearGradeForCurrentLevel()))
-		{
+		if (!shortCuts.get(owner.getClassIndex()).containsKey(owner.getGearGradeForCurrentLevel())) {
 			shortCuts.get(owner.getClassIndex()).put(owner.getGearGradeForCurrentLevel(), new HashMap<>());
 		}
 
-		Map<Integer, L2ShortCut> allShortcuts =
-				shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel());
+		Map<Integer, L2ShortCut> allShortcuts = shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel());
 		return allShortcuts.values().toArray(new L2ShortCut[allShortcuts.size()]);
 	}
 
-	public L2ShortCut getShortCut(int slot, int page)
-	{
-		L2ShortCut sc =
-				shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel()).get(slot + page * 12);
+	public L2ShortCut getShortCut(int slot, int page) {
+		L2ShortCut sc = shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel()).get(slot + page * 12);
 
 		// verify shortcut
-		if (sc != null && sc.getType() == L2ShortCut.TYPE_ITEM)
-		{
-			if (owner.getInventory().getItemByObjectId(sc.getId()) == null)
-			{
+		if (sc != null && sc.getType() == L2ShortCut.TYPE_ITEM) {
+			if (owner.getInventory().getItemByObjectId(sc.getId()) == null) {
 				deleteShortCut(sc.getSlot(), sc.getPage());
 				sc = null;
 			}
@@ -82,116 +72,94 @@ public class ShortCuts
 		return sc;
 	}
 
-	public synchronized void registerShortCut(L2ShortCut shortcut)
-	{
+	public synchronized void registerShortCut(L2ShortCut shortcut) {
 		// verify shortcut
-		if (shortcut.getType() == L2ShortCut.TYPE_ITEM)
-		{
+		if (shortcut.getType() == L2ShortCut.TYPE_ITEM) {
 			L2ItemInstance item = owner.getInventory().getItemByObjectId(shortcut.getId());
-			if (item == null)
-			{
+			if (item == null) {
 				return;
 			}
-			if (item.isEtcItem())
-			{
+			if (item.isEtcItem()) {
 				shortcut.setSharedReuseGroup(item.getEtcItem().getSharedReuseGroup());
 			}
 		}
-		if (shortcut.getType() == L2ShortCut.TYPE_SKILL)
-		{
+		if (shortcut.getType() == L2ShortCut.TYPE_SKILL) {
 			L2Skill skill = SkillTable.getInstance().getInfo(shortcut.getId(), shortcut.getLevel());
 			shortcut.setSharedReuseGroup(skill.getReuseHashCode());
 		}
 
-		if (!shortCuts.containsKey(owner.getClassIndex()))
-		{
+		if (!shortCuts.containsKey(owner.getClassIndex())) {
 			//owner.sendMessage("Adding classIndex");
 			shortCuts.put(owner.getClassIndex(), new HashMap<>());
 		}
 
-		if (!shortCuts.get(owner.getClassIndex()).containsKey(owner.getGearGradeForCurrentLevel()))
-		{
+		if (!shortCuts.get(owner.getClassIndex()).containsKey(owner.getGearGradeForCurrentLevel())) {
 			//owner.sendMessage("Adding levelRange");
 			shortCuts.get(owner.getClassIndex()).put(owner.getGearGradeForCurrentLevel(), new HashMap<>());
 		}
 
-		L2ShortCut oldShortCut = shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel())
+		L2ShortCut oldShortCut = shortCuts.get(owner.getClassIndex())
+				.get(owner.getGearGradeForCurrentLevel())
 				.put(shortcut.getSlot() + 12 * shortcut.getPage(), shortcut);
 
 		registerShortCutInDb(shortcut, oldShortCut);
 	}
 
-	public void registerShortCutInDb(L2ShortCut shortcut, L2ShortCut oldShortCut)
-	{
+	public void registerShortCutInDb(L2ShortCut shortcut, L2ShortCut oldShortCut) {
 		registerShortCutInDb(shortcut, oldShortCut, -1);
 	}
 
-	public void registerShortCutInDb(L2ShortCut shortcut, L2ShortCut oldShortCut, int levelRange)
-	{
-		if (oldShortCut != null)
-		{
+	public void registerShortCutInDb(L2ShortCut shortcut, L2ShortCut oldShortCut, int levelRange) {
+		if (oldShortCut != null) {
 			deleteShortCutFromDb(oldShortCut);
 		}
 
 		Connection con = null;
 
-		if (levelRange == -1)
-		{
+		if (levelRange == -1) {
 			boolean hasPresetForCurrentLevel = false;
 
-			try
-			{
+			try {
 				con = L2DatabaseFactory.getInstance().getConnection();
-				PreparedStatement statement = con.prepareStatement(
-						"SELECT charId FROM character_shortcuts WHERE charId=? AND class_index=? AND levelRange = ?");
+				PreparedStatement statement =
+						con.prepareStatement("SELECT charId FROM character_shortcuts WHERE charId=? AND class_index=? AND levelRange = ?");
 				statement.setInt(1, owner.getObjectId());
 				statement.setInt(2, owner.getClassIndex());
 				statement.setInt(3, owner.getGearGradeForCurrentLevel());
 
 				ResultSet rset = statement.executeQuery();
 
-				if (rset.next())
-				{
+				if (rset.next()) {
 					hasPresetForCurrentLevel = true;
 				}
 
 				rset.close();
 				statement.close();
-			}
-			catch (Exception e)
-			{
-				Log.log(Level.WARNING,
-						"Could not check if the character had preset for current level " + e.getMessage(), e);
-			}
-			finally
-			{
+			} catch (Exception e) {
+				Log.log(Level.WARNING, "Could not check if the character had preset for current level " + e.getMessage(), e);
+			} finally {
 				L2DatabaseFactory.close(con);
 			}
 
-			if (!hasPresetForCurrentLevel)
-			{
-				for (L2ShortCut sh : getAllShortCuts())
-				{
-					if (sh == null)
-					{
+			if (!hasPresetForCurrentLevel) {
+				for (L2ShortCut sh : getAllShortCuts()) {
+					if (sh == null) {
 						continue;
 					}
 
 					L2ShortCut shortcutCopy =
-							new L2ShortCut(sh.getSlot(), sh.getPage(), sh.getType(), sh.getId(), sh.getLevel(),
-									sh.getCharacterType());
+							new L2ShortCut(sh.getSlot(), sh.getPage(), sh.getType(), sh.getId(), sh.getLevel(), sh.getCharacterType());
 
 					registerShortCutInDb(shortcutCopy, null, owner.getGearGradeForCurrentLevel());
 				}
 			}
 		}
 
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 
 			PreparedStatement statement = con.prepareStatement(
-					"REPLACE INTO character_shortcuts (charId,slot,page,type,shortcut_id,level,class_index,levelRange) values(?,?,?,?,?,?,?,?)");
+					"REPLACE INTO character_shortcuts (charId,slot,page,type,shortcut_id,level,class_index,levelRange) VALUES(?,?,?,?,?,?,?,?)");
 			statement.setInt(1, owner.getObjectId());
 			statement.setInt(2, shortcut.getSlot());
 			statement.setInt(3, shortcut.getPage());
@@ -202,51 +170,39 @@ public class ShortCuts
 			statement.setInt(8, owner.getGearGradeForCurrentLevel());
 			statement.execute();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Could not store character shortcut: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 
-		if (!shortCuts.containsKey(owner.getClassIndex()))
-		{
+		if (!shortCuts.containsKey(owner.getClassIndex())) {
 			shortCuts.put(owner.getClassIndex(), new HashMap<>());
 
 			owner.sendSysMessage("Adding classIndex");
 		}
 
-		if (!shortCuts.get(owner.getClassIndex()).containsKey(owner.getGearGradeForCurrentLevel()))
-		{
+		if (!shortCuts.get(owner.getClassIndex()).containsKey(owner.getGearGradeForCurrentLevel())) {
 			shortCuts.get(owner.getClassIndex()).put(owner.getGearGradeForCurrentLevel(), new HashMap<>());
 
 			owner.sendSysMessage("Adding LevelRange");
 		}
 
-		shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel())
-				.put(shortcut.getSlot() + shortcut.getPage() * 12, shortcut);
+		shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel()).put(shortcut.getSlot() + shortcut.getPage() * 12, shortcut);
 	}
 
 	/**
 	 * @param slot
 	 */
-	public synchronized void deleteShortCut(int slot, int page)
-	{
-		if (shortCuts.get(owner.getClassIndex()) == null ||
-				shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel()) == null)
-		{
+	public synchronized void deleteShortCut(int slot, int page) {
+		if (shortCuts.get(owner.getClassIndex()) == null || shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel()) == null) {
 			return;
 		}
 
-		L2ShortCut old = shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel())
-				.remove(slot + page * 12);
+		L2ShortCut old = shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel()).remove(slot + page * 12);
 
 		owner.sendSysMessage("Old Shortcut = " + old);
-		if (old == null || owner == null)
-		{
+		if (old == null || owner == null) {
 			return;
 		}
 
@@ -254,39 +210,28 @@ public class ShortCuts
 		owner.sendPacket(new ShortCutInit(owner));
 	}
 
-	public synchronized void deleteShortCutByObjectId(int objectId)
-	{
-		if (shortCuts.get(owner.getClassIndex()) == null ||
-				shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel()) == null)
-		{
+	public synchronized void deleteShortCutByObjectId(int objectId) {
+		if (shortCuts.get(owner.getClassIndex()) == null || shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel()) == null) {
 			return;
 		}
 
-		try
-		{
+		try {
 			L2ShortCut toRemove = null;
 
-			for (L2ShortCut shortcut : shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel())
-					.values())
-			{
-				if (shortcut == null)
-				{
+			for (L2ShortCut shortcut : shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel()).values()) {
+				if (shortcut == null) {
 					continue;
 				}
-				if (shortcut.getType() == L2ShortCut.TYPE_ITEM && shortcut.getId() == objectId)
-				{
+				if (shortcut.getType() == L2ShortCut.TYPE_ITEM && shortcut.getId() == objectId) {
 					toRemove = shortcut;
 					break;
 				}
 			}
 
-			if (toRemove != null)
-			{
+			if (toRemove != null) {
 				deleteShortCut(toRemove.getSlot(), toRemove.getPage());
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -294,16 +239,14 @@ public class ShortCuts
 	/**
 	 * @param shortcut
 	 */
-	private void deleteShortCutFromDb(L2ShortCut shortcut)
-	{
+	private void deleteShortCutFromDb(L2ShortCut shortcut) {
 		Connection con = null;
 
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 
-			PreparedStatement statement = con.prepareStatement(
-					"DELETE FROM character_shortcuts WHERE charId=? AND slot=? AND page=? AND class_index=? AND levelRange=? ");
+			PreparedStatement statement =
+					con.prepareStatement("DELETE FROM character_shortcuts WHERE charId=? AND slot=? AND page=? AND class_index=? AND levelRange=? ");
 			statement.setInt(1, owner.getObjectId());
 			statement.setInt(2, shortcut.getSlot());
 			statement.setInt(3, shortcut.getPage());
@@ -312,27 +255,20 @@ public class ShortCuts
 
 			statement.execute();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Could not delete character shortcut: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public void restore()
-	{
+	public void restore() {
 		restore(owner.getClassIndex(), owner.getGearGradeForCurrentLevel(), true);
 	}
 
-	public void restore(final int classIndex, final int levelRange, boolean loadDefault)
-	{
-		hasPresetForCurrentLevel =
-				shortCuts.containsKey(classIndex) && shortCuts.get(classIndex).containsKey(levelRange) &&
-						shortCuts.get(classIndex).get(levelRange).values().size() != 0;
+	public void restore(final int classIndex, final int levelRange, boolean loadDefault) {
+		hasPresetForCurrentLevel = shortCuts.containsKey(classIndex) && shortCuts.get(classIndex).containsKey(levelRange) &&
+				shortCuts.get(classIndex).get(levelRange).values().size() != 0;
 
 		//if (hasPresetForCurrentLevel)
 		//	shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel()).clear();
@@ -341,59 +277,45 @@ public class ShortCuts
 
 		Connection con = null;
 
-		if (!hasPresetForCurrentLevel)
-		{
+		if (!hasPresetForCurrentLevel) {
 			//owner.sendMessage("Loading Shortcuts from DB.");
-			try
-			{
+			try {
 				con = L2DatabaseFactory.getInstance().getConnection();
-				PreparedStatement statement = con.prepareStatement(
-						"SELECT charId FROM character_shortcuts WHERE charId=? AND class_index=? AND levelRange = ?");
+				PreparedStatement statement =
+						con.prepareStatement("SELECT charId FROM character_shortcuts WHERE charId=? AND class_index=? AND levelRange = ?");
 				statement.setInt(1, owner.getObjectId());
 				statement.setInt(2, classIndex);
 				statement.setInt(3, levelRange);
 
 				ResultSet rset = statement.executeQuery();
 
-				if (rset.next())
-				{
+				if (rset.next()) {
 					hasPresetForCurrentLevel = true;
 				}
 
-				if (!shortCuts.containsKey(classIndex))
-				{
+				if (!shortCuts.containsKey(classIndex)) {
 					shortCuts.put(classIndex, new HashMap<>());
 				}
 
-				if (!shortCuts.get(classIndex).containsKey(levelRange))
-				{
+				if (!shortCuts.get(classIndex).containsKey(levelRange)) {
 					shortCuts.get(classIndex).put(levelRange, new HashMap<>());
 				}
 
 				rset.close();
 				statement.close();
-			}
-			catch (Exception e)
-			{
-				Log.log(Level.WARNING,
-						"Could not check if the character had preset for current level " + e.getMessage(), e);
-			}
-			finally
-			{
+			} catch (Exception e) {
+				Log.log(Level.WARNING, "Could not check if the character had preset for current level " + e.getMessage(), e);
+			} finally {
 				L2DatabaseFactory.close(con);
 			}
 
-			if (loadDefault || hasPresetForCurrentLevel)
-			{
-				try
-				{
+			if (loadDefault || hasPresetForCurrentLevel) {
+				try {
 					con = L2DatabaseFactory.getInstance().getConnection();
 
-					String query =
-							"SELECT charId, slot, page, type, shortcut_id, level FROM character_shortcuts WHERE charId=? AND class_index=?";
+					String query = "SELECT charId, slot, page, type, shortcut_id, level FROM character_shortcuts WHERE charId=? AND class_index=?";
 
-					if (hasPresetForCurrentLevel)
-					{
+					if (hasPresetForCurrentLevel) {
 						query += " AND levelRange = ?";
 					}
 
@@ -401,15 +323,13 @@ public class ShortCuts
 					statement.setInt(1, owner.getObjectId());
 					statement.setInt(2, classIndex);
 
-					if (hasPresetForCurrentLevel)
-					{
+					if (hasPresetForCurrentLevel) {
 						statement.setInt(3, levelRange);
 					}
 
 					ResultSet rset = statement.executeQuery();
 
-					while (rset.next())
-					{
+					while (rset.next()) {
 						int slot = rset.getInt("slot");
 						int page = rset.getInt("page");
 						int type = rset.getInt("type");
@@ -425,49 +345,35 @@ public class ShortCuts
 
 					rset.close();
 					statement.close();
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					Log.log(Level.WARNING, "Could not restore character shortcuts: " + e.getMessage(), e);
-				}
-				finally
-				{
+				} finally {
 					L2DatabaseFactory.close(con);
 				}
 			}
 		}
 
-		if (hasPresetForCurrentLevel)
-		{
+		if (hasPresetForCurrentLevel) {
 			owner.sendMessage("Loaded the previously saved preset for this level range.");
-		}
-		else
-		{
+		} else {
 			owner.sendMessage("You do not have any shortcut preset for this level range.");
 		}
 
 		// verify shortcuts
-		for (L2ShortCut sc : getAllShortCuts())
-		{
-			if (sc == null)
-			{
+		for (L2ShortCut sc : getAllShortCuts()) {
+			if (sc == null) {
 				continue;
 			}
 
-			if (sc.getType() == L2ShortCut.TYPE_ITEM)
-			{
+			if (sc.getType() == L2ShortCut.TYPE_ITEM) {
 				L2ItemInstance item = owner.getInventory().getItemByObjectId(sc.getId());
-				if (item == null)
-				{
+				if (item == null) {
 					deleteShortCut(sc.getSlot(), sc.getPage());
-				}
-				else if (item.isEtcItem())
-				{
+				} else if (item.isEtcItem()) {
 					sc.setSharedReuseGroup(item.getEtcItem().getSharedReuseGroup());
 				}
 			}
-			if (sc.getType() == L2ShortCut.TYPE_SKILL)
-			{
+			if (sc.getType() == L2ShortCut.TYPE_SKILL) {
 				L2Skill skill = SkillTable.getInstance().getInfo(sc.getId(), sc.getLevel());
 				sc.setSharedReuseGroup(skill.getReuseHashCode());
 			}
@@ -476,10 +382,8 @@ public class ShortCuts
 		//owner.sendMessage("Shortcuts verified.");
 	}
 
-	public final boolean hasPresetFor(int classIndex, int levelRange)
-	{
-		if (!shortCuts.containsKey(classIndex) || !shortCuts.get(classIndex).containsKey(levelRange))
-		{
+	public final boolean hasPresetFor(int classIndex, int levelRange) {
+		if (!shortCuts.containsKey(classIndex) || !shortCuts.get(classIndex).containsKey(levelRange)) {
 			restore(classIndex, levelRange, false);
 		}
 
@@ -488,16 +392,14 @@ public class ShortCuts
 	
 	/**
 	 * Updates the shortcut bars with the new skill.
-	 * @param skillId the skill Id to search and update.
+	 *
+	 * @param skillId    the skill Id to search and update.
 	 * @param skillLevel the skill level to update.
 	 */
-	public synchronized void updateSkillShortcuts(int skillId, int skillLevel)
-	{
+	public synchronized void updateSkillShortcuts(int skillId, int skillLevel) {
 		// Update all the shortcuts for this skill
-		for (L2ShortCut sc : getAllShortCuts())
-		{
-			if ((sc.getId() == skillId) && (sc.getType() == L2ShortCut.TYPE_SKILL))
-			{
+		for (L2ShortCut sc : getAllShortCuts()) {
+			if ((sc.getId() == skillId) && (sc.getType() == L2ShortCut.TYPE_SKILL)) {
 				final L2ShortCut newsc = new L2ShortCut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(), skillLevel, 1);
 				owner.sendPacket(new ShortCutRegister(newsc));
 				owner.registerShortCut(newsc);
@@ -507,15 +409,13 @@ public class ShortCuts
 	
 	/**
 	 * Updates the shortcut bars with the new skill.
+	 *
 	 * @param objId the item objectId to search and update.
-	 * @param type the short cut type to update.
+	 * @param type  the short cut type to update.
 	 */
-	public synchronized void updateItemShortcuts(int objId)
-	{
-		for (L2ShortCut sc : getAllShortCuts())
-		{
-			if ((sc.getId() == objId) && (sc.getType() ==  L2ShortCut.TYPE_ITEM))
-			{
+	public synchronized void updateItemShortcuts(int objId) {
+		for (L2ShortCut sc : getAllShortCuts()) {
+			if ((sc.getId() == objId) && (sc.getType() == L2ShortCut.TYPE_ITEM)) {
 				final L2ShortCut newsc = new L2ShortCut(sc.getSlot(), sc.getPage(), sc.getType(), sc.getId(), sc.getLevel(), sc.getCharacterType());
 				owner.sendPacket(new ShortCutRegister(newsc));
 				owner.registerShortCut(newsc);

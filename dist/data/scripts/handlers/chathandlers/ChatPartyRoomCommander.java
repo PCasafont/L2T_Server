@@ -24,21 +24,16 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
  *
  * @author durgus
  */
-public class ChatPartyRoomCommander implements IChatHandler
-{
+public class ChatPartyRoomCommander implements IChatHandler {
 	private static final int[] COMMAND_IDS = {15};
 
 	/**
 	 * Handle chat type 'party room commander'
 	 */
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-	{
-		if (activeChar.isInParty())
-		{
-			if (activeChar.getParty().isInCommandChannel() &&
-					activeChar.getParty().getCommandChannel().getChannelLeader().equals(activeChar))
-			{
+	public void handleChat(int type, L2PcInstance activeChar, String target, String text) {
+		if (activeChar.isInParty()) {
+			if (activeChar.getParty().isInCommandChannel() && activeChar.getParty().getCommandChannel().getChannelLeader().equals(activeChar)) {
 				CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
 				activeChar.getParty().getCommandChannel().broadcastCSToChannelMembers(cs, activeChar);
 			}
@@ -51,8 +46,7 @@ public class ChatPartyRoomCommander implements IChatHandler
 	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
 	 */
 	@Override
-	public int[] getChatTypeList()
-	{
+	public int[] getChatTypeList() {
 		return COMMAND_IDS;
 	}
 }

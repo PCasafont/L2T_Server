@@ -22,23 +22,18 @@ import l2server.gameserver.stats.Env;
  * @author LasTravel
  */
 
-public class ConditionPlayerClanLeaderIsOn extends Condition
-{
+public class ConditionPlayerClanLeaderIsOn extends Condition {
 
-	public ConditionPlayerClanLeaderIsOn()
-	{
+	public ConditionPlayerClanLeaderIsOn() {
 
 	}
 
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (env.player instanceof L2PcInstance)
-		{
+	public boolean testImpl(Env env) {
+		if (env.player instanceof L2PcInstance) {
 			L2PcInstance player = (L2PcInstance) env.player;
 
-			if (player == null || player.getClan() == null)
-			{
+			if (player == null || player.getClan() == null) {
 				return false;
 			}
 

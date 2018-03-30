@@ -18,16 +18,14 @@ package l2server.gameserver.stats.conditions;
 import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.stats.Env;
 
-public class ConditionPlayerInsideZoneId extends Condition
-{
+public class ConditionPlayerInsideZoneId extends Condition {
 
 	private int id;
 
 	/**
 	 * Instantiates a new condition player landing zone.
 	 */
-	public ConditionPlayerInsideZoneId(int id)
-	{
+	public ConditionPlayerInsideZoneId(int id) {
 		this.id = id;
 	}
 
@@ -35,8 +33,7 @@ public class ConditionPlayerInsideZoneId extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		return ZoneManager.getInstance().getZoneById(id).isCharacterInZone(env.player);
 	}
 }

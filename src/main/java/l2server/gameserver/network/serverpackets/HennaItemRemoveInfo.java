@@ -18,21 +18,18 @@ package l2server.gameserver.network.serverpackets;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.item.L2Henna;
 
-public class HennaItemRemoveInfo extends L2GameServerPacket
-{
-
+public class HennaItemRemoveInfo extends L2GameServerPacket {
+	
 	private L2PcInstance activeChar;
 	private L2Henna henna;
-
-	public HennaItemRemoveInfo(L2Henna henna, L2PcInstance player)
-	{
+	
+	public HennaItemRemoveInfo(L2Henna henna, L2PcInstance player) {
 		this.henna = henna;
 		activeChar = player;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(henna.getSymbolId()); //symbol Id
 		writeD(henna.getDyeId()); //item id of dye
 		writeQ(0x00); // total amount of dye require

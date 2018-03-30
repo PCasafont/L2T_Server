@@ -25,30 +25,25 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-public class BeastSpice implements IItemHandler
-{
+public class BeastSpice implements IItemHandler {
 	/**
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-		{
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!(playable instanceof L2PcInstance)) {
 			return;
 		}
 
 		L2PcInstance activeChar = (L2PcInstance) playable;
 
-		if (!(activeChar.getTarget() instanceof L2FeedableBeastInstance))
-		{
+		if (!(activeChar.getTarget() instanceof L2FeedableBeastInstance)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
 		}
 
 		int skillId = 0;
-		switch (item.getItemId())
-		{
+		switch (item.getItemId()) {
 			case 6643:
 				skillId = 2188;
 				break;
@@ -57,8 +52,7 @@ public class BeastSpice implements IItemHandler
 				break;
 		}
 		L2Skill skill = SkillTable.getInstance().getInfo(skillId, 1);
-		if (skill != null)
-		{
+		if (skill != null) {
 			activeChar.useMagic(skill, false, false);
 		}
 	}

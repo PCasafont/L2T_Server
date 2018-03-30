@@ -24,58 +24,47 @@ import java.util.List;
  *
  * @version $Revision: 1.3.2.1.2.6 $ $Date: 2005/04/05 19:41:08 $
  */
-public class AbnormalStatusUpdate extends L2GameServerPacket
-{
+public class AbnormalStatusUpdate extends L2GameServerPacket {
 	private List<Effect> effects;
-
-	private static class Effect
-	{
+	
+	private static class Effect {
 		protected int skillId;
 		protected int level;
 		protected int comboId;
 		protected int duration;
-
-		public Effect(int pSkillId, int pLevel, int pComboId, int pDuration)
-		{
+		
+		public Effect(int pSkillId, int pLevel, int pComboId, int pDuration) {
 			skillId = pSkillId;
 			level = pLevel;
 			comboId = pComboId;
 			duration = pDuration;
 		}
 	}
-
-	public AbnormalStatusUpdate()
-	{
+	
+	public AbnormalStatusUpdate() {
 		effects = new ArrayList<>();
 	}
-
-	public void addEffect(int skillId, int level, int comboId, int duration)
-	{
-		if (skillId == 2031 || skillId == 2032 || skillId == 2037 || skillId == 26025 || skillId == 26026)
-		{
+	
+	public void addEffect(int skillId, int level, int comboId, int duration) {
+		if (skillId == 2031 || skillId == 2032 || skillId == 2037 || skillId == 26025 || skillId == 26026) {
 			return;
 		}
 		effects.add(new Effect(skillId, level, comboId, duration));
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeH(effects.size());
-
-		for (Effect temp : effects)
-		{
+		
+		for (Effect temp : effects) {
 			writeD(temp.skillId);
 			writeD(temp.level);
-
+			
 			writeD(temp.comboId);
-
-			if (temp.duration == -1)
-			{
+			
+			if (temp.duration == -1) {
 				writeH(-1);
-			}
-			else
-			{
+			} else {
 				writeH(temp.duration / 1000 + 1);
 			}
 		}

@@ -22,8 +22,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-public abstract class ConditionInventory extends Condition implements ConditionListener
-{
+public abstract class ConditionInventory extends Condition implements ConditionListener {
 
 	protected final int slot;
 
@@ -32,8 +31,7 @@ public abstract class ConditionInventory extends Condition implements ConditionL
 	 *
 	 * @param slot the slot
 	 */
-	public ConditionInventory(int slot)
-	{
+	public ConditionInventory(int slot) {
 		this.slot = slot;
 	}
 

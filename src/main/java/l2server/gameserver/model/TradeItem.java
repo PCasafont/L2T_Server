@@ -20,8 +20,7 @@ package l2server.gameserver.model;
  *
  * @version $Revision: 1.2.4.1 $ $Date: 2005/03/27 15:29:32 $
  */
-public final class TradeItem
-{
+public final class TradeItem {
 	private int objectId;
 	private int itemId;
 	private long price;
@@ -29,67 +28,54 @@ public final class TradeItem
 	private long count;
 	private int enchantLevel;
 
-	public TradeItem()
-	{
+	public TradeItem() {
 	}
 
-	public void setObjectId(int id)
-	{
+	public void setObjectId(int id) {
 		objectId = id;
 	}
 
-	public int getObjectId()
-	{
+	public int getObjectId() {
 		return objectId;
 	}
 
-	public void setItemId(int id)
-	{
+	public void setItemId(int id) {
 		itemId = id;
 	}
 
-	public int getItemId()
-	{
+	public int getItemId() {
 		return itemId;
 	}
 
-	public void setOwnersPrice(long price)
-	{
+	public void setOwnersPrice(long price) {
 		this.price = price;
 	}
 
-	public long getOwnersPrice()
-	{
+	public long getOwnersPrice() {
 		return price;
 	}
 
-	public void setstorePrice(long price)
-	{
+	public void setstorePrice(long price) {
 		storePrice = price;
 	}
 
-	public long getStorePrice()
-	{
+	public long getStorePrice() {
 		return storePrice;
 	}
 
-	public void setCount(long count)
-	{
+	public void setCount(long count) {
 		this.count = count;
 	}
 
-	public long getCount()
-	{
+	public long getCount() {
 		return count;
 	}
 
-	public void setEnchantLevel(int enchant)
-	{
+	public void setEnchantLevel(int enchant) {
 		enchantLevel = enchant;
 	}
 
-	public int getEnchantLevel()
-	{
+	public int getEnchantLevel() {
 		return enchantLevel;
 	}
 }

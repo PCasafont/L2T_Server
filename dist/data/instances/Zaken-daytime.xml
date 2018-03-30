@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- id: 133 -->
 <instance name="Cavern of the Pirate Captain (daydream)" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:noNamespaceSchemaLocation="instance.xsd">
-    <activityTime val="60" />
-    <allowSummon val="false" />
-    <spawnpoint spawnX="52241" spawnY="218775" spawnZ="-3224" />
+		  xsi:noNamespaceSchemaLocation="instance.xsd">
+	<activityTime val="60" />
+	<allowSummon val="false" />
+	<spawnpoint spawnX="52241" spawnY="218775" spawnZ="-3224" />
 </instance>

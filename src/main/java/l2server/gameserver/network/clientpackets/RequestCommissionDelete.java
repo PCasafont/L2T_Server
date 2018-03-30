@@ -20,27 +20,23 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Erlandys
  */
-public final class RequestCommissionDelete extends L2GameClientPacket
-{
-
+public final class RequestCommissionDelete extends L2GameClientPacket {
+	
 	long auctionID;
 	int category;
 	int duration;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		auctionID = readQ();
 		category = readD();
 		duration = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 		}
 
 		/*AuctionManager am = AuctionManager.getInstance();

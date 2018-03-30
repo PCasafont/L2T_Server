@@ -25,19 +25,14 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.gameserver.templates.skills.L2SkillType;
 
-public class GiveVitality implements ISkillHandler
-{
+public class GiveVitality implements ISkillHandler {
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.GIVE_VITALITY};
 
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		for (L2Object target : targets)
-		{
-			if (target instanceof L2PcInstance)
-			{
-				if (skill.hasEffects())
-				{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+		for (L2Object target : targets) {
+			if (target instanceof L2PcInstance) {
+				if (skill.hasEffects()) {
 					//((L2PcInstance) target).stopSkillEffects(skill.getId());
 					skill.getEffects(activeChar, (L2PcInstance) target);
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
@@ -51,8 +46,7 @@ public class GiveVitality implements ISkillHandler
 	}
 
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

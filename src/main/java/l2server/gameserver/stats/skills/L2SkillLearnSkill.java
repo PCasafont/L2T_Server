@@ -22,20 +22,17 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.StatsSet;
 
-public class L2SkillLearnSkill extends L2Skill
-{
+public class L2SkillLearnSkill extends L2Skill {
 	private final int[] learnSkillId;
 	private final int[] learnSkillLvl;
 
-	public L2SkillLearnSkill(StatsSet set)
-	{
+	public L2SkillLearnSkill(StatsSet set) {
 		super(set);
 
 		String[] ar = set.getString("learnSkillId", "0").split(",");
 		int[] ar2 = new int[ar.length];
 
-		for (int i = 0; i < ar.length; i++)
-		{
+		for (int i = 0; i < ar.length; i++) {
 			ar2[i] = Integer.parseInt(ar[i]);
 		}
 
@@ -44,13 +41,11 @@ public class L2SkillLearnSkill extends L2Skill
 		ar = set.getString("learnSkillLvl", "1").split(",");
 		ar2 = new int[learnSkillId.length];
 
-		for (int i = 0; i < learnSkillId.length; i++)
-		{
+		for (int i = 0; i < learnSkillId.length; i++) {
 			ar2[i] = 1;
 		}
 
-		for (int i = 0; i < ar.length; i++)
-		{
+		for (int i = 0; i < ar.length; i++) {
 			ar2[i] = Integer.parseInt(ar[i]);
 		}
 
@@ -58,23 +53,18 @@ public class L2SkillLearnSkill extends L2Skill
 	}
 
 	@Override
-	public void useSkill(L2Character activeChar, L2Object[] targets)
-	{
-		if (!(activeChar instanceof L2PcInstance))
-		{
+	public void useSkill(L2Character activeChar, L2Object[] targets) {
+		if (!(activeChar instanceof L2PcInstance)) {
 			return;
 		}
 
 		final L2PcInstance player = (L2PcInstance) activeChar;
 		L2Skill newSkill;
 
-		for (int i = 0; i < learnSkillId.length; i++)
-		{
-			if (player.getSkillLevelHash(learnSkillId[i]) < learnSkillLvl[i] && learnSkillId[i] != 0)
-			{
+		for (int i = 0; i < learnSkillId.length; i++) {
+			if (player.getSkillLevelHash(learnSkillId[i]) < learnSkillLvl[i] && learnSkillId[i] != 0) {
 				newSkill = SkillTable.getInstance().getInfo(learnSkillId[i], learnSkillLvl[i]);
-				if (newSkill != null)
-				{
+				if (newSkill != null) {
 					player.addSkill(newSkill, true);
 				}
 			}

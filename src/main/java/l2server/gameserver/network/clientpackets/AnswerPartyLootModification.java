@@ -21,28 +21,23 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author JIV
  */
-public class AnswerPartyLootModification extends L2GameClientPacket
-{
-
+public class AnswerPartyLootModification extends L2GameClientPacket {
+	
 	public int answer;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		answer = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 		L2Party party = activeChar.getParty();
-		if (party != null)
-		{
+		if (party != null) {
 			party.answerLootChangeRequest(activeChar, answer == 1);
 		}
 	}

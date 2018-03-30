@@ -48,13 +48,11 @@ import l2server.gameserver.util.Util;
  *
  * @author House
  */
-public class EffectWarp extends L2Effect
-{
+public class EffectWarp extends L2Effect {
 	private int x, y, z;
 	private L2Character actor;
 
-	public EffectWarp(Env env, L2EffectTemplate template)
-	{
+	public EffectWarp(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -62,12 +60,10 @@ public class EffectWarp extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		actor = getAbnormal().isSelfEffect() ? getEffector() : getEffected();
 
-		if (actor.isMovementDisabled())
-		{
+		if (actor.isMovementDisabled()) {
 			return false;
 		}
 
@@ -84,12 +80,9 @@ public class EffectWarp extends L2Effect
 		y = actor.getY() + (int) (y1 * radius);
 		z = actor.getZ();
 
-		if (Config.GEODATA > 0)
-		{
-			Location destiny = GeoData.getInstance()
-					.moveCheck(actor.getX(), actor.getY(), actor.getZ(), x, y, z, actor.getInstanceId());
-			if (destiny.getX() != x || destiny.getY() != y)
-			{
+		if (Config.GEODATA > 0) {
+			Location destiny = GeoData.getInstance().moveCheck(actor.getX(), actor.getY(), actor.getZ(), x, y, z, actor.getInstanceId());
+			if (destiny.getX() != x || destiny.getY() != y) {
 				x = destiny.getX() - (int) (x1 * 10);
 				y = destiny.getY() - (int) (y1 * 10);
 			}
@@ -114,8 +107,7 @@ public class EffectWarp extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 }

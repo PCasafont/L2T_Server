@@ -25,33 +25,27 @@ import java.util.List;
  *
  * @version $Revision: 1.3.2.1.2.7 $ $Date: 2005/03/27 15:29:39 $
  */
-public class NewCharacterSuccess extends L2GameServerPacket
-{
+public class NewCharacterSuccess extends L2GameServerPacket {
 	// dddddddddddddddddddd
 	private List<L2PcTemplate> chars = new ArrayList<>();
-
-	public NewCharacterSuccess()
-	{
-
+	
+	public NewCharacterSuccess() {
+	
 	}
-
-	public void addChar(L2PcTemplate template)
-	{
+	
+	public void addChar(L2PcTemplate template) {
 		chars.add(template);
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(chars.size());
-
-		for (L2PcTemplate temp : chars)
-		{
-			if (temp == null)
-			{
+		
+		for (L2PcTemplate temp : chars) {
+			if (temp == null) {
 				continue;
 			}
-
+			
 			writeD(temp.race.ordinal());
 			writeD(temp.startingClassId);
 			writeD(0x46);

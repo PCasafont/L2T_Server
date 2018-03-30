@@ -20,19 +20,17 @@ package l2server.gameserver.model;
  *
  * @version $Revision: 0.0.0.1 $ $Date: 2008/03/19 15:10:30 $
  */
-public final class L2TransformSkillLearn
-{
+public final class L2TransformSkillLearn {
 	// these two build the primary key
 	private final int _race_id;
 	private final int _skill_id;
 	private final int _item_id;
 	private final int level;
-
+	
 	private final int sp;
 	private final int _min_level;
-
-	public L2TransformSkillLearn(int race_id, int skill_id, int item_id, int level, int sp, int min_level)
-	{
+	
+	public L2TransformSkillLearn(int race_id, int skill_id, int item_id, int level, int sp, int min_level) {
 		_race_id = race_id;
 		_skill_id = skill_id;
 		_item_id = item_id;
@@ -40,46 +38,40 @@ public final class L2TransformSkillLearn
 		this.sp = sp;
 		_min_level = min_level;
 	}
-
+	
 	/**
 	 * @return Returns the skill_id.
 	 */
-	public int getId()
-	{
+	public int getId() {
 		return _skill_id;
 	}
-
+	
 	/**
 	 * @return Returns the level.
 	 */
-	public int getLevel()
-	{
+	public int getLevel() {
 		return level;
 	}
-
+	
 	/**
 	 * @return Returns the minLevel.
 	 */
-	public int getMinLevel()
-	{
+	public int getMinLevel() {
 		return _min_level;
 	}
-
+	
 	/**
 	 * @return Returns the spCost.
 	 */
-	public int getSpCost()
-	{
+	public int getSpCost() {
 		return sp;
 	}
-
-	public int getRace()
-	{
+	
+	public int getRace() {
 		return _race_id;
 	}
-
-	public int getItemId()
-	{
+	
+	public int getItemId() {
 		return _item_id;
 	}
 }

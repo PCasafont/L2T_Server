@@ -28,25 +28,21 @@ import java.util.List;
  *
  * @author Xavi (Re-done)
  */
-public class ClanWarsList implements IUserCommandHandler
-{
+public class ClanWarsList implements IUserCommandHandler {
 	private static final int[] COMMAND_IDS = {88, 89, 90};
 
 	/**
 	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
-	{
-		if (id != COMMAND_IDS[0] && id != COMMAND_IDS[1] && id != COMMAND_IDS[2])
-		{
+	public boolean useUserCommand(int id, L2PcInstance activeChar) {
+		if (id != COMMAND_IDS[0] && id != COMMAND_IDS[1] && id != COMMAND_IDS[2]) {
 			return false;
 		}
 
 		L2Clan clan = activeChar.getClan();
 
-		if (clan == null)
-		{
+		if (clan == null) {
 			activeChar.sendMessage("You are not in a clan.");
 			return false;
 		}
@@ -55,19 +51,15 @@ public class ClanWarsList implements IUserCommandHandler
 
 		List<L2Clan> clanList;
 
-		if (id == 88)
-		{
+		if (id == 88) {
 			// Attack List
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLANS_YOU_DECLARED_WAR_ON));
 			clanList = clan.getDeclaredWars();
-		}
-		else if (id == 89)
-		{
+		} else if (id == 89) {
 			// Under Attack List
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLANS_THAT_HAVE_DECLARED_WAR_ON_YOU));
 			clanList = clan.getUnderAttackWars();
-		}
-		else
+		} else
 		// ID = 90
 		{
 			// War List
@@ -75,17 +67,13 @@ public class ClanWarsList implements IUserCommandHandler
 			clanList = clan.getWarList();
 		}
 
-		for (L2Clan warClan : clanList)
-		{
-			if (warClan.getAllyId() > 0)
-			{
+		for (L2Clan warClan : clanList) {
+			if (warClan.getAllyId() > 0) {
 				// Target With Ally
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S2_ALLIANCE);
 				sm.addString(warClan.getName());
 				sm.addString(warClan.getAllyName());
-			}
-			else
-			{
+			} else {
 				// Target Without Ally
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_NO_ALLI_EXISTS);
 				sm.addString(warClan.getName());
@@ -103,8 +91,7 @@ public class ClanWarsList implements IUserCommandHandler
 	 * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
 	 */
 	@Override
-	public int[] getUserCommandList()
-	{
+	public int[] getUserCommandList() {
 		return COMMAND_IDS;
 	}
 }

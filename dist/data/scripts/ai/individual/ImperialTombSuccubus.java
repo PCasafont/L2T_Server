@@ -15,6 +15,7 @@
 
 package ai.individual;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
@@ -23,50 +24,40 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
-import ai.group_template.L2AttackableAIScript;
-
 /**
  * @author LasTravel
- *         <p>
- *         Imperial Tomb Succubus AI
- *         <p>
- *         Source:
- *         - http://l2wiki.com/Imperial_Tomb
+ * <p>
+ * Imperial Tomb Succubus AI
+ * <p>
+ * Source:
+ * - http://l2wiki.com/Imperial_Tomb
  */
 
-public class ImperialTombSuccubus extends L2AttackableAIScript
-{
+public class ImperialTombSuccubus extends L2AttackableAIScript {
 	private static final int[] succubusIds = {23191, 23192, 23197, 23198};
 	private static final int[] buffIds = {14975, 14976, 14977};
 
-	public ImperialTombSuccubus(int id, String name, String descr)
-	{
+	public ImperialTombSuccubus(int id, String name, String descr) {
 		super(id, name, descr);
 
-		for (int a : succubusIds)
-		{
+		for (int a : succubusIds) {
 			addKillId(a);
 		}
 
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-		{
-			if (spawn == null)
-			{
+		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable()) {
+			if (spawn == null) {
 				continue;
 			}
 
-			if (Util.contains(succubusIds, spawn.getNpcId()))
-			{
+			if (Util.contains(succubusIds, spawn.getNpcId())) {
 				spawn.getNpc().setShowSummonAnimation(true);
 			}
 		}
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
-		if (Rnd.get(100) > 50)
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+		if (Rnd.get(100) > 50) {
 			SkillTable.getInstance().getInfo(buffIds[Rnd.get(buffIds.length)], 1).getEffects(killer, killer);
 		}
 
@@ -74,13 +65,11 @@ public class ImperialTombSuccubus extends L2AttackableAIScript
 	}
 
 	@Override
-	public int getOnKillDelay(int npcId)
-	{
+	public int getOnKillDelay(int npcId) {
 		return 0;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new ImperialTombSuccubus(-1, "ImperialTombSuccubus", "ai");
 	}
 }

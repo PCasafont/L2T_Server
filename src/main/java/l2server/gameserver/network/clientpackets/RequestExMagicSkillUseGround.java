@@ -29,19 +29,17 @@ import l2server.util.Point3D;
  *
  * @author -Wooden-
  */
-public final class RequestExMagicSkillUseGround extends L2GameClientPacket
-{
-
+public final class RequestExMagicSkillUseGround extends L2GameClientPacket {
+	
 	private int x;
 	private int y;
 	private int z;
 	private int skillId;
 	private boolean ctrlPressed;
 	private boolean shiftPressed;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		x = readD();
 		y = readD();
 		z = readD();
@@ -49,44 +47,38 @@ public final class RequestExMagicSkillUseGround extends L2GameClientPacket
 		ctrlPressed = readD() != 0;
 		shiftPressed = readC() != 0;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		// Get the current L2PcInstance of the player
 		L2PcInstance activeChar = getClient().getActiveChar();
-
-		if (activeChar == null)
-		{
+		
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		// Get the level of the used skill
 		int level = activeChar.getSkillLevelHash(skillId);
-		if (level <= 0)
-		{
+		if (level <= 0) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
+		
 		// Get the L2Skill template corresponding to the skillID received from the client
 		L2Skill skill = SkillTable.getInstance().getInfo(skillId, level);
-
+		
 		// Check the validity of the skill
-		if (skill != null)
-		{
+		if (skill != null) {
 			activeChar.setSkillCastPosition(new Point3D(x, y, z));
-
+			
 			// normally magicskilluse packet turns char client side but for these skills, it doesn't (even with correct target)
 			activeChar.setHeading(Util.calculateHeadingFrom(activeChar.getX(), activeChar.getY(), x, y));
 			activeChar.broadcastPacket(new ValidateLocation(activeChar));
-
+			
 			activeChar.useMagic(skill, ctrlPressed, shiftPressed);
-		}
-		else
-		{
+		} else {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			Log.warning("No skill found with id " + skillId + " and level " + level + " !!");
 		}

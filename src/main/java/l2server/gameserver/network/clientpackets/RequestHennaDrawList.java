@@ -23,28 +23,24 @@ import l2server.gameserver.network.serverpackets.HennaEquipList;
  *
  * @author Tempy
  */
-public final class RequestHennaDrawList extends L2GameClientPacket
-{
-
+public final class RequestHennaDrawList extends L2GameClientPacket {
+	
 	// This is just a trigger packet...
 	@SuppressWarnings("unused")
 	private int unknown;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		unknown = readD(); // ??
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		activeChar.sendPacket(new HennaEquipList(activeChar, activeChar.getCurrentClass().getAllowedDyes()));
 	}
 }

@@ -28,28 +28,23 @@ import java.util.List;
 /**
  * @author -Nemesiss-
  */
-public class FishTable
-{
+public class FishTable {
 
 	private static List<FishData> fishsNormal = new ArrayList<>();
 	private static List<FishData> fishsEasy = new ArrayList<>();
 	private static List<FishData> fishsHard = new ArrayList<>();
 
-	public static FishTable getInstance()
-	{
+	public static FishTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private FishTable()
-	{
+	private FishTable() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "fishes.xml");
 		XmlDocument doc = new XmlDocument(file);
 
 		int count = 0;
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("fish"))
-			{
+		for (XmlNode n : doc.getChildren()) {
+			if (n.getName().equalsIgnoreCase("fish")) {
 				int id = n.getInt("id");
 				int lvl = n.getInt("level");
 				String name = n.getString("name");
@@ -61,10 +56,8 @@ public class FishTable
 				int gutsCheckTime = n.getInt("gutsCheckTime");
 				int waitTime = n.getInt("waitTime");
 				int combatTime = n.getInt("combatTime");
-				FishData fish =
-						new FishData(id, lvl, name, hp, hpReg, type, group, guts, gutsCheckTime, waitTime, combatTime);
-				switch (fish.getGroup())
-				{
+				FishData fish = new FishData(id, lvl, name, hp, hpReg, type, group, guts, gutsCheckTime, waitTime, combatTime);
+				switch (fish.getGroup()) {
 					case 0:
 						fishsEasy.add(fish);
 						break;
@@ -85,12 +78,10 @@ public class FishTable
 	/**
 	 * @return List of Fish that can be fished
 	 */
-	public List<FishData> getfish(int lvl, int type, int group)
-	{
+	public List<FishData> getfish(int lvl, int type, int group) {
 		List<FishData> result = new ArrayList<>();
 		List<FishData> Fishs = null;
-		switch (group)
-		{
+		switch (group) {
 			case 0:
 				Fishs = fishsEasy;
 				break;
@@ -100,35 +91,29 @@ public class FishTable
 			case 2:
 				Fishs = fishsHard;
 		}
-		if (Fishs == null)
-		{
+		if (Fishs == null) {
 			// the fish list is empty
 			Log.warning("Fish are not defined !");
 			return null;
 		}
-		for (FishData f : Fishs)
-		{
-			if (f.getLevel() != lvl)
-			{
+		for (FishData f : Fishs) {
+			if (f.getLevel() != lvl) {
 				continue;
 			}
-			if (f.getType() != type)
-			{
+			if (f.getType() != type) {
 				continue;
 			}
 
 			result.add(f);
 		}
-		if (result.isEmpty())
-		{
+		if (result.isEmpty()) {
 			Log.warning("Cant Find Any Fish!? - Lvl: " + lvl + " Type: " + type);
 		}
 		return result;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final FishTable instance = new FishTable();
 	}
 }

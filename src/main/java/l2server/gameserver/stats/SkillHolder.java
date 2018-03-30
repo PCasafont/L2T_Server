@@ -20,37 +20,31 @@ import l2server.gameserver.model.L2Skill;
 
 /**
  * @author BiggBoss
- *         Simple class for storing skill id/level
+ * Simple class for storing skill id/level
  */
-public final class SkillHolder
-{
+public final class SkillHolder {
 	private final int skillId;
 	private final int skillLvl;
 
-	public SkillHolder(int skillId, int skillLvl)
-	{
+	public SkillHolder(int skillId, int skillLvl) {
 		this.skillId = skillId;
 		this.skillLvl = skillLvl;
 	}
 
-	public SkillHolder(L2Skill skill)
-	{
+	public SkillHolder(L2Skill skill) {
 		skillId = skill.getId();
 		skillLvl = skill.getLevelHash();
 	}
 
-	public final int getSkillId()
-	{
+	public final int getSkillId() {
 		return skillId;
 	}
 
-	public final int getSkillLvl()
-	{
+	public final int getSkillLvl() {
 		return skillLvl;
 	}
 
-	public final L2Skill getSkill()
-	{
+	public final L2Skill getSkill() {
 		return SkillTable.getInstance().getInfo(skillId, skillLvl);
 	}
 }

@@ -29,59 +29,48 @@ import l2server.gameserver.model.actor.L2Character;
  *
  * @version $Revision: 1.4.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public class MagicSkillLaunched extends L2GameServerPacket
-{
+public class MagicSkillLaunched extends L2GameServerPacket {
 	private int charObjId;
 	private int skillId;
 	private int skillLevel;
 	private int numberOfTargets;
 	private L2Object[] targets;
 	private int singleTargetId;
-
-	public MagicSkillLaunched(L2Character cha, int skillId, int skillLevel, L2Object[] targets)
-	{
+	
+	public MagicSkillLaunched(L2Character cha, int skillId, int skillLevel, L2Object[] targets) {
 		charObjId = cha.getObjectId();
 		this.skillId = skillId;
 		this.skillLevel = skillLevel;
-
-		if (targets != null)
-		{
+		
+		if (targets != null) {
 			numberOfTargets = targets.length;
 			this.targets = targets;
-		}
-		else
-		{
+		} else {
 			numberOfTargets = 1;
 			this.targets = new L2Object[]{cha};
 		}
 		singleTargetId = 0;
 	}
-
-	public MagicSkillLaunched(L2Character cha, int skillId, int skillLevel)
-	{
+	
+	public MagicSkillLaunched(L2Character cha, int skillId, int skillLevel) {
 		charObjId = cha.getObjectId();
 		this.skillId = skillId;
 		this.skillLevel = skillLevel;
 		numberOfTargets = 1;
 		singleTargetId = cha.getTargetId();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(0x02); // GoD ??? (if 1, party skills cannot be seen)
 		writeD(charObjId);
 		writeD(skillId);
 		writeD(skillLevel);
 		writeD(numberOfTargets); // also failed or not?
-		if (singleTargetId != 0 || numberOfTargets == 0)
-		{
+		if (singleTargetId != 0 || numberOfTargets == 0) {
 			writeD(singleTargetId);
-		}
-		else
-		{
-			for (L2Object target : targets)
-			{
+		} else {
+			for (L2Object target : targets) {
 				writeD(target.getObjectId());
 			}
 		}

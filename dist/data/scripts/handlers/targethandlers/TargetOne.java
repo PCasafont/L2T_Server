@@ -32,19 +32,16 @@ import java.util.logging.Logger;
 /**
  * @author nBd
  */
-public class TargetOne implements ISkillTargetTypeHandler
-{
+public class TargetOne implements ISkillTargetTypeHandler {
 	protected static final Logger log = Logger.getLogger(TargetOne.class.getName());
-
+	
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		L2SkillType skillType = skill.getSkillType();
-
+		
 		boolean canTargetSelf = false;
-
-		switch (skillType)
-		{
+		
+		switch (skillType) {
 			case BUFF:
 			case HEAL:
 				//case HOT:
@@ -65,14 +62,10 @@ public class TargetOne implements ISkillTargetTypeHandler
 			case BALANCE_LIFE:
 				canTargetSelf = true;
 				break;
-			case TAKEFORT:
-			{
-				if (target instanceof L2StaticObjectInstance)
-				{
+			case TAKEFORT: {
+				if (target instanceof L2StaticObjectInstance) {
 					return new L2Character[]{target};
-				}
-				else
-				{
+				} else {
 					log.log(Level.INFO, "TargetOne: Target is Incorrect for Player - " + activeChar.getName());
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 					return null;
@@ -80,27 +73,24 @@ public class TargetOne implements ISkillTargetTypeHandler
 			}
 			default:
 		}
-
+		
 		// Check for null target or any other invalid target
-		if (target == null || target.isDead() || target == activeChar && !canTargetSelf)
-		{
+		if (target == null || target.isDead() || target == activeChar && !canTargetSelf) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return null;
 		}
-
+		
 		// If a target is found, return it in a table else send a system message TARGET_IS_INCORRECT
 		return new L2Character[]{target};
 	}
-
+	
 	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
+	public Enum<L2SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub
 		return L2SkillTargetType.TARGET_ONE;
 	}
-
-	public static void main(String[] args)
-	{
+	
+	public static void main(String[] args) {
 		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetOne());
 	}
 }

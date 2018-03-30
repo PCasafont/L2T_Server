@@ -34,15 +34,12 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.StringTokenizer;
 
-public class Teleport implements IBypassHandler
-{
+public class Teleport implements IBypassHandler {
 	private static final String[] COMMANDS = {"teleto", "maintown", "pvpzone"};
 
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null)
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+		if (target == null) {
 			return false;
 		}
 
@@ -51,91 +48,68 @@ public class Teleport implements IBypassHandler
 
 		if (command.startsWith("teleto")) // Tenkai custom - raw teleport coordinates, only check for TW ward
 		{
-			if (activeChar.isCombatFlagEquipped())
-			{
-				activeChar.sendPacket(SystemMessage
-						.getSystemMessage(SystemMessageId.YOU_CANNOT_TELEPORT_WHILE_IN_POSSESSION_OF_A_WARD));
+			if (activeChar.isCombatFlagEquipped()) {
+				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_TELEPORT_WHILE_IN_POSSESSION_OF_A_WARD));
 				return false;
 			}
 
-			if (activeChar.getPvpFlag() > 0)
-			{
+			if (activeChar.getPvpFlag() > 0) {
 				activeChar.sendMessage("You can't teleport while flagged!");
 				return false;
 			}
 
 			int[] coords = new int[3];
-			try
-			{
-				for (int i = 0; i < 3; i++)
-				{
+			try {
+				for (int i = 0; i < 3; i++) {
 					coords[i] = Integer.valueOf(st.nextToken());
 				}
 				activeChar.teleToLocation(coords[0], coords[1], coords[2]);
 				activeChar.setInstanceId(0);
-			}
-			catch (Exception e)
-			{
-				log.warning("L2Teleporter - " + target.getName() + "(" + target.getNpcId() +
-						") - failed to parse raw teleport coordinates from html");
+			} catch (Exception e) {
+				log.warning(
+						"L2Teleporter - " + target.getName() + "(" + target.getNpcId() + ") - failed to parse raw teleport coordinates from html");
 				e.printStackTrace();
 			}
 
 			return true;
-		}
-		else if (command.startsWith("maintown"))
-		{
+		} else if (command.startsWith("maintown")) {
 			MainTownInfo mainTown = MainTownManager.getInstance().getCurrentMainTown();
-			if (mainTown != null)
-			{
+			if (mainTown != null) {
 				int startX = mainTown.getStartX() + Rnd.get(-mainTown.getStartRandom(), mainTown.getStartRandom());
 				int startY = mainTown.getStartY() + Rnd.get(-mainTown.getStartRandom(), mainTown.getStartRandom());
 				int startZ = GeoData.getInstance().getHeight(startX, startY, mainTown.getStartZ());
 				activeChar.teleToLocation(startX, startY, startZ);
 			}
-		}
-		else if (command.startsWith("pvpzone"))
+		} else if (command.startsWith("pvpzone"))
 
 		{
 			boolean parties = st.nextToken().equals("1");
 			boolean artificialPlayers = st.nextToken().equals("1");
 
-
-			if (!parties && activeChar.isInParty() && !activeChar.isGM())
-			{
-				activeChar.sendPacket(
-						new CreatureSay(0, Say2.TELL, target.getName(), "You can't go there being in a party."));
+			if (!parties && activeChar.isInParty() && !activeChar.isGM()) {
+				activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target.getName(), "You can't go there being in a party."));
 				return true;
 			}
 
 			L2PcInstance mostPvP = L2World.getInstance().getMostPvP(parties, artificialPlayers);
-			if (mostPvP != null)
-			{
+			if (mostPvP != null) {
 				// Check if the player's clan is already outnumbering the PvP
-				if (activeChar.getClan() != null)
-				{
+				if (activeChar.getClan() != null) {
 					Map<Integer, Integer> clanNumbers = new HashMap<Integer, Integer>();
 					int allyId = activeChar.getAllyId();
-					if (allyId == 0)
-					{
+					if (allyId == 0) {
 						allyId = activeChar.getClanId();
 					}
 					clanNumbers.put(allyId, 1);
-					for (L2PcInstance known : mostPvP.getKnownList().getKnownPlayers().values())
-					{
+					for (L2PcInstance known : mostPvP.getKnownList().getKnownPlayers().values()) {
 						int knownAllyId = known.getAllyId();
-						if (knownAllyId == 0)
-						{
+						if (knownAllyId == 0) {
 							knownAllyId = known.getClanId();
 						}
-						if (knownAllyId != 0)
-						{
-							if (clanNumbers.containsKey(knownAllyId))
-							{
+						if (knownAllyId != 0) {
+							if (clanNumbers.containsKey(knownAllyId)) {
 								clanNumbers.put(knownAllyId, clanNumbers.get(knownAllyId) + 1);
-							}
-							else
-							{
+							} else {
 								clanNumbers.put(knownAllyId, 1);
 							}
 						}
@@ -143,18 +117,17 @@ public class Teleport implements IBypassHandler
 
 					int biggestAllyId = 0;
 					int biggestAmount = 2;
-					for (Entry<Integer, Integer> clanNumber : clanNumbers.entrySet())
-					{
-						if (clanNumber.getValue() > biggestAmount)
-						{
+					for (Entry<Integer, Integer> clanNumber : clanNumbers.entrySet()) {
+						if (clanNumber.getValue() > biggestAmount) {
 							biggestAllyId = clanNumber.getKey();
 							biggestAmount = clanNumber.getValue();
 						}
 					}
 
-					if (biggestAllyId == allyId)
-					{
-						activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target.getName(),
+					if (biggestAllyId == allyId) {
+						activeChar.sendPacket(new CreatureSay(0,
+								Say2.TELL,
+								target.getName(),
 								"Sorry, your clan/ally is outnumbering the place already so you can't move there."));
 						return true;
 					}
@@ -163,29 +136,22 @@ public class Teleport implements IBypassHandler
 				activeChar.teleToLocation(mostPvP.getX() + Rnd.get(300) - 150, mostPvP.getY() + Rnd.get(300) - 150, mostPvP.getZ());
 				activeChar.setInstanceId(0);
 				activeChar.setProtection(true);
-				if (!activeChar.isGM())
-				{
+				if (!activeChar.isGM()) {
 					activeChar.setPvpFlagLasts(System.currentTimeMillis() + Config.PVP_PVP_TIME);
 					activeChar.startPvPFlag();
 				}
-			}
-			else
-			{
-				activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target.getName(),
-						"Sorry, I can't find anyone in flag status right now."));
+			} else {
+				activeChar.sendPacket(new CreatureSay(0, Say2.TELL, target.getName(), "Sorry, I can't find anyone in flag status right now."));
 			}
 
 			return true;
 		}
 
-
 		return false;
 	}
 
-
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

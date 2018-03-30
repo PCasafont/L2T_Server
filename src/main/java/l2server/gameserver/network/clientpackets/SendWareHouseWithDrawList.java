@@ -39,218 +39,178 @@ import l2server.log.Log;
  *
  * @version $Revision: 1.2.2.1.2.4 $ $Date: 2005/03/29 23:15:16 $
  */
-public final class SendWareHouseWithDrawList extends L2GameClientPacket
-{
-
+public final class SendWareHouseWithDrawList extends L2GameClientPacket {
+	
 	private static final int BATCH_LENGTH = 12; // length of the one item
-
+	
 	private WarehouseItem items[] = null;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		final int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
-		{
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining()) {
 			return;
 		}
-
+		
 		items = new WarehouseItem[count];
-		for (int i = 0; i < count; i++)
-		{
+		for (int i = 0; i < count; i++) {
 			int objId = readD();
 			long cnt = readQ();
-			if (objId < 1 || cnt < 0)
-			{
+			if (objId < 1 || cnt < 0) {
 				items = null;
 				return;
 			}
 			items[i] = new WarehouseItem(objId, cnt);
 		}
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
-		if (items == null)
-		{
+	protected void runImpl() {
+		if (items == null) {
 			return;
 		}
-
+		
 		final L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
-
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("withdraw"))
-		{
+		
+		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("withdraw")) {
 			player.sendMessage("You withdrawing items too fast.");
 			return;
 		}
-
+		
 		final ItemContainer warehouse = player.getActiveWarehouse();
-		if (warehouse == null)
-		{
+		if (warehouse == null) {
 			return;
 		}
-
+		
 		final L2Npc manager = player.getLastFolkNPC();
-		if ((manager == null || !manager.isWarehouse() || !manager.canInteract(player)) && !player.isGM())
-		{
+		if ((manager == null || !manager.isWarehouse() || !manager.canInteract(player)) && !player.isGM()) {
 			return;
 		}
-
-		if (player.getEvent() != null)
-		{
+		
+		if (player.getEvent() != null) {
 			player.sendMessage("You cannot withdraw items from the warehouse while being involved in an event!");
 			return;
 		}
-
-		if (player.getOlympiadGameId() > -1)
-		{
-			player.sendMessage(
-					"You cannot withdraw items from the warehouse while being involved in the Grand Olympiad!");
+		
+		if (player.getOlympiadGameId() > -1) {
+			player.sendMessage("You cannot withdraw items from the warehouse while being involved in the Grand Olympiad!");
 			return;
 		}
-
-		if (!(warehouse instanceof PcWarehouse) && !player.getAccessLevel().allowTransaction())
-		{
+		
+		if (!(warehouse instanceof PcWarehouse) && !player.getAccessLevel().allowTransaction()) {
 			player.sendMessage("Transactions are disable for your Access Level");
 			return;
 		}
-
+		
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && player.getReputation() < 0)
-		{
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_USE_WAREHOUSE && player.getReputation() < 0) {
 			return;
 		}
-
-		if (Config.ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH)
-		{
-			if (warehouse instanceof ClanWarehouse &&
-					(player.getClanPrivileges() & L2Clan.CP_CL_VIEW_WAREHOUSE) != L2Clan.CP_CL_VIEW_WAREHOUSE)
-			{
+		
+		if (Config.ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH) {
+			if (warehouse instanceof ClanWarehouse && (player.getClanPrivileges() & L2Clan.CP_CL_VIEW_WAREHOUSE) != L2Clan.CP_CL_VIEW_WAREHOUSE) {
 				return;
 			}
-		}
-		else
-		{
-			if (warehouse instanceof ClanWarehouse && !player.isClanLeader())
-			{
+		} else {
+			if (warehouse instanceof ClanWarehouse && !player.isClanLeader()) {
 				// this msg is for depositing but maybe good to send some msg?
-				player.sendPacket(SystemMessage
-						.getSystemMessage(SystemMessageId.ONLY_CLAN_LEADER_CAN_RETRIEVE_ITEMS_FROM_CLAN_WAREHOUSE));
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ONLY_CLAN_LEADER_CAN_RETRIEVE_ITEMS_FROM_CLAN_WAREHOUSE));
 				return;
 			}
 		}
-
+		
 		int weight = 0;
 		int slots = 0;
-
-		for (WarehouseItem i : items)
-		{
+		
+		for (WarehouseItem i : items) {
 			// Calculate needed slots
 			L2ItemInstance item = warehouse.getItemByObjectId(i.getObjectId());
-			if (item == null || item.getCount() < i.getCount())
-			{
+			if (item == null || item.getCount() < i.getCount()) {
 				Util.handleIllegalPlayerAction(player,
 						"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-								" tried to withdraw non-existent item from warehouse.", Config.DEFAULT_PUNISH);
+								" tried to withdraw non-existent item from warehouse.",
+						Config.DEFAULT_PUNISH);
 				return;
 			}
-
+			
 			weight += i.getCount() * item.getItem().getWeight();
-			if (!item.isStackable())
-			{
+			if (!item.isStackable()) {
 				slots += i.getCount();
-			}
-			else if (player.getInventory().getItemByItemId(item.getItemId()) == null)
-			{
+			} else if (player.getInventory().getItemByItemId(item.getItemId()) == null) {
 				slots++;
 			}
 		}
-
+		
 		// Item Max Limit Check
-		if (!player.getInventory().validateCapacity(slots))
-		{
+		if (!player.getInventory().validateCapacity(slots)) {
 			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SLOTS_FULL));
 			return;
 		}
-
+		
 		// Weight limit Check
-		if (!player.getInventory().validateWeight(weight))
-		{
+		if (!player.getInventory().validateWeight(weight)) {
 			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WEIGHT_LIMIT_EXCEEDED));
 			return;
 		}
-
+		
 		// Proceed to the transfer
 		InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
-		for (WarehouseItem i : items)
-		{
+		for (WarehouseItem i : items) {
 			L2ItemInstance oldItem = warehouse.getItemByObjectId(i.getObjectId());
-			if (oldItem == null || oldItem.getCount() < i.getCount())
-			{
+			if (oldItem == null || oldItem.getCount() < i.getCount()) {
 				Log.warning("Error withdrawing a warehouse object for char " + player.getName() + " (olditem == null)");
 				return;
 			}
-			final L2ItemInstance newItem = warehouse
-					.transferItem(warehouse.getOwnerId() + "'s " + warehouse.getName(), i.getObjectId(), i.getCount(),
-							player.getInventory(), player, manager);
-			if (newItem == null)
-			{
+			final L2ItemInstance newItem = warehouse.transferItem(warehouse.getOwnerId() + "'s " + warehouse.getName(),
+					i.getObjectId(),
+					i.getCount(),
+					player.getInventory(),
+					player,
+					manager);
+			if (newItem == null) {
 				Log.warning("Error withdrawing a warehouse object for char " + player.getName() + " (newitem == null)");
 				return;
 			}
-
-			if (playerIU != null)
-			{
-				if (newItem.getCount() > i.getCount())
-				{
+			
+			if (playerIU != null) {
+				if (newItem.getCount() > i.getCount()) {
 					playerIU.addModifiedItem(newItem);
-				}
-				else
-				{
+				} else {
 					playerIU.addNewItem(newItem);
 				}
 			}
 		}
-
+		
 		// Send updated item list to the player
-		if (playerIU != null)
-		{
+		if (playerIU != null) {
 			player.sendPacket(playerIU);
-		}
-		else
-		{
+		} else {
 			player.sendPacket(new ItemList(player, false));
 		}
-
+		
 		// Update current load status on player
 		StatusUpdate su = new StatusUpdate(player);
 		su.addAttribute(StatusUpdate.CUR_LOAD, player.getCurrentLoad());
 		player.sendPacket(su);
 	}
-
-	private static class WarehouseItem
-	{
+	
+	private static class WarehouseItem {
 		private final int objectId;
 		private final long count;
-
-		public WarehouseItem(int id, long num)
-		{
+		
+		public WarehouseItem(int id, long num) {
 			objectId = id;
 			count = num;
 		}
-
-		public int getObjectId()
-		{
+		
+		public int getObjectId() {
 			return objectId;
 		}
-
-		public long getCount()
-		{
+		
+		public long getCount() {
 			return count;
 		}
 	}

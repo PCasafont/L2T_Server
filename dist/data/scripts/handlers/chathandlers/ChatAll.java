@@ -35,8 +35,7 @@ import java.util.logging.Logger;
  *
  * @author durgus
  */
-public class ChatAll implements IChatHandler
-{
+public class ChatAll implements IChatHandler {
 	private static final int[] COMMAND_IDS = {0};
 
 	private static Logger log = Logger.getLogger(ChatAll.class.getName());
@@ -45,63 +44,48 @@ public class ChatAll implements IChatHandler
 	 * Handle chat type 'all'
 	 */
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String params, String text)
-	{
+	public void handleChat(int type, L2PcInstance activeChar, String params, String text) {
 		boolean vcd_used = false;
-		if (text.startsWith("."))
-		{
+		if (text.startsWith(".")) {
 			StringTokenizer st = new StringTokenizer(text);
 			IVoicedCommandHandler vch;
 			String command = "";
 
-			if (st.countTokens() > 1)
-			{
+			if (st.countTokens() > 1) {
 				command = st.nextToken().substring(1);
 				params = text.substring(command.length() + 2);
 				vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler(command);
-			}
-			else
-			{
+			} else {
 				command = text.substring(1);
-				if (Config.DEBUG)
-				{
+				if (Config.DEBUG) {
 					log.info("Command: " + command);
 				}
 				vch = VoicedCommandHandler.getInstance().getVoicedCommandHandler(command);
 			}
-			if (vch != null)
-			{
+			if (vch != null) {
 				vch.useVoicedCommand(command, activeChar, params);
 				vcd_used = true;
-			}
-			else
-			{
-				if (Config.DEBUG)
-				{
+			} else {
+				if (Config.DEBUG) {
 					log.warning("No handler registered for bypass '" + command + "'");
 				}
 				vcd_used = false;
 			}
 		}
 
-		if (!vcd_used)
-		{
+		if (!vcd_used) {
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getAppearance().getVisibleName(), text);
 
 			Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
-			for (L2PcInstance player : plrs)
-			{
-				if (player != null && activeChar.isInsideRadius(player, 1250, false, true) &&
-						!BlockList.isBlocked(player, activeChar))
-				{
+			for (L2PcInstance player : plrs) {
+				if (player != null && activeChar.isInsideRadius(player, 1250, false, true) && !BlockList.isBlocked(player, activeChar)) {
 					player.sendPacket(cs);
 				}
 			}
 
 			activeChar.sendPacket(cs);
 
-			while (text.contains("Type=") && text.contains("Title="))
-			{
+			while (text.contains("Type=") && text.contains("Title=")) {
 				int index1 = text.indexOf("Type=");
 				int index2 = text.indexOf("Title=") + 6;
 				text = text.substring(0, index1) + text.substring(index2);
@@ -109,7 +93,8 @@ public class ChatAll implements IChatHandler
 
 			String nearTown = MapRegionTable.getInstance().getClosestTownSimpleName(activeChar);
 			ConsoleTab.appendMessage(ConsoleFilter.AllChat,
-					"[Somewhere near " + nearTown + "] " + activeChar.getName() + ": " + text, nearTown,
+					"[Somewhere near " + nearTown + "] " + activeChar.getName() + ": " + text,
+					nearTown,
 					activeChar.getName());
 		}
 	}
@@ -120,8 +105,7 @@ public class ChatAll implements IChatHandler
 	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
 	 */
 	@Override
-	public int[] getChatTypeList()
-	{
+	public int[] getChatTypeList() {
 		return COMMAND_IDS;
 	}
 }

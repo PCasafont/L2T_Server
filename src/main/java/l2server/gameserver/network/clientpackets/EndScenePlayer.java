@@ -21,37 +21,31 @@ import l2server.log.Log;
 /**
  * @author JIV
  */
-public final class EndScenePlayer extends L2GameClientPacket
-{
+public final class EndScenePlayer extends L2GameClientPacket {
 
 	private int movieId;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		movieId = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-		if (movieId == 0)
-		{
+		if (movieId == 0) {
 			return;
 		}
-		if (activeChar.getMovieId() != movieId)
-		{
+		if (activeChar.getMovieId() != movieId) {
 			Log.warning("Player " + getClient() + " sent EndScenePlayer with wrong movie id: " + movieId);
 			return;
 		}
 		activeChar.setMovieId(0);
 		/* L2j guarrineitorada, we'll see if it explodes but it won't most probably
-         * activeChar.setIsTeleporting(true, false); // avoid to get player removed from L2World
+		 * activeChar.setIsTeleporting(true, false); // avoid to get player removed from L2World
 		 * activeChar.decayMe();
 		 * activeChar.spawnMe(activeChar.getPosition().getX(), activeChar.getPosition().getY(), activeChar.getPosition().getZ());
 		 * activeChar.setIsTeleporting(false, false);

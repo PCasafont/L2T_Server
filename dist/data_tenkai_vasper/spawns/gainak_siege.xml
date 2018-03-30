@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <specificSpawnList name="gainak_siege">
-        <!-- Mysterious Assassin -->
-        <spawn npcId="19471" x="17085" y="-115385" z="-249" heading="41366" respawn="60" />
-        <!-- Mysterious Assassin -->
-        <spawn npcId="19472" x="15452" y="-114531" z="-243" heading="5464" respawn="60" />
-        <!-- Mysterious Assassin -->
-        <spawn npcId="19473" x="15862" y="-113121" z="-250" heading="53269" respawn="60" />
-    </specificSpawnList>
+	<specificSpawnList name="gainak_siege">
+		<!-- Mysterious Assassin -->
+		<spawn npcId="19471" x="17085" y="-115385" z="-249" heading="41366" respawn="60" />
+		<!-- Mysterious Assassin -->
+		<spawn npcId="19472" x="15452" y="-114531" z="-243" heading="5464" respawn="60" />
+		<!-- Mysterious Assassin -->
+		<spawn npcId="19473" x="15862" y="-113121" z="-250" heading="53269" respawn="60" />
+	</specificSpawnList>
 </list>

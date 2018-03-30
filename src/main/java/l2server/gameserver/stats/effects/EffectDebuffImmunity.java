@@ -23,39 +23,33 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 /**
  * @author ZaKaX
  */
-public class EffectDebuffImmunity extends L2Effect
-{
-	public EffectDebuffImmunity(Env env, L2EffectTemplate template)
-	{
+public class EffectDebuffImmunity extends L2Effect {
+	public EffectDebuffImmunity(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
-
-	public EffectDebuffImmunity(Env env, L2Effect effect)
-	{
+	
+	public EffectDebuffImmunity(Env env, L2Effect effect) {
 		super(env, effect);
 	}
-
+	
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.DEBUFF_IMMUNITY;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		return true;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return true;
 	}
 }

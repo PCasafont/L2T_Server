@@ -36,25 +36,20 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  * @version $Revision: 1.1.2.2.2.7 $ $Date: 2005/04/05 19:41:13 $
  */
 
-public class ScrollOfResurrection implements IItemHandler
-{
+public class ScrollOfResurrection implements IItemHandler {
 	/**
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-		{
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!(playable instanceof L2PcInstance)) {
 			return;
 		}
 
 		L2PcInstance activeChar = (L2PcInstance) playable;
 		// Custom, in order to avoid blessed resurrection scroll usages
-		if (Config.isServer(Config.TENKAI) && activeChar.getPvpFlag() > 0)
-		{
-			switch (item.getItemId())
-			{
+		if (Config.isServer(Config.TENKAI) && activeChar.getPvpFlag() > 0) {
+			switch (item.getItemId()) {
 				case 3936: // Blessed Scroll of Resurrection
 				case 3959: // L2Day - Blessed Scroll of Resurrection
 				case 6387: // Blessed Scroll of Resurrection: For Pets
@@ -66,19 +61,16 @@ public class ScrollOfResurrection implements IItemHandler
 			}
 		}
 
-		if (activeChar.getEvent() != null && !activeChar.getEvent().onScrollUse(activeChar.getObjectId()))
-		{
+		if (activeChar.getEvent() != null && !activeChar.getEvent().onScrollUse(activeChar.getObjectId())) {
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
-		if (activeChar.isSitting())
-		{
+		if (activeChar.isSitting()) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_MOVE_SITTING));
 			return;
 		}
-		if (activeChar.isMovementDisabled())
-		{
+		if (activeChar.isMovementDisabled()) {
 			return;
 		}
 
@@ -89,98 +81,67 @@ public class ScrollOfResurrection implements IItemHandler
 		// SoR Animation section
 		L2Character target = (L2Character) activeChar.getTarget();
 
-		if (target != null && target.isDead())
-		{
+		if (target != null && target.isDead()) {
 			L2PcInstance targetPlayer = null;
 
-			if (target instanceof L2PcInstance)
-			{
+			if (target instanceof L2PcInstance) {
 				targetPlayer = (L2PcInstance) target;
 			}
 
 			L2PetInstance targetPet = null;
 
-			if (target instanceof L2PetInstance)
-			{
+			if (target instanceof L2PetInstance) {
 				targetPet = (L2PetInstance) target;
 			}
 
-			if (targetPlayer != null || targetPet != null)
-			{
+			if (targetPlayer != null || targetPet != null) {
 				boolean condGood = true;
 
 				//check target is not in a active siege zone
 				Castle castle = null;
 
-				if (targetPlayer != null)
-				{
+				if (targetPlayer != null) {
+					castle = CastleManager.getInstance().getCastle(targetPlayer.getX(), targetPlayer.getY(), targetPlayer.getZ());
+				} else {
 					castle = CastleManager.getInstance()
-							.getCastle(targetPlayer.getX(), targetPlayer.getY(), targetPlayer.getZ());
-				}
-				else
-				{
-					castle = CastleManager.getInstance()
-							.getCastle(targetPet.getOwner().getX(), targetPet.getOwner().getY(),
-									targetPet.getOwner().getZ());
+							.getCastle(targetPet.getOwner().getX(), targetPet.getOwner().getY(), targetPet.getOwner().getZ());
 				}
 
-				if (castle != null && castle.getSiege().getIsInProgress())
-				{
+				if (castle != null && castle.getSiege().getIsInProgress()) {
 					condGood = false;
-					activeChar.sendPacket(
-							SystemMessage.getSystemMessage(SystemMessageId.CANNOT_BE_RESURRECTED_DURING_SIEGE));
+					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_BE_RESURRECTED_DURING_SIEGE));
 				}
 
-				if (targetPet != null)
-				{
-					if (targetPet.getOwner() != activeChar)
-					{
-						if (targetPet.getOwner().isReviveRequested())
-						{
-							if (targetPet.getOwner().isRevivingPet())
-							{
-								activeChar.sendPacket(SystemMessage.getSystemMessage(
-										SystemMessageId.RES_HAS_ALREADY_BEEN_PROPOSED)); // Resurrection is already been proposed.
-							}
-							else
-							{
-								activeChar.sendPacket(SystemMessage.getSystemMessage(
-										SystemMessageId.CANNOT_RES_PET2)); // A pet cannot be resurrected while it's owner is in the process of resurrecting.
+				if (targetPet != null) {
+					if (targetPet.getOwner() != activeChar) {
+						if (targetPet.getOwner().isReviveRequested()) {
+							if (targetPet.getOwner().isRevivingPet()) {
+								activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.RES_HAS_ALREADY_BEEN_PROPOSED)); // Resurrection is already been proposed.
+							} else {
+								activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_RES_PET2)); // A pet cannot be resurrected while it's owner is in the process of resurrecting.
 							}
 							condGood = false;
 						}
 					}
-				}
-				else
-				{
-					if (targetPlayer.isReviveRequested())
-					{
-						if (targetPlayer.isRevivingPet())
-						{
-							activeChar.sendPacket(SystemMessage.getSystemMessage(
-									SystemMessageId.MASTER_CANNOT_RES)); // While a pet is attempting to resurrect, it cannot help in resurrecting its master.
-						}
-						else
-						{
-							activeChar.sendPacket(SystemMessage.getSystemMessage(
-									SystemMessageId.RES_HAS_ALREADY_BEEN_PROPOSED)); // Resurrection is already been proposed.
+				} else {
+					if (targetPlayer.isReviveRequested()) {
+						if (targetPlayer.isRevivingPet()) {
+							activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MASTER_CANNOT_RES)); // While a pet is attempting to resurrect, it cannot help in resurrecting its master.
+						} else {
+							activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.RES_HAS_ALREADY_BEEN_PROPOSED)); // Resurrection is already been proposed.
 						}
 						condGood = false;
-					}
-					else if (petScroll)
-					{
+					} else if (petScroll) {
 						condGood = false;
 						activeChar.sendMessage("You do not have the correct scroll");
 					}
 				}
 
-				if (condGood)
-				{
+				if (condGood) {
 					int skillId = 0;
 					int skillLevel = 1;
 
-					switch (itemId)
-					{
+					switch (itemId) {
 						case 737:
 							skillId = 2014;
 							break; // Scroll of Resurrection
@@ -204,10 +165,8 @@ public class ScrollOfResurrection implements IItemHandler
 							break; // Gran Kain's Blessed Scroll of Resurrection
 					}
 
-					if (skillId != 0)
-					{
-						if (!activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false))
-						{
+					if (skillId != 0) {
+						if (!activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false)) {
 							return;
 						}
 
@@ -220,9 +179,7 @@ public class ScrollOfResurrection implements IItemHandler
 					}
 				}
 			}
-		}
-		else
-		{
+		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 		}
 	}

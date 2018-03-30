@@ -36,8 +36,7 @@ import java.util.Iterator;
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
 
-public abstract class L2ObjectMap<T extends L2Object> implements Iterable<T>
-{
+public abstract class L2ObjectMap<T extends L2Object> implements Iterable<T> {
 
 	public abstract int size();
 
@@ -56,10 +55,8 @@ public abstract class L2ObjectMap<T extends L2Object> implements Iterable<T>
 	@Override
 	public abstract Iterator<T> iterator();
 
-	public static L2ObjectMap<L2Object> createL2ObjectMap()
-	{
-		switch (Config.MAP_TYPE)
-		{
+	public static L2ObjectMap<L2Object> createL2ObjectMap() {
+		switch (Config.MAP_TYPE) {
 			case WorldObjectMap:
 				return new WorldObjectMap<>();
 			default:

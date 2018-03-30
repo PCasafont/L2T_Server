@@ -23,46 +23,37 @@ import java.util.List;
 /**
  * @author Gnacik
  */
-public class PartyMatchWaitingList
-{
+public class PartyMatchWaitingList {
 	private List<L2PcInstance> members;
-
-	private PartyMatchWaitingList()
-	{
+	
+	private PartyMatchWaitingList() {
 		members = new ArrayList<>();
 	}
-
-	public void addPlayer(L2PcInstance player)
-	{
+	
+	public void addPlayer(L2PcInstance player) {
 		// player.setPartyWait(1);
-		if (!members.contains(player))
-		{
+		if (!members.contains(player)) {
 			members.add(player);
 		}
 	}
-
-	public void removePlayer(L2PcInstance player)
-	{
+	
+	public void removePlayer(L2PcInstance player) {
 		//player.setPartyWait(0);
-		if (members.contains(player))
-		{
+		if (members.contains(player)) {
 			members.remove(player);
 		}
 	}
-
-	public List<L2PcInstance> getPlayers()
-	{
+	
+	public List<L2PcInstance> getPlayers() {
 		return members;
 	}
-
-	public static PartyMatchWaitingList getInstance()
-	{
+	
+	public static PartyMatchWaitingList getInstance() {
 		return SingletonHolder.instance;
 	}
-
+	
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final PartyMatchWaitingList instance = new PartyMatchWaitingList();
 	}
 }

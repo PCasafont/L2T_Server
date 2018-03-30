@@ -37,36 +37,28 @@ import java.util.List;
 /**
  * @author nBd
  */
-public class TargetAreaCorpseMob implements ISkillTargetTypeHandler
-{
+public class TargetAreaCorpseMob implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		List<L2Character> targetList = new ArrayList<L2Character>();
 
-		if (!(target instanceof L2Attackable) || !target.isDead())
-		{
+		if (!(target instanceof L2Attackable) || !target.isDead()) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return null;
 		}
 
-		if (onlyFirst == false)
-		{
+		if (onlyFirst == false) {
 			targetList.add(target);
-		}
-		else
-		{
+		} else {
 			return new L2Character[]{target};
 		}
 
-		boolean srcInArena =
-				activeChar.isInsideZone(L2Character.ZONE_PVP) && !activeChar.isInsideZone(L2Character.ZONE_SIEGE);
+		boolean srcInArena = activeChar.isInsideZone(L2Character.ZONE_PVP) && !activeChar.isInsideZone(L2Character.ZONE_SIEGE);
 
 		L2PcInstance src = null;
-		if (activeChar instanceof L2PcInstance)
-		{
+		if (activeChar instanceof L2PcInstance) {
 			src = (L2PcInstance) activeChar;
 		}
 
@@ -77,103 +69,79 @@ public class TargetAreaCorpseMob implements ISkillTargetTypeHandler
 		Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
 		//synchronized (activeChar.getKnownList().getKnownObjects())
 		{
-			for (L2Object obj : objs)
-			{
-				if (!(obj instanceof L2Attackable || obj instanceof L2Playable) || ((L2Character) obj).isDead() ||
-						(L2Character) obj == activeChar)
-				{
+			for (L2Object obj : objs) {
+				if (!(obj instanceof L2Attackable || obj instanceof L2Playable) || ((L2Character) obj).isDead() || (L2Character) obj == activeChar) {
 					continue;
 				}
 
-				if (!Util.checkIfInRange(radius, target, obj, true))
-				{
+				if (!Util.checkIfInRange(radius, target, obj, true)) {
 					continue;
 				}
 
-				if (!GeoEngine.getInstance().canSeeTarget(activeChar, obj))
-				{
+				if (!GeoEngine.getInstance().canSeeTarget(activeChar, obj)) {
 					continue;
 				}
 
-				if (obj instanceof L2PcInstance && src != null)
-				{
+				if (obj instanceof L2PcInstance && src != null) {
 					trg = (L2PcInstance) obj;
 
 					if (src.getParty() != null && trg.getParty() != null &&
-							src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
-					{
+							src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID()) {
 						continue;
 					}
 
-					if (trg.isInsideZone(L2Character.ZONE_PEACE))
-					{
+					if (trg.isInsideZone(L2Character.ZONE_PEACE)) {
 						continue;
 					}
 
-					if (!srcInArena &&
-							!(trg.isInsideZone(L2Character.ZONE_PVP) && !trg.isInsideZone(L2Character.ZONE_SIEGE)))
-					{
-						if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0)
-						{
+					if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) && !trg.isInsideZone(L2Character.ZONE_SIEGE))) {
+						if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0) {
 							continue;
 						}
 
-						if (src.getClan() != null && trg.getClan() != null)
-						{
-							if (src.getClan().getClanId() == trg.getClan().getClanId())
-							{
+						if (src.getClan() != null && trg.getClan() != null) {
+							if (src.getClan().getClanId() == trg.getClan().getClanId()) {
 								continue;
 							}
 						}
 
-						if (!src.checkPvpSkill(obj, skill))
-						{
+						if (!src.checkPvpSkill(obj, skill)) {
 							continue;
 						}
 					}
 				}
-				if (obj instanceof L2Summon && src != null)
-				{
+				if (obj instanceof L2Summon && src != null) {
 					trg = ((L2Summon) obj).getOwner();
 
 					if (src.getParty() != null && trg.getParty() != null &&
-							src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID())
-					{
+							src.getParty().getPartyLeaderOID() == trg.getParty().getPartyLeaderOID()) {
 						continue;
 					}
 
-					if (!srcInArena &&
-							!(trg.isInsideZone(L2Character.ZONE_PVP) && !trg.isInsideZone(L2Character.ZONE_SIEGE)))
-					{
-						if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0)
-						{
+					if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) && !trg.isInsideZone(L2Character.ZONE_SIEGE))) {
+						if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0) {
 							continue;
 						}
 
-						if (src.getClan() != null && trg.getClan() != null)
-						{
-							if (src.getClan().getClanId() == trg.getClan().getClanId())
-							{
+						if (src.getClan() != null && trg.getClan() != null) {
+							if (src.getClan().getClanId() == trg.getClan().getClanId()) {
 								continue;
 							}
 						}
 
-						if (!src.checkPvpSkill(trg, skill))
-						{
+						if (!src.checkPvpSkill(trg, skill)) {
 							continue;
 						}
 					}
 
-					if (((L2Summon) obj).isInsideZone(L2Character.ZONE_PEACE))
-					{
+					if (((L2Summon) obj).isInsideZone(L2Character.ZONE_PEACE)) {
 						continue;
 					}
 				}
 				targetList.add((L2Character) obj);
 			}
 		}
-		if (targetList.size() == 0)
-		{
+		if (targetList.size() == 0) {
 			return null;
 		}
 
@@ -183,14 +151,12 @@ public class TargetAreaCorpseMob implements ISkillTargetTypeHandler
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
+	public Enum<L2SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub
 		return L2SkillTargetType.TARGET_AREA_CORPSE_MOB;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetAreaCorpseMob());
 	}
 }

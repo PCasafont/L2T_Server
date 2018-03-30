@@ -22,10 +22,8 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
-public class EffectAbortCast extends L2Effect
-{
-	public EffectAbortCast(Env env, L2EffectTemplate template)
-	{
+public class EffectAbortCast extends L2Effect {
+	public EffectAbortCast(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -33,24 +31,19 @@ public class EffectAbortCast extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (getEffected() == null || getEffected() == getEffector())
-		{
+	public boolean onStart() {
+		if (getEffected() == null || getEffected() == getEffector()) {
 			return false;
 		}
 
-		if (getEffected().isRaid())
-		{
+		if (getEffected().isRaid()) {
 			return false;
 		}
 
 		if (getEffected().isCastingNow() && getEffected().canAbortCast() && getEffected().getLastSkillCast() != null &&
-				getEffected().getLastSkillCast().isMagic())
-		{
+				getEffected().getLastSkillCast().isMagic()) {
 			getEffected().abortCast();
-			if (getEffected() instanceof L2PcInstance)
-			{
+			if (getEffected() instanceof L2PcInstance) {
 				// Send a system message
 				getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CASTING_INTERRUPTED));
 			}
@@ -62,8 +55,7 @@ public class EffectAbortCast extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return true;
 	}
 }

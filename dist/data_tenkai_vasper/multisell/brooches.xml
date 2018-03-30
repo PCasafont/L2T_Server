@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-    <!-- La Vie En Rose's Brooch -->
-    <item>
-        <ingredient id="57" count="1" />
-        <production id="38766" count="1" />
-    </item>
-    <!-- La Vie En Rose's Noble Brooch -->
-    <item>
-        <ingredient id="57" count="30000" />
-        <production id="38767" count="1" />
-    </item>
-    <!-- La Vie En Rose's Brilliant Brooch -->
-    <item>
-        <ingredient id="57" count="750000" />
-        <production id="38768" count="1" />
-    </item>
-    <!-- La Vie En Rose's Radiant Brooch -->
-    <item>
-        <ingredient id="57" count="5000000" />
-        <production id="26474" count="1" />
-    </item>
-    <!-- La Vie En Rose's Jewelry Box -->
-    <item>
-        <ingredient id="57" count="50000" />
-        <production id="38941" count="1" />
-    </item>
-    <!-- Blue Cat's Eye - Lv. 5 -->
-    <item>
-        <ingredient id="57" count="15000" />
-        <production id="47686" count="1" />
-    </item>
-    <!-- Red Cat's Eye - Lv. 5 -->
-    <item>
-        <ingredient id="57" count="15000" />
-        <production id="47681" count="1" />
-    </item>
+	<!-- La Vie En Rose's Brooch -->
+	<item>
+		<ingredient id="57" count="1" />
+		<production id="38766" count="1" />
+	</item>
+	<!-- La Vie En Rose's Noble Brooch -->
+	<item>
+		<ingredient id="57" count="30000" />
+		<production id="38767" count="1" />
+	</item>
+	<!-- La Vie En Rose's Brilliant Brooch -->
+	<item>
+		<ingredient id="57" count="750000" />
+		<production id="38768" count="1" />
+	</item>
+	<!-- La Vie En Rose's Radiant Brooch -->
+	<item>
+		<ingredient id="57" count="5000000" />
+		<production id="26474" count="1" />
+	</item>
+	<!-- La Vie En Rose's Jewelry Box -->
+	<item>
+		<ingredient id="57" count="50000" />
+		<production id="38941" count="1" />
+	</item>
+	<!-- Blue Cat's Eye - Lv. 5 -->
+	<item>
+		<ingredient id="57" count="15000" />
+		<production id="47686" count="1" />
+	</item>
+	<!-- Red Cat's Eye - Lv. 5 -->
+	<item>
+		<ingredient id="57" count="15000" />
+		<production id="47681" count="1" />
+	</item>
 </list>

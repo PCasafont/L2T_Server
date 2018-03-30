@@ -15,25 +15,22 @@
 
 package l2server.gameserver.network.serverpackets;
 
-public class EnchantResult extends L2GameServerPacket
-{
-
+public class EnchantResult extends L2GameServerPacket {
+	
 	private int result;
 	private int crystal;
 	private int count;
 	private int enchantLevel;
-
-	public EnchantResult(int result, int crystal, int count, int enchantLevel)
-	{
+	
+	public EnchantResult(int result, int crystal, int count, int enchantLevel) {
 		this.result = result;
 		this.crystal = crystal;
 		this.count = count;
 		this.enchantLevel = enchantLevel;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(result);
 		writeD(crystal);
 		writeQ(count);

@@ -4,21 +4,17 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class FlyingFinalForm extends L2Transformation
-{
+public class FlyingFinalForm extends L2Transformation {
 	private static final int[] SKILLS = {932, 950, 951, 953, 1544, 1545, 619};
 
-	public FlyingFinalForm()
-	{
+	public FlyingFinalForm() {
 		// id, colRadius, colHeight
 		super(260, 9, 38);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 260 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 260 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
@@ -27,8 +23,7 @@ public class FlyingFinalForm extends L2Transformation
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		// Life to Soul
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(953, 1), false);
 		// Soul Sucking
@@ -36,8 +31,7 @@ public class FlyingFinalForm extends L2Transformation
 
 		int lvl = getPlayer().getLevel() - 78;
 
-		if (lvl > 0)
-		{
+		if (lvl > 0) {
 			// Nail Attack (up to 7 levels)
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(950, lvl), false);
 			// Wing Assault (up to 7 levels)
@@ -52,15 +46,13 @@ public class FlyingFinalForm extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		getPlayer().setIsFlyingMounted(false);
 
 		removeSkills();
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		// Life to Soul
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(953, 1), false);
 		// Soul Sucking
@@ -68,8 +60,7 @@ public class FlyingFinalForm extends L2Transformation
 
 		int lvl = getPlayer().getLevel() - 78;
 
-		if (lvl > 0)
-		{
+		if (lvl > 0) {
 			// Nail Attack (up to 7 levels)
 			getPlayer().removeSkill(SkillTable.getInstance().getInfo(950, lvl), false);
 			// Wing Assault (up to 7 levels)
@@ -83,8 +74,7 @@ public class FlyingFinalForm extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new FlyingFinalForm());
 	}
 }

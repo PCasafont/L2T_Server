@@ -31,8 +31,7 @@ import l2server.util.Rnd;
  *
  * @author Gnacik
  */
-public class MasterOfEnchanting extends Quest
-{
+public class MasterOfEnchanting extends Quest {
 	private static final int _master_yogi = 32599;
 	private static final int _master_yogi_staff = 13539;
 	private static final int _master_yogi_scroll = 13540;
@@ -49,174 +48,105 @@ public class MasterOfEnchanting extends Quest
 	private static final int[] _hat_event_reward = {13518, 13519, 13522};
 	private static final int[] _crystal_reward = {9570, 9571, 9572};
 
-	private static final int[][] spawns = {
-			{16111, 142850, -2707, 16000},
-			{17275, 145000, -3037, 25000},
-			{83037, 149324, -3470, 44000},
-			{82145, 148609, -3468, 0},
-			{81755, 146487, -3534, 32768},
-			{-81031, 150038, -3045, 0},
-			{-83156, 150994, -3130, 0},
-			{-13727, 122117, -2990, 16384},
-			{-14129, 123869, -3118, 40959},
-			{-84411, 244813, -3730, 57343},
-			{-84023, 243051, -3730, 4096},
-			{46908, 50856, -2997, 8192},
-			{45538, 48357, -3061, 18000},
-			{9929, 16324, -4576, 62999},
-			{11546, 17599, -4586, 46900},
-			{81987, 53723, -1497, 0},
-			{81083, 56118, -1562, 32768},
-			{147200, 25614, -2014, 16384},
-			{148557, 26806, -2206, 32768},
-			{117356, 76708, -2695, 49151},
-			{115887, 76382, -2714, 0},
-			{-117239, 46842, 367, 49151},
-			{-119494, 44882, 367, 24576},
-			{111004, 218928, -3544, 16384},
-			{108426, 221876, -3600, 49151},
-			{-45278, -112766, -241, 0},
-			{-45372, -114104, -241, 16384},
-			{115096, -178370, -891, 0},
-			{116199, -182694, -1506, 0},
-			{86865, -142915, -1341, 26000},
-			{85584, -142490, -1343, 0},
-			{147421, -55435, -2736, 49151},
-			{148206, -55786, -2782, 61439},
-			{43165, -48461, -797, 17000},
-			{43966, -47709, -798, 49999}
-	};
+	private static final int[][] spawns =
+			{{16111, 142850, -2707, 16000}, {17275, 145000, -3037, 25000}, {83037, 149324, -3470, 44000}, {82145, 148609, -3468, 0},
+					{81755, 146487, -3534, 32768}, {-81031, 150038, -3045, 0}, {-83156, 150994, -3130, 0}, {-13727, 122117, -2990, 16384},
+					{-14129, 123869, -3118, 40959}, {-84411, 244813, -3730, 57343}, {-84023, 243051, -3730, 4096}, {46908, 50856, -2997, 8192},
+					{45538, 48357, -3061, 18000}, {9929, 16324, -4576, 62999}, {11546, 17599, -4586, 46900}, {81987, 53723, -1497, 0},
+					{81083, 56118, -1562, 32768}, {147200, 25614, -2014, 16384}, {148557, 26806, -2206, 32768}, {117356, 76708, -2695, 49151},
+					{115887, 76382, -2714, 0}, {-117239, 46842, 367, 49151}, {-119494, 44882, 367, 24576}, {111004, 218928, -3544, 16384},
+					{108426, 221876, -3600, 49151}, {-45278, -112766, -241, 0}, {-45372, -114104, -241, 16384}, {115096, -178370, -891, 0},
+					{116199, -182694, -1506, 0}, {86865, -142915, -1341, 26000}, {85584, -142490, -1343, 0}, {147421, -55435, -2736, 49151},
+					{148206, -55786, -2782, 61439}, {43165, -48461, -797, 17000}, {43966, -47709, -798, 49999}};
 
-	public MasterOfEnchanting(int questId, String name, String descr)
-	{
+	public MasterOfEnchanting(int questId, String name, String descr) {
 		super(questId, name, descr);
 		addStartNpc(_master_yogi);
 		addFirstTalkId(_master_yogi);
 		addTalkId(_master_yogi);
-		for (int[] spawn : spawns)
-		{
+		for (int[] spawn : spawns) {
 			addSpawn(_master_yogi, spawn[0], spawn[1], spawn[2], spawn[3], false, 0);
 		}
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = "";
 		QuestState st = player.getQuestState(getName());
 		Quest q = QuestManager.getInstance().getQuest(getName());
 
 		htmltext = event;
-		if (event.equalsIgnoreCase("buy_staff"))
-		{
-			if (st.getQuestItemsCount(_master_yogi_staff) == 0 && st.getQuestItemsCount(adena) > _staff_price)
-			{
+		if (event.equalsIgnoreCase("buy_staff")) {
+			if (st.getQuestItemsCount(_master_yogi_staff) == 0 && st.getQuestItemsCount(adena) > _staff_price) {
 				st.takeItems(adena, _staff_price);
 				st.giveItems(_master_yogi_staff, 1);
 				htmltext = "32599-staffbuyed.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = "32599-staffcant.htm";
 			}
-		}
-		else if (event.equalsIgnoreCase("buy_scroll_24"))
-		{
+		} else if (event.equalsIgnoreCase("buy_scroll_24")) {
 			long _curr_time = System.currentTimeMillis();
 			String value = q.loadGlobalQuestVar(player.getAccountName());
 			long _reuse_time = value == "" ? 0 : Long.parseLong(value);
-			if (player.getCreateTime() > Long.parseLong("1246913000000"))
-			{
+			if (player.getCreateTime() > Long.parseLong("1246913000000")) {
 				return "32599-bidth.htm";
 			}
-			if (_curr_time > _reuse_time)
-			{
-				if (st.getQuestItemsCount(adena) > _scroll_24_price)
-				{
+			if (_curr_time > _reuse_time) {
+				if (st.getQuestItemsCount(adena) > _scroll_24_price) {
 					st.takeItems(adena, _scroll_24_price);
 					st.giveItems(_master_yogi_scroll, 24);
-					q.saveGlobalQuestVar(player.getAccountName(),
-							Long.toString(System.currentTimeMillis() + _scroll_24_time * 3600000));
+					q.saveGlobalQuestVar(player.getAccountName(), Long.toString(System.currentTimeMillis() + _scroll_24_time * 3600000));
 					htmltext = "32599-scroll24.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "32599-s24-no.htm";
 				}
-			}
-			else
-			{
+			} else {
 				long _remaining_time = (_reuse_time - _curr_time) / 1000;
 				int hours = (int) _remaining_time / 3600;
 				int minutes = (int) _remaining_time % 3600 / 60;
-				if (hours > 0)
-				{
-					SystemMessage sm =
-							SystemMessage.getSystemMessage(SystemMessageId.ITEM_PURCHASABLE_IN_S1_HOURS_S2_MINUTES);
+				if (hours > 0) {
+					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.ITEM_PURCHASABLE_IN_S1_HOURS_S2_MINUTES);
 					sm.addNumber(hours);
 					sm.addNumber(minutes);
 					player.sendPacket(sm);
 					htmltext = "32599-scroll24.htm";
-				}
-				else if (minutes > 0)
-				{
+				} else if (minutes > 0) {
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.ITEM_PURCHASABLE_IN_S1_MINUTES);
 					sm.addNumber(minutes);
 					player.sendPacket(sm);
 					htmltext = "32599-scroll24.htm";
-				}
-				else
-				{
+				} else {
 					// Little glitch. There is no SystemMessage with seconds only.
 					// If time is less than 1 minute player can buy scrolls
-					if (st.getQuestItemsCount(adena) > _scroll_24_price)
-					{
+					if (st.getQuestItemsCount(adena) > _scroll_24_price) {
 						st.takeItems(adena, _scroll_24_price);
 						st.giveItems(_master_yogi_scroll, 24);
-						q.saveGlobalQuestVar(player.getAccountName(),
-								Long.toString(System.currentTimeMillis() + _scroll_24_time * 3600000));
+						q.saveGlobalQuestVar(player.getAccountName(), Long.toString(System.currentTimeMillis() + _scroll_24_time * 3600000));
 						htmltext = "32599-scroll24.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32599-s24-no.htm";
 					}
 				}
 			}
-		}
-		else if (event.equalsIgnoreCase("buy_scroll_1"))
-		{
-			if (st.getQuestItemsCount(adena) > _scroll_1_price)
-			{
+		} else if (event.equalsIgnoreCase("buy_scroll_1")) {
+			if (st.getQuestItemsCount(adena) > _scroll_1_price) {
 				st.takeItems(adena, _scroll_1_price);
 				st.giveItems(_master_yogi_scroll, 1);
 				htmltext = "32599-scroll-ok.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = "32599-s1-no.htm";
 			}
-		}
-		else if (event.equalsIgnoreCase("buy_scroll_10"))
-		{
-			if (st.getQuestItemsCount(adena) > _scroll_10_price)
-			{
+		} else if (event.equalsIgnoreCase("buy_scroll_10")) {
+			if (st.getQuestItemsCount(adena) > _scroll_10_price) {
 				st.takeItems(adena, _scroll_10_price);
 				st.giveItems(_master_yogi_scroll, 10);
 				htmltext = "32599-scroll-ok.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = "32599-s10-no.htm";
 			}
-		}
-		else if (event.equalsIgnoreCase("receive_reward"))
-		{
-			if (st.getItemEquipped(Inventory.PAPERDOLL_RHAND) == _master_yogi_staff &&
-					st.getEnchantLevel(_master_yogi_staff) > 3)
-			{
-				switch (st.getEnchantLevel(_master_yogi_staff))
-				{
+		} else if (event.equalsIgnoreCase("receive_reward")) {
+			if (st.getItemEquipped(Inventory.PAPERDOLL_RHAND) == _master_yogi_staff && st.getEnchantLevel(_master_yogi_staff) > 3) {
+				switch (st.getEnchantLevel(_master_yogi_staff)) {
 					case 4:
 						st.giveItems(6406, 1); // Firework
 						break;
@@ -283,17 +213,14 @@ public class MasterOfEnchanting extends Quest
 					case 23:
 						st.giveItems(13988, 1); // S80 Grade Weapon Chest (Event)
 					default:
-						if (st.getEnchantLevel(_master_yogi_staff) > 23)
-						{
+						if (st.getEnchantLevel(_master_yogi_staff) > 23) {
 							st.giveItems(13988, 1); // S80 Grade Weapon Chest (Event)
 						}
 						break;
 				}
 				st.takeItems(_master_yogi_staff, 1);
 				htmltext = "32599-rewardok.htm";
-			}
-			else
-			{
+			} else {
 				htmltext = "32599-rewardnostaff.htm";
 			}
 		}
@@ -302,12 +229,10 @@ public class MasterOfEnchanting extends Quest
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = "";
 		QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
+		if (st == null) {
 			Quest q = QuestManager.getInstance().getQuest(getName());
 			st = q.newQuestState(player);
 		}
@@ -315,8 +240,7 @@ public class MasterOfEnchanting extends Quest
 		return htmltext;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new MasterOfEnchanting(-1, "MasterOfEnchanting", "events");
 	}
 }

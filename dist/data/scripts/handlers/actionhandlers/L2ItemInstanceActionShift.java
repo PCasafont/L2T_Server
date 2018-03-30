@@ -23,25 +23,23 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.util.StringUtil;
 
-public class L2ItemInstanceActionShift implements IActionHandler
-{
+public class L2ItemInstanceActionShift implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-	{
-		if (activeChar.getAccessLevel().isGm())
-		{
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
+		if (activeChar.getAccessLevel().isGm()) {
 			NpcHtmlMessage html = new NpcHtmlMessage(target.getObjectId());
-			final String html1 = StringUtil
-					.concat("<html><body><center><font color=\"LEVEL\">Item Info</font></center><br><table border=0>",
-							"<tr><td>Object ID: </td><td>", String.valueOf(target.getObjectId()),
-							"</td></tr><tr><td>Item ID: </td><td>",
-							String.valueOf(((L2ItemInstance) target).getItemId()),
-							"</td></tr><tr><td>Owner ID: </td><td>",
-							String.valueOf(((L2ItemInstance) target).getOwnerId()),
-							"</td></tr><tr><td>Location: </td><td>",
-							String.valueOf(((L2ItemInstance) target).getLocation()),
-							"</td></tr><tr><td><br></td></tr><tr><td>Class: </td><td>",
-							target.getClass().getSimpleName(), "</td></tr></table></body></html>");
+			final String html1 = StringUtil.concat("<html><body><center><font color=\"LEVEL\">Item Info</font></center><br><table border=0>",
+					"<tr><td>Object ID: </td><td>",
+					String.valueOf(target.getObjectId()),
+					"</td></tr><tr><td>Item ID: </td><td>",
+					String.valueOf(((L2ItemInstance) target).getItemId()),
+					"</td></tr><tr><td>Owner ID: </td><td>",
+					String.valueOf(((L2ItemInstance) target).getOwnerId()),
+					"</td></tr><tr><td>Location: </td><td>",
+					String.valueOf(((L2ItemInstance) target).getLocation()),
+					"</td></tr><tr><td><br></td></tr><tr><td>Class: </td><td>",
+					target.getClass().getSimpleName(),
+					"</td></tr></table></body></html>");
 			html.setHtml(html1);
 			activeChar.sendPacket(html);
 		}
@@ -49,8 +47,7 @@ public class L2ItemInstanceActionShift implements IActionHandler
 	}
 
 	@Override
-	public InstanceType getInstanceType()
-	{
+	public InstanceType getInstanceType() {
 		return InstanceType.L2ItemInstance;
 	}
 }

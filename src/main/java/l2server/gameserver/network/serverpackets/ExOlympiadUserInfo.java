@@ -24,8 +24,7 @@ import l2server.gameserver.model.olympiad.OlympiadParticipant;
  * @author godson
  * @version $Revision: 1.4.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public class ExOlympiadUserInfo extends L2GameServerPacket
-{
+public class ExOlympiadUserInfo extends L2GameServerPacket {
 	// chcdSddddd
 	private L2PcInstance player;
 	private OlympiadParticipant par = null;
@@ -33,64 +32,52 @@ public class ExOlympiadUserInfo extends L2GameServerPacket
 	private int maxHp;
 	private int curCp;
 	private int maxCp;
-
-	public ExOlympiadUserInfo(L2PcInstance player)
-	{
+	
+	public ExOlympiadUserInfo(L2PcInstance player) {
 		this.player = player;
-		if (player != null)
-		{
+		if (player != null) {
 			curHp = (int) player.getCurrentHp();
 			maxHp = player.getMaxVisibleHp();
 			curCp = (int) player.getCurrentCp();
 			maxCp = player.getMaxCp();
-		}
-		else
-		{
+		} else {
 			curHp = 0;
 			maxHp = 100;
 			curCp = 0;
 			maxCp = 100;
 		}
 	}
-
-	public ExOlympiadUserInfo(OlympiadParticipant par)
-	{
+	
+	public ExOlympiadUserInfo(OlympiadParticipant par) {
 		this.par = par;
 		player = par.player;
-		if (player != null)
-		{
+		if (player != null) {
 			curHp = (int) player.getCurrentHp();
 			maxHp = player.getMaxVisibleHp();
 			curCp = (int) player.getCurrentCp();
 			maxCp = player.getMaxCp();
-		}
-		else
-		{
+		} else {
 			curHp = 0;
 			maxHp = 100;
 			curCp = 0;
 			maxCp = 100;
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
-		if (player != null)
-		{
+	protected final void writeImpl() {
+		if (player != null) {
 			writeC(player.getOlympiadSide());
 			writeD(player.getObjectId());
 			writeS(player.getName());
 			writeD(player.getCurrentClass().getId());
-		}
-		else
-		{
+		} else {
 			writeC(par.side);
 			writeD(par.objectId);
 			writeS(par.name);
 			writeD(par.baseClass);
 		}
-
+		
 		writeD(curHp);
 		writeD(maxHp);
 		writeD(curCp);

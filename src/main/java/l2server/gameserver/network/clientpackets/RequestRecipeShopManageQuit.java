@@ -23,25 +23,21 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @version $Revision: 1.1.2.2.2.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestRecipeShopManageQuit extends L2GameClientPacket
-{
+public final class RequestRecipeShopManageQuit extends L2GameClientPacket {
 	//
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// trigger
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
-
+		
 		player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
 		player.broadcastUserInfo();
 		player.standUp();

@@ -23,30 +23,22 @@ import l2server.log.Log;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 
-public class QuestTimer
-{
+public class QuestTimer {
 	// =========================================================
 	// Schedule Task
-	public class ScheduleTimerTask implements Runnable
-	{
+	public class ScheduleTimerTask implements Runnable {
 		@Override
-		public void run()
-		{
-			if (!getIsActive())
-			{
+		public void run() {
+			if (!getIsActive()) {
 				return;
 			}
 
-			try
-			{
-				if (!getIsRepeating())
-				{
+			try {
+				if (!getIsRepeating()) {
 					cancel();
 				}
 				getQuest().notifyEvent(getName(), getNpc(), getPlayer());
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.log(Level.SEVERE, "", e);
 			}
 		}
@@ -64,43 +56,33 @@ public class QuestTimer
 
 	// =========================================================
 	// Constructor
-	public QuestTimer(Quest quest, String name, long time, L2Npc npc, L2PcInstance player, boolean repeating)
-	{
+	public QuestTimer(Quest quest, String name, long time, L2Npc npc, L2PcInstance player, boolean repeating) {
 		this.name = name;
 		this.quest = quest;
 		this.player = player;
 		this.npc = npc;
 		isRepeating = repeating;
-		if (repeating)
-		{
-			schedular = ThreadPoolManager.getInstance()
-					.scheduleGeneralAtFixedRate(new ScheduleTimerTask(), time, time); // Prepare auto end task
-		}
-		else
-		{
-			schedular = ThreadPoolManager.getInstance()
-					.scheduleGeneral(new ScheduleTimerTask(), time); // Prepare auto end task
+		if (repeating) {
+			schedular = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new ScheduleTimerTask(), time, time); // Prepare auto end task
+		} else {
+			schedular = ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleTimerTask(), time); // Prepare auto end task
 		}
 	}
 
-	public QuestTimer(Quest quest, String name, long time, L2Npc npc, L2PcInstance player)
-	{
+	public QuestTimer(Quest quest, String name, long time, L2Npc npc, L2PcInstance player) {
 		this(quest, name, time, npc, player, false);
 	}
 
-	public QuestTimer(QuestState qs, String name, long time)
-	{
+	public QuestTimer(QuestState qs, String name, long time) {
 		this(qs.getQuest(), name, time, null, qs.getPlayer(), false);
 	}
 
 	// =========================================================
 	// Method - Public
-	public void cancel()
-	{
+	public void cancel() {
 		isActive = false;
 
-		if (schedular != null)
-		{
+		if (schedular != null) {
 			schedular.cancel(false);
 		}
 
@@ -115,14 +97,11 @@ public class QuestTimer
 	 * @param npc    : Npc instance attached to the desired timer (null if no npc attached)
 	 * @param player : Player instance attached to the desired timer (null if no player attached)
 	 */
-	public boolean isMatch(Quest quest, String name, L2Npc npc, L2PcInstance player)
-	{
-		if (quest == null || name == null)
-		{
+	public boolean isMatch(Quest quest, String name, L2Npc npc, L2PcInstance player) {
+		if (quest == null || name == null) {
 			return false;
 		}
-		if (quest != getQuest() || name.compareToIgnoreCase(getName()) != 0)
-		{
+		if (quest != getQuest() || name.compareToIgnoreCase(getName()) != 0) {
 			return false;
 		}
 		return npc == getNpc() && player == getPlayer();
@@ -130,39 +109,32 @@ public class QuestTimer
 
 	// =========================================================
 	// Property - Public
-	public final boolean getIsActive()
-	{
+	public final boolean getIsActive() {
 		return isActive;
 	}
 
-	public final boolean getIsRepeating()
-	{
+	public final boolean getIsRepeating() {
 		return isRepeating;
 	}
 
-	public final Quest getQuest()
-	{
+	public final Quest getQuest() {
 		return quest;
 	}
 
-	public final String getName()
-	{
+	public final String getName() {
 		return name;
 	}
 
-	public final L2Npc getNpc()
-	{
+	public final L2Npc getNpc() {
 		return npc;
 	}
 
-	public final L2PcInstance getPlayer()
-	{
+	public final L2PcInstance getPlayer() {
 		return player;
 	}
 
 	@Override
-	public final String toString()
-	{
+	public final String toString() {
 		return name;
 	}
 }

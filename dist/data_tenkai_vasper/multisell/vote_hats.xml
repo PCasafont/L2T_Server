@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <item>
-        <ingredient count="30" id="10639" /> <!-- Vote Coin -->
-        <production count="1" id="36176" /> <!-- Refined Devil Horn - WIT -->
-    </item>
-    <item>
-        <ingredient count="30" id="10639" /> <!-- Vote Coin -->
-        <production count="1" id="36177" /> <!-- Refined Devil Horn - WIT -->
-    </item>
-    <item>
-        <ingredient count="30" id="10639" /> <!-- Vote Coin -->
-        <production count="1" id="36178" /> <!-- Refined Devil Horn - WIT -->
-    </item>
-    <item>
-        <ingredient count="30" id="10639" /> <!-- Vote Coin -->
-        <production count="1" id="36179" /> <!-- Refined Devil Horn - WIT -->
-    </item>
-    <item>
-        <ingredient count="30" id="10639" /> <!-- Vote Coin -->
-        <production count="1" id="36180" /> <!-- Refined Devil Horn - WIT -->
-    </item>
-    <item>
-        <ingredient count="30" id="10639" /> <!-- Vote Coin -->
-        <production count="1" id="36181" /> <!-- Refined Devil Horn - WIT -->
-    </item>
-    <item>
-        <ingredient count="30" id="10639" /> <!-- Vote Coin -->
-        <production count="1" id="36182" /> <!-- Refined Devil Horn - WIT -->
-    </item>
-    <item>
-        <ingredient count="30" id="10639" /> <!-- Vote Coin -->
-        <production count="1" id="36183" /> <!-- Refined Devil Horn - WIT -->
-    </item>
+	<item>
+		<ingredient count="30" id="10639" /> <!-- Vote Coin -->
+		<production count="1" id="36176" /> <!-- Refined Devil Horn - WIT -->
+	</item>
+	<item>
+		<ingredient count="30" id="10639" /> <!-- Vote Coin -->
+		<production count="1" id="36177" /> <!-- Refined Devil Horn - WIT -->
+	</item>
+	<item>
+		<ingredient count="30" id="10639" /> <!-- Vote Coin -->
+		<production count="1" id="36178" /> <!-- Refined Devil Horn - WIT -->
+	</item>
+	<item>
+		<ingredient count="30" id="10639" /> <!-- Vote Coin -->
+		<production count="1" id="36179" /> <!-- Refined Devil Horn - WIT -->
+	</item>
+	<item>
+		<ingredient count="30" id="10639" /> <!-- Vote Coin -->
+		<production count="1" id="36180" /> <!-- Refined Devil Horn - WIT -->
+	</item>
+	<item>
+		<ingredient count="30" id="10639" /> <!-- Vote Coin -->
+		<production count="1" id="36181" /> <!-- Refined Devil Horn - WIT -->
+	</item>
+	<item>
+		<ingredient count="30" id="10639" /> <!-- Vote Coin -->
+		<production count="1" id="36182" /> <!-- Refined Devil Horn - WIT -->
+	</item>
+	<item>
+		<ingredient count="30" id="10639" /> <!-- Vote Coin -->
+		<production count="1" id="36183" /> <!-- Refined Devil Horn - WIT -->
+	</item>
 </list>
  

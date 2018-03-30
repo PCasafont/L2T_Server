@@ -34,62 +34,52 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DoorTable
-{
+public class DoorTable {
 	private static final TIntObjectHashMap<Set<Integer>> groups = new TIntObjectHashMap<>();
 
 	private final TIntObjectHashMap<L2DoorInstance> doors;
 	private final TIntObjectHashMap<ArrayList<L2DoorInstance>> regions;
 
-	public static DoorTable getInstance()
-	{
+	public static DoorTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private DoorTable()
-	{
+	private DoorTable() {
 		doors = new TIntObjectHashMap<>();
 		regions = new TIntObjectHashMap<>();
 		parseData();
 	}
 
-	public void reload()
-	{
+	public void reload() {
 		doors.clear();
 		regions.clear();
 		groups.clear();
 		parseData();
 	}
 
-	public void parseData()
-	{
+	public void parseData() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "doorData.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode d : doc.getChildren())
-		{
-            if (d.getName().equalsIgnoreCase("door"))
-            {
-                int id = d.getInt("id");
-                StatsSet set = new StatsSet();
-                set.set("id", id);
-                for (XmlNode bean : d.getChildren())
-                {
-                    if (bean.getName().equalsIgnoreCase("set"))
-                    {
-                        String name = bean.getString("name");
-                        String value = bean.getString("val");
-                        set.set(name, value);
-                    }
-                }
-                makeDoor(id, set);
-            }
-        }
+		for (XmlNode d : doc.getChildren()) {
+			if (d.getName().equalsIgnoreCase("door")) {
+				int id = d.getInt("id");
+				StatsSet set = new StatsSet();
+				set.set("id", id);
+				for (XmlNode bean : d.getChildren()) {
+					if (bean.getName().equalsIgnoreCase("set")) {
+						String name = bean.getString("name");
+						String value = bean.getString("val");
+						set.set(name, value);
+					}
+				}
+				makeDoor(id, set);
+			}
+		}
 		Log.info("DoorTable: Loaded " + doors.size() + " Door Templates for " + regions.size() + " regions.");
 	}
 
-	public void insertCollisionData(StatsSet set)
-	{
+	public void insertCollisionData(StatsSet set) {
 		int posX, posY, nodeX, nodeY, height;
 		height = set.getInteger("height");
 		String[] pos = set.getString("node1").split(",");
@@ -99,12 +89,9 @@ public class DoorTable
 		posX = Integer.parseInt(pos[0]);
 		posY = Integer.parseInt(pos[1]);
 		int collisionRadius; // (max) radius for movement checks
-		if (Math.abs(nodeX - posX) > Math.abs(nodeY - posY))
-		{
+		if (Math.abs(nodeX - posX) > Math.abs(nodeY - posY)) {
 			collisionRadius = Math.abs(nodeY - posY);
-		}
-		else
-		{
+		} else {
 			collisionRadius = Math.abs(nodeX - posX);
 		}
 
@@ -112,8 +99,7 @@ public class DoorTable
 		set.set("collisionHeight", height);
 	}
 
-	private void insertStatsData(StatsSet set)
-	{
+	private void insertStatsData(StatsSet set) {
 		set.set("STR", set.getInteger("STR", 40));
 		set.set("CON", set.getInteger("CON", 40));
 		set.set("DEX", set.getInteger("DEX", 40));
@@ -138,8 +124,7 @@ public class DoorTable
 		set.set("walkSpd", set.getInteger("walkSpd", 40));
 		set.set("runSpd", set.getInteger("runSpd", 40));
 
-		if (Config.isServer(Config.TENKAI))
-		{
+		if (Config.isServer(Config.TENKAI)) {
 			set.set("hpMax", set.getInteger("hpMax", 40) * 30);
 			set.set("cpMax", set.getInteger("cpMax", 40) * 30);
 			set.set("mpMax", set.getInteger("mpMax", 40) * 30);
@@ -156,8 +141,7 @@ public class DoorTable
 	 * @param id
 	 * @param set
 	 */
-	private void makeDoor(int id, StatsSet set)
-	{
+	private void makeDoor(int id, StatsSet set) {
 		insertCollisionData(set);
 		insertStatsData(set);
 		L2DoorTemplate template = new L2DoorTemplate(set);
@@ -166,106 +150,81 @@ public class DoorTable
 		door.spawnMe(template.posX, template.posY, template.posZ);
 		putDoor(door, MapRegionTable.getInstance().getMapRegion(door.getX(), door.getY()));
 		ClanHall clanhall = ClanHallManager.getInstance().getNearbyClanHall(door.getX(), door.getY(), 500);
-		if (clanhall != null)
-		{
+		if (clanhall != null) {
 			clanhall.getDoors().add(door);
 			door.setClanHall(clanhall);
 			//Logozo.info("door " + door.getDoorName() + " attached to ch " + clanhall.getName());
 		}
 	}
 
-	public L2DoorTemplate getDoorTemplate(int doorId)
-	{
+	public L2DoorTemplate getDoorTemplate(int doorId) {
 		return doors.get(doorId).getTemplate();
 	}
 
-	public L2DoorInstance getDoor(int doorId)
-	{
+	public L2DoorInstance getDoor(int doorId) {
 		return doors.get(doorId);
 	}
 
-	public void putDoor(L2DoorInstance door, int region)
-	{
+	public void putDoor(L2DoorInstance door, int region) {
 		doors.put(door.getDoorId(), door);
 
-		if (regions.contains(region))
-		{
+		if (regions.contains(region)) {
 			regions.get(region).add(door);
-		}
-		else
-		{
+		} else {
 			final ArrayList<L2DoorInstance> list = new ArrayList<>();
 			list.add(door);
 			regions.put(region, list);
 		}
 	}
 
-	public L2DoorInstance[] getDoors()
-	{
+	public L2DoorInstance[] getDoors() {
 		return doors.getValues(new L2DoorInstance[doors.size()]);
 	}
 
-	public boolean checkIfDoorsBetween(AbstractNodeLoc start, AbstractNodeLoc end, int instanceId)
-	{
-		return checkIfDoorsBetween(start.getX(), start.getY(), start.getZ(), end.getX(), end.getY(), end.getZ(),
-				instanceId);
+	public boolean checkIfDoorsBetween(AbstractNodeLoc start, AbstractNodeLoc end, int instanceId) {
+		return checkIfDoorsBetween(start.getX(), start.getY(), start.getZ(), end.getX(), end.getY(), end.getZ(), instanceId);
 	}
 
-	public boolean checkIfDoorsBetween(int x, int y, int z, int tx, int ty, int tz, int instanceId)
-	{
+	public boolean checkIfDoorsBetween(int x, int y, int z, int tx, int ty, int tz, int instanceId) {
 		return checkIfDoorsBetween(x, y, z, tx, ty, tz, instanceId, false);
 	}
 
-	public boolean checkIfDoorsBetween(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean doubleFaceCheck)
-	{
+	public boolean checkIfDoorsBetween(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean doubleFaceCheck) {
 		ArrayList<L2DoorInstance> allDoors;
-		if (instanceId > 0 && InstanceManager.getInstance().getInstance(instanceId) != null)
-		{
+		if (instanceId > 0 && InstanceManager.getInstance().getInstance(instanceId) != null) {
 			allDoors = InstanceManager.getInstance().getInstance(instanceId).getDoors();
-		}
-		else
-		{
+		} else {
 			allDoors = regions.get(MapRegionTable.getInstance().getMapRegion(x, y));
 		}
 
-		if (allDoors == null)
-		{
+		if (allDoors == null) {
 			return false;
 		}
 
-		for (L2DoorInstance doorInst : allDoors)
-		{
+		for (L2DoorInstance doorInst : allDoors) {
 			//check dead and open
-			if (doorInst.isDead() || doorInst.getOpen() || !doorInst.checkCollision() || doorInst.getX(0) == 0)
-			{
+			if (doorInst.isDead() || doorInst.getOpen() || !doorInst.checkCollision() || doorInst.getX(0) == 0) {
 				continue;
 			}
 
 			boolean intersectFace = false;
-			for (int i = 0; i < 4; i++)
-			{
+			for (int i = 0; i < 4; i++) {
 				int j = i + 1 < 4 ? i + 1 : 0;
 				// lower part of the multiplier fraction, if it is 0 we avoid an error and also know that the lines are parallel
-				int denominator = (ty - y) * (doorInst.getX(i) - doorInst.getX(j)) -
-						(tx - x) * (doorInst.getY(i) - doorInst.getY(j));
-				if (denominator == 0)
-				{
+				int denominator = (ty - y) * (doorInst.getX(i) - doorInst.getX(j)) - (tx - x) * (doorInst.getY(i) - doorInst.getY(j));
+				if (denominator == 0) {
 					continue;
 				}
 
 				// multipliers to the equations of the lines. If they are lower than 0 or bigger than 1, we know that segments don't intersect
 				float multiplier1 = (float) ((doorInst.getX(j) - doorInst.getX(i)) * (y - doorInst.getY(i)) -
 						(doorInst.getY(j) - doorInst.getY(i)) * (x - doorInst.getX(i))) / denominator;
-				float multiplier2 =
-						(float) ((tx - x) * (y - doorInst.getY(i)) - (ty - y) * (x - doorInst.getX(i))) / denominator;
-				if (multiplier1 >= 0 && multiplier1 <= 1 && multiplier2 >= 0 && multiplier2 <= 1)
-				{
+				float multiplier2 = (float) ((tx - x) * (y - doorInst.getY(i)) - (ty - y) * (x - doorInst.getX(i))) / denominator;
+				if (multiplier1 >= 0 && multiplier1 <= 1 && multiplier2 >= 0 && multiplier2 <= 1) {
 					int intersectZ = Math.round(z + multiplier1 * (tz - z));
 					// now checking if the resulting point is between door's min and max z
-					if (intersectZ > doorInst.getZMin() && intersectZ < doorInst.getZMax())
-					{
-						if (!doubleFaceCheck || intersectFace)
-						{
+					if (intersectZ > doorInst.getZMin() && intersectZ < doorInst.getZMax()) {
+						if (!doubleFaceCheck || intersectFace) {
 							return true;
 						}
 						intersectFace = true;
@@ -277,28 +236,22 @@ public class DoorTable
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final DoorTable instance = new DoorTable();
 	}
 
-	public static void addDoorGroup(String groupName, int doorId)
-	{
+	public static void addDoorGroup(String groupName, int doorId) {
 		Set<Integer> set = groups.get(groupName.hashCode());
-		if (set == null)
-		{
+		if (set == null) {
 			set = new HashSet<>();
 			set.add(doorId);
 			groups.put(groupName.hashCode(), set);
-		}
-		else
-		{
+		} else {
 			set.add(doorId);
 		}
 	}
 
-	public static Set<Integer> getDoorsByGroup(String groupName)
-	{
+	public static Set<Integer> getDoorsByGroup(String groupName) {
 		return groups.get(groupName.hashCode());
 	}
 }

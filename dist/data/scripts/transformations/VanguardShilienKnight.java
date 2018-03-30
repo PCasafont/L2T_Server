@@ -5,30 +5,24 @@ import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Transformation;
 
-public class VanguardShilienKnight extends L2Transformation
-{
-	public VanguardShilienKnight()
-	{
+public class VanguardShilienKnight extends L2Transformation {
+	public VanguardShilienKnight() {
 		// id
 		super(315);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 315 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 315 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		int lvl = 1;
-		if (getPlayer().getLevel() > 42)
-		{
+		if (getPlayer().getLevel() > 42) {
 			lvl = getPlayer().getLevel() - 42;
 		}
 
@@ -45,30 +39,24 @@ public class VanguardShilienKnight extends L2Transformation
 		// Switch Stance
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(838, 1), false);
 		// Set allowed skills
-		getPlayer()
-				.setTransformAllowedSkills(new int[]{18, 22, 28, 33, 144, 278, 279, 289, 401, 815, 817, 838, 956, 958});
+		getPlayer().setTransformAllowedSkills(new int[]{18, 22, 28, 33, 144, 278, 279, 289, 401, 815, 817, 838, 956, 958});
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 
 		// Remove Boost Morale effect
-		for (L2Abnormal e : getPlayer().getAllEffects())
-		{
-			if (e != null && e.getSkill().getId() == 956)
-			{
+		for (L2Abnormal e : getPlayer().getAllEffects()) {
+			if (e != null && e.getSkill().getId() == 956) {
 				e.exit();
 			}
 		}
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		int lvl = 1;
-		if (getPlayer().getLevel() > 42)
-		{
+		if (getPlayer().getLevel() > 42) {
 			lvl = getPlayer().getLevel() - 42;
 		}
 
@@ -88,8 +76,7 @@ public class VanguardShilienKnight extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new VanguardShilienKnight());
 	}
 }

@@ -18,18 +18,15 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExPledgeCount extends L2GameServerPacket
-{
+public class ExPledgeCount extends L2GameServerPacket {
 	private int count;
-
-	public ExPledgeCount(int count)
-	{
+	
+	public ExPledgeCount(int count) {
 		this.count = count;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(count);
 	}
 }

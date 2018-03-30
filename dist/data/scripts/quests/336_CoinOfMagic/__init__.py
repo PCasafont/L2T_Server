@@ -32,7 +32,7 @@ KOOKABU1, KOOKABU2, KOOKABU3, KOOKABU4, ANTELOP1, ANTELOP2, ANTELOP3, ANTELOP4, 
 GRAVE_L, DOOM_ARC, DOOM_KNI, DOOM_SERV, CLAW_SPL, PUNISH_SPL, WISDOM_SPL, WAILING_SPL, HUNGRY_C, BLOODY_G, NIHIL_INV, DARK_GUARD = 21003, 21008, 20674, 21006, 21521, 21531, 21526, 21539, 20954, 20960, 20957, 20959
 
 PROMOTE = {3: [BLOOD_WEREWOLF, GOLD_DRAKE, SILVER_FAIRY, BLOOD_DREVANUL, GOLD_KNIGHT, SILVER_GOLEM],
-           2: [SILVER_DRYAD, BLOOD_BASILISK, BLOOD_SUCCUBUS, SILVER_UNDINE, GOLD_GIANT, GOLD_WYRM],}
+           2: [SILVER_DRYAD, BLOOD_BASILISK, BLOOD_SUCCUBUS, SILVER_UNDINE, GOLD_GIANT, GOLD_WYRM], }
 
 COND = {3: 9, 2: 11}
 
@@ -236,9 +236,9 @@ class Quest(JQuest):
             action, npc, coin, tries = event.split("_")
             npc, coin, tries = int(npc), int(coin), int(tries)
             if npc in GAMBLE_LIST.keys() and \
-                            coin in GAMBLE_LIST[npc].keys() and \
-                            grade <= EXCHANGE_LEVEL[npc] and \
-                            tries in range(2, 5):
+                    coin in GAMBLE_LIST[npc].keys() and \
+                    grade <= EXCHANGE_LEVEL[npc] and \
+                    tries in range(2, 5):
                 required = GAMBLE_PRICE[EXCHANGE_LEVEL[npc]][tries]
                 if coin in [NIAS_GOLD_WYVERN, NIAS_SILVER_FAIRY, NIAS_BLOOD_MEDUSA]:
                     required *= 2

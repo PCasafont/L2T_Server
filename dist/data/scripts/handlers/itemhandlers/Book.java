@@ -23,16 +23,13 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
-public class Book implements IItemHandler
-{
+public class Book implements IItemHandler {
 	/**
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-		{
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!(playable instanceof L2PcInstance)) {
 			return;
 		}
 		L2PcInstance activeChar = (L2PcInstance) playable;
@@ -41,14 +38,11 @@ public class Book implements IItemHandler
 		String filename = "help/" + itemId + ".htm";
 		String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), filename);
 
-		if (content == null)
-		{
+		if (content == null) {
 			NpcHtmlMessage html = new NpcHtmlMessage(1);
 			html.setHtml("<html><body>My Text is missing:<br>" + filename + "</body></html>");
 			activeChar.sendPacket(html);
-		}
-		else
-		{
+		} else {
 			NpcHtmlMessage itemReply = new NpcHtmlMessage(5, itemId);
 			itemReply.setHtml(content);
 			itemReply.disableValidation();

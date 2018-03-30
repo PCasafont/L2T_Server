@@ -26,57 +26,43 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @version $Revision: 1.3.4.4 $ $Date: 2005/04/06 16:13:48 $
  */
-public final class RequestChangePetName extends L2GameClientPacket
-{
+public final class RequestChangePetName extends L2GameClientPacket {
 	//
-
+	
 	private String name;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		name = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		final L2PetInstance pet = activeChar.getPet();
-		if (pet == null)
-		{
+		if (pet == null) {
 			return;
 		}
-
-		if (pet.getName() != null)
-		{
-			activeChar
-					.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NAMING_YOU_CANNOT_SET_NAME_OF_THE_PET));
+		
+		if (pet.getName() != null) {
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NAMING_YOU_CANNOT_SET_NAME_OF_THE_PET));
 			return;
-		}
-		else if (PetNameTable.getInstance().doesPetNameExist(name, pet.getTemplate().NpcId))
-		{
+		} else if (PetNameTable.getInstance().doesPetNameExist(name, pet.getTemplate().NpcId)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NAMING_ALREADY_IN_USE_BY_ANOTHER_PET));
 			return;
-		}
-		else if (name.length() < 3 || name.length() > 16)
-		{
+		} else if (name.length() < 3 || name.length() > 16) {
 			// SystemMessage sm = SystemMessage.getSystemMessage(SystemMessage.NAMING_PETNAME_UP_TO_8CHARS);
 			activeChar.sendMessage("Your pet's name can be up to 16 characters.");
 			return;
-		}
-		else if (!PetNameTable.getInstance().isValidPetName(name))
-		{
-			activeChar
-					.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NAMING_PETNAME_CONTAINS_INVALID_CHARS));
+		} else if (!PetNameTable.getInstance().isValidPetName(name)) {
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NAMING_PETNAME_CONTAINS_INVALID_CHARS));
 			return;
 		}
-
+		
 		pet.setName(name);
 		pet.updateAndBroadcastStatus(1);
 	}

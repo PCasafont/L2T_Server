@@ -15,48 +15,42 @@
 
 package ai.individual;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-import ai.group_template.L2AttackableAIScript;
-
 /**
  * @author LasTravel
- *         <p>
- *         Legah AI
- *         <p>
- *         Source:
- *         - http://l2wiki.com/Land_of_Chaos
+ * <p>
+ * Legah AI
+ * <p>
+ * Source:
+ * - http://l2wiki.com/Land_of_Chaos
  */
 
-public class Legah extends L2AttackableAIScript
-{
+public class Legah extends L2AttackableAIScript {
 	private static final int legah = 19475;
 	private static final int legahMinion = 23332; //One-armed Zombie
 
-	public Legah(int id, String name, String descr)
-	{
+	public Legah(int id, String name, String descr) {
 		super(id, name, descr);
 
 		addKillId(legah);
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
 		addSpawn(legahMinion, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
 
 		return super.onKill(npc, killer, isPet);
 	}
 
 	@Override
-	public int getOnKillDelay(int npcId)
-	{
+	public int getOnKillDelay(int npcId) {
 		return 0;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Legah(-1, "Legah", "ai");
 	}
 }

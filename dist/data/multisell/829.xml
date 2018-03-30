@@ -1,68 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-    <item>
-        <ingredient count="1905" id="36518" /> <!-- Durable Leather -->
-        <ingredient count="13500000" id="57" /> <!-- Adena -->
-        <production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
-    </item>
-    <item>
-        <ingredient count="730" id="36523" /> <!-- Adamantite -->
-        <ingredient count="13500000" id="57" /> <!-- Adena -->
-        <production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
-    </item>
-    <item>
-        <ingredient count="2086" id="36528" /> <!-- Metallic Fiber -->
-        <ingredient count="13500000" id="57" /> <!-- Adena -->
-        <production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
-    </item>
-    <item>
-        <ingredient count="635" id="36533" /> <!-- Synthetic Braid -->
-        <ingredient count="13500000" id="57" /> <!-- Adena -->
-        <production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
-    </item>
-    <item>
-        <ingredient count="476" id="36538" /> <!-- Durable Leather Braid -->
-        <ingredient count="13500000" id="57" /> <!-- Adena -->
-        <production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
-    </item>
-    <item>
-        <ingredient count="340" id="36543" /> <!-- Adamantite Wire -->
-        <ingredient count="13500000" id="57" /> <!-- Adena -->
-        <production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
-    </item>
-    <item>
-        <ingredient count="97" id="36548" /> <!-- Weapon Fragment (Mid-grade) -->
-        <ingredient count="13500000" id="57" /> <!-- Adena -->
-        <production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
-    </item>
-    <item>
-        <ingredient count="86" id="36553" /> <!-- Armor Fragment (Mid-grade) -->
-        <ingredient count="13500000" id="57" /> <!-- Adena -->
-        <production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
-    </item>
-    <item>
-        <ingredient count="292" id="36558" /> <!-- Accessory Gem (Mid-grade) -->
-        <ingredient count="13500000" id="57" /> <!-- Adena -->
-        <production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
-    </item>
-    <item>
-        <ingredient count="71" id="36563" /> <!-- Synthetic Cokes -->
-        <ingredient count="13500000" id="57" /> <!-- Adena -->
-        <production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
-    </item>
-    <item>
-        <ingredient count="1801" id="1462" /> <!-- Crystal (S-grade) -->
-        <ingredient count="13500000" id="57" /> <!-- Adena -->
-        <production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
-    </item>
-    <item>
-        <ingredient count="1201" id="17371" /> <!-- Crystal (R-grade) -->
-        <ingredient count="13500000" id="57" /> <!-- Adena -->
-        <production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
-    </item>
-    <item>
-        <ingredient count="1046" id="37545" /> <!-- Large Snowball -->
-        <ingredient count="13500000" id="57" /> <!-- Adena -->
-        <production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
-    </item>
+	<item>
+		<ingredient count="1905" id="36518" /> <!-- Durable Leather -->
+		<ingredient count="13500000" id="57" /> <!-- Adena -->
+		<production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
+	</item>
+	<item>
+		<ingredient count="730" id="36523" /> <!-- Adamantite -->
+		<ingredient count="13500000" id="57" /> <!-- Adena -->
+		<production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
+	</item>
+	<item>
+		<ingredient count="2086" id="36528" /> <!-- Metallic Fiber -->
+		<ingredient count="13500000" id="57" /> <!-- Adena -->
+		<production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
+	</item>
+	<item>
+		<ingredient count="635" id="36533" /> <!-- Synthetic Braid -->
+		<ingredient count="13500000" id="57" /> <!-- Adena -->
+		<production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
+	</item>
+	<item>
+		<ingredient count="476" id="36538" /> <!-- Durable Leather Braid -->
+		<ingredient count="13500000" id="57" /> <!-- Adena -->
+		<production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
+	</item>
+	<item>
+		<ingredient count="340" id="36543" /> <!-- Adamantite Wire -->
+		<ingredient count="13500000" id="57" /> <!-- Adena -->
+		<production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
+	</item>
+	<item>
+		<ingredient count="97" id="36548" /> <!-- Weapon Fragment (Mid-grade) -->
+		<ingredient count="13500000" id="57" /> <!-- Adena -->
+		<production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
+	</item>
+	<item>
+		<ingredient count="86" id="36553" /> <!-- Armor Fragment (Mid-grade) -->
+		<ingredient count="13500000" id="57" /> <!-- Adena -->
+		<production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
+	</item>
+	<item>
+		<ingredient count="292" id="36558" /> <!-- Accessory Gem (Mid-grade) -->
+		<ingredient count="13500000" id="57" /> <!-- Adena -->
+		<production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
+	</item>
+	<item>
+		<ingredient count="71" id="36563" /> <!-- Synthetic Cokes -->
+		<ingredient count="13500000" id="57" /> <!-- Adena -->
+		<production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
+	</item>
+	<item>
+		<ingredient count="1801" id="1462" /> <!-- Crystal (S-grade) -->
+		<ingredient count="13500000" id="57" /> <!-- Adena -->
+		<production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
+	</item>
+	<item>
+		<ingredient count="1201" id="17371" /> <!-- Crystal (R-grade) -->
+		<ingredient count="13500000" id="57" /> <!-- Adena -->
+		<production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
+	</item>
+	<item>
+		<ingredient count="1046" id="37545" /> <!-- Large Snowball -->
+		<ingredient count="13500000" id="57" /> <!-- Adena -->
+		<production count="1" id="37613" /> <!-- Hero's Treasure Chest - Western Winds -->
+	</item>
 </list>

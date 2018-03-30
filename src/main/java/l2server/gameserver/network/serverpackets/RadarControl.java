@@ -15,30 +15,27 @@
 
 package l2server.gameserver.network.serverpackets;
 
-public class RadarControl extends L2GameServerPacket
-{
+public class RadarControl extends L2GameServerPacket {
 	private int showRadar;
 	private int type;
 	private int x;
 	private int y;
 	private int z;
-
+	
 	/**
 	 * 0xEB RadarControl		 ddddd
 	 */
-
-	public RadarControl(int showRadar, int type, int x, int y, int z)
-	{
+	
+	public RadarControl(int showRadar, int type, int x, int y, int z) {
 		this.showRadar = showRadar; // showRader?? 0 = showradar; 1 = delete radar;
 		this.type = type; // radar type??
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(showRadar);
 		writeD(type); //maybe type
 		writeD(x); //x

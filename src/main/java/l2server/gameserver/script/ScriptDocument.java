@@ -16,70 +16,57 @@
 package l2server.gameserver.script;
 
 import l2server.log.Log;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.logging.Level;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.logging.Level;
 
 /**
  *
  *
  */
-public class ScriptDocument
-{
+public class ScriptDocument {
 	private Document document;
 	private String name;
 
-	public ScriptDocument(String name, InputStream input)
-	{
+	public ScriptDocument(String name, InputStream input) {
 		this.name = name;
 
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		try
-		{
+		try {
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			document = builder.parse(input);
-		}
-		catch (SAXException sxe)
-		{
+		} catch (SAXException sxe) {
 			// Error generated during parsing)
 			Exception x = sxe;
-			if (sxe.getException() != null)
-			{
+			if (sxe.getException() != null) {
 				x = sxe.getException();
 			}
 			x.printStackTrace();
-		}
-		catch (ParserConfigurationException | IOException pce)
-		{
+		} catch (ParserConfigurationException | IOException pce) {
 			// Parser with specified options can't be built
 			Log.log(Level.WARNING, "", pce);
 		}
 	}
 
-	public Document getDocument()
-	{
+	public Document getDocument() {
 		return document;
 	}
 
 	/**
 	 * @return Returns the name.
 	 */
-	public String getName()
-	{
+	public String getName() {
 		return name;
 	}
 
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return name;
 	}
 }

@@ -23,8 +23,7 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 /**
  * @author Max
  */
-public interface ISkillTargetTypeHandler
-{
+public interface ISkillTargetTypeHandler {
 	/**
 	 * @param skill
 	 * @param activeChar

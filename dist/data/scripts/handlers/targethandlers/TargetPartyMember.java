@@ -25,13 +25,11 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 /**
  * @author nBd
  */
-public class TargetPartyMember implements ISkillTargetTypeHandler
-{
+public class TargetPartyMember implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		/*
         if ((target != null && target == activeChar)
 			|| (target != null && activeChar.getParty() != null && target.getParty() != null
@@ -61,13 +59,11 @@ public class TargetPartyMember implements ISkillTargetTypeHandler
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
+	public Enum<L2SkillTargetType> getTargetType() {
 		return L2SkillTargetType.TARGET_PARTY_MEMBER;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetPartyMember());
 	}
 }

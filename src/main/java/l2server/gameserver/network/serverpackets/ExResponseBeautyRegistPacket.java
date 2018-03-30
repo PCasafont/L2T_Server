@@ -18,17 +18,15 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExResponseBeautyRegistPacket extends L2GameServerPacket
-{
+public class ExResponseBeautyRegistPacket extends L2GameServerPacket {
 	private long adena;
 	private long tickets;
 	private int type;
 	private int hair;
 	private int face;
 	private int hairColor;
-
-	public ExResponseBeautyRegistPacket(long adena, long tickets, int type, int hair, int face, int hairColor)
-	{
+	
+	public ExResponseBeautyRegistPacket(long adena, long tickets, int type, int hair, int face, int hairColor) {
 		this.adena = adena;
 		this.tickets = tickets;
 		this.type = type;
@@ -36,10 +34,9 @@ public class ExResponseBeautyRegistPacket extends L2GameServerPacket
 		this.face = face;
 		this.hairColor = hairColor;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeQ(adena);
 		writeQ(tickets);
 		writeD(0x00); // 1 ? restore to previous : change

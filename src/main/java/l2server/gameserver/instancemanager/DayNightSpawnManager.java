@@ -28,18 +28,15 @@ import java.util.logging.Level;
 /**
  * @author godson
  */
-public class DayNightSpawnManager
-{
+public class DayNightSpawnManager {
 
 	private Map<L2Spawn, L2RaidBossInstance> bosses;
 
-	public static DayNightSpawnManager getInstance()
-	{
+	public static DayNightSpawnManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private DayNightSpawnManager()
-	{
+	private DayNightSpawnManager() {
 		bosses = new HashMap<>();
 
 		Log.info("DayNightSpawnManager: Day/Night handler initialized");
@@ -48,8 +45,7 @@ public class DayNightSpawnManager
 	/**
 	 * Spawn Day Creatures, and Unspawn Night Creatures
 	 */
-	public void spawnDayCreatures()
-	{
+	public void spawnDayCreatures() {
 		SpawnTable.getInstance().spawnSpecificTable("day_spawns");
 
 		SpawnTable.getInstance().despawnSpecificTable("night_spawns");
@@ -58,17 +54,14 @@ public class DayNightSpawnManager
 	/**
 	 * Spawn Night Creatures, and Unspawn Day Creatures
 	 */
-	public void spawnNightCreatures()
-	{
+	public void spawnNightCreatures() {
 		SpawnTable.getInstance().spawnSpecificTable("night_spawns");
 
 		SpawnTable.getInstance().despawnSpecificTable("day_spawns");
 	}
 
-	private void changeMode(int mode)
-	{
-		switch (mode)
-		{
+	private void changeMode(int mode) {
+		switch (mode) {
 			case 0:
 				spawnDayCreatures();
 				break;
@@ -81,33 +74,24 @@ public class DayNightSpawnManager
 		}
 	}
 
-	public void notifyChangeMode()
-	{
-		try
-		{
-			if (TimeController.getInstance().isNowNight())
-			{
+	public void notifyChangeMode() {
+		try {
+			if (TimeController.getInstance().isNowNight()) {
 				changeMode(1);
-			}
-			else
-			{
+			} else {
 				changeMode(0);
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Error while notifyChangeMode(): " + e.getMessage(), e);
 		}
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final DayNightSpawnManager instance = new DayNightSpawnManager();
 	}
 
-	public void cleanUp()
-	{
+	public void cleanUp() {
 		bosses.clear();
 	}
 }

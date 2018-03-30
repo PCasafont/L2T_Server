@@ -15,6 +15,7 @@
 
 package ai.individual.GrandBosses;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
@@ -34,232 +35,195 @@ import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.log.Log;
 import l2server.util.Rnd;
 
-import ai.group_template.L2AttackableAIScript;
-
 /**
  * @author Inia
- *         <p>
- *         helios AI
+ * <p>
+ * helios AI
  */
 
-public class Helios extends L2AttackableAIScript
-{
-    //Quest
-    private static final boolean debug = false;
-    private static final String qn = "Helios";
+public class Helios extends L2AttackableAIScript {
+	//Quest
+	private static final boolean debug = false;
+	private static final String qn = "Helios";
 
-    //Id's
-    private static final int heliosId = 29303;
-    private static final int[] textIds = {1000028, 1000029, 1000030, 1000031};
-    private static final L2Skill paralysis = SkillTable.getInstance().getInfo(4064, 1);
-    private static final L2BossZone bossZone = GrandBossManager.getInstance().getZone(43728, 17220, -4342);
-    private static final Location[] heliosLocs = {
-            new Location(43728, 17220, -4342),
-            new Location(55024, 17368, -5412),
-            new Location(53504, 21248, -5486),
-            new Location(53248, 24576, -5262)
-    };
+	//Id's
+	private static final int heliosId = 29303;
+	private static final int[] textIds = {1000028, 1000029, 1000030, 1000031};
+	private static final L2Skill paralysis = SkillTable.getInstance().getInfo(4064, 1);
+	private static final L2BossZone bossZone = GrandBossManager.getInstance().getZone(43728, 17220, -4342);
+	private static final Location[] heliosLocs =
+			{new Location(43728, 17220, -4342), new Location(55024, 17368, -5412), new Location(53504, 21248, -5486),
+					new Location(53248, 24576, -5262)};
 
-    //Others
-    private L2Npc heliosBoss;
-    private static long LastAction;
-    private boolean isTeleported;
+	//Others
+	private L2Npc heliosBoss;
+	private static long LastAction;
+	private boolean isTeleported;
 
-    public Helios(int id, String name, String descr)
-    {
-        super(id, name, descr);
+	public Helios(int id, String name, String descr) {
+		super(id, name, descr);
 
-        addAttackId(heliosId);
-        addKillId(heliosId);
-        addSkillSeeId(heliosId);
+		addAttackId(heliosId);
+		addKillId(heliosId);
+		addSkillSeeId(heliosId);
 
-        //Unlock
-        startQuestTimer("unlock_helios", GrandBossManager.getInstance().getUnlockTime(heliosId), null, null);
-    }
+		//Unlock
+		startQuestTimer("unlock_helios", GrandBossManager.getInstance().getUnlockTime(heliosId), null, null);
+	}
 
-    @Override
-    public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-    {
-        if (debug)
-        {
-            Log.warning(getName() + ": onAdvEvent: " + event);
-        }
+	@Override
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (debug) {
+			Log.warning(getName() + ": onAdvEvent: " + event);
+		}
 
-        if (event.equalsIgnoreCase("unlock_helios"))
-        {
-            int rnd = Rnd.get(10);
-            Location heliosLoc = null;
+		if (event.equalsIgnoreCase("unlock_helios")) {
+			int rnd = Rnd.get(10);
+			Location heliosLoc = null;
 
-            if (rnd < 4)
-            {
-                heliosLoc = heliosLocs[1];
-            }
-            else if (rnd < 7)
-            {
-                heliosLoc = heliosLocs[2];
-            }
-            else
-            {
-                heliosLoc = heliosLocs[3];
-            }
+			if (rnd < 4) {
+				heliosLoc = heliosLocs[1];
+			} else if (rnd < 7) {
+				heliosLoc = heliosLocs[2];
+			} else {
+				heliosLoc = heliosLocs[3];
+			}
 
-            heliosBoss = addSpawn(heliosId, heliosLoc.getX(), heliosLoc.getY(), heliosLoc.getZ(), 0, false, 0);
+			heliosBoss = addSpawn(heliosId, heliosLoc.getX(), heliosLoc.getY(), heliosLoc.getZ(), 0, false, 0);
 
-            GrandBossManager.getInstance().addBoss((L2GrandBossInstance) heliosBoss);
+			GrandBossManager.getInstance().addBoss((L2GrandBossInstance) heliosBoss);
 
-            GrandBossManager.getInstance().setBossStatus(heliosId, GrandBossManager.getInstance().ALIVE);
+			GrandBossManager.getInstance().setBossStatus(heliosId, GrandBossManager.getInstance().ALIVE);
 
-            heliosBoss.broadcastPacket(
-                    new PlaySound(1, "BS01_A", 1, heliosBoss.getObjectId(), heliosBoss.getX(), heliosBoss.getY(),
-                            heliosBoss.getZ()));
-        }
-        else if (event.equalsIgnoreCase("check_helios_location"))
-        {
-            //Check the boss location and minion loc
-            if (isTeleported && heliosBoss.getCurrentHp() > heliosBoss.getMaxHp() * 0.95 ||
-                    !bossZone.isInsideZone(heliosBoss) && !isTeleported)
-            {
-                setSpawnPoint(Rnd.get(3) + 1);
-                isTeleported = false;
-            }
-            else if (isTeleported && !bossZone.isInsideZone(heliosBoss))
-            {
-                setSpawnPoint(0);
-            }
-        }
-        else if (event.equalsIgnoreCase("check_activity_task"))
-        {
-            if (!GrandBossManager.getInstance().isActive(heliosId, LastAction))
-            {
-                notifyEvent("end_helios", null, null);
-            }
-        }
-        else if (event.equalsIgnoreCase("end_helios"))
-        {
-            QuestTimer activityTimer = getQuestTimer("check_activity_task", null, null);
-            if (activityTimer != null)
-            {
-                activityTimer.cancel();
-            }
+			heliosBoss.broadcastPacket(new PlaySound(1,
+					"BS01_A",
+					1,
+					heliosBoss.getObjectId(),
+					heliosBoss.getX(),
+					heliosBoss.getY(),
+					heliosBoss.getZ()));
+		} else if (event.equalsIgnoreCase("check_helios_location")) {
+			//Check the boss location and minion loc
+			if (isTeleported && heliosBoss.getCurrentHp() > heliosBoss.getMaxHp() * 0.95 || !bossZone.isInsideZone(heliosBoss) && !isTeleported) {
+				setSpawnPoint(Rnd.get(3) + 1);
+				isTeleported = false;
+			} else if (isTeleported && !bossZone.isInsideZone(heliosBoss)) {
+				setSpawnPoint(0);
+			}
+		} else if (event.equalsIgnoreCase("check_activity_task")) {
+			if (!GrandBossManager.getInstance().isActive(heliosId, LastAction)) {
+				notifyEvent("end_helios", null, null);
+			}
+		} else if (event.equalsIgnoreCase("end_helios")) {
+			QuestTimer activityTimer = getQuestTimer("check_activity_task", null, null);
+			if (activityTimer != null) {
+				activityTimer.cancel();
+			}
 
-            QuestTimer checkHeliosLoc = getQuestTimer("check_helios_location", null, null);
-            if (checkHeliosLoc != null)
-            {
-                checkHeliosLoc.cancel();
-            }
+			QuestTimer checkHeliosLoc = getQuestTimer("check_helios_location", null, null);
+			if (checkHeliosLoc != null) {
+				checkHeliosLoc.cancel();
+			}
 
-            if (GrandBossManager.getInstance().getBossStatus(heliosId) != GrandBossManager.getInstance().DEAD)
-            {
-                GrandBossManager.getInstance().setBossStatus(heliosId, GrandBossManager.getInstance().ALIVE);
-            }
-        }
-        return super.onAdvEvent(event, npc, player);
-    }
+			if (GrandBossManager.getInstance().getBossStatus(heliosId) != GrandBossManager.getInstance().DEAD) {
+				GrandBossManager.getInstance().setBossStatus(heliosId, GrandBossManager.getInstance().ALIVE);
+			}
+		}
+		return super.onAdvEvent(event, npc, player);
+	}
 
-    public void setSpawnPoint(int index)
-    {
-        Location loc = heliosLocs[index];
+	public void setSpawnPoint(int index) {
+		Location loc = heliosLocs[index];
 
-        ((L2Attackable) heliosBoss).clearAggroList();
+		((L2Attackable) heliosBoss).clearAggroList();
 
-        heliosBoss.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null, null);
+		heliosBoss.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null, null);
 
-        L2Spawn spawn = heliosBoss.getSpawn();
-        spawn.setX(loc.getX());
-        spawn.setY(loc.getY());
-        spawn.setZ(loc.getZ());
+		L2Spawn spawn = heliosBoss.getSpawn();
+		spawn.setX(loc.getX());
+		spawn.setY(loc.getY());
+		spawn.setZ(loc.getZ());
 
-        heliosBoss.teleToLocation(loc.getX(), loc.getY(), loc.getZ());
-    }
+		heliosBoss.teleToLocation(loc.getX(), loc.getY(), loc.getZ());
+	}
 
-    @Override
-    public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
-    {
-        if (debug)
-        {
-            Log.warning(getName() + ": onAttack: " + npc.getName());
-        }
+	@Override
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+		if (debug) {
+			Log.warning(getName() + ": onAttack: " + npc.getName());
+		}
 
-        LastAction = System.currentTimeMillis();
+		LastAction = System.currentTimeMillis();
 
-        if (GrandBossManager.getInstance().getBossStatus(heliosId) == GrandBossManager.getInstance().ALIVE)
-        {
-            GrandBossManager.getInstance().setBossStatus(heliosId, GrandBossManager.getInstance().FIGHTING);
+		if (GrandBossManager.getInstance().getBossStatus(heliosId) == GrandBossManager.getInstance().ALIVE) {
+			GrandBossManager.getInstance().setBossStatus(heliosId, GrandBossManager.getInstance().FIGHTING);
 
-            startQuestTimer("check_activity_task", 60000, null, null, true);
+			startQuestTimer("check_activity_task", 60000, null, null, true);
 
-            startQuestTimer("check_helios_location", 10000, null, null, true);
-        }
+			startQuestTimer("check_helios_location", 10000, null, null, true);
+		}
 
-        if (npc.getNpcId() == heliosId)
-        {
-            if (!isTeleported && npc.getCurrentHp() - damage < npc.getMaxHp() / 2)
-            {
-                isTeleported = true;
-                setSpawnPoint(0);
-            }
-            else if (npc.isInsideRadius(attacker, 1000, false, false) &&
-                    !npc.isInsideRadius(attacker, 300, false, false) && Rnd.get(10) == 0)
-            {
-                attacker.teleToLocation(npc.getX(), npc.getY(), npc.getZ());
+		if (npc.getNpcId() == heliosId) {
+			if (!isTeleported && npc.getCurrentHp() - damage < npc.getMaxHp() / 2) {
+				isTeleported = true;
+				setSpawnPoint(0);
+			} else if (npc.isInsideRadius(attacker, 1000, false, false) && !npc.isInsideRadius(attacker, 300, false, false) && Rnd.get(10) == 0) {
+				attacker.teleToLocation(npc.getX(), npc.getY(), npc.getZ());
 
-                NpcSay packet = new NpcSay(npc.getObjectId(), 0, heliosId, textIds[Rnd.get(3)]);
-                packet.addStringParameter(attacker.getName().toString());
-                npc.broadcastPacket(packet);
+				NpcSay packet = new NpcSay(npc.getObjectId(), 0, heliosId, textIds[Rnd.get(3)]);
+				packet.addStringParameter(attacker.getName().toString());
+				npc.broadcastPacket(packet);
 
-                npc.setTarget(attacker);
-                npc.doCast(paralysis);
-            }
-        }
-        return super.onAttack(npc, attacker, damage, isPet);
-    }
+				npc.setTarget(attacker);
+				npc.doCast(paralysis);
+			}
+		}
+		return super.onAttack(npc, attacker, damage, isPet);
+	}
 
-    @Override
-    public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-    {
-        if (debug)
-        {
-            Log.warning(getName() + ": onKill: " + npc.getName());
-        }
+	@Override
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+		if (debug) {
+			Log.warning(getName() + ": onKill: " + npc.getName());
+		}
 
-        if (npc.getNpcId() == heliosId)
-        {
-            heliosBoss.broadcastPacket(
-                    new PlaySound(1, "BS02_D", 1, heliosBoss.getObjectId(), heliosBoss.getX(), heliosBoss.getY(),
-                            heliosBoss.getZ()));
+		if (npc.getNpcId() == heliosId) {
+			heliosBoss.broadcastPacket(new PlaySound(1,
+					"BS02_D",
+					1,
+					heliosBoss.getObjectId(),
+					heliosBoss.getX(),
+					heliosBoss.getY(),
+					heliosBoss.getZ()));
 
-            GrandBossManager.getInstance().notifyBossKilled(heliosId);
+			GrandBossManager.getInstance().notifyBossKilled(heliosId);
 
-            notifyEvent("end_helios", null, null);
+			notifyEvent("end_helios", null, null);
 
-            startQuestTimer("unlock_helios", GrandBossManager.getInstance().getUnlockTime(heliosId), null, null);
-        }
-        return super.onKill(npc, killer, isPet);
-    }
+			startQuestTimer("unlock_helios", GrandBossManager.getInstance().getUnlockTime(heliosId), null, null);
+		}
+		return super.onKill(npc, killer, isPet);
+	}
 
-    @Override
-    public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
-    {
-        if (npc.getNpcId() == heliosId)
-        {
-            L2Character originalCaster = isPet ? caster.getPet() : caster;
-            if (skill.getAggroPoints() > 0 && Rnd.get(5) == 0 && npc.isInsideRadius(originalCaster, 1000, false, false))
-            {
-                NpcSay packet = new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), textIds[Rnd.get(textIds.length)]);
-                packet.addStringParameter(caster.getName().toString());
-                npc.broadcastPacket(packet);
+	@Override
+	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet) {
+		if (npc.getNpcId() == heliosId) {
+			L2Character originalCaster = isPet ? caster.getPet() : caster;
+			if (skill.getAggroPoints() > 0 && Rnd.get(5) == 0 && npc.isInsideRadius(originalCaster, 1000, false, false)) {
+				NpcSay packet = new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), textIds[Rnd.get(textIds.length)]);
+				packet.addStringParameter(caster.getName().toString());
+				npc.broadcastPacket(packet);
 
-                originalCaster.teleToLocation(npc.getX(), npc.getY(), npc.getZ());
+				originalCaster.teleToLocation(npc.getX(), npc.getY(), npc.getZ());
 
-                npc.setTarget(originalCaster);
-                npc.doCast(paralysis);
-            }
-        }
-        return super.onSkillSee(npc, caster, skill, targets, isPet);
-    }
+				npc.setTarget(originalCaster);
+				npc.doCast(paralysis);
+			}
+		}
+		return super.onSkillSee(npc, caster, skill, targets, isPet);
+	}
 
-    public static void main(String[] args)
-    {
-        new Helios(-1, qn, "ai/individual/GrandBosses");
-    }
+	public static void main(String[] args) {
+		new Helios(-1, qn, "ai/individual/GrandBosses");
+	}
 }

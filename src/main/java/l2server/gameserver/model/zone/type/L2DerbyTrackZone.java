@@ -24,18 +24,14 @@ import l2server.gameserver.model.zone.L2ZoneType;
  *
  * @author durgus
  */
-public class L2DerbyTrackZone extends L2ZoneType
-{
-	public L2DerbyTrackZone(int id)
-	{
+public class L2DerbyTrackZone extends L2ZoneType {
+	public L2DerbyTrackZone(int id) {
 		super(id);
 	}
 
 	@Override
-	protected void onEnter(L2Character character)
-	{
-		if (character instanceof L2Playable)
-		{
+	protected void onEnter(L2Character character) {
+		if (character instanceof L2Playable) {
 			character.setInsideZone(L2Character.ZONE_MONSTERTRACK, true);
 			character.setInsideZone(L2Character.ZONE_PEACE, true);
 			character.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, true);
@@ -43,10 +39,8 @@ public class L2DerbyTrackZone extends L2ZoneType
 	}
 
 	@Override
-	protected void onExit(L2Character character)
-	{
-		if (character instanceof L2Playable)
-		{
+	protected void onExit(L2Character character) {
+		if (character instanceof L2Playable) {
 			character.setInsideZone(L2Character.ZONE_MONSTERTRACK, false);
 			character.setInsideZone(L2Character.ZONE_PEACE, false);
 			character.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, false);
@@ -54,12 +48,10 @@ public class L2DerbyTrackZone extends L2ZoneType
 	}
 
 	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
+	public void onDieInside(L2Character character, L2Character killer) {
 	}
 
 	@Override
-	public void onReviveInside(L2Character character)
-	{
+	public void onReviveInside(L2Character character) {
 	}
 }

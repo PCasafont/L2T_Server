@@ -21,31 +21,28 @@ import l2server.util.Point3D;
 /**
  * @author Maktakien
  */
-public class MoveToLocationInVehicle extends L2GameServerPacket
-{
+public class MoveToLocationInVehicle extends L2GameServerPacket {
 	private int charObjId;
 	private int boatId;
 	private Point3D destination;
 	private Point3D origin;
-
+	
 	/**
 	 * @param destination
 	 * @param origin
 	 */
-	public MoveToLocationInVehicle(L2PcInstance player, Point3D destination, Point3D origin)
-	{
+	public MoveToLocationInVehicle(L2PcInstance player, Point3D destination, Point3D origin) {
 		charObjId = player.getObjectId();
 		boatId = player.getBoat().getObjectId();
 		this.destination = destination;
 		this.origin = origin;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(charObjId);
 		writeD(boatId);
 		writeD(destination.getX());

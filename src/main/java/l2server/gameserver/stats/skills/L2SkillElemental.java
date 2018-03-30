@@ -26,14 +26,12 @@ import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.templates.StatsSet;
 
-public class L2SkillElemental extends L2Skill
-{
+public class L2SkillElemental extends L2Skill {
 
 	private final int[] seeds;
 	private final boolean seedAny;
 
-	public L2SkillElemental(StatsSet set)
-	{
+	public L2SkillElemental(StatsSet set) {
 		super(set);
 
 		seeds = new int[3];
@@ -45,78 +43,59 @@ public class L2SkillElemental extends L2Skill
 	}
 
 	@Override
-	public void useSkill(L2Character activeChar, L2Object[] targets)
-	{
-		if (activeChar.isAlikeDead())
-		{
+	public void useSkill(L2Character activeChar, L2Object[] targets) {
+		if (activeChar.isAlikeDead()) {
 			return;
 		}
 
 		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 
-		if (activeChar instanceof L2PcInstance)
-		{
-			if (weaponInst == null)
-			{
+		if (activeChar instanceof L2PcInstance) {
+			if (weaponInst == null) {
 				activeChar.sendMessage("You must equip your weapon before casting a spell.");
 				return;
 			}
 		}
 
 		double ssMul = L2ItemInstance.CHARGED_NONE;
-		if (weaponInst != null)
-		{
+		if (weaponInst != null) {
 			ssMul = weaponInst.getChargedSpiritShot();
 			weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-		}
-		else if (activeChar instanceof L2Summon)
-		{
+		} else if (activeChar instanceof L2Summon) {
 			L2Summon activeSummon = (L2Summon) activeChar;
 			ssMul = activeSummon.getChargedSpiritShot();
 			activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
 		}
 
-		for (L2Character target : (L2Character[]) targets)
-		{
-			if (target.isAlikeDead())
-			{
+		for (L2Character target : (L2Character[]) targets) {
+			if (target.isAlikeDead()) {
 				continue;
 			}
 
 			boolean charged = true;
-			if (!seedAny)
-			{
-				for (int seed : seeds)
-				{
-					if (seed != 0)
-					{
+			if (!seedAny) {
+				for (int seed : seeds) {
+					if (seed != 0) {
 						L2Abnormal e = target.getFirstEffect(seed);
-						if (e == null || !e.getInUse())
-						{
+						if (e == null || !e.getInUse()) {
 							charged = false;
 							break;
 						}
 					}
 				}
-			}
-			else
-			{
+			} else {
 				charged = false;
-				for (int seed : seeds)
-				{
-					if (seed != 0)
-					{
+				for (int seed : seeds) {
+					if (seed != 0) {
 						L2Abnormal e = target.getFirstEffect(seed);
-						if (e != null && e.getInUse())
-						{
+						if (e != null && e.getInUse()) {
 							charged = true;
 							break;
 						}
 					}
 				}
 			}
-			if (!charged)
-			{
+			if (!charged) {
 				activeChar.sendMessage("Target is not charged by elements.");
 				continue;
 			}
@@ -126,13 +105,11 @@ public class L2SkillElemental extends L2Skill
 
 			int damage = (int) Formulas.calcMagicDam(activeChar, target, this, shld, ssMul, mcrit);
 
-			if (damage > 0)
-			{
+			if (damage > 0) {
 				target.reduceCurrentHp(damage, activeChar, this);
 
 				// Manage attack or cast break of the target (calculating rate, sending message...)
-				if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
-				{
+				if (!target.isRaid() && Formulas.calcAtkBreak(target, damage)) {
 					target.breakAttack();
 					target.breakCast();
 				}
@@ -142,8 +119,7 @@ public class L2SkillElemental extends L2Skill
 
 			// activate attacked effects, if any
 			//target.stopSkillEffects(getId());
-			if (damage > 1)
-			{
+			if (damage > 1) {
 				getEffects(activeChar, target, new Env(shld, ssMul));
 			}
 		}

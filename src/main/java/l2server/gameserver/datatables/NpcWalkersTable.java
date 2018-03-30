@@ -36,41 +36,31 @@ import java.util.List;
  * @author Rayan RPG for L2Emu Project, JIV
  * @since 927
  */
-public class NpcWalkersTable
-{
+public class NpcWalkersTable {
 	private TIntObjectHashMap<List<L2NpcWalkerNode>> routes = new TIntObjectHashMap<>();
 
-	public static NpcWalkersTable getInstance()
-	{
+	public static NpcWalkersTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private NpcWalkersTable()
-	{
-		if (Config.ALLOW_NPC_WALKERS)
-		{
+	private NpcWalkersTable() {
+		if (Config.ALLOW_NPC_WALKERS) {
 			Log.info("Initializing Walkers Routes Table.");
 			load();
 		}
 	}
 
-	public void load()
-	{
+	public void load() {
 		routes.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "WalkerRoutes.xml");
-		if (file.exists())
-		{
+		if (file.exists()) {
 			XmlDocument doc = new XmlDocument(file);
-			for (XmlNode d : doc.getChildren())
-			{
-				if (d.getName().equals("walker"))
-				{
+			for (XmlNode d : doc.getChildren()) {
+				if (d.getName().equals("walker")) {
 					List<L2NpcWalkerNode> route = new ArrayList<>();
 					int npcId = d.getInt("npcId");
-					for (XmlNode r : d.getChildren())
-					{
-						if (r.getName().equals("route"))
-						{
+					for (XmlNode r : d.getChildren()) {
+						if (r.getName().equals("route")) {
 							int x = r.getInt("X");
 							int y = r.getInt("Y");
 							int z = r.getInt("Z");
@@ -82,8 +72,7 @@ public class NpcWalkersTable
 					}
 					//routes.put(npcId, route);
 
-					try
-					{
+					try {
 						L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(npcId);
 						L2Spawn walkerSpawn = new L2Spawn(tmpl);
 
@@ -101,31 +90,26 @@ public class NpcWalkersTable
 
 						walker.setAI(walkerAI);
 						walkerAI.initializeRoute(route);
-					}
-					catch (Exception e)
-					{
+					} catch (Exception e) {
 						e.printStackTrace();
 					}
 				}
 			}
 		}
 
-		for (Object list : routes.getValues())
-		{
+		for (Object list : routes.getValues()) {
 			((ArrayList<?>) list).trimToSize();
 		}
 
 		Log.info("WalkerRoutesTable: Loaded " + routes.size() + " Npc Walker Routes.");
 	}
 
-	public List<L2NpcWalkerNode> getRouteForNpc(int id)
-	{
+	public List<L2NpcWalkerNode> getRouteForNpc(int id) {
 		return routes.get(id);
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final NpcWalkersTable instance = new NpcWalkersTable();
 	}
 }

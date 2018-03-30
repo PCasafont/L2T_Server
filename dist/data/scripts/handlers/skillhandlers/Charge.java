@@ -31,8 +31,7 @@ import java.util.logging.Logger;
  * @version $Revision: 1.1.2.2.2.9 $ $Date: 2005/04/04 19:08:01 $
  */
 
-public class Charge implements ISkillHandler
-{
+public class Charge implements ISkillHandler {
 	static Logger log = Logger.getLogger(Charge.class.getName());
 
 	/* (non-Javadoc)
@@ -41,24 +40,19 @@ public class Charge implements ISkillHandler
 	private static final L2SkillType[] SKILL_IDS = {/*L2SkillType.CHARGE*/};
 
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
 
-		for (L2Object target : targets)
-		{
-			if (!(target instanceof L2PcInstance))
-			{
+		for (L2Object target : targets) {
+			if (!(target instanceof L2PcInstance)) {
 				continue;
 			}
 			skill.getEffects(activeChar, (L2PcInstance) target);
 		}
 
 		// self Effect :]
-		if (skill.hasSelfEffects())
-		{
+		if (skill.hasSelfEffects()) {
 			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
-			if (effect != null && effect.isSelfEffect())
-			{
+			if (effect != null && effect.isSelfEffect()) {
 				//Replace old effect with new one.
 				effect.exit();
 			}
@@ -67,8 +61,7 @@ public class Charge implements ISkillHandler
 	}
 
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

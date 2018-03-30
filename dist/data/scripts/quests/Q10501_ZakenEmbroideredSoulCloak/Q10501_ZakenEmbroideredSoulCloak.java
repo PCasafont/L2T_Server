@@ -7,8 +7,7 @@ import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
 import l2server.util.Rnd;
 
-public class Q10501_ZakenEmbroideredSoulCloak extends Quest
-{
+public class Q10501_ZakenEmbroideredSoulCloak extends Quest {
 	// Quest Number (QN)
 	private static final String qn = "10501_ZakenEmbroideredSoulCloak";
 
@@ -26,8 +25,7 @@ public class Q10501_ZakenEmbroideredSoulCloak extends Quest
 	private static final int MaxGiven = 3;
 	private static final int MinLevel = 78;
 
-	public Q10501_ZakenEmbroideredSoulCloak(int questId, String name, String descr)
-	{
+	public Q10501_ZakenEmbroideredSoulCloak(int questId, String name, String descr) {
 		super(questId, name, descr);
 		addStartNpc(OlfAdams);
 		addTalkId(OlfAdams);
@@ -37,13 +35,11 @@ public class Q10501_ZakenEmbroideredSoulCloak extends Quest
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
@@ -58,39 +54,28 @@ public class Q10501_ZakenEmbroideredSoulCloak extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
 
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
-				if (player.getLevel() >= MinLevel)
-				{
+		switch (st.getState()) {
+			case State.CREATED: {
+				if (player.getLevel() >= MinLevel) {
 					htmltext = "32612-01.htm"; // Quest introduction
-				}
-				else
-				{
+				} else {
 					htmltext = "32612-Zaken-02.htm"; // Player has not the minimum level
 				}
 				break;
 			}
-			case State.STARTED:
-			{
+			case State.STARTED: {
 				final long count = st.getQuestItemsCount(ZakenSoulFragment); // How many items player has
-				if (st.getInt("cond") == 1 && count < RequiredItems)
-				{
+				if (st.getInt("cond") == 1 && count < RequiredItems) {
 					htmltext = "32612-Zaken-03.htm"; // Still has not the required amount
-				}
-				else if (count >= RequiredItems)
-				{
+				} else if (count >= RequiredItems) {
 					// Player must have all required items
 					st.takeItems(ZakenSoulFragment, RequiredItems);
 					st.giveItems(ZakenSoulCloak, 1);
@@ -101,8 +86,7 @@ public class Q10501_ZakenEmbroideredSoulCloak extends Quest
 				}
 				break;
 			}
-			case State.COMPLETED:
-			{
+			case State.COMPLETED: {
 				htmltext = getAlreadyCompletedMsg(player); // Already completed
 				break;
 			}
@@ -112,35 +96,27 @@ public class Q10501_ZakenEmbroideredSoulCloak extends Quest
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
-		if (player.getParty() != null)
-		{
-			for (L2PcInstance partyMember : player.getParty().getPartyMembers())
-			{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+		if (player.getParty() != null) {
+			for (L2PcInstance partyMember : player.getParty().getPartyMembers()) {
 				giveFragments(partyMember);
 			}
-		}
-		else
-		{
+		} else {
 			giveFragments(player);
 		}
 
 		return null;
 	}
 
-	private void giveFragments(L2PcInstance player)
-	{
+	private void giveFragments(L2PcInstance player) {
 		final QuestState st = player.getQuestState(qn);
 
-		if (st != null && st.getState() == State.STARTED)
-		{
+		if (st != null && st.getState() == State.STARTED) {
 			st.giveItems(ZakenSoulFragment, Rnd.get(MinGiven, MaxGiven));
 		}
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Q10501_ZakenEmbroideredSoulCloak(10501, qn, "ZakenEmbroideredSoulCloak");
 	}
 }

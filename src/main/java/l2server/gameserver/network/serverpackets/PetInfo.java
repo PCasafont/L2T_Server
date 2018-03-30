@@ -27,8 +27,7 @@ import java.util.Set;
  *
  * @version $Revision: 1.6.2.5.2.12 $ $Date: 2005/03/31 09:19:16 $
  */
-public class PetInfo extends L2GameServerPacket
-{
+public class PetInfo extends L2GameServerPacket {
 	//
 
 	private L2Summon summon;
@@ -44,8 +43,7 @@ public class PetInfo extends L2GameServerPacket
 	/**
 	 * rev 478  dddddddddddddddddddffffdddcccccSSdddddddddddddddddddddddddddhc
 	 */
-	public PetInfo(L2Summon summon, int val)
-	{
+	public PetInfo(L2Summon summon, int val) {
 		this.summon = summon;
 		isSummoned = summon.isShowSummonAnimation();
 		x = summon.getX();
@@ -62,14 +60,11 @@ public class PetInfo extends L2GameServerPacket
 		maxHp = summon.getMaxVisibleHp();
 		maxMp = summon.getMaxMp();
 		this.val = val;
-		if (summon instanceof L2PetInstance)
-		{
+		if (summon instanceof L2PetInstance) {
 			L2PetInstance pet = (L2PetInstance) summon;
 			curFed = pet.getCurrentFed(); // how fed it is
 			maxFed = pet.getMaxFed(); //max fed it can be
-		}
-		else if (summon instanceof L2SummonInstance)
-		{
+		} else if (summon instanceof L2SummonInstance) {
 			L2SummonInstance sum = (L2SummonInstance) summon;
 			curFed = sum.getTimeRemaining();
 			maxFed = sum.getTotalLifeTime();
@@ -77,8 +72,7 @@ public class PetInfo extends L2GameServerPacket
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeC(summon.getSummonType());
 		writeD(summon.getObjectId());
 		writeD(summon.getTemplate().TemplateId + 1000000);
@@ -110,8 +104,7 @@ public class PetInfo extends L2GameServerPacket
 		writeS(summon.getName()); // summon name
 		writeD(-1); // High Five NPCStringId
 		writeS(summon.getTitle()); // owner name
-		writeC(summon.getOwner() != null ? summon.getOwner().getPvpFlag() :
-				0); //0 = white,2= purpleblink, if its greater then karma = purple
+		writeC(summon.getOwner() != null ? summon.getOwner().getPvpFlag() : 0); //0 = white,2= purpleblink, if its greater then karma = purple
 		writeD(summon.getOwner() != null ? summon.getOwner().getReputation() : 0); // karma
 		writeD(curFed); // how fed it is
 		writeD(maxFed); //max fed it can be
@@ -123,12 +116,9 @@ public class PetInfo extends L2GameServerPacket
 		writeC(summon.getLevel());// lvl
 		writeQ(summon.getStat().getExp());
 
-		if (summon.getExpForThisLevel() > summon.getStat().getExp())
-		{
+		if (summon.getExpForThisLevel() > summon.getStat().getExp()) {
 			writeQ(summon.getStat().getExp());// 0%  absolute value
-		}
-		else
-		{
+		} else {
 			writeQ(summon.getExpForThisLevel());// 0%  absolute value
 		}
 
@@ -158,33 +148,20 @@ public class PetInfo extends L2GameServerPacket
 		writeC(summon.getSpiritShotsPerHit()); // How many spiritshots this servitor uses per hit
 
 		int form = 0;
-		if (npcId == 16041 || npcId == 16042)
-		{
-			if (summon.getLevel() > 84)
-			{
+		if (npcId == 16041 || npcId == 16042) {
+			if (summon.getLevel() > 84) {
 				form = 3;
-			}
-			else if (summon.getLevel() > 79)
-			{
+			} else if (summon.getLevel() > 79) {
 				form = 2;
-			}
-			else if (summon.getLevel() > 74)
-			{
+			} else if (summon.getLevel() > 74) {
 				form = 1;
 			}
-		}
-		else if (npcId == 16025 || npcId == 16037)
-		{
-			if (summon.getLevel() > 69)
-			{
+		} else if (npcId == 16025 || npcId == 16037) {
+			if (summon.getLevel() > 69) {
 				form = 3;
-			}
-			else if (summon.getLevel() > 64)
-			{
+			} else if (summon.getLevel() > 64) {
 				form = 2;
-			}
-			else if (summon.getLevel() > 59)
-			{
+			} else if (summon.getLevel() > 59) {
 				form = 1;
 			}
 		}
@@ -197,13 +174,11 @@ public class PetInfo extends L2GameServerPacket
 		writeC(summon.getOwner() != null ? summon.getOwner().getMaxSummonPoints() : 0); // Maximum summon points
 
 		Set<Integer> abnormal = summon.getAbnormalEffect();
-		if (summon.getOwner().getAppearance().getInvisible())
-		{
+		if (summon.getOwner().getAppearance().getInvisible()) {
 			abnormal.add(VisualEffect.STEALTH.getId());
 		}
 		writeH(abnormal.size());
-		for (int abnormalId : abnormal)
-		{
+		for (int abnormalId : abnormal) {
 			writeH(abnormalId);
 		}
 

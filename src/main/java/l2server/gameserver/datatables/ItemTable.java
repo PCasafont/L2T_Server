@@ -52,21 +52,19 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
  *
  * @version $Revision: 1.9.2.6.2.9 $ $Date: 2005/04/02 15:57:34 $
  */
-public class ItemTable implements Reloadable
-{
-
+public class ItemTable implements Reloadable {
+	
 	public static final Map<String, Integer> crystalTypes = new HashMap<>();
 	public static final Map<String, Integer> slots = new HashMap<>();
 	public static final Map<String, L2WeaponType> weaponTypes = new HashMap<>();
 	public static final Map<String, L2ArmorType> armorTypes = new HashMap<>();
-
+	
 	private L2Item[] allTemplates;
 	private Map<Integer, L2EtcItem> etcItems;
 	private Map<Integer, L2Armor> armors;
 	private Map<Integer, L2Weapon> weapons;
-
-	static
-	{
+	
+	static {
 		crystalTypes.put("r99", L2Item.CRYSTAL_R99);
 		crystalTypes.put("r95", L2Item.CRYSTAL_R95);
 		crystalTypes.put("r", L2Item.CRYSTAL_R);
@@ -78,19 +76,17 @@ public class ItemTable implements Reloadable
 		crystalTypes.put("c", L2Item.CRYSTAL_C);
 		crystalTypes.put("d", L2Item.CRYSTAL_D);
 		crystalTypes.put("none", L2Item.CRYSTAL_NONE);
-
+		
 		// weapon types
-		for (L2WeaponType type : L2WeaponType.values())
-		{
+		for (L2WeaponType type : L2WeaponType.values()) {
 			weaponTypes.put(type.toString(), type);
 		}
-
+		
 		// armor types
-		for (L2ArmorType type : L2ArmorType.values())
-		{
+		for (L2ArmorType type : L2ArmorType.values()) {
 			armorTypes.put(type.toString(), type);
 		}
-
+		
 		slots.put("shirt", L2Item.SLOT_UNDERWEAR);
 		slots.put("lbracelet", L2Item.SLOT_L_BRACELET);
 		slots.put("rbracelet", L2Item.SLOT_R_BRACELET);
@@ -121,7 +117,7 @@ public class ItemTable implements Reloadable
 		slots.put("brooch", L2Item.SLOT_BROOCH);
 		slots.put("jewel", L2Item.SLOT_JEWELRY);
 		slots.put("none", L2Item.SLOT_NONE);
-
+		
 		//retail compatibility
 		slots.put("onepiece", L2Item.SLOT_FULL_ARMOR);
 		slots.put("hair2", L2Item.SLOT_HAIR2);
@@ -130,167 +126,132 @@ public class ItemTable implements Reloadable
 		slots.put("deco1", L2Item.SLOT_DECO);
 		slots.put("waist", L2Item.SLOT_BELT);
 	}
-
+	
 	/**
 	 * Returns instance of ItemTable
 	 *
 	 * @return ItemTable
 	 */
-	public static ItemTable getInstance()
-	{
+	public static ItemTable getInstance() {
 		return SingletonHolder.instance;
 	}
-
+	
 	/**
 	 * Constructor.
 	 */
-	private ItemTable()
-	{
+	private ItemTable() {
 		etcItems = new HashMap<>();
 		armors = new HashMap<>();
 		weapons = new HashMap<>();
 		load();
-
+		
 		ReloadableManager.getInstance().register("items", this);
 	}
-
-	private void load()
-	{
+	
+	private void load() {
 		int highest = 0;
 		armors.clear();
 		etcItems.clear();
 		weapons.clear();
-
+		
 		File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "items");
-		if (!dir.exists())
-		{
+		if (!dir.exists()) {
 			Log.warning("Dir " + dir.getAbsolutePath() + " does not exist");
 			return;
 		}
 		List<File> validFiles = new ArrayList<>();
 		File[] files = dir.listFiles();
-		for (File f : files)
-		{
-			if (f.getName().endsWith(".xml") && !f.getName().startsWith("custom"))
-			{
+		for (File f : files) {
+			if (f.getName().endsWith(".xml") && !f.getName().startsWith("custom")) {
 				validFiles.add(f);
 			}
 		}
 		File customfile = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/items.xml");
-		if (customfile.exists())
-		{
+		if (customfile.exists()) {
 			validFiles.add(customfile);
 		}
-
+		
 		Map<Integer, ItemParser> items = new HashMap<>();
-		for (File f : validFiles)
-		{
+		for (File f : validFiles) {
 			XmlDocument doc = new XmlDocument(f);
-			for (XmlNode d : doc.getChildren())
-            {
-                if (d.getName().equalsIgnoreCase("item"))
-                {
-                    ItemParser item = new ItemParser(d);
-                    try
-                    {
-                        ItemParser original = items.get(item.getId());
-                        if (original != null)
-                        {
-                            item.parse(original);
-                        }
-                        else
-                        {
-                            item.parse();
-                        }
-
-                        if (Config.isServer(Config.TENKAI) && item.getItem() instanceof L2Weapon &&
-                                (item.getName().contains("Antharas") || item.getName().contains("Valakas") ||
-                                        item.getName().contains("Lindvior")))
-                        {
-                            item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.PHYS_ATTACK,
-                                    new LambdaConst(50.0)));
-                            item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.MAGIC_ATTACK,
-                                    new LambdaConst(30.0)));
-                        }
-
-                        items.put(item.getId(), item);
-                    }
-                    catch (Exception e)
-                    {
-                        Log.log(Level.WARNING, "Cannot create item " + item.getId(), e);
-                    }
-                }
-            }
+			for (XmlNode d : doc.getChildren()) {
+				if (d.getName().equalsIgnoreCase("item")) {
+					ItemParser item = new ItemParser(d);
+					try {
+						ItemParser original = items.get(item.getId());
+						if (original != null) {
+							item.parse(original);
+						} else {
+							item.parse();
+						}
+						
+						if (Config.isServer(Config.TENKAI) && item.getItem() instanceof L2Weapon &&
+								(item.getName().contains("Antharas") || item.getName().contains("Valakas") || item.getName().contains("Lindvior"))) {
+							item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.PHYS_ATTACK, new LambdaConst(50.0)));
+							item.getItem().attach(new FuncTemplate(null, "SubPercent", Stats.MAGIC_ATTACK, new LambdaConst(30.0)));
+						}
+						
+						items.put(item.getId(), item);
+					} catch (Exception e) {
+						Log.log(Level.WARNING, "Cannot create item " + item.getId(), e);
+					}
+				}
+			}
 		}
-
-		for (ItemParser item : items.values())
-		{
-			if (highest < item.getItem().getItemId())
-			{
+		
+		for (ItemParser item : items.values()) {
+			if (highest < item.getItem().getItemId()) {
 				highest = item.getItem().getItemId();
 			}
-			if (item.getItem() instanceof L2EtcItem)
-			{
+			if (item.getItem() instanceof L2EtcItem) {
 				etcItems.put(item.getId(), (L2EtcItem) item.getItem());
-			}
-			else if (item.getItem() instanceof L2Armor)
-			{
+			} else if (item.getItem() instanceof L2Armor) {
 				armors.put(item.getId(), (L2Armor) item.getItem());
-			}
-			else
-			{
+			} else {
 				weapons.put(item.getId(), (L2Weapon) item.getItem());
 			}
 		}
 		buildFastLookupTable(highest);
 	}
-
+	
 	/**
 	 * Builds a variable in which all items are putting in in function of their ID.
 	 */
-	private void buildFastLookupTable(int size)
-	{
+	private void buildFastLookupTable(int size) {
 		// Create a FastLookUp Table called allTemplates of size : value of the highest item ID
 		Log.info("Highest item id used:" + size);
 		allTemplates = new L2Item[size + 1];
-
+		
 		// Insert armor item in Fast Look Up Table
-		for (L2Armor item : armors.values())
-		{
+		for (L2Armor item : armors.values()) {
 			allTemplates[item.getItemId()] = item;
 		}
-
+		
 		// Insert weapon item in Fast Look Up Table
-		for (L2Weapon item : weapons.values())
-		{
+		for (L2Weapon item : weapons.values()) {
 			allTemplates[item.getItemId()] = item;
 		}
-
+		
 		// Insert etcItem item in Fast Look Up Table
-		for (L2EtcItem item : etcItems.values())
-		{
+		for (L2EtcItem item : etcItems.values()) {
 			allTemplates[item.getItemId()] = item;
 		}
 	}
-
+	
 	/**
 	 * Returns the item corresponding to the item ID
 	 *
 	 * @param id : int designating the item
 	 * @return L2Item
 	 */
-	public L2Item getTemplate(int id)
-	{
-		if (id >= allTemplates.length)
-		{
+	public L2Item getTemplate(int id) {
+		if (id >= allTemplates.length) {
 			return null;
-		}
-		else
-		{
+		} else {
 			return allTemplates[id];
 		}
 	}
-
+	
 	/**
 	 * Create the L2ItemInstance corresponding to the Item Identifier and quantitiy add logs the activity.<BR><BR>
 	 * <p>
@@ -306,105 +267,83 @@ public class ItemTable implements Reloadable
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return L2ItemInstance corresponding to the new item
 	 */
-	public L2ItemInstance createItem(String process, int itemId, long count, L2PcInstance actor, Object reference)
-	{
+	public L2ItemInstance createItem(String process, int itemId, long count, L2PcInstance actor, Object reference) {
 		// Create and Init the L2ItemInstance corresponding to the Item Identifier
 		L2ItemInstance item = new L2ItemInstance(IdFactory.getInstance().getNextId(), itemId);
-
-		if (process.equalsIgnoreCase("loot"))
-		{
+		
+		if (process.equalsIgnoreCase("loot")) {
 			ScheduledFuture<?> itemLootShedule;
 			if (reference instanceof L2Attackable && ((L2Attackable) reference).isRaid()) // loot privilege for raids
 			{
 				L2Attackable raid = (L2Attackable) reference;
 				boolean protectDrop = true;
-				if (Config.isServer(Config.TENKAI))
-				{
+				if (Config.isServer(Config.TENKAI)) {
 					protectDrop = !(raid instanceof L2GrandBossInstance) || raid.getInstanceId() != 0;
 				}
-
+				
 				// if in CommandChannel and was killing a World/RaidBoss
-				if (!Config.AUTO_LOOT_RAIDS && protectDrop)
-				{
-					if (raid.getFirstCommandChannelAttacked() != null)
-					{
+				if (!Config.AUTO_LOOT_RAIDS && protectDrop) {
+					if (raid.getFirstCommandChannelAttacked() != null) {
 						item.setOwnerId(raid.getFirstCommandChannelAttacked().getChannelLeader().getObjectId());
-					}
-					else
-					{
+					} else {
 						item.setOwnerId(actor.getObjectId());
 					}
-					itemLootShedule = ThreadPoolManager.getInstance()
-							.scheduleGeneral(new ResetOwner(item), Config.LOOT_RAIDS_PRIVILEGE_INTERVAL * 1000);
+					itemLootShedule =
+							ThreadPoolManager.getInstance().scheduleGeneral(new ResetOwner(item), Config.LOOT_RAIDS_PRIVILEGE_INTERVAL * 1000);
 					item.setItemLootShedule(itemLootShedule);
 				}
-			}
-			else if (!Config.AUTO_LOOT)
-			{
+			} else if (!Config.AUTO_LOOT) {
 				item.setOwnerId(actor.getObjectId());
 				itemLootShedule = ThreadPoolManager.getInstance().scheduleGeneral(new ResetOwner(item), 15000);
 				item.setItemLootShedule(itemLootShedule);
 			}
 		}
-
-		if (Config.DEBUG)
-		{
+		
+		if (Config.DEBUG) {
 			Log.fine("ItemTable: Item created  oid:" + item.getObjectId() + " itemid:" + itemId);
 		}
-
+		
 		// Add the L2ItemInstance object to allObjects of L2world
 		L2World.getInstance().storeObject(item);
-
+		
 		// Set Item parameters
-		if (item.isStackable() && count > 1)
-		{
+		if (item.isStackable() && count > 1) {
 			item.setCount(count);
 		}
-
-		if (Config.LOG_ITEMS && !process.equals("Reset") && !process.contains("Consume"))
-		{
+		
+		if (Config.LOG_ITEMS && !process.equals("Reset") && !process.contains("Consume")) {
 			if (!Config.LOG_ITEMS_SMALL_LOG || Config.LOG_ITEMS_SMALL_LOG &&
-					(item.isEquipable() || item.getItemId() == ADENA_ID || item.getItemId() == 4037 ||
-							item.getItemId() == 4355 || item.getItemId() == 4356))
-			{
-				L2ItemInstance
-						.logItem(item.getItemId(), item.getObjectId(), item.getCount(), item.getOwnerId(), process);
+					(item.isEquipable() || item.getItemId() == ADENA_ID || item.getItemId() == 4037 || item.getItemId() == 4355 ||
+							item.getItemId() == 4356)) {
+				L2ItemInstance.logItem(item.getItemId(), item.getObjectId(), item.getCount(), item.getOwnerId(), process);
 			}
 		}
-
-		if (actor != null)
-		{
-			if (actor.isGM())
-			{
+		
+		if (actor != null) {
+			if (actor.isGM()) {
 				String referenceName = "no-reference";
-				if (reference instanceof L2Object)
-				{
-					referenceName =
-							((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name";
-				}
-				else if (reference instanceof String)
-				{
+				if (reference instanceof L2Object) {
+					referenceName = ((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name";
+				} else if (reference instanceof String) {
 					referenceName = (String) reference;
 				}
 				String targetName = actor.getTarget() != null ? actor.getTarget().getName() : "no-target";
-				if (Config.GMAUDIT)
-				{
+				if (Config.GMAUDIT) {
 					GMAudit.auditGMAction(actor.getName(),
-							process + " (id: " + itemId + " count: " + count + " name: " + item.getItemName() +
-									" objId: " + item.getObjectId() + ")", targetName,
+							process + " (id: " + itemId + " count: " + count + " name: " + item.getItemName() + " objId: " + item.getObjectId() + ")",
+							targetName,
 							"L2Object referencing this action is: " + referenceName);
 				}
 			}
 		}
-
+		
 		return item;
 	}
-
-	public L2ItemInstance createItem(String process, int itemId, int count, L2PcInstance actor)
-	{
+	
+	public L2ItemInstance createItem(String process, int itemId, int count, L2PcInstance actor) {
 		return createItem(process, itemId, count, actor, null);
 	}
-
+	
 	/**
 	 * Returns a dummy (fr = factice) item.<BR><BR>
 	 * <U><I>Concept :</I></U><BR>
@@ -413,16 +352,14 @@ public class ItemTable implements Reloadable
 	 * @param itemId : int designating the item
 	 * @return L2ItemInstance designating the dummy item created
 	 */
-	public L2ItemInstance createDummyItem(int itemId)
-	{
+	public L2ItemInstance createDummyItem(int itemId) {
 		L2Item item = getTemplate(itemId);
-		if (item == null)
-		{
+		if (item == null) {
 			return null;
 		}
 		return new L2ItemInstance(0, item);
 	}
-
+	
 	/**
 	 * Destroys the L2ItemInstance.<BR><BR>
 	 * <p>
@@ -436,139 +373,108 @@ public class ItemTable implements Reloadable
 	 * @param actor     : L2PcInstance Player requesting the item destroy
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */
-	public void destroyItem(String process, L2ItemInstance item, L2PcInstance actor, Object reference)
-	{
-		if (Config.LOG_ITEMS && !process.contains("Consume"))
-		{
+	public void destroyItem(String process, L2ItemInstance item, L2PcInstance actor, Object reference) {
+		if (Config.LOG_ITEMS && !process.contains("Consume")) {
 			if (!Config.LOG_ITEMS_SMALL_LOG || Config.LOG_ITEMS_SMALL_LOG &&
-					(item.isEquipable() || item.getItemId() == ADENA_ID || item.getItemId() == 4037 ||
-							item.getItemId() == 4355 || item.getItemId() == 4356))
-			{
-				L2ItemInstance
-						.logItem(item.getItemId(), item.getObjectId(), item.getCount(), item.getOwnerId(), process);
+					(item.isEquipable() || item.getItemId() == ADENA_ID || item.getItemId() == 4037 || item.getItemId() == 4355 ||
+							item.getItemId() == 4356)) {
+				L2ItemInstance.logItem(item.getItemId(), item.getObjectId(), item.getCount(), item.getOwnerId(), process);
 			}
 		}
-
-		synchronized (item)
-		{
+		
+		synchronized (item) {
 			item.setCount(0);
 			item.setOwnerId(0);
 			item.setLocation(ItemLocation.VOID);
 			item.setLastChange(L2ItemInstance.REMOVED);
-
+			
 			L2World.getInstance().removeObject(item);
 			IdFactory.getInstance().releaseId(item.getObjectId());
-
-			if (Config.LOG_ITEMS && !process.contains("Consume"))
-			{
-				if (!Config.LOG_ITEMS_SMALL_LOG ||
-						Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getItemId() == ADENA_ID))
-				{
-					L2ItemInstance
-							.logItem(item.getItemId(), item.getObjectId(), item.getCount(), item.getOwnerId(), process);
+			
+			if (Config.LOG_ITEMS && !process.contains("Consume")) {
+				if (!Config.LOG_ITEMS_SMALL_LOG || Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || item.getItemId() == ADENA_ID)) {
+					L2ItemInstance.logItem(item.getItemId(), item.getObjectId(), item.getCount(), item.getOwnerId(), process);
 				}
 			}
-
-			if (actor != null)
-			{
-				if (actor.isGM())
-				{
+			
+			if (actor != null) {
+				if (actor.isGM()) {
 					String referenceName = "no-reference";
-					if (reference instanceof L2Object)
-					{
-						referenceName =
-								((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name";
-					}
-					else if (reference instanceof String)
-					{
+					if (reference instanceof L2Object) {
+						referenceName = ((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name";
+					} else if (reference instanceof String) {
 						referenceName = (String) reference;
 					}
 					String targetName = actor.getTarget() != null ? actor.getTarget().getName() : "no-target";
-					if (Config.GMAUDIT)
-					{
+					if (Config.GMAUDIT) {
 						GMAudit.auditGMAction(actor.getName(),
-								process + " (id: " + item.getItemId() + " count: " + item.getCount() + " itemObjId: " +
-										item.getObjectId() + ")", targetName,
+								process + " (id: " + item.getItemId() + " count: " + item.getCount() + " itemObjId: " + item.getObjectId() + ")",
+								targetName,
 								"L2Object referencing this action is: " + referenceName);
 					}
 				}
 			}
-
+			
 			// if it's a pet control item, delete the pet as well
-			if (PetDataTable.isPetItem(item.getItemId()))
-			{
+			if (PetDataTable.isPetItem(item.getItemId())) {
 				Connection con = null;
-				try
-				{
+				try {
 					// Delete the pet in db
 					con = L2DatabaseFactory.getInstance().getConnection();
 					PreparedStatement statement = con.prepareStatement("DELETE FROM pets WHERE item_obj_id=?");
 					statement.setInt(1, item.getObjectId());
 					statement.execute();
 					statement.close();
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					Log.log(Level.WARNING, "could not delete pet objectid:", e);
-				}
-				finally
-				{
+				} finally {
 					L2DatabaseFactory.close(con);
 				}
 			}
 		}
 	}
-
+	
 	@Override
-	public boolean reload()
-	{
+	public boolean reload() {
 		load();
 		EnchantHPBonusData.getInstance().reload();
-
+		
 		return true;
 	}
-
+	
 	@Override
-	public String getReloadMessage(boolean success)
-	{
+	public String getReloadMessage(boolean success) {
 		return "Item Templates have been reloaded";
 	}
-
-	protected static class ResetOwner implements Runnable
-	{
+	
+	protected static class ResetOwner implements Runnable {
 		L2ItemInstance item;
-
-		public ResetOwner(L2ItemInstance item)
-		{
+		
+		public ResetOwner(L2ItemInstance item) {
 			this.item = item;
 		}
-
+		
 		@Override
-		public void run()
-		{
+		public void run() {
 			item.setOwnerId(0);
 			item.setItemLootShedule(null);
 		}
 	}
-
-	public Set<Integer> getAllArmorsId()
-	{
+	
+	public Set<Integer> getAllArmorsId() {
 		return armors.keySet();
 	}
-
-	public Set<Integer> getAllWeaponsId()
-	{
+	
+	public Set<Integer> getAllWeaponsId() {
 		return weapons.keySet();
 	}
-
-	public L2Item[] getAllItems()
-	{
+	
+	public L2Item[] getAllItems() {
 		return allTemplates;
 	}
-
+	
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final ItemTable instance = new ItemTable();
 	}
 }

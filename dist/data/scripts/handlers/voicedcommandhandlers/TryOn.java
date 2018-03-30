@@ -32,8 +32,7 @@ import java.util.List;
  * @author Pere
  */
 
-public class TryOn implements IVoicedCommandHandler
-{
+public class TryOn implements IVoicedCommandHandler {
 	private static final String[] VOICED_COMMANDS = {"tryon"};
 
 	private static final int ITEMS_PER_PAGE = 6;
@@ -42,75 +41,57 @@ public class TryOn implements IVoicedCommandHandler
 	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance player, String params)
-	{
-		if (!command.equalsIgnoreCase("tryon"))
-		{
+	public boolean useVoicedCommand(String command, L2PcInstance player, String params) {
+		if (!command.equalsIgnoreCase("tryon")) {
 			return false;
 		}
 
-		if (ThreadPoolManager.getInstance().isShutdown())
-		{
+		if (ThreadPoolManager.getInstance().isShutdown()) {
 			return false;
 		}
 
-		if (!player.isGM() && !player.isInsideZone(L2Character.ZONE_TOWN))
-		{
+		if (!player.isGM() && !player.isInsideZone(L2Character.ZONE_TOWN)) {
 			player.sendMessage("You can't try on apps outside of town!");
 			return false;
 		}
 
-		if (params == null)
-		{
+		if (params == null) {
 			params = "";
 		}
 
 		String search = "";
-		if (params.contains("search "))
-		{
+		if (params.contains("search ")) {
 			int searchStartIndex = params.indexOf("search ") + 7;
 			int searchEndIndex = params.indexOf(" ", searchStartIndex);
-			if (searchEndIndex > 0)
-			{
+			if (searchEndIndex > 0) {
 				search = params.substring(searchStartIndex, searchEndIndex).toLowerCase();
-			}
-			else
-			{
+			} else {
 				search = params.substring(searchStartIndex).toLowerCase();
 			}
 
-			if (search.startsWith("page="))
-			{
+			if (search.startsWith("page=")) {
 				search = "";
 			}
 		}
 
 		int page = 1;
-		if (params.contains("page="))
-		{
+		if (params.contains("page=")) {
 			int pageStartIndex = params.indexOf("page=") + 5;
 			int pageEndIndex = params.indexOf(" ", pageStartIndex);
-			if (pageEndIndex > 0)
-			{
+			if (pageEndIndex > 0) {
 				page = Integer.valueOf(params.substring(pageStartIndex, pageEndIndex));
-			}
-			else
-			{
+			} else {
 				page = Integer.valueOf(params.substring(pageStartIndex));
 			}
 		}
 
-		if (params.contains("item="))
-		{
+		if (params.contains("item=")) {
 			int itemId;
 			int itemStartIndex = params.indexOf("item=") + 5;
 			int itemEndIndex = params.indexOf(" ", itemStartIndex);
-			if (itemEndIndex > 0)
-			{
+			if (itemEndIndex > 0) {
 				itemId = Integer.valueOf(params.substring(itemStartIndex, itemEndIndex));
-			}
-			else
-			{
+			} else {
 				itemId = Integer.valueOf(params.substring(itemStartIndex));
 			}
 
@@ -121,15 +102,12 @@ public class TryOn implements IVoicedCommandHandler
 		StringBuilder sb = new StringBuilder();
 		sb.append("<html><body><title>Try On</title>");
 
-		if (search.isEmpty())
-		{
+		if (search.isEmpty()) {
 			sb.append("<center><table width=300 bgcolor=666666><tr><td align=center>Search App:</td></tr");
 			sb.append("<tr><td align=center><edit var=\"what\" width=150 type=char length=16></td></tr>");
 			sb.append("<tr><td align=center><button action=\"bypass -h voice .tryon search $what page=" + page +
 					"\" value=Search! width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
-		}
-		else
-		{
+		} else {
 			sb.append("<center><tr><td align=center>Searching for <font color=LEVEL>" + search + "</font></td></tr>");
 			sb.append("<tr><td align=center><button action=\"bypass -h voice .tryon page=" + page +
 					"\" value=\"Remove Search\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
@@ -139,8 +117,7 @@ public class TryOn implements IVoicedCommandHandler
 		List<L2Item> items = getItems(search);
 		int totalCount = items.size();
 		int pageCount = (int) Math.ceil(totalCount / (float) ITEMS_PER_PAGE);
-		if (page > pageCount)
-		{
+		if (page > pageCount) {
 			page = 1;
 		}
 
@@ -155,16 +132,14 @@ public class TryOn implements IVoicedCommandHandler
 		sb.append("<table width=300>");
 
 		int index = 0;
-		for (L2Item item : items)
-		{
+		for (L2Item item : items) {
 			sb.append("<tr>");
 			sb.append("<td width=300>");
 
 			String itemName = item.getName();
 			sb.append("<table width=300 bgcolor=" + colors[index % 2] + "><tr>");
-			sb.append("<td FIXWIDTH=30><button action=\"" + bypass + " item=" + item.getItemId() +
-					"\" value=\" \" width=32 height=32 back=\"" + item.getIcon() + "\" fore=\"" + item.getIcon() +
-					"\"></td>");
+			sb.append("<td FIXWIDTH=30><button action=\"" + bypass + " item=" + item.getItemId() + "\" value=\" \" width=32 height=32 back=\"" +
+					item.getIcon() + "\" fore=\"" + item.getIcon() + "\"></td>");
 			sb.append("<td FIXWIDTH=180>" + itemName + "</td><td FIXWIDTH=20></td>");
 			sb.append("</tr></table>");
 
@@ -185,21 +160,14 @@ public class TryOn implements IVoicedCommandHandler
 
 		sb.append("<br><br>");
 
-		if (pageLinks > 1)
-		{
+		if (pageLinks > 1) {
 			sb.append("<center><table width=" + pageLinks * 20 + "><tr>");
-			for (int p = minPage; p <= maxPage; p++)
-			{
-				if (p == page)
-				{
+			for (int p = minPage; p <= maxPage; p++) {
+				if (p == page) {
 					sb.append("<td FIXWIDTH=20>" + p + "</td>");
-				}
-				else if (p > 1 && p == minPage || p < pageCount && p == maxPage)
-				{
+				} else if (p > 1 && p == minPage || p < pageCount && p == maxPage) {
 					sb.append("<td FIXWIDTH=20><a action=\"" + bypass + " page=" + p + "\">...</a></td>");
-				}
-				else
-				{
+				} else {
 					sb.append("<td FIXWIDTH=20><a action=\"" + bypass + " page=" + p + "\">" + p + "</a></td>");
 				}
 			}
@@ -214,16 +182,12 @@ public class TryOn implements IVoicedCommandHandler
 		return true;
 	}
 
-	private List<L2Item> getItems(String search)
-	{
+	private List<L2Item> getItems(String search) {
 		List<L2Item> items = new ArrayList<L2Item>();
-		for (L2Item it : ItemTable.getInstance().getAllItems())
-		{
+		for (L2Item it : ItemTable.getInstance().getAllItems()) {
 			L2Item item = null;
-			if (it instanceof L2Weapon)
-			{
-				switch (it.getItemId())
-				{
+			if (it instanceof L2Weapon) {
+				switch (it.getItemId()) {
 					case 36417: // Antharas Shaper - Fragment
 					case 36441: // Antharas Shaper - Standard
 					case 36465: // Antharas Shaper - High-grade
@@ -348,49 +312,38 @@ public class TryOn implements IVoicedCommandHandler
 						item = it;
 						break;
 					}
-					default:
-					{
+					default: {
 						continue;
 					}
 				}
-			}
-			else
-			{
-				if (!(it instanceof L2EtcItem))
-				{
+			} else {
+				if (!(it instanceof L2EtcItem)) {
 					continue;
 				}
 
 				L2EtcItem stone = (L2EtcItem) it;
-				if (stone.getHandlerName() == null || !stone.getHandlerName().equals("AppearanceStone") ||
-						stone.getStandardItem() <= 0)
-				{
+				if (stone.getHandlerName() == null || !stone.getHandlerName().equals("AppearanceStone") || stone.getStandardItem() <= 0) {
 					continue;
 				}
 
 				item = ItemTable.getInstance().getTemplate(stone.getStandardItem());
-				if (item == null || items.contains(item))
-				{
+				if (item == null || items.contains(item)) {
 					continue;
 				}
 			}
 
-			if (!search.isEmpty() && !item.getName().toLowerCase().contains(search))
-			{
+			if (!search.isEmpty() && !item.getName().toLowerCase().contains(search)) {
 				continue;
 			}
 
 			boolean contained = false;
-			for (L2Item i : items)
-			{
-				if (i.getName().equalsIgnoreCase(item.getName()))
-				{
+			for (L2Item i : items) {
+				if (i.getName().equalsIgnoreCase(item.getName())) {
 					contained = true;
 				}
 			}
 
-			if (contained)
-			{
+			if (contained) {
 				continue;
 			}
 
@@ -400,21 +353,17 @@ public class TryOn implements IVoicedCommandHandler
 		return items;
 	}
 
-	private List<L2Item> getPage(List<L2Item> allItems, int page)
-	{
+	private List<L2Item> getPage(List<L2Item> allItems, int page) {
 		List<L2Item> items = new ArrayList<L2Item>();
 		int index = 0;
-		for (L2Item item : allItems)
-		{
-			if (index >= (page - 1) * ITEMS_PER_PAGE)
-			{
+		for (L2Item item : allItems) {
+			if (index >= (page - 1) * ITEMS_PER_PAGE) {
 				items.add(item);
 			}
 
 			index++;
 
-			if (index >= page * ITEMS_PER_PAGE)
-			{
+			if (index >= page * ITEMS_PER_PAGE) {
 				break;
 			}
 		}
@@ -426,8 +375,7 @@ public class TryOn implements IVoicedCommandHandler
 	 * @see l2server.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
 	 */
 	@Override
-	public String[] getVoicedCommandList()
-	{
+	public String[] getVoicedCommandList() {
 		return VOICED_COMMANDS;
 	}
 }

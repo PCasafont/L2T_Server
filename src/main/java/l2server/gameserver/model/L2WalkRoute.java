@@ -20,8 +20,7 @@ import java.util.List;
 /**
  * @author GKR
  */
-public class L2WalkRoute
-{
+public class L2WalkRoute {
 	private final int id;
 	private final List<L2NpcWalkerNode> nodeList; // List of nodes
 	private final boolean repeatWalk; // Does repeat walk, after arriving into last point in list, or not
@@ -30,8 +29,7 @@ public class L2WalkRoute
 	// Repeat style: 0 - go back, 1 - go to first point (circle style), 2 - teleport to first point (conveyor style), 3 - random walking between points
 	private boolean debug;
 
-	public L2WalkRoute(int id, List<L2NpcWalkerNode> route, boolean repeat, boolean once, byte repeatType)
-	{
+	public L2WalkRoute(int id, List<L2NpcWalkerNode> route, boolean repeat, boolean once, byte repeatType) {
 
 		this.id = id;
 		nodeList = route;
@@ -40,48 +38,39 @@ public class L2WalkRoute
 		debug = false;
 	}
 
-	public int getId()
-	{
+	public int getId() {
 		return id;
 	}
 
-	public List<L2NpcWalkerNode> getNodeList()
-	{
+	public List<L2NpcWalkerNode> getNodeList() {
 		return nodeList;
 	}
 
-	public L2NpcWalkerNode getLastNode()
-	{
+	public L2NpcWalkerNode getLastNode() {
 		return nodeList.get(nodeList.size() - 1);
 	}
 
-	public boolean repeatWalk()
-	{
+	public boolean repeatWalk() {
 		return repeatWalk;
 	}
 
-	public boolean doOnce()
-	{
+	public boolean doOnce() {
 		return stopAfterCycle;
 	}
 
-	public byte getRepeatType()
-	{
+	public byte getRepeatType() {
 		return repeatType;
 	}
 
-	public int getNodesCount()
-	{
+	public int getNodesCount() {
 		return nodeList.size();
 	}
 
-	public void setDebug(boolean val)
-	{
+	public void setDebug(boolean val) {
 		debug = val;
 	}
 
-	public boolean debug()
-	{
+	public boolean debug() {
 		return debug;
 	}
 }

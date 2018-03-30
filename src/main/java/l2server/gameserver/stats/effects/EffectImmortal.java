@@ -20,16 +20,13 @@ import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
-public class EffectImmortal extends L2Effect
-{
-	public EffectImmortal(Env env, L2EffectTemplate template)
-	{
+public class EffectImmortal extends L2Effect {
+	public EffectImmortal(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.BUFF;
 	}
 
@@ -37,8 +34,7 @@ public class EffectImmortal extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		getEffected().setIsMortal(false);
 		return true;
 	}
@@ -47,8 +43,7 @@ public class EffectImmortal extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		getEffected().setIsMortal(true);
 	}
 
@@ -56,8 +51,7 @@ public class EffectImmortal extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		// just stop this effect
 		return false;
 	}

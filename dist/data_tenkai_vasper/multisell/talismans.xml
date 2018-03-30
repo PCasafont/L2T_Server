@@ -1,159 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34581" /> <!-- Player Commendation - Talisman - M. Def. (Active) - PC-exclusive -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34582" /> <!-- Player Commendation - Talisman - M. Def. (Passive) - PC-exclusive -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34583" /> <!-- Player Commendation - Talisman - M. Atk. (Active) - PC-exclusive -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34584" /> <!-- Player Commendation - Talisman - M. Atk. (Passive) - PC-exclusive -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34585" /> <!-- Player Commendation - Talisman - P. Atk. (Active) - PC-exclusive -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34586" /> <!-- Player Commendation - Talisman - P. Atk. (Passive) - PC-exclusive -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34587" /> <!-- Player Commendation - Talisman - P. Def. (Active) - PC-exclusive -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34588" /> <!-- Player Commendation - Talisman - P. Def. (Passive) - PC-exclusive -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34589" /> <!-- Player Commendation - Talisman - CP (Active) - PC-exclusive -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34590" /> <!-- Player Commendation - Talisman - CP (Passive) - PC-exclusive -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34591" /> <!-- Player Commendation - Talisman - HP (Active) - PC-exclusive -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34592" /> <!-- Player Commendation - Talisman - HP (Passive) - PC-exclusive -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34593" /> <!-- Player Commendation - Talisman - MP (Active) - PC-exclusive -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34594" /> <!-- Player Commendation - Talisman - MP (Passive) - PC-exclusive -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34621" /> <!-- Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Passive) -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="34622" /> <!-- Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Active) -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="18362" /> <!-- Special Talisman (R99-grade) - Shield Defense (Passive) -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="18366" /> <!-- Special Talisman (R99-grade) - Shield Defense (Active) -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="18378" /> <!-- Special Talisman (R99-grade) - Mana Drain (Active) -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="18382" /> <!-- Special Talisman (R99-grade) - Blood Siphon (Active) -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="18386" /> <!-- Special Talisman (R99-grade) - Increase Range(Passive) -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000" /> <!-- Adena -->
-        <production count="1" id="18390" /> <!-- Special Talisman (R99-grade) - Increase Range (Active) -->
-    </item>
-    <item>
-        <ingredient id="57" count="500000" /> <!-- Adena -->
-        <production id="39568" count="1" /> <!-- Talisman - Wind: P. Critical Damage -->
-    </item>
-    <item>
-        <ingredient id="57" count="500000" /> <!-- Adena -->
-        <production id="39569" count="1" /> <!-- Talisman - Wind: M. Critical Damage -->
-    </item>
-    <item>
-        <ingredient id="57" count="500000" /> <!-- Adena -->
-        <production id="39570" count="1" /> <!-- Talisman - Wind: Defense -->
-    </item>
-    <item>
-        <ingredient id="57" count="500000" /> <!-- Adena -->
-        <production id="39571" count="1" /> <!-- Talisman - Wind: Debuff Resistance -->
-    </item>
-    <item>
-        <ingredient id="57" count="10000000" /> <!-- Adena -->
-        <production id="39634" count="1" /> <!-- Venir's Talisman - Stage 1 -->
-    </item>
-    <item>
-        <ingredient id="57" count="500000" /> <!-- Adena -->
-        <production id="45616" count="1" />    <!-- Talisman - Battle: Attack (30-day) -->
-    </item>
-    <item>
-        <ingredient id="57" count="500000" /> <!-- Adena -->
-        <production id="45619" count="1" />    <!-- Talisman - Battle: Speed (30-day) -->
-    </item>
-    <item>
-        <ingredient id="57" count="500000" /> <!-- Adena -->
-        <production id="45622" count="1" />    <!-- Talisman - Battle: Support (30-day) -->
-    </item>
-    <item>
-        <ingredient id="57" count="2000000" /> <!-- Adena -->
-        <production id="23837" count="1" /> <!-- Talisman - Hunter - Abundance -->
-    </item>
-    <item>
-        <ingredient id="57" count="2000000" /> <!-- Adena -->
-        <production id="23838" count="1" /> <!-- Talisman - Slaughterer - Abundance -->
-    </item>
-    <item>
-        <ingredient id="57" count="2000000" /> <!-- Adena -->
-        <production id="23839" count="1" /> <!-- Talisman - Conquerer - Abundance -->
-    </item>
-    <item>
-        <ingredient id="57" count="2000000" /> <!-- Adena -->
-        <production id="23840" count="1" /> <!-- Talisman - Outlaw - Abundance -->
-    </item>
-    <item>
-        <ingredient id="57" count="800000" /> <!-- Adena -->
-        <production id="26342" count="1" /> <!-- Recipe: Talisman - Abundance Lv. 1 (High-grade) -->
-    </item>
-    <item>
-        <ingredient id="57" count="1500000" /> <!-- Adena -->
-        <production id="26343" count="1" /> <!-- Recipe: Talisman - Abundance Lv. 2 (High-grade) -->
-    </item>
-    <item>
-        <ingredient id="57" count="2800000" /> <!-- Adena -->
-        <production id="26344" count="1" /> <!-- Recipe: Talisman - Abundance Lv. 3 (High-grade) -->
-    </item>
-    <item>
-        <ingredient id="57" count="8000000" /> <!-- Adena -->
-        <production id="26345" count="1" /> <!-- Recipe: Talisman - Abundance Lv. 4 (High-grade) -->
-    </item>
-    <item>
-        <ingredient id="57" count="1000000" /> <!-- Adena -->
-        <production id="39572" count="1" /> <!-- Talisman - Insanity -->
-    </item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34581" /> <!-- Player Commendation - Talisman - M. Def. (Active) - PC-exclusive -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34582" /> <!-- Player Commendation - Talisman - M. Def. (Passive) - PC-exclusive -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34583" /> <!-- Player Commendation - Talisman - M. Atk. (Active) - PC-exclusive -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34584" /> <!-- Player Commendation - Talisman - M. Atk. (Passive) - PC-exclusive -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34585" /> <!-- Player Commendation - Talisman - P. Atk. (Active) - PC-exclusive -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34586" /> <!-- Player Commendation - Talisman - P. Atk. (Passive) - PC-exclusive -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34587" /> <!-- Player Commendation - Talisman - P. Def. (Active) - PC-exclusive -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34588" /> <!-- Player Commendation - Talisman - P. Def. (Passive) - PC-exclusive -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34589" /> <!-- Player Commendation - Talisman - CP (Active) - PC-exclusive -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34590" /> <!-- Player Commendation - Talisman - CP (Passive) - PC-exclusive -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34591" /> <!-- Player Commendation - Talisman - HP (Active) - PC-exclusive -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34592" /> <!-- Player Commendation - Talisman - HP (Passive) - PC-exclusive -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34593" /> <!-- Player Commendation - Talisman - MP (Active) - PC-exclusive -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34594" /> <!-- Player Commendation - Talisman - MP (Passive) - PC-exclusive -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34621" /> <!-- Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Passive) -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="34622" /> <!-- Talisman (R-grade) - Half-kill/Lethal Strike Resistance (Active) -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="18362" /> <!-- Special Talisman (R99-grade) - Shield Defense (Passive) -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="18366" /> <!-- Special Talisman (R99-grade) - Shield Defense (Active) -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="18378" /> <!-- Special Talisman (R99-grade) - Mana Drain (Active) -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="18382" /> <!-- Special Talisman (R99-grade) - Blood Siphon (Active) -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="18386" /> <!-- Special Talisman (R99-grade) - Increase Range(Passive) -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000" /> <!-- Adena -->
+		<production count="1" id="18390" /> <!-- Special Talisman (R99-grade) - Increase Range (Active) -->
+	</item>
+	<item>
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="39568" count="1" /> <!-- Talisman - Wind: P. Critical Damage -->
+	</item>
+	<item>
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="39569" count="1" /> <!-- Talisman - Wind: M. Critical Damage -->
+	</item>
+	<item>
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="39570" count="1" /> <!-- Talisman - Wind: Defense -->
+	</item>
+	<item>
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="39571" count="1" /> <!-- Talisman - Wind: Debuff Resistance -->
+	</item>
+	<item>
+		<ingredient id="57" count="10000000" /> <!-- Adena -->
+		<production id="39634" count="1" /> <!-- Venir's Talisman - Stage 1 -->
+	</item>
+	<item>
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="45616" count="1" />    <!-- Talisman - Battle: Attack (30-day) -->
+	</item>
+	<item>
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="45619" count="1" />    <!-- Talisman - Battle: Speed (30-day) -->
+	</item>
+	<item>
+		<ingredient id="57" count="500000" /> <!-- Adena -->
+		<production id="45622" count="1" />    <!-- Talisman - Battle: Support (30-day) -->
+	</item>
+	<item>
+		<ingredient id="57" count="2000000" /> <!-- Adena -->
+		<production id="23837" count="1" /> <!-- Talisman - Hunter - Abundance -->
+	</item>
+	<item>
+		<ingredient id="57" count="2000000" /> <!-- Adena -->
+		<production id="23838" count="1" /> <!-- Talisman - Slaughterer - Abundance -->
+	</item>
+	<item>
+		<ingredient id="57" count="2000000" /> <!-- Adena -->
+		<production id="23839" count="1" /> <!-- Talisman - Conquerer - Abundance -->
+	</item>
+	<item>
+		<ingredient id="57" count="2000000" /> <!-- Adena -->
+		<production id="23840" count="1" /> <!-- Talisman - Outlaw - Abundance -->
+	</item>
+	<item>
+		<ingredient id="57" count="800000" /> <!-- Adena -->
+		<production id="26342" count="1" /> <!-- Recipe: Talisman - Abundance Lv. 1 (High-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="1500000" /> <!-- Adena -->
+		<production id="26343" count="1" /> <!-- Recipe: Talisman - Abundance Lv. 2 (High-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="2800000" /> <!-- Adena -->
+		<production id="26344" count="1" /> <!-- Recipe: Talisman - Abundance Lv. 3 (High-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="8000000" /> <!-- Adena -->
+		<production id="26345" count="1" /> <!-- Recipe: Talisman - Abundance Lv. 4 (High-grade) -->
+	</item>
+	<item>
+		<ingredient id="57" count="1000000" /> <!-- Adena -->
+		<production id="39572" count="1" /> <!-- Talisman - Insanity -->
+	</item>
 </list>

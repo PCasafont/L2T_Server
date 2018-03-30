@@ -26,8 +26,7 @@ import l2server.gameserver.taskmanager.AttackStanceTaskManager;
  *
  * @author mkizub
  */
-public class ConditionPlayerState extends Condition
-{
+public class ConditionPlayerState extends Condition {
 	private final PlayerState check;
 	private final boolean required;
 
@@ -37,8 +36,7 @@ public class ConditionPlayerState extends Condition
 	 * @param check    the player state to be verified.
 	 * @param required the required value.
 	 */
-	public ConditionPlayerState(PlayerState check, boolean required)
-	{
+	public ConditionPlayerState(PlayerState check, boolean required) {
 		this.check = check;
 		this.required = required;
 	}
@@ -47,16 +45,13 @@ public class ConditionPlayerState extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		final L2Character character = env.player;
 		L2PcInstance player = null;
-		switch (check)
-		{
+		switch (check) {
 			case RESTING:
 				player = character.getActingPlayer();
-				if (player != null)
-				{
+				if (player != null) {
 					return player.isSitting() == required;
 				}
 				return !required;
@@ -66,8 +61,7 @@ public class ConditionPlayerState extends Condition
 				return character.isRunning() == required;
 			case STANDING:
 				player = character.getActingPlayer();
-				if (player != null)
-				{
+				if (player != null) {
 					return required != (player.isSitting() || player.isMoving());
 				}
 				return required != character.isMoving();
@@ -81,15 +75,13 @@ public class ConditionPlayerState extends Condition
 				return character.isInFrontOfTarget() == required;
 			case CHAOTIC:
 				player = character.getActingPlayer();
-				if (player != null)
-				{
+				if (player != null) {
 					return player.getReputation() < 0 == required;
 				}
 				return !required;
 			case OLYMPIAD:
 				player = character.getActingPlayer();
-				if (player != null)
-				{
+				if (player != null) {
 					return player.isInOlympiadMode() == required;
 				}
 				return !required;

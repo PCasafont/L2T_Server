@@ -26,99 +26,79 @@ import l2server.gameserver.network.serverpackets.ExEnchantSkillInfoDetail;
  *
  * @author -Wooden-
  */
-public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket
-{
+public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket {
 	private int type;
 	private int skillId;
 	private int skillLvl;
 	private int skillEnch;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		type = readD();
 		skillId = readD();
 		skillLvl = readH();
 		skillEnch = readH();
 	}
-
+	
 	/*
 	 * (non-Javadoc)
 	 *
 	 * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		if (skillId <= 0 || skillLvl <= 0 || skillEnch <= 0) // minimal sanity check
 		{
 			return;
 		}
-
+		
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		L2EnchantSkillLearn esl = EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(skillId);
-		if (esl == null)
-		{
+		if (esl == null) {
 			return;
 		}
-
+		
 		int enchRoute = skillEnch / 1000;
 		int enchLvl = skillEnch % 1000;
 		int reqEnchLvl = -2;
-
+		
 		L2Skill curSkill = activeChar.getKnownSkill(skillId);
-		if (curSkill == null)
-		{
+		if (curSkill == null) {
 			return;
 		}
-
-		if (type == 0 || type == 1 || type == 4)
-		{
+		
+		if (type == 0 || type == 1 || type == 4) {
 			reqEnchLvl = enchLvl - 1; // enchant
-			if (esl.isMaxEnchant(enchRoute, curSkill.getEnchantLevel()))
-			{
+			if (esl.isMaxEnchant(enchRoute, curSkill.getEnchantLevel())) {
 				reqEnchLvl = curSkill.getEnchantLevel();
 			}
-		}
-		else if (type == 2)
-		{
+		} else if (type == 2) {
 			reqEnchLvl = enchLvl + 1; // untrain
-		}
-		else if (type == 3)
-		{
+		} else if (type == 3) {
 			reqEnchLvl = enchLvl; // change route
 		}
-
+		
 		// if reqlvl is 100,200,.. check base skill lvl enchant
-		if (reqEnchLvl == 0)
-		{
+		if (reqEnchLvl == 0) {
 			// if player dont have min level to enchant
-			if (curSkill.getLevel() < esl.getBaseLevel())
-			{
+			if (curSkill.getLevel() < esl.getBaseLevel()) {
 				return;
 			}
-		}
-		else if (curSkill.getEnchantRouteId() != enchRoute)
-		{
+		} else if (curSkill.getEnchantRouteId() != enchRoute) {
 			// change route is different skill lvl but same enchant
-			if (type == 3 && curSkill.getEnchantLevel() != enchLvl)
-			{
+			if (type == 3 && curSkill.getEnchantLevel() != enchLvl) {
 				return;
 			}
-		}
-		else if (reqEnchLvl != curSkill.getEnchantLevel())
-		{
+		} else if (reqEnchLvl != curSkill.getEnchantLevel()) {
 			return;
 		}
-
+		
 		// send skill enchantment detail
-		ExEnchantSkillInfoDetail esd =
-				new ExEnchantSkillInfoDetail(type, skillId, skillLvl, enchRoute, enchLvl, activeChar);
+		ExEnchantSkillInfoDetail esd = new ExEnchantSkillInfoDetail(type, skillId, skillLvl, enchRoute, enchLvl, activeChar);
 		activeChar.sendPacket(esd);
 	}
 }

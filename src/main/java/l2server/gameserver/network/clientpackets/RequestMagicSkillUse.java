@@ -35,73 +35,60 @@ import java.util.Map.Entry;
  *
  * @version $Revision: 1.7.2.1.2.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestMagicSkillUse extends L2GameClientPacket
-{
-
+public final class RequestMagicSkillUse extends L2GameClientPacket {
+	
 	private int magicId;
 	private boolean ctrlPressed;
 	private boolean shiftPressed;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		magicId = readD(); // Identifier of the used skill
 		ctrlPressed = readD() != 0; // True if it's a ForceAttack : Ctrl pressed
 		shiftPressed = readC() != 0; // True if Shift pressed
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		// Get the current L2PcInstance of the player
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (activeChar.getCaptcha() != null && !activeChar.onActionCaptcha(true))
-		{
+		
+		if (activeChar.getCaptcha() != null && !activeChar.onActionCaptcha(true)) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
-		if (activeChar.hasIdentityCrisis())
-		{
+		
+		if (activeChar.hasIdentityCrisis()) {
 			activeChar.sendMessage("You cannot use any skill while having identity crisis.");
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
-		if (activeChar.isEventDisarmed())
-		{
+		
+		if (activeChar.isEventDisarmed()) {
 			activeChar.sendMessage("You cannot use any skill while playing this event.");
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
+		
 		// Get the level of the used skill
 		int level = activeChar.getSkillLevelHash(magicId);
-
+		
 		// Check combo
-		if (activeChar.getTarget() instanceof L2Character)
-		{
-			for (L2Abnormal ab : ((L2Character) activeChar.getTarget()).getAllEffects())
-			{
-				if (ab.getComboId() != 0)
-				{
+		if (activeChar.getTarget() instanceof L2Character) {
+			for (L2Abnormal ab : ((L2Character) activeChar.getTarget()).getAllEffects()) {
+				if (ab.getComboId() != 0) {
 					Combo combo = ComboSkillTable.getInstance().getCombo(ab.getComboId());
-					if (combo.skills.containsKey(magicId))
-					{
+					if (combo.skills.containsKey(magicId)) {
 						magicId = combo.skills.get(magicId);
 						level = 1;
 						break;
 					}
-
-					for (Entry<Integer, Integer> comboSkill : combo.skills.entrySet())
-					{
-						if (comboSkill.getValue() == magicId && activeChar.getSkillLevelHash(comboSkill.getKey()) > 0)
-						{
+					
+					for (Entry<Integer, Integer> comboSkill : combo.skills.entrySet()) {
+						if (comboSkill.getValue() == magicId && activeChar.getSkillLevelHash(comboSkill.getKey()) > 0) {
 							level = 1;
 							break;
 						}
@@ -109,31 +96,25 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 				}
 			}
 		}
-
-		if (level <= 0)
-		{
+		
+		if (level <= 0) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
+		
 		// Get the L2Skill template corresponding to the skillID received from the client
 		L2Skill skill = SkillTable.getInstance().getInfo(magicId, level);
-
+		
 		// Check the validity of the skill
-		if (skill != null)
-		{
-			if (skill.getSkillType() != L2SkillType.STRSIEGEASSAULT && activeChar.isMounted())
-			{
+		if (skill != null) {
+			if (skill.getSkillType() != L2SkillType.STRSIEGEASSAULT && activeChar.isMounted()) {
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
-
-			if (skill.getSkillType() != L2SkillType.TRANSFORMDISPEL &&
-					(activeChar.isTransformed() || activeChar.isInStance()) &&
+			
+			if (skill.getSkillType() != L2SkillType.TRANSFORMDISPEL && (activeChar.isTransformed() || activeChar.isInStance()) &&
 					(!activeChar.containsAllowedTransformSkill(skill.getId()) ||
-							activeChar.getLastSkillCast() != null &&
-									activeChar.getLastSkillCast().getSkillType() == L2SkillType.TRANSFORMDISPEL))
-			{
+							activeChar.getLastSkillCast() != null && activeChar.getLastSkillCast().getSkillType() == L2SkillType.TRANSFORMDISPEL)) {
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
@@ -141,55 +122,46 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 			// Log.fine("	range:"+skill.getCastRange()+" targettype:"+skill.getTargetType()+" optype:"+skill.getOperateType()+" power:"+skill.getPower());
 			// Log.fine("	reusedelay:"+skill.getReuseDelay()+" hittime:"+skill.getHitTime());
 			// Log.fine("	currentState:"+activeChar.getCurrentState());	//for debug
-
+			
 			// If Alternate rule Karma punishment is set to true, forbid skill Return to player with Karma
-			if (skill.getSkillType() == L2SkillType.RECALL && !Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT &&
-					activeChar.getReputation() < 0)
-			{
+			if (skill.getSkillType() == L2SkillType.RECALL && !Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && activeChar.getReputation() < 0) {
 				return;
 			}
-
+			
 			// players mounted on pets cannot use any toggle skills
-			if (skill.isToggle() && activeChar.isMounted())
-			{
+			if (skill.isToggle() && activeChar.isMounted()) {
 				return;
 			}
-
-			if (activeChar.isGM())
-			{
-				GMAudit.auditGMAction(activeChar.getName(), "Use skill: " + skill.getName(),
+			
+			if (activeChar.isGM()) {
+				GMAudit.auditGMAction(activeChar.getName(),
+						"Use skill: " + skill.getName(),
 						activeChar.getTarget() != null ? activeChar.getTarget().getName() : "No Target");
 			}
-
-			if (skill.isStanceSwitch())
-			{
+			
+			if (skill.isStanceSwitch()) {
 				int offset = activeChar.getElementalStance();
-				if (offset > 4)
-				{
+				if (offset > 4) {
 					offset = 5;
 				}
-
-				if (skill.getId() == 11177)
-				{
+				
+				if (skill.getId() == 11177) {
 					offset = offset < 5 ? 0 : 12;
 				}
-
+				
 				L2Skill magic = SkillTable.getInstance().getInfo(skill.getId() + offset, skill.getLevelHash());
 				activeChar.useMagic(magic, ctrlPressed, shiftPressed);
 				return;
 			}
-
+			
 			if (activeChar.getQueuedSkill() != null && activeChar.getQueuedSkill().getSkillId() == 30001 &&
-					skill.getId() != activeChar.getQueuedSkill().getSkillId())
-			{
+					skill.getId() != activeChar.getQueuedSkill().getSkillId()) {
 				activeChar.setQueuedSkill(null, ctrlPressed, shiftPressed);
 			}
-
+			
 			// activeChar.stopMove();
 			activeChar.useMagic(skill, ctrlPressed, shiftPressed);
-		}
-		else
-		{
+		} else {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			Log.warning("No skill found with id " + magicId + " and level " + level + " !!");
 		}

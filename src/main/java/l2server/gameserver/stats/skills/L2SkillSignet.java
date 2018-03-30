@@ -31,14 +31,12 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.util.Point3D;
 
-public final class L2SkillSignet extends L2Skill
-{
+public final class L2SkillSignet extends L2Skill {
 	private int effectNpcId;
 	public int effectId;
 	public int effectLevel;
 
-	public L2SkillSignet(StatsSet set)
-	{
+	public L2SkillSignet(StatsSet set) {
 		super(set);
 		effectNpcId = set.getInteger("effectNpcId", -1);
 		effectId = set.getInteger("effectId", -1);
@@ -46,16 +44,13 @@ public final class L2SkillSignet extends L2Skill
 	}
 
 	@Override
-	public void useSkill(L2Character caster, L2Object[] targets)
-	{
-		if (caster.isAlikeDead())
-		{
+	public void useSkill(L2Character caster, L2Object[] targets) {
+		if (caster.isAlikeDead()) {
 			return;
 		}
 
 		L2NpcTemplate template = NpcTable.getInstance().getTemplate(effectNpcId);
-		L2EffectPointInstance effectPoint =
-				new L2EffectPointInstance(IdFactory.getInstance().getNextId(), template, caster);
+		L2EffectPointInstance effectPoint = new L2EffectPointInstance(IdFactory.getInstance().getNextId(), template, caster);
 		effectPoint.setCurrentHp(effectPoint.getMaxHp());
 		effectPoint.setCurrentMp(effectPoint.getMaxMp());
 		//L2World.getInstance().storeObject(effectPoint);
@@ -64,12 +59,10 @@ public final class L2SkillSignet extends L2Skill
 		int y = caster.getY();
 		int z = caster.getZ();
 
-		if (caster instanceof L2PcInstance && getTargetType() == L2SkillTargetType.TARGET_GROUND)
-		{
+		if (caster instanceof L2PcInstance && getTargetType() == L2SkillTargetType.TARGET_GROUND) {
 			Point3D wordPosition = caster.getSkillCastPosition();
 
-			if (wordPosition != null)
-			{
+			if (wordPosition != null) {
 				x = wordPosition.getX();
 				y = wordPosition.getY();
 				z = wordPosition.getZ();

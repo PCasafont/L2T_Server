@@ -14,91 +14,75 @@ import java.util.Map;
 /**
  * @author Pere
  */
-public class PacketOpcodes
-{
-	public static class PacketFamily
-	{
+public class PacketOpcodes {
+	public static class PacketFamily {
 		public int switchLength;
 		public final Map<Integer, Object> children = new HashMap<>();
 	}
-
+	
 	private static String PROTOCOL_FILE;
 	private static boolean GENERATE_MISSING_PACKETS = true;
-
+	
 	public static final PacketFamily ClientPacketsFamily = new PacketFamily();
 	public static final Map<Class<?>, byte[]> ClientPackets = new HashMap<>();
 	public static final Map<Class<?>, byte[]> ServerPackets = new HashMap<>();
-
+	
 	private static long lastModified = 0;
-
-	static
-	{
+	
+	static {
 		PROTOCOL_FILE = "data_" + Config.SERVER_NAME + "/protocol.xml";
-		if (!new File(Config.DATAPACK_ROOT, PROTOCOL_FILE).exists())
-		{
+		if (!new File(Config.DATAPACK_ROOT, PROTOCOL_FILE).exists()) {
 			PROTOCOL_FILE = Config.DATA_FOLDER + "/protocol.xml";
 		}
-
+		
 		load();
-
+		
 		// Auto reloader
-		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
-		{
+		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable() {
 			@Override
-			public void run()
-			{
+			public void run() {
 				File f = new File(Config.DATAPACK_ROOT, PROTOCOL_FILE);
-				if (!f.isDirectory() && f.lastModified() > lastModified)
-				{
+				if (!f.isDirectory() && f.lastModified() > lastModified) {
 					load();
 					//Log.info("Updated the protocols from the file " + f.getName());
 				}
 			}
 		}, 10000, 10000);
 	}
-
-	public static void init()
-	{
+	
+	public static void init() {
 		// Dummy method to trigger the static block
 	}
-
-	private static void load()
-	{
+	
+	private static void load() {
 		File file = new File(Config.DATAPACK_ROOT, PROTOCOL_FILE);
-		if (!file.exists())
-		{
+		if (!file.exists()) {
 			Log.warning("File " + file.getAbsolutePath() + " doesn't exist");
 			return;
 		}
-
-		if (!file.getName().endsWith(".xml"))
-		{
+		
+		if (!file.getName().endsWith(".xml")) {
 			return;
 		}
-
+		
 		ClientPacketsFamily.children.clear();
 		ServerPackets.clear();
-
+		
 		XmlDocument doc = new XmlDocument(file);
 		XmlNode n = doc.getRoot();
-        if (n.getName().equals("protocol"))
-        {
-            for (XmlNode d : n.getChildren())
-            {
-                if (!d.getName().equals("packetfamilly"))
-                {
-                    continue;
-                }
-
-                boolean isClientPacket = d.getString("way").equalsIgnoreCase("ClientPackets");
-                parsePacketFamily(d, isClientPacket, new byte[0], isClientPacket ? ClientPacketsFamily : null);
-            }
-        }
-
-
-		Log.info("PacketOpcodes: Loaded " + ClientPackets.size() + " Client Packets and " + ServerPackets.size() +
-				" Server Packets.");
-
+		if (n.getName().equals("protocol")) {
+			for (XmlNode d : n.getChildren()) {
+				if (!d.getName().equals("packetfamilly")) {
+					continue;
+				}
+				
+				boolean isClientPacket = d.getString("way").equalsIgnoreCase("ClientPackets");
+				parsePacketFamily(d, isClientPacket, new byte[0], isClientPacket ? ClientPacketsFamily : null);
+			}
+		}
+		
+		Log.info("PacketOpcodes: Loaded " + ClientPackets.size() + " Client Packets and " + ServerPackets.size() + " Server Packets.");
+		
 		lastModified = file.lastModified();
 
 		/*File dir = new File(Config.DATAPACK_ROOT, "java/l2server/gameserver/network/clientpackets");
@@ -147,12 +131,10 @@ public class PacketOpcodes
 			}
 		}*/
 	}
-
-	private static void parsePacketFamily(XmlNode d, boolean isClientPacket, byte[] parentOpcode, PacketFamily family)
-	{
+	
+	private static void parsePacketFamily(XmlNode d, boolean isClientPacket, byte[] parentOpcode, PacketFamily family) {
 		int length;
-		switch (d.getString("switchtype"))
-		{
+		switch (d.getString("switchtype")) {
 			case "c":
 				length = 1;
 				break;
@@ -166,117 +148,92 @@ public class PacketOpcodes
 				Log.warning("'" + d.getString("switchtype") + "' switch type is not supported.");
 				return;
 		}
-
-		if (isClientPacket)
-		{
+		
+		if (isClientPacket) {
 			family.switchLength = length;
 		}
-
-		for (XmlNode y : d.getChildren())
-		{
+		
+		for (XmlNode y : d.getChildren()) {
 			int subOpcode = Integer.decode(y.getString("id"));
 			byte[] opcode = new byte[parentOpcode.length + length];
 			System.arraycopy(parentOpcode, 0, opcode, 0, parentOpcode.length);
-			for (int i = 0; i < length; i++)
-			{
+			for (int i = 0; i < length; i++) {
 				opcode[parentOpcode.length + i] = (byte) (subOpcode >> i * 8 & 0xff);
 			}
-
-			if (y.getName().equals("packetfamilly"))
-			{
+			
+			if (y.getName().equals("packetfamilly")) {
 				PacketFamily newFamily = null;
-				if (isClientPacket)
-				{
+				if (isClientPacket) {
 					newFamily = new PacketFamily();
 					family.children.put(subOpcode, newFamily);
 				}
-
+				
 				parsePacketFamily(y, isClientPacket, opcode, newFamily);
 				continue;
 			}
-
-			if (!y.getName().equals("packet"))
-			{
+			
+			if (!y.getName().equals("packet")) {
 				continue;
 			}
-
+			
 			String name = y.getString("name").replace("?", "");
-
-			try
-			{
-				if (isClientPacket)
-				{
+			
+			try {
+				if (isClientPacket) {
 					Class<?> packetClass = Class.forName("l2server.gameserver.network.clientpackets." + name);
 					family.children.put(subOpcode, packetClass);
 					ClientPackets.put(packetClass, opcode);
-				}
-				else
-				{
+				} else {
 					ServerPackets.put(Class.forName("l2server.gameserver.network.serverpackets." + name), opcode);
 				}
-			}
-			catch (ClassNotFoundException e)
-			{
+			} catch (ClassNotFoundException e) {
 				Map<String, String> parts = new HashMap<>();
 				int rep = 1;
-				for (XmlNode z : y.getChildren())
-				{
-					if (!z.getName().equals("part"))
-					{
+				for (XmlNode z : y.getChildren()) {
+					if (!z.getName().equals("part")) {
 						continue;
 					}
-
+					
 					String partName = z.getString("name").replace("?", "").replace(" ", "");
 					String partType = z.getString("type");
-
-					if (partName.length() == 0)
-					{
+					
+					if (partName.length() == 0) {
 						partName = "unk";
 					}
-
+					
 					partName = partName.substring(0, 1).toLowerCase() + partName.substring(1, partName.length());
-
-					if (parts.containsKey(partName) || parts.containsKey(partName + (rep - 1)))
-					{
-						if (rep == 1)
-						{
+					
+					if (parts.containsKey(partName) || parts.containsKey(partName + (rep - 1))) {
+						if (rep == 1) {
 							parts.put(partName + rep++, parts.get(partName) + "?");
 							parts.remove(partName);
 						}
-
+						
 						parts.put(partName + rep++, partType + "?");
-					}
-					else
-					{
+					} else {
 						parts.put(partName, partType);
 					}
 				}
-
-				if (isClientPacket)
-				{
+				
+				if (isClientPacket) {
 					Log.warning("Client packet not implemented: " + name);
-
-					if (!GENERATE_MISSING_PACKETS)
-					{
+					
+					if (!GENERATE_MISSING_PACKETS) {
 						continue;
 					}
-
-					String content = "package l2server.gameserver.network.clientpackets;\n" + "\n" +
-							"import l2server.log.Log;\n" + "\n" + "/**\n" + " * @author MegaParzor!\n" + " */\n" +
-							"public class " + name + " extends L2GameClientPacket\n" + "{\n";
-
+					
+					String content = "package l2server.gameserver.network.clientpackets;\n" + "\n" + "import l2server.log.Log;\n" + "\n" + "/**\n" +
+							" * @author MegaParzor!\n" + " */\n" + "public class " + name + " extends L2GameClientPacket\n" + "{\n";
+					
 					boolean partDeclared = false;
-					for (String partName : parts.keySet())
-					{
+					for (String partName : parts.keySet()) {
 						String partType = parts.get(partName);
-						if (partType.contains("?") || partType.equals("b"))
-						{
+						if (partType.contains("?") || partType.equals("b")) {
 							continue;
 						}
-
+						
 						String type = "int";
-						switch (partType)
-						{
+						switch (partType) {
 							case "c":
 								type = "byte";
 								break;
@@ -290,68 +247,51 @@ public class PacketOpcodes
 								type = "String";
 								break;
 						}
-
+						
 						content += "\t@SuppressWarnings(\"unused\")\n" + "\tprivate " + type + " _" + partName + ";\n";
 						partDeclared = true;
 					}
-
-					if (partDeclared)
-					{
+					
+					if (partDeclared) {
 						content += "\t\n";
 					}
-
+					
 					content += "\t@Override\n" + "\tpublic void readImpl()\n" + "\t{\n";
-
-					for (String partName : parts.keySet())
-					{
+					
+					for (String partName : parts.keySet()) {
 						String partType = parts.get(partName);
-
-						if (partType.contains("?"))
-						{
-							content +=
-									"\t\tread" + partType.substring(0, 1).toUpperCase() + "(); // " + partName + "\n";
-						}
-						else if (partType.equals("b"))
-						{
+						
+						if (partType.contains("?")) {
+							content += "\t\tread" + partType.substring(0, 1).toUpperCase() + "(); // " + partName + "\n";
+						} else if (partType.equals("b")) {
 							content += "\t\treadB(new byte[1]); // " + partName + " (TODO: check size)\n";
-						}
-						else
-						{
+						} else {
 							content += "\t\t_" + partName + " = read" + partType.toUpperCase() + "();\n";
 						}
 					}
-
-					content += "\t}\n" + "\t\n" + "\t@Override\n" + "\tpublic void runImpl()\n" + "\t{\n" +
-							"\t\t// TODO\n" +
-							"\t\tLog.info(getType() + \" was received from \" + getClient() + \".\");\n" + "\t}\n" +
-							"}\n" + "\n";
+					
+					content += "\t}\n" + "\t\n" + "\t@Override\n" + "\tpublic void runImpl()\n" + "\t{\n" + "\t\t// TODO\n" +
+							"\t\tLog.info(getType() + \" was received from \" + getClient() + \".\");\n" + "\t}\n" + "}\n" + "\n";
 					Util.writeFile("./java/l2server/gameserver/network/clientpackets/" + name + ".java", content);
-				}
-				else
-				{
+				} else {
 					Log.warning("Server packet not implemented: " + name);
-
-					if (!GENERATE_MISSING_PACKETS)
-					{
+					
+					if (!GENERATE_MISSING_PACKETS) {
 						continue;
 					}
-
-					String content = "package l2server.gameserver.network.serverpackets;\n" + "\n" + "/**\n" +
-							" * @author MegaParzor!\n" + " */\n" + "public class " + name +
-							" extends L2GameServerPacket\n" + "{\n";
-
+					
+					String content = "package l2server.gameserver.network.serverpackets;\n" + "\n" + "/**\n" + " * @author MegaParzor!\n" + " */\n" +
+							"public class " + name + " extends L2GameServerPacket\n" + "{\n";
+					
 					boolean partDeclared = false;
-					for (String partName : parts.keySet())
-					{
+					for (String partName : parts.keySet()) {
 						String partType = parts.get(partName);
-						if (partType.contains("?") || partType.equals("b"))
-						{
+						if (partType.contains("?") || partType.equals("b")) {
 							continue;
 						}
-
+						
 						String type = "int";
-						switch (partType)
-						{
+						switch (partType) {
 							case "c":
 								type = "byte";
 								break;
@@ -365,26 +305,22 @@ public class PacketOpcodes
 								type = "String";
 								break;
 						}
-
+						
 						content += "\tprivate " + type + " _" + partName + ";\n";
 						partDeclared = true;
 					}
-
-					if (partDeclared)
-					{
+					
+					if (partDeclared) {
 						content += "\t\n" + "\tpublic " + name + "(";
-
-						for (String partName : parts.keySet())
-						{
+						
+						for (String partName : parts.keySet()) {
 							String partType = parts.get(partName);
-							if (partType.contains("?") || partType.equals("b"))
-							{
+							if (partType.contains("?") || partType.equals("b")) {
 								continue;
 							}
-
+							
 							String type = "int";
-							switch (partType)
-							{
+							switch (partType) {
 								case "c":
 									type = "byte";
 									break;
@@ -398,89 +334,71 @@ public class PacketOpcodes
 									type = "String";
 									break;
 							}
-
+							
 							content += type + " " + partName + ", ";
 						}
-
+						
 						content = content.substring(0, content.length() - 2);
-
+						
 						content += ")\n" + "\t{\n";
-
-						for (String partName : parts.keySet())
-						{
+						
+						for (String partName : parts.keySet()) {
 							String partType = parts.get(partName);
-							if (partType.contains("?") || partType.equals("b"))
-							{
+							if (partType.contains("?") || partType.equals("b")) {
 								continue;
 							}
-
+							
 							content += "\t\t_" + partName + " = " + partName + ";\n";
 						}
-
+						
 						content += "\t}\n" + "\t\n";
 					}
-
+					
 					content += "\t@Override\n" + "\tpublic void writeImpl()\n" + "\t{\n";
-
-					for (String partName : parts.keySet())
-					{
+					
+					for (String partName : parts.keySet()) {
 						String partType = parts.get(partName);
-
+						
 						String neutral = "0x00";
-						if (partType.contains("S"))
-						{
+						if (partType.contains("S")) {
 							neutral = "\"\"";
-						}
-						else if (partType.contains("f"))
-						{
+						} else if (partType.contains("f")) {
 							neutral = "0.0f";
 						}
-
-						if (partType.contains("?"))
-						{
-							content += "\t\twrite" + partType.substring(0, 1).toUpperCase() + "(" + neutral + "); // " +
-									partName + "\n";
-						}
-						else if (partType.equals("b"))
-						{
+						
+						if (partType.contains("?")) {
+							content += "\t\twrite" + partType.substring(0, 1).toUpperCase() + "(" + neutral + "); // " + partName + "\n";
+						} else if (partType.equals("b")) {
 							content += "\t\twriteB(new byte[1]); // " + partName + " (TODO: check size)\n";
-						}
-						else
-						{
+						} else {
 							content += "\t\twrite" + partType.toUpperCase() + "(_" + partName + ");\n";
 						}
 					}
-
+					
 					content += "\t}\n" + "}\n" + "\n";
 					Util.writeFile("./java/l2server/gameserver/network/serverpackets/" + name + ".java", content);
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
-
-	public static byte[] getClientPacketOpcode(Class<?> packetClass)
-	{
+	
+	public static byte[] getClientPacketOpcode(Class<?> packetClass) {
 		byte[] opcode = ClientPackets.get(packetClass);
-		if (opcode == null)
-		{
+		if (opcode == null) {
 			Log.warning("There's no opcode for the client packet " + packetClass.getSimpleName());
 		}
-
+		
 		return opcode;
 	}
-
-	public static byte[] getServerPacketOpcode(Class<?> packetClass)
-	{
+	
+	public static byte[] getServerPacketOpcode(Class<?> packetClass) {
 		byte[] opcode = ServerPackets.get(packetClass);
-		if (opcode == null)
-		{
+		if (opcode == null) {
 			Log.warning("There's no opcode for the server packet " + packetClass.getSimpleName());
 		}
-
+		
 		return opcode;
 	}
 }

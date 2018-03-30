@@ -25,38 +25,33 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @version $Revision: 1.1.2.1.2.5 $ $Date: 2007/11/26 16:10:05 $
  */
-public class GMViewWarehouseWithdrawList extends L2ItemListPacket
-{
+public class GMViewWarehouseWithdrawList extends L2ItemListPacket {
 	private L2ItemInstance[] items;
 	private String playerName;
 	private L2PcInstance activeChar;
 	private long money;
-
-	public GMViewWarehouseWithdrawList(L2PcInstance cha)
-	{
+	
+	public GMViewWarehouseWithdrawList(L2PcInstance cha) {
 		activeChar = cha;
 		items = activeChar.getWarehouse().getItems();
 		playerName = activeChar.getName();
 		money = activeChar.getWarehouse().getAdena();
 	}
-
-	public GMViewWarehouseWithdrawList(L2Clan clan)
-	{
+	
+	public GMViewWarehouseWithdrawList(L2Clan clan) {
 		playerName = clan.getLeaderName();
 		items = clan.getWarehouse().getItems();
 		money = clan.getWarehouse().getAdena();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeS(playerName);
 		writeQ(money);
 		writeH(items.length);
 		writeD(0x00); // GoD ???
-
-		for (L2ItemInstance item : items)
-		{
+		
+		for (L2ItemInstance item : items) {
 			writeItem(item);
 		}
 	}

@@ -22,50 +22,42 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 
-public class CPRecovery implements IBypassHandler
-{
+public class CPRecovery implements IBypassHandler {
 	private static final String[] COMMANDS = {"CPRecovery"};
-
+	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null)
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+		if (target == null) {
 			return false;
 		}
-
+		
 		final L2Npc npc = target;
-
-		if (npc.getNpcId() != 31225 && npc.getNpcId() != 31226)
-		{
+		
+		if (npc.getNpcId() != 31225 && npc.getNpcId() != 31226) {
 			return false;
 		}
-
-		if (activeChar.isCursedWeaponEquipped())
-		{
+		
+		if (activeChar.isCursedWeaponEquipped()) {
 			activeChar.sendMessage("Go away, you're not welcome here.");
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return true;
 		}
-
-		if (!activeChar.reduceAdena("RestoreCP", 100, activeChar.getLastFolkNPC(), true))
-		{
+		
+		if (!activeChar.reduceAdena("RestoreCP", 100, activeChar.getLastFolkNPC(), true)) {
 			return false;
 		}
-
+		
 		L2Skill skill = SkillTable.getInstance().getInfo(4380, 1);
-		if (skill != null)
-		{
+		if (skill != null) {
 			npc.setTarget(activeChar);
 			npc.doCast(skill);
 		}
 		activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 		return true;
 	}
-
+	
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

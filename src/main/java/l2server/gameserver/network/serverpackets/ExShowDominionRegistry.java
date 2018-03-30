@@ -3,8 +3,7 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author MegaParzor!
  */
-public class ExShowDominionRegistry extends L2GameServerPacket
-{
+public class ExShowDominionRegistry extends L2GameServerPacket {
 	private int currentTime;
 	private String territoryOwner;
 	private String ownerAlliance;
@@ -14,9 +13,16 @@ public class ExShowDominionRegistry extends L2GameServerPacket
 	private int clanRequest;
 	private String ownerClan;
 	private int warTime;
-
-	public ExShowDominionRegistry(int currentTime, String territoryOwner, String ownerAlliance, int territoryCount, int territoryId, int mercRequest, int clanRequest, String ownerClan, int warTime)
-	{
+	
+	public ExShowDominionRegistry(int currentTime,
+	                              String territoryOwner,
+	                              String ownerAlliance,
+	                              int territoryCount,
+	                              int territoryId,
+	                              int mercRequest,
+	                              int clanRequest,
+	                              String ownerClan,
+	                              int warTime) {
 		this.currentTime = currentTime;
 		this.territoryOwner = territoryOwner;
 		this.ownerAlliance = ownerAlliance;
@@ -27,10 +33,9 @@ public class ExShowDominionRegistry extends L2GameServerPacket
 		this.ownerClan = ownerClan;
 		this.warTime = warTime;
 	}
-
+	
 	@Override
-	public void writeImpl()
-	{
+	public void writeImpl() {
 		writeD(currentTime);
 		writeS(territoryOwner);
 		writeS(ownerAlliance);

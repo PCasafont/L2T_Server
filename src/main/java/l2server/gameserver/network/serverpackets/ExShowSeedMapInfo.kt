@@ -15,8 +15,6 @@
 
 package l2server.gameserver.network.serverpackets
 
-import l2server.gameserver.instancemanager.GraciaSeedsManager
-
 /**
  * format: 0xfe cd(dddd)
  * FE - packet id

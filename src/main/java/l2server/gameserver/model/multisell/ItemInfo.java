@@ -21,8 +21,7 @@ import l2server.gameserver.model.L2ItemInstance;
 /**
  * @author DS
  */
-public class ItemInfo
-{
+public class ItemInfo {
 	private final int enchantLevel;
 	private int[] ensoulEffectIds;
 	private int[] ensoulSpecialEffectIds;
@@ -31,8 +30,7 @@ public class ItemInfo
 	private final int elementPower;
 	private final int[] elementals = new int[6];
 
-	public ItemInfo(L2ItemInstance item)
-	{
+	public ItemInfo(L2ItemInstance item) {
 		enchantLevel = item.getEnchantLevel();
 		ensoulEffectIds = item.getEnsoulEffectIds();
 		ensoulSpecialEffectIds = item.getEnsoulSpecialEffectIds();
@@ -47,38 +45,31 @@ public class ItemInfo
 		elementals[5] = item.getElementDefAttr(Elementals.DARK);
 	}
 
-	public final int getEnchantLevel()
-	{
+	public final int getEnchantLevel() {
 		return enchantLevel;
 	}
 
-	public int[] getEnsoulEffectIds()
-	{
+	public int[] getEnsoulEffectIds() {
 		return ensoulEffectIds;
 	}
 
-	public int[] getEnsoulSpecialEffectIds()
-	{
+	public int[] getEnsoulSpecialEffectIds() {
 		return ensoulSpecialEffectIds;
 	}
 
-	public final long getAugmentId()
-	{
+	public final long getAugmentId() {
 		return augmentId;
 	}
 
-	public final byte getElementId()
-	{
+	public final byte getElementId() {
 		return elementId;
 	}
 
-	public final int getElementPower()
-	{
+	public final int getElementPower() {
 		return elementPower;
 	}
 
-	public final int[] getElementals()
-	{
+	public final int[] getElementals() {
 		return elementals;
 	}
 }

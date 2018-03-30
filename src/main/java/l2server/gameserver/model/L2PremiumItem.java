@@ -18,36 +18,30 @@ package l2server.gameserver.model;
 /**
  * * @author Gnacik
  */
-public class L2PremiumItem
-{
+public class L2PremiumItem {
 	private int itemId;
 	private long count;
 	private String sender;
 
-	public L2PremiumItem(int itemid, long count, String sender)
-	{
+	public L2PremiumItem(int itemid, long count, String sender) {
 		this.itemId = itemid;
 		this.count = count;
 		this.sender = sender;
 	}
 
-	public void updateCount(long newcount)
-	{
+	public void updateCount(long newcount) {
 		count = newcount;
 	}
 
-	public int getItemId()
-	{
+	public int getItemId() {
 		return itemId;
 	}
 
-	public long getCount()
-	{
+	public long getCount() {
 		return count;
 	}
 
-	public String getSender()
-	{
+	public String getSender() {
 		return sender;
 	}
 }

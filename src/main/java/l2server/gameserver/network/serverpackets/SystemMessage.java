@@ -38,53 +38,44 @@ import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.logging.Level;
 
-public final class SystemMessage extends L2GameServerPacket
-{
-
+public final class SystemMessage extends L2GameServerPacket {
+	
 	private static final SMParam[] EMPTY_PARAM_ARRAY = new SMParam[0];
-
-	private static final class SMParam
-	{
+	
+	private static final class SMParam {
 		private final byte type;
 		private final Object value;
-
-		public SMParam(final byte type, final Object value)
-		{
+		
+		public SMParam(final byte type, final Object value) {
 			this.type = type;
 			this.value = value;
 		}
-
-		public final byte getType()
-		{
+		
+		public final byte getType() {
 			return type;
 		}
-
-		public final Object getValue()
-		{
+		
+		public final Object getValue() {
 			return value;
 		}
-
-		public final String getStringValue()
-		{
+		
+		public final String getStringValue() {
 			return (String) value;
 		}
-
-		public final int getIntValue()
-		{
+		
+		public final int getIntValue() {
 			return (Integer) value;
 		}
-
-		public final long getLongValue()
-		{
+		
+		public final long getLongValue() {
 			return (Long) value;
 		}
-
-		public final int[] getIntArrayValue()
-		{
+		
+		public final int[] getIntArrayValue() {
 			return (int[]) value;
 		}
 	}
-
+	
 	private static final byte TYPE_HP_CHANGE = 16;
 	// id 15 - unknown
 	// id 14 - unknown
@@ -102,87 +93,76 @@ public final class SystemMessage extends L2GameServerPacket
 	private static final byte TYPE_NPC_NAME = 2;
 	private static final byte TYPE_NUMBER = 1;
 	private static final byte TYPE_TEXT = 0;
-
-	public static SystemMessage sendString(final String text)
-	{
-		if (text == null)
-		{
+	
+	public static SystemMessage sendString(final String text) {
+		if (text == null) {
 			throw new NullPointerException();
 		}
-
+		
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1);
 		sm.addString(text);
 		return sm;
 	}
-
-	public static SystemMessage getSystemMessage(final SystemMessageId smId)
-	{
+	
+	public static SystemMessage getSystemMessage(final SystemMessageId smId) {
 		SystemMessage sm = smId.getStaticSystemMessage();
-		if (sm != null)
-		{
+		if (sm != null) {
 			return sm;
 		}
-
+		
 		sm = new SystemMessage(smId);
-		if (smId.getParamCount() == 0)
-		{
+		if (smId.getParamCount() == 0) {
 			smId.setStaticSystemMessage(sm);
 		}
-
+		
 		return sm;
 	}
-
+	
 	/**
 	 * Use {@link #getSystemMessage(SystemMessageId)} where possible instead
 	 *
 	 * @param id
 	 * @return
 	 */
-	public static SystemMessage getSystemMessage(int id)
-	{
+	public static SystemMessage getSystemMessage(int id) {
 		return getSystemMessage(SystemMessageId.getSystemMessageId(id));
 	}
-
+	
 	private final SystemMessageId smId;
 	private SMParam[] params;
 	private int paramIndex;
-
-	private SystemMessage(final SystemMessageId smId)
-	{
+	
+	private SystemMessage(final SystemMessageId smId) {
 		final int paramCount = smId.getParamCount();
 		this.smId = smId;
 		params = paramCount != 0 ? new SMParam[paramCount] : EMPTY_PARAM_ARRAY;
 	}
-
+	
 	/**
 	 * Use SystemMessage.getSystemMessage(SystemMessageId smId) where possible instead
 	 *
 	 * @deprecated
 	 */
 	@Deprecated
-	private SystemMessage(final int id)
-	{
+	private SystemMessage(final int id) {
 		this(SystemMessageId.getSystemMessageId(id));
 	}
-
-	private void append(final SMParam param)
-	{
-		if (paramIndex >= params.length)
-		{
+	
+	private void append(final SMParam param) {
+		if (paramIndex >= params.length) {
 			params = Arrays.copyOf(params, paramIndex + 1);
 			smId.setParamCount(paramIndex + 1);
 			Log.log(Level.INFO, "Wrong parameter count '" + (paramIndex + 1) + "' for SystemMessageId: " + smId);
 		}
-
+		
 		params[paramIndex++] = param;
 	}
-
-	public final SystemMessage addString(final String text)
-	{
+	
+	public final SystemMessage addString(final String text) {
 		append(new SMParam(TYPE_TEXT, text));
 		return this;
 	}
-
+	
 	/**
 	 * Castlename-e.dat<br>
 	 * 0-9 Castle names<br>
@@ -193,271 +173,221 @@ public final class SystemMessage extends L2GameServerPacket
 	 * @param number
 	 * @return
 	 */
-	public final SystemMessage addFortId(final int number)
-	{
+	public final SystemMessage addFortId(final int number) {
 		append(new SMParam(TYPE_CASTLE_NAME, number));
 		return this;
 	}
-
-	public final SystemMessage addNumber(final long number)
-	{
+	
+	public final SystemMessage addNumber(final long number) {
 		append(new SMParam(TYPE_ITEM_NUMBER, number));
 		return this;
 	}
-
-	public final SystemMessage addItemNumber(final long number)
-	{
+	
+	public final SystemMessage addItemNumber(final long number) {
 		append(new SMParam(TYPE_ITEM_NUMBER, number));
 		return this;
 	}
-
-	public final SystemMessage addCharName(final L2Character cha)
-	{
-		if (cha instanceof L2Npc)
-		{
-			if (((L2Npc) cha).getTemplate().ServerSideName)
-			{
+	
+	public final SystemMessage addCharName(final L2Character cha) {
+		if (cha instanceof L2Npc) {
+			if (((L2Npc) cha).getTemplate().ServerSideName) {
 				return addString(((L2Npc) cha).getTemplate().Name);
-			}
-			else
-			{
+			} else {
 				return addNpcName((L2Npc) cha);
 			}
-		}
-		else if (cha instanceof L2PcInstance)
-		{
+		} else if (cha instanceof L2PcInstance) {
 			return addPcName((L2PcInstance) cha);
-		}
-		else if (cha instanceof L2Summon)
-		{
-			if (((L2Summon) cha).getTemplate().ServerSideName)
-			{
+		} else if (cha instanceof L2Summon) {
+			if (((L2Summon) cha).getTemplate().ServerSideName) {
 				return addString(((L2Summon) cha).getTemplate().Name);
-			}
-			else
-			{
+			} else {
 				return addNpcName((L2Summon) cha);
 			}
 		}
 		return addString(cha.getName());
 	}
-
-	public final SystemMessage addPcName(final L2PcInstance pc)
-	{
+	
+	public final SystemMessage addPcName(final L2PcInstance pc) {
 		append(new SMParam(TYPE_PLAYER_NAME, pc.getAppearance().getVisibleName()));
 		return this;
 	}
-
-	public final SystemMessage addNpcName(final L2Npc npc)
-	{
+	
+	public final SystemMessage addNpcName(final L2Npc npc) {
 		return addNpcName(npc.getTemplate());
 	}
-
-	public final SystemMessage addNpcName(final L2Summon npc)
-	{
+	
+	public final SystemMessage addNpcName(final L2Summon npc) {
 		return addNpcName(npc.getNpcId());
 	}
-
-	public final SystemMessage addNpcName(final L2NpcTemplate template)
-	{
-		if (template.isCustom())
-		{
+	
+	public final SystemMessage addNpcName(final L2NpcTemplate template) {
+		if (template.isCustom()) {
 			return addString(template.Name);
 		}
 		return addNpcName(template.NpcId);
 	}
-
-	public final SystemMessage addNpcName(final int id)
-	{
+	
+	public final SystemMessage addNpcName(final int id) {
 		append(new SMParam(TYPE_NPC_NAME, 1000000 + id));
 		return this;
 	}
-
-	public final SystemMessage addItemName(final L2ItemInstance item)
-	{
+	
+	public final SystemMessage addItemName(final L2ItemInstance item) {
 		return addItemName(item.getItem().getItemId());
 	}
-
-	public final SystemMessage addItemName(final L2Item item)
-	{
+	
+	public final SystemMessage addItemName(final L2Item item) {
 		return addItemName(item.getItemId());
 	}
-
-	public final SystemMessage addItemName(final int id)
-	{
+	
+	public final SystemMessage addItemName(final int id) {
 		append(new SMParam(TYPE_ITEM_NAME, id));
 		return this;
 	}
-
-	public final SystemMessage addZoneName(final int x, final int y, final int z)
-	{
+	
+	public final SystemMessage addZoneName(final int x, final int y, final int z) {
 		append(new SMParam(TYPE_ZONE_NAME, new int[]{x, y, z}));
 		return this;
 	}
-
-	public final SystemMessage addSkillName(final L2Abnormal effect)
-	{
+	
+	public final SystemMessage addSkillName(final L2Abnormal effect) {
 		return addSkillName(effect.getSkill());
 	}
-
-	public final SystemMessage addSkillName(final L2Skill skill)
-	{
+	
+	public final SystemMessage addSkillName(final L2Skill skill) {
 		if (skill.getId() != skill.getDisplayId()) //custom skill -  need nameId or smth like this.
 		{
 			return addString(skill.getName());
 		}
 		return addSkillName(skill.getId(), skill.getLevelHash());
 	}
-
-	public final SystemMessage addSkillName(final int id)
-	{
+	
+	public final SystemMessage addSkillName(final int id) {
 		return addSkillName(id, 1);
 	}
-
-	public final SystemMessage addSkillName(final int id, final int lvl)
-	{
+	
+	public final SystemMessage addSkillName(final int id, final int lvl) {
 		append(new SMParam(TYPE_SKILL_NAME, new int[]{id, lvl}));
 		return this;
 	}
-
+	
 	/**
 	 * Elemental name - 0(Fire) ...
 	 *
 	 * @param type
 	 * @return
 	 */
-	public final SystemMessage addElemental(final int type)
-	{
+	public final SystemMessage addElemental(final int type) {
 		append(new SMParam(TYPE_ELEMENT_NAME, type));
 		return this;
 	}
-
+	
 	/**
 	 * ID from sysstring-e.dat
 	 *
 	 * @param type
 	 * @return
 	 */
-	public final SystemMessage addSystemString(final int type)
-	{
+	public final SystemMessage addSystemString(final int type) {
 		append(new SMParam(TYPE_SYSTEM_STRING, type));
 		return this;
 	}
-
+	
 	/**
 	 * Instance name from instantzonedata-e.dat
 	 *
 	 * @param type id of instance
 	 * @return
 	 */
-	public final SystemMessage addInstanceName(final int type)
-	{
+	public final SystemMessage addInstanceName(final int type) {
 		append(new SMParam(TYPE_INSTANCE_NAME, type));
 		return this;
 	}
-
-	public final SystemMessage addHpChange(final int charId, final int causerId, final int hpChange)
-	{
+	
+	public final SystemMessage addHpChange(final int charId, final int causerId, final int hpChange) {
 		append(new SMParam(TYPE_HP_CHANGE, new int[]{charId, causerId, hpChange}));
 		return this;
 	}
-
-	public final SystemMessageId getSystemMessageId()
-	{
+	
+	public final SystemMessageId getSystemMessageId() {
 		return smId;
 	}
-
-	public final SystemMessage getLocalizedMessage(final String lang)
-	{
-		if (smId == SystemMessageId.S1)
-		{
+	
+	public final SystemMessage getLocalizedMessage(final String lang) {
+		if (smId == SystemMessageId.S1) {
 			return this;
 		}
-
+		
 		final SMLocalisation sml = smId.getLocalisation(lang);
-		if (sml == null)
-		{
+		if (sml == null) {
 			return this;
 		}
-
+		
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1);
 		final Object[] params = new Object[paramIndex];
-
+		
 		SMParam param;
-		for (int i = 0; i < paramIndex; i++)
-		{
+		for (int i = 0; i < paramIndex; i++) {
 			param = this.params[i];
-
-			switch (param.getType())
-			{
+			
+			switch (param.getType()) {
 				case TYPE_TEXT:
-				case TYPE_PLAYER_NAME:
-				{
+				case TYPE_PLAYER_NAME: {
 					params[i] = param.getValue();
 					break;
 				}
-
-				case TYPE_ITEM_NUMBER:
-				{
+				
+				case TYPE_ITEM_NUMBER: {
 					params[i] = param.getValue();
 					break;
 				}
-
-				case TYPE_ITEM_NAME:
-				{
+				
+				case TYPE_ITEM_NAME: {
 					final L2Item item = ItemTable.getInstance().getTemplate(param.getIntValue());
 					params[i] = item == null ? "Unknown" : item.getName();
 					break;
 				}
-
-				case TYPE_CASTLE_NAME:
-				{
+				
+				case TYPE_CASTLE_NAME: {
 					final Castle castle = CastleManager.getInstance().getCastleById(param.getIntValue());
 					params[i] = castle == null ? "Unknown" : castle.getName();
 					break;
 				}
-
-				case TYPE_NUMBER:
-				{
+				
+				case TYPE_NUMBER: {
 					params[i] = param.getValue();
 					break;
 				}
-
-				case TYPE_NPC_NAME:
-				{
+				
+				case TYPE_NPC_NAME: {
 					final L2NpcTemplate template = NpcTable.getInstance().getTemplate(param.getIntValue());
 					params[i] = template == null ? "Unknown" : template.getName();
 					break;
 				}
-
-				case TYPE_ELEMENT_NAME:
-				{
+				
+				case TYPE_ELEMENT_NAME: {
 					params[i] = Elementals.getElementName((byte) param.getIntValue());
 					break;
 				}
-
-				case TYPE_SYSTEM_STRING:
-				{
+				
+				case TYPE_SYSTEM_STRING: {
 					params[i] = "SYS-S-" + param.getIntValue(); //super.writeD(param.getIntValue());
 					break;
 				}
-
-				case TYPE_INSTANCE_NAME:
-				{
+				
+				case TYPE_INSTANCE_NAME: {
 					params[i] = "INS-N-" + param.getIntValue(); //super.writeD(param.getIntValue());
 					break;
 				}
-
-				case TYPE_SKILL_NAME:
-				{
+				
+				case TYPE_SKILL_NAME: {
 					final int[] array = param.getIntArrayValue();
 					final L2Skill skill = SkillTable.getInstance().getInfo(array[0], array[1]);
 					params[i] = skill == null ? "Unknown" : skill.getName();
 					break;
 				}
-
-				case TYPE_ZONE_NAME:
-				{
+				
+				case TYPE_ZONE_NAME: {
 					final int[] array = param.getIntArrayValue();
 					//super.writeD(array[0]); // x
 					//super.writeD(array[1]); // y
@@ -467,61 +397,53 @@ public final class SystemMessage extends L2GameServerPacket
 				}
 			}
 		}
-
+		
 		sm.addString(sml.getLocalisation(params));
 		return sm;
 	}
-
-	public final void printMe(PrintStream out)
-	{
+	
+	public final void printMe(PrintStream out) {
 		out.println(0x62);
-
+		
 		out.println(smId.getId());
 		out.println(paramIndex);
-
+		
 		SMParam param;
-		for (int i = 0; i < paramIndex; i++)
-		{
+		for (int i = 0; i < paramIndex; i++) {
 			param = params[i];
 			out.println(param.getType());
-
-			switch (param.getType())
-			{
+			
+			switch (param.getType()) {
 				case TYPE_TEXT:
-				case TYPE_PLAYER_NAME:
-				{
+				case TYPE_PLAYER_NAME: {
 					out.println(param.getStringValue());
 					break;
 				}
-
-				case TYPE_ITEM_NUMBER:
-				{
+				
+				case TYPE_ITEM_NUMBER: {
 					out.println(param.getLongValue());
 					break;
 				}
-
+				
 				case TYPE_ITEM_NAME:
 				case TYPE_CASTLE_NAME:
 				case TYPE_NUMBER:
 				case TYPE_NPC_NAME:
 				case TYPE_ELEMENT_NAME:
 				case TYPE_SYSTEM_STRING:
-				case TYPE_INSTANCE_NAME:
-				{
+				case TYPE_INSTANCE_NAME: {
 					out.println(param.getIntValue());
 					break;
 				}
-
-				case TYPE_SKILL_NAME:
-				{
+				
+				case TYPE_SKILL_NAME: {
 					final int[] array = param.getIntArrayValue();
 					out.println(array[0]); // SkillId
 					out.println(array[1]); // SkillLevel
 					break;
 				}
-
-				case TYPE_ZONE_NAME:
-				{
+				
+				case TYPE_ZONE_NAME: {
 					final int[] array = param.getIntArrayValue();
 					out.println(array[0]); // x
 					out.println(array[1]); // y
@@ -531,65 +453,56 @@ public final class SystemMessage extends L2GameServerPacket
 			}
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeH(smId.getId());
 		writeC(paramIndex);
-
+		
 		SMParam param;
-		for (int i = 0; i < paramIndex; i++)
-		{
+		for (int i = 0; i < paramIndex; i++) {
 			param = params[i];
 			writeC(param.getType());
-
-			switch (param.getType())
-			{
+			
+			switch (param.getType()) {
 				case TYPE_TEXT:
-				case TYPE_PLAYER_NAME:
-				{
+				case TYPE_PLAYER_NAME: {
 					writeS(param.getStringValue());
 					break;
 				}
-
-				case TYPE_ITEM_NUMBER:
-				{
+				
+				case TYPE_ITEM_NUMBER: {
 					writeQ(param.getLongValue());
 					break;
 				}
-
+				
 				case TYPE_ITEM_NAME:
 				case TYPE_CASTLE_NAME:
 				case TYPE_NUMBER:
 				case TYPE_NPC_NAME:
 				case TYPE_ELEMENT_NAME:
 				case TYPE_SYSTEM_STRING:
-				case TYPE_INSTANCE_NAME:
-				{
+				case TYPE_INSTANCE_NAME: {
 					writeD(param.getIntValue());
 					break;
 				}
-
-				case TYPE_SKILL_NAME:
-				{
+				
+				case TYPE_SKILL_NAME: {
 					final int[] array = param.getIntArrayValue();
 					writeD(array[0]); // SkillId
 					writeH((short) array[1]); // SkillLevel
 					break;
 				}
-
-				case TYPE_ZONE_NAME:
-				{
+				
+				case TYPE_ZONE_NAME: {
 					final int[] array = param.getIntArrayValue();
 					writeD(array[0]); // x
 					writeD(array[1]); // y
 					writeD(array[2]); // z
 					break;
 				}
-
-				case TYPE_HP_CHANGE:
-				{
+				
+				case TYPE_HP_CHANGE: {
 					final int[] array = param.getIntArrayValue();
 					writeD(array[0]); // charId
 					writeD(array[1]); // causerId

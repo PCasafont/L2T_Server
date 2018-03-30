@@ -28,8 +28,7 @@ import l2server.log.Log;
  *
  * @version $Revision: 1.3.4.2 $ $Date: 2005/03/27 15:29:29 $
  */
-public final class SendBypassBuildCmd extends L2GameClientPacket
-{
+public final class SendBypassBuildCmd extends L2GameClientPacket {
 
 	public static final int GM_MESSAGE = 9;
 	public static final int ANNOUNCEMENT = 10;
@@ -37,21 +36,17 @@ public final class SendBypassBuildCmd extends L2GameClientPacket
 	private String command;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		command = readS();
-		if (command != null)
-		{
+		if (command != null) {
 			command = command.trim();
 		}
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
@@ -59,10 +54,8 @@ public final class SendBypassBuildCmd extends L2GameClientPacket
 
 		IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler(command);
 
-		if (ach == null)
-		{
-			if (activeChar.isGM())
-			{
+		if (ach == null) {
+			if (activeChar.isGM()) {
 				activeChar.sendMessage("The command " + command.substring(6) + " does not exists!");
 			}
 
@@ -70,18 +63,14 @@ public final class SendBypassBuildCmd extends L2GameClientPacket
 			return;
 		}
 
-		if (!AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel()))
-		{
+		if (!AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel())) {
 			activeChar.sendMessage("You don't have the access right to use this command!");
-			Log.warning("Character " + activeChar.getName() + " tryed to use admin command " + command +
-					", but have no access to it!");
+			Log.warning("Character " + activeChar.getName() + " tryed to use admin command " + command + ", but have no access to it!");
 			return;
 		}
 
-		if (Config.GMAUDIT)
-		{
-			GMAudit.auditGMAction(activeChar.getName(), command,
-					activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target");
+		if (Config.GMAUDIT) {
+			GMAudit.auditGMAction(activeChar.getName(), command, activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target");
 		}
 
 		ach.useAdminCommand("admin_" + command, activeChar);

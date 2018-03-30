@@ -13,21 +13,8 @@ import l2server.gameserver.events.Ranked2v2;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.handler.IVoicedCommandHandler;
 import l2server.gameserver.handler.VoicedCommandHandler;
-import l2server.gameserver.instancemanager.BossManager;
-import l2server.gameserver.instancemanager.CastleManager;
-import l2server.gameserver.instancemanager.CustomOfflineBuffersManager;
-import l2server.gameserver.instancemanager.CustomWorldAltars;
-import l2server.gameserver.instancemanager.GMEventManager;
-import l2server.gameserver.instancemanager.GrandBossManager;
-import l2server.gameserver.instancemanager.RaidBossPointsManager;
-import l2server.gameserver.instancemanager.SearchDropManager;
-import l2server.gameserver.instancemanager.TenkaiAuctionManager;
-import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2DropCategory;
-import l2server.gameserver.model.L2DropData;
-import l2server.gameserver.model.L2SiegeClan;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.instancemanager.*;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
@@ -50,23 +37,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.StringTokenizer;
 import java.util.logging.Level;
 
 /**
  * @author LasTravel
  */
-public class CustomCommunityBoard
-{
+public class CustomCommunityBoard {
 	private static String newsInfo = "";
 
 	// Other
@@ -74,103 +52,83 @@ public class CustomCommunityBoard
 	private static List<Object> raidIds = new ArrayList<>();
 	private static List<Object> bossIds = new ArrayList<>();
 
-	private class cmboard
-	{
+	private class cmboard {
 		private String postDate;
 		private String postTitle;
 		private String postUrl;
 
-		private String getDate()
-		{
+		private String getDate() {
 			long timestamp = Long.parseLong(postDate);
 			return new SimpleDateFormat("dd/MM/yyyy").format(new Date(timestamp * 1000));
 		}
 
-		private String getUrl()
-		{
+		private String getUrl() {
 			return postUrl;
 		}
 
-		private String getTitle()
-		{
-			if (postTitle.length() > 40)
-			{
+		private String getTitle() {
+			if (postTitle.length() > 40) {
 				postTitle = postTitle.substring(0, 40) + "...";
 			}
 			return postTitle.replace("&#33;", "!");
 		}
 
-		private cmboard(String date, String title, String postUrl)
-		{
+		private cmboard(String date, String title, String postUrl) {
 			postDate = date;
 			postTitle = title;
 			this.postUrl = postUrl;
 		}
 	}
 
-	private String getCustomNewsBoard()
-	{
-		if (newsInfo.isEmpty())
-		{
+	private String getCustomNewsBoard() {
+		if (newsInfo.isEmpty()) {
 			loadForumNews();
 		}
 
-		if (newsInfo.isEmpty())
-		{
+		if (newsInfo.isEmpty()) {
 			return "<html><body>%menu%<center><br><table width=610><tr><td width=610 align=center><font color=\"LEVEL\">Can't show this page at this moment.</font></td></tr></table></center></body></html>";
 		}
 
 		return newsInfo;
 	}
 
-	private void loadForumNews()
-	{
+	private void loadForumNews() {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement st = con.prepareStatement("SELECT * FROM " + Config.FORUM_DB_NAME +
 					".forums_topics WHERE forum_id = 4 AND pinned = 0 AND approved = 1 ORDER BY start_date DESC LIMIT 0, 70");
 			ResultSet rs = st.executeQuery();
-			while (rs.next())
-			{
+			while (rs.next()) {
 				String tid = String.valueOf(rs.getInt("tid"));
 				String titleSeo = rs.getString("title_seo");
 
-				PreparedStatement st2 =
-						con.prepareStatement("SELECT * FROM " + Config.FORUM_DB_NAME + ".forums_posts WHERE pid = ?");
+				PreparedStatement st2 = con.prepareStatement("SELECT * FROM " + Config.FORUM_DB_NAME + ".forums_posts WHERE pid = ?");
 				st2.setInt(1, rs.getInt("topic_firstpost"));
 
 				ResultSet rs2 = st2.executeQuery();
 				rs2.next();
 
-				String postUrl = "url http://www." + Config.FORUM_DB_NAME.replace("_board", "") +
-						".com/board/index.php?/topic/" + tid + "-" + titleSeo + "/";
-				cmboard_info.add(new cmboard(rs2.getString("post_date"), rs.getString("title").replace("&#39;", "'"),
-						postUrl));
+				String postUrl =
+						"url http://www." + Config.FORUM_DB_NAME.replace("_board", "") + ".com/board/index.php?/topic/" + tid + "-" + titleSeo + "/";
+				cmboard_info.add(new cmboard(rs2.getString("post_date"), rs.getString("title").replace("&#39;", "'"), postUrl));
 
 				rs2.close();
 				st2.close();
 			}
 			rs.close();
 			st.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 
 		buildCmPage();
 	}
 
-	private void buildCmPage()
-	{
-		if (cmboard_info.isEmpty())
-		{
+	private void buildCmPage() {
+		if (cmboard_info.isEmpty()) {
 			return;
 		}
 
@@ -182,26 +140,21 @@ public class CustomCommunityBoard
 
 		int count = 0;
 		int newsDone = 0;
-		for (cmboard info : cmboard_info)
-		{
-			if (count == 0)
-			{
+		for (cmboard info : cmboard_info) {
+			if (count == 0) {
 				htmltext += "<tr>";
 			}
 
-			htmltext += "<td><table width=375><tr><td><font color=\"LEVEL\"><a action=\"" + info.getUrl() + "\">" +
-					info.getTitle() + "</a></font> (" + info.getDate() + ")</td></tr></table></td>";
-			if (cmboard_info.size() > newsDone)
-			{
+			htmltext +=
+					"<td><table width=375><tr><td><font color=\"LEVEL\"><a action=\"" + info.getUrl() + "\">" + info.getTitle() + "</a></font> (" +
+							info.getDate() + ")</td></tr></table></td>";
+			if (cmboard_info.size() > newsDone) {
 				count++;
 				newsDone++;
-				if (count == 2)
-				{
+				if (count == 2) {
 					htmltext += "</tr>";
 					count = 0;
-				}
-				else if (cmboard_info.size() == newsDone)
-				{
+				} else if (cmboard_info.size() == newsDone) {
 					htmltext += "</tr>";
 				}
 			}
@@ -214,14 +167,12 @@ public class CustomCommunityBoard
 		cmboard_info.clear();
 	}
 
-	private String getCustomCastleInfoBoard()
-	{
+	private String getCustomCastleInfoBoard() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(
 				"<html><body>%menu%<br><center><table><tr><td><img src=icon.etc_alphabet_c_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_a_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_s_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_t_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_l_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_e_i00 width=32 height=32></td><td></td><td></td><td></td><td></td><td><img src=icon.etc_alphabet_i_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_n_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_f_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_o_i00 width=32 height=32></td></tr></table><br><br><br>");
 
-		for (Castle castle : CastleManager.getInstance().getCastles())
-		{
+		for (Castle castle : CastleManager.getInstance().getCastles()) {
 			L2Clan clan = ClanTable.getInstance().getClan(castle.getOwnerId());
 			List<L2SiegeClan> attackerClanList = castle.getSiege().getAttackerClans();
 			List<L2SiegeClan> defenderClanList = castle.getSiege().getDefenderClans();
@@ -229,19 +180,14 @@ public class CustomCommunityBoard
 			String tax = Integer.toString(castle.getTaxPercent());
 			String siegeDate = castle.getSiegeDate().getTime().toString().replace("2015", "");
 
-			sb.append("<table width=710 border=0 bgcolor=999999><tr><td align=center FIXWIDTH=710>" + castle.getName() +
-					"</td></tr></table>");
-			sb.append("<table width=710 height=160 border=0><tr><td><table><tr><td><img src=\"Crest.pledge_crest_" +
-					Config.SERVER_ID + "_" + castle.getCastleId() + "\" width=256 height=128></td></tr></table></td>");
+			sb.append("<table width=710 border=0 bgcolor=999999><tr><td align=center FIXWIDTH=710>" + castle.getName() + "</td></tr></table>");
+			sb.append("<table width=710 height=160 border=0><tr><td><table><tr><td><img src=\"Crest.pledge_crest_" + Config.SERVER_ID + "_" +
+					castle.getCastleId() + "\" width=256 height=128></td></tr></table></td>");
 			sb.append("<td FIXWIDTH=450><table width=450 border=0>");
-			if (clan != null)
-			{
+			if (clan != null) {
 				sb.append("<tr><td FIXWIDTH=110>Owner Clan:</td><td FIXWIDTH=360> " + clan.getName() + "</td></tr>");
-				sb.append("<tr><td FIXWIDTH=110>Clan Leader:</td><td FIXWIDTH=360> " + clan.getLeaderName() +
-						"</td></tr>");
-			}
-			else
-			{
+				sb.append("<tr><td FIXWIDTH=110>Clan Leader:</td><td FIXWIDTH=360> " + clan.getLeaderName() + "</td></tr>");
+			} else {
 				sb.append("<tr><td FIXWIDTH=110>Owner Clan:</td><td FIXWIDTH=360>NPC</td></tr>");
 			}
 			sb.append("<tr><td>Tax Rate:</td><td> " + tax + "%</td></tr>");
@@ -249,59 +195,44 @@ public class CustomCommunityBoard
 
 			// Defenders list part
 			int defenderListSize = defenderClanList.size();
-			if (defenderListSize > 0)
-			{
+			if (defenderListSize > 0) {
 				String defenderClans = "";
-				for (L2SiegeClan siegeClan : defenderClanList)
-				{
-					if (siegeClan == null)
-					{
+				for (L2SiegeClan siegeClan : defenderClanList) {
+					if (siegeClan == null) {
 						continue;
 					}
 
-					defenderClans += ClanTable.getInstance().getClan(siegeClan.getClanId()).getName() +
-							(defenderListSize > 1 ? ", " : "");
+					defenderClans += ClanTable.getInstance().getClan(siegeClan.getClanId()).getName() + (defenderListSize > 1 ? ", " : "");
 					defenderListSize--;
 				}
 				sb.append("<tr><td>Defenders:</td><td> " + defenderClans + "</td></tr>");
-			}
-			else
-			{
+			} else {
 				sb.append("<tr><td>Defenders:</td><td>NPC</td></tr>");
 			}
 
 			// Attacker list part
 			int attackerListSize = attackerClanList.size();
-			if (attackerListSize > 0)
-			{
+			if (attackerListSize > 0) {
 				String attackerClans = "";
-				for (L2SiegeClan siegeClan : attackerClanList)
-				{
-					if (siegeClan == null)
-					{
+				for (L2SiegeClan siegeClan : attackerClanList) {
+					if (siegeClan == null) {
 						continue;
 					}
 
-					attackerClans += ClanTable.getInstance().getClan(siegeClan.getClanId()).getName() +
-							(attackerListSize > 1 ? ", " : "");
+					attackerClans += ClanTable.getInstance().getClan(siegeClan.getClanId()).getName() + (attackerListSize > 1 ? ", " : "");
 					attackerListSize--;
 				}
 				sb.append("<tr><td>Attackers:</td><td>" + attackerClans + "</td></tr>");
-			}
-			else
-			{
+			} else {
 				sb.append("<tr><td>Attackers:</td><td>No Attackers</td></tr>");
 			}
 
 			sb.append("<tr><td>Tendency:</td><td>" + (castle.getTendency() == Castle.TENDENCY_DARKNESS ? "Darkness" :
 					castle.getTendency() == Castle.TENDENCY_LIGHT ? "Light" : "None") + "</td></tr>");
 
-			if (castle.getSiege() != null && castle.getSiege().getIsInProgress())
-			{
+			if (castle.getSiege() != null && castle.getSiege().getIsInProgress()) {
 				sb.append("<tr><td>Is under Siege:</td><td>Yes</td></tr>");
-			}
-			else
-			{
+			} else {
 				sb.append("<tr><td>Is under Siege:</td><td>No</td></tr>");
 			}
 
@@ -313,24 +244,17 @@ public class CustomCommunityBoard
 		return sb.toString();
 	}
 
-	public String createPages(int pageToShow, int maxPages, String url, String extraUrl)
-	{
+	public String createPages(int pageToShow, int maxPages, String url, String extraUrl) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("<table border=0 cellspacing=0 cellpadding=0 background=\"L2UI_CT1.Tab_DF_Tab_Selected\"><tr>");
 
-		for (int x = 0; x < maxPages; x++)
-		{
+		for (int x = 0; x < maxPages; x++) {
 			int pagenr = x + 1;
-			if (pageToShow == x)
-			{
-				sb.append("<td><button value=" + String.valueOf(pagenr) + " width=30 height=30 action=\"bypass " + url +
-						x + extraUrl +
+			if (pageToShow == x) {
+				sb.append("<td><button value=" + String.valueOf(pagenr) + " width=30 height=30 action=\"bypass " + url + x + extraUrl +
 						"\" fore=\"L2UI_CT1.Tab_DF_Tab_Selected\" back=\"L2UI_CT1.Tab_DF_Tab_Selected\"></td>");
-			}
-			else
-			{
-				sb.append("<td><button value=" + String.valueOf(pagenr) + " width=30 height=30 action=\"bypass " + url +
-						x + extraUrl +
+			} else {
+				sb.append("<td><button value=" + String.valueOf(pagenr) + " width=30 height=30 action=\"bypass " + url + x + extraUrl +
 						"\" fore=\"L2UI_CT1.Tab_DF_Tab_Unselected\" back=\"L2UI_CT1.Tab_DF_Tab_Selected\"></td>");
 			}
 		}
@@ -339,57 +263,45 @@ public class CustomCommunityBoard
 		return sb.toString();
 	}
 
-	private void loadRaidData()
-	{
+	private void loadRaidData() {
 		Map<Object, Long> raidIds = new HashMap<>();
-		for (L2RaidBossInstance raid : BossManager.getInstance().getBosses().values())
-		{
-			if (raid != null && raid.getSpawn().getRespawnDelay() >= 3600)
-			{
+		for (L2RaidBossInstance raid : BossManager.getInstance().getBosses().values()) {
+			if (raid != null && raid.getSpawn().getRespawnDelay() >= 3600) {
 				raidIds.put(raid.getNpcId(), (long) raid.getMaxHp() * (raid.getPDef(null) + raid.getMDef(null, null)));
 			}
 		}
 
 		raidIds = sortByValue(raidIds, false);
-        this.raidIds.addAll(raidIds.keySet());
+		this.raidIds.addAll(raidIds.keySet());
 		Map<Object, Long> bossIds = new HashMap<>();
 
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 
 			PreparedStatement stmt = con.prepareStatement("SELECT `boss_id` FROM `grandboss_data`");
 			ResultSet rset = stmt.executeQuery();
 
-			while (rset.next())
-			{
+			while (rset.next()) {
 				L2NpcTemplate boss = NpcTable.getInstance().getTemplate(rset.getInt("boss_id"));
-				if (boss != null)
-				{
-					bossIds.put(rset.getInt("boss_id"),
-							(long) NpcTable.getInstance().getTemplate(rset.getInt("boss_id")).Level);
+				if (boss != null) {
+					bossIds.put(rset.getInt("boss_id"), (long) NpcTable.getInstance().getTemplate(rset.getInt("boss_id")).Level);
 				}
 			}
 
 			rset.close();
 			stmt.close();
-		}
-		catch (SQLException e)
-		{
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 
 		bossIds = sortByValue(bossIds, true);
-        this.bossIds.addAll(bossIds.keySet());
+		this.bossIds.addAll(bossIds.keySet());
 	}
 
-	public String getCustomGrandBossInfo()
-	{
+	public String getCustomGrandBossInfo() {
 		StringBuilder sb = new StringBuilder();
 
 		sb.append(
@@ -405,74 +317,53 @@ public class CustomCommunityBoard
 		int spawnTime = 0;
 		int randomSpawnTime = 0;
 
-		for (Object id : bossIds)
-		{
+		for (Object id : bossIds) {
 			int bossId = (Integer) id;
-			if (bossId == 29054 || bossId == 29065)
-			{
+			if (bossId == 29054 || bossId == 29065) {
 				continue;
 			}
 
 			boss = NpcTable.getInstance().getTemplate(bossId);
-			if (boss == null)
-			{
+			if (boss == null) {
 				continue;
 			}
 
 			int status = GrandBossManager.getInstance().getBossStatus(bossId);
 			String bossStatus = "<font color=99FF00>Alive</font>";
 			StatsSet bossInfo = GrandBossManager.getInstance().getStatsSet(boss.NpcId);
-			if (bossInfo == null)
-			{
+			if (bossInfo == null) {
 				continue;
 			}
 
-			if (status == GrandBossManager.getInstance().FIGHTING)
-			{
+			if (status == GrandBossManager.getInstance().FIGHTING) {
 				bossStatus = "<font color=LEVEL>Under Attack</font>";
-			}
-			else if (status == GrandBossManager.getInstance().WAITING)
-			{
+			} else if (status == GrandBossManager.getInstance().WAITING) {
 				bossStatus = "<font color=00FF00>Waiting</font>";
-			}
-			else if (status == GrandBossManager.getInstance().DEAD)
-			{
+			} else if (status == GrandBossManager.getInstance().DEAD) {
 				long respawnTime = bossInfo.getLong("respawn_time");
 				int diff = (int) ((respawnTime - System.currentTimeMillis()) / 1000);
 				int days = diff / (3600 * 24);
 				double gradient = Math.min(diff / (24.0 * 3600), 1.0);
 				String remainingTime = "";
-				if (days > 0)
-				{
+				if (days > 0) {
 					remainingTime = "around " + days + " day";
-					if (days > 1)
-					{
+					if (days > 1) {
 						remainingTime += "s";
 					}
-				}
-				else
-				{
+				} else {
 					int hours = diff / 3600 % 24;
-					if (hours > 0)
-					{
+					if (hours > 0) {
 						remainingTime = "around " + hours + " hour";
-						if (hours > 1)
-						{
+						if (hours > 1) {
 							remainingTime += "s";
 						}
-					}
-					else if (diff % 3600 >= 20 * 60)
-					{
+					} else if (diff % 3600 >= 20 * 60) {
 						remainingTime = "less than 1 hour";
-					}
-					else
-					{
+					} else {
 						remainingTime = "less than 20 minutes";
 					}
 				}
-				String color =
-						String.format("%02x%02x%02x", (int) ((1 - gradient) * 0x80) + 0x7f, (int) (gradient * 0x80),
-								(int) (gradient * 0x80));
+				String color = String.format("%02x%02x%02x", (int) ((1 - gradient) * 0x80) + 0x7f, (int) (gradient * 0x80), (int) (gradient * 0x80));
 				bossStatus = "<font color=" + color + ">Respawns in " + remainingTime + "</font>";
 			}
 
@@ -482,20 +373,17 @@ public class CustomCommunityBoard
 			int spawnTimeDays = spawnTime / (3600000 * 24);
 			int spawnTimeHours = spawnTime / 3600000 % 24;
 			String spawnTime1 = spawnTimeDays + " day";
-			if (spawnTimeDays > 1)
-			{
+			if (spawnTimeDays > 1) {
 				spawnTime1 += "s";
 			}
-			if (spawnTimeHours > 0)
-			{
+			if (spawnTimeHours > 0) {
 				spawnTime1 += " and " + spawnTimeHours + " hours";
 			}
 
 			spawnTimeDays = (spawnTime + randomSpawnTime) / (3600000 * 24);
 			spawnTimeHours = (spawnTime + randomSpawnTime) / 3600000 % 24;
 			String spawnTime2 = spawnTimeDays + " days";
-			if (spawnTimeHours > 0)
-			{
+			if (spawnTimeHours > 0) {
 				spawnTime2 += " and " + spawnTimeHours + " hours";
 			}
 			String bossRespawn = spawnTime1 + ", up to " + spawnTime2;
@@ -504,26 +392,21 @@ public class CustomCommunityBoard
 			if (bossId == 25286) //Anakim
 			{
 				bossRespawn = "Tuesday (21:00) and Saturday (16:00)";
-			}
-			else if (bossId == 25283) //Lilith
+			} else if (bossId == 25283) //Lilith
 			{
 				bossRespawn = "Thursday (21:00) and Saturday (14:00)";
 			}
 
-			sb.append(
-					"<table border=0 cellspacing=0 cellpadding=2 width=750 height=17><tr><td FIXWIDTH=20>" + (pos + 1) +
-							"</td><td FIXWIDTH=50>" + boss.getName() + "</td><td FIXWIDTH=30>" + boss.Level +
-							"</td><td FIXWIDTH=150>" + bossRespawn + "</td><td FIXWIDTH=120>" + bossStatus +
-							"</td><td FIXWIDTH=20><button value=\" \" width=16 height=16 action=\"bypass _bbscustom;info;drop;" +
-							boss.NpcId +
-							";1\" fore=L2UI_CH3.aboutotpicon back=L2UI_CH3.aboutotpicon></td></tr></table>");
+			sb.append("<table border=0 cellspacing=0 cellpadding=2 width=750 height=17><tr><td FIXWIDTH=20>" + (pos + 1) + "</td><td FIXWIDTH=50>" +
+					boss.getName() + "</td><td FIXWIDTH=30>" + boss.Level + "</td><td FIXWIDTH=150>" + bossRespawn + "</td><td FIXWIDTH=120>" +
+					bossStatus + "</td><td FIXWIDTH=20><button value=\" \" width=16 height=16 action=\"bypass _bbscustom;info;drop;" + boss.NpcId +
+					";1\" fore=L2UI_CH3.aboutotpicon back=L2UI_CH3.aboutotpicon></td></tr></table>");
 			sb.append("<img src=\"L2UI.Squaregray\" width=740 height=1>");
 
 			pos++;
 		}
 
-		if (!Config.IS_CLASSIC)
-		{
+		if (!Config.IS_CLASSIC) {
 			sb.append(getCommunityPage("instanceIdGrandbosses")); //Temp
 		}
 
@@ -533,8 +416,7 @@ public class CustomCommunityBoard
 		return sb.toString();
 	}
 
-	public String getCustomRBInfo(int pageToShow, boolean isGM)
-	{
+	public String getCustomRBInfo(int pageToShow, boolean isGM) {
 		StringBuilder sb = new StringBuilder();
 		sb.append(
 				"<html><body>%menu%<br><center><table><tr><td><img src=\"icon.etc_alphabet_r_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_a_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_i_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_d_i00\" width=32 height=32></td><td></td><td></td><td></td><td></td><td><img src=\"icon.etc_alphabet_i_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_n_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_f_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_o_i00\" width=32 height=32></td></tr></table></center><br><br>");
@@ -542,18 +424,15 @@ public class CustomCommunityBoard
 		int maxBossesPerPage = 15;
 		int bossSize = raidIds.size();
 		int maxPages = bossSize / maxBossesPerPage;
-		if (bossSize > maxBossesPerPage * maxPages)
-		{
+		if (bossSize > maxBossesPerPage * maxPages) {
 			maxPages++;
 		}
-		if (pageToShow > maxPages)
-		{
+		if (pageToShow > maxPages) {
 			pageToShow = maxPages;
 		}
 		int pageStart = maxBossesPerPage * pageToShow;
 		int pageEnd = bossSize;
-		if (pageEnd - pageStart > maxBossesPerPage)
-		{
+		if (pageEnd - pageStart > maxBossesPerPage) {
 			pageEnd = pageStart + maxBossesPerPage;
 		}
 
@@ -565,11 +444,9 @@ public class CustomCommunityBoard
 		L2NpcTemplate npc = null; // Get the npc template
 		L2RaidBossInstance boss = null; // Get the current npc
 		Long respawn = null; // Just the respawn time
-		for (int i = pageStart; i < pageEnd; i++)
-		{
+		for (int i = pageStart; i < pageEnd; i++) {
 			npc = NpcTable.getInstance().getTemplate((Integer) raidIds.get(i));
-			if (npc == null)
-			{
+			if (npc == null) {
 				continue;
 			}
 
@@ -582,50 +459,39 @@ public class CustomCommunityBoard
 			respawn = boss.getSpawn().getNextRespawn();
 
 			String status = "<font color=99FF00>Alive</font>";
-			if (isInCombat)
-			{
+			if (isInCombat) {
 				status = "<font color=LEVEL>Under Attack</font>";
-			}
-			else if (boss.isDead())
-			{
+			} else if (boss.isDead()) {
 				int diff = (int) ((respawn - System.currentTimeMillis()) / 1000);
 				double gradient = Math.min(diff / (24.0 * 3600), 1.0);
 				String remainingTime = "";
 				int hours = diff / 3600;
-				if (hours > 0)
-				{
+				if (hours > 0) {
 					remainingTime = "around " + hours + " hour";
-					if (hours > 1)
-					{
+					if (hours > 1) {
 						remainingTime += "s";
 					}
-				}
-				else if (diff % 3600 >= 20 * 60)
-				{
+				} else if (diff % 3600 >= 20 * 60) {
 					remainingTime = "less than 1 hour";
-				}
-				else
-				{
+				} else {
 					remainingTime = "less than 20 minutes";
 				}
-				String color =
-						String.format("%02x%02x%02x", (int) ((1 - gradient) * 0x80) + 0x7f, (int) (gradient * 0x80),
-								(int) (gradient * 0x80));
+				String color = String.format("%02x%02x%02x", (int) ((1 - gradient) * 0x80) + 0x7f, (int) (gradient * 0x80), (int) (gradient * 0x80));
 				status = "<font color=" + color + ">Respawns in " + remainingTime + "</font>";
 			}
 			String bossIsAggro = isAggro ? "<font color=FF0000>*</font>" : "";
 			String nameString =
-					"<a action=\"" + (isGM ? "bypass -h admin_move_to " : "bypass _bbscustom;action;showRadar; ") + "" +
-							boss.getSpawn().getX() + " " + boss.getSpawn().getY() + " " + boss.getSpawn().getZ() +
-							"\">" + npc.getName() + "</a>";
+					"<a action=\"" + (isGM ? "bypass -h admin_move_to " : "bypass _bbscustom;action;showRadar; ") + "" + boss.getSpawn().getX() +
+							" " + boss.getSpawn().getY() + " " + boss.getSpawn().getZ() + "\">" + npc.getName() + "</a>";
 
-			sb.append("<table border=0 cellspacing=0 cellpadding=2 width=750 height=17><tr><td FIXWIDTH=20>" + (i + 1) +
-					"</td>" + "<td FIXWIDTH=140>" + nameString + bossIsAggro + "</td>" + "<td FIXWIDTH=40>" +
-					npc.Level + "</td>" + "<td FIXWIDTH=50>" + boss.getSpawn().getRespawnDelay() / 3600000 + "-" +
-					(boss.getSpawn().getRespawnDelay() + boss.getSpawn().getRandomRespawnDelay()) / 3600000 +
-					" Hours</td>" + "<td FIXWIDTH=120>" + status + "</td>" +
-					"<td FIXWIDTH=20><button value=\" \" width=16 height=16 action=\"bypass _bbscustom;info;drop;" +
-					npc.NpcId + ";1\" fore=L2UI_CH3.aboutotpicon back=L2UI_CH3.aboutotpicon></td>" + "</tr></table>");
+			sb.append(
+					"<table border=0 cellspacing=0 cellpadding=2 width=750 height=17><tr><td FIXWIDTH=20>" + (i + 1) + "</td>" + "<td FIXWIDTH=140>" +
+							nameString + bossIsAggro + "</td>" + "<td FIXWIDTH=40>" + npc.Level + "</td>" + "<td FIXWIDTH=50>" +
+							boss.getSpawn().getRespawnDelay() / 3600000 + "-" +
+							(boss.getSpawn().getRespawnDelay() + boss.getSpawn().getRandomRespawnDelay()) / 3600000 + " Hours</td>" +
+							"<td FIXWIDTH=120>" + status + "</td>" +
+							"<td FIXWIDTH=20><button value=\" \" width=16 height=16 action=\"bypass _bbscustom;info;drop;" + npc.NpcId +
+							";1\" fore=L2UI_CH3.aboutotpicon back=L2UI_CH3.aboutotpicon></td>" + "</tr></table>");
 			sb.append("<img src=\"L2UI.Squaregray\" width=740 height=1>");
 		}
 
@@ -635,41 +501,36 @@ public class CustomCommunityBoard
 		return sb.toString();
 	}
 
-	public void parseCmd(String command, L2PcInstance activeChar)
-	{
+	public void parseCmd(String command, L2PcInstance activeChar) {
 		StringTokenizer st = new StringTokenizer(command, ";");
 		st.nextToken();
 
 		String val = st.nextToken();
-		switch (val)
-		{
+		switch (val) {
 			case "action":
-				switch (String.valueOf(st.nextToken()))
-				{
-					case "gEvent":
-					{
+				switch (String.valueOf(st.nextToken())) {
+					case "gEvent": {
 						GMEventManager.getInstance().handleEventCommand(activeChar, command);
 						break;
 					}
-					case "ranked":
-					{
+					case "ranked": {
 						Ranked1v1.getInstance().handleEventCommand(activeChar, command);
 						break;
 					}
-					case "ranked2":
-					{
+					case "ranked2": {
 						Ranked2v2.getInstance().handleEventCommand(activeChar, command);
 						break;
 					}
 					case "showRadar":
-						activeChar.getRadar().addMarker(Integer.valueOf(command.split(" ")[1]),
-								Integer.valueOf(command.split(" ")[2]), Integer.valueOf(command.split(" ")[3]));
+						activeChar.getRadar()
+								.addMarker(Integer.valueOf(command.split(" ")[1]),
+										Integer.valueOf(command.split(" ")[2]),
+										Integer.valueOf(command.split(" ")[3]));
 						break;
 
 					case "trade":
 						L2PcInstance target = L2World.getInstance().getPlayer(st.nextToken());
-						if (target == null)
-						{
+						if (target == null) {
 							return;
 						}
 						activeChar.doInteract(target);
@@ -677,49 +538,35 @@ public class CustomCommunityBoard
 
 					case "searchDrop":
 						String itemName = "";
-						if (st.hasMoreTokens())
-						{
+						if (st.hasMoreTokens()) {
 							itemName = st.nextToken().trim();
-						}
-						else
-						{
+						} else {
 							break;
 						}
 
-						if (itemName.isEmpty())
-						{
+						if (itemName.isEmpty()) {
 							return;
 						}
 
 						boolean isSpoil = st.nextToken().trim().equalsIgnoreCase("spoil");
-						if (Util.isDigit(itemName))
-						{
+						if (Util.isDigit(itemName)) {
 							int page = 1;
-							if (st.hasMoreTokens())
-							{
+							if (st.hasMoreTokens()) {
 								page = Integer.valueOf(st.nextToken());
 							}
 							sendCommunityBoardPage(getCommunityPage("searchDrop").replace("%result%",
-									SearchDropManager.getInstance()
-											.getDrops(activeChar, Integer.valueOf(itemName), isSpoil, page)),
-									activeChar);
-						}
-						else
-						{
+									SearchDropManager.getInstance().getDrops(activeChar, Integer.valueOf(itemName), isSpoil, page)), activeChar);
+						} else {
 							sendCommunityBoardPage(getCommunityPage("searchDrop").replace("%result%",
-									SearchDropManager.getInstance()
-											.searchPossiblesResults(activeChar, itemName, isSpoil)), activeChar);
+									SearchDropManager.getInstance().searchPossiblesResults(activeChar, itemName, isSpoil)), activeChar);
 						}
 						break;
 
 					case "worldBuff":
-						switch (String.valueOf(st.nextToken()))
-						{
-							case "addCoin":
-							{
+						switch (String.valueOf(st.nextToken())) {
+							case "addCoin": {
 								String coin = "";
-								if (st.hasMoreTokens())
-								{
+								if (st.hasMoreTokens()) {
 									coin = st.nextToken().trim();
 								}
 
@@ -727,85 +574,67 @@ public class CustomCommunityBoard
 								break;
 							}
 
-							case "delCoin":
-							{
+							case "delCoin": {
 								CustomOfflineBuffersManager.getInstance().changeCurrencyId(activeChar, null);
 								break;
 							}
 
-							case "addBuff":
-							{
+							case "addBuff": {
 								int skillId = 0;
 								Long price = 0L;
-								if (st.hasMoreTokens())
-								{
+								if (st.hasMoreTokens()) {
 									skillId = Integer.valueOf(st.nextToken().trim());
 								}
-								if (st.hasMoreTokens())
-								{
+								if (st.hasMoreTokens()) {
 									price = Long.valueOf(st.nextToken().trim());
 								}
 
-								if (skillId != 0)
-								{
-									CustomOfflineBuffersManager.getInstance()
-											.addBuffToBuffer(activeChar, skillId, price);
+								if (skillId != 0) {
+									CustomOfflineBuffersManager.getInstance().addBuffToBuffer(activeChar, skillId, price);
 								}
 								break;
 							}
 
-							case "bufferInfo":
-							{
+							case "bufferInfo": {
 								int playerId = 0;
-								if (st.hasMoreTokens())
-								{
+								if (st.hasMoreTokens()) {
 									playerId = Integer.valueOf(st.nextToken());
 								}
-								if (playerId != 0)
-								{
-									CustomOfflineBuffersManager.getInstance()
-											.getSpecificBufferInfo(activeChar, playerId);
+								if (playerId != 0) {
+									CustomOfflineBuffersManager.getInstance().getSpecificBufferInfo(activeChar, playerId);
 								}
 								break;
 							}
 
-							case "getBuff":
-							{
+							case "getBuff": {
 								int playerId = 0;
 								int skillId = 0;
-								if (st.hasMoreTokens())
-								{
+								if (st.hasMoreTokens()) {
 									playerId = Integer.valueOf(st.nextToken());
 								}
-								if (st.hasMoreTokens())
-								{
+								if (st.hasMoreTokens()) {
 									skillId = Integer.valueOf(st.nextToken());
 								}
-								if (playerId != 0 && skillId != 0)
-								{
-									CustomOfflineBuffersManager.getInstance()
-											.getBuffFromBuffer(activeChar, playerId, skillId);
+								if (playerId != 0 && skillId != 0) {
+									CustomOfflineBuffersManager.getInstance().getBuffFromBuffer(activeChar, playerId, skillId);
 								}
 
 								break;
 							}
 							case "delBuff":
 								int skillId = 0;
-								if (st.hasMoreTokens())
-								{
+								if (st.hasMoreTokens()) {
 									skillId = Integer.valueOf(st.nextToken());
 								}
 
-								if (skillId != 0)
-								{
+								if (skillId != 0) {
 									CustomOfflineBuffersManager.getInstance().delBuffToBuffer(activeChar, skillId);
 								}
 								break;
 
 							case "addDesc":
 								String description = "";
-								if (st.hasMoreTokens())
-								{
+								if (st.hasMoreTokens()) {
 									description = st.nextToken();
 								}
 								CustomOfflineBuffersManager.getInstance().addDescription(activeChar, description);
@@ -824,10 +653,8 @@ public class CustomCommunityBoard
 					case "voice":
 						String voicedCommand = st.nextToken();
 
-						IVoicedCommandHandler handler =
-								VoicedCommandHandler.getInstance().getVoicedCommandHandler(voicedCommand);
-						if (handler == null)
-						{
+						IVoicedCommandHandler handler = VoicedCommandHandler.getInstance().getVoicedCommandHandler(voicedCommand);
+						if (handler == null) {
 							return;
 						}
 						handler.useVoicedCommand(voicedCommand, activeChar, voicedCommand);
@@ -840,26 +667,21 @@ public class CustomCommunityBoard
 						long bidAmount = 0;
 						String coin = "";
 
-						if (st.hasMoreTokens())
-						{
+						if (st.hasMoreTokens()) {
 							bidId = Integer.valueOf(st.nextToken());
 						}
-						if (st.hasMoreTokens())
-						{
+						if (st.hasMoreTokens()) {
 							String amount = st.nextToken().trim();
-							if (amount.isEmpty())
-							{
+							if (amount.isEmpty()) {
 								break;
 							}
 							bidAmount = Long.valueOf(amount);
 						}
-						if (st.hasMoreTokens())
-						{
+						if (st.hasMoreTokens()) {
 							coin = st.nextToken().trim();
 						}
 
-						if (bidId != 0 && bidAmount != 0)
-						{
+						if (bidId != 0 && bidAmount != 0) {
 							TenkaiAuctionManager.getInstance().tryToBid(activeChar, bidId, bidAmount, coin);
 						}
 						break;
@@ -883,26 +705,23 @@ public class CustomCommunityBoard
 				break;
 
 			case "worldAltars":
-				sendCommunityBoardPage(getCommunityPage("WorldAltars")
-								.replace("%altars%", CustomWorldAltars.getInstance().getAltarsInfo(activeChar.isGM())),
-						activeChar);
+				sendCommunityBoardPage(getCommunityPage("WorldAltars").replace("%altars%",
+						CustomWorldAltars.getInstance().getAltarsInfo(activeChar.isGM())), activeChar);
 				break;
 
 			case "gainak":
-				sendCommunityBoardPage(getCommunityPage("Gainak")
-						.replace("%gainak%", getGainakStatus(activeChar, Integer.valueOf(st.nextToken()))), activeChar);
+				sendCommunityBoardPage(getCommunityPage("Gainak").replace("%gainak%", getGainakStatus(activeChar, Integer.valueOf(st.nextToken()))),
+						activeChar);
 				break;
 
 			case "gmEvent":
 				sendCommunityBoardPage(getCommunityPage("GMEvent").replace("%info%",
-						GMEventManager.getInstance().getCustomEventPanel(activeChar, Integer.valueOf(st.nextToken()))),
-						activeChar);
+						GMEventManager.getInstance().getCustomEventPanel(activeChar, Integer.valueOf(st.nextToken()))), activeChar);
 				break;
 
 			case "worldBuffers":
 				sendCommunityBoardPage(getCommunityPage("WorldBuffers").replace("%buffers%",
-						CustomOfflineBuffersManager.getInstance()
-								.getOfflineBuffersPage(Integer.valueOf(st.nextToken()))), activeChar);
+						CustomOfflineBuffersManager.getInstance().getOfflineBuffersPage(Integer.valueOf(st.nextToken()))), activeChar);
 				break;
 
 			case "raids":
@@ -915,9 +734,7 @@ public class CustomCommunityBoard
 
 			case "itemAuction":
 				sendCommunityBoardPage(getCommunityPage("itemAuction").replace("%auctionInfo%",
-						TenkaiAuctionManager.getInstance()
-								.getAuctionInfo(activeChar.getObjectId(), Integer.valueOf(st.nextToken()))),
-						activeChar);
+						TenkaiAuctionManager.getInstance().getAuctionInfo(activeChar.getObjectId(), Integer.valueOf(st.nextToken()))), activeChar);
 				break;
 
 			case "searchDrop":
@@ -926,11 +743,9 @@ public class CustomCommunityBoard
 
 			case "info":
 				String toSend = st.nextToken();
-				switch (toSend)
-				{
+				switch (toSend) {
 					case "drop": // player, npcId, page
-						sendDropPage(activeChar, Integer.valueOf(st.nextToken()), Integer.valueOf(st.nextToken()),
-								null);
+						sendDropPage(activeChar, Integer.valueOf(st.nextToken()), Integer.valueOf(st.nextToken()), null);
 						break;
 
 					default:
@@ -950,21 +765,17 @@ public class CustomCommunityBoard
 			case "rankings":
 				String rankingType = st.nextToken();
 
-				sendCommunityBoardPage(
-						getCommunityPage("rankings").replaceFirst("%ranking%", getRankingInfo(rankingType, activeChar)),
-						activeChar);
+				sendCommunityBoardPage(getCommunityPage("rankings").replaceFirst("%ranking%", getRankingInfo(rankingType, activeChar)), activeChar);
 				break;
 
 			case "lottery":
 				sendNormalChatWindow(activeChar, "customLottery.htm");
 				break;
 			case "ranked":
-				sendCommunityBoardPage(
-						getCustomBuyPage(Integer.valueOf(st.nextToken()), Integer.valueOf(st.nextToken()), activeChar), activeChar);
+				sendCommunityBoardPage(getCustomBuyPage(Integer.valueOf(st.nextToken()), Integer.valueOf(st.nextToken()), activeChar), activeChar);
 				break;
 			case "buyPanel":
-				sendCommunityBoardPage(
-						getCustomBuyPage(Integer.valueOf(st.nextToken()), Integer.valueOf(st.nextToken())), activeChar);
+				sendCommunityBoardPage(getCustomBuyPage(Integer.valueOf(st.nextToken()), Integer.valueOf(st.nextToken())), activeChar);
 				break;
 
 			default:
@@ -973,28 +784,22 @@ public class CustomCommunityBoard
 		}
 	}
 
-	private String getGainakStatus(L2PcInstance pl, int pageToShow)
-	{
+	private String getGainakStatus(L2PcInstance pl, int pageToShow) {
 		StringBuilder sb = new StringBuilder();
 
 		//Easy way to check if it's in war mode...
 		L2SiegeZone gainakSiegeZone = ZoneManager.getInstance().getZone(15547, -114380, -240, L2SiegeZone.class);
 		L2PeaceZone gainakSafeZone = ZoneManager.getInstance().getZone(15547, -114380, -240, L2PeaceZone.class);
-		if (gainakSiegeZone != null)
-		{
-			sb.append("<table><tr><td><img src=\"Crest.pledge_crest_%serverId%_" +
-					(gainakSiegeZone.isActive() ? 51 : 50) + "\"  width=512 height=128></td></tr></table>");
+		if (gainakSiegeZone != null) {
+			sb.append("<table><tr><td><img src=\"Crest.pledge_crest_%serverId%_" + (gainakSiegeZone.isActive() ? 51 : 50) +
+					"\"  width=512 height=128></td></tr></table>");
 			sb.append("<br><br>");
 
-			if (gainakSiegeZone.isActive())
-			{
+			if (gainakSiegeZone.isActive()) {
 				List<L2PcInstance> gainakPlayers = gainakSiegeZone.getPlayersInside();
-				if (gainakSafeZone != null)
-				{
-					for (L2PcInstance zonePl : gainakSafeZone.getPlayersInside())
-					{
-						if (zonePl == null || gainakPlayers.contains(zonePl))
-						{
+				if (gainakSafeZone != null) {
+					for (L2PcInstance zonePl : gainakSafeZone.getPlayersInside()) {
+						if (zonePl == null || gainakPlayers.contains(zonePl)) {
 							continue;
 						}
 						gainakPlayers.add(zonePl);
@@ -1004,73 +809,57 @@ public class CustomCommunityBoard
 				int maxPlayersPerPage = 20;
 				int playersSize = gainakPlayers.size();
 				int maxPages = playersSize / maxPlayersPerPage;
-				if (playersSize > maxPlayersPerPage * maxPages)
-				{
+				if (playersSize > maxPlayersPerPage * maxPages) {
 					maxPages++;
 				}
-				if (pageToShow > maxPages)
-				{
+				if (pageToShow > maxPages) {
 					pageToShow = maxPages;
 				}
 				int pageStart = maxPlayersPerPage * pageToShow;
 				int pageEnd = playersSize;
-				if (pageEnd - pageStart > maxPlayersPerPage)
-				{
+				if (pageEnd - pageStart > maxPlayersPerPage) {
 					pageEnd = pageStart + maxPlayersPerPage;
 				}
 
-				if (maxPages > 1)
-				{
-					sb.append(
-							"<center>" + createPages(pageToShow, maxPages, "_bbscustom;gainak;", "") + "</center><br>");
+				if (maxPages > 1) {
+					sb.append("<center>" + createPages(pageToShow, maxPages, "_bbscustom;gainak;", "") + "</center><br>");
 				}
 				sb.append(
 						"<table width=600 bgcolor=999999><tr><td FIXWIDTH=100 align=center>Name</td><td FIXWIDTH=100 align=center>Clan</td><td FIXWIDTH=100 align=center>Ally</td></tr></table>");
 
-				for (int i = pageStart; i < pageEnd; i++)
-				{
+				for (int i = pageStart; i < pageEnd; i++) {
 					L2PcInstance player = gainakPlayers.get(i);
-					if (player == null || player.isGM())
-					{
+					if (player == null || player.isGM()) {
 						continue;
 					}
 
 					String color = ""; //no color by default
 					String clanName = "";
 					String allyName = "";
-					if (player.getClan() != null)
-					{
-						if (player.getClan() == pl.getClan())
-						{
+					if (player.getClan() != null) {
+						if (player.getClan() == pl.getClan()) {
 							color = "<font color=LEVEL>";
 						}
 
 						clanName = player.getClan().getName();
-						if (player.getClan().getAllyId() != 0)
-						{
+						if (player.getClan().getAllyId() != 0) {
 							allyName = player.getClan().getAllyName();
 						}
 					}
 					sb.append("" + color + "<table width=600><tr><td FIXWIDTH=100 align=center> " + player.getName() +
-							" </td><td FIXWIDTH=100 align=center>" + clanName + "</td><td FIXWIDTH=100 align=center>" +
-							allyName + "</td></tr></table>" + (color.length() > 0 ? "</font>" : color) + "");
-					sb.append(
-							"<table width=600><tr><td><img src=\"L2UI.Squaregray\" width=600 height=1></td></tr></table>");
+							" </td><td FIXWIDTH=100 align=center>" + clanName + "</td><td FIXWIDTH=100 align=center>" + allyName +
+							"</td></tr></table>" + (color.length() > 0 ? "</font>" : color) + "");
+					sb.append("<table width=600><tr><td><img src=\"L2UI.Squaregray\" width=600 height=1></td></tr></table>");
 				}
-			}
-			else
-			{
-				sb.append(
-						"<table width=600><tr><td align=center><font color=LEVEL>Gainak is in peace!</font></td></tr></table>");
+			} else {
+				sb.append("<table width=600><tr><td align=center><font color=LEVEL>Gainak is in peace!</font></td></tr></table>");
 			}
 		}
 		return sb.toString();
 	}
 
-	public void sendDropPage(L2PcInstance pl, int npcId, int page, L2Npc npc)
-	{
-		if (pl == null)
-		{
+	public void sendDropPage(L2PcInstance pl, int npcId, int page, L2Npc npc) {
+		if (pl == null) {
 			return;
 		}
 
@@ -1079,38 +868,31 @@ public class CustomCommunityBoard
 		//- There are other cases where the players can detect the fake raids checking the drops with deck, on that cases we will change it for the real raid id
 
 		//Execution Grounds Watchman Guillotine
-		if (npcId == 25888 || npcId == 25885)
-		{
+		if (npcId == 25888 || npcId == 25885) {
 			npcId = 25892;
 		}
 
 		//Beleth Clones
-		if (npcId == 29119)
-		{
+		if (npcId == 29119) {
 			npcId = 29118;
 		}
-		if (npcId == 80217)
-		{
+		if (npcId == 80217) {
 			npcId = 80216;
 		}
 
 		//Spezions Clones
-		if (npcId == 25868)
-		{
+		if (npcId == 25868) {
 			npcId = 25867;
 		}
 
 		L2NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
-		if (template == null)
-		{
+		if (template == null) {
 			return;
 		}
 
 		DecimalFormat chanceFormat = new DecimalFormat("#.###");
 
-		String replyMSG =
-				"<html>" + (template.getName().length() > 0 ? "<title>" + template.getName() + "</title>" : "") +
-						"<body>";
+		String replyMSG = "<html>" + (template.getName().length() > 0 ? "<title>" + template.getName() + "</title>" : "") + "<body>";
 
 		int myPage = 1;
 		int i = 0;
@@ -1120,84 +902,64 @@ public class CustomCommunityBoard
 		Map<L2DropData, Float> drops = new HashMap<>();
 		Map<L2DropData, Float> spoilDrops = new HashMap<>();
 
-		if (template.getMultiDropData() != null)
-		{
-			for (L2DropCategory catDrop : template.getMultiDropData())
-			{
-				if (catDrop == null)
-				{
+		if (template.getMultiDropData() != null) {
+			for (L2DropCategory catDrop : template.getMultiDropData()) {
+				if (catDrop == null) {
 					continue;
 				}
 
-				if (catDrop.getAllDrops() != null)
-				{
-					for (L2DropData drop : catDrop.getAllDrops())
-					{
+				if (catDrop.getAllDrops() != null) {
+					for (L2DropData drop : catDrop.getAllDrops()) {
 						drops.put(drop, catDrop.getChance());
 					}
 				}
 			}
 		}
 
-		if (template.getDropData() != null)
-		{
-			for (L2DropData drop : template.getDropData())
-			{
+		if (template.getDropData() != null) {
+			for (L2DropData drop : template.getDropData()) {
 				drops.put(drop, 100.0f);
 			}
 		}
 
-		if (template.getSpoilData() != null)
-		{
-			for (L2DropData drop : template.getSpoilData())
-			{
+		if (template.getSpoilData() != null) {
+			for (L2DropData drop : template.getSpoilData()) {
 				spoilDrops.put(drop, 100.0f);
 			}
 		}
 
-		if (!drops.isEmpty())
-		{
+		if (!drops.isEmpty()) {
 			replyMSG += "<center><font color=LEVEL>General drops:</font></center>";
 		}
 
-		for (Entry<L2DropData, Float> drop : drops.entrySet())
-		{
-			if (shown == 20)
-			{
+		for (Entry<L2DropData, Float> drop : drops.entrySet()) {
+			if (shown == 20) {
 				hasMore = true;
 				break;
 			}
 
-			if (myPage != page)
-			{
+			if (myPage != page) {
 				i++;
-				if (i == 20)
-				{
+				if (i == 20) {
 					myPage++;
 					i = 0;
 				}
 				continue;
 			}
 
-			DropChances chances = NpcTable.getInstance()
-					.calculateRewardChances(template, pl, drop.getKey(), drop.getValue(), 0, false, npc);
+			DropChances chances = NpcTable.getInstance().calculateRewardChances(template, pl, drop.getKey(), drop.getValue(), 0, false, npc);
 
-			replyMSG += "<table><tr><td width=40><img src=\"" + chances.icon +
-					"\" width=32 height=32></td><td width=220><table><tr><td width=220>" + chances.itemName;
-			if (chances.max > 1)
-			{
-				if (chances.min == chances.max)
-				{
+			replyMSG += "<table><tr><td width=40><img src=\"" + chances.icon + "\" width=32 height=32></td><td width=220><table><tr><td width=220>" +
+					chances.itemName;
+			if (chances.max > 1) {
+				if (chances.min == chances.max) {
 					replyMSG += " (" + chances.min + ")";
-				}
-				else
-				{
+				} else {
 					replyMSG += " (" + chances.min + "-" + chances.max + ")";
 				}
 			}
 			replyMSG += "</td></tr>";
-			if (chances.chance < 100.0)
-			{
+			if (chances.chance < 100.0) {
 				replyMSG += "<tr><td width=220>Chance: " + chanceFormat.format(chances.chance) + "%</td></tr>";
 			}
 			replyMSG += "</table></td></tr></table>";
@@ -1206,47 +968,37 @@ public class CustomCommunityBoard
 			shown++;
 		}
 
-		if (!spoilDrops.isEmpty())
-		{
+		if (!spoilDrops.isEmpty()) {
 			replyMSG += "<br><br><center><font color=LEVEL>Spoil drops:</font></center>";
-			for (Entry<L2DropData, Float> drop : spoilDrops.entrySet())
-			{
-				if (shown == 20)
-				{
+			for (Entry<L2DropData, Float> drop : spoilDrops.entrySet()) {
+				if (shown == 20) {
 					hasMore = true;
 					break;
 				}
 
-				if (myPage != page)
-				{
+				if (myPage != page) {
 					i++;
-					if (i == 20)
-					{
+					if (i == 20) {
 						myPage++;
 						i = 0;
 					}
 					continue;
 				}
 
-				DropChances chances = NpcTable.getInstance()
-						.calculateRewardChances(template, pl, drop.getKey(), drop.getValue(), 0, true, npc);
+				DropChances chances = NpcTable.getInstance().calculateRewardChances(template, pl, drop.getKey(), drop.getValue(), 0, true, npc);
 
-				replyMSG += "<table><tr><td width=40><img src=\"" + chances.icon +
-						"\" width=32 height=32></td><td width=220><table><tr><td width=220>" + chances.itemName;
-				if (chances.max > 1)
-				{
-					if (chances.min == chances.max)
-					{
+				replyMSG +=
+						"<table><tr><td width=40><img src=\"" + chances.icon + "\" width=32 height=32></td><td width=220><table><tr><td width=220>" +
+								chances.itemName;
+				if (chances.max > 1) {
+					if (chances.min == chances.max) {
 						replyMSG += " (" + chances.min + ")";
-					}
-					else
-					{
+					} else {
 						replyMSG += " (" + chances.min + "-" + chances.max + ")";
 					}
 				}
 				replyMSG += "</td></tr>";
-				if (chances.chance < 100.0)
-				{
+				if (chances.chance < 100.0) {
 					replyMSG += "<tr><td width=220>Chance: " + chanceFormat.format(chances.chance) + "%</td></tr>";
 				}
 				replyMSG += "</table></td></tr></table>";
@@ -1258,25 +1010,20 @@ public class CustomCommunityBoard
 
 		replyMSG += "<br><center><table width=250><tr>";
 
-		if (page > 1)
-		{
-			replyMSG += "<td width=120><a action=\"bypass _bbscustom;info;drop;" + npcId + ";" + (page - 1) +
-					"\">Prev Page</a></td>";
+		if (page > 1) {
+			replyMSG += "<td width=120><a action=\"bypass _bbscustom;info;drop;" + npcId + ";" + (page - 1) + "\">Prev Page</a></td>";
 
-			if (!hasMore)
-			{
+			if (!hasMore) {
 				replyMSG += "<td width=100>Page " + page + "</td><td width=70></td>";
 			}
 		}
-		if (hasMore)
-		{
-			if (page <= 1)
-			{
+		if (hasMore) {
+			if (page <= 1) {
 				replyMSG += "<td width=120></td>";
 			}
 
-			replyMSG += "<td width=100>Page " + page + "</td><td width=70><a action=\"bypass _bbscustom;info;drop;" +
-					npcId + ";" + (page + 1) + "\">Next Page</a></td>";
+			replyMSG += "<td width=100>Page " + page + "</td><td width=70><a action=\"bypass _bbscustom;info;drop;" + npcId + ";" + (page + 1) +
+					"\">Next Page</a></td>";
 		}
 
 		replyMSG += "</tr></table></center>";
@@ -1286,8 +1033,7 @@ public class CustomCommunityBoard
 		pl.sendPacket(new NpcHtmlMessage(0, replyMSG));
 	}
 
-	private String getCustomPlayerPanelInfo(L2PcInstance pl)
-	{
+	private String getCustomPlayerPanelInfo(L2PcInstance pl) {
 		String a = getCommunityPage("playerPanel");
 		String isNoExp = pl.isNoExp() ? "Disable" : "Enable";
 		String isRefusingBuffs = pl.isRefusingBuffs() ? "Disable" : "Enable";
@@ -1300,120 +1046,100 @@ public class CustomCommunityBoard
 		String isArmorGlowDisabled = pl.getIsArmorGlowDisabled() ? "Disable" : "Enable";
 		String isNickNameWingsDisabled = pl.isNickNameWingsDisabled() ? "Disable" : "Enable";
 
-		a = a.replace("%refuseXp%", "<button value=" + isNoExp +
-				" width=90 height=24 action=\"bypass _bbscustom;action;voice;noexp\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
-		a = a.replace("%blockrequests%", "<button value=" + isRefusingRequests +
-				" width=90 height=24 action=\"bypass_bbscustom;action;voice;blockrequests;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
-		a = a.replace("%refuseBuffs%", "<button value=" + isRefusingBuffs +
-				" width=90 height=24 action=\"bypass_bbscustom;action;voice;refusebuff;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
-		a = a.replace("%blockpms%", "<button value=" + isRefusalPms +
-				" width=90 height=24 action=\"bypass_bbscustom;action;voice;blockpms;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
-		a = a.replace("%refuseKillInfo%", "<button value=" + isRefusalKillInfo +
-				" width=90 height=24 action=\"bypass_bbscustom;action;voice;refusekillinfo;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
-		a = a.replace("%landRates%", "<button value=" + isLandRates +
-				" width=90 height=24 action=\"bypass_bbscustom;action;voice;landrates;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
-		a = a.replace("%stabs%", "<button value=" + isStabs +
-				" width=90 height=24 action=\"bypass_bbscustom;action;voice;stabs;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
-		a = a.replace("%disableWeaponGlow%", "<button value=" + isWeaponGlowDisabled +
-				" width=90 height=24 action=\"bypass _bbscustom;action;voice;disableweaponglow\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
-		a = a.replace("%disableArmorGlow%", "<button value=" + isArmorGlowDisabled +
-				" width=90 height=24 action=\"bypass _bbscustom;action;voice;disablearmorglow\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
-		a = a.replace("%disableWings%", "<button value=" + isNickNameWingsDisabled +
-				" width=90 height=24 action=\"bypass _bbscustom;action;voice;disablenicknamewings\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
+		a = a.replace("%refuseXp%",
+				"<button value=" + isNoExp +
+						" width=90 height=24 action=\"bypass _bbscustom;action;voice;noexp\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
+		a = a.replace("%blockrequests%",
+				"<button value=" + isRefusingRequests +
+						" width=90 height=24 action=\"bypass_bbscustom;action;voice;blockrequests;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
+		a = a.replace("%refuseBuffs%",
+				"<button value=" + isRefusingBuffs +
+						" width=90 height=24 action=\"bypass_bbscustom;action;voice;refusebuff;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
+		a = a.replace("%blockpms%",
+				"<button value=" + isRefusalPms +
+						" width=90 height=24 action=\"bypass_bbscustom;action;voice;blockpms;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
+		a = a.replace("%refuseKillInfo%",
+				"<button value=" + isRefusalKillInfo +
+						" width=90 height=24 action=\"bypass_bbscustom;action;voice;refusekillinfo;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
+		a = a.replace("%landRates%",
+				"<button value=" + isLandRates +
+						" width=90 height=24 action=\"bypass_bbscustom;action;voice;landrates;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
+		a = a.replace("%stabs%",
+				"<button value=" + isStabs +
+						" width=90 height=24 action=\"bypass_bbscustom;action;voice;stabs;\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
+		a = a.replace("%disableWeaponGlow%",
+				"<button value=" + isWeaponGlowDisabled +
+						" width=90 height=24 action=\"bypass _bbscustom;action;voice;disableweaponglow\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
+		a = a.replace("%disableArmorGlow%",
+				"<button value=" + isArmorGlowDisabled +
+						" width=90 height=24 action=\"bypass _bbscustom;action;voice;disablearmorglow\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
+		a = a.replace("%disableWings%",
+				"<button value=" + isNickNameWingsDisabled +
+						" width=90 height=24 action=\"bypass _bbscustom;action;voice;disablenicknamewings\" fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over>");
 		return a;
 	}
 
-	public int getRankedPoints(L2PcInstance player)
-	{
+	public int getRankedPoints(L2PcInstance player) {
 		Connection get = null;
 
-		try
-		{
+		try {
 			get = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = get.prepareStatement(
-					"SELECT rankedPoints FROM characters WHERE charId = ?");
+			PreparedStatement statement = get.prepareStatement("SELECT rankedPoints FROM characters WHERE charId = ?");
 			statement.setInt(1, player.getObjectId());
 			ResultSet rset = statement.executeQuery();
 
-			if (rset.next())
-			{
+			if (rset.next()) {
 				int currentPoints = rset.getInt("rankedPoints");
 				return (currentPoints);
 			}
 			rset.close();
 			statement.close();
-		}
-
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(get);
 		}
 		return 0;
 	}
 
-
-	private String getCustomBuyPage(int pageToShow, int type, L2PcInstance player)
-	{
+	private String getCustomBuyPage(int pageToShow, int type, L2PcInstance player) {
 
 		StringBuilder sb = new StringBuilder();
 
-
-						sb.append(
-								"<html><body>%menu%<br><center>");
+		sb.append("<html><body>%menu%<br><center>");
 		sb.append("<img src=\"Crest.pledge_crest_%serverId%_20016\" width=500 height=128>");
-
 
 		int points = getRankedPoints(player);
 
 		sb.append("<center>");
 
-
 		sb.append("<table><tr>");
 
-
-		sb.append("<td><button value=\"Appearances Stones\" width=120 height=32  fore=\"L2UI_CT1.Button_DF_Calculator\"" +	 //App
+		sb.append("<td><button value=\"Appearances Stones\" width=120 height=32  fore=\"L2UI_CT1.Button_DF_Calculator\"" +     //App
 				" back=\"L2UI_CT1.Button_DF_Calculator_Over\" action=\"bypass -h multisell pvp_app_shop\" ></td>");
-		sb.append("<td><button value=\"Fragments\" width=120 height=32  fore=\"L2UI_CT1.Button_DF_Calculator\"" +			//Frags
+		sb.append("<td><button value=\"Fragments\" width=120 height=32  fore=\"L2UI_CT1.Button_DF_Calculator\"" +            //Frags
 				" back=\"L2UI_CT1.Button_DF_Calculator_Over\" action=\"bypass -h npc_40001_multisell pvp_frag_shop\" ></td>");
-		sb.append("<td><button value=\"Crafted Jewels\" width=120 height=32  fore=\"L2UI_CT1.Button_DF_Calculator\"" +		//Crafted Jewels
+		sb.append("<td><button value=\"Crafted Jewels\" width=120 height=32  fore=\"L2UI_CT1.Button_DF_Calculator\"" +        //Crafted Jewels
 				" back=\"L2UI_CT1.Button_DF_Calculator_Over\" action=\"bypass -h npc_50014_multisell pvp_crafted_shop\" ></td>");
-		sb.append("<td><button value=\"Runes\" width=120 height=32  fore=\"L2UI_CT1.Button_DF_Calculator\"" +				//Runes
-				" back=\"L2UI_CT1.Button_DF_Calculator_Over\" action=\"bypass -h npc_" + player.getObjectId() +
-				"_multisell pvp_runes_shop\" ></td>");
-		sb.append("<td><button value=\"Other\" width=120 height=32  fore=\"L2UI_CT1.Button_DF_Calculator\"" +				//Others
-				" back=\"L2UI_CT1.Button_DF_Calculator_Over\" action=\"bypass -h npc_" + player.getObjectId() +
-				"_multisell pvp_other_shop\" ></td>");
+		sb.append("<td><button value=\"Runes\" width=120 height=32  fore=\"L2UI_CT1.Button_DF_Calculator\"" +                //Runes
+				" back=\"L2UI_CT1.Button_DF_Calculator_Over\" action=\"bypass -h npc_" + player.getObjectId() + "_multisell pvp_runes_shop\" ></td>");
+		sb.append("<td><button value=\"Other\" width=120 height=32  fore=\"L2UI_CT1.Button_DF_Calculator\"" +                //Others
+				" back=\"L2UI_CT1.Button_DF_Calculator_Over\" action=\"bypass -h npc_" + player.getObjectId() + "_multisell pvp_other_shop\" ></td>");
 		sb.append("</tr></table</center><br><br>");
 
+		sb.append("<center><table width=30% bgcolor=999999><tr>" + "<td FIXWIDTH=50>Name</td>" + "<td FIXWIDTH=30>Points</td>" + "</tr></table>");
 
-
-		sb.append("<center><table width=30% bgcolor=999999><tr>" +
-				"<td FIXWIDTH=50>Name</td>" +
-				"<td FIXWIDTH=30>Points</td>" +
-				"</tr></table>");
-
-		sb.append("<table width=30% ><tr>" +
-				"<td FIXWIDTH=50>" + player.getName() + "</td>" +
-				"<td FIXWIDTH=30>" + points + "</td>" +
+		sb.append("<table width=30% ><tr>" + "<td FIXWIDTH=50>" + player.getName() + "</td>" + "<td FIXWIDTH=30>" + points + "</td>" +
 				"</tr></table></center><br>");
 
-
-
 		//PVP
-
 
 		sb.append("<table width=100% bgcolor=999999><tr>");
 		sb.append("<td align=right>1v1</td>");
 		sb.append("<td align=right>Restrictions : Items</td>");
 		sb.append("<td align=right>Players in  queue : " + Ranked1v1.players.size() + "</td>");
 
-		if (player.isGM())
-		{
-
+		if (player.isGM()) {
 
 			sb.append("<td align=right><button value=\"Clear\" width=100 height=24 action=\"bypass _bbscustom;action;ranked;clear;\" " +
 					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
@@ -1422,13 +1148,10 @@ public class CustomCommunityBoard
 					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
 		}
 
-		if (Ranked1v1.players.contains(player))
-		{
+		if (Ranked1v1.players.contains(player)) {
 			sb.append("<td align=right><button value=\"Unregister\" width=100 height=24 action=\"bypass _bbscustom;action;ranked;unregister;\" " +
 					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
-		}
-		else
-		{
+		} else {
 			sb.append("<td align=right><button value=\"Register\" width=100 height=24 action=\"bypass _bbscustom;action;ranked;register;\" " +
 					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
 		}
@@ -1439,18 +1162,18 @@ public class CustomCommunityBoard
 		int maxToDisplay = 6;
 		sb.append("<td>  In queue : </td>");
 		int i = 0;
-		for (L2PcInstance registered : Ranked1v1.players)
-		{
-			if (registered == null)
-			{
+		for (L2PcInstance registered : Ranked1v1.players) {
+			if (registered == null) {
 				continue;
 			}
-			if (i < maxToDisplay)
-			sb.append("<td align=left>" + registered.getName() + " (" + getRankedPoints(registered) + ") </td>");
+			if (i < maxToDisplay) {
+				sb.append("<td align=left>" + registered.getName() + " (" + getRankedPoints(registered) + ") </td>");
+			}
 			i++;
 		}
-		if (i > maxToDisplay)
+		if (i > maxToDisplay) {
 			sb.append("<td>...</td>");
+		}
 		sb.append("</tr></table><br>");
 
 		//2V2
@@ -1459,30 +1182,26 @@ public class CustomCommunityBoard
 		sb.append("<td align=right>Restrictions : Items</td>");
 		sb.append("<td align=right>Players in  queue : " + Ranked2v2.players.size() + "</td>");
 
-		if (player.isGM())
-		{
+		if (player.isGM()) {
 			sb.append("<td align=right><button value=\"Clear\" width=100 height=24 action=\"bypass _bbscustom;action;ranked2;clear;\" " +
 					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
 
+			if (Ranked2v2.players.contains(player) || Ranked2v2.teamOne.contains(player) || Ranked2v2.teamTwo.contains(player)) {
+				sb.append(
+						"<td align=right><button value=\"Unregister\" width=100 height=24 action=\"bypass _bbscustom;action;ranked2;unregister;\" " +
+								"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
+			} else {
+				sb.append(
+						"<td align=right><button value=\"Register PT \" width=100 height=24 action=\"bypass _bbscustom;action;ranked2;registerpt;\" " +
+								"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
 
-		if (Ranked2v2.players.contains(player) || Ranked2v2.teamOne.contains(player) || Ranked2v2.teamTwo.contains(player))
-		{
-			sb.append("<td align=right><button value=\"Unregister\" width=100 height=24 action=\"bypass _bbscustom;action;ranked2;unregister;\" " +
-					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
-		}
-		else
-		{
-			sb.append("<td align=right><button value=\"Register PT \" width=100 height=24 action=\"bypass _bbscustom;action;ranked2;registerpt;\" " +
-					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
-
-			sb.append("<td align=right><button value=\"Register\" width=100 height=24 action=\"bypass _bbscustom;action;ranked2;register;\" " +
-					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
-		}
+				sb.append("<td align=right><button value=\"Register\" width=100 height=24 action=\"bypass _bbscustom;action;ranked2;register;\" " +
+						"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td>");
+			}
 		}
 
 		sb.append("</tr></table</center>");
-		if (player.isGM())
-		{
+		if (player.isGM()) {
 			sb.append("<center><table><tr>");
 			sb.append("<td align=right><button value=\"Reward\" width=100 height=24 action=\"bypass _bbscustom;action;ranked;reward;\" " +
 					"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button></td></tr></table></center>");
@@ -1490,46 +1209,32 @@ public class CustomCommunityBoard
 
 		sb.append("<br><br><center>");
 		sb.append("<table align=center><tr><td align=center FIXWIDTH=5%></td><td align=center FIXWIDTH=60%>TOP 10</td><td></td></tr></table>");
-		sb.append("<table align=center bgcolor=3333333><tr>" +
-				"<td align=center FIXWIDTH=60%>N°</td>" +
-				"<td align=center FIXWIDTH=60%>Name</td>" +
-				"<td align=center FIXWIDTH=60%>Points</td>" +
-				"</tr></table><br>");
+		sb.append("<table align=center bgcolor=3333333><tr>" + "<td align=center FIXWIDTH=60%>N°</td>" + "<td align=center FIXWIDTH=60%>Name</td>" +
+				"<td align=center FIXWIDTH=60%>Points</td>" + "</tr></table><br>");
 		Connection get = null;
 		int n = 1;
-		try
-		{
+		try {
 			get = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = get.prepareStatement(
 					"SELECT rankedPoints,char_name, charId FROM characters WHERE rankedPoints>0 order by rankedPoints desc limit 10");
 			ResultSet rset = statement.executeQuery();
-			while (rset.next())
-			{
+			while (rset.next()) {
 
-				String id =  rset.getString("charId");
+				String id = rset.getString("charId");
 				Integer x = Integer.valueOf(id);
 
-				if (n % 2 == 1)
+				if (n % 2 == 1) {
 					sb.append("<table  bgcolor=999999><tr>");
-				else
+				} else {
 					sb.append("<table ><tr>");
-				sb.append("" +
-						"<td align=center FIXWIDTH=60% >" + n + "</td>" +
-						"<td align=center FIXWIDTH=60%>" + rset.getString("char_name") + "</td>" +
-						"<td align=center FIXWIDTH=60%>" + rset.getString("rankedPoints") + "</td>");
-				if (player.isGM())
-				{
-					sb.append("<td>" +
-							"<button value=\"-\" width=20 height=20 action=\"bypass _bbscustom;action;gEvent;reduce;" +
-							x +
-							";1\" "+
-							"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" +
-							"</td></tr></table>");
-
 				}
-				else
-				{
-					sb.append(	"</tr></table>");
+				sb.append("" + "<td align=center FIXWIDTH=60% >" + n + "</td>" + "<td align=center FIXWIDTH=60%>" + rset.getString("char_name") +
+						"</td>" + "<td align=center FIXWIDTH=60%>" + rset.getString("rankedPoints") + "</td>");
+				if (player.isGM()) {
+					sb.append("<td>" + "<button value=\"-\" width=20 height=20 action=\"bypass _bbscustom;action;gEvent;reduce;" + x + ";1\" " +
+							"fore=L2UI_CT1.Button_DF_Calculator back=L2UI_CT1.Button_DF_Calculator_Over></button>" + "</td></tr></table>");
+				} else {
+					sb.append("</tr></table>");
 				}
 
 				n++;
@@ -1537,25 +1242,18 @@ public class CustomCommunityBoard
 
 			rset.close();
 			statement.close();
-		}
-
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(get);
 		}
-
 
 		sb.append("</center><br><br></body></html>");
 
 		return sb.toString();
 	}
 
-	private String getCustomBuyPage(int pageToShow, int type)
-	{
+	private String getCustomBuyPage(int pageToShow, int type) {
 		StringBuilder sb = new StringBuilder();
 
 		sb.append(
@@ -1566,18 +1264,15 @@ public class CustomCommunityBoard
 		int maxPlayersPerPage = 20;
 		int playersSize = shops.size();
 		int maxPages = playersSize / maxPlayersPerPage;
-		if (playersSize > maxPlayersPerPage * maxPages)
-		{
+		if (playersSize > maxPlayersPerPage * maxPages) {
 			maxPages++;
 		}
-		if (pageToShow > maxPages)
-		{
+		if (pageToShow > maxPages) {
 			pageToShow = maxPages;
 		}
 		int pageStart = maxPlayersPerPage * pageToShow;
 		int pageEnd = playersSize;
-		if (pageEnd - pageStart > maxPlayersPerPage)
-		{
+		if (pageEnd - pageStart > maxPlayersPerPage) {
 			pageEnd = pageStart + maxPlayersPerPage;
 		}
 
@@ -1589,25 +1284,21 @@ public class CustomCommunityBoard
 		sb.append(
 				"<table width=750 bgcolor=999999><tr><td FIXWIDTH=25>#</td><td FIXWIDTH=150>Name</td><td FIXWIDTH=90>Shop Type</td><td FIXWIDTH=110>Message</td></tr></table>");
 
-		for (int i = pageStart; i < pageEnd; i++)
-		{
+		for (int i = pageStart; i < pageEnd; i++) {
 			L2PcInstance shop = shops.get(i);
 			if (type == 1 && shop.getPrivateStoreType() != 3 || type == 10 && shop.getPrivateStoreType() != 10 ||
-					type == 2 && shop.getPrivateStoreType() != 1 || type == 3 && shop.getPrivateStoreType() != 5)
-			{
+					type == 2 && shop.getPrivateStoreType() != 1 || type == 3 && shop.getPrivateStoreType() != 5) {
 				continue;
 			}
 
 			String title = shop.getShopMessage();
-			if (title == null)
-			{
+			if (title == null) {
 				title = "No Message";
 			}
 
 			sb.append("<table border=0 cellspacing=0 cellpadding=2 width=750 height=17><tr><td FIXWIDTH=25>" + i +
-					"</td><td FIXWIDTH=150><a action=\"bypass _bbscustom;action;trade;" + shop.getName() + "\">" +
-					shop.getName() + "</a></td><td FIXWIDTH=90>" + shop.getShopNameType() + "</td><td FIXWIDTH=110>" +
-					title + "</td></tr></table>");
+					"</td><td FIXWIDTH=150><a action=\"bypass _bbscustom;action;trade;" + shop.getName() + "\">" + shop.getName() +
+					"</a></td><td FIXWIDTH=90>" + shop.getShopNameType() + "</td><td FIXWIDTH=110>" + title + "</td></tr></table>");
 			sb.append("<img src=\"L2UI.Squaregray\" width=740 height=1>");
 		}
 
@@ -1617,15 +1308,12 @@ public class CustomCommunityBoard
 		return sb.toString();
 	}
 
-	public String getCommunityPage(String pageName)
-	{
+	public String getCommunityPage(String pageName) {
 		return HtmCache.getInstance().getHtm(null, "CommunityBoard/" + pageName + ".htm");
 	}
 
-	private void sendNormalChatWindow(L2PcInstance pl, String path)
-	{
-		if (pl == null)
-		{
+	private void sendNormalChatWindow(L2PcInstance pl, String path) {
+		if (pl == null) {
 			return;
 		}
 
@@ -1633,40 +1321,32 @@ public class CustomCommunityBoard
 		htmlPage.setFile(null, "CommunityBoard/" + path + "");
 		htmlPage.replace("%serverId%", String.valueOf(Config.SERVER_ID));
 
-		if (path.contains("Lottery"))
-		{
+		if (path.contains("Lottery")) {
 			htmlPage.replace("%ticketPrice%", String.valueOf(Config.CUSTOM_LOTTERY_PRICE_AMOUNT));
-			htmlPage.replace("%lotteryMultiplier%", Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER > 1 ?
-					"x" + String.valueOf(Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER) : "");
+			htmlPage.replace("%lotteryMultiplier%",
+					Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER > 1 ? "x" + String.valueOf(Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER) : "");
 			htmlPage.replace("%totalCoins%", String.valueOf(LotterySystem.getInstance().getTotalCoins()));
 			htmlPage.replace("%totalPrize%", String.valueOf(LotterySystem.getInstance().getTotalPrize()));
 			htmlPage.replace("%numbers%", LotterySystem.getInstance().getAvailableNumbers(pl));
 		}
 
-		if (path.contains("DamageDealer"))
-		{
+		if (path.contains("DamageDealer")) {
 			htmlPage.replace("%damageDealerReward%", String.valueOf(Config.CUSTOM_DAMAGE_MANAGER_REWARD_AMOUNT));
 		}
 
 		//Little glitch  to integrate the farm info to the GK npc with back button...
-		if (path.contains("Farm"))
-		{
+		if (path.contains("Farm")) {
 			int targetObjId = 0;
 			L2Npc target = null;
-			if (pl.getTarget() != null && pl.getTarget() instanceof L2Npc)
-			{
+			if (pl.getTarget() != null && pl.getTarget() instanceof L2Npc) {
 				target = (L2Npc) pl.getTarget();
 			}
-			if (target != null && target.getInstanceId() == pl.getObjectId() && target.getNpcId() == 40001)
-			{
+			if (target != null && target.getInstanceId() == pl.getObjectId() && target.getNpcId() == 40001) {
 				targetObjId = pl.getTarget().getObjectId();
 				htmlPage.replace("%backButton%",
 						"<table width=120 align=right><tr><td align=left width=20><img src=\"L2UI.bbs_reply\" width=16 height=16></td><td align=left width=104><font color=82a0b1><a action=\"bypass -h npc_" +
-								targetObjId +
-								"_Chat farm_zones\"><font color=999999>Back</font></a></font></td></tr></table>");
-			}
-			else
-			{
+								targetObjId + "_Chat farm_zones\"><font color=999999>Back</font></a></font></td></tr></table>");
+			} else {
 				htmlPage.replace("%backButton%", "");
 			}
 		}
@@ -1674,10 +1354,8 @@ public class CustomCommunityBoard
 		pl.sendPacket(htmlPage);
 	}
 
-	private void sendCommunityBoardPage(String html, L2PcInstance player)
-	{
-		if (html == null)
-		{
+	private void sendCommunityBoardPage(String html, L2PcInstance player) {
+		if (html == null) {
 			return;
 		}
 
@@ -1686,35 +1364,26 @@ public class CustomCommunityBoard
 
 		//html = html.replace("%onlineCount%", String.valueOf(getPlayerCount()));
 
-		if (html.length() < 8180)
-		{
+		if (html.length() < 8180) {
 			player.sendPacket(new ShowBoard(html, "101"));
 			player.sendPacket(new ShowBoard(null, "102"));
 			player.sendPacket(new ShowBoard(null, "103"));
-		}
-		else if (html.length() < 8180 * 2)
-		{
+		} else if (html.length() < 8180 * 2) {
 			player.sendPacket(new ShowBoard(html.substring(0, 8180), "101"));
 			player.sendPacket(new ShowBoard(html.substring(8180, html.length()), "102"));
 			player.sendPacket(new ShowBoard(null, "103"));
-		}
-		else if (html.length() < 8180 * 3)
-		{
+		} else if (html.length() < 8180 * 3) {
 			player.sendPacket(new ShowBoard(html.substring(0, 8180), "101"));
 			player.sendPacket(new ShowBoard(html.substring(8180, 8180 * 2), "102"));
 			player.sendPacket(new ShowBoard(html.substring(8180 * 2, html.length()), "103"));
-		}
-		else
-		{
-			Log.warning(
-					"CustomCommunityBoard: sendCommunityBoardPage this html exceeds the max html size supported by the client, requestor: " +
-							player.getName() + " html size: " + html.length());
+		} else {
+			Log.warning("CustomCommunityBoard: sendCommunityBoardPage this html exceeds the max html size supported by the client, requestor: " +
+					player.getName() + " html size: " + html.length());
 		}
 	}
 
 	@SuppressWarnings("unused")
-	private int getPlayerCount()
-	{
+	private int getPlayerCount() {
 		double multiplier = 2.0 - ((float) (System.currentTimeMillis() / 1000) - 1401565000) * 0.0000001;
 		/*if (multiplier > 2.5f)
             multiplier = 2.5f - (multiplier - 2.5f);
@@ -1724,14 +1393,10 @@ public class CustomCommunityBoard
 		return (int) Math.round(L2World.getInstance().getAllPlayersCount() * multiplier + Rnd.get(1));
 	}
 
-	private String getRankingInfo(String rankingType, L2PcInstance player)
-	{
-		if (rankingType.equalsIgnoreCase("damageDealer"))
-		{
+	private String getRankingInfo(String rankingType, L2PcInstance player) {
+		if (rankingType.equalsIgnoreCase("damageDealer")) {
 			return DamageManager.getInstance().getRankingInfo();
-		}
-		else if (rankingType.equalsIgnoreCase("main"))
-		{
+		} else if (rankingType.equalsIgnoreCase("main")) {
 			return "<table width=750><tr><td FIXWIDTH=750></td></tr></table>";
 		}
 
@@ -1742,43 +1407,34 @@ public class CustomCommunityBoard
 		boolean isReputation = rankingType.equalsIgnoreCase("reputation");
 		boolean isFameRanking = rankingType.equalsIgnoreCase("fame");
 		boolean isPvPRanking = rankingType.equalsIgnoreCase("pvp");
-		String whatCheckInTop =
-				isClanReputation || isClanWarPoints ? player.getClan() != null ? player.getClan().getName() : "" :
-						player.getName();
+		String whatCheckInTop = isClanReputation || isClanWarPoints ? player.getClan() != null ? player.getClan().getName() : "" : player.getName();
 		boolean playerIsInTop = false;
 
 		Map<Object, Long> allPlayers = new HashMap<>();
-		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
-		{
-			if (pl == null || pl.isInStoreMode() || pl.isGM())
-			{
+		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values()) {
+			if (pl == null || pl.isInStoreMode() || pl.isGM()) {
 				continue;
 			}
 
-			if (isClanReputation &&
-					(pl.getClan() == null || pl.getClan() != null && allPlayers.containsKey(pl.getClan().getName())))
-			{
+			if (isClanReputation && (pl.getClan() == null || pl.getClan() != null && allPlayers.containsKey(pl.getClan().getName()))) {
 				continue;
 			}
 
-			if (isClanWarPoints && (pl.getClan() == null || pl.getClan() != null &&
-					(pl.getClan().getWars().isEmpty() || allPlayers.containsKey(pl.getClan().getName()))))
-			{
+			if (isClanWarPoints && (pl.getClan() == null ||
+					pl.getClan() != null && (pl.getClan().getWars().isEmpty() || allPlayers.containsKey(pl.getClan().getName())))) {
 				continue;
 			}
 
-			if (isOlympiadPoints && Olympiad.getInstance().getNobleInfo(pl.getObjectId()) == null)
-			{
+			if (isOlympiadPoints && Olympiad.getInstance().getNobleInfo(pl.getObjectId()) == null) {
 				continue;
 			}
 
 			allPlayers.put(isClanReputation || isClanWarPoints ? pl.getClan().getName() : pl.getName(),
 					(long) (isOlympiadPoints ? Olympiad.getInstance().getNobleInfo(pl.getObjectId()).getPoints() :
-							isClanWarPoints ? getWarPoints(pl.getClan()) : isRaidPoints ?
-									RaidBossPointsManager.getInstance().getPointsByOwnerId(pl.getObjectId()) :
-									isClanReputation ? pl.getClan().getReputationScore() :
-											isReputation ? pl.getReputation() : isFameRanking ? pl.getFame() :
-													isPvPRanking ? pl.getPvpKills() : pl.getPkKills()));
+							isClanWarPoints ? getWarPoints(pl.getClan()) :
+									isRaidPoints ? RaidBossPointsManager.getInstance().getPointsByOwnerId(pl.getObjectId()) :
+											isClanReputation ? pl.getClan().getReputationScore() : isReputation ? pl.getReputation() :
+													isFameRanking ? pl.getFame() : isPvPRanking ? pl.getPvpKills() : pl.getPkKills()));
 		}
 
 		allPlayers = sortByValue(allPlayers, false);
@@ -1789,56 +1445,39 @@ public class CustomCommunityBoard
 
 		String name = null;
 		int counter = 1;
-		for (Entry<Object, Long> info : allPlayers.entrySet())
-		{
+		for (Entry<Object, Long> info : allPlayers.entrySet()) {
 			name = (String) info.getKey();
 
-			if (counter <= 20)
-			{
-				if (!playerIsInTop && name.equalsIgnoreCase(whatCheckInTop))
-				{
+			if (counter <= 20) {
+				if (!playerIsInTop && name.equalsIgnoreCase(whatCheckInTop)) {
 					playerIsInTop = true;
-					sb.append("<table width=750><tr><td FIXWIDTH=40><font color=LEVEL>" + counter +
-							"</font></td><td FIXWIDTH=100><font color=LEVEL>" + name +
-							"</font></td><td FIXWIDTH=70><font color=LEVEL>" + info.getValue() +
-							"</font></td></tr></table>");
-				}
-				else
-				{
-					sb.append("<table width=750><tr><td FIXWIDTH=40>" + counter + "</td><td FIXWIDTH=100>" + name +
-							"</td><td FIXWIDTH=70>" + info.getValue() + "</td></tr></table>");
+					sb.append(
+							"<table width=750><tr><td FIXWIDTH=40><font color=LEVEL>" + counter + "</font></td><td FIXWIDTH=100><font color=LEVEL>" +
+									name + "</font></td><td FIXWIDTH=70><font color=LEVEL>" + info.getValue() + "</font></td></tr></table>");
+				} else {
+					sb.append("<table width=750><tr><td FIXWIDTH=40>" + counter + "</td><td FIXWIDTH=100>" + name + "</td><td FIXWIDTH=70>" +
+							info.getValue() + "</td></tr></table>");
 				}
 
-				sb.append(
-						"<table width=750><tr><td><img src=\"L2UI.Squaregray\" width=750 height=1></td></tr></table>");
-			}
-			else if (playerIsInTop)
-			{
+				sb.append("<table width=750><tr><td><img src=\"L2UI.Squaregray\" width=750 height=1></td></tr></table>");
+			} else if (playerIsInTop) {
 				break;
-			}
-			else
-			{
-				if (name.equalsIgnoreCase(whatCheckInTop))
-				{
+			} else {
+				if (name.equalsIgnoreCase(whatCheckInTop)) {
 					break;
 				}
 			}
 			counter++;
 		}
 
-		if (!playerIsInTop)
-		{
+		if (!playerIsInTop) {
 			sb.append("<br><table width=750><tr><td>Your position:</td></tr></table>");
 			sb.append("<table width=750><tr><td><img src=\"L2UI.Squaregray\" width=750 height=1></td></tr></table>");
 			if (counter <= allPlayers.size()) //Player are on the list
 			{
-				sb.append("<table width=750><tr><td FIXWIDTH=40><font color=LEVEL>" + counter +
-						"</font></td><td FIXWIDTH=100><font color=LEVEL>" + name +
-						"</font></td><td FIXWIDTH=70><font color=LEVEL>" + allPlayers.get(name) +
-						"</font></td></tr></table>");
-			}
-			else
-			{
+				sb.append("<table width=750><tr><td FIXWIDTH=40><font color=LEVEL>" + counter + "</font></td><td FIXWIDTH=100><font color=LEVEL>" +
+						name + "</font></td><td FIXWIDTH=70><font color=LEVEL>" + allPlayers.get(name) + "</font></td></tr></table>");
+			} else {
 				sb.append("<table width=750><tr><td>You're not on the ranking!</td><td></td><td></td></tr></table>");
 			}
 			sb.append("<table width=750><tr><td><img src=\"L2UI.Squaregray\" width=750 height=1></td></tr></table>");
@@ -1846,65 +1485,50 @@ public class CustomCommunityBoard
 		return sb.toString();
 	}
 
-	private int getWarPoints(L2Clan clan)
-	{
+	private int getWarPoints(L2Clan clan) {
 		int total = 0;
-		for (ClanWar war : clan.getWars())
-		{
-			if (war == null)
-			{
+		for (ClanWar war : clan.getWars()) {
+			if (war == null) {
 				continue;
 			}
 
-			if (clan == war.getClan1())
-			{
+			if (clan == war.getClan1()) {
 				total += war.getClan1Scores();
-			}
-			else if (clan == war.getClan2())
-			{
+			} else if (clan == war.getClan2()) {
 				total += war.getClan2Scores();
 			}
 		}
 		return total;
 	}
 
-	private Map<Object, Long> sortByValue(Map<Object, Long> unsortMap, final boolean ascending)
-	{
+	private Map<Object, Long> sortByValue(Map<Object, Long> unsortMap, final boolean ascending) {
 		final List<Entry<Object, Long>> list = new LinkedList<>(unsortMap.entrySet());
-		Collections.sort(list, (e1, e2) ->
-		{
-			if (ascending)
-			{
+		Collections.sort(list, (e1, e2) -> {
+			if (ascending) {
 				return e1.getValue().compareTo(e2.getValue());
-			}
-			else
-			{
+			} else {
 				return e2.getValue().compareTo(e1.getValue());
 			}
 		});
 
 		final Map<Object, Long> sortedMap = new LinkedHashMap<>();
-		for (Entry<Object, Long> entry : list)
-		{
+		for (Entry<Object, Long> entry : list) {
 			sortedMap.put(entry.getKey(), entry.getValue());
 		}
 
 		return sortedMap;
 	}
 
-	private CustomCommunityBoard()
-	{
+	private CustomCommunityBoard() {
 		loadRaidData();
 	}
 
-	public static CustomCommunityBoard getInstance()
-	{
+	public static CustomCommunityBoard getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final CustomCommunityBoard instance = new CustomCommunityBoard();
 	}
 }

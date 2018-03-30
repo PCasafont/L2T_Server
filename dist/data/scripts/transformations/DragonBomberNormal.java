@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class DragonBomberNormal extends L2Transformation
-{
+public class DragonBomberNormal extends L2Transformation {
 	private static final int[] SKILLS = {580, 581, 582, 583, 5491, 619};
 
-	public DragonBomberNormal()
-	{
+	public DragonBomberNormal() {
 		// id, colRadius, colHeight
 		super(217, 16, 24);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 217 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 217 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		// Death Blow (up to 4 levels)
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(580, 3), false);
 		// Sand Cloud (up to 4 levels)
@@ -44,13 +39,11 @@ public class DragonBomberNormal extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		// Death Blow (up to 4 levels)
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(580, 3), false);
 		// Sand Cloud (up to 4 levels)
@@ -67,8 +60,7 @@ public class DragonBomberNormal extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new DragonBomberNormal());
 	}
 }

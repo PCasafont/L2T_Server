@@ -20,25 +20,21 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2FishermanInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-public class FishSkillList implements IBypassHandler
-{
+public class FishSkillList implements IBypassHandler {
 	private static final String[] COMMANDS = {"FishSkillList"};
-
+	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (!(target instanceof L2FishermanInstance))
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+		if (!(target instanceof L2FishermanInstance)) {
 			return false;
 		}
-
+		
 		L2FishermanInstance.showFishSkillList(activeChar);
 		return true;
 	}
-
+	
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

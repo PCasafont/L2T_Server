@@ -18,24 +18,20 @@ package l2server.gameserver.network.clientpackets;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ItemList;
 
-public class RequestBuySellUIClose extends L2GameClientPacket
-{
-
+public class RequestBuySellUIClose extends L2GameClientPacket {
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// trigger
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null || activeChar.isInventoryDisabled())
-		{
+		if (activeChar == null || activeChar.isInventoryDisabled()) {
 			return;
 		}
-
+		
 		activeChar.sendPacket(new ItemList(activeChar, true));
 	}
 }

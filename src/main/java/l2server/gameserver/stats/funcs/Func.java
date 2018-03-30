@@ -30,8 +30,7 @@ import l2server.gameserver.stats.conditions.Condition;
  * The result of the calculation is stored in the value property of an Env class instance.<BR><BR>
  */
 
-public abstract class Func
-{
+public abstract class Func {
 
 	/**
 	 * Statistics, that is affected by this function (See L2Character.CALCULATOR_XXX constants)
@@ -52,8 +51,7 @@ public abstract class Func
 	/**
 	 * Constructor of Func.<BR><BR>
 	 */
-	public Func(Stats pStat, Object owner)
-	{
+	public Func(Stats pStat, Object owner) {
 		stat = pStat;
 		funcOwner = owner;
 	}
@@ -61,8 +59,7 @@ public abstract class Func
 	/**
 	 * Add a condition to the Func.<BR><BR>
 	 */
-	public void setCondition(Condition pCond)
-	{
+	public void setCondition(Condition pCond) {
 		cond = pCond;
 	}
 
@@ -75,8 +72,7 @@ public abstract class Func
 	 * applied, then functions that do more complex calculations
 	 * (non-linear functions).
 	 */
-	public int getOrder()
-	{
+	public int getOrder() {
 		return 0x100;
 	}
 

@@ -26,13 +26,11 @@ import java.util.List;
 /**
  * @author KenM
  */
-public class GameServerListener extends FloodProtectedListener
-{
+public class GameServerListener extends FloodProtectedListener {
 
 	private static List<GameServerThread> gameServers = new ArrayList<>();
 
-	public GameServerListener() throws IOException
-	{
+	public GameServerListener() throws IOException {
 		super(Config.GAME_SERVER_LOGIN_HOST, Config.GAME_SERVER_LOGIN_PORT);
 		setName(getClass().getSimpleName());
 	}
@@ -41,18 +39,15 @@ public class GameServerListener extends FloodProtectedListener
 	 * @see l2server.loginserver.FloodProtectedListener#addClient(java.net.Socket)
 	 */
 	@Override
-	public void addClient(Socket s)
-	{
-		if (Config.DEBUG)
-		{
+	public void addClient(Socket s) {
+		if (Config.DEBUG) {
 			Log.info("Received gameserver connection from: " + s.getInetAddress().getHostAddress());
 		}
 		GameServerThread gst = new GameServerThread(s);
 		gameServers.add(gst);
 	}
 
-	public void removeGameServer(GameServerThread gst)
-	{
+	public void removeGameServer(GameServerThread gst) {
 		gameServers.remove(gst);
 	}
 }

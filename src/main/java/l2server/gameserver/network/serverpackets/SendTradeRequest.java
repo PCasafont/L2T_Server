@@ -20,18 +20,15 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.2.2.1.2.3 $ $Date: 2005/03/27 15:29:40 $
  */
-public class SendTradeRequest extends L2GameServerPacket
-{
+public class SendTradeRequest extends L2GameServerPacket {
 	private int senderID;
-
-	public SendTradeRequest(int senderID)
-	{
+	
+	public SendTradeRequest(int senderID) {
 		this.senderID = senderID;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(senderID);
 	}
 }

@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-    <item>
-        <ingredient count="10" id="19508" /> <!-- Yellow Soul Crystal Fragment (R-grade) -->
-        <production count="1" id="19502" /> <!-- Yellow Soul Crystal (R-grade) -->
-    </item>
-    <item>
-        <ingredient count="10" id="19509" /> <!-- Teal Soul Crystal Fragment (R-grade) -->
-        <production count="1" id="19503" /> <!-- Teal Soul Crystal (R-grade) -->
-    </item>
-    <item>
-        <ingredient count="10" id="19510" /> <!-- Purple Soul Crystal Fragment (R-grade) -->
-        <production count="1" id="19504" /> <!-- Purple Soul Crystal (R-grade) -->
-    </item>
-    <item>
-        <ingredient count="10" id="19511" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
-        <production count="1" id="19505" /> <!-- Yellow Soul Crystal (R95-grade) -->
-    </item>
-    <item>
-        <ingredient count="10" id="19512" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
-        <production count="1" id="19506" /> <!-- Teal Soul Crystal (R95-grade) -->
-    </item>
-    <item>
-        <ingredient count="10" id="19513" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
-        <production count="1" id="19507" /> <!-- Purple Soul Crystal (R95-grade) -->
-    </item>
-    <item>
-        <ingredient count="10" id="19467" /> <!-- Yellow Soul Crystal Fragment (R99-grade) -->
-        <production count="1" id="18560" /> <!-- Yellow Soul Crystal (R99-grade) -->
-    </item>
-    <item>
-        <ingredient count="10" id="19468" /> <!-- Teal Soul Crystal Fragment (R99-grade) -->
-        <production count="1" id="18561" /> <!-- Teal Soul Crystal (R99-grade) -->
-    </item>
-    <item>
-        <ingredient count="10" id="19469" /> <!-- Purple Soul Crystal Fragment (R99-grade) -->
-        <production count="1" id="18562" /> <!-- Purple Soul Crystal (R99-grade) -->
-    </item>
+	<item>
+		<ingredient count="10" id="19508" /> <!-- Yellow Soul Crystal Fragment (R-grade) -->
+		<production count="1" id="19502" /> <!-- Yellow Soul Crystal (R-grade) -->
+	</item>
+	<item>
+		<ingredient count="10" id="19509" /> <!-- Teal Soul Crystal Fragment (R-grade) -->
+		<production count="1" id="19503" /> <!-- Teal Soul Crystal (R-grade) -->
+	</item>
+	<item>
+		<ingredient count="10" id="19510" /> <!-- Purple Soul Crystal Fragment (R-grade) -->
+		<production count="1" id="19504" /> <!-- Purple Soul Crystal (R-grade) -->
+	</item>
+	<item>
+		<ingredient count="10" id="19511" /> <!-- Yellow Soul Crystal Fragment (R95-grade) -->
+		<production count="1" id="19505" /> <!-- Yellow Soul Crystal (R95-grade) -->
+	</item>
+	<item>
+		<ingredient count="10" id="19512" /> <!-- Teal Soul Crystal Fragment (R95-grade) -->
+		<production count="1" id="19506" /> <!-- Teal Soul Crystal (R95-grade) -->
+	</item>
+	<item>
+		<ingredient count="10" id="19513" /> <!-- Purple Soul Crystal Fragment (R95-grade) -->
+		<production count="1" id="19507" /> <!-- Purple Soul Crystal (R95-grade) -->
+	</item>
+	<item>
+		<ingredient count="10" id="19467" /> <!-- Yellow Soul Crystal Fragment (R99-grade) -->
+		<production count="1" id="18560" /> <!-- Yellow Soul Crystal (R99-grade) -->
+	</item>
+	<item>
+		<ingredient count="10" id="19468" /> <!-- Teal Soul Crystal Fragment (R99-grade) -->
+		<production count="1" id="18561" /> <!-- Teal Soul Crystal (R99-grade) -->
+	</item>
+	<item>
+		<ingredient count="10" id="19469" /> <!-- Purple Soul Crystal Fragment (R99-grade) -->
+		<production count="1" id="18562" /> <!-- Purple Soul Crystal (R99-grade) -->
+	</item>
 </list>

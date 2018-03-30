@@ -20,80 +20,9 @@ import l2server.gameserver.model.L2Object.InstanceType;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.base.PlayerState;
 import l2server.gameserver.model.base.Race;
-import l2server.gameserver.stats.conditions.Condition;
-import l2server.gameserver.stats.conditions.ConditionChangeWeapon;
-import l2server.gameserver.stats.conditions.ConditionForceBuff;
-import l2server.gameserver.stats.conditions.ConditionGameChance;
-import l2server.gameserver.stats.conditions.ConditionGameTime;
+import l2server.gameserver.stats.conditions.*;
 import l2server.gameserver.stats.conditions.ConditionGameTime.CheckGameTime;
-import l2server.gameserver.stats.conditions.ConditionLogicAnd;
-import l2server.gameserver.stats.conditions.ConditionLogicNot;
-import l2server.gameserver.stats.conditions.ConditionLogicOr;
-import l2server.gameserver.stats.conditions.ConditionMinDistance;
-import l2server.gameserver.stats.conditions.ConditionPlayerActiveEffect;
-import l2server.gameserver.stats.conditions.ConditionPlayerActiveEffectId;
-import l2server.gameserver.stats.conditions.ConditionPlayerActiveSkillId;
-import l2server.gameserver.stats.conditions.ConditionPlayerAgathionId;
-import l2server.gameserver.stats.conditions.ConditionPlayerCharges;
-import l2server.gameserver.stats.conditions.ConditionPlayerClanLeaderIsOn;
-import l2server.gameserver.stats.conditions.ConditionPlayerClassIdRestriction;
-import l2server.gameserver.stats.conditions.ConditionPlayerClassNameStartsWith;
-import l2server.gameserver.stats.conditions.ConditionPlayerCloakStatus;
-import l2server.gameserver.stats.conditions.ConditionPlayerCp;
-import l2server.gameserver.stats.conditions.ConditionPlayerEvent;
-import l2server.gameserver.stats.conditions.ConditionPlayerFlyMounted;
-import l2server.gameserver.stats.conditions.ConditionPlayerGrade;
-import l2server.gameserver.stats.conditions.ConditionPlayerHasCastle;
-import l2server.gameserver.stats.conditions.ConditionPlayerHasClanHall;
-import l2server.gameserver.stats.conditions.ConditionPlayerHasFort;
-import l2server.gameserver.stats.conditions.ConditionPlayerHasPet;
-import l2server.gameserver.stats.conditions.ConditionPlayerHasSummon;
-import l2server.gameserver.stats.conditions.ConditionPlayerHp;
-import l2server.gameserver.stats.conditions.ConditionPlayerInsideZoneId;
-import l2server.gameserver.stats.conditions.ConditionPlayerInstanceId;
-import l2server.gameserver.stats.conditions.ConditionPlayerInvSize;
-import l2server.gameserver.stats.conditions.ConditionPlayerIsClanLeader;
-import l2server.gameserver.stats.conditions.ConditionPlayerIsHero;
-import l2server.gameserver.stats.conditions.ConditionPlayerLandingZone;
-import l2server.gameserver.stats.conditions.ConditionPlayerLevel;
-import l2server.gameserver.stats.conditions.ConditionPlayerLevelRange;
-import l2server.gameserver.stats.conditions.ConditionPlayerMp;
-import l2server.gameserver.stats.conditions.ConditionPlayerPkCount;
-import l2server.gameserver.stats.conditions.ConditionPlayerPledgeClass;
-import l2server.gameserver.stats.conditions.ConditionPlayerRace;
-import l2server.gameserver.stats.conditions.ConditionPlayerRangeFromNpc;
-import l2server.gameserver.stats.conditions.ConditionPlayerServitorNpcId;
-import l2server.gameserver.stats.conditions.ConditionPlayerSex;
-import l2server.gameserver.stats.conditions.ConditionPlayerSiegeSide;
-import l2server.gameserver.stats.conditions.ConditionPlayerSouls;
-import l2server.gameserver.stats.conditions.ConditionPlayerState;
-import l2server.gameserver.stats.conditions.ConditionPlayerSubclass;
-import l2server.gameserver.stats.conditions.ConditionPlayerSurvivalEvent;
-import l2server.gameserver.stats.conditions.ConditionPlayerWeight;
-import l2server.gameserver.stats.conditions.ConditionSiegeZone;
-import l2server.gameserver.stats.conditions.ConditionSlotItemId;
-import l2server.gameserver.stats.conditions.ConditionTargetAbnormal;
-import l2server.gameserver.stats.conditions.ConditionTargetActiveEffect;
-import l2server.gameserver.stats.conditions.ConditionTargetActiveEffectId;
-import l2server.gameserver.stats.conditions.ConditionTargetActiveSkillId;
-import l2server.gameserver.stats.conditions.ConditionTargetAggro;
-import l2server.gameserver.stats.conditions.ConditionTargetClassIdRestriction;
-import l2server.gameserver.stats.conditions.ConditionTargetHp;
-import l2server.gameserver.stats.conditions.ConditionTargetLevel;
-import l2server.gameserver.stats.conditions.ConditionTargetNpcId;
-import l2server.gameserver.stats.conditions.ConditionTargetNpcType;
-import l2server.gameserver.stats.conditions.ConditionTargetPlayable;
-import l2server.gameserver.stats.conditions.ConditionTargetRace;
-import l2server.gameserver.stats.conditions.ConditionTargetRaceId;
-import l2server.gameserver.stats.conditions.ConditionTargetUsesWeaponKind;
-import l2server.gameserver.stats.conditions.ConditionUsingItemType;
-import l2server.gameserver.stats.conditions.ConditionUsingSkill;
-import l2server.gameserver.stats.conditions.ConditionWithSkill;
-import l2server.gameserver.stats.funcs.FuncTemplate;
-import l2server.gameserver.stats.funcs.Lambda;
-import l2server.gameserver.stats.funcs.LambdaCalc;
-import l2server.gameserver.stats.funcs.LambdaConst;
-import l2server.gameserver.stats.funcs.LambdaStats;
+import l2server.gameserver.stats.funcs.*;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.item.L2ArmorType;
 import l2server.gameserver.templates.item.L2Item;
@@ -110,8 +39,7 @@ import java.util.logging.Logger;
 /**
  * @author mkizub
  */
-public abstract class StatsParser
-{
+public abstract class StatsParser {
 	static Logger log = Logger.getLogger(StatsParser.class.getName());
 
 	protected int id;
@@ -119,8 +47,7 @@ public abstract class StatsParser
 
 	protected XmlNode node;
 
-	StatsParser(XmlNode node)
-	{
+	StatsParser(XmlNode node) {
 		id = node.getInt("id");
 		name = node.getString("name");
 		this.node = node;
@@ -130,118 +57,73 @@ public abstract class StatsParser
 
 	protected abstract StatsSet getStatsSet();
 
-	protected void parseTemplate(XmlNode node, Object template)
-	{
+	protected void parseTemplate(XmlNode node, Object template) {
 		XmlNode firstNode = node.getFirstChild();
-		if (firstNode == null)
-		{
+		if (firstNode == null) {
 			return;
 		}
 
-		if (firstNode.getName().equalsIgnoreCase("cond"))
-		{
+		if (firstNode.getName().equalsIgnoreCase("cond")) {
 			Condition condition = parseCondition(firstNode.getFirstChild(), template);
-			if (condition != null)
-			{
-				if (firstNode.hasAttribute("msg"))
-				{
+			if (condition != null) {
+				if (firstNode.hasAttribute("msg")) {
 					condition.setMessage(firstNode.getString("msg"));
-				}
-				else if (firstNode.hasAttribute("msgId"))
-				{
+				} else if (firstNode.hasAttribute("msgId")) {
 					condition.setMessageId(Integer.decode(getValue(firstNode.getString("msgId"))));
-					if (firstNode.hasAttribute("addName") && Integer.decode(getValue(firstNode.getString("msgId"))) > 0)
-					{
+					if (firstNode.hasAttribute("addName") && Integer.decode(getValue(firstNode.getString("msgId"))) > 0) {
 						condition.addName();
 					}
 				}
 
-				if (template instanceof L2Skill)
-				{
+				if (template instanceof L2Skill) {
 					((L2Skill) template).attach(condition, false);
-				}
-				else if (template instanceof L2Item)
-				{
+				} else if (template instanceof L2Item) {
 					((L2Item) template).attach(condition);
 				}
 			}
 		}
-		for (XmlNode n : node.getChildren())
-		{
+		for (XmlNode n : node.getChildren()) {
 			String nodeType = n.getName();
 			// Custom for the critical damage buffs/passives
 			//if (nodeType.equalsIgnoreCase("addPercent")
 			//		&& n.getString("stat").equalsIgnoreCase("pCritDmg"))
 			//	nodeType = "addPercentBase";
 
-			if (nodeType.equalsIgnoreCase("add"))
-			{
+			if (nodeType.equalsIgnoreCase("add")) {
 				attachFunc(n, template, "Add");
-			}
-			else if (nodeType.equalsIgnoreCase("sub"))
-			{
+			} else if (nodeType.equalsIgnoreCase("sub")) {
 				attachFunc(n, template, "Sub");
-			}
-			else if (nodeType.equalsIgnoreCase("baseAdd"))
-			{
+			} else if (nodeType.equalsIgnoreCase("baseAdd")) {
 				attachFunc(n, template, "BaseAdd");
-			}
-			else if (nodeType.equalsIgnoreCase("baseSub"))
-			{
+			} else if (nodeType.equalsIgnoreCase("baseSub")) {
 				attachFunc(n, template, "BaseSub");
-			}
-			else if (nodeType.equalsIgnoreCase("addPercent"))
-			{
+			} else if (nodeType.equalsIgnoreCase("addPercent")) {
 				attachFunc(n, template, "AddPercent");
-			}
-			else if (nodeType.equalsIgnoreCase("subPercent"))
-			{
+			} else if (nodeType.equalsIgnoreCase("subPercent")) {
 				attachFunc(n, template, "SubPercent");
-			}
-			else if (nodeType.equalsIgnoreCase("addPercentBase"))
-			{
+			} else if (nodeType.equalsIgnoreCase("addPercentBase")) {
 				attachFunc(n, template, "AddPercentBase");
-			}
-			else if (nodeType.equalsIgnoreCase("subPercentBase"))
-			{
+			} else if (nodeType.equalsIgnoreCase("subPercentBase")) {
 				attachFunc(n, template, "SubPercentBase");
-			}
-			else if (nodeType.equalsIgnoreCase("mul"))
-			{
+			} else if (nodeType.equalsIgnoreCase("mul")) {
 				attachFunc(n, template, "Mul");
-			}
-			else if (nodeType.equalsIgnoreCase("baseMul"))
-			{
+			} else if (nodeType.equalsIgnoreCase("baseMul")) {
 				attachFunc(n, template, "BaseMul");
-			}
-			else if (nodeType.equalsIgnoreCase("set"))
-			{
+			} else if (nodeType.equalsIgnoreCase("set")) {
 				attachFunc(n, template, "Set");
-			}
-			else if (nodeType.equalsIgnoreCase("override"))
-			{
+			} else if (nodeType.equalsIgnoreCase("override")) {
 				attachFunc(n, template, "Override");
-			}
-			else if (nodeType.equalsIgnoreCase("enchant"))
-			{
+			} else if (nodeType.equalsIgnoreCase("enchant")) {
 				attachFunc(n, template, "Enchant");
-			}
-			else if (nodeType.equalsIgnoreCase("enchanthp"))
-			{
+			} else if (nodeType.equalsIgnoreCase("enchanthp")) {
 				attachFunc(n, template, "EnchantHp");
-			}
-			else if (nodeType.equalsIgnoreCase("abnormal"))
-			{
-				if (!(this instanceof SkillParser) && !(template instanceof L2Skill))
-				{
+			} else if (nodeType.equalsIgnoreCase("abnormal")) {
+				if (!(this instanceof SkillParser) && !(template instanceof L2Skill)) {
 					throw new RuntimeException("Abnormals in something that's not a skill");
 				}
 				((SkillParser) this).attachAbnormal(n, (L2Skill) template);
-			}
-			else if (nodeType.equalsIgnoreCase("effect"))
-			{
-				if (!(this instanceof SkillParser) && !(template instanceof L2AbnormalTemplate))
-				{
+			} else if (nodeType.equalsIgnoreCase("effect")) {
+				if (!(this instanceof SkillParser) && !(template instanceof L2AbnormalTemplate)) {
 					throw new RuntimeException("Effects in something that's not an abnormal");
 				}
 				((SkillParser) this).attachEffect(n, (L2AbnormalTemplate) template);
@@ -249,28 +131,21 @@ public abstract class StatsParser
 		}
 	}
 
-	protected void attachFunc(XmlNode n, Object template, String name)
-	{
+	protected void attachFunc(XmlNode n, Object template, String name) {
 		Stats stat = Stats.fromString(n.getString("stat"));
 		Lambda lambda = getLambda(n, template);
 		Condition applayCond = parseCondition(n.getFirstChild(), template);
 		FuncTemplate ft = new FuncTemplate(applayCond, name, stat, lambda);
-		if (template instanceof L2Item)
-		{
+		if (template instanceof L2Item) {
 			((L2Item) template).attach(ft);
-		}
-		else if (template instanceof L2Skill)
-		{
+		} else if (template instanceof L2Skill) {
 			((L2Skill) template).attach(ft);
-		}
-		else if (template instanceof L2AbnormalTemplate)
-		{
+		} else if (template instanceof L2AbnormalTemplate) {
 			((L2AbnormalTemplate) template).attach(ft);
 		}
 	}
 
-	protected void attachLambdaFunc(XmlNode n, Object template, LambdaCalc calc)
-	{
+	protected void attachLambdaFunc(XmlNode n, Object template, LambdaCalc calc) {
 		String name = n.getName();
 		final StringBuilder sb = new StringBuilder(name);
 		sb.setCharAt(0, Character.toUpperCase(name.charAt(0)));
@@ -280,77 +155,60 @@ public abstract class StatsParser
 		calc.addFunc(ft.getFunc(calc));
 	}
 
-	protected Condition parseCondition(XmlNode n, Object template)
-	{
-		if (n == null)
-		{
+	protected Condition parseCondition(XmlNode n, Object template) {
+		if (n == null) {
 			return null;
 		}
-		if (n.getName().equalsIgnoreCase("and"))
-		{
+		if (n.getName().equalsIgnoreCase("and")) {
 			return parseLogicAnd(n, template);
 		}
-		if (n.getName().equalsIgnoreCase("or"))
-		{
+		if (n.getName().equalsIgnoreCase("or")) {
 			return parseLogicOr(n, template);
 		}
-		if (n.getName().equalsIgnoreCase("not"))
-		{
+		if (n.getName().equalsIgnoreCase("not")) {
 			return parseLogicNot(n, template);
 		}
-		if (n.getName().equalsIgnoreCase("player"))
-		{
+		if (n.getName().equalsIgnoreCase("player")) {
 			return parsePlayerCondition(n, template);
 		}
-		if (n.getName().equalsIgnoreCase("target"))
-		{
+		if (n.getName().equalsIgnoreCase("target")) {
 			return parseTargetCondition(n, template);
 		}
-		if (n.getName().equalsIgnoreCase("using"))
-		{
+		if (n.getName().equalsIgnoreCase("using")) {
 			return parseUsingCondition(n);
 		}
-		if (n.getName().equalsIgnoreCase("game"))
-		{
+		if (n.getName().equalsIgnoreCase("game")) {
 			return parseGameCondition(n);
 		}
 		return null;
 	}
 
-	protected Condition parseLogicAnd(XmlNode node, Object template)
-	{
+	protected Condition parseLogicAnd(XmlNode node, Object template) {
 		ConditionLogicAnd cond = new ConditionLogicAnd();
-		for (XmlNode n : node.getChildren())
-		{
+		for (XmlNode n : node.getChildren()) {
 			cond.add(parseCondition(n, template));
 		}
 
-		if (cond.conditions == null || cond.conditions.length == 0)
-		{
+		if (cond.conditions == null || cond.conditions.length == 0) {
 			Log.severe("Empty <and> condition in " + name);
 		}
 		return cond;
 	}
 
-	protected Condition parseLogicOr(XmlNode node, Object template)
-	{
+	protected Condition parseLogicOr(XmlNode node, Object template) {
 		ConditionLogicOr cond = new ConditionLogicOr();
-		for (XmlNode n : node.getChildren())
-		{
+		for (XmlNode n : node.getChildren()) {
 			cond.add(parseCondition(n, template));
 		}
 
-		if (cond.conditions == null || cond.conditions.length == 0)
-		{
+		if (cond.conditions == null || cond.conditions.length == 0) {
 			Log.severe("Empty <or> condition in " + name);
 		}
 		return cond;
 	}
 
-	protected Condition parseLogicNot(XmlNode node, Object template)
-	{
-		if (node.getFirstChild() != null)
-		{
+	protected Condition parseLogicNot(XmlNode node, Object template) {
+		if (node.getFirstChild() != null) {
 			return new ConditionLogicNot(parseCondition(node.getFirstChild(), template));
 		}
 
@@ -358,347 +216,225 @@ public abstract class StatsParser
 		return null;
 	}
 
-	protected Condition parsePlayerCondition(XmlNode n, Object template)
-	{
+	protected Condition parsePlayerCondition(XmlNode n, Object template) {
 		Condition cond = null;
 		byte[] forces = new byte[2];
-		for (Entry<String, String> a : n.getAttributes().entrySet())
-		{
-			if (a.getKey().equalsIgnoreCase("races"))
-			{
+		for (Entry<String, String> a : n.getAttributes().entrySet()) {
+			if (a.getKey().equalsIgnoreCase("races")) {
 				final String[] racesVal = a.getValue().split(",");
 				final Race[] races = new Race[racesVal.length];
-				for (int r = 0; r < racesVal.length; r++)
-				{
-					if (racesVal[r] != null)
-					{
+				for (int r = 0; r < racesVal.length; r++) {
+					if (racesVal[r] != null) {
 						races[r] = Race.valueOf(racesVal[r]);
 					}
 				}
 				cond = joinAnd(cond, new ConditionPlayerRace(races));
-			}
-			else if (a.getKey().equalsIgnoreCase("level"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("level")) {
 				int lvl = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerLevel(lvl));
-			}
-			else if (a.getKey().equalsIgnoreCase("levelRange"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("levelRange")) {
 				String[] range = getValue(a.getValue()).split(";");
-				if (range.length == 2)
-				{
+				if (range.length == 2) {
 					int[] lvlRange = new int[2];
 					lvlRange[0] = Integer.decode(getValue(a.getValue()).split(";")[0]);
 					lvlRange[1] = Integer.decode(getValue(a.getValue()).split(";")[1]);
 					cond = joinAnd(cond, new ConditionPlayerLevelRange(lvlRange));
 				}
-			}
-			else if (a.getKey().equalsIgnoreCase("resting"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("resting")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerState(PlayerState.RESTING, val));
-			}
-			else if (a.getKey().equalsIgnoreCase("flying"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("flying")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerState(PlayerState.FLYING, val));
-			}
-			else if (a.getKey().equalsIgnoreCase("moving"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("moving")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerState(PlayerState.MOVING, val));
-			}
-			else if (a.getKey().equalsIgnoreCase("running"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("running")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerState(PlayerState.RUNNING, val));
-			}
-			else if (a.getKey().equalsIgnoreCase("standing"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("standing")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerState(PlayerState.STANDING, val));
-			}
-			else if (a.getKey().equalsIgnoreCase("combat"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("combat")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerState(PlayerState.COMBAT, val));
-			}
-			else if (a.getKey().equalsIgnoreCase("behind"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("behind")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerState(PlayerState.BEHIND, val));
-			}
-			else if (a.getKey().equalsIgnoreCase("front"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("front")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerState(PlayerState.FRONT, val));
-			}
-			else if (a.getKey().equalsIgnoreCase("chaotic"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("chaotic")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerState(PlayerState.CHAOTIC, val));
-			}
-			else if (a.getKey().equalsIgnoreCase("olympiad"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("olympiad")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerState(PlayerState.OLYMPIAD, val));
-			}
-			else if (a.getKey().equalsIgnoreCase("ishero"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("ishero")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerIsHero(val));
-			}
-			else if (a.getKey().equalsIgnoreCase("hp"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("hp")) {
 				int hp = (int) Float.parseFloat(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerHp(hp));
-			}
-			else if (a.getKey().equalsIgnoreCase("mp"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("mp")) {
 				int hp = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerMp(hp));
-			}
-			else if (a.getKey().equalsIgnoreCase("cp"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("cp")) {
 				int cp = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerCp(cp));
-			}
-			else if (a.getKey().equalsIgnoreCase("grade"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("grade")) {
 				int expIndex = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerGrade(expIndex));
-			}
-			else if (a.getKey().equalsIgnoreCase("pkCount"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("pkCount")) {
 				int expIndex = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerPkCount(expIndex));
-			}
-			else if (a.getKey().equalsIgnoreCase("siegezone"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("siegezone")) {
 				int value = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionSiegeZone(value, true));
-			}
-			else if (a.getKey().equalsIgnoreCase("siegeside"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("siegeside")) {
 				int value = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerSiegeSide(value));
-			}
-			else if ("battle_force".equalsIgnoreCase(a.getKey()))
-			{
+			} else if ("battle_force".equalsIgnoreCase(a.getKey())) {
 				forces[0] = Byte.decode(getValue(a.getValue()));
-			}
-			else if ("spell_force".equalsIgnoreCase(a.getKey()))
-			{
+			} else if ("spell_force".equalsIgnoreCase(a.getKey())) {
 				forces[1] = Byte.decode(getValue(a.getValue()));
-			}
-			else if (a.getKey().equalsIgnoreCase("charges"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("charges")) {
 				int value = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerCharges(value));
-			}
-			else if (a.getKey().equalsIgnoreCase("souls"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("souls")) {
 				int value = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerSouls(value));
-			}
-			else if (a.getKey().equalsIgnoreCase("weight"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("weight")) {
 				int weight = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerWeight(weight));
-			}
-			else if (a.getKey().equalsIgnoreCase("invSize"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("invSize")) {
 				int size = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerInvSize(size));
-			}
-			else if (a.getKey().equalsIgnoreCase("isClanLeader"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("isClanLeader")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerIsClanLeader(val));
-			}
-			else if (a.getKey().equalsIgnoreCase("clanLeaderOn"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("clanLeaderOn")) {
 				cond = joinAnd(cond, new ConditionPlayerClanLeaderIsOn());
-			}
-			else if (a.getKey().equalsIgnoreCase("insideZoneId"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("insideZoneId")) {
 				int id = Integer.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerInsideZoneId(id));
-			}
-			else if (a.getKey().equalsIgnoreCase("onEvent"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("onEvent")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerEvent(val));
-			}
-			else if (a.getKey().equalsIgnoreCase("onSurvivalEvent"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("onSurvivalEvent")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerSurvivalEvent(val));
-			}
-			else if (a.getKey().equalsIgnoreCase("pledgeClass"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("pledgeClass")) {
 				int pledgeClass = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerPledgeClass(pledgeClass));
-			}
-			else if (a.getKey().equalsIgnoreCase("clanHall"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("clanHall")) {
 				StringTokenizer st = new StringTokenizer(a.getValue(), ",");
 				ArrayList<Integer> array = new ArrayList<>(st.countTokens());
-				while (st.hasMoreTokens())
-				{
+				while (st.hasMoreTokens()) {
 					String item = st.nextToken().trim();
 					array.add(Integer.decode(getValue(item)));
 				}
 				cond = joinAnd(cond, new ConditionPlayerHasClanHall(array));
-			}
-			else if (a.getKey().equalsIgnoreCase("fort"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("fort")) {
 				int fort = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerHasFort(fort));
-			}
-			else if (a.getKey().equalsIgnoreCase("castle"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("castle")) {
 				int castle = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerHasCastle(castle));
-			}
-			else if (a.getKey().equalsIgnoreCase("sex"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("sex")) {
 				int sex = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerSex(sex));
-			}
-			else if (a.getKey().equalsIgnoreCase("flyMounted"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("flyMounted")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerFlyMounted(val));
-			}
-			else if (a.getKey().equalsIgnoreCase("landingZone"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("landingZone")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerLandingZone(val));
-			}
-			else if ("active_effect_id".equalsIgnoreCase(a.getKey()))
-			{
+			} else if ("active_effect_id".equalsIgnoreCase(a.getKey())) {
 				int effect_id = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerActiveEffectId(effect_id));
-			}
-			else if ("active_effect_id_lvl".equalsIgnoreCase(a.getKey()))
-			{
+			} else if ("active_effect_id_lvl".equalsIgnoreCase(a.getKey())) {
 				String val = getValue(a.getValue());
 				int effect_id = Integer.decode(getValue(val.split(",")[0]));
 				int effect_lvl = Integer.decode(getValue(val.split(",")[1]));
 				cond = joinAnd(cond, new ConditionPlayerActiveEffectId(effect_id, effect_lvl));
-			}
-			else if ("active_effect".equalsIgnoreCase(a.getKey()))
-			{
+			} else if ("active_effect".equalsIgnoreCase(a.getKey())) {
 				String val = getValue(a.getValue());
 				String effectName = getValue(val.split(",")[0]);
 				cond = joinAnd(cond, new ConditionPlayerActiveEffect(effectName));
-			}
-			else if ("active_skill_id".equalsIgnoreCase(a.getKey()))
-			{
+			} else if ("active_skill_id".equalsIgnoreCase(a.getKey())) {
 				int skill_id = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerActiveSkillId(skill_id));
-			}
-			else if ("active_skill_id_lvl".equalsIgnoreCase(a.getKey()))
-			{
+			} else if ("active_skill_id_lvl".equalsIgnoreCase(a.getKey())) {
 				String val = getValue(a.getValue());
 				int skill_id = Integer.decode(getValue(val.split(",")[0]));
 				int skill_lvl = Integer.decode(getValue(val.split(",")[1]));
 				cond = joinAnd(cond, new ConditionPlayerActiveSkillId(skill_id, skill_lvl));
-			}
-			else if ("class_id_restriction".equalsIgnoreCase(a.getKey()))
-			{
+			} else if ("class_id_restriction".equalsIgnoreCase(a.getKey())) {
 				StringTokenizer st = new StringTokenizer(a.getValue(), ",");
 				ArrayList<Integer> array = new ArrayList<>(st.countTokens());
-				while (st.hasMoreTokens())
-				{
+				while (st.hasMoreTokens()) {
 					String item = st.nextToken().trim();
 					array.add(Integer.decode(getValue(item)));
 				}
 				cond = joinAnd(cond, new ConditionPlayerClassIdRestriction(array));
-			}
-			else if ("starts_with_class_name_restriction".equalsIgnoreCase(a.getKey()))
-			{
+			} else if ("starts_with_class_name_restriction".equalsIgnoreCase(a.getKey())) {
 				StringTokenizer st = new StringTokenizer(a.getValue(), ",");
 				ArrayList<String> array = new ArrayList<>(st.countTokens());
-				while (st.hasMoreTokens())
-				{
+				while (st.hasMoreTokens()) {
 					String item = st.nextToken().trim();
 					array.add(getValue(item));
 				}
 				cond = joinAnd(cond, new ConditionPlayerClassNameStartsWith(array));
-			}
-			else if (a.getKey().equalsIgnoreCase("subclass"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("subclass")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerSubclass(val));
-			}
-			else if (a.getKey().equalsIgnoreCase("instanceId"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("instanceId")) {
 				StringTokenizer st = new StringTokenizer(a.getValue(), ",");
 				ArrayList<Integer> array = new ArrayList<>(st.countTokens());
-				while (st.hasMoreTokens())
-				{
+				while (st.hasMoreTokens()) {
 					String item = st.nextToken().trim();
 					array.add(Integer.decode(getValue(item)));
 				}
 				cond = joinAnd(cond, new ConditionPlayerInstanceId(array));
-			}
-			else if (a.getKey().equalsIgnoreCase("agathionId"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("agathionId")) {
 				int agathionId = Integer.decode(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerAgathionId(agathionId));
-			}
-			else if (a.getKey().equalsIgnoreCase("cloakStatus"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("cloakStatus")) {
 				int val = Integer.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionPlayerCloakStatus(val));
-			}
-			else if (a.getKey().equalsIgnoreCase("hasPet"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("hasPet")) {
 				StringTokenizer st = new StringTokenizer(a.getValue(), ",");
 				ArrayList<Integer> array = new ArrayList<>(st.countTokens());
-				while (st.hasMoreTokens())
-				{
+				while (st.hasMoreTokens()) {
 					String item = st.nextToken().trim();
 					array.add(Integer.decode(getValue(item)));
 				}
 				cond = joinAnd(cond, new ConditionPlayerHasPet(array));
-			}
-			else if (a.getKey().equalsIgnoreCase("hasPet"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("hasPet")) {
 				StringTokenizer st = new StringTokenizer(a.getValue(), ",");
 				ArrayList<Integer> array = new ArrayList<>(st.countTokens());
-				while (st.hasMoreTokens())
-				{
+				while (st.hasMoreTokens()) {
 					String item = st.nextToken().trim();
 					array.add(Integer.decode(getValue(item)));
 				}
 				cond = joinAnd(cond, new ConditionPlayerHasPet(array));
-			}
-			else if (a.getKey().equalsIgnoreCase("servitorNpcId"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("servitorNpcId")) {
 				StringTokenizer st = new StringTokenizer(a.getValue(), ",");
 				ArrayList<Integer> array = new ArrayList<>(st.countTokens());
-				while (st.hasMoreTokens())
-				{
+				while (st.hasMoreTokens()) {
 					String item = st.nextToken().trim();
 					array.add(Integer.decode(getValue(item)));
 				}
 				cond = joinAnd(cond, new ConditionPlayerServitorNpcId(array));
-			}
-			else if (a.getKey().equalsIgnoreCase("hasSummon"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("hasSummon")) {
 				boolean val = Boolean.parseBoolean(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionPlayerHasSummon(val));
-			}
-			else if (a.getKey().equalsIgnoreCase("npcIdRadius"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("npcIdRadius")) {
 				StringTokenizer st = new StringTokenizer(a.getValue(), ",");
 				int npcId = 0;
 				int radius = 0;
-				if (st.countTokens() > 1)
-				{
+				if (st.countTokens() > 1) {
 					npcId = Integer.decode(getValue(st.nextToken().trim()));
 					radius = Integer.decode(getValue(st.nextToken().trim()));
 				}
@@ -706,347 +442,258 @@ public abstract class StatsParser
 			}
 		}
 
-		if (forces[0] + forces[1] > 0)
-		{
+		if (forces[0] + forces[1] > 0) {
 			cond = joinAnd(cond, new ConditionForceBuff(forces));
 		}
 
-		if (cond == null)
-		{
+		if (cond == null) {
 			Log.severe("Unrecognized <player> condition in " + name);
 		}
 		return cond;
 	}
 
-	protected Condition parseTargetCondition(XmlNode n, Object template)
-	{
+	protected Condition parseTargetCondition(XmlNode n, Object template) {
 		Condition cond = null;
-		for (Entry<String, String> a : n.getAttributes().entrySet())
-		{
-			if (a.getKey().equalsIgnoreCase("hp"))
-			{
+		for (Entry<String, String> a : n.getAttributes().entrySet()) {
+			if (a.getKey().equalsIgnoreCase("hp")) {
 				int hp = Math.round(Float.parseFloat(getValue(a.getValue())));
 				cond = joinAnd(cond, new ConditionTargetHp(hp));
-			}
-			else if (a.getKey().equalsIgnoreCase("aggro"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("aggro")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionTargetAggro(val));
-			}
-			else if (a.getKey().equalsIgnoreCase("siegezone"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("siegezone")) {
 				int value = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionSiegeZone(value, false));
-			}
-			else if (a.getKey().equalsIgnoreCase("level"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("level")) {
 				int lvl = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionTargetLevel(lvl));
-			}
-			else if (a.getKey().equalsIgnoreCase("playable"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("playable")) {
 				cond = joinAnd(cond, new ConditionTargetPlayable());
-			}
-			else if ("class_id_restriction".equalsIgnoreCase(a.getKey()))
-			{
+			} else if ("class_id_restriction".equalsIgnoreCase(a.getKey())) {
 				StringTokenizer st = new StringTokenizer(a.getValue(), ",");
 				ArrayList<Integer> array = new ArrayList<>(st.countTokens());
-				while (st.hasMoreTokens())
-				{
+				while (st.hasMoreTokens()) {
 					String item = st.nextToken().trim();
 					array.add(Integer.decode(getValue(item)));
 				}
 				cond = joinAnd(cond, new ConditionTargetClassIdRestriction(array));
-			}
-			else if ("active_effect_id".equalsIgnoreCase(a.getKey()))
-			{
+			} else if ("active_effect_id".equalsIgnoreCase(a.getKey())) {
 				int effect_id = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionTargetActiveEffectId(effect_id));
-			}
-			else if ("active_effect_id_lvl".equalsIgnoreCase(a.getKey()))
-			{
+			} else if ("active_effect_id_lvl".equalsIgnoreCase(a.getKey())) {
 				String val = getValue(a.getValue());
 				int effect_id = Integer.decode(getValue(val.split(",")[0]));
 				int effect_lvl = Integer.decode(getValue(val.split(",")[1]));
 				cond = joinAnd(cond, new ConditionTargetActiveEffectId(effect_id, effect_lvl));
-			}
-			else if ("active_effect".equalsIgnoreCase(a.getKey()))
-			{
+			} else if ("active_effect".equalsIgnoreCase(a.getKey())) {
 				String effectName = getValue(a.getValue());
 				cond = joinAnd(cond, new ConditionTargetActiveEffect(effectName));
-			}
-			else if ("active_skill_id".equalsIgnoreCase(a.getKey()))
-			{
+			} else if ("active_skill_id".equalsIgnoreCase(a.getKey())) {
 				int skill_id = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionTargetActiveSkillId(skill_id));
-			}
-			else if ("active_skill_id_lvl".equalsIgnoreCase(a.getKey()))
-			{
+			} else if ("active_skill_id_lvl".equalsIgnoreCase(a.getKey())) {
 				String val = getValue(a.getValue());
 				int skill_id = Integer.decode(getValue(val.split(",")[0]));
 				int skill_lvl = Integer.decode(getValue(val.split(",")[1]));
 				cond = joinAnd(cond, new ConditionTargetActiveSkillId(skill_id, skill_lvl));
-			}
-			else if (a.getKey().equalsIgnoreCase("abnormal"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("abnormal")) {
 				int abnormalId = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionTargetAbnormal(abnormalId));
-			}
-			else if (a.getKey().equalsIgnoreCase("mindistance"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("mindistance")) {
 				float distance = Float.parseFloat(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionMinDistance(Math.round(distance * distance)));
 			}
 			// used for npc race
-			else if ("race_id".equalsIgnoreCase(a.getKey()))
-			{
+			else if ("race_id".equalsIgnoreCase(a.getKey())) {
 				StringTokenizer st = new StringTokenizer(a.getValue(), ",");
 				ArrayList<Integer> array = new ArrayList<>(st.countTokens());
-				while (st.hasMoreTokens())
-				{
+				while (st.hasMoreTokens()) {
 					String item = st.nextToken().trim();
 					array.add(Integer.decode(getValue(item)));
 				}
 				cond = joinAnd(cond, new ConditionTargetRaceId(array));
 			}
 			// used for pc race
-			else if (a.getKey().equalsIgnoreCase("races"))
-			{
+			else if (a.getKey().equalsIgnoreCase("races")) {
 				final String[] racesVal = a.getValue().split(",");
 				final Race[] races = new Race[racesVal.length];
-				for (int r = 0; r < racesVal.length; r++)
-				{
-					if (racesVal[r] != null)
-					{
+				for (int r = 0; r < racesVal.length; r++) {
+					if (racesVal[r] != null) {
 						races[r] = Race.valueOf(racesVal[r]);
 					}
 				}
 				cond = joinAnd(cond, new ConditionTargetRace(races));
-			}
-			else if (a.getKey().equalsIgnoreCase("using"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("using")) {
 				int mask = 0;
 				StringTokenizer st = new StringTokenizer(a.getValue(), ",");
-				while (st.hasMoreTokens())
-				{
+				while (st.hasMoreTokens()) {
 					String item = st.nextToken().trim();
-					for (L2WeaponType wt : L2WeaponType.values())
-					{
-						if (wt.toString().equals(item))
-						{
+					for (L2WeaponType wt : L2WeaponType.values()) {
+						if (wt.toString().equals(item)) {
 							mask |= wt.mask();
 							break;
 						}
 					}
-					for (L2ArmorType at : L2ArmorType.values())
-					{
-						if (at.toString().equals(item))
-						{
+					for (L2ArmorType at : L2ArmorType.values()) {
+						if (at.toString().equals(item)) {
 							mask |= at.mask();
 							break;
 						}
 					}
 				}
 				cond = joinAnd(cond, new ConditionTargetUsesWeaponKind(mask));
-			}
-			else if (a.getKey().equalsIgnoreCase("npcId"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("npcId")) {
 				StringTokenizer st = new StringTokenizer(a.getValue(), ",");
 				ArrayList<Integer> array = new ArrayList<>(st.countTokens());
-				while (st.hasMoreTokens())
-				{
+				while (st.hasMoreTokens()) {
 					String item = st.nextToken().trim();
 					array.add(Integer.decode(getValue(item)));
 				}
 				cond = joinAnd(cond, new ConditionTargetNpcId(array));
-			}
-			else if (a.getKey().equalsIgnoreCase("npcType"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("npcType")) {
 				String values = getValue(a.getValue()).trim();
 				String[] valuesSplit = values.split(",");
 
 				InstanceType[] types = new InstanceType[valuesSplit.length];
 				InstanceType type;
 
-				for (int j = 0; j < valuesSplit.length; j++)
-				{
+				for (int j = 0; j < valuesSplit.length; j++) {
 					type = Enum.valueOf(InstanceType.class, valuesSplit[j]);
-					if (type == null)
-					{
+					if (type == null) {
 						throw new IllegalArgumentException("Instance type not recognized: " + valuesSplit[j]);
 					}
 					types[j] = type;
 				}
 
 				cond = joinAnd(cond, new ConditionTargetNpcType(types));
-			}
-			else
-			{
+			} else {
 				Log.severe("Unrecognized <target> " + a.getKey() + " condition in " + name);
 			}
 		}
 		return cond;
 	}
 
-	protected Condition parseUsingCondition(XmlNode n)
-	{
+	protected Condition parseUsingCondition(XmlNode n) {
 		Condition cond = null;
-		for (Entry<String, String> a : n.getAttributes().entrySet())
-		{
-			if (a.getKey().equalsIgnoreCase("kind"))
-			{
+		for (Entry<String, String> a : n.getAttributes().entrySet()) {
+			if (a.getKey().equalsIgnoreCase("kind")) {
 				int mask = 0;
 				StringTokenizer st = new StringTokenizer(a.getValue(), ",");
-				while (st.hasMoreTokens())
-				{
+				while (st.hasMoreTokens()) {
 					int old = mask;
 					String item = st.nextToken().trim();
-					if (ItemTable.weaponTypes.containsKey(item))
-					{
+					if (ItemTable.weaponTypes.containsKey(item)) {
 						mask |= ItemTable.weaponTypes.get(item).mask();
 					}
 
-					if (ItemTable.armorTypes.containsKey(item))
-					{
+					if (ItemTable.armorTypes.containsKey(item)) {
 						mask |= ItemTable.armorTypes.get(item).mask();
 					}
 
-					if (item.equals("crossbow"))
-					{
+					if (item.equals("crossbow")) {
 						mask |= L2WeaponType.CROSSBOWK.mask();
 					}
 
-					if (old == mask)
-					{
+					if (old == mask) {
 						Log.info("[parseUsingCondition=\"kind\"] Unknown item type name: " + item);
 					}
 				}
 				cond = joinAnd(cond, new ConditionUsingItemType(mask));
-			}
-			else if (a.getKey().equalsIgnoreCase("skill"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("skill")) {
 				int id = Integer.parseInt(a.getValue());
 				cond = joinAnd(cond, new ConditionUsingSkill(id));
-			}
-			else if (a.getKey().equalsIgnoreCase("slotitem"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("slotitem")) {
 				StringTokenizer st = new StringTokenizer(a.getValue(), ";");
 				int id = Integer.parseInt(st.nextToken().trim());
 				int slot = Integer.parseInt(st.nextToken().trim());
 				int enchant = 0;
-				if (st.hasMoreTokens())
-				{
+				if (st.hasMoreTokens()) {
 					enchant = Integer.parseInt(st.nextToken().trim());
 				}
 				cond = joinAnd(cond, new ConditionSlotItemId(slot, id, enchant));
-			}
-			else if (a.getKey().equalsIgnoreCase("weaponChange"))
-			{
+			} else if (a.getKey().equalsIgnoreCase("weaponChange")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionChangeWeapon(val));
 			}
 		}
-		if (cond == null)
-		{
+		if (cond == null) {
 			Log.severe("Unrecognized <using> condition in " + name);
 		}
 		return cond;
 	}
 
-	protected Condition parseGameCondition(XmlNode n)
-	{
+	protected Condition parseGameCondition(XmlNode n) {
 		Condition cond = null;
-		for (Entry<String, String> a : n.getAttributes().entrySet())
-		{
-			if (a.getKey().equalsIgnoreCase("skill"))
-			{
+		for (Entry<String, String> a : n.getAttributes().entrySet()) {
+			if (a.getKey().equalsIgnoreCase("skill")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionWithSkill(val));
 			}
-			if (a.getKey().equalsIgnoreCase("night"))
-			{
+			if (a.getKey().equalsIgnoreCase("night")) {
 				boolean val = Boolean.valueOf(a.getValue());
 				cond = joinAnd(cond, new ConditionGameTime(CheckGameTime.NIGHT, val));
 			}
-			if (a.getKey().equalsIgnoreCase("chance"))
-			{
+			if (a.getKey().equalsIgnoreCase("chance")) {
 				int val = Integer.decode(getValue(a.getValue()));
 				cond = joinAnd(cond, new ConditionGameChance(val));
 			}
 		}
-		if (cond == null)
-		{
+		if (cond == null) {
 			Log.severe("Unrecognized <game> condition in " + name);
 		}
 		return cond;
 	}
 
-	protected Lambda getLambda(XmlNode node, Object template)
-	{
-		if (node.hasAttribute("val"))
-		{
-            String val = node.getString("val");
-			if (val.charAt(0) == '$')
-			{
-				if (val.equalsIgnoreCase("$player_level"))
-				{
+	protected Lambda getLambda(XmlNode node, Object template) {
+		if (node.hasAttribute("val")) {
+			String val = node.getString("val");
+			if (val.charAt(0) == '$') {
+				if (val.equalsIgnoreCase("$player_level")) {
 					return new LambdaStats(LambdaStats.StatsType.PLAYER_LEVEL);
 				}
-				if (val.equalsIgnoreCase("$target_level"))
-				{
+				if (val.equalsIgnoreCase("$target_level")) {
 					return new LambdaStats(LambdaStats.StatsType.TARGET_LEVEL);
 				}
-				if (val.equalsIgnoreCase("$player_max_hp"))
-				{
+				if (val.equalsIgnoreCase("$player_max_hp")) {
 					return new LambdaStats(LambdaStats.StatsType.PLAYER_MAX_HP);
 				}
-				if (val.equalsIgnoreCase("$player_max_mp"))
-				{
+				if (val.equalsIgnoreCase("$player_max_mp")) {
 					return new LambdaStats(LambdaStats.StatsType.PLAYER_MAX_MP);
 				}
 				// try to find value out of item fields
 				StatsSet set = getStatsSet();
 				String field = set.getString(val.substring(1));
-				if (field != null)
-				{
+				if (field != null) {
 					return new LambdaConst(Double.parseDouble(getValue(field)));
 				}
 				// failed
 				throw new IllegalArgumentException("Unknown value " + val);
-			}
-			else
-			{
+			} else {
 				return new LambdaConst(Double.parseDouble(getValue(val)));
 			}
 		}
 		LambdaCalc calc = new LambdaCalc();
 		node = node.getFirstChild();
-		if (node == null || !"val".equals(node.getName()))
-		{
+		if (node == null || !"val".equals(node.getName())) {
 			throw new IllegalArgumentException("Value not specified");
 		}
 
-		for (XmlNode n : node.getChildren())
-		{
+		for (XmlNode n : node.getChildren()) {
 			attachLambdaFunc(n, template, calc);
 		}
 
 		return calc;
 	}
 
-	protected String getValue(String value)
-	{
+	protected String getValue(String value) {
 		return value;
 	}
 
-	protected Condition joinAnd(Condition cond, Condition c)
-	{
-		if (cond == null)
-		{
+	protected Condition joinAnd(Condition cond, Condition c) {
+		if (cond == null) {
 			return c;
 		}
-		if (cond instanceof ConditionLogicAnd)
-		{
+		if (cond instanceof ConditionLogicAnd) {
 			((ConditionLogicAnd) cond).add(c);
 			return cond;
 		}
@@ -1057,13 +704,11 @@ public abstract class StatsParser
 		return and;
 	}
 
-	public int getId()
-	{
+	public int getId() {
 		return id;
 	}
 
-	public String getName()
-	{
+	public String getName() {
 		return name;
 	}
 }

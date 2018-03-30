@@ -25,8 +25,7 @@ import java.util.List;
 /**
  * @author mkizub
  */
-public class L2PcTemplate extends L2CharTemplate
-{
+public class L2PcTemplate extends L2CharTemplate {
 	public final Race race;
 	public final boolean isMage;
 	public final int startingClassId;
@@ -37,8 +36,7 @@ public class L2PcTemplate extends L2CharTemplate
 	private List<PcTemplateItem> items = new ArrayList<>();
 	private List<Integer> skillIds = new ArrayList<>();
 
-	public L2PcTemplate(StatsSet set)
-	{
+	public L2PcTemplate(StatsSet set) {
 		super(set);
 		race = Race.values()[set.getInteger("raceId")];
 		isMage = set.getBool("isMage");
@@ -48,24 +46,18 @@ public class L2PcTemplate extends L2CharTemplate
 		fCollisionHeightFemale = set.getDouble("collisionHeightFemale");
 	}
 
-	public int getId()
-	{
+	public int getId() {
 		return race.ordinal() * 2 + (isMage ? 1 : 0);
 	}
 
 	/**
 	 * Adds starter equipment
 	 */
-	public void addItem(int itemId, int amount, boolean equipped)
-	{
-		if (amount == 1 || !equipped)
-		{
+	public void addItem(int itemId, int amount, boolean equipped) {
+		if (amount == 1 || !equipped) {
 			items.add(new PcTemplateItem(itemId, amount, equipped));
-		}
-		else
-		{
-			for (int i = 0; i < amount; i++)
-			{
+		} else {
+			for (int i = 0; i < amount; i++) {
 				items.add(new PcTemplateItem(itemId, 1, equipped));
 			}
 		}
@@ -74,13 +66,11 @@ public class L2PcTemplate extends L2CharTemplate
 	/**
 	 * @return itemIds of all the starter equipment
 	 */
-	public List<PcTemplateItem> getItems()
-	{
+	public List<PcTemplateItem> getItems() {
 		return items;
 	}
 
-	public static final class PcTemplateItem
-	{
+	public static final class PcTemplateItem {
 		private final int itemId;
 		private final int amount;
 		private final boolean equipped;
@@ -89,8 +79,7 @@ public class L2PcTemplate extends L2CharTemplate
 		 * @param amount
 		 * @param itemId
 		 */
-		public PcTemplateItem(int itemId, int amount, boolean equipped)
-		{
+		public PcTemplateItem(int itemId, int amount, boolean equipped) {
 			this.itemId = itemId;
 			this.amount = amount;
 			this.equipped = equipped;
@@ -99,58 +88,49 @@ public class L2PcTemplate extends L2CharTemplate
 		/**
 		 * @return Returns the itemId.
 		 */
-		public int getItemId()
-		{
+		public int getItemId() {
 			return itemId;
 		}
 
 		/**
 		 * @return Returns the amount.
 		 */
-		public int getAmount()
-		{
+		public int getAmount() {
 			return amount;
 		}
 
 		/**
 		 * @return Returns the if the item should be equipped after char creation.
 		 */
-		public boolean isEquipped()
-		{
+		public boolean isEquipped() {
 			return equipped;
 		}
 	}
 
-	public void addSkill(int id)
-	{
+	public void addSkill(int id) {
 		skillIds.add(id);
 	}
 
-	public List<Integer> getSkillIds()
-	{
+	public List<Integer> getSkillIds() {
 		return skillIds;
 	}
 
-	public final int getFallHeight()
-	{
+	public final int getFallHeight() {
 		return 333;
 	}
 
 	@Override
-	public float getBaseHpReg(int level)
-	{
+	public float getBaseHpReg(int level) {
 		return PlayerStatDataTable.getInstance().getHpRegen(level);
 	}
 
 	@Override
-	public float getBaseMpReg(int level)
-	{
+	public float getBaseMpReg(int level) {
 		return PlayerStatDataTable.getInstance().getMpRegen(level);
 	}
 
 	@Override
-	public float getBaseCpReg(int level)
-	{
+	public float getBaseCpReg(int level) {
 		return PlayerStatDataTable.getInstance().getCpRegen(level);
 	}
 }

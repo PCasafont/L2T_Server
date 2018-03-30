@@ -1,506 +1,506 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list enabled="true">
-    <!-- Custom Script Zones -->
-    <zone name="Emerald Square 1st Secret Room" id="20105" type="ScriptZone" shape="Cuboid" minZ="-11900" maxZ="-11800">
-        <node X="144175" Y="142396" />
-        <node X="144251" Y="142588" />
-    </zone>
-    <zone name="Emerald Square 2nd Secret Room" id="20106" type="ScriptZone" shape="Cuboid" minZ="-12250" maxZ="-12150">
-        <node X="147400" Y="143631" />
-        <node X="147484" Y="143828" />
-    </zone>
-    <zone name="Emerald Square 3rd Secret Room" id="20107" type="ScriptZone" shape="Cuboid" minZ="-12150" maxZ="-12000">
-        <node X="149396" Y="143473" />
-        <node X="149559" Y="143584" />
-    </zone>
-    <zone name="Pailaka (Forgotten Temple)" id="20108" type="ScriptZone" shape="NPoly" minZ="-5050" maxZ="-3900">
-        <node X="-62840" Y="178808" />
-        <node X="-62840" Y="184568" />
-        <node X="-60792" Y="184568" />
-        <node X="-60792" Y="188792" />
-        <node X="-57976" Y="191224" />
-        <node X="-53000" Y="190840" />
-        <node X="-52360" Y="190200" />
-        <node X="-52360" Y="178808" />
-    </zone>
-    <zone name="Pailaka (Devil's Isle)" id="20109" type="ScriptZone" shape="NPoly" minZ="-3770" maxZ="-3700">
-        <node X="76650" Y="-221310" />
-        <node X="76630" Y="-221880" />
-        <node X="75490" Y="-221480" />
-        <node X="75630" Y="-221140" />
-    </zone>
-    <zone name="Nornil's Garden Warrior's Gate" id="20110" type="ScriptZone" shape="Cuboid" minZ="-12650" maxZ="-12600">
-        <node X="-109864" Y="76184" />
-        <node X="-109544" Y="76392" />
-    </zone>
-    <zone name="Nornil's Garden Midway Gate" id="20111" type="ScriptZone" shape="Cuboid" minZ="-12930" maxZ="-12900">
-        <node X="-107560" Y="80488" />
-        <node X="-107240" Y="80808" />
-    </zone>
-    <zone name="Nornil's Garden Gate" id="20112" type="ScriptZone" shape="Cuboid" minZ="-12990" maxZ="-12960">
-        <node X="-111016" Y="83944" />
-        <node X="-110696" Y="84264" />
-    </zone>
-    <zone name="Pagans mark" id="30100" type="ScriptZone" shape="NPoly" minZ="-10735" maxZ="-10720">
-        <node X="-16100" Y="-36620" />
-        <node X="-16600" Y="-36620" />
-        <node X="-16600" Y="-36925" />
-        <node X="-16100" Y="-36925" />
-    </zone>
-    <zone name="Hellbound" id="40101" type="ScriptZone" shape="NPoly" minZ="-30000" maxZ="30000">
-        <node X="-32768" Y="229376" />
-        <node X="32768" Y="229376" />
-        <node X="32768" Y="262143" />
-        <node X="-32768" Y="262143" />
-    </zone>
-    <zone name="Hellbound Dolmen" id="40107" type="ScriptZone" shape="Cuboid" minZ="-3200" maxZ="-3000">
-        <node X="-6230" Y="249000" />
-        <node X="-5230" Y="249880" />
-    </zone>
-    <zone name="Hellbound Quarry" id="40108" type="ScriptZone" shape="NPoly" minZ="-2509" maxZ="-1509">
-        <node X="-9675" Y="240402" />
-        <node X="-2401" Y="240307" />
-        <node X="-2393" Y="246927" />
-        <node X="-9590" Y="246820" />
-    </zone>
-    <zone name="Seed of Infinity AirShips dock" id="50600" type="ScriptZone" shape="Cylinder" minZ="-1000" maxZ="6200"
-          rad="2900">
-        <node X="-212855" Y="209819" />
-    </zone>
-    <zone name="Seed of Destruction AirShips dock" id="50601" type="ScriptZone" shape="Cylinder" minZ="-1000"
-          maxZ="6200" rad="4300">
-        <node X="-249460" Y="249282" />
-    </zone>
-    <zone name="Keucereus Base North" id="50602" type="ScriptZone" shape="NPoly" minZ="-1000" maxZ="6200">
-        <node X="-193315" Y="240184" />
-        <node X="-188053" Y="235278" />
-        <node X="-179811" Y="238353" />
-        <node X="-178407" Y="242454" />
-        <node X="-178685" Y="244665" />
-    </zone>
-    <zone name="Keucereus Base South" id="50603" type="ScriptZone" shape="NPoly" minZ="-1000" maxZ="6200">
-        <node X="-178685" Y="244664" />
-        <node X="-180120" Y="246779" />
-        <node X="-185598" Y="249572" />
-        <node X="-193009" Y="245647" />
-        <node X="-193315" Y="240185" />
-    </zone>
-    <zone name="Seed of Annihilation 1" id="60002" type="ScriptZone" shape="Cylinder" minZ="-10600" maxZ="-10500"
-          rad="260">
-        <node X="-182488" Y="186655" />
-    </zone>
-    <zone name="Seed of Annihilation 2" id="60003" type="ScriptZone" shape="Cylinder" minZ="-11050" maxZ="-10950"
-          rad="260">
-        <node X="-212755" Y="184380" />
-    </zone>
-    <zone name="Seed of Annihilation 3" id="60004" type="ScriptZone" shape="Cylinder" minZ="-10800" maxZ="-10700"
-          rad="360">
-        <node X="-178458" Y="188167" />
-    </zone>
-    <zone name="Seed of Annihilation 4" id="60005" type="ScriptZone" shape="Cylinder" minZ="-15250" maxZ="-15100"
-          rad="360">
-        <node X="-179430" Y="183844" />
-    </zone>
-    <zone name="Seed of Destruction" id="60009" type="ScriptZone" shape="Cuboid" minZ="-14065" maxZ="-6500">
-        <node X="-237600" Y="221168" />
-        <node X="-253900" Y="204849" />
-    </zone>
-    <!-- Custom zones for Tully Workshop 6th and 8th floors spawn control -->
-    <!-- Tully Workshop 6th floor room 1 -->
-    <zone name="tully_workshop_floor_6th_room_1" id="200012" type="ScriptZone" shape="NPoly" minZ="-13640"
-          maxZ="-13440">
-        <node X="-13143" Y="278159" />
-        <node X="-11984" Y="278155" />
-        <node X="-12247" Y="278817" />
-        <node X="-12877" Y="278817" />
-        <node X="-13301" Y="279233" />
-        <node X="-13948" Y="278959" />
-    </zone>
-    <!-- Tully Workshop 6th floor room 2 -->
-    <zone name="tully_workshop_floor_6th_room_2" id="200013" type="ScriptZone" shape="NPoly" minZ="-13640"
-          maxZ="-13440">
-        <node X="-12135" Y="280544" />
-        <node X="-11708" Y="280111" />
-        <node X="-11029" Y="280377" />
-        <node X="-11881" Y="281242" />
-        <node X="-13044" Y="281234" />
-        <node X="-12767" Y="280546" />
-    </zone>
-    <!-- Tully Workshop 6th floor room 3 -->
-    <zone name="tully_workshop_floor_6th_room_3" id="200014" type="ScriptZone" shape="NPoly" minZ="-13640"
-          maxZ="-13440">
-        <node X="-13376" Y="279405" />
-        <node X="-13380" Y="280048" />
-        <node X="-12930" Y="280494" />
-        <node X="-13219" Y="281137" />
-        <node X="-14027" Y="280321" />
-        <node X="-14034" Y="279128" />
-    </zone>
-    <!-- Tully Workshop 6th floor room 4 -->
-    <zone name="tully_workshop_floor_6th_room_4" id="200015" type="ScriptZone" shape="NPoly" minZ="-13640"
-          maxZ="-13440">
-        <node X="-10980" Y="279062" />
-        <node X="-10975" Y="280217" />
-        <node X="-11688" Y="279905" />
-        <node X="-11642" Y="279320" />
-        <node X="-12056" Y="278883" />
-        <node X="-11808" Y="278212" />
-    </zone>
-    <!-- Tully Workshop 8th floor room 1 -->
-    <zone name="tully_workshop_floor_8th_room_1" id="200016" type="ScriptZone" shape="NPoly" minZ="-10530"
-          maxZ="-10330">
-        <node X="-13143" Y="278159" />
-        <node X="-11984" Y="278155" />
-        <node X="-12247" Y="278817" />
-        <node X="-12877" Y="278817" />
-        <node X="-13301" Y="279233" />
-        <node X="-13948" Y="278959" />
-    </zone>
-    <!-- Tully Workshop 8th floor room 2 -->
-    <zone name="tully_workshop_floor_8th_room_2" id="200017" type="ScriptZone" shape="NPoly" minZ="-10530"
-          maxZ="-10330">
-        <node X="-12135" Y="280544" />
-        <node X="-11708" Y="280111" />
-        <node X="-11029" Y="280377" />
-        <node X="-11881" Y="281242" />
-        <node X="-13044" Y="281234" />
-        <node X="-12767" Y="280546" />
-    </zone>
-    <!-- Tully Workshop 8th floor room 3 -->
-    <zone name="tully_workshop_floor_8th_room_3" id="200018" type="ScriptZone" shape="NPoly" minZ="-10530"
-          maxZ="-10330">
-        <node X="-13376" Y="279405" />
-        <node X="-13380" Y="280048" />
-        <node X="-12930" Y="280494" />
-        <node X="-13219" Y="281137" />
-        <node X="-14027" Y="280321" />
-        <node X="-14034" Y="279128" />
-    </zone>
-    <!-- Tully Workshop 8th floor room 4 -->
-    <zone name="tully_workshop_floor_8th_room_4" id="200019" type="ScriptZone" shape="NPoly" minZ="-10530"
-          maxZ="-10330">
-        <node X="-10980" Y="279062" />
-        <node X="-10975" Y="280217" />
-        <node X="-11688" Y="279905" />
-        <node X="-11642" Y="279320" />
-        <node X="-12056" Y="278883" />
-        <node X="-11808" Y="278212" />
-    </zone>
-    <!-- Custom zones for Tower of Naia rooms for characters control -->
-    <!-- Tower of Naia room 1 -->
-    <zone name="tower_of_naia_room_1" id="200020" type="ScriptZone" shape="Cuboid" minZ="-9156" maxZ="-9056">
-        <node X="-46940" Y="246865" />
-        <node X="-45466" Y="245370" />
-    </zone>
-    <!-- Tower of Naia room 2 -->
-    <zone name="tower_of_naia_room_2" id="200021" type="ScriptZone" shape="Cuboid" minZ="-9168" maxZ="-8818">
-        <node X="-49908" Y="248440" />
-        <node X="-47912" Y="249896" />
-    </zone>
-    <!-- Tower of room 3 -->
-    <zone name="tower_of_naia_room_3" id="200022" type="ScriptZone" shape="Cuboid" minZ="-10032" maxZ="-9682">
-        <node X="-52362" Y="245375" />
-        <node X="-50880" Y="246866" />
-    </zone>
-    <!-- Tower of Naia room 4 -->
-    <zone name="tower_of_naia_room_4" id="200023" type="ScriptZone" shape="Cuboid" minZ="-10032" maxZ="-9682">
-        <node X="-49954" Y="242680" />
-        <node X="-47958" Y="244136" />
-    </zone>
-    <!-- Tower of Naia room 5 -->
-    <zone name="tower_of_naia_room_5" id="200024" type="ScriptZone" shape="Cuboid" minZ="-10044" maxZ="-9694">
-        <node X="-46953" Y="245376" />
-        <node X="-45479" Y="246871" />
-    </zone>
-    <!-- Tower of Naia room 6 -->
-    <zone name="tower_of_naia_room_6" id="200025" type="ScriptZone" shape="Cuboid" minZ="-10036" maxZ="-9686">
-        <node X="-49444" Y="247736" />
-        <node X="-48412" Y="248708" />
-    </zone>
-    <!-- Tower of Naia room 7 -->
-    <zone name="tower_of_naia_room_7" id="200026" type="ScriptZone" shape="Cuboid" minZ="-10880" maxZ="-10530">
-        <node X="-52371" Y="245374" />
-        <node X="-50889" Y="246865" />
-    </zone>
-    <!-- Tower of Naia room 8 -->
-    <zone name="tower_of_naia_room_8" id="200027" type="ScriptZone" shape="Cuboid" minZ="-10876" maxZ="-10526">
-        <node X="-49447" Y="243547" />
-        <node X="-48415" Y="244519" />
-    </zone>
-    <!-- Tower of Naia room 9 -->
-    <zone name="tower_of_naia_room_9" id="200028" type="ScriptZone" shape="Cuboid" minZ="-11748" maxZ="-11398">
-        <node X="-46970" Y="245369" />
-        <node X="-45496" Y="246864" />
-    </zone>
-    <!-- Tower of Naia room 10 -->
-    <zone name="tower_of_naia_room_10" id="200029" type="ScriptZone" shape="Cuboid" minZ="-11760" maxZ="-11410">
-        <node X="-49440" Y="247736" />
-        <node X="-48412" Y="248708" />
-    </zone>
-    <!-- Tower of Naia room 11 -->
-    <zone name="tower_of_naia_room_11" id="200030" type="ScriptZone" shape="Cuboid" minZ="-12650" maxZ="-12300">
-        <node X="-52347" Y="245404" />
-        <node X="-50865" Y="246895" />
-    </zone>
-    <!-- Tower of Naia room 12 -->
-    <zone name="tower_of_naia_room_12" id="200031" type="ScriptZone" shape="Cuboid" minZ="-13444" maxZ="-13094">
-        <node X="-49004" Y="242907" />
-        <node X="-47530" Y="244402" />
-    </zone>
-    <zone id="60011" name="Orbis Temple Entrance" type="ScriptZone" shape="Cylinder" minZ="-425" maxZ="-340" rad="200">
-        <node X="198205" Y="90591" />
-    </zone>
-    <zone id="60012" name="Orbis Temple" type="ScriptZone" shape="Cylinder" minZ="-7980" maxZ="-7970" rad="200">
-        <node X="215104" Y="52808" />
-    </zone>
-    <zone id="60013" name="Orbis Temple" type="ScriptZone" shape="Cylinder" minZ="-8810" maxZ="-8800" rad="300">
-        <node X="215889" Y="52264" />
-    </zone>
-    <zone id="60014" name="Orbis Temple" type="ScriptZone" shape="Cylinder" minZ="-14185" maxZ="-14180" rad="300">
-        <node X="215105" Y="52802" />
-    </zone>
-    <zone id="60015" name="Orbis Temple" type="ScriptZone" shape="Cylinder" minZ="-15020" maxZ="-15010" rad="300">
-        <node X="210154" Y="48744" />
-    </zone>
-    <zone id="60016" name="Orbis Temple" type="ScriptZone" shape="Cylinder" minZ="-12740" maxZ="-12615" rad="300">
-        <node X="211520" Y="114683" />
-    </zone>
-    <zone name="Istina green circle" id="60020" type="ScriptZone" shape="NPoly" minZ="-11484" maxZ="-10018">
-        <node X="-177472" Y="148217" />
-        <node X="-177617" Y="147873" />
-        <node X="-177477" Y="147516" />
-        <node X="-177131" Y="147376" />
-        <node X="-176776" Y="147505" />
-        <node X="-176626" Y="147865" />
-        <node X="-176776" Y="148208" />
-        <node X="-177125" Y="148348" />
-    </zone>
-    <zone name="Istina blue circle" id="60021" type="ScriptZone" shape="NPoly" minZ="-11484" maxZ="-10018">
-        <node X="-178453" Y="147798" />
-        <node X="-178395" Y="147466" />
-        <node X="-178138" Y="146973" />
-        <node X="-177635" Y="146627" />
-        <node X="-177131" Y="147375" />
-        <node X="-177473" Y="147513" />
-        <node X="-177617" Y="147875" />
-        <node X="-177470" Y="148200" />
-        <node X="-177124" Y="148338" />
-        <node X="-176782" Y="148207" />
-        <node X="-176631" Y="147861" />
-        <node X="-176795" Y="147523" />
-        <node X="-177121" Y="147388" />
-        <node X="-177644" Y="146620" />
-        <node X="-177285" Y="146553" />
-        <node X="-176780" Y="146559" />
-        <node X="-176279" Y="146845" />
-        <node X="-176007" Y="147154" />
-        <node X="-175795" Y="147734" />
-        <node X="-175847" Y="148289" />
-        <node X="-176187" Y="148803" />
-        <node X="-176654" Y="149091" />
-        <node X="-177136" Y="149196" />
-        <node X="-177676" Y="149081" />
-        <node X="-178175" Y="148667" />
-        <node X="-178437" Y="148142" />
-    </zone>
-    <zone name="Istina red circle" id="60022" type="ScriptZone" shape="NPoly" minZ="-11484" maxZ="-10018">
-        <node X="-178453" Y="147798" />
-        <node X="-178395" Y="147466" />
-        <node X="-178138" Y="146973" />
-        <node X="-177641" Y="146620" />
-        <node X="-178017" Y="145785" />
-        <node X="-179215" Y="147016" />
-        <node X="-179225" Y="148761" />
-        <node X="-178882" Y="149214" />
-        <node X="-178020" Y="149942" />
-        <node X="-176252" Y="149942" />
-        <node X="-174977" Y="148791" />
-        <node X="-175030" Y="147033" />
-        <node X="-176262" Y="145795" />
-        <node X="-178013" Y="145785" />
-        <node X="-177638" Y="146623" />
-        <node X="-177208" Y="146553" />
-        <node X="-176780" Y="146559" />
-        <node X="-176279" Y="146845" />
-        <node X="-176007" Y="147154" />
-        <node X="-175795" Y="147734" />
-        <node X="-175847" Y="148289" />
-        <node X="-176187" Y="148803" />
-        <node X="-176654" Y="149091" />
-        <node X="-177136" Y="149196" />
-        <node X="-177676" Y="149081" />
-        <node X="-178175" Y="148667" />
-        <node X="-178437" Y="148142" />
-    </zone>
-    <zone name="Guillotine" id="60024" type="ScriptZone" shape="NPoly" minZ="-3800" maxZ="1709">
-        <node X="35188" Y="148816" />
-        <node X="34988" Y="151416" />
-        <node X="44610" Y="158078" />
-        <node X="53212" Y="156598" />
-        <node X="56653" Y="153157" />
-        <node X="60114" Y="145435" />
-        <node X="59074" Y="142014" />
-        <node X="55613" Y="139374" />
-        <node X="53793" Y="140014" />
-        <node X="52412" Y="138753" />
-        <node X="41830" Y="138153" />
-        <node X="35848" Y="146475" />
-    </zone>
-    <zone name="Nornil Cave Observations Room" id="60025" type="ScriptZone" shape="Cylinder" minZ="-4590" maxZ="-4560"
-          rad="1600">
-        <node X="-87750" Y="55319" />
-    </zone>
-    <zone name="Nornil Cave Prophecies Room" id="60026" type="ScriptZone" shape="Cylinder" minZ="-4490" maxZ="-4460"
-          rad="1600">
-        <node X="-88127" Y="50969" />
-    </zone>
-    <zone name="Nornil Cave Records Room" id="60027" type="ScriptZone" shape="Cylinder" minZ="-4970" maxZ="-4935"
-          rad="1600">
-        <node X="-79288" Y="55246" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 1" id="60028" type="ScriptZone" shape="Cylinder" minZ="-13864"
-          maxZ="-13704" rad="1000">
-        <node X="-117612" Y="180489" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 2" id="60029" type="ScriptZone" shape="Cylinder" minZ="-13864"
-          maxZ="-13704" rad="1000">
-        <node X="-118432" Y="185061" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 3" id="60030" type="ScriptZone" shape="Cylinder" minZ="-13864"
-          maxZ="-13704" rad="1000">
-        <node X="-118429" Y="186915" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 4" id="60031" type="ScriptZone" shape="Cylinder" minZ="-13864"
-          maxZ="-13704" rad="1000">
-        <node X="-114699" Y="186995" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 5" id="60032" type="ScriptZone" shape="Cylinder" minZ="-13872"
-          maxZ="-13712" rad="1000">
-        <node X="-110992" Y="186886" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 6" id="60033" type="ScriptZone" shape="Cylinder" minZ="-13864"
-          maxZ="-13704" rad="1000">
-        <node X="-110984" Y="185054" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 7" id="60034" type="ScriptZone" shape="Cylinder" minZ="-13864"
-          maxZ="-13704" rad="1000">
-        <node X="-111797" Y="180482" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 8" id="60035" type="ScriptZone" shape="Cylinder" minZ="-13864"
-          maxZ="-13704" rad="1000">
-        <node X="-114703" Y="179277" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 9" id="60036" type="ScriptZone" shape="Cylinder" minZ="-10800"
-          maxZ="-10640" rad="1000">
-        <node X="-117618" Y="146395" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 10" id="60037" type="ScriptZone" shape="Cylinder" minZ="-10800"
-          maxZ="-10640" rad="1000">
-        <node X="-118439" Y="150966" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 11" id="60038" type="ScriptZone" shape="Cylinder" minZ="-10808"
-          maxZ="-10648" rad="1000">
-        <node X="-118432" Y="152816" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 12" id="60039" type="ScriptZone" shape="Cylinder" minZ="-10808"
-          maxZ="-10648" rad="1000">
-        <node X="-114711" Y="152908" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 13" id="60040" type="ScriptZone" shape="Cylinder" minZ="-10808"
-          maxZ="-10648" rad="1000">
-        <node X="-110998" Y="152801" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 14" id="60041" type="ScriptZone" shape="Cylinder" minZ="-10808"
-          maxZ="-10648" rad="1000">
-        <node X="-111002" Y="150978" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 15" id="60042" type="ScriptZone" shape="Cylinder" minZ="-10800"
-          maxZ="-10640" rad="1000">
-        <node X="-111809" Y="146397" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 16" id="60043" type="ScriptZone" shape="Cylinder" minZ="-10800"
-          maxZ="-10640" rad="1000">
-        <node X="-114706" Y="145183" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 17" id="60044" type="ScriptZone" shape="Cylinder" minZ="-7736"
-          maxZ="-7576" rad="1000">
-        <node X="-117606" Y="145039" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 18" id="60045" type="ScriptZone" shape="Cylinder" minZ="-7744"
-          maxZ="-7584" rad="1000">
-        <node X="-118432" Y="149616" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 19" id="60046" type="ScriptZone" shape="Cylinder" minZ="-7744"
-          maxZ="-7584" rad="1000">
-        <node X="-118432" Y="151472" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 20" id="60047" type="ScriptZone" shape="Cylinder" minZ="-7744"
-          maxZ="-7584" rad="1000">
-        <node X="-114704" Y="151552" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 21" id="60048" type="ScriptZone" shape="Cylinder" minZ="-7744"
-          maxZ="-7584" rad="1000">
-        <node X="-110986" Y="151456" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 22" id="60049" type="ScriptZone" shape="Cylinder" minZ="-7744"
-          maxZ="-7584" rad="1000">
-        <node X="-110991" Y="149616" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 23" id="60050" type="ScriptZone" shape="Cylinder" minZ="-7736"
-          maxZ="-7576" rad="1000">
-        <node X="-111792" Y="145040" />
-    </zone>
-    <zone name="Harnak Underground Ruins Room 24" id="60051" type="ScriptZone" shape="Cylinder" minZ="-7736"
-          maxZ="-7576" rad="1000">
-        <node X="-114700" Y="143834" />
-    </zone>
-    <zone name="Nerva Prison 1" id="60052" type="ScriptZone" shape="Cylinder" minZ="-996" maxZ="-696" rad="200">
-        <node X="18232" Y="-136944" />
-    </zone>
-    <zone name="Nerva Prison 2" id="60053" type="ScriptZone" shape="Cylinder" minZ="-844" maxZ="-544" rad="200">
-        <node X="22684" Y="-139168" />
-    </zone>
-    <zone name="Nerva Prison 3" id="60054" type="ScriptZone" shape="Cylinder" minZ="-676" maxZ="-376" rad="200">
-        <node X="20032" Y="-142116" />
-    </zone>
-    <zone name="Nerva Prison 4" id="60055" type="ScriptZone" shape="Cylinder" minZ="-564" maxZ="-264" rad="200">
-        <node X="23120" Y="-146104" />
-    </zone>
-    <zone name="Nerva Prison 5" id="60056" type="ScriptZone" shape="Cylinder" minZ="-692" maxZ="-392" rad="200">
-        <node X="11820" Y="-141016" />
-    </zone>
-    <zone name="Nerva Prison 6" id="60057" type="ScriptZone" shape="Cylinder" minZ="-1292" maxZ="-992" rad="200">
-        <node X="10668" Y="-136336" />
-    </zone>
-    <zone name="Nerva Prison 7" id="60058" type="ScriptZone" shape="Cylinder" minZ="-748" maxZ="-448" rad="200">
-        <node X="6636" Y="-139744" />
-    </zone>
-    <zone name="Nerva Prison 8" id="60059" type="ScriptZone" shape="Cylinder" minZ="-412" maxZ="-112" rad="200">
-        <node X="8662" Y="-146437" />
-    </zone>
-    <zone name="Apherus Zone" id="60060" type="ScriptZone" shape="NPoly" minZ="-877" maxZ="-857">
-        <node X="214323" Y="115889" />
-        <node X="214324" Y="114625" />
-        <node X="213068" Y="114628" />
-        <node X="213058" Y="115891" />
-    </zone>
-    <zone name="Gainak Siege" id="60019" type="SiegeZone" shape="NPoly" minZ="-265" maxZ="-11">
-        <node X="14816" Y="-114416" />
-        <node X="14576" Y="-113968" />
-        <node X="14752" Y="-112736" />
-        <node X="15415" Y="-111960" />
-        <node X="15691" Y="-111730" />
-        <node X="17559" Y="-110950" />
-        <node X="18291" Y="-112548" />
-        <node X="15936" Y="-113920" />
-        <node X="16275" Y="-114501" />
-        <node X="17642" Y="-113922" />
-        <node X="18222" Y="-114615" />
-        <node X="18637" Y="-115667" />
-        <node X="17536" Y="-116128" />
-        <node X="17138" Y="-116183" />
-        <node X="16080" Y="-116096" />
-        <node X="15130" Y="-115345" />
-        <node X="14972" Y="-114864" />
-    </zone>
+	<!-- Custom Script Zones -->
+	<zone name="Emerald Square 1st Secret Room" id="20105" type="ScriptZone" shape="Cuboid" minZ="-11900" maxZ="-11800">
+		<node X="144175" Y="142396" />
+		<node X="144251" Y="142588" />
+	</zone>
+	<zone name="Emerald Square 2nd Secret Room" id="20106" type="ScriptZone" shape="Cuboid" minZ="-12250" maxZ="-12150">
+		<node X="147400" Y="143631" />
+		<node X="147484" Y="143828" />
+	</zone>
+	<zone name="Emerald Square 3rd Secret Room" id="20107" type="ScriptZone" shape="Cuboid" minZ="-12150" maxZ="-12000">
+		<node X="149396" Y="143473" />
+		<node X="149559" Y="143584" />
+	</zone>
+	<zone name="Pailaka (Forgotten Temple)" id="20108" type="ScriptZone" shape="NPoly" minZ="-5050" maxZ="-3900">
+		<node X="-62840" Y="178808" />
+		<node X="-62840" Y="184568" />
+		<node X="-60792" Y="184568" />
+		<node X="-60792" Y="188792" />
+		<node X="-57976" Y="191224" />
+		<node X="-53000" Y="190840" />
+		<node X="-52360" Y="190200" />
+		<node X="-52360" Y="178808" />
+	</zone>
+	<zone name="Pailaka (Devil's Isle)" id="20109" type="ScriptZone" shape="NPoly" minZ="-3770" maxZ="-3700">
+		<node X="76650" Y="-221310" />
+		<node X="76630" Y="-221880" />
+		<node X="75490" Y="-221480" />
+		<node X="75630" Y="-221140" />
+	</zone>
+	<zone name="Nornil's Garden Warrior's Gate" id="20110" type="ScriptZone" shape="Cuboid" minZ="-12650" maxZ="-12600">
+		<node X="-109864" Y="76184" />
+		<node X="-109544" Y="76392" />
+	</zone>
+	<zone name="Nornil's Garden Midway Gate" id="20111" type="ScriptZone" shape="Cuboid" minZ="-12930" maxZ="-12900">
+		<node X="-107560" Y="80488" />
+		<node X="-107240" Y="80808" />
+	</zone>
+	<zone name="Nornil's Garden Gate" id="20112" type="ScriptZone" shape="Cuboid" minZ="-12990" maxZ="-12960">
+		<node X="-111016" Y="83944" />
+		<node X="-110696" Y="84264" />
+	</zone>
+	<zone name="Pagans mark" id="30100" type="ScriptZone" shape="NPoly" minZ="-10735" maxZ="-10720">
+		<node X="-16100" Y="-36620" />
+		<node X="-16600" Y="-36620" />
+		<node X="-16600" Y="-36925" />
+		<node X="-16100" Y="-36925" />
+	</zone>
+	<zone name="Hellbound" id="40101" type="ScriptZone" shape="NPoly" minZ="-30000" maxZ="30000">
+		<node X="-32768" Y="229376" />
+		<node X="32768" Y="229376" />
+		<node X="32768" Y="262143" />
+		<node X="-32768" Y="262143" />
+	</zone>
+	<zone name="Hellbound Dolmen" id="40107" type="ScriptZone" shape="Cuboid" minZ="-3200" maxZ="-3000">
+		<node X="-6230" Y="249000" />
+		<node X="-5230" Y="249880" />
+	</zone>
+	<zone name="Hellbound Quarry" id="40108" type="ScriptZone" shape="NPoly" minZ="-2509" maxZ="-1509">
+		<node X="-9675" Y="240402" />
+		<node X="-2401" Y="240307" />
+		<node X="-2393" Y="246927" />
+		<node X="-9590" Y="246820" />
+	</zone>
+	<zone name="Seed of Infinity AirShips dock" id="50600" type="ScriptZone" shape="Cylinder" minZ="-1000" maxZ="6200"
+		  rad="2900">
+		<node X="-212855" Y="209819" />
+	</zone>
+	<zone name="Seed of Destruction AirShips dock" id="50601" type="ScriptZone" shape="Cylinder" minZ="-1000"
+		  maxZ="6200" rad="4300">
+		<node X="-249460" Y="249282" />
+	</zone>
+	<zone name="Keucereus Base North" id="50602" type="ScriptZone" shape="NPoly" minZ="-1000" maxZ="6200">
+		<node X="-193315" Y="240184" />
+		<node X="-188053" Y="235278" />
+		<node X="-179811" Y="238353" />
+		<node X="-178407" Y="242454" />
+		<node X="-178685" Y="244665" />
+	</zone>
+	<zone name="Keucereus Base South" id="50603" type="ScriptZone" shape="NPoly" minZ="-1000" maxZ="6200">
+		<node X="-178685" Y="244664" />
+		<node X="-180120" Y="246779" />
+		<node X="-185598" Y="249572" />
+		<node X="-193009" Y="245647" />
+		<node X="-193315" Y="240185" />
+	</zone>
+	<zone name="Seed of Annihilation 1" id="60002" type="ScriptZone" shape="Cylinder" minZ="-10600" maxZ="-10500"
+		  rad="260">
+		<node X="-182488" Y="186655" />
+	</zone>
+	<zone name="Seed of Annihilation 2" id="60003" type="ScriptZone" shape="Cylinder" minZ="-11050" maxZ="-10950"
+		  rad="260">
+		<node X="-212755" Y="184380" />
+	</zone>
+	<zone name="Seed of Annihilation 3" id="60004" type="ScriptZone" shape="Cylinder" minZ="-10800" maxZ="-10700"
+		  rad="360">
+		<node X="-178458" Y="188167" />
+	</zone>
+	<zone name="Seed of Annihilation 4" id="60005" type="ScriptZone" shape="Cylinder" minZ="-15250" maxZ="-15100"
+		  rad="360">
+		<node X="-179430" Y="183844" />
+	</zone>
+	<zone name="Seed of Destruction" id="60009" type="ScriptZone" shape="Cuboid" minZ="-14065" maxZ="-6500">
+		<node X="-237600" Y="221168" />
+		<node X="-253900" Y="204849" />
+	</zone>
+	<!-- Custom zones for Tully Workshop 6th and 8th floors spawn control -->
+	<!-- Tully Workshop 6th floor room 1 -->
+	<zone name="tully_workshop_floor_6th_room_1" id="200012" type="ScriptZone" shape="NPoly" minZ="-13640"
+		  maxZ="-13440">
+		<node X="-13143" Y="278159" />
+		<node X="-11984" Y="278155" />
+		<node X="-12247" Y="278817" />
+		<node X="-12877" Y="278817" />
+		<node X="-13301" Y="279233" />
+		<node X="-13948" Y="278959" />
+	</zone>
+	<!-- Tully Workshop 6th floor room 2 -->
+	<zone name="tully_workshop_floor_6th_room_2" id="200013" type="ScriptZone" shape="NPoly" minZ="-13640"
+		  maxZ="-13440">
+		<node X="-12135" Y="280544" />
+		<node X="-11708" Y="280111" />
+		<node X="-11029" Y="280377" />
+		<node X="-11881" Y="281242" />
+		<node X="-13044" Y="281234" />
+		<node X="-12767" Y="280546" />
+	</zone>
+	<!-- Tully Workshop 6th floor room 3 -->
+	<zone name="tully_workshop_floor_6th_room_3" id="200014" type="ScriptZone" shape="NPoly" minZ="-13640"
+		  maxZ="-13440">
+		<node X="-13376" Y="279405" />
+		<node X="-13380" Y="280048" />
+		<node X="-12930" Y="280494" />
+		<node X="-13219" Y="281137" />
+		<node X="-14027" Y="280321" />
+		<node X="-14034" Y="279128" />
+	</zone>
+	<!-- Tully Workshop 6th floor room 4 -->
+	<zone name="tully_workshop_floor_6th_room_4" id="200015" type="ScriptZone" shape="NPoly" minZ="-13640"
+		  maxZ="-13440">
+		<node X="-10980" Y="279062" />
+		<node X="-10975" Y="280217" />
+		<node X="-11688" Y="279905" />
+		<node X="-11642" Y="279320" />
+		<node X="-12056" Y="278883" />
+		<node X="-11808" Y="278212" />
+	</zone>
+	<!-- Tully Workshop 8th floor room 1 -->
+	<zone name="tully_workshop_floor_8th_room_1" id="200016" type="ScriptZone" shape="NPoly" minZ="-10530"
+		  maxZ="-10330">
+		<node X="-13143" Y="278159" />
+		<node X="-11984" Y="278155" />
+		<node X="-12247" Y="278817" />
+		<node X="-12877" Y="278817" />
+		<node X="-13301" Y="279233" />
+		<node X="-13948" Y="278959" />
+	</zone>
+	<!-- Tully Workshop 8th floor room 2 -->
+	<zone name="tully_workshop_floor_8th_room_2" id="200017" type="ScriptZone" shape="NPoly" minZ="-10530"
+		  maxZ="-10330">
+		<node X="-12135" Y="280544" />
+		<node X="-11708" Y="280111" />
+		<node X="-11029" Y="280377" />
+		<node X="-11881" Y="281242" />
+		<node X="-13044" Y="281234" />
+		<node X="-12767" Y="280546" />
+	</zone>
+	<!-- Tully Workshop 8th floor room 3 -->
+	<zone name="tully_workshop_floor_8th_room_3" id="200018" type="ScriptZone" shape="NPoly" minZ="-10530"
+		  maxZ="-10330">
+		<node X="-13376" Y="279405" />
+		<node X="-13380" Y="280048" />
+		<node X="-12930" Y="280494" />
+		<node X="-13219" Y="281137" />
+		<node X="-14027" Y="280321" />
+		<node X="-14034" Y="279128" />
+	</zone>
+	<!-- Tully Workshop 8th floor room 4 -->
+	<zone name="tully_workshop_floor_8th_room_4" id="200019" type="ScriptZone" shape="NPoly" minZ="-10530"
+		  maxZ="-10330">
+		<node X="-10980" Y="279062" />
+		<node X="-10975" Y="280217" />
+		<node X="-11688" Y="279905" />
+		<node X="-11642" Y="279320" />
+		<node X="-12056" Y="278883" />
+		<node X="-11808" Y="278212" />
+	</zone>
+	<!-- Custom zones for Tower of Naia rooms for characters control -->
+	<!-- Tower of Naia room 1 -->
+	<zone name="tower_of_naia_room_1" id="200020" type="ScriptZone" shape="Cuboid" minZ="-9156" maxZ="-9056">
+		<node X="-46940" Y="246865" />
+		<node X="-45466" Y="245370" />
+	</zone>
+	<!-- Tower of Naia room 2 -->
+	<zone name="tower_of_naia_room_2" id="200021" type="ScriptZone" shape="Cuboid" minZ="-9168" maxZ="-8818">
+		<node X="-49908" Y="248440" />
+		<node X="-47912" Y="249896" />
+	</zone>
+	<!-- Tower of room 3 -->
+	<zone name="tower_of_naia_room_3" id="200022" type="ScriptZone" shape="Cuboid" minZ="-10032" maxZ="-9682">
+		<node X="-52362" Y="245375" />
+		<node X="-50880" Y="246866" />
+	</zone>
+	<!-- Tower of Naia room 4 -->
+	<zone name="tower_of_naia_room_4" id="200023" type="ScriptZone" shape="Cuboid" minZ="-10032" maxZ="-9682">
+		<node X="-49954" Y="242680" />
+		<node X="-47958" Y="244136" />
+	</zone>
+	<!-- Tower of Naia room 5 -->
+	<zone name="tower_of_naia_room_5" id="200024" type="ScriptZone" shape="Cuboid" minZ="-10044" maxZ="-9694">
+		<node X="-46953" Y="245376" />
+		<node X="-45479" Y="246871" />
+	</zone>
+	<!-- Tower of Naia room 6 -->
+	<zone name="tower_of_naia_room_6" id="200025" type="ScriptZone" shape="Cuboid" minZ="-10036" maxZ="-9686">
+		<node X="-49444" Y="247736" />
+		<node X="-48412" Y="248708" />
+	</zone>
+	<!-- Tower of Naia room 7 -->
+	<zone name="tower_of_naia_room_7" id="200026" type="ScriptZone" shape="Cuboid" minZ="-10880" maxZ="-10530">
+		<node X="-52371" Y="245374" />
+		<node X="-50889" Y="246865" />
+	</zone>
+	<!-- Tower of Naia room 8 -->
+	<zone name="tower_of_naia_room_8" id="200027" type="ScriptZone" shape="Cuboid" minZ="-10876" maxZ="-10526">
+		<node X="-49447" Y="243547" />
+		<node X="-48415" Y="244519" />
+	</zone>
+	<!-- Tower of Naia room 9 -->
+	<zone name="tower_of_naia_room_9" id="200028" type="ScriptZone" shape="Cuboid" minZ="-11748" maxZ="-11398">
+		<node X="-46970" Y="245369" />
+		<node X="-45496" Y="246864" />
+	</zone>
+	<!-- Tower of Naia room 10 -->
+	<zone name="tower_of_naia_room_10" id="200029" type="ScriptZone" shape="Cuboid" minZ="-11760" maxZ="-11410">
+		<node X="-49440" Y="247736" />
+		<node X="-48412" Y="248708" />
+	</zone>
+	<!-- Tower of Naia room 11 -->
+	<zone name="tower_of_naia_room_11" id="200030" type="ScriptZone" shape="Cuboid" minZ="-12650" maxZ="-12300">
+		<node X="-52347" Y="245404" />
+		<node X="-50865" Y="246895" />
+	</zone>
+	<!-- Tower of Naia room 12 -->
+	<zone name="tower_of_naia_room_12" id="200031" type="ScriptZone" shape="Cuboid" minZ="-13444" maxZ="-13094">
+		<node X="-49004" Y="242907" />
+		<node X="-47530" Y="244402" />
+	</zone>
+	<zone id="60011" name="Orbis Temple Entrance" type="ScriptZone" shape="Cylinder" minZ="-425" maxZ="-340" rad="200">
+		<node X="198205" Y="90591" />
+	</zone>
+	<zone id="60012" name="Orbis Temple" type="ScriptZone" shape="Cylinder" minZ="-7980" maxZ="-7970" rad="200">
+		<node X="215104" Y="52808" />
+	</zone>
+	<zone id="60013" name="Orbis Temple" type="ScriptZone" shape="Cylinder" minZ="-8810" maxZ="-8800" rad="300">
+		<node X="215889" Y="52264" />
+	</zone>
+	<zone id="60014" name="Orbis Temple" type="ScriptZone" shape="Cylinder" minZ="-14185" maxZ="-14180" rad="300">
+		<node X="215105" Y="52802" />
+	</zone>
+	<zone id="60015" name="Orbis Temple" type="ScriptZone" shape="Cylinder" minZ="-15020" maxZ="-15010" rad="300">
+		<node X="210154" Y="48744" />
+	</zone>
+	<zone id="60016" name="Orbis Temple" type="ScriptZone" shape="Cylinder" minZ="-12740" maxZ="-12615" rad="300">
+		<node X="211520" Y="114683" />
+	</zone>
+	<zone name="Istina green circle" id="60020" type="ScriptZone" shape="NPoly" minZ="-11484" maxZ="-10018">
+		<node X="-177472" Y="148217" />
+		<node X="-177617" Y="147873" />
+		<node X="-177477" Y="147516" />
+		<node X="-177131" Y="147376" />
+		<node X="-176776" Y="147505" />
+		<node X="-176626" Y="147865" />
+		<node X="-176776" Y="148208" />
+		<node X="-177125" Y="148348" />
+	</zone>
+	<zone name="Istina blue circle" id="60021" type="ScriptZone" shape="NPoly" minZ="-11484" maxZ="-10018">
+		<node X="-178453" Y="147798" />
+		<node X="-178395" Y="147466" />
+		<node X="-178138" Y="146973" />
+		<node X="-177635" Y="146627" />
+		<node X="-177131" Y="147375" />
+		<node X="-177473" Y="147513" />
+		<node X="-177617" Y="147875" />
+		<node X="-177470" Y="148200" />
+		<node X="-177124" Y="148338" />
+		<node X="-176782" Y="148207" />
+		<node X="-176631" Y="147861" />
+		<node X="-176795" Y="147523" />
+		<node X="-177121" Y="147388" />
+		<node X="-177644" Y="146620" />
+		<node X="-177285" Y="146553" />
+		<node X="-176780" Y="146559" />
+		<node X="-176279" Y="146845" />
+		<node X="-176007" Y="147154" />
+		<node X="-175795" Y="147734" />
+		<node X="-175847" Y="148289" />
+		<node X="-176187" Y="148803" />
+		<node X="-176654" Y="149091" />
+		<node X="-177136" Y="149196" />
+		<node X="-177676" Y="149081" />
+		<node X="-178175" Y="148667" />
+		<node X="-178437" Y="148142" />
+	</zone>
+	<zone name="Istina red circle" id="60022" type="ScriptZone" shape="NPoly" minZ="-11484" maxZ="-10018">
+		<node X="-178453" Y="147798" />
+		<node X="-178395" Y="147466" />
+		<node X="-178138" Y="146973" />
+		<node X="-177641" Y="146620" />
+		<node X="-178017" Y="145785" />
+		<node X="-179215" Y="147016" />
+		<node X="-179225" Y="148761" />
+		<node X="-178882" Y="149214" />
+		<node X="-178020" Y="149942" />
+		<node X="-176252" Y="149942" />
+		<node X="-174977" Y="148791" />
+		<node X="-175030" Y="147033" />
+		<node X="-176262" Y="145795" />
+		<node X="-178013" Y="145785" />
+		<node X="-177638" Y="146623" />
+		<node X="-177208" Y="146553" />
+		<node X="-176780" Y="146559" />
+		<node X="-176279" Y="146845" />
+		<node X="-176007" Y="147154" />
+		<node X="-175795" Y="147734" />
+		<node X="-175847" Y="148289" />
+		<node X="-176187" Y="148803" />
+		<node X="-176654" Y="149091" />
+		<node X="-177136" Y="149196" />
+		<node X="-177676" Y="149081" />
+		<node X="-178175" Y="148667" />
+		<node X="-178437" Y="148142" />
+	</zone>
+	<zone name="Guillotine" id="60024" type="ScriptZone" shape="NPoly" minZ="-3800" maxZ="1709">
+		<node X="35188" Y="148816" />
+		<node X="34988" Y="151416" />
+		<node X="44610" Y="158078" />
+		<node X="53212" Y="156598" />
+		<node X="56653" Y="153157" />
+		<node X="60114" Y="145435" />
+		<node X="59074" Y="142014" />
+		<node X="55613" Y="139374" />
+		<node X="53793" Y="140014" />
+		<node X="52412" Y="138753" />
+		<node X="41830" Y="138153" />
+		<node X="35848" Y="146475" />
+	</zone>
+	<zone name="Nornil Cave Observations Room" id="60025" type="ScriptZone" shape="Cylinder" minZ="-4590" maxZ="-4560"
+		  rad="1600">
+		<node X="-87750" Y="55319" />
+	</zone>
+	<zone name="Nornil Cave Prophecies Room" id="60026" type="ScriptZone" shape="Cylinder" minZ="-4490" maxZ="-4460"
+		  rad="1600">
+		<node X="-88127" Y="50969" />
+	</zone>
+	<zone name="Nornil Cave Records Room" id="60027" type="ScriptZone" shape="Cylinder" minZ="-4970" maxZ="-4935"
+		  rad="1600">
+		<node X="-79288" Y="55246" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 1" id="60028" type="ScriptZone" shape="Cylinder" minZ="-13864"
+		  maxZ="-13704" rad="1000">
+		<node X="-117612" Y="180489" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 2" id="60029" type="ScriptZone" shape="Cylinder" minZ="-13864"
+		  maxZ="-13704" rad="1000">
+		<node X="-118432" Y="185061" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 3" id="60030" type="ScriptZone" shape="Cylinder" minZ="-13864"
+		  maxZ="-13704" rad="1000">
+		<node X="-118429" Y="186915" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 4" id="60031" type="ScriptZone" shape="Cylinder" minZ="-13864"
+		  maxZ="-13704" rad="1000">
+		<node X="-114699" Y="186995" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 5" id="60032" type="ScriptZone" shape="Cylinder" minZ="-13872"
+		  maxZ="-13712" rad="1000">
+		<node X="-110992" Y="186886" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 6" id="60033" type="ScriptZone" shape="Cylinder" minZ="-13864"
+		  maxZ="-13704" rad="1000">
+		<node X="-110984" Y="185054" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 7" id="60034" type="ScriptZone" shape="Cylinder" minZ="-13864"
+		  maxZ="-13704" rad="1000">
+		<node X="-111797" Y="180482" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 8" id="60035" type="ScriptZone" shape="Cylinder" minZ="-13864"
+		  maxZ="-13704" rad="1000">
+		<node X="-114703" Y="179277" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 9" id="60036" type="ScriptZone" shape="Cylinder" minZ="-10800"
+		  maxZ="-10640" rad="1000">
+		<node X="-117618" Y="146395" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 10" id="60037" type="ScriptZone" shape="Cylinder" minZ="-10800"
+		  maxZ="-10640" rad="1000">
+		<node X="-118439" Y="150966" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 11" id="60038" type="ScriptZone" shape="Cylinder" minZ="-10808"
+		  maxZ="-10648" rad="1000">
+		<node X="-118432" Y="152816" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 12" id="60039" type="ScriptZone" shape="Cylinder" minZ="-10808"
+		  maxZ="-10648" rad="1000">
+		<node X="-114711" Y="152908" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 13" id="60040" type="ScriptZone" shape="Cylinder" minZ="-10808"
+		  maxZ="-10648" rad="1000">
+		<node X="-110998" Y="152801" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 14" id="60041" type="ScriptZone" shape="Cylinder" minZ="-10808"
+		  maxZ="-10648" rad="1000">
+		<node X="-111002" Y="150978" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 15" id="60042" type="ScriptZone" shape="Cylinder" minZ="-10800"
+		  maxZ="-10640" rad="1000">
+		<node X="-111809" Y="146397" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 16" id="60043" type="ScriptZone" shape="Cylinder" minZ="-10800"
+		  maxZ="-10640" rad="1000">
+		<node X="-114706" Y="145183" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 17" id="60044" type="ScriptZone" shape="Cylinder" minZ="-7736"
+		  maxZ="-7576" rad="1000">
+		<node X="-117606" Y="145039" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 18" id="60045" type="ScriptZone" shape="Cylinder" minZ="-7744"
+		  maxZ="-7584" rad="1000">
+		<node X="-118432" Y="149616" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 19" id="60046" type="ScriptZone" shape="Cylinder" minZ="-7744"
+		  maxZ="-7584" rad="1000">
+		<node X="-118432" Y="151472" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 20" id="60047" type="ScriptZone" shape="Cylinder" minZ="-7744"
+		  maxZ="-7584" rad="1000">
+		<node X="-114704" Y="151552" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 21" id="60048" type="ScriptZone" shape="Cylinder" minZ="-7744"
+		  maxZ="-7584" rad="1000">
+		<node X="-110986" Y="151456" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 22" id="60049" type="ScriptZone" shape="Cylinder" minZ="-7744"
+		  maxZ="-7584" rad="1000">
+		<node X="-110991" Y="149616" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 23" id="60050" type="ScriptZone" shape="Cylinder" minZ="-7736"
+		  maxZ="-7576" rad="1000">
+		<node X="-111792" Y="145040" />
+	</zone>
+	<zone name="Harnak Underground Ruins Room 24" id="60051" type="ScriptZone" shape="Cylinder" minZ="-7736"
+		  maxZ="-7576" rad="1000">
+		<node X="-114700" Y="143834" />
+	</zone>
+	<zone name="Nerva Prison 1" id="60052" type="ScriptZone" shape="Cylinder" minZ="-996" maxZ="-696" rad="200">
+		<node X="18232" Y="-136944" />
+	</zone>
+	<zone name="Nerva Prison 2" id="60053" type="ScriptZone" shape="Cylinder" minZ="-844" maxZ="-544" rad="200">
+		<node X="22684" Y="-139168" />
+	</zone>
+	<zone name="Nerva Prison 3" id="60054" type="ScriptZone" shape="Cylinder" minZ="-676" maxZ="-376" rad="200">
+		<node X="20032" Y="-142116" />
+	</zone>
+	<zone name="Nerva Prison 4" id="60055" type="ScriptZone" shape="Cylinder" minZ="-564" maxZ="-264" rad="200">
+		<node X="23120" Y="-146104" />
+	</zone>
+	<zone name="Nerva Prison 5" id="60056" type="ScriptZone" shape="Cylinder" minZ="-692" maxZ="-392" rad="200">
+		<node X="11820" Y="-141016" />
+	</zone>
+	<zone name="Nerva Prison 6" id="60057" type="ScriptZone" shape="Cylinder" minZ="-1292" maxZ="-992" rad="200">
+		<node X="10668" Y="-136336" />
+	</zone>
+	<zone name="Nerva Prison 7" id="60058" type="ScriptZone" shape="Cylinder" minZ="-748" maxZ="-448" rad="200">
+		<node X="6636" Y="-139744" />
+	</zone>
+	<zone name="Nerva Prison 8" id="60059" type="ScriptZone" shape="Cylinder" minZ="-412" maxZ="-112" rad="200">
+		<node X="8662" Y="-146437" />
+	</zone>
+	<zone name="Apherus Zone" id="60060" type="ScriptZone" shape="NPoly" minZ="-877" maxZ="-857">
+		<node X="214323" Y="115889" />
+		<node X="214324" Y="114625" />
+		<node X="213068" Y="114628" />
+		<node X="213058" Y="115891" />
+	</zone>
+	<zone name="Gainak Siege" id="60019" type="SiegeZone" shape="NPoly" minZ="-265" maxZ="-11">
+		<node X="14816" Y="-114416" />
+		<node X="14576" Y="-113968" />
+		<node X="14752" Y="-112736" />
+		<node X="15415" Y="-111960" />
+		<node X="15691" Y="-111730" />
+		<node X="17559" Y="-110950" />
+		<node X="18291" Y="-112548" />
+		<node X="15936" Y="-113920" />
+		<node X="16275" Y="-114501" />
+		<node X="17642" Y="-113922" />
+		<node X="18222" Y="-114615" />
+		<node X="18637" Y="-115667" />
+		<node X="17536" Y="-116128" />
+		<node X="17138" Y="-116183" />
+		<node X="16080" Y="-116096" />
+		<node X="15130" Y="-115345" />
+		<node X="14972" Y="-114864" />
+	</zone>
 </list>

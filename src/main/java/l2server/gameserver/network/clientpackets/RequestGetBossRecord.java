@@ -27,45 +27,39 @@ import java.util.Map;
  *
  * @author -Wooden-
  */
-public class RequestGetBossRecord extends L2GameClientPacket
-{
+public class RequestGetBossRecord extends L2GameClientPacket {
 	private int bossId;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		bossId = readD();
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (bossId != 0)
-		{
+		
+		if (bossId != 0) {
 			Log.info("C5: RequestGetBossRecord: d: " + bossId + " ActiveChar: " +
 					activeChar); // should be always 0, log it if isnt 0 for furture research
 		}
-
+		
 		int points = RaidBossPointsManager.getInstance().getPointsByOwnerId(activeChar.getObjectId());
 		int ranking = RaidBossPointsManager.getInstance().calculateRanking(activeChar.getObjectId());
-
+		
 		Map<Integer, Integer> list = RaidBossPointsManager.getInstance().getList(activeChar);
-
+		
 		// trigger packet
 		activeChar.sendPacket(new ExGetBossRecord(ranking, points, list));
 	}
-
+	
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

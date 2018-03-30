@@ -17,37 +17,26 @@ package l2server.gameserver.network.loginserverpackets;
 
 import l2server.util.network.BaseRecievePacket;
 
-public class LoginServerFail extends BaseRecievePacket
-{
+public class LoginServerFail extends BaseRecievePacket {
 
-	private static final String[] REASONS = {
-			"None",
-			"Reason: ip banned",
-			"Reason: ip reserved",
-			"Reason: wrong hexid",
-			"Reason: id reserved",
-			"Reason: no free ID",
-			"Not authed",
-			"Reason: already logged in"
-	};
+	private static final String[] REASONS =
+			{"None", "Reason: ip banned", "Reason: ip reserved", "Reason: wrong hexid", "Reason: id reserved", "Reason: no free ID", "Not authed",
+					"Reason: already logged in"};
 	private int reason;
 
 	/**
 	 * @param decrypt
 	 */
-	public LoginServerFail(byte[] decrypt)
-	{
+	public LoginServerFail(byte[] decrypt) {
 		super(decrypt);
 		reason = readC();
 	}
 
-	public String getReasonString()
-	{
+	public String getReasonString() {
 		return REASONS[reason];
 	}
 
-	public int getReason()
-	{
+	public int getReason() {
 		return reason;
 	}
 }

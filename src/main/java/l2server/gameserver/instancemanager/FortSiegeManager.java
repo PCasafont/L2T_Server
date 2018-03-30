@@ -17,11 +17,7 @@ package l2server.gameserver.instancemanager;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.CombatFlag;
-import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.Location;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Fort;
@@ -37,18 +33,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 
-public class FortSiegeManager
-{
+public class FortSiegeManager {
 
-	public static FortSiegeManager getInstance()
-	{
+	public static FortSiegeManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private List<FortSiege> sieges;
 
-	public final void addSiegeSkills(L2PcInstance character)
-	{
+	public final void addSiegeSkills(L2PcInstance character) {
 		character.addSkill(SkillTable.FrequentSkill.IMPRINT_OF_LIGHT.getSkill(), false);
 		character.addSkill(SkillTable.FrequentSkill.IMPRINT_OF_DARKNESS.getSkill(), false);
 		character.addSkill(SkillTable.FrequentSkill.BUILD_HEADQUARTERS.getSkill(), false);
@@ -59,10 +52,8 @@ public class FortSiegeManager
 	 *
 	 * @param activeChar The L2Character of the character can summon
 	 */
-	public final boolean checkIfOkToSummon(L2Character activeChar, boolean isCheckOnly)
-	{
-		if (!(activeChar instanceof L2PcInstance))
-		{
+	public final boolean checkIfOkToSummon(L2Character activeChar, boolean isCheckOnly) {
+		if (!(activeChar instanceof L2PcInstance)) {
 			return false;
 		}
 
@@ -70,25 +61,17 @@ public class FortSiegeManager
 		L2PcInstance player = (L2PcInstance) activeChar;
 		Fort fort = FortManager.getInstance().getFort(player);
 
-		if (fort == null || fort.getFortId() <= 0)
-		{
+		if (fort == null || fort.getFortId() <= 0) {
 			text = "You must be on fort ground to summon this";
-		}
-		else if (!fort.getSiege().getIsInProgress())
-		{
+		} else if (!fort.getSiege().getIsInProgress()) {
 			text = "You can only summon this during a siege.";
-		}
-		else if (player.getClanId() != 0 && fort.getSiege().getAttackerClan(player.getClanId()) == null)
-		{
+		} else if (player.getClanId() != 0 && fort.getSiege().getAttackerClan(player.getClanId()) == null) {
 			text = "You can only summon this as a registered attacker.";
-		}
-		else
-		{
+		} else {
 			return true;
 		}
 
-		if (!isCheckOnly)
-		{
+		if (!isCheckOnly) {
 			player.sendMessage(text);
 		}
 		return false;
@@ -99,111 +82,87 @@ public class FortSiegeManager
 	 *
 	 * @param clan The L2Clan of the player
 	 */
-	public final boolean checkIsRegistered(L2Clan clan, int fortid)
-	{
-		if (clan == null)
-		{
+	public final boolean checkIsRegistered(L2Clan clan, int fortid) {
+		if (clan == null) {
 			return false;
 		}
 
 		Connection con = null;
 		boolean register = false;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement =
-					con.prepareStatement("SELECT clan_id FROM fortsiege_clans where clan_id=? and fort_id=?");
+			PreparedStatement statement = con.prepareStatement("SELECT clan_id FROM fortsiege_clans WHERE clan_id=? AND fort_id=?");
 			statement.setInt(1, clan.getClanId());
 			statement.setInt(2, fortid);
 			ResultSet rs = statement.executeQuery();
 
-			if (rs.next())
-			{
+			if (rs.next()) {
 				register = true;
 			}
 
 			rs.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Exception: checkIsRegistered(): " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		return register;
 	}
 
-	public final FortSiege getSiege(L2Object activeObject)
-	{
+	public final FortSiege getSiege(L2Object activeObject) {
 		return getSiege(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}
 
-	public final FortSiege getSiege(int x, int y, int z)
-	{
-		for (Fort fort : FortManager.getInstance().getForts())
-		{
-			if (fort.getSiege().checkIfInZone(x, y, z))
-			{
+	public final FortSiege getSiege(int x, int y, int z) {
+		for (Fort fort : FortManager.getInstance().getForts()) {
+			if (fort.getSiege().checkIfInZone(x, y, z)) {
 				return fort.getSiege();
 			}
 		}
 		return null;
 	}
 
-	public final List<FortSiege> getSieges()
-	{
-		if (sieges == null)
-		{
+	public final List<FortSiege> getSieges() {
+		if (sieges == null) {
 			sieges = new ArrayList<>();
 		}
 		return sieges;
 	}
 
-	public final void addSiege(FortSiege fortSiege)
-	{
-		if (sieges == null)
-		{
+	public final void addSiege(FortSiege fortSiege) {
+		if (sieges == null) {
 			sieges = new ArrayList<>();
 		}
 		sieges.add(fortSiege);
 	}
 
-	public boolean isCombat(int itemId)
-	{
+	public boolean isCombat(int itemId) {
 		return itemId == 9819;
 	}
 
-	public boolean activateCombatFlag(L2PcInstance player, L2ItemInstance item)
-	{
-		if (!checkIfCanPickup(player))
-		{
+	public boolean activateCombatFlag(L2PcInstance player, L2ItemInstance item) {
+		if (!checkIfCanPickup(player)) {
 			return false;
 		}
 
 		Fort fort = FortManager.getInstance().getFort(player);
 
 		List<CombatFlag> fcf = fort.getFlags();
-		for (CombatFlag cf : fcf)
-		{
-			if (cf.itemInstance == item)
-			{
+		for (CombatFlag cf : fcf) {
+			if (cf.itemInstance == item) {
 				cf.activate(player, item);
 			}
 		}
 		return true;
 	}
 
-	public boolean checkIfCanPickup(L2PcInstance player)
-	{
+	public boolean checkIfCanPickup(L2PcInstance player) {
 		SystemMessage sm;
 		sm = SystemMessage.getSystemMessage(SystemMessageId.THE_FORTRESS_BATTLE_OF_S1_HAS_FINISHED);
 		sm.addItemName(9819);
 		// Cannot own 2 combat flag
-		if (player.isCombatFlagEquipped())
-		{
+		if (player.isCombatFlagEquipped()) {
 			player.sendPacket(sm);
 			return false;
 		}
@@ -212,52 +171,41 @@ public class FortSiegeManager
 		// here check if is siege is attacker
 		Fort fort = FortManager.getInstance().getFort(player);
 
-		if (fort == null || fort.getFortId() <= 0)
-		{
+		if (fort == null || fort.getFortId() <= 0) {
 			player.sendPacket(sm);
 			return false;
-		}
-		else if (!fort.getSiege().getIsInProgress())
-		{
+		} else if (!fort.getSiege().getIsInProgress()) {
 			player.sendPacket(sm);
 			return false;
-		}
-		else if (fort.getSiege().getAttackerClan(player.getClan()) == null)
-		{
+		} else if (fort.getSiege().getAttackerClan(player.getClan()) == null) {
 			player.sendPacket(sm);
 			return false;
 		}
 		return true;
 	}
 
-	public void dropCombatFlag(L2PcInstance player, int fortId)
-	{
+	public void dropCombatFlag(L2PcInstance player, int fortId) {
 		Fort fort = FortManager.getInstance().getFortById(fortId);
 
 		List<CombatFlag> fcf = fort.getFlags();
-		for (CombatFlag cf : fcf)
-		{
-			if (cf.playerId == player.getObjectId())
-			{
+		for (CombatFlag cf : fcf) {
+			if (cf.playerId == player.getObjectId()) {
 				cf.dropIt();
-				if (fort.getSiege().getIsInProgress())
-				{
+				if (fort.getSiege().getIsInProgress()) {
 					cf.spawnMe();
 				}
 			}
 		}
 	}
 
-	public static class SiegeSpawn
-	{
+	public static class SiegeSpawn {
 		Location location;
 		private int npcId;
 		private int heading;
 		private int fortId;
 		private int id;
 
-		public SiegeSpawn(int fort_id, int x, int y, int z, int heading, int npc_id, int id)
-		{
+		public SiegeSpawn(int fort_id, int x, int y, int z, int heading, int npc_id, int id) {
 			fortId = fort_id;
 			location = new Location(x, y, z, heading);
 			this.heading = heading;
@@ -265,35 +213,29 @@ public class FortSiegeManager
 			this.id = id;
 		}
 
-		public int getFortId()
-		{
+		public int getFortId() {
 			return fortId;
 		}
 
-		public int getNpcId()
-		{
+		public int getNpcId() {
 			return npcId;
 		}
 
-		public int getHeading()
-		{
+		public int getHeading() {
 			return heading;
 		}
 
-		public int getId()
-		{
+		public int getId() {
 			return id;
 		}
 
-		public Location getLocation()
-		{
+		public Location getLocation() {
 			return location;
 		}
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final FortSiegeManager instance = new FortSiegeManager();
 	}
 }

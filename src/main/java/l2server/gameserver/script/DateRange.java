@@ -25,53 +25,42 @@ import java.util.logging.Level;
 /**
  * @author Luis Arias
  */
-public class DateRange
-{
+public class DateRange {
 	private Date startDate, endDate;
 
-	public DateRange(Date from, Date to)
-	{
+	public DateRange(Date from, Date to) {
 		startDate = from;
 		endDate = to;
 	}
 
-	public static DateRange parse(String dateRange, DateFormat format)
-	{
+	public static DateRange parse(String dateRange, DateFormat format) {
 		String[] date = dateRange.split("-");
-		if (date.length == 2)
-		{
-			try
-			{
+		if (date.length == 2) {
+			try {
 				Date start = format.parse(date[0]);
 				Date end = format.parse(date[1]);
 
 				return new DateRange(start, end);
-			}
-			catch (ParseException e)
-			{
+			} catch (ParseException e) {
 				Log.log(Level.WARNING, "Invalid Date Format.", e);
 			}
 		}
 		return new DateRange(null, null);
 	}
 
-	public boolean isValid()
-	{
+	public boolean isValid() {
 		return startDate == null || endDate == null;
 	}
 
-	public boolean isWithinRange(Date date)
-	{
+	public boolean isWithinRange(Date date) {
 		return date.after(startDate) && date.before(endDate);
 	}
 
-	public Date getEndDate()
-	{
+	public Date getEndDate() {
 		return endDate;
 	}
 
-	public Date getStartDate()
-	{
+	public Date getStartDate() {
 		return startDate;
 	}
 }

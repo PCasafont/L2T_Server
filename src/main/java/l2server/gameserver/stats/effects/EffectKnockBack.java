@@ -34,18 +34,15 @@ import l2server.util.Rnd;
 /**
  * @author Pere
  */
-public class EffectKnockBack extends L2Effect
-{
+public class EffectKnockBack extends L2Effect {
 	private int x, y, z;
 
-	public EffectKnockBack(Env env, L2EffectTemplate template)
-	{
+	public EffectKnockBack(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.KNOCK_BACK;
 	}
 
@@ -53,24 +50,18 @@ public class EffectKnockBack extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() ||
-				getEffected().isRaid())
-		{
+	public boolean onStart() {
+		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() || getEffected().isRaid()) {
 			return false;
 		}
 
 		//TW bug restrictions for avoid players with TW flags stuck his char into the walls, under live test
-		if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCombatFlagEquipped())
-		{
+		if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCombatFlagEquipped()) {
 			return false;
 		}
 
-		if (getSkill().getId() == 30012 || getSkill().getId() == 30506)
-		{
-			if (Rnd.get(100) > 70)
-			{
+		if (getSkill().getId() == 30012 || getSkill().getId() == 30506) {
+			if (Rnd.get(100) > 70) {
 				// Get current position of the L2Character
 				final int curX = getEffected().getX() + 1; // + 1 to correct when the effector came using a charge skill
 				final int curY = getEffected().getY();
@@ -81,11 +72,10 @@ public class EffectKnockBack extends L2Effect
 				double dy = getEffector().getY() - curY;
 				double dz = getEffector().getZ() - curZ;
 				double distance = Math.sqrt(dx * dx + dy * dy);
-				if (distance > 2000)
-				{
+				if (distance > 2000) {
 					Log.info("EffectKnockDown (skill id: " + getSkill().getId() +
-							") was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY +
-							" and getEffector: " + getEffector().getX() + "," + getEffector().getY());
+							") was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY + " and getEffector: " +
+							getEffector().getX() + "," + getEffector().getY());
 					return false;
 				}
 				int offset = Math.min((int) distance + 50, 1400);
@@ -96,14 +86,12 @@ public class EffectKnockBack extends L2Effect
 				// approximation for moving futher when z coordinates are different
 				// TODO: handle Z axis movement better
 				offset += Math.abs(dz);
-				if (offset < 5)
-				{
+				if (offset < 5) {
 					offset = 5;
 				}
 
 				// If no distance
-				if (distance < 1)
-				{
+				if (distance < 1) {
 					return false;
 				}
 
@@ -116,11 +104,9 @@ public class EffectKnockBack extends L2Effect
 				y = getEffector().getY() - (int) (offset * sin);
 				z = getEffected().getZ();
 
-				if (Config.GEODATA > 0)
-				{
+				if (Config.GEODATA > 0) {
 					Location destiny = GeoData.getInstance()
-							.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z,
-									getEffected().getInstanceId());
+							.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z, getEffected().getInstanceId());
 					x = destiny.getX();
 					y = destiny.getY();
 				}
@@ -131,9 +117,7 @@ public class EffectKnockBack extends L2Effect
 				getEffected().setXYZ(x, y, z);
 				return true;
 			}
-		}
-		else if (getSkill().getId() == 30505)
-		{
+		} else if (getSkill().getId() == 30505) {
 			//if (Rnd.get(100) > 70)
 			{
 				// Get current position of the L2Character
@@ -146,11 +130,9 @@ public class EffectKnockBack extends L2Effect
 				double dy = getEffector().getY() - curY;
 				double dz = getEffector().getZ() - curZ;
 				double distance = Math.sqrt(dx * dx + dy * dy);
-				if (distance > 2000)
-				{
-					Log.info("EffectDrag (skill id: " + getSkill().getId() +
-							") was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY +
-							" and getEffector: " + getEffector().getX() + "," + getEffector().getY());
+				if (distance > 2000) {
+					Log.info("EffectDrag (skill id: " + getSkill().getId() + ") was going to use invalid coordinates for characters, getEffected: " +
+							curX + "," + curY + " and getEffector: " + getEffector().getX() + "," + getEffector().getY());
 					return false;
 				}
 
@@ -162,14 +144,12 @@ public class EffectKnockBack extends L2Effect
 				// approximation for moving futher when z coordinates are different
 				// TODO: handle Z axis movement better
 				offset += Math.abs(dz);
-				if (offset < 5)
-				{
+				if (offset < 5) {
 					offset = 5;
 				}
 
 				// If no distance
-				if (distance < 1)
-				{
+				if (distance < 1) {
 					return false;
 				}
 
@@ -182,27 +162,22 @@ public class EffectKnockBack extends L2Effect
 				y = curY + (int) (offset * sin);
 				z = curZ;
 
-				if (Config.GEODATA > 0)
-				{
+				if (Config.GEODATA > 0) {
 					Location destiny = GeoData.getInstance()
-							.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z,
-									getEffected().getInstanceId());
+							.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z, getEffected().getInstanceId());
 					x = destiny.getX();
 					y = destiny.getY();
 				}
 
 				@SuppressWarnings("unused") boolean knockBack = false;
 
-				if (Rnd.nextBoolean())
-				{
+				if (Rnd.nextBoolean()) {
 					getEffected().stopMove(null);
 					getEffected().broadcastPacket(new FlyToLocation(getEffected(), x, y, z, FlyType.THROW_UP));
 					getEffected().setXYZ(x, y, z);
 					getEffected().broadcastPacket(new ValidateLocation(getEffected()));
 					return false;
-				}
-				else
-				{
+				} else {
 					getEffected().setIsParalyzed(true);
 					getEffected().startParalyze();
 					getEffected().broadcastPacket(new FlyToLocation(getEffected(), x, y, z, FlyType.KNOCK_DOWN));
@@ -223,11 +198,9 @@ public class EffectKnockBack extends L2Effect
 		double dy = getEffector().getY() - curY;
 		double dz = getEffector().getZ() - curZ;
 		double distance = Math.sqrt(dx * dx + dy * dy);
-		if (distance > 2000)
-		{
-			Log.info("EffectKnockBack (skill id: " + getSkill().getId() +
-					") was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY +
-					" and getEffector: " + getEffector().getX() + "," + getEffector().getY());
+		if (distance > 2000) {
+			Log.info("EffectKnockBack (skill id: " + getSkill().getId() + ") was going to use invalid coordinates for characters, getEffected: " +
+					curX + "," + curY + " and getEffector: " + getEffector().getX() + "," + getEffector().getY());
 			return false;
 		}
 		int offset = Math.min((int) distance + 100, 1400);
@@ -238,14 +211,12 @@ public class EffectKnockBack extends L2Effect
 		// approximation for moving futher when z coordinates are different
 		// TODO: handle Z axis movement better
 		offset += Math.abs(dz);
-		if (offset < 5)
-		{
+		if (offset < 5) {
 			offset = 5;
 		}
 
 		// If no distance
-		if (distance < 1)
-		{
+		if (distance < 1) {
 			return false;
 		}
 
@@ -258,13 +229,10 @@ public class EffectKnockBack extends L2Effect
 		y = getEffector().getY() - (int) (offset * sin);
 		z = getEffected().getZ();
 
-		if (Config.GEODATA > 0)
-		{
+		if (Config.GEODATA > 0) {
 			Location destiny = GeoData.getInstance()
-					.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z,
-							getEffected().getInstanceId());
-			if (destiny.getX() != x || destiny.getY() != y)
-			{
+					.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z, getEffected().getInstanceId());
+			if (destiny.getX() != x || destiny.getY() != y) {
 				x = destiny.getX() + (int) (cos * 10);
 				y = destiny.getY() + (int) (sin * 10);
 				z = GeoData.getInstance().getHeight(x, y, z);
@@ -274,8 +242,7 @@ public class EffectKnockBack extends L2Effect
 		getEffected().startParalyze();
 
 		boolean throwUp = getSkill().getId() == 30012 || getSkill().getId() == 30506;
-		getEffected().broadcastPacket(
-				new FlyToLocation(getEffected(), x, y, z, throwUp ? FlyType.THROW_UP : FlyType.KNOCK_BACK));
+		getEffected().broadcastPacket(new FlyToLocation(getEffected(), x, y, z, throwUp ? FlyType.THROW_UP : FlyType.KNOCK_BACK));
 		getEffected().setXYZ(x, y, z);
 		return true;
 	}
@@ -284,8 +251,7 @@ public class EffectKnockBack extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 
@@ -293,8 +259,7 @@ public class EffectKnockBack extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		getEffected().setIsParalyzed(false);
 		getEffected().stopParalyze(false);
 		getEffected().stopVisualEffect(VisualEffect.S_KNOCK_DOWN);

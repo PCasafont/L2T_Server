@@ -21,34 +21,28 @@ import l2server.util.Point3D;
 /**
  * @author Pere
  */
-public class ExStopMoveInShuttle extends L2GameServerPacket
-{
+public class ExStopMoveInShuttle extends L2GameServerPacket {
 	private int charObjId;
 	private int shuttleId;
 	private Point3D pos;
 	private int heading;
-
-	public ExStopMoveInShuttle(L2PcInstance player, int boatId)
-	{
+	
+	public ExStopMoveInShuttle(L2PcInstance player, int boatId) {
 		charObjId = player.getObjectId();
 		shuttleId = boatId;
 		pos = player.getInVehiclePosition();
 		heading = player.getHeading();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(charObjId);
 		writeD(shuttleId);
-		if (pos != null)
-		{
+		if (pos != null) {
 			writeD(pos.getX());
 			writeD(pos.getY());
 			writeD(pos.getZ());
-		}
-		else
-		{
+		} else {
 			writeD(0x00);
 			writeD(0x00);
 			writeD(0x00);

@@ -29,8 +29,7 @@ import l2server.gameserver.util.Util;
 /**
  * @author Pere
  */
-public class SwitchPosition implements ISkillHandler
-{
+public class SwitchPosition implements ISkillHandler {
 	//private static Logger log = Logger.getLogger(SummonFriend.class.getName());
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.SWITCH_POSITION};
 
@@ -38,25 +37,19 @@ public class SwitchPosition implements ISkillHandler
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		for (L2Character target : (L2Character[]) targets)
-		{
-			if (activeChar == target)
-			{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+		for (L2Character target : (L2Character[]) targets) {
+			if (activeChar == target) {
 				continue;
 			}
 
-			if (Util.checkIfInRange(2000, activeChar, target, false) &&
-					GeoData.getInstance().canSeeTarget(activeChar, target))
-			{
+			if (Util.checkIfInRange(2000, activeChar, target, false) && GeoData.getInstance().canSeeTarget(activeChar, target)) {
 				int x = activeChar.getX();
 				int y = activeChar.getY();
 				int z = activeChar.getZ();
 				activeChar.setXYZ(target.getX(), target.getY(), target.getZ());
 
-				activeChar.broadcastPacket(
-						new FlyToLocation(activeChar, target.getX(), target.getY(), target.getZ(), FlyType.DUMMY));
+				activeChar.broadcastPacket(new FlyToLocation(activeChar, target.getX(), target.getY(), target.getZ(), FlyType.DUMMY));
 
 				target.setXYZ(x, y, z);
 
@@ -74,8 +67,7 @@ public class SwitchPosition implements ISkillHandler
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

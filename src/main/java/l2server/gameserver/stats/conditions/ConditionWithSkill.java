@@ -22,8 +22,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author Steuf
  */
-public class ConditionWithSkill extends Condition
-{
+public class ConditionWithSkill extends Condition {
 	private final boolean skill;
 
 	/**
@@ -31,8 +30,7 @@ public class ConditionWithSkill extends Condition
 	 *
 	 * @param skill the skill
 	 */
-	public ConditionWithSkill(boolean skill)
-	{
+	public ConditionWithSkill(boolean skill) {
 		this.skill = skill;
 	}
 
@@ -40,8 +38,7 @@ public class ConditionWithSkill extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		return !(!skill && env.skill != null);
 	}
 }

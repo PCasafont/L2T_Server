@@ -20,14 +20,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Pere
  */
-public final class Unk16a extends L2GameServerPacket
-{
+public final class Unk16a extends L2GameServerPacket {
 	private int objectId;
 	private int unk1;
 	private int unk2;
 
-	public Unk16a(L2PcInstance character)
-	{
+	public Unk16a(L2PcInstance character) {
 		objectId = character.getObjectId();
 
 		unk1 = 9259;
@@ -35,8 +33,7 @@ public final class Unk16a extends L2GameServerPacket
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objectId);
 		writeD(unk1);
 		writeD(unk2);

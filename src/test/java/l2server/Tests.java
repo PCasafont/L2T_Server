@@ -12,43 +12,36 @@ import java.util.logging.LogManager;
 /**
  * @author Pere
  */
-public class Tests
-{
-	private void initializeServer()
-	{
+public class Tests {
+	private void initializeServer() {
 		ServerMode.serverMode = ServerMode.MODE_GAMESERVER;
 		// Local Constants
 		final String LOG_FOLDER = "log"; // Name of folder for log file
 		final String LOG_NAME = "./log.cfg"; // Name of log file
-
-        /* Main */
+		
+		/* Main */
 		// Create log folder
 		File logFolder = new File(Config.DATAPACK_ROOT, LOG_FOLDER);
 		logFolder.mkdir();
-
-		try (InputStream is = new FileInputStream(new File(LOG_NAME)))
-		{
+		
+		try (InputStream is = new FileInputStream(new File(LOG_NAME))) {
 			// Create input stream for log file -- or store file data into memory
 			LogManager.getLogManager().readConfiguration(is);
+		} catch (Exception ignored) {
 		}
-		catch (Exception ignored)
-		{
-		}
-
+		
 		// Initialize config
 		Config.load();
 	}
-
+	
 	@Test
-	public void testSkillLoading()
-	{
+	public void testSkillLoading() {
 		initializeServer();
 		SkillTable.getInstance();
 	}
-
+	
 	@Test
-	public void testItemLoading()
-	{
+	public void testItemLoading() {
 		initializeServer();
 		ItemTable.getInstance();
 	}

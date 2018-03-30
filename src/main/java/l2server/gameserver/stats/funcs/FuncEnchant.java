@@ -23,100 +23,79 @@ import l2server.gameserver.stats.Stats;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.templates.item.L2WeaponType;
 
-public class FuncEnchant extends Func
-{
+public class FuncEnchant extends Func {
 	private Lambda lambda;
-
-	public FuncEnchant(Stats pStat, Object owner, Lambda lambda)
-	{
+	
+	public FuncEnchant(Stats pStat, Object owner, Lambda lambda) {
 		super(pStat, owner);
 		this.lambda = lambda;
 	}
-
+	
 	@Override
-	public int getOrder()
-	{
+	public int getOrder() {
 		return 0x0c;
 	}
-
+	
 	@Override
-	public void calc(Env env)
-	{
-		if (cond != null && !cond.test(env))
-		{
+	public void calc(Env env) {
+		if (cond != null && !cond.test(env)) {
 			return;
 		}
-
+		
 		L2ItemInstance item = (L2ItemInstance) funcOwner;
-
+		
 		int enchant = item.getEnchantLevel();
-
-		if (enchant <= 0)
-		{
+		
+		if (enchant <= 0) {
 			return;
 		}
-
+		
 		int overenchant = 0;
-
-		if (enchant > 3)
-		{
+		
+		if (enchant > 3) {
 			overenchant = enchant - 3;
 			enchant = 3;
 		}
-
+		
 		boolean isBlessed = item.getItem().isBlessed();
-
-		if (env.player != null && env.player instanceof L2PcInstance)
-		{
+		
+		if (env.player != null && env.player instanceof L2PcInstance) {
 			L2PcInstance player = (L2PcInstance) env.player;
-			if (player.isInOlympiadMode() && Config.ALT_OLY_ENCHANT_LIMIT >= 0 &&
-					enchant + overenchant > Config.ALT_OLY_ENCHANT_LIMIT)
-			{
-				if (Config.ALT_OLY_ENCHANT_LIMIT > 3)
-				{
+			if (player.isInOlympiadMode() && Config.ALT_OLY_ENCHANT_LIMIT >= 0 && enchant + overenchant > Config.ALT_OLY_ENCHANT_LIMIT) {
+				if (Config.ALT_OLY_ENCHANT_LIMIT > 3) {
 					overenchant = Config.ALT_OLY_ENCHANT_LIMIT - 3;
-				}
-				else
-				{
+				} else {
 					overenchant = 0;
 					enchant = Config.ALT_OLY_ENCHANT_LIMIT;
 				}
 			}
 		}
-
+		
 		double baseAddVal = lambda.calc(env);
-		if (baseAddVal > 0.0)
-		{
+		if (baseAddVal > 0.0) {
 			env.value += baseAddVal * overenchant;
-			if (overenchant > 3)
-			{
+			if (overenchant > 3) {
 				env.value += baseAddVal * (overenchant - 3);
 			}
-
+			
 			return;
 		}
-
-		if (stat == Stats.MAGIC_DEFENSE || stat == Stats.PHYS_DEFENSE)
-		{
+		
+		if (stat == Stats.MAGIC_DEFENSE || stat == Stats.PHYS_DEFENSE) {
 			if (item.getItem().getItemGradePlain() == L2Item.CRYSTAL_R ||
-					(item.getItem().getBodyPart() & (L2Item.SLOT_HAIR | L2Item.SLOT_HAIR2 | L2Item.SLOT_HAIRALL)) > 0)
-			{
+					(item.getItem().getBodyPart() & (L2Item.SLOT_HAIR | L2Item.SLOT_HAIR2 | L2Item.SLOT_HAIRALL)) > 0) {
 				int base = isBlessed ? 3 : 2;
 				int add = overenchant > 3 ? (overenchant - 3) * base : 0;
 				env.value += base * enchant + base * 2 * overenchant + add;
-			}
-			else
-			{
+			} else {
 				env.value += enchant + 3 * overenchant;
 			}
-
+			
 			return;
 		}
-
-		if (stat == Stats.MAGIC_ATTACK)
-		{
-			switch (item.getItem().getItemGradePlain())
-			{
+		
+		if (stat == Stats.MAGIC_ATTACK) {
+			switch (item.getItem().getItemGradePlain()) {
 				case L2Item.CRYSTAL_R:
 					int base = isBlessed ? 8 : 5;
 					int add = overenchant > 3 ? (overenchant - 3) * base : 0;
@@ -140,20 +119,17 @@ public class FuncEnchant extends Func
 					env.value += 2 * enchant + 4 * overenchant;
 					break;
 			}
-
+			
 			return;
 		}
-
-		if (item.isWeapon())
-		{
+		
+		if (item.isWeapon()) {
 			L2WeaponType type = (L2WeaponType) item.getItemType();
-
-			switch (item.getItem().getItemGradePlain())
-			{
+			
+			switch (item.getItem().getItemGradePlain()) {
 				case L2Item.CRYSTAL_R:
 					int base = isBlessed ? 9 : 6;
-					switch (type)
-					{
+					switch (type) {
 						case BOW:
 							base = isBlessed ? 18 : 12;
 							break;
@@ -174,8 +150,7 @@ public class FuncEnchant extends Func
 					env.value += base * enchant + base * 2 * overenchant + add;
 					break;
 				case L2Item.CRYSTAL_S:
-					switch (type)
-					{
+					switch (type) {
 						case BOW:
 						case CROSSBOW:
 						case CROSSBOWK:
@@ -187,8 +162,7 @@ public class FuncEnchant extends Func
 					}
 					break;
 				case L2Item.CRYSTAL_A:
-					switch (type)
-					{
+					switch (type) {
 						case BOW:
 						case CROSSBOW:
 						case CROSSBOWK:
@@ -201,8 +175,7 @@ public class FuncEnchant extends Func
 					break;
 				case L2Item.CRYSTAL_B:
 				case L2Item.CRYSTAL_C:
-					switch (type)
-					{
+					switch (type) {
 						case BOW:
 						case CROSSBOW:
 						case CROSSBOWK:
@@ -215,12 +188,10 @@ public class FuncEnchant extends Func
 					break;
 				case L2Item.CRYSTAL_D:
 				case L2Item.CRYSTAL_NONE:
-					switch (type)
-					{
+					switch (type) {
 						case BOW:
 						case CROSSBOW:
-						case CROSSBOWK:
-						{
+						case CROSSBOWK: {
 							env.value += 4 * enchant + 8 * overenchant;
 							break;
 						}

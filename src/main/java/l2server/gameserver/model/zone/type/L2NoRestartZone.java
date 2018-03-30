@@ -26,60 +26,42 @@ import l2server.gameserver.model.zone.L2ZoneType;
  *
  * @author GKR
  */
-public class L2NoRestartZone extends L2ZoneType
-{
+public class L2NoRestartZone extends L2ZoneType {
 	private int restartAllowedTime = 0;
 	private boolean enabled = true;
 
-	public L2NoRestartZone(int id)
-	{
+	public L2NoRestartZone(int id) {
 		super(id);
 	}
 
 	@Override
-	public void setParameter(String name, String value)
-	{
-		if (name.equalsIgnoreCase("EnabledByDefault"))
-		{
+	public void setParameter(String name, String value) {
+		if (name.equalsIgnoreCase("EnabledByDefault")) {
 			enabled = Boolean.parseBoolean(value);
-		}
-		else if (name.equalsIgnoreCase("restartAllowedTime"))
-		{
+		} else if (name.equalsIgnoreCase("restartAllowedTime")) {
 			restartAllowedTime = Integer.parseInt(value);
-		}
-		else if (name.equalsIgnoreCase("restartTime"))
-		{
+		} else if (name.equalsIgnoreCase("restartTime")) {
 			// Do nothing.
-		}
-		else if (name.equalsIgnoreCase("defaultStatus"))
-		{
+		} else if (name.equalsIgnoreCase("defaultStatus")) {
 			// Do nothing.
-		}
-		else if (name.equalsIgnoreCase("instanceId"))
-		{
+		} else if (name.equalsIgnoreCase("instanceId")) {
 			// Do nothing.
-		}
-		else
-		{
+		} else {
 			super.setParameter(name, value);
 		}
 	}
 
 	@Override
-	protected void onEnter(L2Character character)
-	{
-		if (!enabled)
-		{
+	protected void onEnter(L2Character character) {
+		if (!enabled) {
 			return;
 		}
 
-		if (character instanceof L2PcInstance)
-		{
+		if (character instanceof L2PcInstance) {
 			character.setInsideZone(L2Character.ZONE_NORESTART, true);
 			L2PcInstance player = (L2PcInstance) character;
 
-			if (player.getZoneRestartLimitTime() > 0 && player.getZoneRestartLimitTime() < System.currentTimeMillis())
-			{
+			if (player.getZoneRestartLimitTime() > 0 && player.getZoneRestartLimitTime() < System.currentTimeMillis()) {
 				ThreadPoolManager.getInstance().scheduleGeneral(new TeleportTask(player), 2000);
 			}
 			player.setZoneRestartLimitTime(0);
@@ -87,53 +69,43 @@ public class L2NoRestartZone extends L2ZoneType
 	}
 
 	@Override
-	protected void onExit(L2Character character)
-	{
-		if (!enabled)
-		{
+	protected void onExit(L2Character character) {
+		if (!enabled) {
 			return;
 		}
 
-		if (character instanceof L2PcInstance)
-		{
+		if (character instanceof L2PcInstance) {
 			character.setInsideZone(L2Character.ZONE_NORESTART, false);
 		}
 	}
 
 	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
+	public void onDieInside(L2Character character, L2Character killer) {
 		// Do nothing.
 	}
 
 	@Override
-	public void onReviveInside(L2Character character)
-	{
+	public void onReviveInside(L2Character character) {
 		// Do nothing.
 	}
 
-	public int getRestartAllowedTime()
-	{
+	public int getRestartAllowedTime() {
 		return restartAllowedTime;
 	}
 
-	public void setRestartAllowedTime(int time)
-	{
+	public void setRestartAllowedTime(int time) {
 		restartAllowedTime = time;
 	}
 
-	private static class TeleportTask implements Runnable
-	{
+	private static class TeleportTask implements Runnable {
 		private final L2PcInstance player;
 
-		public TeleportTask(L2PcInstance player)
-		{
+		public TeleportTask(L2PcInstance player) {
 			this.player = player;
 		}
 
 		@Override
-		public void run()
-		{
+		public void run() {
 			player.teleToLocation(TeleportWhereType.Town);
 		}
 	}

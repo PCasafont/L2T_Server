@@ -18,12 +18,10 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Erlandys
  */
-public class ExResponseCommissionBuyInfo extends L2GameServerPacket
-{
-
+public class ExResponseCommissionBuyInfo extends L2GameServerPacket {
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(0x01); // Unknown
 
 		/*L2ItemInstance item = auction.getItem();

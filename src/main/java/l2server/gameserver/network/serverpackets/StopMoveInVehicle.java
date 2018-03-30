@@ -21,27 +21,24 @@ import l2server.util.Point3D;
 /**
  * @author Maktakien
  */
-public class StopMoveInVehicle extends L2GameServerPacket
-{
+public class StopMoveInVehicle extends L2GameServerPacket {
 	private int charObjId;
 	private int boatId;
 	private Point3D pos;
 	private int heading;
-
-	public StopMoveInVehicle(L2PcInstance player, int boatId)
-	{
+	
+	public StopMoveInVehicle(L2PcInstance player, int boatId) {
 		charObjId = player.getObjectId();
 		this.boatId = boatId;
 		pos = player.getInVehiclePosition();
 		heading = player.getHeading();
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(charObjId);
 		writeD(boatId);
 		writeD(pos.getX());

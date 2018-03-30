@@ -20,8 +20,7 @@ import l2server.gameserver.model.actor.L2Playable;
 /**
  * @author Luca Baldi
  */
-public final class RelationChanged extends L2GameServerPacket
-{
+public final class RelationChanged extends L2GameServerPacket {
 	public static final int RELATION_PARTY1 = 0x00001; // party member
 	public static final int RELATION_PARTY2 = 0x00002; // party member
 	public static final int RELATION_PARTY3 = 0x00004; // party member
@@ -39,30 +38,26 @@ public final class RelationChanged extends L2GameServerPacket
 	public static final int RELATION_WAR_ABOUT_TO_BEGIN = 0x08000; // single fist
 	public static final int RELATION_ALLY_MEMBER = 0x10000; // clan is in alliance
 
-	private static class Relation
-	{
+	private static class Relation {
 		int objId, relation, autoAttackable, reputation, pvpFlag;
 	}
 
 	private Relation relation;
 
-	public RelationChanged(L2Playable activeChar, int relation, boolean autoattackable)
-	{
+	public RelationChanged(L2Playable activeChar, int relation, boolean autoattackable) {
 		this.relation = new Relation();
 		this.relation.objId = activeChar.getObjectId();
 		this.relation.relation = relation;
 		this.relation.autoAttackable = autoattackable ? 1 : 0;
 		this.relation.reputation = activeChar.getReputation();
 		this.relation.pvpFlag = activeChar.getPvpFlag();
-		invisibleCharacter = activeChar.getActingPlayer().getAppearance().getInvisible() ?
-				activeChar.getActingPlayer().getObjectId() : 0;
+		invisibleCharacter = activeChar.getActingPlayer().getAppearance().getInvisible() ? activeChar.getActingPlayer().getObjectId() : 0;
 	}
 
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeC(2);
 		writeD(relation.objId);
 		writeD(relation.relation);

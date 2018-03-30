@@ -34,52 +34,43 @@ import java.util.List;
  * @author l3x
  */
 
-public class ExShowSellCropList extends L2GameServerPacket
-{
-
+public class ExShowSellCropList extends L2GameServerPacket {
+	
 	private int manorId = 1;
 	private final HashMap<Integer, L2ItemInstance> cropsItems;
 	private final HashMap<Integer, CropProcure> castleCrops;
-
-	public ExShowSellCropList(L2PcInstance player, int manorId, List<CropProcure> crops)
-	{
+	
+	public ExShowSellCropList(L2PcInstance player, int manorId, List<CropProcure> crops) {
 		this.manorId = manorId;
 		castleCrops = new HashMap<>();
 		cropsItems = new HashMap<>();
-
+		
 		ArrayList<Integer> allCrops = L2Manor.getInstance().getAllCrops();
-		for (int cropId : allCrops)
-		{
+		for (int cropId : allCrops) {
 			L2ItemInstance item = player.getInventory().getItemByItemId(cropId);
-			if (item != null)
-			{
+			if (item != null) {
 				cropsItems.put(cropId, item);
 			}
 		}
-
-		for (CropProcure crop : crops)
-		{
-			if (cropsItems.containsKey(crop.getId()) && crop.getAmount() > 0)
-			{
+		
+		for (CropProcure crop : crops) {
+			if (cropsItems.containsKey(crop.getId()) && crop.getAmount() > 0) {
 				castleCrops.put(crop.getId(), crop);
 			}
 		}
 	}
-
+	
 	@Override
-	public void runImpl()
-	{
+	public void runImpl() {
 		// no long running
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(manorId); // manor id
 		writeD(cropsItems.size()); // size
-
-		for (L2ItemInstance item : cropsItems.values())
-		{
+		
+		for (L2ItemInstance item : cropsItems.values()) {
 			writeD(item.getObjectId()); // Object id
 			writeD(item.getItemId()); // crop id
 			writeD(L2Manor.getInstance().getSeedLevelByCrop(item.getItemId())); // seed level
@@ -87,17 +78,14 @@ public class ExShowSellCropList extends L2GameServerPacket
 			writeD(L2Manor.getInstance().getRewardItem(item.getItemId(), 1)); // reward 1 id
 			writeC(1);
 			writeD(L2Manor.getInstance().getRewardItem(item.getItemId(), 2)); // reward 2 id
-
-			if (castleCrops.containsKey(item.getItemId()))
-			{
+			
+			if (castleCrops.containsKey(item.getItemId())) {
 				CropProcure crop = castleCrops.get(item.getItemId());
 				writeD(manorId); // manor
 				writeQ(crop.getAmount()); // buy residual
 				writeQ(crop.getPrice()); // buy price
 				writeC(crop.getReward()); // reward
-			}
-			else
-			{
+			} else {
 				writeD(0xFFFFFFFF); // manor
 				writeQ(0); // buy residual
 				writeQ(0); // buy price

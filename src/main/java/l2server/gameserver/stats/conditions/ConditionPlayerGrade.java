@@ -24,8 +24,7 @@ import l2server.gameserver.stats.Env;
  * @author Gigiikun
  */
 
-public final class ConditionPlayerGrade extends Condition
-{
+public final class ConditionPlayerGrade extends Condition {
 	//	conditional values
 	public static final int COND_NO_GRADE = 0x0001;
 	public static final int COND_D_GRADE = 0x0002;
@@ -43,8 +42,7 @@ public final class ConditionPlayerGrade extends Condition
 	 *
 	 * @param value the value
 	 */
-	public ConditionPlayerGrade(int value)
-	{
+	public ConditionPlayerGrade(int value) {
 		this.value = value;
 	}
 
@@ -52,10 +50,8 @@ public final class ConditionPlayerGrade extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (env.player instanceof L2PcInstance)
-		{
+	public boolean testImpl(Env env) {
+		if (env.player instanceof L2PcInstance) {
 			byte expIndex = (byte) ((L2PcInstance) env.player).getExpertiseIndex();
 
 			return value == expIndex;

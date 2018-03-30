@@ -18,21 +18,18 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author JIV
  */
-public class ExBaseAttributeCancelResult extends L2GameServerPacket
-{
-
+public class ExBaseAttributeCancelResult extends L2GameServerPacket {
+	
 	private int objId;
 	private byte attribute;
-
-	public ExBaseAttributeCancelResult(int objId, byte attribute)
-	{
+	
+	public ExBaseAttributeCancelResult(int objId, byte attribute) {
 		this.objId = objId;
 		this.attribute = attribute;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(1); // result
 		writeD(objId);
 		writeD(attribute);

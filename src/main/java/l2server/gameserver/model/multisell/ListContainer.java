@@ -21,8 +21,7 @@ import java.util.List;
 /**
  * @author DS
  */
-public class ListContainer
-{
+public class ListContainer {
 	protected int listId;
 	protected boolean applyTaxes = false;
 	protected boolean maintainEnchantment = false;
@@ -31,8 +30,7 @@ public class ListContainer
 
 	protected List<MultiSellEntry> entries;
 
-	public ListContainer()
-	{
+	public ListContainer() {
 		entries = new ArrayList<>();
 	}
 
@@ -40,63 +38,51 @@ public class ListContainer
 	 * This constructor used in PreparedListContainer only
 	 * ArrayList not created
 	 */
-	protected ListContainer(int listId)
-	{
+	protected ListContainer(int listId) {
 		this.listId = listId;
 	}
 
-	public final List<MultiSellEntry> getEntries()
-	{
+	public final List<MultiSellEntry> getEntries() {
 		return entries;
 	}
 
-	public final void setListId(int listId)
-	{
+	public final void setListId(int listId) {
 		this.listId = listId;
 	}
 
-	public final int getListId()
-	{
+	public final int getListId() {
 		return listId;
 	}
 
-	public final void setApplyTaxes(boolean applyTaxes)
-	{
+	public final void setApplyTaxes(boolean applyTaxes) {
 		this.applyTaxes = applyTaxes;
 	}
 
-	public final boolean getApplyTaxes()
-	{
+	public final boolean getApplyTaxes() {
 		return applyTaxes;
 	}
 
-	public final void setMaintainEnchantment(boolean maintainEnchantment)
-	{
+	public final void setMaintainEnchantment(boolean maintainEnchantment) {
 		this.maintainEnchantment = maintainEnchantment;
 	}
 
-	public final boolean getMaintainEnchantment()
-	{
+	public final boolean getMaintainEnchantment() {
 		return maintainEnchantment;
 	}
 
-	public final void setIsChance(boolean isChance)
-	{
+	public final void setIsChance(boolean isChance) {
 		this.isChance = isChance;
 	}
 
-	public final boolean isChance()
-	{
+	public final boolean isChance() {
 		return isChance;
 	}
 
-	public final void setTimeLimit(final int timeLimit)
-	{
+	public final void setTimeLimit(final int timeLimit) {
 		this.timeLimit = timeLimit;
 	}
 
-	public final int getTimeLimit()
-	{
+	public final int getTimeLimit() {
 		return timeLimit;
 	}
 }

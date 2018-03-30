@@ -27,15 +27,10 @@ import l2server.gameserver.model.L2Object.InstanceType;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.AbnormalStatusUpdateFromTarget;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.MyTargetSelected;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.network.serverpackets.ValidateLocation;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.skills.L2EffectType;
 
-public class L2PcInstanceAction implements IActionHandler
-{
+public class L2PcInstanceAction implements IActionHandler {
 	/**
 	 * Manage actions when a player click on this L2PcInstance.<BR><BR>
 	 * <p>
@@ -55,15 +50,12 @@ public class L2PcInstanceAction implements IActionHandler
 	 * @param activeChar The player that start an action on target L2PcInstance
 	 */
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-	{
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
 		activeChar.onActionRequest();
 
 		// See description in Events.java
-		if (activeChar.getEvent() != null && !activeChar.getEvent().onAction(activeChar, target.getObjectId()))
-		{
-			if (!activeChar.getEvent().isState(EventState.READY) && !activeChar.getEvent().isState(EventState.STARTED))
-			{
+		if (activeChar.getEvent() != null && !activeChar.getEvent().onAction(activeChar, target.getObjectId())) {
+			if (!activeChar.getEvent().isState(EventState.READY) && !activeChar.getEvent().isState(EventState.STARTED)) {
 				activeChar.setEvent(null);
 			}
 
@@ -71,121 +63,88 @@ public class L2PcInstanceAction implements IActionHandler
 			return false;
 		}
 
-		if (activeChar.getCaptcha() != null && !activeChar.onActionCaptcha(false))
-		{
+		if (activeChar.getCaptcha() != null && !activeChar.onActionCaptcha(false)) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 
 		// Check if the L2PcInstance is confused
-		if (activeChar.isOutOfControl())
-		{
+		if (activeChar.isOutOfControl()) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 
 		// Aggression target lock effect
-		if (activeChar.isLockedTarget() && activeChar.getLockedTarget() != target)
-		{
+		if (activeChar.isLockedTarget() && activeChar.getLockedTarget() != target) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_CHANGE_TARGET));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 
-		if (activeChar != target &&
-				(activeChar.getParty() == null || activeChar.getParty() != ((L2PcInstance) target).getParty()) &&
-				((L2PcInstance) target).isAffected(L2EffectType.UNTARGETABLE.getMask()) && !activeChar.isGM())
-		{
+		if (activeChar != target && (activeChar.getParty() == null || activeChar.getParty() != ((L2PcInstance) target).getParty()) &&
+				((L2PcInstance) target).isAffected(L2EffectType.UNTARGETABLE.getMask()) && !activeChar.isGM()) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 
-		if (activeChar.getInstanceId() != activeChar.getObjectId())
-		{
+		if (activeChar.getInstanceId() != activeChar.getObjectId()) {
 			InstanceManager.getInstance().destroyInstance(activeChar.getObjectId());
 		}
 
 		// Check if the activeChar already target this L2PcInstance
-		if (activeChar.getTarget() != target)
-		{
+		if (activeChar.getTarget() != target) {
 			// Set the target of the activeChar
 			activeChar.setTarget(target);
 
 			// Send a Server->Client packet MyTargetSelected to the activeChar
 			// The color to display in the select window is White
 			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
-			if (target instanceof L2Character)
-			{
+			if (target instanceof L2Character) {
 				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character) target));
 			}
-			if (activeChar != target)
-			{
+			if (activeChar != target) {
 				activeChar.sendPacket(new ValidateLocation((L2Character) target));
 			}
-		}
-		else if (interact)
-		{
-			if (activeChar != target)
-			{
+		} else if (interact) {
+			if (activeChar != target) {
 				activeChar.sendPacket(new ValidateLocation((L2Character) target));
 			}
 			// Check if this L2PcInstance has a Private Store
-			if (((L2PcInstance) target).getPrivateStoreType() != 0)
-			{
+			if (((L2PcInstance) target).getPrivateStoreType() != 0) {
 				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
-			}
-			else
-			{
+			} else {
 				// Check if this L2PcInstance is autoAttackable
-				if (target.isAutoAttackable(activeChar))
-				{
+				if (target.isAutoAttackable(activeChar)) {
 					// activeChar with lvl < 21 can't attack a cursed weapon holder
 					// And a cursed weapon holder  can't attack activeChars with lvl < 21
 					if (((L2PcInstance) target).isCursedWeaponEquipped() && activeChar.getLevel() < 21 ||
-							activeChar.isCursedWeaponEquipped() && ((L2Character) target).getLevel() < 21)
-					{
+							activeChar.isCursedWeaponEquipped() && ((L2Character) target).getLevel() < 21) {
 						activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-					}
-					else
-					{
-						if (Config.GEODATA > 0)
-						{
-							if (GeoData.getInstance().canSeeTarget(activeChar, target))
-							{
+					} else {
+						if (Config.GEODATA > 0) {
+							if (GeoData.getInstance().canSeeTarget(activeChar, target)) {
 								activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 								activeChar.onActionRequest();
 							}
-						}
-						else
-						{
+						} else {
 							activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 							activeChar.onActionRequest();
 						}
 					}
-				}
-				else
-				{
+				} else {
 					// This Action Failed packet avoids activeChar getting stuck when clicking three or more times
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-					if (Config.GEODATA > 0)
-					{
-						if (GeoData.getInstance().canSeeTarget(activeChar, target))
-						{
+					if (Config.GEODATA > 0) {
+						if (GeoData.getInstance().canSeeTarget(activeChar, target)) {
 							activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
 						}
-					}
-					else
-					{
+					} else {
 						activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
 					}
 
-					if (Config.OFFLINE_BUFFERS_ENABLE && target instanceof L2PcInstance &&
-							((L2PcInstance) target).getClient() != null &&
-							((L2PcInstance) target).getClient().isDetached() &&
-							((L2PcInstance) target).getIsOfflineBuffer())
-					{
-						CustomOfflineBuffersManager.getInstance()
-								.getSpecificBufferInfo(activeChar, target.getObjectId());
+					if (Config.OFFLINE_BUFFERS_ENABLE && target instanceof L2PcInstance && ((L2PcInstance) target).getClient() != null &&
+							((L2PcInstance) target).getClient().isDetached() && ((L2PcInstance) target).getIsOfflineBuffer()) {
+						CustomOfflineBuffersManager.getInstance().getSpecificBufferInfo(activeChar, target.getObjectId());
 					}
 				}
 			}
@@ -195,8 +154,7 @@ public class L2PcInstanceAction implements IActionHandler
 	}
 
 	@Override
-	public InstanceType getInstanceType()
-	{
+	public InstanceType getInstanceType() {
 		return InstanceType.L2PcInstance;
 	}
 }

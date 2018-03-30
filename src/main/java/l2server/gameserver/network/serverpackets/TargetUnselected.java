@@ -26,26 +26,23 @@ import l2server.gameserver.model.actor.L2Character;
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public class TargetUnselected extends L2GameServerPacket
-{
+public class TargetUnselected extends L2GameServerPacket {
 	private int targetObjId;
 	private int x;
 	private int y;
 	private int z;
-
+	
 	/**
 	 */
-	public TargetUnselected(L2Character character)
-	{
+	public TargetUnselected(L2Character character) {
 		targetObjId = character.getObjectId();
 		x = character.getX();
 		y = character.getY();
 		z = character.getZ();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(targetObjId);
 		writeD(x);
 		writeD(y);

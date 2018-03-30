@@ -24,8 +24,7 @@ import java.util.ArrayList;
 /**
  * The Class ConditionPlayerHasPet.
  */
-public class ConditionPlayerHasPet extends Condition
-{
+public class ConditionPlayerHasPet extends Condition {
 	private final ArrayList<Integer> controlItemIds;
 
 	/**
@@ -33,14 +32,10 @@ public class ConditionPlayerHasPet extends Condition
 	 *
 	 * @param itemIds the item ids
 	 */
-	public ConditionPlayerHasPet(ArrayList<Integer> itemIds)
-	{
-		if (itemIds.size() == 1 && itemIds.get(0) == 0)
-		{
+	public ConditionPlayerHasPet(ArrayList<Integer> itemIds) {
+		if (itemIds.size() == 1 && itemIds.get(0) == 0) {
 			controlItemIds = null;
-		}
-		else
-		{
+		} else {
 			controlItemIds = itemIds;
 		}
 	}
@@ -49,26 +44,21 @@ public class ConditionPlayerHasPet extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 
-		if (((L2PcInstance) env.player).getPet() == null)
-		{
+		if (((L2PcInstance) env.player).getPet() == null) {
 			return false;
 		}
 
-		if (controlItemIds == null)
-		{
+		if (controlItemIds == null) {
 			return true;
 		}
 
 		final L2ItemInstance controlItem = ((L2PcInstance) env.player).getPet().getControlItem();
-		if (controlItem == null)
-		{
+		if (controlItem == null) {
 			return false;
 		}
 

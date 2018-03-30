@@ -24,8 +24,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-public class ConditionPlayerBaseStats extends Condition
-{
+public class ConditionPlayerBaseStats extends Condition {
 
 	private final BaseStat stat;
 	private final int value;
@@ -37,8 +36,7 @@ public class ConditionPlayerBaseStats extends Condition
 	 * @param stat   the stat
 	 * @param value  the value
 	 */
-	public ConditionPlayerBaseStats(L2Character player, BaseStat stat, int value)
-	{
+	public ConditionPlayerBaseStats(L2Character player, BaseStat stat, int value) {
 		super();
 		this.stat = stat;
 		this.value = value;
@@ -52,15 +50,12 @@ public class ConditionPlayerBaseStats extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 		L2PcInstance player = (L2PcInstance) env.player;
-		switch (stat)
-		{
+		switch (stat) {
 			case Int:
 				return player.getINT() >= value;
 			case Str:
@@ -82,7 +77,13 @@ public class ConditionPlayerBaseStats extends Condition
 	}
 }
 
-enum BaseStat
-{
-	Int, Str, Con, Dex, Men, Wit, Cha, Luc
+enum BaseStat {
+	Int,
+	Str,
+	Con,
+	Dex,
+	Men,
+	Wit,
+	Cha,
+	Luc
 }

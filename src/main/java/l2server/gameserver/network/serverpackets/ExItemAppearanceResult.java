@@ -20,25 +20,21 @@ import l2server.gameserver.model.L2ItemInstance;
 /**
  * @author Pere
  */
-public class ExItemAppearanceResult extends L2GameServerPacket
-{
+public class ExItemAppearanceResult extends L2GameServerPacket {
 	private int answer;
 	L2ItemInstance result;
-
-	public ExItemAppearanceResult(int answer, L2ItemInstance result)
-	{
+	
+	public ExItemAppearanceResult(int answer, L2ItemInstance result) {
 		this.answer = answer;
 		this.result = result;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(answer);
-		if (answer == 1)
-		{
+		if (answer == 1) {
 			writeD(result.getItemId());
 			writeD(0x00); // GoD ???
 			writeD(0x00); // GoD ???

@@ -24,45 +24,37 @@ import l2server.gameserver.model.itemcontainer.PcInventory;
 /**
  * @author Forsaiken
  */
-public final class RequestBidItemAuction extends L2GameClientPacket
-{
+public final class RequestBidItemAuction extends L2GameClientPacket {
 	private int instanceId;
 	private long bid;
-
+	
 	@Override
-	protected final void readImpl()
-	{
+	protected final void readImpl() {
 		instanceId = super.readD();
 		bid = super.readQ();
 	}
-
+	
 	@Override
-	protected final void runImpl()
-	{
+	protected final void runImpl() {
 		final L2PcInstance activeChar = super.getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		// can't use auction fp here
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("auction"))
-		{
+		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("auction")) {
 			activeChar.sendMessage("You bidding too fast.");
 			return;
 		}
-
-		if (bid < 0 || bid > PcInventory.MAX_ADENA)
-		{
+		
+		if (bid < 0 || bid > PcInventory.MAX_ADENA) {
 			return;
 		}
-
+		
 		final ItemAuctionInstance instance = ItemAuctionManager.getInstance().getManagerInstance(instanceId);
-		if (instance != null)
-		{
+		if (instance != null) {
 			final ItemAuction auction = instance.getCurrentAuction();
-			if (auction != null)
-			{
+			if (auction != null) {
 				auction.registerBid(activeChar, bid);
 			}
 		}

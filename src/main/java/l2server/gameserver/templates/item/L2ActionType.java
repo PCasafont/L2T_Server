@@ -18,8 +18,7 @@ package l2server.gameserver.templates.item;
 /**
  * @author nBd
  */
-public enum L2ActionType
-{
+public enum L2ActionType {
 	calc,
 	call_skill,
 	capsule,

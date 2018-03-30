@@ -18,64 +18,53 @@ package l2server.gameserver.instancemanager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DiscussionManager
-{
+public class DiscussionManager {
 	private List<Integer> voted = new ArrayList<>();
 	private int[] votes = new int[10];
 	private boolean votesEnabled = false;
 	private boolean globalChatDisabled = false;
-
-	public static DiscussionManager getInstance()
-	{
+	
+	public static DiscussionManager getInstance() {
 		return SingletonHolder.instance;
 	}
-
-	public boolean vote(int objectId, byte option)
-	{
-		if (voted.contains(objectId))
-		{
+	
+	public boolean vote(int objectId, byte option) {
+		if (voted.contains(objectId)) {
 			return false;
 		}
 		voted.add(objectId);
 		votes[option]++;
 		return true;
 	}
-
-	public void startVotations()
-	{
+	
+	public void startVotations() {
 		voted.clear();
-		for (int i = 0; i < votes.length; i++)
-		{
+		for (int i = 0; i < votes.length; i++) {
 			votes[i] = 0;
 		}
 		votesEnabled = true;
 	}
-
-	public int[] endVotations()
-	{
+	
+	public int[] endVotations() {
 		voted.clear();
 		votesEnabled = false;
 		return votes;
 	}
-
-	public boolean areVotesEnabled()
-	{
+	
+	public boolean areVotesEnabled() {
 		return votesEnabled;
 	}
-
-	public void setGlobalChatDisabled(boolean chatDisabled)
-	{
+	
+	public void setGlobalChatDisabled(boolean chatDisabled) {
 		globalChatDisabled = chatDisabled;
 	}
-
-	public boolean isGlobalChatDisabled()
-	{
+	
+	public boolean isGlobalChatDisabled() {
 		return globalChatDisabled;
 	}
-
+	
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final DiscussionManager instance = new DiscussionManager();
 	}
 }

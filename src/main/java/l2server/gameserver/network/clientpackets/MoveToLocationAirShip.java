@@ -26,124 +26,99 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-public class MoveToLocationAirShip extends L2GameClientPacket
-{
+public class MoveToLocationAirShip extends L2GameClientPacket {
 	public static final int MIN_Z = -895;
 	public static final int MAX_Z = 6105;
 	public static final int STEP = 300;
-
+	
 	private int command;
 	private int param1;
 	private int param2 = 0;
-
-	public TaskPriority getPriority()
-	{
+	
+	public TaskPriority getPriority() {
 		return TaskPriority.PR_HIGH;
 	}
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		command = readD();
 		param1 = readD();
-		if (buf.remaining() > 0)
-		{
+		if (buf.remaining() > 0) {
 			param2 = readD();
 		}
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (!activeChar.isInAirShip())
-		{
+		
+		if (!activeChar.isInAirShip()) {
 			return;
 		}
-
+		
 		final L2AirShipInstance ship = activeChar.getAirShip();
-		if (!ship.isCaptain(activeChar))
-		{
+		if (!ship.isCaptain(activeChar)) {
 			return;
 		}
-
+		
 		int z = ship.getZ();
-
-		switch (command)
-		{
+		
+		switch (command) {
 			case 0:
-				if (!ship.canBeControlled())
-				{
+				if (!ship.canBeControlled()) {
 					return;
 				}
-				if (param1 < L2World.GRACIA_MAX_X)
-				{
-					ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-							new L2CharPosition(param1, param2, z, 0));
+				if (param1 < L2World.GRACIA_MAX_X) {
+					ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(param1, param2, z, 0));
 				}
 				break;
 			case 1:
-				if (!ship.canBeControlled())
-				{
+				if (!ship.canBeControlled()) {
 					return;
 				}
 				ship.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 				break;
 			case 2:
-				if (!ship.canBeControlled())
-				{
+				if (!ship.canBeControlled()) {
 					return;
 				}
-				if (z < L2World.GRACIA_MAX_Z)
-				{
+				if (z < L2World.GRACIA_MAX_Z) {
 					z = Math.min(z + STEP, L2World.GRACIA_MAX_Z);
-					ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-							new L2CharPosition(ship.getX(), ship.getY(), z, 0));
+					ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(ship.getX(), ship.getY(), z, 0));
 				}
 				break;
 			case 3:
-				if (!ship.canBeControlled())
-				{
+				if (!ship.canBeControlled()) {
 					return;
 				}
-				if (z > L2World.GRACIA_MIN_Z)
-				{
+				if (z > L2World.GRACIA_MIN_Z) {
 					z = Math.max(z - STEP, L2World.GRACIA_MIN_Z);
-					ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-							new L2CharPosition(ship.getX(), ship.getY(), z, 0));
+					ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(ship.getX(), ship.getY(), z, 0));
 				}
 				break;
 			case 4:
-				if (!ship.isInDock() || ship.isMoving())
-				{
+				if (!ship.isInDock() || ship.isMoving()) {
 					return;
 				}
-
-				final VehiclePathPoint[] dst =
-						AirShipManager.getInstance().getTeleportDestination(ship.getDockId(), param1);
-				if (dst == null)
-				{
+				
+				final VehiclePathPoint[] dst = AirShipManager.getInstance().getTeleportDestination(ship.getDockId(), param1);
+				if (dst == null) {
 					return;
 				}
-
+				
 				// Consume fuel, if needed
 				final int fuelConsumption = AirShipManager.getInstance().getFuelConsumption(ship.getDockId(), param1);
-				if (fuelConsumption > 0)
-				{
-					if (fuelConsumption > ship.getFuel())
-					{
-						activeChar.sendPacket(
-								SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_CANNOT_TELEPORT));
+				if (fuelConsumption > 0) {
+					if (fuelConsumption > ship.getFuel()) {
+						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_CANNOT_TELEPORT));
 						return;
 					}
 					ship.setFuel(ship.getFuel() - fuelConsumption);
 				}
-
+				
 				ship.executePath(dst);
 				break;
 		}

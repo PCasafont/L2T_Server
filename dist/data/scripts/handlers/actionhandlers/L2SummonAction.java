@@ -28,40 +28,26 @@ import l2server.gameserver.model.actor.instance.L2CloneInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.AbnormalStatusUpdateFromTarget;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.MyTargetSelected;
-import l2server.gameserver.network.serverpackets.PetStatusShow;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.network.serverpackets.ValidateLocation;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
 
-public class L2SummonAction implements IActionHandler
-{
+public class L2SummonAction implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-	{
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
 		// Aggression target lock effect
-		if (activeChar.isLockedTarget() && activeChar.getLockedTarget() != target)
-		{
+		if (activeChar.isLockedTarget() && activeChar.getLockedTarget() != target) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_CHANGE_TARGET));
 			return false;
 		}
 
-		if (activeChar == ((L2Summon) target).getOwner() && !(target instanceof L2CloneInstance))
-		{
-			if (target instanceof L2SummonInstance)
-			{
+		if (activeChar == ((L2Summon) target).getOwner() && !(target instanceof L2CloneInstance)) {
+			if (target instanceof L2SummonInstance) {
 				activeChar.setActiveSummon((L2SummonInstance) target);
 			}
 
-			if (activeChar.getTarget() == target)
-			{
-				for (L2SummonInstance summon : activeChar.getSummons())
-				{
-					if (Util.checkIfInRange(5000, activeChar, target, true) || ((L2Summon) target).isOutOfControl())
-					{
+			if (activeChar.getTarget() == target) {
+				for (L2SummonInstance summon : activeChar.getSummons()) {
+					if (Util.checkIfInRange(5000, activeChar, target, true) || ((L2Summon) target).isOutOfControl()) {
 						continue;
 					}
 
@@ -76,19 +62,15 @@ public class L2SummonAction implements IActionHandler
 				return true;
 			}
 		}
-		if (activeChar.getTarget() != target)
-		{
-			if (Config.DEBUG)
-			{
+		if (activeChar.getTarget() != target) {
+			if (Config.DEBUG) {
 				log.fine("new target selected:" + target.getObjectId());
 			}
 
-			if (((L2Summon) target).getTemplate().Targetable || ((L2Summon) target).getOwner() == activeChar)
-			{
+			if (((L2Summon) target).getTemplate().Targetable || ((L2Summon) target).getOwner() == activeChar) {
 				activeChar.setTarget(target);
 				activeChar.sendPacket(new ValidateLocation((L2Character) target));
-				MyTargetSelected my = new MyTargetSelected(target.getObjectId(),
-						activeChar.getLevel() - ((L2Character) target).getLevel());
+				MyTargetSelected my = new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((L2Character) target).getLevel());
 				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character) target));
 				activeChar.sendPacket(my);
 
@@ -98,39 +80,26 @@ public class L2SummonAction implements IActionHandler
 				su.addAttribute(StatusUpdate.MAX_HP, ((L2Character) target).getMaxHp());
 				activeChar.sendPacket(su);
 			}
-		}
-		else if (interact)
-		{
+		} else if (interact) {
 			activeChar.sendPacket(new ValidateLocation((L2Character) target));
-			if (target.isAutoAttackable(activeChar))
-			{
-				if (Config.GEODATA > 0)
-				{
-					if (GeoData.getInstance().canSeeTarget(activeChar, target))
-					{
+			if (target.isAutoAttackable(activeChar)) {
+				if (Config.GEODATA > 0) {
+					if (GeoData.getInstance().canSeeTarget(activeChar, target)) {
 						activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 						activeChar.onActionRequest();
 					}
-				}
-				else
-				{
+				} else {
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 					activeChar.onActionRequest();
 				}
-			}
-			else
-			{
+			} else {
 				// This Action Failed packet avoids activeChar getting stuck when clicking three or more times
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-				if (Config.GEODATA > 0)
-				{
-					if (GeoData.getInstance().canSeeTarget(activeChar, target))
-					{
+				if (Config.GEODATA > 0) {
+					if (GeoData.getInstance().canSeeTarget(activeChar, target)) {
 						activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
 					}
-				}
-				else
-				{
+				} else {
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
 				}
 			}
@@ -139,8 +108,7 @@ public class L2SummonAction implements IActionHandler
 	}
 
 	@Override
-	public InstanceType getInstanceType()
-	{
+	public InstanceType getInstanceType() {
 		return InstanceType.L2Summon;
 	}
 }

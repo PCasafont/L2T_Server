@@ -25,31 +25,28 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import static l2server.gameserver.datatables.MultiSell.PAGE_SIZE;
-
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.model.TradeList.TradeItem;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.templates.item.L2Item;
 
+import static l2server.gameserver.datatables.MultiSell.PAGE_SIZE;
+
 /**
  * This class ...
  *
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
-public final class PlayerMultiSellList extends L2GameServerPacket
-{
+public final class PlayerMultiSellList extends L2GameServerPacket {
 	private L2PcInstance player;
-
-	public PlayerMultiSellList(L2PcInstance player)
-	{
+	
+	public PlayerMultiSellList(L2PcInstance player) {
 		this.player = player;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeC(0x00);
 		writeD(player.getObjectId()); // list id
 		writeC(0x00);
@@ -59,17 +56,17 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 		writeD(player.getCustomSellList().getItemCount()); //list length
 		writeC(0x00); // Old or modern format
 		writeD(0x00);
-
+		
 		int i = 1;
-		for (TradeItem item : player.getCustomSellList().getItems())
-		{
-			if (item.getAppearance() > 0)
-			{
+		for (TradeItem item : player.getCustomSellList().getItems()) {
+			if (item.getAppearance() > 0) {
 				L2Item app = ItemTable.getInstance().getTemplate(item.getAppearance());
-				getClient().sendPacket(new CreatureSay(player.getObjectId(), Say2.TELL, player.getName(),
+				getClient().sendPacket(new CreatureSay(player.getObjectId(),
+						Say2.TELL,
+						player.getName(),
 						"WARNING: The " + item.getItem().getName() + " has appearance of " + app.getName() + "!"));
 			}
-
+			
 			writeD(i);
 			writeC(item.getItem().isStackable() ? 1 : 0);
 			writeH(0x00); // C6
@@ -85,14 +82,14 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 			writeH(0x00); // T1
 			writeC(0x00);
 			writeC(0x00);
-
+			
 			writeH(1);
 			writeH(item.getPriceItems().size());
-
+			
 			writeD(item.getItem().getItemId());
 			writeQ(item.getItem().getBodyPart());
 			writeH(item.getItem().getType2());
-
+			
 			writeQ(1); // Count
 			writeH(item.getEnchantLevel()); // enchant level
 			writeD(100); // Chance
@@ -105,22 +102,19 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 			writeH(item.getElementDefAttr((byte) 3)); // earth
 			writeH(item.getElementDefAttr((byte) 4)); // holy
 			writeH(item.getElementDefAttr((byte) 5)); // dark
-
+			
 			int[] ensoulEffects = item.getEnsoulEffectIds();
 			int[] ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
 			writeC(ensoulEffects.length);
-			for (int effect : ensoulEffects)
-			{
+			for (int effect : ensoulEffects) {
 				writeD(effect);
 			}
 			writeC(ensoulSpecialEffects.length);
-			for (int effect : ensoulSpecialEffects)
-			{
+			for (int effect : ensoulSpecialEffects) {
 				writeD(effect);
 			}
-
-			for (L2Item priceItem : item.getPriceItems().keySet())
-			{
+			
+			for (L2Item priceItem : item.getPriceItems().keySet()) {
 				writeD(priceItem.getItemId());
 				writeH(priceItem.getType2());
 				writeQ(item.getPriceItems().get(priceItem));
@@ -134,24 +128,22 @@ public final class PlayerMultiSellList extends L2GameServerPacket
 				writeH(0x00); // earth
 				writeH(0x00); // holy
 				writeH(0x00); // dark
-
+				
 				writeC(0x00);
 				writeC(0x00);
 			}
-
+			
 			i++;
 		}
-
+		
 		if (player.getClient() != null && player.getClient().isDetached() && player.getCustomSellList() != null &&
-				player.getCustomSellList().getItemCount() == 0)
-		{
+				player.getCustomSellList().getItemCount() == 0) {
 			player.logout();
 		}
 	}
-
+	
 	@Override
-	protected final Class<?> getOpCodeClass()
-	{
+	protected final Class<?> getOpCodeClass() {
 		return MultiSellList.class;
 	}
 }

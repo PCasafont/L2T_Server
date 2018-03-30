@@ -23,8 +23,7 @@ import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.gameserver.network.serverpackets.ExShowUsmPacket;
 
-public class ZoneVideos extends Quest
-{
+public class ZoneVideos extends Quest {
 	private static final boolean showIntroMovies = false;
 
 	private static final int[] ZONES = {523400, 523402, 523403, 523404};
@@ -32,17 +31,13 @@ public class ZoneVideos extends Quest
 	private static final int[] VIDEOS = {101, 102, 103, 78, 77};
 
 	@Override
-	public final String onEnterWorld(L2PcInstance player)
-	{
+	public final String onEnterWorld(L2PcInstance player) {
 		QuestState st = player.getQuestState("ZoneVideos");
-		if (st == null)
-		{
+		if (st == null) {
 			st = newQuestState(player);
 		}
-		if (showIntroMovies)
-		{
-			if (st.getGlobalQuestVar("FirstZoneVid").length() == 0)
-			{
+		if (showIntroMovies) {
+			if (st.getGlobalQuestVar("FirstZoneVid").length() == 0) {
 				// GoD intro
 				player.sendPacket(new ExShowUsmPacket(player.getRace() == Race.Ertheia ? 147 : 148));
 				st.saveGlobalQuestVar("FirstZoneVid", "done");
@@ -52,26 +47,20 @@ public class ZoneVideos extends Quest
 	}
 
 	@Override
-	public final String onEnterZone(L2Character character, L2ZoneType zone)
-	{
-		if (character instanceof L2PcInstance)
-		{
+	public final String onEnterZone(L2Character character, L2ZoneType zone) {
+		if (character instanceof L2PcInstance) {
 			L2PcInstance player = (L2PcInstance) character;
 			QuestState st = player.getQuestState("ZoneVideos");
-			if (st == null)
-			{
+			if (st == null) {
 				st = newQuestState(player);
 			}
-			if (st.getGlobalQuestVar("ZoneVid" + zone.getId()).length() == 0)
-			{
+			if (st.getGlobalQuestVar("ZoneVid" + zone.getId()).length() == 0) {
 				int videoId = zone.getId() % 100;
-				if (!showIntroMovies && videoId > 100)
-				{
+				if (!showIntroMovies && videoId > 100) {
 					return null;
 				}
 
-				if (videoId == 0 &&
-						player.getQuestState("Q10320_LetsGoToTheCentralSquare") != null) // TODO: first quest name
+				if (videoId == 0 && player.getQuestState("Q10320_LetsGoToTheCentralSquare") != null) // TODO: first quest name
 				{
 					videoId = 1;
 				}
@@ -82,20 +71,17 @@ public class ZoneVideos extends Quest
 		return null;
 	}
 
-	public ZoneVideos(int questId, String name, String descr)
-	{
+	public ZoneVideos(int questId, String name, String descr) {
 		super(questId, name, descr);
 
 		setOnEnterWorld(true);
 
-		for (int zoneId : ZONES)
-		{
+		for (int zoneId : ZONES) {
 			addEnterZoneId(zoneId);
 		}
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new ZoneVideos(-1, "ZoneVideos", "zone videos");
 	}
 }

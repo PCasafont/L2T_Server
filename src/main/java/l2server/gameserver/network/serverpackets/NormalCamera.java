@@ -15,15 +15,12 @@
 
 package l2server.gameserver.network.serverpackets;
 
-public class NormalCamera extends L2GameServerPacket
-{
-
-	public NormalCamera()
-	{
+public class NormalCamera extends L2GameServerPacket {
+	
+	public NormalCamera() {
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 	}
 }

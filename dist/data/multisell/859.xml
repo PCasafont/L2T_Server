@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-    <item>
-        <ingredient count="1" id="7683" /> <!-- Rabbit Ears -->
-        <ingredient count="1" id="34995" /> <!-- Hair Accessory Exchange Certificate -->
-        <production count="1" id="6845" /> <!-- Pirate's Eyepatch -->
-    </item>
-    <item>
-        <ingredient count="1" id="7680" /> <!-- Raccoon Ears -->
-        <ingredient count="1" id="34995" /> <!-- Hair Accessory Exchange Certificate -->
-        <production count="1" id="7681" /> <!-- Outlaw's Eyepatch -->
-    </item>
-    <item>
-        <ingredient count="1" id="6843" /> <!-- Cat Ears -->
-        <ingredient count="1" id="34995" /> <!-- Hair Accessory Exchange Certificate -->
-        <production count="1" id="8916" /> <!-- Eyepatch -->
-    </item>
-    <item>
-        <ingredient count="1" id="8565" /> <!-- Romantic Chapeau -->
-        <ingredient count="1" id="34995" /> <!-- Hair Accessory Exchange Certificate -->
-        <production count="1" id="8184" /> <!-- Party Hat -->
-    </item>
-    <item>
-        <ingredient count="1" id="8920" /> <!-- Angel Halo -->
-        <ingredient count="1" id="34995" /> <!-- Hair Accessory Exchange Certificate -->
-        <production count="1" id="13494" /> <!-- Refined Angel Ring -->
-    </item>
-    <item>
-        <ingredient count="1" id="8921" /> <!-- Demon Circlet -->
-        <ingredient count="1" id="34995" /> <!-- Hair Accessory Exchange Certificate -->
-        <production count="1" id="13495" /> <!-- Refined Devil Horn -->
-    </item>
+	<item>
+		<ingredient count="1" id="7683" /> <!-- Rabbit Ears -->
+		<ingredient count="1" id="34995" /> <!-- Hair Accessory Exchange Certificate -->
+		<production count="1" id="6845" /> <!-- Pirate's Eyepatch -->
+	</item>
+	<item>
+		<ingredient count="1" id="7680" /> <!-- Raccoon Ears -->
+		<ingredient count="1" id="34995" /> <!-- Hair Accessory Exchange Certificate -->
+		<production count="1" id="7681" /> <!-- Outlaw's Eyepatch -->
+	</item>
+	<item>
+		<ingredient count="1" id="6843" /> <!-- Cat Ears -->
+		<ingredient count="1" id="34995" /> <!-- Hair Accessory Exchange Certificate -->
+		<production count="1" id="8916" /> <!-- Eyepatch -->
+	</item>
+	<item>
+		<ingredient count="1" id="8565" /> <!-- Romantic Chapeau -->
+		<ingredient count="1" id="34995" /> <!-- Hair Accessory Exchange Certificate -->
+		<production count="1" id="8184" /> <!-- Party Hat -->
+	</item>
+	<item>
+		<ingredient count="1" id="8920" /> <!-- Angel Halo -->
+		<ingredient count="1" id="34995" /> <!-- Hair Accessory Exchange Certificate -->
+		<production count="1" id="13494" /> <!-- Refined Angel Ring -->
+	</item>
+	<item>
+		<ingredient count="1" id="8921" /> <!-- Demon Circlet -->
+		<ingredient count="1" id="34995" /> <!-- Hair Accessory Exchange Certificate -->
+		<production count="1" id="13495" /> <!-- Refined Devil Horn -->
+	</item>
 </list>

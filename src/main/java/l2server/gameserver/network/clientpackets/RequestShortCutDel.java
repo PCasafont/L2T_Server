@@ -22,31 +22,26 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @version $Revision: 1.3.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestShortCutDel extends L2GameClientPacket
-{
+public final class RequestShortCutDel extends L2GameClientPacket {
 
 	private int slot;
 	private int page;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		int id = readD();
 		slot = id % 12;
 		page = id / 12;
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
-		if (page > 10 || page < 0)
-		{
+		if (page > 10 || page < 0) {
 			return;
 		}
 
@@ -55,8 +50,7 @@ public final class RequestShortCutDel extends L2GameClientPacket
 	}
 
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

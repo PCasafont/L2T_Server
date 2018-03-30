@@ -23,49 +23,40 @@ import l2server.gameserver.util.Util;
 /**
  * @author Pere
  */
-public final class ExIsCharNameCreatable extends L2GameServerPacket
-{
+public final class ExIsCharNameCreatable extends L2GameServerPacket {
 	private int result;
-
-	public ExIsCharNameCreatable(String name)
-	{
-		if (name.length() < 1 || name.length() > 16)
-		{
+	
+	public ExIsCharNameCreatable(String name) {
+		if (name.length() < 1 || name.length() > 16) {
 			result = CharCreateFail.REASON_16_ENG_CHARS;
 			return;
 		}
-
-		if (Config.FORBIDDEN_NAMES.length > 1)
-		{
-			for (String st : Config.FORBIDDEN_NAMES)
-			{
-				if (name.toLowerCase().contains(st.toLowerCase()))
-				{
+		
+		if (Config.FORBIDDEN_NAMES.length > 1) {
+			for (String st : Config.FORBIDDEN_NAMES) {
+				if (name.toLowerCase().contains(st.toLowerCase())) {
 					result = CharCreateFail.REASON_INCORRECT_NAME;
 					return;
 				}
 			}
 		}
-
+		
 		// Last Verified: May 30, 2009 - Gracia Final
-		if (!Util.isAlphaNumeric(name) || !CharacterCreate.isValidName(name))
-		{
+		if (!Util.isAlphaNumeric(name) || !CharacterCreate.isValidName(name)) {
 			result = CharCreateFail.REASON_INCORRECT_NAME;
 			return;
 		}
-
-		if (CharNameTable.getInstance().doesCharNameExist(name))
-		{
+		
+		if (CharNameTable.getInstance().doesCharNameExist(name)) {
 			result = CharCreateFail.REASON_NAME_ALREADY_EXISTS;
 			return;
 		}
-
+		
 		result = -1;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(result);
 	}
 }

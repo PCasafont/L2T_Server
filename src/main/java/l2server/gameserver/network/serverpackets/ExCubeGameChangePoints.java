@@ -23,12 +23,11 @@ package l2server.gameserver.network.serverpackets;
  *
  * @author mrTJO
  */
-public class ExCubeGameChangePoints extends L2GameServerPacket
-{
+public class ExCubeGameChangePoints extends L2GameServerPacket {
 	int timeLeft;
 	int bluePoints;
 	int redPoints;
-
+	
 	/**
 	 * Change Client Point Counter
 	 *
@@ -36,19 +35,17 @@ public class ExCubeGameChangePoints extends L2GameServerPacket
 	 * @param bluePoints Current Blue Team Points
 	 * @param redPoints  Current Red Team Points
 	 */
-	public ExCubeGameChangePoints(int timeLeft, int bluePoints, int redPoints)
-	{
+	public ExCubeGameChangePoints(int timeLeft, int bluePoints, int redPoints) {
 		this.timeLeft = timeLeft;
 		this.bluePoints = bluePoints;
 		this.redPoints = redPoints;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(timeLeft);
 		writeD(bluePoints);
 		writeD(redPoints);

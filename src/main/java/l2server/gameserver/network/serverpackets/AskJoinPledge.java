@@ -20,32 +20,27 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.2.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public final class AskJoinPledge extends L2GameServerPacket
-{
-
+public final class AskJoinPledge extends L2GameServerPacket {
+	
 	private int requestorObjId;
 	private String subPledgeName;
 	private int pledgeType;
 	private String pledgeName;
-
-	public AskJoinPledge(int requestorObjId, String subPledgeName, int pledgeType, String pledgeName)
-	{
+	
+	public AskJoinPledge(int requestorObjId, String subPledgeName, int pledgeType, String pledgeName) {
 		this.requestorObjId = requestorObjId;
 		this.subPledgeName = subPledgeName;
 		this.pledgeType = pledgeType;
 		this.pledgeName = pledgeName;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(requestorObjId);
-		if (subPledgeName != null)
-		{
+		if (subPledgeName != null) {
 			writeS(pledgeType > 0 ? subPledgeName : pledgeName);
 		}
-		if (pledgeType != 0)
-		{
+		if (pledgeType != 0) {
 			writeD(pledgeType);
 		}
 		writeS(pledgeName);

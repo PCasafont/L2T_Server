@@ -21,26 +21,23 @@ package l2server.gameserver.network.serverpackets;
  *
  * @author mrTJO
  */
-public class ExCubeGameEnd extends L2GameServerPacket
-{
+public class ExCubeGameEnd extends L2GameServerPacket {
 	boolean isRedTeamWin;
-
+	
 	/**
 	 * Show Minigame Results
 	 *
 	 * @param isRedTeamWin: Is Red Team Winner?
 	 */
-	public ExCubeGameEnd(boolean isRedTeamWin)
-	{
+	public ExCubeGameEnd(boolean isRedTeamWin) {
 		this.isRedTeamWin = isRedTeamWin;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(isRedTeamWin ? 0x01 : 0x00);
 	}
 }

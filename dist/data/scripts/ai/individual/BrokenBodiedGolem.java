@@ -15,36 +15,31 @@
 
 package ai.individual;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-import ai.group_template.L2AttackableAIScript;
-
 /**
  * @author LasTravel
- *         <p>
- *         Broken-bodied Golem AI
+ * <p>
+ * Broken-bodied Golem AI
  */
 
-public class BrokenBodiedGolem extends L2AttackableAIScript
-{
+public class BrokenBodiedGolem extends L2AttackableAIScript {
 	private static final int brokenGolem = 23259;
 	private static final int summonedGolem = 23260;
 
-	public BrokenBodiedGolem(int id, String name, String descr)
-	{
+	public BrokenBodiedGolem(int id, String name, String descr) {
 		super(id, name, descr);
 
 		addKillId(brokenGolem);
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
-		for (int a = 0; a < 2; a++)
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+		for (int a = 0; a < 2; a++) {
 			L2Npc minion = addSpawn(summonedGolem, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
 			minion.setIsRunning(true);
 			minion.setTarget(killer);
@@ -55,13 +50,11 @@ public class BrokenBodiedGolem extends L2AttackableAIScript
 	}
 
 	@Override
-	public int getOnKillDelay(int npcId)
-	{
+	public int getOnKillDelay(int npcId) {
 		return 0;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new BrokenBodiedGolem(-1, "BrokenBodiedGolem", "ai");
 	}
 }

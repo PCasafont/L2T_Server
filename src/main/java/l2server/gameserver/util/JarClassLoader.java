@@ -31,78 +31,57 @@ import java.util.zip.ZipFile;
  * @author galun
  * @version $Revision: $ $Date: $
  */
-public class JarClassLoader extends ClassLoader
-{
+public class JarClassLoader extends ClassLoader {
 	HashSet<String> jars = new HashSet<>();
 
-	public void addJarFile(String filename)
-	{
+	public void addJarFile(String filename) {
 		jars.add(filename);
 	}
 
 	@Override
-	public Class<?> findClass(String name) throws ClassNotFoundException
-	{
-		try
-		{
+	public Class<?> findClass(String name) throws ClassNotFoundException {
+		try {
 			byte[] b = loadClassData(name);
 			return defineClass(name, b, 0, b.length);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			throw new ClassNotFoundException(name);
 		}
 	}
 
-	private byte[] loadClassData(String name) throws IOException
-	{
+	private byte[] loadClassData(String name) throws IOException {
 		byte[] classData = null;
-		for (String jarFile : jars)
-		{
+		for (String jarFile : jars) {
 			ZipFile zipFile = null;
 			DataInputStream zipStream = null;
-			try
-			{
+			try {
 				File file = new File(jarFile);
 				zipFile = new ZipFile(file);
 				String fileName = name.replace('.', '/') + ".class";
 				ZipEntry entry = zipFile.getEntry(fileName);
-				if (entry == null)
-				{
+				if (entry == null) {
 					continue;
 				}
 				classData = new byte[(int) entry.getSize()];
 				zipStream = new DataInputStream(zipFile.getInputStream(entry));
 				zipStream.readFully(classData, 0, (int) entry.getSize());
 				break;
-			}
-			catch (IOException e)
-			{
+			} catch (IOException e) {
 				Log.log(Level.WARNING, jarFile + ": " + e.getMessage(), e);
-			}
-			finally
-			{
-				try
-				{
+			} finally {
+				try {
 					zipFile.close();
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 
-				try
-				{
+				try {
 					zipStream.close();
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		}
-		if (classData == null)
-		{
+		if (classData == null) {
 			throw new IOException("class not found in " + jars);
 		}
 		return classData;

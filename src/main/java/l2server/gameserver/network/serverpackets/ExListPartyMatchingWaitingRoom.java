@@ -24,8 +24,7 @@ import java.util.ArrayList;
 /**
  * @author Gnacik
  */
-public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
-{
+public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket {
 	@SuppressWarnings("unused")
 	private final L2PcInstance activeChar;
 	@SuppressWarnings("unused")
@@ -35,51 +34,44 @@ public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 	@SuppressWarnings("unused")
 	private int mode;
 	private ArrayList<L2PcInstance> members;
-
-	public ExListPartyMatchingWaitingRoom(L2PcInstance player, int page, int minlvl, int maxlvl, int mode)
-	{
+	
+	public ExListPartyMatchingWaitingRoom(L2PcInstance player, int page, int minlvl, int maxlvl, int mode) {
 		activeChar = player;
 		this.page = page;
 		this.minlvl = minlvl;
 		this.maxlvl = maxlvl;
 		this.mode = mode;
 		members = new ArrayList<>();
-		for (L2PcInstance cha : PartyMatchWaitingList.getInstance().getPlayers())
-		{
-			if (cha == null)
-			{
+		for (L2PcInstance cha : PartyMatchWaitingList.getInstance().getPlayers()) {
+			if (cha == null) {
 				continue;
 			}
-
-			if (!cha.isPartyWaiting())
-			{
+			
+			if (!cha.isPartyWaiting()) {
 				PartyMatchWaitingList.getInstance().removePlayer(cha);
 				continue;
 			}
-
-			if (cha.getLevel() < minlvl || cha.getLevel() > maxlvl)
-			{
+			
+			if (cha.getLevel() < minlvl || cha.getLevel() > maxlvl) {
 				continue;
 			}
-
+			
 			members.add(cha);
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		/*if (mode == 0)
         {
 			writeD(0);
 			writeD(0);
 			return;
 		}*/
-
+		
 		writeD(members.size());
 		writeD(members.size());
-		for (L2PcInstance member : members)
-		{
+		for (L2PcInstance member : members) {
 			writeS(member.getName());
 			writeD(member.getClassId());
 			writeD(member.getLevel());

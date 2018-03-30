@@ -23,60 +23,49 @@ import l2server.log.Log;
 /**
  * @author Pere, DS
  */
-public class ExReplySentPost extends L2ItemListPacket
-{
-
+public class ExReplySentPost extends L2ItemListPacket {
+	
 	private Message msg;
 	private L2ItemInstance[] items = null;
-
-	public ExReplySentPost(Message msg)
-	{
+	
+	public ExReplySentPost(Message msg) {
 		this.msg = msg;
-		if (msg.hasAttachments())
-		{
+		if (msg.hasAttachments()) {
 			final ItemContainer attachments = msg.getAttachments();
-			if (attachments != null && attachments.getSize() > 0)
-			{
+			if (attachments != null && attachments.getSize() > 0) {
 				items = attachments.getItems();
-			}
-			else
-			{
-				Log.warning("Message " + msg.getId() + " has attachments but itemcontainer is empty (" +
-						msg.getSenderName() + " > " + msg.getReceiverName() + ").");
+			} else {
+				Log.warning("Message " + msg.getId() + " has attachments but itemcontainer is empty (" + msg.getSenderName() + " > " +
+						msg.getReceiverName() + ").");
 			}
 		}
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(msg.getSendBySystem());
 		writeD(msg.getId());
 		writeD(msg.isLocked() ? 1 : 0);
 		writeS(msg.getReceiverName());
 		writeS(msg.getSubject());
 		writeS(msg.getContent());
-
-		if (items != null && items.length > 0)
-		{
+		
+		if (items != null && items.length > 0) {
 			writeD(items.length);
-			for (L2ItemInstance item : items)
-			{
+			for (L2ItemInstance item : items) {
 				writeItem(item);
 			}
 			writeQ(msg.getReqAdena());
 			writeD(msg.hasAttachments() ? 1 : 0);
 			writeD(msg.getSendBySystem() > 0 ? 0x00 : 0x01);
 			writeD(msg.getReceiverId());
-		}
-		else
-		{
+		} else {
 			writeD(0x00);
 		}
-
+		
 		items = null;
 		msg = null;
 	}

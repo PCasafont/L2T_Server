@@ -15,8 +15,7 @@ import java.util.Calendar;
 /**
  * @author Pere
  */
-public class Curfew
-{
+public class Curfew {
 	public static Curfew instance = null;
 
 	private CurfewTask ctask;
@@ -26,45 +25,33 @@ public class Curfew
 	private String eventTownName = "Giran";
 	public long curfewEnd = 0;
 
-	public static Curfew getInstance()
-	{
-		if (instance == null)
-		{
+	public static Curfew getInstance() {
+		if (instance == null) {
 			instance = new Curfew();
 		}
 		return instance;
 	}
 
-	public void initialize()
-	{
+	public void initialize() {
 		eventTown = Rnd.get(19) + 1;
-		if (eventTown == 16)
-		{
+		if (eventTown == 16) {
 			eventTown = 20;
-		}
-		else if (eventTown == 18)
-		{
+		} else if (eventTown == 18) {
 			eventTown = 22;
 		}
 
 		eventTownName = MapRegionTable.getInstance().getTownName(eventTown);
 	}
 
-	public void start()
-	{
-		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
-		{
-			if (!(player.isInsideZone(L2Character.ZONE_PEACE) &&
-					TownManager.getClosestTown(player).getTownId() == eventTown))
-			{
+	public void start() {
+		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
+			if (!(player.isInsideZone(L2Character.ZONE_PEACE) && TownManager.getClosestTown(player).getTownId() == eventTown)) {
 				player.setInsideZone(L2Character.ZONE_PVP, true);
 			}
 		}
 
-		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
-		{
-			if (player.isInsideZone(L2Character.ZONE_PEACE))
-			{
+		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
+			if (player.isInsideZone(L2Character.ZONE_PEACE)) {
 				player.teleToLocation(player.getX(), player.getY(), player.getZ());
 			}
 		}
@@ -78,15 +65,11 @@ public class Curfew
 		Announcements.getInstance().announceToAll("You will be safe from the assassins only at " + eventTownName + "!");
 	}
 
-	private void stop()
-	{
+	private void stop() {
 		eventTown = -1;
-		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
-		{
+		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
 			if (player != null && !player.isInsideZone(L2Character.ZONE_PEACE) &&
-					!(player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) &&
-							player.isInsideZone(L2Character.ZONE_NOLANDING)))
-			{
+					!(player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) && player.isInsideZone(L2Character.ZONE_NOLANDING))) {
 				player.teleToLocation(player.getX(), player.getY(), player.getZ());
 			}
 		}
@@ -94,53 +77,40 @@ public class Curfew
 		Announcements.getInstance().announceToAll("The curfew has ended: the murder is penalized again.");
 	}
 
-	public int getOnlyPeaceTown()
-	{
+	public int getOnlyPeaceTown() {
 		return -1;//eventTown;
 	}
 
-	class CurfewTask implements Runnable
-	{
+	class CurfewTask implements Runnable {
 		private long startTime;
 
-		public CurfewTask(long startTime)
-		{
+		public CurfewTask(long startTime) {
 			this.startTime = startTime;
 		}
 
 		@Override
-		public void run()
-		{
+		public void run() {
 			int delay = Math.round((startTime - System.currentTimeMillis()) / 1000);
 
-			if (delay > 0)
-			{
+			if (delay > 0) {
 				ThreadPoolManager.getInstance().scheduleGeneral(this, delay * 1000);
-			}
-			else
-			{
+			} else {
 				stop();
 			}
 		}
 	}
 
-	public void scheduleCurfew()
-	{
-		try
-		{
+	public void scheduleCurfew() {
+		try {
 			ctask = new CurfewTask(curfewEnd);
 			ThreadPoolManager.getInstance().executeTask(ctask);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void scheduleEventStart()
-	{
-		try
-		{
+	public void scheduleEventStart() {
+		try {
 			Calendar currentTime = Calendar.getInstance();
 			Calendar nextStartTime = Calendar.getInstance();
 			nextStartTime.setLenient(true);
@@ -150,83 +120,66 @@ public class Curfew
 			nextStartTime.set(Calendar.MINUTE, minute);
 			nextStartTime.set(Calendar.SECOND, 0);
 			// If the date is in the past, make it the next day (Example: Checking for "1:00", when the time is 23:57.)
-			if (nextStartTime.getTimeInMillis() < currentTime.getTimeInMillis())
-			{
+			if (nextStartTime.getTimeInMillis() < currentTime.getTimeInMillis()) {
 				nextStartTime.add(Calendar.DAY_OF_MONTH, 1);
 			}
 			task = new StartTask(nextStartTime.getTimeInMillis());
 			ThreadPoolManager.getInstance().executeTask(task);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public StartTask getStartTask()
-	{
+	public StartTask getStartTask() {
 		return task;
 	}
 
-	public void showInfo(L2PcInstance activeChar)
-	{
+	public void showInfo(L2PcInstance activeChar) {
 		Calendar now = Calendar.getInstance();
 		Calendar startTime = Calendar.getInstance();
 		startTime.setTimeInMillis(task.getStartTime());
 		String time;
-		if (now.get(Calendar.DAY_OF_MONTH) == startTime.get(Calendar.DAY_OF_MONTH))
-		{
+		if (now.get(Calendar.DAY_OF_MONTH) == startTime.get(Calendar.DAY_OF_MONTH)) {
 			time = "today";
-		}
-		else
-		{
+		} else {
 			time = "tomorrow";
 		}
 		time += " at " + startTime.get(Calendar.HOUR_OF_DAY) + ":" + startTime.get(Calendar.MINUTE);
 		long toStart = task.getStartTime() - System.currentTimeMillis();
 		int hours = (int) (toStart / 3600000);
 		int minutes = (int) (toStart / 60000) % 60;
-		if (hours > 0 || minutes > 0)
-		{
+		if (hours > 0 || minutes > 0) {
 			time += ", in ";
-			if (hours > 0)
-			{
+			if (hours > 0) {
 				time += hours + " hour" + (hours == 1 ? "" : "s") + " and ";
 			}
 			time += minutes + " minute" + (minutes == 1 ? "" : "s");
 		}
 		String html =
-				"<html>" + "<title>Event</title>" + "<body>" + "<center><br><tr><td>Curfew</td></tr><br>" + "<br>" +
-						"The next curfew will be " + time + ".<br>";
+				"<html>" + "<title>Event</title>" + "<body>" + "<center><br><tr><td>Curfew</td></tr><br>" + "<br>" + "The next curfew will be " +
+						time + ".<br>";
 		html += "</body></html>";
 		activeChar.sendPacket(new NpcHtmlMessage(0, html));
 	}
 
-	class StartTask implements Runnable
-	{
+	class StartTask implements Runnable {
 		private long startTime;
 
-		public StartTask(long startTime)
-		{
+		public StartTask(long startTime) {
 			this.startTime = startTime;
 		}
 
-		public long getStartTime()
-		{
+		public long getStartTime() {
 			return startTime;
 		}
 
 		@Override
-		public void run()
-		{
+		public void run() {
 			int delay = (int) Math.round((startTime - System.currentTimeMillis()) / 1000.0);
 
-			if (delay > 0)
-			{
+			if (delay > 0) {
 				ThreadPoolManager.getInstance().scheduleGeneral(this, delay * 1000);
-			}
-			else
-			{
+			} else {
 				start();
 
 				scheduleEventStart();

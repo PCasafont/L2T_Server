@@ -28,14 +28,12 @@ import l2server.util.Rnd;
  *
  * @author durgus
  */
-public class L2TownZone extends L2SpawnZone
-{
+public class L2TownZone extends L2SpawnZone {
 	private int townId;
 	private int taxById;
 	private boolean isPeaceZone;
 
-	public L2TownZone(int id)
-	{
+	public L2TownZone(int id) {
 		super(id);
 
 		taxById = 0;
@@ -45,10 +43,8 @@ public class L2TownZone extends L2SpawnZone
 	}
 
 	@Override
-	public void setParameter(String name, String value)
-	{
-		switch (name)
-		{
+	public void setParameter(String name, String value) {
+		switch (name) {
 			case "townId":
 				townId = Integer.parseInt(value);
 				break;
@@ -65,14 +61,11 @@ public class L2TownZone extends L2SpawnZone
 	}
 
 	@Override
-	protected void onEnter(L2Character character)
-	{
-		if (character instanceof L2PcInstance)
-		{
+	protected void onEnter(L2Character character) {
+		if (character instanceof L2PcInstance) {
 			// PVP possible during siege, now for siege participants only
 			// Could also check if this town is in siege, or if any siege is going on
-			if (((L2PcInstance) character).getSiegeState() != 0 && Config.ZONE_TOWN == 1)
-			{
+			if (((L2PcInstance) character).getSiegeState() != 0 && Config.ZONE_TOWN == 1) {
 				return;
 			}
 
@@ -89,8 +82,7 @@ public class L2TownZone extends L2SpawnZone
 		}
 
 		if (isPeaceZone && Config.ZONE_TOWN != 2 &&
-				(Curfew.getInstance().getOnlyPeaceTown() == -1 || Curfew.getInstance().getOnlyPeaceTown() == townId))
-		{
+				(Curfew.getInstance().getOnlyPeaceTown() == -1 || Curfew.getInstance().getOnlyPeaceTown() == townId)) {
 			character.setInsideZone(L2Character.ZONE_PEACE, true);
 		}
 
@@ -98,11 +90,9 @@ public class L2TownZone extends L2SpawnZone
 	}
 
 	@Override
-	protected void onExit(L2Character character)
-	{
+	protected void onExit(L2Character character) {
 		// TODO: there should be no exit if there was possibly no enter
-		if (isPeaceZone)
-		{
+		if (isPeaceZone) {
 			character.setInsideZone(L2Character.ZONE_PEACE, false);
 		}
 
@@ -119,13 +109,11 @@ public class L2TownZone extends L2SpawnZone
 	}
 
 	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
+	public void onDieInside(L2Character character, L2Character killer) {
 	}
 
 	@Override
-	public void onReviveInside(L2Character character)
-	{
+	public void onReviveInside(L2Character character) {
 	}
 
 	/**
@@ -133,8 +121,7 @@ public class L2TownZone extends L2SpawnZone
 	 *
 	 * @return
 	 */
-	public int getTownId()
-	{
+	public int getTownId() {
 		return townId;
 	}
 
@@ -143,21 +130,17 @@ public class L2TownZone extends L2SpawnZone
 	 *
 	 * @return
 	 */
-	public final int getTaxById()
-	{
+	public final int getTaxById() {
 		return taxById;
 	}
 
-	public final boolean isPeaceZone()
-	{
+	public final boolean isPeaceZone() {
 		return isPeaceZone;
 	}
 
 	@SuppressWarnings("unused")
-	private boolean isInHostileTown(L2PcInstance player)
-	{
-		switch (townId)
-		{
+	private boolean isInHostileTown(L2PcInstance player) {
+		switch (townId) {
 			case 7:
 				return player.isAtWarWithCastle(1);
 			case 8:
@@ -181,18 +164,15 @@ public class L2TownZone extends L2SpawnZone
 		}
 	}
 
-	class MusicTask implements Runnable
-	{
+	class MusicTask implements Runnable {
 		private L2PcInstance player;
 
-		public MusicTask(L2PcInstance player)
-		{
+		public MusicTask(L2PcInstance player) {
 			this.player = player;
 		}
 
 		@Override
-		public void run()
-		{
+		public void run() {
 			int rnd = Rnd.get(4) + 1;
 			player.sendPacket(new PlaySound(1, "CC_0" + rnd, 0, 0, 0, 0, 0));
 		}

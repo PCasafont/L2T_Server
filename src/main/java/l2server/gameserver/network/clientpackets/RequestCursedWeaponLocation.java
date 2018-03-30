@@ -30,51 +30,42 @@ import java.util.List;
  *
  * @author -Wooden-
  */
-public final class RequestCursedWeaponLocation extends L2GameClientPacket
-{
-
+public final class RequestCursedWeaponLocation extends L2GameClientPacket {
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		//nothing to read it's just a trigger
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2Character activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		List<CursedWeaponInfo> list = new ArrayList<>();
-		for (CursedWeapon cw : CursedWeaponsManager.getInstance().getCursedWeapons())
-		{
-			if (!cw.isActive())
-			{
+		for (CursedWeapon cw : CursedWeaponsManager.getInstance().getCursedWeapons()) {
+			if (!cw.isActive()) {
 				continue;
 			}
-
+			
 			Point3D pos = cw.getWorldPosition();
-			if (pos != null)
-			{
+			if (pos != null) {
 				list.add(new CursedWeaponInfo(pos, cw.getItemId(), cw.isActivated() ? 1 : 0));
 			}
 		}
-
+		
 		//send the ExCursedWeaponLocation
-		if (!list.isEmpty())
-		{
+		if (!list.isEmpty()) {
 			activeChar.sendPacket(new ExCursedWeaponLocation(list));
 		}
 	}
-
+	
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

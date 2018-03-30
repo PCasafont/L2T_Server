@@ -22,58 +22,47 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-public final class AllyDismiss extends L2GameClientPacket
-{
+public final class AllyDismiss extends L2GameClientPacket {
 
 	private String clanName;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		clanName = readS();
 	}
 
 	@Override
-	protected void runImpl()
-	{
-		if (clanName == null)
-		{
+	protected void runImpl() {
+		if (clanName == null) {
 			return;
 		}
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
-		if (player.getClan() == null)
-		{
+		if (player.getClan() == null) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER));
 			return;
 		}
 		L2Clan leaderClan = player.getClan();
-		if (leaderClan.getAllyId() == 0)
-		{
+		if (leaderClan.getAllyId() == 0) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_CURRENT_ALLIANCES));
 			return;
 		}
-		if (!player.isClanLeader() || leaderClan.getClanId() != leaderClan.getAllyId())
-		{
+		if (!player.isClanLeader() || leaderClan.getClanId() != leaderClan.getAllyId()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FEATURE_ONLY_FOR_ALLIANCE_LEADER));
 			return;
 		}
 		L2Clan clan = ClanTable.getInstance().getClanByName(clanName);
-		if (clan == null)
-		{
+		if (clan == null) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLAN_DOESNT_EXISTS));
 			return;
 		}
-		if (clan.getClanId() == leaderClan.getClanId())
-		{
+		if (clan.getClanId() == leaderClan.getClanId()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALLIANCE_LEADER_CANT_WITHDRAW));
 			return;
 		}
-		if (clan.getAllyId() != leaderClan.getAllyId())
-		{
+		if (clan.getAllyId() != leaderClan.getAllyId()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DIFFERENT_ALLIANCE));
 			return;
 		}

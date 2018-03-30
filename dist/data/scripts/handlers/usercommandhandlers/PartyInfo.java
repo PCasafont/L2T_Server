@@ -25,23 +25,19 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  * Support for /partyinfo command
  * Added by Tempy - 28 Jul 05
  */
-public class PartyInfo implements IUserCommandHandler
-{
+public class PartyInfo implements IUserCommandHandler {
 	private static final int[] COMMAND_IDS = {81};
 
 	/**
 	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
-	{
-		if (id != COMMAND_IDS[0])
-		{
+	public boolean useUserCommand(int id, L2PcInstance activeChar) {
+		if (id != COMMAND_IDS[0]) {
 			return false;
 		}
 
-		if (!activeChar.isInParty())
-		{
+		if (!activeChar.isInParty()) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_INFORMATION));
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FRIEND_LIST_FOOTER));
 			return false;
@@ -54,8 +50,7 @@ public class PartyInfo implements IUserCommandHandler
 
 		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_INFORMATION));
 
-		switch (lootDistribution)
-		{
+		switch (lootDistribution) {
 			case L2Party.ITEM_LOOTER:
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LOOTING_FINDERS_KEEPERS));
 				break;
@@ -87,8 +82,7 @@ public class PartyInfo implements IUserCommandHandler
 	 * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
 	 */
 	@Override
-	public int[] getUserCommandList()
-	{
+	public int[] getUserCommandList() {
 		return COMMAND_IDS;
 	}
 }

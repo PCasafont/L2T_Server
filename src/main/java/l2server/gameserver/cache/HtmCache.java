@@ -33,26 +33,20 @@ import java.util.logging.Level;
 /**
  * @author Layane
  */
-public class HtmCache implements Reloadable
-{
+public class HtmCache implements Reloadable {
 	private final Map<Integer, String> cache;
 
 	private int loadedFiles;
 	private long bytesBuffLen;
 
-	public static HtmCache getInstance()
-	{
+	public static HtmCache getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private HtmCache()
-	{
-		if (Config.LAZY_CACHE)
-		{
+	private HtmCache() {
+		if (Config.LAZY_CACHE) {
 			cache = new ConcurrentHashMap<>();
-		}
-		else
-		{
+		} else {
 			cache = new HashMap<>();
 		}
 		reload();
@@ -61,30 +55,23 @@ public class HtmCache implements Reloadable
 	}
 
 	@Override
-	public boolean reload()
-	{
+	public boolean reload() {
 		reload(Config.DATAPACK_ROOT);
 		return true;
 	}
 
 	@Override
-	public String getReloadMessage(boolean success)
-	{
-		return "Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " megabytes on " +
-				HtmCache.getInstance().getLoadedFiles() + " files loaded";
+	public String getReloadMessage(boolean success) {
+		return "Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " megabytes on " + HtmCache.getInstance().getLoadedFiles() +
+				" files loaded";
 	}
 
-	public void reload(File f)
-	{
-		if (!Config.LAZY_CACHE)
-		{
+	public void reload(File f) {
+		if (!Config.LAZY_CACHE) {
 			Log.info("Html cache start...");
 			parseDir(f);
-			Log.info("Cache[HTML]: " + String.format("%.3f", getMemoryUsage()) + " megabytes on " + getLoadedFiles() +
-					" files loaded");
-		}
-		else
-		{
+			Log.info("Cache[HTML]: " + String.format("%.3f", getMemoryUsage()) + " megabytes on " + getLoadedFiles() + " files loaded");
+		} else {
 			cache.clear();
 			loadedFiles = 0;
 			bytesBuffLen = 0;
@@ -92,67 +79,53 @@ public class HtmCache implements Reloadable
 		}
 	}
 
-	public void reloadPath(File f)
-	{
+	public void reloadPath(File f) {
 		parseDir(f);
 		Log.info("Cache[HTML]: Reloaded specified path.");
 	}
 
-	public double getMemoryUsage()
-	{
+	public double getMemoryUsage() {
 		return (float) bytesBuffLen / 1048576;
 	}
 
-	public int getLoadedFiles()
-	{
+	public int getLoadedFiles() {
 		return loadedFiles;
 	}
 
-	private static class HtmFilter implements FileFilter
-	{
+	private static class HtmFilter implements FileFilter {
 		@Override
-		public boolean accept(File file)
-		{
-			if (!file.isDirectory())
-			{
+		public boolean accept(File file) {
+			if (!file.isDirectory()) {
 				return file.getName().endsWith(".htm") || file.getName().endsWith(".html");
 			}
 			return true;
 		}
 	}
 
-	private void parseDir(File dir)
-	{
+	private void parseDir(File dir) {
 		FileFilter filter = new HtmFilter();
 		File[] files = dir.listFiles(filter);
 
-		for (File file : files)
-		{
-			if (!file.isDirectory())
-			{
+		for (File file : files) {
+			if (!file.isDirectory()) {
 				loadFile(file);
-			}
-			else
-			{
+			} else {
 				parseDir(file);
 			}
 		}
 	}
 
-	public String loadFile(File file)
-	{
+	public String loadFile(File file) {
 		final String relpath = Util.getRelativePath(Config.DATAPACK_ROOT, file);
 		final int hashcode = relpath.hashCode();
 
 		final HtmFilter filter = new HtmFilter();
 
-		if (file.exists() && filter.accept(file) && !file.isDirectory())
-		{
+		if (file.exists() && filter.accept(file) && !file.isDirectory()) {
 			String content;
 			FileInputStream fis = null;
 
-			try
-			{
+			try {
 				fis = new FileInputStream(file);
 				BufferedInputStream bis = new BufferedInputStream(fis);
 				int bytes = bis.available();
@@ -164,32 +137,22 @@ public class HtmCache implements Reloadable
 
 				String oldContent = cache.get(hashcode);
 
-				if (oldContent == null)
-				{
+				if (oldContent == null) {
 					bytesBuffLen += bytes;
 					loadedFiles++;
-				}
-				else
-				{
+				} else {
 					bytesBuffLen = bytesBuffLen - oldContent.length() + bytes;
 				}
 
 				cache.put(hashcode, content);
 
 				return content;
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.log(Level.WARNING, "Problem with htm file " + e.getMessage(), e);
-			}
-			finally
-			{
-				try
-				{
+			} finally {
+				try {
 					fis.close();
-				}
-				catch (Exception ignored)
-				{
+				} catch (Exception ignored) {
 				}
 			}
 		}
@@ -197,12 +160,10 @@ public class HtmCache implements Reloadable
 		return null;
 	}
 
-	public String getHtmForce(String prefix, String path)
-	{
+	public String getHtmForce(String prefix, String path) {
 		String content = getHtm(prefix, path);
 
-		if (content == null)
-		{
+		if (content == null) {
 			content = "<html><body>My text is missing:<br>" + path + "</body></html>";
 			Log.warning("Cache[HTML]: Missing HTML page: " + path);
 		}
@@ -210,41 +171,32 @@ public class HtmCache implements Reloadable
 		return content;
 	}
 
-	public String getHtm(String prefix, String path)
-	{
+	public String getHtm(String prefix, String path) {
 		String newPath = null;
 		String content;
-		if (prefix != null && !prefix.isEmpty())
-		{
+		if (prefix != null && !prefix.isEmpty()) {
 			newPath = prefix + path;
 			content = getHtm(newPath);
-			if (content != null)
-			{
+			if (content != null) {
 				return content;
 			}
 		}
 
 		String customPath = "data_" + Config.SERVER_NAME + "/html/" + path;
 		content = getHtm(customPath);
-		if (content != null)
-		{
+		if (content != null) {
 			return content;
 		}
 
-		if (path.contains(Config.DATA_FOLDER + ""))
-		{
+		if (path.contains(Config.DATA_FOLDER + "")) {
 			content = getHtm(path);
-		}
-		else
-		{
+		} else {
 			content = getHtm(Config.DATA_FOLDER + "html/" + path);
 		}
 
-		if (content != null)
-		{
+		if (content != null) {
 			cache.put(customPath.hashCode(), content);
-			if (newPath != null)
-			{
+			if (newPath != null) {
 				cache.put(newPath.hashCode(), content);
 			}
 		}
@@ -252,26 +204,22 @@ public class HtmCache implements Reloadable
 		return content;
 	}
 
-	public String getHtm(String path)
-	{
-		if (path == null || path.isEmpty())
-		{
+	public String getHtm(String path) {
+		if (path == null || path.isEmpty()) {
 			return ""; // avoid possible NPE
 		}
 
 		final int hashCode = path.hashCode();
 		String content = cache.get(hashCode);
 
-		if (Config.LAZY_CACHE && content == null)
-		{
+		if (Config.LAZY_CACHE && content == null) {
 			content = loadFile(new File(Config.DATAPACK_ROOT, path));
 		}
 
 		return content;
 	}
 
-	public boolean contains(String path)
-	{
+	public boolean contains(String path) {
 		return cache.containsKey(path.hashCode());
 	}
 
@@ -280,13 +228,11 @@ public class HtmCache implements Reloadable
 	 *
 	 * @param path The path to the HTM
 	 */
-	public boolean isLoadable(String path)
-	{
+	public boolean isLoadable(String path) {
 		File file = new File(Config.DATA_FOLDER + "html/" + path);
 		HtmFilter filter = new HtmFilter();
 
-		if (file.exists() && filter.accept(file) && !file.isDirectory())
-		{
+		if (file.exists() && filter.accept(file) && !file.isDirectory()) {
 			return true;
 		}
 
@@ -294,12 +240,10 @@ public class HtmCache implements Reloadable
 		filter = new HtmFilter();
 
 		return file.exists() && filter.accept(file) && !file.isDirectory();
-
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final HtmCache instance = new HtmCache();
 	}
 }

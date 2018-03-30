@@ -26,26 +26,23 @@ import l2server.gameserver.model.L2Object;
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class TeleportToLocation extends L2GameServerPacket
-{
+public final class TeleportToLocation extends L2GameServerPacket {
 	private int targetObjId;
 	private int x;
 	private int y;
 	private int z;
 	private int heading;
-
-	public TeleportToLocation(L2Object obj, int x, int y, int z, int heading)
-	{
+	
+	public TeleportToLocation(L2Object obj, int x, int y, int z, int heading) {
 		targetObjId = obj.getObjectId();
 		this.x = x;
 		this.y = y;
 		this.z = z;
 		this.heading = heading;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(targetObjId);
 		writeD(x);
 		writeD(y);

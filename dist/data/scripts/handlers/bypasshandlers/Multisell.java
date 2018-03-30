@@ -20,40 +20,33 @@ import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-public class Multisell implements IBypassHandler
-{
+public class Multisell implements IBypassHandler {
 	private static final String[] COMMANDS = {"multisell", "exc_multisell"};
 
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		try
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+		try {
 			String listId;
 			if (command.toLowerCase().startsWith(COMMANDS[0])) // multisell
 			{
 				listId = command.substring(9).trim();
 				MultiSell.getInstance().separateAndSend(listId, activeChar, target, false);
 				return true;
-			}
-			else if (command.toLowerCase().startsWith(COMMANDS[1])) // exc_multisell
+			} else if (command.toLowerCase().startsWith(COMMANDS[1])) // exc_multisell
 			{
 				listId = command.substring(13).trim();
 				MultiSell.getInstance().separateAndSend(listId, activeChar, target, true);
 				return true;
 			}
 			return false;
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			log.info("Exception in " + getClass().getSimpleName());
 		}
 		return false;
 	}
 
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

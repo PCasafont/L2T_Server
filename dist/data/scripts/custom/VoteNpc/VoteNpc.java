@@ -33,19 +33,16 @@ import java.util.Collections;
 /**
  * @author LasTravel
  */
-public class VoteNpc extends Quest
-{
+public class VoteNpc extends Quest {
 	private static final boolean debug = false;
 	private static final String qn = "VoteNpc";
 	private static final int voteNpcId = 50010;
 	@SuppressWarnings("unused")
-	private static final String SELECT_VOTE_IP =
-			"SELECT * from l2tenkai_web.server_voted_ips WHERE ip = ?";
+	private static final String SELECT_VOTE_IP = "SELECT * from l2tenkai_web.server_voted_ips WHERE ip = ?";
 
 	//private static Map<Integer, Rewards> voteRewards = new HashMap<Integer, Rewards>();
 
-	public VoteNpc(int questId, String name, String descr)
-	{
+	public VoteNpc(int questId, String name, String descr) {
 		super(questId, name, descr);
 
 		addTalkId(voteNpcId);
@@ -171,14 +168,12 @@ public class VoteNpc extends Quest
 	}*/
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		return super.onTalk(npc, player);
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
         /*if (!debug && ((player.getHWID() == null) || player.getHWID().equalsIgnoreCase("")))
 		{
 			player.sendMessage("You can't claim items right now!");
@@ -195,13 +190,11 @@ public class VoteNpc extends Quest
 		String externalIpValue = loadGlobalQuestVar(player.getExternalIP());
 		//String hwIdValue = loadGlobalQuestVar(player.getHWID().substring(10));
 
-		if (!accountValue.equalsIgnoreCase(""))
-		{
+		if (!accountValue.equalsIgnoreCase("")) {
 			accountReuse = Long.parseLong(accountValue);
 		}
 
-		if (!externalIpValue.equalsIgnoreCase(""))
-		{
+		if (!externalIpValue.equalsIgnoreCase("")) {
 			ipReuse = Long.parseLong(externalIpValue);
 		}
 
@@ -209,12 +202,9 @@ public class VoteNpc extends Quest
 		//	hwIdReuse = Long.parseLong(hwIdValue);
 
 		long reuse = Collections.max(Arrays.asList(accountReuse, ipReuse));//, hwIdReuse));
-		if (currentTime > reuse)
-		{
-			if (canGetReward(player))
-			{
-				if (!debug)
-				{
+		if (currentTime > reuse) {
+			if (canGetReward(player)) {
+				if (!debug) {
 					String varReuse = Long.toString(System.currentTimeMillis() + 12 * 3600000);
 					saveGlobalQuestVar(player.getAccountName(), varReuse);
 					saveGlobalQuestVar(player.getExternalIP(), varReuse);
@@ -223,27 +213,20 @@ public class VoteNpc extends Quest
 
 				player.addItem(qn, 10639, 1, npc, true);
 
-				Util.logToFile(player.getName() + "(" + player.getExternalIP() + ") received a vote reward",
-						"VoteSystem", true);
+				Util.logToFile(player.getName() + "(" + player.getExternalIP() + ") received a vote reward", "VoteSystem", true);
 
 				return "thanks.html";
-			}
-			else
-			{
+			} else {
 				player.sendMessage("It looks like you didn't vote!");
 				return "";
 			}
-		}
-		else
-		{
+		} else {
 			//Calc the left time
 			long _remaining_time = (reuse - currentTime) / 1000;
 			int hours = (int) _remaining_time / 3600;
 			int minutes = (int) _remaining_time % 3600 / 60;
-			String reuseString =
-					"<font color=\"LEVEL\">Come back again in: " + hours + "Hours " + minutes + "minutes</font>";
-			return HtmCache.getInstance().getHtm(null, Config.DATA_FOLDER + "scripts/custom/VoteNpc/reuse.html")
-					.replace("%reuse%", reuseString);
+			String reuseString = "<font color=\"LEVEL\">Come back again in: " + hours + "Hours " + minutes + "minutes</font>";
+			return HtmCache.getInstance().getHtm(null, Config.DATA_FOLDER + "scripts/custom/VoteNpc/reuse.html").replace("%reuse%", reuseString);
 		}
 		
 		/*if (debug)
@@ -382,44 +365,34 @@ public class VoteNpc extends Quest
 	}
 
 	@SuppressWarnings("unused")
-	private int getProperSkillLevel(int currentPlayerSkillLevel, int maxSkillLevel)
-	{
+	private int getProperSkillLevel(int currentPlayerSkillLevel, int maxSkillLevel) {
 		int skillLevelToLearn = -1;
 		int currentPlayerLevel = currentPlayerSkillLevel;
-		if (currentPlayerLevel == -1)
-		{
+		if (currentPlayerLevel == -1) {
 			skillLevelToLearn = 1;
-		}
-		else
-		{
-			if (currentPlayerLevel < maxSkillLevel)
-			{
+		} else {
+			if (currentPlayerLevel < maxSkillLevel) {
 				skillLevelToLearn = currentPlayerLevel + 1;
 			}
 		}
 		return skillLevelToLearn;
 	}
 
-	private boolean canGetReward(L2PcInstance player)
-	{
-		if (player == null)
-		{
+	private boolean canGetReward(L2PcInstance player) {
+		if (player == null) {
 			return true;
 		}
 
-		if (debug)
-		{
+		if (debug) {
 			return true;
 		}
 
 		String result = "";
 
 		HttpURLConnection connection = null;
-		try
-		{
-			URL url =
-					new URL("http://l2topzone.com/api.php?API_KEY=e659e120d32c1780e566c98590737045&SERVER_ID=12059&IP=" +
-							player.getClient().getConnectionAddress().getHostAddress());
+		try {
+			URL url = new URL("http://l2topzone.com/api.php?API_KEY=e659e120d32c1780e566c98590737045&SERVER_ID=12059&IP=" +
+					player.getClient().getConnectionAddress().getHostAddress());
 			connection = (HttpURLConnection) url.openConnection();
 			connection.setInstanceFollowRedirects(false);
 
@@ -428,8 +401,7 @@ public class VoteNpc extends Quest
 
 			String line;
 			StringBuffer response = new StringBuffer();
-			while ((line = rd.readLine()) != null)
-			{
+			while ((line = rd.readLine()) != null) {
 				response.append(line);
 				response.append('\r');
 			}
@@ -437,15 +409,10 @@ public class VoteNpc extends Quest
 
 			is.close();
 			rd.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		finally
-		{
-			if (connection != null)
-			{
+		} finally {
+			if (connection != null) {
 				connection.disconnect();
 			}
 		}
@@ -453,8 +420,7 @@ public class VoteNpc extends Quest
 		return result != null && result.contains("TRUE");
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new VoteNpc(-1, qn, "custom");
 	}
 }

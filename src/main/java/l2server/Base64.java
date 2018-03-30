@@ -38,8 +38,7 @@ import java.io.InputStreamReader;
  * @author rob@iharder.net
  * @version 2.0
  */
-public class Base64
-{
+public class Base64 {
 
 	/*  P U B L I C F I E L D S */
 
@@ -95,90 +94,27 @@ public class Base64
 	 */
 	private static final byte[] ALPHABET;
 	private static final byte[] _NATIVE_ALPHABET = /* May be something funny like EBCDIC */
-			{
-					(byte) 'A',
-					(byte) 'B',
-					(byte) 'C',
-					(byte) 'D',
-					(byte) 'E',
-					(byte) 'F',
-					(byte) 'G',
-					(byte) 'H',
-					(byte) 'I',
-					(byte) 'J',
-					(byte) 'K',
-					(byte) 'L',
-					(byte) 'M',
-					(byte) 'N',
-					(byte) 'O',
-					(byte) 'P',
-					(byte) 'Q',
-					(byte) 'R',
-					(byte) 'S',
-					(byte) 'T',
-					(byte) 'U',
-					(byte) 'V',
-					(byte) 'W',
-					(byte) 'X',
-					(byte) 'Y',
-					(byte) 'Z',
-					(byte) 'a',
-					(byte) 'b',
-					(byte) 'c',
-					(byte) 'd',
-					(byte) 'e',
-					(byte) 'f',
-					(byte) 'g',
-					(byte) 'h',
-					(byte) 'i',
-					(byte) 'j',
-					(byte) 'k',
-					(byte) 'l',
-					(byte) 'm',
-					(byte) 'n',
-					(byte) 'o',
-					(byte) 'p',
-					(byte) 'q',
-					(byte) 'r',
-					(byte) 's',
-					(byte) 't',
-					(byte) 'u',
-					(byte) 'v',
-					(byte) 'w',
-					(byte) 'x',
-					(byte) 'y',
-					(byte) 'z',
-					(byte) '0',
-					(byte) '1',
-					(byte) '2',
-					(byte) '3',
-					(byte) '4',
-					(byte) '5',
-					(byte) '6',
-					(byte) '7',
-					(byte) '8',
-					(byte) '9',
-					(byte) '+',
-					(byte) '/'
-			};
+			{(byte) 'A', (byte) 'B', (byte) 'C', (byte) 'D', (byte) 'E', (byte) 'F', (byte) 'G', (byte) 'H', (byte) 'I', (byte) 'J', (byte) 'K',
+					(byte) 'L', (byte) 'M', (byte) 'N', (byte) 'O', (byte) 'P', (byte) 'Q', (byte) 'R', (byte) 'S', (byte) 'T', (byte) 'U',
+					(byte) 'V', (byte) 'W', (byte) 'X', (byte) 'Y', (byte) 'Z', (byte) 'a', (byte) 'b', (byte) 'c', (byte) 'd', (byte) 'e',
+					(byte) 'f', (byte) 'g', (byte) 'h', (byte) 'i', (byte) 'j', (byte) 'k', (byte) 'l', (byte) 'm', (byte) 'n', (byte) 'o',
+					(byte) 'p', (byte) 'q', (byte) 'r', (byte) 's', (byte) 't', (byte) 'u', (byte) 'v', (byte) 'w', (byte) 'x', (byte) 'y',
+					(byte) 'z', (byte) '0', (byte) '1', (byte) '2', (byte) '3', (byte) '4', (byte) '5', (byte) '6', (byte) '7', (byte) '8',
+					(byte) '9', (byte) '+', (byte) '/'};
 
-	public static void main(String[] args) throws IOException
-	{
+	public static void main(String[] args) throws IOException {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("Enter String to encode: ");
 		System.out.println(Base64.encodeBytes(bf.readLine().getBytes()));
 	}
 
 	/* Determine which ALPHABET to use. */
-	static
-	{
+	static {
 		byte[] _bytes;
-		try
-		{
+		try {
 			_bytes = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".getBytes(PREFERRED_ENCODING);
 		} // end try
-		catch (java.io.UnsupportedEncodingException use)
-		{
+		catch (java.io.UnsupportedEncodingException use) {
 			_bytes = _NATIVE_ALPHABET; // Fall back to native encoding
 		} // end catch
 		ALPHABET = _bytes;
@@ -188,8 +124,7 @@ public class Base64
 	 * Translates a Base64 value to either its 6-bit reconstruction value or a
 	 * negative number indicating some other meaning.
 	 **/
-	final static byte[] DECODABET = {
-			-9, -9, -9, -9, -9, -9, -9, -9, -9, // Decimal 0 - 8
+	final static byte[] DECODABET = {-9, -9, -9, -9, -9, -9, -9, -9, -9, // Decimal 0 - 8
 			-5, -5, // Whitespace: Tab and Linefeed
 			-9, -9, // Decimal 11 - 12
 			-5, // Whitespace: Carriage Return
@@ -210,19 +145,18 @@ public class Base64
 			26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, // Letters 'a' through 'm'
 			39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, // Letters 'n' through 'z'
 			-9, -9, -9, -9 // Decimal 123 - 126
-	/*
-	 * ,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 127 - 139
-	 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 140 - 152
-	 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 153 - 165
-	 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 166 - 178
-	 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 179 - 191
-	 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 192 - 204
-	 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 205 - 217
-	 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 218 - 230
-	 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 231 - 243
-	 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9 // Decimal 244 - 255
-	 */
-	};
+			/*
+			 * ,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 127 - 139
+			 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 140 - 152
+			 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 153 - 165
+			 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 166 - 178
+			 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 179 - 191
+			 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 192 - 204
+			 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 205 - 217
+			 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 218 - 230
+			 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9, // Decimal 231 - 243
+			 * -9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9,-9 // Decimal 244 - 255
+			 */};
 
 	// private static final byte BAD_ENCODING = -9; // Indicates error in encoding
 	private static final byte WHITE_SPACE_ENC = -5; // Indicates white space in encoding
@@ -231,8 +165,7 @@ public class Base64
 	/**
 	 * Defeats instantiation.
 	 */
-	private Base64()
-	{
+	private Base64() {
 	}
 	
 	/*  E N C O D I N G M E T H O D S */
@@ -283,8 +216,7 @@ public class Base64
 	 * @return four byte array in Base64 notation.
 	 * @since 1.5.1
 	 */
-	static byte[] encode3to4(byte[] b4, byte[] threeBytes, int numSigBytes)
-	{
+	static byte[] encode3to4(byte[] b4, byte[] threeBytes, int numSigBytes) {
 		encode3to4(threeBytes, 0, numSigBytes, b4, 0);
 		return b4;
 	} // end encode3to4
@@ -308,8 +240,7 @@ public class Base64
 	 * @return the <var>destination</var> array
 	 * @since 1.3
 	 */
-	static byte[] encode3to4(byte[] source, int srcOffset, int numSigBytes, byte[] destination, int destOffset)
-	{
+	static byte[] encode3to4(byte[] source, int srcOffset, int numSigBytes, byte[] destination, int destOffset) {
 		// 1 2 3
 		// 01234567890123456789012345678901 Bit position
 		// --------000000001111111122222222 Array position from threeBytes
@@ -322,12 +253,10 @@ public class Base64
 		// We have to shift left 24 in order to flush out the 1's that appear
 		// when Java treats a value as negative that is cast from a byte to an
 		// int.
-		int inBuff = (numSigBytes > 0 ? source[srcOffset] << 24 >>> 8 : 0) |
-				(numSigBytes > 1 ? source[srcOffset + 1] << 24 >>> 16 : 0) |
+		int inBuff = (numSigBytes > 0 ? source[srcOffset] << 24 >>> 8 : 0) | (numSigBytes > 1 ? source[srcOffset + 1] << 24 >>> 16 : 0) |
 				(numSigBytes > 2 ? source[srcOffset + 2] << 24 >>> 24 : 0);
 
-		switch (numSigBytes)
-		{
+		switch (numSigBytes) {
 			case 3:
 				destination[destOffset] = ALPHABET[inBuff >>> 18];
 				destination[destOffset + 1] = ALPHABET[inBuff >>> 12 & 0x3f];
@@ -364,8 +293,7 @@ public class Base64
 	 * @return The Base64-encoded object
 	 * @since 1.4
 	 */
-	public static String encodeObject(java.io.Serializable serializableObject)
-	{
+	public static String encodeObject(java.io.Serializable serializableObject) {
 		return encodeObject(serializableObject, NO_OPTIONS);
 	} // end encodeObject
 
@@ -394,8 +322,7 @@ public class Base64
 	 * @see Base64#DONT_BREAK_LINES
 	 * @since 2.0
 	 */
-	public static String encodeObject(java.io.Serializable serializableObject, int options)
-	{
+	public static String encodeObject(java.io.Serializable serializableObject, int options) {
 		// Streams
 		java.io.ByteArrayOutputStream baos = null;
 		java.io.OutputStream b64os = null;
@@ -406,73 +333,54 @@ public class Base64
 		int gzip = options & GZIP;
 		int dontBreakLines = options & DONT_BREAK_LINES;
 
-		try
-		{
+		try {
 			// ObjectOutputStream -> (GZIP) -> Base64 -> ByteArrayOutputStream
 			baos = new java.io.ByteArrayOutputStream();
 			b64os = new Base64.OutputStream(baos, ENCODE | dontBreakLines);
 
 			// GZip?
-			if (gzip == GZIP)
-			{
+			if (gzip == GZIP) {
 				gzos = new java.util.zip.GZIPOutputStream(b64os);
 				oos = new java.io.ObjectOutputStream(gzos);
 			} // end if: gzip
-			else
-			{
+			else {
 				oos = new java.io.ObjectOutputStream(b64os);
 			}
 
 			oos.writeObject(serializableObject);
 		} // end try
-		catch (java.io.IOException e)
-		{
+		catch (java.io.IOException e) {
 			e.printStackTrace();
 			return null;
 		} // end catch
-		finally
-		{
-			try
-			{
+		finally {
+			try {
 				oos.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			try
-			{
+			try {
 				gzos.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			try
-			{
+			try {
 				b64os.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			try
-			{
+			try {
 				baos.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		} // end finally
 
 		// Return value according to relevant encoding.
-		try
-		{
+		try {
 			return new String(baos.toByteArray(), PREFERRED_ENCODING);
 		} // end try
-		catch (java.io.UnsupportedEncodingException uue)
-		{
+		catch (java.io.UnsupportedEncodingException uue) {
 			return new String(baos.toByteArray());
 		} // end catch
 	} // end encode
@@ -483,8 +391,7 @@ public class Base64
 	 * @param source The data to convert
 	 * @since 1.4
 	 */
-	public static String encodeBytes(byte[] source)
-	{
+	public static String encodeBytes(byte[] source) {
 		return encodeBytes(source, 0, source.length, NO_OPTIONS);
 	} // end encodeBytes
 
@@ -510,8 +417,7 @@ public class Base64
 	 * @see Base64#DONT_BREAK_LINES
 	 * @since 2.0
 	 */
-	public static String encodeBytes(byte[] source, int options)
-	{
+	public static String encodeBytes(byte[] source, int options) {
 		return encodeBytes(source, 0, source.length, options);
 	} // end encodeBytes
 
@@ -523,8 +429,7 @@ public class Base64
 	 * @param len    Length of data to convert
 	 * @since 1.4
 	 */
-	public static String encodeBytes(byte[] source, int off, int len)
-	{
+	public static String encodeBytes(byte[] source, int off, int len) {
 		return encodeBytes(source, off, len, NO_OPTIONS);
 	} // end encodeBytes
 
@@ -552,21 +457,18 @@ public class Base64
 	 * @see Base64#DONT_BREAK_LINES
 	 * @since 2.0
 	 */
-	public static String encodeBytes(byte[] source, int off, int len, int options)
-	{
+	public static String encodeBytes(byte[] source, int off, int len, int options) {
 		// Isolate options
 		int dontBreakLines = options & DONT_BREAK_LINES;
 		int gzip = options & GZIP;
 
 		// Compress?
-		if (gzip == GZIP)
-		{
+		if (gzip == GZIP) {
 			java.io.ByteArrayOutputStream baos = null;
 			java.util.zip.GZIPOutputStream gzos = null;
 			Base64.OutputStream b64os = null;
 
-			try
-			{
+			try {
 				// GZip -> Base64 -> ByteArray
 				baos = new java.io.ByteArrayOutputStream();
 				b64os = new Base64.OutputStream(baos, ENCODE | dontBreakLines);
@@ -575,46 +477,33 @@ public class Base64
 				gzos.write(source, off, len);
 				gzos.close();
 			} // end try
-			catch (java.io.IOException e)
-			{
+			catch (java.io.IOException e) {
 				e.printStackTrace();
 				return null;
 			} // end catch
-			finally
-			{
-				try
-				{
+			finally {
+				try {
 					gzos.close();
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				try
-				{
+				try {
 					b64os.close();
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				try
-				{
+				try {
 					baos.close();
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			} // end finally
 
 			// Return value according to relevant encoding.
-			try
-			{
+			try {
 				return new String(baos.toByteArray(), PREFERRED_ENCODING);
 			} // end try
-			catch (java.io.UnsupportedEncodingException uue)
-			{
+			catch (java.io.UnsupportedEncodingException uue) {
 				return new String(baos.toByteArray());
 			} // end catch
 		} // end if: compress
@@ -630,32 +519,27 @@ public class Base64
 		int e = 0;
 		int len2 = len - 2;
 		int lineLength = 0;
-		for (; d < len2; d += 3, e += 4)
-		{
+		for (; d < len2; d += 3, e += 4) {
 			encode3to4(source, d + off, 3, outBuff, e);
 
 			lineLength += 4;
-			if (breakLines && lineLength == MAX_LINE_LENGTH)
-			{
+			if (breakLines && lineLength == MAX_LINE_LENGTH) {
 				outBuff[e + 4] = NEW_LINE;
 				e++;
 				lineLength = 0;
 			} // end if: end of line
 		} // en dfor: each piece of array
 
-		if (d < len)
-		{
+		if (d < len) {
 			encode3to4(source, d + off, len - d, outBuff, e);
 			e += 4;
 		} // end if: some padding needed
 
 		// Return value according to relevant encoding.
-		try
-		{
+		try {
 			return new String(outBuff, 0, e, PREFERRED_ENCODING);
 		} // end try
-		catch (java.io.UnsupportedEncodingException uue)
-		{
+		catch (java.io.UnsupportedEncodingException uue) {
 			return new String(outBuff, 0, e);
 		} // end catch
 		// end else: don't compress
@@ -703,11 +587,9 @@ public class Base64
 	 * @return the number of decoded bytes converted
 	 * @since 1.3
 	 */
-	static int decode4to3(byte[] source, int srcOffset, byte[] destination, int destOffset)
-	{
+	static int decode4to3(byte[] source, int srcOffset, byte[] destination, int destOffset) {
 		// Example: Dk==
-		if (source[srcOffset + 2] == EQUALS_SIGN)
-		{
+		if (source[srcOffset + 2] == EQUALS_SIGN) {
 			// Two ways to do the same thing. Don't know which way I like best.
 			// int outBuff = ( ( DECODABET[ source[ srcOffset ] ] << 24 ) >>> 6
 			// )
@@ -719,16 +601,14 @@ public class Base64
 		}
 
 		// Example: DkL=
-		else if (source[srcOffset + 3] == EQUALS_SIGN)
-		{
+		else if (source[srcOffset + 3] == EQUALS_SIGN) {
 			// Two ways to do the same thing. Don't know which way I like best.
 			// int outBuff = ( ( DECODABET[ source[ srcOffset ] ] << 24 ) >>> 6
 			// )
 			// | ( ( DECODABET[ source[ srcOffset + 1 ] ] << 24 ) >>> 12 )
 			// | ( ( DECODABET[ source[ srcOffset + 2 ] ] << 24 ) >>> 18 );
-			int outBuff =
-					(DECODABET[source[srcOffset]] & 0xFF) << 18 | (DECODABET[source[srcOffset + 1]] & 0xFF) << 12 |
-							(DECODABET[source[srcOffset + 2]] & 0xFF) << 6;
+			int outBuff = (DECODABET[source[srcOffset]] & 0xFF) << 18 | (DECODABET[source[srcOffset + 1]] & 0xFF) << 12 |
+					(DECODABET[source[srcOffset + 2]] & 0xFF) << 6;
 
 			destination[destOffset] = (byte) (outBuff >>> 16);
 			destination[destOffset + 1] = (byte) (outBuff >>> 8);
@@ -736,10 +616,8 @@ public class Base64
 		}
 
 		// Example: DkLE
-		else
-		{
-			try
-			{
+		else {
+			try {
 				// Two ways to do the same thing. Don't know which way I like
 				// best.
 				// int outBuff = ( ( DECODABET[ source[ srcOffset ] ] << 24 )
@@ -747,27 +625,19 @@ public class Base64
 				// | ( ( DECODABET[ source[ srcOffset + 1 ] ] << 24 ) >>> 12 )
 				// | ( ( DECODABET[ source[ srcOffset + 2 ] ] << 24 ) >>> 18 )
 				// | ( ( DECODABET[ source[ srcOffset + 3 ] ] << 24 ) >>> 24 );
-				int outBuff =
-						(DECODABET[source[srcOffset]] & 0xFF) << 18 | (DECODABET[source[srcOffset + 1]] & 0xFF) << 12 |
-								(DECODABET[source[srcOffset + 2]] & 0xFF) << 6 |
-								DECODABET[source[srcOffset + 3]] & 0xFF;
+				int outBuff = (DECODABET[source[srcOffset]] & 0xFF) << 18 | (DECODABET[source[srcOffset + 1]] & 0xFF) << 12 |
+						(DECODABET[source[srcOffset + 2]] & 0xFF) << 6 | DECODABET[source[srcOffset + 3]] & 0xFF;
 
 				destination[destOffset] = (byte) (outBuff >> 16);
 				destination[destOffset + 1] = (byte) (outBuff >> 8);
 				destination[destOffset + 2] = (byte) outBuff;
 
 				return 3;
-			}
-			catch (Exception e)
-			{
-				System.out.println(StringUtil
-						.concat(String.valueOf(source[srcOffset]), ": ", String.valueOf(DECODABET[source[srcOffset]])));
-				System.out.println(StringUtil.concat(String.valueOf(source[srcOffset + 1]), ": ",
-						String.valueOf(DECODABET[source[srcOffset + 1]])));
-				System.out.println(StringUtil.concat(String.valueOf(source[srcOffset + 2]), ": ",
-						String.valueOf(DECODABET[source[srcOffset + 2]])));
-				System.out.println(StringUtil.concat(String.valueOf(source[srcOffset + 3]), ": ",
-						String.valueOf(DECODABET[source[srcOffset + 3]])));
+			} catch (Exception e) {
+				System.out.println(StringUtil.concat(String.valueOf(source[srcOffset]), ": ", String.valueOf(DECODABET[source[srcOffset]])));
+				System.out.println(StringUtil.concat(String.valueOf(source[srcOffset + 1]), ": ", String.valueOf(DECODABET[source[srcOffset + 1]])));
+				System.out.println(StringUtil.concat(String.valueOf(source[srcOffset + 2]), ": ", String.valueOf(DECODABET[source[srcOffset + 2]])));
+				System.out.println(StringUtil.concat(String.valueOf(source[srcOffset + 3]), ": ", String.valueOf(DECODABET[source[srcOffset + 3]])));
 				return -1;
 			} // end catch
 		}
@@ -784,8 +654,7 @@ public class Base64
 	 * @return decoded data
 	 * @since 1.3
 	 */
-	public static byte[] decode(byte[] source, int off, int len)
-	{
+	public static byte[] decode(byte[] source, int off, int len) {
 		int len34 = len * 3 / 4;
 		byte[] outBuff = new byte[len34]; // Upper limit on size of output
 		int outBuffPosn = 0;
@@ -795,35 +664,32 @@ public class Base64
 		int i = 0;
 		byte sbiCrop = 0;
 		byte sbiDecode = 0;
-		for (i = off; i < off + len; i++)
-		{
+		for (i = off; i < off + len; i++) {
 			sbiCrop = (byte) (source[i] & 0x7f); // Only the low seven bits
 			sbiDecode = DECODABET[sbiCrop];
 
 			if (sbiDecode >= WHITE_SPACE_ENC) // White space, Equals sign or
 			// better
 			{
-				if (sbiDecode >= EQUALS_SIGN_ENC)
-				{
+				if (sbiDecode >= EQUALS_SIGN_ENC) {
 					b4[b4Posn++] = sbiCrop;
-					if (b4Posn > 3)
-					{
+					if (b4Posn > 3) {
 						outBuffPosn += decode4to3(b4, 0, outBuff, outBuffPosn);
 						b4Posn = 0;
 
 						// If that was the equals sign, break out of 'for' loop
-						if (sbiCrop == EQUALS_SIGN)
-						{
+						if (sbiCrop == EQUALS_SIGN) {
 							break;
 						}
 					} // end if: quartet built
 				} // end if: equals sign or better
 			} // end if: white space, equals sign or better
-			else
-			{
-				System.err.println(StringUtil
-						.concat("Bad Base64 input character at ", String.valueOf(i), ": ", String.valueOf(source[i]),
-								"(decimal)"));
+			else {
+				System.err.println(StringUtil.concat("Bad Base64 input character at ",
+						String.valueOf(i),
+						": ",
+						String.valueOf(source[i]),
+						"(decimal)"));
 				return null;
 			} // end else:
 		} // each input character
@@ -841,15 +707,12 @@ public class Base64
 	 * @return the decoded data
 	 * @since 1.4
 	 */
-	public static byte[] decode(String s)
-	{
+	public static byte[] decode(String s) {
 		byte[] bytes;
-		try
-		{
+		try {
 			bytes = s.getBytes(PREFERRED_ENCODING);
 		} // end try
-		catch (java.io.UnsupportedEncodingException uee)
-		{
+		catch (java.io.UnsupportedEncodingException uee) {
 			bytes = s.getBytes();
 		} // end catch
 		// </change>
@@ -860,61 +723,46 @@ public class Base64
 		// Check to see if it's gzip-compressed
 		// GZIP Magic Two-Byte Number: 0x8b1f (35615)
 		if (bytes != null && // In case decoding returned null
-				bytes.length >= 2)
-		{
+				bytes.length >= 2) {
 
 			int head = bytes[0] & 0xff | bytes[1] << 8 & 0xff00;
 			if (bytes.length >= 4 && // Don't want to get ArrayIndexOutOfBounds
-					java.util.zip.GZIPInputStream.GZIP_MAGIC == head)
-			{
+					java.util.zip.GZIPInputStream.GZIP_MAGIC == head) {
 				java.io.ByteArrayInputStream bais = null;
 				java.util.zip.GZIPInputStream gzis = null;
 				java.io.ByteArrayOutputStream baos = null;
 				byte[] buffer = new byte[2048];
 				int length = 0;
 
-				try
-				{
+				try {
 					baos = new java.io.ByteArrayOutputStream();
 					bais = new java.io.ByteArrayInputStream(bytes);
 					gzis = new java.util.zip.GZIPInputStream(bais);
 
-					while ((length = gzis.read(buffer)) >= 0)
-					{
+					while ((length = gzis.read(buffer)) >= 0) {
 						baos.write(buffer, 0, length);
 					} // end while: reading input
 
 					// No error? Get new bytes.
 					bytes = baos.toByteArray();
 				} // end try
-				catch (java.io.IOException e)
-				{
+				catch (java.io.IOException e) {
 					// Just return originally-decoded bytes
 				} // end catch
-				finally
-				{
-					try
-					{
+				finally {
+					try {
 						baos.close();
-					}
-					catch (Exception e)
-					{
+					} catch (Exception e) {
 						e.printStackTrace();
 					}
-					try
-					{
+					try {
 						gzis.close();
-					}
-					catch (Exception e)
-					{
+					} catch (Exception e) {
 						e.printStackTrace();
 					}
-					try
-					{
+					try {
 						bais.close();
-					}
-					catch (Exception e)
-					{
+					} catch (Exception e) {
 						e.printStackTrace();
 					}
 				} // end finally
@@ -932,8 +780,7 @@ public class Base64
 	 * @return The decoded and deserialized object
 	 * @since 1.5
 	 */
-	public static Object decodeToObject(String encodedObject)
-	{
+	public static Object decodeToObject(String encodedObject) {
 		// Decode and gunzip if necessary
 		byte[] objBytes = decode(encodedObject);
 
@@ -941,33 +788,22 @@ public class Base64
 		java.io.ObjectInputStream ois = null;
 		Object obj = null;
 
-		try
-		{
+		try {
 			bais = new java.io.ByteArrayInputStream(objBytes);
 			ois = new java.io.ObjectInputStream(bais);
 
 			obj = ois.readObject();
-		}
-		catch (IOException | ClassNotFoundException e)
-		{
+		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
-		}
-		finally
-		{
-			try
-			{
+		} finally {
+			try {
 				bais.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			try
-			{
+			try {
 				ois.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		} // end finally
@@ -986,8 +822,7 @@ public class Base64
 	 * @see java.io.FilterInputStream
 	 * @since 1.3
 	 */
-	public static class InputStream extends java.io.FilterInputStream
-	{
+	public static class InputStream extends java.io.FilterInputStream {
 		// private int options; // Options specified
 		private boolean encode; // Encoding or decoding
 		private int position; // Current position in the buffer
@@ -1002,8 +837,7 @@ public class Base64
 		 *
 		 * @since 1.3
 		 */
-		public InputStream(java.io.InputStream pIn)
-		{
+		public InputStream(java.io.InputStream pIn) {
 			this(pIn, DECODE);
 		} // end constructor
 
@@ -1028,8 +862,7 @@ public class Base64
 		 * @see Base64#DONT_BREAK_LINES
 		 * @since 2.0
 		 */
-		public InputStream(java.io.InputStream pIn, int options)
-		{
+		public InputStream(java.io.InputStream pIn, int options) {
 			super(pIn);
 			// this.options = options;
 			breakLines = (options & DONT_BREAK_LINES) != DONT_BREAK_LINES;
@@ -1048,84 +881,66 @@ public class Base64
 		 * @since 1.3
 		 */
 		@Override
-		public int read() throws java.io.IOException
-		{
+		public int read() throws java.io.IOException {
 			// Do we need to get data?
-			if (position < 0)
-			{
-				if (encode)
-				{
+			if (position < 0) {
+				if (encode) {
 					byte[] b3 = new byte[3];
 					int numBinaryBytes = 0;
-					for (int i = 0; i < 3; i++)
-					{
-						try
-						{
+					for (int i = 0; i < 3; i++) {
+						try {
 							int b = in.read();
 
 							// If end of stream, b is -1.
-							if (b >= 0)
-							{
+							if (b >= 0) {
 								b3[i] = (byte) b;
 								numBinaryBytes++;
 							} // end if: not end of stream
 						} // end try: read
-						catch (java.io.IOException e)
-						{
+						catch (java.io.IOException e) {
 							// Only a problem if we got no data at all.
-							if (i == 0)
-							{
+							if (i == 0) {
 								throw e;
 							}
 						} // end catch
 					} // end for: each needed input byte
 
-					if (numBinaryBytes > 0)
-					{
+					if (numBinaryBytes > 0) {
 						encode3to4(b3, 0, numBinaryBytes, buffer, 0);
 						position = 0;
 						numSigBytes = 4;
 					} // end if: got data
-					else
-					{
+					else {
 						return -1;
 					} // end else
 				} // end if: encoding
 
 				// Else decoding
-				else
-				{
+				else {
 					byte[] b4 = new byte[4];
 					int i = 0;
-					for (i = 0; i < 4; i++)
-					{
+					for (i = 0; i < 4; i++) {
 						// Read four "meaningful" bytes:
 						int b = 0;
-						do
-						{
+						do {
 							b = in.read();
-						}
-						while (b >= 0 && DECODABET[b & 0x7f] <= WHITE_SPACE_ENC);
+						} while (b >= 0 && DECODABET[b & 0x7f] <= WHITE_SPACE_ENC);
 
-						if (b < 0)
-						{
+						if (b < 0) {
 							break; // Reads a -1 if end of stream
 						}
 
 						b4[i] = (byte) b;
 					} // end for: each needed input byte
 
-					if (i == 4)
-					{
+					if (i == 4) {
 						numSigBytes = decode4to3(b4, 0, buffer, 0);
 						position = 0;
 					} // end if: got four characters
-					else if (i == 0)
-					{
+					else if (i == 0) {
 						return -1;
 					} // end else if: also padded correctly
-					else
-					{
+					else {
 						// Must have broken out from above.
 						throw new java.io.IOException("Improperly padded Base64 input.");
 					} // end
@@ -1133,16 +948,13 @@ public class Base64
 			} // end else: get data
 
 			// Got data?
-			if (position >= 0)
-			{
+			if (position >= 0) {
 				// End of relevant data?
-				if ( /* !encode && */position >= numSigBytes)
-				{
+				if ( /* !encode && */position >= numSigBytes) {
 					return -1;
 				}
 
-				if (encode && breakLines && lineLength >= MAX_LINE_LENGTH)
-				{
+				if (encode && breakLines && lineLength >= MAX_LINE_LENGTH) {
 					lineLength = 0;
 					return '\n';
 				} // end if
@@ -1152,8 +964,7 @@ public class Base64
 
 				int b = buffer[position++];
 
-				if (position >= bufferLength)
-				{
+				if (position >= bufferLength) {
 					position = -1;
 				}
 
@@ -1179,27 +990,20 @@ public class Base64
 		 * @since 1.3
 		 */
 		@Override
-		public int read(byte[] dest, int off, int len) throws java.io.IOException
-		{
+		public int read(byte[] dest, int off, int len) throws java.io.IOException {
 			int i;
 			int b;
-			for (i = 0; i < len; i++)
-			{
+			for (i = 0; i < len; i++) {
 				b = read();
 
 				// if ( b < 0 && i == 0 )
 				// return -1;
 
-				if (b >= 0)
-				{
+				if (b >= 0) {
 					dest[off + i] = (byte) b;
-				}
-				else if (i == 0)
-				{
+				} else if (i == 0) {
 					return -1;
-				}
-				else
-				{
+				} else {
 					break; // Out of 'for' loop
 				}
 			} // end for: each byte read
@@ -1218,8 +1022,7 @@ public class Base64
 	 * @see java.io.FilterOutputStream
 	 * @since 1.3
 	 */
-	public static class OutputStream extends java.io.FilterOutputStream
-	{
+	public static class OutputStream extends java.io.FilterOutputStream {
 		// private int options;
 		private boolean encode;
 		private int position;
@@ -1235,8 +1038,7 @@ public class Base64
 		 *
 		 * @since 1.3
 		 */
-		public OutputStream(java.io.OutputStream pOut)
-		{
+		public OutputStream(java.io.OutputStream pOut) {
 			this(pOut, ENCODE);
 		} // end constructor
 
@@ -1261,8 +1063,7 @@ public class Base64
 		 * @see Base64#DONT_BREAK_LINES
 		 * @since 1.3
 		 */
-		public OutputStream(java.io.OutputStream pOut, int options)
-		{
+		public OutputStream(java.io.OutputStream pOut, int options) {
 			super(pOut);
 			// this.options = options;
 			breakLines = (options & DONT_BREAK_LINES) != DONT_BREAK_LINES;
@@ -1285,26 +1086,22 @@ public class Base64
 		 * @since 1.3
 		 */
 		@Override
-		public void write(int theByte) throws java.io.IOException
-		{
+		public void write(int theByte) throws java.io.IOException {
 			// Encoding suspended?
-			if (suspendEncoding)
-			{
+			if (suspendEncoding) {
 				super.out.write(theByte);
 				return;
 			} // end if: supsended
 
 			// Encode?
-			if (encode)
-			{
+			if (encode) {
 				buffer[position++] = (byte) theByte;
 				if (position >= bufferLength) // Enough to encode.
 				{
 					out.write(encode3to4(b4, buffer, bufferLength));
 
 					lineLength += 4;
-					if (breakLines && lineLength >= MAX_LINE_LENGTH)
-					{
+					if (breakLines && lineLength >= MAX_LINE_LENGTH) {
 						out.write(NEW_LINE);
 						lineLength = 0;
 					} // end if: end of line
@@ -1314,11 +1111,9 @@ public class Base64
 			} // end if: encoding
 
 			// Else, Decoding
-			else
-			{
+			else {
 				// Meaningful Base64 character?
-				if (DECODABET[theByte & 0x7f] > WHITE_SPACE_ENC)
-				{
+				if (DECODABET[theByte & 0x7f] > WHITE_SPACE_ENC) {
 					buffer[position++] = (byte) theByte;
 					if (position >= bufferLength) // Enough to output.
 					{
@@ -1328,8 +1123,7 @@ public class Base64
 						position = 0;
 					} // end if: enough to output
 				} // end if: meaningful base64 character
-				else if (DECODABET[theByte & 0x7f] != WHITE_SPACE_ENC)
-				{
+				else if (DECODABET[theByte & 0x7f] != WHITE_SPACE_ENC) {
 					throw new java.io.IOException("Invalid character in Base64 data.");
 				} // end else: not white space either
 			} // end else: decoding
@@ -1345,17 +1139,14 @@ public class Base64
 		 * @since 1.3
 		 */
 		@Override
-		public void write(byte[] theBytes, int off, int len) throws java.io.IOException
-		{
+		public void write(byte[] theBytes, int off, int len) throws java.io.IOException {
 			// Encoding suspended?
-			if (suspendEncoding)
-			{
+			if (suspendEncoding) {
 				super.out.write(theBytes, off, len);
 				return;
 			} // end if: supsended
 
-			for (int i = 0; i < len; i++)
-			{
+			for (int i = 0; i < len; i++) {
 				write(theBytes[off + i]);
 			} // end for: each byte written
 		} // end write
@@ -1364,17 +1155,13 @@ public class Base64
 		 * Method added by PHIL. [Thanks, PHIL. -Rob] This pads the buffer
 		 * without closing the stream.
 		 */
-		public void flushBase64() throws java.io.IOException
-		{
-			if (position > 0)
-			{
-				if (encode)
-				{
+		public void flushBase64() throws java.io.IOException {
+			if (position > 0) {
+				if (encode) {
 					out.write(encode3to4(b4, buffer, position));
 					position = 0;
 				} // end if: encoding
-				else
-				{
+				else {
 					throw new java.io.IOException("Base64 input not properly padded.");
 				} // end else: decoding
 			} // end if: buffer partially full
@@ -1386,8 +1173,7 @@ public class Base64
 		 * @since 1.3
 		 */
 		@Override
-		public void close() throws java.io.IOException
-		{
+		public void close() throws java.io.IOException {
 			// 1. Ensure that pending characters are written
 			flushBase64();
 
@@ -1405,8 +1191,7 @@ public class Base64
 		 *
 		 * @since 1.5.1
 		 */
-		public void suspendEncoding() throws java.io.IOException
-		{
+		public void suspendEncoding() throws java.io.IOException {
 			flushBase64();
 			suspendEncoding = true;
 		} // end suspendEncoding
@@ -1417,8 +1202,7 @@ public class Base64
 		 *
 		 * @since 1.5.1
 		 */
-		public void resumeEncoding()
-		{
+		public void resumeEncoding() {
 			suspendEncoding = false;
 		} // end resumeEncoding
 	} // end inner class OutputStream

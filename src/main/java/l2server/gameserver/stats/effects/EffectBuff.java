@@ -23,47 +23,40 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 /**
  * @author mkizub
  */
-public class EffectBuff extends L2Effect
-{
-	public EffectBuff(Env env, L2EffectTemplate template)
-	{
+public class EffectBuff extends L2Effect {
+	public EffectBuff(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
-
+	
 	// Special constructor to steal this effect
-	public EffectBuff(Env env, L2Effect effect)
-	{
+	public EffectBuff(Env env, L2Effect effect) {
 		super(env, effect);
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#effectCanBeStolen()
 	 */
 	@Override
-	protected boolean effectCanBeStolen()
-	{
+	protected boolean effectCanBeStolen() {
 		return true;
 	}
-
+	
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.BUFF;
 	}
-
+	
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		// just stop this effect
 		return false;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		super.onExit();
 		/*if (getEffector() != null && getEffector() instanceof L2MonsterInstance)
         {

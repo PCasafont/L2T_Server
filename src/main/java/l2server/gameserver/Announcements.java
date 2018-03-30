@@ -28,11 +28,7 @@ import l2server.gameserver.util.Broadcast;
 import l2server.log.Log;
 import l2server.util.StringUtil;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.LineNumberReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -44,64 +40,49 @@ import java.util.logging.Level;
  *
  * @version $Revision: 1.5.2.1.2.7 $ $Date: 2005/03/29 23:15:14 $
  */
-public class Announcements
-{
+public class Announcements {
 
 	private List<String> announcements = new ArrayList<>();
 	private List<List<Object>> eventAnnouncements = new ArrayList<>();
 
-	private Announcements()
-	{
+	private Announcements() {
 		loadAnnouncements();
 	}
 
-	public static Announcements getInstance()
-	{
+	public static Announcements getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	public void loadAnnouncements()
-	{
+	public void loadAnnouncements() {
 		announcements.clear();
 
 		File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/announcements.txt");
-		if (file.exists())
-		{
+		if (file.exists()) {
 			readFromDisk(file);
-		}
-		else
-		{
+		} else {
 			file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "announcements.txt");
-			if (file.exists())
-			{
+			if (file.exists()) {
 				readFromDisk(file);
-			}
-			else
-			{
+			} else {
 				Log.warning(Config.DATA_FOLDER + "announcements.txt doesn't exist");
 			}
 		}
 	}
 
-	public void showAnnouncements(L2PcInstance activeChar)
-	{
-		for (String announcement : announcements)
-		{
+	public void showAnnouncements(L2PcInstance activeChar) {
+		for (String announcement : announcements) {
 			CreatureSay cs = new CreatureSay(0, Say2.ANNOUNCEMENT, activeChar.getName(), announcement);
 			activeChar.sendPacket(cs);
 		}
 
-		for (List<Object> entry : eventAnnouncements)
-		{
+		for (List<Object> entry : eventAnnouncements) {
 			DateRange validDateRange = (DateRange) entry.get(0);
 			String[] msg = (String[]) entry.get(1);
 			Date currentDate = new Date();
 
-			if (!validDateRange.isValid() || validDateRange.isWithinRange(currentDate))
-			{
+			if (!validDateRange.isValid() || validDateRange.isWithinRange(currentDate)) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1);
-				for (String element : msg)
-				{
+				for (String element : msg) {
 					sm.addString(element);
 				}
 				activeChar.sendPacket(sm);
@@ -109,23 +90,22 @@ public class Announcements
 		}
 	}
 
-	public void addEventAnnouncement(DateRange validDateRange, String[] msg)
-	{
+	public void addEventAnnouncement(DateRange validDateRange, String[] msg) {
 		List<Object> entry = new ArrayList<>();
 		entry.add(validDateRange);
 		entry.add(msg);
 		eventAnnouncements.add(entry);
 	}
 
-	public void listAnnouncements(L2PcInstance activeChar)
-	{
+	public void listAnnouncements(L2PcInstance activeChar) {
 		String content = HtmCache.getInstance().getHtmForce(activeChar.getHtmlPrefix(), "admin/announce.htm");
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		adminReply.setHtml(content);
 		final StringBuilder replyMSG = StringUtil.startAppend(500, "<br>");
-		for (int i = 0; i < announcements.size(); i++)
-		{
-			StringUtil.append(replyMSG, "<table width=260><tr><td width=220>", announcements.get(i),
+		for (int i = 0; i < announcements.size(); i++) {
+			StringUtil.append(replyMSG,
+					"<table width=260><tr><td width=220>",
+					announcements.get(i),
 					"</td><td width=40>" + "<button value=\"Delete\" action=\"bypass -h admin_del_announcement ",
 					String.valueOf(i),
 					"\" width=60 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table>");
@@ -134,31 +114,25 @@ public class Announcements
 		activeChar.sendPacket(adminReply);
 	}
 
-	public void addAnnouncement(String text)
-	{
+	public void addAnnouncement(String text) {
 		announcements.add(text);
 		saveToDisk();
 	}
 
-	public void delAnnouncement(int line)
-	{
+	public void delAnnouncement(int line) {
 		announcements.remove(line);
 		saveToDisk();
 	}
 
-	private void readFromDisk(File file)
-	{
+	private void readFromDisk(File file) {
 		LineNumberReader lnr = null;
-		try
-		{
+		try {
 			int i = 0;
 			String line = null;
 			lnr = new LineNumberReader(new FileReader(file));
-			while ((line = lnr.readLine()) != null)
-			{
+			while ((line = lnr.readLine()) != null) {
 				StringTokenizer st = new StringTokenizer(line, "\n\r");
-				if (st.hasMoreTokens())
-				{
+				if (st.hasMoreTokens()) {
 					String announcement = st.nextToken();
 					announcements.add(announcement);
 
@@ -166,94 +140,69 @@ public class Announcements
 				}
 			}
 
-			if (Config.DEBUG)
-			{
+			if (Config.DEBUG) {
 				Log.info("Announcements: Loaded " + i + " Announcements.");
 			}
-		}
-		catch (IOException e1)
-		{
+		} catch (IOException e1) {
 			Log.log(Level.SEVERE, "Error reading announcements: ", e1);
-		}
-		finally
-		{
-			try
-			{
+		} finally {
+			try {
 				lnr.close();
-			}
-			catch (Exception e2)
-			{
+			} catch (Exception e2) {
 				// nothing
 			}
 		}
 	}
 
-	private void saveToDisk()
-	{
+	private void saveToDisk() {
 		File file = new File("data_" + Config.SERVER_NAME + "/announcements.txt");
 		FileWriter save = null;
 
-		try
-		{
+		try {
 			save = new FileWriter(file);
-			for (String announcement : announcements)
-			{
+			for (String announcement : announcements) {
 				save.write(announcement);
 				save.write("\r\n");
 			}
-		}
-		catch (IOException e)
-		{
+		} catch (IOException e) {
 			Log.log(Level.SEVERE, "Saving to the announcements file has failed: ", e);
-		}
-		finally
-		{
-			try
-			{
+		} finally {
+			try {
 				save.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
 
-	public void announceToAll(String text)
-	{
+	public void announceToAll(String text) {
 		Broadcast.announceToOnlinePlayers(text);
 	}
 
-	public void announceToAll(SystemMessage sm)
-	{
+	public void announceToAll(SystemMessage sm) {
 		Broadcast.toAllOnlinePlayers(sm);
 	}
 
-	public void announceToInstance(SystemMessage sm, int instanceId)
-	{
+	public void announceToInstance(SystemMessage sm, int instanceId) {
 		Broadcast.toPlayersInInstance(sm, instanceId);
 	}
 
 	// Method for handling announcements from admin
-	public void handleAnnounce(String command, int lengthToTrim)
-	{
-		try
-		{
+	public void handleAnnounce(String command, int lengthToTrim) {
+		try {
 			// Announce string to everyone on server
 			String text = command.substring(lengthToTrim);
 			SingletonHolder.instance.announceToAll(text);
 		}
 
 		// No body cares!
-		catch (StringIndexOutOfBoundsException e)
-		{
+		catch (StringIndexOutOfBoundsException e) {
 			// empty message.. ignore
 		}
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final Announcements instance = new Announcements();
 	}
 }

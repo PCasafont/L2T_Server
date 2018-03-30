@@ -23,8 +23,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author Forsaiken
  */
-public final class AuctionDateGenerator
-{
+public final class AuctionDateGenerator {
 	public static final String FIELD_INTERVAL = "interval";
 	public static final String FIELD_DAY_OF_WEEK = "day_of_week";
 	public static final String FIELD_HOUR_OF_DAY = "hour_of_day";
@@ -39,8 +38,7 @@ public final class AuctionDateGenerator
 	private int _hour_of_day;
 	private int _minute_of_hour;
 
-	public AuctionDateGenerator(final StatsSet config) throws IllegalArgumentException
-	{
+	public AuctionDateGenerator(final StatsSet config) throws IllegalArgumentException {
 		calendar = Calendar.getInstance();
 		interval = config.getInteger(FIELD_INTERVAL, -1);
 		_day_of_week = config.getInteger(FIELD_DAY_OF_WEEK, -1);
@@ -52,16 +50,14 @@ public final class AuctionDateGenerator
 		checkMinuteOfHour(0);
 	}
 
-	public synchronized final long nextDate(final long date)
-	{
+	public synchronized final long nextDate(final long date) {
 		calendar.setTimeInMillis(date);
 		calendar.set(Calendar.MILLISECOND, 0);
 		calendar.set(Calendar.SECOND, 0);
 
 		calendar.set(Calendar.MINUTE, _minute_of_hour);
 		calendar.set(Calendar.HOUR_OF_DAY, _hour_of_day);
-		if (_day_of_week > 0)
-		{
+		if (_day_of_week > 0) {
 			calendar.set(Calendar.DAY_OF_WEEK, _day_of_week);
 			return calcDestTime(calendar.getTimeInMillis(), date, MILLIS_IN_WEEK);
 		}
@@ -69,58 +65,44 @@ public final class AuctionDateGenerator
 		return calcDestTime(calendar.getTimeInMillis(), date, TimeUnit.MILLISECONDS.convert(interval, TimeUnit.DAYS));
 	}
 
-	private long calcDestTime(long time, final long date, final long add)
-	{
-		if (time < date)
-		{
+	private long calcDestTime(long time, final long date, final long add) {
+		if (time < date) {
 			time += (date - time) / add * add;
-			if (time < date)
-			{
+			if (time < date) {
 				time += add;
 			}
 		}
 		return time;
 	}
 
-	private void checkDayOfWeek(final int defaultValue)
-	{
-		if (_day_of_week < 1 || _day_of_week > 7)
-		{
-			if (defaultValue == -1 && interval < 1)
-			{
-				throw new IllegalArgumentException("Illegal params for '" + FIELD_DAY_OF_WEEK + "': " +
-						(_day_of_week == -1 ? "not found" : _day_of_week));
+	private void checkDayOfWeek(final int defaultValue) {
+		if (_day_of_week < 1 || _day_of_week > 7) {
+			if (defaultValue == -1 && interval < 1) {
+				throw new IllegalArgumentException(
+						"Illegal params for '" + FIELD_DAY_OF_WEEK + "': " + (_day_of_week == -1 ? "not found" : _day_of_week));
 			}
 			_day_of_week = defaultValue;
-		}
-		else if (interval > 1)
-		{
-			throw new IllegalArgumentException("Illegal params for '" + FIELD_INTERVAL + "' and '" + FIELD_DAY_OF_WEEK +
-					"': you can use only one, not both");
+		} else if (interval > 1) {
+			throw new IllegalArgumentException(
+					"Illegal params for '" + FIELD_INTERVAL + "' and '" + FIELD_DAY_OF_WEEK + "': you can use only one, not both");
 		}
 	}
 
-	private void checkHourOfDay(final int defaultValue)
-	{
-		if (_hour_of_day < 0 || _hour_of_day > 23)
-		{
-			if (defaultValue == -1)
-			{
-				throw new IllegalArgumentException("Illegal params for '" + FIELD_HOUR_OF_DAY + "': " +
-						(_hour_of_day == -1 ? "not found" : _hour_of_day));
+	private void checkHourOfDay(final int defaultValue) {
+		if (_hour_of_day < 0 || _hour_of_day > 23) {
+			if (defaultValue == -1) {
+				throw new IllegalArgumentException(
+						"Illegal params for '" + FIELD_HOUR_OF_DAY + "': " + (_hour_of_day == -1 ? "not found" : _hour_of_day));
 			}
 			_hour_of_day = defaultValue;
 		}
 	}
 
-	private void checkMinuteOfHour(final int defaultValue)
-	{
-		if (_minute_of_hour < 0 || _minute_of_hour > 59)
-		{
-			if (defaultValue == -1)
-			{
-				throw new IllegalArgumentException("Illegal params for '" + FIELD_MINUTE_OF_HOUR + "': " +
-						(_minute_of_hour == -1 ? "not found" : _minute_of_hour));
+	private void checkMinuteOfHour(final int defaultValue) {
+		if (_minute_of_hour < 0 || _minute_of_hour > 59) {
+			if (defaultValue == -1) {
+				throw new IllegalArgumentException(
+						"Illegal params for '" + FIELD_MINUTE_OF_HOUR + "': " + (_minute_of_hour == -1 ? "not found" : _minute_of_hour));
 			}
 			_minute_of_hour = defaultValue;
 		}

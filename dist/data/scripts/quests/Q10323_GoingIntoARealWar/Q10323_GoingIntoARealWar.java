@@ -37,33 +37,31 @@ import java.util.List;
 /**
  * @author Pere
  */
-public class Q10323_GoingIntoARealWar extends Quest
-{
+public class Q10323_GoingIntoARealWar extends Quest {
 	// Quest
 	public static String qn = "Q10323_GoingIntoARealWar";
-
+	
 	// Items
 	private int key = 17574;
-
+	
 	// NPCs
 	private int yibein = 33464;
 	private int holden = 33194;
 	private int shannon = 32974;
-
+	
 	private int guideId = 33006;
 	private List<L2NpcWalkerNode> guideRoute = new ArrayList<L2NpcWalkerNode>();
 	private int guideFirstChatId = 1032304;
 	private int guideWaitChatId = 1032305;
 	private int guideLastChatId = 1032306;
-
+	
 	private int trainerGuard = 33021;
 	private int teleporterGuard = 33193;
 	private int trainingGuard = 19141;
 	private int monster1 = 23113;
 	private int monster2 = 23114;
-
-	public Q10323_GoingIntoARealWar(int questId, String name, String descr)
-	{
+	
+	public Q10323_GoingIntoARealWar(int questId, String name, String descr) {
 		super(questId, name, descr);
 		addStartNpc(yibein);
 		addTalkId(yibein);
@@ -74,10 +72,10 @@ public class Q10323_GoingIntoARealWar extends Quest
 		addTalkId(teleporterGuard);
 		addKillId(monster1);
 		addKillId(monster2);
-
+		
 		addEventId(guideId, QuestEventType.ON_ARRIVED);
 		addEventId(guideId, QuestEventType.ON_PLAYER_ARRIVED);
-
+		
 		guideRoute.add(new L2NpcWalkerNode(-110596, 253644, -1784, 0, "", true));
 		guideRoute.add(new L2NpcWalkerNode(-110486, 253523, -1776, 0, "", true));
 		guideRoute.add(new L2NpcWalkerNode(-110381, 253406, -1776, 0, "", true));
@@ -86,161 +84,129 @@ public class Q10323_GoingIntoARealWar extends Quest
 		guideRoute.add(new L2NpcWalkerNode(-110127, 252685, -1960, 0, "", true));
 		guideRoute.add(new L2NpcWalkerNode(-110172, 252528, -1984, 0, "", true));
 	}
-
+	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, final L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, final L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
-
-		if (st == null)
-		{
+		
+		if (st == null) {
 			return htmltext;
 		}
-
-		if (npc.getNpcId() == yibein && event.equalsIgnoreCase("33464-03.htm"))
-		{
+		
+		if (npc.getNpcId() == yibein && event.equalsIgnoreCase("33464-03.htm")) {
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
-
+			
 			final L2Npc guide = addSpawn(guideId, -110596, 253644, -1784, 0, false, 600000);
 			L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide);
 			guide.setAI(guideAI);
 			guideAI.initializeRoute(guideRoute, player);
 			guideAI.setWaiting(true);
-
+			
 			NpcSay ns = new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideFirstChatId);
 			ns.addStringParameter(player.getName());
 			guide.broadcastPacket(ns);
-
+			
 			// Delete in 1 min
-			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-			{
+			ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
 				@Override
-				public void run()
-				{
-					if (guide.isDecayed())
-					{
+				public void run() {
+					if (guide.isDecayed()) {
 						return;
 					}
-					if (!player.isInsideRadius(guide, 1000, false, false))
-					{
+					if (!player.isInsideRadius(guide, 1000, false, false)) {
 						guide.deleteMe();
-					}
-					else
-					{
+					} else {
 						ThreadPoolManager.getInstance().scheduleAi(this, 60000);
 					}
 				}
 			}, 60000);
-
+			
 			st.giveItems(key, 1);
-		}
-		else if (npc.getNpcId() == shannon && event.equalsIgnoreCase("32974-02.htm") && st.getInt("cond") == 8)
-		{
+		} else if (npc.getNpcId() == shannon && event.equalsIgnoreCase("32974-02.htm") && st.getInt("cond") == 8) {
 			st.unset("cond");
 			st.takeItems(key, -1);
 			st.giveItems(57, 9000);
 			st.addExpAndSp(300, 1500);
 			st.playSound("ItemSound.quest_finish");
 			st.exitQuest(false);
-
+			
 			// Main quests state
 			player.setGlobalQuestFlag(GlobalQuest.STARTING, 4);
 		}
 		return htmltext;
 	}
-
+	
 	@Override
-	public String onFirstTalk(L2Npc npc, final L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, final L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = player.getQuestState(qn);
-
-		if (st == null)
-		{
+		
+		if (st == null) {
 			return htmltext;
 		}
-
-		if (npc.getNpcId() == trainerGuard)
-		{
-			if (st.getInt("cond") == 3)
-			{
+		
+		if (npc.getNpcId() == trainerGuard) {
+			if (st.getInt("cond") == 3) {
 				st.set("cond", "4");
 				st.playSound("ItemSound.quest_middle");
-
+				
 				player.sendPacket(new ExShowScreenMessage(1032349, 0, true, 5000));
-
-				if (player.isMageClass())
-				{
+				
+				if (player.isMageClass()) {
 					st.giveItems(2509, 500);
 					htmltext = "33021-02.htm";
-				}
-				else
-				{
+				} else {
 					st.giveItems(1835, 500);
 					htmltext = "33021-01.htm";
 				}
-
+				
 				// Show this in 5 sec
-				ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-				{
+				ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
 					@Override
-					public void run()
-					{
+					public void run() {
 						st.set("cond", "5");
 						//st.playSound("ItemSound.quest_middle");
 						player.sendPacket(new ExShowScreenMessage(1032350, 0, true, 5000));
 						player.sendPacket(new TutorialShowHtml(2, "..\\L2text\\QT_003_bullet_01.htm"));
 					}
 				}, 5000);
-			}
-			else if (st.getInt("cond") == 4 || st.getInt("cond") == 5)
-			{
+			} else if (st.getInt("cond") == 4 || st.getInt("cond") == 5) {
 				st.set("cond", "7");
 				st.playSound("ItemSound.quest_middle");
 				addSpawn(monster1, -114047, 248425, -7872, 0, false, 0, false, player.getObjectId());
 				addSpawn(monster1, -114999, 248279, -7872, 0, false, 0, false, player.getObjectId());
 				addSpawn(monster1, -114974, 247961, -7872, 0, false, 0, false, player.getObjectId());
 				addSpawn(monster1, -114532, 248503, -7872, 0, false, 0, false, player.getObjectId());
-
-				if (player.isMageClass())
-				{
+				
+				if (player.isMageClass()) {
 					htmltext = "33021-06.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "33021-05.htm";
 				}
 			}
 		}
-
+		
 		return htmltext;
 	}
-
+	
 	@Override
-	public String onTalk(L2Npc npc, final L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, final L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
-
-		if (st == null)
-		{
+		
+		if (st == null) {
 			return htmltext;
 		}
-
-		if (npc.getNpcId() == yibein)
-		{
-			switch (st.getState())
-			{
+		
+		if (npc.getNpcId() == yibein) {
+			switch (st.getState()) {
 				case State.CREATED:
-					if (canStart(player))
-					{
+					if (canStart(player)) {
 						htmltext = "33464-01.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "33464-00.htm"; // TODO
 					}
 					break;
@@ -251,15 +217,12 @@ public class Q10323_GoingIntoARealWar extends Quest
 					htmltext = "33464-05.htm"; // TODO
 					break;
 			}
-		}
-		else if (npc.getNpcId() == holden && st.getInt("cond") >= 1 && st.getInt("cond") <= 7)
-		{
-			if (st.getInt("cond") == 1)
-			{
+		} else if (npc.getNpcId() == holden && st.getInt("cond") >= 1 && st.getInt("cond") <= 7) {
+			if (st.getInt("cond") == 1) {
 				st.set("cond", "2");
 				st.playSound("ItemSound.quest_middle");
 			}
-
+			
 			InstanceManager.getInstance().createInstance(player.getObjectId());
 			addSpawn(trainerGuard, -114875, 248336, -7872, 62000, false, 0, false, player.getObjectId());
 			addSpawn(teleporterGuard, -114014, 247680, -7872, 13665, false, 0, false, player.getObjectId());
@@ -271,64 +234,48 @@ public class Q10323_GoingIntoARealWar extends Quest
 			addSpawn(monster1, -114999, 248279, -7872, 0, false, 0, false, player.getObjectId());
 			addSpawn(monster1, -114974, 247961, -7872, 0, false, 0, false, player.getObjectId());
 			addSpawn(monster1, -114532, 248503, -7872, 0, false, 0, false, player.getObjectId());
-
+			
 			player.setInstanceId(player.getObjectId());
 			player.teleToLocation(-113814, 247731, -7872, false);
 			return null;
-		}
-		else if (npc.getNpcId() == teleporterGuard && st.getInt("cond") == 8)
-		{
+		} else if (npc.getNpcId() == teleporterGuard && st.getInt("cond") == 8) {
 			player.teleToLocation(-110415, 252423, -1992, false);
 			player.setInstanceId(0);
 			InstanceManager.getInstance().destroyInstance(player.getObjectId());
 			return null;
-		}
-		else if (npc.getNpcId() == shannon && st.getInt("cond") == 8)
-		{
+		} else if (npc.getNpcId() == shannon && st.getInt("cond") == 8) {
 			htmltext = "32974-01.htm";
 		}
 		return htmltext;
 	}
-
+	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
-
-		if (npc.getNpcId() == monster1 || npc.getNpcId() == monster2)
-		{
-			if (st.getInt("cond") == 2)
-			{
+		
+		if (npc.getNpcId() == monster1 || npc.getNpcId() == monster2) {
+			if (st.getInt("cond") == 2) {
 				boolean allDead = true;
-				for (L2Npc iNpc : InstanceManager.getInstance().getInstance(player.getObjectId()).getNpcs())
-				{
-					if (iNpc instanceof L2MonsterInstance && iNpc.getObjectId() != npc.getObjectId() && !iNpc.isDead())
-					{
+				for (L2Npc iNpc : InstanceManager.getInstance().getInstance(player.getObjectId()).getNpcs()) {
+					if (iNpc instanceof L2MonsterInstance && iNpc.getObjectId() != npc.getObjectId() && !iNpc.isDead()) {
 						allDead = false;
 					}
 				}
-				if (allDead)
-				{
+				if (allDead) {
 					st.set("cond", "3");
 					st.playSound("ItemSound.quest_middle");
 				}
-			}
-			else if (st.getInt("cond") == 7)
-			{
+			} else if (st.getInt("cond") == 7) {
 				boolean allDead = true;
-				for (L2Npc iNpc : InstanceManager.getInstance().getInstance(player.getObjectId()).getNpcs())
-				{
-					if (iNpc instanceof L2MonsterInstance && iNpc.getObjectId() != npc.getObjectId() && !iNpc.isDead())
-					{
+				for (L2Npc iNpc : InstanceManager.getInstance().getInstance(player.getObjectId()).getNpcs()) {
+					if (iNpc instanceof L2MonsterInstance && iNpc.getObjectId() != npc.getObjectId() && !iNpc.isDead()) {
 						allDead = false;
 					}
 				}
-				if (allDead)
-				{
+				if (allDead) {
 					st.set("cond", "8");
 					st.playSound("ItemSound.quest_middle");
 				}
@@ -336,51 +283,40 @@ public class Q10323_GoingIntoARealWar extends Quest
 		}
 		return null;
 	}
-
+	
 	@Override
-	public String onArrived(final L2NpcWalkerAI guideAI)
-	{
+	public String onArrived(final L2NpcWalkerAI guideAI) {
 		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) ||
-				guideAI.getCurrentPos() == guideRoute.size() - 1)
-		{
-			if (guideAI.getCurrentPos() == 1)
-			{
+				guideAI.getCurrentPos() == guideRoute.size() - 1) {
+			if (guideAI.getCurrentPos() == 1) {
 				guideAI.setWaiting(true);
 				return null;
 			}
 			int chatId = guideLastChatId;
-			if (guideAI.getCurrentPos() != guideRoute.size() - 1)
-			{
+			if (guideAI.getCurrentPos() != guideRoute.size() - 1) {
 				guideAI.walkToGuided(40);
 				chatId = guideWaitChatId;
 			}
-			NpcSay ns =
-					new NpcSay(guideAI.getActor().getObjectId(), Say2.ALL_NOT_RECORDED, guideAI.getActor().getNpcId(),
-							chatId);
+			NpcSay ns = new NpcSay(guideAI.getActor().getObjectId(), Say2.ALL_NOT_RECORDED, guideAI.getActor().getNpcId(), chatId);
 			ns.addStringParameter(guideAI.getGuided().getName());
 			guideAI.getActor().broadcastPacket(ns);
 			guideAI.setWaiting(true);
 			return null;
 		}
-
+		
 		guideAI.walkToLocation();
 		guideAI.setWaiting(false);
 		return null;
 	}
-
+	
 	@Override
-	public String onPlayerArrived(final L2NpcWalkerAI guideAI)
-	{
-		if (guideAI.getCurrentPos() == guideRoute.size() - 1)
-		{
+	public String onPlayerArrived(final L2NpcWalkerAI guideAI) {
+		if (guideAI.getCurrentPos() == guideRoute.size() - 1) {
 			// Delete in 5 sec
-			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-			{
+			ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
 				@Override
-				public void run()
-				{
-					if (!guideAI.getActor().isDecayed())
-					{
+				public void run() {
+					if (!guideAI.getActor().isDecayed()) {
 						guideAI.getActor().deleteMe();
 					}
 				}
@@ -391,25 +327,21 @@ public class Q10323_GoingIntoARealWar extends Quest
 		guideAI.setWaiting(false);
 		return null;
 	}
-
+	
 	@Override
-	public int getOnKillDelay(int npcId)
-	{
-		if (npcId == monster1 || npcId == monster2)
-		{
+	public int getOnKillDelay(int npcId) {
+		if (npcId == monster1 || npcId == monster2) {
 			return 0;
 		}
 		return super.getOnKillDelay(npcId);
 	}
-
+	
 	@Override
-	public boolean canStart(L2PcInstance player)
-	{
+	public boolean canStart(L2PcInstance player) {
 		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 3) && player.getLevel() <= 20;
 	}
-
-	public static void main(String[] args)
-	{
+	
+	public static void main(String[] args) {
 		new Q10323_GoingIntoARealWar(10323, qn, "Using soulshots and spiritshots to Fight monsters.");
 	}
 }

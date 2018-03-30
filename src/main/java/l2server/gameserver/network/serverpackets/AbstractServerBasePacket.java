@@ -21,14 +21,13 @@ package l2server.gameserver.network.serverpackets;
  * @author galun
  * @version $Revision: $ $Date: $
  */
-public abstract class AbstractServerBasePacket extends L2GameServerPacket
-{
-
+public abstract class AbstractServerBasePacket extends L2GameServerPacket {
+	
 	/**
 	 */
 	@Override
 	abstract public void runImpl();
-
+	
 	/**
 	 */
 	@Override

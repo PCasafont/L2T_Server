@@ -22,20 +22,17 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @author KenM
  */
-public class ExDuelUpdateUserInfo extends L2GameServerPacket
-{
+public class ExDuelUpdateUserInfo extends L2GameServerPacket {
 	private L2PcInstance activeChar;
-
-	public ExDuelUpdateUserInfo(L2PcInstance cha)
-	{
+	
+	public ExDuelUpdateUserInfo(L2PcInstance cha) {
 		activeChar = cha;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeS(activeChar.getName());
 		writeD(activeChar.getObjectId());
 		writeD(activeChar.getCurrentClass().getId());

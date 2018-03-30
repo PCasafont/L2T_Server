@@ -24,26 +24,21 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
-public class StarStones extends L2AttackableAIScript
-{
+public class StarStones extends L2AttackableAIScript {
 	private static final int[] mobs = {18684, 18685, 18686, 18687, 18688, 18689, 18690, 18691, 18692};
 	private static final int RATE = 1;
 
-	public StarStones(int questId, String name, String descr)
-	{
+	public StarStones(int questId, String name, String descr) {
 		super(questId, name, descr);
 		this.registerMobs(mobs, QuestEventType.ON_SKILL_SEE);
 	}
 
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
-	{
-		if (Util.contains(targets, npc) && skill.getId() == 932)
-		{
+	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet) {
+		if (Util.contains(targets, npc) && skill.getId() == 932) {
 			int itemId = 0;
 
-			switch (npc.getNpcId())
-			{
+			switch (npc.getNpcId()) {
 				case 18684:
 				case 18685:
 				case 18686:
@@ -66,19 +61,14 @@ public class StarStones extends L2AttackableAIScript
 					// unknown npc!
 					return super.onSkillSee(npc, caster, skill, targets, isPet);
 			}
-			if (Rnd.get(100) < 33)
-			{
+			if (Rnd.get(100) < 33) {
 				caster.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_COLLECTION_HAS_SUCCEEDED));
 				caster.addItem("StarStone", itemId, Rnd.get(RATE + 1, 2 * RATE), null, true);
-			}
-			else if (skill.getLevel() == 1 && Rnd.get(100) < 15 || skill.getLevel() == 2 && Rnd.get(100) < 50 ||
-					skill.getLevel() == 3 && Rnd.get(100) < 75)
-			{
+			} else if (skill.getLevel() == 1 && Rnd.get(100) < 15 || skill.getLevel() == 2 && Rnd.get(100) < 50 ||
+					skill.getLevel() == 3 && Rnd.get(100) < 75) {
 				caster.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_COLLECTION_HAS_SUCCEEDED));
 				caster.addItem("StarStone", itemId, Rnd.get(1, RATE), null, true);
-			}
-			else
-			{
+			} else {
 				caster.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_COLLECTION_HAS_FAILED));
 			}
 			npc.deleteMe();
@@ -86,8 +76,7 @@ public class StarStones extends L2AttackableAIScript
 		return super.onSkillSee(npc, caster, skill, targets, isPet);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new StarStones(-1, "starstones", "ai");
 	}
 }

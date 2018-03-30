@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-    <item>
-        <ingredient count="100" id="37559" />     <!--   Shiny Coin -->
-        <production count="1" id="47215" />      <!--  Ring Of Authority -->
-    </item>
-    <item>
-          <ingredient count="100" id="37559" />     <!--   Shiny Coin -->
-          <production count="1" id="47217" />     <!--   Ring Of Authority -->
-     </item>
-  </list>
+	<item>
+		<ingredient count="100" id="37559" />     <!--   Shiny Coin -->
+		<production count="1" id="47215" />      <!--  Ring Of Authority -->
+	</item>
+	<item>
+		<ingredient count="100" id="37559" />     <!--   Shiny Coin -->
+		<production count="1" id="47217" />     <!--   Ring Of Authority -->
+	</item>
+</list>

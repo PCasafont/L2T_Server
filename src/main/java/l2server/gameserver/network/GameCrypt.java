@@ -1,27 +1,22 @@
 package l2server.gameserver.network;
 
-public class GameCrypt
-{
+public class GameCrypt {
 	private final byte[] inKey = new byte[16];
 	private final byte[] outKey = new byte[16];
 	private boolean isEnabled;
 
-	public void setKey(byte[] key)
-	{
+	public void setKey(byte[] key) {
 		System.arraycopy(key, 0, inKey, 0, 16);
 		System.arraycopy(key, 0, outKey, 0, 16);
 	}
 
-	public void decrypt(byte[] raw, final int offset, final int size)
-	{
-		if (!isEnabled)
-		{
+	public void decrypt(byte[] raw, final int offset, final int size) {
+		if (!isEnabled) {
 			return;
 		}
 
 		int temp = 0;
-		for (int i = 0; i < size; i++)
-		{
+		for (int i = 0; i < size; i++) {
 			int temp2 = raw[offset + i] & 0xFF;
 			raw[offset + i] = (byte) (temp2 ^ inKey[i & 15] ^ temp);
 			temp = temp2;
@@ -40,17 +35,14 @@ public class GameCrypt
 		inKey[11] = (byte) (old >> 0x18 & 0xff);
 	}
 
-	public void encrypt(byte[] raw, final int offset, final int size)
-	{
-		if (!isEnabled)
-		{
+	public void encrypt(byte[] raw, final int offset, final int size) {
+		if (!isEnabled) {
 			isEnabled = true;
 			return;
 		}
 
 		int temp = 0;
-		for (int i = 0; i < size; i++)
-		{
+		for (int i = 0; i < size; i++) {
 			int temp2 = raw[offset + i] & 0xFF;
 			temp = temp2 ^ outKey[i & 15] ^ temp;
 			raw[offset + i] = (byte) temp;

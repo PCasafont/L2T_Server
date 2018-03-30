@@ -23,26 +23,22 @@ import l2server.Config;
  *
  * @author mrTJO
  */
-public class RequestEx2ndPasswordVerify extends L2GameClientPacket
-{
-
+public class RequestEx2ndPasswordVerify extends L2GameClientPacket {
+	
 	//
 	String password;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		password = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
-		if (!Config.SECOND_AUTH_ENABLED)
-		{
+	protected void runImpl() {
+		if (!Config.SECOND_AUTH_ENABLED) {
 			return;
 		}
-
+		
 		getClient().getSecondaryAuth().checkPassword(password, false);
 	}
 }

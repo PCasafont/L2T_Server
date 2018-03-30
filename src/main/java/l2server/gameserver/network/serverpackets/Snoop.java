@@ -15,16 +15,14 @@
 
 package l2server.gameserver.network.serverpackets;
 
-public class Snoop extends L2GameServerPacket
-{
+public class Snoop extends L2GameServerPacket {
 	private int convoId;
 	private String name;
 	private int type;
 	private String speaker;
 	private String msg;
 
-	public Snoop(int id, String name, int type, String speaker, String msg)
-	{
+	public Snoop(int id, String name, int type, String speaker, String msg) {
 		convoId = id;
 		this.name = name;
 		this.type = type;
@@ -36,8 +34,7 @@ public class Snoop extends L2GameServerPacket
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(convoId);
 		writeS(name);
 		writeD(0x00); //??

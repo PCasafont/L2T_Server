@@ -25,93 +25,73 @@ import l2server.gameserver.network.serverpackets.ExAcquireSkillList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 
-public class L2FishermanInstance extends L2MerchantInstance
-{
+public class L2FishermanInstance extends L2MerchantInstance {
 	/**
 	 * @param objectId
 	 * @param template
 	 */
-	public L2FishermanInstance(int objectId, L2NpcTemplate template)
-	{
+	public L2FishermanInstance(int objectId, L2NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2FishermanInstance);
 	}
-
+	
 	@Override
-	public String getHtmlPath(int npcId, int val)
-	{
+	public String getHtmlPath(int npcId, int val) {
 		String pom = "";
-
-		if (val == 0)
-		{
+		
+		if (val == 0) {
 			pom = "" + npcId;
-		}
-		else
-		{
+		} else {
 			pom = npcId + "-" + val;
 		}
-
+		
 		return "fisherman/" + pom + ".htm";
 	}
-
+	
 	@Override
-	public String getHtmlPath(int npcId, String val)
-	{
+	public String getHtmlPath(int npcId, String val) {
 		String pom = "";
-		if (val.isEmpty() || val.equals("0"))
-		{
+		if (val.isEmpty() || val.equals("0")) {
 			pom = "" + npcId;
-		}
-		else
-		{
+		} else {
 			pom = npcId + "-" + val;
 		}
-
+		
 		return "fisherman/" + pom + ".htm";
 	}
-
-	public static void showFishSkillList(L2PcInstance player)
-	{
+	
+	public static void showFishSkillList(L2PcInstance player) {
 		L2SkillLearn[] skills = SkillTreeTable.getInstance().getAvailableSkills(player);
 		ExAcquireSkillList asl = new ExAcquireSkillList(ExAcquireSkillList.SkillType.Fishing);
-
+		
 		int counts = 0;
-
-		for (L2SkillLearn s : skills)
-		{
+		
+		for (L2SkillLearn s : skills) {
 			L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
-
-			if (sk == null)
-			{
+			
+			if (sk == null) {
 				continue;
 			}
-
+			
 			counts++;
 			asl.addSkill(s.getId(), s.getLevel(), s.getLevel(), s.getSpCost(), 1);
 		}
-
-		if (counts == 0)
-		{
+		
+		if (counts == 0) {
 			int minlevel = SkillTreeTable.getInstance().getMinLevelForNewSkill(player);
-
-			if (minlevel > 0)
-			{
+			
+			if (minlevel > 0) {
 				// No more skills to learn, come back when you level.
-				SystemMessage sm =
-						SystemMessage.getSystemMessage(SystemMessageId.DO_NOT_HAVE_FURTHER_SKILLS_TO_LEARN_S1);
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.DO_NOT_HAVE_FURTHER_SKILLS_TO_LEARN_S1);
 				sm.addNumber(minlevel);
 				player.sendPacket(sm);
-			}
-			else
-			{
+			} else {
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_MORE_SKILLS_TO_LEARN));
 			}
-		}
-		else
-		{
+		} else {
 			player.sendPacket(asl);
 		}
-
+		
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 }

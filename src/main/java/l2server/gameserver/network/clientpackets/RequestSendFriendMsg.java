@@ -36,51 +36,42 @@ import java.sql.PreparedStatement;
  *
  * @author Tempy
  */
-public final class RequestSendFriendMsg extends L2GameClientPacket
-{
+public final class RequestSendFriendMsg extends L2GameClientPacket {
 	//private static Logger logChat = Logger.getLogger("chat");
-
+	
 	private String message;
 	private String reciever;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		message = readS();
 		reciever = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (message == null || message.isEmpty() || message.length() > 300)
-		{
+		
+		if (message == null || message.isEmpty() || message.length() > 300) {
 			return;
 		}
-
+		
 		final L2PcInstance targetPlayer = L2World.getInstance().getPlayer(reciever);
-		if (targetPlayer == null || !targetPlayer.getFriendList().contains(activeChar.getObjectId()))
-		{
+		if (targetPlayer == null || !targetPlayer.getFriendList().contains(activeChar.getObjectId())) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME));
 			return;
 		}
-
-		if (Config.LOG_CHAT)
-		{
+		
+		if (Config.LOG_CHAT) {
 			Connection con = null;
-			try
-			{
+			try {
 				con = L2DatabaseFactory.getInstance().getConnection();
-
-				PreparedStatement statement = con.prepareStatement(
-						"INSERT INTO log_chat(time, type, talker, listener, text) VALUES (?,?,?,?,?);");
-
+				
+				PreparedStatement statement = con.prepareStatement("INSERT INTO log_chat(time, type, talker, listener, text) VALUES (?,?,?,?,?);");
+				
 				statement.setLong(1, System.currentTimeMillis());
 				statement.setString(2, "TELL");
 				statement.setString(3, activeChar.getName());
@@ -88,13 +79,9 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 				statement.setString(5, message);
 				statement.execute();
 				statement.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
-			}
-			finally
-			{
+			} finally {
 				L2DatabaseFactory.close(con);
 			}
 			/*LogRecord record = new LogRecord(Level.INFO, message);
@@ -103,7 +90,7 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 
 			logChat.log(record);*/
 		}
-
+		
 		targetPlayer.sendPacket(new L2FriendSay(activeChar.getName(), reciever, message));
 	}
 }

@@ -23,10 +23,8 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 /**
  * @author LBaldi
  */
-public class EffectBigHead extends L2Effect
-{
-	public EffectBigHead(Env env, L2EffectTemplate template)
-	{
+public class EffectBigHead extends L2Effect {
+	public EffectBigHead(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -34,8 +32,7 @@ public class EffectBigHead extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		getEffected().startVisualEffect(VisualEffect.BIG_HEAD);
 		return true;
 	}
@@ -44,8 +41,7 @@ public class EffectBigHead extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		getEffected().stopVisualEffect(VisualEffect.BIG_HEAD);
 	}
 
@@ -53,8 +49,7 @@ public class EffectBigHead extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 }

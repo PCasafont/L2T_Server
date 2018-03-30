@@ -17,8 +17,7 @@ package l2server.gameserver.model.actor.poly;
 
 import l2server.gameserver.model.L2Object;
 
-public class ObjectPoly
-{
+public class ObjectPoly {
 	// =========================================================
 	// Data Field
 	private L2Object activeObject;
@@ -27,15 +26,13 @@ public class ObjectPoly
 
 	// =========================================================
 	// Constructor
-	public ObjectPoly(L2Object activeObject)
-	{
+	public ObjectPoly(L2Object activeObject) {
 		this.activeObject = activeObject;
 	}
 
 	// =========================================================
 	// Method - Public
-	public void setPolyInfo(String polyType, String polyId)
-	{
+	public void setPolyInfo(String polyType, String polyId) {
 		setPolyId(Integer.parseInt(polyId));
 		setPolyType(polyType);
 	}
@@ -45,33 +42,27 @@ public class ObjectPoly
 
 	// =========================================================
 	// Property - Public
-	public final L2Object getActiveObject()
-	{
+	public final L2Object getActiveObject() {
 		return activeObject;
 	}
 
-	public final boolean isMorphed()
-	{
+	public final boolean isMorphed() {
 		return getPolyType() != null;
 	}
 
-	public final int getPolyId()
-	{
+	public final int getPolyId() {
 		return polyId;
 	}
 
-	public final void setPolyId(int value)
-	{
+	public final void setPolyId(int value) {
 		polyId = value;
 	}
 
-	public final String getPolyType()
-	{
+	public final String getPolyType() {
 		return polyType;
 	}
 
-	public final void setPolyType(String value)
-	{
+	public final void setPolyType(String value) {
 		polyType = value;
 	}
 }

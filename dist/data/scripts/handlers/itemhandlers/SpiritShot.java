@@ -34,16 +34,13 @@ import l2server.gameserver.util.Broadcast;
  * @version $Revision: 1.1.2.1.2.5 $ $Date: 2005/03/27 15:30:07 $
  */
 
-public class SpiritShot implements IItemHandler
-{
+public class SpiritShot implements IItemHandler {
 	/**
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-		{
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!(playable instanceof L2PcInstance)) {
 			return;
 		}
 
@@ -53,78 +50,65 @@ public class SpiritShot implements IItemHandler
 		int itemId = item.getItemId();
 
 		// Check if Spirit shot can be used
-		if (weaponInst == null || weaponItem.getSpiritShotCount() == 0)
-		{
-			if (!activeChar.hasAutoSoulShot(item))
-			{
+		if (weaponInst == null || weaponItem.getSpiritShotCount() == 0) {
+			if (!activeChar.hasAutoSoulShot(item)) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_USE_SPIRITSHOTS));
 			}
 			return;
 		}
 
 		// Check if Spirit shot is already active
-		if (weaponInst.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE)
-		{
+		if (weaponInst.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE) {
 			return;
 		}
 
 		final int weaponGrade = weaponItem.getCrystalType();
 		boolean gradeCheck = true;
 
-		switch (weaponGrade)
-		{
+		switch (weaponGrade) {
 			case L2Item.CRYSTAL_NONE:
-				if (itemId != 5790 && itemId != 2509)
-				{
+				if (itemId != 5790 && itemId != 2509) {
 					gradeCheck = false;
 				}
 				break;
 			case L2Item.CRYSTAL_D:
-				if (itemId != 2510 && itemId != 22077)
-				{
+				if (itemId != 2510 && itemId != 22077) {
 					gradeCheck = false;
 				}
 				break;
 			case L2Item.CRYSTAL_C:
-				if (itemId != 2511 && itemId != 22078)
-				{
+				if (itemId != 2511 && itemId != 22078) {
 					gradeCheck = false;
 				}
 				break;
 			case L2Item.CRYSTAL_B:
-				if (itemId != 2512 && itemId != 22079)
-				{
+				if (itemId != 2512 && itemId != 22079) {
 					gradeCheck = false;
 				}
 				break;
 			case L2Item.CRYSTAL_A:
-				if (itemId != 2513 && itemId != 22080)
-				{
+				if (itemId != 2513 && itemId != 22080) {
 					gradeCheck = false;
 				}
 				break;
 			case L2Item.CRYSTAL_S:
 			case L2Item.CRYSTAL_S80:
 			case L2Item.CRYSTAL_S84:
-				if (itemId != 2514 && itemId != 22081)
-				{
+				if (itemId != 2514 && itemId != 22081) {
 					gradeCheck = false;
 				}
 				break;
 			case L2Item.CRYSTAL_R:
 			case L2Item.CRYSTAL_R95:
 			case L2Item.CRYSTAL_R99:
-				if (itemId != 19441)
-				{
+				if (itemId != 19441) {
 					gradeCheck = false;
 				}
 				break;
 		}
 
-		if (!gradeCheck)
-		{
-			if (!activeChar.hasAutoSoulShot(item))
-			{
+		if (!gradeCheck) {
+			if (!activeChar.hasAutoSoulShot(item)) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SPIRITSHOTS_GRADE_MISMATCH));
 			}
 
@@ -133,16 +117,11 @@ public class SpiritShot implements IItemHandler
 
 		int sapphireLvl = 0;
 		PcInventory playerInventory = activeChar.getInventory();
-		for (int i = Inventory.PAPERDOLL_JEWELRY1;
-			 i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount();
-			 i++)
-		{
+		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount(); i++) {
 			L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
-			if (jewel != null)
-			{
+			if (jewel != null) {
 				//Sapphire
-				switch (jewel.getItemId())
-				{
+				switch (jewel.getItemId()) {
 					case 38927:
 						sapphireLvl = 1;
 						break;
@@ -168,11 +147,9 @@ public class SpiritShot implements IItemHandler
 		int skillId = 0;
 		int skillLvl = 1;
 		double sapphireMul = 1.0;
-		switch (sapphireLvl)
-		{
+		switch (sapphireLvl) {
 			case 0:
-				switch (itemId)
-				{
+				switch (itemId) {
 					case 2509:
 					case 5790:
 						skillId = 2061;
@@ -243,21 +220,15 @@ public class SpiritShot implements IItemHandler
 		}
 
 		activeChar.consumableLock.lock();
-		try
-		{
+		try {
 			// Check if Soul shot is already active
-			if (weaponInst.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE)
-			{
+			if (weaponInst.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE) {
 				return;
 			}
 
 			// Consume Spirit shot if player has enough of them
-			if (!activeChar
-					.destroyItemWithoutTrace("Consume", item.getObjectId(), weaponItem.getSpiritShotCount(), null,
-							false))
-			{
-				if (!activeChar.disableAutoShot(item))
-				{
+			if (!activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), weaponItem.getSpiritShotCount(), null, false)) {
+				if (!activeChar.disableAutoShot(item)) {
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SPIRITSHOTS));
 				}
 				return;
@@ -265,15 +236,12 @@ public class SpiritShot implements IItemHandler
 
 			// Charge Spirit shot
 			weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_SPIRITSHOT * sapphireMul);
-		}
-		finally
-		{
+		} finally {
 			activeChar.consumableLock.unlock();
 		}
 
 		// Send message to client
 		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENABLED_SPIRITSHOT));
-		Broadcast.toSelfAndKnownPlayersInRadius(activeChar,
-				new MagicSkillUse(activeChar, activeChar, skillId, skillLvl, 0, 0, 0), 360000);
+		Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, skillId, skillLvl, 0, 0, 0), 360000);
 	}
 }

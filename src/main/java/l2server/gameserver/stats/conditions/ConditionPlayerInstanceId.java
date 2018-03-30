@@ -25,8 +25,7 @@ import java.util.ArrayList;
 /**
  * The Class ConditionPlayerInstanceId.
  */
-public class ConditionPlayerInstanceId extends Condition
-{
+public class ConditionPlayerInstanceId extends Condition {
 	private final ArrayList<Integer> instanceIds;
 
 	/**
@@ -34,8 +33,7 @@ public class ConditionPlayerInstanceId extends Condition
 	 *
 	 * @param instanceIds the instance ids
 	 */
-	public ConditionPlayerInstanceId(ArrayList<Integer> instanceIds)
-	{
+	public ConditionPlayerInstanceId(ArrayList<Integer> instanceIds) {
 		this.instanceIds = instanceIds;
 	}
 
@@ -43,29 +41,24 @@ public class ConditionPlayerInstanceId extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 
 		final int instanceId = env.player.getInstanceId();
 
-		if (instanceId <= 0)
-		{
+		if (instanceId <= 0) {
 			return false; // player not in instance
 		}
 
 		final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld((L2PcInstance) env.player);
 
-		if (world == null)
-		{
+		if (world == null) {
 			return false;
 		}
 
-		if (world.instanceId != instanceId)
-		{
+		if (world.instanceId != instanceId) {
 			return false; // player in the different instance
 		}
 

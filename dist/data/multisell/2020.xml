@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list maintainEnchantment="true" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance"
-      ns0:noNamespaceSchemaLocation="multisell.xsd">
-    <item>
-        <ingredient count="1" id="16025" /> <!-- Freya's Necklace -->
-        <ingredient count="1" id="16027" /> <!-- Bottle of Freya's Soul -->
-        <production count="1" id="16026" /> <!-- Blessed Freya's Necklace -->
-    </item>
-    <item>
-        <ingredient count="1" id="6656" /> <!-- Antharas' Earring -->
-        <ingredient count="10" id="19465" /> <!-- Bottle of Antharas' Soul -->
-        <production count="1" id="19463" /> <!-- Blessed Antharas' Earring -->
-    </item>
-    <item>
-        <ingredient count="1" id="6657" /> <!-- Valakas' Necklace -->
-        <ingredient count="10" id="19466" /> <!-- Bottle of Valakas' Soul -->
-        <production count="1" id="19464" /> <!-- Blessed Valakas' Necklace -->
-    </item>
-    <item>
-        <ingredient count="1" id="6660" /> <!-- Queen Ant's Ring -->
-        <ingredient count="1" id="36252" /> <!-- Bottle of Queen Ant's Soul -->
-        <production count="1" id="36254" /> <!-- Queen Ant's Soul Ring -->
-    </item>
-    <item>
-        <ingredient count="1" id="6661" /> <!-- Orfen's Earring -->
-        <ingredient count="1" id="36253" /> <!-- Bottle of Orfen's Soul -->
-        <production count="1" id="36255" /> <!-- Orfen's Soul Earring -->
-    </item>
-    <item>
-        <ingredient count="1" id="6658" /> <!-- Baium's Ring -->
-        <ingredient count="1" id="37520" /> <!-- Bottle of Baium's Soul -->
-        <production count="1" id="37521" /> <!-- Baium's Soul Ring -->
-    </item>
-    <item>
-        <ingredient count="1" id="22173" /> <!-- Reinforced Baium's Ring -->
-        <ingredient count="1" id="37520" /> <!-- Bottle of Baium's Soul -->
-        <production count="1" id="37521" /> <!-- Baium's Soul Ring -->
-    </item>
-    <item>
-        <ingredient count="1" id="22174" /> <!-- Reinforced Queen Ant's Ring -->
-        <ingredient count="1" id="36252" /> <!-- Bottle of Queen Ant's Soul -->
-        <production count="1" id="36254" /> <!-- Queen Ant's Soul Ring -->
-    </item>
-    <item>
-        <ingredient count="1" id="8191" /> <!-- Frintezza's Necklace -->
-        <ingredient count="1" id="37519" /> <!-- Bottle of Frintezza's Soul -->
-        <production count="1" id="37522" /> <!-- Frintezza's Soul Necklace -->
-    </item>
+	  ns0:noNamespaceSchemaLocation="multisell.xsd">
+	<item>
+		<ingredient count="1" id="16025" /> <!-- Freya's Necklace -->
+		<ingredient count="1" id="16027" /> <!-- Bottle of Freya's Soul -->
+		<production count="1" id="16026" /> <!-- Blessed Freya's Necklace -->
+	</item>
+	<item>
+		<ingredient count="1" id="6656" /> <!-- Antharas' Earring -->
+		<ingredient count="10" id="19465" /> <!-- Bottle of Antharas' Soul -->
+		<production count="1" id="19463" /> <!-- Blessed Antharas' Earring -->
+	</item>
+	<item>
+		<ingredient count="1" id="6657" /> <!-- Valakas' Necklace -->
+		<ingredient count="10" id="19466" /> <!-- Bottle of Valakas' Soul -->
+		<production count="1" id="19464" /> <!-- Blessed Valakas' Necklace -->
+	</item>
+	<item>
+		<ingredient count="1" id="6660" /> <!-- Queen Ant's Ring -->
+		<ingredient count="1" id="36252" /> <!-- Bottle of Queen Ant's Soul -->
+		<production count="1" id="36254" /> <!-- Queen Ant's Soul Ring -->
+	</item>
+	<item>
+		<ingredient count="1" id="6661" /> <!-- Orfen's Earring -->
+		<ingredient count="1" id="36253" /> <!-- Bottle of Orfen's Soul -->
+		<production count="1" id="36255" /> <!-- Orfen's Soul Earring -->
+	</item>
+	<item>
+		<ingredient count="1" id="6658" /> <!-- Baium's Ring -->
+		<ingredient count="1" id="37520" /> <!-- Bottle of Baium's Soul -->
+		<production count="1" id="37521" /> <!-- Baium's Soul Ring -->
+	</item>
+	<item>
+		<ingredient count="1" id="22173" /> <!-- Reinforced Baium's Ring -->
+		<ingredient count="1" id="37520" /> <!-- Bottle of Baium's Soul -->
+		<production count="1" id="37521" /> <!-- Baium's Soul Ring -->
+	</item>
+	<item>
+		<ingredient count="1" id="22174" /> <!-- Reinforced Queen Ant's Ring -->
+		<ingredient count="1" id="36252" /> <!-- Bottle of Queen Ant's Soul -->
+		<production count="1" id="36254" /> <!-- Queen Ant's Soul Ring -->
+	</item>
+	<item>
+		<ingredient count="1" id="8191" /> <!-- Frintezza's Necklace -->
+		<ingredient count="1" id="37519" /> <!-- Bottle of Frintezza's Soul -->
+		<production count="1" id="37522" /> <!-- Frintezza's Soul Necklace -->
+	</item>
 </list>

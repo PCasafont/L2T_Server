@@ -22,51 +22,43 @@ import java.util.ArrayList;
 /**
  * @author Fulminus
  */
-public class L2DropCategory
-{
+public class L2DropCategory {
 	private float chance;
 	private ArrayList<L2DropData> drops;
 	private boolean custom = false;
-
-	public L2DropCategory(float chance)
-	{
+	
+	public L2DropCategory(float chance) {
 		this.chance = chance;
 		drops = new ArrayList<>();
 	}
-
-	public void addDropData(L2DropData drop)
-	{
+	
+	public void addDropData(L2DropData drop) {
 		drops.add(drop);
 	}
-
-	public ArrayList<L2DropData> getAllDrops()
-	{
+	
+	public ArrayList<L2DropData> getAllDrops() {
 		return drops;
 	}
-
-	public void clearAllDrops()
-	{
+	
+	public void clearAllDrops() {
 		drops.clear();
 	}
-
+	
 	// this returns the chance for the category to be visited in order to check if
 	// drops might come from it.  Category -1 (spoil) must always be visited
 	// (but may return 0 or many drops)
-	public float getChance()
-	{
+	public float getChance() {
 		return chance;
 	}
-
-	public void setCustom()
-	{
+	
+	public void setCustom() {
 		custom = true;
 	}
-
-	public boolean isCustom()
-	{
+	
+	public boolean isCustom() {
 		return custom;
 	}
-
+	
 	/**
 	 * useful for seeded conditions...the category will attempt to drop only among
 	 * items that are allowed to be dropped when a mob is seeded.
@@ -78,27 +70,22 @@ public class L2DropCategory
 	 *
 	 * @return acceptable drop when mob is seeded, if it exists.  Null otherwise.
 	 */
-	public synchronized L2DropData dropSeedAllowedDropsOnly()
-	{
+	public synchronized L2DropData dropSeedAllowedDropsOnly() {
 		ArrayList<L2DropData> drops = new ArrayList<>();
 		int subCatChance = 0;
-		for (L2DropData drop : getAllDrops())
-		{
-			if (drop.getItemId() == 57 || drop.getItemId() == 6360 || drop.getItemId() == 6361 ||
-					drop.getItemId() == 6362)
-			{
+		for (L2DropData drop : getAllDrops()) {
+			if (drop.getItemId() == 57 || drop.getItemId() == 6360 || drop.getItemId() == 6361 || drop.getItemId() == 6362) {
 				drops.add(drop);
 				subCatChance += drop.getChance();
 			}
 		}
-
+		
 		// among the results choose one.
 		int randomIndex = Rnd.get(subCatChance);
 		int sum = 0;
-		for (L2DropData drop : drops)
-		{
+		for (L2DropData drop : drops) {
 			sum += drop.getChance();
-
+			
 			if (sum > randomIndex) // drop this item and exit the function
 			{
 				drops.clear();
@@ -109,7 +96,7 @@ public class L2DropCategory
 		// since it is still within category, only drop one of the acceptable drops from the results.
 		return null;
 	}
-
+	
 	/**
 	 * ONE of the drops in this category is to be dropped now.
 	 * to see which one will be dropped, weight all items' chances such that
@@ -137,14 +124,12 @@ public class L2DropCategory
 	 *
 	 * @return selected drop from category, or null if nothing is dropped.
 	 */
-	public synchronized L2DropData dropOne()
-	{
+	public synchronized L2DropData dropOne() {
 		float randomIndex = Rnd.get(1000000) / 10000.0f;
 		float sum = 0;
-		for (L2DropData drop : getAllDrops())
-		{
+		for (L2DropData drop : getAllDrops()) {
 			sum += drop.getChance();
-
+			
 			if (sum >= randomIndex) // drop this item and exit the function
 			{
 				return drop;

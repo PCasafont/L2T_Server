@@ -24,47 +24,38 @@ import java.util.ArrayList;
 /**
  * @author Gnacik
  */
-public class ListPartyWaiting extends L2GameServerPacket
-{
+public class ListPartyWaiting extends L2GameServerPacket {
 	private L2PcInstance cha;
 	private int loc;
 	private int lim;
 	private ArrayList<PartyMatchRoom> rooms;
-
-	public ListPartyWaiting(L2PcInstance player, int auto, int location, int limit)
-	{
+	
+	public ListPartyWaiting(L2PcInstance player, int auto, int location, int limit) {
 		cha = player;
 		loc = location;
 		lim = limit;
 		rooms = new ArrayList<>();
-		for (PartyMatchRoom room : PartyMatchRoomList.getInstance().getRooms())
-		{
-			if (room.getMembers() < 1 || room.getOwner() == null || !room.getOwner().isOnline() ||
-					room.getOwner().getPartyRoom() != room.getId())
-			{
+		for (PartyMatchRoom room : PartyMatchRoomList.getInstance().getRooms()) {
+			if (room.getMembers() < 1 || room.getOwner() == null || !room.getOwner().isOnline() || room.getOwner().getPartyRoom() != room.getId()) {
 				PartyMatchRoomList.getInstance().deleteRoom(room.getId());
 				continue;
 			}
-			if (loc > 0 && loc != room.getLocation())
-			{
+			if (loc > 0 && loc != room.getLocation()) {
 				continue;
 			}
-			if (lim == 0 && (cha.getLevel() < room.getMinLvl() || cha.getLevel() > room.getMaxLvl()))
-			{
+			if (lim == 0 && (cha.getLevel() < room.getMinLvl() || cha.getLevel() > room.getMaxLvl())) {
 				continue;
 			}
 			rooms.add(room);
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(rooms.size() > 0 ? 1 : 0);
-
+		
 		writeD(rooms.size());
-		for (PartyMatchRoom room : rooms)
-		{
+		for (PartyMatchRoom room : rooms) {
 			writeD(room.getId());
 			writeS(room.getTitle());
 			writeD(room.getLocation());
@@ -73,8 +64,7 @@ public class ListPartyWaiting extends L2GameServerPacket
 			writeD(room.getMaxMembers());
 			writeS(room.getOwner().getName());
 			writeD(room.getMembers());
-			for (L2PcInstance member : room.getPartyMembers())
-			{
+			for (L2PcInstance member : room.getPartyMembers()) {
 				writeD(member.getClassId());
 				writeS(member.getName());
 			}

@@ -26,29 +26,22 @@ import l2server.util.Rnd;
  * @author LasTravel
  */
 
-public class DummyGraciaLindvior extends Quest
-{
+public class DummyGraciaLindvior extends Quest {
 	private int eachHours = 1;
 	private int chance = 100000;
 
-	public DummyGraciaLindvior(int id, String name, String descr)
-	{
+	public DummyGraciaLindvior(int id, String name, String descr) {
 		super(id, name, descr);
 
 		startQuestTimer("showMovie", eachHours * 60000, null, null, true);
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equalsIgnoreCase("showMovie"))
-		{
-			if (Rnd.get(100000) >= chance)
-			{
-				for (L2Character pls : ZoneManager.getInstance().getZoneById(11040).getCharactersInside().values())
-				{
-					if (pls != null && pls instanceof L2PcInstance)
-					{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.equalsIgnoreCase("showMovie")) {
+			if (Rnd.get(100000) >= chance) {
+				for (L2Character pls : ZoneManager.getInstance().getZoneById(11040).getCharactersInside().values()) {
+					if (pls != null && pls instanceof L2PcInstance) {
 						((L2PcInstance) pls).showQuestMovie(1);
 					}
 				}
@@ -58,8 +51,7 @@ public class DummyGraciaLindvior extends Quest
 		return "";
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new DummyGraciaLindvior(-1, "DummyGraciaLindvior", "ai");
 	}
 }

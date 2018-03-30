@@ -21,25 +21,22 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Erlandys
  */
-public class ExResponseCommissionInfo extends L2GameServerPacket
-{
-
+public class ExResponseCommissionInfo extends L2GameServerPacket {
+	
 	@SuppressWarnings("unused")
 	private L2PcInstance player;
 	@SuppressWarnings("unused")
 	private L2ItemInstance item;
 	private boolean success;
-
-	public ExResponseCommissionInfo(L2PcInstance player, int itemOID, boolean success)
-	{
+	
+	public ExResponseCommissionInfo(L2PcInstance player, int itemOID, boolean success) {
 		this.player = player;
 		item = player.getInventory().getItemByObjectId(itemOID);
 		this.success = success;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(success ? 0x01 : 0x00);
 		writeD(0x00); // ItemID
 		writeD(0x00); // TODO: Price

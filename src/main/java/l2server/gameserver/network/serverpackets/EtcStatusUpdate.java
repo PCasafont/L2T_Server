@@ -24,26 +24,22 @@ import l2server.gameserver.templates.skills.L2EffectType;
 /**
  * @author Luca Baldi
  */
-public class EtcStatusUpdate extends L2GameServerPacket
-{
-
+public class EtcStatusUpdate extends L2GameServerPacket {
+	
 	private L2PcInstance activeChar;
-
-	public EtcStatusUpdate(L2PcInstance activeChar)
-	{
+	
+	public EtcStatusUpdate(L2PcInstance activeChar) {
 		this.activeChar = activeChar;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{ // several icons to a separate line (0 = disabled)
+	protected final void writeImpl() { // several icons to a separate line (0 = disabled)
 		writeC(activeChar.getCharges()); // 1-7 increase force, lvl
 		writeC(activeChar.getWeightPenalty()); // 1-4 weight penalty, lvl (1=50%, 2=66.6%, 3=80%, 4=100%)
-		writeC(activeChar.getMessageRefusal() || activeChar.isChatBanned() || activeChar.isSilenceMode() ? 1 :
-				0); // 1 = block all chat
+		writeC(activeChar.getMessageRefusal() || activeChar.isChatBanned() || activeChar.isSilenceMode() ? 1 : 0); // 1 = block all chat
 		writeC(activeChar.isInsideZone(L2Character.ZONE_DANGERAREA) ? 1 : 0); // 1 = danger area
 		writeC(activeChar.getExpertiseWeaponPenalty()); // Weapon Grade Penalty [1-4]
 		writeC(activeChar.getExpertiseArmorPenalty()); // Armor Grade Penalty [1-4]

@@ -22,26 +22,22 @@ import l2server.gameserver.network.serverpackets.PledgeCrest;
  *
  * @version $Revision: 1.4.4.4 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestPledgeCrest extends L2GameClientPacket
-{
+public final class RequestPledgeCrest extends L2GameClientPacket {
 
 	private int crestId;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		crestId = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		sendPacket(new PledgeCrest(crestId));
 	}
 
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

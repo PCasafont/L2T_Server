@@ -2,29 +2,24 @@ package l2server.gameserver.network;
 
 import l2server.util.Rnd;
 
-public class BlowFishKeygen
-{
+public class BlowFishKeygen {
 	// block instantiation
-	private BlowFishKeygen()
-	{
-
+	private BlowFishKeygen() {
+	
 	}
-
+	
 	private static final int CRYPT_KEYS_SIZE = 20;
 	private static final byte[][] CRYPT_KEYS = new byte[CRYPT_KEYS_SIZE][16];
-
-	static
-	{
+	
+	static {
 		// init the GS encryption keys on class load
-
-		for (int i = 0; i < CRYPT_KEYS_SIZE; i++)
-		{
+		
+		for (int i = 0; i < CRYPT_KEYS_SIZE; i++) {
 			// randomize the 8 first bytes
-			for (int j = 0; j < CRYPT_KEYS[i].length; j++)
-			{
+			for (int j = 0; j < CRYPT_KEYS[i].length; j++) {
 				CRYPT_KEYS[i][j] = (byte) Rnd.get(255);
 			}
-
+			
 			// the last 8 bytes are static
 			CRYPT_KEYS[i][8] = (byte) 0xc8;
 			CRYPT_KEYS[i][9] = (byte) 0x27;
@@ -36,15 +31,14 @@ public class BlowFishKeygen
 			CRYPT_KEYS[i][15] = (byte) 0x97;
 		}
 	}
-
+	
 	/**
 	 * Returns a key from this keygen pool, the logical ownership is retained by this keygen.<BR>
 	 * Thus when getting a key with interests other then read-only a copy must be performed.<BR>
 	 *
 	 * @return A key from this keygen pool.
 	 */
-	public static byte[] getRandomKey()
-	{
+	public static byte[] getRandomKey() {
 		return CRYPT_KEYS[Rnd.get(CRYPT_KEYS_SIZE)];
 	}
 }

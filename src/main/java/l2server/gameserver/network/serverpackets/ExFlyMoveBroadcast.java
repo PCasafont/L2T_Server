@@ -21,8 +21,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Pere
  */
-public class ExFlyMoveBroadcast extends L2GameServerPacket
-{
+public class ExFlyMoveBroadcast extends L2GameServerPacket {
 	private int objectId;
 	private L2FlyMoveType type;
 	private int originX;
@@ -31,9 +30,8 @@ public class ExFlyMoveBroadcast extends L2GameServerPacket
 	private int targetX;
 	private int targetY;
 	private int targetZ;
-
-	public ExFlyMoveBroadcast(L2PcInstance activeChar, int x, int y, int z)
-	{
+	
+	public ExFlyMoveBroadcast(L2PcInstance activeChar, int x, int y, int z) {
 		objectId = activeChar.getObjectId();
 		type = L2FlyMoveType.MOVE;
 		originX = activeChar.getX();
@@ -43,9 +41,8 @@ public class ExFlyMoveBroadcast extends L2GameServerPacket
 		targetY = y;
 		targetZ = z;
 	}
-
-	public ExFlyMoveBroadcast(L2PcInstance activeChar, boolean start)
-	{
+	
+	public ExFlyMoveBroadcast(L2PcInstance activeChar, boolean start) {
 		objectId = activeChar.getObjectId();
 		type = start ? L2FlyMoveType.START : L2FlyMoveType.CHOOSE;
 		originX = activeChar.getX();
@@ -55,10 +52,9 @@ public class ExFlyMoveBroadcast extends L2GameServerPacket
 		targetY = activeChar.getY();
 		targetZ = activeChar.getZ();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objectId);
 		writeD(type.ordinal());
 		writeD(0);

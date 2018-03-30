@@ -24,8 +24,7 @@ import java.util.ArrayList;
 /**
  * The Class ConditionTargetNpcId.
  */
-public class ConditionTargetNpcId extends Condition
-{
+public class ConditionTargetNpcId extends Condition {
 	private final ArrayList<Integer> npcIds;
 
 	/**
@@ -33,8 +32,7 @@ public class ConditionTargetNpcId extends Condition
 	 *
 	 * @param npcIds the npc ids
 	 */
-	public ConditionTargetNpcId(ArrayList<Integer> npcIds)
-	{
+	public ConditionTargetNpcId(ArrayList<Integer> npcIds) {
 		this.npcIds = npcIds;
 	}
 
@@ -42,15 +40,12 @@ public class ConditionTargetNpcId extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (env.target instanceof L2Npc)
-		{
+	public boolean testImpl(Env env) {
+		if (env.target instanceof L2Npc) {
 			return npcIds.contains(((L2Npc) env.target).getNpcId());
 		}
 
-		if (env.target instanceof L2DoorInstance)
-		{
+		if (env.target instanceof L2DoorInstance) {
 			return npcIds.contains(((L2DoorInstance) env.target).getDoorId());
 		}
 

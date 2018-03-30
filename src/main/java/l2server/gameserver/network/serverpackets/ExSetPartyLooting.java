@@ -18,21 +18,18 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author JIV
  */
-public class ExSetPartyLooting extends L2GameServerPacket
-{
-
+public class ExSetPartyLooting extends L2GameServerPacket {
+	
 	private int result;
 	private byte mode;
-
-	public ExSetPartyLooting(int result, byte mode)
-	{
+	
+	public ExSetPartyLooting(int result, byte mode) {
 		this.result = result;
 		this.mode = mode;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(result);
 		writeD(mode);
 	}

@@ -123,15 +123,15 @@ class Quest(JQuest):
 
         if id == State.CREATED and npcId == CRONOS:
             if player.getLevel() < 45 and (
-                            st.getQuestItemsCount(3500) or st.getQuestItemsCount(3501) or st.getQuestItemsCount(3502)):
+                    st.getQuestItemsCount(3500) or st.getQuestItemsCount(3501) or st.getQuestItemsCount(3502)):
                 st.exitQuest(1)
                 htmltext = "30610-01.htm"
             elif player.getLevel() >= 45 and (
-                        (st.getQuestItemsCount(3500) + st.getQuestItemsCount(3501) + st.getQuestItemsCount(3502)) >= 2):
+                    (st.getQuestItemsCount(3500) + st.getQuestItemsCount(3501) + st.getQuestItemsCount(3502)) >= 2):
                 st.exitQuest(1)
                 htmltext = "30610-02.htm"
             elif player.getLevel() >= 45 and (
-                        (st.getQuestItemsCount(3500) + st.getQuestItemsCount(3501) + st.getQuestItemsCount(3502)) == 1):
+                    (st.getQuestItemsCount(3500) + st.getQuestItemsCount(3501) + st.getQuestItemsCount(3502)) == 1):
                 if st.getQuestItemsCount(3500) == 1:
                     item = player.getInventory().getItemByItemId(3500)
                     if item.getEnchantLevel() < 55:

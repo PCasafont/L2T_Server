@@ -30,80 +30,65 @@ import l2server.gameserver.templates.skills.L2EffectType;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EffectDisarmArmor extends L2Effect
-{
+public class EffectDisarmArmor extends L2Effect {
 	private static Map<Integer, Integer> armors = new HashMap<>();
-
-	public EffectDisarmArmor(Env env, L2EffectTemplate template)
-	{
+	
+	public EffectDisarmArmor(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.DISARM_ARMOR;
 	}
-
+	
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.DISARM_ARMOR;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (!(getEffected() instanceof L2PcInstance))
-		{
+	public boolean onStart() {
+		if (!(getEffected() instanceof L2PcInstance)) {
 			return false;
 		}
-
+		
 		L2PcInstance player = (L2PcInstance) getEffected();
-		if (player == null)
-		{
+		if (player == null) {
 			return false;
 		}
-
+		
 		// Unequip the armor
 		L2ItemInstance armor = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_CHEST);
-		if (armor != null)
-		{
-			L2ItemInstance[] unequiped =
-					player.getInventory().unEquipItemInBodySlotAndRecord(armor.getItem().getBodyPart());
+		if (armor != null) {
+			L2ItemInstance[] unequiped = player.getInventory().unEquipItemInBodySlotAndRecord(armor.getItem().getBodyPart());
 			InventoryUpdate iu = new InventoryUpdate();
-			for (L2ItemInstance itm : unequiped)
-			{
+			for (L2ItemInstance itm : unequiped) {
 				iu.addModifiedItem(itm);
-
-				synchronized (armors)
-				{
+				
+				synchronized (armors) {
 					armors.put(player.getObjectId(), itm.getObjectId());
 				}
 			}
-
+			
 			player.sendPacket(iu);
-
+			
 			player.broadcastUserInfo();
-
+			
 			// this can be 0 if the user pressed the right mousebutton twice very fast
-			if (unequiped.length > 0)
-			{
+			if (unequiped.length > 0) {
 				SystemMessage sm = null;
-				if (unequiped[0].getEnchantLevel() > 0)
-				{
+				if (unequiped[0].getEnchantLevel() > 0) {
 					sm = SystemMessage.getSystemMessage(SystemMessageId.EQUIPMENT_S1_S2_REMOVED);
 					sm.addNumber(unequiped[0].getEnchantLevel());
 					sm.addItemName(unequiped[0]);
-				}
-				else
-				{
+				} else {
 					sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISARMED);
 					sm.addItemName(unequiped[0]);
 				}
@@ -112,33 +97,26 @@ public class EffectDisarmArmor extends L2Effect
 		}
 		return true;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
-		if (!(getEffected() instanceof L2PcInstance))
-		{
+	public void onExit() {
+		if (!(getEffected() instanceof L2PcInstance)) {
 			return;
 		}
-
+		
 		L2PcInstance player = (L2PcInstance) getEffected();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
-
-		synchronized (armors)
-		{
-			if (armors.containsKey(player.getObjectId()))
-			{
+		
+		synchronized (armors) {
+			if (armors.containsKey(player.getObjectId())) {
 				L2ItemInstance armor = player.getInventory().getItemByObjectId(armors.get(player.getObjectId()));
-				if (player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_CHEST) == null)
-				{
-					if (armor != null)
-					{
+				if (player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_CHEST) == null) {
+					if (armor != null) {
 						player.useEquippableItem(armor, false);
 					}
 				}
@@ -147,13 +125,12 @@ public class EffectDisarmArmor extends L2Effect
 		}
 		player.broadcastUserInfo();
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 }

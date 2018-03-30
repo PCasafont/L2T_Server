@@ -25,8 +25,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Time implements IUserCommandHandler
-{
+public class Time implements IUserCommandHandler {
 	private static final int[] COMMAND_IDS = {77};
 
 	private static final SimpleDateFormat fmt = new SimpleDateFormat("H:mm.");
@@ -35,41 +34,32 @@ public class Time implements IUserCommandHandler
 	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
-	{
-		if (COMMAND_IDS[0] != id)
-		{
+	public boolean useUserCommand(int id, L2PcInstance activeChar) {
+		if (COMMAND_IDS[0] != id) {
 			return false;
 		}
 
 		int t = TimeController.getInstance().getGameTime();
 		String h = "" + t / 60 % 24;
 		String m;
-		if (t % 60 < 10)
-		{
+		if (t % 60 < 10) {
 			m = "0" + t % 60;
-		}
-		else
-		{
+		} else {
 			m = "" + t % 60;
 		}
 
 		SystemMessage sm;
-		if (TimeController.getInstance().isNowNight())
-		{
+		if (TimeController.getInstance().isNowNight()) {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.TIME_S1_S2_IN_THE_NIGHT);
 			sm.addString(h);
 			sm.addString(m);
-		}
-		else
-		{
+		} else {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.TIME_S1_S2_IN_THE_DAY);
 			sm.addString(h);
 			sm.addString(m);
 		}
 		activeChar.sendPacket(sm);
-		if (Config.L2JMOD_DISPLAY_SERVER_TIME)
-		{
+		if (Config.L2JMOD_DISPLAY_SERVER_TIME) {
 			activeChar.sendMessage("Server time is " + fmt.format(new Date(System.currentTimeMillis())));
 		}
 		return true;
@@ -79,8 +69,7 @@ public class Time implements IUserCommandHandler
 	 * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
 	 */
 	@Override
-	public int[] getUserCommandList()
-	{
+	public int[] getUserCommandList() {
 		return COMMAND_IDS;
 	}
 }

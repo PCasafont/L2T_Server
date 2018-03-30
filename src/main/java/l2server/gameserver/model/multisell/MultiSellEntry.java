@@ -21,16 +21,14 @@ import java.util.List;
 /**
  * @author DS
  */
-public class MultiSellEntry
-{
+public class MultiSellEntry {
 	protected int entryId;
 	protected boolean stackable = true;
 
 	protected List<Ingredient> products;
 	protected List<Ingredient> ingredients;
 
-	public MultiSellEntry(int entryId)
-	{
+	public MultiSellEntry(int entryId) {
 		this.entryId = entryId;
 		products = new ArrayList<>();
 		ingredients = new ArrayList<>();
@@ -40,52 +38,42 @@ public class MultiSellEntry
 	 * This constructor used in PreparedEntry only
 	 * ArrayLists not created
 	 */
-	protected MultiSellEntry()
-	{
+	protected MultiSellEntry() {
 	}
 
-	public final void setEntryId(int id)
-	{
+	public final void setEntryId(int id) {
 		entryId = id;
 	}
 
-	public final int getEntryId()
-	{
+	public final int getEntryId() {
 		return entryId;
 	}
 
-	public final void addProduct(Ingredient product)
-	{
+	public final void addProduct(Ingredient product) {
 		products.add(product);
 
-		if (!product.isStackable())
-		{
+		if (!product.isStackable()) {
 			stackable = false;
 		}
 	}
 
-	public final List<Ingredient> getProducts()
-	{
+	public final List<Ingredient> getProducts() {
 		return products;
 	}
 
-	public final void addIngredient(Ingredient ingredient)
-	{
+	public final void addIngredient(Ingredient ingredient) {
 		ingredients.add(ingredient);
 	}
 
-	public final List<Ingredient> getIngredients()
-	{
+	public final List<Ingredient> getIngredients() {
 		return ingredients;
 	}
 
-	public final boolean isStackable()
-	{
+	public final boolean isStackable() {
 		return stackable;
 	}
 
-	public long getTaxAmount()
-	{
+	public long getTaxAmount() {
 		return 0;
 	}
 }

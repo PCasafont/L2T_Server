@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class TinGolem extends L2Transformation
-{
+public class TinGolem extends L2Transformation {
 	private static final int[] SKILLS = {940, 941, 5437, 619};
-
-	public TinGolem()
-	{
+	
+	public TinGolem() {
 		// id, colRadius, colHeight
 		super(116, 13, 18.5);
 	}
-
+	
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 116 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 116 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
-
+		
 		transformedSkills();
 	}
-
-	public void transformedSkills()
-	{
+	
+	public void transformedSkills() {
 		// Fake Attack
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(940, 1), false);
 		// Special Motion
@@ -35,18 +30,16 @@ public class TinGolem extends L2Transformation
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(5437, 2), false);
 		// Transform Dispel
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(619, 1), false);
-
+		
 		getPlayer().setTransformAllowedSkills(SKILLS);
 	}
-
+	
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
-
-	public void removeSkills()
-	{
+	
+	public void removeSkills() {
 		// Fake Attack
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(940, 1), false);
 		// Special Motion
@@ -55,12 +48,11 @@ public class TinGolem extends L2Transformation
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(5437, 2), false);
 		// Transform Dispel
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(619, 1), false);
-
+		
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
-
-	public static void main(String[] args)
-	{
+	
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new TinGolem());
 	}
 }

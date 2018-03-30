@@ -15,21 +15,18 @@
 
 package l2server.gameserver.network.serverpackets;
 
-public final class TutorialShowQuestionMark extends L2GameServerPacket
-{
+public final class TutorialShowQuestionMark extends L2GameServerPacket {
 	private int markId;
-
-	public TutorialShowQuestionMark(int blink)
-	{
+	
+	public TutorialShowQuestionMark(int blink) {
 		markId = blink;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(markId);
 	}
 }

@@ -28,21 +28,19 @@ import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 
 /**
  * @author LasTravel
- *         <p>
- *         Source:
- *         - http://l2wiki.com/Ancient_City_Arcan
+ * <p>
+ * Source:
+ * - http://l2wiki.com/Ancient_City_Arcan
  */
 
-public class AncientCityArcan extends Quest
-{
+public class AncientCityArcan extends Quest {
 	private static final int blueEffectId = 262001;
 	private static final int redEffectId = 262003;
 	private static int currentEffect = blueEffectId;
 	private static final int ancientCityArcanId = 60010;
 	private static final L2ZoneType ancientCityZone = ZoneManager.getInstance().getZoneById(ancientCityArcanId);
 
-	public AncientCityArcan(int questId, String name, String descr)
-	{
+	public AncientCityArcan(int questId, String name, String descr) {
 		super(questId, name, descr);
 
 		addEnterZoneId(ancientCityArcanId);
@@ -51,35 +49,27 @@ public class AncientCityArcan extends Quest
 	}
 
 	@Override
-	public final String onEnterZone(L2Character character, L2ZoneType zone)
-	{
-		if (character instanceof L2PcInstance)
-		{
-			character.broadcastPacket(
-					new EventTrigger(currentEffect == blueEffectId ? blueEffectId : redEffectId, false));
+	public final String onEnterZone(L2Character character, L2ZoneType zone) {
+		if (character instanceof L2PcInstance) {
+			character.broadcastPacket(new EventTrigger(currentEffect == blueEffectId ? blueEffectId : redEffectId, false));
 			character.broadcastPacket(new EventTrigger(currentEffect, true));
 		}
 		return null;
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equalsIgnoreCase("ancient_city_arcan_change"))
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.equalsIgnoreCase("ancient_city_arcan_change")) {
 			int deleteEffect = 0;
 			int messageId = 0;
 
-			if (currentEffect == blueEffectId)
-			{
+			if (currentEffect == blueEffectId) {
 				currentEffect = redEffectId;
 				deleteEffect = blueEffectId;
 				messageId = 8888108;
 
 				SpawnTable.getInstance().spawnSpecificTable("ancient_city_arcan");
-			}
-			else
-			{
+			} else {
 				currentEffect = blueEffectId;
 				deleteEffect = redEffectId;
 				messageId = 8888107;
@@ -95,8 +85,7 @@ public class AncientCityArcan extends Quest
 		return "";
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new AncientCityArcan(-1, "AncientCityArcan", "ai");
 	}
 }

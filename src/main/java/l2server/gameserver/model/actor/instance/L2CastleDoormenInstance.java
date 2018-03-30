@@ -20,56 +20,45 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 import java.util.StringTokenizer;
 
-public class L2CastleDoormenInstance extends L2DoormenInstance
-{
-	public L2CastleDoormenInstance(int objectID, L2NpcTemplate template)
-	{
+public class L2CastleDoormenInstance extends L2DoormenInstance {
+	public L2CastleDoormenInstance(int objectID, L2NpcTemplate template) {
 		super(objectID, template);
 		setInstanceType(InstanceType.L2CastleDoormenInstance);
 	}
-
+	
 	@Override
-	protected final void openDoors(L2PcInstance player, String command)
-	{
+	protected final void openDoors(L2PcInstance player, String command) {
 		StringTokenizer st = new StringTokenizer(command.substring(10), ", ");
 		st.nextToken();
-
-		while (st.hasMoreTokens())
-		{
+		
+		while (st.hasMoreTokens()) {
 			getCastle().openDoor(player, Integer.parseInt(st.nextToken()));
 		}
 	}
-
+	
 	@Override
-	protected final void closeDoors(L2PcInstance player, String command)
-	{
+	protected final void closeDoors(L2PcInstance player, String command) {
 		StringTokenizer st = new StringTokenizer(command.substring(11), ", ");
 		st.nextToken();
-
-		while (st.hasMoreTokens())
-		{
+		
+		while (st.hasMoreTokens()) {
 			getCastle().closeDoor(player, Integer.parseInt(st.nextToken()));
 		}
 	}
-
+	
 	@Override
-	protected final boolean isOwnerClan(L2PcInstance player)
-	{
-		if (player.getClan() != null && getCastle() != null)
-		{
+	protected final boolean isOwnerClan(L2PcInstance player) {
+		if (player.getClan() != null && getCastle() != null) {
 			// player should have privileges to open doors
-			if (player.getClanId() == getCastle().getOwnerId() &&
-					(player.getClanPrivileges() & L2Clan.CP_CS_OPEN_DOOR) == L2Clan.CP_CS_OPEN_DOOR)
-			{
+			if (player.getClanId() == getCastle().getOwnerId() && (player.getClanPrivileges() & L2Clan.CP_CS_OPEN_DOOR) == L2Clan.CP_CS_OPEN_DOOR) {
 				return true;
 			}
 		}
 		return false;
 	}
-
+	
 	@Override
-	protected final boolean isUnderSiege()
-	{
+	protected final boolean isUnderSiege() {
 		return getCastle().getZone().isActive();
 	}
 }

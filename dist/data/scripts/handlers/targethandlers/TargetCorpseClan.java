@@ -37,122 +37,95 @@ import java.util.List;
 /**
  * @author One
  */
-public class TargetCorpseClan implements ISkillTargetTypeHandler
-{
+public class TargetCorpseClan implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		List<L2Character> targetList = new ArrayList<L2Character>();
 
-		if (activeChar instanceof L2Playable)
-		{
+		if (activeChar instanceof L2Playable) {
 			int radius = skill.getSkillRadius();
 
 			L2PcInstance player = null;
 
-			if (activeChar instanceof L2Summon)
-			{
+			if (activeChar instanceof L2Summon) {
 				player = ((L2Summon) activeChar).getOwner();
-			}
-			else
-			{
+			} else {
 				player = (L2PcInstance) activeChar;
 			}
 
-			if (player == null)
-			{
+			if (player == null) {
 				return null;
 			}
 
 			L2Clan clan = player.getClan();
 
-			if (player.isInOlympiadMode())
-			{
+			if (player.isInOlympiadMode()) {
 				return new L2Character[]{player};
 			}
 
-			if (clan != null)
-			{
+			if (clan != null) {
 				// Get all visible objects in a spheric area near the L2Character
 				// Get Clan Members
-				for (L2ClanMember member : clan.getMembers())
-				{
+				for (L2ClanMember member : clan.getMembers()) {
 					L2PcInstance newTarget = member.getPlayerInstance();
 
-					if (newTarget == null || newTarget == player)
-					{
+					if (newTarget == null || newTarget == player) {
 						continue;
 					}
 
-					if (player.isInDuel() && (player.getDuelId() != newTarget.getDuelId() ||
-							player.getParty() != null && !player.getParty().isInParty(newTarget)))
-					{
+					if (player.isInDuel() &&
+							(player.getDuelId() != newTarget.getDuelId() || player.getParty() != null && !player.getParty().isInParty(newTarget))) {
 						continue;
 					}
 
-					if (!newTarget.isDead())
-					{
+					if (!newTarget.isDead()) {
 						continue;
 					}
 
-					if (skill.getSkillType() == L2SkillType.RESURRECT)
-					{
+					if (skill.getSkillType() == L2SkillType.RESURRECT) {
 						// check target is not in a active siege zone
-						if (newTarget.isInsideZone(L2Character.ZONE_SIEGE))
-						{
+						if (newTarget.isInsideZone(L2Character.ZONE_SIEGE)) {
 							continue;
 						}
 					}
 
-					if (!Util.checkIfInRange(radius, activeChar, newTarget, true))
-					{
+					if (!Util.checkIfInRange(radius, activeChar, newTarget, true)) {
 						continue;
 					}
 
 					// Don't add this target if this is a Pc->Pc pvp casting and pvp condition not met
-					if (!player.checkPvpSkill(newTarget, skill))
-					{
+					if (!player.checkPvpSkill(newTarget, skill)) {
 						continue;
 					}
 
-					if (!onlyFirst)
-					{
+					if (!onlyFirst) {
 						targetList.add(newTarget);
-					}
-					else
-					{
+					} else {
 						return new L2Character[]{newTarget};
 					}
 				}
 			}
-		}
-		else if (activeChar instanceof L2Npc)
-		{
+		} else if (activeChar instanceof L2Npc) {
 			// for buff purposes, returns one unbuffed friendly mob nearby or mob itself?
 			L2Npc npc = (L2Npc) activeChar;
 			Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
 			//synchronized (activeChar.getKnownList().getKnownObjects())
 			{
-				for (L2Object newTarget : objs)
-				{
-					if (newTarget instanceof L2Npc && ((L2Npc) newTarget).getFactionId() == npc.getFactionId())
-					{
-						if (!Util.checkIfInRange(skill.getCastRange(), activeChar, newTarget, true))
-						{
+				for (L2Object newTarget : objs) {
+					if (newTarget instanceof L2Npc && ((L2Npc) newTarget).getFactionId() == npc.getFactionId()) {
+						if (!Util.checkIfInRange(skill.getCastRange(), activeChar, newTarget, true)) {
 							continue;
 						}
-						if (((L2Npc) newTarget).getFirstEffect(skill) != null)
-						{
+						if (((L2Npc) newTarget).getFirstEffect(skill) != null) {
 							targetList.add((L2Npc) newTarget);
 							break;
 						}
 					}
 				}
 			}
-			if (targetList.isEmpty())
-			{
+			if (targetList.isEmpty()) {
 				targetList.add(activeChar);
 			}
 		}
@@ -163,14 +136,12 @@ public class TargetCorpseClan implements ISkillTargetTypeHandler
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
+	public Enum<L2SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub
 		return L2SkillTargetType.TARGET_CORPSE_CLAN;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetCorpseClan());
 	}
 }

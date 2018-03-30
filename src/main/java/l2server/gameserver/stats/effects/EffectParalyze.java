@@ -22,16 +22,13 @@ import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2EffectType;
 
-public class EffectParalyze extends L2Effect
-{
-	public EffectParalyze(Env env, L2EffectTemplate template)
-	{
+public class EffectParalyze extends L2Effect {
+	public EffectParalyze(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	// Special constructor to steal this effect
-	public EffectParalyze(Env env, L2Effect effect)
-	{
+	public EffectParalyze(Env env, L2Effect effect) {
 		super(env, effect);
 	}
 
@@ -39,8 +36,7 @@ public class EffectParalyze extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#effectCanBeStolen()
 	 */
 	@Override
-	protected boolean effectCanBeStolen()
-	{
+	protected boolean effectCanBeStolen() {
 		return true;
 	}
 
@@ -48,14 +44,12 @@ public class EffectParalyze extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.PARALYZE;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.PARALYZE;
 	}
 
@@ -63,13 +57,9 @@ public class EffectParalyze extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (getAbnormal() != null)
-		{
-			if (getAbnormal().getTemplate().visualEffect != null &&
-					getAbnormal().getTemplate().visualEffect.length == 0)
-			{
+	public boolean onStart() {
+		if (getAbnormal() != null) {
+			if (getAbnormal().getTemplate().visualEffect != null && getAbnormal().getTemplate().visualEffect.length == 0) {
 				getEffected().startVisualEffect(VisualEffect.HOLD_1);
 			}
 		}
@@ -82,13 +72,9 @@ public class EffectParalyze extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
-		if (getAbnormal() != null)
-		{
-			if (getAbnormal().getTemplate().visualEffect != null &&
-					getAbnormal().getTemplate().visualEffect.length == 0)
-			{
+	public void onExit() {
+		if (getAbnormal() != null) {
+			if (getAbnormal().getTemplate().visualEffect != null && getAbnormal().getTemplate().visualEffect.length == 0) {
 				getEffected().stopVisualEffect(VisualEffect.HOLD_1);
 			}
 		}
@@ -101,8 +87,7 @@ public class EffectParalyze extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return true;
 	}
 }

@@ -24,48 +24,39 @@ import java.util.List;
  *
  * @author -Wooden-
  */
-public class ExCursedWeaponLocation extends L2GameServerPacket
-{
+public class ExCursedWeaponLocation extends L2GameServerPacket {
 	private List<CursedWeaponInfo> cursedWeaponInfo;
-
-	public ExCursedWeaponLocation(List<CursedWeaponInfo> cursedWeaponInfo)
-	{
+	
+	public ExCursedWeaponLocation(List<CursedWeaponInfo> cursedWeaponInfo) {
 		this.cursedWeaponInfo = cursedWeaponInfo;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
-		if (!cursedWeaponInfo.isEmpty())
-		{
+	protected final void writeImpl() {
+		if (!cursedWeaponInfo.isEmpty()) {
 			writeD(cursedWeaponInfo.size());
-			for (CursedWeaponInfo w : cursedWeaponInfo)
-			{
+			for (CursedWeaponInfo w : cursedWeaponInfo) {
 				writeD(w.id);
 				writeD(w.activated);
-
+				
 				writeD(w.pos.getX());
 				writeD(w.pos.getY());
 				writeD(w.pos.getZ());
 			}
-		}
-		else
-		{
+		} else {
 			writeD(0);
 			writeD(0);
 		}
 	}
-
-	public static class CursedWeaponInfo
-	{
+	
+	public static class CursedWeaponInfo {
 		public Point3D pos;
 		public int id;
 		public int activated; //0 - not activated ? 1 - activated
-
-		public CursedWeaponInfo(Point3D p, int ID, int status)
-		{
+		
+		public CursedWeaponInfo(Point3D p, int ID, int status) {
 			pos = p;
 			id = ID;
 			activated = status;

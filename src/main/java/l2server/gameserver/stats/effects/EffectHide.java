@@ -31,21 +31,17 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 /**
  * @author ZaKaX - nBd
  */
-public class EffectHide extends L2Effect
-{
-	public EffectHide(Env env, L2EffectTemplate template)
-	{
+public class EffectHide extends L2Effect {
+	public EffectHide(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
-	public EffectHide(Env env, L2Effect effect)
-	{
+	public EffectHide(Env env, L2Effect effect) {
 		super(env, effect);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.HIDE;
 	}
 
@@ -53,29 +49,23 @@ public class EffectHide extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		if (getEffected() instanceof L2PcInstance && !((L2PcInstance) getEffected()).isCombatFlagEquipped() &&
-				!(((L2PcInstance) getEffected()).isPlayingEvent() &&
-						(((L2PcInstance) getEffected()).getEvent().isType(EventType.Survival) ||
-								((L2PcInstance) getEffected()).getEvent().isType(EventType.TeamSurvival))))
-		{
+				!(((L2PcInstance) getEffected()).isPlayingEvent() && (((L2PcInstance) getEffected()).getEvent().isType(EventType.Survival) ||
+						((L2PcInstance) getEffected()).getEvent().isType(EventType.TeamSurvival)))) {
 			L2PcInstance activeChar = (L2PcInstance) getEffected();
 			activeChar.getAppearance().setInvisible();
 			activeChar.startVisualEffect(VisualEffect.STEALTH);
 
 			if (activeChar.getAI().getNextIntention() != null &&
-					activeChar.getAI().getNextIntention().getCtrlIntention() == CtrlIntention.AI_INTENTION_ATTACK)
-			{
+					activeChar.getAI().getNextIntention().getCtrlIntention() == CtrlIntention.AI_INTENTION_ATTACK) {
 				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			}
 
 			L2GameServerPacket del = new DeleteObject(activeChar);
-			for (L2Character target : activeChar.getKnownList().getKnownCharacters())
-			{
-				if (target != null && (target.getTarget() == activeChar ||
-						target.getAI() != null && target.getAI().getAttackTarget() == activeChar))
-				{
+			for (L2Character target : activeChar.getKnownList().getKnownCharacters()) {
+				if (target != null &&
+						(target.getTarget() == activeChar || target.getAI() != null && target.getAI().getAttackTarget() == activeChar)) {
 					target.setTarget(null);
 					target.abortAttack();
 					target.abortCast();
@@ -83,22 +73,18 @@ public class EffectHide extends L2Effect
 				}
 
 				boolean inSameParty = false;
-				if (target.getParty() != null)
-				{
+				if (target.getParty() != null) {
 					inSameParty = target.getParty() == activeChar.getParty();
 				}
 
-				if (target instanceof L2PcInstance && !target.isGM() && !inSameParty)
-				{
+				if (target instanceof L2PcInstance && !target.isGM() && !inSameParty) {
 					target.sendPacket(del);
 				}
 			}
 
-			for (L2Character target : activeChar.getStatus().getStatusListener())
-			{
-				if (target != null && (target.getTarget() == activeChar ||
-						target.getAI() != null && target.getAI().getAttackTarget() == activeChar))
-				{
+			for (L2Character target : activeChar.getStatus().getStatusListener()) {
+				if (target != null &&
+						(target.getTarget() == activeChar || target.getAI() != null && target.getAI().getAttackTarget() == activeChar)) {
 					target.setTarget(null);
 					target.abortAttack();
 					target.abortCast();
@@ -106,13 +92,11 @@ public class EffectHide extends L2Effect
 				}
 
 				boolean inSameParty = false;
-				if (target.getParty() != null)
-				{
+				if (target.getParty() != null) {
 					inSameParty = target.getParty() == activeChar.getParty();
 				}
 
-				if (target instanceof L2PcInstance && !target.isGM() && !inSameParty)
-				{
+				if (target instanceof L2PcInstance && !target.isGM() && !inSameParty) {
 					target.sendPacket(del);
 				}
 			}
@@ -127,22 +111,17 @@ public class EffectHide extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		// Avoid other abnormals like this one to be removed
-		for (L2Abnormal abnormal : getEffected().getAllEffects())
-		{
-			if (abnormal.getSkill().getId() != getSkill().getId() && abnormal.getType() == getAbnormalType())
-			{
+		for (L2Abnormal abnormal : getEffected().getAllEffects()) {
+			if (abnormal.getSkill().getId() != getSkill().getId() && abnormal.getType() == getAbnormalType()) {
 				return;
 			}
 		}
 
-		if (getEffected() instanceof L2PcInstance)
-		{
+		if (getEffected() instanceof L2PcInstance) {
 			L2PcInstance activeChar = (L2PcInstance) getEffected();
-			if (!activeChar.inObserverMode())
-			{
+			if (!activeChar.inObserverMode()) {
 				activeChar.getAppearance().setVisible();
 			}
 			activeChar.stopVisualEffect(VisualEffect.STEALTH);
@@ -153,9 +132,7 @@ public class EffectHide extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return !(getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCombatFlagEquipped());
-
 	}
 }

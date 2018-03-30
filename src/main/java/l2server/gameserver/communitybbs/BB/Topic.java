@@ -23,8 +23,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.logging.Level;
 
-public class Topic
-{
+public class Topic {
 
 	public static final int MORMAL = 0;
 	public static final int MEMO = 1;
@@ -40,8 +39,7 @@ public class Topic
 
 	/**
 	 */
-	public Topic(ConstructorType ct, int id, int fid, String name, long date, String oname, int oid, int type, int Creply)
-	{
+	public Topic(ConstructorType ct, int id, int fid, String name, long date, String oname, int oid, int type, int Creply) {
 		this.id = id;
 		forumId = fid;
 		topicName = name;
@@ -52,8 +50,7 @@ public class Topic
 		cReply = Creply;
 		TopicBBSManager.getInstance().addTopic(this);
 
-		if (ct == ConstructorType.CREATE)
-		{
+		if (ct == ConstructorType.CREATE) {
 
 			insertindb();
 		}
@@ -62,14 +59,12 @@ public class Topic
 	/**
 	 *
 	 */
-	public void insertindb()
-	{
+	public void insertindb() {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(
-					"INSERT INTO topic (topic_id,topic_forum_id,topic_name,topic_date,topic_ownername,topic_ownerid,topic_type,topic_reply) values (?,?,?,?,?,?,?,?)");
+					"INSERT INTO topic (topic_id,topic_forum_id,topic_name,topic_date,topic_ownername,topic_ownerid,topic_type,topic_reply) VALUES (?,?,?,?,?,?,?,?)");
 			statement.setInt(1, id);
 			statement.setInt(2, forumId);
 			statement.setString(3, topicName);
@@ -80,72 +75,57 @@ public class Topic
 			statement.setInt(8, cReply);
 			statement.execute();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Error while saving new Topic to db " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public enum ConstructorType
-	{
-		RESTORE, CREATE
+	public enum ConstructorType {
+		RESTORE,
+		CREATE
 	}
 
 	/**
 	 * @return
 	 */
-	public int getID()
-	{
+	public int getID() {
 		return id;
 	}
 
-	public int getForumID()
-	{
+	public int getForumID() {
 		return forumId;
 	}
 
 	/**
 	 * @return
 	 */
-	public String getName()
-	{
+	public String getName() {
 		return topicName;
 	}
 
-	public String getOwnerName()
-	{
+	public String getOwnerName() {
 		return ownerName;
 	}
 
 	/**
 	 *
 	 */
-	public void deleteme(Forum f)
-	{
+	public void deleteme(Forum f) {
 		TopicBBSManager.getInstance().delTopic(this);
 		f.rmTopicByID(getID());
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement =
-					con.prepareStatement("DELETE FROM topic WHERE topic_id=? AND topic_forum_id=?");
+			PreparedStatement statement = con.prepareStatement("DELETE FROM topic WHERE topic_id=? AND topic_forum_id=?");
 			statement.setInt(1, getID());
 			statement.setInt(2, f.getID());
 			statement.execute();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Error while deleting topic: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
@@ -153,8 +133,7 @@ public class Topic
 	/**
 	 * @return
 	 */
-	public long getDate()
-	{
+	public long getDate() {
 		return date;
 	}
 }

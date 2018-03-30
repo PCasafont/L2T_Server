@@ -15,14 +15,12 @@
 
 package l2server.gameserver.network.serverpackets;
 
-public class ExRegMax extends L2GameServerPacket
-{
+public class ExRegMax extends L2GameServerPacket {
 	private double max;
 	private int count;
 	private int time;
 
-	public ExRegMax(double max, int count, int time)
-	{
+	public ExRegMax(double max, int count, int time) {
 		this.max = max;
 		this.count = count;
 		this.time = time;
@@ -32,8 +30,7 @@ public class ExRegMax extends L2GameServerPacket
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(1);
 		writeD(count);
 		writeD(time);

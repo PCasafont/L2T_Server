@@ -25,8 +25,7 @@ import java.util.logging.Logger;
 /**
  * @author -Wooden-
  */
-public class ServerStatus extends BaseRecievePacket
-{
+public class ServerStatus extends BaseRecievePacket {
 	protected static Logger log = Logger.getLogger(ServerStatus.class.getName());
 
 	public static final String[] STATUS_STRING = {"Auto", "Good", "Normal", "Full", "Down", "Gm Only"};
@@ -66,20 +65,16 @@ public class ServerStatus extends BaseRecievePacket
 	/**
 	 * @param decrypt
 	 */
-	public ServerStatus(byte[] decrypt, GameServerThread server)
-	{
+	public ServerStatus(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 
 		GameServerInfo gsi = GameServerTable.getInstance().getRegisteredGameServerById(server.getServerId());
-		if (gsi != null)
-		{
+		if (gsi != null) {
 			int size = readD();
-			for (int i = 0; i < size; i++)
-			{
+			for (int i = 0; i < size; i++) {
 				int type = readD();
 				int value = readD();
-				switch (type)
-				{
+				switch (type) {
 					case SERVER_LIST_STATUS:
 						gsi.setStatus(value);
 						break;

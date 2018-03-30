@@ -40,19 +40,18 @@ import java.util.concurrent.ScheduledFuture;
  *
  * @version $Revision: 1.20.4.6 $ $Date: 2005/04/06 16:13:39 $
  */
-public class L2MonsterInstance extends L2Attackable
-{
+public class L2MonsterInstance extends L2Attackable {
 	//
-
+	
 	private boolean enableMinions = true;
-
+	
 	private L2MonsterInstance master = null;
 	private MinionList minionList = null;
-
+	
 	protected ScheduledFuture<?> maintenanceTask = null;
-
+	
 	private static final int MONSTER_MAINTENANCE_INTERVAL = 1000;
-
+	
 	/**
 	 * Constructor of L2MonsterInstance (use L2Character and L2NpcInstance constructor).<BR><BR>
 	 * <p>
@@ -63,210 +62,175 @@ public class L2MonsterInstance extends L2Attackable
 	 *
 	 * @param objectId Identifier of the object to initialized
 	 */
-	public L2MonsterInstance(int objectId, L2NpcTemplate template)
-	{
+	public L2MonsterInstance(int objectId, L2NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2MonsterInstance);
 		setAutoAttackable(true);
 	}
-
+	
 	@Override
-	public final MonsterKnownList getKnownList()
-	{
+	public final MonsterKnownList getKnownList() {
 		return (MonsterKnownList) super.getKnownList();
 	}
-
+	
 	@Override
-	public void initKnownList()
-	{
+	public void initKnownList() {
 		setKnownList(new MonsterKnownList(this));
 	}
-
+	
 	/**
 	 * Return True if the attacker is not another L2MonsterInstance.<BR><BR>
 	 */
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
-	{
+	public boolean isAutoAttackable(L2Character attacker) {
 		return super.isAutoAttackable(attacker) && getNpcId() != 50101;
 	}
-
+	
 	/**
 	 * Return True if the L2MonsterInstance is Agressive (aggroRange > 0).<BR><BR>
 	 */
 	@Override
-	public boolean isAggressive()
-	{
+	public boolean isAggressive() {
 		return getTemplate().Aggressive && !isRaid();
 	}
-
+	
 	@Override
-	public void onSpawn()
-	{
-		if (!isTeleporting())
-		{
-			if (getLeader() != null)
-			{
+	public void onSpawn() {
+		if (!isTeleporting()) {
+			if (getLeader() != null) {
 				setIsRaidMinion(getLeader().isRaid());
 				getLeader().getMinionList().onMinionSpawn(this);
 			}
-
+			
 			// delete spawned minions before dynamic minions spawned by script
-			if (hasMinions())
-			{
+			if (hasMinions()) {
 				getMinionList().onMasterSpawn();
 			}
-
+			
 			startMaintenanceTask();
 		}
-
+		
 		// dynamic script-based minions spawned here, after all preparations.
 		super.onSpawn();
 	}
-
+	
 	@Override
-	public void onTeleported()
-	{
+	public void onTeleported() {
 		super.onTeleported();
-
-		if (hasMinions())
-		{
+		
+		if (hasMinions()) {
 			getMinionList().onMasterTeleported();
 		}
 	}
-
-	protected int getMaintenanceInterval()
-	{
+	
+	protected int getMaintenanceInterval() {
 		return MONSTER_MAINTENANCE_INTERVAL;
 	}
-
+	
 	/**
 	 * Spawn all minions at a regular interval
 	 */
-	protected void startMaintenanceTask()
-	{
+	protected void startMaintenanceTask() {
 		// maintenance task now used only for minions spawn
-		if (getTemplate().getMinionData() == null && getTemplate().getRandomMinionData() == null)
-		{
+		if (getTemplate().getMinionData() == null && getTemplate().getRandomMinionData() == null) {
 			return;
 		}
-
-		if (maintenanceTask == null)
-		{
-			maintenanceTask = ThreadPoolManager.getInstance().scheduleGeneral(() ->
-			{
-				if (enableMinions)
-				{
+		
+		if (maintenanceTask == null) {
+			maintenanceTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> {
+				if (enableMinions) {
 					getMinionList().spawnMinions();
 				}
 			}, getMaintenanceInterval() + Rnd.get(1000));
 		}
 	}
-
+	
 	@Override
-	public boolean doDie(L2Character killer)
-	{
-		if (!super.doDie(killer))
-		{
+	public boolean doDie(L2Character killer) {
+		if (!super.doDie(killer)) {
 			return false;
 		}
-
+		
 		Map<Integer, L2PcInstance> knownPlayers = getKnownList().getKnownPlayers();
-
-		if (killer instanceof L2PcInstance)
-		{
-			if (Config.isServer(Config.TENKAI) && Rnd.get(30) == 0 && knownPlayers.size() > 0 &&
-					!(this instanceof L2RaidBossInstance) && !(this instanceof L2GrandBossInstance) &&
-					!(this instanceof L2ChessPieceInstance))
-			{
+		
+		if (killer instanceof L2PcInstance) {
+			if (Config.isServer(Config.TENKAI) && Rnd.get(30) == 0 && knownPlayers.size() > 0 && !(this instanceof L2RaidBossInstance) &&
+					!(this instanceof L2GrandBossInstance) && !(this instanceof L2ChessPieceInstance)) {
 				CoreMessage cm = new CoreMessage(47001 + Rnd.get(90));
 				cm.addString(killer.getName());
 				CreatureSay cs = new CreatureSay(getObjectId(), Say2.ALL_NOT_RECORDED, getName(), cm.renderMsg("en"));
 				broadcastPacket(cs);
 			}
 		}
-
-		if (maintenanceTask != null)
-		{
+		
+		if (maintenanceTask != null) {
 			maintenanceTask.cancel(false); // doesn't do it?
 			maintenanceTask = null;
 		}
-
+		
 		return true;
 	}
-
+	
 	@Override
-	public void deleteMe()
-	{
-		if (maintenanceTask != null)
-		{
+	public void deleteMe() {
+		if (maintenanceTask != null) {
 			maintenanceTask.cancel(false);
 			maintenanceTask = null;
 		}
-
-		if (hasMinions())
-		{
+		
+		if (hasMinions()) {
 			getMinionList().onMasterDie(true);
 		}
-
-		if (getLeader() != null)
-		{
+		
+		if (getLeader() != null) {
 			getLeader().getMinionList().onMinionDie(this, 0);
 		}
-
+		
 		super.deleteMe();
 	}
-
+	
 	@Override
-	public L2MonsterInstance getLeader()
-	{
+	public L2MonsterInstance getLeader() {
 		return master;
 	}
-
-	public void setLeader(L2MonsterInstance leader)
-	{
+	
+	public void setLeader(L2MonsterInstance leader) {
 		master = leader;
 	}
-
-	public void enableMinions(boolean b)
-	{
+	
+	public void enableMinions(boolean b) {
 		enableMinions = b;
 	}
-
-	public boolean hasMinions()
-	{
+	
+	public boolean hasMinions() {
 		return minionList != null;
 	}
-
-	public MinionList getMinionList()
-	{
-		if (minionList == null)
-		{
+	
+	public MinionList getMinionList() {
+		if (minionList == null) {
 			minionList = new MinionList(this);
 		}
-
+		
 		return minionList;
 	}
-
+	
 	@Override
-	public int getMaxMp()
-	{
+	public int getMaxMp() {
 		/*
         if (getTemplate().isMiniRaid())
 			return getStat().getMaxMp() * 10;
 		 */
-
+		
 		return getStat().getMaxMp();
 	}
-
+	
 	@Override
-	public int getMaxHp()
-	{
+	public int getMaxHp() {
         /*
 		if (getTemplate().isMiniRaid())
 			return getStat().getMaxMp() * 10;
 		 */
-
+		
 		return getStat().getMaxHp();
 	}
 }

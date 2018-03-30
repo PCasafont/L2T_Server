@@ -16,67 +16,48 @@ import java.util.logging.Logger;
  *
  * @author Soul
  */
-public class AdminAPlayer implements IAdminCommandHandler
-{
+public class AdminAPlayer implements IAdminCommandHandler {
 
-	private static final String[] ADMIN_COMMANDS =
-			{"admin_spawn_aplayer", "admin_spawn_aparty", "admin_delete_all_aplayers"};
+	private static final String[] ADMIN_COMMANDS = {"admin_spawn_aplayer", "admin_spawn_aparty", "admin_delete_all_aplayers"};
 
 	public static Logger log = Logger.getLogger(AdminAPlayer.class.getName());
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 		StringTokenizer st = new StringTokenizer(command, " ");
 		String param = null;
 
-		if (command.startsWith("admin_spawn_aplayer"))
-		{
-			try
-			{
+		if (command.startsWith("admin_spawn_aplayer")) {
+			try {
 				st.nextToken();
 				param = st.nextToken();
-			}
-			catch (NoSuchElementException nsee)
-			{
+			} catch (NoSuchElementException nsee) {
 				activeChar.sendMessage("use: //spawn_aplayer <classId | className>");
 			}
-		}
-		else if (command.equalsIgnoreCase("admin_delete_all_aplayers"))
-		{
-			for (L2ApInstance aplayer : ArtificialPlayersManager.getInstance().getAllAPlayers())
-			{
-				if (aplayer != null)
-				{
+		} else if (command.equalsIgnoreCase("admin_delete_all_aplayers")) {
+			for (L2ApInstance aplayer : ArtificialPlayersManager.getInstance().getAllAPlayers()) {
+				if (aplayer != null) {
 					aplayer.deleteMe();
 				}
 			}
 			activeChar.sendMessage("Kiked all aplayers from the server...!");
-		}
-		else if (command.startsWith("admin_spawn_aparty"))
-		{
-			if (st.hasMoreTokens())
-			{
+		} else if (command.startsWith("admin_spawn_aparty")) {
+			if (st.hasMoreTokens()) {
 				// Generate param-specific party
 				List<Integer> classIds = new ArrayList<Integer>();
 
 				st.nextToken(); // spawn_aparty command
 
-				while (st.hasMoreTokens())
-				{
+				while (st.hasMoreTokens()) {
 					param = st.nextToken();
 
-					if (param.matches("[0-9]*"))
-					{
+					if (param.matches("[0-9]*")) {
 						// It's a class Id
 						classIds.add(Integer.parseInt(param));
-					}
-					else
-					{
+					} else {
 						int id = getIdFromName(param);
 
-						if (id > 0)
-						{
+						if (id > 0) {
 							classIds.add(id);
 						}
 						//else
@@ -84,37 +65,26 @@ public class AdminAPlayer implements IAdminCommandHandler
 					}
 				}
 
-				if (classIds.size() > 1)
-				{
+				if (classIds.size() > 1) {
 					ArtificialPlayersManager.getInstance().createParty(classIds);
 					activeChar.sendMessage("APlayer party created.");
 					//TODO seria bona idea que mostres el party #
-				}
-				else
-				{
+				} else {
 					activeChar.sendMessage("Too few parameters to create a APlayer party.");
 				}
-			}
-			else
-			{
+			} else {
 				// Generate random-party
 				ArtificialPlayersManager.getInstance().createRandomParty();
 				activeChar.sendMessage("Random APlayer party manually created.");
 			}
-		}
-		else if (command.startsWith("admin_delete_aparty"))
-		{
+		} else if (command.startsWith("admin_delete_aparty")) {
 			// TODO: delete party number #XX
-		}
-		else if (command.startsWith("admin_recall_aparty"))
-		{
+		} else if (command.startsWith("admin_recall_aparty")) {
 			// TODO: recall party #XX to our position
-		}
-		else if (command.equals("admin_list_aparty"))
-		{
+		} else if (command.equals("admin_list_aparty")) {
 			// TODO: list the parties
 			/*
-             * Aplayer party #XX
+			 * Aplayer party #XX
 			 * Members: [Party[n]]+
 			 *
 			 * Possible output:
@@ -125,11 +95,9 @@ public class AdminAPlayer implements IAdminCommandHandler
 			 * APlayer party #74
 			 * Members: Aeore, Iss, Yul, Yul, Feoh
 			 */
-		}
-		else if (command.equals("admin_list_aplayers"))
-		{
+		} else if (command.equals("admin_list_aplayers")) {
 			// TODO: list the non-party APlayers
-            /*
+			/*
 			 * [#X] Name (X,Y,Z)
 			 * where X = #APlayer ID (for multiple of same name)
 			 *
@@ -145,39 +113,23 @@ public class AdminAPlayer implements IAdminCommandHandler
 		return true;
 	}
 
-	private int getIdFromName(String param)
-	{
+	private int getIdFromName(String param) {
 		// For now, only Awakened support!
-		if ("Sigel Knight".contains(param))
-		{
+		if ("Sigel Knight".contains(param)) {
 			return 139;
-		}
-		else if ("Tyrr Warrior".contains(param))
-		{
+		} else if ("Tyrr Warrior".contains(param)) {
 			return 140;
-		}
-		else if ("Othel Rogue".contains(param))
-		{
+		} else if ("Othel Rogue".contains(param)) {
 			return 141;
-		}
-		else if ("Yul Archer".contains(param))
-		{
+		} else if ("Yul Archer".contains(param)) {
 			return 142;
-		}
-		else if ("Feoh Wizard".contains(param))
-		{
+		} else if ("Feoh Wizard".contains(param)) {
 			return 143;
-		}
-		else if ("Iss Enchanter".contains(param))
-		{
+		} else if ("Iss Enchanter".contains(param)) {
 			return 144;
-		}
-		else if ("Wynn Summoner".contains(param))
-		{
+		} else if ("Wynn Summoner".contains(param)) {
 			return 145;
-		}
-		else if ("Aeore Healer".contains(param))
-		{
+		} else if ("Aeore Healer".contains(param)) {
 			return 146;
 		}
 
@@ -217,8 +169,7 @@ public class AdminAPlayer implements IAdminCommandHandler
 	}
 
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

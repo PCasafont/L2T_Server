@@ -4,29 +4,23 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class InquisitorShilienElder extends L2Transformation
-{
-	public InquisitorShilienElder()
-	{
+public class InquisitorShilienElder extends L2Transformation {
+	public InquisitorShilienElder() {
 		// id
 		super(318);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 318 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 318 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
-		if (getPlayer().getLevel() > 39)
-		{
+	public void transformedSkills() {
+		if (getPlayer().getLevel() > 39) {
 			// Divine Punishment
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(1523, getPlayer().getLevel() - 39), false);
 			// Divine Flash
@@ -38,9 +32,7 @@ public class InquisitorShilienElder extends L2Transformation
 			// Divine Curse
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(1525, getPlayer().getLevel() - 39), false);
 			getPlayer().setTransformAllowedSkills(new int[]{838, 1523, 1528, 1524, 1525, 1430, 1303, 1059, 1043});
-		}
-		else
-		{
+		} else {
 			getPlayer().setTransformAllowedSkills(new int[]{838, 1430, 1303, 1059});
 		}
 		// Switch Stance
@@ -48,13 +40,11 @@ public class InquisitorShilienElder extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		// Divine Punishment
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(1523, getPlayer().getLevel() - 39), false);
 		// Divine Flash
@@ -71,8 +61,7 @@ public class InquisitorShilienElder extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new InquisitorShilienElder());
 	}
 }

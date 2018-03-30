@@ -20,25 +20,22 @@ import l2server.gameserver.model.actor.L2Summon;
 /**
  * @author KenM
  */
-public final class ExPartyPetWindowAdd extends L2GameServerPacket
-{
+public final class ExPartyPetWindowAdd extends L2GameServerPacket {
 	private final L2Summon summon;
-
-	public ExPartyPetWindowAdd(L2Summon summon)
-	{
+	
+	public ExPartyPetWindowAdd(L2Summon summon) {
 		this.summon = summon;
 	}
 
     /*
 	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
-
+	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(summon.getObjectId());
 		writeD(summon.getTemplate().TemplateId + 1000000);
 		writeD(summon.getSummonType());

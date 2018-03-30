@@ -21,16 +21,13 @@ import java.util.List;
 /**
  * @author Pere
  */
-public class HeroInfo
-{
-	public static class DiaryEntry
-	{
+public class HeroInfo {
+	public static class DiaryEntry {
 		public long time;
 		public String action;
 	}
 
-	public static class FightInfo
-	{
+	public static class FightInfo {
 		public String opponent;
 		public String opponentClass;
 		public String duration;
@@ -58,8 +55,7 @@ public class HeroInfo
 	private List<DiaryEntry> diary = new ArrayList<>();
 	private List<FightInfo> fights = new ArrayList<>();
 
-	public HeroInfo(OlympiadNobleInfo nobleInfo)
-	{
+	public HeroInfo(OlympiadNobleInfo nobleInfo) {
 		id = nobleInfo.getId();
 		name = nobleInfo.getName();
 		classId = nobleInfo.getClassId();
@@ -68,8 +64,7 @@ public class HeroInfo
 		draws = nobleInfo.getDraws();
 	}
 
-	public HeroInfo(int id, String name, int classId, int count, boolean played)
-	{
+	public HeroInfo(int id, String name, int classId, int count, boolean played) {
 		this.id = id;
 		this.name = name;
 		this.classId = classId;
@@ -77,138 +72,111 @@ public class HeroInfo
 		this.played = played;
 	}
 
-	public int getId()
-	{
+	public int getId() {
 		return id;
 	}
 
-	public String getName()
-	{
+	public String getName() {
 		return name;
 	}
 
-	public int getClassId()
-	{
+	public int getClassId() {
 		return classId;
 	}
 
-	public int getVictories()
-	{
+	public int getVictories() {
 		return victories;
 	}
 
-	public void setVictories(int victories)
-	{
+	public void setVictories(int victories) {
 		this.victories = victories;
 	}
 
-	public int getDefeats()
-	{
+	public int getDefeats() {
 		return defeats;
 	}
 
-	public void setDefeats(int defeats)
-	{
+	public void setDefeats(int defeats) {
 		this.defeats = defeats;
 	}
 
-	public int getDraws()
-	{
+	public int getDraws() {
 		return draws;
 	}
 
-	public void setDraws(int draws)
-	{
+	public void setDraws(int draws) {
 		this.draws = draws;
 	}
 
-	public int getCount()
-	{
+	public int getCount() {
 		return count;
 	}
 
-	public void increaseCount()
-	{
+	public void increaseCount() {
 		count++;
 	}
 
-	public boolean getPlayed()
-	{
+	public boolean getPlayed() {
 		return played;
 	}
 
-	public void setPlayed(boolean played)
-	{
+	public void setPlayed(boolean played) {
 		this.played = played;
 	}
 
-	public String getClanName()
-	{
+	public String getClanName() {
 		return clanName;
 	}
 
-	public void setClanName(String clanName)
-	{
+	public void setClanName(String clanName) {
 		this.clanName = clanName;
 	}
 
-	public int getClanCrest()
-	{
+	public int getClanCrest() {
 		return clanCrest;
 	}
 
-	public void setClanCrest(int clanCrest)
-	{
+	public void setClanCrest(int clanCrest) {
 		this.clanCrest = clanCrest;
 	}
 
-	public String getAllyName()
-	{
+	public String getAllyName() {
 		return allyName;
 	}
 
-	public void setAllyName(String allyName)
-	{
+	public void setAllyName(String allyName) {
 		this.allyName = allyName;
 	}
 
-	public int getAllyCrest()
-	{
+	public int getAllyCrest() {
 		return allyCrest;
 	}
 
-	public void setAllyCrest(int allyCrest)
-	{
+	public void setAllyCrest(int allyCrest) {
 		this.allyCrest = allyCrest;
 	}
 
-	public String getMessage()
-	{
+	public String getMessage() {
 		return message;
 	}
 
-	public void setMessage(String message)
-	{
+	public void setMessage(String message) {
 		this.message = message;
 	}
 
-	public void addDiaryEntry(DiaryEntry entry)
-	{
+	public void addDiaryEntry(DiaryEntry entry) {
 		diary.add(entry);
 	}
 
-	public List<DiaryEntry> getDiary()
-	{
+	public List<DiaryEntry> getDiary() {
 		return diary;
 	}
 
-	public void addFight(FightInfo fight)
-	{
+	public void addFight(FightInfo fight) {
 		fights.add(fight);
 	}
 
-	public List<FightInfo> getFights()
-	{
+	public List<FightInfo> getFights() {
 		return fights;
 	}
 }

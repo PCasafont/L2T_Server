@@ -21,8 +21,7 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.4.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class SetupGauge extends L2GameServerPacket
-{
+public final class SetupGauge extends L2GameServerPacket {
 	public static final int BLUE_DUAL = 0;
 	public static final int BLUE = 1;
 	public static final int BLUE_MINI = 2;
@@ -34,23 +33,20 @@ public final class SetupGauge extends L2GameServerPacket
 	private int time2;
 	private int charObjId;
 
-	public SetupGauge(int dat1, int time)
-	{
+	public SetupGauge(int dat1, int time) {
 		color = dat1;
 		this.time = time;
 		time2 = time;
 	}
 
-	public SetupGauge(int color, int currentTime, int maxTime)
-	{
+	public SetupGauge(int color, int currentTime, int maxTime) {
 		this.color = color;
 		time = currentTime;
 		time2 = maxTime;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(charObjId);
 		writeD(color);
 		writeD(time);
@@ -58,8 +54,7 @@ public final class SetupGauge extends L2GameServerPacket
 	}
 
 	@Override
-	public void runImpl()
-	{
+	public void runImpl() {
 		charObjId = getClient().getActiveChar().getObjectId();
 	}
 }

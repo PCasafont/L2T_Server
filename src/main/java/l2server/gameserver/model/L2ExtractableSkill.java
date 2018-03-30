@@ -20,24 +20,20 @@ import java.util.ArrayList;
 /**
  * @author Zoey76
  */
-public class L2ExtractableSkill
-{
+public class L2ExtractableSkill {
 	private final long hash;
 	private final ArrayList<L2ExtractableProductItem> product;
-
-	public L2ExtractableSkill(long hash, ArrayList<L2ExtractableProductItem> products)
-	{
+	
+	public L2ExtractableSkill(long hash, ArrayList<L2ExtractableProductItem> products) {
 		this.hash = hash;
 		product = products;
 	}
-
-	public long getSkillHash()
-	{
+	
+	public long getSkillHash() {
 		return hash;
 	}
-
-	public ArrayList<L2ExtractableProductItem> getProductItemsArray()
-	{
+	
+	public ArrayList<L2ExtractableProductItem> getProductItemsArray() {
 		return product;
 	}
 }

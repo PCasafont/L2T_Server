@@ -23,28 +23,22 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
  * @author LBaldi
  * @version $Revision: $ $Date: $
  */
-public class L2AdventurerInstance extends L2NpcInstance
-{
-	public L2AdventurerInstance(int objectId, L2NpcTemplate template)
-	{
+public class L2AdventurerInstance extends L2NpcInstance {
+	public L2AdventurerInstance(int objectId, L2NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2AdventurerInstance);
 	}
-
+	
 	@Override
-	public String getHtmlPath(int npcId, int val)
-	{
+	public String getHtmlPath(int npcId, int val) {
 		String pom = "";
-
-		if (val == 0)
-		{
+		
+		if (val == 0) {
 			pom = "" + npcId;
-		}
-		else
-		{
+		} else {
 			pom = npcId + "-" + val;
 		}
-
+		
 		return "adventurer_guildsman/" + pom + ".htm";
 	}
 }

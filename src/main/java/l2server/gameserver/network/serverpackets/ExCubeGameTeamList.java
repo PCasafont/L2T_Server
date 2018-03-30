@@ -36,16 +36,15 @@ import java.util.List;
  *
  * @author mrTJO
  */
-public class ExCubeGameTeamList extends L2GameServerPacket
-{
-
+public class ExCubeGameTeamList extends L2GameServerPacket {
+	
 	// Players Lists
 	List<L2PcInstance> bluePlayers;
 	List<L2PcInstance> redPlayers;
-
+	
 	// Common Values
 	int roomNumber;
-
+	
 	/**
 	 * Show Minigame Waiting List to Player
 	 *
@@ -53,31 +52,27 @@ public class ExCubeGameTeamList extends L2GameServerPacket
 	 * @param bluePlayers Blue Players List
 	 * @param roomNumber  Arena/Room ID
 	 */
-	public ExCubeGameTeamList(List<L2PcInstance> redPlayers, List<L2PcInstance> bluePlayers, int roomNumber)
-	{
+	public ExCubeGameTeamList(List<L2PcInstance> redPlayers, List<L2PcInstance> bluePlayers, int roomNumber) {
 		this.redPlayers = redPlayers;
 		this.bluePlayers = bluePlayers;
-        this.roomNumber = roomNumber - 1;
+		this.roomNumber = roomNumber - 1;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(roomNumber);
 		writeD(0xffffffff);
-
+		
 		writeD(bluePlayers.size());
-		for (L2PcInstance player : bluePlayers)
-		{
+		for (L2PcInstance player : bluePlayers) {
 			writeD(player.getObjectId());
 			writeS(player.getName());
 		}
 		writeD(redPlayers.size());
-		for (L2PcInstance player : redPlayers)
-		{
+		for (L2PcInstance player : redPlayers) {
 			writeD(player.getObjectId());
 			writeS(player.getName());
 		}

@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class SpiritOfNabiarov extends L2Transformation
-{
+public class SpiritOfNabiarov extends L2Transformation {
 	private static final int[] SKILLS = {5491, 619, 11311, 11312, 11313, 11314, 11315, 11299, 11310};
 
-	public SpiritOfNabiarov()
-	{
+	public SpiritOfNabiarov() {
 		// id, colRadius, colHeight
 		super(509, 25, 39.5);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 509 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 509 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		// Decrease Bow/Crossbow Attack Speed
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(5491, 1), false);
 
@@ -35,8 +30,7 @@ public class SpiritOfNabiarov extends L2Transformation
 
 		int skillLevel = getPlayer().getSkillLevelHash(11267);
 
-		if (skillLevel > 0)
-		{
+		if (skillLevel > 0) {
 			//Naviarope Strike
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(11311, skillLevel), false);
 
@@ -63,13 +57,11 @@ public class SpiritOfNabiarov extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		// Decrease Bow/Crossbow Attack Speed
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(5491, 1), false);
 
@@ -78,8 +70,7 @@ public class SpiritOfNabiarov extends L2Transformation
 
 		int skillLevel = getPlayer().getSkillLevelHash(11267);
 
-		if (skillLevel > 0)
-		{
+		if (skillLevel > 0) {
 			//Naviarope Strike
 			getPlayer().removeSkill(SkillTable.getInstance().getInfo(11311, skillLevel), false);
 
@@ -99,8 +90,7 @@ public class SpiritOfNabiarov extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new SpiritOfNabiarov());
 	}
 }

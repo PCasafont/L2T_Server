@@ -27,223 +27,87 @@ import l2server.gameserver.network.serverpackets.ExAcquireSkillList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 
-public class SkillTransfer extends Quest
-{
+public class SkillTransfer extends Quest {
 	private static String qn = "SkillTransfer";
-
+	
 	private static final int RESET_ADENA_COST = 10000000;
-
-	private static final int NPCs[] = {
-			30022,
-			30030,
-			30032,
-			30036,
-			30067,
-			30068,
-			30116,
-			30117,
-			30118,
-			30119,
-			30144,
-			30145,
-			30188,
-			30194,
-			30293,
-			30330,
-			30375,
-			30377,
-			30464,
-			30473,
-			30476,
-			30680,
-			30701,
-			30720,
-			30721,
-			30858,
-			30859,
-			30860,
-			30861,
-			30864,
-			30906,
-			30908,
-			30912,
-			31280,
-			31281,
-			31287,
-			31329,
-			31330,
-			31335,
-			31969,
-			31970,
-			31976,
-			32155,
-			32162
-	};
-
+	
+	private static final int NPCs[] =
+			{30022, 30030, 30032, 30036, 30067, 30068, 30116, 30117, 30118, 30119, 30144, 30145, 30188, 30194, 30293, 30330, 30375, 30377, 30464,
+					30473, 30476, 30680, 30701, 30720, 30721, 30858, 30859, 30860, 30861, 30864, 30906, 30908, 30912, 31280, 31281, 31287, 31329,
+					31330, 31335, 31969, 31970, 31976, 32155, 32162};
+	
 	/*
 	 * Item ID, count
 	 */
-	private static final int[][] PORMANDERS = {
-			{15307, 7}, // Cardinal (97)
+	private static final int[][] PORMANDERS = {{15307, 7}, // Cardinal (97)
 			{15308, 7}, // Eva's Saint (105)
 			{15309, 7} // Shillen Saint (112)
 	};
-
+	
 	/*
 	 * Skill ID, Skill Level
 	 */
 	private static final int[][][] SKILL_TRANSFER_TREE = {
 			// Cardinal (97)
-			{
-					{1013, 32},
-					{1033, 3},
-					{1050, 2},
-					{1059, 3},
-					{1087, 3},
-					{1189, 3},
-					{1240, 3},
-					{1242, 3},
-					{1243, 6},
-					{1255, 2},
-					{1257, 3},
-					{1259, 4},
-					{1268, 4},
-					{1273, 13},
-					{1303, 2},
-					{1304, 3},
-					{1392, 3},
-					{1393, 3},
-					{1397, 3},
-					{1531, 7},
-					{1539, 4}
-			},
+			{{1013, 32}, {1033, 3}, {1050, 2}, {1059, 3}, {1087, 3}, {1189, 3}, {1240, 3}, {1242, 3}, {1243, 6}, {1255, 2}, {1257, 3}, {1259, 4},
+					{1268, 4}, {1273, 13}, {1303, 2}, {1304, 3}, {1392, 3}, {1393, 3}, {1397, 3}, {1531, 7}, {1539, 4}},
 			// Eva's Saint (105)
-			{
-					{1016, 9},
-					{1018, 3},
-					{1034, 13},
-					{1042, 12},
-					{1049, 14},
-					{1059, 3},
-					{1075, 15},
-					{1077, 3},
-					{1189, 3},
-					{1218, 33},
-					{1240, 3},
-					{1242, 3},
-					{1254, 6},
-					{1258, 4},
-					{1268, 4},
-					{1271, 1},
-					{1307, 3},
-					{1311, 6},
-					{1392, 3},
-					{1396, 10},
-					{1399, 5},
-					{1401, 11},
-					{1402, 5},
-					{1418, 1},
-					{1531, 7},
-					{1539, 4}
-			},
+			{{1016, 9}, {1018, 3}, {1034, 13}, {1042, 12}, {1049, 14}, {1059, 3}, {1075, 15}, {1077, 3}, {1189, 3}, {1218, 33}, {1240, 3}, {1242, 3},
+					{1254, 6}, {1258, 4}, {1268, 4}, {1271, 1}, {1307, 3}, {1311, 6}, {1392, 3}, {1396, 10}, {1399, 5}, {1401, 11}, {1402, 5},
+					{1418, 1}, {1531, 7}, {1539, 4}},
 			// Shillen Saint (112)
-			{
-					{1016, 9},
-					{1020, 27},
-					{1028, 19},
-					{1033, 3},
-					{1034, 13},
-					{1042, 12},
-					{1043, 1},
-					{1044, 3},
-					{1049, 14},
-					{1050, 2},
-					{1075, 15},
-					{1087, 3},
-					{1218, 33},
-					{1243, 6},
-					{1254, 6},
-					{1255, 2},
-					{1257, 3},
-					{1258, 4},
-					{1259, 4},
-					{1271, 1},
-					{1273, 13},
-					{1304, 3},
-					{1307, 3},
-					{1311, 6},
-					{1393, 3},
-					{1394, 10},
-					{1396, 10},
-					{1397, 3},
-					{1399, 5},
-					{1400, 10},
-					{1401, 11},
-					{1402, 5},
-					{1418, 1}
-			}
-	};
-
+			{{1016, 9}, {1020, 27}, {1028, 19}, {1033, 3}, {1034, 13}, {1042, 12}, {1043, 1}, {1044, 3}, {1049, 14}, {1050, 2}, {1075, 15}, {1087, 3},
+					{1218, 33}, {1243, 6}, {1254, 6}, {1255, 2}, {1257, 3}, {1258, 4}, {1259, 4}, {1271, 1}, {1273, 13}, {1304, 3}, {1307, 3},
+					{1311, 6}, {1393, 3}, {1394, 10}, {1396, 10}, {1397, 3}, {1399, 5}, {1400, 10}, {1401, 11}, {1402, 5}, {1418, 1}}};
+	
 	@Override
-	public final String onAcquireSkillList(L2Npc npc, L2PcInstance player)
-	{
-		if (player == null)
-		{
+	public final String onAcquireSkillList(L2Npc npc, L2PcInstance player) {
+		if (player == null) {
 			return null;
 		}
-
+		
 		final int index = getTransferClassIndex(player);
-		if (index >= 0)
-		{
+		if (index >= 0) {
 			boolean found = false;
 			ExAcquireSkillList asl = new ExAcquireSkillList(ExAcquireSkillList.SkillType.SubClass);
 			int[][] skillsList = SKILL_TRANSFER_TREE[index];
-
-			for (int[] element : skillsList)
-			{
+			
+			for (int[] element : skillsList) {
 				int skillId = element[0];
 				int skillLevel = element[1];
-				if (player.getSkillLevelHash(skillId) >= skillLevel)
-				{
+				if (player.getSkillLevelHash(skillId) >= skillLevel) {
 					continue;
 				}
-
+				
 				asl.addSkill(skillId, skillLevel, skillLevel, 0, 0);
 				found = true;
 			}
-			if (found)
-			{
+			if (found) {
 				player.sendPacket(asl);
 				return null;
 			}
 		}
-
+		
 		player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_MORE_SKILLS_TO_LEARN));
 		return null;
 	}
-
+	
 	@Override
-	public final String onAcquireSkill(L2Npc npc, L2PcInstance player, L2Skill skill)
-	{
-		if (player == null || skill == null)
-		{
+	public final String onAcquireSkill(L2Npc npc, L2PcInstance player, L2Skill skill) {
+		if (player == null || skill == null) {
 			return null;
 		}
-
+		
 		final int index = getTransferClassIndex(player);
-		if (index >= 0)
-		{
+		if (index >= 0) {
 			int[][] skillsList = SKILL_TRANSFER_TREE[index];
-
-			for (int[] element : skillsList)
-			{
-				if (skill.getId() == element[0] && skill.getLevel() <= element[1])
-				{
+			
+			for (int[] element : skillsList) {
+				if (skill.getId() == element[0] && skill.getLevel() <= element[1]) {
 					final int itemId = PORMANDERS[index][0];
-					if (player.getInventory().getItemByItemId(itemId) != null)
-					{
-						if (player.destroyItemByItemId(qn, itemId, 1, npc, true))
-						{
+					if (player.getInventory().getItemByItemId(itemId) != null) {
+						if (player.destroyItemByItemId(qn, itemId, 1, npc, true)) {
 							return "true";
 						}
 					}
@@ -252,178 +116,134 @@ public class SkillTransfer extends Quest
 				}
 			}
 		}
-		Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to learn skill that he can't!!!",
-				Config.DEFAULT_PUNISH);
-
+		Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to learn skill that he can't!!!", Config.DEFAULT_PUNISH);
+		
 		return "false";
 	}
-
+	
 	@Override
-	public final String onAcquireSkillInfo(L2Npc npc, L2PcInstance player, L2Skill skill)
-	{
-		if (player == null || skill == null)
-		{
+	public final String onAcquireSkillInfo(L2Npc npc, L2PcInstance player, L2Skill skill) {
+		if (player == null || skill == null) {
 			return null;
 		}
-
+		
 		final int index = getTransferClassIndex(player);
-		if (index >= 0)
-		{
+		if (index >= 0) {
 			AcquireSkillInfo asi = new AcquireSkillInfo(skill.getId(), skill.getLevel(), 0, 4);
 			int[][] skillsList = SKILL_TRANSFER_TREE[index];
-
-			for (int[] element : skillsList)
-			{
-				if (skill.getId() == element[0])
-				{
+			
+			for (int[] element : skillsList) {
+				if (skill.getId() == element[0]) {
 					asi.addRequirement(99, PORMANDERS[index][0], 1, 50);
 					player.sendPacket(asi);
 					break;
 				}
 			}
 		}
-
+		
 		return null;
 	}
-
+	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = "";
-
-		if (player == null)
-		{
+		
+		if (player == null) {
 			return htmltext;
 		}
-
-		if (event.equalsIgnoreCase("learn"))
-		{
-			if (player.getLevel() < 76 || player.getCurrentClass().level() < 3)
-			{
+		
+		if (event.equalsIgnoreCase("learn")) {
+			if (player.getLevel() < 76 || player.getCurrentClass().level() < 3) {
 				htmltext = "learn-lowlevel.htm";
-			}
-			else
-			{
+			} else {
 				onAcquireSkillList(npc, player);
 			}
-		}
-		else if (event.equalsIgnoreCase("cleanse"))
-		{
-			if (player.getLevel() < 76 || player.getCurrentClass().level() < 3)
-			{
+		} else if (event.equalsIgnoreCase("cleanse")) {
+			if (player.getLevel() < 76 || player.getCurrentClass().level() < 3) {
 				htmltext = "cleanse-no.htm";
 				return htmltext;
-			}
-			else if (player.getAdena() < RESET_ADENA_COST)
-			{
-				player.sendPacket(SystemMessage
-						.getSystemMessage(SystemMessageId.CANNOT_RESET_SKILL_LINK_BECAUSE_NOT_ENOUGH_ADENA));
+			} else if (player.getAdena() < RESET_ADENA_COST) {
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_RESET_SKILL_LINK_BECAUSE_NOT_ENOUGH_ADENA));
 				return htmltext;
 			}
-
+			
 			final int index = getTransferClassIndex(player);
-			if (index >= 0)
-			{
+			if (index >= 0) {
 				final int itemId = PORMANDERS[index][0];
 				final int count = PORMANDERS[index][1];
-				if (player.getInventory().getItemByItemId(itemId) == null)
-				{
+				if (player.getInventory().getItemByItemId(itemId) == null) {
 					int[][] skillsList = SKILL_TRANSFER_TREE[index];
 					boolean found = false;
-
-					for (L2Skill skill : player.getAllSkills())
-					{
-						for (int[] element : skillsList)
-						{
-							if (skill.getId() == element[0])
-							{
-								if (!found)
-								{
+					
+					for (L2Skill skill : player.getAllSkills()) {
+						for (int[] element : skillsList) {
+							if (skill.getId() == element[0]) {
+								if (!found) {
 									found = true;
 								}
 								player.removeSkill(skill);
 							}
 						}
 					}
-					if (found)
-					{
+					if (found) {
 						player.sendSkillList();
-						if (player.reduceAdena(qn, RESET_ADENA_COST, npc, true))
-						{
+						if (player.reduceAdena(qn, RESET_ADENA_COST, npc, true)) {
 							player.addItem(qn, itemId, count, npc, true);
 						}
 						return htmltext;
 					}
 				}
 				htmltext = "cleanse-no_skills.htm";
-			}
-			else
-			{
+			} else {
 				npc.showNoTeachHtml(player);
 			}
-		}
-		else if (event.equalsIgnoreCase("givePormanders"))
-		{
+		} else if (event.equalsIgnoreCase("givePormanders")) {
 			givePormanders(npc, player);
 		}
-
+		
 		return htmltext;
 	}
-
+	
 	@Override
-	public final String onEnterWorld(L2PcInstance player)
-	{
+	public final String onEnterWorld(L2PcInstance player) {
 		givePormanders(null, player);
 		return null;
 	}
-
-	private final synchronized void givePormanders(L2Npc npc, L2PcInstance player)
-	{
+	
+	private final synchronized void givePormanders(L2Npc npc, L2PcInstance player) {
 		final int index = getTransferClassIndex(player);
-		if (index >= 0)
-		{
+		if (index >= 0) {
 			QuestState st = player.getQuestState(qn);
-			if (st == null)
-			{
+			if (st == null) {
 				st = newQuestState(player);
 			}
-
+			
 			final String name = qn + String.valueOf(player.getCurrentClass().getId());
-			if (st.getInt(name) == 0)
-			{
+			if (st.getInt(name) == 0) {
 				st.setInternal(name, "1");
-				if (st.getGlobalQuestVar(name).isEmpty())
-				{
+				if (st.getGlobalQuestVar(name).isEmpty()) {
 					st.saveGlobalQuestVar(name, "1");
 					player.addItem(qn, PORMANDERS[index][0], PORMANDERS[index][1], npc, true);
 				}
 			}
-
-			if (Config.SKILL_CHECK_ENABLE && (!player.isGM() || Config.SKILL_CHECK_GM))
-			{
-				int count = PORMANDERS[index][1] -
-						(int) player.getInventory().getInventoryItemCount(PORMANDERS[index][0], -1, false);
-				for (L2Skill s : player.getAllSkills())
-				{
-					for (int i = SKILL_TRANSFER_TREE[index].length; --i >= 0; )
-					{
-						if (SKILL_TRANSFER_TREE[index][i][0] == s.getId())
-						{
+			
+			if (Config.SKILL_CHECK_ENABLE && (!player.isGM() || Config.SKILL_CHECK_GM)) {
+				int count = PORMANDERS[index][1] - (int) player.getInventory().getInventoryItemCount(PORMANDERS[index][0], -1, false);
+				for (L2Skill s : player.getAllSkills()) {
+					for (int i = SKILL_TRANSFER_TREE[index].length; --i >= 0; ) {
+						if (SKILL_TRANSFER_TREE[index][i][0] == s.getId()) {
 							// Holy Weapon allowed for Shilien Saint/Inquisitor stance
-							if (s.getId() == 1043 && index == 2 && player.isInStance())
-							{
+							if (s.getId() == 1043 && index == 2 && player.isInStance()) {
 								continue;
 							}
-
+							
 							count--;
-							if (count < 0)
-							{
-								Util.handleIllegalPlayerAction(player, "Player " + player.getName() +
-										" has too many transfered skills or items, skill:" + s.getName() + " (" +
-										s.getId() + "/" + s.getLevel() + "), class:" +
-										player.getCurrentClass().getName(), 1);
-								if (Config.SKILL_CHECK_REMOVE)
-								{
+							if (count < 0) {
+								Util.handleIllegalPlayerAction(player,
+										"Player " + player.getName() + " has too many transfered skills or items, skill:" + s.getName() + " (" +
+												s.getId() + "/" + s.getLevel() + "), class:" + player.getCurrentClass().getName(),
+										1);
+								if (Config.SKILL_CHECK_REMOVE) {
 									player.removeSkill(s);
 								}
 							}
@@ -433,17 +253,14 @@ public class SkillTransfer extends Quest
 			}
 		}
 	}
-
+	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public final String onTalk(L2Npc npc, L2PcInstance player) {
 		return "main.htm";
 	}
-
-	private final int getTransferClassIndex(L2PcInstance player)
-	{
-		switch (player.getCurrentClass().getId())
-		{
+	
+	private final int getTransferClassIndex(L2PcInstance player) {
+		switch (player.getCurrentClass().getId()) {
 			case 97: // Cardinal
 				return 0;
 			case 105: // Eva's Saint
@@ -454,21 +271,18 @@ public class SkillTransfer extends Quest
 				return -1;
 		}
 	}
-
-	public SkillTransfer(int id, String name, String descr)
-	{
+	
+	public SkillTransfer(int id, String name, String descr) {
 		super(id, name, descr);
 		setOnEnterWorld(true);
-		for (int i : NPCs)
-		{
+		for (int i : NPCs) {
 			addStartNpc(i);
 			addTalkId(i);
 			addAcquireSkillId(i);
 		}
 	}
-
-	public static void main(String[] args)
-	{
+	
+	public static void main(String[] args) {
 		new SkillTransfer(-1, qn, "custom");
 	}
 }

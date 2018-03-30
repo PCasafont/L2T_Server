@@ -24,58 +24,49 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @author -Wooden-
  */
-public final class RequestPledgeSetMemberPowerGrade extends L2GameClientPacket
-{
+public final class RequestPledgeSetMemberPowerGrade extends L2GameClientPacket {
 	private String member;
 	private int powerGrade;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		member = readS();
 		powerGrade = readD();
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		final L2Clan clan = activeChar.getClan();
-		if (clan == null)
-		{
+		if (clan == null) {
 			return;
 		}
-
-		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_MANAGE_RANKS) != L2Clan.CP_CL_MANAGE_RANKS)
-		{
+		
+		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_MANAGE_RANKS) != L2Clan.CP_CL_MANAGE_RANKS) {
 			return;
 		}
-
+		
 		final L2ClanMember member = clan.getClanMember(this.member);
-		if (member == null)
-		{
+		if (member == null) {
 			return;
 		}
-
-		if (member.getObjectId() == clan.getLeaderId())
-		{
+		
+		if (member.getObjectId() == clan.getLeaderId()) {
 			return;
 		}
-
-		if (member.getPledgeType() == L2Clan.SUBUNIT_ACADEMY)
-		{
+		
+		if (member.getPledgeType() == L2Clan.SUBUNIT_ACADEMY) {
 			// also checked from client side
 			activeChar.sendMessage("You cannot change academy member grade");
 			return;
 		}
-
+		
 		member.setPowerGrade(powerGrade);
 		clan.broadcastClanStatus();
 	}

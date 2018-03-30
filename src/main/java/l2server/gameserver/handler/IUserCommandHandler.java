@@ -24,8 +24,7 @@ import java.util.logging.Logger;
  *
  * @version $Revision: 1.1.2.1.2.2 $ $Date: 2005/03/27 15:30:10 $
  */
-public interface IUserCommandHandler
-{
+public interface IUserCommandHandler {
 	Logger log = Logger.getLogger(IUserCommandHandler.class.getName());
 
 	/**

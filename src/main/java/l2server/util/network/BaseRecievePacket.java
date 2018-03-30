@@ -20,40 +20,34 @@ package l2server.util.network;
  *
  * @version $Revision: 1.2.4.1 $ $Date: 2005/03/27 15:30:12 $
  */
-public abstract class BaseRecievePacket
-{
+public abstract class BaseRecievePacket {
 	private byte[] decrypt;
 	private int off;
-
-	public BaseRecievePacket(byte[] decrypt)
-	{
+	
+	public BaseRecievePacket(byte[] decrypt) {
 		this.decrypt = decrypt;
 		off = 1; // skip packet type id
 	}
-
-	public int readD()
-	{
+	
+	public int readD() {
 		int result = decrypt[off++] & 0xff;
 		result |= decrypt[off++] << 8 & 0xff00;
 		result |= decrypt[off++] << 0x10 & 0xff0000;
 		result |= decrypt[off++] << 0x18 & 0xff000000;
 		return result;
 	}
-
-	public int readC()
-	{
+	
+	public int readC() {
 		return decrypt[off++] & 0xff;
 	}
-
-	public int readH()
-	{
+	
+	public int readH() {
 		int result = decrypt[off++] & 0xff;
 		result |= decrypt[off++] << 8 & 0xff00;
 		return result;
 	}
-
-	public double readF()
-	{
+	
+	public double readF() {
 		long result = decrypt[off++] & 0xff;
 		result |= (decrypt[off++] & 0xffL) << 8L;
 		result |= (decrypt[off++] & 0xffL) << 16L;
@@ -64,33 +58,27 @@ public abstract class BaseRecievePacket
 		result |= (decrypt[off++] & 0xffL) << 56L;
 		return Double.longBitsToDouble(result);
 	}
-
-	public String readS()
-	{
+	
+	public String readS() {
 		String result = null;
-		try
-		{
+		try {
 			result = new String(decrypt, off, decrypt.length - off, "UTF-16LE");
 			result = result.substring(0, result.indexOf(0x00));
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		off += result.length() * 2 + 2;
 		return result;
 	}
-
-	public final byte[] readB(int length)
-	{
+	
+	public final byte[] readB(int length) {
 		byte[] result = new byte[length];
 		System.arraycopy(decrypt, off + 0, result, 0, length);
 		off += length;
 		return result;
 	}
-
-	public long readQ()
-	{
+	
+	public long readQ() {
 		long result = decrypt[off++] & 0xff;
 		result |= (decrypt[off++] & 0xffL) << 8L;
 		result |= (decrypt[off++] & 0xffL) << 16L;

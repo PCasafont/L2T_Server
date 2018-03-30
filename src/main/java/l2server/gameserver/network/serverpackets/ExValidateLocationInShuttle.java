@@ -15,10 +15,8 @@
 
 package l2server.gameserver.network.serverpackets;
 
-public class ExValidateLocationInShuttle extends L2GameServerPacket
-{
+public class ExValidateLocationInShuttle extends L2GameServerPacket {
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 	}
 }

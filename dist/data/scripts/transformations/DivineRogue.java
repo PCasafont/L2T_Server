@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class DivineRogue extends L2Transformation
-{
+public class DivineRogue extends L2Transformation {
 	private static final int[] SKILLS = {686, 687, 688, 689, 690, 691, 797, 5491, 619};
-
-	public DivineRogue()
-	{
+	
+	public DivineRogue() {
 		// id, colRadius, colHeight
 		super(254, 10, 28);
 	}
-
+	
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 254 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 254 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
-
+		
 		transformedSkills();
 	}
-
-	public void transformedSkills()
-	{
+	
+	public void transformedSkills() {
 		// Divine Rogue Stun Shot
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(686, 1), false);
 		// Divine Rogue Double Shot
@@ -45,18 +40,16 @@ public class DivineRogue extends L2Transformation
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(5491, 1), false);
 		// Transform Dispel
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(619, 1), false);
-
+		
 		getPlayer().setTransformAllowedSkills(SKILLS);
 	}
-
+	
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
-
-	public void removeSkills()
-	{
+	
+	public void removeSkills() {
 		// Divine Rogue Stun Shot
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(686, 1), false);
 		// Divine Rogue Double Shot
@@ -75,12 +68,11 @@ public class DivineRogue extends L2Transformation
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(5491, 1), false);
 		// Transform Dispel
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(619, 1), false);
-
+		
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
-
-	public static void main(String[] args)
-	{
+	
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new DivineRogue());
 	}
 }

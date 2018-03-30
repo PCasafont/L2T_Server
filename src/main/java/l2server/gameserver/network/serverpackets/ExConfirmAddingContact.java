@@ -22,23 +22,20 @@ package l2server.gameserver.network.serverpackets;
  *
  * @author mrTJO & UnAfraid
  */
-public class ExConfirmAddingContact extends L2GameServerPacket
-{
+public class ExConfirmAddingContact extends L2GameServerPacket {
 	private final String charName;
 	private final boolean added;
-
-	public ExConfirmAddingContact(String charName, boolean added)
-	{
+	
+	public ExConfirmAddingContact(String charName, boolean added) {
 		this.charName = charName;
 		this.added = added;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeS(charName);
 		writeD(added ? 0x01 : 0x00);
 	}

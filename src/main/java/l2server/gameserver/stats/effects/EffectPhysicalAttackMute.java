@@ -24,10 +24,8 @@ import l2server.gameserver.templates.skills.L2EffectType;
 /**
  * @author -Rnn-
  */
-public class EffectPhysicalAttackMute extends L2Effect
-{
-	public EffectPhysicalAttackMute(Env env, L2EffectTemplate template)
-	{
+public class EffectPhysicalAttackMute extends L2Effect {
+	public EffectPhysicalAttackMute(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -35,14 +33,12 @@ public class EffectPhysicalAttackMute extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.PHYSICAL_ATTACK_MUTE;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.SILENCE;
 	}
 
@@ -50,8 +46,7 @@ public class EffectPhysicalAttackMute extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		getEffected().startPhysicalAttackMuted();
 		return true;
 	}
@@ -60,8 +55,7 @@ public class EffectPhysicalAttackMute extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		// Simply stop the effect
 		return false;
 	}
@@ -70,8 +64,7 @@ public class EffectPhysicalAttackMute extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		getEffected().stopPhysicalAttackMuted(getAbnormal());
 	}
 }

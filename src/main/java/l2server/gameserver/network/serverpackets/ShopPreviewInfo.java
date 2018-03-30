@@ -22,18 +22,15 @@ import java.util.Map;
 /**
  * * @author Gnacik
  */
-public class ShopPreviewInfo extends L2GameServerPacket
-{
+public class ShopPreviewInfo extends L2GameServerPacket {
 	private Map<Integer, Integer> itemlist;
 
-	public ShopPreviewInfo(Map<Integer, Integer> itemlist)
-	{
+	public ShopPreviewInfo(Map<Integer, Integer> itemlist) {
 		this.itemlist = itemlist;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(Inventory.PAPERDOLL_TOTALSLOTS);
 		// Slots
 		writeD(getFromList(Inventory.PAPERDOLL_UNDER));
@@ -57,8 +54,7 @@ public class ShopPreviewInfo extends L2GameServerPacket
 		writeD(getFromList(Inventory.PAPERDOLL_LBRACELET));
 	}
 
-	private int getFromList(int key)
-	{
+	private int getFromList(int key) {
 		return itemlist.get(key) != null ? itemlist.get(key) : 0;
 	}
 }

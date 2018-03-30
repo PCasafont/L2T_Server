@@ -32,145 +32,123 @@ import java.util.HashSet;
  *
  * @version $Revision: 1.2.2.1.2.5 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestPrivateStoreBuy extends L2GameClientPacket
-{
-
+public final class RequestPrivateStoreBuy extends L2GameClientPacket {
+	
 	private static final int BATCH_LENGTH = 20; // length of the one item
-
+	
 	private int storePlayerId;
 	private HashSet<ItemRequest> items = null;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		storePlayerId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
-		{
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining()) {
 			return;
 		}
 		items = new HashSet<>();
-
-		for (int i = 0; i < count; i++)
-		{
+		
+		for (int i = 0; i < count; i++) {
 			int objectId = readD();
 			long cnt = readQ();
 			long price = readQ();
-
-			if (objectId < 1 || cnt < 1 || price < 0)
-			{
+			
+			if (objectId < 1 || cnt < 1 || price < 0) {
 				items = null;
 				return;
 			}
-
+			
 			items.add(new ItemRequest(objectId, cnt, price));
 		}
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
-
-		if (items == null)
-		{
+		
+		if (items == null) {
 			player.sendMessage("Couldn't find the items you are trying to buy.");
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("privatestorebuy"))
-		{
+		
+		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("privatestorebuy")) {
 			player.sendMessage("You buying items too fast.");
 			return;
 		}
-
+		
 		L2Object object = L2World.getInstance().getPlayer(storePlayerId);
-		if (object == null)
-		{
+		if (object == null) {
 			player.sendMessage("ERR1.");
 			return;
 		}
-
-		if (player.isCursedWeaponEquipped() || player.isInJail())
-		{
+		
+		if (player.isCursedWeaponEquipped() || player.isInJail()) {
 			player.sendMessage("You can't do this while in jail or having a cursed weapon equipped.");
 			return;
 		}
-
+		
 		L2PcInstance storePlayer = (L2PcInstance) object;
-
-		if (player.getInstanceId() != storePlayer.getInstanceId() && player.getInstanceId() != -1)
-		{
+		
+		if (player.getInstanceId() != storePlayer.getInstanceId() && player.getInstanceId() != -1) {
 			player.sendMessage("ERR2.");
 			return;
 		}
-
+		
 		if (!(storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_SELL ||
-				storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_PACKAGE_SELL))
-		{
+				storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_PACKAGE_SELL)) {
 			player.sendMessage("ERR3.");
 			return;
 		}
-
+		
 		storePlayer.hasBeenStoreActive();
-
+		
 		TradeList storeList = storePlayer.getSellList();
-		if (storeList == null)
-		{
+		if (storeList == null) {
 			player.sendMessage("ERR4.");
 			return;
 		}
-
-		if (player.getEvent() != null)
-		{
+		
+		if (player.getEvent() != null) {
 			player.sendMessage("You cannot buy items while being involved in an event!");
 			return;
 		}
-
-		if (player.getOlympiadGameId() > -1)
-		{
+		
+		if (player.getOlympiadGameId() > -1) {
 			player.sendMessage("You cannot buy items while being involved in the Grand Olympiad!");
 			return;
 		}
-
-		if (!player.getAccessLevel().allowTransaction())
-		{
+		
+		if (!player.getAccessLevel().allowTransaction()) {
 			player.sendMessage("Transactions are disable for your Access Level");
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
-		if (storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_PACKAGE_SELL)
-		{
-			if (storeList.getItemCount() > items.size())
-			{
+		
+		if (storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_PACKAGE_SELL) {
+			if (storeList.getItemCount() > items.size()) {
 				String msgErr = "[RequestPrivateStoreBuy] player " + getClient().getActiveChar().getName() +
 						" tried to buy less items than sold by package-sell, ban this player for bot usage!";
 				Util.handleIllegalPlayerAction(getClient().getActiveChar(), msgErr, Config.DEFAULT_PUNISH);
 				return;
 			}
 		}
-
+		
 		int result = storeList.privateStoreBuy(player, items);
-
-		if (result > 0)
-		{
+		
+		if (result > 0) {
 			sendPacket(ActionFailed.STATIC_PACKET);
-			if (result > 1)
-			{
-				Log.warning("PrivateStore buy has failed due to invalid list or request. Player: " + player.getName() +
-						", Private store of: " + storePlayer.getName());
+			if (result > 1) {
+				Log.warning("PrivateStore buy has failed due to invalid list or request. Player: " + player.getName() + ", Private store of: " +
+						storePlayer.getName());
 			}
 			return;
 		}
-
-		if (storeList.getItemCount() == 0)
-		{
+		
+		if (storeList.getItemCount() == 0) {
 			storePlayer.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
 			storePlayer.broadcastUserInfo();
 		}
@@ -208,19 +186,17 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 					}
 				}*/
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#cleanUp()
 	 */
 	@Override
-	protected void cleanUp()
-	{
+	protected void cleanUp() {
 		items = null;
 	}
-
+	
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

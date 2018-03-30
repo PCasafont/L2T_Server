@@ -24,8 +24,7 @@ import java.util.logging.Logger;
  *
  * @version $Revision: 1.1.4.2 $ $Date: 2005/03/27 15:30:09 $
  */
-public interface IVoicedCommandHandler
-{
+public interface IVoicedCommandHandler {
 	Logger log = Logger.getLogger(IVoicedCommandHandler.class.getName());
 
 	/**

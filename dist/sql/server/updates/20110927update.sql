@@ -1,1 +1,2 @@
-DELETE FROM `grandboss_data` WHERE `boss_id` = 29022;
+DELETE FROM `grandboss_data`
+WHERE `boss_id` = 29022;

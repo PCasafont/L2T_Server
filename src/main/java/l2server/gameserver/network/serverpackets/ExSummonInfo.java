@@ -26,42 +26,39 @@ import java.util.Set;
 /**
  * @author Pere
  */
-public final class ExSummonInfo extends L2GameServerPacket
-{
+public final class ExSummonInfo extends L2GameServerPacket {
 	private int objectId;
 	private int val;
 	private byte[] data1;
 	private byte[] data2;
 	private Set<Integer> abnormals;
-
-	public ExSummonInfo(L2SummonInstance summon, L2Character attacker, int val)
-	{
+	
+	public ExSummonInfo(L2SummonInstance summon, L2Character attacker, int val) {
 		objectId = summon.getObjectId();
 		val = 0;//summon.isShowSummonAnimation() ? 2 : val;
-
+		
 		ByteBuffer buffer = ByteBuffer.allocate(200).order(ByteOrder.LITTLE_ENDIAN);
-
+		
 		buffer.put((byte) (summon.isAutoAttackable(attacker) ? 1 : 0));
 		buffer.put((byte) 0);
 		buffer.put((byte) 0);
 		buffer.put((byte) 0);
 		buffer.put((byte) 0);
-
+		
 		String ownerName = summon.getOwner().getAppearance().getVisibleName();
-
-		for (char c : ownerName.toCharArray())
-		{
+		
+		for (char c : ownerName.toCharArray()) {
 			buffer.putShort((short) c);
 		}
 		buffer.putShort((short) 0);
-
+		
 		int size = buffer.position();
 		buffer.position(0);
 		data1 = new byte[size];
 		buffer.get(data1, 0, size);
-
+		
 		buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
-
+		
 		// Write data to the buffer
 		buffer.putInt(summon.getNpcId() + 1000000);
 		buffer.putInt(summon.getX());
@@ -72,11 +69,11 @@ public final class ExSummonInfo extends L2GameServerPacket
 		buffer.putInt(summon.getMAtkSpd());
 		buffer.putFloat(summon.getMovementSpeedMultiplier());
 		buffer.putFloat(summon.getAttackSpeedMultiplier());
-
+		
 		//buffer.putInt(summon.getWeapon());
 		//buffer.putInt(summon.getArmor());
 		//buffer.putInt(0);
-
+		
 		buffer.put((byte) (summon.isAlikeDead() ? 2 : 1)); //1
 		buffer.put((byte) (summon.isRunning() ? 1 : 0));
 		buffer.put((byte) (summon.isInCombat() ? 1 : 0));
@@ -84,29 +81,28 @@ public final class ExSummonInfo extends L2GameServerPacket
 		buffer.put((byte) 0);
 		buffer.putShort((short) 0);
 		buffer.putInt(0);
-
+		
 		buffer.putInt(0);
 		buffer.put((byte) 1);
-
+		
 		buffer.putInt((int) Math.round(summon.getCurrentHp()));
-
+		
 		buffer.putInt((int) Math.round(summon.getCurrentMp()));
-
+		
 		buffer.putInt(summon.getMaxHp());
-
+		
 		buffer.putInt(summon.getMaxMp());
-
-		for (char c : summon.getName().toCharArray())
-		{
+		
+		for (char c : summon.getName().toCharArray()) {
 			buffer.putShort((short) c);
 		}
 		buffer.putShort((short) 0);
-
+		
 		buffer.putInt(-1);
 		buffer.putInt(-1);
 		buffer.put(summon.getPvpFlag());
 		buffer.putInt(0);
-
+		
 		// Flag with bools
 		// 0x00000001 unk
 		// 0x00000002 dead
@@ -116,31 +112,27 @@ public final class ExSummonInfo extends L2GameServerPacket
 		// 0x00000020 unk
 		// 0x00000040 unk
 		byte flag = 0x04;
-		if (summon.isAlikeDead())
-		{
+		if (summon.isAlikeDead()) {
 			flag |= 0x02;
 		}
-		if (summon.getTemplate().ShowName)
-		{
+		if (summon.getTemplate().ShowName) {
 			flag |= 0x08;
 		}
 		buffer.put(flag);
-
+		
 		size = buffer.position();
 		buffer.position(0);
 		data2 = new byte[size];
 		buffer.get(data2, 0, size);
-
+		
 		abnormals = summon.getAbnormalEffect();
-		if (summon.getOwner().getAppearance().getInvisible())
-		{
+		if (summon.getOwner().getAppearance().getInvisible()) {
 			abnormals.add(VisualEffect.STEALTH.getId());
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objectId);
 		writeC(val); // 0=teleported 1=default 2=summoned
 		writeH(0x0025);
@@ -149,16 +141,15 @@ public final class ExSummonInfo extends L2GameServerPacket
 		writeC(0x4f);
 		writeC(0xf3);
 		writeC(0xec);
-
+		
 		writeC(data1.length);
 		writeB(data1);
-
+		
 		writeH(data2.length);
 		writeB(data2);
-
+		
 		writeH(abnormals.size());
-		for (int abnormal : abnormals)
-		{
+		for (int abnormal : abnormals) {
 			writeH(abnormal);
 		}
 	}

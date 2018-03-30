@@ -26,63 +26,46 @@ import java.util.logging.Level;
 /**
  * @author mkizub
  */
-public final class FuncTemplate
-{
+public final class FuncTemplate {
 	public Condition applayCond;
 	public final Class<?> func;
 	public final Constructor<?> constructor;
 	public final Stats stat;
 	public final Lambda lambda;
-
-	public FuncTemplate(Condition pApplayCond, String pFunc, Stats pStat, Lambda pLambda)
-	{
+	
+	public FuncTemplate(Condition pApplayCond, String pFunc, Stats pStat, Lambda pLambda) {
 		applayCond = pApplayCond;
 		stat = pStat;
 		lambda = pLambda;
-		try
-		{
+		try {
 			func = Class.forName("l2server.gameserver.stats.funcs.Func" + pFunc);
-		}
-		catch (ClassNotFoundException e)
-		{
+		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		}
-		try
-		{
+		try {
 			constructor = func.getConstructor(Stats.class, // stats to update
 					Object.class, // owner
 					Lambda.class // value for function
 			);
-		}
-		catch (NoSuchMethodException e)
-		{
+		} catch (NoSuchMethodException e) {
 			throw new RuntimeException(e);
 		}
 	}
-
-	public Func getFunc(Object owner)
-	{
-		try
-		{
+	
+	public Func getFunc(Object owner) {
+		try {
 			Func f = (Func) constructor.newInstance(stat, owner, lambda);
-			if (applayCond != null)
-			{
+			if (applayCond != null) {
 				f.setCondition(applayCond);
 			}
 			return f;
-		}
-		catch (IllegalAccessException e)
-		{
+		} catch (IllegalAccessException e) {
 			Log.log(Level.WARNING, "", e);
 			return null;
-		}
-		catch (InstantiationException e)
-		{
+		} catch (InstantiationException e) {
 			Log.log(Level.WARNING, "", e);
 			return null;
-		}
-		catch (InvocationTargetException e)
-		{
+		} catch (InvocationTargetException e) {
 			Log.log(Level.WARNING, "", e);
 			return null;
 		}

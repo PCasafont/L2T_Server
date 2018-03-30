@@ -20,22 +20,19 @@ package l2server.gameserver.network.clientpackets;
  *
  * @author -Wooden-
  */
-public final class AnswerJoinPartyRoom extends L2GameClientPacket
-{
+public final class AnswerJoinPartyRoom extends L2GameClientPacket {
 	@SuppressWarnings("unused")
 	private int requesterID; // not tested, just guessed
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		requesterID = readD();
 	}
 
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		// TODO
 		//Logozo.info("C5:AnswerJoinPartyRoom: d: "+requesterID);
 	}

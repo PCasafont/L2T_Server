@@ -30,9 +30,8 @@ import l2server.util.Point3D;
  *
  * @author GodKratos
  */
-public class MoveToLocationInAirShip extends L2GameClientPacket
-{
-
+public class MoveToLocationInAirShip extends L2GameClientPacket {
+	
 	private int shipId;
 	private int targetX;
 	private int targetY;
@@ -40,15 +39,13 @@ public class MoveToLocationInAirShip extends L2GameClientPacket
 	private int originX;
 	private int originY;
 	private int originZ;
-
-	public TaskPriority getPriority()
-	{
+	
+	public TaskPriority getPriority() {
 		return TaskPriority.PR_HIGH;
 	}
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		shipId = readD();
 		targetX = readD();
 		targetY = readD();
@@ -57,48 +54,41 @@ public class MoveToLocationInAirShip extends L2GameClientPacket
 		originY = readD();
 		originZ = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (targetX == originX && targetY == originY && targetZ == originZ)
-		{
+		
+		if (targetX == originX && targetY == originY && targetZ == originZ) {
 			activeChar.sendPacket(new StopMoveInVehicle(activeChar, shipId));
 			return;
 		}
-
+		
 		if (activeChar.isAttackingNow() && activeChar.getActiveWeaponItem() != null &&
-				activeChar.getActiveWeaponItem().getItemType() == L2WeaponType.BOW)
-		{
+				activeChar.getActiveWeaponItem().getItemType() == L2WeaponType.BOW) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
-		if (activeChar.isSitting() || activeChar.isMovementDisabled())
-		{
+		
+		if (activeChar.isSitting() || activeChar.isMovementDisabled()) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
-		if (!activeChar.isInAirShip())
-		{
+		
+		if (!activeChar.isInAirShip()) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
+		
 		final L2AirShipInstance airShip = activeChar.getAirShip();
-		if (airShip.getObjectId() != shipId)
-		{
+		if (airShip.getObjectId() != shipId) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
+		
 		activeChar.setInVehiclePosition(new Point3D(targetX, targetY, targetZ));
 		activeChar.broadcastPacket(new ExMoveToLocationInAirShip(activeChar));
 	}

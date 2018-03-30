@@ -18,8 +18,7 @@ package l2server.gameserver.templates.skills;
 /**
  * @author Max
  */
-public enum L2SkillTargetDirection
-{
+public enum L2SkillTargetDirection {
 	DEFAULT,
 	// General Skills
 	SINGLE,

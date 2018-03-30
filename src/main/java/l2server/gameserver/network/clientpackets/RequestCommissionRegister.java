@@ -24,17 +24,15 @@ import l2server.gameserver.network.serverpackets.ExResponseCommissionRegister;
 /**
  * @author Erlandys
  */
-public final class RequestCommissionRegister extends L2GameClientPacket
-{
+public final class RequestCommissionRegister extends L2GameClientPacket {
 	int itemOID;
 	String itemName;
 	long price;
 	long count;
 	int duration;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		itemOID = readD();
 		itemName = readS();
 		price = readQ();
@@ -42,13 +40,11 @@ public final class RequestCommissionRegister extends L2GameClientPacket
 		duration = readD();
 		readQ(); // Unknown
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 		}
 
 		/*long destroyPrice = price;
@@ -125,10 +121,9 @@ public final class RequestCommissionRegister extends L2GameClientPacket
 		player.sendPacket(iu);
 		reloadAuction(player, true);*/
 	}
-
+	
 	@SuppressWarnings("unused")
-	private void reloadAuction(L2PcInstance player, boolean success)
-	{
+	private void reloadAuction(L2PcInstance player, boolean success) {
 		player.sendPacket(new ExResponseCommissionRegister(success));
 		player.sendPacket(new ExResponseCommissionList(player));
 		player.sendPacket(new ExResponseCommissionInfo(player, 0, success));

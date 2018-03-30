@@ -20,24 +20,20 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Pere
  */
-public final class RequestCancelItemAppearance extends L2GameClientPacket
-{
+public final class RequestCancelItemAppearance extends L2GameClientPacket {
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
-
+		
 		player.setActiveAppearanceStone(null);
 	}
 }

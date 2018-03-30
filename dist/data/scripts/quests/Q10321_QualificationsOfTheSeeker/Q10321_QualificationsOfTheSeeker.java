@@ -25,8 +25,7 @@ import l2server.gameserver.model.quest.State;
 /**
  * @author Pere
  */
-public class Q10321_QualificationsOfTheSeeker extends Quest
-{
+public class Q10321_QualificationsOfTheSeeker extends Quest {
 	// Quest
 	public static String qn = "Q10321_QualificationsOfTheSeeker";
 
@@ -34,8 +33,7 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 	private int theodore = 32975;
 	private int shannon = 32974;
 
-	public Q10321_QualificationsOfTheSeeker(int questId, String name, String descr)
-	{
+	public Q10321_QualificationsOfTheSeeker(int questId, String name, String descr) {
 		super(questId, name, descr);
 		addStartNpc(theodore);
 		addTalkId(theodore);
@@ -43,24 +41,19 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == theodore && event.equalsIgnoreCase("32975-03.htm"))
-		{
+		if (npc.getNpcId() == theodore && event.equalsIgnoreCase("32975-03.htm")) {
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
-		}
-		else if (npc.getNpcId() == shannon && event.equalsIgnoreCase("32974-02.htm") && st.getInt("cond") == 1)
-		{
+		} else if (npc.getNpcId() == shannon && event.equalsIgnoreCase("32974-02.htm") && st.getInt("cond") == 1) {
 			st.unset("cond");
 			st.giveItems(57, 5000);
 			st.addExpAndSp(40, 500);
@@ -74,26 +67,19 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == theodore)
-		{
-			switch (st.getState())
-			{
+		if (npc.getNpcId() == theodore) {
+			switch (st.getState()) {
 				case State.CREATED:
-					if (canStart(player))
-					{
+					if (canStart(player)) {
 						htmltext = "32975-01.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32975-00.htm"; // TODO
 					}
 					break;
@@ -104,22 +90,18 @@ public class Q10321_QualificationsOfTheSeeker extends Quest
 					htmltext = "32975-05.htm"; // TODO
 					break;
 			}
-		}
-		else if (npc.getNpcId() == shannon && st.getInt("cond") == 1)
-		{
+		} else if (npc.getNpcId() == shannon && st.getInt("cond") == 1) {
 			htmltext = "32974-01.htm";
 		}
 		return htmltext;
 	}
 
 	@Override
-	public boolean canStart(L2PcInstance player)
-	{
+	public boolean canStart(L2PcInstance player) {
 		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 1) && player.getLevel() <= 20;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Q10321_QualificationsOfTheSeeker(10321, qn, "Going to the Training Grounds to receive combat training.");
 	}
 }

@@ -30,142 +30,116 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * @author Pere
  */
-public class EventsManager implements Reloadable
-{
+public class EventsManager implements Reloadable {
 	public static EventsManager instance = null;
-
+	
 	private HashMap<Integer, EventLocation> locations = new HashMap<>();
-
+	
 	private EventManagerTask task;
 	private ConcurrentHashMap<Integer, EventInstance> instances = new ConcurrentHashMap<>();
 	private int nextInstanceId = 1;
-
+	
 	private EventConfig currentConfig = null;
 	private Map<Integer, L2PcInstance> registeredPlayers = new HashMap<>();
-
-	public static EventsManager getInstance()
-	{
-		if (instance == null)
-		{
+	
+	public static EventsManager getInstance() {
+		if (instance == null) {
 			instance = new EventsManager();
 		}
 		return instance;
 	}
-
-	public void start()
-	{
-		if (!Config.INSTANCED_EVENT_ENABLED)
-		{
+	
+	public void start() {
+		if (!Config.INSTANCED_EVENT_ENABLED) {
 			Log.info("Instanced Events are disabled.");
 			return;
 		}
-
+		
 		// Load the configuration
 		loadConfig();
 		ReloadableManager.getInstance().register("eventLocations", this);
-
+		
 		task = new EventManagerTask();
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(task, 10000L, 60000L);
-
+		
 		currentConfig = new EventConfig();
-
+		
 		Log.info("Instanced Events started.");
 	}
-
-	public void loadConfig()
-	{
+	
+	public void loadConfig() {
 		locations.clear();
-
+		
 		XmlDocument doc = new XmlDocument(new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "eventsConfig.xml"));
 		int locCount = 0;
-		for (XmlNode node : doc.getChildren())
-		{
-            if (node.getName().equals("location"))
-            {
-                EventLocation loc = new EventLocation(node);
-                locations.put(loc.getId(), loc);
-
-                locCount++;
-            }
-        }
-
+		for (XmlNode node : doc.getChildren()) {
+			if (node.getName().equals("location")) {
+				EventLocation loc = new EventLocation(node);
+				locations.put(loc.getId(), loc);
+				
+				locCount++;
+			}
+		}
+		
 		Log.info("Events Manager: loaded " + locCount + " locations");
 	}
-
-	public EventLocation getRandomLocation()
-	{
+	
+	public EventLocation getRandomLocation() {
 		EventLocation loc;
 		do {
-		    loc = locations.get(Rnd.get(100));
+			loc = locations.get(Rnd.get(100));
 		} while (loc == null);
 		return loc;
 	}
-
-	public EventLocation getLocation(int id)
-	{
+	
+	public EventLocation getLocation(int id) {
 		return locations.get(id);
 	}
-
-	public EventManagerTask getTask()
-	{
+	
+	public EventManagerTask getTask() {
 		return task;
 	}
-
-	class EventManagerTask implements Runnable
-	{
+	
+	class EventManagerTask implements Runnable {
 		private int minutesToStart;
-
-		public EventManagerTask()
-		{
+		
+		public EventManagerTask() {
 			minutesToStart = Config.INSTANCED_EVENT_INTERVAL;
 		}
-
+		
 		@Override
-		public void run()
-		{
+		public void run() {
 			List<Integer> toRemove = new ArrayList<>();
-			try
-			{
-				for (EventInstance event : instances.values())
-				{
-					if (event == null)
-					{
+			try {
+				for (EventInstance event : instances.values()) {
+					if (event == null) {
 						continue;
 					}
-
-					if (event.isState(EventState.INACTIVE))
-					{
+					
+					if (event.isState(EventState.INACTIVE)) {
 						toRemove.add(event.getId());
 					}
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 				instances.clear();
 			}
-
-			for (int eventId : toRemove)
-			{
+			
+			for (int eventId : toRemove) {
 				instances.remove(eventId);
 			}
-
+			
 			minutesToStart--;
-
-			if (minutesToStart <= 0)
-			{
+			
+			if (minutesToStart <= 0) {
 				// Prepare an instance
-				if (!prepare())
-				{
-					Announcements.getInstance()
-							.announceToAll("The event could not start because it lacked registered players.");
+				if (!prepare()) {
+					Announcements.getInstance().announceToAll("The event could not start because it lacked registered players.");
 				}
-
+				
 				currentConfig = new EventConfig();
 				minutesToStart = Config.INSTANCED_EVENT_INTERVAL;
-			}
-			else if (minutesToStart == 10 || minutesToStart == 5 || minutesToStart == 2 || minutesToStart == 1)
-			{
+			} else if (minutesToStart == 10 || minutesToStart == 5 || minutesToStart == 2 || minutesToStart == 1) {
 				// Auto join!
 				/*if (minutesToStart == 1)
                 {
@@ -177,62 +151,53 @@ public class EventsManager implements Reloadable
 							join(player);
 					}
 				}*/
-
+				
 				Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(
-						"The " + currentConfig.getEventName() + " will start in " + minutesToStart + " minute" +
-								(minutesToStart > 1 ? "s" : "") + ".", 5000));
-				ThreadPoolManager.getInstance().scheduleGeneral(() -> Broadcast.toAllOnlinePlayers(
-						new ExShowScreenMessage("Use the Community Board's (ALT+B) \"Join Events\" menu to join.",
+						"The " + currentConfig.getEventName() + " will start in " + minutesToStart + " minute" + (minutesToStart > 1 ? "s" : "") +
+								".", 5000));
+				ThreadPoolManager.getInstance()
+						.scheduleGeneral(() -> Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(
+								"Use the Community Board's (ALT+B) \"Join Events\" menu to join.",
 								5000)), 5000L);
 			}
 		}
-
-		public int getMinutesToStart()
-		{
+		
+		public int getMinutesToStart() {
 			return minutesToStart;
 		}
 	}
-
-	public EventConfig getCurrentConfig()
-	{
+	
+	public EventConfig getCurrentConfig() {
 		return currentConfig;
 	}
-
-	public Map<Integer, L2PcInstance> getRegisteredPlayers()
-	{
+	
+	public Map<Integer, L2PcInstance> getRegisteredPlayers() {
 		return registeredPlayers;
 	}
-
-	private boolean prepare()
-	{
-		if (registeredPlayers.isEmpty())
-		{
+	
+	private boolean prepare() {
+		if (registeredPlayers.isEmpty()) {
 			return false;
 		}
-
+		
 		// First sort the registered players
 		int[][] sorted = new int[registeredPlayers.size()][2];
 		int i = 0;
-		for (L2PcInstance player : registeredPlayers.values())
-		{
-			if (player == null || OlympiadManager.getInstance().isRegisteredInComp(player) ||
-					player.isInOlympiadMode() || player.isOlympiadStart() || player.isFlyingMounted() ||
-					player.inObserverMode())
-			{
+		for (L2PcInstance player : registeredPlayers.values()) {
+			if (player == null || OlympiadManager.getInstance().isRegisteredInComp(player) || player.isInOlympiadMode() || player.isOlympiadStart() ||
+					player.isFlyingMounted() || player.inObserverMode()) {
 				continue;
 			}
-
+			
 			int objId = player.getObjectId();
 			int strPoints = player.getStrenghtPoints(false);
 			// Find the index of where the current player should be put
 			int j = 0;
-			while (j < i && strPoints < sorted[j][1])
-			{
+			while (j < i && strPoints < sorted[j][1]) {
 				j++;
 			}
 			// Move the rest
-			for (int k = i; k > j; k--)
-			{
+			for (int k = i; k > j; k--) {
 				int temp1 = sorted[k][0];
 				int temp2 = sorted[k][1];
 				sorted[k][0] = sorted[k - 1][0];
@@ -243,77 +208,64 @@ public class EventsManager implements Reloadable
 			// And put the current player in the blank space
 			sorted[j][0] = objId;
 			sorted[j][1] = strPoints;
-
+			
 			i++;
 		}
-
+		
 		// Next divide all the registered players in groups, depending on the location's maximum room
 		List<List<Integer>> groups = new ArrayList<>();
 		i = 0;
-		while (i < sorted.length)
-		{
+		while (i < sorted.length) {
 			List<Integer> group = new ArrayList<>();
 			int j = 0;
-			while (i + j < sorted.length)
-			{
+			while (i + j < sorted.length) {
 				group.add(sorted[i + j][0]);
-
+				
 				//if (Config.isServer(Config.TENKAI) && j >= currentConfig.getLocation().getMaxPlayers())
 				//	break;
-
+				
 				j++;
 			}
-
-			if (j < currentConfig.getMinPlayers())
-			{
-				if (!groups.isEmpty())
-				{
+			
+			if (j < currentConfig.getMinPlayers()) {
+				if (!groups.isEmpty()) {
 					groups.get(groups.size() - 1).addAll(group);
 				}
-
+				
 				break;
 			}
-
+			
 			groups.add(group);
 			i += j;
 		}
-
+		
 		// And finally create the event instances according to the generated groups
-		for (List<Integer> group : groups)
-		{
+		for (List<Integer> group : groups) {
 			EventInstance ei = createInstance(nextInstanceId++, group, currentConfig);
-			if (ei != null)
-			{
+			if (ei != null) {
 				instances.put(ei.getId(), ei);
-				Announcements.getInstance().announceToAll(
-						"Event registrations closed.");// The next event will be a " + currentConfig.getEventString() + ". Type .event to join.");
-
-				for (EventTeam team : ei.getTeams())
-				{
-					for (int memberId : team.getParticipatedPlayers().keySet())
-					{
+				Announcements.getInstance()
+						.announceToAll("Event registrations closed.");// The next event will be a " + currentConfig.getEventString() + ". Type .event to join.");
+				
+				for (EventTeam team : ei.getTeams()) {
+					for (int memberId : team.getParticipatedPlayers().keySet()) {
 						registeredPlayers.remove(memberId);
 					}
 				}
 			}
-
+			
 			return true;
 		}
-
+		
 		return false;
 	}
-
-	public void onLogin(L2PcInstance playerInstance)
-	{
-		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId()))
-		{
+	
+	public void onLogin(L2PcInstance playerInstance) {
+		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId())) {
 			removeParticipant(playerInstance.getObjectId());
-			if (playerInstance.getEvent() != null)
-			{
-				for (L2Abnormal effect : playerInstance.getAllEffects())
-				{
-					if (effect != null)
-					{
+			if (playerInstance.getEvent() != null) {
+				for (L2Abnormal effect : playerInstance.getAllEffects()) {
+					if (effect != null) {
 						effect.exit();
 					}
 				}
@@ -322,462 +274,357 @@ public class EventsManager implements Reloadable
 			}
 		}
 	}
-
-	public void onLogout(L2PcInstance playerInstance)
-	{
-		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId()))
-		{
-			if (playerInstance.getEvent() != null)
-			{
-				for (L2Abnormal effect : playerInstance.getAllEffects())
-				{
-					if (effect != null)
-					{
+	
+	public void onLogout(L2PcInstance playerInstance) {
+		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId())) {
+			if (playerInstance.getEvent() != null) {
+				for (L2Abnormal effect : playerInstance.getAllEffects()) {
+					if (effect != null) {
 						effect.exit();
 					}
 				}
 				playerInstance.eventRestoreBuffs();
 				playerInstance.getEvent().onLogout(playerInstance);
 			}
-
+			
 			removeParticipant(playerInstance.getObjectId());
 		}
-
+		
 		playerInstance.setEvent(null);
 	}
-
-	public void join(L2PcInstance playerInstance)
-	{
-		if (isPlayerParticipant(playerInstance.getObjectId()))
-		{
+	
+	public void join(L2PcInstance playerInstance) {
+		if (isPlayerParticipant(playerInstance.getObjectId())) {
 			return;
 		}
-
+		
 		NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(0);
-
-		if (playerInstance.isCursedWeaponEquipped())
-		{
+		
+		if (playerInstance.isCursedWeaponEquipped()) {
 			npcHtmlMessage.setHtml(
 					"<html><head><title>Instanced Events</title></head><body>Cursed weapon owners are not allowed to participate.</body></html>");
-		}
-		else if (OlympiadManager.getInstance().isRegisteredInComp(playerInstance))
-		{
+		} else if (OlympiadManager.getInstance().isRegisteredInComp(playerInstance)) {
 			npcHtmlMessage.setHtml(
 					"<html><head><title>Instanced Events</title></head><body>You can not participate when registered for Olympiad.</body></html>");
-		}
-		else if (playerInstance.getReputation() < 0)
-		{
+		} else if (playerInstance.getReputation() < 0) {
 			npcHtmlMessage.setHtml(
 					"<html><head><title>Instanced Events</title></head><body>Chaotic players are not allowed to participate.</body></html>");
-		}
-		else if (playerInstance.isInJail())
-		{
+		} else if (playerInstance.isInJail()) {
 			npcHtmlMessage.setHtml(
 					"<html><head><title>Instanced Events</title></head><body>You cannot participate, you must wait your jail time.</body></html>");
-		}
-		else if (playerInstance.isCastingNow())
-		{
-			npcHtmlMessage.setHtml(
-					"<html><head><title>Instanced Events</title></head><body>You can't register while casting a skill.</body></html>");
-		}
-		else if (checkDualBox(playerInstance))
-		{
+		} else if (playerInstance.isCastingNow()) {
+			npcHtmlMessage.setHtml("<html><head><title>Instanced Events</title></head><body>You can't register while casting a skill.</body></html>");
+		} else if (checkDualBox(playerInstance)) {
 			npcHtmlMessage.setHtml(
 					"<html><head><title>Instanced Events</title></head><body>You have another character already registered for this event!</body></html>");
-		}
-		else if (playerInstance.getInstanceId() != 0)
-		{
+		} else if (playerInstance.getInstanceId() != 0) {
 			npcHtmlMessage.setHtml(
 					"<html><head><title>Instanced Events</title></head><body>You can't join one event while in other instance!</body></html>");
-		}
-		else if (playerInstance.isInDuel() || playerInstance.isDead() || playerInstance.getIsInsideGMEvent())
-		{
-			npcHtmlMessage.setHtml(
-					"<html><head><title>Instanced Events</title></head><body>You can't join one event at this moment!</body></html>");
-		}
-		else
-		{
-			if (addParticipant(playerInstance))
-			{
+		} else if (playerInstance.isInDuel() || playerInstance.isDead() || playerInstance.getIsInsideGMEvent()) {
+			npcHtmlMessage.setHtml("<html><head><title>Instanced Events</title></head><body>You can't join one event at this moment!</body></html>");
+		} else {
+			if (addParticipant(playerInstance)) {
 				CustomCommunityBoard.getInstance().parseCmd("_bbscustom;currentEvent", playerInstance);
 			}
-
+			
 			return;
 		}
-
+		
 		playerInstance.sendPacket(npcHtmlMessage);
 	}
-
-	public synchronized boolean addParticipant(L2PcInstance playerInstance)
-	{
+	
+	public synchronized boolean addParticipant(L2PcInstance playerInstance) {
 		// Check for nullpoitner
-		if (playerInstance == null)
-		{
+		if (playerInstance == null) {
 			return false;
 		}
-
+		
 		registeredPlayers.put(playerInstance.getObjectId(), playerInstance);
-
+		
 		return true;
 	}
-
-	public void leave(L2PcInstance playerInstance)
-	{
-		if (!isPlayerParticipant(playerInstance.getObjectId()))
-		{
+	
+	public void leave(L2PcInstance playerInstance) {
+		if (!isPlayerParticipant(playerInstance.getObjectId())) {
 			return;
 		}
-
+		
 		// If the event is started the player shouldn't be allowed to leave
-		if (playerInstance.getEvent() != null && playerInstance.getEvent().isState(EventState.STARTED))
-		{
+		if (playerInstance.getEvent() != null && playerInstance.getEvent().isState(EventState.STARTED)) {
 			return;
 		}
-
-		if (removeParticipant(playerInstance.getObjectId()))
-		{
+		
+		if (removeParticipant(playerInstance.getObjectId())) {
 			CustomCommunityBoard.getInstance().parseCmd("_bbscustom;currentEvent", playerInstance);
 		}
 	}
-
-	public boolean removeParticipant(int playerObjectId)
-	{
-		if (registeredPlayers.remove(playerObjectId) != null)
-		{
+	
+	public boolean removeParticipant(int playerObjectId) {
+		if (registeredPlayers.remove(playerObjectId) != null) {
 			return true;
 		}
-
+		
 		EventInstance event = getParticipantEvent(playerObjectId);
-		if (event != null)
-		{
+		if (event != null) {
 			return event.removeParticipant(playerObjectId);
 		}
-
+		
 		return false;
 	}
-
-	public String getEventInfoPage(L2PcInstance player)
-	{
-		if (!Config.INSTANCED_EVENT_ENABLED)
-		{
+	
+	public String getEventInfoPage(L2PcInstance player) {
+		if (!Config.INSTANCED_EVENT_ENABLED) {
 			return "";
 		}
-
-		if (!player.getFloodProtectors().getEventBypass().tryPerformAction("Event Info"))
-		{
+		
+		if (!player.getFloodProtectors().getEventBypass().tryPerformAction("Event Info")) {
 			return "";
 		}
-
+		
 		String result = null;
-		if (player.getEvent() != null && player.getEvent().isState(EventState.STARTED))
-		{
+		if (player.getEvent() != null && player.getEvent().isState(EventState.STARTED)) {
 			result = HtmCache.getInstance().getHtm(null, "CommunityBoard/runningEvent.htm");
 			result = result.replace("%runningEventInfo%", player.getEvent().getInfo(player));
 			return result;
-		}
-		else
-		{
+		} else {
 			result = HtmCache.getInstance().getHtm(null, "CommunityBoard/joinEvents.htm");
 		}
-
+		
 		//PvP Event
 		result = result.replace("%pvpEventName%", currentConfig.getEventName());
 		result = result.replace("%pvpEventLocation%", currentConfig.getEventLocationName());
-		result = result.replace("%pvpEventTime%",
-				task.getMinutesToStart() + " minute" + (task.getMinutesToStart() > 1 ? "s" : ""));
+		result = result.replace("%pvpEventTime%", task.getMinutesToStart() + " minute" + (task.getMinutesToStart() > 1 ? "s" : ""));
 		result = result.replace("%pvpEventId%", String.valueOf(currentConfig.getEventImageId()));
 		result = result.replace("%pvpInfoLink%", String.valueOf(currentConfig.getType()));
-
-		if (registeredPlayers.isEmpty())
-		{
+		
+		if (registeredPlayers.isEmpty()) {
 			result = result.replace("%pvpEventPlayers%", "");
 			result = result.replace("Registered Players for the Event", "");
-		}
-		else
-		{
+		} else {
 			result = result.replace("%pvpEventPlayers%", getRegisteredPlayers(player));
 		}
-
+		
 		//Both events
-		if (isPlayerParticipant(player.getObjectId()))
-		{
+		if (isPlayerParticipant(player.getObjectId())) {
 			result = result.replace("%leaveButton%",
 					"<button value=\"Leave Match making\" action=\"bypass -h InstancedEventLeave\" width=255 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 			result = result.replace("%pvpEventJoinButton%", "");
-		}
-		else
-		{
+		} else {
 			result = result.replace("%pvpEventJoinButton%",
 					"<button value=\"Join Match making\" action=\"bypass -h InstancedEventJoin true\" width=255 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 			result = result.replace("%leaveButton%", "");
 		}
-
+		
 		//Observe part?
-		if (instances.isEmpty())
-		{
+		if (instances.isEmpty()) {
 			result = result.replace("Current Observable Events", "");
 			result = result.replace("%observeEvents%", "");
-		}
-		else
-		{
+		} else {
 			int remaining = instances.size();
 			int pageCheck = 1;
 			int total = 1;
 			String eventString = "";
-
-			for (EventInstance event : instances.values())
-			{
-				if (!event.isState(EventState.STARTED))
-				{
+			
+			for (EventInstance event : instances.values()) {
+				if (!event.isState(EventState.STARTED)) {
 					remaining--;
-					if (!eventString.isEmpty() && (pageCheck == 6 || remaining == 0))
-					{
+					if (!eventString.isEmpty() && (pageCheck == 6 || remaining == 0)) {
 						pageCheck = 1;
 						eventString += "</tr>";
 					}
-
+					
 					continue;
 				}
-
-				if (pageCheck == 1)
-				{
+				
+				if (pageCheck == 1) {
 					eventString += "<tr>";
 				}
-
+				
 				eventString += "<td align=center><button value=\"" + event.getConfig().getEventName() + " #" + total +
 						"\" action=\"bypass -h InstancedEventObserve " + event.getId() +
 						"\" width=110 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>";
-
+				
 				// temp fix
 				event.getInfo(player);
-
+				
 				pageCheck++;
 				remaining--;
 				total++;
-
-				if (pageCheck == 6 || remaining == 0)
-				{
+				
+				if (pageCheck == 6 || remaining == 0) {
 					pageCheck = 1;
 					eventString += "</tr>";
 				}
 			}
-
+			
 			result = result.replace("%observeEvents%", eventString);
 			//result += "<br><br><br><br>";
 		}
-
+		
 		return result;
 	}
-
-	private String getRegisteredPlayers(L2PcInstance player)
-	{
+	
+	private String getRegisteredPlayers(L2PcInstance player) {
 		String result = "";
-
-		if (registeredPlayers.isEmpty())
-		{
+		
+		if (registeredPlayers.isEmpty()) {
 			return result;
 		}
-
-		for (L2PcInstance participant : registeredPlayers.values())
-		{
-			if (participant == null)
-			{
+		
+		for (L2PcInstance participant : registeredPlayers.values()) {
+			if (participant == null) {
 				continue;
 			}
-
+			
 			result += getPlayerString(participant, player) + ", ";
 		}
-
-		if (!result.isEmpty())
-		{
+		
+		if (!result.isEmpty()) {
 			result = result.substring(0, result.length() - 2);
 			result += ".";
 		}
-
+		
 		return result;
 	}
-
-	public String getPlayerString(L2PcInstance player, L2PcInstance reader)
-	{
+	
+	public String getPlayerString(L2PcInstance player, L2PcInstance reader) {
 		String color = "FFFFFF";
-		if (player == reader)
-		{
+		if (player == reader) {
 			color = "FFFF00";
-		}
-		else if (player.getFriendList().contains(reader.getObjectId()))
-		{
+		} else if (player.getFriendList().contains(reader.getObjectId())) {
 			color = "00FFFF";
-		}
-		else if (reader.getParty() != null && reader.getParty() == player.getParty())
-		{
+		} else if (reader.getParty() != null && reader.getParty() == player.getParty()) {
 			color = "00FF00";
-		}
-		else if (reader.getClan() != null)
-		{
-			if (reader.getClanId() > 0 && reader.getClanId() == player.getClanId())
-			{
+		} else if (reader.getClan() != null) {
+			if (reader.getClanId() > 0 && reader.getClanId() == player.getClanId()) {
 				color = "8888FF";
-			}
-			else if (reader.getAllyId() > 0 && reader.getAllyId() == player.getAllyId())
-			{
+			} else if (reader.getAllyId() > 0 && reader.getAllyId() == player.getAllyId()) {
 				color = "88FF88";
-			}
-			else if (reader.getClan().isAtWarWith(player.getClanId()))
-			{
+			} else if (reader.getClan().isAtWarWith(player.getClanId())) {
 				color = "CC0000";
 			}
 		}
 		return "<font color=\"" + color + "\">" + player.getName() + "</font>";
 	}
-
-	public int getParticipantEventId(int playerObjectId)
-	{
-		for (EventInstance event : instances.values())
-		{
-			if (event.isPlayerParticipant(playerObjectId))
-			{
+	
+	public int getParticipantEventId(int playerObjectId) {
+		for (EventInstance event : instances.values()) {
+			if (event.isPlayerParticipant(playerObjectId)) {
 				return event.getId();
 			}
 		}
 		return -1;
 	}
-
-	public EventInstance getParticipantEvent(int playerObjectId)
-	{
-		for (EventInstance event : instances.values())
-		{
-			if (event.isPlayerParticipant(playerObjectId))
-			{
+	
+	public EventInstance getParticipantEvent(int playerObjectId) {
+		for (EventInstance event : instances.values()) {
+			if (event.isPlayerParticipant(playerObjectId)) {
 				return event;
 			}
 		}
 		return null;
 	}
-
-	public byte getParticipantTeamId(int playerObjectId)
-	{
+	
+	public byte getParticipantTeamId(int playerObjectId) {
 		EventInstance event = getParticipantEvent(playerObjectId);
-		if (event == null)
-		{
+		if (event == null) {
 			return -1;
 		}
 		return event.getParticipantTeamId(playerObjectId);
 	}
-
-	public EventTeam getParticipantTeam(int playerObjectId)
-	{
+	
+	public EventTeam getParticipantTeam(int playerObjectId) {
 		EventInstance event = getParticipantEvent(playerObjectId);
-		if (event == null)
-		{
+		if (event == null) {
 			return null;
 		}
 		return getParticipantEvent(playerObjectId).getParticipantTeam(playerObjectId);
 	}
-
-	public EventTeam getParticipantEnemyTeam(int playerObjectId)
-	{
+	
+	public EventTeam getParticipantEnemyTeam(int playerObjectId) {
 		EventInstance event = getParticipantEvent(playerObjectId);
-		if (event == null)
-		{
+		if (event == null) {
 			return null;
 		}
 		return getParticipantEvent(playerObjectId).getParticipantEnemyTeam(playerObjectId);
 	}
-
-	public boolean isPlayerParticipant(int playerObjectId)
-	{
-		if (registeredPlayers.containsKey(playerObjectId))
-		{
+	
+	public boolean isPlayerParticipant(int playerObjectId) {
+		if (registeredPlayers.containsKey(playerObjectId)) {
 			return true;
 		}
-
-		for (EventInstance event : instances.values())
-		{
-			if (event.isPlayerParticipant(playerObjectId))
-			{
+		
+		for (EventInstance event : instances.values()) {
+			if (event.isPlayerParticipant(playerObjectId)) {
 				return true;
 			}
 		}
 		return false;
 	}
-
-	public EventInstance createInstance(int id, List<Integer> group, EventConfig config)
-	{
+	
+	public EventInstance createInstance(int id, List<Integer> group, EventConfig config) {
 		// A map of lists to access the players sorted by class
 		Map<Integer, List<L2PcInstance>> playersByClass = new HashMap<>();
 		// Classify the players according to their class
-		for (int playerId : group)
-		{
-			if (playerId == 0)
-			{
+		for (int playerId : group) {
+			if (playerId == 0) {
 				continue;
 			}
-
+			
 			L2PcInstance player = L2World.getInstance().getPlayer(playerId);
 			int classId = player.getCurrentClass().getAwakeningClassId();
-			if (classId == -1)
-			{
+			if (classId == -1) {
 				classId = 147;
 			}
-
+			
 			List<L2PcInstance> players = playersByClass.get(classId);
-			if (players == null)
-			{
+			if (players == null) {
 				players = new ArrayList<>();
 				playersByClass.put(classId, players);
 			}
-
+			
 			players.add(player);
 		}
-
+		
 		// If we found none, don't do anything
-		if (playersByClass.isEmpty())
-		{
+		if (playersByClass.isEmpty()) {
 			return null;
 		}
-
+		
 		// Create the event and fill it with the players, in class order
 		EventInstance event = config.createInstance(id);
-		for (int classId = 139; classId <= 147; classId++)
-		{
+		for (int classId = 139; classId <= 147; classId++) {
 			List<L2PcInstance> players = playersByClass.get(classId);
-			if (players == null)
-			{
+			if (players == null) {
 				continue;
 			}
-
-			for (L2PcInstance player : players)
-			{
+			
+			for (L2PcInstance player : players) {
 				event.addParticipant(player);
 			}
 		}
-
+		
 		return event;
 	}
-
-	private boolean checkDualBox(L2PcInstance player)
-	{
-		if (player == null)
-		{
+	
+	private boolean checkDualBox(L2PcInstance player) {
+		if (player == null) {
 			return false;
 		}
-
-		for (L2PcInstance registered : registeredPlayers.values())
-		{
-			if (registered == null)
-			{
+		
+		for (L2PcInstance registered : registeredPlayers.values()) {
+			if (registered == null) {
 				continue;
 			}
-
+			
 			if (player.getExternalIP().equalsIgnoreCase(registered.getExternalIP()) &&
-					player.getInternalIP().equalsIgnoreCase(registered.getInternalIP()))
-			{
+					player.getInternalIP().equalsIgnoreCase(registered.getInternalIP())) {
 				return true;
 			}
 		}
-
+		
 		return false;
-
+		
 		//TODO LasTravel: Hwid check don't work if we don't have LG
         /*String hwId = player.getClient().getHWId();
 		for (L2PcInstance registered : registeredPlayers.values())
@@ -789,31 +636,23 @@ public class EventsManager implements Reloadable
 		}
 		return false;*/
 	}
-
+	
 	/**
 	 * @param activeChar
 	 * @param command
 	 */
-	public void handleBypass(L2PcInstance activeChar, String command)
-	{
-		if (activeChar == null)
-		{
+	public void handleBypass(L2PcInstance activeChar, String command) {
+		if (activeChar == null) {
 			return;
 		}
-
-		if (command.startsWith("InstancedEventJoin"))
-		{
+		
+		if (command.startsWith("InstancedEventJoin")) {
 			join(activeChar);
-		}
-		else if (command.equals("InstancedEventLeave"))
-		{
+		} else if (command.equals("InstancedEventLeave")) {
 			leave(activeChar);
-		}
-		else if (command.startsWith("InstancedEventObserve"))
-		{
+		} else if (command.startsWith("InstancedEventObserve")) {
 			int eventId = Integer.valueOf(command.substring(22));
-			if (instances.get(eventId) != null)
-			{
+			if (instances.get(eventId) != null) {
 				instances.get(eventId).observe(activeChar);
 			}
 		}
@@ -831,18 +670,16 @@ public class EventsManager implements Reloadable
 				Events.getInstance().Events.getInstance().get(eventId).eventInfo(activeChar);
 		}*/
 	}
-
+	
 	@Override
-	public boolean reload()
-	{
+	public boolean reload() {
 		locations.clear();
 		loadConfig();
 		return true;
 	}
-
+	
 	@Override
-	public String getReloadMessage(boolean success)
-	{
+	public String getReloadMessage(boolean success) {
 		return "Event configurations reloaded";
 	}
 }

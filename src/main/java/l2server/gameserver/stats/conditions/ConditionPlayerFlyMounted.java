@@ -23,8 +23,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author kerberos
  */
-public class ConditionPlayerFlyMounted extends Condition
-{
+public class ConditionPlayerFlyMounted extends Condition {
 
 	private boolean val;
 
@@ -33,8 +32,7 @@ public class ConditionPlayerFlyMounted extends Condition
 	 *
 	 * @param val the val
 	 */
-	public ConditionPlayerFlyMounted(boolean val)
-	{
+	public ConditionPlayerFlyMounted(boolean val) {
 		this.val = val;
 	}
 
@@ -42,8 +40,7 @@ public class ConditionPlayerFlyMounted extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		return !(env.player instanceof L2PcInstance) || ((L2PcInstance) env.player).isFlyingMounted() == val;
 	}
 }

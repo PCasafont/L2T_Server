@@ -24,28 +24,25 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class TargetSelected extends L2GameServerPacket
-{
+public final class TargetSelected extends L2GameServerPacket {
 	private int objectId;
 	private int targetObjId;
 	private int x;
 	private int y;
 	private int z;
-
+	
 	/**
 	 */
-	public TargetSelected(int objectId, int targetId, int x, int y, int z)
-	{
+	public TargetSelected(int objectId, int targetId, int x, int y, int z) {
 		this.objectId = objectId;
 		targetObjId = targetId;
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objectId);
 		writeD(targetObjId);
 		writeD(x);

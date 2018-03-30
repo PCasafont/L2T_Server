@@ -20,39 +20,30 @@ import l2server.gameserver.pathfinding.AbstractNode;
 /**
  * @author -Nemesiss-
  */
-public class FastNodeList
-{
+public class FastNodeList {
 	private AbstractNode[] list;
 	private int size;
 
-	public FastNodeList(int size)
-	{
+	public FastNodeList(int size) {
 		list = new AbstractNode[size];
 	}
 
-	public void add(AbstractNode n)
-	{
+	public void add(AbstractNode n) {
 		list[size++] = n;
 	}
 
-	public boolean contains(AbstractNode n)
-	{
-		for (int i = 0; i < size; i++)
-		{
-			if (list[i].equals(n))
-			{
+	public boolean contains(AbstractNode n) {
+		for (int i = 0; i < size; i++) {
+			if (list[i].equals(n)) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	public boolean containsRev(AbstractNode n)
-	{
-		for (int i = size - 1; i >= 0; i--)
-		{
-			if (list[i].equals(n))
-			{
+	public boolean containsRev(AbstractNode n) {
+		for (int i = size - 1; i >= 0; i--) {
+			if (list[i].equals(n)) {
 				return true;
 			}
 		}

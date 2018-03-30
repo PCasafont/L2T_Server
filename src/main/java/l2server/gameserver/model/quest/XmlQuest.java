@@ -21,15 +21,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Pere
  */
-public class XmlQuest extends Quest
-{
-	public class XmlQuestState
-	{
+public class XmlQuest extends Quest {
+	public class XmlQuestState {
 		public int Id;
 	}
 
-	public XmlQuest(int questId, String name, String descr)
-	{
+	public XmlQuest(int questId, String name, String descr) {
 		super(questId, name, descr);
 
 		/*addStartNpc(rafforty);
@@ -40,12 +37,10 @@ public class XmlQuest extends Quest
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		QuestState st = player.getQuestState(getName());
 
-		if (st == null)
-		{
+		if (st == null) {
 			return event;
 		}
 
@@ -53,12 +48,10 @@ public class XmlQuest extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
@@ -66,11 +59,9 @@ public class XmlQuest extends Quest
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
 		QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 
@@ -78,8 +69,7 @@ public class XmlQuest extends Quest
 	}
 
 	@Override
-	public boolean canStart(L2PcInstance player)
-	{
+	public boolean canStart(L2PcInstance player) {
 		return true;//player.getLevel() >= minLevel && player.getLevel() <= maxLevel;
 	}
 }

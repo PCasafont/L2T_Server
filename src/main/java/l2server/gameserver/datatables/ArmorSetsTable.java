@@ -34,18 +34,15 @@ import java.io.File;
 /**
  * @author Pere
  */
-public class ArmorSetsTable implements Reloadable
-{
+public class ArmorSetsTable implements Reloadable {
 
 	private TIntObjectHashMap<L2ArmorSet> armorSets;
 
-	public static ArmorSetsTable getInstance()
-	{
+	public static ArmorSetsTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private ArmorSetsTable()
-	{
+	private ArmorSetsTable() {
 		armorSets = new TIntObjectHashMap<>();
 		reload();
 
@@ -53,65 +50,52 @@ public class ArmorSetsTable implements Reloadable
 	}
 
 	@Override
-	public boolean reload()
-	{
+	public boolean reload() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "armorSets.xml");
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode d : doc.getChildren())
-		{
-            if (d.getName().equalsIgnoreCase("armorSet"))
-            {
-                int id = d.getInt("id");
-                int parts = d.getInt("parts");
+		for (XmlNode d : doc.getChildren()) {
+			if (d.getName().equalsIgnoreCase("armorSet")) {
+				int id = d.getInt("id");
+				int parts = d.getInt("parts");
 
-                TIntIntHashMap skills = new TIntIntHashMap();
-                int enchant6Skill = 0, shieldSkill = 0;
+				TIntIntHashMap skills = new TIntIntHashMap();
+				int enchant6Skill = 0, shieldSkill = 0;
 
-                for (XmlNode skillNode : d.getChildren())
-                {
-                    if (skillNode.getName().equalsIgnoreCase("skill"))
-                    {
-                        int skillId = skillNode.getInt("id");
-                        int levels = skillNode.getInt("levels");
-                        skills.put(skillId, levels);
-                    }
-                    else if (skillNode.getName().equalsIgnoreCase("enchant6Skill"))
-                    {
-                        enchant6Skill = skillNode.getInt("id");
-                    }
-                    else if (skillNode.getName().equalsIgnoreCase("shieldSkill"))
-                    {
-                        shieldSkill = skillNode.getInt("id");
-                    }
-                }
+				for (XmlNode skillNode : d.getChildren()) {
+					if (skillNode.getName().equalsIgnoreCase("skill")) {
+						int skillId = skillNode.getInt("id");
+						int levels = skillNode.getInt("levels");
+						skills.put(skillId, levels);
+					} else if (skillNode.getName().equalsIgnoreCase("enchant6Skill")) {
+						enchant6Skill = skillNode.getInt("id");
+					} else if (skillNode.getName().equalsIgnoreCase("shieldSkill")) {
+						shieldSkill = skillNode.getInt("id");
+					}
+				}
 
-                armorSets.put(id, new L2ArmorSet(id, parts, skills, enchant6Skill, shieldSkill));
-            }
-        }
-        Log.info("ArmorSetsTable: Loaded " + armorSets.size() + " armor sets.");
+				armorSets.put(id, new L2ArmorSet(id, parts, skills, enchant6Skill, shieldSkill));
+			}
+		}
+		Log.info("ArmorSetsTable: Loaded " + armorSets.size() + " armor sets.");
 
 		return true;
 	}
 
 	@Override
-	public String getReloadMessage(boolean success)
-	{
+	public String getReloadMessage(boolean success) {
 		return "Armor Sets reloaded";
 	}
 
-	public boolean setExists(int chestId)
-	{
+	public boolean setExists(int chestId) {
 		return armorSets.containsKey(chestId);
 	}
 
-	public L2ArmorSet getSet(int chestId)
-	{
+	public L2ArmorSet getSet(int chestId) {
 		return armorSets.get(chestId);
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final ArmorSetsTable instance = new ArmorSetsTable();
 	}
 }

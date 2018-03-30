@@ -26,8 +26,7 @@ import l2server.gameserver.network.serverpackets.TutorialShowHtml;
 /**
  * @author Pere
  */
-public class Q10320_LetsGoToTheCentralSquare extends Quest
-{
+public class Q10320_LetsGoToTheCentralSquare extends Quest {
 	// Quest
 	public static String qn = "Q10320_LetsGoToTheCentralSquare";
 
@@ -35,8 +34,7 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 	private int pantheon = 32972;
 	private int theodore = 32975;
 
-	public Q10320_LetsGoToTheCentralSquare(int questId, String name, String descr)
-	{
+	public Q10320_LetsGoToTheCentralSquare(int questId, String name, String descr) {
 		super(questId, name, descr);
 		addStartNpc(pantheon);
 		addTalkId(pantheon);
@@ -44,27 +42,22 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == pantheon && event.equalsIgnoreCase("32972-03.htm"))
-		{
+		if (npc.getNpcId() == pantheon && event.equalsIgnoreCase("32972-03.htm")) {
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 			player.sendPacket(new TutorialShowHtml(2, "..\\L2text\\QT_001_Radar_01.htm"));
 			// Reset video if it was shown before
 			st.deleteGlobalQuestVar("ZoneVid523400");
-		}
-		else if (npc.getNpcId() == theodore && event.equalsIgnoreCase("32975-02.htm") && st.getInt("cond") == 1)
-		{
+		} else if (npc.getNpcId() == theodore && event.equalsIgnoreCase("32975-02.htm") && st.getInt("cond") == 1) {
 			st.unset("cond");
 			st.giveItems(57, 3000);
 			st.addExpAndSp(30, 100);
@@ -78,26 +71,19 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == pantheon)
-		{
-			switch (st.getState())
-			{
+		if (npc.getNpcId() == pantheon) {
+			switch (st.getState()) {
 				case State.CREATED:
-					if (canStart(player))
-					{
+					if (canStart(player)) {
 						htmltext = "32972-01.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32972-00.htm";
 					}
 					break;
@@ -108,22 +94,18 @@ public class Q10320_LetsGoToTheCentralSquare extends Quest
 					htmltext = "32972-05.htm"; // TODO
 					break;
 			}
-		}
-		else if (npc.getNpcId() == theodore && st.getInt("cond") == 1)
-		{
+		} else if (npc.getNpcId() == theodore && st.getInt("cond") == 1) {
 			htmltext = "32975-01.htm";
 		}
 		return htmltext;
 	}
 
 	@Override
-	public boolean canStart(L2PcInstance player)
-	{
+	public boolean canStart(L2PcInstance player) {
 		return player.getLevel() <= 20;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Q10320_LetsGoToTheCentralSquare(10320, qn, "Going to the Square of Talking Island Village.");
 	}
 }

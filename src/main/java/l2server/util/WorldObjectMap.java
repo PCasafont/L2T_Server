@@ -37,16 +37,14 @@ import java.util.concurrent.ConcurrentHashMap;
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
 
-public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
-{
+public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T> {
 	Map<Integer, T> objectMap = new ConcurrentHashMap<>();
 
 	/* (non-Javadoc)
 	 * @see l2server.util.L2ObjectMap#size()
 	 */
 	@Override
-	public int size()
-	{
+	public int size() {
 		return objectMap.size();
 	}
 
@@ -54,8 +52,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	 * @see l2server.util.L2ObjectMap#isEmpty()
 	 */
 	@Override
-	public boolean isEmpty()
-	{
+	public boolean isEmpty() {
 		return objectMap.isEmpty();
 	}
 
@@ -63,8 +60,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	 * @see l2server.util.L2ObjectMap#clear()
 	 */
 	@Override
-	public void clear()
-	{
+	public void clear() {
 		objectMap.clear();
 	}
 
@@ -72,10 +68,8 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	 * @see l2server.util.L2ObjectMap#put(T)
 	 */
 	@Override
-	public void put(T obj)
-	{
-		if (obj != null)
-		{
+	public void put(T obj) {
+		if (obj != null) {
 			objectMap.put(obj.getObjectId(), obj);
 		}
 	}
@@ -84,10 +78,8 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	 * @see l2server.util.L2ObjectMap#remove(T)
 	 */
 	@Override
-	public void remove(T obj)
-	{
-		if (obj != null)
-		{
+	public void remove(T obj) {
+		if (obj != null) {
 			objectMap.remove(obj.getObjectId());
 		}
 	}
@@ -96,8 +88,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	 * @see l2server.util.L2ObjectMap#get(int)
 	 */
 	@Override
-	public T get(int id)
-	{
+	public T get(int id) {
 		return objectMap.get(id);
 	}
 
@@ -105,10 +96,8 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	 * @see l2server.util.L2ObjectMap#contains(T)
 	 */
 	@Override
-	public boolean contains(T obj)
-	{
-		if (obj == null)
-		{
+	public boolean contains(T obj) {
+		if (obj == null) {
 			return false;
 		}
 		return objectMap.get(obj.getObjectId()) != null;
@@ -118,8 +107,7 @@ public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T>
 	 * @see l2server.util.L2ObjectMap#iterator()
 	 */
 	@Override
-	public Iterator<T> iterator()
-	{
+	public Iterator<T> iterator() {
 		return objectMap.values().iterator();
 	}
 }

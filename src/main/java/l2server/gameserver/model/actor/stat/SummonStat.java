@@ -21,29 +21,23 @@ import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.instance.L2CloneInstance;
 import l2server.gameserver.stats.Stats;
 
-public class SummonStat extends PlayableStat
-{
-	public SummonStat(L2Summon activeChar)
-	{
+public class SummonStat extends PlayableStat {
+	public SummonStat(L2Summon activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public L2Summon getActiveChar()
-	{
+	public L2Summon getActiveChar() {
 		return (L2Summon) super.getActiveChar();
 	}
 
 	@Override
-	public int getPAtk(L2Character target)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public int getPAtk(L2Character target) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPAtk(target);
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance)
-		{
+		if (getActiveChar() instanceof L2CloneInstance) {
 			return getActiveChar().getOwner().getPAtk(target);
 		}
 
@@ -54,15 +48,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public int getPDef(L2Character target)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public int getPDef(L2Character target) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPAtkSpd();
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance)
-		{
+		if (getActiveChar() instanceof L2CloneInstance) {
 			return (int) (getActiveChar().getOwner().getPDef(target) * 0.25);
 		}
 
@@ -73,15 +64,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public int getMAtk(L2Character target, L2Skill skill)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public int getMAtk(L2Character target, L2Skill skill) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getMAtk(target, skill);
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance)
-		{
+		if (getActiveChar() instanceof L2CloneInstance) {
 			return (int) (getActiveChar().getOwner().getMAtk(target, skill) * 0.25);
 		}
 
@@ -92,15 +80,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public int getMDef(L2Character target, L2Skill skill)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public int getMDef(L2Character target, L2Skill skill) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getMDef(target, skill);
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance)
-		{
+		if (getActiveChar() instanceof L2CloneInstance) {
 			return (int) (getActiveChar().getOwner().getMDef(target, skill) * 0.25);
 		}
 
@@ -111,15 +96,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public int getMaxVisibleHp()
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public int getMaxVisibleHp() {
+		if (getActiveChar().getOwner() == null) {
 			return super.getMaxVisibleHp();
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance)
-		{
+		if (getActiveChar() instanceof L2CloneInstance) {
 			return (int) (getActiveChar().getOwner().getMaxVisibleHp() * 0.25);
 		}
 
@@ -130,15 +112,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public int getMaxMp()
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public int getMaxMp() {
+		if (getActiveChar().getOwner() == null) {
 			return super.getMaxMp();
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance)
-		{
+		if (getActiveChar() instanceof L2CloneInstance) {
 			return (int) (getActiveChar().getOwner().getMaxMp() * 0.25);
 		}
 
@@ -149,15 +128,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public int getCriticalHit(L2Character target, L2Skill skill)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public int getCriticalHit(L2Character target, L2Skill skill) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getCriticalHit(target, skill);
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance)
-		{
+		if (getActiveChar() instanceof L2CloneInstance) {
 			return getActiveChar().getOwner().getCriticalHit(target, skill);
 		}
 
@@ -168,10 +144,8 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public double getPCriticalDamage(L2Character target, double damage, L2Skill skill)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public double getPCriticalDamage(L2Character target, double damage, L2Skill skill) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPCriticalDamage(target, damage, skill);
 		}
 
@@ -183,15 +157,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public int getPAtkSpd()
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public int getPAtkSpd() {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPAtkSpd();
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance)
-		{
+		if (getActiveChar() instanceof L2CloneInstance) {
 			return getActiveChar().getOwner().getPAtkSpd();
 		}
 
@@ -202,10 +173,8 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public int getMAtkSpd()
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public int getMAtkSpd() {
+		if (getActiveChar().getOwner() == null) {
 			return super.getMAtkSpd();
 		}
 
@@ -217,31 +186,26 @@ public class SummonStat extends PlayableStat
 
 	//Code to give pets physical acc
 	@Override
-	public int getAccuracy()
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public int getAccuracy() {
+		if (getActiveChar().getOwner() == null) {
 			return super.getAccuracy();
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance)
-		{
+		if (getActiveChar() instanceof L2CloneInstance) {
 			return getActiveChar().getOwner().getAccuracy();
 		}
 
 		return (int) getActiveChar().getOwner().calcStat(Stats.SERVITOR_ACCURACY, super.getAccuracy(), null, null);
 	}
+
 	//code to give pets magic Acc
 	@Override
-	public int getMAccuracy()
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public int getMAccuracy() {
+		if (getActiveChar().getOwner() == null) {
 			return super.getMAccuracy();
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance)
-		{
+		if (getActiveChar() instanceof L2CloneInstance) {
 			return getActiveChar().getOwner().getMAccuracy();
 		}
 
@@ -249,10 +213,8 @@ public class SummonStat extends PlayableStat
 	}
 
 	//code to give pets physical evasion
-	public int getEvasionRate(L2Character target)
-	{
-		if (getActiveChar() .getOwner() == null)
-		{
+	public int getEvasionRate(L2Character target) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getEvasionRate(target);
 		}
 
@@ -263,11 +225,10 @@ public class SummonStat extends PlayableStat
 		}
 		return (int) getActiveChar().getOwner().calcStat(Stats.OWNER_P_EVASION_RATE, super.getEvasionRate(target), null, null);
 	}
+
 	//code to give pets magic evasion
-	public int getMEvasionRate(L2Character target)
-	{
-		if (getActiveChar() .getOwner() == null)
-		{
+	public int getMEvasionRate(L2Character target) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getMEvasionRate(target);
 		}
 
@@ -279,17 +240,13 @@ public class SummonStat extends PlayableStat
 		return (int) getActiveChar().getOwner().calcStat(Stats.OWNER_M_EVASION_RATE, super.getMEvasionRate(target), null, null);
 	}
 
-
 	@Override
-	public double getPvPPhysicalDamage(L2Character target)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public double getPvPPhysicalDamage(L2Character target) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPvPPhysicalDamage(target);
 		}
 
-		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0)
-		{
+		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0) {
 			return getActiveChar().getOwner().getPvPPhysicalDamage(target);
 		}
 
@@ -297,15 +254,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public double getPvPPhysicalSkillDamage(L2Character target)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public double getPvPPhysicalSkillDamage(L2Character target) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPvPPhysicalSkillDamage(target);
 		}
 
-		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0)
-		{
+		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0) {
 			return getActiveChar().getOwner().getPvPPhysicalSkillDamage(target);
 		}
 
@@ -313,15 +267,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public double getPvPPhysicalDefense(L2Character attacker)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public double getPvPPhysicalDefense(L2Character attacker) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPvPPhysicalDefense(attacker);
 		}
 
-		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0)
-		{
+		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0) {
 			return getActiveChar().getOwner().getPvPPhysicalDefense(attacker);
 		}
 
@@ -329,15 +280,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public double getPvPPhysicalSkillDefense(L2Character attacker)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public double getPvPPhysicalSkillDefense(L2Character attacker) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPvPPhysicalDefense(attacker);
 		}
 
-		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0)
-		{
+		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0) {
 			return getActiveChar().getOwner().getPvPPhysicalSkillDefense(attacker);
 		}
 
@@ -345,15 +293,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public double getPvPMagicDamage(L2Character target)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public double getPvPMagicDamage(L2Character target) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPvPMagicDamage(target);
 		}
 
-		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0)
-		{
+		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0) {
 			return getActiveChar().getOwner().getPvPMagicDamage(target);
 		}
 
@@ -361,15 +306,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public double getPvPMagicDefense(L2Character attacker)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public double getPvPMagicDefense(L2Character attacker) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPvPMagicDamage(attacker);
 		}
 
-		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0)
-		{
+		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0) {
 			return getActiveChar().getOwner().getPvPMagicDefense(attacker);
 		}
 
@@ -377,15 +319,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public double getPvEPhysicalSkillDamage(L2Character target)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public double getPvEPhysicalSkillDamage(L2Character target) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPvPMagicDamage(target);
 		}
 
-		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0)
-		{
+		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0) {
 			return getActiveChar().getOwner().getPvEPhysicalSkillDamage(target);
 		}
 
@@ -393,15 +332,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public double getPvEPhysicalSkillDefense(L2Character attacker)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public double getPvEPhysicalSkillDefense(L2Character attacker) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPvPMagicDamage(attacker);
 		}
 
-		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0)
-		{
+		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0) {
 			return getActiveChar().getOwner().getPvEPhysicalSkillDefense(attacker);
 		}
 
@@ -409,15 +345,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public double getPvEPhysicalDamage(L2Character target)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public double getPvEPhysicalDamage(L2Character target) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPvEPhysicalDamage(target);
 		}
 
-		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0)
-		{
+		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0) {
 			return getActiveChar().getOwner().getPvEPhysicalDamage(target);
 		}
 
@@ -425,15 +358,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public double getPvEPhysicalDefense(L2Character attacker)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public double getPvEPhysicalDefense(L2Character attacker) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPvEPhysicalDefense(attacker);
 		}
 
-		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0)
-		{
+		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0) {
 			return getActiveChar().getOwner().getPvEPhysicalDefense(attacker);
 		}
 
@@ -441,15 +371,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public double getPvEMagicDamage(L2Character target)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public double getPvEMagicDamage(L2Character target) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPvEMagicDamage(target);
 		}
 
-		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0)
-		{
+		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0) {
 			return getActiveChar().getOwner().getPvEMagicDamage(target);
 		}
 
@@ -457,15 +384,12 @@ public class SummonStat extends PlayableStat
 	}
 
 	@Override
-	public double getPvEMagicDefense(L2Character attacker)
-	{
-		if (getActiveChar().getOwner() == null)
-		{
+	public double getPvEMagicDefense(L2Character attacker) {
+		if (getActiveChar().getOwner() == null) {
 			return super.getPvEMagicDefense(attacker);
 		}
 
-		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0)
-		{
+		if (getActiveChar().getOwner().calcStat(Stats.OWNER_PVP_PVE, 0.0, getActiveChar().getOwner(), null) > 0.0) {
 			return getActiveChar().getOwner().getPvEMagicDefense(attacker);
 		}
 

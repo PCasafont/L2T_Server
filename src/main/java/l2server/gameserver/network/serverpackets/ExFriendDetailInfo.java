@@ -29,9 +29,8 @@ import java.util.Calendar;
 /**
  * @author Erlando
  */
-public class ExFriendDetailInfo extends L2GameServerPacket
-{
-
+public class ExFriendDetailInfo extends L2GameServerPacket {
+	
 	private L2PcInstance player;
 	int friendObjId;
 	private String name;
@@ -48,17 +47,14 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 	private int createdDay;
 	private long lastLogin;
 	private String memo;
-
-	public ExFriendDetailInfo(L2PcInstance activeChar, String charName)
-	{
+	
+	public ExFriendDetailInfo(L2PcInstance activeChar, String charName) {
 		player = activeChar;
 		friendObjId = CharNameTable.getInstance().getIdByName(charName);
 		name = charName;
-		isOnline = L2World.getInstance().getPlayer(friendObjId) != null &&
-				L2World.getInstance().getPlayer(friendObjId).isOnline() ? 1 : 0;
+		isOnline = L2World.getInstance().getPlayer(friendObjId) != null && L2World.getInstance().getPlayer(friendObjId).isOnline() ? 1 : 0;
 		memo = activeChar.getFriendMemo(friendObjId);
-		if (isOnline == 1)
-		{
+		if (isOnline == 1) {
 			L2PcInstance friend = L2World.getInstance().getPlayer(friendObjId);
 			level = friend.getLevel();
 			classId = friend.getClassId();
@@ -72,30 +68,25 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 			createDate.setTimeInMillis(friend.getCreateTime());
 			createdMonth = createDate.get(Calendar.MONTH) + 1;
 			createdDay = createDate.get(Calendar.DAY_OF_MONTH);
-		}
-		else
-		{
+		} else {
 			offlineFriendInfo(friendObjId);
 		}
 	}
-
-	private void offlineFriendInfo(int objId)
-	{
+	
+	private void offlineFriendInfo(int objId) {
 		long createDate = 0;
 		int level = 0;
 		int bClassId = 0;
 		Connection con = null;
-
-		try
-		{
+		
+		try {
 			// Retrieve the L2PcInstance from the characters table of the database
 			con = L2DatabaseFactory.getInstance().getConnection();
-
+			
 			PreparedStatement statement = con.prepareStatement("SELECT * FROM characters WHERE charId=?");
 			statement.setInt(1, objId);
 			ResultSet rset = statement.executeQuery();
-			while (rset.next())
-			{
+			while (rset.next()) {
 				level = rset.getByte("level");
 				classId = rset.getInt("classid");
 				bClassId = rset.getInt("base_class");
@@ -104,67 +95,50 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 				createDate = rset.getLong("createTime");
 			}
 			statement.execute();
-
+			
 			rset.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.warning("Failed loading character. " + e);
 			e.printStackTrace();
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
-		if (classId != bClassId)
-		{
-			try
-			{
+		if (classId != bClassId) {
+			try {
 				// Retrieve the L2PcInstance from the characters table of the database
 				con = L2DatabaseFactory.getInstance().getConnection();
-
-				PreparedStatement statement =
-						con.prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
+				
+				PreparedStatement statement = con.prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
 				statement.setInt(1, objId);
 				statement.setInt(2, classId);
 				ResultSet rset = statement.executeQuery();
-
-				while (rset.next())
-				{
+				
+				while (rset.next()) {
 					this.level = rset.getByte("level");
 				}
-
+				
 				statement.execute();
 				rset.close();
 				statement.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.warning("Failed loading character_subclasses. " + e);
 				e.printStackTrace();
-			}
-			finally
-			{
+			} finally {
 				L2DatabaseFactory.close(con);
 			}
-		}
-		else
-		{
+		} else {
 			this.level = level;
 		}
-		if (clanId != 0)
-		{
-			try
-			{
+		if (clanId != 0) {
+			try {
 				// Retrieve the L2PcInstance from the characters table of the database
 				con = L2DatabaseFactory.getInstance().getConnection();
-
+				
 				PreparedStatement statement = con.prepareStatement("SELECT * FROM clan_data WHERE clan_id=?");
 				statement.setInt(1, clanId);
 				ResultSet rset = statement.executeQuery();
-				while (rset.next())
-				{
+				while (rset.next()) {
 					clanName = rset.getString("clan_name");
 					clanCrestId = rset.getInt("crest_id");
 					allyId = rset.getInt("ally_id");
@@ -174,14 +148,10 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 				statement.execute();
 				rset.close();
 				statement.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.warning("Failed loading clan_data. " + e);
 				e.printStackTrace();
-			}
-			finally
-			{
+			} finally {
 				L2DatabaseFactory.close(con);
 			}
 		}
@@ -190,10 +160,9 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 		createdMonth = c.get(Calendar.MONTH) + 1;
 		createdDay = c.get(Calendar.DAY_OF_MONTH);
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(player.getObjectId()); // Character ID
 		writeS(name); // Name
 		writeD(isOnline); // Online

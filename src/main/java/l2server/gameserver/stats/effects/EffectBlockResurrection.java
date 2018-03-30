@@ -24,10 +24,8 @@ import l2server.gameserver.templates.skills.L2EffectType;
 /**
  * @author UnAfraid
  */
-public class EffectBlockResurrection extends L2Effect
-{
-	public EffectBlockResurrection(Env env, L2EffectTemplate template)
-	{
+public class EffectBlockResurrection extends L2Effect {
+	public EffectBlockResurrection(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -35,14 +33,12 @@ public class EffectBlockResurrection extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.BLOCK_RESURRECTION;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.DEBUFF;
 	}
 
@@ -50,8 +46,7 @@ public class EffectBlockResurrection extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 }

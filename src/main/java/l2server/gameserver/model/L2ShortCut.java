@@ -20,8 +20,7 @@ package l2server.gameserver.model;
  *
  * @version $Revision: 1.3.4.1 $ $Date: 2005/03/27 15:29:32 $
  */
-public class L2ShortCut
-{
+public class L2ShortCut {
 	public static final int TYPE_ITEM = 1;
 	public static final int TYPE_SKILL = 2;
 	public static final int TYPE_ACTION = 3;
@@ -37,8 +36,7 @@ public class L2ShortCut
 	private final int characterType;
 	private int sharedReuseGroup = -1;
 
-	public L2ShortCut(int slotId, int pageId, int shortcutType, int shortcutId, int shortcutLevel, int characterType)
-	{
+	public L2ShortCut(int slotId, int pageId, int shortcutType, int shortcutId, int shortcutLevel, int characterType) {
 		slot = slotId;
 		page = pageId;
 		type = shortcutType;
@@ -47,43 +45,35 @@ public class L2ShortCut
 		this.characterType = characterType;
 	}
 
-	public int getId()
-	{
+	public int getId() {
 		return id;
 	}
 
-	public int getLevel()
-	{
+	public int getLevel() {
 		return level;
 	}
 
-	public int getPage()
-	{
+	public int getPage() {
 		return page;
 	}
 
-	public int getSlot()
-	{
+	public int getSlot() {
 		return slot;
 	}
 
-	public int getType()
-	{
+	public int getType() {
 		return type;
 	}
 
-	public int getCharacterType()
-	{
+	public int getCharacterType() {
 		return characterType;
 	}
 
-	public int getSharedReuseGroup()
-	{
+	public int getSharedReuseGroup() {
 		return sharedReuseGroup;
 	}
 
-	public void setSharedReuseGroup(int g)
-	{
+	public void setSharedReuseGroup(int g) {
 		sharedReuseGroup = g;
 	}
 }

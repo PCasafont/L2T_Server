@@ -24,16 +24,14 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 /**
  * @author Pere
  */
-public class ExGetOnShuttle extends L2GameClientPacket
-{
+public class ExGetOnShuttle extends L2GameClientPacket {
 	private int shuttleId;
 	private int posX;
 	private int posY;
 	private int posZ;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		shuttleId = readD();
 		posX = readD();
 		posY = readD();
@@ -41,24 +39,20 @@ public class ExGetOnShuttle extends L2GameClientPacket
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null || !player.canGetOnOffShuttle())
-		{
+		if (player == null || !player.canGetOnOffShuttle()) {
 			return;
 		}
 
 		L2Object obj = L2World.getInstance().findObject(shuttleId);
-		if (!(obj instanceof L2ShuttleInstance))
-		{
+		if (!(obj instanceof L2ShuttleInstance)) {
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
 		L2ShuttleInstance shuttle = (L2ShuttleInstance) obj;
-		if (shuttle.isClosed())
-		{
+		if (shuttle.isClosed()) {
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}

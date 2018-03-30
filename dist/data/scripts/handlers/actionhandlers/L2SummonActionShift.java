@@ -26,15 +26,11 @@ import l2server.gameserver.network.serverpackets.AbnormalStatusUpdateFromTarget;
 import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
 
-public class L2SummonActionShift implements IActionHandler
-{
+public class L2SummonActionShift implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-	{
-		if (activeChar.isGM())
-		{
-			if (activeChar.getTarget() != target)
-			{
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
+		if (activeChar.isGM()) {
+			if (activeChar.getTarget() != target) {
 				// Set the target of the L2PcInstance activeChar
 				activeChar.setTarget(target);
 
@@ -47,8 +43,7 @@ public class L2SummonActionShift implements IActionHandler
 			activeChar.sendPacket(new ValidateLocation((L2Character) target));
 
 			IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler("admin_summon_info");
-			if (ach != null)
-			{
+			if (ach != null) {
 				ach.useAdminCommand("admin_summon_info", activeChar);
 			}
 		}
@@ -56,8 +51,7 @@ public class L2SummonActionShift implements IActionHandler
 	}
 
 	@Override
-	public InstanceType getInstanceType()
-	{
+	public InstanceType getInstanceType() {
 		return InstanceType.L2Summon;
 	}
 }

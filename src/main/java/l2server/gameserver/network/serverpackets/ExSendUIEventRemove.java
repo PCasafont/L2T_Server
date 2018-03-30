@@ -15,30 +15,25 @@
 
 package l2server.gameserver.network.serverpackets;
 
-public class ExSendUIEventRemove extends L2GameServerPacket
-{
+public class ExSendUIEventRemove extends L2GameServerPacket {
 	private int uiType;
-
-	public ExSendUIEventRemove()
-	{
+	
+	public ExSendUIEventRemove() {
 		uiType = 1;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
-		if (getClient() == null || getClient().getActiveChar() == null)
-		{
+	protected final void writeImpl() {
+		if (getClient() == null || getClient().getActiveChar() == null) {
 			return;
 		}
-
+		
 		writeD(getClient().getActiveChar().getObjectId());
 		writeD(uiType);
 	}
-
+	
 	@Override
-	protected final Class<?> getOpCodeClass()
-	{
+	protected final Class<?> getOpCodeClass() {
 		return ExSendUIEvent.class;
 	}
 }

@@ -18,23 +18,20 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Erlandys
  */
-public class ExChangeAttributeInfo extends L2GameServerPacket
-{
-
+public class ExChangeAttributeInfo extends L2GameServerPacket {
+	
 	private int itemOID;
 	private int attributeOID;
 	private int attributes;
-
-	public ExChangeAttributeInfo(int attributeOID, int itemOID, int attribute)
-	{
+	
+	public ExChangeAttributeInfo(int attributeOID, int itemOID, int attribute) {
 		this.itemOID = itemOID;
 		this.attributeOID = attributeOID;
 		attributes = attribute;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(attributeOID);
 		writeD(attributes);
 		writeD(itemOID);

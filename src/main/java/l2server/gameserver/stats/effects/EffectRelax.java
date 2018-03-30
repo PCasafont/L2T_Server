@@ -24,10 +24,8 @@ import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2EffectType;
 
-public class EffectRelax extends L2Effect
-{
-	public EffectRelax(Env env, L2EffectTemplate template)
-	{
+public class EffectRelax extends L2Effect {
+	public EffectRelax(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -35,8 +33,7 @@ public class EffectRelax extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.RELAXING;
 	}
 
@@ -44,14 +41,10 @@ public class EffectRelax extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (getEffected() instanceof L2PcInstance)
-		{
+	public boolean onStart() {
+		if (getEffected() instanceof L2PcInstance) {
 			((L2PcInstance) getEffected()).sitDown(false);
-		}
-		else
-		{
+		} else {
 			getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_REST);
 		}
 		return super.onStart();
@@ -61,8 +54,7 @@ public class EffectRelax extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		super.onExit();
 	}
 
@@ -70,25 +62,19 @@ public class EffectRelax extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
-		if (getEffected().isDead())
-		{
+	public boolean onActionTime() {
+		if (getEffected().isDead()) {
 			return false;
 		}
 
-		if (getEffected() instanceof L2PcInstance)
-		{
-			if (!((L2PcInstance) getEffected()).isSitting())
-			{
+		if (getEffected() instanceof L2PcInstance) {
+			if (!((L2PcInstance) getEffected()).isSitting()) {
 				return false;
 			}
 		}
 
-		if (getEffected().getCurrentHp() + 1 > getEffected().getMaxHp())
-		{
-			if (getSkill().isToggle())
-			{
+		if (getEffected().getCurrentHp() + 1 > getEffected().getMaxHp()) {
+			if (getSkill().isToggle()) {
 				getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_DEACTIVATED_HP_FULL));
 				return false;
 			}
@@ -96,10 +82,8 @@ public class EffectRelax extends L2Effect
 
 		double manaDam = calc();
 
-		if (manaDam > getEffected().getCurrentMp())
-		{
-			if (getSkill().isToggle())
-			{
+		if (manaDam > getEffected().getCurrentMp()) {
+			if (getSkill().isToggle()) {
 				getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
 				return false;
 			}

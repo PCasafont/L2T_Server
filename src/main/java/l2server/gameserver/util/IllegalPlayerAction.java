@@ -34,8 +34,7 @@ import java.util.logging.Logger;
  *
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
-public final class IllegalPlayerAction implements Runnable
-{
+public final class IllegalPlayerAction implements Runnable {
 	private static Logger logAudit = Logger.getLogger("audit");
 
 	private String message;
@@ -47,14 +46,12 @@ public final class IllegalPlayerAction implements Runnable
 	public static final int PUNISH_KICKBAN = 3;
 	public static final int PUNISH_JAIL = 4;
 
-	public IllegalPlayerAction(L2PcInstance actor, String message, int punishment)
-	{
+	public IllegalPlayerAction(L2PcInstance actor, String message, int punishment) {
 		this.message = message;
 		this.punishment = punishment;
 		this.actor = actor;
 
-		switch (punishment)
-		{
+		switch (punishment) {
 			case PUNISH_KICK:
 				actor.sendMessage("You will be kicked for illegal action, GM informed.");
 				break;
@@ -71,10 +68,8 @@ public final class IllegalPlayerAction implements Runnable
 	}
 
 	@Override
-	public void run()
-	{
-		if (actor.isGM())
-		{
+	public void run() {
+		if (actor.isGM()) {
 			return;
 		}
 
@@ -85,8 +80,7 @@ public final class IllegalPlayerAction implements Runnable
 
 		Broadcast.toGameMasters(message);
 
-		switch (punishment)
-		{
+		switch (punishment) {
 			case PUNISH_BROADCAST:
 				return;
 			case PUNISH_KICK:

@@ -24,36 +24,28 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @author -Wooden-
  */
-public final class RequestOlympiadObserverEnd extends L2GameClientPacket
-{
-
+public final class RequestOlympiadObserverEnd extends L2GameClientPacket {
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// trigger
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
 	 */
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (activeChar.inObserverMode())
-		{
-			if (activeChar.getOlympiadGameId() == -1)
-			{
+		
+		if (activeChar.inObserverMode()) {
+			if (activeChar.getOlympiadGameId() == -1) {
 				activeChar.leaveEventObserverMode();
-			}
-			else
-			{
+			} else {
 				activeChar.leaveOlympiadObserverMode();
 			}
 		}

@@ -17,16 +17,14 @@ package l2server.gameserver.network.loginserverpackets;
 
 import l2server.util.network.BaseRecievePacket;
 
-public class KickPlayer extends BaseRecievePacket
-{
+public class KickPlayer extends BaseRecievePacket {
 
 	private String account;
 
 	/**
 	 * @param decrypt
 	 */
-	public KickPlayer(byte[] decrypt)
-	{
+	public KickPlayer(byte[] decrypt) {
 		super(decrypt);
 		account = readS();
 	}
@@ -34,8 +32,7 @@ public class KickPlayer extends BaseRecievePacket
 	/**
 	 * @return Returns the account.
 	 */
-	public String getAccount()
-	{
+	public String getAccount() {
 		return account;
 	}
 }

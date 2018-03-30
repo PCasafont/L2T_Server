@@ -24,16 +24,13 @@ import l2server.gameserver.network.serverpackets.ShowXMasSeal;
 /**
  * @author devScarlet & mrTJO
  */
-public class SpecialXMas implements IItemHandler
-{
+public class SpecialXMas implements IItemHandler {
 	/**
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-		{
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!(playable instanceof L2PcInstance)) {
 			return;
 		}
 

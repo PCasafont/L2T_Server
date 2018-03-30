@@ -15,48 +15,39 @@
 
 package l2server.gameserver.handler;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.log.Log;
-
-import gnu.trove.TIntObjectHashMap;
 
 /**
  * This class ...
  *
  * @version $Revision: 1.1.2.1.2.5 $ $Date: 2005/03/27 15:30:09 $
  */
-public class UserCommandHandler
-{
+public class UserCommandHandler {
 
 	private TIntObjectHashMap<IUserCommandHandler> datatable;
 
-	public static UserCommandHandler getInstance()
-	{
+	public static UserCommandHandler getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private UserCommandHandler()
-	{
+	private UserCommandHandler() {
 		datatable = new TIntObjectHashMap<>();
 	}
 
-	public void registerUserCommandHandler(IUserCommandHandler handler)
-	{
+	public void registerUserCommandHandler(IUserCommandHandler handler) {
 		int[] ids = handler.getUserCommandList();
-		for (int id : ids)
-		{
-			if (Config.DEBUG)
-			{
+		for (int id : ids) {
+			if (Config.DEBUG) {
 				Log.fine("Adding handler for user command " + id);
 			}
 			datatable.put(id, handler);
 		}
 	}
 
-	public IUserCommandHandler getUserCommandHandler(int userCommand)
-	{
-		if (Config.DEBUG)
-		{
+	public IUserCommandHandler getUserCommandHandler(int userCommand) {
+		if (Config.DEBUG) {
 			Log.fine("getting handler for user command: " + userCommand);
 		}
 		return datatable.get(userCommand);
@@ -65,14 +56,12 @@ public class UserCommandHandler
 	/**
 	 * @return
 	 */
-	public int size()
-	{
+	public int size() {
 		return datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final UserCommandHandler instance = new UserCommandHandler();
 	}
 }

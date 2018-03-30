@@ -29,8 +29,7 @@ import java.sql.ResultSet;
 /**
  * @author Pere
  */
-public class L2StatueInstance extends L2Npc
-{
+public class L2StatueInstance extends L2Npc {
 	private int recordId;
 	private int socialId;
 	private int socialFrame;
@@ -61,31 +60,28 @@ public class L2StatueInstance extends L2Npc
 		L2NpcTemplate t = new L2NpcTemplate(ss);
 		new L2StatueInstance(IdFactory.getInstance().getNextId(), t, 0, charObjId, x, y, z, 0);
 	 */
-
-	public L2StatueInstance(int objectId, L2NpcTemplate template, int recordId, int playerObjId, int x, int y, int z, int heading)
-	{
+	
+	public L2StatueInstance(int objectId, L2NpcTemplate template, int recordId, int playerObjId, int x, int y, int z, int heading) {
 		super(objectId, template);
-
+		
 		this.recordId = recordId;
 		socialId = 0;
 		socialFrame = 0;
-
+		
 		setInstanceType(InstanceType.L2StatueInstance);
-
+		
 		setIsInvul(true);
-
+		
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement st = con.prepareStatement(
-					"SELECT char_name, templateId, sex, hairStyle, hairColor, face FROM characters WHERE charId = ?");
+			PreparedStatement st =
+					con.prepareStatement("SELECT char_name, templateId, sex, hairStyle, hairColor, face FROM characters WHERE charId = ?");
 			st.setInt(1, playerObjId);
 			ResultSet rs = st.executeQuery();
-			if (rs.next())
-			{
+			if (rs.next()) {
 				setName(rs.getString("char_name"));
-                this.template = CharTemplateTable.getInstance().getTemplate(rs.getInt("templateId"));
+				this.template = CharTemplateTable.getInstance().getTemplate(rs.getInt("templateId"));
 				sex = rs.getInt("sex");
 				hairStyle = rs.getInt("hairStyle");
 				hairColor = rs.getInt("hairColor");
@@ -93,14 +89,12 @@ public class L2StatueInstance extends L2Npc
 			}
 			rs.close();
 			st.close();
-
+			
 			st = con.prepareStatement("SELECT loc_data, item_id FROM items WHERE owner_id = ? AND loc = \"PAPERDOLL\"");
 			st.setInt(1, playerObjId);
 			rs = st.executeQuery();
-			while (rs.next())
-			{
-				switch (rs.getInt("loc_data"))
-				{
+			while (rs.next()) {
+				switch (rs.getInt("loc_data")) {
 					case Inventory.PAPERDOLL_NECK:
 						necklace = rs.getInt("item_id");
 						break;
@@ -138,132 +132,104 @@ public class L2StatueInstance extends L2Npc
 			}
 			rs.close();
 			st.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		finally
-		{
-			try
-			{
+		} finally {
+			try {
 				con.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-
-		if (template != null)
-		{
+		
+		if (template != null) {
 			setXYZ(x, y, z);
 			setHeading(heading);
-
+			
 			getTemplate().baseWalkSpd = 0;
 			getTemplate().baseRunSpd = 0;
-
+			
 			spawnMe();
 		}
 	}
-
-	public int getRecordId()
-	{
+	
+	public int getRecordId() {
 		return recordId;
 	}
-
-	public int getSocialId()
-	{
+	
+	public int getSocialId() {
 		return socialId;
 	}
-
-	public int getSocialFrame()
-	{
+	
+	public int getSocialFrame() {
 		return socialFrame;
 	}
-
-	public int getClassId()
-	{
+	
+	public int getClassId() {
 		return template.startingClassId;
 	}
-
-	public int getRace()
-	{
+	
+	public int getRace() {
 		return template.race.ordinal();
 	}
-
-	public int getSex()
-	{
+	
+	public int getSex() {
 		return sex;
 	}
-
-	public int getHairStyle()
-	{
+	
+	public int getHairStyle() {
 		return hairStyle;
 	}
-
-	public int getHairColor()
-	{
+	
+	public int getHairColor() {
 		return hairColor;
 	}
-
-	public int getFace()
-	{
+	
+	public int getFace() {
 		return face;
 	}
-
-	public int getNecklace()
-	{
+	
+	public int getNecklace() {
 		return necklace;
 	}
-
-	public int getHead()
-	{
+	
+	public int getHead() {
 		return head;
 	}
-
-	public int getRHand()
-	{
+	
+	public int getRHand() {
 		return rHand;
 	}
-
-	public int getLHand()
-	{
+	
+	public int getLHand() {
 		return lHand;
 	}
-
-	public int getGloves()
-	{
+	
+	public int getGloves() {
 		return gloves;
 	}
-
-	public int getChest()
-	{
+	
+	public int getChest() {
 		return chest;
 	}
-
-	public int getPants()
-	{
+	
+	public int getPants() {
 		return pants;
 	}
-
-	public int getBoots()
-	{
+	
+	public int getBoots() {
 		return boots;
 	}
-
-	public int getCloak()
-	{
+	
+	public int getCloak() {
 		return cloak;
 	}
-
-	public int getHair1()
-	{
+	
+	public int getHair1() {
 		return hair1;
 	}
-
-	public int getHair2()
-	{
+	
+	public int getHair2() {
 		return hair2;
 	}
 }

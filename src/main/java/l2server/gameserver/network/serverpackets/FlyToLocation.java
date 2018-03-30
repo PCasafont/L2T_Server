@@ -21,21 +21,27 @@ import l2server.gameserver.model.actor.L2Character;
 /**
  * @author KenM
  */
-public final class FlyToLocation extends L2GameServerPacket
-{
+public final class FlyToLocation extends L2GameServerPacket {
 	private final int destX, destY, destZ;
 	private final int chaObjId, chaX, chaY, chaZ;
 	private final FlyType type;
-
-	public enum FlyType
-	{
-		THROW_UP, THROW_HORIZONTAL, DUMMY, // no effect
-		CHARGE, KNOCK_BACK, MAGIC, UNK2, // Causes critical error
-		KNOCK_DOWN, MOVE_HORIZONTAL, DRAG
+	
+	public enum FlyType {
+		THROW_UP,
+		THROW_HORIZONTAL,
+		DUMMY,
+		// no effect
+		CHARGE,
+		KNOCK_BACK,
+		MAGIC,
+		UNK2,
+		// Causes critical error
+		KNOCK_DOWN,
+		MOVE_HORIZONTAL,
+		DRAG
 	}
-
-	public FlyToLocation(L2Character cha, int destX, int destY, int destZ, FlyType type)
-	{
+	
+	public FlyToLocation(L2Character cha, int destX, int destY, int destZ, FlyType type) {
 		chaObjId = cha.getObjectId();
 		chaX = cha.getX();
 		chaY = cha.getY();
@@ -45,22 +51,20 @@ public final class FlyToLocation extends L2GameServerPacket
 		this.destZ = destZ;
 		this.type = type;
 	}
-
-	public FlyToLocation(L2Character cha, L2Object dest, FlyType type)
-	{
+	
+	public FlyToLocation(L2Character cha, L2Object dest, FlyType type) {
 		this(cha, dest.getX(), dest.getY(), dest.getZ(), type);
 	}
 
     /*
 	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
-
+	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(chaObjId);
 		writeD(destX);
 		writeD(destY);

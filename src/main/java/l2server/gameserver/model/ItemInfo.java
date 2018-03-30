@@ -21,8 +21,7 @@ import l2server.gameserver.templates.item.L2Item;
 /**
  * Get all information from L2ItemInstance to generate ItemInfo.<BR><BR>
  */
-public class ItemInfo implements ItemInstanceInfo
-{
+public class ItemInfo implements ItemInstanceInfo {
 	/**
 	 * Identifier of the L2ItemInstance
 	 */
@@ -94,10 +93,8 @@ public class ItemInfo implements ItemInstanceInfo
 	/**
 	 * Get all information from L2ItemInstance to generate ItemInfo.<BR><BR>
 	 */
-	public ItemInfo(L2ItemInstance item)
-	{
-		if (item == null)
-		{
+	public ItemInfo(L2ItemInstance item) {
+		if (item == null) {
 			return;
 		}
 
@@ -105,7 +102,7 @@ public class ItemInfo implements ItemInstanceInfo
 		objectId = item.getObjectId();
 
 		// Get the L2Item of the L2ItemInstance
-        this.item = item.getItem();
+		this.item = item.getItem();
 
 		// Get the enchant level of the L2ItemInstance
 		enchant = item.getEnchantLevel();
@@ -116,12 +113,9 @@ public class ItemInfo implements ItemInstanceInfo
 		ensoulSpecialEffectIds = item.getEnsoulSpecialEffectIds();
 
 		// Get the augmentation boni
-		if (item.isAugmented())
-		{
+		if (item.isAugmented()) {
 			augmentation = item.getAugmentation().getId();
-		}
-		else
-		{
+		} else {
 			augmentation = 0;
 		}
 
@@ -136,20 +130,16 @@ public class ItemInfo implements ItemInstanceInfo
 		equipped = item.isEquipped();
 
 		// Get the action to do clientside
-		switch (item.getLastChange())
-		{
-			case L2ItemInstance.ADDED:
-			{
+		switch (item.getLastChange()) {
+			case L2ItemInstance.ADDED: {
 				change = 1;
 				break;
 			}
-			case L2ItemInstance.MODIFIED:
-			{
+			case L2ItemInstance.MODIFIED: {
 				change = 2;
 				break;
 			}
-			case L2ItemInstance.REMOVED:
-			{
+			case L2ItemInstance.REMOVED: {
 				change = 3;
 				break;
 			}
@@ -162,15 +152,12 @@ public class ItemInfo implements ItemInstanceInfo
 
 		elemAtkType = item.getAttackElementType();
 		elemAtkPower = item.getAttackElementPower();
-		if (elemAtkPower > 0)
-		{
+		if (elemAtkPower > 0) {
 			elemEnchanted = true;
 		}
-		for (byte i = 0; i < 6; i++)
-		{
+		for (byte i = 0; i < 6; i++) {
 			elemDefAttr[i] = item.getElementDefAttr(i);
-			if (elemDefAttr[i] > 0)
-			{
+			if (elemDefAttr[i] > 0) {
 				elemEnchanted = true;
 			}
 		}
@@ -178,10 +165,8 @@ public class ItemInfo implements ItemInstanceInfo
 		appearance = item.getAppearance();
 	}
 
-	public ItemInfo(L2ItemInstance item, int change)
-	{
-		if (item == null)
-		{
+	public ItemInfo(L2ItemInstance item, int change) {
+		if (item == null) {
 			return;
 		}
 
@@ -189,7 +174,7 @@ public class ItemInfo implements ItemInstanceInfo
 		objectId = item.getObjectId();
 
 		// Get the L2Item of the L2ItemInstance
-        this.item = item.getItem();
+		this.item = item.getItem();
 
 		// Get the enchant level of the L2ItemInstance
 		enchant = item.getEnchantLevel();
@@ -200,12 +185,9 @@ public class ItemInfo implements ItemInstanceInfo
 		ensoulSpecialEffectIds = item.getEnsoulSpecialEffectIds();
 
 		// Get the augmentation boni
-		if (item.isAugmented())
-		{
+		if (item.isAugmented()) {
 			augmentation = item.getAugmentation().getId();
-		}
-		else
-		{
+		} else {
 			augmentation = 0;
 		}
 
@@ -230,15 +212,12 @@ public class ItemInfo implements ItemInstanceInfo
 
 		elemAtkType = item.getAttackElementType();
 		elemAtkPower = item.getAttackElementPower();
-		if (elemAtkPower > 0)
-		{
+		if (elemAtkPower > 0) {
 			elemEnchanted = true;
 		}
-		for (byte i = 0; i < 6; i++)
-		{
+		for (byte i = 0; i < 6; i++) {
 			elemDefAttr[i] = item.getElementDefAttr(i);
-			if (elemDefAttr[i] > 0)
-			{
+			if (elemDefAttr[i] > 0) {
 				elemEnchanted = true;
 			}
 		}
@@ -247,130 +226,108 @@ public class ItemInfo implements ItemInstanceInfo
 	}
 
 	@Override
-	public int getObjectId()
-	{
+	public int getObjectId() {
 		return objectId;
 	}
 
 	@Override
-	public L2Item getItem()
-	{
+	public L2Item getItem() {
 		return item;
 	}
 
 	@Override
-	public int getEnchantLevel()
-	{
+	public int getEnchantLevel() {
 		return enchant;
 	}
 
 	@Override
-	public boolean isSoulEnhanced()
-	{
+	public boolean isSoulEnhanced() {
 		return isSoulEnhanced;
 	}
 
 	@Override
-	public int[] getEnsoulEffectIds()
-	{
+	public int[] getEnsoulEffectIds() {
 		return ensoulEffectIds;
 	}
 
 	@Override
-	public int[] getEnsoulSpecialEffectIds()
-	{
+	public int[] getEnsoulSpecialEffectIds() {
 		return ensoulSpecialEffectIds;
 	}
 
 	@Override
-	public boolean isAugmented()
-	{
+	public boolean isAugmented() {
 		return augmentation != 0;
 	}
 
 	@Override
-	public long getAugmentationBonus()
-	{
+	public long getAugmentationBonus() {
 		return augmentation;
 	}
 
 	@Override
-	public long getCount()
-	{
+	public long getCount() {
 		return count;
 	}
 
-	public long getPrice()
-	{
+	public long getPrice() {
 		return price;
 	}
 
-	public int getCustomType1()
-	{
+	public int getCustomType1() {
 		return type1;
 	}
 
-	public int getCustomType2()
-	{
+	public int getCustomType2() {
 		return type2;
 	}
 
 	@Override
-	public boolean isEquipped()
-	{
+	public boolean isEquipped() {
 		return equipped;
 	}
 
-	public int getChange()
-	{
+	public int getChange() {
 		return change;
 	}
 
 	@Override
-	public int getMana()
-	{
+	public int getMana() {
 		return mana;
 	}
 
 	@Override
-	public int getRemainingTime()
-	{
+	public int getRemainingTime() {
 		return time;
 	}
 
 	@Override
-	public int getLocationSlot()
-	{
+	public int getLocationSlot() {
 		return location;
 	}
 
 	@Override
-	public boolean isElementEnchanted()
-	{
+	public boolean isElementEnchanted() {
 		return elemEnchanted;
 	}
 
 	@Override
-	public byte getAttackElementType()
-	{
+	public byte getAttackElementType() {
 		return elemAtkType;
 	}
 
 	@Override
-	public int getAttackElementPower()
-	{
+	public int getAttackElementPower() {
 		return elemAtkPower;
 	}
 
 	@Override
-	public int getElementDefAttr(byte i)
-	{
+	public int getElementDefAttr(byte i) {
 		return elemDefAttr[i];
 	}
 
 	@Override
-	public int getAppearance()
-	{
+	public int getAppearance() {
 		return appearance;
 	}
 }

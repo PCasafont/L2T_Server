@@ -24,12 +24,10 @@ import l2server.gameserver.templates.item.L2Item;
 /**
  * @author JIV
  */
-public class ConditionPetType extends Condition
-{
+public class ConditionPetType extends Condition {
 	private int petType;
 
-	public ConditionPetType(int petType)
-	{
+	public ConditionPetType(int petType) {
 		this.petType = petType;
 	}
 
@@ -37,10 +35,8 @@ public class ConditionPetType extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PetInstance))
-		{
+	boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PetInstance)) {
 			return false;
 		}
 
@@ -49,28 +45,17 @@ public class ConditionPetType extends Condition
 
 		int npcid = ((L2Summon) env.player).getNpcId();
 
-		if (PetDataTable.isHatchling(npcid) && (petType & L2Item.HATCHLING) == L2Item.HATCHLING)
-		{
+		if (PetDataTable.isHatchling(npcid) && (petType & L2Item.HATCHLING) == L2Item.HATCHLING) {
 			return true;
-		}
-		else if (PetDataTable.isWolf(npcid) && (petType & L2Item.WOLF) == L2Item.WOLF)
-		{
+		} else if (PetDataTable.isWolf(npcid) && (petType & L2Item.WOLF) == L2Item.WOLF) {
 			return true;
-		}
-		else if (PetDataTable.isEvolvedWolf(npcid) && (petType & L2Item.GROWN_WOLF) == L2Item.GROWN_WOLF)
-		{
+		} else if (PetDataTable.isEvolvedWolf(npcid) && (petType & L2Item.GROWN_WOLF) == L2Item.GROWN_WOLF) {
 			return true;
-		}
-		else if (PetDataTable.isStrider(npcid) && (petType & L2Item.STRIDER) == L2Item.STRIDER)
-		{
+		} else if (PetDataTable.isStrider(npcid) && (petType & L2Item.STRIDER) == L2Item.STRIDER) {
 			return true;
-		}
-		else if (PetDataTable.isBaby(npcid) && (petType & L2Item.BABY) == L2Item.BABY)
-		{
+		} else if (PetDataTable.isBaby(npcid) && (petType & L2Item.BABY) == L2Item.BABY) {
 			return true;
-		}
-		else if (PetDataTable.isImprovedBaby(npcid) && (petType & L2Item.IMPROVED_BABY) == L2Item.IMPROVED_BABY)
-		{
+		} else if (PetDataTable.isImprovedBaby(npcid) && (petType & L2Item.IMPROVED_BABY) == L2Item.IMPROVED_BABY) {
 			return true;
 		}
 

@@ -34,68 +34,56 @@ import java.util.logging.Level;
  * 0 (a leading null)
  * x: the rsa encrypted block with the login an password
  */
-public class RequestAuthLogin extends L2LoginClientPacket
-{
+public class RequestAuthLogin extends L2LoginClientPacket {
 	private byte[] raw = new byte[256];
-
+	
 	private String user;
 	private String password;
 	private int ncotp;
-
+	
 	/**
 	 * @return
 	 */
-	public String getPassword()
-	{
+	public String getPassword() {
 		return password;
 	}
-
+	
 	/**
 	 * @return
 	 */
-	public String getUser()
-	{
+	public String getUser() {
 		return user;
 	}
-
-	public int getOneTimePassword()
-	{
+	
+	public int getOneTimePassword() {
 		return ncotp;
 	}
-
+	
 	@Override
-	public boolean readImpl()
-	{
-		if (super.buf.remaining() >= 256)
-		{
+	public boolean readImpl() {
+		if (super.buf.remaining() >= 256) {
 			readB(raw);
 			return true;
-		}
-		else
-		{
+		} else {
 			return false;
 		}
 	}
-
+	
 	@Override
-	public void run()
-	{
+	public void run() {
 		byte[] decrypted = null;
 		byte[] decrypted2 = null;
 		L2LoginClient client = getClient();
-		try
-		{
+		try {
 			Cipher rsaCipher = Cipher.getInstance("RSA/ECB/nopadding");
 			rsaCipher.init(Cipher.DECRYPT_MODE, client.getRSAPrivateKey());
 			decrypted = rsaCipher.doFinal(raw, 0x00, 0x80);
 			decrypted2 = rsaCipher.doFinal(raw, 0x80, 0x80);
-		}
-		catch (GeneralSecurityException e)
-		{
+		} catch (GeneralSecurityException e) {
 			Log.log(Level.INFO, "", e);
 			return;
 		}
-
+		
 		user = new String(decrypted, 0x4E, 14).trim();
 		user = user.toLowerCase();
 		password = new String(decrypted2, 0x5C, 16).trim();
@@ -103,71 +91,60 @@ public class RequestAuthLogin extends L2LoginClientPacket
 		ncotp |= decrypted[0x7d] << 8;
 		ncotp |= decrypted[0x7e] << 16;
 		ncotp |= decrypted[0x7f] << 24;
-
+		
 		LoginController lc = LoginController.getInstance();
 		/*try
 		{*/
-			LoginController.AuthLoginResult result = lc.tryAuthLogin(user, password, client);
-			switch (result)
-			{
-				case AUTH_SUCCESS:
-					client.setAccount(user);
-					lc.getCharactersOnAccount(user);
-					client.setState(L2LoginClient.LoginClientState.AUTHED_LOGIN);
-					client.setSessionKey(lc.assignSessionKeyToClient(user, client));
-					if (Config.SHOW_LICENCE)
-					{
-						client.sendPacket(new LoginOk(getClient().getSessionKey()));
-					}
-					else
-					{
-						int time = 0;
-						while (getClient().getCharsOnServ() == null && time < 10)
-						{
-							try
-							{
-								Thread.sleep(100);
-							}
-							catch (Exception e)
-							{
-								e.printStackTrace();
-							}
-							time++;
+		LoginController.AuthLoginResult result = lc.tryAuthLogin(user, password, client);
+		switch (result) {
+			case AUTH_SUCCESS:
+				client.setAccount(user);
+				lc.getCharactersOnAccount(user);
+				client.setState(L2LoginClient.LoginClientState.AUTHED_LOGIN);
+				client.setSessionKey(lc.assignSessionKeyToClient(user, client));
+				if (Config.SHOW_LICENCE) {
+					client.sendPacket(new LoginOk(getClient().getSessionKey()));
+				} else {
+					int time = 0;
+					while (getClient().getCharsOnServ() == null && time < 10) {
+						try {
+							Thread.sleep(100);
+						} catch (Exception e) {
+							e.printStackTrace();
 						}
-						getClient().sendPacket(new ServerList(getClient()));
+						time++;
 					}
-					break;
-				case INVALID_PASSWORD:
-					client.close(LoginFail.LoginFailReason.REASON_USER_OR_PASS_WRONG);
-					break;
-				case ACCOUNT_BANNED:
-					client.close(new AccountKicked(AccountKicked.AccountKickedReason.REASON_PERMANENTLY_BANNED));
-					break;
-				case ALREADY_ON_LS:
-					L2LoginClient oldClient;
-					if ((oldClient = lc.getAuthedClient(user)) != null)
-					{
-						// kick the other client
-						oldClient.close(LoginFail.LoginFailReason.REASON_ACCOUNT_IN_USE);
-						lc.removeAuthedLoginClient(user);
-					}
-					// kick also current client
+					getClient().sendPacket(new ServerList(getClient()));
+				}
+				break;
+			case INVALID_PASSWORD:
+				client.close(LoginFail.LoginFailReason.REASON_USER_OR_PASS_WRONG);
+				break;
+			case ACCOUNT_BANNED:
+				client.close(new AccountKicked(AccountKicked.AccountKickedReason.REASON_PERMANENTLY_BANNED));
+				break;
+			case ALREADY_ON_LS:
+				L2LoginClient oldClient;
+				if ((oldClient = lc.getAuthedClient(user)) != null) {
+					// kick the other client
+					oldClient.close(LoginFail.LoginFailReason.REASON_ACCOUNT_IN_USE);
+					lc.removeAuthedLoginClient(user);
+				}
+				// kick also current client
+				client.close(LoginFail.LoginFailReason.REASON_ACCOUNT_IN_USE);
+				break;
+			case ALREADY_ON_GS:
+				GameServerTable.GameServerInfo gsi;
+				if ((gsi = lc.getAccountOnGameServer(user)) != null) {
 					client.close(LoginFail.LoginFailReason.REASON_ACCOUNT_IN_USE);
-					break;
-				case ALREADY_ON_GS:
-					GameServerTable.GameServerInfo gsi;
-					if ((gsi = lc.getAccountOnGameServer(user)) != null)
-					{
-						client.close(LoginFail.LoginFailReason.REASON_ACCOUNT_IN_USE);
-
-						// kick from there
-						if (gsi.isAuthed())
-						{
-							gsi.getGameServerThread().kickPlayer(user);
-						}
+					
+					// kick from there
+					if (gsi.isAuthed()) {
+						gsi.getGameServerThread().kickPlayer(user);
 					}
-					break;
-			}
+				}
+				break;
+		}
 		/*}
 		catch (HackingException e)
 		{

@@ -15,23 +15,20 @@
 
 package l2server.gameserver.network.serverpackets;
 
-public final class TutorialShowHtml extends L2GameServerPacket
-{
+public final class TutorialShowHtml extends L2GameServerPacket {
 	private int type;
 	private String html;
-
-	public TutorialShowHtml(int type, String html)
-	{
+	
+	public TutorialShowHtml(int type, String html) {
 		this.type = type;
 		this.html = html;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(type);
 		writeS(html);
 	}

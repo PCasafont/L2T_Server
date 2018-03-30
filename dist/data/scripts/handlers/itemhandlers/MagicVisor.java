@@ -27,30 +27,25 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-public class MagicVisor implements IItemHandler
-{
+public class MagicVisor implements IItemHandler {
 	/**
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance visorItem, boolean forcedUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-		{
+	public void useItem(L2Playable playable, L2ItemInstance visorItem, boolean forcedUse) {
+		if (!(playable instanceof L2PcInstance)) {
 			return;
 		}
 
 		L2PcInstance player = (L2PcInstance) playable;
 		L2Object target = player.getTarget();
 
-		if (target == null || !(target instanceof L2Npc))
-		{
+		if (target == null || !(target instanceof L2Npc)) {
 			player.sendMessage("You should target a monster to see its drop list!");
 			return;
 		}
 
 		L2Npc mob = (L2Npc) player.getTarget();
-		if (mob != null)
-		{
+		if (mob != null) {
 			CustomCommunityBoard.getInstance().sendDropPage(player, mob.getNpcId(), 1, mob);
 		}
 	}

@@ -22,16 +22,14 @@ import l2server.gameserver.model.entity.RecoBonus;
  * *	@author Gnacik
  * *
  */
-public class ExVoteSystemInfo extends L2GameServerPacket
-{
+public class ExVoteSystemInfo extends L2GameServerPacket {
 	private int recomLeft;
 	private int recomHave;
 	private int bonusTime;
 	private int bonusVal;
 	private int bonusType;
 
-	public ExVoteSystemInfo(L2PcInstance player)
-	{
+	public ExVoteSystemInfo(L2PcInstance player) {
 		recomLeft = player.getRecomLeft();
 		recomHave = player.getRecomHave();
 		bonusTime = player.getRecomBonusTime();
@@ -40,8 +38,7 @@ public class ExVoteSystemInfo extends L2GameServerPacket
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(recomLeft);
 		writeD(recomHave);
 		writeD(bonusTime);

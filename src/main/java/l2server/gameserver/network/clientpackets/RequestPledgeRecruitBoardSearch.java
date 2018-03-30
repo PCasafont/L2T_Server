@@ -21,8 +21,7 @@ import l2server.gameserver.network.serverpackets.ExPledgeRecruitBoardSearch;
 /**
  * @author Pere
  */
-public final class RequestPledgeRecruitBoardSearch extends L2GameClientPacket
-{
+public final class RequestPledgeRecruitBoardSearch extends L2GameClientPacket {
 	private int level;
 	private int karma;
 	private boolean clanName;
@@ -30,10 +29,9 @@ public final class RequestPledgeRecruitBoardSearch extends L2GameClientPacket
 	private int sortBy;
 	private boolean desc;
 	private int page;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		level = readD();
 		karma = readD();
 		clanName = readD() == 1;
@@ -42,21 +40,18 @@ public final class RequestPledgeRecruitBoardSearch extends L2GameClientPacket
 		desc = readD() == 1;
 		page = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (!getClient().getFloodProtectors().getServerBypass().tryPerformAction("clanRecruitSearch"))
-		{
+		
+		if (!getClient().getFloodProtectors().getServerBypass().tryPerformAction("clanRecruitSearch")) {
 			return;
 		}
-
+		
 		sendPacket(new ExPledgeRecruitBoardSearch(level, karma, clanName, name, sortBy, desc, page));
 	}
 }

@@ -24,26 +24,21 @@ import java.util.List;
 /**
  * @author Pere
  */
-public class DestroyTheGolem extends EventInstance
-{
+public class DestroyTheGolem extends EventInstance {
 
 	private boolean golemsSpawned = false;
 
-	public DestroyTheGolem(int id, EventConfig config)
-	{
+	public DestroyTheGolem(int id, EventConfig config) {
 		super(id, config);
 	}
 
 	@Override
-	public boolean startFight()
-	{
-		if (!super.startFight())
-		{
+	public boolean startFight() {
+		if (!super.startFight()) {
 			return false;
 		}
 
-		if (!golemsSpawned)
-		{
+		if (!golemsSpawned) {
 			spawnGolems();
 		}
 
@@ -51,16 +46,12 @@ public class DestroyTheGolem extends EventInstance
 	}
 
 	@Override
-	public void calculateRewards()
-	{
+	public void calculateRewards() {
 		EventTeam team;
-		if (config.getLocation().getTeamCount() != 4)
-		{
-			if (teams[0].getPoints() == teams[1].getPoints())
-			{
+		if (config.getLocation().getTeamCount() != 4) {
+			if (teams[0].getPoints() == teams[1].getPoints()) {
 				// Check if one of the teams have no more players left
-				if (teams[0].getParticipatedPlayerCount() == 0 || teams[1].getParticipatedPlayerCount() == 0)
-				{
+				if (teams[0].getParticipatedPlayerCount() == 0 || teams[1].getParticipatedPlayerCount() == 0) {
 					// set state to rewarding
 					setState(EventState.REWARDING);
 					// return here, the Fight can't be completed
@@ -69,8 +60,7 @@ public class DestroyTheGolem extends EventInstance
 				}
 
 				// Both teams have equals points
-				if (Config.INSTANCED_EVENT_REWARD_TEAM_TIE)
-				{
+				if (Config.INSTANCED_EVENT_REWARD_TEAM_TIE) {
 					rewardTeams(-1);
 				}
 				Announcements.getInstance().announceToAll("The event has ended in a tie");
@@ -83,93 +73,70 @@ public class DestroyTheGolem extends EventInstance
 			// Get team which has more points
 			team = teams[teams[0].getPoints() > teams[1].getPoints() ? 0 : 1];
 
-			if (team == teams[0])
-			{
+			if (team == teams[0]) {
 				rewardTeams(0);
-			}
-			else
-			{
+			} else {
 				rewardTeams(1);
 			}
-		}
-		else
-		{
+		} else {
 			// Set state REWARDING so nobody can point anymore
 			setState(EventState.REWARDING);
 			if (teams[0].getPoints() > teams[1].getPoints() && teams[0].getPoints() > teams[2].getPoints() &&
-					teams[0].getPoints() > teams[3].getPoints())
-			{
+					teams[0].getPoints() > teams[3].getPoints()) {
 				rewardTeams(0);
 				team = teams[0];
-			}
-			else if (teams[1].getPoints() > teams[0].getPoints() && teams[1].getPoints() > teams[2].getPoints() &&
-					teams[1].getPoints() > teams[3].getPoints())
-			{
+			} else if (teams[1].getPoints() > teams[0].getPoints() && teams[1].getPoints() > teams[2].getPoints() &&
+					teams[1].getPoints() > teams[3].getPoints()) {
 				rewardTeams(1);
 				team = teams[1];
-			}
-			else if (teams[2].getPoints() > teams[0].getPoints() && teams[2].getPoints() > teams[1].getPoints() &&
-					teams[2].getPoints() > teams[3].getPoints())
-			{
+			} else if (teams[2].getPoints() > teams[0].getPoints() && teams[2].getPoints() > teams[1].getPoints() &&
+					teams[2].getPoints() > teams[3].getPoints()) {
 				rewardTeams(2);
 				team = teams[2];
-			}
-			else if (teams[3].getPoints() > teams[0].getPoints() && teams[3].getPoints() > teams[1].getPoints() &&
-					teams[3].getPoints() > teams[2].getPoints())
-			{
+			} else if (teams[3].getPoints() > teams[0].getPoints() && teams[3].getPoints() > teams[1].getPoints() &&
+					teams[3].getPoints() > teams[2].getPoints()) {
 				rewardTeams(3);
 				team = teams[3];
-			}
-			else
-			{
+			} else {
 				Announcements.getInstance().announceToAll("The event has ended in a tie");
 				return;
 			}
 		}
 
-		Announcements.getInstance().announceToAll(
-				"The event has ended. Team " + team.getName() + " won with " + team.getPoints() + " points.");
+		Announcements.getInstance().announceToAll("The event has ended. Team " + team.getName() + " won with " + team.getPoints() + " points.");
 	}
 
 	@Override
-	public void stopFight()
-	{
+	public void stopFight() {
 		super.stopFight();
 		unspawnGolems();
 	}
 
 	@Override
-	public String getRunningInfo(L2PcInstance player)
-	{
+	public String getRunningInfo(L2PcInstance player) {
 		String html = "";
-		for (EventTeam team : teams)
-		{
-			if (team.getParticipatedPlayerCount() > 0)
-			{
+		for (EventTeam team : teams) {
+			if (team.getParticipatedPlayerCount() > 0) {
 				html += "Team " + team.getName() + " points: " + team.getPoints() + "<br>";
 			}
 		}
-		if (html.length() > 4)
-		{
+		if (html.length() > 4) {
 			html = html.substring(0, html.length() - 4);
 		}
 		return html;
 	}
 
-	public void onGolemDestroyed(L2PcInstance player, EventTeam team)
-	{
+	public void onGolemDestroyed(L2PcInstance player, EventTeam team) {
 		getParticipantTeam(player.getObjectId()).increasePoints();
 
 		sendToAllParticipants(
-				getParticipantTeam(player.getObjectId()).getName() + " team's member " + player.getName() +
-						" has destroyed the " + team.getName() + " team's golem!");
+				getParticipantTeam(player.getObjectId()).getName() + " team's member " + player.getName() + " has destroyed the " + team.getName() +
+						" team's golem!");
 
-		CreatureSay cs = new CreatureSay(player.getObjectId(), Say2.TELL, player.getName(),
-				"I have destroyed the " + team.getName() + " team's golem!");
-		for (L2PcInstance character : getParticipantTeam(player.getObjectId()).getParticipatedPlayers().values())
-		{
-			if (character != null)
-			{
+		CreatureSay cs =
+				new CreatureSay(player.getObjectId(), Say2.TELL, player.getName(), "I have destroyed the " + team.getName() + " team's golem!");
+		for (L2PcInstance character : getParticipantTeam(player.getObjectId()).getParticipatedPlayers().values()) {
+			if (character != null) {
 				character.sendPacket(cs);
 			}
 		}
@@ -178,79 +145,64 @@ public class DestroyTheGolem extends EventInstance
 	}
 
 	@Override
-	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayer)
-	{
-		if (killedPlayer == null || !isState(EventState.STARTED))
-		{
+	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayer) {
+		if (killedPlayer == null || !isState(EventState.STARTED)) {
 			return;
 		}
 
 		byte killedTeamId = getParticipantTeamId(killedPlayer.getObjectId());
-		if (killedTeamId == -1)
-		{
+		if (killedTeamId == -1) {
 			return;
 		}
 
 		L2PcInstance killerPlayer = killerCharacter.getActingPlayer();
-		if (killerPlayer == null)
-		{
+		if (killerPlayer == null) {
 			return;
 		}
 
 		killerPlayer.addEventPoints(3);
-		List<L2PcInstance> assistants =
-				PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
-		for (L2PcInstance assistant : assistants)
-		{
+		List<L2PcInstance> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
+		for (L2PcInstance assistant : assistants) {
 			assistant.addEventPoints(1);
 		}
 
 		new EventTeleporter(killedPlayer, teams[killedTeamId].getCoords(), false, false);
 	}
 
-	private void spawnGolems()
-	{
+	private void spawnGolems() {
 		spawnGolem(teams[0]);
 		spawnGolem(teams[1]);
-		if (config.getLocation().getTeamCount() == 4)
-		{
+		if (config.getLocation().getTeamCount() == 4) {
 			spawnGolem(teams[2]);
 			spawnGolem(teams[3]);
 		}
 		golemsSpawned = true;
 	}
 
-	private void unspawnGolems()
-	{
-		for (EventTeam team : teams)
-		{
+	private void unspawnGolems() {
+		for (EventTeam team : teams) {
 			unspawnGolem(team);
 		}
 		golemsSpawned = false;
 	}
 
-	private void spawnGolem(EventTeam team)
-	{
+	private void spawnGolem(EventTeam team) {
 		L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(team.getGolemId());
 
-		try
-		{
+		try {
 			team.setGolemSpawn(new L2Spawn(tmpl));
 
 			int x = 0;
 			int y = 0;
-			for (int i = 0; i < config.getLocation().getTeamCount(); i++)
-			{
+			for (int i = 0; i < config.getLocation().getTeamCount(); i++) {
 				x += teams[i].getCoords().getX();
 				y += teams[i].getCoords().getY();
 			}
 			x /= config.getLocation().getTeamCount();
 			y /= config.getLocation().getTeamCount();
 
-			int heading = (int) Math
-					.round(Math.atan2(y - team.getCoords().getY(), x - team.getCoords().getX()) / Math.PI * 32768);
-			if (heading < 0)
-			{
+			int heading = (int) Math.round(Math.atan2(y - team.getCoords().getY(), x - team.getCoords().getX()) / Math.PI * 32768);
+			if (heading < 0) {
 				heading = 65535 + heading;
 			}
 
@@ -272,30 +224,23 @@ public class DestroyTheGolem extends EventInstance
 			golem.setTeam(team);
 			golem.setTitle(team.getName());
 			golem.updateAbnormalEffect();
-		}
-		catch (Exception e)
-		{
-			Log.warning("Golem Engine[spawnGolem(" + team.getName() + ")]: exception: " +
-					Arrays.toString(e.getStackTrace()));
+		} catch (Exception e) {
+			Log.warning("Golem Engine[spawnGolem(" + team.getName() + ")]: exception: " + Arrays.toString(e.getStackTrace()));
 		}
 	}
 
-	private void unspawnGolem(EventTeam team)
-	{
-		if (team.getGolemSpawn() != null)
-		{
+	private void unspawnGolem(EventTeam team) {
+		if (team.getGolemSpawn() != null) {
 			team.getGolemSpawn().getNpc().deleteMe();
 			team.getGolemSpawn().stopRespawn();
 			SpawnTable.getInstance().deleteSpawn(team.getGolemSpawn(), false);
 		}
 	}
 
-	class UnspawnGolemsTask implements Runnable
-	{
+	class UnspawnGolemsTask implements Runnable {
 		@Override
 		@SuppressWarnings("synthetic-access")
-		public void run()
-		{
+		public void run() {
 			unspawnGolems();
 		}
 	}

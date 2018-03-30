@@ -23,76 +23,60 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 import java.util.StringTokenizer;
 
-public class ChatAdmin implements IVoicedCommandHandler
-{
+public class ChatAdmin implements IVoicedCommandHandler {
 	private static final String[] VOICED_COMMANDS = {"banchat", "unbanchat"};
 
 	/**
 	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
-	{
-		if (!AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel()))
-		{
+	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params) {
+		if (!AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel())) {
 			return false;
 		}
 
 		if (command.equalsIgnoreCase(VOICED_COMMANDS[0])) // banchat
 		{
-			if (params == null)
-			{
+			if (params == null) {
 				activeChar.sendMessage("Usage: .banchat name [minutes]");
 				return true;
 			}
 			StringTokenizer st = new StringTokenizer(params);
-			if (st.hasMoreTokens())
-			{
+			if (st.hasMoreTokens()) {
 				String name = st.nextToken();
 				int length = 0;
-				if (st.hasMoreTokens())
-				{
-					try
-					{
+				if (st.hasMoreTokens()) {
+					try {
 						length = Integer.parseInt(st.nextToken());
-					}
-					catch (NumberFormatException e)
-					{
+					} catch (NumberFormatException e) {
 						activeChar.sendMessage("Wrong ban length !");
 						return false;
 					}
 				}
-				if (length < 0)
-				{
+				if (length < 0) {
 					length = 0;
 				}
 
 				int objId = CharNameTable.getInstance().getIdByName(name);
-				if (objId > 0)
-				{
+				if (objId > 0) {
 					L2PcInstance player = L2World.getInstance().getPlayer(objId);
-					if (player == null || !player.isOnline())
-					{
+					if (player == null || !player.isOnline()) {
 						activeChar.sendMessage("Player not online !");
 						return false;
 					}
-					if (player.getPunishLevel() != L2PcInstance.PunishLevel.NONE)
-					{
+					if (player.getPunishLevel() != L2PcInstance.PunishLevel.NONE) {
 						activeChar.sendMessage("Player is already punished !");
 						return false;
 					}
-					if (player == activeChar)
-					{
+					if (player == activeChar) {
 						activeChar.sendMessage("You can't ban yourself !");
 						return false;
 					}
-					if (player.isGM())
-					{
+					if (player.isGM()) {
 						activeChar.sendMessage("You can't ban GM !");
 						return false;
 					}
-					if (AdminCommandAccessRights.getInstance().hasAccess(command, player.getAccessLevel()))
-					{
+					if (AdminCommandAccessRights.getInstance().hasAccess(command, player.getAccessLevel())) {
 						activeChar.sendMessage("You can't ban moderator !");
 						return false;
 					}
@@ -100,46 +84,34 @@ public class ChatAdmin implements IVoicedCommandHandler
 					player.setPunishLevel(L2PcInstance.PunishLevel.CHAT, length);
 					player.sendMessage("Chat banned by moderator " + activeChar.getName());
 
-					if (length > 0)
-					{
-						activeChar
-								.sendMessage("Player " + player.getName() + " chat banned for " + length + " minutes.");
-					}
-					else
-					{
+					if (length > 0) {
+						activeChar.sendMessage("Player " + player.getName() + " chat banned for " + length + " minutes.");
+					} else {
 						activeChar.sendMessage("Player " + player.getName() + " chat banned forever.");
 					}
-				}
-				else
-				{
+				} else {
 					activeChar.sendMessage("Player not found !");
 					return false;
 				}
 			}
-		}
-		else if (command.equalsIgnoreCase(VOICED_COMMANDS[1])) //unbanchat
+		} else if (command.equalsIgnoreCase(VOICED_COMMANDS[1])) //unbanchat
 		{
-			if (params == null)
-			{
+			if (params == null) {
 				activeChar.sendMessage("Usage: .unbanchat name");
 				return true;
 			}
 			StringTokenizer st = new StringTokenizer(params);
-			if (st.hasMoreTokens())
-			{
+			if (st.hasMoreTokens()) {
 				String name = st.nextToken();
 
 				int objId = CharNameTable.getInstance().getIdByName(name);
-				if (objId > 0)
-				{
+				if (objId > 0) {
 					L2PcInstance player = L2World.getInstance().getPlayer(objId);
-					if (player == null || !player.isOnline())
-					{
+					if (player == null || !player.isOnline()) {
 						activeChar.sendMessage("Player not online !");
 						return false;
 					}
-					if (player.getPunishLevel() != L2PcInstance.PunishLevel.CHAT)
-					{
+					if (player.getPunishLevel() != L2PcInstance.PunishLevel.CHAT) {
 						activeChar.sendMessage("Player is not chat banned !");
 						return false;
 					}
@@ -148,9 +120,7 @@ public class ChatAdmin implements IVoicedCommandHandler
 
 					activeChar.sendMessage("Player " + player.getName() + " chat unbanned.");
 					player.sendMessage("Chat unbanned by moderator " + activeChar.getName());
-				}
-				else
-				{
+				} else {
 					activeChar.sendMessage("Player not found !");
 					return false;
 				}
@@ -163,8 +133,7 @@ public class ChatAdmin implements IVoicedCommandHandler
 	 * @see l2server.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
 	 */
 	@Override
-	public String[] getVoicedCommandList()
-	{
+	public String[] getVoicedCommandList() {
 		return VOICED_COMMANDS;
 	}
 }

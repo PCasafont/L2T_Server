@@ -27,21 +27,17 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 /**
  * @author ZaKaX - nBd
  */
-public class EffectHeavyPunch extends L2Effect
-{
-	public EffectHeavyPunch(Env env, L2EffectTemplate template)
-	{
+public class EffectHeavyPunch extends L2Effect {
+	public EffectHeavyPunch(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
-	public EffectHeavyPunch(Env env, L2Effect effect)
-	{
+	public EffectHeavyPunch(Env env, L2Effect effect) {
 		super(env, effect);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.HEAVY_PUNCH;
 	}
 
@@ -49,10 +45,8 @@ public class EffectHeavyPunch extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (!(getEffector() instanceof L2PcInstance))
-		{
+	public boolean onStart() {
+		if (!(getEffector() instanceof L2PcInstance)) {
 			return false;
 		}
 
@@ -63,8 +57,7 @@ public class EffectHeavyPunch extends L2Effect
 
 		int minDamageNeeded = attacker.getFirstEffect(30520) != null ? 300 : 150;
 
-		if (lastPhysicalDamages < minDamageNeeded)
-		{
+		if (lastPhysicalDamages < minDamageNeeded) {
 			return false;
 		}
 
@@ -72,14 +65,11 @@ public class EffectHeavyPunch extends L2Effect
 
 		double multiplier = 17.5;
 
-			multiplier = 17;
+		multiplier = 17;
 
+		int damage = (int) (attacker.getLastPhysicalDamages() * multiplier * attacker.calcStat(Stats.PHYSICAL_SKILL_POWER, 1, target, null));
 
-		int damage = (int) (attacker.getLastPhysicalDamages() * multiplier *
-				attacker.calcStat(Stats.PHYSICAL_SKILL_POWER, 1, target, null));
-
-		if (damage > 10000 && target.getActingPlayer() != null)
-		{
+		if (damage > 10000 && target.getActingPlayer() != null) {
 			damage = 10000 + (int) Math.pow(damage - 10000, 0.9);
 		}
 
@@ -92,8 +82,7 @@ public class EffectHeavyPunch extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		super.onExit();
 	}
 
@@ -101,8 +90,7 @@ public class EffectHeavyPunch extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 
 		return true;
 	}

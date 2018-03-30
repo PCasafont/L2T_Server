@@ -25,8 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SellListProcure extends L2GameServerPacket
-{
+public class SellListProcure extends L2GameServerPacket {
 	//
 
 	private final L2PcInstance activeChar;
@@ -35,31 +34,26 @@ public class SellListProcure extends L2GameServerPacket
 	private List<CropProcure> procureList = new ArrayList<>();
 	private int castle;
 
-	public SellListProcure(L2PcInstance player, int castleId)
-	{
+	public SellListProcure(L2PcInstance player, int castleId) {
 		money = player.getAdena();
 		activeChar = player;
 		castle = castleId;
 		procureList = CastleManager.getInstance().getCastleById(castle).getCropProcure(0);
-		for (CropProcure c : procureList)
-		{
+		for (CropProcure c : procureList) {
 			L2ItemInstance item = activeChar.getInventory().getItemByItemId(c.getId());
-			if (item != null && c.getAmount() > 0)
-			{
+			if (item != null && c.getAmount() > 0) {
 				sellList.put(item, c.getAmount());
 			}
 		}
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeQ(money); // money
 		writeD(0x00); // lease ?
 		writeH(sellList.size()); // list size
 
-		for (L2ItemInstance item : sellList.keySet())
-		{
+		for (L2ItemInstance item : sellList.keySet()) {
 			writeH(item.getItem().getType1());
 			writeD(item.getObjectId());
 			writeD(item.getItemId());

@@ -15,8 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
-
 import l2server.Config;
 import l2server.gameserver.instancemanager.MailManager;
 import l2server.gameserver.model.L2World;
@@ -27,71 +25,63 @@ import l2server.gameserver.network.serverpackets.ExChangePostState;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 
+import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
+
 /**
  * @author Pere, DS
  */
-public final class RequestRejectPostAttachment extends L2GameClientPacket
-{
-
+public final class RequestRejectPostAttachment extends L2GameClientPacket {
+	
 	private int msgId;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		msgId = readD();
 	}
-
+	
 	@Override
-	public void runImpl()
-	{
-		if (!Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS)
-		{
+	public void runImpl() {
+		if (!Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS) {
 			return;
 		}
-
+		
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("rejectattach"))
-		{
+		
+		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("rejectattach")) {
 			return;
 		}
-
-		if (!activeChar.isInsideZone(ZONE_PEACE))
-		{
+		
+		if (!activeChar.isInsideZone(ZONE_PEACE)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
 			return;
 		}
-
+		
 		Message msg = MailManager.getInstance().getMessage(msgId);
-		if (msg == null)
-		{
+		if (msg == null) {
 			return;
 		}
-
-		if (msg.getReceiverId() != activeChar.getObjectId())
-		{
+		
+		if (msg.getReceiverId() != activeChar.getObjectId()) {
 			Util.handleIllegalPlayerAction(activeChar,
-					"Player " + activeChar.getName() + " tried to reject not own attachment!", Config.DEFAULT_PUNISH);
+					"Player " + activeChar.getName() + " tried to reject not own attachment!",
+					Config.DEFAULT_PUNISH);
 			return;
 		}
-
-		if (!msg.hasAttachments() || msg.getSendBySystem() != 0)
-		{
+		
+		if (!msg.hasAttachments() || msg.getSendBySystem() != 0) {
 			return;
 		}
-
+		
 		MailManager.getInstance().sendMessage(new Message(msg));
-
+		
 		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MAIL_SUCCESSFULLY_RETURNED));
 		activeChar.sendPacket(new ExChangePostState(true, msgId, Message.REJECTED));
-
+		
 		final L2PcInstance sender = L2World.getInstance().getPlayer(msg.getSenderId());
-		if (sender != null)
-		{
+		if (sender != null) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_RETURNED_MAIL);
 			sm.addCharName(activeChar);
 			sender.sendPacket(sm);

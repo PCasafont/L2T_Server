@@ -15,8 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
-
 import l2server.Config;
 import l2server.gameserver.instancemanager.MailManager;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -26,74 +24,65 @@ import l2server.gameserver.network.serverpackets.ExChangePostState;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 
+import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
+
 /**
  * @author Pere, DS
  */
-public final class RequestDeleteSentPost extends L2GameClientPacket
-{
-
+public final class RequestDeleteSentPost extends L2GameClientPacket {
+	
 	private static final int BATCH_LENGTH = 4; // length of the one item
-
+	
 	int[] msgIds = null;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
-		{
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining()) {
 			return;
 		}
-
+		
 		msgIds = new int[count];
-		for (int i = 0; i < count; i++)
-		{
+		for (int i = 0; i < count; i++) {
 			msgIds[i] = readD();
 		}
 	}
-
+	
 	@Override
-	public void runImpl()
-	{
+	public void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null || msgIds == null || !Config.ALLOW_MAIL)
-		{
+		if (activeChar == null || msgIds == null || !Config.ALLOW_MAIL) {
 			return;
 		}
-
-		if (!activeChar.isInsideZone(ZONE_PEACE))
-		{
+		
+		if (!activeChar.isInsideZone(ZONE_PEACE)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
 			return;
 		}
-
-		for (int msgId : msgIds)
-		{
+		
+		for (int msgId : msgIds) {
 			Message msg = MailManager.getInstance().getMessage(msgId);
-			if (msg == null)
-			{
+			if (msg == null) {
 				continue;
 			}
-			if (msg.getSenderId() != activeChar.getObjectId())
-			{
+			if (msg.getSenderId() != activeChar.getObjectId()) {
 				Util.handleIllegalPlayerAction(activeChar,
-						"Player " + activeChar.getName() + " tried to delete not own post!", Config.DEFAULT_PUNISH);
+						"Player " + activeChar.getName() + " tried to delete not own post!",
+						Config.DEFAULT_PUNISH);
 				return;
 			}
-
-			if (msg.hasAttachments() || msg.isDeletedBySender())
-			{
+			
+			if (msg.hasAttachments() || msg.isDeletedBySender()) {
 				return;
 			}
-
+			
 			msg.setDeletedBySender();
 		}
 		activeChar.sendPacket(new ExChangePostState(false, msgIds, Message.DELETED));
 	}
-
+	
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

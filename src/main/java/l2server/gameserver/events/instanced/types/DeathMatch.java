@@ -17,61 +17,48 @@ import java.util.List;
 /**
  * @author Pere
  */
-public class DeathMatch extends EventInstance
-{
+public class DeathMatch extends EventInstance {
 
-	public DeathMatch(int id, EventConfig config)
-	{
+	public DeathMatch(int id, EventConfig config) {
 		super(id, config);
 	}
 
 	@Override
-	public void calculateRewards()
-	{
+	public void calculateRewards() {
 		List<L2PcInstance> sorted = new ArrayList<>();
-		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values())
-		{
+		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values()) {
 			boolean added = false;
 			int index = 0;
-			for (L2PcInstance listed : sorted)
-			{
-				if (playerInstance.getEventPoints() > listed.getEventPoints())
-				{
+			for (L2PcInstance listed : sorted) {
+				if (playerInstance.getEventPoints() > listed.getEventPoints()) {
 					sorted.add(index, playerInstance);
 					added = true;
 					break;
 				}
 				index++;
 			}
-			if (!added)
-			{
+			if (!added) {
 				sorted.add(playerInstance);
 			}
 		}
 
 		rewardPlayers(sorted);
-		Announcements.getInstance().announceToAll(
-				"The event has ended. The player " + sorted.get(0).getName() + " won with " +
-						sorted.get(0).getEventPoints() + " kill points");
+		Announcements.getInstance()
+				.announceToAll("The event has ended. The player " + sorted.get(0).getName() + " won with " + sorted.get(0).getEventPoints() +
+						" kill points");
 	}
 
 	@Override
-	public String getRunningInfo(L2PcInstance player)
-	{
+	public String getRunningInfo(L2PcInstance player) {
 		String html = "";
-		if (teams[0].getParticipatedPlayerCount() > 0)
-		{
+		if (teams[0].getParticipatedPlayerCount() > 0) {
 			html += "Participants' points:<br>";
-			for (L2PcInstance participant : teams[0].getParticipatedPlayers().values())
-			{
-				if (participant != null)
-				{
-					html += EventsManager.getInstance().getPlayerString(participant, player) + ": " +
-							participant.getEventPoints() + "<br>";
+			for (L2PcInstance participant : teams[0].getParticipatedPlayers().values()) {
+				if (participant != null) {
+					html += EventsManager.getInstance().getPlayerString(participant, player) + ": " + participant.getEventPoints() + "<br>";
 				}
 			}
-			if (html.length() > 4)
-			{
+			if (html.length() > 4) {
 				html = html.substring(0, html.length() - 4);
 			}
 		}
@@ -79,37 +66,31 @@ public class DeathMatch extends EventInstance
 	}
 
 	@Override
-	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayer)
-	{
-		if (killedPlayer == null || !isState(EventState.STARTED))
-		{
+	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayer) {
+		if (killedPlayer == null || !isState(EventState.STARTED)) {
 			return;
 		}
 
 		new EventTeleporter(killedPlayer, teams[0].getCoords(), false, false);
 
-		if (killerCharacter == null)
-		{
+		if (killerCharacter == null) {
 			return;
 		}
 
 		L2PcInstance killerPlayer = killerCharacter.getActingPlayer();
-		if (killerPlayer == null)
-		{
+		if (killerPlayer == null) {
 			return;
 		}
 
 		onContribution(killerPlayer, 1);
 
-		CreatureSay cs = new CreatureSay(killerPlayer.getObjectId(), Say2.TELL, killerPlayer.getName(),
-				"I have killed " + killedPlayer.getName() + "!");
+		CreatureSay cs =
+				new CreatureSay(killerPlayer.getObjectId(), Say2.TELL, killerPlayer.getName(), "I have killed " + killedPlayer.getName() + "!");
 		killerPlayer.sendPacket(cs);
 
 		killerPlayer.addEventPoints(3);
-		List<L2PcInstance> assistants =
-				PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
-		for (L2PcInstance assistant : assistants)
-		{
+		List<L2PcInstance> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
+		for (L2PcInstance assistant : assistants) {
 			assistant.addEventPoints(1);
 		}
 	}

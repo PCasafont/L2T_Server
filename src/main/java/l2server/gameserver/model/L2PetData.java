@@ -15,20 +15,18 @@
 
 package l2server.gameserver.model;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.gameserver.datatables.SkillTable;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import gnu.trove.TIntObjectHashMap;
 
 /**
  * Class hold information about basic pet stats which are same on each level
  *
  * @author JIV
  */
-public class L2PetData
-{
+public class L2PetData {
 	private TIntObjectHashMap<L2PetLevelData> levelStats = new TIntObjectHashMap<>();
 	private List<L2PetSkillLearn> skills = new ArrayList<>();
 
@@ -37,98 +35,75 @@ public class L2PetData
 	private int minlvl = Byte.MAX_VALUE;
 	private int[] food = {};
 
-	public void addNewStat(L2PetLevelData data, int level)
-	{
-		if (minlvl > level)
-		{
+	public void addNewStat(L2PetLevelData data, int level) {
+		if (minlvl > level) {
 			minlvl = level;
 		}
 		levelStats.put(level, data);
 	}
 
-	public L2PetLevelData getPetLevelData(int petLevel)
-	{
+	public L2PetLevelData getPetLevelData(int petLevel) {
 		return levelStats.get(petLevel);
 	}
 
-	public int getLoad()
-	{
+	public int getLoad() {
 		return load;
 	}
 
-	public int getHungry_limit()
-	{
+	public int getHungry_limit() {
 		return _hungry_limit;
 	}
 
-	public int getMinLevel()
-	{
+	public int getMinLevel() {
 		return minlvl;
 	}
 
-	public int[] getFood()
-	{
+	public int[] getFood() {
 		return food;
 	}
 
-	public void set_load(int load)
-	{
+	public void set_load(int load) {
 		this.load = load;
 	}
 
-	public void set_hungry_limit(int _hungry_limit)
-	{
+	public void set_hungry_limit(int _hungry_limit) {
 		this._hungry_limit = _hungry_limit;
 	}
 
-	public void set_food(int[] food)
-	{
+	public void set_food(int[] food) {
 		this.food = food;
 	}
 
 	//SKILS
 
-	public void addNewSkill(int id, int lvl, int petLvl)
-	{
+	public void addNewSkill(int id, int lvl, int petLvl) {
 		skills.add(new L2PetSkillLearn(id, lvl, petLvl));
 	}
 
-	public int getAvailableLevel(int skillId, int petLvl)
-	{
+	public int getAvailableLevel(int skillId, int petLvl) {
 		int lvl = 0;
-		for (L2PetSkillLearn temp : skills)
-		{
-			if (temp.getId() != skillId)
-			{
+		for (L2PetSkillLearn temp : skills) {
+			if (temp.getId() != skillId) {
 				continue;
 			}
-			if (temp.getLevel() == 0)
-			{
-				if (petLvl < 70)
-				{
+			if (temp.getLevel() == 0) {
+				if (petLvl < 70) {
 					lvl = petLvl / 10;
-					if (lvl <= 0)
-					{
+					if (lvl <= 0) {
 						lvl = 1;
 					}
-				}
-				else
-				{
+				} else {
 					lvl = 7 + (petLvl - 70) / 5;
 				}
 
 				// formula usable for skill that have 10 or more skill levels
 				int maxLvl = SkillTable.getInstance().getMaxLevel(temp.getId());
-				if (lvl > maxLvl)
-				{
+				if (lvl > maxLvl) {
 					lvl = maxLvl;
 				}
 				break;
-			}
-			else if (temp.getMinLevel() <= petLvl)
-			{
-				if (temp.getLevel() > lvl)
-				{
+			} else if (temp.getMinLevel() <= petLvl) {
+				if (temp.getLevel() > lvl) {
 					lvl = temp.getLevel();
 				}
 			}
@@ -136,36 +111,30 @@ public class L2PetData
 		return lvl;
 	}
 
-	public List<L2PetSkillLearn> getAvailableSkills()
-	{
+	public List<L2PetSkillLearn> getAvailableSkills() {
 		return skills;
 	}
 
-	public static final class L2PetSkillLearn
-	{
+	public static final class L2PetSkillLearn {
 		private final int id;
 		private final int level;
 		private final int minLevel;
 
-		public L2PetSkillLearn(int id, int lvl, int minLvl)
-		{
+		public L2PetSkillLearn(int id, int lvl, int minLvl) {
 			this.id = id;
 			level = lvl;
 			minLevel = minLvl;
 		}
 
-		public int getId()
-		{
+		public int getId() {
 			return id;
 		}
 
-		public int getLevel()
-		{
+		public int getLevel() {
 			return level;
 		}
 
-		public int getMinLevel()
-		{
+		public int getMinLevel() {
 			return minLevel;
 		}
 	}

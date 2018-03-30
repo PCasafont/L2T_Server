@@ -25,34 +25,27 @@ import l2server.log.Log;
  *
  * @version $Revision: 1.4.2.1.2.4 $ $Date: 2005/03/27 15:29:39 $
  */
-public class PetItemList extends L2ItemListPacket
-{
-
+public class PetItemList extends L2ItemListPacket {
+	
 	private L2PetInstance activeChar;
-
-	public PetItemList(L2PetInstance character)
-	{
+	
+	public PetItemList(L2PetInstance character) {
 		activeChar = character;
-		if (Config.DEBUG)
-		{
+		if (Config.DEBUG) {
 			L2ItemInstance[] items = activeChar.getInventory().getItems();
-			for (L2ItemInstance temp : items)
-			{
-				Log.fine("item:" + temp.getItem().getName() + " type1:" + temp.getItem().getType1() + " type2:" +
-						temp.getItem().getType2());
+			for (L2ItemInstance temp : items) {
+				Log.fine("item:" + temp.getItem().getName() + " type1:" + temp.getItem().getType1() + " type2:" + temp.getItem().getType2());
 			}
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		L2ItemInstance[] items = activeChar.getInventory().getItems();
 		int count = items.length;
 		writeH(count);
-
-		for (L2ItemInstance item : items)
-		{
+		
+		for (L2ItemInstance item : items) {
 			writeItem(item);
 		}
 	}

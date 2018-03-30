@@ -18,10 +18,8 @@ package l2server.log;
 import java.io.IOException;
 import java.util.logging.FileHandler;
 
-public class AccountingLogHandler extends FileHandler
-{
-	public AccountingLogHandler() throws IOException, SecurityException
-	{
+public class AccountingLogHandler extends FileHandler {
+	public AccountingLogHandler() throws IOException, SecurityException {
 		super();
 	}
 }

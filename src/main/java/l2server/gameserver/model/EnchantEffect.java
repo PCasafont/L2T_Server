@@ -25,70 +25,58 @@ import java.util.List;
 /**
  * @author Pere
  */
-public class EnchantEffect
-{
+public class EnchantEffect {
 	private final int id;
 	private final int rarity;
 	private final int slot;
-
+	
 	private int skillId = 0;
 	private int skillLevel = 0;
 	private final List<Func> funcs = new ArrayList<>();
-
-	public EnchantEffect(int id, int rarity, int slot)
-	{
+	
+	public EnchantEffect(int id, int rarity, int slot) {
 		this.id = id;
 		this.rarity = rarity;
 		this.slot = slot;
 	}
-
-	public void setSkill(int skillId, int skillLevel)
-	{
+	
+	public void setSkill(int skillId, int skillLevel) {
 		this.skillId = skillId;
 		this.skillLevel = skillLevel;
 	}
-
-	public void addFunc(Func func)
-	{
+	
+	public void addFunc(Func func) {
 		funcs.add(func);
 	}
-
-	public int getId()
-	{
+	
+	public int getId() {
 		return id;
 	}
-
-	public int getRarity()
-	{
+	
+	public int getRarity() {
 		return rarity;
 	}
-
-	public int getSlot()
-	{
+	
+	public int getSlot() {
 		return slot;
 	}
-
-	public L2Skill getSkill()
-	{
-		if (skillId == 0)
-		{
+	
+	public L2Skill getSkill() {
+		if (skillId == 0) {
 			return null;
 		}
-
+		
 		return SkillTable.getInstance().getInfo(skillId, skillLevel);
 	}
-
-	public void applyBonus(L2PcInstance player)
-	{
+	
+	public void applyBonus(L2PcInstance player) {
 		player.removeStatsOwner(this);
-		for (Func f : funcs)
-		{
+		for (Func f : funcs) {
 			player.addStatFunc(f);
 		}
 	}
-
-	public void removeBonus(L2PcInstance player)
-	{
+	
+	public void removeBonus(L2PcInstance player) {
 		player.removeStatsOwner(this);
 	}
 }

@@ -25,14 +25,12 @@ import java.util.zip.ZipFile;
 /**
  * @author Luis Arias
  */
-public class ScriptPackage
-{
+public class ScriptPackage {
 	private List<ScriptDocument> scriptFiles;
 	private List<String> otherFiles;
 	private String name;
 
-	public ScriptPackage(ZipFile pack)
-	{
+	public ScriptPackage(ZipFile pack) {
 		scriptFiles = new ArrayList<>();
 		otherFiles = new ArrayList<>();
 		name = pack.getName();
@@ -42,40 +40,30 @@ public class ScriptPackage
 	/**
 	 * @return Returns the otherFiles.
 	 */
-	public List<String> getOtherFiles()
-	{
+	public List<String> getOtherFiles() {
 		return otherFiles;
 	}
 
 	/**
 	 * @return Returns the scriptFiles.
 	 */
-	public List<ScriptDocument> getScriptFiles()
-	{
+	public List<ScriptDocument> getScriptFiles() {
 		return scriptFiles;
 	}
 
 	/**
 	 */
-	private void addFiles(ZipFile pack)
-	{
-		for (Enumeration<? extends ZipEntry> e = pack.entries(); e.hasMoreElements(); )
-		{
+	private void addFiles(ZipFile pack) {
+		for (Enumeration<? extends ZipEntry> e = pack.entries(); e.hasMoreElements(); ) {
 			ZipEntry entry = e.nextElement();
-			if (entry.getName().endsWith(".xml"))
-			{
-				try
-				{
+			if (entry.getName().endsWith(".xml")) {
+				try {
 					ScriptDocument newScript = new ScriptDocument(entry.getName(), pack.getInputStream(entry));
 					scriptFiles.add(newScript);
-				}
-				catch (IOException e1)
-				{
+				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
-			}
-			else if (!entry.isDirectory())
-			{
+			} else if (!entry.isDirectory()) {
 				otherFiles.add(entry.getName());
 			}
 		}
@@ -84,35 +72,28 @@ public class ScriptPackage
 	/**
 	 * @return Returns the name.
 	 */
-	public String getName()
-	{
+	public String getName() {
 		return name;
 	}
 
 	@Override
-	public String toString()
-	{
-		if (getScriptFiles().isEmpty() && getOtherFiles().isEmpty())
-		{
+	public String toString() {
+		if (getScriptFiles().isEmpty() && getOtherFiles().isEmpty()) {
 			return "Empty Package.";
 		}
 
 		String out = "Package Name: " + getName() + "\n";
 
-		if (!getScriptFiles().isEmpty())
-		{
+		if (!getScriptFiles().isEmpty()) {
 			out += "Xml Script Files...\n";
-			for (ScriptDocument script : getScriptFiles())
-			{
+			for (ScriptDocument script : getScriptFiles()) {
 				out += script.getName() + "\n";
 			}
 		}
 
-		if (!getOtherFiles().isEmpty())
-		{
+		if (!getOtherFiles().isEmpty()) {
 			out += "Other Files...\n";
-			for (String fileName : getOtherFiles())
-			{
+			for (String fileName : getOtherFiles()) {
 				out += fileName + "\n";
 			}
 		}

@@ -20,10 +20,8 @@ import l2server.util.network.BaseSendablePacket;
 /**
  * @author mrTJO
  */
-public class PlayerTracert extends BaseSendablePacket
-{
-	public PlayerTracert(String account, String pcIp, String hop1, String hop2, String hop3, String hop4)
-	{
+public class PlayerTracert extends BaseSendablePacket {
+	public PlayerTracert(String account, String pcIp, String hop1, String hop2, String hop3, String hop4) {
 		writeC(0x07);
 		writeS(account);
 		writeS(pcIp);
@@ -37,8 +35,7 @@ public class PlayerTracert extends BaseSendablePacket
 	 * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent()
-	{
+	public byte[] getContent() {
 		return getBytes();
 	}
 }

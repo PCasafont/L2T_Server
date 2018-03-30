@@ -1,100 +1,100 @@
 <list>
-    <combo id="367">
-        <skill id="10008" used="10250" /> <!-- Shield Charge -> Heavy Hit -->
-        <skill id="10045" used="10250" /> <!-- Shield Charge II -> Heavy Hit -->
-        <skill id="10046" used="10250" /> <!-- Shield Charge III -> Heavy Hit -->
-        <skill id="10047" used="10250" /> <!-- Shield Charge IV -> Heavy Hit -->
-        <skill id="10048" used="10250" /> <!-- Shield Charge V -> Heavy Hit -->
-        <skill id="10049" used="10250" /> <!-- Shield Charge VI -> Heavy Hit -->
-        <skill id="10050" used="10250" /> <!-- Shield Charge VII -> Heavy Hit -->
-        <skill id="10258" used="10500" /> <!-- Armor Destruction -> Heavy Hit -->
-        <skill id="10509" used="10750" /> <!-- Heart Breaker -> Heavy Hit -->
-        <skill id="10760" used="11000" /> <!-- Tornado Shot -> Heavy Hit -->
-        <skill id="11011" used="11250" /> <!-- Elemental Spike -> Heavy Hit -->
-        <skill id="11259" used="11500" /> <!-- Mark of Weakness -> Heavy Hit -->
-        <skill id="11509" used="11750" /> <!-- Crippling Attack -> Heavy Hit -->
-        <skill id="11766" used="12000" /> <!-- Dark Blast -> Heavy Hit -->
-    </combo>
-    <combo id="365">
-        <skill id="10008" used="10249" /> <!-- Shield Charge -> Heavy Hit -->
-        <skill id="10045" used="10249" /> <!-- Shield Charge II -> Heavy Hit -->
-        <skill id="10046" used="10249" /> <!-- Shield Charge III -> Heavy Hit -->
-        <skill id="10047" used="10249" /> <!-- Shield Charge IV -> Heavy Hit -->
-        <skill id="10048" used="10249" /> <!-- Shield Charge V -> Heavy Hit -->
-        <skill id="10049" used="10249" /> <!-- Shield Charge VI -> Heavy Hit -->
-        <skill id="10050" used="10249" /> <!-- Shield Charge VII -> Heavy Hit -->
-        <skill id="10258" used="10499" /> <!-- Armor Destruction -> Heavy Hit -->
-        <skill id="10509" used="10749" /> <!-- Heart Breaker -> Heavy Hit -->
-        <skill id="10760" used="10999" /> <!-- Tornado Shot -> Heavy Hit -->
-        <skill id="11011" used="11249" /> <!-- Elemental Spike -> Heavy Hit -->
-        <skill id="11259" used="11499" /> <!-- Mark of Weakness -> Heavy Hit -->
-        <skill id="11509" used="11749" /> <!-- Crippling Attack -> Heavy Hit -->
-        <skill id="11766" used="11999" /> <!-- Dark Blast -> Heavy Hit -->
-    </combo>
-    <combo id="424">
-        <skill id="10008" used="14579" /> <!-- Shield Charge ->  -->
-        <skill id="10045" used="14579" /> <!-- Shield Charge II ->  -->
-        <skill id="10046" used="14579" /> <!-- Shield Charge III ->  -->
-        <skill id="10047" used="14579" /> <!-- Shield Charge IV ->  -->
-        <skill id="10048" used="14579" /> <!-- Shield Charge V ->  -->
-        <skill id="10049" used="14579" /> <!-- Shield Charge VI ->  -->
-        <skill id="10050" used="14579" /> <!-- Shield Charge VII ->  -->
-        <skill id="10258" used="14579" /> <!-- Armor Destruction ->  -->
-        <skill id="10509" used="14579" /> <!-- Heart Breaker ->  -->
-        <skill id="10760" used="14579" /> <!-- Tornado Shot ->  -->
-        <skill id="11011" used="14579" /> <!-- Elemental Spike ->  -->
-        <skill id="11259" used="14579" /> <!-- Mark of Weakness ->  -->
-        <skill id="11509" used="14579" /> <!-- Crippling Attack ->  -->
-        <skill id="11766" used="14579" /> <!-- Dark Blast ->  -->
-        <skill id="30503" used="14579" /> <!-- Spinning Kick ->  -->
-        <skill id="30001" used="14579" /> <!-- Hydro Attack ->  -->
-    </combo>
-    <combo id="499">
-        <skill id="10008" used="15606" /> <!-- Shield Charge -> Recharge -->
-        <skill id="10045" used="15606" /> <!-- Shield Charge II -> Recharge -->
-        <skill id="10046" used="15606" /> <!-- Shield Charge III -> Recharge -->
-        <skill id="10047" used="15606" /> <!-- Shield Charge IV -> Recharge -->
-        <skill id="10048" used="15606" /> <!-- Shield Charge V -> Recharge -->
-        <skill id="10049" used="15606" /> <!-- Shield Charge VI -> Recharge -->
-        <skill id="10050" used="15606" /> <!-- Shield Charge VII -> Recharge -->
-        <skill id="10258" used="15606" /> <!-- Armor Destruction -> Recharge -->
-        <skill id="10509" used="15606" /> <!-- Heart Breaker -> Recharge -->
-        <skill id="10760" used="15606" /> <!-- Tornado Shot -> Recharge -->
-        <skill id="11011" used="15606" /> <!-- Elemental Spike -> Recharge -->
-        <skill id="11259" used="15606" /> <!-- Mark of Weakness -> Recharge -->
-        <skill id="11509" used="15606" /> <!-- Crippling Attack -> Recharge -->
-        <skill id="11766" used="15606" /> <!-- Dark Blast -> Recharge -->
-        <skill id="30503" used="15606" /> <!-- Spinning Kick -> Recharge -->
-        <skill id="30001" used="15606" /> <!-- Hydro Attack -> Recharge -->
-    </combo>
-    <combo id="457">
-        <skill id="14580" used="14581" /> <!-- Chain Skills -> Cry of Destiny - Shield Charge -->
-        <skill id="14584" used="14585" /> <!-- Chain Skills -> Cry of Destiny - Armor Destruction -->
-        <skill id="14588" used="14589" /> <!-- Chain Skills -> Cry of Destiny - Heart Breaker -->
-        <skill id="14592" used="14593" /> <!-- Chain Skills -> Cry of Destiny - Pinpoint Shot -->
-        <skill id="14596" used="14597" /> <!-- Chain Skills -> Cry of Destiny - Elemental Spike -->
-        <skill id="14600" used="14601" /> <!-- Chain Skills -> Cry of Destiny - Mark of Weakness -->
-        <skill id="14604" used="14605" /> <!-- Chain Skills -> Cry of Destiny - Crippling Attack -->
-        <skill id="14608" used="14609" /> <!-- Chain Skills -> Cry of Destiny - Dark Blast -->
-    </combo>
-    <combo id="458">
-        <skill id="14580" used="14582" /> <!-- Chain Skills -> Cry of Destiny - Chain Strike -->
-        <skill id="14584" used="14586" /> <!-- Chain Skills -> Cry of Destiny - Giant Punch -->
-        <skill id="14588" used="14590" /> <!-- Chain Skills -> Cry of Destiny - Dark Paralysis -->
-        <skill id="14592" used="14594" /> <!-- Chain Skills -> Cry of Destiny - Quick Fire -->
-        <skill id="14596" used="14598" /> <!-- Chain Skills -> Cry of Destiny - Elemental Crash -->
-        <skill id="14600" used="14602" /> <!-- Chain Skills -> Cry of Destiny - Mark of Plague -->
-        <skill id="14604" used="14606" /> <!-- Chain Skills -> Cry of Destiny - Death Strike -->
-        <skill id="14608" used="14610" /> <!-- Chain Skills -> Cry of Destiny - Radiant Heal -->
-    </combo>
-    <combo id="459">
-        <skill id="14580" used="14583" /> <!-- Chain Skills -> Cry of Destiny - Last Judgment -->
-        <skill id="14584" used="14587" /> <!-- Chain Skills -> Cry of Destiny - Power Bomber -->
-        <skill id="14588" used="14591" /> <!-- Chain Skills -> Cry of Destiny - Throwing Sand -->
-        <skill id="14592" used="14595" /> <!-- Chain Skills -> Cry of Destiny - Recoil Shot -->
-        <skill id="14596" used="14599" /> <!-- Chain Skills -> Cry of Destiny - Hell Binding -->
-        <skill id="14600" used="14603" /> <!-- Chain Skills -> Cry of Destiny - Exile -->
-        <skill id="14604" used="14607" /> <!-- Chain Skills -> Cry of Destiny - Pipe Organ Melody -->
-        <skill id="14608" used="14611" /> <!-- Chain Skills -> Cry of Destiny - Dark Force -->
-    </combo>
+	<combo id="367">
+		<skill id="10008" used="10250" /> <!-- Shield Charge -> Heavy Hit -->
+		<skill id="10045" used="10250" /> <!-- Shield Charge II -> Heavy Hit -->
+		<skill id="10046" used="10250" /> <!-- Shield Charge III -> Heavy Hit -->
+		<skill id="10047" used="10250" /> <!-- Shield Charge IV -> Heavy Hit -->
+		<skill id="10048" used="10250" /> <!-- Shield Charge V -> Heavy Hit -->
+		<skill id="10049" used="10250" /> <!-- Shield Charge VI -> Heavy Hit -->
+		<skill id="10050" used="10250" /> <!-- Shield Charge VII -> Heavy Hit -->
+		<skill id="10258" used="10500" /> <!-- Armor Destruction -> Heavy Hit -->
+		<skill id="10509" used="10750" /> <!-- Heart Breaker -> Heavy Hit -->
+		<skill id="10760" used="11000" /> <!-- Tornado Shot -> Heavy Hit -->
+		<skill id="11011" used="11250" /> <!-- Elemental Spike -> Heavy Hit -->
+		<skill id="11259" used="11500" /> <!-- Mark of Weakness -> Heavy Hit -->
+		<skill id="11509" used="11750" /> <!-- Crippling Attack -> Heavy Hit -->
+		<skill id="11766" used="12000" /> <!-- Dark Blast -> Heavy Hit -->
+	</combo>
+	<combo id="365">
+		<skill id="10008" used="10249" /> <!-- Shield Charge -> Heavy Hit -->
+		<skill id="10045" used="10249" /> <!-- Shield Charge II -> Heavy Hit -->
+		<skill id="10046" used="10249" /> <!-- Shield Charge III -> Heavy Hit -->
+		<skill id="10047" used="10249" /> <!-- Shield Charge IV -> Heavy Hit -->
+		<skill id="10048" used="10249" /> <!-- Shield Charge V -> Heavy Hit -->
+		<skill id="10049" used="10249" /> <!-- Shield Charge VI -> Heavy Hit -->
+		<skill id="10050" used="10249" /> <!-- Shield Charge VII -> Heavy Hit -->
+		<skill id="10258" used="10499" /> <!-- Armor Destruction -> Heavy Hit -->
+		<skill id="10509" used="10749" /> <!-- Heart Breaker -> Heavy Hit -->
+		<skill id="10760" used="10999" /> <!-- Tornado Shot -> Heavy Hit -->
+		<skill id="11011" used="11249" /> <!-- Elemental Spike -> Heavy Hit -->
+		<skill id="11259" used="11499" /> <!-- Mark of Weakness -> Heavy Hit -->
+		<skill id="11509" used="11749" /> <!-- Crippling Attack -> Heavy Hit -->
+		<skill id="11766" used="11999" /> <!-- Dark Blast -> Heavy Hit -->
+	</combo>
+	<combo id="424">
+		<skill id="10008" used="14579" /> <!-- Shield Charge ->  -->
+		<skill id="10045" used="14579" /> <!-- Shield Charge II ->  -->
+		<skill id="10046" used="14579" /> <!-- Shield Charge III ->  -->
+		<skill id="10047" used="14579" /> <!-- Shield Charge IV ->  -->
+		<skill id="10048" used="14579" /> <!-- Shield Charge V ->  -->
+		<skill id="10049" used="14579" /> <!-- Shield Charge VI ->  -->
+		<skill id="10050" used="14579" /> <!-- Shield Charge VII ->  -->
+		<skill id="10258" used="14579" /> <!-- Armor Destruction ->  -->
+		<skill id="10509" used="14579" /> <!-- Heart Breaker ->  -->
+		<skill id="10760" used="14579" /> <!-- Tornado Shot ->  -->
+		<skill id="11011" used="14579" /> <!-- Elemental Spike ->  -->
+		<skill id="11259" used="14579" /> <!-- Mark of Weakness ->  -->
+		<skill id="11509" used="14579" /> <!-- Crippling Attack ->  -->
+		<skill id="11766" used="14579" /> <!-- Dark Blast ->  -->
+		<skill id="30503" used="14579" /> <!-- Spinning Kick ->  -->
+		<skill id="30001" used="14579" /> <!-- Hydro Attack ->  -->
+	</combo>
+	<combo id="499">
+		<skill id="10008" used="15606" /> <!-- Shield Charge -> Recharge -->
+		<skill id="10045" used="15606" /> <!-- Shield Charge II -> Recharge -->
+		<skill id="10046" used="15606" /> <!-- Shield Charge III -> Recharge -->
+		<skill id="10047" used="15606" /> <!-- Shield Charge IV -> Recharge -->
+		<skill id="10048" used="15606" /> <!-- Shield Charge V -> Recharge -->
+		<skill id="10049" used="15606" /> <!-- Shield Charge VI -> Recharge -->
+		<skill id="10050" used="15606" /> <!-- Shield Charge VII -> Recharge -->
+		<skill id="10258" used="15606" /> <!-- Armor Destruction -> Recharge -->
+		<skill id="10509" used="15606" /> <!-- Heart Breaker -> Recharge -->
+		<skill id="10760" used="15606" /> <!-- Tornado Shot -> Recharge -->
+		<skill id="11011" used="15606" /> <!-- Elemental Spike -> Recharge -->
+		<skill id="11259" used="15606" /> <!-- Mark of Weakness -> Recharge -->
+		<skill id="11509" used="15606" /> <!-- Crippling Attack -> Recharge -->
+		<skill id="11766" used="15606" /> <!-- Dark Blast -> Recharge -->
+		<skill id="30503" used="15606" /> <!-- Spinning Kick -> Recharge -->
+		<skill id="30001" used="15606" /> <!-- Hydro Attack -> Recharge -->
+	</combo>
+	<combo id="457">
+		<skill id="14580" used="14581" /> <!-- Chain Skills -> Cry of Destiny - Shield Charge -->
+		<skill id="14584" used="14585" /> <!-- Chain Skills -> Cry of Destiny - Armor Destruction -->
+		<skill id="14588" used="14589" /> <!-- Chain Skills -> Cry of Destiny - Heart Breaker -->
+		<skill id="14592" used="14593" /> <!-- Chain Skills -> Cry of Destiny - Pinpoint Shot -->
+		<skill id="14596" used="14597" /> <!-- Chain Skills -> Cry of Destiny - Elemental Spike -->
+		<skill id="14600" used="14601" /> <!-- Chain Skills -> Cry of Destiny - Mark of Weakness -->
+		<skill id="14604" used="14605" /> <!-- Chain Skills -> Cry of Destiny - Crippling Attack -->
+		<skill id="14608" used="14609" /> <!-- Chain Skills -> Cry of Destiny - Dark Blast -->
+	</combo>
+	<combo id="458">
+		<skill id="14580" used="14582" /> <!-- Chain Skills -> Cry of Destiny - Chain Strike -->
+		<skill id="14584" used="14586" /> <!-- Chain Skills -> Cry of Destiny - Giant Punch -->
+		<skill id="14588" used="14590" /> <!-- Chain Skills -> Cry of Destiny - Dark Paralysis -->
+		<skill id="14592" used="14594" /> <!-- Chain Skills -> Cry of Destiny - Quick Fire -->
+		<skill id="14596" used="14598" /> <!-- Chain Skills -> Cry of Destiny - Elemental Crash -->
+		<skill id="14600" used="14602" /> <!-- Chain Skills -> Cry of Destiny - Mark of Plague -->
+		<skill id="14604" used="14606" /> <!-- Chain Skills -> Cry of Destiny - Death Strike -->
+		<skill id="14608" used="14610" /> <!-- Chain Skills -> Cry of Destiny - Radiant Heal -->
+	</combo>
+	<combo id="459">
+		<skill id="14580" used="14583" /> <!-- Chain Skills -> Cry of Destiny - Last Judgment -->
+		<skill id="14584" used="14587" /> <!-- Chain Skills -> Cry of Destiny - Power Bomber -->
+		<skill id="14588" used="14591" /> <!-- Chain Skills -> Cry of Destiny - Throwing Sand -->
+		<skill id="14592" used="14595" /> <!-- Chain Skills -> Cry of Destiny - Recoil Shot -->
+		<skill id="14596" used="14599" /> <!-- Chain Skills -> Cry of Destiny - Hell Binding -->
+		<skill id="14600" used="14603" /> <!-- Chain Skills -> Cry of Destiny - Exile -->
+		<skill id="14604" used="14607" /> <!-- Chain Skills -> Cry of Destiny - Pipe Organ Melody -->
+		<skill id="14608" used="14611" /> <!-- Chain Skills -> Cry of Destiny - Dark Force -->
+	</combo>
 </list>

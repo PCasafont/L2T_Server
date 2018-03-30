@@ -27,8 +27,7 @@ import l2server.gameserver.templates.skills.L2SkillType;
 /**
  * @author KenM
  */
-public class RequestDispel extends L2GameClientPacket
-{
+public class RequestDispel extends L2GameClientPacket {
 	private int objectId;
 	private int skillId;
 	private int skillLevel;
@@ -37,8 +36,7 @@ public class RequestDispel extends L2GameClientPacket
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		objectId = readD();
 		skillId = readD();
 		skillLevel = readD();
@@ -48,26 +46,21 @@ public class RequestDispel extends L2GameClientPacket
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
-		if (skillId <= 0 || skillLevel <= 0)
-		{
+	protected void runImpl() {
+		if (skillId <= 0 || skillLevel <= 0) {
 			return;
 		}
 
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
 		L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLevel);
-		if (skill == null)
-		{
+		if (skill == null) {
 			return;
 		}
-		if (!skill.canBeDispeled() || skill.isStayAfterDeath() || skill.isDebuff())
-		{
+		if (!skill.canBeDispeled() || skill.isStayAfterDeath() || skill.isDebuff()) {
 			return;
 		}
 		if (skill.getTransformId() > 0 && skill.getTargetType() != L2SkillTargetType.TARGET_SELF &&
@@ -76,23 +69,17 @@ public class RequestDispel extends L2GameClientPacket
 		{
 			return;
 		}
-		if (skill.isDance() && !Config.DANCE_CANCEL_BUFF)
-		{
+		if (skill.isDance() && !Config.DANCE_CANCEL_BUFF) {
 			return;
 		}
-		if (activeChar.getObjectId() == objectId)
-		{
+		if (activeChar.getObjectId() == objectId) {
 			activeChar.stopSkillEffects(skillId);
-		}
-		else
-		{
+		} else {
 			final L2PetInstance pet = activeChar.getPet();
-			if (pet != null && pet.getObjectId() == objectId)
-			{
+			if (pet != null && pet.getObjectId() == objectId) {
 				pet.stopSkillEffects(skillId);
 			}
-			for (L2SummonInstance summon : activeChar.getSummons())
-			{
+			for (L2SummonInstance summon : activeChar.getSummons()) {
 				summon.stopSkillEffects(skillId);
 			}
 		}

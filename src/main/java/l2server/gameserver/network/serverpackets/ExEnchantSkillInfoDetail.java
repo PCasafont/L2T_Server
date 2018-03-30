@@ -24,14 +24,13 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author KenM
  */
-public class ExEnchantSkillInfoDetail extends L2GameServerPacket
-{
+public class ExEnchantSkillInfoDetail extends L2GameServerPacket {
 	private static final int TYPE_NORMAL_ENCHANT = 0;
 	private static final int TYPE_SAFE_ENCHANT = 1;
 	private static final int TYPE_UNTRAIN_ENCHANT = 2;
 	private static final int TYPE_CHANGE_ENCHANT = 3;
 	private static final int TYPE_IMMORTAL_ENCHANT = 4;
-
+	
 	private int bookId = 0;
 	private int reqCount = 0;
 	private int multi = 1;
@@ -42,61 +41,46 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 	private final int chance;
 	private int sp;
 	private final int adenacount;
-
-	public ExEnchantSkillInfoDetail(int type, int skillId, int skillLvl, int skillEnchRoute, int skillEnchLvl, L2PcInstance ply)
-	{
+	
+	public ExEnchantSkillInfoDetail(int type, int skillId, int skillLvl, int skillEnchRoute, int skillEnchLvl, L2PcInstance ply) {
 		L2EnchantSkillLearn enchantLearn = EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(skillId);
 		EnchantSkillDetail esd = null;
 		// do we have this skill?
-		if (enchantLearn != null)
-		{
-			if (skillEnchRoute > 0)
-			{
+		if (enchantLearn != null) {
+			if (skillEnchRoute > 0) {
 				esd = enchantLearn.getEnchantSkillDetail(skillEnchRoute, skillEnchLvl);
-			}
-			else
-			{
+			} else {
 				esd = EnchantCostsTable.getInstance().getEnchantGroupDetails().get(0);
 			}
 		}
-
-		if (esd == null)
-		{
+		
+		if (esd == null) {
 			throw new IllegalArgumentException("Skill " + skillId + " dont have enchant data for level " + skillLvl);
 		}
-
+		
 		chance = type == TYPE_IMMORTAL_ENCHANT ? 100 : esd.getRate(ply);
 		sp = esd.getSpCost();
-		if (type == TYPE_NORMAL_ENCHANT)
-		{
+		if (type == TYPE_NORMAL_ENCHANT) {
 			multi = EnchantCostsTable.NORMAL_ENCHANT_COST_MULTIPLIER;
-		}
-		else if (type == TYPE_SAFE_ENCHANT)
-		{
+		} else if (type == TYPE_SAFE_ENCHANT) {
 			multi = EnchantCostsTable.SAFE_ENCHANT_COST_MULTIPLIER;
-		}
-		else if (type == TYPE_IMMORTAL_ENCHANT)
-		{
+		} else if (type == TYPE_IMMORTAL_ENCHANT) {
 			multi = EnchantCostsTable.IMMORTAL_ENCHANT_COST_MULTIPLIER;
-		}
-		else if (type == TYPE_UNTRAIN_ENCHANT)
-		{
+		} else if (type == TYPE_UNTRAIN_ENCHANT) {
 			sp = (int) (0.8 * sp);
 		}
 		adenacount = esd.getAdenaCost() * multi;
-
+		
 		this.type = type;
 		this.skillId = skillId;
 		this.skillLvl = skillLvl;
 		skillEnch = skillEnchRoute * 1000 + skillEnchLvl;
-
+		
 		reqCount = 1;
-		switch (type)
-		{
+		switch (type) {
 			case TYPE_NORMAL_ENCHANT:
 				bookId = esd.getRange().getNormalBook();
-				if (skillEnchLvl % 10 > 1)
-				{
+				if (skillEnchLvl % 10 > 1) {
 					reqCount = 0;
 				}
 				break;
@@ -115,9 +99,8 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 			default:
 				return;
 		}
-
-		if (type != TYPE_SAFE_ENCHANT && !Config.ES_SP_BOOK_NEEDED)
-		{
+		
+		if (type != TYPE_SAFE_ENCHANT && !Config.ES_SP_BOOK_NEEDED) {
 			reqCount = 0;
 		}
 	}
@@ -125,13 +108,12 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
     /*
 	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
-
+	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(type);
 		writeD(skillId);
 		writeH(skillLvl);

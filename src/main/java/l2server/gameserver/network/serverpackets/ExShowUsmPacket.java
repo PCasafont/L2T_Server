@@ -19,18 +19,15 @@ package l2server.gameserver.network.serverpackets;
  * @author Pere
  */
 
-public class ExShowUsmPacket extends L2GameServerPacket
-{
+public class ExShowUsmPacket extends L2GameServerPacket {
 	private int movieId;
-
-	public ExShowUsmPacket(int id)
-	{
+	
+	public ExShowUsmPacket(int id) {
 		movieId = id;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(movieId);
 	}
 }

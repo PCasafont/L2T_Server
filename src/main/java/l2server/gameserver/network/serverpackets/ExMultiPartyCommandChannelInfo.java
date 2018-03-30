@@ -20,41 +20,36 @@ import l2server.gameserver.model.L2Party;
 
 /**
  * @author chris_00
- *         ch sdd d[sdd]
+ * ch sdd d[sdd]
  */
-public class ExMultiPartyCommandChannelInfo extends L2GameServerPacket
-{
+public class ExMultiPartyCommandChannelInfo extends L2GameServerPacket {
 	private L2CommandChannel channel;
-
-	public ExMultiPartyCommandChannelInfo(L2CommandChannel channel)
-	{
+	
+	public ExMultiPartyCommandChannelInfo(L2CommandChannel channel) {
 		this.channel = channel;
 	}
 
     /*
 	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
-
+	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
-		if (channel == null)
-		{
+	protected final void writeImpl() {
+		if (channel == null) {
 			return;
 		}
-
+		
 		// L2PcInstance player = this.getClient().getActiveChar();
-
+		
 		writeS(channel.getChannelLeader().getName()); // Channelowner
 		writeD(0); // Channelloot 0 or 1
 		writeD(channel.getMemberCount());
-
+		
 		writeD(channel.getPartys().size());
-		for (L2Party p : channel.getPartys())
-		{
+		for (L2Party p : channel.getPartys()) {
 			writeS(p.getLeader().getName()); // Leadername
 			writeD(p.getPartyLeaderOID()); // Leaders ObjId
 			writeD(p.getMemberCount()); // Membercount

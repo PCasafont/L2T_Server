@@ -24,41 +24,34 @@ import l2server.gameserver.templates.skills.L2EffectType;
 /**
  * @author mkizub
  */
-public class EffectRoot extends L2Effect
-{
-	public EffectRoot(Env env, L2EffectTemplate template)
-	{
+public class EffectRoot extends L2Effect {
+	public EffectRoot(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.ROOT;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.HOLD;
 	}
 
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		getEffected().startRooted();
 		return true;
 	}
 
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		getEffected().stopRooting(false);
 	}
 
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return true;
 	}
 }

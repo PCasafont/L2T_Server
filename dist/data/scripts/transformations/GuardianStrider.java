@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class GuardianStrider extends L2Transformation
-{
+public class GuardianStrider extends L2Transformation {
 	private static final int[] SKILLS = {839};
 
-	public GuardianStrider()
-	{
+	public GuardianStrider() {
 		// id, colRadius, colHeight
 		super(123, 13, 40);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 123 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 123 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		// Dismount
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(839, 1), false);
 
@@ -34,21 +29,18 @@ public class GuardianStrider extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		// Dismount
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(839, 1), false);
 
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new GuardianStrider());
 	}
 }

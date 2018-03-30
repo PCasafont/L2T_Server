@@ -29,32 +29,26 @@ import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.log.Log;
 import l2server.util.xml.XmlNode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.Objects;
-import java.util.StringTokenizer;
+import java.util.*;
 import java.util.logging.Level;
 
 /**
  * @author mkizub
  */
-public final class SkillParser extends StatsParser
-{
-	private enum SkillEnchantBonusType
-	{
-		SET, ADD, SUB, ADD_PERCENT, SUB_PERCENT
+public final class SkillParser extends StatsParser {
+	private enum SkillEnchantBonusType {
+		SET,
+		ADD,
+		SUB,
+		ADD_PERCENT,
+		SUB_PERCENT
 	}
 
-	private static final class SkillEnchantBonusData
-	{
+	private static final class SkillEnchantBonusData {
 		public SkillEnchantBonusType type;
 		public String[] data;
 
-		public SkillEnchantBonusData(SkillEnchantBonusType t, String[] d)
-		{
+		public SkillEnchantBonusData(SkillEnchantBonusType t, String[] d) {
 			type = t;
 			data = d;
 		}
@@ -70,60 +64,47 @@ public final class SkillParser extends StatsParser
 
 	private Map<Integer, L2Skill> skills = new HashMap<>();
 
-	public SkillParser(XmlNode node)
-	{
+	public SkillParser(XmlNode node) {
 		super(node);
 	}
 
 	@Override
-	protected StatsSet getStatsSet()
-	{
+	protected StatsSet getStatsSet() {
 		return sets[currentLevel];
 	}
 
-	protected String getTableValue(String name)
-	{
-		try
-		{
+	protected String getTableValue(String name) {
+		try {
 			String[] table = null;
 			int level = 0;
-			if (currentEnchantRoute > 0)
-			{
+			if (currentEnchantRoute > 0) {
 				Map<Integer, Map<Integer, SkillEnchantBonusData>> nameMap = enchantTables.get(name);
-				if (nameMap != null)
-				{
+				if (nameMap != null) {
 					Map<Integer, SkillEnchantBonusData> routeMap = nameMap.get(currentEnchantRoute);
-					if (routeMap != null)
-					{
+					if (routeMap != null) {
 						SkillEnchantBonusData routeTable = routeMap.get(currentLevel);
-						if (routeTable != null)
-						{
+						if (routeTable != null) {
 							table = routeTable.data;
 							level = currentEnchantLevel;
 
 							// Operations
-							if (routeTable.type != SkillEnchantBonusType.SET)
-							{
+							if (routeTable.type != SkillEnchantBonusType.SET) {
 								float value = Float.parseFloat(table[level - 1]);
 								String[] mainTable = tables.get(name);
 								int mainLevel = currentLevel;
-								if (mainLevel > mainTable.length)
-								{
+								if (mainLevel > mainTable.length) {
 									mainLevel = 1;
 								}
 
-								switch (routeTable.type)
-								{
+								switch (routeTable.type) {
 									case ADD:
 										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) + value);
 									case SUB:
 										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) - value);
 									case ADD_PERCENT:
-										return String.valueOf(
-												Float.parseFloat(mainTable[mainLevel - 1]) * (1.0f + value / 100.0f));
+										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) * (1.0f + value / 100.0f));
 									case SUB_PERCENT:
-										return String.valueOf(
-												Float.parseFloat(mainTable[mainLevel - 1]) * (1.0f - value / 100.0f));
+										return String.valueOf(Float.parseFloat(mainTable[mainLevel - 1]) * (1.0f - value / 100.0f));
 								}
 							}
 						}
@@ -131,67 +112,54 @@ public final class SkillParser extends StatsParser
 				}
 			}
 
-			if (table == null)
-			{
+			if (table == null) {
 				table = tables.get(name);
 				level = currentLevel;
 			}
 
-			if (table.length == 0)
-			{
+			if (table.length == 0) {
 				return null;
 			}
 
-			if (level > table.length)
-			{
+			if (level > table.length) {
 				return table[0];
 			}
 
 			return table[level - 1];
-		}
-		catch (RuntimeException e)
-		{
+		} catch (RuntimeException e) {
 			Log.log(Level.SEVERE, "Error in table: " + name + " of Skill Id " + id, e);
 			return null;
 		}
 	}
 
-	protected void parseTable(XmlNode n)
-	{
+	protected void parseTable(XmlNode n) {
 		String name = n.getString("name");
-		if (name.charAt(0) != '#')
-		{
+		if (name.charAt(0) != '#') {
 			throw new IllegalArgumentException("Table name must start with #");
 		}
 
 		String tokenizer = " \t\n\r\f";
-		if (name.equals("#name"))
-		{
+		if (name.equals("#name")) {
 			tokenizer = ";\t\n\r\f";
 		}
 		StringTokenizer data = new StringTokenizer(n.getText(), tokenizer);
 		List<String> array = new ArrayList<>(data.countTokens());
-		while (data.hasMoreTokens())
-		{
+		while (data.hasMoreTokens()) {
 			array.add(data.nextToken());
 		}
 
 		tables.put(name, array.toArray(new String[array.size()]));
 
-		if (!n.getChildren().isEmpty())
-		{
+		if (!n.getChildren().isEmpty()) {
 			Map<Integer, Map<Integer, SkillEnchantBonusData>> nameMap = new HashMap<>();
-			for (XmlNode node : n.getChildren())
-			{
-				if (!node.getName().equalsIgnoreCase("enchantRoute"))
-				{
+			for (XmlNode node : n.getChildren()) {
+				if (!node.getName().equalsIgnoreCase("enchantRoute")) {
 					continue;
 				}
 
 				data = new StringTokenizer(node.getText(), tokenizer);
 				array = new ArrayList<>(data.countTokens());
-				while (data.hasMoreTokens())
-				{
+				while (data.hasMoreTokens()) {
 					array.add(data.nextToken());
 				}
 
@@ -199,22 +167,17 @@ public final class SkillParser extends StatsParser
 				String[] enchRoute = node.getString("id").split(",");
 				String[] enchLvl = node.getString("level").split(",");
 
-				for (String rt : enchRoute)
-				{
+				for (String rt : enchRoute) {
 					Map<Integer, SkillEnchantBonusData> routeMap = new HashMap<>();
 					int route = Integer.parseInt(rt);
-					for (String lv : enchLvl)
-					{
+					for (String lv : enchLvl) {
 						int lvl = Integer.parseInt(lv);
 						routeMap.put(lvl, new SkillEnchantBonusData(type, array.toArray(new String[array.size()])));
 					}
 
-					if (nameMap.containsKey(route))
-					{
+					if (nameMap.containsKey(route)) {
 						nameMap.get(route).putAll(routeMap);
-					}
-					else
-					{
+					} else {
 						nameMap.put(route, routeMap);
 					}
 				}
@@ -225,53 +188,42 @@ public final class SkillParser extends StatsParser
 	}
 
 	@Override
-	public void parse() throws RuntimeException
-	{
+	public void parse() throws RuntimeException {
 		// Basic data
 		int levels = node.getInt("levels");
 		sets = new StatsSet[levels];
-		for (int i = 0; i < levels; i++)
-		{
+		for (int i = 0; i < levels; i++) {
 			sets[i] = new StatsSet();
 			sets[i].set("skill_id", id);
 			sets[i].set("level", i + 1);
 			sets[i].set("name", name);
 		}
 
-		if (sets.length != levels)
-		{
-			throw new RuntimeException(
-					"Skill id=" + id + " number of levels missmatch, " + levels + " levels expected");
+		if (sets.length != levels) {
+			throw new RuntimeException("Skill id=" + id + " number of levels missmatch, " + levels + " levels expected");
 		}
 
 		// Enchant routes
-		for (XmlNode n : node.getChildren())
-		{
+		for (XmlNode n : node.getChildren()) {
 			boolean enabled = n.getBool("enabled", true);
-			if (Config.isServer(Config.TENKAI))
-			{
+			if (Config.isServer(Config.TENKAI)) {
 				enabled &= !n.getBool("isClassic", false);
 			}
 
-			if (n.getName().equalsIgnoreCase("enchantRoute") && enabled)
-			{
+			if (n.getName().equalsIgnoreCase("enchantRoute") && enabled) {
 				int route = n.getInt("id");
 				String[] routeLevels = n.getString("level").split(",");
-				int enchantLevels = EnchantCostsTable.getInstance()
-						.addNewRouteForSkill(id, Integer.parseInt(routeLevels[0]), route);
-				for (String routeLevel : routeLevels)
-				{
+				int enchantLevels = EnchantCostsTable.getInstance().addNewRouteForSkill(id, Integer.parseInt(routeLevels[0]), route);
+				for (String routeLevel : routeLevels) {
 					int level = Integer.parseInt(routeLevel);
 					Map<Integer, StatsSet[]> levelEnchants = enchantSets.get(level);
-					if (levelEnchants == null)
-					{
+					if (levelEnchants == null) {
 						levelEnchants = new HashMap<>();
 						enchantSets.put(level, levelEnchants);
 					}
 
 					StatsSet[] enchSets = new StatsSet[enchantLevels];
-					for (int i = 0; i < enchantLevels; i++)
-					{
+					for (int i = 0; i < enchantLevels; i++) {
 						enchSets[i] = new StatsSet();
 						enchSets[i].set("skill_id", id);
 						enchSets[i].set("level", level);
@@ -286,35 +238,27 @@ public final class SkillParser extends StatsParser
 		}
 
 		// Tables
-		for (XmlNode n : node.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("table"))
-			{
+		for (XmlNode n : node.getChildren()) {
+			if (n.getName().equalsIgnoreCase("table")) {
 				parseTable(n);
 			}
 		}
 
 		// Sets
-		for (XmlNode n : node.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("set"))
-			{
+		for (XmlNode n : node.getChildren()) {
+			if (n.getName().equalsIgnoreCase("set")) {
 				currentLevel = 1;
-				while (currentLevel <= levels)
-				{
+				while (currentLevel <= levels) {
 					currentEnchantRoute = 0;
 					Map<Integer, StatsSet[]> levelEnchants = enchantSets.get(currentLevel);
 					parseBeanSet(n, sets[currentLevel - 1]);
 
-					if (levelEnchants != null)
-					{
-						for (int route : levelEnchants.keySet())
-						{
+					if (levelEnchants != null) {
+						for (int route : levelEnchants.keySet()) {
 							currentEnchantRoute = route;
 							currentEnchantLevel = 1;
 							StatsSet[] enchSets = levelEnchants.get(route);
-							while (currentEnchantLevel <= enchSets.length)
-							{
+							while (currentEnchantLevel <= enchSets.length) {
 								parseBeanSet(n, enchSets[currentEnchantLevel - 1]);
 								currentEnchantLevel++;
 							}
@@ -327,17 +271,13 @@ public final class SkillParser extends StatsParser
 		}
 
 		// Creating the skill instances
-		for (int i = 0; i < levels; i++)
-		{
+		for (int i = 0; i < levels; i++) {
 			skills.put(i + 1, sets[i].getEnum("skillType", L2SkillType.class).makeSkill(sets[i]));
 			Map<Integer, StatsSet[]> levelEnchants = enchantSets.get(i + 1);
-			if (levelEnchants != null)
-			{
-				for (int route : levelEnchants.keySet())
-				{
+			if (levelEnchants != null) {
+				for (int route : levelEnchants.keySet()) {
 					StatsSet[] enchSets = levelEnchants.get(route);
-					for (int j = 0; j < enchSets.length; j++)
-					{
+					for (int j = 0; j < enchSets.length; j++) {
 						int hash = (i + 1) * 1000000 + route * 1000 + j + 1;
 						skills.put(hash, enchSets[j].getEnum("skillType", L2SkillType.class).makeSkill(enchSets[j]));
 					}
@@ -347,25 +287,19 @@ public final class SkillParser extends StatsParser
 
 		// Parsing the <for>s
 		currentLevel = 1;
-		while (currentLevel <= levels)
-		{
+		while (currentLevel <= levels) {
 			currentEnchantRoute = 0;
 			Map<Integer, StatsSet[]> levelEnchants = enchantSets.get(currentLevel);
-			for (XmlNode n : node.getChildren())
-			{
-				if (n.getName().equalsIgnoreCase("for"))
-				{
+			for (XmlNode n : node.getChildren()) {
+				if (n.getName().equalsIgnoreCase("for")) {
 					parseTemplate(n, skills.get(currentLevel));
 
-					if (levelEnchants != null)
-					{
-						for (int route : levelEnchants.keySet())
-						{
+					if (levelEnchants != null) {
+						for (int route : levelEnchants.keySet()) {
 							currentEnchantRoute = route;
 							currentEnchantLevel = 1;
 							StatsSet[] enchSets = levelEnchants.get(route);
-							while (currentEnchantLevel <= enchSets.length)
-							{
+							while (currentEnchantLevel <= enchSets.length) {
 								int hash = currentLevel * 1000000 + route * 1000 + currentEnchantLevel;
 								parseTemplate(n, skills.get(hash));
 								currentEnchantLevel++;
@@ -379,230 +313,178 @@ public final class SkillParser extends StatsParser
 		}
 	}
 
-	protected void parseBeanSet(XmlNode n, StatsSet set)
-	{
+	protected void parseBeanSet(XmlNode n, StatsSet set) {
 		String name = n.getString("name").trim();
 		String value = n.getString("val").trim();
 		char ch = value.length() == 0 ? ' ' : value.charAt(0);
-		if (ch == '#' || ch == '-' || Character.isDigit(ch))
-		{
+		if (ch == '#' || ch == '-' || Character.isDigit(ch)) {
 			String val = getValue(value);
-			if (val != null)
-			{
+			if (val != null) {
 				set.set(name, getValue(value));
 			}
-		}
-		else
-		{
+		} else {
 			set.set(name, value);
 		}
 	}
 
-	protected void attachAbnormal(XmlNode n, L2Skill template)
-	{
+	protected void attachAbnormal(XmlNode n, L2Skill template) {
 		/*
           Keep this values as default ones, DP needs it
          */
 		int duration = 0;
 		int count = 1;
 
-		if (n.hasAttribute("count"))
-		{
+		if (n.hasAttribute("count")) {
 			count = Integer.decode(getValue(n.getString("count")));
 		}
-		if (n.hasAttribute("duration"))
-		{
+		if (n.hasAttribute("duration")) {
 			duration = Integer.decode(getValue(n.getString("duration")));
-			if (Config.SKILL_DURATION_LIST.containsKey(template.getId()))
-			{
-				if (template.getLevelHash() < 100)
-				{
+			if (Config.SKILL_DURATION_LIST.containsKey(template.getId())) {
+				if (template.getLevelHash() < 100) {
 					duration = Config.SKILL_DURATION_LIST.get(template.getId());
-				}
-				else if (template.getLevelHash() >= 100 && template.getLevelHash() < 140)
-				{
+				} else if (template.getLevelHash() >= 100 && template.getLevelHash() < 140) {
 					duration += Config.SKILL_DURATION_LIST.get(template.getId());
-				}
-				else if (template.getLevelHash() > 140)
-				{
+				} else if (template.getLevelHash() > 140) {
 					duration = Config.SKILL_DURATION_LIST.get(template.getId());
 				}
-				if (Config.DEBUG)
-				{
-					Log.info("*** Skill " + template.getName() + " (" + template.getLevelHash() +
-							") changed duration to " + duration + " seconds.");
+				if (Config.DEBUG) {
+					Log.info("*** Skill " + template.getName() + " (" + template.getLevelHash() + ") changed duration to " + duration + " seconds.");
 				}
 			}
-		}
-		else if (template.getBuffDuration() > 0)
-		{
+		} else if (template.getBuffDuration() > 0) {
 			duration = template.getBuffDuration() / 1000 / count;
 		}
 
 		boolean self = false;
-		if (n.hasAttribute("self"))
-		{
-			if (Integer.decode(getValue(n.getString("self"))) == 1)
-			{
+		if (n.hasAttribute("self")) {
+			if (Integer.decode(getValue(n.getString("self"))) == 1) {
 				self = true;
 			}
 		}
 		boolean icon = true;
-		if (n.hasAttribute("noicon"))
-		{
-			if (Integer.decode(getValue(n.getString("noicon"))) == 1)
-			{
+		if (n.hasAttribute("noicon")) {
+			if (Integer.decode(getValue(n.getString("noicon"))) == 1) {
 				icon = false;
 			}
 		}
 		Condition applayCond = parseCondition(n.getFirstChild(), template);
 		VisualEffect[] visualEffect = null;
-		if (n.hasAttribute("visualEffect"))
-		{
+		if (n.hasAttribute("visualEffect")) {
 			String[] abns = n.getString("visualEffect").split(",[ ]*");
 			visualEffect = new VisualEffect[abns.length];
-			for (int i = 0; i < abns.length; i++)
-			{
+			for (int i = 0; i < abns.length; i++) {
 				visualEffect[i] = VisualEffect.getByName(getValue(abns[i]));
 			}
 		}
 		String[] stackType = new String[]{};
-		if (n.hasAttribute("stackType"))
-		{
+		if (n.hasAttribute("stackType")) {
 			stackType = n.getString("stackType").split(",[ ]*");
 		}
 
 		byte stackLvl = 0;
-		if (n.hasAttribute("stackLvl"))
-		{
+		if (n.hasAttribute("stackLvl")) {
 			stackLvl = Byte.parseByte(getValue(n.getString("stackLvl")));
 		}
 
 		double landRate = -1;
-		if (n.hasAttribute("landRate"))
-		{
+		if (n.hasAttribute("landRate")) {
 			landRate = Double.parseDouble(getValue(n.getString("landRate")));
-		}
-		else if (template.getSkillType() == L2SkillType.DEBUFF && template.getPower() > 0.0)
-		{
+		} else if (template.getSkillType() == L2SkillType.DEBUFF && template.getPower() > 0.0) {
 			landRate = template.getPower();
 		}
 
 		L2AbnormalType type = L2AbnormalType.NONE;
-		if (n.hasAttribute("effectType"))
-		{
+		if (n.hasAttribute("effectType")) {
 			String typeName = getValue(n.getString("effectType"));
 
-			try
-			{
+			try {
 				type = Enum.valueOf(L2AbnormalType.class, typeName);
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				throw new IllegalArgumentException("No effect type found for: " + typeName);
 			}
 		}
 
 		int comboId = 0;
-		if (n.hasAttribute("comboId"))
-		{
+		if (n.hasAttribute("comboId")) {
 			comboId = Integer.parseInt(getValue(n.getString("comboId")));
 		}
 
-		L2AbnormalTemplate lt =
-				new L2AbnormalTemplate(applayCond, count, duration, visualEffect, stackType, stackLvl, icon, landRate,
-						type, comboId);
+		L2AbnormalTemplate lt = new L2AbnormalTemplate(applayCond, count, duration, visualEffect, stackType, stackLvl, icon, landRate, type, comboId);
 		parseTemplate(n, lt);
-		if (self)
-		{
+		if (self) {
 			template.attachSelf(lt);
-		}
-		else
-		{
+		} else {
 			template.attach(lt);
 		}
 	}
 
-	protected void attachEffect(XmlNode n, L2AbnormalTemplate template)
-	{
+	protected void attachEffect(XmlNode n, L2AbnormalTemplate template) {
 		String type = getValue(n.getString("type").intern());
 		Condition applayCond = parseCondition(n.getFirstChild(), template);
 		L2EffectTemplate lt;
 
 		final boolean isChanceSkillTrigger = Objects.equals(type, "ChanceSkillTrigger");
 		int trigId = 0;
-		if (n.hasAttribute("triggeredId"))
-		{
+		if (n.hasAttribute("triggeredId")) {
 			trigId = Integer.parseInt(getValue(n.getString("triggeredId")));
-		}
-		else if (isChanceSkillTrigger)
-		{
+		} else if (isChanceSkillTrigger) {
 			throw new NoSuchElementException(type + " requires triggerId");
 		}
 
 		int trigLvl = 0;
-		if (n.hasAttribute("triggeredLevel"))
-		{
+		if (n.hasAttribute("triggeredLevel")) {
 			trigLvl = Integer.parseInt(getValue(n.getString("triggeredLevel")));
 		}
 		int trigEnchRt = 0;
-		if (n.hasAttribute("triggeredEnchantRoute"))
-		{
+		if (n.hasAttribute("triggeredEnchantRoute")) {
 			trigEnchRt = Integer.parseInt(getValue(n.getString("triggeredEnchantRoute")));
 		}
 		int trigEnchLvl = 0;
-		if (n.hasAttribute("triggeredEnchantLevel"))
-		{
+		if (n.hasAttribute("triggeredEnchantLevel")) {
 			trigEnchLvl = Integer.parseInt(getValue(n.getString("triggeredEnchantLevel")));
 		}
 
 		String chanceCond = null;
-		if (n.hasAttribute("chanceType"))
-		{
+		if (n.hasAttribute("chanceType")) {
 			chanceCond = getValue(n.getString("chanceType"));
-		}
-		else if (isChanceSkillTrigger)
-		{
+		} else if (isChanceSkillTrigger) {
 			throw new NoSuchElementException(type + " requires chanceType");
 		}
 
 		double activationChance = -1;
-		if (n.hasAttribute("activationChance"))
-		{
+		if (n.hasAttribute("activationChance")) {
 			activationChance = Double.parseDouble(getValue(n.getString("activationChance")));
 		}
 		double activationCritChance = -1;
-		if (n.hasAttribute("activationCritChance"))
-		{
+		if (n.hasAttribute("activationCritChance")) {
 			activationCritChance = Double.parseDouble(getValue(n.getString("activationCritChance")));
 		}
 		int activationMinDamage = -1;
-		if (n.hasAttribute("activationMinDamage"))
-		{
+		if (n.hasAttribute("activationMinDamage")) {
 			activationMinDamage = Integer.parseInt(getValue(n.getString("activationMinDamage")));
 		}
 		String activationElements = null;
-		if (n.hasAttribute("activationElements"))
-		{
+		if (n.hasAttribute("activationElements")) {
 			activationElements = getValue(n.getString("activationElements"));
 		}
 		String activationSkills = null;
-		if (n.hasAttribute("activationSkills"))
-		{
+		if (n.hasAttribute("activationSkills")) {
 			activationSkills = getValue(n.getString("activationSkills"));
 		}
 		boolean pvpOnly = false;
-		if (n.hasAttribute("pvpChanceOnly"))
-		{
+		if (n.hasAttribute("pvpChanceOnly")) {
 			pvpOnly = Boolean.parseBoolean(getValue(n.getString("pvpChanceOnly")));
 		}
 
-		ChanceCondition chance = ChanceCondition
-				.parse(chanceCond, activationChance, activationCritChance, activationMinDamage, activationElements,
-						activationSkills, pvpOnly);
+		ChanceCondition chance = ChanceCondition.parse(chanceCond,
+				activationChance,
+				activationCritChance,
+				activationMinDamage,
+				activationElements,
+				activationSkills,
+				pvpOnly);
 
-		if (chance == null && isChanceSkillTrigger)
-		{
+		if (chance == null && isChanceSkillTrigger) {
 			throw new NoSuchElementException("Invalid chance condition: " + chanceCond + " " + activationChance);
 		}
 
@@ -613,19 +495,16 @@ public final class SkillParser extends StatsParser
 	}
 
 	@Override
-	protected String getValue(String value)
-	{
+	protected String getValue(String value) {
 		// is it a table?
-		if (value.charAt(0) == '#')
-		{
+		if (value.charAt(0) == '#') {
 			return getTableValue(value);
 		}
 
 		return value;
 	}
 
-	public Map<Integer, L2Skill> getSkills()
-	{
+	public Map<Integer, L2Skill> getSkills() {
 		return skills;
 	}
 }

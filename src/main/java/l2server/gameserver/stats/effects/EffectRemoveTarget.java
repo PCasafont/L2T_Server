@@ -29,96 +29,79 @@ import l2server.gameserver.templates.skills.L2SkillType;
 /**
  * @author -Nemesiss-
  */
-public class EffectRemoveTarget extends L2Effect
-{
-	public EffectRemoveTarget(Env env, L2EffectTemplate template)
-	{
+public class EffectRemoveTarget extends L2Effect {
+	public EffectRemoveTarget(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
-
+	
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.DEBUFF;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCastingProtected())
+	public boolean onStart() {
+		if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCastingProtected()) {
+			return false;
+		}
+		
+		if (getEffected().isRaid()) {
+			return false;
+		}
+		
+		if (getEffected() instanceof L2MonsterInstance && ((L2MonsterInstance) getEffected()).getNpcId() == 19036) //TODO TEMP LasTravel, don't remove
 		{
 			return false;
 		}
-
-		if (getEffected().isRaid())
-		{
-			return false;
-		}
-
-		if (getEffected() instanceof L2MonsterInstance &&
-				((L2MonsterInstance) getEffected()).getNpcId() == 19036) //TODO TEMP LasTravel, don't remove
-		{
-			return false;
-		}
-
-		if (getEffected() instanceof L2Playable && getEffected().isCastingNow())
-		{
+		
+		if (getEffected() instanceof L2Playable && getEffected().isCastingNow()) {
 			//chat what is casting, if its a self skill defined as a buff return?
 			L2Skill lastSkillCast = getEffected().getLastSkillCast();
-			if (lastSkillCast != null)
-			{
-				if (lastSkillCast.getSkillType() == L2SkillType.BUFF)
-				{
+			if (lastSkillCast != null) {
+				if (lastSkillCast.getSkillType() == L2SkillType.BUFF) {
 					return false;
 				}
 			}
-
+			
 			L2Skill lastSimultaneouSkillCast = getEffected().getLastSimultaneousSkillCast();
-			if (lastSimultaneouSkillCast != null)
-			{
-				if (lastSimultaneouSkillCast.getSkillType() == L2SkillType.BUFF)
-				{
+			if (lastSimultaneouSkillCast != null) {
+				if (lastSimultaneouSkillCast.getSkillType() == L2SkillType.BUFF) {
 					return false;
 				}
 			}
 		}
-
+		
 		getEffected().setTarget(null);
 		getEffected().abortAttack();
 		// It should not cancel the cast
 		//getEffected().abortCast();
 		getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, getEffector());
-
-		if (getEffected() instanceof L2Playable && getAbnormal().getTemplate().duration > 0 &&
-				getSkill().getId() != 10265)
-		{
+		
+		if (getEffected() instanceof L2Playable && getAbnormal().getTemplate().duration > 0 && getSkill().getId() != 10265) {
 			((L2Playable) getEffected()).setLockedTarget(getEffected());
 		}
-
+		
 		return true;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
-		if (getEffected() instanceof L2Playable)
-		{
+	public void onExit() {
+		if (getEffected() instanceof L2Playable) {
 			((L2Playable) getEffected()).setLockedTarget(null);
 		}
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		// nothing
 		return false;
 	}

@@ -50,8 +50,8 @@ class Quest(JQuest):
                 htmltext = Quest.getAlreadyCompletedMsg(player)
             elif state == State.CREATED:
                 if st.getPlayer().getLevel() >= 66 and npcId == Pierce and (
-                                st.getQuestItemsCount(Golden_Badge_Recruit) > 0 or st.getQuestItemsCount(
-                            Golden_Badge_Soldier) > 0):
+                        st.getQuestItemsCount(Golden_Badge_Recruit) > 0 or st.getQuestItemsCount(
+                    Golden_Badge_Soldier) > 0):
                     st.setState(State.STARTED)
                     st.playSound("ItemSound.quest_accept")
                     st.set("cond", "1")

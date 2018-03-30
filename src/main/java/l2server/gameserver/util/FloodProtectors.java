@@ -21,8 +21,7 @@ import l2server.gameserver.network.L2GameClient;
  *
  * @author fordfrog
  */
-public final class FloodProtectors
-{
+public final class FloodProtectors {
 	/**
 	 * Pick up item flood protector.
 	 */
@@ -114,8 +113,7 @@ public final class FloodProtectors
 	/**
 	 * Creates new instance of FloodProtectors.
 	 */
-	public FloodProtectors(final L2GameClient client)
-	{
+	public FloodProtectors(final L2GameClient client) {
 		super();
 		pickUp = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_PICKUP_ITEM);
 		useItem = new FloodProtectorAction(client, Config.FLOOD_PROTECTOR_USE_ITEM);
@@ -146,8 +144,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #useItem}
 	 */
-	public FloodProtectorAction getUseItem()
-	{
+	public FloodProtectorAction getUseItem() {
 		return useItem;
 	}
 
@@ -156,8 +153,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #rollDice}
 	 */
-	public FloodProtectorAction getRollDice()
-	{
+	public FloodProtectorAction getRollDice() {
 		return rollDice;
 	}
 
@@ -166,8 +162,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #firework}
 	 */
-	public FloodProtectorAction getFirework()
-	{
+	public FloodProtectorAction getFirework() {
 		return firework;
 	}
 
@@ -176,8 +171,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #itemPetSummon}
 	 */
-	public FloodProtectorAction getItemPetSummon()
-	{
+	public FloodProtectorAction getItemPetSummon() {
 		return itemPetSummon;
 	}
 
@@ -186,8 +180,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #heroVoice}
 	 */
-	public FloodProtectorAction getHeroVoice()
-	{
+	public FloodProtectorAction getHeroVoice() {
 		return heroVoice;
 	}
 
@@ -196,8 +189,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #shoutChat}
 	 */
-	public FloodProtectorAction getShoutChat()
-	{
+	public FloodProtectorAction getShoutChat() {
 		return shoutChat;
 	}
 
@@ -206,8 +198,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #tradeChat}
 	 */
-	public FloodProtectorAction getTradeChat()
-	{
+	public FloodProtectorAction getTradeChat() {
 		return tradeChat;
 	}
 
@@ -216,8 +207,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #globalChat}
 	 */
-	public FloodProtectorAction getGlobalChat()
-	{
+	public FloodProtectorAction getGlobalChat() {
 		return globalChat;
 	}
 
@@ -226,8 +216,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #subclass}
 	 */
-	public FloodProtectorAction getSubclass()
-	{
+	public FloodProtectorAction getSubclass() {
 		return subclass;
 	}
 
@@ -236,8 +225,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #dropItem}
 	 */
-	public FloodProtectorAction getDropItem()
-	{
+	public FloodProtectorAction getDropItem() {
 		return dropItem;
 	}
 
@@ -246,8 +234,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #serverBypass}
 	 */
-	public FloodProtectorAction getServerBypass()
-	{
+	public FloodProtectorAction getServerBypass() {
 		return serverBypass;
 	}
 
@@ -256,8 +243,7 @@ public final class FloodProtectors
 	 *
 	 * @return
 	 */
-	public FloodProtectorAction getMultiSell()
-	{
+	public FloodProtectorAction getMultiSell() {
 		return multiSell;
 	}
 
@@ -266,8 +252,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #transaction}
 	 */
-	public FloodProtectorAction getTransaction()
-	{
+	public FloodProtectorAction getTransaction() {
 		return transaction;
 	}
 
@@ -276,8 +261,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #manufacture}
 	 */
-	public FloodProtectorAction getManufacture()
-	{
+	public FloodProtectorAction getManufacture() {
 		return manufacture;
 	}
 
@@ -286,8 +270,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #manor}
 	 */
-	public FloodProtectorAction getManor()
-	{
+	public FloodProtectorAction getManor() {
 		return manor;
 	}
 
@@ -296,8 +279,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #sendMail}
 	 */
-	public FloodProtectorAction getSendMail()
-	{
+	public FloodProtectorAction getSendMail() {
 		return sendMail;
 	}
 
@@ -306,8 +288,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #characterSelect}
 	 */
-	public FloodProtectorAction getCharacterSelect()
-	{
+	public FloodProtectorAction getCharacterSelect() {
 		return characterSelect;
 	}
 
@@ -316,8 +297,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #itemAuction}
 	 */
-	public FloodProtectorAction getItemAuction()
-	{
+	public FloodProtectorAction getItemAuction() {
 		return itemAuction;
 	}
 
@@ -326,8 +306,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #magicGem}
 	 */
-	public FloodProtectorAction getMagicGem()
-	{
+	public FloodProtectorAction getMagicGem() {
 		return magicGem;
 	}
 
@@ -336,8 +315,7 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #eventBypass}
 	 */
-	public FloodProtectorAction getEventBypass()
-	{
+	public FloodProtectorAction getEventBypass() {
 		return eventBypass;
 	}
 
@@ -346,13 +324,11 @@ public final class FloodProtectors
 	 *
 	 * @return {@link #pickUp}
 	 */
-	public FloodProtectorAction getPickUpItem()
-	{
+	public FloodProtectorAction getPickUpItem() {
 		return pickUp;
 	}
 
-	public FloodProtectorAction getReportBot()
-	{
+	public FloodProtectorAction getReportBot() {
 		return reportBot;
 	}
 }

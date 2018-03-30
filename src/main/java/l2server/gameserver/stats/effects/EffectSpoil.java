@@ -27,15 +27,13 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 
 /**
  * @author Ahmed
- *         <p>
- *         This is the Effect support for spoil.
- *         <p>
- *         This was originally done by _drunk_
+ * <p>
+ * This is the Effect support for spoil.
+ * <p>
+ * This was originally done by _drunk_
  */
-public class EffectSpoil extends L2Effect
-{
-	public EffectSpoil(Env env, L2EffectTemplate template)
-	{
+public class EffectSpoil extends L2Effect {
+	public EffectSpoil(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -43,39 +41,32 @@ public class EffectSpoil extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (!(getEffector() instanceof L2PcInstance))
-		{
+	public boolean onStart() {
+		if (!(getEffector() instanceof L2PcInstance)) {
 			return false;
 		}
 
-		if (!(getEffected() instanceof L2MonsterInstance))
-		{
+		if (!(getEffected() instanceof L2MonsterInstance)) {
 			return false;
 		}
 
 		L2MonsterInstance target = (L2MonsterInstance) getEffected();
 
-		if (target == null)
-		{
+		if (target == null) {
 			return false;
 		}
 
-		if (target.isSpoil())
-		{
+		if (target.isSpoil()) {
 			getEffector().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_SPOILED));
 			return false;
 		}
 
 		// SPOIL SYSTEM by Lbaldi
 		boolean spoil = false;
-		if (!target.isDead())
-		{
+		if (!target.isDead()) {
 			spoil = Formulas.calcMagicSuccess(getEffector(), target, getSkill());
 
-			if (spoil)
-			{
+			if (spoil) {
 				target.setSpoil(true);
 				target.setIsSpoiledBy(getEffector().getObjectId());
 				getEffector().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SPOIL_SUCCESS));
@@ -89,8 +80,7 @@ public class EffectSpoil extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 }

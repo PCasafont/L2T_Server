@@ -20,29 +20,23 @@ import java.util.List;
 /**
  * @author Pere
  */
-public class VIPTeamVsTeam extends EventInstance
-{
+public class VIPTeamVsTeam extends EventInstance {
 
-	public VIPTeamVsTeam(int id, EventConfig config)
-	{
+	public VIPTeamVsTeam(int id, EventConfig config) {
 		super(id, config);
 	}
 
 	@Override
-	public boolean startFight()
-	{
-		if (!super.startFight())
-		{
+	public boolean startFight() {
+		if (!super.startFight()) {
 			return false;
 		}
 
 		// Iterate over all teams
-		for (EventTeam team : teams)
-		{
+		for (EventTeam team : teams) {
 			team.setVIP(team.selectRandomParticipant());
 			int antiLock = 0;
-			while (team.getVIP() == null && antiLock < 10)
-			{
+			while (team.getVIP() == null && antiLock < 10) {
 				team.setVIP(team.selectRandomParticipant());
 				antiLock++;
 			}
@@ -52,16 +46,12 @@ public class VIPTeamVsTeam extends EventInstance
 	}
 
 	@Override
-	public void calculateRewards()
-	{
+	public void calculateRewards() {
 		EventTeam team;
-		if (config.getLocation().getTeamCount() != 4)
-		{
-			if (teams[0].getPoints() == teams[1].getPoints())
-			{
+		if (config.getLocation().getTeamCount() != 4) {
+			if (teams[0].getPoints() == teams[1].getPoints()) {
 				// Check if one of the teams have no more players left
-				if (teams[0].getParticipatedPlayerCount() == 0 || teams[1].getParticipatedPlayerCount() == 0)
-				{
+				if (teams[0].getParticipatedPlayerCount() == 0 || teams[1].getParticipatedPlayerCount() == 0) {
 					// set state to rewarding
 					setState(EventState.REWARDING);
 					// return here, the Fight can't be completed
@@ -70,8 +60,7 @@ public class VIPTeamVsTeam extends EventInstance
 				}
 
 				// Both teams have equals points
-				if (Config.INSTANCED_EVENT_REWARD_TEAM_TIE)
-				{
+				if (Config.INSTANCED_EVENT_REWARD_TEAM_TIE) {
 					rewardTeams(-1);
 				}
 				Announcements.getInstance().announceToAll("The event has ended in a tie");
@@ -84,173 +73,131 @@ public class VIPTeamVsTeam extends EventInstance
 			// Get team which has more points
 			team = teams[teams[0].getPoints() > teams[1].getPoints() ? 0 : 1];
 
-			if (team == teams[0])
-			{
+			if (team == teams[0]) {
 				rewardTeams(0);
-			}
-			else
-			{
+			} else {
 				rewardTeams(1);
 			}
-		}
-		else
-		{
+		} else {
 			// Set state REWARDING so nobody can point anymore
 			setState(EventState.REWARDING);
 			if (teams[0].getPoints() > teams[1].getPoints() && teams[0].getPoints() > teams[2].getPoints() &&
-					teams[0].getPoints() > teams[3].getPoints())
-			{
+					teams[0].getPoints() > teams[3].getPoints()) {
 				rewardTeams(0);
 				team = teams[0];
-			}
-			else if (teams[1].getPoints() > teams[0].getPoints() && teams[1].getPoints() > teams[2].getPoints() &&
-					teams[1].getPoints() > teams[3].getPoints())
-			{
+			} else if (teams[1].getPoints() > teams[0].getPoints() && teams[1].getPoints() > teams[2].getPoints() &&
+					teams[1].getPoints() > teams[3].getPoints()) {
 				rewardTeams(1);
 				team = teams[1];
-			}
-			else if (teams[2].getPoints() > teams[0].getPoints() && teams[2].getPoints() > teams[1].getPoints() &&
-					teams[2].getPoints() > teams[3].getPoints())
-			{
+			} else if (teams[2].getPoints() > teams[0].getPoints() && teams[2].getPoints() > teams[1].getPoints() &&
+					teams[2].getPoints() > teams[3].getPoints()) {
 				rewardTeams(2);
 				team = teams[2];
-			}
-			else if (teams[3].getPoints() > teams[0].getPoints() && teams[3].getPoints() > teams[1].getPoints() &&
-					teams[3].getPoints() > teams[2].getPoints())
-			{
+			} else if (teams[3].getPoints() > teams[0].getPoints() && teams[3].getPoints() > teams[1].getPoints() &&
+					teams[3].getPoints() > teams[2].getPoints()) {
 				rewardTeams(3);
 				team = teams[3];
-			}
-			else
-			{
+			} else {
 				Announcements.getInstance().announceToAll("The event has ended in a tie");
 				return;
 			}
 		}
 
-		Announcements.getInstance().announceToAll(
-				"The event has ended. Team " + team.getName() + " won with " + team.getPoints() + " kill points.");
+		Announcements.getInstance().announceToAll("The event has ended. Team " + team.getName() + " won with " + team.getPoints() + " kill points.");
 	}
 
 	@Override
-	public String getRunningInfo(L2PcInstance player)
-	{
+	public String getRunningInfo(L2PcInstance player) {
 		String html = "";
-		for (EventTeam team : teams)
-		{
-			if (team.getVIP() == null)
-			{
+		for (EventTeam team : teams) {
+			if (team.getVIP() == null) {
 				team.setVIP(team.selectRandomParticipant());
 				int antiLock = 0;
-				while (team.getVIP() == null && antiLock < 10)
-				{
+				while (team.getVIP() == null && antiLock < 10) {
 					team.setVIP(team.selectRandomParticipant());
 					antiLock++;
 				}
 				setImportant(team.getVIP(), true);
 			}
-			if (team.getParticipatedPlayerCount() > 0)
-			{
-				html += "Team " + team.getName() + " VIP: " + team.getVIP().getName() + "; points: " +
-						team.getPoints() + "<br>";
+			if (team.getParticipatedPlayerCount() > 0) {
+				html += "Team " + team.getName() + " VIP: " + team.getVIP().getName() + "; points: " + team.getPoints() + "<br>";
 			}
 		}
-		if (html.length() > 4)
-		{
+		if (html.length() > 4) {
 			html = html.substring(0, html.length() - 4);
 		}
 		return html;
 	}
 
 	@Override
-	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance)
-	{
-		if (killedPlayerInstance == null || !isState(EventState.STARTED))
-		{
+	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance) {
+		if (killedPlayerInstance == null || !isState(EventState.STARTED)) {
 			return;
 		}
 
 		byte killedTeamId = getParticipantTeamId(killedPlayerInstance.getObjectId());
 
-		if (killedTeamId == -1)
-		{
+		if (killedTeamId == -1) {
 			return;
 		}
 
 		new EventTeleporter(killedPlayerInstance, teams[killedTeamId].getCoords(), false, false);
 
-		if (killerCharacter == null ||
-				getParticipantTeam(killedPlayerInstance.getObjectId()).getVIP() != killedPlayerInstance)
-		{
+		if (killerCharacter == null || getParticipantTeam(killedPlayerInstance.getObjectId()).getVIP() != killedPlayerInstance) {
 			return;
 		}
 
 		L2PcInstance killerPlayerInstance = null;
 
-		if (killerCharacter instanceof L2PetInstance || killerCharacter instanceof L2SummonInstance)
-		{
+		if (killerCharacter instanceof L2PetInstance || killerCharacter instanceof L2SummonInstance) {
 			killerPlayerInstance = ((L2Summon) killerCharacter).getOwner();
 
-			if (killerPlayerInstance == null)
-			{
+			if (killerPlayerInstance == null) {
 				return;
 			}
-		}
-		else if (killerCharacter instanceof L2PcInstance)
-		{
+		} else if (killerCharacter instanceof L2PcInstance) {
 			killerPlayerInstance = (L2PcInstance) killerCharacter;
-		}
-		else
-		{
+		} else {
 			return;
 		}
 
 		byte killerTeamId = getParticipantTeamId(killerPlayerInstance.getObjectId());
 
 		boolean friendlyDeath = killerTeamId == killedTeamId;
-		if (killerTeamId != -1 && killedTeamId != -1 && !friendlyDeath)
-		{
+		if (killerTeamId != -1 && killedTeamId != -1 && !friendlyDeath) {
 			EventTeam killerTeam = teams[killerTeamId];
 
 			killerTeam.increasePoints();
 
-			CreatureSay cs =
-					new CreatureSay(killerPlayerInstance.getObjectId(), Say2.TELL, killerPlayerInstance.getName(),
-							"I have killed " + killedPlayerInstance.getName() + "!");
-			for (L2PcInstance playerInstance : teams[killerTeamId].getParticipatedPlayers().values())
-			{
-				if (playerInstance != null)
-				{
+			CreatureSay cs = new CreatureSay(killerPlayerInstance.getObjectId(),
+					Say2.TELL,
+					killerPlayerInstance.getName(),
+					"I have killed " + killedPlayerInstance.getName() + "!");
+			for (L2PcInstance playerInstance : teams[killerTeamId].getParticipatedPlayers().values()) {
+				if (playerInstance != null) {
 					playerInstance.sendPacket(cs);
 				}
 			}
 
 			killerPlayerInstance.addEventPoints(3);
-			List<L2PcInstance> assistants =
-					PlayerAssistsManager.getInstance().getAssistants(killerPlayerInstance, killedPlayerInstance, true);
-			for (L2PcInstance assistant : assistants)
-			{
+			List<L2PcInstance> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayerInstance, killedPlayerInstance, true);
+			for (L2PcInstance assistant : assistants) {
 				assistant.addEventPoints(1);
 			}
 		}
 	}
 
 	@Override
-	public boolean removeParticipant(int playerObjectId)
-	{
-		if (!super.removeParticipant(playerObjectId))
-		{
+	public boolean removeParticipant(int playerObjectId) {
+		if (!super.removeParticipant(playerObjectId)) {
 			return false;
 		}
 
-		for (EventTeam team : teams)
-		{
-			if (team.getVIP() == null || team.getVIP().getObjectId() == playerObjectId)
-			{
+		for (EventTeam team : teams) {
+			if (team.getVIP() == null || team.getVIP().getObjectId() == playerObjectId) {
 				team.setVIP(team.selectRandomParticipant());
 				int antiLock = 0;
-				while (team.getVIP() == null && antiLock < 10)
-				{
+				while (team.getVIP() == null && antiLock < 10) {
 					team.setVIP(team.selectRandomParticipant());
 					antiLock++;
 				}

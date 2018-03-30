@@ -9077,42 +9077,42 @@
 		<set name="operateType" val="OP_PASSIVE" />
 	</skill>
 	<skill id="12875" levels="3" name="Fire Stone">
-		<table name="#name">Fire Stone;Fire Crystal;Fire Stone		</table>
+		<table name="#name">Fire Stone;Fire Crystal;Fire Stone</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<skill id="12876" levels="3" name="Water Stone">
-		<table name="#name">Water Stone;Water Crystal;Water Stone		</table>
+		<table name="#name">Water Stone;Water Crystal;Water Stone</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<skill id="12877" levels="3" name="Wind Stone">
-		<table name="#name">Wind Stone;Wind Crystal;Wind Stone		</table>
+		<table name="#name">Wind Stone;Wind Crystal;Wind Stone</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<skill id="12878" levels="3" name="Earth Stone">
-		<table name="#name">Earth Stone;Earth Crystal;Earth Stone		</table>
+		<table name="#name">Earth Stone;Earth Crystal;Earth Stone</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<skill id="12879" levels="3" name="Holy Stone">
-		<table name="#name">Holy Stone;Holy Crystal;Holy Stone		</table>
+		<table name="#name">Holy Stone;Holy Crystal;Holy Stone</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<skill id="12880" levels="3" name="Dark Stone">
-		<table name="#name">Dark Stone;Dark Crystal;Dark Stone		</table>
+		<table name="#name">Dark Stone;Dark Crystal;Dark Stone</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />

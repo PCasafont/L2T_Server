@@ -1,9 +1,11 @@
 CREATE TABLE IF NOT EXISTS `heroes` (
-  `charId` INT UNSIGNED NOT NULL default 0,
-  `class_id` decimal(3,0) NOT NULL default 0,
-  `count` decimal(3,0) NOT NULL default 0,
-  `played` decimal(1,0) NOT NULL default 0,
-  `message` varchar(300) NOT NULL default '',
+  `charId`   INT UNSIGNED  NOT NULL DEFAULT 0,
+  `class_id` DECIMAL(3, 0) NOT NULL DEFAULT 0,
+  `count`    DECIMAL(3, 0) NOT NULL DEFAULT 0,
+  `played`   DECIMAL(1, 0) NOT NULL DEFAULT 0,
+  `message`  VARCHAR(300)  NOT NULL DEFAULT '',
   PRIMARY KEY (`charId`),
-  FOREIGN KEY (`charId`) REFERENCES `characters`(`charId`) ON UPDATE CASCADE ON DELETE CASCADE
+  FOREIGN KEY (`charId`) REFERENCES `characters` (`charId`)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
 );

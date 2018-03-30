@@ -22,58 +22,49 @@ import l2server.gameserver.model.itemauction.ItemAuctionState;
 
 /**
  * @author Forsaiken
- *         Format: (cdqd)(dddqhhhdhhdddhhhhhhhhhhh)(ddd)(dddqhhhdhhdddhhhhhhhhhhh)
+ * Format: (cdqd)(dddqhhhdhhdddhhhhhhhhhhh)(ddd)(dddqhhhdhhdddhhhhhhhhhhh)
  */
-public final class ExItemAuctionInfoPacket extends L2GameServerPacket
-{
+public final class ExItemAuctionInfoPacket extends L2GameServerPacket {
 	private final boolean refresh;
 	private final int timeRemaining;
 	private final ItemAuction currentAuction;
 	private final ItemAuction nextAuction;
-
-	public ExItemAuctionInfoPacket(final boolean refresh, final ItemAuction currentAuction, final ItemAuction nextAuction)
-	{
-		if (currentAuction == null)
-		{
+	
+	public ExItemAuctionInfoPacket(final boolean refresh, final ItemAuction currentAuction, final ItemAuction nextAuction) {
+		if (currentAuction == null) {
 			throw new NullPointerException();
 		}
-
-		if (currentAuction.getAuctionState() != ItemAuctionState.STARTED)
-		{
+		
+		if (currentAuction.getAuctionState() != ItemAuctionState.STARTED) {
 			timeRemaining = 0;
-		}
-		else
-		{
+		} else {
 			timeRemaining = (int) (currentAuction.getFinishingTimeRemaining() / 1000); // in seconds
 		}
-
+		
 		this.refresh = refresh;
 		this.currentAuction = currentAuction;
 		this.nextAuction = nextAuction;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeC(refresh ? 0x00 : 0x01);
 		writeD(currentAuction.getInstanceId());
-
+		
 		final ItemAuctionBid highestBid = currentAuction.getHighestBid();
 		writeQ(highestBid != null ? highestBid.getLastBid() : currentAuction.getAuctionInitBid());
-
+		
 		writeD(timeRemaining);
 		writeItemInfo(currentAuction.getItemInfo());
-
-		if (nextAuction != null)
-		{
+		
+		if (nextAuction != null) {
 			writeQ(nextAuction.getAuctionInitBid());
 			writeD((int) (nextAuction.getStartingTime() / 1000)); // unix time in seconds
 			writeItemInfo(nextAuction.getItemInfo());
 		}
 	}
-
-	private void writeItemInfo(final ItemInfo item)
-	{
+	
+	private void writeItemInfo(final ItemInfo item) {
 		writeD(item.getItem().getItemId());
 		writeD(item.getItem().getItemId());
 		writeD(item.getLocationSlot());
@@ -88,18 +79,17 @@ public final class ExItemAuctionInfoPacket extends L2GameServerPacket
 		writeD(item.getMana());
 		writeD(item.getRemainingTime());
 		writeH(0x01); //God
-
+		
 		writeH(item.getAttackElementType());
 		writeH(item.getAttackElementPower());
-		for (byte i = 0; i < 6; i++)
-		{
+		for (byte i = 0; i < 6; i++) {
 			super.writeH(item.getElementDefAttr(i));
 		}
-
+		
 		writeD(0x00); // enchant effect 1
 		writeD(0x00); // enchant effect 2
 		writeD(0x00); // enchant effect 3
-
+		
 		writeD(item.getAppearance());
 	}
 }

@@ -22,7 +22,6 @@ package l2server.network;
  * @param <T>
  * @author KenM
  */
-public interface IClientFactory<T extends MMOClient<?>>
-{
+public interface IClientFactory<T extends MMOClient<?>> {
 	T create(final MMOConnection<T> con);
 }

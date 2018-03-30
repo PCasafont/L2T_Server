@@ -15,6 +15,7 @@
 
 package ai.individual.Cocoons;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Skill;
@@ -24,19 +25,16 @@ import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.util.Rnd;
 
-import ai.group_template.L2AttackableAIScript;
-
 /**
  * @author LasTravel
- *         <p>
- *         Cocoons AI
- *         <p>
- *         Source:
- *         - http://l2wiki.com/Large_Cocoon
+ * <p>
+ * Cocoons AI
+ * <p>
+ * Source:
+ * - http://l2wiki.com/Large_Cocoon
  */
 
-public class Cocoons extends L2AttackableAIScript
-{
+public class Cocoons extends L2AttackableAIScript {
 	private static final int cocoon = 32919;
 	private static final int largeCocoon = 32920;
 	private static final int contaminatedLargeCocoon = 19394;
@@ -48,12 +46,10 @@ public class Cocoons extends L2AttackableAIScript
 	private static final int[] brutalMobs = {22868, 22884, 22908, 22900, 22892, 22876};
 	private static final int[] slightlyMobs = {22870, 22886, 22910, 22902, 22894, 22878};
 
-	public Cocoons(int id, String name, String descr)
-	{
+	public Cocoons(int id, String name, String descr) {
 		super(id, name, descr);
 
-		for (int a = cocoon; a <= largeCocoon; a++)
-		{
+		for (int a = cocoon; a <= largeCocoon; a++) {
 			addAttackId(a);
 			addStartNpc(a);
 			addTalkId(a);
@@ -63,92 +59,66 @@ public class Cocoons extends L2AttackableAIScript
 
 		addSpawnId(contaminatedCocoon);
 
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-		{
-			if (spawn == null)
-			{
+		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable()) {
+			if (spawn == null) {
 				continue;
 			}
 
-			if (spawn.getNpcId() == cocoon || spawn.getNpcId() == largeCocoon)
-			{
+			if (spawn.getNpcId() == cocoon || spawn.getNpcId() == largeCocoon) {
 				notifySpawn(spawn.getNpc());
 			}
 		}
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
+	public final String onSpawn(L2Npc npc) {
 		npc.setIsImmobilized(true);
 
 		return super.onSpawn(npc);
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		int mobs[] = null;
-		if (event.equalsIgnoreCase("normalAttack"))
-		{
-			if (!npc.isDead() && !npc.isDecayed())
-			{
+		if (event.equalsIgnoreCase("normalAttack")) {
+			if (!npc.isDead() && !npc.isDecayed()) {
 				npc.doDie(null);
-				if (npc.getNpcId() == cocoon)
-				{
-					if (Rnd.get(10) > 7)
-					{
+				if (npc.getNpcId() == cocoon) {
+					if (Rnd.get(10) > 7) {
 						addSpawn(contaminatedCocoon, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0);
 						mobs = wickedMobs;
-					}
-					else
-					{
+					} else {
 						mobs = normalMobs;
 					}
-				}
-				else
-				{
-					if (Rnd.get(10) > 7)
-					{
+				} else {
+					if (Rnd.get(10) > 7) {
 						addSpawn(contaminatedLargeCocoon, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0);
 						mobs = brutalMobs;
-					}
-					else
-					{
+					} else {
 						mobs = violentMobs;
 					}
 				}
 			}
-		}
-		else if (event.equalsIgnoreCase("strongAttack"))
-		{
-			if (!npc.isDead() && !npc.isDecayed())
-			{
+		} else if (event.equalsIgnoreCase("strongAttack")) {
+			if (!npc.isDead() && !npc.isDecayed()) {
 				npc.doDie(null);
-				if (npc.getNpcId() == cocoon)
-				{
+				if (npc.getNpcId() == cocoon) {
 					mobs = wickedMobs;
-				}
-				else
-				{
+				} else {
 					mobs = slightlyMobs;
 				}
 			}
 		}
 
-		if (mobs != null)
-		{
-			for (int a = 0; a <= 3; a++)
-			{
-				L2Npc mob = addSpawn(mobs[Rnd.get(mobs.length)], npc.getX(), npc.getY(), npc.getZ(), 0, false, 180000,
-						true); //3 min self-despawn
+		if (mobs != null) {
+			for (int a = 0; a <= 3; a++) {
+				L2Npc mob = addSpawn(mobs[Rnd.get(mobs.length)], npc.getX(), npc.getY(), npc.getZ(), 0, false, 180000, true); //3 min self-despawn
 				mob.setIsRunning(true);
 				mob.setTarget(player);
 				((L2MonsterInstance) mob).addDamageHate(player, 500, 99999);
 				mob.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 
-				if (event.equalsIgnoreCase("strongAttack"))
-				{
+				if (event.equalsIgnoreCase("strongAttack")) {
 					mob.setCurrentHp(mob.getMaxHp() * 0.90);
 				}
 			}
@@ -157,28 +127,22 @@ public class Cocoons extends L2AttackableAIScript
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return "cocoon.html";
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
-	{
-		if (skill == null)
-		{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill) {
+		if (skill == null) {
 			notifyEvent("normalAttack", npc, attacker);
-		}
-		else
-		{
+		} else {
 			notifyEvent("strongAttack", npc, attacker);
 		}
 
 		return super.onAttack(npc, attacker, damage, isPet, skill);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Cocoons(-1, "Cocoons", "ai/individual");
 	}
 }

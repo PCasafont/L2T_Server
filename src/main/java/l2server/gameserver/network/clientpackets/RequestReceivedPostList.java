@@ -22,21 +22,17 @@ import l2server.gameserver.network.serverpackets.ExShowReceivedPostList;
 /**
  * @author Pere, DS
  */
-public final class RequestReceivedPostList extends L2GameClientPacket
-{
-
+public final class RequestReceivedPostList extends L2GameClientPacket {
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// trigger packet
 	}
-
+	
 	@Override
-	public void runImpl()
-	{
+	public void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null || !Config.ALLOW_MAIL)
-		{
+		if (activeChar == null || !Config.ALLOW_MAIL) {
 			return;
 		}
 
@@ -45,13 +41,12 @@ public final class RequestReceivedPostList extends L2GameClientPacket
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
 			return;
 		}*/
-
+		
 		activeChar.sendPacket(new ExShowReceivedPostList(activeChar.getObjectId()));
 	}
-
+	
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

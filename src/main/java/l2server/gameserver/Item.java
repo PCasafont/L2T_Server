@@ -30,8 +30,7 @@ import l2server.gameserver.templates.item.L2Item;
  *
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
-public class Item
-{
+public class Item {
 	public int id;
 
 	public String type;

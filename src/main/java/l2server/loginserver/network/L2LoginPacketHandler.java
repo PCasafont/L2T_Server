@@ -17,11 +17,7 @@ package l2server.loginserver.network;
 
 import l2server.log.Log;
 import l2server.loginserver.network.L2LoginClient.LoginClientState;
-import l2server.loginserver.network.clientpackets.AuthGameGuard;
-import l2server.loginserver.network.clientpackets.RequestAuthLogin;
-import l2server.loginserver.network.clientpackets.RequestAuthLogin2;
-import l2server.loginserver.network.clientpackets.RequestServerList;
-import l2server.loginserver.network.clientpackets.RequestServerLogin;
+import l2server.loginserver.network.clientpackets.*;
 import l2server.network.IPacketHandler;
 import l2server.network.ReceivablePacket;
 import l2server.util.Util;
@@ -33,24 +29,20 @@ import java.nio.ByteBuffer;
  *
  * @author KenM
  */
-public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient>
-{
+public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient> {
 
 	/**
 	 */
 	@Override
-	public ReceivablePacket<L2LoginClient> handlePacket(ByteBuffer buf, L2LoginClient client)
-	{
+	public ReceivablePacket<L2LoginClient> handlePacket(ByteBuffer buf, L2LoginClient client) {
 		int opcode = buf.get() & 0xFF;
 
 		ReceivablePacket<L2LoginClient> packet = null;
 		LoginClientState state = client.getState();
 
-		switch (state)
-		{
+		switch (state) {
 			case CONNECTED:
-				switch (opcode)
-				{
+				switch (opcode) {
 					case 0x07:
 						packet = new AuthGameGuard();
 						break;
@@ -60,8 +52,7 @@ public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient>
 				}
 				break;
 			case AUTHED_GG:
-				switch (opcode)
-				{
+				switch (opcode) {
 					case 0x00:
 						packet = new RequestAuthLogin();
 						break;
@@ -74,8 +65,7 @@ public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient>
 				}
 				break;
 			case AUTHED_LOGIN:
-				switch (opcode)
-				{
+				switch (opcode) {
 					case 0x02:
 						packet = new RequestServerLogin();
 						break;
@@ -91,8 +81,7 @@ public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient>
 		return packet;
 	}
 
-	private void debugOpcode(ByteBuffer buf, int opcode, LoginClientState state)
-	{
+	private void debugOpcode(ByteBuffer buf, int opcode, LoginClientState state) {
 		Log.info("Unknown Opcode: " + opcode + " for state: " + state.name());
 		String op = "0x" + Integer.toHexString(opcode);
 

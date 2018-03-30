@@ -20,29 +20,26 @@ package l2server.gameserver.network.serverpackets;
  * <p>
  * Format: (ch)ddddd
  */
-public class ExBrLoadEventTopRankers extends L2GameServerPacket
-{
+public class ExBrLoadEventTopRankers extends L2GameServerPacket {
 	private int eventId;
 	private int day;
 	private int count;
 	private int bestScore;
 	private int myScore;
-
-	public ExBrLoadEventTopRankers(int eventId, int day, int count, int bestScore, int myScore)
-	{
+	
+	public ExBrLoadEventTopRankers(int eventId, int day, int count, int bestScore, int myScore) {
 		this.eventId = eventId;
 		this.day = day;
 		this.count = count;
 		this.bestScore = bestScore;
 		this.myScore = myScore;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(eventId);
 		writeD(day);
 		writeD(count);

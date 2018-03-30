@@ -21,32 +21,26 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author JIV
  */
-public class RequestPartyLootModification extends L2GameClientPacket
-{
-
+public class RequestPartyLootModification extends L2GameClientPacket {
+	
 	private byte mode;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		mode = (byte) readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-		if (mode < 0 || mode > L2Party.ITEM_ORDER_SPOIL)
-		{
+		if (mode < 0 || mode > L2Party.ITEM_ORDER_SPOIL) {
 			return;
 		}
 		L2Party party = activeChar.getParty();
-		if (party == null || mode == party.getLootDistribution() || party.getLeader() != activeChar)
-		{
+		if (party == null || mode == party.getLootDistribution() || party.getLeader() != activeChar) {
 			return;
 		}
 		party.requestLootChange(mode);

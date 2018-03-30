@@ -30,14 +30,12 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class LoginLog
-{
+public class LoginLog {
 	private static final Logger log = Logger.getLogger(LoginLog.class.getName());
 
-	public static void add(String text, String cat)
-	{
+	public static void add(String text, String cat) {
 		/*
-         * Logger log = logs.get(cat); if (log == null) { log =
+		 * Logger log = logs.get(cat); if (log == null) { log =
 		 * Logger.getLogger(cat); logs.put(cat, log); }
 		 */
 
@@ -46,25 +44,17 @@ public class LoginLog
 		new File("log/game").mkdirs();
 		FileWriter save = null;
 
-		try
-		{
+		try {
 			File file = new File("log/game/" + (curr != null ? curr : "") + (cat != null ? cat : "unk") + ".txt");
 			save = new FileWriter(file, true);
 			String out = "[" + date + "] " + text + "\n";
 			save.write(out);
-		}
-		catch (IOException e)
-		{
+		} catch (IOException e) {
 			log.log(Level.WARNING, "Error saving logfile: ", e);
-		}
-		finally
-		{
-			try
-			{
+		} finally {
+			try {
 				save.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}

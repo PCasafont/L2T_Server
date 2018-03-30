@@ -25,49 +25,41 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  * @author UnAfraid
  */
 
-public class EffectTransferDamage extends L2Effect
-{
-	public EffectTransferDamage(Env env, L2EffectTemplate template)
-	{
+public class EffectTransferDamage extends L2Effect {
+	public EffectTransferDamage(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
-
-	public EffectTransferDamage(Env env, L2Effect effect)
-	{
+	
+	public EffectTransferDamage(Env env, L2Effect effect) {
 		super(env, effect);
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (getEffected() instanceof L2Playable && getEffector() instanceof L2PcInstance)
-		{
+	public boolean onStart() {
+		if (getEffected() instanceof L2Playable && getEffector() instanceof L2PcInstance) {
 			((L2Playable) getEffected()).setTransferDamageTo((L2PcInstance) getEffector());
 		}
 		return true;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
-		if (getEffected() instanceof L2Playable && getEffector() instanceof L2PcInstance)
-		{
+	public void onExit() {
+		if (getEffected() instanceof L2Playable && getEffector() instanceof L2PcInstance) {
 			((L2Playable) getEffected()).setTransferDamageTo(null);
 		}
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 }

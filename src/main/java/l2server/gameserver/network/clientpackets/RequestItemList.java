@@ -22,29 +22,23 @@ import l2server.gameserver.network.serverpackets.ItemList;
  *
  * @version $Revision: 1.3.4.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestItemList extends L2GameClientPacket
-{
+public final class RequestItemList extends L2GameClientPacket {
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// trigger
 	}
 
 	@Override
-	protected void runImpl()
-	{
-		if (getClient() != null && getClient().getActiveChar() != null &&
-				!getClient().getActiveChar().isInventoryDisabled())
-		{
+	protected void runImpl() {
+		if (getClient() != null && getClient().getActiveChar() != null && !getClient().getActiveChar().isInventoryDisabled()) {
 			ItemList il = new ItemList(getClient().getActiveChar(), true);
 			sendPacket(il);
 		}
 	}
 
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

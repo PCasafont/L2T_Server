@@ -24,16 +24,13 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2EffectType;
 import l2server.gameserver.templates.skills.L2SkillType;
 
-public class EffectSilentMove extends L2Effect
-{
-	public EffectSilentMove(Env env, L2EffectTemplate template)
-	{
+public class EffectSilentMove extends L2Effect {
+	public EffectSilentMove(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	// Special constructor to steal this effect
-	public EffectSilentMove(Env env, L2Effect effect)
-	{
+	public EffectSilentMove(Env env, L2Effect effect) {
 		super(env, effect);
 	}
 
@@ -41,8 +38,7 @@ public class EffectSilentMove extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#effectCanBeStolen()
 	 */
 	@Override
-	protected boolean effectCanBeStolen()
-	{
+	protected boolean effectCanBeStolen() {
 		return true;
 	}
 
@@ -50,8 +46,7 @@ public class EffectSilentMove extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		super.onStart();
 		return true;
 	}
@@ -60,8 +55,7 @@ public class EffectSilentMove extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		super.onExit();
 	}
 
@@ -69,14 +63,12 @@ public class EffectSilentMove extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.SILENT_MOVE;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.BUFF;
 	}
 
@@ -84,23 +76,19 @@ public class EffectSilentMove extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		// Only cont skills shouldn't end
-		if (getSkill().getSkillType() != L2SkillType.CONT)
-		{
+		if (getSkill().getSkillType() != L2SkillType.CONT) {
 			return false;
 		}
 
-		if (getEffected().isDead())
-		{
+		if (getEffected().isDead()) {
 			return false;
 		}
 
 		double manaDam = calc();
 
-		if (manaDam > getEffected().getCurrentMp())
-		{
+		if (manaDam > getEffected().getCurrentMp()) {
 			getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
 			return false;
 		}

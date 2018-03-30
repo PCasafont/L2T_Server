@@ -34,11 +34,7 @@ import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.model.zone.type.L2OlympiadStadiumZone;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExOlympiadMode;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.L2GameServerPacket;
-import l2server.gameserver.network.serverpackets.SkillCoolTime;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.log.Log;
 
 import java.util.List;
@@ -48,8 +44,7 @@ import java.util.logging.Logger;
 /**
  * @author godson, GodKratos, Pere, DS
  */
-public abstract class AbstractOlympiadGame
-{
+public abstract class AbstractOlympiadGame {
 	protected static final Logger logResults = Logger.getLogger("olympiad");
 
 	protected static final String POINTS = "olympiad_points";
@@ -66,29 +61,24 @@ public abstract class AbstractOlympiadGame
 	protected boolean aborted = false;
 	protected final int gameId;
 
-	protected AbstractOlympiadGame(int id)
-	{
+	protected AbstractOlympiadGame(int id) {
 		gameId = id;
 	}
 
-	public final boolean isAborted()
-	{
+	public final boolean isAborted() {
 		return aborted;
 	}
 
-	public final int getGameId()
-	{
+	public final int getGameId() {
 		return gameId;
 	}
 
-	protected boolean makeCompetitionStart()
-	{
+	protected boolean makeCompetitionStart() {
 		startTime = System.currentTimeMillis();
 		return !aborted;
 	}
 
-	protected final void addPointsToParticipant(OlympiadParticipant par, int points)
-	{
+	protected final void addPointsToParticipant(OlympiadParticipant par, int points) {
 		par.nobleInfo.setPoints(par.nobleInfo.getPoints() + points);
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_GAINED_S2_OLYMPIAD_POINTS);
 		sm.addString(par.name);
@@ -96,8 +86,7 @@ public abstract class AbstractOlympiadGame
 		broadcastPacketToParticipants(sm);
 	}
 
-	protected final void removePointsFromParticipant(OlympiadParticipant par, int points)
-	{
+	protected final void removePointsFromParticipant(OlympiadParticipant par, int points) {
 		par.nobleInfo.setPoints(par.nobleInfo.getPoints() - points);
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_LOST_S2_OLYMPIAD_POINTS);
 		sm.addString(par.name);
@@ -111,82 +100,63 @@ public abstract class AbstractOlympiadGame
 	 *
 	 * @return
 	 */
-	protected final SystemMessage checkDefaulted(OlympiadParticipant par)
-	{
+	protected final SystemMessage checkDefaulted(OlympiadParticipant par) {
 		L2PcInstance player = par.player;
-		if (player == null || !player.isOnline() || player.getClient() == null || player.getClient().isDetached())
-		{
+		if (player == null || !player.isOnline() || player.getClient() == null || player.getClient().isDetached()) {
 			int playerPoints = par.nobleInfo.getPoints();
 			int points = Math.min(playerPoints / 2, Config.ALT_OLY_MAX_POINTS);
 			removePointsFromParticipant(par, points);
-			return SystemMessage.getSystemMessage(
-					SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_ENDS_THE_GAME);
+			return SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_ENDS_THE_GAME);
 		}
 
 		// safety precautions
-		if (player.inObserverMode() || EventsManager.getInstance().isPlayerParticipant(player.getObjectId()))
-		{
-			return SystemMessage.getSystemMessage(
-					SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_DOES_NOT_MEET_THE_REQUIREMENTS_FOR_JOINING_THE_GAME);
+		if (player.inObserverMode() || EventsManager.getInstance().isPlayerParticipant(player.getObjectId())) {
+			return SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_DOES_NOT_MEET_THE_REQUIREMENTS_FOR_JOINING_THE_GAME);
 		}
 
 		SystemMessage sm;
-		if (player.isDead())
-		{
+		if (player.isDead()) {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_CANNOT_PARTICIPATE_OLYMPIAD_WHILE_DEAD);
 			sm.addPcName(player);
 			player.sendPacket(sm);
-			return SystemMessage.getSystemMessage(
-					SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_DOES_NOT_MEET_THE_REQUIREMENTS_FOR_JOINING_THE_GAME);
+			return SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_DOES_NOT_MEET_THE_REQUIREMENTS_FOR_JOINING_THE_GAME);
 		}
-		if (player.isSubClassActive())
-		{
-			sm = SystemMessage
-					.getSystemMessage(SystemMessageId.C1_CANNOT_PARTICIPATE_IN_OLYMPIAD_WHILE_CHANGED_TO_SUB_CLASS);
+		if (player.isSubClassActive()) {
+			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_CANNOT_PARTICIPATE_IN_OLYMPIAD_WHILE_CHANGED_TO_SUB_CLASS);
 			sm.addPcName(player);
 			player.sendPacket(sm);
-			return SystemMessage.getSystemMessage(
-					SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_DOES_NOT_MEET_THE_REQUIREMENTS_FOR_JOINING_THE_GAME);
+			return SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_DOES_NOT_MEET_THE_REQUIREMENTS_FOR_JOINING_THE_GAME);
 		}
-		if (player.isCursedWeaponEquipped())
-		{
+		if (player.isCursedWeaponEquipped()) {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_CANNOT_JOIN_OLYMPIAD_POSSESSING_S2);
 			sm.addPcName(player);
 			sm.addItemName(player.getCursedWeaponEquippedId());
 			player.sendPacket(sm);
-			return SystemMessage.getSystemMessage(
-					SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_DOES_NOT_MEET_THE_REQUIREMENTS_FOR_JOINING_THE_GAME);
+			return SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_DOES_NOT_MEET_THE_REQUIREMENTS_FOR_JOINING_THE_GAME);
 		}
-		if (!player.isInventoryUnder90(true))
-		{
+		if (!player.isInventoryUnder90(true)) {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_CAN_PROCEED_WHEN_WHEIGHT_BELOW_80_AND_QUANTITY_90);
 			player.sendPacket(sm);
-			return SystemMessage.getSystemMessage(
-					SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_DOES_NOT_MEET_THE_REQUIREMENTS_FOR_JOINING_THE_GAME);
+			return SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_DOES_NOT_MEET_THE_REQUIREMENTS_FOR_JOINING_THE_GAME);
 		}
 
 		return null;
 	}
 
-	protected static boolean portPlayerToArena(OlympiadParticipant par, Location loc, int id)
-	{
+	protected static boolean portPlayerToArena(OlympiadParticipant par, Location loc, int id) {
 		final L2PcInstance player = par.player;
-		if (player == null || !player.isOnline())
-		{
+		if (player == null || !player.isOnline()) {
 			return false;
 		}
 
-		try
-		{
+		try {
 			player.setLastCords(player.getX(), player.getY(), player.getZ());
-			if (player.isSitting())
-			{
+			if (player.isSitting()) {
 				player.standUp();
 			}
 			player.setTarget(null);
 
-			player.getSummons().stream().filter(summon -> summon instanceof L2MobSummonInstance)
-					.forEach(summon -> summon.unSummon(player));
+			player.getSummons().stream().filter(summon -> summon instanceof L2MobSummonInstance).forEach(summon -> summon.unSummon(player));
 
 			player.setOlympiadGameId(id);
 			player.setInstanceId(id + Olympiad.BASE_INSTANCE_ID);
@@ -197,42 +167,33 @@ public abstract class AbstractOlympiadGame
 			player.olyBuff = 5;
 			player.teleToLocation(loc, false);
 			player.sendPacket(new ExOlympiadMode(2));
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, e.getMessage(), e);
 			return false;
 		}
 		return true;
 	}
 
-	protected static void removals(L2PcInstance player, boolean removeParty)
-	{
-		try
-		{
-			if (player == null)
-			{
+	protected static void removals(L2PcInstance player, boolean removeParty) {
+		try {
+			if (player == null) {
 				return;
 			}
 
 			// Remove Buffs
 			player.stopAllEffectsExceptThoseThatLastThroughDeath();
 
-			if (player.getFirstEffect(9982) != null)
-			{
+			if (player.getFirstEffect(9982) != null) {
 				player.getFirstEffect(9982).exit();
 			}
 
 			// Remove Clan Skills
-			if (player.getClan() != null)
-			{
+			if (player.getClan() != null) {
 				player.getClan().removeSkillEffects(player);
-				if (player.getClan().getHasCastle() > 0)
-				{
+				if (player.getClan().getHasCastle() > 0) {
 					CastleManager.getInstance().getCastleByOwner(player.getClan()).removeResidentialSkills(player);
 				}
-				if (player.getClan().getHasFort() > 0)
-				{
+				if (player.getClan().getHasFort() > 0) {
 					FortManager.getInstance().getFortByOwner(player.getClan()).removeResidentialSkills(player);
 				}
 			}
@@ -244,10 +205,8 @@ public abstract class AbstractOlympiadGame
 			player.getAppearance().setVisible();
 
 			// Remove Hero Skills
-			if (player.isHero())
-			{
-				for (L2Skill skill : HeroSkillTable.getHeroSkills())
-				{
+			if (player.isHero()) {
+				for (L2Skill skill : HeroSkillTable.getHeroSkills()) {
 					player.removeSkill(skill, false);
 				}
 			}
@@ -259,15 +218,13 @@ public abstract class AbstractOlympiadGame
 
 			// Remove Summon's Buffs
 			final L2PetInstance pet = player.getPet();
-			if (pet != null)
-			{
+			if (pet != null) {
 				pet.stopAllEffectsExceptThoseThatLastThroughDeath();
 				pet.abortAttack();
 				pet.abortCast();
 				pet.unSummon(player);
 			}
-			for (L2SummonInstance summon : player.getSummons())
-			{
+			for (L2SummonInstance summon : player.getSummons()) {
 				summon.stopAllEffectsExceptThoseThatLastThroughDeath();
 				summon.abortAttack();
 				summon.abortCast();
@@ -277,17 +234,14 @@ public abstract class AbstractOlympiadGame
 			player.stopCubicsByOthers();
 
 			// Remove player from his party
-			if (removeParty)
-			{
+			if (removeParty) {
 				final L2Party party = player.getParty();
-				if (party != null)
-				{
+				if (party != null) {
 					party.removePartyMember(player, messageType.Expelled);
 				}
 			}
 			// Remove Agathion
-			if (player.getAgathionId() > 0)
-			{
+			if (player.getAgathionId() > 0) {
 				player.setAgathionId(0);
 				player.broadcastUserInfo();
 			}
@@ -298,34 +252,27 @@ public abstract class AbstractOlympiadGame
 			player.disableAutoShotsAll();
 
 			// Discharge any active shots
-			if (player.getActiveWeaponInstance() != null)
-			{
+			if (player.getActiveWeaponInstance() != null) {
 				player.getActiveWeaponInstance().setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
 				player.getActiveWeaponInstance().setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
 			}
 
 			// enable skills with cool time <= 15 minutes
-			for (L2Skill skill : player.getAllSkills())
-			{
-				if (skill.getReuseDelay() <= 3600000)
-				{
+			for (L2Skill skill : player.getAllSkills()) {
+				if (skill.getReuseDelay() <= 3600000) {
 					player.enableSkill(skill);
 				}
 			}
 
 			player.sendSkillList();
 			player.sendPacket(new SkillCoolTime(player));
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, e.getMessage(), e);
 		}
 	}
 
-	protected static void cleanEffects(L2PcInstance player)
-	{
-		try
-		{
+	protected static void cleanEffects(L2PcInstance player) {
+		try {
 			// prevent players kill each other
 			player.setIsOlympiadStart(false);
 			player.setTarget(null);
@@ -333,35 +280,29 @@ public abstract class AbstractOlympiadGame
 			player.abortCast();
 			player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 
-			if (player.isDead())
-			{
+			if (player.isDead()) {
 				player.setIsDead(false);
 			}
 
 			player.stopAllEffectsExceptThoseThatLastThroughDeath();
-			if (player.getFirstEffect(9982) != null)
-			{
+			if (player.getFirstEffect(9982) != null) {
 				player.getFirstEffect(9982).exit();
 			}
 			player.clearSouls();
 			player.clearCharges();
-			if (player.getAgathionId() > 0)
-			{
+			if (player.getAgathionId() > 0) {
 				player.setAgathionId(0);
 			}
 			final L2PetInstance pet = player.getPet();
-			if (pet != null && !pet.isDead())
-			{
+			if (pet != null && !pet.isDead()) {
 				pet.setTarget(null);
 				pet.abortAttack();
 				pet.abortCast();
 				pet.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 				pet.stopAllEffectsExceptThoseThatLastThroughDeath();
 			}
-			for (L2SummonInstance summon : player.getSummons())
-			{
-				if (summon.isDead())
-				{
+			for (L2SummonInstance summon : player.getSummons()) {
+				if (summon.isDead()) {
 					continue;
 				}
 
@@ -376,19 +317,14 @@ public abstract class AbstractOlympiadGame
 			player.setCurrentHp(player.getMaxHp());
 			player.setCurrentMp(player.getMaxMp());
 			player.getStatus().startHpMpRegeneration();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, e.getMessage(), e);
 		}
 	}
 
-	protected static void playerStatusBack(L2PcInstance player)
-	{
-		try
-		{
-			if (player.isTransformed())
-			{
+	protected static void playerStatusBack(L2PcInstance player) {
+		try {
+			if (player.isTransformed()) {
 				player.unTransform(true);
 			}
 
@@ -399,24 +335,19 @@ public abstract class AbstractOlympiadGame
 			player.sendPacket(new ExOlympiadMode(0));
 
 			// Add Clan Skills
-			if (player.getClan() != null)
-			{
+			if (player.getClan() != null) {
 				player.getClan().addSkillEffects(player);
-				if (player.getClan().getHasCastle() > 0)
-				{
+				if (player.getClan().getHasCastle() > 0) {
 					CastleManager.getInstance().getCastleByOwner(player.getClan()).giveResidentialSkills(player);
 				}
-				if (player.getClan().getHasFort() > 0)
-				{
+				if (player.getClan().getHasFort() > 0) {
 					FortManager.getInstance().getFortByOwner(player.getClan()).giveResidentialSkills(player);
 				}
 			}
 
 			// Add Hero Skills
-			if (player.isHero())
-			{
-				for (L2Skill skill : HeroSkillTable.getHeroSkills())
-				{
+			if (player.isHero()) {
+				for (L2Skill skill : HeroSkillTable.getHeroSkills()) {
 					player.addSkill(skill, false);
 				}
 			}
@@ -428,26 +359,20 @@ public abstract class AbstractOlympiadGame
 			player.setCurrentMp(player.getMaxMp());
 			player.getStatus().startHpMpRegeneration();
 
-			if (Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
-			{
+			if (Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0) {
 				AntiFeedManager.getInstance().removePlayer(AntiFeedManager.OLYMPIAD_ID, player);
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "portPlayersToArena()", e);
 		}
 	}
 
-	protected static void portPlayerBack(L2PcInstance player)
-	{
-		if (player == null)
-		{
+	protected static void portPlayerBack(L2PcInstance player) {
+		if (player == null) {
 			return;
 		}
 
-		if (player.getLastX() == 0 && player.getLastY() == 0)
-		{
+		if (player.getLastX() == 0 && player.getLastY() == 0) {
 			return;
 		}
 
@@ -456,28 +381,22 @@ public abstract class AbstractOlympiadGame
 		player.setLastCords(0, 0, 0);
 	}
 
-	public static void rewardParticipant(L2PcInstance player, int[][] reward)
-	{
-		if (player == null || !player.isOnline() || reward == null)
-		{
+	public static void rewardParticipant(L2PcInstance player, int[][] reward) {
+		if (player == null || !player.isOnline() || reward == null) {
 			return;
 		}
 
-		try
-		{
+		try {
 			SystemMessage sm;
 			L2ItemInstance item;
 			final InventoryUpdate iu = new InventoryUpdate();
-			for (int[] it : reward)
-			{
-				if (it == null || it.length != 2)
-				{
+			for (int[] it : reward) {
+				if (it == null || it.length != 2) {
 					continue;
 				}
 
 				item = player.getInventory().addItem("Olympiad", it[0], it[1], player, null);
-				if (item == null)
-				{
+				if (item == null) {
 					continue;
 				}
 
@@ -488,15 +407,12 @@ public abstract class AbstractOlympiadGame
 				player.sendPacket(sm);
 			}
 			player.sendPacket(iu);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, e.getMessage(), e);
 		}
 	}
 
-	protected final void broadcastPacket(L2GameServerPacket packet, L2OlympiadStadiumZone stadium)
-	{
+	protected final void broadcastPacket(L2GameServerPacket packet, L2OlympiadStadiumZone stadium) {
 		broadcastPacketToParticipants(packet);
 		stadium.broadcastPacketToObservers(packet, gameId);
 	}

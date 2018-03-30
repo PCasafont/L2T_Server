@@ -1,1 +1,2 @@
-alter table `characters` drop `death_penalty_level`;
+ALTER TABLE `characters`
+  DROP `death_penalty_level`;

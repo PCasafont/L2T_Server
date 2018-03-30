@@ -26,8 +26,7 @@ import l2server.util.Rnd;
 /**
  * @author Pere
  */
-public class Q10364_ObligationsOfTheSeeker extends Quest
-{
+public class Q10364_ObligationsOfTheSeeker extends Quest {
 	// Quest
 	public static String qn = "Q10364_ObligationsOfTheSeeker";
 
@@ -40,8 +39,7 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 	// Item
 	private int paper = 17578; //TODO mob/s?
 
-	public Q10364_ObligationsOfTheSeeker(int questId, String name, String descr)
-	{
+	public Q10364_ObligationsOfTheSeeker(int questId, String name, String descr) {
 		super(questId, name, descr);
 		addStartNpc(celin);
 		addTalkId(celin);
@@ -51,29 +49,23 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == celin && event.equalsIgnoreCase("33451-03.htm"))
-		{
+		if (npc.getNpcId() == celin && event.equalsIgnoreCase("33451-03.htm")) {
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 		}
-		if (npc.getNpcId() == walter && event.equalsIgnoreCase("33452-04.htm"))
-		{
+		if (npc.getNpcId() == walter && event.equalsIgnoreCase("33452-04.htm")) {
 			st.set("cond", "2");
 			st.playSound("ItemSound.quest_middle");
-		}
-		else if (npc.getNpcId() == dep && event.equalsIgnoreCase("33453-03.htm") && st.getInt("cond") == 3)
-		{
+		} else if (npc.getNpcId() == dep && event.equalsIgnoreCase("33453-03.htm") && st.getInt("cond") == 3) {
 			st.unset("cond");
 			st.takeItems(paper, -1);
 			st.giveItems(1060, 50);
@@ -90,26 +82,19 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == celin)
-		{
-			switch (st.getState())
-			{
+		if (npc.getNpcId() == celin) {
+			switch (st.getState()) {
 				case State.CREATED:
-					if (canStart(player))
-					{
+					if (canStart(player)) {
 						htmltext = "33451-01.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "33451-00.htm";
 					}
 					break;
@@ -120,35 +105,28 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 					htmltext = "33451-07.htm"; // TODO
 					break;
 			}
-		}
-		else if (npc.getNpcId() == walter && st.getInt("cond") == 1)
-		{
+		} else if (npc.getNpcId() == walter && st.getInt("cond") == 1) {
 			htmltext = "33452-01.htm";
-		}
-		else if (npc.getNpcId() == dep && st.getInt("cond") == 3)
-		{
+		} else if (npc.getNpcId() == dep && st.getInt("cond") == 3) {
 			htmltext = "33453-01.htm";
 		}
 		return htmltext;
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
 		QuestState st = player.getQuestState(qn);
 		if (st == null || st.getInt("cond") != 2 || Rnd.get(100) < 0) //TODO chance?
 		{
 			return null;
 		}
 
-		if (npc.getNpcId() == mob && st.getQuestItemsCount(paper) < 5)
-		{
+		if (npc.getNpcId() == mob && st.getQuestItemsCount(paper) < 5) {
 			st.giveItems(paper, 1);
 			st.playSound("ItemSound.quest_itemget");
 		}
 
-		if (st.getQuestItemsCount(paper) == 5)
-		{
+		if (st.getQuestItemsCount(paper) == 5) {
 			st.set("cond", "3");
 			st.playSound("ItemSound.quest_middle");
 		}
@@ -157,15 +135,11 @@ public class Q10364_ObligationsOfTheSeeker extends Quest
 	}
 
 	@Override
-	public boolean canStart(L2PcInstance player)
-	{
-		return player.getLevel() >= 14 && player.getLevel() <= 25 &&
-				player.getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 12);
+	public boolean canStart(L2PcInstance player) {
+		return player.getLevel() >= 14 && player.getLevel() <= 25 && player.getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 12);
 	}
 
-	public static void main(String[] args)
-	{
-		new Q10364_ObligationsOfTheSeeker(10364, qn,
-				"Collecting items from monsters in the Ye Sagira Ruins. Opportunity to obtain no-Grade armor.");
+	public static void main(String[] args) {
+		new Q10364_ObligationsOfTheSeeker(10364, qn, "Collecting items from monsters in the Ye Sagira Ruins. Opportunity to obtain no-Grade armor.");
 	}
 }

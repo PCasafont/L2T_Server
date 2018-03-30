@@ -3,11 +3,12 @@
 -- 
 
 CREATE TABLE IF NOT EXISTS `mods_wedding` (
-  `id` int(11) NOT NULL auto_increment,
-  `player1Id` int(11) NOT NULL default '0',
-  `player2Id` int(11) NOT NULL default '0',
-  `married` varchar(5) default NULL,
-  `affianceDate` decimal(20,0) default '0',
-  `weddingDate` decimal(20,0) default '0',
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM;
+  `id`           INT(11) NOT NULL AUTO_INCREMENT,
+  `player1Id`    INT(11) NOT NULL DEFAULT '0',
+  `player2Id`    INT(11) NOT NULL DEFAULT '0',
+  `married`      VARCHAR(5)       DEFAULT NULL,
+  `affianceDate` DECIMAL(20, 0)   DEFAULT '0',
+  `weddingDate`  DECIMAL(20, 0)   DEFAULT '0',
+  PRIMARY KEY (`id`)
+)
+  ENGINE = MyISAM;

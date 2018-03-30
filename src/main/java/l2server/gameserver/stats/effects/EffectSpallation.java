@@ -23,21 +23,17 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 /**
  * @author ZaKaX
  */
-public class EffectSpallation extends L2Effect
-{
-	public EffectSpallation(Env env, L2EffectTemplate template)
-	{
+public class EffectSpallation extends L2Effect {
+	public EffectSpallation(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
-	public EffectSpallation(Env env, L2Effect effect)
-	{
+	public EffectSpallation(Env env, L2Effect effect) {
 		super(env, effect);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.SPALLATION;
 	}
 
@@ -45,8 +41,7 @@ public class EffectSpallation extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		return true;
 	}
 
@@ -54,8 +49,7 @@ public class EffectSpallation extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return true;
 	}
 }

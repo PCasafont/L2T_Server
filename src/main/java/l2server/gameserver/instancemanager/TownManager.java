@@ -23,39 +23,28 @@ import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.gameserver.model.zone.type.L2TownZone;
 
-public class TownManager
-{
-	public static L2TownZone getClosestTown(L2Object activeObject)
-	{
-		if (Curfew.getInstance().getOnlyPeaceTown() != -1 && activeObject instanceof L2PcInstance)
-		{
+public class TownManager {
+	public static L2TownZone getClosestTown(L2Object activeObject) {
+		if (Curfew.getInstance().getOnlyPeaceTown() != -1 && activeObject instanceof L2PcInstance) {
 			L2PcInstance player = (L2PcInstance) activeObject;
 			Castle castle = CastleManager.getInstance().findNearestCastle(player);
 			if (!(castle != null && castle.getSiege().getIsInProgress() &&
-					(castle.getSiege().checkIsDefender(player.getClan()) ||
-							castle.getSiege().checkIsAttacker(player.getClan()))))
-			{
+					(castle.getSiege().checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan())))) {
 				return getTown(Curfew.getInstance().getOnlyPeaceTown());
 			}
 		}
 
-		if (MainTownManager.getInstance().getCurrentMainTown() != null && activeObject instanceof L2PcInstance)
-		{
+		if (MainTownManager.getInstance().getCurrentMainTown() != null && activeObject instanceof L2PcInstance) {
 			L2PcInstance player = (L2PcInstance) activeObject;
 			Castle castle = CastleManager.getInstance().findNearestCastle(player);
 			if (!(castle != null && castle.getSiege().getIsInProgress() &&
-					(castle.getSiege().checkIsDefender(player.getClan()) ||
-							castle.getSiege().checkIsAttacker(player.getClan()))))
-			{
+					(castle.getSiege().checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan())))) {
 				return getTown(MainTownManager.getInstance().getCurrentMainTown().getTownId());
 			}
 		}
 
-
-		int mapRegion = MapRegionTable.getInstance()
-				.getMapRegion(activeObject.getPosition().getX(), activeObject.getPosition().getY());
-		switch (mapRegion)
-		{
+		int mapRegion = MapRegionTable.getInstance().getMapRegion(activeObject.getPosition().getX(), activeObject.getPosition().getY());
+		switch (mapRegion) {
 			case 0:
 				return getTown(2); // TI
 			case 1:
@@ -139,11 +128,8 @@ public class TownManager
 		return getTown(16); // Default to floran
 	}
 
-	public static int getClosestLocation(L2Object activeObject)
-	{
-		switch (MapRegionTable.getInstance()
-				.getMapRegion(activeObject.getPosition().getX(), activeObject.getPosition().getY()))
-		{
+	public static int getClosestLocation(L2Object activeObject) {
+		switch (MapRegionTable.getInstance().getMapRegion(activeObject.getPosition().getX(), activeObject.getPosition().getY())) {
 			case 0:
 				return 1; // TI
 			case 1:
@@ -222,128 +208,38 @@ public class TownManager
 		return 0;
 	}
 
-	public static boolean townHasCastleInSiege(int townId)
-	{
+	public static boolean townHasCastleInSiege(int townId) {
 		//int[] castleidarray = {0,0,0,0,0,0,0,1,2,3,4,0,5,0,0,6,0};
-		int[] castleidarray = {
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				1,
-				2,
-				3,
-				4,
-				0,
-				5,
-				7,
-				8,
-				6,
-				0,
-				9,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0
-		};
+		int[] castleidarray = {0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 0, 5, 7, 8, 6, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		int castleIndex = castleidarray[townId];
 
-		if (castleIndex > 0)
-		{
-			Castle castle = CastleManager.getInstance().getCastles()
-					.get(CastleManager.getInstance().getCastleIndex(castleIndex));
-			if (castle != null)
-			{
+		if (castleIndex > 0) {
+			Castle castle = CastleManager.getInstance().getCastles().get(CastleManager.getInstance().getCastleIndex(castleIndex));
+			if (castle != null) {
 				return castle.getSiege().getIsInProgress();
 			}
 		}
 		return false;
 	}
 
-	public static boolean townHasCastleInSiege(int x, int y)
-	{
+	public static boolean townHasCastleInSiege(int x, int y) {
 		int curtown = MapRegionTable.getInstance().getMapRegion(x, y);
 		//int[] castleidarray = {0,0,0,0,0,1,0,2,3,4,5,0,0,6,0,0,0,0};
-		int[] castleidarray = {
-				0,
-				0,
-				0,
-				0,
-				0,
-				1,
-				0,
-				2,
-				3,
-				4,
-				5,
-				0,
-				0,
-				6,
-				8,
-				7,
-				9,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0,
-				0
-		};
+		int[] castleidarray = {0, 0, 0, 0, 0, 1, 0, 2, 3, 4, 5, 0, 0, 6, 8, 7, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		//find an instance of the castle for this town.
 		int castleIndex = castleidarray[curtown];
-		if (castleIndex > 0)
-		{
-			Castle castle = CastleManager.getInstance().getCastles()
-					.get(CastleManager.getInstance().getCastleIndex(castleIndex));
-			if (castle != null)
-			{
+		if (castleIndex > 0) {
+			Castle castle = CastleManager.getInstance().getCastles().get(CastleManager.getInstance().getCastleIndex(castleIndex));
+			if (castle != null) {
 				return castle.getSiege().getIsInProgress();
 			}
 		}
 		return false;
 	}
 
-	public static L2TownZone getTown(int townId)
-	{
-		for (L2TownZone temp : ZoneManager.getInstance().getAllZones(L2TownZone.class))
-		{
-			if (temp.getTownId() == townId)
-			{
+	public static L2TownZone getTown(int townId) {
+		for (L2TownZone temp : ZoneManager.getInstance().getAllZones(L2TownZone.class)) {
+			if (temp.getTownId() == townId) {
 				return temp;
 			}
 		}
@@ -358,12 +254,9 @@ public class TownManager
 	 * @param z
 	 * @return
 	 */
-	public static L2TownZone getTown(int x, int y, int z)
-	{
-		for (L2ZoneType temp : ZoneManager.getInstance().getZones(x, y, z))
-		{
-			if (temp instanceof L2TownZone)
-			{
+	public static L2TownZone getTown(int x, int y, int z) {
+		for (L2ZoneType temp : ZoneManager.getInstance().getZones(x, y, z)) {
+			if (temp instanceof L2TownZone) {
 				return (L2TownZone) temp;
 			}
 		}

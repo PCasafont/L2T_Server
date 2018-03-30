@@ -35,96 +35,83 @@ import l2server.gameserver.util.Util;
 
 /**
  * @author Didldak
- *         Some parts taken from EffectWarp, which cannot be used for this case.
+ * Some parts taken from EffectWarp, which cannot be used for this case.
  */
-public class InstantJump implements ISkillHandler
-{
-
+public class InstantJump implements ISkillHandler {
+	
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.INSTANT_JUMP};
-
+	
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
 		L2Character target = (L2Character) targets[0];
-
-		if (Formulas.calcPhysicalSkillEvasion(activeChar, target, skill))
-		{
-			if (activeChar instanceof L2PcInstance)
-			{
+		
+		if (Formulas.calcPhysicalSkillEvasion(activeChar, target, skill)) {
+			if (activeChar instanceof L2PcInstance) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_DODGES_ATTACK);
 				sm.addString(target.getName());
 				((L2PcInstance) activeChar).sendPacket(sm);
 			}
-			if (target instanceof L2PcInstance)
-			{
+			if (target instanceof L2PcInstance) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.AVOIDED_C1_ATTACK);
 				sm.addString(activeChar.getName());
 				((L2PcInstance) target).sendPacket(sm);
 			}
 			return;
 		}
-
+		
 		int x = 0, y = 0, z = 0;
-
+		
 		int px = target.getX();
 		int py = target.getY();
 		double ph = Util.convertHeadingToDegree(target.getHeading());
-
+		
 		ph += 180;
-
-		if (ph > 360)
-		{
+		
+		if (ph > 360) {
 			ph -= 360;
 		}
-
+		
 		ph = Math.PI * ph / 180;
-
+		
 		x = (int) (px + 25 * Math.cos(ph));
 		y = (int) (py + 25 * Math.sin(ph));
 		z = target.getZ();
-
+		
 		Location loc = new Location(x, y, z);
-
-		if (Config.GEODATA > 0)
-		{
-			loc = GeoData.getInstance().moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), x, y, z,
-					activeChar.getInstanceId());
+		
+		if (Config.GEODATA > 0) {
+			loc = GeoData.getInstance().moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), x, y, z, activeChar.getInstanceId());
 		}
-
+		
 		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		activeChar.broadcastPacket(new FlyToLocation(activeChar, loc.getX(), loc.getY(), loc.getZ(), FlyType.DUMMY));
 		activeChar.abortAttack();
 		activeChar.abortCast();
-
+		
 		activeChar.setXYZ(loc.getX(), loc.getY(), loc.getZ());
 		activeChar.broadcastPacket(new ValidateLocation(activeChar));
-
-		if (skill.hasEffects())
-		{
-			if (Formulas.calcSkillReflect(target, skill) == Formulas.SKILL_REFLECT_EFFECTS)
-			{
+		
+		if (skill.hasEffects()) {
+			if (Formulas.calcSkillReflect(target, skill) == Formulas.SKILL_REFLECT_EFFECTS) {
 				//activeChar.stopSkillEffects(skill.getId());
 				skill.getEffects(target, activeChar);
-
+				
 				//SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
 				//sm.addSkillName(skill);
 				//activeChar.sendPacket(sm);
-			}
-			else
-			{
+			} else {
 				// activate attacked effects, if any
 				//target.stopSkillEffects(skill.getId());
 				skill.getEffects(activeChar, target);
 			}
 		}
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

@@ -22,8 +22,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-public class ConditionLogicAnd extends Condition
-{
+public class ConditionLogicAnd extends Condition {
 
 	private static Condition[] emptyConditions = new Condition[0];
 	public Condition[] conditions = emptyConditions;
@@ -31,8 +30,7 @@ public class ConditionLogicAnd extends Condition
 	/**
 	 * Instantiates a new condition logic and.
 	 */
-	public ConditionLogicAnd()
-	{
+	public ConditionLogicAnd() {
 		super();
 	}
 
@@ -41,14 +39,11 @@ public class ConditionLogicAnd extends Condition
 	 *
 	 * @param condition the condition
 	 */
-	public void add(Condition condition)
-	{
-		if (condition == null)
-		{
+	public void add(Condition condition) {
+		if (condition == null) {
 			return;
 		}
-		if (getListener() != null)
-		{
+		if (getListener() != null) {
 			condition.setListener(this);
 		}
 		final int len = conditions.length;
@@ -65,19 +60,13 @@ public class ConditionLogicAnd extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#setListener(l2server.gameserver.stats.conditions.ConditionListener)
 	 */
 	@Override
-	void setListener(ConditionListener listener)
-	{
-		if (listener != null)
-		{
-			for (Condition c : conditions)
-			{
+	void setListener(ConditionListener listener) {
+		if (listener != null) {
+			for (Condition c : conditions) {
 				c.setListener(this);
 			}
-		}
-		else
-		{
-			for (Condition c : conditions)
-			{
+		} else {
+			for (Condition c : conditions) {
 				c.setListener(null);
 			}
 		}
@@ -92,12 +81,9 @@ public class ConditionLogicAnd extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		for (Condition c : conditions)
-		{
-			if (!c.test(env))
-			{
+	public boolean testImpl(Env env) {
+		for (Condition c : conditions) {
+			if (!c.test(env)) {
 				return false;
 			}
 		}

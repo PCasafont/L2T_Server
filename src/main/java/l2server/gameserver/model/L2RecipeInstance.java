@@ -18,40 +18,36 @@ package l2server.gameserver.model;
 /**
  * This class describes a RecipeList componant (1 line of the recipe : Item-Quantity needed).<BR><BR>
  */
-public class L2RecipeInstance
-{
+public class L2RecipeInstance {
 	/**
 	 * The Identifier of the item needed in the L2RecipeInstance
 	 */
 	private int itemId;
-
+	
 	/**
 	 * The item quantity needed in the L2RecipeInstance
 	 */
 	private int quantity;
-
+	
 	/**
 	 * Constructor of L2RecipeInstance (create a new line in a RecipeList).<BR><BR>
 	 */
-	public L2RecipeInstance(int itemId, int quantity)
-	{
+	public L2RecipeInstance(int itemId, int quantity) {
 		this.itemId = itemId;
 		this.quantity = quantity;
 	}
-
+	
 	/**
 	 * Return the Identifier of the L2RecipeInstance Item needed.<BR><BR>
 	 */
-	public int getItemId()
-	{
+	public int getItemId() {
 		return itemId;
 	}
-
+	
 	/**
 	 * Return the Item quantity needed of the L2RecipeInstance.<BR><BR>
 	 */
-	public int getQuantity()
-	{
+	public int getQuantity() {
 		return quantity;
 	}
 }

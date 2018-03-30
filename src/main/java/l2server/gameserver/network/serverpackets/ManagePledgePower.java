@@ -17,30 +17,24 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2Clan;
 
-public class ManagePledgePower extends L2GameServerPacket
-{
-
+public class ManagePledgePower extends L2GameServerPacket {
+	
 	private int action;
 	private L2Clan clan;
 	private int rank;
 	private int privs;
-
-	public ManagePledgePower(L2Clan clan, int action, int rank)
-	{
+	
+	public ManagePledgePower(L2Clan clan, int action, int rank) {
 		this.clan = clan;
 		this.action = action;
 		this.rank = rank;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
-		if (action == 1)
-		{
+	protected final void writeImpl() {
+		if (action == 1) {
 			privs = clan.getRankPrivs(rank);
-		}
-		else
-		{
+		} else {
 			return;
 			/*
             if (L2World.getInstance().findObject(clanId) == null)
@@ -49,7 +43,7 @@ public class ManagePledgePower extends L2GameServerPacket
 			privs = ((L2PcInstance)L2World.getInstance().findObject(clanId)).getClanPrivileges();
 			 */
 		}
-
+		
 		writeD(0);
 		writeD(0);
 		writeD(privs);

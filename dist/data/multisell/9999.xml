@@ -1,338 +1,338 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-    <!-- Dyes -->
-    <item>
-        <ingredient count="100" id="5556" /> <!-- Star Ornament -->
-        <production count="10"
-                    id="17709" /> <!-- Lv. 5 STR Symbol - Legendary Dye - STR + 5 / DEX + 1 / Fire Resistance + 25 -->
-    </item>
-    <item>
-        <ingredient count="100" id="5556" /> <!-- Star Ornament -->
-        <production count="10"
-                    id="17710" /> <!-- Lv. 5 DEX Symbol - Legendary Dye - DEX + 5 / CON + 1 / Earth Resistance + 25 -->
-    </item>
-    <item>
-        <ingredient count="100" id="5556" /> <!-- Star Ornament -->
-        <production count="10"
-                    id="17711" /> <!-- Lv. 5 CON Symbol - Legendary Dye - CON + 5 / STR + 1 / Dark Attack Resistance + 25 -->
-    </item>
-    <item>
-        <ingredient count="100" id="5556" /> <!-- Star Ornament -->
-        <production count="10"
-                    id="17712" /> <!-- Lv. 5 INT Symbol - Legendary Dye - INT + 5 / WIT + 1 / Water Resistance + 25 -->
-    </item>
-    <item>
-        <ingredient count="100" id="5556" /> <!-- Star Ornament -->
-        <production count="10"
-                    id="17713" /> <!--Lv. 5 WIT Symbol - Legendary Dye - WIT + 5 / MEN + 1 / Wind Resistance + 25 -->
-    </item>
-    <item>
-        <ingredient count="100" id="5556" /> <!-- Star Ornament -->
-        <production count="10"
-                    id="17714" /> <!-- Lv. 5 MEN Symbol - Legendary Dye - MEN + 5 / INT + 1 / Holy Attack Resistance + 25 -->
-    </item>
-    <item>
-        <ingredient count="20" id="5556" /> <!-- Star Ornament -->
-        <production count="40" id="35562" /> <!-- Energy of Destruction -->
-    </item>
-    <item>
-        <ingredient count="20" id="5556" /> <!-- Star Ornament -->
-        <production count="20" id="35563" /> <!-- Giant's Energy -->
-    </item>
-    <item>
-        <ingredient count="15" id="5556" /> <!-- Star Ornament -->
-        <production count="1" id="10606" /> <!-- Agathion Seal Bracelet - Rudolph -->
-    </item>
-    <item>
-        <ingredient count="15" id="5556" /> <!-- Star Ornament -->
-        <production count="1" id="14673" /> <!-- Rudolph's Nose -->
-    </item>
-    <item>
-        <ingredient count="15" id="5556" /> <!-- Star Ornament -->
-        <production count="1" id="7836" /> <!-- Santa's Hat -->
-    </item>
-    <item>
-        <ingredient count="15" id="5556" /> <!-- Star Ornament -->
-        <production count="1" id="8936" /> <!-- Santa's Antlers -->
-    </item>
-    <item>
-        <ingredient count="5" id="5556" /> <!-- Star Ornament -->
-        <production count="1" id="14056" /> <!-- Snow Kung Transformation Stick (30-day limited period) -->
-    </item>
-    <item>
-        <ingredient count="25" id="5556" /> <!-- Star Ornament -->
-        <production count="1" id="21583" /> <!-- 7th Anniversary Cloak - Pitch Black -->
-    </item>
-    <item>
-        <ingredient count="25" id="5556" /> <!-- Star Ornament -->
-        <production count="1" id="21587" /> <!-- 7th Anniversary Cloak - Blood Red -->
-    </item>
-    <item>
-        <ingredient count="25" id="5556" /> <!-- Star Ornament -->
-        <production count="1" id="21588" /> <!-- 7th Anniversary Cloak - Pearl White -->
-    </item>
-    <item>
-        <ingredient count="5" id="5556" /> <!-- Star Ornament -->
-        <production count="3" id="5560" /> <!-- Holiday Tree -->
-    </item>
-    <item>
-        <ingredient count="15" id="5556" /> <!-- Star Ornament -->
-        <production count="2" id="5561" /> <!-- Special Holiday Tree -->
-    </item>
-    <item>
-        <ingredient count="30" id="5556" /> <!-- Star Ornament -->
-        <production count="1" id="22480" /> <!-- Santa Girl's Cloak (event) -->
-    </item>
-    <item>
-        <ingredient count="5" id="5556" /> <!-- Star Ornament -->
-        <production count="3" id="20103" /> <!-- Holiday Scroll: Heavy Armor Warrior - 8-hour -->
-    </item>
-    <item>
-        <ingredient count="5" id="5556" /> <!-- Star Ornament -->
-        <production count="3" id="20104" /> <!-- Holiday Scroll: Light Armor Warrior - 8-hour -->
-    </item>
-    <item>
-        <ingredient count="5" id="5556" /> <!-- Star Ornament -->
-        <production count="3" id="20105" /> <!-- Holiday Scroll: Healer - 8-hour -->
-    </item>
-    <item>
-        <ingredient count="5" id="5556" /> <!-- Star Ornament -->
-        <production count="3" id="20106" /> <!-- Holiday Scroll: Mage - 8-hour -->
-    </item>
-    <item>
-        <ingredient count="15" id="5556" /> <!-- Star Ornament -->
-        <production count="1" id="20761" /> <!-- Rudolph Necklace -->
-    </item>
-    <item>
-        <ingredient count="1" id="5556" /> <!-- Star Ornament -->
-        <production count="30" id="4357" /> <!-- Silver Shilen -->
-    </item>
-    <item>
-        <ingredient count="150" id="5556" /> <!-- Star Ornament -->
-        <production count="1" id="23487" /> <!-- Santa Outfit Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="200" id="5556" /> <!-- Star Ornament -->
-        <production id="23503" count="1" /> <!-- Military Top Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="200" id="5556" /> <!-- Star Ornament -->
-        <production id="23504" count="1" /> <!-- Military Pants Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="200" id="5556" /> <!-- Star Ornament -->
-        <production id="23505" count="1" /> <!-- Military Gloves Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="200" id="5556" /> <!-- Star Ornament -->
-        <production id="23506" count="1" /> <!-- Military Shoes Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="200" id="5556" /> <!-- Star Ornament -->
-        <production id="23507" count="1" /> <!-- Military Hair Accessory Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="200" id="5556" /> <!-- Star Ornament -->
-        <production id="23493" count="1" /> <!-- Metal Suit Top Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="200" id="5556" /> <!-- Star Ornament -->
-        <production id="23494" count="1" /> <!-- Metal Suit Pants Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="200" id="5556" /> <!-- Star Ornament -->
-        <production id="23495" count="1" /> <!-- Metal Suit Gloves Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="200" id="5556" /> <!-- Star Ornament -->
-        <production id="23496" count="1" /> <!-- Metal Suit Shoes Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="200" id="5556" /> <!-- Star Ornament -->
-        <production id="23497" count="1" /> <!-- Metal Suit Hair Accessory Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="1000" id="5556" /> <!-- Star Ornament -->
-        <production id="23200" count="1" /> <!-- Traditional Taiwanese Costume Appearance Stone Pack -->
-    </item>
-    <item>
-        <ingredient count="1000" id="5556" /> <!-- Star Ornament -->
-        <production id="23199" count="1" /> <!-- Ninja Outfit Appearance Stone Pack -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37832" count="1" /> <!-- Valentine Dagger Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37833" count="1" /> <!-- Valentine One-handed Sword Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37834" count="1" /> <!-- Valentine Two-handed Sword Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37835" count="1" /> <!-- Valentine One-handed Blunt Weapon Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37836" count="1" /> <!-- Valentine Fist Weapon Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37837" count="1" /> <!-- Valentine Spear Appearance Stone-->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37838" count="1" /> <!-- Valentine Bow Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37839" count="1" /> <!-- Valentine Crossbow Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37840" count="1" /> <!-- Valentine One-handed Magic Sword Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37841" count="1" /> <!-- Valentine One-handed Magic Blunt Weapon Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37842" count="1" /> <!-- Valentine Two-handed Magic Blunt Weapon Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37843" count="1" /> <!-- Valentine Dualsword Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37844" count="1" /> <!-- Valentine Dual Dagger Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37845" count="1" /> <!-- Valentine Dual Blunt Weapon Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37846" count="1" /> <!-- Valentine Shield Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="37847" count="1" /> <!-- Valentine Sigil Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="400" id="5556" /> <!-- Star Ornament -->
-        <production id="38956" count="1" /> <!-- NC Dinos Appearance Stone (100-day) -->
-    </item>
-    <item>
-        <ingredient count="100" id="5556" /> <!-- Star Ornament -->
-        <production id="38959" count="1" /> <!-- NC Dinos Hat Appearance Stone (100-day) -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23929" count="1" /> <!-- Tears One-handed Sword Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23930" count="1" /> <!-- Tears Dagger Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23931" count="1" /> <!-- Tears Two-handed Sword Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23932" count="1" /> <!-- Tears Fist Weapon Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23933" count="1" /> <!-- Tears Spear Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23934" count="1" /> <!-- Tears Bow Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23935" count="1" /> <!-- Tears Crossbow Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23936" count="1" /> <!-- Tears One-handed Blunt Weapon Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23937" count="1" /> <!-- Tears Magic Sword Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23938" count="1" /> <!-- Tears One-handed Magic Blunt Weapon Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23939" count="1" /> <!-- Tears Two-handed Magic Blunt Weapon Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23940" count="1" /> <!--Tears Dualsword Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23941" count="1" /> <!-- Tears Dual Dagger Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23942" count="1" /> <!-- Tears Dual Blunt Weapon Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23943" count="1" /> <!-- Tears Shield Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="23944" count="1" /> <!-- Tears Sigil Appearance Stone -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="13547" count="1" />    <!-- Lion mount -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="21088" count="1" />    <!-- Jet bike -->
-    </item>
-    <item>
-        <ingredient count="500" id="5556" /> <!-- Star Ornament -->
-        <production id="20396" count="1" />    <!-- Steam beetle -->
-    </item>
-    <item>
-        <ingredient count="400" id="5556" /> <!-- Star Ornament -->
-        <production id="20029" count="1" />    <!-- Light purple horse -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="22364" count="1" />    <!-- Dark Bear -->
-    </item>
-    <item>
-        <ingredient count="600" id="5556" /> <!-- Star Ornament -->
-        <production id="22384" count="1" />    <!-- Halloween Witch's -->
-    </item>
-    <item>
-        <ingredient count="1000" id="5556" /> <!-- Star Ornament -->
-        <production id="22356" count="1" />    <!-- Princess Ant -->
-    </item>
-    <item>
-        <ingredient count="800" id="5556" /> <!-- Star Ornament -->
-        <production id="33642" count="1" />    <!-- Kukuri -->
-    </item>
-    <item>
-        <ingredient count="1500" id="5556" /> <!-- Star Ornament -->
-        <production id="37496" count="1" />    <!-- Lyn Draco -->
-    </item>
-    <item>
-        <ingredient count="1500" id="5556" /> <!-- Star Ornament -->
-        <production id="36952" count="1" />    <!-- Air Bike -->
-    </item>
+	<!-- Dyes -->
+	<item>
+		<ingredient count="100" id="5556" /> <!-- Star Ornament -->
+		<production count="10"
+					id="17709" /> <!-- Lv. 5 STR Symbol - Legendary Dye - STR + 5 / DEX + 1 / Fire Resistance + 25 -->
+	</item>
+	<item>
+		<ingredient count="100" id="5556" /> <!-- Star Ornament -->
+		<production count="10"
+					id="17710" /> <!-- Lv. 5 DEX Symbol - Legendary Dye - DEX + 5 / CON + 1 / Earth Resistance + 25 -->
+	</item>
+	<item>
+		<ingredient count="100" id="5556" /> <!-- Star Ornament -->
+		<production count="10"
+					id="17711" /> <!-- Lv. 5 CON Symbol - Legendary Dye - CON + 5 / STR + 1 / Dark Attack Resistance + 25 -->
+	</item>
+	<item>
+		<ingredient count="100" id="5556" /> <!-- Star Ornament -->
+		<production count="10"
+					id="17712" /> <!-- Lv. 5 INT Symbol - Legendary Dye - INT + 5 / WIT + 1 / Water Resistance + 25 -->
+	</item>
+	<item>
+		<ingredient count="100" id="5556" /> <!-- Star Ornament -->
+		<production count="10"
+					id="17713" /> <!--Lv. 5 WIT Symbol - Legendary Dye - WIT + 5 / MEN + 1 / Wind Resistance + 25 -->
+	</item>
+	<item>
+		<ingredient count="100" id="5556" /> <!-- Star Ornament -->
+		<production count="10"
+					id="17714" /> <!-- Lv. 5 MEN Symbol - Legendary Dye - MEN + 5 / INT + 1 / Holy Attack Resistance + 25 -->
+	</item>
+	<item>
+		<ingredient count="20" id="5556" /> <!-- Star Ornament -->
+		<production count="40" id="35562" /> <!-- Energy of Destruction -->
+	</item>
+	<item>
+		<ingredient count="20" id="5556" /> <!-- Star Ornament -->
+		<production count="20" id="35563" /> <!-- Giant's Energy -->
+	</item>
+	<item>
+		<ingredient count="15" id="5556" /> <!-- Star Ornament -->
+		<production count="1" id="10606" /> <!-- Agathion Seal Bracelet - Rudolph -->
+	</item>
+	<item>
+		<ingredient count="15" id="5556" /> <!-- Star Ornament -->
+		<production count="1" id="14673" /> <!-- Rudolph's Nose -->
+	</item>
+	<item>
+		<ingredient count="15" id="5556" /> <!-- Star Ornament -->
+		<production count="1" id="7836" /> <!-- Santa's Hat -->
+	</item>
+	<item>
+		<ingredient count="15" id="5556" /> <!-- Star Ornament -->
+		<production count="1" id="8936" /> <!-- Santa's Antlers -->
+	</item>
+	<item>
+		<ingredient count="5" id="5556" /> <!-- Star Ornament -->
+		<production count="1" id="14056" /> <!-- Snow Kung Transformation Stick (30-day limited period) -->
+	</item>
+	<item>
+		<ingredient count="25" id="5556" /> <!-- Star Ornament -->
+		<production count="1" id="21583" /> <!-- 7th Anniversary Cloak - Pitch Black -->
+	</item>
+	<item>
+		<ingredient count="25" id="5556" /> <!-- Star Ornament -->
+		<production count="1" id="21587" /> <!-- 7th Anniversary Cloak - Blood Red -->
+	</item>
+	<item>
+		<ingredient count="25" id="5556" /> <!-- Star Ornament -->
+		<production count="1" id="21588" /> <!-- 7th Anniversary Cloak - Pearl White -->
+	</item>
+	<item>
+		<ingredient count="5" id="5556" /> <!-- Star Ornament -->
+		<production count="3" id="5560" /> <!-- Holiday Tree -->
+	</item>
+	<item>
+		<ingredient count="15" id="5556" /> <!-- Star Ornament -->
+		<production count="2" id="5561" /> <!-- Special Holiday Tree -->
+	</item>
+	<item>
+		<ingredient count="30" id="5556" /> <!-- Star Ornament -->
+		<production count="1" id="22480" /> <!-- Santa Girl's Cloak (event) -->
+	</item>
+	<item>
+		<ingredient count="5" id="5556" /> <!-- Star Ornament -->
+		<production count="3" id="20103" /> <!-- Holiday Scroll: Heavy Armor Warrior - 8-hour -->
+	</item>
+	<item>
+		<ingredient count="5" id="5556" /> <!-- Star Ornament -->
+		<production count="3" id="20104" /> <!-- Holiday Scroll: Light Armor Warrior - 8-hour -->
+	</item>
+	<item>
+		<ingredient count="5" id="5556" /> <!-- Star Ornament -->
+		<production count="3" id="20105" /> <!-- Holiday Scroll: Healer - 8-hour -->
+	</item>
+	<item>
+		<ingredient count="5" id="5556" /> <!-- Star Ornament -->
+		<production count="3" id="20106" /> <!-- Holiday Scroll: Mage - 8-hour -->
+	</item>
+	<item>
+		<ingredient count="15" id="5556" /> <!-- Star Ornament -->
+		<production count="1" id="20761" /> <!-- Rudolph Necklace -->
+	</item>
+	<item>
+		<ingredient count="1" id="5556" /> <!-- Star Ornament -->
+		<production count="30" id="4357" /> <!-- Silver Shilen -->
+	</item>
+	<item>
+		<ingredient count="150" id="5556" /> <!-- Star Ornament -->
+		<production count="1" id="23487" /> <!-- Santa Outfit Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="200" id="5556" /> <!-- Star Ornament -->
+		<production id="23503" count="1" /> <!-- Military Top Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="200" id="5556" /> <!-- Star Ornament -->
+		<production id="23504" count="1" /> <!-- Military Pants Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="200" id="5556" /> <!-- Star Ornament -->
+		<production id="23505" count="1" /> <!-- Military Gloves Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="200" id="5556" /> <!-- Star Ornament -->
+		<production id="23506" count="1" /> <!-- Military Shoes Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="200" id="5556" /> <!-- Star Ornament -->
+		<production id="23507" count="1" /> <!-- Military Hair Accessory Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="200" id="5556" /> <!-- Star Ornament -->
+		<production id="23493" count="1" /> <!-- Metal Suit Top Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="200" id="5556" /> <!-- Star Ornament -->
+		<production id="23494" count="1" /> <!-- Metal Suit Pants Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="200" id="5556" /> <!-- Star Ornament -->
+		<production id="23495" count="1" /> <!-- Metal Suit Gloves Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="200" id="5556" /> <!-- Star Ornament -->
+		<production id="23496" count="1" /> <!-- Metal Suit Shoes Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="200" id="5556" /> <!-- Star Ornament -->
+		<production id="23497" count="1" /> <!-- Metal Suit Hair Accessory Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="1000" id="5556" /> <!-- Star Ornament -->
+		<production id="23200" count="1" /> <!-- Traditional Taiwanese Costume Appearance Stone Pack -->
+	</item>
+	<item>
+		<ingredient count="1000" id="5556" /> <!-- Star Ornament -->
+		<production id="23199" count="1" /> <!-- Ninja Outfit Appearance Stone Pack -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37832" count="1" /> <!-- Valentine Dagger Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37833" count="1" /> <!-- Valentine One-handed Sword Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37834" count="1" /> <!-- Valentine Two-handed Sword Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37835" count="1" /> <!-- Valentine One-handed Blunt Weapon Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37836" count="1" /> <!-- Valentine Fist Weapon Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37837" count="1" /> <!-- Valentine Spear Appearance Stone-->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37838" count="1" /> <!-- Valentine Bow Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37839" count="1" /> <!-- Valentine Crossbow Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37840" count="1" /> <!-- Valentine One-handed Magic Sword Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37841" count="1" /> <!-- Valentine One-handed Magic Blunt Weapon Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37842" count="1" /> <!-- Valentine Two-handed Magic Blunt Weapon Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37843" count="1" /> <!-- Valentine Dualsword Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37844" count="1" /> <!-- Valentine Dual Dagger Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37845" count="1" /> <!-- Valentine Dual Blunt Weapon Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37846" count="1" /> <!-- Valentine Shield Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="37847" count="1" /> <!-- Valentine Sigil Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="400" id="5556" /> <!-- Star Ornament -->
+		<production id="38956" count="1" /> <!-- NC Dinos Appearance Stone (100-day) -->
+	</item>
+	<item>
+		<ingredient count="100" id="5556" /> <!-- Star Ornament -->
+		<production id="38959" count="1" /> <!-- NC Dinos Hat Appearance Stone (100-day) -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23929" count="1" /> <!-- Tears One-handed Sword Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23930" count="1" /> <!-- Tears Dagger Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23931" count="1" /> <!-- Tears Two-handed Sword Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23932" count="1" /> <!-- Tears Fist Weapon Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23933" count="1" /> <!-- Tears Spear Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23934" count="1" /> <!-- Tears Bow Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23935" count="1" /> <!-- Tears Crossbow Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23936" count="1" /> <!-- Tears One-handed Blunt Weapon Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23937" count="1" /> <!-- Tears Magic Sword Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23938" count="1" /> <!-- Tears One-handed Magic Blunt Weapon Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23939" count="1" /> <!-- Tears Two-handed Magic Blunt Weapon Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23940" count="1" /> <!--Tears Dualsword Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23941" count="1" /> <!-- Tears Dual Dagger Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23942" count="1" /> <!-- Tears Dual Blunt Weapon Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23943" count="1" /> <!-- Tears Shield Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="23944" count="1" /> <!-- Tears Sigil Appearance Stone -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="13547" count="1" />    <!-- Lion mount -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="21088" count="1" />    <!-- Jet bike -->
+	</item>
+	<item>
+		<ingredient count="500" id="5556" /> <!-- Star Ornament -->
+		<production id="20396" count="1" />    <!-- Steam beetle -->
+	</item>
+	<item>
+		<ingredient count="400" id="5556" /> <!-- Star Ornament -->
+		<production id="20029" count="1" />    <!-- Light purple horse -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="22364" count="1" />    <!-- Dark Bear -->
+	</item>
+	<item>
+		<ingredient count="600" id="5556" /> <!-- Star Ornament -->
+		<production id="22384" count="1" />    <!-- Halloween Witch's -->
+	</item>
+	<item>
+		<ingredient count="1000" id="5556" /> <!-- Star Ornament -->
+		<production id="22356" count="1" />    <!-- Princess Ant -->
+	</item>
+	<item>
+		<ingredient count="800" id="5556" /> <!-- Star Ornament -->
+		<production id="33642" count="1" />    <!-- Kukuri -->
+	</item>
+	<item>
+		<ingredient count="1500" id="5556" /> <!-- Star Ornament -->
+		<production id="37496" count="1" />    <!-- Lyn Draco -->
+	</item>
+	<item>
+		<ingredient count="1500" id="5556" /> <!-- Star Ornament -->
+		<production id="36952" count="1" />    <!-- Air Bike -->
+	</item>
 </list>

@@ -20,26 +20,22 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public final class RestartResponse extends L2GameServerPacket
-{
+public final class RestartResponse extends L2GameServerPacket {
 	public static final RestartResponse STATIC_PACKET_TRUE = new RestartResponse(true);
 	private static final RestartResponse STATIC_PACKET_FALSE = new RestartResponse(false);
 
-	public static RestartResponse valueOf(boolean result)
-	{
+	public static RestartResponse valueOf(boolean result) {
 		return result ? STATIC_PACKET_TRUE : STATIC_PACKET_FALSE;
 	}
 
 	private boolean result;
 
-	public RestartResponse(boolean result)
-	{
+	public RestartResponse(boolean result) {
 		this.result = result;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(result ? 1 : 0);
 	}
 }

@@ -19,8 +19,7 @@ package l2server.gameserver.templates.item;
  * Description of EtcItem Type
  */
 
-public enum L2EtcItemType implements L2ItemType
-{
+public enum L2EtcItemType implements L2ItemType {
 	NONE(1, "none"),
 	ARROW(2, "arrow"),
 	POTION(3, "potion"),
@@ -67,8 +66,7 @@ public enum L2EtcItemType implements L2ItemType
 	 * @param id   : int designating the ID of the EtcItemType
 	 * @param name : String designating the name of the EtcItemType
 	 */
-	L2EtcItemType(int id, String name)
-	{
+	L2EtcItemType(int id, String name) {
 		this.id = id;
 		this.name = name;
 	}
@@ -79,8 +77,7 @@ public enum L2EtcItemType implements L2ItemType
 	 * @return int : ID of the item
 	 */
 	@Override
-	public int mask()
-	{
+	public int mask() {
 		return 0;
 	}
 
@@ -90,8 +87,7 @@ public enum L2EtcItemType implements L2ItemType
 	 * @return String
 	 */
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return name;
 	}
 }

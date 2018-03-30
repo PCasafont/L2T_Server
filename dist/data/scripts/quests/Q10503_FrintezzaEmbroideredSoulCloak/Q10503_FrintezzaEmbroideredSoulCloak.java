@@ -7,8 +7,7 @@ import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
 import l2server.util.Rnd;
 
-public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest
-{
+public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest {
 	// Quest Number
 	private static final String qn = "10503_FrintezzaEmbroideredSoulCloak";
 
@@ -26,8 +25,7 @@ public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest
 	private static final int MaxGiven = 3;
 	private static final int MinLevel = 80;
 
-	public Q10503_FrintezzaEmbroideredSoulCloak(int questId, String name, String descr)
-	{
+	public Q10503_FrintezzaEmbroideredSoulCloak(int questId, String name, String descr) {
 		super(questId, name, descr);
 		addStartNpc(OlfAdams);
 		addTalkId(OlfAdams);
@@ -37,13 +35,11 @@ public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
@@ -58,39 +54,28 @@ public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
 
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		switch (st.getState())
-		{
-			case State.CREATED:
-			{
-				if (player.getLevel() >= MinLevel)
-				{
+		switch (st.getState()) {
+			case State.CREATED: {
+				if (player.getLevel() >= MinLevel) {
 					htmltext = "32612-01.htm"; // Quest introduction
-				}
-				else
-				{
+				} else {
 					htmltext = "32612-Frintezza-02.htm"; // Player has not the minimum level
 				}
 				break;
 			}
-			case State.STARTED:
-			{
+			case State.STARTED: {
 				final long count = st.getQuestItemsCount(FrintezzaSoulFragment); // How many items player has
-				if (st.getInt("cond") == 1 && st.getQuestItemsCount(FrintezzaSoulFragment) < RequiredItems)
-				{
+				if (st.getInt("cond") == 1 && st.getQuestItemsCount(FrintezzaSoulFragment) < RequiredItems) {
 					htmltext = "32612-Frintezza-03.htm"; // Still has not the required amount
-				}
-				else if (count >= RequiredItems)
-				{
+				} else if (count >= RequiredItems) {
 					// Player must have all required items
 					st.takeItems(FrintezzaSoulFragment, RequiredItems);
 					st.giveItems(FrintezzaSoulCloak, 1);
@@ -101,8 +86,7 @@ public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest
 				}
 				break;
 			}
-			case State.COMPLETED:
-			{
+			case State.COMPLETED: {
 				htmltext = getAlreadyCompletedMsg(player); // Already completed
 				break;
 			}
@@ -112,35 +96,27 @@ public class Q10503_FrintezzaEmbroideredSoulCloak extends Quest
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
-		if (player.getParty() != null)
-		{
-			for (L2PcInstance partyMember : player.getParty().getPartyMembers())
-			{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+		if (player.getParty() != null) {
+			for (L2PcInstance partyMember : player.getParty().getPartyMembers()) {
 				giveFragments(partyMember);
 			}
-		}
-		else
-		{
+		} else {
 			giveFragments(player);
 		}
 
 		return null;
 	}
 
-	private void giveFragments(L2PcInstance player)
-	{
+	private void giveFragments(L2PcInstance player) {
 		final QuestState st = player.getQuestState(qn);
 
-		if (st != null && st.getState() == State.STARTED)
-		{
+		if (st != null && st.getState() == State.STARTED) {
 			st.giveItems(FrintezzaSoulCloak, Rnd.get(MinGiven, MaxGiven));
 		}
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Q10503_FrintezzaEmbroideredSoulCloak(10503, qn, "FrintezzaEmbroideredSoulCloak");
 	}
 }

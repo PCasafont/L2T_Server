@@ -36,73 +36,58 @@ import java.util.logging.Logger;
  *
  * @version $Revision: 1.9.4.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class Logout extends L2GameClientPacket
-{
+public final class Logout extends L2GameClientPacket {
 
 	protected static final Logger logAccounting = Logger.getLogger("accounting");
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		// Dont allow leaving if player is fighting
 		final L2PcInstance player = getClient().getActiveChar();
 
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
 
-		if (player.getActiveEnchantItem() != null || player.getActiveEnchantAttrItem() != null)
-		{
+		if (player.getActiveEnchantItem() != null || player.getActiveEnchantAttrItem() != null) {
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
-		if (player.isLocked())
-		{
+		if (player.isLocked()) {
 			Log.warning("Player " + player.getName() + " tried to logout during class change.");
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
-		if (Elpy.elpy.containsKey(player.getObjectId()))
-		{
+		if (Elpy.elpy.containsKey(player.getObjectId())) {
 			Elpy.getInstance().removePlayer(player);
 		}
-		if (Ranked1v1.players.contains(player))
-		{
+		if (Ranked1v1.players.contains(player)) {
 			Ranked1v1.players.remove(player);
 		}
-		if (Ranked2v2.players.contains(player))
-		{
+		if (Ranked2v2.players.contains(player)) {
 			Ranked2v2.players.remove(player);
 		}
-		if (Ranked2v2.teamOne.contains(player))
-		{
+		if (Ranked2v2.teamOne.contains(player)) {
 			Ranked2v2.teamOne.clear();
 		}
-		if (Ranked2v2.teamTwo.contains(player))
-		{
+		if (Ranked2v2.teamTwo.contains(player)) {
 			Ranked2v2.teamTwo.clear();
 		}
-		       if(RandomFight.players.contains(player))
-		       {
-		           player.sendMessage("You can't logout when you are in random fight event.");
-		           player.sendPacket(ActionFailed.STATIC_PACKET);
-		           return;
-		       }
+		if (RandomFight.players.contains(player)) {
+			player.sendMessage("You can't logout when you are in random fight event.");
+			player.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
 
-		if (AttackStanceTaskManager.getInstance().getAttackStanceTask(player) &&
-				!(player.isGM() && Config.GM_RESTART_FIGHTING))
-		{
-			if (Config.DEBUG)
-			{
+		if (AttackStanceTaskManager.getInstance().getAttackStanceTask(player) && !(player.isGM() && Config.GM_RESTART_FIGHTING)) {
+			if (Config.DEBUG) {
 				Log.fine("Player " + player.getName() + " tried to logout while fighting");
 			}
 

@@ -31,26 +31,22 @@ import l2server.gameserver.network.SystemMessageId;
  * 4: [(cchh)]
  *
  * @author Tempy
- *         CT 2.3 [dddccQQQQQcQQQc.cdQc....Qc..ccc.cccc....ccd]
+ * CT 2.3 [dddccQQQQQcQQQc.cdQc....Qc..ccc.cccc....ccd]
  * @editor shansoft
  */
-public class SSQStatus extends L2GameServerPacket
-{
+public class SSQStatus extends L2GameServerPacket {
 	private int page;
 
-	public SSQStatus(int objectId, int recordPage)
-	{
+	public SSQStatus(int objectId, int recordPage) {
 		page = recordPage;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeC(page);
 		writeC(0); // current period?
 
-		switch (page)
-		{
+		switch (page) {
 			case 1:
 				// [ddd cc dd ddd c ddd c]
 
@@ -84,8 +80,7 @@ public class SSQStatus extends L2GameServerPacket
 
 				writeC(5); // Total number of festivals
 
-				for (int i = 0; i < 5; i++)
-				{
+				for (int i = 0; i < 5; i++) {
 					writeC(i + 1); // Current client-side festival ID
 					writeD(0);
 
@@ -106,8 +101,7 @@ public class SSQStatus extends L2GameServerPacket
 				writeC(35); // Minimum limit for winning cabal to claim a seal
 				writeC(3); // Total number of seals
 
-				for (int i = 1; i < 4; i++)
-				{
+				for (int i = 1; i < 4; i++) {
 					writeC(i);
 					writeC(0);
 
@@ -120,8 +114,7 @@ public class SSQStatus extends L2GameServerPacket
 				writeC(0); // Overall predicted winner
 				writeC(3); // Total number of seals
 
-				for (int i = 1; i < 4; i++)
-				{
+				for (int i = 1; i < 4; i++) {
 					writeC(i);
 
 					writeC(0);

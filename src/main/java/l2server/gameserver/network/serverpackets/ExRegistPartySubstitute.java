@@ -18,19 +18,16 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Erlandys
  */
-public class ExRegistPartySubstitute extends L2GameServerPacket
-{
-
+public class ExRegistPartySubstitute extends L2GameServerPacket {
+	
 	int k[];
-
-	public ExRegistPartySubstitute(int l[])
-	{
+	
+	public ExRegistPartySubstitute(int l[]) {
 		k = l;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(k[0]);
 		writeD(k[1]);
 	}

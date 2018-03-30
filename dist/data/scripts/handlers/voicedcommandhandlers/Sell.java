@@ -39,8 +39,7 @@ import java.util.Map.Entry;
  * @author LasTravel
  */
 
-public class Sell implements IVoicedCommandHandler
-{
+public class Sell implements IVoicedCommandHandler {
 	private static final boolean logSellCommand = true;
 
 	private static final String[] VOICED_COMMANDS = {"sell"};
@@ -49,28 +48,22 @@ public class Sell implements IVoicedCommandHandler
 	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance player, String params)
-	{
-		if (command.equalsIgnoreCase("sell"))
-		{
-			if (!player.getClient().getFloodProtectors().getTransaction().tryPerformAction("buy"))
-			{
+	public boolean useVoicedCommand(String command, L2PcInstance player, String params) {
+		if (command.equalsIgnoreCase("sell")) {
+			if (!player.getClient().getFloodProtectors().getTransaction().tryPerformAction("buy")) {
 				return false;
 			}
 
-			if (ThreadPoolManager.getInstance().isShutdown())
-			{
+			if (ThreadPoolManager.getInstance().isShutdown()) {
 				return false;
 			}
 
-			if (params == null)
-			{
+			if (params == null) {
 				params = "";
 			}
 
 			boolean isSelling = player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_CUSTOM_SELL;
-			if (!isSelling && player.getPrivateStoreType() > 0)
-			{
+			if (!isSelling && player.getPrivateStoreType() > 0) {
 				return false;
 			}
 
@@ -78,167 +71,118 @@ public class Sell implements IVoicedCommandHandler
 			String[] values = params.split(" ");
 
 			//Commands Section
-			if (!isSelling)
-			{
-				if (params.contains("addItem"))
-				{
-					if (values != null)
-					{
-						if (values.length == 2)
-						{
-							if (!canAddMoreItems(player))
-							{
+			if (!isSelling) {
+				if (params.contains("addItem")) {
+					if (values != null) {
+						if (values.length == 2) {
+							if (!canAddMoreItems(player)) {
 								return false;
 							}
 
 							int itemObjdId = Integer.parseInt(values[1]);
 							L2ItemInstance targetItem = player.getInventory().getItemByObjectId(itemObjdId);
-							if (targetItem != null && targetItem.getCount() >= 1)
-							{
+							if (targetItem != null && targetItem.getCount() >= 1) {
 								list.addItem(itemObjdId, 1L);
 							}
-						}
-						else
-						{
+						} else {
 							player.sendPacket(new ExShowScreenMessage("Click on the item you want to sell", 5000));
 							player.setIsAddSellItem(true);
 						}
 					}
-				}
-				else if (params.contains("addPrice"))
-				{
-					if (values != null)
-					{
-						if (values.length == 2)
-						{
-							if (!canAddMoreItems(player))
-							{
+				} else if (params.contains("addPrice")) {
+					if (values != null) {
+						if (values.length == 2) {
+							if (!canAddMoreItems(player)) {
 								return false;
 							}
 
 							int itemObjId = Integer.valueOf(values[1]);
 
-							player.sendPacket(
-									new ExShowScreenMessage("Click on the item you want to add as a price", 5000));
+							player.sendPacket(new ExShowScreenMessage("Click on the item you want to add as a price", 5000));
 							player.setAddSellPrice(itemObjId);
-						}
-						else
-						{
-							if (values.length == 3)
-							{
+						} else {
+							if (values.length == 3) {
 								int itemObjId = Integer.parseInt(values[1]);
 								int itemId = Integer.parseInt(values[2]);
 
 								L2Item toSell = ItemTable.getInstance().getTemplate(itemId);
-								if (toSell != null && toSell.isTradeable())
-								{
-									for (TradeItem item : list.getItems())
-									{
-										if (item == null)
-										{
+								if (toSell != null && toSell.isTradeable()) {
+									for (TradeItem item : list.getItems()) {
+										if (item == null) {
 											continue;
 										}
-										if (item.getObjectId() == itemObjId)
-										{
+										if (item.getObjectId() == itemObjId) {
 											item.getPriceItems().put(toSell, 1L);
 											break;
 										}
 									}
-								}
-								else
-								{
+								} else {
 									player.sendMessage("Sell: You can't add this item as a price!");
 									return false;
 								}
 							}
 						}
 					}
-				}
-				else if (params.contains("deleteItem"))
-				{
-					if (values != null)
-					{
-						if (values.length == 2)
-						{
+				} else if (params.contains("deleteItem")) {
+					if (values != null) {
+						if (values.length == 2) {
 							int objId = Integer.parseInt(values[1]);
 							list.removeItem(objId, -1, -1);
 						}
 					}
-				}
-				else if (params.contains("setSellItemCount"))
-				{
-					if (values != null)
-					{
-						if (values.length == 3)
-						{
+				} else if (params.contains("setSellItemCount")) {
+					if (values != null) {
+						if (values.length == 3) {
 							int itemObjId = Integer.parseInt(values[1]);
 							long priceCount = Long.parseLong(values[2]);
 
-							if (priceCount < 1)
-							{
+							if (priceCount < 1) {
 								player.sendMessage("Sell: You can't set: " + priceCount + "!");
 								return false;
 							}
 
 							L2ItemInstance targetItem = player.getInventory().getItemByObjectId(itemObjId);
-							if (targetItem != null)
-							{
-								if (player.checkItemManipulation(itemObjId, priceCount, "Custom Sell") == null)
-								{
+							if (targetItem != null) {
+								if (player.checkItemManipulation(itemObjId, priceCount, "Custom Sell") == null) {
 									player.sendMessage("Sell: You don't have enough " + targetItem.getName() + "!");
 									return false;
 								}
 
 								//TradeItem item = list.getItems()[i];
-								for (TradeItem item : list.getItems())
-								{
-									if (item == null)
-									{
+								for (TradeItem item : list.getItems()) {
+									if (item == null) {
 										continue;
 									}
-									if (item.getObjectId() == itemObjId)
-									{
+									if (item.getObjectId() == itemObjId) {
 										item.setCount(priceCount);
 										break;
 									}
 								}
-							}
-							else
-							{
+							} else {
 								player.sendMessage("Sell: Something is wrong...");
 								return false;
 							}
 						}
 					}
-				}
-				else if (params.contains("setSellPriceCount"))
-				{
-					if (values != null)
-					{
-						if (values.length == 4)
-						{
+				} else if (params.contains("setSellPriceCount")) {
+					if (values != null) {
+						if (values.length == 4) {
 							int itemObjId = Integer.parseInt(values[1]);
 							int itemId = Integer.parseInt(values[2]);
 							Long priceCount = Long.parseLong(values[3]);
 
-							if (priceCount < 1)
-							{
+							if (priceCount < 1) {
 								player.sendMessage("Sell: You can't set " + priceCount + "");
 								return false;
 							}
 
-							for (TradeItem item : list.getItems())
-							{
-								if (item == null)
-								{
+							for (TradeItem item : list.getItems()) {
+								if (item == null) {
 									continue;
 								}
-								if (item.getObjectId() == itemObjId)
-								{
-									for (Entry<L2Item, Long> i : item.getPriceItems().entrySet())
-									{
-										if (i.getKey().getItemId() == itemId)
-										{
+								if (item.getObjectId() == itemObjId) {
+									for (Entry<L2Item, Long> i : item.getPriceItems().entrySet()) {
+										if (i.getKey().getItemId() == itemId) {
 											item.getPriceItems().put(i.getKey(), priceCount);
 											break;
 										}
@@ -248,119 +192,85 @@ public class Sell implements IVoicedCommandHandler
 							}
 						}
 					}
-				}
-				else if (params.contains("deletePriceItem"))
-				{
-					if (values != null)
-					{
-						if (values.length == 3)
-						{
+				} else if (params.contains("deletePriceItem")) {
+					if (values != null) {
+						if (values.length == 3) {
 							int itemObjId = Integer.parseInt(values[1]);
 							int itemId = Integer.parseInt(values[2]);
 							L2Item temp = ItemTable.getInstance().getTemplate(itemId);
-							if (temp == null)
-							{
+							if (temp == null) {
 								return false;
 							}
 
-							for (TradeItem item : list.getItems())
-							{
-								if (item == null)
-								{
+							for (TradeItem item : list.getItems()) {
+								if (item == null) {
 									continue;
 								}
-								if (item.getObjectId() == itemObjId)
-								{
+								if (item.getObjectId() == itemObjId) {
 									item.getPriceItems().remove(temp);
 									break;
 								}
 							}
 						}
 					}
-				}
-				else if (params.contains("setMessage"))
-				{
-					if (values != null)
-					{
-						if (params.length() >= 11)
-						{
+				} else if (params.contains("setMessage")) {
+					if (values != null) {
+						if (params.length() >= 11) {
 							String title = params.substring(11);
-							if (title != null && title.length() < 29)
-							{
+							if (title != null && title.length() < 29) {
 								list.setTitle(title);
 							}
-						}
-						else
-						{
+						} else {
 							player.sendMessage("Sell: Please set correctly the shop message!");
 						}
 					}
-				}
-				else if (params.contains("delMessage"))
-				{
+				} else if (params.contains("delMessage")) {
 					list.setTitle(null);
-				}
-				else if (params.equalsIgnoreCase("start"))
-				{
-					if (list.getItemCount() < 1)
-					{
+				} else if (params.equalsIgnoreCase("start")) {
+					if (list.getItemCount() < 1) {
 						player.sendMessage("Sell: You need set at least one item to sell!");
 						return false;
 					}
 
-					for (TradeItem item : list.getItems())
-					{
-						if (item == null)
-						{
+					for (TradeItem item : list.getItems()) {
+						if (item == null) {
 							continue;
 						}
 
-						if (item.isEquipped())
-						{
+						if (item.isEquipped()) {
 							player.sendMessage("Sell: You can't sell one item that is equipped!");
 							return false;
 						}
 
-						if (player.checkItemManipulation(item.getObjectId(), item.getCount(), "Custom Sell") == null)
-						{
+						if (player.checkItemManipulation(item.getObjectId(), item.getCount(), "Custom Sell") == null) {
 							player.sendMessage("Sell: You can't sell: " + item.getItem().getName() + "!");
 							return false;
 						}
 
-						if (item.getPriceItems().isEmpty())
-						{
+						if (item.getPriceItems().isEmpty()) {
 							player.sendMessage("Sell: " + item.getItem().getName() + " doesn't have any price!");
 							return false;
 						}
 					}
 
-					if (!player.getAccessLevel().allowTransaction())
-					{
-						player.sendPacket(
-								SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
+					if (!player.getAccessLevel().allowTransaction()) {
+						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
 						return false;
 					}
 
-					if (AttackStanceTaskManager.getInstance().getAttackStanceTask(player) || player.isInDuel())
-					{
-						player.sendPacket(SystemMessage
-								.getSystemMessage(SystemMessageId.CANT_OPERATE_PRIVATE_STORE_DURING_COMBAT));
+					if (AttackStanceTaskManager.getInstance().getAttackStanceTask(player) || player.isInDuel()) {
+						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_OPERATE_PRIVATE_STORE_DURING_COMBAT));
 						return false;
 					}
 
-					if (player.isInsideZone(L2Character.ZONE_NOSTORE))
-					{
+					if (player.isInsideZone(L2Character.ZONE_NOSTORE)) {
 						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PRIVATE_STORE_HERE));
 						return false;
 					}
 
-					for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70))
-					{
-						if (!(c instanceof L2PcInstance &&
-								((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
-						{
-							player.sendMessage(
-									"Sell: Try to put your store a little further from " + c.getName() + ", please.");
+					for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70)) {
+						if (!(c instanceof L2PcInstance && ((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE)) {
+							player.sendMessage("Sell: Try to put your store a little further from " + c.getName() + ", please.");
 							return false;
 						}
 					}
@@ -371,25 +281,19 @@ public class Sell implements IVoicedCommandHandler
 					player.broadcastPacket(new PrivateStoreMsgSell(player));
 					player.sitDown();
 
-					if (logSellCommand)
-					{
+					if (logSellCommand) {
 						String log = player.getName() + " (" + list.getTitle() + ")\n";
-						for (TradeItem item : list.getItems())
-						{
+						for (TradeItem item : list.getItems()) {
 							log += "\t" + item.getItem().getName() + " (max " + item.getCount() + ")\n";
-							for (Entry<L2Item, Long> priceItem : item.getPriceItems().entrySet())
-							{
+							for (Entry<L2Item, Long> priceItem : item.getPriceItems().entrySet()) {
 								log += "\t\t" + priceItem.getKey().getName() + " (" + priceItem.getValue() + ")\n";
 							}
 						}
 						Util.logToFile(log, "sellLog", true);
 					}
 				}
-			}
-			else
-			{
-				if (params.equalsIgnoreCase("stop"))
-				{
+			} else {
+				if (params.equalsIgnoreCase("stop")) {
 					player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
 					player.standUp();
 					player.broadcastUserInfo();
@@ -404,14 +308,11 @@ public class Sell implements IVoicedCommandHandler
 
 			//Title Section
 			sb.append("<center><table width=300 bgcolor=666666><tr><td align=center>Shop Message:</td></tr");
-			if (list != null && list.getTitle() == null)
-			{
+			if (list != null && list.getTitle() == null) {
 				sb.append("<tr><td align=center><edit var=\"addMes\" width=150 type=char length=16></td></tr>");
 				sb.append(
 						"<tr><td align=center><button action=\"bypass -h voice .sell setMessage $addMes\" value=\"Add Message!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
-			}
-			else
-			{
+			} else {
 				sb.append("<tr><td align=center><font color=LEVEL>" + list.getTitle() + "</font></td></tr>");
 				sb.append(
 						"<tr><td align=center><button action=\"bypass -h voice .sell delMessage\" value=Delete Description! width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
@@ -422,15 +323,11 @@ public class Sell implements IVoicedCommandHandler
 			//Add Items
 			sb.append("<table width=300>");
 
-			if (isSelling)
-			{
+			if (isSelling) {
 				sb.append(
 						"<tr><td align=center><button action=\"bypass -h voice .sell stop\" value=\"Stop!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
-			}
-			else
-			{
-				if (list.getItemCount() > 0)
-				{
+			} else {
+				if (list.getItemCount() > 0) {
 					sb.append(
 							"<tr><td align=center><button action=\"bypass -h voice .sell start\" value=\"Start!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr>");
 				}
@@ -442,11 +339,9 @@ public class Sell implements IVoicedCommandHandler
 			//Current items
 			sb.append("<br>");
 			sb.append("<table width=300>");
-			for (int i = 0; i < list.getItemCount(); i++)
-			{
+			for (int i = 0; i < list.getItemCount(); i++) {
 				TradeItem item = list.getItems()[i];
-				if (item == null)
-				{
+				if (item == null) {
 					continue;
 				}
 
@@ -454,17 +349,13 @@ public class Sell implements IVoicedCommandHandler
 				sb.append("<td width=300>");
 
 				String itemName = item.getItem().getName();
-				if (itemName.length() > 30)
-				{
+				if (itemName.length() > 30) {
 					itemName = itemName.substring(0, 30) + "(1)" + "...";
-				}
-				else
-				{
+				} else {
 					itemName += "(1)";
 				}
 
-				sb.append(
-						"<center><table width=300 bgcolor=666666><tr><td FIXWIDTH=300 align=center>Sell</td></tr></table></center>");
+				sb.append("<center><table width=300 bgcolor=666666><tr><td FIXWIDTH=300 align=center>Sell</td></tr></table></center>");
 				sb.append("<table width=300 bgcolor=E35757><tr><td FIXWIDTH=150>" + itemName +
 						"</td><td FIXWIDTH=20><button action=\"bypass -h voice .sell deleteItem " + item.getObjectId() +
 						"\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></td></tr></table>");
@@ -474,38 +365,32 @@ public class Sell implements IVoicedCommandHandler
 						item.getObjectId() + " $count" + item.getObjectId() +
 						"\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></td></tr></table></td></tr></table>");
 
-				if (!item.getPriceItems().isEmpty())
-				{
+				if (!item.getPriceItems().isEmpty()) {
 					sb.append("<br>");
-					sb.append(
-							"<center><table width=250 bgcolor=666666><tr><td FIXWIDTH=270 align=center>Price per unit</td></tr></table></center>");
+					sb.append("<center><table width=250 bgcolor=666666><tr><td FIXWIDTH=270 align=center>Price per unit</td></tr></table></center>");
 
 					int index = 0;
-					for (Entry<L2Item, Long> b : item.getPriceItems().entrySet())
-					{
+					for (Entry<L2Item, Long> b : item.getPriceItems().entrySet()) {
 						String priceName = b.getKey().getName();
-						if (priceName.length() > 35)
-						{
+						if (priceName.length() > 35) {
 							priceName = priceName.substring(0, 35) + "...";
 						}
 
 						sb.append("<center>");
 						sb.append("<table width=250 bgcolor=8FBDC5><tr><td FIXWIDTH=230>" + priceName +
-								"</td><td FIXWIDTH=20><button action=\"bypass -h voice .sell deletePriceItem " +
-								item.getObjectId() + " " + b.getKey().getItemId() +
+								"</td><td FIXWIDTH=20><button action=\"bypass -h voice .sell deletePriceItem " + item.getObjectId() + " " +
+								b.getKey().getItemId() +
 								"\" value=\" \" width=16 height=16 back=L2UI_CT1.BtnEditDel fore=L2UI_CT1.BtnEditDel_over></td></tr></table>");
 						sb.append("<table width=250><tr><td><table width=220><tr><td width=100>Count: " + b.getValue() +
 								" </td><td width=55><edit var=\"count" + item.getObjectId() + "-" + index +
 								"\" width=50 type=number length=14></td><td width=30><button action=\"bypass -h voice .sell setSellPriceCount " +
-								item.getObjectId() + " " + b.getKey().getItemId() + " " + " $count" +
-								item.getObjectId() + "-" + index +
+								item.getObjectId() + " " + b.getKey().getItemId() + " " + " $count" + item.getObjectId() + "-" + index +
 								"\" value=\" \" width=16 height=16 back=L2UI.rightBtn1 fore=L2UI.rightBtn2></td></tr></table></td></tr></table><br>");
 						sb.append("</center>");
 						index++;
 					}
 				}
-				sb.append("<br><center><table><tr><td align=center><button action=\"bypass -h voice .sell addPrice " +
-						item.getObjectId() +
+				sb.append("<br><center><table><tr><td align=center><button action=\"bypass -h voice .sell addPrice " + item.getObjectId() +
 						"\" value=\"Add price!\" width=120 height=20 back=L2UI_ct1.button_df fore=L2UI_ct1.button_df></td></tr></table></center><br><br><br>");
 				sb.append("</td>");
 				sb.append("</tr>");
@@ -518,21 +403,17 @@ public class Sell implements IVoicedCommandHandler
 		return true;
 	}
 
-	private boolean canAddMoreItems(L2PcInstance player)
-	{
+	private boolean canAddMoreItems(L2PcInstance player) {
 		TradeList list = player.getCustomSellList();
 		int count = list.getItems().length;
-		for (TradeItem item : list.getItems())
-		{
-			if (item == null)
-			{
+		for (TradeItem item : list.getItems()) {
+			if (item == null) {
 				continue;
 			}
 			count += item.getPriceItems().size();
 		}
 
-		if (count + 1 >= 17)
-		{
+		if (count + 1 >= 17) {
 			player.sendMessage("You can't add more items!");
 			return false;
 		}
@@ -543,8 +424,7 @@ public class Sell implements IVoicedCommandHandler
 	 * @see l2server.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
 	 */
 	@Override
-	public String[] getVoicedCommandList()
-	{
+	public String[] getVoicedCommandList() {
 		return VOICED_COMMANDS;
 	}
 }

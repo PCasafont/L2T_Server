@@ -26,78 +26,62 @@ import l2server.gameserver.util.Evolve;
  *
  * @version $Revision$ $Date$
  */
-public class L2PetManagerInstance extends L2MerchantInstance
-{
-	public L2PetManagerInstance(int objectID, L2NpcTemplate template)
-	{
+public class L2PetManagerInstance extends L2MerchantInstance {
+	public L2PetManagerInstance(int objectID, L2NpcTemplate template) {
 		super(objectID, template);
 		setInstanceType(InstanceType.L2PetManagerInstance);
 	}
-
+	
 	@Override
-	public String getHtmlPath(int npcId, int val)
-	{
+	public String getHtmlPath(int npcId, int val) {
 		String pom = "";
-
-		if (val == 0)
-		{
+		
+		if (val == 0) {
 			pom = "" + npcId;
-		}
-		else
-		{
+		} else {
 			pom = npcId + "-" + val;
 		}
-
+		
 		return "petmanager/" + pom + ".htm";
 	}
-
+	
 	@Override
-	public String getHtmlPath(int npcId, String val)
-	{
+	public String getHtmlPath(int npcId, String val) {
 		String pom = "";
-		if (val.isEmpty() || val.equals("0"))
-		{
+		if (val.isEmpty() || val.equals("0")) {
 			pom = "" + npcId;
-		}
-		else
-		{
+		} else {
 			pom = npcId + "-" + val;
 		}
-
+		
 		return "petmanager/" + pom + ".htm";
 	}
-
+	
 	@Override
-	public void showChatWindow(L2PcInstance player)
-	{
+	public void showChatWindow(L2PcInstance player) {
 		String filename = "petmanager/" + getNpcId() + ".htm";
-
+		
 		L2Summon summon = player.getPet();
-		if (getNpcId() == 36478 && (summon != null || !player.getSummons().isEmpty()))
-		{
+		if (getNpcId() == 36478 && (summon != null || !player.getSummons().isEmpty())) {
 			filename = "petmanager/restore-unsummonpet.htm";
 		}
-
+		
 		NpcHtmlMessage html = new NpcHtmlMessage(1);
 		html.setFile(player.getHtmlPrefix(), filename);
-		if (Config.ALLOW_RENTPET && Config.LIST_PET_RENT_NPC.contains(getNpcId()))
-		{
+		if (Config.ALLOW_RENTPET && Config.LIST_PET_RENT_NPC.contains(getNpcId())) {
 			html.replace("_Quest", "_RentPet\">Rent Pet</a><br><a action=\"bypass -h npc_%objectId%_Quest");
 		}
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		html.replace("%npcname%", getName());
 		player.sendPacket(html);
 	}
-
+	
 	@Override
-	public void onBypassFeedback(L2PcInstance player, String command)
-	{
-		if (command.startsWith("exchange"))
-		{
+	public void onBypassFeedback(L2PcInstance player, String command) {
+		if (command.startsWith("exchange")) {
 			String[] params = command.split(" ");
 			int val = Integer.parseInt(params[1]);
-			switch (val)
-			{
+			switch (val) {
 				case 1:
 					exchange(player, 7585, 6650);
 					break;
@@ -108,14 +92,11 @@ public class L2PetManagerInstance extends L2MerchantInstance
 					exchange(player, 7584, 6649);
 					break;
 			}
-		}
-		else if (command.startsWith("evolve"))
-		{
+		} else if (command.startsWith("evolve")) {
 			String[] params = command.split(" ");
 			int val = Integer.parseInt(params[1]);
 			boolean ok = false;
-			switch (val)
-			{
+			switch (val) {
 				//Info evolve(player, "curent pet summon item", "new pet summon item", "lvl required to evolve")
 				//To ignore evolve just put value 0 where do you like example: evolve(player, 0, 9882, 55);
 				case 1:
@@ -134,20 +115,16 @@ public class L2PetManagerInstance extends L2MerchantInstance
 					ok = Evolve.doEvolve(player, this, 6649, 10312, 55);
 					break;
 			}
-			if (!ok)
-			{
+			if (!ok) {
 				NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 				html.setFile(player.getHtmlPrefix(), "petmanager/evolve_no.htm");
 				player.sendPacket(html);
 			}
-		}
-		else if (command.startsWith("restore"))
-		{
+		} else if (command.startsWith("restore")) {
 			String[] params = command.split(" ");
 			int val = Integer.parseInt(params[1]);
 			boolean ok = false;
-			switch (val)
-			{
+			switch (val) {
 				//Info evolve(player, "curent pet summon item", "new pet summon item", "lvl required to evolve")
 				case 1:
 					ok = Evolve.doRestore(player, this, 10307, 9882, 55);
@@ -165,30 +142,23 @@ public class L2PetManagerInstance extends L2MerchantInstance
 					ok = Evolve.doRestore(player, this, 10310, 4424, 55);
 					break;
 			}
-			if (!ok)
-			{
+			if (!ok) {
 				NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 				html.setFile(player.getHtmlPrefix(), "petmanager/restore_no.htm");
 				player.sendPacket(html);
 			}
-		}
-		else
-		{
+		} else {
 			super.onBypassFeedback(player, command);
 		}
 	}
-
-	public final void exchange(L2PcInstance player, int itemIdtake, int itemIdgive)
-	{
+	
+	public final void exchange(L2PcInstance player, int itemIdtake, int itemIdgive) {
 		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-		if (player.destroyItemByItemId("Consume", itemIdtake, 1, this, true))
-		{
+		if (player.destroyItemByItemId("Consume", itemIdtake, 1, this, true)) {
 			player.addItem("", itemIdgive, 1, this, true);
 			html.setFile(player.getHtmlPrefix(), "petmanager/" + getNpcId() + ".htm");
 			player.sendPacket(html);
-		}
-		else
-		{
+		} else {
 			html.setFile(player.getHtmlPrefix(), "petmanager/exchange_no.htm");
 			player.sendPacket(html);
 		}

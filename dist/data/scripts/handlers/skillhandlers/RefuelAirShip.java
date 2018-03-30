@@ -24,24 +24,20 @@ import l2server.gameserver.model.actor.instance.L2ControllableAirShipInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.skills.L2SkillType;
 
-public class RefuelAirShip implements ISkillHandler
-{
+public class RefuelAirShip implements ISkillHandler {
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.REFUEL};
 
 	/**
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (!(activeChar instanceof L2PcInstance))
-		{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+		if (!(activeChar instanceof L2PcInstance)) {
 			return;
 		}
 
 		final L2AirShipInstance ship = ((L2PcInstance) activeChar).getAirShip();
-		if (ship == null || !(ship instanceof L2ControllableAirShipInstance) || ship.getFuel() >= ship.getMaxFuel())
-		{
+		if (ship == null || !(ship instanceof L2ControllableAirShipInstance) || ship.getFuel() >= ship.getMaxFuel()) {
 			return;
 		}
 
@@ -53,8 +49,7 @@ public class RefuelAirShip implements ISkillHandler
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

@@ -22,8 +22,7 @@ import java.util.ArrayList;
 /**
  * @author -Wooden-
  */
-public class ServerStatus extends BaseSendablePacket
-{
+public class ServerStatus extends BaseSendablePacket {
 	private ArrayList<Attribute> attributes;
 
 	public static final String[] STATUS_STRING = {"Auto", "Good", "Normal", "Full", "Down", "Gm Only"};
@@ -59,25 +58,21 @@ public class ServerStatus extends BaseSendablePacket
 	public static final int ON = 0x01;
 	public static final int OFF = 0x00;
 
-	static class Attribute
-	{
+	static class Attribute {
 		public int id;
 		public int value;
 
-		Attribute(int pId, int pValue)
-		{
+		Attribute(int pId, int pValue) {
 			id = pId;
 			value = pValue;
 		}
 	}
 
-	public ServerStatus()
-	{
+	public ServerStatus() {
 		attributes = new ArrayList<>();
 	}
 
-	public void addAttribute(int id, int value)
-	{
+	public void addAttribute(int id, int value) {
 		attributes.add(new Attribute(id, value));
 	}
 
@@ -85,12 +80,10 @@ public class ServerStatus extends BaseSendablePacket
 	 * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent()
-	{
+	public byte[] getContent() {
 		writeC(0x06);
 		writeD(attributes.size());
-		for (Attribute temp : attributes)
-		{
+		for (Attribute temp : attributes) {
 			writeD(temp.id);
 			writeD(temp.value);
 		}

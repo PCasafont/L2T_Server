@@ -23,24 +23,21 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public class ShowTownMap extends L2GameServerPacket
-{
+public class ShowTownMap extends L2GameServerPacket {
 	private String texture;
 	private int x;
 	private int y;
-
+	
 	/**
 	 */
-	public ShowTownMap(String texture, int x, int y)
-	{
+	public ShowTownMap(String texture, int x, int y) {
 		this.texture = texture;
 		this.x = x;
 		this.y = y;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeS(texture);
 		writeD(x);
 		writeD(y);

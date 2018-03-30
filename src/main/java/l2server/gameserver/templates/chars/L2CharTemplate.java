@@ -22,8 +22,7 @@ import l2server.gameserver.templates.StatsSet;
  *
  * @version $Revision: 1.2.4.6 $ $Date: 2005/04/02 15:57:51 $
  */
-public class L2CharTemplate
-{
+public class L2CharTemplate {
 	// BaseStats
 	public int baseSTR;
 	public int baseCON;
@@ -97,8 +96,7 @@ public class L2CharTemplate
 	public double fCollisionRadius;
 	public double fCollisionHeight;
 
-	public L2CharTemplate(StatsSet set)
-	{
+	public L2CharTemplate(StatsSet set) {
 		// Base stats
 		baseSTR = set.getInteger("STR", 80);
 		baseCON = set.getInteger("CON", 86);
@@ -159,18 +157,15 @@ public class L2CharTemplate
 		startRandom = set.getInteger("startRandom", 300);
 	}
 
-	public float getBaseHpReg(int level)
-	{
+	public float getBaseHpReg(int level) {
 		return baseHpReg;
 	}
 
-	public float getBaseMpReg(int level)
-	{
+	public float getBaseMpReg(int level) {
 		return baseMpReg;
 	}
 
-	public float getBaseCpReg(int level)
-	{
+	public float getBaseCpReg(int level) {
 		return baseCpReg;
 	}
 }

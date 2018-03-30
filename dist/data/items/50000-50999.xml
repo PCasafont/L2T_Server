@@ -1,275 +1,275 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <item id="50000" type="EtcItem" name="Silver Coin" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="true"
-          isDropable="true" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50001" type="EtcItem" name="Gold Coin" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="true" isDropable="true"
-          isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50002" type="EtcItem" name="Dreams Coin" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="true"
-          isDropable="true" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50003" type="EtcItem" name="Rebirth Book" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="false"
-          isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50004" type="EtcItem" name="Luna Book" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="false" isDropable="false"
-          isSellable="false" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50005" type="EtcItem" name="Hunter Point" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="false"
-          isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50006" type="EtcItem" name="Coliseum Point" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="false"
-          isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50007" type="EtcItem" name="Raid Soul" icon="icon.etc_armor_soul_i00" immediateEffect="1"
-          isTradable="true" isDropable="true"
-          isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50008" type="EtcItem" name="Raid Feather" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="true"
-          isDropable="true" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50009" type="EtcItem" name="Raid Heart" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="true" isDropable="true"
-          isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50010" type="EtcItem" name="Competition Ticket" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="false"
-          isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50011" type="EtcItem" name="Competition Point" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="false"
-          isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50012" type="EtcItem" name="Deinonychus Claw" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="false"
-          isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50013" type="EtcItem" name="Hunting Helper Exchange Coupon" icon="icon.etc_lump_white_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50014" type="EtcItem" name="My Agathion Coupon" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="false"
-          isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50015" type="EtcItem" name="Event Coupon" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="false"
-          isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50500" type="EtcItem" name="Golkonda Horn Piece" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="true"
-          isDropable="true" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50501" type="EtcItem" name="Watchman Guillotine Bones" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="true"
-          isDropable="true" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50502" type="EtcItem" name="Queen Themis Skull" icon="icon.etc_lump_white_i00" immediateEffect="1"
-          isTradable="true"
-          isDropable="true" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50549" type="EtcItem" name="+10 Armor Piece Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
-          immediateEffect="1"
-          isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50550" type="EtcItem" name="+10 Jewel Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
-          immediateEffect="1"
-          isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50551" type="EtcItem" name="+10 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
-          immediateEffect="1"
-          isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50552" type="EtcItem" name="+15 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
-          immediateEffect="1"
-          isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50553" type="EtcItem" name="+16 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
-          immediateEffect="1"
-          isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50554" type="EtcItem" name="R99-Grade Weapon Ticket" icon="icon.etc_exchange_ticket_i00"
-          immediateEffect="1" isTradable="true"
-          isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50555" type="EtcItem" name="R99-Grade Armor Part Ticket" icon="icon.etc_exchange_ticket_i00"
-          immediateEffect="1"
-          isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50556" type="EtcItem" name="R99-Grade Jewel Ticket" icon="icon.etc_exchange_ticket_i00"
-          immediateEffect="1" isTradable="true"
-          isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50557" type="EtcItem" name="Costume Ticket" icon="icon.etc_exchange_ticket_i00" immediateEffect="1"
-          isTradable="true"
-          isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50560" type="EtcItem" name="Genesis Leaf" icon="icon.etc_scale_of_medusa_green_i00" immediateEffect="1"
-          isTradable="true"
-          isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50575" type="EtcItem" name="+17 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
-          immediateEffect="1"
-          isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50576" type="EtcItem" name="+18 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
-          immediateEffect="1"
-          isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50577" type="EtcItem" name="+19 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
-          immediateEffect="1"
-          isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50578" type="EtcItem" name="+20 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
-          immediateEffect="1"
-          isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50579" type="EtcItem" name="+21 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
-          immediateEffect="1"
-          isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50581" type="EtcItem" name="+23 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
-          immediateEffect="1"
-          isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50582" type="EtcItem" name="+24 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
-          immediateEffect="1"
-          isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50583" type="EtcItem" name="+25 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
-          immediateEffect="1"
-          isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
-    </item>
-    <item id="50600" type="EtcItem" name="Newbie Ticket - C-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50601" type="EtcItem" name="Newbie Ticket - B-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50602" type="EtcItem" name="Newbie Ticket - A-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50603" type="EtcItem" name="Newbie Ticket - S-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50604" type="EtcItem" name="Newbie Ticket - S80-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50605" type="EtcItem" name="Newbie Ticket - R-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50606" type="EtcItem" name="Newbie Ticket - R95-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50607" type="EtcItem" name="Newbie Ticket - R99-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50608" type="EtcItem" name="Newbie Ticket - C-Grade Armor Part"
-          icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50609" type="EtcItem" name="Newbie Ticket - B-Grade Armor Part"
-          icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50610" type="EtcItem" name="Newbie Ticket - A-Grade Armor Part"
-          icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50611" type="EtcItem" name="Newbie Ticket - S-Grade Armor Part"
-          icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50612" type="EtcItem" name="Newbie Ticket - S80-Grade Armor Part"
-          icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
-          isStackable="true"
-          time="10080">
-    </item>
-    <item id="50613" type="EtcItem" name="Newbie Ticket - R-Grade Armor Part"
-          icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50614" type="EtcItem" name="Newbie Ticket - R95-Grade Armor Part"
-          icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
-          isStackable="true"
-          time="10080">
-    </item>
-    <item id="50615" type="EtcItem" name="Newbie Ticket - R99-Grade Armor Part"
-          icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
-          isStackable="true"
-          time="10080">
-    </item>
-    <item id="50616" type="EtcItem" name="Newbie Ticket - C-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50617" type="EtcItem" name="Newbie Ticket - B-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50618" type="EtcItem" name="Newbie Ticket - A-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50619" type="EtcItem" name="Newbie Ticket - S-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50620" type="EtcItem" name="Newbie Ticket - S80-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50621" type="EtcItem" name="Newbie Ticket - R-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50622" type="EtcItem" name="Newbie Ticket - R95-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
-    <item id="50623" type="EtcItem" name="Newbie Ticket - R99-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
-          immediateEffect="1"
-          isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
-          time="10080">
-    </item>
+	<item id="50000" type="EtcItem" name="Silver Coin" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="true"
+		  isDropable="true" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50001" type="EtcItem" name="Gold Coin" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="true" isDropable="true"
+		  isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50002" type="EtcItem" name="Dreams Coin" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="true"
+		  isDropable="true" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50003" type="EtcItem" name="Rebirth Book" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="false"
+		  isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50004" type="EtcItem" name="Luna Book" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="false" isDropable="false"
+		  isSellable="false" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50005" type="EtcItem" name="Hunter Point" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="false"
+		  isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50006" type="EtcItem" name="Coliseum Point" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="false"
+		  isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50007" type="EtcItem" name="Raid Soul" icon="icon.etc_armor_soul_i00" immediateEffect="1"
+		  isTradable="true" isDropable="true"
+		  isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50008" type="EtcItem" name="Raid Feather" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="true"
+		  isDropable="true" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50009" type="EtcItem" name="Raid Heart" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="true" isDropable="true"
+		  isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50010" type="EtcItem" name="Competition Ticket" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="false"
+		  isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50011" type="EtcItem" name="Competition Point" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="false"
+		  isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50012" type="EtcItem" name="Deinonychus Claw" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="false"
+		  isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50013" type="EtcItem" name="Hunting Helper Exchange Coupon" icon="icon.etc_lump_white_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50014" type="EtcItem" name="My Agathion Coupon" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="false"
+		  isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50015" type="EtcItem" name="Event Coupon" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="false"
+		  isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50500" type="EtcItem" name="Golkonda Horn Piece" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="true"
+		  isDropable="true" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50501" type="EtcItem" name="Watchman Guillotine Bones" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="true"
+		  isDropable="true" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50502" type="EtcItem" name="Queen Themis Skull" icon="icon.etc_lump_white_i00" immediateEffect="1"
+		  isTradable="true"
+		  isDropable="true" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50549" type="EtcItem" name="+10 Armor Piece Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
+		  immediateEffect="1"
+		  isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50550" type="EtcItem" name="+10 Jewel Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
+		  immediateEffect="1"
+		  isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50551" type="EtcItem" name="+10 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
+		  immediateEffect="1"
+		  isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50552" type="EtcItem" name="+15 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
+		  immediateEffect="1"
+		  isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50553" type="EtcItem" name="+16 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
+		  immediateEffect="1"
+		  isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50554" type="EtcItem" name="R99-Grade Weapon Ticket" icon="icon.etc_exchange_ticket_i00"
+		  immediateEffect="1" isTradable="true"
+		  isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50555" type="EtcItem" name="R99-Grade Armor Part Ticket" icon="icon.etc_exchange_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50556" type="EtcItem" name="R99-Grade Jewel Ticket" icon="icon.etc_exchange_ticket_i00"
+		  immediateEffect="1" isTradable="true"
+		  isDropable="false" isSellable="false" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50557" type="EtcItem" name="Costume Ticket" icon="icon.etc_exchange_ticket_i00" immediateEffect="1"
+		  isTradable="true"
+		  isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50560" type="EtcItem" name="Genesis Leaf" icon="icon.etc_scale_of_medusa_green_i00" immediateEffect="1"
+		  isTradable="true"
+		  isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50575" type="EtcItem" name="+17 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
+		  immediateEffect="1"
+		  isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50576" type="EtcItem" name="+18 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
+		  immediateEffect="1"
+		  isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50577" type="EtcItem" name="+19 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
+		  immediateEffect="1"
+		  isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50578" type="EtcItem" name="+20 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
+		  immediateEffect="1"
+		  isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50579" type="EtcItem" name="+21 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
+		  immediateEffect="1"
+		  isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50581" type="EtcItem" name="+23 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
+		  immediateEffect="1"
+		  isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50582" type="EtcItem" name="+24 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
+		  immediateEffect="1"
+		  isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50583" type="EtcItem" name="+25 Weapon Enchant Ticket" icon="icon.etc_exchange_ticket_i04"
+		  immediateEffect="1"
+		  isTradable="true" isDropable="false" isSellable="true" isDepositable="true" isStackable="true">
+	</item>
+	<item id="50600" type="EtcItem" name="Newbie Ticket - C-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50601" type="EtcItem" name="Newbie Ticket - B-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50602" type="EtcItem" name="Newbie Ticket - A-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50603" type="EtcItem" name="Newbie Ticket - S-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50604" type="EtcItem" name="Newbie Ticket - S80-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50605" type="EtcItem" name="Newbie Ticket - R-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50606" type="EtcItem" name="Newbie Ticket - R95-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50607" type="EtcItem" name="Newbie Ticket - R99-Grade Weapon" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50608" type="EtcItem" name="Newbie Ticket - C-Grade Armor Part"
+		  icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50609" type="EtcItem" name="Newbie Ticket - B-Grade Armor Part"
+		  icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50610" type="EtcItem" name="Newbie Ticket - A-Grade Armor Part"
+		  icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50611" type="EtcItem" name="Newbie Ticket - S-Grade Armor Part"
+		  icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50612" type="EtcItem" name="Newbie Ticket - S80-Grade Armor Part"
+		  icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
+		  isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50613" type="EtcItem" name="Newbie Ticket - R-Grade Armor Part"
+		  icon="BranchSys2.Icon.br_weddin_ticket_i00" immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50614" type="EtcItem" name="Newbie Ticket - R95-Grade Armor Part"
+		  icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
+		  isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50615" type="EtcItem" name="Newbie Ticket - R99-Grade Armor Part"
+		  icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1" isTradable="false" isDropable="false" isSellable="false" isDepositable="false"
+		  isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50616" type="EtcItem" name="Newbie Ticket - C-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50617" type="EtcItem" name="Newbie Ticket - B-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50618" type="EtcItem" name="Newbie Ticket - A-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50619" type="EtcItem" name="Newbie Ticket - S-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50620" type="EtcItem" name="Newbie Ticket - S80-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50621" type="EtcItem" name="Newbie Ticket - R-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50622" type="EtcItem" name="Newbie Ticket - R95-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
+	<item id="50623" type="EtcItem" name="Newbie Ticket - R99-Grade Jewel" icon="BranchSys2.Icon.br_weddin_ticket_i00"
+		  immediateEffect="1"
+		  isTradable="false" isDropable="false" isSellable="false" isDepositable="false" isStackable="true"
+		  time="10080">
+	</item>
 
 </list>

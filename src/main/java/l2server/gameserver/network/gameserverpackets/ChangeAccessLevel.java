@@ -20,10 +20,8 @@ import l2server.util.network.BaseSendablePacket;
 /**
  * @author -Wooden-
  */
-public class ChangeAccessLevel extends BaseSendablePacket
-{
-	public ChangeAccessLevel(String player, int access)
-	{
+public class ChangeAccessLevel extends BaseSendablePacket {
+	public ChangeAccessLevel(String player, int access) {
 		writeC(0x04);
 		writeD(access);
 		writeS(player);
@@ -33,8 +31,7 @@ public class ChangeAccessLevel extends BaseSendablePacket
 	 * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent()
-	{
+	public byte[] getContent() {
 		return getBytes();
 	}
 }

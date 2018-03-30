@@ -28,25 +28,12 @@ import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.datatables.ClanTable;
-import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.datatables.NpcTable;
-import l2server.gameserver.datatables.PlayerClassTable;
-import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.datatables.SpawnTable;
+import l2server.gameserver.datatables.*;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.CustomAuctionManager;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.Location;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2GuardInstance;
@@ -61,17 +48,7 @@ import l2server.gameserver.model.olympiad.OlympiadNobleInfo;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.L2GameClient.GameClientState;
 import l2server.gameserver.network.clientpackets.Say2;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.AllyCrest;
-import l2server.gameserver.network.serverpackets.CharSelected;
-import l2server.gameserver.network.serverpackets.CharSelectionInfo;
-import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.gameserver.network.serverpackets.ExOlympiadMode;
-import l2server.gameserver.network.serverpackets.ExUserEffects;
-import l2server.gameserver.network.serverpackets.MagicSkillLaunched;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
-import l2server.gameserver.network.serverpackets.RestartResponse;
-import l2server.gameserver.network.serverpackets.SocialAction;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
@@ -94,10 +71,8 @@ import java.util.StringTokenizer;
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
 
-public class AdminTest implements IAdminCommandHandler
-{
-	private static final String[] ADMIN_COMMANDS =
-			{"admin_stats", "admin_skill_test", "admin_known", "admin_test", "admin_do"};
+public class AdminTest implements IAdminCommandHandler {
+	private static final String[] ADMIN_COMMANDS = {"admin_stats", "admin_skill_test", "admin_known", "admin_test", "admin_do"};
 
 	private List<L2NpcTemplate> npcTemplates = new ArrayList<L2NpcTemplate>();
 	private List<Location> coords = new ArrayList<Location>();
@@ -106,286 +81,157 @@ public class AdminTest implements IAdminCommandHandler
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.L2PcInstance)
 	 */
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 		StringTokenizer st = new StringTokenizer(command);
 
 		st.nextToken();
 
-		if (command.equals("admin_stats"))
-		{
-			for (String line : ThreadPoolManager.getInstance().getStats())
-			{
+		if (command.equals("admin_stats")) {
+			for (String line : ThreadPoolManager.getInstance().getStats()) {
 				activeChar.sendMessage(line);
 			}
-		}
-		else if (command.startsWith("admin_skill_test") || command.startsWith("admin_st"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_skill_test") || command.startsWith("admin_st")) {
+			try {
 				int id = Integer.parseInt(st.nextToken());
-				if (command.startsWith("admin_skill_test"))
-				{
+				if (command.startsWith("admin_skill_test")) {
 					adminTestSkill(activeChar, id, true);
-				}
-				else
-				{
+				} else {
 					adminTestSkill(activeChar, id, false);
 				}
-			}
-			catch (NumberFormatException e)
-			{
+			} catch (NumberFormatException e) {
+				activeChar.sendMessage("Command format is //skill_test <ID>");
+			} catch (NoSuchElementException nsee) {
 				activeChar.sendMessage("Command format is //skill_test <ID>");
 			}
-			catch (NoSuchElementException nsee)
-			{
-				activeChar.sendMessage("Command format is //skill_test <ID>");
-			}
-		}
-		else if (command.equals("admin_known on"))
-		{
+		} else if (command.equals("admin_known on")) {
 			Config.CHECK_KNOWN = true;
-		}
-		else if (command.equals("admin_known off"))
-		{
+		} else if (command.equals("admin_known off")) {
 			Config.CHECK_KNOWN = false;
-		}
-		else if (command.toLowerCase().startsWith("admin_test"))
-		{
+		} else if (command.toLowerCase().startsWith("admin_test")) {
 			//TradeController.getInstance().reload();
 			//activeChar.sendMessage("Shops have been successfully reloaded!");
-		}
-		else if (command.startsWith("admin_do"))
-		{
-			if (!st.hasMoreTokens())
-			{
+		} else if (command.startsWith("admin_do")) {
+			if (!st.hasMoreTokens()) {
 				activeChar.sendMessage("You forgot to tell me what to execute. Ex: onExecute InventoryToMultisell");
 				return false;
 			}
 
 			String secondaryCommand = st.nextToken();
 
-			if (secondaryCommand.equals("TeleportAllPlayersToMe"))
-			{
-				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
-				{
+			if (secondaryCommand.equals("TeleportAllPlayersToMe")) {
+				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
 					player.teleToLocation(activeChar.getX(), activeChar.getY(), activeChar.getZ());
 				}
-			}
-			else if (secondaryCommand.equals("RefreshVisualEffects"))
-			{
+			} else if (secondaryCommand.equals("RefreshVisualEffects")) {
 				activeChar.sendPacket(new ExUserEffects(activeChar));
-			}
-			else if (secondaryCommand.equals("shiet"))
-			{
-				for (L2NpcTemplate temp : NpcTable.getInstance().getAllTemplates())
-				{
-					if (!temp.getBaseSet().getBool("overrideSpawns", false))
-					{
-						Util.logToFile(
-								"<npc id=\"" + temp.NpcId + "\" overrideSpawns=\"true\" /> <!-- " + temp.Name + " -->",
-								"overriddenSpawns", "xml", true, false);
+			} else if (secondaryCommand.equals("shiet")) {
+				for (L2NpcTemplate temp : NpcTable.getInstance().getAllTemplates()) {
+					if (!temp.getBaseSet().getBool("overrideSpawns", false)) {
+						Util.logToFile("<npc id=\"" + temp.NpcId + "\" overrideSpawns=\"true\" /> <!-- " + temp.Name + " -->",
+								"overriddenSpawns",
+								"xml",
+								true,
+								false);
 					}
 				}
 
 				activeChar.sendMessage("Done...");
-			}
-			else if (secondaryCommand.equals("FixAph"))
-			{
+			} else if (secondaryCommand.equals("FixAph")) {
 				SpawnTable.getInstance().despawnSpecificTable("gainak_siege");
 
 				SpawnTable.getInstance().spawnSpecificTable("gainak_siege");
-			}
-			else if (secondaryCommand.equals("ShowRaids"))
-			{
-				for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-				{
-					if (!(spawn.getNpc() instanceof L2RaidBossInstance))
-					{
+			} else if (secondaryCommand.equals("ShowRaids")) {
+				for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable()) {
+					if (!(spawn.getNpc() instanceof L2RaidBossInstance)) {
 						continue;
 					}
 
 					activeChar.sendMessage(spawn.getNpc().getName());
 				}
-			}
-			else if (secondaryCommand.equals("ReloadMobRes"))
-			{
+			} else if (secondaryCommand.equals("ReloadMobRes")) {
 				activeChar.sendMessage("reloaded.");
-			}
-			else if (secondaryCommand.equals("OlyFeex"))
-			{
+			} else if (secondaryCommand.equals("OlyFeex")) {
 				Olympiad.getInstance().loadNoblesRank();
 
 				activeChar.sendMessage("olyfeexed?.");
-			}
-			else if (secondaryCommand.equals("FindOlyAbuses"))
-			{
+			} else if (secondaryCommand.equals("FindOlyAbuses")) {
 				final int[] HERO_IDS = {
 						// Regular Classes
-						88,
-						89,
-						90,
-						91,
-						92,
-						93,
-						94,
-						95,
-						96,
-						97,
-						98,
-						99,
-						100,
-						101,
-						102,
-						103,
-						104,
-						105,
-						106,
-						107,
-						108,
-						109,
-						110,
-						111,
-						112,
-						113,
-						114,
-						115,
-						116,
-						117,
-						118,
-						131,
-						132,
-						133,
-						134,
-						186,
-						187,
+						88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114,
+						115, 116, 117, 118, 131, 132, 133, 134, 186, 187,
 
 						// Awakened Classes
-						148,
-						149,
-						150,
-						151,
-						152,
-						153,
-						154,
-						155,
-						156,
-						157,
-						158,
-						159,
-						160,
-						161,
-						162,
-						163,
-						164,
-						165,
-						166,
-						167,
-						168,
-						169,
-						170,
-						171,
-						172,
-						173,
-						174,
-						175,
-						176,
-						177,
-						178,
-						179,
-						180,
-						181,
-						188,
-						189
-				};
+						148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172,
+						173, 174, 175, 176, 177, 178, 179, 180, 181, 188, 189};
 
-				String OLYMPIAD_GET_HEROES = "SELECT charId FROM olympiad_nobles " +
-						"WHERE class_id = ? AND competitions_done >= 10 AND competitions_won > 0 " +
-						"ORDER BY olympiad_points DESC, competitions_done DESC, competitions_won DESC";
+				String OLYMPIAD_GET_HEROES =
+						"SELECT charId FROM olympiad_nobles " + "WHERE class_id = ? AND competitions_done >= 10 AND competitions_won > 0 " +
+								"ORDER BY olympiad_points DESC, competitions_done DESC, competitions_won DESC";
 
 				Connection con = null;
 
-				try
-				{
+				try {
 					con = L2DatabaseFactory.getInstance().getConnection();
 					PreparedStatement statement = con.prepareStatement(OLYMPIAD_GET_HEROES);
-					for (int classId : HERO_IDS)
-					{
+					for (int classId : HERO_IDS) {
 						String characterName = "";
 						String accountName = "";
 						@SuppressWarnings("unused") String lastIP = "";
 						@SuppressWarnings("unused") String lastHWID = "";
 						int charId = 0;
-						@SuppressWarnings("unused") String className =
-								PlayerClassTable.getInstance().getClassNameById(classId);
+						@SuppressWarnings("unused") String className = PlayerClassTable.getInstance().getClassNameById(classId);
 
 						statement.setInt(1, classId);
 						ResultSet rset = statement.executeQuery();
 						statement.clearParameters();
 
-						if (rset.next())
-						{
+						if (rset.next()) {
 							charId = rset.getInt("charId");
 							OlympiadNobleInfo hero = Olympiad.getInstance().getNobleInfo(charId);
 
 							activeChar.sendMessage(
-									"Hero for " + PlayerClassTable.getInstance().getClassNameById(classId) + " = " +
-											hero.getName() + ".");
+									"Hero for " + PlayerClassTable.getInstance().getClassNameById(classId) + " = " + hero.getName() + ".");
 
 							characterName = hero.getName();
 
 							Connection con2 = null;
-							try
-							{
+							try {
 								con2 = L2DatabaseFactory.getInstance().getConnection();
-								PreparedStatement statement2 =
-										con.prepareStatement("SELECT * FROM characters WHERE char_name = ?");
+								PreparedStatement statement2 = con.prepareStatement("SELECT * FROM characters WHERE char_name = ?");
 
 								statement2.setString(1, characterName);
 								ResultSet rset2 = statement2.executeQuery();
 								statement2.clearParameters();
 
-								if (rset2.next())
-								{
+								if (rset2.next()) {
 									accountName = rset2.getString("account_name");
 								}
 
 								rset2.close();
 								statement2.close();
-							}
-							catch (SQLException e)
-							{
+							} catch (SQLException e) {
 								Log.warning("ERR 1");
-							}
-							finally
-							{
+							} finally {
 								L2DatabaseFactory.close(con2);
 							}
 
-							try
-							{
+							try {
 								con2 = L2DatabaseFactory.getInstance().getConnection();
-								PreparedStatement statement2 =
-										con2.prepareStatement("SELECT * FROM accounts WHERE login = ?");
+								PreparedStatement statement2 = con2.prepareStatement("SELECT * FROM accounts WHERE login = ?");
 
 								statement2.setString(1, accountName);
 								ResultSet rset2 = statement2.executeQuery();
 								statement2.clearParameters();
 
-								if (rset2.next())
-								{
+								if (rset2.next()) {
 									lastIP = rset2.getString("lastIP");
 								}
 
 								rset2.close();
 								statement2.close();
-							}
-							catch (SQLException e)
-							{
+							} catch (SQLException e) {
 								Log.warning("ERR 2");
-							}
-							finally
-							{
+							} finally {
 								L2DatabaseFactory.close(con2);
 							}
 						}
@@ -393,101 +239,76 @@ public class AdminTest implements IAdminCommandHandler
 						rset.close();
 					}
 					statement.close();
-				}
-				catch (SQLException e)
-				{
+				} catch (SQLException e) {
 					Log.warning("Olympiad System: Couldnt load heros from DB");
-				}
-				finally
-				{
+				} finally {
 					L2DatabaseFactory.close(con);
 				}
-			}
-			else if (secondaryCommand.equals("DeleteIstina"))
-			{
+			} else if (secondaryCommand.equals("DeleteIstina")) {
 				L2Object target = activeChar.getTarget();
 
 				InstanceManager.getInstance().deleteInstanceTime(target.getObjectId(), 169);
-			}
-			else if (secondaryCommand.equals("GoToTarget"))
-			{
+			} else if (secondaryCommand.equals("GoToTarget")) {
 				L2Object target = activeChar.getTarget();
 
 				activeChar.teleToLocation(target.getX(), target.getY(), target.getZ());
-			}
-			else if (secondaryCommand.equals("FakeCast"))
-			{
+			} else if (secondaryCommand.equals("FakeCast")) {
 				L2Object target = activeChar.getTarget();
 
-				if (target instanceof L2MonsterInstance)
-				{
+				if (target instanceof L2MonsterInstance) {
 					final L2MonsterInstance monster = (L2MonsterInstance) target;
 					//(L2Character cha, int skillId, int skillLevel, L2Object[] targets)
-					activeChar.sendPacket(new MagicSkillLaunched(monster, 5082, 1, new L2Object[]{
-							activeChar, activeChar.getSummons().get(0)
-					}));
+					activeChar.sendPacket(new MagicSkillLaunched(monster, 5082, 1, new L2Object[]{activeChar, activeChar.getSummons().get(0)}));
 				}
-			}
-			else if (secondaryCommand.equals("DeleteWar"))
-			{
+			} else if (secondaryCommand.equals("DeleteWar")) {
 				L2Clan equinox = ClanTable.getInstance().getClanByName("Equinox");
 				L2Clan illuminati = ClanTable.getInstance().getClanByName("SaintsOfBots");
 
 				ClanWarManager.getInstance().getWar(equinox, illuminati).delete();
 
 				activeChar.sendMessage("Done.");
-			}
-			else if (secondaryCommand.equals("FixOlyToon"))
-			{
+			} else if (secondaryCommand.equals("FixOlyToon")) {
 				final L2PcInstance target = activeChar.getTarget().getActingPlayer();
 
 				Olympiad.getInstance().removeNoble(target.getObjectId());
 
 				activeChar.sendMessage("DONE.");
-			}
-			else if (secondaryCommand.equals("CumToMe"))
-			{
+			} else if (secondaryCommand.equals("CumToMe")) {
 				L2Object target = activeChar.getTarget();
 
-				if (target instanceof L2Character)
-				{
+				if (target instanceof L2Character) {
 					L2Character targetedCharacter = (L2Character) target;
 
-					targetedCharacter.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-							new L2CharPosition(activeChar.getX(), activeChar.getY(), activeChar.getZ(), 0));
+					targetedCharacter.getAI()
+							.setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+									new L2CharPosition(activeChar.getX(), activeChar.getY(), activeChar.getZ(), 0));
 				}
-			}
-			else if (secondaryCommand.equals("GetMovin"))
-			{
+			} else if (secondaryCommand.equals("GetMovin")) {
 				L2Object target = activeChar.getTarget();
 
-				if (target instanceof L2Character)
-				{
+				if (target instanceof L2Character) {
 					L2Character targetedCharacter = (L2Character) target;
 
 					// Giran Weapon Shop
-					targetedCharacter.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-							new L2CharPosition(79778 + Rnd.get(-100, 100), 146671 + Rnd.get(-100, 100), -3515, 0));
+					targetedCharacter.getAI()
+							.setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+									new L2CharPosition(79778 + Rnd.get(-100, 100), 146671 + Rnd.get(-100, 100), -3515, 0));
 
 					// Giran Grocery
 					//targetedCharacter.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(80434, 147896, -3504, 0));
 				}
-			}
-			else if (secondaryCommand.equals("GetMova"))
-			{
+			} else if (secondaryCommand.equals("GetMova")) {
 				L2Object target = activeChar.getTarget();
 
-				if (target instanceof L2Character)
-				{
+				if (target instanceof L2Character) {
 					L2Character targetedCharacter = (L2Character) target;
 
 					// Giran Grocery
-					targetedCharacter.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-							new L2CharPosition(79671 + Rnd.get(-250, 250), 147530 + Rnd.get(-250, 250), -3504, 0));
+					targetedCharacter.getAI()
+							.setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+									new L2CharPosition(79671 + Rnd.get(-250, 250), 147530 + Rnd.get(-250, 250), -3504, 0));
 				}
-			}
-			else if (secondaryCommand.equals("DropHerb"))
-			{
+			} else if (secondaryCommand.equals("DropHerb")) {
 				L2ItemInstance droppedItem = null;
 
 				int buffHerbs = 50107 + Rnd.get(-7, 10);
@@ -495,79 +316,54 @@ public class AdminTest implements IAdminCommandHandler
 
 				// Hunter Deathmatch - PP/EE/SE Buff Herbs...
 				droppedItem = ItemTable.getInstance().createItem("EventReward", buffHerbs, 1, activeChar, activeChar);
-				droppedItem
-						.dropMe(activeChar, activeChar.getX() + Rnd.get(-50, 50), activeChar.getY() + Rnd.get(-50, 50),
-								activeChar.getZ());
+				droppedItem.dropMe(activeChar, activeChar.getX() + Rnd.get(-50, 50), activeChar.getY() + Rnd.get(-50, 50), activeChar.getZ());
 
 				droppedItem = ItemTable.getInstance().createItem("EventReward", 8156, 1, activeChar, activeChar);
-				droppedItem
-						.dropMe(activeChar, activeChar.getX() + Rnd.get(-50, 50), activeChar.getY() + Rnd.get(-50, 50),
-								activeChar.getZ());
-			}
-			else if (secondaryCommand.equals("SetAgathion"))
-			{
+				droppedItem.dropMe(activeChar, activeChar.getX() + Rnd.get(-50, 50), activeChar.getY() + Rnd.get(-50, 50), activeChar.getZ());
+			} else if (secondaryCommand.equals("SetAgathion")) {
 				final int agathionId = Integer.parseInt(st.nextToken());
 
 				activeChar.setAgathionId(agathionId);
 				activeChar.broadcastUserInfo();
-			}
-			else if (secondaryCommand.equals("StartAuction"))
-			{
+			} else if (secondaryCommand.equals("StartAuction")) {
 				final int auctionId = Integer.parseInt(st.nextToken());
 
 				CustomAuctionManager.getInstance().startAuction(auctionId);
 
 				activeChar.sendMessage("Started the Auction " + auctionId + ".");
-			}
-			else if (secondaryCommand.equals("EndAuction"))
-			{
+			} else if (secondaryCommand.equals("EndAuction")) {
 				final int auctionId = Integer.parseInt(st.nextToken());
 
 				activeChar.sendMessage("Ended the Auction " + auctionId + ".");
-			}
-			else if (secondaryCommand.equals("FixAuction"))
-			{
+			} else if (secondaryCommand.equals("FixAuction")) {
 				CustomAuctionManager.getInstance().tryToBid(activeChar, 268929159, 1, "Adena");
 				activeChar.sendMessage("BLA");
-			}
-			else if (secondaryCommand.equals("ReloadAuctions"))
-			{
+			} else if (secondaryCommand.equals("ReloadAuctions")) {
 				CustomAuctionManager.getInstance().load(true);
 
 				activeChar.sendMessage("Auctions have been reloaded.");
-			}
-			else if (secondaryCommand.equals("SetObserver"))
-			{
-				if (activeChar.getTarget() instanceof L2PcInstance)
-				{
+			} else if (secondaryCommand.equals("SetObserver")) {
+				if (activeChar.getTarget() instanceof L2PcInstance) {
 					final L2PcInstance player = (L2PcInstance) activeChar.getTarget();
 
 					player.enterObserverMode(activeChar.getX(), activeChar.getY(), activeChar.getZ());
 				}
 
 				activeChar.sendMessage("Done.");
-			}
-			else if (secondaryCommand.equals("LeaveObserver"))
-			{
-				if (activeChar.getTarget() instanceof L2PcInstance)
-				{
+			} else if (secondaryCommand.equals("LeaveObserver")) {
+				if (activeChar.getTarget() instanceof L2PcInstance) {
 					final L2PcInstance player = (L2PcInstance) activeChar.getTarget();
 
 					player.leaveObserverMode();
 				}
 
 				activeChar.sendMessage("Done.");
-			}
-			else if (secondaryCommand.equals("TestTempLevel"))
-			{
+			} else if (secondaryCommand.equals("TestTempLevel")) {
 				activeChar.setTemporaryLevel((byte) 60);
 				activeChar.setTemporaryLevel((byte) 0);
 				activeChar.setTemporaryLevel((byte) 35);
-			}
-			else if (secondaryCommand.equals("NoFeed"))
-			{
-				if (!(activeChar.getTarget() instanceof L2PcInstance))
-				{
+			} else if (secondaryCommand.equals("NoFeed")) {
+				if (!(activeChar.getTarget() instanceof L2PcInstance)) {
 					return false;
 				}
 
@@ -575,32 +371,26 @@ public class AdminTest implements IAdminCommandHandler
 
 				L2ItemInstance item = activeChar.getInventory().getItemByItemId(6392);
 
-				if (item != null)
-				{
+				if (item != null) {
 					activeChar.sendMessage("Destroying Medals...");
 					target.getInventory().destroyItem("Admin", item, activeChar, activeChar);
 				}
 
 				item = activeChar.getInventory().getItemByItemId(6393);
 
-				if (item != null)
-				{
+				if (item != null) {
 					activeChar.sendMessage("Destroying Glitt Medals...");
 					target.getInventory().destroyItem("Admin", item, activeChar, activeChar);
 				}
 
 				item = activeChar.getInventory().getItemByItemId(6393);
 
-				if (item != null)
-				{
+				if (item != null) {
 					activeChar.sendMessage("Destroying Noble Brooch...");
 					target.getInventory().destroyItem("Admin", item, activeChar, activeChar);
 				}
-			}
-			else if (secondaryCommand.equals("VisualEffect"))
-			{
-				for (Integer a : activeChar.getAbnormalEffect())
-				{
+			} else if (secondaryCommand.equals("VisualEffect")) {
+				for (Integer a : activeChar.getAbnormalEffect()) {
 					activeChar.stopVisualEffect(a);
 				}
 
@@ -609,46 +399,33 @@ public class AdminTest implements IAdminCommandHandler
 				activeChar.startVisualEffect(id);
 				activeChar.sendPacket(new ExUserEffects(activeChar));
 
-				if (activeChar.getTarget() instanceof L2PcInstance)
-				{
+				if (activeChar.getTarget() instanceof L2PcInstance) {
 					final L2PcInstance target = (L2PcInstance) activeChar.getTarget();
 
-					for (Integer a : target.getAbnormalEffect())
-					{
+					for (Integer a : target.getAbnormalEffect()) {
 						target.stopVisualEffect(a);
 					}
 
 					target.startVisualEffect(id);
 					target.sendPacket(new ExUserEffects(target));
 				}
-			}
-			else if (secondaryCommand.equals("Social"))
-			{
-				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
-				{
+			} else if (secondaryCommand.equals("Social")) {
+				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
 					player.broadcastPacket(new SocialAction(player.getObjectId(), 33));
 				}
-			}
-			else if (secondaryCommand.equals("MagicGem"))
-			{
-				for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
-				{
-					if (player.getInventory().getItemByItemId(1373) == null)
-					{
+			} else if (secondaryCommand.equals("MagicGem")) {
+				for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
+					if (player.getInventory().getItemByItemId(1373) == null) {
 						player.addItem("AdminDo", 1373, 1, activeChar, true);
 						activeChar.sendMessage("Magic Gem given to " + player.getName());
 					}
 				}
-			}
-			else if (secondaryCommand.equals("CheckClones"))
-			{
-				for (L2Object obj : activeChar.getKnownList().getKnownObjects().values())
-				{
+			} else if (secondaryCommand.equals("CheckClones")) {
+				for (L2Object obj : activeChar.getKnownList().getKnownObjects().values()) {
 					//if (Util.calculateDistance(obj, activeChar, false) > 50)
 					//	continue;
 
-					if (!(obj instanceof L2GuardInstance))
-					{
+					if (!(obj instanceof L2GuardInstance)) {
 						continue;
 					}
 
@@ -657,11 +434,8 @@ public class AdminTest implements IAdminCommandHandler
 					//obj.decayMe();
 					break;
 				}
-			}
-			else if (secondaryCommand.equals("TellEmVote"))
-			{
-				for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
-				{
+			} else if (secondaryCommand.equals("TellEmVote")) {
+				for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
 					//if (player.getInventory().getItemByItemId(15393) != null)
 					//	continue;
 
@@ -671,85 +445,56 @@ public class AdminTest implements IAdminCommandHandler
 					//player.sendPacket(new CreatureSay(0x00, Say2.TELL, "Jonah", "Hey! you don't have a Vitality Belt. Come to me in Giran for one! unlimited vitality, better adena drops, auto-loot in boosted hunting grounds... you need a Vitality Belt!"));
 					//player.sendPacket(new CreatureSay(0x00, Say2.TELL, "Jonah", "Kff! I noticed you don't have a Vitality Belt... only newbies run around without a Vitality Belt! Come to me in Giran for one!"));
 					//player.sendPacket(new CreatureSay(0x00, Say2.TELL, "Lorain", "Hey! I'm now giving out Divine Protection Elixirs to mini-games participants! come get yours! join the mini game!"));
-					player.sendPacket(new CreatureSay(0x00, Say2.SHOUT, "DarkCore",
-							"I WILL LICK YOUR NUTS FOR NOBLE ITEMS, PM ME"));
+					player.sendPacket(new CreatureSay(0x00, Say2.SHOUT, "DarkCore", "I WILL LICK YOUR NUTS FOR NOBLE ITEMS, PM ME"));
 
 					//activeChar.sendMessage("Said it to " + player.getName() + ".");
 				}
-			}
-			else if (secondaryCommand.equals("TellHim"))
-			{
+			} else if (secondaryCommand.equals("TellHim")) {
 				((L2Character) activeChar.getTarget()).setIsInvul(false);
-			}
-			else if (secondaryCommand.equals("FixClanWars"))
-			{
-				for (L2Clan clan : ClanTable.getInstance().getClans())
-				{
-					for (ClanWar war : clan.getWars())
-					{
+			} else if (secondaryCommand.equals("FixClanWars")) {
+				for (L2Clan clan : ClanTable.getInstance().getClans()) {
+					for (ClanWar war : clan.getWars()) {
 						war.delete();
 					}
 				}
 
 				activeChar.sendMessage("Fixed clan wars.");
-			}
-			else if (secondaryCommand.equals("Testur"))
-			{
+			} else if (secondaryCommand.equals("Testur")) {
 				activeChar.getClient().setDetached(true);
-			}
-			else if (secondaryCommand.equals("Vitality"))
-			{
+			} else if (secondaryCommand.equals("Vitality")) {
 				int level = 4;
 				int vitality = PcStat.MAX_VITALITY_POINTS / 4 * level;
 
-				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
-				{
+				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
 					player.setVitalityPoints(vitality, false, true);
 				}
 
 				activeChar.sendMessage("Done.");
-			}
-			else if (secondaryCommand.equals("EndOlympiads"))
-			{
+			} else if (secondaryCommand.equals("EndOlympiads")) {
 				Olympiad.getInstance().endOlympiads();
-			}
-			else if (secondaryCommand.equals("Crest"))
-			{
-				if (activeChar.getClan().getAllyCrestId() != 0)
-				{
+			} else if (secondaryCommand.equals("Crest")) {
+				if (activeChar.getClan().getAllyCrestId() != 0) {
 					activeChar.sendPacket(new AllyCrest(activeChar.getClan().getAllyCrestId()));
 					activeChar.sendMessage("Crest sent.. ( " + activeChar.getClan().getAllyCrestId());
 				}
-			}
-			else if (secondaryCommand.equals("GrabPosition"))
-			{
+			} else if (secondaryCommand.equals("GrabPosition")) {
 				coords.add(new Location(activeChar.getX(), activeChar.getY(), activeChar.getZ()));
 
 				activeChar.sendMessage("Recorded current position.");
-			}
-			else if (secondaryCommand.equals("ClearPositions"))
-			{
+			} else if (secondaryCommand.equals("ClearPositions")) {
 				coords.clear();
 
 				activeChar.sendMessage("Cleared recorded positions.");
-			}
-			else if (secondaryCommand.equals("PrintPositions"))
-			{
-				for (Location l : coords)
-				{
+			} else if (secondaryCommand.equals("PrintPositions")) {
+				for (Location l : coords) {
 					System.out.println("<node X=\"" + l.getX() + "\" Y=\"" + l.getY() + "\" />");
 				}
-			}
-			else if (secondaryCommand.equals("GrabNearbyMonsters"))
-			{
-				for (L2Object obj : activeChar.getKnownList().getKnownObjects().values())
-				{
-					if (obj instanceof L2MonsterInstance && !(obj instanceof L2RaidBossInstance))
-					{
+			} else if (secondaryCommand.equals("GrabNearbyMonsters")) {
+				for (L2Object obj : activeChar.getKnownList().getKnownObjects().values()) {
+					if (obj instanceof L2MonsterInstance && !(obj instanceof L2RaidBossInstance)) {
 						final L2MonsterInstance monster = (L2MonsterInstance) obj;
 
-						if (npcTemplates.contains(monster.getTemplate()))
-						{
+						if (npcTemplates.contains(monster.getTemplate())) {
 							continue;
 						}
 
@@ -757,17 +502,12 @@ public class AdminTest implements IAdminCommandHandler
 						activeChar.sendMessage("Added " + monster.getName() + ".");
 					}
 				}
-			}
-			else if (secondaryCommand.equals("ClearNpcs"))
-			{
+			} else if (secondaryCommand.equals("ClearNpcs")) {
 				npcTemplates.clear();
 
 				activeChar.sendMessage("Templates cleared.");
-			}
-			else if (secondaryCommand.equals("PrintDropsForNpcs"))
-			{
-				for (L2NpcTemplate npcTemplate : npcTemplates)
-				{
+			} else if (secondaryCommand.equals("PrintDropsForNpcs")) {
+				for (L2NpcTemplate npcTemplate : npcTemplates) {
 					System.out.println("\t<npc id='" + npcTemplate.NpcId + "'> <!-- " + npcTemplate.getName() + " -->");
 					System.out.println("\t\t<droplist>");
 					System.out.println(
@@ -779,12 +519,9 @@ public class AdminTest implements IAdminCommandHandler
 					System.out.println("\t\t</droplist>");
 					System.out.println("\t</npc>");
 				}
-			}
-			else if (secondaryCommand.equals("InventoryToMultisell"))
-			{
+			} else if (secondaryCommand.equals("InventoryToMultisell")) {
 				String log = "<?xml version='1.0' encoding='utf-8'?>\n<list>\n";
-				for (L2ItemInstance item : activeChar.getInventory().getItems())
-				{
+				for (L2ItemInstance item : activeChar.getInventory().getItems()) {
 					log += "\t<!-- " + item.getName() + " -->\n";
 					log += "\t<item>\n";
 					log += "\t\t<ingredient id=\"57\" count=\"1\" /> <!-- Adena -->\n";
@@ -795,14 +532,11 @@ public class AdminTest implements IAdminCommandHandler
 				log += "</list>";
 
 				Util.logToFile(log, "InventoryToMultisell", "xml", false, false);
-			}
-			else if (secondaryCommand.equals("EpicTest"))
-			{
+			} else if (secondaryCommand.equals("EpicTest")) {
 				SimpleDateFormat dateFormatter = new SimpleDateFormat("EEEE d MMMMMMM");
 				// new SimpleDateFormat("EEEE d MMMMMMM k:m:s:");
 
-				long baiumRespawnTime =
-						System.currentTimeMillis() + GrandBossManager.getInstance().getUnlockTime(29020);
+				long baiumRespawnTime = System.currentTimeMillis() + GrandBossManager.getInstance().getUnlockTime(29020);
 
 				activeChar.sendMessage("Baium Respawn: " + dateFormatter.format(baiumRespawnTime));
 
@@ -812,24 +546,20 @@ public class AdminTest implements IAdminCommandHandler
 				String earliestSpawnTimeDay = "";
 				String latestSpawnTimeDay = "";
 
-				switch (Rnd.get(0, 2))
-				{
-					case 0:
-					{
+				switch (Rnd.get(0, 2)) {
+					case 0: {
 						// Shows -1 +1
 						earliestSpawnTime = baiumRespawnTime - 3600000;
 						latestSpawnTime = baiumRespawnTime + 3600000;
 						break;
 					}
-					case 1:
-					{
+					case 1: {
 						// Shows -2 0
 						earliestSpawnTime = baiumRespawnTime - 2 * 3600000;
 						latestSpawnTime = baiumRespawnTime;
 						break;
 					}
-					case 2:
-					{
+					case 2: {
 						// Shows 0 +2
 						earliestSpawnTime = baiumRespawnTime;
 						latestSpawnTime = baiumRespawnTime + 2 * 3600000;
@@ -842,28 +572,22 @@ public class AdminTest implements IAdminCommandHandler
 
 				dateFormatter = new SimpleDateFormat("k:m:s:");
 
-				if (!earliestSpawnTimeDay.equals(latestSpawnTimeDay))
-				{
-					activeChar.sendMessage("Baium will be spawning between " + earliestSpawnTimeDay + " at " +
-							dateFormatter.format(earliestSpawnTime) + " and the " + latestSpawnTimeDay + " at " +
-							dateFormatter.format(latestSpawnTime) + ".");
+				if (!earliestSpawnTimeDay.equals(latestSpawnTimeDay)) {
+					activeChar.sendMessage(
+							"Baium will be spawning between " + earliestSpawnTimeDay + " at " + dateFormatter.format(earliestSpawnTime) +
+									" and the " + latestSpawnTimeDay + " at " + dateFormatter.format(latestSpawnTime) + ".");
+				} else {
+					activeChar.sendMessage(
+							"Baium will be spawning on " + earliestSpawnTimeDay + " between " + dateFormatter.format(earliestSpawnTime) + " and " +
+									dateFormatter.format(latestSpawnTime) + ".");
 				}
-				else
-				{
-					activeChar.sendMessage("Baium will be spawning on " + earliestSpawnTimeDay + " between " +
-							dateFormatter.format(earliestSpawnTime) + " and " + dateFormatter.format(latestSpawnTime) +
-							".");
-				}
-			}
-			else if (secondaryCommand.equals("SpawnMonsters"))
-			{
+			} else if (secondaryCommand.equals("SpawnMonsters")) {
 				int fromId = Integer.parseInt(st.nextToken());
 				int toId = Integer.parseInt(st.nextToken());
 
 				//int x = activeChar.getX(), y = activeChar.getY(), z = activeChar.getZ();
 
-				float headingAngle =
-						(float) ((activeChar.getHeading() + Rnd.get(-15000, 15000)) * Math.PI) / Short.MAX_VALUE;
+				float headingAngle = (float) ((activeChar.getHeading() + Rnd.get(-15000, 15000)) * Math.PI) / Short.MAX_VALUE;
 
 				int range = 50;
 
@@ -872,17 +596,13 @@ public class AdminTest implements IAdminCommandHandler
 				float z = activeChar.getZ() + 1;
 
 				@SuppressWarnings("unused") int spawnedMonsters = 0;
-				for (int id = fromId; id < toId; id++)
-				{
+				for (int id = fromId; id < toId; id++) {
 					L2Spawn spawn = null;
 
 					L2NpcTemplate template = NpcTable.getInstance().getTemplate(id);
-					try
-					{
+					try {
 						spawn = new L2Spawn(template);
-					}
-					catch (Exception e)
-					{
+					} catch (Exception e) {
 						e.printStackTrace();
 						continue;
 					}
@@ -901,24 +621,18 @@ public class AdminTest implements IAdminCommandHandler
 
 					range += 50;
 				}
-			}
-			else if (secondaryCommand.equals("CleanInventory"))
-			{
+			} else if (secondaryCommand.equals("CleanInventory")) {
 				activeChar.getInventory().destroyAllItems("Admin", activeChar, activeChar);
-			}
-			else if (secondaryCommand.equals("GenerateBossWeapons"))
-			{
+			} else if (secondaryCommand.equals("GenerateBossWeapons")) {
 				final int[] weaponsIds = {
 						// Antharas
 						36417, 36418, 36419, 36420, 36421, 36422, 36423, 36424, 36425, 36426,
 						// Valakas
 						36427, 36428, 36429, 36430, 36431, 36432, 36433,
 						// Lindvior
-						36434, 36435, 36436, 36437, 36438, 36439, 36440
-				};
+						36434, 36435, 36436, 36437, 36438, 36439, 36440};
 
-				for (int itemId : weaponsIds)
-				{
+				for (int itemId : weaponsIds) {
 					final L2Item itemTemplate = ItemTable.getInstance().getTemplate(itemId);
 
 					String baseItemName = itemTemplate.getName();
@@ -931,34 +645,27 @@ public class AdminTest implements IAdminCommandHandler
 
 					activeChar.sendMessage("Base Item Name: " + baseItemName);
 					activeChar.sendMessage("Will be looking for...:");
-					for (String s : itemNames)
-					{
+					for (String s : itemNames) {
 						activeChar.sendMessage("- '" + s + "'");
 					}
 
-					for (L2Item item : ItemTable.getInstance().getAllItems())
-					{
-						if (item == null)
-						{
+					for (L2Item item : ItemTable.getInstance().getAllItems()) {
+						if (item == null) {
 							continue;
 						}
 
-						if (item.getName().equalsIgnoreCase(itemNames[0]))
-						{
+						if (item.getName().equalsIgnoreCase(itemNames[0])) {
 							itemTemplates[0] = item;
 						}
-						if (item.getName().equalsIgnoreCase(itemNames[1]))
-						{
+						if (item.getName().equalsIgnoreCase(itemNames[1])) {
 							itemTemplates[1] = item;
 						}
-						if (item.getName().equalsIgnoreCase(itemNames[2]))
-						{
+						if (item.getName().equalsIgnoreCase(itemNames[2])) {
 							itemTemplates[2] = item;
 						}
 					}
 
-					for (L2Item item : itemTemplates)
-					{
+					for (L2Item item : itemTemplates) {
 						activeChar.sendMessage("Found Item: " + item.getName());
 					}
 
@@ -1007,36 +714,28 @@ public class AdminTest implements IAdminCommandHandler
 
 					Util.logToFile(toLog, "NewShoppos", "xml", true, false);
 				}
-			}
-			else if (secondaryCommand.startsWith("Rape"))
-			{
-				if (!st.hasMoreTokens())
-				{
+			} else if (secondaryCommand.startsWith("Rape")) {
+				if (!st.hasMoreTokens()) {
 					activeChar.sendMessage("Input a monster ID...");
 					return false;
 				}
 
 				int monsterId = Integer.parseInt(st.nextToken());
 
-				if (!st.hasMoreTokens())
-				{
+				if (!st.hasMoreTokens()) {
 					activeChar.sendMessage("Input the amount of time to rape it...");
 					return false;
 				}
 
 				int killCount = Integer.parseInt(st.nextToken());
 
-				for (int i = 0; i < killCount; i++)
-				{
+				for (int i = 0; i < killCount; i++) {
 					L2Spawn spawn = null;
 
 					L2NpcTemplate template = NpcTable.getInstance().getTemplate(monsterId);
-					try
-					{
+					try {
 						spawn = new L2Spawn(template);
-					}
-					catch (Exception e)
-					{
+					} catch (Exception e) {
 						e.printStackTrace();
 					}
 
@@ -1052,51 +751,38 @@ public class AdminTest implements IAdminCommandHandler
 
 					npc.reduceCurrentHp(npc.getMaxHp() + 1, activeChar, null);
 				}
-			}
-			else if (secondaryCommand.equals("ShowSpawns"))
-			{
+			} else if (secondaryCommand.equals("ShowSpawns")) {
 				final int npcId = Integer.parseInt(st.nextToken());
 
-				for (L2Spawn spawn : SpawnTable.getInstance().getAllSpawns(npcId))
-				{
-					String out = "<spawn x=\"" + spawn.getX() + "\" y=\"" + spawn.getY() + "\" z=\"" + spawn.getZ() +
-							"\" heading=\"" + spawn.getHeading() + "\" respawn=\"10000\" />";
+				for (L2Spawn spawn : SpawnTable.getInstance().getAllSpawns(npcId)) {
+					String out = "<spawn x=\"" + spawn.getX() + "\" y=\"" + spawn.getY() + "\" z=\"" + spawn.getZ() + "\" heading=\"" +
+							spawn.getHeading() + "\" respawn=\"10000\" />";
 					System.out.println(out);
 				}
-			}
-			else if (secondaryCommand.equals("FarmSimulator"))
-			{
+			} else if (secondaryCommand.equals("FarmSimulator")) {
 				int killedMonsters = 0;
 				int playerLevel = activeChar.getLevel();
 
-				L2NpcTemplate[] monsters =
-						NpcTable.getInstance().getAllMonstersBetweenLevels(playerLevel - 5, playerLevel + 5);
+				L2NpcTemplate[] monsters = NpcTable.getInstance().getAllMonstersBetweenLevels(playerLevel - 5, playerLevel + 5);
 
-				for (L2NpcTemplate monster : monsters)
-				{
-					if (activeChar.getLevel() + 5 < monster.Level)
-					{
+				for (L2NpcTemplate monster : monsters) {
+					if (activeChar.getLevel() + 5 < monster.Level) {
 						break;
 					}
 
 					boolean canSpawn = false;
 
-					if (monster.Level < 10)
-					{
+					if (monster.Level < 10) {
 						canSpawn = true;
 					}
 
-					if (canSpawn)
-					{
+					if (canSpawn) {
 						L2Spawn spawn = null;
 
 						L2NpcTemplate template = NpcTable.getInstance().getTemplate(monster.NpcId);
-						try
-						{
+						try {
 							spawn = new L2Spawn(template);
-						}
-						catch (Exception e)
-						{
+						} catch (Exception e) {
 							e.printStackTrace();
 						}
 
@@ -1117,24 +803,16 @@ public class AdminTest implements IAdminCommandHandler
 				}
 
 				activeChar.sendMessage(killedMonsters + " monsters were killed.");
-			}
-			else if (secondaryCommand.equals("OlyCamera"))
-			{
-				if (activeChar.getTarget() instanceof L2PcInstance)
-				{
+			} else if (secondaryCommand.equals("OlyCamera")) {
+				if (activeChar.getTarget() instanceof L2PcInstance) {
 					final L2PcInstance target = (L2PcInstance) activeChar.getTarget();
 
 					target.sendPacket(new ExOlympiadMode(3));
-				}
-				else
-				{
+				} else {
 					activeChar.sendPacket(new ExOlympiadMode(3));
 				}
-			}
-			else if (secondaryCommand.equals("Login"))
-			{
-				if (!st.hasMoreTokens())
-				{
+			} else if (secondaryCommand.equals("Login")) {
+				if (!st.hasMoreTokens()) {
 					activeChar.sendMessage("Specify the name of the character to log into.");
 					return false;
 				}
@@ -1142,22 +820,19 @@ public class AdminTest implements IAdminCommandHandler
 				final String logIntoCharacterName = st.nextToken();
 
 				String charNameToSwitch = "";
-				if (st.hasMoreTokens())
-				{
+				if (st.hasMoreTokens()) {
 					charNameToSwitch = st.nextToken();
 				}
 
 				L2PcInstance toon = activeChar;
-				if (!charNameToSwitch.equals(""))
-				{
+				if (!charNameToSwitch.equals("")) {
 					toon = L2World.getInstance().getPlayer(charNameToSwitch);
 					activeChar.sendMessage("Logging " + toon.getName() + " into " + logIntoCharacterName);
 				}
 
 				final int charId = CharNameTable.getInstance().getIdByName(logIntoCharacterName);
 
-				if (charId == 0)
-				{
+				if (charId == 0) {
 					activeChar.sendMessage("No character with such name. Try again.");
 					return false;
 				}
@@ -1176,20 +851,16 @@ public class AdminTest implements IAdminCommandHandler
 				gameClient.sendPacket(RestartResponse.STATIC_PACKET_TRUE);
 
 				// send char list
-				CharSelectionInfo cl =
-						new CharSelectionInfo(gameClient.getAccountName(), gameClient.getSessionId().playOkID1);
+				CharSelectionInfo cl = new CharSelectionInfo(gameClient.getAccountName(), gameClient.getSessionId().playOkID1);
 				gameClient.sendPacket(cl);
 				gameClient.setCharSelection(cl.getCharInfo());
 
-				ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-				{
+				ThreadPoolManager.getInstance().scheduleGeneral(new Runnable() {
 					@Override
-					public void run()
-					{
+					public void run() {
 						L2PcInstance cha = L2PcInstance.load(charId);
 
-						if (cha == null)
-						{
+						if (cha == null) {
 							gameClient.sendPacket(ActionFailed.STATIC_PACKET);
 							return;
 						}
@@ -1216,31 +887,29 @@ public class AdminTest implements IAdminCommandHandler
 	 * @param activeChar
 	 * @param id
 	 */
-	private void adminTestSkill(L2PcInstance activeChar, int id, boolean msu)
-	{
+	private void adminTestSkill(L2PcInstance activeChar, int id, boolean msu) {
 		L2Character caster;
 		L2Object target = activeChar.getTarget();
-		if (!(target instanceof L2Character))
-		{
+		if (!(target instanceof L2Character)) {
 			caster = activeChar;
-		}
-		else
-		{
+		} else {
 			caster = (L2Character) target;
 		}
 
 		L2Skill skill = SkillTable.getInstance().getInfo(id, 1);
-		if (skill != null)
-		{
+		if (skill != null) {
 			caster.setTarget(activeChar);
-			if (msu)
-			{
-				caster.broadcastPacket(
-						new MagicSkillUse(caster, activeChar, id, 1, skill.getHitTime(), skill.getReuseDelay(),
-								skill.getReuseHashCode(), 0, 0));
-			}
-			else
-			{
+			if (msu) {
+				caster.broadcastPacket(new MagicSkillUse(caster,
+						activeChar,
+						id,
+						1,
+						skill.getHitTime(),
+						skill.getReuseDelay(),
+						skill.getReuseHashCode(),
+						0,
+						0));
+			} else {
 				caster.doCast(skill);
 			}
 		}
@@ -1250,8 +919,7 @@ public class AdminTest implements IAdminCommandHandler
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
 	 */
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

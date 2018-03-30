@@ -22,8 +22,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-public final class ConditionUsingSkill extends Condition
-{
+public final class ConditionUsingSkill extends Condition {
 	private final int skillId;
 
 	/**
@@ -31,8 +30,7 @@ public final class ConditionUsingSkill extends Condition
 	 *
 	 * @param skillId the skill id
 	 */
-	public ConditionUsingSkill(int skillId)
-	{
+	public ConditionUsingSkill(int skillId) {
 		this.skillId = skillId;
 	}
 
@@ -40,10 +38,8 @@ public final class ConditionUsingSkill extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (env.skill == null)
-		{
+	public boolean testImpl(Env env) {
+		if (env.skill == null) {
 			return false;
 		}
 		return env.skill.getId() == skillId;

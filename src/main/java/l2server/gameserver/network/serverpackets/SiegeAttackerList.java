@@ -49,38 +49,32 @@ import l2server.gameserver.model.entity.Castle;
  *
  * @author KenM
  */
-public final class SiegeAttackerList extends L2GameServerPacket
-{
+public final class SiegeAttackerList extends L2GameServerPacket {
 	//
 	private Castle castle;
-
-	public SiegeAttackerList(Castle castle)
-	{
+	
+	public SiegeAttackerList(Castle castle) {
 		this.castle = castle;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(castle.getCastleId());
 		writeD(0x00); //0
 		writeD(0x01); //1
 		writeD(0x00); //0
 		int size = castle.getSiege().getAttackerClans().size();
-		if (size > 0)
-		{
+		if (size > 0) {
 			L2Clan clan;
-
+			
 			writeD(size);
 			writeD(size);
-			for (L2SiegeClan siegeclan : castle.getSiege().getAttackerClans())
-			{
+			for (L2SiegeClan siegeclan : castle.getSiege().getAttackerClans()) {
 				clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
-				if (clan == null)
-				{
+				if (clan == null) {
 					continue;
 				}
-
+				
 				writeD(clan.getClanId());
 				writeS(clan.getName());
 				writeS(clan.getLeaderName());
@@ -91,9 +85,7 @@ public final class SiegeAttackerList extends L2GameServerPacket
 				writeS(""); //AllyLeaderName
 				writeD(clan.getAllyCrestId());
 			}
-		}
-		else
-		{
+		} else {
 			writeD(0x00);
 			writeD(0x00);
 		}

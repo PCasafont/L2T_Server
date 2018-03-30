@@ -20,27 +20,23 @@ import l2server.gameserver.network.serverpackets.RecipeItemMakeInfo;
 
 /**
  */
-public final class RequestRecipeItemMakeInfo extends L2GameClientPacket
-{
+public final class RequestRecipeItemMakeInfo extends L2GameClientPacket {
 	//
-
+	
 	private int id;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		id = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
-
+		
 		RecipeItemMakeInfo response = new RecipeItemMakeInfo(id, player);
 		sendPacket(response);
 	}

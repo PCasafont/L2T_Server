@@ -18,7 +18,8 @@ package l2server.gameserver;
 /**
  * @author mkizub
  */
-public enum TaskPriority
-{
-	PR_NORMAL, PR_HIGH, PR_URGENT
+public enum TaskPriority {
+	PR_NORMAL,
+	PR_HIGH,
+	PR_URGENT
 }

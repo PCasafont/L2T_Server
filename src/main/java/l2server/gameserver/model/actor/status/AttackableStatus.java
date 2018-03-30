@@ -18,40 +18,29 @@ package l2server.gameserver.model.actor.status;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 
-public class AttackableStatus extends NpcStatus
-{
-	public AttackableStatus(L2Attackable activeChar)
-	{
+public class AttackableStatus extends NpcStatus {
+	public AttackableStatus(L2Attackable activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public final void reduceHp(double value, L2Character attacker)
-	{
+	public final void reduceHp(double value, L2Character attacker) {
 		reduceHp(value, attacker, true, false, false);
 	}
 
 	@Override
-	public final void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHpConsumption)
-	{
-		if (getActiveChar().isDead())
-		{
+	public final void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHpConsumption) {
+		if (getActiveChar().isDead()) {
 			return;
 		}
 
-		if (value > 0)
-		{
-			if (getActiveChar().isOverhit())
-			{
+		if (value > 0) {
+			if (getActiveChar().isOverhit()) {
 				getActiveChar().setOverhitValues(attacker, value);
-			}
-			else
-			{
+			} else {
 				getActiveChar().overhitEnabled(false);
 			}
-		}
-		else
-		{
+		} else {
 			getActiveChar().overhitEnabled(false);
 		}
 
@@ -65,8 +54,7 @@ public class AttackableStatus extends NpcStatus
 	}
 
 	@Override
-	public L2Attackable getActiveChar()
-	{
+	public L2Attackable getActiveChar() {
 		return (L2Attackable) super.getActiveChar();
 	}
 }

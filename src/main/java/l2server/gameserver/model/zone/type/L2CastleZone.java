@@ -27,55 +27,43 @@ import l2server.gameserver.model.zone.L2SpawnZone;
  *
  * @author durgus
  */
-public class L2CastleZone extends L2SpawnZone
-{
+public class L2CastleZone extends L2SpawnZone {
 	private int castleId;
 	private Castle castle = null;
 
-	public L2CastleZone(int id)
-	{
+	public L2CastleZone(int id) {
 		super(id);
 	}
 
 	@Override
-	public void setParameter(String name, String value)
-	{
-		if (name.equals("castleId"))
-		{
+	public void setParameter(String name, String value) {
+		if (name.equals("castleId")) {
 			castleId = Integer.parseInt(value);
-		}
-		else
-		{
+		} else {
 			super.setParameter(name, value);
 		}
 	}
 
 	@Override
-	protected void onEnter(L2Character character)
-	{
-		if (getCastle() != null)
-		{
+	protected void onEnter(L2Character character) {
+		if (getCastle() != null) {
 			character.setInsideZone(L2Character.ZONE_CASTLE, true);
 		}
 	}
 
 	@Override
-	protected void onExit(L2Character character)
-	{
-		if (getCastle() != null)
-		{
+	protected void onExit(L2Character character) {
+		if (getCastle() != null) {
 			character.setInsideZone(L2Character.ZONE_CASTLE, false);
 		}
 	}
 
 	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
+	public void onDieInside(L2Character character, L2Character killer) {
 	}
 
 	@Override
-	public void onReviveInside(L2Character character)
-	{
+	public void onReviveInside(L2Character character) {
 	}
 
 	/**
@@ -83,12 +71,9 @@ public class L2CastleZone extends L2SpawnZone
 	 *
 	 * @param owningClanId
 	 */
-	public void banishForeigners(int owningClanId)
-	{
-		for (L2Character temp : characterList.values())
-		{
-			if (!(temp instanceof L2PcInstance))
-			{
+	public void banishForeigners(int owningClanId) {
+		for (L2Character temp : characterList.values()) {
+			if (!(temp instanceof L2PcInstance)) {
 				continue;
 			}
 
@@ -97,8 +82,7 @@ public class L2CastleZone extends L2SpawnZone
 				continue;
 			}
 
-			if (((L2PcInstance) temp).getClanId() == owningClanId)
-			{
+			if (((L2PcInstance) temp).getClanId() == owningClanId) {
 				continue;
 			}
 
@@ -106,15 +90,12 @@ public class L2CastleZone extends L2SpawnZone
 		}
 	}
 
-	public int getCastleId()
-	{
+	public int getCastleId() {
 		return castleId;
 	}
 
-	private Castle getCastle()
-	{
-		if (castle == null)
-		{
+	private Castle getCastle() {
+		if (castle == null) {
 			castle = CastleManager.getInstance().getCastleById(castleId);
 		}
 		return castle;

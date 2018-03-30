@@ -30,14 +30,12 @@ import l2server.util.Rnd;
 /**
  * @author Nemesiss
  */
-public class L2SkillCreateItem extends L2Skill
-{
+public class L2SkillCreateItem extends L2Skill {
 	private final int[] createItemId;
 	private final int createItemCount;
 	private final int randomCount;
 
-	public L2SkillCreateItem(StatsSet set)
-	{
+	public L2SkillCreateItem(StatsSet set) {
 		super(set);
 		createItemId = set.getIntegerArray("create_item_id");
 		createItemCount = set.getInteger("create_item_count", 0);
@@ -48,17 +46,13 @@ public class L2SkillCreateItem extends L2Skill
 	 * @see l2server.gameserver.model.L2Skill#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Object[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Object[] targets)
-	{
+	public void useSkill(L2Character activeChar, L2Object[] targets) {
 		L2PcInstance player = activeChar.getActingPlayer();
-		if (activeChar.isAlikeDead())
-		{
+		if (activeChar.isAlikeDead()) {
 			return;
 		}
-		if (activeChar instanceof L2Playable)
-		{
-			if (createItemId == null || createItemCount == 0)
-			{
+		if (activeChar instanceof L2Playable) {
+			if (createItemId == null || createItemCount == 0) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_PREPARED_FOR_REUSE);
 				sm.addSkillName(this);
 				player.sendPacket(sm);
@@ -67,12 +61,9 @@ public class L2SkillCreateItem extends L2Skill
 
 			int count = createItemCount + Rnd.nextInt(randomCount);
 			int rndid = Rnd.nextInt(createItemId.length);
-			if (activeChar instanceof L2PcInstance)
-			{
+			if (activeChar instanceof L2PcInstance) {
 				player.addItem("Skill", createItemId[rndid], count, activeChar, true);
-			}
-			else if (activeChar instanceof L2PetInstance)
-			{
+			} else if (activeChar instanceof L2PetInstance) {
 				activeChar.getInventory().addItem("Skill", createItemId[rndid], count, player, activeChar);
 				player.sendPacket(new PetItemList((L2PetInstance) activeChar));
 			}

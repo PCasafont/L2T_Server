@@ -15,41 +15,36 @@
 
 package ai.individual.Summons;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-import ai.group_template.L2AttackableAIScript;
-
 import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author LasTravel
  * @author Pere
- *         <p>
- *         Summon Death Gate (skill id: 11266) AI
+ * <p>
+ * Summon Death Gate (skill id: 11266) AI
  */
 
-public class DeathGate extends L2AttackableAIScript
-{
+public class DeathGate extends L2AttackableAIScript {
 	private static final int[] deathGateIds = {14927, 15200, 15201, 15202};
 	private static final int summonDeathGateId = 11266;
 
-	public DeathGate(int id, String name, String descr)
-	{
+	public DeathGate(int id, String name, String descr) {
 		super(id, name, descr);
 
-		for (int i : deathGateIds)
-		{
+		for (int i : deathGateIds) {
 			addSpawnId(i);
 		}
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
+	public final String onSpawn(L2Npc npc) {
 		npc.disableCoreAI(true);
 		npc.setIsInvul(true);
 
@@ -60,8 +55,7 @@ public class DeathGate extends L2AttackableAIScript
 		return null;
 	}
 
-	class DeathGateAI implements Runnable
-	{
+	class DeathGateAI implements Runnable {
 		private L2Skill gateVortex;
 		private L2Skill gateRoot;
 		private L2Skill lastSkillUsed;
@@ -69,19 +63,16 @@ public class DeathGate extends L2AttackableAIScript
 		private L2PcInstance owner;
 		private ScheduledFuture<?> schedule = null;
 
-		protected DeathGateAI(L2Npc npc, L2PcInstance owner)
-		{
+		protected DeathGateAI(L2Npc npc, L2PcInstance owner) {
 			deathGate = npc;
 
 			this.owner = owner;
-			if (owner == null)
-			{
+			if (this.owner == null) {
 				return;
 			}
 
-			int skillLevel = owner.getSkillLevel(summonDeathGateId);
-			if (skillLevel == -1)
-			{
+			int skillLevel = this.owner.getSkillLevel(summonDeathGateId);
+			if (skillLevel == -1) {
 				return;
 			}
 
@@ -89,19 +80,14 @@ public class DeathGate extends L2AttackableAIScript
 			gateRoot = SkillTable.getInstance().getInfo(11289, skillLevel);
 		}
 
-		public void setSchedule(ScheduledFuture<?> schedule)
-		{
+		public void setSchedule(ScheduledFuture<?> schedule) {
 			this.schedule = schedule;
 		}
 
 		@Override
-		public void run()
-		{
-			if (deathGate == null || deathGate.isDead() || deathGate.isDecayed() ||
-					deathGate.getOwner().isAlikeDead())
-			{
-				if (schedule != null)
-				{
+		public void run() {
+			if (deathGate == null || deathGate.isDead() || deathGate.isDecayed() || deathGate.getOwner().isAlikeDead()) {
+				if (schedule != null) {
 					schedule.cancel(true);
 					return;
 				}
@@ -109,12 +95,9 @@ public class DeathGate extends L2AttackableAIScript
 
 			deathGate.setTarget(deathGate);
 
-			if (lastSkillUsed == gateVortex)
-			{
+			if (lastSkillUsed == gateVortex) {
 				lastSkillUsed = gateRoot;
-			}
-			else
-			{
+			} else {
 				lastSkillUsed = gateVortex;
 			}
 
@@ -122,8 +105,7 @@ public class DeathGate extends L2AttackableAIScript
 		}
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new DeathGate(-1, "DeathGate", "ai/individual");
 	}
 }

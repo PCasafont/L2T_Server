@@ -26,49 +26,40 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class ObjectKnownList
-{
+public class ObjectKnownList {
 	private L2Object activeObject;
 	private Map<Integer, L2Object> knownObjects;
 
-	public ObjectKnownList(L2Object activeObject)
-	{
+	public ObjectKnownList(L2Object activeObject) {
 		this.activeObject = activeObject;
 	}
 
-	public boolean addKnownObject(L2Object object)
-	{
-		if (object == null)
-		{
+	public boolean addKnownObject(L2Object object) {
+		if (object == null) {
 			return false;
 		}
 
 		// Instance -1 is for GMs that can see everything on all instances
 		if (getActiveObject().getInstanceId() != -1 && object.getInstanceId() != getActiveObject().getInstanceId() &&
-				object.getInstanceId() != getActiveObject().getObjectId())
-		{
+				object.getInstanceId() != getActiveObject().getObjectId()) {
 			return false;
 		}
 
 		// Check if already know object
-		if (knowsObject(object))
-		{
+		if (knowsObject(object)) {
 			return false;
 		}
 
 		// Check if object is not inside distance to watch object
-		if (!Util.checkIfInShortRadius(getDistanceToWatchObject(object), getActiveObject(), object, true))
-		{
+		if (!Util.checkIfInShortRadius(getDistanceToWatchObject(object), getActiveObject(), object, true)) {
 			return false;
 		}
 
 		return getKnownObjects().put(object.getObjectId(), object) == null;
 	}
 
-	public final boolean knowsObject(L2Object object)
-	{
-		if (object == null)
-		{
+	public final boolean knowsObject(L2Object object) {
+		if (object == null) {
 			return false;
 		}
 
@@ -78,20 +69,16 @@ public class ObjectKnownList
 	/**
 	 * Remove all L2Object from knownObjects
 	 */
-	public void removeAllKnownObjects()
-	{
+	public void removeAllKnownObjects() {
 		getKnownObjects().clear();
 	}
 
-	public final boolean removeKnownObject(L2Object object)
-	{
+	public final boolean removeKnownObject(L2Object object) {
 		return removeKnownObject(object, false);
 	}
 
-	protected boolean removeKnownObject(L2Object object, boolean forget)
-	{
-		if (object == null)
-		{
+	protected boolean removeKnownObject(L2Object object, boolean forget) {
+		if (object == null) {
 			return false;
 		}
 
@@ -105,16 +92,13 @@ public class ObjectKnownList
 
 	// used only in Config.MOVE_BASED_KNOWNLIST and does not support guards seeing
 	// moving monsters
-	public final void findObjects()
-	{
+	public final void findObjects() {
 		final L2WorldRegion region = getActiveObject().getWorldRegion();
-		if (region == null)
-		{
+		if (region == null) {
 			return;
 		}
 
-		if (getActiveObject() instanceof L2Playable)
-		{
+		if (getActiveObject() instanceof L2Playable) {
 			for (L2WorldRegion regi : region.getSurroundingRegions()) // offer members of this and surrounding regions
 			{
 				Collection<L2Object> vObj = regi.getVisibleObjects().values();
@@ -122,13 +106,10 @@ public class ObjectKnownList
 				{
 					//synchronized (regi.getVisibleObjects())
 					{
-						for (L2Object object : vObj)
-						{
-							if (object != getActiveObject())
-							{
+						for (L2Object object : vObj) {
+							if (object != getActiveObject()) {
 								addKnownObject(object);
-								if (object instanceof L2Character)
-								{
+								if (object instanceof L2Character) {
 									object.getKnownList().addKnownObject(getActiveObject());
 								}
 							}
@@ -136,22 +117,17 @@ public class ObjectKnownList
 					}
 				}
 			}
-		}
-		else if (getActiveObject() instanceof L2Character)
-		{
+		} else if (getActiveObject() instanceof L2Character) {
 			for (L2WorldRegion regi : region.getSurroundingRegions()) // offer members of this and surrounding regions
 			{
-				if (regi.isActive())
-				{
+				if (regi.isActive()) {
 					Collection<L2Playable> vPls = regi.getVisiblePlayable().values();
 					//synchronized (KnownListUpdateTaskManager.getInstance().getSync())
 					{
 						//synchronized (regi.getVisiblePlayable())
 						{
-							for (L2Object object : vPls)
-							{
-								if (object != getActiveObject())
-								{
+							for (L2Object object : vPls) {
+								if (object != getActiveObject()) {
 									addKnownObject(object);
 								}
 							}
@@ -163,8 +139,7 @@ public class ObjectKnownList
 	}
 
 	// Remove invisible and too far L2Object from knowObject and if necessary from knownPlayers of the L2Character
-	public void forgetObjects(boolean fullCheck)
-	{
+	public void forgetObjects(boolean fullCheck) {
 		//synchronized (KnownListUpdateTaskManager.getInstance().getSync())
 		{
 			// Go through knownObjects
@@ -173,25 +148,19 @@ public class ObjectKnownList
 			L2Object object;
 			//synchronized (getKnownObjects())
 			{
-				while (oIter.hasNext())
-				{
+				while (oIter.hasNext()) {
 					object = oIter.next();
-					if (object == null)
-					{
+					if (object == null) {
 						oIter.remove();
 						continue;
 					}
 
-					if (!fullCheck && !(object instanceof L2Playable))
-					{
+					if (!fullCheck && !(object instanceof L2Playable)) {
 						continue;
 					}
 
 					// Remove all objects invisible or too far
-					if (!object.isVisible() ||
-							!Util.checkIfInShortRadius(getDistanceToForgetObject(object), getActiveObject(), object,
-									true))
-					{
+					if (!object.isVisible() || !Util.checkIfInShortRadius(getDistanceToForgetObject(object), getActiveObject(), object, true)) {
 						oIter.remove();
 						removeKnownObject(object, true);
 					}
@@ -200,28 +169,23 @@ public class ObjectKnownList
 		}
 	}
 
-	public L2Object getActiveObject()
-	{
+	public L2Object getActiveObject() {
 		return activeObject;
 	}
 
-	public int getDistanceToForgetObject(L2Object object)
-	{
+	public int getDistanceToForgetObject(L2Object object) {
 		return 0;
 	}
 
-	public int getDistanceToWatchObject(L2Object object)
-	{
+	public int getDistanceToWatchObject(L2Object object) {
 		return 0;
 	}
 
 	/**
 	 * Return the knownObjects containing all L2Object known by the L2Character.
 	 */
-	public final Map<Integer, L2Object> getKnownObjects()
-	{
-		if (knownObjects == null)
-		{
+	public final Map<Integer, L2Object> getKnownObjects() {
+		if (knownObjects == null) {
 			knownObjects = new ConcurrentHashMap<>();
 		}
 		return knownObjects;

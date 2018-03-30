@@ -21,73 +21,59 @@ import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 
 /**
  * @author -Wooden-
- *         Format: ddddd
+ * Format: ddddd
  */
-public class AuthGameGuard extends L2LoginClientPacket
-{
+public class AuthGameGuard extends L2LoginClientPacket {
 	private int sessionId;
 	private int data1;
 	private int data2;
 	private int data3;
 	private int data4;
-
-	public int getSessionId()
-	{
+	
+	public int getSessionId() {
 		return sessionId;
 	}
-
-	public int getData1()
-	{
+	
+	public int getData1() {
 		return data1;
 	}
-
-	public int getData2()
-	{
+	
+	public int getData2() {
 		return data2;
 	}
-
-	public int getData3()
-	{
+	
+	public int getData3() {
 		return data3;
 	}
-
-	public int getData4()
-	{
+	
+	public int getData4() {
 		return data4;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected boolean readImpl()
-	{
-		if (super.buf.remaining() >= 20)
-		{
+	protected boolean readImpl() {
+		if (super.buf.remaining() >= 20) {
 			sessionId = readD();
 			data1 = readD();
 			data2 = readD();
 			data3 = readD();
 			data4 = readD();
 			return true;
-		}
-		else
-		{
+		} else {
 			return false;
 		}
 	}
-
+	
 	/**
 	 */
 	@Override
-	public void run()
-	{
-		if (sessionId == getClient().getSessionId())
-		{
+	public void run() {
+		if (sessionId == getClient().getSessionId()) {
 			getClient().setState(LoginClientState.AUTHED_GG);
 			getClient().sendPacket(new GGAuth(getClient().getSessionId()));
-		}
-		else
-		{
+		} else {
 			getClient().close(LoginFailReason.REASON_ACCESS_FAILED);
 		}
 	}

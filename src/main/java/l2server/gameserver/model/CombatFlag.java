@@ -23,8 +23,7 @@ import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.ItemList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-public class CombatFlag
-{
+public class CombatFlag {
 	//
 
 	protected L2PcInstance player = null;
@@ -38,14 +37,12 @@ public class CombatFlag
 
 	// =========================================================
 	// Constructor
-	public CombatFlag(int x, int y, int z, int heading, int item_id)
-	{
+	public CombatFlag(int x, int y, int z, int heading, int item_id) {
 		location = new Location(x, y, z, heading);
 		itemId = item_id;
 	}
 
-	public synchronized void spawnMe()
-	{
+	public synchronized void spawnMe() {
 		// Init the dropped L2ItemInstance and add it in the world as a visible object at the position where mob was last
 		L2ItemInstance i = ItemTable.getInstance().createItem("Combat", itemId, 1, null, null);
 		// Remove it from the world because spawnme will insert it again
@@ -54,23 +51,18 @@ public class CombatFlag
 		itemInstance = i;
 	}
 
-	public synchronized void unSpawnMe()
-	{
-		if (player != null)
-		{
+	public synchronized void unSpawnMe() {
+		if (player != null) {
 			dropIt();
 		}
 
-		if (itemInstance != null)
-		{
+		if (itemInstance != null) {
 			itemInstance.decayMe();
 		}
 	}
 
-	public boolean activate(L2PcInstance player, L2ItemInstance item)
-	{
-		if (player.isMounted())
-		{
+	public boolean activate(L2PcInstance player, L2ItemInstance item) {
+		if (player.isMounted()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
 			return false;
 		}
@@ -88,14 +80,11 @@ public class CombatFlag
 		player.sendPacket(sm);
 
 		// Refresh inventory
-		if (!Config.FORCE_INVENTORY_UPDATE)
-		{
+		if (!Config.FORCE_INVENTORY_UPDATE) {
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addItem(item);
 			player.sendPacket(iu);
-		}
-		else
-		{
+		} else {
 			player.sendPacket(new ItemList(player, false));
 		}
 
@@ -105,8 +94,7 @@ public class CombatFlag
 		return true;
 	}
 
-	public void dropIt()
-	{
+	public void dropIt() {
 		// Reset player stats
 		player.setCombatFlagEquipped(false);
 		int slot = player.getInventory().getSlotFromItem(item);

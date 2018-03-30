@@ -25,8 +25,7 @@ import l2server.gameserver.model.quest.State;
 /**
  * @author Pere
  */
-public class Q10328_RequestOfSealedEvilFragments extends Quest
-{
+public class Q10328_RequestOfSealedEvilFragments extends Quest {
 	// Quest
 	public static String qn = "Q10328_RequestOfSealedEvilFragments";
 
@@ -36,8 +35,7 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 
 	private int evilFragment = 17577;
 
-	public Q10328_RequestOfSealedEvilFragments(int questId, String name, String descr)
-	{
+	public Q10328_RequestOfSealedEvilFragments(int questId, String name, String descr) {
 		super(questId, name, descr);
 		addStartNpc(pantheon);
 		addTalkId(pantheon);
@@ -45,31 +43,23 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == pantheon && event.equalsIgnoreCase("32972-04.htm"))
-		{
+		if (npc.getNpcId() == pantheon && event.equalsIgnoreCase("32972-04.htm")) {
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.giveItems(evilFragment, 1);
 			st.playSound("ItemSound.quest_accept");
-		}
-		else if (npc.getNpcId() == kakai && st.getInt("cond") == 1)
-		{
-			if (event.equalsIgnoreCase("30565-02.htm"))
-			{
+		} else if (npc.getNpcId() == kakai && st.getInt("cond") == 1) {
+			if (event.equalsIgnoreCase("30565-02.htm")) {
 				st.takeItems(evilFragment, -1);
-			}
-			else if (event.equalsIgnoreCase("30565-03.htm"))
-			{
+			} else if (event.equalsIgnoreCase("30565-03.htm")) {
 				st.unset("cond");
 				st.takeItems(evilFragment, -1);
 				st.giveItems(57, 20000);
@@ -85,26 +75,19 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == pantheon)
-		{
-			switch (st.getState())
-			{
+		if (npc.getNpcId() == pantheon) {
+			switch (st.getState()) {
 				case State.CREATED:
-					if (canStart(player))
-					{
+					if (canStart(player)) {
 						htmltext = "32972-01.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32972-00.htm"; // TODO
 					}
 					break;
@@ -115,22 +98,18 @@ public class Q10328_RequestOfSealedEvilFragments extends Quest
 					htmltext = "32972-06.htm"; // TODO
 					break;
 			}
-		}
-		else if (npc.getNpcId() == kakai && st.getInt("cond") == 1)
-		{
+		} else if (npc.getNpcId() == kakai && st.getInt("cond") == 1) {
 			htmltext = "30565-01.htm";
 		}
 		return htmltext;
 	}
 
 	@Override
-	public boolean canStart(L2PcInstance player)
-	{
+	public boolean canStart(L2PcInstance player) {
 		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 8) && player.getLevel() <= 20;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Q10328_RequestOfSealedEvilFragments(10328, qn, "Moving from the Museum to Admin Office.");
 	}
 }

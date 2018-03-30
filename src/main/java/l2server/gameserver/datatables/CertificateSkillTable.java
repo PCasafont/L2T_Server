@@ -26,36 +26,30 @@ import l2server.gameserver.util.Broadcast;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CertificateSkillTable
-{
+public class CertificateSkillTable {
 	public static final int SUBCLASS_CERTIFICATE = 10280;
 	public static final int DUALCLASS_CERTIFICATE = 36078;
 
-	public class CertificateSkillLearn
-	{
+	public class CertificateSkillLearn {
 		private int skillId;
 		private int maxLevel;
 		private int cost;
 
-		public CertificateSkillLearn(int skillId, int maxLevel, int cost)
-		{
+		public CertificateSkillLearn(int skillId, int maxLevel, int cost) {
 			this.skillId = skillId;
 			this.maxLevel = maxLevel;
 			this.cost = cost;
 		}
 
-		public int getSkillId()
-		{
+		public int getSkillId() {
 			return skillId;
 		}
 
-		public int getMaxLevel()
-		{
+		public int getMaxLevel() {
 			return maxLevel;
 		}
 
-		public int getCost()
-		{
+		public int getCost() {
 			return cost;
 		}
 	}
@@ -63,19 +57,16 @@ public class CertificateSkillTable
 	private Map<Integer, CertificateSkillLearn> subClassSkills = new HashMap<>();
 	private Map<Integer, CertificateSkillLearn> dualClassSkills = new HashMap<>();
 
-	public static CertificateSkillTable getInstance()
-	{
+	public static CertificateSkillTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private CertificateSkillTable()
-	{
+	private CertificateSkillTable() {
 		load();
 	}
 
 	// Hardcoded load for now
-	private void load()
-	{
+	private void load() {
 		// Sub - P. Atk./M. Atk. Increase
 		subClassSkills.put(1956, new CertificateSkillLearn(1956, 4, 1));
 		// Sub - P. Def./M. Def. Increase
@@ -131,117 +122,94 @@ public class CertificateSkillTable
 		dualClassSkills.put(1985, new CertificateSkillLearn(1985, 1, 4));
 	}
 
-	public Map<Integer, CertificateSkillLearn> getSubClassSkills()
-	{
+	public Map<Integer, CertificateSkillLearn> getSubClassSkills() {
 		return subClassSkills;
 	}
 
-	public Map<Integer, CertificateSkillLearn> getDualClassSkills()
-	{
+	public Map<Integer, CertificateSkillLearn> getDualClassSkills() {
 		return dualClassSkills;
 	}
 
-	public void sendSubClassSkillList(L2PcInstance player)
-	{
+	public void sendSubClassSkillList(L2PcInstance player) {
 		ExAcquireSkillList asl = new ExAcquireSkillList(SkillType.SubClass);
 		boolean skillAdded = false;
-		for (CertificateSkillLearn csl : subClassSkills.values())
-		{
+		for (CertificateSkillLearn csl : subClassSkills.values()) {
 			int curLevel = 0;
-			for (L2Skill skill : player.getAllSkills())
-			{
-				if (skill.getId() == csl.getSkillId())
-				{
+			for (L2Skill skill : player.getAllSkills()) {
+				if (skill.getId() == csl.getSkillId()) {
 					curLevel = skill.getLevelHash();
 				}
 			}
 
-			if (curLevel < csl.getMaxLevel())
-			{
+			if (curLevel < csl.getMaxLevel()) {
 				asl.addSkill(csl.getSkillId(), curLevel + 1, csl.getMaxLevel(), 0, 0);
 				skillAdded = true;
 			}
 		}
 
-		if (skillAdded)
-		{
+		if (skillAdded) {
 			player.sendPacket(asl);
 		}
 	}
 
-	public void sendDualClassSkillList(L2PcInstance player)
-	{
+	public void sendDualClassSkillList(L2PcInstance player) {
 		ExAcquireSkillList asl = new ExAcquireSkillList(SkillType.DualClass);
 		boolean skillAdded = false;
-		for (CertificateSkillLearn csl : dualClassSkills.values())
-		{
+		for (CertificateSkillLearn csl : dualClassSkills.values()) {
 			int curLevel = 0;
-			for (L2Skill skill : player.getAllSkills())
-			{
-				if (skill.getId() == csl.getSkillId())
-				{
+			for (L2Skill skill : player.getAllSkills()) {
+				if (skill.getId() == csl.getSkillId()) {
 					curLevel = skill.getLevelHash();
 				}
 			}
 
-			if (curLevel < csl.getMaxLevel())
-			{
+			if (curLevel < csl.getMaxLevel()) {
 				asl.addSkill(csl.getSkillId(), curLevel + 1, csl.getMaxLevel(), 0, 0);
 				skillAdded = true;
 			}
 		}
 
-		if (skillAdded)
-		{
+		if (skillAdded) {
 			player.sendPacket(asl);
 		}
 	}
 
-	public int getSubClassSkillCost(int skillId)
-	{
+	public int getSubClassSkillCost(int skillId) {
 		CertificateSkillLearn skill = subClassSkills.get(skillId);
-		if (skill != null)
-		{
+		if (skill != null) {
 			return skill.getCost();
 		}
 
 		return 0;
 	}
 
-	public int getDualClassSkillCost(int skillId)
-	{
+	public int getDualClassSkillCost(int skillId) {
 		CertificateSkillLearn skill = dualClassSkills.get(skillId);
-		if (skill != null)
-		{
+		if (skill != null) {
 			return skill.getCost();
 		}
 
 		return 0;
 	}
 
-	public void checkPlayer(L2PcInstance player)
-	{
+	public void checkPlayer(L2PcInstance player) {
 		int totalSubCerts = 12;
 		//for (SubClass sub : player.getSubClasses().values())
 		//	totalSubCerts += Math.min(sub.getCertificates(), 4);
 
 		int actualSubCerts = 0;
 		L2ItemInstance certsItem = player.getInventory().getItemByItemId(SUBCLASS_CERTIFICATE);
-		if (certsItem != null)
-		{
+		if (certsItem != null) {
 			actualSubCerts = (int) certsItem.getCount();
 		}
-		for (CertificateSkillLearn csl : subClassSkills.values())
-		{
+		for (CertificateSkillLearn csl : subClassSkills.values()) {
 			int skillLevel = player.getSkillLevelHash(csl.getSkillId());
-			if (skillLevel > 0)
-			{
+			if (skillLevel > 0) {
 				actualSubCerts += csl.getCost() * skillLevel;
 			}
 		}
 
-		if (actualSubCerts > totalSubCerts)
-		{
+		if (actualSubCerts > totalSubCerts) {
 			Broadcast.toGameMasters("Player " + player.getName() + " has invalid subclass certificates! Reverting...");
 			resetSubClassCertificates(player);
 		}
@@ -252,40 +220,31 @@ public class CertificateSkillTable
 
 		int actualDualCerts = 0;
 		certsItem = player.getInventory().getItemByItemId(DUALCLASS_CERTIFICATE);
-		if (certsItem != null)
-		{
+		if (certsItem != null) {
 			actualDualCerts = (int) certsItem.getCount();
 		}
-		for (CertificateSkillLearn csl : dualClassSkills.values())
-		{
+		for (CertificateSkillLearn csl : dualClassSkills.values()) {
 			int skillLevel = player.getSkillLevelHash(csl.getSkillId());
-			if (skillLevel > 0)
-			{
+			if (skillLevel > 0) {
 				actualDualCerts += csl.getCost() * skillLevel;
 			}
 		}
 
-		if (actualDualCerts > totalDualCerts)
-		{
-			Broadcast
-					.toGameMasters("Player " + player.getName() + " has invalid dual class certificates! Reverting...");
+		if (actualDualCerts > totalDualCerts) {
+			Broadcast.toGameMasters("Player " + player.getName() + " has invalid dual class certificates! Reverting...");
 			resetDualClassCertificates(player);
 		}
 	}
 
-	public int getDualClassCertificatesAmount(final L2PcInstance player)
-	{
+	public int getDualClassCertificatesAmount(final L2PcInstance player) {
 		int actualDualCerts = 0;
 		L2ItemInstance certsItem = player.getInventory().getItemByItemId(DUALCLASS_CERTIFICATE);
-		if (certsItem != null)
-		{
+		if (certsItem != null) {
 			actualDualCerts = (int) certsItem.getCount();
 		}
-		for (CertificateSkillLearn csl : dualClassSkills.values())
-		{
+		for (CertificateSkillLearn csl : dualClassSkills.values()) {
 			int skillLevel = player.getSkillLevelHash(csl.getSkillId());
-			if (skillLevel > 0)
-			{
+			if (skillLevel > 0) {
 				actualDualCerts += csl.getCost() * skillLevel;
 			}
 		}
@@ -293,19 +252,15 @@ public class CertificateSkillTable
 		return actualDualCerts;
 	}
 
-	public int getSubclassCertificatesAmount(final L2PcInstance player)
-	{
+	public int getSubclassCertificatesAmount(final L2PcInstance player) {
 		int actualSubCerts = 0;
 		L2ItemInstance certsItem = player.getInventory().getItemByItemId(SUBCLASS_CERTIFICATE);
-		if (certsItem != null)
-		{
+		if (certsItem != null) {
 			actualSubCerts = (int) certsItem.getCount();
 		}
-		for (CertificateSkillLearn csl : subClassSkills.values())
-		{
+		for (CertificateSkillLearn csl : subClassSkills.values()) {
 			int skillLevel = player.getSkillLevelHash(csl.getSkillId());
-			if (skillLevel > 0)
-			{
+			if (skillLevel > 0) {
 				actualSubCerts += csl.getCost() * skillLevel;
 			}
 		}
@@ -313,48 +268,37 @@ public class CertificateSkillTable
 		return actualSubCerts;
 	}
 
-	public void resetSubClassCertificates(L2PcInstance player)
-	{
+	public void resetSubClassCertificates(L2PcInstance player) {
 		L2ItemInstance certsItem = player.getInventory().getItemByItemId(SUBCLASS_CERTIFICATE);
-		if (certsItem != null)
-		{
+		if (certsItem != null) {
 			player.destroyItem("SubCerts", certsItem, player, true);
 		}
 
-		for (L2Skill skill : player.getAllSkills())
-		{
-			if (subClassSkills.containsKey(skill.getId()))
-			{
+		for (L2Skill skill : player.getAllSkills()) {
+			if (subClassSkills.containsKey(skill.getId())) {
 				player.removeSkill(skill, true);
 			}
 		}
 
-		for (SubClass sub : player.getSubClasses().values())
-		{
+		for (SubClass sub : player.getSubClasses().values()) {
 			sub.setCertificates(0);
 		}
 	}
 
-	public void resetDualClassCertificates(L2PcInstance player)
-	{
+	public void resetDualClassCertificates(L2PcInstance player) {
 		L2ItemInstance certsItem = player.getInventory().getItemByItemId(DUALCLASS_CERTIFICATE);
-		if (certsItem != null)
-		{
+		if (certsItem != null) {
 			player.destroyItem("SubCerts", certsItem, player, true);
 		}
 
-		for (L2Skill skill : player.getAllSkills())
-		{
-			if (dualClassSkills.containsKey(skill.getId()))
-			{
+		for (L2Skill skill : player.getAllSkills()) {
+			if (dualClassSkills.containsKey(skill.getId())) {
 				player.removeSkill(skill, true);
 			}
 		}
 
-		for (SubClass sub : player.getSubClasses().values())
-		{
-			if (!sub.isDual())
-			{
+		for (SubClass sub : player.getSubClasses().values()) {
+			if (!sub.isDual()) {
 				continue;
 			}
 
@@ -363,8 +307,7 @@ public class CertificateSkillTable
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final CertificateSkillTable instance = new CertificateSkillTable();
 	}
 }

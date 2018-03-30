@@ -18,11 +18,9 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public final class ExShowChannelingEffect extends L2GameServerPacket
-{
+public final class ExShowChannelingEffect extends L2GameServerPacket {
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		//ddd
 	}
 }

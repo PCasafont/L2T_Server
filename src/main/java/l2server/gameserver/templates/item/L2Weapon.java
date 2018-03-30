@@ -47,8 +47,7 @@ import java.util.List;
  *
  * @version $Revision: 1.4.2.3.2.5 $ $Date: 2005/04/02 15:57:51 $
  */
-public final class L2Weapon extends L2Item
-{
+public final class L2Weapon extends L2Item {
 	private final L2WeaponType type;
 	private final boolean isMagicWeapon;
 	private final int rndDam;
@@ -82,8 +81,7 @@ public final class L2Weapon extends L2Item
 	 * @param set : StatsSet designating the set of couples (key,value) caracterizing the armor
 	 * @see L2Item constructor
 	 */
-	public L2Weapon(StatsSet set)
-	{
+	public L2Weapon(StatsSet set) {
 		super(set);
 		type = L2WeaponType.valueOf(set.getString("weaponType", "none").toUpperCase());
 		type1 = L2Item.TYPE1_WEAPON_RING_EARRING_NECKLACE;
@@ -96,62 +94,46 @@ public final class L2Weapon extends L2Item
 		reuseDelay = set.getInteger("reuseDelay", 0);
 
 		String skill = set.getString("enchant4Skill", null);
-		if (skill != null)
-		{
+		if (skill != null) {
 			String[] info = skill.split("-");
 
-			if (info != null && info.length == 2)
-			{
+			if (info != null && info.length == 2) {
 				int id = 0;
 				int level = 0;
-				try
-				{
+				try {
 					id = Integer.parseInt(info[0]);
 					level = Integer.parseInt(info[1]);
-				}
-				catch (Exception nfe)
-				{
+				} catch (Exception nfe) {
 					// Incorrect syntax, dont add new skill
-					Log.info(StringUtil
-							.concat("> Couldnt parse ", skill, " in weapon enchant skills! item ", toString()));
+					Log.info(StringUtil.concat("> Couldnt parse ", skill, " in weapon enchant skills! item ", toString()));
 				}
-				if (id > 0 && level > 0)
-				{
+				if (id > 0 && level > 0) {
 					enchant4Skill = new SkillHolder(id, level);
 				}
 			}
 		}
 
 		skill = set.getString("oncastSkill", null);
-		if (skill != null)
-		{
+		if (skill != null) {
 			String[] info = skill.split("-");
 			String infochance = set.getString("oncastChance", null);
-			if (info != null && info.length == 2)
-			{
+			if (info != null && info.length == 2) {
 				int id = 0;
 				int level = 0;
 				int chance = 0;
-				try
-				{
+				try {
 					id = Integer.parseInt(info[0]);
 					level = Integer.parseInt(info[1]);
-					if (infochance != null)
-					{
+					if (infochance != null) {
 						chance = Integer.parseInt(infochance);
 					}
-				}
-				catch (Exception nfe)
-				{
+				} catch (Exception nfe) {
 					// Incorrect syntax, dont add new skill
-					Log.info(StringUtil
-							.concat("> Couldnt parse ", skill, " in weapon oncast skills! item ", toString()));
+					Log.info(StringUtil.concat("> Couldnt parse ", skill, " in weapon oncast skills! item ", toString()));
 				}
-				if (id > 0 && level > 0 && chance > 0)
-				{
+				if (id > 0 && level > 0 && chance > 0) {
 					skillsOnCast = new SkillHolder(id, level);
-					if (infochance != null)
-					{
+					if (infochance != null) {
 						skillsOnCastCondition = new ConditionGameChance(chance);
 					}
 				}
@@ -159,35 +141,26 @@ public final class L2Weapon extends L2Item
 		}
 
 		skill = set.getString("oncritSkill", null);
-		if (skill != null)
-		{
+		if (skill != null) {
 			String[] info = skill.split("-");
 			String infochance = set.getString("oncritChance", null);
-			if (info != null && info.length == 2)
-			{
+			if (info != null && info.length == 2) {
 				int id = 0;
 				int level = 0;
 				int chance = 0;
-				try
-				{
+				try {
 					id = Integer.parseInt(info[0]);
 					level = Integer.parseInt(info[1]);
-					if (infochance != null)
-					{
+					if (infochance != null) {
 						chance = Integer.parseInt(infochance);
 					}
-				}
-				catch (Exception nfe)
-				{
+				} catch (Exception nfe) {
 					// Incorrect syntax, dont add new skill
-					Log.info(StringUtil
-							.concat("> Couldnt parse ", skill, " in weapon oncrit skills! item ", toString()));
+					Log.info(StringUtil.concat("> Couldnt parse ", skill, " in weapon oncrit skills! item ", toString()));
 				}
-				if (id > 0 && level > 0 && chance > 0)
-				{
+				if (id > 0 && level > 0 && chance > 0) {
 					skillsOnCrit = new SkillHolder(id, level);
-					if (infochance != null)
-					{
+					if (infochance != null) {
 						skillsOnCritCondition = new ConditionGameChance(chance);
 					}
 				}
@@ -203,8 +176,7 @@ public final class L2Weapon extends L2Item
 	 * @return L2WeaponType
 	 */
 	@Override
-	public L2WeaponType getItemType()
-	{
+	public L2WeaponType getItemType() {
 		return type;
 	}
 
@@ -214,8 +186,7 @@ public final class L2Weapon extends L2Item
 	 * @return int : ID of the Weapon
 	 */
 	@Override
-	public int getItemMask()
-	{
+	public int getItemMask() {
 		return getItemType().mask();
 	}
 
@@ -224,8 +195,7 @@ public final class L2Weapon extends L2Item
 	 *
 	 * @return boolean
 	 */
-	public boolean isMagicWeapon()
-	{
+	public boolean isMagicWeapon() {
 		return isMagicWeapon;
 	}
 
@@ -234,8 +204,7 @@ public final class L2Weapon extends L2Item
 	 *
 	 * @return int
 	 */
-	public int getSoulShotCount()
-	{
+	public int getSoulShotCount() {
 		return soulShotCount;
 	}
 
@@ -244,8 +213,7 @@ public final class L2Weapon extends L2Item
 	 *
 	 * @return int
 	 */
-	public int getSpiritShotCount()
-	{
+	public int getSpiritShotCount() {
 		return spiritShotCount;
 	}
 
@@ -254,8 +222,7 @@ public final class L2Weapon extends L2Item
 	 *
 	 * @return int
 	 */
-	public int getRandomDamage()
-	{
+	public int getRandomDamage() {
 		return rndDam;
 	}
 
@@ -264,8 +231,7 @@ public final class L2Weapon extends L2Item
 	 *
 	 * @return int
 	 */
-	public int getReuseDelay()
-	{
+	public int getReuseDelay() {
 		return reuseDelay;
 	}
 
@@ -274,8 +240,7 @@ public final class L2Weapon extends L2Item
 	 *
 	 * @return int
 	 */
-	public int getMpConsume()
-	{
+	public int getMpConsume() {
 		return mpConsume;
 	}
 
@@ -284,10 +249,8 @@ public final class L2Weapon extends L2Item
 	 *
 	 * @return
 	 */
-	public L2Skill getEnchant4Skill()
-	{
-		if (enchant4Skill == null)
-		{
+	public L2Skill getEnchant4Skill() {
+		if (enchant4Skill == null) {
 			return null;
 		}
 		return enchant4Skill.getSkill();
@@ -298,8 +261,7 @@ public final class L2Weapon extends L2Item
 	 *
 	 * @return
 	 */
-	public int getChangeWeaponId()
-	{
+	public int getChangeWeaponId() {
 		return changeWeaponId;
 	}
 
@@ -310,21 +272,17 @@ public final class L2Weapon extends L2Item
 	 * @return Func[] : array of functions
 	 */
 	@Override
-	public Func[] getStatFuncs(L2ItemInstance instance)
-	{
-		if (funcTemplates == null || funcTemplates.length == 0)
-		{
+	public Func[] getStatFuncs(L2ItemInstance instance) {
+		if (funcTemplates == null || funcTemplates.length == 0) {
 			return emptyFunctionSet;
 		}
 
 		ArrayList<Func> funcs = new ArrayList<>(funcTemplates.length);
 
 		Func f;
-		for (FuncTemplate t : funcTemplates)
-		{
+		for (FuncTemplate t : funcTemplates) {
 			f = t.getFunc(instance);
-			if (f != null)
-			{
+			if (f != null) {
 				funcs.add(f);
 			}
 		}
@@ -340,39 +298,31 @@ public final class L2Weapon extends L2Item
 	 * @param crit   : boolean tells whether the hit was critical
 	 * @return L2Effect[] : array of effects generated by the skill
 	 */
-	public L2Abnormal[] getSkillEffects(L2Character caster, L2Character target, boolean crit)
-	{
-		if (skillsOnCrit == null || !crit)
-		{
+	public L2Abnormal[] getSkillEffects(L2Character caster, L2Character target, boolean crit) {
+		if (skillsOnCrit == null || !crit) {
 			return emptyEffectSet;
 		}
 		List<L2Abnormal> effects = new ArrayList<>();
 
-		if (skillsOnCritCondition != null)
-		{
+		if (skillsOnCritCondition != null) {
 			Env env = new Env();
 			env.player = caster;
 			env.target = target;
 			env.skill = skillsOnCrit.getSkill();
-			if (!skillsOnCritCondition.test(env))
-			{
+			if (!skillsOnCritCondition.test(env)) {
 				return emptyEffectSet; // Skill condition not met
 			}
 		}
 
 		byte shld = Formulas.calcShldUse(caster, target, skillsOnCrit.getSkill());
-		if (!Formulas.calcSkillSuccess(caster, target, skillsOnCrit.getSkill(), shld, L2ItemInstance.CHARGED_NONE))
-		{
+		if (!Formulas.calcSkillSuccess(caster, target, skillsOnCrit.getSkill(), shld, L2ItemInstance.CHARGED_NONE)) {
 			return emptyEffectSet; // These skills should not work on RaidBoss
 		}
-		if (target.getFirstEffect(skillsOnCrit.getSkill().getId()) != null)
-		{
+		if (target.getFirstEffect(skillsOnCrit.getSkill().getId()) != null) {
 			target.getFirstEffect(skillsOnCrit.getSkill().getId()).exit();
 		}
-		Collections.addAll(effects,
-				skillsOnCrit.getSkill().getEffects(caster, target, new Env(shld, L2ItemInstance.CHARGED_NONE)));
-		if (effects.isEmpty())
-		{
+		Collections.addAll(effects, skillsOnCrit.getSkill().getEffects(caster, target, new Env(shld, L2ItemInstance.CHARGED_NONE)));
+		if (effects.isEmpty()) {
 			return emptyEffectSet;
 		}
 		return effects.toArray(new L2Abnormal[effects.size()]);
@@ -386,41 +336,33 @@ public final class L2Weapon extends L2Item
 	 * @param trigger : L2Skill pointing out the skill triggering this action
 	 * @return L2Effect[] : array of effects generated by the skill
 	 */
-	public L2Abnormal[] getSkillEffects(L2Character caster, L2Character target, L2Skill trigger)
-	{
-		if (skillsOnCast == null)
-		{
+	public L2Abnormal[] getSkillEffects(L2Character caster, L2Character target, L2Skill trigger) {
+		if (skillsOnCast == null) {
 			return emptyEffectSet;
 		}
-		if (trigger.isOffensive() != skillsOnCast.getSkill().isOffensive())
-		{
+		if (trigger.isOffensive() != skillsOnCast.getSkill().isOffensive()) {
 			return emptyEffectSet; // Trigger only same type of skill
 		}
-		if (trigger.isToggle() && skillsOnCast.getSkill().getSkillType() == L2SkillType.BUFF)
-		{
+		if (trigger.isToggle() && skillsOnCast.getSkill().getSkillType() == L2SkillType.BUFF) {
 			return emptyEffectSet; // No buffing with toggle skills
 		}
-		if (!trigger.isMagic() && skillsOnCast.getSkill().getSkillType() == L2SkillType.BUFF)
-		{
+		if (!trigger.isMagic() && skillsOnCast.getSkill().getSkillType() == L2SkillType.BUFF) {
 			return emptyEffectSet; // No buffing with not magic skills
 		}
 
-		if (skillsOnCastCondition != null)
-		{
+		if (skillsOnCastCondition != null) {
 			Env env = new Env();
 			env.player = caster;
 			env.target = target;
 			env.skill = skillsOnCast.getSkill();
-			if (!skillsOnCastCondition.test(env))
-			{
+			if (!skillsOnCastCondition.test(env)) {
 				return emptyEffectSet;
 			}
 		}
 
 		byte shld = Formulas.calcShldUse(caster, target, skillsOnCast.getSkill());
 		if (skillsOnCast.getSkill().isOffensive() &&
-				!Formulas.calcSkillSuccess(caster, target, skillsOnCast.getSkill(), shld, L2ItemInstance.CHARGED_NONE))
-		{
+				!Formulas.calcSkillSuccess(caster, target, skillsOnCast.getSkill(), shld, L2ItemInstance.CHARGED_NONE)) {
 			return emptyEffectSet;
 		}
 
@@ -431,34 +373,25 @@ public final class L2Weapon extends L2Item
 		targets[0] = target;
 
 		// Launch the magic skill and calculate its effects
-		if (handler != null)
-		{
+		if (handler != null) {
 			handler.useSkill(caster, skillsOnCast.getSkill(), targets);
-		}
-		else
-		{
+		} else {
 			skillsOnCast.getSkill().useSkill(caster, targets);
 		}
 
 		// notify quests of a skill use
-		if (caster instanceof L2PcInstance)
-		{
+		if (caster instanceof L2PcInstance) {
 			// Mobs in range 1000 see spell
 			Collection<L2Object> objs = caster.getKnownList().getKnownObjects().values();
 			//synchronized (caster.getKnownList().getKnownObjects())
 			{
-				for (L2Object spMob : objs)
-				{
-					if (spMob instanceof L2Npc)
-					{
+				for (L2Object spMob : objs) {
+					if (spMob instanceof L2Npc) {
 						L2Npc npcMob = (L2Npc) spMob;
 
-						if (npcMob.getTemplate().getEventQuests(Quest.QuestEventType.ON_SKILL_SEE) != null)
-						{
-							for (Quest quest : npcMob.getTemplate().getEventQuests(Quest.QuestEventType.ON_SKILL_SEE))
-							{
-								quest.notifySkillSee(npcMob, (L2PcInstance) caster, skillsOnCast.getSkill(), targets,
-										false);
+						if (npcMob.getTemplate().getEventQuests(Quest.QuestEventType.ON_SKILL_SEE) != null) {
+							for (Quest quest : npcMob.getTemplate().getEventQuests(Quest.QuestEventType.ON_SKILL_SEE)) {
+								quest.notifySkillSee(npcMob, (L2PcInstance) caster, skillsOnCast.getSkill(), targets, false);
 							}
 						}
 					}

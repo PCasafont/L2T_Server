@@ -22,29 +22,26 @@ package l2server.gameserver.network.serverpackets;
  *
  * @author janiii
  */
-public class ExEventMatchMessage extends L2GameServerPacket
-{
+public class ExEventMatchMessage extends L2GameServerPacket {
 	private int type;
 	private String message;
-
+	
 	/**
 	 * Create an event match message.
 	 *
 	 * @param type    0 - gm, 1 - finish, 2 - start, 3 - game over, 4 - 1, 5 - 2, 6 - 3, 7 - 4, 8 - 5
 	 * @param message message to show, only when type is 0 - gm
 	 */
-	public ExEventMatchMessage(int type, String message)
-	{
+	public ExEventMatchMessage(int type, String message) {
 		this.type = type;
 		this.message = message;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeC(type);
 		writeS(message);
 	}

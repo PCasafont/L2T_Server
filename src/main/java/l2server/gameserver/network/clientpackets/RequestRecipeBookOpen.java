@@ -19,35 +19,29 @@ import l2server.Config;
 import l2server.gameserver.RecipeController;
 import l2server.log.Log;
 
-public final class RequestRecipeBookOpen extends L2GameClientPacket
-{
-
+public final class RequestRecipeBookOpen extends L2GameClientPacket {
+	
 	private boolean isDwarvenCraft;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		isDwarvenCraft = readD() == 0;
-		if (Config.DEBUG)
-		{
+		if (Config.DEBUG) {
 			Log.info("RequestRecipeBookOpen : " + (isDwarvenCraft ? "dwarvenCraft" : "commonCraft"));
 		}
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
-		if (getClient().getActiveChar() == null)
-		{
+	protected void runImpl() {
+		if (getClient().getActiveChar() == null) {
 			return;
 		}
-
-		if (getClient().getActiveChar().getPrivateStoreType() != 0)
-		{
+		
+		if (getClient().getActiveChar().getPrivateStoreType() != 0) {
 			getClient().getActiveChar().sendMessage("Cannot use recipe book while trading");
 			return;
 		}
-
+		
 		RecipeController.getInstance().requestBookOpen(getClient().getActiveChar(), isDwarvenCraft);
 	}
 }

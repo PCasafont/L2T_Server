@@ -25,8 +25,7 @@ import l2server.gameserver.model.actor.instance.L2CubicInstance;
  * An Env object is just a class to pass parameters to a calculator such as L2PcInstance, L2ItemInstance, Initial value.
  */
 
-public final class Env
-{
+public final class Env {
 
 	public L2Character player;
 	public L2CubicInstance cubic;
@@ -40,13 +39,11 @@ public final class Env
 	public byte shld = 0;
 	public double ssMul = L2ItemInstance.CHARGED_NONE;
 
-	public Env()
-	{
+	public Env() {
 
 	}
 
-	public Env(byte shd, double ss)
-	{
+	public Env(byte shd, double ss) {
 		shld = shd;
 		ssMul = ss;
 	}

@@ -15,8 +15,7 @@
 
 package l2server.gameserver.model;
 
-public class FishData
-{
+public class FishData {
 	private int id;
 	private int level;
 	private String name;
@@ -29,8 +28,17 @@ public class FishData
 	private int waitTime;
 	private int combatTime;
 
-	public FishData(int id, int lvl, String name, int HP, int HpRegen, int type, int group, int fish_guts, int guts_check_time, int wait_time, int combat_time)
-	{
+	public FishData(int id,
+	                int lvl,
+	                String name,
+	                int HP,
+	                int HpRegen,
+	                int type,
+	                int group,
+	                int fish_guts,
+	                int guts_check_time,
+	                int wait_time,
+	                int combat_time) {
 		this.id = id;
 		level = lvl;
 		this.name = name.intern();
@@ -44,8 +52,7 @@ public class FishData
 		combatTime = combat_time;
 	}
 
-	public FishData(FishData copyOf)
-	{
+	public FishData(FishData copyOf) {
 		id = copyOf.getId();
 		level = copyOf.getLevel();
 		name = copyOf.getName();
@@ -62,69 +69,57 @@ public class FishData
 	/**
 	 * @return Returns the id.
 	 */
-	public int getId()
-	{
+	public int getId() {
 		return id;
 	}
 
 	/**
 	 * @return Returns the level.
 	 */
-	public int getLevel()
-	{
+	public int getLevel() {
 		return level;
 	}
 
 	/**
 	 * @return Returns the name.
 	 */
-	public String getName()
-	{
+	public String getName() {
 		return name;
 	}
 
-	public int getHP()
-	{
+	public int getHP() {
 		return hp;
 	}
 
-	public int getHpRegen()
-	{
+	public int getHpRegen() {
 		return hpRegen;
 	}
 
-	public int getType()
-	{
+	public int getType() {
 		return type;
 	}
 
-	public int getGroup()
-	{
+	public int getGroup() {
 		return group;
 	}
 
-	public int getFishGuts()
-	{
+	public int getFishGuts() {
 		return fishGuts;
 	}
 
-	public int getGutsCheckTime()
-	{
+	public int getGutsCheckTime() {
 		return gutsCheckTime;
 	}
 
-	public int getWaitTime()
-	{
+	public int getWaitTime() {
 		return waitTime;
 	}
 
-	public int getCombatTime()
-	{
+	public int getCombatTime() {
 		return combatTime;
 	}
 
-	public void setType(int type)
-	{
+	public void setType(int type) {
 		this.type = type;
 	}
 }

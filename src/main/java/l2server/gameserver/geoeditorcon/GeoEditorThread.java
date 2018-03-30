@@ -28,8 +28,7 @@ import java.util.logging.Level;
 /**
  * @author Luno, Dezmond
  */
-public class GeoEditorThread extends Thread
-{
+public class GeoEditorThread extends Thread {
 
 	private boolean working = false;
 
@@ -45,100 +44,71 @@ public class GeoEditorThread extends Thread
 
 	private List<L2PcInstance> gms;
 
-	public GeoEditorThread(Socket ge)
-	{
+	public GeoEditorThread(Socket ge) {
 		geSocket = ge;
 		working = true;
 		gms = new ArrayList<>();
 	}
 
 	@Override
-	public void interrupt()
-	{
-		try
-		{
+	public void interrupt() {
+		try {
 			geSocket.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		super.interrupt();
 	}
 
 	@Override
-	public void run()
-	{
-		try
-		{
+	public void run() {
+		try {
 			out = geSocket.getOutputStream();
 			int timer = 0;
 
-			while (working)
-			{
-				if (!isConnected())
-				{
+			while (working) {
+				if (!isConnected()) {
 					working = false;
 				}
 
-				if (mode == 2 && timer > sendDelay)
-				{
-					for (L2PcInstance gm : gms)
-					{
-						if (!gm.getClient().getConnection().isClosed())
-						{
+				if (mode == 2 && timer > sendDelay) {
+					for (L2PcInstance gm : gms) {
+						if (!gm.getClient().getConnection().isClosed()) {
 							sendGmPosition(gm);
-						}
-						else
-						{
+						} else {
 							gms.remove(gm);
 						}
 					}
 					timer = 0;
 				}
 
-				try
-				{
+				try {
 					sleep(100);
-					if (mode == 2)
-					{
+					if (mode == 2) {
 						timer += 100;
 					}
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "GeoEditor disconnected. " + e.getMessage(), e);
-		}
-		finally
-		{
-			try
-			{
+		} finally {
+			try {
 				geSocket.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			working = false;
 		}
 	}
 
-	public void sendGmPosition(int gx, int gy, short z)
-	{
-		if (!isConnected())
-		{
+	public void sendGmPosition(int gx, int gy, short z) {
+		if (!isConnected()) {
 			return;
 		}
-		try
-		{
-			synchronized (out)
-			{
+		try {
+			synchronized (out) {
 				writeC(0x0b); // length 11 bytes!
 				writeC(0x01); // Cmd = save cell;
 				writeD(gx); // Global coord X;
@@ -146,138 +116,101 @@ public class GeoEditorThread extends Thread
 				writeH(z); // Coord Z;
 				out.flush();
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "GeoEditor disconnected. " + e.getMessage(), e);
 			working = false;
-		}
-		finally
-		{
-			try
-			{
+		} finally {
+			try {
 				geSocket.close();
-			}
-			catch (Exception ignored)
-			{
+			} catch (Exception ignored) {
 			}
 			working = false;
 		}
 	}
 
-	public void sendGmPosition(L2PcInstance gm)
-	{
+	public void sendGmPosition(L2PcInstance gm) {
 		sendGmPosition(gm.getX(), gm.getY(), (short) gm.getZ());
 	}
 
-	public void sendPing()
-	{
-		if (!isConnected())
-		{
+	public void sendPing() {
+		if (!isConnected()) {
 			return;
 		}
-		try
-		{
-			synchronized (out)
-			{
+		try {
+			synchronized (out) {
 				writeC(0x01); // length 1 byte!
 				writeC(0x02); // Cmd = ping (dummy packet for connection
 				// test);
 				out.flush();
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "GeoEditor disconnected. " + e.getMessage(), e);
 			working = false;
-		}
-		finally
-		{
-			try
-			{
+		} finally {
+			try {
 				geSocket.close();
-			}
-			catch (Exception ignored)
-			{
+			} catch (Exception ignored) {
 			}
 			working = false;
 		}
 	}
 
-	private void writeD(int value) throws IOException
-	{
+	private void writeD(int value) throws IOException {
 		out.write(value & 0xff);
 		out.write(value >> 8 & 0xff);
 		out.write(value >> 16 & 0xff);
 		out.write(value >> 24 & 0xff);
 	}
 
-	private void writeH(int value) throws IOException
-	{
+	private void writeH(int value) throws IOException {
 		out.write(value & 0xff);
 		out.write(value >> 8 & 0xff);
 	}
 
-	private void writeC(int value) throws IOException
-	{
+	private void writeC(int value) throws IOException {
 		out.write(value & 0xff);
 	}
 
-	public void setMode(int value)
-	{
+	public void setMode(int value) {
 		mode = value;
 	}
 
-	public void setTimer(int value)
-	{
-		if (value < 500)
-		{
+	public void setTimer(int value) {
+		if (value < 500) {
 			sendDelay = 500; // maximum - 2 times per second!
-		}
-		else if (value > 60000)
-		{
+		} else if (value > 60000) {
 			sendDelay = 60000; // Minimum - 1 time per minute.
-		}
-		else
-		{
+		} else {
 			sendDelay = value;
 		}
 	}
 
-	public void addGM(L2PcInstance gm)
-	{
-		if (!gms.contains(gm))
-		{
+	public void addGM(L2PcInstance gm) {
+		if (!gms.contains(gm)) {
 			gms.add(gm);
 		}
 	}
 
-	public void removeGM(L2PcInstance gm)
-	{
-		if (gms.contains(gm))
-		{
+	public void removeGM(L2PcInstance gm) {
+		if (gms.contains(gm)) {
 			gms.remove(gm);
 		}
 	}
 
-	public boolean isSend(L2PcInstance gm)
-	{
+	public boolean isSend(L2PcInstance gm) {
 		return mode == 1 && gms.contains(gm);
 	}
 
-	private boolean isConnected()
-	{
+	private boolean isConnected() {
 		return geSocket.isConnected() && !geSocket.isClosed();
 	}
 
-	public boolean isWorking()
-	{
+	public boolean isWorking() {
 		sendPing();
 		return working;
 	}
 
-	public int getMode()
-	{
+	public int getMode() {
 		return mode;
 	}
 }

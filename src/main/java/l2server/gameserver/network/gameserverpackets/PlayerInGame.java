@@ -22,21 +22,17 @@ import java.util.ArrayList;
 /**
  * @author -Wooden-
  */
-public class PlayerInGame extends BaseSendablePacket
-{
-	public PlayerInGame(String player)
-	{
+public class PlayerInGame extends BaseSendablePacket {
+	public PlayerInGame(String player) {
 		writeC(0x02);
 		writeH(1);
 		writeS(player);
 	}
 
-	public PlayerInGame(ArrayList<String> players)
-	{
+	public PlayerInGame(ArrayList<String> players) {
 		writeC(0x02);
 		writeH(players.size());
-		for (String pc : players)
-		{
+		for (String pc : players) {
 			writeS(pc);
 		}
 	}
@@ -45,8 +41,7 @@ public class PlayerInGame extends BaseSendablePacket
 	 * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent()
-	{
+	public byte[] getContent() {
 		return getBytes();
 	}
 }

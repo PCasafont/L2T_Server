@@ -1,367 +1,367 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-    <item>
-        <ingredient id="4358" count="30000" /> <!-- Bloody Pa'agrio -->
-        <production id="22402" count="1" /> <!-- Weapon Appearance Stone (R-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="30000" /> <!-- Bloody Pa'agrio -->
-        <production id="22403" count="1" /> <!-- Weapon Appearance Stone (S-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="30000" /> <!-- Bloody Pa'agrio -->
-        <production id="22404" count="1" /> <!-- Weapon Appearance Stone (A-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="30000" /> <!-- Bloody Pa'agrio -->
-        <production id="22405" count="1" /> <!-- Weapon Appearance Stone (B-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="30000" /> <!-- Bloody Pa'agrio -->
-        <production id="22406" count="1" /> <!-- Weapon Appearance Stone (C-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="10000" /> <!-- Bloody Pa'agrio -->
-        <production id="22407" count="1" /> <!-- Weapon Appearance Stone (D-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
-        <production id="22682" count="1" /> <!-- Armor Appearance Stone (R-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
-        <production id="22683" count="1" /> <!-- Armor Appearance Stone (S-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
-        <production id="22684" count="1" /> <!-- Armor Appearance Stone (A-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
-        <production id="22685" count="1" /> <!-- Armor Appearance Stone (B-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
-        <production id="22686" count="1" /> <!-- Armor Appearance Stone (C-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
-        <production id="22687" count="1" /> <!-- Armor Appearance Stone (D-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="45000" /> <!-- Bloody Pa'agrio -->
-        <production id="22708" count="1" /> <!-- Hair Accessory Appearance Stone -->
-    </item>
-    <item>
-        <ingredient id="4358" count="200" /> <!-- Bloody Pa'agrio -->
-        <production id="22414" count="1" /> <!-- Weapon Restoration Stone (R-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="200" /> <!-- Bloody Pa'agrio -->
-        <production id="22415" count="1" /> <!-- Weapon Restoration Stone (S-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="200" /> <!-- Bloody Pa'agrio -->
-        <production id="22416" count="1" /> <!-- Weapon Restoration Stone (A-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="200" /> <!-- Bloody Pa'agrio -->
-        <production id="22417" count="1" /> <!-- Weapon Restoration Stone (B-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="200" /> <!-- Bloody Pa'agrio -->
-        <production id="22418" count="1" /> <!-- Weapon Restoration Stone (C-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="200" /> <!-- Bloody Pa'agrio -->
-        <production id="22419" count="1" /> <!-- Weapon Restoration Stone (D-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="100" /> <!-- Bloody Pa'agrio -->
-        <production id="22694" count="1" /> <!-- Armor Restoration Stone (R-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="100" /> <!-- Bloody Pa'agrio -->
-        <production id="22695" count="1" /> <!-- Armor Restoration Stone (S-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="100" /> <!-- Bloody Pa'agrio -->
-        <production id="22696" count="1" /> <!-- Armor Restoration Stone (A-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="100" /> <!-- Bloody Pa'agrio -->
-        <production id="22697" count="1" /> <!-- Armor Restoration Stone (B-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="100" /> <!-- Bloody Pa'agrio -->
-        <production id="22698" count="1" /> <!-- Armor Restoration Stone (C-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="100" /> <!-- Bloody Pa'agrio -->
-        <production id="22699" count="1" /> <!-- Armor Restoration Stone (D-grade) -->
-    </item>
-    <item>
-        <ingredient id="4358" count="100" /> <!-- Bloody Pa'agrio -->
-        <production id="22882" count="1" /> <!-- Hair Accessory Restoration Stone -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="23211" count="1" /> <!-- Drake Maul Appearance Stone -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="23212" count="1" /> <!-- Freya's Staff Appearance Stone -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="23213" count="1" /> <!-- Spezion's Claw Appearance Stone -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="23214" count="1" /> <!-- Maliss Stormer Appearance Stone -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="23215" count="1" /> <!-- Steregos' Dagger Appearance Stone -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="23216" count="1" /> <!-- Ron's Dual Blunt Appearance Stone -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="23217" count="1" /> <!-- Darion's Hellblade Appearance Stone -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="23218" count="1" /> <!-- Doll Blader's Butcher Blades Appearance Stone -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="23219" count="1" /> <!-- Tiat's Claw of Destruction Appearance Stone -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="23220" count="1" /> <!-- Aenkinel's Blades of Delusion Appearance Stone -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="23221" count="1" /> <!-- Yehan Klanikus' Blood Brother Appearance Stone -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="23222" count="1" /> <!-- Mardil's Fan Appearance Stone -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37067" count="1" /> <!-- Monster Weapon Appearance Stone: Theor's Sword -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37068" count="1" /> <!-- Monster Weapon Appearance Stone: Sword of Corruption -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37069" count="1" /> <!-- Monster Weapon Appearance Stone: Octavis' Sword -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37070" count="1" /> <!-- Monster Weapon Appearance Stone: Tegaffe's Dualsword -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37071" count="1" /> <!-- Monster Weapon Appearance Stone: Seknus' One-handed Magic Sword -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37072" count="1" /> <!-- Monster Weapon Appearance Stone: Tebot's Axe -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37073" count="1" /> <!-- Monster Weapon Appearance Stone: Glakias' Hammer -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37074" count="1" /> <!-- Monster Weapon Appearance Stone: Tebot's Dual Blunt Weapon -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37075" count="1" /> <!-- Monster Weapon Appearance Stone: Drakos' Dagger -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37076" count="1" /> <!-- Monster Weapon Appearance Stone: Drakos' Dual Dagger -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37077" count="1" /> <!-- Monster Weapon Appearance Stone: Guillotine's Greatsword -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37078" count="1" /> <!-- Monster Weapon Appearance Stone: Thesakar's Axe -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37079" count="1" /> <!-- Monster Weapon Appearance Stone: Mimilead's Staff -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37080" count="1" /> <!-- Monster Weapon Appearance Stone: Satyr's Staff -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37081" count="1" /> <!-- Monster Weapon Appearance Stone: Kanadis' Hand -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37082" count="1" /> <!-- Monster Weapon Appearance Stone: Kanadis' Bow -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37083" count="1" /> <!-- Monster Weapon Appearance Stone: Centaur's Bow -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37084" count="1" /> <!-- Monster Weapon Appearance Stone: Spicula's Crossbow -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37085" count="1" /> <!-- Monster Weapon Appearance Stone: Theor's Shield -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37086" count="1" /> <!-- Monster Weapon Appearance Stone: Shield of Corruption -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37912" count="1" /> <!-- Chrono Maracas Appearance Stone: Dualsword -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37911" count="1" /> <!-- Chrono Darbuka Appearance Stone: Two-handed Blunt Weapon -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37910" count="1" /> <!-- Chrono Campana Appearance Stone: Spear -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37909" count="1" /> <!-- Chrono Unitus Appearance Stone: Fist Weapon -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37908" count="1" /> <!-- Chrono Cithara Appearance Stone: One-handed Sword -->
-    </item>
-    <item>
-        <ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
-        <production id="37907" count="1" /> <!-- Pig Lollipop Appearance Stone: One-handed Sword -->
-    </item>
-    <item>
-        <ingredient id="4358" count="40000" /> <!-- Bloody Pa'agrio -->
-        <production id="23234" count="1" /> <!-- Alluring Swimsuit Appearance Stone -->
-    </item>
-    <item>
-        <ingredient id="4358" count="35000" /> <!-- Bloody Pa'agrio -->
-        <production id="17469" count="1" /> <!-- Durandia Shield -->
-    </item>
-    <item>
-        <ingredient id="4358" count="80000" /> <!-- Bloody Pa'agrio -->
-        <production id="17480" count="1" /> <!-- Durandia Sigil -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36489" count="1" /> <!-- Antharas Shaper - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36490" count="1" /> <!-- Antharas Slasher - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36491" count="1" /> <!-- Antharas Thrower - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36492" count="1" /> <!-- Antharas Buster - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36493" count="1" /> <!-- Antharas Cutter - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36494" count="1" /> <!-- Antharas Stormer - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36495" count="1" /> <!-- Antharas Fighter - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36496" count="1" /> <!-- Antharas Avenger - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36497" count="1" /> <!-- Antharas Dual Blunt Weapon - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36498" count="1" /> <!-- Antharas Dualsword - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36499" count="1" /> <!-- Valakas Shaper - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36500" count="1" /> <!-- Valakas Cutter - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36501" count="1" /> <!-- Valakas Slasher - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36502" count="1" /> <!-- Valakas Thrower - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36503" count="1" /> <!-- Valakas Buster - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36504" count="1" /> <!-- Valakas Caster - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36505" count="1" /> <!-- Valakas Retributer - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36506" count="1" /> <!-- Lindvior Shaper - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36507" count="1" /> <!-- Lindvior Thrower - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36508" count="1" /> <!-- Lindvior Slasher - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36509" count="1" /> <!-- Lindvior Caster - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36510" count="1" /> <!-- Lindvior Cutter - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36511" count="1" /> <!-- Lindvior Shooter - Top-grade -->
-    </item>
-    <item>
-        <ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
-        <production id="36512" count="1" /> <!-- Lindvior Dual Dagger - Top-grade -->
-    </item>
+	<item>
+		<ingredient id="4358" count="30000" /> <!-- Bloody Pa'agrio -->
+		<production id="22402" count="1" /> <!-- Weapon Appearance Stone (R-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="30000" /> <!-- Bloody Pa'agrio -->
+		<production id="22403" count="1" /> <!-- Weapon Appearance Stone (S-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="30000" /> <!-- Bloody Pa'agrio -->
+		<production id="22404" count="1" /> <!-- Weapon Appearance Stone (A-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="30000" /> <!-- Bloody Pa'agrio -->
+		<production id="22405" count="1" /> <!-- Weapon Appearance Stone (B-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="30000" /> <!-- Bloody Pa'agrio -->
+		<production id="22406" count="1" /> <!-- Weapon Appearance Stone (C-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="10000" /> <!-- Bloody Pa'agrio -->
+		<production id="22407" count="1" /> <!-- Weapon Appearance Stone (D-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
+		<production id="22682" count="1" /> <!-- Armor Appearance Stone (R-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
+		<production id="22683" count="1" /> <!-- Armor Appearance Stone (S-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
+		<production id="22684" count="1" /> <!-- Armor Appearance Stone (A-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
+		<production id="22685" count="1" /> <!-- Armor Appearance Stone (B-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
+		<production id="22686" count="1" /> <!-- Armor Appearance Stone (C-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="12000" /> <!-- Bloody Pa'agrio -->
+		<production id="22687" count="1" /> <!-- Armor Appearance Stone (D-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="45000" /> <!-- Bloody Pa'agrio -->
+		<production id="22708" count="1" /> <!-- Hair Accessory Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4358" count="200" /> <!-- Bloody Pa'agrio -->
+		<production id="22414" count="1" /> <!-- Weapon Restoration Stone (R-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="200" /> <!-- Bloody Pa'agrio -->
+		<production id="22415" count="1" /> <!-- Weapon Restoration Stone (S-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="200" /> <!-- Bloody Pa'agrio -->
+		<production id="22416" count="1" /> <!-- Weapon Restoration Stone (A-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="200" /> <!-- Bloody Pa'agrio -->
+		<production id="22417" count="1" /> <!-- Weapon Restoration Stone (B-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="200" /> <!-- Bloody Pa'agrio -->
+		<production id="22418" count="1" /> <!-- Weapon Restoration Stone (C-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="200" /> <!-- Bloody Pa'agrio -->
+		<production id="22419" count="1" /> <!-- Weapon Restoration Stone (D-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="100" /> <!-- Bloody Pa'agrio -->
+		<production id="22694" count="1" /> <!-- Armor Restoration Stone (R-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="100" /> <!-- Bloody Pa'agrio -->
+		<production id="22695" count="1" /> <!-- Armor Restoration Stone (S-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="100" /> <!-- Bloody Pa'agrio -->
+		<production id="22696" count="1" /> <!-- Armor Restoration Stone (A-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="100" /> <!-- Bloody Pa'agrio -->
+		<production id="22697" count="1" /> <!-- Armor Restoration Stone (B-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="100" /> <!-- Bloody Pa'agrio -->
+		<production id="22698" count="1" /> <!-- Armor Restoration Stone (C-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="100" /> <!-- Bloody Pa'agrio -->
+		<production id="22699" count="1" /> <!-- Armor Restoration Stone (D-grade) -->
+	</item>
+	<item>
+		<ingredient id="4358" count="100" /> <!-- Bloody Pa'agrio -->
+		<production id="22882" count="1" /> <!-- Hair Accessory Restoration Stone -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="23211" count="1" /> <!-- Drake Maul Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="23212" count="1" /> <!-- Freya's Staff Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="23213" count="1" /> <!-- Spezion's Claw Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="23214" count="1" /> <!-- Maliss Stormer Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="23215" count="1" /> <!-- Steregos' Dagger Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="23216" count="1" /> <!-- Ron's Dual Blunt Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="23217" count="1" /> <!-- Darion's Hellblade Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="23218" count="1" /> <!-- Doll Blader's Butcher Blades Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="23219" count="1" /> <!-- Tiat's Claw of Destruction Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="23220" count="1" /> <!-- Aenkinel's Blades of Delusion Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="23221" count="1" /> <!-- Yehan Klanikus' Blood Brother Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="23222" count="1" /> <!-- Mardil's Fan Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37067" count="1" /> <!-- Monster Weapon Appearance Stone: Theor's Sword -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37068" count="1" /> <!-- Monster Weapon Appearance Stone: Sword of Corruption -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37069" count="1" /> <!-- Monster Weapon Appearance Stone: Octavis' Sword -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37070" count="1" /> <!-- Monster Weapon Appearance Stone: Tegaffe's Dualsword -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37071" count="1" /> <!-- Monster Weapon Appearance Stone: Seknus' One-handed Magic Sword -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37072" count="1" /> <!-- Monster Weapon Appearance Stone: Tebot's Axe -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37073" count="1" /> <!-- Monster Weapon Appearance Stone: Glakias' Hammer -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37074" count="1" /> <!-- Monster Weapon Appearance Stone: Tebot's Dual Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37075" count="1" /> <!-- Monster Weapon Appearance Stone: Drakos' Dagger -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37076" count="1" /> <!-- Monster Weapon Appearance Stone: Drakos' Dual Dagger -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37077" count="1" /> <!-- Monster Weapon Appearance Stone: Guillotine's Greatsword -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37078" count="1" /> <!-- Monster Weapon Appearance Stone: Thesakar's Axe -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37079" count="1" /> <!-- Monster Weapon Appearance Stone: Mimilead's Staff -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37080" count="1" /> <!-- Monster Weapon Appearance Stone: Satyr's Staff -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37081" count="1" /> <!-- Monster Weapon Appearance Stone: Kanadis' Hand -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37082" count="1" /> <!-- Monster Weapon Appearance Stone: Kanadis' Bow -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37083" count="1" /> <!-- Monster Weapon Appearance Stone: Centaur's Bow -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37084" count="1" /> <!-- Monster Weapon Appearance Stone: Spicula's Crossbow -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37085" count="1" /> <!-- Monster Weapon Appearance Stone: Theor's Shield -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37086" count="1" /> <!-- Monster Weapon Appearance Stone: Shield of Corruption -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37912" count="1" /> <!-- Chrono Maracas Appearance Stone: Dualsword -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37911" count="1" /> <!-- Chrono Darbuka Appearance Stone: Two-handed Blunt Weapon -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37910" count="1" /> <!-- Chrono Campana Appearance Stone: Spear -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37909" count="1" /> <!-- Chrono Unitus Appearance Stone: Fist Weapon -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37908" count="1" /> <!-- Chrono Cithara Appearance Stone: One-handed Sword -->
+	</item>
+	<item>
+		<ingredient id="4358" count="50000" /> <!-- Bloody Pa'agrio -->
+		<production id="37907" count="1" /> <!-- Pig Lollipop Appearance Stone: One-handed Sword -->
+	</item>
+	<item>
+		<ingredient id="4358" count="40000" /> <!-- Bloody Pa'agrio -->
+		<production id="23234" count="1" /> <!-- Alluring Swimsuit Appearance Stone -->
+	</item>
+	<item>
+		<ingredient id="4358" count="35000" /> <!-- Bloody Pa'agrio -->
+		<production id="17469" count="1" /> <!-- Durandia Shield -->
+	</item>
+	<item>
+		<ingredient id="4358" count="80000" /> <!-- Bloody Pa'agrio -->
+		<production id="17480" count="1" /> <!-- Durandia Sigil -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36489" count="1" /> <!-- Antharas Shaper - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36490" count="1" /> <!-- Antharas Slasher - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36491" count="1" /> <!-- Antharas Thrower - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36492" count="1" /> <!-- Antharas Buster - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36493" count="1" /> <!-- Antharas Cutter - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36494" count="1" /> <!-- Antharas Stormer - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36495" count="1" /> <!-- Antharas Fighter - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36496" count="1" /> <!-- Antharas Avenger - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36497" count="1" /> <!-- Antharas Dual Blunt Weapon - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36498" count="1" /> <!-- Antharas Dualsword - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36499" count="1" /> <!-- Valakas Shaper - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36500" count="1" /> <!-- Valakas Cutter - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36501" count="1" /> <!-- Valakas Slasher - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36502" count="1" /> <!-- Valakas Thrower - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36503" count="1" /> <!-- Valakas Buster - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36504" count="1" /> <!-- Valakas Caster - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36505" count="1" /> <!-- Valakas Retributer - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36506" count="1" /> <!-- Lindvior Shaper - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36507" count="1" /> <!-- Lindvior Thrower - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36508" count="1" /> <!-- Lindvior Slasher - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36509" count="1" /> <!-- Lindvior Caster - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36510" count="1" /> <!-- Lindvior Cutter - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36511" count="1" /> <!-- Lindvior Shooter - Top-grade -->
+	</item>
+	<item>
+		<ingredient id="4358" count="500000" /> <!-- Bloody Pa'agrio -->
+		<production id="36512" count="1" /> <!-- Lindvior Dual Dagger - Top-grade -->
+	</item>
 </list>

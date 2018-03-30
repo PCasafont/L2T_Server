@@ -29,8 +29,7 @@ import l2server.gameserver.util.Util;
  *
  * @version $Revision$ $Date$
  */
-public final class RequestHennaEquip extends L2GameClientPacket
-{
+public final class RequestHennaEquip extends L2GameClientPacket {
 	private int symbolId;
 
 	// format  cd
@@ -40,28 +39,23 @@ public final class RequestHennaEquip extends L2GameClientPacket
 	 * format:		cd
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		symbolId = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("HennaEquip"))
-		{
+		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("HennaEquip")) {
 			return;
 		}
 
 		L2Henna henna = HennaTable.getInstance().getTemplate(symbolId);
-		if (henna == null)
-		{
+		if (henna == null) {
 			return;
 		}
 
@@ -76,41 +70,31 @@ public final class RequestHennaEquip extends L2GameClientPacket
           You could draw any kind of henna just having the required subclass...
          */
 		boolean cheater = true;
-		for (L2Henna h : activeChar.getCurrentClass().getAllowedDyes())
-		{
-			if (h.getSymbolId() == henna.getSymbolId())
-			{
+		for (L2Henna h : activeChar.getCurrentClass().getAllowedDyes()) {
+			if (h.getSymbolId() == henna.getSymbolId()) {
 				cheater = false;
 				break;
 			}
 		}
-		try
-		{
+		try {
 			count = activeChar.getInventory().getItemByItemId(henna.getDyeId()).getCount();
-		}
-		catch (Exception ignored)
-		{
+		} catch (Exception ignored) {
 		}
 
-		if (activeChar.getHennaEmptySlots() == 0 || henna.isFourthSlot() && activeChar.getHenna(4) != null)
-		{
+		if (activeChar.getHennaEmptySlots() == 0 || henna.isFourthSlot() && activeChar.getHenna(4) != null) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SYMBOLS_FULL));
 			return;
 		}
 
-		if (!henna.isFourthSlot())
-		{
+		if (!henna.isFourthSlot()) {
 			if (activeChar.getHenna(4) != null && activeChar.getHennaEmptySlots() < 1 ||
-					activeChar.getHenna(4) == null && activeChar.getHennaEmptySlots() < 2)
-			{
+					activeChar.getHenna(4) == null && activeChar.getHennaEmptySlots() < 2) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SYMBOLS_FULL));
 				return;
 			}
 		}
 
-		if (!cheater && count >= henna.getAmountDyeRequire() && activeChar.getAdena() >= henna.getPrice() &&
-				activeChar.addHenna(henna))
-		{
+		if (!cheater && count >= henna.getAmountDyeRequire() && activeChar.getAdena() >= henna.getPrice() && activeChar.addHenna(henna)) {
 			activeChar.destroyItemByItemId("Henna", henna.getDyeId(), henna.getAmountDyeRequire(), activeChar, true);
 			activeChar.reduceAdena("Henna", henna.getPrice(), activeChar.getLastFolkNPC(), true);
 
@@ -119,15 +103,12 @@ public final class RequestHennaEquip extends L2GameClientPacket
 			activeChar.sendPacket(iu);
 
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SYMBOL_ADDED));
-		}
-		else
-		{
+		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_DRAW_SYMBOL));
-			if (!activeChar.isGM() && cheater)
-			{
+			if (!activeChar.isGM() && cheater) {
 				Util.handleIllegalPlayerAction(activeChar,
-						"Exploit attempt: Character " + activeChar.getName() + " of account " +
-								activeChar.getAccountName() + " tryed to add a forbidden henna.",
+						"Exploit attempt: Character " + activeChar.getName() + " of account " + activeChar.getAccountName() +
+								" tryed to add a forbidden henna.",
 						Config.DEFAULT_PUNISH);
 			}
 		}

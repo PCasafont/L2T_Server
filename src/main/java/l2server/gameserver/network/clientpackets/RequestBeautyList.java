@@ -18,21 +18,17 @@ package l2server.gameserver.network.clientpackets;
 import l2server.gameserver.datatables.BeautyTable;
 import l2server.gameserver.network.serverpackets.ExResponseBeautyListPacket;
 
-public final class RequestBeautyList extends L2GameClientPacket
-{
+public final class RequestBeautyList extends L2GameClientPacket {
 	//private int unknown;
 
 	@Override
-	protected final void readImpl()
-	{
+	protected final void readImpl() {
 		//unknown = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
-		if (BeautyTable.getInstance().getTemplate(0) != null)
-		{
+	protected void runImpl() {
+		if (BeautyTable.getInstance().getTemplate(0) != null) {
 			sendPacket(new ExResponseBeautyListPacket());
 		}
 	}

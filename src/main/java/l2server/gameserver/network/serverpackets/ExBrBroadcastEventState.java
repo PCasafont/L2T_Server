@@ -20,10 +20,9 @@ package l2server.gameserver.network.serverpackets;
  *
  * @author Kerberos
  * @author mrTJO
- *         Format: (ch)dddddddSS
+ * Format: (ch)dddddddSS
  */
-public class ExBrBroadcastEventState extends L2GameServerPacket
-{
+public class ExBrBroadcastEventState extends L2GameServerPacket {
 	private int eventId;
 	private int eventState;
 	private int param0;
@@ -33,21 +32,27 @@ public class ExBrBroadcastEventState extends L2GameServerPacket
 	private int param4;
 	private String param5;
 	private String param6;
-
+	
 	public static final int APRIL_FOOLS = 20090401;
 	public static final int EVAS_INFERNO = 20090801; // event state (0 - hide, 1 - show), day (1-14), percent (0-100)
 	public static final int HALLOWEEN_EVENT = 20091031; // event state (0 - hide, 1 - show)
 	public static final int RAISING_RUDOLPH = 20091225; // event state (0 - hide, 1 - show)
 	public static final int LOVERS_JUBILEE = 20100214; // event state (0 - hide, 1 - show)
-
-	public ExBrBroadcastEventState(int eventId, int eventState)
-	{
+	
+	public ExBrBroadcastEventState(int eventId, int eventState) {
 		this.eventId = eventId;
 		this.eventState = eventState;
 	}
-
-	public ExBrBroadcastEventState(int eventId, int eventState, int param0, int param1, int param2, int param3, int param4, String param5, String param6)
-	{
+	
+	public ExBrBroadcastEventState(int eventId,
+	                               int eventState,
+	                               int param0,
+	                               int param1,
+	                               int param2,
+	                               int param3,
+	                               int param4,
+	                               String param5,
+	                               String param6) {
 		this.eventId = eventId;
 		this.eventState = eventState;
 		this.param0 = param0;
@@ -58,10 +63,9 @@ public class ExBrBroadcastEventState extends L2GameServerPacket
 		this.param5 = param5;
 		this.param6 = param6;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(eventId);
 		writeD(eventState);
 		writeD(param0);

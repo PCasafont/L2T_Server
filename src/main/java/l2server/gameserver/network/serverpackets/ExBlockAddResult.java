@@ -20,19 +20,16 @@ import l2server.gameserver.datatables.CharNameTable;
 /**
  * @author Erlando
  */
-public class ExBlockAddResult extends L2GameServerPacket
-{
+public class ExBlockAddResult extends L2GameServerPacket {
 
 	private int objId;
 
-	public ExBlockAddResult(int OID)
-	{
+	public ExBlockAddResult(int OID) {
 		objId = OID;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(0x00);
 		writeS(CharNameTable.getInstance().getNameById(objId));
 	}

@@ -21,27 +21,22 @@ import l2server.gameserver.stats.Stats;
 /**
  * @author Pere
  */
-public class FuncSubPercentBase extends Func
-{
+public class FuncSubPercentBase extends Func {
 	private final Lambda lambda;
-
-	public FuncSubPercentBase(Stats pStat, Object owner, Lambda lambda)
-	{
+	
+	public FuncSubPercentBase(Stats pStat, Object owner, Lambda lambda) {
 		super(pStat, owner);
 		this.lambda = lambda;
 	}
-
+	
 	@Override
-	public int getOrder()
-	{
+	public int getOrder() {
 		return 0x30;
 	}
-
+	
 	@Override
-	public void calc(Env env)
-	{
-		if (cond == null || cond.test(env))
-		{
+	public void calc(Env env) {
+		if (cond == null || cond.test(env)) {
 			env.value -= env.baseValue * (lambda.calc(env) / 100.0);
 		}
 	}

@@ -18,8 +18,7 @@ package l2server.gameserver.model.quest;
 /**
  * @author Pere
  */
-public enum GlobalQuest
-{
+public enum GlobalQuest {
 	UNK1,
 	UNK2,
 	UNK3,

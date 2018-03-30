@@ -22,53 +22,41 @@ package l2server.gameserver.gui.playertable;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.log.Log;
 
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
+import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.ListSelectionModel;
-import javax.swing.SwingUtilities;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-
 /**
  * @author KenM
  */
-public class PlayerTablePane extends JPanel
-{
+public class PlayerTablePane extends JPanel {
 	private static final long serialVersionUID = 1L;
-
-	public class ButtonListeners implements ActionListener
-	{
+	
+	public class ButtonListeners implements ActionListener {
 		@Override
-		public void actionPerformed(ActionEvent evt)
-		{
+		public void actionPerformed(ActionEvent evt) {
 			//String cmd = evt.getActionCommand();
 		}
 	}
-
+	
 	private GridBagLayout layout = new GridBagLayout();
-
+	
 	//Npc Table
 	private PlayerTableModel playerTableModel;
 	private JTable playerTable;
-
+	
 	private int currentSelectedPlayer = -1;
-
-	public PlayerTablePane()
-	{
+	
+	public PlayerTablePane() {
 		setLayout(layout);
-
+		
 		GridBagConstraints cons = new GridBagConstraints();
 		cons.insets = new Insets(5, 5, 5, 5);
-
+		
 		JPanel smallPane = new JPanel();
 		smallPane.setLayout(layout);
 
@@ -87,7 +75,7 @@ public class PlayerTablePane extends JPanel
 		cons.anchor = GridBagConstraints.WEST;
 		cons.fill = GridBagConstraints.HORIZONTAL;
 		add(smallPane, cons);*/
-
+		
 		playerTableModel = new PlayerTableModel();
 		playerTable = new JTable(playerTableModel);
 		playerTable.addMouseListener(new PlayerTableMouseListener(this));
@@ -104,79 +92,63 @@ public class PlayerTablePane extends JPanel
 		cons.gridheight = 1;
 		cons.fill = GridBagConstraints.BOTH;
 		add(scrollPane, cons);
-
+		
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::updateTable, 10000, 1000);
 	}
-
-	public void setSelectedPlayer(int startIndex, int endIndex)
-	{
+	
+	public void setSelectedPlayer(int startIndex, int endIndex) {
 		getPlayerTable().setAutoscrolls(true);
 		getPlayerTable().getSelectionModel().setSelectionInterval(startIndex, endIndex);
 		getPlayerTable().scrollRectToVisible(getPlayerTable().getCellRect(startIndex, 0, true));
 	}
-
-	public void updateTable()
-	{
-		SwingUtilities.invokeLater(() ->
-		{
-			if (playerTableModel.updateData())
-			{
+	
+	public void updateTable() {
+		SwingUtilities.invokeLater(() -> {
+			if (playerTableModel.updateData()) {
 				getPlayerTable().updateUI();
 			}
 		});
 	}
-
-	public JTable getPlayerTable()
-	{
+	
+	public JTable getPlayerTable() {
 		return playerTable;
 	}
-
-	public PlayerTableModel getPlayerTableModel()
-	{
+	
+	public PlayerTableModel getPlayerTableModel() {
 		return playerTableModel;
 	}
-
-	public void updateCurrentPlayer()
-	{
+	
+	public void updateCurrentPlayer() {
 		updateCurrentPlayer(false);
 	}
-
-	public void updateCurrentPlayer(boolean forced)
-	{
-		if (!forced && currentSelectedPlayer == playerTable.getSelectedRow())
-		{
-		}
-		else
-		{
+	
+	public void updateCurrentPlayer(boolean forced) {
+		if (!forced && currentSelectedPlayer == playerTable.getSelectedRow()) {
+		} else {
 			currentSelectedPlayer = playerTable.getSelectedRow();
 		}
-
+		
 		//Player player = World.getInstance().getPlayer((Integer)playerTableModel.getValueAt(playerTable.getSelectedRow(), 0));
 	}
-
-	public void setTableSelectByMouseEvent(MouseEvent e)
-	{
+	
+	public void setTableSelectByMouseEvent(MouseEvent e) {
 		int rowNumber = playerTable.rowAtPoint(e.getPoint());
 		playerTable.getSelectionModel().setSelectionInterval(rowNumber, rowNumber);
 	}
-
-	public class PlayerSelectionListener implements ListSelectionListener
-	{
+	
+	public class PlayerSelectionListener implements ListSelectionListener {
 		@Override
-		public void valueChanged(ListSelectionEvent e)
-		{
+		public void valueChanged(ListSelectionEvent e) {
 			PlayerTablePane view = PlayerTablePane.this;
 			// If cell selection is enabled, both row and column change events are fired
-			if (e.getSource() == view.getPlayerTable().getSelectionModel())
-			{
+			if (e.getSource() == view.getPlayerTable().getSelectionModel()) {
 				view.updateCurrentPlayer();
 			}
 		}
 	}
-
+	
 	@Override
-	public void finalize() throws Throwable
-	{
+	public void finalize() throws Throwable {
 		super.finalize();
 		Log.info("Finalized: " + getClass().getSimpleName());
 	}

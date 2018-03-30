@@ -25,11 +25,9 @@ import l2server.gameserver.datatables.PlayerClassTable;
  *
  * @author Tempy
  */
-public final class SubClass
-{
-	private static final byte maxLevel =
-			Config.MAX_SUBCLASS_LEVEL < Config.MAX_LEVEL ? Config.MAX_SUBCLASS_LEVEL : Config.MAX_LEVEL;
-
+public final class SubClass {
+	private static final byte maxLevel = Config.MAX_SUBCLASS_LEVEL < Config.MAX_LEVEL ? Config.MAX_SUBCLASS_LEVEL : Config.MAX_LEVEL;
+	
 	private PlayerClass clazz;
 	private long exp = Experience.getAbsoluteExp(40);
 	private long sp = 0;
@@ -37,9 +35,8 @@ public final class SubClass
 	private int classIndex = 1;
 	private boolean isDual = false;
 	private int certificates = 0;
-
-	public SubClass(int classId, long exp, long sp, byte level, int classIndex, boolean isDual)
-	{
+	
+	public SubClass(int classId, long exp, long sp, byte level, int classIndex, boolean isDual) {
 		clazz = PlayerClassTable.getInstance().getClassById(classId);
 		this.exp = exp;
 		this.sp = sp;
@@ -47,150 +44,120 @@ public final class SubClass
 		this.classIndex = classIndex;
 		this.isDual = isDual;
 	}
-
-	public SubClass(int classId, int classIndex)
-	{
+	
+	public SubClass(int classId, int classIndex) {
 		// Used for defining a sub class using default values for XP, SP and player level.
 		clazz = PlayerClassTable.getInstance().getClassById(classId);
 		this.classIndex = classIndex;
-		if (Config.STARTING_LEVEL > 40)
-		{
+		if (Config.STARTING_LEVEL > 40) {
 			level = Config.STARTING_LEVEL;
-			if (level > getMaxLevel())
-			{
+			if (level > getMaxLevel()) {
 				level = getMaxLevel();
 			}
 			exp = Experience.getAbsoluteExp(level);
 		}
 	}
-
-	public SubClass()
-	{
+	
+	public SubClass() {
 		// Used for specifying ALL attributes of a sub class directly,
 		// using the preset default values.
-		if (Config.STARTING_LEVEL > 40)
-		{
+		if (Config.STARTING_LEVEL > 40) {
 			level = Config.STARTING_LEVEL;
-			if (level > getMaxLevel())
-			{
+			if (level > getMaxLevel()) {
 				level = getMaxLevel();
 			}
 			exp = Experience.getAbsoluteExp(level);
 		}
 	}
-
-	public PlayerClass getClassDefinition()
-	{
+	
+	public PlayerClass getClassDefinition() {
 		return clazz;
 	}
-
-	public int getClassId()
-	{
+	
+	public int getClassId() {
 		return clazz.getId();
 	}
-
-	public long getExp()
-	{
+	
+	public long getExp() {
 		return exp;
 	}
-
-	public long getSp()
-	{
+	
+	public long getSp() {
 		return sp;
 	}
-
-	public byte getLevel()
-	{
+	
+	public byte getLevel() {
 		return level;
 	}
-
-	public int getClassIndex()
-	{
+	
+	public int getClassIndex() {
 		return classIndex;
 	}
-
-	public boolean isDual()
-	{
+	
+	public boolean isDual() {
 		return isDual;
 	}
-
-	public int getCertificates()
-	{
+	
+	public int getCertificates() {
 		return certificates;
 	}
-
-	public byte getMaxLevel()
-	{
+	
+	public byte getMaxLevel() {
 		return isDual ? Config.MAX_LEVEL : maxLevel;
 	}
-
-	public void setClassId(int classId)
-	{
+	
+	public void setClassId(int classId) {
 		clazz = PlayerClassTable.getInstance().getClassById(classId);
 	}
-
-	public void setExp(long expValue)
-	{
-		if (expValue > Experience.getAbsoluteExp(getMaxLevel() + 1) - 1)
-		{
+	
+	public void setExp(long expValue) {
+		if (expValue > Experience.getAbsoluteExp(getMaxLevel() + 1) - 1) {
 			expValue = Experience.getAbsoluteExp(getMaxLevel() + 1) - 1;
 		}
-
+		
 		exp = expValue;
 	}
-
-	public void setSp(long spValue)
-	{
+	
+	public void setSp(long spValue) {
 		sp = spValue;
 	}
-
-	public void setClassIndex(int classIndex)
-	{
+	
+	public void setClassIndex(int classIndex) {
 		this.classIndex = classIndex;
 	}
-
-	public void setIsDual(boolean isDual)
-	{
+	
+	public void setIsDual(boolean isDual) {
 		this.isDual = isDual;
 	}
-
-	public void setCertificates(int certificates)
-	{
+	
+	public void setCertificates(int certificates) {
 		this.certificates = certificates;
 	}
-
-	public void setLevel(byte levelValue)
-	{
-		if (levelValue > getMaxLevel())
-		{
+	
+	public void setLevel(byte levelValue) {
+		if (levelValue > getMaxLevel()) {
 			levelValue = getMaxLevel();
-		}
-		else if (levelValue < 40)
-		{
+		} else if (levelValue < 40) {
 			levelValue = 40;
 		}
-
+		
 		level = levelValue;
 	}
-
-	public void incLevel()
-	{
-		if (getLevel() == getMaxLevel())
-		{
+	
+	public void incLevel() {
+		if (getLevel() == getMaxLevel()) {
 			return;
 		}
-
+		
 		level++;
 		setExp(Experience.getAbsoluteExp(getLevel()));
 	}
-
-	public void decLevel()
-	{
-		if (getLevel() == 40)
-		{
+	
+	public void decLevel() {
+		if (getLevel() == 40) {
 			return;
 		}
-
+		
 		level--;
 		setExp(Experience.getAbsoluteExp(getLevel()));
 	}

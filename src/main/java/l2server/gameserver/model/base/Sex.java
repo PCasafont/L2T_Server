@@ -20,8 +20,7 @@ package l2server.gameserver.model.base;
  *
  * @version $Revision: 1.2.4.1 $ $Date: 2005/03/27 15:29:32 $
  */
-public class Sex
-{
+public class Sex {
 	public static final int MALE = 0;
 	public static final int FEMALE = 1;
 }

@@ -29,22 +29,18 @@ import java.util.List;
  *
  * @author UnAfraid & mrTJO
  */
-public class ExShowContactList extends L2GameServerPacket
-{
+public class ExShowContactList extends L2GameServerPacket {
 	private final List<String> contacts;
-
-	public ExShowContactList(L2PcInstance player)
-	{
+	
+	public ExShowContactList(L2PcInstance player) {
 		contacts = new ArrayList<>();
 		contacts.addAll(player.getContactList().getAllContacts());
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(contacts.size());
-		for (String name : contacts)
-		{
+		for (String name : contacts) {
 			writeS(name);
 		}
 	}

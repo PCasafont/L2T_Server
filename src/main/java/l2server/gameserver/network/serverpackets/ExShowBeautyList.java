@@ -25,26 +25,22 @@ import java.util.Map;
  * @author LasTravel
  */
 
-public final class ExShowBeautyList extends L2GameServerPacket
-{
+public final class ExShowBeautyList extends L2GameServerPacket {
 	private long adena;
 	private long tickets;
 	private boolean isFace;
 
-	public ExShowBeautyList(long adena, long tickets, boolean isFace)
-	{
+	public ExShowBeautyList(long adena, long tickets, boolean isFace) {
 		this.adena = adena;
 		this.tickets = tickets;
 		this.isFace = isFace;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
 
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
@@ -54,19 +50,15 @@ public final class ExShowBeautyList extends L2GameServerPacket
 		writeD(isFace ? 1 : 0);
 
 		Map<Integer, BeautyInfo> styles = null;
-		if (!isFace)
-		{
+		if (!isFace) {
 			styles = BeautyTable.getInstance().getTemplate(0).getHairStyles();
-		}
-		else
-		{
+		} else {
 			styles = BeautyTable.getInstance().getTemplate(0).getFaceStyles();
 		}
 
 		writeD(styles.size());
 
-		for (int id : styles.keySet())
-		{
+		for (int id : styles.keySet()) {
 			writeD(id);
 			writeD(99999999); // Remaining units
 		}

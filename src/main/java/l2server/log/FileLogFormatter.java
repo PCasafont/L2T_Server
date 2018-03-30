@@ -28,8 +28,7 @@ import java.util.logging.LogRecord;
  * @version $Revision: 1.1.4.1 $ $Date: 2005/03/27 15:30:08 $
  */
 
-public class FileLogFormatter extends Formatter
-{
+public class FileLogFormatter extends Formatter {
 
 	/*
 	 * (non-Javadoc)
@@ -41,9 +40,16 @@ public class FileLogFormatter extends Formatter
 	private SimpleDateFormat dateFmt = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss,SSS");
 
 	@Override
-	public String format(LogRecord record)
-	{
-		return StringUtil.concat(dateFmt.format(new Date(record.getMillis())), TAB, record.getLevel().getName(), TAB,
-				String.valueOf(record.getThreadID()), TAB, record.getLoggerName(), TAB, record.getMessage(), CRLF);
+	public String format(LogRecord record) {
+		return StringUtil.concat(dateFmt.format(new Date(record.getMillis())),
+				TAB,
+				record.getLevel().getName(),
+				TAB,
+				String.valueOf(record.getThreadID()),
+				TAB,
+				record.getLoggerName(),
+				TAB,
+				record.getMessage(),
+				CRLF);
 	}
 }

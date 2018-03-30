@@ -22,8 +22,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-public class ConditionPlayerLevel extends Condition
-{
+public class ConditionPlayerLevel extends Condition {
 	private final int level;
 
 	/**
@@ -31,8 +30,7 @@ public class ConditionPlayerLevel extends Condition
 	 *
 	 * @param level the level
 	 */
-	public ConditionPlayerLevel(int level)
-	{
+	public ConditionPlayerLevel(int level) {
 		this.level = level;
 	}
 
@@ -40,8 +38,7 @@ public class ConditionPlayerLevel extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		return env.player.getLevel() >= level;
 	}
 }

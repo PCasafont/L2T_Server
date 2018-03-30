@@ -24,25 +24,19 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @author Ahmed
  */
-public class Banking implements IVoicedCommandHandler
-{
+public class Banking implements IVoicedCommandHandler {
 	private static final String[] voicedCommands = {"bank", "withdraw", "deposit"};
 
 	/**
 	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
 	 */
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
-	{
-		if (command.equalsIgnoreCase("bank"))
-		{
+	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params) {
+		if (command.equalsIgnoreCase("bank")) {
 			activeChar.sendMessage(
-					".deposit (" + Config.BANKING_SYSTEM_ADENA + " Adena = " + Config.BANKING_SYSTEM_GOLDBARS +
-							" Goldbar) / .withdraw (" + Config.BANKING_SYSTEM_GOLDBARS + " Goldbar = " +
-							Config.BANKING_SYSTEM_ADENA + " Adena)");
-		}
-		else if (command.equalsIgnoreCase("deposit"))
-		{
+					".deposit (" + Config.BANKING_SYSTEM_ADENA + " Adena = " + Config.BANKING_SYSTEM_GOLDBARS + " Goldbar) / .withdraw (" +
+							Config.BANKING_SYSTEM_GOLDBARS + " Goldbar = " + Config.BANKING_SYSTEM_ADENA + " Adena)");
+		} else if (command.equalsIgnoreCase("deposit")) {
 			/*if (activeChar.getInventoryItemCount(57, 0) >= Config.BANKING_SYSTEM_ADENA)
             {
 				if (!activeChar.reduceAdena("Goldbar", Config.BANKING_SYSTEM_ADENA, activeChar, false))
@@ -56,24 +50,17 @@ public class Banking implements IVoicedCommandHandler
 				activeChar.sendMessage("You do not have enough Adena to convert to Goldbar(s), you need " + Config.BANKING_SYSTEM_ADENA + " Adena.");
 			}*/
 			activeChar.sendMessage("Command not available anymore.");
-		}
-		else if (command.equalsIgnoreCase("withdraw"))
-		{
-			if (activeChar.getInventory().getInventoryItemCount(3470, 0) >= Config.BANKING_SYSTEM_GOLDBARS)
-			{
-				if (!activeChar.destroyItemByItemId("Adena", 3470, Config.BANKING_SYSTEM_GOLDBARS, activeChar, false))
-				{
+		} else if (command.equalsIgnoreCase("withdraw")) {
+			if (activeChar.getInventory().getInventoryItemCount(3470, 0) >= Config.BANKING_SYSTEM_GOLDBARS) {
+				if (!activeChar.destroyItemByItemId("Adena", 3470, Config.BANKING_SYSTEM_GOLDBARS, activeChar, false)) {
 					return false;
 				}
 				activeChar.getInventory().addAdena("Adena", Config.BANKING_SYSTEM_ADENA, activeChar, null);
 				activeChar.getInventory().updateDatabase();
-				activeChar.sendMessage("Thank you, you now have " + Config.BANKING_SYSTEM_ADENA + " Adena, and " +
-						Config.BANKING_SYSTEM_GOLDBARS + " less Goldbar(s).");
-			}
-			else
-			{
-				activeChar.sendMessage(
-						"You do not have any Goldbars to turn into " + Config.BANKING_SYSTEM_ADENA + " Adena.");
+				activeChar.sendMessage("Thank you, you now have " + Config.BANKING_SYSTEM_ADENA + " Adena, and " + Config.BANKING_SYSTEM_GOLDBARS +
+						" less Goldbar(s).");
+			} else {
+				activeChar.sendMessage("You do not have any Goldbars to turn into " + Config.BANKING_SYSTEM_ADENA + " Adena.");
 			}
 		}
 		return true;
@@ -83,8 +70,7 @@ public class Banking implements IVoicedCommandHandler
 	 * @see l2server.gameserver.handler.IVoicedCommandHandler#getVoicedCommandList()
 	 */
 	@Override
-	public String[] getVoicedCommandList()
-	{
+	public String[] getVoicedCommandList() {
 		return voicedCommands;
 	}
 }

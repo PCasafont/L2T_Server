@@ -27,159 +27,119 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  * Format: (ch) S
  *
  * @author chris_00
- *         <p>
- *         D0 0D 00 5A 00 77 00 65 00 72 00 67 00 00 00
+ * <p>
+ * D0 0D 00 5A 00 77 00 65 00 72 00 67 00 00 00
  */
-public final class RequestExAskJoinMPCC extends L2GameClientPacket
-{
+public final class RequestExAskJoinMPCC extends L2GameClientPacket {
 	//
 	private String name;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		name = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		L2PcInstance player = L2World.getInstance().getPlayer(name);
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
 		// invite yourself? ;)
-		if (activeChar.isInParty() && player.isInParty() && activeChar.getParty().equals(player.getParty()))
-		{
+		if (activeChar.isInParty() && player.isInParty() && activeChar.getParty().equals(player.getParty())) {
 			return;
 		}
-
+		
 		SystemMessage sm;
 		//activeChar is in a Party?
-		if (activeChar.isInParty())
-		{
+		if (activeChar.isInParty()) {
 			L2Party activeParty = activeChar.getParty();
 			//activeChar is PartyLeader? && activeChars Party is already in a CommandChannel?
-			if (activeParty.getLeader().equals(activeChar))
-			{
+			if (activeParty.getLeader().equals(activeChar)) {
 				// if activeChars Party is in CC, is activeChar CCLeader?
-				if (activeParty.isInCommandChannel() &&
-						activeParty.getCommandChannel().getChannelLeader().equals(activeChar))
-				{
+				if (activeParty.isInCommandChannel() && activeParty.getCommandChannel().getChannelLeader().equals(activeChar)) {
 					//in CC and the CCLeader
 					//target in a party?
-					if (player.isInParty())
-					{
+					if (player.isInParty()) {
 						//targets party already in a CChannel?
-						if (player.getParty().isInCommandChannel())
-						{
+						if (player.getParty().isInCommandChannel()) {
 							sm = SystemMessage.getSystemMessage(SystemMessageId.C1_ALREADY_MEMBER_OF_COMMAND_CHANNEL);
 							sm.addString(player.getName());
 							activeChar.sendPacket(sm);
-						}
-						else
-						{
+						} else {
 							//ready to open a new CC
 							//send request to targets Party's PartyLeader
 							askJoinMPCC(activeChar, player);
 						}
-					}
-					else
-					{
+					} else {
 						activeChar.sendMessage("Your target has no Party.");
 					}
-				}
-				else if (activeParty.isInCommandChannel() &&
-						!activeParty.getCommandChannel().getChannelLeader().equals(activeChar))
-				{
+				} else if (activeParty.isInCommandChannel() && !activeParty.getCommandChannel().getChannelLeader().equals(activeChar)) {
 					//in CC, but not the CCLeader
 					sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_INVITE_TO_COMMAND_CHANNEL);
 					activeChar.sendPacket(sm);
-				}
-				else
-				{
+				} else {
 					//target in a party?
-					if (player.isInParty())
-					{
+					if (player.isInParty()) {
 						//targets party already in a CChannel?
-						if (player.getParty().isInCommandChannel())
-						{
+						if (player.getParty().isInCommandChannel()) {
 							sm = SystemMessage.getSystemMessage(SystemMessageId.C1_ALREADY_MEMBER_OF_COMMAND_CHANNEL);
 							sm.addString(player.getName());
 							activeChar.sendPacket(sm);
-						}
-						else
-						{
+						} else {
 							//ready to open a new CC
 							//send request to targets Party's PartyLeader
 							askJoinMPCC(activeChar, player);
 						}
-					}
-					else
-					{
+					} else {
 						activeChar.sendMessage("Your target has no Party.");
 					}
 				}
-			}
-			else
-			{
+			} else {
 				sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_INVITE_TO_COMMAND_CHANNEL);
 				activeChar.sendPacket(sm);
 			}
 		}
 	}
-
-	private void askJoinMPCC(L2PcInstance requestor, L2PcInstance target)
-	{
+	
+	private void askJoinMPCC(L2PcInstance requestor, L2PcInstance target) {
 		boolean hasRight = false;
 		if (requestor.getClan() != null && requestor.getClan().getLeaderId() == requestor.getObjectId() &&
 				requestor.getClan().getLevel() >= 5) // Clanleader of lvl5 Clan or higher
 		{
 			hasRight = true;
-		}
-		else if (requestor.getInventory().getItemByItemId(8871) !=
-				null) // 8871 Strategy Guide. Should destroyed after sucessfull invite?
+		} else if (requestor.getInventory().getItemByItemId(8871) != null) // 8871 Strategy Guide. Should destroyed after sucessfull invite?
 		{
 			hasRight = true;
-		}
-		else if (requestor.getPledgeClass() >= 5) // At least Baron or higher and the skill Clan Imperium
+		} else if (requestor.getPledgeClass() >= 5) // At least Baron or higher and the skill Clan Imperium
 		{
-			for (L2Skill skill : requestor.getAllSkills())
-			{
+			for (L2Skill skill : requestor.getAllSkills()) {
 				// Skill Clan Imperium
-				if (skill.getId() == 391)
-				{
+				if (skill.getId() == 391) {
 					hasRight = true;
 					break;
 				}
 			}
 		}
-
-		if (!hasRight)
-		{
-			requestor.sendPacket(SystemMessage
-					.getSystemMessage(SystemMessageId.COMMAND_CHANNEL_ONLY_BY_LEVEL_5_CLAN_LEADER_PARTY_LEADER));
+		
+		if (!hasRight) {
+			requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.COMMAND_CHANNEL_ONLY_BY_LEVEL_5_CLAN_LEADER_PARTY_LEADER));
 			return;
 		}
-		if (!target.isProcessingRequest())
-		{
+		if (!target.isProcessingRequest()) {
 			requestor.onTransactionRequest(target);
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.COMMAND_CHANNEL_CONFIRM_FROM_C1);
 			sm.addString(requestor.getName());
 			target.getParty().getLeader().sendPacket(sm);
 			target.getParty().getLeader().sendPacket(new ExAskJoinMPCC(requestor.getName()));
-
+			
 			requestor.sendMessage("You invited " + target.getName() + " to your Command Channel.");
-		}
-		else
-		{
+		} else {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_BUSY_TRY_LATER);
 			sm.addString(target.getName());
 			requestor.sendPacket(sm);

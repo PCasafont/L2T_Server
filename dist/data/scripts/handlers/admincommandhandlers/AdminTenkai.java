@@ -38,12 +38,7 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.LineNumberReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -55,129 +50,76 @@ import java.util.StringTokenizer;
 /**
  * @author Pere
  */
-public class AdminTenkai implements IAdminCommandHandler
-{
+public class AdminTenkai implements IAdminCommandHandler {
 	private static List<SpawnInfo> deletedSpawns = new ArrayList<SpawnInfo>();
 	private static List<Integer> mobIds = new ArrayList<Integer>();
 
-	private static final String[] ADMIN_COMMANDS = {
-			"admin_chess_start",
-			"admin_select_daily_event",
-			"admin_start_daily_event",
-			"admin_stop_daily_event",
-			"admin_oly_ban",
-			"admin_oly_unban",
-			"admin_packet",
-			"admin_refresh_skills",
-			"admin_disable_global_chat",
-			"admin_enable_global_chat",
-			"admin_start_votations",
-			"admin_end_votations",
-			"admin_movie",
-			"admin_observe_landrates",
-			"admin_start_hh",
-			"admin_stop_hh",
+	private static final String[] ADMIN_COMMANDS =
+			{"admin_chess_start", "admin_select_daily_event", "admin_start_daily_event", "admin_stop_daily_event", "admin_oly_ban", "admin_oly_unban",
+					"admin_packet", "admin_refresh_skills", "admin_disable_global_chat", "admin_enable_global_chat", "admin_start_votations",
+					"admin_end_votations", "admin_movie", "admin_observe_landrates", "admin_start_hh", "admin_stop_hh",
 
-			//LT commands
-			"admin_loc",
-			"admin_devdelete",
-			"admin_massdelete",
-			"admin_devspawn",
-			"admin_massspawn",
-			"admin_dump"
-	};
+					//LT commands
+					"admin_loc", "admin_devdelete", "admin_massdelete", "admin_devspawn", "admin_massspawn", "admin_dump"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (command.equals("admin_chess_start"))
-		{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		if (command.equals("admin_chess_start")) {
 			ChessEvent.init();
 			ChessEvent.startFight(activeChar, (L2PcInstance) activeChar.getTarget());
-		}
-		else if (command.equals("admin_select_daily_event"))
-		{
+		} else if (command.equals("admin_select_daily_event")) {
 			//DailyEventsManager.getInstance().selectEvent();
 			//activeChar.sendMessage("The next daily event will be the number "+DailyEvent.type);
-		}
-		else if (command.equals("admin_start_daily_event"))
-		{
+		} else if (command.equals("admin_start_daily_event")) {
 			//HiddenChests.getInstance().getCurrentEvent().start();
-		}
-		else if (command.equals("admin_stop_daily_event"))
-		{
+		} else if (command.equals("admin_stop_daily_event")) {
 			//DailyEventsManager.getInstance().getCurrentEvent().start();
-		}
-		else if (command.startsWith("admin_oly"))
-		{
+		} else if (command.startsWith("admin_oly")) {
 			boolean ban = command.startsWith("admin_oly_ban");
 			int length = ban ? 14 : 16;
-			if (command.length() > length)
-			{
+			if (command.length() > length) {
 				String playerName = command.substring(length);
 				int playerId = 0;
 				Connection con = null;
-				try
-				{
+				try {
 					con = L2DatabaseFactory.getInstance().getConnection();
-					PreparedStatement statement =
-							con.prepareStatement("SELECT charId FROM characters WHERE char_name LIKE ?");
+					PreparedStatement statement = con.prepareStatement("SELECT charId FROM characters WHERE char_name LIKE ?");
 					statement.setString(1, playerName);
 					ResultSet rset = statement.executeQuery();
-					if (rset.next())
-					{
+					if (rset.next()) {
 						playerId = rset.getInt("charId");
 					}
 					rset.close();
 					statement.close();
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					e.printStackTrace();
-				}
-				finally
-				{
-					try
-					{
+				} finally {
+					try {
 						con.close();
-					}
-					catch (Exception e)
-					{
+					} catch (Exception e) {
 					}
 				}
-				if (ban)
-				{
+				if (ban) {
 					Olympiad.getInstance().olyBan(playerId);
 					activeChar.sendMessage("Character " + playerName + " banned from olympiad games this month!");
-				}
-				else
-				{
+				} else {
 					Olympiad.getInstance().olyUnban(playerId);
 					activeChar.sendMessage("Character " + playerName + " unbanned from olympiad games.");
 				}
-			}
-			else if (activeChar.getTarget() instanceof L2PcInstance)
-			{
+			} else if (activeChar.getTarget() instanceof L2PcInstance) {
 				L2PcInstance player = (L2PcInstance) activeChar.getTarget();
-				if (ban)
-				{
+				if (ban) {
 					Olympiad.getInstance().olyBan(player.getObjectId());
 					player.logout();
 					activeChar.sendMessage("Character " + player.getName() + " banned from olympiad games this month!");
-				}
-				else
-				{
+				} else {
 					Olympiad.getInstance().olyUnban(player.getObjectId());
 					activeChar.sendMessage("Character " + player.getName() + " unbanned from olympiad games.");
 				}
-			}
-			else
-			{
+			} else {
 				activeChar.sendMessage("Incorrect target.");
 			}
-		}
-		else if (command.startsWith("admin_packet"))
-		{
+		} else if (command.startsWith("admin_packet")) {
 			/*StringTokenizer st = new StringTokenizer(command, " ");
             String token = st.nextToken();
 			int type;
@@ -221,55 +163,38 @@ public class AdminTenkai implements IAdminCommandHandler
 			}*/
 			//TestPacket tp = new TestPacket(type, args, i);
 			//activeChar.sendPacket(tp);
-		}
-		else if (command.startsWith("admin_refresh_skills"))
-		{
+		} else if (command.startsWith("admin_refresh_skills")) {
 			L2PcInstance player = null;
 			L2PcInstance[] players = null;
 
-			if (command.length() > 21)
-			{
-				if (!command.substring(21).equalsIgnoreCase("all"))
-				{
+			if (command.length() > 21) {
+				if (!command.substring(21).equalsIgnoreCase("all")) {
 					player = L2World.getInstance().getPlayer(command.substring(21));
-					if (player == null)
-					{
+					if (player == null) {
 						int radius = Integer.parseInt(command.substring(21));
 						players = (L2PcInstance[]) activeChar.getKnownList().getKnownPlayersInRadius(radius).toArray();
 					}
-				}
-				else
-				{
+				} else {
 					players = (L2PcInstance[]) L2World.getInstance().getAllPlayers().values().toArray();
 				}
-			}
-			else if (activeChar.getTarget() != null && activeChar.getTarget().getActingPlayer() != null)
-			{
+			} else if (activeChar.getTarget() != null && activeChar.getTarget().getActingPlayer() != null) {
 				player = activeChar.getTarget().getActingPlayer();
-			}
-			else
-			{
+			} else {
 				activeChar.sendMessage("Usage: //refresh_skills <playername | radius | all>");
 				return false;
 			}
 
-			if (player != null)
-			{
-				for (L2Skill skill : player.getAllSkills())
-				{
+			if (player != null) {
+				for (L2Skill skill : player.getAllSkills()) {
 					player.enableSkill(skill);
 				}
 
 				player.sendSkillList();
 				player.sendPacket(new SkillCoolTime(player));
 				activeChar.sendMessage(player.getName() + "'s skills have been refreshed.");
-			}
-			else if (players != null)
-			{
-				for (L2PcInstance p : players)
-				{
-					for (L2Skill skill : p.getAllSkills())
-					{
+			} else if (players != null) {
+				for (L2PcInstance p : players) {
+					for (L2Skill skill : p.getAllSkills()) {
 						p.enableSkill(skill);
 					}
 
@@ -278,102 +203,68 @@ public class AdminTenkai implements IAdminCommandHandler
 				}
 				activeChar.sendMessage("All online players' skills have been refreshed.");
 			}
-		}
-		else if (command.startsWith("admin_disable_global_chat"))
-		{
+		} else if (command.startsWith("admin_disable_global_chat")) {
 			DiscussionManager.getInstance().setGlobalChatDisabled(true);
 			activeChar.sendMessage("Global chat disabled.");
-		}
-		else if (command.startsWith("admin_enable_global_chat"))
-		{
+		} else if (command.startsWith("admin_enable_global_chat")) {
 			DiscussionManager.getInstance().setGlobalChatDisabled(false);
 			activeChar.sendMessage("Global chat enabled again.");
-		}
-		else if (command.startsWith("admin_start_votations"))
-		{
+		} else if (command.startsWith("admin_start_votations")) {
 			DiscussionManager.getInstance().startVotations();
 			activeChar.sendMessage("Votations started.");
-		}
-		else if (command.startsWith("admin_end_votations"))
-		{
+		} else if (command.startsWith("admin_end_votations")) {
 			int[] votes = DiscussionManager.getInstance().endVotations();
 			activeChar.sendMessage("Votations ended. Results:");
-			for (int i = 0; i < votes.length; i++)
-			{
-				if (votes[i] > 0)
-				{
+			for (int i = 0; i < votes.length; i++) {
+				if (votes[i] > 0) {
 					activeChar.sendMessage("Option " + i + ": " + votes[i] + " votes.");
 				}
 			}
-		}
-		else if (command.startsWith("admin_movie"))
-		{
+		} else if (command.startsWith("admin_movie")) {
 			StringTokenizer st = new StringTokenizer(command, " ");
 			st.nextToken();
 			int id = Integer.valueOf(st.nextToken());
 			activeChar.setMovieId(id);
 			activeChar.broadcastPacket(new ExStartScenePlayer(id));
-		}
-		else if (command.startsWith("admin_observe_landrates"))
-		{
+		} else if (command.startsWith("admin_observe_landrates")) {
 
 			L2PcInstance target = null;
 
-			if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2PcInstance)
-			{
+			if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2PcInstance) {
 				target = (L2PcInstance) activeChar.getTarget();
 
-				if (!activeChar.isLandrateObservationActive(target))
-				{
+				if (!activeChar.isLandrateObservationActive(target)) {
 					target.registerLandratesObserver(activeChar);
 					activeChar.sendMessage("You are now observing " + target.getName() + "'s land rates.");
-				}
-				else
-				{
+				} else {
 					target.stopLandrateObservation(activeChar);
 					activeChar.sendMessage("You stopped observing " + target.getName() + "'s land rate.");
 				}
 			}
-		}
-		else if (command.startsWith("admin_loc"))
-		{
+		} else if (command.startsWith("admin_loc")) {
 			SpawnTable.getInstance().getAllSpawns(0);
-			Log.warning(activeChar.getX() + ", " + activeChar.getY() + ", " + activeChar.getZ() + ", " +
-					activeChar.getHeading());
-		}
-		else if (command.startsWith("admin_devdelete"))
-		{
+			Log.warning(activeChar.getX() + ", " + activeChar.getY() + ", " + activeChar.getZ() + ", " + activeChar.getHeading());
+		} else if (command.startsWith("admin_devdelete")) {
 			handleDevDelete(activeChar);
-		}
-		else if (command.equalsIgnoreCase("admin_massdelete"))
-		{
+		} else if (command.equalsIgnoreCase("admin_massdelete")) {
 			handleDevMassDelete(activeChar);
-		}
-		else if (command.startsWith("admin_devspawn"))
-		{
+		} else if (command.startsWith("admin_devspawn")) {
 			StringTokenizer st = new StringTokenizer(command, " ");
-			try
-			{
+			try {
 				st.nextToken();
 				String id = st.nextToken();
 				int respawnTime = 0;
-				if (st.hasMoreTokens())
-				{
+				if (st.hasMoreTokens()) {
 					respawnTime = Integer.parseInt(st.nextToken());
 				}
 
 				spawnMonster(activeChar, id, respawnTime, false);
-			}
-			catch (Exception e)
-			{ // Case of wrong or missing monster data
+			} catch (Exception e) { // Case of wrong or missing monster data
 				AdminHelpPage.showHelpPage(activeChar, "spawns.htm");
 			}
-		}
-		else if (command.startsWith("admin_massspawn"))
-		{
+		} else if (command.startsWith("admin_massspawn")) {
 			StringTokenizer st = new StringTokenizer(command, " ");
-			try
-			{
+			try {
 				st.nextToken();
 				String id = st.nextToken();
 				int rows = Integer.parseInt(st.nextToken());
@@ -384,10 +275,8 @@ public class AdminTenkai implements IAdminCommandHandler
 				double heading = Util.convertHeadingToDegree(activeChar.getHeading()) * Math.PI / 180.0;
 				double cos = Math.cos(heading);
 				double sin = Math.sin(heading);
-				for (int i = 0; i < columns; i++)
-				{
-					for (int j = 0; j < rows; j++)
-					{
+				for (int i = 0; i < columns; i++) {
+					for (int j = 0; j < rows; j++) {
 						int x = activeChar.getX() + (int) (cos * (-(width / 2 - separation / 2) + separation * i) -
 								sin * (-(width / 2 - separation / 2) + separation * j));
 						int y = activeChar.getY() + (int) (sin * (-(height / 2 - separation / 2) + separation * i) +
@@ -396,27 +285,20 @@ public class AdminTenkai implements IAdminCommandHandler
 						spawnMonster(activeChar, id, 60, true, x, y, activeChar.getZ());
 					}
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				activeChar.sendMessage("Usage: //massspawn <npcId> <rows> <columns> <separation>");
 			}
-		}
-		else if (command.startsWith("admin_dump"))
-		{
+		} else if (command.startsWith("admin_dump")) {
 			dump();
 		}
 		return true;
 	}
 
-	public static void dump()
-	{
-		try
-		{
+	public static void dump() {
+		try {
 			File outputFile = new File("../sql/server/spawnlist_OUTPUT.sql");
 
-			LineNumberReader inputFile =
-					new LineNumberReader(new BufferedReader(new FileReader(new File("../sql/server/spawnlist.sql"))));
+			LineNumberReader inputFile = new LineNumberReader(new BufferedReader(new FileReader(new File("../sql/server/spawnlist.sql"))));
 
 			PrintWriter writeOutput = new PrintWriter(new FileWriter(outputFile));
 
@@ -424,23 +306,17 @@ public class AdminTenkai implements IAdminCommandHandler
 
 			String line = null;
 
-			while ((line = inputFile.readLine()) != null)
-			{
-				if (line.trim().isEmpty())
-				{
+			while ((line = inputFile.readLine()) != null) {
+				if (line.trim().isEmpty()) {
 					writeOutput.println();
 					continue;
 				}
 
-				for (SpawnInfo deleted : deletedSpawns)
-				{
-					if (!line.contains(
-							deleted.getId() + "," + deleted.getX() + "," + deleted.getY() + "," + deleted.getZ()))
-					{
+				for (SpawnInfo deleted : deletedSpawns) {
+					if (!line.contains(deleted.getId() + "," + deleted.getX() + "," + deleted.getY() + "," + deleted.getZ())) {
 						writeOutput.println(line);
 						deletedSpawns.remove(deleted);
-						Log.warning(
-								deleted.getId() + "," + deleted.getX() + "," + deleted.getY() + "," + deleted.getZ());
+						Log.warning(deleted.getId() + "," + deleted.getX() + "," + deleted.getY() + "," + deleted.getZ());
 						break;
 					}
 				}
@@ -448,9 +324,7 @@ public class AdminTenkai implements IAdminCommandHandler
 
 			inputFile.close();
 			writeOutput.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Error(e);
 		}
@@ -458,31 +332,25 @@ public class AdminTenkai implements IAdminCommandHandler
 		/*for (int id : mobIds)
 			log.warning("" + id);*/
 
-		for (SpawnInfo parser : deletedSpawns)
-		{
+		for (SpawnInfo parser : deletedSpawns) {
 			Log.warning(parser.getId() + "," + parser.getX() + "," + parser.getY() + "," + parser.getZ() + ",0,0,");
 		}
 	}
 
-	private void handleDevMassDelete(L2PcInstance activeChar)
-	{
+	private void handleDevMassDelete(L2PcInstance activeChar) {
 		Collection<L2Object> objects = activeChar.getKnownList().getKnownObjects().values();
 
-		for (L2Object obj : objects)
-		{
-			if (obj instanceof L2MonsterInstance && GeoData.getInstance().canSeeTarget(activeChar, obj))
-			{
+		for (L2Object obj : objects) {
+			if (obj instanceof L2MonsterInstance && GeoData.getInstance().canSeeTarget(activeChar, obj)) {
 				L2Npc target = (L2Npc) obj;
 
-				if (!mobIds.contains(target.getNpcId()))
-				{
+				if (!mobIds.contains(target.getNpcId())) {
 					mobIds.add(target.getNpcId());
 				}
 
 				L2Spawn spawn = target.getSpawn();
 
-				if (spawn == null)
-				{
+				if (spawn == null) {
 					continue;
 				}
 
@@ -499,15 +367,12 @@ public class AdminTenkai implements IAdminCommandHandler
 		}
 	}
 
-	private void handleDevDelete(L2PcInstance activeChar)
-	{
+	private void handleDevDelete(L2PcInstance activeChar) {
 		L2Object obj = activeChar.getTarget();
-		if (obj instanceof L2Npc)
-		{
+		if (obj instanceof L2Npc) {
 			L2Npc target = (L2Npc) obj;
 
-			if (!mobIds.contains(target.getNpcId()))
-			{
+			if (!mobIds.contains(target.getNpcId())) {
 				mobIds.add(target.getNpcId());
 			}
 
@@ -522,89 +387,71 @@ public class AdminTenkai implements IAdminCommandHandler
 			SpawnTable.getInstance().deleteSpawn(spawn, true);
 
 			activeChar.sendMessage("Deleted " + target.getName() + " from " + target.getObjectId() + ".");
-		}
-		else
-		{
+		} else {
 			activeChar.sendMessage("Incorrect target.");
 		}
 	}
 
-	private class SpawnInfo
-	{
+	private class SpawnInfo {
 		private int id;
 		private int x;
 		private int y;
 		private int z;
 
-		public SpawnInfo(int ID, int X, int Y, int Z)
-		{
+		public SpawnInfo(int ID, int X, int Y, int Z) {
 			id = ID;
 			x = X;
 			y = Y;
 			z = Z;
 		}
 
-		private int getId()
-		{
+		private int getId() {
 			return id;
 		}
 
-		private int getX()
-		{
+		private int getX() {
 			return x;
 		}
 
-		private int getY()
-		{
+		private int getY() {
 			return y;
 		}
 
-		private int getZ()
-		{
+		private int getZ() {
 			return z;
 		}
 	}
 
-	private void spawnMonster(L2PcInstance activeChar, String monsterId, int respawnTime, boolean permanent)
-	{
+	private void spawnMonster(L2PcInstance activeChar, String monsterId, int respawnTime, boolean permanent) {
 		L2Object target = activeChar.getTarget();
-		if (target == null)
-		{
+		if (target == null) {
 			target = activeChar;
 		}
 
 		spawnMonster(activeChar, monsterId, respawnTime, permanent, target.getX(), target.getY(), target.getZ());
 	}
 
-	private void spawnMonster(L2PcInstance activeChar, String monsterId, int respawnTime, boolean permanent, int x, int y, int z)
-	{
+	private void spawnMonster(L2PcInstance activeChar, String monsterId, int respawnTime, boolean permanent, int x, int y, int z) {
 		L2NpcTemplate template1;
-		if (monsterId.matches("[0-9]*"))
-		{
+		if (monsterId.matches("[0-9]*")) {
 			int monsterTemplate = Integer.parseInt(monsterId);
 			template1 = NpcTable.getInstance().getTemplate(monsterTemplate);
-		}
-		else
-		{
+		} else {
 			monsterId = monsterId.replace('_', ' ');
 			template1 = NpcTable.getInstance().getTemplateByName(monsterId);
 		}
 
-		try
-		{
+		try {
 			L2Spawn spawn = new L2Spawn(template1);
 			spawn.setX(x);
 			spawn.setY(y);
 			spawn.setZ(z);
 			spawn.setHeading(activeChar.getHeading());
 			spawn.setRespawnDelay(respawnTime);
-			if (activeChar.getInstanceId() > 0)
-			{
+			if (activeChar.getInstanceId() > 0) {
 				spawn.setInstanceId(activeChar.getInstanceId());
 				permanent = false;
-			}
-			else
-			{
+			} else {
 				spawn.setInstanceId(0);
 			}
 
@@ -614,27 +461,22 @@ public class AdminTenkai implements IAdminCommandHandler
 
 			spawn.getNpc().setDisplayEffect(3);
 
-			if (!permanent)
-			{
+			if (!permanent) {
 				spawn.stopRespawn();
 			}
 
-			activeChar.sendMessage(
-					"Created " + template1.Name + " on " + spawn.getX() + ", " + spawn.getY() + ", " + spawn.getZ());
+			activeChar.sendMessage("Created " + template1.Name + " on " + spawn.getX() + ", " + spawn.getY() + ", " + spawn.getZ());
 			//<spawn npcId="80329" x="-185556" y="146669" z="-15314" heading="467" respawn="20" />
-			Log.warning("<spawn npcId=\"" + template1.NpcId + "\"  x=\"" + spawn.getX() + "\" y=\"" + spawn.getY() +
-					"\" z=\"" + spawn.getZ() + "\" heading=\"" + spawn.getHeading() + "\" respawn=\"20\" />");
+			Log.warning("<spawn npcId=\"" + template1.NpcId + "\"  x=\"" + spawn.getX() + "\" y=\"" + spawn.getY() + "\" z=\"" + spawn.getZ() +
+					"\" heading=\"" + spawn.getHeading() + "\" respawn=\"20\" />");
 			//log.warning(spawn.getX() + ", " + spawn.getY() + ", " + spawn.getZ() + ", " + spawn.getHeading());
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_CANT_FOUND));
 		}
 	}
 
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

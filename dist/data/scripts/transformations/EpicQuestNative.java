@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class EpicQuestNative extends L2Transformation
-{
+public class EpicQuestNative extends L2Transformation {
 	private static final int[] SKILLS = {5437, 961};
 
-	public EpicQuestNative()
-	{
+	public EpicQuestNative() {
 		// id, colRadius, colHeight
 		super(124, 8, 23.5);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 124 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 124 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		// Dissonance
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(5437, 1), false);
 		// Swift Dash
@@ -36,13 +31,11 @@ public class EpicQuestNative extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		// Dissonance
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(5437, 1), false);
 		// Swift Dash
@@ -51,8 +44,7 @@ public class EpicQuestNative extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new EpicQuestNative());
 	}
 }

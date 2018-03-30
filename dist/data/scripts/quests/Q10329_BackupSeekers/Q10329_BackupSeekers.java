@@ -35,8 +35,7 @@ import java.util.List;
 /**
  * @author Pere
  */
-public class Q10329_BackupSeekers extends Quest
-{
+public class Q10329_BackupSeekers extends Quest {
 	// Quest
 	public static String qn = "Q10329_BackupSeekers";
 
@@ -59,8 +58,7 @@ public class Q10329_BackupSeekers extends Quest
 	private int guideTalkId6 = 1811272;
 	private int guideLastChatId2 = 1811273;
 
-	public Q10329_BackupSeekers(int questId, String name, String descr)
-	{
+	public Q10329_BackupSeekers(int questId, String name, String descr) {
 		super(questId, name, descr);
 		addStartNpc(kakai);
 		addTalkId(kakai);
@@ -94,18 +92,15 @@ public class Q10329_BackupSeekers extends Quest
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, final L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, final L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == kakai && event.equalsIgnoreCase("30565-03.htm"))
-		{
+		if (npc.getNpcId() == kakai && event.equalsIgnoreCase("30565-03.htm")) {
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
@@ -121,60 +116,44 @@ public class Q10329_BackupSeekers extends Quest
 			guide.broadcastPacket(ns);
 
 			// Say another thing after 7.5s
-			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-			{
+			ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
 				@Override
-				public void run()
-				{
-					if (guide.isDecayed())
-					{
+				public void run() {
+					if (guide.isDecayed()) {
 						return;
 					}
 
-					guide.broadcastPacket(
-							new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideTalkId1));
+					guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideTalkId1));
 				}
 			}, 7500);
 
 			// And another thing after 15s
-			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-			{
+			ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
 				@Override
-				public void run()
-				{
-					if (guide.isDecayed())
-					{
+				public void run() {
+					if (guide.isDecayed()) {
 						return;
 					}
 
-					guide.broadcastPacket(
-							new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideTalkId2));
+					guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideTalkId2));
 				}
 			}, 15000);
 
 			// Delete in 1 min
-			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-			{
+			ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
 				@Override
-				public void run()
-				{
-					if (guide.isDecayed())
-					{
+				public void run() {
+					if (guide.isDecayed()) {
 						return;
 					}
-					if (!player.isInsideRadius(guide, 3000, false, false))
-					{
+					if (!player.isInsideRadius(guide, 3000, false, false)) {
 						guide.deleteMe();
-					}
-					else
-					{
+					} else {
 						ThreadPoolManager.getInstance().scheduleAi(this, 60000);
 					}
 				}
 			}, 60000);
-		}
-		else if (npc.getNpcId() == atran && event.equalsIgnoreCase("33448-02.htm") && st.getInt("cond") == 1)
-		{
+		} else if (npc.getNpcId() == atran && event.equalsIgnoreCase("33448-02.htm") && st.getInt("cond") == 1) {
 			st.unset("cond");
 			st.giveItems(906, 1);
 			st.giveItems(875, 2);
@@ -186,9 +165,7 @@ public class Q10329_BackupSeekers extends Quest
 
 			// Main quests state
 			player.setGlobalQuestFlag(GlobalQuest.STARTING, 10);
-		}
-		else if (npc.getNpcId() == apprentice && event.equalsIgnoreCase("MountKookaru"))
-		{
+		} else if (npc.getNpcId() == apprentice && event.equalsIgnoreCase("MountKookaru")) {
 			player.doSimultaneousCast(SkillTable.getInstance().getInfo(9204, 1));
 			st.set("secondRoute", "1");
 
@@ -203,85 +180,63 @@ public class Q10329_BackupSeekers extends Quest
 			guide.broadcastPacket(ns);
 
 			// Say another thing after 7.5s
-			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-			{
+			ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
 				@Override
-				public void run()
-				{
-					if (guide.isDecayed())
-					{
+				public void run() {
+					if (guide.isDecayed()) {
 						return;
 					}
 
-					guide.broadcastPacket(
-							new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideTalkId3));
+					guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideTalkId3));
 				}
 			}, 7500);
 
 			// And another thing after 15s
-			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-			{
+			ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
 				@Override
-				public void run()
-				{
-					if (guide.isDecayed())
-					{
+				public void run() {
+					if (guide.isDecayed()) {
 						return;
 					}
 
-					guide.broadcastPacket(
-							new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideTalkId4));
+					guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideTalkId4));
 				}
 			}, 15000);
 
 			// Say another thing after 23.5s
-			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-			{
+			ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
 				@Override
-				public void run()
-				{
-					if (guide.isDecayed())
-					{
+				public void run() {
+					if (guide.isDecayed()) {
 						return;
 					}
 
-					guide.broadcastPacket(
-							new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideTalkId5));
+					guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideTalkId5));
 				}
 			}, 23500);
 
 			// And another thing after 30s
-			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-			{
+			ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
 				@Override
-				public void run()
-				{
-					if (guide.isDecayed())
-					{
+				public void run() {
+					if (guide.isDecayed()) {
 						return;
 					}
 
-					guide.broadcastPacket(
-							new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideTalkId6));
+					guide.broadcastPacket(new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideTalkId6));
 				}
 			}, 30000);
 
 			// Delete in 1 min
-			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-			{
+			ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
 				@Override
-				public void run()
-				{
-					if (guide.isDecayed())
-					{
+				public void run() {
+					if (guide.isDecayed()) {
 						return;
 					}
-					if (!player.isInsideRadius(guide, 5000, false, false))
-					{
+					if (!player.isInsideRadius(guide, 5000, false, false)) {
 						guide.deleteMe();
-					}
-					else
-					{
+					} else {
 						ThreadPoolManager.getInstance().scheduleAi(this, 60000);
 					}
 				}
@@ -291,26 +246,19 @@ public class Q10329_BackupSeekers extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == kakai)
-		{
-			switch (st.getState())
-			{
+		if (npc.getNpcId() == kakai) {
+			switch (st.getState()) {
 				case State.CREATED:
-					if (canStart(player))
-					{
+					if (canStart(player)) {
 						htmltext = "30565-01.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "30565-00.htm"; // TODO
 					}
 					break;
@@ -321,43 +269,34 @@ public class Q10329_BackupSeekers extends Quest
 					htmltext = "30565-05.htm"; // TODO
 					break;
 			}
-		}
-		else if (npc.getNpcId() == atran && st.getInt("cond") == 1)
-		{
+		} else if (npc.getNpcId() == atran && st.getInt("cond") == 1) {
 			htmltext = "33448-01.htm";
 		}
 		return htmltext;
 	}
 
 	@Override
-	public String onArrived(final L2NpcWalkerAI guideAI)
-	{
+	public String onArrived(final L2NpcWalkerAI guideAI) {
 		List<L2NpcWalkerNode> guideRoute = guideRoute1;
 		int guideLastChatId = guideLastChatId1;
 
-		if (guideAI.getGuided().getQuestState(qn).getInt("secondRoute") == 1)
-		{
+		if (guideAI.getGuided().getQuestState(qn).getInt("secondRoute") == 1) {
 			guideRoute = guideRoute2;
 			guideLastChatId = guideLastChatId2;
 		}
 
 		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) ||
-				guideAI.getCurrentPos() == guideRoute.size() - 1)
-		{
-			if (guideAI.getCurrentPos() == 1)
-			{
+				guideAI.getCurrentPos() == guideRoute.size() - 1) {
+			if (guideAI.getCurrentPos() == 1) {
 				guideAI.setWaiting(true);
 				return null;
 			}
 			int chatId = guideLastChatId;
-			if (guideAI.getCurrentPos() != guideRoute.size() - 1)
-			{
+			if (guideAI.getCurrentPos() != guideRoute.size() - 1) {
 				guideAI.walkToGuided(40);
 				chatId = guideWaitChatId;
 			}
-			NpcSay ns =
-					new NpcSay(guideAI.getActor().getObjectId(), Say2.ALL_NOT_RECORDED, guideAI.getActor().getNpcId(),
-							chatId);
+			NpcSay ns = new NpcSay(guideAI.getActor().getObjectId(), Say2.ALL_NOT_RECORDED, guideAI.getActor().getNpcId(), chatId);
 			ns.addStringParameter(guideAI.getGuided().getName());
 			guideAI.getActor().broadcastPacket(ns);
 			guideAI.setWaiting(true);
@@ -370,30 +309,23 @@ public class Q10329_BackupSeekers extends Quest
 	}
 
 	@Override
-	public String onPlayerArrived(final L2NpcWalkerAI guideAI)
-	{
+	public String onPlayerArrived(final L2NpcWalkerAI guideAI) {
 		List<L2NpcWalkerNode> guideRoute = guideRoute1;
 
-		if (guideAI.getGuided() == null || guideAI.getGuided().getQuestState(qn) == null)
-		{
+		if (guideAI.getGuided() == null || guideAI.getGuided().getQuestState(qn) == null) {
 			return null;
 		}
 
-		if (guideAI.getGuided().getQuestState(qn).getInt("secondRoute") == 1)
-		{
+		if (guideAI.getGuided().getQuestState(qn).getInt("secondRoute") == 1) {
 			guideRoute = guideRoute2;
 		}
 
-		if (guideAI.getCurrentPos() == guideRoute.size() - 1)
-		{
+		if (guideAI.getCurrentPos() == guideRoute.size() - 1) {
 			// Delete in 5 sec
-			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-			{
+			ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
 				@Override
-				public void run()
-				{
-					if (!guideAI.getActor().isDecayed())
-					{
+				public void run() {
+					if (!guideAI.getActor().isDecayed()) {
 						guideAI.getActor().deleteMe();
 					}
 				}
@@ -406,13 +338,11 @@ public class Q10329_BackupSeekers extends Quest
 	}
 
 	@Override
-	public boolean canStart(L2PcInstance player)
-	{
+	public boolean canStart(L2PcInstance player) {
 		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 9) && player.getLevel() <= 20;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Q10329_BackupSeekers(10329, qn, "Going outside the village. Opportunity to obtain an accessory.");
 	}
 }

@@ -26,12 +26,7 @@ import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.EnchantResult;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.ItemList;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.item.L2Armor;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
@@ -41,38 +36,32 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.logging.Logger;
 
-public final class RequestEnchantItem extends L2GameClientPacket
-{
+public final class RequestEnchantItem extends L2GameClientPacket {
 	protected static final Logger logEnchant = Logger.getLogger("enchant");
 
 	private int objectId = 0;
 	private int supportId;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		objectId = readD();
 		supportId = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
 
-		if (activeChar == null || objectId == 0)
-		{
+		if (activeChar == null || objectId == 0) {
 			return;
 		}
 
-		if (!activeChar.isOnline() || getClient().isDetached())
-		{
+		if (!activeChar.isOnline() || getClient().isDetached()) {
 			activeChar.setActiveEnchantItem(null);
 			return;
 		}
 
-		if (activeChar.isProcessingTransaction() || activeChar.isInStoreMode())
-		{
+		if (activeChar.isProcessingTransaction() || activeChar.isInStoreMode()) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_ENCHANT_WHILE_STORE));
 			activeChar.setActiveEnchantItem(null);
 			return;
@@ -82,8 +71,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		L2ItemInstance scroll = activeChar.getActiveEnchantItem();
 		L2ItemInstance support = activeChar.getActiveEnchantSupportItem();
 
-		if (item == null || scroll == null)
-		{
+		if (item == null || scroll == null) {
 			activeChar.setActiveEnchantItem(null);
 			return;
 		}
@@ -92,17 +80,14 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		EnchantScroll scrollTemplate = EnchantItemTable.getInstance().getEnchantScroll(scroll);
 
 		// scroll not found in list
-		if (scrollTemplate == null)
-		{
+		if (scrollTemplate == null) {
 			return;
 		}
 
 		// template for support item, if exist
 		EnchantSupportItem supportTemplate = null;
-		if (support != null)
-		{
-			if (support.getObjectId() != supportId)
-			{
+		if (support != null) {
+			if (support.getObjectId() != supportId) {
 				activeChar.setActiveEnchantItem(null);
 				return;
 			}
@@ -110,8 +95,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		}
 
 		// first validation check
-		if (!scrollTemplate.isValid(item, supportTemplate) || !EnchantItemTable.isEnchantable(item))
-		{
+		if (!scrollTemplate.isValid(item, supportTemplate) || !EnchantItemTable.isEnchantable(item)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITION));
 			activeChar.setActiveEnchantItem(null);
 			activeChar.sendPacket(new EnchantResult(2, 0, 0, 0));
@@ -119,11 +103,8 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		}
 
 		// fast auto-enchant cheat check
-		if (activeChar.getActiveEnchantTimestamp() == 0 ||
-				System.currentTimeMillis() - activeChar.getActiveEnchantTimestamp() < 1000)
-		{
-			Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " use autoenchant program ",
-					Config.DEFAULT_PUNISH);
+		if (activeChar.getActiveEnchantTimestamp() == 0 || System.currentTimeMillis() - activeChar.getActiveEnchantTimestamp() < 1000) {
+			Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " use autoenchant program ", Config.DEFAULT_PUNISH);
 			activeChar.setActiveEnchantItem(null);
 			activeChar.sendPacket(new EnchantResult(2, 0, 0, 0));
 			return;
@@ -131,8 +112,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 
 		// attempting to destroy scroll
 		scroll = activeChar.getInventory().destroyItem("Enchant", scroll.getObjectId(), 1, activeChar, item);
-		if (scroll == null)
-		{
+		if (scroll == null) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_ITEMS));
 			Util.handleIllegalPlayerAction(activeChar,
 					"Player " + activeChar.getName() + " tried to enchant with a scroll he doesn't have",
@@ -143,11 +123,9 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		}
 
 		// attempting to destroy support if exist
-		if (support != null)
-		{
+		if (support != null) {
 			support = activeChar.getInventory().destroyItem("Enchant", support.getObjectId(), 1, activeChar, item);
-			if (support == null)
-			{
+			if (support == null) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_ITEMS));
 				Util.handleIllegalPlayerAction(activeChar,
 						"Player " + activeChar.getName() + " tried to enchant with a support item he doesn't have",
@@ -158,8 +136,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			}
 		}
 
-		synchronized (item)
-		{
+		synchronized (item) {
 			float chance = scrollTemplate.getChance(item, supportTemplate);
 
 			int rnd = Rnd.get(100);
@@ -167,8 +144,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 
 			// last validation check
 			L2Item it = item.getItem();
-			if (item.getOwnerId() != activeChar.getObjectId() || !EnchantItemTable.isEnchantable(item) || chance < 0)
-			{
+			if (item.getOwnerId() != activeChar.getObjectId() || !EnchantItemTable.isEnchantable(item) || chance < 0) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITION));
 				activeChar.setActiveEnchantItem(null);
 				activeChar.sendPacket(new EnchantResult(2, 0, 0, 0));
@@ -177,29 +153,31 @@ public final class RequestEnchantItem extends L2GameClientPacket
 
 			// Lastravel, LUC second chance
 			rnd = Rnd.get(10000);
-			if (!success && (item.getEnchantLevel() < 10 && rnd < activeChar.getLUC() ||
-					item.getEnchantLevel() >= 10 && rnd < activeChar.getLUC() / 2))
-			{
+			if (!success &&
+					(item.getEnchantLevel() < 10 && rnd < activeChar.getLUC() || item.getEnchantLevel() >= 10 && rnd < activeChar.getLUC() / 2)) {
 				//System.out.println("Enchant luck effect " + activeChar.getName() + " enchanted to " + (item.getEnchantLevel() + 1 + " (Luck: " + activeChar.getLUC() + ")"));
 				success = true;
 
 				//LUC animation
 				L2Skill skill = SkillTable.FrequentSkill.LUCKY_CLOVER.getSkill();
-				if (skill != null)
-				{
+				if (skill != null) {
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LADY_LUCK_SMILES_UPON_YOU));
-					activeChar.broadcastPacket(
-							new MagicSkillUse(activeChar, activeChar, skill.getId(), skill.getLevel(),
-									skill.getHitTime(), skill.getReuseDelay(), skill.getReuseHashCode(), 0, 0));
+					activeChar.broadcastPacket(new MagicSkillUse(activeChar,
+							activeChar,
+							skill.getId(),
+							skill.getLevel(),
+							skill.getHitTime(),
+							skill.getReuseDelay(),
+							skill.getReuseHashCode(),
+							0,
+							0));
 				}
 			}
 
-			if (success)
-			{
+			if (success) {
 				// success
 				int newEnchantLevel = item.getEnchantLevel() + 1;
-				if (Config.isServer(Config.TENKAI_LEGACY) && newEnchantLevel < 16)
-				{
+				if (Config.isServer(Config.TENKAI_LEGACY) && newEnchantLevel < 16) {
 					newEnchantLevel = 16;
 				}
 
@@ -207,11 +185,9 @@ public final class RequestEnchantItem extends L2GameClientPacket
 				item.updateDatabase();
 				activeChar.sendPacket(new EnchantResult(0, 0, 0, item.getEnchantLevel()));
 
-				if (Config.LOG_ITEM_ENCHANTS)
-				{
+				if (Config.LOG_ITEM_ENCHANTS) {
 					Connection con = null;
-					try
-					{
+					try {
 						con = L2DatabaseFactory.getInstance().getConnection();
 						PreparedStatement statement = con.prepareStatement(
 								"INSERT INTO log_enchants(player_id, item_id, item_object_id, scroll, support_id, chance, time) VALUES(?,?,?,?,?,?,?)");
@@ -224,13 +200,9 @@ public final class RequestEnchantItem extends L2GameClientPacket
 						statement.setLong(7, System.currentTimeMillis());
 						statement.execute();
 						statement.close();
-					}
-					catch (Exception e)
-					{
+					} catch (Exception e) {
 						e.printStackTrace();
-					}
-					finally
-					{
+					} finally {
 						L2DatabaseFactory.close(con);
 					}
 				}
@@ -239,8 +211,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 				int minEnchantAnnounce = item.isArmor() ? 6 : 7;
 				int maxEnchantAnnounce = item.isArmor() ? 0 : 15;
 				if (!Config.isServer(Config.TENKAI_LEGACY) &&
-						(item.getEnchantLevel() == minEnchantAnnounce || item.getEnchantLevel() == maxEnchantAnnounce))
-				{
+						(item.getEnchantLevel() == minEnchantAnnounce || item.getEnchantLevel() == maxEnchantAnnounce)) {
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_SUCCESSFULY_ENCHANTED_A_S2_S3);
 					sm.addCharName(activeChar);
 					sm.addNumber(item.getEnchantLevel());
@@ -248,42 +219,38 @@ public final class RequestEnchantItem extends L2GameClientPacket
 					activeChar.broadcastPacket(sm);
 
 					L2Skill skill = SkillTable.FrequentSkill.FIREWORK.getSkill();
-					if (skill != null)
-					{
-						activeChar.broadcastPacket(
-								new MagicSkillUse(activeChar, activeChar, skill.getId(), skill.getLevelHash(),
-										skill.getHitTime(), skill.getReuseDelay(), skill.getReuseHashCode(), 0, 0));
+					if (skill != null) {
+						activeChar.broadcastPacket(new MagicSkillUse(activeChar,
+								activeChar,
+								skill.getId(),
+								skill.getLevelHash(),
+								skill.getHitTime(),
+								skill.getReuseDelay(),
+								skill.getReuseHashCode(),
+								0,
+								0));
 					}
 				}
 
-				if (it instanceof L2Armor &&
-						activeChar.getInventory().getItemByObjectId(item.getObjectId()).isEquipped())
-				{
-					for (int enchant = 1; enchant <= L2Armor.MAX_ENCHANT_SKILL; enchant++)
-					{
+				if (it instanceof L2Armor && activeChar.getInventory().getItemByObjectId(item.getObjectId()).isEquipped()) {
+					for (int enchant = 1; enchant <= L2Armor.MAX_ENCHANT_SKILL; enchant++) {
 						L2Skill enchantSkill = ((L2Armor) it).getEnchantSkill(enchant);
-						if (enchantSkill != null && item.getEnchantLevel() == enchant)
-						{
+						if (enchantSkill != null && item.getEnchantLevel() == enchant) {
 							// add skills bestowed from +X armor
 							activeChar.addSkill(enchantSkill, false);
 							activeChar.sendSkillList();
 						}
 					}
 				}
-			}
-			else
-			{
-				if (scrollTemplate.isSafe())
-				{
+			} else {
+				if (scrollTemplate.isSafe()) {
 					// safe enchant - remain old value
 					// need retail message
 					activeChar.sendPacket(new EnchantResult(5, 0, 0, item.getEnchantLevel()));
 
-					if (Config.LOG_ITEM_ENCHANTS)
-					{
+					if (Config.LOG_ITEM_ENCHANTS) {
 						Connection con = null;
-						try
-						{
+						try {
 							con = L2DatabaseFactory.getInstance().getConnection();
 							PreparedStatement statement = con.prepareStatement(
 									"INSERT INTO log_enchants(player_id, item_id, item_object_id, scroll, support_id, chance, time) VALUES(?,?,?,?,?,?,?)");
@@ -296,41 +263,29 @@ public final class RequestEnchantItem extends L2GameClientPacket
 							statement.setLong(7, System.currentTimeMillis());
 							statement.execute();
 							statement.close();
-						}
-						catch (Exception e)
-						{
+						} catch (Exception e) {
 							e.printStackTrace();
-						}
-						finally
-						{
+						} finally {
 							L2DatabaseFactory.close(con);
 						}
 					}
-				}
-				else
-				{
+				} else {
 					// unequip item on enchant failure to avoid item skills stack
-					if (item.isEquipped())
-					{
-						if (item.getEnchantLevel() > 0)
-						{
+					if (item.isEquipped()) {
+						if (item.getEnchantLevel() > 0) {
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.EQUIPMENT_S1_S2_REMOVED);
 							sm.addNumber(item.getEnchantLevel());
 							sm.addItemName(item);
 							activeChar.sendPacket(sm);
-						}
-						else
-						{
+						} else {
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISARMED);
 							sm.addItemName(item);
 							activeChar.sendPacket(sm);
 						}
 
-						L2ItemInstance[] unequiped =
-								activeChar.getInventory().unEquipItemInSlotAndRecord(item.getLocationSlot());
+						L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(item.getLocationSlot());
 						InventoryUpdate iu = new InventoryUpdate();
-						for (L2ItemInstance itm : unequiped)
-						{
+						for (L2ItemInstance itm : unequiped) {
 							iu.addModifiedItem(itm);
 						}
 
@@ -338,8 +293,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 						activeChar.broadcastUserInfo();
 					}
 
-					if (scrollTemplate.isBlessed())
-					{
+					if (scrollTemplate.isBlessed()) {
 						// blessed enchant - clear enchant value
 						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BLESSED_ENCHANT_FAILED));
 
@@ -347,11 +301,9 @@ public final class RequestEnchantItem extends L2GameClientPacket
 						item.updateDatabase();
 						activeChar.sendPacket(new EnchantResult(3, 0, 0, 0));
 
-						if (Config.LOG_ITEM_ENCHANTS)
-						{
+						if (Config.LOG_ITEM_ENCHANTS) {
 							Connection con = null;
-							try
-							{
+							try {
 								con = L2DatabaseFactory.getInstance().getConnection();
 								PreparedStatement statement = con.prepareStatement(
 										"INSERT INTO log_enchants(player_id, item_id, item_object_id, scroll, support_id, chance, time) VALUES(?,?,?,?,?,?,?)");
@@ -364,43 +316,32 @@ public final class RequestEnchantItem extends L2GameClientPacket
 								statement.setLong(7, System.currentTimeMillis());
 								statement.execute();
 								statement.close();
-							}
-							catch (Exception e)
-							{
+							} catch (Exception e) {
 								e.printStackTrace();
-							}
-							finally
-							{
+							} finally {
 								L2DatabaseFactory.close(con);
 							}
 						}
-					}
-					else
-					{
+					} else {
 						// enchant failed, destroy item
 						int crystalId = item.getItem().getCrystalItemId();
 						int count = item.getCrystalCount() - (item.getItem().getCrystalCount() + 1) / 2;
-						if (count < 1)
-						{
+						if (count < 1) {
 							count = 1;
 						}
 
-						L2ItemInstance destroyItem =
-								activeChar.getInventory().destroyItem("Enchant", item, activeChar, null);
-						if (destroyItem == null)
-						{
+						L2ItemInstance destroyItem = activeChar.getInventory().destroyItem("Enchant", item, activeChar, null);
+						if (destroyItem == null) {
 							// unable to destroy item, cheater ?
 							Util.handleIllegalPlayerAction(activeChar,
-									"Unable to delete item on enchant failure from player " + activeChar.getName() +
-											", possible cheater !", Config.DEFAULT_PUNISH);
+									"Unable to delete item on enchant failure from player " + activeChar.getName() + ", possible cheater !",
+									Config.DEFAULT_PUNISH);
 							activeChar.setActiveEnchantItem(null);
 							activeChar.sendPacket(new EnchantResult(2, 0, 0, 0));
 
-							if (Config.LOG_ITEM_ENCHANTS)
-							{
+							if (Config.LOG_ITEM_ENCHANTS) {
 								Connection con = null;
-								try
-								{
+								try {
 									con = L2DatabaseFactory.getInstance().getConnection();
 									PreparedStatement statement = con.prepareStatement(
 											"INSERT INTO log_enchants(player_id, item_id, item_object_id, scroll, support_id, chance, time) VALUES(?,?,?,?,?,?,?)");
@@ -413,13 +354,9 @@ public final class RequestEnchantItem extends L2GameClientPacket
 									statement.setLong(7, System.currentTimeMillis());
 									statement.execute();
 									statement.close();
-								}
-								catch (Exception e)
-								{
+								} catch (Exception e) {
 									e.printStackTrace();
-								}
-								finally
-								{
+								} finally {
 									L2DatabaseFactory.close(con);
 								}
 							}
@@ -427,10 +364,8 @@ public final class RequestEnchantItem extends L2GameClientPacket
 						}
 
 						L2ItemInstance crystals = null;
-						if (crystalId != 0)
-						{
-							crystals = activeChar.getInventory()
-									.addItem("Enchant", crystalId, count, activeChar, destroyItem);
+						if (crystalId != 0) {
+							crystals = activeChar.getInventory().addItem("Enchant", crystalId, count, activeChar, destroyItem);
 
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.EARNED_S2_S1_S);
 							sm.addItemName(crystals);
@@ -438,46 +373,34 @@ public final class RequestEnchantItem extends L2GameClientPacket
 							activeChar.sendPacket(sm);
 						}
 
-						if (!Config.FORCE_INVENTORY_UPDATE)
-						{
+						if (!Config.FORCE_INVENTORY_UPDATE) {
 							InventoryUpdate iu = new InventoryUpdate();
-							if (destroyItem.getCount() == 0)
-							{
+							if (destroyItem.getCount() == 0) {
 								iu.addRemovedItem(destroyItem);
-							}
-							else
-							{
+							} else {
 								iu.addModifiedItem(destroyItem);
 							}
 
-							if (crystals != null)
-							{
+							if (crystals != null) {
 								iu.addItem(crystals);
 							}
 
 							activeChar.sendPacket(iu);
-						}
-						else
-						{
+						} else {
 							activeChar.sendPacket(new ItemList(activeChar, true));
 						}
 
 						L2World world = L2World.getInstance();
 						world.removeObject(destroyItem);
-						if (crystalId == 0)
-						{
+						if (crystalId == 0) {
 							activeChar.sendPacket(new EnchantResult(4, 0, 0, 0));
-						}
-						else
-						{
+						} else {
 							activeChar.sendPacket(new EnchantResult(1, crystalId, count, 0));
 						}
 
-						if (Config.LOG_ITEM_ENCHANTS)
-						{
+						if (Config.LOG_ITEM_ENCHANTS) {
 							Connection con = null;
-							try
-							{
+							try {
 								con = L2DatabaseFactory.getInstance().getConnection();
 								PreparedStatement statement = con.prepareStatement(
 										"INSERT INTO log_enchants(player_id, item_id, item_object_id, scroll, support_id, chance, time) VALUES(?,?,?,?,?,?,?)");
@@ -490,13 +413,9 @@ public final class RequestEnchantItem extends L2GameClientPacket
 								statement.setLong(7, System.currentTimeMillis());
 								statement.execute();
 								statement.close();
-							}
-							catch (Exception e)
-							{
+							} catch (Exception e) {
 								e.printStackTrace();
-							}
-							finally
-							{
+							} finally {
 								L2DatabaseFactory.close(con);
 							}
 						}

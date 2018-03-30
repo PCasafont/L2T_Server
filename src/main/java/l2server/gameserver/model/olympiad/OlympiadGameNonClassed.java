@@ -22,36 +22,29 @@ import java.util.List;
 /**
  * @author DS
  */
-public class OlympiadGameNonClassed extends OlympiadGameNormal
-{
-	private OlympiadGameNonClassed(int id, OlympiadParticipant[] opponents)
-	{
+public class OlympiadGameNonClassed extends OlympiadGameNormal {
+	private OlympiadGameNonClassed(int id, OlympiadParticipant[] opponents) {
 		super(id, opponents);
 	}
 
 	@Override
-	public final CompetitionType getType()
-	{
+	public final CompetitionType getType() {
 		return CompetitionType.NON_CLASSED;
 	}
 
 	@Override
-	protected final int getDivider()
-	{
+	protected final int getDivider() {
 		return 5;
 	}
 
 	@Override
-	protected final int[][] getReward()
-	{
+	protected final int[][] getReward() {
 		return Config.ALT_OLY_NONCLASSED_REWARD;
 	}
 
-	protected static OlympiadGameNonClassed createGame(int id, List<Integer> list)
-	{
+	protected static OlympiadGameNonClassed createGame(int id, List<Integer> list) {
 		final OlympiadParticipant[] opponents = OlympiadGameNormal.createListOfParticipants(list);
-		if (opponents == null)
-		{
+		if (opponents == null) {
 			return null;
 		}
 

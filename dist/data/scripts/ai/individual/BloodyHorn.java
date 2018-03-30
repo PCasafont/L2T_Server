@@ -15,6 +15,7 @@
 
 package ai.individual;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Skill;
@@ -24,24 +25,20 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.util.Rnd;
 
-import ai.group_template.L2AttackableAIScript;
-
 /**
  * @author LasTravel
- *         <p>
- *         Bloody Horns AI
- *         <p>
- *         Source:
- *         - http://l2wiki.com/Land_of_Chaos
+ * <p>
+ * Bloody Horns AI
+ * <p>
+ * Source:
+ * - http://l2wiki.com/Land_of_Chaos
  */
 
-public class BloodyHorn extends L2AttackableAIScript
-{
+public class BloodyHorn extends L2AttackableAIScript {
 	private static final int bloodyHorn = 19463;
 	private static final int[] debufSkills = {15537, 15538, 15539, 15540};
 
-	public BloodyHorn(int id, String name, String descr)
-	{
+	public BloodyHorn(int id, String name, String descr) {
 		super(id, name, descr);
 
 		addFirstTalkId(bloodyHorn);
@@ -50,33 +47,27 @@ public class BloodyHorn extends L2AttackableAIScript
 
 		addSpellFinishedId(bloodyHorn);
 
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-		{
-			if (spawn == null)
-			{
+		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable()) {
+			if (spawn == null) {
 				continue;
 			}
 
-			if (spawn.getNpcId() == bloodyHorn)
-			{
+			if (spawn.getNpcId() == bloodyHorn) {
 				notifySpawn(spawn.getNpc());
 			}
 		}
 	}
 
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
-	{
+	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill) {
 		npc.doDie(null);
 
 		return super.onSpellFinished(npc, player, skill);
 	}
 
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		if (npc.getTarget() == null)
-		{
+	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+		if (npc.getTarget() == null) {
 			npc.setTarget(player);
 
 			int level = Rnd.get(1, 2);
@@ -90,8 +81,7 @@ public class BloodyHorn extends L2AttackableAIScript
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
+	public final String onSpawn(L2Npc npc) {
 		npc.setIsImmobilized(true);
 
 		npc.setIsInvul(true);
@@ -99,8 +89,7 @@ public class BloodyHorn extends L2AttackableAIScript
 		return super.onSpawn(npc);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new BloodyHorn(-1, "BloodyHorn", "ai");
 	}
 }

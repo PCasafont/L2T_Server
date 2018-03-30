@@ -15,6 +15,7 @@
 
 package ai.individual.Summons;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
@@ -22,125 +23,102 @@ import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-import ai.group_template.L2AttackableAIScript;
-
 import java.util.Collection;
 import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author LasTravel
  * @author Pere
- *         <p>
- *         Summon Clan Guardian (skill id: 19008) AI
+ * <p>
+ * Summon Clan Guardian (skill id: 19008) AI
  */
 
-public class ClanGuardian extends L2AttackableAIScript
-{
-    private static final int clanGuardian = 15053;
-    private static final L2Skill clanGuardianRecovery = SkillTable.getInstance().getInfo(19018, 1);
+public class ClanGuardian extends L2AttackableAIScript {
+	private static final int clanGuardian = 15053;
+	private static final L2Skill clanGuardianRecovery = SkillTable.getInstance().getInfo(19018, 1);
 
-    public ClanGuardian(int id, String name, String descr)
-    {
-        super(id, name, descr);
+	public ClanGuardian(int id, String name, String descr) {
+		super(id, name, descr);
 
-        addSpawnId(clanGuardian);
-    }
+		addSpawnId(clanGuardian);
+	}
 
-    @Override
-    public final String onSpawn(L2Summon npc)
-    {
-        ClanGuardianAI ai = new ClanGuardianAI(npc);
+	@Override
+	public final String onSpawn(L2Summon npc) {
+		ClanGuardianAI ai = new ClanGuardianAI(npc);
 
-        ai.setSchedule(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(ai, 5000, 10000));
+		ai.setSchedule(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(ai, 5000, 10000));
 
-        return null;
-    }
+		return null;
+	}
 
-    class ClanGuardianAI implements Runnable
-    {
-        private L2Summon clanGuardian;
-        private L2PcInstance owner;
-        private ScheduledFuture<?> schedule = null;
+	class ClanGuardianAI implements Runnable {
+		private L2Summon clanGuardian;
+		private L2PcInstance owner;
+		private ScheduledFuture<?> schedule = null;
 
-        protected ClanGuardianAI(L2Summon npc)
-        {
-            clanGuardian = npc;
-            owner = npc.getOwner();
-        }
+		protected ClanGuardianAI(L2Summon npc) {
+			clanGuardian = npc;
+			owner = npc.getOwner();
+		}
 
-        public void setSchedule(ScheduledFuture<?> schedule)
-        {
-            this.schedule = schedule;
-        }
+		public void setSchedule(ScheduledFuture<?> schedule) {
+			this.schedule = schedule;
+		}
 
-        @Override
-        public void run()
-        {
-            if (clanGuardian == null || clanGuardian.isDead() || !owner.getSummons().contains(clanGuardian))
-            {
-                if (schedule != null)
-                {
-                    schedule.cancel(true);
-                    return;
-                }
-            }
+		@Override
+		public void run() {
+			if (clanGuardian == null || clanGuardian.isDead() || !owner.getSummons().contains(clanGuardian)) {
+				if (schedule != null) {
+					schedule.cancel(true);
+					return;
+				}
+			}
 
-            Collection<L2PcInstance> players = clanGuardian.getKnownList().getKnownPlayersInRadius(500);
+			Collection<L2PcInstance> players = clanGuardian.getKnownList().getKnownPlayersInRadius(500);
 
-            for (L2PcInstance player : players)
-            {
-                if (isValidTarget(player, clanGuardian))
-                {
-                    clanGuardian.setTarget(player);
-                    clanGuardian.doCast(clanGuardianRecovery);
-                }
-            }
-        }
-    }
+			for (L2PcInstance player : players) {
+				if (isValidTarget(player, clanGuardian)) {
+					clanGuardian.setTarget(player);
+					clanGuardian.doCast(clanGuardianRecovery);
+				}
+			}
+		}
+	}
 
-    private boolean isValidTarget(L2PcInstance target, L2Summon summon)
-    {
-        if (target == null || summon == null)
-        {
-            return false;
-        }
+	private boolean isValidTarget(L2PcInstance target, L2Summon summon) {
+		if (target == null || summon == null) {
+			return false;
+		}
 
-        if (summon.isDead() || target.isDead())
-        {
-            return false;
-        }
+		if (summon.isDead() || target.isDead()) {
+			return false;
+		}
 
-        if (target.isInvul(summon.getOwner()))
-        {
-            return false;
-        }
+		if (target.isInvul(summon.getOwner())) {
+			return false;
+		}
 
-        if (target.getClan() != summon.getOwner().getClan())
-        {
-            return false;
-        }
+		if (target.getClan() != summon.getOwner().getClan()) {
+			return false;
+		}
 
-        if (!GeoData.getInstance().canSeeTarget(summon, target))
-        {
-            return false;
-        }
+		if (!GeoData.getInstance().canSeeTarget(summon, target)) {
+			return false;
+		}
 
-        if (!summon.isInsideRadius(target, 500, true, false))
-        {
-            return false;
-        }
+		if (!summon.isInsideRadius(target, 500, true, false)) {
+			return false;
+		}
 
-        if (target.getCurrentHp() == target.getMaxHp() && target.getCurrentCp() == target.getMaxCp() &&
-                target.getCurrentMp() == target.getMaxMp())
-        {
-            return false;
-        }
+		if (target.getCurrentHp() == target.getMaxHp() && target.getCurrentCp() == target.getMaxCp() && target.getCurrentMp() == target.getMaxMp()) {
+			return false;
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    public static void main(String[] args)
-    {
-        new ClanGuardian(-1, "ClanGuardian", "ai/individual");
-    }
+	public static void main(String[] args) {
+		new ClanGuardian(-1, "ClanGuardian", "ai/individual");
+	}
 }

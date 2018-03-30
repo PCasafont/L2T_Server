@@ -35,21 +35,10 @@ import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.entity.RecoBonus;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExCallToChangeClass;
-import l2server.gameserver.network.serverpackets.ExMentorList;
-import l2server.gameserver.network.serverpackets.ExNewSkillToLearnByLevelUp;
-import l2server.gameserver.network.serverpackets.ExVoteSystemInfo;
-import l2server.gameserver.network.serverpackets.FriendList;
-import l2server.gameserver.network.serverpackets.FriendPacket;
-import l2server.gameserver.network.serverpackets.PledgeShowMemberListUpdate;
-import l2server.gameserver.network.serverpackets.SocialAction;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.network.serverpackets.UserInfo;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.stats.Stats;
 
-public class PcStat extends PlayableStat
-{
+public class PcStat extends PlayableStat {
 	//
 
 	// =========================================================
@@ -65,27 +54,22 @@ public class PcStat extends PlayableStat
 
 	// =========================================================
 	// Constructor
-	public PcStat(L2PcInstance activeChar)
-	{
+	public PcStat(L2PcInstance activeChar) {
 		super(activeChar);
 	}
 
 	// =========================================================
 	// Method - Public
 	@Override
-	public boolean addExp(long value)
-	{
+	public boolean addExp(long value) {
 		L2PcInstance activeChar = getActiveChar();
 
 		// Allowed to gain exp?
-		if (!getActiveChar().getAccessLevel().canGainExp() && getActiveChar().isInParty() ||
-				getActiveChar().isNoExp() && value > 0)
-		{
+		if (!getActiveChar().getAccessLevel().canGainExp() && getActiveChar().isInParty() || getActiveChar().isNoExp() && value > 0) {
 			return false;
 		}
 
-		if (!super.addExp(value))
-		{
+		if (!super.addExp(value)) {
 			return false;
 		}
 
@@ -109,54 +93,44 @@ public class PcStat extends PlayableStat
 	 * @param addToSp  The SP value to add
 	 */
 	//@Override
-	public boolean addExpAndSp(long addToExp, long addToSp, double bonusMultiplier)
-	{
-		if (getActiveChar().getTemporaryLevel() != 0)
-		{
+	public boolean addExpAndSp(long addToExp, long addToSp, double bonusMultiplier) {
+		if (getActiveChar().getTemporaryLevel() != 0) {
 			return false;
 		}
 
 		float ratioTakenByPlayer = 0;
 		// Allowed to gain exp/sp?
 		L2PcInstance activeChar = getActiveChar();
-		if (!activeChar.getAccessLevel().canGainExp())
-		{
+		if (!activeChar.getAccessLevel().canGainExp()) {
 			return false;
 		}
 
 		// if this player has a pet that takes from the owner's Exp, give the pet Exp now
 
-		if (activeChar.getPet() != null)
-		{
+		if (activeChar.getPet() != null) {
 			L2PetInstance pet = activeChar.getPet();
 			ratioTakenByPlayer = pet.getPetLevelData().getOwnerExpTaken() / 100f;
 
 			// only give exp/sp to the pet by taking from the owner if the pet has a non-zero, positive ratio
 			// allow possible customizations that would have the pet earning more than 100% of the owner's exp/sp
-			if (ratioTakenByPlayer > 1)
-			{
+			if (ratioTakenByPlayer > 1) {
 				ratioTakenByPlayer = 1;
 			}
-			if (!pet.isDead())
-			{
-				pet.addExpAndSp((long) (addToExp * (1 - ratioTakenByPlayer)),
-						(int) (addToSp * (1 - ratioTakenByPlayer)));
+			if (!pet.isDead()) {
+				pet.addExpAndSp((long) (addToExp * (1 - ratioTakenByPlayer)), (int) (addToSp * (1 - ratioTakenByPlayer)));
 			}
 			// now adjust the max ratio to avoid the owner earning negative exp/sp
 			addToExp = (long) (addToExp * ratioTakenByPlayer);
 			addToSp = (long) (addToSp * ratioTakenByPlayer);
 		}
 
-		if (!super.addExpAndSp(addToExp, addToSp))
-		{
+		if (!super.addExpAndSp(addToExp, addToSp)) {
 			return false;
 		}
 
 		// Send a Server->Client System Message to the L2PcInstance
-		if (bonusMultiplier > 1)
-		{
-			SystemMessage sm =
-					SystemMessage.getSystemMessage(SystemMessageId.YOU_EARNED_S1_EXP_BONUS_S2_AND_S3_SP_BONUS_S4);
+		if (bonusMultiplier > 1) {
+			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_EARNED_S1_EXP_BONUS_S2_AND_S3_SP_BONUS_S4);
 			int exp = (int) Math.round(addToExp / bonusMultiplier);
 			int sp = (int) Math.round(addToSp / bonusMultiplier);
 			sm.addNumber(exp);
@@ -164,21 +138,15 @@ public class PcStat extends PlayableStat
 			sm.addNumber(sp);
 			sm.addItemNumber(addToSp - sp);
 			activeChar.sendPacket(sm);
-		}
-		else if (addToExp == 0 && addToSp != 0)
-		{
+		} else if (addToExp == 0 && addToSp != 0) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.ACQUIRED_S1_SP);
 			sm.addItemNumber(addToSp);
 			activeChar.sendPacket(sm);
-		}
-		else if (addToSp == 0 && addToExp != 0)
-		{
+		} else if (addToSp == 0 && addToExp != 0) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.EARNED_S1_EXPERIENCE);
 			sm.addItemNumber(addToExp);
 			activeChar.sendPacket(sm);
-		}
-		else
-		{
+		} else {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_EARNED_S1_EXP_AND_S2_SP);
 			sm.addItemNumber(addToExp);
 			sm.addItemNumber(addToSp);
@@ -187,18 +155,14 @@ public class PcStat extends PlayableStat
 		return true;
 	}
 
-	public boolean addExpAndSp(long addToExp, long addToSp, boolean useBonuses)
-	{
-		if (getActiveChar().getTemporaryLevel() != 0)
-		{
+	public boolean addExpAndSp(long addToExp, long addToSp, boolean useBonuses) {
+		if (getActiveChar().getTemporaryLevel() != 0) {
 			return false;
 		}
 
 		double bonusMultiplier = 1.0;
-		if (useBonuses)
-		{
-			if (Config.ENABLE_VITALITY && vitalityPoints > 0)
-			{
+		if (useBonuses) {
+			if (Config.ENABLE_VITALITY && vitalityPoints > 0) {
 				addToExp *= Config.VITALITY_MULTIPLIER;
 				addToSp *= Config.VITALITY_MULTIPLIER;
 			}
@@ -213,26 +177,21 @@ public class PcStat extends PlayableStat
 	}
 
 	@Override
-	public boolean removeExpAndSp(long addToExp, long addToSp)
-	{
+	public boolean removeExpAndSp(long addToExp, long addToSp) {
 		return removeExpAndSp(addToExp, addToSp, true);
 	}
 
-	public boolean removeExpAndSp(long addToExp, long addToSp, boolean sendMessage)
-	{
-		if (getActiveChar().getTemporaryLevel() != 0)
-		{
+	public boolean removeExpAndSp(long addToExp, long addToSp, boolean sendMessage) {
+		if (getActiveChar().getTemporaryLevel() != 0) {
 			return false;
 		}
 
 		int level = getLevel();
-		if (!super.removeExpAndSp(addToExp, addToSp))
-		{
+		if (!super.removeExpAndSp(addToExp, addToSp)) {
 			return false;
 		}
 
-		if (sendMessage)
-		{
+		if (sendMessage) {
 			// Send a Server->Client System Message to the L2PcInstance
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.EXP_DECREASED_BY_S1);
 			sm.addItemNumber(addToExp);
@@ -240,8 +199,7 @@ public class PcStat extends PlayableStat
 			sm = SystemMessage.getSystemMessage(SystemMessageId.SP_DECREASED_S1);
 			sm.addItemNumber(addToSp);
 			getActiveChar().sendPacket(sm);
-			if (getLevel() < level)
-			{
+			if (getLevel() < level) {
 				getActiveChar().broadcastStatusUpdate();
 			}
 		}
@@ -249,27 +207,21 @@ public class PcStat extends PlayableStat
 	}
 
 	@Override
-	public final boolean addLevel(byte value)
-	{
-		if (getActiveChar().getTemporaryLevel() != 0)
-		{
+	public final boolean addLevel(byte value) {
+		if (getActiveChar().getTemporaryLevel() != 0) {
 			return false;
 		}
 
-		if (getLevel() + value > Config.MAX_LEVEL)
-		{
+		if (getLevel() + value > Config.MAX_LEVEL) {
 			return false;
 		}
 
 		boolean levelIncreased = super.addLevel(value);
 
-		if (levelIncreased)
-		{
-			if (!Config.DISABLE_TUTORIAL)
-			{
+		if (levelIncreased) {
+			if (!Config.DISABLE_TUTORIAL) {
 				QuestState qs = getActiveChar().getQuestState("Q255_Tutorial");
-				if (qs != null)
-				{
+				if (qs != null) {
 					qs.getQuest().notifyEvent("CE40", null, getActiveChar());
 				}
 			}
@@ -277,44 +229,35 @@ public class PcStat extends PlayableStat
 			getActiveChar().broadcastPacket(new SocialAction(getActiveChar().getObjectId(), SocialAction.LEVEL_UP));
 			getActiveChar().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_INCREASED_YOUR_LEVEL));
 			MentorManager mm = MentorManager.getInstance();
-			if (getActiveChar().getBaseClass() == getActiveChar().getActiveClass() &&
-					mm.getItemsCount(getLevel()) != 0 && getActiveChar().isMentee())
-			{
-				Message msg = new Message(getActiveChar().getMentorId(), mm.getTitle(),
+			if (getActiveChar().getBaseClass() == getActiveChar().getActiveClass() && mm.getItemsCount(getLevel()) != 0 &&
+					getActiveChar().isMentee()) {
+				Message msg = new Message(getActiveChar().getMentorId(),
+						mm.getTitle(),
 						mm.getMessage(getActiveChar().getName(), String.valueOf(getLevel())),
 						Message.SendBySystem.MENTORING);
-				msg.createAttachments()
-						.addItem("Send Coins to Mentor", 33804, mm.getItemsCount(getLevel()), null, null);
+				msg.createAttachments().addItem("Send Coins to Mentor", 33804, mm.getItemsCount(getLevel()), null, null);
 				MailManager.getInstance().sendMessage(msg);
 			}
 
-			if (getActiveChar().getBaseClass() == getActiveChar().getActiveClass() && getActiveChar().isMentee() &&
-					getLevel() >= 86)
-			{
+			if (getActiveChar().getBaseClass() == getActiveChar().getActiveClass() && getActiveChar().isMentee() && getLevel() >= 86) {
 				int mentorId = getActiveChar().getMentorId();
 				getActiveChar().removeMentor();
-				for (L2Abnormal e : getActiveChar().getAllEffects())
-				{
-					if (e.getSkill().getId() >= 9227 && e.getSkill().getId() <= 9233)
-					{
+				for (L2Abnormal e : getActiveChar().getAllEffects()) {
+					if (e.getSkill().getId() >= 9227 && e.getSkill().getId() <= 9233) {
 						e.exit();
 					}
 				}
 				getActiveChar().removeSkill(9379);
 				L2PcInstance mentor = L2World.getInstance().getPlayer(mentorId);
-				if (mentor != null && mentor.isOnline())
-				{
+				if (mentor != null && mentor.isOnline()) {
 					mentor.giveMentorBuff();
 				}
 			}
 
-			if (getActiveChar().getFriendList().size() > 0)
-			{
-				for (int i : getActiveChar().getFriendList())
-				{
+			if (getActiveChar().getFriendList().size() > 0) {
+				for (int i : getActiveChar().getFriendList()) {
 					L2PcInstance friend;
-					if (L2World.getInstance().getPlayer(i) != null)
-					{
+					if (L2World.getInstance().getPlayer(i) != null) {
 						friend = L2World.getInstance().getPlayer(i);
 						friend.sendPacket(new FriendPacket(true, getActiveChar().getObjectId(), friend));
 						friend.sendPacket(new FriendList(friend));
@@ -323,20 +266,14 @@ public class PcStat extends PlayableStat
 			}
 
 			getActiveChar().sendPacket(new ExMentorList(getActiveChar()));
-			if (getActiveChar().isMentee())
-			{
-				if (L2World.getInstance().getPlayer(getActiveChar().getMentorId()) != null)
-				{
+			if (getActiveChar().isMentee()) {
+				if (L2World.getInstance().getPlayer(getActiveChar().getMentorId()) != null) {
 					L2PcInstance player = L2World.getInstance().getPlayer(getActiveChar().getMentorId());
 					player.sendPacket(new ExMentorList(player));
 				}
-			}
-			else if (getActiveChar().isMentor())
-			{
-				for (int objId : getActiveChar().getMenteeList())
-				{
-					if (L2World.getInstance().getPlayer(objId) != null)
-					{
+			} else if (getActiveChar().isMentor()) {
+				for (int objId : getActiveChar().getMenteeList()) {
+					if (L2World.getInstance().getPlayer(objId) != null) {
 						L2PcInstance player = L2World.getInstance().getPlayer(objId);
 						player.sendPacket(new ExMentorList(player));
 					}
@@ -345,23 +282,19 @@ public class PcStat extends PlayableStat
 		}
 
 		getActiveChar().rewardSkills(); // Give Expertise skill of this level
-		if (SkillTreeTable.getInstance().hasNewSkillsToLearn(getActiveChar(), getActiveChar().getCurrentClass()))
-		{
+		if (SkillTreeTable.getInstance().hasNewSkillsToLearn(getActiveChar(), getActiveChar().getCurrentClass())) {
 			getActiveChar().sendPacket(new ExNewSkillToLearnByLevelUp());
 		}
 
-		if (getActiveChar().getClan() != null)
-		{
+		if (getActiveChar().getClan() != null) {
 			getActiveChar().getClan().updateClanMember(getActiveChar());
 			getActiveChar().getClan().broadcastToOnlineMembers(new PledgeShowMemberListUpdate(getActiveChar()));
 		}
-		if (getActiveChar().isInParty())
-		{
+		if (getActiveChar().isInParty()) {
 			getActiveChar().getParty().recalculatePartyLevel(); // Recalculate the party level
 		}
 
-		if (getActiveChar().isTransformed() || getActiveChar().isInStance())
-		{
+		if (getActiveChar().isTransformed() || getActiveChar().isInStance()) {
 			getActiveChar().getTransformation().onLevelUp();
 		}
 
@@ -379,11 +312,9 @@ public class PcStat extends PlayableStat
 		// Send a Server->Client packet UserInfo to the L2PcInstance
 		getActiveChar().sendPacket(new UserInfo(getActiveChar()));
 		getActiveChar().sendPacket(new ExVoteSystemInfo(getActiveChar()));
-		if (getLevel() >= 85 && getActiveChar().getClassId() < 139)
-		{
+		if (getLevel() >= 85 && getActiveChar().getClassId() < 139) {
 			PlayerClass cl = PlayerClassTable.getInstance().getClassById(getActiveChar().getClassId());
-			if (cl.getAwakeningClassId() != -1)
-			{
+			if (cl.getAwakeningClassId() != -1) {
 				getActiveChar().sendPacket(new ExCallToChangeClass(cl.getId(), false));
 			}
 		}
@@ -392,10 +323,8 @@ public class PcStat extends PlayableStat
 	}
 
 	@Override
-	public boolean addSp(long value)
-	{
-		if (!super.addSp(value))
-		{
+	public boolean addSp(long value) {
+		if (!super.addSp(value)) {
 			return false;
 		}
 
@@ -407,141 +336,114 @@ public class PcStat extends PlayableStat
 	}
 
 	@Override
-	public final long getExpForLevel(int level)
-	{
+	public final long getExpForLevel(int level) {
 		return Experience.getAbsoluteExp(level);
 	}
 
 	@Override
-	public final L2PcInstance getActiveChar()
-	{
+	public final L2PcInstance getActiveChar() {
 		return (L2PcInstance) super.getActiveChar();
 	}
 
 	@Override
-	public final long getExp()
-	{
-		if (getActiveChar().isSubClassActive())
-		{
+	public final long getExp() {
+		if (getActiveChar().isSubClassActive()) {
 			return getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).getExp();
 		}
 
 		return super.getExp();
 	}
 
-	public final long getBaseClassExp()
-	{
+	public final long getBaseClassExp() {
 		return super.getExp();
 	}
 
 	@Override
-	public final void setExp(long value)
-	{
-		if (getActiveChar().isSubClassActive())
-		{
+	public final void setExp(long value) {
+		if (getActiveChar().isSubClassActive()) {
 			getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).setExp(value);
-		}
-		else
-		{
+		} else {
 			super.setExp(value);
 		}
 	}
 
 	@Override
-	public final byte getLevel()
-	{
-		if (getActiveChar().isSubClassActive())
-		{
+	public final byte getLevel() {
+		if (getActiveChar().isSubClassActive()) {
 			return getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).getLevel();
 		}
 
 		return super.getLevel();
 	}
 
-	public final byte getBaseClassLevel()
-	{
+	public final byte getBaseClassLevel() {
 		return super.getLevel();
 	}
 
 	@Override
-	public final void setLevel(byte value)
-	{
-		if (getActiveChar().getTemporaryLevel() != 0)
-		{
+	public final void setLevel(byte value) {
+		if (getActiveChar().getTemporaryLevel() != 0) {
 			return;
 		}
 
-		if (value > Config.MAX_LEVEL)
-		{
+		if (value > Config.MAX_LEVEL) {
 			value = Config.MAX_LEVEL;
 		}
 
-		if (getActiveChar().isSubClassActive())
-		{
+		if (getActiveChar().isSubClassActive()) {
 			getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).setLevel(value);
-		}
-		else
-		{
+		} else {
 			super.setLevel(value);
 		}
 	}
 
 	@Override
-	public final int getMaxCp()
-	{
-		if (getActiveChar() == null || getActiveChar().getCurrentClass() == null)
-		{
+	public final int getMaxCp() {
+		if (getActiveChar() == null || getActiveChar().getCurrentClass() == null) {
 			return 1;
 		}
 
-		if (getActiveChar().isPlayingEvent() && getActiveChar().getEvent().isType(EventType.StalkedSalkers))
-		{
+		if (getActiveChar().isPlayingEvent() && getActiveChar().getEvent().isType(EventType.StalkedSalkers)) {
 			return 0;
 		}
 
 		// Get the Max CP (base+modifier) of the L2PcInstance
 		int val = (int) calcStat(Stats.MAX_CP,
 				PlayerStatDataTable.getInstance().getMaxCp(getActiveChar().getClassId(), getActiveChar().getLevel()),
-				null, null);
+				null,
+				null);
 
-		if (val != oldMaxCp)
-		{
+		if (val != oldMaxCp) {
 			oldMaxCp = val;
 
 			// Launch a regen task if the new Max CP is higher than the old one
-			if (getActiveChar().getStatus().getCurrentCp() != val)
-			{
-				getActiveChar().getStatus()
-						.setCurrentCp(getActiveChar().getStatus().getCurrentCp()); // trigger start of regeneration
+			if (getActiveChar().getStatus().getCurrentCp() != val) {
+				getActiveChar().getStatus().setCurrentCp(getActiveChar().getStatus().getCurrentCp()); // trigger start of regeneration
 			}
 		}
 		return val;
 	}
 
 	@Override
-	public final int getMaxHp()
-	{
+	public final int getMaxHp() {
 		if (getActiveChar() == null || getActiveChar().getCurrentClass() == null ||
-				getActiveChar().isPlayingEvent() && getActiveChar().getEvent().isType(EventType.StalkedSalkers))
-		{
+				getActiveChar().isPlayingEvent() && getActiveChar().getEvent().isType(EventType.StalkedSalkers)) {
 			return 1;
 		}
 
 		// Get the Max HP (base+modifier) of the L2PcInstance
 		int maxHp = (int) calcStat(Stats.MAX_HP,
 				PlayerStatDataTable.getInstance().getMaxHp(getActiveChar().getClassId(), getActiveChar().getLevel()),
-				null, null);
+				null,
+				null);
 		int val = (int) calcStat(Stats.LIMIT_HP, maxHp, null, null);
 
-		if (val != oldMaxHp)
-		{
+		if (val != oldMaxHp) {
 			oldMaxHp = val;
 
 			// Launch a regen task if the new Max HP is higher than the old one
-			if (getActiveChar().getStatus().getCurrentHp() != val)
-			{
-				getActiveChar().getStatus()
-						.setCurrentHp(getActiveChar().getStatus().getCurrentHp()); // trigger start of regeneration
+			if (getActiveChar().getStatus().getCurrentHp() != val) {
+				getActiveChar().getStatus().setCurrentHp(getActiveChar().getStatus().getCurrentHp()); // trigger start of regeneration
 			}
 		}
 
@@ -549,41 +451,36 @@ public class PcStat extends PlayableStat
 	}
 
 	@Override
-	public int getMaxVisibleHp()
-	{
+	public int getMaxVisibleHp() {
 		getMaxHp();
-		if (getActiveChar() == null || getActiveChar().getCurrentClass() == null)
-		{
+		if (getActiveChar() == null || getActiveChar().getCurrentClass() == null) {
 			return 1;
 		}
 
 		return (int) calcStat(Stats.MAX_HP,
 				PlayerStatDataTable.getInstance().getMaxHp(getActiveChar().getClassId(), getActiveChar().getLevel()),
-				null, null);
+				null,
+				null);
 	}
 
 	@Override
-	public final int getMaxMp()
-	{
-		if (getActiveChar() == null || getActiveChar().getCurrentClass() == null)
-		{
+	public final int getMaxMp() {
+		if (getActiveChar() == null || getActiveChar().getCurrentClass() == null) {
 			return 1;
 		}
 
 		// Get the Max MP (base+modifier) of the L2PcInstance
 		int val = (int) calcStat(Stats.MAX_MP,
 				PlayerStatDataTable.getInstance().getMaxMp(getActiveChar().getClassId(), getActiveChar().getLevel()),
-				null, null);
+				null,
+				null);
 
-		if (val != oldMaxMp)
-		{
+		if (val != oldMaxMp) {
 			oldMaxMp = val;
 
 			// Launch a regen task if the new Max MP is higher than the old one
-			if (getActiveChar().getStatus().getCurrentMp() != val)
-			{
-				getActiveChar().getStatus()
-						.setCurrentMp(getActiveChar().getStatus().getCurrentMp()); // trigger start of regeneration
+			if (getActiveChar().getStatus().getCurrentMp() != val) {
+				getActiveChar().getStatus().setCurrentMp(getActiveChar().getStatus().getCurrentMp()); // trigger start of regeneration
 			}
 		}
 
@@ -591,39 +488,30 @@ public class PcStat extends PlayableStat
 	}
 
 	@Override
-	public final long getSp()
-	{
-		if (getActiveChar().isSubClassActive())
-		{
+	public final long getSp() {
+		if (getActiveChar().isSubClassActive()) {
 			return getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).getSp();
 		}
 
 		return super.getSp();
 	}
 
-	public final long getBaseClassSp()
-	{
+	public final long getBaseClassSp() {
 		return super.getSp();
 	}
 
 	@Override
-	public final void setSp(long value)
-	{
-		if (getActiveChar().isSubClassActive())
-		{
+	public final void setSp(long value) {
+		if (getActiveChar().isSubClassActive()) {
 			getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).setSp(value);
-		}
-		else
-		{
+		} else {
 			super.setSp(value);
 		}
 	}
 
 	@Override
-	public int getRunSpeed()
-	{
-		if (getActiveChar() == null)
-		{
+	public int getRunSpeed() {
+		if (getActiveChar() == null) {
 			return 1;
 		}
 
@@ -632,30 +520,25 @@ public class PcStat extends PlayableStat
 		L2PcInstance player = getActiveChar();
 
 		//Event
-		if (Elpy.registered.contains(this.getActiveChar()))
+		if (Elpy.registered.contains(this.getActiveChar())) {
 			return 120;
+		}
 
-
-		if (player.isMounted())
-		{
+		if (player.isMounted()) {
 			float baseRunSpd = NpcTable.getInstance().getTemplate(getActiveChar().getMountNpcId()).baseRunSpd;
 			val = (int) Math.round(calcStat(Stats.RUN_SPEED, baseRunSpd, null, null));
-		}
-		else
-		{
+		} else {
 			val = super.getRunSpeed();
 		}
 
 		val += Config.RUN_SPD_BOOST;
 
 		// Apply max run speed cap.
-		if (!player.isGM() && val > Config.MAX_RUN_SPEED )
-		{
+		if (!player.isGM() && val > Config.MAX_RUN_SPEED) {
 			return (int) (300 + Math.pow(val - 300, 0.60));
 		}
 
-		if (val < 2)
-		{
+		if (val < 2) {
 			val = 2;
 		}
 
@@ -663,23 +546,21 @@ public class PcStat extends PlayableStat
 	}
 
 	@Override
-	public int getPAtkSpd()
-	{
+	public int getPAtkSpd() {
 		int val = super.getPAtkSpd();
 
-		if (val > Config.MAX_PATK_SPEED)
-		{
+		if (val > Config.MAX_PATK_SPEED) {
 			return Config.MAX_PATK_SPEED;
 		}
 		//Event
-		if (Elpy.registered.contains(this.getActiveChar()))
+		if (Elpy.registered.contains(this.getActiveChar())) {
 			return 500;
+		}
 		return val;
 	}
 
 	@Override
-	public int getEvasionRate(L2Character target)
-	{
+	public int getEvasionRate(L2Character target) {
 
 		//if (val > Config.MAX_EVASION && !getActiveChar().isGM())
 		//	return Config.MAX_EVASION;
@@ -688,8 +569,7 @@ public class PcStat extends PlayableStat
 	}
 
 	@Override
-	public int getMEvasionRate(L2Character target)
-	{
+	public int getMEvasionRate(L2Character target) {
 
 		//if (val > Config.MAX_EVASION && !getActiveChar().isGM())
 		//	return Config.MAX_EVASION;
@@ -698,30 +578,23 @@ public class PcStat extends PlayableStat
 	}
 
 	@Override
-	public int getMAtkSpd()
-	{
+	public int getMAtkSpd() {
 		int val = super.getMAtkSpd();
 
-
-		if (val > Config.MAX_MATK_SPEED)
-		{
+		if (val > Config.MAX_MATK_SPEED) {
 			return Config.MAX_MATK_SPEED;
 		}
-
 
 		return val;
 	}
 
 	@Override
-	public float getMovementSpeedMultiplier()
-	{
-		if (getActiveChar() == null)
-		{
+	public float getMovementSpeedMultiplier() {
+		if (getActiveChar() == null) {
 			return 1;
 		}
 
-		if (getActiveChar().isMounted())
-		{
+		if (getActiveChar().isMounted()) {
 			return getRunSpeed() * 1f / NpcTable.getInstance().getTemplate(getActiveChar().getMountNpcId()).baseRunSpd;
 		}
 
@@ -729,10 +602,8 @@ public class PcStat extends PlayableStat
 	}
 
 	@Override
-	public int getWalkSpeed()
-	{
-		if (getActiveChar() == null)
-		{
+	public int getWalkSpeed() {
+		if (getActiveChar() == null) {
 			return 1;
 		}
 
@@ -742,8 +613,7 @@ public class PcStat extends PlayableStat
 	/*
 	 * Return current vitality points in integer format
 	 */
-	public int getVitalityPoints()
-	{
+	public int getVitalityPoints() {
 		return (int) vitalityPoints;
 	}
 
@@ -752,34 +622,27 @@ public class PcStat extends PlayableStat
 	 *
 	 * if quiet = true - does not send system messages
 	 */
-	public void setVitalityPoints(int points, boolean quiet, boolean allowGM)
-	{
+	public void setVitalityPoints(int points, boolean quiet, boolean allowGM) {
 		points = Math.min(Math.max(points, MIN_VITALITY_POINTS), MAX_VITALITY_POINTS);
-		if (points == vitalityPoints)
-		{
+		if (points == vitalityPoints) {
 			return;
 		}
 
-		if (getActiveChar().isGM() && !allowGM)
-		{
+		if (getActiveChar().isGM() && !allowGM) {
 			return;
 		}
 
 		vitalityPoints = points;
 	}
 
-	public synchronized void updateVitalityPoints(float points, boolean useRates, boolean quiet)
-	{
-		if (points == 0 || !Config.ENABLE_VITALITY)
-		{
+	public synchronized void updateVitalityPoints(float points, boolean useRates, boolean quiet) {
+		if (points == 0 || !Config.ENABLE_VITALITY) {
 			return;
 		}
 
-		if (useRates)
-		{
+		if (useRates) {
 			byte level = getLevel();
-			if (level < 10)
-			{
+			if (level < 10) {
 				return;
 			}
 
@@ -796,20 +659,17 @@ public class PcStat extends PlayableStat
 				}
 			}
 
-			if (points < 0)
-			{
+			if (points < 0) {
 				// vitality decreased
 				points *= Config.RATE_VITALITY_LOST;
 			}
 		}
 
-		if (points < 0)
-		{
+		if (points < 0) {
 			points = Math.max(vitalityPoints + points, MIN_VITALITY_POINTS);
 		}
 
-		if (points == vitalityPoints)
-		{
+		if (points == vitalityPoints) {
 			return;
 		}
 
@@ -817,8 +677,7 @@ public class PcStat extends PlayableStat
 	}
 
 	@Override
-	public int getDefenseElementValue(byte defenseAttribute)
-	{
+	public int getDefenseElementValue(byte defenseAttribute) {
 		return super.getDefenseElementValue(defenseAttribute) + getActiveChar().getHennaStatElem(defenseAttribute);
 	}
 }

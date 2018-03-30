@@ -23,40 +23,33 @@ import l2server.gameserver.network.serverpackets.ExShowFortressSiegeInfo;
 /**
  * @author KenM
  */
-public class RequestFortressSiegeInfo extends L2GameClientPacket
-{
-
+public class RequestFortressSiegeInfo extends L2GameClientPacket {
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// trigger
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2GameClient client = getClient();
-		if (client != null)
-		{
-			for (Fort fort : FortManager.getInstance().getForts())
-			{
-				if (fort != null && fort.getSiege().getIsInProgress())
-				{
+		if (client != null) {
+			for (Fort fort : FortManager.getInstance().getForts()) {
+				if (fort != null && fort.getSiege().getIsInProgress()) {
 					client.sendPacket(new ExShowFortressSiegeInfo(fort));
 				}
 			}
 		}
 	}
-
+	
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

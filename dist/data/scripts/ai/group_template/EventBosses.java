@@ -33,8 +33,7 @@ import java.util.Map;
  * @author LasTravel
  */
 
-public class EventBosses extends L2AttackableAIScript
-{
+public class EventBosses extends L2AttackableAIScript {
 	private static boolean isBossActive = false;
 	private static int bossStatus = 0;
 	private static final L2Skill knightFrenzy = SkillTable.getInstance().getInfo(10025, 4);
@@ -86,12 +85,10 @@ public class EventBosses extends L2AttackableAIScript
 			//Scarlet":	Frintezza's Cloak, Frintezza's Necklace, Halisha's Helmet, Seal of Shilen
 	};
 
-	public EventBosses(int questId, String name, String descr)
-	{
+	public EventBosses(int questId, String name, String descr) {
 		super(questId, name, descr);
 
-		for (int i = 80106; i <= 80119; i++)
-		{
+		for (int i = 80106; i <= 80119; i++) {
 			addKillId(i);
 			addSpawnId(i);
 			addAttackId(i);
@@ -99,23 +96,18 @@ public class EventBosses extends L2AttackableAIScript
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet, L2Skill skill)
-	{
-		if (!attackerIps.containsValue(player.getExternalIP()))
-		{
+	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet, L2Skill skill) {
+		if (!attackerIps.containsValue(player.getExternalIP())) {
 			attackerIps.put(player, player.getExternalIP());
 		}
 
-		if (bossStatus == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.15)
-		{
+		if (bossStatus == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.15) {
 			bossStatus = 1;
 
 			npc.broadcastPacket(new CreatureSay(npc.getObjectId(), 0, npc.getName(), "WooooooooaHHH!"));
 
 			knightFrenzy.getEffects(npc, npc);
-		}
-		else if (bossStatus == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
-		{
+		} else if (bossStatus == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.05) {
 			bossStatus = 2;
 
 			npc.broadcastPacket(new CreatureSay(npc.getObjectId(), 0, npc.getName(), "NOO! NOOO!!"));
@@ -127,48 +119,36 @@ public class EventBosses extends L2AttackableAIScript
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
-		if (npc != null && npc.getInstanceId() == 0)
-		{
-			for (Map.Entry<L2PcInstance, String> playerInfo : attackerIps.entrySet())
-			{
-				if (playerInfo == null)
-				{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+		if (npc != null && npc.getInstanceId() == 0) {
+			for (Map.Entry<L2PcInstance, String> playerInfo : attackerIps.entrySet()) {
+				if (playerInfo == null) {
 					continue;
 				}
 
 				L2PcInstance playerToReward = playerInfo.getKey();
 
-				if (playerToReward == null || !playerToReward.isOnline() ||
-						!playerToReward.isInsideRadius(npc, 4000, false, false))
-				{
+				if (playerToReward == null || !playerToReward.isOnline() || !playerToReward.isInsideRadius(npc, 4000, false, false)) {
 					continue;
 				}
 
 				boolean rewarded = false;
 
-				for (String[] i : individualDrop)
-				{
+				for (String[] i : individualDrop) {
 					if (Integer.valueOf(i[0]) == npc.getNpcId()) //Id found
 					{
 						String[] a = i[1].split(";");
 
-						if (!a[0].isEmpty())
-						{
-							for (String b : a)
-							{
-								if (rewarded)
-								{
+						if (!a[0].isEmpty()) {
+							for (String b : a) {
+								if (rewarded) {
 									continue;
 								}
 
 								String[] c = b.split(",");
 
-								if (!c[0].isEmpty())
-								{
-									if (Integer.valueOf(c[1]) > Rnd.get(100))
-									{
+								if (!c[0].isEmpty()) {
+									if (Integer.valueOf(c[1]) > Rnd.get(100)) {
 										rewarded = true;
 
 										int itemId = Integer.valueOf(c[0]);
@@ -177,16 +157,14 @@ public class EventBosses extends L2AttackableAIScript
 
 										playerToReward.addItem(getName(), itemId, itemCount, npc, true);
 
-										npc.broadcastPacket(new CreatureSay(npc.getObjectId(), 0, npc.getName(),
+										npc.broadcastPacket(new CreatureSay(npc.getObjectId(),
+												0,
+												npc.getName(),
 												" Player:  " + playerToReward.getName() + ", rewarded with: " +
-														ItemTable.getInstance().getTemplate(itemId).getName() + "(" +
-														itemCount + ")"));
+														ItemTable.getInstance().getTemplate(itemId).getName() + "(" + itemCount + ")"));
 
-										GmListTable.broadcastMessageToGMs(
-												getName() + ": Player: " + playerToReward.getName() +
-														", rewarded with: " +
-														ItemTable.getInstance().getTemplate(itemId).getName() + "(" +
-														itemCount + ")");
+										GmListTable.broadcastMessageToGMs(getName() + ": Player: " + playerToReward.getName() + ", rewarded with: " +
+												ItemTable.getInstance().getTemplate(itemId).getName() + "(" + itemCount + ")");
 									}
 								}
 							}
@@ -207,10 +185,8 @@ public class EventBosses extends L2AttackableAIScript
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
-		if (npc != null && npc.getInstanceId() == 0)
-		{
+	public final String onSpawn(L2Npc npc) {
+		if (npc != null && npc.getInstanceId() == 0) {
 			L2Spawn spawn = npc.getSpawn();
 
 			spawn.stopRespawn();
@@ -239,13 +215,11 @@ public class EventBosses extends L2AttackableAIScript
 	}
 
 	@Override
-	public int getOnKillDelay(int npcId)
-	{
+	public int getOnKillDelay(int npcId) {
 		return 0;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new EventBosses(-1, "EventBosses", "ai");
 	}
 }

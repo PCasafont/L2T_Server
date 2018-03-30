@@ -22,65 +22,56 @@ import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
-public class EffectHealPercent extends L2Effect
-{
-	public EffectHealPercent(Env env, L2EffectTemplate template)
-	{
+public class EffectHealPercent extends L2Effect {
+	public EffectHealPercent(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
-
+	
 	// Special constructor to steal this effect
-	public EffectHealPercent(Env env, L2Effect effect)
-	{
+	public EffectHealPercent(Env env, L2Effect effect) {
 		super(env, effect);
 	}
-
+	
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.HEAL_OVER_TIME;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (getEffected().isDead())
-		{
+	public boolean onStart() {
+		if (getEffected().isDead()) {
 			return false;
 		}
-
-		if (getEffected() instanceof L2DoorInstance)
-		{
+		
+		if (getEffected() instanceof L2DoorInstance) {
 			return false;
 		}
-
+		
 		double hp = getEffected().getCurrentHp();
 		double maxhp = getEffected().getMaxHp();
-
+		
 		double recoveredHp = calc() * maxhp / 100.0;
 		hp += recoveredHp;
-		if (hp > maxhp)
-		{
+		if (hp > maxhp) {
 			hp = maxhp;
 		}
-
+		
 		getEffected().setCurrentHp(hp);
 		StatusUpdate suhp = new StatusUpdate(getEffected());
 		suhp.addAttribute(StatusUpdate.CUR_HP, (int) hp);
 		getEffected().sendPacket(suhp);
-
+		
 		return true;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 }

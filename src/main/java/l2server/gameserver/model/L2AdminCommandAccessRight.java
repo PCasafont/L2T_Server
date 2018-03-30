@@ -20,8 +20,7 @@ import l2server.gameserver.datatables.AccessLevels;
 /**
  * @author FBIagent<br>
  */
-public class L2AdminCommandAccessRight
-{
+public class L2AdminCommandAccessRight {
 	/**
 	 * The admin command<br>
 	 */
@@ -31,68 +30,58 @@ public class L2AdminCommandAccessRight
 	 */
 	private L2AccessLevel[] accessLevels = null;
 	private boolean requireConfirm;
-
+	
 	/**
 	 * Initialized members
 	 *
 	 * @param adminCommand as String
 	 * @param accessLevels as String
 	 */
-	public L2AdminCommandAccessRight(String adminCommand, String accessLevels, boolean confirm)
-	{
+	public L2AdminCommandAccessRight(String adminCommand, String accessLevels, boolean confirm) {
 		this.adminCommand = adminCommand;
 		requireConfirm = confirm;
-
+		
 		String[] accessLevelsSplit = accessLevels.split(",");
 		int numLevels = accessLevelsSplit.length;
-
-        this.accessLevels = new L2AccessLevel[numLevels];
-
-		for (int i = 0; i < numLevels; ++i)
-		{
-			try
-			{
-                this.accessLevels[i] = AccessLevels.getInstance().getAccessLevel(Integer.parseInt(accessLevelsSplit[i]));
-			}
-			catch (NumberFormatException nfe)
-			{
-                this.accessLevels[i] = null;
+		
+		this.accessLevels = new L2AccessLevel[numLevels];
+		
+		for (int i = 0; i < numLevels; ++i) {
+			try {
+				this.accessLevels[i] = AccessLevels.getInstance().getAccessLevel(Integer.parseInt(accessLevelsSplit[i]));
+			} catch (NumberFormatException nfe) {
+				this.accessLevels[i] = null;
 			}
 		}
 	}
-
+	
 	/**
 	 * Returns the admin command the access right belongs to<br><br>
 	 *
 	 * @return String: the admin command the access right belongs to<br>
 	 */
-	public String getAdminCommand()
-	{
+	public String getAdminCommand() {
 		return adminCommand;
 	}
-
+	
 	/**
 	 * Checks if the given characterAccessLevel is allowed to use the admin command which belongs to this access right<br><br>
 	 *
 	 * @param characterAccessLevel<br><br>
 	 * @return boolean: true if characterAccessLevel is allowed to use the admin command which belongs to this access right, otherwise false<br>
 	 */
-	public boolean hasAccess(L2AccessLevel characterAccessLevel)
-	{
-		for (L2AccessLevel accessLevel : accessLevels)
-		{
-			if (accessLevel != null && (accessLevel.getLevel() == characterAccessLevel.getLevel() ||
-					characterAccessLevel.hasChildAccess(accessLevel)))
-			{
+	public boolean hasAccess(L2AccessLevel characterAccessLevel) {
+		for (L2AccessLevel accessLevel : accessLevels) {
+			if (accessLevel != null &&
+					(accessLevel.getLevel() == characterAccessLevel.getLevel() || characterAccessLevel.hasChildAccess(accessLevel))) {
 				return true;
 			}
 		}
-
+		
 		return false;
 	}
-
-	public boolean getRequireConfirm()
-	{
+	
+	public boolean getRequireConfirm() {
 		return requireConfirm;
 	}
 }

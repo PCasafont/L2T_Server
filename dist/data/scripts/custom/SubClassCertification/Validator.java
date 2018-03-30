@@ -21,123 +21,34 @@ import l2server.gameserver.model.quest.Quest;
 /**
  * @author DS
  */
-public class Validator extends Quest
-{
+public class Validator extends Quest {
 	// arrays must be sorted
 	@SuppressWarnings("unused")
-	private static final int[] allCertSkillIds = {
-			631,
-			632,
-			633,
-			634,
-			637,
-			638,
-			639,
-			640,
-			641,
-			642,
-			643,
-			644,
-			645,
-			646,
-			647,
-			648,
-			650,
-			651,
-			652,
-			653,
-			654,
-			655,
-			656,
-			657,
-			658,
-			659,
-			660,
-			661,
-			662,
-			799,
-			800,
-			801,
-			802,
-			803,
-			804,
-			1489,
-			1490,
-			1491
-	};
+	private static final int[] allCertSkillIds =
+			{631, 632, 633, 634, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660,
+					661, 662, 799, 800, 801, 802, 803, 804, 1489, 1490, 1491};
 	@SuppressWarnings("unused")
-	private static final int[][] certSkillsByLevel = {
-			{631, 632, 633, 634}, {631, 632, 633, 634}, {
-			637,
-			638,
-			639,
-			640,
-			641,
-			642,
-			643,
-			644,
-			645,
-			646,
-			647,
-			648,
-			650,
-			651,
-			652,
-			653,
-			654,
-			655,
-			799,
-			800,
-			801,
-			802,
-			803,
-			804,
-			1489,
-			1490,
-			1491
-	}, {656, 657, 658, 659, 660, 661, 662}
-	};
+	private static final int[][] certSkillsByLevel = {{631, 632, 633, 634}, {631, 632, 633, 634},
+			{637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 650, 651, 652, 653, 654, 655, 799, 800, 801, 802, 803, 804, 1489, 1490,
+					1491}, {656, 657, 658, 659, 660, 661, 662}};
 
 	@SuppressWarnings("unused")
-	private static final int[] allCertItemIds = {
-			10280,
-			10281,
-			10282,
-			10283,
-			10284,
-			10285,
-			10286,
-			10287,
-			10288,
-			10289,
-			10290,
-			10291,
-			10292,
-			10293,
-			10294,
-			10612
-	};
+	private static final int[] allCertItemIds =
+			{10280, 10281, 10282, 10283, 10284, 10285, 10286, 10287, 10288, 10289, 10290, 10291, 10292, 10293, 10294, 10612};
 	@SuppressWarnings("unused")
-	private static final int[][] certItemsByLevel = {
-			{10280},
-			{10280},
-			{10612, 10281, 10282, 10283, 10284, 10285, 10286, 10287},
-			{10288, 10289, 10290, 10291, 10292, 10293, 10294}
-	};
+	private static final int[][] certItemsByLevel =
+			{{10280}, {10280}, {10612, 10281, 10282, 10283, 10284, 10285, 10286, 10287}, {10288, 10289, 10290, 10291, 10292, 10293, 10294}};
 
 	@SuppressWarnings("unused")
-	private static final String[] VARS =
-			{"EmergentAbility65-", "EmergentAbility70-", "ClassAbility75-", "ClassAbility80-"};
+	private static final String[] VARS = {"EmergentAbility65-", "EmergentAbility70-", "ClassAbility75-", "ClassAbility80-"};
 
-	public Validator(int id, String name, String descr)
-	{
+	public Validator(int id, String name, String descr) {
 		super(id, name, descr);
 		setOnEnterWorld(true);
 	}
 
 	@Override
-	public final String onEnterWorld(L2PcInstance player)
-	{
+	public final String onEnterWorld(L2PcInstance player) {
 		return null;
 		/*if (!Config.SKILL_CHECK_ENABLE)
             return null;
@@ -392,8 +303,7 @@ public class Validator extends Quest
 		return result;*/
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Validator(-1, Validator.class.getSimpleName(), "custom");
 	}
 }

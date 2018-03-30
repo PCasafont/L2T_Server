@@ -18,52 +18,43 @@ package l2server.gameserver.model.itemcontainer;
 import l2server.gameserver.model.L2ItemInstance.ItemLocation;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-public class PcWarehouse extends Warehouse
-{
+public class PcWarehouse extends Warehouse {
 	//
 
 	private L2PcInstance owner;
 
-	public PcWarehouse(L2PcInstance owner)
-	{
+	public PcWarehouse(L2PcInstance owner) {
 		this.owner = owner;
 	}
 
 	@Override
-	public String getName()
-	{
+	public String getName() {
 		return "Warehouse";
 	}
 
 	@Override
-	public L2PcInstance getOwner()
-	{
+	public L2PcInstance getOwner() {
 		return owner;
 	}
 
 	@Override
-	public ItemLocation getBaseLocation()
-	{
+	public ItemLocation getBaseLocation() {
 		return ItemLocation.WAREHOUSE;
 	}
 
-	public String getLocationId()
-	{
+	public String getLocationId() {
 		return "0";
 	}
 
-	public int getLocationId(boolean dummy)
-	{
+	public int getLocationId(boolean dummy) {
 		return 0;
 	}
 
-	public void setLocationId(L2PcInstance dummy)
-	{
+	public void setLocationId(L2PcInstance dummy) {
 	}
 
 	@Override
-	public boolean validateCapacity(long slots)
-	{
+	public boolean validateCapacity(long slots) {
 		return items.size() + slots <= owner.getWareHouseLimit();
 	}
 }

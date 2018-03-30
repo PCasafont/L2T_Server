@@ -15,40 +15,35 @@
 
 package ai.individual.Summons;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Npc;
-
-import ai.group_template.L2AttackableAIScript;
 
 import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author LasTravel
  * @author Pere
- *         <p>
- *         Shadow Snare (skill id: 11058) AI
+ * <p>
+ * Shadow Snare (skill id: 11058) AI
  */
 
-public class ShadowSnare extends L2AttackableAIScript
-{
+public class ShadowSnare extends L2AttackableAIScript {
 	private static final int[] whisperOfFearIds = {13323, 13324, 13325};
 	private static final L2Skill shadowSnareZone = SkillTable.getInstance().getInfo(11059, 1);
 
-	public ShadowSnare(int id, String name, String descr)
-	{
+	public ShadowSnare(int id, String name, String descr) {
 		super(id, name, descr);
 
-		for (int i : whisperOfFearIds)
-		{
+		for (int i : whisperOfFearIds) {
 			addSpawnId(i);
 		}
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
+	public final String onSpawn(L2Npc npc) {
 		npc.disableCoreAI(true);
 
 		ShadowSnareAI ai = new ShadowSnareAI(npc);
@@ -58,29 +53,22 @@ public class ShadowSnare extends L2AttackableAIScript
 		return null;
 	}
 
-	class ShadowSnareAI implements Runnable
-	{
+	class ShadowSnareAI implements Runnable {
 		private L2Npc whisperOfFear;
 		private ScheduledFuture<?> schedule = null;
 
-		protected ShadowSnareAI(L2Npc npc)
-		{
+		protected ShadowSnareAI(L2Npc npc) {
 			whisperOfFear = npc;
 		}
 
-		public void setSchedule(ScheduledFuture<?> schedule)
-		{
+		public void setSchedule(ScheduledFuture<?> schedule) {
 			this.schedule = schedule;
 		}
 
 		@Override
-		public void run()
-		{
-			if (whisperOfFear == null || whisperOfFear.isDead() || whisperOfFear.isDecayed() ||
-					whisperOfFear.getOwner().isAlikeDead())
-			{
-				if (schedule != null)
-				{
+		public void run() {
+			if (whisperOfFear == null || whisperOfFear.isDead() || whisperOfFear.isDecayed() || whisperOfFear.getOwner().isAlikeDead()) {
+				if (schedule != null) {
 					schedule.cancel(true);
 					return;
 				}
@@ -91,8 +79,7 @@ public class ShadowSnare extends L2AttackableAIScript
 		}
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new ShadowSnare(-1, "ShadowSnare", "ai/individual");
 	}
 }

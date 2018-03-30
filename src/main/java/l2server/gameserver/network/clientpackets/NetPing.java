@@ -5,22 +5,19 @@ import l2server.log.Log;
 /**
  * @author MegaParzor!
  */
-public class NetPing extends L2GameClientPacket
-{
+public class NetPing extends L2GameClientPacket {
 	@SuppressWarnings("unused")
 	private int pingID;
 
 	@Override
-	public void readImpl()
-	{
+	public void readImpl() {
 		pingID = readD();
 		readD(); // unk2
 		readD(); // unk1
 	}
 
 	@Override
-	public void runImpl()
-	{
+	public void runImpl() {
 		// TODO
 		Log.info(getType() + " packet was received from " + getClient() + ".");
 	}

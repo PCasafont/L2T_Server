@@ -21,23 +21,19 @@ import l2server.util.Rnd;
 /**
  * @author mkizub
  */
-public final class LambdaRnd extends Lambda
-{
+public final class LambdaRnd extends Lambda {
 
 	private final Lambda max;
 	private final boolean linear;
 
-	public LambdaRnd(Lambda max, boolean linear)
-	{
+	public LambdaRnd(Lambda max, boolean linear) {
 		this.max = max;
 		this.linear = linear;
 	}
 
 	@Override
-	public double calc(Env env)
-	{
-		if (linear)
-		{
+	public double calc(Env env) {
+		if (linear) {
 			return max.calc(env) * Rnd.nextDouble();
 		}
 		return max.calc(env) * Rnd.nextGaussian();

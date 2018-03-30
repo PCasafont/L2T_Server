@@ -17,27 +17,24 @@ package l2server.gameserver.network.serverpackets;
 
 /**
  * @author chris_00
- *         <p>
- *         Asks the player to join a CC
+ * <p>
+ * Asks the player to join a CC
  */
-public class ExAskJoinMPCC extends L2GameServerPacket
-{
-
+public class ExAskJoinMPCC extends L2GameServerPacket {
+	
 	private String requestorName;
-
+	
 	/**
 	 */
-	public ExAskJoinMPCC(String requestorName)
-	{
+	public ExAskJoinMPCC(String requestorName) {
 		this.requestorName = requestorName;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeS(requestorName); // name of CCLeader
 	}
 }

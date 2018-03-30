@@ -29,37 +29,24 @@ import java.util.logging.Logger;
 /**
  * @author DS
  */
-public class BoatRunePrimeval implements Runnable
-{
+public class BoatRunePrimeval implements Runnable {
 	private static final Logger log = Logger.getLogger(BoatRunePrimeval.class.getName());
 
 	// Time: 239s
-	private static final VehiclePathPoint[] RUNE_TO_PRIMEVAL = {
-			new VehiclePathPoint(32750, -39300, -3610, 180, 800),
-			new VehiclePathPoint(27440, -39328, -3610, 250, 1000),
-			new VehiclePathPoint(19616, -39360, -3610, 270, 1000),
-			new VehiclePathPoint(3840, -38528, -3610, 270, 1000),
-			new VehiclePathPoint(1664, -37120, -3610, 270, 1000),
-			new VehiclePathPoint(896, -34560, -3610, 180, 1800),
-			new VehiclePathPoint(832, -31104, -3610, 180, 180),
-			new VehiclePathPoint(2240, -29132, -3610, 150, 1800),
-			new VehiclePathPoint(4160, -27828, -3610, 150, 1800),
-			new VehiclePathPoint(5888, -27279, -3610, 150, 1800),
-			new VehiclePathPoint(7000, -27279, -3610, 150, 1800),
-			new VehiclePathPoint(10342, -27279, -3610, 150, 1800)
-	};
+	private static final VehiclePathPoint[] RUNE_TO_PRIMEVAL =
+			{new VehiclePathPoint(32750, -39300, -3610, 180, 800), new VehiclePathPoint(27440, -39328, -3610, 250, 1000),
+					new VehiclePathPoint(19616, -39360, -3610, 270, 1000), new VehiclePathPoint(3840, -38528, -3610, 270, 1000),
+					new VehiclePathPoint(1664, -37120, -3610, 270, 1000), new VehiclePathPoint(896, -34560, -3610, 180, 1800),
+					new VehiclePathPoint(832, -31104, -3610, 180, 180), new VehiclePathPoint(2240, -29132, -3610, 150, 1800),
+					new VehiclePathPoint(4160, -27828, -3610, 150, 1800), new VehiclePathPoint(5888, -27279, -3610, 150, 1800),
+					new VehiclePathPoint(7000, -27279, -3610, 150, 1800), new VehiclePathPoint(10342, -27279, -3610, 150, 1800)};
 
 	// Time: 221s
-	private static final VehiclePathPoint[] PRIMEVAL_TO_RUNE = {
-			new VehiclePathPoint(15528, -27279, -3610, 180, 800),
-			new VehiclePathPoint(22304, -29664, -3610, 290, 800),
-			new VehiclePathPoint(33824, -26880, -3610, 290, 800),
-			new VehiclePathPoint(38848, -21792, -3610, 240, 1200),
-			new VehiclePathPoint(43424, -22080, -3610, 180, 1800),
-			new VehiclePathPoint(44320, -25152, -3610, 180, 1800),
-			new VehiclePathPoint(40576, -31616, -3610, 250, 800),
-			new VehiclePathPoint(36819, -35315, -3610, 220, 800)
-	};
+	private static final VehiclePathPoint[] PRIMEVAL_TO_RUNE =
+			{new VehiclePathPoint(15528, -27279, -3610, 180, 800), new VehiclePathPoint(22304, -29664, -3610, 290, 800),
+					new VehiclePathPoint(33824, -26880, -3610, 290, 800), new VehiclePathPoint(38848, -21792, -3610, 240, 1200),
+					new VehiclePathPoint(43424, -22080, -3610, 180, 1800), new VehiclePathPoint(44320, -25152, -3610, 180, 1800),
+					new VehiclePathPoint(40576, -31616, -3610, 250, 800), new VehiclePathPoint(36819, -35315, -3610, 220, 800)};
 
 	private static final VehiclePathPoint[] RUNE_DOCK = {new VehiclePathPoint(34381, -37680, -3610, 220, 800)};
 
@@ -80,8 +67,7 @@ public class BoatRunePrimeval implements Runnable
 	private final PlaySound RUNE_SOUND;
 	private final PlaySound PRIMEVAL_SOUND;
 
-	public BoatRunePrimeval(L2BoatInstance boat)
-	{
+	public BoatRunePrimeval(L2BoatInstance boat) {
 		this.boat = boat;
 
 		ARRIVED_AT_RUNE = new CreatureSay(0, Say2.BOAT, 801, 1620);
@@ -92,19 +78,15 @@ public class BoatRunePrimeval implements Runnable
 		LEAVING_PRIMEVAL = new CreatureSay(0, Say2.BOAT, 801, 1990);
 		BUSY_RUNE = new CreatureSay(0, Say2.BOAT, 801, 1993);
 
-		RUNE_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, boat.getObjectId(), RUNE_DOCK[0].x,
-				RUNE_DOCK[0].y, RUNE_DOCK[0].z);
-		PRIMEVAL_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, boat.getObjectId(), PRIMEVAL_DOCK.x,
-				PRIMEVAL_DOCK.y, PRIMEVAL_DOCK.z);
+		RUNE_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, boat.getObjectId(), RUNE_DOCK[0].x, RUNE_DOCK[0].y, RUNE_DOCK[0].z);
+		PRIMEVAL_SOUND =
+				new PlaySound(0, "itemsound.ship_arrival_departure", 1, boat.getObjectId(), PRIMEVAL_DOCK.x, PRIMEVAL_DOCK.y, PRIMEVAL_DOCK.z);
 	}
 
 	@Override
-	public void run()
-	{
-		try
-		{
-			switch (cycle)
-			{
+	public void run() {
+		try {
+			switch (cycle) {
 				case 0:
 					BoatManager.getInstance().dockShip(BoatManager.RUNE_HARBOR, false);
 					BoatManager.getInstance().broadcastPackets(RUNE_DOCK[0], PRIMEVAL_DOCK, LEAVING_RUNE, RUNE_SOUND);
@@ -113,27 +95,22 @@ public class BoatRunePrimeval implements Runnable
 					break;
 				case 1:
 					BoatManager.getInstance()
-							.broadcastPackets(PRIMEVAL_DOCK, RUNE_DOCK[0], ARRIVED_AT_PRIMEVAL, ARRIVED_AT_PRIMEVAL_2,
-									PRIMEVAL_SOUND);
+							.broadcastPackets(PRIMEVAL_DOCK, RUNE_DOCK[0], ARRIVED_AT_PRIMEVAL, ARRIVED_AT_PRIMEVAL_2, PRIMEVAL_SOUND);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 180000);
 					break;
 				case 2:
-					BoatManager.getInstance()
-							.broadcastPackets(PRIMEVAL_DOCK, RUNE_DOCK[0], LEAVING_PRIMEVAL, PRIMEVAL_SOUND);
+					BoatManager.getInstance().broadcastPackets(PRIMEVAL_DOCK, RUNE_DOCK[0], LEAVING_PRIMEVAL, PRIMEVAL_SOUND);
 					boat.payForRide(8924, 1, 10447, -24982, -3664);
 					boat.executePath(PRIMEVAL_TO_RUNE);
 					break;
 				case 3:
-					if (BoatManager.getInstance().dockBusy(BoatManager.RUNE_HARBOR))
-					{
-						if (shoutCount == 0)
-						{
+					if (BoatManager.getInstance().dockBusy(BoatManager.RUNE_HARBOR)) {
+						if (shoutCount == 0) {
 							BoatManager.getInstance().broadcastPacket(RUNE_DOCK[0], PRIMEVAL_DOCK, BUSY_RUNE);
 						}
 
 						shoutCount++;
-						if (shoutCount > 35)
-						{
+						if (shoutCount > 35) {
 							shoutCount = 0;
 						}
 
@@ -144,30 +121,23 @@ public class BoatRunePrimeval implements Runnable
 					break;
 				case 4:
 					BoatManager.getInstance().dockShip(BoatManager.RUNE_HARBOR, true);
-					BoatManager.getInstance()
-							.broadcastPackets(RUNE_DOCK[0], PRIMEVAL_DOCK, ARRIVED_AT_RUNE, ARRIVED_AT_RUNE_2,
-									RUNE_SOUND);
+					BoatManager.getInstance().broadcastPackets(RUNE_DOCK[0], PRIMEVAL_DOCK, ARRIVED_AT_RUNE, ARRIVED_AT_RUNE_2, RUNE_SOUND);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 180000);
 					break;
 			}
 			shoutCount = 0;
 			cycle++;
-			if (cycle > 4)
-			{
+			if (cycle > 4) {
 				cycle = 0;
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			log.log(Level.WARNING, e.getMessage());
 		}
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		final L2BoatInstance boat = BoatManager.getInstance().getNewBoat(5, 34381, -37680, -3610, 40785);
-		if (boat != null)
-		{
+		if (boat != null) {
 			boat.registerEngine(new BoatRunePrimeval(boat));
 			boat.runEngine(180000);
 			BoatManager.getInstance().dockShip(BoatManager.RUNE_HARBOR, true);

@@ -21,22 +21,18 @@ import l2server.gameserver.network.serverpackets.ExMentorList;
 /**
  * @author Erlandys
  */
-public class RequestMentorList extends L2GameClientPacket
-{
+public class RequestMentorList extends L2GameClientPacket {
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
 
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 

@@ -23,8 +23,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @version $Revision: 1.4.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public final class CreatureSay extends L2GameServerPacket
-{
+public final class CreatureSay extends L2GameServerPacket {
 	// ddSS
 	private int objectId;
 	private int textType;
@@ -33,62 +32,52 @@ public final class CreatureSay extends L2GameServerPacket
 	private String text = null;
 	private int msgId = -1;
 	private byte level = 0;
-
+	
 	/**
 	 */
-	public CreatureSay(int objectId, int messageType, String charName, String text)
-	{
+	public CreatureSay(int objectId, int messageType, String charName, String text) {
 		this.objectId = objectId;
 		textType = messageType;
 		this.charName = charName;
 		this.text = text;
 	}
-
-	public CreatureSay(L2Character activeChar, int messageType, String charName, String text)
-	{
+	
+	public CreatureSay(L2Character activeChar, int messageType, String charName, String text) {
 		objectId = activeChar.getObjectId();
 		textType = messageType;
 		this.charName = charName;
 		this.text = text;
 		level = (byte) activeChar.getLevel();
 	}
-
-	public CreatureSay(int objectId, int messageType, int charId, int msgId)
-	{
+	
+	public CreatureSay(int objectId, int messageType, int charId, int msgId) {
 		this.objectId = objectId;
 		textType = messageType;
 		this.charId = charId;
 		this.msgId = msgId;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objectId);
 		writeD(textType);
-		if (charName != null)
-		{
+		if (charName != null) {
 			writeS(charName);
-		}
-		else
-		{
+		} else {
 			writeD(charId);
 		}
 		writeD(msgId);
-		if (text != null)
-		{
+		if (text != null) {
 			writeS(text);
 		}
 		writeC(0x00);
 		writeC(level);
 	}
-
+	
 	@Override
-	public final void runImpl()
-	{
+	public final void runImpl() {
 		L2PcInstance pci = getClient().getActiveChar();
-		if (pci != null)
-		{
+		if (pci != null) {
 			pci.broadcastSnoop(textType, charName, text);
 		}
 	}

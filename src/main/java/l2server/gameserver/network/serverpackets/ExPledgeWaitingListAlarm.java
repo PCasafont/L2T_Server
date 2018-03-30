@@ -18,10 +18,8 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExPledgeWaitingListAlarm extends L2GameServerPacket
-{
+public class ExPledgeWaitingListAlarm extends L2GameServerPacket {
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 	}
 }

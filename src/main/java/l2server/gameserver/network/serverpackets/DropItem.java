@@ -33,8 +33,7 @@ import l2server.gameserver.model.L2ItemInstance;
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public class DropItem extends L2GameServerPacket
-{
+public class DropItem extends L2GameServerPacket {
 	private L2ItemInstance item;
 	private int charObjId;
 
@@ -44,15 +43,13 @@ public class DropItem extends L2GameServerPacket
 	 * @param item        : L2ItemInstance designating the item
 	 * @param playerObjId : int designating the player ID who dropped the item
 	 */
-	public DropItem(L2ItemInstance item, int playerObjId)
-	{
+	public DropItem(L2ItemInstance item, int playerObjId) {
 		this.item = item;
 		charObjId = playerObjId;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(charObjId);
 		writeD(item.getObjectId());
 		writeD(item.getItemId());

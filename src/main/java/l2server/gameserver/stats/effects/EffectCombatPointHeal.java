@@ -23,16 +23,13 @@ import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
-public class EffectCombatPointHeal extends L2Effect
-{
-	public EffectCombatPointHeal(Env env, L2EffectTemplate template)
-	{
+public class EffectCombatPointHeal extends L2Effect {
+	public EffectCombatPointHeal(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.BUFF;
 	}
 
@@ -40,24 +37,20 @@ public class EffectCombatPointHeal extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		L2Character target = getEffected();
-		if (target.isInvul(getEffector()))
-		{
+		if (target.isInvul(getEffector())) {
 			return false;
 		}
 
 		double cp = calc();
 
-		if (target.getCurrentCp() + cp > target.getMaxCp())
-		{
+		if (target.getCurrentCp() + cp > target.getMaxCp()) {
 			cp = target.getMaxCp() - target.getCurrentCp();
 		}
 		target.setCurrentCp(cp + target.getCurrentCp());

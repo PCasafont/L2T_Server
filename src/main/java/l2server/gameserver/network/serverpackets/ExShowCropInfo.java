@@ -45,32 +45,27 @@ import java.util.List;
  * @author l3x
  */
 
-public class ExShowCropInfo extends L2GameServerPacket
-{
+public class ExShowCropInfo extends L2GameServerPacket {
 	private List<CropProcure> crops;
 	private int manorId;
-
-	public ExShowCropInfo(int manorId, List<CropProcure> crops)
-	{
+	
+	public ExShowCropInfo(int manorId, List<CropProcure> crops) {
 		this.manorId = manorId;
 		this.crops = crops;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{ // Id
+	protected final void writeImpl() { // Id
 		writeH(0x24); // SubId
 		writeC(0);
 		writeD(manorId); // Manor ID
 		writeD(0);
-		if (crops == null)
-		{
+		if (crops == null) {
 			writeD(0);
 			return;
 		}
 		writeD(crops.size());
-		for (CropProcure crop : crops)
-		{
+		for (CropProcure crop : crops) {
 			writeD(crop.getId()); // Crop id
 			writeQ(crop.getAmount()); // Buy residual
 			writeQ(crop.getStartAmount()); // Buy

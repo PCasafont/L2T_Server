@@ -26,28 +26,23 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @author -Wooden-
  */
-public final class RequestOlympiadMatchList extends L2GameClientPacket
-{
+public final class RequestOlympiadMatchList extends L2GameClientPacket {
 	private static final String COMMAND = "arenalist";
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// trigger packet
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null || !activeChar.inObserverMode())
-		{
+		if (activeChar == null || !activeChar.inObserverMode()) {
 			return;
 		}
-
+		
 		IBypassHandler handler = BypassHandler.getInstance().getBypassHandler(COMMAND);
-		if (handler != null)
-		{
+		if (handler != null) {
 			handler.useBypass(COMMAND, activeChar, null);
 		}
 	}

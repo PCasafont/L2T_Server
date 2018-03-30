@@ -22,28 +22,24 @@ import l2server.gameserver.pathfinding.AbstractNodeLoc;
 /**
  * @author -Nemesiss-
  */
-public class NodeLoc extends AbstractNodeLoc
-{
+public class NodeLoc extends AbstractNodeLoc {
 	private int x;
 	private int y;
 	private short geoHeightAndNSWE;
 
-	public NodeLoc(int x, int y, short z)
-	{
+	public NodeLoc(int x, int y, short z) {
 		this.x = x;
 		this.y = y;
 		geoHeightAndNSWE = GeoData.getInstance().getHeightAndNSWE(x, y, z);
 	}
 
-	public void set(int x, int y, short z)
-	{
+	public void set(int x, int y, short z) {
 		this.x = x;
 		this.y = y;
 		geoHeightAndNSWE = GeoData.getInstance().getHeightAndNSWE(x, y, z);
 	}
 
-	public short getNSWE()
-	{
+	public short getNSWE() {
 		return (short) (geoHeightAndNSWE & 0x0f);
 	}
 
@@ -51,8 +47,7 @@ public class NodeLoc extends AbstractNodeLoc
 	 * @see l2server.gameserver.pathfinding.AbstractNodeLoc#getX()
 	 */
 	@Override
-	public int getX()
-	{
+	public int getX() {
 		return (x << 4) + L2World.MAP_MIN_X;
 	}
 
@@ -60,8 +55,7 @@ public class NodeLoc extends AbstractNodeLoc
 	 * @see l2server.gameserver.pathfinding.AbstractNodeLoc#getY()
 	 */
 	@Override
-	public int getY()
-	{
+	public int getY() {
 		return (y << 4) + L2World.MAP_MIN_Y;
 	}
 
@@ -69,15 +63,13 @@ public class NodeLoc extends AbstractNodeLoc
 	 * @see l2server.gameserver.pathfinding.AbstractNodeLoc#getZ()
 	 */
 	@Override
-	public short getZ()
-	{
+	public short getZ() {
 		short height = (short) (geoHeightAndNSWE & 0x0fff0);
 		return (short) (height >> 1);
 	}
 
 	@Override
-	public void setZ(short z)
-	{
+	public void setZ(short z) {
 		//
 	}
 
@@ -85,8 +77,7 @@ public class NodeLoc extends AbstractNodeLoc
 	 * @see l2server.gameserver.pathfinding.AbstractNodeLoc#getNodeX()
 	 */
 	@Override
-	public int getNodeX()
-	{
+	public int getNodeX() {
 		return x;
 	}
 
@@ -94,8 +85,7 @@ public class NodeLoc extends AbstractNodeLoc
 	 * @see l2server.gameserver.pathfinding.AbstractNodeLoc#getNodeY()
 	 */
 	@Override
-	public int getNodeY()
-	{
+	public int getNodeY() {
 		return y;
 	}
 
@@ -103,8 +93,7 @@ public class NodeLoc extends AbstractNodeLoc
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
-	public int hashCode()
-	{
+	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + x;
@@ -117,27 +106,21 @@ public class NodeLoc extends AbstractNodeLoc
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
-	public boolean equals(Object obj)
-	{
-		if (this == obj)
-		{
+	public boolean equals(Object obj) {
+		if (this == obj) {
 			return true;
 		}
-		if (obj == null)
-		{
+		if (obj == null) {
 			return false;
 		}
-		if (!(obj instanceof NodeLoc))
-		{
+		if (!(obj instanceof NodeLoc)) {
 			return false;
 		}
 		final NodeLoc other = (NodeLoc) obj;
-		if (x != other.x)
-		{
+		if (x != other.x) {
 			return false;
 		}
-		if (y != other.y)
-		{
+		if (y != other.y) {
 			return false;
 		}
 		return geoHeightAndNSWE == other.geoHeightAndNSWE;

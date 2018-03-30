@@ -15,49 +15,41 @@
 
 package ai.individual;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-import ai.group_template.L2AttackableAIScript;
-
 /**
  * @author LasTravel
- *         <p>
- *         Horn AI
- *         <p>
- *         Source:
- *         - http://l2wiki.com/Land_of_Chaos
+ * <p>
+ * Horn AI
+ * <p>
+ * Source:
+ * - http://l2wiki.com/Land_of_Chaos
  */
 
-public class Horn extends L2AttackableAIScript
-{
+public class Horn extends L2AttackableAIScript {
 	private static final int[] hornIds = {19460, 19461, 19462};
 	private static final int chaosHorn = 23348;
 	private static final int poras = 23335;
 
-	public Horn(int id, String name, String descr)
-	{
+	public Horn(int id, String name, String descr) {
 		super(id, name, descr);
 
-		for (int a : hornIds)
-		{
+		for (int a : hornIds) {
 			addKillId(a);
 		}
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
-		switch (npc.getNpcId())
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+		switch (npc.getNpcId()) {
 			case 19460: //Green
-				for (L2Character chara : npc.getKnownList().getKnownCharactersInRadius(600))
-				{
-					if (chara == null || !(chara instanceof L2MonsterInstance))
-					{
+				for (L2Character chara : npc.getKnownList().getKnownCharactersInRadius(600)) {
+					if (chara == null || !(chara instanceof L2MonsterInstance)) {
 						continue;
 					}
 
@@ -68,15 +60,13 @@ public class Horn extends L2AttackableAIScript
 				break;
 
 			case 19461: //Blue
-				for (int a = 0; a < 5; a++)
-				{
+				for (int a = 0; a < 5; a++) {
 					addSpawn(chaosHorn, npc.getX(), npc.getY(), npc.getZ(), 0, true, 60000, true);
 				}
 				break;
 
 			case 19462: //Red
-				for (int a = 0; a < 8; a++)
-				{
+				for (int a = 0; a < 8; a++) {
 					addSpawn(poras, npc.getX(), npc.getY(), npc.getZ(), 0, true, 60000, false);
 				}
 				break;
@@ -86,13 +76,11 @@ public class Horn extends L2AttackableAIScript
 	}
 
 	@Override
-	public int getOnKillDelay(int npcId)
-	{
+	public int getOnKillDelay(int npcId) {
 		return 0;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Horn(-1, "Horn", "ai");
 	}
 }

@@ -32,37 +32,27 @@ import java.util.Map;
  * temp handler
  * here u can found items that yet cannot be unhardcoded due to missing better core support
  */
-public class Potions extends ItemSkills
-{
+public class Potions extends ItemSkills {
 	/**
 	 */
-	public synchronized void useItem(L2Playable playable, L2ItemInstance item)
-	{
+	public synchronized void useItem(L2Playable playable, L2ItemInstance item) {
 		L2PcInstance activeChar; // use activeChar only for L2PcInstance checks where cannot be used PetInstance
 
-		if (playable instanceof L2PcInstance)
-		{
+		if (playable instanceof L2PcInstance) {
 			activeChar = (L2PcInstance) playable;
-		}
-		else if (playable instanceof L2PetInstance)
-		{
+		} else if (playable instanceof L2PetInstance) {
 			activeChar = ((L2PetInstance) playable).getOwner();
-		}
-		else
-		{
+		} else {
 			return;
 		}
 
-		if (activeChar.getEvent() != null && !activeChar.getEvent().onPotionUse(activeChar.getObjectId()))
-		{
+		if (activeChar.getEvent() != null && !activeChar.getEvent().onPotionUse(activeChar.getObjectId())) {
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
-		if (activeChar.isInOlympiadMode())
-		{
-			activeChar.sendPacket(
-					SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+		if (activeChar.isInOlympiadMode()) {
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
 			return;
 		}
 
@@ -76,48 +66,36 @@ public class Potions extends ItemSkills
 	 * @param level
 	 * @return
 	 */
-	public boolean usePotion(L2Playable activeChar, int magicId, int level)
-	{
+	public boolean usePotion(L2Playable activeChar, int magicId, int level) {
 
 		L2Skill skill = SkillTable.getInstance().getInfo(magicId, level);
 
-		if (skill != null)
-		{
-			if (!skill.checkCondition(activeChar, activeChar, false))
-			{
+		if (skill != null) {
+			if (!skill.checkCondition(activeChar, activeChar, false)) {
 				return false;
 			}
 			// Return false if potion is in reuse so it is not destroyed from inventory
-			if (activeChar.isSkillDisabled(skill.getId()) || activeChar.isAllSkillsDisabled())
-			{
+			if (activeChar.isSkillDisabled(skill.getId()) || activeChar.isAllSkillsDisabled()) {
 				displayReuse(activeChar, skill);
 				return false;
 			}
-			if (skill.isPotion())
-			{
+			if (skill.isPotion()) {
 				activeChar.doSimultaneousCast(skill);
-			}
-			else
-			{
+			} else {
 				activeChar.doCast(skill);
 			}
 
-			if (activeChar instanceof L2PcInstance)
-			{
+			if (activeChar instanceof L2PcInstance) {
 				L2PcInstance player = (L2PcInstance) activeChar;
 				// Only for Heal potions
-				if (magicId == 2031 || magicId == 2032 || magicId == 2037)
-				{
+				if (magicId == 2031 || magicId == 2032 || magicId == 2037) {
 					player.shortBuffStatusUpdate(magicId, level, 15);
 				}
 
-				if (!(player.isSitting() && !skill.isPotion()))
-				{
+				if (!(player.isSitting() && !skill.isPotion())) {
 					return true;
 				}
-			}
-			else if (activeChar instanceof L2PetInstance)
-			{
+			} else if (activeChar instanceof L2PetInstance) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PET_USES_S1);
 				sm.addString(skill.getName());
 				((L2PetInstance) activeChar).getOwner().sendPacket(sm);
@@ -127,46 +105,35 @@ public class Potions extends ItemSkills
 		return false;
 	}
 
-	private final void displayReuse(L2Playable activeChar, L2Skill skill)
-	{
+	private final void displayReuse(L2Playable activeChar, L2Skill skill) {
 		final L2PcInstance player = activeChar.getActingPlayer();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
 
 		final Map<Integer, TimeStamp> timeStamp = player.getReuseTimeStamp();
 		SystemMessage sm = null;
 
-		if (timeStamp != null && timeStamp.containsKey(skill.getId()))
-		{
+		if (timeStamp != null && timeStamp.containsKey(skill.getId())) {
 			final int remainingTime = (int) (player.getReuseTimeStamp().get(skill.getId()).getRemaining() / 1000);
 			final int hours = remainingTime / 3600;
 			final int minutes = remainingTime % 3600 / 60;
 			final int seconds = remainingTime % 60;
-			if (hours > 0)
-			{
-				sm = SystemMessage
-						.getSystemMessage(SystemMessageId.S2_HOURS_S3_MINUTES_S4_SECONDS_REMAINING_FOR_REUSE_S1);
+			if (hours > 0) {
+				sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HOURS_S3_MINUTES_S4_SECONDS_REMAINING_FOR_REUSE_S1);
 				sm.addSkillName(skill);
 				sm.addNumber(hours);
 				sm.addNumber(minutes);
-			}
-			else if (minutes > 0)
-			{
+			} else if (minutes > 0) {
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S2_MINUTES_S3_SECONDS_REMAINING_FOR_REUSE_S1);
 				sm.addSkillName(skill);
 				sm.addNumber(minutes);
-			}
-			else
-			{
+			} else {
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S2_SECONDS_REMAINING_FOR_REUSE_S1);
 				sm.addSkillName(skill);
 			}
 			sm.addNumber(seconds);
-		}
-		else
-		{
+		} else {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_PREPARED_FOR_REUSE);
 			sm.addSkillName(skill);
 		}

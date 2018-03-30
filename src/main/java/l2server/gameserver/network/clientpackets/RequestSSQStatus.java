@@ -26,23 +26,19 @@ import l2server.gameserver.network.serverpackets.SSQStatus;
  *
  * @author Tempy
  */
-public final class RequestSSQStatus extends L2GameClientPacket
-{
+public final class RequestSSQStatus extends L2GameClientPacket {
 
 	private int page;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		page = readC();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 

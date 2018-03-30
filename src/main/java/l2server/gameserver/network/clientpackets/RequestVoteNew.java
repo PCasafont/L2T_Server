@@ -22,35 +22,27 @@ import l2server.gameserver.network.serverpackets.ExVoteSystemInfo;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
 
-public final class RequestVoteNew extends L2GameClientPacket
-{
+public final class RequestVoteNew extends L2GameClientPacket {
 	private int targetId;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		targetId = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
 		L2Object object = activeChar.getTarget();
 
-		if (!(object instanceof L2PcInstance))
-		{
-			if (object == null)
-			{
+		if (!(object instanceof L2PcInstance)) {
+			if (object == null) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SELECT_TARGET));
-			}
-			else
-			{
+			} else {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			}
 			return;
@@ -58,28 +50,22 @@ public final class RequestVoteNew extends L2GameClientPacket
 
 		L2PcInstance target = (L2PcInstance) object;
 
-		if (target.getObjectId() != targetId)
-		{
+		if (target.getObjectId() != targetId) {
 			return;
 		}
 
-		if (target == activeChar)
-		{
+		if (target == activeChar) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_RECOMMEND_YOURSELF));
 			return;
 		}
 
-		if (activeChar.getRecomLeft() <= 0)
-		{
-			activeChar.sendPacket(
-					SystemMessage.getSystemMessage(SystemMessageId.YOU_CURRENTLY_DO_NOT_HAVE_ANY_RECOMMENDATIONS));
+		if (activeChar.getRecomLeft() <= 0) {
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CURRENTLY_DO_NOT_HAVE_ANY_RECOMMENDATIONS));
 			return;
 		}
 
-		if (target.getRecomHave() >= 255)
-		{
-			activeChar.sendPacket(
-					SystemMessage.getSystemMessage(SystemMessageId.YOUR_TARGET_NO_LONGER_RECEIVE_A_RECOMMENDATION));
+		if (target.getRecomHave() >= 255) {
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_TARGET_NO_LONGER_RECEIVE_A_RECOMMENDATION));
 			return;
 		}
 

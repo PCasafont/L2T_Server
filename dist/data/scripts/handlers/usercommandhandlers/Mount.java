@@ -23,18 +23,15 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @author Tempy
  */
-public class Mount implements IUserCommandHandler
-{
+public class Mount implements IUserCommandHandler {
 	private static final int[] COMMAND_IDS = {61};
 
 	/**
 	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	@Override
-	public synchronized boolean useUserCommand(int id, L2PcInstance activeChar)
-	{
-		if (id != COMMAND_IDS[0])
-		{
+	public synchronized boolean useUserCommand(int id, L2PcInstance activeChar) {
+		if (id != COMMAND_IDS[0]) {
 			return false;
 		}
 
@@ -45,8 +42,7 @@ public class Mount implements IUserCommandHandler
 	 * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
 	 */
 	@Override
-	public int[] getUserCommandList()
-	{
+	public int[] getUserCommandList() {
 		return COMMAND_IDS;
 	}
 }

@@ -22,16 +22,13 @@ import l2server.gameserver.datatables.BeautyTable.BeautyTemplate;
 /**
  * @author Pere
  */
-public final class ExResponseBeautyListPacket extends L2GameServerPacket
-{
+public final class ExResponseBeautyListPacket extends L2GameServerPacket {
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(0);
 		BeautyTemplate template = BeautyTable.getInstance().getTemplate(0);
 		writeD(template.getHairStyles().size());
-		for (BeautyInfo info : template.getHairStyles().values())
-		{
+		for (BeautyInfo info : template.getHairStyles().values()) {
 			writeD(info.getParentId());
 			writeD(info.getId());
 			writeD(info.getUnk()); // ???
@@ -39,11 +36,10 @@ public final class ExResponseBeautyListPacket extends L2GameServerPacket
 			writeD(info.getTicketPrice());
 			writeD(99999999); // Remaining units
 		}
-
+		
 		writeD(1);
 		writeD(template.getFaceStyles().size());
-		for (BeautyInfo info : template.getFaceStyles().values())
-		{
+		for (BeautyInfo info : template.getFaceStyles().values()) {
 			writeD(info.getParentId());
 			writeD(info.getId());
 			writeD(info.getUnk()); // ???
@@ -51,11 +47,10 @@ public final class ExResponseBeautyListPacket extends L2GameServerPacket
 			writeD(info.getTicketPrice());
 			writeD(99999999); // Remaining units
 		}
-
+		
 		writeD(2);
 		writeD(template.getHairColors().size());
-		for (BeautyInfo info : template.getHairColors().values())
-		{
+		for (BeautyInfo info : template.getHairColors().values()) {
 			writeD(info.getParentId());
 			writeD(info.getId());
 			writeD(info.getUnk()); // ???

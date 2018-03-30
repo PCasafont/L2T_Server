@@ -28,23 +28,19 @@ import java.util.ArrayList;
  *
  * @author l3x
  */
-public class ExShowManorDefaultInfo extends L2GameServerPacket
-{
-
+public class ExShowManorDefaultInfo extends L2GameServerPacket {
+	
 	private ArrayList<Integer> crops = null;
-
-	public ExShowManorDefaultInfo()
-	{
+	
+	public ExShowManorDefaultInfo() {
 		crops = L2Manor.getInstance().getAllCrops();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeC(0);
 		writeD(crops.size());
-		for (int cropId : crops)
-		{
+		for (int cropId : crops) {
 			writeD(cropId); // crop Id
 			writeD(L2Manor.getInstance().getSeedLevelByCrop(cropId)); // level
 			writeD(L2Manor.getInstance().getSeedBasicPriceByCrop(cropId)); // seed

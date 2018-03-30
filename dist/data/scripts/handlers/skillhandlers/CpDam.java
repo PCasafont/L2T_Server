@@ -31,87 +31,63 @@ import l2server.gameserver.templates.skills.L2SkillType;
  * Just a quick draft to support Wrath skill. Missing angle based calculation etc.
  */
 
-public class CpDam implements ISkillHandler
-{
+public class CpDam implements ISkillHandler {
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.CPDAM};
-
+	
 	/**
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (activeChar.isAlikeDead())
-		{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+		if (activeChar.isAlikeDead()) {
 			return;
 		}
-
+		
 		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 		double ssMul = L2ItemInstance.CHARGED_NONE;
-		if (weaponInst != null)
-		{
-			if (skill.isMagic())
-			{
+		if (weaponInst != null) {
+			if (skill.isMagic()) {
 				ssMul = weaponInst.getChargedSpiritShot();
 				weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-			}
-			else
-			{
+			} else {
 				ssMul = weaponInst.getChargedSoulShot();
 				weaponInst.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
 			}
 		}
 		// If there is no weapon equipped, check for an active summon.
-		else if (activeChar instanceof L2Summon)
-		{
+		else if (activeChar instanceof L2Summon) {
 			L2Summon activeSummon = (L2Summon) activeChar;
-			if (skill.isMagic())
-			{
+			if (skill.isMagic()) {
 				ssMul = activeSummon.getChargedSpiritShot();
 				activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-			}
-			else
-			{
+			} else {
 				ssMul = activeSummon.getChargedSoulShot();
 				activeSummon.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
 			}
-		}
-		else if (activeChar instanceof L2Npc)
-		{
-			if (skill.isMagic())
-			{
-				ssMul = ((L2Npc) activeChar).soulshotcharged ? L2ItemInstance.CHARGED_SOULSHOT :
-						L2ItemInstance.CHARGED_NONE;
+		} else if (activeChar instanceof L2Npc) {
+			if (skill.isMagic()) {
+				ssMul = ((L2Npc) activeChar).soulshotcharged ? L2ItemInstance.CHARGED_SOULSHOT : L2ItemInstance.CHARGED_NONE;
 				((L2Npc) activeChar).soulshotcharged = false;
-			}
-			else
-			{
-				ssMul = ((L2Npc) activeChar).spiritshotcharged ? L2ItemInstance.CHARGED_SPIRITSHOT :
-						L2ItemInstance.CHARGED_NONE;
+			} else {
+				ssMul = ((L2Npc) activeChar).spiritshotcharged ? L2ItemInstance.CHARGED_SPIRITSHOT : L2ItemInstance.CHARGED_NONE;
 				((L2Npc) activeChar).spiritshotcharged = false;
 			}
 		}
-
-		for (L2Character target : (L2Character[]) targets)
-		{
-			if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance &&
-					((L2PcInstance) target).isFakeDeath())
-			{
+		
+		for (L2Character target : (L2Character[]) targets) {
+			if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance) target).isFakeDeath()) {
 				target.stopFakeDeath(true);
-			}
-			else if (target.isDead() || target.isInvul(activeChar) ||
-					target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar)
-			{
+			} else if (target.isDead() || target.isInvul(activeChar) ||
+					target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar) {
 				continue;
 			}
-
+			
 			byte shld = Formulas.calcShldUse(activeChar, target, skill);
-
+			
 			int damage = (int) (target.getCurrentCp() - (target.getCurrentCp() - skill.getPower()));
-
+			
 			// Manage attack or cast break of the target (calculating rate, sending message...)
-			if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
-			{
+			if (!target.isRaid() && Formulas.calcAtkBreak(target, damage)) {
 				target.breakAttack();
 				target.breakCast();
 			}
@@ -120,13 +96,12 @@ public class CpDam implements ISkillHandler
 			target.setCurrentCp(target.getCurrentCp() - damage);
 		}
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

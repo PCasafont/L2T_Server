@@ -22,18 +22,15 @@ import java.util.Hashtable;
 /**
  * @author Luis Arias
  */
-public class ScriptEngine
-{
+public class ScriptEngine {
 	protected EngineInterface utils = FaenorInterface.getInstance();
 	public static final Hashtable<String, ParserFactory> parserFactories = new Hashtable<>();
 
-	protected static Parser createParser(String name) throws ParserNotCreatedException
-	{
+	protected static Parser createParser(String name) throws ParserNotCreatedException {
 		ParserFactory s = parserFactories.get(name);
 		if (s == null) // shape not found
 		{
-			try
-			{
+			try {
 				Class.forName("l2server.gameserver.script." + name);
 				// By now the static block with no function would
 				// have been executed if the shape was found.
@@ -45,9 +42,7 @@ public class ScriptEngine
 				{
 					throw new ParserNotCreatedException();
 				}
-			}
-			catch (ClassNotFoundException e)
-			{
+			} catch (ClassNotFoundException e) {
 				// We'll throw an exception to indicate that
 				// the shape could not be created
 				throw new ParserNotCreatedException();

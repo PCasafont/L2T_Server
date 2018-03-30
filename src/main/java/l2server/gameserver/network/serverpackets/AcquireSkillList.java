@@ -24,23 +24,19 @@ import java.util.Map;
 /**
  * @author Pere
  */
-public final class AcquireSkillList extends L2GameServerPacket
-{
+public final class AcquireSkillList extends L2GameServerPacket {
 	private L2SkillLearn[] skills;
 	private L2PcInstance player;
 
-	public AcquireSkillList(L2PcInstance player)
-	{
+	public AcquireSkillList(L2PcInstance player) {
 		skills = SkillTreeTable.getInstance().getAvailableClassSkills(player);
 		this.player = player;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeH(skills.length);
-		for (L2SkillLearn sk : skills)
-		{
+		for (L2SkillLearn sk : skills) {
 			writeD(sk.getId());
 			writeH(sk.getLevel());
 			writeH(0); // Skill enchant
@@ -49,16 +45,14 @@ public final class AcquireSkillList extends L2GameServerPacket
 			writeC(sk.getMinDualLevel());
 
 			writeC(sk.getCostItems().size());
-			for (int itemId : sk.getCostItems().keySet())
-			{
+			for (int itemId : sk.getCostItems().keySet()) {
 				writeD(itemId);
 				writeQ(sk.getCostItems().get(itemId));
 			}
 
 			Map<Integer, Integer> costSkills = sk.getCostSkills(player);
 			writeC(costSkills.size());
-			for (int skillId : costSkills.keySet())
-			{
+			for (int skillId : costSkills.keySet()) {
 				writeD(skillId);
 				writeD(costSkills.get(skillId));
 			}

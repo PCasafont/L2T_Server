@@ -26,8 +26,7 @@ import l2server.gameserver.network.serverpackets.ExLoadStatHotLink;
 import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
 
-public class L2StatueInstanceAction implements IActionHandler
-{
+public class L2StatueInstanceAction implements IActionHandler {
 	/**
 	 * Manage actions when a player click on the L2ArtefactInstance.<BR>
 	 * <BR>
@@ -47,15 +46,12 @@ public class L2StatueInstanceAction implements IActionHandler
 	 * <BR>
 	 */
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-	{
-		if (!((L2Npc) target).canTarget(activeChar))
-		{
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
+		if (!((L2Npc) target).canTarget(activeChar)) {
 			return false;
 		}
 
-		if (activeChar.getTarget() != target)
-		{
+		if (activeChar.getTarget() != target) {
 			// Set the target of the L2PcInstance activeChar
 			activeChar.setTarget(target);
 
@@ -65,9 +61,7 @@ public class L2StatueInstanceAction implements IActionHandler
 
 			// Send a Server->Client packet ValidateLocation to correct the L2ArtefactInstance position and heading on the client
 			activeChar.sendPacket(new ValidateLocation((L2Character) target));
-		}
-		else if (interact)
-		{
+		} else if (interact) {
 			// Send the hot link packet
 			activeChar.sendPacket(new ExLoadStatHotLink(((L2StatueInstance) target).getRecordId()));
 		}
@@ -75,8 +69,7 @@ public class L2StatueInstanceAction implements IActionHandler
 	}
 
 	@Override
-	public InstanceType getInstanceType()
-	{
+	public InstanceType getInstanceType() {
 		return InstanceType.L2StatueInstance;
 	}
 }

@@ -23,82 +23,66 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 
-public class SqlUtils
-{
+public class SqlUtils {
 
-	private SqlUtils()
-	{
+	private SqlUtils() {
 	}
 
 	// =========================================================
 	// Property - Public
-	public static SqlUtils getInstance()
-	{
+	public static SqlUtils getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	// =========================================================
 	// Method - Public
-	public static Integer getIntValue(String resultField, String tableName, String whereClause)
-	{
+	public static Integer getIntValue(String resultField, String tableName, String whereClause) {
 		String query = "";
 		Integer res = null;
 
 		Connection con = null;
 
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
-			query = L2DatabaseFactory.getInstance()
-					.prepQuerySelect(new String[]{resultField}, tableName, whereClause, true);
+			query = L2DatabaseFactory.getInstance().prepQuerySelect(new String[]{resultField}, tableName, whereClause, true);
 
 			PreparedStatement statement = con.prepareStatement(query);
 			ResultSet rset = statement.executeQuery();
 
-			if (rset.next())
-			{
+			if (rset.next()) {
 				res = rset.getInt(1);
 			}
 
 			rset.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Error in query '" + query + "':", e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 
 		return res;
 	}
 
-	public static Integer[] getIntArray(String resultField, String tableName, String whereClause)
-	{
+	public static Integer[] getIntArray(String resultField, String tableName, String whereClause) {
 		String query = "";
 		Integer[] res = null;
 
 		Connection con = null;
 
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
-			query = L2DatabaseFactory.getInstance()
-					.prepQuerySelect(new String[]{resultField}, tableName, whereClause, false);
+			query = L2DatabaseFactory.getInstance().prepQuerySelect(new String[]{resultField}, tableName, whereClause, false);
 			PreparedStatement statement = con.prepareStatement(query);
 			ResultSet rset = statement.executeQuery();
 
 			int rows = 0;
 
-			while (rset.next())
-			{
+			while (rset.next()) {
 				rows++;
 			}
 
-			if (rows == 0)
-			{
+			if (rows == 0) {
 				return new Integer[0];
 			}
 
@@ -107,27 +91,21 @@ public class SqlUtils
 			rset.first();
 
 			int row = 0;
-			while (rset.next())
-			{
+			while (rset.next()) {
 				res[row] = rset.getInt(1);
 			}
 			rset.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "mSGI: Error in query '" + query + "':", e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 
 		return res;
 	}
 
-	public static Integer[][] get2DIntArray(String[] resultFields, String usedTables, String whereClause)
-	{
+	public static Integer[][] get2DIntArray(String[] resultFields, String usedTables, String whereClause) {
 		long start = System.currentTimeMillis();
 
 		String query = "";
@@ -136,16 +114,14 @@ public class SqlUtils
 
 		Integer res[][] = null;
 
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			query = L2DatabaseFactory.getInstance().prepQuerySelect(resultFields, usedTables, whereClause, false);
 			PreparedStatement statement = con.prepareStatement(query);
 			ResultSet rset = statement.executeQuery();
 
 			int rows = 0;
-			while (rset.next())
-			{
+			while (rset.next()) {
 				rows++;
 			}
 
@@ -154,23 +130,17 @@ public class SqlUtils
 			rset.first();
 
 			int row = 0;
-			while (rset.next())
-			{
-				for (int i = 0; i < resultFields.length; i++)
-				{
+			while (rset.next()) {
+				for (int i = 0; i < resultFields.length; i++) {
 					res[row][i] = rset.getInt(i + 1);
 				}
 				row++;
 			}
 			rset.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Error in query '" + query + "':", e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 
@@ -179,8 +149,7 @@ public class SqlUtils
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final SqlUtils instance = new SqlUtils();
 	}
 }

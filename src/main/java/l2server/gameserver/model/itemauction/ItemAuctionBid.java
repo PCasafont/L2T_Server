@@ -21,44 +21,36 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Forsaiken
  */
-public final class ItemAuctionBid
-{
+public final class ItemAuctionBid {
 	private final int playerObjId;
 	private long lastBid;
 
-	public ItemAuctionBid(final int playerObjId, final long lastBid)
-	{
+	public ItemAuctionBid(final int playerObjId, final long lastBid) {
 		this.playerObjId = playerObjId;
 		this.lastBid = lastBid;
 	}
 
-	public final int getPlayerObjId()
-	{
+	public final int getPlayerObjId() {
 		return playerObjId;
 	}
 
-	public final long getLastBid()
-	{
+	public final long getLastBid() {
 		return lastBid;
 	}
 
-	final void setLastBid(final long lastBid)
-	{
+	final void setLastBid(final long lastBid) {
 		this.lastBid = lastBid;
 	}
 
-	final void cancelBid()
-	{
+	final void cancelBid() {
 		lastBid = -1;
 	}
 
-	final boolean isCanceled()
-	{
+	final boolean isCanceled() {
 		return lastBid <= 0;
 	}
 
-	final L2PcInstance getPlayer()
-	{
+	final L2PcInstance getPlayer() {
 		return L2World.getInstance().getPlayer(playerObjId);
 	}
 }

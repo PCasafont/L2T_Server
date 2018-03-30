@@ -25,11 +25,10 @@ import java.util.Map;
 
 /**
  * @author LasTravel
- *         <p>
- *         Dimensional Vortex Npc teleports and Dimensional Stone Sellers
+ * <p>
+ * Dimensional Vortex Npc teleports and Dimensional Stone Sellers
  */
-public class DimensionalToIVortex extends Quest
-{
+public class DimensionalToIVortex extends Quest {
 	private static final String qn = "DimensionalToIVortex";
 	private static final int[] dimensionalVortexNpcs = {30952, 30953, 30954};
 	private static final int[] dimensionalStoneNpcs = {30949, 30950, 30951};
@@ -38,12 +37,10 @@ public class DimensionalToIVortex extends Quest
 	private static final int redDimensionalStone = 4403;
 	private static Map<Integer, Location> teleports = new HashMap<Integer, Location>(10);
 
-	public DimensionalToIVortex(int questId, String name, String descr)
-	{
+	public DimensionalToIVortex(int questId, String name, String descr) {
 		super(questId, name, descr);
 
-		for (int npcId : dimensionalVortexNpcs)
-		{
+		for (int npcId : dimensionalVortexNpcs) {
 			addStartNpc(npcId);
 
 			addTalkId(npcId);
@@ -51,8 +48,7 @@ public class DimensionalToIVortex extends Quest
 			addFirstTalkId(npcId);
 		}
 
-		for (int npcId : dimensionalStoneNpcs)
-		{
+		for (int npcId : dimensionalStoneNpcs) {
 			addStartNpc(npcId);
 
 			addTalkId(npcId);
@@ -71,67 +67,47 @@ public class DimensionalToIVortex extends Quest
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		return npc.getNpcId() + ".html";
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		return npc.getNpcId() + ".html";
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.startsWith("buy"))
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.startsWith("buy")) {
 			int stoneId = 0;
 
-			if (event.equalsIgnoreCase("buyGreenStone"))
-			{
+			if (event.equalsIgnoreCase("buyGreenStone")) {
 				stoneId = greenDimensionalStone;
-			}
-			else if (event.equalsIgnoreCase("buyBlueStone"))
-			{
+			} else if (event.equalsIgnoreCase("buyBlueStone")) {
 				stoneId = blueDimensionalStone;
-			}
-			else
-			{
+			} else {
 				stoneId = redDimensionalStone;
 			}
 
-			if (player.destroyItemByItemId(qn, 57, 10000, player, true))
-			{
+			if (player.destroyItemByItemId(qn, 57, 10000, player, true)) {
 				player.addItem(qn, stoneId, 1, npc, true);
 			}
-		}
-		else
-		{
+		} else {
 			int teleportId = Integer.valueOf(event);
 
 			int stoneId = 0;
 
-			if (teleportId >= 1 && teleportId <= 3)
-			{
+			if (teleportId >= 1 && teleportId <= 3) {
 				stoneId = greenDimensionalStone;
-			}
-			else if (teleportId >= 4 && teleportId <= 6)
-			{
+			} else if (teleportId >= 4 && teleportId <= 6) {
 				stoneId = blueDimensionalStone;
-			}
-			else
-			{
+			} else {
 				stoneId = redDimensionalStone;
 			}
 
-			if (!player.destroyItemByItemId(qn, stoneId, 1, player, true))
-			{
+			if (!player.destroyItemByItemId(qn, stoneId, 1, player, true)) {
 				return "no.html";
-			}
-			else
-			{
+			} else {
 				player.teleToLocation(teleports.get(teleportId), true);
 			}
 		}
@@ -139,8 +115,7 @@ public class DimensionalToIVortex extends Quest
 		return super.onAdvEvent(event, npc, player);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new DimensionalToIVortex(-1, qn, "teleports");
 	}
 }

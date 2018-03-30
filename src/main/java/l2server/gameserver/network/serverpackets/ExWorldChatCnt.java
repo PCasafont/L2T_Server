@@ -18,18 +18,15 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public final class ExWorldChatCnt extends L2GameServerPacket
-{
+public final class ExWorldChatCnt extends L2GameServerPacket {
 	private int count;
-
-	public ExWorldChatCnt(int count)
-	{
+	
+	public ExWorldChatCnt(int count) {
 		this.count = count;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(count);
 	}
 }

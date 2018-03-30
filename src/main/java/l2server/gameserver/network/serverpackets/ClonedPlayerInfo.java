@@ -50,8 +50,7 @@ import java.util.Set;
  *
  * @version $Revision: 1.7.2.6.2.11 $ $Date: 2005/04/11 10:05:54 $
  */
-public class ClonedPlayerInfo extends L2GameServerPacket
-{
+public class ClonedPlayerInfo extends L2GameServerPacket {
 	private L2Npc npc;
 	private L2PcInstance activeChar;
 	private PcInventory inv;
@@ -70,8 +69,7 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 
 	/**
 	 */
-	public ClonedPlayerInfo(L2Npc npc, L2PcInstance cha)
-	{
+	public ClonedPlayerInfo(L2Npc npc, L2PcInstance cha) {
 		this.npc = npc;
 		activeChar = cha;
 		objId = npc.getObjectId();
@@ -87,8 +85,7 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(x);
 		writeD(y);
 		writeD(z);
@@ -150,18 +147,13 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		writeF(activeChar.getAttackSpeedMultiplier()); // activeChar.getAttackSpeedMultiplier()
 		L2Transformation transform = activeChar.getTransformation();
 
-		if (activeChar.getMountType() != 0)
-		{
+		if (activeChar.getMountType() != 0) {
 			writeF(NpcTable.getInstance().getTemplate(activeChar.getMountNpcId()).fCollisionRadius);
 			writeF(NpcTable.getInstance().getTemplate(activeChar.getMountNpcId()).fCollisionHeight);
-		}
-		else if (transform != null)
-		{
+		} else if (transform != null) {
 			writeF(transform.getCollisionRadius());
 			writeF(transform.getCollisionHeight());
-		}
-		else
-		{
+		} else {
 			writeF(activeChar.getCollisionRadius());
 			writeF(activeChar.getCollisionHeight());
 		}
@@ -173,17 +165,13 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		writeS(activeChar.getAppearance().getVisibleTitle());
 
 		if (!activeChar.isCursedWeaponEquipped() && !(activeChar.isPlayingEvent() &&
-				(activeChar.getEvent().getType() == EventType.DeathMatch ||
-						activeChar.getEvent().getType() == EventType.Survival ||
-						activeChar.getEvent().getType() == EventType.KingOfTheHill)))
-		{
+				(activeChar.getEvent().getType() == EventType.DeathMatch || activeChar.getEvent().getType() == EventType.Survival ||
+						activeChar.getEvent().getType() == EventType.KingOfTheHill))) {
 			writeD(activeChar.getClanId());
 			writeD(activeChar.getClanCrestId());
 			writeD(activeChar.getAllyId());
 			writeD(activeChar.getAllyCrestId());
-		}
-		else
-		{
+		} else {
 			writeD(0);
 			writeD(0);
 			writeD(0);
@@ -194,24 +182,20 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		writeC(npc.isRunning() ? 1 : 0); // running = 1   walking = 0
 		writeC(npc.isInCombat() ? 1 : 0);
 
-		if (activeChar.isInOlympiadMode())
-		{
+		if (activeChar.isInOlympiadMode()) {
 			writeC(0);
-		}
-		else
-		{
+		} else {
 			writeC(activeChar.isAlikeDead() ? 1 : 0);
 		}
 
 		writeC(0);
 
 		writeC(activeChar.getMountType()); // 1-on Strider, 2-on Wyvern, 3-on Great Wolf, 0-no mount
-		writeC(activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ?
-				activeChar.getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL);
+		writeC(activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ? activeChar.getPrivateStoreType() :
+				L2PcInstance.STORE_PRIVATE_SELL);
 
 		writeH(activeChar.getCubics().size());
-		for (int id : activeChar.getCubics().keySet())
-		{
+		for (int id : activeChar.getCubics().keySet()) {
 			writeH(id);
 		}
 
@@ -245,21 +229,15 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 
 		writeD(activeChar.getAppearance().getTitleColor());
 
-		if (activeChar.isCursedWeaponEquipped())
-		{
+		if (activeChar.isCursedWeaponEquipped()) {
 			writeC(CursedWeaponsManager.getInstance().getLevel(activeChar.getCursedWeaponEquippedId()));
-		}
-		else
-		{
+		} else {
 			writeC(0x00);
 		}
 
-		if (activeChar.getClanId() > 0)
-		{
+		if (activeChar.getClanId() > 0) {
 			writeD(activeChar.getClan().getReputationScore());
-		}
-		else
-		{
+		} else {
 			writeD(0x00);
 		}
 
@@ -280,13 +258,11 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		writeC(activeChar.isShowingHat() ? 1 : 0); // Show/hide hat
 
 		Set<Integer> abnormals = npc.getAbnormalEffect();
-		if (activeChar.getAppearance().getInvisible())
-		{
+		if (activeChar.getAppearance().getInvisible()) {
 			abnormals.add(VisualEffect.STEALTH.getId());
 		}
 		writeD(abnormals.size());
-		for (int abnormalId : abnormals)
-		{
+		for (int abnormalId : abnormals) {
 			writeH(abnormalId);
 		}
 
@@ -294,18 +270,15 @@ public class ClonedPlayerInfo extends L2GameServerPacket
 		writeC(0x00);
 		writeC(inv.getCloakStatus());
 		boolean showWings = true;
-		if (getWriteClient() != null && getWriteClient().getActiveChar() != null)
-		{
-			showWings = !getWriteClient().getActiveChar().isNickNameWingsDisabled() &&
-					getWriteClient().getActiveChar().isPlayingEvent();
+		if (getWriteClient() != null && getWriteClient().getActiveChar() != null) {
+			showWings = !getWriteClient().getActiveChar().isNickNameWingsDisabled() && getWriteClient().getActiveChar().isPlayingEvent();
 		}
 
 		writeC(showWings ? activeChar.getSpentAbilityPoints() : 0x00);
 	}
 
 	@Override
-	protected final Class<?> getOpCodeClass()
-	{
+	protected final Class<?> getOpCodeClass() {
 		return CharInfo.class;
 	}
 }

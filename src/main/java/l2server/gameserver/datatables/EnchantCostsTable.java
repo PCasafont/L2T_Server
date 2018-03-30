@@ -30,14 +30,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class EnchantCostsTable
-{
+public class EnchantCostsTable {
 	public static final int NORMAL_ENCHANT_COST_MULTIPLIER = 1;
 	public static final int SAFE_ENCHANT_COST_MULTIPLIER = 5;
 	public static final int IMMORTAL_ENCHANT_COST_MULTIPLIER = 25;
 
-	public static class EnchantSkillRange
-	{
+	public static class EnchantSkillRange {
 		private final int startLevel;
 		private final int maxLevel;
 		private final int normalBook;
@@ -46,8 +44,7 @@ public class EnchantCostsTable
 		private final int untrainBook;
 		private final int immortalBook;
 
-		public EnchantSkillRange(int startLevel, int maxLevel, int normalBook, int safeBook, int changeBook, int untrainBook, int immortalBook)
-		{
+		public EnchantSkillRange(int startLevel, int maxLevel, int normalBook, int safeBook, int changeBook, int untrainBook, int immortalBook) {
 			this.startLevel = startLevel;
 			this.maxLevel = maxLevel;
 			this.normalBook = normalBook;
@@ -57,52 +54,43 @@ public class EnchantCostsTable
 			this.immortalBook = immortalBook;
 		}
 
-		public int getStartLevel()
-		{
+		public int getStartLevel() {
 			return startLevel;
 		}
 
-		public int getMaxLevel()
-		{
+		public int getMaxLevel() {
 			return maxLevel;
 		}
 
-		public int getNormalBook()
-		{
+		public int getNormalBook() {
 			return normalBook;
 		}
 
-		public int getSafeBook()
-		{
+		public int getSafeBook() {
 			return safeBook;
 		}
 
-		public int getChangeBook()
-		{
+		public int getChangeBook() {
 			return changeBook;
 		}
 
-		public int getUntrainBook()
-		{
+		public int getUntrainBook() {
 			return untrainBook;
 		}
 
-		public int getImmortalBook()
-		{
+		public int getImmortalBook() {
 			return immortalBook;
 		}
 	}
 
-	public static class EnchantSkillDetail
-	{
+	public static class EnchantSkillDetail {
 		private final int level;
 		private final int adenaCost;
 		private final int spCost;
 		private final byte[] rates;
 		private final EnchantSkillRange range;
 
-		public EnchantSkillDetail(int lvl, int adena, int sp, byte[] rates, EnchantSkillRange range)
-		{
+		public EnchantSkillDetail(int lvl, int adena, int sp, byte[] rates, EnchantSkillRange range) {
 			level = lvl;
 			adenaCost = adena;
 			spCost = sp;
@@ -113,36 +101,30 @@ public class EnchantCostsTable
 		/**
 		 * @return Returns the level.
 		 */
-		public int getLevel()
-		{
+		public int getLevel() {
 			return level;
 		}
 
 		/**
 		 * @return Returns the spCost.
 		 */
-		public int getSpCost()
-		{
+		public int getSpCost() {
 			return spCost;
 		}
 
-		public int getAdenaCost()
-		{
+		public int getAdenaCost() {
 			return adenaCost;
 		}
 
-		public byte getRate(L2PcInstance ply)
-		{
-			if (ply.getLevel() < 85)
-			{
+		public byte getRate(L2PcInstance ply) {
+			if (ply.getLevel() < 85) {
 				return 0;
 			}
 
 			return rates[ply.getLevel() - 85];
 		}
 
-		public EnchantSkillRange getRange()
-		{
+		public EnchantSkillRange getRange() {
 			return range;
 		}
 	}
@@ -152,101 +134,80 @@ public class EnchantCostsTable
 	private Map<Integer, EnchantSkillRange> enchantRanges = new HashMap<>();
 	private List<EnchantSkillDetail> enchantDetails = new ArrayList<>();
 
-	public static EnchantCostsTable getInstance()
-	{
+	public static EnchantCostsTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private EnchantCostsTable()
-	{
-		if (!Config.IS_CLASSIC)
-		{
+	private EnchantCostsTable() {
+		if (!Config.IS_CLASSIC) {
 			load();
 		}
 	}
 
-	private void load()
-	{
+	private void load() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "enchantSkillCosts.xml");
 		XmlDocument doc = new XmlDocument(file);
 
 		enchantSkillTrees.clear();
 		enchantDetails.clear();
 
-        for (XmlNode enchantNode : doc.getChildren())
-        {
-            if (enchantNode.getName().equalsIgnoreCase("enchantRange"))
-            {
-                int startLevel = enchantNode.getInt("startLevel");
-                int maxLevel = enchantNode.getInt("maxLevel");
-                int normalBook = enchantNode.getInt("normalBook");
-                int safeBook = enchantNode.getInt("safeBook");
-                int changeBook = enchantNode.getInt("changeBook");
-                int untrainBook = enchantNode.getInt("untrainBook");
-                int immortalBook = enchantNode.getInt("immortalBook");
-                EnchantSkillRange range =
-                        new EnchantSkillRange(startLevel, maxLevel, normalBook, safeBook, changeBook,
-                                untrainBook, immortalBook);
-                for (int lvl = startLevel; lvl < maxLevel; lvl++)
-                {
-                    enchantRanges.put(lvl, range);
-                }
-            }
-            else if (enchantNode.getName().equalsIgnoreCase("enchant"))
-            {
-                String[] levels = enchantNode.getString("level").split(",");
-                int adena = enchantNode.getInt("adena");
-                int sp = 0;//enchantNode.getInt("sp");
+		for (XmlNode enchantNode : doc.getChildren()) {
+			if (enchantNode.getName().equalsIgnoreCase("enchantRange")) {
+				int startLevel = enchantNode.getInt("startLevel");
+				int maxLevel = enchantNode.getInt("maxLevel");
+				int normalBook = enchantNode.getInt("normalBook");
+				int safeBook = enchantNode.getInt("safeBook");
+				int changeBook = enchantNode.getInt("changeBook");
+				int untrainBook = enchantNode.getInt("untrainBook");
+				int immortalBook = enchantNode.getInt("immortalBook");
+				EnchantSkillRange range = new EnchantSkillRange(startLevel, maxLevel, normalBook, safeBook, changeBook, untrainBook, immortalBook);
+				for (int lvl = startLevel; lvl < maxLevel; lvl++) {
+					enchantRanges.put(lvl, range);
+				}
+			} else if (enchantNode.getName().equalsIgnoreCase("enchant")) {
+				String[] levels = enchantNode.getString("level").split(",");
+				int adena = enchantNode.getInt("adena");
+				int sp = 0;//enchantNode.getInt("sp");
 
-                if (Config.isServer(Config.TENKAI_LEGACY))
-                {
-                    adena = (int) Math.sqrt(adena);
-                }
+				if (Config.isServer(Config.TENKAI_LEGACY)) {
+					adena = (int) Math.sqrt(adena);
+				}
 
-                for (String ls : levels)
-                {
-                    int enchLvl = Integer.valueOf(ls);
-                    EnchantSkillRange range = enchantRanges.get(enchLvl - 1);
-                    if (range == null)
-                    {
-                        continue;
-                    }
+				for (String ls : levels) {
+					int enchLvl = Integer.valueOf(ls);
+					EnchantSkillRange range = enchantRanges.get(enchLvl - 1);
+					if (range == null) {
+						continue;
+					}
 
-                    byte[] rate = new byte[30];
-                    for (int i = 0; i < 30; i++)
-                    {
-                        int playerLvl = 85 + i;
-                        // Hardcoded calculation of the enchant chances
-                        rate[i] = (byte) (playerLvl - (enchLvl - 1) % 10 * 5);
-                        if (i - enchLvl < 3)
-                        {
-                            rate[i] -= 30;
-                        }
+					byte[] rate = new byte[30];
+					for (int i = 0; i < 30; i++) {
+						int playerLvl = 85 + i;
+						// Hardcoded calculation of the enchant chances
+						rate[i] = (byte) (playerLvl - (enchLvl - 1) % 10 * 5);
+						if (i - enchLvl < 3) {
+							rate[i] -= 30;
+						}
 
-                        if (rate[i] < 0)
-                        {
-                            rate[i] = 0;
-                        }
-                        else if (rate[i] > 100)
-                        {
-                            rate[i] = 100;
-                        }
-                    }
+						if (rate[i] < 0) {
+							rate[i] = 0;
+						} else if (rate[i] > 100) {
+							rate[i] = 100;
+						}
+					}
 
-                    EnchantSkillDetail esd = new EnchantSkillDetail(enchLvl, adena, sp, rate, range);
-                    addEnchantDetail(esd);
-                }
-            }
+					EnchantSkillDetail esd = new EnchantSkillDetail(enchLvl, adena, sp, rate, range);
+					addEnchantDetail(esd);
+				}
+			}
 		}
 
 		Log.info("EnchantGroupsTable: Loaded " + enchantDetails.size() + " enchant details.");
 	}
 
-	public int addNewRouteForSkill(int skillId, int maxLvL, int route)
-	{
+	public int addNewRouteForSkill(int skillId, int maxLvL, int route) {
 		L2EnchantSkillLearn enchantableSkill = enchantSkillTrees.get(skillId);
-		if (enchantableSkill == null)
-		{
+		if (enchantableSkill == null) {
 			enchantableSkill = new L2EnchantSkillLearn(skillId, maxLvL);
 			enchantSkillTrees.put(skillId, enchantableSkill);
 		}
@@ -255,31 +216,24 @@ public class EnchantCostsTable
 		return getEnchantGroupDetails().size();
 	}
 
-	public L2EnchantSkillLearn getSkillEnchantmentForSkill(L2Skill skill)
-	{
+	public L2EnchantSkillLearn getSkillEnchantmentForSkill(L2Skill skill) {
 		L2EnchantSkillLearn esl = getSkillEnchantmentBySkillId(skill.getId());
 		// there is enchantment for this skill and we have the required level of it
-		if (esl != null && skill.getLevelHash() >= esl.getBaseLevel())
-		{
+		if (esl != null && skill.getLevelHash() >= esl.getBaseLevel()) {
 			return esl;
 		}
 		return null;
 	}
 
-	public L2EnchantSkillLearn getSkillEnchantmentBySkillId(int skillId)
-	{
+	public L2EnchantSkillLearn getSkillEnchantmentBySkillId(int skillId) {
 		return enchantSkillTrees.get(skillId);
 	}
 
-	public int getEnchantSkillSpCost(L2Skill skill)
-	{
+	public int getEnchantSkillSpCost(L2Skill skill) {
 		L2EnchantSkillLearn enchantSkillLearn = enchantSkillTrees.get(skill.getId());
-		if (enchantSkillLearn != null)
-		{
-			EnchantSkillDetail esd =
-					enchantSkillLearn.getEnchantSkillDetail(skill.getEnchantRouteId(), skill.getEnchantLevel());
-			if (esd != null)
-			{
+		if (enchantSkillLearn != null) {
+			EnchantSkillDetail esd = enchantSkillLearn.getEnchantSkillDetail(skill.getEnchantRouteId(), skill.getEnchantLevel());
+			if (esd != null) {
 				return esd.getSpCost();
 			}
 		}
@@ -287,15 +241,11 @@ public class EnchantCostsTable
 		return 0;
 	}
 
-	public int getEnchantSkillAdenaCost(L2Skill skill)
-	{
+	public int getEnchantSkillAdenaCost(L2Skill skill) {
 		L2EnchantSkillLearn enchantSkillLearn = enchantSkillTrees.get(skill.getId());
-		if (enchantSkillLearn != null)
-		{
-			EnchantSkillDetail esd =
-					enchantSkillLearn.getEnchantSkillDetail(skill.getEnchantRouteId(), skill.getEnchantLevel());
-			if (esd != null)
-			{
+		if (enchantSkillLearn != null) {
+			EnchantSkillDetail esd = enchantSkillLearn.getEnchantSkillDetail(skill.getEnchantRouteId(), skill.getEnchantLevel());
+			if (esd != null) {
 				return esd.getAdenaCost();
 			}
 		}
@@ -303,15 +253,11 @@ public class EnchantCostsTable
 		return Integer.MAX_VALUE;
 	}
 
-	public byte getEnchantSkillRate(L2PcInstance player, L2Skill skill)
-	{
+	public byte getEnchantSkillRate(L2PcInstance player, L2Skill skill) {
 		L2EnchantSkillLearn enchantSkillLearn = enchantSkillTrees.get(skill.getId());
-		if (enchantSkillLearn != null)
-		{
-			EnchantSkillDetail esd =
-					enchantSkillLearn.getEnchantSkillDetail(skill.getEnchantRouteId(), skill.getEnchantLevel());
-			if (esd != null)
-			{
+		if (enchantSkillLearn != null) {
+			EnchantSkillDetail esd = enchantSkillLearn.getEnchantSkillDetail(skill.getEnchantRouteId(), skill.getEnchantLevel());
+			if (esd != null) {
 				return esd.getRate(player);
 			}
 		}
@@ -319,24 +265,20 @@ public class EnchantCostsTable
 		return 0;
 	}
 
-	public void addEnchantDetail(EnchantSkillDetail detail)
-	{
+	public void addEnchantDetail(EnchantSkillDetail detail) {
 		enchantDetails.add(detail);
 	}
 
-	public List<EnchantSkillDetail> getEnchantGroupDetails()
-	{
+	public List<EnchantSkillDetail> getEnchantGroupDetails() {
 		return enchantDetails;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final EnchantCostsTable instance = new EnchantCostsTable();
 	}
 
-	public void reload()
-	{
+	public void reload() {
 		load();
 	}
 }

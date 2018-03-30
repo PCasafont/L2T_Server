@@ -28,71 +28,61 @@ import java.util.List;
  *
  * @author -Wooden-
  */
-public final class RequestSaveInventoryOrder extends L2GameClientPacket
-{
+public final class RequestSaveInventoryOrder extends L2GameClientPacket {
 	private List<InventoryOrder> order;
-
+	
 	/**
 	 * client limit
 	 */
 	private static final int LIMIT = 125;
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		int sz = readD();
 		sz = Math.min(sz, LIMIT);
 		order = new ArrayList<>(sz);
-		for (int i = 0; i < sz; i++)
-		{
+		for (int i = 0; i < sz; i++) {
 			int objectId = readD();
 			int order = readD();
-            this.order.add(new InventoryOrder(objectId, order));
+			this.order.add(new InventoryOrder(objectId, order));
 		}
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player != null)
-		{
+		if (player != null) {
 			Inventory inventory = player.getInventory();
-			for (InventoryOrder order : order)
-			{
+			for (InventoryOrder order : order) {
 				L2ItemInstance item = inventory.getItemByObjectId(order.objectID);
-				if (item != null && item.getLocation() == ItemLocation.INVENTORY)
-				{
+				if (item != null && item.getLocation() == ItemLocation.INVENTORY) {
 					item.setLocation(ItemLocation.INVENTORY, order.order);
 				}
 			}
 		}
 	}
-
-	private static class InventoryOrder
-	{
+	
+	private static class InventoryOrder {
 		int order;
-
+		
 		int objectID;
-
+		
 		/**
 		 *
 		 */
-		public InventoryOrder(int id, int ord)
-		{
+		public InventoryOrder(int id, int ord) {
 			objectID = id;
 			order = ord;
 		}
 	}
-
+	
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

@@ -43,15 +43,12 @@ import java.util.Collection;
  * @author ZaKaX.
  * @author Unhardcodded by nBd.
  */
-public class TargetSpecial implements ISkillTargetTypeHandler
-{
+public class TargetSpecial implements ISkillTargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		final L2PcInstance aPlayer = activeChar.getActingPlayer();
 
-		if (!skill.isUseableWithoutTarget() && target == null)
-		{
+		if (!skill.isUseableWithoutTarget() && target == null) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return null;
 		}
@@ -59,34 +56,26 @@ public class TargetSpecial implements ISkillTargetTypeHandler
 		final ArrayList<L2Character> result = new ArrayList<L2Character>();
 
 		final L2Summon aPet = aPlayer.getPet();
-		if (aPet != null && !aPet.isDead())
-		{
+		if (aPet != null && !aPet.isDead()) {
 			result.add(aPet);
 		}
 
-		if (skill.getTargetDirection() == L2SkillTargetDirection.SUBLIMES)
-		{
+		if (skill.getTargetDirection() == L2SkillTargetDirection.SUBLIMES) {
 			result.add(activeChar);
-			for (L2Character o : aPlayer.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))
-			{
-				if (!GeoEngine.getInstance().canSeeTarget(aPlayer, o))
-				{
+			for (L2Character o : aPlayer.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
+				if (!GeoEngine.getInstance().canSeeTarget(aPlayer, o)) {
 					continue;
 				}
 
 				final L2PcInstance kTarget = o.getActingPlayer();
-				if (kTarget != null)
-				{
-					if (kTarget == aPlayer)
-					{
+				if (kTarget != null) {
+					if (kTarget == aPlayer) {
 						continue;
 					}
 
 					final L2Summon kPet = kTarget.getPet();
-					if (kPet != null)
-					{
-						if (!isReacheableBySublime(aPlayer, kPet))
-						{
+					if (kPet != null) {
+						if (!isReacheableBySublime(aPlayer, kPet)) {
 							continue;
 						}
 
@@ -94,46 +83,35 @@ public class TargetSpecial implements ISkillTargetTypeHandler
 					}
 				}
 
-				if (isReacheableBySublime(aPlayer, o))
-				{
+				if (isReacheableBySublime(aPlayer, o)) {
 					result.add(o);
 				}
 			}
-		}
-		else if (skill.getTargetDirection() == L2SkillTargetDirection.CHAIN_HEAL)
-		{
-			if (activeChar.getTarget() instanceof L2PcInstance)
-			{
+		} else if (skill.getTargetDirection() == L2SkillTargetDirection.CHAIN_HEAL) {
+			if (activeChar.getTarget() instanceof L2PcInstance) {
 				final L2PcInstance targetedCharacter = (L2PcInstance) activeChar.getTarget();
 
-				if (!isReachableByChainHeal(aPlayer, targetedCharacter))
-				{
+				if (!isReachableByChainHeal(aPlayer, targetedCharacter)) {
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 					return null;
 				}
 
-				Collection<L2Character> knownCharacters =
-						targetedCharacter.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius());
+				Collection<L2Character> knownCharacters = targetedCharacter.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius());
 
-				for (L2Character o : knownCharacters)
-				{
+				for (L2Character o : knownCharacters) {
 					//activeChar.sendMessage("Checking " + o);
 					//if (!GeoEngine.getInstance().canSeeTarget(target, o))
 					//	continue;
 
 					final L2PcInstance kTarget = o.getActingPlayer();
-					if (kTarget != null)
-					{
-						if (kTarget == aPlayer)
-						{
+					if (kTarget != null) {
+						if (kTarget == aPlayer) {
 							continue;
 						}
 
 						final L2Summon kPet = kTarget.getPet();
-						if (kPet != null)
-						{
-							if (!isReachableByChainHeal(aPlayer, kPet))
-							{
+						if (kPet != null) {
+							if (!isReachableByChainHeal(aPlayer, kPet)) {
 								continue;
 							}
 
@@ -141,51 +119,38 @@ public class TargetSpecial implements ISkillTargetTypeHandler
 						}
 					}
 
-					if (isReachableByChainHeal(targetedCharacter, o))
-					{
+					if (isReachableByChainHeal(targetedCharacter, o)) {
 						result.add(o);
 						//activeChar.sendMessage("Adding " + o);
 					}
 					//else
 					//	activeChar.sendMessage(o + " is not reachable");
 
-					if (result.size() > 9)
-					{
+					if (result.size() > 9) {
 						break;
 					}
 				}
 
 				result.add(targetedCharacter);
 
-				if (Util.checkIfInRange(400, aPlayer, targetedCharacter, false))
-				{
+				if (Util.checkIfInRange(400, aPlayer, targetedCharacter, false)) {
 					result.add(aPlayer);
 				}
 
 				return result.toArray(new L2Character[result.size()]);
 			}
-		}
-		else if (skill.getTargetDirection() == L2SkillTargetDirection.PARTY_ANYWHERE)
-		{
-			if (aPlayer.getParty() != null)
-			{
+		} else if (skill.getTargetDirection() == L2SkillTargetDirection.PARTY_ANYWHERE) {
+			if (aPlayer.getParty() != null) {
 				// FIXME return activeChar.getParty().getPartyMembers();
 			}
-		}
-		else if (skill.getTargetDirection() == L2SkillTargetDirection.INVISIBLE_TRAP)
-		{
+		} else if (skill.getTargetDirection() == L2SkillTargetDirection.INVISIBLE_TRAP) {
 			final L2WorldRegion region = activeChar.getWorldRegion();
-			if (region != null)
-			{
-				for (final L2Object obj : region.getVisibleObjects().values())
-				{
-					if (obj instanceof L2TrapInstance &&
-							activeChar.isInsideRadius(obj.getX(), obj.getY(), skill.getSkillRadius(), false))
-					{
+			if (region != null) {
+				for (final L2Object obj : region.getVisibleObjects().values()) {
+					if (obj instanceof L2TrapInstance && activeChar.isInsideRadius(obj.getX(), obj.getY(), skill.getSkillRadius(), false)) {
 						final L2TrapInstance dTrap = (L2TrapInstance) obj;
 
-						if (dTrap.getOwner() == activeChar /*|| dTrap.isDetected() FIXME */)
-						{
+						if (dTrap.getOwner() == activeChar /*|| dTrap.isDetected() FIXME */) {
 							continue;
 						}
 
@@ -198,102 +163,77 @@ public class TargetSpecial implements ISkillTargetTypeHandler
 		return result.toArray(new L2Character[result.size()]);
 	}
 
-	private final boolean isReacheableBySublime(final L2PcInstance activeChar, final L2Character target)
-	{
-		if (target.isDead())
-		{
+	private final boolean isReacheableBySublime(final L2PcInstance activeChar, final L2Character target) {
+		if (target.isDead()) {
 			return false;
 		}
 
-		if (target instanceof L2Playable)
-		{
+		if (target instanceof L2Playable) {
 			final L2PcInstance pTarget = target.getActingPlayer();
 
 			// FIXME if (pTarget.isInvisible())
 			//	return false;
 
-			if (activeChar.getDuelId() != 0)
-			{
-				if (activeChar.getDuelId() != pTarget.getDuelId())
-				{
+			if (activeChar.getDuelId() != 0) {
+				if (activeChar.getDuelId() != pTarget.getDuelId()) {
 					return false;
 				}
-			}
-			else if (pTarget.getDuelId() != 0)
-			{
+			} else if (pTarget.getDuelId() != 0) {
 				return false;
 			}
-			if (activeChar.isInSameParty(pTarget) || activeChar.isInSameChannel(pTarget) ||
-					activeChar.isInSameClan(pTarget) || activeChar.isInSameAlly(pTarget))
-			{
+			if (activeChar.isInSameParty(pTarget) || activeChar.isInSameChannel(pTarget) || activeChar.isInSameClan(pTarget) ||
+					activeChar.isInSameAlly(pTarget)) {
 				return true;
 			}
-			if (pTarget.isAvailableForCombat() || pTarget.isInsidePvpZone() || activeChar.isInSameClanWar(pTarget))
-			{
+			if (pTarget.isAvailableForCombat() || pTarget.isInsidePvpZone() || activeChar.isInSameClanWar(pTarget)) {
 				return false;
 			}
-			if (target.isInsideZone(L2Character.ZONE_TOWN))
-			{
+			if (target.isInsideZone(L2Character.ZONE_TOWN)) {
 				return true;
 			}
-		}
-		else
-		{
+		} else {
 			return false;
 		}
 
 		return true;
 	}
 
-	private final boolean isReachableByChainHeal(final L2PcInstance activeChar, final L2Character target)
-	{
-		if (target.isDead())
-		{
+	private final boolean isReachableByChainHeal(final L2PcInstance activeChar, final L2Character target) {
+		if (target.isDead()) {
 			return false;
 		}
 
-		if (target instanceof L2Playable)
-		{
+		if (target instanceof L2Playable) {
 			final L2PcInstance player = target.getActingPlayer();
 
-			if (player == activeChar)
-			{
+			if (player == activeChar) {
 				return true;
 			}
 		}
 
-		if (activeChar.isInOlympiadMode())
-		{
+		if (activeChar.isInOlympiadMode()) {
 			return false;
 		}
 
-		if (target instanceof L2Playable)
-		{
+		if (target instanceof L2Playable) {
 			final L2PcInstance pTarget = target.getActingPlayer();
 
-			if (pTarget.isInOlympiadMode())
-			{
+			if (pTarget.isInOlympiadMode()) {
 				return false;
 			}
 
-			if (Config.isServer(Config.TENKAI))
-			{
-				if (activeChar.isPlayingEvent())
-				{
+			if (Config.isServer(Config.TENKAI)) {
+				if (activeChar.isPlayingEvent()) {
 					EventInstance event = activeChar.getEvent();
-					if (event != pTarget.getEvent())
-					{
+					if (event != pTarget.getEvent()) {
 						return false;
 					}
 
-					if (event.getConfig().isAllVsAll())
-					{
+					if (event.getConfig().isAllVsAll()) {
 						return false;
 					}
 
-					if (event.getParticipantTeam(activeChar.getObjectId()) !=
-							event.getParticipantTeam(target.getObjectId()))
-					{
+					if (event.getParticipantTeam(activeChar.getObjectId()) != event.getParticipantTeam(target.getObjectId())) {
 						return false;
 					}
 
@@ -301,21 +241,16 @@ public class TargetSpecial implements ISkillTargetTypeHandler
 				}
 			}
 
-			if (activeChar.getDuelId() != 0)
-			{
-				if (activeChar.getDuelId() != pTarget.getDuelId())
-				{
+			if (activeChar.getDuelId() != 0) {
+				if (activeChar.getDuelId() != pTarget.getDuelId()) {
 					return false;
 				}
-			}
-			else if (pTarget.getDuelId() != 0)
-			{
+			} else if (pTarget.getDuelId() != 0) {
 				return false;
 			}
 
-			if (activeChar.isInSameParty(pTarget) || activeChar.isInSameChannel(pTarget) ||
-					activeChar.isInSameClan(pTarget) || activeChar.isInSameAlly(pTarget))
-			{
+			if (activeChar.isInSameParty(pTarget) || activeChar.isInSameChannel(pTarget) || activeChar.isInSameClan(pTarget) ||
+					activeChar.isInSameAlly(pTarget)) {
 				return true;
 			}
 
@@ -327,13 +262,11 @@ public class TargetSpecial implements ISkillTargetTypeHandler
 	}
 
 	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
+	public Enum<L2SkillTargetType> getTargetType() {
 		return L2SkillTargetType.TARGET_SPECIAL;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetSpecial());
 	}
 }

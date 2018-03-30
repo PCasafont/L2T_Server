@@ -20,55 +20,23 @@ import l2server.configurator.ConfigUserInterface.ConfigFile.ConfigProperty;
 import l2server.i18n.LanguageControl;
 import l2server.images.ImagesTable;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.Rectangle;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.LineNumberReader;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+import java.io.*;
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
-import java.util.Locale;
-import java.util.NoSuchElementException;
-import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTabbedPane;
-import javax.swing.JTextArea;
-import javax.swing.JToolBar;
-import javax.swing.SwingUtilities;
-import javax.swing.ToolTipManager;
-import javax.swing.UIManager;
 
 /**
  * @author KenM
  */
-public class ConfigUserInterface extends JFrame implements ActionListener
-{
+public class ConfigUserInterface extends JFrame implements ActionListener {
 
 	/**
 	 * Comment for <code>serialVersionUID</code>
@@ -84,29 +52,22 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args)
-	{
-		try
-		{
+	public static void main(String[] args) {
+		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			// couldn't care less
 		}
 
-		final ResourceBundle bundle =
-				ResourceBundle.getBundle("configurator.Configurator", Locale.getDefault(), LanguageControl.INSTANCE);
+		final ResourceBundle bundle = ResourceBundle.getBundle("configurator.Configurator", Locale.getDefault(), LanguageControl.INSTANCE);
 
-		SwingUtilities.invokeLater(() ->
-		{
+		SwingUtilities.invokeLater(() -> {
 			ConfigUserInterface cui = new ConfigUserInterface(bundle);
 			cui.setVisible(true);
 		});
 	}
 
-	public ConfigUserInterface(ResourceBundle bundle)
-	{
+	public ConfigUserInterface(ResourceBundle bundle) {
 		setBundle(bundle);
 		setTitle(bundle.getString("toolName"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -154,8 +115,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		this.add(tabPane, cons);
 	}
 
-	private JButton createToolButton(String image, String text, String action)
-	{
+	private JButton createToolButton(String image, String text, String action) {
 		JButton button = new JButton(text, ImagesTable.getImage(image));
 		button.setActionCommand(action);
 		button.addActionListener(this);
@@ -165,8 +125,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	/**
 	 *
 	 */
-	private void buildInterface()
-	{
+	private void buildInterface() {
 		ToolTipManager.sharedInstance().setDismissDelay(Integer.MAX_VALUE);
 		ToolTipManager.sharedInstance().setInitialDelay(0);
 		ToolTipManager.sharedInstance().setReshowDelay(0);
@@ -175,28 +134,23 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		cons.fill = GridBagConstraints.NONE;
 		cons.anchor = GridBagConstraints.FIRST_LINE_START;
 		cons.insets = new Insets(2, 2, 2, 2);
-		for (ConfigFile cf : getConfigs())
-		{
-			JPanel panel = new JPanel()
-			{
+		for (ConfigFile cf : getConfigs()) {
+			JPanel panel = new JPanel() {
 				/**
 				 *
 				 */
 				private static final long serialVersionUID = 1L;
 
 				@Override
-				public void scrollRectToVisible(Rectangle r)
-				{
+				public void scrollRectToVisible(Rectangle r) {
 				}
 			};
 			panel.setLayout(new GridBagLayout());
 
 			cons.gridy = 0;
 			cons.weighty = 0;
-			for (ConfigComment cc : cf.getConfigProperties())
-			{
-				if (!(cc instanceof ConfigProperty))
-				{
+			for (ConfigComment cc : cf.getConfigProperties()) {
+				if (!(cc instanceof ConfigProperty)) {
 					continue;
 				}
 
@@ -229,21 +183,16 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	/**
 	 *
 	 */
-	private void loadConfigs()
-	{
+	private void loadConfigs() {
 		File configsDir = new File("config");
-		for (File file : configsDir.listFiles())
-		{
-			if (file.getName().endsWith(".properties") && file.isFile() && file.canWrite())
-			{
-				try
-				{
+		for (File file : configsDir.listFiles()) {
+			if (file.getName().endsWith(".properties") && file.isFile() && file.canWrite()) {
+				try {
 					parsePropertiesFile(file);
-				}
-				catch (IOException e)
-				{
+				} catch (IOException e) {
 					JOptionPane.showMessageDialog(ConfigUserInterface.this,
-							getBundle().getString("errorReading") + file.getName(), getBundle().getString("error"),
+							getBundle().getString("errorReading") + file.getName(),
+							getBundle().getString("error"),
 							JOptionPane.ERROR_MESSAGE);
 					System.exit(3);
 					// e.printStackTrace();
@@ -256,48 +205,36 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	 * @param file
 	 * @throws IOException
 	 */
-	private void parsePropertiesFile(File file) throws IOException
-	{
+	private void parsePropertiesFile(File file) throws IOException {
 		LineNumberReader lnr = new LineNumberReader(new InputStreamReader(new FileInputStream(file)));
 
 		String line;
 		StringBuilder commentBuffer = new StringBuilder();
 		ConfigFile cf = new ConfigFile(file);
-		while ((line = lnr.readLine()) != null)
-		{
+		while ((line = lnr.readLine()) != null) {
 			line = line.trim();
 
-			if (line.startsWith("#"))
-			{
-				if (commentBuffer.length() > 0)
-				{
+			if (line.startsWith("#")) {
+				if (commentBuffer.length() > 0) {
 					commentBuffer.append("\r\n");
 				}
 				commentBuffer.append(line.substring(1));
-			}
-			else if (line.length() == 0)
-			{
+			} else if (line.length() == 0) {
 				// blank line, reset comments
-				if (commentBuffer.length() > 0)
-				{
+				if (commentBuffer.length() > 0) {
 					cf.addConfigComment(commentBuffer.toString());
 				}
 				commentBuffer.setLength(0);
-			}
-			else if (line.indexOf('=') >= 0)
-			{
+			} else if (line.indexOf('=') >= 0) {
 				String[] kv = line.split("=");
 				String key = kv[0].trim();
 				String value = "";
-				if (kv.length > 1)
-				{
+				if (kv.length > 1) {
 					value = kv[1].trim();
 				}
 
-				if (line.indexOf('\\') >= 0)
-				{
-					while ((line = lnr.readLine()) != null && line.indexOf('\\') >= 0)
-					{
+				if (line.indexOf('\\') >= 0) {
+					while ((line = lnr.readLine()) != null && line.indexOf('\\') >= 0) {
 						value += "\r\n" + line;
 					}
 					value += "\r\n" + line;
@@ -316,10 +253,8 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	/**
 	 * @param value
 	 */
-	private Object parseValue(String value)
-	{
-		if (value.equalsIgnoreCase("false") || value.equalsIgnoreCase("true"))
-		{
+	private Object parseValue(String value) {
+		if (value.equalsIgnoreCase("false") || value.equalsIgnoreCase("true")) {
 			return Boolean.parseBoolean(value);
 		}
 
@@ -334,39 +269,28 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		}*/
 
 		// localhost -> 127.0.0.1
-		if (value.equals("localhost"))
-		{
+		if (value.equals("localhost")) {
 			value = "127.0.0.1";
 		}
 
 		String[] parts = value.split("\\.");
-		if (parts.length == 4)
-		{
+		if (parts.length == 4) {
 			boolean ok = true;
-			for (int i = 0; i < 4 && ok; i++)
-			{
-				try
-				{
+			for (int i = 0; i < 4 && ok; i++) {
+				try {
 					int parseInt = Integer.parseInt(parts[i]);
-					if (parseInt < 0 || parseInt > 255)
-					{
+					if (parseInt < 0 || parseInt > 255) {
 						ok = false;
 					}
-				}
-				catch (NumberFormatException e)
-				{
+				} catch (NumberFormatException e) {
 					ok = false;
 				}
 			}
 
-			if (ok)
-			{
-				try
-				{
+			if (ok) {
+				try {
 					return InetAddress.getByName(value);
-				}
-				catch (UnknownHostException e)
-				{
+				} catch (UnknownHostException e) {
 					// ignore
 				}
 			}
@@ -375,106 +299,87 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		return value;
 	}
 
-	static class ConfigFile
-	{
+	static class ConfigFile {
 		private File file;
 		private String name;
 		private final List<ConfigComment> configs = new ArrayList<>();
 
-		public ConfigFile(File file)
-		{
+		public ConfigFile(File file) {
 			this.file = file;
 			int lastIndex = file.getName().lastIndexOf('.');
 			setName(file.getName().substring(0, lastIndex));
 		}
 
-		public void addConfigProperty(String name, Object value, ValueType type, String comments)
-		{
+		public void addConfigProperty(String name, Object value, ValueType type, String comments) {
 			configs.add(new ConfigProperty(name, value, type, comments));
 		}
 
-		public void addConfigComment(String comment)
-		{
+		public void addConfigComment(String comment) {
 			configs.add(new ConfigComment(comment));
 		}
 
-		public void addConfigProperty(String name, Object value, String comments)
-		{
+		public void addConfigProperty(String name, Object value, String comments) {
 			this.addConfigProperty(name, value, ValueType.firstTypeMatch(value), comments);
 		}
 
-		public List<ConfigComment> getConfigProperties()
-		{
+		public List<ConfigComment> getConfigProperties() {
 			return configs;
 		}
 
 		/**
 		 * @param name The name to set.
 		 */
-		public void setName(String name)
-		{
+		public void setName(String name) {
 			this.name = name;
 		}
 
 		/**
 		 * @return Returns the name.
 		 */
-		public String getName()
-		{
+		public String getName() {
 			return name;
 		}
 
-		public void save() throws IOException
-		{
+		public void save() throws IOException {
 			BufferedWriter bufWriter = null;
-			try
-			{
+			try {
 				bufWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file)));
-				for (ConfigComment cc : configs)
-				{
+				for (ConfigComment cc : configs) {
 					cc.save(bufWriter);
 				}
-			}
-			finally
-			{
-				if (bufWriter != null)
-				{
+			} finally {
+				if (bufWriter != null) {
 					bufWriter.close();
 				}
 			}
 		}
 
-		class ConfigComment
-		{
+		class ConfigComment {
 
 			private String comments;
 
 			/**
 			 * @param comments
 			 */
-			public ConfigComment(String comments)
-			{
+			public ConfigComment(String comments) {
 				this.comments = comments;
 			}
 
 			/**
 			 * @return Returns the comments.
 			 */
-			public String getComments()
-			{
+			public String getComments() {
 				return comments;
 			}
 
 			/**
 			 * @param comments The comments to set.
 			 */
-			public void setComments(String comments)
-			{
+			public void setComments(String comments) {
 				this.comments = comments;
 			}
 
-			public void save(Writer writer) throws IOException
-			{
+			public void save(Writer writer) throws IOException {
 				StringBuilder sb = new StringBuilder();
 				sb.append('#');
 				sb.append(getComments().replace("\r\n", "\r\n#"));
@@ -483,8 +388,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			}
 		}
 
-		class ConfigProperty extends ConfigComment
-		{
+		class ConfigProperty extends ConfigComment {
 			private String propname;
 			private Object value;
 			private ValueType type;
@@ -496,11 +400,9 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			 * @param type
 			 * @param comments
 			 */
-			public ConfigProperty(String name, Object value, ValueType type, String comments)
-			{
+			public ConfigProperty(String name, Object value, ValueType type, String comments) {
 				super(comments);
-				if (!type.getType().isAssignableFrom(value.getClass()))
-				{
+				if (!type.getType().isAssignableFrom(value.getClass())) {
 					throw new IllegalArgumentException("Value Instance Type doesn't match the type argument.");
 				}
 				propname = name;
@@ -511,72 +413,61 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			/**
 			 * @return Returns the name.
 			 */
-			public String getName()
-			{
+			public String getName() {
 				return propname;
 			}
 
 			/**
 			 * @return Returns the name.
 			 */
-			public String getDisplayName()
-			{
+			public String getDisplayName() {
 				return unCamelize(propname);
 			}
 
 			/**
 			 * @param name The name to set.
 			 */
-			public void setName(String name)
-			{
+			public void setName(String name) {
 				propname = name;
 			}
 
 			/**
 			 * @return Returns the value.
 			 */
-			public Object getValue()
-			{
+			public Object getValue() {
 				return value;
 			}
 
 			/**
 			 * @param value The value to set.
 			 */
-			public void setValue(String value)
-			{
+			public void setValue(String value) {
 				this.value = value;
 			}
 
 			/**
 			 * @return Returns the type.
 			 */
-			public ValueType getType()
-			{
+			public ValueType getType() {
 				return type;
 			}
 
 			/**
 			 * @param type The type to set.
 			 */
-			public void setType(ValueType type)
-			{
+			public void setType(ValueType type) {
 				this.type = type;
 			}
 
-			public JComponent getValueComponent()
-			{
-				if (component == null)
-				{
+			public JComponent getValueComponent() {
+				if (component == null) {
 					component = createValueComponent();
 				}
 				return component;
 			}
 
-			public JComponent createValueComponent()
-			{
-				switch (getType())
-				{
+			public JComponent createValueComponent() {
+				switch (getType()) {
 					case BOOLEAN:
 						boolean bool = (Boolean) getValue();
 						JCheckBox checkBox = new JCheckBox();
@@ -592,10 +483,8 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 						JTextArea textArea = new JTextArea(val);
 						textArea.setFont(UIManager.getFont("TextField.font"));
 						int rows = 1;
-						for (int i = 0; i < val.length(); i++)
-						{
-							if (val.charAt(i) == '\\')
-							{
+						for (int i = 0; i < val.length(); i++) {
+							if (val.charAt(i) == '\\') {
 								rows++;
 							}
 						}
@@ -606,24 +495,16 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 			}
 
 			@Override
-			public void save(Writer writer) throws IOException
-			{
+			public void save(Writer writer) throws IOException {
 				String value;
-				if (getValueComponent() instanceof JCheckBox)
-				{
+				if (getValueComponent() instanceof JCheckBox) {
 					value = Boolean.toString(((JCheckBox) getValueComponent()).isSelected());
 					value = value.substring(0, 1).toUpperCase() + value.substring(1);
-				}
-				else if (getValueComponent() instanceof JIPTextField)
-				{
+				} else if (getValueComponent() instanceof JIPTextField) {
 					value = ((JIPTextField) getValueComponent()).getText();
-				}
-				else if (getValueComponent() instanceof JTextArea)
-				{
+				} else if (getValueComponent() instanceof JTextArea) {
 					value = ((JTextArea) getValueComponent()).getText();
-				}
-				else
-				{
+				} else {
 					throw new IllegalStateException("Unhandled component value");
 				}
 
@@ -641,8 +522,7 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 		}
 	}
 
-	public enum ValueType
-	{
+	public enum ValueType {
 		BOOLEAN(Boolean.class),
 		DOUBLE(Double.class),
 		INTEGER(Integer.class),
@@ -651,25 +531,20 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 
 		private final Class<?> type;
 
-		ValueType(Class<?> type)
-		{
+		ValueType(Class<?> type) {
 			this.type = type;
 		}
 
 		/**
 		 * @return Returns the type.
 		 */
-		public Class<?> getType()
-		{
+		public Class<?> getType() {
 			return type;
 		}
 
-		public static ValueType firstTypeMatch(Object value)
-		{
-			for (ValueType vt : ValueType.values())
-			{
-				if (vt.getType() == value.getClass())
-				{
+		public static ValueType firstTypeMatch(Object value) {
+			for (ValueType vt : ValueType.values()) {
+				if (vt.getType() == value.getClass()) {
 					return vt;
 				}
 			}
@@ -681,37 +556,26 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e)
-	{
+	public void actionPerformed(ActionEvent e) {
 		String cmd = e.getActionCommand();
 
 		StringBuilder errors = new StringBuilder();
 
-		switch (cmd)
-		{
+		switch (cmd) {
 			case "save":
-				for (ConfigFile cf : ConfigUserInterface.this.getConfigs())
-				{
-					try
-					{
+				for (ConfigFile cf : ConfigUserInterface.this.getConfigs()) {
+					try {
 						cf.save();
-					}
-					catch (Exception e1)
-					{
+					} catch (Exception e1) {
 						e1.printStackTrace();
-						errors.append(getBundle().getString("errorSaving") + cf.getName() + ".properties. " +
-								getBundle().getString("reason") + e1.getLocalizedMessage() + "\r\n");
+						errors.append(getBundle().getString("errorSaving") + cf.getName() + ".properties. " + getBundle().getString("reason") +
+								e1.getLocalizedMessage() + "\r\n");
 					}
 				}
-				if (errors.length() == 0)
-				{
-					JOptionPane.showMessageDialog(ConfigUserInterface.this, getBundle().getString("success"), "OK",
-							JOptionPane.INFORMATION_MESSAGE);
-				}
-				else
-				{
-					JOptionPane.showMessageDialog(ConfigUserInterface.this, errors, getBundle().getString("error"),
-							JOptionPane.ERROR_MESSAGE);
+				if (errors.length() == 0) {
+					JOptionPane.showMessageDialog(ConfigUserInterface.this, getBundle().getString("success"), "OK", JOptionPane.INFORMATION_MESSAGE);
+				} else {
+					JOptionPane.showMessageDialog(ConfigUserInterface.this, errors, getBundle().getString("error"), JOptionPane.ERROR_MESSAGE);
 					System.exit(2);
 				}
 				break;
@@ -719,10 +583,11 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 				System.exit(0);
 			case "about":
 				JOptionPane.showMessageDialog(ConfigUserInterface.this,
-						getBundle().getString("credits") + "\nhttp://www.l2jserver.com\n\n" +
-								getBundle().getString("icons") + "\n\n" + getBundle().getString("language") + '\n' +
-								getBundle().getString("translation"), getBundle().getString("aboutItem"),
-						JOptionPane.INFORMATION_MESSAGE, ImagesTable.getImage("l2jserverlogo.png"));
+						getBundle().getString("credits") + "\nhttp://www.l2jserver.com\n\n" + getBundle().getString("icons") + "\n\n" +
+								getBundle().getString("language") + '\n' + getBundle().getString("translation"),
+						getBundle().getString("aboutItem"),
+						JOptionPane.INFORMATION_MESSAGE,
+						ImagesTable.getImage("l2jserverlogo.png"));
 				break;
 		}
 	}
@@ -730,16 +595,14 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	/**
 	 * @param configs The configuration to set.
 	 */
-	public void setConfigs(List<ConfigFile> configs)
-	{
+	public void setConfigs(List<ConfigFile> configs) {
 		this.configs = configs;
 	}
 
 	/**
 	 * @return Returns the configuration.
 	 */
-	public List<ConfigFile> getConfigs()
-	{
+	public List<ConfigFile> getConfigs() {
 		return configs;
 	}
 
@@ -748,16 +611,13 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	 * human readable form.
 	 */
 
-	public static String unCamelize(final String keyName)
-	{
+	public static String unCamelize(final String keyName) {
 		Pattern p = Pattern.compile("\\p{Lu}");
 		Matcher m = p.matcher(keyName);
 		StringBuffer sb = new StringBuffer();
 		int last = 0;
-		while (m.find())
-		{
-			if (m.start() != last + 1)
-			{
+		while (m.find()) {
+			if (m.start() != last + 1) {
 				m.appendReplacement(sb, " " + m.group());
 			}
 			last = m.start();
@@ -769,16 +629,14 @@ public class ConfigUserInterface extends JFrame implements ActionListener
 	/**
 	 * @param bundle The bundle to set.
 	 */
-	public void setBundle(ResourceBundle bundle)
-	{
+	public void setBundle(ResourceBundle bundle) {
 		this.bundle = bundle;
 	}
 
 	/**
 	 * @return Returns the bundle.
 	 */
-	public ResourceBundle getBundle()
-	{
+	public ResourceBundle getBundle() {
 		return bundle;
 	}
 }

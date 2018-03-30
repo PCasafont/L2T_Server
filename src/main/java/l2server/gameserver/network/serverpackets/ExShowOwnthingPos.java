@@ -20,18 +20,15 @@ package l2server.gameserver.network.serverpackets;
  *
  * @author -Gigiikun-
  */
-public class ExShowOwnthingPos extends L2GameServerPacket
-{
-
-	public ExShowOwnthingPos()
-	{
+public class ExShowOwnthingPos extends L2GameServerPacket {
+	
+	public ExShowOwnthingPos() {
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(0);
 		//writeD(0);
 	}

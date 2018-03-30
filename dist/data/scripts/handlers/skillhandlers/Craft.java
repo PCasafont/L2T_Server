@@ -31,38 +31,32 @@ import l2server.gameserver.templates.skills.L2SkillType;
  * @version $Revision: 1.1.2.2.2.4 $ $Date: 2005/04/06 16:13:48 $
  */
 
-public class Craft implements ISkillHandler
-{
+public class Craft implements ISkillHandler {
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.COMMON_CRAFT, L2SkillType.DWARVEN_CRAFT};
-
+	
 	/**
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (!(activeChar instanceof L2PcInstance))
-		{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+		if (!(activeChar instanceof L2PcInstance)) {
 			return;
 		}
-
+		
 		L2PcInstance player = (L2PcInstance) activeChar;
-
-		if (player.getPrivateStoreType() != 0)
-		{
+		
+		if (player.getPrivateStoreType() != 0) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_CREATED_WHILE_ENGAGED_IN_TRADING));
 			return;
 		}
-		RecipeController.getInstance()
-				.requestBookOpen(player, skill.getSkillType() == L2SkillType.DWARVEN_CRAFT ? true : false);
+		RecipeController.getInstance().requestBookOpen(player, skill.getSkillType() == L2SkillType.DWARVEN_CRAFT ? true : false);
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

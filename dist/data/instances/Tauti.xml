@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instance name="Tauti Raid Boss">
-    <activityTime val="120" />
-    <allowSummon val="false" />
-    <emptyDestroyTime val="10" />
-    <spawnPoint spawnX="-147370" spawnY="152603" spawnZ="-14058" />
-    <doorlist>
-        <door doorId="15240002" />
-        <door doorId="15240001" />
-    </doorlist>
+	<activityTime val="120" />
+	<allowSummon val="false" />
+	<emptyDestroyTime val="10" />
+	<spawnPoint spawnX="-147370" spawnY="152603" spawnZ="-14058" />
+	<doorlist>
+		<door doorId="15240002" />
+		<door doorId="15240001" />
+	</doorlist>
 </instance>

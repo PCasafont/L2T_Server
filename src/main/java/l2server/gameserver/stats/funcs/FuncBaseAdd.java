@@ -20,16 +20,13 @@ import l2server.gameserver.stats.Stats;
 /**
  * @author Pere
  */
-public class FuncBaseAdd extends FuncAdd
-{
-	public FuncBaseAdd(Stats pStat, Object owner, Lambda lambda)
-	{
+public class FuncBaseAdd extends FuncAdd {
+	public FuncBaseAdd(Stats pStat, Object owner, Lambda lambda) {
 		super(pStat, owner, lambda);
 	}
 
 	@Override
-	public int getOrder()
-	{
+	public int getOrder() {
 		return 0x10;
 	}
 }

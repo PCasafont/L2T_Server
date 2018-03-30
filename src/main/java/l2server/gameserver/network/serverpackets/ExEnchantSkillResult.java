@@ -18,33 +18,29 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author JIV
  */
-public class ExEnchantSkillResult extends L2GameServerPacket
-{
+public class ExEnchantSkillResult extends L2GameServerPacket {
 	private static final ExEnchantSkillResult STATIC_PACKET_TRUE = new ExEnchantSkillResult(true);
 	private static final ExEnchantSkillResult STATIC_PACKET_FALSE = new ExEnchantSkillResult(false);
-
-	public static ExEnchantSkillResult valueOf(boolean result)
-	{
+	
+	public static ExEnchantSkillResult valueOf(boolean result) {
 		return result ? STATIC_PACKET_TRUE : STATIC_PACKET_FALSE;
 	}
-
+	
 	private boolean enchanted;
-
-	public ExEnchantSkillResult(boolean enchanted)
-	{
+	
+	public ExEnchantSkillResult(boolean enchanted) {
 		this.enchanted = enchanted;
 	}
 
     /*
 	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
-
+	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(enchanted ? 1 : 0);
 	}
 }

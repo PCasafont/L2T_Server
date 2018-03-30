@@ -25,21 +25,17 @@ import l2server.gameserver.templates.skills.L2SkillType;
  * @author Forsaiken
  */
 
-public class GiveSp implements ISkillHandler
-{
+public class GiveSp implements ISkillHandler {
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.GIVE_SP};
 
 	/**
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		for (L2Object obj : targets)
-		{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+		for (L2Object obj : targets) {
 			L2Character target = (L2Character) obj;
-			if (target != null)
-			{
+			if (target != null) {
 				int spToAdd = (int) skill.getPower();
 				target.addExpAndSp(0, spToAdd);
 			}
@@ -50,8 +46,7 @@ public class GiveSp implements ISkillHandler
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

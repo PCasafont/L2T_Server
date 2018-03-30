@@ -19,15 +19,13 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * @author kerberos
- *         JIV update 27.8.10
+ * JIV update 27.8.10
  */
-public class ExValidateLocationInAirShip extends L2GameServerPacket
-{
+public class ExValidateLocationInAirShip extends L2GameServerPacket {
 	private L2PcInstance activeChar;
 	private int shipId, x, y, z, h;
-
-	public ExValidateLocationInAirShip(L2PcInstance player)
-	{
+	
+	public ExValidateLocationInAirShip(L2PcInstance player) {
 		activeChar = player;
 		shipId = activeChar.getAirShip().getObjectId();
 		x = player.getInVehiclePosition().getX();
@@ -35,10 +33,9 @@ public class ExValidateLocationInAirShip extends L2GameServerPacket
 		z = player.getInVehiclePosition().getZ();
 		h = player.getHeading();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(activeChar.getObjectId());
 		writeD(shipId);
 		writeD(x);

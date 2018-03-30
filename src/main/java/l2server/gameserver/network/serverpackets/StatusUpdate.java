@@ -33,10 +33,9 @@ import java.util.ArrayList;
  *
  * @version $Revision: 1.3.2.1.2.5 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class StatusUpdate extends L2GameServerPacket
-{
+public final class StatusUpdate extends L2GameServerPacket {
 	//private static final int HP_MOD = 10000000;
-
+	
 	public static final int LEVEL = 0x01;
 	public static final int EXP = 0x02;
 	public static final int STR = 0x03;
@@ -45,16 +44,16 @@ public final class StatusUpdate extends L2GameServerPacket
 	public static final int INT = 0x06;
 	public static final int WIT = 0x07;
 	public static final int MEN = 0x08;
-
+	
 	public static final int CUR_HP = 0x09;
 	public static final int MAX_HP = 0x0a;
 	public static final int CUR_MP = 0x0b;
 	public static final int MAX_MP = 0x0c;
-
+	
 	public static final int SP = 0x0d;
 	public static final int CUR_LOAD = 0x0e;
 	public static final int MAX_LOAD = 0x0f;
-
+	
 	public static final int P_ATK = 0x11;
 	public static final int ATK_SPD = 0x12;
 	public static final int P_DEF = 0x13;
@@ -66,18 +65,17 @@ public final class StatusUpdate extends L2GameServerPacket
 	public static final int M_DEF = 0x19;
 	public static final int PVP_FLAG = 0x1a;
 	public static final int REPUTATION = 0x1b;
-
+	
 	public static final int CUR_CP = 0x21;
 	public static final int MAX_CP = 0x22;
-
+	
 	private int objectId;
 	private int causerId = 0;
 	private int display = 0;
 	//private int maxHp = -1;
 	private ArrayList<Attribute> attributes;
-
-	static class Attribute
-	{
+	
+	static class Attribute {
 		/**
 		 * id values
 		 * 09 - current health
@@ -87,26 +85,33 @@ public final class StatusUpdate extends L2GameServerPacket
 		 */
 		public int id;
 		public int value;
-
-		Attribute(int pId, int pValue)
-		{
+		
+		Attribute(int pId, int pValue) {
 			id = pId;
 			value = pValue;
 		}
 	}
-
-	public enum StatusUpdateDisplay
-	{
-		NONE, NORMAL, SHOW, MANA, UNK2, UNK3, UNK4, UNK5, UNK6, UNK7, DOT,
+	
+	public enum StatusUpdateDisplay {
+		NONE,
+		NORMAL,
+		SHOW,
+		MANA,
+		UNK2,
+		UNK3,
+		UNK4,
+		UNK5,
+		UNK6,
+		UNK7,
+		DOT,
 	}
-
+	
 	/**
 	 * Create {@link StatusUpdate} packet for given {@link L2Object}.
 	 *
 	 * @param object
 	 */
-	public StatusUpdate(L2Object object)
-	{
+	public StatusUpdate(L2Object object) {
 		attributes = new ArrayList<>();
 		objectId = object.getObjectId();
 		/*if (object instanceof L2Attackable || object instanceof L2Playable
@@ -114,16 +119,14 @@ public final class StatusUpdate extends L2GameServerPacket
 				&& getClient().getActiveChar().getObjectId() != objectId)
 			maxHp = ((L2Character) object).getMaxVisibleHp();*/
 	}
-
-	public StatusUpdate(L2Object object, L2Character causer, StatusUpdateDisplay display)
-	{
+	
+	public StatusUpdate(L2Object object, L2Character causer, StatusUpdateDisplay display) {
 		this(object);
 		causerId = causer != null ? causer.getObjectId() : 0;
 		this.display = display.ordinal();
 	}
-
-	public void addAttribute(int id, int level)
-	{
+	
+	public void addAttribute(int id, int level) {
         /*if (maxHp != -1)
 		{
 			if (id == CUR_HP)
@@ -136,17 +139,15 @@ public final class StatusUpdate extends L2GameServerPacket
 		}*/
 		attributes.add(new Attribute(id, level));
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objectId);
 		writeD(causerId);
 		writeC(display);
 		writeC(attributes.size());
-
-		for (Attribute temp : attributes)
-		{
+		
+		for (Attribute temp : attributes) {
 			writeC(temp.id);
 			writeD(temp.value);
 		}

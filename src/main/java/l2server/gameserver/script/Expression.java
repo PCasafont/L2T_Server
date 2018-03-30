@@ -18,84 +18,61 @@ package l2server.gameserver.script;
 import l2server.gameserver.scripting.L2ScriptEngineManager;
 import l2server.log.Log;
 
+import javax.script.ScriptContext;
 import java.util.logging.Level;
 
-import javax.script.ScriptContext;
-
-public class Expression
-{
+public class Expression {
 	private final ScriptContext context;
 	@SuppressWarnings("unused")
 	private final String lang;
 	@SuppressWarnings("unused")
 	private final String code;
 
-	public static Object eval(String lang, String code)
-	{
-		try
-		{
+	public static Object eval(String lang, String code) {
+		try {
 			return L2ScriptEngineManager.getInstance().eval(lang, code);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "", e);
 			return null;
 		}
 	}
 
-	public static Object eval(ScriptContext context, String lang, String code)
-	{
-		try
-		{
+	public static Object eval(ScriptContext context, String lang, String code) {
+		try {
 			return L2ScriptEngineManager.getInstance().eval(lang, code, context);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "", e);
 			return null;
 		}
 	}
 
-	public static Expression create(ScriptContext context, String lang, String code)
-	{
-		try
-		{
+	public static Expression create(ScriptContext context, String lang, String code) {
+		try {
 			return new Expression(context, lang, code);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "", e);
 			return null;
 		}
 	}
 
-	private Expression(ScriptContext pContext, String pLang, String pCode)
-	{
+	private Expression(ScriptContext pContext, String pLang, String pCode) {
 		context = pContext;
 		lang = pLang;
 		code = pCode;
 	}
 
-	public <T> void addDynamicVariable(String name, T value)
-	{
-		try
-		{
+	public <T> void addDynamicVariable(String name, T value) {
+		try {
 			context.setAttribute(name, value, ScriptContext.ENGINE_SCOPE);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "", e);
 		}
 	}
 
-	public void removeDynamicVariable(String name)
-	{
-		try
-		{
+	public void removeDynamicVariable(String name) {
+		try {
 			context.removeAttribute(name, ScriptContext.ENGINE_SCOPE);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "", e);
 		}
 	}

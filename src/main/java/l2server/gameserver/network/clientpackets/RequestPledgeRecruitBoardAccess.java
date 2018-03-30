@@ -22,49 +22,40 @@ import l2server.gameserver.network.serverpackets.ExPledgeRecruitApplyInfo;
 /**
  * @author Pere
  */
-public final class RequestPledgeRecruitBoardAccess extends L2GameClientPacket
-{
+public final class RequestPledgeRecruitBoardAccess extends L2GameClientPacket {
 	private int action;
 	private int karma;
 	private String introduction;
 	private String largeIntroduction;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		action = readD();
 		karma = readD();
 		introduction = readS();
 		largeIntroduction = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null || !activeChar.isClanLeader())
-		{
+		if (activeChar == null || !activeChar.isClanLeader()) {
 			return;
 		}
-
-		switch (action)
-		{
+		
+		switch (action) {
 			case 0:
-				if (ClanRecruitManager.getInstance().removeClan(activeChar.getClan()))
-				{
+				if (ClanRecruitManager.getInstance().removeClan(activeChar.getClan())) {
 					sendPacket(new ExPledgeRecruitApplyInfo(0));
 				}
 				break;
 			case 1:
-				if (ClanRecruitManager.getInstance()
-						.addClan(activeChar.getClan(), karma, introduction, largeIntroduction))
-				{
+				if (ClanRecruitManager.getInstance().addClan(activeChar.getClan(), karma, introduction, largeIntroduction)) {
 					sendPacket(new ExPledgeRecruitApplyInfo(1));
 				}
 				break;
 			case 2:
-				ClanRecruitManager.getInstance()
-						.updateClan(activeChar.getClan(), karma, introduction, largeIntroduction);
+				ClanRecruitManager.getInstance().updateClan(activeChar.getClan(), karma, introduction, largeIntroduction);
 				break;
 		}
 	}

@@ -21,26 +21,26 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.SpecialCamera;
 
-public class AdminCamera implements IAdminCommandHandler
-{
+public class AdminCamera implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_camera"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		try
-		{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		try {
 			final L2Character target = (L2Character) activeChar.getTarget();
 			final String[] com = command.split(" ");
 
-			target.broadcastPacket(
-					new SpecialCamera(target.getObjectId(), Integer.parseInt(com[1]), Integer.parseInt(com[2]),
-							Integer.parseInt(com[3]), Integer.parseInt(com[4]), Integer.parseInt(com[5]),
-							Integer.parseInt(com[6]), Integer.parseInt(com[7]), Integer.parseInt(com[8]),
-							Integer.parseInt(com[9])));
-		}
-		catch (Exception e)
-		{
+			target.broadcastPacket(new SpecialCamera(target.getObjectId(),
+					Integer.parseInt(com[1]),
+					Integer.parseInt(com[2]),
+					Integer.parseInt(com[3]),
+					Integer.parseInt(com[4]),
+					Integer.parseInt(com[5]),
+					Integer.parseInt(com[6]),
+					Integer.parseInt(com[7]),
+					Integer.parseInt(com[8]),
+					Integer.parseInt(com[9])));
+		} catch (Exception e) {
 			/*List<Point3D> positions = new ArrayList<Point3D>();
             for (L2PcInstance player : activeChar.getKnownList().getKnownPlayers().values())
 			{
@@ -94,15 +94,13 @@ public class AdminCamera implements IAdminCommandHandler
 			activeChar.sendMessage("Usage: //camera dist yaw pitch time duration turn rise widescreen unknown");*/
 
 			L2PcInstance watcher = activeChar;
-			if (activeChar.getTarget() instanceof L2PcInstance)
-			{
+			if (activeChar.getTarget() instanceof L2PcInstance) {
 				watcher = (L2PcInstance) activeChar.getTarget();
 			}
 
 			watcher.startWatcherMode();
 			GamePlayWatcher.getInstance().makeWatcher(watcher);
-			if (watcher != activeChar)
-			{
+			if (watcher != activeChar) {
 				activeChar.sendMessage("Camera mode started on " + watcher.getName() + "!");
 			}
 
@@ -114,8 +112,7 @@ public class AdminCamera implements IAdminCommandHandler
 	}
 
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

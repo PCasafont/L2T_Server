@@ -1,77 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <category>
-        <enchant level="17">
-            <ingredient id="57" count="20000000" /> <!-- Adena -->
-            <ingredient id="10429" count="1" />     <!-- Tuly's Lead Medal -->
-            <ingredient count="20" id="37559" />    <!-- Shiny Coin -->
-            <production enchantLevel="17" chance="50" />
-            <production enchantLevel="16" chance="50" />
-            <production enchantLevel="15" chance="0" />
-        </enchant>
-        <enchant level="18">
-            <ingredient id="57" count="24000000" />
-            <ingredient id="10429" count="1" />
-            <ingredient count="20" id="37559" />    <!-- Shiny Coin -->
-            <production enchantLevel="18" chance="45" />
-            <production enchantLevel="17" chance="55" />
-            <production enchantLevel="16" chance="0" />
-        </enchant>
-        <enchant level="19">
-            <ingredient id="57" count="28000000" />
-            <ingredient id="10429" count="1" />
-            <ingredient count="20" id="37559" />    <!-- Shiny Coin -->
-            <production enchantLevel="19" chance="40" />
-            <production enchantLevel="18" chance="60" />
-            <production enchantLevel="17" chance="0" />
-        </enchant>
-        <enchant level="20">
-            <ingredient id="57" count="32000000" />
-            <ingredient id="10429" count="2" />
-            <ingredient count="20" id="37559" />    <!-- Shiny Coin -->
-            <production enchantLevel="20" chance="35" />
-            <production enchantLevel="19" chance="65" />
-            <production enchantLevel="18" chance="0" />
-        </enchant>
-        <enchant level="21">
-            <ingredient id="57" count="46000000" />
-            <ingredient id="10429" count="2" />
-            <ingredient count="20" id="37559" />    <!-- Shiny Coin -->
-            <production enchantLevel="21" chance="30" />
-            <production enchantLevel="20" chance="70" />
-            <production enchantLevel="19" chance="0" />
-        </enchant>
-        <enchant level="22">
-            <ingredient id="57" count="54000000" />
-            <ingredient id="10429" count="2" />
-            <ingredient count="20" id="37559" />    <!-- Shiny Coin -->
-            <production enchantLevel="22" chance="25" />
-            <production enchantLevel="21" chance="75" />
-            <production enchantLevel="20" chance="0" />
-        </enchant>
-        <enchant level="23">
-            <ingredient id="57" count="58000000" />
-            <ingredient id="10429" count="2" />
-            <ingredient count="20" id="37559" />    <!-- Shiny Coin -->
-            <production enchantLevel="23" chance="20" />
-            <production enchantLevel="22" chance="80" />
-            <production enchantLevel="21" chance="0" />
-        </enchant>
-        <enchant level="24">
-            <ingredient id="57" count="59000000" />
-            <ingredient id="10429" count="2" />
-            <ingredient count="20" id="37559" />    <!-- Shiny Coin -->
-            <production enchantLevel="24" chance="15" />
-            <production enchantLevel="23" chance="85" />
-            <production enchantLevel="22" chance="0" />
-        </enchant>
-        <enchant level="25">
-            <ingredient id="57" count="60000000" />
-            <ingredient id="10429" count="2" />
-            <ingredient count="20" id="37559" />    <!-- Shiny Coin -->
-            <production enchantLevel="25" chance="10" />
-            <production enchantLevel="24" chance="90" />
-            <production enchantLevel="23" chance="0" />
-        </enchant>
-    </category>
+	<category>
+		<enchant level="17">
+			<ingredient id="57" count="20000000" /> <!-- Adena -->
+			<ingredient id="10429" count="1" />     <!-- Tuly's Lead Medal -->
+			<ingredient count="20" id="37559" />    <!-- Shiny Coin -->
+			<production enchantLevel="17" chance="50" />
+			<production enchantLevel="16" chance="50" />
+			<production enchantLevel="15" chance="0" />
+		</enchant>
+		<enchant level="18">
+			<ingredient id="57" count="24000000" />
+			<ingredient id="10429" count="1" />
+			<ingredient count="20" id="37559" />    <!-- Shiny Coin -->
+			<production enchantLevel="18" chance="45" />
+			<production enchantLevel="17" chance="55" />
+			<production enchantLevel="16" chance="0" />
+		</enchant>
+		<enchant level="19">
+			<ingredient id="57" count="28000000" />
+			<ingredient id="10429" count="1" />
+			<ingredient count="20" id="37559" />    <!-- Shiny Coin -->
+			<production enchantLevel="19" chance="40" />
+			<production enchantLevel="18" chance="60" />
+			<production enchantLevel="17" chance="0" />
+		</enchant>
+		<enchant level="20">
+			<ingredient id="57" count="32000000" />
+			<ingredient id="10429" count="2" />
+			<ingredient count="20" id="37559" />    <!-- Shiny Coin -->
+			<production enchantLevel="20" chance="35" />
+			<production enchantLevel="19" chance="65" />
+			<production enchantLevel="18" chance="0" />
+		</enchant>
+		<enchant level="21">
+			<ingredient id="57" count="46000000" />
+			<ingredient id="10429" count="2" />
+			<ingredient count="20" id="37559" />    <!-- Shiny Coin -->
+			<production enchantLevel="21" chance="30" />
+			<production enchantLevel="20" chance="70" />
+			<production enchantLevel="19" chance="0" />
+		</enchant>
+		<enchant level="22">
+			<ingredient id="57" count="54000000" />
+			<ingredient id="10429" count="2" />
+			<ingredient count="20" id="37559" />    <!-- Shiny Coin -->
+			<production enchantLevel="22" chance="25" />
+			<production enchantLevel="21" chance="75" />
+			<production enchantLevel="20" chance="0" />
+		</enchant>
+		<enchant level="23">
+			<ingredient id="57" count="58000000" />
+			<ingredient id="10429" count="2" />
+			<ingredient count="20" id="37559" />    <!-- Shiny Coin -->
+			<production enchantLevel="23" chance="20" />
+			<production enchantLevel="22" chance="80" />
+			<production enchantLevel="21" chance="0" />
+		</enchant>
+		<enchant level="24">
+			<ingredient id="57" count="59000000" />
+			<ingredient id="10429" count="2" />
+			<ingredient count="20" id="37559" />    <!-- Shiny Coin -->
+			<production enchantLevel="24" chance="15" />
+			<production enchantLevel="23" chance="85" />
+			<production enchantLevel="22" chance="0" />
+		</enchant>
+		<enchant level="25">
+			<ingredient id="57" count="60000000" />
+			<ingredient id="10429" count="2" />
+			<ingredient count="20" id="37559" />    <!-- Shiny Coin -->
+			<production enchantLevel="25" chance="10" />
+			<production enchantLevel="24" chance="90" />
+			<production enchantLevel="23" chance="0" />
+		</enchant>
+	</category>
 </list>

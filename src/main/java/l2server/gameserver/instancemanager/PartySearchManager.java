@@ -22,132 +22,101 @@ import java.util.ArrayList;
 /**
  * @author Erlandys
  */
-public class PartySearchManager
-{
+public class PartySearchManager {
 	ArrayList<L2PcInstance> lookingForParty;
 	ArrayList<L2PcInstance> wannaToChangeThisPlayer;
 
-	public PartySearchManager()
-	{
+	public PartySearchManager() {
 		load();
 	}
 
-	public void load()
-	{
-		if (lookingForParty == null)
-		{
+	public void load() {
+		if (lookingForParty == null) {
 			lookingForParty = new ArrayList<>();
-		}
-		else
-		{
+		} else {
 			lookingForParty.clear();
 		}
-		if (wannaToChangeThisPlayer == null)
-		{
+		if (wannaToChangeThisPlayer == null) {
 			wannaToChangeThisPlayer = new ArrayList<>();
-		}
-		else
-		{
+		} else {
 			wannaToChangeThisPlayer.clear();
 		}
 	}
 
-	public void addLookingForParty(L2PcInstance player)
-	{
+	public void addLookingForParty(L2PcInstance player) {
 		lookingForParty.add(player);
 	}
 
-	public void addChangeThisPlayer(L2PcInstance player)
-	{
+	public void addChangeThisPlayer(L2PcInstance player) {
 		wannaToChangeThisPlayer.add(player);
 	}
 
-	public ArrayList<L2PcInstance> getLookingForPartyPlayers()
-	{
+	public ArrayList<L2PcInstance> getLookingForPartyPlayers() {
 		return lookingForParty;
 	}
 
-	public ArrayList<L2PcInstance> getWannaToChangeThisPlayers()
-	{
+	public ArrayList<L2PcInstance> getWannaToChangeThisPlayers() {
 		return wannaToChangeThisPlayer;
 	}
 
-	public void removeLookingForParty(L2PcInstance player)
-	{
+	public void removeLookingForParty(L2PcInstance player) {
 		lookingForParty.remove(player);
 	}
 
-	public void removeChangeThisPlayer(L2PcInstance player)
-	{
+	public void removeChangeThisPlayer(L2PcInstance player) {
 		wannaToChangeThisPlayer.remove(player);
 	}
 
-	public L2PcInstance getLookingForParty(int level, int classId)
-	{
-		for (L2PcInstance player : lookingForParty)
-		{
-			if (player == null)
-			{
+	public L2PcInstance getLookingForParty(int level, int classId) {
+		for (L2PcInstance player : lookingForParty) {
+			if (player == null) {
 				continue;
 			}
 
-			if (player.getLevel() == level && player.getClassId() == classId)
-			{
+			if (player.getLevel() == level && player.getClassId() == classId) {
 				return player;
 			}
 		}
 		return null;
 	}
 
-	public L2PcInstance getWannaToChangeThisPlayer(int level, int classId)
-	{
-		for (L2PcInstance player : wannaToChangeThisPlayer)
-		{
-			if (player.getLevel() == level && player.getClassId() == classId)
-			{
+	public L2PcInstance getWannaToChangeThisPlayer(int level, int classId) {
+		for (L2PcInstance player : wannaToChangeThisPlayer) {
+			if (player.getLevel() == level && player.getClassId() == classId) {
 				return player;
 			}
 		}
 		return null;
 	}
 
-	public boolean getWannaToChangeThisPlayer(int objectID)
-	{
-		for (L2PcInstance player : wannaToChangeThisPlayer)
-		{
-			if (player == null)
-			{
+	public boolean getWannaToChangeThisPlayer(int objectID) {
+		for (L2PcInstance player : wannaToChangeThisPlayer) {
+			if (player == null) {
 				continue;
 			}
 
-			if (player.getObjectId() == objectID)
-			{
+			if (player.getObjectId() == objectID) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	public L2PcInstance getPlayerFromChange(int level, int classId)
-	{
-		for (L2PcInstance player : wannaToChangeThisPlayer)
-		{
-			if (player.getLevel() == level && player.getClassId() == classId)
-			{
+	public L2PcInstance getPlayerFromChange(int level, int classId) {
+		for (L2PcInstance player : wannaToChangeThisPlayer) {
+			if (player.getLevel() == level && player.getClassId() == classId) {
 				return player;
 			}
 		}
 		return null;
 	}
 
-	public static PartySearchManager getInstance()
-	{
+	public static PartySearchManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final PartySearchManager instance = new PartySearchManager();
 	}
 }

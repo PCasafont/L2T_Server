@@ -21,8 +21,7 @@ import l2server.gameserver.stats.Env;
 /**
  * The Class ConditionPlayerActiveEffectId.
  */
-public class ConditionPlayerActiveEffectId extends Condition
-{
+public class ConditionPlayerActiveEffectId extends Condition {
 
 	private final int effectId;
 	private final int effectLvl;
@@ -32,8 +31,7 @@ public class ConditionPlayerActiveEffectId extends Condition
 	 *
 	 * @param effectId the effect id
 	 */
-	public ConditionPlayerActiveEffectId(int effectId)
-	{
+	public ConditionPlayerActiveEffectId(int effectId) {
 		this.effectId = effectId;
 		effectLvl = -1;
 	}
@@ -44,8 +42,7 @@ public class ConditionPlayerActiveEffectId extends Condition
 	 * @param effectId    the effect id
 	 * @param effectLevel the effect level
 	 */
-	public ConditionPlayerActiveEffectId(int effectId, int effectLevel)
-	{
+	public ConditionPlayerActiveEffectId(int effectId, int effectLevel) {
 		this.effectId = effectId;
 		effectLvl = effectLevel;
 	}
@@ -54,10 +51,8 @@ public class ConditionPlayerActiveEffectId extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		final L2Abnormal e = env.player.getFirstEffect(effectId);
 		return e != null && (effectLvl == -1 || effectLvl <= e.getSkill().getLevel());
-
 	}
 }

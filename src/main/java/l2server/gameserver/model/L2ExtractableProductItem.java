@@ -18,31 +18,26 @@ package l2server.gameserver.model;
 /**
  * @author -Nemesiss-, Zoey76
  */
-public class L2ExtractableProductItem
-{
+public class L2ExtractableProductItem {
 	private final int[] id;
 	private final int[] ammount;
 	private final double chance;
-
-	public L2ExtractableProductItem(int[] id, int[] ammount, double chance)
-	{
+	
+	public L2ExtractableProductItem(int[] id, int[] ammount, double chance) {
 		this.id = id;
 		this.ammount = ammount;
 		this.chance = chance;
 	}
-
-	public int[] getId()
-	{
+	
+	public int[] getId() {
 		return id;
 	}
-
-	public int[] getAmmount()
-	{
+	
+	public int[] getAmmount() {
 		return ammount;
 	}
-
-	public double getChance()
-	{
+	
+	public double getChance() {
 		return chance;
 	}
 }

@@ -40,47 +40,37 @@ import java.util.logging.Level;
 /**
  * @author Pere
  */
-public class LifeStoneTable
-{
-	public static final class EnchantEffectSet
-	{
+public class LifeStoneTable {
+	public static final class EnchantEffectSet {
 		private final List<EnchantEffect> enchantEffects;
 		private final float chance;
 
-		public EnchantEffectSet(List<EnchantEffect> effects, float chance)
-		{
+		public EnchantEffectSet(List<EnchantEffect> effects, float chance) {
 			enchantEffects = effects;
 			this.chance = chance;
 		}
 
-		public final EnchantEffect getRandomEnchantEffect()
-		{
+		public final EnchantEffect getRandomEnchantEffect() {
 			return enchantEffects.get(Rnd.get(enchantEffects.size()));
 		}
 
-		public final float getChance()
-		{
+		public final float getChance() {
 			return chance;
 		}
 	}
 
-	public static final class EnchantEffectGroup
-	{
+	public static final class EnchantEffectGroup {
 		private final List<EnchantEffectSet> effects;
 
-		public EnchantEffectGroup(List<EnchantEffectSet> effects)
-		{
+		public EnchantEffectGroup(List<EnchantEffectSet> effects) {
 			this.effects = effects;
 		}
 
-		public final EnchantEffect getRandomEffect()
-		{
+		public final EnchantEffect getRandomEffect() {
 			float random = Rnd.get(10000) / 100.0f;
 			float current = 0.0f;
-			for (EnchantEffectSet set : effects)
-			{
-				if (random < current + set.getChance())
-				{
+			for (EnchantEffectSet set : effects) {
+				if (random < current + set.getChance()) {
 					return set.getRandomEnchantEffect();
 				}
 
@@ -91,8 +81,7 @@ public class LifeStoneTable
 		}
 	}
 
-	public static final class LifeStone
-	{
+	public static final class LifeStone {
 		// lifestone level to player level table
 		private static final int[] LEVELS = {46, 49, 52, 55, 58, 61, 64, 67, 70, 76, 80, 82, 84, 85, 95, 99};
 
@@ -100,32 +89,26 @@ public class LifeStoneTable
 		private final int level;
 		private final Map<String, EnchantEffectGroup[]> effects = new HashMap<>();
 
-		public LifeStone(int grade, int level)
-		{
+		public LifeStone(int grade, int level) {
 			this.grade = grade;
 			this.level = level;
 		}
 
-		public final int getLevel()
-		{
+		public final int getLevel() {
 			return level;
 		}
 
-		public final int getGrade()
-		{
+		public final int getGrade() {
 			return grade;
 		}
 
-		public final int getPlayerLevel()
-		{
+		public final int getPlayerLevel() {
 			return LEVELS[level];
 		}
 
-		public final void setEffectGroup(String type, int order, EnchantEffectGroup group)
-		{
+		public final void setEffectGroup(String type, int order, EnchantEffectGroup group) {
 			EnchantEffectGroup[] augments = effects.get(type);
-			if (augments == null)
-			{
+			if (augments == null) {
 				augments = new EnchantEffectGroup[2];
 				effects.put(type, augments);
 			}
@@ -133,11 +116,9 @@ public class LifeStoneTable
 			augments[order] = group;
 		}
 
-		public final EnchantEffect getRandomEffect(String type, int order)
-		{
+		public final EnchantEffect getRandomEffect(String type, int order) {
 			EnchantEffectGroup[] augments = effects.get(type);
-			if (augments == null || augments[order] == null)
-			{
+			if (augments == null || augments[order] == null) {
 				Log.warning("Null augment: " + type + ", " + order);
 				return null;
 			}
@@ -146,8 +127,7 @@ public class LifeStoneTable
 		}
 	}
 
-	public static LifeStoneTable getInstance()
-	{
+	public static LifeStoneTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
@@ -169,104 +149,84 @@ public class LifeStoneTable
 
 	// =========================================================
 	// Constructor
-	private LifeStoneTable()
-	{
+	private LifeStoneTable() {
 		load();
 	}
 
-	public final void load()
-	{
+	public final void load() {
 		lifeStones.clear();
 
 		// Load the skillmap
 		// Note: the skillmap data is only used when generating new augmentations
 		// the client expects a different id in order to display the skill in the
 		// items description...
-		try
-		{
+		try {
 			File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/lifeStones.xml");
 
-			if (!file.exists())
-			{
+			if (!file.exists()) {
 				file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "/lifeStones.xml");
 			}
 
-			if (!file.exists())
-			{
-				if (Config.DEBUG)
-				{
+			if (!file.exists()) {
+				if (Config.DEBUG) {
 					Log.info("The life stones file is missing.");
 				}
 				return;
 			}
 
 			XmlDocument doc = new XmlDocument(file);
-            for (XmlNode stoneNode : doc.getChildren())
-            {
-                if (!stoneNode.getName().equalsIgnoreCase("lifeStone"))
-                {
-                    continue;
-                }
+			for (XmlNode stoneNode : doc.getChildren()) {
+				if (!stoneNode.getName().equalsIgnoreCase("lifeStone")) {
+					continue;
+				}
 
-                int id = stoneNode.getInt("id");
-                int grade = stoneNode.getInt("grade");
-                int level = stoneNode.getInt("level");
-                LifeStone lifeStone = new LifeStone(grade, level);
+				int id = stoneNode.getInt("id");
+				int grade = stoneNode.getInt("grade");
+				int level = stoneNode.getInt("level");
+				LifeStone lifeStone = new LifeStone(grade, level);
 
-                for (XmlNode groupNode : stoneNode.getChildren())
-                {
-                    if (!groupNode.getName().equalsIgnoreCase("augmentGroup"))
-                    {
-                        continue;
-                    }
+				for (XmlNode groupNode : stoneNode.getChildren()) {
+					if (!groupNode.getName().equalsIgnoreCase("augmentGroup")) {
+						continue;
+					}
 
-                    String[] weaponTypes = groupNode.getString("weaponType").split(",");
-                    int order = groupNode.getInt("order");
+					String[] weaponTypes = groupNode.getString("weaponType").split(",");
+					int order = groupNode.getInt("order");
 
-                    List<EnchantEffectSet> sets = new ArrayList<>();
-                    for (XmlNode setNode : groupNode.getChildren())
-                    {
-                        if (!setNode.getName().equalsIgnoreCase("augments"))
-                        {
-                            continue;
-                        }
+					List<EnchantEffectSet> sets = new ArrayList<>();
+					for (XmlNode setNode : groupNode.getChildren()) {
+						if (!setNode.getName().equalsIgnoreCase("augments")) {
+							continue;
+						}
 
-                        String[] ids = setNode.getString("ids").split(",");
-                        float chance = setNode.getFloat("chance");
-                        List<EnchantEffect> augments = new ArrayList<>();
-                        for (String idRange : ids)
-                        {
-                            if (idRange.contains("-"))
-                            {
-                                int start = Integer.parseInt(idRange.substring(0, idRange.indexOf("-")));
-                                int end = Integer.parseInt(idRange.substring(idRange.indexOf("-") + 1));
-                                for (int augmentId = start; augmentId <= end; augmentId++)
-                                {
-                                    augments.add(EnchantEffectTable.getInstance().getEffect(augmentId));
-                                }
-                            }
-                            else
-                            {
-                                augments.add(EnchantEffectTable.getInstance().getEffect(Integer.parseInt(idRange)));
-                            }
-                        }
+						String[] ids = setNode.getString("ids").split(",");
+						float chance = setNode.getFloat("chance");
+						List<EnchantEffect> augments = new ArrayList<>();
+						for (String idRange : ids) {
+							if (idRange.contains("-")) {
+								int start = Integer.parseInt(idRange.substring(0, idRange.indexOf("-")));
+								int end = Integer.parseInt(idRange.substring(idRange.indexOf("-") + 1));
+								for (int augmentId = start; augmentId <= end; augmentId++) {
+									augments.add(EnchantEffectTable.getInstance().getEffect(augmentId));
+								}
+							} else {
+								augments.add(EnchantEffectTable.getInstance().getEffect(Integer.parseInt(idRange)));
+							}
+						}
 
-                        sets.add(new EnchantEffectSet(augments, chance));
-                    }
+						sets.add(new EnchantEffectSet(augments, chance));
+					}
 
-                    for (String weaponType : weaponTypes)
-                    {
-                        lifeStone.setEffectGroup(weaponType, order, new EnchantEffectGroup(sets));
-                    }
-                }
+					for (String weaponType : weaponTypes) {
+						lifeStone.setEffectGroup(weaponType, order, new EnchantEffectGroup(sets));
+					}
+				}
 
-                lifeStones.put(id, lifeStone);
-            }
+				lifeStones.put(id, lifeStone);
+			}
 
 			Log.info("LifeStoneTable: Loaded " + lifeStones.size() + " life stones.");
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Error loading life stone data", e);
 		}
 	}
@@ -276,10 +236,8 @@ public class LifeStoneTable
 	 *
 	 * @return L2Augmentation
 	 */
-	public L2Augmentation generateRandomAugmentation(LifeStone lifeStone, L2ItemInstance targetItem)
-	{
-		switch (targetItem.getItem().getBodyPart())
-		{
+	public L2Augmentation generateRandomAugmentation(LifeStone lifeStone, L2ItemInstance targetItem) {
+		switch (targetItem.getItem().getBodyPart()) {
 			case L2Item.SLOT_LR_FINGER:
 				return generateRandomAugmentation(lifeStone, "ring");
 			case L2Item.SLOT_LR_EAR:
@@ -287,46 +245,38 @@ public class LifeStoneTable
 			case L2Item.SLOT_NECK:
 				return generateRandomAugmentation(lifeStone, "necklace");
 			default:
-				return generateRandomAugmentation(lifeStone,
-						targetItem.getWeaponItem().isMagicWeapon() ? "mage" : "warrior");
+				return generateRandomAugmentation(lifeStone, targetItem.getWeaponItem().isMagicWeapon() ? "mage" : "warrior");
 		}
 	}
 
-	private L2Augmentation generateRandomAugmentation(LifeStone lifeStone, String weaponType)
-	{
+	private L2Augmentation generateRandomAugmentation(LifeStone lifeStone, String weaponType) {
 		EnchantEffect augment1 = lifeStone.getRandomEffect(weaponType, 0);
 		EnchantEffect augment2 = lifeStone.getRandomEffect(weaponType, 1);
-		if (augment1 == null)
-		{
+		if (augment1 == null) {
 			return null;
 		}
 
 		return new L2Augmentation(augment1, augment2);
 	}
 
-	public final LifeStone getLifeStone(int itemId)
-	{
+	public final LifeStone getLifeStone(int itemId) {
 		return lifeStones.get(itemId);
 	}
 
 	/*
 	 * Checks player, source item, lifestone and gemstone validity for augmentation process
 	 */
-	public final boolean isValid(L2PcInstance player, L2ItemInstance item, L2ItemInstance refinerItem, L2ItemInstance gemStones)
-	{
-		if (!isValid(player, item, refinerItem))
-		{
+	public final boolean isValid(L2PcInstance player, L2ItemInstance item, L2ItemInstance refinerItem, L2ItemInstance gemStones) {
+		if (!isValid(player, item, refinerItem)) {
 			return false;
 		}
 
 		// GemStones must belong to owner
-		if (gemStones.getOwnerId() != player.getObjectId())
-		{
+		if (gemStones.getOwnerId() != player.getObjectId()) {
 			return false;
 		}
 		// .. and located in inventory
-		if (gemStones.getLocation() != L2ItemInstance.ItemLocation.INVENTORY)
-		{
+		if (gemStones.getLocation() != L2ItemInstance.ItemLocation.INVENTORY) {
 			return false;
 		}
 
@@ -334,111 +284,89 @@ public class LifeStoneTable
 		final LifeStone ls = getLifeStone(refinerItem.getItemId());
 
 		// Check for item id
-		if (getGemStoneId(grade, ls.getGrade()) != gemStones.getItemId())
-		{
+		if (getGemStoneId(grade, ls.getGrade()) != gemStones.getItemId()) {
 			return false;
 		}
 		// Count must be greater or equal of required number
 		return getGemStoneCount(grade, ls.getGrade()) <= gemStones.getCount();
-
 	}
 
 	/*
 	 * Checks player, source item and lifestone validity for augmentation process
 	 */
-	public final boolean isValid(L2PcInstance player, L2ItemInstance item, L2ItemInstance refinerItem)
-	{
-		if (!isValid(player, item))
-		{
+	public final boolean isValid(L2PcInstance player, L2ItemInstance item, L2ItemInstance refinerItem) {
+		if (!isValid(player, item)) {
 			return false;
 		}
 
 		// Item must belong to owner
-		if (refinerItem.getOwnerId() != player.getObjectId())
-		{
+		if (refinerItem.getOwnerId() != player.getObjectId()) {
 			return false;
 		}
 		// Lifestone must be located in inventory
-		if (refinerItem.getLocation() != L2ItemInstance.ItemLocation.INVENTORY)
-		{
+		if (refinerItem.getLocation() != L2ItemInstance.ItemLocation.INVENTORY) {
 			return false;
 		}
 
 		final LifeStone ls = getLifeStone(refinerItem.getItemId());
-		if (ls == null)
-		{
+		if (ls == null) {
 			return false;
 		}
 
-		if (item.getItem().isEpic() && ls.getGrade() != GRADE_ARIA)
-		{
+		if (item.getItem().isEpic() && ls.getGrade() != GRADE_ARIA) {
 			return false;
 		}
 
 		// weapons can't be augmented with accessory ls
-		if (item.getItem() instanceof L2Weapon && (ls.getGrade() == GRADE_ACC || ls.getGrade() == GRADE_ARIA))
-		{
+		if (item.getItem() instanceof L2Weapon && (ls.getGrade() == GRADE_ACC || ls.getGrade() == GRADE_ARIA)) {
 			return false;
 		}
 		// and accessory can't be augmented with weapon ls
-		if (item.getItem() instanceof L2Armor && ls.getGrade() < GRADE_ACC)
-		{
+		if (item.getItem() instanceof L2Armor && ls.getGrade() < GRADE_ACC) {
 			return false;
 		}
 		// check for level of the lifestone
 		return player.getLevel() >= ls.getPlayerLevel();
-
 	}
 
 	/*
 	 * Check both player and source item conditions for augmentation process
 	 */
-	public static boolean isValid(L2PcInstance player, L2ItemInstance item)
-	{
-		if (!isValid(player))
-		{
+	public static boolean isValid(L2PcInstance player, L2ItemInstance item) {
+		if (!isValid(player)) {
 			return false;
 		}
 
 		// Item must belong to owner
-		if (item.getOwnerId() != player.getObjectId())
-		{
+		if (item.getOwnerId() != player.getObjectId()) {
 			return false;
 		}
-		if (item.isAugmented())
-		{
+		if (item.isAugmented()) {
 			return false;
 		}
-		if (item.isHeroItem() && !item.getItem().isAugmentable())
-		{
+		if (item.isHeroItem() && !item.getItem().isAugmentable()) {
 			return false;
 		}
-		if (item.isShadowItem())
-		{
+		if (item.isShadowItem()) {
 			return false;
 		}
-		if (item.isCommonItem())
-		{
+		if (item.isCommonItem()) {
 			return false;
 		}
-		if (item.isEtcItem())
-		{
+		if (item.isEtcItem()) {
 			return false;
 		}
-		if (item.isTimeLimitedItem())
-		{
+		if (item.isTimeLimitedItem()) {
 			return false;
 		}
 		//if (item.isPvp())
 		//	return false;
-		if (item.getItem().getCrystalType() < L2Item.CRYSTAL_C)
-		{
+		if (item.getItem().getCrystalType() < L2Item.CRYSTAL_C) {
 			return false;
 		}
 
 		// Source item can be equipped or in inventory
-		switch (item.getLocation())
-		{
+		switch (item.getLocation()) {
 			case INVENTORY:
 			case PAPERDOLL:
 				break;
@@ -446,22 +374,17 @@ public class LifeStoneTable
 				return false;
 		}
 
-		if (item.getItem() instanceof L2Weapon)
-		{
-			switch (((L2Weapon) item.getItem()).getItemType())
-			{
+		if (item.getItem() instanceof L2Weapon) {
+			switch (((L2Weapon) item.getItem()).getItemType()) {
 				case NONE:
 				case FISHINGROD:
 					return false;
 				default:
 					break;
 			}
-		}
-		else if (item.getItem() instanceof L2Armor)
-		{
+		} else if (item.getItem() instanceof L2Armor) {
 			// only accessories can be augmented
-			switch (item.getItem().getBodyPart())
-			{
+			switch (item.getItem().getBodyPart()) {
 				case L2Item.SLOT_LR_FINGER:
 				case L2Item.SLOT_LR_EAR:
 				case L2Item.SLOT_NECK:
@@ -469,74 +392,57 @@ public class LifeStoneTable
 				default:
 					return false;
 			}
-		}
-		else
-		{
+		} else {
 			return false; // neither weapon nor armor ?
 		}
 
 		// blacklist check
 		return item.getItem().isAugmentable();
-
 	}
 
 	/*
 	 * Check if player's conditions valid for augmentation process
 	 */
-	public static boolean isValid(L2PcInstance player)
-	{
-		if (player.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_NONE)
-		{
-			player.sendPacket(SystemMessage.getSystemMessage(
-					SystemMessageId.YOU_CANNOT_AUGMENT_ITEMS_WHILE_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP_IS_IN_OPERATION));
+	public static boolean isValid(L2PcInstance player) {
+		if (player.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_NONE) {
+			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_AUGMENT_ITEMS_WHILE_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP_IS_IN_OPERATION));
 			return false;
 		}
-		if (player.getActiveTradeList() != null)
-		{
+		if (player.getActiveTradeList() != null) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_AUGMENT_ITEMS_WHILE_TRADING));
 			return false;
 		}
-		if (player.isDead())
-		{
+		if (player.isDead()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_AUGMENT_ITEMS_WHILE_DEAD));
 			return false;
 		}
-		if (player.isParalyzed())
-		{
+		if (player.isParalyzed()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_AUGMENT_ITEMS_WHILE_PARALYZED));
 			return false;
 		}
-		if (player.isFishing())
-		{
+		if (player.isFishing()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_AUGMENT_ITEMS_WHILE_FISHING));
 			return false;
 		}
-		if (player.isSitting())
-		{
-			player.sendPacket(
-					SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_AUGMENT_ITEMS_WHILE_SITTING_DOWN));
+		if (player.isSitting()) {
+			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_AUGMENT_ITEMS_WHILE_SITTING_DOWN));
 			return false;
 		}
-		if (player.isCursedWeaponEquipped())
-		{
+		if (player.isCursedWeaponEquipped()) {
 			return false;
 		}
 		return !(player.isEnchanting() || player.isProcessingTransaction());
-
 	}
 
 	/*
 	 * Returns GemStone itemId based on item grade
 	 */
-	public static int getGemStoneId(int itemGrade, int lifeStoneGrade)
-	{
-		if (lifeStoneGrade == GRADE_ARIA)
-		{
+	public static int getGemStoneId(int itemGrade, int lifeStoneGrade) {
+		if (lifeStoneGrade == GRADE_ARIA) {
 			return GEMSTONE_R;
 		}
 
-		switch (itemGrade)
-		{
+		switch (itemGrade) {
 			case L2Item.CRYSTAL_C:
 			case L2Item.CRYSTAL_B:
 				return GEMSTONE_D;
@@ -559,15 +465,12 @@ public class LifeStoneTable
 	 * Returns GemStone count based on item grade and lifestone grade
 	 * (different for weapon and accessory augmentation)
 	 */
-	public static int getGemStoneCount(int itemGrade, int lifeStoneGrade)
-	{
-		switch (lifeStoneGrade)
-		{
+	public static int getGemStoneCount(int itemGrade, int lifeStoneGrade) {
+		switch (lifeStoneGrade) {
 			case GRADE_ARIA:
 				return 100;
 			case GRADE_ACC:
-				switch (itemGrade)
-				{
+				switch (itemGrade) {
 					case L2Item.CRYSTAL_C:
 						return 200;
 					case L2Item.CRYSTAL_B:
@@ -590,8 +493,7 @@ public class LifeStoneTable
 						return 0;
 				}
 			default:
-				switch (itemGrade)
-				{
+				switch (itemGrade) {
 					case L2Item.CRYSTAL_C:
 						return 20;
 					case L2Item.CRYSTAL_B:
@@ -617,8 +519,7 @@ public class LifeStoneTable
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final LifeStoneTable instance = new LifeStoneTable();
 	}
 }

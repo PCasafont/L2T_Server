@@ -33,14 +33,11 @@ import l2server.gameserver.util.Util;
 /**
  * @author Kerberos, Zoey76
  */
-public class PetFood implements IItemHandler
-{
+public class PetFood implements IItemHandler {
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
 		int itemId = item.getItemId();
-		switch (itemId)
-		{
+		switch (itemId) {
 			case 2515: //Food For Wolves
 				useFood(playable, 2048, item);
 				break;
@@ -74,60 +71,43 @@ public class PetFood implements IItemHandler
 		}
 	}
 
-	public boolean useFood(L2Playable activeChar, int magicId, L2ItemInstance item)
-	{
+	public boolean useFood(L2Playable activeChar, int magicId, L2ItemInstance item) {
 		L2Skill skill = SkillTable.getInstance().getInfo(magicId, 1);
-		if (skill != null)
-		{
-			if (activeChar instanceof L2PetInstance)
-			{
-				if (((L2PetInstance) activeChar).destroyItem("Consume", item.getObjectId(), 1, null, false))
-				{
+		if (skill != null) {
+			if (activeChar instanceof L2PetInstance) {
+				if (((L2PetInstance) activeChar).destroyItem("Consume", item.getObjectId(), 1, null, false)) {
 					activeChar.broadcastPacket(new MagicSkillUse(activeChar, activeChar, magicId, 1, 0, 0, 0));
-					((L2PetInstance) activeChar).setCurrentFed(
-							((L2PetInstance) activeChar).getCurrentFed() + skill.getFeed() * Config.PET_FOOD_RATE);
+					((L2PetInstance) activeChar).setCurrentFed(((L2PetInstance) activeChar).getCurrentFed() + skill.getFeed() * Config.PET_FOOD_RATE);
 					((L2PetInstance) activeChar).broadcastStatusUpdate();
-					if (((L2PetInstance) activeChar).getCurrentFed() <
-							((L2PetInstance) activeChar).getPetData().getHungry_limit() / 100f *
-									((L2PetInstance) activeChar).getPetLevelData().getPetMaxFeed())
-					{
-						((L2PetInstance) activeChar).getOwner().sendPacket(SystemMessage
-								.getSystemMessage(SystemMessageId.YOUR_PET_ATE_A_LITTLE_BUT_IS_STILL_HUNGRY));
+					if (((L2PetInstance) activeChar).getCurrentFed() < ((L2PetInstance) activeChar).getPetData().getHungry_limit() / 100f *
+							((L2PetInstance) activeChar).getPetLevelData().getPetMaxFeed()) {
+						((L2PetInstance) activeChar).getOwner()
+								.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_PET_ATE_A_LITTLE_BUT_IS_STILL_HUNGRY));
 					}
 					return true;
 				}
-			}
-			else if (activeChar instanceof L2PcInstance)
-			{
+			} else if (activeChar instanceof L2PcInstance) {
 				L2PcInstance player = (L2PcInstance) activeChar;
 				int itemId = item.getItemId();
-				if (player.isMounted())
-				{
+				if (player.isMounted()) {
 					int food[] = PetDataTable.getInstance().getPetData(player.getMountNpcId()).getFood();
-					if (Util.contains(food, itemId))
-					{
+					if (Util.contains(food, itemId)) {
 						Inventory inv = player.getPetInv();
-						if (inv == null)
-						{
+						if (inv == null) {
 							inv = player.getInventory();
 						}
-						if (inv.destroyItem("Consume", item.getObjectId(), 1, null, false) != null)
-						{
+						if (inv.destroyItem("Consume", item.getObjectId(), 1, null, false) != null) {
 							player.broadcastPacket(new MagicSkillUse(activeChar, activeChar, magicId, 1, 0, 0, 0));
 							player.setCurrentFeed(player.getCurrentFeed() + skill.getFeed());
 						}
 						return true;
-					}
-					else
-					{
+					} else {
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
 						sm.addItemName(item);
 						activeChar.sendPacket(sm);
 						return false;
 					}
-				}
-				else
-				{
+				} else {
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
 					sm.addItemName(item);
 					activeChar.sendPacket(sm);

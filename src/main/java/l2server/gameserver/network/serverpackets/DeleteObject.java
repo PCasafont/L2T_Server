@@ -22,23 +22,19 @@ import l2server.gameserver.model.L2Object;
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class DeleteObject extends L2GameServerPacket
-{
+public final class DeleteObject extends L2GameServerPacket {
 	private final int objectId;
-
-	public DeleteObject(L2Object obj)
-	{
+	
+	public DeleteObject(L2Object obj) {
 		objectId = obj.getObjectId();
 	}
-
-	public DeleteObject(int objectId)
-	{
+	
+	public DeleteObject(int objectId) {
 		this.objectId = objectId;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objectId);
 		writeC(0x00); //c2
 	}

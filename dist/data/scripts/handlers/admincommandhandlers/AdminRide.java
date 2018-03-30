@@ -22,19 +22,10 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author
  */
-public class AdminRide implements IAdminCommandHandler
-{
-	private static final String[] ADMIN_COMMANDS = {
-			"admin_ride_horse",
-			"admin_ride_bike",
-			"admin_ride_wyvern",
-			"admin_ride_strider",
-			"admin_unride_wyvern",
-			"admin_unride_strider",
-			"admin_unride",
-			"admin_ride_wolf",
-			"admin_unride_wolf",
-			};
+public class AdminRide implements IAdminCommandHandler {
+	private static final String[] ADMIN_COMMANDS =
+			{"admin_ride_horse", "admin_ride_bike", "admin_ride_wyvern", "admin_ride_strider", "admin_unride_wyvern", "admin_unride_strider",
+					"admin_unride", "admin_ride_wolf", "admin_unride_wolf",};
 	private int petRideId;
 
 	private static final int PURPLE_MANED_HORSE_TRANSFORMATION_ID = 106;
@@ -42,59 +33,42 @@ public class AdminRide implements IAdminCommandHandler
 	private static final int JET_BIKE_TRANSFORMATION_ID = 20001;
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 
-		if (command.startsWith("admin_ride"))
-		{
-			if (activeChar.isMounted() || activeChar.getPet() != null)
-			{
+		if (command.startsWith("admin_ride")) {
+			if (activeChar.isMounted() || activeChar.getPet() != null) {
 				activeChar.sendMessage("You already have a pet.");
 				return false;
 			}
-			if (command.startsWith("admin_ride_wyvern"))
-			{
+			if (command.startsWith("admin_ride_wyvern")) {
 				petRideId = 12621;
-			}
-			else if (command.startsWith("admin_ride_strider"))
-			{
+			} else if (command.startsWith("admin_ride_strider")) {
 				petRideId = 12526;
-			}
-			else if (command.startsWith("admin_ride_wolf"))
-			{
+			} else if (command.startsWith("admin_ride_wolf")) {
 				petRideId = 16041;
-			}
-			else if (command.startsWith("admin_ride_horse")) // handled using transformation
+			} else if (command.startsWith("admin_ride_horse")) // handled using transformation
 			{
 				if (activeChar.isTransformed() || activeChar.isInStance())
 				//FIXME: Wrong Message
 				{
 					activeChar.sendMessage("You cannot mount a steed while transformed.");
-				}
-				else
-				{
-					TransformationManager.getInstance()
-							.transformPlayer(PURPLE_MANED_HORSE_TRANSFORMATION_ID, activeChar);
+				} else {
+					TransformationManager.getInstance().transformPlayer(PURPLE_MANED_HORSE_TRANSFORMATION_ID, activeChar);
 				}
 
 				return true;
-			}
-			else if (command.startsWith("admin_ride_bike")) // handled using transformation
+			} else if (command.startsWith("admin_ride_bike")) // handled using transformation
 			{
 				if (activeChar.isTransformed() || activeChar.isInStance())
 				//FIXME: Wrong Message
 				{
 					activeChar.sendMessage("You cannot mount a steed while transformed.");
-				}
-				else
-				{
+				} else {
 					TransformationManager.getInstance().transformPlayer(JET_BIKE_TRANSFORMATION_ID, activeChar);
 				}
 
 				return true;
-			}
-			else
-			{
+			} else {
 				activeChar.sendMessage("Command '" + command + "' not recognized");
 				return false;
 			}
@@ -102,20 +76,14 @@ public class AdminRide implements IAdminCommandHandler
 			activeChar.mount(petRideId, 0, false);
 
 			return false;
-		}
-		else if (command.startsWith("admin_unride"))
-		{
-			if (activeChar.getTransformationId() == PURPLE_MANED_HORSE_TRANSFORMATION_ID)
-			{
+		} else if (command.startsWith("admin_unride")) {
+			if (activeChar.getTransformationId() == PURPLE_MANED_HORSE_TRANSFORMATION_ID) {
 				activeChar.unTransform(true);
 			}
 
-			if (activeChar.getTransformationId() == JET_BIKE_TRANSFORMATION_ID)
-			{
+			if (activeChar.getTransformationId() == JET_BIKE_TRANSFORMATION_ID) {
 				activeChar.unTransform(true);
-			}
-			else
-			{
+			} else {
 				activeChar.dismount();
 			}
 		}
@@ -123,8 +91,7 @@ public class AdminRide implements IAdminCommandHandler
 	}
 
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

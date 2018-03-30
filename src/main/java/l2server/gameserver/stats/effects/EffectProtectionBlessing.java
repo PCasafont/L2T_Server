@@ -25,22 +25,18 @@ import l2server.gameserver.templates.skills.L2EffectType;
 /**
  * @author kerberos_20
  */
-public class EffectProtectionBlessing extends L2Effect
-{
-	public EffectProtectionBlessing(Env env, L2EffectTemplate template)
-	{
+public class EffectProtectionBlessing extends L2Effect {
+	public EffectProtectionBlessing(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.PROTECTION_BLESSING;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.BUFF;
 	}
 
@@ -48,8 +44,7 @@ public class EffectProtectionBlessing extends L2Effect
 	 * Notify started
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		return false;
 	}
 
@@ -57,14 +52,12 @@ public class EffectProtectionBlessing extends L2Effect
 	 * Notify exited
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		((L2Playable) getEffected()).stopProtectionBlessing(getAbnormal());
 	}
 
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		// just stop this effect
 		return false;
 	}

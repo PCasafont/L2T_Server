@@ -15,7 +15,15 @@
 
 package l2server.gameserver.model.base;
 
-public enum PlayerState
-{
-	RESTING, MOVING, RUNNING, STANDING, COMBAT, FLYING, BEHIND, FRONT, CHAOTIC, OLYMPIAD
+public enum PlayerState {
+	RESTING,
+	MOVING,
+	RUNNING,
+	STANDING,
+	COMBAT,
+	FLYING,
+	BEHIND,
+	FRONT,
+	CHAOTIC,
+	OLYMPIAD
 }

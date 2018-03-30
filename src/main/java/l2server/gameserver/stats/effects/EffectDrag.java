@@ -32,18 +32,15 @@ import l2server.log.Log;
 /**
  * @author Pere
  */
-public class EffectDrag extends L2Effect
-{
+public class EffectDrag extends L2Effect {
 	private int x, y, z;
 
-	public EffectDrag(Env env, L2EffectTemplate template)
-	{
+	public EffectDrag(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.PULL;
 	}
 
@@ -51,17 +48,13 @@ public class EffectDrag extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() ||
-				getEffected().isRaid())
-		{
+	public boolean onStart() {
+		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() || getEffected().isRaid()) {
 			return false;
 		}
 
 		//TW bug restrictions for avoid players with TW flags stuck his char into the walls, under live test
-		if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCombatFlagEquipped())
-		{
+		if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCombatFlagEquipped()) {
 			return false;
 		}
 
@@ -75,11 +68,9 @@ public class EffectDrag extends L2Effect
 		double dy = getEffector().getY() - curY;
 		double dz = getEffector().getZ() - curZ;
 		double distance = Math.sqrt(dx * dx + dy * dy);
-		if (distance > 2000)
-		{
-			Log.info("EffectDrag (skill id: " + getSkill().getId() +
-					") was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY +
-					" and getEffector: " + getEffector().getX() + "," + getEffector().getY());
+		if (distance > 2000) {
+			Log.info("EffectDrag (skill id: " + getSkill().getId() + ") was going to use invalid coordinates for characters, getEffected: " + curX +
+					"," + curY + " and getEffector: " + getEffector().getX() + "," + getEffector().getY());
 			return false;
 		}
 
@@ -91,14 +82,12 @@ public class EffectDrag extends L2Effect
 		// approximation for moving futher when z coordinates are different
 		// TODO: handle Z axis movement better
 		offset += Math.abs(dz);
-		if (offset < 5)
-		{
+		if (offset < 5) {
 			offset = 5;
 		}
 
 		// If no distance
-		if (distance < 1)
-		{
+		if (distance < 1) {
 			return false;
 		}
 
@@ -111,13 +100,10 @@ public class EffectDrag extends L2Effect
 		y = curY + (int) (offset * sin);
 		z = curZ;
 
-		if (Config.GEODATA > 0)
-		{
+		if (Config.GEODATA > 0) {
 			Location destiny = GeoData.getInstance()
-					.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z,
-							getEffected().getInstanceId());
-			if (destiny.getX() != x || destiny.getY() != y)
-			{
+					.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z, getEffected().getInstanceId());
+			if (destiny.getX() != x || destiny.getY() != y) {
 				x = destiny.getX() - (int) (cos * 10);
 				y = destiny.getY() - (int) (sin * 10);
 			}
@@ -134,8 +120,7 @@ public class EffectDrag extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 
@@ -143,8 +128,7 @@ public class EffectDrag extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		getEffected().setIsParalyzed(false);
 		getEffected().stopParalyze(false);
 		getEffected().broadcastPacket(new ValidateLocation(getEffected()));

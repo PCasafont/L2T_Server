@@ -30,47 +30,38 @@ import java.util.logging.Level;
 /**
  * @author DS
  */
-public class Mail extends ItemContainer
-{
+public class Mail extends ItemContainer {
 	private final int ownerId;
 	private int messageId;
 
-	public Mail(int objectId, int messageId)
-	{
+	public Mail(int objectId, int messageId) {
 		ownerId = objectId;
 		this.messageId = messageId;
 	}
 
 	@Override
-	public String getName()
-	{
+	public String getName() {
 		return "Mail";
 	}
 
 	@Override
-	public L2PcInstance getOwner()
-	{
+	public L2PcInstance getOwner() {
 		return null;
 	}
 
 	@Override
-	public ItemLocation getBaseLocation()
-	{
+	public ItemLocation getBaseLocation() {
 		return ItemLocation.MAIL;
 	}
 
-	public int getMessageId()
-	{
+	public int getMessageId() {
 		return messageId;
 	}
 
-	public void setNewMessageId(int messageId)
-	{
+	public void setNewMessageId(int messageId) {
 		this.messageId = messageId;
-		for (L2ItemInstance item : items.values())
-		{
-			if (item == null)
-			{
+		for (L2ItemInstance item : items.values()) {
+			if (item == null) {
 				continue;
 			}
 
@@ -80,28 +71,21 @@ public class Mail extends ItemContainer
 		updateDatabase();
 	}
 
-	public void returnToWh(ItemContainer wh)
-	{
-		for (L2ItemInstance item : items.values())
-		{
-			if (item == null)
-			{
+	public void returnToWh(ItemContainer wh) {
+		for (L2ItemInstance item : items.values()) {
+			if (item == null) {
 				continue;
 			}
-			if (wh == null)
-			{
+			if (wh == null) {
 				item.setLocation(ItemLocation.WAREHOUSE);
-			}
-			else
-			{
+			} else {
 				transferItem("Expire", item.getObjectId(), item.getCount(), wh, null, null);
 			}
 		}
 	}
 
 	@Override
-	protected void addItem(L2ItemInstance item)
-	{
+	protected void addItem(L2ItemInstance item) {
 		super.addItem(item);
 		item.setLocation(getBaseLocation(), messageId);
 	}
@@ -110,24 +94,19 @@ public class Mail extends ItemContainer
 	 * Allow saving of the items without owner
 	 */
 	@Override
-	public void updateDatabase()
-	{
-		for (L2ItemInstance item : items.values())
-		{
-			if (item != null)
-			{
+	public void updateDatabase() {
+		for (L2ItemInstance item : items.values()) {
+			if (item != null) {
 				item.updateDatabase(true);
 			}
 		}
 	}
 
 	@Override
-	public void restore()
-	{
+	public void restore() {
 		Connection con = null;
 		PreparedStatement statement = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			statement = con.prepareStatement(
 					"SELECT object_id, item_id, count, enchant_level, loc, loc_data, custom_type1, custom_type2, mana_left, time, appearance, mob_id FROM items WHERE owner_id=? AND loc=? AND loc_data=?");
@@ -137,41 +116,31 @@ public class Mail extends ItemContainer
 			ResultSet inv = statement.executeQuery();
 
 			L2ItemInstance item;
-			while (inv.next())
-			{
+			while (inv.next()) {
 				item = L2ItemInstance.restoreFromDb(getOwnerId(), inv);
-				if (item == null)
-				{
+				if (item == null) {
 					continue;
 				}
 
 				L2World.getInstance().storeObject(item);
 
 				// If stackable item is found just add to current quantity
-				if (item.isStackable() && getItemByItemId(item.getItemId()) != null)
-				{
+				if (item.isStackable() && getItemByItemId(item.getItemId()) != null) {
 					addItem("Restore", item, null, null);
-				}
-				else
-				{
+				} else {
 					addItem(item);
 				}
 			}
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "could not restore container:", e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
 	@Override
-	public int getOwnerId()
-	{
+	public int getOwnerId() {
 		return ownerId;
 	}
 }

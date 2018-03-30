@@ -36,8 +36,7 @@ import java.util.logging.Logger;
  *
  * @version $Revision: 1.5.2.1.2.5 $ $Date: 2005/03/27 15:29:30 $
  */
-public class CharacterSelect extends L2GameClientPacket
-{
+public class CharacterSelect extends L2GameClientPacket {
 
 	protected static final Logger logAccounting = Logger.getLogger("accounting");
 
@@ -54,8 +53,7 @@ public class CharacterSelect extends L2GameClientPacket
 	private int unk4; // new in C4
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		charSlot = readD();
 		unk1 = readH();
 		unk2 = readD();
@@ -64,63 +62,50 @@ public class CharacterSelect extends L2GameClientPacket
 	}
 
 	@Override
-	protected void runImpl()
-	{
-		if (!getClient().getFloodProtectors().getCharacterSelect().tryPerformAction("CharacterSelect") ||
-				Shutdown.getInstance().isShuttingDown())
-		{
+	protected void runImpl() {
+		if (!getClient().getFloodProtectors().getCharacterSelect().tryPerformAction("CharacterSelect") || Shutdown.getInstance().isShuttingDown()) {
 			return;
 		}
 
-		if (Config.SECOND_AUTH_ENABLED && !getClient().getSecondaryAuth().isAuthed())
-		{
+		if (Config.SECOND_AUTH_ENABLED && !getClient().getSecondaryAuth().isAuthed()) {
 			getClient().getSecondaryAuth().openDialog();
 			return;
 		}
 
 		// we should always be able to acquire the lock
 		// but if we can't lock then nothing should be done (ie repeated packet)
-		if (getClient().getActiveCharLock().tryLock())
-		{
-			try
-			{
+		if (getClient().getActiveCharLock().tryLock()) {
+			try {
 				// should always be null
 				// but if not then this is repeated packet and nothing should be done here
-				if (getClient().getActiveChar() == null)
-				{
+				if (getClient().getActiveChar() == null) {
 					if (Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP > 0 && !AntiFeedManager.getInstance()
-							.tryAddClient(AntiFeedManager.GAME_ID, getClient(),
-									Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP))
-					{
+							.tryAddClient(AntiFeedManager.GAME_ID, getClient(), Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP)) {
 						final CharSelectInfoPackage info = getClient().getCharSelection(charSlot);
-						if (info == null)
-						{
+						if (info == null) {
 							return;
 						}
 
 						final NpcHtmlMessage msg = new NpcHtmlMessage(0);
 						msg.setFile(null, "mods/IPRestriction.htm");
-						msg.replace("%max%", String.valueOf(AntiFeedManager.getInstance()
-								.getLimit(getClient(), Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP)));
+						msg.replace("%max%",
+								String.valueOf(AntiFeedManager.getInstance().getLimit(getClient(), Config.L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP)));
 						getClient().sendPacket(msg);
 						return;
 					}
 
 					// The L2PcInstance must be created here, so that it can be attached to the L2GameClient
-					if (Config.DEBUG)
-					{
+					if (Config.DEBUG) {
 						Log.fine("selected slot:" + charSlot);
 					}
 
 					//load up character from disk
 					L2PcInstance cha = getClient().loadCharFromDisk(charSlot);
-					if (cha == null)
-					{
+					if (cha == null) {
 						return; // handled in L2GameClient
 					}
 
-					if (cha.getAccessLevel().getLevel() < 0)
-					{
+					if (cha.getAccessLevel().getLevel() < 0) {
 						cha.logout();
 						return;
 					}
@@ -138,9 +123,7 @@ public class CharacterSelect extends L2GameClientPacket
 					CharSelected cs = new CharSelected(cha, getClient().getSessionId().playOkID1);
 					sendPacket(cs);
 				}
-			}
-			finally
-			{
+			} finally {
 				getClient().getActiveCharLock().unlock();
 			}
 

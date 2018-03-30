@@ -22,22 +22,19 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-public class ConditionTargetNone extends Condition
-{
+public class ConditionTargetNone extends Condition {
 
 	/**
 	 * Instantiates a new condition target none.
 	 */
-	public ConditionTargetNone()
-	{
+	public ConditionTargetNone() {
 	}
 
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		return env.target == null;
 	}
 }

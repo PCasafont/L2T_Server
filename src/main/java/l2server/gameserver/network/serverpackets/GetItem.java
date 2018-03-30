@@ -25,20 +25,17 @@ import l2server.gameserver.model.L2ItemInstance;
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class GetItem extends L2GameServerPacket
-{
+public final class GetItem extends L2GameServerPacket {
 	private L2ItemInstance item;
 	private int playerId;
 
-	public GetItem(L2ItemInstance item, int playerId)
-	{
+	public GetItem(L2ItemInstance item, int playerId) {
 		this.item = item;
 		this.playerId = playerId;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(playerId);
 		writeD(item.getObjectId());
 

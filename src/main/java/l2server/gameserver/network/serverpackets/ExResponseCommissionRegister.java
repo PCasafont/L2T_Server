@@ -18,19 +18,16 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Erlandys
  */
-public class ExResponseCommissionRegister extends L2GameServerPacket
-{
-
+public class ExResponseCommissionRegister extends L2GameServerPacket {
+	
 	private boolean success;
-
-	public ExResponseCommissionRegister(boolean success)
-	{
+	
+	public ExResponseCommissionRegister(boolean success) {
 		this.success = success;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(success ? 1 : 0); // Success
 	}
 }

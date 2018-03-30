@@ -34,8 +34,7 @@ import java.util.logging.Level;
  *
  * @version $Revision: 1.9.2.3.2.4 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class AuthLogin extends L2GameClientPacket
-{
+public final class AuthLogin extends L2GameClientPacket {
 	// loginName + keys must match what the loginserver used.
 	private String loginName;
 	private int playKey1;
@@ -46,8 +45,7 @@ public final class AuthLogin extends L2GameClientPacket
 	/**
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		loginName = readS().toLowerCase();
 		playKey2 = readD();
 		playKey1 = readD();
@@ -56,26 +54,21 @@ public final class AuthLogin extends L2GameClientPacket
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2GameClient client = getClient();
-		if (loginName.length() == 0 || !client.isProtocolOk())
-		{
+		if (loginName.length() == 0 || !client.isProtocolOk()) {
 			client.close((L2GameServerPacket) null);
 			return;
 		}
 		SessionKey key = new SessionKey(loginKey1, loginKey2, playKey1, playKey2);
-		if (Config.DEBUG)
-		{
+		if (Config.DEBUG) {
 			Log.info("user:" + loginName);
 			Log.info("key:" + key);
 		}
 
 		// avoid potential exploits
-		if (client.getAccountName() == null)
-		{
-			if (!loginName.equalsIgnoreCase("IdEmpty"))
-			{
+		if (client.getAccountName() == null) {
+			if (!loginName.equalsIgnoreCase("IdEmpty")) {
 				client.setAccountName(loginName);
 				LoginServerThread.getInstance().addGameServerLogin(loginName, client);
 			}
@@ -85,8 +78,7 @@ public final class AuthLogin extends L2GameClientPacket
 	}
 
 	@SuppressWarnings("unused")
-	private void sendVitalityInfo(L2GameClient client)
-	{
+	private void sendVitalityInfo(L2GameClient client) {
 		Connection con = null;
 		int vitalityPoints = Config.STARTING_VITALITY_POINTS;
 		int vitalityItemsUsed = 0;
@@ -126,21 +118,16 @@ public final class AuthLogin extends L2GameClientPacket
 			}
 
 		 */
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement =
-					con.prepareStatement("SELECT value FROM account_gsdata WHERE account_name=? AND var=?");
+			PreparedStatement statement = con.prepareStatement("SELECT value FROM account_gsdata WHERE account_name=? AND var=?");
 			statement.setString(1, client.getAccountName());
 			statement.setString(2, "vitality");
 			ResultSet rset = statement.executeQuery();
 
-			if (rset.next())
-			{
+			if (rset.next()) {
 				vitalityPoints = rset.getInt("value");
-			}
-			else
-			{
+			} else {
 				statement.close();
 				statement = con.prepareStatement("INSERT INTO account_gsdata(account_name,var,value) VALUES(?,?,?)");
 				statement.setString(1, client.getAccountName());
@@ -156,12 +143,9 @@ public final class AuthLogin extends L2GameClientPacket
 			statement.setString(1, client.getAccountName());
 			statement.setString(2, "vit_items_used");
 			rset = statement.executeQuery();
-			if (rset.next())
-			{
+			if (rset.next()) {
 				vitalityItemsUsed = rset.getInt("value");
-			}
-			else
-			{
+			} else {
 				statement.close();
 				statement = con.prepareStatement("INSERT INTO account_gsdata(account_name,var,value) VALUES(?,?,?)");
 				statement.setString(1, client.getAccountName());
@@ -172,13 +156,9 @@ public final class AuthLogin extends L2GameClientPacket
 
 			rset.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Could not restore account vitality points: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		client.sendPacket(new ExLoginVitalityEffectInfo(vitalityPoints, vitalityItemsUsed));

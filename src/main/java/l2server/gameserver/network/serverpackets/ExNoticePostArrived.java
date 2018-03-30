@@ -18,29 +18,25 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExNoticePostArrived extends L2GameServerPacket
-{
+public class ExNoticePostArrived extends L2GameServerPacket {
 	private static final ExNoticePostArrived STATIC_PACKET_TRUE = new ExNoticePostArrived(true);
 	private static final ExNoticePostArrived STATIC_PACKET_FALSE = new ExNoticePostArrived(false);
-
-	public static ExNoticePostArrived valueOf(boolean result)
-	{
+	
+	public static ExNoticePostArrived valueOf(boolean result) {
 		return result ? STATIC_PACKET_TRUE : STATIC_PACKET_FALSE;
 	}
-
+	
 	boolean showAnim;
-
-	public ExNoticePostArrived(boolean showAnimation)
-	{
+	
+	public ExNoticePostArrived(boolean showAnimation) {
 		showAnim = showAnimation;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(showAnim ? 0x01 : 0x00);
 	}
 }

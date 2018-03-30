@@ -25,53 +25,42 @@ import l2server.util.Rnd;
 import java.lang.reflect.Constructor;
 import java.util.logging.Level;
 
-public class MonsterRace
-{
+public class MonsterRace {
 
 	private L2Npc[] monsters;
 	private Constructor<?> constructor;
 	private int[][] speeds;
 	private int[] first, second;
 
-	private MonsterRace()
-	{
+	private MonsterRace() {
 		monsters = new L2Npc[8];
 		speeds = new int[8][20];
 		first = new int[2];
 		second = new int[2];
 	}
 
-	public static MonsterRace getInstance()
-	{
+	public static MonsterRace getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	public void newRace()
-	{
+	public void newRace() {
 		int random = 0;
 
-		for (int i = 0; i < 8; i++)
-		{
+		for (int i = 0; i < 8; i++) {
 			int id = 31003;
 			random = Rnd.get(24);
-			for (int j = i - 1; j >= 0; j--)
-			{
-				if (monsters[j].getTemplate().NpcId == id + random)
-				{
+			for (int j = i - 1; j >= 0; j--) {
+				if (monsters[j].getTemplate().NpcId == id + random) {
 					random = Rnd.get(24);
 				}
 			}
 
-			try
-			{
+			try {
 				L2NpcTemplate template = NpcTable.getInstance().getTemplate(id + random);
-				constructor = Class.forName("l2server.gameserver.model.actor.instance." + template.Type + "Instance")
-						.getConstructors()[0];
+				constructor = Class.forName("l2server.gameserver.model.actor.instance." + template.Type + "Instance").getConstructors()[0];
 				int objectId = IdFactory.getInstance().getNextId();
 				monsters[i] = (L2Npc) constructor.newInstance(objectId, template);
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.log(Level.WARNING, "", e);
 			}
 			//Logozo.info("Monster "+i+" is id: "+(id+random));
@@ -79,36 +68,27 @@ public class MonsterRace
 		newSpeeds();
 	}
 
-	public void newSpeeds()
-	{
+	public void newSpeeds() {
 		speeds = new int[8][20];
 		int total = 0;
 		first[1] = 0;
 		second[1] = 0;
-		for (int i = 0; i < 8; i++)
-		{
+		for (int i = 0; i < 8; i++) {
 			total = 0;
-			for (int j = 0; j < 20; j++)
-			{
-				if (j == 19)
-				{
+			for (int j = 0; j < 20; j++) {
+				if (j == 19) {
 					speeds[i][j] = 100;
-				}
-				else
-				{
+				} else {
 					speeds[i][j] = Rnd.get(60) + 65;
 				}
 				total += speeds[i][j];
 			}
-			if (total >= first[1])
-			{
+			if (total >= first[1]) {
 				second[0] = first[0];
 				second[1] = first[1];
 				first[0] = 8 - i;
 				first[1] = total;
-			}
-			else if (total >= second[1])
-			{
+			} else if (total >= second[1]) {
 				second[0] = 8 - i;
 				second[1] = total;
 			}
@@ -118,32 +98,27 @@ public class MonsterRace
 	/**
 	 * @return Returns the monsters.
 	 */
-	public L2Npc[] getMonsters()
-	{
+	public L2Npc[] getMonsters() {
 		return monsters;
 	}
 
 	/**
 	 * @return Returns the speeds.
 	 */
-	public int[][] getSpeeds()
-	{
+	public int[][] getSpeeds() {
 		return speeds;
 	}
 
-	public int getFirstPlace()
-	{
+	public int getFirstPlace() {
 		return first[0];
 	}
 
-	public int getSecondPlace()
-	{
+	public int getSecondPlace() {
 		return second[0];
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final MonsterRace instance = new MonsterRace();
 	}
 }

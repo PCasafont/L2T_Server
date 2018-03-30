@@ -22,31 +22,25 @@ import l2server.gameserver.model.olympiad.Olympiad;
 /**
  * @author Pere
  */
-public class ExOlympiadResult extends L2GameServerPacket
-{
+public class ExOlympiadResult extends L2GameServerPacket {
 	private Object[] info;
 
-	public ExOlympiadResult(Object[] info)
-	{
+	public ExOlympiadResult(Object[] info) {
 		this.info = info;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD((Integer) info[0] < 0 ? 1 : 0); // Victory or Tie
 		writeS((String) info[1]); // Winner
-		for (int i = 0; i < 2; i++)
-		{
+		for (int i = 0; i < 2; i++) {
 			writeD(i + 1);
 			int multiplier = (Integer) info[0] == i ? 1 : -1;
 			int participants = (Integer) info[2];
 			writeD(participants);
-			for (int j = 0; j < participants; j++)
-			{
+			for (int j = 0; j < participants; j++) {
 				L2PcInstance player = (L2PcInstance) info[i * participants + j + 4];
-				if (player == null)
-				{
+				if (player == null) {
 					writeS("");
 					writeS("");
 					writeD(0x00);
@@ -55,9 +49,7 @@ public class ExOlympiadResult extends L2GameServerPacket
 					writeD(0x00);
 					writeD(0x00);
 					writeD(0x00);
-				}
-				else
-				{
+				} else {
 					writeS(player.getName());
 					writeS(player.getClan() == null ? "" : player.getClan().getName());
 					writeD(0x00); // ???

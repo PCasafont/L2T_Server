@@ -20,53 +20,47 @@ import l2server.gameserver.stats.Env;
 /**
  * @author mkizub
  */
-public final class LambdaStats extends Lambda
-{
+public final class LambdaStats extends Lambda {
 
-	public enum StatsType
-	{
-		PLAYER_LEVEL, CUBIC_LEVEL, TARGET_LEVEL, PLAYER_MAX_HP, PLAYER_MAX_MP
+	public enum StatsType {
+		PLAYER_LEVEL,
+		CUBIC_LEVEL,
+		TARGET_LEVEL,
+		PLAYER_MAX_HP,
+		PLAYER_MAX_MP
 	}
 
 	private final StatsType stat;
 
-	public LambdaStats(StatsType stat)
-	{
+	public LambdaStats(StatsType stat) {
 		this.stat = stat;
 	}
 
 	@Override
-	public double calc(Env env)
-	{
-		switch (stat)
-		{
+	public double calc(Env env) {
+		switch (stat) {
 			case PLAYER_LEVEL:
-				if (env.player == null)
-				{
+				if (env.player == null) {
 					return 1;
 				}
 				return env.player.getLevel();
 			case CUBIC_LEVEL:
-				if (env.cubic == null)
-				{
+				if (env.cubic == null) {
 					return 1;
 				}
 				return env.cubic.getOwner().getLevel();
 			case TARGET_LEVEL:
-				if (env.target == null)
-				{
+				if (env.target == null) {
 					return 1;
 				}
 				return env.target.getLevel();
 			case PLAYER_MAX_HP:
-				if (env.player == null)
-				{
+				if (env.player == null) {
 					return 1;
 				}
 				return env.player.getMaxHp();
 			case PLAYER_MAX_MP:
-				if (env.player == null)
-				{
+				if (env.player == null) {
 					return 1;
 				}
 				return env.player.getMaxMp();

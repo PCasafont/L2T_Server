@@ -34,193 +34,129 @@ import java.util.StringTokenizer;
  *
  * @author Maktakien
  */
-public class AdminPForge implements IAdminCommandHandler
-{
+public class AdminPForge implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_forge", "admin_forge2", "admin_forge3"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (command.equals("admin_forge"))
-		{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		if (command.equals("admin_forge")) {
 			showMainPage(activeChar);
-		}
-		else if (command.startsWith("admin_forge2"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_forge2")) {
+			try {
 				StringTokenizer st = new StringTokenizer(command);
 				st.nextToken();
 				String format = st.nextToken();
 				showPage2(activeChar, format);
-			}
-			catch (Exception ex)
-			{
+			} catch (Exception ex) {
 				ex.printStackTrace();
 				activeChar.sendMessage("Usage: //forge2 format");
 			}
-		}
-		else if (command.startsWith("admin_forge3"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_forge3")) {
+			try {
 				StringTokenizer st = new StringTokenizer(command);
 				st.nextToken();
 				String format = st.nextToken();
 				boolean broadcast = false;
 				boolean client = false;
 				ByteBuffer buf = null;
-				if (format.toLowerCase().equals("broadcast"))
-				{
+				if (format.toLowerCase().equals("broadcast")) {
 					format = st.nextToken();
 					broadcast = true;
-				}
-				else if (format.toLowerCase().equals("client"))
-				{
+				} else if (format.toLowerCase().equals("client")) {
 					format = st.nextToken();
 					client = true;
 					buf = ByteBuffer.allocate(65533);
 				}
 				AdminForgePacket sp = new AdminForgePacket();
-				for (int i = 0; i < format.length(); i++)
-				{
+				for (int i = 0; i < format.length(); i++) {
 					String val = st.nextToken();
-					if (val.toLowerCase().equals("$objid"))
-					{
+					if (val.toLowerCase().equals("$objid")) {
 						val = String.valueOf(activeChar.getObjectId());
-					}
-					else if (val.toLowerCase().equals("$tobjid"))
-					{
+					} else if (val.toLowerCase().equals("$tobjid")) {
 						val = String.valueOf(activeChar.getTarget().getObjectId());
-					}
-					else if (val.toLowerCase().equals("$bobjid"))
-					{
-						if (activeChar.getBoat() != null)
-						{
+					} else if (val.toLowerCase().equals("$bobjid")) {
+						if (activeChar.getBoat() != null) {
 							val = String.valueOf(activeChar.getBoat().getObjectId());
 						}
-					}
-					else if (val.toLowerCase().equals("$clanid"))
-					{
+					} else if (val.toLowerCase().equals("$clanid")) {
 						val = String.valueOf(activeChar.getClanId());
-					}
-					else if (val.toLowerCase().equals("$allyid"))
-					{
+					} else if (val.toLowerCase().equals("$allyid")) {
 						val = String.valueOf(activeChar.getAllyId());
-					}
-					else if (val.toLowerCase().equals("$tclanid"))
-					{
+					} else if (val.toLowerCase().equals("$tclanid")) {
 						val = String.valueOf(((L2PcInstance) activeChar.getTarget()).getClanId());
-					}
-					else if (val.toLowerCase().equals("$tallyid"))
-					{
+					} else if (val.toLowerCase().equals("$tallyid")) {
 						val = String.valueOf(((L2PcInstance) activeChar.getTarget()).getAllyId());
-					}
-					else if (val.toLowerCase().equals("$x"))
-					{
+					} else if (val.toLowerCase().equals("$x")) {
 						val = String.valueOf(activeChar.getX());
-					}
-					else if (val.toLowerCase().equals("$y"))
-					{
+					} else if (val.toLowerCase().equals("$y")) {
 						val = String.valueOf(activeChar.getY());
-					}
-					else if (val.toLowerCase().equals("$z"))
-					{
+					} else if (val.toLowerCase().equals("$z")) {
 						val = String.valueOf(activeChar.getZ());
-					}
-					else if (val.toLowerCase().equals("$heading"))
-					{
+					} else if (val.toLowerCase().equals("$heading")) {
 						val = String.valueOf(activeChar.getHeading());
-					}
-					else if (val.toLowerCase().equals("$tx"))
-					{
+					} else if (val.toLowerCase().equals("$tx")) {
 						val = String.valueOf(activeChar.getTarget().getX());
-					}
-					else if (val.toLowerCase().equals("$ty"))
-					{
+					} else if (val.toLowerCase().equals("$ty")) {
 						val = String.valueOf(activeChar.getTarget().getY());
-					}
-					else if (val.toLowerCase().equals("$tz"))
-					{
+					} else if (val.toLowerCase().equals("$tz")) {
 						val = String.valueOf(activeChar.getTarget().getZ());
-					}
-					else if (val.toLowerCase().equals("$theading"))
-					{
+					} else if (val.toLowerCase().equals("$theading")) {
 						val = String.valueOf(((L2PcInstance) activeChar.getTarget()).getHeading());
 					}
 
-					if (!client)
-					{
+					if (!client) {
 						sp.addPart(format.getBytes()[i], val);
-					}
-					else
-					{
+					} else {
 						write(format.getBytes()[i], val, buf);
 					}
 				}
-				if (broadcast)
-				{
+				if (broadcast) {
 					activeChar.broadcastPacket(sp);
-				}
-				else if (client)
-				{
+				} else if (client) {
 					buf.flip();
-					L2GameClientPacket p = (L2GameClientPacket) Server.gameServer.getL2GamePacketHandler()
-							.handlePacket(buf, activeChar.getClient());
-					if (p != null)
-					{
+					L2GameClientPacket p = (L2GameClientPacket) Server.gameServer.getL2GamePacketHandler().handlePacket(buf, activeChar.getClient());
+					if (p != null) {
 						p.setBuffers(buf, activeChar.getClient(), new NioNetStringBuffer(2000));
-						if (p.read())
-						{
+						if (p.read()) {
 							ThreadPoolManager.getInstance().executePacket(p);
 						}
 					}
-				}
-				else
-				{
+				} else {
 					activeChar.sendPacket(sp);
 				}
 				showPage3(activeChar, format, command);
-			}
-			catch (Exception ex)
-			{
+			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
 		}
 		return true;
 	}
 
-	private void showMainPage(L2PcInstance activeChar)
-	{
+	private void showMainPage(L2PcInstance activeChar) {
 		AdminHelpPage.showHelpPage(activeChar, "pforge1.htm");
 	}
 
-	private void showPage2(L2PcInstance activeChar, String format)
-	{
+	private void showPage2(L2PcInstance activeChar, String format) {
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "admin/pforge2.htm");
 		adminReply.replace("%format%", format);
 
 		final StringBuilder replyMSG = new StringBuilder(format.length() * 40);
 
-		for (int i = 0; i < format.length(); i++)
-		{
-			StringUtil.append(replyMSG, String.valueOf(format.charAt(i)), " : <edit var=\"v", String.valueOf(i),
-					"\" width=100><br1>");
+		for (int i = 0; i < format.length(); i++) {
+			StringUtil.append(replyMSG, String.valueOf(format.charAt(i)), " : <edit var=\"v", String.valueOf(i), "\" width=100><br1>");
 		}
 		adminReply.replace("%valueditors%", replyMSG.toString());
 		replyMSG.setLength(0);
 
-		for (int i = 0; i < format.length(); i++)
-		{
+		for (int i = 0; i < format.length(); i++) {
 			replyMSG.append(" $v" + i);
 		}
 		adminReply.replace("%send%", replyMSG.toString());
 		activeChar.sendPacket(adminReply);
 	}
 
-	private void showPage3(L2PcInstance activeChar, String format, String command)
-	{
+	private void showPage3(L2PcInstance activeChar, String format, String command) {
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "admin/pforge3.htm");
 		adminReply.replace("%format%", format);
@@ -228,45 +164,30 @@ public class AdminPForge implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 
-	private boolean write(byte b, String string, ByteBuffer buf)
-	{
-		if (b == 'C' || b == 'c')
-		{
+	private boolean write(byte b, String string, ByteBuffer buf) {
+		if (b == 'C' || b == 'c') {
 			buf.put(Byte.decode(string));
 			return true;
-		}
-		else if (b == 'D' || b == 'd')
-		{
+		} else if (b == 'D' || b == 'd') {
 			buf.putInt(Integer.decode(string));
 			return true;
-		}
-		else if (b == 'H' || b == 'h')
-		{
+		} else if (b == 'H' || b == 'h') {
 			buf.putShort(Short.decode(string));
 			return true;
-		}
-		else if (b == 'F' || b == 'f')
-		{
+		} else if (b == 'F' || b == 'f') {
 			buf.putDouble(Double.parseDouble(string));
 			return true;
-		}
-		else if (b == 'S' || b == 's')
-		{
+		} else if (b == 'S' || b == 's') {
 			final int len = string.length();
-			for (int i = 0; i < len; i++)
-			{
+			for (int i = 0; i < len; i++) {
 				buf.putChar(string.charAt(i));
 			}
 			buf.putChar('\000');
 			return true;
-		}
-		else if (b == 'B' || b == 'b' || b == 'X' || b == 'x')
-		{
+		} else if (b == 'B' || b == 'b' || b == 'X' || b == 'x') {
 			buf.put(new BigInteger(string).toByteArray());
 			return true;
-		}
-		else if (b == 'Q' || b == 'q')
-		{
+		} else if (b == 'Q' || b == 'q') {
 			buf.putLong(Long.decode(string));
 			return true;
 		}
@@ -274,8 +195,7 @@ public class AdminPForge implements IAdminCommandHandler
 	}
 
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

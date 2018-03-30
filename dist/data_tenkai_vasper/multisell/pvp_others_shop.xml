@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list maintainEnchantment="true">
-    <item>
-        <ingredient id="5899" count="125" /> <!-- Kail's Coin  -->
-        <production id="23953" count="1" /> <!-- 2014 World's Olympiad Hero Accessory -->
-    </item>
+	<item>
+		<ingredient id="5899" count="125" /> <!-- Kail's Coin  -->
+		<production id="23953" count="1" /> <!-- 2014 World's Olympiad Hero Accessory -->
+	</item>
 </list>

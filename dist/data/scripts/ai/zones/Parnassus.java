@@ -9,13 +9,11 @@ import l2server.gameserver.network.serverpackets.EventTrigger;
  * @author LasTravel
  */
 
-public class Parnassus extends Quest
-{
+public class Parnassus extends Quest {
 	private static final int crystalPrisonEntrance = 33523;
 	private static final int crystalCavernsEntrance = 33522;
 
-	public Parnassus(int id, String name, String descr)
-	{
+	public Parnassus(int id, String name, String descr) {
 		super(id, name, descr);
 
 		addCreatureSeeId(crystalPrisonEntrance);
@@ -23,17 +21,12 @@ public class Parnassus extends Quest
 	}
 
 	@Override
-	public String onCreatureSee(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
-		if (player != null)
-		{
-			if (npc.getNpcId() == crystalPrisonEntrance)
-			{
+	public String onCreatureSee(L2Npc npc, L2PcInstance player, boolean isSummon) {
+		if (player != null) {
+			if (npc.getNpcId() == crystalPrisonEntrance) {
 				player.sendPacket(new EventTrigger(24230010, true));
 				player.sendPacket(new EventTrigger(24230012, true));
-			}
-			else
-			{
+			} else {
 				player.sendPacket(new EventTrigger(24230014, true));
 				player.sendPacket(new EventTrigger(24230016, true));
 			}
@@ -41,8 +34,7 @@ public class Parnassus extends Quest
 		return "";
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Parnassus(-1, "Parnassus", "ai");
 	}
 }

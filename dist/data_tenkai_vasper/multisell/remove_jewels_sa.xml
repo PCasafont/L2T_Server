@@ -1,126 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list maintainEnchantment="true">
-    <item> <!-- Blessed Antharas Earring-->
-        <ingredient count="1" id="47484"/> <!--shield -->
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47485"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47484"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47486"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47485"/> <!-- Earth -->
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47484"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47485"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47486"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47486"/> <!-- Pure -->
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47484"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47486"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47485"/>
-    </item>
-    <!-- Blessed Valakas Neckless -->
-    <item>
-        <ingredient count="1" id="47487"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47488"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47487"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47489"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47488"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47489"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47488"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47487"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47489"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47488"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47489"/>
-        <ingredient count="25" id="5899" />
-        <production count="1" id="47487"/>
-    </item>
-    <!-- Lindvior Earring -->
-    <item>
-        <ingredient count="1" id="47490"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47491"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47490"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47492"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47491"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47492"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47491"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47490"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47492"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47491"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47492"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47490"/>
-    </item>
-    <!-- Baium Soul Ring -->
-    <item>
-        <ingredient count="1" id="47466"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47467"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47466"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47468"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47467"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47468"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47467"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47466"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47468"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47467"/>
-    </item>
-    <item>
-        <ingredient count="1" id="47468"/>
-        <ingredient count="25" id="5899"/>
-        <production count="1" id="47466"/>
-    </item>
+	<item> <!-- Blessed Antharas Earring-->
+		<ingredient count="1" id="47484" /> <!--shield -->
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47485" />
+	</item>
+	<item>
+		<ingredient count="1" id="47484" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47486" />
+	</item>
+	<item>
+		<ingredient count="1" id="47485" /> <!-- Earth -->
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47484" />
+	</item>
+	<item>
+		<ingredient count="1" id="47485" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47486" />
+	</item>
+	<item>
+		<ingredient count="1" id="47486" /> <!-- Pure -->
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47484" />
+	</item>
+	<item>
+		<ingredient count="1" id="47486" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47485" />
+	</item>
+	<!-- Blessed Valakas Neckless -->
+	<item>
+		<ingredient count="1" id="47487" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47488" />
+	</item>
+	<item>
+		<ingredient count="1" id="47487" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47489" />
+	</item>
+	<item>
+		<ingredient count="1" id="47488" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47489" />
+	</item>
+	<item>
+		<ingredient count="1" id="47488" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47487" />
+	</item>
+	<item>
+		<ingredient count="1" id="47489" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47488" />
+	</item>
+	<item>
+		<ingredient count="1" id="47489" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47487" />
+	</item>
+	<!-- Lindvior Earring -->
+	<item>
+		<ingredient count="1" id="47490" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47491" />
+	</item>
+	<item>
+		<ingredient count="1" id="47490" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47492" />
+	</item>
+	<item>
+		<ingredient count="1" id="47491" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47492" />
+	</item>
+	<item>
+		<ingredient count="1" id="47491" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47490" />
+	</item>
+	<item>
+		<ingredient count="1" id="47492" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47491" />
+	</item>
+	<item>
+		<ingredient count="1" id="47492" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47490" />
+	</item>
+	<!-- Baium Soul Ring -->
+	<item>
+		<ingredient count="1" id="47466" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47467" />
+	</item>
+	<item>
+		<ingredient count="1" id="47466" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47468" />
+	</item>
+	<item>
+		<ingredient count="1" id="47467" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47468" />
+	</item>
+	<item>
+		<ingredient count="1" id="47467" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47466" />
+	</item>
+	<item>
+		<ingredient count="1" id="47468" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47467" />
+	</item>
+	<item>
+		<ingredient count="1" id="47468" />
+		<ingredient count="25" id="5899" />
+		<production count="1" id="47466" />
+	</item>
 </list>

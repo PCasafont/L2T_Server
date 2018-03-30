@@ -38,32 +38,26 @@ import l2server.gameserver.templates.item.L2Item;
  *
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
-public final class MultiSellList extends L2GameServerPacket
-{
-
+public final class MultiSellList extends L2GameServerPacket {
+	
 	private int size, index;
 	private final ListContainer list;
 	private final boolean finished;
-
-	public MultiSellList(ListContainer list, int index)
-	{
+	
+	public MultiSellList(ListContainer list, int index) {
 		this.list = list;
 		this.index = index;
 		size = list.getEntries().size() - index;
-		if (size > MultiSell.PAGE_SIZE)
-		{
+		if (size > MultiSell.PAGE_SIZE) {
 			finished = false;
 			size = MultiSell.PAGE_SIZE;
-		}
-		else
-		{
+		} else {
 			finished = true;
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeC(0x00);
 		writeD(list.getListId()); // list id
 		writeC(0x00);
@@ -73,21 +67,18 @@ public final class MultiSellList extends L2GameServerPacket
 		writeD(size); //list length
 		writeC(list.isChance() ? 0x01 : 0x00); // Old or modern format
 		writeD(0);
-
+		
 		//String toLog = "";
 		MultiSellEntry ent;
-		while (size-- > 0)
-		{
+		while (size-- > 0) {
 			ent = list.getEntries().get(index++);
-
+			
 			final Ingredient product = ent.getProducts().get(0);
-
-			if (product.getItemId() > 0)
-			{
+			
+			if (product.getItemId() > 0) {
 				L2Item productTemplate = ItemTable.getInstance().getTemplate(product.getItemId());
-
-				if (productTemplate != null)
-				{
+				
+				if (productTemplate != null) {
 					productTemplate.setSalePrice(0);
 				}
 			}
@@ -128,120 +119,101 @@ public final class MultiSellList extends L2GameServerPacket
 			writeH(0x00); // T1
 			writeH(0x00); // T1
 			writeH(0x00); // T1
-
+			
 			writeC(0x00);
 			writeC(0x00);
-
+			
 			writeH(ent.getProducts().size());
 			writeH(ent.getIngredients().size());
-
-			for (Ingredient ing : ent.getProducts())
-			{
+			
+			for (Ingredient ing : ent.getProducts()) {
 				writeD(ing.getItemId());
-				if (ing.getTemplate() != null)
-				{
+				if (ing.getTemplate() != null) {
 					writeQ(ing.getTemplate().getBodyPart());
 					writeH(ing.getTemplate().getType2());
-				}
-				else
-				{
+				} else {
 					writeQ(0);
 					writeH(-1);
 				}
-
+				
 				writeQ(ing.getItemCount());
-				if (ing.getItemInfo() != null)
-				{
+				if (ing.getItemInfo() != null) {
 					writeH(ing.getItemInfo().getEnchantLevel()); // enchant level
 					writeD(ing.getChance() > 0 ? Math.max(Math.round(ing.getChance()), 1) : 0); // Chance
 					writeQ(ing.getItemInfo().getAugmentId()); // augment id
 					writeH(ing.getItemInfo().getElementId()); // attack element
 					writeH(ing.getItemInfo().getElementPower()); //element power
-					for (byte j = 0; j < 6; j++)
-					{
+					for (byte j = 0; j < 6; j++) {
 						writeH(ing.getItemInfo().getElementals()[j]);
 					}
-
+					
 					int[] ensoulEffects = ing.getItemInfo().getEnsoulEffectIds();
 					int[] ensoulSpecialEffects = ing.getItemInfo().getEnsoulSpecialEffectIds();
 					writeC(ensoulEffects.length);
-					for (int effect : ensoulEffects)
-					{
+					for (int effect : ensoulEffects) {
 						writeD(effect);
 					}
 					writeC(ensoulSpecialEffects.length);
-					for (int effect : ensoulSpecialEffects)
-					{
+					for (int effect : ensoulSpecialEffects) {
 						writeD(effect);
 					}
-				}
-				else
-				{
+				} else {
 					writeH(0x00); // enchant level
 					writeD(ing.getChance() > 0 ? Math.max(Math.round(ing.getChance()), 1) : 0); // Chance
 					writeQ(0x00); // augment id
 					writeH(-2); // attack element
 					writeH(0x00); //element power
-					for (byte j = 0; j < 6; j++)
-					{
+					for (byte j = 0; j < 6; j++) {
 						writeH(0x00);
 					}
-
+					
 					writeC(0x00);
 					writeC(0x00);
 				}
 			}
-
-			for (Ingredient ing : ent.getIngredients())
-			{
+			
+			for (Ingredient ing : ent.getIngredients()) {
 				writeD(ing.getItemId());
 				writeH(ing.getTemplate() != null ? ing.getTemplate().getType2() : -1);
 				writeQ(ing.getItemCount());
-
-				if (ing.getItemCount() > Integer.MAX_VALUE)
-				{
+				
+				if (ing.getItemCount() > Integer.MAX_VALUE) {
 					L2Item productItem = ItemTable.getInstance().getTemplate(ent.getProducts().get(0).getItemId());
 					L2Item ingItem = ItemTable.getInstance().getTemplate(ing.getItemId());
-					getWriteClient().sendPacket(new CreatureSay(0, Say2.TELL, "Store",
-							"WARNING: The " + productItem.getName() + "'s necessary " + ingItem.getName() +
-									" quantity is " + ing.getItemCount()));
+					getWriteClient().sendPacket(new CreatureSay(0,
+							Say2.TELL,
+							"Store",
+							"WARNING: The " + productItem.getName() + "'s necessary " + ingItem.getName() + " quantity is " + ing.getItemCount()));
 				}
-
-				if (ing.getItemInfo() != null)
-				{
+				
+				if (ing.getItemInfo() != null) {
 					writeH(ing.getItemInfo().getEnchantLevel()); // enchant level
 					writeQ(ing.getItemInfo().getAugmentId()); // augment id
 					writeH(ing.getItemInfo().getElementId()); // attack element
 					writeH(ing.getItemInfo().getElementPower()); //element power
-					for (byte j = 0; j < 6; j++)
-					{
+					for (byte j = 0; j < 6; j++) {
 						writeH(ing.getItemInfo().getElementals()[j]);
 					}
-
+					
 					int[] ensoulEffects = ing.getItemInfo().getEnsoulEffectIds();
 					int[] ensoulSpecialEffects = ing.getItemInfo().getEnsoulSpecialEffectIds();
 					writeC(ensoulEffects.length);
-					for (int effect : ensoulEffects)
-					{
+					for (int effect : ensoulEffects) {
 						writeD(effect);
 					}
 					writeC(ensoulSpecialEffects.length);
-					for (int effect : ensoulSpecialEffects)
-					{
+					for (int effect : ensoulSpecialEffects) {
 						writeD(effect);
 					}
-				}
-				else
-				{
+				} else {
 					writeH(0x00); // enchant level
 					writeQ(0x00); // augment id
 					writeH(-2); // attack element
 					writeH(0x00); //element power
-					for (byte j = 0; j < 6; j++)
-					{
+					for (byte j = 0; j < 6; j++) {
 						writeH(0x00);
 					}
-
+					
 					writeC(0x00);
 					writeC(0x00);
 				}

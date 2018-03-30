@@ -25,27 +25,23 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 /**
  * @author nBd
  */
-public class TargetGround implements ISkillTargetTypeHandler
-{
+public class TargetGround implements ISkillTargetTypeHandler {
 
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		return new L2Character[]{activeChar};
 	}
 
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
+	public Enum<L2SkillTargetType> getTargetType() {
 		return L2SkillTargetType.TARGET_GROUND;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetGround());
 	}
 }

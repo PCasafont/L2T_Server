@@ -24,27 +24,22 @@ import l2server.gameserver.model.zone.L2ZoneType;
  *
  * @author durgus
  */
-public class L2PeaceZone extends L2ZoneType
-{
+public class L2PeaceZone extends L2ZoneType {
 	boolean enabled;
 
-	public L2PeaceZone(int id)
-	{
+	public L2PeaceZone(int id) {
 		super(id);
 
 		enabled = true;
 	}
 
 	@Override
-	protected void onEnter(L2Character character)
-	{
-		if (!enabled)
-		{
+	protected void onEnter(L2Character character) {
+		if (!enabled) {
 			return;
 		}
 
-		if (!GMEventManager.getInstance().onEnterZone(character, this))
-		{
+		if (!GMEventManager.getInstance().onEnterZone(character, this)) {
 			return;
 		}
 
@@ -52,43 +47,33 @@ public class L2PeaceZone extends L2ZoneType
 	}
 
 	@Override
-	protected void onExit(L2Character character)
-	{
+	protected void onExit(L2Character character) {
 		character.setInsideZone(L2Character.ZONE_PEACE, false);
 	}
 
 	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
+	public void onDieInside(L2Character character, L2Character killer) {
 	}
 
 	@Override
-	public void onReviveInside(L2Character character)
-	{
+	public void onReviveInside(L2Character character) {
 	}
 
-	public boolean isEnabled()
-	{
+	public boolean isEnabled() {
 		return enabled;
 	}
 
-	public void setZoneEnabled(boolean val)
-	{
+	public void setZoneEnabled(boolean val) {
 		enabled = val;
 
-		for (L2Character chara : getCharactersInside().values())
-		{
-			if (chara == null)
-			{
+		for (L2Character chara : getCharactersInside().values()) {
+			if (chara == null) {
 				continue;
 			}
 
-			if (enabled)
-			{
+			if (enabled) {
 				onEnter(chara);
-			}
-			else
-			{
+			} else {
 				onExit(chara);
 			}
 		}

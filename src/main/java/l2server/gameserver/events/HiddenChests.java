@@ -19,44 +19,36 @@ import l2server.util.Rnd;
 /**
  * @author Pere
  */
-public class HiddenChests
-{
+public class HiddenChests {
 	public static HiddenChests instance = null;
 
 	private static final int SPECIAL_CHEST_COUNT = 5;
 	private L2Spawn[] specialChestSpawns = new L2Spawn[SPECIAL_CHEST_COUNT];
 	private HiddenChestsTask[] specialChestTasks = new HiddenChestsTask[SPECIAL_CHEST_COUNT];
 
-	public static HiddenChests getInstance()
-	{
-		if (instance == null)
-		{
+	public static HiddenChests getInstance() {
+		if (instance == null) {
 			instance = new HiddenChests();
 		}
 		return instance;
 	}
 
-	public void spawnChests()
-	{
+	public void spawnChests() {
 		L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(50101);
-		try
-		{
-			for (int i = 0; i < SPECIAL_CHEST_COUNT; i++)
-			{
+		try {
+			for (int i = 0; i < SPECIAL_CHEST_COUNT; i++) {
 				L2Spawn chestSpawn = new L2Spawn(tmpl);
 				int x = 0;
 				int y = 0;
 				int z = 0;
 				boolean found = false;
-				while (!found)
-				{
+				while (!found) {
 					L2Spawn randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
 					L2Npc randomNpc = randomSpawn.getNpc();
 					while (randomSpawn.getNpc().getX() < 150000 || randomSpawn.getNpc().getY() > 227000 ||
 							randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CASTLE) ||
 							randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CLANHALL) ||
-							randomSpawn.getNpc().isInsideZone(L2Character.ZONE_FORT))
-					{
+							randomSpawn.getNpc().isInsideZone(L2Character.ZONE_FORT)) {
 						randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
 					}
 
@@ -65,10 +57,7 @@ public class HiddenChests
 					z = GeoData.getInstance().getHeight(x, y, randomNpc.getZ());
 
 					int sec = 0;
-					while (!GeoData.getInstance()
-							.canSeeTarget(randomSpawn.getX(), randomSpawn.getY(), randomSpawn.getZ(), x, y, z) &&
-							sec < 20)
-					{
+					while (!GeoData.getInstance().canSeeTarget(randomSpawn.getX(), randomSpawn.getY(), randomSpawn.getZ(), x, y, z) && sec < 20) {
 						x = randomNpc.getX() + Rnd.get(800) - 400;
 						y = randomNpc.getY() + Rnd.get(800) - 400;
 						z = GeoData.getInstance().getHeight(x, y, randomNpc.getZ());
@@ -76,8 +65,7 @@ public class HiddenChests
 						sec++;
 					}
 
-					if (sec < 20)
-					{
+					if (sec < 20) {
 						found = true;
 					}
 				}
@@ -95,12 +83,10 @@ public class HiddenChests
 				chestSpawn.doSpawn();
 
 				String name = "";
-				for (int j = 0; j < 10; j++)
-				{
+				for (int j = 0; j < 10; j++) {
 					int rnd = (int) (Math.random() * 36);
 					char c = (char) ('0' + rnd);
-					if (rnd >= 10)
-					{
+					if (rnd >= 10) {
 						c = (char) ('a' + rnd - 10);
 					}
 					name += c;
@@ -108,46 +94,37 @@ public class HiddenChests
 
 				chestSpawn.getNpc().setName(name);
 
-				specialChestTasks[i] =
-						new HiddenChestsTask(i, System.currentTimeMillis() + 3600000L * 5 + Rnd.get(3600000 * 3));
+				specialChestTasks[i] = new HiddenChestsTask(i, System.currentTimeMillis() + 3600000L * 5 + Rnd.get(3600000 * 3));
 				ThreadPoolManager.getInstance().executeTask(specialChestTasks[i]);
 
 				specialChestSpawns[i] = chestSpawn;
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.warning("Chest event exception:");
 			e.printStackTrace();
 		}
 	}
 
-	public void moveChest(L2Npc chest, final boolean delayed)
-	{
-		if (chest == null)
-		{
+	public void moveChest(L2Npc chest, final boolean delayed) {
+		if (chest == null) {
 			return;
 		}
 
 		final L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(50101);
-		if (tmpl == null)
-		{
+		if (tmpl == null) {
 			Log.warning("ERROR: NPC " + chest.getObjectId() + " has a null template.");
 			return;
 		}
 
 		int index = 0;
-		for (L2Spawn scs : specialChestSpawns)
-		{
-			if (scs != null && scs.getNpc() != null && scs.getNpc() == chest)
-			{
+		for (L2Spawn scs : specialChestSpawns) {
+			if (scs != null && scs.getNpc() != null && scs.getNpc() == chest) {
 				break;
 			}
 			index++;
 		}
 
-		if (index >= specialChestSpawns.length)
-		{
+		if (index >= specialChestSpawns.length) {
 			Log.warning("ERROR: NPC " + chest.getObjectId() + " is not in the chest spawns list.");
 			chest.deleteMe();
 			chest.getSpawn().stopRespawn();
@@ -162,25 +139,21 @@ public class HiddenChests
 
 		final int fIndex = index;
 
-		ThreadPoolManager.getInstance().scheduleGeneral(() ->
-		{
-			try
-			{
+		ThreadPoolManager.getInstance().scheduleGeneral(() -> {
+			try {
 
 				L2Spawn chestSpawn = new L2Spawn(tmpl);
 				int x = 0;
 				int y = 0;
 				int z = 0;
 				boolean found = false;
-				while (!found)
-				{
+				while (!found) {
 					L2Spawn randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
 					L2Npc randomNpc = randomSpawn.getNpc();
 					while (randomSpawn.getNpc().getX() < 150000 || randomSpawn.getNpc().getY() > 227000 ||
 							randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CASTLE) ||
 							randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CLANHALL) ||
-							randomSpawn.getNpc().isInsideZone(L2Character.ZONE_FORT))
-					{
+							randomSpawn.getNpc().isInsideZone(L2Character.ZONE_FORT)) {
 						randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
 					}
 
@@ -189,10 +162,7 @@ public class HiddenChests
 					z = GeoData.getInstance().getHeight(x, y, randomNpc.getZ());
 
 					int sec = 0;
-					while (!GeoData.getInstance()
-							.canSeeTarget(randomSpawn.getX(), randomSpawn.getY(), randomSpawn.getZ(), x, y, z) &&
-							sec < 20)
-					{
+					while (!GeoData.getInstance().canSeeTarget(randomSpawn.getX(), randomSpawn.getY(), randomSpawn.getZ(), x, y, z) && sec < 20) {
 						x = randomNpc.getX() + Rnd.get(800) - 400;
 						y = randomNpc.getY() + Rnd.get(800) - 400;
 						z = GeoData.getInstance().getHeight(x, y, randomNpc.getZ());
@@ -200,8 +170,7 @@ public class HiddenChests
 						sec++;
 					}
 
-					if (sec < 20)
-					{
+					if (sec < 20) {
 						found = true;
 					}
 				}
@@ -219,12 +188,10 @@ public class HiddenChests
 				chestSpawn.doSpawn();
 
 				String name = "";
-				for (int j = 0; j < 10; j++)
-				{
+				for (int j = 0; j < 10; j++) {
 					int rnd = (int) (Math.random() * 36);
 					char c = (char) ('0' + rnd);
-					if (rnd >= 10)
-					{
+					if (rnd >= 10) {
 						c = (char) ('a' + rnd - 10);
 					}
 					name += c;
@@ -234,23 +201,19 @@ public class HiddenChests
 
 				specialChestTasks[fIndex].setStartTime(System.currentTimeMillis() + 3600000L * 5);
 
-				if (delayed)
-				{
-					Announcements.getInstance().announceToAll("The treasure chest #" + (fIndex + 1) +
-							" has respawned! Use .treasure for hints to find it.");
+				if (delayed) {
+					Announcements.getInstance()
+							.announceToAll("The treasure chest #" + (fIndex + 1) + " has respawned! Use .treasure for hints to find it.");
 				}
 
 				specialChestSpawns[fIndex] = chestSpawn;
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}, delayed ? 6 * 3600 * 1000 : 1000);
 	}
 
-	public void showInfo(L2PcInstance activeChar)
-	{
+	public void showInfo(L2PcInstance activeChar) {
 		String html = "<html>" + "<body>" +
 				"<center><table><tr><td><img src=icon.etc_alphabet_h_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_i_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_d_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_d_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_e_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_n_i00 width=32 height=32></td></tr></table></center>" +
 				"<table><tr><td><img src=icon.etc_alphabet_t_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_r_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_e_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_a_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_s_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_u_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_r_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_e_i00 width=32 height=32></td></tr></table>" +
@@ -259,11 +222,9 @@ public class HiddenChests
 				"<center>";
 		int x = 0;
 		boolean someChest = false;
-		for (int i = 0; i < SPECIAL_CHEST_COUNT; i++)
-		{
+		for (int i = 0; i < SPECIAL_CHEST_COUNT; i++) {
 			L2Spawn chest = specialChestSpawns[i];
-			if (chest == null)
-			{
+			if (chest == null) {
 				continue;
 			}
 
@@ -272,48 +233,32 @@ public class HiddenChests
 			long dz = activeChar.getZ() - chest.getZ();
 			int distance = (int) Math.sqrt(dx * dx + dy * dy + dz * dz);
 			String hint = "<font color=00FF00>Far far away</font>";
-			if (distance < 500)
-			{
+			if (distance < 500) {
 				hint = "<font color=9B0000>Extremely hot!</font>";
-			}
-			else if (distance < 1000)
-			{
+			} else if (distance < 1000) {
 				hint = "<font color=FF0000>Very hot!</font>";
-			}
-			else if (distance < 2000)
-			{
+			} else if (distance < 2000) {
 				hint = "<font color=EA0000>Hot!</font>";
-			}
-			else if (distance < 5000)
-			{
+			} else if (distance < 5000) {
 				hint = "<font color=FF2020>Very warm</font>";
-			}
-			else if (distance < 10000)
-			{
+			} else if (distance < 10000) {
 				hint = "<font color=FF4646>Warm</font>";
-			}
-			else if (distance < 20000)
-			{
+			} else if (distance < 20000) {
 				hint = "<font color=379BFF>Cold</font>";
-			}
-			else if (distance < 50000)
-			{
+			} else if (distance < 50000) {
 				hint = "<font color=0074E8>Very cold</font>";
 			}
 			html += "<table height=50 width=300 " + (x % 2 == 0 ? "bgcolor=131210" : "") + "><tr>";
-			html += "<td><img src=icon.etc_treasure_box_i08 width=32 height=32></td><td fixwidth=\"70\">Chest #" +
-					(i + 1) + "</td>";
+			html += "<td><img src=icon.etc_treasure_box_i08 width=32 height=32></td><td fixwidth=\"70\">Chest #" + (i + 1) + "</td>";
 			html += "<td fixwidth=\"100\">" + (activeChar.isGM() ?
-					"<a action=\"bypass -h admin_move_to " + chest.getX() + " " + chest.getY() + " " + chest.getZ() +
-							"\"> " + hint + "</a>" : hint) + "</td>";
+					"<a action=\"bypass -h admin_move_to " + chest.getX() + " " + chest.getY() + " " + chest.getZ() + "\"> " + hint + "</a>" : hint) +
+					"</td>";
 			html += "</tr></table>";
 			someChest = true;
 			x++;
 		}
-		if (!someChest)
-		{
-			html +=
-					"<table width=280><tr><td align=center><font color=LEVEL>There are no chests at this moment!</font></a></td></tr></table>";
+		if (!someChest) {
+			html += "<table width=280><tr><td align=center><font color=LEVEL>There are no chests at this moment!</font></a></td></tr></table>";
 		}
 		html += "</center><br>";
 
@@ -323,19 +268,16 @@ public class HiddenChests
 		activeChar.sendPacket(new NpcHtmlMessage(0, html));
 	}
 
-	class HiddenChestsTask implements Runnable
-	{
+	class HiddenChestsTask implements Runnable {
 		private int index;
 		private long startTime;
 
-		public HiddenChestsTask(int index, long startTime)
-		{
+		public HiddenChestsTask(int index, long startTime) {
 			this.index = index;
 			this.startTime = startTime;
 		}
 
-		public void setStartTime(long startTime)
-		{
+		public void setStartTime(long startTime) {
 			this.startTime = startTime;
 		}
 
@@ -343,55 +285,42 @@ public class HiddenChests
 		 * @see java.lang.Runnable#run()
 		 */
 		@Override
-		public void run()
-		{
+		public void run() {
 			long delay = startTime - System.currentTimeMillis();
 
-			if (delay < 1000 && specialChestSpawns[index] != null)
-			{
+			if (delay < 1000 && specialChestSpawns[index] != null) {
 				moveChest(specialChestSpawns[index].getNpc(), false);
 				ThreadPoolManager.getInstance().scheduleGeneral(this, System.currentTimeMillis() + 3600000L * 6);
-			}
-			else
-			{
+			} else {
 				ThreadPoolManager.getInstance().scheduleGeneral(this, delay);
 			}
 		}
 	}
 
-	class OpenChestCastFinalizer implements Runnable
-	{
+	class OpenChestCastFinalizer implements Runnable {
 		private L2PcInstance player;
 		private L2Npc chest;
 
-		OpenChestCastFinalizer(L2PcInstance player, L2Npc chest)
-		{
+		OpenChestCastFinalizer(L2PcInstance player, L2Npc chest) {
 			this.player = player;
 			this.chest = chest;
 		}
 
 		@Override
-		public void run()
-		{
-			if (player.isCastingNow())
-			{
+		public void run() {
+			if (player.isCastingNow()) {
 				player.sendPacket(new MagicSkillLaunched(player, 11030, 1));
 				player.setIsCastingNow(false);
 
-				if (player.getTarget() == chest && !chest.isDead() &&
-						Util.checkIfInRange(1000, player, chest, true))
-				{
+				if (player.getTarget() == chest && !chest.isDead() && Util.checkIfInRange(1000, player, chest, true)) {
 					String name = player.getName();
-					if (player.getActingPlayer() != null)
-					{
+					if (player.getActingPlayer() != null) {
 						name = player.getActingPlayer().getName();
 					}
 					Announcements.getInstance().announceToAll(name + " has opened a treasure chest!");
 					chest.reduceCurrentHp(chest.getMaxHp() + 1, player, null);
 
-					ThreadPoolManager.getInstance()
-							.scheduleGeneral(() -> HiddenChests.getInstance().moveChest(chest, !player.isGM()),
-									5000L);
+					ThreadPoolManager.getInstance().scheduleGeneral(() -> HiddenChests.getInstance().moveChest(chest, !player.isGM()), 5000L);
 				}
 			}
 		}
@@ -414,6 +343,4 @@ public class HiddenChests
 		activeChar.setSkillCast(ThreadPoolManager.getInstance().scheduleEffect(fcf, castingMillis));
 		activeChar.forceIsCasting(TimeController.getGameTicks() + castingMillis / TimeController.MILLIS_IN_TICK);
 	}*/
-	
-	
 }

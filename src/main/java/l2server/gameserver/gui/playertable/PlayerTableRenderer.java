@@ -19,56 +19,46 @@
 
 package l2server.gameserver.gui.playertable;
 
-import java.awt.Component;
-
-import javax.swing.JTable;
+import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellRenderer;
+import java.awt.*;
 
 /**
  * @author KenM
  */
-public class PlayerTableRenderer extends DefaultTableCellRenderer implements TableCellRenderer
-{
+public class PlayerTableRenderer extends DefaultTableCellRenderer implements TableCellRenderer {
 	private static final long serialVersionUID = 1L;
 	@SuppressWarnings("unused")
 	private PlayerTableModel table;
-
-	public PlayerTableRenderer(PlayerTableModel table)
-	{
+	
+	public PlayerTableRenderer(PlayerTableModel table) {
 		this.table = table;
 	}
-
+	
 	@Override
-	public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int col)
-	{
+	public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int col) {
 		Component c;
-		if (value instanceof Component)
-		{
+		if (value instanceof Component) {
 			c = (Component) value;
-			if (isSelected)
-			{
+			if (isSelected) {
 				c.setForeground(table.getSelectionForeground());
 				c.setBackground(table.getSelectionBackground());
 			}
-		}
-		else
-		{
+		} else {
 			c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, col);
 		}
-
-		if (!isSelected)
-		{
+		
+		if (!isSelected) {
 			c.setBackground(table.getBackground());
 		}
-
+		
 		return c;
 	}
-
-	public interface TooltipTable
-	{
+	
+	public interface TooltipTable {
 		String getToolTip(int row, int col);
-
+		
 		boolean getIsMarked(int row);
 	}
 }

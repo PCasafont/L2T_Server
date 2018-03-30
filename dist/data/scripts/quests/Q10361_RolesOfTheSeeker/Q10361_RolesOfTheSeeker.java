@@ -25,8 +25,7 @@ import l2server.gameserver.model.quest.State;
 /**
  * @author Pere
  */
-public class Q10361_RolesOfTheSeeker extends Quest
-{
+public class Q10361_RolesOfTheSeeker extends Quest {
 	// Quest
 	public static String qn = "Q10361_RolesOfTheSeeker";
 
@@ -34,8 +33,7 @@ public class Q10361_RolesOfTheSeeker extends Quest
 	private int lakcis = 32977;
 	private int chesha = 33449;
 
-	public Q10361_RolesOfTheSeeker(int questId, String name, String descr)
-	{
+	public Q10361_RolesOfTheSeeker(int questId, String name, String descr) {
 		super(questId, name, descr);
 		addStartNpc(lakcis);
 		addTalkId(lakcis);
@@ -43,24 +41,19 @@ public class Q10361_RolesOfTheSeeker extends Quest
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == lakcis && event.equalsIgnoreCase("32977-03.htm"))
-		{
+		if (npc.getNpcId() == lakcis && event.equalsIgnoreCase("32977-03.htm")) {
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
-		}
-		else if (npc.getNpcId() == chesha && event.equalsIgnoreCase("33449-03.htm") && st.getInt("cond") == 1)
-		{
+		} else if (npc.getNpcId() == chesha && event.equalsIgnoreCase("33449-03.htm") && st.getInt("cond") == 1) {
 			st.unset("cond");
 			st.giveItems(22, 1);
 			st.giveItems(29, 1);
@@ -76,26 +69,19 @@ public class Q10361_RolesOfTheSeeker extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == lakcis)
-		{
-			switch (st.getState())
-			{
+		if (npc.getNpcId() == lakcis) {
+			switch (st.getState()) {
 				case State.CREATED:
-					if (canStart(player))
-					{
+					if (canStart(player)) {
 						htmltext = "32977-01.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32977-00.htm";
 					}
 					break;
@@ -106,22 +92,18 @@ public class Q10361_RolesOfTheSeeker extends Quest
 					htmltext = "32977-05.htm"; // TODO
 					break;
 			}
-		}
-		else if (npc.getNpcId() == chesha && st.getInt("cond") == 1)
-		{
+		} else if (npc.getNpcId() == chesha && st.getInt("cond") == 1) {
 			htmltext = "33449-01.htm";
 		}
 		return htmltext;
 	}
 
 	@Override
-	public boolean canStart(L2PcInstance player)
-	{
+	public boolean canStart(L2PcInstance player) {
 		return player.getLevel() >= 10 && player.getLevel() <= 20;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Q10361_RolesOfTheSeeker(10361, qn, "Entering the Ye Sagira Ruins.");
 	}
 }

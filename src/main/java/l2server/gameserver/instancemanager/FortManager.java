@@ -29,38 +29,31 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FortManager implements InstanceListManager
-{
+public class FortManager implements InstanceListManager {
 	private List<Fort> forts = new ArrayList<>();
 
-	public static FortManager getInstance()
-	{
+	public static FortManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private FortManager()
-	{
+	private FortManager() {
 		load();
 	}
 
 	@Override
-	public void load()
-	{
+	public void load() {
 		Log.info("Initializing FortManager");
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "forts.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode n : doc.getChildren())
-		{
-			if (!n.getName().equalsIgnoreCase("fort"))
-			{
+		for (XmlNode n : doc.getChildren()) {
+			if (!n.getName().equalsIgnoreCase("fort")) {
 				continue;
 			}
 
 			int fortId = n.getInt("id");
-			if (Config.isServer(Config.TENKAI) && fortId == 113)
-			{
+			if (Config.isServer(Config.TENKAI) && fortId == 113) {
 				continue;
 			}
 
@@ -68,16 +61,12 @@ public class FortManager implements InstanceListManager
 			int type = n.getInt("type");
 			int flagPoleId = n.getInt("flagPoleId");
 			Fort fort = new Fort(fortId, name, type, flagPoleId);
-			for (XmlNode subNode : n.getChildren())
-			{
-				if (subNode.getName().equalsIgnoreCase("envoy"))
-				{
+			for (XmlNode subNode : n.getChildren()) {
+				if (subNode.getName().equalsIgnoreCase("envoy")) {
 					int npcId = subNode.getInt("npcId");
 					int castleId = subNode.getInt("castleId");
 					fort.addEnvoyCastleId(npcId, castleId);
-				}
-				else if (subNode.getName().equalsIgnoreCase("flag"))
-				{
+				} else if (subNode.getName().equalsIgnoreCase("flag")) {
 					int itemId = subNode.getInt("itemId");
 					int x = subNode.getInt("x");
 					int y = subNode.getInt("y");
@@ -91,28 +80,22 @@ public class FortManager implements InstanceListManager
 		Log.info("Loaded: " + forts.size() + " forts");
 	}
 
-	public final int findNearestFortIndex(L2Object obj)
-	{
+	public final int findNearestFortIndex(L2Object obj) {
 		return findNearestFortIndex(obj, Long.MAX_VALUE);
 	}
 
-	public final int findNearestFortIndex(L2Object obj, long maxDistance)
-	{
+	public final int findNearestFortIndex(L2Object obj, long maxDistance) {
 		int index = getFortIndex(obj);
-		if (index < 0)
-		{
+		if (index < 0) {
 			double distance;
 			Fort fort;
-			for (int i = 0; i < forts.size(); i++)
-			{
+			for (int i = 0; i < forts.size(); i++) {
 				fort = forts.get(i);
-				if (fort == null)
-				{
+				if (fort == null) {
 					continue;
 				}
 				distance = fort.getDistance(obj);
-				if (maxDistance > distance)
-				{
+				if (maxDistance > distance) {
 					maxDistance = (long) distance;
 					index = i;
 				}
@@ -123,114 +106,89 @@ public class FortManager implements InstanceListManager
 
 	// =========================================================
 	// Property - Public
-	public final Fort getFortById(int fortId)
-	{
-		for (Fort f : forts)
-		{
-			if (f.getFortId() == fortId)
-			{
+	public final Fort getFortById(int fortId) {
+		for (Fort f : forts) {
+			if (f.getFortId() == fortId) {
 				return f;
 			}
 		}
 		return null;
 	}
 
-	public final Fort getFortByOwner(L2Clan clan)
-	{
-		for (Fort f : forts)
-		{
-			if (f.getOwnerClan() == clan)
-			{
+	public final Fort getFortByOwner(L2Clan clan) {
+		for (Fort f : forts) {
+			if (f.getOwnerClan() == clan) {
 				return f;
 			}
 		}
 		return null;
 	}
 
-	public final Fort getFort(String name)
-	{
-		for (Fort f : forts)
-		{
-			if (f.getName().equalsIgnoreCase(name.trim()))
-			{
+	public final Fort getFort(String name) {
+		for (Fort f : forts) {
+			if (f.getName().equalsIgnoreCase(name.trim())) {
 				return f;
 			}
 		}
 		return null;
 	}
 
-	public final Fort getFort(int x, int y, int z)
-	{
-		for (Fort f : forts)
-		{
-			if (f.checkIfInZone(x, y, z))
-			{
+	public final Fort getFort(int x, int y, int z) {
+		for (Fort f : forts) {
+			if (f.checkIfInZone(x, y, z)) {
 				return f;
 			}
 		}
 		return null;
 	}
 
-	public final Fort getFort(L2Object activeObject)
-	{
+	public final Fort getFort(L2Object activeObject) {
 		return getFort(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}
 
-	public final int getFortIndex(int fortId)
-	{
+	public final int getFortIndex(int fortId) {
 		Fort fort;
-		for (int i = 0; i < forts.size(); i++)
-		{
+		for (int i = 0; i < forts.size(); i++) {
 			fort = forts.get(i);
-			if (fort != null && fort.getFortId() == fortId)
-			{
+			if (fort != null && fort.getFortId() == fortId) {
 				return i;
 			}
 		}
 		return -1;
 	}
 
-	public final int getFortIndex(L2Object activeObject)
-	{
+	public final int getFortIndex(L2Object activeObject) {
 		return getFortIndex(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}
 
-	public final int getFortIndex(int x, int y, int z)
-	{
+	public final int getFortIndex(int x, int y, int z) {
 		Fort fort;
-		for (int i = 0; i < forts.size(); i++)
-		{
+		for (int i = 0; i < forts.size(); i++) {
 			fort = forts.get(i);
-			if (fort != null && fort.checkIfInZone(x, y, z))
-			{
+			if (fort != null && fort.checkIfInZone(x, y, z)) {
 				return i;
 			}
 		}
 		return -1;
 	}
 
-	public final List<Fort> getForts()
-	{
+	public final List<Fort> getForts() {
 		return forts;
 	}
 
 	@Override
-	public void updateReferences()
-	{
+	public void updateReferences() {
 	}
 
 	@Override
-	public void activateInstances()
-	{
-		for (final Fort fort : forts)
-		{
+	public void activateInstances() {
+		for (final Fort fort : forts) {
 			fort.activateInstance();
 		}
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final FortManager instance = new FortManager();
 	}
 }

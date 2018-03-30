@@ -23,34 +23,29 @@ import l2server.gameserver.templates.StatsSet;
 /**
  * @author JIV
  */
-public class L2SkillSweeper extends L2Skill
-{
+public class L2SkillSweeper extends L2Skill {
 	private boolean absorbHp;
 	private int absorbAbs;
 
 	/**
 	 * @param set
 	 */
-	public L2SkillSweeper(StatsSet set)
-	{
+	public L2SkillSweeper(StatsSet set) {
 		super(set);
 		absorbHp = set.getBool("absorbHp", true);
 		absorbAbs = set.getInteger("absorbAbs", -1);
 	}
 
 	@Override
-	public void useSkill(L2Character caster, L2Object[] targets)
-	{
+	public void useSkill(L2Character caster, L2Object[] targets) {
 		// not used
 	}
 
-	public boolean isAbsorbHp()
-	{
+	public boolean isAbsorbHp() {
 		return absorbHp;
 	}
 
-	public int getAbsorbAbs()
-	{
+	public int getAbsorbAbs() {
 		return absorbAbs;
 	}
 }

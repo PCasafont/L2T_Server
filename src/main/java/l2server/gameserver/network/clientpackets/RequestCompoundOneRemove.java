@@ -22,28 +22,23 @@ import l2server.gameserver.network.serverpackets.ExCompoundOneRemoveOK;
 /**
  * @author Pere
  */
-public final class RequestCompoundOneRemove extends L2GameClientPacket
-{
+public final class RequestCompoundOneRemove extends L2GameClientPacket {
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (activeChar.getCompoundItem1() == null)
-		{
+		
+		if (activeChar.getCompoundItem1() == null) {
 			sendPacket(new ExCompoundOneRemoveFail());
 			return;
 		}
-
+		
 		activeChar.setCompoundItem1(null);
 		sendPacket(new ExCompoundOneRemoveOK());
 	}

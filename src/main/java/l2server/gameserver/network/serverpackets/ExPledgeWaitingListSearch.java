@@ -23,22 +23,18 @@ import java.util.List;
 /**
  * @author Pere
  */
-public class ExPledgeWaitingListSearch extends L2GameServerPacket
-{
+public class ExPledgeWaitingListSearch extends L2GameServerPacket {
 	private List<ClanRecruitWaitingUser> users;
-
-	public ExPledgeWaitingListSearch(int minLevel, int maxLevel, int role, int sortBy, boolean desc, String name)
-	{
+	
+	public ExPledgeWaitingListSearch(int minLevel, int maxLevel, int role, int sortBy, boolean desc, String name) {
 		users = ClanRecruitManager.getInstance().getWaitingUsers(minLevel, maxLevel, role, sortBy, desc, name);
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(users.size());
-
-		for (ClanRecruitWaitingUser user : users)
-		{
+		
+		for (ClanRecruitWaitingUser user : users) {
 			writeD(user.id);
 			writeS(user.name);
 			writeD(user.karma);

@@ -20,25 +20,22 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public class ExAutoSoulShot extends L2GameServerPacket
-{
+public class ExAutoSoulShot extends L2GameServerPacket {
 	private int itemId;
 	private int enable;
 	private int type;
-
+	
 	/**
 	 * 0xfe:0x12 ExAutoSoulShot		 (ch)dd
 	 */
-	public ExAutoSoulShot(int itemId, int enable, int type)
-	{
+	public ExAutoSoulShot(int itemId, int enable, int type) {
 		this.itemId = itemId;
 		this.enable = enable;
 		this.type = type;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{ // sub id
+	protected final void writeImpl() { // sub id
 		writeD(itemId);
 		writeD(enable);
 		writeD(type);

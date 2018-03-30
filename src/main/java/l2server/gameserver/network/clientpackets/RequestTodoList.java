@@ -20,23 +20,19 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Pere
  */
-public final class RequestTodoList extends L2GameClientPacket
-{
+public final class RequestTodoList extends L2GameClientPacket {
 	@SuppressWarnings("unused")
 	private int unk;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		unk = readH();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 		}
 	}
 }

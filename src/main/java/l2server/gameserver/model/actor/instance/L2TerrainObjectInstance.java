@@ -19,30 +19,23 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 
-public final class L2TerrainObjectInstance extends L2Npc
-{
-	public L2TerrainObjectInstance(int objectId, L2NpcTemplate template)
-	{
+public final class L2TerrainObjectInstance extends L2Npc {
+	public L2TerrainObjectInstance(int objectId, L2NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2TerrainObjectInstance);
 		isHideName = true;
 	}
-
+	
 	@Override
-	public void onAction(L2PcInstance player, boolean interact)
-	{
+	public void onAction(L2PcInstance player, boolean interact) {
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
-
+	
 	@Override
-	public void onActionShift(L2PcInstance player)
-	{
-		if (player.isGM())
-		{
+	public void onActionShift(L2PcInstance player) {
+		if (player.isGM()) {
 			super.onActionShift(player);
-		}
-		else
-		{
+		} else {
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 		}
 	}

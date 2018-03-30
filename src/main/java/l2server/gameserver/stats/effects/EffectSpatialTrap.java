@@ -23,62 +23,53 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 /**
  * @author ZaKaX
  */
-public class EffectSpatialTrap extends L2Effect
-{
+public class EffectSpatialTrap extends L2Effect {
 	private int trapX;
 	private int trapY;
 	private int trapZ;
-
-	public EffectSpatialTrap(Env env, L2EffectTemplate template)
-	{
+	
+	public EffectSpatialTrap(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
-
-	public EffectSpatialTrap(Env env, L2Effect effect)
-	{
+	
+	public EffectSpatialTrap(Env env, L2Effect effect) {
 		super(env, effect);
 	}
-
+	
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.SPATIAL_TRAP;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		trapX = getEffector().getX();
 		trapY = getEffector().getY();
 		trapZ = getEffector().getZ();
-
+		
 		return true;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return true;
 	}
-
-	public final int getTrapX()
-	{
+	
+	public final int getTrapX() {
 		return trapX;
 	}
-
-	public final int getTrapY()
-	{
+	
+	public final int getTrapY() {
 		return trapY;
 	}
-
-	public final int getTrapZ()
-	{
+	
+	public final int getTrapZ() {
 		return trapZ;
 	}
 }

@@ -18,11 +18,9 @@ package l2server.log;
 import java.io.IOException;
 import java.util.logging.FileHandler;
 
-public class GMAuditLogHandler extends FileHandler
-{
+public class GMAuditLogHandler extends FileHandler {
 
-	public GMAuditLogHandler() throws IOException, SecurityException
-	{
+	public GMAuditLogHandler() throws IOException, SecurityException {
 		super();
 	}
 }

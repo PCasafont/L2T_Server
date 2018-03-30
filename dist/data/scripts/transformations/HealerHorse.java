@@ -4,28 +4,23 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class HealerHorse extends L2Transformation
-{
+public class HealerHorse extends L2Transformation {
 	private static final int[] SKILLS = {5491, 839, 9206};
-
-	public HealerHorse()
-	{
+	
+	public HealerHorse() {
 		// id, colRadius, colHeight
 		super(136, 31, 32.5);
 	}
-
+	
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 136 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 136 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 		transformedSkills();
 	}
-
-	public void transformedSkills()
-	{
+	
+	public void transformedSkills() {
 		// Decrease Bow/Crossbow Attack Speed
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(5491, 1), false);
 		// Dismount
@@ -34,15 +29,13 @@ public class HealerHorse extends L2Transformation
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(9206, 1), false);
 		getPlayer().setTransformAllowedSkills(SKILLS);
 	}
-
+	
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
-
-	public void removeSkills()
-	{
+	
+	public void removeSkills() {
 		// Decrease Bow/Crossbow Attack Speed
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(5491, 1), false);
 		// Dismount
@@ -51,9 +44,8 @@ public class HealerHorse extends L2Transformation
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(9206, 1), false);
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
-
-	public static void main(String[] args)
-	{
+	
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new HealerHorse());
 	}
 }

@@ -24,42 +24,35 @@ import l2server.gameserver.network.serverpackets.ExItemAuctionInfoPacket;
 /**
  * @author Forsaiken
  */
-public final class RequestInfoItemAuction extends L2GameClientPacket
-{
+public final class RequestInfoItemAuction extends L2GameClientPacket {
 	private int instanceId;
-
+	
 	@Override
-	protected final void readImpl()
-	{
+	protected final void readImpl() {
 		instanceId = super.readD();
 	}
-
+	
 	@Override
-	protected final void runImpl()
-	{
+	protected final void runImpl() {
 		final L2PcInstance activeChar = super.getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (!getClient().getFloodProtectors().getItemAuction().tryPerformAction("RequestInfoItemAuction"))
-		{
+		
+		if (!getClient().getFloodProtectors().getItemAuction().tryPerformAction("RequestInfoItemAuction")) {
 			return;
 		}
-
+		
 		final ItemAuctionInstance instance = ItemAuctionManager.getInstance().getManagerInstance(instanceId);
-		if (instance == null)
-		{
+		if (instance == null) {
 			return;
 		}
-
+		
 		final ItemAuction auction = instance.getCurrentAuction();
-		if (auction == null)
-		{
+		if (auction == null) {
 			return;
 		}
-
+		
 		activeChar.updateLastItemAuctionRequest();
 		activeChar.sendPacket(new ExItemAuctionInfoPacket(true, auction, instance.getNextAuction()));
 	}

@@ -18,14 +18,12 @@ package l2server.gameserver.taskmanager.tasks;
 import l2server.Config;
 import l2server.gameserver.taskmanager.Task;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
-
 import org.python.util.PythonInterpreter;
 
 /**
  * @author Layane
  */
-public class TaskJython extends Task
-{
+public class TaskJython extends Task {
 	public static final String NAME = "jython";
 	private final PythonInterpreter python = new PythonInterpreter();
 
@@ -33,8 +31,7 @@ public class TaskJython extends Task
 	 * @see l2server.gameserver.taskmanager.Task#getName()
 	 */
 	@Override
-	public String getName()
-	{
+	public String getName() {
 		return NAME;
 	}
 
@@ -42,8 +39,7 @@ public class TaskJython extends Task
 	 * @see l2server.gameserver.taskmanager.Task#onTimeElapsed(l2server.gameserver.taskmanager.TaskManager.ExecutedTask)
 	 */
 	@Override
-	public void onTimeElapsed(ExecutedTask task)
-	{
+	public void onTimeElapsed(ExecutedTask task) {
 		python.cleanup();
 		python.exec("import sys");
 		python.execfile(Config.DATA_FOLDER + "scripts/cron/" + task.getParams()[2]);

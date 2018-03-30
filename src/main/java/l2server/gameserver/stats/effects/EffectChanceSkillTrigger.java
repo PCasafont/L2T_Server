@@ -24,136 +24,116 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
-public class EffectChanceSkillTrigger extends L2Effect implements IChanceSkillTrigger
-{
+public class EffectChanceSkillTrigger extends L2Effect implements IChanceSkillTrigger {
 	private final int triggeredId;
 	private final int triggeredLevel;
 	private final int triggeredEnchantRoute;
 	private final int triggeredEnchantLevel;
 	private final ChanceCondition chanceCondition;
-
-	public EffectChanceSkillTrigger(Env env, L2EffectTemplate template)
-	{
+	
+	public EffectChanceSkillTrigger(Env env, L2EffectTemplate template) {
 		super(env, template);
-
+		
 		triggeredId = template.triggeredId;
 		triggeredLevel = template.triggeredLevel;
 		triggeredEnchantRoute = template.triggeredEnchantRoute;
 		triggeredEnchantLevel = template.triggeredEnchantLevel;
 		chanceCondition = template.chanceCondition;
 	}
-
+	
 	// Special constructor to steal this effect
-	public EffectChanceSkillTrigger(Env env, L2Effect effect)
-	{
+	public EffectChanceSkillTrigger(Env env, L2Effect effect) {
 		super(env, effect);
-
+		
 		triggeredId = effect.getTemplate().triggeredId;
 		triggeredLevel = effect.getTemplate().triggeredLevel;
 		triggeredEnchantRoute = effect.getTemplate().triggeredEnchantRoute;
 		triggeredEnchantLevel = effect.getTemplate().triggeredEnchantLevel;
 		chanceCondition = effect.getTemplate().chanceCondition;
 	}
-
+	
 	@Override
-	protected boolean effectCanBeStolen()
-	{
+	protected boolean effectCanBeStolen() {
 		return true;
 	}
-
+	
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		getEffected().addChanceTrigger(this);
 		getEffected().onStartChanceEffect(getSkill(), getSkill().getElement());
 		return super.onStart();
 	}
-
+	
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		L2Abnormal activeEffect = getEffected().getFirstEffect(triggeredId);
-		if (activeEffect != null)
-		{
-			if (activeEffect.getLevel() == triggeredLevel &&
-					activeEffect.getEnchantRouteId() == triggeredEnchantRoute &&
-					activeEffect.getEnchantLevel() == triggeredEnchantLevel)
-			{
+		if (activeEffect != null) {
+			if (activeEffect.getLevel() == triggeredLevel && activeEffect.getEnchantRouteId() == triggeredEnchantRoute &&
+					activeEffect.getEnchantLevel() == triggeredEnchantLevel) {
 				return true;
 			}
 		}
-
-		if (getSkill().isToggle())
-		{
+		
+		if (getSkill().isToggle()) {
 			int dam = (int) calc();
 			double manaDam = dam % 1000;
-			if (manaDam > getEffected().getCurrentMp())
-			{
+			if (manaDam > getEffected().getCurrentMp()) {
 				getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
 				return false;
 			}
-
+			
 			getEffected().reduceCurrentMp(manaDam);
-
+			
 			double hpDam = dam / 1000;
-			if (hpDam > getEffected().getCurrentHp() - 1)
-			{
+			if (hpDam > getEffected().getCurrentHp() - 1) {
 				getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_HP));
 				return false;
 			}
-
+			
 			getEffected().reduceCurrentHpByDOT(hpDam, getEffected(), getSkill());
 		}
-
+		
 		getEffected().onActionTimeChanceEffect(getSkill(), getSkill().getElement());
 		return true;
 	}
-
+	
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		// trigger only if effect in use and successfully ticked to the end
-		if (getAbnormal().getInUse() && getAbnormal().getCount() == 0)
-		{
+		if (getAbnormal().getInUse() && getAbnormal().getCount() == 0) {
 			getEffected().onExitChanceEffect(getSkill(), getSkill().getElement());
 		}
 		getEffected().removeChanceEffect(this);
 		super.onExit();
 	}
-
+	
 	@Override
-	public int getTriggeredChanceId()
-	{
+	public int getTriggeredChanceId() {
 		return triggeredId;
 	}
-
+	
 	@Override
-	public int getTriggeredChanceLevel()
-	{
+	public int getTriggeredChanceLevel() {
 		return triggeredLevel;
 	}
-
+	
 	@Override
-	public int getTriggeredChanceEnchantRoute()
-	{
+	public int getTriggeredChanceEnchantRoute() {
 		return triggeredEnchantRoute;
 	}
-
+	
 	@Override
-	public int getTriggeredChanceEnchantLevel()
-	{
+	public int getTriggeredChanceEnchantLevel() {
 		return triggeredEnchantLevel;
 	}
-
+	
 	@Override
-	public boolean triggersChanceSkill()
-	{
+	public boolean triggersChanceSkill() {
 		return triggeredId > 1;
 	}
-
+	
 	@Override
-	public ChanceCondition getTriggeredChanceCondition()
-	{
+	public ChanceCondition getTriggeredChanceCondition() {
 		return chanceCondition;
 	}
 }

@@ -25,51 +25,43 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 /**
  * @author Gnacik
  */
-public final class RequestWithdrawPartyRoom extends L2GameClientPacket
-{
+public final class RequestWithdrawPartyRoom extends L2GameClientPacket {
 	private int roomid;
 	@SuppressWarnings("unused")
 	private int unk1;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		roomid = readD();
 		unk1 = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-
-		if (activeChar == null)
-		{
+		
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		PartyMatchRoom room = PartyMatchRoomList.getInstance().getRoom(roomid);
-		if (room == null)
-		{
+		if (room == null) {
 			return;
 		}
-
+		
 		if (activeChar.isInParty() && room.getOwner().isInParty() &&
-				activeChar.getParty().getPartyLeaderOID() == room.getOwner().getParty().getPartyLeaderOID())
-		{
+				activeChar.getParty().getPartyLeaderOID() == room.getOwner().getParty().getPartyLeaderOID()) {
 			// If user is in party with Room Owner
 			// is not removed from Room
-
+			
 			//activeChar.setPartyMatching(0);
 			activeChar.broadcastUserInfo();
-		}
-		else
-		{
+		} else {
 			room.deleteMember(activeChar);
-
+			
 			activeChar.setPartyRoom(0);
 			//activeChar.setPartyMatching(0);
-
+			
 			activeChar.sendPacket(new ExClosePartyRoom());
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_ROOM_EXITED));
 		}

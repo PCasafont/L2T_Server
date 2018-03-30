@@ -28,15 +28,14 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @author mrTJO
  */
-public class ExCubeGameExtendedChangePoints extends L2GameServerPacket
-{
+public class ExCubeGameExtendedChangePoints extends L2GameServerPacket {
 	int timeLeft;
 	int bluePoints;
 	int redPoints;
 	boolean isRedTeam;
 	L2PcInstance player;
 	int playerPoints;
-
+	
 	/**
 	 * Update a Secret Point Counter (used by client when receive ExCubeGameEnd)
 	 *
@@ -47,8 +46,7 @@ public class ExCubeGameExtendedChangePoints extends L2GameServerPacket
 	 * @param player       Player Instance
 	 * @param playerPoints Current Player Points
 	 */
-	public ExCubeGameExtendedChangePoints(int timeLeft, int bluePoints, int redPoints, boolean isRedTeam, L2PcInstance player, int playerPoints)
-	{
+	public ExCubeGameExtendedChangePoints(int timeLeft, int bluePoints, int redPoints, boolean isRedTeam, L2PcInstance player, int playerPoints) {
 		this.timeLeft = timeLeft;
 		this.bluePoints = bluePoints;
 		this.redPoints = redPoints;
@@ -56,17 +54,16 @@ public class ExCubeGameExtendedChangePoints extends L2GameServerPacket
 		this.player = player;
 		this.playerPoints = playerPoints;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(timeLeft);
 		writeD(bluePoints);
 		writeD(redPoints);
-
+		
 		writeD(isRedTeam ? 0x01 : 0x00);
 		writeD(player.getObjectId());
 		writeD(playerPoints);

@@ -15,11 +15,7 @@ package l2server.loginserver;
 
 import l2server.loginserver.network.L2LoginClient;
 import l2server.loginserver.network.serverpackets.Init;
-import l2server.network.IAcceptFilter;
-import l2server.network.IClientFactory;
-import l2server.network.IMMOExecutor;
-import l2server.network.MMOConnection;
-import l2server.network.ReceivablePacket;
+import l2server.network.*;
 import l2server.util.IPv4Filter;
 
 import java.nio.channels.SocketChannel;
@@ -30,40 +26,35 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author KenM
  */
-public class SelectorHelper implements IMMOExecutor<L2LoginClient>, IClientFactory<L2LoginClient>, IAcceptFilter
-{
+public class SelectorHelper implements IMMOExecutor<L2LoginClient>, IClientFactory<L2LoginClient>, IAcceptFilter {
 	private ThreadPoolExecutor generalPacketsThreadPool;
 	private IPv4Filter ipv4filter;
-
-	public SelectorHelper()
-	{
+	
+	public SelectorHelper() {
 		generalPacketsThreadPool = new ThreadPoolExecutor(4, 6, 15L, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
 		ipv4filter = new IPv4Filter();
 	}
-
+	
 	/**
 	 */
 	@Override
-	public void execute(ReceivablePacket<L2LoginClient> packet)
-	{
+	public void execute(ReceivablePacket<L2LoginClient> packet) {
 		generalPacketsThreadPool.execute(packet);
 	}
-
+	
 	/**
 	 */
 	@Override
-	public L2LoginClient create(MMOConnection<L2LoginClient> con)
-	{
+	public L2LoginClient create(MMOConnection<L2LoginClient> con) {
 		L2LoginClient client = new L2LoginClient(con);
 		client.sendPacket(new Init(client));
 		return client;
 	}
-
+	
 	/**
 	 */
 	@Override
-	public boolean accept(SocketChannel sc)
-	{
+	public boolean accept(SocketChannel sc) {
 		return ipv4filter.accept(sc) && !LoginController.getInstance().isBannedAddress(sc.socket().getInetAddress());
 	}
 }

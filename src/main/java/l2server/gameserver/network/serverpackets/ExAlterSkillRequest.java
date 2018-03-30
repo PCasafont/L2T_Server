@@ -18,23 +18,20 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Erlandys
  */
-public class ExAlterSkillRequest extends L2GameServerPacket
-{
-
+public class ExAlterSkillRequest extends L2GameServerPacket {
+	
 	private int nextSkillId;
 	private int currentSkillId;
 	private int alterTime;
-
-	public ExAlterSkillRequest(int nextSkillId, int currentSkillId, int alterTime)
-	{
+	
+	public ExAlterSkillRequest(int nextSkillId, int currentSkillId, int alterTime) {
 		this.nextSkillId = nextSkillId;
 		this.currentSkillId = currentSkillId;
 		this.alterTime = alterTime;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(nextSkillId);
 		writeD(currentSkillId);
 		writeD(alterTime);

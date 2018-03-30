@@ -18,12 +18,10 @@ package l2server.log;
 import java.util.logging.Filter;
 import java.util.logging.LogRecord;
 
-public class GMAuditFilter implements Filter
-{
+public class GMAuditFilter implements Filter {
 
 	@Override
-	public boolean isLoggable(LogRecord record)
-	{
+	public boolean isLoggable(LogRecord record) {
 		return record.getLoggerName().equalsIgnoreCase("gmaudit");
 	}
 }

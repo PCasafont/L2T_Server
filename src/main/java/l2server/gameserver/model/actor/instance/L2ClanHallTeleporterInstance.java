@@ -25,113 +25,85 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 
-public class L2ClanHallTeleporterInstance extends L2DoormenInstance
-{
+public class L2ClanHallTeleporterInstance extends L2DoormenInstance {
 	private boolean init = false;
 	private ClanHall clanHall = null;
-
-	public L2ClanHallTeleporterInstance(int objectID, L2NpcTemplate template)
-	{
+	
+	public L2ClanHallTeleporterInstance(int objectID, L2NpcTemplate template) {
 		super(objectID, template);
 		setInstanceType(InstanceType.L2ClanHallDoormenInstance);
 	}
-
+	
 	@Override
-	public void showChatWindow(L2PcInstance player)
-	{
+	public void showChatWindow(L2PcInstance player) {
 		player.sendPacket(ActionFailed.STATIC_PACKET);
-
+		
 		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-
-		if (getClanHall() != null)
-		{
+		
+		if (getClanHall() != null) {
 			L2Clan owner = ClanTable.getInstance().getClan(getClanHall().getOwnerId());
-			if (isOwnerClan(player))
-			{
+			if (isOwnerClan(player)) {
 				html.setFile(player.getHtmlPrefix(), "clanHallDoormen/doormen-tele.htm");
 				html.replace("%clanname%", owner.getName());
-			}
-			else
-			{
-				if (owner != null && owner.getLeader() != null)
-				{
+			} else {
+				if (owner != null && owner.getLeader() != null) {
 					html.setFile(player.getHtmlPrefix(), "clanHallDoormen/doormen-no.htm");
 					html.replace("%leadername%", owner.getLeaderName());
 					html.replace("%clanname%", owner.getName());
-				}
-				else
-				{
+				} else {
 					html.setFile(player.getHtmlPrefix(), "clanHallDoormen/emptyowner.htm");
 					html.replace("%hallname%", getClanHall().getName());
 				}
 			}
-		}
-		else
-		{
+		} else {
 			return;
 		}
-
+		
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		player.sendPacket(html);
 	}
-
+	
 	@Override
-	protected final void openDoors(L2PcInstance player, String command)
-	{
+	protected final void openDoors(L2PcInstance player, String command) {
 		Location loc = getClanHall().getZone().getSpawnLoc();
-
-		if (loc != null)
-		{
+		
+		if (loc != null) {
 			player.teleToLocation(loc, false);
-			if (player.getPet() != null)
-			{
+			if (player.getPet() != null) {
 				player.getPet().teleToLocation(loc, false);
 			}
-			for (L2SummonInstance summon : player.getSummons())
-			{
+			for (L2SummonInstance summon : player.getSummons()) {
 				summon.teleToLocation(loc, false);
 			}
 		}
 	}
-
+	
 	@Override
-	protected final void closeDoors(L2PcInstance player, String command)
-	{
+	protected final void closeDoors(L2PcInstance player, String command) {
 		Location loc = getClanHall().getZone().getChaoticSpawnLoc();
-		if (loc != null)
-		{
+		if (loc != null) {
 			player.teleToLocation(loc, false);
-			if (player.getPet() != null)
-			{
+			if (player.getPet() != null) {
 				player.getPet().teleToLocation(loc, false);
 			}
-			for (L2SummonInstance summon : player.getSummons())
-			{
+			for (L2SummonInstance summon : player.getSummons()) {
 				summon.teleToLocation(loc, false);
 			}
-		}
-		else
-		{
+		} else {
 			player.teleToLocation(MapRegionTable.TeleportWhereType.Town);
-			if (player.getPet() != null)
-			{
+			if (player.getPet() != null) {
 				player.getPet().teleToLocation(MapRegionTable.TeleportWhereType.Town);
 			}
-			for (L2SummonInstance summon : player.getSummons())
-			{
+			for (L2SummonInstance summon : player.getSummons()) {
 				summon.teleToLocation(MapRegionTable.TeleportWhereType.Town);
 			}
 		}
 	}
-
-	private ClanHall getClanHall()
-	{
-		if (!init)
-		{
-			synchronized (this)
-			{
-				if (!init)
-				{
+	
+	private ClanHall getClanHall() {
+		if (!init) {
+			synchronized (this) {
+				if (!init) {
 					clanHall = ClanHallManager.getInstance().getNearbyClanHall(getX(), getY(), 500);
 					init = true;
 				}
@@ -139,14 +111,11 @@ public class L2ClanHallTeleporterInstance extends L2DoormenInstance
 		}
 		return clanHall;
 	}
-
+	
 	@Override
-	protected final boolean isOwnerClan(L2PcInstance player)
-	{
-		if (player.getClan() != null && getClanHall() != null)
-		{
-			if (player.getClanId() == getClanHall().getOwnerId())
-			{
+	protected final boolean isOwnerClan(L2PcInstance player) {
+		if (player.getClan() != null && getClanHall() != null) {
+			if (player.getClanId() == getClanHall().getOwnerId()) {
 				return true;
 			}
 		}

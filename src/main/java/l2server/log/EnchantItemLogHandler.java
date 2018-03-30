@@ -18,10 +18,8 @@ package l2server.log;
 import java.io.IOException;
 import java.util.logging.FileHandler;
 
-public class EnchantItemLogHandler extends FileHandler
-{
-	public EnchantItemLogHandler() throws IOException, SecurityException
-	{
+public class EnchantItemLogHandler extends FileHandler {
+	public EnchantItemLogHandler() throws IOException, SecurityException {
 		super();
 	}
 }

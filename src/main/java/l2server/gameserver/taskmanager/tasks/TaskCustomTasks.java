@@ -26,44 +26,36 @@ import l2server.gameserver.taskmanager.TaskTypes;
 
 import java.util.Calendar;
 
-public class TaskCustomTasks extends Task
-{
+public class TaskCustomTasks extends Task {
 	public static final String NAME = "custom_tasks";
 
 	@Override
-	public String getName()
-	{
+	public String getName() {
 		return NAME;
 	}
 
 	@Override
-	public void onTimeElapsed(ExecutedTask task)
-	{
+	public void onTimeElapsed(ExecutedTask task) {
 		Calendar cal = Calendar.getInstance();
 		int day = cal.get(Calendar.DAY_OF_WEEK);
 
 		// Each Monday tasks
-		if (day == Calendar.MONDAY)
-		{
-			if (Config.ENABLE_CUSTOM_LOTTERY)
-			{
+		if (day == Calendar.MONDAY) {
+			if (Config.ENABLE_CUSTOM_LOTTERY) {
 				LotterySystem.getInstance().giveRewardsAndReset();
 			}
-			if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER)
-			{
+			if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER) {
 				DamageManager.getInstance().giveRewardsAndReset();
 			}
 		}
 
-		if (day == Calendar.SUNDAY)
-		{
+		if (day == Calendar.SUNDAY) {
 			TopRanked.getInstance().test();
 		}
 	}
 
 	@Override
-	public void initialize()
-	{
+	public void initialize() {
 		super.initialize();
 		TaskManager.addUniqueTask(NAME, TaskTypes.TYPE_GLOBAL_TASK, "1", "00:10:00", "");
 	}

@@ -28,14 +28,11 @@ import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.gameserver.network.serverpackets.StaticObject;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
 
-public class L2DoorInstanceAction implements IActionHandler
-{
+public class L2DoorInstanceAction implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-	{
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
 		// Check if the L2PcInstance already target the L2NpcInstance
-		if (activeChar.getTarget() != target)
-		{
+		if (activeChar.getTarget() != target) {
 			// Set the target of the L2PcInstance activeChar
 			activeChar.setTarget(target);
 
@@ -47,59 +44,36 @@ public class L2DoorInstanceAction implements IActionHandler
 
 			// Send a Server->Client packet ValidateLocation to correct the L2NpcInstance position and heading on the client
 			activeChar.sendPacket(new ValidateLocation((L2Character) target));
-		}
-		else if (interact)
-		{
+		} else if (interact) {
 			//            MyTargetSelected my = new MyTargetSelected(getObjectId(), activeChar.getLevel());
 			//            activeChar.sendPacket(my);
-			if (target.isAutoAttackable(activeChar))
-			{
-				if (Math.abs(activeChar.getZ() - target.getZ()) <
-						400) // this max heigth difference might need some tweaking
+			if (target.isAutoAttackable(activeChar)) {
+				if (Math.abs(activeChar.getZ() - target.getZ()) < 400) // this max heigth difference might need some tweaking
 				{
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 				}
-			}
-			else if (activeChar.getClan() != null && ((L2DoorInstance) target).getClanHall() != null &&
-					activeChar.getClanId() == ((L2DoorInstance) target).getClanHall().getOwnerId())
-			{
-				if (!((L2Character) target)
-						.isInsideRadius(activeChar, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false))
-				{
+			} else if (activeChar.getClan() != null && ((L2DoorInstance) target).getClanHall() != null &&
+					activeChar.getClanId() == ((L2DoorInstance) target).getClanHall().getOwnerId()) {
+				if (!((L2Character) target).isInsideRadius(activeChar, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false)) {
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
-				}
-				else
-				{
+				} else {
 					activeChar.gatesRequest((L2DoorInstance) target);
-					if (!((L2DoorInstance) target).getOpen())
-					{
+					if (!((L2DoorInstance) target).getOpen()) {
 						activeChar.sendPacket(new ConfirmDlg(1140));
-					}
-					else
-					{
+					} else {
 						activeChar.sendPacket(new ConfirmDlg(1141));
 					}
 				}
-			}
-			else if (activeChar.getClan() != null && ((L2DoorInstance) target).getFort() != null &&
-					activeChar.getClan() == ((L2DoorInstance) target).getFort().getOwnerClan() &&
-					((L2DoorInstance) target).isOpenableBySkill() &&
-					!((L2DoorInstance) target).getFort().getSiege().getIsInProgress())
-			{
-				if (!((L2Character) target)
-						.isInsideRadius(activeChar, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false))
-				{
+			} else if (activeChar.getClan() != null && ((L2DoorInstance) target).getFort() != null &&
+					activeChar.getClan() == ((L2DoorInstance) target).getFort().getOwnerClan() && ((L2DoorInstance) target).isOpenableBySkill() &&
+					!((L2DoorInstance) target).getFort().getSiege().getIsInProgress()) {
+				if (!((L2Character) target).isInsideRadius(activeChar, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false)) {
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
-				}
-				else
-				{
+				} else {
 					activeChar.gatesRequest((L2DoorInstance) target);
-					if (!((L2DoorInstance) target).getOpen())
-					{
+					if (!((L2DoorInstance) target).getOpen()) {
 						activeChar.sendPacket(new ConfirmDlg(1140));
-					}
-					else
-					{
+					} else {
 						activeChar.sendPacket(new ConfirmDlg(1141));
 					}
 				}
@@ -109,8 +83,7 @@ public class L2DoorInstanceAction implements IActionHandler
 	}
 
 	@Override
-	public InstanceType getInstanceType()
-	{
+	public InstanceType getInstanceType() {
 		return InstanceType.L2DoorInstance;
 	}
 }

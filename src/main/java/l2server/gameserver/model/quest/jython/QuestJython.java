@@ -17,8 +17,7 @@ package l2server.gameserver.model.quest.jython;
 
 import l2server.gameserver.model.quest.Quest;
 
-public abstract class QuestJython extends Quest
-{
+public abstract class QuestJython extends Quest {
 	/**
 	 * Constructor used in jython files.
 	 *
@@ -26,8 +25,7 @@ public abstract class QuestJython extends Quest
 	 * @param name    : String designating the name of the quest
 	 * @param descr   : String designating the description of the quest
 	 */
-	public QuestJython(int questId, String name, String descr)
-	{
+	public QuestJython(int questId, String name, String descr) {
 		super(questId, name, descr);
 	}
 }

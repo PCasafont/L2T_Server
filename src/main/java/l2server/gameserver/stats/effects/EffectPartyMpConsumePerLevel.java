@@ -30,42 +30,32 @@ import l2server.gameserver.util.Util;
  * @author Erlandys
  */
 
-public class EffectPartyMpConsumePerLevel extends L2Effect
-{
-	public EffectPartyMpConsumePerLevel(Env env, L2EffectTemplate template)
-	{
+public class EffectPartyMpConsumePerLevel extends L2Effect {
+	public EffectPartyMpConsumePerLevel(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public boolean onStart()
-	{
-		if (getEffector() == getEffected())
-		{
-			if (getEffector().getParty() != null)
-			{
-				for (L2PcInstance member : getEffector().getParty().getPartyMembers())
-				{
-					if (!Util.checkIfInRange(700, getEffector(), member, false))
-					{
+	public boolean onStart() {
+		if (getEffector() == getEffected()) {
+			if (getEffector().getParty() != null) {
+				for (L2PcInstance member : getEffector().getParty().getPartyMembers()) {
+					if (!Util.checkIfInRange(700, getEffector(), member, false)) {
 						continue;
 					}
-					if (member.getObjectId() != getEffector().getObjectId())
-					{
+					if (member.getObjectId() != getEffector().getObjectId()) {
 						int skillId = getSkill().getId();
 						int skillLvl = 1;
 						int skillEnchantRoute = 0;
 						int skillEnchantLvl = 0;
-						if (getSkill().getPartyChangeSkill() != -1)
-						{
+						if (getSkill().getPartyChangeSkill() != -1) {
 							skillId = getSkill().getPartyChangeSkill();
 							skillLvl = getSkill().getPartyChangeSkillLevel();
 							skillEnchantRoute = getSkill().getPartyChangeSkillEnchantRoute();
 							skillEnchantLvl = getSkill().getPartyChangeSkillEnchantLevel();
 						}
 
-						SkillTable.getInstance().getInfo(skillId, skillLvl, skillEnchantRoute, skillEnchantLvl)
-								.getEffects(getEffector(), member);
+						SkillTable.getInstance().getInfo(skillId, skillLvl, skillEnchantRoute, skillEnchantLvl).getEffects(getEffector(), member);
 					}
 					member.updateEffectIcons();
 				}
@@ -93,34 +83,24 @@ public class EffectPartyMpConsumePerLevel extends L2Effect
 	}
 
 	@Override
-	public void onExit()
-	{
-		if (getEffector() == getEffected())
-		{
-			if (getEffector().getParty() != null)
-			{
-				for (L2PcInstance member : getEffector().getParty().getPartyMembers())
-				{
-					if (member == null)
-					{
+	public void onExit() {
+		if (getEffector() == getEffected()) {
+			if (getEffector().getParty() != null) {
+				for (L2PcInstance member : getEffector().getParty().getPartyMembers()) {
+					if (member == null) {
 						continue;
 					}
 
-					if (member.getObjectId() != getEffector().getObjectId())
-					{
-						int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() :
-								getSkill().getPartyChangeSkill();
+					if (member.getObjectId() != getEffector().getObjectId()) {
+						int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() : getSkill().getPartyChangeSkill();
 						L2Abnormal removingEffect = member.getFirstEffect(newSkillId);
 
-						if (removingEffect == null)
-						{
+						if (removingEffect == null) {
 							continue;
 						}
 
-						if (removingEffect.getTemplate().visualEffect != null)
-						{
-							for (VisualEffect ve : removingEffect.getTemplate().visualEffect)
-							{
+						if (removingEffect.getTemplate().visualEffect != null) {
+							for (VisualEffect ve : removingEffect.getTemplate().visualEffect) {
 								member.stopVisualEffect(ve);
 							}
 						}
@@ -133,36 +113,27 @@ public class EffectPartyMpConsumePerLevel extends L2Effect
 	}
 
 	@Override
-	public boolean onActionTime()
-	{
-		if (getEffected().isDead())
-		{
+	public boolean onActionTime() {
+		if (getEffected().isDead()) {
 			super.onExit();
 			return false;
 		}
 
-		if (getEffector() != getEffected())
-		{
-			if (getEffector() == null || getEffected().getParty() == null)
-			{
+		if (getEffector() != getEffected()) {
+			if (getEffector() == null || getEffected().getParty() == null) {
 				return false;
 			}
 
-			if (!getEffected().getParty().getPartyMembers().contains(getEffector()))
-			{
+			if (!getEffected().getParty().getPartyMembers().contains(getEffector())) {
 				return false;
 			}
 
 			return Util.checkIfInRange(700, getEffector(), getEffected(), false);
-
-		}
-		else
-		{
+		} else {
 			double base = calc();
 			double consume = (getEffected().getLevel() - 1) / 7.5 * base * getAbnormal().getDuration();
 
-			if (consume > getEffected().getCurrentMp())
-			{
+			if (consume > getEffected().getCurrentMp()) {
 				getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
 				return false;
 			}
@@ -170,19 +141,14 @@ public class EffectPartyMpConsumePerLevel extends L2Effect
 			getEffected().reduceCurrentMp(consume);
 
 			// To check if party member have toggle.
-			if (getEffector() == getEffected())
-			{
-				if (getEffector().getParty() != null)
-				{
-					for (L2PcInstance member : getEffector().getParty().getPartyMembers())
-					{
-						if (member.getObjectId() == getEffector().getObjectId())
-						{
+			if (getEffector() == getEffected()) {
+				if (getEffector().getParty() != null) {
+					for (L2PcInstance member : getEffector().getParty().getPartyMembers()) {
+						if (member.getObjectId() == getEffector().getObjectId()) {
 							continue;
 						}
 
-						if (!Util.checkIfInRange(700, getEffector(), member, false))
-						{
+						if (!Util.checkIfInRange(700, getEffector(), member, false)) {
 							continue;
 						}
 
@@ -190,18 +156,15 @@ public class EffectPartyMpConsumePerLevel extends L2Effect
 						int skillLvl = 1;
 						int skillEnchantRoute = 0;
 						int skillEnchantLvl = 0;
-						if (getSkill().getPartyChangeSkill() != -1)
-						{
+						if (getSkill().getPartyChangeSkill() != -1) {
 							skillId = getSkill().getPartyChangeSkill();
 							skillLvl = getSkill().getPartyChangeSkillLevel();
 							skillEnchantRoute = getSkill().getPartyChangeSkillEnchantRoute();
 							skillEnchantLvl = getSkill().getPartyChangeSkillEnchantLevel();
 						}
 
-						if (member.getFirstEffect(skillId) == null)
-						{
-							SkillTable.getInstance().getInfo(skillId, skillLvl, skillEnchantRoute, skillEnchantLvl)
-									.getEffects(getEffector(), member);
+						if (member.getFirstEffect(skillId) == null) {
+							SkillTable.getInstance().getInfo(skillId, skillLvl, skillEnchantRoute, skillEnchantLvl).getEffects(getEffector(), member);
 						}
 						member.updateEffectIcons();
 					}

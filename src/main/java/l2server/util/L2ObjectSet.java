@@ -37,12 +37,9 @@ import java.util.Iterator;
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
 
-public abstract class L2ObjectSet<T extends L2Object> implements Iterable<T>
-{
-	public static L2ObjectSet<L2Object> createL2ObjectSet()
-	{
-		switch (Config.SET_TYPE)
-		{
+public abstract class L2ObjectSet<T extends L2Object> implements Iterable<T> {
+	public static L2ObjectSet<L2Object> createL2ObjectSet() {
+		switch (Config.SET_TYPE) {
 			case WorldObjectSet:
 				return new WorldObjectSet<>();
 			default:
@@ -50,10 +47,8 @@ public abstract class L2ObjectSet<T extends L2Object> implements Iterable<T>
 		}
 	}
 
-	public static L2ObjectSet<L2Playable> createL2PlayerSet()
-	{
-		switch (Config.SET_TYPE)
-		{
+	public static L2ObjectSet<L2Playable> createL2PlayerSet() {
+		switch (Config.SET_TYPE) {
 			case WorldObjectSet:
 				return new WorldObjectSet<>();
 			default:

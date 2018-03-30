@@ -35,94 +35,69 @@ import l2server.util.Rnd;
 /**
  * @author Kerberos | ZaKaX
  */
-public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTrainer
-{
+public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTrainer {
 	protected static final int COND_ALL_FALSE = 0;
 	protected static final int COND_BUSY_BECAUSE_OF_SIEGE = 1;
 	protected static final int COND_OWNER = 2;
-
+	
 	/**
 	 * @param template
 	 */
-	public L2CastleMagicianInstance(int objectId, L2NpcTemplate template)
-	{
+	public L2CastleMagicianInstance(int objectId, L2NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2CastleMagicianInstance);
 	}
-
+	
 	@Override
-	public void showChatWindow(L2PcInstance player, int val)
-	{
+	public void showChatWindow(L2PcInstance player, int val) {
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 		String filename = "castlemagician/magician-no.htm";
-
+		
 		int condition = validateCondition(player);
-		if (condition > COND_ALL_FALSE)
-		{
-			if (condition == COND_BUSY_BECAUSE_OF_SIEGE)
-			{
+		if (condition > COND_ALL_FALSE) {
+			if (condition == COND_BUSY_BECAUSE_OF_SIEGE) {
 				filename = "castlemagician/magician-busy.htm"; // Busy because of siege
-			}
-			else if (condition == COND_OWNER) // Clan owns castle
+			} else if (condition == COND_OWNER) // Clan owns castle
 			{
-				if (val == 0)
-				{
+				if (val == 0) {
 					filename = "castlemagician/magician.htm";
-				}
-				else
-				{
+				} else {
 					filename = "castlemagician/magician-" + val + ".htm";
 				}
 			}
 		}
-
+		
 		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 		html.setFile(player.getHtmlPrefix(), filename);
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		player.sendPacket(html);
 	}
-
+	
 	@Override
-	public void onBypassFeedback(L2PcInstance player, String command)
-	{
-		if (command.startsWith("Chat"))
-		{
+	public void onBypassFeedback(L2PcInstance player, String command) {
+		if (command.startsWith("Chat")) {
 			int val = 0;
-			try
-			{
+			try {
 				val = Integer.parseInt(command.substring(5));
-			}
-			catch (IndexOutOfBoundsException | NumberFormatException ignored)
-			{
+			} catch (IndexOutOfBoundsException | NumberFormatException ignored) {
 			}
 			showChatWindow(player, val);
-		}
-		else if (command.startsWith("ExchangeKE"))
-		{
+		} else if (command.startsWith("ExchangeKE")) {
 			String filename = null;
 			int item = 9914;
 			int i0 = Rnd.get(100);
-			if (i0 < 5)
-			{
+			if (i0 < 5) {
 				int i1 = Rnd.get(100);
-
-				if (i1 < 5)
-				{
+				
+				if (i1 < 5) {
 					item = 9931; // Red Talisman of Meditation
-				}
-				else if (i1 <= 50)
-				{
+				} else if (i1 <= 50) {
 					item = 9932; // Blue Talisman - Divine Protection
-				}
-				else if (i1 <= 75)
-				{
+				} else if (i1 <= 75) {
 					item = 10416; // Blue Talisman - Explosion
 				}
-			}
-			else if (i0 <= 15)
-			{
-				switch (Rnd.get(5))
-				{
+			} else if (i0 <= 15) {
+				switch (Rnd.get(5)) {
 					case 1: // Red Talisman of Minimum Clarity
 						item = 9917;
 						break;
@@ -138,11 +113,8 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
 					default: // Blue Talisman of Invisibility
 						item = 9920;
 				}
-			}
-			else if (i0 <= 30)
-			{
-				switch (Rnd.get(8))
-				{
+			} else if (i0 <= 30) {
+				switch (Rnd.get(8)) {
 					case 1: // Blue Talisman of Defense
 						item = 9916;
 						break;
@@ -167,11 +139,8 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
 					default: // Blue Talisman - Greater Healing
 						item = 10424;
 				}
-			}
-			else
-			{
-				switch (Rnd.get(46))
-				{
+			} else {
+				switch (Rnd.get(46)) {
 					case 0: // Blue Talisman of Power
 						item = 9914;
 						break;
@@ -308,121 +277,87 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
 						item = 10421;
 				}
 			}
-
-			if (player.exchangeItemsById("ExchangeKE", this, 9912, 10, item, 1, true))
-			{
+			
+			if (player.exchangeItemsById("ExchangeKE", this, 9912, 10, item, 1, true)) {
 				filename = "castlemagician/magician-KE-Exchange.htm";
-			}
-			else
-			{
+			} else {
 				filename = "castlemagician/magician-no-KE.htm";
 			}
-
+			
 			showChatWindowByFileName(player, filename);
-		}
-		else if (command.equals("gotoleader"))
-		{
-			if (player.getClan() != null)
-			{
+		} else if (command.equals("gotoleader")) {
+			if (player.getClan() != null) {
 				L2PcInstance clanLeader = player.getClan().getLeader().getPlayerInstance();
-				if (clanLeader == null)
-				{
+				if (clanLeader == null) {
 					return;
 				}
-
-				if (clanLeader.getFirstEffect(L2AbnormalType.CLAN_GATE) != null)
-				{
-					if (!validateGateCondition(clanLeader, player))
-					{
+				
+				if (clanLeader.getFirstEffect(L2AbnormalType.CLAN_GATE) != null) {
+					if (!validateGateCondition(clanLeader, player)) {
 						return;
 					}
-
+					
 					player.teleToLocation(clanLeader.getX(), clanLeader.getY(), clanLeader.getZ(), false);
 					return;
 				}
 				String filename = "castlemagician/magician-nogate.htm";
 				showChatWindowByFileName(player, filename);
 			}
-		}
-		else if (command.equals("subskills"))
-		{
-			if (player.getClan() != null)
-			{
-				if (player.isClanLeader())
-				{
+		} else if (command.equals("subskills")) {
+			if (player.getClan() != null) {
+				if (player.isClanLeader()) {
 					ExAcquireSkillList skilllist = new ExAcquireSkillList(SkillType.SubUnit);
 					SubUnitSkill[] array = SubPledgeSkillTree.getInstance().getAvailableSkills(player.getClan());
-					if (array.length == 0)
-					{
+					if (array.length == 0) {
 						player.sendPacket(SystemMessageId.NO_MORE_SKILLS_TO_LEARN);
 						return;
 					}
-					for (SubUnitSkill sus : array)
-					{
-						skilllist.addSkill(sus.getSkill().getId(), sus.getSkill().getLevel(), sus.getSkill().getLevel(),
-								sus.getReputation(), 0);
+					for (SubUnitSkill sus : array) {
+						skilllist.addSkill(sus.getSkill().getId(), sus.getSkill().getLevel(), sus.getSkill().getLevel(), sus.getReputation(), 0);
 					}
 					player.sendPacket(skilllist);
-				}
-				else
-				{
+				} else {
 					String filename = "castlemagician/magician-nosquad.htm";
 					showChatWindowByFileName(player, filename);
 				}
 			}
-		}
-		else if (command.equals("give_cloak"))
-		{
+		} else if (command.equals("give_cloak")) {
 			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-
+			
 			int tendency = getCastle().getTendency();
-
-			if (!player.isClanLeader() && tendency != 0)
-			{
+			
+			if (!player.isClanLeader() && tendency != 0) {
 				int cloakId = tendency == 1 ? 34925 : 34926;
-
-				if (player.getInventory().getItemByItemId(cloakId) == null)
-				{
+				
+				if (player.getInventory().getItemByItemId(cloakId) == null) {
 					L2ItemInstance cloak = player.getInventory().addItem("Members Cloak", cloakId, 1, player, this);
-
+					
 					SystemMessage ms = SystemMessage.getSystemMessage(SystemMessageId.EARNED_ITEM_S1);
 					ms.addItemName(cloak);
 					player.sendPacket(ms);
 					return;
-				}
-				else
-				{
+				} else {
 					html.setFile(player.getHtmlPrefix(), "chamberlain/chamberlain-hascloak.htm");
 				}
-			}
-			else
-			{
+			} else {
 				html.setFile(player.getHtmlPrefix(), "chamberlain/chamberlain-noprivs.htm");
 			}
-
+			
 			player.sendPacket(html);
-		}
-		else
-		{
+		} else {
 			super.onBypassFeedback(player, command);
 		}
 	}
-
-	protected int validateCondition(L2PcInstance player)
-	{
-		if (player.isGM())
-		{
+	
+	protected int validateCondition(L2PcInstance player) {
+		if (player.isGM()) {
 			return COND_OWNER;
 		}
-		if (getCastle() != null && getCastle().getCastleId() > 0)
-		{
-			if (player.getClan() != null)
-			{
-				if (getCastle().getZone().isActive())
-				{
+		if (getCastle() != null && getCastle().getCastleId() > 0) {
+			if (player.getClan() != null) {
+				if (getCastle().getZone().isActive()) {
 					return COND_BUSY_BECAUSE_OF_SIEGE; // Busy because of siege
-				}
-				else if (getCastle().getOwnerId() == player.getClanId()) // Clan owns castle
+				} else if (getCastle().getOwnerId() == player.getClanId()) // Clan owns castle
 				{
 					return COND_OWNER;
 				}
@@ -430,89 +365,75 @@ public class L2CastleMagicianInstance extends L2NpcInstance implements L2SquadTr
 		}
 		return COND_ALL_FALSE;
 	}
-
-	private static boolean validateGateCondition(L2PcInstance clanLeader, L2PcInstance player)
-	{
-		if (clanLeader.isAlikeDead())
-		{
+	
+	private static boolean validateGateCondition(L2PcInstance clanLeader, L2PcInstance player) {
+		if (clanLeader.isAlikeDead()) {
 			// Need retail message if there's one.
 			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
 			return false;
 		}
-
-		if (clanLeader.isInStoreMode())
-		{
+		
+		if (clanLeader.isInStoreMode()) {
 			// Need retail message if there's one.
 			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
 			return false;
 		}
-
-		if (clanLeader.isRooted() || clanLeader.isInCombat())
-		{
+		
+		if (clanLeader.isRooted() || clanLeader.isInCombat()) {
 			// Need retail message if there's one.
 			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
 			return false;
 		}
-
-		if (clanLeader.isInOlympiadMode())
-		{
+		
+		if (clanLeader.isInOlympiadMode()) {
 			// Need retail message if there's one.
 			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
 			return false;
 		}
-
-		if (clanLeader.inObserverMode())
-		{
+		
+		if (clanLeader.inObserverMode()) {
 			// Need retail message if there's one.
 			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
 			return false;
 		}
-
-		if (clanLeader.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND))
-		{
+		
+		if (clanLeader.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND)) {
 			// Need retail message if there's one.
 			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
 			return false;
 		}
-
-		if (clanLeader.getInstanceId() > 0)
-		{
-			if (!Config.ALLOW_SUMMON_TO_INSTANCE ||
-					InstanceManager.getInstance().getInstance(player.getInstanceId()).isSummonAllowed())
-			{
+		
+		if (clanLeader.getInstanceId() > 0) {
+			if (!Config.ALLOW_SUMMON_TO_INSTANCE || InstanceManager.getInstance().getInstance(player.getInstanceId()).isSummonAllowed()) {
 				// Need retail message if there's one.
 				player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
 				return false;
 			}
 		}
-
-		if (clanLeader.getIsInsideGMEvent() || player.getIsInsideGMEvent())
-		{
+		
+		if (clanLeader.getIsInsideGMEvent() || player.getIsInsideGMEvent()) {
 			return false;
 		}
-
-		if (player.getEvent() != null && !player.getEvent().onEscapeUse(player.getObjectId()))
-		{
+		
+		if (player.getEvent() != null && !player.getEvent().onEscapeUse(player.getObjectId())) {
 			player.sendMessage("You are on Tenkai Event, teleporting disabled.");
 			return false;
 		}
-
-		if (clanLeader.getEvent() != null && !clanLeader.getEvent().onEscapeUse(clanLeader.getObjectId()))
-		{
+		
+		if (clanLeader.getEvent() != null && !clanLeader.getEvent().onEscapeUse(clanLeader.getObjectId())) {
 			// Need retail message if there's one.
 			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
 			return false;
 		}
-
+		
 		return true;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.model.actor.L2SquadTrainer#showSubUnitSkillList(l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	@Override
-	public void showSubUnitSkillList(L2PcInstance player)
-	{
+	public void showSubUnitSkillList(L2PcInstance player) {
 		onBypassFeedback(player, "subskills");
 	}
 }

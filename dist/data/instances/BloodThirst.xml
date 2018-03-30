@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instance name="Blood Thirst">
-    <activityTime val="60" />
-    <allowSummon val="false" />
-    <emptyDestroyTime val="10" />
-    <spawnPoint spawnX="83463" spawnY="148630" spawnZ="-3407" />
+	<activityTime val="60" />
+	<allowSummon val="false" />
+	<emptyDestroyTime val="10" />
+	<spawnPoint spawnX="83463" spawnY="148630" spawnZ="-3407" />
 </instance>

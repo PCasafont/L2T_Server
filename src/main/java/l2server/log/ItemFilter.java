@@ -23,8 +23,7 @@ import java.util.logging.LogRecord;
 /**
  * @author Advi
  */
-public class ItemFilter implements Filter
-{
+public class ItemFilter implements Filter {
 	//	private String excludeProcess;
 	//	private String excludeItemType;
 
@@ -33,27 +32,21 @@ public class ItemFilter implements Filter
 	private String excludeItemType = "Arrow, Shot, Herb";
 
 	@Override
-	public boolean isLoggable(LogRecord record)
-	{
-		if (!"item".equals(record.getLoggerName()))
-		{
+	public boolean isLoggable(LogRecord record) {
+		if (!"item".equals(record.getLoggerName())) {
 			return false;
 		}
-		if (excludeProcess != null)
-		{
+		if (excludeProcess != null) {
 			//			if (record.getMessage() == null) return true;
 			String[] messageList = record.getMessage().split(":");
-			if (messageList.length < 2 || !excludeProcess.contains(messageList[1]))
-			{
+			if (messageList.length < 2 || !excludeProcess.contains(messageList[1])) {
 				return true;
 			}
 		}
-		if (excludeItemType != null)
-		{
+		if (excludeItemType != null) {
 			//			if (record.getParameters() == null || record.getParameters().length == 0 || !(record.getParameters()[0] instanceof L2ItemInstance)) return true;
 			L2ItemInstance item = (L2ItemInstance) record.getParameters()[0];
-			if (!excludeItemType.contains(item.getItemType().toString()))
-			{
+			if (!excludeItemType.contains(item.getItemType().toString())) {
 				return true;
 			}
 		}

@@ -23,29 +23,24 @@ import java.util.List;
 /**
  * @author KenM
  */
-public final class ExShowTrace extends L2GameServerPacket
-{
+public final class ExShowTrace extends L2GameServerPacket {
 	private final List<Trace> traces = new ArrayList<>();
-
-	public void addTrace(int x, int y, int z, int time)
-	{
+	
+	public void addTrace(int x, int y, int z, int time) {
 		traces.add(new Trace(x, y, z, time));
 	}
-
-	public void addTrace(L2Object obj, int time)
-	{
+	
+	public void addTrace(L2Object obj, int time) {
 		this.addTrace(obj.getX(), obj.getY(), obj.getZ(), time);
 	}
-
-	static final class Trace
-	{
+	
+	static final class Trace {
 		public final int x;
 		public final int y;
 		public final int z;
 		public final int time;
-
-		public Trace(int x, int y, int z, int time)
-		{
+		
+		public Trace(int x, int y, int z, int time) {
 			this.x = x;
 			this.y = y;
 			this.z = z;
@@ -56,16 +51,14 @@ public final class ExShowTrace extends L2GameServerPacket
     /*
 	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
-
+	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeH(traces.size());
-		for (Trace t : traces)
-		{
+		for (Trace t : traces) {
 			writeD(t.x);
 			writeD(t.y);
 			writeD(t.z);

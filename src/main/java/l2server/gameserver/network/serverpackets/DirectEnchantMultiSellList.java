@@ -35,25 +35,22 @@ import l2server.gameserver.templates.item.L2Item;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class DirectEnchantMultiSellList extends L2GameServerPacket
-{
-	public enum DirectEnchantMultiSellConfig
-	{
+public final class DirectEnchantMultiSellList extends L2GameServerPacket {
+	public enum DirectEnchantMultiSellConfig {
 		ENCHANT_TO_10(400001, 10, 50549, 50550, 50551, 1, 1),
 		ENCHANT_TO_15(400002, 15, -1, -1, 50552, 1, 1),
 		ENCHANT_TO_16(400003, 16, -1, -1, 50553, 1, 1);
-
+		
 		public final int shopId;
 		public final int enchantLevel;
 		public final int armorMaterialId;
 		public final int jewelMaterialId;
 		public final int weaponMaterialId;
-
+		
 		public final int costCount;
 		public final double priceDividerForArmor;
-
-		DirectEnchantMultiSellConfig(int id, int enchant, int amid, int jwid, int wmid, int count, double priceDivider)
-		{
+		
+		DirectEnchantMultiSellConfig(int id, int enchant, int amid, int jwid, int wmid, int count, double priceDivider) {
 			shopId = id;
 			enchantLevel = enchant;
 			armorMaterialId = amid;
@@ -62,52 +59,42 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket
 			costCount = count;
 			priceDividerForArmor = priceDivider;
 		}
-
-		public static DirectEnchantMultiSellConfig getConfig(int id)
-		{
-			for (DirectEnchantMultiSellConfig config : values())
-			{
-				if (config.shopId == id)
-				{
+		
+		public static DirectEnchantMultiSellConfig getConfig(int id) {
+			for (DirectEnchantMultiSellConfig config : values()) {
+				if (config.shopId == id) {
 					return config;
 				}
 			}
-
+			
 			return null;
 		}
 	}
-
+	
 	private final DirectEnchantMultiSellConfig config;
 	private final List<L2ItemInstance> mainIngredients = new ArrayList<>();
-
-	public DirectEnchantMultiSellList(L2PcInstance player, DirectEnchantMultiSellConfig config)
-	{
+	
+	public DirectEnchantMultiSellList(L2PcInstance player, DirectEnchantMultiSellConfig config) {
 		this.config = config;
-
-		for (L2ItemInstance item : player.getInventory().getItems())
-		{
-			if (item.getItem().getCrystalType() == L2Item.CRYSTAL_NONE)
-			{
+		
+		for (L2ItemInstance item : player.getInventory().getItems()) {
+			if (item.getItem().getCrystalType() == L2Item.CRYSTAL_NONE) {
 				continue;
 			}
-
+			
 			int currencyId = item.isWeapon() ? config.weaponMaterialId :
-					item.getItem().getBodyPart() >= L2Item.SLOT_R_EAR &&
-							item.getItem().getBodyPart() <= L2Item.SLOT_LR_FINGER ? config.jewelMaterialId :
-							config.armorMaterialId;
-
+					item.getItem().getBodyPart() >= L2Item.SLOT_R_EAR && item.getItem().getBodyPart() <= L2Item.SLOT_LR_FINGER ?
+							config.jewelMaterialId : config.armorMaterialId;
+			
 			System.out.println("Currency " + currencyId + " for " + item.getName());
-			if (currencyId != -1 && !item.isEquipped() && EnchantItemTable.isEnchantable(item) &&
-					item.getEnchantLevel() < config.enchantLevel)
-			{
+			if (currencyId != -1 && !item.isEquipped() && EnchantItemTable.isEnchantable(item) && item.getEnchantLevel() < config.enchantLevel) {
 				mainIngredients.add(item);
 			}
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeC(0x00);
 		writeD(config.shopId); // list id
 		writeC(0x00);
@@ -117,11 +104,9 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket
 		writeD(mainIngredients.size()); //list length
 		writeC(0x00); // Old or modern format
 		writeD(0x00);
-
-		if (!mainIngredients.isEmpty())
-		{
-			for (L2ItemInstance item : mainIngredients)
-			{
+		
+		if (!mainIngredients.isEmpty()) {
+			for (L2ItemInstance item : mainIngredients) {
 				writeD(item.getObjectId()); // entry id
 				writeC(0x00); // stackable
 				writeH(0x00); // C6
@@ -135,13 +120,13 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket
 				writeH(0x00); // T1
 				writeH(0x00); // T1
 				writeH(0x00); // T1
-
+				
 				writeC(0x00);
 				writeC(0x00);
-
+				
 				writeH(0x01); // products list size
 				writeH(0x02); // ingredients list size
-
+				
 				// Product
 				writeD(item.getItemId());
 				writeQ(item.getItem().getBodyPart());
@@ -149,72 +134,59 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket
 				writeQ(item.getCount());
 				writeH(config.enchantLevel); //enchant lvl
 				writeD(100); // Chance
-				if (item.isAugmented())
-				{
+				if (item.isAugmented()) {
 					writeQ(item.getAugmentation().getId()); // C6
-				}
-				else
-				{
+				} else {
 					writeQ(0x00);
 				}
 				writeH(item.getAttackElementType()); // T1 element id
 				writeH(item.getAttackElementPower()); // T1 element power
-				for (byte j = 0; j < 6; j++)
-				{
+				for (byte j = 0; j < 6; j++) {
 					writeH(item.getElementDefAttr(j));
 				}
-
+				
 				int[] ensoulEffects = item.getEnsoulEffectIds();
 				int[] ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
 				writeC(ensoulEffects.length);
-				for (int effect : ensoulEffects)
-				{
+				for (int effect : ensoulEffects) {
 					writeD(effect);
 				}
 				writeC(ensoulSpecialEffects.length);
-				for (int effect : ensoulSpecialEffects)
-				{
+				for (int effect : ensoulSpecialEffects) {
 					writeD(effect);
 				}
-
+				
 				// Main Ingredient
 				writeD(item.getItemId());
 				writeH(item.getItem().getType2());
 				writeQ(item.getCount());
 				writeH(item.getEnchantLevel()); // enchant lvl
-				if (item.isAugmented())
-				{
+				if (item.isAugmented()) {
 					writeQ(item.getAugmentation().getId()); // C6
-				}
-				else
-				{
+				} else {
 					writeQ(0x00);
 				}
 				writeH(item.getAttackElementType()); // T1 element id
 				writeH(item.getAttackElementPower()); // T1 element power
-				for (byte j = 0; j < 6; j++)
-				{
+				for (byte j = 0; j < 6; j++) {
 					writeH(item.getElementDefAttr(j));
 				}
-
+				
 				ensoulEffects = item.getEnsoulEffectIds();
 				ensoulSpecialEffects = item.getEnsoulSpecialEffectIds();
 				writeC(ensoulEffects.length);
-				for (int effect : ensoulEffects)
-				{
+				for (int effect : ensoulEffects) {
 					writeD(effect);
 				}
 				writeC(ensoulSpecialEffects.length);
-				for (int effect : ensoulSpecialEffects)
-				{
+				for (int effect : ensoulSpecialEffects) {
 					writeD(effect);
 				}
-
+				
 				// Currency
 				int currencyId = item.isWeapon() ? config.weaponMaterialId :
-						item.getItem().getBodyPart() >= L2Item.SLOT_R_EAR &&
-								item.getItem().getBodyPart() <= L2Item.SLOT_LR_FINGER ? config.jewelMaterialId :
-								config.armorMaterialId;
+						item.getItem().getBodyPart() >= L2Item.SLOT_R_EAR && item.getItem().getBodyPart() <= L2Item.SLOT_LR_FINGER ?
+								config.jewelMaterialId : config.armorMaterialId;
 				writeD(currencyId);
 				writeH(ItemTable.getInstance().getTemplate(currencyId).getType2());
 				writeQ(item.isWeapon() ? config.costCount : (int) (config.costCount / config.priceDividerForArmor));
@@ -222,20 +194,18 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket
 				writeQ(0x00); // augmentation
 				writeH(0x00); // T1 element id
 				writeH(0x00); // T1 element power
-				for (byte j = 0; j < 6; j++)
-				{
+				for (byte j = 0; j < 6; j++) {
 					writeH(0x00);
 				}
-
+				
 				writeC(0x00);
 				writeC(0x00);
 			}
 		}
 	}
-
+	
 	@Override
-	protected final Class<?> getOpCodeClass()
-	{
+	protected final Class<?> getOpCodeClass() {
 		return MultiSellList.class;
 	}
 }

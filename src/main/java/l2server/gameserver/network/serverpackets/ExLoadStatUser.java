@@ -20,24 +20,20 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Xavi
  */
-public class ExLoadStatUser extends L2GameServerPacket
-{
-
+public class ExLoadStatUser extends L2GameServerPacket {
+	
 	L2PcInstance player;
-
-	public ExLoadStatUser(L2PcInstance player)
-	{
+	
+	public ExLoadStatUser(L2PcInstance player) {
 		this.player = player;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
-		if (player == null)
-		{
+	protected final void writeImpl() {
+		if (player == null) {
 		}
 
 		/*writeD(MuseumStatistic.values().length);

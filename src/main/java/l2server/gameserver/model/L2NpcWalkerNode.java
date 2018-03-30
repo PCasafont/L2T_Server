@@ -21,8 +21,7 @@ import l2server.gameserver.network.NpcStringId;
  * @author Rayan RPG, JIV
  * @since 927
  */
-public class L2NpcWalkerNode
-{
+public class L2NpcWalkerNode {
 	private int chatId = 0;
 	private int moveX;
 	private int moveY;
@@ -32,67 +31,54 @@ public class L2NpcWalkerNode
 	private NpcStringId npcString;
 	private String chatText;
 	private boolean running;
-
-	public L2NpcWalkerNode(int moveX, int moveY, int moveZ, int delay, String chatText, boolean running)
-	{
+	
+	public L2NpcWalkerNode(int moveX, int moveY, int moveZ, int delay, String chatText, boolean running) {
 		this(moveX, moveY, moveZ, delay, null, chatText, running);
 	}
-
-	public L2NpcWalkerNode(int x, int y, int z, int delay, NpcStringId npcString, String chatText, boolean running)
-	{
+	
+	public L2NpcWalkerNode(int x, int y, int z, int delay, NpcStringId npcString, String chatText, boolean running) {
 		moveX = x;
 		moveY = y;
 		moveZ = z;
 		this.delay = delay;
 		this.npcString = npcString;
 		this.chatText = chatText;
-		if (chatText.startsWith("#"))
-		{
+		if (chatText.startsWith("#")) {
 			chatId = Integer.parseInt(chatText.substring(1));
-		}
-		else if (chatText.trim().isEmpty())
-		{
+		} else if (chatText.trim().isEmpty()) {
 			chatText = null;
 		}
 		this.running = running;
 	}
-
-	public String getChatText()
-	{
-		if (chatId != 0)
-		{
+	
+	public String getChatText() {
+		if (chatId != 0) {
 			throw new IllegalStateException("Chat id is defined for walker route!");
 		}
 		return chatText;
 	}
-
-	public int getMoveX()
-	{
+	
+	public int getMoveX() {
 		return moveX;
 	}
-
-	public int getMoveY()
-	{
+	
+	public int getMoveY() {
 		return moveY;
 	}
-
-	public int getMoveZ()
-	{
+	
+	public int getMoveZ() {
 		return moveZ;
 	}
-
-	public int getDelay()
-	{
+	
+	public int getDelay() {
 		return delay;
 	}
-
-	public boolean getRunning()
-	{
+	
+	public boolean getRunning() {
 		return running;
 	}
-
-	public int getChatId()
-	{
+	
+	public int getChatId() {
 		return chatId;
 	}
 }

@@ -37,21 +37,16 @@ import java.util.Collection;
  *
  * @author Pere
  */
-public class ChatGlobal implements IChatHandler
-{
+public class ChatGlobal implements IChatHandler {
 	private static final int[] COMMAND_IDS = {25};
 
 	private TIntIntHashMap messages = new TIntIntHashMap();
 
-	public ChatGlobal()
-	{
-		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
-		{
+	public ChatGlobal() {
+		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable() {
 			@Override
-			public void run()
-			{
-				synchronized (messages)
-				{
+			public void run() {
+				synchronized (messages) {
 					messages.clear();
 				}
 			}
@@ -62,40 +57,33 @@ public class ChatGlobal implements IChatHandler
 	 * Handle chat type 'global'
 	 */
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-	{
+	public void handleChat(int type, L2PcInstance activeChar, String target, String text) {
 		if (!activeChar.isGM() && (DiscussionManager.getInstance().isGlobalChatDisabled() ||
-				!activeChar.getFloodProtectors().getTradeChat().tryPerformAction("global chat")))
-		{
+				!activeChar.getFloodProtectors().getTradeChat().tryPerformAction("global chat"))) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHATTING_PROHIBITED));
 			return;
 		}
 
 		int messages = 0;
-		synchronized (this.messages)
-		{
-			if (this.messages.containsKey(activeChar.getObjectId()))
-			{
+		synchronized (this.messages) {
+			if (this.messages.containsKey(activeChar.getObjectId())) {
 				messages = this.messages.get(activeChar.getObjectId());
 			}
 
 			messages++;
-            this.messages.put(activeChar.getObjectId(), messages);
+			this.messages.put(activeChar.getObjectId(), messages);
 		}
 
 		int maxMessages = 40 + (int) activeChar.calcStat(Stats.GLOBAL_CHAT, 0, activeChar, null);
-		if (messages > maxMessages)
-		{
+		if (messages > maxMessages) {
 			activeChar.sendMessage("You can't write more than " + maxMessages + " global messages a day.");
 			return;
 		}
 
 		activeChar.sendPacket(new ExWorldChatCnt(maxMessages - messages));
 
-		for (int i = 0; i < text.length(); i++)
-		{
-			if ((text.charAt(i) & (char) 0xff00) != 0)
-			{
+		for (int i = 0; i < text.length(); i++) {
+			if ((text.charAt(i) & (char) 0xff00) != 0) {
 				text = text.substring(0, i) + text.substring(i + 1);
 			}
 		}
@@ -103,16 +91,13 @@ public class ChatGlobal implements IChatHandler
 		CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
 
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-		for (L2PcInstance player : pls)
-		{
-			if (!BlockList.isBlocked(player, activeChar))
-			{
+		for (L2PcInstance player : pls) {
+			if (!BlockList.isBlocked(player, activeChar)) {
 				player.sendPacket(cs);
 			}
 		}
 
-		while (text.contains("Type=") && text.contains("Title="))
-		{
+		while (text.contains("Type=") && text.contains("Title=")) {
 			int index1 = text.indexOf("Type=");
 			int index2 = text.indexOf("Title=") + 6;
 			text = text.substring(0, index1) + text.substring(index2);
@@ -127,8 +112,7 @@ public class ChatGlobal implements IChatHandler
 	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
 	 */
 	@Override
-	public int[] getChatTypeList()
-	{
+	public int[] getChatTypeList() {
 		return COMMAND_IDS;
 	}
 }

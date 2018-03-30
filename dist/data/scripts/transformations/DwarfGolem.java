@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class DwarfGolem extends L2Transformation
-{
+public class DwarfGolem extends L2Transformation {
 	private static final int[] SKILLS = {806, 807, 808, 809, 5491, 619};
-
-	public DwarfGolem()
-	{
+	
+	public DwarfGolem() {
 		// id, colRadius, colHeight
 		super(259, 31, 51.8);
 	}
-
+	
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 259 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 259 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
-
+		
 		transformedSkills();
 	}
-
-	public void transformedSkills()
-	{
+	
+	public void transformedSkills() {
 		// Magic Obstacle
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(806, 1), false);
 		// Over-hit
@@ -39,18 +34,16 @@ public class DwarfGolem extends L2Transformation
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(5491, 1), false);
 		// Transform Dispel
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(619, 1), false);
-
+		
 		getPlayer().setTransformAllowedSkills(SKILLS);
 	}
-
+	
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
-
-	public void removeSkills()
-	{
+	
+	public void removeSkills() {
 		// Magic Obstacle
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(806, 1), false);
 		// Over-hit
@@ -63,12 +56,11 @@ public class DwarfGolem extends L2Transformation
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(5491, 1), false);
 		// Transform Dispel
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(619, 1), false);
-
+		
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
-
-	public static void main(String[] args)
-	{
+	
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new DwarfGolem());
 	}
 }

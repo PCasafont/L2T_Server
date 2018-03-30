@@ -15,6 +15,7 @@
 
 package ai.individual;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Skill;
@@ -24,26 +25,22 @@ import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import ai.group_template.L2AttackableAIScript;
-
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * @author LasTravel
- *         <p>
- *         Spicula Clone Generator AI
+ * <p>
+ * Spicula Clone Generator AI
  */
 
-public class SpiculaCloneGenerator extends L2AttackableAIScript
-{
+public class SpiculaCloneGenerator extends L2AttackableAIScript {
 	private static final int yin = 19320;
 	private static final int yinFragment = 19308;
 	private static final int spiculaElite = 23303;
 	private static Map<Integer, Long> yinControl = new HashMap<Integer, Long>();
 
-	public SpiculaCloneGenerator(int id, String name, String descr)
-	{
+	public SpiculaCloneGenerator(int id, String name, String descr) {
 		super(id, name, descr);
 
 		addKillId(yinFragment);
@@ -51,25 +48,20 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 		addSpawnId(yin);
 		addSpawnId(yinFragment);
 
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-		{
-			if (spawn == null)
-			{
+		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable()) {
+			if (spawn == null) {
 				continue;
 			}
 
-			if (spawn.getNpcId() == yin || spawn.getNpcId() == yinFragment)
-			{
+			if (spawn.getNpcId() == yin || spawn.getNpcId() == yinFragment) {
 				notifySpawn(spawn.getNpc());
 			}
 		}
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
-		if (npc.getNpcId() == yin)
-		{
+	public final String onSpawn(L2Npc npc) {
+		if (npc.getNpcId() == yin) {
 			npc.setIsInvul(true);
 		}
 
@@ -79,19 +71,14 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
-	{
-		if (yinControl.containsKey(npc.getObjectId()))
-		{
-			if (System.currentTimeMillis() >= yinControl.get(npc.getObjectId()) + 180000)
-			{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill) {
+		if (yinControl.containsKey(npc.getObjectId())) {
+			if (System.currentTimeMillis() >= yinControl.get(npc.getObjectId()) + 180000) {
 				yinControl.put(npc.getObjectId(), System.currentTimeMillis());
 
 				spawnSpiculas(npc, attacker);
 			}
-		}
-		else
-		{
+		} else {
 			yinControl.put(npc.getObjectId(), System.currentTimeMillis());
 
 			spawnSpiculas(npc, attacker);
@@ -101,21 +88,17 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
 		spawnSpiculas(npc, killer);
 
 		return super.onKill(npc, killer, isPet);
 	}
 
-	private void spawnSpiculas(L2Npc npc, L2PcInstance killer)
-	{
-		npc.broadcastPacket(new ExShowScreenMessage(
-				"$s1 has summoned Elite Soldiers through the Clone Generator.".replace("$s1", killer.getName()),
+	private void spawnSpiculas(L2Npc npc, L2PcInstance killer) {
+		npc.broadcastPacket(new ExShowScreenMessage("$s1 has summoned Elite Soldiers through the Clone Generator.".replace("$s1", killer.getName()),
 				3000)); //id: 1802277
 
-		for (int a = 0; a <= (npc.getNpcId() == yinFragment ? 2 : 4); a++)
-		{
+		for (int a = 0; a <= (npc.getNpcId() == yinFragment ? 2 : 4); a++) {
 			L2Npc minion = addSpawn(spiculaElite, killer.getX(), killer.getY(), killer.getZ(), 0, true, 180000, true);
 
 			minion.setIsRunning(true);
@@ -129,13 +112,11 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript
 	}
 
 	@Override
-	public int getOnKillDelay(int npcId)
-	{
+	public int getOnKillDelay(int npcId) {
 		return 0;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new SpiculaCloneGenerator(-1, "SpiculaCloneGenerator", "ai");
 	}
 }

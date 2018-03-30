@@ -27,54 +27,46 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 /**
  * @author KenM
  */
-public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
-{
-
+public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket {
+	
 	private int supportObjectId;
 	private int enchantObjectId;
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		supportObjectId = readD();
 		enchantObjectId = readD();
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar != null)
-		{
-			if (activeChar.isEnchanting())
-			{
+		if (activeChar != null) {
+			if (activeChar.isEnchanting()) {
 				L2ItemInstance item = activeChar.getInventory().getItemByObjectId(enchantObjectId);
 				L2ItemInstance support = activeChar.getInventory().getItemByObjectId(supportObjectId);
-
-				if (item == null || support == null)
-				{
+				
+				if (item == null || support == null) {
 					return;
 				}
-
+				
 				EnchantSupportItem supportTemplate = EnchantItemTable.getInstance().getSupportItem(support);
-
-				if (supportTemplate == null || !supportTemplate.isValid(item))
-				{
+				
+				if (supportTemplate == null || !supportTemplate.isValid(item)) {
 					// message may be custom
-					activeChar.sendPacket(
-							SystemMessage.getSystemMessage(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITION));
+					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITION));
 					activeChar.setActiveEnchantSupportItem(null);
 					activeChar.sendPacket(new ExPutEnchantSupportItemResult(0));
 					return;
 				}
 				activeChar.setActiveEnchantSupportItem(support);
-
+				
 				activeChar.setIsEnchanting(true);
 				activeChar.setActiveEnchantTimestamp(System.currentTimeMillis());
 				activeChar.sendPacket(new ExPutEnchantSupportItemResult(supportObjectId));

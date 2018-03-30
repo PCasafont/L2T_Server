@@ -31,43 +31,38 @@ import l2server.gameserver.model.L2Macro;
  * <p>
  * format: cdhcdSSScc (ccdcS)
  */
-public class SendMacroList extends L2GameServerPacket
-{
-
+public class SendMacroList extends L2GameServerPacket {
+	
 	private final int rev;
-
+	
 	private final int count;
-
+	
 	private final L2Macro macro;
-
-	public SendMacroList(int rev, int count, L2Macro macro)
-	{
+	
+	public SendMacroList(int rev, int count, L2Macro macro) {
 		this.rev = rev;
 		this.count = count;
 		this.macro = macro;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeC(rev); // 0 - remove / 1 - add / 2 - edit
 		writeD(macro != null ? macro.id : 0); // Macro ID
 		writeC(count); // count of Macros
 		writeC(rev == 0 ? 0 : 1); // unknown
-
-		if (macro != null && rev != 0)
-		{
+		
+		if (macro != null && rev != 0) {
 			writeD(macro.id); // Macro ID
 			writeS(macro.name); // Macro Name
 			writeS(macro.descr); // Desc
 			writeS(macro.acronym); // acronym
 			writeH(104); // ???
 			writeH(macro.icon); // icon
-
+			
 			writeC(macro.commands.length); // count
-
-			for (int i = 0; i < macro.commands.length; i++)
-			{
+			
+			for (int i = 0; i < macro.commands.length; i++) {
 				L2Macro.L2MacroCmd cmd = macro.commands[i];
 				writeC(i + 1); // i of count
 				writeC(cmd.type); // type 1 = skill, 3 = action, 4 = shortcut

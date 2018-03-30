@@ -18,18 +18,15 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExChangeToAwakenedClass extends L2GameServerPacket
-{
+public class ExChangeToAwakenedClass extends L2GameServerPacket {
 	private int classId;
-
-	public ExChangeToAwakenedClass(int classId)
-	{
+	
+	public ExChangeToAwakenedClass(int classId) {
 		this.classId = classId;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(classId);
 	}
 }

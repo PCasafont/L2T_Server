@@ -29,8 +29,7 @@ import java.util.logging.Level;
 /**
  * @author Layane
  */
-public class TaskRecom extends Task
-{
+public class TaskRecom extends Task {
 
 	private static final String NAME = "recommendations";
 
@@ -38,8 +37,7 @@ public class TaskRecom extends Task
 	 * @see l2server.gameserver.taskmanager.Task#getName()
 	 */
 	@Override
-	public String getName()
-	{
+	public String getName() {
 		return NAME;
 	}
 
@@ -47,14 +45,12 @@ public class TaskRecom extends Task
 	 * @see l2server.gameserver.taskmanager.Task#onTimeElapsed(l2server.gameserver.taskmanager.TaskManager.ExecutedTask)
 	 */
 	@Override
-	public void onTimeElapsed(ExecutedTask task)
-	{
+	public void onTimeElapsed(ExecutedTask task) {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement(
-					"UPDATE character_reco_bonus SET rec_left=?, time_left=?, rec_have=0 WHERE rec_have <=  20");
+			PreparedStatement statement =
+					con.prepareStatement("UPDATE character_reco_bonus SET rec_left=?, time_left=?, rec_have=0 WHERE rec_have <=  20");
 			statement.setInt(1, 0); // Rec left = 0
 			statement.setInt(2, 3600000); // Timer = 1 hour
 			statement.execute();
@@ -65,13 +61,9 @@ public class TaskRecom extends Task
 			statement.setInt(2, 3600000); // Timer = 1 hour
 			statement.execute();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Could not reset Recommendations System: " + e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		Log.config("Recommendations System reseted");
@@ -81,8 +73,7 @@ public class TaskRecom extends Task
 	 * @see l2server.gameserver.taskmanager.Task#initialize()
 	 */
 	@Override
-	public void initialize()
-	{
+	public void initialize() {
 		super.initialize();
 		TaskManager.addUniqueTask(NAME, TaskTypes.TYPE_GLOBAL_TASK, "1", "06:30:00", "");
 	}

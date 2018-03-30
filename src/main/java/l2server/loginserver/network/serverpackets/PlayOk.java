@@ -20,21 +20,18 @@ import l2server.loginserver.SessionKey;
 /**
  *
  */
-public final class PlayOk extends L2LoginServerPacket
-{
+public final class PlayOk extends L2LoginServerPacket {
 	private int playOk1, playOk2;
-
-	public PlayOk(SessionKey sessionKey)
-	{
+	
+	public PlayOk(SessionKey sessionKey) {
 		playOk1 = sessionKey.playOkID1;
 		playOk2 = sessionKey.playOkID2;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void write()
-	{
+	protected void write() {
 		writeC(0x07);
 		writeD(playOk1);
 		writeD(playOk2);

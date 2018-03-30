@@ -14,7 +14,7 @@ import kotlin.collections.set
 class XmlNode internal constructor(private val base: Node) {
 
 	val name: String = base.nodeName
-	
+
 	val text: String? = base.firstChild?.nodeValue
 
 	val firstChild: XmlNode?

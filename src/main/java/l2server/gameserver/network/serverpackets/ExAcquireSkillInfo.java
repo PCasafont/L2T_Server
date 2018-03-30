@@ -23,36 +23,31 @@ import java.util.Map;
 /**
  * @author Pere
  */
-public class ExAcquireSkillInfo extends L2GameServerPacket
-{
+public class ExAcquireSkillInfo extends L2GameServerPacket {
 	private L2SkillLearn skill;
 	private L2PcInstance player;
-
-	public ExAcquireSkillInfo(L2SkillLearn skill, L2PcInstance player)
-	{
+	
+	public ExAcquireSkillInfo(L2SkillLearn skill, L2PcInstance player) {
 		this.skill = skill;
 		this.player = player;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(skill.getId());
 		writeD(skill.getLevel());
 		writeQ(skill.getSpCost());
 		writeH(skill.getMinLevel());
 		writeH(skill.getMinDualLevel());
 		writeD(skill.getCostItems().size());
-		for (int itemId : skill.getCostItems().keySet())
-		{
+		for (int itemId : skill.getCostItems().keySet()) {
 			writeD(itemId);
 			writeQ(skill.getCostItems().get(itemId));
 		}
-
+		
 		Map<Integer, Integer> costSkills = skill.getCostSkills(player);
 		writeD(costSkills.size());
-		for (int skillId : costSkills.keySet())
-		{
+		for (int skillId : costSkills.keySet()) {
 			writeD(skillId);
 			writeD(costSkills.get(skillId));
 		}

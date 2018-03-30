@@ -21,21 +21,17 @@ import l2server.gameserver.instancemanager.ClanRecruitManager.ClanRecruitWaiting
 /**
  * @author Pere
  */
-public class ExPledgeApplicantList extends L2GameServerPacket
-{
+public class ExPledgeApplicantList extends L2GameServerPacket {
 	private ClanRecruitData data;
-
-	public ExPledgeApplicantList(ClanRecruitData data)
-	{
+	
+	public ExPledgeApplicantList(ClanRecruitData data) {
 		this.data = data;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(data.applicants.size());
-		for (int playerId : data.applicants.keySet())
-		{
+		for (int playerId : data.applicants.keySet()) {
 			ClanRecruitWaitingUser applicant = data.applicants.get(playerId);
 			writeD(playerId);
 			writeS(applicant.name);

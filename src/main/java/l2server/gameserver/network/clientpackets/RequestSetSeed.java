@@ -15,9 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
-import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
-
 import l2server.Config;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleManorManager;
@@ -32,6 +29,9 @@ import l2server.gameserver.util.Util;
 import java.util.ArrayList;
 import java.util.List;
 
+import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
+import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
+
 /**
  * Format: (ch) dd [ddd]
  * d - manor id
@@ -44,8 +44,7 @@ import java.util.List;
  *
  * @author l3x
  */
-public class RequestSetSeed extends L2GameClientPacket
-{
+public class RequestSetSeed extends L2GameClientPacket {
 	//
 
 	private static final int BATCH_LENGTH = 20; // length of the one item
@@ -56,23 +55,19 @@ public class RequestSetSeed extends L2GameClientPacket
 	/**
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		manorId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
-		{
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining()) {
 			return;
 		}
 
 		items = new Seed[count];
-		for (int i = 0; i < count; i++)
-		{
+		for (int i = 0; i < count; i++) {
 			int itemId = readD();
 			long sales = readQ();
 			long price = readQ();
-			if (itemId < 1 || sales < 0 || price < 0)
-			{
+			if (itemId < 1 || sales < 0 || price < 0) {
 				items = null;
 				return;
 			}
@@ -81,87 +76,73 @@ public class RequestSetSeed extends L2GameClientPacket
 	}
 
 	@Override
-	protected void runImpl()
-	{
-		if (items == null)
-		{
+	protected void runImpl() {
+		if (items == null) {
 			return;
 		}
 
 		L2PcInstance player = getClient().getActiveChar();
 		// check player privileges
-		if (player == null || player.getClan() == null || (player.getClanPrivileges() & L2Clan.CP_CS_MANOR_ADMIN) == 0)
-		{
+		if (player == null || player.getClan() == null || (player.getClanPrivileges() & L2Clan.CP_CS_MANOR_ADMIN) == 0) {
 			return;
 		}
 
 		// check castle owner
 		Castle currentCastle = CastleManager.getInstance().getCastleById(manorId);
-		if (currentCastle.getOwnerId() != player.getClanId())
-		{
+		if (currentCastle.getOwnerId() != player.getClanId()) {
 			return;
 		}
 
 		L2Object manager = player.getTarget();
 
-		if (!(manager instanceof L2CastleChamberlainInstance))
-		{
+		if (!(manager instanceof L2CastleChamberlainInstance)) {
 			manager = player.getLastFolkNPC();
 		}
 
-		if (!(manager instanceof L2CastleChamberlainInstance))
-		{
+		if (!(manager instanceof L2CastleChamberlainInstance)) {
 			return;
 		}
 
-		if (((L2CastleChamberlainInstance) manager).getCastle() != currentCastle)
-		{
+		if (((L2CastleChamberlainInstance) manager).getCastle() != currentCastle) {
 			return;
 		}
 
-		if (!player.isInsideRadius(manager, DEFAULT_INTERACTION_DISTANCE, true, false))
-		{
+		if (!player.isInsideRadius(manager, DEFAULT_INTERACTION_DISTANCE, true, false)) {
 			return;
 		}
 
 		List<SeedProduction> seeds = new ArrayList<>(items.length);
-		for (Seed i : items)
-		{
+		for (Seed i : items) {
 			SeedProduction s = i.getSeed();
-			if (s == null)
-			{
+			if (s == null) {
 				Util.handleIllegalPlayerAction(player,
 						"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-								" tried to overflow while setting manor.", Config.DEFAULT_PUNISH);
+								" tried to overflow while setting manor.",
+						Config.DEFAULT_PUNISH);
 				return;
 			}
 			seeds.add(s);
 		}
 
 		currentCastle.setSeedProduction(seeds, CastleManorManager.PERIOD_NEXT);
-		if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
-		{
+		if (Config.ALT_MANOR_SAVE_ALL_ACTIONS) {
 			currentCastle.saveSeedData(CastleManorManager.PERIOD_NEXT);
 		}
 	}
 
-	private static class Seed
-	{
+	private static class Seed {
 		private final int itemId;
 		private final long sales;
 		private final long price;
 
-		public Seed(int id, long s, long p)
-		{
+		public Seed(int id, long s, long p) {
 			itemId = id;
 			sales = s;
 			price = p;
 		}
 
-		public SeedProduction getSeed()
-		{
-			if (sales != 0 && MAX_ADENA / sales < price)
-			{
+		public SeedProduction getSeed() {
+			if (sales != 0 && MAX_ADENA / sales < price) {
 				return null;
 			}
 

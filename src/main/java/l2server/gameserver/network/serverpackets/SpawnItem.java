@@ -32,30 +32,25 @@ import l2server.gameserver.model.L2Object;
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class SpawnItem extends L2GameServerPacket
-{
+public final class SpawnItem extends L2GameServerPacket {
 	private int objectId;
 	private int itemId;
 	private int x, y, z;
 	private int stackable;
 	private long count;
 
-	public SpawnItem(L2Object obj)
-	{
+	public SpawnItem(L2Object obj) {
 		objectId = obj.getObjectId();
 		x = obj.getX();
 		y = obj.getY();
 		z = obj.getZ();
 
-		if (obj instanceof L2ItemInstance)
-		{
+		if (obj instanceof L2ItemInstance) {
 			L2ItemInstance item = (L2ItemInstance) obj;
 			itemId = item.getItemId();
 			stackable = item.isStackable() ? 0x01 : 0x00;
 			count = item.getCount();
-		}
-		else
-		{
+		} else {
 			itemId = obj.getPoly().getPolyId();
 			stackable = 0;
 			count = 1;
@@ -63,8 +58,7 @@ public final class SpawnItem extends L2GameServerPacket
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objectId);
 		writeD(itemId);
 

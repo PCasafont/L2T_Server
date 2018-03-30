@@ -25,119 +25,80 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 /**
  * @author Pere
  */
-public class L2AArcherAI extends L2APlayerAI
-{
+public class L2AArcherAI extends L2APlayerAI {
 	public static final int QUICK_EVASION = 10774;
 	public static final int QUICK_CHARGE = 10805;
-
-	public L2AArcherAI(L2Character creature)
-	{
+	
+	public L2AArcherAI(L2Character creature) {
 		super(creature);
 	}
-
+	
 	@Override
-	protected int[] getRandomGear()
-	{
-		return new int[]{
-				30250,
-				19912,
-				19913,
-				19914,
-				19915,
-				19916,
-				19464,
-				19463,
-				19458,
-				17623,
-				35570,
-				34860,
-				19462,
-				19454,
-				35890,
-				30313
-		};
+	protected int[] getRandomGear() {
+		return new int[]{30250, 19912, 19913, 19914, 19915, 19916, 19464, 19463, 19458, 17623, 35570, 34860, 19462, 19454, 35890, 30313};
 	}
-
+	
 	@Override
-	protected boolean interactWith(L2Character target)
-	{
-		if (super.interactWith(target))
-		{
+	protected boolean interactWith(L2Character target) {
+		if (super.interactWith(target)) {
 			return true;
 		}
-
-		if (target != null)
-		{
-			if (player.isInsideRadius(target, 100, true, true))
-			{
+		
+		if (target != null) {
+			if (player.isInsideRadius(target, 100, true, true)) {
 				L2Skill skill = player.getKnownSkill(QUICK_EVASION);
-				if (skill != null && player.useMagic(skill, true, false))
-				{
+				if (skill != null && player.useMagic(skill, true, false)) {
 					return true;
 				}
-			}
-			else if (!player.isInsideRadius(target, 1500, true, true))
-			{
+			} else if (!player.isInsideRadius(target, 1500, true, true)) {
 				L2Skill skill = player.getKnownSkill(QUICK_CHARGE);
-				if (skill != null && player.useMagic(skill, true, false))
-				{
+				if (skill != null && player.useMagic(skill, true, false)) {
 					return true;
 				}
 			}
 		}
-
-		for (L2Character attacker : player.getKnownList().getKnownCharactersInRadius(100))
-		{
-			if (player.isEnemy(attacker) && attacker.isAttackingNow() && attacker.getTarget() == player)
-			{
+		
+		for (L2Character attacker : player.getKnownList().getKnownCharactersInRadius(100)) {
+			if (player.isEnemy(attacker) && attacker.isAttackingNow() && attacker.getTarget() == player) {
 				L2Skill skill = player.getKnownSkill(QUICK_CHARGE);
-				if (skill != null && player.useMagic(skill, true, false))
-				{
+				if (skill != null && player.useMagic(skill, true, false)) {
 					return true;
 				}
-
+				
 				skill = player.getKnownSkill(QUICK_EVASION);
-				if (skill != null && player.useMagic(skill, true, false))
-				{
+				if (skill != null && player.useMagic(skill, true, false)) {
 					return true;
 				}
 			}
 		}
-
+		
 		if (player.getCurrentMp() > player.getMaxMp() * 0.7 || player.getCurrentHp() < player.getMaxHp() * 0.5 ||
-				player.getTarget() instanceof L2Playable)
-		{
-			for (L2Skill skill : player.getAllSkills())
-			{
-				if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE)
-				{
+				player.getTarget() instanceof L2Playable) {
+			for (L2Skill skill : player.getAllSkills()) {
+				if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE) {
 					continue;
 				}
-
-				if (player.useMagic(skill, true, false))
-				{
+				
+				if (player.useMagic(skill, true, false)) {
 					break;
 				}
 			}
 		}
-
+		
 		setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
-
+		
 		return true;
 	}
-
+	
 	@Override
-	protected void think()
-	{
+	protected void think() {
 		super.think();
-
+		
 		L2ItemInstance arrows = player.getInventory().getItemByItemId(18550);
-		if (arrows == null || arrows.getCount() < 1000)
-		{
+		if (arrows == null || arrows.getCount() < 1000) {
 			player.getInventory().addItem("", 18550, 1000, player, player);
 			L2ItemInstance bow = player.getActiveWeaponInstance();
-			if (bow != null)
-			{
+			if (bow != null) {
 				player.useEquippableItem(bow, false);
 				player.useEquippableItem(bow, false);
 			}

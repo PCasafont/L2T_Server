@@ -18,19 +18,16 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Erlandys
  */
-public class ExResponseCommissionDelete extends L2GameServerPacket
-{
-
+public class ExResponseCommissionDelete extends L2GameServerPacket {
+	
 	private boolean success;
-
-	public ExResponseCommissionDelete(boolean success)
-	{
+	
+	public ExResponseCommissionDelete(boolean success) {
 		this.success = success;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(success ? 0x01 : 0x00);
 	}
 }

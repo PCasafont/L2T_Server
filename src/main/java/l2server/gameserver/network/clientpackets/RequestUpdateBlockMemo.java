@@ -22,22 +22,19 @@ import l2server.gameserver.network.serverpackets.BlockListPacket;
 /**
  * @author Erlando
  */
-public class RequestUpdateBlockMemo extends L2GameClientPacket
-{
-
+public class RequestUpdateBlockMemo extends L2GameClientPacket {
+	
 	private String cName;
 	private String memo;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		cName = readS();
 		memo = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
 		player.addBlockMemo(CharNameTable.getInstance().getIdByName(cName), memo);
 		player.sendPacket(new BlockListPacket(player));

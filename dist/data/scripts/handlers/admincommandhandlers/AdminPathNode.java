@@ -23,75 +23,57 @@ import l2server.gameserver.pathfinding.PathFinding;
 
 import java.util.List;
 
-public class AdminPathNode implements IAdminCommandHandler
-{
-	private static final String[] ADMIN_COMMANDS =
-			{"admin_pn_info", "admin_show_path", "admin_path_debug", "admin_show_pn", "admin_find_path",};
-
+public class AdminPathNode implements IAdminCommandHandler {
+	private static final String[] ADMIN_COMMANDS = {"admin_pn_info", "admin_show_path", "admin_path_debug", "admin_show_pn", "admin_find_path",};
+	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (command.equals("admin_pn_info"))
-		{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		if (command.equals("admin_pn_info")) {
 			final String[] info = PathFinding.getInstance().getStat();
-			if (info == null)
-			{
+			if (info == null) {
 				activeChar.sendMessage("Not supported");
-			}
-			else
-			{
-				for (String msg : info)
-				{
+			} else {
+				for (String msg : info) {
 					activeChar.sendMessage(msg);
 				}
 			}
-		}
-		else if (command.equals("admin_show_path"))
-		{
-
-		}
-		else if (command.equals("admin_path_debug"))
-		{
-
-		}
-		else if (command.equals("admin_show_pn"))
-		{
-
-		}
-		else if (command.equals("admin_find_path"))
-		{
-			if (Config.GEODATA < 2)
-			{
+		} else if (command.equals("admin_show_path")) {
+		
+		} else if (command.equals("admin_path_debug")) {
+		
+		} else if (command.equals("admin_show_pn")) {
+		
+		} else if (command.equals("admin_find_path")) {
+			if (Config.GEODATA < 2) {
 				activeChar.sendMessage("PathFinding has not been enabled.");
 				return true;
 			}
-			if (activeChar.getTarget() != null)
-			{
+			if (activeChar.getTarget() != null) {
 				List<AbstractNodeLoc> path = PathFinding.getInstance()
-						.findPath(activeChar.getX(), activeChar.getY(), (short) activeChar.getZ(),
-								activeChar.getTarget().getX(), activeChar.getTarget().getY(),
-								(short) activeChar.getTarget().getZ(), activeChar.getInstanceId(), true);
-				if (path == null)
-				{
+						.findPath(activeChar.getX(),
+								activeChar.getY(),
+								(short) activeChar.getZ(),
+								activeChar.getTarget().getX(),
+								activeChar.getTarget().getY(),
+								(short) activeChar.getTarget().getZ(),
+								activeChar.getInstanceId(),
+								true);
+				if (path == null) {
 					activeChar.sendMessage("No Route!");
 					return true;
 				}
-				for (AbstractNodeLoc a : path)
-				{
+				for (AbstractNodeLoc a : path) {
 					activeChar.sendMessage("x:" + a.getX() + " y:" + a.getY() + " z:" + a.getZ());
 				}
-			}
-			else
-			{
+			} else {
 				activeChar.sendMessage("No Target!");
 			}
 		}
 		return true;
 	}
-
+	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

@@ -404,19 +404,19 @@ class Quest(JQuest):
         elif npcId == MC_MARIA:
             if id == State.STARTED and cond < 5:
                 if ((progress in [1, 8]) and st.getQuestItemsCount(FSN_LIST) == 1) or (
-                            (progress in [2, 9]) and st.getQuestItemsCount(FSN_LIST_DLX) == 1):
+                        (progress in [2, 9]) and st.getQuestItemsCount(FSN_LIST_DLX) == 1):
                     return check_elements(st, progress)
                 elif progress in [3, 4, 5, 6, 7, 10, 11]:
                     return "420_maria_6.htm"
         elif npcId == GD_BYRON:
             if id == State.STARTED and cond < 5:
                 if ((progress in [1, 8]) and st.getQuestItemsCount(FSN_LIST) == 1) or (
-                            (progress in [2, 9]) and st.getQuestItemsCount(FSN_LIST_DLX) == 1):
+                        (progress in [2, 9]) and st.getQuestItemsCount(FSN_LIST_DLX) == 1):
                     return "420_byron_10.htm"
                 elif progress == 7:
                     return "420_byron_9.htm"
                 elif (progress == 3 and st.getQuestItemsCount(FRY_STN) == 1) or (
-                                progress == 4 and st.getQuestItemsCount(FRY_STN_DLX) == 1):
+                        progress == 4 and st.getQuestItemsCount(FRY_STN_DLX) == 1):
                     return "420_byron_1.htm"
                 elif progress == 10 and st.getQuestItemsCount(FRY_STN) == 1:
                     st.set("progress", "12")
@@ -504,7 +504,7 @@ class Quest(JQuest):
         # incipios drop
         skins = st.getQuestItemsCount(TD_BCK_SKN)
         if id == State.STARTED and cond < 5 and (st.getQuestItemsCount(FSN_LIST) == 1 and skins < 10) or (
-                        st.getQuestItemsCount(FSN_LIST_DLX) == 1 and skins < 20):
+                st.getQuestItemsCount(FSN_LIST_DLX) == 1 and skins < 20):
             if npcId == TD_LORD:
                 count = 0
                 if st.getQuestItemsCount(FSN_LIST) == 1:

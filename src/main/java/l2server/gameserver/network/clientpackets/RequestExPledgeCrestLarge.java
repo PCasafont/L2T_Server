@@ -28,39 +28,32 @@ import l2server.gameserver.network.serverpackets.ExPledgeCrestLarge;
  *
  * @author -Wooden-
  */
-public final class RequestExPledgeCrestLarge extends L2GameClientPacket
-{
+public final class RequestExPledgeCrestLarge extends L2GameClientPacket {
 	private int crestId;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		crestId = readD();
 		@SuppressWarnings("unused") int unk = readD();
 		//Log.info(unk + "");
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final byte[][] data = CrestCache.getInstance().getPledgeCrestLarge(crestId);
-		if (data != null)
-		{
-			for (int i = 0; i < data.length; i++)
-			{
-				if (data[i] == null || data[i].length == 0)
-				{
+		if (data != null) {
+			for (int i = 0; i < data.length; i++) {
+				if (data[i] == null || data[i].length == 0) {
 					break;
 				}
-
+				
 				sendPacket(new ExPledgeCrestLarge(crestId, i, data[i]));
 			}
 		}
 	}
-
+	
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

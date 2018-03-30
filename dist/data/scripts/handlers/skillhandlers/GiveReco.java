@@ -29,31 +29,25 @@ import l2server.gameserver.templates.skills.L2SkillType;
 /**
  * @author Gnacik
  */
-public class GiveReco implements ISkillHandler
-{
+public class GiveReco implements ISkillHandler {
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.GIVE_RECO};
 
 	/**
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		for (L2Object obj : targets)
-		{
-			if (obj instanceof L2PcInstance)
-			{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+		for (L2Object obj : targets) {
+			if (obj instanceof L2PcInstance) {
 				L2PcInstance target = (L2PcInstance) obj;
 				int power = (int) skill.getPower();
 				int reco = target.getRecomHave();
 
-				if (reco + power >= 255)
-				{
+				if (reco + power >= 255) {
 					power = 255 - reco;
 				}
 
-				if (power > 0)
-				{
+				if (power > 0) {
 					target.setRecomHave(reco + power);
 
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_OBTAINED_S1_RECOMMENDATIONS);
@@ -62,9 +56,7 @@ public class GiveReco implements ISkillHandler
 					target.sendPacket(sm);
 					target.sendPacket(new UserInfo(target));
 					target.sendPacket(new ExVoteSystemInfo(target));
-				}
-				else
-				{
+				} else {
 					target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));
 				}
 			}
@@ -75,8 +67,7 @@ public class GiveReco implements ISkillHandler
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

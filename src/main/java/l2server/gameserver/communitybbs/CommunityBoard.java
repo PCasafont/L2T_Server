@@ -20,41 +20,30 @@
 package l2server.gameserver.communitybbs;
 
 import l2server.Config;
-import l2server.gameserver.communitybbs.Manager.ClanBBSManager;
-import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
-import l2server.gameserver.communitybbs.Manager.PostBBSManager;
-import l2server.gameserver.communitybbs.Manager.RegionBBSManager;
-import l2server.gameserver.communitybbs.Manager.TopBBSManager;
-import l2server.gameserver.communitybbs.Manager.TopicBBSManager;
+import l2server.gameserver.communitybbs.Manager.*;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ShowBoard;
 
-public class CommunityBoard
-{
-	public static CommunityBoard getInstance()
-	{
+public class CommunityBoard {
+	public static CommunityBoard getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	public void handleCommands(L2GameClient client, String command)
-	{
+	public void handleCommands(L2GameClient client, String command) {
 		L2PcInstance activeChar = client.getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
 		int communityType = Config.COMMUNITY_TYPE;
 
-		if (activeChar.getName().equals("Ghost"))
-		{
+		if (activeChar.getName().equals("Ghost")) {
 			communityType = 2;
 		}
 
-		switch (communityType)
-		{
+		switch (communityType) {
 			default:
 			case 0: // disabled
 				activeChar.sendPacket(SystemMessageId.CB_OFFLINE);
@@ -63,41 +52,25 @@ public class CommunityBoard
 				RegionBBSManager.getInstance().parsecmd(command, activeChar);
 				break;
 			case 2: // new
-				if (command.startsWith("_bbsclan"))
-				{
+				if (command.startsWith("_bbsclan")) {
 					ClanBBSManager.getInstance().parsecmd(command, activeChar);
-				}
-				else if (command.startsWith("_bbsmemo"))
-				{
+				} else if (command.startsWith("_bbsmemo")) {
 					TopicBBSManager.getInstance().parsecmd(command, activeChar);
-				}
-				else if (command.startsWith("_bbstopics"))
-				{
+				} else if (command.startsWith("_bbstopics")) {
 					TopicBBSManager.getInstance().parsecmd(command, activeChar);
-				}
-				else if (command.startsWith("_bbsposts"))
-				{
+				} else if (command.startsWith("_bbsposts")) {
 					PostBBSManager.getInstance().parsecmd(command, activeChar);
-				}
-				else if (command.startsWith("_bbstop"))
-				{
+				} else if (command.startsWith("_bbstop")) {
 					TopBBSManager.getInstance().parsecmd(command, activeChar);
-				}
-				else if (command.startsWith("_bbshome"))
-				{
+				} else if (command.startsWith("_bbshome")) {
 					TopBBSManager.getInstance().parsecmd(command, activeChar);
-				}
-				else if (command.startsWith("_bbsloc"))
-				{
+				} else if (command.startsWith("_bbsloc")) {
 					RegionBBSManager.getInstance().parsecmd(command, activeChar);
 				}
 				// LasTravel
-				else if (command.startsWith("_bbscustom"))
-				{
+				else if (command.startsWith("_bbscustom")) {
 					CustomCommunityBoard.getInstance().parseCmd(command, activeChar);
-				}
-				else
-				{
+				} else {
 					ShowBoard sb = new ShowBoard("<html><body><br><br><center></center><br><br></body></html>", "101");
 					activeChar.sendPacket(sb);
 					activeChar.sendPacket(new ShowBoard(null, "102"));
@@ -116,19 +89,15 @@ public class CommunityBoard
 	 * @param arg4
 	 * @param arg5
 	 */
-	public void handleWriteCommands(L2GameClient client, String url, String arg1, String arg2, String arg3, String arg4, String arg5)
-	{
+	public void handleWriteCommands(L2GameClient client, String url, String arg1, String arg2, String arg3, String arg4, String arg5) {
 		L2PcInstance activeChar = client.getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
-		switch (Config.COMMUNITY_TYPE)
-		{
+		switch (Config.COMMUNITY_TYPE) {
 			case 2:
-				switch (url)
-				{
+				switch (url) {
 					case "Topic":
 						TopicBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
 						break;
@@ -142,8 +111,7 @@ public class CommunityBoard
 						ClanBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
 						break;
 					default:
-						ShowBoard sb =
-								new ShowBoard("<html><body><br><br><center></center><br><br></body></html>", "101");
+						ShowBoard sb = new ShowBoard("<html><body><br><br><center></center><br><br></body></html>", "101");
 						activeChar.sendPacket(sb);
 						activeChar.sendPacket(new ShowBoard(null, "102"));
 						activeChar.sendPacket(new ShowBoard(null, "103"));
@@ -155,9 +123,8 @@ public class CommunityBoard
 				break;
 			default:
 			case 0:
-				ShowBoard sb = new ShowBoard(
-						"<html><body><br><br><center>The Community board is currently disabled</center><br><br></body></html>",
-						"101");
+				ShowBoard sb =
+						new ShowBoard("<html><body><br><br><center>The Community board is currently disabled</center><br><br></body></html>", "101");
 				activeChar.sendPacket(sb);
 				activeChar.sendPacket(new ShowBoard(null, "102"));
 				activeChar.sendPacket(new ShowBoard(null, "103"));
@@ -165,8 +132,7 @@ public class CommunityBoard
 		}
 	}
 
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final CommunityBoard instance = new CommunityBoard();
 	}
 }

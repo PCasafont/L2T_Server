@@ -19,28 +19,23 @@ import l2server.util.StringUtil;
 
 import java.util.List;
 
-public class ShowBoard extends L2GameServerPacket
-{
+public class ShowBoard extends L2GameServerPacket {
 
 	private StringBuilder htmlCode;
 
-	public ShowBoard(String htmlCode, String id)
-	{
-        this.htmlCode = StringUtil.startAppend(500, id, "\u0008", htmlCode);
+	public ShowBoard(String htmlCode, String id) {
+		this.htmlCode = StringUtil.startAppend(500, id, "\u0008", htmlCode);
 	}
 
-	public ShowBoard(List<String> arg)
-	{
+	public ShowBoard(List<String> arg) {
 		htmlCode = StringUtil.startAppend(500, "1002\u0008");
-		for (String str : arg)
-		{
+		for (String str : arg) {
 			StringUtil.append(htmlCode, str, " \u0008");
 		}
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeC(0x01); //c4 1 to show community 00 to hide
 		writeS("bypass _bbshome"); // top
 		writeS("bypass _bbsgetfav"); // favorite
@@ -50,12 +45,9 @@ public class ShowBoard extends L2GameServerPacket
 		writeS("bypass _bbsmail"); // mail
 		writeS("bypass _bbsfriends"); // friends
 		writeS("bypass bbs_add_fav"); // add fav.
-		if (htmlCode.length() < 8192)
-		{
+		if (htmlCode.length() < 8192) {
 			writeS(htmlCode.toString());
-		}
-		else
-		{
+		} else {
 			writeS("<html><body>Html is too long!</body></html>");
 		}
 	}

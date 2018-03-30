@@ -18,42 +18,34 @@ package l2server.gameserver.network.clientpackets;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.ClanWarManager;
 
-public final class RequestReplySurrenderPledgeWar extends L2GameClientPacket
-{
+public final class RequestReplySurrenderPledgeWar extends L2GameClientPacket {
 	//
-
+	
 	private int answer;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		@SuppressWarnings("unused") String reqName = readS();
 		answer = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 		L2PcInstance requestor = activeChar.getActiveRequester();
-		if (requestor == null)
-		{
+		if (requestor == null) {
 			return;
 		}
-
-		if (answer == 1)
-		{
+		
+		if (answer == 1) {
 			requestor.deathPenalty(false, false, false, false);
 			ClanWarManager.getInstance().getWar(requestor.getClan(), activeChar.getClan()).stop();
+		} else {
 		}
-		else
-		{
-		}
-
+		
 		activeChar.onTransactionRequest(null);
 	}
 }

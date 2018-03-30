@@ -31,8 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 
-public class ForumsBBSManager extends BaseBBSManager
-{
+public class ForumsBBSManager extends BaseBBSManager {
 
 	private final List<Forum> table;
 	private int lastid = 1;
@@ -40,31 +39,24 @@ public class ForumsBBSManager extends BaseBBSManager
 	/**
 	 * Instantiates a new forums bbs manager.
 	 */
-	private ForumsBBSManager()
-	{
+	private ForumsBBSManager() {
 		table = new ArrayList<>();
 
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("SELECT forum_id FROM forums WHERE forum_type=0");
 			ResultSet result = statement.executeQuery();
-			while (result.next())
-			{
+			while (result.next()) {
 				int forumId = result.getInt("forum_id");
 				Forum f = new Forum(forumId, null);
 				addForum(f);
 			}
 			result.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Data error on Forum (root): " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
@@ -72,11 +64,9 @@ public class ForumsBBSManager extends BaseBBSManager
 	/**
 	 * Inits the root.
 	 */
-	public void initRoot()
-	{
+	public void initRoot() {
 		List<Forum> copy = new ArrayList<>(table);
-		for (Forum f : copy)
-		{
+		for (Forum f : copy) {
 			f.vload();
 		}
 		Log.info("Loaded " + table.size() + " forums. Last forum id used: " + lastid);
@@ -87,24 +77,20 @@ public class ForumsBBSManager extends BaseBBSManager
 	 *
 	 * @param ff the forum
 	 */
-	public void addForum(Forum ff)
-	{
-		if (ff == null)
-		{
+	public void addForum(Forum ff) {
+		if (ff == null) {
 			return;
 		}
 
 		table.add(ff);
 
-		if (ff.getID() > lastid)
-		{
+		if (ff.getID() > lastid) {
 			lastid = ff.getID();
 		}
 	}
 
 	@Override
-	public void parsecmd(String command, L2PcInstance activeChar)
-	{
+	public void parsecmd(String command, L2PcInstance activeChar) {
 	}
 
 	/**
@@ -113,12 +99,9 @@ public class ForumsBBSManager extends BaseBBSManager
 	 * @param name the forum name
 	 * @return the forum by name
 	 */
-	public Forum getForumByName(String name)
-	{
-		for (Forum f : table)
-		{
-			if (f.getName().equals(name))
-			{
+	public Forum getForumByName(String name) {
+		for (Forum f : table) {
+			if (f.getName().equals(name)) {
 				return f;
 			}
 		}
@@ -135,8 +118,7 @@ public class ForumsBBSManager extends BaseBBSManager
 	 * @param oid    the oid
 	 * @return the new forum
 	 */
-	public Forum createNewForum(String name, Forum parent, int type, int perm, int oid)
-	{
+	public Forum createNewForum(String name, Forum parent, int type, int perm, int oid) {
 		Forum forum = new Forum(name, parent, type, perm, oid);
 		forum.insertIntoDb();
 		return forum;
@@ -147,8 +129,7 @@ public class ForumsBBSManager extends BaseBBSManager
 	 *
 	 * @return the a new Id
 	 */
-	public int getANewID()
-	{
+	public int getANewID() {
 		return ++lastid;
 	}
 
@@ -158,12 +139,9 @@ public class ForumsBBSManager extends BaseBBSManager
 	 * @param idf the the forum Id
 	 * @return the forum by Id
 	 */
-	public Forum getForumByID(int idf)
-	{
-		for (Forum f : table)
-		{
-			if (f.getID() == idf)
-			{
+	public Forum getForumByID(int idf) {
+		for (Forum f : table) {
+			if (f.getID() == idf) {
 				return f;
 			}
 		}
@@ -171,8 +149,7 @@ public class ForumsBBSManager extends BaseBBSManager
 	}
 
 	@Override
-	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, L2PcInstance activeChar)
-	{
+	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, L2PcInstance activeChar) {
 
 	}
 
@@ -181,13 +158,11 @@ public class ForumsBBSManager extends BaseBBSManager
 	 *
 	 * @return single instance of ForumsBBSManager
 	 */
-	public static ForumsBBSManager getInstance()
-	{
+	public static ForumsBBSManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final ForumsBBSManager instance = new ForumsBBSManager();
 	}
 }

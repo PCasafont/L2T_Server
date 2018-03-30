@@ -21,8 +21,7 @@ import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.util.Rnd;
 
-public class EvasGiftBoxes extends Quest
-{
+public class EvasGiftBoxes extends Quest {
 	private static final int GIFTBOX = 32342;
 
 	private static final int KISSOFEVA = 1073;
@@ -34,38 +33,30 @@ public class EvasGiftBoxes extends Quest
 
 	private static final String qn = "EvasGiftBoxes";
 
-	public EvasGiftBoxes(int questId, String name, String descr)
-	{
+	public EvasGiftBoxes(int questId, String name, String descr) {
 		super(questId, name, descr);
 		addKillId(GIFTBOX);
 		addSpawnId(GIFTBOX);
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		return super.onSpawn(npc);
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
-		if (npc.getNpcId() == GIFTBOX)
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+		if (npc.getNpcId() == GIFTBOX) {
 			QuestState st = killer.getQuestState(qn);
-			if (st == null)
-			{
+			if (st == null) {
 				st = newQuestState(killer);
 			}
 			int isKissOfEvaBuffed = 0;
-			if (killer.getFirstEffect(KISSOFEVA) != null)
-			{
+			if (killer.getFirstEffect(KISSOFEVA) != null) {
 				isKissOfEvaBuffed = 1;
 			}
-			for (int i = 0; i < CHANCES[isKissOfEvaBuffed].length; i += 2)
-			{
-				if (Rnd.get(100) < CHANCES[isKissOfEvaBuffed][i])
-				{
+			for (int i = 0; i < CHANCES[isKissOfEvaBuffed].length; i += 2) {
+				if (Rnd.get(100) < CHANCES[isKissOfEvaBuffed][i]) {
 					st.giveItems(CHANCES[isKissOfEvaBuffed][i + 1], 1);
 				}
 			}
@@ -73,8 +64,7 @@ public class EvasGiftBoxes extends Quest
 		return super.onKill(npc, killer, isPet);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new EvasGiftBoxes(-1, qn, "ai");
 	}
 }

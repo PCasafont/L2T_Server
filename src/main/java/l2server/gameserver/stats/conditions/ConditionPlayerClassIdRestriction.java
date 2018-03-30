@@ -23,8 +23,7 @@ import java.util.ArrayList;
 /**
  * The Class ConditionPlayerClassIdRestriction.
  */
-public class ConditionPlayerClassIdRestriction extends Condition
-{
+public class ConditionPlayerClassIdRestriction extends Condition {
 	private final ArrayList<Integer> classIds;
 
 	/**
@@ -32,8 +31,7 @@ public class ConditionPlayerClassIdRestriction extends Condition
 	 *
 	 * @param classId the class id
 	 */
-	public ConditionPlayerClassIdRestriction(ArrayList<Integer> classId)
-	{
+	public ConditionPlayerClassIdRestriction(ArrayList<Integer> classId) {
 		classIds = classId;
 	}
 
@@ -41,10 +39,8 @@ public class ConditionPlayerClassIdRestriction extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 		return classIds.contains(((L2PcInstance) env.player).getCurrentClass().getId());

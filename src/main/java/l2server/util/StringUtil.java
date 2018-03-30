@@ -197,13 +197,11 @@ package l2server.util;
  *
  * @author fordfrog
  */
-public final class StringUtil
-{
-
-	private StringUtil()
-	{
+public final class StringUtil {
+	
+	private StringUtil() {
 	}
-
+	
 	/**
 	 * Concatenates strings.
 	 *
@@ -211,18 +209,16 @@ public final class StringUtil
 	 * @return concatenated string
 	 * @see StringUtil
 	 */
-	public static String concat(final String... strings)
-	{
+	public static String concat(final String... strings) {
 		final StringBuilder sbString = new StringBuilder();
-
-		for (final String string : strings)
-		{
+		
+		for (final String string : strings) {
 			sbString.append(string);
 		}
-
+		
 		return sbString.toString();
 	}
-
+	
 	/**
 	 * Creates new string builder with size initialized to
 	 * <code>sizeHint</code>, unless total length of strings is greater than
@@ -233,19 +229,17 @@ public final class StringUtil
 	 * @return created string builder
 	 * @see StringUtil
 	 */
-	public static StringBuilder startAppend(final int sizeHint, final String... strings)
-	{
+	public static StringBuilder startAppend(final int sizeHint, final String... strings) {
 		final int length = getLength(strings);
 		final StringBuilder sbString = new StringBuilder(sizeHint > length ? sizeHint : length);
-
-		for (final String string : strings)
-		{
+		
+		for (final String string : strings) {
 			sbString.append(string);
 		}
-
+		
 		return sbString;
 	}
-
+	
 	/**
 	 * Appends strings to existing string builder.
 	 *
@@ -253,49 +247,40 @@ public final class StringUtil
 	 * @param strings  strings to be appended
 	 * @see StringUtil
 	 */
-	public static void append(final StringBuilder sbString, final String... strings)
-	{
+	public static void append(final StringBuilder sbString, final String... strings) {
 		sbString.ensureCapacity(sbString.length() + getLength(strings));
-
-		for (final String string : strings)
-		{
+		
+		for (final String string : strings) {
 			sbString.append(string);
 		}
 	}
-
+	
 	/**
 	 * Counts total length of all the strings.
 	 *
 	 * @param strings array of strings
 	 * @return total length of all the strings
 	 */
-	private static int getLength(final String[] strings)
-	{
+	private static int getLength(final String[] strings) {
 		int length = 0;
-
-		for (final String string : strings)
-		{
-			if (string == null)
-			{
+		
+		for (final String string : strings) {
+			if (string == null) {
 				length += 4;
-			}
-			else
-			{
+			} else {
 				length += string.length();
 			}
 		}
-
+		
 		return length;
 	}
-
-	public static String getTraceString(StackTraceElement[] trace)
-	{
+	
+	public static String getTraceString(StackTraceElement[] trace) {
 		final StringBuilder sbString = new StringBuilder();
-		for (final StackTraceElement element : trace)
-		{
+		for (final StackTraceElement element : trace) {
 			sbString.append(element.toString()).append("\n");
 		}
-
+		
 		return sbString.toString();
 	}
 }

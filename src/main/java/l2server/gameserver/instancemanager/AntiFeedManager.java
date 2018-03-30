@@ -15,6 +15,8 @@
 
 package l2server.gameserver.instancemanager;
 
+import gnu.trove.TIntObjectHashMap;
+import gnu.trove.TObjectProcedure;
 import l2server.Config;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -24,11 +26,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import gnu.trove.TIntObjectHashMap;
-import gnu.trove.TObjectProcedure;
-
-public class AntiFeedManager
-{
+public class AntiFeedManager {
 	public static final int GAME_ID = 0;
 	public static final int OLYMPIAD_ID = 1;
 	public static final int TVT_ID = 2;
@@ -36,13 +34,11 @@ public class AntiFeedManager
 	private Map<Integer, Long> lastDeathTimes;
 	private TIntObjectHashMap<Map<Integer, Connections>> eventIPs;
 
-	public static AntiFeedManager getInstance()
-	{
+	public static AntiFeedManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private AntiFeedManager()
-	{
+	private AntiFeedManager() {
 		lastDeathTimes = new ConcurrentHashMap<>();
 		eventIPs = new TIntObjectHashMap<>();
 	}
@@ -52,8 +48,7 @@ public class AntiFeedManager
 	 *
 	 * @param objectId Player's objectId
 	 */
-	public final void setLastDeathTime(int objectId)
-	{
+	public final void setLastDeathTime(int objectId) {
 		lastDeathTimes.put(objectId, System.currentTimeMillis());
 	}
 
@@ -64,86 +59,68 @@ public class AntiFeedManager
 	 * @param target   Target character
 	 * @return True if kill is non-feeded.
 	 */
-	public final boolean check(L2Character attacker, L2Character target)
-	{
-		if (!Config.L2JMOD_ANTIFEED_ENABLE)
-		{
+	public final boolean check(L2Character attacker, L2Character target) {
+		if (!Config.L2JMOD_ANTIFEED_ENABLE) {
 			return true;
 		}
 
-		if (target == null)
-		{
+		if (target == null) {
 			return false;
 		}
 
 		final L2PcInstance targetPlayer = target.getActingPlayer();
-		if (targetPlayer == null)
-		{
+		if (targetPlayer == null) {
 			return false;
 		}
 
-		if (attacker == null)
-		{
+		if (attacker == null) {
 			return false;
 		}
 
 		final L2PcInstance attackerPlayer = attacker.getActingPlayer();
 
-		if (attackerPlayer == null)
-		{
+		if (attackerPlayer == null) {
 			return false;
 		}
 
-		if (attackerPlayer.getClient() == null || targetPlayer.getClient() == null)
-		{
+		if (attackerPlayer.getClient() == null || targetPlayer.getClient() == null) {
 			return false;
 		}
 
 		//External IP check
-		if (attackerPlayer.getExternalIP().equalsIgnoreCase(targetPlayer.getExternalIP()))
-		{
-			if (attackerPlayer.getInternalIP().equalsIgnoreCase(targetPlayer.getInternalIP()))
-			{
+		if (attackerPlayer.getExternalIP().equalsIgnoreCase(targetPlayer.getExternalIP())) {
+			if (attackerPlayer.getInternalIP().equalsIgnoreCase(targetPlayer.getInternalIP())) {
 				return false;
 			}
 		}
 
 		//Level check
-		if (attackerPlayer.getLevel() - 3 > targetPlayer.getLevel())
-		{
+		if (attackerPlayer.getLevel() - 3 > targetPlayer.getLevel()) {
 			return false;
 		}
 
 		//Target defense
-		if (targetPlayer.getPDef(target) < 800)
-		{
+		if (targetPlayer.getPDef(target) < 800) {
 			return false;
 		}
 
 		//Target atk spd
-		if (targetPlayer.isMageClass())
-		{
-			if (targetPlayer.getMAtkSpd() < 800)
-			{
+		if (targetPlayer.isMageClass()) {
+			if (targetPlayer.getMAtkSpd() < 800) {
 				return false;
 			}
-		}
-		else if (targetPlayer.getPAtkSpd() < 600)
-		{
+		} else if (targetPlayer.getPAtkSpd() < 600) {
 			return false;
 		}
 
 		//Clan check
-		return !(attackerPlayer.getClan() != null && targetPlayer.getClan() != null &&
-				attackerPlayer.getClanId() == targetPlayer.getClanId());
-
+		return !(attackerPlayer.getClan() != null && targetPlayer.getClan() != null && attackerPlayer.getClanId() == targetPlayer.getClanId());
 	}
 
 	/**
 	 * Clears all timestamps
 	 */
-	public final void clear()
-	{
+	public final void clear() {
 		lastDeathTimes.clear();
 	}
 
@@ -153,10 +130,8 @@ public class AntiFeedManager
 	 *
 	 * @param eventId
 	 */
-	public final void registerEvent(int eventId)
-	{
-		if (!eventIPs.containsKey(eventId))
-		{
+	public final void registerEvent(int eventId) {
+		if (!eventIPs.containsKey(eventId)) {
 			eventIPs.put(eventId, new HashMap<>());
 		}
 	}
@@ -172,8 +147,7 @@ public class AntiFeedManager
 	 * @param max
 	 * @return
 	 */
-	public final boolean tryAddPlayer(int eventId, L2PcInstance player, int max)
-	{
+	public final boolean tryAddPlayer(int eventId, L2PcInstance player, int max) {
 		return tryAddClient(eventId, player.getClient(), max);
 	}
 
@@ -187,8 +161,7 @@ public class AntiFeedManager
 	 * @param max
 	 * @return
 	 */
-	public final boolean tryAddClient(int eventId, L2GameClient client, int max)
-	{
+	public final boolean tryAddClient(int eventId, L2GameClient client, int max) {
 		return true;
 		/*
         if (client == null)
@@ -224,31 +197,25 @@ public class AntiFeedManager
 	 * @param player
 	 * @return
 	 */
-	public final boolean removePlayer(int eventId, L2PcInstance player)
-	{
+	public final boolean removePlayer(int eventId, L2PcInstance player) {
 		final L2GameClient client = player.getClient();
-		if (client == null)
-		{
+		if (client == null) {
 			return false; // unable to determine IP address
 		}
 
 		final Map<Integer, Connections> event = eventIPs.get(eventId);
-		if (event == null)
-		{
+		if (event == null) {
 			return false; // no such event registered
 		}
 
 		final Integer addrHash = client.getConnectionAddress().hashCode();
 		Connections conns = event.get(addrHash);
-		if (conns == null)
-		{
+		if (conns == null) {
 			return false; // address not registered
 		}
 
-		synchronized (event)
-		{
-			if (conns.testAndDecrement())
-			{
+		synchronized (event) {
+			if (conns.testAndDecrement()) {
 				event.remove(addrHash);
 			}
 		}
@@ -259,10 +226,8 @@ public class AntiFeedManager
 	/**
 	 * Remove player connection IP address from all registered events lists.
 	 */
-	public final void onDisconnect(L2GameClient client)
-	{
-		if (client == null)
-		{
+	public final void onDisconnect(L2GameClient client) {
+		if (client == null) {
 			return;
 		}
 
@@ -275,11 +240,9 @@ public class AntiFeedManager
 	 *
 	 * @param eventId
 	 */
-	public final void clear(int eventId)
-	{
+	public final void clear(int eventId) {
 		final Map<Integer, Connections> event = eventIPs.get(eventId);
-		if (event != null)
-		{
+		if (event != null) {
 			event.clear();
 		}
 	}
@@ -291,8 +254,7 @@ public class AntiFeedManager
 	 * @param max
 	 * @return
 	 */
-	public final int getLimit(L2PcInstance player, int max)
-	{
+	public final int getLimit(L2PcInstance player, int max) {
 		return getLimit(player.getClient(), max);
 	}
 
@@ -303,10 +265,8 @@ public class AntiFeedManager
 	 * @param max
 	 * @return
 	 */
-	public final int getLimit(L2GameClient client, int max)
-	{
-		if (client == null)
-		{
+	public final int getLimit(L2GameClient client, int max) {
+		if (client == null) {
 			return max;
 		}
 
@@ -315,8 +275,7 @@ public class AntiFeedManager
 		return limit < 0 ? 0 : limit + max;
 	}
 
-	private static final class Connections
-	{
+	private static final class Connections {
 		private int num = 0;
 
 		/**
@@ -324,10 +283,8 @@ public class AntiFeedManager
 		 * and false if maximum number is reached.
 		 */
 		@SuppressWarnings("unused")
-		public final synchronized boolean testAndIncrement(int max)
-		{
-			if (num < max)
-			{
+		public final synchronized boolean testAndIncrement(int max) {
+			if (num < max) {
 				num++;
 				return true;
 			}
@@ -337,10 +294,8 @@ public class AntiFeedManager
 		/**
 		 * Returns true if all connections are removed
 		 */
-		public final synchronized boolean testAndDecrement()
-		{
-			if (num > 0)
-			{
+		public final synchronized boolean testAndDecrement() {
+			if (num > 0) {
 				num--;
 			}
 
@@ -348,25 +303,19 @@ public class AntiFeedManager
 		}
 	}
 
-	private static final class DisconnectProcedure implements TObjectProcedure<Map<Integer, Connections>>
-	{
+	private static final class DisconnectProcedure implements TObjectProcedure<Map<Integer, Connections>> {
 		private final Integer addrHash;
 
-		public DisconnectProcedure(Integer addrHash)
-		{
+		public DisconnectProcedure(Integer addrHash) {
 			this.addrHash = addrHash;
 		}
 
 		@Override
-		public final boolean execute(Map<Integer, Connections> event)
-		{
+		public final boolean execute(Map<Integer, Connections> event) {
 			final Connections conns = event.get(addrHash);
-			if (conns != null)
-			{
-				synchronized (event)
-				{
-					if (conns.testAndDecrement())
-					{
+			if (conns != null) {
+				synchronized (event) {
+					if (conns.testAndDecrement()) {
 						event.remove(addrHash);
 					}
 				}
@@ -376,8 +325,7 @@ public class AntiFeedManager
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final AntiFeedManager instance = new AntiFeedManager();
 	}
 }

@@ -22,8 +22,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-public class ConditionLogicNot extends Condition
-{
+public class ConditionLogicNot extends Condition {
 
 	private Condition condition;
 
@@ -32,11 +31,9 @@ public class ConditionLogicNot extends Condition
 	 *
 	 * @param condition the condition
 	 */
-	public ConditionLogicNot(Condition condition)
-	{
+	public ConditionLogicNot(Condition condition) {
 		this.condition = condition;
-		if (getListener() != null)
-		{
+		if (getListener() != null) {
 			condition.setListener(this);
 		}
 	}
@@ -48,14 +45,10 @@ public class ConditionLogicNot extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#setListener(l2server.gameserver.stats.conditions.ConditionListener)
 	 */
 	@Override
-	void setListener(ConditionListener listener)
-	{
-		if (listener != null)
-		{
+	void setListener(ConditionListener listener) {
+		if (listener != null) {
 			condition.setListener(this);
-		}
-		else
-		{
+		} else {
 			condition.setListener(null);
 		}
 		super.setListener(listener);
@@ -69,8 +62,7 @@ public class ConditionLogicNot extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		return !condition.test(env);
 	}
 }

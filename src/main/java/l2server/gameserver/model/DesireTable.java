@@ -37,76 +37,63 @@ import java.util.Map;
  * @version $Revision$ $Date$
  */
 
-public class DesireTable
-{
-	public static final DesireType[] DEFAULT_DESIRES =
-			{DesireType.FEAR, DesireType.DISLIKE, DesireType.HATE, DesireType.DAMAGE};
+public class DesireTable {
+	public static final DesireType[] DEFAULT_DESIRES = {DesireType.FEAR, DesireType.DISLIKE, DesireType.HATE, DesireType.DAMAGE};
 
-	public enum DesireType
-	{
-		FEAR, DISLIKE, HATE, DAMAGE
+	public enum DesireType {
+		FEAR,
+		DISLIKE,
+		HATE,
+		DAMAGE
 	}
 
-	static class DesireValue
-	{
+	static class DesireValue {
 		private float value;
 
-		DesireValue()
-		{
+		DesireValue() {
 			this(0f);
 		}
 
-		DesireValue(Float pValue)
-		{
+		DesireValue(Float pValue) {
 			value = pValue;
 		}
 
-		public void addValue(float pValue)
-		{
+		public void addValue(float pValue) {
 			value += pValue;
 		}
 
-		public float getValue()
-		{
+		public float getValue() {
 			return value;
 		}
 	}
 
-	class Desires
-	{
+	class Desires {
 		private Map<DesireType, DesireValue> desireTable;
 
-		public Desires(DesireType... desireList)
-		{
+		public Desires(DesireType... desireList) {
 			desireTable = new HashMap<>();
 
-			for (DesireType desire : desireList)
-			{
+			for (DesireType desire : desireList) {
 				desireTable.put(desire, new DesireValue());
 			}
 		}
 
-		public DesireValue getDesireValue(DesireType type)
-		{
+		public DesireValue getDesireValue(DesireType type) {
 			return desireTable.get(type);
 		}
 
-		public void addValue(DesireType type, float value)
-		{
+		public void addValue(DesireType type, float value) {
 			DesireValue temp = getDesireValue(type);
-			if (temp != null)
-			{
+			if (temp != null) {
 				temp.addValue(value);
 			}
 		}
 
-		public void createDesire(DesireType type)
-		{
+		public void createDesire(DesireType type) {
 			desireTable.put(type, new DesireValue());
 		}
 
-		public void deleteDesire(DesireType type)
-		{
+		public void deleteDesire(DesireType type) {
 			desireTable.remove(type);
 		}
 	}
@@ -115,82 +102,65 @@ public class DesireTable
 	private Desires generalDesires;
 	private DesireType[] desireTypes;
 
-	public DesireTable(DesireType... desireList)
-	{
+	public DesireTable(DesireType... desireList) {
 		desireTypes = desireList;
 		objectDesireTable = new HashMap<>();
 		generalDesires = new Desires(desireTypes);
 	}
 
-	public float getDesireValue(DesireType type)
-	{
+	public float getDesireValue(DesireType type) {
 		return generalDesires.getDesireValue(type).getValue();
 	}
 
-	public float getDesireValue(L2Object object, DesireType type)
-	{
+	public float getDesireValue(L2Object object, DesireType type) {
 		Desires desireList = objectDesireTable.get(object);
-		if (desireList == null)
-		{
+		if (desireList == null) {
 			return 0f;
 		}
 		return desireList.getDesireValue(type).getValue();
 	}
 
-	public void addDesireValue(DesireType type, float value)
-	{
+	public void addDesireValue(DesireType type, float value) {
 		generalDesires.addValue(type, value);
 	}
 
-	public void addDesireValue(L2Object object, DesireType type, float value)
-	{
+	public void addDesireValue(L2Object object, DesireType type, float value) {
 		Desires desireList = objectDesireTable.get(object);
-		if (desireList != null)
-		{
+		if (desireList != null) {
 			desireList.addValue(type, value);
 		}
 	}
 
-	public void createDesire(DesireType type)
-	{
+	public void createDesire(DesireType type) {
 		generalDesires.createDesire(type);
 	}
 
-	public void deleteDesire(DesireType type)
-	{
+	public void deleteDesire(DesireType type) {
 		generalDesires.deleteDesire(type);
 	}
 
-	public void createDesire(L2Object object, DesireType type)
-	{
+	public void createDesire(L2Object object, DesireType type) {
 		Desires desireList = objectDesireTable.get(object);
-		if (desireList != null)
-		{
+		if (desireList != null) {
 			desireList.createDesire(type);
 		}
 	}
 
-	public void deleteDesire(L2Object object, DesireType type)
-	{
+	public void deleteDesire(L2Object object, DesireType type) {
 		Desires desireList = objectDesireTable.get(object);
-		if (desireList != null)
-		{
+		if (desireList != null) {
 			desireList.deleteDesire(type);
 		}
 	}
 
-	public void addKnownObject(L2Object object)
-	{
-		if (object != null)
-		{
+	public void addKnownObject(L2Object object) {
+		if (object != null) {
 			addKnownObject(object, DesireType.DISLIKE, DesireType.FEAR, DesireType.DAMAGE, DesireType.HATE);
 		}
 	}
 
-	public void addKnownObject(L2Object object, DesireType... desireList)
-	{
-		if (object != null)
-		{
+	public void addKnownObject(L2Object object, DesireType... desireList) {
+		if (object != null) {
 			objectDesireTable.put(object, new Desires(desireList));
 		}
 	}

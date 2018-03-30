@@ -22,36 +22,29 @@ import l2server.gameserver.templates.item.L2Item;
 /**
  * @author Erlandys
  */
-public class ExCrystalizingEstimation extends L2GameServerPacket
-{
-
+public class ExCrystalizingEstimation extends L2GameServerPacket {
+	
 	private L2Item item;
 	private long crystalCount;
-
-	public ExCrystalizingEstimation(L2Item item, long crystalCount)
-	{
+	
+	public ExCrystalizingEstimation(L2Item item, long crystalCount) {
 		this.item = item;
 		this.crystalCount = crystalCount;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
-		if (Config.ENABLE_CRYSTALLIZE_REWARDS && item.getCrystallizeRewards() != null)
-		{
+	protected final void writeImpl() {
+		if (Config.ENABLE_CRYSTALLIZE_REWARDS && item.getCrystallizeRewards() != null) {
 			writeD(item.getCrystallizeRewards().length + 1);
 			writeD(item.getCrystalItemId());
 			writeQ(crystalCount);
 			writeF(100.0);
-			for (L2CrystallizeReward reward : item.getCrystallizeRewards())
-			{
+			for (L2CrystallizeReward reward : item.getCrystallizeRewards()) {
 				writeD(reward.getItemId());
 				writeQ(reward.getCount());
 				writeF(reward.getChance());
 			}
-		}
-		else
-		{
+		} else {
 			writeD(1);
 			writeD(item.getCrystalItemId());
 			writeQ(crystalCount);

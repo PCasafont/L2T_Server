@@ -28,53 +28,43 @@ import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.util.Rnd;
 
-public class L2SkillDecoy extends L2Skill
-{
+public class L2SkillDecoy extends L2Skill {
 	private final int npcId;
 	private final int summonTotalLifeTime;
 
-	public L2SkillDecoy(StatsSet set)
-	{
+	public L2SkillDecoy(StatsSet set) {
 		super(set);
 		npcId = set.getInteger("npcId", 0);
 		summonTotalLifeTime = set.getInteger("summonTotalLifeTime", 20000);
 	}
 
 	@Override
-	public void useSkill(L2Character caster, L2Object[] targets)
-	{
-		if (caster.isAlikeDead() || !(caster instanceof L2PcInstance))
-		{
+	public void useSkill(L2Character caster, L2Object[] targets) {
+		if (caster.isAlikeDead() || !(caster instanceof L2PcInstance)) {
 			return;
 		}
 
-		if (npcId == 0)
-		{
+		if (npcId == 0) {
 			return;
 		}
 
 		final L2PcInstance activeChar = (L2PcInstance) caster;
 
-		if (activeChar.inObserverMode())
-		{
+		if (activeChar.inObserverMode()) {
 			return;
 		}
 
-		if (activeChar.getPet() != null || activeChar.isMounted() || !activeChar.getSummons().isEmpty())
-		{
+		if (activeChar.getPet() != null || activeChar.isMounted() || !activeChar.getSummons().isEmpty()) {
 			return;
 		}
 
 		L2NpcTemplate decoyTemplate = NpcTable.getInstance().getTemplate(npcId);
 
 		//TODO LasTravel, let's fix it by skill name, because for example Confusion Decoy have same npcIds as clone attak...
-		if (getName().equalsIgnoreCase("Clone Attack"))
-		{
+		if (getName().equalsIgnoreCase("Clone Attack")) {
 			float angle = Rnd.get(1000);
-			for (int i = 0; i < 3; i++)
-			{
-				final L2DecoyInstance decoy =
-						new L2DecoyInstance(IdFactory.getInstance().getNextId(), decoyTemplate, activeChar, this);
+			for (int i = 0; i < 3; i++) {
+				final L2DecoyInstance decoy = new L2DecoyInstance(IdFactory.getInstance().getNextId(), decoyTemplate, activeChar, this);
 				decoy.setCurrentHp(decoy.getMaxHp());
 				decoy.setCurrentMp(decoy.getMaxMp());
 				decoy.setHeading(activeChar.getHeading());
@@ -89,11 +79,8 @@ public class L2SkillDecoy extends L2Skill
 
 				angle += 1000 / 3;
 			}
-		}
-		else
-		{
-			final L2DecoyInstance decoy =
-					new L2DecoyInstance(IdFactory.getInstance().getNextId(), decoyTemplate, activeChar, this);
+		} else {
+			final L2DecoyInstance decoy = new L2DecoyInstance(IdFactory.getInstance().getNextId(), decoyTemplate, activeChar, this);
 			decoy.setCurrentHp(decoy.getMaxHp());
 			decoy.setCurrentMp(decoy.getMaxMp());
 			decoy.setHeading(activeChar.getHeading());
@@ -103,11 +90,9 @@ public class L2SkillDecoy extends L2Skill
 		}
 
 		// self Effect
-		if (hasSelfEffects())
-		{
+		if (hasSelfEffects()) {
 			final L2Abnormal effect = activeChar.getFirstEffect(getId());
-			if (effect != null && effect.isSelfEffect())
-			{
+			if (effect != null && effect.isSelfEffect()) {
 				//Replace old effect with new one.
 				effect.exit();
 			}
@@ -115,8 +100,7 @@ public class L2SkillDecoy extends L2Skill
 		}
 	}
 
-	public final int getTotalLifeTime()
-	{
+	public final int getTotalLifeTime() {
 		return summonTotalLifeTime;
 	}
 }

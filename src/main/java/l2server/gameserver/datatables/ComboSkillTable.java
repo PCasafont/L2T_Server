@@ -27,12 +27,9 @@ import java.util.Map;
 /**
  * @author Pere
  */
-public class ComboSkillTable
-{
-	public class Combo
-	{
-		public Combo(int i)
-		{
+public class ComboSkillTable {
+	public class Combo {
+		public Combo(int i) {
 			id = i;
 		}
 
@@ -42,25 +39,19 @@ public class ComboSkillTable
 
 	private Map<Integer, Combo> combos = new HashMap<>();
 
-	private ComboSkillTable()
-	{
-		if (Config.IS_CLASSIC)
-		{
+	private ComboSkillTable() {
+		if (Config.IS_CLASSIC) {
 			return;
 		}
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "comboSkills.xml");
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("combo"))
-			{
+		for (XmlNode n : doc.getChildren()) {
+			if (n.getName().equalsIgnoreCase("combo")) {
 				int id = n.getInt("id");
 				Combo combo = new Combo(id);
-				for (XmlNode d : n.getChildren())
-				{
-					if (d.getName().equalsIgnoreCase("skill"))
-					{
+				for (XmlNode d : n.getChildren()) {
+					if (d.getName().equalsIgnoreCase("skill")) {
 						int skillId = d.getInt("id");
 						int usedSkill = d.getInt("used");
 						combo.skills.put(skillId, usedSkill);
@@ -74,19 +65,16 @@ public class ComboSkillTable
 		Log.info("Combo Skill table: loaded " + combos.size() + " combos.");
 	}
 
-	public Combo getCombo(int id)
-	{
+	public Combo getCombo(int id) {
 		return combos.get(id);
 	}
 
-	public static ComboSkillTable getInstance()
-	{
+	public static ComboSkillTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final ComboSkillTable instance = new ComboSkillTable();
 	}
 }

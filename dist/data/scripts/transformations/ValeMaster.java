@@ -4,31 +4,25 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class ValeMaster extends L2Transformation
-{
+public class ValeMaster extends L2Transformation {
 	private static final int[] SKILLS = {742, 743, 744, 745, 5491, 619};
-
-	public ValeMaster()
-	{
+	
+	public ValeMaster() {
 		// id, colRadius, colHeight
 		super(4, 12, 40);
 	}
-
+	
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 4 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 4 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
-
+		
 		transformedSkills();
 	}
-
-	public void transformedSkills()
-	{
-		if (getPlayer().getLevel() >= 76)
-		{
+	
+	public void transformedSkills() {
+		if (getPlayer().getLevel() >= 76) {
 			// Vale Master Bursting Flame (up to 3 levels)
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(742, 3), false);
 			// Vale Master Dark Explosion (up to 3 levels)
@@ -37,9 +31,7 @@ public class ValeMaster extends L2Transformation
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(744, 3), false);
 			// Vale Master Dark Cure (up to 3 levels)
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(745, 3), false);
-		}
-		else if (getPlayer().getLevel() >= 73)
-		{
+		} else if (getPlayer().getLevel() >= 73) {
 			// Vale Master Bursting Flame (up to 3 levels)
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(742, 2), false);
 			// Vale Master Dark Explosion (up to 3 levels)
@@ -48,9 +40,7 @@ public class ValeMaster extends L2Transformation
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(744, 2), false);
 			// Vale Master Dark Cure (up to 3 levels)
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(745, 2), false);
-		}
-		else if (getPlayer().getLevel() >= 70)
-		{
+		} else if (getPlayer().getLevel() >= 70) {
 			// Vale Master Bursting Flame (up to 3 levels)
 			getPlayer().addSkill(SkillTable.getInstance().getInfo(742, 1), false);
 			// Vale Master Dark Explosion (up to 3 levels)
@@ -64,20 +54,17 @@ public class ValeMaster extends L2Transformation
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(5491, 1), false);
 		// Transform Dispel
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(619, 1), false);
-
+		
 		getPlayer().setTransformAllowedSkills(SKILLS);
 	}
-
+	
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
-
-	public void removeSkills()
-	{
-		if (getPlayer().getLevel() >= 76)
-		{
+	
+	public void removeSkills() {
+		if (getPlayer().getLevel() >= 76) {
 			// Vale Master Bursting Flame (up to 3 levels)
 			getPlayer().removeSkill(SkillTable.getInstance().getInfo(742, 3), false);
 			// Vale Master Dark Explosion (up to 3 levels)
@@ -86,9 +73,7 @@ public class ValeMaster extends L2Transformation
 			getPlayer().removeSkill(SkillTable.getInstance().getInfo(744, 3), false);
 			// Vale Master Dark Cure (up to 3 levels)
 			getPlayer().removeSkill(SkillTable.getInstance().getInfo(745, 3), false);
-		}
-		else if (getPlayer().getLevel() >= 73)
-		{
+		} else if (getPlayer().getLevel() >= 73) {
 			// Vale Master Bursting Flame (up to 3 levels)
 			getPlayer().removeSkill(SkillTable.getInstance().getInfo(742, 2), false);
 			// Vale Master Dark Explosion (up to 3 levels)
@@ -97,9 +82,7 @@ public class ValeMaster extends L2Transformation
 			getPlayer().removeSkill(SkillTable.getInstance().getInfo(744, 2), false);
 			// Vale Master Dark Cure (up to 3 levels)
 			getPlayer().removeSkill(SkillTable.getInstance().getInfo(745, 2), false);
-		}
-		else
-		{
+		} else {
 			// Vale Master Bursting Flame (up to 3 levels)
 			getPlayer().removeSkill(SkillTable.getInstance().getInfo(742, 1), false);
 			// Vale Master Dark Explosion (up to 3 levels)
@@ -113,12 +96,11 @@ public class ValeMaster extends L2Transformation
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(5491, 1), false);
 		// Transform Dispel
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(619, 1), false);
-
+		
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
-
-	public static void main(String[] args)
-	{
+	
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new ValeMaster());
 	}
 }

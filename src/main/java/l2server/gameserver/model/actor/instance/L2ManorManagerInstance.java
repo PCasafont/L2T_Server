@@ -18,36 +18,28 @@ package l2server.gameserver.model.actor.instance;
 import l2server.gameserver.instancemanager.CastleManorManager;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 
-public class L2ManorManagerInstance extends L2MerchantInstance
-{
-	public L2ManorManagerInstance(int objectId, L2NpcTemplate template)
-	{
+public class L2ManorManagerInstance extends L2MerchantInstance {
+	public L2ManorManagerInstance(int objectId, L2NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2ManorManagerInstance);
 	}
-
+	
 	@Override
-	public String getHtmlPath(int npcId, int val)
-	{
+	public String getHtmlPath(int npcId, int val) {
 		return "manormanager/manager.htm";
 	}
-
+	
 	@Override
-	public void showChatWindow(L2PcInstance player)
-	{
-		if (CastleManorManager.getInstance().isDisabled())
-		{
+	public void showChatWindow(L2PcInstance player) {
+		if (CastleManorManager.getInstance().isDisabled()) {
 			showChatWindowByFileName(player, "npcdefault.htm");
 			return;
 		}
-
+		
 		if (!player.isGM() && getCastle() != null && getCastle().getCastleId() > 0 && player.getClan() != null &&
-				getCastle().getOwnerId() == player.getClanId() && player.isClanLeader())
-		{
+				getCastle().getOwnerId() == player.getClanId() && player.isClanLeader()) {
 			showChatWindowByFileName(player, "manormanager/manager-lord.htm");
-		}
-		else
-		{
+		} else {
 			showChatWindowByFileName(player, "manormanager/manager.htm");
 		}
 	}

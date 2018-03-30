@@ -26,88 +26,68 @@ import java.util.logging.Level;
 /**
  * @author DS
  */
-public class PcRefund extends ItemContainer
-{
+public class PcRefund extends ItemContainer {
 	private L2PcInstance owner;
 
-	public PcRefund(L2PcInstance owner)
-	{
+	public PcRefund(L2PcInstance owner) {
 		this.owner = owner;
 	}
 
 	@Override
-	public String getName()
-	{
+	public String getName() {
 		return "Refund";
 	}
 
 	@Override
-	public L2PcInstance getOwner()
-	{
+	public L2PcInstance getOwner() {
 		return owner;
 	}
 
 	@Override
-	public ItemLocation getBaseLocation()
-	{
+	public ItemLocation getBaseLocation() {
 		return ItemLocation.REFUND;
 	}
 
 	@Override
-	protected void addItem(L2ItemInstance item)
-	{
+	protected void addItem(L2ItemInstance item) {
 		super.addItem(item);
-		try
-		{
-			if (getSize() > 12)
-			{
+		try {
+			if (getSize() > 12) {
 				L2ItemInstance removedItem = null;
-				synchronized (items)
-				{
+				synchronized (items) {
 					removedItem = items.remove(0);
 				}
 
-				if (removedItem != null)
-				{
+				if (removedItem != null) {
 					ItemTable.getInstance().destroyItem("ClearRefund", removedItem, getOwner(), null);
 					removedItem.updateDatabase(true);
 				}
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "addItem()", e);
 		}
 	}
 
 	@Override
-	public void refreshWeight()
-	{
+	public void refreshWeight() {
 	}
 
 	@Override
-	public void deleteMe()
-	{
-		try
-		{
-			for (L2ItemInstance item : items.values())
-			{
-				if (item != null)
-				{
+	public void deleteMe() {
+		try {
+			for (L2ItemInstance item : items.values()) {
+				if (item != null) {
 					ItemTable.getInstance().destroyItem("ClearRefund", item, getOwner(), null);
 					item.updateDatabase(true);
 				}
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "deleteMe()", e);
 		}
 		items.clear();
 	}
 
 	@Override
-	public void restore()
-	{
+	public void restore() {
 	}
 }

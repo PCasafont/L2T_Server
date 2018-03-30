@@ -24,45 +24,37 @@ import java.util.Map;
 /**
  * @author Max
  */
-public class SkillTargetTypeHandler
-{
+public class SkillTargetTypeHandler {
 	private Map<Enum<L2SkillTargetType>, ISkillTargetTypeHandler> datatable;
 
-	public static SkillTargetTypeHandler getInstance()
-	{
+	public static SkillTargetTypeHandler getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private SkillTargetTypeHandler()
-	{
+	private SkillTargetTypeHandler() {
 		datatable = new HashMap<>();
 	}
 
-	public void registerSkillTargetType(ISkillTargetTypeHandler handler)
-	{
+	public void registerSkillTargetType(ISkillTargetTypeHandler handler) {
 		Enum<L2SkillTargetType> ids = handler.getTargetType();
 		datatable.put(ids, handler);
 	}
 
-	public ISkillTargetTypeHandler getSkillTarget(Enum<L2SkillTargetType> skillTargetType)
-	{
+	public ISkillTargetTypeHandler getSkillTarget(Enum<L2SkillTargetType> skillTargetType) {
 
-		Log.fine("getting handler for command: " + skillTargetType.toString() + " -> " + (datatable.get(
-				skillTargetType) != null));
+		Log.fine("getting handler for command: " + skillTargetType.toString() + " -> " + (datatable.get(skillTargetType) != null));
 		return datatable.get(skillTargetType);
 	}
 
 	/**
 	 * @return
 	 */
-	public int size()
-	{
+	public int size() {
 		return datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final SkillTargetTypeHandler instance = new SkillTargetTypeHandler();
 	}
 }

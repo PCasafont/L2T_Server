@@ -43,21 +43,18 @@ import java.util.List;
  *
  * @author mrTJO & UnAfraid
  */
-public class FriendListExtended extends L2GameServerPacket
-{
+public class FriendListExtended extends L2GameServerPacket {
 	//
 	private final List<FriendInfo> info;
-
-	private static class FriendInfo
-	{
+	
+	private static class FriendInfo {
 		int objId;
 		String name;
 		boolean online;
 		int classid;
 		int level;
-
-		public FriendInfo(int objId, String name, boolean online, int classid, int level)
-		{
+		
+		public FriendInfo(int objId, String name, boolean online, int classid, int level) {
 			this.objId = objId;
 			this.name = name;
 			this.online = online;
@@ -65,69 +62,53 @@ public class FriendListExtended extends L2GameServerPacket
 			this.level = level;
 		}
 	}
-
-	public FriendListExtended(L2PcInstance player)
-	{
+	
+	public FriendListExtended(L2PcInstance player) {
 		info = new ArrayList<>(player.getFriendList().size());
-		for (int objId : player.getFriendList())
-		{
+		for (int objId : player.getFriendList()) {
 			String name = CharNameTable.getInstance().getNameById(objId);
 			L2PcInstance player1 = L2World.getInstance().getPlayer(objId);
-
+			
 			boolean online = false;
 			int classid = 0;
 			int level = 0;
-
-			if (player1 == null)
-			{
+			
+			if (player1 == null) {
 				Connection con = null;
-				try
-				{
+				try {
 					con = L2DatabaseFactory.getInstance().getConnection();
-					PreparedStatement statement = con.prepareStatement(
-							"SELECT char_name, online, classid, level FROM characters WHERE charId = ?");
+					PreparedStatement statement = con.prepareStatement("SELECT char_name, online, classid, level FROM characters WHERE charId = ?");
 					statement.setInt(1, objId);
 					ResultSet rset = statement.executeQuery();
-					if (rset.next())
-					{
-						info.add(new FriendInfo(objId, rset.getString(1), rset.getInt(2) == 1, rset.getInt(3),
-								rset.getInt(4)));
-					}
-					else
-					{
+					if (rset.next()) {
+						info.add(new FriendInfo(objId, rset.getString(1), rset.getInt(2) == 1, rset.getInt(3), rset.getInt(4)));
+					} else {
 						continue;
 					}
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					// Who cares?
-				}
-				finally
-				{
+				} finally {
 					L2DatabaseFactory.close(con);
 				}
-
+				
 				continue;
 			}
-
-			if (player1.isOnline())
-			{
+			
+			if (player1.isOnline()) {
 				online = true;
 			}
-
+			
 			classid = player1.getCurrentClass().getId(); //getClassId().getId();
 			level = player1.getLevel();
-
+			
 			info.add(new FriendInfo(objId, name, online, classid, level));
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(info.size());
-		for (FriendInfo info : info)
-		{
+		for (FriendInfo info : info) {
 			writeD(info.objId); // character id
 			writeS(info.name);
 			writeD(info.online ? 0x01 : 0x00); // online

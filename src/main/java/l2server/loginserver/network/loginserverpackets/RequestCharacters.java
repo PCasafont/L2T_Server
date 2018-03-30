@@ -19,12 +19,10 @@ import l2server.util.network.BaseSendablePacket;
 
 /**
  * @author mrTJO
- *         Thanks to mochitto
+ * Thanks to mochitto
  */
-public class RequestCharacters extends BaseSendablePacket
-{
-	public RequestCharacters(String account)
-	{
+public class RequestCharacters extends BaseSendablePacket {
+	public RequestCharacters(String account) {
 		writeC(0x05);
 		writeS(account);
 	}
@@ -33,8 +31,7 @@ public class RequestCharacters extends BaseSendablePacket
 	 * @see l2server.util.network.BaseSendablePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent()
-	{
+	public byte[] getContent() {
 		return getBytes();
 	}
 }

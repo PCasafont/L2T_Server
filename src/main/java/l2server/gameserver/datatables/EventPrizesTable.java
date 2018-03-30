@@ -36,54 +36,42 @@ import java.util.Map;
 /**
  * @author Pere
  */
-public class EventPrizesTable implements Reloadable
-{
+public class EventPrizesTable implements Reloadable {
 	private final Map<String, List<EventPrize>> prizes = new HashMap<>();
 
-	private EventPrizesTable()
-	{
+	private EventPrizesTable() {
 		ReloadableManager.getInstance().register("eventprizes", this);
 
 		load();
 	}
 
-	public void load()
-	{
+	public void load() {
 		prizes.clear();
 
 		XmlDocument doc = new XmlDocument(new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "eventPrizes.xml"));
 		int przCount = 0;
-		for (XmlNode n : doc.getChildren())
-		{
-			if (!n.getName().equals("list"))
-			{
+		for (XmlNode n : doc.getChildren()) {
+			if (!n.getName().equals("list")) {
 				continue;
 			}
 
-			for (XmlNode prizeNode : n.getChildren())
-			{
-				if (!prizeNode.getName().equals("prizeList"))
-				{
+			for (XmlNode prizeNode : n.getChildren()) {
+				if (!prizeNode.getName().equals("prizeList")) {
 					continue;
 				}
 
 				String name = prizeNode.getString("name");
-				for (XmlNode node : prizeNode.getChildren())
-				{
+				for (XmlNode node : prizeNode.getChildren()) {
 					List<EventPrize> list = prizes.get(name);
-					if (list == null)
-					{
+					if (list == null) {
 						list = new ArrayList<>();
 						prizes.put(name, list);
 					}
 
-					if (node.getName().equalsIgnoreCase("prizeItem"))
-					{
+					if (node.getName().equalsIgnoreCase("prizeItem")) {
 						list.add(new EventPrizeItem(node));
 						przCount++;
-					}
-					else if (node.getName().equalsIgnoreCase("prizeCategory"))
-					{
+					} else if (node.getName().equalsIgnoreCase("prizeCategory")) {
 						list.add(new EventPrizeCategory(node));
 						przCount++;
 					}
@@ -94,49 +82,38 @@ public class EventPrizesTable implements Reloadable
 		Log.info("Event Prizes Table: loaded " + przCount + " prizes in " + prizes.size() + " categories.");
 	}
 
-	public void rewardPlayer(String prizeName, L2PcInstance player, float teamMultiplier, float performanceMultiplier)
-	{
+	public void rewardPlayer(String prizeName, L2PcInstance player, float teamMultiplier, float performanceMultiplier) {
 		List<EventPrize> list = prizes.get(prizeName);
-		if (list == null)
-		{
+		if (list == null) {
 			return;
 		}
 
-		for (EventPrize prize : list)
-		{
+		for (EventPrize prize : list) {
 			float multiplier = teamMultiplier;
-			if (prize.dependsOnPerformance())
-			{
+			if (prize.dependsOnPerformance()) {
 				multiplier *= performanceMultiplier;
 			}
 
 			float chance = prize.getChance() * multiplier;
-			if (chance < 100.0f)
-			{
+			if (chance < 100.0f) {
 				float rnd = Rnd.get(100000) / 1000.0f;
-				if (chance < rnd)
-				{
+				if (chance < rnd) {
 					continue;
 				}
 
 				multiplier = 1.0f;
-			}
-			else
-			{
+			} else {
 				multiplier = chance / 100.0f;
 			}
 
-			while (multiplier > 0)
-			{
+			while (multiplier > 0) {
 				EventPrizeItem prizeItem = prize.getItem();
 				float mul = 1.0f;
-				if (multiplier < 1.0f)
-				{
+				if (multiplier < 1.0f) {
 					mul = multiplier;
 				}
 				int prizeCount = Math.round(Rnd.get(prizeItem.getMin(), prizeItem.getMax()) * mul);
-				if (prizeCount > 0)
-				{
+				if (prizeCount > 0) {
 					player.addItem("Event", prizeItem.getId(), prizeCount, player, true);
 				}
 
@@ -146,24 +123,20 @@ public class EventPrizesTable implements Reloadable
 	}
 
 	@Override
-	public boolean reload()
-	{
+	public boolean reload() {
 		load();
 		return true;
 	}
 
 	@Override
-	public String getReloadMessage(boolean success)
-	{
+	public String getReloadMessage(boolean success) {
 		return "Event prizes reloaded";
 	}
 
 	private static EventPrizesTable instance;
 
-	public static EventPrizesTable getInstance()
-	{
-		if (instance == null)
-		{
+	public static EventPrizesTable getInstance() {
+		if (instance == null) {
 			instance = new EventPrizesTable();
 		}
 

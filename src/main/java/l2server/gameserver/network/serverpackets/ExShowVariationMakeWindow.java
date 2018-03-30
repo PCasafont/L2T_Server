@@ -21,13 +21,11 @@ package l2server.gameserver.network.serverpackets;
  *
  * @author KenM
  */
-public class ExShowVariationMakeWindow extends L2GameServerPacket
-{
-
+public class ExShowVariationMakeWindow extends L2GameServerPacket {
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 	}
 }

@@ -15,10 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
-import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
-import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
-
 import l2server.Config;
 import l2server.gameserver.datatables.AccessLevels;
 import l2server.gameserver.datatables.CharNameTable;
@@ -30,20 +26,19 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExNoticePostSent;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.ItemList;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.StringUtil;
 
+import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
+import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
+import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
+
 /**
  * @author Pere, DS
  */
-public final class RequestSendPost extends L2GameClientPacket
-{
+public final class RequestSendPost extends L2GameClientPacket {
 
 	private static final int BATCH_LENGTH = 12; // length of the one item
 
@@ -64,34 +59,27 @@ public final class RequestSendPost extends L2GameClientPacket
 	private AttachmentItem items[] = null;
 	private long reqAdena;
 
-	public RequestSendPost()
-	{
+	public RequestSendPost() {
 	}
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		receiver = readS();
 		isCod = readD() != 0;
 		subject = readS();
 		text = readS();
 
 		int attachCount = readD();
-		if (attachCount < 0 || attachCount > Config.MAX_ITEM_IN_PACKET ||
-				attachCount * BATCH_LENGTH + 8 != buf.remaining())
-		{
+		if (attachCount < 0 || attachCount > Config.MAX_ITEM_IN_PACKET || attachCount * BATCH_LENGTH + 8 != buf.remaining()) {
 			return;
 		}
 
-		if (attachCount > 0)
-		{
+		if (attachCount > 0) {
 			items = new AttachmentItem[attachCount];
-			for (int i = 0; i < attachCount; i++)
-			{
+			for (int i = 0; i < attachCount; i++) {
 				int objectId = readD();
 				long count = readQ();
-				if (objectId < 1 || count < 0)
-				{
+				if (objectId < 1 || count < 0) {
 					items = null;
 					return;
 				}
@@ -103,168 +91,135 @@ public final class RequestSendPost extends L2GameClientPacket
 	}
 
 	@Override
-	public void runImpl()
-	{
-		if (!Config.ALLOW_MAIL)
-		{
+	public void runImpl() {
+		if (!Config.ALLOW_MAIL) {
 			return;
 		}
 
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
-		if (!Config.ALLOW_ATTACHMENTS)
-		{
+		if (!Config.ALLOW_ATTACHMENTS) {
 			items = null;
 			isCod = false;
 			reqAdena = 0;
 		}
 
-		if (!activeChar.getAccessLevel().allowTransaction())
-		{
+		if (!activeChar.getAccessLevel().allowTransaction()) {
 			activeChar.sendMessage("Transactions are disable for your Access Level.");
 			return;
 		}
 
-		if (!activeChar.isInsideZone(ZONE_PEACE) && items != null)
-		{
+		if (!activeChar.isInsideZone(ZONE_PEACE) && items != null) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_FORWARD_NOT_IN_PEACE_ZONE));
 			return;
 		}
 
-		if (activeChar.getActiveTradeList() != null)
-		{
+		if (activeChar.getActiveTradeList() != null) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_FORWARD_DURING_EXCHANGE));
 			return;
 		}
 
-		if (activeChar.isEnchanting())
-		{
+		if (activeChar.isEnchanting()) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_FORWARD_DURING_ENCHANT));
 			return;
 		}
 
-		if (activeChar.getPrivateStoreType() > 0)
-		{
+		if (activeChar.getPrivateStoreType() > 0) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_FORWARD_PRIVATE_STORE));
 			return;
 		}
 
-		if (receiver.length() > MAX_RECV_LENGTH)
-		{
-			activeChar
-					.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALLOWED_LENGTH_FOR_RECIPIENT_EXCEEDED));
+		if (receiver.length() > MAX_RECV_LENGTH) {
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALLOWED_LENGTH_FOR_RECIPIENT_EXCEEDED));
 			return;
 		}
 
-		if (subject.length() > MAX_SUBJ_LENGTH)
-		{
+		if (subject.length() > MAX_SUBJ_LENGTH) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALLOWED_LENGTH_FOR_TITLE_EXCEEDED));
 			return;
 		}
 
-		if (text.length() > MAX_TEXT_LENGTH)
-		{
+		if (text.length() > MAX_TEXT_LENGTH) {
 			// not found message for this
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALLOWED_LENGTH_FOR_TITLE_EXCEEDED));
 			return;
 		}
 
-		if (items != null && items.length > MAX_ATTACHMENTS)
-		{
+		if (items != null && items.length > MAX_ATTACHMENTS) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ITEM_SELECTION_POSSIBLE_UP_TO_8));
 			return;
 		}
 
-		if (reqAdena < 0 || reqAdena > MAX_ADENA)
-		{
+		if (reqAdena < 0 || reqAdena > MAX_ADENA) {
 			return;
 		}
 
-		if (isCod)
-		{
-			if (reqAdena == 0)
-			{
+		if (isCod) {
+			if (reqAdena == 0) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PAYMENT_AMOUNT_NOT_ENTERED));
 				return;
 			}
-			if (items == null || items.length == 0)
-			{
+			if (items == null || items.length == 0) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PAYMENT_REQUEST_NO_ITEM));
 				return;
 			}
 		}
 
 		final int receiverId = CharNameTable.getInstance().getIdByName(receiver);
-		if (receiverId <= 0)
-		{
+		if (receiverId <= 0) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.RECIPIENT_NOT_EXIST));
 			return;
 		}
 
-		if (receiverId == activeChar.getObjectId())
-		{
+		if (receiverId == activeChar.getObjectId()) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANT_SEND_MAIL_TO_YOURSELF));
 			return;
 		}
 
 		L2AccessLevel accessLevel;
 		final int level = CharNameTable.getInstance().getAccessLevelById(receiverId);
-		if (level == AccessLevels.masterAccessLevelNum)
-		{
+		if (level == AccessLevels.masterAccessLevelNum) {
 			accessLevel = AccessLevels.masterAccessLevel;
-		}
-		else if (level == AccessLevels.userAccessLevelNum)
-		{
+		} else if (level == AccessLevels.userAccessLevelNum) {
 			accessLevel = AccessLevels.userAccessLevel;
-		}
-		else
-		{
+		} else {
 			accessLevel = AccessLevels.getInstance().getAccessLevel(level);
-			if (accessLevel == null)
-			{
+			if (accessLevel == null) {
 				accessLevel = AccessLevels.userAccessLevel;
 			}
 		}
 
-		if (accessLevel.isGm() && !activeChar.getAccessLevel().isGm())
-		{
+		if (accessLevel.isGm() && !activeChar.getAccessLevel().isGm()) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_MAIL_GM_C1);
 			sm.addString(receiver);
 			activeChar.sendPacket(sm);
 			return;
 		}
 
-		if (activeChar.isInJail() && (Config.JAIL_DISABLE_TRANSACTION && items != null || Config.JAIL_DISABLE_CHAT))
-		{
+		if (activeChar.isInJail() && (Config.JAIL_DISABLE_TRANSACTION && items != null || Config.JAIL_DISABLE_CHAT)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_FORWARD_NOT_IN_PEACE_ZONE));
 			return;
 		}
 
-		if (BlockList.isInBlockList(receiverId, activeChar.getObjectId()))
-		{
-			activeChar.sendPacket(
-					SystemMessage.getSystemMessage(SystemMessageId.C1_BLOCKED_YOU_CANNOT_MAIL).addString(receiver));
+		if (BlockList.isInBlockList(receiverId, activeChar.getObjectId())) {
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.C1_BLOCKED_YOU_CANNOT_MAIL).addString(receiver));
 			return;
 		}
 
-		if (MailManager.getInstance().getOutboxSize(activeChar.getObjectId()) >= OUTBOX_SIZE)
-		{
+		if (MailManager.getInstance().getOutboxSize(activeChar.getObjectId()) >= OUTBOX_SIZE) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_FORWARD_MAIL_LIMIT_EXCEEDED));
 			return;
 		}
 
-		if (MailManager.getInstance().getInboxSize(receiverId) >= INBOX_SIZE)
-		{
+		if (MailManager.getInstance().getInboxSize(receiverId) >= INBOX_SIZE) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_FORWARD_MAIL_LIMIT_EXCEEDED));
 			return;
 		}
 
-		if (!getClient().getFloodProtectors().getSendMail().tryPerformAction("sendmail"))
-		{
+		if (!getClient().getFloodProtectors().getSendMail().tryPerformAction("sendmail")) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_FORWARD_LESS_THAN_MINUTE));
 			return;
 		}
@@ -272,59 +227,54 @@ public final class RequestSendPost extends L2GameClientPacket
 		Message msg = new Message(activeChar.getObjectId(), receiverId, isCod, subject, text, reqAdena);
 
 		Util.logToFile(activeChar.getName() + " is sending a Mail[" + msg.getId() + "] to " + receiver + ".",
-				"Logs/Mails/" + activeChar.getName() + "_Sent_Mails", "txt", true, true);
+				"Logs/Mails/" + activeChar.getName() + "_Sent_Mails",
+				"txt",
+				true,
+				true);
 
-		if (removeItems(activeChar, msg))
-		{
+		if (removeItems(activeChar, msg)) {
 			MailManager.getInstance().sendMessage(msg);
 			activeChar.sendPacket(ExNoticePostSent.valueOf(true));
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MAIL_SUCCESSFULLY_SENT));
 		}
 	}
 
-	private boolean removeItems(L2PcInstance player, Message msg)
-	{
+	private boolean removeItems(L2PcInstance player, Message msg) {
 		long currentAdena = player.getAdena();
 		long fee = MESSAGE_FEE;
 
-		if (items != null)
-		{
-			for (AttachmentItem i : items)
-			{
+		if (items != null) {
+			for (AttachmentItem i : items) {
 				// Check validity of requested item
 				L2ItemInstance item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "attach");
-				if (item == null || !item.isTradeable() || item.isEquipped())
-				{
-					Util.logToFile(
-							"- Could not Attach " + (item == null ? i.getObjectId() : item.getName()) + ". Aborting.",
-							"Logs/Mails/" + player.getName() + "_Sent_Mails", "txt", true, false);
+				if (item == null || !item.isTradeable() || item.isEquipped()) {
+					Util.logToFile("- Could not Attach " + (item == null ? i.getObjectId() : item.getName()) + ". Aborting.",
+							"Logs/Mails/" + player.getName() + "_Sent_Mails",
+							"txt",
+							true,
+							false);
 					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_FORWARD_BAD_ITEM));
 					return false;
 				}
 
 				fee += MESSAGE_FEE_PER_SLOT;
 
-				if (item.getItemId() == ADENA_ID)
-				{
+				if (item.getItemId() == ADENA_ID) {
 					currentAdena -= i.getCount();
 				}
 			}
 		}
 
 		// Check if enough adena and charge the fee
-		if (currentAdena < fee || !player.reduceAdena("MailFee", fee, null, false))
-		{
-			Util.logToFile("- Couldn't take fees. Aborting.", "Logs/Mails/" + player.getName() + "_Sent_Mails", "txt",
-					true, false);
+		if (currentAdena < fee || !player.reduceAdena("MailFee", fee, null, false)) {
+			Util.logToFile("- Couldn't take fees. Aborting.", "Logs/Mails/" + player.getName() + "_Sent_Mails", "txt", true, false);
 
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_FORWARD_NO_ADENA));
 			return false;
 		}
 
-		if (items == null)
-		{
-			Util.logToFile("- Mail has no attachments. Sending.", "Logs/Mails/" + player.getName() + "_Sent_Mails",
-					"txt", true, false);
+		if (items == null) {
+			Util.logToFile("- Mail has no attachments. Sending.", "Logs/Mails/" + player.getName() + "_Sent_Mails", "txt", true, false);
 
 			return true;
 		}
@@ -332,10 +282,8 @@ public final class RequestSendPost extends L2GameClientPacket
 		Mail attachments = msg.createAttachments();
 
 		// message already has attachments ? oO
-		if (attachments == null)
-		{
-			Util.logToFile("- Attachments were null. Aborting.", "Logs/Mails/" + player.getName() + "_Sent_Mails",
-					"txt", true, false);
+		if (attachments == null) {
+			Util.logToFile("- Attachments were null. Aborting.", "Logs/Mails/" + player.getName() + "_Sent_Mails", "txt", true, false);
 
 			return false;
 		}
@@ -346,59 +294,56 @@ public final class RequestSendPost extends L2GameClientPacket
 
 		// Proceed to the transfer
 		InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
-		for (AttachmentItem i : items)
-		{
+		for (AttachmentItem i : items) {
 			// Check validity of requested item
 			L2ItemInstance oldItem = player.checkItemManipulation(i.getObjectId(), i.getCount(), "attach");
-			if (oldItem == null || !oldItem.isTradeable() || oldItem.isEquipped())
-			{
+			if (oldItem == null || !oldItem.isTradeable() || oldItem.isEquipped()) {
 				Log.warning("Error adding attachment for char " + player.getName() + " (olditem == null)");
 
-				Util.logToFile(
-						"- Could not delete old item " + (oldItem == null ? i.getObjectId() : oldItem.getName()) +
-								". Aborting.", "Logs/Mails/" + player.getName() + "_Sent_Mails", "txt", true, false);
+				Util.logToFile("- Could not delete old item " + (oldItem == null ? i.getObjectId() : oldItem.getName()) + ". Aborting.",
+						"Logs/Mails/" + player.getName() + "_Sent_Mails",
+						"txt",
+						true,
+						false);
 
 				return false;
 			}
 
-			final L2ItemInstance newItem = player.getInventory()
-					.transferItem("send mail to " + receiver, i.getObjectId(), i.getCount(), attachments, player,
-							receiver);
-			if (newItem == null)
-			{
+			final L2ItemInstance newItem =
+					player.getInventory().transferItem("send mail to " + receiver, i.getObjectId(), i.getCount(), attachments, player, receiver);
+			if (newItem == null) {
 				Log.warning("Error adding attachment for char " + player.getName() + " (newitem == null)");
 
 				Util.logToFile("- Could not transfer " + oldItem.getName() + ". Aborting.",
-						"Logs/Mails/" + player.getName() + "_Sent_Mails", "txt", true, false);
+						"Logs/Mails/" + player.getName() + "_Sent_Mails",
+						"txt",
+						true,
+						false);
 
 				continue;
 			}
 
 			newItem.setLocation(newItem.getLocation(), msg.getId());
 
-			if (playerIU != null)
-			{
-				if (oldItem.getCount() > 0 && oldItem != newItem)
-				{
+			if (playerIU != null) {
+				if (oldItem.getCount() > 0 && oldItem != newItem) {
 					playerIU.addModifiedItem(oldItem);
-				}
-				else
-				{
+				} else {
 					playerIU.addRemovedItem(oldItem);
 				}
 			}
 
 			Util.logToFile("- Attached " + newItem.getName() + ", Count = " + newItem.getCount() + ".",
-					"Logs/Mails/" + player.getName() + "_Sent_Mails", "txt", true, false);
+					"Logs/Mails/" + player.getName() + "_Sent_Mails",
+					"txt",
+					true,
+					false);
 		}
 
 		// Send updated item list to the player
-		if (playerIU != null)
-		{
+		if (playerIU != null) {
 			player.sendPacket(playerIU);
-		}
-		else
-		{
+		} else {
 			player.sendPacket(new ItemList(player, false));
 		}
 
@@ -410,31 +355,26 @@ public final class RequestSendPost extends L2GameClientPacket
 		return true;
 	}
 
-	private static class AttachmentItem
-	{
+	private static class AttachmentItem {
 		private final int objectId;
 		private final long count;
 
-		public AttachmentItem(int id, long num)
-		{
+		public AttachmentItem(int id, long num) {
 			objectId = id;
 			count = num;
 		}
 
-		public int getObjectId()
-		{
+		public int getObjectId() {
 			return objectId;
 		}
 
-		public long getCount()
-		{
+		public long getCount() {
 			return count;
 		}
 	}
 
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

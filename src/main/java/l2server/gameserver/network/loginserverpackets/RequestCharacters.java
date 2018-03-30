@@ -19,14 +19,12 @@ import l2server.util.network.BaseRecievePacket;
 
 /**
  * @author mrTJO
- *         Thanks to mochitto
+ * Thanks to mochitto
  */
-public class RequestCharacters extends BaseRecievePacket
-{
+public class RequestCharacters extends BaseRecievePacket {
 	private String account;
 
-	public RequestCharacters(byte[] decrypt)
-	{
+	public RequestCharacters(byte[] decrypt) {
 		super(decrypt);
 		account = readS();
 	}
@@ -34,8 +32,7 @@ public class RequestCharacters extends BaseRecievePacket
 	/**
 	 * @return Return account name
 	 */
-	public String getAccount()
-	{
+	public String getAccount() {
 		return account;
 	}
 }

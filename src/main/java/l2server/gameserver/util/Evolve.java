@@ -27,11 +27,7 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.MagicSkillLaunched;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 
@@ -39,26 +35,20 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.logging.Level;
 
-public final class Evolve
-{
-	public static boolean doEvolve(L2PcInstance player, L2Npc npc, int itemIdtake, int itemIdgive, int petminlvl)
-	{
-		if (itemIdtake == 0 || itemIdgive == 0 || petminlvl == 0)
-		{
+public final class Evolve {
+	public static boolean doEvolve(L2PcInstance player, L2Npc npc, int itemIdtake, int itemIdgive, int petminlvl) {
+		if (itemIdtake == 0 || itemIdgive == 0 || petminlvl == 0) {
 			return false;
 		}
 
 		L2PetInstance pet = player.getPet();
 
-		if (pet == null)
-		{
+		if (pet == null) {
 			return false;
 		}
 
-		if (pet.isAlikeDead())
-		{
-			Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to use death pet exploit!",
-					Config.DEFAULT_PUNISH);
+		if (pet.isAlikeDead()) {
+			Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to use death pet exploit!", Config.DEFAULT_PUNISH);
 			return false;
 		}
 
@@ -71,29 +61,25 @@ public final class Evolve
 
 		L2SummonItem olditem = SummonItemsData.getInstance().getSummonItem(itemIdtake);
 
-		if (olditem == null)
-		{
+		if (olditem == null) {
 			return false;
 		}
 
 		int oldnpcID = olditem.getNpcId();
 
-		if (pet.getStat().getLevel() < petminlvl || pet.getNpcId() != oldnpcID)
-		{
+		if (pet.getStat().getLevel() < petminlvl || pet.getNpcId() != oldnpcID) {
 			return false;
 		}
 
 		L2SummonItem sitem = SummonItemsData.getInstance().getSummonItem(itemIdgive);
 
-		if (sitem == null)
-		{
+		if (sitem == null) {
 			return false;
 		}
 
 		int npcID = sitem.getNpcId();
 
-		if (npcID == 0)
-		{
+		if (npcID == 0) {
 			return false;
 		}
 
@@ -109,15 +95,13 @@ public final class Evolve
 		//Summoning new pet
 		L2PetInstance petSummon = L2PetInstance.spawnPet(npcTemplate, player, item);
 
-		if (petSummon == null)
-		{
+		if (petSummon == null) {
 			return false;
 		}
 
 		// Fix for non-linear baby pet exp
 		long minimumexp = petSummon.getStat().getExpForLevel(petminlvl);
-		if (petexp < minimumexp)
-		{
+		if (petexp < minimumexp) {
 			petexp = minimumexp;
 		}
 
@@ -141,52 +125,42 @@ public final class Evolve
 
 		ThreadPoolManager.getInstance().scheduleGeneral(new EvolveFinalizer(player, petSummon), 900);
 
-		if (petSummon.getCurrentFed() <= 0)
-		{
+		if (petSummon.getCurrentFed() <= 0) {
 			ThreadPoolManager.getInstance().scheduleGeneral(new EvolveFeedWait(player, petSummon), 60000);
-		}
-		else
-		{
+		} else {
 			petSummon.startFeed();
 		}
 
 		return true;
 	}
 
-	public static boolean doRestore(L2PcInstance player, L2Npc npc, int itemIdtake, int itemIdgive, int petminlvl)
-	{
-		if (itemIdtake == 0 || itemIdgive == 0 || petminlvl == 0)
-		{
+	public static boolean doRestore(L2PcInstance player, L2Npc npc, int itemIdtake, int itemIdgive, int petminlvl) {
+		if (itemIdtake == 0 || itemIdgive == 0 || petminlvl == 0) {
 			return false;
 		}
 
 		L2ItemInstance item = player.getInventory().getItemByItemId(itemIdtake);
-		if (item == null)
-		{
+		if (item == null) {
 			return false;
 		}
 
 		int oldpetlvl = item.getEnchantLevel();
-		if (oldpetlvl < petminlvl)
-		{
+		if (oldpetlvl < petminlvl) {
 			oldpetlvl = petminlvl;
 		}
 
 		L2SummonItem oldItem = SummonItemsData.getInstance().getSummonItem(itemIdtake);
-		if (oldItem == null)
-		{
+		if (oldItem == null) {
 			return false;
 		}
 
 		L2SummonItem sItem = SummonItemsData.getInstance().getSummonItem(itemIdgive);
-		if (sItem == null)
-		{
+		if (sItem == null) {
 			return false;
 		}
 
 		int npcId = sItem.getNpcId();
-		if (npcId == 0)
-		{
+		if (npcId == 0) {
 			return false;
 		}
 
@@ -201,8 +175,7 @@ public final class Evolve
 
 		//Summoning new pet
 		L2PetInstance petSummon = L2PetInstance.spawnPet(npcTemplate, player, addedItem);
-		if (petSummon == null)
-		{
+		if (petSummon == null) {
 			return false;
 		}
 
@@ -241,91 +214,68 @@ public final class Evolve
 
 		ThreadPoolManager.getInstance().scheduleGeneral(new EvolveFinalizer(player, petSummon), 900);
 
-		if (petSummon.getCurrentFed() <= 0)
-		{
+		if (petSummon.getCurrentFed() <= 0) {
 			ThreadPoolManager.getInstance().scheduleGeneral(new EvolveFeedWait(player, petSummon), 60000);
-		}
-		else
-		{
+		} else {
 			petSummon.startFeed();
 		}
 
 		// pet control item no longer exists, delete the pet from the db
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("DELETE FROM pets WHERE item_obj_id=?");
 			statement.setInt(1, removedItem.getObjectId());
 			statement.execute();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 
 		return true;
 	}
 
-	static final class EvolveFeedWait implements Runnable
-	{
+	static final class EvolveFeedWait implements Runnable {
 		private final L2PcInstance activeChar;
 		private final L2PetInstance petSummon;
 
-		EvolveFeedWait(L2PcInstance activeChar, L2PetInstance petSummon)
-		{
+		EvolveFeedWait(L2PcInstance activeChar, L2PetInstance petSummon) {
 			this.activeChar = activeChar;
 			this.petSummon = petSummon;
 		}
 
 		@Override
-		public void run()
-		{
-			try
-			{
-				if (petSummon.getCurrentFed() <= 0)
-				{
+		public void run() {
+			try {
+				if (petSummon.getCurrentFed() <= 0) {
 					petSummon.unSummon(activeChar);
-				}
-				else
-				{
+				} else {
 					petSummon.startFeed();
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.log(Level.WARNING, "", e);
 			}
 		}
 	}
 
-	static final class EvolveFinalizer implements Runnable
-	{
+	static final class EvolveFinalizer implements Runnable {
 		private final L2PcInstance activeChar;
 		private final L2PetInstance petSummon;
 
-		EvolveFinalizer(L2PcInstance activeChar, L2PetInstance petSummon)
-		{
+		EvolveFinalizer(L2PcInstance activeChar, L2PetInstance petSummon) {
 			this.activeChar = activeChar;
 			this.petSummon = petSummon;
 		}
 
 		@Override
-		public void run()
-		{
-			try
-			{
+		public void run() {
+			try {
 				activeChar.sendPacket(new MagicSkillLaunched(activeChar, 2046, 1));
 				petSummon.setFollowStatus(true);
 				petSummon.setShowSummonAnimation(false);
-			}
-			catch (Throwable e)
-			{
+			} catch (Throwable e) {
 				Log.log(Level.WARNING, "", e);
 			}
 		}

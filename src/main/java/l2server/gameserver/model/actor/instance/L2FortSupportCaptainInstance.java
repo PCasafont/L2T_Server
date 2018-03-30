@@ -31,206 +31,118 @@ import java.util.StringTokenizer;
 /**
  * @author Vice
  */
-public class L2FortSupportCaptainInstance extends L2MerchantInstance implements L2SquadTrainer
-{
-	public L2FortSupportCaptainInstance(int objectID, L2NpcTemplate template)
-	{
+public class L2FortSupportCaptainInstance extends L2MerchantInstance implements L2SquadTrainer {
+	public L2FortSupportCaptainInstance(int objectID, L2NpcTemplate template) {
 		super(objectID, template);
 		setInstanceType(InstanceType.L2FortSupportCaptainInstance);
 	}
-
-	private static final int[] TalismanIds = {
-			9914,
-			9915,
-			9917,
-			9918,
-			9919,
-			9920,
-			9921,
-			9922,
-			9923,
-			9924,
-			9926,
-			9927,
-			9928,
-			9930,
-			9931,
-			9932,
-			9933,
-			9934,
-			9935,
-			9936,
-			9937,
-			9938,
-			9939,
-			9940,
-			9941,
-			9942,
-			9943,
-			9944,
-			9945,
-			9946,
-			9947,
-			9948,
-			9949,
-			9950,
-			9951,
-			9952,
-			9953,
-			9954,
-			9955,
-			9956,
-			9957,
-			9958,
-			9959,
-			9960,
-			9961,
-			9962,
-			9963,
-			9964,
-			9965,
-			9966,
-			10141,
-			10142,
-			10158
-	};
-
+	
+	private static final int[] TalismanIds =
+			{9914, 9915, 9917, 9918, 9919, 9920, 9921, 9922, 9923, 9924, 9926, 9927, 9928, 9930, 9931, 9932, 9933, 9934, 9935, 9936, 9937, 9938, 9939,
+					9940, 9941, 9942, 9943, 9944, 9945, 9946, 9947, 9948, 9949, 9950, 9951, 9952, 9953, 9954, 9955, 9956, 9957, 9958, 9959, 9960,
+					9961, 9962, 9963, 9964, 9965, 9966, 10141, 10142, 10158};
+	
 	@Override
-	public void onBypassFeedback(L2PcInstance player, String command)
-	{
+	public void onBypassFeedback(L2PcInstance player, String command) {
 		// BypassValidation Exploit plug.
-		if (player.getLastFolkNPC().getObjectId() != getObjectId())
-		{
+		if (player.getLastFolkNPC().getObjectId() != getObjectId()) {
 			return;
 		}
-
+		
 		StringTokenizer st = new StringTokenizer(command, " ");
 		String actualCommand = st.nextToken(); // Get actual command
-
+		
 		String par = "";
-		if (st.countTokens() >= 1)
-		{
+		if (st.countTokens() >= 1) {
 			par = st.nextToken();
 		}
-
-		if (actualCommand.equalsIgnoreCase("Chat"))
-		{
+		
+		if (actualCommand.equalsIgnoreCase("Chat")) {
 			int val = 0;
-			try
-			{
+			try {
 				val = Integer.parseInt(par);
+			} catch (IndexOutOfBoundsException | NumberFormatException ignored) {
 			}
-			catch (IndexOutOfBoundsException | NumberFormatException ignored)
-			{
-			}
-
+			
 			showMessageWindow(player, val);
-		}
-		else if (actualCommand.equalsIgnoreCase("ExchangeKE"))
-		{
+		} else if (actualCommand.equalsIgnoreCase("ExchangeKE")) {
 			final int itemId = TalismanIds[Rnd.get(TalismanIds.length)];
-			if (player.exchangeItemsById("FortSupportUnitExchangeKE", this, 9912, 10, itemId, 1, true))
-			{
+			if (player.exchangeItemsById("FortSupportUnitExchangeKE", this, 9912, 10, itemId, 1, true)) {
 				String filename = "fortress/supportunit-talisman.htm";
 				showChatWindowByFileName(player, filename);
-			}
-			else
-			{
+			} else {
 				String filename = "fortress/supportunit-noepau.htm";
 				showChatWindowByFileName(player, filename);
 			}
-		}
-		else if (command.equals("subskills"))
-		{
-			if (player.getClan() != null)
-			{
-				if (player.isClanLeader())
-				{
+		} else if (command.equals("subskills")) {
+			if (player.getClan() != null) {
+				if (player.isClanLeader()) {
 					ExAcquireSkillList skilllist = new ExAcquireSkillList(SkillType.SubUnit);
 					SubUnitSkill[] array = SubPledgeSkillTree.getInstance().getAvailableSkills(player.getClan());
-					if (array.length == 0)
-					{
+					if (array.length == 0) {
 						player.sendPacket(SystemMessageId.NO_MORE_SKILLS_TO_LEARN);
 						return;
 					}
-					for (SubUnitSkill sus : array)
-					{
-						skilllist.addSkill(sus.getSkill().getId(), sus.getSkill().getLevel(), sus.getSkill().getLevel(),
-								sus.getReputation(), 0);
+					for (SubUnitSkill sus : array) {
+						skilllist.addSkill(sus.getSkill().getId(), sus.getSkill().getLevel(), sus.getSkill().getLevel(), sus.getReputation(), 0);
 					}
 					player.sendPacket(skilllist);
-				}
-				else
-				{
+				} else {
 					String filename = "fortress/supportunit-nosquad.htm";
 					showChatWindowByFileName(player, filename);
 				}
 			}
-		}
-		else
-		{
+		} else {
 			super.onBypassFeedback(player, command);
 		}
 	}
-
+	
 	@Override
-	public void showChatWindow(L2PcInstance player)
-	{
-		if (player.getClan() == null || getFort().getOwnerClan() == null ||
-				player.getClan() != getFort().getOwnerClan())
-		{
+	public void showChatWindow(L2PcInstance player) {
+		if (player.getClan() == null || getFort().getOwnerClan() == null || player.getClan() != getFort().getOwnerClan()) {
 			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 			html.setFile(player.getHtmlPrefix(), "fortress/supportunit-noclan.htm");
 			html.replace("%objectId%", String.valueOf(getObjectId()));
 			player.sendPacket(html);
 			return;
 		}
-
+		
 		showMessageWindow(player, 0);
 	}
-
-	private void showMessageWindow(L2PcInstance player, int val)
-	{
+	
+	private void showMessageWindow(L2PcInstance player, int val) {
 		player.sendPacket(ActionFailed.STATIC_PACKET);
-
+		
 		String filename;
-
-		if (val == 0)
-		{
+		
+		if (val == 0) {
 			filename = "fortress/supportunit.htm";
-		}
-		else
-		{
+		} else {
 			filename = "fortress/supportunit-" + val + ".htm";
 		}
-
+		
 		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 		html.setFile(player.getHtmlPrefix(), filename);
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		html.replace("%npcId%", String.valueOf(getNpcId()));
-		if (getFort().getOwnerClan() != null)
-		{
+		if (getFort().getOwnerClan() != null) {
 			html.replace("%clanname%", getFort().getOwnerClan().getName());
-		}
-		else
-		{
+		} else {
 			html.replace("%clanname%", "NPC");
 		}
 		player.sendPacket(html);
 	}
-
+	
 	@Override
-	public boolean hasRandomAnimation()
-	{
+	public boolean hasRandomAnimation() {
 		return false;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.model.actor.L2SquadTrainer#showSubUnitSkillList(l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	@Override
-	public void showSubUnitSkillList(L2PcInstance player)
-	{
+	public void showSubUnitSkillList(L2PcInstance player) {
 		onBypassFeedback(player, "subskills");
 	}
 }

@@ -29,77 +29,61 @@ import l2server.gameserver.network.serverpackets.AgitDecoInfo;
  *
  * @author durgus
  */
-public class L2ClanHallZone extends L2SpawnZone
-{
+public class L2ClanHallZone extends L2SpawnZone {
 	private int clanHallId;
 
-	public L2ClanHallZone(int id)
-	{
+	public L2ClanHallZone(int id) {
 		super(id);
 	}
 
 	@Override
-	public void setParameter(String name, String value)
-	{
-		if (name.equals("clanHallId"))
-		{
+	public void setParameter(String name, String value) {
+		if (name.equals("clanHallId")) {
 			clanHallId = Integer.parseInt(value);
 			// Register self to the correct clan hall
 			ClanHall ch = ClanHallManager.getInstance().getClanHallById(clanHallId);
-			if (ch != null)
-			{
+			if (ch != null) {
 				ch.setZone(this);
 			}
-		}
-		else
-		{
+		} else {
 			super.setParameter(name, value);
 		}
 	}
 
 	@Override
-	protected void onEnter(L2Character character)
-	{
-		if (character instanceof L2PcInstance)
-		{
+	protected void onEnter(L2Character character) {
+		if (character instanceof L2PcInstance) {
 			// Set as in clan hall
 			character.setInsideZone(L2Character.ZONE_CLANHALL, true);
 
 			ClanHall clanHall = ClanHallManager.getInstance().getClanHallById(clanHallId);
-			if (clanHall == null)
-			{
+			if (clanHall == null) {
 				return;
 			}
 
 			// Send decoration packet
 			AgitDecoInfo deco = new AgitDecoInfo(clanHall);
 			character.sendPacket(deco);
-		}
-		else if (character instanceof L2Attackable && ((L2Attackable) character).getMostHated() != null)
-		{
+		} else if (character instanceof L2Attackable && ((L2Attackable) character).getMostHated() != null) {
 			((L2Attackable) character).escape("Do you want to kidnap me in this dirty clan hall? No, thanks :)");
 			((L2Attackable) character).getMostHated().reduceCurrentHp(100000, character, null);
 		}
 	}
 
 	@Override
-	protected void onExit(L2Character character)
-	{
-		if (character instanceof L2PcInstance)
-		{
+	protected void onExit(L2Character character) {
+		if (character instanceof L2PcInstance) {
 			// Unset clanhall zone
 			character.setInsideZone(L2Character.ZONE_CLANHALL, false);
 		}
 	}
 
 	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
+	public void onDieInside(L2Character character, L2Character killer) {
 	}
 
 	@Override
-	public void onReviveInside(L2Character character)
-	{
+	public void onReviveInside(L2Character character) {
 	}
 
 	/**
@@ -107,16 +91,12 @@ public class L2ClanHallZone extends L2SpawnZone
 	 *
 	 * @param owningClanId
 	 */
-	public void banishForeigners(int owningClanId)
-	{
-		for (L2Character temp : characterList.values())
-		{
-			if (!(temp instanceof L2PcInstance))
-			{
+	public void banishForeigners(int owningClanId) {
+		for (L2Character temp : characterList.values()) {
+			if (!(temp instanceof L2PcInstance)) {
 				continue;
 			}
-			if (((L2PcInstance) temp).getClanId() == owningClanId)
-			{
+			if (((L2PcInstance) temp).getClanId() == owningClanId) {
 				continue;
 			}
 
@@ -127,8 +107,7 @@ public class L2ClanHallZone extends L2SpawnZone
 	/**
 	 * @return the clanHallId
 	 */
-	public int getClanHallId()
-	{
+	public int getClanHallId() {
 		return clanHallId;
 	}
 }

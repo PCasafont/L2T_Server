@@ -21,10 +21,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author KenM, Gnacik
  */
-public class RequestChangeNicknameColor extends L2GameClientPacket
-{
-	private static final int COLORS[] = {
-			0x9393FF, // Pink
+public class RequestChangeNicknameColor extends L2GameClientPacket {
+	private static final int COLORS[] = {0x9393FF, // Pink
 			0x7C49FC, // Rose Pink
 			0x97F8FC, // Lemon Yellow
 			0xFA9AEE, // Lilac
@@ -35,47 +33,41 @@ public class RequestChangeNicknameColor extends L2GameClientPacket
 			0x486295, // Chocolate
 			0x999999 // Silver
 	};
-
+	
 	private int colorNum, itemObjectId;
 	private String title;
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		colorNum = readD();
 		title = readS();
 		itemObjectId = readD();
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (colorNum < 0 || colorNum >= COLORS.length)
-		{
+		
+		if (colorNum < 0 || colorNum >= COLORS.length) {
 			return;
 		}
-
+		
 		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(itemObjectId);
 		if (item == null || item.getEtcItem() == null || item.getEtcItem().getHandlerName() == null ||
-				!item.getEtcItem().getHandlerName().equalsIgnoreCase("NicknameColor"))
-		{
+				!item.getEtcItem().getHandlerName().equalsIgnoreCase("NicknameColor")) {
 			return;
 		}
-
-		if (activeChar.destroyItem("Consume", item, 1, null, true))
-		{
+		
+		if (activeChar.destroyItem("Consume", item, 1, null, true)) {
 			activeChar.setTitle(title);
 			activeChar.getAppearance().setTitleColor(COLORS[colorNum]);
 			activeChar.broadcastUserInfo();

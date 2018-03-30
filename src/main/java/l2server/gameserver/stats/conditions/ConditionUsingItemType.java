@@ -27,8 +27,7 @@ import l2server.gameserver.templates.item.L2Item;
  *
  * @author mkizub
  */
-public final class ConditionUsingItemType extends Condition
-{
+public final class ConditionUsingItemType extends Condition {
 	private final boolean armor;
 	private final int mask;
 
@@ -37,8 +36,7 @@ public final class ConditionUsingItemType extends Condition
 	 *
 	 * @param mask the mask
 	 */
-	public ConditionUsingItemType(int mask)
-	{
+	public ConditionUsingItemType(int mask) {
 		this.mask = mask;
 		armor = (mask & (L2ArmorType.MAGIC.mask() | L2ArmorType.LIGHT.mask() | L2ArmorType.HEAVY.mask())) != 0;
 	}
@@ -47,28 +45,23 @@ public final class ConditionUsingItemType extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 		Inventory inv = ((L2PcInstance) env.player).getInventory();
 
 		//If ConditionUsingItemType is one between Light, Heavy or Magic
-		if (armor)
-		{
+		if (armor) {
 			//Get the itemMask of the weared chest (if exists)
 			L2ItemInstance chest = inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
-			if (chest == null)
-			{
+			if (chest == null) {
 				return false;
 			}
 			int chestMask = chest.getItem().getItemMask();
 
 			//If chest armor is different from the condition one return false
-			if ((mask & chestMask) == 0)
-			{
+			if ((mask & chestMask) == 0) {
 				return false;
 			}
 
@@ -76,15 +69,11 @@ public final class ConditionUsingItemType extends Condition
 
 			int chestBodyPart = chest.getItem().getBodyPart();
 			//return True if chest armor is a Full Armor
-			if (chestBodyPart == L2Item.SLOT_FULL_ARMOR)
-			{
+			if (chestBodyPart == L2Item.SLOT_FULL_ARMOR) {
 				return true;
-			}
-			else
-			{ //check legs armor
+			} else { //check legs armor
 				L2ItemInstance legs = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
-				if (legs == null)
-				{
+				if (legs == null) {
 					return false;
 				}
 				int legMask = legs.getItem().getItemMask();

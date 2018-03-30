@@ -25,41 +25,34 @@ import l2server.gameserver.network.serverpackets.ExCompoundTwoFail;
 /**
  * @author Pere
  */
-public final class RequestCompoundOne extends L2GameClientPacket
-{
+public final class RequestCompoundOne extends L2GameClientPacket {
 	private int objId;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		objId = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
 		L2ItemInstance compoundItem = activeChar.getInventory().getItemByObjectId(objId);
-		if (compoundItem == null)
-		{
+		if (compoundItem == null) {
 			sendPacket(new ExCompoundTwoFail());
 			return;
 		}
 
-		if (activeChar.getCompoundItem2() != null && (activeChar.getCompoundItem2() == compoundItem ||
-				activeChar.getCompoundItem2().getItemId() != compoundItem.getItemId()))
-		{
+		if (activeChar.getCompoundItem2() != null &&
+				(activeChar.getCompoundItem2() == compoundItem || activeChar.getCompoundItem2().getItemId() != compoundItem.getItemId())) {
 			sendPacket(new ExCompoundOneFail());
 			return;
 		}
 
-		if (!CompoundTable.getInstance().isCombinable(compoundItem.getItemId()))
-		{
+		if (!CompoundTable.getInstance().isCombinable(compoundItem.getItemId())) {
 			sendPacket(new ExCompoundOneFail());
 			return;
 		}

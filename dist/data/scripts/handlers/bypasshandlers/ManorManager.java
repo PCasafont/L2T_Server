@@ -26,172 +26,124 @@ import l2server.gameserver.model.actor.instance.L2MerchantInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.BuyListSeed;
-import l2server.gameserver.network.serverpackets.ExShowCropInfo;
-import l2server.gameserver.network.serverpackets.ExShowCropSetting;
-import l2server.gameserver.network.serverpackets.ExShowManorDefaultInfo;
-import l2server.gameserver.network.serverpackets.ExShowProcureCropDetail;
-import l2server.gameserver.network.serverpackets.ExShowSeedInfo;
-import l2server.gameserver.network.serverpackets.ExShowSeedSetting;
-import l2server.gameserver.network.serverpackets.ExShowSellCropList;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 
 import java.util.StringTokenizer;
 
-public class ManorManager implements IBypassHandler
-{
+public class ManorManager implements IBypassHandler {
 	private static final String[] COMMANDS = {"manor_menu_select"};
-
+	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
 		final L2Npc manager = activeChar.getLastFolkNPC();
 		final boolean isCastle = manager instanceof L2CastleChamberlainInstance;
-		if (!(manager instanceof L2ManorManagerInstance || isCastle))
-		{
+		if (!(manager instanceof L2ManorManagerInstance || isCastle)) {
 			return false;
 		}
-
-		if (!activeChar.isInsideRadius(manager, L2Npc.DEFAULT_INTERACTION_DISTANCE, true, false))
-		{
+		
+		if (!activeChar.isInsideRadius(manager, L2Npc.DEFAULT_INTERACTION_DISTANCE, true, false)) {
 			return false;
 		}
-
-		try
-		{
+		
+		try {
 			final Castle castle = manager.getCastle();
-			if (isCastle)
-			{
+			if (isCastle) {
 				if (activeChar.getClan() == null || castle.getOwnerId() != activeChar.getClanId() ||
-						(activeChar.getClanPrivileges() & L2Clan.CP_CS_MANOR_ADMIN) != L2Clan.CP_CS_MANOR_ADMIN)
-				{
+						(activeChar.getClanPrivileges() & L2Clan.CP_CS_MANOR_ADMIN) != L2Clan.CP_CS_MANOR_ADMIN) {
 					manager.showChatWindowByFileName(activeChar, "chamberlain/chamberlain-noprivs.htm");
 					return false;
 				}
-				if (castle.getSiege().getIsInProgress())
-				{
+				if (castle.getSiege().getIsInProgress()) {
 					manager.showChatWindowByFileName(activeChar, "chamberlain/chamberlain-busy.htm");
 					return false;
 				}
 			}
-
-			if (CastleManorManager.getInstance().isUnderMaintenance())
-			{
+			
+			if (CastleManorManager.getInstance().isUnderMaintenance()) {
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-				activeChar.sendPacket(SystemMessage
-						.getSystemMessage(SystemMessageId.THE_MANOR_SYSTEM_IS_CURRENTLY_UNDER_MAINTENANCE));
+				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_MANOR_SYSTEM_IS_CURRENTLY_UNDER_MAINTENANCE));
 				return true;
 			}
-
+			
 			final StringTokenizer st = new StringTokenizer(command, "&");
 			final int ask = Integer.parseInt(st.nextToken().split("=")[1]);
 			final int state = Integer.parseInt(st.nextToken().split("=")[1]);
 			final int time = Integer.parseInt(st.nextToken().split("=")[1]);
-
+			
 			final int castleId;
-			if (state < 0)
-			{
+			if (state < 0) {
 				castleId = castle.getCastleId(); // info for current manor
-			}
-			else
-			{
+			} else {
 				castleId = state; // info for requested manor
 			}
-
-			switch (ask)
-			{
+			
+			switch (ask) {
 				case 1: // Seed purchase
-					if (isCastle)
-					{
+					if (isCastle) {
 						break;
 					}
-					if (castleId != castle.getCastleId())
-					{
-						SystemMessage sm =
-								SystemMessage.getSystemMessage(SystemMessageId.HERE_YOU_CAN_BUY_ONLY_SEEDS_OF_S1_MANOR);
+					if (castleId != castle.getCastleId()) {
+						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.HERE_YOU_CAN_BUY_ONLY_SEEDS_OF_S1_MANOR);
 						sm.addString(manager.getCastle().getName());
 						activeChar.sendPacket(sm);
-					}
-					else
-					{
-						activeChar.sendPacket(new BuyListSeed(activeChar.getAdena(), castleId,
+					} else {
+						activeChar.sendPacket(new BuyListSeed(activeChar.getAdena(),
+								castleId,
 								castle.getSeedProduction(CastleManorManager.PERIOD_CURRENT)));
 					}
 					break;
 				case 2: // Crop sales
-					if (isCastle)
-					{
+					if (isCastle) {
 						break;
 					}
-					activeChar.sendPacket(new ExShowSellCropList(activeChar, castleId,
-							castle.getCropProcure(CastleManorManager.PERIOD_CURRENT)));
+					activeChar.sendPacket(new ExShowSellCropList(activeChar, castleId, castle.getCropProcure(CastleManorManager.PERIOD_CURRENT)));
 					break;
 				case 3: // Current seeds (Manor info)
-					if (time == 1 && !CastleManager.getInstance().getCastleById(castleId).isNextPeriodApproved())
-					{
+					if (time == 1 && !CastleManager.getInstance().getCastleById(castleId).isNextPeriodApproved()) {
 						activeChar.sendPacket(new ExShowSeedInfo(castleId, null));
-					}
-					else
-					{
+					} else {
 						activeChar.sendPacket(new ExShowSeedInfo(castleId,
 								CastleManager.getInstance().getCastleById(castleId).getSeedProduction(time)));
 					}
 					break;
 				case 4: // Current crops (Manor info)
-					if (time == 1 && !CastleManager.getInstance().getCastleById(castleId).isNextPeriodApproved())
-					{
+					if (time == 1 && !CastleManager.getInstance().getCastleById(castleId).isNextPeriodApproved()) {
 						activeChar.sendPacket(new ExShowCropInfo(castleId, null));
-					}
-					else
-					{
-						activeChar.sendPacket(new ExShowCropInfo(castleId,
-								CastleManager.getInstance().getCastleById(castleId).getCropProcure(time)));
+					} else {
+						activeChar.sendPacket(new ExShowCropInfo(castleId, CastleManager.getInstance().getCastleById(castleId).getCropProcure(time)));
 					}
 					break;
 				case 5: // Basic info (Manor info)
 					activeChar.sendPacket(new ExShowManorDefaultInfo());
 					break;
 				case 6: // Buy harvester
-					if (isCastle)
-					{
+					if (isCastle) {
 						break;
 					}
 					((L2MerchantInstance) manager).showBuyWindow(activeChar, 300000 + manager.getNpcId());
 					break;
 				case 7: // Edit seed setup
-					if (!isCastle)
-					{
+					if (!isCastle) {
 						break;
 					}
-					if (castle.isNextPeriodApproved())
-					{
-						activeChar.sendPacket(SystemMessage
-								.getSystemMessage(SystemMessageId.A_MANOR_CANNOT_BE_SET_UP_BETWEEN_6_AM_AND_8_PM));
-					}
-					else
-					{
+					if (castle.isNextPeriodApproved()) {
+						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.A_MANOR_CANNOT_BE_SET_UP_BETWEEN_6_AM_AND_8_PM));
+					} else {
 						activeChar.sendPacket(new ExShowSeedSetting(castle.getCastleId()));
 					}
 					break;
 				case 8: // Edit crop setup
-					if (!isCastle)
-					{
+					if (!isCastle) {
 						break;
 					}
-					if (castle.isNextPeriodApproved())
-					{
-						activeChar.sendPacket(SystemMessage
-								.getSystemMessage(SystemMessageId.A_MANOR_CANNOT_BE_SET_UP_BETWEEN_6_AM_AND_8_PM));
-					}
-					else
-					{
+					if (castle.isNextPeriodApproved()) {
+						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.A_MANOR_CANNOT_BE_SET_UP_BETWEEN_6_AM_AND_8_PM));
+					} else {
 						activeChar.sendPacket(new ExShowCropSetting(castle.getCastleId()));
 					}
 					break;
 				case 9: // Edit sales (Crop sales)
-					if (isCastle)
-					{
+					if (isCastle) {
 						break;
 					}
 					activeChar.sendPacket(new ExShowProcureCropDetail(state));
@@ -200,17 +152,14 @@ public class ManorManager implements IBypassHandler
 					return false;
 			}
 			return true;
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			log.info(e.getMessage());
 		}
 		return false;
 	}
-
+	
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

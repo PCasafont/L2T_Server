@@ -25,16 +25,12 @@ import java.util.List;
 /**
  * @author -Nemesiss-
  */
-public abstract class PathFinding
-{
-	public static PathFinding getInstance()
-	{
-		if (!Config.GEODATA_CELLFINDING)
-		{
+public abstract class PathFinding {
+	public static PathFinding getInstance() {
+		if (!Config.GEODATA_CELLFINDING) {
 			//Higher Memory Usage, Smaller Cpu Usage
 			return GeoPathFinding.getInstance();
-		}
-		else
+		} else
 		// Cell pathfinding, calculated directly from geodata files
 		{
 			return CellPathFinding.getInstance();
@@ -154,8 +150,7 @@ public abstract class PathFinding
 	 * @param geo_pos
 	 * @return pathnode position
 	 */
-	public short getNodePos(int geo_pos)
-	{
+	public short getNodePos(int geo_pos) {
 		return (short) (geo_pos >> 3); //OK?
 	}
 
@@ -164,23 +159,19 @@ public abstract class PathFinding
 	 *
 	 * @return pathnode block position (0...255)
 	 */
-	public short getNodeBlock(int node_pos)
-	{
+	public short getNodeBlock(int node_pos) {
 		return (short) (node_pos % 256);
 	}
 
-	public byte getRegionX(int node_pos)
-	{
+	public byte getRegionX(int node_pos) {
 		return (byte) ((node_pos >> 8) + Config.WORLD_X_MIN);
 	}
 
-	public byte getRegionY(int node_pos)
-	{
+	public byte getRegionY(int node_pos) {
 		return (byte) ((node_pos >> 8) + Config.WORLD_Y_MIN);
 	}
 
-	public short getRegionOffset(byte rx, byte ry)
-	{
+	public short getRegionOffset(byte rx, byte ry) {
 		return (short) ((rx << 5) + ry);
 	}
 
@@ -190,8 +181,7 @@ public abstract class PathFinding
 	 * @param node_x, rx
 	 * @return
 	 */
-	public int calculateWorldX(short node_x)
-	{
+	public int calculateWorldX(short node_x) {
 		return L2World.MAP_MIN_X + node_x * 128 + 48;
 	}
 
@@ -201,13 +191,11 @@ public abstract class PathFinding
 	 * @param node_y
 	 * @return
 	 */
-	public int calculateWorldY(short node_y)
-	{
+	public int calculateWorldY(short node_y) {
 		return L2World.MAP_MIN_Y + node_y * 128 + 48;
 	}
 
-	public String[] getStat()
-	{
+	public String[] getStat() {
 		return null;
 	}
 }

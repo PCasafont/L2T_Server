@@ -23,68 +23,40 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 /**
  * @author Pere
  */
-public class L2ASummonerAI extends L2APlayerAI
-{
-	public L2ASummonerAI(L2Character creature)
-	{
+public class L2ASummonerAI extends L2APlayerAI {
+	public L2ASummonerAI(L2Character creature) {
 		super(creature);
 	}
-
+	
 	@Override
-	protected int[] getRandomGear()
-	{
-		return new int[]{
-				30259,
-				19709,
-				19710,
-				19711,
-				19712,
-				19713,
-				18099,
-				19464,
-				19463,
-				19458,
-				17623,
-				35570,
-				34860,
-				19462,
-				19454,
-				35920,
-				30315
-		};
+	protected int[] getRandomGear() {
+		return new int[]{30259, 19709, 19710, 19711, 19712, 19713, 18099, 19464, 19463, 19458, 17623, 35570, 34860, 19462, 19454, 35920, 30315};
 	}
-
+	
 	@Override
-	protected boolean interactWith(L2Character target)
-	{
-		if (super.interactWith(target))
-		{
+	protected boolean interactWith(L2Character target) {
+		if (super.interactWith(target)) {
 			return true;
 		}
-
+		
 		if (player.getCurrentMp() > player.getMaxMp() * 0.7 || player.getCurrentHp() < player.getMaxHp() * 0.5 ||
-				player.getTarget() instanceof L2Playable)
-		{
-			for (L2Skill skill : player.getAllSkills())
-			{
-				if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE)
-				{
+				player.getTarget() instanceof L2Playable) {
+			for (L2Skill skill : player.getAllSkills()) {
+				if (!skill.isOffensive() || skill.getTargetType() != L2SkillTargetType.TARGET_ONE) {
 					continue;
 				}
-
-				if (player.useMagic(skill, true, false))
-				{
+				
+				if (player.useMagic(skill, true, false)) {
 					break;
 				}
 			}
 		}
-
+		
 		return true;
 	}
-
+	
 	@Override
-	protected void think()
-	{
+	protected void think() {
 		super.think();
 	}
 }

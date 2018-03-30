@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class LilimKnightNormal extends L2Transformation
-{
+public class LilimKnightNormal extends L2Transformation {
 	private static final int[] SKILLS = {568, 569, 570, 571, 5491, 619};
 
-	public LilimKnightNormal()
-	{
+	public LilimKnightNormal() {
 		// id, colRadius, colHeight
 		super(208, 12, 25.5);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 208 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 208 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		// Attack Buster (up to 4 levels)
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(568, 3), false);
 		// Attack Storm (up to 4 levels)
@@ -44,13 +39,11 @@ public class LilimKnightNormal extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		// Attack Buster (up to 4 levels)
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(568, 3), false);
 		// Attack Storm (up to 4 levels)
@@ -67,8 +60,7 @@ public class LilimKnightNormal extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new LilimKnightNormal());
 	}
 }

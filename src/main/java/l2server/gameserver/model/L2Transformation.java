@@ -20,190 +20,165 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author KenM
  */
-public abstract class L2Transformation implements Cloneable, Runnable
-{
+public abstract class L2Transformation implements Cloneable, Runnable {
 	private final int id;
 	private final int graphicalId;
 	private double collisionRadius;
 	private double collisionHeight;
 	private final boolean isStance;
-
+	
 	public static final int TRANSFORM_ZARICHE = 301;
 	public static final int TRANSFORM_AKAMANAH = 302;
-
+	
 	protected static final int[] EMPTY_ARRAY = {};
-
+	
 	private L2PcInstance player;
-
+	
 	/**
 	 * @param id              Internal id that server will use to associate this transformation
 	 * @param graphicalId     Client visible transformation id
 	 * @param collisionRadius Collision Radius of the player while transformed
 	 * @param collisionHeight Collision Height of the player while transformed
 	 */
-	public L2Transformation(int id, int graphicalId, double collisionRadius, double collisionHeight)
-	{
+	public L2Transformation(int id, int graphicalId, double collisionRadius, double collisionHeight) {
 		this.id = id;
 		this.graphicalId = graphicalId;
 		this.collisionRadius = collisionRadius;
 		this.collisionHeight = collisionHeight;
 		isStance = false;
 	}
-
+	
 	/**
 	 * @param id              Internal id(will be used also as client graphical id) that server will use to associate this transformation
 	 * @param collisionRadius Collision Radius of the player while transformed
 	 * @param collisionHeight Collision Height of the player while transformed
 	 */
-	public L2Transformation(int id, double collisionRadius, double collisionHeight)
-	{
+	public L2Transformation(int id, double collisionRadius, double collisionHeight) {
 		this(id, id, collisionRadius, collisionHeight);
 	}
-
+	
 	/**
 	 * @param id Internal id(will be used also as client graphical id) that server will use to associate this transformation
 	 *           Used for stances
 	 */
-	public L2Transformation(int id)
-	{
+	public L2Transformation(int id) {
 		this.id = id;
 		graphicalId = id;
 		isStance = true;
 	}
-
+	
 	/**
 	 * @return Returns the id.
 	 */
-	public int getId()
-	{
+	public int getId() {
 		return id;
 	}
-
+	
 	/**
 	 * @return Returns the graphicalId.
 	 */
-	public int getGraphicalId()
-	{
+	public int getGraphicalId() {
 		return graphicalId;
 	}
-
+	
 	/**
 	 * Return true if this is a stance (vanguard/inquisitor)
 	 *
 	 * @return
 	 */
-	public boolean isStance()
-	{
+	public boolean isStance() {
 		return isStance;
 	}
-
+	
 	/**
 	 * @return Returns the collisionRadius.
 	 */
-	public double getCollisionRadius()
-	{
-		if (isStance())
-		{
+	public double getCollisionRadius() {
+		if (isStance()) {
 			return player.getCollisionRadius();
 		}
 		return collisionRadius;
 	}
-
+	
 	/**
 	 * @return Returns the collisionHeight.
 	 */
-	public double getCollisionHeight()
-	{
-		if (isStance())
-		{
+	public double getCollisionHeight() {
+		if (isStance()) {
 			return player.getCollisionHeight();
 		}
 		return collisionHeight;
 	}
-
+	
 	// Scriptable Events
 	public abstract void onTransform();
-
+	
 	public abstract void onUntransform();
-
+	
 	/**
 	 * @param player The player to set.
 	 */
-	private void setPlayer(L2PcInstance player)
-	{
+	private void setPlayer(L2PcInstance player) {
 		this.player = player;
 	}
-
+	
 	/**
 	 * @return Returns the player.
 	 */
-	public L2PcInstance getPlayer()
-	{
+	public L2PcInstance getPlayer() {
 		return player;
 	}
-
-	public void start()
-	{
+	
+	public void start() {
 		resume();
 	}
-
-	public void resume()
-	{
+	
+	public void resume() {
 		getPlayer().transform(this);
 	}
-
+	
 	@Override
-	public void run()
-	{
+	public void run() {
 		stop();
 	}
-
-	public void stop()
-	{
+	
+	public void stop() {
 		getPlayer().unTransform(true);
 	}
-
-	public L2Transformation createTransformationForPlayer(L2PcInstance player)
-	{
-		try
-		{
+	
+	public L2Transformation createTransformationForPlayer(L2PcInstance player) {
+		try {
 			L2Transformation transformation = (L2Transformation) clone();
 			transformation.setPlayer(player);
 			return transformation;
-		}
-		catch (CloneNotSupportedException e)
-		{
+		} catch (CloneNotSupportedException e) {
 			// should never happen
 			return null;
 		}
 	}
-
+	
 	// Override if necessary
-	public void onLevelUp()
-	{
-
+	public void onLevelUp() {
+	
 	}
-
+	
 	/**
 	 * Returns true if transformation can do melee attack
 	 */
-	public boolean canDoMeleeAttack()
-	{
+	public boolean canDoMeleeAttack() {
 		return true;
 	}
-
+	
 	/**
 	 * Returns true if transformation can start follow target when trying to cast an skill out of range
 	 */
-	public boolean canStartFollowToCast()
-	{
+	public boolean canStartFollowToCast() {
 		return true;
 	}
-
+	
 	@Override
-	public String toString()
-	{
-		return getClass().getSimpleName() + " [_id=" + id + ", _graphicalId=" + graphicalId + ", _collisionRadius=" +
-				collisionRadius + ", _collisionHeight=" + collisionHeight + ", _isStance=" + isStance + "]";
+	public String toString() {
+		return getClass().getSimpleName() + " [_id=" + id + ", _graphicalId=" + graphicalId + ", _collisionRadius=" + collisionRadius +
+				", _collisionHeight=" + collisionHeight + ", _isStance=" + isStance + "]";
 	}
 }

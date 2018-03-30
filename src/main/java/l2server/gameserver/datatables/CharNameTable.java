@@ -40,74 +40,59 @@ import java.util.logging.Level;
  *
  * @version $Revision: 1.3.2.2.2.1 $ $Date: 2005/03/27 15:29:18 $
  */
-public class CharNameTable
-{
+public class CharNameTable {
 
 	private final Map<Integer, String> chars;
 	private final Map<Integer, Integer> accessLevels;
 
-	private CharNameTable()
-	{
+	private CharNameTable() {
 		chars = new ConcurrentHashMap<>();
 		accessLevels = new HashMap<>();
-		if (Config.CACHE_CHAR_NAMES)
-		{
+		if (Config.CACHE_CHAR_NAMES) {
 			loadAll();
 		}
 	}
 
-	public static CharNameTable getInstance()
-	{
+	public static CharNameTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	public final void addName(L2PcInstance player)
-	{
-		if (player != null)
-		{
+	public final void addName(L2PcInstance player) {
+		if (player != null) {
 			addName(player.getObjectId(), player.getName());
 			accessLevels.put(player.getObjectId(), player.getAccessLevel().getLevel());
 		}
 	}
 
-	private void addName(int objId, String name)
-	{
-		if (name != null)
-		{
-			if (!name.equalsIgnoreCase(chars.get(objId)))
-			{
+	private void addName(int objId, String name) {
+		if (name != null) {
+			if (!name.equalsIgnoreCase(chars.get(objId))) {
 				chars.put(objId, name);
 			}
 		}
 	}
 
-	public final void removeName(int objId)
-	{
+	public final void removeName(int objId) {
 		chars.remove(objId);
 		accessLevels.remove(objId);
 	}
 
-	public final int getIdByName(String name)
-	{
-		if (name == null || name.isEmpty())
-		{
+	public final int getIdByName(String name) {
+		if (name == null || name.isEmpty()) {
 			return -1;
 		}
 
 		Iterator<Entry<Integer, String>> it = chars.entrySet().iterator();
 
 		Map.Entry<Integer, String> pair;
-		while (it.hasNext())
-		{
+		while (it.hasNext()) {
 			pair = it.next();
-			if (pair.getValue().equalsIgnoreCase(name))
-			{
+			if (pair.getValue().equalsIgnoreCase(name)) {
 				return pair.getKey();
 			}
 		}
 
-		if (Config.CACHE_CHAR_NAMES)
-		{
+		if (Config.CACHE_CHAR_NAMES) {
 			return -1;
 		}
 
@@ -115,30 +100,23 @@ public class CharNameTable
 		int accessLevel = 0;
 		Connection con = null;
 		PreparedStatement statement = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			statement = con.prepareStatement("SELECT charId,accesslevel FROM characters WHERE char_name=?");
 			statement.setString(1, name);
 			ResultSet rset = statement.executeQuery();
-			while (rset.next())
-			{
+			while (rset.next()) {
 				id = rset.getInt(1);
 				accessLevel = rset.getInt(2);
 			}
 			rset.close();
 			statement.close();
-		}
-		catch (SQLException e)
-		{
+		} catch (SQLException e) {
 			Log.log(Level.WARNING, "Could not check existing char name: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
-		if (id > 0)
-		{
+		if (id > 0) {
 			chars.put(id, name);
 			accessLevels.put(id, accessLevel);
 			return id;
@@ -147,51 +125,40 @@ public class CharNameTable
 		return -1; // not found
 	}
 
-	public final String getNameById(int id)
-	{
-		if (id <= 0)
-		{
+	public final String getNameById(int id) {
+		if (id <= 0) {
 			return null;
 		}
 
 		String name = chars.get(id);
-		if (name != null)
-		{
+		if (name != null) {
 			return name;
 		}
 
-		if (Config.CACHE_CHAR_NAMES)
-		{
+		if (Config.CACHE_CHAR_NAMES) {
 			return null;
 		}
 
 		int accessLevel = 0;
 		Connection con = null;
 		PreparedStatement statement = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			statement = con.prepareStatement("SELECT char_name,accesslevel FROM characters WHERE charId=?");
 			statement.setInt(1, id);
 			ResultSet rset = statement.executeQuery();
-			while (rset.next())
-			{
+			while (rset.next()) {
 				name = rset.getString(1);
 				accessLevel = rset.getInt(2);
 			}
 			rset.close();
 			statement.close();
-		}
-		catch (SQLException e)
-		{
+		} catch (SQLException e) {
 			Log.log(Level.WARNING, "Could not check existing char id: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
-		if (name != null && !name.isEmpty())
-		{
+		if (name != null && !name.isEmpty()) {
 			chars.put(id, name);
 			accessLevels.put(id, accessLevel);
 			return name;
@@ -200,25 +167,19 @@ public class CharNameTable
 		return null; //not found
 	}
 
-	public final int getAccessLevelById(int objectId)
-	{
-		if (getNameById(objectId) != null)
-		{
+	public final int getAccessLevelById(int objectId) {
+		if (getNameById(objectId) != null) {
 			return accessLevels.get(objectId);
-		}
-		else
-		{
+		} else {
 			return 0;
 		}
 	}
 
-	public synchronized boolean doesCharNameExist(String name)
-	{
+	public synchronized boolean doesCharNameExist(String name) {
 		boolean result = true;
 		Connection con = null;
 
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("SELECT account_name FROM characters WHERE char_name=?");
 			statement.setString(1, name);
@@ -226,64 +187,49 @@ public class CharNameTable
 			result = rset.next();
 			rset.close();
 			statement.close();
-		}
-		catch (SQLException e)
-		{
+		} catch (SQLException e) {
 			Log.log(Level.WARNING, "Could not check existing charname: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		return result;
 	}
 
-	public int accountCharNumber(String account)
-	{
+	public int accountCharNumber(String account) {
 		Connection con = null;
 
 		int number = 0;
 
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement =
-					con.prepareStatement("SELECT COUNT(char_name) FROM characters WHERE account_name=?");
+			PreparedStatement statement = con.prepareStatement("SELECT COUNT(char_name) FROM characters WHERE account_name=?");
 			statement.setString(1, account);
 			ResultSet rset = statement.executeQuery();
-			while (rset.next())
-			{
+			while (rset.next()) {
 				number = rset.getInt(1);
 			}
 			rset.close();
 			statement.close();
-		}
-		catch (SQLException e)
-		{
+		} catch (SQLException e) {
 			Log.log(Level.WARNING, "Could not check existing char number: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 
 		return number;
 	}
 
-	private void loadAll()
-	{
+	private void loadAll() {
 		String name;
 		int id = -1;
 		int accessLevel = 0;
 		PreparedStatement statement = null;
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			statement = con.prepareStatement("SELECT charId,char_name,accesslevel FROM characters");
 			ResultSet rset = statement.executeQuery();
-			while (rset.next())
-			{
+			while (rset.next()) {
 				id = rset.getInt(1);
 				name = rset.getString(2);
 				accessLevel = rset.getInt(3);
@@ -292,35 +238,24 @@ public class CharNameTable
 			}
 			rset.close();
 			statement.close();
-		}
-		catch (SQLException e)
-		{
+		} catch (SQLException e) {
 			Log.log(Level.WARNING, "Could not load char name: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		Log.info(getClass().getSimpleName() + ": Loaded " + chars.size() + " char names.");
 	}
 
-	public boolean setCharNameConditions(L2PcInstance player, String name)
-	{
-		if (Config.FORBIDDEN_NAMES.length > 1)
-		{
-			for (String st : Config.FORBIDDEN_NAMES)
-			{
-				if (name.toLowerCase().contains(st.toLowerCase()))
-				{
-					player.sendPacket(
-							SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_CHARACTER_NAME_TRY_AGAIN));
+	public boolean setCharNameConditions(L2PcInstance player, String name) {
+		if (Config.FORBIDDEN_NAMES.length > 1) {
+			for (String st : Config.FORBIDDEN_NAMES) {
+				if (name.toLowerCase().contains(st.toLowerCase())) {
+					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_CHARACTER_NAME_TRY_AGAIN));
 					return false;
 				}
 			}
 		}
-		if (!Util.isAlphaNumeric(name) || !CharacterCreate.isValidName(name) || name.length() < 1 ||
-				name.length() > 16 || getIdByName(name) > 0)
-		{
+		if (!Util.isAlphaNumeric(name) || !CharacterCreate.isValidName(name) || name.length() < 1 || name.length() > 16 || getIdByName(name) > 0) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHARACTER_NAME_INVALID_RENAME_CHARACTER));
 			return false;
 		}
@@ -329,8 +264,7 @@ public class CharNameTable
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final CharNameTable instance = new CharNameTable();
 	}
 }

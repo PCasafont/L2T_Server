@@ -19,22 +19,18 @@ import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.Env;
 
-public class ConditionPlayerSurvivalEvent extends Condition
-{
+public class ConditionPlayerSurvivalEvent extends Condition {
 	private final boolean val;
 
-	public ConditionPlayerSurvivalEvent(boolean val)
-	{
+	public ConditionPlayerSurvivalEvent(boolean val) {
 		this.val = val;
 	}
 
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		final L2PcInstance player = env.player.getActingPlayer();
 		if (player == null || !player.isPlayingEvent() ||
-				!(player.getEvent().isType(EventType.Survival) && player.getEvent().isType(EventType.TeamSurvival)))
-		{
+				!(player.getEvent().isType(EventType.Survival) && player.getEvent().isType(EventType.TeamSurvival))) {
 			return !val;
 		}
 

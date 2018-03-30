@@ -22,36 +22,30 @@ import l2server.util.Point3D;
 /**
  * @author Maktakien
  */
-public final class CannotMoveAnymoreInVehicle extends L2GameClientPacket
-{
+public final class CannotMoveAnymoreInVehicle extends L2GameClientPacket {
 	private int x;
 	private int y;
 	private int z;
 	private int heading;
 	private int boatId;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		boatId = readD();
 		x = readD();
 		y = readD();
 		z = readD();
 		heading = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
-		if (player.isInBoat())
-		{
-			if (player.getBoat().getObjectId() == boatId)
-			{
+		if (player.isInBoat()) {
+			if (player.getBoat().getObjectId() == boatId) {
 				player.setInVehiclePosition(new Point3D(x, y, z));
 				player.getPosition().setHeading(heading);
 				StopMoveInVehicle msg = new StopMoveInVehicle(player, boatId);

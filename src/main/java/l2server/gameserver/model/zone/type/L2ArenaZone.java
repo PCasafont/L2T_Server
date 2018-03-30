@@ -27,58 +27,46 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @author durgus
  */
-public class L2ArenaZone extends L2SpawnZone
-{
+public class L2ArenaZone extends L2SpawnZone {
 
-	public L2ArenaZone(int id)
-	{
+	public L2ArenaZone(int id) {
 		super(id);
 	}
 
 	@Override
-	protected void onEnter(L2Character character)
-	{
+	protected void onEnter(L2Character character) {
 
-		if (!GMEventManager.getInstance().onEnterZone(character, this))
-		{
+		if (!GMEventManager.getInstance().onEnterZone(character, this)) {
 			return;
 		}
 
 		character.setInsideZone(L2Character.ZONE_PVP, true);
 		character.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, true);
 
-		if (character instanceof L2PcInstance)
-		{
-			if (!character.isInsideZone(L2Character.ZONE_PVP))
-			{
-				character
-						.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
+		if (character instanceof L2PcInstance) {
+			if (!character.isInsideZone(L2Character.ZONE_PVP)) {
+				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
 			}
 		}
 	}
 
 	@Override
-	protected void onExit(L2Character character)
-	{
+	protected void onExit(L2Character character) {
 		character.setInsideZone(L2Character.ZONE_PVP, false);
 		character.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, false);
 
-		if (character instanceof L2PcInstance)
-		{
-			if (!character.isInsideZone(L2Character.ZONE_PVP))
-			{
+		if (character instanceof L2PcInstance) {
+			if (!character.isInsideZone(L2Character.ZONE_PVP)) {
 				character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
 			}
 		}
 	}
 
 	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
+	public void onDieInside(L2Character character, L2Character killer) {
 	}
 
 	@Override
-	public void onReviveInside(L2Character character)
-	{
+	public void onReviveInside(L2Character character) {
 	}
 }

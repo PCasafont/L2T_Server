@@ -30,109 +30,83 @@ import java.util.logging.Level;
 /**
  * @author la2 Lets drink to code!
  */
-public class DecayTaskManager
-{
+public class DecayTaskManager {
 
 	protected Map<L2Character, Long> decayTasks = new ConcurrentHashMap<>();
 
 	public static final int RAID_BOSS_DECAY_TIME = 30000;
 	public static final int ATTACKABLE_DECAY_TIME = 8500;
 
-	private DecayTaskManager()
-	{
+	private DecayTaskManager() {
 		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new DecayScheduler(), 10000, 1000);
 	}
 
-	public static DecayTaskManager getInstance()
-	{
+	public static DecayTaskManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	public void addDecayTask(L2Character actor)
-	{
+	public void addDecayTask(L2Character actor) {
 		decayTasks.put(actor, System.currentTimeMillis());
 	}
 
-	public void addDecayTask(L2Character actor, int interval)
-	{
+	public void addDecayTask(L2Character actor, int interval) {
 		decayTasks.put(actor, System.currentTimeMillis() + interval);
 	}
 
-	public void cancelDecayTask(L2Character actor)
-	{
-		try
-		{
+	public void cancelDecayTask(L2Character actor) {
+		try {
 			decayTasks.remove(actor);
-		}
-		catch (NoSuchElementException e)
-		{
+		} catch (NoSuchElementException e) {
 			e.printStackTrace();
 		}
 	}
 
-	private class DecayScheduler implements Runnable
-	{
-		protected DecayScheduler()
-		{
+	private class DecayScheduler implements Runnable {
+		protected DecayScheduler() {
 			// Do nothing
 		}
 
 		@Override
-		public void run()
-		{
+		public void run() {
 			long current = System.currentTimeMillis();
 			int delay;
-			try
-			{
+			try {
 				Iterator<Entry<L2Character, Long>> it = decayTasks.entrySet().iterator();
-				while (it.hasNext())
-				{
+				while (it.hasNext()) {
 					Entry<L2Character, Long> e = it.next();
 					L2Character actor = e.getKey();
 					Long next = e.getValue();
-					if (next == null)
-					{
+					if (next == null) {
 						continue;
 					}
-					if (actor.isRaid() && !actor.isRaidMinion())
-					{
+					if (actor.isRaid() && !actor.isRaidMinion()) {
 						delay = RAID_BOSS_DECAY_TIME;
-					}
-					else if (actor instanceof L2Attackable &&
-							(((L2Attackable) actor).isSpoil() || ((L2Attackable) actor).isSeeded()))
-					{
+					} else if (actor instanceof L2Attackable && (((L2Attackable) actor).isSpoil() || ((L2Attackable) actor).isSeeded())) {
 						delay = ATTACKABLE_DECAY_TIME * 2;
-					}
-					else
-					{
+					} else {
 						delay = ATTACKABLE_DECAY_TIME;
 					}
-					if (current - next > delay)
-					{
+					if (current - next > delay) {
 						actor.onDecay();
 						it.remove();
 					}
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.log(Level.WARNING, "Error in DecayScheduler: " + e.getMessage(), e);
 			}
 		}
 	}
 
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		String ret = "============= DecayTask Manager Report ============\r\n";
 		ret += "Tasks count: " + decayTasks.size() + "\r\n";
 		ret += "Tasks dump:\r\n";
 
 		Long current = System.currentTimeMillis();
-		for (L2Character actor : decayTasks.keySet())
-		{
-			ret += "Class/Name: " + actor.getClass().getSimpleName() + "/" + actor.getName() + " decay timer: " +
-					(current - decayTasks.get(actor)) + "\r\n";
+		for (L2Character actor : decayTasks.keySet()) {
+			ret += "Class/Name: " + actor.getClass().getSimpleName() + "/" + actor.getName() + " decay timer: " + (current - decayTasks.get(actor)) +
+					"\r\n";
 		}
 
 		return ret;
@@ -141,14 +115,12 @@ public class DecayTaskManager
 	/**
 	 * <u><b><font color="FF0000">Read only</font></b></u>
 	 */
-	public Map<L2Character, Long> getTasks()
-	{
+	public Map<L2Character, Long> getTasks() {
 		return decayTasks;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final DecayTaskManager instance = new DecayTaskManager();
 	}
 }

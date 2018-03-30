@@ -20,15 +20,13 @@ import l2server.gameserver.model.actor.instance.L2DefenderInstance;
 import l2server.gameserver.model.actor.instance.L2DoorInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-public class DoorKnownList extends CharKnownList
-{
+public class DoorKnownList extends CharKnownList {
 	// =========================================================
 	// Data Field
 
 	// =========================================================
 	// Constructor
-	public DoorKnownList(L2DoorInstance activeChar)
-	{
+	public DoorKnownList(L2DoorInstance activeChar) {
 		super(activeChar);
 	}
 
@@ -41,20 +39,16 @@ public class DoorKnownList extends CharKnownList
 	// =========================================================
 	// Property - Public
 	@Override
-	public final L2DoorInstance getActiveChar()
-	{
+	public final L2DoorInstance getActiveChar() {
 		return (L2DoorInstance) super.getActiveChar();
 	}
 
 	@Override
-	public int getDistanceToForgetObject(L2Object object)
-	{
-		if (object instanceof L2DefenderInstance)
-		{
+	public int getDistanceToForgetObject(L2Object object) {
+		if (object instanceof L2DefenderInstance) {
 			return 800;
 		}
-		if (!(object instanceof L2PcInstance))
-		{
+		if (!(object instanceof L2PcInstance)) {
 			return 0;
 		}
 
@@ -62,14 +56,11 @@ public class DoorKnownList extends CharKnownList
 	}
 
 	@Override
-	public int getDistanceToWatchObject(L2Object object)
-	{
-		if (object instanceof L2DefenderInstance)
-		{
+	public int getDistanceToWatchObject(L2Object object) {
+		if (object instanceof L2DefenderInstance) {
 			return 600;
 		}
-		if (!(object instanceof L2PcInstance))
-		{
+		if (!(object instanceof L2PcInstance)) {
 			return 0;
 		}
 		return 3000;

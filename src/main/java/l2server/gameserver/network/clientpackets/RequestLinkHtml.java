@@ -23,43 +23,35 @@ import java.util.logging.Level;
 
 /**
  * @author zabbix
- *         Lets drink to code!
+ * Lets drink to code!
  */
-public final class RequestLinkHtml extends L2GameClientPacket
-{
+public final class RequestLinkHtml extends L2GameClientPacket {
 
 	private String link;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		link = readS();
 	}
 
 	@Override
-	public void runImpl()
-	{
+	public void runImpl() {
 		L2PcInstance actor = getClient().getActiveChar();
-		if (actor == null)
-		{
+		if (actor == null) {
 			return;
 		}
 
-		if (link.contains("..") || !link.contains(".htm"))
-		{
+		if (link.contains("..") || !link.contains(".htm")) {
 			Log.warning("[RequestLinkHtml] hack? link contains prohibited characters: '" + link + "', skipped");
 			return;
 		}
-		try
-		{
+		try {
 			String filename = "" + link;
 			NpcHtmlMessage msg = new NpcHtmlMessage(0);
 			msg.disableValidation();
 			msg.setFile(actor.getHtmlPrefix(), filename);
 			sendPacket(msg);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Bad RequestLinkHtml: ", e);
 		}
 	}

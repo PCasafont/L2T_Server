@@ -24,33 +24,26 @@ package l2server.gameserver.network.serverpackets;
  *
  * @author Tempy
  */
-public class SSQInfo extends L2GameServerPacket
-{
+public class SSQInfo extends L2GameServerPacket {
 
 	private static int state = 0;
 
-	public SSQInfo(int state)
-	{
+	public SSQInfo(int state) {
 		this.state = state;
 	}
 
-	public SSQInfo()
-	{
+	public SSQInfo() {
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		if (state == 2) // Dawn Sky
 		{
 			writeH(258);
-		}
-		else if (state == 1) // Dusk Sky
+		} else if (state == 1) // Dusk Sky
 		{
 			writeH(257);
-		}
-		else
-		{
+		} else {
 			writeH(256);
 		}
 	}

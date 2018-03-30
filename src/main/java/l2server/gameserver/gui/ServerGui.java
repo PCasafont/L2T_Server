@@ -1,16 +1,12 @@
 package l2server.gameserver.gui;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-
-import javax.swing.JFrame;
-import javax.swing.JTabbedPane;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * @author Pere
  */
-public class ServerGui
-{
+public class ServerGui {
 	public static JFrame Frame;
 
 	//private JMenuBar menuBar = new JMenuBar();
@@ -26,8 +22,7 @@ public class ServerGui
 
 	private static AdminTab adminTab;
 
-	public void init()
-	{
+	public void init() {
 		Frame = new JFrame("L2 Server");
 
 		//Menu Bar Items
@@ -70,13 +65,11 @@ public class ServerGui
 		Frame.setVisible(true);
 	}
 
-	public JTabbedPane getTabPane()
-	{
+	public JTabbedPane getTabPane() {
 		return tabPane;
 	}
 
-	private void addListeners()
-	{
+	private void addListeners() {
 		//Window Closing
         /*frame.addWindowListener(new WindowAdapter()
 		{
@@ -100,18 +93,15 @@ public class ServerGui
 		}
 	}*/
 
-	public JFrame getMainFrame()
-	{
+	public JFrame getMainFrame() {
 		return Frame;
 	}
 
-	public ConsoleTab getConsoleTab()
-	{
+	public ConsoleTab getConsoleTab() {
 		return consoleTab;
 	}
 
-	public AdminTab getAdminTab()
-	{
+	public AdminTab getAdminTab() {
 		return adminTab;
 	}
 }

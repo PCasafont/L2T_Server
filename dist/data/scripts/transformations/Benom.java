@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class Benom extends L2Transformation
-{
+public class Benom extends L2Transformation {
 	private static final int[] SKILLS = new int[]{725, 726, 727, 5491, 619};
 
-	public Benom()
-	{
+	public Benom() {
 		// id, colRadius, colHeight
 		super(307, 20, 56);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 307 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 307 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		// Benom Power Smash
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(725, 1), false);
 		// Benom Sonic Storm
@@ -42,13 +37,11 @@ public class Benom extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		// Benom Power Smash
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(725, 1), false);
 		// Benom Sonic Storm
@@ -63,8 +56,7 @@ public class Benom extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new Benom());
 	}
 }

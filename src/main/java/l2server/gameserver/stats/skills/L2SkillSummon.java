@@ -20,18 +20,9 @@ import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.Location;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2CloneInstance;
-import l2server.gameserver.model.actor.instance.L2CubicInstance;
-import l2server.gameserver.model.actor.instance.L2MerchantSummonInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SiegeSummonInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.model.base.Experience;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.FlyToLocation;
@@ -47,8 +38,7 @@ import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
 
-public class L2SkillSummon extends L2Skill
-{
+public class L2SkillSummon extends L2Skill {
 	private int npcId;
 	private float expPenalty;
 	private final boolean isCubic;
@@ -84,8 +74,7 @@ public class L2SkillSummon extends L2Skill
 
 	private final int summonAmount;
 
-	public L2SkillSummon(StatsSet set)
-	{
+	public L2SkillSummon(StatsSet set) {
 		super(set);
 
 		npcId = set.getInteger("npcId", 0); // default for undescribed skills
@@ -112,16 +101,12 @@ public class L2SkillSummon extends L2Skill
 	}
 
 	@Override
-	public boolean checkCondition(L2Character activeChar, L2Object target, boolean itemOrWeapon)
-	{
-		if (activeChar instanceof L2PcInstance)
-		{
+	public boolean checkCondition(L2Character activeChar, L2Object target, boolean itemOrWeapon) {
+		if (activeChar instanceof L2PcInstance) {
 			L2PcInstance player = (L2PcInstance) activeChar;
 
-			if (isCubic())
-			{
-				if (getTargetType() != L2SkillTargetType.TARGET_SELF)
-				{
+			if (isCubic()) {
+				if (getTargetType() != L2SkillTargetType.TARGET_SELF) {
 					return true; //Player is always able to cast mass cubic skill
 				}
 
@@ -148,16 +133,13 @@ public class L2SkillSummon extends L2Skill
 
 				int cubicMastery = player.getCubicMastery();
 				int count = player.getCubics().size();
-				if (count > cubicMastery)
-				{
+				if (count > cubicMastery) {
 					activeChar.sendMessage("You already have " + count + " cubic(s).");
 					return false;
 				}
-			}
-			else if (!(this instanceof L2SkillTrap))// Normal summon
+			} else if (!(this instanceof L2SkillTrap))// Normal summon
 			{
-				if (player.inObserverMode())
-				{
+				if (player.inObserverMode()) {
 					return false;
 				}
 
@@ -175,22 +157,15 @@ public class L2SkillSummon extends L2Skill
 					}
 				}*/
 
-				if (summonPoints > 0 && player.getSpentSummonPoints() + summonPoints > player.getMaxSummonPoints())
-				{
+				if (summonPoints > 0 && player.getSpentSummonPoints() + summonPoints > player.getMaxSummonPoints()) {
 					activeChar.sendMessage("You don't have enough summon points.");
 					return false;
-				}
-				else if (player.getSpentSummonPoints() == 0 && !player.getSummons().isEmpty())
-				{
+				} else if (player.getSpentSummonPoints() == 0 && !player.getSummons().isEmpty()) {
 					String currentSummonName = player.getSummon(0).getTemplate().getName();
-					if (!currentSummonName.equalsIgnoreCase("Tree of life") &&
-							!currentSummonName.equalsIgnoreCase("Unison of Lights"))
-					{
+					if (!currentSummonName.equalsIgnoreCase("Tree of life") && !currentSummonName.equalsIgnoreCase("Unison of Lights")) {
 						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_HAVE_A_PET));
 						return false;
-					}
-					else
-					{
+					} else {
 						player.getSummon(0).unSummon(player);
 					}
 				}
@@ -200,23 +175,19 @@ public class L2SkillSummon extends L2Skill
 	}
 
 	@Override
-	public void useSkill(L2Character caster, L2Object[] targets)
-	{
-		if (caster.isAlikeDead() || !(caster instanceof L2PcInstance))
-		{
+	public void useSkill(L2Character caster, L2Object[] targets) {
+		if (caster.isAlikeDead() || !(caster instanceof L2PcInstance)) {
 			return;
 		}
 
 		L2PcInstance activeChar = (L2PcInstance) caster;
 
-		if (npcId == 0)
-		{
+		if (npcId == 0) {
 			activeChar.sendMessage("Summon skill " + getId() + " not described yet");
 			return;
 		}
 
-		if (isCubic)
-		{
+		if (isCubic) {
 			// Gnacik :
 			// If skill is enchanted calculate cubic skill level based on enchant
 			// 8 at 101 (+1 Power)
@@ -227,80 +198,63 @@ public class L2SkillSummon extends L2Skill
 
 			if (targets.length > 1 || targets.length == 1 && targets[0] != activeChar) // Not self cubic skill
 			{
-				for (L2Object obj : targets)
-				{
-					if (!(obj instanceof L2PcInstance))
-					{
+				for (L2Object obj : targets) {
+					if (!(obj instanceof L2PcInstance)) {
 						continue;
 					}
 					L2PcInstance player = (L2PcInstance) obj;
 					int cubicMastery = player.getCubicMastery();
-					if (cubicMastery == 0 && !player.getCubics().isEmpty())
-					{
+					if (cubicMastery == 0 && !player.getCubics().isEmpty()) {
 						// Player can have only 1 cubic - we shuld replace old cubic with new one
-						for (L2CubicInstance c : player.getCubics().values())
-						{
+						for (L2CubicInstance c : player.getCubics().values()) {
 							c.stopAction();
 							c = null;
 						}
 						player.getCubics().clear();
 					}
 					// TODO: Should remove first cubic summoned and replace with new cubic
-					if (player.getCubics().containsKey(npcId))
-					{
+					if (player.getCubics().containsKey(npcId)) {
 						L2CubicInstance cubic = player.getCubic(npcId);
 						cubic.stopAction();
 						cubic.cancelDisappear();
 						player.delCubic(npcId);
 					}
-					if (player.getCubics().size() > cubicMastery)
-					{
+					if (player.getCubics().size() > cubicMastery) {
 						continue;
 					}
-					if (player == activeChar)
-					{
-						player.addCubic(npcId, cubicSkillLevel, getPower(), activationtime, activationchance,
-								maxcount, summonTotalLifeTime, false);
-					}
-					else
+					if (player == activeChar) {
+						player.addCubic(npcId, cubicSkillLevel, getPower(), activationtime, activationchance, maxcount, summonTotalLifeTime, false);
+					} else
 					// given by other player
 					{
-						player.addCubic(npcId, cubicSkillLevel, getPower(), activationtime, activationchance,
-								maxcount, summonTotalLifeTime, true);
+						player.addCubic(npcId, cubicSkillLevel, getPower(), activationtime, activationchance, maxcount, summonTotalLifeTime, true);
 					}
-					if (hasEffects())
-					{
+					if (hasEffects()) {
 						getEffects(player, player, new Env((byte) 0, L2ItemInstance.CHARGED_NONE));
 					}
 					player.broadcastUserInfo();
 				}
 				return;
-			}
-			else
+			} else
 			// Normal cubic skill
 			{
 				int cubicMastery = activeChar.getCubicMastery();
-				if (activeChar.getCubics().containsKey(npcId))
-				{
+				if (activeChar.getCubics().containsKey(npcId)) {
 					L2CubicInstance cubic = activeChar.getCubic(npcId);
 					cubic.stopAction();
 					cubic.cancelDisappear();
 					activeChar.delCubic(npcId);
 				}
-				if (activeChar.getCubics().size() > cubicMastery)
-				{
-					if (Config.DEBUG)
-					{
+				if (activeChar.getCubics().size() > cubicMastery) {
+					if (Config.DEBUG) {
 						Log.fine("player can't summon any more cubics. ignore summon skill");
 					}
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CUBIC_SUMMONING_FAILED));
 					return;
 				}
-				activeChar.addCubic(npcId, cubicSkillLevel, getPower(), activationtime, activationchance, maxcount,
-						summonTotalLifeTime, false);
+				activeChar.addCubic(npcId, cubicSkillLevel, getPower(), activationtime, activationchance, maxcount, summonTotalLifeTime, false);
 
-				if (hasEffects())
-				{
+				if (hasEffects()) {
 					getEffects(activeChar, activeChar, new Env((byte) 0, L2ItemInstance.CHARGED_NONE));
 				}
 
@@ -309,15 +263,12 @@ public class L2SkillSummon extends L2Skill
 			}
 		}
 
-		if (summonPoints > 0 && activeChar.getSpentSummonPoints() + summonPoints > activeChar.getMaxSummonPoints())
-		{
+		if (summonPoints > 0 && activeChar.getSpentSummonPoints() + summonPoints > activeChar.getMaxSummonPoints()) {
 			return;
 		}
 
-		if (activeChar.getSpentSummonPoints() == 0 && !activeChar.getSummons().isEmpty())
-		{
-			if (Config.DEBUG)
-			{
+		if (activeChar.getSpentSummonPoints() == 0 && !activeChar.getSummons().isEmpty()) {
+			if (Config.DEBUG) {
 				Log.fine("player has a pet already. ignore summon skill");
 			}
 			return;
@@ -328,8 +279,7 @@ public class L2SkillSummon extends L2Skill
 			int x = 0, y = 0, z = 0;
 
 			L2Object target = activeChar.getTarget();
-			if (target == null)
-			{
+			if (target == null) {
 				target = activeChar;
 			}
 			int px = target.getX();
@@ -338,8 +288,7 @@ public class L2SkillSummon extends L2Skill
 
 			ph += 180;
 
-			if (ph > 360)
-			{
+			if (ph > 360) {
 				ph -= 360;
 			}
 
@@ -351,25 +300,20 @@ public class L2SkillSummon extends L2Skill
 
 			Location loc = new Location(x, y, z);
 
-			if (Config.GEODATA > 0)
-			{
-				loc = GeoData.getInstance().moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), x, y, z,
-						activeChar.getInstanceId());
+			if (Config.GEODATA > 0) {
+				loc = GeoData.getInstance().moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), x, y, z, activeChar.getInstanceId());
 			}
 
 			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			activeChar
-					.broadcastPacket(new FlyToLocation(activeChar, loc.getX(), loc.getY(), loc.getZ(), FlyType.DUMMY));
+			activeChar.broadcastPacket(new FlyToLocation(activeChar, loc.getX(), loc.getY(), loc.getZ(), FlyType.DUMMY));
 			activeChar.abortAttack();
 			activeChar.abortCast();
 
 			activeChar.setXYZ(loc.getX(), loc.getY(), loc.getZ());
 			activeChar.broadcastPacket(new ValidateLocation(activeChar));
 
-			for (L2Abnormal e : activeChar.getAllEffects())
-			{
-				if (e.getType() != L2AbnormalType.HIDE)
-				{
+			for (L2Abnormal e : activeChar.getAllEffects()) {
+				if (e.getType() != L2AbnormalType.HIDE) {
 					continue;
 				}
 
@@ -377,61 +321,43 @@ public class L2SkillSummon extends L2Skill
 			}
 		}
 
-		for (int i = 0; i < summonAmount; i++)
-		{
+		for (int i = 0; i < summonAmount; i++) {
 			L2SummonInstance summon;
 			L2NpcTemplate summonTemplate = NpcTable.getInstance().getTemplate(npcId);
-			if (summonTemplate == null)
-			{
+			if (summonTemplate == null) {
 				Log.warning("Summon attempt for nonexisting NPC ID:" + npcId + ", skill ID:" + getId());
 				return; // npcID doesn't exist
 			}
-			if (summonTemplate.Type.equalsIgnoreCase("L2SiegeSummon"))
-			{
-				summon = new L2SiegeSummonInstance(IdFactory.getInstance().getNextId(), summonTemplate, activeChar,
-						this);
-			}
-			else if (summonTemplate.Type.equalsIgnoreCase("L2MerchantSummon"))
-			{
-				summon = new L2MerchantSummonInstance(IdFactory.getInstance().getNextId(), summonTemplate, activeChar,
-						this);
-			}
-			else if (summonTemplate.Name.equalsIgnoreCase("Incarnation"))
-			{
+			if (summonTemplate.Type.equalsIgnoreCase("L2SiegeSummon")) {
+				summon = new L2SiegeSummonInstance(IdFactory.getInstance().getNextId(), summonTemplate, activeChar, this);
+			} else if (summonTemplate.Type.equalsIgnoreCase("L2MerchantSummon")) {
+				summon = new L2MerchantSummonInstance(IdFactory.getInstance().getNextId(), summonTemplate, activeChar, this);
+			} else if (summonTemplate.Name.equalsIgnoreCase("Incarnation")) {
 				summon = new L2CloneInstance(IdFactory.getInstance().getNextId(), summonTemplate, activeChar, this);
-			}
-			else
-			{
+			} else {
 				summon = new L2SummonInstance(IdFactory.getInstance().getNextId(), summonTemplate, activeChar, this);
 			}
 
 			summon.setName(summonTemplate.Name);
 			summon.setTitle(activeChar.getName());
 			summon.setExpPenalty(expPenalty);
-			if (summon.getLevel() > Config.MAX_LEVEL)
-			{
+			if (summon.getLevel() > Config.MAX_LEVEL) {
 				summon.getStat().setExp(Experience.getAbsoluteExp(Config.MAX_LEVEL));
-				Log.warning("Summon (" + summon.getName() + ") NpcID: " + summon.getNpcId() + " has a level above " +
-						Config.MAX_LEVEL + ". Please rectify.");
-			}
-			else
-			{
+				Log.warning("Summon (" + summon.getName() + ") NpcID: " + summon.getNpcId() + " has a level above " + Config.MAX_LEVEL +
+						". Please rectify.");
+			} else {
 				summon.getStat().setExp(Experience.getAbsoluteExp(summon.getLevel()));
 			}
 
-			if (!(summon instanceof L2MerchantSummonInstance) && !(summon instanceof L2CloneInstance))
-			{
+			if (!(summon instanceof L2MerchantSummonInstance) && !(summon instanceof L2CloneInstance)) {
 				activeChar.addSummon(summon);
 			}
 
 			double angle = Rnd.get() * Math.PI * 2;
-			summon.setXYZ(activeChar.getX() + (int) (Math.cos(angle) * 60),
-					activeChar.getY() + (int) (Math.sin(angle) * 60), activeChar.getZ());
-			while (!GeoData.getInstance().canSeeTarget(activeChar, summon))
-			{
+			summon.setXYZ(activeChar.getX() + (int) (Math.cos(angle) * 60), activeChar.getY() + (int) (Math.sin(angle) * 60), activeChar.getZ());
+			while (!GeoData.getInstance().canSeeTarget(activeChar, summon)) {
 				angle = Rnd.get() * Math.PI * 2;
-				summon.setXYZ(activeChar.getX() + (int) (Math.cos(angle) * 60),
-						activeChar.getY() + (int) (Math.sin(angle) * 60), activeChar.getZ());
+				summon.setXYZ(activeChar.getX() + (int) (Math.cos(angle) * 60), activeChar.getY() + (int) (Math.sin(angle) * 60), activeChar.getZ());
 			}
 			summon.setHeading(activeChar.getHeading());
 			summon.setCurrentHp(summon.getMaxHp());
@@ -441,18 +367,15 @@ public class L2SkillSummon extends L2Skill
 			//L2World.getInstance().storeObject(summon);
 			summon.spawnMe();
 
-			if (summon instanceof L2CloneInstance)
-			{
+			if (summon instanceof L2CloneInstance) {
 				summon.setTarget(summon.getOwner().getTarget());
 
-				if (summon.getTarget() != null && summon.getTarget().isAutoAttackable(summon.getOwner()))
-				{
+				if (summon.getTarget() != null && summon.getTarget().isAutoAttackable(summon.getOwner())) {
 					summon.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, summon.getTarget());
 				}
 			}
 
-			if (activeChar.isPlayingEvent())
-			{
+			if (activeChar.isPlayingEvent()) {
 				summon.setInsideZone(L2Character.ZONE_PVP, true);
 				summon.setInsideZone(L2Character.ZONE_PVP, true);
 			}
@@ -462,11 +385,9 @@ public class L2SkillSummon extends L2Skill
 		}
 
 		// self Effect
-		if (hasSelfEffects())
-		{
+		if (hasSelfEffects()) {
 			final L2Abnormal effect = caster.getFirstEffect(getId());
-			if (effect != null && effect.isSelfEffect())
-			{
+			if (effect != null && effect.isSelfEffect()) {
 				//Replace old effect with new one.
 				effect.exit();
 			}
@@ -474,67 +395,56 @@ public class L2SkillSummon extends L2Skill
 		}
 	}
 
-	public final boolean isCubic()
-	{
+	public final boolean isCubic() {
 		return isCubic;
 	}
 
-	public final int getTotalLifeTime()
-	{
+	public final int getTotalLifeTime() {
 		return summonTotalLifeTime;
 	}
 
-	public final int getTimeLostIdle()
-	{
+	public final int getTimeLostIdle() {
 		return summonTimeLostIdle;
 	}
 
-	public final int getTimeLostActive()
-	{
+	public final int getTimeLostActive() {
 		return summonTimeLostActive;
 	}
 
 	/**
 	 * @return Returns the itemConsume count over time.
 	 */
-	public final int getItemConsumeOT()
-	{
+	public final int getItemConsumeOT() {
 		return itemConsumeOT;
 	}
 
 	/**
 	 * @return Returns the itemConsumeId over time.
 	 */
-	public final int getItemConsumeIdOT()
-	{
+	public final int getItemConsumeIdOT() {
 		return itemConsumeIdOT;
 	}
 
-	public final int getItemConsumeSteps()
-	{
+	public final int getItemConsumeSteps() {
 		return itemConsumeSteps;
 	}
 
 	/**
 	 * @return Returns the itemConsume time in milliseconds.
 	 */
-	public final int getItemConsumeTime()
-	{
+	public final int getItemConsumeTime() {
 		return itemConsumeTime;
 	}
 
-	public final int getSummonPrice()
-	{
+	public final int getSummonPrice() {
 		return summonPrice;
 	}
 
-	public final int getSummonPoints()
-	{
+	public final int getSummonPoints() {
 		return summonPoints;
 	}
 
-	public final int getNpcId()
-	{
+	public final int getNpcId() {
 		return npcId;
 	}
 }

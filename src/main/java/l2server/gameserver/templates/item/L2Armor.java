@@ -32,8 +32,7 @@ import java.util.ArrayList;
  *
  * @version $Revision: 1.2.2.1.2.6 $ $Date: 2005/03/27 15:30:10 $
  */
-public final class L2Armor extends L2Item
-{
+public final class L2Armor extends L2Item {
 	public static final int MAX_ENCHANT_SKILL = 10;
 
 	private TIntObjectHashMap<SkillHolder> enchantSkills = new TIntObjectHashMap<>();
@@ -53,23 +52,17 @@ public final class L2Armor extends L2Item
 	 * @param set : StatsSet designating the set of couples (key,value) caracterizing the armor
 	 * @see L2Item constructor
 	 */
-	public L2Armor(StatsSet set)
-	{
+	public L2Armor(StatsSet set) {
 		super(set);
 		type = L2ArmorType.valueOf(set.getString("armorType", "none").toUpperCase());
 
 		int bodyPart = getBodyPart();
-		if (bodyPart == L2Item.SLOT_NECK || bodyPart == L2Item.SLOT_HAIR || bodyPart == L2Item.SLOT_HAIR2 ||
-				bodyPart == L2Item.SLOT_HAIRALL || (bodyPart & L2Item.SLOT_L_EAR) != 0 ||
-				(bodyPart & L2Item.SLOT_L_FINGER) != 0 || (bodyPart & L2Item.SLOT_R_BRACELET) != 0 ||
-				(bodyPart & L2Item.SLOT_L_BRACELET) != 0 || (bodyPart & L2Item.SLOT_BACK) != 0 ||
-				(bodyPart & L2Item.SLOT_BROOCH) != 0)
-		{
+		if (bodyPart == L2Item.SLOT_NECK || bodyPart == L2Item.SLOT_HAIR || bodyPart == L2Item.SLOT_HAIR2 || bodyPart == L2Item.SLOT_HAIRALL ||
+				(bodyPart & L2Item.SLOT_L_EAR) != 0 || (bodyPart & L2Item.SLOT_L_FINGER) != 0 || (bodyPart & L2Item.SLOT_R_BRACELET) != 0 ||
+				(bodyPart & L2Item.SLOT_L_BRACELET) != 0 || (bodyPart & L2Item.SLOT_BACK) != 0 || (bodyPart & L2Item.SLOT_BROOCH) != 0) {
 			type1 = L2Item.TYPE1_WEAPON_RING_EARRING_NECKLACE;
 			type2 = L2Item.TYPE2_ACCESSORY;
-		}
-		else
-		{
+		} else {
 			if (type == L2ArmorType.NONE && getBodyPart() == L2Item.SLOT_L_HAND) // retail define shield as NONE
 			{
 				type = L2ArmorType.SHIELD;
@@ -79,51 +72,37 @@ public final class L2Armor extends L2Item
 		}
 
 		String sets = set.getString("armorSet", null);
-		if (sets != null)
-		{
+		if (sets != null) {
 			String[] setsSplit = sets.split(";");
 			armorSet = new int[setsSplit.length];
 			int used = 0;
 
-			for (String element : setsSplit)
-			{
-				try
-				{
+			for (String element : setsSplit) {
+				try {
 					armorSet[used] = Integer.parseInt(element);
 					used++;
-				}
-				catch (Exception e)
-				{
-					Log.warning(
-							StringUtil.concat("Failed to parse armorSet(", element, ") for item ", toString(), "!"));
+				} catch (Exception e) {
+					Log.warning(StringUtil.concat("Failed to parse armorSet(", element, ") for item ", toString(), "!"));
 				}
 			}
 		}
 
-		for (int enchant = 1; enchant <= 10; enchant++)
-		{
+		for (int enchant = 1; enchant <= 10; enchant++) {
 			String skill = set.getString("enchant" + enchant + "Skill", null);
-			if (skill != null)
-			{
+			if (skill != null) {
 				String[] info = skill.split("-");
 
-				if (info != null && info.length == 2)
-				{
+				if (info != null && info.length == 2) {
 					int id = 0;
 					int level = 0;
-					try
-					{
+					try {
 						id = Integer.parseInt(info[0]);
 						level = Integer.parseInt(info[1]);
-					}
-					catch (Exception nfe)
-					{
+					} catch (Exception nfe) {
 						// Incorrect syntax, dont add new skill
-						Log.info(StringUtil
-								.concat("> Couldnt parse ", skill, " in armor enchant skills! item ", toString()));
+						Log.info(StringUtil.concat("> Couldnt parse ", skill, " in armor enchant skills! item ", toString()));
 					}
-					if (id > 0 && level > 0)
-					{
+					if (id > 0 && level > 0) {
 						enchantSkills.put(enchant, new SkillHolder(id, level));
 					}
 				}
@@ -137,8 +116,7 @@ public final class L2Armor extends L2Item
 	 * @return L2ArmorType
 	 */
 	@Override
-	public L2ArmorType getItemType()
-	{
+	public L2ArmorType getItemType() {
 		return type;
 	}
 
@@ -148,8 +126,7 @@ public final class L2Armor extends L2Item
 	 * @return int : ID of the item
 	 */
 	@Override
-	public final int getItemMask()
-	{
+	public final int getItemMask() {
 		return getItemType().mask();
 	}
 
@@ -158,33 +135,26 @@ public final class L2Armor extends L2Item
 	 *
 	 * @return
 	 */
-	public L2Skill getEnchantSkill(int enchant)
-	{
+	public L2Skill getEnchantSkill(int enchant) {
 		SkillHolder sh = enchantSkills.get(enchant);
-		if (sh == null)
-		{
+		if (sh == null) {
 			return null;
 		}
 
 		return sh.getSkill();
 	}
 
-	public int[] getArmorSet()
-	{
+	public int[] getArmorSet() {
 		return armorSet;
 	}
 
-	public boolean isArmorSetPart(int armorSet)
-	{
-		if (this.armorSet == null)
-		{
+	public boolean isArmorSetPart(int armorSet) {
+		if (this.armorSet == null) {
 			return false;
 		}
 
-		for (int set : this.armorSet)
-		{
-			if (set == armorSet)
-			{
+		for (int set : this.armorSet) {
+			if (set == armorSet) {
 				return true;
 			}
 		}
@@ -199,21 +169,17 @@ public final class L2Armor extends L2Item
 	 * @return Func[] : array of functions
 	 */
 	@Override
-	public Func[] getStatFuncs(L2ItemInstance instance)
-	{
-		if (funcTemplates == null || funcTemplates.length == 0)
-		{
+	public Func[] getStatFuncs(L2ItemInstance instance) {
+		if (funcTemplates == null || funcTemplates.length == 0) {
 			return emptyFunctionSet;
 		}
 
 		ArrayList<Func> funcs = new ArrayList<>(funcTemplates.length);
 
 		Func f;
-		for (FuncTemplate t : funcTemplates)
-		{
+		for (FuncTemplate t : funcTemplates) {
 			f = t.getFunc(instance);
-			if (f != null)
-			{
+			if (f != null) {
 				funcs.add(f);
 			}
 		}

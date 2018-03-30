@@ -20,27 +20,21 @@ import l2server.util.network.BaseSendablePacket;
 /**
  * @author mrTJO
  */
-public class TempBan extends BaseSendablePacket
-{
-	public TempBan(String accountName, String ip, long time, String reason)
-	{
+public class TempBan extends BaseSendablePacket {
+	public TempBan(String accountName, String ip, long time, String reason) {
 		writeC(0x0A);
 		writeS(accountName);
 		writeS(ip);
 		writeQ(System.currentTimeMillis() + time * 60000);
-		if (reason != null)
-		{
+		if (reason != null) {
 			writeC(0x01);
 			writeS(reason);
-		}
-		else
-		{
+		} else {
 			writeC(0x00);
 		}
 	}
 
-	public TempBan(String accountName, String ip, long time)
-	{
+	public TempBan(String accountName, String ip, long time) {
 		this(accountName, ip, time, null);
 	}
 
@@ -48,8 +42,7 @@ public class TempBan extends BaseSendablePacket
 	 * @see l2server.util.network.BaseSendablePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent()
-	{
+	public byte[] getContent() {
 		return getBytes();
 	}
 }

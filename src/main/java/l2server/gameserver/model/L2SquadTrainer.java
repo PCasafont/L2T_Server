@@ -20,7 +20,6 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author JIV
  */
-public interface L2SquadTrainer
-{
+public interface L2SquadTrainer {
 	void showSubUnitSkillList(L2PcInstance player);
 }

@@ -26,27 +26,22 @@ import java.util.Map.Entry;
  *
  * @author Gnacik
  */
-public class ExGetPremiumItemList extends L2GameServerPacket
-{
-
+public class ExGetPremiumItemList extends L2GameServerPacket {
+	
 	private L2PcInstance activeChar;
-
+	
 	private Map<Integer, L2PremiumItem> map;
-
-	public ExGetPremiumItemList(L2PcInstance activeChar)
-	{
+	
+	public ExGetPremiumItemList(L2PcInstance activeChar) {
 		this.activeChar = activeChar;
 		map = activeChar.getPremiumItemList();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
-		if (!map.isEmpty())
-		{
+	protected final void writeImpl() {
+		if (!map.isEmpty()) {
 			writeD(map.size());
-			for (Entry<Integer, L2PremiumItem> entry : map.entrySet())
-			{
+			for (Entry<Integer, L2PremiumItem> entry : map.entrySet()) {
 				L2PremiumItem item = entry.getValue();
 				writeD(entry.getKey());
 				writeD(activeChar.getObjectId());
@@ -55,9 +50,7 @@ public class ExGetPremiumItemList extends L2GameServerPacket
 				writeD(0);
 				writeS(item.getSender());
 			}
-		}
-		else
-		{
+		} else {
 			writeD(0);
 		}
 	}

@@ -25,49 +25,36 @@ import l2server.gameserver.network.serverpackets.TargetUnselected;
  *
  * @version $Revision: 1.3.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestTargetCancel extends L2GameClientPacket
-{
-
+public final class RequestTargetCancel extends L2GameClientPacket {
+	
 	private int unselect;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		unselect = readH();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (activeChar.isLockedTarget())
-		{
+		
+		if (activeChar.isLockedTarget()) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_DISABLE_TARGET));
 			return;
 		}
-
-		if (unselect == 0)
-		{
-			if (activeChar.isCastingNow() && activeChar.canAbortCast())
-			{
+		
+		if (unselect == 0) {
+			if (activeChar.isCastingNow() && activeChar.canAbortCast()) {
 				activeChar.abortCast();
-			}
-			else if (activeChar.getTarget() != null)
-			{
+			} else if (activeChar.getTarget() != null) {
 				activeChar.setTarget(null);
 			}
-		}
-		else if (activeChar.getTarget() != null)
-		{
+		} else if (activeChar.getTarget() != null) {
 			activeChar.setTarget(null);
-		}
-		else if (activeChar.isInAirShip())
-		{
+		} else if (activeChar.isInAirShip()) {
 			activeChar.broadcastPacket(new TargetUnselected(activeChar));
 		}
 	}

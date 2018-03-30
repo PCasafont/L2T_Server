@@ -20,31 +20,28 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public class SocialAction extends L2GameServerPacket
-{
+public class SocialAction extends L2GameServerPacket {
 	public static final int THROW_BALL = 30;
 	public static final int HIT_BALL = 31;
 	public static final int CHEER = 32;
 	public static final int PLAY = 33;
 	public static final int CLAP = 34;
 	public static final int LEVEL_UP = 2122;
-
+	
 	private int charObjId;
 	private int actionId;
-
+	
 	/**
 	 * @param objectId
 	 * @param actionId
 	 */
-	public SocialAction(int objectId, int actionId)
-	{
+	public SocialAction(int objectId, int actionId) {
 		charObjId = objectId;
 		this.actionId = actionId;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(charObjId);
 		writeD(actionId);
 		writeD(0x00); // GoD ??? (maybe npcstringId or npcTextId)

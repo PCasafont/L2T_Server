@@ -26,37 +26,32 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  * Support for /olympiadstat command
  * Added by kamy
  */
-public class OlympiadStat implements IUserCommandHandler
-{
+public class OlympiadStat implements IUserCommandHandler {
 	private static final int[] COMMAND_IDS = {109};
 
 	/**
 	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
-	{
-		if (id != COMMAND_IDS[0])
-		{
+	public boolean useUserCommand(int id, L2PcInstance activeChar) {
+		if (id != COMMAND_IDS[0]) {
 			return false;
 		}
 
 		L2PcInstance noble = activeChar;
-		if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2PcInstance)
-		{
+		if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2PcInstance) {
 			noble = activeChar.getTarget().getActingPlayer();
 		}
 
 		OlympiadNobleInfo nobleInfo = Olympiad.getInstance().getNobleInfo(noble.getObjectId());
-		if (nobleInfo == null)
-		{
+		if (nobleInfo == null) {
 			activeChar.sendMessage("This target did not participate to the Olympiads yet.");
 			return false;
 		}
 
 		// TODO Retail system message says YOU even on other targets' info
-		SystemMessage sm = SystemMessage.getSystemMessage(
-				SystemMessageId.THE_CURRENT_RECORD_FOR_THIS_OLYMPIAD_SESSION_IS_S1_MATCHES_S2_WINS_S3_DEFEATS_YOU_HAVE_EARNED_S4_OLYMPIAD_POINTS);
+		SystemMessage sm =
+				SystemMessage.getSystemMessage(SystemMessageId.THE_CURRENT_RECORD_FOR_THIS_OLYMPIAD_SESSION_IS_S1_MATCHES_S2_WINS_S3_DEFEATS_YOU_HAVE_EARNED_S4_OLYMPIAD_POINTS);
 		sm.addNumber(nobleInfo.getMatches());
 		sm.addNumber(nobleInfo.getVictories());
 		sm.addNumber(nobleInfo.getDefeats());
@@ -75,8 +70,7 @@ public class OlympiadStat implements IUserCommandHandler
 	 * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
 	 */
 	@Override
-	public int[] getUserCommandList()
-	{
+	public int[] getUserCommandList() {
 		return COMMAND_IDS;
 	}
 }

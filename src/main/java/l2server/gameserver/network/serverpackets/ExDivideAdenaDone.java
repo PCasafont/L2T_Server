@@ -18,29 +18,26 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExDivideAdenaDone extends L2GameServerPacket
-{
+public class ExDivideAdenaDone extends L2GameServerPacket {
 	private int friendCount;
 	private long adena;
 	private long totalAdena;
 	private String sender;
-
-	public ExDivideAdenaDone(int friendCount, long adena, long totalAdena, String sender)
-	{
+	
+	public ExDivideAdenaDone(int friendCount, long adena, long totalAdena, String sender) {
 		this.friendCount = friendCount;
 		this.adena = adena;
 		this.totalAdena = totalAdena;
 		this.sender = sender;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeH(0x00);
 		writeD(friendCount); // Friend count
 		writeQ(adena); // Your adena
 		writeQ(totalAdena); // Total adena
-
+		
 		writeS(sender); // Sender name
 	}
 }

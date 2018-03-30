@@ -23,35 +23,31 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @version $Revision: 1.3.2.1.2.4 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class PledgeShowMemberListAdd extends L2GameServerPacket
-{
+public final class PledgeShowMemberListAdd extends L2GameServerPacket {
 	private String name;
 	private int lvl;
 	private int classId;
 	private int isOnline;
 	private int pledgeType;
-
-	public PledgeShowMemberListAdd(L2PcInstance player)
-	{
+	
+	public PledgeShowMemberListAdd(L2PcInstance player) {
 		name = player.getName();
 		lvl = player.getLevel();
 		classId = player.getCurrentClass().getId();
 		isOnline = player.isOnline() ? player.getObjectId() : 0;
 		pledgeType = player.getPledgeType();
 	}
-
-	public PledgeShowMemberListAdd(L2ClanMember cm)
-	{
+	
+	public PledgeShowMemberListAdd(L2ClanMember cm) {
 		name = cm.getName();
 		lvl = cm.getLevel();
 		classId = cm.getCurrentClass();
 		isOnline = cm.isOnline() ? cm.getObjectId() : 0;
 		pledgeType = cm.getPledgeType();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeS(name);
 		writeD(lvl);
 		writeD(classId);

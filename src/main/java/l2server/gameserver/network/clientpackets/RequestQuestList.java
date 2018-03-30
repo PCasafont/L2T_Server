@@ -22,19 +22,16 @@ import l2server.gameserver.network.serverpackets.QuestList;
  *
  * @version $Revision: 1.3.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestQuestList extends L2GameClientPacket
-{
+public final class RequestQuestList extends L2GameClientPacket {
 	//
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// trigger
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		QuestList ql = new QuestList();
 		sendPacket(ql);
 	}

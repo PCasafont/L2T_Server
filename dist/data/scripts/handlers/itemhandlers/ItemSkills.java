@@ -26,32 +26,26 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 /**
  * Item skills not allowed on olympiad
  */
-public class ItemSkills extends ItemSkillsTemplate
-{
+public class ItemSkills extends ItemSkillsTemplate {
 	/**
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
 		final L2PcInstance activeChar = playable.getActingPlayer();
 		if (activeChar != null && activeChar.isInOlympiadMode() && item.getItemId() != 5589) // Momentum Stone
 		{
-			activeChar.sendPacket(
-					SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
 			return;
 		}
 
-		if (activeChar.getEvent() != null && !activeChar.getEvent().onScrollUse(activeChar.getObjectId()))
-		{
+		if (activeChar.getEvent() != null && !activeChar.getEvent().onScrollUse(activeChar.getObjectId())) {
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
 		//Don't allow the use of blessed scroll of escape
-		if (Config.isServer(Config.TENKAI) && item.getName().contains("Blessed Scroll of Escape") &&
-				activeChar.getPvpFlag() > 0)
-		{
+		if (Config.isServer(Config.TENKAI) && item.getName().contains("Blessed Scroll of Escape") && activeChar.getPvpFlag() > 0) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}

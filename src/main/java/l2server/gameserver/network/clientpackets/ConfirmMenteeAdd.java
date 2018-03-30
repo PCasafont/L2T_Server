@@ -31,83 +31,67 @@ import java.util.logging.Level;
 /**
  * @author Erlandys
  */
-public class ConfirmMenteeAdd extends L2GameClientPacket
-{
+public class ConfirmMenteeAdd extends L2GameClientPacket {
 	int response;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		response = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player != null)
-		{
+		if (player != null) {
 			L2PcInstance requestor = player.getActiveRequester();
-			if (requestor == null)
-			{
+			if (requestor == null) {
 				return;
 			}
-
-			if (response == 1)
-			{
+			
+			if (response == 1) {
 				Connection con = null;
-				try
-				{
+				try {
 					con = L2DatabaseFactory.getInstance().getConnection();
-					PreparedStatement statement =
-							con.prepareStatement("INSERT INTO character_mentees (charId, menteeId) VALUES (?, ?)");
+					PreparedStatement statement = con.prepareStatement("INSERT INTO character_mentees (charId, menteeId) VALUES (?, ?)");
 					statement.setInt(1, requestor.getObjectId());
 					statement.setInt(2, player.getObjectId());
 					statement.execute();
 					statement.close();
 					SystemMessage msg;
-
+					
 					// Mentor has added player as mentee
 					msg = SystemMessage.getSystemMessage(SystemMessageId.FROM_NOW_ON_S1_WILL_BE_YOUR_MENTEE);
 					msg.addString(player.getName());
 					requestor.sendPacket(msg);
 					requestor.getMenteeList().add(player.getObjectId());
-
+					
 					// Player is now mentors mentee.
 					msg = SystemMessage.getSystemMessage(SystemMessageId.FROM_NOW_ON_S1_WILL_BE_YOUR_MENTOR);
 					msg.addString(requestor.getName());
 					player.sendPacket(msg);
-
+					
 					// Send information to both players about them mentees/mentors
 					requestor.sendPacket(new ExMentorList(requestor));
 					player.sendPacket(new ExMentorList(player));
 					player.setMentorId(requestor.getObjectId());
-
+					
 					L2Skill s = SkillTable.getInstance().getInfo(9379, 1);
 					player.addSkill(s, false); //Dont Save Mentee skill to database
 					requestor.giveMentorBuff();
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					Log.log(Level.WARNING, "Could not add friend objectid: " + e.getMessage(), e);
-				}
-				finally
-				{
+				} finally {
 					L2DatabaseFactory.close(con);
 				}
-			}
-			else
-			{
-				SystemMessage msg =
-						SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_DECLINED_BECOMING_YOUR_MENTEE);
+			} else {
+				SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_DECLINED_BECOMING_YOUR_MENTEE);
 				msg.addCharName(player);
 				requestor.sendPacket(msg);
-				SystemMessage msg1 =
-						SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_DECLINED_S1_MENTORING_OFFER);
+				SystemMessage msg1 = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_DECLINED_S1_MENTORING_OFFER);
 				msg1.addCharName(requestor);
 				player.sendPacket(msg1);
 			}
-
+			
 			player.setActiveRequester(null);
 			requestor.onTransactionResponse();
 		}

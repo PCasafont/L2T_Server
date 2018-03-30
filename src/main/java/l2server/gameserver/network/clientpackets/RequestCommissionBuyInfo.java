@@ -20,25 +20,21 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Erlandys
  */
-public final class RequestCommissionBuyInfo extends L2GameClientPacket
-{
-
+public final class RequestCommissionBuyInfo extends L2GameClientPacket {
+	
 	@SuppressWarnings("unused")
 	private long auctionID;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		auctionID = readQ();
 		readD(); // Category - unused
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 		}
 
 		/*AuctionManager am = AuctionManager.getInstance();

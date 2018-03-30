@@ -41,11 +41,7 @@ import l2server.gameserver.model.olympiad.OlympiadGameManager;
 import l2server.gameserver.model.olympiad.OlympiadGameTask;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.ConfirmDlg;
-import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.GMAudit;
 import l2server.log.Log;
 
@@ -57,318 +53,229 @@ import java.util.logging.Level;
  *
  * @version $Revision: 1.12.4.5 $ $Date: 2005/04/11 10:06:11 $
  */
-public final class RequestBypassToServer extends L2GameClientPacket
-{
-
+public final class RequestBypassToServer extends L2GameClientPacket {
+	
 	// S
 	private String command;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		command = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (!getClient().getFloodProtectors().getServerBypass().tryPerformAction(command))
-		{
+		
+		if (!getClient().getFloodProtectors().getServerBypass().tryPerformAction(command)) {
 			return;
 		}
-
-		if (command.isEmpty())
-		{
+		
+		if (command.isEmpty()) {
 			Log.info(activeChar.getName() + " send empty requestbypass");
 			activeChar.logout();
 			return;
 		}
-
-		try
-		{
+		
+		try {
 			if (command.startsWith("admin_")) //&& activeChar.getAccessLevel() >= Config.GM_ACCESSLEVEL)
 			{
 				String command = this.command.split(" ")[0];
-
+				
 				IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler(command);
-
-				if (ach == null)
-				{
-					if (activeChar.isGM())
-					{
+				
+				if (ach == null) {
+					if (activeChar.isGM()) {
 						activeChar.sendMessage("The command " + command.substring(6) + " does not exist!");
 					}
-
+					
 					Log.warning("No handler registered for admin command '" + command + "'");
 					return;
 				}
-
-				if (!AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel()))
-				{
+				
+				if (!AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel())) {
 					activeChar.sendMessage("You don't have the access rights to use this command!");
-					Log.warning("Character " + activeChar.getName() + " tried to use admin command " + command +
-							", without proper access level!");
+					Log.warning("Character " + activeChar.getName() + " tried to use admin command " + command + ", without proper access level!");
 					return;
 				}
-
-				if (AdminCommandAccessRights.getInstance().requireConfirm(command))
-				{
+				
+				if (AdminCommandAccessRights.getInstance().requireConfirm(command)) {
 					activeChar.setAdminConfirmCmd(command);
 					ConfirmDlg dlg = new ConfirmDlg(SystemMessageId.S1);
 					dlg.addString("Are you sure you want execute command " + command.substring(6) + " ?");
 					activeChar.sendPacket(dlg);
-				}
-				else
-				{
-					if (Config.GMAUDIT)
-					{
-						GMAudit.auditGMAction(activeChar.getName(), command,
+				} else {
+					if (Config.GMAUDIT) {
+						GMAudit.auditGMAction(activeChar.getName(),
+								command,
 								activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target");
 					}
-
+					
 					ach.useAdminCommand(command, activeChar);
 				}
-			}
-			else if (command.equals("come_here") && activeChar.isGM())
-			{
+			} else if (command.equals("come_here") && activeChar.isGM()) {
 				comeHere(activeChar);
-			}
-			else if (command.startsWith("npc_"))
-			{
-				if (!activeChar.validateBypass(command))
-				{
+			} else if (command.startsWith("npc_")) {
+				if (!activeChar.validateBypass(command)) {
 					return;
 				}
-
+				
 				int endOfId = command.indexOf('_', 5);
 				String id;
-				if (endOfId > 0)
-				{
+				if (endOfId > 0) {
 					id = command.substring(4, endOfId);
-				}
-				else
-				{
+				} else {
 					id = command.substring(4);
 				}
-				try
-				{
+				try {
 					L2Object object = L2World.getInstance().findObject(Integer.parseInt(id));
-
-					if (object instanceof L2Npc && endOfId > 0 && activeChar
-							.isInsideRadius(object, ((L2Npc) object).getTemplate().InteractionDistance, false, false))
-					{
+					
+					if (object instanceof L2Npc && endOfId > 0 &&
+							activeChar.isInsideRadius(object, ((L2Npc) object).getTemplate().InteractionDistance, false, false)) {
 						((L2Npc) object).onBypassFeedback(activeChar, command.substring(endOfId + 1));
 					}
-
+					
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+				} catch (NumberFormatException ignored) {
 				}
-				catch (NumberFormatException ignored)
-				{
-				}
-			}
-			else if (command.startsWith("summon_"))
-			{
-				if (!activeChar.validateBypass(command))
-				{
+			} else if (command.startsWith("summon_")) {
+				if (!activeChar.validateBypass(command)) {
 					return;
 				}
-
+				
 				int endOfId = command.indexOf('_', 8);
 				String id;
-				if (endOfId > 0)
-				{
+				if (endOfId > 0) {
 					id = command.substring(7, endOfId);
-				}
-				else
-				{
+				} else {
 					id = command.substring(7);
 				}
-				try
-				{
+				try {
 					L2Object object = L2World.getInstance().findObject(Integer.parseInt(id));
-
+					
 					if (object instanceof L2MerchantSummonInstance && endOfId > 0 &&
-							activeChar.isInsideRadius(object, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false))
-					{
-						((L2MerchantSummonInstance) object)
-								.onBypassFeedback(activeChar, command.substring(endOfId + 1));
+							activeChar.isInsideRadius(object, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false)) {
+						((L2MerchantSummonInstance) object).onBypassFeedback(activeChar, command.substring(endOfId + 1));
 					}
-
+					
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-				}
-				catch (NumberFormatException ignored)
-				{
+				} catch (NumberFormatException ignored) {
 				}
 			}
 			// Navigate through Manor windows
-			else if (command.startsWith("manor_menu_select"))
-			{
+			else if (command.startsWith("manor_menu_select")) {
 				final IBypassHandler manor = BypassHandler.getInstance().getBypassHandler("manor_menu_select");
-				if (manor != null)
-				{
+				if (manor != null) {
 					manor.useBypass(command, activeChar, null);
 				}
-			}
-			else if (command.startsWith("_bbs"))
-			{
+			} else if (command.startsWith("_bbs")) {
 				CommunityBoard.getInstance().handleCommands(getClient(), command);
-			}
-			else if (command.startsWith("_mail"))
-			{
+			} else if (command.startsWith("_mail")) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CB_OFFLINE));
-			}
-			else if (command.startsWith("_friend"))
-			{
+			} else if (command.startsWith("_friend")) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CB_OFFLINE));
-			}
-			else if (command.startsWith("Inia"))
-			{
+			} else if (command.startsWith("Inia")) {
 				IniaParser.getInstance().handleCommands(getClient(), command);
-			}
-			else if (command.startsWith("Quest "))
-			{
-				if (!activeChar.validateBypass(command))
-				{
+			} else if (command.startsWith("Quest ")) {
+				if (!activeChar.validateBypass(command)) {
 					return;
 				}
-
+				
 				L2PcInstance player = getClient().getActiveChar();
-				if (player == null)
-				{
+				if (player == null) {
 					return;
 				}
-
+				
 				String p = command.substring(6).trim();
 				int idx = p.indexOf(' ');
-				if (idx < 0)
-				{
+				if (idx < 0) {
 					player.processQuestEvent(p, "");
-				}
-				else
-				{
+				} else {
 					player.processQuestEvent(p.substring(0, idx), p.substring(idx).trim());
 				}
-			}
-			else if (command.startsWith("_match"))
-			{
+			} else if (command.startsWith("_match")) {
 				L2PcInstance player = getClient().getActiveChar();
-				if (player == null)
-				{
+				if (player == null) {
 					return;
 				}
-
+				
 				String params = command.substring(command.indexOf("?") + 1);
 				StringTokenizer st = new StringTokenizer(params, "&");
 				int heroclass = Integer.parseInt(st.nextToken().split("=")[1]);
 				int heropage = Integer.parseInt(st.nextToken().split("=")[1]);
 				int heroid = HeroesManager.getInstance().getHeroByClass(heroclass);
-				if (heroid > 0)
-				{
+				if (heroid > 0) {
 					HeroesManager.getInstance().showHeroFights(player, heroclass, heroid, heropage);
 				}
-			}
-			else if (command.startsWith("_diary"))
-			{
+			} else if (command.startsWith("_diary")) {
 				L2PcInstance player = getClient().getActiveChar();
-				if (player == null)
-				{
+				if (player == null) {
 					return;
 				}
-
+				
 				String params = command.substring(command.indexOf("?") + 1);
 				StringTokenizer st = new StringTokenizer(params, "&");
 				int heroclass = Integer.parseInt(st.nextToken().split("=")[1]);
 				int heropage = Integer.parseInt(st.nextToken().split("=")[1]);
 				int heroid = HeroesManager.getInstance().getHeroByClass(heroclass);
-				if (heroid > 0)
-				{
+				if (heroid > 0) {
 					HeroesManager.getInstance().showHeroDiary(player, heroclass, heroid, heropage);
 				}
-			}
-			else if (command.startsWith("MobSummon"))
-			{
-				for (L2Summon summon : activeChar.getSummons())
-				{
-					if (!(summon instanceof L2MobSummonInstance))
-					{
+			} else if (command.startsWith("MobSummon")) {
+				for (L2Summon summon : activeChar.getSummons()) {
+					if (!(summon instanceof L2MobSummonInstance)) {
 						continue;
 					}
-
+					
 					L2MobSummonInstance mobSummon = (L2MobSummonInstance) summon;
 					mobSummon.onBypass(activeChar, command.substring(10));
 				}
-			}
-			else if (command.startsWith("InstancedEvent"))
-			{
+			} else if (command.startsWith("InstancedEvent")) {
 				EventsManager.getInstance().handleBypass(activeChar, command);
-			}
-			else if (command.startsWith("WatchDrops"))
-			{
+			} else if (command.startsWith("WatchDrops")) {
 				IBypassHandler handler = BypassHandler.getInstance().getBypassHandler(command);
-				if (handler != null)
-				{
+				if (handler != null) {
 					handler.useBypass(command, activeChar, null);
 				}
-			}
-			else if (command.startsWith("Captcha"))
-			{
+			} else if (command.startsWith("Captcha")) {
 				String text = "";
-				if (command.length() > 8)
-				{
+				if (command.length() > 8) {
 					text = command.substring(8);
 				}
-				if (text.equalsIgnoreCase(activeChar.getCaptcha()))
-				{
+				if (text.equalsIgnoreCase(activeChar.getCaptcha())) {
 					activeChar.setCaptcha(null);
 					activeChar.sendPacket(new CreatureSay(0, Say2.TELL, "Captcha", "Ok"));
 					activeChar.sendPacket(new NpcHtmlMessage(0, "<html><body></body><html>"));
-				}
-				else
-				{
-					if (activeChar.getBotLevel() % 5 < 4)
-					{
+				} else {
+					if (activeChar.getBotLevel() % 5 < 4) {
 						activeChar.increaseBotLevel();
 						activeChar.captcha("");
-						activeChar.sendPacket(
-								new CreatureSay(0, Say2.TELL, "Captcha", "You have typed it wrong. Try again.."));
-					}
-					else
-					{
+						activeChar.sendPacket(new CreatureSay(0, Say2.TELL, "Captcha", "You have typed it wrong. Try again.."));
+					} else {
 						activeChar.logout(false);
 					}
 				}
-			}
-			else if (command.startsWith("NickName"))
-			{
+			} else if (command.startsWith("NickName")) {
 				String text = "";
-				if (command.length() > 9)
-				{
+				if (command.length() > 9) {
 					text = command.substring(9);
 				}
-				if (CharNameTable.getInstance().doesCharNameExist(text))
-				{
+				if (CharNameTable.getInstance().doesCharNameExist(text)) {
 					activeChar.sendPacket(new NpcHtmlMessage(0,
 							"<html><body><center>" + "This name already exists!<br>" + "Choose another one:<br>" +
 									"<edit var=text width=130 height=11 length=26><br>" +
 									"<button value=\"Done\" action=\"bypass NickName $text\" back=\"l2ui_ct1.button_df\" width=65 height=20 fore=\"l2ui_ct1.button_df\">" +
 									"</center></body></html>"));
-				}
-				else if (!CharacterCreate.isValidName(text))
-				{
+				} else if (!CharacterCreate.isValidName(text)) {
 					activeChar.sendPacket(new NpcHtmlMessage(0,
 							"<html><body><center>" + "Invalid name!<br>" + "Choose another one:<br>" +
 									"<edit var=text width=130 height=11 length=26><br>" +
 									"<button value=\"Done\" action=\"bypass NickName $text\" back=\"l2ui_ct1.button_df\" width=65 height=20 fore=\"l2ui_ct1.button_df\">" +
 									"</center></body></html>"));
-				}
-				else
-				{
+				} else {
 					activeChar.setName(text);
 					activeChar.store();
 					CharNameTable.getInstance().addName(activeChar);
@@ -378,91 +285,61 @@ public final class RequestBypassToServer extends L2GameClientPacket
 					activeChar.sendPacket(new NpcHtmlMessage(0, "<html><body></body></html>"));
 					activeChar.startCaptchaTask();
 				}
-			}
-			else if (command.startsWith("Survey"))
-			{
-				if (command.length() > 6)
-				{
-					if (command.equals("SurveyInfo"))
-					{
-						String html = "<html><title>Survey System</title><body>" +
-								SurveyManager.getInstance().getDescription() +
+			} else if (command.startsWith("Survey")) {
+				if (command.length() > 6) {
+					if (command.equals("SurveyInfo")) {
+						String html = "<html><title>Survey System</title><body>" + SurveyManager.getInstance().getDescription() +
 								"<br><button value=\"Back\" action=\"bypass -h Survey\" width=60 height=20 fore=\"L2UI_ct1.button_df\"><br>" +
 								"</body></html>";
 						activeChar.sendPacket(new NpcHtmlMessage(0, html));
-					}
-					else if (command.startsWith("SurveyAnswer"))
-					{
+					} else if (command.startsWith("SurveyAnswer")) {
 						String message = "Thank you!";
-						if (!SurveyManager.getInstance()
-								.storeAnswer(activeChar.getObjectId(), Integer.valueOf(command.substring(13))))
-						{
+						if (!SurveyManager.getInstance().storeAnswer(activeChar.getObjectId(), Integer.valueOf(command.substring(13)))) {
 							message = "You already answered!";
 						}
 						String html = "<html><title>Survey System</title><body>" + message + "</body></html>";
 						activeChar.sendPacket(new NpcHtmlMessage(0, html));
 					}
-				}
-				else
-				{
-					String html =
-							"<html><title>Survey System</title><body>" + SurveyManager.getInstance().getQuestion() +
-									" <button value=\"More Info\" action=\"bypass -h SurveyInfo\" width=70 height=20 fore=\"L2UI_ct1.button_df\"><br>" +
-									"<table width=260>";
-					for (int answerId : SurveyManager.getInstance().getPossibleAnswerIds())
-					{
+				} else {
+					String html = "<html><title>Survey System</title><body>" + SurveyManager.getInstance().getQuestion() +
+							" <button value=\"More Info\" action=\"bypass -h SurveyInfo\" width=70 height=20 fore=\"L2UI_ct1.button_df\"><br>" +
+							"<table width=260>";
+					for (int answerId : SurveyManager.getInstance().getPossibleAnswerIds()) {
 						html += "<tr><td><button value=\"" + SurveyManager.getInstance().getPossibleAnswer(answerId) +
-								"\" action=\"bypass -h SurveyAnswer " + answerId +
-								"\" width=250 height=25 fore=\"L2UI_ct1.button_df\"></td></tr>";
+								"\" action=\"bypass -h SurveyAnswer " + answerId + "\" width=250 height=25 fore=\"L2UI_ct1.button_df\"></td></tr>";
 					}
 					html += "</table></body></html>";
 					activeChar.sendPacket(new NpcHtmlMessage(0, html));
 				}
-			}
-			else if (command.startsWith("_olympiad"))
-			{
-				if (command.substring(18).startsWith("move_op_field"))
-				{
+			} else if (command.startsWith("_olympiad")) {
+				if (command.substring(18).startsWith("move_op_field")) {
 					final int arenaId = Integer.parseInt(command.substring(38));
 					final OlympiadGameTask nextArena = OlympiadGameManager.getInstance().getOlympiadTask(arenaId - 1);
 					if (nextArena != null && nextArena.getGame() != null && !activeChar.isInOlympiadMode() &&
 							!OlympiadManager.getInstance().isRegistered(activeChar) &&
-							(activeChar.inObserverMode() || activeChar.getOlympiadGameId() == -1))
-					{
-						activeChar.enterOlympiadObserverMode(nextArena.getZone().getSpawns().get(8),
-								nextArena.getGame().getGameId());
+							(activeChar.inObserverMode() || activeChar.getOlympiadGameId() == -1)) {
+						activeChar.enterOlympiadObserverMode(nextArena.getZone().getSpawns().get(8), nextArena.getGame().getGameId());
 					}
 				}
-			}
-			else if (command.equals("treasure"))
-			{
+			} else if (command.equals("treasure")) {
 				HiddenChests.getInstance().showInfo(activeChar);
-			}
-			else
-			{
+			} else {
 				final IBypassHandler handler = BypassHandler.getInstance().getBypassHandler(command);
-				if (handler != null)
-				{
+				if (handler != null) {
 					handler.useBypass(command, activeChar, null);
-				}
-				else
-				{
+				} else {
 					Log.log(Level.WARNING, getClient() + " sent not handled RequestBypassToServer: [" + command + "]");
 				}
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, getClient() + " sent bad RequestBypassToServer: \"" + command + "\"", e);
-			if (activeChar.isGM())
-			{
+			if (activeChar.isGM()) {
 				StringBuilder sb = new StringBuilder(200);
 				sb.append("<html><body>");
 				sb.append("Bypass error: " + e + "<br1>");
 				sb.append("Bypass command: " + command + "<br1>");
 				sb.append("StackTrace:<br1>");
-				for (StackTraceElement ste : e.getStackTrace())
-				{
+				for (StackTraceElement ste : e.getStackTrace()) {
 					sb.append(ste.toString() + "<br1>");
 				}
 				sb.append("</body></html>");
@@ -474,22 +351,19 @@ public final class RequestBypassToServer extends L2GameClientPacket
 			}
 		}
 	}
-
+	
 	/**
 	 */
-	private static void comeHere(L2PcInstance activeChar)
-	{
+	private static void comeHere(L2PcInstance activeChar) {
 		L2Object obj = activeChar.getTarget();
-		if (obj == null)
-		{
+		if (obj == null) {
 			return;
 		}
-		if (obj instanceof L2Npc)
-		{
+		if (obj instanceof L2Npc) {
 			L2Npc temp = (L2Npc) obj;
 			temp.setTarget(activeChar);
-			temp.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-					new L2CharPosition(activeChar.getX(), activeChar.getY(), activeChar.getZ(), 0));
+			temp.getAI()
+					.setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(activeChar.getX(), activeChar.getY(), activeChar.getZ(), 0));
 		}
 	}
 }

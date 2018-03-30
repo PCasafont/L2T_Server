@@ -20,9 +20,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Erlandys
  */
-public final class RequestCommissionList extends L2GameClientPacket
-{
-
+public final class RequestCommissionList extends L2GameClientPacket {
+	
 	@SuppressWarnings("unused")
 	private long category;
 	@SuppressWarnings("unused")
@@ -31,22 +30,19 @@ public final class RequestCommissionList extends L2GameClientPacket
 	private int grade;
 	@SuppressWarnings("unused")
 	private String searchName;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		category = readQ();
 		type = readD();
 		grade = readD();
 		searchName = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 		}
 
 		/*AuctionManager am = AuctionManager.getInstance();

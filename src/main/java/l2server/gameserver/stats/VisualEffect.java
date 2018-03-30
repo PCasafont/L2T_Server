@@ -20,8 +20,7 @@ import java.util.NoSuchElementException;
 /**
  * @author DrHouse
  */
-public enum VisualEffect
-{
+public enum VisualEffect {
 	BLEEDING(1, "bleed"),
 	POISON(2, "poison"),
 	REDCIRCLE(3, "redcircle"),
@@ -217,33 +216,26 @@ public enum VisualEffect
 	private final int id;
 	private final String name;
 
-	VisualEffect(int id, String name)
-	{
+	VisualEffect(int id, String name) {
 		this.name = name;
 		this.id = id;
 	}
 
-	public final int getId()
-	{
+	public final int getId() {
 		return id;
 	}
 
-	public final String getName()
-	{
+	public final String getName() {
 		return name;
 	}
 
-	public static VisualEffect getByName(String name)
-	{
-		for (VisualEffect eff : VisualEffect.values())
-		{
-			if (eff.getName().equals(name))
-			{
+	public static VisualEffect getByName(String name) {
+		for (VisualEffect eff : VisualEffect.values()) {
+			if (eff.getName().equals(name)) {
 				return eff;
 			}
 		}
 
-		throw new NoSuchElementException("VisualEffect not found for name: '" + name + "'.\n Please check " +
-				VisualEffect.class.getCanonicalName());
+		throw new NoSuchElementException("VisualEffect not found for name: '" + name + "'.\n Please check " + VisualEffect.class.getCanonicalName());
 	}
 }

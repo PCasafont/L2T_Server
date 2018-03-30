@@ -30,20 +30,17 @@ import java.util.logging.Logger;
 /**
  * @author -Wooden-
  */
-public class BlowFishKey extends BaseRecievePacket
-{
+public class BlowFishKey extends BaseRecievePacket {
 	protected static final Logger log = Logger.getLogger(BlowFishKey.class.getName());
 
 	/**
 	 * @param decrypt
 	 */
-	public BlowFishKey(byte[] decrypt, GameServerThread server)
-	{
+	public BlowFishKey(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 		int size = readD();
 		byte[] tempKey = readB(size);
-		try
-		{
+		try {
 			byte[] tempDecryptKey;
 			Cipher rsaCipher = Cipher.getInstance("RSA/ECB/nopadding");
 			rsaCipher.init(Cipher.DECRYPT_MODE, server.getPrivateKey());
@@ -51,10 +48,8 @@ public class BlowFishKey extends BaseRecievePacket
 			// there are nulls before the key we must remove them
 			int i = 0;
 			int len = tempDecryptKey.length;
-			for (; i < len; i++)
-			{
-				if (tempDecryptKey[i] != 0)
-				{
+			for (; i < len; i++) {
+				if (tempDecryptKey[i] != 0) {
 					break;
 				}
 			}
@@ -62,14 +57,11 @@ public class BlowFishKey extends BaseRecievePacket
 			System.arraycopy(tempDecryptKey, i, key, 0, len - i);
 
 			server.SetBlowFish(new NewCrypt(key));
-			if (Config.DEBUG)
-			{
+			if (Config.DEBUG) {
 				Log.info("New BlowFish key received, Blowfih Engine initialized:");
 			}
 			server.setLoginConnectionState(GameServerState.BF_CONNECTED);
-		}
-		catch (GeneralSecurityException e)
-		{
+		} catch (GeneralSecurityException e) {
 			Log.log(Level.SEVERE, "Error While decrypting blowfish key (RSA): " + e.getMessage(), e);
 		}
 	}

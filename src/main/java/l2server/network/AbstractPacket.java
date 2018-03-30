@@ -24,14 +24,12 @@ import java.nio.ByteBuffer;
  * @param <T>
  * @author KenM
  */
-public abstract class AbstractPacket<T extends MMOClient<?>>
-{
+public abstract class AbstractPacket<T extends MMOClient<?>> {
 	protected ByteBuffer buf;
-
+	
 	protected T client;
-
-	public final T getClient()
-	{
+	
+	public final T getClient() {
 		return client;
 	}
 }

@@ -21,26 +21,22 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  * @author ShanSoft
  * @structure: chdd
  */
-public final class RequestDeleteBookMarkSlot extends L2GameClientPacket
-{
-
+public final class RequestDeleteBookMarkSlot extends L2GameClientPacket {
+	
 	private int id;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		id = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		activeChar.teleportBookmarkDelete(id);
 	}
 }

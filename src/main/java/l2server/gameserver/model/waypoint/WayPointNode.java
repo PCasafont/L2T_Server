@@ -33,11 +33,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.util.Point3D;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.WeakHashMap;
+import java.util.*;
 
 /**
  * This class ...
@@ -45,8 +41,7 @@ import java.util.WeakHashMap;
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
 
-public class WayPointNode extends L2Object
-{
+public class WayPointNode extends L2Object {
 	private int id;
 	private String title, type;
 	private static final String NORMAL = "Node", SELECTED = "Selected", LINKED = "Linked";
@@ -57,8 +52,7 @@ public class WayPointNode extends L2Object
 	/**
 	 * @param objectId
 	 */
-	public WayPointNode(int objectId)
-	{
+	public WayPointNode(int objectId) {
 		super(objectId);
 		linkLists = Collections.synchronizedMap(new WeakHashMap<WayPointNode, List<WayPointNode>>());
 	}
@@ -67,126 +61,104 @@ public class WayPointNode extends L2Object
 	 * @see l2server.gameserver.model.L2Object#isAutoAttackable(l2server.gameserver.model.L2Character)
 	 */
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
-	{
+	public boolean isAutoAttackable(L2Character attacker) {
 		return false;
 	}
 
-	public static WayPointNode spawn(String type, int id, int x, int y, int z)
-	{
+	public static WayPointNode spawn(String type, int id, int x, int y, int z) {
 		WayPointNode newNode = new WayPointNode(IdFactory.getInstance().getNextId());
 		newNode.getPoly().setPolyInfo(type, id + "");
 		newNode.spawnMe(x, y, z);
 		return newNode;
 	}
 
-	public static WayPointNode spawn(boolean isItemId, int id, L2PcInstance player)
-	{
+	public static WayPointNode spawn(boolean isItemId, int id, L2PcInstance player) {
 		return spawn(isItemId ? "item" : "npc", id, player.getX(), player.getY(), player.getZ());
 	}
 
-	public static WayPointNode spawn(boolean isItemId, int id, Point3D point)
-	{
+	public static WayPointNode spawn(boolean isItemId, int id, Point3D point) {
 		return spawn(isItemId ? "item" : "npc", id, point.getX(), point.getY(), point.getZ());
 	}
 
-	public static WayPointNode spawn(Point3D point)
-	{
+	public static WayPointNode spawn(Point3D point) {
 		return spawn(Config.NEW_NODE_TYPE, Config.NEW_NODE_ID, point.getX(), point.getY(), point.getZ());
 	}
 
-	public static WayPointNode spawn(L2PcInstance player)
-	{
+	public static WayPointNode spawn(L2PcInstance player) {
 		return spawn(Config.NEW_NODE_TYPE, Config.NEW_NODE_ID, player.getX(), player.getY(), player.getZ());
 	}
 
 	@Override
-	public void onAction(L2PcInstance player, boolean interact)
-	{
-		if (player.getTarget() != this)
-		{
+	public void onAction(L2PcInstance player, boolean interact) {
+		if (player.getTarget() != this) {
 			player.setTarget(this);
 			MyTargetSelected my = new MyTargetSelected(getObjectId(), 0);
 			player.sendPacket(my);
 		}
 	}
 
-	public void setNormalInfo(String type, int id, String title)
-	{
+	public void setNormalInfo(String type, int id, String title) {
 		this.type = type;
 		changeID(id, title);
 	}
 
-	public void setNormalInfo(String type, int id)
-	{
+	public void setNormalInfo(String type, int id) {
 		this.type = type;
 		changeID(id);
 	}
 
-	private void changeID(int id)
-	{
+	private void changeID(int id) {
 		this.id = id;
 		toggleVisible();
 		toggleVisible();
 	}
 
-	private void changeID(int id, String title)
-	{
+	private void changeID(int id, String title) {
 		setName(title);
 		setTitle(title);
 		changeID(id);
 	}
 
-	public void setLinked()
-	{
+	public void setLinked() {
 		changeID(Config.LINKED_NODE_ID, LINKED);
 	}
 
-	public void setNormal()
-	{
+	public void setNormal() {
 		changeID(Config.NEW_NODE_ID, NORMAL);
 	}
 
-	public void setSelected()
-	{
+	public void setSelected() {
 		changeID(Config.SELECTED_NODE_ID, SELECTED);
 	}
 
 	@Override
-	public boolean isMarker()
-	{
+	public boolean isMarker() {
 		return true;
 	}
 
-	public final String getTitle()
-	{
+	public final String getTitle() {
 		return title;
 	}
 
-	public final void setTitle(String title)
-	{
+	public final void setTitle(String title) {
 		this.title = title;
 	}
 
-	public int getId()
-	{
+	public int getId() {
 		return id;
 	}
 
-	public String getType()
-	{
+	public String getType() {
 		return type;
 	}
 
-	public void setType(String type)
-	{
+	public void setType(String type) {
 		this.type = type;
 	}
 
 	/**
 	 */
-	public static void drawLine(WayPointNode nodeA, WayPointNode nodeB)
-	{
+	public static void drawLine(WayPointNode nodeA, WayPointNode nodeB) {
 		int x1 = nodeA.getX(), y1 = nodeA.getY(), z1 = nodeA.getZ();
 		int x2 = nodeB.getX(), y2 = nodeB.getY(), z2 = nodeB.getZ();
 		int modX = x1 - x2 > 0 ? -1 : 1;
@@ -203,8 +175,7 @@ public class WayPointNode extends L2Object
 
 		List<WayPointNode> lineNodes = new ArrayList<>();
 
-		for (int i = 0; i < steps; i++)
-		{
+		for (int i = 0; i < steps; i++) {
 			x1 = x1 + modX * diffX / steps;
 			y1 = y1 + modY * diffY / steps;
 			z1 = z1 + modZ * diffZ / steps;
@@ -216,8 +187,7 @@ public class WayPointNode extends L2Object
 		nodeB.addLineInfo(nodeA, lineNodes);
 	}
 
-	public void addLineInfo(WayPointNode node, List<WayPointNode> line)
-	{
+	public void addLineInfo(WayPointNode node, List<WayPointNode> line) {
 		linkLists.put(node, line);
 	}
 
@@ -225,15 +195,12 @@ public class WayPointNode extends L2Object
 	 * @param target
 	 * @param selectedNode
 	 */
-	public static void eraseLine(WayPointNode target, WayPointNode selectedNode)
-	{
+	public static void eraseLine(WayPointNode target, WayPointNode selectedNode) {
 		List<WayPointNode> lineNodes = target.getLineInfo(selectedNode);
-		if (lineNodes == null)
-		{
+		if (lineNodes == null) {
 			return;
 		}
-		for (WayPointNode node : lineNodes)
-		{
+		for (WayPointNode node : lineNodes) {
 			node.decayMe();
 		}
 		target.eraseLine(selectedNode);
@@ -243,8 +210,7 @@ public class WayPointNode extends L2Object
 	/**
 	 * @param target
 	 */
-	public void eraseLine(WayPointNode target)
-	{
+	public void eraseLine(WayPointNode target) {
 		linkLists.remove(target);
 	}
 
@@ -252,22 +218,18 @@ public class WayPointNode extends L2Object
 	 * @param selectedNode
 	 * @return
 	 */
-	private List<WayPointNode> getLineInfo(WayPointNode selectedNode)
-	{
+	private List<WayPointNode> getLineInfo(WayPointNode selectedNode) {
 		return linkLists.get(selectedNode);
 	}
 
-	public static void setLineId(int line_id)
-	{
+	public static void setLineId(int line_id) {
 		lineId = line_id;
 	}
 
-	public List<WayPointNode> getLineNodes()
-	{
+	public List<WayPointNode> getLineNodes() {
 		List<WayPointNode> list = new ArrayList<>();
 
-		for (List<WayPointNode> points : linkLists.values())
-		{
+		for (List<WayPointNode> points : linkLists.values()) {
 			list.addAll(points);
 		}
 

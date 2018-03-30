@@ -38,8 +38,7 @@ import java.util.Map;
  *
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
-public class PlayerClass
-{
+public class PlayerClass {
 	private int id;
 	private String name;
 	private PlayerClass parent;
@@ -52,8 +51,7 @@ public class PlayerClass
 
 	private List<L2Henna> allowedDyes = new ArrayList<>();
 
-	public PlayerClass(int id, String name, PlayerClass parent, int awakensTo, boolean isMage, int raceId, int level)
-	{
+	public PlayerClass(int id, String name, PlayerClass parent, int awakensTo, boolean isMage, int raceId, int level) {
 		this.id = id;
 		this.name = name;
 		this.parent = parent;
@@ -63,96 +61,76 @@ public class PlayerClass
 		this.level = level;
 	}
 
-	public final int getId()
-	{
+	public final int getId() {
 		return id;
 	}
 
-	public final String getName()
-	{
+	public final String getName() {
 		return name;
 	}
 
-	public final PlayerClass getParent()
-	{
+	public final PlayerClass getParent() {
 		return parent;
 	}
 
-	public final int getAwakeningClassId()
-	{
+	public final int getAwakeningClassId() {
 		return awakensTo;
 	}
 
-	public final boolean isMage()
-	{
+	public final boolean isMage() {
 		return isMage;
 	}
 
-	public final int getLevel()
-	{
+	public final int getLevel() {
 		return level;
 	}
 
-	public final Race getRace()
-	{
+	public final Race getRace() {
 		return race;
 	}
 
-	public final void addSkill(long hash, L2SkillLearn skill)
-	{
+	public final void addSkill(long hash, L2SkillLearn skill) {
 		skills.put(hash, skill);
 	}
 
-	public final Map<Long, L2SkillLearn> getSkills()
-	{
+	public final Map<Long, L2SkillLearn> getSkills() {
 		return skills;
 	}
 
-	public void addAllowedDye(L2Henna henna)
-	{
+	public void addAllowedDye(L2Henna henna) {
 		allowedDyes.add(henna);
 	}
 
-	public final List<L2Henna> getAllowedDyes()
-	{
+	public final List<L2Henna> getAllowedDyes() {
 		return allowedDyes;
 	}
 
-	public final boolean isSummoner()
-	{
-		return id == 14 || id == 28 || id == 41 || id == 96 || id == 104 || id == 111 || id == 146 ||
-				id == 176 || id == 177 || id == 178;
+	public final boolean isSummoner() {
+		return id == 14 || id == 28 || id == 41 || id == 96 || id == 104 || id == 111 || id == 146 || id == 176 || id == 177 || id == 178;
 	}
 
-	public final boolean childOf(PlayerClass cl)
-	{
-		if (parent == null)
-		{
+	public final boolean childOf(PlayerClass cl) {
+		if (parent == null) {
 			return false;
 		}
 
-		if (parent == cl)
-		{
+		if (parent == cl) {
 			return true;
 		}
 
 		return parent.childOf(cl);
 	}
 
-	public final boolean equalsOrChildOf(PlayerClass cl)
-	{
+	public final boolean equalsOrChildOf(PlayerClass cl) {
 		return this == cl || childOf(cl);
 	}
 
-	public final int level()
-	{
-		if (parent == null)
-		{
+	public final int level() {
+		if (parent == null) {
 			return 0;
 		}
 
-		if (id == 184 || id == 185)
-		{
+		if (id == 184 || id == 185) {
 			return 2;
 		}
 

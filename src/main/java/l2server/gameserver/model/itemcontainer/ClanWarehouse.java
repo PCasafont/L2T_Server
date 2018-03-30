@@ -21,50 +21,41 @@ import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2ItemInstance.ItemLocation;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-public final class ClanWarehouse extends Warehouse
-{
+public final class ClanWarehouse extends Warehouse {
 	private L2Clan clan;
-
-	public ClanWarehouse(L2Clan clan)
-	{
+	
+	public ClanWarehouse(L2Clan clan) {
 		this.clan = clan;
 	}
-
+	
 	@Override
-	public String getName()
-	{
+	public String getName() {
 		return "ClanWarehouse";
 	}
-
+	
 	@Override
-	public int getOwnerId()
-	{
+	public int getOwnerId() {
 		return clan.getLeaderId();
 	}
-
+	
 	@Override
-	public L2PcInstance getOwner()
-	{
+	public L2PcInstance getOwner() {
 		return clan.getLeader() != null ? clan.getLeader().getPlayerInstance() : null;
 	}
-
+	
 	@Override
-	public ItemLocation getBaseLocation()
-	{
+	public ItemLocation getBaseLocation() {
 		return ItemLocation.CLANWH;
 	}
-
+	
 	@Override
-	public boolean validateCapacity(long slots)
-	{
+	public boolean validateCapacity(long slots) {
 		return items.size() + slots <= Config.WAREHOUSE_SLOTS_CLAN;
 	}
-
-	public void updateItemsOwnerId()
-	{
+	
+	public void updateItemsOwnerId() {
 		int newOwnerId = getOwnerId();
-		for (L2ItemInstance item : items.values())
-		{
+		for (L2ItemInstance item : items.values()) {
 			item.setOwnerId(newOwnerId);
 		}
 	}

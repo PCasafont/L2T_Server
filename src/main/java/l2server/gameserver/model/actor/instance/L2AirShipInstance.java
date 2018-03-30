@@ -20,11 +20,7 @@ import l2server.gameserver.instancemanager.AirShipManager;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.Location;
 import l2server.gameserver.model.actor.L2Vehicle;
-import l2server.gameserver.network.serverpackets.ExAirShipInfo;
-import l2server.gameserver.network.serverpackets.ExGetOffAirShip;
-import l2server.gameserver.network.serverpackets.ExGetOnAirShip;
-import l2server.gameserver.network.serverpackets.ExMoveToLocationAirShip;
-import l2server.gameserver.network.serverpackets.ExStopMoveAirShip;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2CharTemplate;
 import l2server.util.Point3D;
 
@@ -33,96 +29,78 @@ import l2server.util.Point3D;
  *
  * @author DrHouse, reworked by DS
  */
-public class L2AirShipInstance extends L2Vehicle
-{
-	public L2AirShipInstance(int objectId, L2CharTemplate template)
-	{
+public class L2AirShipInstance extends L2Vehicle {
+	public L2AirShipInstance(int objectId, L2CharTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2AirShipInstance);
 		setAI(new L2AirShipAI(this));
 	}
-
+	
 	@Override
-	public boolean isAirShip()
-	{
+	public boolean isAirShip() {
 		return true;
 	}
-
-	public boolean isOwner(L2PcInstance player)
-	{
+	
+	public boolean isOwner(L2PcInstance player) {
 		return false;
 	}
-
-	public int getOwnerId()
-	{
+	
+	public int getOwnerId() {
 		return 0;
 	}
-
-	public boolean isCaptain(L2PcInstance player)
-	{
+	
+	public boolean isCaptain(L2PcInstance player) {
 		return false;
 	}
-
-	public int getCaptainId()
-	{
+	
+	public int getCaptainId() {
 		return 0;
 	}
-
-	public int getHelmObjectId()
-	{
+	
+	public int getHelmObjectId() {
 		return 0;
 	}
-
-	public int getHelmItemId()
-	{
+	
+	public int getHelmItemId() {
 		return 0;
 	}
-
-	public boolean setCaptain(L2PcInstance player)
-	{
+	
+	public boolean setCaptain(L2PcInstance player) {
 		return false;
 	}
-
-	public int getFuel()
-	{
+	
+	public int getFuel() {
 		return 0;
 	}
-
-	public void setFuel(int f)
-	{
-
+	
+	public void setFuel(int f) {
+	
 	}
-
-	public int getMaxFuel()
-	{
+	
+	public int getMaxFuel() {
 		return 0;
 	}
-
-	public void setMaxFuel(int mf)
-	{
-
+	
+	public void setMaxFuel(int mf) {
+	
 	}
-
+	
 	@Override
-	public boolean moveToNextRoutePoint()
-	{
+	public boolean moveToNextRoutePoint() {
 		final boolean result = super.moveToNextRoutePoint();
-		if (result)
-		{
+		if (result) {
 			broadcastPacket(new ExMoveToLocationAirShip(this));
 		}
-
+		
 		return result;
 	}
-
+	
 	@Override
-	public boolean addPassenger(L2PcInstance player)
-	{
-		if (!super.addPassenger(player))
-		{
+	public boolean addPassenger(L2PcInstance player) {
+		if (!super.addPassenger(player)) {
 			return false;
 		}
-
+		
 		player.setVehicle(this);
 		player.setInVehiclePosition(new Point3D(0, 0, 0));
 		player.broadcastPacket(new ExGetOnAirShip(player, this));
@@ -131,49 +109,41 @@ public class L2AirShipInstance extends L2Vehicle
 		player.revalidateZone(true);
 		return true;
 	}
-
+	
 	@Override
-	public void oustPlayer(L2PcInstance player)
-	{
+	public void oustPlayer(L2PcInstance player) {
 		super.oustPlayer(player);
 		final Location loc = getOustLoc();
-		if (player.isOnline())
-		{
+		if (player.isOnline()) {
 			player.broadcastPacket(new ExGetOffAirShip(player, this, loc.getX(), loc.getY(), loc.getZ()));
 			player.getKnownList().removeAllKnownObjects();
 			player.setXYZ(loc.getX(), loc.getY(), loc.getZ());
 			player.revalidateZone(true);
-		}
-		else
-		{
+		} else {
 			player.setXYZInvisible(loc.getX(), loc.getY(), loc.getZ());
 		}
 	}
-
+	
 	@Override
-	public void deleteMe()
-	{
+	public void deleteMe() {
 		super.deleteMe();
 		AirShipManager.getInstance().removeAirShip(this);
 	}
-
+	
 	@Override
-	public void stopMove(L2CharPosition pos, boolean updateKnownObjects)
-	{
+	public void stopMove(L2CharPosition pos, boolean updateKnownObjects) {
 		super.stopMove(pos, updateKnownObjects);
-
+		
 		broadcastPacket(new ExStopMoveAirShip(this));
 	}
-
+	
 	@Override
-	public void updateAbnormalEffect()
-	{
+	public void updateAbnormalEffect() {
 		broadcastPacket(new ExAirShipInfo(this));
 	}
-
+	
 	@Override
-	public void sendInfo(L2PcInstance activeChar)
-	{
+	public void sendInfo(L2PcInstance activeChar) {
 		activeChar.sendPacket(new ExAirShipInfo(this));
 	}
 }

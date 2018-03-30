@@ -26,15 +26,13 @@ import l2server.gameserver.model.actor.L2Character;
  *
  * @version $Revision: 1.3.2.1.2.5 $ $Date: 2005/04/06 16:13:46 $
  */
-public class MoveToPawn extends L2GameServerPacket
-{
+public class MoveToPawn extends L2GameServerPacket {
 	private int charObjId;
 	private int targetId;
 	private int distance;
 	private int x, y, z, tx, ty, tz;
 
-	public MoveToPawn(L2Character cha, L2Character target, int distance)
-	{
+	public MoveToPawn(L2Character cha, L2Character target, int distance) {
 		charObjId = cha.getObjectId();
 		targetId = target.getObjectId();
 		this.distance = distance;
@@ -47,8 +45,7 @@ public class MoveToPawn extends L2GameServerPacket
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(charObjId);
 		writeD(targetId);
 		writeD(distance);

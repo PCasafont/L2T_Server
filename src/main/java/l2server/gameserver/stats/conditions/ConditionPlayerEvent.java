@@ -18,21 +18,17 @@ package l2server.gameserver.stats.conditions;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.stats.Env;
 
-public class ConditionPlayerEvent extends Condition
-{
+public class ConditionPlayerEvent extends Condition {
 	private final boolean val;
 
-	public ConditionPlayerEvent(boolean val)
-	{
+	public ConditionPlayerEvent(boolean val) {
 		this.val = val;
 	}
 
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		final L2PcInstance player = env.player.getActingPlayer();
-		if (player == null || !player.isPlayingEvent())
-		{
+		if (player == null || !player.isPlayingEvent()) {
 			return !val;
 		}
 

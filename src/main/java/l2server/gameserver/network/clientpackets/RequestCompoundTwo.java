@@ -25,48 +25,39 @@ import l2server.gameserver.network.serverpackets.ExCompoundTwoOK;
 /**
  * @author Pere
  */
-public final class RequestCompoundTwo extends L2GameClientPacket
-{
+public final class RequestCompoundTwo extends L2GameClientPacket {
 	private int objId;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		objId = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
 		L2ItemInstance compoundItem = activeChar.getInventory().getItemByObjectId(objId);
-		if (compoundItem == null)
-		{
+		if (compoundItem == null) {
 			sendPacket(new ExCompoundTwoFail());
 			return;
 		}
 
-		if (activeChar.getCompoundItem1() == null || activeChar.getCompoundItem1() == compoundItem)
-		{
+		if (activeChar.getCompoundItem1() == null || activeChar.getCompoundItem1() == compoundItem) {
 			sendPacket(new ExCompoundTwoFail());
 			return;
 		}
 
-		if (!CompoundTable.getInstance().isCombinable(compoundItem.getItemId()))
-		{
+		if (!CompoundTable.getInstance().isCombinable(compoundItem.getItemId())) {
 			sendPacket(new ExCompoundTwoFail());
 			return;
 		}
 
-		Combination combination = CompoundTable.getInstance()
-				.getCombination(activeChar.getCompoundItem1().getItemId(), compoundItem.getItemId());
-		if (combination == null)
-		{
+		Combination combination = CompoundTable.getInstance().getCombination(activeChar.getCompoundItem1().getItemId(), compoundItem.getItemId());
+		if (combination == null) {
 			sendPacket(new ExCompoundTwoFail());
 			return;
 		}

@@ -27,10 +27,8 @@ import java.io.File;
 /**
  * @author Pere
  */
-public class AbilityTable
-{
-	public class Ability
-	{
+public class AbilityTable {
+	public class Ability {
 		private int type;
 		private int skillId;
 		private int maxLevel;
@@ -38,8 +36,7 @@ public class AbilityTable
 		private int reqSkill;
 		private int reqSkillLvl;
 
-		public Ability(int type, int skillId, int maxLevel, int reqPoints, int reqSkill, int reqSkillLvl)
-		{
+		public Ability(int type, int skillId, int maxLevel, int reqPoints, int reqSkill, int reqSkillLvl) {
 			this.type = type;
 			this.skillId = skillId;
 			this.maxLevel = maxLevel;
@@ -48,33 +45,27 @@ public class AbilityTable
 			this.reqSkillLvl = reqSkillLvl;
 		}
 
-		public int getType()
-		{
+		public int getType() {
 			return type;
 		}
 
-		public int getSkillId()
-		{
+		public int getSkillId() {
 			return skillId;
 		}
 
-		public int getMaxLevel()
-		{
+		public int getMaxLevel() {
 			return maxLevel;
 		}
 
-		public int getReqPoints()
-		{
+		public int getReqPoints() {
 			return reqPoints;
 		}
 
-		public int getReqSkill()
-		{
+		public int getReqSkill() {
 			return reqSkill;
 		}
 
-		public int getReqSkillLvl()
-		{
+		public int getReqSkillLvl() {
 			return reqSkillLvl;
 		}
 	}
@@ -83,114 +74,89 @@ public class AbilityTable
 
 	private static AbilityTable instance;
 
-	public static AbilityTable getInstance()
-	{
-		if (instance == null)
-		{
+	public static AbilityTable getInstance() {
+		if (instance == null) {
 			instance = new AbilityTable();
 		}
 
 		return instance;
 	}
 
-	private AbilityTable()
-	{
-		if (!Config.IS_CLASSIC)
-		{
+	private AbilityTable() {
+		if (!Config.IS_CLASSIC) {
 			readAbilities();
 		}
 	}
 
-	private void readAbilities()
-	{
+	private void readAbilities() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "abilities.xml");
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode abilityNode : doc.getChildren())
-		{
-            if (abilityNode.getName().equalsIgnoreCase("ability"))
-            {
-                int type = abilityNode.getInt("type");
-                int skillId = abilityNode.getInt("skillId");
-                int maxLevel = abilityNode.getInt("maxLevel");
-                int reqPoints = abilityNode.getInt("reqPoints");
+		for (XmlNode abilityNode : doc.getChildren()) {
+			if (abilityNode.getName().equalsIgnoreCase("ability")) {
+				int type = abilityNode.getInt("type");
+				int skillId = abilityNode.getInt("skillId");
+				int maxLevel = abilityNode.getInt("maxLevel");
+				int reqPoints = abilityNode.getInt("reqPoints");
 
-                int reqSkill = 0;
-                int reqSkillLvl = 0;
-                if (abilityNode.hasAttribute("reqSkill"))
-                {
-                    reqSkill = abilityNode.getInt("reqSkill");
-                    reqSkillLvl = abilityNode.getInt("reqSkillLvl");
-                }
+				int reqSkill = 0;
+				int reqSkillLvl = 0;
+				if (abilityNode.hasAttribute("reqSkill")) {
+					reqSkill = abilityNode.getInt("reqSkill");
+					reqSkillLvl = abilityNode.getInt("reqSkillLvl");
+				}
 
-                abilities.put(skillId, new Ability(type, skillId, maxLevel, reqPoints, reqSkill, reqSkillLvl));
-            }
-        }
+				abilities.put(skillId, new Ability(type, skillId, maxLevel, reqPoints, reqSkill, reqSkillLvl));
+			}
+		}
 
 		Log.info("AbilityTable: Loaded " + abilities.size() + " abilities.");
 	}
 
-	public Ability getAbility(int skillId)
-	{
+	public Ability getAbility(int skillId) {
 		return abilities.get(skillId);
 	}
 
-	public int getMaxPoints()
-	{
+	public int getMaxPoints() {
 		return 16;
 	}
 
-	public long getAdenaCostForReset()
-	{
-		return 1	;
+	public long getAdenaCostForReset() {
+		return 1;
 	}
 
-	public long getSpCostPerPoint(int curPoints)
-	{
-		if (curPoints < 4)
-		{
+	public long getSpCostPerPoint(int curPoints) {
+		if (curPoints < 4) {
 			return 250000000;
 		}
-		if (curPoints < 8)
-		{
+		if (curPoints < 8) {
 			return 500000000;
 		}
-		if (curPoints < 12)
-		{
+		if (curPoints < 12) {
 			return 750000000;
 		}
 
 		return 1000000000;
 	}
 
-	public void manageHiddenSkill(L2PcInstance player, int skillId, int level, boolean isAdd)
-	{
-		if (player == null)
-		{
+	public void manageHiddenSkill(L2PcInstance player, int skillId, int level, boolean isAdd) {
+		if (player == null) {
 			return;
 		}
 
 		int hiddenSkillId = 0;
-		switch (skillId)
-		{
+		switch (skillId) {
 			//Revelation Skills level 2
 			case 19124://Noble Knight Buffs
 			case 19142://Noble Warrior Buffs
 			case 19156://Noble Wizard Buffs
 			{
-				if (level == 2)
-				{
+				if (level == 2) {
 					int[] revelationSkills = {1904, 1907, 1912, 1914, 1917, 1920, 1922, 1925, 1996, 1997};
-					for (int id : revelationSkills)
-					{
-						if (player.getSkillLevelHash(id) != -1)
-						{
-							if (isAdd)
-							{
-								player.addSkill(SkillTable.getInstance().getInfo(id, player.getSkillLevelHash(id) + 1),
-										true);
-							}
-							else
-							{
+					for (int id : revelationSkills) {
+						if (player.getSkillLevelHash(id) != -1) {
+							if (isAdd) {
+								player.addSkill(SkillTable.getInstance().getInfo(id, player.getSkillLevelHash(id) + 1), true);
+							} else {
 								player.addSkill(SkillTable.getInstance().getInfo(id, 1), true);
 							}
 						}
@@ -203,28 +169,20 @@ public class AbilityTable
 			case 19172://Noble Eagle Eye
 			case 19176://Noble Vision
 			{
-				if (level == 2)
-				{
-					if (!isAdd)
-					{
-						for (int i = 19186; i <= 19193; i++)
-						{
-							if (player.getSkillLevelHash(i) != -1)
-							{
+				if (level == 2) {
+					if (!isAdd) {
+						for (int i = 19186; i <= 19193; i++) {
+							if (player.getSkillLevelHash(i) != -1) {
 								player.removeSkill(i, true);
 							}
 						}
-					}
-					else
-					{
+					} else {
 
 						int classId = player.getClassId();
-						if (classId > 146 && classId < 188)
-						{
+						if (classId > 146 && classId < 188) {
 							classId = player.getCurrentClass().getParent().getAwakeningClassId();
 						}
-						switch (classId)
-						{
+						switch (classId) {
 							case 139://Sigel Knight
 								hiddenSkillId = 19186;//Rampage Shield
 								break;
@@ -252,8 +210,7 @@ public class AbilityTable
 						}
 
 						//Ertheia case
-						switch (classId)
-						{
+						switch (classId) {
 							case 188://Eviscerator
 								hiddenSkillId = 19187;//Blockade
 								break;
@@ -262,14 +219,10 @@ public class AbilityTable
 								break;
 						}
 
-						if (hiddenSkillId == 0)
-						{
+						if (hiddenSkillId == 0) {
 							Log.warning("AbilityTable: Can't locate the hidden skill id for the class " +
-									PlayerClassTable.getInstance().getClassNameById(classId) + "(" + classId +
-									") player " + player.getName());
-						}
-						else
-						{
+									PlayerClassTable.getInstance().getClassNameById(classId) + "(" + classId + ") player " + player.getName());
+						} else {
 							player.addSkill(SkillTable.getInstance().getInfo(hiddenSkillId, 1), true);
 						}
 					}

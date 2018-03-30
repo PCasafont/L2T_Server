@@ -21,42 +21,36 @@ import l2server.gameserver.model.L2EnchantSkillLearn;
 
 import java.util.ArrayList;
 
-public final class ExEnchantSkillInfo extends L2GameServerPacket
-{
+public final class ExEnchantSkillInfo extends L2GameServerPacket {
 	private ArrayList<Integer> routes; //skill lvls for each route
-
+	
 	private final int id;
 	private final int lvl;
 	private final int enchant;
 	private boolean maxEnchanted = false;
-
-	public ExEnchantSkillInfo(int id, int lvl, int enchRoute, int enchLvl)
-	{
+	
+	public ExEnchantSkillInfo(int id, int lvl, int enchRoute, int enchLvl) {
 		routes = new ArrayList<>();
 		this.id = id;
 		this.lvl = lvl;
 		enchant = enchRoute * 1000 + enchLvl;
-
+		
 		L2EnchantSkillLearn enchantLearn = EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(id);
 		// do we have this skill?
-		if (enchantLearn != null)
-		{
+		if (enchantLearn != null) {
 			// skill already enchanted?
-			if (enchRoute > 0)
-			{
+			if (enchRoute > 0) {
 				maxEnchanted = enchantLearn.isMaxEnchant(enchRoute, enchLvl);
-
+				
 				// get detail for next level
 				EnchantSkillDetail esd = enchantLearn.getEnchantSkillDetail(enchRoute, enchLvl);
-
+				
 				// if it exists add it
-				if (esd != null)
-				{
+				if (esd != null) {
 					routes.add(lvl + (enchRoute * 1000 + enchLvl + (maxEnchanted ? 0 : 1) << 16));
 				}
-
-				for (int route : enchantLearn.getAllRoutes())
-				{
+				
+				for (int route : enchantLearn.getAllRoutes()) {
 					if (route == enchRoute) // skip current
 					{
 						continue;
@@ -65,36 +59,32 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 					// lvl
 					routes.add(lvl + (route * 1000 + enchLvl << 16));
 				}
-			}
-			else
+			} else
 			// not already enchanted
 			{
-				for (int route : enchantLearn.getAllRoutes())
-				{
+				for (int route : enchantLearn.getAllRoutes()) {
 					// add first level (+1) of all routes
 					routes.add(lvl + (route * 1000 + 1 << 16));
 				}
 			}
 		}
 	}
-
+	
 	/*
 	 * (non-Javadoc)
 	 *
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(id);
 		writeH(lvl);
 		writeH(enchant);
 		writeD(maxEnchanted ? 0 : 1);
 		writeD(lvl > 100 ? 1 : 0); // enchanted?
-
+		
 		writeD(routes.size());
-		for (Integer level : routes)
-		{
+		for (Integer level : routes) {
 			writeD(level);
 		}
 	}

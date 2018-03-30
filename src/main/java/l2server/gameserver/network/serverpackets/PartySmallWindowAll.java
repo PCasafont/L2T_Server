@@ -30,37 +30,32 @@ import l2server.gameserver.model.actor.instance.L2SummonInstance;
  *
  * @version $Revision: 1.6.2.1.2.5 $ $Date: 2005/03/27 15:29:57 $
  */
-public final class PartySmallWindowAll extends L2GameServerPacket
-{
+public final class PartySmallWindowAll extends L2GameServerPacket {
 	private L2Party party;
 	private L2PcInstance exclude;
 	private int dist, LeaderOID;
-
-	public PartySmallWindowAll(L2PcInstance exclude, L2Party party)
-	{
+	
+	public PartySmallWindowAll(L2PcInstance exclude, L2Party party) {
 		this.exclude = exclude;
 		this.party = party;
 		LeaderOID = party.getPartyLeaderOID();
 		dist = party.getLootDistribution();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(LeaderOID);
 		writeC(dist);
 		writeC(party.getMemberCount() - 1);
-
-		for (L2PcInstance member : party.getPartyMembers())
-		{
-			if (member != null && member != exclude)
-			{
+		
+		for (L2PcInstance member : party.getPartyMembers()) {
+			if (member != null && member != exclude) {
 				writeD(member.getObjectId());
 				writeS(member.getName());
-
+				
 				writeD((int) member.getCurrentCp()); // c4
 				writeD(member.getMaxCp()); // c4
-
+				
 				writeD((int) member.getCurrentHp());
 				writeD(member.getMaxVisibleHp());
 				writeD((int) member.getCurrentMp());
@@ -70,11 +65,9 @@ public final class PartySmallWindowAll extends L2GameServerPacket
 				writeH(member.getCurrentClass().getId());
 				writeC(0x01); // ???
 				writeC(member.getRace().ordinal());
-				writeC(PartySearchManager.getInstance().getWannaToChangeThisPlayer(member.getObjectId()) ? 0x01 :
-						0x00); // GoD unknown
+				writeC(PartySearchManager.getInstance().getWannaToChangeThisPlayer(member.getObjectId()) ? 0x01 : 0x00); // GoD unknown
 				writeD(member.getSummons().size() + (member.getPet() != null ? 1 : 0));
-				for (L2SummonInstance summon : member.getSummons())
-				{
+				for (L2SummonInstance summon : member.getSummons()) {
 					writeD(summon.getObjectId());
 					writeD(summon.getNpcId() + 1000000);
 					writeC(summon.getSummonType());
@@ -85,8 +78,7 @@ public final class PartySmallWindowAll extends L2GameServerPacket
 					writeD(summon.getMaxMp());
 					writeC(summon.getLevel());
 				}
-				if (member.getPet() != null)
-				{
+				if (member.getPet() != null) {
 					writeD(member.getPet().getObjectId());
 					writeD(member.getPet().getNpcId() + 1000000);
 					writeC(member.getPet().getSummonType());

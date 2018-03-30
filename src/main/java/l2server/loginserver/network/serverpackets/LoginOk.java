@@ -28,21 +28,18 @@ import l2server.loginserver.SessionKey;
  * d: ?
  * b: 16 bytes - unknown
  */
-public final class LoginOk extends L2LoginServerPacket
-{
+public final class LoginOk extends L2LoginServerPacket {
 	private int loginOk1, loginOk2;
-
-	public LoginOk(SessionKey sessionKey)
-	{
+	
+	public LoginOk(SessionKey sessionKey) {
 		loginOk1 = sessionKey.loginOkID1;
 		loginOk2 = sessionKey.loginOkID2;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void write()
-	{
+	protected void write() {
 		writeC(0x03);
 		writeD(loginOk1);
 		writeD(loginOk2);

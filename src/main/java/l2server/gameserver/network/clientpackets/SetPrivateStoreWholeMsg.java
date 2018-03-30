@@ -23,41 +23,36 @@ import l2server.gameserver.util.Util;
 /**
  * @author KenM
  */
-public class SetPrivateStoreWholeMsg extends L2GameClientPacket
-{
+public class SetPrivateStoreWholeMsg extends L2GameClientPacket {
 	private static final int MAX_MSG_LENGTH = 29;
-
+	
 	private String msg;
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		msg = readS();
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance player = getClient().getActiveChar();
-		if (player == null || player.getSellList() == null)
-		{
+		if (player == null || player.getSellList() == null) {
 			return;
 		}
-
-		if (msg != null && msg.length() > MAX_MSG_LENGTH)
-		{
+		
+		if (msg != null && msg.length() > MAX_MSG_LENGTH) {
 			Util.handleIllegalPlayerAction(player,
 					"Player " + player.getName() + " tried to overflow private store whole message",
 					Config.DEFAULT_PUNISH);
 			return;
 		}
-
+		
 		player.getSellList().setTitle(msg);
 		sendPacket(new ExPrivateStoreSetWholeMsg(player));
 	}

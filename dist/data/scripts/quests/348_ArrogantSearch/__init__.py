@@ -404,7 +404,7 @@ class Quest(JQuest):
             cond = DROPS_29[npcId][0]
             if st.getInt("cond") == cond and st.getQuestItemsCount(DROPS_29[npcId][1]) < DROPS[npcId][
                 2] and st.getRandom(100) < DROPS[npcId][3] and (
-                            DROPS[npcId][4] == 0 or st.getQuestItemsCount(DROPS[npcId][4]) > 0):
+                    DROPS[npcId][4] == 0 or st.getQuestItemsCount(DROPS[npcId][4]) > 0):
                 st.giveItems(DROPS_29[npcId][1], 1)
                 st.playSound("ItemSound.quest_itemget")
                 if DROPS_29[npcId][4] != 0:

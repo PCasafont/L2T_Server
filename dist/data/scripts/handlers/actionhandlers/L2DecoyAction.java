@@ -24,27 +24,22 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-public class L2DecoyAction implements IActionHandler
-{
+public class L2DecoyAction implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-	{
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
 		// Aggression target lock effect
-		if (activeChar.isLockedTarget() && activeChar.getLockedTarget() != target)
-		{
+		if (activeChar.isLockedTarget() && activeChar.getLockedTarget() != target) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_CHANGE_TARGET));
 			return false;
 		}
 
 		activeChar.setTarget(target);
-		activeChar.sendPacket(
-				new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((L2Character) target).getLevel()));
+		activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((L2Character) target).getLevel()));
 		return true;
 	}
 
 	@Override
-	public InstanceType getInstanceType()
-	{
+	public InstanceType getInstanceType() {
 		return InstanceType.L2Decoy;
 	}
 }

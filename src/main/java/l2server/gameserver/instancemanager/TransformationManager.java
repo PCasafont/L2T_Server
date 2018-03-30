@@ -15,63 +15,51 @@
 
 package l2server.gameserver.instancemanager;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.gameserver.model.L2Transformation;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
 
-import gnu.trove.TIntObjectHashMap;
-
 /**
  * @author KenM
  */
-public class TransformationManager
-{
+public class TransformationManager {
 
-	public static TransformationManager getInstance()
-	{
+	public static TransformationManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private TIntObjectHashMap<L2Transformation> transformations;
 
-	private TransformationManager()
-	{
+	private TransformationManager() {
 		transformations = new TIntObjectHashMap<>();
 	}
 
-	public void report()
-	{
+	public void report() {
 		Log.info("Loaded: " + transformations.size() + " transformations.");
 	}
 
-	public boolean transformPlayer(int id, L2PcInstance player)
-	{
+	public boolean transformPlayer(int id, L2PcInstance player) {
 		L2Transformation template = getTransformationById(id);
-		if (template != null)
-		{
+		if (template != null) {
 			L2Transformation trans = template.createTransformationForPlayer(player);
 			trans.start();
 			return true;
-		}
-		else
-		{
+		} else {
 			return false;
 		}
 	}
 
-	public L2Transformation getTransformationById(int id)
-	{
+	public L2Transformation getTransformationById(int id) {
 		return transformations.get(id);
 	}
 
-	public L2Transformation registerTransformation(L2Transformation transformation)
-	{
+	public L2Transformation registerTransformation(L2Transformation transformation) {
 		return transformations.put(transformation.getId(), transformation);
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final TransformationManager instance = new TransformationManager();
 	}
 
@@ -79,10 +67,8 @@ public class TransformationManager
 	 * @param transformId
 	 * @return
 	 */
-	public boolean isMountable(int transformId)
-	{
-		switch (transformId)
-		{
+	public boolean isMountable(int transformId) {
+		switch (transformId) {
 			case 109: //TawnyManedLion
 			case 123: //GuardianStrider
 			case 20001: //JetBike

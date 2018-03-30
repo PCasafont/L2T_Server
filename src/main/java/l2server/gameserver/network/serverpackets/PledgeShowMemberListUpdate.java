@@ -22,8 +22,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author -Wooden-
  */
-public final class PledgeShowMemberListUpdate extends L2GameServerPacket
-{
+public final class PledgeShowMemberListUpdate extends L2GameServerPacket {
 	private int pledgeType;
 	private int hasSponsor;
 	private String name;
@@ -33,16 +32,12 @@ public final class PledgeShowMemberListUpdate extends L2GameServerPacket
 	private boolean isOnline;
 	private int race;
 	private int sex;
-
-	public PledgeShowMemberListUpdate(L2PcInstance player)
-	{
+	
+	public PledgeShowMemberListUpdate(L2PcInstance player) {
 		pledgeType = player.getPledgeType();
-		if (pledgeType == L2Clan.SUBUNIT_ACADEMY)
-		{
+		if (pledgeType == L2Clan.SUBUNIT_ACADEMY) {
 			hasSponsor = player.getSponsor() != 0 ? 1 : 0;
-		}
-		else
-		{
+		} else {
 			hasSponsor = 0;
 		}
 		name = player.getName();
@@ -53,9 +48,8 @@ public final class PledgeShowMemberListUpdate extends L2GameServerPacket
 		objectId = player.getObjectId();
 		isOnline = player.isOnline();
 	}
-
-	public PledgeShowMemberListUpdate(L2ClanMember member)
-	{
+	
+	public PledgeShowMemberListUpdate(L2ClanMember member) {
 		name = member.getName();
 		level = member.getLevel();
 		classId = member.getCurrentClass();
@@ -64,31 +58,24 @@ public final class PledgeShowMemberListUpdate extends L2GameServerPacket
 		pledgeType = member.getPledgeType();
 		race = member.getRaceOrdinal();
 		sex = member.getSex() ? 1 : 0;
-		if (pledgeType == L2Clan.SUBUNIT_ACADEMY)
-		{
+		if (pledgeType == L2Clan.SUBUNIT_ACADEMY) {
 			hasSponsor = member.getSponsor() != 0 ? 1 : 0;
-		}
-		else
-		{
+		} else {
 			hasSponsor = 0;
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeS(name);
 		writeD(level);
 		writeD(classId);
 		writeD(sex);
 		writeD(race);
-		if (isOnline)
-		{
+		if (isOnline) {
 			writeD(objectId);
 			writeD(pledgeType);
-		}
-		else
-		{
+		} else {
 			// when going offline send as 0
 			writeD(0);
 			writeD(0);

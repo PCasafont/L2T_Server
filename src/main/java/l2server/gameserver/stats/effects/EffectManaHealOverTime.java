@@ -23,16 +23,13 @@ import l2server.gameserver.stats.Stats;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
-public class EffectManaHealOverTime extends L2Effect
-{
-	public EffectManaHealOverTime(Env env, L2EffectTemplate template)
-	{
+public class EffectManaHealOverTime extends L2Effect {
+	public EffectManaHealOverTime(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	// Special constructor to steal this effect
-	public EffectManaHealOverTime(Env env, L2Effect effect)
-	{
+	public EffectManaHealOverTime(Env env, L2Effect effect) {
 		super(env, effect);
 	}
 
@@ -40,14 +37,12 @@ public class EffectManaHealOverTime extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#effectCanBeStolen()
 	 */
 	@Override
-	protected boolean effectCanBeStolen()
-	{
+	protected boolean effectCanBeStolen() {
 		return true;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.BUFF;
 	}
 
@@ -55,24 +50,19 @@ public class EffectManaHealOverTime extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
-		if (getEffected().isDead() || getEffected() instanceof L2PcInstance &&
-				((L2PcInstance) getEffected()).getCurrentClass().getId() == 146)
-		{
+	public boolean onActionTime() {
+		if (getEffected().isDead() || getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).getCurrentClass().getId() == 146) {
 			return false;
 		}
 
-		if (getEffected().calcStat(Stats.MANA_SHIELD_PERCENT, 0, getEffected(), null) > 0)
-		{
+		if (getEffected().calcStat(Stats.MANA_SHIELD_PERCENT, 0, getEffected(), null) > 0) {
 			return false;
 		}
 
 		double mp = getEffected().getCurrentMp();
 		double maxmp = getEffected().getMaxMp();
 		mp += calc();
-		if (mp > maxmp)
-		{
+		if (mp > maxmp) {
 			mp = maxmp;
 		}
 

@@ -21,8 +21,7 @@ package l2server.gameserver.model;
  * @author NightMarez
  * @version $Revision: 1.2.2.1.2.1 $ $Date: 2005/03/27 15:29:32 $
  */
-public class L2LvlupData
-{
+public class L2LvlupData {
 	private int classid;
 	private int classLvl;
 	private float classHpAdd;
@@ -39,16 +38,14 @@ public class L2LvlupData
 	 * @return Returns the classHpAdd.
 	 */
 	@Deprecated
-	public float getClassHpAdd()
-	{
+	public float getClassHpAdd() {
 		return classHpAdd;
 	}
 
 	/**
 	 * @param hpAdd The classHpAdd to set.
 	 */
-	public void setClassHpAdd(float hpAdd)
-	{
+	public void setClassHpAdd(float hpAdd) {
 		classHpAdd = hpAdd;
 	}
 
@@ -56,16 +53,14 @@ public class L2LvlupData
 	 * @return Returns the classHpBase.
 	 */
 	@Deprecated
-	public float getClassHpBase()
-	{
+	public float getClassHpBase() {
 		return classHpBase;
 	}
 
 	/**
 	 * @param hpBase The classHpBase to set.
 	 */
-	public void setClassHpBase(float hpBase)
-	{
+	public void setClassHpBase(float hpBase) {
 		classHpBase = hpBase;
 	}
 
@@ -73,16 +68,14 @@ public class L2LvlupData
 	 * @return Returns the classHpModifier.
 	 */
 	@Deprecated
-	public float getClassHpModifier()
-	{
+	public float getClassHpModifier() {
 		return classHpModifier;
 	}
 
 	/**
 	 * @param hpModifier The classHpModifier to set.
 	 */
-	public void setClassHpModifier(float hpModifier)
-	{
+	public void setClassHpModifier(float hpModifier) {
 		classHpModifier = hpModifier;
 	}
 
@@ -90,15 +83,13 @@ public class L2LvlupData
 	 * @return Returns the classCpAdd.
 	 */
 	@Deprecated
-	public float getClassCpAdd()
-	{
+	public float getClassCpAdd() {
 		return classCpAdd;
 	}
 
 	/**
 	 */
-	public void setClassCpAdd(float cpAdd)
-	{
+	public void setClassCpAdd(float cpAdd) {
 		classCpAdd = cpAdd;
 	}
 
@@ -106,15 +97,13 @@ public class L2LvlupData
 	 * @return Returns the classCpBase.
 	 */
 	@Deprecated
-	public float getClassCpBase()
-	{
+	public float getClassCpBase() {
 		return classCpBase;
 	}
 
 	/**
 	 */
-	public void setClassCpBase(float cpBase)
-	{
+	public void setClassCpBase(float cpBase) {
 		classCpBase = cpBase;
 	}
 
@@ -122,31 +111,27 @@ public class L2LvlupData
 	 * @return Returns the classCpModifier.
 	 */
 	@Deprecated
-	public float getClassCpModifier()
-	{
+	public float getClassCpModifier() {
 		return classCpModifier;
 	}
 
 	/**
 	 * @param cpModifier The classCpModifier to set.
 	 */
-	public void setClassCpModifier(float cpModifier)
-	{
+	public void setClassCpModifier(float cpModifier) {
 		classCpModifier = cpModifier;
 	}
 
 	/**
 	 * @return Returns the classid.
 	 */
-	public int getCurrentClass()
-	{
+	public int getCurrentClass() {
 		return classid;
 	}
 
 	/**
 	 */
-	public void setClassid(int pClassid)
-	{
+	public void setClassid(int pClassid) {
 		classid = pClassid;
 	}
 
@@ -154,16 +139,14 @@ public class L2LvlupData
 	 * @return Returns the classLvl.
 	 */
 	@Deprecated
-	public int getClassLvl()
-	{
+	public int getClassLvl() {
 		return classLvl;
 	}
 
 	/**
 	 * @param lvl The classLvl to set.
 	 */
-	public void setClassLvl(int lvl)
-	{
+	public void setClassLvl(int lvl) {
 		classLvl = lvl;
 	}
 
@@ -171,16 +154,14 @@ public class L2LvlupData
 	 * @return Returns the classMpAdd.
 	 */
 	@Deprecated
-	public float getClassMpAdd()
-	{
+	public float getClassMpAdd() {
 		return classMpAdd;
 	}
 
 	/**
 	 * @param mpAdd The classMpAdd to set.
 	 */
-	public void setClassMpAdd(float mpAdd)
-	{
+	public void setClassMpAdd(float mpAdd) {
 		classMpAdd = mpAdd;
 	}
 
@@ -188,16 +169,14 @@ public class L2LvlupData
 	 * @return Returns the classMpBase.
 	 */
 	@Deprecated
-	public float getClassMpBase()
-	{
+	public float getClassMpBase() {
 		return classMpBase;
 	}
 
 	/**
 	 * @param mpBase The classMpBase to set.
 	 */
-	public void setClassMpBase(float mpBase)
-	{
+	public void setClassMpBase(float mpBase) {
 		classMpBase = mpBase;
 	}
 
@@ -205,16 +184,14 @@ public class L2LvlupData
 	 * @return Returns the classMpModifier.
 	 */
 	@Deprecated
-	public float getClassMpModifier()
-	{
+	public float getClassMpModifier() {
 		return classMpModifier;
 	}
 
 	/**
 	 * @param mpModifier The classMpModifier to set.
 	 */
-	public void setClassMpModifier(float mpModifier)
-	{
+	public void setClassMpModifier(float mpModifier) {
 		classMpModifier = mpModifier;
 	}
 }

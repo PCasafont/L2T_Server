@@ -27,45 +27,37 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @author -Wooden-
  */
-public final class RequestConfirmTargetItem extends L2GameClientPacket
-{
+public final class RequestConfirmTargetItem extends L2GameClientPacket {
 	private int itemObjId;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		itemObjId = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(itemObjId);
-		if (item == null)
-		{
+		if (item == null) {
 			return;
 		}
-
-		if (!LifeStoneTable.isValid(activeChar, item))
-		{
+		
+		if (!LifeStoneTable.isValid(activeChar, item)) {
 			// Different system message here
-			if (item.isAugmented())
-			{
-				activeChar.sendPacket(SystemMessage
-						.getSystemMessage(SystemMessageId.ONCE_AN_ITEM_IS_AUGMENTED_IT_CANNOT_BE_AUGMENTED_AGAIN));
+			if (item.isAugmented()) {
+				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ONCE_AN_ITEM_IS_AUGMENTED_IT_CANNOT_BE_AUGMENTED_AGAIN));
 				return;
 			}
-
+			
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM));
 			return;
 		}
-
+		
 		activeChar.sendPacket(new ExPutItemResultForVariationMake(itemObjId, item.getItemId()));
 	}
 }

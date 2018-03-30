@@ -28,8 +28,7 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public class AskJoinAlly extends L2GameServerPacket
-{
+public class AskJoinAlly extends L2GameServerPacket {
 	//
 
 	private String requestorName;
@@ -38,15 +37,13 @@ public class AskJoinAlly extends L2GameServerPacket
 	/**
 	 *
 	 */
-	public AskJoinAlly(int requestorObjId, String requestorName)
-	{
+	public AskJoinAlly(int requestorObjId, String requestorName) {
 		this.requestorName = requestorName;
 		this.requestorObjId = requestorObjId;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(requestorObjId);
 		writeS(requestorName);
 	}

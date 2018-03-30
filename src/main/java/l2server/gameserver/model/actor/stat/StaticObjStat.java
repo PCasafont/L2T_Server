@@ -17,15 +17,13 @@ package l2server.gameserver.model.actor.stat;
 
 import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
 
-public class StaticObjStat extends CharStat
-{
+public class StaticObjStat extends CharStat {
 	// =========================================================
 	// Data Field
 
 	// =========================================================
 	// Constructor
-	public StaticObjStat(L2StaticObjectInstance activeChar)
-	{
+	public StaticObjStat(L2StaticObjectInstance activeChar) {
 		super(activeChar);
 
 		setLevel((byte) 1);
@@ -40,14 +38,12 @@ public class StaticObjStat extends CharStat
 	// =========================================================
 	// Property - Public
 	@Override
-	public L2StaticObjectInstance getActiveChar()
-	{
+	public L2StaticObjectInstance getActiveChar() {
 		return (L2StaticObjectInstance) super.getActiveChar();
 	}
 
 	@Override
-	public final byte getLevel()
-	{
+	public final byte getLevel() {
 		return 1;
 	}
 }

@@ -32,8 +32,7 @@ import java.util.ArrayList;
  * Method addFunc and removeFunc permit to add and remove a Func object from a Calculator.<BR><BR>
  */
 
-public final class Calculator
-{
+public final class Calculator {
 	/**
 	 * Empty Func table definition
 	 */
@@ -47,56 +46,46 @@ public final class Calculator
 	/**
 	 * Constructor of Calculator (Init value : emptyFuncs).<BR><BR>
 	 */
-	public Calculator()
-	{
+	public Calculator() {
 		functions = emptyFuncs;
 	}
 
 	/**
 	 * Constructor of Calculator (Init value : Calculator c).<BR><BR>
 	 */
-	public Calculator(Calculator c)
-	{
+	public Calculator(Calculator c) {
 		functions = c.functions;
 	}
 
 	/**
 	 * Check if 2 calculators are equals.<BR><BR>
 	 */
-	public static boolean equalsCals(Calculator c1, Calculator c2)
-	{
-		if (c1 == c2)
-		{
+	public static boolean equalsCals(Calculator c1, Calculator c2) {
+		if (c1 == c2) {
 			return true;
 		}
 
-		if (c1 == null || c2 == null)
-		{
+		if (c1 == null || c2 == null) {
 			return false;
 		}
 
 		Func[] funcs1 = c1.functions;
 		Func[] funcs2 = c2.functions;
 
-		if (funcs1 == funcs2)
-		{
+		if (funcs1 == funcs2) {
 			return true;
 		}
 
-		if (funcs1.length != funcs2.length)
-		{
+		if (funcs1.length != funcs2.length) {
 			return false;
 		}
 
-		if (funcs1.length == 0)
-		{
+		if (funcs1.length == 0) {
 			return true;
 		}
 
-		for (int i = 0; i < funcs1.length; i++)
-		{
-			if (funcs1[i] != funcs2[i])
-			{
+		for (int i = 0; i < funcs1.length; i++) {
+			if (funcs1[i] != funcs2[i]) {
 				return false;
 			}
 		}
@@ -106,31 +95,27 @@ public final class Calculator
 	/**
 	 * Return the number of Funcs in the Calculator.<BR><BR>
 	 */
-	public int size()
-	{
+	public int size() {
 		return functions.length;
 	}
 
 	/**
 	 * Add a Func to the Calculator.<BR><BR>
 	 */
-	public synchronized void addFunc(Func f)
-	{
+	public synchronized void addFunc(Func f) {
 		Func[] funcs = functions;
 		Func[] tmp = new Func[funcs.length + 1];
 
 		final int order = f.getOrder();
 		int i;
 
-		for (i = 0; i < funcs.length && order >= funcs[i].getOrder(); i++)
-		{
+		for (i = 0; i < funcs.length && order >= funcs[i].getOrder(); i++) {
 			tmp[i] = funcs[i];
 		}
 
 		tmp[i] = f;
 
-		for (; i < funcs.length; i++)
-		{
+		for (; i < funcs.length; i++) {
 			tmp[i + 1] = funcs[i];
 		}
 
@@ -140,34 +125,27 @@ public final class Calculator
 	/**
 	 * Remove a Func from the Calculator.<BR><BR>
 	 */
-	public synchronized void removeFunc(Func f)
-	{
+	public synchronized void removeFunc(Func f) {
 		Func[] funcs = functions;
 		Func[] tmp = new Func[funcs.length - 1];
 
 		int i;
 
-		for (i = 0; i < funcs.length && f != funcs[i]; i++)
-		{
+		for (i = 0; i < funcs.length && f != funcs[i]; i++) {
 			tmp[i] = funcs[i];
 		}
 
-		if (i == funcs.length)
-		{
+		if (i == funcs.length) {
 			return;
 		}
 
-		for (i++; i < funcs.length; i++)
-		{
+		for (i++; i < funcs.length; i++) {
 			tmp[i - 1] = funcs[i];
 		}
 
-		if (tmp.length == 0)
-		{
+		if (tmp.length == 0) {
 			functions = emptyFuncs;
-		}
-		else
-		{
+		} else {
 			functions = tmp;
 		}
 	}
@@ -175,14 +153,11 @@ public final class Calculator
 	/**
 	 * Remove each Func with the specified owner of the Calculator.<BR><BR>
 	 */
-	public synchronized ArrayList<Stats> removeOwner(Object owner)
-	{
+	public synchronized ArrayList<Stats> removeOwner(Object owner) {
 		ArrayList<Stats> modifiedStats = new ArrayList<>();
 
-		for (Func func : functions)
-		{
-			if (func.funcOwner == owner)
-			{
+		for (Func func : functions) {
+			if (func.funcOwner == owner) {
 				modifiedStats.add(func.stat);
 				removeFunc(func);
 			}
@@ -193,10 +168,8 @@ public final class Calculator
 	/**
 	 * Run each Func of the Calculator.<BR><BR>
 	 */
-	public void calc(Env env)
-	{
-		for (Func func : functions)
-		{
+	public void calc(Env env) {
+		for (Func func : functions) {
 			func.calc(env);
 		}
 	}

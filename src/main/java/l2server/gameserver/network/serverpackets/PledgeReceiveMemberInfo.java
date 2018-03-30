@@ -20,38 +20,32 @@ import l2server.gameserver.model.L2ClanMember;
 /**
  * @author -Wooden-
  */
-public class PledgeReceiveMemberInfo extends L2GameServerPacket
-{
+public class PledgeReceiveMemberInfo extends L2GameServerPacket {
 	private L2ClanMember member;
-
+	
 	/**
 	 * @param member
 	 */
-	public PledgeReceiveMemberInfo(L2ClanMember member)
-	{
+	public PledgeReceiveMemberInfo(L2ClanMember member) {
 		this.member = member;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(member.getPledgeType());
 		writeS(member.getName());
 		writeS(member.getTitle()); // title
 		writeD(member.getPowerGrade()); // power
-
+		
 		//clan or subpledge name
-		if (member.getPledgeType() != 0)
-		{
+		if (member.getPledgeType() != 0) {
 			writeS(member.getClan().getSubPledge(member.getPledgeType()).getName());
-		}
-		else
-		{
+		} else {
 			writeS(member.getClan().getName());
 		}
-
+		
 		writeS(member.getApprenticeOrSponsorName()); // name of this member's apprentice/sponsor
 	}
 }

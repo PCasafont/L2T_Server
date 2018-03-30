@@ -24,46 +24,38 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @version $Revision: 1.3.2.1.2.4 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class ShortCutInit extends L2GameServerPacket
-{
-
+public final class ShortCutInit extends L2GameServerPacket {
+	
 	private L2ShortCut[] shortCuts;
 	private L2PcInstance activeChar;
-
-	public ShortCutInit(L2PcInstance activeChar)
-	{
+	
+	public ShortCutInit(L2PcInstance activeChar) {
 		this.activeChar = activeChar;
-
-		if (activeChar == null)
-		{
+		
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		shortCuts = activeChar.getAllShortCuts();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(shortCuts.length);
-
-		if (getClient().getActiveChar() != null)
-		{
+		
+		if (getClient().getActiveChar() != null) {
 			getClient().getActiveChar().sendSysMessage("Shortcuts Length = " + shortCuts.length);
 		}
-
-		for (L2ShortCut sc : shortCuts)
-		{
-			if (sc == null)
-			{
+		
+		for (L2ShortCut sc : shortCuts) {
+			if (sc == null) {
 				continue;
 			}
-
+			
 			writeD(sc.getType());
 			writeD(sc.getSlot() + sc.getPage() * 12);
-
-			switch (sc.getType())
-			{
+			
+			switch (sc.getType()) {
 				case L2ShortCut.TYPE_ITEM: //1
 					writeD(sc.getId());
 					writeD(0x01);

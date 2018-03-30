@@ -5,20 +5,17 @@ import l2server.log.Log;
 /**
  * @author MegaParzor!
  */
-public class RequestBRProductInfo extends L2GameClientPacket
-{
+public class RequestBRProductInfo extends L2GameClientPacket {
 	@SuppressWarnings("unused")
 	private int productId;
-
+	
 	@Override
-	public void readImpl()
-	{
+	public void readImpl() {
 		productId = readD();
 	}
-
+	
 	@Override
-	public void runImpl()
-	{
+	public void runImpl() {
 		// TODO
 		Log.info(getType() + " packet was received from " + getClient() + ".");
 	}

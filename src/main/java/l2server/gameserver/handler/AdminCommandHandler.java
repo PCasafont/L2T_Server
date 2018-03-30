@@ -15,53 +15,43 @@
 
 package l2server.gameserver.handler;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.log.Log;
-
-import gnu.trove.TIntObjectHashMap;
 
 /**
  * This class ...
  *
  * @version $Revision: 1.1.4.5 $ $Date: 2005/03/27 15:30:09 $
  */
-public class AdminCommandHandler
-{
+public class AdminCommandHandler {
 
 	private TIntObjectHashMap<IAdminCommandHandler> datatable;
 
-	public static AdminCommandHandler getInstance()
-	{
+	public static AdminCommandHandler getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private AdminCommandHandler()
-	{
+	private AdminCommandHandler() {
 		datatable = new TIntObjectHashMap<>();
 	}
 
-	public void registerAdminCommandHandler(IAdminCommandHandler handler)
-	{
+	public void registerAdminCommandHandler(IAdminCommandHandler handler) {
 		String[] ids = handler.getAdminCommandList();
-		for (String id : ids)
-		{
-			if (Config.DEBUG)
-			{
+		for (String id : ids) {
+			if (Config.DEBUG) {
 				Log.fine("Adding handler for command " + id);
 			}
 			datatable.put(id.hashCode(), handler);
 		}
 	}
 
-	public IAdminCommandHandler getAdminCommandHandler(String adminCommand)
-	{
+	public IAdminCommandHandler getAdminCommandHandler(String adminCommand) {
 		String command = adminCommand;
-		if (adminCommand.contains(" "))
-		{
+		if (adminCommand.contains(" ")) {
 			command = adminCommand.substring(0, adminCommand.indexOf(" "));
 		}
-		if (Config.DEBUG)
-		{
+		if (Config.DEBUG) {
 			Log.fine("getting handler for command: " + command + " -> " + (datatable.get(command.hashCode()) != null));
 		}
 		//Log.info(command);
@@ -72,14 +62,12 @@ public class AdminCommandHandler
 	/**
 	 * @return
 	 */
-	public int size()
-	{
+	public int size() {
 		return datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final AdminCommandHandler instance = new AdminCommandHandler();
 	}
 }

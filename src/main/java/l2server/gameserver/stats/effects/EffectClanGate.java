@@ -28,10 +28,8 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 /**
  * @author ZaKaX (Ghost @ L2D)
  */
-public class EffectClanGate extends L2Effect
-{
-	public EffectClanGate(Env env, L2EffectTemplate template)
-	{
+public class EffectClanGate extends L2Effect {
+	public EffectClanGate(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -39,14 +37,11 @@ public class EffectClanGate extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		getEffected().startVisualEffect(VisualEffect.MAGIC_CIRCLE);
-		if (getEffected() instanceof L2PcInstance)
-		{
+		if (getEffected() instanceof L2PcInstance) {
 			L2Clan clan = ((L2PcInstance) getEffected()).getClan();
-			if (clan != null)
-			{
+			if (clan != null) {
 				SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.COURT_MAGICIAN_CREATED_PORTAL);
 				clan.broadcastToOtherOnlineMembers(msg, (L2PcInstance) getEffected());
 			}
@@ -59,8 +54,7 @@ public class EffectClanGate extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 
@@ -68,14 +62,12 @@ public class EffectClanGate extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		getEffected().stopVisualEffect(VisualEffect.MAGIC_CIRCLE);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.CLAN_GATE;
 	}
 }

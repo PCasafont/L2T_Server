@@ -18,17 +18,15 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExCompoundOneOK extends L2GameServerPacket
-{
+public class ExCompoundOneOK extends L2GameServerPacket {
 	/*
       @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
-
+	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 	}
 }

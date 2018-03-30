@@ -36,8 +36,7 @@ import java.util.logging.Level;
 /**
  * @author nBd
  */
-public class L2Trap extends L2Character
-{
+public class L2Trap extends L2Character {
 	protected static final int TICK = 1000; // 1s
 
 	private boolean isTriggered;
@@ -46,8 +45,7 @@ public class L2Trap extends L2Character
 	private int timeRemaining;
 	private boolean hasLifeTime;
 
-	public L2Trap(int objectId, L2NpcTemplate template, int lifeTime, L2Skill skill)
-	{
+	public L2Trap(int objectId, L2NpcTemplate template, int lifeTime, L2Skill skill) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2Trap);
 		setName(template.Name);
@@ -56,22 +54,17 @@ public class L2Trap extends L2Character
 		isTriggered = false;
 		this.skill = skill;
 		hasLifeTime = true;
-		if (lifeTime != 0)
-		{
+		if (lifeTime != 0) {
 			this.lifeTime = lifeTime;
-		}
-		else
-		{
-            this.lifeTime = 30000;
+		} else {
+			this.lifeTime = 30000;
 		}
 		timeRemaining = lifeTime;
-		if (lifeTime < 0)
-		{
+		if (lifeTime < 0) {
 			hasLifeTime = false;
 		}
 
-		if (skill != null)
-		{
+		if (skill != null) {
 			ThreadPoolManager.getInstance().scheduleGeneral(new TrapTask(), TICK);
 		}
 	}
@@ -80,20 +73,17 @@ public class L2Trap extends L2Character
 	 * @see l2server.gameserver.model.actor.L2Character#getKnownList()
 	 */
 	@Override
-	public TrapKnownList getKnownList()
-	{
+	public TrapKnownList getKnownList() {
 		return (TrapKnownList) super.getKnownList();
 	}
 
 	@Override
-	public void initKnownList()
-	{
+	public void initKnownList() {
 		setKnownList(new TrapKnownList(this));
 	}
 
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
-	{
+	public boolean isAutoAttackable(L2Character attacker) {
 		return !canSee(attacker);
 	}
 
@@ -101,8 +91,7 @@ public class L2Trap extends L2Character
 	 *
 	 *
 	 */
-	public void stopDecay()
-	{
+	public void stopDecay() {
 		DecayTaskManager.getInstance().cancelDecayTask(this);
 	}
 
@@ -110,16 +99,14 @@ public class L2Trap extends L2Character
 	 * @see l2server.gameserver.model.actor.L2Character#onDecay()
 	 */
 	@Override
-	public void onDecay()
-	{
+	public void onDecay() {
 		deleteMe();
 	}
 
 	/**
 	 * @return
 	 */
-	public final int getNpcId()
-	{
+	public final int getNpcId() {
 		return getTemplate().NpcId;
 	}
 
@@ -127,10 +114,8 @@ public class L2Trap extends L2Character
 	 * @see l2server.gameserver.model.actor.L2Character#doDie(l2server.gameserver.model.actor.L2Character)
 	 */
 	@Override
-	public boolean doDie(L2Character killer)
-	{
-		if (!super.doDie(killer))
-		{
+	public boolean doDie(L2Character killer) {
+		if (!super.doDie(killer)) {
 			return false;
 		}
 
@@ -141,8 +126,7 @@ public class L2Trap extends L2Character
 	/**
 	 */
 	@Override
-	public void deleteMe()
-	{
+	public void deleteMe() {
 		decayMe();
 		getKnownList().removeAllKnownObjects();
 		super.deleteMe();
@@ -150,12 +134,9 @@ public class L2Trap extends L2Character
 
 	/**
 	 */
-	public synchronized void unSummon()
-	{
-		if (isVisible() && !isDead())
-		{
-			if (getWorldRegion() != null)
-			{
+	public synchronized void unSummon() {
+		if (isVisible() && !isDead()) {
+			if (getWorldRegion() != null) {
 				getWorldRegion().removeFromZones(this);
 			}
 
@@ -167,8 +148,7 @@ public class L2Trap extends L2Character
 	 * @see l2server.gameserver.model.actor.L2Character#getActiveWeaponInstance()
 	 */
 	@Override
-	public L2ItemInstance getActiveWeaponInstance()
-	{
+	public L2ItemInstance getActiveWeaponInstance() {
 		return null;
 	}
 
@@ -176,8 +156,7 @@ public class L2Trap extends L2Character
 	 * @see l2server.gameserver.model.actor.L2Character#getActiveWeaponItem()
 	 */
 	@Override
-	public L2Weapon getActiveWeaponItem()
-	{
+	public L2Weapon getActiveWeaponItem() {
 		return null;
 	}
 
@@ -185,8 +164,7 @@ public class L2Trap extends L2Character
 	 * @see l2server.gameserver.model.actor.L2Character#getLevel()
 	 */
 	@Override
-	public int getLevel()
-	{
+	public int getLevel() {
 		return getTemplate().Level;
 	}
 
@@ -194,8 +172,7 @@ public class L2Trap extends L2Character
 	 * @see l2server.gameserver.model.actor.L2Character#getTemplate()
 	 */
 	@Override
-	public L2NpcTemplate getTemplate()
-	{
+	public L2NpcTemplate getTemplate() {
 		return (L2NpcTemplate) super.getTemplate();
 	}
 
@@ -203,8 +180,7 @@ public class L2Trap extends L2Character
 	 * @see l2server.gameserver.model.actor.L2Character#getSecondaryWeaponInstance()
 	 */
 	@Override
-	public L2ItemInstance getSecondaryWeaponInstance()
-	{
+	public L2ItemInstance getSecondaryWeaponInstance() {
 		return null;
 	}
 
@@ -212,8 +188,7 @@ public class L2Trap extends L2Character
 	 * @see l2server.gameserver.model.actor.L2Character#getSecondaryWeaponItem()
 	 */
 	@Override
-	public L2Weapon getSecondaryWeaponItem()
-	{
+	public L2Weapon getSecondaryWeaponItem() {
 		return null;
 	}
 
@@ -221,28 +196,23 @@ public class L2Trap extends L2Character
 	 * @see l2server.gameserver.model.actor.L2Character#updateAbnormalEffect()
 	 */
 	@Override
-	public void updateAbnormalEffect()
-	{
+	public void updateAbnormalEffect() {
 
 	}
 
-	public L2Skill getSkill()
-	{
+	public L2Skill getSkill() {
 		return skill;
 	}
 
-	public L2PcInstance getOwner()
-	{
+	public L2PcInstance getOwner() {
 		return null;
 	}
 
-	public int getKarma()
-	{
+	public int getKarma() {
 		return 0;
 	}
 
-	public byte getPvpFlag()
-	{
+	public byte getPvpFlag() {
 		return 0;
 	}
 
@@ -251,8 +221,7 @@ public class L2Trap extends L2Character
 	 *
 	 * @return True if trap is triggered.
 	 */
-	public boolean isTriggered()
-	{
+	public boolean isTriggered() {
 		return isTriggered;
 	}
 
@@ -262,8 +231,7 @@ public class L2Trap extends L2Character
 	 * @param cha - checked character
 	 * @return True if character can see trap
 	 */
-	public boolean canSee(L2Character cha)
-	{
+	public boolean canSee(L2Character cha) {
 		return false;
 	}
 
@@ -272,8 +240,7 @@ public class L2Trap extends L2Character
 	 *
 	 * @param detector
 	 */
-	public void setDetected(L2Character detector)
-	{
+	public void setDetected(L2Character detector) {
 		detector.sendPacket(new NpcInfo(this));
 	}
 
@@ -283,32 +250,23 @@ public class L2Trap extends L2Character
 	 * @param target
 	 * @return
 	 */
-	protected boolean checkTarget(L2Character target)
-	{
+	protected boolean checkTarget(L2Character target) {
 		return getOwner().isAbleToCastOnTarget(target, null, true);
 	}
 
-	private class TrapTask implements Runnable
-	{
+	private class TrapTask implements Runnable {
 		@Override
-		public void run()
-		{
-			try
-			{
-				if (!isTriggered)
-				{
-					if (hasLifeTime)
-					{
+		public void run() {
+			try {
+				if (!isTriggered) {
+					if (hasLifeTime) {
 						timeRemaining -= TICK;
-						if (timeRemaining < lifeTime - 15000)
-						{
+						if (timeRemaining < lifeTime - 15000) {
 							SocialAction sa = new SocialAction(getObjectId(), 2);
 							broadcastPacket(sa);
 						}
-						if (timeRemaining < 0)
-						{
-							switch (getSkill().getTargetType())
-							{
+						if (timeRemaining < 0) {
+							switch (getSkill().getTargetType()) {
 								case TARGET_AURA:
 								case TARGET_FRONT_AURA:
 								case TARGET_BEHIND_AURA:
@@ -322,15 +280,12 @@ public class L2Trap extends L2Character
 						}
 					}
 
-					for (L2Character target : getKnownList().getKnownCharactersInRadius(skill.getSkillRadius()))
-					{
-						if (target == getOwner())
-						{
+					for (L2Character target : getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
+						if (target == getOwner()) {
 							continue;
 						}
 
-						if (!getOwner().isAbleToCastOnTarget(target, skill, false))
-						{
+						if (!getOwner().isAbleToCastOnTarget(target, skill, false)) {
 							continue;
 						}
 
@@ -340,9 +295,7 @@ public class L2Trap extends L2Character
 
 					ThreadPoolManager.getInstance().scheduleGeneral(new TrapTask(), TICK);
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.log(Level.SEVERE, "", e);
 				unSummon();
 			}
@@ -354,16 +307,13 @@ public class L2Trap extends L2Character
 	 *
 	 * @param target
 	 */
-	public void trigger(L2Character target)
-	{
+	public void trigger(L2Character target) {
 		isTriggered = true;
 		broadcastPacket(new NpcInfo(this));
 		setTarget(target);
 
-		if (getTemplate().getEventQuests(Quest.QuestEventType.ON_TRAP_ACTION) != null)
-		{
-			for (Quest quest : getTemplate().getEventQuests(Quest.QuestEventType.ON_TRAP_ACTION))
-			{
+		if (getTemplate().getEventQuests(Quest.QuestEventType.ON_TRAP_ACTION) != null) {
+			for (Quest quest : getTemplate().getEventQuests(Quest.QuestEventType.ON_TRAP_ACTION)) {
 				quest.notifyTrapAction(this, target, TrapAction.TRAP_TRIGGERED);
 			}
 		}
@@ -371,69 +321,52 @@ public class L2Trap extends L2Character
 		ThreadPoolManager.getInstance().scheduleGeneral(new TriggerTask(), 300);
 	}
 
-	private class TriggerTask implements Runnable
-	{
+	private class TriggerTask implements Runnable {
 		@Override
-		public void run()
-		{
-			try
-			{
+		public void run() {
+			try {
 				doCast(skill);
 				ThreadPoolManager.getInstance().scheduleGeneral(new UnsummonTask(), skill.getHitTime() + 300);
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 				unSummon();
 			}
 		}
 	}
 
-	private class UnsummonTask implements Runnable
-	{
+	private class UnsummonTask implements Runnable {
 		@Override
-		public void run()
-		{
+		public void run() {
 			unSummon();
 		}
 	}
 
 	@Override
-	public void sendInfo(L2PcInstance activeChar)
-	{
-		if (isTriggered || canSee(activeChar))
-		{
+	public void sendInfo(L2PcInstance activeChar) {
+		if (isTriggered || canSee(activeChar)) {
 			activeChar.sendPacket(new NpcInfo(this));
 		}
 	}
 
 	@Override
-	public void broadcastPacket(L2GameServerPacket mov)
-	{
+	public void broadcastPacket(L2GameServerPacket mov) {
 		Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
-		for (L2PcInstance player : plrs)
-		{
-			if (player != null && (isTriggered || canSee(player)))
-			{
+		for (L2PcInstance player : plrs) {
+			if (player != null && (isTriggered || canSee(player))) {
 				player.sendPacket(mov);
 			}
 		}
 	}
 
 	@Override
-	public void broadcastPacket(L2GameServerPacket mov, int radiusInKnownlist)
-	{
+	public void broadcastPacket(L2GameServerPacket mov, int radiusInKnownlist) {
 		Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
-		for (L2PcInstance player : plrs)
-		{
-			if (player == null)
-			{
+		for (L2PcInstance player : plrs) {
+			if (player == null) {
 				continue;
 			}
-			if (isInsideRadius(player, radiusInKnownlist, false, false))
-			{
-				if (isTriggered || canSee(player))
-				{
+			if (isInsideRadius(player, radiusInKnownlist, false, false)) {
+				if (isTriggered || canSee(player)) {
 					player.sendPacket(mov);
 				}
 			}

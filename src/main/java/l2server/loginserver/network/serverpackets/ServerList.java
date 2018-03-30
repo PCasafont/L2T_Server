@@ -51,16 +51,14 @@ import java.util.Map;
  * is less than half the maximum. as Normal between half and 4/5
  * and Full when there's more than 4/5 of the maximum number of players
  */
-public final class ServerList extends L2LoginServerPacket
-{
+public final class ServerList extends L2LoginServerPacket {
 	private List<ServerData> servers;
 	private int lastServer;
 	private Map<Integer, Integer> charsOnServers;
 	@SuppressWarnings("unused")
 	private Map<Integer, long[]> charsToDelete;
-
-	class ServerData
-	{
+	
+	class ServerData {
 		protected byte[] ip;
 		protected int port;
 		protected int ageLimit;
@@ -72,15 +70,11 @@ public final class ServerList extends L2LoginServerPacket
 		protected int status;
 		protected int serverId;
 		protected int serverType;
-
-		ServerData(L2LoginClient client, GameServerInfo gsi)
-		{
-			try
-			{
+		
+		ServerData(L2LoginClient client, GameServerInfo gsi) {
+			try {
 				ip = InetAddress.getByName(gsi.getServerAddress(client.getConnection().getInetAddress())).getAddress();
-			}
-			catch (UnknownHostException e)
-			{
+			} catch (UnknownHostException e) {
 				e.printStackTrace();
 				ip = new byte[4];
 				ip[0] = 127;
@@ -88,7 +82,7 @@ public final class ServerList extends L2LoginServerPacket
 				ip[2] = 0;
 				ip[3] = 1;
 			}
-
+			
 			port = gsi.getPort();
 			pvp = gsi.isPvp();
 			serverType = gsi.getServerType();
@@ -102,64 +96,54 @@ public final class ServerList extends L2LoginServerPacket
 			serverId = gsi.getId();
 		}
 	}
-
-	public ServerList(L2LoginClient client)
-	{
+	
+	public ServerList(L2LoginClient client) {
 		servers = new ArrayList<>(GameServerTable.getInstance().getRegisteredGameServers().size());
 		lastServer = client.getLastServer();
-		for (GameServerInfo gsi : GameServerTable.getInstance().getRegisteredGameServers().values())
-		{
+		for (GameServerInfo gsi : GameServerTable.getInstance().getRegisteredGameServers().values()) {
 			//if (gsi.getStatus() != ServerStatus.STATUS_GM_ONLY
 			//		|| client.getAccessLevel() > 0)
 			servers.add(new ServerData(client, gsi));
 		}
-
+		
 		charsOnServers = client.getCharsOnServ();
 		charsToDelete = client.getCharsWaitingDelOnServ();
 	}
-
+	
 	@Override
-	public void write()
-	{
+	public void write() {
 		writeC(0x04);
 		writeC(servers.size());
 		writeC(lastServer);
-		for (ServerData server : servers)
-		{
+		for (ServerData server : servers) {
 			writeC(server.serverId); // server id
-
+			
 			writeC(server.ip[0] & 0xff);
 			writeC(server.ip[1] & 0xff);
 			writeC(server.ip[2] & 0xff);
 			writeC(server.ip[3] & 0xff);
-
+			
 			writeD(server.port);
 			writeC(server.ageLimit); // Age Limit 0, 15, 18
 			writeC(server.pvp ? 0x01 : 0x00);
 			writeH(1); //writeH(server.currentPlayers);
-			if (server.port == 7778)
-			{
+			if (server.port == 7778) {
 				writeH(2); //writeH(server.maxPlayers);
-			}
-			else
-			{
+			} else {
 				writeH(20); //writeH(server.maxPlayers);
 			}
 			writeC(server.status == ServerStatus.STATUS_DOWN ? 0x00 : 0x01);
-			if (server.port == 7778)
-			{
+			if (server.port == 7778) {
 				server.serverType = 0x200;
 			}
 			writeD(server.serverType); // 1: Normal, 2: Relax, 4: Public Test, 8: No Label, 16: Character Creation Restricted, 32: Event, 64: Free, 512: New, 1024: Classic
 			writeC(server.brackets ? 0x01 : 0x00);
 		}
-
+		
 		writeH(0x00); // unknown
-		if (charsOnServers != null)
-		{
+		if (charsOnServers != null) {
 			//writeC(charsOnServers.size());
-			for (int servId : charsOnServers.keySet())
-			{
+			for (int servId : charsOnServers.keySet()) {
 				writeC(servId);
 				writeC(charsOnServers.get(servId));
 				/*if (charsToDelete == null || !charsToDelete.containsKey(servId))

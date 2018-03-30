@@ -22,41 +22,33 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 import java.util.StringTokenizer;
 
-public class Buy implements IBypassHandler
-{
+public class Buy implements IBypassHandler {
 	private static final String[] COMMANDS = {"Buy"};
 
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (!(target instanceof L2MerchantInstance))
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+		if (!(target instanceof L2MerchantInstance)) {
 			return false;
 		}
 
-		try
-		{
+		try {
 			StringTokenizer st = new StringTokenizer(command, " ");
 			st.nextToken();
 
-			if (st.countTokens() < 1)
-			{
+			if (st.countTokens() < 1) {
 				return false;
 			}
 
 			((L2MerchantInstance) target).showBuyWindow(activeChar, Integer.parseInt(st.nextToken()));
 			return true;
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			log.info("Exception in " + getClass().getSimpleName());
 		}
 		return false;
 	}
 
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

@@ -23,22 +23,18 @@ import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2EffectType;
 
-public class EffectRemoveTalismans extends L2Effect
-{
-	public EffectRemoveTalismans(Env env, L2EffectTemplate template)
-	{
+public class EffectRemoveTalismans extends L2Effect {
+	public EffectRemoveTalismans(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.DEBUFF;
 	}
 
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.BLOCK_TALISMANS;
 	}
 
@@ -46,17 +42,13 @@ public class EffectRemoveTalismans extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (!(getEffected() instanceof L2Playable))
-		{
+	public boolean onStart() {
+		if (!(getEffected() instanceof L2Playable)) {
 			return false;
 		}
 
-		for (L2Abnormal e : getEffected().getAllEffects())
-		{
-			if (e != null && !e.getSkill().isOffensive() && e.getSkill().getName().contains("Talisman"))
-			{
+		for (L2Abnormal e : getEffected().getAllEffects()) {
+			if (e != null && !e.getSkill().isOffensive() && e.getSkill().getName().contains("Talisman")) {
 				getEffected().onExitChanceEffect(e.getSkill(), e.getSkill().getElement());
 				e.exit();
 				break;
@@ -70,8 +62,7 @@ public class EffectRemoveTalismans extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return true;
 	}
 }

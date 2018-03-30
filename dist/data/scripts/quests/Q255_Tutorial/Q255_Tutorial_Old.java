@@ -7,15 +7,12 @@ import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 
-public class Q255_Tutorial_Old extends Quest
-{
+public class Q255_Tutorial_Old extends Quest {
 	private static final String qn = "Q255_Tutorial";
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (Config.DISABLE_TUTORIAL)
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (Config.DISABLE_TUTORIAL) {
 			return "";
 		}
 		QuestState st = player.getQuestState(qn);
@@ -25,115 +22,79 @@ public class Q255_Tutorial_Old extends Quest
 		if (event.startsWith("UC")) // User Connected
 		{
 			int playerLevel = player.getLevel();
-			if (playerLevel < 6 && st.getInt("onlyone") == 0)
-			{
+			if (playerLevel < 6 && st.getInt("onlyone") == 0) {
 				int uc = st.getInt("ucMemo");
-				if (uc == 0)
-				{
+				if (uc == 0) {
 					st.set("ucMemo", "0");
 					st.startQuestTimer("QT", 10000);
 					st.set("Ex", "-2");
-				}
-				else if (uc == 1)
-				{
+				} else if (uc == 1) {
 					st.showQuestionMark(1);
 					st.playTutorialVoice("tutorial_voice_006");
 					st.playSound("ItemSound.quest_tutorial");
-				}
-				else if (uc == 2)
-				{
-					if (st.getInt("Ex") == 2)
-					{
+				} else if (uc == 2) {
+					if (st.getInt("Ex") == 2) {
 						st.showQuestionMark(3);
 						st.playSound("ItemSound.quest_tutorial");
 					}
-					if (st.getQuestItemsCount(6353) == 1)
-					{
+					if (st.getQuestItemsCount(6353) == 1) {
 						st.showQuestionMark(5);
 						st.playSound("ItemSound.quest_tutorial");
 					}
-				}
-				else if (uc == 3)
-				{
+				} else if (uc == 3) {
 					st.showQuestionMark(12);
 					st.playSound("ItemSound.quest_tutorial");
 					st.onTutorialClientEvent(0);
-				}
-				else
-				{
+				} else {
 					return "";
 				}
-			}
-			else if (playerLevel == 18 && player.getQuestState("10276_MutatedKaneusGludio") != null)
-			{
+			} else if (playerLevel == 18 && player.getQuestState("10276_MutatedKaneusGludio") != null) {
+				st.showQuestionMark(33);
+				st.playSound("ItemSound.quest_tutorial");
+			} else if (playerLevel == 28 && player.getQuestState("10277_MutatedKaneusDion") != null) {
+				st.showQuestionMark(33);
+				st.playSound("ItemSound.quest_tutorial");
+			} else if (playerLevel == 28 && player.getQuestState("10278_MutatedKaneusHeine") != null) {
+				st.showQuestionMark(33);
+				st.playSound("ItemSound.quest_tutorial");
+			} else if (playerLevel == 28 && player.getQuestState("10279_MutatedKaneusOren") != null) {
+				st.showQuestionMark(33);
+				st.playSound("ItemSound.quest_tutorial");
+			} else if (playerLevel == 28 && player.getQuestState("10280_MutatedKaneusSchuttgart") != null) {
+				st.showQuestionMark(33);
+				st.playSound("ItemSound.quest_tutorial");
+			} else if (playerLevel == 28 && player.getQuestState("10281_MutatedKaneusRune") != null) {
+				st.showQuestionMark(33);
+				st.playSound("ItemSound.quest_tutorial");
+			} else if (playerLevel == 79 && player.getQuestState("192_SevenSignSeriesOfDoubt") != null) {
 				st.showQuestionMark(33);
 				st.playSound("ItemSound.quest_tutorial");
 			}
-			else if (playerLevel == 28 && player.getQuestState("10277_MutatedKaneusDion") != null)
-			{
-				st.showQuestionMark(33);
-				st.playSound("ItemSound.quest_tutorial");
-			}
-			else if (playerLevel == 28 && player.getQuestState("10278_MutatedKaneusHeine") != null)
-			{
-				st.showQuestionMark(33);
-				st.playSound("ItemSound.quest_tutorial");
-			}
-			else if (playerLevel == 28 && player.getQuestState("10279_MutatedKaneusOren") != null)
-			{
-				st.showQuestionMark(33);
-				st.playSound("ItemSound.quest_tutorial");
-			}
-			else if (playerLevel == 28 && player.getQuestState("10280_MutatedKaneusSchuttgart") != null)
-			{
-				st.showQuestionMark(33);
-				st.playSound("ItemSound.quest_tutorial");
-			}
-			else if (playerLevel == 28 && player.getQuestState("10281_MutatedKaneusRune") != null)
-			{
-				st.showQuestionMark(33);
-				st.playSound("ItemSound.quest_tutorial");
-			}
-			else if (playerLevel == 79 && player.getQuestState("192_SevenSignSeriesOfDoubt") != null)
-			{
-				st.showQuestionMark(33);
-				st.playSound("ItemSound.quest_tutorial");
-			}
-		}
-		else if (event.startsWith("QT")) // Quest timer
+		} else if (event.startsWith("QT")) // Quest timer
 		{
 			int Ex = st.getInt("Ex");
-			if (Ex == -2)
-			{
-				if (cl.getLevel() == 1)
-				{
+			if (Ex == -2) {
+				if (cl.getLevel() == 1) {
 					htmltext = "tutorial_human_fighter001.htm";
 					st.playTutorialVoice("tutorial_voice_001a");
-					if (st.getQuestItemsCount(5588) == 0)
-					{
+					if (st.getQuestItemsCount(5588) == 0) {
 						;
 					}
 					st.giveItems(5588, 1);
 					st.startQuestTimer("QT", 30000);
 					st.set("Ex", "-3");
 				}
-			}
-			else if (Ex == -3)
-			{
+			} else if (Ex == -3) {
 				st.playTutorialVoice("tutorial_voice_002");
 				st.set("Ex", "0");
-			}
-			else if (Ex == -4)
-			{
+			} else if (Ex == -4) {
 				st.playTutorialVoice("tutorial_voice_008");
 				st.set("Ex", "-5");
 			}
-		}
-		else if (event.startsWith("TE")) // Tutorial Event
+		} else if (event.startsWith("TE")) // Tutorial Event
 		{
 			int event_id = Integer.valueOf(event.substring(2));
-			switch (event_id)
-			{
+			switch (event_id) {
 				case 0:
 					st.closeTutorialHtml();
 					break;
@@ -246,16 +207,13 @@ public class Q255_Tutorial_Old extends Quest
 				case 28:
 					htmltext = "tutorial_28.htm";
 			}
-		}
-		else if (event.startsWith("CE")) // Client Event
+		} else if (event.startsWith("CE")) // Client Event
 		{
 			int event_id = Integer.valueOf(event.substring(2));
 			int playerLevel = player.getLevel();
-			switch (event_id)
-			{
+			switch (event_id) {
 				case 1:
-					if (playerLevel < 6)
-					{
+					if (playerLevel < 6) {
 						st.playTutorialVoice("tutorial_voice_004");
 						htmltext = "tutorial_03.htm";
 						st.playSound("ItemSound.quest_tutorial");
@@ -263,8 +221,7 @@ public class Q255_Tutorial_Old extends Quest
 					}
 					break;
 				case 2:
-					if (playerLevel < 6)
-					{
+					if (playerLevel < 6) {
 						st.playTutorialVoice("tutorial_voice_005");
 						htmltext = "tutorial_05.htm";
 						st.playSound("ItemSound.quest_tutorial");
@@ -298,8 +255,7 @@ public class Q255_Tutorial_Old extends Quest
 					}*/
 					break;
 				case 30:
-					if (playerLevel < 10 && st.getInt("Die") == 0)
-					{
+					if (playerLevel < 10 && st.getInt("Die") == 0) {
 						st.playTutorialVoice("tutorial_voice_016");
 						st.playSound("ItemSound.quest_tutorial");
 						st.set("Die", "1");
@@ -308,8 +264,7 @@ public class Q255_Tutorial_Old extends Quest
 					}
 					break;
 				case 800000:
-					if (playerLevel < 6 && st.getInt("sit") == 0)
-					{
+					if (playerLevel < 6 && st.getInt("sit") == 0) {
 						st.playTutorialVoice("tutorial_voice_018");
 						st.playSound("ItemSound.quest_tutorial");
 						st.set("sit", "1");
@@ -318,12 +273,10 @@ public class Q255_Tutorial_Old extends Quest
 					}
 					break;
 				case 40:
-					switch (playerLevel)
-					{
+					switch (playerLevel) {
 						case 5:
 							if (player.getCurrentClass().getLevel() == 0 && st.getInt("lvl") < 5 &&
-									(!player.getCurrentClass().isMage() || cl.getId() == 49))
-							{
+									(!player.getCurrentClass().isMage() || cl.getId() == 49)) {
 								st.playTutorialVoice("tutorial_voice_014");
 								st.showQuestionMark(9);
 								st.playSound("ItemSound.quest_tutorial");
@@ -331,8 +284,7 @@ public class Q255_Tutorial_Old extends Quest
 							}
 							break;
 						case 6:
-							if (st.getInt("lvl") < 6 && player.getCurrentClass().getLevel() == 1)
-							{
+							if (st.getInt("lvl") < 6 && player.getCurrentClass().getLevel() == 1) {
 								st.playTutorialVoice("tutorial_voice_020");
 								st.playSound("ItemSound.quest_tutorial");
 								st.showQuestionMark(24);
@@ -341,8 +293,7 @@ public class Q255_Tutorial_Old extends Quest
 							break;
 						case 7:
 							if (player.getCurrentClass().isMage() && cl.getId() != 49 && st.getInt("lvl") < 7 &&
-									player.getCurrentClass().getLevel() == 1)
-							{
+									player.getCurrentClass().getLevel() == 1) {
 								st.playTutorialVoice("tutorial_voice_019");
 								st.playSound("ItemSound.quest_tutorial");
 								st.set("lvl", "7");
@@ -350,8 +301,7 @@ public class Q255_Tutorial_Old extends Quest
 							}
 							break;
 						case 10:
-							if (st.getInt("lvl") < 10)
-							{
+							if (st.getInt("lvl") < 10) {
 								st.playTutorialVoice("tutorial_voice_030");
 								st.playSound("ItemSound.quest_tutorial");
 								st.set("lvl", "10");
@@ -359,27 +309,23 @@ public class Q255_Tutorial_Old extends Quest
 							}
 							break;
 						case 15:
-							if (st.getInt("lvl") < 15)
-							{
+							if (st.getInt("lvl") < 15) {
 								st.playSound("ItemSound.quest_tutorial");
 								st.set("lvl", "15");
 								st.showQuestionMark(17);
 							}
 							break;
 						case 18:
-							if (st.getInt("lvl") < 18)
-							{
+							if (st.getInt("lvl") < 18) {
 								st.playSound("ItemSound.quest_tutorial");
 								st.set("lvl", "18");
 								st.showQuestionMark(33);
 							}
 							break;
 						case 19:
-							if (st.getInt("lvl") < 19)
-							{
+							if (st.getInt("lvl") < 19) {
 								int race = st.getPlayer().getRace().ordinal();
-								if (race != 5 && player.getCurrentClass().getLevel() == 1 && cl.getLevel() == 1)
-								{
+								if (race != 5 && player.getCurrentClass().getLevel() == 1 && cl.getLevel() == 1) {
 									//st.playTutorialVoice("tutorial_voice_???");
 									st.playSound("ItemSound.quest_tutorial");
 									st.set("lvl", "19");
@@ -388,19 +334,16 @@ public class Q255_Tutorial_Old extends Quest
 							}
 							break;
 						case 28:
-							if (st.getInt("lvl") < 28)
-							{
+							if (st.getInt("lvl") < 28) {
 								st.playSound("ItemSound.quest_tutorial");
 								st.set("lvl", "28");
 								st.showQuestionMark(33);
 							}
 							break;
 						case 35:
-							if (st.getInt("lvl") < 35)
-							{
+							if (st.getInt("lvl") < 35) {
 								int race = st.getPlayer().getRace().ordinal();
-								if (race != 5 && player.getCurrentClass().getLevel() == 20 && cl.getLevel() == 20)
-								{
+								if (race != 5 && player.getCurrentClass().getLevel() == 20 && cl.getLevel() == 20) {
 									//st.playTutorialVoice("tutorial_voice_???");
 									st.playSound("ItemSound.quest_tutorial");
 									st.set("lvl", "35");
@@ -409,40 +352,35 @@ public class Q255_Tutorial_Old extends Quest
 							}
 							break;
 						case 38:
-							if (st.getInt("lvl") < 38)
-							{
+							if (st.getInt("lvl") < 38) {
 								st.playSound("ItemSound.quest_tutorial");
 								st.set("lvl", "38");
 								st.showQuestionMark(33);
 							}
 							break;
 						case 48:
-							if (st.getInt("lvl") < 48)
-							{
+							if (st.getInt("lvl") < 48) {
 								st.playSound("ItemSound.quest_tutorial");
 								st.set("lvl", "48");
 								st.showQuestionMark(33);
 							}
 							break;
 						case 58:
-							if (st.getInt("lvl") < 58)
-							{
+							if (st.getInt("lvl") < 58) {
 								st.playSound("ItemSound.quest_tutorial");
 								st.set("lvl", "58");
 								st.showQuestionMark(33);
 							}
 							break;
 						case 68:
-							if (st.getInt("lvl") < 68)
-							{
+							if (st.getInt("lvl") < 68) {
 								st.playSound("ItemSound.quest_tutorial");
 								st.set("lvl", "68");
 								st.showQuestionMark(33);
 							}
 							break;
 						case 79:
-							if (st.getInt("lvl") < 79)
-							{
+							if (st.getInt("lvl") < 79) {
 								st.playSound("ItemSound.quest_tutorial");
 								st.set("lvl", "79");
 								st.showQuestionMark(33);
@@ -450,8 +388,7 @@ public class Q255_Tutorial_Old extends Quest
 							break;
 					}
 				case 45:
-					if (playerLevel < 10 && st.getInt("HP") == 0)
-					{
+					if (playerLevel < 10 && st.getInt("HP") == 0) {
 						st.playTutorialVoice("tutorial_voice_017");
 						st.playSound("ItemSound.quest_tutorial");
 						st.set("HP", "1");
@@ -460,8 +397,7 @@ public class Q255_Tutorial_Old extends Quest
 					}
 					break;
 				case 57:
-					if (playerLevel < 6 && st.getInt("Adena") == 0)
-					{
+					if (playerLevel < 6 && st.getInt("Adena") == 0) {
 						st.playTutorialVoice("tutorial_voice_012");
 						st.playSound("ItemSound.quest_tutorial");
 						st.set("Adena", "1");
@@ -469,8 +405,7 @@ public class Q255_Tutorial_Old extends Quest
 					}
 					break;
 				case 6353:
-					if (playerLevel < 6 && st.getInt("Gemstone") == 0)
-					{
+					if (playerLevel < 6 && st.getInt("Gemstone") == 0) {
 						st.playTutorialVoice("tutorial_voice_013");
 						st.playSound("ItemSound.quest_tutorial");
 						st.set("Gemstone", "1");
@@ -478,12 +413,10 @@ public class Q255_Tutorial_Old extends Quest
 					}
 					break;
 			}
-		}
-		else if (event.startsWith("QM")) // Question Mark
+		} else if (event.startsWith("QM")) // Question Mark
 		{
 			int markId = Integer.valueOf(event.substring(2));
-			switch (markId)
-			{
+			switch (markId) {
 				case 1:
 					/*# table for Client Event Enable (8) [html, x, y, z]
 					CEEa = {
@@ -620,12 +553,9 @@ public class Q255_Tutorial_Old extends Quest
 						htmltext = QMCb[classId];*/
 					break;
 				case 26:
-					if (st.getPlayer().getCurrentClass().isMage() && cl.getId() != 49)
-					{
+					if (st.getPlayer().getCurrentClass().isMage() && cl.getId() != 49) {
 						htmltext = "tutorial_newbie004b.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "tutorial_newbie004a.htm";
 					}
 					break;
@@ -633,8 +563,7 @@ public class Q255_Tutorial_Old extends Quest
 					htmltext = "tutorial_20.htm";
 					break;
 				case 33:
-					switch (player.getLevel())
-					{
+					switch (player.getLevel()) {
 						case 18:
 							htmltext = "tutorial_kama_18.htm";
 							break;
@@ -679,21 +608,18 @@ public class Q255_Tutorial_Old extends Quest
 					break;
 			}
 		}
-		if (htmltext == "")
-		{
+		if (htmltext == "") {
 			return "";
 		}
 		st.showTutorialHTML(htmltext);
 		return "";
 	}
 
-	public Q255_Tutorial_Old(int questId, String name, String descr)
-	{
+	public Q255_Tutorial_Old(int questId, String name, String descr) {
 		super(questId, name, descr);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Q255_Tutorial_Old(255, qn, "Tutorial");
 	}
 }

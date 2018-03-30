@@ -20,27 +20,24 @@ import l2server.gameserver.model.actor.L2Character;
 /**
  * @author Kerberos
  */
-public class VehicleStarted extends L2GameServerPacket
-{
+public class VehicleStarted extends L2GameServerPacket {
 	private int objectId;
 	private int state;
-
+	
 	/**
 	 */
-	public VehicleStarted(L2Character boat, int state)
-	{
+	public VehicleStarted(L2Character boat, int state) {
 		objectId = boat.getObjectId();
 		this.state = state;
 	}
-
+	
 	/*
 	 * (non-Javadoc)
 	 *
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objectId);
 		writeD(state);
 	}

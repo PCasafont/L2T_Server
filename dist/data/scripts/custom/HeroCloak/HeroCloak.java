@@ -21,60 +21,43 @@ import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 
-public class HeroCloak extends Quest
-{
+public class HeroCloak extends Quest {
 	private static final int[] npcIds = {31690, 31769, 31770, 31771, 31772};
 
 	private static final int HERO_CLOAK = 30372;
 	private static final int GLORIOUS_CLOAK = 30373;
 
-	public HeroCloak(int questId, String name, String descr)
-	{
+	public HeroCloak(int questId, String name, String descr) {
 		super(questId, name, descr);
-		for (int i : npcIds)
-		{
+		for (int i : npcIds) {
 			addStartNpc(i);
 			addTalkId(i);
 		}
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = "";
 		QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
+		if (st == null) {
 			st = newQuestState(player);
 		}
 
-		if (player.isHero())
-		{
-			if (player.getInventory().getItemByItemId(HERO_CLOAK) == null)
-			{
+		if (player.isHero()) {
+			if (player.getInventory().getItemByItemId(HERO_CLOAK) == null) {
 				st.giveItems(HERO_CLOAK, 1);
-			}
-			else
-			{
+			} else {
 				htmltext = "already_have_cloak.htm";
 			}
-		}
-		else
-		{
+		} else {
 			int heroRank = Olympiad.getInstance().getPosition(player);
-			if (heroRank > 0 && heroRank <= 3)
-			{
-				if (player.getInventory().getItemByItemId(GLORIOUS_CLOAK) == null)
-				{
+			if (heroRank > 0 && heroRank <= 3) {
+				if (player.getInventory().getItemByItemId(GLORIOUS_CLOAK) == null) {
 					st.giveItems(GLORIOUS_CLOAK, 1);
-				}
-				else
-				{
+				} else {
 					htmltext = "already_have_cloak.htm";
 				}
-			}
-			else
-			{
+			} else {
 				htmltext = "no_hero.htm";
 			}
 		}
@@ -83,8 +66,7 @@ public class HeroCloak extends Quest
 		return htmltext;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new HeroCloak(-1, "HeroCloak", "custom");
 	}
 }

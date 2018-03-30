@@ -21,8 +21,7 @@ import l2server.gameserver.stats.Env;
 /**
  * The Class ConditionPlayerPkCount.
  */
-public class ConditionPlayerPkCount extends Condition
-{
+public class ConditionPlayerPkCount extends Condition {
 	public final int pk;
 
 	/**
@@ -30,8 +29,7 @@ public class ConditionPlayerPkCount extends Condition
 	 *
 	 * @param pk the pk
 	 */
-	public ConditionPlayerPkCount(int pk)
-	{
+	public ConditionPlayerPkCount(int pk) {
 		this.pk = pk;
 	}
 
@@ -39,10 +37,8 @@ public class ConditionPlayerPkCount extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 

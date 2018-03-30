@@ -25,62 +25,50 @@ import java.io.File;
 /**
  * @author nBd
  */
-public class AutoAnnounceTaskManager
-{
-	public static AutoAnnounceTaskManager getInstance()
-	{
+public class AutoAnnounceTaskManager {
+	public static AutoAnnounceTaskManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private AutoAnnounceTaskManager()
-	{
+	private AutoAnnounceTaskManager() {
 		load();
 	}
 
-	private void load()
-	{
+	private void load() {
 		File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/autoAnnouncements.xml");
-		if (!file.exists())
-		{
+		if (!file.exists()) {
 			return;
 		}
 		int count = 0;
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode d : doc.getChildren())
-		{
-            if (d.getName().equalsIgnoreCase("announce"))
-            {
-                String text = d.getString("text");
-                int initial = d.getInt("initial");
-                int reuse = d.getInt("reuse");
+		for (XmlNode d : doc.getChildren()) {
+			if (d.getName().equalsIgnoreCase("announce")) {
+				String text = d.getString("text");
+				int initial = d.getInt("initial");
+				int reuse = d.getInt("reuse");
 
-                ThreadPoolManager.getInstance()
-                        .scheduleGeneralAtFixedRate(new AutoAnnouncement(text), initial * 60000, reuse * 60000);
-                count++;
-            }
+				ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new AutoAnnouncement(text), initial * 60000, reuse * 60000);
+				count++;
+			}
 		}
 		Log.info("AutoAnnouncements: Loaded: " + count + " auto announcements!");
 	}
 
-	private class AutoAnnouncement implements Runnable
-	{
+	private class AutoAnnouncement implements Runnable {
 		private String text;
 
-		private AutoAnnouncement(String text)
-		{
+		private AutoAnnouncement(String text) {
 			this.text = text;
 		}
 
 		@Override
-		public void run()
-		{
+		public void run() {
 			Broadcast.announceToOnlinePlayers(text);
 		}
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final AutoAnnounceTaskManager instance = new AutoAnnounceTaskManager();
 	}
 }

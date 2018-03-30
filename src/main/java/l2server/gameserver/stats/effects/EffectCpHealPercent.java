@@ -22,58 +22,50 @@ import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
-public class EffectCpHealPercent extends L2Effect
-{
-	public EffectCpHealPercent(Env env, L2EffectTemplate template)
-	{
+public class EffectCpHealPercent extends L2Effect {
+	public EffectCpHealPercent(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
-
+	
 	// Special constructor to steal this effect
-	public EffectCpHealPercent(Env env, L2Effect effect)
-	{
+	public EffectCpHealPercent(Env env, L2Effect effect) {
 		super(env, effect);
 	}
-
+	
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.BUFF;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (getEffected().isDead())
-		{
+	public boolean onStart() {
+		if (getEffected().isDead()) {
 			return false;
 		}
-
-		if (getEffected() instanceof L2DoorInstance)
-		{
+		
+		if (getEffected() instanceof L2DoorInstance) {
 			return false;
 		}
-
+		
 		double cp = getEffected().getCurrentCp();
 		cp += calc() * getEffected().getMaxCp() / 100.0;
-
+		
 		getEffected().setCurrentCp(cp);
 		StatusUpdate sump = new StatusUpdate(getEffected());
 		sump.addAttribute(StatusUpdate.CUR_CP, (int) cp);
 		getEffected().sendPacket(sump);
-
+		
 		return true;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 }

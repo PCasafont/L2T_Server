@@ -27,18 +27,15 @@ import l2server.gameserver.model.L2Clan;
  *
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class PledgeStatusChanged extends L2GameServerPacket
-{
+public final class PledgeStatusChanged extends L2GameServerPacket {
 	private L2Clan clan;
-
-	public PledgeStatusChanged(L2Clan clan)
-	{
+	
+	public PledgeStatusChanged(L2Clan clan) {
 		this.clan = clan;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(Config.SERVER_ID);
 		writeD(clan.getLeaderId());
 		writeD(clan.getClanId());

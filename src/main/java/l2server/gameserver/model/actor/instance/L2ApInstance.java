@@ -16,43 +16,29 @@
 package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.ai.L2CharacterAI;
-import l2server.gameserver.ai.aplayer.L2AArcherAI;
-import l2server.gameserver.ai.aplayer.L2AEnchanterAI;
-import l2server.gameserver.ai.aplayer.L2AHealerAI;
-import l2server.gameserver.ai.aplayer.L2AKnightAI;
-import l2server.gameserver.ai.aplayer.L2ARogueAI;
-import l2server.gameserver.ai.aplayer.L2ASummonerAI;
-import l2server.gameserver.ai.aplayer.L2AWarriorAI;
-import l2server.gameserver.ai.aplayer.L2AWizardAI;
+import l2server.gameserver.ai.aplayer.*;
 import l2server.gameserver.model.actor.appearance.PcAppearance;
 import l2server.gameserver.templates.chars.L2PcTemplate;
 
 /**
  * @author Pere
  */
-public class L2ApInstance extends L2PcInstance
-{
-	public L2ApInstance(int objectId, L2PcTemplate template, String account, PcAppearance app)
-	{
+public class L2ApInstance extends L2PcInstance {
+	public L2ApInstance(int objectId, L2PcTemplate template, String account, PcAppearance app) {
 		super(objectId, template, account, app);
 		getAI();
 	}
 
 	@Override
-	public L2CharacterAI initAI()
-	{
+	public L2CharacterAI initAI() {
 		int classId = getCurrentClass().getParent().getAwakeningClassId();
-		if (getClassId() == 188)
-		{
+		if (getClassId() == 188) {
 			classId = 140;
-		}
-		else if (getClassId() == 189)
-		{
+		} else if (getClassId() == 189) {
 			classId = 143;
 		}
 		
-		switch (classId)
-		{
+		switch (classId) {
 			case 139:
 				return new L2AKnightAI(this);
 			case 140:
@@ -70,7 +56,7 @@ public class L2ApInstance extends L2PcInstance
 			case 146:
 				return new L2AHealerAI(this);
 			default:
-				return new L2AWarriorAI(this); 
+				return new L2AWarriorAI(this);
 		}
 	}
 }

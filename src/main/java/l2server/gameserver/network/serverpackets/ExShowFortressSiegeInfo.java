@@ -23,24 +23,21 @@ import java.util.List;
 /**
  * @author KenM
  */
-public class ExShowFortressSiegeInfo extends L2GameServerPacket
-{
+public class ExShowFortressSiegeInfo extends L2GameServerPacket {
 	private int fortId;
 	private int size;
 	private Fort fort;
 	private int csize;
 	private int csize2;
-
+	
 	/**
 	 */
-	public ExShowFortressSiegeInfo(Fort fort)
-	{
+	public ExShowFortressSiegeInfo(Fort fort) {
 		this.fort = fort;
 		fortId = fort.getFortId();
 		size = fort.getFortSize();
 		List<L2Spawn> commanders = fort.getCommanderSpawns();
-		if (commanders != null)
-		{
+		if (commanders != null) {
 			csize = commanders.size();
 		}
 		csize2 = fort.getCommanderSpawns().size();
@@ -49,22 +46,18 @@ public class ExShowFortressSiegeInfo extends L2GameServerPacket
     /*
 	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
-
+	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(fortId); // Fortress Id
 		writeD(size); // Total Barracks Count
-		if (csize > 0)
-		{
-			switch (csize)
-			{
+		if (csize > 0) {
+			switch (csize) {
 				case 3:
-					switch (csize2)
-					{
+					switch (csize2) {
 						case 0:
 							writeD(0x03);
 							break;
@@ -101,11 +94,8 @@ public class ExShowFortressSiegeInfo extends L2GameServerPacket
 					}
 					break;
 			}
-		}
-		else
-		{
-			for (int i = 0; i < size; i++)
-			{
+		} else {
+			for (int i = 0; i < size; i++) {
 				writeD(0x00);
 			}
 		}

@@ -18,22 +18,19 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExShowItemAppearanceWindow extends L2GameServerPacket
-{
+public class ExShowItemAppearanceWindow extends L2GameServerPacket {
 	private int type;
 	private int stoneId;
-
-	public ExShowItemAppearanceWindow(int type, int stoneId)
-	{
+	
+	public ExShowItemAppearanceWindow(int type, int stoneId) {
 		this.type = type;
 		this.stoneId = stoneId;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(type);
 		writeD(0x00); // GoD ???
 		writeD(stoneId);

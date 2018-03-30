@@ -26,32 +26,29 @@ import l2server.Config;
  *
  * @author -Wooden-
  */
-public class ExPledgeCrestLarge extends L2GameServerPacket
-{
+public class ExPledgeCrestLarge extends L2GameServerPacket {
 	private int crestId;
 	private int subId;
 	private byte[] data;
-
-	public ExPledgeCrestLarge(int crestId, int subId, byte[] data)
-	{
+	
+	public ExPledgeCrestLarge(int crestId, int subId, byte[] data) {
 		this.crestId = crestId;
 		this.subId = subId;
 		this.data = data;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(Config.SERVER_ID); // server id?
 		writeD(0x00); //unk
 		writeD(crestId);
 		writeD(subId); //subId
 		writeD(0x10080); //???
 		writeD(data.length);
-
+		
 		writeB(data);
 	}
 }

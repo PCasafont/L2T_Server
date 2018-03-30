@@ -18,10 +18,8 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public final class ExCrystalizingFail extends L2GameServerPacket
-{
+public final class ExCrystalizingFail extends L2GameServerPacket {
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 	}
 }

@@ -17,14 +17,7 @@ package l2server.gameserver.templates.chars;
 
 import l2server.Config;
 import l2server.gameserver.datatables.ExtraDropTable;
-import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.L2DropCategory;
-import l2server.gameserver.model.L2DropData;
-import l2server.gameserver.model.L2MinionData;
-import l2server.gameserver.model.L2NpcAIData;
-import l2server.gameserver.model.L2RandomMinionData;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2Spawn;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2XmassTreeInstance;
 import l2server.gameserver.model.quest.Quest;
@@ -34,11 +27,7 @@ import l2server.gameserver.templates.StatsSet;
 import l2server.log.Log;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * This cl contains all generic data of a L2Spawn object.<BR><BR>
@@ -57,8 +46,7 @@ import java.util.Map;
  *
  * @version $Revision: 1.1.2.4 $ $Date: 2005/04/02 15:57:51 $
  */
-public final class L2NpcTemplate extends L2CharTemplate
-{
+public final class L2NpcTemplate extends L2CharTemplate {
 	public static final int AIST_BUFF = 0;
 	public static final int AIST_NEGATIVE = 1;
 	public static final int AIST_DEBUFF = 2;
@@ -123,13 +111,16 @@ public final class L2NpcTemplate extends L2CharTemplate
 
 	private L2NpcAIData aiData = new L2NpcAIData();
 
-	public enum AIType
-	{
-		FIGHTER, ARCHER, BALANCED, MAGE, HEALER, CORPSE
+	public enum AIType {
+		FIGHTER,
+		ARCHER,
+		BALANCED,
+		MAGE,
+		HEALER,
+		CORPSE
 	}
 
-	public enum L2NpcRace
-	{
+	public enum L2NpcRace {
 		UNDEAD,
 		MAGICCREATURE,
 		BEAST,
@@ -182,8 +173,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 	 *
 	 * @param set The StatsSet object to transfer data to the method
 	 */
-	public L2NpcTemplate(StatsSet set)
-	{
+	public L2NpcTemplate(StatsSet set) {
 		super(set);
 		NpcId = set.getInteger("id");
 		TemplateId = set.getInteger("templateId", NpcId);
@@ -208,13 +198,10 @@ public final class L2NpcTemplate extends L2CharTemplate
 		RandomWalk = set.getBool("randomWalk", false);
 		Race = null;
 		int herbGroup = set.getInteger("extraDropGroup", 0);
-		if (herbGroup > 0 && ExtraDropTable.getInstance().getExtraDroplist(herbGroup) == null)
-		{
+		if (herbGroup > 0 && ExtraDropTable.getInstance().getExtraDroplist(herbGroup) == null) {
 			Log.warning("Missing Herb Drop Group for npcId: " + NpcId);
 			ExtraDropGroup = 0;
-		}
-		else
-		{
+		} else {
 			ExtraDropGroup = herbGroup;
 		}
 		Targetable = set.getBool("targetable", true);
@@ -222,8 +209,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		ShowName = set.getBool("showName", true);
 
 		// can be loaded from db
-		BaseVitalityDivider =
-				Level > 0 && RewardExp > 0 ? (float) baseHpMax * 9 / (100 * RewardExp / (Level * Level)) : 0;
+		BaseVitalityDivider = Level > 0 && RewardExp > 0 ? (float) baseHpMax * 9 / (100 * RewardExp / (Level * Level)) : 0;
 
 		InteractionDistance = set.getInteger("interactionDistance", L2Npc.DEFAULT_INTERACTION_DISTANCE);
 
@@ -236,14 +222,12 @@ public final class L2NpcTemplate extends L2CharTemplate
 		baseSet = set;
 		baseTemplate = this;
 
-		if (Config.isServer(Config.TENKAI_LEGACY) && Type.equals("L2Defender"))
-		{
+		if (Config.isServer(Config.TENKAI_LEGACY) && Type.equals("L2Defender")) {
 			Level = 103;
 		}
 	}
 
-	public L2NpcTemplate(StatsSet set, L2NpcTemplate baseTemplate)
-	{
+	public L2NpcTemplate(StatsSet set, L2NpcTemplate baseTemplate) {
 		super(set);
 
 		NpcId = set.getInteger("id");
@@ -269,13 +253,10 @@ public final class L2NpcTemplate extends L2CharTemplate
 		RandomWalk = set.getBool("randomWalk", baseTemplate.RandomWalk);
 		Race = baseTemplate.Race;
 		int herbGroup = set.getInteger("extraDropGroup", baseTemplate.ExtraDropGroup);
-		if (herbGroup > 0 && ExtraDropTable.getInstance().getExtraDroplist(herbGroup) == null)
-		{
+		if (herbGroup > 0 && ExtraDropTable.getInstance().getExtraDroplist(herbGroup) == null) {
 			Log.warning("Missing Herb Drop Group for npcId: " + NpcId);
 			ExtraDropGroup = 0;
-		}
-		else
-		{
+		} else {
 			ExtraDropGroup = herbGroup;
 		}
 		Targetable = set.getBool("targetable", baseTemplate.Targetable);
@@ -289,8 +270,7 @@ public final class L2NpcTemplate extends L2CharTemplate
 		HatersDamageMultiplier = set.getFloat("hatersDamageMultiplier", baseTemplate.HatersDamageMultiplier);
 
 		// can be loaded from db
-		BaseVitalityDivider =
-				Level > 0 && RewardExp > 0 ? (float) baseHpMax * 9 / (100 * RewardExp / (Level * Level)) : 0;
+		BaseVitalityDivider = Level > 0 && RewardExp > 0 ? (float) baseHpMax * 9 / (100 * RewardExp / (Level * Level)) : 0;
 
 		InteractionDistance = set.getInteger("interactionDistance", baseTemplate.InteractionDistance);
 
@@ -309,99 +289,79 @@ public final class L2NpcTemplate extends L2CharTemplate
 
 		aiData = baseTemplate.aiData;
 
-		if (!set.getBool("overrideDrops", false))
-		{
+		if (!set.getBool("overrideDrops", false)) {
 			spoilDrop = new ArrayList<>(baseTemplate.spoilDrop);
 			normalDrop = new ArrayList<>(baseTemplate.normalDrop);
 			multiDrop = new ArrayList<>();
-			for (L2DropCategory dc : baseTemplate.multiDrop)
-			{
+			for (L2DropCategory dc : baseTemplate.multiDrop) {
 				L2DropCategory newDC = new L2DropCategory(dc.getChance());
-				for (L2DropData dd : dc.getAllDrops())
-				{
+				for (L2DropData dd : dc.getAllDrops()) {
 					newDC.addDropData(dd);
 				}
 				multiDrop.add(newDC);
 			}
 		}
 
-		if (baseTemplate.minions != null)
-		{
+		if (baseTemplate.minions != null) {
 			minions = new ArrayList<>(baseTemplate.minions);
 		}
 
-		if (baseTemplate.randomMinions != null)
-		{
+		if (baseTemplate.randomMinions != null) {
 			randomMinions = new L2RandomMinionData(baseTemplate.randomMinions);
 		}
 
-		if (baseTemplate.skills != null)
-		{
-			for (L2Skill skill : baseTemplate.skills.values())
-			{
+		if (baseTemplate.skills != null) {
+			for (L2Skill skill : baseTemplate.skills.values()) {
 				addSkill(skill);
 			}
 		}
 
-		if (!set.getBool("overrideSpawns", false))
-		{
+		if (!set.getBool("overrideSpawns", false)) {
 			spawns = new ArrayList<>(baseTemplate.spawns);
 		}
 
-		if (baseTemplate.questEvents != null)
-		{
+		if (baseTemplate.questEvents != null) {
 			questEvents = new HashMap<>(baseTemplate.questEvents);
 		}
 
 		baseSet = set;
-		while (baseTemplate != baseTemplate.baseTemplate)
-		{
+		while (baseTemplate != baseTemplate.baseTemplate) {
 			baseTemplate = baseTemplate.baseTemplate;
 		}
 		this.baseTemplate = baseTemplate;
 	}
 
-	public void addSpoilData(L2DropData drop)
-	{
+	public void addSpoilData(L2DropData drop) {
 		spoilDrop.add(drop);
 	}
 
-	public void addDropData(L2DropData drop)
-	{
+	public void addDropData(L2DropData drop) {
 		normalDrop.add(drop);
 	}
 
-	public void addMultiDrop(L2DropCategory category)
-	{
+	public void addMultiDrop(L2DropCategory category) {
 		multiDrop.add(category);
 	}
 
-	public void addRaidData(L2MinionData minion)
-	{
-		if (minions == null)
-		{
+	public void addRaidData(L2MinionData minion) {
+		if (minions == null) {
 			minions = new ArrayList<>();
 		}
 		minions.add(minion);
 	}
 
-	public void setRandomRaidData(L2RandomMinionData minion)
-	{
+	public void setRandomRaidData(L2RandomMinionData minion) {
 		randomMinions = minion;
 	}
 
-	public void addSkill(L2Skill skill)
-	{
-		if (skills == null)
-		{
+	public void addSkill(L2Skill skill) {
+		if (skills == null) {
 			skills = new LinkedHashMap<>();
 		}
 
-		if (!skill.isPassive())
-		{
+		if (!skill.isPassive()) {
 			addGeneralSkill(skill);
-			switch (skill.getSkillType())
-			{
+			switch (skill.getSkillType()) {
 				case BUFF:
 					addBuffSkill(skill);
 					break;
@@ -480,48 +440,39 @@ public final class L2NpcTemplate extends L2CharTemplate
 		skills.put(skill.getId(), skill);
 	}
 
-	public void addSpawn(SpawnData spawn)
-	{
+	public void addSpawn(SpawnData spawn) {
 		spawns.add(spawn);
 	}
 
-	public ArrayList<L2DropData> getSpoilData()
-	{
+	public ArrayList<L2DropData> getSpoilData() {
 		return spoilDrop;
 	}
 
-	public ArrayList<L2DropData> getDropData()
-	{
+	public ArrayList<L2DropData> getDropData() {
 		return normalDrop;
 	}
 
 	/**
 	 * Return the list of all possible UNCATEGORIZED drops of this L2NpcTemplate.<BR><BR>
 	 */
-	public ArrayList<L2DropCategory> getMultiDropData()
-	{
+	public ArrayList<L2DropCategory> getMultiDropData() {
 		return multiDrop;
 	}
 
 	/**
 	 * Return the list of all Minions that must be spawn with the L2NpcInstance using this L2NpcTemplate.<BR><BR>
 	 */
-	public List<L2MinionData> getMinionData()
-	{
+	public List<L2MinionData> getMinionData() {
 		return minions;
 	}
 
-	public L2MinionData getMinionData(final int minionId)
-	{
-		if (minions == null)
-		{
+	public L2MinionData getMinionData(final int minionId) {
+		if (minions == null) {
 			return null;
 		}
 
-		for (L2MinionData minion : minions)
-		{
-			if (minionId != minion.getMinionId())
-			{
+		for (L2MinionData minion : minions) {
+			if (minionId != minion.getMinionId()) {
 				continue;
 			}
 
@@ -531,34 +482,26 @@ public final class L2NpcTemplate extends L2CharTemplate
 		return null;
 	}
 
-	public L2RandomMinionData getRandomMinionData()
-	{
+	public L2RandomMinionData getRandomMinionData() {
 		return randomMinions;
 	}
 
-	public Map<Integer, L2Skill> getSkills()
-	{
+	public Map<Integer, L2Skill> getSkills() {
 		return skills;
 	}
 
-	public List<SpawnData> getSpawns()
-	{
+	public List<SpawnData> getSpawns() {
 		return spawns;
 	}
 
-	public void addQuestEvent(Quest.QuestEventType EventType, Quest q)
-	{
-		if (questEvents == null)
-		{
+	public void addQuestEvent(Quest.QuestEventType EventType, Quest q) {
+		if (questEvents == null) {
 			questEvents = new HashMap<>();
 		}
 
-		if (questEvents.get(EventType) == null)
-		{
+		if (questEvents.get(EventType) == null) {
 			questEvents.put(EventType, new Quest[]{q});
-		}
-		else
-		{
+		} else {
 			Quest[] quests = questEvents.get(EventType);
 			int len = quests.length;
 
@@ -568,21 +511,16 @@ public final class L2NpcTemplate extends L2CharTemplate
 			// In all cases, check if this new registration is replacing an older copy of the SAME quest
 			// Finally, check quest class hierarchy: a parent class should never replace a child class.
 			// a child class should always replace a parent class.
-			if (!EventType.isMultipleRegistrationAllowed())
-			{
+			if (!EventType.isMultipleRegistrationAllowed()) {
 				// if it is the same quest (i.e. reload) or the existing is a superclass of the new one, replace the existing.
-				if (quests[0].getName().equals(q.getName()) || L2NpcTemplate.isAssignableTo(q, quests[0].getClass()))
-				{
+				if (quests[0].getName().equals(q.getName()) || L2NpcTemplate.isAssignableTo(q, quests[0].getClass())) {
 					quests[0] = q;
+				} else {
+					Log.warning(
+							"Quest event not allowed in multiple quests.  Skipped addition of Event Type \"" + EventType + "\" for NPC \"" + Name +
+									"\" and quest \"" + q.getName() + "\".");
 				}
-				else
-				{
-					Log.warning("Quest event not allowed in multiple quests.  Skipped addition of Event Type \"" +
-							EventType + "\" for NPC \"" + Name + "\" and quest \"" + q.getName() + "\".");
-				}
-			}
-			else
-			{
+			} else {
 				// be ready to add a new quest to a new copy of the list, with larger size than previously.
 				Quest[] tmp = new Quest[len + 1];
 
@@ -591,16 +529,11 @@ public final class L2NpcTemplate extends L2CharTemplate
 				// Replace existing if the new quest is the same (reload) or a child of the existing quest.
 				// Do nothing if the new quest is a superclass of an existing quest.
 				// Add the new quest in the end of the list otherwise.
-				for (int i = 0; i < len; i++)
-				{
-					if (quests[i].getName().equals(q.getName()) ||
-							L2NpcTemplate.isAssignableTo(q, quests[i].getClass()))
-					{
+				for (int i = 0; i < len; i++) {
+					if (quests[i].getName().equals(q.getName()) || L2NpcTemplate.isAssignableTo(q, quests[i].getClass())) {
 						quests[i] = q;
 						return;
-					}
-					else if (L2NpcTemplate.isAssignableTo(quests[i], q.getClass()))
-					{
+					} else if (L2NpcTemplate.isAssignableTo(quests[i], q.getClass())) {
 						return;
 					}
 					tmp[i] = quests[i];
@@ -620,57 +553,43 @@ public final class L2NpcTemplate extends L2CharTemplate
 	 * @param clazz
 	 * @return
 	 */
-	public static boolean isAssignableTo(Object obj, Class<?> clazz)
-	{
+	public static boolean isAssignableTo(Object obj, Class<?> clazz) {
 		return L2NpcTemplate.isAssignableTo(obj.getClass(), clazz);
 	}
 
-	public static boolean isAssignableTo(Class<?> sub, Class<?> clazz)
-	{
+	public static boolean isAssignableTo(Class<?> sub, Class<?> clazz) {
 		// if clazz represents an interface
-		if (clazz.isInterface())
-		{
+		if (clazz.isInterface()) {
 			// check if obj implements the clazz interface
 			Class<?>[] interfaces = sub.getInterfaces();
-			for (Class<?> interface1 : interfaces)
-			{
-				if (clazz.getName().equals(interface1.getName()))
-				{
+			for (Class<?> interface1 : interfaces) {
+				if (clazz.getName().equals(interface1.getName())) {
 					return true;
 				}
 			}
-		}
-		else
-		{
-			do
-			{
-				if (sub.getName().equals(clazz.getName()))
-				{
+		} else {
+			do {
+				if (sub.getName().equals(clazz.getName())) {
 					return true;
 				}
 
 				sub = sub.getSuperclass();
-			}
-			while (sub != null);
+			} while (sub != null);
 		}
 
 		return false;
 	}
 
-	public Quest[] getEventQuests(Quest.QuestEventType EventType)
-	{
-		if (questEvents == null)
-		{
+	public Quest[] getEventQuests(Quest.QuestEventType EventType) {
+		if (questEvents == null) {
 			return null;
 		}
 
 		return questEvents.get(EventType);
 	}
 
-	public void setRace(int raceId)
-	{
-		switch (raceId)
-		{
+	public void setRace(int raceId) {
+		switch (raceId) {
 			case 1:
 				Race = L2NpcRace.UNDEAD;
 				break;
@@ -755,214 +674,170 @@ public final class L2NpcTemplate extends L2CharTemplate
 	//-----------------------------------------------------------------------
 	// Npc AI Data
 	// By ShanSoft
-	public void setAIData(L2NpcAIData aidata)
-	{
+	public void setAIData(L2NpcAIData aidata) {
 		//AIdataStatic = new L2NpcAIData(); // not needed to init object and in next line override with other reference. maybe other intention?
 		aiData = aidata;
 	}
 
 	//-----------------------------------------------------------------------
 
-	public L2NpcAIData getAIData()
-	{
+	public L2NpcAIData getAIData() {
 		return aiData;
 	}
 
-	public void addBuffSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_BUFF] == null)
-		{
+	public void addBuffSkill(L2Skill skill) {
+		if (aiSkills[AIST_BUFF] == null) {
 			aiSkills[AIST_BUFF] = new ArrayList<>();
 		}
 		aiSkills[AIST_BUFF].add(skill);
 		aiSkillChecks[AIST_BUFF] = true;
 	}
 
-	public void addHealSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_HEAL] == null)
-		{
+	public void addHealSkill(L2Skill skill) {
+		if (aiSkills[AIST_HEAL] == null) {
 			aiSkills[AIST_HEAL] = new ArrayList<>();
 		}
 		aiSkills[AIST_HEAL].add(skill);
 		aiSkillChecks[AIST_HEAL] = true;
 	}
 
-	public void addResSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_RES] == null)
-		{
+	public void addResSkill(L2Skill skill) {
+		if (aiSkills[AIST_RES] == null) {
 			aiSkills[AIST_RES] = new ArrayList<>();
 		}
 		aiSkills[AIST_RES].add(skill);
 		aiSkillChecks[AIST_RES] = true;
 	}
 
-	public void addAtkSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_ATK] == null)
-		{
+	public void addAtkSkill(L2Skill skill) {
+		if (aiSkills[AIST_ATK] == null) {
 			aiSkills[AIST_ATK] = new ArrayList<>();
 		}
 		aiSkills[AIST_ATK].add(skill);
 		aiSkillChecks[AIST_ATK] = true;
 	}
 
-	public void addDebuffSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_DEBUFF] == null)
-		{
+	public void addDebuffSkill(L2Skill skill) {
+		if (aiSkills[AIST_DEBUFF] == null) {
 			aiSkills[AIST_DEBUFF] = new ArrayList<>();
 		}
 		aiSkills[AIST_DEBUFF].add(skill);
 		aiSkillChecks[AIST_DEBUFF] = true;
 	}
 
-	public void addRootSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_ROOT] == null)
-		{
+	public void addRootSkill(L2Skill skill) {
+		if (aiSkills[AIST_ROOT] == null) {
 			aiSkills[AIST_ROOT] = new ArrayList<>();
 		}
 		aiSkills[AIST_ROOT].add(skill);
 		aiSkillChecks[AIST_ROOT] = true;
 	}
 
-	public void addSleepSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_SLEEP] == null)
-		{
+	public void addSleepSkill(L2Skill skill) {
+		if (aiSkills[AIST_SLEEP] == null) {
 			aiSkills[AIST_SLEEP] = new ArrayList<>();
 		}
 		aiSkills[AIST_SLEEP].add(skill);
 		aiSkillChecks[AIST_SLEEP] = true;
 	}
 
-	public void addStunSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_STUN] == null)
-		{
+	public void addStunSkill(L2Skill skill) {
+		if (aiSkills[AIST_STUN] == null) {
 			aiSkills[AIST_STUN] = new ArrayList<>();
 		}
 		aiSkills[AIST_STUN].add(skill);
 		aiSkillChecks[AIST_STUN] = true;
 	}
 
-	public void addParalyzeSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_PARALYZE] == null)
-		{
+	public void addParalyzeSkill(L2Skill skill) {
+		if (aiSkills[AIST_PARALYZE] == null) {
 			aiSkills[AIST_PARALYZE] = new ArrayList<>();
 		}
 		aiSkills[AIST_PARALYZE].add(skill);
 		aiSkillChecks[AIST_PARALYZE] = true;
 	}
 
-	public void addFloatSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_FLOAT] == null)
-		{
+	public void addFloatSkill(L2Skill skill) {
+		if (aiSkills[AIST_FLOAT] == null) {
 			aiSkills[AIST_FLOAT] = new ArrayList<>();
 		}
 		aiSkills[AIST_FLOAT].add(skill);
 		aiSkillChecks[AIST_FLOAT] = true;
 	}
 
-	public void addFossilSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_FOSSIL] == null)
-		{
+	public void addFossilSkill(L2Skill skill) {
+		if (aiSkills[AIST_FOSSIL] == null) {
 			aiSkills[AIST_FOSSIL] = new ArrayList<>();
 		}
 		aiSkills[AIST_FOSSIL].add(skill);
 		aiSkillChecks[AIST_FOSSIL] = true;
 	}
 
-	public void addNegativeSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_NEGATIVE] == null)
-		{
+	public void addNegativeSkill(L2Skill skill) {
+		if (aiSkills[AIST_NEGATIVE] == null) {
 			aiSkills[AIST_NEGATIVE] = new ArrayList<>();
 		}
 		aiSkills[AIST_NEGATIVE].add(skill);
 		aiSkillChecks[AIST_NEGATIVE] = true;
 	}
 
-	public void addImmobilizeSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_IMMOBILIZE] == null)
-		{
+	public void addImmobilizeSkill(L2Skill skill) {
+		if (aiSkills[AIST_IMMOBILIZE] == null) {
 			aiSkills[AIST_IMMOBILIZE] = new ArrayList<>();
 		}
 		aiSkills[AIST_IMMOBILIZE].add(skill);
 		aiSkillChecks[AIST_IMMOBILIZE] = true;
 	}
 
-	public void addDOTSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_DOT] == null)
-		{
+	public void addDOTSkill(L2Skill skill) {
+		if (aiSkills[AIST_DOT] == null) {
 			aiSkills[AIST_DOT] = new ArrayList<>();
 		}
 		aiSkills[AIST_DOT].add(skill);
 		aiSkillChecks[AIST_DOT] = true;
 	}
 
-	public void addUniversalSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_UNIVERSAL] == null)
-		{
+	public void addUniversalSkill(L2Skill skill) {
+		if (aiSkills[AIST_UNIVERSAL] == null) {
 			aiSkills[AIST_UNIVERSAL] = new ArrayList<>();
 		}
 		aiSkills[AIST_UNIVERSAL].add(skill);
 		aiSkillChecks[AIST_UNIVERSAL] = true;
 	}
 
-	public void addCOTSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_COT] == null)
-		{
+	public void addCOTSkill(L2Skill skill) {
+		if (aiSkills[AIST_COT] == null) {
 			aiSkills[AIST_COT] = new ArrayList<>();
 		}
 		aiSkills[AIST_COT].add(skill);
 		aiSkillChecks[AIST_COT] = true;
 	}
 
-	public void addManaHealSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_MANA] == null)
-		{
+	public void addManaHealSkill(L2Skill skill) {
+		if (aiSkills[AIST_MANA] == null) {
 			aiSkills[AIST_MANA] = new ArrayList<>();
 		}
 		aiSkills[AIST_MANA].add(skill);
 		aiSkillChecks[AIST_MANA] = true;
 	}
 
-	public void addGeneralSkill(L2Skill skill)
-	{
-		if (aiSkills[AIST_GENERAL] == null)
-		{
+	public void addGeneralSkill(L2Skill skill) {
+		if (aiSkills[AIST_GENERAL] == null) {
 			aiSkills[AIST_GENERAL] = new ArrayList<>();
 		}
 		aiSkills[AIST_GENERAL].add(skill);
 		aiSkillChecks[AIST_GENERAL] = true;
 	}
 
-	public void addRangeSkill(L2Skill skill)
-	{
-		if (skill.getCastRange() <= 150 && skill.getCastRange() > 0)
-		{
-			if (aiSkills[AIST_SHORT_RANGE] == null)
-			{
+	public void addRangeSkill(L2Skill skill) {
+		if (skill.getCastRange() <= 150 && skill.getCastRange() > 0) {
+			if (aiSkills[AIST_SHORT_RANGE] == null) {
 				aiSkills[AIST_SHORT_RANGE] = new ArrayList<>();
 			}
 			aiSkills[AIST_SHORT_RANGE].add(skill);
 			aiSkillChecks[AIST_SHORT_RANGE] = true;
-		}
-		else if (skill.getCastRange() > 150)
-		{
-			if (aiSkills[AIST_LONG_RANGE] == null)
-			{
+		} else if (skill.getCastRange() > 150) {
+			if (aiSkills[AIST_LONG_RANGE] == null) {
 				aiSkills[AIST_LONG_RANGE] = new ArrayList<>();
 			}
 			aiSkills[AIST_LONG_RANGE].add(skill);
@@ -971,703 +846,554 @@ public final class L2NpcTemplate extends L2CharTemplate
 	}
 
 	//--------------------------------------------------------------------
-	public boolean hasBuffSkill()
-	{
+	public boolean hasBuffSkill() {
 		return aiSkillChecks[AIST_BUFF];
 	}
 
-	public boolean hasHealSkill()
-	{
+	public boolean hasHealSkill() {
 		return aiSkillChecks[AIST_HEAL];
 	}
 
-	public boolean hasResSkill()
-	{
+	public boolean hasResSkill() {
 		return aiSkillChecks[AIST_RES];
 	}
 
-	public boolean hasAtkSkill()
-	{
+	public boolean hasAtkSkill() {
 		return aiSkillChecks[AIST_ATK];
 	}
 
-	public boolean hasDebuffSkill()
-	{
+	public boolean hasDebuffSkill() {
 		return aiSkillChecks[AIST_DEBUFF];
 	}
 
-	public boolean hasRootSkill()
-	{
+	public boolean hasRootSkill() {
 		return aiSkillChecks[AIST_ROOT];
 	}
 
-	public boolean hasSleepSkill()
-	{
+	public boolean hasSleepSkill() {
 		return aiSkillChecks[AIST_SLEEP];
 	}
 
-	public boolean hasStunSkill()
-	{
+	public boolean hasStunSkill() {
 		return aiSkillChecks[AIST_STUN];
 	}
 
-	public boolean hasParalyzeSkill()
-	{
+	public boolean hasParalyzeSkill() {
 		return aiSkillChecks[AIST_PARALYZE];
 	}
 
-	public boolean hasFloatSkill()
-	{
+	public boolean hasFloatSkill() {
 		return aiSkillChecks[AIST_FLOAT];
 	}
 
-	public boolean hasFossilSkill()
-	{
+	public boolean hasFossilSkill() {
 		return aiSkillChecks[AIST_FOSSIL];
 	}
 
-	public boolean hasNegativeSkill()
-	{
+	public boolean hasNegativeSkill() {
 		return aiSkillChecks[AIST_NEGATIVE];
 	}
 
-	public boolean hasImmobiliseSkill()
-	{
+	public boolean hasImmobiliseSkill() {
 		return aiSkillChecks[AIST_IMMOBILIZE];
 	}
 
-	public boolean hasDOTSkill()
-	{
+	public boolean hasDOTSkill() {
 		return aiSkillChecks[AIST_DOT];
 	}
 
-	public boolean hasUniversalSkill()
-	{
+	public boolean hasUniversalSkill() {
 		return aiSkillChecks[AIST_UNIVERSAL];
 	}
 
-	public boolean hasCOTSkill()
-	{
+	public boolean hasCOTSkill() {
 		return aiSkillChecks[AIST_COT];
 	}
 
-	public boolean hasManaHealSkill()
-	{
+	public boolean hasManaHealSkill() {
 		return aiSkillChecks[AIST_MANA];
 	}
 
-	public boolean hasAutoLrangeSkill()
-	{
+	public boolean hasAutoLrangeSkill() {
 		return aiSkillChecks[AIST_LONG_RANGE];
 	}
 
-	public boolean hasAutoSrangeSkill()
-	{
+	public boolean hasAutoSrangeSkill() {
 		return aiSkillChecks[AIST_SHORT_RANGE];
 	}
 
-	public boolean hasSkill()
-	{
+	public boolean hasSkill() {
 		return aiSkillChecks[AIST_GENERAL];
 	}
 
-	public L2NpcRace getRace()
-	{
-		if (Race == null)
-		{
+	public L2NpcRace getRace() {
+		if (Race == null) {
 			Race = L2NpcRace.NONE;
 		}
 
 		return Race;
 	}
 
-	public boolean isCustom()
-	{
+	public boolean isCustom() {
 		return NpcId != TemplateId;
 	}
 
 	/**
 	 * @return name
 	 */
-	public String getName()
-	{
+	public String getName() {
 		return Name;
 	}
 
-	public boolean isSpecialTree()
-	{
+	public boolean isSpecialTree() {
 		return NpcId == L2XmassTreeInstance.SPECIAL_TREE_ID;
 	}
 
-	public boolean isUndead()
-	{
+	public boolean isUndead() {
 		return Race == L2NpcRace.UNDEAD;
 	}
 
-	public StatsSet getBaseSet()
-	{
+	public StatsSet getBaseSet() {
 		return baseSet;
 	}
 
-	public L2NpcTemplate getBaseTemplate()
-	{
+	public L2NpcTemplate getBaseTemplate() {
 		return baseTemplate;
 	}
 
-	public String getXmlNpcId()
-	{
+	public String getXmlNpcId() {
 		return " id=\"" + NpcId + "\"";
 	}
 
-	public String getXmlTemplateId()
-	{
-		if (TemplateId == 0 || TemplateId == NpcId)
-		{
+	public String getXmlTemplateId() {
+		if (TemplateId == 0 || TemplateId == NpcId) {
 			return "";
 		}
 		return " templateId=\"" + TemplateId + "\"";
 	}
 
-	public String getXmlName()
-	{
+	public String getXmlName() {
 		return " name=\"" + Name.replace("\"", "\\\"").replace("&", "&amp;") + "\"";
 	}
 
-	public String getXmlServerSideName()
-	{
-		if (!ServerSideName)
-		{
+	public String getXmlServerSideName() {
+		if (!ServerSideName) {
 			return "";
 		}
 		return " serverSideName=\"true\"";
 	}
 
-	public String getXmlTitle()
-	{
-		if (Title.length() == 0)
-		{
+	public String getXmlTitle() {
+		if (Title.length() == 0) {
 			return "";
 		}
 		return " title=\"" + Title.replace("\"", "\\\"").replace("&", "&amp;") + "\"";
 	}
 
-	public String getXmlServerSideTitle()
-	{
-		if (!ServerSideTitle)
-		{
+	public String getXmlServerSideTitle() {
+		if (!ServerSideTitle) {
 			return "";
 		}
 		return " serverSideTitle=\"true\"";
 	}
 
-	public String getXmlInteractionDistance()
-	{
-		if (InteractionDistance == 150)
-		{
+	public String getXmlInteractionDistance() {
+		if (InteractionDistance == 150) {
 			return "";
 		}
 		return " interactionDistance=\"" + InteractionDistance + "\"";
 	}
 
-	public String getXmlLevel()
-	{
+	public String getXmlLevel() {
 		return " level=\"" + Level + "\"";
 	}
 
-	public String getXmlType()
-	{
+	public String getXmlType() {
 		return " type=\"" + Type + "\"";
 	}
 
-	public String getXmlAttackRange()
-	{
+	public String getXmlAttackRange() {
 		return " atkRange=\"" + baseAtkRange + "\"";
 	}
 
-	public String getXmlMaxHp()
-	{
+	public String getXmlMaxHp() {
 		return " hpMax=\"" + Math.round(baseHpMax) + "\"";
 	}
 
-	public String getXmlMaxMp()
-	{
+	public String getXmlMaxMp() {
 		return " mpMax=\"" + Math.round(baseMpMax) + "\"";
 	}
 
-	public String getXmlHpReg()
-	{
+	public String getXmlHpReg() {
 		return " hpReg=\"" + baseHpReg + "\"";
 	}
 
-	public String getXmlMpReg()
-	{
+	public String getXmlMpReg() {
 		return " mpReg=\"" + baseMpReg + "\"";
 	}
 
-	public String getXmlSTR()
-	{
+	public String getXmlSTR() {
 		return " STR=\"" + baseSTR + "\"";
 	}
 
-	public String getXmlCON()
-	{
+	public String getXmlCON() {
 		return " CON=\"" + baseCON + "\"";
 	}
 
-	public String getXmlDEX()
-	{
+	public String getXmlDEX() {
 		return " DEX=\"" + baseDEX + "\"";
 	}
 
-	public String getXmlINT()
-	{
+	public String getXmlINT() {
 		return " INT=\"" + baseINT + "\"";
 	}
 
-	public String getXmlWIT()
-	{
+	public String getXmlWIT() {
 		return " WIT=\"" + baseWIT + "\"";
 	}
 
-	public String getXmlMEN()
-	{
+	public String getXmlMEN() {
 		return " MEN=\"" + baseMEN + "\"";
 	}
 
-	public String getXmlExp()
-	{
-		if (RewardExp == 0)
-		{
+	public String getXmlExp() {
+		if (RewardExp == 0) {
 			return "";
 		}
 		return " exp=\"" + RewardExp + "\"";
 	}
 
-	public String getXmlSp()
-	{
-		if (RewardSp == 0)
-		{
+	public String getXmlSp() {
+		if (RewardSp == 0) {
 			return "";
 		}
 		return " sp=\"" + RewardSp + "\"";
 	}
 
-	public String getXmlPAtk()
-	{
+	public String getXmlPAtk() {
 		return " pAtk=\"" + Math.round(basePAtk) + "\"";
 	}
 
-	public String getXmlPDef()
-	{
+	public String getXmlPDef() {
 		return " pDef=\"" + Math.round(basePDef) + "\"";
 	}
 
-	public String getXmlMAtk()
-	{
+	public String getXmlMAtk() {
 		return " mAtk=\"" + Math.round(baseMAtk) + "\"";
 	}
 
-	public String getXmlMDef()
-	{
+	public String getXmlMDef() {
 		return " mDef=\"" + Math.round(baseMDef) + "\"";
 	}
 
-	public String getXmlPAtkSpd()
-	{
+	public String getXmlPAtkSpd() {
 		return " pAtkSpd=\"" + basePAtkSpd + "\"";
 	}
 
-	public String getXmlMAtkSpd()
-	{
+	public String getXmlMAtkSpd() {
 		return " mAtkSpd=\"" + baseMAtkSpd + "\"";
 	}
 
-	public String getXmlCritical()
-	{
+	public String getXmlCritical() {
 		return " pCritRate=\"" + baseCritRate + "\"";
 	}
 
-	public String getXmlMCritical()
-	{
+	public String getXmlMCritical() {
 		return " mCritRate=\"" + baseMCritRate + "\"";
 	}
 
-	public String getXmlCanSeeThroughSilentMove()
-	{
-		if (!CanSeeThroughSilentMove)
-		{
+	public String getXmlCanSeeThroughSilentMove() {
+		if (!CanSeeThroughSilentMove) {
 			return "";
 		}
 		return " canSeeThroughSilentMove=\"true\"";
 	}
 
-	public String getXmlCanBeChampion()
-	{
-		if (canBeChampion)
-		{
+	public String getXmlCanBeChampion() {
+		if (canBeChampion) {
 			return "";
 		}
 		return " canBeChampion=\"false\"";
 	}
 
-	public String getXmlIsLethalImmune()
-	{
-		if (!isLethalImmune)
-		{
+	public String getXmlIsLethalImmune() {
+		if (!isLethalImmune) {
 			return "";
 		}
 		return " isLethalImmune=\"true\"";
 	}
 
-	public String getXmlIsDebuffImmune()
-	{
-		if (!isDebuffImmune)
-		{
+	public String getXmlIsDebuffImmune() {
+		if (!isDebuffImmune) {
 			return "";
 		}
 		return " isDebuffImmune=\"true\"";
 	}
 
-	public String getXmlAggessive()
-	{
-		if (!Aggressive)
-		{
+	public String getXmlAggessive() {
+		if (!Aggressive) {
 			return "";
 		}
 		return " aggressive=\"true\"";
 	}
 
-	public String getXmlAggroRange()
-	{
-		if (AggroRange == 0)
-		{
+	public String getXmlAggroRange() {
+		if (AggroRange == 0) {
 			return "";
 		}
 		return " aggroRange=\"" + AggroRange + "\"";
 	}
 
-	public String getXmlRHand()
-	{
-		if (RHand == 0)
-		{
+	public String getXmlRHand() {
+		if (RHand == 0) {
 			return "";
 		}
 		return " rHand=\"" + RHand + "\"";
 	}
 
-	public String getXmlLHand()
-	{
-		if (LHand == 0)
-		{
+	public String getXmlLHand() {
+		if (LHand == 0) {
 			return "";
 		}
 		return " lHand=\"" + LHand + "\"";
 	}
 
-	public String getXmlWalkSpd()
-	{
+	public String getXmlWalkSpd() {
 		return " walkSpd=\"" + Math.round(baseWalkSpd) + "\"";
 	}
 
-	public String getXmlRunSpd()
-	{
+	public String getXmlRunSpd() {
 		return " runSpd=\"" + Math.round(baseRunSpd) + "\"";
 	}
 
-	public String getXmlRandomWalk()
-	{
-		if (!RandomWalk)
-		{
+	public String getXmlRandomWalk() {
+		if (!RandomWalk) {
 			return "";
 		}
 		return " randomWalk=\"true\"";
 	}
 
-	public String getXmlTargetable()
-	{
-		if (Targetable)
-		{
+	public String getXmlTargetable() {
+		if (Targetable) {
 			return "";
 		}
 		return " targetable=\"false\"";
 	}
 
-	public String getXmlIsNonTalking()
-	{
-		if (!IsNonTalking)
-		{
+	public String getXmlIsNonTalking() {
+		if (!IsNonTalking) {
 			return "";
 		}
 		return " isNonTalking=\"true\"";
 	}
 
-	public String getXmlShowName()
-	{
-		if (ShowName)
-		{
+	public String getXmlShowName() {
+		if (ShowName) {
 			return "";
 		}
 		return " showName=\"false\"";
 	}
 
-	public String getXmlExtraDropGroup()
-	{
-		if (ExtraDropGroup == 0)
-		{
+	public String getXmlExtraDropGroup() {
+		if (ExtraDropGroup == 0) {
 			return "";
 		}
 		return " extraDropGroup=\"" + ExtraDropGroup + "\"";
 	}
 
-	public String getXmlCollisionRadius()
-	{
+	public String getXmlCollisionRadius() {
 		return " collisionRadius=\"" + new DecimalFormat("#.##").format(fCollisionRadius) + "\"";
 	}
 
-	public String getXmlCollisionHeight()
-	{
+	public String getXmlCollisionHeight() {
 		return " collisionHeight=\"" + new DecimalFormat("#.##").format(fCollisionHeight) + "\"";
 	}
 
-	public String getXmlElemAtk()
-	{
+	public String getXmlElemAtk() {
 		int elem = -1;
 		int val = 0;
-		if (baseFire > val)
-		{
+		if (baseFire > val) {
 			elem = Elementals.FIRE;
 			val = baseFire;
 		}
-		if (baseWater > val)
-		{
+		if (baseWater > val) {
 			elem = Elementals.WATER;
 			val = baseWater;
 		}
-		if (baseWind > val)
-		{
+		if (baseWind > val) {
 			elem = Elementals.WIND;
 			val = baseWind;
 		}
-		if (baseEarth > val)
-		{
+		if (baseEarth > val) {
 			elem = Elementals.EARTH;
 			val = baseEarth;
 		}
-		if (baseHoly > val)
-		{
+		if (baseHoly > val) {
 			elem = Elementals.HOLY;
 			val = baseHoly;
 		}
-		if (baseDark > val)
-		{
+		if (baseDark > val) {
 			elem = Elementals.DARK;
 			val = baseDark;
 		}
-		if (elem == -1)
-		{
+		if (elem == -1) {
 			return "";
 		}
 		return " elemAtkType=\"" + elem + "\" elemAtkValue=\"" + val + "\"";
 	}
 
-	public String getXmlElemRes()
-	{
-		return " fireRes=\"" + Math.round(baseFireRes) + "\" waterRes=\"" + Math.round(baseWaterRes) + "\" windRes=\"" +
-				Math.round(baseWindRes) + "\"" + " earthRes=\"" + Math.round(baseEarthRes) + "\" holyRes=\"" +
-				Math.round(baseHolyRes) + "\" darkRes=\"" + Math.round(baseDarkRes) + "\"";
+	public String getXmlElemRes() {
+		return " fireRes=\"" + Math.round(baseFireRes) + "\" waterRes=\"" + Math.round(baseWaterRes) + "\" windRes=\"" + Math.round(baseWindRes) +
+				"\"" + " earthRes=\"" + Math.round(baseEarthRes) + "\" holyRes=\"" + Math.round(baseHolyRes) + "\" darkRes=\"" +
+				Math.round(baseDarkRes) + "\"";
 	}
 
-	public String getXmlAIType()
-	{
+	public String getXmlAIType() {
 		return " aiType=\"" + getAIData().getAiType().name().toLowerCase() + "\"";
 	}
 
-	public String getXmlSkillChance()
-	{
-		if (getAIData().getSkillChance() == 0)
-		{
+	public String getXmlSkillChance() {
+		if (getAIData().getSkillChance() == 0) {
 			return "";
 		}
 		return " skillChance=\"" + getAIData().getSkillChance() + "\"";
 	}
 
-	public String getXmlPrimaryAttack()
-	{
-		if (getAIData().getPrimaryAttack() == 0)
-		{
+	public String getXmlPrimaryAttack() {
+		if (getAIData().getPrimaryAttack() == 0) {
 			return "";
 		}
 		return " primaryAttack=\"" + getAIData().getPrimaryAttack() + "\"";
 	}
 
-	public String getXmlCanMove()
-	{
-		if (getAIData().canMove())
-		{
+	public String getXmlCanMove() {
+		if (getAIData().canMove()) {
 			return "";
 		}
 		return " canMove=\"false\"";
 	}
 
-	public String getXmlMinRangeSkill()
-	{
-		if (getAIData().getShortRangeSkill() == 0)
-		{
+	public String getXmlMinRangeSkill() {
+		if (getAIData().getShortRangeSkill() == 0) {
 			return "";
 		}
 		return " minRangeSkill=\"" + getAIData().getShortRangeSkill() + "\"";
 	}
 
-	public String getXmlMinRangeChance()
-	{
-		if (getAIData().getShortRangeChance() == 0)
-		{
+	public String getXmlMinRangeChance() {
+		if (getAIData().getShortRangeChance() == 0) {
 			return "";
 		}
 		return " minRangeChance=\"" + getAIData().getShortRangeChance() + "\"";
 	}
 
-	public String getXmlMaxRangeSkill()
-	{
-		if (getAIData().getLongRangeSkill() == 0)
-		{
+	public String getXmlMaxRangeSkill() {
+		if (getAIData().getLongRangeSkill() == 0) {
 			return "";
 		}
 		return " maxRangeSkill=\"" + getAIData().getLongRangeSkill() + "\"";
 	}
 
-	public String getXmlMaxRangeChance()
-	{
-		if (getAIData().getLongRangeChance() == 0)
-		{
+	public String getXmlMaxRangeChance() {
+		if (getAIData().getLongRangeChance() == 0) {
 			return "";
 		}
 		return " maxRangeChance=\"" + getAIData().getLongRangeChance() + "\"";
 	}
 
-	public String getXmlSoulshots()
-	{
-		if (getAIData().getSoulShot() == 0)
-		{
+	public String getXmlSoulshots() {
+		if (getAIData().getSoulShot() == 0) {
 			return "";
 		}
 		return " soulshots=\"" + getAIData().getSoulShot() + "\"";
 	}
 
-	public String getXmlSpiritshots()
-	{
-		if (getAIData().getSpiritShot() == 0)
-		{
+	public String getXmlSpiritshots() {
+		if (getAIData().getSpiritShot() == 0) {
 			return "";
 		}
 		return " spiritshots=\"" + getAIData().getSpiritShot() + "\"";
 	}
 
-	public String getXmlSSChance()
-	{
-		if (getAIData().getSoulShotChance() == 0)
-		{
+	public String getXmlSSChance() {
+		if (getAIData().getSoulShotChance() == 0) {
 			return "";
 		}
 		return " ssChance=\"" + getAIData().getSoulShotChance() + "\"";
 	}
 
-	public String getXmlSpSChance()
-	{
-		if (getAIData().getSpiritShotChance() == 0)
-		{
+	public String getXmlSpSChance() {
+		if (getAIData().getSpiritShotChance() == 0) {
 			return "";
 		}
 		return " spsChance=\"" + getAIData().getSpiritShotChance() + "\"";
 	}
 
-	public String getXmlIsChaos()
-	{
-		if (getAIData().getIsChaos() == 0)
-		{
+	public String getXmlIsChaos() {
+		if (getAIData().getIsChaos() == 0) {
 			return "";
 		}
 		return " isChaos=\"" + getAIData().getIsChaos() + "\"";
 	}
 
-	public String getXmlClan()
-	{
-		if (getAIData().getClan() == null || getAIData().getClan().length() == 0 ||
-				getAIData().getClan().equalsIgnoreCase("null"))
-		{
+	public String getXmlClan() {
+		if (getAIData().getClan() == null || getAIData().getClan().length() == 0 || getAIData().getClan().equalsIgnoreCase("null")) {
 			return "";
 		}
 		return " clan=\"" + getAIData().getClan() + "\"";
 	}
 
-	public String getXmlClanRange()
-	{
-		if (getAIData().getClanRange() == 0)
-		{
+	public String getXmlClanRange() {
+		if (getAIData().getClanRange() == 0) {
 			return "";
 		}
 		return " clanRange=\"" + getAIData().getClanRange() + "\"";
 	}
 
-	public String getXmlEnemy()
-	{
-		if (getAIData().getEnemyClan() == null || getAIData().getEnemyClan().length() == 0 ||
-				getAIData().getEnemyClan().equalsIgnoreCase("null"))
-		{
+	public String getXmlEnemy() {
+		if (getAIData().getEnemyClan() == null || getAIData().getEnemyClan().length() == 0 || getAIData().getEnemyClan().equalsIgnoreCase("null")) {
 			return "";
 		}
 		return " enemyClan=\"" + getAIData().getEnemyClan() + "\"";
 	}
 
-	public String getXmlEnemyRange()
-	{
-		if (getAIData().getEnemyRange() == 0)
-		{
+	public String getXmlEnemyRange() {
+		if (getAIData().getEnemyRange() == 0) {
 			return "";
 		}
 		return " enemyRange=\"" + getAIData().getEnemyRange() + "\"";
 	}
 
-	public String getXmlDodge()
-	{
-		if (getAIData().getDodge() == 0)
-		{
+	public String getXmlDodge() {
+		if (getAIData().getDodge() == 0) {
 			return "";
 		}
 		return " dodge=\"" + getAIData().getDodge() + "\"";
 	}
 
-	public String getXmlMinSocial1()
-	{
-		if (getAIData().getMinSocial(false) == -1)
-		{
+	public String getXmlMinSocial1() {
+		if (getAIData().getMinSocial(false) == -1) {
 			return "";
 		}
 		return " minSocial1=\"" + getAIData().getMinSocial(false) + "\"";
 	}
 
-	public String getXmlMaxSocial1()
-	{
-		if (getAIData().getMaxSocial(false) == -1)
-		{
+	public String getXmlMaxSocial1() {
+		if (getAIData().getMaxSocial(false) == -1) {
 			return "";
 		}
 		return " maxSocial1=\"" + getAIData().getMaxSocial(false) + "\"";
 	}
 
-	public String getXmlMinSocial2()
-	{
-		if (getAIData().getMinSocial(true) == -1)
-		{
+	public String getXmlMinSocial2() {
+		if (getAIData().getMinSocial(true) == -1) {
 			return "";
 		}
 		return " minSocial2=\"" + getAIData().getMinSocial(true) + "\"";
 	}
 
-	public String getXmlMaxSocial2()
-	{
-		if (getAIData().getMaxSocial(true) == -1)
-		{
+	public String getXmlMaxSocial2() {
+		if (getAIData().getMaxSocial(true) == -1) {
 			return "";
 		}
 		return " maxSocial2=\"" + getAIData().getMaxSocial(true) + "\"";
@@ -1675,34 +1401,27 @@ public final class L2NpcTemplate extends L2CharTemplate
 
 	private List<L2Spawn> knownSpawns = new ArrayList<>();
 
-	public final void addKnownSpawn(final L2Spawn spawn)
-	{
+	public final void addKnownSpawn(final L2Spawn spawn) {
 		knownSpawns.add(spawn);
 	}
 
-	public final List<L2Spawn> getKnownSpawns()
-	{
+	public final List<L2Spawn> getKnownSpawns() {
 		return knownSpawns;
 	}
 
-	public void onSpawn(L2Spawn spawn)
-	{
-		synchronized (allSpawns)
-		{
+	public void onSpawn(L2Spawn spawn) {
+		synchronized (allSpawns) {
 			allSpawns.add(spawn);
 		}
 	}
 
-	public void onUnSpawn(L2Spawn spawn)
-	{
-		synchronized (allSpawns)
-		{
+	public void onUnSpawn(L2Spawn spawn) {
+		synchronized (allSpawns) {
 			allSpawns.remove(spawn);
 		}
 	}
 
-	public List<L2Spawn> getAllSpawns()
-	{
+	public List<L2Spawn> getAllSpawns() {
 		return allSpawns;
 	}
 }

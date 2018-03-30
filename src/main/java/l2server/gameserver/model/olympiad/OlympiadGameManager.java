@@ -27,27 +27,21 @@ import java.util.List;
 /**
  * @author GodKratos, DS
  */
-public class OlympiadGameManager implements Runnable
-{
+public class OlympiadGameManager implements Runnable {
 
 	private volatile boolean battleStarted = false;
 	private final OlympiadGameTask[] tasks;
 
-	private OlympiadGameManager()
-	{
-		final Collection<L2OlympiadStadiumZone> zones =
-				ZoneManager.getInstance().getAllZones(L2OlympiadStadiumZone.class);
-		if (zones == null || zones.isEmpty())
-		{
+	private OlympiadGameManager() {
+		final Collection<L2OlympiadStadiumZone> zones = ZoneManager.getInstance().getAllZones(L2OlympiadStadiumZone.class);
+		if (zones == null || zones.isEmpty()) {
 			throw new Error("No olympiad stadium zones defined !");
 		}
 
 		tasks = new OlympiadGameTask[zones.size() * 40];
 		int i = 0;
-		for (L2OlympiadStadiumZone zone : zones)
-		{
-			for (int j = 0; j < 40; j++)
-			{
+		for (L2OlympiadStadiumZone zone : zones) {
+			for (int j = 0; j < 40; j++) {
 				tasks[j * 4 + i] = new OlympiadGameTask(zone, j * 4 + i);
 			}
 			i++;
@@ -56,94 +50,67 @@ public class OlympiadGameManager implements Runnable
 		Log.info("Olympiad System: Loaded " + tasks.length + " stadium instances.");
 	}
 
-	public static OlympiadGameManager getInstance()
-	{
+	public static OlympiadGameManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	protected final boolean isBattleStarted()
-	{
+	protected final boolean isBattleStarted() {
 		return battleStarted;
 	}
 
-	protected final void startBattle()
-	{
+	protected final void startBattle() {
 		battleStarted = true;
 	}
 
 	@Override
-	public final void run()
-	{
-		if (Olympiad.getInstance().inCompPeriod())
-		{
+	public final void run() {
+		if (Olympiad.getInstance().inCompPeriod()) {
 			OlympiadGameTask task;
 			AbstractOlympiadGame newGame;
 
 			List<List<Integer>> readyClassed = OlympiadManager.getInstance().hasEnoughRegisteredClassed();
 			boolean readyNonClassed = OlympiadManager.getInstance().hasEnoughRegisteredNonClassed();
 
-			if (readyClassed == null)
-			{
-				for (List<Integer> list : OlympiadManager.getInstance().getRegisteredClassBased().values())
-				{
-					for (int objId : list)
-					{
+			if (readyClassed == null) {
+				for (List<Integer> list : OlympiadManager.getInstance().getRegisteredClassBased().values()) {
+					for (int objId : list) {
 						L2PcInstance player = L2World.getInstance().getPlayer(objId);
-						if (player != null)
-						{
-							player.sendMessage(
-									"Your match may not begin yet because there are not enough participants registered.");
+						if (player != null) {
+							player.sendMessage("Your match may not begin yet because there are not enough participants registered.");
 						}
 					}
 				}
 			}
-			if (!readyNonClassed)
-			{
-				for (int objId : OlympiadManager.getInstance().getRegisteredNonClassBased())
-				{
+			if (!readyNonClassed) {
+				for (int objId : OlympiadManager.getInstance().getRegisteredNonClassBased()) {
 					L2PcInstance player = L2World.getInstance().getPlayer(objId);
-					if (player != null)
-					{
-						player.sendMessage(
-								"Your match may not begin yet because there are not enough participants registered.");
+					if (player != null) {
+						player.sendMessage("Your match may not begin yet because there are not enough participants registered.");
 					}
 				}
 			}
-			if (readyClassed != null || readyNonClassed)
-			{
+			if (readyClassed != null || readyNonClassed) {
 				// set up the games queue
-				for (int i = 0; i < tasks.length; i++)
-				{
+				for (int i = 0; i < tasks.length; i++) {
 					task = tasks[i];
-					synchronized (task)
-					{
-						if (!task.isRunning())
-						{
+					synchronized (task) {
+						if (!task.isRunning()) {
 							// WTF was this "fair arena distribution"? Commenting out...
-							if (readyClassed != null/* && (i % 2) == 0*/)
-							{
+							if (readyClassed != null/* && (i % 2) == 0*/) {
 								newGame = OlympiadGameClassed.createGame(i, readyClassed);
-								if (newGame != null)
-								{
+								if (newGame != null) {
 									task.attachGame(newGame);
 									continue;
-								}
-								else
-								{
+								} else {
 									readyClassed = null;
 								}
 							}
-							if (readyNonClassed)
-							{
-								newGame = OlympiadGameNonClassed
-										.createGame(i, OlympiadManager.getInstance().getRegisteredNonClassBased());
-								if (newGame != null)
-								{
+							if (readyNonClassed) {
+								newGame = OlympiadGameNonClassed.createGame(i, OlympiadManager.getInstance().getRegisteredNonClassBased());
+								if (newGame != null) {
 									task.attachGame(newGame);
 									continue;
-								}
-								else
-								{
+								} else {
 									readyNonClassed = false;
 								}
 							}
@@ -151,71 +118,57 @@ public class OlympiadGameManager implements Runnable
 					}
 
 					// stop generating games if no more participants
-					if (readyClassed == null && !readyNonClassed)
-					{
+					if (readyClassed == null && !readyNonClassed) {
 						break;
 					}
 				}
 			}
-		}
-		else if (isAllTasksFinished() && battleStarted)
-		{
+		} else if (isAllTasksFinished() && battleStarted) {
 			OlympiadManager.getInstance().clearRegistered();
 			battleStarted = false;
 			Log.info("Olympiad System: All current games finished.");
 		}
 	}
 
-	public final boolean isAllTasksFinished()
-	{
-		for (OlympiadGameTask task : tasks)
-		{
-			if (task.isRunning())
-			{
+	public final boolean isAllTasksFinished() {
+		for (OlympiadGameTask task : tasks) {
+			if (task.isRunning()) {
 				return false;
 			}
 		}
 		return true;
 	}
 
-	public final OlympiadGameTask getOlympiadTask(int id)
-	{
-		if (id < 0 || id >= tasks.length)
-		{
+	public final OlympiadGameTask getOlympiadTask(int id) {
+		if (id < 0 || id >= tasks.length) {
 			return null;
 		}
 
 		return tasks[id];
 	}
 
-	public final int getNumberOfStadiums()
-	{
+	public final int getNumberOfStadiums() {
 		return tasks.length;
 	}
 
-	public final void notifyCompetitorDamage(L2PcInstance player, int damage)
-	{
-		if (player == null)
-		{
+	public final void notifyCompetitorDamage(L2PcInstance player, int damage) {
+		if (player == null) {
 			return;
 		}
 
 		final int id = player.getOlympiadGameId();
-		if (id < 0 || id >= tasks.length)
-		{
+		if (id < 0 || id >= tasks.length) {
 			return;
 		}
 
 		final AbstractOlympiadGame game = tasks[id].getGame();
-		if (game != null)
-		{
+		if (game != null) {
 			game.addDamage(player, damage);
 		}
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final OlympiadGameManager instance = new OlympiadGameManager();
 	}
 }

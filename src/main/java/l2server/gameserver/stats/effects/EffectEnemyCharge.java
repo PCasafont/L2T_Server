@@ -27,91 +27,80 @@ import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.log.Log;
 
-public class EffectEnemyCharge extends L2Effect
-{
+public class EffectEnemyCharge extends L2Effect {
 	private int x, y, z;
-
-	public EffectEnemyCharge(Env env, L2EffectTemplate template)
-	{
+	
+	public EffectEnemyCharge(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
-
+	
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.BUFF;
 	}
-
+	
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		// Get current position of the L2Character
 		final int curX = getEffector().getX();
 		final int curY = getEffector().getY();
 		final int curZ = getEffector().getZ();
-
+		
 		// Calculate distance (dx,dy) between current position and destination
 		double dx = getEffected().getX() - curX;
 		double dy = getEffected().getY() - curY;
 		double dz = getEffected().getZ() - curZ;
 		double distance = Math.sqrt(dx * dx + dy * dy);
-		if (distance > 2000)
-		{
-			Log.info("EffectEnemyCharge was going to use invalid coordinates for characters, getEffector: " + curX +
-					"," + curY + " and getEffected: " + getEffected().getX() + "," + getEffected().getY());
+		if (distance > 2000) {
+			Log.info("EffectEnemyCharge was going to use invalid coordinates for characters, getEffector: " + curX + "," + curY +
+					" and getEffected: " + getEffected().getX() + "," + getEffected().getY());
 			return false;
 		}
 		int offset = Math.max((int) distance - getSkill().getFlyRadius(), 30);
-
+		
 		double cos;
 		double sin;
-
+		
 		// approximation for moving closer when z coordinates are different
 		// TODO: handle Z axis movement better
 		offset -= Math.abs(dz);
-		if (offset < 5)
-		{
+		if (offset < 5) {
 			offset = 5;
 		}
-
+		
 		// If no distance
-		if (distance < 1 || distance - offset <= 0)
-		{
+		if (distance < 1 || distance - offset <= 0) {
 			return false;
 		}
-
+		
 		// Calculate movement angles needed
 		sin = dy / distance;
 		cos = dx / distance;
-
+		
 		// Calculate the new destination with offset included
 		x = curX + (int) ((distance - offset) * cos);
 		y = curY + (int) ((distance - offset) * sin);
 		z = getEffected().getZ();
-
-		if (Config.GEODATA > 0)
-		{
+		
+		if (Config.GEODATA > 0) {
 			Location destiny = GeoData.getInstance()
-					.moveCheck(getEffector().getX(), getEffector().getY(), getEffector().getZ(), x, y, z,
-							getEffector().getInstanceId());
-			if (destiny.getX() != x || destiny.getY() != y)
-			{
+					.moveCheck(getEffector().getX(), getEffector().getY(), getEffector().getZ(), x, y, z, getEffector().getInstanceId());
+			if (destiny.getX() != x || destiny.getY() != y) {
 				x = destiny.getX() - (int) (cos * 10);
 				y = destiny.getY() - (int) (sin * 10);
 			}
 		}
 		getEffector().broadcastPacket(new FlyToLocation(getEffector(), x, y, z, FlyType.CHARGE));
-
+		
 		// maybe is need force set X,Y,Z
 		getEffector().setXYZ(x, y, z);
 		getEffector().broadcastPacket(new ValidateLocation(getEffector()));
-
+		
 		return true;
 	}
-
+	
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 }

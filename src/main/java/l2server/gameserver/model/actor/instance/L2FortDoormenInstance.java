@@ -21,78 +21,62 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 import java.util.StringTokenizer;
 
-public class L2FortDoormenInstance extends L2DoormenInstance
-{
-	public L2FortDoormenInstance(int objectID, L2NpcTemplate template)
-	{
+public class L2FortDoormenInstance extends L2DoormenInstance {
+	public L2FortDoormenInstance(int objectID, L2NpcTemplate template) {
 		super(objectID, template);
 		setInstanceType(InstanceType.L2FortDoormenInstance);
 	}
-
+	
 	@Override
-	public void showChatWindow(L2PcInstance player)
-	{
+	public void showChatWindow(L2PcInstance player) {
 		player.sendPacket(ActionFailed.STATIC_PACKET);
-
+		
 		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-
-		if (!isOwnerClan(player))
-		{
+		
+		if (!isOwnerClan(player)) {
 			html.setFile(player.getHtmlPrefix(), "doormen/" + getTemplate().NpcId + "-no.htm");
-		}
-		else if (isUnderSiege())
-		{
+		} else if (isUnderSiege()) {
 			html.setFile(player.getHtmlPrefix(), "doormen/" + getTemplate().NpcId + "-busy.htm");
-		}
-		else
-		{
+		} else {
 			html.setFile(player.getHtmlPrefix(), "doormen/" + getTemplate().NpcId + ".htm");
 		}
-
+		
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		player.sendPacket(html);
 	}
-
+	
 	@Override
-	protected final void openDoors(L2PcInstance player, String command)
-	{
+	protected final void openDoors(L2PcInstance player, String command) {
 		StringTokenizer st = new StringTokenizer(command.substring(10), ", ");
 		st.nextToken();
-
-		while (st.hasMoreTokens())
-		{
+		
+		while (st.hasMoreTokens()) {
 			getFort().openDoor(player, Integer.parseInt(st.nextToken()));
 		}
 	}
-
+	
 	@Override
-	protected final void closeDoors(L2PcInstance player, String command)
-	{
+	protected final void closeDoors(L2PcInstance player, String command) {
 		StringTokenizer st = new StringTokenizer(command.substring(11), ", ");
 		st.nextToken();
-
-		while (st.hasMoreTokens())
-		{
+		
+		while (st.hasMoreTokens()) {
 			getFort().closeDoor(player, Integer.parseInt(st.nextToken()));
 		}
 	}
-
+	
 	@Override
-	protected final boolean isOwnerClan(L2PcInstance player)
-	{
-		if (player.getClan() != null && getFort() != null && getFort().getOwnerClan() != null)
-		{
-			if (player.getClanId() == getFort().getOwnerClan().getClanId())
-			{
+	protected final boolean isOwnerClan(L2PcInstance player) {
+		if (player.getClan() != null && getFort() != null && getFort().getOwnerClan() != null) {
+			if (player.getClanId() == getFort().getOwnerClan().getClanId()) {
 				return true;
 			}
 		}
 		return false;
 	}
-
+	
 	@Override
-	protected final boolean isUnderSiege()
-	{
+	protected final boolean isUnderSiege() {
 		return getFort().getZone().isActive();
 	}
 }

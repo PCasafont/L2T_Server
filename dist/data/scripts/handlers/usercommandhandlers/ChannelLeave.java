@@ -25,25 +25,20 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 /**
  * @author Chris
  */
-public class ChannelLeave implements IUserCommandHandler
-{
+public class ChannelLeave implements IUserCommandHandler {
 	private static final int[] COMMAND_IDS = {96};
 
 	/**
 	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
-	{
-		if (id != COMMAND_IDS[0])
-		{
+	public boolean useUserCommand(int id, L2PcInstance activeChar) {
+		if (id != COMMAND_IDS[0]) {
 			return false;
 		}
 
-		if (activeChar.isInParty())
-		{
-			if (activeChar.getParty().isLeader(activeChar) && activeChar.getParty().isInCommandChannel())
-			{
+		if (activeChar.isInParty()) {
+			if (activeChar.getParty().isLeader(activeChar) && activeChar.getParty().isInCommandChannel()) {
 				L2CommandChannel channel = activeChar.getParty().getCommandChannel();
 				L2Party party = activeChar.getParty();
 				channel.removeParty(party);
@@ -64,8 +59,7 @@ public class ChannelLeave implements IUserCommandHandler
 	 * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
 	 */
 	@Override
-	public int[] getUserCommandList()
-	{
+	public int[] getUserCommandList() {
 		return COMMAND_IDS;
 	}
 }

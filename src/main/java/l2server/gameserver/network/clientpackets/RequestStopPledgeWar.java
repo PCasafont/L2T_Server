@@ -26,98 +26,82 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-public final class RequestStopPledgeWar extends L2GameClientPacket
-{
+public final class RequestStopPledgeWar extends L2GameClientPacket {
 	//
-
+	
 	private String pledgeName;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		pledgeName = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
-
+		
 		L2Clan playerClan = player.getClan();
-		if (playerClan == null)
-		{
+		if (playerClan == null) {
 			return;
 		}
-
+		
 		L2Clan clan = ClanTable.getInstance().getClanByName(pledgeName);
-		if (clan == null)
-		{
+		if (clan == null) {
 			player.sendMessage("No such clan.");
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
+		
 		// Check if player who does the request has the correct rights to do it
-		if ((player.getClanPrivileges() & L2Clan.CP_CL_PLEDGE_WAR) != L2Clan.CP_CL_PLEDGE_WAR)
-		{
+		if ((player.getClanPrivileges() & L2Clan.CP_CL_PLEDGE_WAR) != L2Clan.CP_CL_PLEDGE_WAR) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
 			return;
 		}
-
-		if (!playerClan.getClanWars().contains(clan))
-		{
+		
+		if (!playerClan.getClanWars().contains(clan)) {
 			player.sendMessage("Your clan does not have any war relation with " + clan.getName() + "'s clan.");
 			return;
 		}
-
+		
 		int repToTake = Config.CANCEL_CLAN_WAR_REPUTATION_POINTS;
-		if (Config.isServer(Config.TENKAI_LEGACY))
-		{
-			if (playerClan.getReputationScore() < 500000)
-			{
+		if (Config.isServer(Config.TENKAI_LEGACY)) {
+			if (playerClan.getReputationScore() < 500000) {
 				player.sendMessage("Your clan needst to have at least 500000 Reputation Points to end this war.");
 				return;
 			}
-
+			
 			repToTake = playerClan.getReputationScore() / 3;
 		}
-
-		if (playerClan.getReputationScore() < repToTake)
-		{
+		
+		if (playerClan.getReputationScore() < repToTake) {
 			player.sendMessage("Your clan doesn't have " + Config.CANCEL_CLAN_WAR_REPUTATION_POINTS +
 					" Reputation Points to end this war."); // TODO: System Message
 			return;
 		}
-
-		if (!playerClan.getEnemiesQueue().contains(clan) && !playerClan.isAtWarWith(clan.getClanId()))
-		{
+		
+		if (!playerClan.getEnemiesQueue().contains(clan) && !playerClan.isAtWarWith(clan.getClanId())) {
 			player.sendMessage(
 					"The clan you've requested is not on the enemies queue. It might have been started or in repose or declarators are other clan.");
 			return;
 		}
-
+		
 		ClanWar war = ClanWarManager.getInstance().getWar(clan, playerClan);
-		if (war != null)
-		{
+		if (war != null) {
 			war.declare(clan);
 		}
-
+		
 		playerClan.takeReputationScore(repToTake, true);
 		clan.addReputationScore(repToTake, true);
-
-		for (L2PcInstance cha : L2World.getInstance().getAllPlayersArray())
-		{
-			if (cha == null)
-			{
+		
+		for (L2PcInstance cha : L2World.getInstance().getAllPlayersArray()) {
+			if (cha == null) {
 				continue;
 			}
-
-			if (cha.getClan() == player.getClan() || cha.getClan() == clan)
-			{
+			
+			if (cha.getClan() == player.getClan() || cha.getClan() == clan) {
 				cha.broadcastUserInfo();
 			}
 		}

@@ -22,8 +22,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author Didldak
  */
-public class ConditionMinDistance extends Condition
-{
+public class ConditionMinDistance extends Condition {
 	private final int sqDistance;
 
 	/**
@@ -31,8 +30,7 @@ public class ConditionMinDistance extends Condition
 	 *
 	 * @param sqDistance the sq distance
 	 */
-	public ConditionMinDistance(int sqDistance)
-	{
+	public ConditionMinDistance(int sqDistance) {
 		this.sqDistance = sqDistance;
 	}
 
@@ -40,10 +38,8 @@ public class ConditionMinDistance extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (env.target == null)
-		{
+	public boolean testImpl(Env env) {
+		if (env.target == null) {
 			return false;
 		}
 		return env.player.getDistanceSq(env.target) >= sqDistance;

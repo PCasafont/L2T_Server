@@ -24,33 +24,25 @@ import l2server.gameserver.model.actor.L2Character;
 /**
  * @author Erb
  */
-public class CharPosition extends ObjectPosition
-{
+public class CharPosition extends ObjectPosition {
 	// =========================================================
 	// Constructor
-	public CharPosition(L2Character activeObject)
-	{
+	public CharPosition(L2Character activeObject) {
 		super(activeObject);
 	}
 
 	@Override
-	protected void badCoords()
-	{
+	protected void badCoords() {
 		getActiveObject().decayMe();
 	}
 
 	@Override
-	public final void setWorldRegion(L2WorldRegion value)
-	{
-		if (getWorldRegion() != null &&
-				getActiveObject() instanceof L2Character) // confirm revalidation of old region's zones
+	public final void setWorldRegion(L2WorldRegion value) {
+		if (getWorldRegion() != null && getActiveObject() instanceof L2Character) // confirm revalidation of old region's zones
 		{
-			if (value != null)
-			{
+			if (value != null) {
 				getWorldRegion().revalidateZones((L2Character) getActiveObject()); // at world region change
-			}
-			else
-			{
+			} else {
 				getWorldRegion().removeFromZones((L2Character) getActiveObject()); // at world region change
 			}
 		}

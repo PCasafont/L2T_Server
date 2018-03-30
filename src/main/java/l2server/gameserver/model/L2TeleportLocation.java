@@ -20,8 +20,7 @@ package l2server.gameserver.model;
  *
  * @version $Revision: 1.2.4.1 $ $Date: 2005/03/27 15:29:32 $
  */
-public class L2TeleportLocation
-{
+public class L2TeleportLocation {
 	private int teleId;
 	private int locX;
 	private int locY;
@@ -30,126 +29,110 @@ public class L2TeleportLocation
 	private boolean forNoble;
 	private int itemId;
 	private String description;
-
+	
 	/**
 	 * @param id
 	 */
-	public void setTeleId(int id)
-	{
+	public void setTeleId(int id) {
 		teleId = id;
 	}
-
+	
 	/**
 	 * @param locX
 	 */
-	public void setLocX(int locX)
-	{
+	public void setLocX(int locX) {
 		this.locX = locX;
 	}
-
+	
 	/**
 	 * @param locY
 	 */
-	public void setLocY(int locY)
-	{
+	public void setLocY(int locY) {
 		this.locY = locY;
 	}
-
+	
 	/**
 	 * @param locZ
 	 */
-	public void setLocZ(int locZ)
-	{
+	public void setLocZ(int locZ) {
 		this.locZ = locZ;
 	}
-
+	
 	/**
 	 * @param price
 	 */
-	public void setPrice(int price)
-	{
+	public void setPrice(int price) {
 		this.price = price;
 	}
-
+	
 	/**
 	 * @param val
 	 */
-	public void setIsForNoble(boolean val)
-	{
+	public void setIsForNoble(boolean val) {
 		forNoble = val;
 	}
-
+	
 	/**
 	 * @param val
 	 */
-	public void setItemId(int val)
-	{
+	public void setItemId(int val) {
 		itemId = val;
 	}
-
+	
 	/**
 	 * @return
 	 */
-	public int getTeleId()
-	{
+	public int getTeleId() {
 		return teleId;
 	}
-
+	
 	/**
 	 * @return
 	 */
-	public int getLocX()
-	{
+	public int getLocX() {
 		return locX;
 	}
-
+	
 	/**
 	 * @return
 	 */
-	public int getLocY()
-	{
+	public int getLocY() {
 		return locY;
 	}
-
+	
 	/**
 	 * @return
 	 */
-	public int getLocZ()
-	{
+	public int getLocZ() {
 		return locZ;
 	}
-
+	
 	/**
 	 * @return
 	 */
-	public int getPrice()
-	{
+	public int getPrice() {
 		return price;
 	}
-
+	
 	/**
 	 * @return
 	 */
-	public boolean getIsForNoble()
-	{
+	public boolean getIsForNoble() {
 		return forNoble;
 	}
-
+	
 	/**
 	 * @return
 	 */
-	public int getItemId()
-	{
+	public int getItemId() {
 		return itemId;
 	}
-
-	public void setDescription(String description)
-	{
+	
+	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	public String getDescription()
-	{
+	
+	public String getDescription() {
 		return description;
 	}
 }

@@ -37,16 +37,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public final class Config
-{
+public final class Config {
 	public static final int DEFAULT = 0x01;
 	public static final int TENKAI = 0x02;
 	public static final int TENKAI_LEGACY = 0x20;
-
+	
 	//--------------------------------------------------
 	// Temporary Config File
 	//--------------------------------------------------
-
+	
 	// Instances
 	public static int FRINTEZZA_MIN_PLAYERS;
 	public static int FREYA_MIN_PLAYERS;
@@ -66,7 +65,7 @@ public final class Config
 	public static int VALAKAS_MIN_PLAYERS;
 	public static int BAIUM_MIN_PLAYERS;
 	public static int KELBIM_MIN_PLAYERS;
-
+	
 	// Donation services
 	public static int DONATION_COIN_ID;
 	public static int REMOVE_CLAN_PENALTY_FROM_CLAN_PRICE;
@@ -77,27 +76,27 @@ public final class Config
 	public static int CHANGE_CHAR_NAME_PRICE;
 	public static int CHANGE_CLAN_NAME_PRICE;
 	public static int CHANGE_NAME_COLOR_PRICE;
-
+	
 	//Custom Lottery System (Event)
 	public static boolean ENABLE_CUSTOM_LOTTERY;
 	public static int CUSTOM_LOTTERY_PRICE_ITEM_ID;
 	public static int CUSTOM_LOTTERY_PRICE_AMOUNT;
 	public static int CUSTOM_LOTTERY_REWARD_MULTIPLIER;
-
+	
 	//Custom Damage Manager (Event)
 	public static boolean ENABLE_CUSTOM_DAMAGE_MANAGER;
 	public static int CUSTOM_DAMAGE_MANAGER_REWARD_ID;
 	public static int CUSTOM_DAMAGE_MANAGER_REWARD_AMOUNT;
-
+	
 	//Custom Auction
 	public static boolean ENABLE_CUSTOM_AUCTIONS;
-
+	
 	//Custom World Altars
 	public static boolean ENABLE_WORLD_ALTARS;
-
+	
 	//Kill Info Window
 	public static boolean ENABLE_CUSTOM_KILL_INFO;
-
+	
 	//--------------------------------------------------
 	// L2J Variable Definitions
 	//--------------------------------------------------
@@ -229,7 +228,7 @@ public final class Config
 	public static boolean STORE_UI_SETTINGS;
 	public static String[] FORBIDDEN_NAMES;
 	public static double MAGE_PDEF_MULTIPLIER;
-
+	
 	//--------------------------------------------------
 	// ClanHall Settings
 	//--------------------------------------------------
@@ -286,7 +285,7 @@ public final class Config
 	public static boolean CH_BUFF_FREE;
 	public static int CH_BID_ITEMID;
 	public static int CH_BID_PRICE_DIVIDER;
-
+	
 	//--------------------------------------------------
 	// Castle Settings
 	//--------------------------------------------------
@@ -317,7 +316,7 @@ public final class Config
 	public static ArrayList<String> CL_SET_SIEGE_TIME_LIST;
 	public static TIntArrayList SIEGE_HOUR_LIST_MORNING;
 	public static TIntArrayList SIEGE_HOUR_LIST_AFTERNOON;
-
+	
 	//--------------------------------------------------
 	// Fortress Settings
 	//--------------------------------------------------
@@ -347,7 +346,7 @@ public final class Config
 	public static int FS_MAX_FLAGS;
 	public static int FS_MIN_CLAN_LVL;
 	public static int FS_MAX_ATTACKER_CLANS;
-
+	
 	//--------------------------------------------------
 	// Feature Settings
 	//--------------------------------------------------
@@ -392,7 +391,7 @@ public final class Config
 	public static int CLAN_LEVEL_10_REQUIREMENT;
 	public static int CLAN_LEVEL_11_REQUIREMENT;
 	public static boolean ALLOW_WYVERN_DURING_SIEGE;
-
+	
 	//--------------------------------------------------
 	// Clan War Settings
 	//--------------------------------------------------
@@ -402,7 +401,7 @@ public final class Config
 	public static int EXPIRE_NORMAL_WAR_PERIOD;
 	public static int CANCEL_CLAN_WAR_REPUTATION_POINTS;
 	public static int CLAN_WAR_MIN_CLAN_LEVEL;
-
+	
 	//--------------------------------------------------
 	// General Settings
 	//--------------------------------------------------
@@ -601,7 +600,7 @@ public final class Config
 	public static String FORUM_DB_NAME;
 	public static String LOGIN_DB_NAME;
 	public static int SERVER_NAME_MASK;
-
+	
 	//--------------------------------------------------
 	// FloodProtector Settings
 	//--------------------------------------------------
@@ -627,7 +626,7 @@ public final class Config
 	public static FloodProtectorConfig FLOOD_PROTECTOR_MAGICGEM;
 	public static FloodProtectorConfig FLOOD_PROTECTOR_EVENTBYPASS;
 	public static FloodProtectorConfig FLOOD_PROTECTOR_REPORT_BOT;
-
+	
 	//--------------------------------------------------
 	// L2JMods Settings
 	//--------------------------------------------------
@@ -684,10 +683,10 @@ public final class Config
 	public static boolean OFFLINE_CRAFT_ENABLE;
 	public static boolean OFFLINE_MODE_IN_PEACE_ZONE;
 	public static boolean RESTORE_OFFLINERS;
-
+	
 	public static boolean OFFLINE_BUFFERS_ENABLE;
 	public static boolean OFFLINE_BUFFERS_RESTORE;
-
+	
 	public static int OFFLINE_MAX_DAYS;
 	public static boolean OFFLINE_DISCONNECT_FINISHED;
 	public static boolean OFFLINE_SET_NAME_COLOR;
@@ -711,7 +710,7 @@ public final class Config
 	public static int L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP;
 	public static int L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP;
 	public static Map<String, Integer> L2JMOD_DUALBOX_CHECK_WHITELIST;
-
+	
 	//--------------------------------------------------
 	// NPC Settings
 	//--------------------------------------------------
@@ -750,7 +749,7 @@ public final class Config
 	public static int INVENTORY_MAXIMUM_PET;
 	public static double PET_HP_REGEN_MULTIPLIER;
 	public static double PET_MP_REGEN_MULTIPLIER;
-
+	
 	//--------------------------------------------------
 	// Reputation Settings
 	//--------------------------------------------------
@@ -767,7 +766,7 @@ public final class Config
 	public static int REPUTATION_SAME_KILL_INTERVAL;
 	public static int REPUTATION_REP_PER_EXP_MULTIPLIER;
 	public static int REPUTATION_REP_PER_SP_MULTIPLIER;
-
+	
 	//--------------------------------------------------
 	// Rate Settings
 	//--------------------------------------------------
@@ -812,7 +811,7 @@ public final class Config
 	public static int REPUTATION_KARMA_RATE_DROP_EQUIP;
 	public static int REPUTATION_KARMA_RATE_DROP_EQUIP_WEAPON;
 	public static double[] PLAYER_XP_PERCENT_LOST;
-
+	
 	//--------------------------------------------------
 	// Server Settings
 	//--------------------------------------------------
@@ -836,7 +835,7 @@ public final class Config
 	public static int REQUEST_ID;
 	public static boolean RESERVE_HOST_ON_LOGIN = false;
 	public static boolean LOG_LOGIN_CONTROLLER;
-
+	
 	//--------------------------------------------------
 	// MMO Settings
 	//--------------------------------------------------
@@ -844,7 +843,7 @@ public final class Config
 	public static int MMO_MAX_SEND_PER_PASS;
 	public static int MMO_MAX_READ_PER_PASS;
 	public static int MMO_HELPER_BUFFER_COUNT;
-
+	
 	//--------------------------------------------------
 	// Vitality Settings
 	//--------------------------------------------------
@@ -853,7 +852,7 @@ public final class Config
 	public static float RATE_VITALITY_LOST;
 	public static float VITALITY_MULTIPLIER;
 	public static int STARTING_VITALITY_POINTS;
-
+	
 	//--------------------------------------------------
 	// No classification assigned to the following yet
 	//--------------------------------------------------
@@ -869,25 +868,26 @@ public final class Config
 	public static String NEW_NODE_TYPE;
 	public static int PVP_NORMAL_TIME;
 	public static int PVP_PVP_TIME;
-
-	public enum IdFactoryType
-	{
-		Compaction, BitSet, Stack
+	
+	public enum IdFactoryType {
+		Compaction,
+		BitSet,
+		Stack
 	}
-
+	
 	public static IdFactoryType IDFACTORY_TYPE;
 	public static boolean BAD_ID_CHECKING;
-
-	public enum ObjectMapType
-	{
-		L2ObjectHashMap, WorldObjectMap
+	
+	public enum ObjectMapType {
+		L2ObjectHashMap,
+		WorldObjectMap
 	}
-
-	public enum ObjectSetType
-	{
-		L2ObjectHashSet, WorldObjectSet
+	
+	public enum ObjectSetType {
+		L2ObjectHashSet,
+		WorldObjectSet
 	}
-
+	
 	public static ObjectMapType MAP_TYPE;
 	public static ObjectSetType SET_TYPE;
 	public static int ENCHANT_CHANCE_WEAPON;
@@ -924,7 +924,7 @@ public final class Config
 	public static int NORMAL_CONNECTION_TIME;
 	public static int FAST_CONNECTION_TIME;
 	public static int MAX_CONNECTION_PER_IP;
-
+	
 	// GrandBoss Settings
 	public static int BAIUM_INTERVAL_SPAWN;
 	public static int BAIUM_RANDOM_SPAWN;
@@ -948,32 +948,32 @@ public final class Config
 	public static int KELBIM_RANDOM_SPAWN;
 	public static int HELIOS_INTERVAL_SPAWN;
 	public static int HELIOS_RANDOM_SPAWN;
-
+	
 	// Gracia Seeds Settings
 	public static int SOD_TIAT_KILL_COUNT;
 	public static long SOD_STAGE_2_LENGTH;
-
+	
 	//chatfilter
 	public static ArrayList<String> FILTER_LIST;
 	public static ArrayList<String> LANGUAGE_FILTER;
-
+	
 	// Conquerable Halls Settings
 	public static int CHS_SIEGE_LENGTH;
 	public static int CHS_CLAN_MINLEVEL;
 	public static int CHS_MAX_ATTACKERS;
 	public static int CHS_MAX_FLAGS_PER_CLAN;
 	public static int CHS_SIEGE_INTERVAL;
-
+	
 	// Security
 	public static boolean SECOND_AUTH_ENABLED;
 	public static int SECOND_AUTH_MAX_ATTEMPTS;
 	public static long SECOND_AUTH_BAN_TIME;
 	public static String SECOND_AUTH_REC_LINK;
-
+	
 	public static File DATAPACK_ROOT = new File("./");
 	public static String DATA_FOLDER = "data/";
 	public static boolean IS_CLASSIC = false;
-
+	
 	//--------------------------------------------------
 	// L2J Property File Definitions
 	//--------------------------------------------------
@@ -981,232 +981,175 @@ public final class Config
 	public static final String HEXID_FILE = "hexid.txt";
 	public static final String CHAT_FILTER_FILE = "chatfilter.txt";
 	public static final String LANGUAGE_FILTER_FILE = "languagefilter.txt";
-
+	
 	public static String CONFIG_FILE = "default.cfg";
-
+	
 	private static List<ConfigVar> configs = new ArrayList<>();
-
-	static class ConfigVar
-	{
+	
+	static class ConfigVar {
 		public String fieldName;
 		public String confName;
 		public String deflt;
 	}
-
+	
 	/**
 	 * This class initializes all global variables for configuration.<br>
 	 * If the key doesn't appear in properties file, a default value is set by this class.
 	 */
-	public static void load()
-	{
+	public static void load() {
 		// Start by loading boot parameters.
 		boolean failedLoadingBoot = false;
-		try
-		{
+		try {
 			File f = new File("./config.cfg");
-			if (!f.exists())
-			{
+			if (!f.exists()) {
 				Log.warning("./config.cfg could not be found!!!");
 				failedLoadingBoot = true;
-			}
-			else
-			{
+			} else {
 				List<String> allLines = Files.readAllLines(Paths.get("./config.cfg"), StandardCharsets.UTF_8);
-
-				for (String line : allLines)
-				{
-					if (line.startsWith("#"))
-					{
+				
+				for (String line : allLines) {
+					if (line.startsWith("#")) {
 						continue;
 					}
-
-					if (line.startsWith("ConfigFile="))
-					{
+					
+					if (line.startsWith("ConfigFile=")) {
 						CONFIG_FILE = line.replace("ConfigFile=", "");
 					}
 				}
 			}
-		}
-		catch (IOException e)
-		{
+		} catch (IOException e) {
 			e.printStackTrace();
 			Log.warning("There was an issue loading your config.cfg.");
 			failedLoadingBoot = true;
 		}
-
-		if (failedLoadingBoot)
-		{
-			try
-			{
+		
+		if (failedLoadingBoot) {
+			try {
 				Log.info("DEFAULT CONFIGURATIONS WILL BE LOADED. Press ENTER to continue.");
 				CONFIG_FILE = "default.cfg";
 				System.in.read();
-			}
-			catch (IOException e)
-			{
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-
-		if (ServerMode.serverMode == ServerMode.MODE_GAMESERVER)
-		{
+		
+		if (ServerMode.serverMode == ServerMode.MODE_GAMESERVER) {
 			Log.info("Loading GameServer[" + CONFIG_FILE + "] Configuration Files...");
 			InputStream is = null;
-			try
-			{
+			try {
 				loadConfigVars("./config/game.xml");
 				loadConfigs();
-
-				if (IS_CLASSIC)
-				{
+				
+				if (IS_CLASSIC) {
 					DATA_FOLDER = "data_classic/";
 				}
-
-				MAX_ITEM_IN_PACKET =
-						Math.max(INVENTORY_MAXIMUM_NO_DWARF, Math.max(INVENTORY_MAXIMUM_DWARF, INVENTORY_MAXIMUM_GM));
-
-				if (SERVER_NAME.startsWith("tenkai"))
-				{
+				
+				MAX_ITEM_IN_PACKET = Math.max(INVENTORY_MAXIMUM_NO_DWARF, Math.max(INVENTORY_MAXIMUM_DWARF, INVENTORY_MAXIMUM_GM));
+				
+				if (SERVER_NAME.startsWith("tenkai")) {
 					SERVER_NAME_MASK = TENKAI;
-				}
-				else
-				{
+				} else {
 					SERVER_NAME_MASK = DEFAULT;
 				}
-
-
-				if (SERVER_NAME.contains("legacy"))
-				{
+				
+				if (SERVER_NAME.contains("legacy")) {
 					SERVER_NAME_MASK |= TENKAI_LEGACY;
 				}
-
+				
 				//TODO data driven pls
 				WEB_DB_NAME = "l2" + SERVER_NAME.split("_")[0] + "_web";
 				FORUM_DB_NAME = "l2" + SERVER_NAME.split("_")[0] + "_board";
 				LOGIN_DB_NAME = "l2" + SERVER_NAME.split("_")[0] + "_common";
-
+				
 				// Chat Filter (default)
-				try
-				{
+				try {
 					FILTER_LIST = new ArrayList<>();
-					LineNumberReader lnr = new LineNumberReader(
-							new BufferedReader(new FileReader(new File(CONFIG_DIRECTORY + CHAT_FILTER_FILE))));
+					LineNumberReader lnr = new LineNumberReader(new BufferedReader(new FileReader(new File(CONFIG_DIRECTORY + CHAT_FILTER_FILE))));
 					String line = null;
-					while ((line = lnr.readLine()) != null)
-					{
-						if (line.trim().isEmpty() || line.startsWith("#"))
-						{
+					while ((line = lnr.readLine()) != null) {
+						if (line.trim().isEmpty() || line.startsWith("#")) {
 							continue;
 						}
-
+						
 						FILTER_LIST.add(line.trim());
 					}
 					lnr.close();
 					Log.info("Loaded " + FILTER_LIST.size() + " Filter Words.");
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					e.printStackTrace();
 					throw new Error("Failed to Load " + CONFIG_DIRECTORY + CHAT_FILTER_FILE + " File.");
 				}
-
+				
 				// Language Chat Filter (Tenkai Custom)
-				try
-				{
+				try {
 					LANGUAGE_FILTER = new ArrayList<>();
-					LineNumberReader lnr = new LineNumberReader(
-							new BufferedReader(new FileReader(new File(CONFIG_DIRECTORY + LANGUAGE_FILTER_FILE))));
+					LineNumberReader lnr =
+							new LineNumberReader(new BufferedReader(new FileReader(new File(CONFIG_DIRECTORY + LANGUAGE_FILTER_FILE))));
 					String line = null;
-					while ((line = lnr.readLine()) != null)
-					{
-						if (line.trim().isEmpty() || line.startsWith("#"))
-						{
+					while ((line = lnr.readLine()) != null) {
+						if (line.trim().isEmpty() || line.startsWith("#")) {
 							continue;
 						}
-
+						
 						LANGUAGE_FILTER.add(line.trim());
 					}
 					Log.info("Loaded " + LANGUAGE_FILTER.size() + " Foreign Keywords.");
 					lnr.close();
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					e.printStackTrace();
 					throw new Error("Failed to Load " + CONFIG_DIRECTORY + LANGUAGE_FILTER_FILE + " File.");
 				}
-
-				try
-				{
+				
+				try {
 					L2Properties Settings = new L2Properties();
 					is = new FileInputStream(CONFIG_DIRECTORY + HEXID_FILE);
 					Settings.load(is);
 					SERVER_ID = Integer.parseInt(Settings.getProperty("ServerID"));
 					HEX_ID = new BigInteger(Settings.getProperty("HexID"), 16).toByteArray();
+				} catch (Exception e) {
+					Log.warning("Could not load HexID file (" + CONFIG_DIRECTORY + HEXID_FILE + "). Hopefully login will give us one.");
 				}
-				catch (Exception e)
-				{
-					Log.warning("Could not load HexID file (" + CONFIG_DIRECTORY + HEXID_FILE +
-							"). Hopefully login will give us one.");
-				}
-			}
-			finally
-			{
-				try
-				{
+			} finally {
+				try {
 					is.close();
-				}
-				catch (Exception ignored)
-				{
+				} catch (Exception ignored) {
 				}
 			}
-		}
-		else if (ServerMode.serverMode == ServerMode.MODE_LOGINSERVER)
-		{
+		} else if (ServerMode.serverMode == ServerMode.MODE_LOGINSERVER) {
 			Log.info("loading login config");
 			InputStream is = null;
-			try
-			{
+			try {
 				loadConfigVars("./config/login.xml");
 				loadConfigs();
-			}
-			finally
-			{
-				try
-				{
+			} finally {
+				try {
 					is.close();
-				}
-				catch (Exception ignored)
-				{
+				} catch (Exception ignored) {
 				}
 			}
-		}
-		else
-		{
+		} else {
 			Log.severe("Could not Load Config: server mode was not set");
 		}
 	}
-
+	
 	/**
 	 * Save hexadecimal ID of the server in the L2Properties file.
 	 *
 	 * @param string (String) : hexadecimal ID of the server to store
 	 * @link LoginServerThread
 	 */
-	public static void saveHexid(int serverId, String string)
-	{
+	public static void saveHexid(int serverId, String string) {
 		Config.saveHexid(serverId, string, CONFIG_DIRECTORY + HEXID_FILE);
 	}
-
+	
 	/**
 	 * Save hexadecimal ID of the server in the L2Properties file.
 	 *
 	 * @param hexId    (String) : hexadecimal ID of the server to store
 	 * @param fileName (String) : name of the L2Properties file
 	 */
-	public static void saveHexid(int serverId, String hexId, String fileName)
-	{
-		try
-		{
+	public static void saveHexid(int serverId, String hexId, String fileName) {
+		try {
 			L2Properties hexSetting = new L2Properties();
 			File file = new File(fileName);
 			//Create a new empty file only if it doesn't exist
@@ -1216,23 +1159,17 @@ public final class Config
 			hexSetting.setProperty("HexID", hexId);
 			hexSetting.store(out, "the hexID to auth into login");
 			out.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.warning(StringUtil.concat("Failed to save hex id to ", fileName, " File."));
 			e.printStackTrace();
 		}
 	}
-
-	private static void loadConfigVars(String fileName)
-	{
-		try
-		{
+	
+	private static void loadConfigVars(String fileName) {
+		try {
 			XmlDocument doc = new XmlDocument(new File(fileName));
-			for (XmlNode n : doc.getChildren())
-			{
-				if (n.getName().equalsIgnoreCase("config"))
-				{
+			for (XmlNode n : doc.getChildren()) {
+				if (n.getName().equalsIgnoreCase("config")) {
 					ConfigVar conf = new ConfigVar();
 					conf.confName = n.getString("name");
 					conf.fieldName = n.getString("var");
@@ -1240,161 +1177,102 @@ public final class Config
 					configs.add(conf);
 				}
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
-	private static void loadConfigs()
-	{
+	
+	private static void loadConfigs() {
 		InputStream is;
-		try
-		{
+		try {
 			L2Properties settings = new L2Properties();
 			is = new FileInputStream(new File(CONFIG_DIRECTORY + CONFIG_FILE));
 			settings.load(is);
-
-			for (ConfigVar conf : configs)
-			{
+			
+			for (ConfigVar conf : configs) {
 				Field field;
-				try
-				{
+				try {
 					field = Config.class.getField(conf.fieldName);
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					Log.warning("Non existing config: " + conf.fieldName);
 					e.printStackTrace();
 					continue;
 				}
-
+				
 				int modifiers = field.getModifiers();
-				if (!Modifier.isStatic(modifiers) || !Modifier.isPublic(modifiers))
-				{
+				if (!Modifier.isStatic(modifiers) || !Modifier.isPublic(modifiers)) {
 					Log.warning("Cannot modify non public or non static config: " + conf.fieldName);
 					continue;
 				}
-
+				
 				String value = settings.getProperty(conf.confName, conf.deflt);
-				if (field.getType() == int.class)
-				{
-					if (value.startsWith("0x"))
-					{
+				if (field.getType() == int.class) {
+					if (value.startsWith("0x")) {
 						field.setInt(field, Integer.parseInt(value.substring(2), 16));
-					}
-					else
-					{
+					} else {
 						field.setInt(field, Integer.parseInt(value));
 					}
-				}
-				else if (field.getType() == short.class)
-				{
+				} else if (field.getType() == short.class) {
 					field.setShort(field, Short.parseShort(value));
-				}
-				else if (field.getType() == byte.class)
-				{
+				} else if (field.getType() == byte.class) {
 					field.setByte(field, Byte.parseByte(value));
-				}
-				else if (field.getType() == long.class)
-				{
+				} else if (field.getType() == long.class) {
 					field.setLong(field, Long.parseLong(value));
-				}
-				else if (field.getType() == float.class)
-				{
+				} else if (field.getType() == float.class) {
 					field.setFloat(field, Float.parseFloat(value));
-				}
-				else if (field.getType() == double.class)
-				{
+				} else if (field.getType() == double.class) {
 					field.setDouble(field, Double.parseDouble(value));
-				}
-				else if (field.getType() == boolean.class)
-				{
+				} else if (field.getType() == boolean.class) {
 					field.setBoolean(field, Boolean.parseBoolean(value));
-				}
-				else if (field.getType() == String.class)
-				{
+				} else if (field.getType() == String.class) {
 					field.set(field, value);
-				}
-				else if (field.getType() == int[].class)
-				{
+				} else if (field.getType() == int[].class) {
 					field.set(field, parseIntArray(value));
-				}
-				else if (field.getType() == float[].class)
-				{
+				} else if (field.getType() == float[].class) {
 					field.set(field, parseFloatArray(value));
-				}
-				else if (field.getType() == double[].class)
-				{
+				} else if (field.getType() == double[].class) {
 					field.set(field, parseDoubleArray(value));
-				}
-				else if (field.getType() == String[].class)
-				{
+				} else if (field.getType() == String[].class) {
 					field.set(field, value.split(","));
-				}
-				else if (field.getType() == ArrayList.class)
-				{
+				} else if (field.getType() == ArrayList.class) {
 					String[] split = value.split(",");
 					ArrayList<String> list = new ArrayList<>();
-					for (String s : split)
-					{
+					for (String s : split) {
 						list.add(s);
 					}
 					field.set(field, list);
-				}
-				else if (field.getType() == TIntArrayList.class)
-				{
+				} else if (field.getType() == TIntArrayList.class) {
 					field.set(field, parseIntArrayList(value));
-				}
-				else if (field.getType() == TIntIntHashMap.class)
-				{
+				} else if (field.getType() == TIntIntHashMap.class) {
 					field.set(field, parseIntIntMap(value));
-				}
-				else if (field.getType() == TIntFloatHashMap.class)
-				{
+				} else if (field.getType() == TIntFloatHashMap.class) {
 					field.set(field, parseIntFloatMap(value));
-				}
-				else if (field.getType() == Map.class)
-				{
+				} else if (field.getType() == Map.class) {
 					field.set(field, parseStringIntMap(value));
-				}
-				else if (field.getType() == int[][].class)
-				{
+				} else if (field.getType() == int[][].class) {
 					field.set(field, parseItemsList(value));
-				}
-				else if (field.getType() == ObjectMapType.class)
-				{
+				} else if (field.getType() == ObjectMapType.class) {
 					field.set(field, ObjectMapType.valueOf(value));
-				}
-				else if (field.getType() == ObjectSetType.class)
-				{
+				} else if (field.getType() == ObjectSetType.class) {
 					field.set(field, ObjectSetType.valueOf(value));
-				}
-				else if (field.getType() == IdFactoryType.class)
-				{
+				} else if (field.getType() == IdFactoryType.class) {
 					field.set(field, IdFactoryType.valueOf(value));
-				}
-				else
-				{
+				} else {
 					Log.warning("Unsupported field type: " + field.getType());
 				}
 			}
-
+			
 			loadFloodProtectorConfigs(settings);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Error("Failed to Load " + CONFIG_DIRECTORY + CONFIG_FILE + " File.");
 		}
 	}
-
+	
 	/**
 	 * Loads flood protector configurations.
 	 */
-	private static void loadFloodProtectorConfigs(final L2Properties properties)
-	{
+	private static void loadFloodProtectorConfigs(final L2Properties properties) {
 		FLOOD_PROTECTOR_PICKUP_ITEM = new FloodProtectorConfig("PickUpItemFloodProtector");
 		FLOOD_PROTECTOR_USE_ITEM = new FloodProtectorConfig("UseItemFloodProtector");
 		FLOOD_PROTECTOR_ROLL_DICE = new FloodProtectorConfig("RollDiceFloodProtector");
@@ -1417,7 +1295,7 @@ public final class Config
 		FLOOD_PROTECTOR_MAGICGEM = new FloodProtectorConfig("MagicGemFloodProtector");
 		FLOOD_PROTECTOR_EVENTBYPASS = new FloodProtectorConfig("EventBypassFloodProtector");
 		FLOOD_PROTECTOR_REPORT_BOT = new FloodProtectorConfig("ReportBotFloodProtector");
-
+		
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_PICKUP_ITEM, "PickUpItem", "50");
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_USE_ITEM, "UseItem", "0");
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_ROLL_DICE, "RollDice", "42");
@@ -1441,7 +1319,7 @@ public final class Config
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_EVENTBYPASS, "EventBypass", "1");
 		loadFloodProtectorConfig(properties, FLOOD_PROTECTOR_REPORT_BOT, "ReportBot", "18000");
 	}
-
+	
 	/**
 	 * Loads single flood protector configuration.
 	 *
@@ -1451,297 +1329,232 @@ public final class Config
 	 *                        configuration should be read
 	 * @param defaultInterval default flood protector interval
 	 */
-	private static void loadFloodProtectorConfig(final L2Properties properties, final FloodProtectorConfig config, final String configString, final String defaultInterval)
-	{
-		config.FLOOD_PROTECTION_INTERVAL = Integer.parseInt(
-				properties.getProperty(StringUtil.concat("FloodProtector", configString, "Interval"), defaultInterval));
-		config.LOG_FLOODING = Boolean.parseBoolean(
-				properties.getProperty(StringUtil.concat("FloodProtector", configString, "LogFlooding"), "False"));
-		config.PUNISHMENT_LIMIT = Integer.parseInt(
-				properties.getProperty(StringUtil.concat("FloodProtector", configString, "PunishmentLimit"), "0"));
-		config.PUNISHMENT_TYPE =
-				properties.getProperty(StringUtil.concat("FloodProtector", configString, "PunishmentType"), "none");
-		config.PUNISHMENT_TIME = Integer.parseInt(
-				properties.getProperty(StringUtil.concat("FloodProtector", configString, "PunishmentTime"), "0"));
+	private static void loadFloodProtectorConfig(final L2Properties properties,
+	                                             final FloodProtectorConfig config,
+	                                             final String configString,
+	                                             final String defaultInterval) {
+		config.FLOOD_PROTECTION_INTERVAL =
+				Integer.parseInt(properties.getProperty(StringUtil.concat("FloodProtector", configString, "Interval"), defaultInterval));
+		config.LOG_FLOODING = Boolean.parseBoolean(properties.getProperty(StringUtil.concat("FloodProtector", configString, "LogFlooding"), "False"));
+		config.PUNISHMENT_LIMIT = Integer.parseInt(properties.getProperty(StringUtil.concat("FloodProtector", configString, "PunishmentLimit"), "0"));
+		config.PUNISHMENT_TYPE = properties.getProperty(StringUtil.concat("FloodProtector", configString, "PunishmentType"), "none");
+		config.PUNISHMENT_TIME = Integer.parseInt(properties.getProperty(StringUtil.concat("FloodProtector", configString, "PunishmentTime"), "0"));
 	}
-
-	public static int getServerTypeId(String[] serverTypes)
-	{
+	
+	public static int getServerTypeId(String[] serverTypes) {
 		int tType = 0;
-		for (String cType : serverTypes)
-		{
+		for (String cType : serverTypes) {
 			cType = cType.trim();
-			if (cType.equalsIgnoreCase("Normal"))
-			{
+			if (cType.equalsIgnoreCase("Normal")) {
 				tType |= 0x01;
-			}
-			else if (cType.equalsIgnoreCase("Relax"))
-			{
+			} else if (cType.equalsIgnoreCase("Relax")) {
 				tType |= 0x02;
-			}
-			else if (cType.equalsIgnoreCase("Test"))
-			{
+			} else if (cType.equalsIgnoreCase("Test")) {
 				tType |= 0x04;
-			}
-			else if (cType.equalsIgnoreCase("NoLabel"))
-			{
+			} else if (cType.equalsIgnoreCase("NoLabel")) {
 				tType |= 0x08;
-			}
-			else if (cType.equalsIgnoreCase("Restricted"))
-			{
+			} else if (cType.equalsIgnoreCase("Restricted")) {
 				tType |= 0x10;
-			}
-			else if (cType.equalsIgnoreCase("Event"))
-			{
+			} else if (cType.equalsIgnoreCase("Event")) {
 				tType |= 0x20;
-			}
-			else if (cType.equalsIgnoreCase("Free"))
-			{
+			} else if (cType.equalsIgnoreCase("Free")) {
 				tType |= 0x40;
 			}
 		}
 		return tType;
 	}
-
-	private static int[] parseIntArray(String line)
-	{
-		if (line.isEmpty())
-		{
+	
+	private static int[] parseIntArray(String line) {
+		if (line.isEmpty()) {
 			return new int[0];
 		}
-
+		
 		String[] split = line.split(",");
 		int[] result = new int[split.length];
 		int i = 0;
-		for (String id : split)
-		{
+		for (String id : split) {
 			result[i] = Integer.parseInt(id);
 			i++;
 		}
-
+		
 		return result;
 	}
-
-	private static float[] parseFloatArray(String line)
-	{
-		if (line.isEmpty())
-		{
+	
+	private static float[] parseFloatArray(String line) {
+		if (line.isEmpty()) {
 			return new float[0];
 		}
-
+		
 		String[] split = line.split(",");
 		float[] result = new float[split.length];
 		int i = 0;
-		for (String id : split)
-		{
+		for (String id : split) {
 			result[i] = Float.parseFloat(id);
 			i++;
 		}
-
+		
 		return result;
 	}
-
-	private static TIntArrayList parseIntArrayList(String line)
-	{
+	
+	private static TIntArrayList parseIntArrayList(String line) {
 		String[] split = line.split(",");
 		TIntArrayList result = new TIntArrayList(split.length);
-		if (line.isEmpty())
-		{
+		if (line.isEmpty()) {
 			return result;
 		}
-
-		for (String id : split)
-		{
+		
+		for (String id : split) {
 			result.add(Integer.parseInt(id));
 		}
-
+		
 		return result;
 	}
-
-	private static TIntIntHashMap parseIntIntMap(String line)
-	{
+	
+	private static TIntIntHashMap parseIntIntMap(String line) {
 		String[] propertySplit = line.split(";");
 		TIntIntHashMap result = new TIntIntHashMap(propertySplit.length);
-		if (line.isEmpty())
-		{
+		if (line.isEmpty()) {
 			return result;
 		}
-
-		for (String prop : propertySplit)
-		{
+		
+		for (String prop : propertySplit) {
 			String[] propSplit = prop.split(",");
-			if (propSplit.length != 2)
-			{
+			if (propSplit.length != 2) {
 				Log.warning(StringUtil.concat("Invalid config property -> \"", prop, "\""));
 			}
-
-			try
-			{
+			
+			try {
 				result.put(Integer.valueOf(propSplit[0]), Integer.valueOf(propSplit[1]));
-			}
-			catch (NumberFormatException nfe)
-			{
-				if (!prop.isEmpty())
-				{
+			} catch (NumberFormatException nfe) {
+				if (!prop.isEmpty()) {
 					Log.warning(StringUtil.concat("Invalid config property -> \"", propSplit[0], "\"", propSplit[1]));
 				}
 			}
 		}
-
+		
 		return result;
 	}
-
-	private static TIntFloatHashMap parseIntFloatMap(String line)
-	{
-		if (line.contains(" "))
-		{
+	
+	private static TIntFloatHashMap parseIntFloatMap(String line) {
+		if (line.contains(" ")) {
 			String[] propertySplit = line.split(",");
 			TIntFloatHashMap ret = new TIntFloatHashMap(propertySplit.length);
 			int i = 1;
-			for (String value : propertySplit)
-			{
+			for (String value : propertySplit) {
 				ret.put(i++, Float.parseFloat(value));
 			}
 			return ret;
 		}
-
+		
 		String[] propertySplit = line.split(";");
 		TIntFloatHashMap ret = new TIntFloatHashMap(propertySplit.length);
-		for (String value : propertySplit)
-		{
+		for (String value : propertySplit) {
 			ret.put(Integer.parseInt(value.split(",")[0]), Float.parseFloat(value.split(",")[1]));
 		}
 		return ret;
 	}
-
-	private static Map<String, Integer> parseStringIntMap(String line)
-	{
+	
+	private static Map<String, Integer> parseStringIntMap(String line) {
 		String[] propertySplit = line.split(";");
 		Map<String, Integer> result = new HashMap<>();
-		if (line.isEmpty())
-		{
+		if (line.isEmpty()) {
 			return result;
 		}
-
-		for (String prop : propertySplit)
-		{
+		
+		for (String prop : propertySplit) {
 			String[] propSplit = prop.split(",");
-			if (propSplit.length != 2)
-			{
+			if (propSplit.length != 2) {
 				Log.warning(StringUtil.concat("Invalid config property -> \"", prop, "\""));
 			}
-
-			try
-			{
+			
+			try {
 				result.put(propSplit[0], Integer.valueOf(propSplit[1]));
-			}
-			catch (NumberFormatException nfe)
-			{
-				if (!prop.isEmpty())
-				{
+			} catch (NumberFormatException nfe) {
+				if (!prop.isEmpty()) {
 					Log.warning(StringUtil.concat("Invalid config property -> \"", propSplit[0], "\"", propSplit[1]));
 				}
 			}
 		}
-
+		
 		return result;
 	}
-
-	public static double[] parseDoubleArray(String value)
-	{
+	
+	public static double[] parseDoubleArray(String value) {
 		double[] array = new double[Byte.MAX_VALUE + 1];
-
+		
 		// Default value
-		for (int i = 0; i <= Byte.MAX_VALUE; i++)
-		{
+		for (int i = 0; i <= Byte.MAX_VALUE; i++) {
 			array[i] = 1.;
 		}
-
+		
 		// Now loading into table parsed values
-		try
-		{
+		try {
 			String[] values = value.split(";");
-			for (String s : values)
-			{
+			for (String s : values) {
 				int min;
 				int max;
 				double val;
-
+				
 				String[] vals = s.split("-");
 				String[] mM = vals[0].split(",");
-
+				
 				min = Integer.parseInt(mM[0]);
 				max = Integer.parseInt(mM[1]);
 				val = Double.parseDouble(vals[1]);
-
-				for (int i = min; i <= max; i++)
-				{
+				
+				for (int i = min; i <= max; i++) {
 					array[i] = val;
 				}
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.warning("Error while loading double array");
 			e.printStackTrace();
 		}
-
+		
 		return array;
 	}
-
+	
 	/**
 	 * itemId1,itemNumber1;itemId2,itemNumber2...
 	 * to the int[n][2] = [itemId1][itemNumber1],[itemId2][itemNumber2]...
 	 */
-	private static int[][] parseItemsList(String line)
-	{
+	private static int[][] parseItemsList(String line) {
 		final String[] propertySplit = line.split(";");
-		if (propertySplit.length == 0)
-		{
+		if (propertySplit.length == 0) {
 			return null;
 		}
-
+		
 		int i = 0;
 		String[] valueSplit;
 		final int[][] result = new int[propertySplit.length][];
-		for (String value : propertySplit)
-		{
+		for (String value : propertySplit) {
 			valueSplit = value.split(",");
-			if (valueSplit.length != 2)
-			{
-				Log.warning(StringUtil.concat("parseItemsList[Config.load()]: invalid entry -> \"", valueSplit[0],
+			if (valueSplit.length != 2) {
+				Log.warning(StringUtil.concat("parseItemsList[Config.load()]: invalid entry -> \"",
+						valueSplit[0],
 						"\", should be itemId,itemNumber"));
 				return null;
 			}
-
+			
 			result[i] = new int[2];
-			try
-			{
+			try {
 				result[i][0] = Integer.parseInt(valueSplit[0]);
-			}
-			catch (NumberFormatException e)
-			{
-				Log.warning(
-						StringUtil.concat("parseItemsList[Config.load()]: invalid itemId -> \"", valueSplit[0], "\""));
+			} catch (NumberFormatException e) {
+				Log.warning(StringUtil.concat("parseItemsList[Config.load()]: invalid itemId -> \"", valueSplit[0], "\""));
 				return null;
 			}
-			try
-			{
+			try {
 				result[i][1] = Integer.parseInt(valueSplit[1]);
-			}
-			catch (NumberFormatException e)
-			{
-				Log.warning(StringUtil
-						.concat("parseItemsList[Config.load()]: invalid item number -> \"", valueSplit[1], "\""));
+			} catch (NumberFormatException e) {
+				Log.warning(StringUtil.concat("parseItemsList[Config.load()]: invalid item number -> \"", valueSplit[1], "\""));
 				return null;
 			}
 			i++;
 		}
 		return result;
 	}
-
-	public static double[] MOONLAND_EXPERIENCE_RATE_MULTIPLIER = {
-			1.0, // Level 1 Chaque level +2 auparavant
+	
+	public static double[] MOONLAND_EXPERIENCE_RATE_MULTIPLIER = {1.0, // Level 1 Chaque level +2 auparavant
 			1.0, // Level 2
 			1.0, // Level 3
 			1.0, // Level 4
@@ -1846,42 +1659,35 @@ public final class Config
 			225.0, // Level 103
 			225.0, //Level 104
 	};
-
-	public static double getExperienceMultiplierFor(final int level)
-	{
-		if (level <= 0)
-		{
+	
+	public static double getExperienceMultiplierFor(final int level) {
+		if (level <= 0) {
 			return 1.0;
 		}
-
+		
 		return MOONLAND_EXPERIENCE_RATE_MULTIPLIER[level - 1];
 	}
-
-	public static boolean isServer(int server)
-	{
+	
+	public static boolean isServer(int server) {
 		return (SERVER_NAME_MASK & server) > 0;
 	}
-
-	public static File findResource(final String path)
-	{
+	
+	public static File findResource(final String path) {
 		final File custom = findCustomResource(path);
-		if (custom.exists())
-		{
+		if (custom.exists()) {
 			return custom;
 		}
-
+		
 		Log.warning("Config: Custom Path doesn't exist: " + path);
-
+		
 		return findNonCustomResource(path);
 	}
-
-	public static File findCustomResource(final String path)
-	{
+	
+	public static File findCustomResource(final String path) {
 		return new File("data_" + SERVER_NAME + "/", path);
 	}
-
-	public static File findNonCustomResource(final String path)
-	{
+	
+	public static File findNonCustomResource(final String path) {
 		return new File("data/", path);
 	}
 }

@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <currency position="1" itemId="57" /> <!-- Adena -->
-    <currency position="2" itemId="37559" /> <!-- Shiny Coin -->
-    <currency position="3" itemId="4037" /> <!-- Coin of Luck -->
-    <auction id="1" itemId="36414" count="50" repeatTime="20" randomRepeatTime="10" initialCurrencyId="57"
-             initialPrice="1" initialDuration="20" /> <!-- Dragon Claw -->
-    <auction id="2"
-             itemId="36417,36418,36419,36420,36421,36422,36423,36424,36425,36426,36427,36428,36429,36430,36431,36432,36433,36434,36435,36436,36437,36438,36439,36440"
-             count="1" repeatTime="12" randomRepeatTime="6" initialCurrencyId="57" initialPrice="1"
-             initialDuration="24" /> <!-- Dragon Claw Fragment Weapons -->
-    <auction id="3" itemId="36515" count="800" repeatTime="20" randomRepeatTime="10" initialCurrencyId="57"
-             initialPrice="1" initialDuration="20" /> <!-- Elcyum -->
-    <auction id="101" itemId="19463" count="1" repeatTime="40" randomRepeatTime="15" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Blessed Antharas' Earring -->
-    <auction id="102" itemId="19464" count="1" repeatTime="40" randomRepeatTime="15" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Blessed Valakas' Necklace -->
-    <auction id="103" itemId="36946" count="1" repeatTime="40" randomRepeatTime="15" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Lindvior's Earring -->
-    <auction id="104" itemId="36254" count="1" repeatTime="40" randomRepeatTime="15" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Queen Ant's Soul Ring -->
-    <auction id="105" itemId="37521" count="1" repeatTime="40" randomRepeatTime="15" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Baium's Soul Ring -->
-    <auction id="106" itemId="36255" count="1" repeatTime="40" randomRepeatTime="15" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Orfen's Soul Earring -->
-    <auction id="108" itemId="39657" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Venir's Talisman - Stage 24 -->
-    <auction id="109" itemId="37717" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Talisman - Seven Signs -->
-    <auction id="110" itemId="10429" count="10" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Enchant -->
-    <auction id="111" itemId="35564" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Ruler's Belt -->
-    <auction id="112" itemId="35771" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Hat +5 P.Atk -->
-    <auction id="113" itemId="36176" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
-    <auction id="113" itemId="36177" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
-    <auction id="113" itemId="36178" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
-    <auction id="113" itemId="36179" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
-    <auction id="113" itemId="36180" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
-    <auction id="113" itemId="36181" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
-    <auction id="113" itemId="36182" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
-    <auction id="113" itemId="36183" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
-             initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
+	<currency position="1" itemId="57" /> <!-- Adena -->
+	<currency position="2" itemId="37559" /> <!-- Shiny Coin -->
+	<currency position="3" itemId="4037" /> <!-- Coin of Luck -->
+	<auction id="1" itemId="36414" count="50" repeatTime="20" randomRepeatTime="10" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="20" /> <!-- Dragon Claw -->
+	<auction id="2"
+			 itemId="36417,36418,36419,36420,36421,36422,36423,36424,36425,36426,36427,36428,36429,36430,36431,36432,36433,36434,36435,36436,36437,36438,36439,36440"
+			 count="1" repeatTime="12" randomRepeatTime="6" initialCurrencyId="57" initialPrice="1"
+			 initialDuration="24" /> <!-- Dragon Claw Fragment Weapons -->
+	<auction id="3" itemId="36515" count="800" repeatTime="20" randomRepeatTime="10" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="20" /> <!-- Elcyum -->
+	<auction id="101" itemId="19463" count="1" repeatTime="40" randomRepeatTime="15" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Blessed Antharas' Earring -->
+	<auction id="102" itemId="19464" count="1" repeatTime="40" randomRepeatTime="15" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Blessed Valakas' Necklace -->
+	<auction id="103" itemId="36946" count="1" repeatTime="40" randomRepeatTime="15" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Lindvior's Earring -->
+	<auction id="104" itemId="36254" count="1" repeatTime="40" randomRepeatTime="15" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Queen Ant's Soul Ring -->
+	<auction id="105" itemId="37521" count="1" repeatTime="40" randomRepeatTime="15" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Baium's Soul Ring -->
+	<auction id="106" itemId="36255" count="1" repeatTime="40" randomRepeatTime="15" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Orfen's Soul Earring -->
+	<auction id="108" itemId="39657" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Venir's Talisman - Stage 24 -->
+	<auction id="109" itemId="37717" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Talisman - Seven Signs -->
+	<auction id="110" itemId="10429" count="10" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Enchant -->
+	<auction id="111" itemId="35564" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Ruler's Belt -->
+	<auction id="112" itemId="35771" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Hat +5 P.Atk -->
+	<auction id="113" itemId="36176" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
+	<auction id="113" itemId="36177" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
+	<auction id="113" itemId="36178" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
+	<auction id="113" itemId="36179" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
+	<auction id="113" itemId="36180" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
+	<auction id="113" itemId="36181" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
+	<auction id="113" itemId="36182" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
+	<auction id="113" itemId="36183" count="1" repeatTime="50" randomRepeatTime="20" initialCurrencyId="57"
+			 initialPrice="1" initialDuration="24" /> <!-- Hat +5 M.Atk -->
 </list>

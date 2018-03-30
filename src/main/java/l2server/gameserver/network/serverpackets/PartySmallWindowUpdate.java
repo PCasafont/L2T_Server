@@ -23,33 +23,29 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @version $Revision: 1.4.2.1.2.5 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class PartySmallWindowUpdate extends L2GameServerPacket
-{
+public final class PartySmallWindowUpdate extends L2GameServerPacket {
 	private L2PcInstance member;
-
-	public PartySmallWindowUpdate(L2PcInstance member)
-	{
+	
+	public PartySmallWindowUpdate(L2PcInstance member) {
 		this.member = member;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(member.getObjectId());
 		//writeS(member.getName());
 		writeH(0x03ff); // ???
-
+		
 		writeD((int) member.getCurrentCp()); //c4
 		writeD(member.getMaxCp()); //c4
-
+		
 		writeD((int) member.getCurrentHp());
 		writeD(member.getMaxVisibleHp());
 		writeD((int) member.getCurrentMp());
 		writeD(member.getMaxMp());
 		writeC(member.getLevel());
 		writeH(member.getCurrentClass().getId());
-		writeC(PartySearchManager.getInstance().getWannaToChangeThisPlayer(member.getObjectId()) ? 0x01 :
-				0x00); // Party Searching
+		writeC(PartySearchManager.getInstance().getWannaToChangeThisPlayer(member.getObjectId()) ? 0x01 : 0x00); // Party Searching
 		writeD(member.getVitalityPoints());
 	}
 }

@@ -26,32 +26,27 @@ import l2server.log.Log;
  *
  * @author mrTJO
  */
-public final class RequestExCubeGameChangeTeam extends L2GameClientPacket
-{
-
+public final class RequestExCubeGameChangeTeam extends L2GameClientPacket {
+	
 	int arena;
 	int team;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// client sends -1,0,1,2 for arena parameter
 		arena = readD() + 1;
 		team = readD();
 	}
-
+	
 	@Override
-	public void runImpl()
-	{
+	public void runImpl() {
 		// do not remove players after start
-		if (HandysBlockCheckerManager.getInstance().arenaIsBeingUsed(arena))
-		{
+		if (HandysBlockCheckerManager.getInstance().arenaIsBeingUsed(arena)) {
 			return;
 		}
 		L2PcInstance player = getClient().getActiveChar();
-
-		switch (team)
-		{
+		
+		switch (team) {
 			case 0:
 			case 1:
 				// Change Player Team
@@ -62,8 +57,7 @@ public final class RequestExCubeGameChangeTeam extends L2GameClientPacket
 				int team = HandysBlockCheckerManager.getInstance().getHolder(arena).getPlayerTeam(player);
 				// client sends two times this packet if click on exit
 				// client did not send this packet on restart
-				if (team > -1)
-				{
+				if (team > -1) {
 					HandysBlockCheckerManager.getInstance().removePlayer(player, arena, team);
 				}
 				break;

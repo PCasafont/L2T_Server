@@ -17,8 +17,7 @@ package l2server.gameserver.network.gameserverpackets;
 
 import l2server.util.network.BaseSendablePacket;
 
-public class AuthRequest extends BaseSendablePacket
-{
+public class AuthRequest extends BaseSendablePacket {
 	/**
 	 * Format: cccSddb
 	 * c desired ID
@@ -36,8 +35,14 @@ public class AuthRequest extends BaseSendablePacket
 	 * @param reserveHost
 	 * @param maxplayer
 	 */
-	public AuthRequest(int id, boolean acceptAlternate, byte[] hexid, int port, boolean reserveHost, int maxplayer, String[] subnets, String[] hosts)
-	{
+	public AuthRequest(int id,
+	                   boolean acceptAlternate,
+	                   byte[] hexid,
+	                   int port,
+	                   boolean reserveHost,
+	                   int maxplayer,
+	                   String[] subnets,
+	                   String[] hosts) {
 		writeC(0x01);
 		writeC(id);
 		writeC(acceptAlternate ? 0x01 : 0x00);
@@ -47,8 +52,7 @@ public class AuthRequest extends BaseSendablePacket
 		writeD(hexid.length);
 		writeB(hexid);
 		writeD(subnets.length);
-		for (int i = 0; i < subnets.length; i++)
-		{
+		for (int i = 0; i < subnets.length; i++) {
 			writeS(subnets[i]);
 			writeS(hosts[i]);
 		}
@@ -58,8 +62,7 @@ public class AuthRequest extends BaseSendablePacket
 	 * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent()
-	{
+	public byte[] getContent() {
 		return getBytes();
 	}
 }

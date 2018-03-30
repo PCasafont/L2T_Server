@@ -23,20 +23,17 @@ import l2server.log.Log;
  *
  * @author -Wooden-
  */
-public final class RequestExFishRanking extends L2GameClientPacket
-{
-
+public final class RequestExFishRanking extends L2GameClientPacket {
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// trigger
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		Log.info("C5: RequestExFishRanking");
 	}
 }

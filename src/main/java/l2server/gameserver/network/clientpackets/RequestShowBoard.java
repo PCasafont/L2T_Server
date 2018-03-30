@@ -23,8 +23,7 @@ import l2server.gameserver.communitybbs.CommunityBoard;
  *
  * @version $Revision: 1.2.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestShowBoard extends L2GameClientPacket
-{
+public final class RequestShowBoard extends L2GameClientPacket {
 
 	@SuppressWarnings("unused")
 	private int unknown;
@@ -40,20 +39,17 @@ public final class RequestShowBoard extends L2GameClientPacket
 	 * format:		cd
 	 */
 	@Override
-	protected final void readImpl()
-	{
+	protected final void readImpl() {
 		unknown = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		CommunityBoard.getInstance().handleCommands(getClient(), Config.BBS_DEFAULT);
 	}
 
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

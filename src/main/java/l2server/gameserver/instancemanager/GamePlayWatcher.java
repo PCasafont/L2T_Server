@@ -31,48 +31,38 @@ import java.util.concurrent.ScheduledFuture;
 /**
  * @author Pere
  */
-public class GamePlayWatcher
-{
+public class GamePlayWatcher {
 	private static GamePlayWatcher instance;
 
-	public static GamePlayWatcher getInstance()
-	{
-		if (instance == null)
-		{
+	public static GamePlayWatcher getInstance() {
+		if (instance == null) {
 			instance = new GamePlayWatcher();
 		}
 
 		return instance;
 	}
 
-	public void makeWatcher(L2PcInstance watcher)
-	{
+	public void makeWatcher(L2PcInstance watcher) {
 		WatchTask watchTask = new WatchTask(watcher);
-		ScheduledFuture<?> schedule =
-				ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(watchTask, 1000L, 1000L);
+		ScheduledFuture<?> schedule = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(watchTask, 1000L, 1000L);
 		watchTask.setSchedule(schedule);
 	}
 
-	private class WatchTask implements Runnable
-	{
+	private class WatchTask implements Runnable {
 		private final L2PcInstance watcher;
 		private L2PcInstance pivot = null;
 		private long checkForAnotherPivotTimer = 0L;
 
 		private ScheduledFuture<?> schedule = null;
 
-		public WatchTask(L2PcInstance watcher)
-		{
+		public WatchTask(L2PcInstance watcher) {
 			this.watcher = watcher;
 		}
 
 		@Override
-		public void run()
-		{
-			if (!watcher.isOnline() || !watcher.isInWatcherMode())
-			{
-				if (schedule != null)
-				{
+		public void run() {
+			if (!watcher.isOnline() || !watcher.isInWatcherMode()) {
+				if (schedule != null) {
 					schedule.cancel(false);
 				}
 
@@ -80,47 +70,33 @@ public class GamePlayWatcher
 			}
 
 			if (checkForAnotherPivotTimer < System.currentTimeMillis() || pivot == null ||
-					!AttackStanceTaskManager.getInstance().getAttackStanceTask(pivot) ||
-					pivot.isInsidePeaceZone(pivot) || pivot.isDead())
-			{
+					!AttackStanceTaskManager.getInstance().getAttackStanceTask(pivot) || pivot.isInsidePeaceZone(pivot) || pivot.isDead()) {
 				pivot = null;
 				checkForAnotherPivotTimer = System.currentTimeMillis() + 30000L;
 			}
 
-			if (pivot == null)
-			{
+			if (pivot == null) {
 				int bestCombatPvPCount = 0;
 				int bestCombatPvECount = 0;
-				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
-				{
-					if (!AttackStanceTaskManager.getInstance().getAttackStanceTask(player) ||
-							player.isInsidePeaceZone(player) || player.isDead() || player.inObserverMode() ||
-							player == watcher)
-					{
+				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
+					if (!AttackStanceTaskManager.getInstance().getAttackStanceTask(player) || player.isInsidePeaceZone(player) || player.isDead() ||
+							player.inObserverMode() || player == watcher) {
 						continue;
 					}
 
 					int flaggedCount = 0;
 					int combatPvPCount = 0;
 					int combatPvECount = 0;
-					for (L2Character c : player.getKnownList().getKnownCharacters())
-					{
-						if (Util.checkIfInRange(1000, player, c, false))
-						{
-							if (c instanceof L2PcInstance)
-							{
-								if (((L2PcInstance) c).getPvpFlag() > 0)
-								{
+					for (L2Character c : player.getKnownList().getKnownCharacters()) {
+						if (Util.checkIfInRange(1000, player, c, false)) {
+							if (c instanceof L2PcInstance) {
+								if (((L2PcInstance) c).getPvpFlag() > 0) {
 									flaggedCount++; // That's someone making PvP for sure
 								}
-								if (AttackStanceTaskManager.getInstance().getAttackStanceTask(c))
-								{
-									if (c.getTarget() instanceof L2PcInstance)
-									{
+								if (AttackStanceTaskManager.getInstance().getAttackStanceTask(c)) {
+									if (c.getTarget() instanceof L2PcInstance) {
 										combatPvPCount++; // Less valuable than a flagged player but ok
-									}
-									else
-									{
+									} else {
 										combatPvECount++; // Target can be null, let's consider it pve
 									}
 								}
@@ -130,8 +106,7 @@ public class GamePlayWatcher
 
 					// FIXME: this ckeck is going to pick farm zones over PvP if lots of farmers get together
 					if (flaggedCount > bestCombatPvPCount || combatPvPCount > bestCombatPvPCount ||
-							bestCombatPvPCount < 2 && combatPvECount > bestCombatPvECount)
-					{
+							bestCombatPvPCount < 2 && combatPvECount > bestCombatPvECount) {
 						pivot = player;
 						bestCombatPvPCount = Math.max(combatPvPCount, flaggedCount);
 						bestCombatPvECount = combatPvECount;
@@ -141,15 +116,12 @@ public class GamePlayWatcher
 
 			//pivot = L2World.getInstance().getPlayer("pere");
 
-			if (pivot == null || watcher.isTeleporting())
-			{
+			if (pivot == null || watcher.isTeleporting()) {
 				// We stream Gludio when no mini game is going on.
 				//if (Config.isServer(Config.FUSION))
 				{
-					if (!watcher.isTeleporting())
-					{
-						if (!watcher.isInsideRadius(-14504, 123799, 500, false))
-						{
+					if (!watcher.isTeleporting()) {
+						if (!watcher.isInsideRadius(-14504, 123799, 500, false)) {
 							watcher.teleToLocation(-14504, 123799, -3114);
 						}
 
@@ -169,21 +141,18 @@ public class GamePlayWatcher
 				return;
 			}
 
-			if (!Util.checkIfInRange(5000, watcher, pivot, true))
-			{
+			if (!Util.checkIfInRange(5000, watcher, pivot, true)) {
 				watcher.setInstanceId(pivot.getInstanceId());
 				watcher.teleToLocation(pivot.getX(), pivot.getY(), pivot.getZ());
 				return;
 			}
 
-			if (!Util.checkIfInRange(500, watcher, pivot, true))
-			{
+			if (!Util.checkIfInRange(500, watcher, pivot, true)) {
 				watcher.setXYZ(pivot.getX(), pivot.getY(), pivot.getZ());
 				watcher.broadcastUserInfo();
 			}
 
-			if (pivot.getTarget() == null || pivot.getTarget() == pivot)
-			{
+			if (pivot.getTarget() == null || pivot.getTarget() == pivot) {
 				// 3rd person cam
 				watcher.sendPacket(new SpecialCamera(pivot.getObjectId(), Rnd.get(50, 150), // Distance
 						0, // Yaw
@@ -195,38 +164,28 @@ public class GamePlayWatcher
 						0, // Cinematic-like
 						1 // Relative to Object's angle
 				));
-			}
-			else
-			{
-				double yaw = Math.toDegrees(Math.atan2(pivot.getX() - pivot.getTarget().getX(),
-						pivot.getY() - pivot.getTarget().getY())) + 90;
+			} else {
+				double yaw = Math.toDegrees(Math.atan2(pivot.getX() - pivot.getTarget().getX(), pivot.getY() - pivot.getTarget().getY())) + 90;
 				double angle = 180 - yaw;
 				double pitch = 15 + 0.02 * (1000 - Util.calculateDistance(pivot, pivot.getTarget(), false));
-				if (pitch < 15)
-				{
+				if (pitch < 15) {
 					pitch = 15;
 				}
 				double distance = 250;
-				Point3D cameraPos =
-						new Point3D((int) Math.round(pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)),
-								(int) Math.round(pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) *
-										Math.cos(pitch * Math.PI / 180.0)),
-								(int) Math.round(pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
-				while (!GeoEngine.getInstance().canSeeTarget(pivot, cameraPos))
-				{
+				Point3D cameraPos = new Point3D((int) Math.round(pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)),
+						(int) Math.round(pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) * Math.cos(pitch * Math.PI / 180.0)),
+						(int) Math.round(pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
+				while (!GeoEngine.getInstance().canSeeTarget(pivot, cameraPos)) {
 					distance -= 100;
 
-					if (distance < 50)
-					{
+					if (distance < 50) {
 						//pivot = null;
 						return;
 					}
 
-					cameraPos =
-							new Point3D((int) Math.round(pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)),
-									(int) Math.round(pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) *
-											Math.cos(pitch * Math.PI / 180.0)),
-									(int) Math.round(pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
+					cameraPos = new Point3D((int) Math.round(pivot.getX() + distance * Math.cos(angle * Math.PI / 180.0)),
+							(int) Math.round(pivot.getY() + distance * Math.sin(angle * Math.PI / 180.0) * Math.cos(pitch * Math.PI / 180.0)),
+							(int) Math.round(pivot.getZ() + distance * Math.sin(pitch * Math.PI / 180.0)));
 				}
 
 				// 3rd person cam
@@ -243,8 +202,7 @@ public class GamePlayWatcher
 			}
 		}
 
-		public void setSchedule(ScheduledFuture<?> schedule)
-		{
+		public void setSchedule(ScheduledFuture<?> schedule) {
 			this.schedule = schedule;
 		}
 	}

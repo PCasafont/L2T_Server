@@ -23,23 +23,19 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @author chris_00
  */
-public class ExMPCCShowPartyMemberInfo extends L2GameServerPacket
-{
+public class ExMPCCShowPartyMemberInfo extends L2GameServerPacket {
 	private L2Party party;
-
-	public ExMPCCShowPartyMemberInfo(L2Party party)
-	{
+	
+	public ExMPCCShowPartyMemberInfo(L2Party party) {
 		this.party = party;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(party.getMemberCount()); // Number of Members
-		for (L2PcInstance pc : party.getPartyMembers())
-		{
+		for (L2PcInstance pc : party.getPartyMembers()) {
 			writeS(pc.getName()); // Membername
 			writeD(pc.getObjectId()); // ObjId
 			writeD(pc.getCurrentClass().getId()); // Classid

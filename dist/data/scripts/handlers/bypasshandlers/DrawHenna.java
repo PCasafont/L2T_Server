@@ -21,15 +21,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2SymbolMakerInstance;
 import l2server.gameserver.network.serverpackets.HennaEquipList;
 
-public class DrawHenna implements IBypassHandler
-{
+public class DrawHenna implements IBypassHandler {
 	private static final String[] COMMANDS = {"Draw"};
 
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (!(target instanceof L2SymbolMakerInstance))
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+		if (!(target instanceof L2SymbolMakerInstance)) {
 			return false;
 		}
 
@@ -38,8 +35,7 @@ public class DrawHenna implements IBypassHandler
 	}
 
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

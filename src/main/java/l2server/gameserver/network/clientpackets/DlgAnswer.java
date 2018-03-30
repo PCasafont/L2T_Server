@@ -26,91 +26,65 @@ import l2server.log.Log;
 
 /**
  * @author Dezmond_snz
- *         Format: cddd
+ * Format: cddd
  */
-public final class DlgAnswer extends L2GameClientPacket
-{
+public final class DlgAnswer extends L2GameClientPacket {
 
 	private int messageId;
 	private int answer;
 	private int requesterId;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		messageId = readD();
 		answer = readD();
 		requesterId = readD();
 	}
 
 	@Override
-	public void runImpl()
-	{
+	public void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
-		if (Config.DEBUG)
-		{
-			Log.fine(getType() + ": Answer accepted. Message ID " + messageId + ", answer " + answer +
-					", Requester ID " + requesterId);
+		if (Config.DEBUG) {
+			Log.fine(getType() + ": Answer accepted. Message ID " + messageId + ", answer " + answer + ", Requester ID " + requesterId);
 		}
 		if (messageId == SystemMessageId.RESSURECTION_REQUEST_BY_C1_FOR_S2_XP.getId() ||
-				messageId == SystemMessageId.RESURRECT_USING_CHARM_OF_COURAGE.getId())
-		{
+				messageId == SystemMessageId.RESURRECT_USING_CHARM_OF_COURAGE.getId()) {
 			activeChar.reviveAnswer(answer);
-		}
-		else if (messageId == SystemMessageId.C1_WISHES_TO_SUMMON_YOU_FROM_S2_DO_YOU_ACCEPT.getId())
-		{
+		} else if (messageId == SystemMessageId.C1_WISHES_TO_SUMMON_YOU_FROM_S2_DO_YOU_ACCEPT.getId()) {
 			activeChar.teleportAnswer(answer, requesterId);
-		}
-		else if (messageId == SystemMessageId.S1.getId())
-		{
-			if (Config.L2JMOD_ALLOW_WEDDING && activeChar.isEngageRequest())
-			{
+		} else if (messageId == SystemMessageId.S1.getId()) {
+			if (Config.L2JMOD_ALLOW_WEDDING && activeChar.isEngageRequest()) {
 				activeChar.engageAnswer(answer);
-			}
-			else if (activeChar.isMobSummonRequest())
-			{
+			} else if (activeChar.isMobSummonRequest()) {
 				activeChar.mobSummonAnswer(answer);
-			}
-			else if (activeChar.isMobSummonExchangeRequest())
-			{
+			} else if (activeChar.isMobSummonExchangeRequest()) {
 				activeChar.mobSummonExchangeAnswer(answer);
-			}
-			else if (activeChar.isChessChallengeRequest())
-			{
+			} else if (activeChar.isChessChallengeRequest()) {
 				activeChar.chessChallengeAnswer(answer);
-			}
-			else
-			{
+			} else {
 				String _command = activeChar.getAdminConfirmCmd();
 				activeChar.setAdminConfirmCmd(null);
-				if (answer == 0)
-				{
+				if (answer == 0) {
 					return;
 				}
 				String command = _command.split(" ")[0];
 				IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler(command);
-				if (AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel()))
-				{
-					if (Config.GMAUDIT)
-					{
-						GMAudit.auditGMAction(activeChar.getName(), _command,
+				if (AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel())) {
+					if (Config.GMAUDIT) {
+						GMAudit.auditGMAction(activeChar.getName(),
+								_command,
 								activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target");
 					}
 					ach.useAdminCommand(_command, activeChar);
 				}
 			}
-		}
-		else if (messageId == SystemMessageId.WOULD_YOU_LIKE_TO_OPEN_THE_GATE.getId())
-		{
+		} else if (messageId == SystemMessageId.WOULD_YOU_LIKE_TO_OPEN_THE_GATE.getId()) {
 			activeChar.gatesAnswer(answer, 1);
-		}
-		else if (messageId == SystemMessageId.WOULD_YOU_LIKE_TO_CLOSE_THE_GATE.getId())
-		{
+		} else if (messageId == SystemMessageId.WOULD_YOU_LIKE_TO_CLOSE_THE_GATE.getId()) {
 			activeChar.gatesAnswer(answer, 0);
 		}
 	}

@@ -39,101 +39,67 @@ import java.util.StringTokenizer;
  *
  * @author l3x
  */
-public class AdminManor implements IAdminCommandHandler
-{
-	private static final String[] adminCommands = {
-			"admin_manor",
-			"admin_manor_approve",
-			"admin_manor_setnext",
-			"admin_manor_reset",
-			"admin_manor_setmaintenance",
-			"admin_manor_save",
-			"admin_manor_disable"
-	};
+public class AdminManor implements IAdminCommandHandler {
+	private static final String[] adminCommands =
+			{"admin_manor", "admin_manor_approve", "admin_manor_setnext", "admin_manor_reset", "admin_manor_setmaintenance", "admin_manor_save",
+					"admin_manor_disable"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 		StringTokenizer st = new StringTokenizer(command);
 		command = st.nextToken();
 
-		if (command.equals("admin_manor"))
-		{
+		if (command.equals("admin_manor")) {
 			showMainPage(activeChar);
-		}
-		else if (command.equals("admin_manor_setnext"))
-		{
+		} else if (command.equals("admin_manor_setnext")) {
 			CastleManorManager.getInstance().setNextPeriod();
 			CastleManorManager.getInstance().setNewManorRefresh();
 			CastleManorManager.getInstance().updateManorRefresh();
 			activeChar.sendMessage("Manor System: set to next period");
 			showMainPage(activeChar);
-		}
-		else if (command.equals("admin_manor_approve"))
-		{
+		} else if (command.equals("admin_manor_approve")) {
 			CastleManorManager.getInstance().approveNextPeriod();
 			CastleManorManager.getInstance().setNewPeriodApprove();
 			CastleManorManager.getInstance().updatePeriodApprove();
 			activeChar.sendMessage("Manor System: next period approved");
 			showMainPage(activeChar);
-		}
-		else if (command.equals("admin_manor_reset"))
-		{
+		} else if (command.equals("admin_manor_reset")) {
 			int castleId = 0;
-			try
-			{
+			try {
 				castleId = Integer.parseInt(st.nextToken());
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 			}
 
-			if (castleId > 0)
-			{
+			if (castleId > 0) {
 				Castle castle = CastleManager.getInstance().getCastleById(castleId);
 				castle.resetManor();
 				activeChar.sendMessage("Manor data for " + castle.getName() + " was nulled");
-			}
-			else
-			{
-				for (Castle castle : CastleManager.getInstance().getCastles())
-				{
+			} else {
+				for (Castle castle : CastleManager.getInstance().getCastles()) {
 					castle.resetManor();
 				}
 				activeChar.sendMessage("Manor data was nulled");
 			}
 			showMainPage(activeChar);
-		}
-		else if (command.equals("admin_manor_setmaintenance"))
-		{
+		} else if (command.equals("admin_manor_setmaintenance")) {
 			boolean mode = CastleManorManager.getInstance().isUnderMaintenance();
 			CastleManorManager.getInstance().setUnderMaintenance(!mode);
-			if (mode)
-			{
+			if (mode) {
 				activeChar.sendMessage("Manor System: not under maintenance");
-			}
-			else
-			{
+			} else {
 				activeChar.sendMessage("Manor System: under maintenance");
 			}
 			showMainPage(activeChar);
-		}
-		else if (command.equals("admin_manor_save"))
-		{
+		} else if (command.equals("admin_manor_save")) {
 			CastleManorManager.getInstance().save();
 			activeChar.sendMessage("Manor System: all data saved");
 			showMainPage(activeChar);
-		}
-		else if (command.equals("admin_manor_disable"))
-		{
+		} else if (command.equals("admin_manor_disable")) {
 			boolean mode = CastleManorManager.getInstance().isDisabled();
 			CastleManorManager.getInstance().setDisabled(!mode);
-			if (mode)
-			{
+			if (mode) {
 				activeChar.sendMessage("Manor System: enabled");
-			}
-			else
-			{
+			} else {
 				activeChar.sendMessage("Manor System: disabled");
 			}
 			showMainPage(activeChar);
@@ -143,13 +109,11 @@ public class AdminManor implements IAdminCommandHandler
 	}
 
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return adminCommands;
 	}
 
-	private String formatTime(long millis)
-	{
+	private String formatTime(long millis) {
 		String s = "";
 		int secs = (int) millis / 1000;
 		int mins = secs / 60;
@@ -157,8 +121,7 @@ public class AdminManor implements IAdminCommandHandler
 		int hours = mins / 60;
 		mins -= hours * 60;
 
-		if (hours > 0)
-		{
+		if (hours > 0) {
 			s += hours + ":";
 		}
 		s += mins + ":";
@@ -166,8 +129,7 @@ public class AdminManor implements IAdminCommandHandler
 		return s;
 	}
 
-	private void showMainPage(L2PcInstance activeChar)
-	{
+	private void showMainPage(L2PcInstance activeChar) {
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		final List<Castle> castles = CastleManager.getInstance().getCastles();
 		final StringBuilder replyMSG = StringUtil.startAppend(1000 + castles.size() * 50,
@@ -175,9 +137,9 @@ public class AdminManor implements IAdminCommandHandler
 						"<td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" +
 						"<td width=180><center>Manor Info</center></td>" +
 						"<td width=45><button value=\"Back\" action=\"bypass -h admin_admin2\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" +
-						"</tr></table><font color=\"LEVEL\"> [Manor System] </font></center><br>" +
-						"<table width=\"100%\"><tr><td>" + "Disabled: ",
-				CastleManorManager.getInstance().isDisabled() ? "yes" : "no", "</td><td>" + "Under Maintenance: ",
+						"</tr></table><font color=\"LEVEL\"> [Manor System] </font></center><br>" + "<table width=\"100%\"><tr><td>" + "Disabled: ",
+				CastleManorManager.getInstance().isDisabled() ? "yes" : "no",
+				"</td><td>" + "Under Maintenance: ",
 				CastleManorManager.getInstance().isUnderMaintenance() ? "yes" : "no",
 				"</td></tr><tr><td>" + "Time to refresh: ",
 				formatTime(CastleManorManager.getInstance().getMillisToManorRefresh()),
@@ -189,18 +151,23 @@ public class AdminManor implements IAdminCommandHandler
 						"<button value=\"",
 				CastleManorManager.getInstance().isUnderMaintenance() ? "Set normal" : "Set mainteance",
 				"\" action=\"bypass -h admin_manor_setmaintenance\" width=110 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td>" +
-						"<button value=\"", CastleManorManager.getInstance().isDisabled() ? "Enable" : "Disable",
+						"<button value=\"",
+				CastleManorManager.getInstance().isDisabled() ? "Enable" : "Disable",
 				"\" action=\"bypass -h admin_manor_disable\" width=110 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr><tr><td>" +
 						"<button value=\"Refresh\" action=\"bypass -h admin_manor\" width=110 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td>" +
 						"<button value=\"Back\" action=\"bypass -h admin_admin\" width=110 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr>" +
 						"</table></center>" + "<br><center>Castle Information:<table width=\"100%\">" +
 						"<tr><td></td><td>Current Period</td><td>Next Period</td></tr>");
 
-		for (Castle c : CastleManager.getInstance().getCastles())
-		{
-			StringUtil.append(replyMSG, "<tr><td>", c.getName(), "</td>" + "<td>",
-					String.valueOf(c.getManorCost(CastleManorManager.PERIOD_CURRENT)), "a</td>" + "<td>",
-					String.valueOf(c.getManorCost(CastleManorManager.PERIOD_NEXT)), "a</td>" + "</tr>");
+		for (Castle c : CastleManager.getInstance().getCastles()) {
+			StringUtil.append(replyMSG,
+					"<tr><td>",
+					c.getName(),
+					"</td>" + "<td>",
+					String.valueOf(c.getManorCost(CastleManorManager.PERIOD_CURRENT)),
+					"a</td>" + "<td>",
+					String.valueOf(c.getManorCost(CastleManorManager.PERIOD_NEXT)),
+					"a</td>" + "</tr>");
 		}
 
 		replyMSG.append("</table><br>" + "</body></html>");

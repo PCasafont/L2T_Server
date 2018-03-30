@@ -27,30 +27,27 @@ import l2server.gameserver.model.actor.L2Character;
  *
  * @version $Revision: 1.3.2.1.2.4 $ $Date: 2005/03/27 15:29:57 $
  */
-public class ChangeWaitType extends L2GameServerPacket
-{
+public class ChangeWaitType extends L2GameServerPacket {
 	private int charObjId;
 	private int moveType;
 	private int x, y, z;
-
+	
 	public static final int WT_SITTING = 0;
 	public static final int WT_STANDING = 1;
 	public static final int WT_START_FAKEDEATH = 2;
 	public static final int WT_STOP_FAKEDEATH = 3;
-
-	public ChangeWaitType(L2Character character, int newMoveType)
-	{
+	
+	public ChangeWaitType(L2Character character, int newMoveType) {
 		charObjId = character.getObjectId();
 		moveType = newMoveType;
-
+		
 		x = character.getX();
 		y = character.getY();
 		z = character.getZ();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(charObjId);
 		writeD(moveType);
 		writeD(x);

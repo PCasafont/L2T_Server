@@ -21,22 +21,17 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExShowVariationCancelWindow;
 import l2server.gameserver.network.serverpackets.ExShowVariationMakeWindow;
 
-public class Augment implements IBypassHandler
-{
+public class Augment implements IBypassHandler {
 	private static final String[] COMMANDS = {"Augment"};
 
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null)
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+		if (target == null) {
 			return false;
 		}
 
-		try
-		{
-			switch (Integer.parseInt(command.substring(8, 9).trim()))
-			{
+		try {
+			switch (Integer.parseInt(command.substring(8, 9).trim())) {
 				case 1:
 					activeChar.sendPacket(new ExShowVariationMakeWindow());
 					return true;
@@ -44,17 +39,14 @@ public class Augment implements IBypassHandler
 					activeChar.sendPacket(new ExShowVariationCancelWindow());
 					return true;
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			log.info("Exception in " + getClass().getSimpleName());
 		}
 		return false;
 	}
 
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

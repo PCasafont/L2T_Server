@@ -27,8 +27,7 @@ import java.util.logging.Logger;
  * @version $Revision: 1.1.4.3 $ $Date: 2005/03/27 15:30:09 $
  */
 
-public interface IItemHandler
-{
+public interface IItemHandler {
 	Logger log = Logger.getLogger(IItemHandler.class.getName());
 
 	/**

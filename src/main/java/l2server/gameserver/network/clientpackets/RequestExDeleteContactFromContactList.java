@@ -24,35 +24,29 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @author UnAfraid & mrTJO
  */
-public class RequestExDeleteContactFromContactList extends L2GameClientPacket
-{
+public class RequestExDeleteContactFromContactList extends L2GameClientPacket {
 	private String name;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		name = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
-		if (!Config.ALLOW_MAIL)
-		{
+	protected void runImpl() {
+		if (!Config.ALLOW_MAIL) {
 			return;
 		}
-
-		if (name == null)
-		{
+		
+		if (name == null) {
 			return;
 		}
-
+		
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		activeChar.getContactList().remove(name);
 	}
 }

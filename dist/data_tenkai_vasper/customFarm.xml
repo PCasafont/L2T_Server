@@ -1,102 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <customFarm farmZone="raider_crossroads"  atkMultiplier="0.05" defMultiplier="0.5" overrideDrops="true"> -->
-        <itemDrop itemId="57" min="500000" max="2000000" chance="100" />
-        <itemDrop itemId="18577" min="1" max="2" chance="25" /> <!--Life Stone -->
-        <itemDrop itemId="30298" min="3" max="6" chance="65" /> <!--mastery codex -->
-        <itemDrop itemId="46151" min="3" max="6" chance="24" /> <!--mastery codex 1 -->
-        <itemDrop itemId="46537" min="1" max="2" chance="10" /> <!--mystic fragment crystal -->
-        <itemDrop itemId="30299" min="2" max="1" chance="35" /> <!-- Superior Giant's CoDEX - Discipline -->
-        <itemDrop itemId="46152" min="2" max="1" chance="35" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
-   </customFarm>
-    <customFarm farmZone="ladar" overrideDrops="true">   <!-- Flaming Ladar -->
-        <itemDrop itemId="36550" min="20" max="70" chance="80" /> <!-- Weapon Fragment (Top-grade) -->
-        <itemDrop itemId="36545" min="20" max="70" chance="80" /> <!-- Durandil Wire -->
-        <itemDrop itemId="36565" min="20" max="70" chance="80" /> <!-- Exquisite Synthetic Cokes -->
-        <itemDrop itemId="36515" min="26" max="38" chance="75" /> <!-- Elcyum -->
-        <itemDrop itemId="37559" min="1" max="1" chance="5" /> <!-- Shiny Coin -->
-    </customFarm>
-    <customFarm farmZone="cassius" overrideDrops="true">  <!-- Wind Cassius -->
-        <itemDrop itemId="36550" min="20" max="70" chance="80" /> <!-- Weapon Fragment (Top-grade) -->
-        <itemDrop itemId="36545" min="20" max="70" chance="80" /> <!-- Durandil Wire -->
-        <itemDrop itemId="36565" min="20" max="70" chance="80" /> <!-- Exquisite Synthetic Cokes -->
-        <itemDrop itemId="36515" min="15" max="29" chance="75" /> <!-- Elcyum -->
-        <itemDrop itemId="37559" min="1" max="1" chance="3" /> <!-- Shiny Coin -->
-    </customFarm>
-    <customFarm farmZone="terakan" overrideDrops="true">   <!-- Earth Terakan -->
-        <itemDrop itemId="36550" min="20" max="70" chance="80" /> <!-- Weapon Fragment (Top-grade) -->
-        <itemDrop itemId="36545" min="20" max="70" chance="80" /> <!-- Durandil Wire -->
-        <itemDrop itemId="36565" min="20" max="70" chance="80" /> <!-- Exquisite Synthetic Cokes -->
-        <itemDrop itemId="36515" min="8" max="17" chance="75" /> <!-- Elcyum -->
-    </customFarm>
-    <customFarm farmZone="gainak_siege" adjustDropsPerMob="19471" defMultiplier="50" overrideDrops="true" overrideLevels="105"> <!-- Lvl: 99 | Strength: 15785 | Exp Score: 0 -->
-        <itemDrop itemId="57" min="100000" max="500000" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="36515" min="5" max="20" chance="80" /> <!-- Elcyum -->
-    </customFarm>
-    <customFarm farmZone="open_world_raid_bosses" adjustDropsPerMob="25945"
-                defMultiplier="0.6" overrideLevels="105" hpMultiplier="0.85"
-                overrideDrops="true"> <!-- Lvl: all | Strength: 3633365 | Exp Score: 20-150 -->
-        <itemDrop itemId="57" min="74408201" max="97065914" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="36515" min="344" max="492" chance="100" /> <!-- Elcyum -->
-        <itemDrop itemId="4356" min="16" max="21" chance="100" /> <!-- Gold Einhasad -->
-        <itemDrop itemId="38572" min="1" max="3" chance="80" /> <!-- Apparition Stone lvl 88 -->
-        <itemDrop itemId="38573" min="1" max="4" chance="80" /> <!-- Apparition Stone lvl 93 -->
-        <itemDrop itemId="38574" min="1" max="2" chance="80" /> <!-- Apparition Stone lvl 99 -->
-        <itemDrop itemId="37559" min="60" max="84" chance="80" /> <!-- Shiny Coin -->
-        <itemDrop itemId="20770" min="1" max="1" chance="25" /> <!-- Apple Basket Herb -->
-    </customFarm>
-    <customFarm farmZone="event_island"
-                atkMultiplier="0.8" defMultiplier="20.5" expMultiplier="1.0" overrideLevels="100" overrideDrops="true"> <!-- Lvl: 103 | Strength: 50795 -->
-        <itemDrop itemId="21235" min="1" max="2" chance="100" /> <!-- Milk -->
-    </customFarm>
-    <customFarm farmZone="event_island2"
-                atkMultiplier="1.2" defMultiplier="40.5" expMultiplier="1.0" overrideLevels="100" overrideDrops="true"> <!-- Lvl: 103 | Strength: 50795 -->
-        <itemDrop itemId="21235" min="2" max="4" chance="100" /> <!-- Milk -->
-    </customFarm>
-    <customFarm farmZone="giant_cave"
-                atkMultiplier="1.0" defMultiplier="1.0" expMultiplier="5.0"  overrideLevels="105" overrideDrops="true" > <!-- Lvl: 103 | Strength: 50795 -->
-    <itemDrop itemId="57" min="200000" max="300439" chance="100" />  <!-- Adena -->
-    <itemDrop itemId="37559" min="1" max="5" chance="20" />  <!-- Adena -->
-    </customFarm>
-    <customFarm farmZone="giant_cave1"
-                atkMultiplier="1.7" defMultiplier="2.1"  mdefMultiplier="2.9" expMultiplier="25.0"  overrideLevels="107" overrideDrops="true" > <!-- Lvl: 107 | Strength: 50795 -->
-        <itemDrop itemId="5899" min="3" max="10" chance="24" />   <!--kail COins -->
-        <itemDrop itemId="37559" min="3" max="10" chance="24" />   <!--Shiny Coins -->
-        <itemDrop itemId="36414" min="1" max="3" chance="10" /> <!-- Dragon claws -->
-        <itemDrop itemId="57" min="2500000" max="4500000" chance="100" />  <!-- Adena -->
-    </customFarm>
-    <customFarm farmZone="giant_cave2"
-                atkMultiplier="0.5" defMultiplier="1" mdefMultiplier="1.25" expMultiplier="12.5"  overrideLevels="107" overrideDrops="true" > <!-- Lvl: 107 | Strength: 50795 -->
-        <itemDrop itemId="5899" min="4" max="8" chance="20" />   <!--kail COins -->
-        <itemDrop itemId="37559" min="4" max="8" chance="20" />   <!--Shiny Coins -->
-        <itemDrop itemId="36414" min="1" max="2" chance="5" /> <!-- Dragon claws -->
-        <itemDrop itemId="57" min="1750000" max="2500000" chance="100" />  <!-- Adena -->
-    </customFarm>
-    <customFarm farmZone="world_altar_raids"
-                atkMultiplier="5.0" defMultiplier="2.2" expMultiplier="5.0" overrideLevels="110" overrideDrops="true" > <!-- Lvl: 103 | Strength: 50795 -->
-        <itemDrop itemId="4356" min="1" max="2" chance="40" /> <!-- Gold Einhasad -->
-        <itemDrop itemId="57" min="200000" max="800000" chance="100" /> <!-- Adena -->
-        <itemDrop itemId="36515" min="100" max="300" chance="95" /> <!-- Elcyum -->
-        <itemDrop itemId="36414" min="5" max="10" chance="85" /> <!-- Dragon Claw -->
-        <itemDrop itemId="37559" min="15" max="25" chance="80" /> <!-- Shiny Coin -->
-        <itemDrop itemId="20770" min="1" max="1" chance="10" /> <!-- Apple Basket Herb -->
-        <itemDrop itemId="38572" min="1" max="1" chance="40" /> <!-- Apparition Stone lvl 88 -->
-        <itemDrop itemId="38573" min="1" max="1" chance="40" /> <!-- Apparition Stone lvl 93 -->
-        <itemDrop itemId="38574" min="1" max="1" chance="40" /> <!-- Apparition Stone lvl 99 -->
-    </customFarm>
-    <customFarm farmZone="atelia_fortress"
-                atkMultiplier="2" defMultiplier="5.0" expMultiplier="80" overrideLevels="107" > <!-- Lvl: 103 | Strength: 50795 -->
-        <itemDrop itemId="57" min="250000" max="550000" chance="100" />
-        <itemDrop itemId="46154" min="1" max="2" chance="40" />
-        <itemDrop itemId="46155" min="1" max="1" chance="20" />
-        <spoilDrop itemId="46156" min="1" max="1" chance="60" />
-        <spoilDrop itemId="37559" min="1" max="5" chance="30" />
-        <spoilDrop itemId="36414" min="1" max="3" chance="10" />
-    </customFarm>
-    <customFarm farmZone="hellbound_beleth_magic_circle" atkMultiplier="0.5" adjustDropsPerMob="23354">
-        <itemDrop itemId="57" min="142543" max="213422" chance="100" /> <!-- Adena -->
-        <spoilDrop itemId="37559" min="1" max="1" chance="30" /> <!-- Shiny Coin -->
-        <spoilDrop itemId="4356" min="1" max="1" chance="15" /> <!-- Gold Einhasad -->
-    </customFarm>
+	<customFarm farmZone="raider_crossroads" atkMultiplier="0.05" defMultiplier="0.5" overrideDrops="true">-->
+		<itemDrop itemId="57" min="500000" max="2000000" chance="100" />
+		<itemDrop itemId="18577" min="1" max="2" chance="25" /> <!--Life Stone -->
+		<itemDrop itemId="30298" min="3" max="6" chance="65" /> <!--mastery codex -->
+		<itemDrop itemId="46151" min="3" max="6" chance="24" /> <!--mastery codex 1 -->
+		<itemDrop itemId="46537" min="1" max="2" chance="10" /> <!--mystic fragment crystal -->
+		<itemDrop itemId="30299" min="2" max="1" chance="35" /> <!-- Superior Giant's CoDEX - Discipline -->
+		<itemDrop itemId="46152" min="2" max="1" chance="35" /> <!-- Superior Giant's Codex - Discipline Chapter 1 -->
+	</customFarm>
+	<customFarm farmZone="ladar" overrideDrops="true">   <!-- Flaming Ladar -->
+		<itemDrop itemId="36550" min="20" max="70" chance="80" /> <!-- Weapon Fragment (Top-grade) -->
+		<itemDrop itemId="36545" min="20" max="70" chance="80" /> <!-- Durandil Wire -->
+		<itemDrop itemId="36565" min="20" max="70" chance="80" /> <!-- Exquisite Synthetic Cokes -->
+		<itemDrop itemId="36515" min="26" max="38" chance="75" /> <!-- Elcyum -->
+		<itemDrop itemId="37559" min="1" max="1" chance="5" /> <!-- Shiny Coin -->
+	</customFarm>
+	<customFarm farmZone="cassius" overrideDrops="true">  <!-- Wind Cassius -->
+		<itemDrop itemId="36550" min="20" max="70" chance="80" /> <!-- Weapon Fragment (Top-grade) -->
+		<itemDrop itemId="36545" min="20" max="70" chance="80" /> <!-- Durandil Wire -->
+		<itemDrop itemId="36565" min="20" max="70" chance="80" /> <!-- Exquisite Synthetic Cokes -->
+		<itemDrop itemId="36515" min="15" max="29" chance="75" /> <!-- Elcyum -->
+		<itemDrop itemId="37559" min="1" max="1" chance="3" /> <!-- Shiny Coin -->
+	</customFarm>
+	<customFarm farmZone="terakan" overrideDrops="true">   <!-- Earth Terakan -->
+		<itemDrop itemId="36550" min="20" max="70" chance="80" /> <!-- Weapon Fragment (Top-grade) -->
+		<itemDrop itemId="36545" min="20" max="70" chance="80" /> <!-- Durandil Wire -->
+		<itemDrop itemId="36565" min="20" max="70" chance="80" /> <!-- Exquisite Synthetic Cokes -->
+		<itemDrop itemId="36515" min="8" max="17" chance="75" /> <!-- Elcyum -->
+	</customFarm>
+	<customFarm farmZone="gainak_siege" adjustDropsPerMob="19471" defMultiplier="50" overrideDrops="true"
+				overrideLevels="105"> <!-- Lvl: 99 | Strength: 15785 | Exp Score: 0 -->
+		<itemDrop itemId="57" min="100000" max="500000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="36515" min="5" max="20" chance="80" /> <!-- Elcyum -->
+	</customFarm>
+	<customFarm farmZone="open_world_raid_bosses" adjustDropsPerMob="25945"
+				defMultiplier="0.6" overrideLevels="105" hpMultiplier="0.85"
+				overrideDrops="true"> <!-- Lvl: all | Strength: 3633365 | Exp Score: 20-150 -->
+		<itemDrop itemId="57" min="74408201" max="97065914" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="36515" min="344" max="492" chance="100" /> <!-- Elcyum -->
+		<itemDrop itemId="4356" min="16" max="21" chance="100" /> <!-- Gold Einhasad -->
+		<itemDrop itemId="38572" min="1" max="3" chance="80" /> <!-- Apparition Stone lvl 88 -->
+		<itemDrop itemId="38573" min="1" max="4" chance="80" /> <!-- Apparition Stone lvl 93 -->
+		<itemDrop itemId="38574" min="1" max="2" chance="80" /> <!-- Apparition Stone lvl 99 -->
+		<itemDrop itemId="37559" min="60" max="84" chance="80" /> <!-- Shiny Coin -->
+		<itemDrop itemId="20770" min="1" max="1" chance="25" /> <!-- Apple Basket Herb -->
+	</customFarm>
+	<customFarm farmZone="event_island"
+				atkMultiplier="0.8" defMultiplier="20.5" expMultiplier="1.0" overrideLevels="100"
+				overrideDrops="true"> <!-- Lvl: 103 | Strength: 50795 -->
+		<itemDrop itemId="21235" min="1" max="2" chance="100" /> <!-- Milk -->
+	</customFarm>
+	<customFarm farmZone="event_island2"
+				atkMultiplier="1.2" defMultiplier="40.5" expMultiplier="1.0" overrideLevels="100"
+				overrideDrops="true"> <!-- Lvl: 103 | Strength: 50795 -->
+		<itemDrop itemId="21235" min="2" max="4" chance="100" /> <!-- Milk -->
+	</customFarm>
+	<customFarm farmZone="giant_cave"
+				atkMultiplier="1.0" defMultiplier="1.0" expMultiplier="5.0" overrideLevels="105"
+				overrideDrops="true"> <!-- Lvl: 103 | Strength: 50795 -->
+		<itemDrop itemId="57" min="200000" max="300439" chance="100" />  <!-- Adena -->
+		<itemDrop itemId="37559" min="1" max="5" chance="20" />  <!-- Adena -->
+	</customFarm>
+	<customFarm farmZone="giant_cave1"
+				atkMultiplier="1.7" defMultiplier="2.1" mdefMultiplier="2.9" expMultiplier="25.0" overrideLevels="107"
+				overrideDrops="true"> <!-- Lvl: 107 | Strength: 50795 -->
+		<itemDrop itemId="5899" min="3" max="10" chance="24" />   <!--kail COins -->
+		<itemDrop itemId="37559" min="3" max="10" chance="24" />   <!--Shiny Coins -->
+		<itemDrop itemId="36414" min="1" max="3" chance="10" /> <!-- Dragon claws -->
+		<itemDrop itemId="57" min="2500000" max="4500000" chance="100" />  <!-- Adena -->
+	</customFarm>
+	<customFarm farmZone="giant_cave2"
+				atkMultiplier="0.5" defMultiplier="1" mdefMultiplier="1.25" expMultiplier="12.5" overrideLevels="107"
+				overrideDrops="true"> <!-- Lvl: 107 | Strength: 50795 -->
+		<itemDrop itemId="5899" min="4" max="8" chance="20" />   <!--kail COins -->
+		<itemDrop itemId="37559" min="4" max="8" chance="20" />   <!--Shiny Coins -->
+		<itemDrop itemId="36414" min="1" max="2" chance="5" /> <!-- Dragon claws -->
+		<itemDrop itemId="57" min="1750000" max="2500000" chance="100" />  <!-- Adena -->
+	</customFarm>
+	<customFarm farmZone="world_altar_raids"
+				atkMultiplier="5.0" defMultiplier="2.2" expMultiplier="5.0" overrideLevels="110"
+				overrideDrops="true"> <!-- Lvl: 103 | Strength: 50795 -->
+		<itemDrop itemId="4356" min="1" max="2" chance="40" /> <!-- Gold Einhasad -->
+		<itemDrop itemId="57" min="200000" max="800000" chance="100" /> <!-- Adena -->
+		<itemDrop itemId="36515" min="100" max="300" chance="95" /> <!-- Elcyum -->
+		<itemDrop itemId="36414" min="5" max="10" chance="85" /> <!-- Dragon Claw -->
+		<itemDrop itemId="37559" min="15" max="25" chance="80" /> <!-- Shiny Coin -->
+		<itemDrop itemId="20770" min="1" max="1" chance="10" /> <!-- Apple Basket Herb -->
+		<itemDrop itemId="38572" min="1" max="1" chance="40" /> <!-- Apparition Stone lvl 88 -->
+		<itemDrop itemId="38573" min="1" max="1" chance="40" /> <!-- Apparition Stone lvl 93 -->
+		<itemDrop itemId="38574" min="1" max="1" chance="40" /> <!-- Apparition Stone lvl 99 -->
+	</customFarm>
+	<customFarm farmZone="atelia_fortress"
+				atkMultiplier="2" defMultiplier="5.0" expMultiplier="80" overrideLevels="107"> <!-- Lvl: 103 | Strength: 50795 -->
+		<itemDrop itemId="57" min="250000" max="550000" chance="100" />
+		<itemDrop itemId="46154" min="1" max="2" chance="40" />
+		<itemDrop itemId="46155" min="1" max="1" chance="20" />
+		<spoilDrop itemId="46156" min="1" max="1" chance="60" />
+		<spoilDrop itemId="37559" min="1" max="5" chance="30" />
+		<spoilDrop itemId="36414" min="1" max="3" chance="10" />
+	</customFarm>
+	<customFarm farmZone="hellbound_beleth_magic_circle" atkMultiplier="0.5" adjustDropsPerMob="23354">
+		<itemDrop itemId="57" min="142543" max="213422" chance="100" /> <!-- Adena -->
+		<spoilDrop itemId="37559" min="1" max="1" chance="30" /> <!-- Shiny Coin -->
+		<spoilDrop itemId="4356" min="1" max="1" chance="15" /> <!-- Gold Einhasad -->
+	</customFarm>
 
 </list>

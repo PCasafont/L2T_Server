@@ -29,8 +29,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 
-public class Forum
-{
+public class Forum {
 	//type
 	public static final int ROOT = 0;
 	public static final int NORMAL = 1;
@@ -61,8 +60,7 @@ public class Forum
 	 * addForum(l2server.gameserver.communitybbs.BB.Forum)} to add forum
 	 * to the forums manager.
 	 */
-	public Forum(int Forumid, Forum FParent)
-	{
+	public Forum(int Forumid, Forum FParent) {
 		forumId = Forumid;
 		fParent = FParent;
 		children = new ArrayList<>();
@@ -78,8 +76,7 @@ public class Forum
 	 * @param type
 	 * @param perm
 	 */
-	public Forum(String name, Forum parent, int type, int perm, int OwnerID)
-	{
+	public Forum(String name, Forum parent, int type, int perm, int OwnerID) {
 		forumName = name;
 		forumId = ForumsBBSManager.getInstance().getANewID();
 		//ForumParent = parent.getID();
@@ -98,18 +95,15 @@ public class Forum
 	/**
 	 *
 	 */
-	private void load()
-	{
+	private void load() {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("SELECT * FROM forums WHERE forum_id=?");
 			statement.setInt(1, forumId);
 			ResultSet result = statement.executeQuery();
 
-			if (result.next())
-			{
+			if (result.next()) {
 				forumName = result.getString("forum_name");
 				//ForumParent = result.getInt("forum_parent");
 				forumPost = result.getInt("forum_post");
@@ -119,44 +113,37 @@ public class Forum
 			}
 			result.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Data error on Forum " + forumId + " : " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement =
-					con.prepareStatement("SELECT * FROM topic WHERE topic_forum_id=? ORDER BY topic_id DESC");
+			PreparedStatement statement = con.prepareStatement("SELECT * FROM topic WHERE topic_forum_id=? ORDER BY topic_id DESC");
 			statement.setInt(1, forumId);
 			ResultSet result = statement.executeQuery();
 
-			while (result.next())
-			{
-				Topic t = new Topic(Topic.ConstructorType.RESTORE, result.getInt("topic_id"),
-						result.getInt("topic_forum_id"), result.getString("topic_name"), result.getLong("topic_date"),
-						result.getString("topic_ownername"), result.getInt("topic_ownerid"),
-						result.getInt("topic_type"), result.getInt("topic_reply"));
+			while (result.next()) {
+				Topic t = new Topic(Topic.ConstructorType.RESTORE,
+						result.getInt("topic_id"),
+						result.getInt("topic_forum_id"),
+						result.getString("topic_name"),
+						result.getLong("topic_date"),
+						result.getString("topic_ownername"),
+						result.getInt("topic_ownerid"),
+						result.getInt("topic_type"),
+						result.getInt("topic_reply"));
 				topic.put(t.getID(), t);
-				if (t.getID() > TopicBBSManager.getInstance().getMaxID(this))
-				{
+				if (t.getID() > TopicBBSManager.getInstance().getMaxID(this)) {
 					TopicBBSManager.getInstance().setMaxID(t.getID(), this);
 				}
 			}
 			result.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Data error on Forum " + forumId + " : " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
@@ -164,49 +151,39 @@ public class Forum
 	/**
 	 *
 	 */
-	private void getChildren()
-	{
+	private void getChildren() {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("SELECT forum_id FROM forums WHERE forum_parent=?");
 			statement.setInt(1, forumId);
 			ResultSet result = statement.executeQuery();
 
-			while (result.next())
-			{
+			while (result.next()) {
 				Forum f = new Forum(result.getInt("forum_id"), this);
 				children.add(f);
 				ForumsBBSManager.getInstance().addForum(f);
 			}
 			result.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Data error on Forum (children): " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public int getTopicSize()
-	{
+	public int getTopicSize() {
 		vload();
 		return topic.size();
 	}
 
-	public Topic getTopic(int j)
-	{
+	public Topic getTopic(int j) {
 		vload();
 		return topic.get(j);
 	}
 
-	public void addTopic(Topic t)
-	{
+	public void addTopic(Topic t) {
 		vload();
 		topic.put(t.getID(), t);
 	}
@@ -214,19 +191,16 @@ public class Forum
 	/**
 	 * @return
 	 */
-	public int getID()
-	{
+	public int getID() {
 		return forumId;
 	}
 
-	public String getName()
-	{
+	public String getName() {
 		vload();
 		return forumName;
 	}
 
-	public int getType()
-	{
+	public int getType() {
 		vload();
 		return forumType;
 	}
@@ -235,13 +209,10 @@ public class Forum
 	 * @param name
 	 * @return
 	 */
-	public Forum getChildByName(String name)
-	{
+	public Forum getChildByName(String name) {
 		vload();
-		for (Forum f : children)
-		{
-			if (f.getName().equals(name))
-			{
+		for (Forum f : children) {
+			if (f.getName().equals(name)) {
 				return f;
 			}
 		}
@@ -251,19 +222,16 @@ public class Forum
 	/**
 	 * @param id
 	 */
-	public void rmTopicByID(int id)
-	{
+	public void rmTopicByID(int id) {
 		topic.remove(id);
 	}
 
 	/**
 	 *
 	 */
-	public void insertIntoDb()
-	{
+	public void insertIntoDb() {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(
 					"INSERT INTO forums (forum_id,forum_name,forum_parent,forum_post,forum_type,forum_perm,forum_owner_id) VALUES (?,?,?,?,?,?,?)");
@@ -276,13 +244,9 @@ public class Forum
 			statement.setInt(7, ownerID);
 			statement.execute();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Error while saving new Forum to db " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
@@ -290,10 +254,8 @@ public class Forum
 	/**
 	 *
 	 */
-	public void vload()
-	{
-		if (!loaded)
-		{
+	public void vload() {
+		if (!loaded) {
 			load();
 			getChildren();
 			loaded = true;

@@ -22,62 +22,54 @@ import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2EffectType;
 
-public class EffectPetrification extends L2Effect
-{
-	public EffectPetrification(Env env, L2EffectTemplate template)
-	{
+public class EffectPetrification extends L2Effect {
+	public EffectPetrification(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.PETRIFY;
 	}
-
+	
 	@Override
-	public long getEffectMask()
-	{
+	public long getEffectMask() {
 		return L2EffectType.PETRIFY.getMask() | L2EffectType.INVINCIBLE.getMask();
 	}
-
+	
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.PETRIFY;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		getEffected().startVisualEffect(VisualEffect.HOLD_2);
 		getEffected().startParalyze();
 		return super.onStart();
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		getEffected().stopVisualEffect(VisualEffect.HOLD_2);
 		getEffected().stopParalyze(false);
 		super.onExit();
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 }

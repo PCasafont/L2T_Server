@@ -29,106 +29,86 @@ import l2server.util.Rnd;
  *
  * @version $Revision: 1.0.0.0 $ $Date: 2006/06/16 $
  */
-public final class L2GrandBossInstance extends L2MonsterInstance
-{
+public final class L2GrandBossInstance extends L2MonsterInstance {
 	private static final int BOSS_MAINTENANCE_INTERVAL = 10000;
 	private boolean useRaidCurse = true;
-
+	
 	/**
 	 * Constructor for L2GrandBossInstance. This represent all grandbosses.
 	 *
 	 * @param objectId ID of the instance
 	 * @param template L2NpcTemplate of the instance
 	 */
-	public L2GrandBossInstance(int objectId, L2NpcTemplate template)
-	{
+	public L2GrandBossInstance(int objectId, L2NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2GrandBossInstance);
 		setIsRaid(true);
 	}
-
+	
 	@Override
-	protected int getMaintenanceInterval()
-	{
+	protected int getMaintenanceInterval() {
 		return BOSS_MAINTENANCE_INTERVAL;
 	}
-
+	
 	@Override
-	public void onSpawn()
-	{
+	public void onSpawn() {
 		super.onSpawn();
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.actor.instance.L2MonsterInstance#doDie(l2server.gameserver.model.actor.L2Character)
 	 */
 	@Override
-	public boolean doDie(L2Character killer)
-	{
-		if (!super.doDie(killer))
-		{
+	public boolean doDie(L2Character killer) {
+		if (!super.doDie(killer)) {
 			return false;
 		}
 		L2PcInstance player = null;
-
-		if (killer instanceof L2PcInstance)
-		{
+		
+		if (killer instanceof L2PcInstance) {
 			player = (L2PcInstance) killer;
-		}
-		else if (killer instanceof L2Summon)
-		{
+		} else if (killer instanceof L2Summon) {
 			player = ((L2Summon) killer).getOwner();
 		}
-
-		if (player != null)
-		{
+		
+		if (player != null) {
 			broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.RAID_WAS_SUCCESSFUL));
-			if (player.getParty() != null)
-			{
-				for (L2PcInstance member : player.getParty().getPartyMembers())
-				{
+			if (player.getParty() != null) {
+				for (L2PcInstance member : player.getParty().getPartyMembers()) {
 					RaidBossPointsManager.getInstance().addPoints(member, getNpcId(), getLevel() / 2 + Rnd.get(-5, 5));
-					if (member.isNoble())
-					{
+					if (member.isNoble()) {
 						HeroesManager.getInstance().setRBkilled(member.getObjectId(), getNpcId());
 					}
 				}
-			}
-			else
-			{
+			} else {
 				RaidBossPointsManager.getInstance().addPoints(player, getNpcId(), getLevel() / 2 + Rnd.get(-5, 5));
-				if (player.isNoble())
-				{
+				if (player.isNoble()) {
 					HeroesManager.getInstance().setRBkilled(player.getObjectId(), getNpcId());
 				}
 			}
 		}
 		return true;
 	}
-
+	
 	@Override
-	public float getVitalityPoints(int damage)
-	{
+	public float getVitalityPoints(int damage) {
 		return -super.getVitalityPoints(damage) / 100;
 	}
-
+	
 	@Override
-	public boolean useVitalityRate()
-	{
+	public boolean useVitalityRate() {
 		return false;
 	}
-
-	public void setUseRaidCurse(boolean val)
-	{
+	
+	public void setUseRaidCurse(boolean val) {
 		useRaidCurse = val;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.model.actor.L2Character#giveRaidCurse()
 	 */
 	@Override
-	public boolean giveRaidCurse()
-	{
+	public boolean giveRaidCurse() {
 		return useRaidCurse;
 	}
 }

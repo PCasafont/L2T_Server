@@ -1,36 +1,36 @@
 ﻿<list>
-    <buff skillId="5627" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="false"
-          forSummon="true" /> <!-- Adventurer's Wind Walk -->
-    <buff skillId="5628" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="false"
-          forSummon="true" /> <!-- Adventurer's Shield -->
-    <buff skillId="4338" skillLevel="1" lowerLevel="16" upperLevel="34" isMagic="false"
-          forSummon="false" /> <!-- Adventurer's Life Cubic -->
-    <buff skillId="5629" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="false"
-          forSummon="true" /> <!-- Adventurer's Blessed Body -->
-    <buff skillId="5630" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="false"
-          forSummon="true" /> <!-- Adventurer's Vampiric Rage -->
-    <buff skillId="5631" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="false"
-          forSummon="true" /> <!-- Adventurer's Regeneration -->
-    <buff skillId="5632" skillLevel="1" lowerLevel="6" upperLevel="39" isMagic="false"
-          forSummon="true" /> <!-- Adventurer's Haste -->
-    <buff skillId="5627" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="true"
-          forSummon="false" /> <!-- Adventurer's Wind Walk -->
-    <buff skillId="5628" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="true"
-          forSummon="false" /> <!-- Adventurer's Shield -->
-    <buff skillId="4338" skillLevel="1" lowerLevel="16" upperLevel="34" isMagic="true"
-          forSummon="false" /> <!-- Adventurer's Life Cubic -->
-    <buff skillId="5633" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="true"
-          forSummon="true" /> <!-- Adventurer's Blessed Soul -->
-    <buff skillId="5634" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="true"
-          forSummon="true" /> <!-- Adventurer's Acumen -->
-    <buff skillId="5635" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="true"
-          forSummon="true" /> <!-- Adventurer's Concentration -->
-    <buff skillId="5636" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="true"
-          forSummon="true" /> <!-- Adventurer's Empower -->
-    <buff skillId="5632" skillLevel="1" lowerLevel="40" upperLevel="75" isMagic="false"
-          forSummon="true" /> <!-- Adventurer's Haste -->
-    <buff skillId="5637" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="false"
-          forSummon="true" /> <!-- Adventurer's Magic Barrier -->
-    <buff skillId="5637" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="true"
-          forSummon="false" /> <!-- Adventurer's Magic Barrier -->
+	<buff skillId="5627" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="false"
+		  forSummon="true" /> <!-- Adventurer's Wind Walk -->
+	<buff skillId="5628" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="false"
+		  forSummon="true" /> <!-- Adventurer's Shield -->
+	<buff skillId="4338" skillLevel="1" lowerLevel="16" upperLevel="34" isMagic="false"
+		  forSummon="false" /> <!-- Adventurer's Life Cubic -->
+	<buff skillId="5629" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="false"
+		  forSummon="true" /> <!-- Adventurer's Blessed Body -->
+	<buff skillId="5630" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="false"
+		  forSummon="true" /> <!-- Adventurer's Vampiric Rage -->
+	<buff skillId="5631" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="false"
+		  forSummon="true" /> <!-- Adventurer's Regeneration -->
+	<buff skillId="5632" skillLevel="1" lowerLevel="6" upperLevel="39" isMagic="false"
+		  forSummon="true" /> <!-- Adventurer's Haste -->
+	<buff skillId="5627" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="true"
+		  forSummon="false" /> <!-- Adventurer's Wind Walk -->
+	<buff skillId="5628" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="true"
+		  forSummon="false" /> <!-- Adventurer's Shield -->
+	<buff skillId="4338" skillLevel="1" lowerLevel="16" upperLevel="34" isMagic="true"
+		  forSummon="false" /> <!-- Adventurer's Life Cubic -->
+	<buff skillId="5633" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="true"
+		  forSummon="true" /> <!-- Adventurer's Blessed Soul -->
+	<buff skillId="5634" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="true"
+		  forSummon="true" /> <!-- Adventurer's Acumen -->
+	<buff skillId="5635" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="true"
+		  forSummon="true" /> <!-- Adventurer's Concentration -->
+	<buff skillId="5636" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="true"
+		  forSummon="true" /> <!-- Adventurer's Empower -->
+	<buff skillId="5632" skillLevel="1" lowerLevel="40" upperLevel="75" isMagic="false"
+		  forSummon="true" /> <!-- Adventurer's Haste -->
+	<buff skillId="5637" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="false"
+		  forSummon="true" /> <!-- Adventurer's Magic Barrier -->
+	<buff skillId="5637" skillLevel="1" lowerLevel="6" upperLevel="75" isMagic="true"
+		  forSummon="false" /> <!-- Adventurer's Magic Barrier -->
 </list>

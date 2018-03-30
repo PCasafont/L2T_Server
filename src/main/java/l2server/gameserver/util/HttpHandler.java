@@ -17,6 +17,7 @@ package l2server.gameserver.util;
 
 import l2server.log.Log;
 
+import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -25,30 +26,24 @@ import java.net.CookieManager;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import javax.net.ssl.HttpsURLConnection;
-
 /**
  * @author Maxime
  */
 
-public class HttpHandler
-{
+public class HttpHandler {
 	private static final String USER_AGENT =
 			"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";
 
 	private static final boolean DEV_MODE = false;
 
-	public HttpHandler()
-	{
+	public HttpHandler() {
 		CookieHandler.setDefault(new CookieManager());
 	}
 
-	public final String getWebResponse(final String url)
-	{
+	public final String getWebResponse(final String url) {
 		String result = null;
 
-		try
-		{
+		try {
 			URL obj = new URL(url);
 
 			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -60,8 +55,7 @@ public class HttpHandler
 
 			int responseCode = con.getResponseCode();
 
-			if (DEV_MODE)
-			{
+			if (DEV_MODE) {
 				Log.info("\nSending 'GET' request to URL : " + url);
 				Log.info("Response Code : " + responseCode);
 			}
@@ -71,17 +65,14 @@ public class HttpHandler
 			String inputLine;
 			StringBuilder response = new StringBuilder();
 
-			while ((inputLine = in.readLine()) != null)
-			{
+			while ((inputLine = in.readLine()) != null) {
 				response.append(inputLine);
 			}
 
 			in.close();
 
 			result = response.toString();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
@@ -89,12 +80,10 @@ public class HttpHandler
 		return result;
 	}
 
-	public final String doPost(final String url, final String post)
-	{
+	public final String doPost(final String url, final String post) {
 		String result = null;
 
-		try
-		{
+		try {
 			HttpsURLConnection connection = (HttpsURLConnection) new URL(url).openConnection();
 
 			connection.setRequestMethod("POST");
@@ -111,8 +100,7 @@ public class HttpHandler
 
 			int responseCode = connection.getResponseCode();
 
-			if (DEV_MODE)
-			{
+			if (DEV_MODE) {
 				Log.info("Sending 'POST' request to...: " + url + ".");
 				Log.info("Post...: " + post + ".");
 				Log.info("Response Code...: " + responseCode + ".");
@@ -123,17 +111,14 @@ public class HttpHandler
 			String inputLine;
 			StringBuilder response = new StringBuilder();
 
-			while ((inputLine = bufferedReader.readLine()) != null)
-			{
+			while ((inputLine = bufferedReader.readLine()) != null) {
 				response.append(inputLine);
 			}
 
 			bufferedReader.close();
 
 			result = response.toString();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}

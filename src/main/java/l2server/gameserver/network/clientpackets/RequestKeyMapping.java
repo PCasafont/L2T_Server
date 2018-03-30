@@ -22,15 +22,13 @@ import l2server.gameserver.network.serverpackets.ExUISetting;
 /**
  * @author KenM / mrTJO
  */
-public class RequestKeyMapping extends L2GameClientPacket
-{
+public class RequestKeyMapping extends L2GameClientPacket {
 
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// trigger (no data)
 	}
 
@@ -38,23 +36,19 @@ public class RequestKeyMapping extends L2GameClientPacket
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
-		if (Config.STORE_UI_SETTINGS)
-		{
+		if (Config.STORE_UI_SETTINGS) {
 			activeChar.sendPacket(new ExUISetting(activeChar));
 		}
 	}
 
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

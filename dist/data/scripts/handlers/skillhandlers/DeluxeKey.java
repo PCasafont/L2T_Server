@@ -27,8 +27,7 @@ import java.util.logging.Logger;
 /**
  * @author Julian
  */
-public class DeluxeKey implements ISkillHandler
-{
+public class DeluxeKey implements ISkillHandler {
 	private static Logger log = Logger.getLogger(DeluxeKey.class.getName());
 
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.DELUXE_KEY_UNLOCK};
@@ -37,17 +36,14 @@ public class DeluxeKey implements ISkillHandler
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (!(activeChar instanceof L2PcInstance))
-		{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+		if (!(activeChar instanceof L2PcInstance)) {
 			return;
 		}
 
 		L2Object[] targetList = skill.getTargetList(activeChar);
 
-		if (targetList == null)
-		{
+		if (targetList == null) {
 			return;
 		}
 
@@ -62,8 +58,7 @@ public class DeluxeKey implements ISkillHandler
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

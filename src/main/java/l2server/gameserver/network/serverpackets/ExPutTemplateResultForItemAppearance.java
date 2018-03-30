@@ -18,20 +18,17 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExPutTemplateResultForItemAppearance extends L2GameServerPacket
-{
+public class ExPutTemplateResultForItemAppearance extends L2GameServerPacket {
 	private int answer;
-
-	public ExPutTemplateResultForItemAppearance(int answer)
-	{
+	
+	public ExPutTemplateResultForItemAppearance(int answer) {
 		this.answer = answer;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(answer);
 	}
 }

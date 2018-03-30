@@ -17,34 +17,28 @@ package l2server.gameserver.model.actor.stat;
 
 import l2server.gameserver.model.actor.L2Vehicle;
 
-public class VehicleStat extends CharStat
-{
+public class VehicleStat extends CharStat {
 	private float moveSpeed = 0;
 	private int rotationSpeed = 0;
-
-	public VehicleStat(L2Vehicle activeChar)
-	{
+	
+	public VehicleStat(L2Vehicle activeChar) {
 		super(activeChar);
 	}
-
+	
 	@Override
-	public float getMoveSpeed()
-	{
+	public float getMoveSpeed() {
 		return moveSpeed;
 	}
-
-	public final void setMoveSpeed(float speed)
-	{
+	
+	public final void setMoveSpeed(float speed) {
 		moveSpeed = speed;
 	}
-
-	public final int getRotationSpeed()
-	{
+	
+	public final int getRotationSpeed() {
 		return rotationSpeed;
 	}
-
-	public final void setRotationSpeed(int speed)
-	{
+	
+	public final void setRotationSpeed(int speed) {
 		rotationSpeed = speed;
 	}
 }

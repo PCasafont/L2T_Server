@@ -21,14 +21,12 @@ import l2server.util.network.BaseSendablePacket;
 /**
  * @author -Wooden-
  */
-public class AuthResponse extends BaseSendablePacket
-{
+public class AuthResponse extends BaseSendablePacket {
 
 	/**
 	 * @param serverId
 	 */
-	public AuthResponse(int serverId)
-	{
+	public AuthResponse(int serverId) {
 		writeC(0x02);
 		writeC(serverId);
 		writeS(GameServerTable.getInstance().getServerNameById(serverId));
@@ -38,8 +36,7 @@ public class AuthResponse extends BaseSendablePacket
 	 * @see l2server.loginserver.serverpackets.ServerBasePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent()
-	{
+	public byte[] getContent() {
 		return getBytes();
 	}
 }

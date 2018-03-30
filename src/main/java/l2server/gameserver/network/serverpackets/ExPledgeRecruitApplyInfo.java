@@ -18,18 +18,15 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExPledgeRecruitApplyInfo extends L2GameServerPacket
-{
+public class ExPledgeRecruitApplyInfo extends L2GameServerPacket {
 	private int info;
-
-	public ExPledgeRecruitApplyInfo(int info)
-	{
+	
+	public ExPledgeRecruitApplyInfo(int info) {
 		this.info = info;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(info);
 	}
 }

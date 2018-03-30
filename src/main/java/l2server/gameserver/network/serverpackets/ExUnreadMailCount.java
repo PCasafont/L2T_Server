@@ -18,18 +18,15 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExUnreadMailCount extends L2GameServerPacket
-{
+public class ExUnreadMailCount extends L2GameServerPacket {
 	private final int count;
-
-	public ExUnreadMailCount(int count)
-	{
+	
+	public ExUnreadMailCount(int count) {
 		this.count = count;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(count);
 	}
 }

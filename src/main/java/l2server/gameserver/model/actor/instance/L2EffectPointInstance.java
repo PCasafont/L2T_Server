@@ -20,45 +20,39 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 
-public class L2EffectPointInstance extends L2Npc
-{
+public class L2EffectPointInstance extends L2Npc {
 	private final L2PcInstance owner;
-
-	public L2EffectPointInstance(int objectId, L2NpcTemplate template, L2Character owner)
-	{
+	
+	public L2EffectPointInstance(int objectId, L2NpcTemplate template, L2Character owner) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2EffectPointInstance);
 		setIsInvul(false);
-        this.owner = owner == null ? null : owner.getActingPlayer();
+		this.owner = owner == null ? null : owner.getActingPlayer();
 		setInstanceId(this.owner.getInstanceId());
 	}
-
+	
 	@Override
-	public L2PcInstance getActingPlayer()
-	{
+	public L2PcInstance getActingPlayer() {
 		return owner;
 	}
-
+	
 	/**
 	 * this is called when a player interacts with this NPC
 	 *
 	 * @param player
 	 */
 	@Override
-	public void onAction(L2PcInstance player, boolean interact)
-	{
+	public void onAction(L2PcInstance player, boolean interact) {
 		// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
-
+	
 	@Override
-	public void onActionShift(L2PcInstance player)
-	{
-		if (player == null)
-		{
+	public void onActionShift(L2PcInstance player) {
+		if (player == null) {
 			return;
 		}
-
+		
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 }

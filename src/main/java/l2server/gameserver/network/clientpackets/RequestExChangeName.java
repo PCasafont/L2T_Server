@@ -23,8 +23,7 @@ import l2server.log.Log;
  *
  * @author JIV
  */
-public class RequestExChangeName extends L2GameClientPacket
-{
+public class RequestExChangeName extends L2GameClientPacket {
 	private String newName;
 	private int type;
 	private int charSlot;
@@ -33,8 +32,7 @@ public class RequestExChangeName extends L2GameClientPacket
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		type = readD();
 		newName = readS();
 		charSlot = readD();
@@ -44,8 +42,7 @@ public class RequestExChangeName extends L2GameClientPacket
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		Log.info("Recieved " + getType() + " name: " + newName + " type: " + type + " CharSlot: " + charSlot);
 	}
 }

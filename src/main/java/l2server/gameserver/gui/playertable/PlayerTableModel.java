@@ -1,5 +1,5 @@
 /*
-
+ 
  */
 
 package l2server.gameserver.gui.playertable;
@@ -14,41 +14,34 @@ import javax.swing.table.AbstractTableModel;
 /**
  * @author KenM
  */
-class PlayerTableModel extends AbstractTableModel
-{
+class PlayerTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
-
+	
 	private static final String[] columnNames = {"Id", "Name", "Level"};
-
+	
 	private L2PcInstance[] players = new L2PcInstance[]{};
-
-	public PlayerTableModel()
-	{
+	
+	public PlayerTableModel() {
 	}
-
+	
 	@Override
-	public int getColumnCount()
-	{
+	public int getColumnCount() {
 		return columnNames.length;
 	}
-
+	
 	@Override
-	public int getRowCount()
-	{
+	public int getRowCount() {
 		return players.length;
 	}
-
+	
 	@Override
-	public String getColumnName(int col)
-	{
+	public String getColumnName(int col) {
 		return columnNames[col];
 	}
-
+	
 	@Override
-	public Object getValueAt(int row, int col)
-	{
-		switch (col)
-		{
+	public Object getValueAt(int row, int col) {
+		switch (col) {
 			case 0:
 				return players[row].getObjectId();
 			case 1:
@@ -58,36 +51,29 @@ class PlayerTableModel extends AbstractTableModel
 		}
 		return "";
 	}
-
-	public synchronized boolean updateData()
-	{
+	
+	public synchronized boolean updateData() {
 		L2PcInstance[] players = new L2PcInstance[L2World.getInstance().getAllPlayersCount()];
 		L2World.getInstance().getAllPlayersArray().toArray(players);
 		int playerCount = 0;
 		int shopCount = 0;
-		for (L2PcInstance player : players)
-		{
-			if (player != null && player.isOnline())
-			{
-				if (player.getClient() == null || player.getClient().isDetached())
-				{
+		for (L2PcInstance player : players) {
+			if (player != null && player.isOnline()) {
+				if (player.getClient() == null || player.getClient().isDetached()) {
 					shopCount++;
-				}
-				else
-				{
+				} else {
 					playerCount++;
 				}
 			}
 		}
-
+		
 		ServerGui.Frame.setTitle(
-				"L2 Server [" + Config.SERVER_NAME + "] | Players online: " + playerCount + " | Offline shops: " +
-						shopCount + " | Total: " + (playerCount + shopCount));
-		if (players.length == players.length && !(players.length > 0 && players[0] == players[0]))
-		{
+				"L2 Server [" + Config.SERVER_NAME + "] | Players online: " + playerCount + " | Offline shops: " + shopCount + " | Total: " +
+						(playerCount + shopCount));
+		if (players.length == players.length && !(players.length > 0 && players[0] == players[0])) {
 			return false;
 		}
-
+		
 		this.players = players;
 		return true;
 	}

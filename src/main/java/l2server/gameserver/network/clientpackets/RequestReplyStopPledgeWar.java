@@ -25,42 +25,34 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @version $Revision: 1.4.2.1.2.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestReplyStopPledgeWar extends L2GameClientPacket
-{
+public final class RequestReplyStopPledgeWar extends L2GameClientPacket {
 	//
-
+	
 	private int answer;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		@SuppressWarnings("unused") String reqName = readS();
 		answer = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 		L2PcInstance requestor = activeChar.getActiveRequester();
-		if (requestor == null)
-		{
+		if (requestor == null) {
 			return;
 		}
-
-		if (answer == 1)
-		{
+		
+		if (answer == 1) {
 			ClanWarManager.getInstance().getWar(requestor.getClan(), activeChar.getClan()).stop();
-		}
-		else
-		{
+		} else {
 			requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.REQUEST_TO_END_WAR_HAS_BEEN_DENIED));
 		}
-
+		
 		activeChar.setActiveRequester(null);
 		requestor.onTransactionResponse();
 	}

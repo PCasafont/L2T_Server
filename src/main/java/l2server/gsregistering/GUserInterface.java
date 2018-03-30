@@ -3,10 +3,12 @@ package l2server.gsregistering;
 import l2server.images.ImagesTable;
 import l2server.loginserver.GameServerTable;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -14,28 +16,10 @@ import java.awt.event.MouseListener;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLayeredPane;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JProgressBar;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.SwingUtilities;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableColumn;
-import javax.swing.table.TableColumnModel;
-
 /**
  * @author KenM
  */
-public class GUserInterface extends BaseGameServerRegister implements ActionListener
-{
+public class GUserInterface extends BaseGameServerRegister implements ActionListener {
 
 	/**
 	 *
@@ -50,8 +34,7 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 
 	public JTable gsTable;
 
-	public GUserInterface(ResourceBundle bundle)
-	{
+	public GUserInterface(ResourceBundle bundle) {
 		super(bundle);
 
 		frame = new JFrame();
@@ -138,16 +121,14 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 		refreshAsync();
 	}
 
-	public void refreshAsync()
-	{
+	public void refreshAsync() {
 		Runnable r = GUserInterface.this::refreshServers;
 		Thread t = new Thread(r, "LoaderThread");
 		t.start();
 	}
 
 	@Override
-	public void load()
-	{
+	public void load() {
 
 		SwingUtilities.invokeLater(() -> progressBar.setVisible(true));
 
@@ -159,37 +140,28 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 	/**
 	 */
 	@Override
-	public void showError(String msg, Throwable t)
-	{
+	public void showError(String msg, Throwable t) {
 		String title;
-		if (getBundle() != null)
-		{
+		if (getBundle() != null) {
 			title = getBundle().getString("error");
 			msg += '\n' + getBundle().getString("reason") + ' ' + t.getLocalizedMessage();
-		}
-		else
-		{
+		} else {
 			title = "Error";
 			msg += "\nCause: " + t.getLocalizedMessage();
 		}
 		JOptionPane.showMessageDialog(getFrame(), msg, title, JOptionPane.ERROR_MESSAGE);
 	}
 
-	protected void refreshServers()
-	{
-		if (!isLoaded())
-		{
+	protected void refreshServers() {
+		if (!isLoaded()) {
 			load();
 		}
 
 		// load succeeded?
-		if (isLoaded())
-		{
-			SwingUtilities.invokeLater(() ->
-			{
+		if (isLoaded()) {
+			SwingUtilities.invokeLater(() -> {
 				int size = GameServerTable.getInstance().getServerNames().size();
-				if (size == 0)
-				{
+				if (size == 0) {
 					String title = getBundle().getString("error");
 					String msg = getBundle().getString("noServerNames");
 					JOptionPane.showMessageDialog(getFrame(), msg, title, JOptionPane.ERROR_MESSAGE);
@@ -198,27 +170,22 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 				// reset
 				dtm.setRowCount(0);
 
-				for (final int id : GameServerTable.getInstance().getRegisteredGameServers().keySet())
-				{
+				for (final int id : GameServerTable.getInstance().getRegisteredGameServers().keySet()) {
 					String name = GameServerTable.getInstance().getServerNameById(id);
 					JButton button = new JButton(getBundle().getString("btnRemove"), ImagesTable.getImage("cross.png"));
-					button.addActionListener(e ->
-					{
+					button.addActionListener(e -> {
 						String sid = String.valueOf(id);
 						String sname = GameServerTable.getInstance().getServerNameById(id);
 
 						int choice = JOptionPane.showConfirmDialog(getFrame(),
 								getBundle().getString("confirmRemoveText").replace("%d", sid).replace("%s", sname),
-								getBundle().getString("confirmRemoveTitle"), JOptionPane.YES_NO_OPTION);
-						if (choice == JOptionPane.YES_OPTION)
-						{
-							try
-							{
+								getBundle().getString("confirmRemoveTitle"),
+								JOptionPane.YES_NO_OPTION);
+						if (choice == JOptionPane.YES_OPTION) {
+							try {
 								BaseGameServerRegister.unregisterGameServer(id);
 								GUserInterface.this.refreshAsync();
-							}
-							catch (SQLException e1)
-							{
+							} catch (SQLException e1) {
 								GUserInterface.this.showError(getBundle().getString("errorUnregister"), e1);
 							}
 						}
@@ -233,12 +200,10 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e)
-	{
+	public void actionPerformed(ActionEvent e) {
 		String cmd = e.getActionCommand();
 
-		switch (cmd)
-		{
+		switch (cmd) {
 			case "register":
 				RegisterDialog rd = new RegisterDialog(this);
 				rd.setVisible(true);
@@ -247,23 +212,22 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 				System.exit(0);
 			case "about":
 				JOptionPane.showMessageDialog(getFrame(),
-						getBundle().getString("credits") + "\nhttp://www.l2jserver.com\n\n" +
-								getBundle().getString("icons") + "\n\n" + getBundle().getString("language") + '\n' +
-								getBundle().getString("translation"), getBundle().getString("aboutItem"),
-						JOptionPane.INFORMATION_MESSAGE, ImagesTable.getImage("l2jserverlogo.png"));
+						getBundle().getString("credits") + "\nhttp://www.l2jserver.com\n\n" + getBundle().getString("icons") + "\n\n" +
+								getBundle().getString("language") + '\n' + getBundle().getString("translation"),
+						getBundle().getString("aboutItem"),
+						JOptionPane.INFORMATION_MESSAGE,
+						ImagesTable.getImage("l2jserverlogo.png"));
 				break;
 			case "removeAll":
-				int choice = JOptionPane.showConfirmDialog(getFrame(), getBundle().getString("confirmRemoveAllText"),
-						getBundle().getString("confirmRemoveTitle"), JOptionPane.YES_NO_OPTION);
-				if (choice == JOptionPane.YES_OPTION)
-				{
-					try
-					{
+				int choice = JOptionPane.showConfirmDialog(getFrame(),
+						getBundle().getString("confirmRemoveAllText"),
+						getBundle().getString("confirmRemoveTitle"),
+						JOptionPane.YES_NO_OPTION);
+				if (choice == JOptionPane.YES_OPTION) {
+					try {
 						BaseGameServerRegister.unregisterAllGameServers();
 						refreshAsync();
-					}
-					catch (SQLException e1)
-					{
+					} catch (SQLException e1) {
 						GUserInterface.this.showError(getBundle().getString("errorUnregister"), e1);
 					}
 				}
@@ -274,20 +238,17 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 	/**
 	 * @return Returns the frame.
 	 */
-	public JFrame getFrame()
-	{
+	public JFrame getFrame() {
 		return frame;
 	}
 
-	class ButtonCellRenderer implements TableCellRenderer
-	{
+	class ButtonCellRenderer implements TableCellRenderer {
 
 		/* (non-Javadoc)
 		 * @see javax.swing.table.TableCellRenderer#getTableCellRendererComponent(javax.swing.JTable, java.lang.Object, boolean, boolean, int, int)
 		 */
 		@Override
-		public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column)
-		{
+		public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
 			return (Component) value;
 		}
 	}
@@ -298,94 +259,77 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 	 *
 	 * @author KenM
 	 */
-	class JTableButtonMouseListener implements MouseListener
-	{
+	class JTableButtonMouseListener implements MouseListener {
 		private final JTable table;
 
-		public JTableButtonMouseListener(JTable table)
-		{
+		public JTableButtonMouseListener(JTable table) {
 			this.table = table;
 		}
 
-		private void forwardEvent(MouseEvent e)
-		{
+		private void forwardEvent(MouseEvent e) {
 			TableColumnModel columnModel = table.getColumnModel();
 			int column = columnModel.getColumnIndexAtX(e.getX());
 			int row = e.getY() / table.getRowHeight();
 			Object value;
 
-			if (row >= table.getRowCount() || row < 0 || column >= table.getColumnCount() || column < 0)
-			{
+			if (row >= table.getRowCount() || row < 0 || column >= table.getColumnCount() || column < 0) {
 				return;
 			}
 
 			value = table.getValueAt(row, column);
 
-			if (value instanceof JButton)
-			{
+			if (value instanceof JButton) {
 				final JButton b = (JButton) value;
-				if (e.getID() == MouseEvent.MOUSE_PRESSED)
-				{
+				if (e.getID() == MouseEvent.MOUSE_PRESSED) {
 					b.getModel().setPressed(true);
 					b.getModel().setArmed(true);
 					table.repaint();
-				}
-				else if (e.getID() == MouseEvent.MOUSE_RELEASED)
-				{
+				} else if (e.getID() == MouseEvent.MOUSE_RELEASED) {
 					b.doClick();
 				}
 			}
 		}
 
 		@Override
-		public void mouseEntered(MouseEvent e)
-		{
+		public void mouseEntered(MouseEvent e) {
 			forwardEvent(e);
 		}
 
 		@Override
-		public void mouseExited(MouseEvent e)
-		{
+		public void mouseExited(MouseEvent e) {
 			forwardEvent(e);
 		}
 
 		@Override
-		public void mousePressed(MouseEvent e)
-		{
+		public void mousePressed(MouseEvent e) {
 			forwardEvent(e);
 		}
 
 		@Override
-		public void mouseClicked(MouseEvent e)
-		{
+		public void mouseClicked(MouseEvent e) {
 			forwardEvent(e);
 		}
 
 		@Override
-		public void mouseReleased(MouseEvent e)
-		{
+		public void mouseReleased(MouseEvent e) {
 			forwardEvent(e);
 		}
 	}
 
-	class JTableModel extends DefaultTableModel
-	{
+	class JTableModel extends DefaultTableModel {
 		private static final long serialVersionUID = 1L;
 
-		public JTableModel(Object[] columnNames)
-		{
+		public JTableModel(Object[] columnNames) {
 			super(columnNames, 0);
 		}
 
 		@Override
-		public boolean isCellEditable(int row, int column)
-		{
+		public boolean isCellEditable(int row, int column) {
 			return false;
 		}
 
 		@Override
-		public Class<?> getColumnClass(int column)
-		{
+		public Class<?> getColumnClass(int column) {
 			return getValueAt(0, column).getClass();
 		}
 	}

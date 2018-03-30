@@ -30,18 +30,15 @@ import java.util.Set;
 /**
  * @author Pere
  */
-public final class NpcInfo extends L2GameServerPacket
-{
+public final class NpcInfo extends L2GameServerPacket {
 	private int objectId;
 	private int val;
 	private byte[] data1;
 	private byte[] data2;
 	private Set<Integer> abnormals;
 
-	public NpcInfo(L2Npc npc, L2Character attacker)
-	{
-		if (npc.getClonedPlayer() != null)
-		{
+	public NpcInfo(L2Npc npc, L2Character attacker) {
+		if (npc.getClonedPlayer() != null) {
 			attacker.sendPacket(new ClonedPlayerInfo(npc, npc.getClonedPlayer()));
 			return;
 		}
@@ -54,31 +51,23 @@ public final class NpcInfo extends L2GameServerPacket
 		buffer.put((byte) (npc.isAttackable() ? 1 : 0));
 		buffer.putInt(0);
 		String title = npc.getTitle();
-		if (Config.SHOW_NPC_LVL && npc instanceof L2MonsterInstance)
-		{
+		if (Config.SHOW_NPC_LVL && npc instanceof L2MonsterInstance) {
 			String t = "Lv " + npc.getLevel() + (npc.getAggroRange() > 0 ? "*" : "");
 
 			title = npc.getTitle();
 
-			if (title != null)
-			{
+			if (title != null) {
 				t += " " + title;
 			}
 
 			title = t;
-		}
-		else if (Config.L2JMOD_CHAMPION_ENABLE && npc.isChampion())
-		{
+		} else if (Config.L2JMOD_CHAMPION_ENABLE && npc.isChampion()) {
 			title = Config.L2JMOD_CHAMP_TITLE;
-		}
-		else if (npc.getTemplate().ServerSideTitle)
-		{
+		} else if (npc.getTemplate().ServerSideTitle) {
 			title = npc.getTemplate().Title;
 		}
-		if (title != null)
-		{
-			for (char c : title.toCharArray())
-			{
+		if (title != null) {
+			for (char c : title.toCharArray()) {
 				buffer.putShort((short) c);
 			}
 		}
@@ -107,12 +96,9 @@ public final class NpcInfo extends L2GameServerPacket
 		buffer.putInt(0); //chest
 		buffer.putInt(npc.getLeftHandItem());
 
-		if (npc.getNpcId() == 18672)
-		{
+		if (npc.getNpcId() == 18672) {
 			buffer.put((byte) 0); // To make the cube stop jumping
-		}
-		else
-		{
+		} else {
 			buffer.put((byte) 1);
 		}
 		buffer.put((byte) (npc.isRunning() ? 1 : 0));
@@ -122,8 +108,8 @@ public final class NpcInfo extends L2GameServerPacket
 		buffer.putInt(0x00); // Weapon enchant level
 
 		buffer.putInt(npc.isFlying() ? 0x01 : 0x00);
-		buffer.putInt(npc.getNpcId() >= 13302 && npc.getNpcId() <= 13305 ?
-				npc.getOwner() != null ? npc.getOwner().getObjectId() : 0x01 : 0x00); // Cloned player
+		buffer.putInt(npc.getNpcId() >= 13302 && npc.getNpcId() <= 13305 ? npc.getOwner() != null ? npc.getOwner().getObjectId() : 0x01 :
+				0x00); // Cloned player
 		buffer.putInt(0x01); // ???
 		buffer.putInt(npc.getDisplayEffect());
 		buffer.putInt(0x00); // Transform id
@@ -139,14 +125,11 @@ public final class NpcInfo extends L2GameServerPacket
 		buffer.put((byte) 0); // ???
 
 		String name = null;
-		if (npc.getTemplate().ServerSideName)
-		{
+		if (npc.getTemplate().ServerSideName) {
 			name = npc.getName();
 		}
-		if (name != null)
-		{
-			for (char c : name.toCharArray())
-			{
+		if (name != null) {
+			for (char c : name.toCharArray()) {
 				buffer.putShort((short) c);
 			}
 		}
@@ -180,16 +163,13 @@ public final class NpcInfo extends L2GameServerPacket
 		// 0x00000020 unk
 		// 0x00000040 unk
 		byte flag = 0x00;
-		if (npc.isAlikeDead())
-		{
+		if (npc.isAlikeDead()) {
 			flag |= 0x02;
 		}
-		if (npc.getTemplate().Targetable)
-		{
+		if (npc.getTemplate().Targetable) {
 			flag |= 0x04;
 		}
-		if (npc.getTemplate().ShowName)
-		{
+		if (npc.getTemplate().ShowName) {
 			flag |= 0x08;
 		}
 		buffer.put(flag);
@@ -200,18 +180,15 @@ public final class NpcInfo extends L2GameServerPacket
 		buffer.get(data2, 0, size);
 
 		abnormals = npc.getAbnormalEffect();
-		if (npc.isChampion())
-		{
+		if (npc.isChampion()) {
 			abnormals.add(VisualEffect.AQUA_BIG_BODY.getId());
 		}
-		if (npc.getNpcId() >= 40000 && npc.getNpcId() < 40006 && npc.getInstanceId() == 0)
-		{
+		if (npc.getNpcId() >= 40000 && npc.getNpcId() < 40006 && npc.getInstanceId() == 0) {
 			abnormals.add(VisualEffect.BIG_BODY.getId());
 		}
 	}
 
-	public NpcInfo(L2CloneInstance npc)
-	{
+	public NpcInfo(L2CloneInstance npc) {
 		objectId = npc.getObjectId();
 		val = npc.isShowSummonAnimation() ? 2 : 0;
 
@@ -220,8 +197,7 @@ public final class NpcInfo extends L2GameServerPacket
 		buffer.put((byte) (npc.isAttackable() ? 1 : 0));
 		buffer.putInt(0);
 		String title = "";
-		for (char c : title.toCharArray())
-		{
+		for (char c : title.toCharArray()) {
 			buffer.putShort((short) c);
 		}
 
@@ -258,8 +234,8 @@ public final class NpcInfo extends L2GameServerPacket
 		buffer.putInt(0x00); // Weapon enchant level
 
 		buffer.putInt(npc.isFlying() ? 0x01 : 0x00);
-		buffer.putInt(npc.getNpcId() >= 13302 && npc.getNpcId() <= 13305 ?
-				npc.getOwner() != null ? npc.getOwner().getObjectId() : 0x01 : 0x00); // Cloned player
+		buffer.putInt(npc.getNpcId() >= 13302 && npc.getNpcId() <= 13305 ? npc.getOwner() != null ? npc.getOwner().getObjectId() : 0x01 :
+				0x00); // Cloned player
 		buffer.putInt(0x00); // ???
 		buffer.putInt(0x00);
 		buffer.putInt(0x00); // Transform id
@@ -275,10 +251,8 @@ public final class NpcInfo extends L2GameServerPacket
 		buffer.put((byte) 0); // ???
 
 		String name = npc.getOwner().getName();
-		if (name != null)
-		{
-			for (char c : name.toCharArray())
-			{
+		if (name != null) {
+			for (char c : name.toCharArray()) {
 				buffer.putShort((short) c);
 			}
 		}
@@ -312,16 +286,13 @@ public final class NpcInfo extends L2GameServerPacket
 		// 0x00000020 unk
 		// 0x00000040 unk
 		byte flag = 0x00;
-		if (npc.isAlikeDead())
-		{
+		if (npc.isAlikeDead()) {
 			flag |= 0x02;
 		}
-		if (npc.getTemplate().Targetable)
-		{
+		if (npc.getTemplate().Targetable) {
 			flag |= 0x04;
 		}
-		if (npc.getTemplate().ShowName)
-		{
+		if (npc.getTemplate().ShowName) {
 			flag |= 0x08;
 		}
 		buffer.put(flag);
@@ -334,8 +305,7 @@ public final class NpcInfo extends L2GameServerPacket
 		abnormals = npc.getAbnormalEffect();
 	}
 
-	public NpcInfo(L2Trap trap)
-	{
+	public NpcInfo(L2Trap trap) {
 		objectId = trap.getObjectId();
 
 		data1 = new byte[7];
@@ -383,14 +353,11 @@ public final class NpcInfo extends L2GameServerPacket
 		buffer.put((byte) 0); // ???
 
 		String name = null;
-		if (trap.getTemplate().ServerSideName)
-		{
+		if (trap.getTemplate().ServerSideName) {
 			name = trap.getTemplate().Name;
 		}
-		if (name != null)
-		{
-			for (char c : name.toCharArray())
-			{
+		if (name != null) {
+			for (char c : name.toCharArray()) {
 				buffer.putShort((short) c);
 			}
 		}
@@ -424,10 +391,8 @@ public final class NpcInfo extends L2GameServerPacket
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
-		if (data1 == null)
-		{
+	protected final void writeImpl() {
+		if (data1 == null) {
 			return;
 		}
 
@@ -447,8 +412,7 @@ public final class NpcInfo extends L2GameServerPacket
 		writeB(data2);
 
 		writeH(abnormals.size());
-		for (int abnormal : abnormals)
-		{
+		for (int abnormal : abnormals) {
 			writeH(abnormal);
 		}
 	}

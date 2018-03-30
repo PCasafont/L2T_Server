@@ -21,10 +21,8 @@ import l2server.util.network.BaseSendablePacket;
 /**
  * @author -Wooden-
  */
-public class PlayerAuthRequest extends BaseSendablePacket
-{
-	public PlayerAuthRequest(String account, SessionKey key)
-	{
+public class PlayerAuthRequest extends BaseSendablePacket {
+	public PlayerAuthRequest(String account, SessionKey key) {
 		writeC(0x05);
 		writeS(account);
 		writeD(key.playOkID1);
@@ -37,8 +35,7 @@ public class PlayerAuthRequest extends BaseSendablePacket
 	 * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent()
-	{
+	public byte[] getContent() {
 		return getBytes();
 	}
 }

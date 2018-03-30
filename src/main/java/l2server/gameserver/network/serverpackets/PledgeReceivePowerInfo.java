@@ -22,23 +22,20 @@ import l2server.gameserver.model.L2ClanMember;
  *
  * @author -Wooden-
  */
-public class PledgeReceivePowerInfo extends L2GameServerPacket
-{
+public class PledgeReceivePowerInfo extends L2GameServerPacket {
 	private L2ClanMember member;
-
+	
 	/**
 	 * @param member
 	 */
-	public PledgeReceivePowerInfo(L2ClanMember member)
-	{
+	public PledgeReceivePowerInfo(L2ClanMember member) {
 		this.member = member;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(member.getPowerGrade()); //power grade
 		writeS(member.getName());
 		writeD(member.getClan().getRankPrivs(member.getPowerGrade())); //privileges

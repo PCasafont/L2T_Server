@@ -17,37 +17,30 @@ package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 
-public class L2WarehouseInstance extends L2NpcInstance
-{
+public class L2WarehouseInstance extends L2NpcInstance {
 	/**
 	 * @param template
 	 */
-	public L2WarehouseInstance(int objectId, L2NpcTemplate template)
-	{
+	public L2WarehouseInstance(int objectId, L2NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2WarehouseInstance);
 	}
-
+	
 	@Override
-	public boolean isWarehouse()
-	{
+	public boolean isWarehouse() {
 		return true;
 	}
-
+	
 	@Override
-	public String getHtmlPath(int npcId, int val)
-	{
+	public String getHtmlPath(int npcId, int val) {
 		String pom = "";
-
-		if (val == 0)
-		{
+		
+		if (val == 0) {
 			pom = "" + npcId;
-		}
-		else
-		{
+		} else {
 			pom = npcId + "-" + val;
 		}
-
+		
 		return "warehouse/" + pom + ".htm";
 	}
 }

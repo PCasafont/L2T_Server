@@ -15,86 +15,76 @@
 
 package l2server.gameserver.scripting;
 
+import javax.script.CompiledScript;
 import java.io.File;
 import java.io.Serializable;
-
-import javax.script.CompiledScript;
 
 /**
  * @author KenM
  */
-public class CompiledScriptHolder implements Serializable
-{
+public class CompiledScriptHolder implements Serializable {
 	/**
 	 * Version 1
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
 	private long lastModified;
 	private long size;
 	private CompiledScript compiledScript;
-
+	
 	/**
 	 * @param compiledScript
 	 * @param scriptFile
 	 */
-	public CompiledScriptHolder(CompiledScript compiledScript, File scriptFile)
-	{
+	public CompiledScriptHolder(CompiledScript compiledScript, File scriptFile) {
 		this.compiledScript = compiledScript;
 		lastModified = scriptFile.lastModified();
 		size = scriptFile.length();
 	}
-
+	
 	/**
 	 * @return Returns the lastModified.
 	 */
-	public long getLastModified()
-	{
+	public long getLastModified() {
 		return lastModified;
 	}
-
+	
 	/**
 	 * @param lastModified The lastModified to set.
 	 */
-	public void setLastModified(long lastModified)
-	{
+	public void setLastModified(long lastModified) {
 		this.lastModified = lastModified;
 	}
-
+	
 	/**
 	 * @return Returns the size.
 	 */
-	public long getSize()
-	{
+	public long getSize() {
 		return size;
 	}
-
+	
 	/**
 	 * @param size The size to set.
 	 */
-	public void setSize(long size)
-	{
+	public void setSize(long size) {
 		this.size = size;
 	}
-
+	
 	/**
 	 * @return Returns the compiledScript.
 	 */
-	public CompiledScript getCompiledScript()
-	{
+	public CompiledScript getCompiledScript() {
 		return compiledScript;
 	}
-
+	
 	/**
 	 * @param compiledScript The compiledScript to set.
 	 */
-	public void setCompiledScript(CompiledScript compiledScript)
-	{
+	public void setCompiledScript(CompiledScript compiledScript) {
 		this.compiledScript = compiledScript;
 	}
-
-	public boolean matches(File f)
-	{
+	
+	public boolean matches(File f) {
 		return f.lastModified() == getLastModified() && f.length() == getSize();
 	}
 }

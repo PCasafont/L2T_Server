@@ -27,58 +27,45 @@ import java.sql.SQLException;
 /**
  * @author mrTJO
  */
-public class RequestTempBan extends BaseRecievePacket
-{
+public class RequestTempBan extends BaseRecievePacket {
 	String accountName, banReason, ip;
 	long banTime;
 
 	/**
 	 * @param decrypt
 	 */
-	public RequestTempBan(byte[] decrypt)
-	{
+	public RequestTempBan(byte[] decrypt) {
 		super(decrypt);
 		accountName = readS();
 		ip = readS();
 		banTime = readQ();
 		boolean haveReason = readC() != 0;
-		if (haveReason)
-		{
+		if (haveReason) {
 			banReason = readS();
 		}
 		banUser();
 	}
 
-	private void banUser()
-	{
+	private void banUser() {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement =
-					con.prepareStatement("INSERT INTO account_data VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE value=?");
+			PreparedStatement statement = con.prepareStatement("INSERT INTO account_data VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE value=?");
 			statement.setString(1, accountName);
 			statement.setString(2, "ban_temp");
 			statement.setString(3, Long.toString(banTime));
 			statement.setString(4, Long.toString(banTime));
 			statement.execute();
 			statement.close();
-		}
-		catch (SQLException e)
-		{
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 
-		try
-		{
+		try {
 			LoginController.getInstance().addBanForAddress(ip, banTime);
-		}
-		catch (UnknownHostException e)
-		{
+		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
 	}

@@ -51,26 +51,22 @@ import l2server.log.Log;
  *
  * @version $Revision: 1.4.2.1.2.4 $ $Date: 2005/03/27 15:29:40 $
  */
-public final class EquipUpdate extends L2GameServerPacket
-{
+public final class EquipUpdate extends L2GameServerPacket {
 	private L2ItemInstance item;
 	private int change;
-
-	public EquipUpdate(L2ItemInstance item, int change)
-	{
+	
+	public EquipUpdate(L2ItemInstance item, int change) {
 		this.item = item;
 		this.change = change;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		int bodypart = 0;
 		writeD(item.getObjectId());
 		writeD(0x00); // ???
 		writeH(change);
-		switch (item.getItem().getBodyPart())
-		{
+		switch (item.getItem().getBodyPart()) {
 			case L2Item.SLOT_L_EAR:
 				bodypart = 0x01;
 				break;
@@ -120,12 +116,11 @@ public final class EquipUpdate extends L2GameServerPacket
 				bodypart = 0x10;
 				break;
 		}
-
-		if (Config.DEBUG)
-		{
+		
+		if (Config.DEBUG) {
 			Log.fine("body:" + bodypart);
 		}
-
+		
 		writeH(bodypart);
 	}
 }

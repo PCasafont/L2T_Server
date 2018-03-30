@@ -20,10 +20,8 @@ import l2server.util.network.BaseSendablePacket;
 /**
  * @author -Wooden-
  */
-public class KickPlayer extends BaseSendablePacket
-{
-	public KickPlayer(String account)
-	{
+public class KickPlayer extends BaseSendablePacket {
+	public KickPlayer(String account) {
 		writeC(0x04);
 		writeS(account);
 	}
@@ -32,8 +30,7 @@ public class KickPlayer extends BaseSendablePacket
 	 * @see l2server.loginserver.serverpackets.ServerBasePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent()
-	{
+	public byte[] getContent() {
 		return getBytes();
 	}
 }

@@ -24,23 +24,19 @@ import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.templates.StatsSet;
 
-public final class L2SkillSignetCasttime extends L2Skill
-{
+public final class L2SkillSignetCasttime extends L2Skill {
 	public int effectNpcId;
 	public int effectId;
 
-	public L2SkillSignetCasttime(StatsSet set)
-	{
+	public L2SkillSignetCasttime(StatsSet set) {
 		super(set);
 		effectNpcId = set.getInteger("effectNpcId", -1);
 		effectId = set.getInteger("effectId", -1);
 	}
 
 	@Override
-	public void useSkill(L2Character caster, L2Object[] targets)
-	{
-		if (caster.isAlikeDead())
-		{
+	public void useSkill(L2Character caster, L2Object[] targets) {
+		if (caster.isAlikeDead()) {
 			return;
 		}
 

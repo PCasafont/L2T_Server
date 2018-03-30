@@ -23,30 +23,24 @@ import l2server.gameserver.stats.Stats;
 /**
  * @author Yamaneko
  */
-public class FuncEnchantHp extends Func
-{
-	public FuncEnchantHp(Stats pStat, Object owner, Lambda lambda)
-	{
+public class FuncEnchantHp extends Func {
+	public FuncEnchantHp(Stats pStat, Object owner, Lambda lambda) {
 		super(pStat, owner);
 	}
-
+	
 	@Override
-	public int getOrder()
-	{
+	public int getOrder() {
 		return 0x60;
 	}
-
+	
 	@Override
-	public void calc(Env env)
-	{
-		if (cond != null && !cond.test(env))
-		{
+	public void calc(Env env) {
+		if (cond != null && !cond.test(env)) {
 			return;
 		}
-
+		
 		final L2ItemInstance item = (L2ItemInstance) funcOwner;
-		if (item.getEnchantLevel() > 0)
-		{
+		if (item.getEnchantLevel() > 0) {
 			env.value += EnchantHPBonusData.getInstance().getHPBonus(item);
 		}
 	}

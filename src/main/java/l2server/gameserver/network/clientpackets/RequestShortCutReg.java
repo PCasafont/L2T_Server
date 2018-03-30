@@ -24,8 +24,7 @@ import l2server.gameserver.network.serverpackets.ShortCutRegister;
  *
  * @version $Revision: 1.3.4.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestShortCutReg extends L2GameClientPacket
-{
+public final class RequestShortCutReg extends L2GameClientPacket {
 
 	private int type;
 	private int id;
@@ -35,8 +34,7 @@ public final class RequestShortCutReg extends L2GameClientPacket
 	private int characterType; // 1 - player, 2 - pet
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		type = readD();
 		int slot = readD();
 		id = readD();
@@ -48,21 +46,17 @@ public final class RequestShortCutReg extends L2GameClientPacket
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
-		if (page > 10 || page < 0)
-		{
+		if (page > 10 || page < 0) {
 			return;
 		}
 
-		switch (type)
-		{
+		switch (type) {
 			case 0x01: // item
 			case 0x02: // skill
 			{
@@ -91,8 +85,7 @@ public final class RequestShortCutReg extends L2GameClientPacket
 	}
 
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

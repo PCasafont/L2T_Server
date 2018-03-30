@@ -27,77 +27,61 @@ import l2server.gameserver.network.serverpackets.SiegeDefenderList;
  *
  * @version $Revision: 1.3.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestConfirmSiegeWaitingList extends L2GameClientPacket
-{
+public final class RequestConfirmSiegeWaitingList extends L2GameClientPacket {
 	//
-
+	
 	private int approved;
 	private int castleId;
 	private int clanId;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		castleId = readD();
 		clanId = readD();
 		approved = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		// Check if the player has a clan
-		if (activeChar.getClan() == null)
-		{
+		if (activeChar.getClan() == null) {
 			return;
 		}
-
+		
 		Castle castle = CastleManager.getInstance().getCastleById(castleId);
-		if (castle == null)
-		{
+		if (castle == null) {
 			return;
 		}
-
+		
 		// Check if leader of the clan who owns the castle?
-		if (castle.getOwnerId() != activeChar.getClanId() || !activeChar.isClanLeader())
-		{
+		if (castle.getOwnerId() != activeChar.getClanId() || !activeChar.isClanLeader()) {
 			return;
 		}
-
+		
 		L2Clan clan = ClanTable.getInstance().getClan(clanId);
-		if (clan == null)
-		{
+		if (clan == null) {
 			return;
 		}
-
-		if (!castle.getSiege().getIsRegistrationOver())
-		{
-			if (approved == 1)
-			{
-				if (castle.getSiege().checkIsDefenderWaiting(clan))
-				{
+		
+		if (!castle.getSiege().getIsRegistrationOver()) {
+			if (approved == 1) {
+				if (castle.getSiege().checkIsDefenderWaiting(clan)) {
 					castle.getSiege().approveSiegeDefenderClan(clanId);
-				}
-				else
-				{
+				} else {
 					return;
 				}
-			}
-			else
-			{
-				if (castle.getSiege().checkIsDefenderWaiting(clan) || castle.getSiege().checkIsDefender(clan))
-				{
+			} else {
+				if (castle.getSiege().checkIsDefenderWaiting(clan) || castle.getSiege().checkIsDefender(clan)) {
 					castle.getSiege().removeSiegeClan(clanId);
 				}
 			}
 		}
-
+		
 		//Update the defender list
 		activeChar.sendPacket(new SiegeDefenderList(castle));
 	}

@@ -1,227 +1,227 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-    <item>
-        <ingredient count="1" id="37559" /> <!-- Shiny Coin -->
-        <production count="20000" id="4357" /> <!-- Silver Shilen -->
-    </item>
-    <item>
-        <ingredient count="1" id="37559" /> <!-- Shiny Coin -->
-        <production count="5" id="37008" /> <!-- Strawberry Cake (HP) -->
-    </item>
-    <item>
-        <ingredient count="1" id="37559" /> <!-- Shiny Coin -->
-        <production count="5" id="37009" /> <!-- Blueberry Cake (MP) -->
-    </item>
-    <item>
-        <ingredient count="1" id="37559" /> <!-- Shiny Coin -->
-        <production count="5" id="37010" /> <!-- Cheese Cake (CP) -->
-    </item>
-    <item>
-        <ingredient count="40" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="36257" /> <!-- Lilith's Soul Necklace -->
-    </item>
-    <item>
-        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="23989" /> <!-- Agathion - Virgo - Stage 1 -->
-    </item>
-    <item>
-        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="24001" /> <!-- Agathion - Capricorn - Stage 1 -->
-    </item>
-    <item>
-        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="24013" /> <!-- Agathion - Libra - Stage 1 -->
-    </item>
-    <item>
-        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="24025" /> <!-- Agathion - Aries - Stage 1 -->
-    </item>
-    <item>
-        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="24037" /> <!-- Agathion - Taurus - Stage 1 -->
-    </item>
-    <item>
-        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="24049" /> <!-- Agathion - Leo - Stage 1 -->
-    </item>
-    <item>
-        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="24061" /> <!-- Agathion - Gemini - Stage 1 -->
-    </item>
-    <item>
-        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="24073" /> <!-- Agathion - Scorpio - Stage 1 -->
-    </item>
-    <item>
-        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="24085" /> <!-- Agathion - Aquarius - Stage 1 -->
-    </item>
-    <item>
-        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="24097" /> <!-- Agathion - Pisces - Stage 1 -->
-    </item>
-    <item>
-        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="24109" /> <!-- Agathion - Sagittarius - Stage 1 -->
-    </item>
-    <item>
-        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="24121" /> <!-- Agathion - Cancer - Stage 1 -->
-    </item>
-    <item>
-        <ingredient count="2" id="37559" /> <!-- Shiny Coin -->
-        <production id="39641" count="1" /> <!-- Venir's Talisman - Stage 8 -->
-    </item>
-    <item>
-        <ingredient count="1" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="39747" /> <!-- Dimensional Bracelet - Stage 1 - Basic -->
-    </item>
-    <item>
-        <ingredient count="2" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="36187" /> <!-- Rising Shirt -->
-    </item>
-    <item>
-        <ingredient count="5" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="36188" /> <!-- Blaze Shirt -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="36167" /> <!-- Nurka's Belt -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="36168" /> <!-- Lidia's Belt -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production count="1" id="36169" /> <!-- Gustav's Belt -->
-    </item>
-    <item>
-        <ingredient count="20" id="37559" /> <!-- Shiny Coin -->
-        <production id="38591" count="1" /> <!-- Tiat's Belt -->
-    </item>
-    <item>
-        <ingredient count="20" id="37559" /> <!-- Shiny Coin -->
-        <production id="38592" count="1" /> <!-- Ekimus' Belt -->
-    </item>
-    <item>
-        <ingredient count="8" id="37559" /> <!-- Shiny Coin -->
-        <production id="35565" count="1" /> <!-- Mysterious Belt - 3-day -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production count="5" id="37792" /> <!-- Potion of Protection: Stun -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production count="5" id="37793" /> <!-- Potion of Protection: Hold -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production count="5" id="37794" /> <!-- Potion of Protection: Bleed -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production count="5" id="37795" /> <!-- Potion of Protection: Paralyze -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production count="5" id="37796" /> <!-- Potion of Protection: Mental -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production count="5" id="37797" /> <!-- Potion of Protection: Sleep -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production count="5" id="37798" /> <!-- Potion of Protection: Poison -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production count="5" id="37799" /> <!-- Potion of Protection: Knock Back/ Knock Down -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production count="5" id="37800" /> <!-- Potion of Protection: Aerial Yoke -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production id="13547" count="1" /> <!-- Mount - Tawny-maned Lion -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production id="21088" count="1" /> <!-- Mount - Jet Bike  -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production id="20396" count="1" /> <!-- Mount - Steam Beetle -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production id="20029" count="1" /> <!-- Mount - Darkmane Pacer -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production id="22384" count="1" /> <!-- Halloween Broomstick Mount - Event -->
-    </item>
-    <item>
-        <ingredient count="20" id="37559" /> <!-- Shiny Coin -->
-        <production id="36952" count="1" /> <!-- Air Bike -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production id="22887" count="1" /> <!-- Mount - Unicorn -->
-    </item>
-    <item>
-        <ingredient count="10" id="37559" /> <!-- Shiny Coin -->
-        <production id="22193" count="1" /> <!-- Mount - Rocking Horse -->
-    </item>
-    <item>
-        <ingredient count="20" id="37559" /> <!-- Shiny Coin -->
-        <production id="22356" count="1" /> <!-- Mount - Tame Princess Ant -->
-    </item>
-    <item>
-        <ingredient count="20" id="37559" /> <!-- Shiny Coin -->
-        <production id="33642" count="1" /> <!-- Kukurin Bracelet -->
-    </item>
-    <item>
-        <ingredient count="20" id="37559" /> <!-- Shiny Coin -->
-        <production id="22364" count="1" /> <!-- Mount - Black Bear -->
-    </item>
-    <item>
-        <ingredient count="30" id="37559" /> <!-- Shiny Coin -->
-        <production id="37496" count="1" /> <!-- Riding Manual: Lyn Draco -->
-    </item>
-    <item>
-        <ingredient count="25" id="37559" /> <!-- Shiny Coin -->
-        <production id="13017" count="1" /> <!-- White Weasel Minion Necklace -->
-    </item>
-    <item>
-        <ingredient count="25" id="37559" /> <!-- Shiny Coin -->
-        <production id="13018" count="1" /> <!-- Fairy Princess Minion Necklace -->
-    </item>
-    <item>
-        <ingredient count="25" id="37559" /> <!-- Shiny Coin -->
-        <production id="13019" count="1" /> <!-- Wild Beast Fighter Minion Necklace -->
-    </item>
-    <item>
-        <ingredient count="25" id="37559" /> <!-- Shiny Coin -->
-        <production id="13020" count="1" /> <!-- Fox Shaman Minion Necklace -->
-    </item>
-    <item>
-        <ingredient count="25" id="37559" /> <!-- Shiny Coin -->
-        <production id="14061" count="1" /> <!-- Toy Knight Summon Whistle -->
-    </item>
-    <item>
-        <ingredient count="25" id="37559" /> <!-- Shiny Coin -->
-        <production id="14062" count="1" /> <!-- Spirit Shaman Summon Whistle -->
-    </item>
-    <item>
-        <ingredient count="25" id="37559" /> <!-- Shiny Coin -->
-        <production id="14063" count="1" /> <!-- Owl Monk Summon Necklace -->
-    </item>
-    <item>
-        <ingredient count="25" id="37559" /> <!-- Shiny Coin -->
-        <production id="14064" count="1" /> <!-- Turtle Ascetic Summon Necklace -->
-    </item>
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="20000" id="4357" /> <!-- Silver Shilen -->
+	</item>
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37008" /> <!-- Strawberry Cake (HP) -->
+	</item>
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37009" /> <!-- Blueberry Cake (MP) -->
+	</item>
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37010" /> <!-- Cheese Cake (CP) -->
+	</item>
+	<item>
+		<ingredient count="40" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36257" /> <!-- Lilith's Soul Necklace -->
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="23989" /> <!-- Agathion - Virgo - Stage 1 -->
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24001" /> <!-- Agathion - Capricorn - Stage 1 -->
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24013" /> <!-- Agathion - Libra - Stage 1 -->
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24025" /> <!-- Agathion - Aries - Stage 1 -->
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24037" /> <!-- Agathion - Taurus - Stage 1 -->
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24049" /> <!-- Agathion - Leo - Stage 1 -->
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24061" /> <!-- Agathion - Gemini - Stage 1 -->
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24073" /> <!-- Agathion - Scorpio - Stage 1 -->
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24085" /> <!-- Agathion - Aquarius - Stage 1 -->
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24097" /> <!-- Agathion - Pisces - Stage 1 -->
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24109" /> <!-- Agathion - Sagittarius - Stage 1 -->
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="24121" /> <!-- Agathion - Cancer - Stage 1 -->
+	</item>
+	<item>
+		<ingredient count="2" id="37559" /> <!-- Shiny Coin -->
+		<production id="39641" count="1" /> <!-- Venir's Talisman - Stage 8 -->
+	</item>
+	<item>
+		<ingredient count="1" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="39747" /> <!-- Dimensional Bracelet - Stage 1 - Basic -->
+	</item>
+	<item>
+		<ingredient count="2" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36187" /> <!-- Rising Shirt -->
+	</item>
+	<item>
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36188" /> <!-- Blaze Shirt -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36167" /> <!-- Nurka's Belt -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36168" /> <!-- Lidia's Belt -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="1" id="36169" /> <!-- Gustav's Belt -->
+	</item>
+	<item>
+		<ingredient count="20" id="37559" /> <!-- Shiny Coin -->
+		<production id="38591" count="1" /> <!-- Tiat's Belt -->
+	</item>
+	<item>
+		<ingredient count="20" id="37559" /> <!-- Shiny Coin -->
+		<production id="38592" count="1" /> <!-- Ekimus' Belt -->
+	</item>
+	<item>
+		<ingredient count="8" id="37559" /> <!-- Shiny Coin -->
+		<production id="35565" count="1" /> <!-- Mysterious Belt - 3-day -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37792" /> <!-- Potion of Protection: Stun -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37793" /> <!-- Potion of Protection: Hold -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37794" /> <!-- Potion of Protection: Bleed -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37795" /> <!-- Potion of Protection: Paralyze -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37796" /> <!-- Potion of Protection: Mental -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37797" /> <!-- Potion of Protection: Sleep -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37798" /> <!-- Potion of Protection: Poison -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37799" /> <!-- Potion of Protection: Knock Back/ Knock Down -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production count="5" id="37800" /> <!-- Potion of Protection: Aerial Yoke -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production id="13547" count="1" /> <!-- Mount - Tawny-maned Lion -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production id="21088" count="1" /> <!-- Mount - Jet Bike  -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production id="20396" count="1" /> <!-- Mount - Steam Beetle -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production id="20029" count="1" /> <!-- Mount - Darkmane Pacer -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production id="22384" count="1" /> <!-- Halloween Broomstick Mount - Event -->
+	</item>
+	<item>
+		<ingredient count="20" id="37559" /> <!-- Shiny Coin -->
+		<production id="36952" count="1" /> <!-- Air Bike -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production id="22887" count="1" /> <!-- Mount - Unicorn -->
+	</item>
+	<item>
+		<ingredient count="10" id="37559" /> <!-- Shiny Coin -->
+		<production id="22193" count="1" /> <!-- Mount - Rocking Horse -->
+	</item>
+	<item>
+		<ingredient count="20" id="37559" /> <!-- Shiny Coin -->
+		<production id="22356" count="1" /> <!-- Mount - Tame Princess Ant -->
+	</item>
+	<item>
+		<ingredient count="20" id="37559" /> <!-- Shiny Coin -->
+		<production id="33642" count="1" /> <!-- Kukurin Bracelet -->
+	</item>
+	<item>
+		<ingredient count="20" id="37559" /> <!-- Shiny Coin -->
+		<production id="22364" count="1" /> <!-- Mount - Black Bear -->
+	</item>
+	<item>
+		<ingredient count="30" id="37559" /> <!-- Shiny Coin -->
+		<production id="37496" count="1" /> <!-- Riding Manual: Lyn Draco -->
+	</item>
+	<item>
+		<ingredient count="25" id="37559" /> <!-- Shiny Coin -->
+		<production id="13017" count="1" /> <!-- White Weasel Minion Necklace -->
+	</item>
+	<item>
+		<ingredient count="25" id="37559" /> <!-- Shiny Coin -->
+		<production id="13018" count="1" /> <!-- Fairy Princess Minion Necklace -->
+	</item>
+	<item>
+		<ingredient count="25" id="37559" /> <!-- Shiny Coin -->
+		<production id="13019" count="1" /> <!-- Wild Beast Fighter Minion Necklace -->
+	</item>
+	<item>
+		<ingredient count="25" id="37559" /> <!-- Shiny Coin -->
+		<production id="13020" count="1" /> <!-- Fox Shaman Minion Necklace -->
+	</item>
+	<item>
+		<ingredient count="25" id="37559" /> <!-- Shiny Coin -->
+		<production id="14061" count="1" /> <!-- Toy Knight Summon Whistle -->
+	</item>
+	<item>
+		<ingredient count="25" id="37559" /> <!-- Shiny Coin -->
+		<production id="14062" count="1" /> <!-- Spirit Shaman Summon Whistle -->
+	</item>
+	<item>
+		<ingredient count="25" id="37559" /> <!-- Shiny Coin -->
+		<production id="14063" count="1" /> <!-- Owl Monk Summon Necklace -->
+	</item>
+	<item>
+		<ingredient count="25" id="37559" /> <!-- Shiny Coin -->
+		<production id="14064" count="1" /> <!-- Turtle Ascetic Summon Necklace -->
+	</item>
 </list>

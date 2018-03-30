@@ -15,6 +15,7 @@
 
 package ai.individual;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.instancemanager.BossManager;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -23,17 +24,14 @@ import l2server.gameserver.network.serverpackets.ExShowUsmPacket;
 import l2server.log.Log;
 import l2server.util.Rnd;
 
-import ai.group_template.L2AttackableAIScript;
-
 /**
  * @author LasTravel
- *         <p>
- *         Source:
- *         - http://www.youtube.com/watch?v=L_ydM4ya6Rc
+ * <p>
+ * Source:
+ * - http://www.youtube.com/watch?v=L_ydM4ya6Rc
  */
 
-public class GuillotineOfDeath extends L2AttackableAIScript
-{
+public class GuillotineOfDeath extends L2AttackableAIScript {
 	private static final int firstBoss = 25888; //Execution Grounds Watchman Guillotine
 	private static final int secondBoss = 25885; //Guillotine of Death
 	private static final int thirdBoss = 25892; //Guillotine of Death
@@ -42,16 +40,11 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 	private static int bossStage = 0;
 	private static L2RaidBossInstance firstBossInstance = null;
 
-	private static final int[][] strainSpawns = {
-			{46160, 155298, -1078, 25394},
-			{45957, 156871, -1072, 38057},
-			{44380, 157191, -1072, 53056},
-			{43571, 155798, -1072, 64719},
-			{44650, 154540, -1078, 13862}
-	};
+	private static final int[][] strainSpawns =
+			{{46160, 155298, -1078, 25394}, {45957, 156871, -1072, 38057}, {44380, 157191, -1072, 53056}, {43571, 155798, -1072, 64719},
+					{44650, 154540, -1078, 13862}};
 
-	public GuillotineOfDeath(int questId, String name, String descr)
-	{
+	public GuillotineOfDeath(int questId, String name, String descr) {
 		super(questId, name, descr);
 
 		addSpawnId(firstBoss);
@@ -70,10 +63,8 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
-		if (bossStage == 3 && npc.getNpcId() == thirdBoss)
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+		if (bossStage == 3 && npc.getNpcId() == thirdBoss) {
 			//Update the first boss to killed
 			firstBossInstance.doDie(killer);
 
@@ -81,20 +72,16 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 
 			firstBossInstance = null;
 
-			Log.info("GuillotineOfDeath AI: " + npc.getName() + ", has been killed by: " + killer.getName() + " at: " +
-					System.currentTimeMillis());
+			Log.info("GuillotineOfDeath AI: " + npc.getName() + ", has been killed by: " + killer.getName() + " at: " + System.currentTimeMillis());
 		}
 
 		return super.onKill(npc, killer, isPet);
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
-	{
-		if (npc.getNpcId() == firstBoss)
-		{
-			if (bossStage == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
-			{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+		if (npc.getNpcId() == firstBoss) {
+			if (bossStage == 0 && npc.getCurrentHp() < npc.getMaxHp() * 0.05) {
 				bossStage = 1;
 
 				firstBossInstance = (L2RaidBossInstance) npc;
@@ -109,11 +96,8 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 
 				addSpawn(secondBoss, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, true);
 			}
-		}
-		else if (npc.getNpcId() == secondBoss)
-		{
-			if (bossStage == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.05)
-			{
+		} else if (npc.getNpcId() == secondBoss) {
+			if (bossStage == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.05) {
 				bossStage = 2;
 
 				npc.setIsInvul(true);
@@ -122,19 +106,15 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 
 				addSpawn(thirdBoss, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, true);
 			}
-		}
-		else if (npc.getNpcId() == thirdBoss)
-		{
-			if (bossStage == 2 && npc.getCurrentHp() < npc.getMaxHp() * 0.50)
-			{
+		} else if (npc.getNpcId() == thirdBoss) {
+			if (bossStage == 2 && npc.getCurrentHp() < npc.getMaxHp() * 0.50) {
 				bossStage = 3;
 
 				npc.broadcastPacket(new ExShowUsmPacket(12));
 
 				int[] rnd = null;
 
-				for (int a = 0; a <= 50; a++)
-				{
+				for (int a = 0; a <= 50; a++) {
 					rnd = strainSpawns[Rnd.get(strainSpawns.length)];
 
 					addSpawn(strainId, rnd[0], rnd[1], rnd[2], rnd[3], false, 0, true);
@@ -146,15 +126,13 @@ public class GuillotineOfDeath extends L2AttackableAIScript
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		npc.setIsMortal(false);
 
 		return super.onSpawn(npc);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new GuillotineOfDeath(-1, "GuillotineOfDeath", "ai");
 	}
 }

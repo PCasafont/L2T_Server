@@ -43,45 +43,35 @@ import java.util.Calendar;
  *
  * @author KenM
  */
-public class SiegeInfo extends L2GameServerPacket
-{
+public class SiegeInfo extends L2GameServerPacket {
 
 	private Castle castle;
 
-	public SiegeInfo(Castle castle)
-	{
+	public SiegeInfo(Castle castle) {
 		this.castle = castle;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
 		writeD(castle.getCastleId());
 		writeD(castle.getOwnerId() == activeChar.getClanId() && activeChar.isClanLeader() ? 0x01 : 0x00);
 		writeD(castle.getOwnerId());
-		if (castle.getOwnerId() > 0)
-		{
+		if (castle.getOwnerId() > 0) {
 			L2Clan owner = ClanTable.getInstance().getClan(castle.getOwnerId());
-			if (owner != null)
-			{
+			if (owner != null) {
 				writeS(owner.getName()); // Clan Name
 				writeS(owner.getLeaderName()); // Clan Leader Name
 				writeD(owner.getAllyId()); // Ally ID
 				writeS(owner.getAllyName()); // Ally Name
-			}
-			else
-			{
+			} else {
 				Log.warning("Null owner for castle: " + castle.getName());
 			}
-		}
-		else
-		{
+		} else {
 			writeS(""); // Clan Name
 			writeS(""); // Clan Leader Name
 			writeD(0); // Ally ID

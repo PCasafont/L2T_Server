@@ -26,8 +26,7 @@ import l2server.gameserver.network.serverpackets.TutorialShowHtml;
 /**
  * @author Pere
  */
-public class Q10324_FindingMagisterGallint extends Quest
-{
+public class Q10324_FindingMagisterGallint extends Quest {
 	// Quest
 	public static String qn = "Q10324_FindingMagisterGallint";
 
@@ -35,8 +34,7 @@ public class Q10324_FindingMagisterGallint extends Quest
 	private int shannon = 32974;
 	private int gallint = 32980;
 
-	public Q10324_FindingMagisterGallint(int questId, String name, String descr)
-	{
+	public Q10324_FindingMagisterGallint(int questId, String name, String descr) {
 		super(questId, name, descr);
 		addStartNpc(shannon);
 		addTalkId(shannon);
@@ -44,24 +42,19 @@ public class Q10324_FindingMagisterGallint extends Quest
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == shannon && event.equalsIgnoreCase("32974-03.htm"))
-		{
+		if (npc.getNpcId() == shannon && event.equalsIgnoreCase("32974-03.htm")) {
 			st.setState(State.STARTED);
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
-		}
-		else if (npc.getNpcId() == gallint && event.equalsIgnoreCase("32980-02.htm") && st.getInt("cond") == 1)
-		{
+		} else if (npc.getNpcId() == gallint && event.equalsIgnoreCase("32980-02.htm") && st.getInt("cond") == 1) {
 			st.unset("cond");
 			st.giveItems(57, 11000);
 			st.addExpAndSp(1700, 2000);
@@ -76,26 +69,19 @@ public class Q10324_FindingMagisterGallint extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == shannon)
-		{
-			switch (st.getState())
-			{
+		if (npc.getNpcId() == shannon) {
+			switch (st.getState()) {
 				case State.CREATED:
-					if (canStart(player))
-					{
+					if (canStart(player)) {
 						htmltext = "32974-01.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32974-00.htm"; // TODO
 					}
 					break;
@@ -106,22 +92,18 @@ public class Q10324_FindingMagisterGallint extends Quest
 					htmltext = "32974-05.htm"; // TODO
 					break;
 			}
-		}
-		else if (npc.getNpcId() == gallint && st.getInt("cond") == 1)
-		{
+		} else if (npc.getNpcId() == gallint && st.getInt("cond") == 1) {
 			htmltext = "32980-01.htm";
 		}
 		return htmltext;
 	}
 
 	@Override
-	public boolean canStart(L2PcInstance player)
-	{
+	public boolean canStart(L2PcInstance player) {
 		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 4) && player.getLevel() <= 20;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Q10324_FindingMagisterGallint(10324, qn, "Moving from Basic Training Ground to Admin Office.");
 	}
 }

@@ -23,36 +23,31 @@ import l2server.gameserver.network.serverpackets.PledgeReceiveWarList;
  *
  * @author -Wooden-
  */
-public final class RequestPledgeWarList extends L2GameClientPacket
-{
+public final class RequestPledgeWarList extends L2GameClientPacket {
 	@SuppressWarnings("unused")
 	private int unk1;
 	private int tab;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		unk1 = readD();
 		tab = readD();
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		//Logozo.info("C5: RequestPledgeWarList d:"+unk1);
 		//Logozo.info("C5: RequestPledgeWarList d:"+tab);
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-		if (activeChar.getClan() == null)
-		{
+		if (activeChar.getClan() == null) {
 			return;
 		}
-
+		
 		//do we need powers to do that??
 		activeChar.sendPacket(new PledgeReceiveWarList(activeChar.getClan(), tab));
 	}

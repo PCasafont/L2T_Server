@@ -24,36 +24,30 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  * @author Pere
  */
 
-public class EffectFaceoff extends L2Effect
-{
-	public EffectFaceoff(Env env, L2EffectTemplate template)
-	{
+public class EffectFaceoff extends L2Effect {
+	public EffectFaceoff(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.DEBUFF;
 	}
 
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		getEffector().setFaceoffTarget(getEffected());
 
 		return true;
 	}
 
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		getEffector().setFaceoffTarget(null);
 	}
 
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 }

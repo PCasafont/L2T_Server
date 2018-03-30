@@ -18,50 +18,42 @@ package l2server.gameserver.model;
 /**
  *
  */
-public class ItemRequest
-{
+public class ItemRequest {
 	int objectId;
 	int itemId;
 	long count;
 	long price;
 
-	public ItemRequest(int objectId, long count, long price)
-	{
+	public ItemRequest(int objectId, long count, long price) {
 		this.objectId = objectId;
 		this.count = count;
 		this.price = price;
 	}
 
-	public ItemRequest(int objectId, int itemId, long count, long price)
-	{
+	public ItemRequest(int objectId, int itemId, long count, long price) {
 		this.objectId = objectId;
 		this.itemId = itemId;
 		this.count = count;
 		this.price = price;
 	}
 
-	public int getObjectId()
-	{
+	public int getObjectId() {
 		return objectId;
 	}
 
-	public int getItemId()
-	{
+	public int getItemId() {
 		return itemId;
 	}
 
-	public void setCount(long count)
-	{
+	public void setCount(long count) {
 		this.count = count;
 	}
 
-	public long getCount()
-	{
+	public long getCount() {
 		return count;
 	}
 
-	public long getPrice()
-	{
+	public long getPrice() {
 		return price;
 	}
 
@@ -69,8 +61,7 @@ public class ItemRequest
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
-	public int hashCode()
-	{
+	public int hashCode() {
 		return objectId;
 	}
 
@@ -78,18 +69,14 @@ public class ItemRequest
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
-	public boolean equals(Object obj)
-	{
-		if (this == obj)
-		{
+	public boolean equals(Object obj) {
+		if (this == obj) {
 			return true;
 		}
-		if (obj == null)
-		{
+		if (obj == null) {
 			return false;
 		}
-		if (getClass() != obj.getClass())
-		{
+		if (getClass() != obj.getClass()) {
 			return false;
 		}
 		ItemRequest other = (ItemRequest) obj;

@@ -18,13 +18,11 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExCastleTendency extends L2GameServerPacket
-{
+public class ExCastleTendency extends L2GameServerPacket {
 	private int castleId;
 	private int tendency;
 
-	public ExCastleTendency(int castleId, int tendency)
-	{
+	public ExCastleTendency(int castleId, int tendency) {
 		this.castleId = castleId;
 		this.tendency = tendency;
 	}
@@ -32,8 +30,7 @@ public class ExCastleTendency extends L2GameServerPacket
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(castleId);
 		writeD(tendency);
 	}

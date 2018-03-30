@@ -20,20 +20,17 @@ package l2server.gameserver.network.serverpackets;
  *
  * @author KenM
  */
-public class ExRedSky extends L2GameServerPacket
-{
+public class ExRedSky extends L2GameServerPacket {
 	private int duration;
 
-	public ExRedSky(int duration)
-	{
+	public ExRedSky(int duration) {
 		this.duration = duration;
 	}
 
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(duration);
 	}
 }

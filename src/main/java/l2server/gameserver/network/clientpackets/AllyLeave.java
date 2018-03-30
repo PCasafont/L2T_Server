@@ -21,42 +21,34 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-public final class AllyLeave extends L2GameClientPacket
-{
+public final class AllyLeave extends L2GameClientPacket {
 
 	//
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
-		if (player.getClan() == null)
-		{
+		if (player.getClan() == null) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER));
 			return;
 		}
-		if (!player.isClanLeader())
-		{
+		if (!player.isClanLeader()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ONLY_CLAN_LEADER_WITHDRAW_ALLY));
 			return;
 		}
 		L2Clan clan = player.getClan();
-		if (clan.getAllyId() == 0)
-		{
+		if (clan.getAllyId() == 0) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_CURRENT_ALLIANCES));
 			return;
 		}
-		if (clan.getClanId() == clan.getAllyId())
-		{
+		if (clan.getClanId() == clan.getAllyId()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALLIANCE_LEADER_CANT_WITHDRAW));
 			return;
 		}

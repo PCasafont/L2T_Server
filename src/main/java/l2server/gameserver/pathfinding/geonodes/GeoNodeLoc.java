@@ -21,14 +21,12 @@ import l2server.gameserver.pathfinding.AbstractNodeLoc;
 /**
  * @author -Nemesiss-
  */
-public class GeoNodeLoc extends AbstractNodeLoc
-{
+public class GeoNodeLoc extends AbstractNodeLoc {
 	private final short x;
 	private final short y;
 	private final short z;
 
-	public GeoNodeLoc(short x, short y, short z)
-	{
+	public GeoNodeLoc(short x, short y, short z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
@@ -38,8 +36,7 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	 * @see l2server.gameserver.pathfinding.AbstractNodeLoc#getX()
 	 */
 	@Override
-	public int getX()
-	{
+	public int getX() {
 		return L2World.MAP_MIN_X + x * 128 + 48;
 	}
 
@@ -47,8 +44,7 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	 * @see l2server.gameserver.pathfinding.AbstractNodeLoc#getY()
 	 */
 	@Override
-	public int getY()
-	{
+	public int getY() {
 		return L2World.MAP_MIN_Y + y * 128 + 48;
 	}
 
@@ -56,26 +52,22 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	 * @see l2server.gameserver.pathfinding.AbstractNodeLoc#getZ()
 	 */
 	@Override
-	public short getZ()
-	{
+	public short getZ() {
 		return z;
 	}
 
 	@Override
-	public void setZ(short z)
-	{
+	public void setZ(short z) {
 		//
 	}
 
 	@Override
-	public int getNodeX()
-	{
+	public int getNodeX() {
 		return x;
 	}
 
 	@Override
-	public int getNodeY()
-	{
+	public int getNodeY() {
 		return y;
 	}
 
@@ -83,8 +75,7 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
-	public int hashCode()
-	{
+	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + x;
@@ -97,27 +88,21 @@ public class GeoNodeLoc extends AbstractNodeLoc
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
-	public boolean equals(Object obj)
-	{
-		if (this == obj)
-		{
+	public boolean equals(Object obj) {
+		if (this == obj) {
 			return true;
 		}
-		if (obj == null)
-		{
+		if (obj == null) {
 			return false;
 		}
-		if (!(obj instanceof GeoNodeLoc))
-		{
+		if (!(obj instanceof GeoNodeLoc)) {
 			return false;
 		}
 		final GeoNodeLoc other = (GeoNodeLoc) obj;
-		if (x != other.x)
-		{
+		if (x != other.x) {
 			return false;
 		}
-		if (y != other.y)
-		{
+		if (y != other.y) {
 			return false;
 		}
 		return z == other.z;

@@ -19,109 +19,87 @@ import l2server.Config;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExChangeAttributeFail;
-import l2server.gameserver.network.serverpackets.ExChangeAttributeItemList;
-import l2server.gameserver.network.serverpackets.ExChangeAttributeOk;
-import l2server.gameserver.network.serverpackets.ExStorageMaxCount;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.network.serverpackets.UserInfo;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.log.Log;
 import l2server.util.Rnd;
 
 /**
  * @author Erlandys
  */
-public class RequestChangeAttributeItem extends L2GameClientPacket
-{
-
+public class RequestChangeAttributeItem extends L2GameClientPacket {
+	
 	private int attributeOID, itemOID, newAttributeID;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		attributeOID = readD();
 		itemOID = readD();
 		newAttributeID = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
 		Log.info(itemOID + "");
 		L2ItemInstance item = player.getInventory().getItemByObjectId(itemOID);
-
-		if (player.getPrivateStoreType() != 0)
-		{
+		
+		if (player.getPrivateStoreType() != 0) {
 			player.sendPacket(SystemMessageId.YOU_CANNOT_CHANGE_AN_ATTRIBUTE_WHILE_USING_A_PRIVATE_SHOP_OR_WORKSHOP);
 			return;
 		}
-
-		if (player.getActiveTradeList() != null)
-		{
+		
+		if (player.getActiveTradeList() != null) {
 			player.sendPacket(SystemMessageId.YOU_CANNOT_CHANGE_ATTRIBUTES_WHILE_EXCHANING);
 			return;
 		}
-
-		if (!item.isWeapon())
-		{
+		
+		if (!item.isWeapon()) {
 			player.setActiveEnchantAttrItem(null);
 			player.sendPacket(new ExChangeAttributeItemList(player, attributeOID));
 			return;
 		}
-
-		if (newAttributeID == -1)
-		{
+		
+		if (newAttributeID == -1) {
 			player.setActiveEnchantAttrItem(null);
 			player.sendPacket(new ExChangeAttributeItemList(player, attributeOID));
 			return;
 		}
 		L2ItemInstance attribute = player.getInventory().getItemByObjectId(attributeOID);
 		player.getInventory().destroyItem("ChangingAttribute", attributeOID, 1, player, null);
-
-		if (Rnd.get(100) < Config.CHANGE_CHANCE_ELEMENT)
-		{
-			SystemMessage sm = SystemMessage
-					.getSystemMessage(SystemMessageId.S1S_S2_ATTRIBUTE_HAS_SUCCESSFULLY_CHANGED_TO_S3_ATTRIBUTE);
+		
+		if (Rnd.get(100) < Config.CHANGE_CHANCE_ELEMENT) {
+			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1S_S2_ATTRIBUTE_HAS_SUCCESSFULLY_CHANGED_TO_S3_ATTRIBUTE);
 			sm.addItemName(item);
 			sm.addElemental(item.getAttackElementType());
 			sm.addElemental(newAttributeID);
-
+			
 			item.changeAttribute((byte) newAttributeID, item.getAttackElementPower());
-			if (item.isEquipped())
-			{
+			if (item.isEquipped()) {
 				item.updateElementAttrBonus(player);
 			}
-
+			
 			player.sendPacket(sm);
 			player.sendPacket(new ExChangeAttributeOk());
 			player.sendPacket(new UserInfo(player));
-		}
-		else
-		{
+		} else {
 			player.sendPacket(new ExChangeAttributeFail());
 			player.sendPacket(SystemMessageId.CHANGING_ATTRIBUTES_HAS_BEEN_FAILED);
 		}
-
+		
 		// send packets
 		player.sendPacket(new ExStorageMaxCount(player));
 		InventoryUpdate iu = new InventoryUpdate();
 		iu.addModifiedItem(item);
-		if (player.getInventory().getItemByObjectId(attributeOID) == null)
-		{
+		if (player.getInventory().getItemByObjectId(attributeOID) == null) {
 			iu.addRemovedItem(attribute);
-		}
-		else
-		{
+		} else {
 			iu.addModifiedItem(attribute);
 		}
 		player.sendPacket(iu);
-
+		
 		player.setActiveEnchantAttrItem(null);
 	}
 }

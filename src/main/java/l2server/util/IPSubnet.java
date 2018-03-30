@@ -18,145 +18,110 @@ package l2server.util;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-public class IPSubnet
-{
+public class IPSubnet {
 	final byte[] addr;
 	final byte[] mask;
 	final boolean isIPv4;
-
-	public IPSubnet(String input) throws UnknownHostException, NumberFormatException, ArrayIndexOutOfBoundsException
-	{
+	
+	public IPSubnet(String input) throws UnknownHostException, NumberFormatException, ArrayIndexOutOfBoundsException {
 		int idx = input.indexOf("/");
-		if (idx > 0)
-		{
+		if (idx > 0) {
 			addr = InetAddress.getByName(input.substring(0, idx)).getAddress();
 			mask = getMask(Integer.parseInt(input.substring(idx + 1)), addr.length);
 			isIPv4 = addr.length == 4;
-
-			if (!applyMask(addr))
-			{
+			
+			if (!applyMask(addr)) {
 				throw new UnknownHostException(input);
 			}
-		}
-		else
-		{
+		} else {
 			addr = InetAddress.getByName(input).getAddress();
 			mask = getMask(addr.length * 8, addr.length); // host, no need to check mask
 			isIPv4 = addr.length == 4;
 		}
 	}
-
-	public IPSubnet(InetAddress addr, int mask) throws UnknownHostException
-	{
-        this.addr = addr.getAddress();
+	
+	public IPSubnet(InetAddress addr, int mask) throws UnknownHostException {
+		this.addr = addr.getAddress();
 		isIPv4 = this.addr.length == 4;
-        this.mask = getMask(mask, this.addr.length);
-		if (!applyMask(this.addr))
-		{
+		this.mask = getMask(mask, this.addr.length);
+		if (!applyMask(this.addr)) {
 			throw new UnknownHostException(addr.toString() + "/" + mask);
 		}
 	}
-
-	public byte[] getAddress()
-	{
+	
+	public byte[] getAddress() {
 		return addr;
 	}
-
-	public boolean applyMask(byte[] addr)
-	{
+	
+	public boolean applyMask(byte[] addr) {
 		// V4 vs V4 or V6 vs V6 checks
-		if (isIPv4 == (addr.length == 4))
-		{
-			for (int i = 0; i < addr.length; i++)
-			{
-				if ((addr[i] & mask[i]) != addr[i])
-				{
+		if (isIPv4 == (addr.length == 4)) {
+			for (int i = 0; i < addr.length; i++) {
+				if ((addr[i] & mask[i]) != addr[i]) {
 					return false;
 				}
 			}
-		}
-		else
-		{
+		} else {
 			// check for embedded v4 in v6 addr (not done !)
-			if (isIPv4)
-			{
+			if (isIPv4) {
 				// my V4 vs V6
-				for (int i = 0; i < addr.length; i++)
-				{
-					if ((addr[i + 12] & mask[i]) != addr[i])
-					{
+				for (int i = 0; i < addr.length; i++) {
+					if ((addr[i + 12] & mask[i]) != addr[i]) {
 						return false;
 					}
 				}
-			}
-			else
-			{
+			} else {
 				// my V6 vs V4
-				for (int i = 0; i < addr.length; i++)
-				{
-					if ((addr[i] & mask[i + 12]) != addr[i + 12])
-					{
+				for (int i = 0; i < addr.length; i++) {
+					if ((addr[i] & mask[i + 12]) != addr[i + 12]) {
 						return false;
 					}
 				}
 			}
 		}
-
+		
 		return true;
 	}
-
+	
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		int size = 0;
-		for (byte element : mask)
-		{
+		for (byte element : mask) {
 			size += Integer.bitCount(element & 0xFF);
 		}
-
-		try
-		{
+		
+		try {
 			return InetAddress.getByAddress(addr).toString() + "/" + size;
-		}
-		catch (UnknownHostException e)
-		{
+		} catch (UnknownHostException e) {
 			return "Invalid";
 		}
 	}
-
+	
 	@Override
-	public boolean equals(Object o)
-	{
-		if (o instanceof IPSubnet)
-		{
+	public boolean equals(Object o) {
+		if (o instanceof IPSubnet) {
 			return applyMask(((IPSubnet) o).getAddress());
-		}
-		else if (o instanceof InetAddress)
-		{
+		} else if (o instanceof InetAddress) {
 			return applyMask(((InetAddress) o).getAddress());
 		}
-
+		
 		return false;
 	}
-
-	private static byte[] getMask(int n, int maxLength) throws UnknownHostException
-	{
-		if (n > maxLength << 3 || n < 0)
-		{
+	
+	private static byte[] getMask(int n, int maxLength) throws UnknownHostException {
+		if (n > maxLength << 3 || n < 0) {
 			throw new UnknownHostException("Invalid netmask: " + n);
 		}
-
+		
 		final byte[] result = new byte[maxLength];
-		for (int i = 0; i < maxLength; i++)
-		{
+		for (int i = 0; i < maxLength; i++) {
 			result[i] = (byte) 0xFF;
 		}
-
-		for (int i = (maxLength << 3) - 1; i >= n; i--)
-		{
+		
+		for (int i = (maxLength << 3) - 1; i >= n; i--) {
 			result[i >> 3] = (byte) (result[i >> 3] << 1);
 		}
-
+		
 		return result;
 	}
 }

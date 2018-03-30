@@ -17,18 +17,15 @@ package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 
-public final class L2FlyMonsterInstance extends L2MonsterInstance
-{
-
-	public L2FlyMonsterInstance(int objectId, L2NpcTemplate template)
-	{
+public final class L2FlyMonsterInstance extends L2MonsterInstance {
+	
+	public L2FlyMonsterInstance(int objectId, L2NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2FlyMonsterInstance);
 	}
-
+	
 	@Override
-	public void onSpawn()
-	{
+	public void onSpawn() {
 		setIsFlying(true);
 		super.onSpawn();
 	}

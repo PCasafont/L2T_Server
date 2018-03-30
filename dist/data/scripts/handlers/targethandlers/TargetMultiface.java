@@ -34,27 +34,21 @@ import java.util.List;
 /**
  * @author nBd
  */
-public class TargetMultiface implements ISkillTargetTypeHandler
-{
+public class TargetMultiface implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		List<L2Character> targetList = new ArrayList<L2Character>();
 
-		if (!(target instanceof L2Attackable) && !(target instanceof L2PcInstance))
-		{
+		if (!(target instanceof L2Attackable) && !(target instanceof L2PcInstance)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return null;
 		}
 
-		if (onlyFirst == false)
-		{
+		if (onlyFirst == false) {
 			targetList.add(target);
-		}
-		else
-		{
+		} else {
 			return new L2Character[]{target};
 		}
 
@@ -63,20 +57,16 @@ public class TargetMultiface implements ISkillTargetTypeHandler
 		Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
 		//synchronized (activeChar.getKnownList().getKnownObjects())
 		{
-			for (L2Object obj : objs)
-			{
-				if (!Util.checkIfInRange(radius, activeChar, obj, true))
-				{
+			for (L2Object obj : objs) {
+				if (!Util.checkIfInRange(radius, activeChar, obj, true)) {
 					continue;
 				}
 
-				if (obj instanceof L2Attackable && obj != target)
-				{
+				if (obj instanceof L2Attackable && obj != target) {
 					targetList.add((L2Character) obj);
 				}
 
-				if (targetList.size() == 0)
-				{
+				if (targetList.size() == 0) {
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_CANT_FOUND));
 					return null;
 				}
@@ -89,13 +79,11 @@ public class TargetMultiface implements ISkillTargetTypeHandler
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
+	public Enum<L2SkillTargetType> getTargetType() {
 		return L2SkillTargetType.TARGET_MULTIFACE;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetMultiface());
 	}
 }

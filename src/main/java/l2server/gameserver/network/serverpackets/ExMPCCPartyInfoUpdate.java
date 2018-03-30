@@ -19,35 +19,32 @@ import l2server.gameserver.model.L2Party;
 
 /**
  * @author chris_00
- *         <p>
- *         ch Sddd
+ * <p>
+ * ch Sddd
  */
-public class ExMPCCPartyInfoUpdate extends L2GameServerPacket
-{
-
+public class ExMPCCPartyInfoUpdate extends L2GameServerPacket {
+	
 	private L2Party party;
 	private int mode, LeaderOID, memberCount;
 	private String name;
-
+	
 	/**
 	 * @param party
 	 * @param mode  0 = Remove, 1 = Add
 	 */
-	public ExMPCCPartyInfoUpdate(L2Party party, int mode)
-	{
+	public ExMPCCPartyInfoUpdate(L2Party party, int mode) {
 		this.party = party;
 		name = party.getLeader().getName();
 		LeaderOID = party.getPartyLeaderOID();
 		memberCount = party.getMemberCount();
 		this.mode = mode;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeS(name);
 		writeD(LeaderOID);
 		writeD(memberCount);

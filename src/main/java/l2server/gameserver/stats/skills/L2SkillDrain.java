@@ -38,15 +38,13 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
-public class L2SkillDrain extends L2Skill
-{
+public class L2SkillDrain extends L2Skill {
 	private static final Logger logDamage = Logger.getLogger("damage");
 
 	private float absorbPart;
 	private int absorbAbs;
 
-	public L2SkillDrain(StatsSet set)
-	{
+	public L2SkillDrain(StatsSet set) {
 		super(set);
 
 		absorbPart = set.getFloat("absorbPart", 0.f);
@@ -54,34 +52,26 @@ public class L2SkillDrain extends L2Skill
 	}
 
 	@Override
-	public void useSkill(L2Character activeChar, L2Object[] targets)
-	{
-		if (activeChar.isAlikeDead())
-		{
+	public void useSkill(L2Character activeChar, L2Object[] targets) {
+		if (activeChar.isAlikeDead()) {
 			return;
 		}
 
-		for (L2Character target : (L2Character[]) targets)
-		{
-			if (target.isAlikeDead() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)
-			{
+		for (L2Character target : (L2Character[]) targets) {
+			if (target.isAlikeDead() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB) {
 				continue;
 			}
 
-			if (activeChar != target && target.isInvul(activeChar))
-			{
+			if (activeChar != target && target.isInvul(activeChar)) {
 				continue; // No effect on invulnerable chars unless they cast it themselves.
 			}
 
 			double ssMul = L2ItemInstance.CHARGED_NONE;
 			L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
-			if (weaponInst != null)
-			{
+			if (weaponInst != null) {
 				ssMul = weaponInst.getChargedSpiritShot();
 				weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-			}
-			else if (activeChar instanceof L2Summon)
-			{
+			} else if (activeChar instanceof L2Summon) {
 				L2Summon activeSummon = (L2Summon) activeChar;
 				ssMul = activeSummon.getChargedSpiritShot();
 				activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
@@ -100,38 +90,27 @@ public class L2SkillDrain extends L2Skill
 					&& target instanceof L2MonsterInstance
 					&& ((L2PcInstance)activeChar).getPvpFlag() > 0))*/
 			{
-				if (curCp > 0)
-				{
-					if (damage < curCp)
-					{
+				if (curCp > 0) {
+					if (damage < curCp) {
 						drain = 0;
-					}
-					else
-					{
+					} else {
 						drain = damage - curCp;
 					}
-				}
-				else if (damage > curHp)
-				{
+				} else if (damage > curHp) {
 					drain = curHp;
-				}
-				else
-				{
+				} else {
 					drain = damage;
 				}
 			}
 
 			double hpAdd = absorbAbs + absorbPart * drain;
-			double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar.getMaxHp() :
-					activeChar.getCurrentHp() + hpAdd;
+			double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar.getMaxHp() : activeChar.getCurrentHp() + hpAdd;
 
 			activeChar.setCurrentHp(hp);
 
-			if (getId() == 1245)
-			{
+			if (getId() == 1245) {
 				int mpAdd = (int) (damage * 0.05);
-				double mp = activeChar.getCurrentMp() + mpAdd > activeChar.getMaxMp() ? activeChar.getMaxMp() :
-						activeChar.getCurrentMp() + mpAdd;
+				double mp = activeChar.getCurrentMp() + mpAdd > activeChar.getMaxMp() ? activeChar.getMaxMp() : activeChar.getCurrentMp() + mpAdd;
 
 				activeChar.setCurrentMp(mp);
 
@@ -145,47 +124,36 @@ public class L2SkillDrain extends L2Skill
 			activeChar.sendPacket(suhp);
 
 			// Check to see if we should damage the target
-			if (damage > 0 && (!target.isDead() || getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB))
-			{
+			if (damage > 0 && (!target.isDead() || getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)) {
 				// Manage attack or cast break of the target (calculating rate, sending message...)
-				if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
-				{
+				if (!target.isRaid() && Formulas.calcAtkBreak(target, damage)) {
 					target.breakAttack();
 					target.breakCast();
 				}
 
 				activeChar.sendDamageMessage(target, damage, mcrit, false, false);
 
-				if (Config.LOG_GAME_DAMAGE && activeChar instanceof L2Playable &&
-						damage > Config.LOG_GAME_DAMAGE_THRESHOLD)
-				{
+				if (Config.LOG_GAME_DAMAGE && activeChar instanceof L2Playable && damage > Config.LOG_GAME_DAMAGE_THRESHOLD) {
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[]{activeChar, " did damage ", damage, this, " to ", target});
 					record.setLoggerName("mdam");
 					logDamage.log(record);
 				}
 
-				if (hasEffects() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)
-				{
+				if (hasEffects() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB) {
 					// ignoring vengeance-like reflections
-					if ((Formulas.calcSkillReflect(target, this) & Formulas.SKILL_REFLECT_EFFECTS) > 0)
-					{
+					if ((Formulas.calcSkillReflect(target, this) & Formulas.SKILL_REFLECT_EFFECTS) > 0) {
 						//activeChar.stopSkillEffects(getId());
 						getEffects(target, activeChar);
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
 						sm.addSkillName(getId());
 						activeChar.sendPacket(sm);
-					}
-					else
-					{
+					} else {
 						// activate attacked effects, if any
 						//target.stopSkillEffects(getId());
-						if (Formulas.calcSkillSuccess(activeChar, target, this, shld, ssMul))
-						{
+						if (Formulas.calcSkillSuccess(activeChar, target, this, shld, ssMul)) {
 							getEffects(activeChar, target);
-						}
-						else
-						{
+						} else {
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_YOUR_S2);
 							sm.addCharName(target);
 							sm.addSkillName(this);
@@ -198,8 +166,7 @@ public class L2SkillDrain extends L2Skill
 			}
 
 			// Check to see if we should do the decay right after the cast
-			if (target.isDead() && getTargetType() == L2SkillTargetType.TARGET_CORPSE_MOB && target instanceof L2Npc)
-			{
+			if (target.isDead() && getTargetType() == L2SkillTargetType.TARGET_CORPSE_MOB && target instanceof L2Npc) {
 				((L2Npc) target).endDecayTask();
 			}
 		}
@@ -214,17 +181,13 @@ public class L2SkillDrain extends L2Skill
 		getEffectsSelf(activeChar);
 	}
 
-	public void useCubicSkill(L2CubicInstance activeCubic, L2Object[] targets)
-	{
-		if (Config.DEBUG)
-		{
+	public void useCubicSkill(L2CubicInstance activeCubic, L2Object[] targets) {
+		if (Config.DEBUG) {
 			Log.info("L2SkillDrain: useCubicSkill()");
 		}
 
-		for (L2Character target : (L2Character[]) targets)
-		{
-			if (target.isAlikeDead() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)
-			{
+		for (L2Character target : (L2Character[]) targets) {
+			if (target.isAlikeDead() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB) {
 				continue;
 			}
 
@@ -232,15 +195,13 @@ public class L2SkillDrain extends L2Skill
 			byte shld = Formulas.calcShldUse(activeCubic.getOwner(), target, this);
 
 			int damage = (int) Formulas.calcMagicDam(activeCubic, target, this, mcrit, shld);
-			if (Config.DEBUG)
-			{
+			if (Config.DEBUG) {
 				Log.info("L2SkillDrain: useCubicSkill() -> damage = " + damage);
 			}
 
 			double hpAdd = absorbAbs + absorbPart * damage;
 			L2PcInstance owner = activeCubic.getOwner();
-			double hp =
-					owner.getCurrentHp() + hpAdd > owner.getMaxHp() ? owner.getMaxHp() : owner.getCurrentHp() + hpAdd;
+			double hp = owner.getCurrentHp() + hpAdd > owner.getMaxHp() ? owner.getMaxHp() : owner.getCurrentHp() + hpAdd;
 
 			owner.setCurrentHp(hp);
 
@@ -249,13 +210,11 @@ public class L2SkillDrain extends L2Skill
 			owner.sendPacket(suhp);
 
 			// Check to see if we should damage the target
-			if (damage > 0 && (!target.isDead() || getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB))
-			{
+			if (damage > 0 && (!target.isDead() || getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)) {
 				target.reduceCurrentHp(damage, activeCubic.getOwner(), this);
 
 				// Manage attack or cast break of the target (calculating rate, sending message...)
-				if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
-				{
+				if (!target.isRaid() && Formulas.calcAtkBreak(target, damage)) {
 					target.breakAttack();
 					target.breakCast();
 				}

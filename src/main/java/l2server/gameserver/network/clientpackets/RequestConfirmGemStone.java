@@ -28,71 +28,60 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @author -Wooden-
  */
-public final class RequestConfirmGemStone extends L2GameClientPacket
-{
+public final class RequestConfirmGemStone extends L2GameClientPacket {
 	private int targetItemObjId;
 	private int refinerItemObjId;
 	private int gemstoneItemObjId;
 	private long gemStoneCount;
-
+	
 	/**
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		targetItemObjId = readD();
 		refinerItemObjId = readD();
 		gemstoneItemObjId = readD();
 		gemStoneCount = readQ();
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(targetItemObjId);
-		if (targetItem == null)
-		{
+		if (targetItem == null) {
 			return;
 		}
 		L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(refinerItemObjId);
-		if (refinerItem == null)
-		{
+		if (refinerItem == null) {
 			return;
 		}
 		L2ItemInstance gemStoneItem = activeChar.getInventory().getItemByObjectId(gemstoneItemObjId);
-		if (gemStoneItem == null)
-		{
+		if (gemStoneItem == null) {
 			return;
 		}
-
+		
 		// Make sure the item is a gemstone
-		if (!LifeStoneTable.getInstance().isValid(activeChar, targetItem, refinerItem, gemStoneItem))
-		{
+		if (!LifeStoneTable.getInstance().isValid(activeChar, targetItem, refinerItem, gemStoneItem)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM));
 			return;
 		}
-
+		
 		// Check for gemstone count
 		final LifeStone ls = LifeStoneTable.getInstance().getLifeStone(refinerItem.getItemId());
-		if (ls == null)
-		{
+		if (ls == null) {
 			return;
 		}
-
-		if (gemStoneCount != LifeStoneTable.getGemStoneCount(targetItem.getItem().getItemGrade(), ls.getGrade()))
-		{
+		
+		if (gemStoneCount != LifeStoneTable.getGemStoneCount(targetItem.getItem().getItemGrade(), ls.getGrade())) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.GEMSTONE_QUANTITY_IS_INCORRECT));
 			return;
 		}
-
-		activeChar.sendPacket(new ExPutCommissionResultForVariationMake(gemstoneItemObjId, gemStoneCount,
-				gemStoneItem.getItemId()));
+		
+		activeChar.sendPacket(new ExPutCommissionResultForVariationMake(gemstoneItemObjId, gemStoneCount, gemStoneItem.getItemId()));
 	}
 }

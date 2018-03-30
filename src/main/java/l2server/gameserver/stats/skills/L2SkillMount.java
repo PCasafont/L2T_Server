@@ -23,71 +23,58 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.StatsSet;
 
-public class L2SkillMount extends L2Skill
-{
+public class L2SkillMount extends L2Skill {
 	private int npcId;
 	private int itemId;
 
-	public L2SkillMount(StatsSet set)
-	{
+	public L2SkillMount(StatsSet set) {
 		super(set);
 		npcId = set.getInteger("npcId", 0);
 		itemId = set.getInteger("itemId", 0);
 	}
 
 	@Override
-	public void useSkill(L2Character caster, L2Object[] targets)
-	{
-		if (!(caster instanceof L2PcInstance))
-		{
+	public void useSkill(L2Character caster, L2Object[] targets) {
+		if (!(caster instanceof L2PcInstance)) {
 			return;
 		}
 
 		L2PcInstance activePlayer = (L2PcInstance) caster;
 
-		if (activePlayer.getEvent() != null && !activePlayer.getEvent().onItemSummon(activePlayer.getObjectId()))
-		{
+		if (activePlayer.getEvent() != null && !activePlayer.getEvent().onItemSummon(activePlayer.getObjectId())) {
 			return;
 		}
 
-		if (!activePlayer.getFloodProtectors().getItemPetSummon().tryPerformAction("mount"))
-		{
+		if (!activePlayer.getFloodProtectors().getItemPetSummon().tryPerformAction("mount")) {
 			return;
 		}
 
 		// Dismount Action
-		if (npcId == 0)
-		{
+		if (npcId == 0) {
 			activePlayer.dismount();
 			return;
 		}
 
-		if (activePlayer.isSitting())
-		{
+		if (activePlayer.isSitting()) {
 			activePlayer.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_MOVE_SITTING));
 			return;
 		}
 
-		if (activePlayer.inObserverMode())
-		{
+		if (activePlayer.inObserverMode()) {
 			return;
 		}
 
-		if (activePlayer.isInOlympiadMode())
-		{
-			activePlayer.sendPacket(
-					SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+		if (activePlayer.isInOlympiadMode()) {
+			activePlayer.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
 			return;
 		}
 
-		if (activePlayer.getPet() != null || activePlayer.isMounted())
-		{
+		if (activePlayer.getPet() != null || activePlayer.isMounted()) {
 			activePlayer.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ALREADY_HAVE_A_PET));
 			return;
 		}
 
-		if (activePlayer.isAttackingNow() || activePlayer.isCursedWeaponEquipped())
-		{
+		if (activePlayer.isAttackingNow() || activePlayer.isCursedWeaponEquipped()) {
 			activePlayer.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_SUMMON_IN_COMBAT));
 			return;
 		}

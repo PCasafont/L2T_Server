@@ -25,29 +25,26 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @author mrTJO
  */
-public class ExCubeGameChangeTeam extends L2GameServerPacket
-{
+public class ExCubeGameChangeTeam extends L2GameServerPacket {
 	L2PcInstance player;
 	boolean fromRedTeam;
-
+	
 	/**
 	 * Move Player from Team x to Team y
 	 *
 	 * @param player      Player Instance
 	 * @param fromRedTeam Is Player from Red Team?
 	 */
-	public ExCubeGameChangeTeam(L2PcInstance player, boolean fromRedTeam)
-	{
+	public ExCubeGameChangeTeam(L2PcInstance player, boolean fromRedTeam) {
 		this.player = player;
 		this.fromRedTeam = fromRedTeam;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(player.getObjectId());
 		writeD(fromRedTeam ? 0x01 : 0x00);
 		writeD(fromRedTeam ? 0x00 : 0x01);

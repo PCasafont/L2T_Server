@@ -42,21 +42,18 @@ import java.util.Map;
  * @author UnAfraid
  */
 
-public class ChainHeal implements ISkillHandler
-{
+public class ChainHeal implements ISkillHandler {
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.CHAIN_HEAL};
 
 	/**
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
 		//check for other effects
 		ISkillHandler handler = SkillHandler.getInstance().getSkillHandler(L2SkillType.BUFF);
 
-		if (handler != null)
-		{
+		if (handler != null) {
 			handler.useSkill(activeChar, skill, targets);
 		}
 		SystemMessage sm;
@@ -67,48 +64,37 @@ public class ChainHeal implements ISkillHandler
 
 		double power = skill.getPower();
 		// Healing critical, since CT2.3 Gracia Final
-		if (Formulas.calcMCrit(activeChar.getMCriticalHit(activeChar, skill)))
-		{
+		if (Formulas.calcMCrit(activeChar.getMCriticalHit(activeChar, skill))) {
 			activeChar.sendMessage("Healing critical!");
 			power *= 2;
 		}
 
-		if (Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance && activeChar.isInParty())
-		{
+		if (Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance && activeChar.isInParty()) {
 			int classId = ((L2PcInstance) activeChar).getCurrentClass().getParent().getAwakeningClassId();
 			int members = 0;
-			for (L2PcInstance partyMember : activeChar.getParty().getPartyMembers())
-			{
-				if (partyMember.getCurrentClass().getParent() != null &&
-						partyMember.getCurrentClass().getParent().getAwakeningClassId() == classId)
-				{
+			for (L2PcInstance partyMember : activeChar.getParty().getPartyMembers()) {
+				if (partyMember.getCurrentClass().getParent() != null && partyMember.getCurrentClass().getParent().getAwakeningClassId() == classId) {
 					members++;
 				}
 			}
 
-			if (members > 1)
-			{
+			if (members > 1) {
 				power /= members;
 			}
 		}
 
-		if (power > 100.0)
-		{
+		if (power > 100.0) {
 			power = 100.0;
 		}
 
 		// Get top 10 most damaged and iterate the heal over them
-		for (L2Character character : characters)
-		{
+		for (L2Character character : characters) {
 			//1505 - sublime self sacrifice
-			if ((character == null || character.isDead() || character.isInvul(activeChar)) && skill.getId() != 1505)
-			{
+			if ((character == null || character.isDead() || character.isInvul(activeChar)) && skill.getId() != 1505) {
 				continue;
 			}
 
-			if (character != activeChar && character.getFaceoffTarget() != null &&
-					character.getFaceoffTarget() != activeChar)
-			{
+			if (character != activeChar && character.getFaceoffTarget() != null && character.getFaceoffTarget() != activeChar) {
 				continue;
 			}
 
@@ -116,22 +102,18 @@ public class ChainHeal implements ISkillHandler
 
 			amount = Math.min(amount, character.getMaxHp() - character.getCurrentHp());
 			amount *= character.calcStat(Stats.HEAL_EFFECTIVNESS, 100, null, null) / 100;
-			amount = Math.min(character.calcStat(Stats.GAIN_HP_LIMIT, character.getMaxHp(), null, null),
-					character.getCurrentHp() + amount) - character.getCurrentHp();
-			if (amount < 0)
-			{
+			amount = Math.min(character.calcStat(Stats.GAIN_HP_LIMIT, character.getMaxHp(), null, null), character.getCurrentHp() + amount) -
+					character.getCurrentHp();
+			if (amount < 0) {
 				amount = 0;
 			}
 
 			character.setCurrentHp(character.getCurrentHp() + amount);
 
-			if (activeChar != character)
-			{
+			if (activeChar != character) {
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_RESTORED_BY_C1);
 				sm.addCharName(activeChar);
-			}
-			else
-			{
+			} else {
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_RESTORED);
 			}
 
@@ -141,10 +123,8 @@ public class ChainHeal implements ISkillHandler
 
 			character.broadcastStatusUpdate();
 
-			if (activeChar instanceof L2PcInstance && character instanceof L2PcInstance)
-			{
-				if (((L2PcInstance) activeChar).getPvpFlag() == 0 && ((L2PcInstance) character).getPvpFlag() > 0)
-				{
+			if (activeChar instanceof L2PcInstance && character instanceof L2PcInstance) {
+				if (((L2PcInstance) activeChar).getPvpFlag() == 0 && ((L2PcInstance) character).getPvpFlag() > 0) {
 					((L2PcInstance) activeChar).updatePvPStatus();
 				}
 
@@ -155,22 +135,18 @@ public class ChainHeal implements ISkillHandler
 		}
 	}
 
-	private L2Character[] getTargetsToHeal(L2Character[] targets, L2Character caster, int skillRadius)
-	{
+	private L2Character[] getTargetsToHeal(L2Character[] targets, L2Character caster, int skillRadius) {
 		Map<L2Character, Double> tmpTargets = new LinkedHashMap<L2Character, Double>();
 
 		List<L2Character> sortedListToReturn = new LinkedList<L2Character>();
 
-		if (caster.getTarget() == caster)
-		{
+		if (caster.getTarget() == caster) {
 			tmpTargets.put(caster, caster.getCurrentHp() / caster.getMaxHp());
 		}
 
-		for (L2Character target : caster.getKnownList().getKnownCharactersInRadius(skillRadius))
-		{
+		for (L2Character target : caster.getKnownList().getKnownCharactersInRadius(skillRadius)) {
 			//caster.sendMessage("Trying to add " + target.getName());
-			if (canAddCharacter(caster, target, tmpTargets.size(), skillRadius))
-			{
+			if (canAddCharacter(caster, target, tmpTargets.size(), skillRadius)) {
 				double hpPercent = target.getCurrentHp() / target.getMaxHp();
 				tmpTargets.put(target, hpPercent);
 
@@ -186,91 +162,66 @@ public class ChainHeal implements ISkillHandler
 		return sortedListToReturn.toArray(new L2Character[sortedListToReturn.size()]);
 	}
 
-	private static boolean canAddCharacter(L2Character caster, L2Character target, int listZie, int skillRadius)
-	{
-		if (listZie >= 10)
-		{
+	private static boolean canAddCharacter(L2Character caster, L2Character target, int listZie, int skillRadius) {
+		if (listZie >= 10) {
 			return false;
 		}
 
-		if (target.isDead())
-		{
+		if (target.isDead()) {
 			return false;
 		}
 
-		if (!(caster instanceof L2PcInstance))
-		{
+		if (!(caster instanceof L2PcInstance)) {
 			return false;
 		}
 
 		final L2PcInstance activeChar = (L2PcInstance) caster;
 
-		if (target instanceof L2Playable)
-		{
+		if (target instanceof L2Playable) {
 			final L2PcInstance pTarget = target.getActingPlayer();
 
-			if (!pTarget.isVisible())
-			{
+			if (!pTarget.isVisible()) {
 				return false;
 			}
 
-			if (activeChar.isPlayingEvent())
-			{
-				if (!pTarget.isPlayingEvent())
-				{
+			if (activeChar.isPlayingEvent()) {
+				if (!pTarget.isPlayingEvent()) {
 					return false;
-				}
-				else if (activeChar.getTeamId() != 0 && activeChar.getTeamId() != pTarget.getTeamId())
-				{
+				} else if (activeChar.getTeamId() != 0 && activeChar.getTeamId() != pTarget.getTeamId()) {
 					return false;
 				}
 
 				return true;
-			}
-			else if (pTarget.isPlayingEvent())
-			{
+			} else if (pTarget.isPlayingEvent()) {
 				return false;
 			}
 
-			if (activeChar.getDuelId() != 0)
-			{
-				if (activeChar.getDuelId() != pTarget.getDuelId())
-				{
+			if (activeChar.getDuelId() != 0) {
+				if (activeChar.getDuelId() != pTarget.getDuelId()) {
 					return false;
 				}
-			}
-			else if (pTarget.getDuelId() != 0)
-			{
+			} else if (pTarget.getDuelId() != 0) {
 				return false;
 			}
-			if (activeChar.isInSameParty(pTarget) || activeChar.isInSameChannel(pTarget) ||
-					activeChar.isInSameClan(pTarget) || activeChar.isInSameAlly(pTarget))
-			{
+			if (activeChar.isInSameParty(pTarget) || activeChar.isInSameChannel(pTarget) || activeChar.isInSameClan(pTarget) ||
+					activeChar.isInSameAlly(pTarget)) {
 				return true;
 			}
-			if (pTarget.isAvailableForCombat() || pTarget.isInsidePvpZone() || activeChar.isInSameClanWar(pTarget))
-			{
+			if (pTarget.isAvailableForCombat() || pTarget.isInsidePvpZone() || activeChar.isInSameClanWar(pTarget)) {
 				return false;
 			}
-			if (activeChar.isInSameOlympiadGame(pTarget)|| activeChar.isInSameClan(pTarget))
-			{
+			if (activeChar.isInSameOlympiadGame(pTarget) || activeChar.isInSameClan(pTarget)) {
 				return false;
 			}
-			if (target.isInsideZone(L2Character.ZONE_TOWN))
-			{
+			if (target.isInsideZone(L2Character.ZONE_TOWN)) {
 				return true;
 			}
-		}
-		else if (target instanceof L2NpcInstance)
-		{
+		} else if (target instanceof L2NpcInstance) {
 			final L2NpcInstance npc = (L2NpcInstance) target;
-			if (!npc.isInsideZone(L2Character.ZONE_TOWN))
-			{
+			if (!npc.isInsideZone(L2Character.ZONE_TOWN)) {
 				return false;
 			}
-		}
-		else
-		{
+		} else {
 			return false;
 		}
 
@@ -281,8 +232,7 @@ public class ChainHeal implements ISkillHandler
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

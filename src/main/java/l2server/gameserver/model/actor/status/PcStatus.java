@@ -37,91 +37,75 @@ import l2server.gameserver.stats.Stats;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
-public class PcStatus extends PlayableStatus
-{
+public class PcStatus extends PlayableStatus {
 	private double currentCp = 0; //Current CP of the L2PcInstance
 
-	public PcStatus(L2PcInstance activeChar)
-	{
+	public PcStatus(L2PcInstance activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public final void reduceCp(int value)
-	{
-		if (getCurrentCp() > value)
-		{
+	public final void reduceCp(int value) {
+		if (getCurrentCp() > value) {
 			setCurrentCp(getCurrentCp() - value);
-		}
-		else
-		{
+		} else {
 			setCurrentCp(0);
 		}
 	}
 
 	@Override
-	public final void reduceHp(double value, L2Character attacker)
-	{
+	public final void reduceHp(double value, L2Character attacker) {
 		reduceHp(value, attacker, true, false, false, false, false);
 	}
 
 	@Override
-	public final void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHPConsumption)
-	{
+	public final void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHPConsumption) {
 		reduceHp(value, attacker, awake, isDOT, isHPConsumption, false, false);
 	}
 
-	public final void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHPConsumption, boolean ignoreCP, boolean ignoreInvul)
-	{
-		if (getActiveChar().isDead())
-		{
+	public final void reduceHp(double value,
+	                           L2Character attacker,
+	                           boolean awake,
+	                           boolean isDOT,
+	                           boolean isHPConsumption,
+	                           boolean ignoreCP,
+	                           boolean ignoreInvul) {
+		if (getActiveChar().isDead()) {
 			return;
 		}
 
 		boolean isHide = getActiveChar().getAppearance().getInvisible();
-		if (!isHPConsumption || isHide)
-		{
-			if (getActiveChar().isSitting())
-			{
+		if (!isHPConsumption || isHide) {
+			if (getActiveChar().isSitting()) {
 				getActiveChar().standUp();
 			}
 
-			if (!isDOT || isHide)
-			{
+			if (!isDOT || isHide) {
 				getActiveChar().stopEffectsOnDamage(awake, (int) value);
 
-				if (getActiveChar().isStunned())
-				{
+				if (getActiveChar().isStunned()) {
 					int baseBreakChance = attacker.getLevel() > 85 ? 5 : 25; // TODO Recheck this
 					double breakChance = baseBreakChance * Math.sqrt(BaseStats.CON.calcBonus(getActiveChar()));
 
-					if (value > 2000)
-					{
+					if (value > 2000) {
 						breakChance *= 4;
-					}
-					else if (value > 1000)
-					{
+					} else if (value > 1000) {
 						breakChance *= 2;
-					}
-					else if (value > 500)
-					{
+					} else if (value > 500) {
 						breakChance *= 1.5;
 					}
 
-					if (value > 100 && Rnd.get(100) < breakChance)
-					{
+					if (value > 100 && Rnd.get(100) < breakChance) {
 						getActiveChar().stopStunning(true);
 					}
 				}
 			}
 		}
 
-		if (getActiveChar().isInvul(attacker))
-		{
+		if (getActiveChar().isInvul(attacker)) {
 			//if (attacker == getActiveChar())
 			{
-				if (!isDOT && !isHPConsumption && !ignoreInvul)
-				{
+				if (!isDOT && !isHPConsumption && !ignoreInvul) {
 					return;
 				}
 			}
@@ -129,9 +113,7 @@ public class PcStatus extends PlayableStatus
 			//	return;
 		}
 
-		if (getActiveChar().getFaceoffTarget() != null && attacker != getActiveChar().getFaceoffTarget() &&
-				attacker != getActiveChar())
-		{
+		if (getActiveChar().getFaceoffTarget() != null && attacker != getActiveChar().getFaceoffTarget() && attacker != getActiveChar()) {
 			return;
 		}
 
@@ -139,102 +121,77 @@ public class PcStatus extends PlayableStatus
 		int tDmg = 0;
 		int mpDam = 0;
 
-		if (attacker != null && attacker != getActiveChar())
-		{
+		if (attacker != null && attacker != getActiveChar()) {
 			final L2PcInstance attackerPlayer = attacker.getActingPlayer();
 
-			if (attackerPlayer != null)
-			{
-				if (attackerPlayer.isGM() && !attackerPlayer.getAccessLevel().canGiveDamage())
-				{
+			if (attackerPlayer != null) {
+				if (attackerPlayer.isGM() && !attackerPlayer.getAccessLevel().canGiveDamage()) {
 					return;
 				}
 
-				if (getActiveChar().isInDuel())
-				{
-					if (getActiveChar().getDuelState() == Duel.DUELSTATE_DEAD)
-					{
+				if (getActiveChar().isInDuel()) {
+					if (getActiveChar().getDuelState() == Duel.DUELSTATE_DEAD) {
 						return;
-					}
-					else if (getActiveChar().getDuelState() == Duel.DUELSTATE_WINNER)
-					{
+					} else if (getActiveChar().getDuelState() == Duel.DUELSTATE_WINNER) {
 						return;
 					}
 
 					// cancel duel if player got hit by another player, that is not part of the duel
-					if (attackerPlayer.getDuelId() != getActiveChar().getDuelId())
-					{
+					if (attackerPlayer.getDuelId() != getActiveChar().getDuelId()) {
 						getActiveChar().setDuelState(Duel.DUELSTATE_INTERRUPTED);
 					}
 				}
 			}
 
 			int dmgCap = (int) getActiveChar().getStat().calcStat(Stats.DAMAGE_CAP, 0, null, null);
-			if (dmgCap > 0 && value > dmgCap)
-			{
+			if (dmgCap > 0 && value > dmgCap) {
 				value = dmgCap;
 				fullValue = dmgCap;
 			}
 
 			// Check and calculate transfered damage
 			L2SummonInstance summon = getActiveChar().getSummon(0);
-			if (summon != null && !(summon instanceof L2MobSummonInstance) &&
-					Util.checkIfInRange(1000, getActiveChar(), summon, true))
-			{
-				tDmg = (int) value *
-						(int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_PERCENT, 0, null, null) / 100;
+			if (summon != null && !(summon instanceof L2MobSummonInstance) && Util.checkIfInRange(1000, getActiveChar(), summon, true)) {
+				tDmg = (int) value * (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_PERCENT, 0, null, null) / 100;
 
 				// Only transfer dmg up to current HP, it should not be killed
 				tDmg = Math.min((int) summon.getCurrentHp() - 1, tDmg);
-				if (tDmg > 0)
-				{
+				if (tDmg > 0) {
 					summon.reduceCurrentHp(tDmg, attacker, null);
 					value -= tDmg;
-					fullValue =
-							(int) value; // reduce the announced value here as player will get a message about summon damage
+					fullValue = (int) value; // reduce the announced value here as player will get a message about summon damage
 				}
 			}
 
 			boolean manaBlock = false;
 			int manaShield = (int) getActiveChar().getStat().calcStat(Stats.MANA_SHIELD_PERCENT, 0, null, null);
-			if (manaShield > 100)
-			{
+			if (manaShield > 100) {
 				manaShield -= 100;
 				manaBlock = true;
 			}
 			mpDam = (int) value * manaShield / 100;
 
-			if (mpDam > 0)
-			{
-				if (mpDam > getActiveChar().getCurrentMp())
-				{
-					getActiveChar().sendPacket(
-							SystemMessage.getSystemMessage(SystemMessageId.MP_BECAME_0_ARCANE_SHIELD_DISAPPEARING));
+			if (mpDam > 0) {
+				if (mpDam > getActiveChar().getCurrentMp()) {
+					getActiveChar().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MP_BECAME_0_ARCANE_SHIELD_DISAPPEARING));
 					L2Abnormal effect = getActiveChar().getFirstEffect(1556);
-					if (effect != null)
-					{
+					if (effect != null) {
 						effect.stopEffectTask();
-					}
-					else
-					{
+					} else {
 						getActiveChar().getFirstEffect(11065).stopEffectTask();
 					}
 
 					value -= getActiveChar().getCurrentMp();
 					getActiveChar().setCurrentMp(0);
-				}
-				else
-				{
-					SystemMessage smsg = SystemMessage
-							.getSystemMessage(SystemMessageId.ARCANE_SHIELD_DECREASED_YOUR_MP_BY_S1_INSTEAD_OF_HP);
+				} else {
+					SystemMessage smsg = SystemMessage.getSystemMessage(SystemMessageId.ARCANE_SHIELD_DECREASED_YOUR_MP_BY_S1_INSTEAD_OF_HP);
 					smsg.addNumber(mpDam);
 					getActiveChar().sendPacket(smsg);
 					value -= mpDam;
 					getActiveChar().reduceCurrentMp(mpDam);
 				}
 
-				if (manaBlock)
-				{
+				if (manaBlock) {
 					value = 0;
 				}
 
@@ -242,25 +199,17 @@ public class PcStatus extends PlayableStatus
 			}
 
 			final L2PcInstance caster = getActiveChar().getTransferingDamageTo();
-			if (caster != null && getActiveChar().getParty() != null &&
-					Util.checkIfInRange(1000, getActiveChar(), caster, true) && !caster.isDead() &&
-					getActiveChar() != caster && getActiveChar().getParty().getPartyMembers().contains(caster))
-			{
+			if (caster != null && getActiveChar().getParty() != null && Util.checkIfInRange(1000, getActiveChar(), caster, true) &&
+					!caster.isDead() && getActiveChar() != caster && getActiveChar().getParty().getPartyMembers().contains(caster)) {
 				int transferDmg = 0;
 
-				transferDmg = (int) value *
-						(int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_TO_PLAYER, 0, null, null) / 100;
+				transferDmg = (int) value * (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_TO_PLAYER, 0, null, null) / 100;
 				transferDmg = Math.min((int) caster.getCurrentHp() - 1, transferDmg);
-				if (transferDmg > 0)
-				{
-					if (attacker instanceof L2Playable && caster.getCurrentCp() > 0)
-					{
-						if (caster.getCurrentCp() > transferDmg)
-						{
+				if (transferDmg > 0) {
+					if (attacker instanceof L2Playable && caster.getCurrentCp() > 0) {
+						if (caster.getCurrentCp() > transferDmg) {
 							caster.getStatus().reduceCp(transferDmg);
-						}
-						else
-						{
+						} else {
 							value -= caster.getCurrentCp();
 							transferDmg -= caster.getCurrentCp();
 							caster.getStatus().reduceCp((int) caster.getCurrentCp());
@@ -273,22 +222,17 @@ public class PcStatus extends PlayableStatus
 				}
 			}
 
-			if (!ignoreCP && attacker instanceof L2Playable)
-			{
-				if (getCurrentCp() >= value)
-				{
+			if (!ignoreCP && attacker instanceof L2Playable) {
+				if (getCurrentCp() >= value) {
 					setCurrentCp(getCurrentCp() - value); // Set Cp to diff of Cp vs value
 					value = 0; // No need to subtract anything from Hp
-				}
-				else
-				{
+				} else {
 					value -= getCurrentCp(); // Get diff from value vs Cp; will apply diff to Hp
 					setCurrentCp(0, false); // Set Cp to 0
 				}
 			}
 
-			if (fullValue > 0 && !isDOT)
-			{
+			if (fullValue > 0 && !isDOT) {
 				SystemMessage smsg;
 				// Send a System Message to the L2PcInstance
 				smsg = SystemMessage.getSystemMessage(SystemMessageId.C1_RECEIVED_DAMAGE_OF_S3_FROM_C2);
@@ -298,8 +242,7 @@ public class PcStatus extends PlayableStatus
 				smsg.addHpChange(getActiveChar().getObjectId(), attacker.getObjectId(), -fullValue);
 				getActiveChar().sendPacket(smsg);
 
-				if (tDmg > 0)
-				{
+				if (tDmg > 0) {
 					smsg = SystemMessage.getSystemMessage(SystemMessageId.C1_RECEIVED_DAMAGE_OF_S3_FROM_C2);
 					smsg.addString(getActiveChar().getSummon(0).getName());
 					smsg.addCharName(attacker);
@@ -307,10 +250,8 @@ public class PcStatus extends PlayableStatus
 					smsg.addHpChange(getActiveChar().getSummon(0).getObjectId(), attacker.getObjectId(), -tDmg);
 					getActiveChar().sendPacket(smsg);
 
-					if (attackerPlayer != null)
-					{
-						smsg = SystemMessage.getSystemMessage(
-								SystemMessageId.GIVEN_S1_DAMAGE_TO_YOUR_TARGET_AND_S2_DAMAGE_TO_SERVITOR);
+					if (attackerPlayer != null) {
+						smsg = SystemMessage.getSystemMessage(SystemMessageId.GIVEN_S1_DAMAGE_TO_YOUR_TARGET_AND_S2_DAMAGE_TO_SERVITOR);
 						smsg.addNumber(fullValue);
 						smsg.addNumber(tDmg);
 						smsg.addHpChange(getActiveChar().getObjectId(), attacker.getObjectId(), -fullValue);
@@ -319,25 +260,20 @@ public class PcStatus extends PlayableStatus
 				}
 			}
 
-			if (attackerPlayer != null && getActiveChar().isInOlympiadMode())
-			{
+			if (attackerPlayer != null && getActiveChar().isInOlympiadMode()) {
 				attackerPlayer.setOlyGivenDmg(attackerPlayer.getOlyGivenDmg() + fullValue);
 			}
 		}
 
 		StatusUpdateDisplay display = StatusUpdateDisplay.NONE;
-		if (isDOT)
-		{
+		if (isDOT) {
 			display = StatusUpdateDisplay.DOT;
 		}
 
-		if (value > 0)
-		{
+		if (value > 0) {
 			value = getCurrentHp() - value;
-			if (value <= 0)
-			{
-				if (getActiveChar().isInDuel())
-				{
+			if (value <= 0) {
+				if (getActiveChar().isInDuel()) {
 					getActiveChar().disableAllSkills();
 					stopHpMpRegeneration();
 					attacker.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
@@ -346,13 +282,9 @@ public class PcStatus extends PlayableStatus
 					// let the DuelManager know of his defeat
 					DuelManager.getInstance().onPlayerDefeat(getActiveChar());
 					value = 1;
-				}
-				else if (getActiveChar().isMortal())
-				{
+				} else if (getActiveChar().isMortal()) {
 					value = 0;
-				}
-				else
-				{
+				} else {
 					value = 1;
 				}
 			}
@@ -360,33 +292,27 @@ public class PcStatus extends PlayableStatus
 			setCurrentHp(value, true, attacker, display);
 		}
 
-		if (getActiveChar().getCurrentHp() < 0.5)
-		{
+		if (getActiveChar().getCurrentHp() < 0.5) {
 			getActiveChar().abortAttack();
 			getActiveChar().abortCast();
 
-			if (getActiveChar().isInOlympiadMode())
-			{
+			if (getActiveChar().isInOlympiadMode()) {
 				stopHpMpRegeneration();
 				getActiveChar().setIsDead(true);
 				getActiveChar().setIsPendingRevive(true);
-				if (getActiveChar().getPet() != null)
-				{
+				if (getActiveChar().getPet() != null) {
 					getActiveChar().getPet().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
 				}
-				for (L2SummonInstance summon : getActiveChar().getSummons())
-				{
+				for (L2SummonInstance summon : getActiveChar().getSummons()) {
 					summon.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
 				}
 				return;
 			}
 
 			getActiveChar().doDie(attacker);
-			if (!Config.DISABLE_TUTORIAL)
-			{
+			if (!Config.DISABLE_TUTORIAL) {
 				QuestState qs = getActiveChar().getQuestState("Q255_Tutorial");
-				if (qs != null)
-				{
+				if (qs != null) {
 					qs.getQuest().notifyEvent("CE30", null, getActiveChar());
 				}
 			}
@@ -394,63 +320,50 @@ public class PcStatus extends PlayableStatus
 	}
 
 	@Override
-	public final void setCurrentHp(double newHp, boolean broadcastPacket)
-	{
+	public final void setCurrentHp(double newHp, boolean broadcastPacket) {
 		super.setCurrentHp(newHp, broadcastPacket);
 
-		if (!Config.DISABLE_TUTORIAL && getCurrentHp() <= getActiveChar().getStat().getMaxHp() * .3)
-		{
+		if (!Config.DISABLE_TUTORIAL && getCurrentHp() <= getActiveChar().getStat().getMaxHp() * .3) {
 			QuestState qs = getActiveChar().getQuestState("Q255_Tutorial");
-			if (qs != null && qs.getQuest() != null)
-			{
+			if (qs != null && qs.getQuest() != null) {
 				qs.getQuest().notifyEvent("CE45", null, getActiveChar());
 			}
 		}
 	}
 
 	@Override
-	public final double getCurrentCp()
-	{
+	public final double getCurrentCp() {
 		return currentCp;
 	}
 
 	@Override
-	public final void setCurrentCp(double newCp)
-	{
+	public final void setCurrentCp(double newCp) {
 		setCurrentCp(newCp, true);
 	}
 
-	public final void setCurrentCp(double newCp, boolean broadcastPacket)
-	{
+	public final void setCurrentCp(double newCp, boolean broadcastPacket) {
 		// Get the Max CP of the L2Character
 		int maxCp = getActiveChar().getStat().getMaxCp();
 
-		synchronized (this)
-		{
-			if (getActiveChar().isDead())
-			{
+		synchronized (this) {
+			if (getActiveChar().isDead()) {
 				return;
 			}
 
-			if (newCp < 0)
-			{
+			if (newCp < 0) {
 				newCp = 0;
 			}
 
-			if (newCp >= maxCp)
-			{
+			if (newCp >= maxCp) {
 				// Set the RegenActive flag to false
 				currentCp = maxCp;
 				flagsRegenActive &= ~REGEN_FLAG_CP;
 
 				// Stop the HP/MP/CP Regeneration task
-				if (flagsRegenActive == 0)
-				{
+				if (flagsRegenActive == 0) {
 					stopHpMpRegeneration();
 				}
-			}
-			else
-			{
+			} else {
 				// Set the RegenActive flag to true
 				currentCp = newCp;
 				flagsRegenActive |= REGEN_FLAG_CP;
@@ -461,32 +374,27 @@ public class PcStatus extends PlayableStatus
 		}
 
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
-		if (broadcastPacket)
-		{
+		if (broadcastPacket) {
 			getActiveChar().broadcastStatusUpdate();
 		}
 	}
 
 	@Override
-	protected void doRegeneration()
-	{
+	protected void doRegeneration() {
 		final PcStat charstat = getActiveChar().getStat();
 
 		// Modify the current CP of the L2Character and broadcast Server->Client packet StatusUpdate
-		if (getCurrentCp() < charstat.getMaxCp())
-		{
+		if (getCurrentCp() < charstat.getMaxCp()) {
 			setCurrentCp(getCurrentCp() + Formulas.calcCpRegen(getActiveChar()), false);
 		}
 
 		// Modify the current HP of the L2Character and broadcast Server->Client packet StatusUpdate
-		if (getCurrentHp() < charstat.getMaxHp())
-		{
+		if (getCurrentHp() < charstat.getMaxHp()) {
 			setCurrentHp(getCurrentHp() + Formulas.calcHpRegen(getActiveChar()), false);
 		}
 
 		// Modify the current MP of the L2Character and broadcast Server->Client packet StatusUpdate
-		if (getCurrentMp() < charstat.getMaxMp())
-		{
+		if (getCurrentMp() < charstat.getMaxMp()) {
 			setCurrentMp(getCurrentMp() + Formulas.calcMpRegen(getActiveChar()), false);
 		}
 
@@ -494,8 +402,7 @@ public class PcStatus extends PlayableStatus
 	}
 
 	@Override
-	public L2PcInstance getActiveChar()
-	{
+	public L2PcInstance getActiveChar() {
 		return (L2PcInstance) super.getActiveChar();
 	}
 }

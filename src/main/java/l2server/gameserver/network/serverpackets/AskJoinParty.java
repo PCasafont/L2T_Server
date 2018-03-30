@@ -28,24 +28,21 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public class AskJoinParty extends L2GameServerPacket
-{
+public class AskJoinParty extends L2GameServerPacket {
 	//
-
+	
 	private String requestorName;
 	private int itemDistribution;
-
+	
 	/**
 	 */
-	public AskJoinParty(String requestorName, int itemDistribution)
-	{
+	public AskJoinParty(String requestorName, int itemDistribution) {
 		this.requestorName = requestorName;
 		this.itemDistribution = itemDistribution;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeS(requestorName);
 		writeD(itemDistribution);
 	}

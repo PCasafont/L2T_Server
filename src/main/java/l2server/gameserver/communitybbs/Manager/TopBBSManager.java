@@ -25,41 +25,27 @@ import l2server.gameserver.network.serverpackets.ShowBoard;
 
 import java.util.StringTokenizer;
 
-public class TopBBSManager extends BaseBBSManager
-{
+public class TopBBSManager extends BaseBBSManager {
 	@Override
-	public void parsecmd(String command, L2PcInstance activeChar)
-	{
-		if (command.equals("_bbstop"))
-		{
+	public void parsecmd(String command, L2PcInstance activeChar) {
+		if (command.equals("_bbstop")) {
 			String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "CommunityBoard/index.htm");
-			if (content == null)
-			{
-				content =
-						"<html><body><br><br><center>404 :File not found: 'data/html/CommunityBoard/index.htm' </center></body></html>";
+			if (content == null) {
+				content = "<html><body><br><br><center>404 :File not found: 'data/html/CommunityBoard/index.htm' </center></body></html>";
 			}
 			separateAndSend(content, activeChar);
-		}
-		else if (command.equals("_bbshome"))
-		{
+		} else if (command.equals("_bbshome")) {
 			CustomCommunityBoard.getInstance().parseCmd("_bbscustom;main", activeChar);
-		}
-		else if (command.startsWith("_bbstop;"))
-		{
+		} else if (command.startsWith("_bbstop;")) {
 			StringTokenizer st = new StringTokenizer(command, ";");
 			st.nextToken();
 			int idp = Integer.parseInt(st.nextToken());
-			String content =
-					HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "CommunityBoard/" + idp + ".htm");
-			if (content == null)
-			{
-				content = "<html><body><br><br><center>404 :File not found: 'data/html/CommunityBoard/" + idp +
-						".htm' </center></body></html>";
+			String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "CommunityBoard/" + idp + ".htm");
+			if (content == null) {
+				content = "<html><body><br><br><center>404 :File not found: 'data/html/CommunityBoard/" + idp + ".htm' </center></body></html>";
 			}
 			separateAndSend(content, activeChar);
-		}
-		else
-		{
+		} else {
 			ShowBoard sb = new ShowBoard("<html><body><br><br><center></center><br><br></body></html>", "101");
 			activeChar.sendPacket(sb);
 			activeChar.sendPacket(new ShowBoard(null, "102"));
@@ -68,17 +54,14 @@ public class TopBBSManager extends BaseBBSManager
 	}
 
 	@Override
-	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, L2PcInstance activeChar)
-	{
+	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, L2PcInstance activeChar) {
 	}
 
-	public static TopBBSManager getInstance()
-	{
+	public static TopBBSManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final TopBBSManager instance = new TopBBSManager();
 	}
 }

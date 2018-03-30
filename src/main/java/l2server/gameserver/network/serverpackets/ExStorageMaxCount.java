@@ -30,10 +30,9 @@ import l2server.gameserver.stats.Stats;
  * d: Normal Recipe Book Slots
  *
  * @author -Wooden-
- *         format from KenM
+ * format from KenM
  */
-public class ExStorageMaxCount extends L2GameServerPacket
-{
+public class ExStorageMaxCount extends L2GameServerPacket {
 	private L2PcInstance activeChar;
 	private int inventory;
 	private int warehouse;
@@ -44,9 +43,8 @@ public class ExStorageMaxCount extends L2GameServerPacket
 	private int recipe;
 	private int inventoryExtraSlots;
 	private int inventoryQuestItems;
-
-	public ExStorageMaxCount(L2PcInstance character)
-	{
+	
+	public ExStorageMaxCount(L2PcInstance character) {
 		activeChar = character;
 		inventory = activeChar.getInventoryLimit();
 		warehouse = activeChar.getWareHouseLimit();
@@ -58,13 +56,12 @@ public class ExStorageMaxCount extends L2GameServerPacket
 		inventoryExtraSlots = (int) activeChar.getStat().calcStat(Stats.INVENTORY_LIMIT, 0, null, null);
 		inventoryQuestItems = Config.INVENTORY_MAXIMUM_QUEST_ITEMS;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(inventory);
 		writeD(warehouse);
 		writeD(clan);

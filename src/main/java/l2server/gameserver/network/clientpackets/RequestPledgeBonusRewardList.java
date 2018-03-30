@@ -3,16 +3,13 @@ package l2server.gameserver.network.clientpackets;
 /**
  * @author MegaParzor!
  */
-public class RequestPledgeBonusRewardList extends L2GameClientPacket
-{
+public class RequestPledgeBonusRewardList extends L2GameClientPacket {
 	@Override
-	public void readImpl()
-	{
+	public void readImpl() {
 	}
-
+	
 	@Override
-	public void runImpl()
-	{
+	public void runImpl() {
 		// TODO
 		//Log.info(getType() + " packet was received from " + getClient() + ".");
 	}

@@ -39,61 +39,48 @@ import java.util.List;
 import java.util.concurrent.Future;
 import java.util.logging.Level;
 
-public class L2DecoyInstance extends L2Attackable
-{
+public class L2DecoyInstance extends L2Attackable {
 	private L2PcInstance owner;
 	private int totalLifeTime;
 	private int timeRemaining;
 	private Future<?> decoyLifeTask;
 	private List<Future<?>> skillSpam = new ArrayList<>();
-
-	public L2DecoyInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2Skill skill)
-	{
+	
+	public L2DecoyInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2Skill skill) {
 		super(objectId, template);
 		this.owner = owner;
 		setXYZ(owner.getX(), owner.getY(), owner.getZ());
 		setIsInvul(false);
 		setInstanceType(InstanceType.L2DecoyInstance);
-		if (skill != null)
-		{
+		if (skill != null) {
 			totalLifeTime = ((L2SkillDecoy) skill).getTotalLifeTime();
-		}
-		else
-		{
+		} else {
 			totalLifeTime = 20000;
 		}
 		timeRemaining = totalLifeTime;
 		int delay = 1000;
-		decoyLifeTask = ThreadPoolManager.getInstance()
-				.scheduleGeneralAtFixedRate(new DecoyLifetime(getOwner(), this), delay, delay);
-		if (template.getSkills() != null)
-		{
-			for (L2Skill s : template.getSkills().values())
-			{
-				if (s.isActive())
-				{
-					skillSpam.add(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(
-							new SkillSpam(this, SkillTable.getInstance().getInfo(s.getId(), s.getLevelHash())), 2000,
-							5000));
+		decoyLifeTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new DecoyLifetime(getOwner(), this), delay, delay);
+		if (template.getSkills() != null) {
+			for (L2Skill s : template.getSkills().values()) {
+				if (s.isActive()) {
+					skillSpam.add(ThreadPoolManager.getInstance()
+							.scheduleGeneralAtFixedRate(new SkillSpam(this, SkillTable.getInstance().getInfo(s.getId(), s.getLevelHash())),
+									2000,
+									5000));
 				}
 			}
 		}
-		if (getName().equalsIgnoreCase("Clone Attack") && getNpcId() >= 13319 && getNpcId() <= 13322)
-		{
-			skillSpam.add(ThreadPoolManager.getInstance()
-					.scheduleGeneralAtFixedRate(new SkillSpam(this, null), 100, 100));
+		if (getName().equalsIgnoreCase("Clone Attack") && getNpcId() >= 13319 && getNpcId() <= 13322) {
+			skillSpam.add(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new SkillSpam(this, null), 100, 100));
 		}
 	}
-
+	
 	@Override
-	public boolean doDie(L2Character killer)
-	{
-		if (!super.doDie(killer))
-		{
+	public boolean doDie(L2Character killer) {
+		if (!super.doDie(killer)) {
 			return false;
 		}
-		for (Future<?> spam : skillSpam)
-		{
+		for (Future<?> spam : skillSpam) {
 			spam.cancel(true);
 		}
 		skillSpam.clear();
@@ -101,218 +88,174 @@ public class L2DecoyInstance extends L2Attackable
 		DecayTaskManager.getInstance().addDecayTask(this);
 		return true;
 	}
-
+	
 	@Override
-	public L2CharacterAI initAI()
-	{
+	public L2CharacterAI initAI() {
 		setIsRunning(true);
 		
-		if (getNpcId() >= 13319 && getNpcId() <= 13322)
-		{
+		if (getNpcId() >= 13319 && getNpcId() <= 13322) {
 			return new L2AttackableAI(this);
-		}
-		else
-		{
+		} else {
 			return new L2CharacterAI(this);
 		}
 	}
-
+	
 	@Override
-	public DecoyKnownList getKnownList()
-	{
+	public DecoyKnownList getKnownList() {
 		return (DecoyKnownList) super.getKnownList();
 	}
-
+	
 	@Override
-	public void initKnownList()
-	{
+	public void initKnownList() {
 		setKnownList(new DecoyKnownList(this));
 	}
-
+	
 	@Override
-	public final DecoyStat getStat()
-	{
+	public final DecoyStat getStat() {
 		return (DecoyStat) super.getStat();
 	}
-
+	
 	@Override
-	public void initCharStat()
-	{
+	public void initCharStat() {
 		setStat(new DecoyStat(this));
 	}
-
-	static class DecoyLifetime implements Runnable
-	{
+	
+	static class DecoyLifetime implements Runnable {
 		private L2PcInstance activeChar;
-
+		
 		private L2DecoyInstance decoy;
-
-		DecoyLifetime(L2PcInstance activeChar, L2DecoyInstance Decoy)
-		{
+		
+		DecoyLifetime(L2PcInstance activeChar, L2DecoyInstance Decoy) {
 			this.activeChar = activeChar;
 			this.decoy = Decoy;
 		}
-
+		
 		@Override
-		public void run()
-		{
-			try
-			{
+		public void run() {
+			try {
 				double newTimeRemaining;
 				decoy.decTimeRemaining(1000);
 				newTimeRemaining = decoy.getTimeRemaining();
-				if (newTimeRemaining < 0)
-				{
+				if (newTimeRemaining < 0) {
 					decoy.unSummon(activeChar);
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.log(Level.SEVERE, "Decoy Error: ", e);
 			}
 		}
 	}
-
-	static class SkillSpam implements Runnable
-	{
+	
+	static class SkillSpam implements Runnable {
 		private L2DecoyInstance activeChar;
-
+		
 		private L2Skill skill;
-
-		SkillSpam(L2DecoyInstance activeChar, L2Skill Hate)
-		{
+		
+		SkillSpam(L2DecoyInstance activeChar, L2Skill Hate) {
 			this.activeChar = activeChar;
 			skill = Hate;
 		}
-
+		
 		@Override
-		public void run()
-		{
-			try
-			{
-				if (skill != null)
-				{
+		public void run() {
+			try {
+				if (skill != null) {
 					activeChar.setTarget(activeChar);
 					activeChar.doCast(skill);
-				}
-				else if (activeChar.getOwner().getTarget() instanceof L2Character)
-				{
+				} else if (activeChar.getOwner().getTarget() instanceof L2Character) {
 					L2Character target = (L2Character) activeChar.getOwner().getTarget();
 					activeChar.addDamageHate(target, 1, 1);
 					//activeChar.doAttack(target);
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 				}
-			}
-			catch (Throwable e)
-			{
+			} catch (Throwable e) {
 				Log.log(Level.SEVERE, "Decoy Error: ", e);
 			}
 		}
 	}
-
-	public void decTimeRemaining(int value)
-	{
+	
+	public void decTimeRemaining(int value) {
 		timeRemaining -= value;
 	}
-
-	public int getTimeRemaining()
-	{
+	
+	public int getTimeRemaining() {
 		return timeRemaining;
 	}
-
-	public int getTotalLifeTime()
-	{
+	
+	public int getTotalLifeTime() {
 		return totalLifeTime;
 	}
-
+	
 	@Override
-	public void onSpawn()
-	{
+	public void onSpawn() {
 		super.onSpawn();
 		getOwner().sendPacket(new CharInfo(this));
 	}
-
+	
 	@Override
-	public void updateAbnormalEffect()
-	{
+	public void updateAbnormalEffect() {
 		Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
 		//synchronized (getKnownList().getKnownPlayers())
 		{
-			for (L2PcInstance player : plrs)
-			{
-				if (player != null)
-				{
+			for (L2PcInstance player : plrs) {
+				if (player != null) {
 					player.sendPacket(new CharInfo(this));
 				}
 			}
 		}
 	}
-
-	public void stopDecay()
-	{
+	
+	public void stopDecay() {
 		DecayTaskManager.getInstance().cancelDecayTask(this);
 	}
-
+	
 	@Override
-	public void onDecay()
-	{
+	public void onDecay() {
 		deleteMe(owner);
 	}
-
+	
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
-	{
+	public boolean isAutoAttackable(L2Character attacker) {
 		return owner.isAutoAttackable(attacker);
 	}
-
+	
 	@Override
-	public L2ItemInstance getActiveWeaponInstance()
-	{
+	public L2ItemInstance getActiveWeaponInstance() {
 		return null;
 	}
-
+	
 	@Override
-	public L2Weapon getActiveWeaponItem()
-	{
+	public L2Weapon getActiveWeaponItem() {
 		return null;
 	}
-
+	
 	@Override
-	public L2ItemInstance getSecondaryWeaponInstance()
-	{
+	public L2ItemInstance getSecondaryWeaponInstance() {
 		return null;
 	}
-
+	
 	@Override
-	public L2Weapon getSecondaryWeaponItem()
-	{
+	public L2Weapon getSecondaryWeaponItem() {
 		return null;
 	}
-
-	public void deleteMe(L2PcInstance owner)
-	{
+	
+	public void deleteMe(L2PcInstance owner) {
 		decayMe();
 		getKnownList().removeAllKnownObjects();
 		owner.setDecoy(null);
 	}
-
-	public synchronized void unSummon(L2PcInstance owner)
-	{
-		if (decoyLifeTask != null)
-		{
+	
+	public synchronized void unSummon(L2PcInstance owner) {
+		if (decoyLifeTask != null) {
 			decoyLifeTask.cancel(true);
 			decoyLifeTask = null;
 		}
-		for (Future<?> spam : skillSpam)
-		{
+		for (Future<?> spam : skillSpam) {
 			spam.cancel(true);
 		}
 		skillSpam.clear();
-
-		if (isVisible() && !isDead())
-		{
-			if (getWorldRegion() != null)
-			{
+		
+		if (isVisible() && !isDead()) {
+			if (getWorldRegion() != null) {
 				getWorldRegion().removeFromZones(this);
 			}
 			owner.setDecoy(null);
@@ -320,22 +263,19 @@ public class L2DecoyInstance extends L2Attackable
 			getKnownList().removeAllKnownObjects();
 		}
 	}
-
+	
 	@Override
-	public final L2PcInstance getOwner()
-	{
+	public final L2PcInstance getOwner() {
 		return owner;
 	}
-
+	
 	@Override
-	public L2PcInstance getActingPlayer()
-	{
+	public L2PcInstance getActingPlayer() {
 		return owner;
 	}
-
+	
 	@Override
-	public void sendInfo(L2PcInstance activeChar)
-	{
+	public void sendInfo(L2PcInstance activeChar) {
 		activeChar.sendPacket(new CharInfo(this));
 	}
 }

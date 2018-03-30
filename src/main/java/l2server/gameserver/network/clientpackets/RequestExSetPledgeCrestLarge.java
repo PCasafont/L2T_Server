@@ -37,17 +37,15 @@ import java.util.logging.Logger;
  *
  * @author -Wooden-
  */
-public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
-{
+public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket {
 	static Logger log = Logger.getLogger(RequestExSetPledgeCrestLarge.class.getName());
-
+	
 	private int partId;
 	private int length;
 	private byte[] data;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		partId = readD(); // sub id?
 		@SuppressWarnings("unused") int unk = readH(); // ???
 		//System.out.println("i " + subId);
@@ -57,95 +55,73 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 		data = new byte[length];
 		readB(data);
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		L2Clan clan = activeChar.getClan();
-		if (clan == null)
-		{
+		if (clan == null) {
 			return;
 		}
-
-		if (length <= 0)
-		{
+		
+		if (length <= 0) {
 			activeChar.sendMessage("File transfer error.");
 			return;
 		}
-		if (length > 15000)
-		{
+		if (length > 15000) {
 			activeChar.sendMessage("The insignia file size is greater than 15000 bytes.");
 			return;
 		}
-
+		
 		boolean updated = false;
 		int largeCrestId = -1;
-		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_REGISTER_CREST) == L2Clan.CP_CL_REGISTER_CREST)
-		{
-			if (length == 0 || data == null)
-			{
-				if (clan.getLargeCrestId() == 0)
-				{
+		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_REGISTER_CREST) == L2Clan.CP_CL_REGISTER_CREST) {
+			if (length == 0 || data == null) {
+				if (clan.getLargeCrestId() == 0) {
 					return;
 				}
-
+				
 				largeCrestId = 0;
 				activeChar.sendMessage("The insignia has been removed.");
 				updated = true;
-			}
-			else
-			{
-				if (!activeChar.isGM() && clan.getHasCastle() == 0 && clan.getHasHideout() == 0)
-				{
-					activeChar.sendMessage(
-							"Only a clan that owns a clan hall or a castle can get their emblem displayed on clan related items"); //there is a system message for that but didnt found the id
+			} else {
+				if (!activeChar.isGM() && clan.getHasCastle() == 0 && clan.getHasHideout() == 0) {
+					activeChar.sendMessage("Only a clan that owns a clan hall or a castle can get their emblem displayed on clan related items"); //there is a system message for that but didnt found the id
 					return;
 				}
-
-				if (partId == 0)
-				{
+				
+				if (partId == 0) {
 					largeCrestId = IdFactory.getInstance().getNextId();
 					clan.setTempLargeCrestId(largeCrestId);
-				}
-				else
-				{
+				} else {
 					largeCrestId = clan.getTempLargeCrestId();
 				}
-
-				if (!CrestCache.getInstance().savePledgeCrestLarge(largeCrestId, partId, data))
-				{
-					Log.log(Level.INFO,
-							"Error saving large crest for clan " + clan.getName() + " [" + clan.getClanId() + "]");
+				
+				if (!CrestCache.getInstance().savePledgeCrestLarge(largeCrestId, partId, data)) {
+					Log.log(Level.INFO, "Error saving large crest for clan " + clan.getName() + " [" + clan.getClanId() + "]");
 					return;
 				}
-
-				if (partId == 4)
-				{
-					activeChar.sendPacket(
-							SystemMessage.getSystemMessage(SystemMessageId.CLAN_EMBLEM_WAS_SUCCESSFULLY_REGISTERED));
+				
+				if (partId == 4) {
+					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLAN_EMBLEM_WAS_SUCCESSFULLY_REGISTERED));
 					activeChar.sendPacket(new ExShowScreenMessage(
 							"Please be aware that if your emblem is inappropiate, your\n clan might be deleted and your accounts permanently banned.",
 							20000));
 					updated = true;
-				}
-				else
-				{
+				} else {
 					activeChar.sendPacket(new ExSetPledgeEmblemAck(partId));
 				}
 			}
 		}
-
-		if (updated && largeCrestId != -1)
-		{
+		
+		if (updated && largeCrestId != -1) {
 			clan.changeLargeCrest(largeCrestId);
 		}
 	}

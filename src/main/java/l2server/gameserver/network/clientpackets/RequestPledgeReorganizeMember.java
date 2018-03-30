@@ -24,81 +24,68 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @author -Wooden-
  */
-public final class RequestPledgeReorganizeMember extends L2GameClientPacket
-{
-
+public final class RequestPledgeReorganizeMember extends L2GameClientPacket {
+	
 	private int isMemberSelected;
 	private String memberName;
 	private int newPledgeType;
 	private String selectedMember;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		isMemberSelected = readD();
 		memberName = readS();
 		newPledgeType = readD();
 		selectedMember = readS();
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (isMemberSelected == 0 && memberName.length() == 0)
-		{
+		
+		if (isMemberSelected == 0 && memberName.length() == 0) {
 			activeChar.sendMessage("You did not select any member.");
 			return;
 		}
-
+		
 		final L2Clan clan = activeChar.getClan();
-		if (clan == null)
-		{
+		if (clan == null) {
 			activeChar.sendMessage("You do not have a clan.");
 			return;
 		}
-
-		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_MANAGE_RANKS) != L2Clan.CP_CL_MANAGE_RANKS)
-		{
+		
+		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_MANAGE_RANKS) != L2Clan.CP_CL_MANAGE_RANKS) {
 			activeChar.sendMessage("You do not have the rights to do this.");
 			return;
 		}
-
+		
 		final L2ClanMember member1 = clan.getClanMember(memberName);
-		if (member1 == null || member1.getObjectId() == clan.getLeaderId())
-		{
+		if (member1 == null || member1.getObjectId() == clan.getLeaderId()) {
 			activeChar.sendMessage("The selected member could not be found.");
 			return;
 		}
-
+		
 		final int oldPledgeType = member1.getPledgeType();
-		if (oldPledgeType == newPledgeType)
-		{
+		if (oldPledgeType == newPledgeType) {
 			activeChar.sendMessage(member1.getName() + " is already in the selected squad.");
 			return;
 		}
-
+		
 		member1.setPledgeType(newPledgeType);
-		if (selectedMember.length() != 0)
-		{
+		if (selectedMember.length() != 0) {
 			final L2ClanMember member2 = clan.getClanMember(selectedMember);
-			if (member2 == null || member2.getObjectId() == clan.getLeaderId())
-			{
+			if (member2 == null || member2.getObjectId() == clan.getLeaderId()) {
 				activeChar.sendMessage("You did not select the member to swap " + member1.getName() + " with.");
-			}
-			else
-			{
+			} else {
 				member2.setPledgeType(oldPledgeType);
 			}
 		}
-
+		
 		clan.broadcastClanStatus();
 	}
 }

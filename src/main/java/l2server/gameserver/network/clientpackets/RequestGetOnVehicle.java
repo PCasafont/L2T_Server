@@ -27,15 +27,13 @@ import l2server.util.Point3D;
  *
  * @version $Revision: 1.1.4.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestGetOnVehicle extends L2GameClientPacket
-{
+public final class RequestGetOnVehicle extends L2GameClientPacket {
 
 	private int boatId;
 	private Point3D pos;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		int x, y, z;
 		boatId = readD();
 		x = readD();
@@ -45,29 +43,22 @@ public final class RequestGetOnVehicle extends L2GameClientPacket
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
 		L2BoatInstance boat;
-		if (activeChar.isInBoat())
-		{
+		if (activeChar.isInBoat()) {
 			boat = activeChar.getBoat();
-			if (boat.getObjectId() != boatId)
-			{
+			if (boat.getObjectId() != boatId) {
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
-		}
-		else
-		{
+		} else {
 			boat = BoatManager.getInstance().getBoat(boatId);
-			if (boat == null || boat.isMoving() || !activeChar.isInsideRadius(boat, 1000, true, false))
-			{
+			if (boat == null || boat.isMoving() || !activeChar.isInsideRadius(boat, 1000, true, false)) {
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}

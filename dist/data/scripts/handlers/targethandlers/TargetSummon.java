@@ -31,47 +31,35 @@ import java.util.List;
 /**
  * @author nBd
  */
-public class TargetSummon implements ISkillTargetTypeHandler
-{
+public class TargetSummon implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		if (skill.getTargetDirection() == L2SkillTargetDirection.ALL_SUMMONS)
-		{
-			if (!(activeChar instanceof L2PcInstance))
-			{
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
+		if (skill.getTargetDirection() == L2SkillTargetDirection.ALL_SUMMONS) {
+			if (!(activeChar instanceof L2PcInstance)) {
 				return null;
 			}
 
 			List<L2Character> targetList = new ArrayList<L2Character>();
 
 			//LasTravel: Servitor Balance Life should balance owner too
-			if (skill.getId() == 11299)
-			{
+			if (skill.getId() == 11299) {
 				targetList.add(activeChar);
 			}
 
-			for (L2Summon summon : ((L2PcInstance) activeChar).getSummons())
-			{
-				if (!summon.isDead())
-				{
+			for (L2Summon summon : ((L2PcInstance) activeChar).getSummons()) {
+				if (!summon.isDead()) {
 					targetList.add(summon);
 				}
 			}
 
 			return targetList.toArray(new L2Character[targetList.size()]);
-		}
-		else
-		{
-			if (!(target instanceof L2Summon))
-			{
+		} else {
+			if (!(target instanceof L2Summon)) {
 				target = ((L2PcInstance) activeChar).getSummon(0);
 			}
-			if (target != null && !target.isDead() && target instanceof L2Summon &&
-					((L2PcInstance) activeChar).getSummons().contains(target))
-			{
+			if (target != null && !target.isDead() && target instanceof L2Summon && ((L2PcInstance) activeChar).getSummons().contains(target)) {
 				return new L2Character[]{target};
 			}
 		}
@@ -82,13 +70,11 @@ public class TargetSummon implements ISkillTargetTypeHandler
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
+	public Enum<L2SkillTargetType> getTargetType() {
 		return L2SkillTargetType.TARGET_SUMMON;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetSummon());
 	}
 }

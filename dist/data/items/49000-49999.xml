@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <!-- Top-grade Balthus Knight Supply Item. Use to obtain Sibis Coin x1500. Will be deleted at the time of the scheduled server check on Wednesday, November 18, 2015. -->
-    <item id="49783" type="Weapon" name="Sibis Coin Box" icon="icon.ev_balthus_coin" bodypart="none" material="steel"
-          weight="0"
-          crystal_type="none">
-    </item>
-    <!-- A cheering tool issued to commemorate the 12th anniversary of Lineage II. Hold on to your dreams, as the day will come when they are realized. Equip to enable the Firecracker skill. -->
-    <item id="49798" type="Weapon" name="Cheer Stamen - Event" icon="icon.ev_12th_weapon" bodypart="none"
-          material="steel" weight="0"
-          crystal_type="none">
-        <set stat="pAtk" val="12" />
-        <set stat="mAtk" val="12" />
-        <set stat="pAtkSpd" val="200" />
-        <set stat="rCrit" val="8" />
-    </item>
+	<!-- Top-grade Balthus Knight Supply Item. Use to obtain Sibis Coin x1500. Will be deleted at the time of the scheduled server check on Wednesday, November 18, 2015. -->
+	<item id="49783" type="Weapon" name="Sibis Coin Box" icon="icon.ev_balthus_coin" bodypart="none" material="steel"
+		  weight="0"
+		  crystal_type="none">
+	</item>
+	<!-- A cheering tool issued to commemorate the 12th anniversary of Lineage II. Hold on to your dreams, as the day will come when they are realized. Equip to enable the Firecracker skill. -->
+	<item id="49798" type="Weapon" name="Cheer Stamen - Event" icon="icon.ev_12th_weapon" bodypart="none"
+		  material="steel" weight="0"
+		  crystal_type="none">
+		<set stat="pAtk" val="12" />
+		<set stat="mAtk" val="12" />
+		<set stat="pAtkSpd" val="200" />
+		<set stat="rCrit" val="8" />
+	</item>
 </list>

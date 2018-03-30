@@ -15,6 +15,8 @@
 
 package l2server;
 
+import com.jolbox.bonecp.BoneCP;
+import com.jolbox.bonecp.BoneCPConfig;
 import l2server.log.Log;
 
 import java.sql.Connection;
@@ -22,20 +24,15 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.jolbox.bonecp.BoneCP;
-import com.jolbox.bonecp.BoneCPConfig;
-
-public class L2DatabaseFactory
-{
+public class L2DatabaseFactory {
 	static Logger log = Logger.getLogger(L2DatabaseFactory.class.getName());
 
-	public enum ProviderType
-	{
-		MySql, MsSql
+	public enum ProviderType {
+		MySql,
+		MsSql
 	}
 
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		private static final L2DatabaseFactory INSTANCE = new L2DatabaseFactory();
 	}
 
@@ -49,14 +46,11 @@ public class L2DatabaseFactory
 
 	// =========================================================
 	// Constructor
-	private L2DatabaseFactory()
-	{
+	private L2DatabaseFactory() {
 		BoneCPConfig config = null;
 
-		try
-		{
-			if (Config.DATABASE_MAX_CONNECTIONS < 2)
-			{
+		try {
+			if (Config.DATABASE_MAX_CONNECTIONS < 2) {
 				Config.DATABASE_MAX_CONNECTIONS = 2;
 				Log.warning("A minimum of " + Config.DATABASE_MAX_CONNECTIONS + " db connections are required.");
 			}
@@ -67,13 +61,11 @@ public class L2DatabaseFactory
 			config.setMinConnectionsPerPartition(5);
 			config.setMaxConnectionsPerPartition(Math.max(10, Config.DATABASE_MAX_CONNECTIONS / PARTITION_COUNT));
 			config.setAcquireRetryAttempts(5); // How often BoneCp tries to acquire a new connection after a failed try
-			config.setAcquireRetryDelayInMs(
-					3000); // Waiting time before trying to acquire connection again, too short delay might slow down the db
+			config.setAcquireRetryDelayInMs(3000); // Waiting time before trying to acquire connection again, too short delay might slow down the db
 			config.setConnectionTimeoutInMs(0); // 0 = wait indefinitely for new connection
 			config.setAcquireIncrement(5); // if pool is exhausted, get 5 more connections at a time
 			config.setIdleMaxAgeInSeconds(Config.DATABASE_MAX_IDLE_TIME); // 0 = idle connections never expire
-			config.setStatementsCacheSize(
-					20); // L2J put a fantasy value (100) here with comment "SURE?", let's try with less since default is 0
+			config.setStatementsCacheSize(20); // L2J put a fantasy value (100) here with comment "SURE?", let's try with less since default is 0
 			config.setJdbcUrl(Config.DATABASE_URL);
 			config.setUsername(Config.DATABASE_LOGIN);
 			config.setPassword(Config.DATABASE_PASSWORD);
@@ -93,24 +85,17 @@ public class L2DatabaseFactory
 			// Test the connection
 			gameDatabase.getConnection().close();
 
-			if (Config.DEBUG)
-			{
+			if (Config.DEBUG) {
 				Log.fine("Database Connection Working");
 			}
 
-			if (Config.DATABASE_DRIVER.toLowerCase().contains("microsoft"))
-			{
+			if (Config.DATABASE_DRIVER.toLowerCase().contains("microsoft")) {
 				providerType = ProviderType.MsSql;
-			}
-			else
-			{
+			} else {
 				providerType = ProviderType.MySql;
 			}
-		}
-		catch (Exception e)
-		{
-			if (Config.DEBUG)
-			{
+		} catch (Exception e) {
+			if (Config.DEBUG) {
 				Log.fine("Database Connection FAILED");
 			}
 		}
@@ -118,88 +103,67 @@ public class L2DatabaseFactory
 
 	// =========================================================
 	// Method - Public
-	public final String prepQuerySelect(String[] fields, String tableName, String whereClause, boolean returnOnlyTopRecord)
-	{
+	public final String prepQuerySelect(String[] fields, String tableName, String whereClause, boolean returnOnlyTopRecord) {
 		String msSqlTop1 = "";
 		String mySqlTop1 = "";
-		if (returnOnlyTopRecord)
-		{
-			if (getProviderType() == ProviderType.MsSql)
-			{
+		if (returnOnlyTopRecord) {
+			if (getProviderType() == ProviderType.MsSql) {
 				msSqlTop1 = " Top 1 ";
 			}
-			if (getProviderType() == ProviderType.MySql)
-			{
+			if (getProviderType() == ProviderType.MySql) {
 				mySqlTop1 = " Limit 1 ";
 			}
 		}
-		return "SELECT " + msSqlTop1 + safetyString(fields) + " FROM " + tableName + " WHERE " + whereClause +
-				mySqlTop1;
+		return "SELECT " + msSqlTop1 + safetyString(fields) + " FROM " + tableName + " WHERE " + whereClause + mySqlTop1;
 	}
 
-	public void shutdown()
-	{
-		Log.info("During this session the connection pool initialized " + gameDatabase.getTotalCreatedConnections() +
-				" connections.");
-		if (gameDatabase.getTotalLeased() > 0)
-		{
+	public void shutdown() {
+		Log.info("During this session the connection pool initialized " + gameDatabase.getTotalCreatedConnections() + " connections.");
+		if (gameDatabase.getTotalLeased() > 0) {
 			Log.info(gameDatabase.getTotalLeased() + " of them are still in use by the application at this moment.");
 		}
 		Log.info("Shutting down pool...");
 
-		try
-		{
+		try {
 			gameDatabase.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.INFO, "", e);
 		}
 
 		gameDatabase = null;
 
-		try
-		{
+		try {
 			webDatabase.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.INFO, "", e);
 		}
 
 		webDatabase = null;
 	}
 
-	public final String safetyString(String... whatToCheck)
-	{
+	public final String safetyString(String... whatToCheck) {
 		// NOTE: Use brace as a safety precaution just in case name is a reserved word
 		final char braceLeft;
 		final char braceRight;
 
-		if (getProviderType() == ProviderType.MsSql)
-		{
+		if (getProviderType() == ProviderType.MsSql) {
 			braceLeft = '[';
 			braceRight = ']';
-		}
-		else
-		{
+		} else {
 			braceLeft = '`';
 			braceRight = '`';
 		}
 
 		int length = 0;
 
-		for (String word : whatToCheck)
-		{
+		for (String word : whatToCheck) {
 			length += word.length() + 4;
 		}
 
 		final StringBuilder sbResult = new StringBuilder(length);
 
-		for (String word : whatToCheck)
-		{
-			if (sbResult.length() > 0)
-			{
+		for (String word : whatToCheck) {
+			if (sbResult.length() > 0) {
 				sbResult.append(", ");
 			}
 
@@ -213,79 +177,57 @@ public class L2DatabaseFactory
 
 	// =========================================================
 	// Property - Public
-	public static L2DatabaseFactory getInstance()
-	{
+	public static L2DatabaseFactory getInstance() {
 		return SingletonHolder.INSTANCE;
 	}
 
-	public Connection getConnection()
-	{
+	public Connection getConnection() {
 		Connection con = null;
-		while (con == null)
-		{
-			try
-			{
+		while (con == null) {
+			try {
 				con = gameDatabase.getConnection();
-			}
-			catch (SQLException e)
-			{
-				Log.log(Level.WARNING,
-						"L2DatabaseFactory: getConnection() failed for GameDatabase, trying again " + e.getMessage(),
-						e);
+			} catch (SQLException e) {
+				Log.log(Level.WARNING, "L2DatabaseFactory: getConnection() failed for GameDatabase, trying again " + e.getMessage(), e);
 			}
 		}
 
 		return con;
 	}
 
-	public Connection getWebConnection()
-	{
+	public Connection getWebConnection() {
 		Connection con = null;
-		while (con == null)
-		{
-			try
-			{
+		while (con == null) {
+			try {
 				con = webDatabase.getConnection();
-			}
-			catch (SQLException e)
-			{
-				Log.log(Level.WARNING,
-						"L2DatabaseFactory: getConnection() failed for WebDatabase, trying again " + e.getMessage(), e);
+			} catch (SQLException e) {
+				Log.log(Level.WARNING, "L2DatabaseFactory: getConnection() failed for WebDatabase, trying again " + e.getMessage(), e);
 			}
 		}
 
 		return con;
 	}
 
-	public static void close(Connection con)
-	{
-		if (con == null)
-		{
+	public static void close(Connection con) {
+		if (con == null) {
 			return;
 		}
 
-		try
-		{
+		try {
 			con.close();
-		}
-		catch (SQLException e)
-		{
+		} catch (SQLException e) {
 			Log.log(Level.WARNING, "Failed to close database connection!", e);
 		}
 	}
 
-	public int getBusyConnectionCount()
-	{
+	public int getBusyConnectionCount() {
 		return gameDatabase.getTotalLeased();
 	}
 
-	public int getIdleConnectionCount()
-	{
+	public int getIdleConnectionCount() {
 		return gameDatabase.getTotalFree();
 	}
 
-	public final ProviderType getProviderType()
-	{
+	public final ProviderType getProviderType() {
 		return providerType;
 	}
 }

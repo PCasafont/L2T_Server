@@ -27,15 +27,13 @@ import l2server.gameserver.network.serverpackets.EventTrigger;
  *
  * @author kerberos
  */
-public class L2SwampZone extends L2ZoneType
-{
+public class L2SwampZone extends L2ZoneType {
 	private int _move_bonus;
 	private int castleId;
 	private int eventId;
 	private Castle castle;
 
-	public L2SwampZone(int id)
-	{
+	public L2SwampZone(int id) {
 		super(id);
 
 		// Setup default speed reduce (in %)
@@ -46,10 +44,8 @@ public class L2SwampZone extends L2ZoneType
 	}
 
 	@Override
-	public void setParameter(String name, String value)
-	{
-		switch (name)
-		{
+	public void setParameter(String name, String value) {
+		switch (name) {
 			case "move_bonus":
 				_move_bonus = Integer.parseInt(value);
 				break;
@@ -65,10 +61,8 @@ public class L2SwampZone extends L2ZoneType
 		}
 	}
 
-	private Castle getCastle()
-	{
-		if (castleId > 0 && castle == null)
-		{
+	private Castle getCastle() {
+		if (castleId > 0 && castle == null) {
 			castle = CastleManager.getInstance().getCastleById(castleId);
 		}
 
@@ -76,71 +70,57 @@ public class L2SwampZone extends L2ZoneType
 	}
 
 	@Override
-	protected void onEnter(L2Character character)
-	{
-		if (getCastle() != null)
-		{
+	protected void onEnter(L2Character character) {
+		if (getCastle() != null) {
 			// castle zones active only during siege
-			if (!getCastle().getSiege().getIsInProgress())
-			{
+			if (!getCastle().getSiege().getIsInProgress()) {
 				return;
 			}
 			boolean isTrapActive = getCastle().getSiege().isTrapsActive();
 			final L2PcInstance player = character.getActingPlayer();
-			if (player != null)
-			{
+			if (player != null) {
 				//Send it to all, even defenders
-				if (eventId > 0)
-				{
+				if (eventId > 0) {
 					player.sendPacket(new EventTrigger(eventId, isTrapActive));
 				}
 
-				if (!isTrapActive)
-				{
+				if (!isTrapActive) {
 					return;
 				}
 
 				// defenders not affected
-				if (player.isInSiege() && player.getSiegeState() == 2)
-				{
+				if (player.isInSiege() && player.getSiegeState() == 2) {
 					return;
 				}
 			}
 		}
 
 		character.setInsideZone(L2Character.ZONE_SWAMP, true);
-		if (character instanceof L2PcInstance)
-		{
+		if (character instanceof L2PcInstance) {
 			((L2PcInstance) character).broadcastUserInfo();
 		}
 	}
 
 	@Override
-	protected void onExit(L2Character character)
-	{
+	protected void onExit(L2Character character) {
 		// don't broadcast info if not needed
-		if (character.isInsideZone(L2Character.ZONE_SWAMP))
-		{
+		if (character.isInsideZone(L2Character.ZONE_SWAMP)) {
 			character.setInsideZone(L2Character.ZONE_SWAMP, false);
-			if (character instanceof L2PcInstance)
-			{
+			if (character instanceof L2PcInstance) {
 				((L2PcInstance) character).broadcastUserInfo();
 			}
 		}
 	}
 
-	public int getMoveBonus()
-	{
+	public int getMoveBonus() {
 		return _move_bonus;
 	}
 
 	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
+	public void onDieInside(L2Character character, L2Character killer) {
 	}
 
 	@Override
-	public void onReviveInside(L2Character character)
-	{
+	public void onReviveInside(L2Character character) {
 	}
 }

@@ -25,56 +25,45 @@ import l2server.gameserver.network.serverpackets.SocialAction;
  * @author Pere
  */
 
-public final class RequestRegistBeauty extends L2GameClientPacket
-{
+public final class RequestRegistBeauty extends L2GameClientPacket {
 	private int hair;
 	private int face;
 	private int hairColor;
-
+	
 	@Override
-	protected final void readImpl()
-	{
+	protected final void readImpl() {
 		hair = readD();
 		face = readD();
 		hairColor = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-
-		if (activeChar == null)
-		{
+		
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		//Get the price
 		BeautyInfo styleInfo = null;
-
-		if (hair > 0)
-		{
+		
+		if (hair > 0) {
 			styleInfo = BeautyTable.getInstance().getTemplate(0).getHairStyles().get(hair);
-		}
-		else if (face > 0)
-		{
+		} else if (face > 0) {
 			styleInfo = BeautyTable.getInstance().getTemplate(0).getFaceStyles().get(face);
 		}
-
-		if (styleInfo != null)
-		{
-			if (face == -1)
-			{
+		
+		if (styleInfo != null) {
+			if (face == -1) {
 				face = activeChar.getAppearance().getFace();
 			}
-
-			if (hair == -1)
-			{
+			
+			if (hair == -1) {
 				hair = activeChar.getAppearance().getHairStyle();
 			}
-
-			if (hairColor == -1)
-			{
+			
+			if (hairColor == -1) {
 				hairColor = activeChar.getAppearance().getHairColor();
 			}
 
@@ -101,24 +90,28 @@ public final class RequestRegistBeauty extends L2GameClientPacket
 			{
 				activeChar.destroyItemByItemId("Beauty shop", 36308, ticketPrice, activeChar, true);
 			}*/
-
+			
 			activeChar.getAppearance().setHairStyle(hair);
-
+			
 			activeChar.getAppearance().setFace(face);
-
+			
 			activeChar.getAppearance().setHairColor(hairColor);
-
+			
 			activeChar.sendPacket(new ExResponseBeautyRegistPacket(activeChar.getAdena(),
-					activeChar.getInventory().getInventoryItemCount(36308, 0), 1, hair, face, hairColor));
-
+					activeChar.getInventory().getInventoryItemCount(36308, 0),
+					1,
+					hair,
+					face,
+					hairColor));
+			
 			//activeChar.sendPacket(new ExResponseBeautyListPacket());
-
+			
 			//activeChar.sendPacket(new ExShowBeautyList(activeChar.getAdena(), activeChar.getInventory().getInventoryItemCount(36308, 0), false));
-
+			
 			activeChar.broadcastUserInfo();
-
+			
 			activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), 30));
-
+			
 			//Log.info("INFO: Hair: " + hair + ", Face: " + face + ", COLOR: " + hairColor);
 			//Log.info("END OK");
 		}

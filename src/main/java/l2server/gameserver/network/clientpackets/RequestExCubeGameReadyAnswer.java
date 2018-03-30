@@ -21,38 +21,33 @@ import l2server.log.Log;
 
 /**
  * @author mrTJO
- *         Format: chddd
- *         <p>
- *         d: Arena
- *         d: Answer
+ * Format: chddd
+ * <p>
+ * d: Arena
+ * d: Answer
  */
-public final class RequestExCubeGameReadyAnswer extends L2GameClientPacket
-{
-
+public final class RequestExCubeGameReadyAnswer extends L2GameClientPacket {
+	
 	int arena;
 	int answer;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// client sends -1,0,1,2 for arena parameter
 		arena = readD() + 1;
 		// client sends 1 if clicked confirm on not clicked, 0 if clicked cancel
 		answer = readD();
 	}
-
+	
 	@Override
-	public void runImpl()
-	{
+	public void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-
-		if (player == null)
-		{
+		
+		if (player == null) {
 			return;
 		}
-
-		switch (answer)
-		{
+		
+		switch (answer) {
 			case 0:
 				// Cancel - Answer No
 				break;

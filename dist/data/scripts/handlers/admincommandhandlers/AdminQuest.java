@@ -30,22 +30,18 @@ import l2server.gameserver.instancemanager.QuestManager;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.scripting.L2ScriptEngineManager;
 
+import javax.script.ScriptException;
 import java.io.File;
 
-import javax.script.ScriptException;
-
-public class AdminQuest implements IAdminCommandHandler
-{
+public class AdminQuest implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_quest_reload", "admin_script_load"};
 
 	/**
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (activeChar == null)
-		{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		if (activeChar == null) {
 			return false;
 		}
 
@@ -58,37 +54,23 @@ public class AdminQuest implements IAdminCommandHandler
 		// Example:  //quest_reload chests
 		// Example:  //quest_reload SagasSuperclass
 		// Example:  //quest_reload 12
-		if (command.startsWith("admin_quest_reload"))
-		{
+		if (command.startsWith("admin_quest_reload")) {
 			String[] parts = command.split(" ");
-			if (parts.length < 2)
-			{
-				activeChar.sendMessage(
-						"Syntax: //quest_reload <questFolder>.<questSubFolders...>.questName> or //quest_reload <id>");
-			}
-			else
-			{
+			if (parts.length < 2) {
+				activeChar.sendMessage("Syntax: //quest_reload <questFolder>.<questSubFolders...>.questName> or //quest_reload <id>");
+			} else {
 				// try the first param as id
-				try
-				{
+				try {
 					int questId = Integer.parseInt(parts[1]);
-					if (QuestManager.getInstance().reload(questId))
-					{
+					if (QuestManager.getInstance().reload(questId)) {
 						activeChar.sendMessage("Quest Reloaded Successfully.");
-					}
-					else
-					{
+					} else {
 						activeChar.sendMessage("Quest Reloaded Failed");
 					}
-				}
-				catch (NumberFormatException e)
-				{
-					if (QuestManager.getInstance().reload(parts[1]))
-					{
+				} catch (NumberFormatException e) {
+					if (QuestManager.getInstance().reload(parts[1])) {
 						activeChar.sendMessage("Quest Reloaded Successfully.");
-					}
-					else
-					{
+					} else {
 						activeChar.sendMessage("Quest Reloaded Failed");
 					}
 				}
@@ -100,35 +82,23 @@ public class AdminQuest implements IAdminCommandHandler
 		// did not at all exist during server boot.  Using script_load to re-load a previously
 		// loaded script may cause unpredictable script flow, minor loss of data, and more.
 		// This provides a way to load new scripts without having to reboot the server.
-		else if (command.startsWith("admin_script_load"))
-		{
+		else if (command.startsWith("admin_script_load")) {
 			String[] parts = command.split(" ");
-			if (parts.length < 2)
-			{
+			if (parts.length < 2) {
 				//activeChar.sendMessage("Example: //script_load <questFolder>/<questSubFolders...>/<filename>.<ext> ");
 				activeChar.sendMessage("Example: //script_load quests/SagasSuperclass/__init__.py");
-			}
-			else
-			{
+			} else {
 				File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, parts[1]);
-				if (file.isFile())
-				{
-					try
-					{
+				if (file.isFile()) {
+					try {
 						L2ScriptEngineManager.getInstance().executeScript(file);
-					}
-					catch (ScriptException e)
-					{
+					} catch (ScriptException e) {
 						activeChar.sendMessage("Failed loading: " + parts[1]);
 						L2ScriptEngineManager.getInstance().reportScriptFileError(file, e);
-					}
-					catch (Exception e)
-					{
+					} catch (Exception e) {
 						activeChar.sendMessage("Failed loading: " + parts[1]);
 					}
-				}
-				else
-				{
+				} else {
 					activeChar.sendMessage("File Not Found: " + parts[1]);
 				}
 			}
@@ -140,8 +110,7 @@ public class AdminQuest implements IAdminCommandHandler
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
 	 */
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

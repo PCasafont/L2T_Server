@@ -25,61 +25,50 @@ import java.util.Date;
 import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
-public class EnchantFormatter extends Formatter
-{
+public class EnchantFormatter extends Formatter {
 	private static final String CRLF = "\r\n";
 	private SimpleDateFormat dateFmt = new SimpleDateFormat("dd MMM H:mm:ss");
 
 	@Override
-	public String format(LogRecord record)
-	{
+	public String format(LogRecord record) {
 		final Object[] params = record.getParameters();
-		final StringBuilder output = StringUtil
-				.startAppend(30 + record.getMessage().length() + (params == null ? 0 : params.length * 10), "[",
-						dateFmt.format(new Date(record.getMillis())), "] ", record.getMessage());
-		for (Object p : params)
-		{
-			if (p == null)
-			{
+		final StringBuilder output = StringUtil.startAppend(30 + record.getMessage().length() + (params == null ? 0 : params.length * 10),
+				"[",
+				dateFmt.format(new Date(record.getMillis())),
+				"] ",
+				record.getMessage());
+		for (Object p : params) {
+			if (p == null) {
 				continue;
 			}
 
 			StringUtil.append(output, ", ");
 
-			if (p instanceof L2PcInstance)
-			{
+			if (p instanceof L2PcInstance) {
 				L2PcInstance player = (L2PcInstance) p;
-				StringUtil.append(output, "Character:", player.getName(),
-						" [" + String.valueOf(player.getObjectId()) + "] Account:", player.getAccountName());
-				if (player.getClient() != null && !player.getClient().isDetached())
-				{
-					StringUtil.append(output, " IP:",
-							player.getClient().getConnection().getInetAddress().getHostAddress());
+				StringUtil.append(output,
+						"Character:",
+						player.getName(),
+						" [" + String.valueOf(player.getObjectId()) + "] Account:",
+						player.getAccountName());
+				if (player.getClient() != null && !player.getClient().isDetached()) {
+					StringUtil.append(output, " IP:", player.getClient().getConnection().getInetAddress().getHostAddress());
 				}
-			}
-			else if (p instanceof L2ItemInstance)
-			{
+			} else if (p instanceof L2ItemInstance) {
 				L2ItemInstance item = (L2ItemInstance) p;
-				if (item.getEnchantLevel() > 0)
-				{
+				if (item.getEnchantLevel() > 0) {
 					StringUtil.append(output, "+", String.valueOf(item.getEnchantLevel()), " ");
 				}
 				StringUtil.append(output, item.getItem().getName(), "(", String.valueOf(item.getCount()), ")");
 				StringUtil.append(output, " [", String.valueOf(item.getObjectId()), "]");
-			}
-			else if (p instanceof L2Skill)
-			{
+			} else if (p instanceof L2Skill) {
 				L2Skill skill = (L2Skill) p;
-				if (skill.getEnchantRouteId() > 0)
-				{
+				if (skill.getEnchantRouteId() > 0) {
 					StringUtil.append(output, "+", String.valueOf(skill.getEnchantLevel()), " ");
 				}
 
-				StringUtil.append(output, skill.getName(), "(", String.valueOf(skill.getId()), " ",
-						String.valueOf(skill.getLevelHash()), ")");
-			}
-			else
-			{
+				StringUtil.append(output, skill.getName(), "(", String.valueOf(skill.getId()), " ", String.valueOf(skill.getLevelHash()), ")");
+			} else {
 				StringUtil.append(output, p.toString());
 			}
 		}

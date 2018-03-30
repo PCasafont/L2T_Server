@@ -25,40 +25,31 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @version $Revision: 1.4.2.1.2.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestReplyStartPledgeWar extends L2GameClientPacket
-{
+public final class RequestReplyStartPledgeWar extends L2GameClientPacket {
 	//
-
+	
 	private int answer;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		@SuppressWarnings("unused") String reqName = readS();
 		answer = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 		L2PcInstance requestor = activeChar.getActiveRequester();
-		if (requestor == null)
-		{
+		if (requestor == null) {
 			return;
 		}
-
-		if (answer == 1)
-		{
-			ClanWarManager.getInstance()
-					.storeClansWars(requestor.getClanId(), activeChar.getClanId(), requestor.getObjectId());
-		}
-		else
-		{
+		
+		if (answer == 1) {
+			ClanWarManager.getInstance().storeClansWars(requestor.getClanId(), activeChar.getClanId(), requestor.getObjectId());
+		} else {
 			requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WAR_PROCLAMATION_HAS_BEEN_REFUSED));
 		}
 		activeChar.setActiveRequester(null);

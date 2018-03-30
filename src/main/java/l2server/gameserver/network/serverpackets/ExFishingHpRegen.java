@@ -29,13 +29,11 @@ import l2server.gameserver.model.actor.L2Character;
  *
  * @author -Wooden-
  */
-public class ExFishingHpRegen extends L2GameServerPacket
-{
+public class ExFishingHpRegen extends L2GameServerPacket {
 	private L2Character activeChar;
 	private int time, fishHP, hpMode, anim, goodUse, penalty, hpBarColor;
 
-	public ExFishingHpRegen(L2Character character, int time, int fishHP, int HPmode, int GoodUse, int anim, int penalty, int hpBarColor)
-	{
+	public ExFishingHpRegen(L2Character character, int time, int fishHP, int HPmode, int GoodUse, int anim, int penalty, int hpBarColor) {
 		activeChar = character;
 		this.time = time;
 		this.fishHP = fishHP;
@@ -50,8 +48,7 @@ public class ExFishingHpRegen extends L2GameServerPacket
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(activeChar.getObjectId());
 		writeD(time);
 		writeD(fishHP);

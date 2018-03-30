@@ -28,38 +28,31 @@ import java.util.logging.Level;
  *
  * @version $Revision: 1.8.2.1.2.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class CharacterDelete extends L2GameClientPacket
-{
+public final class CharacterDelete extends L2GameClientPacket {
 
 	// cd
 	private int charSlot;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		charSlot = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
-		if (!getClient().getFloodProtectors().getCharacterSelect().tryPerformAction("CharacterDelete"))
-		{
+	protected void runImpl() {
+		if (!getClient().getFloodProtectors().getCharacterSelect().tryPerformAction("CharacterDelete")) {
 			sendPacket(new CharDeleteFail(CharDeleteFail.REASON_DELETION_FAILED));
 			return;
 		}
 
-		if (Config.DEBUG)
-		{
+		if (Config.DEBUG) {
 			Log.fine("deleting slot:" + charSlot);
 		}
 
-		try
-		{
+		try {
 			byte answer = getClient().markToDeleteChar(charSlot);
 
-			switch (answer)
-			{
+			switch (answer) {
 				default:
 				case -1: // Error
 					break;
@@ -73,14 +66,11 @@ public final class CharacterDelete extends L2GameClientPacket
 					sendPacket(new CharDeleteFail(CharDeleteFail.REASON_CLAN_LEADERS_MAY_NOT_BE_DELETED));
 					break;
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Error:", e);
 		}
 
-		CharSelectionInfo cl =
-				new CharSelectionInfo(getClient().getAccountName(), getClient().getSessionId().playOkID1, 0);
+		CharSelectionInfo cl = new CharSelectionInfo(getClient().getAccountName(), getClient().getSessionId().playOkID1, 0);
 		sendPacket(cl);
 		getClient().setCharSelection(cl.getCharInfo());
 	}

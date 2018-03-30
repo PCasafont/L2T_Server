@@ -15,53 +15,43 @@
 
 package l2server.gameserver.handler;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.log.Log;
-
-import gnu.trove.TIntObjectHashMap;
 
 /**
  * This class ...
  *
  * @version $Revision: 1.1.4.5 $ $Date: 2005/03/27 15:30:09 $
  */
-public class VoicedCommandHandler
-{
+public class VoicedCommandHandler {
 
 	private TIntObjectHashMap<IVoicedCommandHandler> datatable;
 
-	public static VoicedCommandHandler getInstance()
-	{
+	public static VoicedCommandHandler getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private VoicedCommandHandler()
-	{
+	private VoicedCommandHandler() {
 		datatable = new TIntObjectHashMap<>();
 	}
 
-	public void registerVoicedCommandHandler(IVoicedCommandHandler handler)
-	{
+	public void registerVoicedCommandHandler(IVoicedCommandHandler handler) {
 		String[] ids = handler.getVoicedCommandList();
-		for (String id : ids)
-		{
-			if (Config.DEBUG)
-			{
+		for (String id : ids) {
+			if (Config.DEBUG) {
 				Log.fine("Adding handler for command " + id);
 			}
 			datatable.put(id.hashCode(), handler);
 		}
 	}
 
-	public IVoicedCommandHandler getVoicedCommandHandler(String voicedCommand)
-	{
+	public IVoicedCommandHandler getVoicedCommandHandler(String voicedCommand) {
 		String command = voicedCommand;
-		if (voicedCommand.contains(" "))
-		{
+		if (voicedCommand.contains(" ")) {
 			command = voicedCommand.substring(0, voicedCommand.indexOf(" "));
 		}
-		if (Config.DEBUG)
-		{
+		if (Config.DEBUG) {
 			Log.fine("getting handler for command: " + command + " -> " + (datatable.get(command.hashCode()) != null));
 		}
 		return datatable.get(command.hashCode());
@@ -70,14 +60,12 @@ public class VoicedCommandHandler
 	/**
 	 * @return
 	 */
-	public int size()
-	{
+	public int size() {
 		return datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final VoicedCommandHandler instance = new VoicedCommandHandler();
 	}
 }

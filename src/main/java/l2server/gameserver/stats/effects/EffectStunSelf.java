@@ -21,10 +21,8 @@ import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2EffectType;
 
-public class EffectStunSelf extends L2Effect
-{
-	public EffectStunSelf(Env env, L2EffectTemplate template)
-	{
+public class EffectStunSelf extends L2Effect {
+	public EffectStunSelf(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -32,20 +30,17 @@ public class EffectStunSelf extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.STUN;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.STUN;
 	}
 
 	@Override
-	public boolean isSelfEffectType()
-	{
+	public boolean isSelfEffectType() {
 		return true;
 	}
 
@@ -53,8 +48,7 @@ public class EffectStunSelf extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		super.onStart();
 		getEffector().startStunning();
 		return true;
@@ -64,8 +58,7 @@ public class EffectStunSelf extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		getEffector().stopStunning(false);
 		super.onExit();
 	}
@@ -74,8 +67,7 @@ public class EffectStunSelf extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		// just stop this effect
 		return false;
 	}

@@ -28,14 +28,11 @@ import l2server.util.Rnd;
 import java.util.ArrayList;
 import java.util.List;
 
-public class L2Territory
-{
-	public static class Point
-	{
+public class L2Territory {
+	public static class Point {
 		public int x, y, zmin, zmax, proc;
 
-		Point(int x, int y, int zmin, int zmax, int proc)
-		{
+		Point(int x, int y, int zmin, int zmax, int proc) {
 			this.x = x;
 			this.y = y;
 			this.zmin = zmin;
@@ -54,8 +51,7 @@ public class L2Territory
 	private int zMax;
 	private int procMax;
 
-	public L2Territory(int terr)
-	{
+	public L2Territory(int terr) {
 		points = new ArrayList<>();
 		this.terr = terr;
 		xMin = 999999;
@@ -67,64 +63,51 @@ public class L2Territory
 		procMax = 0;
 	}
 
-	public void add(int x, int y, int zmin, int zmax, int proc)
-	{
+	public void add(int x, int y, int zmin, int zmax, int proc) {
 		points.add(new Point(x, y, zmin, zmax, proc));
-		if (x < xMin)
-		{
+		if (x < xMin) {
 			xMin = x;
 		}
-		if (y < yMin)
-		{
+		if (y < yMin) {
 			yMin = y;
 		}
-		if (x > xMax)
-		{
+		if (x > xMax) {
 			xMax = x;
 		}
-		if (y > yMax)
-		{
+		if (y > yMax) {
 			yMax = y;
 		}
-		if (zmin < zMin)
-		{
+		if (zmin < zMin) {
 			this.zMin = zmin;
 		}
-		if (zmax > zMax)
-		{
+		if (zmax > zMax) {
 			this.zMax = zmax;
 		}
 		procMax += proc;
 	}
 
-	public void print()
-	{
-		for (Point p : points)
-		{
+	public void print() {
+		for (Point p : points) {
 			Log.info("(" + p.x + "," + p.y + ")");
 		}
 	}
 
-	public boolean isIntersect(int x, int y, Point p1, Point p2)
-	{
+	public boolean isIntersect(int x, int y, Point p1, Point p2) {
 		double dy1 = p1.y - y;
 		double dy2 = p2.y - y;
 
-		if (Math.signum(dy1) == Math.signum(dy2))
-		{
+		if (Math.signum(dy1) == Math.signum(dy2)) {
 			return false;
 		}
 
 		double dx1 = p1.x - x;
 		double dx2 = p2.x - x;
 
-		if (dx1 >= 0 && dx2 >= 0)
-		{
+		if (dx1 >= 0 && dx2 >= 0) {
 			return true;
 		}
 
-		if (dx1 < 0 && dx2 < 0)
-		{
+		if (dx1 < 0 && dx2 < 0) {
 			return false;
 		}
 
@@ -133,16 +116,13 @@ public class L2Territory
 		return dx0 <= dx1;
 	}
 
-	public boolean isInside(int x, int y)
-	{
+	public boolean isInside(int x, int y) {
 		int intersect_count = 0;
-		for (int i = 0; i < points.size(); i++)
-		{
+		for (int i = 0; i < points.size(); i++) {
 			Point p1 = points.get(i > 0 ? i - 1 : points.size() - 1);
 			Point p2 = points.get(i);
 
-			if (isIntersect(x, y, p1, p2))
-			{
+			if (isIntersect(x, y, p1, p2)) {
 				intersect_count++;
 			}
 		}
@@ -150,18 +130,14 @@ public class L2Territory
 		return intersect_count % 2 == 1;
 	}
 
-	public int[] getRandomPoint()
-	{
+	public int[] getRandomPoint() {
 		int[] p = new int[4];
-		if (procMax > 0)
-		{
+		if (procMax > 0) {
 			int pos = 0;
 			int rnd = Rnd.nextInt(procMax);
-			for (Point p1 : points)
-			{
+			for (Point p1 : points) {
 				pos += p1.proc;
-				if (rnd <= pos)
-				{
+				if (rnd <= pos) {
 					p[0] = p1.x;
 					p[1] = p1.y;
 					p[2] = p1.zmin;
@@ -170,22 +146,18 @@ public class L2Territory
 				}
 			}
 		}
-		for (int i = 0; i < 100; i++)
-		{
+		for (int i = 0; i < 100; i++) {
 			p[0] = Rnd.get(xMin, xMax);
 			p[1] = Rnd.get(yMin, yMax);
-			if (isInside(p[0], p[1]))
-			{
+			if (isInside(p[0], p[1])) {
 				double curdistance = 0;
 				p[2] = zMin + 100;
 				p[3] = zMax;
-				for (Point p1 : points)
-				{
+				for (Point p1 : points) {
 					double dx = p1.x - p[0];
 					double dy = p1.y - p[1];
 					double distance = Math.sqrt(dx * dx + dy * dy);
-					if (curdistance == 0 || distance < curdistance)
-					{
+					if (curdistance == 0 || distance < curdistance) {
 						curdistance = distance;
 						p[2] = p1.zmin + 100;
 					}
@@ -197,23 +169,19 @@ public class L2Territory
 		return p;
 	}
 
-	public int getProcMax()
-	{
+	public int getProcMax() {
 		return procMax;
 	}
 
-	public int getMinZ()
-	{
+	public int getMinZ() {
 		return zMin;
 	}
 
-	public int getMaxZ()
-	{
+	public int getMaxZ() {
 		return zMax;
 	}
 
-	public List<Point> getPoints()
-	{
+	public List<Point> getPoints() {
 		return points;
 	}
 }

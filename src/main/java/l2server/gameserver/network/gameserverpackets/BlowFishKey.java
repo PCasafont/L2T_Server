@@ -18,36 +18,29 @@ package l2server.gameserver.network.gameserverpackets;
 import l2server.log.Log;
 import l2server.util.network.BaseSendablePacket;
 
+import javax.crypto.Cipher;
 import java.security.GeneralSecurityException;
 import java.security.interfaces.RSAPublicKey;
 import java.util.logging.Level;
 
-import javax.crypto.Cipher;
-
 /**
  * @author -Wooden-
  */
-public class BlowFishKey extends BaseSendablePacket
-{
+public class BlowFishKey extends BaseSendablePacket {
 
 	/**
 	 * @param blowfishKey
 	 * @param publicKey
 	 */
-	public BlowFishKey(byte[] blowfishKey, RSAPublicKey publicKey)
-	{
+	public BlowFishKey(byte[] blowfishKey, RSAPublicKey publicKey) {
 		writeC(0x00);
 		byte[] encrypted = null;
-		try
-		{
+		try {
 			Cipher rsaCipher = Cipher.getInstance("RSA/ECB/nopadding");
 			rsaCipher.init(Cipher.ENCRYPT_MODE, publicKey);
 			encrypted = rsaCipher.doFinal(blowfishKey);
-		}
-		catch (GeneralSecurityException e)
-		{
-			Log.log(Level.SEVERE,
-					"Error While encrypting blowfish key for transmision (Crypt error): " + e.getMessage(), e);
+		} catch (GeneralSecurityException e) {
+			Log.log(Level.SEVERE, "Error While encrypting blowfish key for transmision (Crypt error): " + e.getMessage(), e);
 		}
 		writeD(encrypted.length);
 		writeB(encrypted);
@@ -57,8 +50,7 @@ public class BlowFishKey extends BaseSendablePacket
 	 * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent()
-	{
+	public byte[] getContent() {
 		return getBytes();
 	}
 }

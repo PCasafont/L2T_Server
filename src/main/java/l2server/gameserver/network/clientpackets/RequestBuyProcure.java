@@ -34,8 +34,7 @@ import l2server.gameserver.templates.item.L2Item;
 import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
 
 @Deprecated
-public class RequestBuyProcure extends L2GameClientPacket
-{
+public class RequestBuyProcure extends L2GameClientPacket {
 
 	private static final int BATCH_LENGTH = 12; // length of the one item
 
@@ -44,23 +43,19 @@ public class RequestBuyProcure extends L2GameClientPacket
 	private Procure[] items = null;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		listId = readD();
 		int count = readD();
-		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
-		{
+		if (count <= 0 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining()) {
 			return;
 		}
 
 		items = new Procure[count];
-		for (int i = 0; i < count; i++)
-		{
+		for (int i = 0; i < count; i++) {
 			readD(); //service
 			int itemId = readD();
 			long cnt = readQ();
-			if (itemId < 1 || cnt < 1)
-			{
+			if (itemId < 1 || cnt < 1) {
 				items = null;
 				return;
 			}
@@ -69,45 +64,37 @@ public class RequestBuyProcure extends L2GameClientPacket
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
 
-		if (!getClient().getFloodProtectors().getManor().tryPerformAction("BuyProcure"))
-		{
+		if (!getClient().getFloodProtectors().getManor().tryPerformAction("BuyProcure")) {
 			return;
 		}
 
-		if (items == null)
-		{
+		if (items == null) {
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
 		// Alt game - Karma punishment
-		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && player.getReputation() < 0)
-		{
+		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && player.getReputation() < 0) {
 			return;
 		}
 
 		L2Object manager = player.getTarget();
 
-		if (!(manager instanceof L2ManorManagerInstance))
-		{
+		if (!(manager instanceof L2ManorManagerInstance)) {
 			manager = player.getLastFolkNPC();
 		}
 
-		if (!(manager instanceof L2ManorManagerInstance))
-		{
+		if (!(manager instanceof L2ManorManagerInstance)) {
 			return;
 		}
 
-		if (!player.isInsideRadius(manager, DEFAULT_INTERACTION_DISTANCE, true, false))
-		{
+		if (!player.isInsideRadius(manager, DEFAULT_INTERACTION_DISTANCE, true, false)) {
 			return;
 		}
 
@@ -115,31 +102,25 @@ public class RequestBuyProcure extends L2GameClientPacket
 		int slots = 0;
 		int weight = 0;
 
-		for (Procure i : items)
-		{
+		for (Procure i : items) {
 			i.setReward(castle);
 
 			L2Item template = ItemTable.getInstance().getTemplate(i.getReward());
 			weight += i.getCount() * template.getWeight();
 
-			if (!template.isStackable())
-			{
+			if (!template.isStackable()) {
 				slots += i.getCount();
-			}
-			else if (player.getInventory().getItemByItemId(i.getItemId()) == null)
-			{
+			} else if (player.getInventory().getItemByItemId(i.getItemId()) == null) {
 				slots++;
 			}
 		}
 
-		if (!player.getInventory().validateWeight(weight))
-		{
+		if (!player.getInventory().validateWeight(weight)) {
 			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WEIGHT_LIMIT_EXCEEDED));
 			return;
 		}
 
-		if (!player.getInventory().validateCapacity(slots))
-		{
+		if (!player.getInventory().validateCapacity(slots)) {
 			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SLOTS_FULL));
 			return;
 		}
@@ -147,36 +128,28 @@ public class RequestBuyProcure extends L2GameClientPacket
 		// Proceed the purchase
 		InventoryUpdate playerIU = new InventoryUpdate();
 
-		for (Procure i : items)
-		{
+		for (Procure i : items) {
 			// check if player have correct items count
 			L2ItemInstance item = player.getInventory().getItemByItemId(i.getItemId());
-			if (item == null || item.getCount() < i.getCount())
-			{
+			if (item == null || item.getCount() < i.getCount()) {
 				continue;
 			}
 
-			L2ItemInstance iteme =
-					player.getInventory().destroyItemByItemId("Manor", i.getItemId(), i.getCount(), player, manager);
-			if (iteme == null)
-			{
+			L2ItemInstance iteme = player.getInventory().destroyItemByItemId("Manor", i.getItemId(), i.getCount(), player, manager);
+			if (iteme == null) {
 				continue;
 			}
 
 			// Add item to Inventory and adjust update packet
 			item = player.getInventory().addItem("Manor", i.getReward(), i.getCount(), player, manager);
-			if (item == null)
-			{
+			if (item == null) {
 				continue;
 			}
 
 			playerIU.addRemovedItem(iteme);
-			if (item.getCount() > i.getCount())
-			{
+			if (item.getCount() > i.getCount()) {
 				playerIU.addModifiedItem(item);
-			}
-			else
-			{
+			} else {
 				playerIU.addNewItem(item);
 			}
 
@@ -198,37 +171,30 @@ public class RequestBuyProcure extends L2GameClientPacket
 		player.sendPacket(su);
 	}
 
-	private static class Procure
-	{
+	private static class Procure {
 		private final int itemId;
 		private final long count;
 		private int reward;
 
-		public Procure(int id, long num)
-		{
+		public Procure(int id, long num) {
 			itemId = id;
 			count = num;
 		}
 
-		public int getItemId()
-		{
+		public int getItemId() {
 			return itemId;
 		}
 
-		public long getCount()
-		{
+		public long getCount() {
 			return count;
 		}
 
-		public int getReward()
-		{
+		public int getReward() {
 			return reward;
 		}
 
-		public void setReward(Castle c)
-		{
-			reward = L2Manor.getInstance()
-					.getRewardItem(itemId, c.getCrop(itemId, CastleManorManager.PERIOD_CURRENT).getReward());
+		public void setReward(Castle c) {
+			reward = L2Manor.getInstance().getRewardItem(itemId, c.getCrop(itemId, CastleManorManager.PERIOD_CURRENT).getReward());
 		}
 	}
 }

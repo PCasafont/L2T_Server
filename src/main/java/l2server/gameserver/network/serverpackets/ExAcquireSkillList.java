@@ -41,33 +41,35 @@ import java.util.List;
  *
  * @version $Revision: 1.3.2.1.2.5 $ $Date: 2005/03/27 15:29:57 $
  */
-public final class ExAcquireSkillList extends L2GameServerPacket
-{
+public final class ExAcquireSkillList extends L2GameServerPacket {
 	//
-	public enum SkillType
-	{
-		Usual, // 0
-		Fishing, // 1
-		Clan, // 2
-		SubUnit, // 3
-		SubClass, // 4
-		DualClass, // 5
+	public enum SkillType {
+		Usual,
+		// 0
+		Fishing,
+		// 1
+		Clan,
+		// 2
+		SubUnit,
+		// 3
+		SubClass,
+		// 4
+		DualClass,
+		// 5
 		Special // 6
 	}
-
+	
 	private List<Skill> skills;
 	private SkillType skillType;
-
-	private static class Skill
-	{
+	
+	private static class Skill {
 		public int id;
 		public int nextLevel;
 		public int maxLevel;
 		public int spCost;
 		public int requirements;
-
-		public Skill(int pId, int pNextLevel, int pMaxLevel, int pSpCost, int pRequirements)
-		{
+		
+		public Skill(int pId, int pNextLevel, int pMaxLevel, int pSpCost, int pRequirements) {
 			id = pId;
 			nextLevel = pNextLevel;
 			maxLevel = pMaxLevel;
@@ -75,28 +77,23 @@ public final class ExAcquireSkillList extends L2GameServerPacket
 			requirements = pRequirements;
 		}
 	}
-
-	public ExAcquireSkillList(SkillType type)
-	{
+	
+	public ExAcquireSkillList(SkillType type) {
 		skillType = type;
 	}
-
-	public void addSkill(int id, int nextLevel, int maxLevel, int spCost, int requirements)
-	{
-		if (skills == null)
-		{
+	
+	public void addSkill(int id, int nextLevel, int maxLevel, int spCost, int requirements) {
+		if (skills == null) {
 			skills = new ArrayList<>();
 		}
 		skills.add(new Skill(id, nextLevel, maxLevel, spCost, requirements));
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeH(skillType.ordinal());
 		writeH(skills.size());
-		for (Skill temp : skills)
-		{
+		for (Skill temp : skills) {
 			writeD(temp.id);
 			writeH(temp.nextLevel);
 			writeH(temp.maxLevel);

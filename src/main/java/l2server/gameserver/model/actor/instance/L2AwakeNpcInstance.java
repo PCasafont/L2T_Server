@@ -27,45 +27,34 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 /**
  * @author Erlandys
  */
-public final class L2AwakeNpcInstance extends L2Npc
-{
-	public L2AwakeNpcInstance(int objectId, L2NpcTemplate template)
-	{
+public final class L2AwakeNpcInstance extends L2Npc {
+	public L2AwakeNpcInstance(int objectId, L2NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2AwakeNpcInstance);
 	}
 
 	@Override
-	public void showChatWindow(L2PcInstance player)
-	{
+	public void showChatWindow(L2PcInstance player) {
 		int npcId = getTemplate().NpcId;
 
-		String iHaveNothing =
-				"<html><body>I have nothing to say to you<br>" + "<a action=\"bypass -h npc_" + getObjectId() +
-						"_Quest\">Quest</a>" + "</body></html>";
+		String iHaveNothing = "<html><body>I have nothing to say to you<br>" + "<a action=\"bypass -h npc_" + getObjectId() + "_Quest\">Quest</a>" +
+				"</body></html>";
 
 		String mainText[] = {iHaveNothing, iHaveNothing};
 
-		if (npcId > 33396 && npcId < 33405)
-		{
+		if (npcId > 33396 && npcId < 33405) {
 			mainText[0] = getMainText(npcId - 33258, true);
 			mainText[1] = getMainText(npcId - 33258, false);
 		}
 
 		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-		if (!mainText.equals(""))
-		{
-			if (player.getLevel() >= 85 && player.getCurrentClass().getAwakeningClassId() != -1)
-			{
+		if (!mainText.equals("")) {
+			if (player.getLevel() >= 85 && player.getCurrentClass().getAwakeningClassId() != -1) {
 				html.setHtml(mainText[0]);
-			}
-			else
-			{
+			} else {
 				html.setHtml(mainText[1]);
 			}
-		}
-		else
-		{
+		} else {
 			html.setFile(player.getHtmlPrefix(), "npcdefault.htm");
 		}
 
@@ -76,42 +65,23 @@ public final class L2AwakeNpcInstance extends L2Npc
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 
-	private String getMainText(int classId, boolean canAwake)
-	{
-		String className[] = {
-				"Sigel Knight",
-				"Tyrr Warrior",
-				"Othell Rogue",
-				"Yul Archer",
-				"Feoh Wizard",
-				"Iss Enchanter",
-				"Wynn Summoner",
-				"Aeore Healer"
-		};
-		String ancientHero[] =
-				{"Abelius", "Spyros", "Ashagen", "Cranigg", "Leister", "Soltkrieg", "Nabiarov", "Lakcis"};
+	private String getMainText(int classId, boolean canAwake) {
+		String className[] =
+				{"Sigel Knight", "Tyrr Warrior", "Othell Rogue", "Yul Archer", "Feoh Wizard", "Iss Enchanter", "Wynn Summoner", "Aeore Healer"};
+		String ancientHero[] = {"Abelius", "Spyros", "Ashagen", "Cranigg", "Leister", "Soltkrieg", "Nabiarov", "Lakcis"};
 		String htmlText = "";
 		htmlText +=
 				"<html><body scroll=\"no\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"292\" height=\"358\" background=\"L2UI_CH3.refinewnd_back_Pattern\"><tr><td>";
-		htmlText +=
-				"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"292\" background=\"L2UI_CT1.HtmlWnd_DF_Texture" +
-						className[classId - 139].split(" ")[1] + "\"><tr><td align=\"center\">";
-		htmlText +=
-				"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"272\" height=\"338\"><tr><td height=\"90\"></td></tr>";
-		if (canAwake)
-		{
-			htmlText +=
-					"<tr><td align=\"center\">You are brave to take this road. Will you accept the help of the ancient hero " +
-							ancientHero[classId - 139] + " and Awaken as an " + className[classId - 139] + "</td></tr>";
-			htmlText += "<tr><td align=\"center\"><button value=\"Awaken\" action=\"bypass -h npc_" + getObjectId() +
-					"_Awake " + classId +
+		htmlText += "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"292\" background=\"L2UI_CT1.HtmlWnd_DF_Texture" +
+				className[classId - 139].split(" ")[1] + "\"><tr><td align=\"center\">";
+		htmlText += "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"272\" height=\"338\"><tr><td height=\"90\"></td></tr>";
+		if (canAwake) {
+			htmlText += "<tr><td align=\"center\">You are brave to take this road. Will you accept the help of the ancient hero " +
+					ancientHero[classId - 139] + " and Awaken as an " + className[classId - 139] + "</td></tr>";
+			htmlText += "<tr><td align=\"center\"><button value=\"Awaken\" action=\"bypass -h npc_" + getObjectId() + "_Awake " + classId +
 					"\" width=200 height=30 back=\"L2UI_CT1.HtmlWnd_DF_Awake_Down\" fore=\"L2UI_CT1.HtmlWnd_DF_Awake\"></td></tr>";
-		}
-		else
-		{
-			htmlText +=
-					"<tr><td align=\"center\">It is not possible for you to Awaken as an " + className[classId - 139] +
-							". <br>";
+		} else {
+			htmlText += "<tr><td align=\"center\">It is not possible for you to Awaken as an " + className[classId - 139] + ". <br>";
 			htmlText +=
 					"<font color=\"af9878\">(Only characters level 85 or above who have completed their 3rd class transfer and possess the Scroll of Afterlife may Awaken.)</font></td></tr>";
 		}
@@ -120,28 +90,21 @@ public final class L2AwakeNpcInstance extends L2Npc
 	}
 
 	@Override
-	public void onBypassFeedback(L2PcInstance player, String command)
-	{
-		if (command.startsWith("Awake"))
-		{
-			if (player.getWeightPenalty() >= 3)
-			{
-				player.sendPacket(
-						SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_AWAKEN_DUE_TO_WEIGHT_LIMITS));
+	public void onBypassFeedback(L2PcInstance player, String command) {
+		if (command.startsWith("Awake")) {
+			if (player.getWeightPenalty() >= 3) {
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_AWAKEN_DUE_TO_WEIGHT_LIMITS));
 				return;
 			}
 
-			if (player.isMounted() || player.isTransformed())
-			{
-				player.sendPacket(SystemMessage
-						.getSystemMessage(SystemMessageId.YOU_CANNOT_AWAKEN_WHILE_YOURE_TRANSFORMED_OR_RIDING));
+			if (player.isMounted() || player.isTransformed()) {
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_AWAKEN_WHILE_YOURE_TRANSFORMED_OR_RIDING));
 				return;
 			}
 
 			int classId = PlayerClassTable.getInstance().getAwakening(player.getCurrentClass().getId());
 			int statueClass = Integer.parseInt(command.split(" ")[1]);
-			if (statueClass != player.getCurrentClass().getAwakeningClassId())
-			{
+			if (statueClass != player.getCurrentClass().getAwakeningClassId()) {
 				return;
 			}
 

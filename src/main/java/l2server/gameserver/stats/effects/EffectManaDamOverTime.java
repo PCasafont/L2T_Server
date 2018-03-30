@@ -21,10 +21,8 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
-public class EffectManaDamOverTime extends L2Effect
-{
-	public EffectManaDamOverTime(Env env, L2EffectTemplate template)
-	{
+public class EffectManaDamOverTime extends L2Effect {
+	public EffectManaDamOverTime(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -32,19 +30,15 @@ public class EffectManaDamOverTime extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
-		if (getEffected().isDead())
-		{
+	public boolean onActionTime() {
+		if (getEffected().isDead()) {
 			return false;
 		}
 
 		double manaDam = calc();
 
-		if (manaDam > getEffected().getCurrentMp())
-		{
-			if (getSkill().isToggle())
-			{
+		if (manaDam > getEffected().getCurrentMp()) {
+			if (getSkill().isToggle()) {
 				getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
 				return false;
 			}

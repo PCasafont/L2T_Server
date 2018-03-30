@@ -22,16 +22,13 @@ import l2server.gameserver.stats.Stats;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
-public class EffectFixedPcDmg extends L2Effect
-{
-	public EffectFixedPcDmg(Env env, L2EffectTemplate template)
-	{
+public class EffectFixedPcDmg extends L2Effect {
+	public EffectFixedPcDmg(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.DEBUFF;
 	}
 
@@ -39,25 +36,20 @@ public class EffectFixedPcDmg extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (getEffected().isDead() || !(getEffected() instanceof L2PcInstance) || getEffected().getLevel() < 85 ||
-				getEffected().isInvul())
-		{
+	public boolean onStart() {
+		if (getEffected().isDead() || !(getEffected() instanceof L2PcInstance) || getEffected().getLevel() < 85 || getEffected().isInvul()) {
 			return false;
 		}
 
 		double damage = calc();
 		damage = getEffected().calcStat(Stats.FIXED_DMG_VULN, damage, getEffector(), getSkill());
-		((L2PcInstance) getEffected()).getStatus()
-				.reduceHp(damage, getEffector(), true, false, false, true, getSkill().ignoreImmunity());
+		((L2PcInstance) getEffected()).getStatus().reduceHp(damage, getEffector(), true, false, false, true, getSkill().ignoreImmunity());
 		getEffector().sendDamageMessage(getEffected(), (int) damage, false, false, false);
 		return true;
 	}
 
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 }

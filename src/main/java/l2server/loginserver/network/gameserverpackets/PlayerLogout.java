@@ -26,21 +26,18 @@ import java.util.logging.Logger;
 /**
  * @author -Wooden-
  */
-public class PlayerLogout extends BaseRecievePacket
-{
+public class PlayerLogout extends BaseRecievePacket {
 	protected static Logger log = Logger.getLogger(PlayerLogout.class.getName());
 
 	/**
 	 * @param decrypt
 	 */
-	public PlayerLogout(byte[] decrypt, GameServerThread server)
-	{
+	public PlayerLogout(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 		String account = readS();
 
 		server.removeAccountOnGameServer(account);
-		if (Config.DEBUG)
-		{
+		if (Config.DEBUG) {
 			Log.info("Player " + account + " logged out from gameserver [" + server.getServerId() + "] " +
 					GameServerTable.getInstance().getServerNameById(server.getServerId()));
 		}

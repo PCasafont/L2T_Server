@@ -26,18 +26,15 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @author durgus
  */
-public class ChatPetition implements IChatHandler
-{
+public class ChatPetition implements IChatHandler {
 	private static final int[] COMMAND_IDS = {6, 7};
 
 	/**
 	 * Handle chat type 'petition player'
 	 */
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-	{
-		if (!PetitionManager.getInstance().isPlayerInConsultation(activeChar))
-		{
+	public void handleChat(int type, L2PcInstance activeChar, String target, String text) {
+		if (!PetitionManager.getInstance().isPlayerInConsultation(activeChar)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_IN_PETITION_CHAT));
 			return;
 		}
@@ -51,8 +48,7 @@ public class ChatPetition implements IChatHandler
 	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
 	 */
 	@Override
-	public int[] getChatTypeList()
-	{
+	public int[] getChatTypeList() {
 		return COMMAND_IDS;
 	}
 }

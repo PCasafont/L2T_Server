@@ -1,81 +1,81 @@
 ﻿<list>
-    <skill entityId="1" id="593" level="1" />    <!-- Residence Health-->
-    <skill entityId="1" id="600" level="1" />    <!-- Residence Guidance-->
-    <skill entityId="1" id="606" level="1" />    <!-- Residence Fortitude-->
-    <skill entityId="2" id="591" level="1" />    <!-- Residence Spirit-->
-    <skill entityId="2" id="597" level="1" />    <!-- Residence Shield-->
-    <skill entityId="2" id="609" level="1" />    <!-- Residence Movement-->
-    <skill entityId="3" id="592" level="1" />    <!-- Residence Soul-->
-    <skill entityId="3" id="601" level="1" />    <!-- Residence Agility-->
-    <skill entityId="3" id="610" level="1" />    <!-- Residence Death Fortune-->
-    <skill entityId="4" id="590" level="1" />    <!-- Residence Body-->
-    <skill entityId="4" id="598" level="1" />    <!-- Residence Empower-->
-    <skill entityId="4" id="605" level="1" />    <!-- Residence Lava Resistance-->
-    <skill entityId="5" id="596" level="1" />    <!-- Residence Might-->
-    <skill entityId="5" id="602" level="1" />    <!-- Residence Shield Block-->
-    <skill entityId="5" id="608" level="1" />    <!-- Residence Vigilance-->
-    <skill entityId="6" id="595" level="1" />    <!-- Residence Clarity-->
-    <skill entityId="6" id="599" level="1" />    <!-- Residence Magic Barrier-->
-    <skill entityId="6" id="607" level="1" />    <!-- Residence Freedom-->
-    <skill entityId="7" id="590" level="1" />    <!-- Residence Body-->
-    <skill entityId="7" id="594" level="1" />    <!-- Residence Moral-->
-    <skill entityId="7" id="603" level="1" />    <!-- Residence Shield Defense-->
-    <skill entityId="8" id="593" level="1" />    <!-- Residence Health-->
-    <skill entityId="8" id="599" level="1" />    <!-- Residence Magic Barrier-->
-    <skill entityId="8" id="604" level="1" />    <!-- Residence Typhoon Resistance-->
-    <skill entityId="9" id="592" level="1" />    <!-- Residence Soul-->
-    <skill entityId="9" id="600" level="1" />    <!-- Residence Guidance-->
-    <skill entityId="9" id="610" level="1" />    <!-- Residence Death Fortune-->
-    <skill entityId="81" id="848" level="1" />    <!-- Gludio Territory Benefaction-->
-    <skill entityId="82" id="849" level="1" />    <!-- Dion Territory Benefaction-->
-    <skill entityId="83" id="850" level="1" />    <!-- Giran Territory Benefaction-->
-    <skill entityId="84" id="851" level="1" />    <!-- Oren Territory Benefaction-->
-    <skill entityId="85" id="852" level="1" />    <!-- Aden Territory Benefaction-->
-    <skill entityId="86" id="853" level="1" />    <!-- Innadril Territory Benefaction-->
-    <skill entityId="87" id="854" level="1" />    <!-- Goddard Territory Benefaction-->
-    <skill entityId="88" id="855" level="1" />    <!-- Rune Territory Benefaction-->
-    <skill entityId="89" id="856" level="1" />    <!-- Schuttgart Territory Benefaction-->
-    <skill entityId="101" id="590" level="1" />    <!-- Residence Body-->
-    <skill entityId="101" id="603" level="1" />    <!-- Residence Shield Defense-->
-    <skill entityId="102" id="602" level="1" />    <!-- Residence Shield Block-->
-    <skill entityId="102" id="604" level="1" />    <!-- Residence Typhoon Resistance-->
-    <skill entityId="103" id="601" level="1" />    <!-- Residence Agility-->
-    <skill entityId="103" id="605" level="1" />    <!-- Residence Lava Resistance-->
-    <skill entityId="104" id="595" level="1" />    <!-- Residence Clarity-->
-    <skill entityId="104" id="606" level="1" />    <!-- Residence Fortitude-->
-    <skill entityId="105" id="594" level="1" />    <!-- Residence Moral-->
-    <skill entityId="105" id="607" level="1" />    <!-- Residence Freedom-->
-    <skill entityId="106" id="593" level="1" />    <!-- Residence Health-->
-    <skill entityId="106" id="608" level="1" />    <!-- Residence Vigilance-->
-    <skill entityId="107" id="596" level="1" />    <!-- Residence Might-->
-    <skill entityId="107" id="598" level="1" />    <!-- Residence Empower-->
-    <skill entityId="108" id="592" level="1" />    <!-- Residence Soul-->
-    <skill entityId="108" id="599" level="1" />    <!-- Residence Magic Barrier-->
-    <skill entityId="109" id="591" level="1" />    <!-- Residence Spirit-->
-    <skill entityId="109" id="610" level="1" />    <!-- Residence Death Fortune-->
-    <skill entityId="110" id="597" level="1" />    <!-- Residence Shield-->
-    <skill entityId="110" id="600" level="1" />    <!-- Residence Guidance-->
-    <skill entityId="111" id="590" level="1" />    <!-- Residence Body-->
-    <skill entityId="111" id="608" level="1" />    <!-- Residence Vigilance-->
-    <skill entityId="112" id="600" level="1" />    <!-- Residence Guidance-->
-    <skill entityId="112" id="607" level="1" />    <!-- Residence Freedom-->
-    <skill entityId="113" id="606" level="1" />    <!-- Residence Fortitude-->
-    <skill entityId="113" id="610" level="1" />    <!-- Residence Death Fortune-->
-    <skill entityId="114" id="605" level="1" />    <!-- Residence Lava Resistance-->
-    <skill entityId="114" id="609" level="1" />    <!-- Residence Movement-->
-    <skill entityId="115" id="599" level="1" />    <!-- Residence Magic Barrier-->
-    <skill entityId="115" id="604" level="1" />    <!-- Residence Typhoon Resistance-->
-    <skill entityId="116" id="598" level="1" />    <!-- Residence Empower-->
-    <skill entityId="116" id="603" level="1" />    <!-- Residence Shield Defense-->
-    <skill entityId="117" id="597" level="1" />    <!-- Residence Shield-->
-    <skill entityId="117" id="602" level="1" />    <!-- Residence Shield Block-->
-    <skill entityId="117" id="610" level="1" />    <!-- Residence Death Fortune-->
-    <skill entityId="118" id="596" level="1" />    <!-- Residence Might-->
-    <skill entityId="118" id="601" level="1" />    <!-- Residence Agility-->
-    <skill entityId="119" id="592" level="1" />    <!-- Residence Soul-->
-    <skill entityId="119" id="595" level="1" />    <!-- Residence Clarity-->
-    <skill entityId="120" id="591" level="1" />    <!-- Residence Spirit-->
-    <skill entityId="120" id="594" level="1" />    <!-- Residence Moral-->
-    <skill entityId="121" id="590" level="1" />    <!-- Residence Body-->
-    <skill entityId="121" id="593" level="1" />    <!-- Residence Health-->
+	<skill entityId="1" id="593" level="1" />    <!-- Residence Health-->
+	<skill entityId="1" id="600" level="1" />    <!-- Residence Guidance-->
+	<skill entityId="1" id="606" level="1" />    <!-- Residence Fortitude-->
+	<skill entityId="2" id="591" level="1" />    <!-- Residence Spirit-->
+	<skill entityId="2" id="597" level="1" />    <!-- Residence Shield-->
+	<skill entityId="2" id="609" level="1" />    <!-- Residence Movement-->
+	<skill entityId="3" id="592" level="1" />    <!-- Residence Soul-->
+	<skill entityId="3" id="601" level="1" />    <!-- Residence Agility-->
+	<skill entityId="3" id="610" level="1" />    <!-- Residence Death Fortune-->
+	<skill entityId="4" id="590" level="1" />    <!-- Residence Body-->
+	<skill entityId="4" id="598" level="1" />    <!-- Residence Empower-->
+	<skill entityId="4" id="605" level="1" />    <!-- Residence Lava Resistance-->
+	<skill entityId="5" id="596" level="1" />    <!-- Residence Might-->
+	<skill entityId="5" id="602" level="1" />    <!-- Residence Shield Block-->
+	<skill entityId="5" id="608" level="1" />    <!-- Residence Vigilance-->
+	<skill entityId="6" id="595" level="1" />    <!-- Residence Clarity-->
+	<skill entityId="6" id="599" level="1" />    <!-- Residence Magic Barrier-->
+	<skill entityId="6" id="607" level="1" />    <!-- Residence Freedom-->
+	<skill entityId="7" id="590" level="1" />    <!-- Residence Body-->
+	<skill entityId="7" id="594" level="1" />    <!-- Residence Moral-->
+	<skill entityId="7" id="603" level="1" />    <!-- Residence Shield Defense-->
+	<skill entityId="8" id="593" level="1" />    <!-- Residence Health-->
+	<skill entityId="8" id="599" level="1" />    <!-- Residence Magic Barrier-->
+	<skill entityId="8" id="604" level="1" />    <!-- Residence Typhoon Resistance-->
+	<skill entityId="9" id="592" level="1" />    <!-- Residence Soul-->
+	<skill entityId="9" id="600" level="1" />    <!-- Residence Guidance-->
+	<skill entityId="9" id="610" level="1" />    <!-- Residence Death Fortune-->
+	<skill entityId="81" id="848" level="1" />    <!-- Gludio Territory Benefaction-->
+	<skill entityId="82" id="849" level="1" />    <!-- Dion Territory Benefaction-->
+	<skill entityId="83" id="850" level="1" />    <!-- Giran Territory Benefaction-->
+	<skill entityId="84" id="851" level="1" />    <!-- Oren Territory Benefaction-->
+	<skill entityId="85" id="852" level="1" />    <!-- Aden Territory Benefaction-->
+	<skill entityId="86" id="853" level="1" />    <!-- Innadril Territory Benefaction-->
+	<skill entityId="87" id="854" level="1" />    <!-- Goddard Territory Benefaction-->
+	<skill entityId="88" id="855" level="1" />    <!-- Rune Territory Benefaction-->
+	<skill entityId="89" id="856" level="1" />    <!-- Schuttgart Territory Benefaction-->
+	<skill entityId="101" id="590" level="1" />    <!-- Residence Body-->
+	<skill entityId="101" id="603" level="1" />    <!-- Residence Shield Defense-->
+	<skill entityId="102" id="602" level="1" />    <!-- Residence Shield Block-->
+	<skill entityId="102" id="604" level="1" />    <!-- Residence Typhoon Resistance-->
+	<skill entityId="103" id="601" level="1" />    <!-- Residence Agility-->
+	<skill entityId="103" id="605" level="1" />    <!-- Residence Lava Resistance-->
+	<skill entityId="104" id="595" level="1" />    <!-- Residence Clarity-->
+	<skill entityId="104" id="606" level="1" />    <!-- Residence Fortitude-->
+	<skill entityId="105" id="594" level="1" />    <!-- Residence Moral-->
+	<skill entityId="105" id="607" level="1" />    <!-- Residence Freedom-->
+	<skill entityId="106" id="593" level="1" />    <!-- Residence Health-->
+	<skill entityId="106" id="608" level="1" />    <!-- Residence Vigilance-->
+	<skill entityId="107" id="596" level="1" />    <!-- Residence Might-->
+	<skill entityId="107" id="598" level="1" />    <!-- Residence Empower-->
+	<skill entityId="108" id="592" level="1" />    <!-- Residence Soul-->
+	<skill entityId="108" id="599" level="1" />    <!-- Residence Magic Barrier-->
+	<skill entityId="109" id="591" level="1" />    <!-- Residence Spirit-->
+	<skill entityId="109" id="610" level="1" />    <!-- Residence Death Fortune-->
+	<skill entityId="110" id="597" level="1" />    <!-- Residence Shield-->
+	<skill entityId="110" id="600" level="1" />    <!-- Residence Guidance-->
+	<skill entityId="111" id="590" level="1" />    <!-- Residence Body-->
+	<skill entityId="111" id="608" level="1" />    <!-- Residence Vigilance-->
+	<skill entityId="112" id="600" level="1" />    <!-- Residence Guidance-->
+	<skill entityId="112" id="607" level="1" />    <!-- Residence Freedom-->
+	<skill entityId="113" id="606" level="1" />    <!-- Residence Fortitude-->
+	<skill entityId="113" id="610" level="1" />    <!-- Residence Death Fortune-->
+	<skill entityId="114" id="605" level="1" />    <!-- Residence Lava Resistance-->
+	<skill entityId="114" id="609" level="1" />    <!-- Residence Movement-->
+	<skill entityId="115" id="599" level="1" />    <!-- Residence Magic Barrier-->
+	<skill entityId="115" id="604" level="1" />    <!-- Residence Typhoon Resistance-->
+	<skill entityId="116" id="598" level="1" />    <!-- Residence Empower-->
+	<skill entityId="116" id="603" level="1" />    <!-- Residence Shield Defense-->
+	<skill entityId="117" id="597" level="1" />    <!-- Residence Shield-->
+	<skill entityId="117" id="602" level="1" />    <!-- Residence Shield Block-->
+	<skill entityId="117" id="610" level="1" />    <!-- Residence Death Fortune-->
+	<skill entityId="118" id="596" level="1" />    <!-- Residence Might-->
+	<skill entityId="118" id="601" level="1" />    <!-- Residence Agility-->
+	<skill entityId="119" id="592" level="1" />    <!-- Residence Soul-->
+	<skill entityId="119" id="595" level="1" />    <!-- Residence Clarity-->
+	<skill entityId="120" id="591" level="1" />    <!-- Residence Spirit-->
+	<skill entityId="120" id="594" level="1" />    <!-- Residence Moral-->
+	<skill entityId="121" id="590" level="1" />    <!-- Residence Body-->
+	<skill entityId="121" id="593" level="1" />    <!-- Residence Health-->
 </list>

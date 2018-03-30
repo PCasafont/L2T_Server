@@ -29,45 +29,39 @@ import java.nio.ByteOrder;
 /**
  * @author Pere
  */
-public final class ExGmViewCharacterInfo extends L2GameServerPacket
-{
+public final class ExGmViewCharacterInfo extends L2GameServerPacket {
 	private int objectId;
 	private byte[] data;
-
-	public ExGmViewCharacterInfo(L2PcInstance player)
-	{
+	
+	public ExGmViewCharacterInfo(L2PcInstance player) {
 		objectId = player.getObjectId();
-
+		
 		ByteBuffer buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
-
+		
 		// Write data to the buffer
 		buffer.putShort((short) 0x17);
-
+		
 		// Mask
 		buffer.put((byte) 0xff);
 		buffer.put((byte) 0xff);
 		buffer.put((byte) 0xfe);
-
+		
 		int relation = 0x00;
-		if (player.getClan() != null)
-		{
+		if (player.getClan() != null) {
 			relation |= 0x20;
-			if (player.isClanLeader())
-			{
+			if (player.isClanLeader()) {
 				relation |= 0x40;
 			}
 		}
-		if (player.getSiegeState() == 1)
-		{
+		if (player.getSiegeState() == 1) {
 			relation |= 0x1000;
 		}
 		buffer.putInt(relation);
-
+		
 		// Basic info
 		buffer.putShort((short) (player.getName().length() * 2 + 16));
 		buffer.putShort((short) player.getName().length());
-		for (char c : player.getName().toCharArray())
-		{
+		for (char c : player.getName().toCharArray()) {
 			buffer.putShort((short) c);
 		}
 		buffer.put((byte) (player.isGM() ? 1 : 0));
@@ -76,7 +70,7 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 		buffer.putInt(player.getVisibleTemplate().startingClassId);
 		buffer.putInt(player.getCurrentClass() != null ? player.getCurrentClass().getId() : 0);
 		buffer.put((byte) player.getLevel());
-
+		
 		// Base stats
 		buffer.putShort((short) 18);
 		buffer.putShort((short) player.getSTR());
@@ -87,13 +81,13 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 		buffer.putShort((short) player.getMEN());
 		buffer.putShort((short) player.getLUC()); // LUC
 		buffer.putShort((short) player.getCHA()); // CHA
-
+		
 		// Max stats
 		buffer.putShort((short) 14);
 		buffer.putInt(player.getMaxVisibleHp());
 		buffer.putInt(player.getMaxMp());
 		buffer.putInt(player.getMaxCp());
-
+		
 		// Current stats
 		buffer.putShort((short) 38);
 		buffer.putInt((int) player.getCurrentHp());
@@ -102,32 +96,31 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 		buffer.putLong(player.getSp());
 		buffer.putLong(player.getExp());
 		buffer.putDouble(Experience.getExpPercent(player.getLevel(), player.getExp()));
-
+		
 		// Enchant effect
 		buffer.putShort((short) 4);
 		int airShipHelm = 0;
-		if (player.isInAirShip() && player.getAirShip().isCaptain(player))
-		{
+		if (player.isInAirShip() && player.getAirShip().isCaptain(player)) {
 			airShipHelm = player.getAirShip().getHelmItemId();
 		}
 		buffer.put((byte) (player.isMounted() || airShipHelm != 0 ? 0 : player.getEnchantEffect()));
 		buffer.put((byte) player.getArmorEnchant());
-
+		
 		// Appearance
 		buffer.putShort((short) 15);
 		buffer.putInt(player.getAppearance().getHairStyle());
 		buffer.putInt(player.getAppearance().getHairColor());
 		buffer.putInt(player.getAppearance().getFace());
 		buffer.put((byte) (player.isShowingHat() ? 1 : 0));
-
+		
 		// Unknown
 		buffer.putShort((short) 6);
 		buffer.put((byte) player.getMountType());
-		buffer.put((byte) (player.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ?
-				player.getPrivateStoreType() : L2PcInstance.STORE_PRIVATE_SELL));
+		buffer.put((byte) (player.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ? player.getPrivateStoreType() :
+				L2PcInstance.STORE_PRIVATE_SELL));
 		buffer.put((byte) (player.canCrystallize() ? 1 : 0));
 		buffer.put((byte) player.getSpentAbilityPoints());
-
+		
 		// Stats
 		buffer.putShort((short) 56);
 		buffer.putShort((short) 40);
@@ -144,7 +137,7 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 		buffer.putInt(player.getMDef(null, null));
 		buffer.putInt(player.getMAccuracy());
 		buffer.putInt(player.getMCriticalHit(null, null));
-
+		
 		// Element resistances
 		buffer.putShort((short) 14);
 		buffer.putShort((short) player.getDefenseElementValue(Elementals.FIRE));
@@ -153,14 +146,14 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 		buffer.putShort((short) player.getDefenseElementValue(Elementals.EARTH));
 		buffer.putShort((short) player.getDefenseElementValue(Elementals.HOLY));
 		buffer.putShort((short) player.getDefenseElementValue(Elementals.DARK));
-
+		
 		// Position
 		buffer.putShort((short) 18);
 		buffer.putInt(player.getX());
 		buffer.putInt(player.getY());
 		buffer.putInt(player.getZ());
 		buffer.putInt(player.getHeading());
-
+		
 		// Speeds
 		float moveMultiplier = player.getMovementSpeedMultiplier();
 		short runSpd = (short) player.getTemplate().baseRunSpd;
@@ -174,51 +167,44 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 		buffer.putShort((short) 0);
 		buffer.putShort(player.isFlying() ? runSpd : (short) 0); // fly speed
 		buffer.putShort(player.isFlying() ? walkSpd : (short) 0); // fly speed
-
+		
 		// Multipliers
 		buffer.putShort((short) 18);
 		buffer.putDouble(moveMultiplier);
 		buffer.putDouble(player.getAttackSpeedMultiplier());
-
+		
 		// Collisions
 		buffer.putShort((short) 18);
 		int mountNpcId = player.getMountNpcId();
 		L2Transformation trans = player.getTransformation();
-		if (trans != null)
-		{
+		if (trans != null) {
 			buffer.putDouble(trans.getCollisionRadius());
 			buffer.putDouble(trans.getCollisionHeight());
-		}
-		else if (player.getMountType() != 0 && mountNpcId != 0)
-		{
+		} else if (player.getMountType() != 0 && mountNpcId != 0) {
 			L2NpcTemplate mountTemplate = NpcTable.getInstance().getTemplate(mountNpcId);
 			buffer.putDouble(mountTemplate.fCollisionRadius);
 			buffer.putDouble(mountTemplate.fCollisionHeight);
-		}
-		else
-		{
+		} else {
 			buffer.putDouble(player.getCollisionRadius());
 			buffer.putDouble(player.getCollisionHeight());
 		}
-
+		
 		// Atk Element
 		buffer.putShort((short) 5);
 		byte attackAttribute = player.getAttackElement();
 		buffer.put(attackAttribute);
 		buffer.putShort((short) player.getAttackElementValue(attackAttribute));
-
+		
 		// Clan
 		String title = player.getTitle() != null ? player.getTitle() : "";
-
-		if (player.getAppearance().getInvisible() && player.isGM())
-		{
+		
+		if (player.getAppearance().getInvisible() && player.isGM()) {
 			title = "Invisible";
 		}
-
+		
 		buffer.putShort((short) (title.length() * 2 + 32));
 		buffer.putShort((short) title.length());
-		for (char c : title.toCharArray())
-		{
+		for (char c : title.toCharArray()) {
 			buffer.putShort((short) c);
 		}
 		buffer.putShort((short) player.getPledgeType());
@@ -231,7 +217,7 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 		buffer.put((byte) 0);
 		buffer.putInt(player.getAllyCrestId());
 		buffer.put((byte) 0);
-
+		
 		// Social
 		buffer.putShort((short) 22);
 		buffer.put(player.getPvpFlag());
@@ -243,58 +229,56 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket
 		buffer.putInt(player.getPvpKills());
 		buffer.putShort((short) player.getRecomLeft());
 		buffer.putShort((short) player.getRecomHave());
-
+		
 		// Unknown
 		buffer.putShort((short) 15);
 		buffer.putInt(player.getVitalityPoints());
 		buffer.put((byte) 0);
 		buffer.putInt(player.getFame());
 		buffer.putInt(RaidBossPointsManager.getInstance().getPointsByOwnerId(player.getObjectId())); // Raid points
-
+		
 		// Unknown
 		buffer.putShort((short) 9);
 		buffer.put((byte) player.getInventory().getMaxTalismanCount());
 		buffer.put((byte) player.getInventory().getMaxJewelryCount());
 		buffer.put((byte) player.getTeam());
-		buffer.put(
-				(byte) 0); //Player floor effects: 0 nothing, 1 red circle (intense), 2 white circle, 3 red circle (pale)
+		buffer.put((byte) 0); //Player floor effects: 0 nothing, 1 red circle (intense), 2 white circle, 3 red circle (pale)
 		buffer.put((byte) 0);
 		buffer.put((byte) 0);
 		buffer.put((byte) 0);
-
+		
 		// Movement flags
 		buffer.putShort((short) 4);
 		buffer.put((byte) (player.isFlying() ? 0x01 : 0x00)); // flying?
 		buffer.put((byte) (player.isRunning() ? 0x01 : 0x00));
-
+		
 		// Colors
 		buffer.putShort((short) 10);
 		buffer.putInt(player.getAppearance().getNameColor());
 		buffer.putInt(player.getAppearance().getTitleColor());
-
+		
 		// Unknown
 		buffer.putShort((short) 9);
 		buffer.putInt(player.getMountNpcId() > 0 ? player.getMountNpcId() + 1000000 : 0);
 		buffer.putShort((short) player.getInventoryLimit());
 		buffer.put((byte) 0);
-
+		
 		// Unknown
 		buffer.putShort((short) 9);
 		buffer.putInt(1);
 		buffer.putShort((short) 0);
 		buffer.put((byte) 0);
-
+		
 		int size = buffer.position();
 		buffer.position(0);
 		data = new byte[size];
 		buffer.get(data, 0, size);
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		//writeH(0x155);
-
+		
 		writeD(objectId);
 		writeD(0);
 		writeB(data);

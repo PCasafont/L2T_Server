@@ -22,36 +22,29 @@ import l2server.gameserver.util.Util;
  * @author SYS @date 10/9/2007
  */
 
-public class EventTrigger extends L2GameServerPacket
-{
+public class EventTrigger extends L2GameServerPacket {
 	private boolean active;
 	private int emitterId;
-
+	
 	private static final int[] _reverse_doors = {16200023, 16200024, 16200025};
-
-	public EventTrigger(L2DoorInstance door, boolean opened)
-	{
+	
+	public EventTrigger(L2DoorInstance door, boolean opened) {
 		emitterId = door.getEmitter();
-
-		if (Util.contains(_reverse_doors, door.getDoorId()))
-		{
+		
+		if (Util.contains(_reverse_doors, door.getDoorId())) {
 			active = !opened;
-		}
-		else
-		{
+		} else {
 			active = opened;
 		}
 	}
-
-	public EventTrigger(int trapId, boolean active)
-	{
+	
+	public EventTrigger(int trapId, boolean active) {
 		emitterId = trapId;
 		this.active = active;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(emitterId); // trap object id
 		writeC(active ? 1 : 0); // trap activity 1 or 0
 	}

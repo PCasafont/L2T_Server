@@ -26,33 +26,28 @@ import l2server.gameserver.model.olympiad.HeroesManager;
  *
  * @author -Wooden-
  */
-public final class RequestWriteHeroWords extends L2GameClientPacket
-{
-
+public final class RequestWriteHeroWords extends L2GameClientPacket {
+	
 	private String heroWords;
-
+	
 	/**
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		heroWords = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance player = getClient().getActiveChar();
-		if (player == null || !player.isHero())
-		{
+		if (player == null || !player.isHero()) {
 			return;
 		}
-
-		if (heroWords == null || heroWords.length() > 300)
-		{
+		
+		if (heroWords == null || heroWords.length() > 300) {
 			return;
 		}
-
+		
 		HeroesManager.getInstance().setHeroMessage(player, heroWords);
 	}
 }

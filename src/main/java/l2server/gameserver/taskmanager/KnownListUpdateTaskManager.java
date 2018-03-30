@@ -30,8 +30,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.logging.Level;
 
-public class KnownListUpdateTaskManager
-{
+public class KnownListUpdateTaskManager {
 
 	private static final int FULL_UPDATE_TIMER = 100;
 	public static boolean updatePass = true;
@@ -41,76 +40,58 @@ public class KnownListUpdateTaskManager
 
 	private static final HashSet<L2WorldRegion> failedRegions = new HashSet<>(1);
 
-	private KnownListUpdateTaskManager()
-	{
-		ThreadPoolManager.getInstance()
-				.scheduleAiAtFixedRate(new KnownListUpdate(), 1000, Config.KNOWNLIST_UPDATE_INTERVAL);
+	private KnownListUpdateTaskManager() {
+		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new KnownListUpdate(), 1000, Config.KNOWNLIST_UPDATE_INTERVAL);
 	}
 
-	public static KnownListUpdateTaskManager getInstance()
-	{
+	public static KnownListUpdateTaskManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private class KnownListUpdate implements Runnable
-	{
-		public KnownListUpdate()
-		{
+	private class KnownListUpdate implements Runnable {
+		public KnownListUpdate() {
 		}
 
 		@Override
-		public void run()
-		{
-			try
-			{
+		public void run() {
+			try {
 				boolean failed;
-				for (L2WorldRegion regions[] : L2World.getInstance().getAllWorldRegions())
-				{
+				for (L2WorldRegion regions[] : L2World.getInstance().getAllWorldRegions()) {
 					for (L2WorldRegion r : regions) // go through all world regions
 					{
 						// avoid stopping update if something went wrong in updateRegion()
-						try
-						{
+						try {
 							failed = failedRegions.contains(r); // failed on last pass
 							if (r.isActive()) // and check only if the region is active
 							{
 								updateRegion(r, fullUpdateTimer == FULL_UPDATE_TIMER || failed, updatePass);
 							}
-							if (failed)
-							{
+							if (failed) {
 								failedRegions.remove(r); // if all ok, remove
 							}
-						}
-						catch (Exception e)
-						{
+						} catch (Exception e) {
 							Log.log(Level.WARNING,
-									"KnownListUpdateTaskManager: updateRegion(" + fullUpdateTimer + "," + updatePass +
-											") failed for region " + r.getName() + ". Full update scheduled. " +
-											e.getMessage(), e);
+									"KnownListUpdateTaskManager: updateRegion(" + fullUpdateTimer + "," + updatePass + ") failed for region " +
+											r.getName() + ". Full update scheduled. " + e.getMessage(),
+									e);
 							failedRegions.add(r);
 						}
 					}
 				}
 				updatePass = !updatePass;
 
-				if (fullUpdateTimer > 0)
-				{
+				if (fullUpdateTimer > 0) {
 					fullUpdateTimer--;
-				}
-				else
-				{
+				} else {
 					fullUpdateTimer = FULL_UPDATE_TIMER;
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.log(Level.WARNING, "", e);
 			}
 		}
 	}
 
-	public void updateRegion(L2WorldRegion region, boolean fullUpdate, boolean forgetObjects)
-	{
+	public void updateRegion(L2WorldRegion region, boolean fullUpdate, boolean forgetObjects) {
 		// synchronized (syncObject)
 		{
 			Collection<L2Object> vObj = region.getVisibleObjects().values();
@@ -118,8 +99,7 @@ public class KnownListUpdateTaskManager
 			{
 				for (L2Object object : vObj) // and for all members in region
 				{
-					if (object == null || !object.isVisible())
-					{
+					if (object == null || !object.isVisible()) {
 						continue; // skip dying objects
 					}
 
@@ -127,38 +107,28 @@ public class KnownListUpdateTaskManager
 					final boolean aggro = Config.GUARD_ATTACK_AGGRO_MOB && object instanceof L2GuardInstance ||
 							object instanceof L2Attackable && ((L2Attackable) object).getEnemyClan() != null;
 
-					if (forgetObjects)
-					{
+					if (forgetObjects) {
 						object.getKnownList().forgetObjects(aggro || fullUpdate);
 						continue;
 					}
-					for (L2WorldRegion regi : region.getSurroundingRegions())
-					{
-						if (object instanceof L2Playable || aggro && regi.isActive() || fullUpdate)
-						{
+					for (L2WorldRegion regi : region.getSurroundingRegions()) {
+						if (object instanceof L2Playable || aggro && regi.isActive() || fullUpdate) {
 							Collection<L2Object> inrObj = regi.getVisibleObjects().values();
 							// synchronized (regi.getVisibleObjects())
 							{
-								for (L2Object obj : inrObj)
-								{
-									if (obj != object)
-									{
+								for (L2Object obj : inrObj) {
+									if (obj != object) {
 										object.getKnownList().addKnownObject(obj);
 									}
 								}
 							}
-						}
-						else if (object instanceof L2Character)
-						{
-							if (regi.isActive())
-							{
+						} else if (object instanceof L2Character) {
+							if (regi.isActive()) {
 								Collection<L2Playable> inrPls = regi.getVisiblePlayable().values();
 								// synchronized (regi.getVisiblePlayable())
 								{
-									for (L2Object obj : inrPls)
-									{
-										if (obj != object)
-										{
+									for (L2Object obj : inrPls) {
+										if (obj != object) {
 											object.getKnownList().addKnownObject(obj);
 										}
 									}
@@ -172,8 +142,7 @@ public class KnownListUpdateTaskManager
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final KnownListUpdateTaskManager instance = new KnownListUpdateTaskManager();
 	}
 }

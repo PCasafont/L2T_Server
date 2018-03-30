@@ -17,20 +17,17 @@ package l2server.gameserver.network.clientpackets;
 
 /**
  * @author ShanSoft
- *         Packets Structure: chddd
+ * Packets Structure: chddd
  */
-public final class RequestChangeBookMarkSlot extends L2GameClientPacket
-{
-
+public final class RequestChangeBookMarkSlot extends L2GameClientPacket {
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		//There is nothing to read.
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
-
+	protected void runImpl() {
+	
 	}
 }

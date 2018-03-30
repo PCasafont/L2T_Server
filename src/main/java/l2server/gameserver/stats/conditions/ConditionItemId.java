@@ -22,8 +22,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-public final class ConditionItemId extends Condition
-{
+public final class ConditionItemId extends Condition {
 
 	private final int itemId;
 
@@ -32,8 +31,7 @@ public final class ConditionItemId extends Condition
 	 *
 	 * @param itemId the item id
 	 */
-	public ConditionItemId(int itemId)
-	{
+	public ConditionItemId(int itemId) {
 		this.itemId = itemId;
 	}
 
@@ -45,10 +43,8 @@ public final class ConditionItemId extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (env.item == null)
-		{
+	public boolean testImpl(Env env) {
+		if (env.item == null) {
 			return false;
 		}
 		return env.item.getItemId() == itemId;

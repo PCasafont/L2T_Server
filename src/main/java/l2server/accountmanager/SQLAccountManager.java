@@ -37,19 +37,16 @@ import java.util.ArrayList;
  * @author netimperia
  * @version $Revision: 2.3.2.1.2.3 $ $Date: 2005/08/08 22:47:12 $
  */
-public class SQLAccountManager
-{
+public class SQLAccountManager {
 	private static String uname = "";
 	private static String pass = "";
 	private static String level = "";
 	private static String mode = "";
 
-	public static void main(String[] args) throws SQLException, IOException, NoSuchAlgorithmException
-	{
+	public static void main(String[] args) throws SQLException, IOException, NoSuchAlgorithmException {
 		ServerMode.serverMode = ServerMode.MODE_LOGINSERVER;
 		Config.load();
-		while (true)
-		{
+		while (true) {
 			System.out.println("Please choose an option:");
 			System.out.println("");
 			System.out.println("1 - Create new account or update existing one (change pass and access level).");
@@ -58,51 +55,38 @@ public class SQLAccountManager
 			System.out.println("4 - List accounts & access levels.");
 			System.out.println("5 - Exit.");
 			LineNumberReader in = new LineNumberReader(new InputStreamReader(System.in));
-			while (!(mode.equals("1") || mode.equals("2") || mode.equals("3") || mode.equals("4") ||
-					mode.equals("5")))
-			{
+			while (!(mode.equals("1") || mode.equals("2") || mode.equals("3") || mode.equals("4") || mode.equals("5"))) {
 				System.out.print("Your choice: ");
 				mode = in.readLine();
 			}
 
-			if (mode.equals("1") || mode.equals("2") || mode.equals("3"))
-			{
-				if (mode.equals("1") || mode.equals("2"))
-				{
-					while (uname.trim().length() == 0)
-					{
+			if (mode.equals("1") || mode.equals("2") || mode.equals("3")) {
+				if (mode.equals("1") || mode.equals("2")) {
+					while (uname.trim().length() == 0) {
 						System.out.print("Username: ");
 						uname = in.readLine().toLowerCase();
 					}
-				}
-				else if (mode.equals("3"))
-				{
-					while (uname.trim().length() == 0)
-					{
+				} else if (mode.equals("3")) {
+					while (uname.trim().length() == 0) {
 						System.out.print("Account name: ");
 						uname = in.readLine().toLowerCase();
 					}
 				}
-				if (mode.equals("1"))
-				{
-					while (pass.trim().length() == 0)
-					{
+				if (mode.equals("1")) {
+					while (pass.trim().length() == 0) {
 						System.out.print("Password: ");
 						pass = in.readLine();
 					}
 				}
-				if (mode.equals("1") || mode.equals("2"))
-				{
-					while (level.trim().length() == 0)
-					{
+				if (mode.equals("1") || mode.equals("2")) {
+					while (level.trim().length() == 0) {
 						System.out.print("Access level: ");
 						level = in.readLine();
 					}
 				}
 			}
 
-			switch (mode)
-			{
+			switch (mode) {
 				case "1":
 					// Add or Update
 					addOrUpdateAccount(uname.trim(), pass.trim(), level.trim());
@@ -115,12 +99,9 @@ public class SQLAccountManager
 					// Delete
 					System.out.print("Do you really want to delete this account ? Y/N : ");
 					String yesno = in.readLine();
-					if (yesno.equalsIgnoreCase("Y"))
-					{
+					if (yesno.equalsIgnoreCase("Y")) {
 						deleteAccount(uname.trim());
-					}
-					else
-					{
+					} else {
 						System.out.println("Deletion cancelled");
 					}
 					break;
@@ -134,8 +115,7 @@ public class SQLAccountManager
 					System.out.println("2 - GM/privileged accounts (accessLevel > 0)");
 					System.out.println("3 - Regular accounts only (accessLevel = 0)");
 					System.out.println("4 - List all");
-					while (!(mode.equals("1") || mode.equals("2") || mode.equals("3") || mode.equals("4")))
-					{
+					while (!(mode.equals("1") || mode.equals("2") || mode.equals("3") || mode.equals("4"))) {
 						System.out.print("Your choice: ");
 						mode = in.readLine();
 					}
@@ -154,14 +134,12 @@ public class SQLAccountManager
 		}
 	}
 
-	private static void printAccInfo(String m) throws SQLException
-	{
+	private static void printAccInfo(String m) throws SQLException {
 		int count = 0;
 		Connection con = null;
 		con = L2DatabaseFactory.getInstance().getConnection();
 		String q = "SELECT login, accessLevel FROM accounts ";
-		switch (m)
-		{
+		switch (m) {
 			case "1":
 				q = q.concat("WHERE accessLevel < 0");
 				break;
@@ -176,8 +154,7 @@ public class SQLAccountManager
 
 		PreparedStatement statement = con.prepareStatement(q);
 		ResultSet rset = statement.executeQuery();
-		while (rset.next())
-		{
+		while (rset.next()) {
 			System.out.println(rset.getString("login") + " -> " + rset.getInt("accessLevel"));
 			count++;
 		}
@@ -187,9 +164,7 @@ public class SQLAccountManager
 		System.out.println("Displayed accounts: " + count + ".");
 	}
 
-	private static void addOrUpdateAccount(String account, String password, String level) throws IOException,
-			SQLException, NoSuchAlgorithmException
-	{
+	private static void addOrUpdateAccount(String account, String password, String level) throws IOException, SQLException, NoSuchAlgorithmException {
 		// Encode Password
 		MessageDigest md = MessageDigest.getInstance("SHA-512");
 		byte[] newpass;
@@ -199,8 +174,7 @@ public class SQLAccountManager
 		// Add to Base
 		Connection con = null;
 		con = L2DatabaseFactory.getInstance().getConnection();
-		PreparedStatement statement =
-				con.prepareStatement("REPLACE accounts (login, password, accessLevel) VALUES (?,?,?)");
+		PreparedStatement statement = con.prepareStatement("REPLACE accounts (login, password, accessLevel) VALUES (?,?,?)");
 		statement.setString(1, account);
 		statement.setString(2, Base64.encodeBytes(newpass));
 		statement.setString(3, level);
@@ -209,8 +183,7 @@ public class SQLAccountManager
 		L2DatabaseFactory.close(con);
 	}
 
-	private static void changeAccountLevel(String account, String level) throws SQLException
-	{
+	private static void changeAccountLevel(String account, String level) throws SQLException {
 		Connection con = null;
 		con = L2DatabaseFactory.getInstance().getConnection();
 
@@ -218,12 +191,9 @@ public class SQLAccountManager
 		PreparedStatement statement = con.prepareStatement("SELECT COUNT(*) FROM accounts WHERE login=?;");
 		statement.setString(1, account);
 		ResultSet rset = statement.executeQuery();
-		if (!rset.next())
-		{
+		if (!rset.next()) {
 			System.out.println("False");
-		}
-		else if (rset.getInt(1) > 0)
-		{
+		} else if (rset.getInt(1) > 0) {
 			// Exist
 			// Update
 			statement = con.prepareStatement("UPDATE accounts SET accessLevel=? WHERE login=?;");
@@ -233,9 +203,7 @@ public class SQLAccountManager
 			statement.executeUpdate();
 
 			System.out.println("Account " + account + " has been updated.");
-		}
-		else
-		{
+		} else {
 			// Not Exist
 			System.out.println("Account " + account + " does not exist.");
 		}
@@ -244,8 +212,7 @@ public class SQLAccountManager
 		L2DatabaseFactory.close(con);
 	}
 
-	private static void deleteAccount(String account) throws SQLException
-	{
+	private static void deleteAccount(String account) throws SQLException {
 		Connection con = null;
 		con = L2DatabaseFactory.getInstance().getConnection();
 
@@ -253,13 +220,10 @@ public class SQLAccountManager
 		PreparedStatement statement = con.prepareStatement("SELECT COUNT(*) FROM accounts WHERE login=?;");
 		statement.setString(1, account);
 		ResultSet rset = statement.executeQuery();
-		if (!rset.next())
-		{
+		if (!rset.next()) {
 			System.out.println("False");
 			rset.close();
-		}
-		else if (rset.getInt(1) > 0)
-		{
+		} else if (rset.getInt(1) > 0) {
 			rset.close();
 			// Account exist
 			// Get Accounts ID
@@ -273,16 +237,14 @@ public class SQLAccountManager
 			ArrayList<String> charNames = new ArrayList<>();
 			ArrayList<String> clanIds = new ArrayList<>();
 
-			while (rset.next())
-			{
+			while (rset.next()) {
 				objIds.add(rset.getString("charId"));
 				charNames.add(rset.getString("char_name"));
 				clanIds.add(rset.getString("clanid"));
 			}
 			rset.close();
 
-			for (int index = 0; index < objIds.size(); index++)
-			{
+			for (int index = 0; index < objIds.size(); index++) {
 				System.out.println("Deleting character " + charNames.get(index) + ".");
 
 				// Check If clan leader Remove Clan and remove all from it
@@ -291,8 +253,7 @@ public class SQLAccountManager
 				statement.setString(1, clanIds.get(index));
 				rcln = statement.executeQuery();
 				rcln.next();
-				if (rcln.getInt(1) > 0)
-				{
+				if (rcln.getInt(1) > 0) {
 					rcln.close();
 					// Clan Leader
 
@@ -324,8 +285,7 @@ public class SQLAccountManager
 					statement.executeUpdate();
 					// Free Clan Halls
 					statement.close();
-					statement =
-							con.prepareStatement("UPDATE clanhall SET ownerId=0, paidUntil=0, paid=0 WHERE ownerId=?;");
+					statement = con.prepareStatement("UPDATE clanhall SET ownerId=0, paidUntil=0, paid=0 WHERE ownerId=?;");
 					statement.setString(1, clanIds.get(index));
 					statement.executeUpdate();
 					// Delete Clan
@@ -348,9 +308,7 @@ public class SQLAccountManager
 					statement = con.prepareStatement("DELETE FROM clan_skills WHERE clan_id=?;");
 					statement.setString(1, clanIds.get(index));
 					statement.executeUpdate();
-				}
-				else
-				{
+				} else {
 					rcln.close();
 				}
 
@@ -463,9 +421,7 @@ public class SQLAccountManager
 			statement.executeUpdate();
 
 			System.out.println("Account " + account + " has been deleted.");
-		}
-		else
-		{
+		} else {
 			// Not Exist
 			System.out.println("Account " + account + " does not exist.");
 		}

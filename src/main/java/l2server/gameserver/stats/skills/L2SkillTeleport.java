@@ -32,153 +32,108 @@ import l2server.log.Log;
 
 import java.util.logging.Level;
 
-public class L2SkillTeleport extends L2Skill
-{
+public class L2SkillTeleport extends L2Skill {
 	private final String recallType;
 	private final Location loc;
 
-	public L2SkillTeleport(StatsSet set)
-	{
+	public L2SkillTeleport(StatsSet set) {
 		super(set);
 
 		recallType = set.getString("recallType", "");
 		String coords = set.getString("teleCoords", null);
-		if (coords != null)
-		{
+		if (coords != null) {
 			String[] valuesSplit = coords.split(",");
-			loc = new Location(Integer.parseInt(valuesSplit[0]), Integer.parseInt(valuesSplit[1]),
-					Integer.parseInt(valuesSplit[2]));
-		}
-		else
-		{
+			loc = new Location(Integer.parseInt(valuesSplit[0]), Integer.parseInt(valuesSplit[1]), Integer.parseInt(valuesSplit[2]));
+		} else {
 			loc = null;
 		}
 	}
 
 	@Override
-	public void useSkill(L2Character activeChar, L2Object[] targets)
-	{
-		if (activeChar instanceof L2PcInstance)
-		{
+	public void useSkill(L2Character activeChar, L2Object[] targets) {
+		if (activeChar instanceof L2PcInstance) {
 			// Thanks nbd
-			if (((L2PcInstance) activeChar).getEvent() != null &&
-					!((L2PcInstance) activeChar).getEvent().onEscapeUse(activeChar.getObjectId()))
-			{
+			if (((L2PcInstance) activeChar).getEvent() != null && !((L2PcInstance) activeChar).getEvent().onEscapeUse(activeChar.getObjectId())) {
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 
-			if (activeChar.isAfraid() || activeChar.isInLove())
-			{
+			if (activeChar.isAfraid() || activeChar.isInLove()) {
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 
-			if (!((L2PcInstance) activeChar).canEscape() || ((L2PcInstance) activeChar).isCombatFlagEquipped())
-			{
+			if (!((L2PcInstance) activeChar).canEscape() || ((L2PcInstance) activeChar).isCombatFlagEquipped()) {
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 
-			if (((L2PcInstance) activeChar).isInOlympiadMode())
-			{
-				activeChar.sendPacket(SystemMessage
-						.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+			if (((L2PcInstance) activeChar).isInOlympiadMode()) {
+				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
 				return;
 			}
-
 		}
 
-		try
-		{
-			for (L2Character target : (L2Character[]) targets)
-			{
-				if (target instanceof L2PcInstance)
-				{
+		try {
+			for (L2Character target : (L2Character[]) targets) {
+				if (target instanceof L2PcInstance) {
 					L2PcInstance targetChar = (L2PcInstance) target;
 
 					// Check to see if player is in jail
-					if (targetChar.isInJail())
-					{
+					if (targetChar.isInJail()) {
 						targetChar.sendMessage("You can not escape from jail.");
 						continue;
 					}
 
-					if (!targetChar.canEscape() || targetChar.isCombatFlagEquipped())
-					{
+					if (!targetChar.canEscape() || targetChar.isCombatFlagEquipped()) {
 						continue;
 					}
 
 					// Check to see if player is in a duel
-					if (targetChar.isInDuel())
-					{
+					if (targetChar.isInDuel()) {
 						targetChar.sendMessage("You cannot use escape skills during a duel.");
 						continue;
 					}
 
-					if (targetChar != activeChar)
-					{
-						if (targetChar.getEvent() != null &&
-								!targetChar.getEvent().onEscapeUse(targetChar.getObjectId()))
-						{
+					if (targetChar != activeChar) {
+						if (targetChar.getEvent() != null && !targetChar.getEvent().onEscapeUse(targetChar.getObjectId())) {
 							continue;
 						}
 
-						if (targetChar.isInOlympiadMode())
-						{
+						if (targetChar.isInOlympiadMode()) {
 							continue;
 						}
 
-						if (GrandBossManager.getInstance().getZone(targetChar) != null)
-						{
+						if (GrandBossManager.getInstance().getZone(targetChar) != null) {
 							continue;
 						}
 
-						if (targetChar.isCombatFlagEquipped())
-						{
+						if (targetChar.isCombatFlagEquipped()) {
 							continue;
 						}
 					}
 				}
 				Location loc = null;
-				if (getSkillType() == L2SkillType.TELEPORT)
-				{
-					if (this.loc != null)
-					{
+				if (getSkillType() == L2SkillType.TELEPORT) {
+					if (this.loc != null) {
 						// target is not player OR player is not flying or flymounted
 						// TODO: add check for gracia continent coords
-						if (!(target instanceof L2PcInstance) ||
-								!(target.isFlying() || ((L2PcInstance) target).isFlyingMounted()))
-						{
+						if (!(target instanceof L2PcInstance) || !(target.isFlying() || ((L2PcInstance) target).isFlyingMounted())) {
 							loc = this.loc;
 						}
 					}
-				}
-				else
-				{
-					if (recallType.equalsIgnoreCase("Castle"))
-					{
-						loc = MapRegionTable.getInstance()
-								.getTeleToLocation(target, MapRegionTable.TeleportWhereType.Castle);
-					}
-					else if (recallType.equalsIgnoreCase("ClanHall"))
-					{
-						loc = MapRegionTable.getInstance()
-								.getTeleToLocation(target, MapRegionTable.TeleportWhereType.ClanHall);
-					}
-					else if (recallType.equalsIgnoreCase("Fortress"))
-					{
-						loc = MapRegionTable.getInstance()
-								.getTeleToLocation(target, MapRegionTable.TeleportWhereType.Fortress);
-					}
-					else
-					{
-						loc = MapRegionTable.getInstance()
-								.getTeleToLocation(target, MapRegionTable.TeleportWhereType.Town);
+				} else {
+					if (recallType.equalsIgnoreCase("Castle")) {
+						loc = MapRegionTable.getInstance().getTeleToLocation(target, MapRegionTable.TeleportWhereType.Castle);
+					} else if (recallType.equalsIgnoreCase("ClanHall")) {
+						loc = MapRegionTable.getInstance().getTeleToLocation(target, MapRegionTable.TeleportWhereType.ClanHall);
+					} else if (recallType.equalsIgnoreCase("Fortress")) {
+						loc = MapRegionTable.getInstance().getTeleToLocation(target, MapRegionTable.TeleportWhereType.Fortress);
+					} else {
+						loc = MapRegionTable.getInstance().getTeleToLocation(target, MapRegionTable.TeleportWhereType.Town);
 					}
 				}
-				if (loc != null)
-				{
+				if (loc != null) {
 					target.setInstanceId(0);
 
 					final Location tpTo = loc;
@@ -186,9 +141,7 @@ public class L2SkillTeleport extends L2Skill
 					ThreadPoolManager.getInstance().scheduleGeneral(() -> chararacter.teleToLocation(tpTo, true), 400);
 				}
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "", e);
 		}
 	}

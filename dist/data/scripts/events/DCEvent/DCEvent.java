@@ -19,329 +19,259 @@ import java.util.Map;
 
 /**
  * @author Inia
- *
  */
 
-public class DCEvent extends Quest
-{
-    //Config
-    private static final boolean exChangeOnly = false;
-    private static int timeToEndInvasion = 1; //Minutes
-    private static final int npcId = 92000;
-    private static final int[] invaderIds = {92011, 92010};
-    private static final int boosId = 92011;
+public class DCEvent extends Quest {
+	//Config
+	private static final boolean exChangeOnly = false;
+	private static int timeToEndInvasion = 1; //Minutes
+	private static final int npcId = 92000;
+	private static final int[] invaderIds = {92011, 92010};
+	private static final int boosId = 92011;
 
-    //Vars
-    private static Long nextInvasion;
-    private static L2PcInstance player;
-    private static boolean isUnderInvasion = false;
-    private Map<Integer, invaderInfo> attackInfo = new HashMap<Integer, invaderInfo>();
-    private ArrayList<L2Character> invaders = new ArrayList<L2Character>();
-    private ArrayList<L2Character> registered = new ArrayList<L2Character>();
-    private Map<L2Character, Integer> testPlayer = new HashMap<L2Character, Integer>();
+	//Vars
+	private static Long nextInvasion;
+	private static L2PcInstance player;
+	private static boolean isUnderInvasion = false;
+	private Map<Integer, invaderInfo> attackInfo = new HashMap<Integer, invaderInfo>();
+	private ArrayList<L2Character> invaders = new ArrayList<L2Character>();
+	private ArrayList<L2Character> registered = new ArrayList<L2Character>();
+	private Map<L2Character, Integer> testPlayer = new HashMap<L2Character, Integer>();
 
-    public DCEvent(int id, String name, String descr)
-    {
-        super(id, name, descr);
+	public DCEvent(int id, String name, String descr) {
+		super(id, name, descr);
 
-        addStartNpc(npcId);
-        addTalkId(npcId);
-        addFirstTalkId(npcId);
+		addStartNpc(npcId);
+		addTalkId(npcId);
+		addFirstTalkId(npcId);
 
-        for (int mob : invaderIds)
-        {
-            addAttackId(mob);
-            addKillId(mob);
-        }
+		for (int mob : invaderIds) {
+			addAttackId(mob);
+			addKillId(mob);
+		}
+	}
 
-    }
+	private class invaderInfo {
+		private Long attackedTime;
+		private int playerId;
+		private String externalIP;
+		private String internalIP;
 
-    private class invaderInfo
-    {
-        private Long attackedTime;
-        private int playerId;
-        private String externalIP;
-        private String internalIP;
+		private invaderInfo(int playerId, String externalIP, String internalIP) {
+			this.playerId = playerId;
+			this.externalIP = externalIP;
+			this.internalIP = internalIP;
+			setAttackedTime();
+		}
 
-        private invaderInfo(int playerId, String externalIP, String internalIP)
-        {
-            this.playerId = playerId;
-            this.externalIP = externalIP;
-            this.internalIP = internalIP;
-            setAttackedTime();
-        }
+		private long getAttackedTime() {
+			return attackedTime;
+		}
 
-        private long getAttackedTime()
-        {
-            return attackedTime;
-        }
+		private void setAttackedTime() {
+			attackedTime = System.currentTimeMillis();
+		}
 
-        private void setAttackedTime()
-        {
-            attackedTime = System.currentTimeMillis();
-        }
+		private int getPlayerId() {
+			return playerId;
+		}
 
-        private int getPlayerId()
-        {
-            return playerId;
-        }
+		private String getExternalIP() {
+			return externalIP;
+		}
 
-        private String getExternalIP()
-        {
-            return externalIP;
-        }
+		private String getInternalIP() {
+			return internalIP;
+		}
 
-        private String getInternalIP()
-        {
-            return internalIP;
-        }
+		private void updateInfo(int playerId, String externalIP, String internalIP) {
+			this.playerId = playerId;
+			this.externalIP = externalIP;
+			this.internalIP = internalIP;
+			setAttackedTime();
+		}
+	}
 
-        private void updateInfo(int playerId, String externalIP, String internalIP)
-        {
-            this.playerId = playerId;
-            this.externalIP = externalIP;
-            this.internalIP = internalIP;
-            setAttackedTime();
-        }
-    }
+	@Override
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
 
+		L2Npc inv = addSpawn(invaderIds[Rnd.get(invaderIds.length)], npc.getX() + Rnd.get(100), npc.getY() + Rnd.get(100), npc.getZ(), 0, false, 0);
+		invaders.add(inv);
+		int points = testPlayer.get(player);
+		int toAdd = 1;
 
+		testPlayer.replace(player, points + toAdd);
 
-    @Override
-    public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-    {
+		return "";
+	}
 
+	@Override
+	public String onDieZone(L2Character character, L2Character killer, L2ZoneType zone) {
+		if (isUnderInvasion) {
+			L2PcInstance player = killer.getActingPlayer();
+			if (player != null) {
+				player.increasePvpKills(character);
+				player.addItem("coin", 4037, 1, player, true);
+			}
+		}
+		return null;
+	}
 
-        L2Npc inv = addSpawn(invaderIds[Rnd.get(invaderIds.length)], npc.getX() + Rnd.get(100),
-                npc.getY() + Rnd.get(100), npc.getZ(), 0, false, 0);
-        invaders.add(inv);
-        int points = testPlayer.get(player);
-        int toAdd = 1;
+	@Override
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+		if (isUnderInvasion) {
+			StringBuilder tb = new StringBuilder();
+			tb.append("<html><center><font color=\"3D81A8\">Melonis!</font></center><br1>Hi " + player.getName() +
+					"<br> The event is already started.<br><Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Quest DCEvent teleport\">Teleport to event !</Button>");
+			if (player.isGM()) {
+				tb.append(
+						"<html><center> <br> GM Panel<br><Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Quest DCEvent end_invasion\">Stop event</Button>");
+			}
+			NpcHtmlMessage msg = new NpcHtmlMessage(npcId);
+			msg.setHtml(tb.toString());
+			player.sendPacket(msg);
+			return ("");
+		}
 
+		return "DCEventShop.html";
+	}
 
-        testPlayer.replace(player, points + toAdd);
+	@SuppressWarnings("unused")
+	@Override
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.startsWith("trySpawnBoss")) {
+			timeToEndInvasion = Integer.valueOf(event.split(" ")[1]);
 
-        return "";
-    }
+			int price = 0;
+			if (timeToEndInvasion == 5) {
+				price = 5;
+			} else if (timeToEndInvasion == 10) {
+				price = 8;
+			} else if (timeToEndInvasion == 15) {
+				price = 12;
+			}
+			if (!player.destroyItemByItemId("coin", 4037, price, player, true)) {
+				StringBuilder tb = new StringBuilder();
+				tb.append("<html><center><font color=\"3D81A8\">Melonis!</font></center><br1>Sorry " + player.getName() +
+						" but I need  <font color=LEVEL>" + price + "</font> Coins of luck<br>");
+				NpcHtmlMessage msg = new NpcHtmlMessage(npcId);
+				msg.setHtml(tb.toString());
+				player.sendPacket(msg);
+				return ("");
+			}
+			Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(
+					player.getName() + " started the dragon claw event for  " + timeToEndInvasion + " minutes !", 7000));
 
-    @Override
-    public String onDieZone(L2Character character, L2Character killer, L2ZoneType zone)
-    {
-        if (isUnderInvasion)
-        {
-            L2PcInstance player = killer.getActingPlayer();
-            if (player != null)
-            {
-                player.increasePvpKills(character);
-                player.addItem("coin", 4037, 1, player, true);
-            }
-        }
-        return null;
-    }
+			startQuestTimer("start_invasion", 1, null, null);
+		} else if (event.equalsIgnoreCase("teleport")) {
+			player.teleToLocation(-54481, -69402, -3416, true);
 
-    @Override
-    public String onFirstTalk(L2Npc npc, L2PcInstance player)
-    {
-        if (isUnderInvasion)
-        {
-            StringBuilder tb = new StringBuilder();
-            tb.append("<html><center><font color=\"3D81A8\">Melonis!</font></center><br1>Hi " +
-                    player.getName() +
-                    "<br> The event is already started.<br><Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Quest DCEvent teleport\">Teleport to event !</Button>");
-            if (player.isGM())
-            {
-                tb.append("<html><center> <br> GM Panel<br><Button ALIGN=LEFT ICON=\"NORMAL\" action=\"bypass -h Quest DCEvent end_invasion\">Stop event</Button>");
-            }
-            NpcHtmlMessage msg = new NpcHtmlMessage(npcId);
-            msg.setHtml(tb.toString());
-            player.sendPacket(msg);
-            return ("");
-        }
+			testPlayer.put(player, 0);
+			registered.add(player);
+		} else if (event.equalsIgnoreCase("teleport_back")) {
+			player.teleToLocation(-114435, 253417, -1546, true);
+		} else if (event.equalsIgnoreCase("eventMusic")) {
+			int rnd = Rnd.get(4) + 1;
+			player.sendPacket(new PlaySound(1, "CC_0" + rnd, 0, 0, 0, 0, 0));
+		} else if (event.startsWith("start_talk")) {
+			Announcements.getInstance().announceToAll("1 2 3!");
+		} else if (event.startsWith("start_invasion")) {
+			if (isUnderInvasion) {
+				return "";
+			}
 
-        return "DCEventShop.html";
-    }
+			isUnderInvasion = true;
 
-    @SuppressWarnings("unused")
-    @Override
-    public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-    {
-        if (event.startsWith("trySpawnBoss"))
-        {
-            timeToEndInvasion = Integer.valueOf(event.split(" ")[1]);
+			addSpawn(npcId, -114358, 253164, -1541, 24266, false, timeToEndInvasion);
 
-            int price = 0;
-            if (timeToEndInvasion == 5)
-            {
-                price = 5;
-            }
-            else if (timeToEndInvasion == 10)
-            {
-                price = 8;
-            }
-            else if (timeToEndInvasion == 15)
-            {
-                price = 12;
-            }
-            if (!player.destroyItemByItemId("coin", 4037, price, player, true))
-            {
-                StringBuilder tb = new StringBuilder();
-                tb.append("<html><center><font color=\"3D81A8\">Melonis!</font></center><br1>Sorry " +
-                        player.getName() + " but I need  <font color=LEVEL>" + price + "</font> Coins of luck<br>");
-                NpcHtmlMessage msg = new NpcHtmlMessage(npcId);
-                msg.setHtml(tb.toString());
-                player.sendPacket(msg);
-                return ("");
-            }
-            Broadcast.toAllOnlinePlayers(new ExShowScreenMessage(
-                    player.getName() + " started the dragon claw event for  " + timeToEndInvasion + " minutes !", 7000));
+			int minX = -53749;
+			int maxX = -55287;
+			int minY = -68835;
+			int maxY = -70258;
+			int radius = 500;
 
-            startQuestTimer("start_invasion", 1, null, null);
-        }
-        else if (event.equalsIgnoreCase("teleport"))
-        {
-            player.teleToLocation(-54481, -69402, -3416, true);
+			for (int a = 0; a < 3; a++) {
+				for (int i = 0; i < 50; i++) {
+					int x = Rnd.get(minX, maxX) + 1;
+					int y = Rnd.get(minY, maxY) + 1;
+					int x2 = (int) (radius * Math.cos(i * 0.618));
+					int y2 = (int) (radius * Math.sin(i * 0.618));
 
-            testPlayer.put(player, 0);
-            registered.add(player);
-        }
-        else if (event.equalsIgnoreCase("teleport_back"))
-        {
-            player.teleToLocation(-114435, 253417, -1546, true);
-        }
-        else if (event.equalsIgnoreCase("eventMusic"))
-        {
-            int rnd = Rnd.get(4) + 1;
-            player.sendPacket(new PlaySound(1, "CC_0" + rnd, 0, 0, 0, 0, 0));
-        }
-        else if (event.startsWith("start_talk"))
-        {
-            Announcements.getInstance().announceToAll("1 2 3!");
-        }
-        else if (event.startsWith("start_invasion"))
-        {
-            if (isUnderInvasion)
-            {
-                return "";
-            }
+					L2Npc inv = addSpawn(invaderIds[Rnd.get(invaderIds.length)], x, y, -3416 + 20, -1, false, 0, false, 0);
 
-            isUnderInvasion = true;
+					invaders.add(inv);
+				}
+				radius += 300;
+			}
 
-            addSpawn(npcId, -114358, 253164, -1541, 24266, false, timeToEndInvasion);
+			startQuestTimer(event.equalsIgnoreCase("start_invasion") ? "end_invasion" : "end_invasion_gm", timeToEndInvasion * 60000, null, null);
+		} else if (event.startsWith("spawn_boss")) {
 
-            int minX = -53749;
-            int maxX = -55287;
-            int minY = -68835;
-            int maxY = -70258;
-            int radius = 500;
+			startQuestTimer("delete_boss", 60000, null, null);
+			L2Npc boss = addSpawn(boosId, -54481, -69402, -3416, 0, false, 0, true);
+			invaders.add(boss);
+		} else if (event.startsWith("delete_boss")) {
+			for (L2Character delete : invaders) {
+				if (delete == null) {
+					continue;
+				}
+				delete.deleteMe();
+			}
 
-            for (int a = 0; a < 3; a++)
-            {
-                for (int i = 0; i < 50; i++)
-                {
-                    int x = Rnd.get(minX, maxX) + 1;
-                    int y = Rnd.get(minY, maxY) + 1;
-                    int x2 = (int) (radius * Math.cos(i * 0.618));
-                    int y2 = (int) (radius * Math.sin(i * 0.618));
+			for (L2Character test : registered) {
+				if (test == null) {
+					continue;
+				}
+				test.teleToLocation(-114435, 253417, -1546, true);
+			}
+			invaders.clear();
+			registered.clear();
+			attackInfo.clear();
+			Announcements.getInstance().announceToAll("FINISHED");
+			isUnderInvasion = false;
+		} else if (event.startsWith("end_invasion")) {
+			isUnderInvasion = false;
 
-                    L2Npc inv =
-                            addSpawn(invaderIds[Rnd.get(invaderIds.length)], x, y, -3416 + 20, -1,
-                                    false, 0, false, 0);
+			if (event.equalsIgnoreCase("end_invasion_gm_force")) {
+				QuestTimer timer = getQuestTimer("end_invasion_gm", null, null);
+				if (timer != null) {
+					timer.cancel();
+				}
+			}
 
-                    invaders.add(inv);
-                }
-                radius += 300;
-            }
+			for (L2Character chara : invaders) {
+				if (chara == null) {
+					continue;
+				}
+				chara.deleteMe();
+			}
 
-            startQuestTimer(event.equalsIgnoreCase("start_invasion") ? "end_invasion" : "end_invasion_gm", timeToEndInvasion * 60000, null, null);
-        }
-        else if (event.startsWith("spawn_boss"))
-        {
+			for (Map.Entry<L2Character, Integer> ontest : testPlayer.entrySet()) {
+				if (ontest == null) {
+					continue;
+				}
+				L2Character toTp = ontest.getKey();
+				int totalPoints = ontest.getValue();
 
+				L2PcInstance oui = (L2PcInstance) ontest.getKey();
+				Announcements.getInstance().announceToAll("Player : " + toTp.getName() + " Points 1" + totalPoints);
+				oui.addItem("coin", 36414, totalPoints, oui, true);
+				toTp.teleToLocation(-114435, 253417, -1546, true);
+			}
 
+			registered.clear();
+			invaders.clear();
+			attackInfo.clear();
+			isUnderInvasion = false;
+			Announcements.getInstance().announceToAll("Event finished !");
 
-            startQuestTimer("delete_boss", 60000, null, null);
-            L2Npc boss = addSpawn(boosId, -54481, -69402, -3416, 0, false, 0, true);
-            invaders.add(boss);
-        }
-        else if (event.startsWith("delete_boss"))
-        {
-            for (L2Character delete : invaders)
-            {
-                if (delete == null)
-                {
-                    continue;
-                }
-                delete.deleteMe();
-            }
+			//Only schedule the next invasion if is not started by a GM
 
-            for (L2Character test : registered)
-            {
-                if (test == null)
-                {
-                    continue;
-                }
-                test.teleToLocation(-114435, 253417, -1546, true);
-            }
-            invaders.clear();
-            registered.clear();
-            attackInfo.clear();
-            Announcements.getInstance().announceToAll("FINISHED");
-            isUnderInvasion = false;
-        }
-        else if (event.startsWith("end_invasion"))
-        {
-            isUnderInvasion = false;
+		}
+		return "";
+	}
 
-            if (event.equalsIgnoreCase("end_invasion_gm_force"))
-            {
-                QuestTimer timer = getQuestTimer("end_invasion_gm", null, null);
-                if (timer != null)
-                {
-                    timer.cancel();
-                }
-            }
-
-            for (L2Character chara : invaders)
-            {
-                if (chara == null)
-                {
-                    continue;
-                }
-                chara.deleteMe();
-            }
-
-            for (Map.Entry<L2Character, Integer> ontest : testPlayer.entrySet())
-            {
-                if (ontest == null)
-                {
-                    continue;
-                }
-                L2Character toTp = ontest.getKey();
-                int totalPoints = ontest.getValue();
-
-                L2PcInstance oui = (L2PcInstance) ontest.getKey();
-                Announcements.getInstance().announceToAll("Player : " + toTp.getName() + " Points 1" + totalPoints);
-                oui.addItem("coin", 36414, totalPoints, oui, true);
-                toTp.teleToLocation(-114435, 253417, -1546, true);
-            }
-
-
-
-            registered.clear();
-            invaders.clear();
-            attackInfo.clear();
-            isUnderInvasion = false;
-            Announcements.getInstance().announceToAll("Event finished !");
-
-            //Only schedule the next invasion if is not started by a GM
-
-        }
-        return "";
-    }
-
-
-    public static void main(String[] args)
-    {
-        new DCEvent(-1, "DCEvent", "events");
-    }
+	public static void main(String[] args) {
+		new DCEvent(-1, "DCEvent", "events");
+	}
 }

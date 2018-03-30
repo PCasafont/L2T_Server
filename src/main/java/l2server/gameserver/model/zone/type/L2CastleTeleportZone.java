@@ -28,23 +28,19 @@ import java.util.ArrayList;
  *
  * @author Kerberos
  */
-public class L2CastleTeleportZone extends L2ZoneType
-{
+public class L2CastleTeleportZone extends L2ZoneType {
 	private int[] spawnLoc;
 	private int castleId;
 
-	public L2CastleTeleportZone(int id)
-	{
+	public L2CastleTeleportZone(int id) {
 		super(id);
 
 		spawnLoc = new int[5];
 	}
 
 	@Override
-	public void setParameter(String name, String value)
-	{
-		switch (name)
-		{
+	public void setParameter(String name, String value) {
+		switch (name) {
 			case "castleId":
 				castleId = Integer.parseInt(value);
 				break;
@@ -70,25 +66,21 @@ public class L2CastleTeleportZone extends L2ZoneType
 	}
 
 	@Override
-	protected void onEnter(L2Character character)
-	{
+	protected void onEnter(L2Character character) {
 		character.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, true);
 	}
 
 	@Override
-	protected void onExit(L2Character character)
-	{
+	protected void onExit(L2Character character) {
 		character.setInsideZone(L2Character.ZONE_NOSUMMONFRIEND, false);
 	}
 
 	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
+	public void onDieInside(L2Character character, L2Character killer) {
 	}
 
 	@Override
-	public void onReviveInside(L2Character character)
-	{
+	public void onReviveInside(L2Character character) {
 	}
 
 	/**
@@ -96,14 +88,11 @@ public class L2CastleTeleportZone extends L2ZoneType
 	 *
 	 * @return
 	 */
-	public ArrayList<L2PcInstance> getAllPlayers()
-	{
+	public ArrayList<L2PcInstance> getAllPlayers() {
 		ArrayList<L2PcInstance> players = new ArrayList<>();
 
-		for (L2Character temp : characterList.values())
-		{
-			if (temp instanceof L2PcInstance)
-			{
+		for (L2Character temp : characterList.values()) {
+			if (temp instanceof L2PcInstance) {
 				players.add((L2PcInstance) temp);
 			}
 		}
@@ -112,36 +101,27 @@ public class L2CastleTeleportZone extends L2ZoneType
 	}
 
 	@Override
-	public void oustAllPlayers()
-	{
-		if (characterList == null)
-		{
+	public void oustAllPlayers() {
+		if (characterList == null) {
 			return;
 		}
-		if (characterList.isEmpty())
-		{
+		if (characterList.isEmpty()) {
 			return;
 		}
-		for (L2Character character : characterList.values())
-		{
-			if (character == null)
-			{
+		for (L2Character character : characterList.values()) {
+			if (character == null) {
 				continue;
 			}
-			if (character instanceof L2PcInstance)
-			{
+			if (character instanceof L2PcInstance) {
 				L2PcInstance player = (L2PcInstance) character;
-				if (player.isOnline())
-				{
-					player.teleToLocation(Rnd.get(spawnLoc[0], spawnLoc[1]), Rnd.get(spawnLoc[2], spawnLoc[3]),
-							spawnLoc[4]);
+				if (player.isOnline()) {
+					player.teleToLocation(Rnd.get(spawnLoc[0], spawnLoc[1]), Rnd.get(spawnLoc[2], spawnLoc[3]), spawnLoc[4]);
 				}
 			}
 		}
 	}
 
-	public int getCastleId()
-	{
+	public int getCastleId() {
 		return castleId;
 	}
 
@@ -150,8 +130,7 @@ public class L2CastleTeleportZone extends L2ZoneType
 	 *
 	 * @return
 	 */
-	public int[] getSpawn()
-	{
+	public int[] getSpawn() {
 		return spawnLoc;
 	}
 }

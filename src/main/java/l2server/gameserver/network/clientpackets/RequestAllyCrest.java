@@ -22,29 +22,25 @@ import l2server.gameserver.network.serverpackets.AllyCrest;
  *
  * @version $Revision: 1.3.4.4 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestAllyCrest extends L2GameClientPacket
-{
-
+public final class RequestAllyCrest extends L2GameClientPacket {
+	
 	private int crestId;
-
+	
 	/**
 	 * packet type id 0x88 format: cd
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		crestId = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		sendPacket(new AllyCrest(crestId));
 	}
-
+	
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

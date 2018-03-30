@@ -22,17 +22,14 @@ import java.util.HashMap;
 /**
  * @author Erlandys
  */
-public class MentorManager
-{
+public class MentorManager {
 	HashMap<Integer, Integer> coinsRewardForLevel;
 
-	public MentorManager()
-	{
+	public MentorManager() {
 		load();
 	}
 
-	public void load()
-	{
+	public void load() {
 		coinsRewardForLevel = new HashMap<>();
 		coinsRewardForLevel.put(10, 1);
 		coinsRewardForLevel.put(20, 25);
@@ -74,41 +71,33 @@ public class MentorManager
 		coinsRewardForLevel.put(84, 987);
 		coinsRewardForLevel.put(85, 1149);
 		coinsRewardForLevel.put(86, 2015);
-		Log.info("MentorManager: Successfully loaded - " + coinsRewardForLevel.size() +
-				" reward to mentor for mentee level.");
+		Log.info("MentorManager: Successfully loaded - " + coinsRewardForLevel.size() + " reward to mentor for mentee level.");
 	}
 
-	public int getItemsCount(int level)
-	{
-		if (coinsRewardForLevel.containsKey(level))
-		{
+	public int getItemsCount(int level) {
+		if (coinsRewardForLevel.containsKey(level)) {
 			return coinsRewardForLevel.get(level);
 		}
 		return 0;
 	}
 
-	public String getTitle()
-	{
+	public String getTitle() {
 		return "Mentee Coin from Mentee Leveling";
 	}
 
-	public String getMessage(String playerName, String level)
-	{
-		return "Your mentee " + playerName + " has reacher level " + level +
-				", so you are receiving some Mentee Coin. " +
+	public String getMessage(String playerName, String level) {
+		return "Your mentee " + playerName + " has reacher level " + level + ", so you are receiving some Mentee Coin. " +
 				"After Mentee Coin has successfully been removed and placed into your inventory please be sure to " +
 				"delete this letter. If your mailbox is full when any future letters are sent to you they cannot " +
 				"be delivered and you will not receive these items.";
 	}
 
-	public static MentorManager getInstance()
-	{
+	public static MentorManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final MentorManager instance = new MentorManager();
 	}
 }

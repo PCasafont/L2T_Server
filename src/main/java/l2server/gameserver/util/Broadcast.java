@@ -48,8 +48,7 @@ import java.util.logging.Level;
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
 
-public final class Broadcast
-{
+public final class Broadcast {
 	/**
 	 * Send a packet to all L2PcInstance in the KnownPlayers of the L2Character that have the Character targetted.<BR><BR>
 	 * <p>
@@ -59,21 +58,16 @@ public final class Broadcast
 	 * <p>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packet to this L2Character (to do this use method toSelfAndKnownPlayers)</B></FONT><BR><BR>
 	 */
-	public static void toPlayersTargettingMyself(L2Character character, L2GameServerPacket mov)
-	{
-		if (Config.DEBUG)
-		{
-			Log.fine("players to notify:" + character.getKnownList().getKnownPlayers().size() + " packet:" +
-					mov.getType());
+	public static void toPlayersTargettingMyself(L2Character character, L2GameServerPacket mov) {
+		if (Config.DEBUG) {
+			Log.fine("players to notify:" + character.getKnownList().getKnownPlayers().size() + " packet:" + mov.getType());
 		}
 
 		Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
 		// synchronized (character.getKnownList().getKnownPlayers())
 		{
-			for (L2PcInstance player : plrs)
-			{
-				if (player.getTarget() != character)
-				{
+			for (L2PcInstance player : plrs) {
+				if (player.getTarget() != character) {
 					continue;
 				}
 
@@ -100,49 +94,36 @@ public final class Broadcast
 	 * toSelfAndKnownPlayers)</B></FONT><BR>
 	 * <BR>
 	 */
-	public static void toKnownPlayers(L2Character character, L2GameServerPacket mov)
-	{
-		if (Config.DEBUG)
-		{
-			Log.fine("players to notify:" + character.getKnownList().getKnownPlayers().size() + " packet:" +
-					mov.getType());
+	public static void toKnownPlayers(L2Character character, L2GameServerPacket mov) {
+		if (Config.DEBUG) {
+			Log.fine("players to notify:" + character.getKnownList().getKnownPlayers().size() + " packet:" + mov.getType());
 		}
 
 		Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
 		//synchronized (character.getKnownList().getKnownPlayers())
 		{
-			for (L2PcInstance player : plrs)
-			{
-				if (player == null)
-				{
+			for (L2PcInstance player : plrs) {
+				if (player == null) {
 					continue;
 				}
-				try
-				{
+				try {
 					player.sendPacket(mov);
-					if (mov instanceof CharInfo && character instanceof L2PcInstance)
-					{
+					if (mov instanceof CharInfo && character instanceof L2PcInstance) {
 						int relation = ((L2PcInstance) character).getRelation(player);
 						Integer oldrelation = character.getKnownList().getKnownRelations().get(player.getObjectId());
-						if (oldrelation != null && oldrelation != relation)
-						{
-							player.sendPacket(new RelationChanged((L2PcInstance) character, relation,
-									character.isAutoAttackable(player)));
-							if (((L2PcInstance) character).getPet() != null)
-							{
-								player.sendPacket(new RelationChanged(((L2PcInstance) character).getPet(), relation,
+						if (oldrelation != null && oldrelation != relation) {
+							player.sendPacket(new RelationChanged((L2PcInstance) character, relation, character.isAutoAttackable(player)));
+							if (((L2PcInstance) character).getPet() != null) {
+								player.sendPacket(new RelationChanged(((L2PcInstance) character).getPet(),
+										relation,
 										character.isAutoAttackable(player)));
 							}
-							for (L2SummonInstance summon : player.getSummons())
-							{
-								player.sendPacket(
-										new RelationChanged(summon, relation, character.isAutoAttackable(player)));
+							for (L2SummonInstance summon : player.getSummons()) {
+								player.sendPacket(new RelationChanged(summon, relation, character.isAutoAttackable(player)));
 							}
 						}
 					}
-				}
-				catch (NullPointerException e)
-				{
+				} catch (NullPointerException e) {
 					Log.log(Level.WARNING, e.getMessage(), e);
 				}
 			}
@@ -167,20 +148,16 @@ public final class Broadcast
 	 * toSelfAndKnownPlayers)</B></FONT><BR>
 	 * <BR>
 	 */
-	public static void toKnownPlayersInRadius(L2Character character, L2GameServerPacket mov, int radius)
-	{
-		if (radius < 0)
-		{
+	public static void toKnownPlayersInRadius(L2Character character, L2GameServerPacket mov, int radius) {
+		if (radius < 0) {
 			radius = 1500;
 		}
 
 		Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
 		//synchronized (character.getKnownList().getKnownPlayers())
 		{
-			for (L2PcInstance player : plrs)
-			{
-				if (character.isInsideRadius(player, radius, false, false))
-				{
+			for (L2PcInstance player : plrs) {
+				if (character.isInsideRadius(player, radius, false, false)) {
 					player.sendPacket(mov);
 				}
 			}
@@ -194,10 +171,8 @@ public final class Broadcast
 	 * L2PcInstance in the detection area of the L2Character are identified in <B>knownPlayers</B>.<BR>
 	 * In order to inform other players of state modification on the L2Character, server just need to go through knownPlayers to send Server->Client Packet<BR><BR>
 	 */
-	public static void toSelfAndKnownPlayers(L2Character character, L2GameServerPacket mov)
-	{
-		if (character instanceof L2PcInstance)
-		{
+	public static void toSelfAndKnownPlayers(L2Character character, L2GameServerPacket mov) {
+		if (character instanceof L2PcInstance) {
 			character.sendPacket(mov);
 		}
 
@@ -205,25 +180,20 @@ public final class Broadcast
 	}
 
 	// To improve performance we are comparing values of radius^2 instead of calculating sqrt all the time
-	public static void toSelfAndKnownPlayersInRadius(L2Character character, L2GameServerPacket mov, long radiusSq)
-	{
-		if (radiusSq < 0)
-		{
+	public static void toSelfAndKnownPlayersInRadius(L2Character character, L2GameServerPacket mov, long radiusSq) {
+		if (radiusSq < 0) {
 			radiusSq = 360000;
 		}
 
-		if (character instanceof L2PcInstance)
-		{
+		if (character instanceof L2PcInstance) {
 			character.sendPacket(mov);
 		}
 
 		Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
 		//synchronized (character.getKnownList().getKnownPlayers())
 		{
-			for (L2PcInstance player : plrs)
-			{
-				if (player != null && character.getDistanceSq(player) <= radiusSq)
-				{
+			for (L2PcInstance player : plrs) {
+				if (player != null && character.getDistanceSq(player) <= radiusSq) {
 					player.sendPacket(mov);
 				}
 			}
@@ -238,66 +208,56 @@ public final class Broadcast
 	 * <p>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packet to this L2Character (to do this use method toSelfAndKnownPlayers)</B></FONT><BR><BR>
 	 */
-	public static void toAllOnlinePlayers(L2GameServerPacket mov, int dimensionId)
-	{
-		if (Config.DEBUG)
-		{
-			Log.fine("Players to notify: " + L2World.getInstance().getAllPlayersCount() + " (with packet " +
-					mov.getType() + ")");
+	public static void toAllOnlinePlayers(L2GameServerPacket mov, int dimensionId) {
+		if (Config.DEBUG) {
+			Log.fine("Players to notify: " + L2World.getInstance().getAllPlayersCount() + " (with packet " + mov.getType() + ")");
 		}
 
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 		// synchronized (L2World.getInstance().getAllPlayers())
 		{
-			for (L2PcInstance onlinePlayer : pls)
-			{
-				if (onlinePlayer == null)
-				{
+			for (L2PcInstance onlinePlayer : pls) {
+				if (onlinePlayer == null) {
 					continue;
 				}
 
-				if (onlinePlayer.isOnline())
-				{
+				if (onlinePlayer.isOnline()) {
 					onlinePlayer.sendPacket(mov);
 				}
 			}
 		}
 	}
 
-	public static void toAllOnlinePlayers(L2GameServerPacket mov)
-	{
+	public static void toAllOnlinePlayers(L2GameServerPacket mov) {
 		toAllOnlinePlayers(mov, -1);
 	}
 
-	public static void announceToOnlinePlayers(String text)
-	{
+	public static void announceToOnlinePlayers(String text) {
 		CreatureSay cs = new CreatureSay(0, Say2.ANNOUNCEMENT, "", text);
 		toAllOnlinePlayers(cs);
 
 		ConsoleTab.appendMessage(ConsoleFilter.Announcements, "Announcements: " + text);
 	}
 
-	public static void toPlayersInInstance(L2GameServerPacket mov, int instanceId)
-	{
+	public static void toPlayersInInstance(L2GameServerPacket mov, int instanceId) {
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 		//synchronized (character.getKnownList().getKnownPlayers())
 		{
-			pls.stream().filter(onlinePlayer -> onlinePlayer != null && onlinePlayer.isOnline() &&
-					onlinePlayer.getInstanceId() == instanceId).forEachOrdered(onlinePlayer ->
-			{
-				onlinePlayer.sendPacket(mov);
-			});
+			pls.stream()
+					.filter(onlinePlayer -> onlinePlayer != null && onlinePlayer.isOnline() && onlinePlayer.getInstanceId() == instanceId)
+					.forEachOrdered(onlinePlayer -> {
+						onlinePlayer.sendPacket(mov);
+					});
 		}
 	}
 
-	public static void toGameMasters(String message)
-	{
+	public static void toGameMasters(String message) {
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 		//synchronized (character.getKnownList().getKnownPlayers())
 		{
-			pls.stream().filter(onlinePlayer -> onlinePlayer != null && onlinePlayer.isOnline() && onlinePlayer.isGM())
-					.forEachOrdered(onlinePlayer ->
-					{
+			pls.stream()
+					.filter(onlinePlayer -> onlinePlayer != null && onlinePlayer.isOnline() && onlinePlayer.isGM())
+					.forEachOrdered(onlinePlayer -> {
 						onlinePlayer.sendMessage(message);
 					});
 		}

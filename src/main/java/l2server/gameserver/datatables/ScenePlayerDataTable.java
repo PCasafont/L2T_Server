@@ -30,51 +30,43 @@ import java.util.Map;
  * @author LasTravel
  */
 
-public class ScenePlayerDataTable implements Reloadable
-{
+public class ScenePlayerDataTable implements Reloadable {
 
 	private Map<Integer, Integer> sceneDataTable;
 
 	@Override
-	public boolean reload()
-	{
+	public boolean reload() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "scenePlayerData.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode d : doc.getChildren())
-        {
-            if (d.getName().equalsIgnoreCase("scene"))
-            {
-                int id = d.getInt("id");
+		for (XmlNode d : doc.getChildren()) {
+			if (d.getName().equalsIgnoreCase("scene")) {
+				int id = d.getInt("id");
 
-                int time = d.getInt("time");
+				int time = d.getInt("time");
 
-                sceneDataTable.put(id, time);
-            }
-        }
+				sceneDataTable.put(id, time);
+			}
+		}
 
-        Log.info("ScenePlayerTable: Loaded: " + sceneDataTable.size() + " scenes!");
+		Log.info("ScenePlayerTable: Loaded: " + sceneDataTable.size() + " scenes!");
 
 		return false;
 	}
 
-	public static ScenePlayerDataTable getInstance()
-	{
+	public static ScenePlayerDataTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	public Map<Integer, Integer> getSceneTable()
-	{
+	public Map<Integer, Integer> getSceneTable() {
 		return sceneDataTable;
 	}
 
-	public int getVideoDuration(int vidId)
-	{
+	public int getVideoDuration(int vidId) {
 		return sceneDataTable.get(vidId);
 	}
 
-	private ScenePlayerDataTable()
-	{
+	private ScenePlayerDataTable() {
 		sceneDataTable = new HashMap<>();
 
 		reload();
@@ -83,14 +75,12 @@ public class ScenePlayerDataTable implements Reloadable
 	}
 
 	@Override
-	public String getReloadMessage(boolean success)
-	{
+	public String getReloadMessage(boolean success) {
 		return "Scene Data Table reloaded";
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final ScenePlayerDataTable instance = new ScenePlayerDataTable();
 	}
 }

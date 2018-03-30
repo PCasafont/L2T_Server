@@ -28,38 +28,31 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 /**
  * @author Pere
  */
-public class L2FlyMoveZone extends L2ZoneType
-{
+public class L2FlyMoveZone extends L2ZoneType {
 	private L2FlyMove flyMove;
 
-	public L2FlyMoveZone(int id)
-	{
+	public L2FlyMoveZone(int id) {
 		super(id + 70500);
 	}
 
-	public void setFlyMove(L2FlyMove move)
-	{
+	public void setFlyMove(L2FlyMove move) {
 		flyMove = move;
 	}
 
 	@Override
-	protected void onEnter(L2Character character)
-	{
-		if (!(character instanceof L2PcInstance))
-		{
+	protected void onEnter(L2Character character) {
+		if (!(character instanceof L2PcInstance)) {
 			return;
 		}
 
 		L2PcInstance player = (L2PcInstance) character;
 
-		if (PlayerClassTable.getInstance().getClassById(player.getBaseClass()).getLevel() < 85 ||
-				player.getReputation() < 0 || player.isMounted() || player.isTransformed())
-		{
+		if (PlayerClassTable.getInstance().getClassById(player.getBaseClass()).getLevel() < 85 || player.getReputation() < 0 || player.isMounted() ||
+				player.isTransformed()) {
 			return;
 		}
 
-		if (!player.getSummons().isEmpty())
-		{
+		if (!player.getSummons().isEmpty()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_SAYUNE_WITH_PET));
 			return;
 		}
@@ -70,39 +63,31 @@ public class L2FlyMoveZone extends L2ZoneType
 	}
 
 	@Override
-	protected void onExit(L2Character character)
-	{
+	protected void onExit(L2Character character) {
 	}
 
 	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
+	public void onDieInside(L2Character character, L2Character killer) {
 	}
 
 	@Override
-	public void onReviveInside(L2Character character)
-	{
+	public void onReviveInside(L2Character character) {
 	}
 
-	private class FlyMoveStartSendTask implements Runnable
-	{
+	private class FlyMoveStartSendTask implements Runnable {
 		L2PcInstance player;
 
-		public FlyMoveStartSendTask(L2PcInstance player)
-		{
+		public FlyMoveStartSendTask(L2PcInstance player) {
 			this.player = player;
 		}
 
 		@Override
-		public void run()
-		{
-			if (!isCharacterInZone(player))
-			{
+		public void run() {
+			if (!isCharacterInZone(player)) {
 				return;
 			}
 
-			if (!(player.isPerformingFlyMove() && player.isChoosingFlyMove()))
-			{
+			if (!(player.isPerformingFlyMove() && player.isChoosingFlyMove())) {
 				player.sendPacket(new ExNotifyFlyMoveStart());
 			}
 

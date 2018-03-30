@@ -15,8 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
-
 import l2server.Config;
 import l2server.gameserver.instancemanager.MailManager;
 import l2server.gameserver.model.L2ItemInstance;
@@ -26,98 +24,80 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.ItemContainer;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExChangePostState;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.ItemList;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
+
+import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
 
 /**
  * @author Pere, DS
  */
-public final class RequestCancelPost extends L2GameClientPacket
-{
+public final class RequestCancelPost extends L2GameClientPacket {
 
 	private int msgId;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		msgId = readD();
 	}
 
 	@Override
-	public void runImpl()
-	{
+	public void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null || !Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS)
-		{
+		if (activeChar == null || !Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS) {
 			return;
 		}
 
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("cancelpost"))
-		{
+		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("cancelpost")) {
 			return;
 		}
 
 		Message msg = MailManager.getInstance().getMessage(msgId);
-		if (msg == null)
-		{
+		if (msg == null) {
 			return;
 		}
-		if (msg.getSenderId() != activeChar.getObjectId())
-		{
-			Util.handleIllegalPlayerAction(activeChar,
-					"Player " + activeChar.getName() + " tried to cancel not own post!", Config.DEFAULT_PUNISH);
+		if (msg.getSenderId() != activeChar.getObjectId()) {
+			Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " tried to cancel not own post!", Config.DEFAULT_PUNISH);
 			return;
 		}
 
-		if (activeChar.getEvent() != null)
-		{
+		if (activeChar.getEvent() != null) {
 			activeChar.sendMessage("You can't use this feature when involved in an event!");
 			return;
 		}
 
-		if (activeChar.getOlympiadGameId() > -1)
-		{
+		if (activeChar.getOlympiadGameId() > -1) {
 			activeChar.sendMessage("You can't use this feature when involved in the Grand Olympiad!");
 			return;
 		}
 
-		if (!activeChar.isInsideZone(ZONE_PEACE))
-		{
+		if (!activeChar.isInsideZone(ZONE_PEACE)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_CANCEL_NOT_IN_PEACE_ZONE));
 			return;
 		}
 
-		if (activeChar.getActiveTradeList() != null)
-		{
+		if (activeChar.getActiveTradeList() != null) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_CANCEL_DURING_EXCHANGE));
 			return;
 		}
 
-		if (activeChar.isEnchanting())
-		{
+		if (activeChar.isEnchanting()) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_CANCEL_DURING_ENCHANT));
 			return;
 		}
 
-		if (activeChar.getPrivateStoreType() > 0)
-		{
+		if (activeChar.getPrivateStoreType() > 0) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_CANCEL_PRIVATE_STORE));
 			return;
 		}
 
-		if (!msg.hasAttachments())
-		{
+		if (!msg.hasAttachments()) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANT_CANCEL_RECEIVED_MAIL));
 			return;
 		}
 
 		final ItemContainer attachments = msg.getAttachments();
-		if (attachments == null || attachments.getSize() == 0)
-		{
+		if (attachments == null || attachments.getSize() == 0) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANT_CANCEL_RECEIVED_MAIL));
 			return;
 		}
@@ -125,31 +105,26 @@ public final class RequestCancelPost extends L2GameClientPacket
 		int weight = 0;
 		int slots = 0;
 
-		for (L2ItemInstance item : attachments.getItems())
-		{
-			if (item == null)
-			{
+		for (L2ItemInstance item : attachments.getItems()) {
+			if (item == null) {
 				continue;
 			}
 
-			if (item.getOwnerId() != activeChar.getObjectId())
-			{
+			if (item.getOwnerId() != activeChar.getObjectId()) {
 				Util.handleIllegalPlayerAction(activeChar,
 						"Player " + activeChar.getName() + " tried to get not own item from cancelled attachment!",
 						Config.DEFAULT_PUNISH);
 				return;
 			}
 
-			if (!item.getLocation().equals(ItemLocation.MAIL))
-			{
+			if (!item.getLocation().equals(ItemLocation.MAIL)) {
 				Util.handleIllegalPlayerAction(activeChar,
 						"Player " + activeChar.getName() + " tried to get items not from mail !",
 						Config.DEFAULT_PUNISH);
 				return;
 			}
 
-			if (item.getLocationSlot() != msg.getId())
-			{
+			if (item.getLocationSlot() != msg.getId()) {
 				Util.handleIllegalPlayerAction(activeChar,
 						"Player " + activeChar.getName() + " tried to get items from different attachment!",
 						Config.DEFAULT_PUNISH);
@@ -157,54 +132,45 @@ public final class RequestCancelPost extends L2GameClientPacket
 			}
 
 			weight += item.getCount() * item.getItem().getWeight();
-			if (!item.isStackable())
-			{
+			if (!item.isStackable()) {
 				slots += item.getCount();
-			}
-			else if (activeChar.getInventory().getItemByItemId(item.getItemId()) == null)
-			{
+			} else if (activeChar.getInventory().getItemByItemId(item.getItemId()) == null) {
 				slots++;
 			}
 		}
 
-		if (!activeChar.getInventory().validateCapacity(slots))
-		{
+		if (!activeChar.getInventory().validateCapacity(slots)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_CANCEL_INVENTORY_FULL));
 			return;
 		}
 
-		if (!activeChar.getInventory().validateWeight(weight))
-		{
+		if (!activeChar.getInventory().validateWeight(weight)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_CANCEL_INVENTORY_FULL));
 			return;
 		}
 
 		// Proceed to the transfer
 		InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
-		for (L2ItemInstance item : attachments.getItems())
-		{
-			if (item == null)
-			{
+		for (L2ItemInstance item : attachments.getItems()) {
+			if (item == null) {
 				continue;
 			}
 
 			long count = item.getCount();
-			final L2ItemInstance newItem = attachments
-					.transferItem(attachments.getName() + " from " + msg.getSenderName(), item.getObjectId(), count,
-							activeChar.getInventory(), activeChar, null);
-			if (newItem == null)
-			{
+			final L2ItemInstance newItem = attachments.transferItem(attachments.getName() + " from " + msg.getSenderName(),
+					item.getObjectId(),
+					count,
+					activeChar.getInventory(),
+					activeChar,
+					null);
+			if (newItem == null) {
 				return;
 			}
 
-			if (playerIU != null)
-			{
-				if (newItem.getCount() > count)
-				{
+			if (playerIU != null) {
+				if (newItem.getCount() > count) {
 					playerIU.addModifiedItem(newItem);
-				}
-				else
-				{
+				} else {
 					playerIU.addNewItem(newItem);
 				}
 			}
@@ -217,12 +183,9 @@ public final class RequestCancelPost extends L2GameClientPacket
 		msg.removeAttachments();
 
 		// Send updated item list to the player
-		if (playerIU != null)
-		{
+		if (playerIU != null) {
 			activeChar.sendPacket(playerIU);
-		}
-		else
-		{
+		} else {
 			activeChar.sendPacket(new ItemList(activeChar, false));
 		}
 
@@ -232,8 +195,7 @@ public final class RequestCancelPost extends L2GameClientPacket
 		activeChar.sendPacket(su);
 
 		final L2PcInstance receiver = L2World.getInstance().getPlayer(msg.getReceiverId());
-		if (receiver != null)
-		{
+		if (receiver != null) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANCELLED_MAIL);
 			sm.addCharName(activeChar);
 			receiver.sendPacket(sm);
@@ -247,8 +209,7 @@ public final class RequestCancelPost extends L2GameClientPacket
 	}
 
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

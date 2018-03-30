@@ -27,86 +27,68 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
  *
  * @author GKR
  */
-public final class L2QuestGuardInstance extends L2GuardInstance
-{
+public final class L2QuestGuardInstance extends L2GuardInstance {
 	private boolean isAutoAttackable = true;
 	private boolean isPassive = false;
-
-	public L2QuestGuardInstance(int objectId, L2NpcTemplate template)
-	{
+	
+	public L2QuestGuardInstance(int objectId, L2NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2QuestGuardInstance);
 	}
-
+	
 	@Override
-	public void addDamage(L2Character attacker, int damage, L2Skill skill)
-	{
+	public void addDamage(L2Character attacker, int damage, L2Skill skill) {
 		super.addDamage(attacker, damage, skill);
-
-		if (attacker instanceof L2Attackable)
-		{
-			if (getTemplate().getEventQuests(Quest.QuestEventType.ON_ATTACK) != null)
-			{
-				for (Quest quest : getTemplate().getEventQuests(Quest.QuestEventType.ON_ATTACK))
-				{
+		
+		if (attacker instanceof L2Attackable) {
+			if (getTemplate().getEventQuests(Quest.QuestEventType.ON_ATTACK) != null) {
+				for (Quest quest : getTemplate().getEventQuests(Quest.QuestEventType.ON_ATTACK)) {
 					quest.notifyAttack(this, null, damage, false, skill);
 				}
 			}
 		}
 	}
-
+	
 	@Override
-	public boolean doDie(L2Character killer)
-	{
+	public boolean doDie(L2Character killer) {
 		// Kill the L2NpcInstance (the corpse disappeared after 7 seconds)
-		if (!super.doDie(killer))
-		{
+		if (!super.doDie(killer)) {
 			return false;
 		}
-
-		if (killer instanceof L2Attackable)
-		{
-			if (getTemplate().getEventQuests(Quest.QuestEventType.ON_KILL) != null)
-			{
-				for (Quest quest : getTemplate().getEventQuests(Quest.QuestEventType.ON_KILL))
-				{
-					ThreadPoolManager.getInstance()
-							.scheduleEffect(new OnKillNotifyTask(this, quest, null, false), onKillDelay);
+		
+		if (killer instanceof L2Attackable) {
+			if (getTemplate().getEventQuests(Quest.QuestEventType.ON_KILL) != null) {
+				for (Quest quest : getTemplate().getEventQuests(Quest.QuestEventType.ON_KILL)) {
+					ThreadPoolManager.getInstance().scheduleEffect(new OnKillNotifyTask(this, quest, null, false), onKillDelay);
 				}
 			}
 		}
-
+		
 		return true;
 	}
-
+	
 	@Override
-	public void addDamageHate(L2Character attacker, int damage, int aggro)
-	{
-		if (!isPassive && !(attacker instanceof L2PcInstance))
-		{
+	public void addDamageHate(L2Character attacker, int damage, int aggro) {
+		if (!isPassive && !(attacker instanceof L2PcInstance)) {
 			super.addDamageHate(attacker, damage, aggro);
 		}
 	}
-
-	public void setPassive(boolean state)
-	{
+	
+	public void setPassive(boolean state) {
 		isPassive = state;
 	}
-
+	
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
-	{
+	public boolean isAutoAttackable(L2Character attacker) {
 		return isAutoAttackable && !(attacker instanceof L2PcInstance);
 	}
-
+	
 	@Override
-	public void setAutoAttackable(boolean state)
-	{
+	public void setAutoAttackable(boolean state) {
 		isAutoAttackable = state;
 	}
-
-	public boolean isPassive()
-	{
+	
+	public boolean isPassive() {
 		return isPassive;
 	}
 }

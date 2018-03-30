@@ -18,27 +18,24 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Maktakien
  */
-public class GetOffVehicle extends L2GameServerPacket
-{
+public class GetOffVehicle extends L2GameServerPacket {
 	private int charObjId, boatObjId, x, y, z;
-
+	
 	/**
 	 * @param x
 	 * @param y
 	 * @param z
 	 */
-	public GetOffVehicle(int charObjId, int boatObjId, int x, int y, int z)
-	{
+	public GetOffVehicle(int charObjId, int boatObjId, int x, int y, int z) {
 		this.charObjId = charObjId;
 		this.boatObjId = boatObjId;
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(charObjId);
 		writeD(boatObjId);
 		writeD(x);

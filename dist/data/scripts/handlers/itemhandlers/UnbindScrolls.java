@@ -21,22 +21,18 @@ import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 
-public class UnbindScrolls implements IItemHandler
-{
+public class UnbindScrolls implements IItemHandler {
 	/**
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-		{
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!(playable instanceof L2PcInstance)) {
 			return;
 		}
 
 		final L2PcInstance activeChar = (L2PcInstance) playable;
-		if (activeChar.isCastingNow())
-		{
+		if (activeChar.isCastingNow()) {
 			return;
 		}
 

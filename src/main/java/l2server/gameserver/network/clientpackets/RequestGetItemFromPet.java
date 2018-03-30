@@ -26,57 +26,47 @@ import l2server.log.Log;
  *
  * @version $Revision: 1.3.4.4 $ $Date: 2005/03/29 23:15:33 $
  */
-public final class RequestGetItemFromPet extends L2GameClientPacket
-{
-
+public final class RequestGetItemFromPet extends L2GameClientPacket {
+	
 	private int objectId;
 	private long amount;
 	@SuppressWarnings("unused")
 	private int unknown;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		objectId = readD();
 		amount = readQ();
 		unknown = readD();// = 0 for most trades
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
-
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("getfrompet"))
-		{
+		
+		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("getfrompet")) {
 			player.sendMessage("You get items from pet too fast.");
 			return;
 		}
-
+		
 		L2PetInstance pet = player.getPet();
-		if (player.getActiveEnchantItem() != null)
-		{
+		if (player.getActiveEnchantItem() != null) {
 			return;
 		}
-		if (amount < 0)
-		{
+		if (amount < 0) {
 			Util.handleIllegalPlayerAction(player,
 					"[RequestGetItemFromPet] Character " + player.getName() + " of account " + player.getAccountName() +
 							" tried to get item with oid " + objectId + " from pet but has count < 0!",
 					Config.DEFAULT_PUNISH);
 			return;
-		}
-		else if (amount == 0)
-		{
+		} else if (amount == 0) {
 			return;
 		}
-
-		if (pet.transferItem("Transfer", objectId, amount, player.getInventory(), player, pet) == null)
-		{
+		
+		if (pet.transferItem("Transfer", objectId, amount, player.getInventory(), player, pet) == null) {
 			Log.warning("Invalid item transfer request: " + pet.getName() + " (pet) --> " + player.getName());
 		}
 	}

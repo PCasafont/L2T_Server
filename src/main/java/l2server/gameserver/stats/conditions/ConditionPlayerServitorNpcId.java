@@ -24,8 +24,7 @@ import java.util.ArrayList;
 /**
  * The Class ConditionPlayerServitorNpcId.
  */
-public class ConditionPlayerServitorNpcId extends Condition
-{
+public class ConditionPlayerServitorNpcId extends Condition {
 	private final ArrayList<Integer> npcIds;
 
 	/**
@@ -33,14 +32,10 @@ public class ConditionPlayerServitorNpcId extends Condition
 	 *
 	 * @param npcIds the npc ids
 	 */
-	public ConditionPlayerServitorNpcId(ArrayList<Integer> npcIds)
-	{
-		if (npcIds.size() == 1 && npcIds.get(0) == 0)
-		{
-            this.npcIds = null;
-		}
-		else
-		{
+	public ConditionPlayerServitorNpcId(ArrayList<Integer> npcIds) {
+		if (npcIds.size() == 1 && npcIds.get(0) == 0) {
+			this.npcIds = null;
+		} else {
 			this.npcIds = npcIds;
 		}
 	}
@@ -49,27 +44,21 @@ public class ConditionPlayerServitorNpcId extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 
 		L2PcInstance player = (L2PcInstance) env.player;
 
-		if (player.getPet() == null)
-		{
+		if (player.getPet() == null) {
 			return false;
 		}
 
 		boolean hasInSummons = false;
-		if (npcIds != null)
-		{
-			for (L2SummonInstance summon : player.getSummons())
-			{
-				if (!summon.isDead() && npcIds.contains(summon.getNpcId()))
-				{
+		if (npcIds != null) {
+			for (L2SummonInstance summon : player.getSummons()) {
+				if (!summon.isDead() && npcIds.contains(summon.getNpcId())) {
 					hasInSummons = true;
 				}
 			}

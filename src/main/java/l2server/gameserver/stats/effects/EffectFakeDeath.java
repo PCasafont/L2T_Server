@@ -26,10 +26,8 @@ import l2server.gameserver.templates.skills.L2EffectType;
 /**
  * @author mkizub
  */
-public class EffectFakeDeath extends L2Effect
-{
-	public EffectFakeDeath(Env env, L2EffectTemplate template)
-	{
+public class EffectFakeDeath extends L2Effect {
+	public EffectFakeDeath(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -37,8 +35,7 @@ public class EffectFakeDeath extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.FAKE_DEATH;
 	}
 
@@ -46,10 +43,8 @@ public class EffectFakeDeath extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (getEffected() instanceof L2PcInstance && !((L2PcInstance) getEffected()).isCombatFlagEquipped())
-		{
+	public boolean onStart() {
+		if (getEffected() instanceof L2PcInstance && !((L2PcInstance) getEffected()).isCombatFlagEquipped()) {
 			getEffected().startFakeDeath();
 		}
 		return true;
@@ -59,8 +54,7 @@ public class EffectFakeDeath extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		getEffected().stopFakeDeath(false);
 	}
 
@@ -68,19 +62,15 @@ public class EffectFakeDeath extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
-		if (getEffected().isDead() || ((L2PcInstance) getEffected()).isCombatFlagEquipped())
-		{
+	public boolean onActionTime() {
+		if (getEffected().isDead() || ((L2PcInstance) getEffected()).isCombatFlagEquipped()) {
 			return false;
 		}
 
 		double manaDam = calc();
 
-		if (manaDam > getEffected().getCurrentMp())
-		{
-			if (getSkill().isToggle())
-			{
+		if (manaDam > getEffected().getCurrentMp()) {
+			if (getSkill().isToggle()) {
 				getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
 				return false;
 			}

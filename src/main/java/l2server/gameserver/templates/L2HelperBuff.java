@@ -21,8 +21,7 @@ package l2server.gameserver.templates;
  * Author: Ayor
  */
 
-public class L2HelperBuff
-{
+public class L2HelperBuff {
 	/**
 	 * Min level that the player must achieve to obtain this buff from Newbie Helper
 	 */
@@ -54,14 +53,12 @@ public class L2HelperBuff
 	/**
 	 * Constructor of L2HelperBuff.<BR><BR>
 	 */
-	public L2HelperBuff(StatsSet set)
-	{
+	public L2HelperBuff(StatsSet set) {
 		lowerLevel = set.getInteger("lowerLevel");
 		upperLevel = set.getInteger("upperLevel");
 		skillID = set.getInteger("skillID");
 		skillLevel = set.getInteger("skillLevel");
-		if ("true".equals(set.getString("forSummon")))
-		{
+		if ("true".equals(set.getString("forSummon"))) {
 			forSummon = true;
 		}
 
@@ -73,8 +70,7 @@ public class L2HelperBuff
 	 *
 	 * @return int
 	 */
-	public int getLowerLevel()
-	{
+	public int getLowerLevel() {
 		return lowerLevel;
 	}
 
@@ -83,8 +79,7 @@ public class L2HelperBuff
 	 *
 	 * @return int
 	 */
-	public int getUpperLevel()
-	{
+	public int getUpperLevel() {
 		return upperLevel;
 	}
 
@@ -93,8 +88,7 @@ public class L2HelperBuff
 	 *
 	 * @return int
 	 */
-	public int getSkillID()
-	{
+	public int getSkillID() {
 		return skillID;
 	}
 
@@ -103,8 +97,7 @@ public class L2HelperBuff
 	 *
 	 * @return int
 	 */
-	public int getSkillLevel()
-	{
+	public int getSkillLevel() {
 		return skillLevel;
 	}
 
@@ -113,13 +106,11 @@ public class L2HelperBuff
 	 *
 	 * @return boolean : False if it's a Fighter class Buff
 	 */
-	public boolean isMagicClassBuff()
-	{
+	public boolean isMagicClassBuff() {
 		return isMagicClass;
 	}
 
-	public boolean isForSummon()
-	{
+	public boolean isForSummon() {
 		return forSummon;
 	}
 }

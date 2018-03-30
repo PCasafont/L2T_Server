@@ -19,31 +19,28 @@ package l2server.gameserver.network.serverpackets;
  * Eva's Inferno event packet.
  * Format: (ch)dddd // time info params: type (1 - %, 2 - npcId), value (depending on type: for type 1 - % value; for type 2 - 20573-20575), state (0-1), endtime (only when type 2)
  */
-public class ExBrBuffEventState extends L2GameServerPacket
-{
+public class ExBrBuffEventState extends L2GameServerPacket {
 	private int type; // 1 - %, 2 - npcId
 	private int value; // depending on type: for type 1 - % value; for type 2 - 20573-20575
 	private int state; // 0-1
 	private int endtime; // only when type 2 as unix time in seconds from 1970
-
-	public ExBrBuffEventState(int type, int value, int state, int endtime)
-	{
+	
+	public ExBrBuffEventState(int type, int value, int state, int endtime) {
 		this.type = type;
 		this.value = value;
 		this.state = state;
 		this.endtime = endtime;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
 	 */
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(type);
 		writeD(value);
 		writeD(state);

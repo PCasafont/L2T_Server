@@ -18,8 +18,7 @@ package l2server.gameserver.model.entity;
 /**
  * @author mrTJO
  */
-public class ActionKey
-{
+public class ActionKey {
 	int cat;
 	int cmd;
 	int key;
@@ -37,8 +36,7 @@ public class ActionKey
 	 * @param tgKey2: 2nd Toogled Key (eg. Alt, Ctrl or Shift)
 	 * @param show:   Show Action in UI
 	 */
-	public ActionKey(int cat, int cmd, int key, int tgKey1, int tgKey2, int show)
-	{
+	public ActionKey(int cat, int cmd, int key, int tgKey1, int tgKey2, int show) {
 		this.cat = cat;
 		this.cmd = cmd;
 		this.key = key;
@@ -47,39 +45,31 @@ public class ActionKey
 		this.show = show;
 	}
 
-	public int getCategory()
-	{
+	public int getCategory() {
 		return cat;
 	}
 
-	public int getCommandId()
-	{
+	public int getCommandId() {
 		return cmd;
 	}
 
-	public int getKeyId()
-	{
+	public int getKeyId() {
 		return key;
 	}
 
-	public int getToogleKey1()
-	{
+	public int getToogleKey1() {
 		return tgKey1;
 	}
 
-	public int getToogleKey2()
-	{
+	public int getToogleKey2() {
 		return tgKey2;
 	}
 
-	public int getShowStatus()
-	{
+	public int getShowStatus() {
 		return show;
 	}
 
-	public String getSqlSaveString(int playerId, int order)
-	{
-		return "(" + playerId + ", " + cat + ", " + order + ", " + cmd + "," + key + ", " + tgKey1 + ", " +
-				tgKey2 + ", " + show + ")";
+	public String getSqlSaveString(int playerId, int order) {
+		return "(" + playerId + ", " + cat + ", " + order + ", " + cmd + "," + key + ", " + tgKey1 + ", " + tgKey2 + ", " + show + ")";
 	}
 }

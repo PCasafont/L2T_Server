@@ -15,35 +15,29 @@
 
 package l2server.gameserver.network.clientpackets;
 
+import gnu.trove.TIntIntHashMap;
 import l2server.gameserver.datatables.AbilityTable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExAcquireAPSkillList;
 
-import gnu.trove.TIntIntHashMap;
-
 /**
  * @author Pere
  */
-public final class RequestAPReset extends L2GameClientPacket
-{
+public final class RequestAPReset extends L2GameClientPacket {
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 	}
 
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
 
-		if (!player.reduceAdena("Ability points", AbilityTable.getInstance().getAdenaCostForReset(), player, true))
-		{
+		if (!player.reduceAdena("Ability points", AbilityTable.getInstance().getAdenaCostForReset(), player, true)) {
 			sendPacket(new ExAcquireAPSkillList(getClient().getActiveChar(), false));
 			return;
 		}

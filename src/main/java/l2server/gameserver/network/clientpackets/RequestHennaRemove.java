@@ -25,8 +25,7 @@ import l2server.gameserver.templates.item.L2Henna;
  *
  * @version $Revision$ $Date$
  */
-public final class RequestHennaRemove extends L2GameClientPacket
-{
+public final class RequestHennaRemove extends L2GameClientPacket {
 	private int symbolId;
 
 	// format  cd
@@ -36,37 +35,28 @@ public final class RequestHennaRemove extends L2GameClientPacket
 	 * format:		cd
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		symbolId = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("HennaRemove"))
-		{
+		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("HennaRemove")) {
 			return;
 		}
 
-		for (int i = 1; i <= 4; i++)
-		{
+		for (int i = 1; i <= 4; i++) {
 			L2Henna henna = activeChar.getHenna(i);
-			if (henna != null && henna.getSymbolId() == symbolId)
-			{
-				if (activeChar.getAdena() >= henna.getPrice() / 5)
-				{
+			if (henna != null && henna.getSymbolId() == symbolId) {
+				if (activeChar.getAdena() >= henna.getPrice() / 5) {
 					activeChar.removeHenna(i);
 					break;
-				}
-				else
-				{
+				} else {
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_NOT_ENOUGH_ADENA));
 				}
 			}

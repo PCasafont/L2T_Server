@@ -23,46 +23,36 @@ import java.util.ArrayList;
 /**
  * @author Erlandys
  */
-public class ExMenteeSearch extends L2GameServerPacket
-{
+public class ExMenteeSearch extends L2GameServerPacket {
 	ArrayList<L2PcInstance> mentees;
 	int page, playersInPage;
-
-	public ExMenteeSearch(int page, int minLevel, int maxLevel)
-	{
+	
+	public ExMenteeSearch(int page, int minLevel, int maxLevel) {
 		mentees = new ArrayList<>();
 		this.page = page;
 		playersInPage = 64;
-		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
-		{
-			if (player.getSubClasses().isEmpty() && player.getLevel() >= minLevel && player.getLevel() <= maxLevel)
-			{
+		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
+			if (player.getSubClasses().isEmpty() && player.getLevel() >= minLevel && player.getLevel() <= maxLevel) {
 				mentees.add(player);
 			}
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(page);
-		if (!mentees.isEmpty())
-		{
+		if (!mentees.isEmpty()) {
 			writeD(mentees.size());
 			writeD(mentees.size() % playersInPage);
 			int i = 1;
-			for (L2PcInstance player : mentees)
-			{
-				if (i <= playersInPage * page && i > playersInPage * (page - 1))
-				{
+			for (L2PcInstance player : mentees) {
+				if (i <= playersInPage * page && i > playersInPage * (page - 1)) {
 					writeS(player.getName());
 					writeD(player.getClassId());
 					writeD(player.getLevel());
 				}
 			}
-		}
-		else
-		{
+		} else {
 			writeD(0x00);
 			writeD(0x00);
 		}

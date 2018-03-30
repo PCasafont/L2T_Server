@@ -31,73 +31,59 @@ import java.util.logging.Level;
  *
  * @version $Revision: 1.3.2.1.2.7 $ $Date: 2005/04/11 10:06:12 $
  */
-public class StackIDFactory extends IdFactory
-{
-
+public class StackIDFactory extends IdFactory {
+	
 	private int curOID;
 	private int tempOID;
-
+	
 	private Stack<Integer> freeOIDStack = new Stack<>();
-
-	protected StackIDFactory()
-	{
+	
+	protected StackIDFactory() {
 		super();
 		curOID = FIRST_OID;
 		tempOID = FIRST_OID;
-
+		
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			//con.createStatement().execute("drop table if exists tmp_obj_id");
-
+			
 			int[] tmp_obj_ids = extractUsedObjectIDTable();
-			if (tmp_obj_ids.length > 0)
-			{
+			if (tmp_obj_ids.length > 0) {
 				curOID = tmp_obj_ids[tmp_obj_ids.length - 1];
 			}
 			Log.info("Max Id = " + curOID);
-
+			
 			int N = tmp_obj_ids.length;
-			for (int idx = 0; idx < N; idx++)
-			{
+			for (int idx = 0; idx < N; idx++) {
 				N = insertUntil(tmp_obj_ids, idx, N, con);
 			}
-
+			
 			curOID++;
 			Log.info("IdFactory: Next usable Object ID is: " + curOID);
 			initialized = true;
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "ID Factory could not be initialized correctly:" + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
-
-	private int insertUntil(int[] tmp_obj_ids, int idx, int N, Connection con) throws SQLException
-	{
+	
+	private int insertUntil(int[] tmp_obj_ids, int idx, int N, Connection con) throws SQLException {
 		int id = tmp_obj_ids[idx];
-		if (id == tempOID)
-		{
+		if (id == tempOID) {
 			tempOID++;
 			return N;
 		}
 		// check these IDs not present in DB
-		if (Config.BAD_ID_CHECKING)
-		{
-			for (String check : ID_CHECKS)
-			{
+		if (Config.BAD_ID_CHECKING) {
+			for (String check : ID_CHECKS) {
 				PreparedStatement ps = con.prepareStatement(check);
 				ps.setInt(1, tempOID);
 				//ps.setInt(1, curOID);
 				ps.setInt(2, id);
 				ResultSet rs = ps.executeQuery();
-				if (rs.next())
-				{
+				if (rs.next()) {
 					int badId = rs.getInt(1);
 					Log.severe("Bad ID " + badId + " in DB found by: " + check);
 					throw new RuntimeException();
@@ -106,60 +92,50 @@ public class StackIDFactory extends IdFactory
 				ps.close();
 			}
 		}
-
+		
 		//int hole = id - curOID;
 		int hole = id - tempOID;
-		if (hole > N - idx)
-		{
+		if (hole > N - idx) {
 			hole = N - idx;
 		}
-		for (int i = 1; i <= hole; i++)
-		{
+		for (int i = 1; i <= hole; i++) {
 			//log.info("Free ID added " + (tempOID));
 			freeOIDStack.push(tempOID);
 			tempOID++;
 			//curOID++;
 		}
-		if (hole < N - idx)
-		{
+		if (hole < N - idx) {
 			tempOID++;
 		}
 		return N - hole;
 	}
-
-	public static IdFactory getInstance()
-	{
+	
+	public static IdFactory getInstance() {
 		return instance;
 	}
-
+	
 	@Override
-	public synchronized int getNextId()
-	{
+	public synchronized int getNextId() {
 		int id;
-		if (!freeOIDStack.empty())
-		{
+		if (!freeOIDStack.empty()) {
 			id = freeOIDStack.pop();
-		}
-		else
-		{
+		} else {
 			id = curOID;
 			curOID = curOID + 1;
 		}
 		return id;
 	}
-
+	
 	/**
 	 * return a used Object ID back to the pool
 	 */
 	@Override
-	public synchronized void releaseId(int id)
-	{
+	public synchronized void releaseId(int id) {
 		freeOIDStack.push(id);
 	}
-
+	
 	@Override
-	public int size()
-	{
+	public int size() {
 		return FREE_OBJECT_ID_SIZE - curOID + FIRST_OID + freeOIDStack.size();
 	}
 }

@@ -20,30 +20,26 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author KenM
  */
-public class RequestResetNickname extends L2GameClientPacket
-{
-
+public class RequestResetNickname extends L2GameClientPacket {
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// nothing (trigger)
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		activeChar.getAppearance().setTitleColor(0xFFFF77);
 		activeChar.setTitle("");
 		activeChar.broadcastUserInfo();

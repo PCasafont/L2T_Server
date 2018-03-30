@@ -22,20 +22,16 @@ import l2server.gameserver.GmListTable;
  *
  * @version $Revision: 1.1.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestGMList extends L2GameClientPacket
-{
+public final class RequestGMList extends L2GameClientPacket {
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 
 	}
 
 	@Override
-	protected void runImpl()
-	{
-		if (getClient().getActiveChar() == null)
-		{
+	protected void runImpl() {
+		if (getClient().getActiveChar() == null) {
 			return;
 		}
 		GmListTable.getInstance().sendListToPlayer(getClient().getActiveChar());

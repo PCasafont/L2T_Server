@@ -21,8 +21,7 @@ import l2server.gameserver.stats.Env;
 /**
  * The Class ConditionPlayerIsClanLeader.
  */
-public class ConditionPlayerIsClanLeader extends Condition
-{
+public class ConditionPlayerIsClanLeader extends Condition {
 	private final boolean val;
 
 	/**
@@ -30,8 +29,7 @@ public class ConditionPlayerIsClanLeader extends Condition
 	 *
 	 * @param val the val
 	 */
-	public ConditionPlayerIsClanLeader(boolean val)
-	{
+	public ConditionPlayerIsClanLeader(boolean val) {
 		this.val = val;
 	}
 
@@ -39,10 +37,8 @@ public class ConditionPlayerIsClanLeader extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 		return ((L2PcInstance) env.player).isClanLeader() == val;

@@ -20,21 +20,18 @@ import l2server.util.network.BaseSendablePacket;
 /**
  * @author -Wooden-
  */
-public class LoginServerFail extends BaseSendablePacket
-{
+public class LoginServerFail extends BaseSendablePacket {
 
 	/**
 	 * @param reason
 	 */
-	public LoginServerFail(int reason)
-	{
+	public LoginServerFail(int reason) {
 		writeC(0x01);
 		writeC(reason);
 	}
 
 	@Override
-	public byte[] getContent()
-	{
+	public byte[] getContent() {
 		return getBytes();
 	}
 

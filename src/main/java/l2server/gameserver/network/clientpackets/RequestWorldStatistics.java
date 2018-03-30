@@ -20,29 +20,26 @@ import l2server.gameserver.network.serverpackets.ExLoadStatWorldRank;
 /**
  * @author Pere
  */
-public final class RequestWorldStatistics extends L2GameClientPacket
-{
+public final class RequestWorldStatistics extends L2GameClientPacket {
 	private int pId1;
 	private int pId2;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		pId1 = readD();
 		pId2 = readD();
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		if (getClient().getActiveChar() == null)
 		//|| MuseumStatistic.get(pId1, pId2) == null)
 		{
 			return;
 		}
-
+		
 		sendPacket(new ExLoadStatWorldRank(pId1, pId2));
 	}
 }

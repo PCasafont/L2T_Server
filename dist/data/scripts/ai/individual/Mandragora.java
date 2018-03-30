@@ -15,6 +15,7 @@
 
 package ai.individual;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Npc;
@@ -22,37 +23,30 @@ import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.util.Rnd;
 
-import ai.group_template.L2AttackableAIScript;
-
 /**
  * @author LasTravel
- *         <p>
- *         Mandragora AI
+ * <p>
+ * Mandragora AI
  */
 
-public class Mandragora extends L2AttackableAIScript
-{
+public class Mandragora extends L2AttackableAIScript {
 	private static final int[] mandragoras = {23240, 23241};
 	private static final int[] sumonedMandragoras = {23210, 23211};
 
-	public Mandragora(int id, String name, String descr)
-	{
+	public Mandragora(int id, String name, String descr) {
 		super(id, name, descr);
 
-		for (int a : mandragoras)
-		{
+		for (int a : mandragoras) {
 			addAttackId(a);
 		}
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill) {
 		npc.deleteMe();
 
 		L2Npc mandragora =
-				addSpawn(sumonedMandragoras[Rnd.get(sumonedMandragoras.length)], npc.getX(), npc.getY(), npc.getZ(),
-						npc.getHeading(), false, 60000);
+				addSpawn(sumonedMandragoras[Rnd.get(sumonedMandragoras.length)], npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 60000);
 
 		mandragora.setTarget(attacker);
 
@@ -63,8 +57,7 @@ public class Mandragora extends L2AttackableAIScript
 		return super.onAttack(npc, attacker, damage, isPet, skill);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Mandragora(-1, "Mandragora", "ai");
 	}
 }

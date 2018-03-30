@@ -21,24 +21,21 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @version $Revision: 1.4.2.5.2.6 $ $Date: 2005/03/27 15:29:39 $
  */
-public class CharSelected extends L2GameServerPacket
-{
+public class CharSelected extends L2GameServerPacket {
 	// SdSddddddddddffddddddddddddddddddddddddddddddddddddddddd d
 	private L2PcInstance activeChar;
 	private int sessionId;
-
+	
 	/**
 	 */
-	public CharSelected(L2PcInstance cha, int sessionId)
-	{
+	public CharSelected(L2PcInstance cha, int sessionId) {
 		activeChar = cha;
 		this.sessionId = sessionId;
 	}
-
+	
 	@SuppressWarnings("deprecation")
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeS(activeChar.getName());
 		writeD(activeChar.getCharId()); // ??
 		writeS(activeChar.getTitle());
@@ -52,7 +49,7 @@ public class CharSelected extends L2GameServerPacket
 		writeD(activeChar.getX());
 		writeD(activeChar.getY());
 		writeD(activeChar.getZ());
-
+		
 		writeF(activeChar.getCurrentHp());
 		writeF(activeChar.getCurrentMp());
 		writeQ(activeChar.getSp());
@@ -60,17 +57,17 @@ public class CharSelected extends L2GameServerPacket
 		writeD(activeChar.getLevel());
 		writeD(activeChar.getReputation()); // thx evill33t
 		writeD(activeChar.getPkKills());
-
+		
 		writeD(TimeController.getInstance().getGameTime() % (24 * 60)); // "reset" on 24th hour
 		writeD(0x00);
-
+		
 		writeD(activeChar.getCurrentClass().getId());
-
+		
 		writeD(0x00);
 		writeD(0x00);
 		writeD(0x00);
 		writeD(0x00);
-
+		
 		writeB(new byte[64]);
 		writeD(0x00);
 	}

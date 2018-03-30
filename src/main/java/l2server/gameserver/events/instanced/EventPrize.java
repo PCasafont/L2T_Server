@@ -24,81 +24,66 @@ import java.util.List;
 /**
  * @author Pere
  */
-public abstract class EventPrize
-{
+public abstract class EventPrize {
 	protected final float chance;
 	protected final boolean dependsOnPerformance;
 
-	public EventPrize(XmlNode node)
-	{
+	public EventPrize(XmlNode node) {
 		chance = node.getFloat("chance");
 		dependsOnPerformance = node.getBool("dependsOnPerformance", false);
 	}
 
 	public abstract EventPrizeItem getItem();
 
-	public static class EventPrizeItem extends EventPrize
-	{
+	public static class EventPrizeItem extends EventPrize {
 		private final int id;
 		private final int min;
 		private final int max;
 
-		public EventPrizeItem(XmlNode node)
-		{
+		public EventPrizeItem(XmlNode node) {
 			super(node);
 			id = node.getInt("id");
 			min = node.getInt("min");
 			max = node.getInt("max");
 		}
 
-		public int getId()
-		{
+		public int getId() {
 			return id;
 		}
 
-		public int getMin()
-		{
+		public int getMin() {
 			return min;
 		}
 
-		public int getMax()
-		{
+		public int getMax() {
 			return max;
 		}
 
 		@Override
-		public EventPrizeItem getItem()
-		{
+		public EventPrizeItem getItem() {
 			return this;
 		}
 	}
 
-	public static class EventPrizeCategory extends EventPrize
-	{
+	public static class EventPrizeCategory extends EventPrize {
 		private final List<EventPrizeItem> items = new ArrayList<>();
 
-		public EventPrizeCategory(XmlNode node)
-		{
+		public EventPrizeCategory(XmlNode node) {
 			super(node);
-			for (XmlNode subNode : node.getChildren())
-			{
-				if (subNode.getName().equalsIgnoreCase("item"))
-				{
+			for (XmlNode subNode : node.getChildren()) {
+				if (subNode.getName().equalsIgnoreCase("item")) {
 					items.add(new EventPrizeItem(subNode));
 				}
 			}
 		}
 
 		@Override
-		public EventPrizeItem getItem()
-		{
+		public EventPrizeItem getItem() {
 			float rnd = Rnd.get(100000) / 1000.0f;
 			float percent = 0.0f;
-			for (EventPrizeItem item : items)
-			{
+			for (EventPrizeItem item : items) {
 				percent += item.getChance();
-				if (percent > rnd)
-				{
+				if (percent > rnd) {
 					return item;
 				}
 			}
@@ -107,13 +92,11 @@ public abstract class EventPrize
 		}
 	}
 
-	public float getChance()
-	{
+	public float getChance() {
 		return chance;
 	}
 
-	public boolean dependsOnPerformance()
-	{
+	public boolean dependsOnPerformance() {
 		return dependsOnPerformance;
 	}
 }

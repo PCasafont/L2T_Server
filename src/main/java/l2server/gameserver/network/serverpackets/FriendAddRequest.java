@@ -28,21 +28,18 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public class FriendAddRequest extends L2GameServerPacket
-{
+public class FriendAddRequest extends L2GameServerPacket {
 
 	private String requestorName;
 
 	/**
 	 */
-	public FriendAddRequest(String requestorName)
-	{
+	public FriendAddRequest(String requestorName) {
 		this.requestorName = requestorName;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeC(0x00);
 		writeS(requestorName);
 		writeD(0);

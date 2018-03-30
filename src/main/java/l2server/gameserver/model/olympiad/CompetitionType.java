@@ -18,20 +18,19 @@ package l2server.gameserver.model.olympiad;
 /**
  * @author DS
  */
-public enum CompetitionType
-{
-	CLASSED("classed"), NON_CLASSED("non-classed"), OTHER("other");
+public enum CompetitionType {
+	CLASSED("classed"),
+	NON_CLASSED("non-classed"),
+	OTHER("other");
 
 	private final String name;
 
-	CompetitionType(String name)
-	{
+	CompetitionType(String name) {
 		this.name = name;
 	}
 
 	@Override
-	public final String toString()
-	{
+	public final String toString() {
 		return name;
 	}
 }

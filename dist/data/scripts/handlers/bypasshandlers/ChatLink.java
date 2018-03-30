@@ -19,15 +19,12 @@ import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-public class ChatLink implements IBypassHandler
-{
+public class ChatLink implements IBypassHandler {
 	private static final String[] COMMANDS = {"Chat"};
 
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null)
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+		if (target == null) {
 			return false;
 		}
 
@@ -37,8 +34,7 @@ public class ChatLink implements IBypassHandler
 	}
 
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

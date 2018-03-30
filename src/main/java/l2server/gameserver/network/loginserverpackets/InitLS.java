@@ -17,26 +17,22 @@ package l2server.gameserver.network.loginserverpackets;
 
 import l2server.util.network.BaseRecievePacket;
 
-public class InitLS extends BaseRecievePacket
-{
+public class InitLS extends BaseRecievePacket {
 	private int rev;
 	private byte[] key;
 
-	public int getRevision()
-	{
+	public int getRevision() {
 		return rev;
 	}
 
-	public byte[] getRSAKey()
-	{
+	public byte[] getRSAKey() {
 		return key;
 	}
 
 	/**
 	 * @param decrypt
 	 */
-	public InitLS(byte[] decrypt)
-	{
+	public InitLS(byte[] decrypt) {
 		super(decrypt);
 		rev = readD();
 		int size = readD();

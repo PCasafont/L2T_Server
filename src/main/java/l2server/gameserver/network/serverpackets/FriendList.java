@@ -42,24 +42,21 @@ import java.util.List;
  *
  * @author Tempy
  */
-public class FriendList extends L2GameServerPacket
-{
+public class FriendList extends L2GameServerPacket {
 	//
 	private List<FriendInfo> info;
 	private int level = 0;
 	private int classId = 0;
 	private String memo;
 
-	private static class FriendInfo
-	{
+	private static class FriendInfo {
 		int objId;
 		String name;
 		boolean online;
 		int level;
 		int classId;
 
-		public FriendInfo(int objId, String name, boolean online, int level, int classId)
-		{
+		public FriendInfo(int objId, String name, boolean online, int level, int classId) {
 			this.objId = objId;
 			this.name = name;
 			this.online = online;
@@ -68,26 +65,20 @@ public class FriendList extends L2GameServerPacket
 		}
 	}
 
-	public FriendList(L2PcInstance player)
-	{
+	public FriendList(L2PcInstance player) {
 		info = new ArrayList<>(player.getFriendList().size());
-		for (int objId : player.getFriendList())
-		{
+		for (int objId : player.getFriendList()) {
 			memo = player.getFriendMemo(objId);
 			String name = CharNameTable.getInstance().getNameById(objId);
 			L2PcInstance player1 = L2World.getInstance().getPlayer(objId);
 			boolean online = false;
-			if (player1 != null && player1.isOnline())
-			{
+			if (player1 != null && player1.isOnline()) {
 				online = true;
 			}
-			if (online)
-			{
+			if (online) {
 				level = player1.getLevel();
 				classId = player1.getClassId();
-			}
-			else
-			{
+			} else {
 				offlineFriendInfo(objId);
 			}
 			info.add(new FriendInfo(objId, name, online, level, classId));
@@ -95,11 +86,9 @@ public class FriendList extends L2GameServerPacket
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(info.size());
-		for (FriendInfo info : info)
-		{
+		for (FriendInfo info : info) {
 			writeD(info.objId); // character id
 			writeS(info.name);
 			writeD(info.online ? 0x01 : 0x00); // online
@@ -110,72 +99,54 @@ public class FriendList extends L2GameServerPacket
 		}
 	}
 
-	private void offlineFriendInfo(int objId)
-	{
+	private void offlineFriendInfo(int objId) {
 		int level = 0;
 		int bClassId = 0;
 		Connection con = null;
 
-		try
-		{
+		try {
 			// Retrieve the L2PcInstance from the characters table of the database
 			con = L2DatabaseFactory.getInstance().getConnection();
 
-			PreparedStatement statement =
-					con.prepareStatement("SELECT level, classid, base_class FROM characters WHERE charId=?");
+			PreparedStatement statement = con.prepareStatement("SELECT level, classid, base_class FROM characters WHERE charId=?");
 			statement.setInt(1, objId);
 			ResultSet rset = statement.executeQuery();
-			while (rset.next())
-			{
+			while (rset.next()) {
 				level = rset.getByte("level");
 				classId = rset.getInt("classid");
 				bClassId = rset.getInt("base_class");
 			}
 			rset.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.warning("Failed loading character.");
 			e.printStackTrace();
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
-		if (classId != bClassId)
-		{
-			try
-			{
+		if (classId != bClassId) {
+			try {
 				// Retrieve the L2PcInstance from the characters table of the database
 				con = L2DatabaseFactory.getInstance().getConnection();
 
-				PreparedStatement statement =
-						con.prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
+				PreparedStatement statement = con.prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
 				statement.setInt(1, objId);
 				statement.setInt(2, classId);
 				ResultSet rset = statement.executeQuery();
 
-				while (rset.next())
-				{
-                    this.level = rset.getByte("level");
+				while (rset.next()) {
+					this.level = rset.getByte("level");
 				}
 
 				rset.close();
 				statement.close();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.warning("Failed loading character_subclasses.");
 				e.printStackTrace();
-			}
-			finally
-			{
+			} finally {
 				L2DatabaseFactory.close(con);
 			}
-		}
-		else
-		{
+		} else {
 			this.level = level;
 		}
 	}

@@ -23,8 +23,7 @@ import l2server.util.Rnd;
  *
  * @author Advi
  */
-public class ConditionGameChance extends Condition
-{
+public class ConditionGameChance extends Condition {
 	private final int chance;
 
 	/**
@@ -32,8 +31,7 @@ public class ConditionGameChance extends Condition
 	 *
 	 * @param chance the chance
 	 */
-	public ConditionGameChance(int chance)
-	{
+	public ConditionGameChance(int chance) {
 		this.chance = chance;
 	}
 
@@ -45,8 +43,7 @@ public class ConditionGameChance extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		return Rnd.get(100) < chance;
 	}
 }

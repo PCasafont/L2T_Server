@@ -28,8 +28,7 @@ import java.util.List;
  *
  * @version $Revision$ $Date$
  */
-public class L2Henna
-{
+public class L2Henna {
 	private final int symbolId;
 	private final int dye;
 	private final String name;
@@ -51,14 +50,12 @@ public class L2Henna
 	private final boolean isFourthSlot;
 	private List<SkillHolder> skills;
 
-	public L2Henna(StatsSet set)
-	{
+	public L2Henna(StatsSet set) {
 		symbolId = set.getInteger("symbolId");
 		dye = set.getInteger("dyeId");
 		name = set.getString("name");
 		long p = set.getLong("price", 0);
-		if (Config.isServer(Config.TENKAI_LEGACY))
-		{
+		if (Config.isServer(Config.TENKAI_LEGACY)) {
 			p = (int) Math.sqrt(p);
 		}
 		price = p;
@@ -74,18 +71,15 @@ public class L2Henna
 		elemVal = set.getInteger("elemVal", 0);
 		maxTime = set.getLong("time", 0);
 		isFourthSlot = set.getBool("fourthSlot", false);
-		if (set.getString("skills", null) != null)
-		{
+		if (set.getString("skills", null) != null) {
 			skills = new ArrayList<>();
 
 			String[] skillsParse = set.getString("skills").split(";");
-			for (String element : skillsParse)
-			{
+			for (String element : skillsParse) {
 				String[] skInfo = element.split(",");
 
 				SkillHolder sk = new SkillHolder(Integer.valueOf(skInfo[0]), Integer.valueOf(skInfo[1]));
-				if (sk.getSkill().getSkillType() == L2SkillType.NOTDONE)
-				{
+				if (sk.getSkill().getSkillType() == L2SkillType.NOTDONE) {
 					System.out.println(sk.getSkillId() + " is not done!");
 				}
 				skills.add(sk);
@@ -93,42 +87,36 @@ public class L2Henna
 		}
 	}
 
-	public int getSymbolId()
-	{
+	public int getSymbolId() {
 		return symbolId;
 	}
 
 	/**
 	 * @return
 	 */
-	public int getDyeId()
-	{
+	public int getDyeId() {
 		return dye;
 	}
 
 	/**
 	 * @return
 	 */
-	public String getName()
-	{
+	public String getName() {
 		return name;
 	}
 
 	/**
 	 * @return
 	 */
-	public long getPrice()
-	{
+	public long getPrice() {
 		return price;
 	}
 
 	/**
 	 * @return
 	 */
-	public int getAmountDyeRequire()
-	{
-		if (isFourthSlot())
-		{
+	public int getAmountDyeRequire() {
+		if (isFourthSlot()) {
 			return 1;
 		}
 
@@ -138,105 +126,90 @@ public class L2Henna
 	/**
 	 * @return
 	 */
-	public int getStatINT()
-	{
+	public int getStatINT() {
 		return INT;
 	}
 
 	/**
 	 * @return
 	 */
-	public int getStatSTR()
-	{
+	public int getStatSTR() {
 		return STR;
 	}
 
 	/**
 	 * @return
 	 */
-	public int getStatCON()
-	{
+	public int getStatCON() {
 		return CON;
 	}
 
 	/**
 	 * @return
 	 */
-	public int getStatMEM()
-	{
+	public int getStatMEM() {
 		return MEN;
 	}
 
 	/**
 	 * @return
 	 */
-	public int getStatDEX()
-	{
+	public int getStatDEX() {
 		return DEX;
 	}
 
 	/**
 	 * @return
 	 */
-	public int getStatWIT()
-	{
+	public int getStatWIT() {
 		return WIT;
 	}
 
 	/**
 	 * @return
 	 */
-	public int getStatLUC()
-	{
+	public int getStatLUC() {
 		return LUC;
 	}
 
 	/**
 	 * @return
 	 */
-	public int getStatCHA()
-	{
+	public int getStatCHA() {
 		return CHA;
 	}
 
 	/**
 	 * @return
 	 */
-	public int getStatElemId()
-	{
+	public int getStatElemId() {
 		return elemId;
 	}
 
 	/**
 	 * @return
 	 */
-	public int getStatElemVal()
-	{
+	public int getStatElemVal() {
 		return elemVal;
 	}
 
-	public long getMaxTime()
-	{
+	public long getMaxTime() {
 		return maxTime;
 	}
 
-	public boolean isFourthSlot()
-	{
+	public boolean isFourthSlot() {
 		return isFourthSlot;
 	}
 
-	public List<SkillHolder> getSkills()
-	{
+	public List<SkillHolder> getSkills() {
 		return skills;
 	}
 
-	public void setExpiryTime(long time)
-	{
+	public void setExpiryTime(long time) {
 		expiryTime = time;
 	}
 
-	public long getExpiryTime()
-	{
+	public long getExpiryTime() {
 		return expiryTime;
 	}
 }

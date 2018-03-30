@@ -31,8 +31,7 @@ import java.util.logging.Level;
 /**
  * @authors BiTi, Sami
  */
-public class SummonFriend implements ISkillHandler
-{
+public class SummonFriend implements ISkillHandler {
 	//private static Logger log = Logger.getLogger(SummonFriend.class.getName());
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.SUMMON_FRIEND};
 
@@ -40,41 +39,31 @@ public class SummonFriend implements ISkillHandler
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (!(activeChar instanceof L2PcInstance))
-		{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+		if (!(activeChar instanceof L2PcInstance)) {
 			return; // currently not implemented for others
 		}
 		L2PcInstance activePlayer = (L2PcInstance) activeChar;
 
-		if (!L2PcInstance.checkSummonerStatus(activePlayer))
-		{
+		if (!L2PcInstance.checkSummonerStatus(activePlayer)) {
 			return;
 		}
 
-		try
-		{
-			for (L2Character target : (L2Character[]) targets)
-			{
-				if (activeChar == target)
-				{
+		try {
+			for (L2Character target : (L2Character[]) targets) {
+				if (activeChar == target) {
 					continue;
 				}
 
-				if (target instanceof L2PcInstance)
-				{
+				if (target instanceof L2PcInstance) {
 					L2PcInstance targetPlayer = (L2PcInstance) target;
 
-					if (!L2PcInstance.checkSummonTargetStatus(targetPlayer, activePlayer))
-					{
+					if (!L2PcInstance.checkSummonTargetStatus(targetPlayer, activePlayer)) {
 						continue;
 					}
 
-					if (!Util.checkIfInRange(0, activeChar, target, false))
-					{
-						if (!targetPlayer.teleportRequest(activePlayer, skill))
-						{
+					if (!Util.checkIfInRange(0, activeChar, target, false)) {
+						if (!targetPlayer.teleportRequest(activePlayer, skill)) {
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_ALREADY_SUMMONED);
 							sm.addString(target.getName());
 							activePlayer.sendPacket(sm);
@@ -83,25 +72,20 @@ public class SummonFriend implements ISkillHandler
 						if (skill.getId() == 1403) //summon friend
 						{
 							// Send message
-							ConfirmDlg confirm = new ConfirmDlg(
-									SystemMessageId.C1_WISHES_TO_SUMMON_YOU_FROM_S2_DO_YOU_ACCEPT.getId());
+							ConfirmDlg confirm = new ConfirmDlg(SystemMessageId.C1_WISHES_TO_SUMMON_YOU_FROM_S2_DO_YOU_ACCEPT.getId());
 							confirm.addCharName(activeChar);
 							confirm.addZoneName(activeChar.getX(), activeChar.getY(), activeChar.getZ());
 							confirm.addTime(30000);
 							confirm.addRequesterId(activePlayer.getObjectId());
 							target.sendPacket(confirm);
-						}
-						else
-						{
+						} else {
 							L2PcInstance.teleToTarget(targetPlayer, activePlayer, skill);
 							targetPlayer.teleportRequest(null, null);
 						}
 					}
 				}
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			log.log(Level.SEVERE, "", e);
 		}
 	}
@@ -110,8 +94,7 @@ public class SummonFriend implements ISkillHandler
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

@@ -26,33 +26,29 @@ import l2server.gameserver.model.actor.L2Character;
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public final class StopMove extends L2GameServerPacket
-{
+public final class StopMove extends L2GameServerPacket {
 	private int objectId;
 	private int x;
 	private int y;
 	private int z;
 	private int heading;
-
-	public StopMove(L2Character cha)
-	{
+	
+	public StopMove(L2Character cha) {
 		this(cha.getObjectId(), cha.getX(), cha.getY(), cha.getZ(), cha.getHeading());
 	}
-
+	
 	/**
 	 */
-	public StopMove(int objectId, int x, int y, int z, int heading)
-	{
+	public StopMove(int objectId, int x, int y, int z, int heading) {
 		this.objectId = objectId;
 		this.x = x;
 		this.y = y;
 		this.z = z;
 		this.heading = heading;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objectId);
 		writeD(x);
 		writeD(y);

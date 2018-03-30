@@ -23,8 +23,7 @@ import java.util.logging.Logger;
 /**
  * @author nBd
  */
-public interface IBypassHandler
-{
+public interface IBypassHandler {
 	Logger log = Logger.getLogger(IBypassHandler.class.getName());
 
 	/**

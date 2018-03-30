@@ -24,19 +24,15 @@ import java.util.concurrent.ScheduledFuture;
 /**
  * @author Layane
  */
-public abstract class Task
-{
+public abstract class Task {
 
-	public void initialize()
-	{
-		if (Config.DEBUG)
-		{
+	public void initialize() {
+		if (Config.DEBUG) {
 			Log.info("Task" + getName() + " inializate");
 		}
 	}
 
-	public ScheduledFuture<?> launchSpecial(ExecutedTask instance)
-	{
+	public ScheduledFuture<?> launchSpecial(ExecutedTask instance) {
 		return null;
 	}
 
@@ -44,7 +40,6 @@ public abstract class Task
 
 	public abstract void onTimeElapsed(ExecutedTask task);
 
-	public void onDestroy()
-	{
+	public void onDestroy() {
 	}
 }

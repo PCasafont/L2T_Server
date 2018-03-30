@@ -15,108 +15,91 @@
 
 package l2server.gameserver.model;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.util.Point3D;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import gnu.trove.TIntObjectHashMap;
-
 /**
  * @author Pere
  */
-public class L2FlyMove
-{
-	public enum L2FlyMoveType
-	{
-		START, CHOOSE, MOVE
+public class L2FlyMove {
+	public enum L2FlyMoveType {
+		START,
+		CHOOSE,
+		MOVE
 	}
 
 	private int id;
 	private TIntObjectHashMap<Point3D> steps = new TIntObjectHashMap<>();
 	private TIntObjectHashMap<L2FlyMoveChoose> chooses = new TIntObjectHashMap<>();
 
-	public L2FlyMove(int id)
-	{
+	public L2FlyMove(int id) {
 		this.id = id;
 	}
 
-	public int getId()
-	{
+	public int getId() {
 		return id;
 	}
 
-	public void addStep(int id, Point3D s)
-	{
+	public void addStep(int id, Point3D s) {
 		steps.put(id, s);
 	}
 
-	public Point3D getStep(int id)
-	{
+	public Point3D getStep(int id) {
 		return steps.get(id);
 	}
 
-	public void addChoose(int id, L2FlyMoveChoose c)
-	{
+	public void addChoose(int id, L2FlyMoveChoose c) {
 		chooses.put(id, c);
 	}
 
-	public L2FlyMoveChoose getChoose(int id)
-	{
+	public L2FlyMoveChoose getChoose(int id) {
 		return chooses.get(id);
 	}
 
-	public class L2FlyMoveChoose
-	{
+	public class L2FlyMoveChoose {
 		private int at;
 		private List<L2FlyMoveOption> options = new ArrayList<>();
 
-		public L2FlyMoveChoose(int at)
-		{
+		public L2FlyMoveChoose(int at) {
 			this.at = at;
 		}
 
-		public int getAt()
-		{
+		public int getAt() {
 			return at;
 		}
 
-		public void addOption(L2FlyMoveOption o)
-		{
+		public void addOption(L2FlyMoveOption o) {
 			options.add(o);
 		}
 
-		public List<L2FlyMoveOption> getOptions()
-		{
+		public List<L2FlyMoveOption> getOptions() {
 			return options;
 		}
 	}
 
-	public class L2FlyMoveOption
-	{
+	public class L2FlyMoveOption {
 		private int start;
 		private int end;
 		private int last;
 
-		public L2FlyMoveOption(int start, int end, int last)
-		{
+		public L2FlyMoveOption(int start, int end, int last) {
 			this.start = start;
 			this.end = end;
 			this.last = last;
 		}
 
-		public int getStart()
-		{
+		public int getStart() {
 			return start;
 		}
 
-		public int getEnd()
-		{
+		public int getEnd() {
 			return end;
 		}
 
-		public int getLast()
-		{
+		public int getLast() {
 			return last;
 		}
 	}

@@ -34,49 +34,39 @@ import l2server.gameserver.util.Broadcast;
  *
  * @author Tempy
  */
-public class BeastSoulShot implements IItemHandler
-{
+public class BeastSoulShot implements IItemHandler {
 	/**
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (playable == null)
-		{
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (playable == null) {
 			return;
 		}
 
 		L2PcInstance summoner = playable.getActingPlayer();
 
-		if (playable instanceof L2Summon)
-		{
+		if (playable instanceof L2Summon) {
 			summoner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PET_CANNOT_USE_ITEM));
 			return;
 		}
 
-		if (summoner.getPet() != null)
-		{
+		if (summoner.getPet() != null) {
 			useShot(summoner, summoner.getPet(), item);
 		}
-		for (L2SummonInstance summon : summoner.getSummons())
-		{
+		for (L2SummonInstance summon : summoner.getSummons()) {
 			useShot(summoner, summon, item);
 		}
 	}
 
-	public void useShot(L2PcInstance summoner, L2Summon summon, L2ItemInstance item)
-	{
-		if (summon == null)
-		{
+	public void useShot(L2PcInstance summoner, L2Summon summon, L2ItemInstance item) {
+		if (summon == null) {
 			summoner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PETS_ARE_NOT_AVAILABLE_AT_THIS_TIME));
 			return;
 		}
 
-		if (summon.isDead())
-		{
-			summoner.sendPacket(SystemMessage
-					.getSystemMessage(SystemMessageId.SOULSHOTS_AND_SPIRITSHOTS_ARE_NOT_AVAILABLE_FOR_A_DEAD_PET));
+		if (summon.isDead()) {
+			summoner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SOULSHOTS_AND_SPIRITSHOTS_ARE_NOT_AVAILABLE_FOR_A_DEAD_PET));
 			return;
 		}
 
@@ -84,11 +74,9 @@ public class BeastSoulShot implements IItemHandler
 		short shotConsumption = summon.getSoulShotsPerHit();
 		long shotCount = item.getCount();
 
-		if (!(shotCount > shotConsumption))
-		{
+		if (!(shotCount > shotConsumption)) {
 			// Not enough Soulshots to use.
-			if (!summoner.disableAutoShot(item))
-			{
+			if (!summoner.disableAutoShot(item)) {
 				summoner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SOULSHOTS_FOR_PET));
 			}
 			return;
@@ -96,16 +84,11 @@ public class BeastSoulShot implements IItemHandler
 
 		int rubyLvl = 0;
 		PcInventory playerInventory = summoner.getInventory();
-		for (int i = Inventory.PAPERDOLL_JEWELRY1;
-			 i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount();
-			 i++)
-		{
+		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount(); i++) {
 			L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
-			if (jewel != null)
-			{
+			if (jewel != null) {
 				//Ruby
-				switch (jewel.getItemId())
-				{
+				switch (jewel.getItemId()) {
 					case 38855:
 						rubyLvl = 1;
 						break;
@@ -130,11 +113,9 @@ public class BeastSoulShot implements IItemHandler
 		int skillId = 0;
 		int skillLvl = 1;
 		double rubyMul = 1.0;
-		switch (rubyLvl)
-		{
+		switch (rubyLvl) {
 			case 0:
-				switch (itemId)
-				{
+				switch (itemId) {
 					case 6645:
 						skillId = 17817;
 						break;
@@ -171,24 +152,18 @@ public class BeastSoulShot implements IItemHandler
 		}
 
 		L2ItemInstance weaponInst = null;
-		if (summon instanceof L2PetInstance)
-		{
+		if (summon instanceof L2PetInstance) {
 			weaponInst = ((L2PetInstance) summon).getActiveWeaponInstance();
 		}
 
-		if (weaponInst == null)
-		{
-			if (summon.getChargedSoulShot() != L2ItemInstance.CHARGED_NONE)
-			{
+		if (weaponInst == null) {
+			if (summon.getChargedSoulShot() != L2ItemInstance.CHARGED_NONE) {
 				return;
 			}
 
 			summon.setChargedSoulShot(L2ItemInstance.CHARGED_SOULSHOT * rubyMul);
-		}
-		else
-		{
-			if (weaponInst.getChargedSoulShot() != L2ItemInstance.CHARGED_NONE)
-			{
+		} else {
+			if (weaponInst.getChargedSoulShot() != L2ItemInstance.CHARGED_NONE) {
 				// SoulShots are already active.
 				return;
 			}
@@ -196,10 +171,8 @@ public class BeastSoulShot implements IItemHandler
 		}
 
 		// If the player doesn't have enough beast soulshot remaining, remove any auto soulshot task.
-		if (!summoner.destroyItemWithoutTrace("Consume", item.getObjectId(), shotConsumption, null, false))
-		{
-			if (!summoner.disableAutoShot(item))
-			{
+		if (!summoner.destroyItemWithoutTrace("Consume", item.getObjectId(), shotConsumption, null, false)) {
+			if (!summoner.disableAutoShot(item)) {
 				summoner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SOULSHOTS_FOR_PET));
 			}
 			return;
@@ -208,7 +181,6 @@ public class BeastSoulShot implements IItemHandler
 		// Pet uses the power of spirit.
 		summoner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PET_USE_SPIRITSHOT));
 
-		Broadcast.toSelfAndKnownPlayersInRadius(summoner, new MagicSkillUse(summon, summon, skillId, skillLvl, 0, 0, 0),
-				360000/*600*/);
+		Broadcast.toSelfAndKnownPlayersInRadius(summoner, new MagicSkillUse(summon, summon, skillId, skillLvl, 0, 0, 0), 360000/*600*/);
 	}
 }

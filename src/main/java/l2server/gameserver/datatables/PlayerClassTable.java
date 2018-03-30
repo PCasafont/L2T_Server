@@ -28,20 +28,13 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @author Pere
  */
-public class PlayerClassTable implements Reloadable
-{
+public class PlayerClassTable implements Reloadable {
 	private Map<Integer, PlayerClass> classes = new HashMap<>();
 
 	private Map<Long, Integer> minSkillLevels = new HashMap<>();
@@ -51,227 +44,199 @@ public class PlayerClassTable implements Reloadable
 
 	private final Map<Integer, List<Integer>> awakeningBannedSubclasses = new HashMap<>();
 
-	public static PlayerClassTable getInstance()
-	{
+	public static PlayerClassTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private PlayerClassTable()
-	{
-		try
-		{
+	private PlayerClassTable() {
+		try {
 			load();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		ReloadableManager.getInstance().register("classes", this);
 	}
 
-	public void load()
-	{
+	public void load() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "classes.xml");
 		XmlDocument doc = new XmlDocument(file);
 
 		int count = 0;
-		for (XmlNode classNode : doc.getChildren())
-		{
-            if (classNode.getName().equalsIgnoreCase("class"))
-            {
-                int id = classNode.getInt("id");
-                String name = classNode.getString("name");
-                int parentId = classNode.getInt("parentId", -1);
-                int awakensTo = classNode.getInt("awakensTo", -1);
-                boolean isMage = classNode.getBool("isMage", false);
-                int raceId = classNode.getInt("raceId", -1);
-                int level = classNode.getInt("level");
+		for (XmlNode classNode : doc.getChildren()) {
+			if (classNode.getName().equalsIgnoreCase("class")) {
+				int id = classNode.getInt("id");
+				String name = classNode.getString("name");
+				int parentId = classNode.getInt("parentId", -1);
+				int awakensTo = classNode.getInt("awakensTo", -1);
+				boolean isMage = classNode.getBool("isMage", false);
+				int raceId = classNode.getInt("raceId", -1);
+				int level = classNode.getInt("level");
 
-                PlayerClass cl =
-                        new PlayerClass(id, name, classes.get(parentId), awakensTo, isMage, raceId, level);
+				PlayerClass cl = new PlayerClass(id, name, classes.get(parentId), awakensTo, isMage, raceId, level);
 
-                if (cl.getParent() != null)
-                {
-                    cl.getSkills().putAll(cl.getParent().getSkills());
-                }
+				if (cl.getParent() != null) {
+					cl.getSkills().putAll(cl.getParent().getSkills());
+				}
 
-                if (classNode.hasAttribute("pickSkillsFrom"))
-                {
-                    PlayerClass pickSkillsFrom = classes.get(classNode.getInt("pickSkillsFrom"));
-                    cl.getSkills().putAll(pickSkillsFrom.getSkills());
-                }
+				if (classNode.hasAttribute("pickSkillsFrom")) {
+					PlayerClass pickSkillsFrom = classes.get(classNode.getInt("pickSkillsFrom"));
+					cl.getSkills().putAll(pickSkillsFrom.getSkills());
+				}
 
-                for (XmlNode subNode : classNode.getChildren())
-                {
-                    if (subNode.getName().equalsIgnoreCase("skill"))
-                    {
-                        int skillId = subNode.getInt("id");
-                        String[] levels = subNode.getString("level").split(",");
-                        int reqSp = subNode.getInt("reqSp");
-                        int minLevel = subNode.getInt("minLevel");
-                        int minDualLevel = subNode.getInt("minDualLevel", 0);
-                        boolean learnFromPanel = subNode.getBool("learnFromPanel", true);
-                        boolean learnFromFS = subNode.getBool("learnFromFS", false);
-                        boolean isTransfer = subNode.getBool("isTransfer", false);
-                        boolean autoGet = subNode.getBool("autoGet", false);
+				for (XmlNode subNode : classNode.getChildren()) {
+					if (subNode.getName().equalsIgnoreCase("skill")) {
+						int skillId = subNode.getInt("id");
+						String[] levels = subNode.getString("level").split(",");
+						int reqSp = subNode.getInt("reqSp");
+						int minLevel = subNode.getInt("minLevel");
+						int minDualLevel = subNode.getInt("minDualLevel", 0);
+						boolean learnFromPanel = subNode.getBool("learnFromPanel", true);
+						boolean learnFromFS = subNode.getBool("learnFromFS", false);
+						boolean isTransfer = subNode.getBool("isTransfer", false);
+						boolean autoGet = subNode.getBool("autoGet", false);
 
-                        for (String mls : levels)
-                        {
-                            int skillLevel = Integer.valueOf(mls);
-                            long hash = SkillTable.getSkillHashCode(skillId, skillLevel);
-                            L2SkillLearn sl =
-                                    new L2SkillLearn(skillId, skillLevel, reqSp, minLevel, minDualLevel,
-                                            learnFromPanel, learnFromFS, isTransfer, autoGet);
+						for (String mls : levels) {
+							int skillLevel = Integer.valueOf(mls);
+							long hash = SkillTable.getSkillHashCode(skillId, skillLevel);
+							L2SkillLearn sl = new L2SkillLearn(skillId,
+									skillLevel,
+									reqSp,
+									minLevel,
+									minDualLevel,
+									learnFromPanel,
+									learnFromFS,
+									isTransfer,
+									autoGet);
 
-                            for (XmlNode reqNode : subNode.getChildren())
-                            {
-                                if (reqNode.getName().equalsIgnoreCase("reqSkill"))
-                                {
-                                    int reqSkillId = reqNode.getInt("id");
-                                    sl.addCostSkill(reqSkillId);
-                                }
-                            }
+							for (XmlNode reqNode : subNode.getChildren()) {
+								if (reqNode.getName().equalsIgnoreCase("reqSkill")) {
+									int reqSkillId = reqNode.getInt("id");
+									sl.addCostSkill(reqSkillId);
+								}
+							}
 
-                            cl.addSkill(hash, sl);
-                            minSkillLevels.put(hash, minLevel);
-                        }
-                    }
-                    else if (subNode.getName().equalsIgnoreCase("skillReplacement"))
-                    {
-                        int skillId = subNode.getInt("id");
-                        int replacedBy = subNode.getInt("replacedBy");
-                        Map<Long, L2SkillLearn> skills = new HashMap<>();
-                        skills.putAll(cl.getSkills());
-                        for (long hash : skills.keySet())
-                        {
-                            L2SkillLearn sl = cl.getSkills().get(hash);
-                            if (sl.getId() == skillId)
-                            {
-                                cl.getSkills().remove(hash);
-                                cl.addSkill(SkillTable.getSkillHashCode(replacedBy, sl.getLevel()),
-                                        new L2SkillLearn(replacedBy, sl.getLevel(), sl.getSpCost(),
-                                                sl.getMinLevel(), sl.getMinDualLevel(), sl.isLearnedFromPanel(),
-                                                sl.isLearnedByFS(), sl.isTransferSkill(), sl.isAutoGetSkill()));
-                            }
-                        }
-                    }
-                    else if (subNode.getName().equalsIgnoreCase("skillRemoval"))
-                    {
-                        int skillId = subNode.getInt("id");
-                        Map<Long, L2SkillLearn> skills = new HashMap<>();
-                        skills.putAll(cl.getSkills());
-                        for (long hash : skills.keySet())
-                        {
-                            L2SkillLearn sl = cl.getSkills().get(hash);
-                            if (sl.getId() == skillId)
-                            {
-                                cl.getSkills().remove(hash);
-                            }
-                        }
-                    }
-                }
+							cl.addSkill(hash, sl);
+							minSkillLevels.put(hash, minLevel);
+						}
+					} else if (subNode.getName().equalsIgnoreCase("skillReplacement")) {
+						int skillId = subNode.getInt("id");
+						int replacedBy = subNode.getInt("replacedBy");
+						Map<Long, L2SkillLearn> skills = new HashMap<>();
+						skills.putAll(cl.getSkills());
+						for (long hash : skills.keySet()) {
+							L2SkillLearn sl = cl.getSkills().get(hash);
+							if (sl.getId() == skillId) {
+								cl.getSkills().remove(hash);
+								cl.addSkill(SkillTable.getSkillHashCode(replacedBy, sl.getLevel()),
+										new L2SkillLearn(replacedBy,
+												sl.getLevel(),
+												sl.getSpCost(),
+												sl.getMinLevel(),
+												sl.getMinDualLevel(),
+												sl.isLearnedFromPanel(),
+												sl.isLearnedByFS(),
+												sl.isTransferSkill(),
+												sl.isAutoGetSkill()));
+							}
+						}
+					} else if (subNode.getName().equalsIgnoreCase("skillRemoval")) {
+						int skillId = subNode.getInt("id");
+						Map<Long, L2SkillLearn> skills = new HashMap<>();
+						skills.putAll(cl.getSkills());
+						for (long hash : skills.keySet()) {
+							L2SkillLearn sl = cl.getSkills().get(hash);
+							if (sl.getId() == skillId) {
+								cl.getSkills().remove(hash);
+							}
+						}
+					}
+				}
 
-                // Remove low level skills
-                if (cl.getLevel() == 85 && cl.getRace() != Race.Ertheia)
-                {
-                    Set<Integer> toRemove = new HashSet<>();
-                    for (long hash : cl.getSkills().keySet())
-                    {
-                        L2SkillLearn sl = cl.getSkills().get(hash);
-                        if (sl.getMinLevel() < 85)
-                        {
-                            toRemove.add(sl.getId());
-                        }
-                        else
-                        {
-                            toRemove.remove(sl.getId());
-                        }
-                    }
+				// Remove low level skills
+				if (cl.getLevel() == 85 && cl.getRace() != Race.Ertheia) {
+					Set<Integer> toRemove = new HashSet<>();
+					for (long hash : cl.getSkills().keySet()) {
+						L2SkillLearn sl = cl.getSkills().get(hash);
+						if (sl.getMinLevel() < 85) {
+							toRemove.add(sl.getId());
+						} else {
+							toRemove.remove(sl.getId());
+						}
+					}
 
-                    Map<Long, L2SkillLearn> skills = new HashMap<>();
-                    skills.putAll(cl.getSkills());
-                    for (long hash : skills.keySet())
-                    {
-                        L2SkillLearn sl = cl.getSkills().get(hash);
-                        if (toRemove.contains(sl.getId()))
-                        {
-                            cl.getSkills().remove(hash);
-                        }
-                    }
-                }
+					Map<Long, L2SkillLearn> skills = new HashMap<>();
+					skills.putAll(cl.getSkills());
+					for (long hash : skills.keySet()) {
+						L2SkillLearn sl = cl.getSkills().get(hash);
+						if (toRemove.contains(sl.getId())) {
+							cl.getSkills().remove(hash);
+						}
+					}
+				}
 
-                if (Config.isServer(Config.TENKAI))
-                {
-                    // Copy the map keys so that we avoid a concurrent modification exception
-                    Set<Long> skillHashes = new HashSet<>(cl.getSkills().keySet());
-                    for (long hash : skillHashes)
-                    {
-                        L2SkillLearn sl = cl.getSkills().get(hash);
-                        for (int reqSkillId : sl.getCostSkills())
-                        {
-                            long reqHash = SkillTable.getSkillHashCode(reqSkillId, 1);
-                            if (cl.getParent() != null && cl.getParent().getSkills().containsKey(reqHash))
-                            {
-                                L2SkillLearn rsl;
-                                if (!cl.getSkills().containsKey(reqHash))
-                                {
-                                    rsl = new L2SkillLearn(reqSkillId, 1, 1, 85, 0, true, false, false, false);
-                                    rsl.setIsRemember(true);
-                                    cl.addSkill(reqHash, rsl);
-                                    for (int lv = 2;
-                                         cl.getParent().getSkills()
-                                                 .containsKey(SkillTable.getSkillHashCode(reqSkillId, lv));
-                                         lv++)
-                                    {
-                                        cl.addSkill(SkillTable.getSkillHashCode(reqSkillId, lv),
-                                                new L2SkillLearn(reqSkillId, lv, 1, 85, 0, true, false, false,
-                                                        false));
-                                    }
-                                }
-                                else
-                                {
-                                    rsl = cl.getSkills().get(reqHash);
-                                }
+				if (Config.isServer(Config.TENKAI)) {
+					// Copy the map keys so that we avoid a concurrent modification exception
+					Set<Long> skillHashes = new HashSet<>(cl.getSkills().keySet());
+					for (long hash : skillHashes) {
+						L2SkillLearn sl = cl.getSkills().get(hash);
+						for (int reqSkillId : sl.getCostSkills()) {
+							long reqHash = SkillTable.getSkillHashCode(reqSkillId, 1);
+							if (cl.getParent() != null && cl.getParent().getSkills().containsKey(reqHash)) {
+								L2SkillLearn rsl;
+								if (!cl.getSkills().containsKey(reqHash)) {
+									rsl = new L2SkillLearn(reqSkillId, 1, 1, 85, 0, true, false, false, false);
+									rsl.setIsRemember(true);
+									cl.addSkill(reqHash, rsl);
+									for (int lv = 2; cl.getParent().getSkills().containsKey(SkillTable.getSkillHashCode(reqSkillId, lv)); lv++) {
+										cl.addSkill(SkillTable.getSkillHashCode(reqSkillId, lv),
+												new L2SkillLearn(reqSkillId, lv, 1, 85, 0, true, false, false, false));
+									}
+								} else {
+									rsl = cl.getSkills().get(reqHash);
+								}
 
-                                rsl.addCostSkill(sl.getId());
-                            }
-                        }
-                    }
-                }
+								rsl.addCostSkill(sl.getId());
+							}
+						}
+					}
+				}
 
-                classes.put(id, cl);
-                count++;
-            }
-            else if (classNode.getName().equalsIgnoreCase("skill"))
-            {
-                int skillId = classNode.getInt("id");
-                String[] levels = classNode.getString("level").split(",");
-                int reqSp = classNode.getInt("reqSp");
-                int minLevel = classNode.getInt("minLevel");
-                int minDualLevel = classNode.getInt("minDualLevel", 0);
-                boolean learnFromPanel = classNode.getBool("learnFromPanel", true);
-                boolean learnFromFS = classNode.getBool("learnFromFS", false);
-                boolean isTransfer = classNode.getBool("isTransfer", false);
-                boolean autoGet = classNode.getBool("autoGet", false);
+				classes.put(id, cl);
+				count++;
+			} else if (classNode.getName().equalsIgnoreCase("skill")) {
+				int skillId = classNode.getInt("id");
+				String[] levels = classNode.getString("level").split(",");
+				int reqSp = classNode.getInt("reqSp");
+				int minLevel = classNode.getInt("minLevel");
+				int minDualLevel = classNode.getInt("minDualLevel", 0);
+				boolean learnFromPanel = classNode.getBool("learnFromPanel", true);
+				boolean learnFromFS = classNode.getBool("learnFromFS", false);
+				boolean isTransfer = classNode.getBool("isTransfer", false);
+				boolean autoGet = classNode.getBool("autoGet", false);
 
-                for (String mls : levels)
-                {
-                    int skillLevel = Integer.valueOf(mls);
-                    long hash = SkillTable.getSkillHashCode(skillId, skillLevel);
-                    for (int PlayerClass : classes.keySet())
-                    {
-                        classes.get(PlayerClass).addSkill(hash,
-                                new L2SkillLearn(skillId, skillLevel, reqSp, minLevel, minDualLevel,
-                                        learnFromPanel, learnFromFS, isTransfer, autoGet));
-                    }
-                    minSkillLevels.put(hash, minLevel);
-                }
-            }
-        }
+				for (String mls : levels) {
+					int skillLevel = Integer.valueOf(mls);
+					long hash = SkillTable.getSkillHashCode(skillId, skillLevel);
+					for (int PlayerClass : classes.keySet()) {
+						classes.get(PlayerClass)
+								.addSkill(hash,
+										new L2SkillLearn(skillId,
+												skillLevel,
+												reqSp,
+												minLevel,
+												minDualLevel,
+												learnFromPanel,
+												learnFromFS,
+												isTransfer,
+												autoGet));
+					}
+					minSkillLevels.put(hash, minLevel);
+				}
+			}
+		}
 		Log.info("PlayerClassTable: loaded " + count + " classes.");
 
-		if (Config.IS_CLASSIC)
-		{
+		if (Config.IS_CLASSIC) {
 			return;
 		}
 
@@ -286,12 +251,9 @@ public class PlayerClassTable implements Reloadable
 		mainSubclassSet.removeAll(neverSubclassed);
 
 		awakeningBannedSubclasses.clear();
-		for (PlayerClass pc : classes.values())
-		{
-			if (pc.getLevel() == 40)
-			{
-				if (!awakeningBannedSubclasses.containsKey(getAwakening(pc.getId())))
-				{
+		for (PlayerClass pc : classes.values()) {
+			if (pc.getLevel() == 40) {
+				if (!awakeningBannedSubclasses.containsKey(getAwakening(pc.getId()))) {
 					List<Integer> list = new ArrayList<>();
 					awakeningBannedSubclasses.put(getAwakening(pc.getId()), list);
 				}
@@ -301,11 +263,9 @@ public class PlayerClassTable implements Reloadable
 	}
 
 	@Override
-	public boolean reload()
-	{
+	public boolean reload() {
 		load();
-		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
-		{
+		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
 			player.setClassTemplate(player.getCurrentClass().getId());
 			player.broadcastUserInfo();
 		}
@@ -316,65 +276,53 @@ public class PlayerClassTable implements Reloadable
 	}
 
 	@Override
-	public String getReloadMessage(boolean success)
-	{
+	public String getReloadMessage(boolean success) {
 		return "Player Classes reloaded";
 	}
 
-	public final Collection<PlayerClass> getAllClasses()
-	{
+	public final Collection<PlayerClass> getAllClasses() {
 		return classes.values();
 	}
 
-	public final PlayerClass getClassById(int PlayerClass)
-	{
+	public final PlayerClass getClassById(int PlayerClass) {
 		PlayerClass cl = classes.get(PlayerClass);
-		if (cl == null)
-		{
+		if (cl == null) {
 			throw new IllegalArgumentException("No template for PlayerClass: " + PlayerClass);
 		}
 
 		return cl;
 	}
 
-	public final String getClassNameById(int PlayerClass)
-	{
+	public final String getClassNameById(int PlayerClass) {
 		PlayerClass cl = classes.get(PlayerClass);
-		if (cl == null)
-		{
+		if (cl == null) {
 			throw new IllegalArgumentException("No template for PlayerClass: " + PlayerClass);
 		}
 		return cl.getName();
 	}
 
-	public final int getMinSkillLevel(int id, int level)
-	{
+	public final int getMinSkillLevel(int id, int level) {
 		//if (level >= 100)
 		//	level = SkillTable.getInstance().getMaxLevel(id);
 		long hash = SkillTable.getSkillHashCode(id, level);
-		if (minSkillLevels.containsKey(hash))
-		{
+		if (minSkillLevels.containsKey(hash)) {
 			return minSkillLevels.get(hash);
 		}
 		return 0;
 	}
 
-	public final List<Integer> getAvailableSubclasses(L2PcInstance player, int baseClassId)
-	{
-		if (player.getLevel() < 76)
-		{
+	public final List<Integer> getAvailableSubclasses(L2PcInstance player, int baseClassId) {
+		if (player.getLevel() < 76) {
 			return null;
 		}
 
 		List<Integer> subclasses = new CopyOnWriteArrayList<>();
-		if (player.getRace() != Race.Kamael)
-		{
+		if (player.getRace() != Race.Kamael) {
 			subclasses.addAll(mainSubclassSet);
 
 			// Remove all the same awakening subclasses from selection
 			List<Integer> bannedSubs = awakeningBannedSubclasses.get(getAwakening(baseClassId));
-			if (bannedSubs != null)
-			{
+			if (bannedSubs != null) {
 				subclasses.removeAll(bannedSubs);
 			}
 
@@ -388,19 +336,15 @@ public class PlayerClassTable implements Reloadable
 					break;
 			}*/
 
-			if (player.getRace() != Race.Ertheia)
-			{
+			if (player.getRace() != Race.Ertheia) {
 				subclasses.removeAll(getList(Race.Kamael, 40));
 			}
-		}
-		else
-		{
+		} else {
 			subclasses.addAll(mainSubclassSet);
 
 			// Remove all the same awakening subclasses from selection
 			List<Integer> bannedSubs = awakeningBannedSubclasses.get(getAwakening(baseClassId));
-			if (bannedSubs != null)
-			{
+			if (bannedSubs != null) {
 				subclasses.removeAll(bannedSubs);
 			}
 
@@ -409,33 +353,24 @@ public class PlayerClassTable implements Reloadable
 			// Check sex, male subclasses female and vice versa
 			// If server owner set MaxSubclass > 3 some kamael's cannot take 4 sub
 			// So, in that situation we must skip sex check
-			if (Config.MAX_SUBCLASS <= 3)
-			{
-				if (player.getAppearance().getSex())
-				{
+			if (Config.MAX_SUBCLASS <= 3) {
+				if (player.getAppearance().getSex()) {
 					subclasses.remove((Integer) 129); // Female Soul Breaker
-				}
-				else
-				{
+				} else {
 					subclasses.remove((Integer) 128); // Male Soul Breaker
 				}
 			}
-			if (player.getTotalSubClasses() < 2)
-			{
+			if (player.getTotalSubClasses() < 2) {
 				subclasses.remove((Integer) 135); // Inspector
 			}
 		}
 
-		if (player.getRace() == Race.Ertheia)
-		{
+		if (player.getRace() == Race.Ertheia) {
 			List<Integer> awakened = new ArrayList<>();
-			for (int subId : subclasses)
-			{
-				for (PlayerClass cl : classes.values())
-				{
+			for (int subId : subclasses) {
+				for (PlayerClass cl : classes.values()) {
 					if (cl.getLevel() == 85 && cl.getParent() != null && cl.getParent().getParent() != null &&
-							cl.getParent().getParent().getId() == subId)
-					{
+							cl.getParent().getParent().getId() == subId) {
 						awakened.add(cl.getId());
 						break;
 					}
@@ -448,13 +383,10 @@ public class PlayerClassTable implements Reloadable
 		return subclasses;
 	}
 
-	private List<Integer> getList(Race race, int level)
-	{
+	private List<Integer> getList(Race race, int level) {
 		List<Integer> list = new ArrayList<>();
-		for (PlayerClass cl : classes.values())
-		{
-			if ((race == null || cl.getRace() == race) && (level == 0 || cl.getLevel() == level))
-			{
+		for (PlayerClass cl : classes.values()) {
+			if ((race == null || cl.getRace() == race) && (level == 0 || cl.getLevel() == level)) {
 				list.add(cl.getId());
 			}
 		}
@@ -462,48 +394,37 @@ public class PlayerClassTable implements Reloadable
 		return list;
 	}
 
-	public final int getAwakening(int classId)
-	{
+	public final int getAwakening(int classId) {
 		PlayerClass pc = classes.get(classId);
-		if (pc.getLevel() < 40 || pc.getRace() == Race.Ertheia)
-		{
+		if (pc.getLevel() < 40 || pc.getRace() == Race.Ertheia) {
 			return -1;
 		}
 
 		int awakeningId = -1;
-		if (pc.getLevel() == 85)
-		{
+		if (pc.getLevel() == 85) {
 			awakeningId = classId;
 		}
 
-		if (pc.getAwakeningClassId() == -1)
-		{
+		if (pc.getAwakeningClassId() == -1) {
 			PlayerClass supportPc;
 			int i = 1;
 			int sec = 0;
-			while (awakeningId == -1 && sec < 150)
-			{
+			while (awakeningId == -1 && sec < 150) {
 				supportPc = classes.get(classId + i);
-				if (supportPc != null && supportPc.getParent() != null && pc.getId() == supportPc.getParent().getId())
-				{
-					if (supportPc.getAwakeningClassId() != -1)
-					{
+				if (supportPc != null && supportPc.getParent() != null && pc.getId() == supportPc.getParent().getId()) {
+					if (supportPc.getAwakeningClassId() != -1) {
 						awakeningId = supportPc.getAwakeningClassId();
 						pc = supportPc;
 						break;
-					}
-					else
-					{
+					} else {
 						pc = classes.get(classId + 1);
 					}
 				}
 				i++;
 				sec++;
 			}
-			if (sec >= 150)
-			{
-				Log.warning("There was a problem getting the awakening class for the class id " + classId + " (" +
-						pc.getName() + ")");
+			if (sec >= 150) {
+				Log.warning("There was a problem getting the awakening class for the class id " + classId + " (" + pc.getName() + ")");
 			}
 		}
 
@@ -512,10 +433,8 @@ public class PlayerClassTable implements Reloadable
 			return 170;
 		}
 
-		for (PlayerClass cl : classes.values())
-		{
-			if (cl.getParent() == pc)
-			{
+		for (PlayerClass cl : classes.values()) {
+			if (cl.getParent() == pc) {
 				return cl.getId();
 			}
 		}
@@ -524,8 +443,7 @@ public class PlayerClassTable implements Reloadable
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final PlayerClassTable instance = new PlayerClassTable();
 	}
 }

@@ -28,53 +28,45 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @author -Wooden-
  */
-public class RequestConfirmRefinerItem extends L2GameClientPacket
-{
-
+public class RequestConfirmRefinerItem extends L2GameClientPacket {
+	
 	private int targetItemObjId;
 	private int refinerItemObjId;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		targetItemObjId = readD();
 		refinerItemObjId = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		final L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(targetItemObjId);
-		if (targetItem == null)
-		{
+		if (targetItem == null) {
 			return;
 		}
-
+		
 		final L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(refinerItemObjId);
-		if (refinerItem == null)
-		{
+		if (refinerItem == null) {
 			return;
 		}
-
-		if (!LifeStoneTable.getInstance().isValid(activeChar, targetItem, refinerItem))
-		{
+		
+		if (!LifeStoneTable.getInstance().isValid(activeChar, targetItem, refinerItem)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM));
 			return;
 		}
-
+		
 		final int refinerItemId = refinerItem.getItem().getItemId();
 		final int grade = targetItem.getItem().getItemGrade();
 		final LifeStone ls = LifeStoneTable.getInstance().getLifeStone(refinerItemId);
 		final int gemStoneId = LifeStoneTable.getGemStoneId(grade, ls.getGrade());
 		final int gemStoneCount = LifeStoneTable.getGemStoneCount(grade, ls.getGrade());
-
-		activeChar.sendPacket(
-				new ExPutIntensiveResultForVariationMake(refinerItemObjId, refinerItemId, gemStoneId, gemStoneCount));
+		
+		activeChar.sendPacket(new ExPutIntensiveResultForVariationMake(refinerItemObjId, refinerItemId, gemStoneId, gemStoneCount));
 	}
 }

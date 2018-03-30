@@ -1,5 +1,7 @@
 package instances.DimensionalDoor.BloodThirst;
 
+import ai.group_template.L2AttackableAIScript;
+import instances.DimensionalDoor.DimensionalDoor;
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SpawnTable;
@@ -14,221 +16,182 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 
-import ai.group_template.L2AttackableAIScript;
-
-import instances.DimensionalDoor.DimensionalDoor;
-
 /**
  * @author LasTravel
- *         <p>
- *         Blood Thirst
- *         <p>
- *         Source:
- *         - https://www.youtube.com/watch?v=t-rLTz-ACE
- *         - https://www.youtube.com/watch?v=ElaX6oM5l1g
+ * <p>
+ * Blood Thirst
+ * <p>
+ * Source:
+ * - https://www.youtube.com/watch?v=t-rLTz-ACE
+ * - https://www.youtube.com/watch?v=ElaX6oM5l1g
  */
 
-public class BloodThirst extends L2AttackableAIScript
-{
-    //Quest
-    private static final boolean debug = false;
-    private static final String qn = "BloodThirst";
+public class BloodThirst extends L2AttackableAIScript {
+	//Quest
+	private static final boolean debug = false;
+	private static final String qn = "BloodThirst";
 
-    //Ids
-    private static final int instanceTemplateId = 505;
-    private static final int bloodThirstId = 27481;
-    private static final int reuseMinutes = 1440;
+	//Ids
+	private static final int instanceTemplateId = 505;
+	private static final int bloodThirstId = 27481;
+	private static final int reuseMinutes = 1440;
 
-    public BloodThirst(int questId, String name, String descr)
-    {
-        super(questId, name, descr);
+	public BloodThirst(int questId, String name, String descr) {
+		super(questId, name, descr);
 
-        addTalkId(DimensionalDoor.getNpcManagerId());
-        addStartNpc(DimensionalDoor.getNpcManagerId());
+		addTalkId(DimensionalDoor.getNpcManagerId());
+		addStartNpc(DimensionalDoor.getNpcManagerId());
 
-        addKillId(bloodThirstId);
-    }
+		addKillId(bloodThirstId);
+	}
 
-    private class BloodThirstWorld extends InstanceWorld
-    {
-        private L2Npc bloodThirst;
+	private class BloodThirstWorld extends InstanceWorld {
+		private L2Npc bloodThirst;
 
-        private BloodThirstWorld()
-        {
-        }
-    }
+		private BloodThirstWorld() {
+		}
+	}
 
-    @Override
-    public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-    {
-        if (debug)
-        {
-            Log.warning(getName() + ": onAdvEvent: " + event);
-        }
+	@Override
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (debug) {
+			Log.warning(getName() + ": onAdvEvent: " + event);
+		}
 
-        InstanceWorld wrld = null;
-        if (npc != null)
-        {
-            wrld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-        }
-        else if (player != null)
-        {
-            wrld = InstanceManager.getInstance().getPlayerWorld(player);
-        }
-        else
-        {
-            Log.warning(getName() + ": onAdvEvent: Unable to get world.");
-            return null;
-        }
+		InstanceWorld wrld = null;
+		if (npc != null) {
+			wrld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
+		} else if (player != null) {
+			wrld = InstanceManager.getInstance().getPlayerWorld(player);
+		} else {
+			Log.warning(getName() + ": onAdvEvent: Unable to get world.");
+			return null;
+		}
 
-        if (wrld != null && wrld instanceof BloodThirstWorld)
-        {
-            BloodThirstWorld world = (BloodThirstWorld) wrld;
-            if (event.equalsIgnoreCase("stage_1_start"))
-            {
-                InstanceManager.getInstance().stopWholeInstance(world.instanceId);
-                InstanceManager.getInstance().showVidToInstance(109, world.instanceId);
+		if (wrld != null && wrld instanceof BloodThirstWorld) {
+			BloodThirstWorld world = (BloodThirstWorld) wrld;
+			if (event.equalsIgnoreCase("stage_1_start")) {
+				InstanceManager.getInstance().stopWholeInstance(world.instanceId);
+				InstanceManager.getInstance().showVidToInstance(109, world.instanceId);
 
-                world.bloodThirst =
-                        addSpawn(bloodThirstId, 56167, -186938, -7944, 16383, false, 0, true, world.instanceId);
+				world.bloodThirst = addSpawn(bloodThirstId, 56167, -186938, -7944, 16383, false, 0, true, world.instanceId);
 
-                for (L2Spawn iSpawn : SpawnTable.getInstance().getSpecificSpawns("blood_thirst"))
-                {
-                    if (iSpawn == null)
-                    {
-                        continue;
-                    }
+				for (L2Spawn iSpawn : SpawnTable.getInstance().getSpecificSpawns("blood_thirst")) {
+					if (iSpawn == null) {
+						continue;
+					}
 
-                    L2Npc iNpc = addSpawn(iSpawn.getNpcId(), iSpawn.getX(), iSpawn.getY(), iSpawn.getZ(),
-                            iSpawn.getHeading(), false, 0, true, world.instanceId);
+					L2Npc iNpc = addSpawn(iSpawn.getNpcId(),
+							iSpawn.getX(),
+							iSpawn.getY(),
+							iSpawn.getZ(),
+							iSpawn.getHeading(),
+							false,
+							0,
+							true,
+							world.instanceId);
 
-                    L2Spawn spawn = iNpc.getSpawn();
-                    spawn.setRespawnDelay(20);
-                    spawn.startRespawn();
-                }
+					L2Spawn spawn = iNpc.getSpawn();
+					spawn.setRespawnDelay(20);
+					spawn.startRespawn();
+				}
 
-                final int instanceId = world.instanceId;
-                ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        InstanceManager.getInstance().startWholeInstance(instanceId);
-                    }
-                }, 13000);
-            }
-        }
-        else if (event.equalsIgnoreCase("enterToInstance"))
-        {
-            try
-            {
-                enterInstance(player);
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-        }
-        return null;
-    }
+				final int instanceId = world.instanceId;
+				ThreadPoolManager.getInstance().scheduleGeneral(new Runnable() {
+					@Override
+					public void run() {
+						InstanceManager.getInstance().startWholeInstance(instanceId);
+					}
+				}, 13000);
+			}
+		} else if (event.equalsIgnoreCase("enterToInstance")) {
+			try {
+				enterInstance(player);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
 
-    @Override
-    public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-    {
-        if (debug)
-        {
-            Log.warning(getName() + ": onKill: " + npc.getName());
-        }
+	@Override
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+		if (debug) {
+			Log.warning(getName() + ": onKill: " + npc.getName());
+		}
 
-        InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-        if (tmpworld instanceof BloodThirstWorld)
-        {
-            BloodThirstWorld world = (BloodThirstWorld) tmpworld;
-            if (npc == world.bloodThirst)
-            {
-                player.addItem(qn, DimensionalDoor.getDimensionalDoorRewardId(),
-                       10, player, true);
+		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
+		if (tmpworld instanceof BloodThirstWorld) {
+			BloodThirstWorld world = (BloodThirstWorld) tmpworld;
+			if (npc == world.bloodThirst) {
+				player.addItem(qn, DimensionalDoor.getDimensionalDoorRewardId(), 10, player, true);
 
-                InstanceManager.getInstance().setInstanceReuse(world.instanceId, instanceTemplateId, reuseMinutes);
-                InstanceManager.getInstance().finishInstance(world.instanceId, true);
-            }
-        }
-        return "";
-    }
+				InstanceManager.getInstance().setInstanceReuse(world.instanceId, instanceTemplateId, reuseMinutes);
+				InstanceManager.getInstance().finishInstance(world.instanceId, true);
+			}
+		}
+		return "";
+	}
 
-    @Override
-    public final String onTalk(L2Npc npc, L2PcInstance player)
-    {
-        if (debug)
-        {
-            Log.warning(getName() + ": onTalk: " + player.getName());
-        }
+	@Override
+	public final String onTalk(L2Npc npc, L2PcInstance player) {
+		if (debug) {
+			Log.warning(getName() + ": onTalk: " + player.getName());
+		}
 
-        if (npc.getNpcId() == DimensionalDoor.getNpcManagerId())
-        {
-            return qn + ".html";
-        }
+		if (npc.getNpcId() == DimensionalDoor.getNpcManagerId()) {
+			return qn + ".html";
+		}
 
-        return super.onTalk(npc, player);
-    }
+		return super.onTalk(npc, player);
+	}
 
-    private final synchronized void enterInstance(L2PcInstance player)
-    {
-        InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-        if (world != null)
-        {
-            if (!(world instanceof BloodThirstWorld))
-            {
-                player.sendPacket(
-                        SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
-                return;
-            }
+	private final synchronized void enterInstance(L2PcInstance player) {
+		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
+		if (world != null) {
+			if (!(world instanceof BloodThirstWorld)) {
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+				return;
+			}
 
-            Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
-            if (inst != null)
-            {
-                if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId()))
-                {
-                    player.setInstanceId(world.instanceId);
-                    player.teleToLocation(56164, -185809, -7944);
-                }
-            }
+			Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
+			if (inst != null) {
+				if (inst.getInstanceEndTime() > 300600 && world.allowed.contains(player.getObjectId())) {
+					player.setInstanceId(world.instanceId);
+					player.teleToLocation(56164, -185809, -7944);
+				}
+			}
 
-            return;
-        }
-        else
-        {
-            if (!debug && !InstanceManager.getInstance()
-                    .checkInstanceConditions(player, instanceTemplateId, 1, 1, 99, Config.MAX_LEVEL))
-            {
-                return;
-            }
+			return;
+		} else {
+			if (!debug && !InstanceManager.getInstance().checkInstanceConditions(player, instanceTemplateId, 1, 1, 99, Config.MAX_LEVEL)) {
+				return;
+			}
 
-            final int instanceId = InstanceManager.getInstance().createDynamicInstance(qn + ".xml");
-            world = new BloodThirstWorld();
-            world.instanceId = instanceId;
-            world.status = 0;
+			final int instanceId = InstanceManager.getInstance().createDynamicInstance(qn + ".xml");
+			world = new BloodThirstWorld();
+			world.instanceId = instanceId;
+			world.status = 0;
 
-            InstanceManager.getInstance().addWorld(world);
+			InstanceManager.getInstance().addWorld(world);
 
-            world.allowed.add(player.getObjectId());
+			world.allowed.add(player.getObjectId());
 
-            player.stopAllEffectsExceptThoseThatLastThroughDeath();
-            player.setInstanceId(instanceId);
-            player.teleToLocation(56164, -185809, -7944, true);
+			player.stopAllEffectsExceptThoseThatLastThroughDeath();
+			player.setInstanceId(instanceId);
+			player.teleToLocation(56164, -185809, -7944, true);
 
-            L2NpcBufferInstance.giveBasicBuffs(player);
+			L2NpcBufferInstance.giveBasicBuffs(player);
 
-            startQuestTimer("stage_1_start", 20000, null, player);
+			startQuestTimer("stage_1_start", 20000, null, player);
 
-            Log.fine(getName() + ":  instance started: " + instanceId + " created by player: " + player.getName());
+			Log.fine(getName() + ":  instance started: " + instanceId + " created by player: " + player.getName());
 
-            return;
-        }
-    }
+			return;
+		}
+	}
 
-    public static void main(String[] args)
-    {
-        new BloodThirst(-1, qn, "instances/DimensionalDoor");
-    }
+	public static void main(String[] args) {
+		new BloodThirst(-1, qn, "instances/DimensionalDoor");
+	}
 }

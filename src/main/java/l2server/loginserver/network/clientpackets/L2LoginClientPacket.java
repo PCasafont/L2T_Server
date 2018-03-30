@@ -24,24 +24,19 @@ import java.util.logging.Level;
 /**
  * @author KenM
  */
-public abstract class L2LoginClientPacket extends ReceivablePacket<L2LoginClient>
-{
-
+public abstract class L2LoginClientPacket extends ReceivablePacket<L2LoginClient> {
+	
 	/**
 	 */
 	@Override
-	protected final boolean read()
-	{
-		try
-		{
+	protected final boolean read() {
+		try {
 			return readImpl();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "ERROR READING: " + this.getClass().getSimpleName() + ": " + e.getMessage(), e);
 			return false;
 		}
 	}
-
+	
 	protected abstract boolean readImpl();
 }

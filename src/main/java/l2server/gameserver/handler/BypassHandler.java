@@ -15,37 +15,30 @@
 
 package l2server.gameserver.handler;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.log.Log;
 
 import java.util.logging.Level;
 
-import gnu.trove.TIntObjectHashMap;
-
 /**
  * @author nBd
  */
-public class BypassHandler
-{
+public class BypassHandler {
 
 	private TIntObjectHashMap<IBypassHandler> datatable;
 
-	public static BypassHandler getInstance()
-	{
+	public static BypassHandler getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private BypassHandler()
-	{
+	private BypassHandler() {
 		datatable = new TIntObjectHashMap<>();
 	}
 
-	public void registerBypassHandler(IBypassHandler handler)
-	{
-		for (String element : handler.getBypassList())
-		{
-			if (Config.DEBUG)
-			{
+	public void registerBypassHandler(IBypassHandler handler) {
+		for (String element : handler.getBypassList()) {
+			if (Config.DEBUG) {
 				Log.log(Level.FINE, "Adding handler for command " + element);
 			}
 
@@ -53,31 +46,26 @@ public class BypassHandler
 		}
 	}
 
-	public IBypassHandler getBypassHandler(String BypassCommand)
-	{
+	public IBypassHandler getBypassHandler(String BypassCommand) {
 		String command = BypassCommand;
 
-		if (BypassCommand.contains(" "))
-		{
+		if (BypassCommand.contains(" ")) {
 			command = BypassCommand.substring(0, BypassCommand.indexOf(" "));
 		}
 
-		if (Config.DEBUG)
-		{
+		if (Config.DEBUG) {
 			Log.fine("getting handler for command: " + command + " -> " + (datatable.get(command.hashCode()) != null));
 		}
 
 		return datatable.get(command.toLowerCase().hashCode());
 	}
 
-	public int size()
-	{
+	public int size() {
 		return datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final BypassHandler instance = new BypassHandler();
 	}
 }

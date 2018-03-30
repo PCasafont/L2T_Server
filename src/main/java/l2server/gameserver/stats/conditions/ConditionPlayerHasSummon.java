@@ -22,12 +22,10 @@ import l2server.gameserver.stats.Env;
 /**
  * The Class ConditionPlayerHasPet.
  */
-public class ConditionPlayerHasSummon extends Condition
-{
+public class ConditionPlayerHasSummon extends Condition {
 	private final boolean value;
 
-	public ConditionPlayerHasSummon(boolean value)
-	{
+	public ConditionPlayerHasSummon(boolean value) {
 		this.value = value;
 	}
 
@@ -35,17 +33,13 @@ public class ConditionPlayerHasSummon extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 
-		for (L2SummonInstance summon : ((L2PcInstance) env.player).getSummons())
-		{
-			if (!summon.isDead())
-			{
+		for (L2SummonInstance summon : ((L2PcInstance) env.player).getSummons()) {
+			if (!summon.isDead()) {
 				return value;
 			}
 		}

@@ -30,28 +30,22 @@ import java.util.List;
 /**
  * @author One
  */
-public class TargetUnlockable implements ISkillTargetTypeHandler
-{
+public class TargetUnlockable implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		List<L2Character> targetList = new ArrayList<L2Character>();
 
-		if (!(target instanceof L2DoorInstance) && !(target instanceof L2ChestInstance))
-		{
+		if (!(target instanceof L2DoorInstance) && !(target instanceof L2ChestInstance)) {
 			//activeChar.sendPacket(new SystemMessage(SystemMessage.TARGET_IS_INCORRECT));
 			return null;
 		}
 
-		if (onlyFirst == false)
-		{
+		if (onlyFirst == false) {
 			targetList.add(target);
 			return targetList.toArray(new L2Object[targetList.size()]);
-		}
-		else
-		{
+		} else {
 			return new L2Character[]{target};
 		}
 	}
@@ -59,14 +53,12 @@ public class TargetUnlockable implements ISkillTargetTypeHandler
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
+	public Enum<L2SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub
 		return L2SkillTargetType.TARGET_UNLOCKABLE;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetUnlockable());
 	}
 }

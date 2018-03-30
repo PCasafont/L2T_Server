@@ -1,1 +1,2 @@
-DELETE FROM character_skills WHERE skill_id = 1387;
+DELETE FROM character_skills
+WHERE skill_id = 1387;

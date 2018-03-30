@@ -26,8 +26,7 @@ import java.util.ArrayList;
  * @author nBd
  */
 
-public class ConditionTargetRaceId extends Condition
-{
+public class ConditionTargetRaceId extends Condition {
 	private final ArrayList<Integer> raceIds;
 
 	/**
@@ -35,8 +34,7 @@ public class ConditionTargetRaceId extends Condition
 	 *
 	 * @param raceId the race id
 	 */
-	public ConditionTargetRaceId(ArrayList<Integer> raceId)
-	{
+	public ConditionTargetRaceId(ArrayList<Integer> raceId) {
 		raceIds = raceId;
 	}
 
@@ -44,10 +42,8 @@ public class ConditionTargetRaceId extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.target instanceof L2Npc))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.target instanceof L2Npc)) {
 			return false;
 		}
 		return raceIds.contains(((L2Npc) env.target).getTemplate().getRace().ordinal() + 1);

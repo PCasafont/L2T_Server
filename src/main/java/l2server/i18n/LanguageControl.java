@@ -26,8 +26,7 @@ import java.util.ResourceBundle.Control;
 /**
  * @author KenM
  */
-public class LanguageControl extends Control
-{
+public class LanguageControl extends Control {
 	public static final String LANGUAGES_DIRECTORY = "../languages/";
 
 	public static final LanguageControl INSTANCE = new LanguageControl();
@@ -35,27 +34,22 @@ public class LanguageControl extends Control
 	/**
 	 * prevent instancing, allows sub-classing
 	 */
-	protected LanguageControl()
-	{
+	protected LanguageControl() {
 
 	}
 
 	@Override
-	public ResourceBundle newBundle(String baseName, Locale locale, String format, ClassLoader loader, boolean reload) throws
-			IllegalAccessException, InstantiationException, IOException
-	{
-		if (baseName == null || locale == null || format == null || loader == null)
-		{
+	public ResourceBundle newBundle(String baseName, Locale locale, String format, ClassLoader loader, boolean reload)
+			throws IllegalAccessException, InstantiationException, IOException {
+		if (baseName == null || locale == null || format == null || loader == null) {
 			throw new NullPointerException();
 		}
 		ResourceBundle bundle = null;
-		if (format.equals("java.properties"))
-		{
+		if (format.equals("java.properties")) {
 			format = "properties";
 			String bundleName = toBundleName(baseName, locale);
 			String resourceName = LANGUAGES_DIRECTORY + toResourceName(bundleName, format);
-			try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(resourceName)))
-			{
+			try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(resourceName))) {
 				bundle = new PropertyResourceBundle(bis);
 			}
 		}

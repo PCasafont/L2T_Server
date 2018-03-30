@@ -24,20 +24,17 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public class GMViewPledgeInfo extends L2GameServerPacket
-{
+public class GMViewPledgeInfo extends L2GameServerPacket {
 	private L2Clan clan;
 	private L2PcInstance activeChar;
-
-	public GMViewPledgeInfo(L2Clan clan, L2PcInstance activeChar)
-	{
+	
+	public GMViewPledgeInfo(L2Clan clan, L2PcInstance activeChar) {
 		this.clan = clan;
 		this.activeChar = activeChar;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeS(activeChar.getName());
 		writeD(clan.getClanId());
 		writeD(0x00);
@@ -52,7 +49,7 @@ public class GMViewPledgeInfo extends L2GameServerPacket
 		writeD(clan.getReputationScore());
 		writeD(0);
 		writeD(0);
-
+		
 		writeD(clan.getAllyId()); //c2
 		writeS(clan.getAllyName()); //c2
 		writeD(clan.getAllyCrestId()); //c2
@@ -60,11 +57,9 @@ public class GMViewPledgeInfo extends L2GameServerPacket
 		writeD(0); // T3 Unknown
 		//writeD(0); // GoD ???
 		writeD(clan.getMembers().length);
-
-		for (L2ClanMember member : clan.getMembers())
-		{
-			if (member != null)
-			{
+		
+		for (L2ClanMember member : clan.getMembers()) {
+			if (member != null) {
 				writeS(member.getName());
 				writeD(member.getLevel());
 				writeD(member.getCurrentClass());

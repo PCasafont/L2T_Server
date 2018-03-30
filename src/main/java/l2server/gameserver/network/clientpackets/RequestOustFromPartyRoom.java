@@ -28,50 +28,39 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @author -Wooden-
  */
-public final class RequestOustFromPartyRoom extends L2GameClientPacket
-{
-
+public final class RequestOustFromPartyRoom extends L2GameClientPacket {
+	
 	private int charid;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		charid = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		L2PcInstance member = L2World.getInstance().getPlayer(charid);
-		if (member == null)
-		{
+		if (member == null) {
 			return;
 		}
-
+		
 		PartyMatchRoom room = PartyMatchRoomList.getInstance().getPlayerRoom(member);
-		if (room == null)
-		{
+		if (room == null) {
 			return;
 		}
-
-		if (room.getOwner() != activeChar)
-		{
+		
+		if (room.getOwner() != activeChar) {
 			return;
 		}
-
-		if (activeChar.isInParty() && member.isInParty() &&
-				activeChar.getParty().getPartyLeaderOID() == member.getParty().getPartyLeaderOID())
-		{
+		
+		if (activeChar.isInParty() && member.isInParty() && activeChar.getParty().getPartyLeaderOID() == member.getParty().getPartyLeaderOID()) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISMISS_PARTY_MEMBER));
-		}
-		else
-		{
+		} else {
 			room.deleteMember(member);
 			member.setPartyRoom(0);
 			member.sendPacket(new ExClosePartyRoom());

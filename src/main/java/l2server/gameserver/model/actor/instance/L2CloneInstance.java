@@ -29,46 +29,38 @@ import java.util.concurrent.ScheduledFuture;
  *
  * @author ZaKaX
  */
-public class L2CloneInstance extends L2SummonInstance
-{
+public class L2CloneInstance extends L2SummonInstance {
 	private ScheduledFuture<?> cloneTask;
 
-	public L2CloneInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2Skill skill)
-	{
+	public L2CloneInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2Skill skill) {
 		super(objectId, template, owner, skill);
 
 		setInstanceType(InstanceType.L2CloneInstance);
 	}
 
 	@Override
-	public void onSpawn()
-	{
+	public void onSpawn() {
 		super.onSpawn();
 
 		// Schedule the party look-up task every 60seconds.
-		if (cloneTask == null)
-		{
+		if (cloneTask == null) {
 			cloneTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new CloneTask(this), 1000, 1000);
 		}
 	}
 
 	@Override
-	public void reduceCurrentHp(double damage, L2Character attacker, boolean awake, boolean isDOT, L2Skill skill)
-	{
+	public void reduceCurrentHp(double damage, L2Character attacker, boolean awake, boolean isDOT, L2Skill skill) {
 		super.reduceCurrentHp(damage, attacker, awake, isDOT, skill);
 	}
 
 	@Override
-	public boolean doDie(L2Character killer)
-	{
-		if (!super.doDie(killer))
-		{
+	public boolean doDie(L2Character killer) {
+		if (!super.doDie(killer)) {
 			return false;
 		}
 
 		// Cancel the attackers-check task.
-		if (cloneTask != null)
-		{
+		if (cloneTask != null) {
 			cloneTask.cancel(true);
 			cloneTask = null;
 		}
@@ -77,10 +69,8 @@ public class L2CloneInstance extends L2SummonInstance
 	}
 
 	@Override
-	public void unSummon(L2PcInstance owner)
-	{
-		if (cloneTask != null)
-		{
+	public void unSummon(L2PcInstance owner) {
+		if (cloneTask != null) {
 			cloneTask.cancel(true);
 			cloneTask = null;
 		}
@@ -88,57 +78,43 @@ public class L2CloneInstance extends L2SummonInstance
 		super.unSummon(owner);
 	}
 
-	private static final class CloneTask implements Runnable
-	{
+	private static final class CloneTask implements Runnable {
 		private final L2CloneInstance clone;
 
-		CloneTask(final L2CloneInstance clone)
-		{
+		CloneTask(final L2CloneInstance clone) {
 			this.clone = clone;
 		}
 
 		@Override
-		public final void run()
-		{
+		public final void run() {
 			final L2PcInstance owner = clone.getOwner();
 
-			if (!clone.isVisible())
-			{
+			if (!clone.isVisible()) {
 				return;
 			}
 
-			if (owner.isAttackingNow())
-			{
-				if (owner.getTarget() != clone.getTarget() || !clone.isAttackingNow() && !clone.isCastingNow())
-				{
+			if (owner.isAttackingNow()) {
+				if (owner.getTarget() != clone.getTarget() || !clone.isAttackingNow() && !clone.isCastingNow()) {
 					clone.setTarget(owner.getTarget());
 
-					if (clone.getTarget() != null && clone.getTarget().isAutoAttackable(owner))
-					{
+					if (clone.getTarget() != null && clone.getTarget().isAutoAttackable(owner)) {
 						clone.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, clone.getTarget());
 					}
 				}
-			}
-			else if (!clone.isAttackingNow() && !clone.isCastingNow())
-			{
+			} else if (!clone.isAttackingNow() && !clone.isCastingNow()) {
 				clone.followOwner();
 			}
 
-			for (L2Skill skill : clone.getAllSkills())
-			{
-				if (Rnd.nextBoolean())
-				{
+			for (L2Skill skill : clone.getAllSkills()) {
+				if (Rnd.nextBoolean()) {
 					continue;
-				}
-				else if (clone.isSkillDisabled(skill.getReuseHashCode()))
-				{
+				} else if (clone.isSkillDisabled(skill.getReuseHashCode())) {
 					continue;
 				}
 
 				int reuseDelay = skill.getReuseDelay();
 
-				if (Rnd.nextBoolean())
-				{
+				if (Rnd.nextBoolean()) {
 					reuseDelay *= 2;
 				}
 

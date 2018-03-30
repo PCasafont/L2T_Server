@@ -15,6 +15,7 @@
 
 package quests.Q511_AwlUnderFoot;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
@@ -35,39 +36,30 @@ import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
 
-import gnu.trove.TIntObjectHashMap;
-
 /**
  * @author Gigiikun
  */
-public final class Q511_AwlUnderFoot extends Quest
-{
-	private class FAUWorld extends InstanceWorld
-	{
+public final class Q511_AwlUnderFoot extends Quest {
+	private class FAUWorld extends InstanceWorld {
 	}
 
-	public static class FortDungeon
-	{
+	public static class FortDungeon {
 		private final int INSTANCEID;
 		private long reEnterTime = 0;
 
-		public FortDungeon(int iId)
-		{
+		public FortDungeon(int iId) {
 			INSTANCEID = iId;
 		}
 
-		public int getInstanceId()
-		{
+		public int getInstanceId() {
 			return INSTANCEID;
 		}
 
-		public long getReEnterTime()
-		{
+		public long getReEnterTime() {
 			return reEnterTime;
 		}
 
-		public void setReEnterTime(long time)
-		{
+		public void setReEnterTime(long time) {
 			reEnterTime = time;
 		}
 	}
@@ -92,71 +84,53 @@ public final class Q511_AwlUnderFoot extends Quest
 
 	private static final SkillHolder RAID_CURSE = new SkillHolder(5456, 1);
 
-	private String checkConditions(L2PcInstance player)
-	{
-		if (debug)
-		{
+	private String checkConditions(L2PcInstance player) {
+		if (debug) {
 			return null;
 		}
 		L2Party party = player.getParty();
-		if (party == null)
-		{
+		if (party == null) {
 			return "FortressWarden-03.htm";
 		}
-		if (party.getLeader() != player)
-		{
-			return getHtm(player.getHtmlPrefix(), "FortressWarden-04.htm")
-					.replace("%leader%", party.getLeader().getName());
+		if (party.getLeader() != player) {
+			return getHtm(player.getHtmlPrefix(), "FortressWarden-04.htm").replace("%leader%", party.getLeader().getName());
 		}
-		for (L2PcInstance partyMember : party.getPartyMembers())
-		{
+		for (L2PcInstance partyMember : party.getPartyMembers()) {
 			QuestState st = partyMember.getQuestState(qn);
-			if (st == null || st.getInt("cond") < 1)
-			{
-				return getHtm(player.getHtmlPrefix(), "FortressWarden-05.htm")
-						.replace("%player%", partyMember.getName());
+			if (st == null || st.getInt("cond") < 1) {
+				return getHtm(player.getHtmlPrefix(), "FortressWarden-05.htm").replace("%player%", partyMember.getName());
 			}
-			if (!Util.checkIfInRange(1000, player, partyMember, true))
-			{
-				return getHtm(player.getHtmlPrefix(), "FortressWarden-06.htm")
-						.replace("%player%", partyMember.getName());
+			if (!Util.checkIfInRange(1000, player, partyMember, true)) {
+				return getHtm(player.getHtmlPrefix(), "FortressWarden-06.htm").replace("%player%", partyMember.getName());
 			}
 		}
 		return null;
 	}
 
-	private void teleportPlayer(L2PcInstance player, int[] coords, int instanceId)
-	{
+	private void teleportPlayer(L2PcInstance player, int[] coords, int instanceId) {
 		player.setInstanceId(instanceId);
 		player.teleToLocation(coords[0], coords[1], coords[2]);
 	}
 
-	protected String enterInstance(L2PcInstance player, String template, int[] coords, FortDungeon dungeon, String ret)
-	{
+	protected String enterInstance(L2PcInstance player, String template, int[] coords, FortDungeon dungeon, String ret) {
 		//check for existing instances for this player
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		//existing instance
-		if (world != null)
-		{
-			if (!(world instanceof FAUWorld))
-			{
-				player.sendPacket(
-						SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
+		if (world != null) {
+			if (!(world instanceof FAUWorld)) {
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_ENTERED_ANOTHER_INSTANCE_CANT_ENTER));
 				return "";
 			}
 			teleportPlayer(player, coords, world.instanceId);
 			return "";
 		}
 		//New instance
-		else
-		{
-			if (ret != null)
-			{
+		else {
+			if (ret != null) {
 				return ret;
 			}
 			ret = checkConditions(player);
-			if (ret != null)
-			{
+			if (ret != null) {
 				return ret;
 			}
 			L2Party party = player.getParty();
@@ -169,142 +143,104 @@ public final class Q511_AwlUnderFoot extends Quest
 			world.status = 0;
 			dungeon.setReEnterTime(System.currentTimeMillis() + REENTERTIME);
 			InstanceManager.getInstance().addWorld(world);
-			Log.info("Fortress AwlUnderFoot started " + template + " Instance: " + instanceId + " created by player: " +
-					player.getName());
+			Log.info("Fortress AwlUnderFoot started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
 			ThreadPoolManager.getInstance().scheduleGeneral(new spawnRaid((FAUWorld) world), RAID_SPAWN_DELAY);
 
 			// teleport players
-			if (player.getParty() == null)
-			{
+			if (player.getParty() == null) {
 				teleportPlayer(player, coords, instanceId);
 				world.allowed.add(player.getObjectId());
-			}
-			else
-			{
-				for (L2PcInstance partyMember : party.getPartyMembers())
-				{
+			} else {
+				for (L2PcInstance partyMember : party.getPartyMembers()) {
 					teleportPlayer(partyMember, coords, instanceId);
 					world.allowed.add(partyMember.getObjectId());
-					if (partyMember.getQuestState(qn) == null)
-					{
+					if (partyMember.getQuestState(qn) == null) {
 						newQuestState(partyMember);
 					}
 				}
 			}
-			return getHtm(player.getHtmlPrefix(), "FortressWarden-08.htm")
-					.replace("%clan%", player.getClan().getName());
+			return getHtm(player.getHtmlPrefix(), "FortressWarden-08.htm").replace("%clan%", player.getClan().getName());
 		}
 	}
 
-	private class spawnRaid implements Runnable
-	{
+	private class spawnRaid implements Runnable {
 		private FAUWorld world;
 
-		public spawnRaid(FAUWorld world)
-		{
+		public spawnRaid(FAUWorld world) {
 			this.world = world;
 		}
 
 		@Override
-		public void run()
-		{
-			try
-			{
+		public void run() {
+			try {
 				int spawnId;
-				if (world.status == 0)
-				{
+				if (world.status == 0) {
 					spawnId = RAIDS1[Rnd.get(RAIDS1.length)];
-				}
-				else if (world.status == 1)
-				{
+				} else if (world.status == 1) {
 					spawnId = RAIDS2[Rnd.get(RAIDS2.length)];
-				}
-				else
-				{
+				} else {
 					spawnId = RAIDS3[Rnd.get(RAIDS3.length)];
 				}
 				L2Npc raid = addSpawn(spawnId, 53319, 245814, -6576, 0, false, 0, false, world.instanceId);
-				if (raid instanceof L2RaidBossInstance)
-				{
+				if (raid instanceof L2RaidBossInstance) {
 					((L2RaidBossInstance) raid).setUseRaidCurse(false);
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.warning("Fortress AwlUnderFoot Raid Spawn error: " + e);
 			}
 		}
 	}
 
-	private String checkFortCondition(L2PcInstance player, L2Npc npc, boolean isEnter)
-	{
+	private String checkFortCondition(L2PcInstance player, L2Npc npc, boolean isEnter) {
 		Fort fortress = npc.getFort();
 		FortDungeon dungeon = fortDungeons.get(npc.getNpcId());
-		if (player == null || fortress == null || dungeon == null)
-		{
+		if (player == null || fortress == null || dungeon == null) {
 			return "FortressWarden-01.htm";
 		}
-		if (player.getClan() == null || player.getClan().getHasFort() != fortress.getFortId())
-		{
+		if (player.getClan() == null || player.getClan().getHasFort() != fortress.getFortId()) {
 			return "FortressWarden-01.htm";
-		}
-		else if (fortress.getFortState() == 0)
-		{
+		} else if (fortress.getFortState() == 0) {
 			return "FortressWarden-02a.htm";
-		}
-		else if (fortress.getFortState() == 2)
-		{
+		} else if (fortress.getFortState() == 2) {
 			return "FortressWarden-02b.htm";
-		}
-		else if (isEnter && dungeon.getReEnterTime() > System.currentTimeMillis())
-		{
+		} else if (isEnter && dungeon.getReEnterTime() > System.currentTimeMillis()) {
 			return "FortressWarden-07.htm";
 		}
 
 		return null;
 	}
 
-	private void rewardPlayer(L2PcInstance player)
-	{
+	private void rewardPlayer(L2PcInstance player) {
 		QuestState st = player.getQuestState(qn);
-		if (st.getInt("cond") == 1)
-		{
+		if (st.getInt("cond") == 1) {
 			st.giveItems(DL_MARK, 140);
 			st.playSound("ItemSound.quest_itemget");
 		}
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
-		if (event.equalsIgnoreCase("enter"))
-		{
+		if (event.equalsIgnoreCase("enter")) {
 			int[] tele = new int[3];
 			tele[0] = 53322;
 			tele[1] = 246380;
 			tele[2] = -6580;
-			return enterInstance(player, "fortdungeon.xml", tele, fortDungeons.get(npc.getNpcId()),
-					checkFortCondition(player, npc, true));
+			return enterInstance(player, "fortdungeon.xml", tele, fortDungeons.get(npc.getNpcId()), checkFortCondition(player, npc, true));
 		}
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			st = newQuestState(player);
 		}
 
 		int cond = st.getInt("cond");
-		if (event.equalsIgnoreCase("FortressWarden-10.htm"))
-		{
-			if (cond == 0)
-			{
+		if (event.equalsIgnoreCase("FortressWarden-10.htm")) {
+			if (cond == 0) {
 				st.set("cond", "1");
 				st.setState(State.STARTED);
 				st.playSound("ItemSound.quest_accept");
 			}
-		}
-		else if (event.equalsIgnoreCase("FortressWarden-15.htm"))
-		{
+		} else if (event.equalsIgnoreCase("FortressWarden-15.htm")) {
 			st.playSound("ItemSound.quest_finish");
 			st.exitQuest(true);
 		}
@@ -312,50 +248,34 @@ public final class Q511_AwlUnderFoot extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = Quest.getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
 		String ret = checkFortCondition(player, npc, false);
-		if (ret != null)
-		{
+		if (ret != null) {
 			return ret;
-		}
-		else if (st != null)
-		{
+		} else if (st != null) {
 			int npcId = npc.getNpcId();
 			int cond = 0;
-			if (st.getState() == State.CREATED)
-			{
+			if (st.getState() == State.CREATED) {
 				st.set("cond", "0");
-			}
-			else
-			{
+			} else {
 				cond = st.getInt("cond");
 			}
-			if (fortDungeons.containsKey(npcId) && cond == 0)
-			{
-				if (player.getLevel() >= 60)
-				{
+			if (fortDungeons.containsKey(npcId) && cond == 0) {
+				if (player.getLevel() >= 60) {
 					htmltext = "FortressWarden-09.htm";
-				}
-				else
-				{
+				} else {
 					htmltext = "FortressWarden-00.htm";
 					st.exitQuest(true);
 				}
-			}
-			else if (fortDungeons.containsKey(npcId) && cond > 0 && st.getState() == State.STARTED)
-			{
+			} else if (fortDungeons.containsKey(npcId) && cond > 0 && st.getState() == State.STARTED) {
 				long count = st.getQuestItemsCount(DL_MARK);
-				if (cond == 1 && count > 0)
-				{
+				if (cond == 1 && count > 0) {
 					htmltext = "FortressWarden-14.htm";
 					st.takeItems(DL_MARK, count);
 					st.rewardItems(KNIGHT_EPALUETTE, count);
-				}
-				else if (cond == 1 && count == 0)
-				{
+				} else if (cond == 1 && count == 0) {
 					htmltext = "FortressWarden-10.htm";
 				}
 			}
@@ -364,26 +284,18 @@ public final class Q511_AwlUnderFoot extends Quest
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet)
-	{
+	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet) {
 		L2Playable attacker = isPet ? player.getPet() : player;
-		if (attacker == null)
-		{
+		if (attacker == null) {
 			attacker = player.getSummon(0);
 		}
-		if (attacker.getLevel() - npc.getLevel() >= 9)
-		{
-			if (attacker.getBuffCount() > 0 || attacker.getDanceCount() > 0)
-			{
+		if (attacker.getLevel() - npc.getLevel() >= 9) {
+			if (attacker.getBuffCount() > 0 || attacker.getDanceCount() > 0) {
 				npc.setTarget(attacker);
 				npc.doSimultaneousCast(RAID_CURSE.getSkill());
-			}
-			else if (player.getParty() != null)
-			{
-				for (L2PcInstance pmember : player.getParty().getPartyMembers())
-				{
-					if (pmember.getBuffCount() > 0 || pmember.getDanceCount() > 0)
-					{
+			} else if (player.getParty() != null) {
+				for (L2PcInstance pmember : player.getParty().getPartyMembers()) {
+					if (pmember.getBuffCount() > 0 || pmember.getDanceCount() > 0) {
 						npc.setTarget(pmember);
 						npc.doSimultaneousCast(RAID_CURSE.getSkill());
 					}
@@ -394,32 +306,23 @@ public final class Q511_AwlUnderFoot extends Quest
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		if (tmpworld instanceof FAUWorld)
-		{
+		if (tmpworld instanceof FAUWorld) {
 			FAUWorld world = (FAUWorld) tmpworld;
-			if (Util.contains(RAIDS3, npc.getNpcId()))
-			{
-				if (player.getParty() != null)
-				{
-					for (L2PcInstance pl : player.getParty().getPartyMembers())
-					{
+			if (Util.contains(RAIDS3, npc.getNpcId())) {
+				if (player.getParty() != null) {
+					for (L2PcInstance pl : player.getParty().getPartyMembers()) {
 						rewardPlayer(pl);
 					}
-				}
-				else
-				{
+				} else {
 					rewardPlayer(player);
 				}
 
 				Instance instanceObj = InstanceManager.getInstance().getInstance(world.instanceId);
 				instanceObj.setDuration(360000);
 				instanceObj.removeNpcs();
-			}
-			else
-			{
+			} else {
 				world.status++;
 				ThreadPoolManager.getInstance().scheduleGeneral(new spawnRaid(world), RAID_SPAWN_DELAY);
 			}
@@ -427,8 +330,7 @@ public final class Q511_AwlUnderFoot extends Quest
 		return null;
 	}
 
-	public Q511_AwlUnderFoot(int questId, String name, String descr)
-	{
+	public Q511_AwlUnderFoot(int questId, String name, String descr) {
 		super(questId, name, descr);
 		fortDungeons.put(35666, new FortDungeon(22));
 		fortDungeons.put(35698, new FortDungeon(23));
@@ -452,33 +354,27 @@ public final class Q511_AwlUnderFoot extends Quest
 		fortDungeons.put(36326, new FortDungeon(41));
 		fortDungeons.put(36364, new FortDungeon(42));
 
-		for (int i : fortDungeons.keys())
-		{
+		for (int i : fortDungeons.keys()) {
 			addStartNpc(i);
 			addTalkId(i);
 		}
 
-		for (int i : RAIDS1)
-		{
+		for (int i : RAIDS1) {
 			addKillId(i);
 		}
-		for (int i : RAIDS2)
-		{
+		for (int i : RAIDS2) {
 			addKillId(i);
 		}
-		for (int i : RAIDS3)
-		{
+		for (int i : RAIDS3) {
 			addKillId(i);
 		}
 
-		for (int i = 25572; i <= 25595; i++)
-		{
+		for (int i = 25572; i <= 25595; i++) {
 			addAttackId(i);
 		}
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		// now call the constructor (starts up the)
 		new Q511_AwlUnderFoot(511, qn, "instances");
 	}

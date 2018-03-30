@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instance name="Rescue Of The Last Giant">
-    <activityTime val="60" />
-    <allowSummon val="false" />
-    <emptyDestroyTime val="10" />
-    <spawnPoint spawnX="83463" spawnY="148630" spawnZ="-3407" />
-    <doorlist>
-        <door doorId="16240100" />
-        <door doorId="16240102" />
-    </doorlist>
-    <spawnlist>
-        <spawn npcId="80292" x="-108320" y="206320" z="-10872" heading="49536" respawn="0" />
-        <spawn npcId="80293" x="-107648" y="206592" z="-10872" heading="49536" respawn="0" />
-        <spawn npcId="80294" x="-107776" y="206704" z="-10872" heading="49536" respawn="0" />
-        <spawn npcId="80295" x="-108208" y="206592" z="-10872" heading="49536" respawn="0" />
-        <spawn npcId="80296" x="-107536" y="206480" z="-10872" heading="49536" respawn="0" />
-        <spawn npcId="80297" x="-107536" y="206320" z="-10872" heading="49536" respawn="0" />
-        <spawn npcId="80298" x="-108096" y="206704" z="-10872" heading="49536" respawn="0" />
-        <spawn npcId="80299" x="-108320" y="206480" z="-10872" heading="49536" respawn="0" />
-    </spawnlist>
+	<activityTime val="60" />
+	<allowSummon val="false" />
+	<emptyDestroyTime val="10" />
+	<spawnPoint spawnX="83463" spawnY="148630" spawnZ="-3407" />
+	<doorlist>
+		<door doorId="16240100" />
+		<door doorId="16240102" />
+	</doorlist>
+	<spawnlist>
+		<spawn npcId="80292" x="-108320" y="206320" z="-10872" heading="49536" respawn="0" />
+		<spawn npcId="80293" x="-107648" y="206592" z="-10872" heading="49536" respawn="0" />
+		<spawn npcId="80294" x="-107776" y="206704" z="-10872" heading="49536" respawn="0" />
+		<spawn npcId="80295" x="-108208" y="206592" z="-10872" heading="49536" respawn="0" />
+		<spawn npcId="80296" x="-107536" y="206480" z="-10872" heading="49536" respawn="0" />
+		<spawn npcId="80297" x="-107536" y="206320" z="-10872" heading="49536" respawn="0" />
+		<spawn npcId="80298" x="-108096" y="206704" z="-10872" heading="49536" respawn="0" />
+		<spawn npcId="80299" x="-108320" y="206480" z="-10872" heading="49536" respawn="0" />
+	</spawnlist>
 </instance>

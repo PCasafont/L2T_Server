@@ -21,18 +21,16 @@ import l2server.gameserver.network.serverpackets.ExPledgeWaitingListSearch;
 /**
  * @author Pere
  */
-public final class RequestPledgeWaitingListSearch extends L2GameClientPacket
-{
+public final class RequestPledgeWaitingListSearch extends L2GameClientPacket {
 	private int minLevel;
 	private int maxLevel;
 	private int role;
 	private int sortBy;
 	private boolean desc;
 	private String name;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		minLevel = readD();
 		maxLevel = readD();
 		role = readD();
@@ -40,21 +38,18 @@ public final class RequestPledgeWaitingListSearch extends L2GameClientPacket
 		sortBy = readD();
 		desc = readD() == 1;
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (!getClient().getFloodProtectors().getServerBypass().tryPerformAction("clanRecruitSearch"))
-		{
+		
+		if (!getClient().getFloodProtectors().getServerBypass().tryPerformAction("clanRecruitSearch")) {
 			return;
 		}
-
+		
 		sendPacket(new ExPledgeWaitingListSearch(minLevel, maxLevel, role, sortBy, desc, name));
 	}
 }

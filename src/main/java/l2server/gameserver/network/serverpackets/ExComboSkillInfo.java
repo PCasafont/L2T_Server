@@ -18,15 +18,12 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExComboSkillInfo extends L2GameServerPacket
-{
-	public ExComboSkillInfo()
-	{
+public class ExComboSkillInfo extends L2GameServerPacket {
+	public ExComboSkillInfo() {
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		// TODO packet structure
 	}
 }

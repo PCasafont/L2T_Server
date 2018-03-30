@@ -21,20 +21,17 @@ package l2server.gameserver.network.clientpackets;
  *
  * @author -Wooden-
  */
-public class RequestPledgeExtendedInfo extends L2GameClientPacket
-{
-
+public class RequestPledgeExtendedInfo extends L2GameClientPacket {
+	
 	@SuppressWarnings("unused")
 	private String name;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		name = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 	}
 }

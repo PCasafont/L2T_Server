@@ -24,8 +24,7 @@ import l2server.gameserver.templates.StatsSet;
  *
  * @version $Revision: 1.2.2.1.2.3 $ $Date: 2005/03/27 15:30:10 $
  */
-public final class L2EtcItem extends L2Item
-{
+public final class L2EtcItem extends L2Item {
 	// private final String[] skill;
 	private String handler;
 	private final int sharedReuseGroup;
@@ -39,38 +38,31 @@ public final class L2EtcItem extends L2Item
 	 * @param set : StatsSet designating the set of couples (key,value) for description of the Etc
 	 * @see L2Item constructor
 	 */
-	public L2EtcItem(StatsSet set)
-	{
+	public L2EtcItem(StatsSet set) {
 		super(set);
 		type = L2EtcItemType.valueOf(set.getString("etcitemType", "none").toUpperCase());
 
 		// l2j custom - L2EtcItemType.SHOT
-		switch (getDefaultAction())
-		{
+		switch (getDefaultAction()) {
 			case soulshot:
 			case summon_soulshot:
 			case summon_spiritshot:
-			case spiritshot:
-			{
+			case spiritshot: {
 				type = L2EtcItemType.SHOT;
 				break;
 			}
 		}
 
-		if (is_ex_immediate_effect())
-		{
+		if (is_ex_immediate_effect()) {
 			type = L2EtcItemType.HERB;
 		}
 
 		type1 = L2Item.TYPE1_ITEM_QUESTITEM_ADENA;
 		type2 = L2Item.TYPE2_OTHER; // default is other
 
-		if (isQuestItem())
-		{
+		if (isQuestItem()) {
 			type2 = L2Item.TYPE2_QUEST;
-		}
-		else if (getItemId() == PcInventory.ADENA_ID || getItemId() == PcInventory.ANCIENT_ADENA_ID)
-		{
+		} else if (getItemId() == PcInventory.ADENA_ID || getItemId() == PcInventory.ANCIENT_ADENA_ID) {
 			type2 = L2Item.TYPE2_MONEY;
 		}
 
@@ -79,14 +71,10 @@ public final class L2EtcItem extends L2Item
 		isBlessed = set.getBool("blessed", false);
 	}
 
-	public void attach(L2ExtractableProduct product)
-	{
-		if (extractableItems == null)
-		{
+	public void attach(L2ExtractableProduct product) {
+		if (extractableItems == null) {
 			extractableItems = new L2ExtractableProduct[]{product};
-		}
-		else
-		{
+		} else {
 			int len = extractableItems.length;
 			L2ExtractableProduct[] tmp = new L2ExtractableProduct[len + 1];
 			System.arraycopy(extractableItems, 0, tmp, 0, len);
@@ -101,8 +89,7 @@ public final class L2EtcItem extends L2Item
 	 * @return L2EtcItemType
 	 */
 	@Override
-	public L2EtcItemType getItemType()
-	{
+	public L2EtcItemType getItemType() {
 		return type;
 	}
 
@@ -112,10 +99,8 @@ public final class L2EtcItem extends L2Item
 	 * @return boolean
 	 */
 	@Override
-	public final boolean isConsumable()
-	{
-		return getItemType() == L2EtcItemType.SHOT ||
-				getItemType() == L2EtcItemType.POTION; // || (type == L2EtcItemType.SCROLL));
+	public final boolean isConsumable() {
+		return getItemType() == L2EtcItemType.SHOT || getItemType() == L2EtcItemType.POTION; // || (type == L2EtcItemType.SCROLL));
 	}
 
 	/**
@@ -124,8 +109,7 @@ public final class L2EtcItem extends L2Item
 	 * @return int : ID of the EtcItem
 	 */
 	@Override
-	public int getItemMask()
-	{
+	public int getItemMask() {
 		return getItemType().mask();
 	}
 
@@ -134,16 +118,14 @@ public final class L2EtcItem extends L2Item
 	 *
 	 * @return String
 	 */
-	public String getHandlerName()
-	{
+	public String getHandlerName() {
 		return handler;
 	}
 
 	/**
 	 * @return
 	 */
-	public int getSharedReuseGroup()
-	{
+	public int getSharedReuseGroup() {
 		return sharedReuseGroup;
 	}
 
@@ -151,16 +133,14 @@ public final class L2EtcItem extends L2Item
 	 * @return
 	 */
 	@Override
-	public final boolean isBlessed()
-	{
+	public final boolean isBlessed() {
 		return isBlessed;
 	}
 
 	/**
 	 * @return the _extractable_items
 	 */
-	public L2ExtractableProduct[] getExtractableItems()
-	{
+	public L2ExtractableProduct[] getExtractableItems() {
 		return extractableItems;
 	}
 }

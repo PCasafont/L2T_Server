@@ -18,8 +18,7 @@ package l2server.gameserver.templates.skills;
 /**
  * @author Pere
  */
-public enum L2EffectType
-{
+public enum L2EffectType {
 	NONE(0x0000000000000000L),
 	RELAXING(0x0000000000000001L),
 	STUN(0x0000000000000002L),
@@ -52,16 +51,14 @@ public enum L2EffectType
 	BLOCK_INVUL(0x0000000010000000L),
 	BLOCK_HIDE(0x0000000020000000L),
 	BLOCK_TALISMANS(0x0000000040000000L);
-
+	
 	private long mask;
-
-	L2EffectType(long mask)
-	{
+	
+	L2EffectType(long mask) {
 		this.mask = mask;
 	}
-
-	public long getMask()
-	{
+	
+	public long getMask() {
 		return mask;
 	}
 }

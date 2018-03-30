@@ -29,8 +29,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  * @author Gnacik
  */
 
-public final class RequestPartyMatchDetail extends L2GameClientPacket
-{
+public final class RequestPartyMatchDetail extends L2GameClientPacket {
 	private int roomid;
 	@SuppressWarnings("unused")
 	private int unk1;
@@ -38,65 +37,56 @@ public final class RequestPartyMatchDetail extends L2GameClientPacket
 	private int unk2;
 	@SuppressWarnings("unused")
 	private int unk3;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		roomid = readD();
 		/*
-         * IF player click on Room all unk are 0
+		 * IF player click on Room all unk are 0
 		 * IF player click AutoJoin values are -1 1 1
 		 */
 		unk1 = readD();
 		unk2 = readD();
 		unk3 = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		PartyMatchRoom room = PartyMatchRoomList.getInstance().getRoom(roomid);
-		if (room == null)
-		{
+		if (room == null) {
 			return;
 		}
-
-		if (activeChar.getLevel() >= room.getMinLvl() && activeChar.getLevel() <= room.getMaxLvl())
-		{
+		
+		if (activeChar.getLevel() >= room.getMinLvl() && activeChar.getLevel() <= room.getMaxLvl()) {
 			// Remove from waiting list
 			PartyMatchWaitingList.getInstance().removePlayer(activeChar);
-
+			
 			activeChar.setPartyRoom(roomid);
-
+			
 			activeChar.sendPacket(new PartyMatchDetail(activeChar, room));
 			activeChar.sendPacket(new ExPartyRoomMembers(activeChar, room, 0));
-
-			for (L2PcInstance member : room.getPartyMembers())
-			{
-				if (member == null)
-				{
+			
+			for (L2PcInstance member : room.getPartyMembers()) {
+				if (member == null) {
 					continue;
 				}
-
+				
 				member.sendPacket(new ExManagePartyRoomMember(activeChar, room, 0));
-
+				
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_ENTERED_PARTY_ROOM);
 				sm.addCharName(activeChar);
 				member.sendPacket(sm);
 			}
 			room.addMember(activeChar);
-
+			
 			// Info Broadcast
 			activeChar.broadcastUserInfo();
-		}
-		else
-		{
+		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_ENTER_PARTY_ROOM));
 		}
 	}

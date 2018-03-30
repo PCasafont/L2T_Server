@@ -26,27 +26,22 @@ import l2server.gameserver.templates.skills.L2EffectType;
 /**
  * @author Pere
  */
-public class EffectStance extends L2Effect
-{
+public class EffectStance extends L2Effect {
 	private static final int[] STANCE_IDS = {11007, 11008, 11009, 11010};
 	private static final int DOUBLE_CASTING_ID = 11068;
 
-	public EffectStance(Env env, L2EffectTemplate template)
-	{
+	public EffectStance(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return getSkill().getId() == DOUBLE_CASTING_ID ? L2EffectType.DOUBLE_CASTING : L2EffectType.NONE;
 	}
 
 	@Override
-	public boolean onStart()
-	{
-		if (!(getEffected() instanceof L2PcInstance))
-		{
+	public boolean onStart() {
+		if (!(getEffected() instanceof L2PcInstance)) {
 			return false;
 		}
 
@@ -54,27 +49,20 @@ public class EffectStance extends L2Effect
 
 		L2Skill skill = getSkill();
 
-		if (skill.getId() == DOUBLE_CASTING_ID)
-		{
+		if (skill.getId() == DOUBLE_CASTING_ID) {
 			activeChar.setElementalStance(activeChar.getElementalStance() + 10);
-			for (int stanceId : STANCE_IDS)
-			{
-				if (stanceId != STANCE_IDS[0] + activeChar.getElementalStance() % 10 - 1)
-				{
+			for (int stanceId : STANCE_IDS) {
+				if (stanceId != STANCE_IDS[0] + activeChar.getElementalStance() % 10 - 1) {
 					L2Skill stance = SkillTable.getInstance().getInfo(stanceId, 1);
 					stance.getEffects(activeChar, activeChar);
 				}
 			}
-		}
-		else if (activeChar.getElementalStance() < 10)
-		{
+		} else if (activeChar.getElementalStance() < 10) {
 			// Set the player in the current one
 			activeChar.setElementalStance(skill.getId() - STANCE_IDS[0] + 1);
 			// And stop the other stances
-			for (int stanceId : STANCE_IDS)
-			{
-				if (stanceId != skill.getId())
-				{
+			for (int stanceId : STANCE_IDS) {
+				if (stanceId != skill.getId()) {
 					activeChar.stopSkillEffects(stanceId);
 				}
 			}
@@ -84,22 +72,17 @@ public class EffectStance extends L2Effect
 	}
 
 	@Override
-	public void onExit()
-	{
-		if (!(getEffected() instanceof L2PcInstance))
-		{
+	public void onExit() {
+		if (!(getEffected() instanceof L2PcInstance)) {
 			return;
 		}
 
 		L2PcInstance activeChar = (L2PcInstance) getEffected();
-		if (getSkill().getId() == DOUBLE_CASTING_ID)
-		{
+		if (getSkill().getId() == DOUBLE_CASTING_ID) {
 			activeChar.setElementalStance(activeChar.getElementalStance() % 10);
 
-			for (int stanceId : STANCE_IDS)
-			{
-				if (stanceId - STANCE_IDS[0] + 1 != activeChar.getElementalStance())
-				{
+			for (int stanceId : STANCE_IDS) {
+				if (stanceId - STANCE_IDS[0] + 1 != activeChar.getElementalStance()) {
 					activeChar.stopSkillEffects(stanceId);
 				}
 			}
@@ -110,8 +93,7 @@ public class EffectStance extends L2Effect
 	}
 
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return getSkill().getId() != DOUBLE_CASTING_ID;
 	}
 }

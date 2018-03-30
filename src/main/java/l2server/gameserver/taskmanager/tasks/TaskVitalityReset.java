@@ -29,8 +29,7 @@ import java.util.logging.Level;
 /**
  * @author Xavi
  */
-public class TaskVitalityReset extends Task
-{
+public class TaskVitalityReset extends Task {
 
 	private static final String NAME = "vitalty reset";
 
@@ -38,8 +37,7 @@ public class TaskVitalityReset extends Task
 	 * @see l2server.gameserver.taskmanager.Task#getName()
 	 */
 	@Override
-	public String getName()
-	{
+	public String getName() {
 		return NAME;
 	}
 
@@ -47,23 +45,17 @@ public class TaskVitalityReset extends Task
 	 * @see l2server.gameserver.taskmanager.Task#onTimeElapsed(l2server.gameserver.taskmanager.TaskManager.ExecutedTask)
 	 */
 	@Override
-	public void onTimeElapsed(ExecutedTask task)
-	{
+	public void onTimeElapsed(ExecutedTask task) {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("DELETE FROM account_gsdata WHERE var=?");
 			statement.setString(1, "vitality");
 			statement.execute();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Could not reset Vitalty system: " + e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		Log.config("Vitalty system reset.");
@@ -73,8 +65,7 @@ public class TaskVitalityReset extends Task
 	 * @see l2server.gameserver.taskmanager.Task#initialize()
 	 */
 	@Override
-	public void initialize()
-	{
+	public void initialize() {
 		super.initialize();
 		TaskManager.addUniqueTask(NAME, TaskTypes.TYPE_GLOBAL_TASK, "7", "06:30:00", "");
 	}

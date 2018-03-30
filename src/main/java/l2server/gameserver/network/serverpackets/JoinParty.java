@@ -27,22 +27,19 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class JoinParty extends L2GameServerPacket
-{
+public final class JoinParty extends L2GameServerPacket {
 	//
 
 	private int response;
 
 	/**
 	 */
-	public JoinParty(int response)
-	{
+	public JoinParty(int response) {
 		this.response = response;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(response);
 	}
 }

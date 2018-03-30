@@ -36,31 +36,26 @@ import java.util.logging.Level;
  *
  *
  */
-public class Escape implements IUserCommandHandler
-{
+public class Escape implements IUserCommandHandler {
 	private static final int[] COMMAND_IDS = {52};
 
 	/**
 	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
-	{
+	public boolean useUserCommand(int id, L2PcInstance activeChar) {
 		// Thanks nbd, such leetness
-		if (activeChar.getEvent() != null && !activeChar.getEvent().onEscapeUse(activeChar.getObjectId()))
-		{
+		if (activeChar.getEvent() != null && !activeChar.getEvent().onEscapeUse(activeChar.getObjectId())) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		//LasTravel
-		if (activeChar.getIsInsideGMEvent())
-		{
+		if (activeChar.getIsInsideGMEvent()) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 
-		if (!activeChar.canEscape() || activeChar.isCombatFlagEquipped())
-		{
+		if (!activeChar.canEscape() || activeChar.isCombatFlagEquipped()) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
@@ -68,56 +63,43 @@ public class Escape implements IUserCommandHandler
 		int unstuckTimer = activeChar.getAccessLevel().isGm() ? 1000 : Config.UNSTUCK_INTERVAL * 1000;
 
 		// Check to see if player is in jail
-		if (activeChar.isInJail())
-		{
+		if (activeChar.isInJail()) {
 			activeChar.sendMessage("You can not escape from jail.");
 			return false;
 		}
 
 		// Check to see if player is immobilized (Soul)
-		if (activeChar.isImmobilized())
-		{
+		if (activeChar.isImmobilized()) {
 			activeChar.sendMessage("You cannot escape if you are immobilized.");
 			return false;
 		}
 
-		if (GrandBossManager.getInstance().getZone(activeChar) != null && !activeChar.isGM())
-		{
+		if (GrandBossManager.getInstance().getZone(activeChar) != null && !activeChar.isGM()) {
 			activeChar.sendMessage("You may not use an escape command in a Boss Zone.");
 			return false;
 		}
 
-		if (activeChar.isCastingNow() || activeChar.isMovementDisabled() || activeChar.isMuted() ||
-				activeChar.isAlikeDead() || activeChar.isInOlympiadMode() || activeChar.inObserverMode())
-		{
+		if (activeChar.isCastingNow() || activeChar.isMovementDisabled() || activeChar.isMuted() || activeChar.isAlikeDead() ||
+				activeChar.isInOlympiadMode() || activeChar.inObserverMode()) {
 			return false;
 		}
 		activeChar.forceIsCasting(TimeController.getGameTicks() + unstuckTimer / TimeController.MILLIS_IN_TICK);
 
 		L2Skill escape = SkillTable.getInstance().getInfo(2099, 1); // 5 minutes escape
 		L2Skill GM_escape = SkillTable.getInstance().getInfo(2100, 1); // 1 second escape
-		if (activeChar.getAccessLevel().isGm())
-		{
-			if (GM_escape != null)
-			{
+		if (activeChar.getAccessLevel().isGm()) {
+			if (GM_escape != null) {
 				activeChar.doCast(GM_escape);
 				return true;
 			}
 			activeChar.sendMessage("You use Escape: 1 second.");
-		}
-		else if (Config.UNSTUCK_INTERVAL == 300 && escape != null)
-		{
+		} else if (Config.UNSTUCK_INTERVAL == 300 && escape != null) {
 			activeChar.doCast(escape);
 			return true;
-		}
-		else
-		{
-			if (Config.UNSTUCK_INTERVAL > 100)
-			{
+		} else {
+			if (Config.UNSTUCK_INTERVAL > 100) {
 				activeChar.sendMessage("You use Escape: " + unstuckTimer / 60000 + " minutes.");
-			}
-			else
-			{
+			} else {
 				activeChar.sendMessage("You use Escape: " + unstuckTimer / 1000 + " seconds.");
 			}
 		}
@@ -139,20 +121,16 @@ public class Escape implements IUserCommandHandler
 		return true;
 	}
 
-	static class EscapeFinalizer implements Runnable
-	{
+	static class EscapeFinalizer implements Runnable {
 		private L2PcInstance activeChar;
 
-		EscapeFinalizer(L2PcInstance activeChar)
-		{
+		EscapeFinalizer(L2PcInstance activeChar) {
 			this.activeChar = activeChar;
 		}
 
 		@Override
-		public void run()
-		{
-			if (activeChar.isDead())
-			{
+		public void run() {
+			if (activeChar.isDead()) {
 				return;
 			}
 
@@ -160,12 +138,9 @@ public class Escape implements IUserCommandHandler
 			activeChar.setIsCastingNow(false);
 			activeChar.setInstanceId(0);
 
-			try
-			{
+			try {
 				activeChar.teleToLocation(MapRegionTable.TeleportWhereType.Town);
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				log.log(Level.SEVERE, "", e);
 			}
 		}
@@ -175,8 +150,7 @@ public class Escape implements IUserCommandHandler
 	 * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
 	 */
 	@Override
-	public int[] getUserCommandList()
-	{
+	public int[] getUserCommandList() {
 		return COMMAND_IDS;
 	}
 }

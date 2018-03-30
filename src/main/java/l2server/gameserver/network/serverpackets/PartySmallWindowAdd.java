@@ -23,23 +23,20 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @version $Revision: 1.4.2.1.2.5 $ $Date: 2005/03/27 15:29:57 $
  */
-public final class PartySmallWindowAdd extends L2GameServerPacket
-{
-
+public final class PartySmallWindowAdd extends L2GameServerPacket {
+	
 	private final L2PcInstance member;
 	private final int leaderId;
 	private final int distribution;
-
-	public PartySmallWindowAdd(L2PcInstance member, L2Party party)
-	{
+	
+	public PartySmallWindowAdd(L2PcInstance member, L2Party party) {
 		this.member = member;
 		leaderId = party.getPartyLeaderOID();
 		distribution = party.getLootDistribution();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(leaderId); // c3
 		writeD(distribution);//writeD(0x04); ?? //c3
 		writeD(member.getObjectId());

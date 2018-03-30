@@ -19,82 +19,64 @@ import l2server.gameserver.Announcements;
 import l2server.gameserver.Shutdown;
 import l2server.log.Log;
 
-import java.lang.management.LockInfo;
-import java.lang.management.ManagementFactory;
-import java.lang.management.MonitorInfo;
-import java.lang.management.ThreadInfo;
-import java.lang.management.ThreadMXBean;
+import java.lang.management.*;
 import java.util.logging.Level;
 
 /**
  * @author -Nemesiss- L2M
  */
-public class DeadLockDetector extends Thread
-{
+public class DeadLockDetector extends Thread {
 
 	private static final int sleepTime = Config.DEADLOCK_CHECK_INTERVAL * 1000;
 
 	private final ThreadMXBean tmx;
 
-	public DeadLockDetector()
-	{
+	public DeadLockDetector() {
 		super("DeadLockDetector");
 		tmx = ManagementFactory.getThreadMXBean();
 	}
 
 	@Override
-	public final void run()
-	{
+	public final void run() {
 		boolean deadlock = false;
-		while (!deadlock)
-		{
-			try
-			{
+		while (!deadlock) {
+			try {
 				long[] ids = tmx.findDeadlockedThreads();
 
-				if (ids != null)
-				{
+				if (ids != null) {
 					deadlock = true;
 					ThreadInfo[] tis = tmx.getThreadInfo(ids, true, true);
 					String info = "DeadLock Found!\n";
-					for (ThreadInfo ti : tis)
-					{
+					for (ThreadInfo ti : tis) {
 						info += ti.toString();
 					}
 
-					for (ThreadInfo ti : tis)
-					{
+					for (ThreadInfo ti : tis) {
 						LockInfo[] locks = ti.getLockedSynchronizers();
 						MonitorInfo[] monitors = ti.getLockedMonitors();
-						if (locks.length == 0 && monitors.length == 0)
-						{
+						if (locks.length == 0 && monitors.length == 0) {
 							continue;
 						}
 
 						ThreadInfo dl = ti;
 						info += "Java-level deadlock:\n";
-						info += "\t" + dl.getThreadName() + " is waiting to lock " + dl.getLockInfo().toString() +
-								" which is held by " + dl.getLockOwnerName() + "\n";
-						while ((dl = tmx.getThreadInfo(new long[]{dl.getLockOwnerId()}, true, true)[0]).getThreadId() !=
-								ti.getThreadId())
-						{
-							info += "\t" + dl.getThreadName() + " is waiting to lock " + dl.getLockInfo().toString() +
-									" which is held by " + dl.getLockOwnerName() + "\n";
+						info += "\t" + dl.getThreadName() + " is waiting to lock " + dl.getLockInfo().toString() + " which is held by " +
+								dl.getLockOwnerName() + "\n";
+						while ((dl = tmx.getThreadInfo(new long[]{dl.getLockOwnerId()}, true, true)[0]).getThreadId() != ti.getThreadId()) {
+							info += "\t" + dl.getThreadName() + " is waiting to lock " + dl.getLockInfo().toString() + " which is held by " +
+									dl.getLockOwnerName() + "\n";
 						}
 					}
 					Log.warning(info);
 
-					if (Config.RESTART_ON_DEADLOCK)
-					{
+					if (Config.RESTART_ON_DEADLOCK) {
 						Announcements an = Announcements.getInstance();
 						an.announceToAll("Server has stability issues - restarting now.");
 						Shutdown.getInstance().startShutdown("DeadLockDetector - Auto Restart", 60, true);
 					}
 				}
 				Thread.sleep(sleepTime);
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.log(Level.WARNING, "DeadLockDetector: ", e);
 			}
 		}

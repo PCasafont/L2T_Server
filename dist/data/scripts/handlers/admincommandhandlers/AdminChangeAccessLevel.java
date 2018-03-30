@@ -34,22 +34,19 @@ import java.sql.SQLException;
  * or to grant mod/GM privileges ingame
  *
  * @version $Revision: 1.1.2.2.2.3 $ $Date: 2005/04/11 10:06:00 $
- *          con.close() change by Zoey76 24/02/2011
+ * con.close() change by Zoey76 24/02/2011
  */
-public class AdminChangeAccessLevel implements IAdminCommandHandler
-{
+public class AdminChangeAccessLevel implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_changelvl"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 		handleChangeLevel(command, activeChar);
 		return true;
 	}
 
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 
@@ -61,69 +58,46 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler
 	 * @param command
 	 * @param activeChar
 	 */
-	private void handleChangeLevel(String command, L2PcInstance activeChar)
-	{
+	private void handleChangeLevel(String command, L2PcInstance activeChar) {
 		String[] parts = command.split(" ");
-		if (parts.length == 2)
-		{
-			try
-			{
+		if (parts.length == 2) {
+			try {
 				int lvl = Integer.parseInt(parts[1]);
-				if (activeChar.getTarget() instanceof L2PcInstance)
-				{
+				if (activeChar.getTarget() instanceof L2PcInstance) {
 					onLineChange(activeChar, (L2PcInstance) activeChar.getTarget(), lvl);
-				}
-				else
-				{
+				} else {
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				activeChar.sendMessage("Usage: //changelvl <target_new_level> | <player_name> <new_level>");
 			}
-		}
-		else if (parts.length == 3)
-		{
+		} else if (parts.length == 3) {
 			String name = parts[1];
 			int lvl = Integer.parseInt(parts[2]);
 			L2PcInstance player = L2World.getInstance().getPlayer(name);
-			if (player != null)
-			{
+			if (player != null) {
 				onLineChange(activeChar, player, lvl);
-			}
-			else
-			{
+			} else {
 				Connection con = null;
-				try
-				{
+				try {
 					con = L2DatabaseFactory.getInstance().getConnection();
-					PreparedStatement statement =
-							con.prepareStatement("UPDATE characters SET accesslevel=? WHERE char_name=?");
+					PreparedStatement statement = con.prepareStatement("UPDATE characters SET accesslevel=? WHERE char_name=?");
 					statement.setInt(1, lvl);
 					statement.setString(2, name);
 					statement.execute();
 					int count = statement.getUpdateCount();
 					statement.close();
-					if (count == 0)
-					{
+					if (count == 0) {
 						activeChar.sendMessage("Character not found or access level unaltered.");
-					}
-					else
-					{
+					} else {
 						activeChar.sendMessage("Character's access level is now set to " + lvl);
 					}
-				}
-				catch (SQLException se)
-				{
+				} catch (SQLException se) {
 					activeChar.sendMessage("SQLException while changing character's access level");
-					if (Config.DEBUG)
-					{
+					if (Config.DEBUG) {
 						se.printStackTrace();
 					}
-				}
-				finally
-				{
+				} finally {
 					L2DatabaseFactory.close(con);
 				}
 			}
@@ -135,19 +109,14 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler
 	 * @param player
 	 * @param lvl
 	 */
-	private void onLineChange(L2PcInstance activeChar, L2PcInstance player, int lvl)
-	{
+	private void onLineChange(L2PcInstance activeChar, L2PcInstance player, int lvl) {
 		player.setAccessLevel(lvl);
-		if (lvl >= 0)
-		{
+		if (lvl >= 0) {
 			player.sendMessage("Your access level has been changed to " + lvl);
-		}
-		else
-		{
+		} else {
 			player.sendMessage("Your character has been banned. Bye.");
 			player.logout();
 		}
-		activeChar.sendMessage(
-				"Character's access level is now set to " + lvl + ". Effects won't be noticeable until next session.");
+		activeChar.sendMessage("Character's access level is now set to " + lvl + ". Effects won't be noticeable until next session.");
 	}
 }

@@ -33,8 +33,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
-public class AirShipManager
-{
+public class AirShipManager {
 
 	private static final String LOAD_DB = "SELECT * FROM airships";
 	private static final String ADD_DB = "INSERT INTO airships (owner_id,fuel) VALUES (?,?)";
@@ -45,13 +44,11 @@ public class AirShipManager
 	private TIntObjectHashMap<L2AirShipInstance> airShips = new TIntObjectHashMap<>();
 	private TIntObjectHashMap<AirShipTeleportList> teleports = new TIntObjectHashMap<>();
 
-	public static AirShipManager getInstance()
-	{
+	public static AirShipManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private AirShipManager()
-	{
+	private AirShipManager() {
 		StatsSet npcDat = new StatsSet();
 		npcDat.set("npcId", 9);
 		npcDat.set("level", 0);
@@ -94,8 +91,7 @@ public class AirShipManager
 		load();
 	}
 
-	public L2AirShipInstance getNewAirShip(int x, int y, int z, int heading)
-	{
+	public L2AirShipInstance getNewAirShip(int x, int y, int z, int heading) {
 		final L2AirShipInstance airShip = new L2AirShipInstance(IdFactory.getInstance().getNextId(), airShipTemplate);
 
 		airShip.setHeading(heading);
@@ -106,22 +102,17 @@ public class AirShipManager
 		return airShip;
 	}
 
-	public L2AirShipInstance getNewAirShip(int x, int y, int z, int heading, int ownerId)
-	{
+	public L2AirShipInstance getNewAirShip(int x, int y, int z, int heading, int ownerId) {
 		final StatsSet info = airShipsInfo.get(ownerId);
-		if (info == null)
-		{
+		if (info == null) {
 			return null;
 		}
 
 		final L2AirShipInstance airShip;
-		if (airShips.containsKey(ownerId))
-		{
+		if (airShips.containsKey(ownerId)) {
 			airShip = airShips.get(ownerId);
 			airShip.refreshID();
-		}
-		else
-		{
+		} else {
 			airShip = new L2ControllableAirShipInstance(IdFactory.getInstance().getNextId(), airShipTemplate, ownerId);
 			airShips.put(ownerId, airShip);
 
@@ -137,36 +128,29 @@ public class AirShipManager
 		return airShip;
 	}
 
-	public void removeAirShip(L2AirShipInstance ship)
-	{
-		if (ship.getOwnerId() != 0)
-		{
+	public void removeAirShip(L2AirShipInstance ship) {
+		if (ship.getOwnerId() != 0) {
 			storeInDb(ship.getOwnerId());
 			final StatsSet info = airShipsInfo.get(ship.getOwnerId());
-			if (info != null)
-			{
+			if (info != null) {
 				info.set("fuel", ship.getFuel());
 			}
 		}
 	}
 
-	public boolean hasAirShipLicense(int ownerId)
-	{
+	public boolean hasAirShipLicense(int ownerId) {
 		return airShipsInfo.contains(ownerId);
 	}
 
-	public void registerLicense(int ownerId)
-	{
-		if (!airShipsInfo.contains(ownerId))
-		{
+	public void registerLicense(int ownerId) {
+		if (!airShipsInfo.contains(ownerId)) {
 			final StatsSet info = new StatsSet();
 			info.set("fuel", 600);
 
 			airShipsInfo.put(ownerId, info);
 
 			Connection con = null;
-			try
-			{
+			try {
 				con = L2DatabaseFactory.getInstance().getConnection();
 
 				PreparedStatement statement = con.prepareStatement(ADD_DB);
@@ -174,56 +158,41 @@ public class AirShipManager
 				statement.setInt(2, info.getInteger("fuel"));
 				statement.executeUpdate();
 				statement.close();
-			}
-			catch (SQLException e)
-			{
-				Log.log(Level.WARNING,
-						getClass().getSimpleName() + ": Could not add new airship license: " + e.getMessage(), e);
-			}
-			catch (Exception e)
-			{
+			} catch (SQLException e) {
+				Log.log(Level.WARNING, getClass().getSimpleName() + ": Could not add new airship license: " + e.getMessage(), e);
+			} catch (Exception e) {
 				Log.log(Level.WARNING, getClass().getSimpleName() + ": Error while initializing: " + e.getMessage(), e);
-			}
-			finally
-			{
+			} finally {
 				L2DatabaseFactory.close(con);
 			}
 		}
 	}
 
-	public boolean hasAirShip(int ownerId)
-	{
+	public boolean hasAirShip(int ownerId) {
 		final L2AirShipInstance ship = airShips.get(ownerId);
 		return !(ship == null || !(ship.isVisible() || ship.isTeleporting()));
-
 	}
 
-	public void registerAirShipTeleportList(int dockId, int locationId, VehiclePathPoint[][] tp, int[] fuelConsumption)
-	{
-		if (tp.length != fuelConsumption.length)
-		{
+	public void registerAirShipTeleportList(int dockId, int locationId, VehiclePathPoint[][] tp, int[] fuelConsumption) {
+		if (tp.length != fuelConsumption.length) {
 			return;
 		}
 
 		teleports.put(dockId, new AirShipTeleportList(locationId, fuelConsumption, tp));
 	}
 
-	public void sendAirShipTeleportList(L2PcInstance player)
-	{
-		if (player == null || !player.isInAirShip())
-		{
+	public void sendAirShipTeleportList(L2PcInstance player) {
+		if (player == null || !player.isInAirShip()) {
 			return;
 		}
 
 		final L2AirShipInstance ship = player.getAirShip();
-		if (!ship.isCaptain(player) || !ship.isInDock() || ship.isMoving())
-		{
+		if (!ship.isCaptain(player) || !ship.isInDock() || ship.isMoving()) {
 			return;
 		}
 
 		int dockId = ship.getDockId();
-		if (!teleports.contains(dockId))
-		{
+		if (!teleports.contains(dockId)) {
 			return;
 		}
 
@@ -231,50 +200,41 @@ public class AirShipManager
 		player.sendPacket(new ExAirShipTeleportList(all.location, all.routes, all.fuel));
 	}
 
-	public VehiclePathPoint[] getTeleportDestination(int dockId, int index)
-	{
+	public VehiclePathPoint[] getTeleportDestination(int dockId, int index) {
 		final AirShipTeleportList all = teleports.get(dockId);
-		if (all == null)
-		{
+		if (all == null) {
 			return null;
 		}
 
-		if (index < -1 || index >= all.routes.length)
-		{
+		if (index < -1 || index >= all.routes.length) {
 			return null;
 		}
 
 		return all.routes[index + 1];
 	}
 
-	public int getFuelConsumption(int dockId, int index)
-	{
+	public int getFuelConsumption(int dockId, int index) {
 		final AirShipTeleportList all = teleports.get(dockId);
-		if (all == null)
-		{
+		if (all == null) {
 			return 0;
 		}
 
-		if (index < -1 || index >= all.fuel.length)
-		{
+		if (index < -1 || index >= all.fuel.length) {
 			return 0;
 		}
 
 		return all.fuel[index + 1];
 	}
 
-	private void load()
-	{
+	private void load() {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 
 			PreparedStatement statement = con.prepareStatement(LOAD_DB);
 			ResultSet rset = statement.executeQuery();
 
-			while (rset.next())
-			{
+			while (rset.next()) {
 				StatsSet info = new StatsSet();
 				info.set("fuel", rset.getInt("fuel"));
 
@@ -284,35 +244,25 @@ public class AirShipManager
 
 			rset.close();
 			statement.close();
-		}
-		catch (SQLException e)
-		{
-			Log.log(Level.WARNING, getClass().getSimpleName() + ": Could not load airships table: " + e.getMessage(),
-					e);
-		}
-		catch (Exception e)
-		{
+		} catch (SQLException e) {
+			Log.log(Level.WARNING, getClass().getSimpleName() + ": Could not load airships table: " + e.getMessage(), e);
+		} catch (Exception e) {
 			Log.log(Level.WARNING, getClass().getSimpleName() + ": Error while initializing: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 
 		Log.info(getClass().getSimpleName() + ": Loaded " + airShipsInfo.size() + " private airships");
 	}
 
-	private void storeInDb(int ownerId)
-	{
+	private void storeInDb(int ownerId) {
 		StatsSet info = airShipsInfo.get(ownerId);
-		if (info == null)
-		{
+		if (info == null) {
 			return;
 		}
 
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 
 			PreparedStatement statement = con.prepareStatement(UPDATE_DB);
@@ -320,30 +270,21 @@ public class AirShipManager
 			statement.setInt(2, ownerId);
 			statement.executeUpdate();
 			statement.close();
-		}
-		catch (SQLException e)
-		{
-			Log.log(Level.WARNING, getClass().getSimpleName() + ": Could not update airships table: " + e.getMessage(),
-					e);
-		}
-		catch (Exception e)
-		{
+		} catch (SQLException e) {
+			Log.log(Level.WARNING, getClass().getSimpleName() + ": Could not update airships table: " + e.getMessage(), e);
+		} catch (Exception e) {
 			Log.log(Level.WARNING, getClass().getSimpleName() + ": Error while save: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	private static class AirShipTeleportList
-	{
+	private static class AirShipTeleportList {
 		public int location;
 		public int[] fuel;
 		public VehiclePathPoint[][] routes;
 
-		public AirShipTeleportList(int loc, int[] f, VehiclePathPoint[][] r)
-		{
+		public AirShipTeleportList(int loc, int[] f, VehiclePathPoint[][] r) {
 			location = loc;
 			fuel = f;
 			routes = r;
@@ -351,8 +292,7 @@ public class AirShipManager
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final AirShipManager instance = new AirShipManager();
 	}
 }

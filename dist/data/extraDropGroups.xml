@@ -1,780 +1,780 @@
 <list>
-    <extraDrop id="1">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="7.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="81.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="12.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="2">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="40.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="52.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="8.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="3">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="26.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="65.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="9.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="4">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="50.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="43.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="5">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="23.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="66.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="11.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="6">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="19.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="69.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="12.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="7">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="14.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="74.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="12.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="8">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="20.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="45.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="10.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="54.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="36.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="9">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="20.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="45.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="22.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="15.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="54.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="31.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="10">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="20.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="45.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="12.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="56.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="32.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="11">
-        <dropCategory chance="100.0">
-            <itemDrop itemId="8601" min="1" max="1" chance="50.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="18.0" /> <!-- Superior Herb of Life -->
-            <itemDrop itemId="8604" min="1" max="1" chance="25.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="20.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="5.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="10.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="10.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="10.0" /> <!-- Herb of Recovery -->
-            <itemDrop itemId="8611" min="1" max="1" chance="70.0" /> <!-- Herb of Speed -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="12">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="16.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="7.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="81.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="12.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="15.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8613" min="1" max="1" chance="50.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="50.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="13">
-        <dropCategory chance="52.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="7.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="81.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="12.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="50.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8614" min="1" max="1" chance="50.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="14">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="20.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="45.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="15.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="54.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="31.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="15">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="20.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="45.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="18.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="52.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="30.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="16">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="20.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="45.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="10.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="57.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="33.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="17">
-        <dropCategory chance="20.0">
-            <itemDrop itemId="8601" min="1" max="1" chance="70.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="30.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="5.0">
-            <itemDrop itemId="8604" min="1" max="1" chance="70.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="30.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="38.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="18">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="20.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="45.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="10.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="55.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="19">
-        <dropCategory chance="100.0">
-            <itemDrop itemId="8952" min="1" max="3" chance="100.0" /> <!-- Greater Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="100.0">
-            <itemDrop itemId="8953" min="1" max="3" chance="100.0" /> <!-- Greater Herb of Mana -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="20">
-        <dropCategory chance="50.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="21">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="16.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="7.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="81.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="12.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="15.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="26.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="22">
-        <dropCategory chance="80.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="100.0" /> <!-- Herb of Mana -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="23">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="40.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="52.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="8.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-        <dropCategory chance="45.0">
-            <itemDrop itemId="10655" min="1" max="1" chance="100.0" /> <!-- Herb of Vampiric Rage -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="24">
-        <dropCategory chance="100.0">
-            <itemDrop itemId="8952" min="10" max="20" chance="100.0" /> <!-- Greater Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="100.0">
-            <itemDrop itemId="8953" min="10" max="20" chance="100.0" /> <!-- Greater Herb of Mana -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="25">
-        <dropCategory chance="16.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="50.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="50.0" /> <!-- Greater Herb of Mana -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="26">
-        <dropCategory chance="100.0">
-            <itemDrop itemId="8600" min="3" max="5" chance="55.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="3" chance="38.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="50.0">
-            <itemDrop itemId="8603" min="3" max="5" chance="55.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="2" chance="38.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8614" min="1" max="1" chance="100.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="27">
-        <dropCategory chance="42.0">
-            <itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
-            <itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
-            <itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8603" min="1" max="1" chance="19.0" /> <!-- Herb of Mana -->
-            <itemDrop itemId="8604" min="1" max="1" chance="69.0" /> <!-- Greater Herb of Mana -->
-            <itemDrop itemId="8605" min="1" max="1" chance="12.0" /> <!-- Superior Herb of Mana -->
-        </dropCategory>
-        <dropCategory chance="25.0">
-            <itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
-            <itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
-            <itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
-            <itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
-            <itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
-        </dropCategory>
-        <dropCategory chance="10.0">
-            <itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
-            <itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
-        </dropCategory>
-        <dropCategory chance="1.0">
-            <itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
-            <itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
-            <itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
-        </dropCategory>
-        <dropCategory chance="11.0">
-            <itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
-            <itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="28">
-        <dropCategory chance="100.0">
-            <itemDrop itemId="10432" min="1" max="1" chance="50.0" /> <!-- Kertin's Herb of Life -->
-            <itemDrop itemId="10433" min="1" max="1" chance="50.0" /> <!-- Kertin's Herb of Mana -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="29">
-        <dropCategory chance="100.0">
-            <itemDrop itemId="10549" min="1" max="1" chance="33.0" /> <!-- Forgotten Scroll - Protection of Rune -->
-            <itemDrop itemId="10550" min="1" max="1"
-                      chance="33.0" /> <!-- Forgotten Scroll - Protection of Elemental -->
-            <itemDrop itemId="10551" min="1" max="1"
-                      chance="34.0" /> <!-- Forgotten Scroll - Protection of Alignment -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="30">
-        <dropCategory chance="20.0">
-            <itemDrop itemId="9686" min="1" max="1" chance="100.0" /> <!-- Gate Key: Destruction -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="31">
-        <dropCategory chance="1.0">
-            <itemDrop itemId="10296" min="1" max="1" chance="100.0" /> <!-- Transform Sealbook: Anakim -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="32">
-        <dropCategory chance="1.0">
-            <itemDrop itemId="10300" min="1" max="1" chance="100.0" /> <!-- Transform Sealbook  - Kechi -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="33">
-        <dropCategory chance="0.03">
-            <itemDrop itemId="10301" min="1" max="1" chance="100.0" /> <!-- Transform Sealbook: Demon Prince -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="34">
-        <dropCategory chance="0.03">
-            <itemDrop itemId="10299" min="1" max="1" chance="100.0" /> <!-- Transform Sealbook: Ranku -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="35">
-        <dropCategory chance="1.0">
-            <itemDrop itemId="10295" min="1" max="1" chance="100.0" /> <!-- Transform Sealbook: Zaken -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="36">
-        <dropCategory chance="1.0">
-            <itemDrop itemId="10297" min="1" max="1" chance="100.0" /> <!-- Transform Sealbook: Venom -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="37">
-        <dropCategory chance="1.0">
-            <itemDrop itemId="10298" min="1" max="1" chance="100.0" /> <!-- Transform Sealbook: Gordon -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="38">
-        <dropCategory chance="50.0">
-            <itemDrop itemId="10215" min="1" max="1" chance="11.2" /> <!-- Icarus Sawsword -->
-            <itemDrop itemId="10216" min="1" max="1" chance="11.1" /> <!-- Icarus Disperser -->
-            <itemDrop itemId="10217" min="1" max="1" chance="11.1" /> <!-- Icarus Spirit -->
-            <itemDrop itemId="10218" min="1" max="1" chance="11.1" /> <!-- Icarus Heavy Arms -->
-            <itemDrop itemId="10219" min="1" max="1" chance="11.1" /> <!-- Icarus Trident -->
-            <itemDrop itemId="10220" min="1" max="1" chance="11.1" /> <!-- Icarus Hammer -->
-            <itemDrop itemId="10221" min="1" max="1" chance="11.1" /> <!-- Icarus Hand -->
-            <itemDrop itemId="10222" min="1" max="1" chance="11.1" /> <!-- Icarus Hall -->
-            <itemDrop itemId="10223" min="1" max="1" chance="11.1" /> <!-- Icarus Spitter -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="39">
-        <dropCategory chance="100.0">
-            <itemDrop itemId="13893" min="1" max="1" chance="10.0" /> <!-- Sealed Holy Spirit's Cloak -->
-            <itemDrop itemId="10552" min="1" max="1" chance="30.0" /> <!-- Forgotten Scroll - Fighter's Will -->
-            <itemDrop itemId="10553" min="1" max="1" chance="30.0" /> <!-- Forgotten Scroll - Archer's Will -->
-            <itemDrop itemId="14219" min="1" max="1" chance="30.0" /> <!-- Forgotten Scroll - Magician's Will -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="40">
-        <dropCategory chance="100.0">
-            <itemDrop itemId="10553" min="1" max="1" chance="50.0" /> <!-- Forgotten Scroll - Archer's Will -->
-            <itemDrop itemId="14219" min="1" max="1" chance="50.0" /> <!-- Forgotten Scroll - Magician's Will -->
-        </dropCategory>
-    </extraDrop>
-    <extraDrop id="41">
-        <dropCategory chance="0.0382">
-            <itemDrop itemId="10215" min="1" max="1" chance="0.1499" /> <!-- Icarus Sawsword -->
-            <itemDrop itemId="10217" min="1" max="1" chance="0.1499" /> <!-- Icarus Spirit -->
-            <itemDrop itemId="10397" min="1" max="1" chance="49.8501" /> <!-- Icarus Sawsword Piece -->
-            <itemDrop itemId="10399" min="1" max="1" chance="49.8501" /> <!-- Icarus Spirit Piece -->
-        </dropCategory>
-        <dropCategory chance="4.468">
-            <itemDrop itemId="1879" min="1" max="1" chance="60.2474" /> <!-- Cokes -->
-            <itemDrop itemId="1885" min="1" max="1" chance="30.1237" /> <!-- High-Grade Suede -->
-            <itemDrop itemId="9628" min="1" max="1" chance="2.8352" /> <!-- Leonard -->
-            <itemDrop itemId="9630" min="1" max="1" chance="1.9025" /> <!-- Orichalcum -->
-            <itemDrop itemId="9629" min="1" max="1" chance="1.5717" /> <!-- Adamantine -->
-            <itemDrop itemId="10483" min="1" max="1" chance="2.5103" /> <!-- Life Stone -  Level 82 -->
-            <itemDrop itemId="10484" min="1" max="1" chance="0.6276" /> <!-- Mid-Grade Life Stone -  Level 82 -->
-            <itemDrop itemId="10485" min="1" max="1" chance="0.0628" /> <!-- High-Grade Life Stone -  Level 82 -->
-            <itemDrop itemId="10373" min="1" max="1" chance="0.0233" /> <!-- Recipe - Icarus Sawsword (60%) -->
-            <itemDrop itemId="10375" min="1" max="1" chance="0.0233" /> <!-- Recipe - Icarus Spirit (60%) -->
-            <itemDrop itemId="9553" min="1" max="1" chance="0.0722" /> <!-- Water Crystal -->
-        </dropCategory>
-    </extraDrop>
+	<extraDrop id="1">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="7.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="81.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="12.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="2">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="40.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="52.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="8.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="3">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="26.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="65.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="9.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="4">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="50.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="43.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="5">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="23.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="66.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="11.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="6">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="19.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="69.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="12.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="7">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="14.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="74.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="12.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="8">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="20.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="45.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="10.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="54.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="36.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="9">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="20.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="45.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="22.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="15.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="54.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="31.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="10">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="20.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="45.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="12.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="56.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="32.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="11">
+		<dropCategory chance="100.0">
+			<itemDrop itemId="8601" min="1" max="1" chance="50.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="18.0" /> <!-- Superior Herb of Life -->
+			<itemDrop itemId="8604" min="1" max="1" chance="25.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="20.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="5.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="10.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="10.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="10.0" /> <!-- Herb of Recovery -->
+			<itemDrop itemId="8611" min="1" max="1" chance="70.0" /> <!-- Herb of Speed -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="12">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="16.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="7.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="81.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="12.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="15.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8613" min="1" max="1" chance="50.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="50.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="13">
+		<dropCategory chance="52.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="7.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="81.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="12.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="50.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8614" min="1" max="1" chance="50.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="14">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="20.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="45.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="15.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="54.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="31.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="15">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="20.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="45.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="18.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="52.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="30.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="16">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="20.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="45.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="10.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="57.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="33.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="17">
+		<dropCategory chance="20.0">
+			<itemDrop itemId="8601" min="1" max="1" chance="70.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="30.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="5.0">
+			<itemDrop itemId="8604" min="1" max="1" chance="70.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="30.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="38.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="18">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="20.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="45.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="10.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="55.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="35.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="19">
+		<dropCategory chance="100.0">
+			<itemDrop itemId="8952" min="1" max="3" chance="100.0" /> <!-- Greater Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="100.0">
+			<itemDrop itemId="8953" min="1" max="3" chance="100.0" /> <!-- Greater Herb of Mana -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="20">
+		<dropCategory chance="50.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="21">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="16.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="7.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="81.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="12.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="15.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="26.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="22">
+		<dropCategory chance="80.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="100.0" /> <!-- Herb of Mana -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="23">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="40.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="52.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="8.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+		<dropCategory chance="45.0">
+			<itemDrop itemId="10655" min="1" max="1" chance="100.0" /> <!-- Herb of Vampiric Rage -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="24">
+		<dropCategory chance="100.0">
+			<itemDrop itemId="8952" min="10" max="20" chance="100.0" /> <!-- Greater Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="100.0">
+			<itemDrop itemId="8953" min="10" max="20" chance="100.0" /> <!-- Greater Herb of Mana -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="25">
+		<dropCategory chance="16.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="50.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="50.0" /> <!-- Greater Herb of Mana -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="26">
+		<dropCategory chance="100.0">
+			<itemDrop itemId="8600" min="3" max="5" chance="55.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="3" chance="38.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="50.0">
+			<itemDrop itemId="8603" min="3" max="5" chance="55.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="2" chance="38.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8614" min="1" max="1" chance="100.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="27">
+		<dropCategory chance="42.0">
+			<itemDrop itemId="8600" min="1" max="1" chance="55.0" /> <!-- Herb of Life -->
+			<itemDrop itemId="8601" min="1" max="1" chance="38.0" /> <!-- Greater Herb of Life -->
+			<itemDrop itemId="8602" min="1" max="1" chance="7.0" /> <!-- Superior Herb of Life -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8603" min="1" max="1" chance="19.0" /> <!-- Herb of Mana -->
+			<itemDrop itemId="8604" min="1" max="1" chance="69.0" /> <!-- Greater Herb of Mana -->
+			<itemDrop itemId="8605" min="1" max="1" chance="12.0" /> <!-- Superior Herb of Mana -->
+		</dropCategory>
+		<dropCategory chance="25.0">
+			<itemDrop itemId="8606" min="1" max="1" chance="20.0" /> <!-- Herb of Power -->
+			<itemDrop itemId="8608" min="1" max="1" chance="20.0" /> <!-- Herb of Alacrity -->
+			<itemDrop itemId="8610" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Probability -->
+			<itemDrop itemId="10655" min="1" max="1" chance="20.0" /> <!-- Herb of Vampiric Rage -->
+			<itemDrop itemId="10656" min="1" max="1" chance="20.0" /> <!-- Herb of Critical Attack - Power -->
+		</dropCategory>
+		<dropCategory chance="10.0">
+			<itemDrop itemId="8607" min="1" max="1" chance="50.0" /> <!-- Herb of Magic -->
+			<itemDrop itemId="8609" min="1" max="1" chance="50.0" /> <!-- Herb of Casting Spd. -->
+		</dropCategory>
+		<dropCategory chance="1.0">
+			<itemDrop itemId="8612" min="1" max="1" chance="33.0" /> <!-- Herb of the Warrior -->
+			<itemDrop itemId="8613" min="1" max="1" chance="33.0" /> <!-- Herb of the Mystic -->
+			<itemDrop itemId="8614" min="1" max="1" chance="34.0" /> <!-- Herb of Recovery -->
+		</dropCategory>
+		<dropCategory chance="11.0">
+			<itemDrop itemId="8611" min="1" max="1" chance="95.0" /> <!-- Herb of Speed -->
+			<itemDrop itemId="10657" min="1" max="1" chance="5.0" /> <!-- Herb of Doubt -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="28">
+		<dropCategory chance="100.0">
+			<itemDrop itemId="10432" min="1" max="1" chance="50.0" /> <!-- Kertin's Herb of Life -->
+			<itemDrop itemId="10433" min="1" max="1" chance="50.0" /> <!-- Kertin's Herb of Mana -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="29">
+		<dropCategory chance="100.0">
+			<itemDrop itemId="10549" min="1" max="1" chance="33.0" /> <!-- Forgotten Scroll - Protection of Rune -->
+			<itemDrop itemId="10550" min="1" max="1"
+					  chance="33.0" /> <!-- Forgotten Scroll - Protection of Elemental -->
+			<itemDrop itemId="10551" min="1" max="1"
+					  chance="34.0" /> <!-- Forgotten Scroll - Protection of Alignment -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="30">
+		<dropCategory chance="20.0">
+			<itemDrop itemId="9686" min="1" max="1" chance="100.0" /> <!-- Gate Key: Destruction -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="31">
+		<dropCategory chance="1.0">
+			<itemDrop itemId="10296" min="1" max="1" chance="100.0" /> <!-- Transform Sealbook: Anakim -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="32">
+		<dropCategory chance="1.0">
+			<itemDrop itemId="10300" min="1" max="1" chance="100.0" /> <!-- Transform Sealbook  - Kechi -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="33">
+		<dropCategory chance="0.03">
+			<itemDrop itemId="10301" min="1" max="1" chance="100.0" /> <!-- Transform Sealbook: Demon Prince -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="34">
+		<dropCategory chance="0.03">
+			<itemDrop itemId="10299" min="1" max="1" chance="100.0" /> <!-- Transform Sealbook: Ranku -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="35">
+		<dropCategory chance="1.0">
+			<itemDrop itemId="10295" min="1" max="1" chance="100.0" /> <!-- Transform Sealbook: Zaken -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="36">
+		<dropCategory chance="1.0">
+			<itemDrop itemId="10297" min="1" max="1" chance="100.0" /> <!-- Transform Sealbook: Venom -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="37">
+		<dropCategory chance="1.0">
+			<itemDrop itemId="10298" min="1" max="1" chance="100.0" /> <!-- Transform Sealbook: Gordon -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="38">
+		<dropCategory chance="50.0">
+			<itemDrop itemId="10215" min="1" max="1" chance="11.2" /> <!-- Icarus Sawsword -->
+			<itemDrop itemId="10216" min="1" max="1" chance="11.1" /> <!-- Icarus Disperser -->
+			<itemDrop itemId="10217" min="1" max="1" chance="11.1" /> <!-- Icarus Spirit -->
+			<itemDrop itemId="10218" min="1" max="1" chance="11.1" /> <!-- Icarus Heavy Arms -->
+			<itemDrop itemId="10219" min="1" max="1" chance="11.1" /> <!-- Icarus Trident -->
+			<itemDrop itemId="10220" min="1" max="1" chance="11.1" /> <!-- Icarus Hammer -->
+			<itemDrop itemId="10221" min="1" max="1" chance="11.1" /> <!-- Icarus Hand -->
+			<itemDrop itemId="10222" min="1" max="1" chance="11.1" /> <!-- Icarus Hall -->
+			<itemDrop itemId="10223" min="1" max="1" chance="11.1" /> <!-- Icarus Spitter -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="39">
+		<dropCategory chance="100.0">
+			<itemDrop itemId="13893" min="1" max="1" chance="10.0" /> <!-- Sealed Holy Spirit's Cloak -->
+			<itemDrop itemId="10552" min="1" max="1" chance="30.0" /> <!-- Forgotten Scroll - Fighter's Will -->
+			<itemDrop itemId="10553" min="1" max="1" chance="30.0" /> <!-- Forgotten Scroll - Archer's Will -->
+			<itemDrop itemId="14219" min="1" max="1" chance="30.0" /> <!-- Forgotten Scroll - Magician's Will -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="40">
+		<dropCategory chance="100.0">
+			<itemDrop itemId="10553" min="1" max="1" chance="50.0" /> <!-- Forgotten Scroll - Archer's Will -->
+			<itemDrop itemId="14219" min="1" max="1" chance="50.0" /> <!-- Forgotten Scroll - Magician's Will -->
+		</dropCategory>
+	</extraDrop>
+	<extraDrop id="41">
+		<dropCategory chance="0.0382">
+			<itemDrop itemId="10215" min="1" max="1" chance="0.1499" /> <!-- Icarus Sawsword -->
+			<itemDrop itemId="10217" min="1" max="1" chance="0.1499" /> <!-- Icarus Spirit -->
+			<itemDrop itemId="10397" min="1" max="1" chance="49.8501" /> <!-- Icarus Sawsword Piece -->
+			<itemDrop itemId="10399" min="1" max="1" chance="49.8501" /> <!-- Icarus Spirit Piece -->
+		</dropCategory>
+		<dropCategory chance="4.468">
+			<itemDrop itemId="1879" min="1" max="1" chance="60.2474" /> <!-- Cokes -->
+			<itemDrop itemId="1885" min="1" max="1" chance="30.1237" /> <!-- High-Grade Suede -->
+			<itemDrop itemId="9628" min="1" max="1" chance="2.8352" /> <!-- Leonard -->
+			<itemDrop itemId="9630" min="1" max="1" chance="1.9025" /> <!-- Orichalcum -->
+			<itemDrop itemId="9629" min="1" max="1" chance="1.5717" /> <!-- Adamantine -->
+			<itemDrop itemId="10483" min="1" max="1" chance="2.5103" /> <!-- Life Stone -  Level 82 -->
+			<itemDrop itemId="10484" min="1" max="1" chance="0.6276" /> <!-- Mid-Grade Life Stone -  Level 82 -->
+			<itemDrop itemId="10485" min="1" max="1" chance="0.0628" /> <!-- High-Grade Life Stone -  Level 82 -->
+			<itemDrop itemId="10373" min="1" max="1" chance="0.0233" /> <!-- Recipe - Icarus Sawsword (60%) -->
+			<itemDrop itemId="10375" min="1" max="1" chance="0.0233" /> <!-- Recipe - Icarus Spirit (60%) -->
+			<itemDrop itemId="9553" min="1" max="1" chance="0.0722" /> <!-- Water Crystal -->
+		</dropCategory>
+	</extraDrop>
 </list>

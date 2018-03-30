@@ -21,33 +21,32 @@ package l2server.gameserver.model;
  *
  * @author DrHouse
  */
-public interface IChanceSkillTrigger
-{
+public interface IChanceSkillTrigger {
 	/**
 	 * Just a flag
 	 */
 	boolean triggersChanceSkill();
-
+	
 	/**
 	 * Triggered Id
 	 */
 	int getTriggeredChanceId();
-
+	
 	/**
 	 * Triggered level
 	 */
 	int getTriggeredChanceLevel();
-
+	
 	/**
 	 * Triggered enchant route
 	 */
 	int getTriggeredChanceEnchantRoute();
-
+	
 	/**
 	 * Triggered enchant level
 	 */
 	int getTriggeredChanceEnchantLevel();
-
+	
 	/**
 	 * Chance condition object
 	 */

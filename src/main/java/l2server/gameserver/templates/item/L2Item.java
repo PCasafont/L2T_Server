@@ -17,11 +17,7 @@ package l2server.gameserver.templates.item;
 
 import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2CrystallizeReward;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Summon;
 import l2server.gameserver.network.SystemMessageId;
@@ -48,8 +44,7 @@ import java.util.List;
  *
  * @version $Revision: 1.7.2.2.2.5 $ $Date: 2005/04/06 18:25:18 $
  */
-public abstract class L2Item
-{
+public abstract class L2Item {
 	public static final int TYPE1_WEAPON_RING_EARRING_NECKLACE = 0;
 	public static final int TYPE1_SHIELD_ARMOR = 1;
 	public static final int TYPE1_ITEM_QUESTITEM_ADENA = 4;
@@ -183,8 +178,7 @@ public abstract class L2Item
 	 *
 	 * @param set : StatsSet corresponding to a set of couples (key,value) for description of the item
 	 */
-	protected L2Item(StatsSet set)
-	{
+	protected L2Item(StatsSet set) {
 		itemId = set.getInteger("id");
 		name = set.getString("name");
 		icon = set.getString("icon", null);
@@ -223,60 +217,48 @@ public abstract class L2Item
 		defaultAction = set.getEnum("defaultAction", L2ActionType.class, L2ActionType.none);
 
 		String equip_condition = set.getString("equipCondition", null);
-		if (equip_condition != null)
-		{
+		if (equip_condition != null) {
 			//pet conditions
 			ConditionLogicOr cond = new ConditionLogicOr();
-			if (equip_condition.contains("all_wolf_group"))
-			{
+			if (equip_condition.contains("all_wolf_group")) {
 				cond.add(new ConditionPetType(ALL_WOLF));
 			}
-			if (equip_condition.contains("hatchling_group"))
-			{
+			if (equip_condition.contains("hatchling_group")) {
 				cond.add(new ConditionPetType(HATCHLING));
 			}
-			if (equip_condition.contains("strider"))
-			{
+			if (equip_condition.contains("strider")) {
 				cond.add(new ConditionPetType(STRIDER));
 			}
-			if (equip_condition.contains("baby_pet_group"))
-			{
+			if (equip_condition.contains("baby_pet_group")) {
 				cond.add(new ConditionPetType(BABY));
 			}
-			if (equip_condition.contains("upgrade_baby_pet_group"))
-			{
+			if (equip_condition.contains("upgrade_baby_pet_group")) {
 				cond.add(new ConditionPetType(IMPROVED_BABY));
 			}
-			if (equip_condition.contains("grown_up_wolf_group"))
-			{
+			if (equip_condition.contains("grown_up_wolf_group")) {
 				cond.add(new ConditionPetType(GROWN_WOLF));
 			}
-			if (equip_condition.contains("item_equip_pet_group"))
-			{
+			if (equip_condition.contains("item_equip_pet_group")) {
 				cond.add(new ConditionPetType(ALL_PET));
 			}
 
-			if (equip_condition.contains("all_wolf_group") || equip_condition.contains("hatchling_group") ||
-					equip_condition.contains("strider") || equip_condition.contains("baby_pet_group") ||
-					equip_condition.contains("upgrade_baby_pet_group") ||
-					equip_condition.contains("grown_up_wolf_group") || equip_condition.contains("item_equip_pet_group"))
-			{
+			if (equip_condition.contains("all_wolf_group") || equip_condition.contains("hatchling_group") || equip_condition.contains("strider") ||
+					equip_condition.contains("baby_pet_group") || equip_condition.contains("upgrade_baby_pet_group") ||
+					equip_condition.contains("grown_up_wolf_group") || equip_condition.contains("item_equip_pet_group")) {
 				isForPet = true;
 			}
 
-			if (cond.conditions.length > 0)
-			{
+			if (cond.conditions.length > 0) {
 				attach(cond);
 			}
 		}
 
 		common = itemId >= 12006 && itemId <= 12361;
 		heroItem = set.getBool("isHeroItem", false);
-		pvpItem = itemId >= 10667 && itemId <= 10835 || itemId >= 12852 && itemId <= 12977 ||
-				itemId >= 14363 && itemId <= 14525 || itemId == 14528 || itemId == 14529 || itemId == 14558 ||
-				itemId >= 15913 && itemId <= 16024 || itemId >= 16134 && itemId <= 16147 || itemId == 16149 ||
-				itemId == 16151 || itemId == 16153 || itemId == 16155 || itemId == 16157 || itemId == 16159 ||
-				itemId >= 16168 && itemId <= 16176 || itemId >= 16179 && itemId <= 16220;
+		pvpItem = itemId >= 10667 && itemId <= 10835 || itemId >= 12852 && itemId <= 12977 || itemId >= 14363 && itemId <= 14525 || itemId == 14528 ||
+				itemId == 14529 || itemId == 14558 || itemId >= 15913 && itemId <= 16024 || itemId >= 16134 && itemId <= 16147 || itemId == 16149 ||
+				itemId == 16151 || itemId == 16153 || itemId == 16155 || itemId == 16157 || itemId == 16159 || itemId >= 16168 && itemId <= 16176 ||
+				itemId >= 16179 && itemId <= 16220;
 	}
 
 	/**
@@ -291,8 +273,7 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getDuration()
-	{
+	public final int getDuration() {
 		return duration;
 	}
 
@@ -301,16 +282,14 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getTime()
-	{
+	public final int getTime() {
 		return time;
 	}
 
 	/**
 	 * @return the auto destroy time of the item in seconds: 0 or less - default
 	 */
-	public final int getAutoDestroyTime()
-	{
+	public final int getAutoDestroyTime() {
 		return autoDestroyTime;
 	}
 
@@ -319,8 +298,7 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getItemId()
-	{
+	public final int getItemId() {
 		return itemId;
 	}
 
@@ -331,8 +309,7 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getType2()
-	{
+	public final int getType2() {
 		return type2;
 	}
 
@@ -341,8 +318,7 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getWeight()
-	{
+	public final int getWeight() {
 		return weight;
 	}
 
@@ -351,8 +327,7 @@ public abstract class L2Item
 	 *
 	 * @return boolean
 	 */
-	public final boolean isCrystallizable()
-	{
+	public final boolean isCrystallizable() {
 		return crystalType != L2Item.CRYSTAL_NONE && crystalCount > 0;
 	}
 
@@ -361,8 +336,7 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getCrystalType()
-	{
+	public final int getCrystalType() {
 		return crystalType;
 	}
 
@@ -371,8 +345,7 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getCrystalItemId()
-	{
+	public final int getCrystalItemId() {
 		return crystalItemId[crystalType];
 	}
 
@@ -383,8 +356,7 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getItemGrade()
-	{
+	public final int getItemGrade() {
 		return getCrystalType();
 	}
 
@@ -394,10 +366,8 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getItemGradePlain()
-	{
-		switch (getItemGrade())
-		{
+	public final int getItemGradePlain() {
+		switch (getItemGrade()) {
 			case CRYSTAL_S80:
 			case CRYSTAL_S84:
 				return CRYSTAL_S;
@@ -414,8 +384,7 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getCrystalCount()
-	{
+	public final int getCrystalCount() {
 		return crystalCount;
 	}
 
@@ -424,12 +393,9 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getCrystalCount(int enchantLevel)
-	{
-		if (enchantLevel > 3)
-		{
-			switch (type2)
-			{
+	public final int getCrystalCount(int enchantLevel) {
+		if (enchantLevel > 3) {
+			switch (type2) {
 				case TYPE2_SHIELD_ARMOR:
 				case TYPE2_ACCESSORY:
 					return crystalCount;// + crystalEnchantBonusArmor[getCrystalType()] * (3 * enchantLevel - 6);
@@ -438,11 +404,8 @@ public abstract class L2Item
 				default:
 					return crystalCount;
 			}
-		}
-		else if (enchantLevel > 0)
-		{
-			switch (type2)
-			{
+		} else if (enchantLevel > 0) {
+			switch (type2) {
 				case TYPE2_SHIELD_ARMOR:
 				case TYPE2_ACCESSORY:
 					return crystalCount;// + crystalEnchantBonusArmor[getCrystalType()] * enchantLevel;
@@ -451,25 +414,20 @@ public abstract class L2Item
 				default:
 					return crystalCount;
 			}
-		}
-		else
-		{
+		} else {
 			return crystalCount;
 		}
 	}
 
-	public final int getBoundItem()
-	{
+	public final int getBoundItem() {
 		return boundItem;
 	}
 
-	public final int getStandardItem()
-	{
+	public final int getStandardItem() {
 		return standardItem;
 	}
 
-	public final int getBlessedItem()
-	{
+	public final int getBlessedItem() {
 		return blessedItem;
 	}
 
@@ -478,8 +436,7 @@ public abstract class L2Item
 	 *
 	 * @return String
 	 */
-	public final String getName()
-	{
+	public final String getName() {
 		return name;
 	}
 
@@ -488,17 +445,13 @@ public abstract class L2Item
 	 *
 	 * @return Elementals
 	 */
-	public final Elementals[] getElementals()
-	{
+	public final Elementals[] getElementals() {
 		return elementals;
 	}
 
-	public Elementals getElemental(byte attribute)
-	{
-		for (Elementals elm : elementals)
-		{
-			if (elm.getElement() == attribute)
-			{
+	public Elementals getElemental(byte attribute) {
+		for (Elementals elm : elementals) {
+			if (elm.getElement() == attribute) {
 				return elm;
 			}
 		}
@@ -508,22 +461,15 @@ public abstract class L2Item
 	/**
 	 * Sets the base elemental of the item
 	 */
-	public void setElementals(Elementals element)
-	{
-		if (elementals == null)
-		{
+	public void setElementals(Elementals element) {
+		if (elementals == null) {
 			elementals = new Elementals[1];
 			elementals[0] = element;
-		}
-		else
-		{
+		} else {
 			Elementals elm = getElemental(element.getElement());
-			if (elm != null)
-			{
+			if (elm != null) {
 				elm.setValue(element.getValue());
-			}
-			else
-			{
+			} else {
 				elm = element;
 				Elementals[] array = new Elementals[elementals.length + 1];
 				System.arraycopy(elementals, 0, array, 0, elementals.length);
@@ -538,8 +484,7 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getBodyPart()
-	{
+	public final int getBodyPart() {
 		return bodyPart;
 	}
 
@@ -548,8 +493,7 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getType1()
-	{
+	public final int getType1() {
 		return type1;
 	}
 
@@ -558,8 +502,7 @@ public abstract class L2Item
 	 *
 	 * @return boolean
 	 */
-	public final boolean isStackable()
-	{
+	public final boolean isStackable() {
 		return stackable;
 	}
 
@@ -568,13 +511,11 @@ public abstract class L2Item
 	 *
 	 * @return boolean
 	 */
-	public boolean isConsumable()
-	{
+	public boolean isConsumable() {
 		return false;
 	}
 
-	public boolean isEquipable()
-	{
+	public boolean isEquipable() {
 		return getBodyPart() != 0 && !(getItemType() instanceof L2EtcItemType);
 	}
 
@@ -583,15 +524,12 @@ public abstract class L2Item
 	 *
 	 * @return int
 	 */
-	public final int getReferencePrice()
-	{
-		if (referencePrice == 0)
-		{
+	public final int getReferencePrice() {
+		if (referencePrice == 0) {
 			return 2;
 		}
 
-		if (Config.isServer(Config.TENKAI_LEGACY))
-		{
+		if (Config.isServer(Config.TENKAI_LEGACY)) {
 			return (int) Math.sqrt(referencePrice);
 		}
 		return isConsumable() ? (int) (referencePrice * Config.RATE_CONSUMABLE_COST) : referencePrice;
@@ -599,13 +537,11 @@ public abstract class L2Item
 
 	private int salePrice;
 
-	public final void setSalePrice(final int price)
-	{
+	public final void setSalePrice(final int price) {
 		salePrice = price;
 	}
 
-	public final int getSalePrice()
-	{
+	public final int getSalePrice() {
 		return salePrice;
 	}
 
@@ -614,8 +550,7 @@ public abstract class L2Item
 	 *
 	 * @return boolean
 	 */
-	public final boolean isSellable()
-	{
+	public final boolean isSellable() {
 		return sellable;
 	}
 
@@ -624,8 +559,7 @@ public abstract class L2Item
 	 *
 	 * @return boolean
 	 */
-	public final boolean isDropable()
-	{
+	public final boolean isDropable() {
 		return dropable;
 	}
 
@@ -634,8 +568,7 @@ public abstract class L2Item
 	 *
 	 * @return boolean
 	 */
-	public final boolean isDestroyable()
-	{
+	public final boolean isDestroyable() {
 		return destroyable;
 	}
 
@@ -644,8 +577,7 @@ public abstract class L2Item
 	 *
 	 * @return boolean
 	 */
-	public final boolean isTradeable()
-	{
+	public final boolean isTradeable() {
 		return tradeable;
 	}
 
@@ -654,8 +586,7 @@ public abstract class L2Item
 	 *
 	 * @return boolean
 	 */
-	public final boolean isDepositable()
-	{
+	public final boolean isDepositable() {
 		return depositable;
 	}
 
@@ -664,8 +595,7 @@ public abstract class L2Item
 	 *
 	 * @return boolean
 	 */
-	public final boolean isCommon()
-	{
+	public final boolean isCommon() {
 		return common;
 	}
 
@@ -674,8 +604,7 @@ public abstract class L2Item
 	 *
 	 * @return
 	 */
-	public final boolean isHeroItem()
-	{
+	public final boolean isHeroItem() {
 		return heroItem;
 	}
 
@@ -684,18 +613,15 @@ public abstract class L2Item
 	 *
 	 * @return
 	 */
-	public final boolean isPvpItem()
-	{
+	public final boolean isPvpItem() {
 		return pvpItem;
 	}
 
-	public boolean isPotion()
-	{
+	public boolean isPotion() {
 		return getItemType() == L2EtcItemType.POTION;
 	}
 
-	public boolean isElixir()
-	{
+	public boolean isElixir() {
 		return getItemType() == L2EtcItemType.ELIXIR;
 	}
 
@@ -705,27 +631,22 @@ public abstract class L2Item
 	 * @param instance : L2ItemInstance pointing out the item
 	 * @return Func[] : array of functions
 	 */
-	public Func[] getStatFuncs(L2ItemInstance instance)
-	{
-		if (funcTemplates == null || funcTemplates.length == 0)
-		{
+	public Func[] getStatFuncs(L2ItemInstance instance) {
+		if (funcTemplates == null || funcTemplates.length == 0) {
 			return emptyFunctionSet;
 		}
 
 		ArrayList<Func> funcs = new ArrayList<>(funcTemplates.length);
 
 		Func f;
-		for (FuncTemplate t : funcTemplates)
-		{
+		for (FuncTemplate t : funcTemplates) {
 			f = t.getFunc(this); // skill is owner
-			if (f != null)
-			{
+			if (f != null) {
 				funcs.add(f);
 			}
 		}
 
-		if (funcs.isEmpty())
-		{
+		if (funcs.isEmpty()) {
 			return emptyFunctionSet;
 		}
 
@@ -739,10 +660,8 @@ public abstract class L2Item
 	 * @param player   : L2Character pointing out the player
 	 * @return L2Effect[] : array of effects generated by the item
 	 */
-	public L2Abnormal[] getEffects(L2ItemInstance instance, L2Character player)
-	{
-		if (effectTemplates == null || effectTemplates.length == 0)
-		{
+	public L2Abnormal[] getEffects(L2ItemInstance instance, L2Character player) {
+		if (effectTemplates == null || effectTemplates.length == 0) {
 			return emptyEffectSet;
 		}
 
@@ -755,19 +674,16 @@ public abstract class L2Item
 
 		L2Abnormal e;
 
-		for (L2AbnormalTemplate et : effectTemplates)
-		{
+		for (L2AbnormalTemplate et : effectTemplates) {
 
 			e = et.getEffect(env);
-			if (e != null)
-			{
+			if (e != null) {
 				e.scheduleEffect();
 				effects.add(e);
 			}
 		}
 
-		if (effects.isEmpty())
-		{
+		if (effects.isEmpty()) {
 			return emptyEffectSet;
 		}
 
@@ -801,14 +717,10 @@ public abstract class L2Item
 	 * }
 	 */
 
-	public void attach(SkillHolder skill)
-	{
-		if (skillHolder == null)
-		{
+	public void attach(SkillHolder skill) {
+		if (skillHolder == null) {
 			skillHolder = new SkillHolder[]{skill};
-		}
-		else
-		{
+		} else {
 			int len = skillHolder.length;
 			SkillHolder[] tmp = new SkillHolder[len + 1];
 			System.arraycopy(skillHolder, 0, tmp, 0, len);
@@ -817,8 +729,7 @@ public abstract class L2Item
 		}
 	}
 
-	public FuncTemplate[] getFuncs()
-	{
+	public FuncTemplate[] getFuncs() {
 		return funcTemplates;
 	}
 
@@ -827,10 +738,8 @@ public abstract class L2Item
 	 *
 	 * @param f : FuncTemplate to add
 	 */
-	public void attach(FuncTemplate f)
-	{
-		switch (f.stat)
-		{
+	public void attach(FuncTemplate f) {
+		switch (f.stat) {
 			case FIRE_RES:
 			case FIRE_POWER:
 				setElementals(new Elementals(Elementals.FIRE, (int) f.lambda.calc(null)));
@@ -857,12 +766,9 @@ public abstract class L2Item
 				break;
 		}
 		// If functTemplates is empty, create it and add the FuncTemplate f in it
-		if (funcTemplates == null)
-		{
+		if (funcTemplates == null) {
 			funcTemplates = new FuncTemplate[]{f};
-		}
-		else
-		{
+		} else {
 			int len = funcTemplates.length;
 			FuncTemplate[] tmp = new FuncTemplate[len + 1];
 			// Definition : arraycopy(array source, begins copy at this position of source, array destination, begins copy at this position in dest,
@@ -878,14 +784,10 @@ public abstract class L2Item
 	 *
 	 * @param effect : EffectTemplate
 	 */
-	public void attach(L2AbnormalTemplate effect)
-	{
-		if (effectTemplates == null)
-		{
+	public void attach(L2AbnormalTemplate effect) {
+		if (effectTemplates == null) {
 			effectTemplates = new L2AbnormalTemplate[]{effect};
-		}
-		else
-		{
+		} else {
 			int len = effectTemplates.length;
 			L2AbnormalTemplate[] tmp = new L2AbnormalTemplate[len + 1];
 			// Definition : arraycopy(array source, begins copy at this position of source, array destination, begins copy at this position in dest,
@@ -896,19 +798,15 @@ public abstract class L2Item
 		}
 	}
 
-	public final List<Condition> getConditions()
-	{
+	public final List<Condition> getConditions() {
 		return preConditions;
 	}
 
-	public final void attach(Condition c)
-	{
-		if (preConditions == null)
-		{
+	public final void attach(Condition c) {
+		if (preConditions == null) {
 			preConditions = new ArrayList<>();
 		}
-		if (!preConditions.contains(c))
-		{
+		if (!preConditions.contains(c)) {
 			preConditions.add(c);
 		}
 	}
@@ -921,59 +819,44 @@ public abstract class L2Item
 	 *
 	 * @return Skills linked to this item as SkillHolder[]
 	 */
-	public final SkillHolder[] getSkills()
-	{
+	public final SkillHolder[] getSkills() {
 		return skillHolder;
 	}
 
-	public boolean checkCondition(L2Character activeChar, L2Object target, boolean sendMessage)
-	{
-		if (activeChar.isGM() && !Config.GM_ITEM_RESTRICTION)
-		{
+	public boolean checkCondition(L2Character activeChar, L2Object target, boolean sendMessage) {
+		if (activeChar.isGM() && !Config.GM_ITEM_RESTRICTION) {
 			return true;
 		}
 
-		if (preConditions == null)
-		{
+		if (preConditions == null) {
 			return true;
 		}
 
 		Env env = new Env();
 		env.player = activeChar;
-		if (target instanceof L2Character)
-		{
+		if (target instanceof L2Character) {
 			env.target = (L2Character) target;
 		}
 
-		for (Condition preCondition : preConditions)
-		{
-			if (preCondition == null)
-			{
+		for (Condition preCondition : preConditions) {
+			if (preCondition == null) {
 				continue;
 			}
 
-			if (!preCondition.test(env))
-			{
-				if (activeChar instanceof L2Summon)
-				{
-					activeChar.getActingPlayer()
-							.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PET_CANNOT_USE_ITEM));
+			if (!preCondition.test(env)) {
+				if (activeChar instanceof L2Summon) {
+					activeChar.getActingPlayer().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PET_CANNOT_USE_ITEM));
 					return false;
 				}
 
-				if (sendMessage)
-				{
+				if (sendMessage) {
 					String msg = preCondition.getMessage();
 					int msgId = preCondition.getMessageId();
-					if (msg != null)
-					{
+					if (msg != null) {
 						activeChar.sendMessage(msg);
-					}
-					else if (msgId != 0)
-					{
+					} else if (msgId != 0) {
 						SystemMessage sm = SystemMessage.getSystemMessage(msgId);
-						if (preCondition.isAddName())
-						{
+						if (preCondition.isAddName()) {
 							sm.addItemName(itemId);
 						}
 						activeChar.getActingPlayer().sendPacket(sm);
@@ -985,19 +868,14 @@ public abstract class L2Item
 		return true;
 	}
 
-	public boolean isConditionAttached()
-	{
+	public boolean isConditionAttached() {
 		return preConditions != null && !preConditions.isEmpty();
 	}
 
-	public void attach(L2CrystallizeReward reward)
-	{
-		if (crystallizeRewards == null)
-		{
+	public void attach(L2CrystallizeReward reward) {
+		if (crystallizeRewards == null) {
 			crystallizeRewards = new L2CrystallizeReward[]{reward};
-		}
-		else
-		{
+		} else {
 			int len = crystallizeRewards.length;
 			L2CrystallizeReward[] tmp = new L2CrystallizeReward[len + 1];
 			System.arraycopy(crystallizeRewards, 0, tmp, 0, len);
@@ -1006,13 +884,11 @@ public abstract class L2Item
 		}
 	}
 
-	public final L2CrystallizeReward[] getCrystallizeRewards()
-	{
+	public final L2CrystallizeReward[] getCrystallizeRewards() {
 		return crystallizeRewards;
 	}
 
-	public boolean isQuestItem()
-	{
+	public boolean isQuestItem() {
 		return questItem;
 	}
 
@@ -1022,40 +898,35 @@ public abstract class L2Item
 	 * @return String
 	 */
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return name + "(" + itemId + ")";
 	}
 
 	/**
 	 * @return the _ex_immediate_effect
 	 */
-	public boolean is_ex_immediate_effect()
-	{
+	public boolean is_ex_immediate_effect() {
 		return _ex_immediate_effect;
 	}
 
 	/**
 	 * @return the _default_action
 	 */
-	public L2ActionType getDefaultAction()
-	{
+	public L2ActionType getDefaultAction() {
 		return defaultAction;
 	}
 
 	/**
 	 * @return is for pet?
 	 */
-	public boolean isForPet()
-	{
+	public boolean isForPet() {
 		return isForPet;
 	}
 
 	/**
 	 * @return body part name
 	 */
-	public String getBodyPartName()
-	{
+	public String getBodyPartName() {
 		return bodyPartName;
 	}
 
@@ -1064,55 +935,44 @@ public abstract class L2Item
 	 *
 	 * @return the icon
 	 */
-	public String getIcon()
-	{
+	public String getIcon() {
 		return icon;
 	}
 
-	public final boolean isVitality()
-	{
+	public final boolean isVitality() {
 		return vitality;
 	}
 
-	public final boolean isOlyRestricted()
-	{
+	public final boolean isOlyRestricted() {
 		return isOlyRestricted;
 	}
 
-	public boolean isBlessed()
-	{
+	public boolean isBlessed() {
 		return isBlessed;
 	}
 
-	public boolean canBeUsedAsApp()
-	{
+	public boolean canBeUsedAsApp() {
 		return canBeUsedAsApp;
 	}
 
-	public boolean isEnchantable()
-	{
+	public boolean isEnchantable() {
 		return isEnchantable;
 	}
 
-	public boolean isAttributable()
-	{
+	public boolean isAttributable() {
 		return isAttributable;
 	}
 
-	public boolean isAugmentable()
-	{
+	public boolean isAugmentable() {
 		return isAugmentable;
 	}
 
-	public boolean isEpic()
-	{
+	public boolean isEpic() {
 		return isEpic;
 	}
 
-	public int getShotTypeIndex()
-	{
-		switch (getDefaultAction())
-		{
+	public int getShotTypeIndex() {
+		switch (getDefaultAction()) {
 			case soulshot:
 				return 0;
 			case spiritshot:

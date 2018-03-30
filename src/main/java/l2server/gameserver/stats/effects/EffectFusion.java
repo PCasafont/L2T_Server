@@ -24,21 +24,18 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 /**
  * @author Kerberos
  */
-public class EffectFusion extends L2Effect
-{
+public class EffectFusion extends L2Effect {
 	public int effect;
 	public int maxEffect;
 
-	public EffectFusion(Env env, L2EffectTemplate template)
-	{
+	public EffectFusion(Env env, L2EffectTemplate template) {
 		super(env, template);
 		effect = getSkill().getLevel();
 		maxEffect = SkillTable.getInstance().getMaxLevel(getSkill().getId());
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.BUFF;
 	}
 
@@ -46,35 +43,27 @@ public class EffectFusion extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return true;
 	}
 
-	public void increaseEffect()
-	{
-		if (effect < maxEffect)
-		{
+	public void increaseEffect() {
+		if (effect < maxEffect) {
 			effect++;
 			updateBuff();
 		}
 	}
 
-	public void decreaseForce()
-	{
+	public void decreaseForce() {
 		effect--;
-		if (effect < 1)
-		{
+		if (effect < 1) {
 			exit();
-		}
-		else
-		{
+		} else {
 			updateBuff();
 		}
 	}
 
-	private void updateBuff()
-	{
+	private void updateBuff() {
 		exit();
 		SkillTable.getInstance().getInfo(getSkill().getId(), effect).getEffects(getEffector(), getEffected());
 	}

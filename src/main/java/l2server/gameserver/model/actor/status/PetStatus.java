@@ -21,35 +21,28 @@ import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-public class PetStatus extends SummonStatus
-{
+public class PetStatus extends SummonStatus {
 	private int currentFed = 0; //Current Fed of the L2PetInstance
 
-	public PetStatus(L2PetInstance activeChar)
-	{
+	public PetStatus(L2PetInstance activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public final void reduceHp(double value, L2Character attacker)
-	{
+	public final void reduceHp(double value, L2Character attacker) {
 		reduceHp(value, attacker, true, false, false);
 	}
 
 	@Override
-	public final void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHpConsumption)
-	{
-		if (getActiveChar().isDead())
-		{
+	public final void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHpConsumption) {
+		if (getActiveChar().isDead()) {
 			return;
 		}
 
 		super.reduceHp(value, attacker, awake, isDOT, isHpConsumption);
 
-		if (attacker != null)
-		{
-			if (!isDOT && getActiveChar().getOwner() != null)
-			{
+		if (attacker != null) {
+			if (!isDOT && getActiveChar().getOwner() != null) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PET_RECEIVED_S2_DAMAGE_BY_C1);
 				sm.addCharName(attacker);
 				sm.addNumber((int) value);
@@ -59,19 +52,16 @@ public class PetStatus extends SummonStatus
 		}
 	}
 
-	public int getCurrentFed()
-	{
+	public int getCurrentFed() {
 		return currentFed;
 	}
 
-	public void setCurrentFed(int value)
-	{
+	public void setCurrentFed(int value) {
 		currentFed = value;
 	}
 
 	@Override
-	public L2PetInstance getActiveChar()
-	{
+	public L2PetInstance getActiveChar() {
 		return (L2PetInstance) super.getActiveChar();
 	}
 }

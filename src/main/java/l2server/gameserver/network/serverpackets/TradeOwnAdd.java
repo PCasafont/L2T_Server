@@ -23,18 +23,15 @@ import l2server.gameserver.model.TradeList;
  * @author Yme
  * @version $Revision: 1.2.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class TradeOwnAdd extends L2ItemListPacket
-{
+public final class TradeOwnAdd extends L2ItemListPacket {
 	private TradeList.TradeItem item;
-
-	public TradeOwnAdd(TradeList.TradeItem item)
-	{
+	
+	public TradeOwnAdd(TradeList.TradeItem item) {
 		this.item = item;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeH(1); // items added count
 		writeItem(item);
 	}

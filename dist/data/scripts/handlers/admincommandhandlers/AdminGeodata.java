@@ -23,152 +23,97 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author -Nemesiss-
  */
-public class AdminGeodata implements IAdminCommandHandler
-{
-	private static final String[] ADMIN_COMMANDS = {
-			"admin_geo_z",
-			"admin_geo_type",
-			"admin_geo_nswe",
-			"admin_geo_los",
-			"admin_geo_position",
-			"admin_geo_bug",
-			"admin_geo_load",
-			"admin_geo_unload"
-	};
+public class AdminGeodata implements IAdminCommandHandler {
+	private static final String[] ADMIN_COMMANDS =
+			{"admin_geo_z", "admin_geo_type", "admin_geo_nswe", "admin_geo_los", "admin_geo_position", "admin_geo_bug", "admin_geo_load",
+					"admin_geo_unload"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (Config.GEODATA < 1)
-		{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		if (Config.GEODATA < 1) {
 			activeChar.sendMessage("Geo Engine is Turned Off!");
 			return true;
 		}
 
-		if (command.equals("admin_geo_z"))
-		{
-			activeChar.sendMessage("GeoEngine: Geo_Z = " +
-					GeoData.getInstance().getHeight(activeChar.getX(), activeChar.getY(), activeChar.getZ()) +
-					" Loc_Z = " + activeChar.getZ());
-		}
-		else if (command.equals("admin_geo_type"))
-		{
+		if (command.equals("admin_geo_z")) {
+			activeChar.sendMessage(
+					"GeoEngine: Geo_Z = " + GeoData.getInstance().getHeight(activeChar.getX(), activeChar.getY(), activeChar.getZ()) + " Loc_Z = " +
+							activeChar.getZ());
+		} else if (command.equals("admin_geo_type")) {
 			short type = GeoData.getInstance().getType(activeChar.getX(), activeChar.getY());
 			activeChar.sendMessage("GeoEngine: Geo_Type = " + type);
 			short height = GeoData.getInstance().getHeight(activeChar.getX(), activeChar.getY(), activeChar.getZ());
 			activeChar.sendMessage("GeoEngine: height = " + height);
-		}
-		else if (command.equals("admin_geo_nswe"))
-		{
+		} else if (command.equals("admin_geo_nswe")) {
 			String result = "";
 			short nswe = GeoData.getInstance().getNSWE(activeChar.getX(), activeChar.getY(), activeChar.getZ());
-			if ((nswe & 8) == 0)
-			{
+			if ((nswe & 8) == 0) {
 				result += " N";
 			}
-			if ((nswe & 4) == 0)
-			{
+			if ((nswe & 4) == 0) {
 				result += " S";
 			}
-			if ((nswe & 2) == 0)
-			{
+			if ((nswe & 2) == 0) {
 				result += " W";
 			}
-			if ((nswe & 1) == 0)
-			{
+			if ((nswe & 1) == 0) {
 				result += " E";
 			}
 			activeChar.sendMessage("GeoEngine: Geo_NSWE -> " + nswe + "->" + result);
-		}
-		else if (command.equals("admin_geo_los"))
-		{
-			if (activeChar.getTarget() != null)
-			{
-				if (GeoData.getInstance().canSeeTargetDebug(activeChar, activeChar.getTarget()))
-				{
+		} else if (command.equals("admin_geo_los")) {
+			if (activeChar.getTarget() != null) {
+				if (GeoData.getInstance().canSeeTargetDebug(activeChar, activeChar.getTarget())) {
 					activeChar.sendMessage("GeoEngine: Can See Target");
-				}
-				else
-				{
+				} else {
 					activeChar.sendMessage("GeoEngine: Can't See Target");
 				}
-			}
-			else
-			{
+			} else {
 				activeChar.sendMessage("None Target!");
 			}
-		}
-		else if (command.equals("admin_geo_position"))
-		{
+		} else if (command.equals("admin_geo_position")) {
 			activeChar.sendMessage("GeoEngine: Your current position: ");
-			activeChar.sendMessage(".... world coords: x: " + activeChar.getX() + " y: " + activeChar.getY() + " z: " +
-					activeChar.getZ());
-			activeChar.sendMessage(
-					".... geo position: " + GeoData.getInstance().geoPosition(activeChar.getX(), activeChar.getY()));
-		}
-		else if (command.startsWith("admin_geo_load"))
-		{
+			activeChar.sendMessage(".... world coords: x: " + activeChar.getX() + " y: " + activeChar.getY() + " z: " + activeChar.getZ());
+			activeChar.sendMessage(".... geo position: " + GeoData.getInstance().geoPosition(activeChar.getX(), activeChar.getY()));
+		} else if (command.startsWith("admin_geo_load")) {
 			String[] v = command.substring(15).split(" ");
-			if (v.length != 2)
-			{
+			if (v.length != 2) {
 				activeChar.sendMessage("Usage: //admin_geo_load <regionX> <regionY>");
-			}
-			else
-			{
-				try
-				{
+			} else {
+				try {
 					byte rx = Byte.parseByte(v[0]);
 					byte ry = Byte.parseByte(v[1]);
 
 					boolean result = GeoData.loadGeodataFile(rx, ry);
 
-					if (result)
-					{
+					if (result) {
 						activeChar.sendMessage("GeoEngine: File for region [" + rx + "," + ry + "] loaded succesfuly");
-					}
-					else
-					{
+					} else {
 						activeChar.sendMessage("GeoEngine: File for region [" + rx + "," + ry + "] couldn't be loaded");
 					}
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					activeChar.sendMessage("You have to write numbers of regions <regionX> <regionY>");
 				}
 			}
-		}
-		else if (command.startsWith("admin_geo_unload"))
-		{
+		} else if (command.startsWith("admin_geo_unload")) {
 			String[] v = command.substring(17).split(" ");
-			if (v.length != 2)
-			{
+			if (v.length != 2) {
 				activeChar.sendMessage("Usage: //admin_geo_unload <regionX> <regionY>");
-			}
-			else
-			{
-				try
-				{
+			} else {
+				try {
 					byte rx = Byte.parseByte(v[0]);
 					byte ry = Byte.parseByte(v[1]);
 
 					GeoData.unloadGeodata(rx, ry);
 					activeChar.sendMessage("GeoEngine: File for region [" + rx + "," + ry + "] unloaded.");
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					activeChar.sendMessage("You have to write numbers of regions <regionX> <regionY>");
 				}
 			}
-		}
-		else if (command.startsWith("admin_geo_bug"))
-		{
-			try
-			{
+		} else if (command.startsWith("admin_geo_bug")) {
+			try {
 				String comment = command.substring(14);
 				GeoData.getInstance().addGeoDataBug(activeChar, comment);
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
+			} catch (StringIndexOutOfBoundsException e) {
 				activeChar.sendMessage("Usage: //admin_geo_bug you coments here");
 			}
 		}
@@ -176,8 +121,7 @@ public class AdminGeodata implements IAdminCommandHandler
 	}
 
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

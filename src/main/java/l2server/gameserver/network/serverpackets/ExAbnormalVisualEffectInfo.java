@@ -3,10 +3,8 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author MegaParzor!
  */
-public class ExAbnormalVisualEffectInfo extends L2GameServerPacket
-{
+public class ExAbnormalVisualEffectInfo extends L2GameServerPacket {
 	@Override
-	public void writeImpl()
-	{
+	public void writeImpl() {
 	}
 }

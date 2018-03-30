@@ -27,8 +27,7 @@ import java.io.File;
 /**
  * @author FBIagent<br>
  */
-public class AccessLevels
-{
+public class AccessLevels {
 	/* The logger<br> */
 
 	/**
@@ -38,9 +37,19 @@ public class AccessLevels
 	/**
 	 * The master access level which can use everything<br>
 	 */
-	public static L2AccessLevel masterAccessLevel =
-			new L2AccessLevel(masterAccessLevelNum, "Master Access", Config.MASTERACCESS_NAME_COLOR,
-					Config.MASTERACCESS_TITLE_COLOR, null, true, true, true, true, true, true, true, true);
+	public static L2AccessLevel masterAccessLevel = new L2AccessLevel(masterAccessLevelNum,
+			"Master Access",
+			Config.MASTERACCESS_NAME_COLOR,
+			Config.MASTERACCESS_TITLE_COLOR,
+			null,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true,
+			true);
 	/**
 	 * Reserved user access level<br>
 	 */
@@ -49,8 +58,7 @@ public class AccessLevels
 	 * The user access level which can do no administrative tasks<br>
 	 */
 	public static L2AccessLevel userAccessLevel =
-			new L2AccessLevel(userAccessLevelNum, "User", -1, -1, null, false, false, false, true, false, true, true,
-					true);
+			new L2AccessLevel(userAccessLevelNum, "User", -1, -1, null, false, false, false, true, false, true, true, true);
 	/**
 	 * HashMap of access levels defined in database<br>
 	 */
@@ -61,13 +69,11 @@ public class AccessLevels
 	 *
 	 * @return AccessLevels: the one and only instance of this class<br>
 	 */
-	public static AccessLevels getInstance()
-	{
+	public static AccessLevels getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private AccessLevels()
-	{
+	private AccessLevels() {
 		loadAccessLevels();
 		accessLevels.put(userAccessLevelNum, userAccessLevel);
 	}
@@ -75,56 +81,39 @@ public class AccessLevels
 	/**
 	 * Loads the access levels from database<br>
 	 */
-	private void loadAccessLevels()
-	{
+	private void loadAccessLevels() {
 		accessLevels.clear();
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "accessLevels.xml");
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getChildren())
-		{
-			if (n.getName().equalsIgnoreCase("accessLevel"))
-			{
+		for (XmlNode n : doc.getChildren()) {
+			if (n.getName().equalsIgnoreCase("accessLevel")) {
 				int accessLevel = n.getInt("id");
 				String name = n.getString("name");
-				if (accessLevel == userAccessLevelNum)
-				{
-					Log.warning(
-							"AccessLevels: Access level with name " + name + " is using reserved user access level " +
-									userAccessLevelNum + ". Ignoring it!");
+				if (accessLevel == userAccessLevelNum) {
+					Log.warning("AccessLevels: Access level with name " + name + " is using reserved user access level " + userAccessLevelNum +
+							". Ignoring it!");
 					continue;
-				}
-				else if (accessLevel == masterAccessLevelNum)
-				{
-					Log.warning(
-							"AccessLevels: Access level with name " + name + " is using reserved master access level " +
-									masterAccessLevelNum + ". Ignoring it!");
+				} else if (accessLevel == masterAccessLevelNum) {
+					Log.warning("AccessLevels: Access level with name " + name + " is using reserved master access level " + masterAccessLevelNum +
+							". Ignoring it!");
 					continue;
-				}
-				else if (accessLevel < 0)
-				{
-					Log.warning("AccessLevels: Access level with name " + name +
-							" is using banned access level state(below 0). Ignoring it!");
+				} else if (accessLevel < 0) {
+					Log.warning("AccessLevels: Access level with name " + name + " is using banned access level state(below 0). Ignoring it!");
 					continue;
 				}
 
 				int nameColor = 0;
-				try
-				{
+				try {
 					nameColor = Integer.decode("0x" + n.getString("nameColor"));
-				}
-				catch (NumberFormatException nfe)
-				{
+				} catch (NumberFormatException nfe) {
 					nfe.printStackTrace();
 				}
 
 				int titleColor = 0;
-				try
-				{
+				try {
 					titleColor = Integer.decode("0x" + n.getString("titleColor"));
-				}
-				catch (NumberFormatException nfe)
-				{
+				} catch (NumberFormatException nfe) {
 					nfe.printStackTrace();
 				}
 
@@ -139,9 +128,19 @@ public class AccessLevels
 				boolean gainExp = n.getBool("gainExp");
 
 				accessLevels.put(accessLevel,
-						new L2AccessLevel(accessLevel, name, nameColor, titleColor, childs.isEmpty() ? null : childs,
-								isGm, allowPeaceAttack, allowFixedRes, allowTransaction, allowAltG, giveDamage,
-								takeAggro, gainExp));
+						new L2AccessLevel(accessLevel,
+								name,
+								nameColor,
+								titleColor,
+								childs.isEmpty() ? null : childs,
+								isGm,
+								allowPeaceAttack,
+								allowFixedRes,
+								allowTransaction,
+								allowAltG,
+								giveDamage,
+								takeAggro,
+								gainExp));
 			}
 		}
 
@@ -154,40 +153,32 @@ public class AccessLevels
 	 * @param accessLevelNum as int<br><br>
 	 * @return AccessLevel: AccessLevel instance by char access level<br>
 	 */
-	public L2AccessLevel getAccessLevel(int accessLevelNum)
-	{
+	public L2AccessLevel getAccessLevel(int accessLevelNum) {
 		L2AccessLevel accessLevel = null;
 
-		synchronized (accessLevels)
-		{
+		synchronized (accessLevels) {
 			accessLevel = accessLevels.get(accessLevelNum);
 		}
 		return accessLevel;
 	}
 
-	public void addBanAccessLevel(int accessLevel)
-	{
-		synchronized (accessLevels)
-		{
-			if (accessLevel > -1)
-			{
+	public void addBanAccessLevel(int accessLevel) {
+		synchronized (accessLevels) {
+			if (accessLevel > -1) {
 				return;
 			}
 
 			accessLevels.put(accessLevel,
-					new L2AccessLevel(accessLevel, "Banned", -1, -1, null, false, false, false, false, false, false,
-							false, false));
+					new L2AccessLevel(accessLevel, "Banned", -1, -1, null, false, false, false, false, false, false, false, false));
 		}
 	}
 
-	public void reload()
-	{
+	public void reload() {
 		loadAccessLevels();
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final AccessLevels instance = new AccessLevels();
 	}
 }

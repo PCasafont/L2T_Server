@@ -233,30 +233,30 @@ class Quest(JQuest):
             htmltext = "30461-04.htm"
         elif npcId == 30062 and st.getInt("cond") and has_list(st) and ingredients_count(
                 st) < 5 and not st.getQuestItemsCount(SONIAS_BOTANYBOOK_ID) and (
-                        st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
-                        WHITE_MANDRAGORA_SAP_ID) == 0):
+                st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
+            WHITE_MANDRAGORA_SAP_ID) == 0):
             htmltext = "30062-01.htm"
             st.giveItems(SONIAS_BOTANYBOOK_ID, 1)
         elif npcId == 30062 and st.getInt("cond") and has_list(st) and ingredients_count(
                 st) < 5 and st.getQuestItemsCount(SONIAS_BOTANYBOOK_ID) and (
-                    st.getQuestItemsCount(RED_MANDRAGORA_ROOT_ID) + st.getQuestItemsCount(
-                    WHITE_MANDRAGORA_ROOT_ID)) < 40 and (
-                        st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
-                        WHITE_MANDRAGORA_SAP_ID) == 0):
+                st.getQuestItemsCount(RED_MANDRAGORA_ROOT_ID) + st.getQuestItemsCount(
+            WHITE_MANDRAGORA_ROOT_ID)) < 40 and (
+                st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
+            WHITE_MANDRAGORA_SAP_ID) == 0):
             htmltext = "30062-02.htm"
         elif npcId == 30062 and st.getInt("cond") and has_list(st) and ingredients_count(
                 st) < 5 and st.getQuestItemsCount(SONIAS_BOTANYBOOK_ID) and (
-                    st.getQuestItemsCount(RED_MANDRAGORA_ROOT_ID) + st.getQuestItemsCount(
-                    WHITE_MANDRAGORA_ROOT_ID)) >= 40 and st.getQuestItemsCount(WHITE_MANDRAGORA_ROOT_ID) < 40 and (
-                        st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
-                        WHITE_MANDRAGORA_SAP_ID) == 0):
+                st.getQuestItemsCount(RED_MANDRAGORA_ROOT_ID) + st.getQuestItemsCount(
+            WHITE_MANDRAGORA_ROOT_ID)) >= 40 and st.getQuestItemsCount(WHITE_MANDRAGORA_ROOT_ID) < 40 and (
+                st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
+            WHITE_MANDRAGORA_SAP_ID) == 0):
             htmltext = "30062-03.htm"
         elif npcId == 30062 and st.getInt("cond") and has_list(st) and ingredients_count(
                 st) < 5 and st.getQuestItemsCount(SONIAS_BOTANYBOOK_ID) and (
-                    st.getQuestItemsCount(RED_MANDRAGORA_ROOT_ID) + st.getQuestItemsCount(
-                    WHITE_MANDRAGORA_ROOT_ID)) >= 40 and st.getQuestItemsCount(WHITE_MANDRAGORA_ROOT_ID) >= 40 and (
-                        st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
-                        WHITE_MANDRAGORA_SAP_ID) == 0):
+                st.getQuestItemsCount(RED_MANDRAGORA_ROOT_ID) + st.getQuestItemsCount(
+            WHITE_MANDRAGORA_ROOT_ID)) >= 40 and st.getQuestItemsCount(WHITE_MANDRAGORA_ROOT_ID) >= 40 and (
+                st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
+            WHITE_MANDRAGORA_SAP_ID) == 0):
             htmltext = "30062-06.htm"
             st.takeItems(SONIAS_BOTANYBOOK_ID, 1)
             st.takeItems(RED_MANDRAGORA_ROOT_ID, -1)
@@ -264,12 +264,12 @@ class Quest(JQuest):
             st.giveItems(WHITE_MANDRAGORA_SAP_ID, 1)
         elif npcId == 30062 and st.getInt("cond") and has_list(st) and ingredients_count(
                 st) < 5 and st.getQuestItemsCount(SONIAS_BOTANYBOOK_ID) == 0 and (
-                        st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
-                        WHITE_MANDRAGORA_SAP_ID) > 0):
+                st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
+            WHITE_MANDRAGORA_SAP_ID) > 0):
             htmltext = "30062-07.htm"
         elif npcId == 30073 and st.getInt("cond") and has_list(st) and ingredients_count(
                 st) < 5 and st.getQuestItemsCount(JAYCUBS_INSECTBOOK_ID) == 0 and (
-                        st.getQuestItemsCount(HONEY_ID) + st.getQuestItemsCount(GOLDEN_HONEY_ID) == 0):
+                st.getQuestItemsCount(HONEY_ID) + st.getQuestItemsCount(GOLDEN_HONEY_ID) == 0):
             htmltext = "30073-01.htm"
             st.giveItems(JAYCUBS_INSECTBOOK_ID, 1)
         elif npcId == 30073 and st.getInt("cond") and has_list(st) and ingredients_count(
@@ -289,7 +289,7 @@ class Quest(JQuest):
             st.giveItems(GOLDEN_HONEY_ID, 1)
         elif npcId == 30073 and st.getInt("cond") and has_list(st) and ingredients_count(
                 st) < 5 and st.getQuestItemsCount(JAYCUBS_INSECTBOOK_ID) == 0 and (
-                        st.getQuestItemsCount(HONEY_ID) + st.getQuestItemsCount(GOLDEN_HONEY_ID) == 1):
+                st.getQuestItemsCount(HONEY_ID) + st.getQuestItemsCount(GOLDEN_HONEY_ID) == 1):
             htmltext = "30073-07.htm"
         elif npcId == 30078 and st.getInt("cond") and has_list(st) and ingredients_count(
                 st) < 5 and st.getQuestItemsCount(PANOS_CONTRACT_ID) == 0 and st.getQuestItemsCount(
@@ -312,22 +312,22 @@ class Quest(JQuest):
             htmltext = "30078-04.htm"
         elif npcId == 30067 and st.getInt("cond") and has_list(st) and ingredients_count(
                 st) < 5 and st.getQuestItemsCount(GLYVKAS_BOTANYBOOK_ID) == 0 and (
-                        st.getQuestItemsCount(GREEN_MOSS_BUNDLE_ID) + st.getQuestItemsCount(BROWN_MOSS_BUNDLE_ID) == 0):
+                st.getQuestItemsCount(GREEN_MOSS_BUNDLE_ID) + st.getQuestItemsCount(BROWN_MOSS_BUNDLE_ID) == 0):
             htmltext = "30067-01.htm"
             st.giveItems(GLYVKAS_BOTANYBOOK_ID, 1)
         elif npcId == 30067 and st.getInt("cond") and has_list(st) and ingredients_count(
                 st) < 5 and st.getQuestItemsCount(GLYVKAS_BOTANYBOOK_ID) and (
-                        st.getQuestItemsCount(GREEN_MARSH_MOSS_ID) + st.getQuestItemsCount(BROWN_MARSH_MOSS_ID) < 20):
+                st.getQuestItemsCount(GREEN_MARSH_MOSS_ID) + st.getQuestItemsCount(BROWN_MARSH_MOSS_ID) < 20):
             htmltext = "30067-02.htm"
         elif npcId == 30067 and st.getInt("cond") and has_list(st) and ingredients_count(
                 st) < 5 and st.getQuestItemsCount(GLYVKAS_BOTANYBOOK_ID) and (
-                        st.getQuestItemsCount(GREEN_MARSH_MOSS_ID) + st.getQuestItemsCount(
-                        BROWN_MARSH_MOSS_ID) >= 20) and st.getQuestItemsCount(BROWN_MARSH_MOSS_ID) < 20:
+                st.getQuestItemsCount(GREEN_MARSH_MOSS_ID) + st.getQuestItemsCount(
+            BROWN_MARSH_MOSS_ID) >= 20) and st.getQuestItemsCount(BROWN_MARSH_MOSS_ID) < 20:
             htmltext = "30067-03.htm"
         elif npcId == 30067 and st.getInt("cond") and has_list(st) and ingredients_count(
                 st) < 5 and st.getQuestItemsCount(GLYVKAS_BOTANYBOOK_ID) and (
-                        st.getQuestItemsCount(GREEN_MARSH_MOSS_ID) + st.getQuestItemsCount(
-                        BROWN_MARSH_MOSS_ID) >= 20) and st.getQuestItemsCount(BROWN_MARSH_MOSS_ID) >= 20:
+                st.getQuestItemsCount(GREEN_MARSH_MOSS_ID) + st.getQuestItemsCount(
+            BROWN_MARSH_MOSS_ID) >= 20) and st.getQuestItemsCount(BROWN_MARSH_MOSS_ID) >= 20:
             htmltext = "30067-06.htm"
             st.takeItems(GLYVKAS_BOTANYBOOK_ID, 1)
             st.takeItems(GREEN_MARSH_MOSS_ID, -1)
@@ -335,7 +335,7 @@ class Quest(JQuest):
             st.giveItems(BROWN_MOSS_BUNDLE_ID, 1)
         elif npcId == 30067 and st.getInt("cond") and has_list(st) and ingredients_count(
                 st) < 5 and st.getQuestItemsCount(GLYVKAS_BOTANYBOOK_ID) == 0 and (
-                        st.getQuestItemsCount(GREEN_MOSS_BUNDLE_ID) + st.getQuestItemsCount(BROWN_MOSS_BUNDLE_ID) == 1):
+                st.getQuestItemsCount(GREEN_MOSS_BUNDLE_ID) + st.getQuestItemsCount(BROWN_MOSS_BUNDLE_ID) == 1):
             htmltext = "30067-07.htm"
         elif npcId == 30069 and st.getInt("cond") and has_list(st) and ingredients_count(
                 st) < 5 and st.getQuestItemsCount(ROLANTS_CREATUREBOOK_ID) == 0 and st.getQuestItemsCount(
@@ -482,8 +482,8 @@ class Quest(JQuest):
         elif npcId == 20223:
             if st.getInt("cond") and has_list(st) and ingredients_count(st) < 5 and st.getQuestItemsCount(
                     SONIAS_BOTANYBOOK_ID) and (
-                            st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
-                            WHITE_MANDRAGORA_SAP_ID) == 0):
+                    st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
+                WHITE_MANDRAGORA_SAP_ID) == 0):
                 n = st.getRandom(100)
                 if n < 67:
                     if st.getQuestItemsCount(RED_MANDRAGORA_ROOT_ID) < 40:
@@ -502,8 +502,8 @@ class Quest(JQuest):
         elif npcId == 20154:
             if st.getInt("cond") and has_list(st) and ingredients_count(st) < 5 and st.getQuestItemsCount(
                     SONIAS_BOTANYBOOK_ID) and (
-                            st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
-                            WHITE_MANDRAGORA_SAP_ID) == 0):
+                    st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
+                WHITE_MANDRAGORA_SAP_ID) == 0):
                 n = st.getRandom(100)
                 if n < 74:
                     if st.getQuestItemsCount(RED_MANDRAGORA_ROOT_ID) < 40:
@@ -522,8 +522,8 @@ class Quest(JQuest):
         elif npcId == 20155:
             if st.getInt("cond") and has_list(st) and ingredients_count(st) < 5 and st.getQuestItemsCount(
                     SONIAS_BOTANYBOOK_ID) and (
-                            st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
-                            WHITE_MANDRAGORA_SAP_ID) == 0):
+                    st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
+                WHITE_MANDRAGORA_SAP_ID) == 0):
                 n = st.getRandom(100)
                 if n < 80:
                     if st.getQuestItemsCount(RED_MANDRAGORA_ROOT_ID) < 40:
@@ -542,8 +542,8 @@ class Quest(JQuest):
         elif npcId == 20156:
             if st.getInt("cond") and has_list(st) and ingredients_count(st) < 5 and st.getQuestItemsCount(
                     SONIAS_BOTANYBOOK_ID) and (
-                            st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
-                            WHITE_MANDRAGORA_SAP_ID) == 0):
+                    st.getQuestItemsCount(RED_MANDRAGORA_SAP_ID) + st.getQuestItemsCount(
+                WHITE_MANDRAGORA_SAP_ID) == 0):
                 n = st.getRandom(100)
                 if n < 90:
                     if st.getQuestItemsCount(RED_MANDRAGORA_ROOT_ID) < 40:

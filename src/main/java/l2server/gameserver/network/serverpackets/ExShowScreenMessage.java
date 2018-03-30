@@ -18,8 +18,7 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Kerberos
  */
-public class ExShowScreenMessage extends L2GameServerPacket
-{
+public class ExShowScreenMessage extends L2GameServerPacket {
 	private int type;
 	private int sysMessageId;
 	private int unk1;
@@ -32,9 +31,8 @@ public class ExShowScreenMessage extends L2GameServerPacket
 	private int npcStringId;
 	private String text;
 	private int time;
-
-	public ExShowScreenMessage(String text, int time)
-	{
+	
+	public ExShowScreenMessage(String text, int time) {
 		type = 1;
 		sysMessageId = -1;
 		unk1 = 0;
@@ -48,9 +46,8 @@ public class ExShowScreenMessage extends L2GameServerPacket
 		size = 0;
 		effect = true;
 	}
-
-	public ExShowScreenMessage(int npcStringId, int time)
-	{
+	
+	public ExShowScreenMessage(int npcStringId, int time) {
 		type = 1;
 		sysMessageId = -1;
 		unk1 = 0;
@@ -64,9 +61,8 @@ public class ExShowScreenMessage extends L2GameServerPacket
 		size = 0;
 		effect = false;
 	}
-
-	public ExShowScreenMessage(int npcStringId, int unk, boolean effect, int time)
-	{
+	
+	public ExShowScreenMessage(int npcStringId, int unk, boolean effect, int time) {
 		type = 1;
 		sysMessageId = -1;
 		unk1 = 0;
@@ -80,9 +76,8 @@ public class ExShowScreenMessage extends L2GameServerPacket
 		size = 0;
 		this.effect = effect;
 	}
-
-	public ExShowScreenMessage(int npcStringId, int pos, int time)
-	{
+	
+	public ExShowScreenMessage(int npcStringId, int pos, int time) {
 		type = 1;
 		sysMessageId = -1;
 		unk1 = 0;
@@ -96,9 +91,18 @@ public class ExShowScreenMessage extends L2GameServerPacket
 		size = 0;
 		effect = false;
 	}
-
-	public ExShowScreenMessage(int type, int messageId, int position, int unk1, int size, int unk2, int unk3, boolean showEffect, int time, int unk4, String text)
-	{
+	
+	public ExShowScreenMessage(int type,
+	                           int messageId,
+	                           int position,
+	                           int unk1,
+	                           int size,
+	                           int unk2,
+	                           int unk3,
+	                           boolean showEffect,
+	                           int time,
+	                           int unk4,
+	                           String text) {
 		this.type = type;
 		sysMessageId = messageId;
 		this.unk1 = unk1;
@@ -112,10 +116,9 @@ public class ExShowScreenMessage extends L2GameServerPacket
 		this.size = size;
 		effect = showEffect;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(type); // 0 - system messages, 1 - your defined text
 		writeD(sysMessageId); // system message id (type must be 0 otherwise no effect)
 		writeD(position); // message position
@@ -123,8 +126,7 @@ public class ExShowScreenMessage extends L2GameServerPacket
 		writeD(size); // font size 0 - normal, 1 - small
 		writeD(unk2); // ?
 		writeD(unk3); // ?
-		writeD(effect ? 1 :
-				0); // upper effect (0 - disabled, 1 enabled) - position must be 2 (center) otherwise no effect
+		writeD(effect ? 1 : 0); // upper effect (0 - disabled, 1 enabled) - position must be 2 (center) otherwise no effect
 		writeD(time); // time
 		writeD(unk4); // ?
 		writeD(npcStringId);

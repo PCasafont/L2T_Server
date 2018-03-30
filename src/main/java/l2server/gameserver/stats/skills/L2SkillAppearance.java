@@ -22,14 +22,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.templates.StatsSet;
 
-public class L2SkillAppearance extends L2Skill
-{
+public class L2SkillAppearance extends L2Skill {
 	private final int faceId;
 	private final int hairColorId;
 	private final int hairStyleId;
 
-	public L2SkillAppearance(StatsSet set)
-	{
+	public L2SkillAppearance(StatsSet set) {
 		super(set);
 
 		faceId = set.getInteger("faceId", -1);
@@ -38,48 +36,38 @@ public class L2SkillAppearance extends L2Skill
 	}
 
 	@Override
-	public void useSkill(L2Character caster, L2Object[] targets)
-	{
-		for (L2Object target : targets)
-		{
-			if (target instanceof L2PcInstance)
-			{
+	public void useSkill(L2Character caster, L2Object[] targets) {
+		for (L2Object target : targets) {
+			if (target instanceof L2PcInstance) {
 				L2PcInstance targetPlayer = (L2PcInstance) target;
 
 				int maxHairStyle = targetPlayer.getAppearance().getSex() ? 5 : 7;
-				int maxHairColor =
-						targetPlayer.getRace() == Race.Kamael || targetPlayer.getRace() == Race.Ertheia ? 2 : 3;
+				int maxHairColor = targetPlayer.getRace() == Race.Kamael || targetPlayer.getRace() == Race.Ertheia ? 2 : 3;
 				int maxFace = 3;
 
 				int faceId = this.faceId;
 				int hairStyleId = this.hairStyleId;
 				int hairColorId = this.hairColorId;
 
-				if (hairStyleId > maxHairStyle)
-				{
+				if (hairStyleId > maxHairStyle) {
 					hairStyleId = -1;
 				}
 
-				if (hairColorId > maxHairColor)
-				{
+				if (hairColorId > maxHairColor) {
 					hairColorId = -1;
 				}
 
-				if (faceId > maxFace)
-				{
+				if (faceId > maxFace) {
 					faceId = -1;
 				}
 
-				if (faceId >= 0)
-				{
+				if (faceId >= 0) {
 					targetPlayer.getAppearance().setFace(faceId);
 				}
-				if (hairColorId >= 0)
-				{
+				if (hairColorId >= 0) {
 					targetPlayer.getAppearance().setHairColor(hairColorId);
 				}
-				if (hairStyleId >= 0)
-				{
+				if (hairStyleId >= 0) {
 					targetPlayer.getAppearance().setHairStyle(hairStyleId);
 				}
 

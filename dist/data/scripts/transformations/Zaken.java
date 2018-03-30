@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class Zaken extends L2Transformation
-{
+public class Zaken extends L2Transformation {
 	private static final int[] SKILLS = {715, 716, 717, 718, 719, 5491, 619};
 
-	public Zaken()
-	{
+	public Zaken() {
 		// id, colRadius, colHeight
 		super(305, 16, 32);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 305 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 305 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		// Zaken Energy Drain (up to 4 levels)
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(715, 4), false);
 		// Zaken Hold (up to 4 levels)
@@ -46,13 +41,11 @@ public class Zaken extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		// Zaken Energy Drain (up to 4 levels)
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(715, 4), false);
 		// Zaken Hold (up to 4 levels)
@@ -71,8 +64,7 @@ public class Zaken extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new Zaken());
 	}
 }

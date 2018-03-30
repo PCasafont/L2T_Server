@@ -18,22 +18,19 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExVitalityEffectInfo extends L2GameServerPacket
-{
+public class ExVitalityEffectInfo extends L2GameServerPacket {
 	private int vitality;
 	private int effectId;
-
-	public ExVitalityEffectInfo(int vitality, int effectId)
-	{
+	
+	public ExVitalityEffectInfo(int vitality, int effectId) {
 		this.vitality = vitality;
 		this.effectId = effectId;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(vitality);
 		writeD(effectId);
 		writeH(0);

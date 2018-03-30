@@ -29,8 +29,7 @@ package l2server.gameserver.util;
  * @author Galun
  * @version $Revision: $ $Date: $
  */
-public interface ExtensionFunction
-{
+public interface ExtensionFunction {
 	/**
 	 * get an object identified with a name (should have a human readable output with toString())
 	 *

@@ -23,8 +23,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author kerberos
  */
-public class ConditionPlayerLandingZone extends Condition
-{
+public class ConditionPlayerLandingZone extends Condition {
 
 	private boolean val;
 
@@ -33,8 +32,7 @@ public class ConditionPlayerLandingZone extends Condition
 	 *
 	 * @param val the val
 	 */
-	public ConditionPlayerLandingZone(boolean val)
-	{
+	public ConditionPlayerLandingZone(boolean val) {
 		this.val = val;
 	}
 
@@ -42,8 +40,7 @@ public class ConditionPlayerLandingZone extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		return env.player.isInsideZone(L2Character.ZONE_LANDING) == val;
 	}
 }

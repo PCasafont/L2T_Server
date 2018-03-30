@@ -25,15 +25,13 @@ import java.util.logging.Logger;
 /**
  * @author -Wooden-
  */
-public class ChangeAccessLevel extends BaseRecievePacket
-{
+public class ChangeAccessLevel extends BaseRecievePacket {
 	protected static Logger log = Logger.getLogger(ChangeAccessLevel.class.getName());
 
 	/**
 	 * @param decrypt
 	 */
-	public ChangeAccessLevel(byte[] decrypt, GameServerThread server)
-	{
+	public ChangeAccessLevel(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 		int level = readD();
 		String account = readS();

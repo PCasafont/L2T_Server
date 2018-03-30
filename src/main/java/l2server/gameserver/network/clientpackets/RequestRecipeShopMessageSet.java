@@ -26,41 +26,34 @@ import l2server.gameserver.util.Util;
  *
  * @version $Revision: 1.1.2.2.2.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public class RequestRecipeShopMessageSet extends L2GameClientPacket
-{
+public class RequestRecipeShopMessageSet extends L2GameClientPacket {
 	//
-
+	
 	private static final int MAX_MSG_LENGTH = 29;
-
+	
 	private String name;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		name = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
-
-		if (name != null && name.length() > MAX_MSG_LENGTH)
-		{
-			Util.handleIllegalPlayerAction(player,
-					"Player " + player.getName() + " tried to overflow recipe shop message", Config.DEFAULT_PUNISH);
+		
+		if (name != null && name.length() > MAX_MSG_LENGTH) {
+			Util.handleIllegalPlayerAction(player, "Player " + player.getName() + " tried to overflow recipe shop message", Config.DEFAULT_PUNISH);
 			return;
 		}
-
-		if (player.getCreateList() != null)
-		{
+		
+		if (player.getCreateList() != null) {
 			player.getCreateList().setStoreName(name);
 		}
-
+		
 		player.sendPacket(new RecipeShopMsg(player));
 	}
 }

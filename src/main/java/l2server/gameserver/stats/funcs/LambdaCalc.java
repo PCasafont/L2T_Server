@@ -20,37 +20,29 @@ import l2server.gameserver.stats.Env;
 /**
  * @author mkizub
  */
-public final class LambdaCalc extends Lambda
-{
-
+public final class LambdaCalc extends Lambda {
+	
 	public Func[] funcs;
-
-	public LambdaCalc()
-	{
+	
+	public LambdaCalc() {
 		funcs = new Func[0];
 	}
-
+	
 	@Override
-	public double calc(Env env)
-	{
+	public double calc(Env env) {
 		double saveValue = env.value;
-		try
-		{
+		try {
 			env.value = 0;
-			for (Func f : funcs)
-			{
+			for (Func f : funcs) {
 				f.calc(env);
 			}
 			return env.value;
-		}
-		finally
-		{
+		} finally {
 			env.value = saveValue;
 		}
 	}
-
-	public void addFunc(Func f)
-	{
+	
+	public void addFunc(Func f) {
 		int len = funcs.length;
 		Func[] tmp = new Func[len + 1];
 		System.arraycopy(funcs, 0, tmp, 0, len);

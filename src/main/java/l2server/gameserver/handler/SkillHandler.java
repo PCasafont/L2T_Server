@@ -15,54 +15,45 @@
 
 package l2server.gameserver.handler;
 
-import l2server.gameserver.templates.skills.L2SkillType;
-
 import gnu.trove.TIntObjectHashMap;
+import l2server.gameserver.templates.skills.L2SkillType;
 
 /**
  * This class ...
  *
  * @version $Revision: 1.1.4.4 $ $Date: 2005/04/03 15:55:06 $
  */
-public class SkillHandler
-{
+public class SkillHandler {
 	private TIntObjectHashMap<ISkillHandler> datatable;
 
-	public static SkillHandler getInstance()
-	{
+	public static SkillHandler getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private SkillHandler()
-	{
+	private SkillHandler() {
 		datatable = new TIntObjectHashMap<>();
 	}
 
-	public void registerSkillHandler(ISkillHandler handler)
-	{
+	public void registerSkillHandler(ISkillHandler handler) {
 		L2SkillType[] types = handler.getSkillIds();
-		for (L2SkillType t : types)
-		{
+		for (L2SkillType t : types) {
 			datatable.put(t.ordinal(), handler);
 		}
 	}
 
-	public ISkillHandler getSkillHandler(L2SkillType skillType)
-	{
+	public ISkillHandler getSkillHandler(L2SkillType skillType) {
 		return datatable.get(skillType.ordinal());
 	}
 
 	/**
 	 * @return
 	 */
-	public int size()
-	{
+	public int size() {
 		return datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final SkillHandler instance = new SkillHandler();
 	}
 }

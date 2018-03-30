@@ -25,18 +25,15 @@ import l2server.gameserver.model.L2Object;
  *
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:40 $
  */
-public final class Revive extends L2GameServerPacket
-{
+public final class Revive extends L2GameServerPacket {
 	private int objectId;
 
-	public Revive(L2Object obj)
-	{
+	public Revive(L2Object obj) {
 		objectId = obj.getObjectId();
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objectId);
 	}
 }

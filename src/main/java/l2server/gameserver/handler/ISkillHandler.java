@@ -28,10 +28,9 @@ import java.util.logging.Logger;
  * @version $Revision: 1.2.2.2.2.3 $ $Date: 2005/04/03 15:55:06 $
  */
 
-public interface ISkillHandler
-{
+public interface ISkillHandler {
 	Logger log = Logger.getLogger(ISkillHandler.class.getName());
-
+	
 	/**
 	 * this is the worker method that is called when using an item.
 	 *
@@ -39,7 +38,7 @@ public interface ISkillHandler
 	 * @return count reduction after usage
 	 */
 	void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets);
-
+	
 	/**
 	 * this method is called at initialization to register all the item ids automatically
 	 *

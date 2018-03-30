@@ -18,23 +18,19 @@ package l2server.gameserver.network.serverpackets;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.item.L2Henna;
 
-public final class HennaInfo extends L2GameServerPacket
-{
+public final class HennaInfo extends L2GameServerPacket {
 
 	private final L2PcInstance activeChar;
 	private final L2Henna[] hennas = new L2Henna[4];
 	private int count;
 
-	public HennaInfo(L2PcInstance player)
-	{
+	public HennaInfo(L2PcInstance player) {
 		activeChar = player;
 
 		int j = 0;
-		for (int i = 0; i < 3; i++)
-		{
+		for (int i = 0; i < 3; i++) {
 			L2Henna henna = activeChar.getHenna(i + 1);
-			if (henna != null)
-			{
+			if (henna != null) {
 				hennas[j++] = henna;
 			}
 		}
@@ -42,8 +38,7 @@ public final class HennaInfo extends L2GameServerPacket
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeH(activeChar.getHennaStatINT()); //equip INT
 		writeH(activeChar.getHennaStatSTR()); //equip STR
 		writeH(activeChar.getHennaStatCON()); //equip CON
@@ -56,8 +51,7 @@ public final class HennaInfo extends L2GameServerPacket
 		writeD(3);
 		//writeD(4); // slots?
 		writeD(count); //size
-		for (int i = 0; i < count; i++)
-		{
+		for (int i = 0; i < count; i++) {
 			writeD(hennas[i].getSymbolId());
 			writeD(0x01); // Enabled
 		}
@@ -68,14 +62,11 @@ public final class HennaInfo extends L2GameServerPacket
 
 		//4rth Slot dye information
 		L2Henna dye = activeChar.getHenna(4);
-		if (dye != null)
-		{
+		if (dye != null) {
 			writeD(dye.getSymbolId());
 			writeD((int) (dye.getExpiryTime() - System.currentTimeMillis()) / 1000); // Seconds
 			writeD(0x01);
-		}
-		else
-		{
+		} else {
 			writeD(0x00);
 			writeD((int) (-System.currentTimeMillis() / 1000)); // Weird, but that's what retail sends
 			writeD(0x00);

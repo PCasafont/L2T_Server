@@ -29,8 +29,7 @@ import l2server.gameserver.stats.Env;
  * @author Gigiikun
  */
 
-public final class ConditionSiegeZone extends Condition
-{
+public final class ConditionSiegeZone extends Condition {
 	//	conditional values
 	public static final int COND_NOT_ZONE = 0x0001;
 	public static final int COND_CAST_ATTACK = 0x0002;
@@ -50,8 +49,7 @@ public final class ConditionSiegeZone extends Condition
 	 * @param self  the self
 	 */
 
-	public ConditionSiegeZone(int value, boolean self)
-	{
+	public ConditionSiegeZone(int value, boolean self) {
 		this.value = value;
 		this.self = self;
 	}
@@ -60,22 +58,17 @@ public final class ConditionSiegeZone extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		L2Character target = self ? env.player : env.target;
 		Castle castle = CastleManager.getInstance().getCastle(target);
 		Fort fort = FortManager.getInstance().getFort(target);
 
-		if (castle == null && fort == null)
-		{
+		if (castle == null && fort == null) {
 			return (value & COND_NOT_ZONE) != 0;
 		}
-		if (castle != null)
-		{
+		if (castle != null) {
 			return checkIfOk(target, castle, value);
-		}
-		else
-		{
+		} else {
 			return checkIfOk(target, fort, value);
 		}
 	}
@@ -88,41 +81,26 @@ public final class ConditionSiegeZone extends Condition
 	 * @param value      the value
 	 * @return true, if successful
 	 */
-	public static boolean checkIfOk(L2Character activeChar, Castle castle, int value)
-	{
-		if (activeChar == null || !(activeChar instanceof L2PcInstance))
-		{
+	public static boolean checkIfOk(L2Character activeChar, Castle castle, int value) {
+		if (activeChar == null || !(activeChar instanceof L2PcInstance)) {
 			return false;
 		}
 
 		L2PcInstance player = (L2PcInstance) activeChar;
 
-		if (castle == null || castle.getCastleId() <= 0)
-		{
-			if ((value & COND_NOT_ZONE) != 0)
-			{
+		if (castle == null || castle.getCastleId() <= 0) {
+			if ((value & COND_NOT_ZONE) != 0) {
 				return true;
 			}
-		}
-		else if (!castle.getZone().isActive())
-		{
-			if ((value & COND_NOT_ZONE) != 0)
-			{
+		} else if (!castle.getZone().isActive()) {
+			if ((value & COND_NOT_ZONE) != 0) {
 				return true;
 			}
-		}
-		else if ((value & COND_CAST_ATTACK) != 0 && player.isRegisteredOnThisSiegeField(castle.getCastleId()) &&
-				player.getSiegeState() == 1)
-		{
+		} else if ((value & COND_CAST_ATTACK) != 0 && player.isRegisteredOnThisSiegeField(castle.getCastleId()) && player.getSiegeState() == 1) {
 			return true;
-		}
-		else if ((value & COND_CAST_DEFEND) != 0 && player.isRegisteredOnThisSiegeField(castle.getCastleId()) &&
-				player.getSiegeState() == 2)
-		{
+		} else if ((value & COND_CAST_DEFEND) != 0 && player.isRegisteredOnThisSiegeField(castle.getCastleId()) && player.getSiegeState() == 2) {
 			return true;
-		}
-		else if ((value & COND_CAST_NEUTRAL) != 0 && player.getSiegeState() == 0)
-		{
+		} else if ((value & COND_CAST_NEUTRAL) != 0 && player.getSiegeState() == 0) {
 			return true;
 		}
 
@@ -137,41 +115,26 @@ public final class ConditionSiegeZone extends Condition
 	 * @param value      the value
 	 * @return true, if successful
 	 */
-	public static boolean checkIfOk(L2Character activeChar, Fort fort, int value)
-	{
-		if (activeChar == null || !(activeChar instanceof L2PcInstance))
-		{
+	public static boolean checkIfOk(L2Character activeChar, Fort fort, int value) {
+		if (activeChar == null || !(activeChar instanceof L2PcInstance)) {
 			return false;
 		}
 
 		L2PcInstance player = (L2PcInstance) activeChar;
 
-		if (fort == null || fort.getFortId() <= 0)
-		{
-			if ((value & COND_NOT_ZONE) != 0)
-			{
+		if (fort == null || fort.getFortId() <= 0) {
+			if ((value & COND_NOT_ZONE) != 0) {
 				return true;
 			}
-		}
-		else if (!fort.getZone().isActive())
-		{
-			if ((value & COND_NOT_ZONE) != 0)
-			{
+		} else if (!fort.getZone().isActive()) {
+			if ((value & COND_NOT_ZONE) != 0) {
 				return true;
 			}
-		}
-		else if ((value & COND_FORT_ATTACK) != 0 && player.isRegisteredOnThisSiegeField(fort.getFortId()) &&
-				player.getSiegeState() == 1)
-		{
+		} else if ((value & COND_FORT_ATTACK) != 0 && player.isRegisteredOnThisSiegeField(fort.getFortId()) && player.getSiegeState() == 1) {
 			return true;
-		}
-		else if ((value & COND_FORT_DEFEND) != 0 && player.isRegisteredOnThisSiegeField(fort.getFortId()) &&
-				player.getSiegeState() == 2)
-		{
+		} else if ((value & COND_FORT_DEFEND) != 0 && player.isRegisteredOnThisSiegeField(fort.getFortId()) && player.getSiegeState() == 2) {
 			return true;
-		}
-		else if ((value & COND_FORT_NEUTRAL) != 0 && player.getSiegeState() == 0)
-		{
+		} else if ((value & COND_FORT_NEUTRAL) != 0 && player.getSiegeState() == 0) {
 			return true;
 		}
 

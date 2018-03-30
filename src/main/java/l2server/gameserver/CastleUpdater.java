@@ -28,35 +28,27 @@ import java.util.logging.Level;
  * Thorgrim - 2005
  * Class managing periodical events with castle
  */
-public class CastleUpdater implements Runnable
-{
+public class CastleUpdater implements Runnable {
 	private L2Clan clan;
 	private int runCount = 0;
 
-	public CastleUpdater(L2Clan clan, int runCount)
-	{
+	public CastleUpdater(L2Clan clan, int runCount) {
 		this.clan = clan;
 		this.runCount = runCount;
 	}
 
 	@Override
-	public void run()
-	{
-		try
-		{
+	public void run() {
+		try {
 			// Move current castle treasury to clan warehouse every 2 hour
 			ItemContainer warehouse = clan.getWarehouse();
-			if (warehouse != null && clan.getHasCastle() > 0)
-			{
+			if (warehouse != null && clan.getHasCastle() > 0) {
 				Castle castle = CastleManager.getInstance().getCastleById(clan.getHasCastle());
-				if (!Config.ALT_MANOR_SAVE_ALL_ACTIONS)
-				{
-					if (runCount % Config.ALT_MANOR_SAVE_PERIOD_RATE == 0)
-					{
+				if (!Config.ALT_MANOR_SAVE_ALL_ACTIONS) {
+					if (runCount % Config.ALT_MANOR_SAVE_PERIOD_RATE == 0) {
 						castle.saveSeedData();
 						castle.saveCropData();
-						if (Config.DEBUG)
-						{
+						if (Config.DEBUG) {
 							Log.info("Manor System: all data for " + castle.getName() + " saved");
 						}
 					}
@@ -64,9 +56,7 @@ public class CastleUpdater implements Runnable
 				CastleUpdater cu = new CastleUpdater(clan, ++runCount);
 				ThreadPoolManager.getInstance().scheduleGeneral(cu, 3600000);
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "", e);
 		}
 	}

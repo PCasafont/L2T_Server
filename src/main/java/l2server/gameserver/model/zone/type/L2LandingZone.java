@@ -24,27 +24,21 @@ import l2server.gameserver.model.zone.L2ZoneType;
  *
  * @author Kerberos
  */
-public class L2LandingZone extends L2ZoneType
-{
-	public L2LandingZone(int id)
-	{
+public class L2LandingZone extends L2ZoneType {
+	public L2LandingZone(int id) {
 		super(id);
 	}
 
 	@Override
-	protected void onEnter(L2Character character)
-	{
-		if (character instanceof L2PcInstance)
-		{
+	protected void onEnter(L2Character character) {
+		if (character instanceof L2PcInstance) {
 			character.setInsideZone(L2Character.ZONE_LANDING, true);
 		}
 	}
 
 	@Override
-	protected void onExit(L2Character character)
-	{
-		if (character instanceof L2PcInstance)
-		{
+	protected void onExit(L2Character character) {
+		if (character instanceof L2PcInstance) {
 			character.setInsideZone(L2Character.ZONE_LANDING, false);
 		}
 	}
@@ -52,15 +46,13 @@ public class L2LandingZone extends L2ZoneType
 	/**
 	 */
 	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
+	public void onDieInside(L2Character character, L2Character killer) {
 	}
 
 	/**
 	 * @see l2server.gameserver.model.zone.L2ZoneType#onReviveInside(l2server.gameserver.model.actor.L2Character)
 	 */
 	@Override
-	public void onReviveInside(L2Character character)
-	{
+	public void onReviveInside(L2Character character) {
 	}
 }

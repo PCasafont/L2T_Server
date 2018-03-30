@@ -5,30 +5,24 @@ import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2Transformation;
 
-public class VanguardDarkAvenger extends L2Transformation
-{
-	public VanguardDarkAvenger()
-	{
+public class VanguardDarkAvenger extends L2Transformation {
+	public VanguardDarkAvenger() {
 		// id
 		super(313);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 313 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 313 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		int lvl = 1;
-		if (getPlayer().getLevel() > 42)
-		{
+		if (getPlayer().getLevel() > 42) {
 			lvl = getPlayer().getLevel() - 42;
 		}
 
@@ -49,25 +43,20 @@ public class VanguardDarkAvenger extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 
 		// Remove Boost Morale effect
-		for (L2Abnormal e : getPlayer().getAllEffects())
-		{
-			if (e != null && e.getSkill().getId() == 956)
-			{
+		for (L2Abnormal e : getPlayer().getAllEffects()) {
+			if (e != null && e.getSkill().getId() == 956) {
 				e.exit();
 			}
 		}
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		int lvl = 1;
-		if (getPlayer().getLevel() > 42)
-		{
+		if (getPlayer().getLevel() > 42) {
 			lvl = getPlayer().getLevel() - 42;
 		}
 
@@ -87,8 +76,7 @@ public class VanguardDarkAvenger extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new VanguardDarkAvenger());
 	}
 }

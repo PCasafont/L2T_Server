@@ -15,8 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-public class CameraMode extends L2GameServerPacket
-{
+public class CameraMode extends L2GameServerPacket {
 
 	private int mode;
 
@@ -26,14 +25,12 @@ public class CameraMode extends L2GameServerPacket
 	 * @param mode 0 - third person cam
 	 *             1 - first person cam
 	 */
-	public CameraMode(int mode)
-	{
+	public CameraMode(int mode) {
 		this.mode = mode;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(mode);
 	}
 }

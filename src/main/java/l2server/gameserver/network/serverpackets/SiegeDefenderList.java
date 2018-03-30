@@ -50,46 +50,39 @@ import l2server.gameserver.model.entity.Castle;
  *
  * @author KenM
  */
-public final class SiegeDefenderList extends L2GameServerPacket
-{
+public final class SiegeDefenderList extends L2GameServerPacket {
 	//
 	private Castle castle;
-
-	public SiegeDefenderList(Castle castle)
-	{
+	
+	public SiegeDefenderList(Castle castle) {
 		this.castle = castle;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(castle.getCastleId());
 		writeD(0x00); //0
 		writeD(0x01); //1
 		writeD(0x00); //0
 		int size = castle.getSiege().getDefenderClans().size() + castle.getSiege().getDefenderWaitingClans().size();
-		if (size > 0)
-		{
+		if (size > 0) {
 			L2Clan clan;
-
+			
 			writeD(size);
 			writeD(size);
 			// Listing the Lord and the approved clans
-			for (L2SiegeClan siegeclan : castle.getSiege().getDefenderClans())
-			{
+			for (L2SiegeClan siegeclan : castle.getSiege().getDefenderClans()) {
 				clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
-				if (clan == null)
-				{
+				if (clan == null) {
 					continue;
 				}
-
+				
 				writeD(clan.getClanId());
 				writeS(clan.getName());
 				writeS(clan.getLeaderName());
 				writeD(clan.getCrestId());
 				writeD(0x00); //signed time (seconds) (not storated by L2J)
-				switch (siegeclan.getType())
-				{
+				switch (siegeclan.getType()) {
 					case OWNER:
 						writeD(0x01); //owner
 						break;
@@ -108,8 +101,7 @@ public final class SiegeDefenderList extends L2GameServerPacket
 				writeS(""); //AllyLeaderName
 				writeD(clan.getAllyCrestId());
 			}
-			for (L2SiegeClan siegeclan : castle.getSiege().getDefenderWaitingClans())
-			{
+			for (L2SiegeClan siegeclan : castle.getSiege().getDefenderWaitingClans()) {
 				clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
 				writeD(clan.getClanId());
 				writeS(clan.getName());
@@ -122,9 +114,7 @@ public final class SiegeDefenderList extends L2GameServerPacket
 				writeS(""); //AllyLeaderName
 				writeD(clan.getAllyCrestId());
 			}
-		}
-		else
-		{
+		} else {
 			writeD(0x00);
 			writeD(0x00);
 		}

@@ -26,20 +26,16 @@ import l2server.log.Log;
  *
  * @version $Revision: 1.3.4.5 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class NewCharacter extends L2GameClientPacket
-{
+public final class NewCharacter extends L2GameClientPacket {
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 
 	}
 
 	@Override
-	protected void runImpl()
-	{
-		if (Config.DEBUG)
-		{
+	protected void runImpl() {
+		if (Config.DEBUG) {
 			Log.fine("CreateNewChar");
 		}
 

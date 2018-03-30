@@ -15,28 +15,25 @@
 
 package ai.individual;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.util.Rnd;
 
-import ai.group_template.L2AttackableAIScript;
-
 /**
  * @author LasTravel
- *         <p>
- *         Spicula Scout Golem AI
+ * <p>
+ * Spicula Scout Golem AI
  */
 
-public class SpiculaScoutGolem extends L2AttackableAIScript
-{
+public class SpiculaScoutGolem extends L2AttackableAIScript {
 	private static final int spiculaScoutGolem = 23268;
 	private static final int golemGenerator = 19296;
 	private static final int battleGolem = 23269;
 
-	public SpiculaScoutGolem(int id, String name, String descr)
-	{
+	public SpiculaScoutGolem(int id, String name, String descr) {
 		super(id, name, descr);
 
 		addKillId(spiculaScoutGolem);
@@ -44,12 +41,10 @@ public class SpiculaScoutGolem extends L2AttackableAIScript
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		npc.deleteMe();
 
-		for (int a = 0; a < Rnd.get(2, 3); a++)
-		{
+		for (int a = 0; a < Rnd.get(2, 3); a++) {
 			L2Npc golem = addSpawn(battleGolem, npc.getX(), npc.getY(), npc.getZ(), 0, true, 120000);
 
 			golem.setIsRunning(true);
@@ -65,10 +60,8 @@ public class SpiculaScoutGolem extends L2AttackableAIScript
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
-		if (Rnd.get(10) > 7)
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+		if (Rnd.get(10) > 7) {
 			addSpawn(golemGenerator, npc.getX(), npc.getY(), npc.getZ(), 0, false, 120000, true);
 		}
 
@@ -76,13 +69,11 @@ public class SpiculaScoutGolem extends L2AttackableAIScript
 	}
 
 	@Override
-	public int getOnKillDelay(int npcId)
-	{
+	public int getOnKillDelay(int npcId) {
 		return 0;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new SpiculaScoutGolem(-1, "SpiculaScoutGolem", "ai");
 	}
 }

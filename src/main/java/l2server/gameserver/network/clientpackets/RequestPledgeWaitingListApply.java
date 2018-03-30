@@ -22,38 +22,29 @@ import l2server.gameserver.network.serverpackets.ExPledgeRecruitApplyInfo;
 /**
  * @author Pere
  */
-public final class RequestPledgeWaitingListApply extends L2GameClientPacket
-{
+public final class RequestPledgeWaitingListApply extends L2GameClientPacket {
 	private boolean apply;
 	private int karma;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		apply = readD() == 1;
 		karma = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null || activeChar.getClan() != null)
-		{
+		if (activeChar == null || activeChar.getClan() != null) {
 			return;
 		}
-
-		if (apply)
-		{
-			if (ClanRecruitManager.getInstance().addWaitingUser(activeChar, karma))
-			{
+		
+		if (apply) {
+			if (ClanRecruitManager.getInstance().addWaitingUser(activeChar, karma)) {
 			}
 			sendPacket(new ExPledgeRecruitApplyInfo(3));
-		}
-		else
-		{
-			if (ClanRecruitManager.getInstance().removeWaitingUser(activeChar))
-			{
+		} else {
+			if (ClanRecruitManager.getInstance().removeWaitingUser(activeChar)) {
 			}
 			sendPacket(new ExPledgeRecruitApplyInfo(0));
 		}

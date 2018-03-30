@@ -20,13 +20,11 @@ package l2server.gameserver.network.serverpackets;
  *
  * @author -Wooden-
  */
-public class ShowPCCafeCouponShowUI extends L2GameServerPacket
-{
-
+public class ShowPCCafeCouponShowUI extends L2GameServerPacket {
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 	}
 }

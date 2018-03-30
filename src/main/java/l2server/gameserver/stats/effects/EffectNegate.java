@@ -25,45 +25,33 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 /**
  * @author Gnat
  */
-public class EffectNegate extends L2Effect
-{
-	public EffectNegate(Env env, L2EffectTemplate template)
-	{
+public class EffectNegate extends L2Effect {
+	public EffectNegate(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		L2Skill skill = getSkill();
 
-		for (int negateSkillId : skill.getNegateId())
-		{
-			if (negateSkillId != 0)
-			{
+		for (int negateSkillId : skill.getNegateId()) {
+			if (negateSkillId != 0) {
 				getEffected().stopSkillEffects(negateSkillId);
 			}
 		}
-		for (L2AbnormalType negateEffectType : skill.getNegateStats())
-		{
+		for (L2AbnormalType negateEffectType : skill.getNegateStats()) {
 			getEffected().stopEffects(negateEffectType);
 		}
-		if (skill.getNegateAbnormals() != null)
-		{
-			for (L2Abnormal effect : getEffected().getAllEffects())
-			{
-				if (effect == null)
-				{
+		if (skill.getNegateAbnormals() != null) {
+			for (L2Abnormal effect : getEffected().getAllEffects()) {
+				if (effect == null) {
 					continue;
 				}
 
-				for (String negateAbnormalType : skill.getNegateAbnormals().keySet())
-				{
-					for (String stackType : effect.getStackType())
-					{
+				for (String negateAbnormalType : skill.getNegateAbnormals().keySet()) {
+					for (String stackType : effect.getStackType()) {
 						if (negateAbnormalType.equalsIgnoreCase(stackType) &&
-								skill.getNegateAbnormals().get(negateAbnormalType) >= effect.getStackLvl())
-						{
+								skill.getNegateAbnormals().get(negateAbnormalType) >= effect.getStackLvl()) {
 							effect.exit();
 							break;
 						}
@@ -75,8 +63,7 @@ public class EffectNegate extends L2Effect
 	}
 
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 }

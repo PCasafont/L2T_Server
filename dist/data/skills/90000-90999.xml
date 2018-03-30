@@ -40,7 +40,7 @@
 		<set name="isMagic" val="true" />
 	</skill>
 	<skill id="90003" levels="20" name="Custom Halloween Skill">
-		<table name="#maxHpMp">5 10 15 20 25 30 35 40 45 50 60 65 70 75 80 85 90 95 100 105		</table>
+		<table name="#maxHpMp">5 10 15 20 25 30 35 40 45 50 60 65 70 75 80 85 90 95 100 105</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />

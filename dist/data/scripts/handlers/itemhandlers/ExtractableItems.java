@@ -33,15 +33,12 @@ import java.util.logging.Logger;
  * @author FBIagent 11/12/2006
  */
 
-public class ExtractableItems implements IItemHandler
-{
+public class ExtractableItems implements IItemHandler {
 	private static Logger log = Logger.getLogger(ItemTable.class.getName());
 
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-		{
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!(playable instanceof L2PcInstance)) {
 			return;
 		}
 
@@ -51,43 +48,34 @@ public class ExtractableItems implements IItemHandler
 		L2EtcItem etcitem = (L2EtcItem) item.getItem();
 		L2ExtractableProduct[] exitem = etcitem.getExtractableItems();
 
-		if (exitem == null)
-		{
+		if (exitem == null) {
 			log.info("No extractable data defined for " + etcitem);
 			return;
 		}
 
 		//destroy item
-		if (!activeChar.destroyItem("Extract", item.getObjectId(), 1, activeChar, true))
-		{
+		if (!activeChar.destroyItem("Extract", item.getObjectId(), 1, activeChar, true)) {
 			return;
 		}
 
 		boolean created = false;
 
 		// calculate extraction
-		for (L2ExtractableProduct expi : exitem)
-		{
-			if (Rnd.get(100000) <= expi.getChance())
-			{
+		for (L2ExtractableProduct expi : exitem) {
+			if (Rnd.get(100000) <= expi.getChance()) {
 				int min = expi.getMin();
 				int max = expi.getMax();
 				int createItemID = expi.getId();
 
-				if (itemID >= 6411 && itemID <= 6518 || itemID >= 7726 && itemID <= 7860 ||
-						itemID >= 8403 && itemID <= 8483)
-				{
+				if (itemID >= 6411 && itemID <= 6518 || itemID >= 7726 && itemID <= 7860 || itemID >= 8403 && itemID <= 8483) {
 					min *= Config.RATE_EXTR_FISH;
 					max *= Config.RATE_EXTR_FISH;
 				}
 
 				int createitemAmount = 0;
-				if (max == min)
-				{
+				if (max == min) {
 					createitemAmount = min;
-				}
-				else
-				{
+				} else {
 					createitemAmount = Rnd.get(max - min + 1) + min;
 				}
 				activeChar.addItem("Extract", createItemID, createitemAmount, activeChar, true);
@@ -95,8 +83,7 @@ public class ExtractableItems implements IItemHandler
 			}
 		}
 
-		if (!created)
-		{
+		if (!created) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_INSIDE_THAT));
 		}
 	}

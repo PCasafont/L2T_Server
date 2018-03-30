@@ -21,8 +21,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 
 import java.util.logging.Logger;
 
-public interface IActionHandler
-{
+public interface IActionHandler {
 	Logger log = Logger.getLogger(IActionHandler.class.getName());
 
 	boolean action(L2PcInstance activeChar, L2Object target, boolean interact);

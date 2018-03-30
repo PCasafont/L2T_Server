@@ -22,21 +22,18 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @version $Revision: 1.4.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public class ObservationReturn extends L2GameServerPacket
-{
+public class ObservationReturn extends L2GameServerPacket {
 	// ddSS
 	private L2PcInstance activeChar;
-
+	
 	/**
 	 */
-	public ObservationReturn(L2PcInstance observer)
-	{
+	public ObservationReturn(L2PcInstance observer) {
 		activeChar = observer;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeC(0xec);
 		writeD(activeChar.getLastX());
 		writeD(activeChar.getLastY());

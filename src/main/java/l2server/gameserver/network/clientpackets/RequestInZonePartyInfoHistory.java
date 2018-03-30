@@ -18,17 +18,14 @@ package l2server.gameserver.network.clientpackets;
 /**
  * @author Pere
  */
-public final class RequestInZonePartyInfoHistory extends L2GameClientPacket
-{
+public final class RequestInZonePartyInfoHistory extends L2GameClientPacket {
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 	}
 }

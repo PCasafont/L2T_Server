@@ -22,41 +22,28 @@ package l2server.gameserver.gui;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.gui.playertable.PlayerTablePane;
 
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JSplitPane;
-import javax.swing.JTextArea;
 
 /**
  * @author Pere
  */
-public class AdminTab extends JPanel
-{
+public class AdminTab extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private GridBagConstraints cons = new GridBagConstraints();
 	private GridBagLayout layout = new GridBagLayout();
 	private JPanel listPanel = new PlayerTablePane();
 	private JPanel infoPanel = new JPanel();
 
+	public AdminTab() {
 
-
-
-	public AdminTab()
-	{
-
-		JTextArea  talkadmin = new JTextArea();
+		JTextArea talkadmin = new JTextArea();
 		JButton bouton = new JButton("Send");
 		bouton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Announcements.getInstance().announceToAll(talkadmin.getText());
-
 			}
 		});
 		setLayout(layout);
@@ -72,11 +59,7 @@ public class AdminTab extends JPanel
 		cons.gridx = 0;
 		cons.gridy = 2;
 
-
 		infoPanel.add(bouton, cons);
-
-
-
 
 		infoPanel.setPreferredSize(new Dimension(235, infoPanel.getHeight()));
 
@@ -89,10 +72,5 @@ public class AdminTab extends JPanel
 		splitPane.setDividerLocation(535);
 		add(splitPane, cons);
 		listPanel.add(talkadmin, cons);
-
-
-
 	}
-
-
 }

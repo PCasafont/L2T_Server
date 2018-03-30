@@ -20,8 +20,7 @@ import l2server.gameserver.model.actor.L2Npc;
 import java.util.ArrayList;
 import java.util.List;
 
-public class L2SiegeClan
-{
+public class L2SiegeClan {
 	// ==========================================================================================
 	// Instance
 	// ===============================================================
@@ -31,47 +30,42 @@ public class L2SiegeClan
 	private int numFlagsAdded = 0;
 	private SiegeClanType type;
 
-	public enum SiegeClanType
-	{
-		OWNER, DEFENDER, ATTACKER, DEFENDER_PENDING
+	public enum SiegeClanType {
+		OWNER,
+		DEFENDER,
+		ATTACKER,
+		DEFENDER_PENDING
 	}
 
 	// =========================================================
 	// Constructor
 
-	public L2SiegeClan(int clanId, SiegeClanType type)
-	{
+	public L2SiegeClan(int clanId, SiegeClanType type) {
 		this.clanId = clanId;
 		this.type = type;
 	}
 
 	// =========================================================
 	// Method - Public
-	public int getNumFlags()
-	{
+	public int getNumFlags() {
 		return numFlagsAdded;
 	}
 
-	public void addFlag(L2Npc flag)
-	{
+	public void addFlag(L2Npc flag) {
 		numFlagsAdded++;
 		getFlag().add(flag);
 	}
 
-	public boolean removeFlag(L2Npc flag)
-	{
-		if (flag == null)
-		{
+	public boolean removeFlag(L2Npc flag) {
+		if (flag == null) {
 			return false;
 		}
 		boolean ret = getFlag().remove(flag);
 		//check if null objects or duplicates remain in the list.
 		//for some reason, this might be happening sometimes...
 		// delete false duplicates: if this flag got deleted, delete its copies too.
-		if (ret)
-		{
-			while (getFlag().remove(flag))
-			{
+		if (ret) {
+			while (getFlag().remove(flag)) {
 			}
 		}
 
@@ -80,37 +74,30 @@ public class L2SiegeClan
 		return ret;
 	}
 
-	public void removeFlags()
-	{
-		for (L2Npc flag : getFlag())
-		{
+	public void removeFlags() {
+		for (L2Npc flag : getFlag()) {
 			removeFlag(flag);
 		}
 	}
 
 	// =========================================================
 	// Property
-	public final int getClanId()
-	{
+	public final int getClanId() {
 		return clanId;
 	}
 
-	public final List<L2Npc> getFlag()
-	{
-		if (flag == null)
-		{
+	public final List<L2Npc> getFlag() {
+		if (flag == null) {
 			flag = new ArrayList<>();
 		}
 		return flag;
 	}
 
-	public SiegeClanType getType()
-	{
+	public SiegeClanType getType() {
 		return type;
 	}
 
-	public void setType(SiegeClanType setType)
-	{
+	public void setType(SiegeClanType setType) {
 		type = setType;
 	}
 }

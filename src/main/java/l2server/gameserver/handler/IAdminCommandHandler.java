@@ -22,8 +22,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @version $Revision: 1.1.4.2 $ $Date: 2005/03/27 15:30:09 $
  */
-public interface IAdminCommandHandler
-{
+public interface IAdminCommandHandler {
 	/**
 	 * this is the worker method that is called when someone uses an admin command.
 	 *

@@ -26,23 +26,19 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
  *
  * @author durgus
  */
-public class ChatParty implements IChatHandler
-{
+public class ChatParty implements IChatHandler {
 	private static final int[] COMMAND_IDS = {3};
 
 	/**
 	 * Handle chat type 'party'
 	 */
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-	{
-		if (activeChar.isInParty())
-		{
+	public void handleChat(int type, L2PcInstance activeChar, String target, String text) {
+		if (activeChar.isInParty()) {
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
 			activeChar.getParty().broadcastCSToPartyMembers(cs, activeChar);
 
-			while (text.contains("Type=") && text.contains("Title="))
-			{
+			while (text.contains("Type=") && text.contains("Title=")) {
 				int index1 = text.indexOf("Type=");
 				int index2 = text.indexOf("Title=") + 6;
 				text = text.substring(0, index1) + text.substring(index2);
@@ -50,7 +46,8 @@ public class ChatParty implements IChatHandler
 
 			String leaderName = activeChar.getParty().getLeader().getName();
 			ConsoleTab.appendMessage(ConsoleFilter.PartyChat,
-					"[" + leaderName + "'s party] " + activeChar.getName() + ": " + text, leaderName,
+					"[" + leaderName + "'s party] " + activeChar.getName() + ": " + text,
+					leaderName,
 					activeChar.getName());
 		}
 	}
@@ -61,8 +58,7 @@ public class ChatParty implements IChatHandler
 	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
 	 */
 	@Override
-	public int[] getChatTypeList()
-	{
+	public int[] getChatTypeList() {
 		return COMMAND_IDS;
 	}
 }

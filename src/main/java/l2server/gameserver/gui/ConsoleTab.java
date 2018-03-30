@@ -19,13 +19,11 @@
 
 package l2server.gameserver.gui;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.Rectangle;
+import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.text.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -33,36 +31,15 @@ import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
-import javax.swing.text.AttributeSet;
-import javax.swing.text.Document;
-import javax.swing.text.Element;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
-import javax.swing.text.StyleContext;
-
 /**
  * @author Pere
  */
-public class ConsoleTab extends JPanel
-{
+public class ConsoleTab extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private static final int MSG_STORAGE_LIMIT = 5000;
 	private static final int MSG_DISPLAY_LIMIT = 500;
 
-	public enum ConsoleFilter
-	{
+	public enum ConsoleFilter {
 		Console(null, Color.red, true),
 		Errors(Console, new Color(220, 50, 50), true),
 		Warnings(Console, new Color(220, 220, 50), true),
@@ -85,11 +62,9 @@ public class ConsoleTab extends JPanel
 		public final boolean startEnabled;
 		public final String[] subFilters;
 
-		ConsoleFilter(ConsoleFilter p, Color tc, boolean se, String... sf)
-		{
+		ConsoleFilter(ConsoleFilter p, Color tc, boolean se, String... sf) {
 			parent = p;
-			if (parent != null)
-			{
+			if (parent != null) {
 				parent.children.add(this);
 			}
 			textColor = tc;
@@ -98,14 +73,12 @@ public class ConsoleTab extends JPanel
 		}
 	}
 
-	private static class ConsoleLine
-	{
+	private static class ConsoleLine {
 		public final ConsoleFilter filter;
 		public final String text;
 		public final String[] extra;
 
-		public ConsoleLine(ConsoleFilter f, String t, String... e)
-		{
+		public ConsoleLine(ConsoleFilter f, String t, String... e) {
 			filter = f;
 			text = t;
 			extra = e;
@@ -116,13 +89,11 @@ public class ConsoleTab extends JPanel
 	private static List<ConsoleTab> instances = new ArrayList<>();
 	private static List<ConsoleLine> messages = new ArrayList<>();
 
-	private class ConsoleFilterInstance
-	{
+	private class ConsoleFilterInstance {
 		public JCheckBox checkBox;
 		public JTextField[] textFields;
 
-		public boolean isEnabled()
-		{
+		public boolean isEnabled() {
 			return checkBox.isSelected();
 		}
 	}
@@ -130,8 +101,7 @@ public class ConsoleTab extends JPanel
 	private ConsoleFilterInstance[] filters = new ConsoleFilterInstance[ConsoleFilter.values().length];
 	private JTextPane textPane;
 
-	public ConsoleTab(boolean main)
-	{
+	public ConsoleTab(boolean main) {
 		setLayout(new GridBagLayout());
 		JPanel leftPanel = new JPanel();
 		leftPanel.setLayout(new GridBagLayout());
@@ -149,14 +119,12 @@ public class ConsoleTab extends JPanel
 		int checkBoxesGridWidth = 20;
 		ConsoleActionListener listener = new ConsoleActionListener();
 		ConsoleSubFilterListener filterListener = new ConsoleSubFilterListener();
-		for (ConsoleFilter f : ConsoleFilter.values())
-		{
+		for (ConsoleFilter f : ConsoleFilter.values()) {
 			filters[f.ordinal()] = new ConsoleFilterInstance();
 			ConsoleFilterInstance fi = filters[f.ordinal()];
 			int depthLevel = 0;
 			ConsoleFilter child = f.parent;
-			while (child != null)
-			{
+			while (child != null) {
 				depthLevel++;
 				child = child.parent;
 			}
@@ -175,8 +143,7 @@ public class ConsoleTab extends JPanel
 			checkBoxes.add(new JLabel(f.name()), cons);
 			cons.gridy++;
 			fi.textFields = new JTextField[f.subFilters.length];
-			for (int i = 0; i < f.subFilters.length; i++)
-			{
+			for (int i = 0; i < f.subFilters.length; i++) {
 				cons.gridx = depthLevel + 2;
 				cons.weightx = 1;
 				cons.gridwidth = 1;
@@ -204,8 +171,7 @@ public class ConsoleTab extends JPanel
 		cons.weighty = 1;
 		textPane = new JTextPane();
 		textPane.setBackground(new Color(30, 30, 30));
-		JScrollPane console = new JScrollPane(textPane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		JScrollPane console = new JScrollPane(textPane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
 		cons.weightx = 1;
 		cons.weighty = 1;
@@ -215,8 +181,7 @@ public class ConsoleTab extends JPanel
 		add(splitPane, cons);
 
 		instances.add(this);
-		if (main)
-		{
+		if (main) {
 			// Add new console window button
 			JButton button = new JButton("New Console Window");
 			button.setActionCommand("newConsoleWindow");
@@ -232,53 +197,41 @@ public class ConsoleTab extends JPanel
 		reloadDoc();
 	}
 
-	public synchronized static void appendMessage(ConsoleFilter f, String msg, String... extra)
-	{
-		try
-		{
+	public synchronized static void appendMessage(ConsoleFilter f, String msg, String... extra) {
+		try {
 			messages.add(new ConsoleLine(f, msg, extra));
-			while (messages.size() > MSG_STORAGE_LIMIT)
-			{
+			while (messages.size() > MSG_STORAGE_LIMIT) {
 				messages.remove(0);
 			}
 
-			for (ConsoleTab tab : instances)
-			{
+			for (ConsoleTab tab : instances) {
 				tab.onAppendMessage(f, msg, extra);
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public synchronized void onAppendMessage(ConsoleFilter f, String msg, String... extra)
-	{
+	public synchronized void onAppendMessage(ConsoleFilter f, String msg, String... extra) {
 		ConsoleFilterInstance fi = filters[f.ordinal()];
-		if (!fi.isEnabled())
-		{
+		if (!fi.isEnabled()) {
 			return;
 		}
 
 		int emptySubFields = 0;
 		boolean pass = false;
-		for (int i = 0; i < fi.textFields.length; i++)
-		{
-			if (fi.textFields[i].getText().isEmpty())
-			{
+		for (int i = 0; i < fi.textFields.length; i++) {
+			if (fi.textFields[i].getText().isEmpty()) {
 				emptySubFields++;
 				continue;
 			}
 
-			if (extra[i].toLowerCase().contains(fi.textFields[i].getText()))
-			{
+			if (extra[i].toLowerCase().contains(fi.textFields[i].getText())) {
 				pass = true;
 			}
 		}
 
-		if (!pass && emptySubFields < f.subFilters.length)
-		{
+		if (!pass && emptySubFields < f.subFilters.length) {
 			return;
 		}
 
@@ -287,13 +240,10 @@ public class ConsoleTab extends JPanel
 		AttributeSet aset = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.Foreground, f.textColor);
 
 		//aset = sc.addAttribute(aset, StyleConstants.Background, new Color(0, 100, 250));
-		if (f == ConsoleFilter.Console || f.parent != null && f.parent == ConsoleFilter.Console)
-		{
+		if (f == ConsoleFilter.Console || f.parent != null && f.parent == ConsoleFilter.Console) {
 			aset = sc.addAttribute(aset, StyleConstants.FontFamily, "Lucida Console");
 			aset = sc.addAttribute(aset, StyleConstants.FontSize, 14);
-		}
-		else
-		{
+		} else {
 			aset = sc.addAttribute(aset, StyleConstants.FontFamily, "Verdana");
 			aset = sc.addAttribute(aset, StyleConstants.FontSize, 12);
 		}
@@ -301,16 +251,12 @@ public class ConsoleTab extends JPanel
 
 		Document document = textPane.getDocument();
 		Element root = document.getDefaultRootElement();
-		while (root.getElementCount() > MSG_DISPLAY_LIMIT)
-		{
+		while (root.getElementCount() > MSG_DISPLAY_LIMIT) {
 			Element line = root.getElement(0);
 			int end = line.getEndOffset();
-			try
-			{
+			try {
 				document.remove(0, end);
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
@@ -320,49 +266,40 @@ public class ConsoleTab extends JPanel
 		textPane.setCharacterAttributes(aset, false);
 		textPane.replaceSelection(msg);
 
-		EventQueue.invokeLater(() ->
-		{
+		EventQueue.invokeLater(() -> {
 			Rectangle visibleRect = textPane.getVisibleRect();
-			if (visibleRect.y + 100 > textPane.getHeight() - visibleRect.height)
-			{
+			if (visibleRect.y + 100 > textPane.getHeight() - visibleRect.height) {
 				visibleRect.y = textPane.getHeight() - visibleRect.height;
 				textPane.scrollRectToVisible(visibleRect);
 			}
 		});
 	}
 
-	public synchronized void reloadDoc()
-	{
+	public synchronized void reloadDoc() {
 		textPane.setText("");
 
-		for (ConsoleLine line : messages)
-		{
+		for (ConsoleLine line : messages) {
 			ConsoleFilter f = line.filter;
 			ConsoleFilterInstance fi = filters[f.ordinal()];
-			if (!fi.isEnabled())
-			{
+			if (!fi.isEnabled()) {
 				continue;
 			}
 
 			int emptySubFields = 0;
 			boolean pass = false;
-			for (int i = 0; i < fi.textFields.length; i++)
-			{
+			for (int i = 0; i < fi.textFields.length; i++) {
 				JTextField textField = fi.textFields[i];
-				if (textField.getText().isEmpty())
-				{
+				if (textField.getText().isEmpty()) {
 					emptySubFields++;
 					continue;
 				}
 
-				if (line.extra[i].toLowerCase().contains(textField.getText()))
-				{
+				if (line.extra[i].toLowerCase().contains(textField.getText())) {
 					pass = true;
 				}
 			}
 
-			if (!pass && emptySubFields < fi.textFields.length)
-			{
+			if (!pass && emptySubFields < fi.textFields.length) {
 				continue;
 			}
 
@@ -371,13 +308,10 @@ public class ConsoleTab extends JPanel
 			AttributeSet aset = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.Foreground, f.textColor);
 
 			//aset = sc.addAttribute(aset, StyleConstants.Background, new Color(0, 100, 250));
-			if (f == ConsoleFilter.Console || f.parent != null && f.parent == ConsoleFilter.Console)
-			{
+			if (f == ConsoleFilter.Console || f.parent != null && f.parent == ConsoleFilter.Console) {
 				aset = sc.addAttribute(aset, StyleConstants.FontFamily, "Lucida Console");
 				aset = sc.addAttribute(aset, StyleConstants.FontSize, 14);
-			}
-			else
-			{
+			} else {
 				aset = sc.addAttribute(aset, StyleConstants.FontFamily, "Verdana");
 				aset = sc.addAttribute(aset, StyleConstants.FontSize, 12);
 			}
@@ -385,16 +319,12 @@ public class ConsoleTab extends JPanel
 
 			Document document = textPane.getDocument();
 			Element root = document.getDefaultRootElement();
-			while (root.getElementCount() > MSG_DISPLAY_LIMIT)
-			{
+			while (root.getElementCount() > MSG_DISPLAY_LIMIT) {
 				Element elem = root.getElement(0);
 				int end = elem.getEndOffset();
-				try
-				{
+				try {
 					document.remove(0, end);
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
@@ -406,22 +336,17 @@ public class ConsoleTab extends JPanel
 		}
 	}
 
-	private class ConsoleActionListener implements ActionListener
-	{
+	private class ConsoleActionListener implements ActionListener {
 		@Override
-		public void actionPerformed(ActionEvent ae)
-		{
-			if (ae.getActionCommand().equalsIgnoreCase("newConsoleWindow"))
-			{
+		public void actionPerformed(ActionEvent ae) {
+			if (ae.getActionCommand().equalsIgnoreCase("newConsoleWindow")) {
 				instanceId++;
 				JFrame extra = new JFrame("Console View #" + instanceId);
 				final ConsoleTab tab = new ConsoleTab(false);
 				extra.add(tab);
-				extra.addWindowListener(new WindowAdapter()
-				{
+				extra.addWindowListener(new WindowAdapter() {
 					@Override
-					public void windowClosing(WindowEvent arg0)
-					{
+					public void windowClosing(WindowEvent arg0) {
 						instances.remove(tab);
 					}
 				});
@@ -433,22 +358,16 @@ public class ConsoleTab extends JPanel
 			}
 
 			ConsoleFilter f = ConsoleFilter.valueOf(ae.getActionCommand());
-			if (f == null)
-			{
+			if (f == null) {
 				return;
 			}
 
-			if (filters[f.ordinal()].isEnabled())
-			{
-				for (ConsoleFilter child : f.children)
-				{
+			if (filters[f.ordinal()].isEnabled()) {
+				for (ConsoleFilter child : f.children) {
 					filters[child.ordinal()].checkBox.setEnabled(true);
 				}
-			}
-			else
-			{
-				for (ConsoleFilter child : f.children)
-				{
+			} else {
+				for (ConsoleFilter child : f.children) {
 					filters[child.ordinal()].checkBox.setSelected(false);
 					filters[child.ordinal()].checkBox.setEnabled(false);
 				}
@@ -458,23 +377,19 @@ public class ConsoleTab extends JPanel
 		}
 	}
 
-	private class ConsoleSubFilterListener implements DocumentListener
-	{
+	private class ConsoleSubFilterListener implements DocumentListener {
 		@Override
-		public void changedUpdate(DocumentEvent e)
-		{
+		public void changedUpdate(DocumentEvent e) {
 			reloadDoc();
 		}
 
 		@Override
-		public void insertUpdate(DocumentEvent e)
-		{
+		public void insertUpdate(DocumentEvent e) {
 			reloadDoc();
 		}
 
 		@Override
-		public void removeUpdate(DocumentEvent e)
-		{
+		public void removeUpdate(DocumentEvent e) {
 			reloadDoc();
 		}
 	}

@@ -18,34 +18,28 @@ package l2server.gameserver;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ReloadableManager
-{
+public class ReloadableManager {
 	private Map<String, Reloadable> reloadables = new HashMap<>();
-
-	public static ReloadableManager getInstance()
-	{
+	
+	public static ReloadableManager getInstance() {
 		return SingletonHolder.instance;
 	}
-
-	public void register(String name, Reloadable r)
-	{
+	
+	public void register(String name, Reloadable r) {
 		reloadables.put(name, r);
 	}
-
-	public String reload(String name)
-	{
+	
+	public String reload(String name) {
 		Reloadable r = reloadables.get(name);
-		if (r == null)
-		{
+		if (r == null) {
 			return "Couldn't find a reloadable called \"" + name + "\"";
 		}
-
+		
 		return r.getReloadMessage(r.reload());
 	}
-
+	
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final ReloadableManager instance = new ReloadableManager();
 	}
 }

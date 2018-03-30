@@ -18,25 +18,22 @@ package l2server.gameserver.network.serverpackets;
 /**
  * Format: (ch)ddd
  */
-public class ExVariationResult extends L2GameServerPacket
-{
-
+public class ExVariationResult extends L2GameServerPacket {
+	
 	private int stat12;
 	private int stat34;
 	private int unk3;
-
-	public ExVariationResult(int unk1, int unk2, int unk3)
-	{
+	
+	public ExVariationResult(int unk1, int unk2, int unk3) {
 		stat12 = unk1;
 		stat34 = unk2;
 		this.unk3 = unk3;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(stat12);
 		writeD(stat34);
 		writeD(unk3);

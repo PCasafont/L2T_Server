@@ -21,22 +21,18 @@ import l2server.gameserver.templates.item.L2Henna;
 /**
  * @author KenM
  */
-public class GMHennaInfo extends L2GameServerPacket
-{
+public class GMHennaInfo extends L2GameServerPacket {
 	private final L2PcInstance activeChar;
 	private final L2Henna[] hennas = new L2Henna[4];
 	private int count;
-
-	public GMHennaInfo(L2PcInstance activeChar)
-	{
+	
+	public GMHennaInfo(L2PcInstance activeChar) {
 		this.activeChar = activeChar;
-
+		
 		int j = 0;
-		for (int i = 0; i < 3; i++)
-		{
+		for (int i = 0; i < 3; i++) {
 			L2Henna h = activeChar.getHenna(i + 1);
-			if (h != null)
-			{
+			if (h != null) {
 				hennas[j++] = h;
 			}
 		}
@@ -46,13 +42,12 @@ public class GMHennaInfo extends L2GameServerPacket
     /*
 	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
-
+	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeC(activeChar.getHennaStatINT());
 		writeC(activeChar.getHennaStatSTR());
 		writeC(activeChar.getHennaStatCON());
@@ -63,15 +58,13 @@ public class GMHennaInfo extends L2GameServerPacket
 		writeC(activeChar.getHennaStatCHA());
 		writeD(4); // slots?
 		writeD(count); //size
-		for (int i = 0; i < count; i++)
-		{
+		for (int i = 0; i < count; i++) {
 			writeD(hennas[i].getSymbolId());
 			writeD(0x01);
 		}
-
+		
 		L2Henna specialDye = activeChar.getHenna(4);
-		if (specialDye != null)
-		{
+		if (specialDye != null) {
 			writeD(specialDye.getSymbolId());
 			writeD((int) (specialDye.getExpiryTime() - System.currentTimeMillis()) / 1000); // Seconds
 			writeD(0x01);

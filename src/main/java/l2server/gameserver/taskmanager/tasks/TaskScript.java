@@ -20,15 +20,13 @@ import l2server.gameserver.taskmanager.Task;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
 import l2server.log.Log;
 
-import java.io.File;
-
 import javax.script.ScriptException;
+import java.io.File;
 
 /**
  * @author janiii
  */
-public class TaskScript extends Task
-{
+public class TaskScript extends Task {
 
 	public static final String NAME = "script";
 
@@ -36,8 +34,7 @@ public class TaskScript extends Task
 	 * @see l2server.gameserver.taskmanager.Task#getName()
 	 */
 	@Override
-	public String getName()
-	{
+	public String getName() {
 		return NAME;
 	}
 
@@ -45,27 +42,18 @@ public class TaskScript extends Task
 	 * @see l2server.gameserver.taskmanager.Task#onTimeElapsed(l2server.gameserver.taskmanager.TaskManager.ExecutedTask)
 	 */
 	@Override
-	public void onTimeElapsed(ExecutedTask task)
-	{
+	public void onTimeElapsed(ExecutedTask task) {
 		File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, "cron/" + task.getParams()[2]);
-		if (file.isFile())
-		{
-			try
-			{
+		if (file.isFile()) {
+			try {
 				L2ScriptEngineManager.getInstance().executeScript(file);
-			}
-			catch (ScriptException e)
-			{
+			} catch (ScriptException e) {
 				Log.warning("Failed loading: " + task.getParams()[2]);
 				L2ScriptEngineManager.getInstance().reportScriptFileError(file, e);
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.warning("Failed loading: " + task.getParams()[2]);
 			}
-		}
-		else
-		{
+		} else {
 			Log.warning("File Not Found: " + task.getParams()[2]);
 		}
 	}

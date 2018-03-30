@@ -21,35 +21,29 @@ import java.util.List;
 /**
  * @author Pere
  */
-public class SoulCrystal
-{
+public class SoulCrystal {
 	private final int id;
 	private final boolean special;
 	private final List<EnsoulEffect> effects = new ArrayList<>();
 
-	public SoulCrystal(int id, boolean special)
-	{
+	public SoulCrystal(int id, boolean special) {
 		this.id = id;
 		this.special = special;
 	}
 
-	public void addEffect(EnsoulEffect effect)
-	{
+	public void addEffect(EnsoulEffect effect) {
 		effects.add(effect);
 	}
 
-	public int getId()
-	{
+	public int getId() {
 		return id;
 	}
 
-	public boolean isSpecial()
-	{
+	public boolean isSpecial() {
 		return special;
 	}
 
-	public List<EnsoulEffect> getEffects()
-	{
+	public List<EnsoulEffect> getEffects() {
 		return effects;
 	}
 }

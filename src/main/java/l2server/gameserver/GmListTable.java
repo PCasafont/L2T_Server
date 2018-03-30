@@ -31,25 +31,20 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * @version $Revision: 1.2.2.1.2.7 $ $Date: 2005/04/05 19:41:24 $
  */
-public class GmListTable
-{
+public class GmListTable {
 	/**
 	 * Set(L2PcInstance>) containing all the GM in game
 	 */
 	private ConcurrentHashMap<L2PcInstance, Boolean> gmList;
 
-	public static GmListTable getInstance()
-	{
+	public static GmListTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	public ArrayList<L2PcInstance> getAllGms(boolean includeHidden)
-	{
+	public ArrayList<L2PcInstance> getAllGms(boolean includeHidden) {
 		ArrayList<L2PcInstance> tmpGmList = new ArrayList<>();
-		for (Entry<L2PcInstance, Boolean> n : gmList.entrySet())
-		{
-			if (includeHidden || !n.getValue())
-			{
+		for (Entry<L2PcInstance, Boolean> n : gmList.entrySet()) {
+			if (includeHidden || !n.getValue()) {
 				tmpGmList.add(n.getKey());
 			}
 		}
@@ -57,17 +52,12 @@ public class GmListTable
 		return tmpGmList;
 	}
 
-	public ArrayList<String> getAllGmNames(boolean includeHidden)
-	{
+	public ArrayList<String> getAllGmNames(boolean includeHidden) {
 		ArrayList<String> tmpGmList = new ArrayList<>();
-		for (Entry<L2PcInstance, Boolean> n : gmList.entrySet())
-		{
-			if (!n.getValue())
-			{
+		for (Entry<L2PcInstance, Boolean> n : gmList.entrySet()) {
+			if (!n.getValue()) {
 				tmpGmList.add(n.getKey().getName());
-			}
-			else if (includeHidden)
-			{
+			} else if (includeHidden) {
 				tmpGmList.add(n.getKey().getName() + " (invis)");
 			}
 		}
@@ -75,27 +65,22 @@ public class GmListTable
 		return tmpGmList;
 	}
 
-	private GmListTable()
-	{
+	private GmListTable() {
 		gmList = new ConcurrentHashMap<>();
 	}
 
 	/**
 	 * Add a L2PcInstance player to the Set gmList
 	 */
-	public void addGm(L2PcInstance player, boolean hidden)
-	{
-		if (Config.DEBUG)
-		{
+	public void addGm(L2PcInstance player, boolean hidden) {
+		if (Config.DEBUG) {
 			Log.fine("added gm: " + player.getName());
 		}
 		gmList.put(player, hidden);
 	}
 
-	public void deleteGm(L2PcInstance player)
-	{
-		if (Config.DEBUG)
-		{
+	public void deleteGm(L2PcInstance player) {
+		if (Config.DEBUG) {
 			Log.fine("deleted gm: " + player.getName());
 		}
 
@@ -107,10 +92,8 @@ public class GmListTable
 	 *
 	 * @param player
 	 */
-	public void showGm(L2PcInstance player)
-	{
-		if (gmList.containsKey(player))
-		{
+	public void showGm(L2PcInstance player) {
+		if (gmList.containsKey(player)) {
 			gmList.put(player, false);
 		}
 	}
@@ -120,20 +103,15 @@ public class GmListTable
 	 *
 	 * @param player
 	 */
-	public void hideGm(L2PcInstance player)
-	{
-		if (gmList.containsKey(player))
-		{
+	public void hideGm(L2PcInstance player) {
+		if (gmList.containsKey(player)) {
 			gmList.put(player, true);
 		}
 	}
 
-	public boolean isGmOnline(boolean includeHidden)
-	{
-		for (boolean gmStatus : gmList.values())
-		{
-			if (includeHidden || !gmStatus)
-			{
+	public boolean isGmOnline(boolean includeHidden) {
+		for (boolean gmStatus : gmList.values()) {
+			if (includeHidden || !gmStatus) {
 				return true;
 			}
 		}
@@ -141,44 +119,34 @@ public class GmListTable
 		return false;
 	}
 
-	public void sendListToPlayer(L2PcInstance player)
-	{
-		if (isGmOnline(player.isGM()))
-		{
+	public void sendListToPlayer(L2PcInstance player) {
+		if (isGmOnline(player.isGM())) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.GM_LIST));
 
-			for (String name : getAllGmNames(player.isGM()))
-			{
+			for (String name : getAllGmNames(player.isGM())) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.GM_C1);
 				sm.addString(name);
 				player.sendPacket(sm);
 			}
-		}
-		else
-		{
+		} else {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_GM_PROVIDING_SERVICE_NOW));
 		}
 	}
 
-	public static void broadcastToGMs(L2GameServerPacket packet)
-	{
-		for (L2PcInstance gm : getInstance().getAllGms(true))
-		{
+	public static void broadcastToGMs(L2GameServerPacket packet) {
+		for (L2PcInstance gm : getInstance().getAllGms(true)) {
 			gm.sendPacket(packet);
 		}
 	}
 
-	public static void broadcastMessageToGMs(String message)
-	{
-		for (L2PcInstance gm : getInstance().getAllGms(true))
-		{
+	public static void broadcastMessageToGMs(String message) {
+		for (L2PcInstance gm : getInstance().getAllGms(true)) {
 			gm.sendMessage(message);
 		}
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final GmListTable instance = new GmListTable();
 	}
 }

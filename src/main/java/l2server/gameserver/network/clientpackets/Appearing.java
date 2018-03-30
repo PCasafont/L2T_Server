@@ -26,26 +26,21 @@ import l2server.gameserver.network.serverpackets.UserInfo;
  *
  * @version $Revision: 1.3.4.4 $ $Date: 2005/03/29 23:15:33 $
  */
-public final class Appearing extends L2GameClientPacket
-{
+public final class Appearing extends L2GameClientPacket {
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
-		if (activeChar.isTeleporting())
-		{
+		if (activeChar.isTeleporting()) {
 			activeChar.onTeleported();
 		}
 
@@ -53,8 +48,7 @@ public final class Appearing extends L2GameClientPacket
 	}
 
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

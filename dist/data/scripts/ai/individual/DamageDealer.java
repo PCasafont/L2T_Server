@@ -15,27 +15,23 @@
 
 package ai.individual;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
 import l2server.gameserver.events.DamageManager;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-import ai.group_template.L2AttackableAIScript;
-
 /**
  * @author LasTravel
  */
 
-public class DamageDealer extends L2AttackableAIScript
-{
+public class DamageDealer extends L2AttackableAIScript {
 	private static final int DAMAGE_DEALER = 80350;
 
-	public DamageDealer(int questId, String name, String descr)
-	{
+	public DamageDealer(int questId, String name, String descr) {
 		super(questId, name, descr);
 
-		if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER)
-		{
+		if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER) {
 			L2Npc scarecrow = addSpawn(80350, -114361, 253054, -1542, 14661, false, 0);
 			
 			scarecrow.setIsImmobilized(true);
@@ -46,17 +42,13 @@ public class DamageDealer extends L2AttackableAIScript
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
-	{
-		if (npc.getNpcId() == DAMAGE_DEALER)
-		{
-			if (attacker.isGM())
-			{
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+		if (npc.getNpcId() == DAMAGE_DEALER) {
+			if (attacker.isGM()) {
 				return "";
 			}
 
-			if (attacker.isSubClassActive() || attacker.isTransformed() || attacker.getClassId() < 148)
-			{
+			if (attacker.isSubClassActive() || attacker.isTransformed() || attacker.getClassId() < 148) {
 				attacker.sendMessage("You don't meet the conditions to use this!");
 				return "";
 			}
@@ -67,8 +59,7 @@ public class DamageDealer extends L2AttackableAIScript
 		return super.onAttack(npc, attacker, damage, isPet);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new DamageDealer(-1, "DamageDealer", "ai");
 	}
 }

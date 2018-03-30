@@ -17,25 +17,21 @@ package l2server.gameserver.network.serverpackets;
 
 /**
  * @author zabbix
- *         Lets drink to code!
+ * Lets drink to code!
  */
-public class GameGuardQuery extends L2GameServerPacket
-{
-
-	public GameGuardQuery()
-	{
-
+public class GameGuardQuery extends L2GameServerPacket {
+	
+	public GameGuardQuery() {
+	
 	}
-
+	
 	@Override
-	public void runImpl()
-	{
-
+	public void runImpl() {
+	
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(0x27533DD9);
 		writeD(0x2E72A51D);
 		writeD(0x2017038B);

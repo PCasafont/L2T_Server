@@ -33,30 +33,26 @@ import java.util.ArrayList;
  *
  * @author l3x
  */
-public class ExShowCropSetting extends L2GameServerPacket
-{
-
+public class ExShowCropSetting extends L2GameServerPacket {
+	
 	private int manorId;
-
+	
 	private int count;
-
+	
 	private long[] cropData; // data to send, size:count*14
-
+	
 	@Override
-	public void runImpl()
-	{
+	public void runImpl() {
 	}
-
-	public ExShowCropSetting(int manorId)
-	{
+	
+	public ExShowCropSetting(int manorId) {
 		this.manorId = manorId;
 		Castle c = CastleManager.getInstance().getCastleById(manorId);
 		ArrayList<Integer> crops = L2Manor.getInstance().getCropsForCastle(manorId);
 		count = crops.size();
 		cropData = new long[count * 14];
 		int i = 0;
-		for (int cr : crops)
-		{
+		for (int cr : crops) {
 			cropData[i * 14] = cr;
 			cropData[i * 14 + 1] = L2Manor.getInstance().getSeedLevelByCrop(cr);
 			cropData[i * 14 + 2] = L2Manor.getInstance().getRewardItem(cr, 1);
@@ -66,27 +62,21 @@ public class ExShowCropSetting extends L2GameServerPacket
 			cropData[i * 14 + 6] = L2Manor.getInstance().getCropBasicPrice(cr) * 60 / 100;
 			cropData[i * 14 + 7] = L2Manor.getInstance().getCropBasicPrice(cr) * 10;
 			CropProcure cropPr = c.getCrop(cr, CastleManorManager.PERIOD_CURRENT);
-			if (cropPr != null)
-			{
+			if (cropPr != null) {
 				cropData[i * 14 + 8] = cropPr.getStartAmount();
 				cropData[i * 14 + 9] = cropPr.getPrice();
 				cropData[i * 14 + 10] = cropPr.getReward();
-			}
-			else
-			{
+			} else {
 				cropData[i * 14 + 8] = 0;
 				cropData[i * 14 + 9] = 0;
 				cropData[i * 14 + 10] = 0;
 			}
 			cropPr = c.getCrop(cr, CastleManorManager.PERIOD_NEXT);
-			if (cropPr != null)
-			{
+			if (cropPr != null) {
 				cropData[i * 14 + 11] = cropPr.getStartAmount();
 				cropData[i * 14 + 12] = cropPr.getPrice();
 				cropData[i * 14 + 13] = cropPr.getReward();
-			}
-			else
-			{
+			} else {
 				cropData[i * 14 + 11] = 0;
 				cropData[i * 14 + 12] = 0;
 				cropData[i * 14 + 13] = 0;
@@ -94,31 +84,29 @@ public class ExShowCropSetting extends L2GameServerPacket
 			i++;
 		}
 	}
-
+	
 	@Override
-	public void writeImpl()
-	{
+	public void writeImpl() {
 		writeD(manorId); // manor id
 		writeD(count); // size
-
-		for (int i = 0; i < count; i++)
-		{
+		
+		for (int i = 0; i < count; i++) {
 			writeD((int) cropData[i * 14]); // crop id
 			writeD((int) cropData[i * 14 + 1]); // seed level
 			writeC(1);
 			writeD((int) cropData[i * 14 + 2]); // reward 1 id
 			writeC(1);
 			writeD((int) cropData[i * 14 + 3]); // reward 2 id
-
+			
 			writeD((int) cropData[i * 14 + 4]); // next sale limit
 			writeD((int) cropData[i * 14 + 5]); // ???
 			writeD((int) cropData[i * 14 + 6]); // min crop price
 			writeD((int) cropData[i * 14 + 7]); // max crop price
-
+			
 			writeQ(cropData[i * 14 + 8]); // today buy
 			writeQ(cropData[i * 14 + 9]); // today price
 			writeC((int) cropData[i * 14 + 10]); // today reward
-
+			
 			writeQ(cropData[i * 14 + 11]); // next buy
 			writeQ(cropData[i * 14 + 12]); // next price
 			writeC((int) cropData[i * 14 + 13]); // next reward

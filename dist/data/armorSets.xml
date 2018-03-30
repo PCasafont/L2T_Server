@@ -1,1431 +1,1431 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <!-- Wooden Breastplate -->
-    <armorSet id="23" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3500" levels="1" /> <!-- Wooden Set -->
-    </armorSet>
-    <!-- Mithril Breastplate -->
-    <armorSet id="58" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3502" levels="1" /> <!-- Mithril Heavy Armor Set -->
-        <enchant6Skill id="3611" /> <!-- Enchant Heavy Armor (D Grade) -->
-        <shieldSkill id="3543" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Compound Armor -->
-    <armorSet id="60" parts="2">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3512" levels="1" /> <!-- Compound Heavy Armor Set -->
-        <enchant6Skill id="3614" /> <!-- Enchant Heavy Armor (C Grade) -->
-        <shieldSkill id="3546" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Brigandine Tunic -->
-    <armorSet id="352" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3506" levels="1" /> <!-- Brigandine Heavy Armor Set -->
-        <enchant6Skill id="3611" /> <!-- Enchant Heavy Armor (D Grade) -->
-        <shieldSkill id="3544" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Chain Mail Shirt -->
-    <armorSet id="354" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3509" levels="1" /> <!-- Chain Mail Heavy Armor Set -->
-        <enchant6Skill id="3614" /> <!-- Enchant Heavy Armor (C Grade) -->
-        <shieldSkill id="3545" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Full Plate Armor -->
-    <armorSet id="356" parts="2">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3516" levels="1" /> <!-- Full Plate Heavy Armor Set -->
-        <enchant6Skill id="3614" /> <!-- Enchant Heavy Armor (C Grade) -->
-        <shieldSkill id="3547" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Zubei's Breastplate -->
-    <armorSet id="357" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3518" levels="1" /> <!-- Zubei's Heavy Armor Set -->
-        <enchant6Skill id="3617" /> <!-- Enchant Heavy Armor (B Grade) -->
-    </armorSet>
-    <!-- Blue Wolf Breastplate -->
-    <armorSet id="358" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3524" levels="1" /> <!-- Blue Wolf Heavy Armor Set -->
-        <enchant6Skill id="3617" /> <!-- Enchant Heavy Armor (B Grade) -->
-    </armorSet>
-    <!-- Dark Crystal Breastplate -->
-    <armorSet id="365" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3530" levels="1" /> <!-- Dark Crystal Breastplate Heavy Armor Set -->
-        <enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
-        <shieldSkill id="3550" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Armor of Nightmare -->
-    <armorSet id="374" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3536" levels="1" /> <!-- Nightmare Heavy Armor Set -->
-        <enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
-        <shieldSkill id="3551" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Reinforced Leather Shirt -->
-    <armorSet id="394" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3503" levels="1" /> <!-- Reinforced Leather Set -->
-        <enchant6Skill id="3612" /> <!-- Enchant Light Armor (D Grade) -->
-    </armorSet>
-    <!-- Manticore Skin Shirt -->
-    <armorSet id="395" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3505" levels="1" /> <!-- Manticore Set -->
-        <enchant6Skill id="3612" /> <!-- Enchant Light Armor (D Grade) -->
-    </armorSet>
-    <!-- Mithril Shirt -->
-    <armorSet id="397" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3508" levels="1" /> <!-- Reinforced Mithril Light Armor Set -->
-        <enchant6Skill id="3615" /> <!-- Enchant Light Armor (C Grade) -->
-    </armorSet>
-    <!-- Plated Leather -->
-    <armorSet id="398" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3511" levels="1" /> <!-- Plated Leather Set -->
-        <enchant6Skill id="3615" /> <!-- Enchant Light Armor (C Grade) -->
-    </armorSet>
-    <!-- Theca Leather Armor -->
-    <armorSet id="400" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3514" levels="1" /> <!-- Theca Leather Light Armor Set -->
-        <enchant6Skill id="3615" /> <!-- Enchant Light Armor (C Grade) -->
-    </armorSet>
-    <!-- Drake Leather Armor -->
-    <armorSet id="401" parts="2">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3515" levels="1" /> <!-- Drake Leather Set -->
-        <enchant6Skill id="3615" /> <!-- Enchant Light Armor (C Grade) -->
-    </armorSet>
-    <!-- Tunic of Knowledge -->
-    <armorSet id="436" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3504" levels="1" /> <!-- Knowledge Set -->
-        <enchant6Skill id="3613" /> <!-- Enchant Robe (D Grade) -->
-    </armorSet>
-    <!-- Mithril Tunic -->
-    <armorSet id="437" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3507" levels="1" /> <!-- Elven Mithril Robe Set -->
-        <enchant6Skill id="3613" /> <!-- Enchant Robe (D Grade) -->
-    </armorSet>
-    <!-- Karmian Tunic -->
-    <armorSet id="439" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3510" levels="1" /> <!-- Karmian Set -->
-        <enchant6Skill id="3616" /> <!-- Enchant Robe (C Grade) -->
-    </armorSet>
-    <!-- Demon's Tunic -->
-    <armorSet id="441" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3513" levels="1" /> <!-- Demon's Set -->
-        <enchant6Skill id="3616" /> <!-- Enchant Robe (C Grade) -->
-    </armorSet>
-    <!-- Divine Tunic -->
-    <armorSet id="442" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3517" levels="1" /> <!-- Divine Set -->
-        <enchant6Skill id="3616" /> <!-- Enchant Robe (C Grade) -->
-    </armorSet>
-    <!-- Tunic of Devotion -->
-    <armorSet id="1101" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3501" levels="1" /> <!-- Devotion Set -->
-    </armorSet>
-    <!-- Avadon Breastplate -->
-    <armorSet id="2376" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3519" levels="1" /> <!-- Avadon Breastplate Heavy Armor Set -->
-        <enchant6Skill id="3617" /> <!-- Enchant Heavy Armor (B Grade) -->
-        <shieldSkill id="3548" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Doom Plate Armor -->
-    <armorSet id="2381" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3525" levels="1" /> <!-- Doom Heavy Armor Set -->
-        <enchant6Skill id="3617" /> <!-- Enchant Heavy Armor (B Grade) -->
-        <shieldSkill id="3549" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Tallum Plate Armor -->
-    <armorSet id="2382" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3531" levels="1" /> <!-- Tallum Heavy Armor Set -->
-        <enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
-    </armorSet>
-    <!-- Majestic Plate Armor -->
-    <armorSet id="2383" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3537" levels="1" /> <!-- Majestic Heavy Armor Set -->
-        <enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
-    </armorSet>
-    <!-- Zubei's Leather Shirt -->
-    <armorSet id="2384" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3520" levels="1" /> <!-- Zubei's Leather Shirt Light Armor Set -->
-        <enchant6Skill id="3618" /> <!-- Enchant Light Armor (B Grade) -->
-    </armorSet>
-    <!-- Dark Crystal Leather Armor -->
-    <armorSet id="2385" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3532" levels="1" /> <!-- Dark Crystal Light Armor Set -->
-        <enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
-    </armorSet>
-    <!-- Avadon Leather Armor -->
-    <armorSet id="2390" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3521" levels="1" /> <!-- Avadon Light Armor Set -->
-        <enchant6Skill id="3618" /> <!-- Enchant Light Armor (B Grade) -->
-    </armorSet>
-    <!-- Blue Wolf Leather Armor -->
-    <armorSet id="2391" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3526" levels="1" /> <!-- Blue Wolf Light Armor Set -->
-        <enchant6Skill id="3618" /> <!-- Enchant Light Armor (B Grade) -->
-    </armorSet>
-    <!-- Leather Armor of Doom -->
-    <armorSet id="2392" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3527" levels="1" /> <!-- Light Armor of Doom Set -->
-        <enchant6Skill id="3618" /> <!-- Enchant Light Armor (B Grade) -->
-    </armorSet>
-    <!-- Tallum Leather Armor -->
-    <armorSet id="2393" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3533" levels="1" /> <!-- Tallum Light Armor Set -->
-        <enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
-    </armorSet>
-    <!-- Leather Armor of Nightmare -->
-    <armorSet id="2394" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3538" levels="1" /> <!-- Light Leather Armor of Nightmare Set -->
-        <enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
-    </armorSet>
-    <!-- Majestic Leather Armor -->
-    <armorSet id="2395" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3539" levels="1" /> <!-- Majestic Light Armor Set -->
-        <enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
-    </armorSet>
-    <!-- Tunic of Zubei -->
-    <armorSet id="2397" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3522" levels="1" /> <!-- Tunic of Zubei Robe Set -->
-        <enchant6Skill id="3619" /> <!-- Enchant Robe (B Grade) -->
-    </armorSet>
-    <!-- Blue Wolf Tunic -->
-    <armorSet id="2398" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3528" levels="1" /> <!-- Blue Wolf Robe Set -->
-        <enchant6Skill id="3619" /> <!-- Enchant Robe (B Grade) -->
-    </armorSet>
-    <!-- Tunic of Doom -->
-    <armorSet id="2399" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3529" levels="1" /> <!-- Doom Robe Set -->
-        <enchant6Skill id="3619" /> <!-- Enchant Robe (B Grade) -->
-    </armorSet>
-    <!-- Tallum Tunic -->
-    <armorSet id="2400" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3534" levels="1" /> <!-- Tallum Robe Set -->
-        <enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
-    </armorSet>
-    <!-- Avadon Robe -->
-    <armorSet id="2406" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3523" levels="1" /> <!-- Avadon Robe Set -->
-        <enchant6Skill id="3619" /> <!-- Enchant Robe (B Grade) -->
-    </armorSet>
-    <!-- Dark Crystal Robe -->
-    <armorSet id="2407" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3535" levels="1" /> <!-- Dark Crystal Robe Set -->
-        <enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
-    </armorSet>
-    <!-- Robe of Nightmare -->
-    <armorSet id="2408" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3540" levels="1" /> <!-- Robe of Nightmare Set -->
-        <enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
-    </armorSet>
-    <!-- Majestic Robe -->
-    <armorSet id="2409" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3541" levels="1" /> <!-- Majestic Robe Set -->
-        <enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
-    </armorSet>
-    <!-- Imperial Crusader Breastplate -->
-    <armorSet id="6373" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3553" levels="1" /> <!-- Imperial Crusader Heavy Armor Set -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="3554" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Draconic Leather Armor -->
-    <armorSet id="6379" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3555" levels="1" /> <!-- Draconic Light Armor Set -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Major Arcana Robe -->
-    <armorSet id="6383" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3556" levels="1" /> <!-- Major Arcana Robe Set -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Clan Oath Armor -->
-    <armorSet id="7851" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3605" levels="1" /> <!-- Clan Oath Heavy Armor Set -->
-        <enchant6Skill id="3611" /> <!-- Enchant Heavy Armor (D Grade) -->
-    </armorSet>
-    <!-- Clan Oath Brigandine -->
-    <armorSet id="7854" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3606" levels="1" /> <!-- Clan Oath Light Armor Set -->
-        <enchant6Skill id="3612" /> <!-- Enchant Light Armor (D Grade) -->
-    </armorSet>
-    <!-- Clan Oath Aketon -->
-    <armorSet id="7857" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3607" levels="1" /> <!-- Clan Oath Robe Set -->
-        <enchant6Skill id="3613" /> <!-- Enchant Robe (D Grade) -->
-    </armorSet>
-    <!-- Apella Plate Armor -->
-    <armorSet id="7861" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3608" levels="1" /> <!-- Apella Heavy Armor Set -->
-        <enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
-    </armorSet>
-    <!-- Apella Brigandine -->
-    <armorSet id="7864" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3609" levels="1" /> <!-- Apella Light Armor Set -->
-        <enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
-    </armorSet>
-    <!-- Apella Doublet -->
-    <armorSet id="7867" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3610" levels="1" /> <!-- Apella Robe Set -->
-        <enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
-    </armorSet>
-    <!-- Dynasty Breast Plate -->
-    <armorSet id="9416" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3412" levels="1" /> <!-- Dynasty Breastplate -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="3417" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Dynasty Breast Plate - Shield Master -->
-    <armorSet id="9417" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3348" levels="1" /> <!-- Dynasty Breastplate -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="3417" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Dynasty Breast Plate - Weapon Master -->
-    <armorSet id="9418" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3349" levels="1" /> <!-- Dynasty Breastplate -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Breast Plate - Force Master -->
-    <armorSet id="9419" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3350" levels="1" /> <!-- Dynasty Breastplate -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Breast Plate - Bard -->
-    <armorSet id="9420" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3351" levels="1" /> <!-- Dynasty Breastplate -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Leather Armor -->
-    <armorSet id="9425" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3413" levels="1" /> <!-- Dynasty Leather Armor -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Leather Armor - Dagger Master -->
-    <armorSet id="9426" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3352" levels="1" /> <!-- Dynasty Leather Armor -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Leather Armor - Bow Master -->
-    <armorSet id="9427" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3353" levels="1" /> <!-- Dynasty Leather Armor -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Tunic -->
-    <armorSet id="9432" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3416" levels="1" /> <!-- Dynasty Tunic -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Tunic - Healer -->
-    <armorSet id="9433" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3354" levels="1" /> <!-- Dynasty Tunic -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Tunic - Enchanter -->
-    <armorSet id="9434" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3355" levels="1" /> <!-- Dynasty Tunic -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Tunic - Summoner -->
-    <armorSet id="9435" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3356" levels="1" /> <!-- Dynasty Tunic -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Tunic - Wizard -->
-    <armorSet id="9436" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3357" levels="1" /> <!-- Dynasty Tunic -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Native Tunic -->
-    <armorSet id="9670" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8277" levels="1" /> <!-- Transform Native -->
-    </armorSet>
-    <!-- Shadow Item: Clan Oath Armor -->
-    <armorSet id="9821" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3605" levels="1" /> <!-- Clan Oath Heavy Armor Set -->
-        <enchant6Skill id="3611" /> <!-- Enchant Heavy Armor (D Grade) -->
-    </armorSet>
-    <!-- Shadow Item: Clan Oath Brigandine -->
-    <armorSet id="9824" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3606" levels="1" /> <!-- Clan Oath Light Armor Set -->
-        <enchant6Skill id="3612" /> <!-- Enchant Light Armor (D Grade) -->
-    </armorSet>
-    <!-- Shadow Item: Clan Oath Aketon -->
-    <armorSet id="9827" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3607" levels="1" /> <!-- Clan Oath Robe Set -->
-        <enchant6Skill id="3613" /> <!-- Enchant Robe (D Grade) -->
-    </armorSet>
-    <!-- Improved Apella Plate Armor -->
-    <armorSet id="9831" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3608" levels="2" /> <!-- Apella Heavy Armor Set -->
-        <enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
-    </armorSet>
-    <!-- Improved Apella Brigandine -->
-    <armorSet id="9834" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3609" levels="2" /> <!-- Apella Light Armor Set -->
-        <enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
-    </armorSet>
-    <!-- Improved Apella Doublet -->
-    <armorSet id="9837" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3610" levels="2" /> <!-- Apella Robe Set -->
-        <enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
-    </armorSet>
-    <!-- Dynasty Leather Armor - Force Master -->
-    <armorSet id="10126" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3414" levels="1" /> <!-- Dynasty Leather Armor -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Leather Armor - Weapon Master -->
-    <armorSet id="10127" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3415" levels="1" /> <!-- Dynasty Leather Armor -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Leather Armor - Enchanter -->
-    <armorSet id="10168" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3355" levels="1" /> <!-- Dynasty Tunic -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Leather Armor - Summoner -->
-    <armorSet id="10214" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3420" levels="1" /> <!-- Dynasty Leather Armor -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Platinum Plate - Shield Master -->
-    <armorSet id="10228" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3636" levels="1" /> <!-- Dynasty Platinum Plate -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="3417" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Dynasty Platinum Plate - Weapon Master -->
-    <armorSet id="10229" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3637" levels="1" /> <!-- Dynasty Platinum Plate -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Platinum Plate - Force Master -->
-    <armorSet id="10230" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3639" levels="1" /> <!-- Dynasty Platinum Plate -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Platinum Plate - Bard -->
-    <armorSet id="10231" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3638" levels="1" /> <!-- Dynasty Platinum Plate -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Jewel Leather Armor - Dagger Master -->
-    <armorSet id="10233" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3640" levels="1" /> <!-- Dynasty Jewel Leather Armor -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Jewel Leather Armor - Bow Master -->
-    <armorSet id="10234" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3641" levels="1" /> <!-- Dynasty Jewel Leather Armor -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Silver Satin Tunic - Healer -->
-    <armorSet id="10236" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3645" levels="1" /> <!-- Dynasty Silver Satin Tunic -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Silver Satin Tunic - Enchanter -->
-    <armorSet id="10237" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3646" levels="1" /> <!-- Dynasty Silver Satin Tunic -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Silver Satin Tunic - Summoner -->
-    <armorSet id="10238" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3647" levels="1" /> <!-- Dynasty Silver Satin Tunic -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Silver Satin Tunic - Wizard -->
-    <armorSet id="10239" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3648" levels="1" /> <!-- Dynasty Silver Satin Tunic -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Jeweled Leather Armor - Force Master -->
-    <armorSet id="10487" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3642" levels="1" /> <!-- Dynasty Jewel Leather Armor -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Jeweled Leather Armor - Weapon Master -->
-    <armorSet id="10488" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3643" levels="1" /> <!-- Dynasty Jewel Leather Armor -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Jeweled Leather Armor - Enchanter -->
-    <armorSet id="10489" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3646" levels="1" /> <!-- Dynasty Silver Satin Tunic -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Jeweled Leather Armor - Summoner -->
-    <armorSet id="10490" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3644" levels="1" /> <!-- Dynasty Jewel Leather Armor -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Armor of Nightmare {PvP} -->
-    <armorSet id="10793" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8193" levels="1" /> <!-- Nightmare Heavy Armor Set - PVP -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
-        <shieldSkill id="3551" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Majestic Plate Armor {PvP} -->
-    <armorSet id="10794" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8194" levels="1" /> <!-- Majestic Heavy Armor Set - PVP -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
-    </armorSet>
-    <!-- Leather Armor of Nightmare {PvP} -->
-    <armorSet id="10795" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8195" levels="1" /> <!-- Light Armor of Nightmare Set - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
-    </armorSet>
-    <!-- Majestic Leather Armor {PvP} -->
-    <armorSet id="10796" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8196" levels="1" /> <!-- Light Majestic Leather Armor Set - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
-    </armorSet>
-    <!-- Robe of Nightmare {PvP} -->
-    <armorSet id="10797" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8197" levels="1" /> <!-- Robe of Nightmare Set - PVP -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
-    </armorSet>
-    <!-- Majestic Robe {PvP} -->
-    <armorSet id="10798" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8198" levels="1" /> <!-- Majestic Robe Set - PVP -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
-    </armorSet>
-    <!-- Imperial Crusader Breastplate {PvP} -->
-    <armorSet id="10799" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8199" levels="1" /> <!-- Imperial Crusader Breastplate Heavy Armor Set - PVP -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="3554" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Draconic Leather Armor {PvP} -->
-    <armorSet id="10800" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8200" levels="1" /> <!-- Light Draconic Leather Armor Set - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Major Arcana Robe {PvP} -->
-    <armorSet id="10801" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8201" levels="1" /> <!-- Major Arcana Robe Set - PVP -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Breastplate {PvP} -->
-    <armorSet id="10802" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8202" levels="1" /> <!-- Dynasty Breastplate - PVP -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="3417" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Dynasty Breastplate {PvP} - Shield Master -->
-    <armorSet id="10803" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8203" levels="1" /> <!-- Dynasty Breastplate - PVP -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="3417" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Dynasty Breastplate {PvP} - Weapon Master -->
-    <armorSet id="10804" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8204" levels="1" /> <!-- Dynasty Breastplate - PVP -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Breastplate {PvP} - Force Master -->
-    <armorSet id="10805" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8205" levels="1" /> <!-- Dynasty Breastplate - PVP -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Breastplate {PvP} - Bard -->
-    <armorSet id="10806" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8206" levels="1" /> <!-- Dynasty Breastplate - PVP -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Leather Armor {PvP} -->
-    <armorSet id="10807" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8207" levels="1" /> <!-- Dynasty Leather Armor - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Leather Armor {PvP} - Dagger Master -->
-    <armorSet id="10808" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8208" levels="1" /> <!-- Dynasty Leather Armor - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Leather Armor {PvP} - Bow Master -->
-    <armorSet id="10809" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8209" levels="1" /> <!-- Dynasty Leather Armor - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Tunic {PvP} -->
-    <armorSet id="10810" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8210" levels="1" /> <!-- Dynasty Tunic - PVP -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Tunic {PvP} - Healer -->
-    <armorSet id="10811" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8211" levels="1" /> <!-- Dynasty Tunic - PVP -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Tunic {PvP} - Enchanter -->
-    <armorSet id="10812" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8212" levels="1" /> <!-- Dynasty Tunic - PVP -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Tunic {PvP} - Summoner -->
-    <armorSet id="10813" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8213" levels="1" /> <!-- Dynasty Tunic - PVP -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Tunic {PvP} - Wizard -->
-    <armorSet id="10814" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8214" levels="1" /> <!-- Dynasty Tunic - PVP -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Leather Armor {PvP} - Force Master -->
-    <armorSet id="10815" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8215" levels="1" /> <!-- Dynasty Leather Armor - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Leather Armor {PvP} - Weapon Master -->
-    <armorSet id="10816" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8216" levels="1" /> <!-- Dynasty Leather Armor - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Leather Armor {PvP} - Enchanter -->
-    <armorSet id="10817" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8217" levels="1" /> <!-- Dynasty Leather Armor - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Leather Armor {PvP} - Summoner -->
-    <armorSet id="10818" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8218" levels="1" /> <!-- Dynasty Leather Armor - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Platinum Breastplate {PvP} - Shield Master -->
-    <armorSet id="10820" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8219" levels="1" /> <!-- Dynasty Platinum Plate - PVP -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="3417" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Dynasty Platinum Breastplate {PvP} - Weapon Master -->
-    <armorSet id="10821" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8220" levels="1" /> <!-- Dynasty Platinum Plate - PVP -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Platinum Breastplate {PvP} - Force Master -->
-    <armorSet id="10822" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8222" levels="1" /> <!-- Dynasty Platinum Plate - PVP -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Platinum Breastplate {PvP} - Bard -->
-    <armorSet id="10823" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8221" levels="1" /> <!-- Dynasty Platinum Plate - PVP -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Jewel Leather Armor {PvP} - Dagger Master -->
-    <armorSet id="10825" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8223" levels="1" /> <!-- Dynasty Jewel Leather Armor - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Jewel Leather Armor {PvP} - Bow Master -->
-    <armorSet id="10826" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8224" levels="1" /> <!-- Dynasty Jewel Leather Armor - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Silver Satin Tunic {PvP} - Healer -->
-    <armorSet id="10828" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8229" levels="1" /> <!-- Dynasty Silver Satin Tunic - PVP -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Silver Satin Tunic {PvP} - Enchanter -->
-    <armorSet id="10829" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8230" levels="1" /> <!-- Dynasty Silver Satin Tunic - PVP -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Silver Satin Tunic {PvP} - Summoner -->
-    <armorSet id="10830" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8231" levels="1" /> <!-- Dynasty Silver Satin Tunic - PVP -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Silver Satin Tunic {PvP} - Wizard -->
-    <armorSet id="10831" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8232" levels="1" /> <!-- Dynasty Silver Satin Tunic - PVP -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Jewel Leather Armor {PvP} - Force Master -->
-    <armorSet id="10832" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8225" levels="1" /> <!-- Dynasty Jewel Leather Armor - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Jewel Leather Armor {PvP} - Weapon Master -->
-    <armorSet id="10833" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8226" levels="1" /> <!-- Dynasty Jewel Leather Armor - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Jewel Leather Armor {PvP} - Enchanter -->
-    <armorSet id="10834" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8228" levels="1" /> <!-- Dynasty Jewel Leather Armor - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Dynasty Jewel Leather Armor {PvP} - Summoner -->
-    <armorSet id="10835" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8227" levels="1" /> <!-- Dynasty Jewel Leather Armor - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Vesper Breastplate -->
-    <armorSet id="13432" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8283" levels="1" /> <!-- Vesper Heavy Armor Set -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="8494" /> <!-- Vesper Verteidiger -->
-    </armorSet>
-    <!-- Vesper Leather Breastplate -->
-    <armorSet id="13433" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8285" levels="1" /> <!-- Vesper Light Armor Set -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Vesper Tunic -->
-    <armorSet id="13434" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8287" levels="1" /> <!-- Vesper Robe Set -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Vesper Noble Breastplate -->
-    <armorSet id="13435" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8284" levels="1" /> <!-- Vesper Noble Heavy Armor Set -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="8494" /> <!-- Vesper Verteidiger -->
-    </armorSet>
-    <!-- Vesper Noble Leather Breastplate -->
-    <armorSet id="13436" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8286" levels="1" /> <!-- Vesper Noble Light Armor Set -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Vesper Noble Tunic -->
-    <armorSet id="13437" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8288" levels="1" /> <!-- Vesper Noble Robe Set -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Vesper Breastplate {PvP} -->
-    <armorSet id="14520" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8301" levels="1" /> <!-- Vesper Heavy Armor Set for Adults -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="8494" /> <!-- Vesper Verteidiger -->
-    </armorSet>
-    <!-- Vesper Leather Breastplate {PvP} -->
-    <armorSet id="14521" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8303" levels="1" /> <!-- Vesper Light Armor Set for Adults -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Vesper Tunic {PvP} -->
-    <armorSet id="14522" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8305" levels="1" /> <!-- Vesper Robe Set for Adults -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Vesper Noble Breastplate {PvP} -->
-    <armorSet id="14523" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8302" levels="1" /> <!-- Vesper Noble Heavy Armor Set for Adults -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="8494" /> <!-- Vesper Verteidiger -->
-    </armorSet>
-    <!-- Vesper Noble Leather Breastplate {PvP} -->
-    <armorSet id="14524" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8304" levels="1" /> <!-- Vesper Noble Light Armor Set for Adults -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Vesper Noble Tunic {PvP} -->
-    <armorSet id="14525" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8306" levels="1" /> <!-- Vesper Noble Robe Set for Adults -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Apella Combat Armor -->
-    <armorSet id="14583" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3608" levels="2" /> <!-- Apella Heavy Armor Set -->
-        <enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
-    </armorSet>
-    <!-- Apella Combat Clothes -->
-    <armorSet id="14586" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3609" levels="2" /> <!-- Apella Light Armor Set -->
-        <enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
-    </armorSet>
-    <!-- Apella Combat Overcoat -->
-    <armorSet id="14589" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3610" levels="2" /> <!-- Apella Robe Set -->
-        <enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
-    </armorSet>
-    <!-- Dark Crystal Robe of Fortune - 30-day limited period -->
-    <armorSet id="14978" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3535" levels="1" /> <!-- Dark Crystal Robe Set -->
-    </armorSet>
-    <!-- Avadon Robe of Fortune - 30-day limited period -->
-    <armorSet id="14983" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3523" levels="1" /> <!-- Avadon Robe Set -->
-    </armorSet>
-    <!-- Karmian Tunic of Fortune - 30-day limited period -->
-    <armorSet id="14988" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3510" levels="1" /> <!-- Karmian Set -->
-    </armorSet>
-    <!-- Mithril Tunic of Fortune - 30-day limited period -->
-    <armorSet id="14992" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3507" levels="1" /> <!-- Elven Mithril Robe Set -->
-    </armorSet>
-    <!-- Dark Crystal Leather Armor of Fortune - 30-day limited period -->
-    <armorSet id="14996" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3532" levels="1" /> <!-- Dark Crystal Light Armor Set -->
-    </armorSet>
-    <!-- Leather Armor of Doom of Fortune - 30-day limited period -->
-    <armorSet id="15000" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3527" levels="1" /> <!-- Light Armor of Doom Set -->
-    </armorSet>
-    <!-- Doom Plate Armor of Fortune - 30-day limited period -->
-    <armorSet id="15006" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3525" levels="1" /> <!-- Doom Heavy Armor Set -->
-        <shieldSkill id="3549" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Plate Leather Armor of Fortune - 30-day limited period -->
-    <armorSet id="15008" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3511" levels="1" /> <!-- Plated Leather Set -->
-    </armorSet>
-    <!-- Full Plate Armor of Fortune - 30-day limited period -->
-    <armorSet id="15013" parts="2">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3516" levels="1" /> <!-- Full Plate Heavy Armor Set -->
-        <shieldSkill id="3547" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Manticore Skin Shirt of Fortune - 30-day limited period -->
-    <armorSet id="15017" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3505" levels="1" /> <!-- Manticore Set -->
-    </armorSet>
-    <!-- Brigandine of Fortune - 30-day limited period -->
-    <armorSet id="15021" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3506" levels="1" /> <!-- Brigandine Heavy Armor Set -->
-        <shieldSkill id="3544" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Fortune Armor of Nightmare - 30-day limited period -->
-    <armorSet id="15027" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3536" levels="1" /> <!-- Nightmare Heavy Armor Set -->
-        <shieldSkill id="3551" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Dark Crystal Robe of Fortune - 10-day limited period -->
-    <armorSet id="15092" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3535" levels="1" /> <!-- Dark Crystal Robe Set -->
-    </armorSet>
-    <!-- Avadon Robe of Fortune - 10-day limited period -->
-    <armorSet id="15097" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3523" levels="1" /> <!-- Avadon Robe Set -->
-    </armorSet>
-    <!-- Karmian Tunic of Fortune - 10-day limited period -->
-    <armorSet id="15102" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3510" levels="1" /> <!-- Karmian Set -->
-    </armorSet>
-    <!-- Mithril Tunic of Fortune - 10-day limited period -->
-    <armorSet id="15106" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3507" levels="1" /> <!-- Elven Mithril Robe Set -->
-    </armorSet>
-    <!-- Dark Crystal Leather Armor of Fortune - 10-day limited period -->
-    <armorSet id="15110" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3532" levels="1" /> <!-- Dark Crystal Light Armor Set -->
-    </armorSet>
-    <!-- Leather Armor of Doom of Fortune - 10-day limited period -->
-    <armorSet id="15114" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3527" levels="1" /> <!-- Light Armor of Doom Set -->
-    </armorSet>
-    <!-- Doom Plate Armor of Fortune - 10-day limited period -->
-    <armorSet id="15120" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3525" levels="1" /> <!-- Doom Heavy Armor Set -->
-        <shieldSkill id="3549" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Plate Leather Armor of Fortune - 10-day limited period -->
-    <armorSet id="15122" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3511" levels="1" /> <!-- Plated Leather Set -->
-    </armorSet>
-    <!-- Full Plate Armor of Fortune - 10-day limited period -->
-    <armorSet id="15127" parts="2">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3516" levels="1" /> <!-- Full Plate Heavy Armor Set -->
-        <shieldSkill id="3547" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Manticore Skin Shirt of Fortune - 10-day limited period -->
-    <armorSet id="15131" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3505" levels="1" /> <!-- Manticore Set -->
-    </armorSet>
-    <!-- Brigandine of Fortune - 10-day limited period -->
-    <armorSet id="15135" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3506" levels="1" /> <!-- Brigandine Heavy Armor Set -->
-        <shieldSkill id="3544" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Fortune Armor of Nightmare - 10-day limited period -->
-    <armorSet id="15141" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3536" levels="1" /> <!-- Nightmare Heavy Armor Set -->
-        <shieldSkill id="3551" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Elegia Breastplate -->
-    <armorSet id="15575" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8403" levels="1" /> <!-- Elegia Heavy Armor Set -->
-        <enchant6Skill id="8461" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="8496" /> <!-- Elegia Shield -->
-    </armorSet>
-    <!-- Elegia Leather Breastplate -->
-    <armorSet id="15576" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8404" levels="1" /> <!-- Elegia Leather Armor Set -->
-        <enchant6Skill id="8462" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Elegia Tunic -->
-    <armorSet id="15577" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8405" levels="1" /> <!-- Elegia Robe Set -->
-        <enchant6Skill id="8463" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Vorpal Breastplate -->
-    <armorSet id="15592" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8400" levels="1" /> <!-- Vorpal Heavy Armor Set -->
-        <enchant6Skill id="8461" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="8495" /> <!-- Vorpal Shield -->
-    </armorSet>
-    <!-- Vorpal Leather Breastplate -->
-    <armorSet id="15593" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8401" levels="1" /> <!-- Vorpal Leather Armor Set -->
-        <enchant6Skill id="8462" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Vorpal Tunic -->
-    <armorSet id="15594" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8402" levels="1" /> <!-- Vorpal Robe Set -->
-        <enchant6Skill id="8463" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Moirai Breastplate -->
-    <armorSet id="15609" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8397" levels="1" /> <!-- Moirai Heavy Armor Set -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="8493" /> <!-- Moirai Shield -->
-    </armorSet>
-    <!-- Moirai Leather Breastplate -->
-    <armorSet id="15610" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8398" levels="1" /> <!-- Moirai Leather Armor Set -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Moirai Tunic -->
-    <armorSet id="15611" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8399" levels="1" /> <!-- Moirai Robe Set -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Elegia Breastplate {PvP} -->
-    <armorSet id="16168" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8412" levels="1" /> <!-- Elegia Heavy Armor Set - PVP -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="8461" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="8496" /> <!-- Elegia Shield -->
-    </armorSet>
-    <!-- Elegia Leather Breastplate {PvP} -->
-    <armorSet id="16169" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8413" levels="1" /> <!-- Elegia Leather Armor Set - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="8462" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Elegia Tunic {PvP} -->
-    <armorSet id="16170" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8414" levels="1" /> <!-- Elegia Robe Set - PVP -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="8463" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Vorpal Breastplate {PvP} -->
-    <armorSet id="16171" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8409" levels="1" /> <!-- Vorpal Heavy Armor Set - PVP -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="8461" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="8495" /> <!-- Vorpal Shield -->
-    </armorSet>
-    <!-- Vorpal Leather Breastplate {PvP} -->
-    <armorSet id="16172" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8410" levels="1" /> <!-- Vorpal Leather Armor Set - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="8462" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Vorpal Tunic {PvP} -->
-    <armorSet id="16173" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8411" levels="1" /> <!-- Vorpal Robe Set - PVP -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="8463" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Moirai Breastplate {PvP} -->
-    <armorSet id="16174" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8406" levels="1" /> <!-- Moirai Heavy Armor Set - PVP -->
-        <skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
-        <skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
-        <enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
-        <shieldSkill id="8493" /> <!-- Moirai Shield -->
-    </armorSet>
-    <!-- Moirai Leather Breastplate {PvP} -->
-    <armorSet id="16175" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8407" levels="1" /> <!-- Moirai Light Armor Set - PVP -->
-        <skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
-        <enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
-    </armorSet>
-    <!-- Moirai Tunic {PvP} -->
-    <armorSet id="16176" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="8408" levels="1" /> <!-- Moirai Robe Set - PVP -->
-        <skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
-        <enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
-    </armorSet>
-    <!-- Dark Crystal Robe of Fortune - 90-day limited period -->
-    <armorSet id="16866" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3535" levels="1" /> <!-- Dark Crystal Robe Set -->
-    </armorSet>
-    <!-- Avadon Robe of Fortune - 90-day limited period -->
-    <armorSet id="16871" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3523" levels="1" /> <!-- Avadon Robe Set -->
-    </armorSet>
-    <!-- Karmian Tunic of Fortune - 90-day limited period -->
-    <armorSet id="16876" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3510" levels="1" /> <!-- Karmian Set -->
-    </armorSet>
-    <!-- Mithril Tunic of Fortune - 90-day limited period -->
-    <armorSet id="16880" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3507" levels="1" /> <!-- Elven Mithril Robe Set -->
-    </armorSet>
-    <!-- Dark Crystal Leather Armor of Fortune - 90-day limited period -->
-    <armorSet id="16884" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3532" levels="1" /> <!-- Dark Crystal Light Armor Set -->
-    </armorSet>
-    <!-- Leather Armor of Doom of Fortune - 90-day limited period -->
-    <armorSet id="16888" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3527" levels="1" /> <!-- Light Armor of Doom Set -->
-    </armorSet>
-    <!-- Doom Plate Armor of Fortune - 90-day limited period -->
-    <armorSet id="16894" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3525" levels="1" /> <!-- Doom Heavy Armor Set -->
-        <shieldSkill id="3549" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Plate Leather Armor of Fortune - 90-day limited period -->
-    <armorSet id="16896" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3511" levels="1" /> <!-- Plated Leather Set -->
-    </armorSet>
-    <!-- Full Plate Armor of Fortune - 90-day limited period -->
-    <armorSet id="16901" parts="2">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3516" levels="1" /> <!-- Full Plate Heavy Armor Set -->
-        <shieldSkill id="3547" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Manticore Skin Shirt of Fortune - 90-day limited period -->
-    <armorSet id="16905" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3505" levels="1" /> <!-- Manticore Set -->
-    </armorSet>
-    <!-- Brigandine of Fortune - 90-day limited period -->
-    <armorSet id="16909" parts="3">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3506" levels="1" /> <!-- Brigandine Heavy Armor Set -->
-        <shieldSkill id="3544" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Fortune Armor of Nightmare - 90-day limited period -->
-    <armorSet id="16915" parts="4">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="3536" levels="1" /> <!-- Nightmare Heavy Armor Set -->
-        <shieldSkill id="3551" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Immortal Breastplate - Attack Type / Heavy -->
-    <armorSet id="19523" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13065" levels="4" /> <!-- Set Effect - Immortal Heavy Armor (attack) -->
-        <enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
-        <shieldSkill id="3551" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Immortal Leather Armor - Assassin Type / Light -->
-    <armorSet id="19529" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13074" levels="4" /> <!-- Set Effect - Immortal Light Armor (assassin) -->
-        <enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
-    </armorSet>
-    <!-- Immortal Tunic - Magic Type / Robe -->
-    <armorSet id="19534" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13084" levels="4" /> <!-- Set Effect - Immortal Robe (magic) -->
-        <enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
-    </armorSet>
-    <!-- Twilight Breastplate - Attack Type / Heavy -->
-    <armorSet id="19539" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13067" levels="4" /> <!-- Set Effect - Twilight Heavy Armor (attack) -->
-        <enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
-        <shieldSkill id="3551" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Twilight Leather Armor - Assassin Type / Light -->
-    <armorSet id="19545" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13076" levels="4" /> <!-- Set Effect - Twilight Light Armor (assassin) -->
-        <enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
-    </armorSet>
-    <!-- Twilight Tunic - Magic Type / Robe -->
-    <armorSet id="19550" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13086" levels="4" /> <!-- Set Effect - Twilight Robe (magic) -->
-        <enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
-    </armorSet>
-    <!-- Seraph Breastplate - Attack Type / Heavy -->
-    <armorSet id="19555" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13069" levels="4" /> <!-- Set Effect - Seraph Heavy Armor (attack) -->
-        <enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
-        <shieldSkill id="3551" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Seraph Leather Armor - Assassin Type / Light -->
-    <armorSet id="19561" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13078" levels="4" /> <!-- Set Effect - Seraph Light Armor (assassin) -->
-        <enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
-    </armorSet>
-    <!-- Seraph Tunic - Magic Type / Robe -->
-    <armorSet id="19566" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13088" levels="4" /> <!-- Set Effect - Seraph Robe (magic) -->
-        <enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
-    </armorSet>
-    <!-- Eternal Breastplate - Attack Type / Heavy -->
-    <armorSet id="19571" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13071" levels="4" /> <!-- Set Effect - Eternal Heavy Armor (attack) -->
-        <enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
-        <shieldSkill id="3551" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Eternal Leather Armor - Assassin Type / Light -->
-    <armorSet id="19577" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13080" levels="4" /> <!-- Set Effect - Eternal Light Armor (assassin) -->
-        <enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
-    </armorSet>
-    <!-- Eternal Tunic - Magic Type / Robe -->
-    <armorSet id="19582" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13090" levels="4" /> <!-- Set Effect - Eternal Robe (magic) -->
-        <enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
-    </armorSet>
-    <!-- Immortal Breastplate - Defense Type / Heavy -->
-    <armorSet id="19731" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13064" levels="4" /> <!-- Set Effect - Immortal Heavy Armor (defense) -->
-        <enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
-        <shieldSkill id="3551" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Immortal Leather Armor - Enhance Type / Light -->
-    <armorSet id="19737" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13075" levels="4" /> <!-- Set Effect - Immortal Light Armor (strong) -->
-        <enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
-    </armorSet>
-    <!-- Immortal Tunic - Recovery Type / Robe -->
-    <armorSet id="19742" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13085" levels="4" /> <!-- Set Effect - Immortal Robe (recovery) -->
-        <enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
-    </armorSet>
-    <!-- Twilight Breastplate - Defense Type / Heavy -->
-    <armorSet id="19747" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13066" levels="4" /> <!-- Set Effect - Twilight Heavy Armor (defense) -->
-        <enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
-        <shieldSkill id="3551" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Twilight Leather Armor - Enhance Type / Light -->
-    <armorSet id="19753" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13077" levels="4" /> <!-- Set Effect - Twilight Light Armor (strong) -->
-        <enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
-    </armorSet>
-    <!-- Twilight Tunic - Recovery Type / Robe -->
-    <armorSet id="19758" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13087" levels="4" /> <!-- Set Effect - Twilight Robe (recovery) -->
-        <enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
-    </armorSet>
-    <!-- Seraph Breastplate - Defense Type / Heavy -->
-    <armorSet id="19763" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13068" levels="4" /> <!-- Set Effect - Seraph Heavy Armor (defense) -->
-        <enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
-        <shieldSkill id="3551" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Seraph Leather Armor - Enhance Type / Light -->
-    <armorSet id="19769" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13079" levels="4" /> <!-- Set Effect - Seraph Light Armor (strong) -->
-        <enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
-    </armorSet>
-    <!-- Seraph Tunic - Recovery Type / Robe -->
-    <armorSet id="19774" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13089" levels="4" /> <!-- Set Effect - Seraph Robe (recovery) -->
-        <enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
-    </armorSet>
-    <!-- Eternal Breastplate - Defense Type / Heavy -->
-    <armorSet id="19779" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13070" levels="1" /> <!-- Set Effect - Eternal Heavy Armor (defense) -->
-        <enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
-        <shieldSkill id="3551" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <!-- Eternal Leather Armor - Enhance Type / Light -->
-    <armorSet id="19785" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13081" levels="4" /> <!-- Set Effect - Eternal Light Armor (strong) -->
-        <enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
-    </armorSet>
-    <!-- Eternal Tunic - Recovery Type / Robe -->
-    <armorSet id="19790" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13091" levels="4" /> <!-- Set Effect - Eternal Robe (recovery) -->
-        <enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
-    </armorSet>
-    <!-- Eternal Breastplate - Defense Type / Heavy -->
-    <armorSet id="19791" parts="5">
-        <skill id="3006" levels="1" /> <!-- Equip Set Items -->
-        <skill id="13070" levels="4" /> <!-- Set Effect - Eternal Heavy Armor (defense) -->
-        <enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
-        <shieldSkill id="3551" /> <!-- Equipped with Shield -->
-    </armorSet>
-    <armorSet id="37718" parts="1">
-        <skill id="13562" levels="11" />
-        <skill id="13563" levels="5" />
-        <skill id="13564" levels="4" />
-        <skill id="13565" levels="3" />
-        <skill id="13566" levels="2" />
-        <skill id="13567" levels="1" />
-    </armorSet>
+	<!-- Wooden Breastplate -->
+	<armorSet id="23" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3500" levels="1" /> <!-- Wooden Set -->
+	</armorSet>
+	<!-- Mithril Breastplate -->
+	<armorSet id="58" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3502" levels="1" /> <!-- Mithril Heavy Armor Set -->
+		<enchant6Skill id="3611" /> <!-- Enchant Heavy Armor (D Grade) -->
+		<shieldSkill id="3543" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Compound Armor -->
+	<armorSet id="60" parts="2">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3512" levels="1" /> <!-- Compound Heavy Armor Set -->
+		<enchant6Skill id="3614" /> <!-- Enchant Heavy Armor (C Grade) -->
+		<shieldSkill id="3546" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Brigandine Tunic -->
+	<armorSet id="352" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3506" levels="1" /> <!-- Brigandine Heavy Armor Set -->
+		<enchant6Skill id="3611" /> <!-- Enchant Heavy Armor (D Grade) -->
+		<shieldSkill id="3544" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Chain Mail Shirt -->
+	<armorSet id="354" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3509" levels="1" /> <!-- Chain Mail Heavy Armor Set -->
+		<enchant6Skill id="3614" /> <!-- Enchant Heavy Armor (C Grade) -->
+		<shieldSkill id="3545" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Full Plate Armor -->
+	<armorSet id="356" parts="2">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3516" levels="1" /> <!-- Full Plate Heavy Armor Set -->
+		<enchant6Skill id="3614" /> <!-- Enchant Heavy Armor (C Grade) -->
+		<shieldSkill id="3547" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Zubei's Breastplate -->
+	<armorSet id="357" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3518" levels="1" /> <!-- Zubei's Heavy Armor Set -->
+		<enchant6Skill id="3617" /> <!-- Enchant Heavy Armor (B Grade) -->
+	</armorSet>
+	<!-- Blue Wolf Breastplate -->
+	<armorSet id="358" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3524" levels="1" /> <!-- Blue Wolf Heavy Armor Set -->
+		<enchant6Skill id="3617" /> <!-- Enchant Heavy Armor (B Grade) -->
+	</armorSet>
+	<!-- Dark Crystal Breastplate -->
+	<armorSet id="365" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3530" levels="1" /> <!-- Dark Crystal Breastplate Heavy Armor Set -->
+		<enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
+		<shieldSkill id="3550" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Armor of Nightmare -->
+	<armorSet id="374" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3536" levels="1" /> <!-- Nightmare Heavy Armor Set -->
+		<enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
+		<shieldSkill id="3551" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Reinforced Leather Shirt -->
+	<armorSet id="394" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3503" levels="1" /> <!-- Reinforced Leather Set -->
+		<enchant6Skill id="3612" /> <!-- Enchant Light Armor (D Grade) -->
+	</armorSet>
+	<!-- Manticore Skin Shirt -->
+	<armorSet id="395" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3505" levels="1" /> <!-- Manticore Set -->
+		<enchant6Skill id="3612" /> <!-- Enchant Light Armor (D Grade) -->
+	</armorSet>
+	<!-- Mithril Shirt -->
+	<armorSet id="397" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3508" levels="1" /> <!-- Reinforced Mithril Light Armor Set -->
+		<enchant6Skill id="3615" /> <!-- Enchant Light Armor (C Grade) -->
+	</armorSet>
+	<!-- Plated Leather -->
+	<armorSet id="398" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3511" levels="1" /> <!-- Plated Leather Set -->
+		<enchant6Skill id="3615" /> <!-- Enchant Light Armor (C Grade) -->
+	</armorSet>
+	<!-- Theca Leather Armor -->
+	<armorSet id="400" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3514" levels="1" /> <!-- Theca Leather Light Armor Set -->
+		<enchant6Skill id="3615" /> <!-- Enchant Light Armor (C Grade) -->
+	</armorSet>
+	<!-- Drake Leather Armor -->
+	<armorSet id="401" parts="2">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3515" levels="1" /> <!-- Drake Leather Set -->
+		<enchant6Skill id="3615" /> <!-- Enchant Light Armor (C Grade) -->
+	</armorSet>
+	<!-- Tunic of Knowledge -->
+	<armorSet id="436" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3504" levels="1" /> <!-- Knowledge Set -->
+		<enchant6Skill id="3613" /> <!-- Enchant Robe (D Grade) -->
+	</armorSet>
+	<!-- Mithril Tunic -->
+	<armorSet id="437" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3507" levels="1" /> <!-- Elven Mithril Robe Set -->
+		<enchant6Skill id="3613" /> <!-- Enchant Robe (D Grade) -->
+	</armorSet>
+	<!-- Karmian Tunic -->
+	<armorSet id="439" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3510" levels="1" /> <!-- Karmian Set -->
+		<enchant6Skill id="3616" /> <!-- Enchant Robe (C Grade) -->
+	</armorSet>
+	<!-- Demon's Tunic -->
+	<armorSet id="441" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3513" levels="1" /> <!-- Demon's Set -->
+		<enchant6Skill id="3616" /> <!-- Enchant Robe (C Grade) -->
+	</armorSet>
+	<!-- Divine Tunic -->
+	<armorSet id="442" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3517" levels="1" /> <!-- Divine Set -->
+		<enchant6Skill id="3616" /> <!-- Enchant Robe (C Grade) -->
+	</armorSet>
+	<!-- Tunic of Devotion -->
+	<armorSet id="1101" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3501" levels="1" /> <!-- Devotion Set -->
+	</armorSet>
+	<!-- Avadon Breastplate -->
+	<armorSet id="2376" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3519" levels="1" /> <!-- Avadon Breastplate Heavy Armor Set -->
+		<enchant6Skill id="3617" /> <!-- Enchant Heavy Armor (B Grade) -->
+		<shieldSkill id="3548" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Doom Plate Armor -->
+	<armorSet id="2381" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3525" levels="1" /> <!-- Doom Heavy Armor Set -->
+		<enchant6Skill id="3617" /> <!-- Enchant Heavy Armor (B Grade) -->
+		<shieldSkill id="3549" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Tallum Plate Armor -->
+	<armorSet id="2382" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3531" levels="1" /> <!-- Tallum Heavy Armor Set -->
+		<enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
+	</armorSet>
+	<!-- Majestic Plate Armor -->
+	<armorSet id="2383" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3537" levels="1" /> <!-- Majestic Heavy Armor Set -->
+		<enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
+	</armorSet>
+	<!-- Zubei's Leather Shirt -->
+	<armorSet id="2384" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3520" levels="1" /> <!-- Zubei's Leather Shirt Light Armor Set -->
+		<enchant6Skill id="3618" /> <!-- Enchant Light Armor (B Grade) -->
+	</armorSet>
+	<!-- Dark Crystal Leather Armor -->
+	<armorSet id="2385" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3532" levels="1" /> <!-- Dark Crystal Light Armor Set -->
+		<enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
+	</armorSet>
+	<!-- Avadon Leather Armor -->
+	<armorSet id="2390" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3521" levels="1" /> <!-- Avadon Light Armor Set -->
+		<enchant6Skill id="3618" /> <!-- Enchant Light Armor (B Grade) -->
+	</armorSet>
+	<!-- Blue Wolf Leather Armor -->
+	<armorSet id="2391" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3526" levels="1" /> <!-- Blue Wolf Light Armor Set -->
+		<enchant6Skill id="3618" /> <!-- Enchant Light Armor (B Grade) -->
+	</armorSet>
+	<!-- Leather Armor of Doom -->
+	<armorSet id="2392" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3527" levels="1" /> <!-- Light Armor of Doom Set -->
+		<enchant6Skill id="3618" /> <!-- Enchant Light Armor (B Grade) -->
+	</armorSet>
+	<!-- Tallum Leather Armor -->
+	<armorSet id="2393" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3533" levels="1" /> <!-- Tallum Light Armor Set -->
+		<enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
+	</armorSet>
+	<!-- Leather Armor of Nightmare -->
+	<armorSet id="2394" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3538" levels="1" /> <!-- Light Leather Armor of Nightmare Set -->
+		<enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
+	</armorSet>
+	<!-- Majestic Leather Armor -->
+	<armorSet id="2395" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3539" levels="1" /> <!-- Majestic Light Armor Set -->
+		<enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
+	</armorSet>
+	<!-- Tunic of Zubei -->
+	<armorSet id="2397" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3522" levels="1" /> <!-- Tunic of Zubei Robe Set -->
+		<enchant6Skill id="3619" /> <!-- Enchant Robe (B Grade) -->
+	</armorSet>
+	<!-- Blue Wolf Tunic -->
+	<armorSet id="2398" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3528" levels="1" /> <!-- Blue Wolf Robe Set -->
+		<enchant6Skill id="3619" /> <!-- Enchant Robe (B Grade) -->
+	</armorSet>
+	<!-- Tunic of Doom -->
+	<armorSet id="2399" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3529" levels="1" /> <!-- Doom Robe Set -->
+		<enchant6Skill id="3619" /> <!-- Enchant Robe (B Grade) -->
+	</armorSet>
+	<!-- Tallum Tunic -->
+	<armorSet id="2400" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3534" levels="1" /> <!-- Tallum Robe Set -->
+		<enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
+	</armorSet>
+	<!-- Avadon Robe -->
+	<armorSet id="2406" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3523" levels="1" /> <!-- Avadon Robe Set -->
+		<enchant6Skill id="3619" /> <!-- Enchant Robe (B Grade) -->
+	</armorSet>
+	<!-- Dark Crystal Robe -->
+	<armorSet id="2407" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3535" levels="1" /> <!-- Dark Crystal Robe Set -->
+		<enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
+	</armorSet>
+	<!-- Robe of Nightmare -->
+	<armorSet id="2408" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3540" levels="1" /> <!-- Robe of Nightmare Set -->
+		<enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
+	</armorSet>
+	<!-- Majestic Robe -->
+	<armorSet id="2409" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3541" levels="1" /> <!-- Majestic Robe Set -->
+		<enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
+	</armorSet>
+	<!-- Imperial Crusader Breastplate -->
+	<armorSet id="6373" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3553" levels="1" /> <!-- Imperial Crusader Heavy Armor Set -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="3554" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Draconic Leather Armor -->
+	<armorSet id="6379" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3555" levels="1" /> <!-- Draconic Light Armor Set -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Major Arcana Robe -->
+	<armorSet id="6383" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3556" levels="1" /> <!-- Major Arcana Robe Set -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Clan Oath Armor -->
+	<armorSet id="7851" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3605" levels="1" /> <!-- Clan Oath Heavy Armor Set -->
+		<enchant6Skill id="3611" /> <!-- Enchant Heavy Armor (D Grade) -->
+	</armorSet>
+	<!-- Clan Oath Brigandine -->
+	<armorSet id="7854" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3606" levels="1" /> <!-- Clan Oath Light Armor Set -->
+		<enchant6Skill id="3612" /> <!-- Enchant Light Armor (D Grade) -->
+	</armorSet>
+	<!-- Clan Oath Aketon -->
+	<armorSet id="7857" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3607" levels="1" /> <!-- Clan Oath Robe Set -->
+		<enchant6Skill id="3613" /> <!-- Enchant Robe (D Grade) -->
+	</armorSet>
+	<!-- Apella Plate Armor -->
+	<armorSet id="7861" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3608" levels="1" /> <!-- Apella Heavy Armor Set -->
+		<enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
+	</armorSet>
+	<!-- Apella Brigandine -->
+	<armorSet id="7864" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3609" levels="1" /> <!-- Apella Light Armor Set -->
+		<enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
+	</armorSet>
+	<!-- Apella Doublet -->
+	<armorSet id="7867" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3610" levels="1" /> <!-- Apella Robe Set -->
+		<enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
+	</armorSet>
+	<!-- Dynasty Breast Plate -->
+	<armorSet id="9416" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3412" levels="1" /> <!-- Dynasty Breastplate -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="3417" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Dynasty Breast Plate - Shield Master -->
+	<armorSet id="9417" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3348" levels="1" /> <!-- Dynasty Breastplate -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="3417" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Dynasty Breast Plate - Weapon Master -->
+	<armorSet id="9418" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3349" levels="1" /> <!-- Dynasty Breastplate -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Breast Plate - Force Master -->
+	<armorSet id="9419" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3350" levels="1" /> <!-- Dynasty Breastplate -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Breast Plate - Bard -->
+	<armorSet id="9420" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3351" levels="1" /> <!-- Dynasty Breastplate -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Leather Armor -->
+	<armorSet id="9425" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3413" levels="1" /> <!-- Dynasty Leather Armor -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Leather Armor - Dagger Master -->
+	<armorSet id="9426" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3352" levels="1" /> <!-- Dynasty Leather Armor -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Leather Armor - Bow Master -->
+	<armorSet id="9427" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3353" levels="1" /> <!-- Dynasty Leather Armor -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Tunic -->
+	<armorSet id="9432" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3416" levels="1" /> <!-- Dynasty Tunic -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Tunic - Healer -->
+	<armorSet id="9433" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3354" levels="1" /> <!-- Dynasty Tunic -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Tunic - Enchanter -->
+	<armorSet id="9434" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3355" levels="1" /> <!-- Dynasty Tunic -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Tunic - Summoner -->
+	<armorSet id="9435" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3356" levels="1" /> <!-- Dynasty Tunic -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Tunic - Wizard -->
+	<armorSet id="9436" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3357" levels="1" /> <!-- Dynasty Tunic -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Native Tunic -->
+	<armorSet id="9670" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8277" levels="1" /> <!-- Transform Native -->
+	</armorSet>
+	<!-- Shadow Item: Clan Oath Armor -->
+	<armorSet id="9821" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3605" levels="1" /> <!-- Clan Oath Heavy Armor Set -->
+		<enchant6Skill id="3611" /> <!-- Enchant Heavy Armor (D Grade) -->
+	</armorSet>
+	<!-- Shadow Item: Clan Oath Brigandine -->
+	<armorSet id="9824" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3606" levels="1" /> <!-- Clan Oath Light Armor Set -->
+		<enchant6Skill id="3612" /> <!-- Enchant Light Armor (D Grade) -->
+	</armorSet>
+	<!-- Shadow Item: Clan Oath Aketon -->
+	<armorSet id="9827" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3607" levels="1" /> <!-- Clan Oath Robe Set -->
+		<enchant6Skill id="3613" /> <!-- Enchant Robe (D Grade) -->
+	</armorSet>
+	<!-- Improved Apella Plate Armor -->
+	<armorSet id="9831" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3608" levels="2" /> <!-- Apella Heavy Armor Set -->
+		<enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
+	</armorSet>
+	<!-- Improved Apella Brigandine -->
+	<armorSet id="9834" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3609" levels="2" /> <!-- Apella Light Armor Set -->
+		<enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
+	</armorSet>
+	<!-- Improved Apella Doublet -->
+	<armorSet id="9837" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3610" levels="2" /> <!-- Apella Robe Set -->
+		<enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
+	</armorSet>
+	<!-- Dynasty Leather Armor - Force Master -->
+	<armorSet id="10126" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3414" levels="1" /> <!-- Dynasty Leather Armor -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Leather Armor - Weapon Master -->
+	<armorSet id="10127" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3415" levels="1" /> <!-- Dynasty Leather Armor -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Leather Armor - Enchanter -->
+	<armorSet id="10168" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3355" levels="1" /> <!-- Dynasty Tunic -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Leather Armor - Summoner -->
+	<armorSet id="10214" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3420" levels="1" /> <!-- Dynasty Leather Armor -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Platinum Plate - Shield Master -->
+	<armorSet id="10228" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3636" levels="1" /> <!-- Dynasty Platinum Plate -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="3417" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Dynasty Platinum Plate - Weapon Master -->
+	<armorSet id="10229" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3637" levels="1" /> <!-- Dynasty Platinum Plate -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Platinum Plate - Force Master -->
+	<armorSet id="10230" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3639" levels="1" /> <!-- Dynasty Platinum Plate -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Platinum Plate - Bard -->
+	<armorSet id="10231" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3638" levels="1" /> <!-- Dynasty Platinum Plate -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Jewel Leather Armor - Dagger Master -->
+	<armorSet id="10233" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3640" levels="1" /> <!-- Dynasty Jewel Leather Armor -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Jewel Leather Armor - Bow Master -->
+	<armorSet id="10234" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3641" levels="1" /> <!-- Dynasty Jewel Leather Armor -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Silver Satin Tunic - Healer -->
+	<armorSet id="10236" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3645" levels="1" /> <!-- Dynasty Silver Satin Tunic -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Silver Satin Tunic - Enchanter -->
+	<armorSet id="10237" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3646" levels="1" /> <!-- Dynasty Silver Satin Tunic -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Silver Satin Tunic - Summoner -->
+	<armorSet id="10238" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3647" levels="1" /> <!-- Dynasty Silver Satin Tunic -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Silver Satin Tunic - Wizard -->
+	<armorSet id="10239" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3648" levels="1" /> <!-- Dynasty Silver Satin Tunic -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Jeweled Leather Armor - Force Master -->
+	<armorSet id="10487" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3642" levels="1" /> <!-- Dynasty Jewel Leather Armor -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Jeweled Leather Armor - Weapon Master -->
+	<armorSet id="10488" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3643" levels="1" /> <!-- Dynasty Jewel Leather Armor -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Jeweled Leather Armor - Enchanter -->
+	<armorSet id="10489" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3646" levels="1" /> <!-- Dynasty Silver Satin Tunic -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Jeweled Leather Armor - Summoner -->
+	<armorSet id="10490" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3644" levels="1" /> <!-- Dynasty Jewel Leather Armor -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Armor of Nightmare {PvP} -->
+	<armorSet id="10793" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8193" levels="1" /> <!-- Nightmare Heavy Armor Set - PVP -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
+		<shieldSkill id="3551" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Majestic Plate Armor {PvP} -->
+	<armorSet id="10794" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8194" levels="1" /> <!-- Majestic Heavy Armor Set - PVP -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
+	</armorSet>
+	<!-- Leather Armor of Nightmare {PvP} -->
+	<armorSet id="10795" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8195" levels="1" /> <!-- Light Armor of Nightmare Set - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
+	</armorSet>
+	<!-- Majestic Leather Armor {PvP} -->
+	<armorSet id="10796" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8196" levels="1" /> <!-- Light Majestic Leather Armor Set - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
+	</armorSet>
+	<!-- Robe of Nightmare {PvP} -->
+	<armorSet id="10797" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8197" levels="1" /> <!-- Robe of Nightmare Set - PVP -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
+	</armorSet>
+	<!-- Majestic Robe {PvP} -->
+	<armorSet id="10798" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8198" levels="1" /> <!-- Majestic Robe Set - PVP -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
+	</armorSet>
+	<!-- Imperial Crusader Breastplate {PvP} -->
+	<armorSet id="10799" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8199" levels="1" /> <!-- Imperial Crusader Breastplate Heavy Armor Set - PVP -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="3554" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Draconic Leather Armor {PvP} -->
+	<armorSet id="10800" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8200" levels="1" /> <!-- Light Draconic Leather Armor Set - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Major Arcana Robe {PvP} -->
+	<armorSet id="10801" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8201" levels="1" /> <!-- Major Arcana Robe Set - PVP -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Breastplate {PvP} -->
+	<armorSet id="10802" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8202" levels="1" /> <!-- Dynasty Breastplate - PVP -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="3417" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Dynasty Breastplate {PvP} - Shield Master -->
+	<armorSet id="10803" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8203" levels="1" /> <!-- Dynasty Breastplate - PVP -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="3417" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Dynasty Breastplate {PvP} - Weapon Master -->
+	<armorSet id="10804" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8204" levels="1" /> <!-- Dynasty Breastplate - PVP -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Breastplate {PvP} - Force Master -->
+	<armorSet id="10805" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8205" levels="1" /> <!-- Dynasty Breastplate - PVP -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Breastplate {PvP} - Bard -->
+	<armorSet id="10806" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8206" levels="1" /> <!-- Dynasty Breastplate - PVP -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Leather Armor {PvP} -->
+	<armorSet id="10807" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8207" levels="1" /> <!-- Dynasty Leather Armor - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Leather Armor {PvP} - Dagger Master -->
+	<armorSet id="10808" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8208" levels="1" /> <!-- Dynasty Leather Armor - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Leather Armor {PvP} - Bow Master -->
+	<armorSet id="10809" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8209" levels="1" /> <!-- Dynasty Leather Armor - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Tunic {PvP} -->
+	<armorSet id="10810" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8210" levels="1" /> <!-- Dynasty Tunic - PVP -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Tunic {PvP} - Healer -->
+	<armorSet id="10811" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8211" levels="1" /> <!-- Dynasty Tunic - PVP -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Tunic {PvP} - Enchanter -->
+	<armorSet id="10812" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8212" levels="1" /> <!-- Dynasty Tunic - PVP -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Tunic {PvP} - Summoner -->
+	<armorSet id="10813" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8213" levels="1" /> <!-- Dynasty Tunic - PVP -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Tunic {PvP} - Wizard -->
+	<armorSet id="10814" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8214" levels="1" /> <!-- Dynasty Tunic - PVP -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Leather Armor {PvP} - Force Master -->
+	<armorSet id="10815" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8215" levels="1" /> <!-- Dynasty Leather Armor - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Leather Armor {PvP} - Weapon Master -->
+	<armorSet id="10816" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8216" levels="1" /> <!-- Dynasty Leather Armor - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Leather Armor {PvP} - Enchanter -->
+	<armorSet id="10817" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8217" levels="1" /> <!-- Dynasty Leather Armor - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Leather Armor {PvP} - Summoner -->
+	<armorSet id="10818" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8218" levels="1" /> <!-- Dynasty Leather Armor - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Platinum Breastplate {PvP} - Shield Master -->
+	<armorSet id="10820" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8219" levels="1" /> <!-- Dynasty Platinum Plate - PVP -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="3417" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Dynasty Platinum Breastplate {PvP} - Weapon Master -->
+	<armorSet id="10821" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8220" levels="1" /> <!-- Dynasty Platinum Plate - PVP -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Platinum Breastplate {PvP} - Force Master -->
+	<armorSet id="10822" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8222" levels="1" /> <!-- Dynasty Platinum Plate - PVP -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Platinum Breastplate {PvP} - Bard -->
+	<armorSet id="10823" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8221" levels="1" /> <!-- Dynasty Platinum Plate - PVP -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Jewel Leather Armor {PvP} - Dagger Master -->
+	<armorSet id="10825" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8223" levels="1" /> <!-- Dynasty Jewel Leather Armor - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Jewel Leather Armor {PvP} - Bow Master -->
+	<armorSet id="10826" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8224" levels="1" /> <!-- Dynasty Jewel Leather Armor - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Silver Satin Tunic {PvP} - Healer -->
+	<armorSet id="10828" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8229" levels="1" /> <!-- Dynasty Silver Satin Tunic - PVP -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Silver Satin Tunic {PvP} - Enchanter -->
+	<armorSet id="10829" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8230" levels="1" /> <!-- Dynasty Silver Satin Tunic - PVP -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Silver Satin Tunic {PvP} - Summoner -->
+	<armorSet id="10830" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8231" levels="1" /> <!-- Dynasty Silver Satin Tunic - PVP -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Silver Satin Tunic {PvP} - Wizard -->
+	<armorSet id="10831" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8232" levels="1" /> <!-- Dynasty Silver Satin Tunic - PVP -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Jewel Leather Armor {PvP} - Force Master -->
+	<armorSet id="10832" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8225" levels="1" /> <!-- Dynasty Jewel Leather Armor - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Jewel Leather Armor {PvP} - Weapon Master -->
+	<armorSet id="10833" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8226" levels="1" /> <!-- Dynasty Jewel Leather Armor - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Jewel Leather Armor {PvP} - Enchanter -->
+	<armorSet id="10834" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8228" levels="1" /> <!-- Dynasty Jewel Leather Armor - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Dynasty Jewel Leather Armor {PvP} - Summoner -->
+	<armorSet id="10835" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8227" levels="1" /> <!-- Dynasty Jewel Leather Armor - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Vesper Breastplate -->
+	<armorSet id="13432" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8283" levels="1" /> <!-- Vesper Heavy Armor Set -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="8494" /> <!-- Vesper Verteidiger -->
+	</armorSet>
+	<!-- Vesper Leather Breastplate -->
+	<armorSet id="13433" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8285" levels="1" /> <!-- Vesper Light Armor Set -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Vesper Tunic -->
+	<armorSet id="13434" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8287" levels="1" /> <!-- Vesper Robe Set -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Vesper Noble Breastplate -->
+	<armorSet id="13435" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8284" levels="1" /> <!-- Vesper Noble Heavy Armor Set -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="8494" /> <!-- Vesper Verteidiger -->
+	</armorSet>
+	<!-- Vesper Noble Leather Breastplate -->
+	<armorSet id="13436" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8286" levels="1" /> <!-- Vesper Noble Light Armor Set -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Vesper Noble Tunic -->
+	<armorSet id="13437" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8288" levels="1" /> <!-- Vesper Noble Robe Set -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Vesper Breastplate {PvP} -->
+	<armorSet id="14520" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8301" levels="1" /> <!-- Vesper Heavy Armor Set for Adults -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="8494" /> <!-- Vesper Verteidiger -->
+	</armorSet>
+	<!-- Vesper Leather Breastplate {PvP} -->
+	<armorSet id="14521" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8303" levels="1" /> <!-- Vesper Light Armor Set for Adults -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Vesper Tunic {PvP} -->
+	<armorSet id="14522" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8305" levels="1" /> <!-- Vesper Robe Set for Adults -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Vesper Noble Breastplate {PvP} -->
+	<armorSet id="14523" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8302" levels="1" /> <!-- Vesper Noble Heavy Armor Set for Adults -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="8494" /> <!-- Vesper Verteidiger -->
+	</armorSet>
+	<!-- Vesper Noble Leather Breastplate {PvP} -->
+	<armorSet id="14524" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8304" levels="1" /> <!-- Vesper Noble Light Armor Set for Adults -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Vesper Noble Tunic {PvP} -->
+	<armorSet id="14525" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8306" levels="1" /> <!-- Vesper Noble Robe Set for Adults -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Apella Combat Armor -->
+	<armorSet id="14583" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3608" levels="2" /> <!-- Apella Heavy Armor Set -->
+		<enchant6Skill id="3620" /> <!-- Enchant Heavy Armor (A Grade) -->
+	</armorSet>
+	<!-- Apella Combat Clothes -->
+	<armorSet id="14586" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3609" levels="2" /> <!-- Apella Light Armor Set -->
+		<enchant6Skill id="3621" /> <!-- Enchant Light Armor (A Grade) -->
+	</armorSet>
+	<!-- Apella Combat Overcoat -->
+	<armorSet id="14589" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3610" levels="2" /> <!-- Apella Robe Set -->
+		<enchant6Skill id="3622" /> <!-- Enchant Robe (A Grade) -->
+	</armorSet>
+	<!-- Dark Crystal Robe of Fortune - 30-day limited period -->
+	<armorSet id="14978" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3535" levels="1" /> <!-- Dark Crystal Robe Set -->
+	</armorSet>
+	<!-- Avadon Robe of Fortune - 30-day limited period -->
+	<armorSet id="14983" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3523" levels="1" /> <!-- Avadon Robe Set -->
+	</armorSet>
+	<!-- Karmian Tunic of Fortune - 30-day limited period -->
+	<armorSet id="14988" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3510" levels="1" /> <!-- Karmian Set -->
+	</armorSet>
+	<!-- Mithril Tunic of Fortune - 30-day limited period -->
+	<armorSet id="14992" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3507" levels="1" /> <!-- Elven Mithril Robe Set -->
+	</armorSet>
+	<!-- Dark Crystal Leather Armor of Fortune - 30-day limited period -->
+	<armorSet id="14996" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3532" levels="1" /> <!-- Dark Crystal Light Armor Set -->
+	</armorSet>
+	<!-- Leather Armor of Doom of Fortune - 30-day limited period -->
+	<armorSet id="15000" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3527" levels="1" /> <!-- Light Armor of Doom Set -->
+	</armorSet>
+	<!-- Doom Plate Armor of Fortune - 30-day limited period -->
+	<armorSet id="15006" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3525" levels="1" /> <!-- Doom Heavy Armor Set -->
+		<shieldSkill id="3549" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Plate Leather Armor of Fortune - 30-day limited period -->
+	<armorSet id="15008" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3511" levels="1" /> <!-- Plated Leather Set -->
+	</armorSet>
+	<!-- Full Plate Armor of Fortune - 30-day limited period -->
+	<armorSet id="15013" parts="2">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3516" levels="1" /> <!-- Full Plate Heavy Armor Set -->
+		<shieldSkill id="3547" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Manticore Skin Shirt of Fortune - 30-day limited period -->
+	<armorSet id="15017" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3505" levels="1" /> <!-- Manticore Set -->
+	</armorSet>
+	<!-- Brigandine of Fortune - 30-day limited period -->
+	<armorSet id="15021" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3506" levels="1" /> <!-- Brigandine Heavy Armor Set -->
+		<shieldSkill id="3544" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Fortune Armor of Nightmare - 30-day limited period -->
+	<armorSet id="15027" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3536" levels="1" /> <!-- Nightmare Heavy Armor Set -->
+		<shieldSkill id="3551" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Dark Crystal Robe of Fortune - 10-day limited period -->
+	<armorSet id="15092" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3535" levels="1" /> <!-- Dark Crystal Robe Set -->
+	</armorSet>
+	<!-- Avadon Robe of Fortune - 10-day limited period -->
+	<armorSet id="15097" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3523" levels="1" /> <!-- Avadon Robe Set -->
+	</armorSet>
+	<!-- Karmian Tunic of Fortune - 10-day limited period -->
+	<armorSet id="15102" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3510" levels="1" /> <!-- Karmian Set -->
+	</armorSet>
+	<!-- Mithril Tunic of Fortune - 10-day limited period -->
+	<armorSet id="15106" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3507" levels="1" /> <!-- Elven Mithril Robe Set -->
+	</armorSet>
+	<!-- Dark Crystal Leather Armor of Fortune - 10-day limited period -->
+	<armorSet id="15110" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3532" levels="1" /> <!-- Dark Crystal Light Armor Set -->
+	</armorSet>
+	<!-- Leather Armor of Doom of Fortune - 10-day limited period -->
+	<armorSet id="15114" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3527" levels="1" /> <!-- Light Armor of Doom Set -->
+	</armorSet>
+	<!-- Doom Plate Armor of Fortune - 10-day limited period -->
+	<armorSet id="15120" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3525" levels="1" /> <!-- Doom Heavy Armor Set -->
+		<shieldSkill id="3549" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Plate Leather Armor of Fortune - 10-day limited period -->
+	<armorSet id="15122" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3511" levels="1" /> <!-- Plated Leather Set -->
+	</armorSet>
+	<!-- Full Plate Armor of Fortune - 10-day limited period -->
+	<armorSet id="15127" parts="2">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3516" levels="1" /> <!-- Full Plate Heavy Armor Set -->
+		<shieldSkill id="3547" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Manticore Skin Shirt of Fortune - 10-day limited period -->
+	<armorSet id="15131" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3505" levels="1" /> <!-- Manticore Set -->
+	</armorSet>
+	<!-- Brigandine of Fortune - 10-day limited period -->
+	<armorSet id="15135" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3506" levels="1" /> <!-- Brigandine Heavy Armor Set -->
+		<shieldSkill id="3544" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Fortune Armor of Nightmare - 10-day limited period -->
+	<armorSet id="15141" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3536" levels="1" /> <!-- Nightmare Heavy Armor Set -->
+		<shieldSkill id="3551" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Elegia Breastplate -->
+	<armorSet id="15575" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8403" levels="1" /> <!-- Elegia Heavy Armor Set -->
+		<enchant6Skill id="8461" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="8496" /> <!-- Elegia Shield -->
+	</armorSet>
+	<!-- Elegia Leather Breastplate -->
+	<armorSet id="15576" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8404" levels="1" /> <!-- Elegia Leather Armor Set -->
+		<enchant6Skill id="8462" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Elegia Tunic -->
+	<armorSet id="15577" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8405" levels="1" /> <!-- Elegia Robe Set -->
+		<enchant6Skill id="8463" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Vorpal Breastplate -->
+	<armorSet id="15592" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8400" levels="1" /> <!-- Vorpal Heavy Armor Set -->
+		<enchant6Skill id="8461" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="8495" /> <!-- Vorpal Shield -->
+	</armorSet>
+	<!-- Vorpal Leather Breastplate -->
+	<armorSet id="15593" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8401" levels="1" /> <!-- Vorpal Leather Armor Set -->
+		<enchant6Skill id="8462" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Vorpal Tunic -->
+	<armorSet id="15594" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8402" levels="1" /> <!-- Vorpal Robe Set -->
+		<enchant6Skill id="8463" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Moirai Breastplate -->
+	<armorSet id="15609" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8397" levels="1" /> <!-- Moirai Heavy Armor Set -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="8493" /> <!-- Moirai Shield -->
+	</armorSet>
+	<!-- Moirai Leather Breastplate -->
+	<armorSet id="15610" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8398" levels="1" /> <!-- Moirai Leather Armor Set -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Moirai Tunic -->
+	<armorSet id="15611" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8399" levels="1" /> <!-- Moirai Robe Set -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Elegia Breastplate {PvP} -->
+	<armorSet id="16168" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8412" levels="1" /> <!-- Elegia Heavy Armor Set - PVP -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="8461" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="8496" /> <!-- Elegia Shield -->
+	</armorSet>
+	<!-- Elegia Leather Breastplate {PvP} -->
+	<armorSet id="16169" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8413" levels="1" /> <!-- Elegia Leather Armor Set - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="8462" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Elegia Tunic {PvP} -->
+	<armorSet id="16170" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8414" levels="1" /> <!-- Elegia Robe Set - PVP -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="8463" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Vorpal Breastplate {PvP} -->
+	<armorSet id="16171" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8409" levels="1" /> <!-- Vorpal Heavy Armor Set - PVP -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="8461" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="8495" /> <!-- Vorpal Shield -->
+	</armorSet>
+	<!-- Vorpal Leather Breastplate {PvP} -->
+	<armorSet id="16172" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8410" levels="1" /> <!-- Vorpal Leather Armor Set - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="8462" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Vorpal Tunic {PvP} -->
+	<armorSet id="16173" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8411" levels="1" /> <!-- Vorpal Robe Set - PVP -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="8463" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Moirai Breastplate {PvP} -->
+	<armorSet id="16174" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8406" levels="1" /> <!-- Moirai Heavy Armor Set - PVP -->
+		<skill id="3659" levels="1" /> <!-- PvP Armor - Damage Down -->
+		<skill id="3662" levels="1" /> <!-- PvP Armor - Speed Down -->
+		<enchant6Skill id="3623" /> <!-- Enchant Heavy Armor (S Grade) -->
+		<shieldSkill id="8493" /> <!-- Moirai Shield -->
+	</armorSet>
+	<!-- Moirai Leather Breastplate {PvP} -->
+	<armorSet id="16175" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8407" levels="1" /> <!-- Moirai Light Armor Set - PVP -->
+		<skill id="3663" levels="1" /> <!-- PvP Armor - Mirage -->
+		<enchant6Skill id="3624" /> <!-- Enchant Light Armor (S Grade) -->
+	</armorSet>
+	<!-- Moirai Tunic {PvP} -->
+	<armorSet id="16176" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="8408" levels="1" /> <!-- Moirai Robe Set - PVP -->
+		<skill id="3660" levels="1" /> <!-- PvP Armor - Critical Down -->
+		<enchant6Skill id="3625" /> <!-- Enchant Robe (S Grade) -->
+	</armorSet>
+	<!-- Dark Crystal Robe of Fortune - 90-day limited period -->
+	<armorSet id="16866" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3535" levels="1" /> <!-- Dark Crystal Robe Set -->
+	</armorSet>
+	<!-- Avadon Robe of Fortune - 90-day limited period -->
+	<armorSet id="16871" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3523" levels="1" /> <!-- Avadon Robe Set -->
+	</armorSet>
+	<!-- Karmian Tunic of Fortune - 90-day limited period -->
+	<armorSet id="16876" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3510" levels="1" /> <!-- Karmian Set -->
+	</armorSet>
+	<!-- Mithril Tunic of Fortune - 90-day limited period -->
+	<armorSet id="16880" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3507" levels="1" /> <!-- Elven Mithril Robe Set -->
+	</armorSet>
+	<!-- Dark Crystal Leather Armor of Fortune - 90-day limited period -->
+	<armorSet id="16884" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3532" levels="1" /> <!-- Dark Crystal Light Armor Set -->
+	</armorSet>
+	<!-- Leather Armor of Doom of Fortune - 90-day limited period -->
+	<armorSet id="16888" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3527" levels="1" /> <!-- Light Armor of Doom Set -->
+	</armorSet>
+	<!-- Doom Plate Armor of Fortune - 90-day limited period -->
+	<armorSet id="16894" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3525" levels="1" /> <!-- Doom Heavy Armor Set -->
+		<shieldSkill id="3549" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Plate Leather Armor of Fortune - 90-day limited period -->
+	<armorSet id="16896" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3511" levels="1" /> <!-- Plated Leather Set -->
+	</armorSet>
+	<!-- Full Plate Armor of Fortune - 90-day limited period -->
+	<armorSet id="16901" parts="2">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3516" levels="1" /> <!-- Full Plate Heavy Armor Set -->
+		<shieldSkill id="3547" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Manticore Skin Shirt of Fortune - 90-day limited period -->
+	<armorSet id="16905" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3505" levels="1" /> <!-- Manticore Set -->
+	</armorSet>
+	<!-- Brigandine of Fortune - 90-day limited period -->
+	<armorSet id="16909" parts="3">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3506" levels="1" /> <!-- Brigandine Heavy Armor Set -->
+		<shieldSkill id="3544" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Fortune Armor of Nightmare - 90-day limited period -->
+	<armorSet id="16915" parts="4">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="3536" levels="1" /> <!-- Nightmare Heavy Armor Set -->
+		<shieldSkill id="3551" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Immortal Breastplate - Attack Type / Heavy -->
+	<armorSet id="19523" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13065" levels="4" /> <!-- Set Effect - Immortal Heavy Armor (attack) -->
+		<enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
+		<shieldSkill id="3551" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Immortal Leather Armor - Assassin Type / Light -->
+	<armorSet id="19529" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13074" levels="4" /> <!-- Set Effect - Immortal Light Armor (assassin) -->
+		<enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
+	</armorSet>
+	<!-- Immortal Tunic - Magic Type / Robe -->
+	<armorSet id="19534" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13084" levels="4" /> <!-- Set Effect - Immortal Robe (magic) -->
+		<enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
+	</armorSet>
+	<!-- Twilight Breastplate - Attack Type / Heavy -->
+	<armorSet id="19539" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13067" levels="4" /> <!-- Set Effect - Twilight Heavy Armor (attack) -->
+		<enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
+		<shieldSkill id="3551" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Twilight Leather Armor - Assassin Type / Light -->
+	<armorSet id="19545" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13076" levels="4" /> <!-- Set Effect - Twilight Light Armor (assassin) -->
+		<enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
+	</armorSet>
+	<!-- Twilight Tunic - Magic Type / Robe -->
+	<armorSet id="19550" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13086" levels="4" /> <!-- Set Effect - Twilight Robe (magic) -->
+		<enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
+	</armorSet>
+	<!-- Seraph Breastplate - Attack Type / Heavy -->
+	<armorSet id="19555" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13069" levels="4" /> <!-- Set Effect - Seraph Heavy Armor (attack) -->
+		<enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
+		<shieldSkill id="3551" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Seraph Leather Armor - Assassin Type / Light -->
+	<armorSet id="19561" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13078" levels="4" /> <!-- Set Effect - Seraph Light Armor (assassin) -->
+		<enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
+	</armorSet>
+	<!-- Seraph Tunic - Magic Type / Robe -->
+	<armorSet id="19566" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13088" levels="4" /> <!-- Set Effect - Seraph Robe (magic) -->
+		<enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
+	</armorSet>
+	<!-- Eternal Breastplate - Attack Type / Heavy -->
+	<armorSet id="19571" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13071" levels="4" /> <!-- Set Effect - Eternal Heavy Armor (attack) -->
+		<enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
+		<shieldSkill id="3551" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Eternal Leather Armor - Assassin Type / Light -->
+	<armorSet id="19577" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13080" levels="4" /> <!-- Set Effect - Eternal Light Armor (assassin) -->
+		<enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
+	</armorSet>
+	<!-- Eternal Tunic - Magic Type / Robe -->
+	<armorSet id="19582" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13090" levels="4" /> <!-- Set Effect - Eternal Robe (magic) -->
+		<enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
+	</armorSet>
+	<!-- Immortal Breastplate - Defense Type / Heavy -->
+	<armorSet id="19731" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13064" levels="4" /> <!-- Set Effect - Immortal Heavy Armor (defense) -->
+		<enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
+		<shieldSkill id="3551" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Immortal Leather Armor - Enhance Type / Light -->
+	<armorSet id="19737" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13075" levels="4" /> <!-- Set Effect - Immortal Light Armor (strong) -->
+		<enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
+	</armorSet>
+	<!-- Immortal Tunic - Recovery Type / Robe -->
+	<armorSet id="19742" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13085" levels="4" /> <!-- Set Effect - Immortal Robe (recovery) -->
+		<enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
+	</armorSet>
+	<!-- Twilight Breastplate - Defense Type / Heavy -->
+	<armorSet id="19747" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13066" levels="4" /> <!-- Set Effect - Twilight Heavy Armor (defense) -->
+		<enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
+		<shieldSkill id="3551" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Twilight Leather Armor - Enhance Type / Light -->
+	<armorSet id="19753" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13077" levels="4" /> <!-- Set Effect - Twilight Light Armor (strong) -->
+		<enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
+	</armorSet>
+	<!-- Twilight Tunic - Recovery Type / Robe -->
+	<armorSet id="19758" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13087" levels="4" /> <!-- Set Effect - Twilight Robe (recovery) -->
+		<enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
+	</armorSet>
+	<!-- Seraph Breastplate - Defense Type / Heavy -->
+	<armorSet id="19763" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13068" levels="4" /> <!-- Set Effect - Seraph Heavy Armor (defense) -->
+		<enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
+		<shieldSkill id="3551" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Seraph Leather Armor - Enhance Type / Light -->
+	<armorSet id="19769" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13079" levels="4" /> <!-- Set Effect - Seraph Light Armor (strong) -->
+		<enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
+	</armorSet>
+	<!-- Seraph Tunic - Recovery Type / Robe -->
+	<armorSet id="19774" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13089" levels="4" /> <!-- Set Effect - Seraph Robe (recovery) -->
+		<enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
+	</armorSet>
+	<!-- Eternal Breastplate - Defense Type / Heavy -->
+	<armorSet id="19779" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13070" levels="1" /> <!-- Set Effect - Eternal Heavy Armor (defense) -->
+		<enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
+		<shieldSkill id="3551" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<!-- Eternal Leather Armor - Enhance Type / Light -->
+	<armorSet id="19785" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13081" levels="4" /> <!-- Set Effect - Eternal Light Armor (strong) -->
+		<enchant6Skill id="13340" /> <!-- Enchant Light Armor (R Grade) -->
+	</armorSet>
+	<!-- Eternal Tunic - Recovery Type / Robe -->
+	<armorSet id="19790" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13091" levels="4" /> <!-- Set Effect - Eternal Robe (recovery) -->
+		<enchant6Skill id="13341" /> <!-- Enchant Robe (R Grade) -->
+	</armorSet>
+	<!-- Eternal Breastplate - Defense Type / Heavy -->
+	<armorSet id="19791" parts="5">
+		<skill id="3006" levels="1" /> <!-- Equip Set Items -->
+		<skill id="13070" levels="4" /> <!-- Set Effect - Eternal Heavy Armor (defense) -->
+		<enchant6Skill id="13339" /> <!-- Enchant Heavy Armor (R Grade) -->
+		<shieldSkill id="3551" /> <!-- Equipped with Shield -->
+	</armorSet>
+	<armorSet id="37718" parts="1">
+		<skill id="13562" levels="11" />
+		<skill id="13563" levels="5" />
+		<skill id="13564" levels="4" />
+		<skill id="13565" levels="3" />
+		<skill id="13566" levels="2" />
+		<skill id="13567" levels="1" />
+	</armorSet>
 </list>

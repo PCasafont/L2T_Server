@@ -19,21 +19,18 @@ package l2server.gameserver.network.serverpackets;
  * @author Kerberos
  */
 @Deprecated
-public class GMHide extends L2GameServerPacket
-{
+public class GMHide extends L2GameServerPacket {
 	// cd
 	private static int mode;
 
 	/**
 	 */
-	public GMHide(int mode)
-	{
+	public GMHide(int mode) {
 		this.mode = mode;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(mode);
 	}
 }

@@ -32,24 +32,18 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @version $Revision: 1.2.4.3 $ $Date: 2005/04/11 10:06:06 $
  */
-public class AdminGmChat implements IAdminCommandHandler
-{
+public class AdminGmChat implements IAdminCommandHandler {
 
 	private static final String[] ADMIN_COMMANDS = {"admin_gmchat", "admin_snoop", "admin_gmchat_menu"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (command.startsWith("admin_gmchat"))
-		{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		if (command.startsWith("admin_gmchat")) {
 			handleGmChat(command, activeChar);
-		}
-		else if (command.startsWith("admin_snoop"))
-		{
+		} else if (command.startsWith("admin_snoop")) {
 			snoop(command, activeChar);
 		}
-		if (command.startsWith("admin_gmchat_menu"))
-		{
+		if (command.startsWith("admin_gmchat_menu")) {
 			AdminHelpPage.showHelpPage(activeChar, "gm_menu.htm");
 		}
 		return true;
@@ -59,25 +53,20 @@ public class AdminGmChat implements IAdminCommandHandler
 	 * @param command
 	 * @param activeChar
 	 */
-	private void snoop(String command, L2PcInstance activeChar)
-	{
+	private void snoop(String command, L2PcInstance activeChar) {
 		L2Object target = null;
-		if (command.length() > 12)
-		{
+		if (command.length() > 12) {
 			target = L2World.getInstance().getPlayer(command.substring(12));
 		}
-		if (target == null)
-		{
+		if (target == null) {
 			target = activeChar.getTarget();
 		}
 
-		if (target == null)
-		{
+		if (target == null) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SELECT_TARGET));
 			return;
 		}
-		if (!(target instanceof L2PcInstance))
-		{
+		if (!(target instanceof L2PcInstance)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
 		}
@@ -87,8 +76,7 @@ public class AdminGmChat implements IAdminCommandHandler
 	}
 
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 
@@ -96,26 +84,19 @@ public class AdminGmChat implements IAdminCommandHandler
 	 * @param command
 	 * @param activeChar
 	 */
-	private void handleGmChat(String command, L2PcInstance activeChar)
-	{
-		try
-		{
+	private void handleGmChat(String command, L2PcInstance activeChar) {
+		try {
 			int offset = 0;
 			String text;
-			if (command.startsWith("admin_gmchat_menu"))
-			{
+			if (command.startsWith("admin_gmchat_menu")) {
 				offset = 18;
-			}
-			else
-			{
+			} else {
 				offset = 13;
 			}
 			text = command.substring(offset);
 			CreatureSay cs = new CreatureSay(0, Say2.ALLIANCE, activeChar.getName(), text);
 			GmListTable.broadcastToGMs(cs);
-		}
-		catch (StringIndexOutOfBoundsException e)
-		{
+		} catch (StringIndexOutOfBoundsException e) {
 			// empty message.. ignore
 		}
 	}

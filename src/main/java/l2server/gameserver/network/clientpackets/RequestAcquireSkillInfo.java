@@ -16,17 +16,9 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.datatables.CertificateSkillTable;
-import l2server.gameserver.datatables.PledgeSkillTree;
-import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.datatables.SkillTreeTable;
-import l2server.gameserver.datatables.SubPledgeSkillTree;
+import l2server.gameserver.datatables.*;
 import l2server.gameserver.datatables.SubPledgeSkillTree.SubUnitSkill;
-import l2server.gameserver.model.L2PledgeSkillLearn;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2SkillLearn;
-import l2server.gameserver.model.L2SquadTrainer;
-import l2server.gameserver.model.L2TransformSkillLearn;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2TransformManagerInstance;
@@ -39,202 +31,165 @@ import l2server.log.Log;
  *
  * @version $Revision: 1.5.2.1.2.5 $ $Date: 2005/04/06 16:13:48 $
  */
-public class RequestAcquireSkillInfo extends L2GameClientPacket
-{
-
+public class RequestAcquireSkillInfo extends L2GameClientPacket {
+	
 	private int id;
 	private int level;
 	private int skillType;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		id = readD();
 		level = readD();
 		skillType = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		if (id <= 0 || level <= 0) // minimal sanity check
 		{
 			return;
 		}
-
+		
 		final L2PcInstance activeChar = getClient().getActiveChar();
-
-		if (activeChar == null)
-		{
+		
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		final L2Npc trainer = activeChar.getLastFolkNPC();
-
+		
 		final L2Skill skill = SkillTable.getInstance().getInfo(id, level);
-
+		
 		boolean canteach = false;
-
-		if (skill == null)
-		{
-			if (Config.DEBUG)
-			{
+		
+		if (skill == null) {
+			if (Config.DEBUG) {
 				Log.warning("skill id " + id + " level " + level + " is undefined. aquireSkillInfo failed.");
 			}
-
+			
 			return;
 		}
-
-		if (skillType == 0)
-		{
-			if (trainer instanceof L2TransformManagerInstance)
-			{
+		
+		if (skillType == 0) {
+			if (trainer instanceof L2TransformManagerInstance) {
 				int itemId = 0;
 				L2TransformSkillLearn[] skillst = SkillTreeTable.getInstance().getAvailableTransformSkills(activeChar);
-
-				for (L2TransformSkillLearn s : skillst)
-				{
-					if (s.getId() == id && s.getLevel() == level)
-					{
+				
+				for (L2TransformSkillLearn s : skillst) {
+					if (s.getId() == id && s.getLevel() == level) {
 						canteach = true;
 						itemId = s.getItemId();
 						break;
 					}
 				}
-
-				if (!canteach)
-				{
+				
+				if (!canteach) {
 					return; // cheater
 				}
-
+				
 				int requiredSp = 0;
 				AcquireSkillInfo asi = new AcquireSkillInfo(skill.getId(), skill.getLevelHash(), requiredSp, 0);
-
+				
 				// all transformations require scrolls
 				asi.addRequirement(99, itemId, 1, 50);
 				sendPacket(asi);
 				return;
 			}
-
+			
 			L2SkillLearn skillToLearn = null;
 			L2SkillLearn[] skills = SkillTreeTable.getInstance().getAvailableClassSkills(activeChar);
-
-			for (L2SkillLearn s : skills)
-			{
-				if (s.getId() == id && s.getLevel() == level)
-				{
+			
+			for (L2SkillLearn s : skills) {
+				if (s.getId() == id && s.getLevel() == level) {
 					skillToLearn = s;
 					break;
 				}
 			}
-
-			if (skillToLearn == null)
-			{
+			
+			if (skillToLearn == null) {
 				return; // cheater
 			}
-
+			
 			sendPacket(new ExAcquireSkillInfo(skillToLearn, activeChar));
-		}
-		else if (skillType == 2)
-		{
+		} else if (skillType == 2) {
 			int requiredRep = 0;
 			L2PledgeSkillLearn[] skills = PledgeSkillTree.getInstance().getAvailableSkills(activeChar);
-
-			for (L2PledgeSkillLearn s : skills)
-			{
-				if (s.getId() == id && s.getLevel() == level)
-				{
+			
+			for (L2PledgeSkillLearn s : skills) {
+				if (s.getId() == id && s.getLevel() == level) {
 					canteach = true;
 					requiredRep = s.getRepCost();
 					break;
 				}
 			}
-
-			if (!canteach)
-			{
+			
+			if (!canteach) {
 				return; // cheater
 			}
-
+			
 			AcquireSkillInfo asi = new AcquireSkillInfo(skill.getId(), skill.getLevelHash(), requiredRep, 2);
 			sendPacket(asi);
-		}
-		else if (skillType == 3)
-		{
-			if (trainer instanceof L2SquadTrainer)
-			{
+		} else if (skillType == 3) {
+			if (trainer instanceof L2SquadTrainer) {
 				SubUnitSkill sus = SubPledgeSkillTree.getInstance().getSkill(SkillTable.getSkillHashCode(skill));
-				AcquireSkillInfo asi =
-						new AcquireSkillInfo(skill.getId(), skill.getLevelHash(), sus.getReputation(), 3);
+				AcquireSkillInfo asi = new AcquireSkillInfo(skill.getId(), skill.getLevelHash(), sus.getReputation(), 3);
 				asi.addRequirement(0, sus.getItemId(), sus.getCount(), 0);
 				sendPacket(asi);
 			}
-		}
-		else if (skillType == 4)
-		{
+		} else if (skillType == 4) {
 			int cost = CertificateSkillTable.getInstance().getSubClassSkillCost(skill.getId());
-			if (cost > 0)
-			{
+			if (cost > 0) {
 				AcquireSkillInfo asi = new AcquireSkillInfo(skill.getId(), skill.getLevelHash(), 0, 4);
 				asi.addRequirement(99, CertificateSkillTable.SUBCLASS_CERTIFICATE, cost, 50);
 				sendPacket(asi);
 			}
-		}
-		else if (skillType == 5)
-		{
+		} else if (skillType == 5) {
 			int cost = CertificateSkillTable.getInstance().getDualClassSkillCost(skill.getId());
-			if (cost > 0)
-			{
+			if (cost > 0) {
 				AcquireSkillInfo asi = new AcquireSkillInfo(skill.getId(), skill.getLevelHash(), 0, 5);
 				asi.addRequirement(99, CertificateSkillTable.DUALCLASS_CERTIFICATE, cost, 50);
 				sendPacket(asi);
 			}
-		}
-		else if (skillType == 6)
-		{
+		} else if (skillType == 6) {
 			int costid = 0;
 			int costcount = 0;
 			L2SkillLearn[] skillsc = SkillTreeTable.getInstance().getAvailableSpecialSkills(activeChar);
-			for (L2SkillLearn s : skillsc)
-			{
+			for (L2SkillLearn s : skillsc) {
 				L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
-
-				if (sk == null || sk != skill)
-				{
+				
+				if (sk == null || sk != skill) {
 					continue;
 				}
-
+				
 				canteach = true;
 				costid = 0;
 				costcount = 0;
 			}
-
+			
 			AcquireSkillInfo asi = new AcquireSkillInfo(skill.getId(), skill.getLevelHash(), 0, 6);
 			asi.addRequirement(5, costid, costcount, 0);
 			sendPacket(asi);
-		}
-		else
+		} else
 		// Common Skills
 		{
 			L2SkillLearn skillToLearn = null;
 			L2SkillLearn[] skillsc = SkillTreeTable.getInstance().getAvailableSkills(activeChar);
-
-			for (L2SkillLearn s : skillsc)
-			{
+			
+			for (L2SkillLearn s : skillsc) {
 				L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
-
-				if (sk == null || sk != skill)
-				{
+				
+				if (sk == null || sk != skill) {
 					continue;
 				}
-
+				
 				skillToLearn = s;
 			}
-
-			if (skillToLearn == null)
-			{
+			
+			if (skillToLearn == null) {
 				return;
 			}
-
+			
 			sendPacket(new ExAcquireSkillInfo(skillToLearn, activeChar));
 		}
 	}

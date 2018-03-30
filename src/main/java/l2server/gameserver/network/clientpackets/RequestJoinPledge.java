@@ -27,66 +27,56 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @version $Revision: 1.3.4.4 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestJoinPledge extends L2GameClientPacket
-{
+public final class RequestJoinPledge extends L2GameClientPacket {
 
 	private int target;
 	private int pledgeType;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		target = readD();
 		pledgeType = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
 		final L2Clan clan = activeChar.getClan();
-		if (clan == null)
-		{
+		if (clan == null) {
 			return;
 		}
 
 		final L2PcInstance target = L2World.getInstance().getPlayer(this.target);
-		if (target == null)
-		{
+		if (target == null) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_INVITED_THE_WRONG_TARGET));
 			return;
 		}
 
 		// LasTravel
-		if (target.getIsRefusingRequests())
-		{
+		if (target.getIsRefusingRequests()) {
 			activeChar.sendMessage("Your target have the requests blocked!");
 			return;
 		}
 
-		if (!clan.checkClanJoinCondition(activeChar, target, pledgeType))
-		{
+		if (!clan.checkClanJoinCondition(activeChar, target, pledgeType)) {
 			return;
 		}
 
-		if (!activeChar.getRequest().setRequest(target, this))
-		{
+		if (!activeChar.getRequest().setRequest(target, this)) {
 			return;
 		}
 
 		final String pledgeName = activeChar.getClan().getName();
-		final String subPledgeName = activeChar.getClan().getSubPledge(pledgeType) != null ?
-				activeChar.getClan().getSubPledge(pledgeType).getName() : null;
+		final String subPledgeName =
+				activeChar.getClan().getSubPledge(pledgeType) != null ? activeChar.getClan().getSubPledge(pledgeType).getName() : null;
 		target.sendPacket(new AskJoinPledge(activeChar.getObjectId(), subPledgeName, pledgeType, pledgeName));
 	}
 
-	public int getPledgeType()
-	{
+	public int getPledgeType() {
 		return pledgeType;
 	}
 }

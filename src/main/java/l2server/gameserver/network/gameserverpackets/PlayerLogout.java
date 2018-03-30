@@ -20,10 +20,8 @@ import l2server.util.network.BaseSendablePacket;
 /**
  * @author -Wooden-
  */
-public class PlayerLogout extends BaseSendablePacket
-{
-	public PlayerLogout(String player)
-	{
+public class PlayerLogout extends BaseSendablePacket {
+	public PlayerLogout(String player) {
 		writeC(0x03);
 		writeS(player);
 	}
@@ -32,8 +30,7 @@ public class PlayerLogout extends BaseSendablePacket
 	 * @see l2server.gameserver.gameserverpackets.GameServerBasePacket#getContent()
 	 */
 	@Override
-	public byte[] getContent()
-	{
+	public byte[] getContent() {
 		return getBytes();
 	}
 }

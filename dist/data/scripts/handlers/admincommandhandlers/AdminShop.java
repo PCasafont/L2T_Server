@@ -33,65 +33,47 @@ import java.util.logging.Logger;
  *
  * @version $Revision: 1.2.4.4 $ $Date: 2005/04/11 10:06:06 $
  */
-public class AdminShop implements IAdminCommandHandler
-{
+public class AdminShop implements IAdminCommandHandler {
 	private static Logger log = Logger.getLogger(AdminShop.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {"admin_buy", "admin_gmshop"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (command.startsWith("admin_buy"))
-		{
-			try
-			{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		if (command.startsWith("admin_buy")) {
+			try {
 				handleBuyRequest(activeChar, command.substring(10));
-			}
-			catch (IndexOutOfBoundsException e)
-			{
+			} catch (IndexOutOfBoundsException e) {
 				activeChar.sendMessage("Please specify buylist.");
 			}
-		}
-		else if (command.equals("admin_gmshop"))
-		{
+		} else if (command.equals("admin_gmshop")) {
 			AdminHelpPage.showHelpPage(activeChar, "gmshops.htm");
 		}
 		return true;
 	}
 
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 
-	private void handleBuyRequest(L2PcInstance activeChar, String command)
-	{
+	private void handleBuyRequest(L2PcInstance activeChar, String command) {
 		int val = -1;
-		try
-		{
+		try {
 			val = Integer.parseInt(command);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			log.warning("admin buylist failed:" + command);
 		}
 
 		L2TradeList list = TradeController.getInstance().getBuyList(val);
 
-		if (list != null)
-		{
+		if (list != null) {
 			activeChar.sendPacket(new ExBuyList(list, activeChar.getAdena(), 0));
 			activeChar.sendPacket(new ExSellList(activeChar, list, 0, false));
-			if (Config.DEBUG)
-			{
-				log.fine(
-						"GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") opened GM shop id " + val);
+			if (Config.DEBUG) {
+				log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") opened GM shop id " + val);
 			}
-		}
-		else
-		{
+		} else {
 			log.warning("no buylist with id:" + val);
 		}
 		activeChar.sendPacket(ActionFailed.STATIC_PACKET);

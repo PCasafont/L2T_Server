@@ -25,57 +25,49 @@ import java.util.Map;
  * @author Pere
  */
 
-public class ExInstanceList extends L2GameServerPacket
-{
-
+public class ExInstanceList extends L2GameServerPacket {
+	
 	private int current = -1;
 	private int objId;
-
-	public ExInstanceList(L2PcInstance player)
-	{
+	
+	public ExInstanceList(L2PcInstance player) {
 		objId = player.getObjectId();
-
+		
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-
-		if (world != null)
-		{
+		
+		if (world != null) {
 			current = world.templateId;
 		}
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(current);
-
+		
 		Map<Integer, Long> instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(objId);
-
+		
 		int size = instanceTimes.size();
-
-		if (instanceTimes.containsKey(current))
-		{
+		
+		if (instanceTimes.containsKey(current)) {
 			size--;
 		}
-
+		
 		writeD(size);
-
-		for (int instanceId : instanceTimes.keySet())
-		{
-			if (current == instanceId)
-			{
+		
+		for (int instanceId : instanceTimes.keySet()) {
+			if (current == instanceId) {
 				continue;
 			}
-
+			
 			int remainingTime = (int) ((instanceTimes.get(instanceId) - System.currentTimeMillis()) / 1000);
-
-			if (remainingTime < 0)
-			{
+			
+			if (remainingTime < 0) {
 				continue;
 			}
-
+			
 			writeD(instanceId);
 			writeD(remainingTime);
 		}

@@ -24,44 +24,32 @@ import l2server.gameserver.network.serverpackets.ServerObjectInfo;
 
 import java.util.Collection;
 
-public class L2WaterZone extends L2ZoneType
-{
-	public L2WaterZone(int id)
-	{
+public class L2WaterZone extends L2ZoneType {
+	public L2WaterZone(int id) {
 		super(id);
 	}
 
 	@Override
-	protected void onEnter(L2Character character)
-	{
+	protected void onEnter(L2Character character) {
 		character.setInsideZone(L2Character.ZONE_WATER, true);
 
-		if (character instanceof L2PcInstance)
-		{
-			if (character.isTransformed() && !((L2PcInstance) character).isCursedWeaponEquipped())
-			{
+		if (character instanceof L2PcInstance) {
+			if (character.isTransformed() && !((L2PcInstance) character).isCursedWeaponEquipped()) {
 				character.stopTransformation(true);
 				//((L2PcInstance) character).untransform();
 			}
 			// TODO: update to only send speed status when that packet is known
-			else
-			{
+			else {
 				((L2PcInstance) character).broadcastUserInfo();
 			}
-		}
-		else if (character instanceof L2Npc)
-		{
+		} else if (character instanceof L2Npc) {
 			Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
 			//synchronized (character.getKnownList().getKnownPlayers())
 			{
-				for (L2PcInstance player : plrs)
-				{
-					if (character.getRunSpeed() == 0)
-					{
+				for (L2PcInstance player : plrs) {
+					if (character.getRunSpeed() == 0) {
 						player.sendPacket(new ServerObjectInfo((L2Npc) character, player));
-					}
-					else
-					{
+					} else {
 						player.sendPacket(new NpcInfo((L2Npc) character, player));
 					}
 				}
@@ -75,8 +63,7 @@ public class L2WaterZone extends L2ZoneType
 	}
 
 	@Override
-	protected void onExit(L2Character character)
-	{
+	protected void onExit(L2Character character) {
 		character.setInsideZone(L2Character.ZONE_WATER, false);
 
 		/*if (character instanceof L2PcInstance)
@@ -85,23 +72,16 @@ public class L2WaterZone extends L2ZoneType
 		}*/
 
 		// TODO: update to only send speed status when that packet is known
-		if (character instanceof L2PcInstance)
-		{
+		if (character instanceof L2PcInstance) {
 			((L2PcInstance) character).broadcastUserInfo();
-		}
-		else if (character instanceof L2Npc)
-		{
+		} else if (character instanceof L2Npc) {
 			Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
 			//synchronized (character.getKnownList().getKnownPlayers())
 			{
-				for (L2PcInstance player : plrs)
-				{
-					if (character.getRunSpeed() == 0)
-					{
+				for (L2PcInstance player : plrs) {
+					if (character.getRunSpeed() == 0) {
 						player.sendPacket(new ServerObjectInfo((L2Npc) character, player));
-					}
-					else
-					{
+					} else {
 						player.sendPacket(new NpcInfo((L2Npc) character, player));
 					}
 				}
@@ -110,17 +90,14 @@ public class L2WaterZone extends L2ZoneType
 	}
 
 	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
+	public void onDieInside(L2Character character, L2Character killer) {
 	}
 
 	@Override
-	public void onReviveInside(L2Character character)
-	{
+	public void onReviveInside(L2Character character) {
 	}
 
-	public int getWaterZ()
-	{
+	public int getWaterZ() {
 		return getZone().getHighZ();
 	}
 }

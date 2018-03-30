@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class DivineKnight extends L2Transformation
-{
+public class DivineKnight extends L2Transformation {
 	private static final int[] SKILLS = {680, 681, 682, 683, 684, 685, 795, 796, 5491, 619};
 
-	public DivineKnight()
-	{
+	public DivineKnight() {
 		// id, colRadius, colHeight
 		super(252, 16, 30);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 252 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 252 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		// Divine Knight Hate
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(680, 1), false);
 		// Divine Knight Hate Aura
@@ -52,13 +47,11 @@ public class DivineKnight extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		// Divine Knight Hate
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(680, 1), false);
 		// Divine Knight Hate Aura
@@ -83,8 +76,7 @@ public class DivineKnight extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new DivineKnight());
 	}
 }

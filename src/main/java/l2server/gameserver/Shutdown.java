@@ -21,15 +21,7 @@ import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.datatables.OfflineTradersTable;
 import l2server.gameserver.events.DamageManager;
 import l2server.gameserver.events.LotterySystem;
-import l2server.gameserver.instancemanager.CastleManorManager;
-import l2server.gameserver.instancemanager.CursedWeaponsManager;
-import l2server.gameserver.instancemanager.CustomOfflineBuffersManager;
-import l2server.gameserver.instancemanager.GlobalVariablesManager;
-import l2server.gameserver.instancemanager.GrandBossManager;
-import l2server.gameserver.instancemanager.ItemAuctionManager;
-import l2server.gameserver.instancemanager.ItemsOnGroundManager;
-import l2server.gameserver.instancemanager.QuestManager;
-import l2server.gameserver.instancemanager.SpawnDataManager;
+import l2server.gameserver.instancemanager.*;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.ClanWarManager;
@@ -52,8 +44,7 @@ import java.util.logging.Level;
  *
  * @version $Revision: 1.2.4.5 $ $Date: 2005/03/27 15:29:09 $
  */
-public class Shutdown extends Thread
-{
+public class Shutdown extends Thread {
 	public static final int SIGTERM = 0;
 	public static final int GM_SHUTDOWN = 1;
 	public static final int GM_RESTART = 2;
@@ -65,11 +56,9 @@ public class Shutdown extends Thread
 
 	private boolean shuttingDown = false;
 
-	public void startShutdown(L2PcInstance activeChar, int seconds, boolean restart)
-	{
+	public void startShutdown(L2PcInstance activeChar, int seconds, boolean restart) {
 		String text = null;
-		if (activeChar != null)
-		{
+		if (activeChar != null) {
 			text = "GM: " + activeChar.getName() + " (" + activeChar.getObjectId() + ") issued shutdown command.";
 		}
 
@@ -82,27 +71,20 @@ public class Shutdown extends Thread
 	 * @param seconds seconds until shutdown
 	 * @param restart true if the server will restart after shutdown
 	 */
-	public void startShutdown(String text, int seconds, boolean restart)
-	{
-		if (restart)
-		{
+	public void startShutdown(String text, int seconds, boolean restart) {
+		if (restart) {
 			shutdownMode = GM_RESTART;
-		}
-		else
-		{
+		} else {
 			shutdownMode = GM_SHUTDOWN;
 		}
 
-		if (text != null)
-		{
+		if (text != null) {
 			Log.info(text);
 		}
 		Log.info(MODE_TEXT[shutdownMode] + " in " + seconds + " seconds!");
 
-		if (shutdownMode > 0)
-		{
-			switch (seconds)
-			{
+		if (shutdownMode > 0) {
+			switch (seconds) {
 				case 540:
 				case 480:
 				case 420:
@@ -125,8 +107,7 @@ public class Shutdown extends Thread
 			}
 		}
 
-		if (task != null)
-		{
+		if (task != null) {
 			task.abort();
 		}
 
@@ -140,12 +121,10 @@ public class Shutdown extends Thread
 	 *
 	 * @param activeChar GM who issued the abort command
 	 */
-	public void abort(L2PcInstance activeChar)
-	{
-		Log.warning("GM: " + activeChar.getName() + " (" + activeChar.getObjectId() + ") issued shutdown ABORT. " +
-				MODE_TEXT[shutdownMode] + " has been stopped!");
-		if (task != null)
-		{
+	public void abort(L2PcInstance activeChar) {
+		Log.warning("GM: " + activeChar.getName() + " (" + activeChar.getObjectId() + ") issued shutdown ABORT. " + MODE_TEXT[shutdownMode] +
+				" has been stopped!");
+		if (task != null) {
 			task.abort();
 			Announcements an = Announcements.getInstance();
 			an.announceToAll("Server aborts " + MODE_TEXT[shutdownMode] + " and continues normal operation!");
@@ -158,18 +137,12 @@ public class Shutdown extends Thread
 	 * @param seconds seconds untill shutdown
 	 * @param restart true if the server will restart after shutdown
 	 */
-	private void sendServerQuit(int seconds, boolean restart)
-	{
-		if (restart)
-		{
+	private void sendServerQuit(int seconds, boolean restart) {
+		if (restart) {
 			Broadcast.toAllOnlinePlayers(new ExShowScreenMessage("Restarting in " + seconds + " seconds", 5000));
-			Announcements.getInstance().announceToAll(
-					"The server is restarting in " + seconds + " seconds. Find a safe place to log out.");
-		}
-		else
-		{
-			SystemMessage sysm =
-					SystemMessage.getSystemMessage(SystemMessageId.THE_SERVER_WILL_BE_COMING_DOWN_IN_S1_SECONDS);
+			Announcements.getInstance().announceToAll("The server is restarting in " + seconds + " seconds. Find a safe place to log out.");
+		} else {
+			SystemMessage sysm = SystemMessage.getSystemMessage(SystemMessageId.THE_SERVER_WILL_BE_COMING_DOWN_IN_S1_SECONDS);
 			sysm.addNumber(seconds);
 			Broadcast.toAllOnlinePlayers(sysm);
 		}
@@ -191,51 +164,36 @@ public class Shutdown extends Thread
 	 * will restart the server.
 	 */
 	@Override
-	public void run()
-	{
+	public void run() {
 		shuttingDown = true;
-		try
-		{
-			if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS)
-			{
+		try {
+			if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS) {
 				OfflineTradersTable.storeOffliners();
 			}
-		}
-		catch (Throwable t)
-		{
+		} catch (Throwable t) {
 			Log.log(Level.WARNING, "Error saving offline shops.", t);
 		}
 
-		try
-		{
-			if (Config.OFFLINE_BUFFERS_ENABLE && Config.OFFLINE_BUFFERS_RESTORE)
-			{
+		try {
+			if (Config.OFFLINE_BUFFERS_ENABLE && Config.OFFLINE_BUFFERS_RESTORE) {
 				CustomOfflineBuffersManager.getInstance().storeOfflineBuffers();
 			}
-		}
-		catch (Throwable t)
-		{
+		} catch (Throwable t) {
 			Log.log(Level.WARNING, "Error saving offline buffers.", t);
 		}
 
-		try
-		{
+		try {
 			disconnectAllCharacters();
 			Log.info("All players disconnected.");
-		}
-		catch (Throwable t)
-		{
+		} catch (Throwable t) {
 			Log.warning("Something went wrong while disconnecting players: " + t.getMessage());
 			t.printStackTrace();
 		}
 
 		// ensure all services are stopped
-		try
-		{
+		try {
 			TimeController.getInstance().stopTimer();
-		}
-		catch (Throwable t)
-		{
+		} catch (Throwable t) {
 			Log.warning("Something went wrong while stopping GameTimeController: " + t.getMessage());
 			t.printStackTrace();
 		}
@@ -243,12 +201,9 @@ public class Shutdown extends Thread
 		// stop all threadpools
 		ThreadPoolManager.getInstance().shutdown();
 
-		try
-		{
+		try {
 			LoginServerThread.getInstance().interrupt();
-		}
-		catch (Throwable t)
-		{
+		} catch (Throwable t) {
 			Log.warning("Something went wrong while shutting down Login Server connection: " + t.getMessage());
 			t.printStackTrace();
 		}
@@ -257,34 +212,25 @@ public class Shutdown extends Thread
 		saveData();
 
 		// saveData sends messages to exit players, so shutdown selector after it
-		try
-		{
+		try {
 			Server.gameServer.getSelectorThread().shutdown();
-		}
-		catch (Throwable t)
-		{
+		} catch (Throwable t) {
 			Log.warning("Something went wrong while shutting down selector thread: " + t.getMessage());
 			t.printStackTrace();
 		}
 
 		// commit data, last chance
-		try
-		{
+		try {
 			L2DatabaseFactory.getInstance().shutdown();
-		}
-		catch (Throwable t)
-		{
+		} catch (Throwable t) {
 			Log.warning("Something went wrong while shutting down DB connection: " + t.getMessage());
 			t.printStackTrace();
 		}
 
 		// server will quit, when this function ends.
-		if (shutdownMode == GM_RESTART)
-		{
+		if (shutdownMode == GM_RESTART) {
 			Runtime.getRuntime().halt(2);
-		}
-		else
-		{
+		} else {
 			Runtime.getRuntime().halt(0);
 		}
 	}
@@ -292,10 +238,8 @@ public class Shutdown extends Thread
 	/**
 	 * this sends a last byebye, disconnects all players and saves data
 	 */
-	private void saveData()
-	{
-		switch (shutdownMode)
-		{
+	private void saveData() {
+		switch (shutdownMode) {
 			case SIGTERM:
 				Log.info("SIGTERM received. Shutting down NOW!");
 				break;
@@ -344,20 +288,17 @@ public class Shutdown extends Thread
 		Log.info("Global Variables saved");
 
 		//Save items on ground before closing
-		if (Config.SAVE_DROPPED_ITEM)
-		{
+		if (Config.SAVE_DROPPED_ITEM) {
 			ItemsOnGroundManager.getInstance().saveInDb();
 			ItemsOnGroundManager.getInstance().cleanUp();
 			Log.info("ItemsOnGroundManager: All items on ground saved!!");
 		}
 
-		if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER)
-		{
+		if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER) {
 			DamageManager.getInstance().saveData();
 		}
 
-		if (Config.ENABLE_CUSTOM_LOTTERY)
-		{
+		if (Config.ENABLE_CUSTOM_LOTTERY) {
 			LotterySystem.getInstance().saveData();
 		}
 	}
@@ -365,62 +306,48 @@ public class Shutdown extends Thread
 	/**
 	 * this disconnects all clients from the server
 	 */
-	public void disconnectAllCharacters()
-	{
+	public void disconnectAllCharacters() {
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 		//synchronized (L2World.getInstance().getAllPlayers())
 		{
-			for (L2PcInstance player : pls)
-			{
-				if (player == null)
-				{
+			for (L2PcInstance player : pls) {
+				if (player == null) {
 					continue;
 				}
 
 				// Log out character
-				try
-				{
+				try {
 					L2GameClient client = player.getClient();
-					if (client != null && !client.isDetached())
-					{
+					if (client != null && !client.isDetached()) {
 						client.close(ServerClose.STATIC_PACKET);
 						client.setActiveChar(null);
 						player.setClient(null);
 					}
-				}
-				catch (Throwable t)
-				{
+				} catch (Throwable t) {
 					Log.log(Level.WARNING, "Failed to log out char " + player, t);
 				}
 			}
 
-			for (L2PcInstance player : pls)
-			{
-				if (player == null)
-				{
+			for (L2PcInstance player : pls) {
+				if (player == null) {
 					continue;
 				}
 
 				// Store character
-				try
-				{
+				try {
 					player.deleteMe();
-				}
-				catch (Throwable t)
-				{
+				} catch (Throwable t) {
 					Log.log(Level.WARNING, "Failed to store char " + player, t);
 				}
 			}
 		}
 	}
 
-	public boolean isShuttingDown()
-	{
+	public boolean isShuttingDown() {
 		return shuttingDown;
 	}
 
-	private class ShutdownTask extends Thread
-	{
+	private class ShutdownTask extends Thread {
 		private int secondsShut;
 
 		/**
@@ -429,32 +356,25 @@ public class Shutdown extends Thread
 		 * @param seconds how many seconds until shutdown
 		 * @param restart true is the server shall restart after shutdown
 		 */
-		public ShutdownTask(int seconds, boolean restart)
-		{
-			if (seconds < 0)
-			{
+		public ShutdownTask(int seconds, boolean restart) {
+			if (seconds < 0) {
 				seconds = 0;
 			}
 			secondsShut = seconds;
-			if (restart)
-			{
+			if (restart) {
 				shutdownMode = GM_RESTART;
-			}
-			else
-			{
+			} else {
 				shutdownMode = GM_SHUTDOWN;
 			}
 		}
 
 		@Override
-		public void run()
-		{
+		public void run() {
 			// gm shutdown: send warnings and then call exit to start shutdown sequence
 			countdown();
 			// last point where logging is operational :(
 			Log.warning("GM shutdown countdown is over. " + MODE_TEXT[shutdownMode] + " NOW!");
-			switch (shutdownMode)
-			{
+			switch (shutdownMode) {
 				case GM_SHUTDOWN:
 					System.exit(0);
 					break;
@@ -467,8 +387,7 @@ public class Shutdown extends Thread
 		/**
 		 * set shutdown mode to ABORT
 		 */
-		private void abort()
-		{
+		private void abort() {
 			shutdownMode = ABORT;
 		}
 
@@ -476,14 +395,10 @@ public class Shutdown extends Thread
 		 * this counts the countdown and reports it to all players
 		 * countdown is aborted if mode changes to ABORT
 		 */
-		private void countdown()
-		{
-			try
-			{
-				while (secondsShut > 0)
-				{
-					switch (secondsShut)
-					{
+		private void countdown() {
+			try {
+				while (secondsShut > 0) {
+					switch (secondsShut) {
 						case 540:
 							sendServerQuit(540, shutdownMode == GM_RESTART);
 							break;
@@ -539,14 +454,11 @@ public class Shutdown extends Thread
 					int delay = 1000; //milliseconds
 					Thread.sleep(delay);
 
-					if (shutdownMode == ABORT)
-					{
+					if (shutdownMode == ABORT) {
 						break;
 					}
 				}
-			}
-			catch (InterruptedException e)
-			{
+			} catch (InterruptedException e) {
 				//this will never happen
 			}
 		}
@@ -559,14 +471,12 @@ public class Shutdown extends Thread
 	 *
 	 * @return instance of Shutdown, to be used as shutdown hook
 	 */
-	public static Shutdown getInstance()
-	{
+	public static Shutdown getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final Shutdown instance = new Shutdown();
 	}
 }

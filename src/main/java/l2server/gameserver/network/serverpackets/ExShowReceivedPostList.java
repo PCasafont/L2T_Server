@@ -23,31 +23,25 @@ import java.util.List;
 /**
  * @author Pere, DS
  */
-public class ExShowReceivedPostList extends L2GameServerPacket
-{
-
+public class ExShowReceivedPostList extends L2GameServerPacket {
+	
 	private List<Message> inbox;
-
-	public ExShowReceivedPostList(int objectId)
-	{
+	
+	public ExShowReceivedPostList(int objectId) {
 		inbox = MailManager.getInstance().getInbox(objectId);
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD((int) (System.currentTimeMillis() / 1000));
-		if (inbox != null && inbox.size() > 0)
-		{
+		if (inbox != null && inbox.size() > 0) {
 			writeD(inbox.size());
-			for (Message msg : inbox)
-			{
+			for (Message msg : inbox) {
 				writeD(msg.getSendBySystem());
-				if (msg.getSendBySystem() == Message.SendBySystem.SYSTEM.ordinal())
-				{
+				if (msg.getSendBySystem() == Message.SendBySystem.SYSTEM.ordinal()) {
 					writeD(msg.getSystemMessage1());
 				}
 				writeD(msg.getId());
@@ -64,9 +58,7 @@ public class ExShowReceivedPostList extends L2GameServerPacket
 			writeD(2902007);
 			writeD(100);
 			writeD(1000);
-		}
-		else
-		{
+		} else {
 			writeD(0x00);
 		}
 	}

@@ -26,48 +26,41 @@ import java.util.concurrent.ScheduledFuture;
 /**
  * @author LasTravel
  */
-public class DamageManager
-{
+public class DamageManager {
 	private static Map<Integer, DamageInfo> dmgIinfo = new HashMap<>();
 	protected static ScheduledFuture<?> saveTask;
 
-	public String getRankingInfo()
-	{
+	public String getRankingInfo() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(
 				"<table bgcolor=999999 width=750><tr><td></td><td FIXWIDTH=200>Class</td><td FIXWIDTH=250>Actual Record</td><td FIXWIDTH=250>Actual Owner</td></tr></table>");
 
-		for (Entry<Integer, DamageInfo> info : dmgIinfo.entrySet())
-		{
+		for (Entry<Integer, DamageInfo> info : dmgIinfo.entrySet()) {
 			String className = PlayerClassTable.getInstance().getClassNameById(info.getKey());
 			int actualrecord = info.getValue().getCurrentDamage();
 			String actualowner = info.getValue().getNewName();
 
-			if (actualowner.equals(""))
-			{
+			if (actualowner.equals("")) {
 				actualowner = "none";
 			}
 
 			sb.append(
-					"<table cellspacing=0 cellpadding=2 width=750 height=17><tr><td><img src=\"L2UI_CT1.PlayerStatusWnd_ClassMark_" +
-							info.getKey() + "_Big\" width=32 height=32></td><td FIXWIDTH=200>" + className +
-							"</td><td FIXWIDTH=250>" + actualrecord + "</td><td FIXWIDTH=250>" + actualowner +
-							"</td></tr></table>");
+					"<table cellspacing=0 cellpadding=2 width=750 height=17><tr><td><img src=\"L2UI_CT1.PlayerStatusWnd_ClassMark_" + info.getKey() +
+							"_Big\" width=32 height=32></td><td FIXWIDTH=200>" + className + "</td><td FIXWIDTH=250>" + actualrecord +
+							"</td><td FIXWIDTH=250>" + actualowner + "</td></tr></table>");
 			sb.append("<table><tr><td><img src=\"L2UI.Squaregray\" width=750 height=1></td></tr></table>");
 		}
 		return sb.toString();
 	}
 
-	private class DamageInfo
-	{
+	private class DamageInfo {
 		private int classId;
 		private int newDamage;
 		private String newName;
 		private int playerId;
 		private String hwId;
 
-		private DamageInfo(int classid, int newdmg, String newname, int playerid, String hwId)
-		{
+		private DamageInfo(int classid, int newdmg, String newname, int playerid, String hwId) {
 			classId = classid;
 			newDamage = newdmg;
 			newName = newname;
@@ -75,44 +68,39 @@ public class DamageManager
 			this.hwId = hwId;
 		}
 
-		private void reset()
-		{
+		private void reset() {
 			newDamage = 0;
 			newName = "";
 			playerId = 0;
 			hwId = "";
 		}
 
-		private int getClassId()
-		{
+		private int getClassId() {
 			return classId;
 		}
 
-		private int getCurrentDamage()
-		{
+		private int getCurrentDamage() {
 			return newDamage;
 		}
 
-		private String getNewName()
-		{
+		private String getNewName() {
 			return newName;
 		}
 
-		private int getPlayerId()
-		{
+		private int getPlayerId() {
 			return playerId;
 		}
 
-		private String gethwId()
-		{
+		private String gethwId() {
 			return hwId;
 		}
 
-		private void setNewData(int dmg, L2PcInstance pl)
-		{
-			pl.sendPacket(new CreatureSay(36610, 2, "Damage Manager", "Congrats, you raised the $1 record with $2!"
-					.replace("$1", PlayerClassTable.getInstance().getClassNameById(pl.getClassId()))
-					.replace("$2", String.valueOf(dmg))));
+		private void setNewData(int dmg, L2PcInstance pl) {
+			pl.sendPacket(new CreatureSay(36610,
+					2,
+					"Damage Manager",
+					"Congrats, you raised the $1 record with $2!".replace("$1", PlayerClassTable.getInstance().getClassNameById(pl.getClassId()))
+							.replace("$2", String.valueOf(dmg))));
 
 			newDamage = dmg;
 			newName = pl.getName();
@@ -121,16 +109,13 @@ public class DamageManager
 		}
 	}
 
-	public void giveDamage(L2PcInstance pl, int dmg)
-	{
-		if (pl == null)
-		{
+	public void giveDamage(L2PcInstance pl, int dmg) {
+		if (pl == null) {
 			return;
 		}
 
 		DamageInfo info = dmgIinfo.get(pl.getClassId());
-		if (info == null)
-		{
+		if (info == null) {
 			return;
 		}
 
@@ -138,8 +123,7 @@ public class DamageManager
 		if (hwId == null || hwId.equalsIgnoreCase(""))
 			return;*/
 
-		if (dmg > info.getCurrentDamage())
-		{
+		if (dmg > info.getCurrentDamage()) {
             /*if (playerMatch(pl.getHWID(), pl.getClassId()))
 			{
 				pl.sendMessage("You already have another record, only one per person is allowed");
@@ -150,96 +134,80 @@ public class DamageManager
 	}
 
 	@SuppressWarnings("unused")
-	private boolean playerMatch(String hwId, int playerClassId)
-	{
-		for (Entry<Integer, DamageInfo> info : dmgIinfo.entrySet())
-		{
-			if (info.getValue().gethwId().equalsIgnoreCase(hwId))
-			{
+	private boolean playerMatch(String hwId, int playerClassId) {
+		for (Entry<Integer, DamageInfo> info : dmgIinfo.entrySet()) {
+			if (info.getValue().gethwId().equalsIgnoreCase(hwId)) {
 				return info.getValue().getClassId() != playerClassId;
 			}
 		}
 		return false;
 	}
 
-	public void saveData()
-	{
+	public void saveData() {
 		Log.fine("Damage Manager: Saving information..!");
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 
 			PreparedStatement statement = null;
-			for (Entry<Integer, DamageInfo> info : dmgIinfo.entrySet())
-			{
-				if (info == null)
-				{
+			for (Entry<Integer, DamageInfo> info : dmgIinfo.entrySet()) {
+				if (info == null) {
 					continue;
 				}
-				statement = con.prepareStatement(
-						"UPDATE `dmg_data` SET `newdmg`=?, `newname`=?, `playerid`=?, `hwId`=? WHERE `classid`=?");
+				statement = con.prepareStatement("UPDATE `dmg_data` SET `newdmg`=?, `newname`=?, `playerid`=? WHERE `classid`=?");
 				statement.setInt(1, info.getValue().getCurrentDamage());
 				statement.setString(2, info.getValue().getNewName());
 				statement.setInt(3, info.getValue().getPlayerId());
 				statement.setString(4, info.getValue().gethwId());
-				statement.setInt(5, info.getValue().getClassId());
+				//statement.setInt(5, info.getValue().getClassId());
 				statement.executeUpdate();
 				statement.close();
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public void giveRewardsAndReset()
-	{
-		if (dmgIinfo.isEmpty())
-		{
+	public void giveRewardsAndReset() {
+		if (dmgIinfo.isEmpty()) {
 			return;
 		}
 
 		// Give Rewards (Memory)
 		List<Integer> rewardedCharIds = new ArrayList<>();
-		for (Entry<Integer, DamageInfo> damageInfo : dmgIinfo.entrySet())
-		{
-			if (damageInfo == null)
-			{
+		for (Entry<Integer, DamageInfo> damageInfo : dmgIinfo.entrySet()) {
+			if (damageInfo == null) {
 				continue;
 			}
 
 			DamageInfo info = damageInfo.getValue();
-			if (info == null)
-			{
+			if (info == null) {
 				continue;
 			}
 
 			int charId = info.getPlayerId();
 			String playerName = CharNameTable.getInstance().getNameById(charId);
-			if (playerName == null || info.getCurrentDamage() == 0)
-			{
+			if (playerName == null || info.getCurrentDamage() == 0) {
 				continue;
 			}
 
-			if (rewardedCharIds.contains(charId))
-			{
+			if (rewardedCharIds.contains(charId)) {
 				continue;
 			}
 
 			rewardedCharIds.add(charId);
 
-			Message msg = new Message(-1, charId, false, "Damage Manager",
-					"Congratulations, you was classified on Damage Ranking, here is your reward!", 0);
+			Message msg = new Message(-1,
+					charId,
+					false,
+					"Damage Manager",
+					"Congratulations, you was classified on Damage Ranking, here is your reward!",
+					0);
 
 			Mail attachments = msg.createAttachments();
-			attachments.addItem("Damage Manager", Config.CUSTOM_DAMAGE_MANAGER_REWARD_ID,
-					Config.CUSTOM_DAMAGE_MANAGER_REWARD_AMOUNT, null, null);
+			attachments.addItem("Damage Manager", Config.CUSTOM_DAMAGE_MANAGER_REWARD_ID, Config.CUSTOM_DAMAGE_MANAGER_REWARD_AMOUNT, null, null);
 
 			MailManager.getInstance().sendMessage(msg);
 			//Log.info("Damage Manager: Player: " + damageInfo.getValue().getNewName() + " rewarded!");
@@ -249,86 +217,69 @@ public class DamageManager
 		truncateTable();
 
 		// Restart info from memory
-		for (Entry<Integer, DamageInfo> info : dmgIinfo.entrySet())
-		{
-			if (info.getValue().getCurrentDamage() > 0)
-			{
+		for (Entry<Integer, DamageInfo> info : dmgIinfo.entrySet()) {
+			if (info.getValue().getCurrentDamage() > 0) {
 				info.getValue().reset();
 			}
 		}
 
 		// Announce to all online
-		Announcements.getInstance().announceToAll(
-				"All players classified on Damage Ranking were rewarded and the ranking was restarted, more rewards the next week!");
+		Announcements.getInstance()
+				.announceToAll("All players classified on Damage Ranking were rewarded and the ranking was restarted, more rewards the next week!");
 	}
 
-	private static void truncateTable()
-	{
+	private static void truncateTable() {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 
 			PreparedStatement statement = null;
-			statement = con.prepareStatement(
-					"UPDATE dmg_data SET newdmg=0, playerid=0, newname=0, hwId=0 WHERE newdmg > 0");
+			statement = con.prepareStatement("UPDATE dmg_data SET newdmg=0, playerid=0, newname=0, hwId=0 WHERE newdmg > 0");
 			statement.executeUpdate();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	private void load()
-	{
+	private void load() {
 		Log.info("Damage Manager: Loading DMG Ranking information..!");
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 
-			PreparedStatement statement =
-						con.prepareStatement("SELECT `classid`, `newdmg`, `newname`, `playerid`, '' FROM `dmg_data`");
+			PreparedStatement statement = con.prepareStatement("SELECT `classid`, `newdmg`, `newname`, `playerid`, '' FROM `dmg_data`");
 			ResultSet rs = statement.executeQuery();
-			while (rs.next())
-			{
-				DamageInfo info = new DamageInfo(rs.getInt("classid"), rs.getInt("newdmg"), rs.getString("newname"),
-						rs.getInt("playerid"), "" /*rs.getString("hwId")*/);
+			while (rs.next()) {
+				DamageInfo info = new DamageInfo(rs.getInt("classid"),
+						rs.getInt("newdmg"),
+						rs.getString("newname"),
+						rs.getInt("playerid"),
+						"" /*rs.getString("hwId")*/);
 				dmgIinfo.put(info.getClassId(), info);
 			}
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 
 		saveTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::saveData, 3600000, 3600000);
 	}
 
-	private DamageManager()
-	{
+	private DamageManager() {
 		load();
 	}
 
-	public static DamageManager getInstance()
-	{
+	public static DamageManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final DamageManager instance = new DamageManager();
 	}
 }

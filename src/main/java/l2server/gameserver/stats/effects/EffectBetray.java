@@ -27,10 +27,8 @@ import l2server.gameserver.templates.skills.L2EffectType;
 /**
  * @author decad
  */
-public class EffectBetray extends L2Effect
-{
-	public EffectBetray(Env env, L2EffectTemplate template)
-	{
+public class EffectBetray extends L2Effect {
+	public EffectBetray(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -38,14 +36,12 @@ public class EffectBetray extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.BETRAY;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.BETRAY;
 	}
 
@@ -53,10 +49,8 @@ public class EffectBetray extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (getEffector() instanceof L2PcInstance && getEffected() instanceof L2Summon)
-		{
+	public boolean onStart() {
+		if (getEffector() instanceof L2PcInstance && getEffected() instanceof L2Summon) {
 			L2PcInstance targetOwner = getEffected().getActingPlayer();
 			getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, targetOwner);
 			return true;
@@ -68,8 +62,7 @@ public class EffectBetray extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 	}
 
@@ -77,8 +70,7 @@ public class EffectBetray extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 }

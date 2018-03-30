@@ -20,27 +20,24 @@ import l2server.util.Point3D;
 /**
  * @author Maktakien
  */
-public class GetOnVehicle extends L2GameServerPacket
-{
+public class GetOnVehicle extends L2GameServerPacket {
 	private int charObjId;
 	private int boatObjId;
 	private Point3D pos;
-
+	
 	/**
 	 */
-	public GetOnVehicle(int charObjId, int boatObjId, Point3D pos)
-	{
+	public GetOnVehicle(int charObjId, int boatObjId, Point3D pos) {
 		this.charObjId = charObjId;
 		this.boatObjId = boatObjId;
 		this.pos = pos;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(charObjId);
 		writeD(boatObjId);
 		writeD(pos.getX());

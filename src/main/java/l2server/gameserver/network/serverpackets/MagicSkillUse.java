@@ -27,8 +27,7 @@ import l2server.gameserver.model.actor.L2Character;
  *
  * @version $Revision: 1.4.2.1.2.4 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class MagicSkillUse extends L2GameServerPacket
-{
+public final class MagicSkillUse extends L2GameServerPacket {
 	private int targetId, tx, ty, tz;
 	private int gauge;
 	private int skillId;
@@ -40,21 +39,35 @@ public final class MagicSkillUse extends L2GameServerPacket
 	private boolean ground = false;
 	private int groundX, groundY, groundZ;
 	private int skillActionId;
-
+	
 	//private int flags;
-
-	public MagicSkillUse(L2Character cha, L2Character target, int skillId, int skillLevel, int hitTime, int reuseDelay, int reuseGroup, int gauge, int skillActionId)
-	{
+	
+	public MagicSkillUse(L2Character cha,
+	                     L2Character target,
+	                     int skillId,
+	                     int skillLevel,
+	                     int hitTime,
+	                     int reuseDelay,
+	                     int reuseGroup,
+	                     int gauge,
+	                     int skillActionId) {
 		this(cha, target, skillId, skillLevel, hitTime, reuseDelay, reuseGroup, gauge, false, skillActionId);
 	}
-
-	public MagicSkillUse(L2Character cha, L2Character target, int skillId, int skillLevel, int hitTime, int reuseDelay, int skillActionId)
-	{
+	
+	public MagicSkillUse(L2Character cha, L2Character target, int skillId, int skillLevel, int hitTime, int reuseDelay, int skillActionId) {
 		this(cha, target, skillId, skillLevel, hitTime, reuseDelay, reuseDelay > 0 ? 0 : -1, 0, skillActionId);
 	}
-
-	public MagicSkillUse(L2Character cha, L2Character target, int skillId, int skillLevel, int hitTime, int reuseDelay, int reuseGroup, int gauge, boolean ground, int skillActionId)
-	{
+	
+	public MagicSkillUse(L2Character cha,
+	                     L2Character target,
+	                     int skillId,
+	                     int skillLevel,
+	                     int hitTime,
+	                     int reuseDelay,
+	                     int reuseGroup,
+	                     int gauge,
+	                     boolean ground,
+	                     int skillActionId) {
 		charObjId = cha.getObjectId();
 		targetId = target.getObjectId();
 		this.gauge = gauge;
@@ -70,20 +83,18 @@ public final class MagicSkillUse extends L2GameServerPacket
 		ty = target.getY();
 		tz = target.getZ();
 		//flags |= 0x20;
-
+		
 		this.ground = ground;
-		if (ground)
-		{
+		if (ground) {
 			groundX = cha.getSkillCastPosition().getX();
 			groundY = cha.getSkillCastPosition().getY();
 			groundZ = z + 10;
 		}
-
+		
 		this.skillActionId = skillActionId;
 	}
-
-	public MagicSkillUse(L2Character cha, int skillId, int skillLevel, int hitTime, int reuseDelay)
-	{
+	
+	public MagicSkillUse(L2Character cha, int skillId, int skillLevel, int hitTime, int reuseDelay) {
 		charObjId = cha.getObjectId();
 		targetId = cha.getTargetId();
 		gauge = 0;
@@ -100,10 +111,9 @@ public final class MagicSkillUse extends L2GameServerPacket
 		tz = cha.getZ();
 		//flags |= 0x20;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(gauge); // Don't show casting bar if 1
 		writeD(charObjId);
 		writeD(targetId);
@@ -116,30 +126,24 @@ public final class MagicSkillUse extends L2GameServerPacket
 		writeD(y);
 		writeD(z);
 		writeH(0x00);
-
-		if (ground)
-		{
+		
+		if (ground) {
 			writeH(0x01);
 			writeD(groundX);
 			writeD(groundY);
 			writeD(groundZ);
-		}
-		else
-		{
+		} else {
 			writeH(0x00);
 		}
-
+		
 		writeD(tx);
 		writeD(ty);
 		writeD(tz);
-
-		if (skillActionId == 0)
-		{
+		
+		if (skillActionId == 0) {
 			writeD(0x00);
 			writeD(0x00);
-		}
-		else
-		{
+		} else {
 			writeD(0x01);
 			writeD(skillActionId);
 		}

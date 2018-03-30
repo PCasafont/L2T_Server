@@ -23,51 +23,38 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import java.util.Collection;
 import java.util.StringTokenizer;
 
-public class AdminKick implements IAdminCommandHandler
-{
+public class AdminKick implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_kick", "admin_kick_non_gm"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		if (command.startsWith("admin_kick"))
-		{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		if (command.startsWith("admin_kick")) {
 			StringTokenizer st = new StringTokenizer(command);
-			if (st.countTokens() > 1)
-			{
+			if (st.countTokens() > 1) {
 				st.nextToken();
 				String player = st.nextToken();
 				L2PcInstance plyr = L2World.getInstance().getPlayer(player);
-				if (plyr != null)
-				{
+				if (plyr != null) {
 					plyr.logout();
 					activeChar.sendMessage("You kicked " + plyr.getName() + " from the game.");
 				}
-			}
-			else if (activeChar.getTarget() instanceof L2PcInstance)
-			{
+			} else if (activeChar.getTarget() instanceof L2PcInstance) {
 				L2PcInstance target = (L2PcInstance) activeChar.getTarget();
-				if (target instanceof L2ApInstance)
-				{
+				if (target instanceof L2ApInstance) {
 					target.deleteMe();
-				}
-				else
-				{
+				} else {
 					target.logout();
 				}
 				activeChar.sendMessage("You kicked " + target.getName() + " from the game.");
 			}
 		}
-		if (command.startsWith("admin_kick_non_gm"))
-		{
+		if (command.startsWith("admin_kick_non_gm")) {
 			int counter = 0;
 			Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
 			//synchronized (L2World.getInstance().getAllPlayers())
 			{
-				for (L2PcInstance player : pls)
-				{
-					if (!player.isGM())
-					{
+				for (L2PcInstance player : pls) {
+					if (!player.isGM()) {
 						counter++;
 						player.logout();
 					}
@@ -79,8 +66,7 @@ public class AdminKick implements IAdminCommandHandler
 	}
 
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
 }

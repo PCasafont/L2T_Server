@@ -25,8 +25,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-public final class ConditionSlotItemId extends ConditionInventory
-{
+public final class ConditionSlotItemId extends ConditionInventory {
 
 	private final int itemId;
 	private final int enchantLevel;
@@ -38,8 +37,7 @@ public final class ConditionSlotItemId extends ConditionInventory
 	 * @param itemId       the item id
 	 * @param enchantLevel the enchant level
 	 */
-	public ConditionSlotItemId(int slot, int itemId, int enchantLevel)
-	{
+	public ConditionSlotItemId(int slot, int itemId, int enchantLevel) {
 		super(slot);
 		this.itemId = itemId;
 		this.enchantLevel = enchantLevel;
@@ -49,16 +47,13 @@ public final class ConditionSlotItemId extends ConditionInventory
 	 * @see l2server.gameserver.stats.conditions.ConditionInventory#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 		Inventory inv = ((L2PcInstance) env.player).getInventory();
 		L2ItemInstance item = inv.getPaperdollItem(slot);
-		if (item == null)
-		{
+		if (item == null) {
 			return itemId == 0;
 		}
 		return item.getItemId() == itemId && item.getEnchantLevel() >= enchantLevel;

@@ -30,20 +30,17 @@ import java.util.concurrent.Future;
  *
  * @author durgus
  */
-public class L2DynamicZone extends L2ZoneType
-{
+public class L2DynamicZone extends L2ZoneType {
 	private L2WorldRegion region;
 	private L2Character owner;
 	private Future<?> task;
 	private L2Skill skill;
 
-	protected void setTask(Future<?> task)
-	{
+	protected void setTask(Future<?> task) {
 		this.task = task;
 	}
 
-	public L2DynamicZone(L2WorldRegion region, L2Character owner, L2Skill skill)
-	{
+	public L2DynamicZone(L2WorldRegion region, L2Character owner, L2Skill skill) {
 		super(-1);
 		this.region = region;
 		this.owner = owner;
@@ -54,55 +51,41 @@ public class L2DynamicZone extends L2ZoneType
 	}
 
 	@Override
-	protected void onEnter(L2Character character)
-	{
-		try
-		{
-			if (character instanceof L2PcInstance)
-			{
+	protected void onEnter(L2Character character) {
+		try {
+			if (character instanceof L2PcInstance) {
 				character.sendMessage("You have entered a temporary zone!");
 			}
 			skill.getEffects(owner, character);
-		}
-		catch (NullPointerException e)
-		{
+		} catch (NullPointerException e) {
 			e.printStackTrace();
 		}
 	}
 
 	@Override
-	protected void onExit(L2Character character)
-	{
-		if (character instanceof L2PcInstance)
-		{
+	protected void onExit(L2Character character) {
+		if (character instanceof L2PcInstance) {
 			character.sendMessage("You have left a temporary zone!");
 		}
-		if (character == owner)
-		{
+		if (character == owner) {
 			remove();
 			return;
 		}
 		character.stopSkillEffects(skill.getId());
 	}
 
-	protected void remove()
-	{
-		if (task == null)
-		{
+	protected void remove() {
+		if (task == null) {
 			return;
 		}
 		task.cancel(false);
 		task = null;
 
 		region.removeZone(this);
-		for (L2Character member : characterList.values())
-		{
-			try
-			{
+		for (L2Character member : characterList.values()) {
+			try {
 				member.stopSkillEffects(skill.getId());
-			}
-			catch (NullPointerException e)
-			{
+			} catch (NullPointerException e) {
 				e.printStackTrace();
 			}
 		}
@@ -110,21 +93,16 @@ public class L2DynamicZone extends L2ZoneType
 	}
 
 	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
-		if (character == owner)
-		{
+	public void onDieInside(L2Character character, L2Character killer) {
+		if (character == owner) {
 			remove();
-		}
-		else
-		{
+		} else {
 			character.stopSkillEffects(skill.getId());
 		}
 	}
 
 	@Override
-	public void onReviveInside(L2Character character)
-	{
+	public void onReviveInside(L2Character character) {
 		skill.getEffects(owner, character);
 	}
 }

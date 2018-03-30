@@ -28,41 +28,34 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
  *
  * @version $Revision: 1.2.4.4 $ $Date: 2005/03/29 23:15:33 $
  */
-public final class RequestPetGetItem extends L2GameClientPacket
-{
+public final class RequestPetGetItem extends L2GameClientPacket {
 	private int objectId;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		objectId = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2World world = L2World.getInstance();
 		L2ItemInstance item = (L2ItemInstance) world.findObject(objectId);
-		if (item == null || getClient().getActiveChar() == null)
-		{
+		if (item == null || getClient().getActiveChar() == null) {
 			return;
 		}
 
 		int castleId = MercTicketManager.getInstance().getTicketCastleId(item.getItemId());
-		if (castleId > 0)
-		{
+		if (castleId > 0) {
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
 		L2PetInstance pet = getClient().getActiveChar().getPet();
-		if (pet == null || pet.isDead() || pet.isOutOfControl())
-		{
+		if (pet == null || pet.isDead() || pet.isOutOfControl()) {
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		if (FortSiegeManager.getInstance().isCombat(item.getItemId()))
-		{
+		if (FortSiegeManager.getInstance().isCombat(item.getItemId())) {
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}

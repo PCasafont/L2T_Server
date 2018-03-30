@@ -25,8 +25,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-public final class ConditionSlotItemType extends ConditionInventory
-{
+public final class ConditionSlotItemType extends ConditionInventory {
 
 	private final int mask;
 
@@ -36,8 +35,7 @@ public final class ConditionSlotItemType extends ConditionInventory
 	 * @param slot the slot
 	 * @param mask the mask
 	 */
-	public ConditionSlotItemType(int slot, int mask)
-	{
+	public ConditionSlotItemType(int slot, int mask) {
 		super(slot);
 		this.mask = mask;
 	}
@@ -46,16 +44,13 @@ public final class ConditionSlotItemType extends ConditionInventory
 	 * @see l2server.gameserver.stats.conditions.ConditionInventory#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 		Inventory inv = ((L2PcInstance) env.player).getInventory();
 		L2ItemInstance item = inv.getPaperdollItem(slot);
-		if (item == null)
-		{
+		if (item == null) {
 			return false;
 		}
 		return (item.getItem().getItemMask() & mask) != 0;

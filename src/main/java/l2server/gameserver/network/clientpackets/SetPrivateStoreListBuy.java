@@ -15,8 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
-
 import l2server.Config;
 import l2server.gameserver.model.TradeList;
 import l2server.gameserver.model.actor.L2Character;
@@ -29,40 +27,37 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.gameserver.util.Util;
 
+import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
+
 /**
  * This class ...
  *
  * @version $Revision: 1.2.2.1.2.5 $ $Date: 2005/03/27 15:29:30 $
- *          CPU Disasm
- *          Packets: ddhhQQ cddb
+ * CPU Disasm
+ * Packets: ddhhQQ cddb
  */
-public final class SetPrivateStoreListBuy extends L2GameClientPacket
-{
+public final class SetPrivateStoreListBuy extends L2GameClientPacket {
 	private static final int BATCH_LENGTH = 46; // length of the one item
-
+	
 	private Item[] items = null;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		int count = readD();
-		if (count < 1 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining())
-		{
+		if (count < 1 || count > Config.MAX_ITEM_IN_PACKET || count * BATCH_LENGTH != buf.remaining()) {
 			return;
 		}
-
+		
 		items = new Item[count];
-		for (int i = 0; i < count; i++)
-		{
+		for (int i = 0; i < count; i++) {
 			int itemId = readD();
-
+			
 			readD(); // TODO analyse this
-
+			
 			long cnt = readQ();
 			long price = readQ();
-
-			if (itemId < 1 || cnt < 1 || price < 0)
-			{
+			
+			if (itemId < 1 || cnt < 1 || price < 0) {
 				items = null;
 				return;
 			}
@@ -70,102 +65,86 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 			readD(); // Unk
 			readD(); // Unk
 			readD(); // Unk
-
+			
 			readD(); // GoD ???
 			readH(); // GoD ???
-
+			
 			items[i] = new Item(itemId, cnt, price);
 		}
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
-
-		if (items == null)
-		{
+		
+		if (items == null) {
 			player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
 			player.broadcastUserInfo();
 			return;
 		}
-
-		if (player.getEvent() != null)
-		{
+		
+		if (player.getEvent() != null) {
 			player.sendMessage("You cannot buy items while being involved in an event!");
 			return;
 		}
-
-		if (player.getOlympiadGameId() > -1)
-		{
+		
+		if (player.getOlympiadGameId() > -1) {
 			player.sendMessage("You cannot buy items while being involved in the Grand Olympiad!");
 			return;
 		}
-
-		if (!player.getAccessLevel().allowTransaction())
-		{
+		
+		if (!player.getAccessLevel().allowTransaction()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
 			return;
 		}
-
-		if (AttackStanceTaskManager.getInstance().getAttackStanceTask(player) || player.isInDuel())
-		{
+		
+		if (AttackStanceTaskManager.getInstance().getAttackStanceTask(player) || player.isInDuel()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_OPERATE_PRIVATE_STORE_DURING_COMBAT));
 			player.sendPacket(new PrivateStoreManageListBuy(player));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
-		if (player.isInsideZone(L2Character.ZONE_NOSTORE))
-		{
+		
+		if (player.isInsideZone(L2Character.ZONE_NOSTORE)) {
 			player.sendPacket(new PrivateStoreManageListBuy(player));
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PRIVATE_STORE_HERE));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
+		
 		TradeList tradeList = player.getBuyList();
 		tradeList.clear();
-
+		
 		// Check maximum number of allowed slots for pvt shops
-		if (items.length > player.getPrivateBuyStoreLimit())
-		{
+		if (items.length > player.getPrivateBuyStoreLimit()) {
 			player.sendPacket(new PrivateStoreManageListBuy(player));
-			player.sendPacket(
-					SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EXCEEDED_QUANTITY_THAT_CAN_BE_INPUTTED));
+			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EXCEEDED_QUANTITY_THAT_CAN_BE_INPUTTED));
 			return;
 		}
-
-		for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70))
-		{
-			if (!(c instanceof L2PcInstance &&
-					((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE))
-			{
+		
+		for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70)) {
+			if (!(c instanceof L2PcInstance && ((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE)) {
 				player.sendPacket(new PrivateStoreManageListBuy(player));
 				player.sendMessage("Try to put your store a little further from " + c.getName() + ", please.");
 				return;
 			}
 		}
-
+		
 		long totalCost = 0;
-		for (Item i : items)
-		{
-			if (!i.addToTradeList(tradeList))
-			{
+		for (Item i : items) {
+			if (!i.addToTradeList(tradeList)) {
 				Util.handleIllegalPlayerAction(player,
-						"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
-								" tried to set price more than " + MAX_ADENA + " adena in Private Store - Buy.",
+						"Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " tried to set price more than " +
+								MAX_ADENA + " adena in Private Store - Buy.",
 						Config.DEFAULT_PUNISH);
 				return;
 			}
-
+			
 			totalCost += i.getCost();
-			if (totalCost > MAX_ADENA)
-			{
+			if (totalCost > MAX_ADENA) {
 				Util.handleIllegalPlayerAction(player,
 						"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
 								" tried to set total price more than " + MAX_ADENA + " adena in Private Store - Buy.",
@@ -173,48 +152,42 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 				return;
 			}
 		}
-
+		
 		// Check for available funds
-		if (totalCost > player.getAdena())
-		{
+		if (totalCost > player.getAdena()) {
 			player.sendPacket(new PrivateStoreManageListBuy(player));
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_PURCHASE_PRICE_IS_HIGHER_THAN_MONEY));
 			return;
 		}
-
+		
 		player.sitDown();
 		player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_BUY);
-
+		
 		player.broadcastUserInfo();
 		player.broadcastPacket(new PrivateStoreMsgBuy(player));
 	}
-
-	private static class Item
-	{
+	
+	private static class Item {
 		private final int itemId;
 		private final long count;
 		private final long price;
-
-		public Item(int id, long num, long pri)
-		{
+		
+		public Item(int id, long num, long pri) {
 			itemId = id;
 			count = num;
 			price = pri;
 		}
-
-		public boolean addToTradeList(TradeList list)
-		{
-			if (MAX_ADENA / count < price)
-			{
+		
+		public boolean addToTradeList(TradeList list) {
+			if (MAX_ADENA / count < price) {
 				return false;
 			}
-
+			
 			list.addItemByItemId(itemId, count, price);
 			return true;
 		}
-
-		public long getCost()
-		{
+		
+		public long getCost() {
 			return count * price;
 		}
 	}

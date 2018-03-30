@@ -1,12 +1,12 @@
 CREATE TABLE IF NOT EXISTS `itemsonground` (
-  `object_id` int(11) NOT NULL default '0',
-  `item_id` int(11) default NULL,
-  `count` BIGINT UNSIGNED NOT NULL default 0,
-  `enchant_level` int(11) default NULL,
-  `x` int(11) default NULL,
-  `y` int(11) default NULL,
-  `z` int(11) default NULL,
-  `drop_time` bigint(13) unsigned NOT NULL DEFAULT '0',
-  `equipable` int(1) default '0',
+  `object_id`     INT(11)             NOT NULL DEFAULT '0',
+  `item_id`       INT(11)                      DEFAULT NULL,
+  `count`         BIGINT UNSIGNED     NOT NULL DEFAULT 0,
+  `enchant_level` INT(11)                      DEFAULT NULL,
+  `x`             INT(11)                      DEFAULT NULL,
+  `y`             INT(11)                      DEFAULT NULL,
+  `z`             INT(11)                      DEFAULT NULL,
+  `drop_time`     BIGINT(13) UNSIGNED NOT NULL DEFAULT '0',
+  `equipable`     INT(1)                       DEFAULT '0',
   PRIMARY KEY (`object_id`)
 );

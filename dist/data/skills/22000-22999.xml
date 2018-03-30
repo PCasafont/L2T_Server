@@ -72,7 +72,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="20083,1,20;20086,1,20;20089,1,20;20084,1,10;20087,1,10;20090,1,10;20085,1,3.33;20088,1,3.33;20091,1,3.33" />
+		<set name="capsuled_items_skill"
+			 val="20083,1,20;20086,1,20;20089,1,20;20084,1,10;20087,1,10;20090,1,10;20085,1,3.33;20088,1,3.33;20091,1,3.33" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -87,7 +88,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="20083,1,20;20086,1,20;20089,1,20;20084,1,10;20087,1,10;20090,1,10;20085,1,3.33;20088,1,3.33;20091,1,3.33" />
+		<set name="capsuled_items_skill"
+			 val="20083,1,20;20086,1,20;20089,1,20;20084,1,10;20087,1,10;20090,1,10;20085,1,3.33;20088,1,3.33;20091,1,3.33" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -467,7 +469,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="20255,1,8.34;20256,1,8.34;20257,1,8.34;20258,1,8.34;20259,1,8.34;20260,1,8.34;20261,1,8.34;20262,1,8.34;20263,1,8.34;20264,1,8.34;20265,1,8.34;20270,1,8.26" />
+		<set name="capsuled_items_skill"
+			 val="20255,1,8.34;20256,1,8.34;20257,1,8.34;20258,1,8.34;20259,1,8.34;20260,1,8.34;20261,1,8.34;20262,1,8.34;20263,1,8.34;20264,1,8.34;20265,1,8.34;20270,1,8.26" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -523,8 +526,8 @@
 		Level 2: Obtained XP + 50%.
 	-->
 	<skill id="22039" levels="2" name="XP Rune III (Lv. 1-100+) 50%">
-		<table name="#xpGain">30 50		</table>
-		<table name="#name">XP Rune III (Lv. 1-100+) 30%;XP Rune III (Lv. 1-100+) 50%		</table>
+		<table name="#xpGain">30 50</table>
+		<table name="#name">XP Rune III (Lv. 1-100+) 30%;XP Rune III (Lv. 1-100+) 50%</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -538,8 +541,8 @@
 		Level 2: SP Acquisition + 50%.
 	-->
 	<skill id="22040" levels="2" name="SP Rune 50%">
-		<table name="#spGain">30 50		</table>
-		<table name="#name">SP Rune 30%;SP Rune 50%		</table>
+		<table name="#spGain">30 50</table>
+		<table name="#name">SP Rune 30%;SP Rune 50%</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -553,7 +556,7 @@
 		Level 2: Decreases your grade penalty by 5 levels.
 	-->
 	<skill id="22041" levels="2" name="Rune of Crystal (Lv. 5)">
-		<table name="#name">Rune of Crystal (Lv. 3);Rune of Crystal (Lv. 5)		</table>
+		<table name="#name">Rune of Crystal (Lv. 3);Rune of Crystal (Lv. 5)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -574,10 +577,12 @@
 		</for>
 	</skill>
 	<skill id="22043" levels="6" name="Elixir of CP (S-grade)">
-		<table name="#power">200 800 1500 2000 2500 3000		</table>
-		<table name="#minLvl">0 20 40 52 61 76		</table>
-		<table name="#maxLvl">20 40 52 61 76 86		</table>
-		<table name="#name">Elixir of CP (D-grade);Elixir of CP (D-grade);Elixir of CP (C-grade);Elixir of CP;            (B-grade);Elixir of CP (A-grade);Elixir of CP;(S-grade);        		</table>
+		<table name="#power">200 800 1500 2000 2500 3000</table>
+		<table name="#minLvl">0 20 40 52 61 76</table>
+		<table name="#maxLvl">20 40 52 61 76 86</table>
+		<table name="#name">Elixir of CP (D-grade);Elixir of CP (D-grade);Elixir of CP (C-grade);Elixir of CP; (B-grade);Elixir of CP (A-grade);Elixir
+			of CP;(S-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="COMBATPOINTHEAL" />
@@ -599,9 +604,11 @@
 		</for>
 	</skill>
 	<skill id="22044" levels="7" name="Elixir of Life (Novice)">
-		<table name="#minLvl">0 20 40 52 61 76 85		</table>
-		<table name="#maxLvl">20 40 52 61 76 86 99		</table>
-		<table name="#name">Elixir of Life (D-grade);Elixir of Life (D-grade);Elixir of Life (C-grade);Elixir of Life;            (B-grade);Elixir of Life (A-grade);Elixir of;Life (S-grade);Elixir of Life (Novice);        		</table>
+		<table name="#minLvl">0 20 40 52 61 76 85</table>
+		<table name="#maxLvl">20 40 52 61 76 86 99</table>
+		<table name="#name">Elixir of Life (D-grade);Elixir of Life (D-grade);Elixir of Life (C-grade);Elixir of Life; (B-grade);Elixir of Life
+			(A-grade);Elixir of;Life (S-grade);Elixir of Life (Novice);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="HEAL_PERCENT" />
@@ -778,8 +785,14 @@
 			146331,25762,-2018
 			147928,-55273,-2734
 			43799,-47727,-798
-			87331,-142842,-1317		</table>
-		<table name="#name">Scroll of Escape: Talking Island Village;Scroll of Escape: Elven Village;Scroll of Escape:;            Dark Elf Village;Scroll of Escape: Orc;Village;Scroll of Escape: Dwarven Village;Scroll of Escape: Gludin;            Village;Scroll of Escape: Town of Gludio;Scroll of Escape:;Town of Dion;Scroll of Escape: Floran;            Village;Scroll of Escape: Town of Giran;Scroll of Escape: Hardin's Academy;Scroll of;Escape: Heine;Scroll of;            Escape: Town of Oren;Scroll of Escape: Ivory Tower;Scroll of Escape: Hunter's Village;Scroll of Escape:;Town;            of Aden;Scroll of Escape: Town of Goddard;Scroll of Escape: Town of Rune;Scroll of Escape: Town of;            Schuttgart; ;      		</table>
+			87331,-142842,-1317
+		</table>
+		<table name="#name">Scroll of Escape: Talking Island Village;Scroll of Escape: Elven Village;Scroll of Escape:; Dark Elf Village;Scroll of
+			Escape: Orc;Village;Scroll of Escape: Dwarven Village;Scroll of Escape: Gludin; Village;Scroll of Escape: Town of Gludio;Scroll of
+			Escape:;Town of Dion;Scroll of Escape: Floran; Village;Scroll of Escape: Town of Giran;Scroll of Escape: Hardin's Academy;Scroll
+			of;Escape: Heine;Scroll of; Escape: Town of Oren;Scroll of Escape: Ivory Tower;Scroll of Escape: Hunter's Village;Scroll of Escape:;Town;
+			of Aden;Scroll of Escape: Town of Goddard;Scroll of Escape: Town of Rune;Scroll of Escape: Town of; Schuttgart; ;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="TELEPORT" />
@@ -1086,7 +1099,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="22009,2,27;20517,1,15;22015,1,0.78299;20519,1,0.27056;22019,1,0.00775;20521,1,0.0027;20545,8,3.75;20546,10,7.5;20547,10,4.5;8751,1,9.75;8752,1,8.125;9575,1,6.77083;8761,1,1.95;8762,1,1.625;9576,1,1.35416;22024,15,12.5" />
+		<set name="capsuled_items_skill"
+			 val="22009,2,27;20517,1,15;22015,1,0.78299;20519,1,0.27056;22019,1,0.00775;20521,1,0.0027;20545,8,3.75;20546,10,7.5;20547,10,4.5;8751,1,9.75;8752,1,8.125;9575,1,6.77083;8761,1,1.95;8762,1,1.625;9576,1,1.35416;22024,15,12.5" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -1101,7 +1115,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="22013,2,26.25;20518,1,14.58333;22017,1,0.69599;20520,1,0.24049;22021,1,0.00638;20522,1,0.0022;20545,8,3.95833;20546,10,7.91666;20547,10,4.75;8751,1,9.58333;8752,1,7.98611;9575,1,6.65509;8761,1,1.91666;8762,1,1.59722;9576,1,1.33101;22024,15,13.19444" />
+		<set name="capsuled_items_skill"
+			 val="22013,2,26.25;20518,1,14.58333;22017,1,0.69599;20520,1,0.24049;22021,1,0.00638;20522,1,0.0022;20545,8,3.95833;20546,10,7.91666;20547,10,4.75;8751,1,9.58333;8752,1,7.98611;9575,1,6.65509;8761,1,1.91666;8762,1,1.59722;9576,1,1.33101;22024,15,13.19444" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -1873,7 +1888,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="13457,1,13.32;13458,1,6.66;13459,1,6.66;13460,1,6.66;13461,1,6.66;13462,1,6.66;13463,1,6.66;13464,1,6.66;13466,1,6.66;13467,1,6.66;13468,1,6.66;13469,1,6.66;13470,1,6.66;13465,1,6.66" />
+		<set name="capsuled_items_skill"
+			 val="13457,1,13.32;13458,1,6.66;13459,1,6.66;13460,1,6.66;13461,1,6.66;13462,1,6.66;13463,1,6.66;13464,1,6.66;13466,1,6.66;13467,1,6.66;13468,1,6.66;13469,1,6.66;13470,1,6.66;13465,1,6.66" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -1967,7 +1983,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="8618,3,13.999;8619,1,26;8620,3,17;8621,1,0.011;14700,25,4;14701,12,4;21038,6,5;9627,1,5;6622,3,19;21030,4,1.5;21031,4,1.5;21032,8,1;21033,8,1;21037,5,1" />
+		<set name="capsuled_items_skill"
+			 val="8618,3,13.999;8619,1,26;8620,3,17;8621,1,0.011;14700,25,4;14701,12,4;21038,6,5;9627,1,5;6622,3,19;21030,4,1.5;21031,4,1.5;21032,8,1;21033,8,1;21037,5,1" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -4338,7 +4355,7 @@
 		Level 4: Monsters' item drop rate + 200%.
 	-->
 	<skill id="22587" levels="4" name="Drop Rate Rune">
-		<table name="#rDrop">30 50 100 200		</table>
+		<table name="#rDrop">30 50 100 200</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_PASSIVE" />
@@ -4438,7 +4455,7 @@
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="22603" levels="2" name="Expand Inventory Lv. 2">
-		<table name="#name">Expand Inventory Lv. 1;Expand Inventory Lv. 2		</table>
+		<table name="#name">Expand Inventory Lv. 1;Expand Inventory Lv. 2</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4446,7 +4463,7 @@
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="22604" levels="2" name="Expand Warehouse Lv. 2">
-		<table name="#name">Expand Warehouse Lv. 1;Expand Warehouse Lv. 2		</table>
+		<table name="#name">Expand Warehouse Lv. 1;Expand Warehouse Lv. 2</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4500,7 +4517,9 @@
 	</skill>
 	<!-- Obtained XP + 50%. -->
 	<skill id="22614" levels="5" name="XP Rune III (Lv. 1-100+) 50%">
-		<table name="#name">XP Rune III (Lv. 1-99) 50%;XP Rune III (Lv. 1-99) 50%;XP Rune III (Lv. 1-99) 50%;XP Rune III;            (Lv. 1-99) 50%;XP Rune III (Lv. 1-100+);50%;        		</table>
+		<table name="#name">XP Rune III (Lv. 1-99) 50%;XP Rune III (Lv. 1-99) 50%;XP Rune III (Lv. 1-99) 50%;XP Rune III; (Lv. 1-99) 50%;XP Rune III
+			(Lv. 1-100+);50%;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -4598,7 +4617,7 @@
 		Level 2: Change into the Alluring Swimsuit. For 1 hr., Atk. Spd. + 10%, Casting Spd. + 10%, Speed + 10, and Max HP/MP + 10%%. Cooldown is 1 hr.
 	-->
 	<skill id="22631" levels="2" name="Fantastic Summer Slushie">
-		<table name="#name">Sweet Summer Slushie;Fantastic Summer Slushie		</table>
+		<table name="#name">Sweet Summer Slushie;Fantastic Summer Slushie</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6089,7 +6108,7 @@
 		Level 2: You can feel the warmth of the campfire. HP Recovery Rate + 80%, CP Recovery Rate + 60%, and MP Recovery Rate + 40%. P. Skill MP Consumption - 20%, and M. Skill MP Consumption - 10%.
 	-->
 	<skill id="22859" levels="2" name="Roaring Campfire's Warmth">
-		<table name="#name">Roaring Campfire's Heat;Roaring Campfire's Warmth		</table>
+		<table name="#name">Roaring Campfire's Heat;Roaring Campfire's Warmth</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6418,7 +6437,7 @@
 		Level 4: With the wisdom of an experienced soldier, Critical Rate increases in dire situations. Final stage.
 	-->
 	<skill id="22919" levels="4" name="Special Ops' Experience">
-		<table name="#reuseDelay">0 0 0 10800000		</table>
+		<table name="#reuseDelay">0 0 0 10800000</table>
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_PASSIVE" />

@@ -20,22 +20,18 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Pere
  */
-public final class ExUserCubics extends L2GameServerPacket
-{
+public final class ExUserCubics extends L2GameServerPacket {
 	private L2PcInstance player;
-
-	public ExUserCubics(L2PcInstance character)
-	{
+	
+	public ExUserCubics(L2PcInstance character) {
 		player = character;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(player.getObjectId());
 		writeH(player.getCubics().size());
-		for (int id : player.getCubics().keySet())
-		{
+		for (int id : player.getCubics().keySet()) {
 			writeH(id);
 		}
 		writeD(player.getAgathionId());

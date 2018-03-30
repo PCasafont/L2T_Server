@@ -18,28 +18,24 @@ package l2server.gameserver.model.itemauction;
 /**
  * @author Forsaiken
  */
-public enum ItemAuctionState
-{
-	CREATED((byte) 0), STARTED((byte) 1), FINISHED((byte) 2);
+public enum ItemAuctionState {
+	CREATED((byte) 0),
+	STARTED((byte) 1),
+	FINISHED((byte) 2);
 
 	private final byte stateId;
 
-	ItemAuctionState(final byte stateId)
-	{
+	ItemAuctionState(final byte stateId) {
 		this.stateId = stateId;
 	}
 
-	public byte getStateId()
-	{
+	public byte getStateId() {
 		return stateId;
 	}
 
-	public static ItemAuctionState stateForStateId(final byte stateId)
-	{
-		for (final ItemAuctionState state : ItemAuctionState.values())
-		{
-			if (state.getStateId() == stateId)
-			{
+	public static ItemAuctionState stateForStateId(final byte stateId) {
+		for (final ItemAuctionState state : ItemAuctionState.values()) {
+			if (state.getStateId() == stateId) {
 				return state;
 			}
 		}

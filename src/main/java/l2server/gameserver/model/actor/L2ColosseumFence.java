@@ -24,17 +24,17 @@ import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExColosseumFenceInfo;
 
-import java.awt.Rectangle;
+import java.awt.*;
 
 /**
  * @author FBIagent
  */
-public final class L2ColosseumFence extends L2Object
-{
-	public enum FenceState
-	{
-		HIDDEN, // the fene isn't shown at all
-		OPEN, // the 4 edges of the fence is shown only
+public final class L2ColosseumFence extends L2Object {
+	public enum FenceState {
+		HIDDEN,
+		// the fene isn't shown at all
+		OPEN,
+		// the 4 edges of the fence is shown only
 		CLOSED // full fence
 	}
 
@@ -43,8 +43,7 @@ public final class L2ColosseumFence extends L2Object
 	private final FenceState state;
 	private final Rectangle bounds;
 
-	private L2ColosseumFence(int objectId, int instanceId, int x, int y, int z, int minZ, int maxZ, int width, int height, FenceState state)
-	{
+	private L2ColosseumFence(int objectId, int instanceId, int x, int y, int z, int minZ, int maxZ, int width, int height, FenceState state) {
 		super(objectId);
 		setInstanceId(instanceId);
 		setXYZ(x, y, z);
@@ -67,61 +66,49 @@ public final class L2ColosseumFence extends L2Object
 	 * @param height     the height along the y axis
 	 * @param state      the fence state
 	 */
-	public L2ColosseumFence(int instanceId, int x, int y, int z, int minZ, int maxZ, int width, int height, FenceState state)
-	{
+	public L2ColosseumFence(int instanceId, int x, int y, int z, int minZ, int maxZ, int width, int height, FenceState state) {
 		this(IdFactory.getInstance().getNextId(), instanceId, x, y, z, minZ, maxZ, width, height, state);
 	}
 
 	@Override
-	public void sendInfo(L2PcInstance activeChar)
-	{
+	public void sendInfo(L2PcInstance activeChar) {
 		activeChar.sendPacket(new ExColosseumFenceInfo(this));
 	}
 
-	public int getFenceX()
-	{
+	public int getFenceX() {
 		return bounds.x;
 	}
 
-	public int getFenceY()
-	{
+	public int getFenceY() {
 		return bounds.y;
 	}
 
-	public int getFenceMinZ()
-	{
+	public int getFenceMinZ() {
 		return minZ;
 	}
 
-	public int getFenceMaxZ()
-	{
+	public int getFenceMaxZ() {
 		return maxZ;
 	}
 
-	public int getFenceWidth()
-	{
+	public int getFenceWidth() {
 		return bounds.width;
 	}
 
-	public int getFenceHeight()
-	{
+	public int getFenceHeight() {
 		return bounds.height;
 	}
 
-	public FenceState getFenceState()
-	{
+	public FenceState getFenceState() {
 		return state;
 	}
 
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
-	{
+	public boolean isAutoAttackable(L2Character attacker) {
 		return false;
 	}
 
-	public boolean isInsideFence(int x, int y, int z)
-	{
-		return x >= bounds.x && y >= bounds.y && z >= minZ && z <= maxZ && x <= bounds.x + bounds.width &&
-				y <= bounds.y + bounds.width;
+	public boolean isInsideFence(int x, int y, int z) {
+		return x >= bounds.x && y >= bounds.y && z >= minZ && z <= maxZ && x <= bounds.x + bounds.width && y <= bounds.y + bounds.width;
 	}
 }

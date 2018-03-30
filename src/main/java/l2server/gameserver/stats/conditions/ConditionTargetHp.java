@@ -21,8 +21,7 @@ import l2server.gameserver.stats.Env;
  * @author LasTravel
  */
 
-public class ConditionTargetHp extends Condition
-{
+public class ConditionTargetHp extends Condition {
 	private final int hp;
 
 	/**
@@ -30,8 +29,7 @@ public class ConditionTargetHp extends Condition
 	 *
 	 * @param hp the hp
 	 */
-	public ConditionTargetHp(int hp)
-	{
+	public ConditionTargetHp(int hp) {
 		this.hp = hp;
 	}
 
@@ -39,8 +37,7 @@ public class ConditionTargetHp extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		return env.target.getCurrentHp() * 100 / env.target.getMaxVisibleHp() <= hp;
 	}
 }

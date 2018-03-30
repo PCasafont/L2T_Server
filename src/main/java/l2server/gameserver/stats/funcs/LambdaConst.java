@@ -20,19 +20,16 @@ import l2server.gameserver.stats.Env;
 /**
  * @author mkizub
  */
-public final class LambdaConst extends Lambda
-{
+public final class LambdaConst extends Lambda {
 
 	private final double value;
 
-	public LambdaConst(double value)
-	{
+	public LambdaConst(double value) {
 		this.value = value;
 	}
 
 	@Override
-	public double calc(Env env)
-	{
+	public double calc(Env env) {
 		return value;
 	}
 }

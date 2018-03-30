@@ -26,8 +26,7 @@ import l2server.gameserver.stats.effects.EffectFusion;
  * @author kombat, Forsaiken
  */
 
-public final class ConditionForceBuff extends Condition
-{
+public final class ConditionForceBuff extends Condition {
 	private static final short BATTLE_FORCE = 5104;
 	private static final short SPELL_FORCE = 5105;
 
@@ -38,8 +37,7 @@ public final class ConditionForceBuff extends Condition
 	 *
 	 * @param forces the forces
 	 */
-	public ConditionForceBuff(byte[] forces)
-	{
+	public ConditionForceBuff(byte[] forces) {
 		this.forces = forces;
 	}
 
@@ -51,62 +49,49 @@ public final class ConditionForceBuff extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (forces[0] > 0)
-		{
+	public boolean testImpl(Env env) {
+		if (forces[0] > 0) {
 			L2Abnormal force = env.player.getFirstEffect(BATTLE_FORCE);
-			if (force == null)
-			{
+			if (force == null) {
 				return false;
 			}
 
 			boolean found = false;
-			for (L2Effect effect : force.getEffects())
-			{
-				if (!(effect instanceof EffectFusion))
-				{
+			for (L2Effect effect : force.getEffects()) {
+				if (!(effect instanceof EffectFusion)) {
 					continue;
 				}
 
 				found = true;
-				if (((EffectFusion) effect).effect < forces[0])
-				{
+				if (((EffectFusion) effect).effect < forces[0]) {
 					return false;
 				}
 			}
 
-			if (!found)
-			{
+			if (!found) {
 				return false;
 			}
 		}
 
-		if (forces[1] > 0)
-		{
+		if (forces[1] > 0) {
 			L2Abnormal force = env.player.getFirstEffect(SPELL_FORCE);
-			if (force == null)
-			{
+			if (force == null) {
 				return false;
 			}
 
 			boolean found = false;
-			for (L2Effect effect : force.getEffects())
-			{
-				if (!(effect instanceof EffectFusion))
-				{
+			for (L2Effect effect : force.getEffects()) {
+				if (!(effect instanceof EffectFusion)) {
 					continue;
 				}
 
 				found = true;
-				if (((EffectFusion) effect).effect < forces[1])
-				{
+				if (((EffectFusion) effect).effect < forces[1]) {
 					return false;
 				}
 			}
 
-			if (!found)
-			{
+			if (!found) {
 				return false;
 			}
 		}

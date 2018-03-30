@@ -27,8 +27,7 @@ import l2server.gameserver.util.Util;
  * *
  * * 2010-09-30 Based on official server Franz
  */
-public class Q148_PathtoBecominganExaltedMercenary extends Quest
-{
+public class Q148_PathtoBecominganExaltedMercenary extends Quest {
 	private static final String qn = "148_PathtoBecominganExaltedMercenary";
 	// NPCs
 	private static final int[] merc = {36481, 36482, 36483, 36484, 36485, 36486, 36487, 36488, 36489};
@@ -37,24 +36,18 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 	private static final int _cert_top_elite = 13768;
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (Util.contains(merc, npc.getNpcId()))
-		{
-			if (event.equalsIgnoreCase("exalted-00b.htm"))
-			{
+		if (Util.contains(merc, npc.getNpcId())) {
+			if (event.equalsIgnoreCase("exalted-00b.htm")) {
 				st.giveItems(_cert_elite, 1);
-			}
-			else if (event.equalsIgnoreCase("exalted-03.htm"))
-			{
+			} else if (event.equalsIgnoreCase("exalted-03.htm")) {
 				st.setState(State.STARTED);
 				st.set("cond", "1");
 				st.playSound("ItemSound.quest_accept");
@@ -64,48 +57,33 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (Util.contains(merc, npc.getNpcId()))
-		{
-			switch (st.getState())
-			{
+		if (Util.contains(merc, npc.getNpcId())) {
+			switch (st.getState()) {
 				case State.CREATED:
 					QuestState prev = player.getQuestState("147_PathtoBecominganEliteMercenary");
-					if (player.getClan() != null && player.getClan().getHasCastle() > 0)
-					{
+					if (player.getClan() != null && player.getClan().getHasCastle() > 0) {
 						htmltext = "castle.htm";
-					}
-					else if (st.hasQuestItems(_cert_elite))
-					{
+					} else if (st.hasQuestItems(_cert_elite)) {
 						htmltext = "exalted-01.htm";
-					}
-					else
-					{
-						if (prev != null && prev.getState() == State.COMPLETED)
-						{
+					} else {
+						if (prev != null && prev.getState() == State.COMPLETED) {
 							htmltext = "exalted-00a.htm";
-						}
-						else
-						{
+						} else {
 							htmltext = "exalted-00.htm";
 						}
 					}
 					break;
 				case State.STARTED:
-					if (st.getInt("cond") < 4)
-					{
+					if (st.getInt("cond") < 4) {
 						htmltext = "elite-04.htm";
-					}
-					else if (st.getInt("cond") == 4)
-					{
+					} else if (st.getInt("cond") == 4) {
 						st.unset("cond");
 						st.unset("kills");
 						st.takeItems(_cert_elite, -1);
@@ -122,19 +100,16 @@ public class Q148_PathtoBecominganExaltedMercenary extends Quest
 		return htmltext;
 	}
 
-	public Q148_PathtoBecominganExaltedMercenary(int questId, String name, String descr)
-	{
+	public Q148_PathtoBecominganExaltedMercenary(int questId, String name, String descr) {
 		super(questId, name, descr);
 
-		for (int npc : merc)
-		{
+		for (int npc : merc) {
 			addStartNpc(npc);
 			addTalkId(npc);
 		}
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Q148_PathtoBecominganExaltedMercenary(148, qn, "Path to Becoming an Exalted Mercenary");
 	}
 }

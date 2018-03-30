@@ -23,8 +23,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author DrHouse
  */
-public class ConditionPlayerActiveSkillId extends Condition
-{
+public class ConditionPlayerActiveSkillId extends Condition {
 	private final int skillId;
 	private final int skillLevel;
 
@@ -33,8 +32,7 @@ public class ConditionPlayerActiveSkillId extends Condition
 	 *
 	 * @param skillId the skill id
 	 */
-	public ConditionPlayerActiveSkillId(int skillId)
-	{
+	public ConditionPlayerActiveSkillId(int skillId) {
 		this.skillId = skillId;
 		skillLevel = -1;
 	}
@@ -45,8 +43,7 @@ public class ConditionPlayerActiveSkillId extends Condition
 	 * @param skillId    the skill id
 	 * @param skillLevel the skill level
 	 */
-	public ConditionPlayerActiveSkillId(int skillId, int skillLevel)
-	{
+	public ConditionPlayerActiveSkillId(int skillId, int skillLevel) {
 		this.skillId = skillId;
 		this.skillLevel = skillLevel;
 	}
@@ -55,16 +52,11 @@ public class ConditionPlayerActiveSkillId extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		for (L2Skill sk : env.player.getAllSkills())
-		{
-			if (sk != null)
-			{
-				if (sk.getId() == skillId)
-				{
-					if (skillLevel == -1 || skillLevel <= sk.getLevel())
-					{
+	public boolean testImpl(Env env) {
+		for (L2Skill sk : env.player.getAllSkills()) {
+			if (sk != null) {
+				if (sk.getId() == skillId) {
+					if (skillLevel == -1 || skillLevel <= sk.getLevel()) {
 						return true;
 					}
 				}

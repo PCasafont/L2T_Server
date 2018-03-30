@@ -28,8 +28,7 @@ import java.util.List;
  * Each Special Event has a start and end date to stop to drop extra Items automaticaly.<BR><BR>
  */
 
-public class EventDroplist
-{
+public class EventDroplist {
 
 	//
 
@@ -38,13 +37,11 @@ public class EventDroplist
 	 */
 	private List<DateDrop> allNpcDateDrops;
 
-	public static EventDroplist getInstance()
-	{
+	public static EventDroplist getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	public static class DateDrop
-	{
+	public static class DateDrop {
 		/**
 		 * Start and end date of the Event
 		 */
@@ -74,8 +71,7 @@ public class EventDroplist
 	/**
 	 * Constructor of EventDroplist.<BR><BR>
 	 */
-	private EventDroplist()
-	{
+	private EventDroplist() {
 		allNpcDateDrops = new ArrayList<>();
 	}
 
@@ -87,8 +83,7 @@ public class EventDroplist
 	 * @param chance The chance to obtain this drop
 	 * @param range  The DateRange object to add to this DateDrop
 	 */
-	public void addGlobalDrop(int[] items, int[] count, int chance, DateRange range)
-	{
+	public void addGlobalDrop(int[] items, int[] count, int chance, DateRange range) {
 
 		DateDrop date = new DateDrop();
 
@@ -104,16 +99,13 @@ public class EventDroplist
 	/**
 	 * Return all DateDrop of EventDroplist allNpcDateDrops within the date range.<BR><BR>
 	 */
-	public List<DateDrop> getAllDrops()
-	{
+	public List<DateDrop> getAllDrops() {
 		List<DateDrop> list = new ArrayList<>();
 
-		for (DateDrop drop : allNpcDateDrops)
-		{
+		for (DateDrop drop : allNpcDateDrops) {
 			Date currentDate = new Date();
 			//Logozo.info("From: "+drop.from+" To: "+drop.to+" Now: "+ currentDate);
-			if (drop.dateRange.isWithinRange(currentDate))
-			{
+			if (drop.dateRange.isWithinRange(currentDate)) {
 				list.add(drop);
 			}
 		}
@@ -122,8 +114,7 @@ public class EventDroplist
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final EventDroplist instance = new EventDroplist();
 	}
 }

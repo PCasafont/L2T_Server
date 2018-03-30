@@ -20,15 +20,13 @@ import l2server.gameserver.model.actor.instance.L2DefenderInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
 
-public class StaticObjectKnownList extends CharKnownList
-{
+public class StaticObjectKnownList extends CharKnownList {
 	// =========================================================
 	// Data Field
 
 	// =========================================================
 	// Constructor
-	public StaticObjectKnownList(L2StaticObjectInstance activeChar)
-	{
+	public StaticObjectKnownList(L2StaticObjectInstance activeChar) {
 		super(activeChar);
 	}
 
@@ -41,20 +39,16 @@ public class StaticObjectKnownList extends CharKnownList
 	// =========================================================
 	// Property - Public
 	@Override
-	public final L2StaticObjectInstance getActiveChar()
-	{
+	public final L2StaticObjectInstance getActiveChar() {
 		return (L2StaticObjectInstance) super.getActiveChar();
 	}
 
 	@Override
-	public int getDistanceToForgetObject(L2Object object)
-	{
-		if (object instanceof L2DefenderInstance)
-		{
+	public int getDistanceToForgetObject(L2Object object) {
+		if (object instanceof L2DefenderInstance) {
 			return 800;
 		}
-		if (!(object instanceof L2PcInstance))
-		{
+		if (!(object instanceof L2PcInstance)) {
 			return 0;
 		}
 
@@ -62,14 +56,11 @@ public class StaticObjectKnownList extends CharKnownList
 	}
 
 	@Override
-	public int getDistanceToWatchObject(L2Object object)
-	{
-		if (object instanceof L2DefenderInstance)
-		{
+	public int getDistanceToWatchObject(L2Object object) {
+		if (object instanceof L2DefenderInstance) {
 			return 600;
 		}
-		if (!(object instanceof L2PcInstance))
-		{
+		if (!(object instanceof L2PcInstance)) {
 			return 0;
 		}
 		return 2000;

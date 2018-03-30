@@ -24,12 +24,7 @@ import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.handler.ItemHandler;
-import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2ApInstance;
@@ -46,352 +41,276 @@ import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author Pere
- *         This is the abstract superclass of APlayer AI
+ * This is the abstract superclass of APlayer AI
  */
-public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
-{
+public abstract class L2APlayerAI extends L2PlayerAI implements Runnable {
 	protected L2ApInstance player;
 	protected long timer;
-
+	
 	//protected TIntIntHashMap hate = new TIntIntHashMap();
-
+	
 	private ScheduledFuture<?> task;
-
-	public L2APlayerAI(L2Character creature)
-	{
+	
+	public L2APlayerAI(L2Character creature) {
 		super(creature);
 		player = (L2ApInstance) actor;
 		task = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 5000, 1000);
-
+		
 		// The players always run
 		player.setRunning();
-
+		
 		//player.setTitle("L2 Tenkai");
-
+		
 		checkGear();
-
-		for (L2ItemInstance item : player.getInventory().getItems())
-		{
-			if (item == null || !item.isEquipped())
-			{
+		
+		for (L2ItemInstance item : player.getInventory().getItems()) {
+			if (item == null || !item.isEquipped()) {
 				continue;
 			}
-
+			
 			boolean hasElement = false;
-			if (item.getElementals() != null)
-			{
-				for (Elementals elem : item.getElementals())
-				{
-					if (elem != null && elem.getValue() > 0)
-					{
+			if (item.getElementals() != null) {
+				for (Elementals elem : item.getElementals()) {
+					if (elem != null && elem.getValue() > 0) {
 						hasElement = true;
 					}
 				}
 			}
-
-			if (hasElement)
-			{
+			
+			if (hasElement) {
 				continue;
 			}
-
-			if (!(item.getItem().getItemType() == L2WeaponType.FISHINGROD || item.isShadowItem() ||
-					item.isCommonItem() || item.isPvp() || item.isHeroItem() || item.isTimeLimitedItem() ||
-					item.getItemId() >= 7816 && item.getItemId() <= 7831 ||
+			
+			if (!(item.getItem().getItemType() == L2WeaponType.FISHINGROD || item.isShadowItem() || item.isCommonItem() || item.isPvp() ||
+					item.isHeroItem() || item.isTimeLimitedItem() || item.getItemId() >= 7816 && item.getItemId() <= 7831 ||
 					item.getItem().getItemType() == L2WeaponType.NONE ||
-					item.getItem().getItemGradePlain() != L2Item.CRYSTAL_S &&
-							item.getItem().getItemGradePlain() != L2Item.CRYSTAL_R ||
-					item.getItem().getBodyPart() == L2Item.SLOT_BACK ||
-					item.getItem().getBodyPart() == L2Item.SLOT_R_BRACELET ||
-					item.getItem().getBodyPart() == L2Item.SLOT_UNDERWEAR ||
-					item.getItem().getBodyPart() == L2Item.SLOT_BELT ||
-					item.getItem().getBodyPart() == L2Item.SLOT_NECK ||
-					(item.getItem().getBodyPart() & L2Item.SLOT_R_EAR) != 0 ||
-					(item.getItem().getBodyPart() & L2Item.SLOT_R_FINGER) != 0 ||
-					item.getItem().getElementals() != null || item.getItemType() == L2ArmorType.SHIELD ||
-					item.getItemType() == L2ArmorType.SIGIL))
-			{
-				if (item.isWeapon())
-				{
+					item.getItem().getItemGradePlain() != L2Item.CRYSTAL_S && item.getItem().getItemGradePlain() != L2Item.CRYSTAL_R ||
+					item.getItem().getBodyPart() == L2Item.SLOT_BACK || item.getItem().getBodyPart() == L2Item.SLOT_R_BRACELET ||
+					item.getItem().getBodyPart() == L2Item.SLOT_UNDERWEAR || item.getItem().getBodyPart() == L2Item.SLOT_BELT ||
+					item.getItem().getBodyPart() == L2Item.SLOT_NECK || (item.getItem().getBodyPart() & L2Item.SLOT_R_EAR) != 0 ||
+					(item.getItem().getBodyPart() & L2Item.SLOT_R_FINGER) != 0 || item.getItem().getElementals() != null ||
+					item.getItemType() == L2ArmorType.SHIELD || item.getItemType() == L2ArmorType.SIGIL)) {
+				if (item.isWeapon()) {
 					item.setElementAttr((byte) Rnd.get(6), 300);
-				}
-				else
-				{
-					for (int elem = 0; elem < 6; elem += 2)
-					{
+				} else {
+					for (int elem = 0; elem < 6; elem += 2) {
 						item.setElementAttr((byte) (elem + Rnd.get(2)), 120);
 					}
 				}
 			}
 		}
 	}
-
+	
 	protected abstract int[] getRandomGear();
-
-	private void checkGear()
-	{
-		if (player.getActiveWeaponItem() != null && player.getActiveWeaponItem().getCrystalType() > L2Item.CRYSTAL_D)
-		{
+	
+	private void checkGear() {
+		if (player.getActiveWeaponItem() != null && player.getActiveWeaponItem().getCrystalType() > L2Item.CRYSTAL_D) {
 			return;
 		}
-
-		for (int itemId : getRandomGear())
-		{
+		
+		for (int itemId : getRandomGear()) {
 			L2ItemInstance item = player.getInventory().addItem("", itemId, 1, player, player);
-			if (item != null && EnchantItemTable.isEnchantable(item))
-			{
+			if (item != null && EnchantItemTable.isEnchantable(item)) {
 				item.setEnchantLevel(10 + Rnd.get(5));
 			}
 		}
-
-		for (L2ItemInstance item : player.getInventory().getItems())
-		{
-			if (item == null)
-			{
+		
+		for (L2ItemInstance item : player.getInventory().getItems()) {
+			if (item == null) {
 				continue;
 			}
-
-			if (item.isEquipable() && !item.isEquipped())
-			{
-				if (item.getItem().getCrystalType() > L2Item.CRYSTAL_D)
-				{
+			
+			if (item.isEquipable() && !item.isEquipped()) {
+				if (item.getItem().getCrystalType() > L2Item.CRYSTAL_D) {
 					player.useEquippableItem(item, false);
-				}
-				else
-				{
+				} else {
 					player.destroyItem("Destroy", item, player, false);
 				}
 			}
 		}
 	}
-
-	protected L2Character decideTarget()
-	{
+	
+	protected L2Character decideTarget() {
 		L2Character target = player.getTarget() instanceof L2Character ? (L2Character) player.getTarget() : null;
-
-		if (player.getParty() != null)
-		{
+		
+		if (player.getParty() != null) {
 			target = player.getParty().getTarget();
 			//if (!player.isInsideRadius(target, 3000, false, false))
 			//	player.teleToLocation(target.getX(), target.getY(), target.getZ());
-			for (L2PcInstance member : player.getParty().getPartyMembers())
-			{
-				if (member.isDead() && member.getClassId() == 146)
-				{
+			for (L2PcInstance member : player.getParty().getPartyMembers()) {
+				if (member.isDead() && member.getClassId() == 146) {
 					interactWith(member);
 				}
 			}
 		}
-
+		
 		//if (target == null || target.isDead())
 		//	L2World.getInstance().getPlayer("lolol");
-
-		if (target == null || target.getDistanceSq(player) > 2000 * 2000 || !target.isVisible())
-		{
-			for (L2Character cha : player.getKnownList().getKnownCharacters())
-			{
-				if (!cha.isDead() && cha.isVisible() && player.isEnemy(cha))
-				{
+		
+		if (target == null || target.getDistanceSq(player) > 2000 * 2000 || !target.isVisible()) {
+			for (L2Character cha : player.getKnownList().getKnownCharacters()) {
+				if (!cha.isDead() && cha.isVisible() && player.isEnemy(cha)) {
 					target = cha;
 					break;
 				}
 			}
 		}
-
-		if (target != null && !player.isEnemy(target))
-		{
+		
+		if (target != null && !player.isEnemy(target)) {
 			target = null;
 		}
-
+		
 		player.setTarget(target);
-
+		
 		return target;
 	}
-
-	protected void travelTo(L2Character target)
-	{
-		Point3D direction = new Point3D(target.getX() - player.getX(), target.getY() - player.getY(),
-				target.getZ() - player.getZ());
-		double length = Math.sqrt(
-				(long) direction.getX() * (long) direction.getX() + (long) direction.getY() * (long) direction.getY());
+	
+	protected void travelTo(L2Character target) {
+		Point3D direction = new Point3D(target.getX() - player.getX(), target.getY() - player.getY(), target.getZ() - player.getZ());
+		double length = Math.sqrt((long) direction.getX() * (long) direction.getX() + (long) direction.getY() * (long) direction.getY());
 		double angle = Math.acos(direction.getX() / length);
-		if (direction.getY() < 0)
-		{
+		if (direction.getY() < 0) {
 			angle = Math.PI * 2 - angle;
 		}
-
+		
 		int newX = player.getX() + (int) (1000 * Math.cos(angle));
 		int newY = player.getY() + (int) (1000 * Math.sin(angle));
 		int newZ = GeoData.getInstance().getHeight(newX, newY, player.getZ());
 		//int newX = target.getX();
 		//int newY = target.getY();
 		//int newZ = target.getZ();
-
+		
 		double offset = 0.1;
-		while (!GeoData.getInstance()
-				.canMoveFromToTarget(player.getX(), player.getY(), player.getZ(), newX, newY, newZ, 0) &&
-				offset < Math.PI)
-		{
+		while (!GeoData.getInstance().canMoveFromToTarget(player.getX(), player.getY(), player.getZ(), newX, newY, newZ, 0) && offset < Math.PI) {
 			newX = player.getX() + (int) (1000 * Math.cos(angle + offset));
 			newY = player.getY() + (int) (1000 * Math.sin(angle + offset));
 			newZ = GeoData.getInstance().getHeight(newX, newY, player.getZ() + 50);
 			// This makes offset alternate direction and increment a bit at each loop
 			offset += offset * -2.01;
 		}
-
+		
 		//Log.info(player.getX() + " " + player.getY() + " " + player.getZ() + " " + newX + " " + newY + " " + newZ + " " + offset);
-
+		
 		//setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(-14190, 123542, newZ, 0));
 		setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(newX, newY, newZ, 0));
 	}
-
-	protected boolean interactWith(L2Character target)
-	{
-		if (player.isAlly(target))
-		{
-			if (target.isDead())
-			{
+	
+	protected boolean interactWith(L2Character target) {
+		if (player.isAlly(target)) {
+			if (target.isDead()) {
 				// TODO: Resurrect (in healers override it)
-
-				for (L2PcInstance member : player.getParty().getPartyMembers())
-				{
-					if (member.getClassId() == 146 && !member.isDead() || member.isCastingNow())
-					{
+				
+				for (L2PcInstance member : player.getParty().getPartyMembers()) {
+					if (member.getClassId() == 146 && !member.isDead() || member.isCastingNow()) {
 						return false;
 					}
 				}
-				if (!player.isCastingNow())
-				{
-					for (L2Skill skill : player.getAllSkills())
-					{
-						if (skill.getSkillType() != L2SkillType.RESURRECT)
-						{
+				if (!player.isCastingNow()) {
+					for (L2Skill skill : player.getAllSkills()) {
+						if (skill.getSkillType() != L2SkillType.RESURRECT) {
 							continue;
 						}
-
-						if (player.useMagic(skill, true, false))
-						{
+						
+						if (player.useMagic(skill, true, false)) {
 							return true;
 						}
 					}
-
+					
 					L2ItemInstance scroll = player.getInventory().addItem("", 737, 1, player, player);
 					IItemHandler handler = ItemHandler.getInstance().getItemHandler(scroll.getEtcItem());
-					if (handler == null)
-					{
+					if (handler == null) {
 						Log.warning("No item handler registered for Herb - item ID " + scroll.getItemId() + ".");
-					}
-					else
-					{
+					} else {
 						player.setTarget(target);
 						handler.useItem(player, scroll, false);
 					}
 				}
-			}
-			else
-			{
+			} else {
 				setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
 			}
 			return true;
 		}
-
+		
 		return false;
 	}
-
-	protected void think()
-	{
+	
+	protected void think() {
 		// If this object no longer belongs to the player, cancel the task
-		if (this != actor.getAI())
-		{
+		if (this != actor.getAI()) {
 			task.cancel(false);
 			return;
 		}
-
+		
 		// If the player left, cancel the task
-		if (!player.isOnline())
-		{
+		if (!player.isOnline()) {
 			task.cancel(false);
 			return;
 		}
-
-		if (player.getParty() != null && player.getParty().getLeader() == player)
-		{
+		
+		if (player.getParty() != null && player.getParty().getLeader() == player) {
 			player.getParty().think();
 		}
-
+		
 		// If dead, make a little timer
-		if (player.isDead())
-		{
+		if (player.isDead()) {
 			player.setReputation(0);
-
+			
 			// If there's some nearby ally, wait
-			for (L2PcInstance player : player.getKnownList().getKnownPlayers().values())
-			{
+			for (L2PcInstance player : player.getKnownList().getKnownPlayers().values()) {
 				if (!player.isInsideZone(L2Character.ZONE_TOWN) && player.isAlly(player) && !player.isDead() &&
-						player.isInsideRadius(player, 2000, true, false))
-				{
+						player.isInsideRadius(player, 2000, true, false)) {
 					return;
 				}
 			}
-
-			if (timer == 0)
-			{
+			
+			if (timer == 0) {
 				timer = System.currentTimeMillis() + 5000L;
-			}
-			else if (timer < System.currentTimeMillis())
-			{
+			} else if (timer < System.currentTimeMillis()) {
 				player.doRevive();
 				player.teleToLocation(TeleportWhereType.Town);
 				timer = 0;
 			}
 			return;
 		}
-
+		
 		// Check if the player was disarmed and try to equip the weapon again
-		if (player.getActiveWeaponInstance() == null && !player.isDisarmed())
-		{
-			for (L2ItemInstance item : player.getInventory().getItems())
-			{
-				if (item.isWeapon() && item.getItem().getCrystalType() > L2Item.CRYSTAL_D)
-				{
+		if (player.getActiveWeaponInstance() == null && !player.isDisarmed()) {
+			for (L2ItemInstance item : player.getInventory().getItems()) {
+				if (item.isWeapon() && item.getItem().getCrystalType() > L2Item.CRYSTAL_D) {
 					player.useEquippableItem(item, false);
 					break;
 				}
 			}
-
-			if (player.getActiveWeaponInstance() == null)
-			{
+			
+			if (player.getActiveWeaponInstance() == null) {
 				checkGear();
 			}
 		}
-
+		
 		// Check shots
 		L2ItemInstance item = player.getInventory().getItemByItemId(17754);
-		if (item == null || item.getCount() < 1000)
-		{
+		if (item == null || item.getCount() < 1000) {
 			player.getInventory().addItem("", 17754, 1000, player, player);
 		}
 		item = player.getInventory().getItemByItemId(19442);
-		if (item == null || item.getCount() < 1000)
-		{
+		if (item == null || item.getCount() < 1000) {
 			player.getInventory().addItem("", 19442, 1000, player, player);
 		}
 		player.checkAutoShots();
-
+		
 		// Check spirit ores
 		item = player.getInventory().getItemByItemId(3031);
-		if (item == null || item.getCount() < 100)
-		{
+		if (item == null || item.getCount() < 100) {
 			player.getInventory().addItem("", 3031, 100, player, player);
 		}
-
+		
 		SkillTable.getInstance().getInfo(14779, 1).getEffects(getActor(), getActor());
 		SkillTable.getInstance().getInfo(14780, 1).getEffects(getActor(), getActor());
 		SkillTable.getInstance().getInfo(14781, 1).getEffects(getActor(), getActor());
 		SkillTable.getInstance().getInfo(14782, 1).getEffects(getActor(), getActor());
 		SkillTable.getInstance().getInfo(14783, 1).getEffects(getActor(), getActor());
 		SkillTable.getInstance().getInfo(14784, 1).getEffects(getActor(), getActor());
-		switch (((L2PcInstance) getActor()).getClassId())
-		{
+		switch (((L2PcInstance) getActor()).getClassId()) {
 			case 139:
 				SkillTable.getInstance().getInfo(14785, 1).getEffects(getActor(), getActor());
 				break;
@@ -411,43 +330,35 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 		SkillTable.getInstance().getInfo(14789, 1).getEffects(getActor(), getActor());
 		SkillTable.getInstance().getInfo(14790, 1).getEffects(getActor(), getActor());
 		getActor().setCurrentHpMp(getActor().getMaxHp(), getActor().getMaxMp());
-
+		
 		// Artificially using the NPC heal whenever possible
 		if (getIntention() == CtrlIntention.AI_INTENTION_IDLE && !player.isInCombat() &&
-				(player.getPvpFlag() == 0 || player.isInsideZone(L2Character.ZONE_PEACE)))
-		{
+				(player.getPvpFlag() == 0 || player.isInsideZone(L2Character.ZONE_PEACE))) {
 			player.setCurrentHp(player.getMaxHp());
 			player.setCurrentMp(player.getMaxMp());
 			player.setCurrentCp(player.getMaxCp());
 			player.broadcastUserInfo();
 		}
-
-		if (!player.isNoblesseBlessed())
-		{
+		
+		if (!player.isNoblesseBlessed()) {
 			player.setTarget(player);
 			L2Skill skill = player.getKnownSkill(1323);
-			if (skill != null)
-			{
+			if (skill != null) {
 				player.useMagic(skill, true, false);
 			}
 		}
-
+		
 		boolean forceEnabled = false;
-		for (L2Abnormal e : player.getAllEffects())
-		{
-			if (e.getSkill().getName().endsWith(player.getName() + " Force"))
-			{
+		for (L2Abnormal e : player.getAllEffects()) {
+			if (e.getSkill().getName().endsWith(player.getName() + " Force")) {
 				forceEnabled = true;
 				break;
 			}
 		}
-
-		if (!forceEnabled)
-		{
-			for (L2Skill force : player.getAllSkills())
-			{
-				if (force.getName().endsWith(" Force"))
-				{
+		
+		if (!forceEnabled) {
+			for (L2Skill force : player.getAllSkills()) {
+				if (force.getName().endsWith(" Force")) {
 					player.useMagic(force, true, false);
 				}
 			}
@@ -463,35 +374,26 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 			handler.useUserCommand(52, player);
 			return;
 		}*/
-
+		
 		// Decide a target to follow or attack
 		L2Character target = decideTarget();
-
+		
 		// If there's no target, go to the PvP zone
-		if (target == null)
-		{
+		if (target == null) {
 			setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			if (player.isInParty())
-			{
-				for (L2PcInstance member : player.getParty().getPartyMembers())
-				{
+			if (player.isInParty()) {
+				for (L2PcInstance member : player.getParty().getPartyMembers()) {
 					if (member != player && (player.isInsideRadius(member, 30, false, false) ||
-							!player.isInsideRadius(member, 200, false, false) &&
-									player.isInsideRadius(member, 3000, false, false)))
-					{
+							!player.isInsideRadius(member, 200, false, false) && player.isInsideRadius(member, 3000, false, false))) {
 						setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-								new L2CharPosition(member.getX() + Rnd.get(100) - 50, member.getY() + Rnd.get(100) - 50,
-										member.getZ(), 0));
+								new L2CharPosition(member.getX() + Rnd.get(100) - 50, member.getY() + Rnd.get(100) - 50, member.getZ(), 0));
 						return;
 					}
 				}
-			}
-			else
-			{
+			} else {
 				L2PcInstance mostPvP = L2World.getInstance().getMostPvP(player.isInParty(), true);
-
-				if (mostPvP != null && player.getPvpFlag() == 0)
-				{
+				
+				if (mostPvP != null && player.getPvpFlag() == 0) {
 					player.teleToLocation(mostPvP.getX(), mostPvP.getY(), mostPvP.getZ());
 				}
 				return;
@@ -503,24 +405,21 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 		else*/
 		interactWith(target);
 	}
-
+	
 	@Override
-	protected void onEvtAttacked(L2Character attacker)
-	{
-		if (attacker instanceof L2Attackable && !attacker.isCoreAIDisabled())
-		{
+	protected void onEvtAttacked(L2Character attacker) {
+		if (attacker instanceof L2Attackable && !attacker.isCoreAIDisabled()) {
 			clientStartAutoAttack();
 		}
 	}
-
+	
 	@Override
-	public void run()
-	{
+	public void run() {
 		think();
 	}
-
+	
 	// -----------------------------------------------------
-
+	
 	/**
 	 * Finds the first occurrence of the abnormalType specified, if it's present.
 	 *
@@ -528,25 +427,20 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 	 * @param abnormalType The abnormalType to check
 	 * @return Returns true if exists at last one occurrence of given abnormalType
 	 */
-	protected boolean hasAbnormalType(L2PcInstance player, String abnormalType)
-	{
-		if (player != null && !abnormalType.equals("none"))
-		{
-			for (L2Abnormal e : player.getAllEffects())
-			{
-				for (String stackType : e.getStackType())
-				{
-					if (stackType.equals(abnormalType))
-					{
+	protected boolean hasAbnormalType(L2PcInstance player, String abnormalType) {
+		if (player != null && !abnormalType.equals("none")) {
+			for (L2Abnormal e : player.getAllEffects()) {
+				for (String stackType : e.getStackType()) {
+					if (stackType.equals(abnormalType)) {
 						return true;
 					}
 				}
 			}
 		}
-
+		
 		return false;
 	}
-
+	
 	/**
 	 * Finds the first occurrence of Effect if it's present, searching by it's Skill ID.
 	 *
@@ -554,19 +448,15 @@ public abstract class L2APlayerAI extends L2PlayerAI implements Runnable
 	 * @param skillId The ID of the skill to check
 	 * @return Returns true if exists at last one occurrence of given Effect
 	 */
-	protected boolean hasSkillEffects(L2PcInstance player, int skillId)
-	{
-		if (player != null)
-		{
-			for (L2Abnormal e : player.getAllEffects())
-			{
-				if (e.getSkill().getId() == skillId)
-				{
+	protected boolean hasSkillEffects(L2PcInstance player, int skillId) {
+		if (player != null) {
+			for (L2Abnormal e : player.getAllEffects()) {
+				if (e.getSkill().getId() == skillId) {
 					return true;
 				}
 			}
 		}
-
+		
 		return false;
 	}
 }

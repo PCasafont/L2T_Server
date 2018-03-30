@@ -23,26 +23,21 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.L2SkillType;
 
-public class MaxHpDamPercent implements ISkillHandler
-{
+public class MaxHpDamPercent implements ISkillHandler {
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.MAXHPDAMPERCENT};
 
 	/**
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (activeChar.isAlikeDead())
-		{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+		if (activeChar.isAlikeDead()) {
 			return;
 		}
 
-		for (L2Character target : (L2Character[]) targets)
-		{
+		for (L2Character target : (L2Character[]) targets) {
 			if (target.isRaid() || target.isDead() || target.isAlikeDead() ||
-					target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar)
-			{
+					target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar) {
 				continue;
 			}
 
@@ -55,8 +50,7 @@ public class MaxHpDamPercent implements ISkillHandler
 			target.reduceCurrentHp(damage, activeChar, skill);
 		}
 
-		if (skill.isSuicideAttack())
-		{
+		if (skill.isSuicideAttack()) {
 			activeChar.doDie(activeChar);
 		}
 	}
@@ -65,8 +59,7 @@ public class MaxHpDamPercent implements ISkillHandler
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

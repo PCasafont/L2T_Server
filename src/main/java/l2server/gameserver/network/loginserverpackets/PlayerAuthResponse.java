@@ -20,16 +20,14 @@ import l2server.util.network.BaseRecievePacket;
 /**
  * @author -Wooden-
  */
-public class PlayerAuthResponse extends BaseRecievePacket
-{
+public class PlayerAuthResponse extends BaseRecievePacket {
 	private String account;
 	private boolean authed;
 
 	/**
 	 * @param decrypt
 	 */
-	public PlayerAuthResponse(byte[] decrypt)
-	{
+	public PlayerAuthResponse(byte[] decrypt) {
 		super(decrypt);
 
 		account = readS();
@@ -39,16 +37,14 @@ public class PlayerAuthResponse extends BaseRecievePacket
 	/**
 	 * @return Returns the account.
 	 */
-	public String getAccount()
-	{
+	public String getAccount() {
 		return account;
 	}
 
 	/**
 	 * @return Returns the authed state.
 	 */
-	public boolean isAuthed()
-	{
+	public boolean isAuthed() {
 		return authed;
 	}
 }

@@ -32,31 +32,24 @@ import java.util.List;
 /**
  * @author nBd
  */
-public class TargetCorpseMob implements ISkillTargetTypeHandler
-{
+public class TargetCorpseMob implements ISkillTargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		List<L2Character> targetList = new ArrayList<L2Character>();
 
-		if (!(target instanceof L2Attackable) || !target.isDead())
-		{
+		if (!(target instanceof L2Attackable) || !target.isDead()) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return null;
 		}
 
 		// Corpse mob only available for half time
-		switch (skill.getSkillType())
-		{
+		switch (skill.getSkillType()) {
 			case DRAIN:
-			case SUMMON:
-			{
+			case SUMMON: {
 				if (DecayTaskManager.getInstance().getTasks().containsKey(target) &&
 						System.currentTimeMillis() - DecayTaskManager.getInstance().getTasks().get(target) >
-								DecayTaskManager.ATTACKABLE_DECAY_TIME / 2)
-				{
-					activeChar
-							.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CORPSE_TOO_OLD_SKILL_NOT_USED));
+								DecayTaskManager.ATTACKABLE_DECAY_TIME / 2) {
+					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CORPSE_TOO_OLD_SKILL_NOT_USED));
 					return null;
 				}
 				break;
@@ -64,13 +57,10 @@ public class TargetCorpseMob implements ISkillTargetTypeHandler
 			default:
 		}
 
-		if (!onlyFirst)
-		{
+		if (!onlyFirst) {
 			targetList.add(target);
 			return targetList.toArray(new L2Object[targetList.size()]);
-		}
-		else
-		{
+		} else {
 			return new L2Character[]{target};
 		}
 	}
@@ -78,13 +68,11 @@ public class TargetCorpseMob implements ISkillTargetTypeHandler
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
+	public Enum<L2SkillTargetType> getTargetType() {
 		return L2SkillTargetType.TARGET_CORPSE_MOB;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetCorpseMob());
 	}
 }

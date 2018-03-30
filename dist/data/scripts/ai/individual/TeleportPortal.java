@@ -21,26 +21,22 @@ import l2server.gameserver.model.quest.Quest;
 
 /**
  * @author LasTravel
- *         <p>
- *         Teleport portal from Angel Waterfall > Magmeld
+ * <p>
+ * Teleport portal from Angel Waterfall > Magmeld
  */
 
-public class TeleportPortal extends Quest
-{
+public class TeleportPortal extends Quest {
 	private static final int portal = 32910;
 
-	public TeleportPortal(int id, String name, String descr)
-	{
+	public TeleportPortal(int id, String name, String descr) {
 		super(id, name, descr);
 
 		addAggroRangeEnterId(portal);
 	}
 
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
-		if (!npc.isImmobilized())
-		{
+	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet) {
+		if (!npc.isImmobilized()) {
 			npc.disableCoreAI(true);
 			npc.setIsImmobilized(true);
 			npc.setIsInvul(true);
@@ -50,8 +46,7 @@ public class TeleportPortal extends Quest
 		return super.onAggroRangeEnter(npc, player, isPet);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new TeleportPortal(-1, "TeleportPortal", "ai");
 	}
 }

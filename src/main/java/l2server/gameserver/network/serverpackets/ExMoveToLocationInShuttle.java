@@ -18,25 +18,22 @@ package l2server.gameserver.network.serverpackets;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.util.Point3D;
 
-public class ExMoveToLocationInShuttle extends L2GameServerPacket
-{
+public class ExMoveToLocationInShuttle extends L2GameServerPacket {
 	private int charObjId;
 	private int shuttleId;
 	private Point3D destination;
 	@SuppressWarnings("unused")
 	private int heading;
-
-	public ExMoveToLocationInShuttle(L2PcInstance player)
-	{
+	
+	public ExMoveToLocationInShuttle(L2PcInstance player) {
 		charObjId = player.getObjectId();
 		shuttleId = player.getShuttle().getObjectId();
 		destination = player.getInVehiclePosition();
 		heading = player.getHeading();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(charObjId);
 		writeD(shuttleId);
 		writeD(destination.getX());

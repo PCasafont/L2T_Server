@@ -18,18 +18,16 @@ package l2server.gameserver.network.serverpackets;
 /**
  * Format: (ch)ddddd
  */
-public class ExPutCommissionResultForVariationMake extends L2GameServerPacket
-{
-
+public class ExPutCommissionResultForVariationMake extends L2GameServerPacket {
+	
 	private int gemstoneObjId;
 	private int itemId;
 	private long gemstoneCount;
 	private int unk1;
 	private int unk2;
 	private int unk3;
-
-	public ExPutCommissionResultForVariationMake(int gemstoneObjId, long count, int itemId)
-	{
+	
+	public ExPutCommissionResultForVariationMake(int gemstoneObjId, long count, int itemId) {
 		this.gemstoneObjId = gemstoneObjId;
 		this.itemId = itemId;
 		gemstoneCount = count;
@@ -37,12 +35,11 @@ public class ExPutCommissionResultForVariationMake extends L2GameServerPacket
 		unk2 = 0;
 		unk3 = 1;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(gemstoneObjId);
 		writeD(itemId);
 		writeQ(gemstoneCount);

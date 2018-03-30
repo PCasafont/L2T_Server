@@ -26,16 +26,14 @@ import java.util.Set;
 /**
  * @author Pere
  */
-public final class ExPetInfo extends L2GameServerPacket
-{
+public final class ExPetInfo extends L2GameServerPacket {
 	private int objectId;
 	private int val;
 	private byte[] data1;
 	private byte[] data2;
 	private Set<Integer> abnormals;
 
-	public ExPetInfo(L2PetInstance pet, L2Character attacker, int val)
-	{
+	public ExPetInfo(L2PetInstance pet, L2Character attacker, int val) {
 		objectId = pet.getObjectId();
 		val = 0;//pet.isShowSummonAnimation() ? 2 : val;
 
@@ -47,8 +45,7 @@ public final class ExPetInfo extends L2GameServerPacket
 		buffer.put((byte) 0);
 		buffer.put((byte) 0);
 
-		for (char c : pet.getOwner().getName().toCharArray())
-		{
+		for (char c : pet.getOwner().getName().toCharArray()) {
 			buffer.putShort((short) c);
 		}
 		buffer.putShort((short) 0);
@@ -96,10 +93,8 @@ public final class ExPetInfo extends L2GameServerPacket
 
 		buffer.putInt((int) Math.round(pet.getCurrentMp()));
 
-		if (pet.getName() != null)
-		{
-			for (char c : pet.getName().toCharArray())
-			{
+		if (pet.getName() != null) {
+			for (char c : pet.getName().toCharArray()) {
 				buffer.putShort((short) c);
 			}
 		}
@@ -119,12 +114,10 @@ public final class ExPetInfo extends L2GameServerPacket
 		// 0x00000020 unk
 		// 0x00000040 unk
 		byte flag = 0x04;
-		if (pet.isAlikeDead())
-		{
+		if (pet.isAlikeDead()) {
 			flag |= 0x02;
 		}
-		if (pet.getTemplate().ShowName)
-		{
+		if (pet.getTemplate().ShowName) {
 			flag |= 0x08;
 		}
 		buffer.put(flag);
@@ -135,15 +128,13 @@ public final class ExPetInfo extends L2GameServerPacket
 		buffer.get(data2, 0, size);
 
 		abnormals = pet.getAbnormalEffect();
-		if (pet.getOwner().getAppearance().getInvisible())
-		{
+		if (pet.getOwner().getAppearance().getInvisible()) {
 			abnormals.add(VisualEffect.STEALTH.getId());
 		}
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objectId);
 		writeC(val); // 0=teleported 1=default 2=summoned
 		writeH(0x0025);
@@ -160,8 +151,7 @@ public final class ExPetInfo extends L2GameServerPacket
 		writeB(data2);
 
 		writeH(abnormals.size());
-		for (int abnormal : abnormals)
-		{
+		for (int abnormal : abnormals) {
 			writeH(abnormal);
 		}
 	}

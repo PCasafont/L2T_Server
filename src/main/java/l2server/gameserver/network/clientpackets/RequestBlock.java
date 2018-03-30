@@ -23,8 +23,7 @@ import l2server.gameserver.network.serverpackets.BlockListPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 
-public final class RequestBlock extends L2GameClientPacket
-{
+public final class RequestBlock extends L2GameClientPacket {
 
 	private static final int BLOCK = 0;
 	private static final int UNBLOCK = 1;
@@ -36,60 +35,47 @@ public final class RequestBlock extends L2GameClientPacket
 	private Integer type;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		type = readD(); //0x00 - block, 0x01 - unblock, 0x03 - allblock, 0x04 - allunblock
 
-		if (type == BLOCK || type == UNBLOCK)
-		{
+		if (type == BLOCK || type == UNBLOCK) {
 			name = readS();
 		}
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
 		final int targetId = CharNameTable.getInstance().getIdByName(name);
 		final int targetAL = CharNameTable.getInstance().getAccessLevelById(targetId);
 
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
-		switch (type)
-		{
+		switch (type) {
 			case BLOCK:
 			case UNBLOCK:
 				// can't use block/unblock for locating invisible characters
-				if (targetId <= 0)
-				{
+				if (targetId <= 0) {
 					// Incorrect player name.
-					activeChar.sendPacket(
-							SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_REGISTER_TO_IGNORE_LIST));
+					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_REGISTER_TO_IGNORE_LIST));
 					return;
 				}
 
-				if (targetAL > 0)
-				{
+				if (targetAL > 0) {
 					// Cannot block a GM character.
-					activeChar.sendPacket(
-							SystemMessage.getSystemMessage(SystemMessageId.YOU_MAY_NOT_IMPOSE_A_BLOCK_ON_GM));
+					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_MAY_NOT_IMPOSE_A_BLOCK_ON_GM));
 					return;
 				}
 
-				if (activeChar.getObjectId() == targetId)
-				{
+				if (activeChar.getObjectId() == targetId) {
 					return;
 				}
 
-				if (type == BLOCK)
-				{
+				if (type == BLOCK) {
 					BlockList.addToBlockList(activeChar, targetId);
-				}
-				else
-				{
+				} else {
 					BlockList.removeFromBlockList(activeChar, targetId);
 				}
 				break;
@@ -97,13 +83,11 @@ public final class RequestBlock extends L2GameClientPacket
 				activeChar.sendPacket(new BlockListPacket(activeChar));
 				break;
 			case ALLBLOCK:
-				activeChar.sendPacket(
-						SystemMessage.getSystemMessage(SystemMessageId.MESSAGE_REFUSAL_MODE));//Update by rocknow
+				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MESSAGE_REFUSAL_MODE));//Update by rocknow
 				BlockList.setBlockAll(activeChar, true);
 				break;
 			case ALLUNBLOCK:
-				activeChar.sendPacket(
-						SystemMessage.getSystemMessage(SystemMessageId.MESSAGE_ACCEPTANCE_MODE));//Update by rocknow
+				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MESSAGE_ACCEPTANCE_MODE));//Update by rocknow
 				BlockList.setBlockAll(activeChar, false);
 				break;
 			default:

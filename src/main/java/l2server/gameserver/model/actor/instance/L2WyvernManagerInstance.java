@@ -20,39 +20,33 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 
-public class L2WyvernManagerInstance extends L2Npc
-{
-	public L2WyvernManagerInstance(int objectId, L2NpcTemplate template)
-	{
+public class L2WyvernManagerInstance extends L2Npc {
+	public L2WyvernManagerInstance(int objectId, L2NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2WyvernManagerInstance);
 	}
-
+	
 	@Override
-	public void showChatWindow(L2PcInstance player)
-	{
+	public void showChatWindow(L2PcInstance player) {
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 		String filename = "wyvernmanager/wyvernmanager-no.htm";
-
-		if (isOwnerClan(player))
-		{
+		
+		if (isOwnerClan(player)) {
 			filename = "wyvernmanager/wyvernmanager.htm"; // Owner message window
 		}
-
+		
 		NpcHtmlMessage html = new NpcHtmlMessage(1);
 		html.setFile(player.getHtmlPrefix(), filename);
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		html.replace("%npcname%", getName());
 		player.sendPacket(html);
 	}
-
-	public boolean isOwnerClan(L2PcInstance player)
-	{
+	
+	public boolean isOwnerClan(L2PcInstance player) {
 		return true;
 	}
-
-	public boolean isInSiege()
-	{
+	
+	public boolean isInSiege() {
 		return false;
 	}
 }

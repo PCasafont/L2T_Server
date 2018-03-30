@@ -18,12 +18,10 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Erlandys
  */
-public class ExShowCommission extends L2GameServerPacket
-{
+public class ExShowCommission extends L2GameServerPacket {
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(0x01); // Just for showing window...
 	}
 }

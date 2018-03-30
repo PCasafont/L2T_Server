@@ -18,11 +18,7 @@ package l2server.gameserver.model.actor.knownlist;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
+import l2server.gameserver.model.actor.*;
 import l2server.gameserver.model.actor.instance.L2NpcInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
@@ -30,16 +26,14 @@ import l2server.gameserver.model.quest.Quest;
 import java.util.Collection;
 import java.util.concurrent.ScheduledFuture;
 
-public class NpcKnownList extends CharKnownList
-{
+public class NpcKnownList extends CharKnownList {
 	// =========================================================
 	// Data Field
 	private ScheduledFuture<?> trackingTask = null;
 
 	// =========================================================
 	// Constructor
-	public NpcKnownList(L2Npc activeChar)
-	{
+	public NpcKnownList(L2Npc activeChar) {
 		super(activeChar);
 	}
 
@@ -53,22 +47,17 @@ public class NpcKnownList extends CharKnownList
 	// Property - Public
 
 	@Override
-	public boolean addKnownObject(L2Object object)
-	{
-		if (!super.addKnownObject(object))
-		{
+	public boolean addKnownObject(L2Object object) {
+		if (!super.addKnownObject(object)) {
 			return false;
 		}
 
-		if (getActiveObject() instanceof L2NpcInstance && object instanceof L2PcInstance)
-		{
+		if (getActiveObject() instanceof L2NpcInstance && object instanceof L2PcInstance) {
 			final L2Npc npc = (L2Npc) getActiveObject();
 
 			// Notify to scripts
-			if (npc.getTemplate().getEventQuests(Quest.QuestEventType.ON_CREATURE_SEE) != null)
-			{
-				for (Quest quest : npc.getTemplate().getEventQuests(Quest.QuestEventType.ON_CREATURE_SEE))
-				{
+			if (npc.getTemplate().getEventQuests(Quest.QuestEventType.ON_CREATURE_SEE) != null) {
+				for (Quest quest : npc.getTemplate().getEventQuests(Quest.QuestEventType.ON_CREATURE_SEE)) {
 					quest.notifyCreatureSee(npc, (L2PcInstance) object, object instanceof L2Summon);
 				}
 			}
@@ -77,27 +66,22 @@ public class NpcKnownList extends CharKnownList
 	}
 
 	@Override
-	public L2Npc getActiveChar()
-	{
+	public L2Npc getActiveChar() {
 		return (L2Npc) super.getActiveChar();
 	}
 
 	@Override
-	public int getDistanceToForgetObject(L2Object object)
-	{
+	public int getDistanceToForgetObject(L2Object object) {
 		return getDistanceToWatchObject(object) + 200;
 	}
 
 	@Override
-	public int getDistanceToWatchObject(L2Object object)
-	{
-		if (object instanceof L2NpcInstance || !(object instanceof L2Character))
-		{
+	public int getDistanceToWatchObject(L2Object object) {
+		if (object instanceof L2NpcInstance || !(object instanceof L2Character)) {
 			return 0;
 		}
 
-		if (object instanceof L2Playable)
-		{
+		if (object instanceof L2Playable) {
 			return object.getKnownList().getDistanceToWatchObject(getActiveObject());
 		}
 
@@ -105,48 +89,35 @@ public class NpcKnownList extends CharKnownList
 	}
 
 	//L2Master mod - support for Walking monsters aggro
-	public void startTrackingTask()
-	{
-		if (trackingTask == null && getActiveChar().getAggroRange() > 0)
-		{
+	public void startTrackingTask() {
+		if (trackingTask == null && getActiveChar().getAggroRange() > 0) {
 			trackingTask = ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new TrackingTask(), 2000, 2000);
 		}
 	}
 
 	//L2Master mod - support for Walking monsters aggro
-	public void stopTrackingTask()
-	{
-		if (trackingTask != null)
-		{
+	public void stopTrackingTask() {
+		if (trackingTask != null) {
 			trackingTask.cancel(true);
 			trackingTask = null;
 		}
 	}
 
 	//L2Master mod - support for Walking monsters aggro
-	private class TrackingTask implements Runnable
-	{
-		public TrackingTask()
-		{
+	private class TrackingTask implements Runnable {
+		public TrackingTask() {
 			//
 		}
 
 		@Override
-		public void run()
-		{
-			if (getActiveChar() instanceof L2Attackable)
-			{
+		public void run() {
+			if (getActiveChar() instanceof L2Attackable) {
 				final L2Attackable monster = (L2Attackable) getActiveChar();
-				if (monster.getAI().getIntention() == CtrlIntention.AI_INTENTION_MOVE_TO)
-				{
+				if (monster.getAI().getIntention() == CtrlIntention.AI_INTENTION_MOVE_TO) {
 					final Collection<L2PcInstance> players = getKnownPlayers().values();
-					if (players != null)
-					{
-						for (L2PcInstance pl : players)
-						{
-							if (pl.isInsideRadius(monster, monster.getAggroRange(), true, false) && !pl.isDead() &&
-									!pl.isInvul(monster))
-							{
+					if (players != null) {
+						for (L2PcInstance pl : players) {
+							if (pl.isInsideRadius(monster, monster.getAggroRange(), true, false) && !pl.isDead() && !pl.isInvul(monster)) {
 								monster.addDamageHate(pl, 0, 100);
 								monster.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, pl, null);
 								break;

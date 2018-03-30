@@ -37,18 +37,15 @@ import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
-public class Fishing implements ISkillHandler
-{
+public class Fishing implements ISkillHandler {
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.FISHING};
 
 	/**
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (!(activeChar instanceof L2PcInstance))
-		{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+		if (!(activeChar instanceof L2PcInstance)) {
 			return;
 		}
 
@@ -59,19 +56,14 @@ public class Fishing implements ISkillHandler
 		 * else, unless you are GM. so this got moved up here, before anything
 		 * else.
 		 */
-		if (!Config.ALLOWFISHING && !player.isGM())
-		{
+		if (!Config.ALLOWFISHING && !player.isGM()) {
 			player.sendMessage("Fishing server is currently offline");
 			return;
 		}
-		if (player.isFishing())
-		{
-			if (player.getFishCombat() != null)
-			{
+		if (player.isFishing()) {
+			if (player.getFishCombat() != null) {
 				player.getFishCombat().doDie(false);
-			}
-			else
-			{
+			} else {
 				player.endFishing(false);
 			}
 			// Cancels fishing
@@ -79,15 +71,13 @@ public class Fishing implements ISkillHandler
 			return;
 		}
 		L2Weapon weaponItem = player.getActiveWeaponItem();
-		if (weaponItem == null || weaponItem.getItemType() != L2WeaponType.FISHINGROD)
-		{
+		if (weaponItem == null || weaponItem.getItemType() != L2WeaponType.FISHINGROD) {
 			// Fishing poles are not installed
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FISHING_POLE_NOT_EQUIPPED));
 			return;
 		}
 		L2ItemInstance lure = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
-		if (lure == null)
-		{
+		if (lure == null) {
 			// Bait not equiped.
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BAIT_ON_HOOK_BEFORE_FISHING));
 			return;
@@ -100,33 +90,27 @@ public class Fishing implements ISkillHandler
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_BAIT));
 			return;
 		}
-		if (player.isInBoat())
-		{
+		if (player.isInBoat()) {
 			// You can't fish while you are on boat
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_FISH_ON_BOAT));
-			if (!player.isGM())
-			{
+			if (!player.isGM()) {
 				return;
 			}
 		}
-		if (player.isInCraftMode() || player.isInStoreMode())
-		{
+		if (player.isInCraftMode() || player.isInStoreMode()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_FISH_WHILE_USING_RECIPE_BOOK));
-			if (!player.isGM())
-			{
+			if (!player.isGM()) {
 				return;
 			}
 		}
-		if (player.isInsideZone(L2Character.ZONE_WATER))
-		{
+		if (player.isInsideZone(L2Character.ZONE_WATER)) {
 			// You can't fish in water
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_FISH_UNDER_WATER));
-			if (!player.isGM())
-			{
+			if (!player.isGM()) {
 				return;
 			}
 		}
-        /*
+		/*
 		 * If fishing is enabled, here is the code that was striped from
 		 * startFishing() in L2PcInstance. Decide now where will the hook be
 		 * cast...
@@ -148,78 +132,58 @@ public class Fishing implements ISkillHandler
 		L2FishingZone aimingTo = null;
 		L2WaterZone water = null;
 		boolean canFish = false;
-		for (L2ZoneType zone : ZoneManager.getInstance().getZones(x, y))
-		{
-			if (zone instanceof L2FishingZone)
-			{
+		for (L2ZoneType zone : ZoneManager.getInstance().getZones(x, y)) {
+			if (zone instanceof L2FishingZone) {
 				aimingTo = (L2FishingZone) zone;
 				continue;
 			}
-			if (zone instanceof L2WaterZone)
-			{
+			if (zone instanceof L2WaterZone) {
 				water = (L2WaterZone) zone;
 			}
 		}
-		if (aimingTo != null)
-		{
+		if (aimingTo != null) {
 			// fishing zone found, we can fish here
-			if (Config.GEODATA > 0)
-			{
+			if (Config.GEODATA > 0) {
 				// geodata enabled, checking if we can see end of the pole
-				if (GeoData.getInstance().canSeeTarget(player.getX(), player.getY(), z, x, y, z))
-				{
+				if (GeoData.getInstance().canSeeTarget(player.getX(), player.getY(), z, x, y, z)) {
 					// finding z level for hook
-					if (water != null)
-					{
+					if (water != null) {
 						// water zone exist
-						if (GeoData.getInstance().getHeight(x, y, z) < water.getWaterZ())
-						{
+						if (GeoData.getInstance().getHeight(x, y, z) < water.getWaterZ()) {
 							// water Z is higher than geo Z
 							z = water.getWaterZ() + 10;
 							canFish = true;
 						}
-					}
-					else
-					{
+					} else {
 						// no water zone, using fishing zone
-						if (GeoData.getInstance().getHeight(x, y, z) < aimingTo.getWaterZ())
-						{
+						if (GeoData.getInstance().getHeight(x, y, z) < aimingTo.getWaterZ()) {
 							// fishing Z is higher than geo Z
 							z = aimingTo.getWaterZ() + 10;
 							canFish = true;
 						}
 					}
 				}
-			}
-			else
-			{
+			} else {
 				// geodata disabled
 				// if water zone exist using it, if not - using fishing zone
-				if (water != null)
-				{
+				if (water != null) {
 					z = water.getWaterZ() + 10;
-				}
-				else
-				{
+				} else {
 					z = aimingTo.getWaterZ() + 10;
 				}
 				canFish = true;
 			}
 		}
-		if (!canFish)
-		{
+		if (!canFish) {
 			// You can't fish here
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_FISH_HERE));
-			if (!player.isGM())
-			{
+			if (!player.isGM()) {
 				return;
 			}
 		}
 		// Has enough bait, consume 1 and update inventory. Start fishing
 		// follows.
-		lure2 = player.getInventory()
-				.destroyItem("Consume", player.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_LHAND), 1,
-						player, null);
+		lure2 = player.getInventory().destroyItem("Consume", player.getInventory().getPaperdollObjectId(Inventory.PAPERDOLL_LHAND), 1, player, null);
 		InventoryUpdate iu = new InventoryUpdate();
 		iu.addModifiedItem(lure2);
 		player.sendPacket(iu);
@@ -232,8 +196,7 @@ public class Fishing implements ISkillHandler
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

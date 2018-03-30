@@ -26,23 +26,20 @@ import l2server.gameserver.model.actor.L2Character;
  *
  * @version $Revision: 1.3.2.1.2.4 $ $Date: 2005/03/27 15:29:57 $
  */
-public class ChangeMoveType extends L2GameServerPacket
-{
+public class ChangeMoveType extends L2GameServerPacket {
 	public static final int WALK = 0;
 	public static final int RUN = 1;
-
+	
 	private int charObjId;
 	private boolean running;
-
-	public ChangeMoveType(L2Character character)
-	{
+	
+	public ChangeMoveType(L2Character character) {
 		charObjId = character.getObjectId();
 		running = character.isRunning();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(charObjId);
 		writeD(running ? RUN : WALK);
 		writeD(0); //c2

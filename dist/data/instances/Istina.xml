@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instance name="Istina's Cavern">
-    <activityTime val="120" />
-    <allowSummon val="false" />
-    <emptyDestroyTime val="10" />
-    <spawnPoint spawnX="-180218" spawnY="185923" spawnZ="-10576" />
-    <doorlist>
-        <door doorId="14220100" />
-        <door doorId="14220101" />
-    </doorlist>
+	<activityTime val="120" />
+	<allowSummon val="false" />
+	<emptyDestroyTime val="10" />
+	<spawnPoint spawnX="-180218" spawnY="185923" spawnZ="-10576" />
+	<doorlist>
+		<door doorId="14220100" />
+		<door doorId="14220101" />
+	</doorlist>
 </instance>

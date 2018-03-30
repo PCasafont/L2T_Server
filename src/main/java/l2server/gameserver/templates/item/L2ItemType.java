@@ -20,7 +20,6 @@ package l2server.gameserver.templates.item;
  *
  * @author DS
  */
-public interface L2ItemType
-{
+public interface L2ItemType {
 	int mask();
 }

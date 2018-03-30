@@ -5,8 +5,7 @@ import l2server.log.Log;
 /**
  * @author MegaParzor!
  */
-public class PrivateBuyListSell extends L2GameClientPacket
-{
+public class PrivateBuyListSell extends L2GameClientPacket {
 	@SuppressWarnings("unused")
 	private int adena;
 	@SuppressWarnings("unused")
@@ -17,8 +16,7 @@ public class PrivateBuyListSell extends L2GameClientPacket
 	private int objectId;
 
 	@Override
-	public void readImpl()
-	{
+	public void readImpl() {
 		adena = readD();
 		isPackageSale = readD();
 		listSize = readD();
@@ -26,8 +24,7 @@ public class PrivateBuyListSell extends L2GameClientPacket
 	}
 
 	@Override
-	public void runImpl()
-	{
+	public void runImpl() {
 		// TODO
 		Log.info(getType() + " packet was received from " + getClient() + ".");
 	}

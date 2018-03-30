@@ -23,14 +23,12 @@ import l2server.gameserver.stats.Env;
  *
  * @author mkizub
  */
-public class ConditionGameTime extends Condition
-{
+public class ConditionGameTime extends Condition {
 
 	/**
 	 * The Enum CheckGameTime.
 	 */
-	public enum CheckGameTime
-	{
+	public enum CheckGameTime {
 		NIGHT
 	}
 
@@ -43,8 +41,7 @@ public class ConditionGameTime extends Condition
 	 * @param check    the check
 	 * @param required the required
 	 */
-	public ConditionGameTime(CheckGameTime check, boolean required)
-	{
+	public ConditionGameTime(CheckGameTime check, boolean required) {
 		this.check = check;
 		this.required = required;
 	}
@@ -57,10 +54,8 @@ public class ConditionGameTime extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		switch (check)
-		{
+	public boolean testImpl(Env env) {
+		switch (check) {
 			case NIGHT:
 				return TimeController.getInstance().isNowNight() == required;
 		}

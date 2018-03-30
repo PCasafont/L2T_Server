@@ -1,93 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <!-- Accessory Life Stone - Level 46 -->
-    <item>
-        <ingredient id="57" count="10" />
-        <production id="12754" count="1" />
-    </item>
-    <!-- Accessory Life Stone - Level 49 -->
-    <item>
-        <ingredient id="57" count="10" />
-        <production id="12755" count="1" />
-    </item>
-    <!-- Accessory Life Stone - Level 52 -->
-    <item>
-        <ingredient id="57" count="10" />
-        <production id="12756" count="1" />
-    </item>
-    <!-- Accessory Life Stone - Level 55 -->
-    <item>
-        <ingredient id="57" count="10" />
-        <production id="12757" count="1" />
-    </item>
-    <!-- Accessory Life Stone - Level 58 -->
-    <item>
-        <ingredient id="57" count="10" />
-        <production id="12758" count="1" />
-    </item>
-    <!-- Accessory Life Stone - Level 61 -->
-    <item>
-        <ingredient id="57" count="10" />
-        <production id="12759" count="1" />
-    </item>
-    <!-- Accessory Life Stone - Level 64 -->
-    <item>
-        <ingredient id="57" count="10" />
-        <production id="12760" count="1" />
-    </item>
-    <!-- Accessory Life Stone - Level 67 -->
-    <item>
-        <ingredient id="57" count="10" />
-        <production id="12761" count="1" />
-    </item>
-    <!-- Accessory Life Stone - Level 70 -->
-    <item>
-        <ingredient id="57" count="10" />
-        <production id="12848" count="1" />
-    </item>
-    <!-- Accessory Life Stone - Level 76 -->
-    <item>
-        <ingredient id="57" count="10" />
-        <production id="12849" count="1" />
-    </item>
-    <!-- Accessory Life Stone - Level 80 -->
-    <item>
-        <ingredient id="57" count="10" />
-        <production id="12821" count="1" />
-    </item>
-    <!-- Accessory Life Stone - Level 82 -->
-    <item>
-        <ingredient id="57" count="10" />
-        <production id="12822" count="1" />
-    </item>
-    <!-- Accessory Life Stone - Level 84 -->
-    <item>
-        <ingredient id="57" count="10" />
-        <production id="14008" count="1" />
-    </item>
-    <!-- Accessory Life Stone - Level 85 -->
-    <item>
-        <ingredient id="57" count="10" />
-        <production id="16177" count="1" />
-    </item>
-    <!-- Accessory Life Stone - Level 86 -->
-    <item>
-        <ingredient id="57" count="10" />
-        <production id="16178" count="1" />
-    </item>
-    <!-- Accessory Life Stone (R-grade) -->
-    <item>
-        <ingredient id="57" count="250" />
-        <production id="19166" count="1" />
-    </item>
-    <!-- Accessory Life Stone (R95-grade) -->
-    <item>
-        <ingredient id="57" count="300" />
-        <production id="19167" count="1" />
-    </item>
-    <!-- Accessory Life Stone (R99-grade) -->
-    <item>
-        <ingredient id="57" count="400" />
-        <production id="19168" count="1" />
-    </item>
+	<!-- Accessory Life Stone - Level 46 -->
+	<item>
+		<ingredient id="57" count="10" />
+		<production id="12754" count="1" />
+	</item>
+	<!-- Accessory Life Stone - Level 49 -->
+	<item>
+		<ingredient id="57" count="10" />
+		<production id="12755" count="1" />
+	</item>
+	<!-- Accessory Life Stone - Level 52 -->
+	<item>
+		<ingredient id="57" count="10" />
+		<production id="12756" count="1" />
+	</item>
+	<!-- Accessory Life Stone - Level 55 -->
+	<item>
+		<ingredient id="57" count="10" />
+		<production id="12757" count="1" />
+	</item>
+	<!-- Accessory Life Stone - Level 58 -->
+	<item>
+		<ingredient id="57" count="10" />
+		<production id="12758" count="1" />
+	</item>
+	<!-- Accessory Life Stone - Level 61 -->
+	<item>
+		<ingredient id="57" count="10" />
+		<production id="12759" count="1" />
+	</item>
+	<!-- Accessory Life Stone - Level 64 -->
+	<item>
+		<ingredient id="57" count="10" />
+		<production id="12760" count="1" />
+	</item>
+	<!-- Accessory Life Stone - Level 67 -->
+	<item>
+		<ingredient id="57" count="10" />
+		<production id="12761" count="1" />
+	</item>
+	<!-- Accessory Life Stone - Level 70 -->
+	<item>
+		<ingredient id="57" count="10" />
+		<production id="12848" count="1" />
+	</item>
+	<!-- Accessory Life Stone - Level 76 -->
+	<item>
+		<ingredient id="57" count="10" />
+		<production id="12849" count="1" />
+	</item>
+	<!-- Accessory Life Stone - Level 80 -->
+	<item>
+		<ingredient id="57" count="10" />
+		<production id="12821" count="1" />
+	</item>
+	<!-- Accessory Life Stone - Level 82 -->
+	<item>
+		<ingredient id="57" count="10" />
+		<production id="12822" count="1" />
+	</item>
+	<!-- Accessory Life Stone - Level 84 -->
+	<item>
+		<ingredient id="57" count="10" />
+		<production id="14008" count="1" />
+	</item>
+	<!-- Accessory Life Stone - Level 85 -->
+	<item>
+		<ingredient id="57" count="10" />
+		<production id="16177" count="1" />
+	</item>
+	<!-- Accessory Life Stone - Level 86 -->
+	<item>
+		<ingredient id="57" count="10" />
+		<production id="16178" count="1" />
+	</item>
+	<!-- Accessory Life Stone (R-grade) -->
+	<item>
+		<ingredient id="57" count="250" />
+		<production id="19166" count="1" />
+	</item>
+	<!-- Accessory Life Stone (R95-grade) -->
+	<item>
+		<ingredient id="57" count="300" />
+		<production id="19167" count="1" />
+	</item>
+	<!-- Accessory Life Stone (R99-grade) -->
+	<item>
+		<ingredient id="57" count="400" />
+		<production id="19168" count="1" />
+	</item>
 </list>

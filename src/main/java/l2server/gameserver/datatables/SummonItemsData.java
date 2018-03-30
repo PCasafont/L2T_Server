@@ -28,59 +28,50 @@ import l2server.util.xml.XmlNode;
 
 import java.io.File;
 
-public class SummonItemsData
-{
+public class SummonItemsData {
 	private TIntObjectHashMap<L2SummonItem> summonitems;
 
-	public static SummonItemsData getInstance()
-	{
+	public static SummonItemsData getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private SummonItemsData()
-	{
+	private SummonItemsData() {
 		summonitems = new TIntObjectHashMap<>();
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "summonItems.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode d : doc.getChildren())
-		{
-            if (d.getName().equalsIgnoreCase("item"))
-            {
-                int itemId = d.getInt("id");
-                int npcId = d.getInt("npcId");
-                byte summonType = (byte) d.getInt("summonType");
-                int despawnTime = d.getInt("despawn", -1);
+		for (XmlNode d : doc.getChildren()) {
+			if (d.getName().equalsIgnoreCase("item")) {
+				int itemId = d.getInt("id");
+				int npcId = d.getInt("npcId");
+				byte summonType = (byte) d.getInt("summonType");
+				int despawnTime = d.getInt("despawn", -1);
 
-                L2SummonItem summonitem = new L2SummonItem(itemId, npcId, summonType, despawnTime);
-                summonitems.put(itemId, summonitem);
-            }
-        }
+				L2SummonItem summonitem = new L2SummonItem(itemId, npcId, summonType, despawnTime);
+				summonitems.put(itemId, summonitem);
+			}
+		}
 
 		Log.info("Summon items data: Loaded " + summonitems.size() + " summon items.");
 	}
 
-	public L2SummonItem getSummonItem(int itemId)
-	{
+	public L2SummonItem getSummonItem(int itemId) {
 		return summonitems.get(itemId);
 	}
 
-	public int[] itemIDs()
-	{
+	public int[] itemIDs() {
 		int size = summonitems.size();
 		int[] result = new int[size];
 		int i = 0;
-		for (Object si : summonitems.getValues())
-		{
+		for (Object si : summonitems.getValues()) {
 			result[i++] = ((L2SummonItem) si).getItemId();
 		}
 		return result;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final SummonItemsData instance = new SummonItemsData();
 	}
 }

@@ -18,49 +18,40 @@ package l2server.gameserver.pathfinding.cellnodes;
 import l2server.gameserver.pathfinding.AbstractNode;
 import l2server.gameserver.pathfinding.AbstractNodeLoc;
 
-public class CellNode extends AbstractNode
-{
+public class CellNode extends AbstractNode {
 	private CellNode next = null;
 	private boolean isInUse = true;
 	private float cost = -1000;
 
-	public CellNode(AbstractNodeLoc loc)
-	{
+	public CellNode(AbstractNodeLoc loc) {
 		super(loc);
 	}
 
-	public boolean isInUse()
-	{
+	public boolean isInUse() {
 		return isInUse;
 	}
 
-	public void setInUse()
-	{
+	public void setInUse() {
 		isInUse = true;
 	}
 
-	public CellNode getNext()
-	{
+	public CellNode getNext() {
 		return next;
 	}
 
-	public void setNext(CellNode next)
-	{
+	public void setNext(CellNode next) {
 		this.next = next;
 	}
 
-	public float getCost()
-	{
+	public float getCost() {
 		return cost;
 	}
 
-	public void setCost(double cost)
-	{
+	public void setCost(double cost) {
 		this.cost = (float) cost;
 	}
 
-	public void free()
-	{
+	public void free() {
 		setParent(null);
 		cost = -1000;
 		isInUse = false;

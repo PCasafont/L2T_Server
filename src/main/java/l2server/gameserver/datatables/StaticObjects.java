@@ -15,6 +15,7 @@
 
 package l2server.gameserver.datatables;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
@@ -26,33 +27,25 @@ import l2server.util.xml.XmlNode;
 
 import java.io.File;
 
-import gnu.trove.TIntObjectHashMap;
-
-public class StaticObjects
-{
+public class StaticObjects {
 	private TIntObjectHashMap<L2StaticObjectInstance> staticObjects;
 
-	public static StaticObjects getInstance()
-	{
+	public static StaticObjects getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private StaticObjects()
-	{
+	private StaticObjects() {
 		staticObjects = new TIntObjectHashMap<>();
 		parseData();
 		Log.info("StaticObject: Loaded " + staticObjects.size() + " StaticObject Templates.");
 	}
 
-	private void parseData()
-	{
+	private void parseData() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "staticObjects.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode d : doc.getChildren())
-		{
-			if (d.getName().equalsIgnoreCase("object"))
-			{
+		for (XmlNode d : doc.getChildren()) {
+			if (d.getName().equalsIgnoreCase("object")) {
 				int id = d.getInt("id");
 				int x = d.getInt("x");
 				int y = d.getInt("y");
@@ -102,8 +95,7 @@ public class StaticObjects
 				npcDat.set("mDef", 1);
 
 				L2CharTemplate template = new L2CharTemplate(npcDat);
-				L2StaticObjectInstance obj =
-						new L2StaticObjectInstance(IdFactory.getInstance().getNextId(), template, id);
+				L2StaticObjectInstance obj = new L2StaticObjectInstance(IdFactory.getInstance().getNextId(), template, id);
 				obj.setType(type);
 				obj.setXYZ(x, y, z);
 				obj.setMap(texture, map_x, map_y);
@@ -114,14 +106,12 @@ public class StaticObjects
 		}
 	}
 
-	public L2StaticObjectInstance getObject(int id)
-	{
+	public L2StaticObjectInstance getObject(int id) {
 		return staticObjects.get(id);
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final StaticObjects instance = new StaticObjects();
 	}
 }

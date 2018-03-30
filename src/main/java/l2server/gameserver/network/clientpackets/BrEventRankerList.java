@@ -22,8 +22,7 @@ import l2server.gameserver.network.serverpackets.ExBrLoadEventTopRankers;
  * <p>
  * Format: (ch)ddd
  */
-public class BrEventRankerList extends L2GameClientPacket
-{
+public class BrEventRankerList extends L2GameClientPacket {
 	private int eventId;
 	private int day;
 	@SuppressWarnings("unused")
@@ -33,8 +32,7 @@ public class BrEventRankerList extends L2GameClientPacket
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		eventId = readD();
 		day = readD(); // 0 - current, 1 - previous
 		ranking = readD();
@@ -44,8 +42,7 @@ public class BrEventRankerList extends L2GameClientPacket
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		int count = 0;
 		int bestScore = 0;
 		int myScore = 0;

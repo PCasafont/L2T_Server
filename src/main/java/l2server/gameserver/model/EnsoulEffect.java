@@ -24,57 +24,47 @@ import java.util.List;
 /**
  * @author Pere
  */
-public class EnsoulEffect
-{
+public class EnsoulEffect {
 	private final int id;
 	private final String name;
 	private final int group;
 	private final int stage;
 	private final List<Func> funcs = new ArrayList<>();
-
-	public EnsoulEffect(int id, String name, int group, int stage)
-	{
+	
+	public EnsoulEffect(int id, String name, int group, int stage) {
 		this.id = id;
 		this.name = name;
 		this.group = group;
 		this.stage = stage;
 	}
-
-	public void addFunc(Func func)
-	{
+	
+	public void addFunc(Func func) {
 		funcs.add(func);
 	}
-
-	public int getId()
-	{
+	
+	public int getId() {
 		return id;
 	}
-
-	public String getName()
-	{
+	
+	public String getName() {
 		return name;
 	}
-
-	public int getGroup()
-	{
+	
+	public int getGroup() {
 		return group;
 	}
-
-	public int getStage()
-	{
+	
+	public int getStage() {
 		return stage;
 	}
-
-	public void applyBonus(L2PcInstance player)
-	{
-		for (Func f : funcs)
-		{
+	
+	public void applyBonus(L2PcInstance player) {
+		for (Func f : funcs) {
 			player.addStatFunc(f);
 		}
 	}
-
-	public void removeBonus(L2PcInstance player)
-	{
+	
+	public void removeBonus(L2PcInstance player) {
 		player.removeStatsOwner(this);
 	}
 }

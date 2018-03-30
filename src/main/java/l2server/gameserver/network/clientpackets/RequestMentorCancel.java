@@ -32,38 +32,32 @@ import java.util.logging.Level;
 /**
  * @author Erlandys
  */
-public class RequestMentorCancel extends L2GameClientPacket
-{
-
+public class RequestMentorCancel extends L2GameClientPacket {
+	
 	private String name;
 	boolean isMentor;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		isMentor = readD() == 1;
 		name = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		SystemMessage sm;
-
+		
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
+		
 		int id = CharNameTable.getInstance().getIdByName(name);
-
+		
 		Connection con = null;
-
-		try
-		{
-			if (!isMentor)
-			{
+		
+		try {
+			if (!isMentor) {
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement;
 				statement = con.prepareStatement("DELETE FROM character_mentees WHERE (charId=? AND menteeId=?)");
@@ -71,27 +65,22 @@ public class RequestMentorCancel extends L2GameClientPacket
 				statement.setInt(2, activeChar.getObjectId());
 				statement.execute();
 				statement.close();
-
+				
 				// Mentee cancelled mentoring with mentor
-				sm = SystemMessage
-						.getSystemMessage(SystemMessageId.THE_MENTORING_RELATIONSHIP_WITH_S1_HAS_BEEN_CANCELED);
+				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_MENTORING_RELATIONSHIP_WITH_S1_HAS_BEEN_CANCELED);
 				sm.addString(name);
 				activeChar.sendPacket(sm);
-
-				for (L2Abnormal e : activeChar.getAllEffects())
-				{
-					if (e.getSkill().getId() >= 9227 && e.getSkill().getId() <= 9233)
-					{
+				
+				for (L2Abnormal e : activeChar.getAllEffects()) {
+					if (e.getSkill().getId() >= 9227 && e.getSkill().getId() <= 9233) {
 						e.exit();
 					}
 				}
 				activeChar.removeSkill(9379);
-				if (L2World.getInstance().getPlayer(id) != null)
-				{
+				if (L2World.getInstance().getPlayer(id) != null) {
 					L2PcInstance player = L2World.getInstance().getPlayer(id);
 					player.sendPacket(new ExMentorList(player));
-					sm = SystemMessage.getSystemMessage(
-							SystemMessageId.YOU_CAN_BOND_WITH_A_NEW_MENTEE_IN_S1_DAY_S2_HOUR_S3_MINUTE);
+					sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_CAN_BOND_WITH_A_NEW_MENTEE_IN_S1_DAY_S2_HOUR_S3_MINUTE);
 					sm.addString("0"); // TODO: Days
 					sm.addString("0"); // TODO: Hours
 					sm.addString("0"); // TODO: Minutes
@@ -99,9 +88,7 @@ public class RequestMentorCancel extends L2GameClientPacket
 					player.giveMentorBuff();
 				}
 				activeChar.sendPacket(new ExMentorList(activeChar));
-			}
-			else
-			{
+			} else {
 				con = L2DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement;
 				statement = con.prepareStatement("DELETE FROM character_mentees WHERE (charId=? AND menteeId=?)");
@@ -109,28 +96,23 @@ public class RequestMentorCancel extends L2GameClientPacket
 				statement.setInt(2, id);
 				statement.execute();
 				statement.close();
-
+				
 				// Mentor cancelled mentoring with mentee
-				sm = SystemMessage
-						.getSystemMessage(SystemMessageId.YOU_CAN_BOND_WITH_A_NEW_MENTEE_IN_S1_DAY_S2_HOUR_S3_MINUTE);
+				sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_CAN_BOND_WITH_A_NEW_MENTEE_IN_S1_DAY_S2_HOUR_S3_MINUTE);
 				sm.addString("0"); // TODO: Days
 				sm.addString("0"); // TODO: Hours
 				sm.addString("0"); // TODO: Minutes
 				activeChar.sendPacket(sm);
-
+				
 				activeChar.sendPacket(new ExMentorList(activeChar));
-				if (L2World.getInstance().getPlayer(id) != null)
-				{
+				if (L2World.getInstance().getPlayer(id) != null) {
 					L2PcInstance player = L2World.getInstance().getPlayer(id);
 					player.sendPacket(new ExMentorList(player));
-					sm = SystemMessage
-							.getSystemMessage(SystemMessageId.THE_MENTORING_RELATIONSHIP_WITH_S1_HAS_BEEN_CANCELED);
+					sm = SystemMessage.getSystemMessage(SystemMessageId.THE_MENTORING_RELATIONSHIP_WITH_S1_HAS_BEEN_CANCELED);
 					sm.addString(activeChar.getName());
 					player.sendPacket(sm);
-					for (L2Abnormal e : player.getAllEffects())
-					{
-						if (e.getSkill().getId() >= 9227 && e.getSkill().getId() <= 9233)
-						{
+					for (L2Abnormal e : player.getAllEffects()) {
+						if (e.getSkill().getId() >= 9227 && e.getSkill().getId() <= 9233) {
 							e.exit();
 						}
 					}
@@ -138,13 +120,9 @@ public class RequestMentorCancel extends L2GameClientPacket
 				}
 				activeChar.giveMentorBuff();
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "could not del friend objectid: ", e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}

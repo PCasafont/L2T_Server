@@ -17,8 +17,9 @@ package l2server.gsregistering;
 
 import l2server.loginserver.GameServerTable;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -26,19 +27,10 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JDialog;
-import javax.swing.JFileChooser;
-import javax.swing.JLabel;
-import javax.swing.JTextPane;
-import javax.swing.filechooser.FileFilter;
-
 /**
  * @author KenM
  */
-public class RegisterDialog extends JDialog implements ActionListener
-{
+public class RegisterDialog extends JDialog implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private ResourceBundle bundle;
 	@SuppressWarnings("rawtypes")
@@ -46,8 +38,7 @@ public class RegisterDialog extends JDialog implements ActionListener
 	private final GUserInterface owner;
 
 	@SuppressWarnings({"rawtypes", "unchecked"})
-	public RegisterDialog(final GUserInterface owner)
-	{
+	public RegisterDialog(final GUserInterface owner) {
 		super(owner.getFrame(), true);
 		this.owner = owner;
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -67,10 +58,8 @@ public class RegisterDialog extends JDialog implements ActionListener
 
 		combo = new JComboBox();
 		combo.setEditable(false);
-		for (Map.Entry<Integer, String> entry : GameServerTable.getInstance().getServerNames().entrySet())
-		{
-			if (!GameServerTable.getInstance().hasRegisteredGameServerOnId(entry.getKey()))
-			{
+		for (Map.Entry<Integer, String> entry : GameServerTable.getInstance().getServerNames().entrySet()) {
+			if (!GameServerTable.getInstance().hasRegisteredGameServerOnId(entry.getKey())) {
 				combo.addItem(new ComboServer(entry.getKey(), entry.getValue()));
 			}
 		}
@@ -103,23 +92,20 @@ public class RegisterDialog extends JDialog implements ActionListener
 		this.add(btnCancel, cons);
 
 		final double leftSize = Math.max(label.getPreferredSize().getWidth(), btnSave.getPreferredSize().getWidth());
-		final double rightSize =
-				Math.max(combo.getPreferredSize().getWidth(), btnCancel.getPreferredSize().getWidth());
+		final double rightSize = Math.max(combo.getPreferredSize().getWidth(), btnCancel.getPreferredSize().getWidth());
 
-		final double height = combo.getPreferredSize().getHeight() + 4 * textPane.getPreferredSize().getHeight() +
-				btnSave.getPreferredSize().getHeight();
+		final double height =
+				combo.getPreferredSize().getHeight() + 4 * textPane.getPreferredSize().getHeight() + btnSave.getPreferredSize().getHeight();
 		this.setSize((int) (leftSize + rightSize + 30), (int) (height + 20));
 
 		setLocationRelativeTo(owner.getFrame());
 	}
 
-	class ComboServer
-	{
+	class ComboServer {
 		private final int id;
 		private final String name;
 
-		public ComboServer(int id, String name)
-		{
+		public ComboServer(int id, String name) {
 			this.id = id;
 			this.name = name;
 		}
@@ -127,22 +113,19 @@ public class RegisterDialog extends JDialog implements ActionListener
 		/**
 		 * @return Returns the id.
 		 */
-		public int getId()
-		{
+		public int getId() {
 			return id;
 		}
 
 		/**
 		 * @return Returns the name.
 		 */
-		public String getName()
-		{
+		public String getName() {
 			return name;
 		}
 
 		@Override
-		public String toString()
-		{
+		public String toString() {
 			return getName();
 		}
 	}
@@ -151,12 +134,10 @@ public class RegisterDialog extends JDialog implements ActionListener
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent e)
-	{
+	public void actionPerformed(ActionEvent e) {
 		String cmd = e.getActionCommand();
 
-		if (cmd.equals("save"))
-		{
+		if (cmd.equals("save")) {
 			ComboServer server = (ComboServer) combo.getSelectedItem();
 			int gsId = server.getId();
 
@@ -164,36 +145,28 @@ public class RegisterDialog extends JDialog implements ActionListener
 			//fc.setS
 			fc.setDialogTitle(bundle.getString("hexidDest"));
 			fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-			fc.setFileFilter(new FileFilter()
-			{
+			fc.setFileFilter(new FileFilter() {
 
 				@Override
-				public boolean accept(File f)
-				{
+				public boolean accept(File f) {
 					return f.isDirectory();
 				}
 
 				@Override
-				public String getDescription()
-				{
+				public String getDescription() {
 					return null;
 				}
 			});
 			fc.showOpenDialog(this);
 
-			try
-			{
+			try {
 				GUserInterface.registerGameServer(gsId, fc.getSelectedFile().getAbsolutePath());
 				owner.refreshAsync();
 				setVisible(false);
-			}
-			catch (IOException e1)
-			{
+			} catch (IOException e1) {
 				owner.showError(bundle.getString("ioErrorRegister"), e1);
 			}
-		}
-		else if (cmd.equals("cancel"))
-		{
+		} else if (cmd.equals("cancel")) {
 			setVisible(false);
 		}
 	}

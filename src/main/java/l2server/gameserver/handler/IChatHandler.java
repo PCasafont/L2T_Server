@@ -22,8 +22,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @author durgus
  */
-public interface IChatHandler
-{
+public interface IChatHandler {
 	/**
 	 * Handles a specific type of chat messages
 	 *

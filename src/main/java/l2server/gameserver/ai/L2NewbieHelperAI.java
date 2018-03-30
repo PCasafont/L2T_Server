@@ -31,42 +31,34 @@ import java.util.List;
 /**
  * This class manages AI of L2Attackable.<BR><BR>
  */
-public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
-{
+public class L2NewbieHelperAI extends L2CharacterAI implements Runnable {
 	private List<Integer> alreadyBuffed = new ArrayList<>();
 
-	public L2NewbieHelperAI(L2Character creature)
-	{
+	public L2NewbieHelperAI(L2Character creature) {
 		super(creature);
 		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(this, 20000, 2000);
 	}
 
 	@Override
-	public void run()
-	{
+	public void run() {
 		final L2Character npc = getActor();
-		if (npc == null)
-		{
+		if (npc == null) {
 			return;
 		}
 
-		if (npc.getKnownList().getKnownPlayersInRadius(200).isEmpty())
-		{
+		if (npc.getKnownList().getKnownPlayersInRadius(200).isEmpty()) {
 			return;
 		}
 
-		for (L2Character activeChar : npc.getKnownList().getKnownCharacters())
-		{
+		for (L2Character activeChar : npc.getKnownList().getKnownCharacters()) {
 			if (activeChar == null || !(activeChar instanceof L2Playable) ||
-					alreadyBuffed.contains(activeChar.getObjectId()) && activeChar.getAllEffects().length > 0)
-			{
+					alreadyBuffed.contains(activeChar.getObjectId()) && activeChar.getAllEffects().length > 0) {
 				continue;
 			}
 
 			final L2Playable playable = (L2Playable) activeChar;
 
-			if (!playable.isInsideRadius(npc, 200, true, false) || playable.getActingPlayer().isCursedWeaponEquipped())
-			{
+			if (!playable.isInsideRadius(npc, 200, true, false) || playable.getActingPlayer().isCursedWeaponEquipped()) {
 				continue;
 			}
 
@@ -76,65 +68,43 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 
 			npc.setTarget(playable);
 
-			if (playable instanceof L2Summon)
-			{
+			if (playable instanceof L2Summon) {
 				lowestLevel = HelperBuffTable.getInstance().getServitorLowestLevel();
 				highestLevel = HelperBuffTable.getInstance().getServitorHighestLevel();
-			}
-			else
-			{
+			} else {
 				// 	Calculate the min and max level between which the player must be to obtain buff
-				if (playable.getActingPlayer().isMageClass())
-				{
+				if (playable.getActingPlayer().isMageClass()) {
 					lowestLevel = HelperBuffTable.getInstance().getMagicClassLowestLevel();
 					highestLevel = HelperBuffTable.getInstance().getMagicClassHighestLevel();
-				}
-				else
-				{
+				} else {
 					lowestLevel = HelperBuffTable.getInstance().getPhysicClassLowestLevel();
 					highestLevel = HelperBuffTable.getInstance().getPhysicClassHighestLevel();
 				}
 			}
 
-			if (player_level > highestLevel || player_level < lowestLevel)
-			{
+			if (player_level > highestLevel || player_level < lowestLevel) {
 				continue;
 			}
 
 			L2Skill skill = null;
-			if (playable instanceof L2Summon)
-			{
-				for (L2HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable())
-				{
-					if (helperBuffItem.isForSummon())
-					{
-						skill = SkillTable.getInstance()
-								.getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
-						if (skill != null)
-						{
+			if (playable instanceof L2Summon) {
+				for (L2HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable()) {
+					if (helperBuffItem.isForSummon()) {
+						skill = SkillTable.getInstance().getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
+						if (skill != null) {
 							npc.doCast(skill);
 						}
 					}
 				}
-			}
-			else
-			{
+			} else {
 				// 	Go through the Helper Buff list define in sql table helper_buff_list and cast skill
-				for (L2HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable())
-				{
-					if (helperBuffItem.isMagicClassBuff() == playable.getActingPlayer().isMageClass())
-					{
-						if (player_level >= helperBuffItem.getLowerLevel() &&
-								player_level <= helperBuffItem.getUpperLevel())
-						{
-							skill = SkillTable.getInstance()
-									.getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
-							if (skill.getSkillType() == L2SkillType.SUMMON)
-							{
+				for (L2HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable()) {
+					if (helperBuffItem.isMagicClassBuff() == playable.getActingPlayer().isMageClass()) {
+						if (player_level >= helperBuffItem.getLowerLevel() && player_level <= helperBuffItem.getUpperLevel()) {
+							skill = SkillTable.getInstance().getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
+							if (skill.getSkillType() == L2SkillType.SUMMON) {
 								playable.doSimultaneousCast(skill);
-							}
-							else
-							{
+							} else {
 								npc.doCast(skill);
 							}
 						}
@@ -143,18 +113,14 @@ public class L2NewbieHelperAI extends L2CharacterAI implements Runnable
 			}
 
 			alreadyBuffed.add(playable.getObjectId());
-			ThreadPoolManager.getInstance().scheduleAi(new Runnable()
-			{
+			ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
 				@Override
-				public void run()
-				{
-					if (playable.getActingPlayer() == null || !playable.getActingPlayer().isOnline())
-					{
+				public void run() {
+					if (playable.getActingPlayer() == null || !playable.getActingPlayer().isOnline()) {
 						return;
 					}
 
-					if (playable.isInsideRadius(npc, 200, true, false))
-					{
+					if (playable.isInsideRadius(npc, 200, true, false)) {
 						ThreadPoolManager.getInstance().scheduleAi(this, 300000L);
 						return;
 					}

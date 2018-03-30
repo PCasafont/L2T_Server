@@ -30,69 +30,58 @@ import java.util.Collection;
 /**
  * @author Erlandys
  */
-public final class RequestSurrenderPledgeWarEx extends L2GameClientPacket
-{
-
+public final class RequestSurrenderPledgeWarEx extends L2GameClientPacket {
+	
 	private String pledgeName;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		pledgeName = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
 		L2Clan playerClan = player.getClan();
-		if (playerClan == null)
-		{
+		if (playerClan == null) {
 			return;
 		}
-
+		
 		L2Clan clan = ClanTable.getInstance().getClanByName(pledgeName);
-
-		if (clan == null)
-		{
+		
+		if (clan == null) {
 			player.sendMessage("No such clan.");
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-
-		if (!playerClan.getClanWars().contains(clan))
-		{
+		
+		if (!playerClan.getClanWars().contains(clan)) {
 			player.sendMessage("Your clan does not have any war relation with " + clan.getName() + "'s clan.");
 			return;
 		}
-
-		if (!playerClan.isAtWarWith(clan.getClanId()) && !clan.isAtWarWith(playerClan.getClanId()))
-		{
+		
+		if (!playerClan.isAtWarWith(clan.getClanId()) && !clan.isAtWarWith(playerClan.getClanId())) {
 			//player.sendPacket(SystemMessageId.CANT_STOP_CLAN_WAR_WHILE_IN_COMBAT);
 			player.sendMessage("War with " + clan.getName() + " isn't started or in repose state!");
 			return;
 		}
-
+		
 		// Check if player who does the request has the correct rights to do it
-		if ((player.getClanPrivileges() & L2Clan.CP_CL_PLEDGE_WAR) != L2Clan.CP_CL_PLEDGE_WAR)
-		{
+		if ((player.getClanPrivileges() & L2Clan.CP_CL_PLEDGE_WAR) != L2Clan.CP_CL_PLEDGE_WAR) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT));
 			return;
 		}
-
+		
 		ClanWar war = ClanWarManager.getInstance().getWar(clan, playerClan);
 		war.setLoser(playerClan);
 		war.setWinner(clan);
 		war.stop();
 		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-		for (L2PcInstance cha : pls)
-		{
-			if (cha.getClan() == player.getClan() || cha.getClan() == clan)
-			{
+		for (L2PcInstance cha : pls) {
+			if (cha.getClan() == player.getClan() || cha.getClan() == clan) {
 				cha.broadcastUserInfo();
 			}
 		}

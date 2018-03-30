@@ -20,8 +20,7 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public class LoginFail extends L2GameServerPacket
-{
+public class LoginFail extends L2GameServerPacket {
 	public static final int SUCCESS = -1;
 	public static final int NO_TEXT = 0;
 	public static final int SYSTEM_ERROR_LOGIN_LATER = 1;
@@ -40,14 +39,12 @@ public class LoginFail extends L2GameServerPacket
 	/**
 	 * @param reason
 	 */
-	public LoginFail(int reason)
-	{
+	public LoginFail(int reason) {
 		this.reason = reason;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(reason);
 		writeD(0x00);
 	}

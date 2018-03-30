@@ -23,37 +23,28 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-public class ManaPotion extends ItemSkillsTemplate
-{
+public class ManaPotion extends ItemSkillsTemplate {
 	/**
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
 		L2PcInstance activeChar; // use activeChar only for L2PcInstance checks where cannot be used PetInstance
 
-		if (playable instanceof L2PcInstance)
-		{
+		if (playable instanceof L2PcInstance) {
 			activeChar = (L2PcInstance) playable;
-		}
-		else if (playable instanceof L2PetInstance)
-		{
+		} else if (playable instanceof L2PetInstance) {
 			activeChar = ((L2PetInstance) playable).getOwner();
-		}
-		else
-		{
+		} else {
 			return;
 		}
 
-		if (activeChar.isInOlympiadMode())
-		{
+		if (activeChar.isInOlympiadMode()) {
 			playable.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));
 			return;
 		}
 
-		if (activeChar.getEvent() != null && !activeChar.getEvent().onPotionUse(activeChar.getObjectId()))
-		{
+		if (activeChar.getEvent() != null && !activeChar.getEvent().onPotionUse(activeChar.getObjectId())) {
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}

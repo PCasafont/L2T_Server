@@ -20,73 +20,59 @@ import l2server.gameserver.model.L2Object.InstanceType;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ActionHandler
-{
+public class ActionHandler {
 	private Map<InstanceType, IActionHandler> actions;
 	private Map<InstanceType, IActionHandler> actionsShift;
 
-	public static ActionHandler getInstance()
-	{
+	public static ActionHandler getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private ActionHandler()
-	{
+	private ActionHandler() {
 		actions = new HashMap<>();
 		actionsShift = new HashMap<>();
 	}
 
-	public void registerActionHandler(IActionHandler handler)
-	{
+	public void registerActionHandler(IActionHandler handler) {
 		actions.put(handler.getInstanceType(), handler);
 	}
 
-	public void registerActionShiftHandler(IActionHandler handler)
-	{
+	public void registerActionShiftHandler(IActionHandler handler) {
 		actionsShift.put(handler.getInstanceType(), handler);
 	}
 
-	public IActionHandler getActionHandler(InstanceType iType)
-	{
+	public IActionHandler getActionHandler(InstanceType iType) {
 		IActionHandler result = null;
-		for (InstanceType t = iType; t != null; t = t.getParent())
-		{
+		for (InstanceType t = iType; t != null; t = t.getParent()) {
 			result = actions.get(t);
-			if (result != null)
-			{
+			if (result != null) {
 				break;
 			}
 		}
 		return result;
 	}
 
-	public IActionHandler getActionShiftHandler(InstanceType iType)
-	{
+	public IActionHandler getActionShiftHandler(InstanceType iType) {
 		IActionHandler result = null;
-		for (InstanceType t = iType; t != null; t = t.getParent())
-		{
+		for (InstanceType t = iType; t != null; t = t.getParent()) {
 			result = actionsShift.get(t);
-			if (result != null)
-			{
+			if (result != null) {
 				break;
 			}
 		}
 		return result;
 	}
 
-	public int size()
-	{
+	public int size() {
 		return actions.size();
 	}
 
-	public int sizeShift()
-	{
+	public int sizeShift() {
 		return actionsShift.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final ActionHandler instance = new ActionHandler();
 	}
 }

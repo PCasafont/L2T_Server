@@ -21,17 +21,14 @@ package l2server.gameserver.network.clientpackets;
  *
  * @author -Wooden-
  */
-public class RequestSiegeInfo extends L2GameClientPacket
-{
+public class RequestSiegeInfo extends L2GameClientPacket {
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// trigger
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 	}
 }

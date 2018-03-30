@@ -15,8 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
-
 import l2server.Config;
 import l2server.gameserver.instancemanager.MailManager;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -26,50 +24,43 @@ import l2server.gameserver.network.serverpackets.ExReplySentPost;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 
+import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
+
 /**
  * @author Pere, DS
  */
-public final class RequestSentPost extends L2GameClientPacket
-{
+public final class RequestSentPost extends L2GameClientPacket {
 
 	private int msgId;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		msgId = readD();
 	}
 
 	@Override
-	public void runImpl()
-	{
+	public void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null || !Config.ALLOW_MAIL)
-		{
+		if (activeChar == null || !Config.ALLOW_MAIL) {
 			return;
 		}
 
 		Message msg = MailManager.getInstance().getMessage(msgId);
-		if (msg == null)
-		{
+		if (msg == null) {
 			return;
 		}
 
-		if (!activeChar.isInsideZone(ZONE_PEACE) && msg.hasAttachments())
-		{
+		if (!activeChar.isInsideZone(ZONE_PEACE) && msg.hasAttachments()) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_USE_MAIL_OUTSIDE_PEACE_ZONE));
 			return;
 		}
 
-		if (msg.getSenderId() != activeChar.getObjectId())
-		{
-			Util.handleIllegalPlayerAction(activeChar,
-					"Player " + activeChar.getName() + " tried to read not own post!", Config.DEFAULT_PUNISH);
+		if (msg.getSenderId() != activeChar.getObjectId()) {
+			Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " tried to read not own post!", Config.DEFAULT_PUNISH);
 			return;
 		}
 
-		if (msg.isDeletedBySender())
-		{
+		if (msg.isDeletedBySender()) {
 			return;
 		}
 
@@ -77,8 +68,7 @@ public final class RequestSentPost extends L2GameClientPacket
 	}
 
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

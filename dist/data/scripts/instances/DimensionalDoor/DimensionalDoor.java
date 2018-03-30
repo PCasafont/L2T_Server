@@ -13,8 +13,7 @@ import l2server.log.Log;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DimensionalDoor extends Quest
-{
+public class DimensionalDoor extends Quest {
 	private static final String qn = "DimensionalDoor";
 	private static final boolean debug = false;
 
@@ -33,16 +32,14 @@ public class DimensionalDoor extends Quest
 			//{19225, 5}	//Summon Battle Potion
 	};
 
-	public DimensionalDoor(int questId, String name, String descr)
-	{
+	public DimensionalDoor(int questId, String name, String descr) {
 		super(questId, name, descr);
 
 		addStartNpc(npcManagerId);
 		addTalkId(npcManagerId);
 		addFirstTalkId(npcManagerId);
 
-		for (int[] i : availableSkillsIds)
-		{
+		for (int[] i : availableSkillsIds) {
 			availableSkills.put(i[0], i[1]);
 		}
 	}
@@ -52,32 +49,22 @@ public class DimensionalDoor extends Quest
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (debug)
-		{
+	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (debug) {
 			Log.warning(getName() + ": onAdvEvent: " + event);
 		}
 
-		if (event.equalsIgnoreCase("main"))
-		{
+		if (event.equalsIgnoreCase("main")) {
 			return qn + (Config.SERVER_NAME.contains("vasper") ? "_old" : "") + ".html";
-		}
-		else if (event.equalsIgnoreCase("learnSkills"))
-		{
+		} else if (event.equalsIgnoreCase("learnSkills")) {
 			return "learnSkills.html";
-		}
-		else if (event.startsWith("claim_"))
-		{
+		} else if (event.startsWith("claim_")) {
 			int rewardId = Integer.valueOf(event.replace("claim_", ""));
-			if (availableSkills.containsKey(rewardId))
-			{
+			if (availableSkills.containsKey(rewardId)) {
 				int maxLevel = SkillTable.getInstance().getMaxLevel(rewardId);
 				int skillLevelToLearn = getProperSkillLevel(player.getSkillLevelHash(rewardId), maxLevel);
-				if (skillLevelToLearn != -1)
-				{
-					if (!player.destroyItemByItemId(qn, shinyCoin, availableSkills.get(rewardId), npc, true))
-					{
+				if (skillLevelToLearn != -1) {
+					if (!player.destroyItemByItemId(qn, shinyCoin, availableSkills.get(rewardId), npc, true)) {
 						return "";
 					}
 
@@ -88,9 +75,7 @@ public class DimensionalDoor extends Quest
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.LEARNED_SKILL_S1);
 					sm.addSkillName(rewardSkill);
 					player.sendPacket(sm);
-				}
-				else
-				{
+				} else {
 					player.sendMessage("You already have the skill at the max level!");
 				}
 			}
@@ -101,51 +86,40 @@ public class DimensionalDoor extends Quest
 	}
 
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		if (debug)
-		{
+	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+		if (debug) {
 			Log.warning(getName() + ": onFirstTalk: " + player.getName());
 		}
 
 		return qn + (Config.SERVER_NAME.contains("vasper") ? "_old" : "") + ".html";
 	}
 
-	public static int getNpcManagerId()
-	{
+	public static int getNpcManagerId() {
 		return npcManagerId;
 	}
 
-	public static int getDimensionalDoorRewardId()
-	{
+	public static int getDimensionalDoorRewardId() {
 		return shinyCoin;
 	}
 
-	public static int getDimensionalDoorRewardRate()
-	{
+	public static int getDimensionalDoorRewardRate() {
 		return 1;
 	}
 
-	private int getProperSkillLevel(int currentPlayerSkillLevel, int maxSkillLevel)
-	{
+	private int getProperSkillLevel(int currentPlayerSkillLevel, int maxSkillLevel) {
 		int skillLevelToLearn = -1;
 		int currentPlayerLevel = currentPlayerSkillLevel;
-		if (currentPlayerLevel == -1)
-		{
+		if (currentPlayerLevel == -1) {
 			skillLevelToLearn = 1;
-		}
-		else
-		{
-			if (currentPlayerLevel < maxSkillLevel)
-			{
+		} else {
+			if (currentPlayerLevel < maxSkillLevel) {
 				skillLevelToLearn = currentPlayerLevel + 1;
 			}
 		}
 		return skillLevelToLearn;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new DimensionalDoor(-1, qn, "instances");
 	}
 }

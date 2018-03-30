@@ -18,27 +18,22 @@ package l2server.gameserver.stats.funcs;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Stats;
 
-public class FuncMulBase extends Func
-{
+public class FuncMulBase extends Func {
 	private final Lambda lambda;
 
-	public FuncMulBase(Stats pStat, Object owner, Lambda lambda)
-	{
+	public FuncMulBase(Stats pStat, Object owner, Lambda lambda) {
 		super(pStat, owner);
 		this.lambda = lambda;
 	}
 
 	@Override
-	public int getOrder()
-	{
+	public int getOrder() {
 		return 0x30;
 	}
 
 	@Override
-	public void calc(Env env)
-	{
-		if (cond == null || cond.test(env))
-		{
+	public void calc(Env env) {
+		if (cond == null || cond.test(env)) {
 			env.value += env.baseValue * (lambda.calc(env) - 1.0);
 		}
 	}

@@ -23,8 +23,7 @@ import l2server.gameserver.templates.item.L2Weapon;
  *
  * @author mkizub
  */
-public class ConditionTargetUsesWeaponKind extends Condition
-{
+public class ConditionTargetUsesWeaponKind extends Condition {
 
 	private final int weaponMask;
 
@@ -33,8 +32,7 @@ public class ConditionTargetUsesWeaponKind extends Condition
 	 *
 	 * @param weaponMask the weapon mask
 	 */
-	public ConditionTargetUsesWeaponKind(int weaponMask)
-	{
+	public ConditionTargetUsesWeaponKind(int weaponMask) {
 		this.weaponMask = weaponMask;
 	}
 
@@ -42,18 +40,15 @@ public class ConditionTargetUsesWeaponKind extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 
-		if (env.target == null)
-		{
+		if (env.target == null) {
 			return false;
 		}
 
 		L2Weapon item = env.target.getActiveWeaponItem();
 
-		if (item == null)
-		{
+		if (item == null) {
 			return false;
 		}
 

@@ -1,1 +1,2 @@
-alter table `characters` change `karma` `reputation` int(10) not null;
+ALTER TABLE `characters`
+  CHANGE `karma` `reputation` INT(10) NOT NULL;

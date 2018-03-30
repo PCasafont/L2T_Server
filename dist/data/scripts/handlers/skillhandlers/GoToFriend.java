@@ -25,8 +25,7 @@ import l2server.gameserver.util.Util;
 /**
  * @author Pere
  */
-public class GoToFriend implements ISkillHandler
-{
+public class GoToFriend implements ISkillHandler {
 	//private static Logger log = Logger.getLogger(SummonFriend.class.getName());
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.GO_TO_FRIEND};
 
@@ -34,17 +33,13 @@ public class GoToFriend implements ISkillHandler
 	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		for (L2Character target : (L2Character[]) targets)
-		{
-			if (activeChar == target)
-			{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+		for (L2Character target : (L2Character[]) targets) {
+			if (activeChar == target) {
 				continue;
 			}
 
-			if (Util.checkIfInRange(1000, activeChar, target, false))
-			{
+			if (Util.checkIfInRange(1000, activeChar, target, false)) {
 				activeChar.teleToLocation(target.getX(), target.getY(), target.getZ(), true);
 				return;
 			}
@@ -55,8 +50,7 @@ public class GoToFriend implements ISkillHandler
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

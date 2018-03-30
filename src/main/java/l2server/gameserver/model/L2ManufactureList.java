@@ -23,60 +23,50 @@ import java.util.List;
  *
  * @version $Revision: 1.1.2.1.2.2 $ $Date: 2005/03/27 15:29:33 $
  */
-public class L2ManufactureList
-{
+public class L2ManufactureList {
 	private List<L2ManufactureItem> list;
 	private boolean confirmed;
 	private String manufactureStoreName;
-
-	public L2ManufactureList()
-	{
+	
+	public L2ManufactureList() {
 		list = new ArrayList<>();
 		confirmed = false;
 	}
-
-	public int size()
-	{
+	
+	public int size() {
 		return list.size();
 	}
-
-	public void setConfirmedTrade(boolean x)
-	{
+	
+	public void setConfirmedTrade(boolean x) {
 		confirmed = x;
 	}
-
-	public boolean hasConfirmed()
-	{
+	
+	public boolean hasConfirmed() {
 		return confirmed;
 	}
-
+	
 	/**
 	 */
-	public void setStoreName(String manufactureStoreName)
-	{
+	public void setStoreName(String manufactureStoreName) {
 		this.manufactureStoreName = manufactureStoreName;
 	}
-
+	
 	/**
 	 * @return Returns the manufactureStoreName.
 	 */
-	public String getStoreName()
-	{
+	public String getStoreName() {
 		return manufactureStoreName;
 	}
-
-	public void add(L2ManufactureItem item)
-	{
+	
+	public void add(L2ManufactureItem item) {
 		list.add(item);
 	}
-
-	public List<L2ManufactureItem> getList()
-	{
+	
+	public List<L2ManufactureItem> getList() {
 		return list;
 	}
-
-	public void setList(List<L2ManufactureItem> list)
-	{
+	
+	public void setList(List<L2ManufactureItem> list) {
 		this.list = list;
 	}
 }

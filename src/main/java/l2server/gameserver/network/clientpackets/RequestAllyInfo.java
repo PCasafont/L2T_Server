@@ -26,27 +26,22 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @version $Revision: 1479 $ $Date: 2005-11-09 00:47:42 +0100 (mer., 09 nov. 2005) $
  */
-public final class RequestAllyInfo extends L2GameClientPacket
-{
+public final class RequestAllyInfo extends L2GameClientPacket {
 
 	@Override
-	public void readImpl()
-	{
+	public void readImpl() {
 
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
 		SystemMessage sm;
-		if (activeChar.getAllyId() == 0)
-		{
+		if (activeChar.getAllyId() == 0) {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.NO_CURRENT_ALLIANCES);
 			sendPacket(sm);
 			return;
@@ -61,10 +56,8 @@ public final class RequestAllyInfo extends L2GameClientPacket
 		int clanCount = 0;
 		int totalMembers = 0;
 		int onlineMembers = 0;
-		for (L2Clan clan : ClanTable.getInstance().getClans())
-		{
-			if (clan.getAllyId() != activeChar.getAllyId())
-			{
+		for (L2Clan clan : ClanTable.getInstance().getClans()) {
+			if (clan.getAllyId() != activeChar.getAllyId()) {
 				continue;
 			}
 
@@ -88,10 +81,8 @@ public final class RequestAllyInfo extends L2GameClientPacket
 		sendPacket(sm);
 
 		sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_INFO_HEAD);
-		for (L2Clan clan : ClanTable.getInstance().getClans())
-		{
-			if (clan.getAllyId() != activeChar.getAllyId())
-			{
+		for (L2Clan clan : ClanTable.getInstance().getClans()) {
+			if (clan.getAllyId() != activeChar.getAllyId()) {
 				continue;
 			}
 

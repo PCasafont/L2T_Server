@@ -32,70 +32,44 @@ import java.util.Calendar;
  * @author Gnacik
  */
 
-public class CharacterBirthday extends Quest
-{
+public class CharacterBirthday extends Quest {
 	private static final int npc = 32600;
 	private static boolean is_spawned = false;
 
-	private static final int[] gk = {
-			30006,
-			30059,
-			30080,
-			30134,
-			30146,
-			30177,
-			30233,
-			30256,
-			30320,
-			30540,
-			30576,
-			30836,
-			30848,
-			30878,
-			30899,
-			31275,
-			31320,
-			31964,
-			32163
-	};
+	private static final int[] gk =
+			{30006, 30059, 30080, 30134, 30146, 30177, 30233, 30256, 30320, 30540, 30576, 30836, 30848, 30878, 30899, 31275, 31320, 31964, 32163};
 
-	public CharacterBirthday(int questId, String name, String descr)
-	{
+	public CharacterBirthday(int questId, String name, String descr) {
 		super(questId, name, descr);
 		addStartNpc(npc);
 		addFirstTalkId(npc);
 		addTalkId(npc);
-		for (int id : gk)
-		{
+		for (int id : gk) {
 			addStartNpc(id);
 			addTalkId(id);
 		}
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = "";
 		QuestState st = player.getQuestState(getName());
 		htmltext = event;
 
-		if (event.equalsIgnoreCase("despawn_npc"))
-		{
+		if (event.equalsIgnoreCase("despawn_npc")) {
 			npc.doDie(player);
 			is_spawned = false;
 
 			htmltext = null;
 		}
-		if (event.equalsIgnoreCase("receive_reward"))
-		{
+		if (event.equalsIgnoreCase("receive_reward")) {
 			// Give Adventurer Hat (Event)
 			st.giveItems(10250, 1);
 
 			// Give Buff
 			L2Skill skill;
 			skill = SkillTable.getInstance().getInfo(5950, 1);
-			if (skill != null)
-			{
+			if (skill != null) {
 				skill.getEffects(npc, player);
 			}
 			npc.setTarget(player);
@@ -116,30 +90,23 @@ public class CharacterBirthday extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
-		if (is_spawned)
-		{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
+		if (is_spawned) {
 			return null;
 		}
 
 		QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
+		if (st == null) {
 			Quest q = QuestManager.getInstance().getQuest(getName());
 			st = q.newQuestState(player);
 		}
-		if (st != null && player.checkBirthDay() == 0)
-		{
+		if (st != null && player.checkBirthDay() == 0) {
 			player.sendPacket(new PlaySound(1, "HB01", 0, 0, 0, 0, 0));
-			L2Npc spawned =
-					st.addSpawn(32600, player.getX() + 10, player.getY() + 10, player.getZ() + 10, 0, false, 0, true);
+			L2Npc spawned = st.addSpawn(32600, player.getX() + 10, player.getY() + 10, player.getZ() + 10, 0, false, 0, true);
 			st.setState(State.STARTED);
 			st.startQuestTimer("despawn_npc", 60000, spawned);
 			is_spawned = true;
-		}
-		else
-		{
+		} else {
 			return "32600-no.htm";
 		}
 
@@ -147,28 +114,22 @@ public class CharacterBirthday extends Quest
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = "";
 		QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
+		if (st == null) {
 			Quest q = QuestManager.getInstance().getQuest(getName());
 			st = q.newQuestState(player);
 		}
-		if (player.checkBirthDay() == 0)
-		{
+		if (player.checkBirthDay() == 0) {
 			htmltext = "32600.htm";
-		}
-		else
-		{
+		} else {
 			htmltext = "32600-no.htm";
 		}
 		return htmltext;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new CharacterBirthday(-1, "CharacterBirthday", "events");
 	}
 }

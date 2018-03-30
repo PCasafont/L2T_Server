@@ -18,20 +18,17 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExNoticePostSent extends L2GameServerPacket
-{
+public class ExNoticePostSent extends L2GameServerPacket {
 	private static final ExNoticePostSent STATIC_PACKET_TRUE = new ExNoticePostSent(true);
 	private static final ExNoticePostSent STATIC_PACKET_FALSE = new ExNoticePostSent(false);
 
-	public static ExNoticePostSent valueOf(boolean result)
-	{
+	public static ExNoticePostSent valueOf(boolean result) {
 		return result ? STATIC_PACKET_TRUE : STATIC_PACKET_FALSE;
 	}
 
 	boolean showAnim;
 
-	public ExNoticePostSent(boolean showAnimation)
-	{
+	public ExNoticePostSent(boolean showAnimation) {
 		showAnim = showAnimation;
 	}
 
@@ -39,8 +36,7 @@ public class ExNoticePostSent extends L2GameServerPacket
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(showAnim ? 0x01 : 0x00);
 	}
 }

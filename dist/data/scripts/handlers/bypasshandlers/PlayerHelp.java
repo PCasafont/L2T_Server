@@ -23,54 +23,43 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 
-public class PlayerHelp implements IBypassHandler
-{
+public class PlayerHelp implements IBypassHandler {
 	private static final String[] COMMANDS = {"player_help"};
-
+	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		try
-		{
-			if (command.length() < 13)
-			{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+		try {
+			if (command.length() < 13) {
 				return false;
 			}
-
+			
 			final String path = command.substring(12);
-			if (path.indexOf("..") != -1)
-			{
+			if (path.indexOf("..") != -1) {
 				return false;
 			}
-
+			
 			final StringTokenizer st = new StringTokenizer(path);
 			final String[] cmd = st.nextToken().split("#");
-
+			
 			NpcHtmlMessage html;
-			if (cmd.length > 1)
-			{
+			if (cmd.length > 1) {
 				final int itemId = Integer.parseInt(cmd[1]);
 				html = new NpcHtmlMessage(1, itemId);
-			}
-			else
-			{
+			} else {
 				html = new NpcHtmlMessage(1);
 			}
-
+			
 			html.setFile(activeChar.getHtmlPrefix(), "help/" + cmd[0]);
 			html.disableValidation();
 			activeChar.sendPacket(html);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			log.log(Level.INFO, "Exception in " + e.getMessage(), e);
 		}
 		return true;
 	}
-
+	
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

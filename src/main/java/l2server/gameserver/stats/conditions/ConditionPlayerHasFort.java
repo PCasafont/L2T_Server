@@ -24,8 +24,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author MrPoke
  */
-public final class ConditionPlayerHasFort extends Condition
-{
+public final class ConditionPlayerHasFort extends Condition {
 
 	private final int fort;
 
@@ -34,8 +33,7 @@ public final class ConditionPlayerHasFort extends Condition
 	 *
 	 * @param fort the fort
 	 */
-	public ConditionPlayerHasFort(int fort)
-	{
+	public ConditionPlayerHasFort(int fort) {
 		this.fort = fort;
 	}
 
@@ -47,22 +45,18 @@ public final class ConditionPlayerHasFort extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 
 		L2Clan clan = ((L2PcInstance) env.player).getClan();
-		if (clan == null)
-		{
+		if (clan == null) {
 			return fort == 0;
 		}
 
 		// Any fortress
-		if (fort == -1)
-		{
+		if (fort == -1) {
 			return clan.getHasFort() > 0;
 		}
 

@@ -35,10 +35,9 @@ import l2server.gameserver.templates.skills.L2EffectType;
  * <li>L2Summon</li><BR><BR>
  */
 
-public abstract class L2Playable extends L2Character
-{
+public abstract class L2Playable extends L2Character {
 	private L2Character lockedTarget = null;
-
+	
 	/**
 	 * Constructor of L2PlayableInstance (use L2Character constructor).<BR><BR>
 	 * <p>
@@ -48,200 +47,163 @@ public abstract class L2Playable extends L2Character
 	 * @param objectId Identifier of the object to initialized
 	 * @param template The L2CharTemplate to apply to the L2PlayableInstance
 	 */
-	public L2Playable(int objectId, L2CharTemplate template)
-	{
+	public L2Playable(int objectId, L2CharTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2Playable);
 		setIsInvul(false);
 	}
-
+	
 	@Override
-	public PlayableKnownList getKnownList()
-	{
+	public PlayableKnownList getKnownList() {
 		return (PlayableKnownList) super.getKnownList();
 	}
-
+	
 	@Override
-	public void initKnownList()
-	{
+	public void initKnownList() {
 		setKnownList(new PlayableKnownList(this));
 	}
-
+	
 	@Override
-	public PlayableStat getStat()
-	{
+	public PlayableStat getStat() {
 		return (PlayableStat) super.getStat();
 	}
-
+	
 	@Override
-	public void initCharStat()
-	{
+	public void initCharStat() {
 		setStat(new PlayableStat(this));
 	}
-
+	
 	@Override
-	public PlayableStatus getStatus()
-	{
+	public PlayableStatus getStatus() {
 		return (PlayableStatus) super.getStatus();
 	}
-
+	
 	@Override
-	public void initCharStatus()
-	{
+	public void initCharStatus() {
 		setStatus(new PlayableStatus(this));
 	}
-
+	
 	@Override
-	public boolean doDie(L2Character killer)
-	{
+	public boolean doDie(L2Character killer) {
 		// killing is only possible one time
-		synchronized (this)
-		{
-			if (isDead())
-			{
+		synchronized (this) {
+			if (isDead()) {
 				return false;
 			}
 			// now reset currentHp to zero
 			setCurrentHp(0);
 			setIsDead(true);
 		}
-
+		
 		// Set target to null and cancel Attack or Cast
 		setTarget(null);
-
+		
 		// Stop movement
 		stopMove(null);
-
+		
 		// Stop HP/MP/CP Regeneration task
 		getStatus().stopHpMpRegeneration();
-
+		
 		// Stop all active skills effects in progress on the L2Character,
 		// if the Character isn't affected by Soul of The Phoenix or Salvation
-		if (isPhoenixBlessed())
-		{
+		if (isPhoenixBlessed()) {
 			if (getCharmOfLuck()) //remove Lucky Charm if player has SoulOfThePhoenix/Salvation buff
 			{
 				stopCharmOfLuck(null);
 			}
-			if (isNoblesseBlessed())
-			{
+			if (isNoblesseBlessed()) {
 				stopNoblesseBlessing(null);
 			}
 		}
 		// Same thing if the Character isn't a Noblesse Blessed L2PlayableInstance
-		else if (isNoblesseBlessed())
-		{
+		else if (isNoblesseBlessed()) {
 			stopNoblesseBlessing(null);
-
+			
 			if (getCharmOfLuck()) //remove Lucky Charm if player have Nobless blessing buff
 			{
 				stopCharmOfLuck(null);
 			}
-		}
-		else
-		{
+		} else {
 			boolean canStopEffects = !(this instanceof L2PcInstance) || this instanceof L2PcInstance;
-
-			if (canStopEffects)
-			{
+			
+			if (canStopEffects) {
 				stopAllEffectsExceptThoseThatLastThroughDeath();
 			}
 		}
-
+		
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
 		broadcastStatusUpdate();
-
-		if (getWorldRegion() != null)
-		{
+		
+		if (getWorldRegion() != null) {
 			getWorldRegion().onDeath(this, killer);
 		}
-
+		
 		// Notify Quest of L2Playable's death
 		L2PcInstance actingPlayer = getActingPlayer();
-		if (!actingPlayer.isNotifyQuestOfDeathEmpty())
-		{
-			for (QuestState qs : actingPlayer.getNotifyQuestOfDeath())
-			{
+		if (!actingPlayer.isNotifyQuestOfDeathEmpty()) {
+			for (QuestState qs : actingPlayer.getNotifyQuestOfDeath()) {
 				qs.getQuest().notifyDeath(killer == null ? this : killer, this, qs);
 			}
 		}
-
-		if (killer != null)
-		{
+		
+		if (killer != null) {
 			L2PcInstance player = killer.getActingPlayer();
-			if (player != null)
-			{
+			if (player != null) {
 				player.onKillUpdatePvPReputation(this);
 			}
 		}
-
+		
 		// Notify L2Character AI
 		getAI().notifyEvent(CtrlEvent.EVT_DEAD);
-
+		
 		return true;
 	}
-
-	public boolean checkIfPvP(L2Character target)
-	{
-		if (target == null)
-		{
+	
+	public boolean checkIfPvP(L2Character target) {
+		if (target == null) {
 			return false; // Target is null
 		}
-		if (target == this)
-		{
+		if (target == this) {
 			return false; // Target is self
 		}
-		if (!(target instanceof L2Playable))
-		{
+		if (!(target instanceof L2Playable)) {
 			return false; // Target is not a L2PlayableInstance
 		}
-
+		
 		L2PcInstance player = null;
-		if (this instanceof L2PcInstance)
-		{
+		if (this instanceof L2PcInstance) {
 			player = (L2PcInstance) this;
-		}
-		else if (this instanceof L2Summon && !(this instanceof L2MobSummonInstance))
-		{
+		} else if (this instanceof L2Summon && !(this instanceof L2MobSummonInstance)) {
 			player = ((L2Summon) this).getOwner();
 		}
-
-		if (player == null)
-		{
+		
+		if (player == null) {
 			return false; // Active player is null
 		}
-		if (player.getReputation() < 0)
-		{
+		if (player.getReputation() < 0) {
 			return false; // Active player has karma
 		}
-
+		
 		L2PcInstance targetPlayer = null;
-		if (target instanceof L2PcInstance)
-		{
+		if (target instanceof L2PcInstance) {
 			targetPlayer = (L2PcInstance) target;
-		}
-		else if (target instanceof L2Summon)
-		{
+		} else if (target instanceof L2Summon) {
 			targetPlayer = ((L2Summon) target).getOwner();
 		}
-
-		if (targetPlayer == null)
-		{
+		
+		if (targetPlayer == null) {
 			return false; // Target player is null
 		}
-		if (targetPlayer == this)
-		{
+		if (targetPlayer == this) {
 			return false; // Target player is self
 		}
-		if (targetPlayer.getReputation() < 0)
-		{
+		if (targetPlayer.getReputation() < 0) {
 			return false; // Target player has karma
 		}
-		if (targetPlayer.getPvpFlag() == 0)
-		{
+		if (targetPlayer.getPvpFlag() == 0) {
 			return false;
 		}
-
+		
 		return !(targetPlayer.getPvpFlag() == 0 && !player.isInSameClanWar(targetPlayer));
 
 		/*  Even at war, there should be PvP flag
@@ -261,139 +223,111 @@ public abstract class L2Playable extends L2Character
 		return false;
 		 */
 	}
-
+	
 	@Override
-	public boolean isAttackable()
-	{
+	public boolean isAttackable() {
 		return true;
 	}
-
+	
 	// Support for Noblesse Blessing skill, where buffs are retained
 	// after resurrect
-	public final boolean isNoblesseBlessed()
-	{
+	public final boolean isNoblesseBlessed() {
 		return effects.isAffected(L2EffectType.NOBLESSE_BLESSING.getMask()) && !getActingPlayer().getIsInsideGMEvent();
 	}
-
-	public final void stopNoblesseBlessing(L2Abnormal effect)
-	{
-		if (effect == null)
-		{
+	
+	public final void stopNoblesseBlessing(L2Abnormal effect) {
+		if (effect == null) {
 			stopEffects(L2EffectType.NOBLESSE_BLESSING);
-		}
-		else
-		{
+		} else {
 			removeEffect(effect);
 		}
 		updateAbnormalEffect();
 	}
-
+	
 	// Support for Soul of the Phoenix and Salvation skills
-	public final boolean isPhoenixBlessed()
-	{
+	public final boolean isPhoenixBlessed() {
 		return effects.isAffected(L2EffectType.PHOENIX_BLESSING.getMask());
 	}
-
-	public final void stopPhoenixBlessing(L2Abnormal effect)
-	{
-		if (effect == null)
-		{
+	
+	public final void stopPhoenixBlessing(L2Abnormal effect) {
+		if (effect == null) {
 			stopEffects(L2EffectType.PHOENIX_BLESSING);
-		}
-		else
-		{
+		} else {
 			removeEffect(effect);
 		}
-
+		
 		updateAbnormalEffect();
 	}
-
+	
 	/**
 	 * Return True if the Silent Moving mode is active.<BR><BR>
 	 */
-	public boolean isSilentMoving()
-	{
+	public boolean isSilentMoving() {
 		return effects.isAffected(L2EffectType.SILENT_MOVE.getMask());
 	}
-
+	
 	// for Newbie Protection Blessing skill, keeps you safe from an attack by a chaotic character >= 10 levels apart from you
-	public final boolean getProtectionBlessing()
-	{
+	public final boolean getProtectionBlessing() {
 		return effects.isAffected(L2EffectType.PROTECTION_BLESSING.getMask());
 	}
-
+	
 	/**
 	 */
-	public void stopProtectionBlessing(L2Abnormal effect)
-	{
-		if (effect == null)
-		{
+	public void stopProtectionBlessing(L2Abnormal effect) {
+		if (effect == null) {
 			stopEffects(L2EffectType.PROTECTION_BLESSING);
-		}
-		else
-		{
+		} else {
 			removeEffect(effect);
 		}
-
+		
 		updateAbnormalEffect();
 	}
-
+	
 	//Charm of Luck - During a Raid/Boss war, decreased chance for death penalty
-	public final boolean getCharmOfLuck()
-	{
+	public final boolean getCharmOfLuck() {
 		return effects.isAffected(L2EffectType.CHARM_OF_LUCK.getMask());
 	}
-
-	public final void stopCharmOfLuck(L2Abnormal effect)
-	{
-		if (effect == null)
-		{
+	
+	public final void stopCharmOfLuck(L2Abnormal effect) {
+		if (effect == null) {
 			stopEffects(L2EffectType.CHARM_OF_LUCK);
-		}
-		else
-		{
+		} else {
 			removeEffect(effect);
 		}
-
+		
 		updateAbnormalEffect();
 	}
-
+	
 	@Override
-	public void updateEffectIcons(boolean partyOnly)
-	{
+	public void updateEffectIcons(boolean partyOnly) {
 		effects.updateEffectIcons(partyOnly);
 	}
-
-	public boolean isLockedTarget()
-	{
+	
+	public boolean isLockedTarget() {
 		return lockedTarget != null;
 	}
-
-	public L2Character getLockedTarget()
-	{
+	
+	public L2Character getLockedTarget() {
 		return lockedTarget;
 	}
-
-	public void setLockedTarget(L2Character cha)
-	{
+	
+	public void setLockedTarget(L2Character cha) {
 		lockedTarget = cha;
 	}
-
+	
 	L2PcInstance transferDmgTo;
-
-	public void setTransferDamageTo(L2PcInstance val)
-	{
+	
+	public void setTransferDamageTo(L2PcInstance val) {
 		transferDmgTo = val;
 	}
-
-	public L2PcInstance getTransferingDamageTo()
-	{
+	
+	public L2PcInstance getTransferingDamageTo() {
 		return transferDmgTo;
 	}
-
+	
 	public abstract int getReputation();
-
+	
 	public abstract byte getPvpFlag();
-
+	
 	public abstract boolean useMagic(L2Skill skill, boolean forceUse, boolean dontMove);
 }

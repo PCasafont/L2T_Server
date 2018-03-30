@@ -25,13 +25,11 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 /**
  * @author nBd
  */
-public class TargetItem implements ISkillTargetTypeHandler
-{
+public class TargetItem implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		activeChar.sendMessage("Target type of skill is not currently handled");
 		return null;
 	}
@@ -39,13 +37,11 @@ public class TargetItem implements ISkillTargetTypeHandler
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
+	public Enum<L2SkillTargetType> getTargetType() {
 		return L2SkillTargetType.TARGET_ITEM;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetItem());
 	}
 }

@@ -15,6 +15,7 @@
 
 package ai.individual;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2CharPosition;
@@ -24,65 +25,54 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.util.Rnd;
 
-import ai.group_template.L2AttackableAIScript;
-
 /**
  * @author LasTravel
- *         <p>
- *         Nerva Orc Merchant
- *         <p>
- *         Source:
- *         - http://l2wiki.com/Raiders_Crossroads
+ * <p>
+ * Nerva Orc Merchant
+ * <p>
+ * Source:
+ * - http://l2wiki.com/Raiders_Crossroads
  */
 
-public class NervaOrcMerchant extends L2AttackableAIScript
-{
+public class NervaOrcMerchant extends L2AttackableAIScript {
 	private static final int merchant = 23320;
 
-	public NervaOrcMerchant(int id, String name, String descr)
-	{
+	public NervaOrcMerchant(int id, String name, String descr) {
 		super(id, name, descr);
 
 		addAttackId(merchant);
 		addSpawnId(merchant);
 
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-		{
-			if (spawn == null)
-			{
+		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable()) {
+			if (spawn == null) {
 				continue;
 			}
 
-			if (spawn.getNpcId() == merchant)
-			{
+			if (spawn.getNpcId() == merchant) {
 				this.notifySpawn(spawn.getNpc());
 			}
 		}
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc)
-	{
+	public String onSpawn(L2Npc npc) {
 		npc.disableCoreAI(true);
 
 		return super.onSpawn(npc);
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
-	{
-		if (!npc.isMoving())
-		{
-			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-					new L2CharPosition(npc.getX() + 1000, npc.getY() + (Rnd.get(10) > 8 ? -1000 : 1000), npc.getZ(),
-							0));
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill) {
+		if (!npc.isMoving()) {
+			npc.getAI()
+					.setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
+							new L2CharPosition(npc.getX() + 1000, npc.getY() + (Rnd.get(10) > 8 ? -1000 : 1000), npc.getZ(), 0));
 		}
 
 		return super.onAttack(npc, attacker, damage, isPet, skill);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new NervaOrcMerchant(-1, "NervaOrcMerchant", "ai");
 	}
 }

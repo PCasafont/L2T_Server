@@ -26,136 +26,111 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @author -Wooden-
  */
-public final class RequestPledgeSetAcademyMaster extends L2GameClientPacket
-{
+public final class RequestPledgeSetAcademyMaster extends L2GameClientPacket {
 	private String currPlayerName;
 	private int set; // 1 set, 0 delete
 	private String targetPlayerName;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		set = readD();
 		currPlayerName = readS();
 		targetPlayerName = readS();
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
 		L2Clan clan = activeChar.getClan();
-		if (clan == null)
-		{
+		if (clan == null) {
 			return;
 		}
-
-		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_APPRENTICE) != L2Clan.CP_CL_APPRENTICE)
-		{
-			activeChar.sendPacket(
-					SystemMessage.getSystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_THE_RIGHT_TO_DISMISS_AN_APPRENTICE));
+		
+		if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_APPRENTICE) != L2Clan.CP_CL_APPRENTICE) {
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_DO_NOT_HAVE_THE_RIGHT_TO_DISMISS_AN_APPRENTICE));
 			return;
 		}
-
+		
 		L2ClanMember currentMember = clan.getClanMember(currPlayerName);
 		L2ClanMember targetMember = clan.getClanMember(targetPlayerName);
-		if (currentMember == null || targetMember == null)
-		{
+		if (currentMember == null || targetMember == null) {
 			return;
 		}
-
+		
 		L2ClanMember apprenticeMember, sponsorMember;
-		if (currentMember.getPledgeType() == L2Clan.SUBUNIT_ACADEMY)
-		{
+		if (currentMember.getPledgeType() == L2Clan.SUBUNIT_ACADEMY) {
 			apprenticeMember = currentMember;
 			sponsorMember = targetMember;
-		}
-		else
-		{
+		} else {
 			apprenticeMember = targetMember;
 			sponsorMember = currentMember;
 		}
-
+		
 		L2PcInstance apprentice = apprenticeMember.getPlayerInstance();
 		L2PcInstance sponsor = sponsorMember.getPlayerInstance();
-
+		
 		SystemMessage sm = null;
-		if (set == 0)
-		{
+		if (set == 0) {
 			// test: do we get the current sponsor & apprentice from this packet or no?
-			if (apprentice != null)
-			{
+			if (apprentice != null) {
 				apprentice.setSponsor(0);
-			}
-			else
+			} else
 			// offline
 			{
 				apprenticeMember.initApprenticeAndSponsor(0, 0);
 			}
-
-			if (sponsor != null)
-			{
+			
+			if (sponsor != null) {
 				sponsor.setApprentice(0);
-			}
-			else
+			} else
 			// offline
 			{
 				sponsorMember.initApprenticeAndSponsor(0, 0);
 			}
-
+			
 			apprenticeMember.saveApprenticeAndSponsor(0, 0);
 			sponsorMember.saveApprenticeAndSponsor(0, 0);
-
+			
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S2_CLAN_MEMBER_C1_APPRENTICE_HAS_BEEN_REMOVED);
-		}
-		else
-		{
-			if (apprenticeMember.getSponsor() != 0 || sponsorMember.getApprentice() != 0 ||
-					apprenticeMember.getApprentice() != 0 || sponsorMember.getSponsor() != 0)
-			{
+		} else {
+			if (apprenticeMember.getSponsor() != 0 || sponsorMember.getApprentice() != 0 || apprenticeMember.getApprentice() != 0 ||
+					sponsorMember.getSponsor() != 0) {
 				activeChar.sendMessage("Remove previous connections first.");
 				return;
 			}
-			if (apprentice != null)
-			{
+			if (apprentice != null) {
 				apprentice.setSponsor(sponsorMember.getObjectId());
-			}
-			else
+			} else
 			// offline
 			{
 				apprenticeMember.initApprenticeAndSponsor(0, sponsorMember.getObjectId());
 			}
-
-			if (sponsor != null)
-			{
+			
+			if (sponsor != null) {
 				sponsor.setApprentice(apprenticeMember.getObjectId());
-			}
-			else
+			} else
 			// offline
 			{
 				sponsorMember.initApprenticeAndSponsor(apprenticeMember.getObjectId(), 0);
 			}
-
+			
 			// saving to database even if online, since both must match
 			apprenticeMember.saveApprenticeAndSponsor(0, sponsorMember.getObjectId());
 			sponsorMember.saveApprenticeAndSponsor(apprenticeMember.getObjectId(), 0);
-
+			
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HAS_BEEN_DESIGNATED_AS_APPRENTICE_OF_CLAN_MEMBER_S1);
 		}
 		sm.addString(sponsorMember.getName());
 		sm.addString(apprenticeMember.getName());
-		if (sponsor != activeChar && sponsor != apprentice)
-		{
+		if (sponsor != activeChar && sponsor != apprentice) {
 			activeChar.sendPacket(sm);
 		}
-		if (sponsor != null)
-		{
+		if (sponsor != null) {
 			sponsor.sendPacket(sm);
 		}
-		if (apprentice != null)
-		{
+		if (apprentice != null) {
 			apprentice.sendPacket(sm);
 		}
 	}

@@ -18,20 +18,17 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExSetPledgeEmblemAck extends L2GameServerPacket
-{
+public class ExSetPledgeEmblemAck extends L2GameServerPacket {
 	private int ack;
-
-	public ExSetPledgeEmblemAck(int ack)
-	{
+	
+	public ExSetPledgeEmblemAck(int ack) {
 		this.ack = ack;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(ack);
 	}
 }

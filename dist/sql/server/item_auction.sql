@@ -1,9 +1,9 @@
 CREATE TABLE IF NOT EXISTS `item_auction` (
-  `auctionId` int(11) NOT NULL,
-  `instanceId` int(11) NOT NULL,
-  `auctionItemId` int(11) NOT NULL,
-  `startingTime` bigint(13) unsigned NOT NULL DEFAULT '0',
-  `endingTime` bigint(13) unsigned NOT NULL DEFAULT '0',
-  `auctionStateId` tinyint(1) NOT NULL,
+  `auctionId`      INT(11)             NOT NULL,
+  `instanceId`     INT(11)             NOT NULL,
+  `auctionItemId`  INT(11)             NOT NULL,
+  `startingTime`   BIGINT(13) UNSIGNED NOT NULL DEFAULT '0',
+  `endingTime`     BIGINT(13) UNSIGNED NOT NULL DEFAULT '0',
+  `auctionStateId` TINYINT(1)          NOT NULL,
   PRIMARY KEY (`auctionId`)
 );

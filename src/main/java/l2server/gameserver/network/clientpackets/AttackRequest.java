@@ -25,8 +25,7 @@ import l2server.gameserver.network.serverpackets.ActionFailed;
  *
  * @version $Revision: 1.7.2.1.2.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class AttackRequest extends L2GameClientPacket
-{
+public final class AttackRequest extends L2GameClientPacket {
 	// cddddc
 	private int objectId;
 	@SuppressWarnings("unused")
@@ -39,8 +38,7 @@ public final class AttackRequest extends L2GameClientPacket
 	private int attackId;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		objectId = readD();
 		originX = readD();
 		originY = readD();
@@ -49,61 +47,45 @@ public final class AttackRequest extends L2GameClientPacket
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 		// avoid using expensive operations if not needed
 		L2Object target;
-		if (activeChar.getTargetId() == objectId)
-		{
+		if (activeChar.getTargetId() == objectId) {
 			target = activeChar.getTarget();
-		}
-		else
-		{
+		} else {
 			target = L2World.getInstance().findObject(objectId);
 		}
-		if (target == null)
-		{
+		if (target == null) {
 			target = L2World.getInstance().getPlayer(objectId);
-			if (target == null)
-			{
+			if (target == null) {
 				return;
 			}
 		}
 
 		// Players can't attack objects in the other instances
 		// except from multiverse
-		if (target.getInstanceId() != activeChar.getInstanceId() && activeChar.getInstanceId() != -1)
-		{
+		if (target.getInstanceId() != activeChar.getInstanceId() && activeChar.getInstanceId() != -1) {
 			return;
 		}
 
 		// Only GMs can directly attack invisible characters
-		if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().getInvisible() &&
-				!activeChar.isGM())
-		{
+		if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().getInvisible() && !activeChar.isGM()) {
 			return;
 		}
 
-		if (activeChar.getTarget() != target)
-		{
+		if (activeChar.getTarget() != target) {
 			target.onAction(activeChar);
-		}
-		else
-		{
+		} else {
 			if (target.getObjectId() != activeChar.getObjectId() && activeChar.getPrivateStoreType() == 0 &&
-					activeChar.getActiveRequester() == null)
-			{
+					activeChar.getActiveRequester() == null) {
 				//Logozo.debug("Starting ForcedAttack");
 				target.onForcedAttack(activeChar);
 				//Logozo.debug("Ending ForcedAttack");
-			}
-			else
-			{
+			} else {
 				sendPacket(ActionFailed.STATIC_PACKET);
 			}
 		}

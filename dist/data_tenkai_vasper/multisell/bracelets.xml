@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list>
-    <item>
-        <ingredient count="100" id="-500" /> <!-- Raid Points -->
-        <production count="1" id="19455" /> <!-- Istina's Bracelet -->
-    </item>
-    <item>
-        <ingredient count="100" id="-500" /> <!-- Raid Points -->
-        <production count="1" id="19461" /> <!-- Octavis' Bracelet -->
-    </item>
-    <item>
-        <ingredient count="100" id="-500" /> <!-- Raid Points -->
-        <production count="1" id="35293" /> <!-- Tauti's Bracelet -->
-    </item>
-    <item>
-        <ingredient count="1" id="34859" /> <!-- Enhanced Istina's Bracelet -->
-        <ingredient count="1000" id="-500" /> <!-- Raid Points -->
-        <production count="1" id="38565" /> <!-- Aria's Bracelet: CON -->
-    </item>
-    <item>
-        <ingredient count="1" id="34859" /> <!-- Enhanced Istina's Bracelet -->
-        <ingredient count="1000" id="-500" /> <!-- Raid Points -->
-        <production count="1" id="38566" /> <!-- Aria's Bracelet: MEN -->
-    </item>
-    <item>
-        <ingredient count="1" id="34860" /> <!-- Enhanced Octavis' Bracelet -->
-        <ingredient count="1000" id="-500" /> <!-- Raid Points -->
-        <production count="1" id="38567" /> <!-- Aria's Bracelet: DEX -->
-    </item>
-    <item>
-        <ingredient count="1" id="34860" /> <!-- Enhanced Octavis' Bracelet -->
-        <ingredient count="1000" id="-500" /> <!-- Raid Points -->
-        <production count="1" id="38568" /> <!-- Aria's Bracelet: WIT -->
-    </item>
-    <item>
-        <ingredient count="1" id="35294" /> <!-- Enhanced Tauti's Bracelet -->
-        <ingredient count="1000" id="-500" /> <!-- Raid Points -->
-        <production count="1" id="38569" /> <!-- Aria's Bracelet: STR -->
-    </item>
-    <item>
-        <ingredient count="1" id="35294" /> <!-- Enhanced Tauti's Bracelet -->
-        <ingredient count="1000" id="-500" /> <!-- Raid Points -->
-        <production count="1" id="38570" /> <!-- Aria's Bracelet: INT -->
-    </item>
-    <item>
-        <ingredient count="1" id="38566" /> <!-- Aria's Bracelet: MEN -->
-        <ingredient count="100" id="-500" /> <!-- Raid Points -->
-        <production count="1" id="38565" /> <!-- Aria's Bracelet: CON -->
-    </item>
-    <item>
-        <ingredient count="1" id="38565" /> <!-- Aria's Bracelet: CON -->
-        <ingredient count="100" id="-500" /> <!-- Raid Points -->
-        <production count="1" id="38566" /> <!-- Aria's Bracelet: MEN -->
-    </item>
-    <item>
-        <ingredient count="1" id="38568" /> <!-- Aria's Bracelet: WIT -->
-        <ingredient count="100" id="-500" /> <!-- Raid Points -->
-        <production count="1" id="38567" /> <!-- Aria's Bracelet: DEX -->
-    </item>
-    <item>
-        <ingredient count="1" id="38567" /> <!-- Aria's Bracelet: DEX -->
-        <ingredient count="100" id="-500" /> <!-- Raid Points -->
-        <production count="1" id="38568" /> <!-- Aria's Bracelet: WIT -->
-    </item>
-    <item>
-        <ingredient count="1" id="38570" /> <!-- Aria's Bracelet: INT -->
-        <ingredient count="100" id="-500" /> <!-- Raid Points -->
-        <production count="1" id="38569" /> <!-- Aria's Bracelet: STR -->
-    </item>
-    <item>
-        <ingredient count="1" id="38569" /> <!-- Aria's Bracelet: STR -->
-        <ingredient count="100" id="-500" /> <!-- Raid Points -->
-        <production count="1" id="38570" /> <!-- Aria's Bracelet: INT -->
-    </item>
+	<item>
+		<ingredient count="100" id="-500" /> <!-- Raid Points -->
+		<production count="1" id="19455" /> <!-- Istina's Bracelet -->
+	</item>
+	<item>
+		<ingredient count="100" id="-500" /> <!-- Raid Points -->
+		<production count="1" id="19461" /> <!-- Octavis' Bracelet -->
+	</item>
+	<item>
+		<ingredient count="100" id="-500" /> <!-- Raid Points -->
+		<production count="1" id="35293" /> <!-- Tauti's Bracelet -->
+	</item>
+	<item>
+		<ingredient count="1" id="34859" /> <!-- Enhanced Istina's Bracelet -->
+		<ingredient count="1000" id="-500" /> <!-- Raid Points -->
+		<production count="1" id="38565" /> <!-- Aria's Bracelet: CON -->
+	</item>
+	<item>
+		<ingredient count="1" id="34859" /> <!-- Enhanced Istina's Bracelet -->
+		<ingredient count="1000" id="-500" /> <!-- Raid Points -->
+		<production count="1" id="38566" /> <!-- Aria's Bracelet: MEN -->
+	</item>
+	<item>
+		<ingredient count="1" id="34860" /> <!-- Enhanced Octavis' Bracelet -->
+		<ingredient count="1000" id="-500" /> <!-- Raid Points -->
+		<production count="1" id="38567" /> <!-- Aria's Bracelet: DEX -->
+	</item>
+	<item>
+		<ingredient count="1" id="34860" /> <!-- Enhanced Octavis' Bracelet -->
+		<ingredient count="1000" id="-500" /> <!-- Raid Points -->
+		<production count="1" id="38568" /> <!-- Aria's Bracelet: WIT -->
+	</item>
+	<item>
+		<ingredient count="1" id="35294" /> <!-- Enhanced Tauti's Bracelet -->
+		<ingredient count="1000" id="-500" /> <!-- Raid Points -->
+		<production count="1" id="38569" /> <!-- Aria's Bracelet: STR -->
+	</item>
+	<item>
+		<ingredient count="1" id="35294" /> <!-- Enhanced Tauti's Bracelet -->
+		<ingredient count="1000" id="-500" /> <!-- Raid Points -->
+		<production count="1" id="38570" /> <!-- Aria's Bracelet: INT -->
+	</item>
+	<item>
+		<ingredient count="1" id="38566" /> <!-- Aria's Bracelet: MEN -->
+		<ingredient count="100" id="-500" /> <!-- Raid Points -->
+		<production count="1" id="38565" /> <!-- Aria's Bracelet: CON -->
+	</item>
+	<item>
+		<ingredient count="1" id="38565" /> <!-- Aria's Bracelet: CON -->
+		<ingredient count="100" id="-500" /> <!-- Raid Points -->
+		<production count="1" id="38566" /> <!-- Aria's Bracelet: MEN -->
+	</item>
+	<item>
+		<ingredient count="1" id="38568" /> <!-- Aria's Bracelet: WIT -->
+		<ingredient count="100" id="-500" /> <!-- Raid Points -->
+		<production count="1" id="38567" /> <!-- Aria's Bracelet: DEX -->
+	</item>
+	<item>
+		<ingredient count="1" id="38567" /> <!-- Aria's Bracelet: DEX -->
+		<ingredient count="100" id="-500" /> <!-- Raid Points -->
+		<production count="1" id="38568" /> <!-- Aria's Bracelet: WIT -->
+	</item>
+	<item>
+		<ingredient count="1" id="38570" /> <!-- Aria's Bracelet: INT -->
+		<ingredient count="100" id="-500" /> <!-- Raid Points -->
+		<production count="1" id="38569" /> <!-- Aria's Bracelet: STR -->
+	</item>
+	<item>
+		<ingredient count="1" id="38569" /> <!-- Aria's Bracelet: STR -->
+		<ingredient count="100" id="-500" /> <!-- Raid Points -->
+		<production count="1" id="38570" /> <!-- Aria's Bracelet: INT -->
+	</item>
 </list>

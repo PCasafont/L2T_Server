@@ -18,15 +18,13 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author devScarlet & mrTJO
  */
-public class ServerClose extends L2GameServerPacket
-{
+public class ServerClose extends L2GameServerPacket {
 	public static final ServerClose STATIC_PACKET = new ServerClose();
-
+	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 	}
 }

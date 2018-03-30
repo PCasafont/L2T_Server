@@ -30,108 +30,84 @@ import java.util.List;
 /**
  * @author Pere
  */
-public class ExMentorList extends L2GameServerPacket
-{
-	private class PartnerInfo
-	{
+public class ExMentorList extends L2GameServerPacket {
+	private class PartnerInfo {
 		public int objId;
 		public String name;
 		public int classId;
 		public int level;
 		public boolean online;
 	}
-
+	
 	private L2PcInstance player;
 	private List<PartnerInfo> partners = new ArrayList<>();
-
-	public ExMentorList(L2PcInstance activeChar)
-	{
-		if (activeChar.isMentor())
-		{
-			for (int objId : activeChar.getMenteeList())
-			{
+	
+	public ExMentorList(L2PcInstance activeChar) {
+		if (activeChar.isMentor()) {
+			for (int objId : activeChar.getMenteeList()) {
 				PartnerInfo partnerInfo = new PartnerInfo();
 				partnerInfo.objId = objId;
 				L2PcInstance partner = L2World.getInstance().getPlayer(objId);
-				if (partner != null)
-				{
+				if (partner != null) {
 					partnerInfo.name = partner.getName();
 					partnerInfo.classId = partner.getClassId();
 					partnerInfo.level = partner.getLevel();
 					partnerInfo.online = true;
-				}
-				else
-				{
+				} else {
 					partnerInfo.name = CharNameTable.getInstance().getNameById(objId);
 					getClassIdAndLevel(partnerInfo);
 					partnerInfo.online = false;
 				}
 				partners.add(partnerInfo);
 			}
-		}
-		else if (activeChar.isMentee())
-		{
+		} else if (activeChar.isMentee()) {
 			PartnerInfo partnerInfo = new PartnerInfo();
 			partnerInfo.objId = activeChar.getMentorId();
 			L2PcInstance partner = L2World.getInstance().getPlayer(activeChar.getMentorId());
-			if (partner != null)
-			{
+			if (partner != null) {
 				partnerInfo.name = partner.getName();
 				partnerInfo.classId = partner.getClassId();
 				partnerInfo.level = partner.getLevel();
 				partnerInfo.online = true;
-			}
-			else
-			{
+			} else {
 				partnerInfo.name = CharNameTable.getInstance().getNameById(activeChar.getMentorId());
 				getClassIdAndLevel(partnerInfo);
 				partnerInfo.online = false;
 			}
 			partners.add(partnerInfo);
 		}
-
+		
 		player = activeChar;
 	}
-
-	private void getClassIdAndLevel(PartnerInfo partnerInfo)
-	{
+	
+	private void getClassIdAndLevel(PartnerInfo partnerInfo) {
 		Connection con = null;
-		try
-		{
+		try {
 			// Retrieve the L2PcInstance from the characters table of the database
 			con = L2DatabaseFactory.getInstance().getConnection();
-
-			PreparedStatement statement =
-					con.prepareStatement("SELECT level, classid, base_class FROM characters WHERE charId=?");
+			
+			PreparedStatement statement = con.prepareStatement("SELECT level, classid, base_class FROM characters WHERE charId=?");
 			statement.setInt(1, partnerInfo.objId);
 			ResultSet rset = statement.executeQuery();
-			while (rset.next())
-			{
+			while (rset.next()) {
 				partnerInfo.level = rset.getByte("level");
 				partnerInfo.classId = rset.getInt("classid");
 			}
 			rset.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.info("Failed loading character.");
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
-		writeD(player.isMentor() ? 0x01 :
-				player.isMentee() ? 0x02 : 0x00); // 0x00 Nothing, 0x01 my mentees, 0x02 my mentor
+	protected final void writeImpl() {
+		writeD(player.isMentor() ? 0x01 : player.isMentee() ? 0x02 : 0x00); // 0x00 Nothing, 0x01 my mentees, 0x02 my mentor
 		writeD(0x00); // ???
 		writeD(partners.size());
-		for (PartnerInfo menteeInfo : partners)
-		{
+		for (PartnerInfo menteeInfo : partners) {
 			writeD(menteeInfo.objId);
 			writeS(menteeInfo.name);
 			writeD(menteeInfo.classId);

@@ -6,15 +6,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 
-public class Q255_Tutorial extends Quest
-{
+public class Q255_Tutorial extends Quest {
 	private static final String qn = "Q255_Tutorial";
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (Config.DISABLE_TUTORIAL)
-		{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (Config.DISABLE_TUTORIAL) {
 			return "";
 		}
 		QuestState st = player.getQuestState(qn);
@@ -23,25 +20,20 @@ public class Q255_Tutorial extends Quest
 		if (event.startsWith("UC")) // User Connected
 		{
 			int playerLevel = player.getLevel();
-			if (playerLevel < 6 && st.getInt("done") == 0)
-			{
+			if (playerLevel < 6 && st.getInt("done") == 0) {
 				st.onTutorialClientEvent(0);
 				st.showQuestionMark(100);
 				st.playSound("ItemSound.quest_tutorial");
 			}
-		}
-		else if (event.startsWith("QT")) // Quest timer
+		} else if (event.startsWith("QT")) // Quest timer
 		{
 			int Ex = st.getInt("Ex");
-			if (Ex == -2)
-			{
+			if (Ex == -2) {
 			}
-		}
-		else if (event.startsWith("TE")) // Tutorial Event
+		} else if (event.startsWith("TE")) // Tutorial Event
 		{
 			int event_id = Integer.valueOf(event.substring(2));
-			switch (event_id)
-			{
+			switch (event_id) {
 				case 0:
 				case 1:
 					st.closeTutorialHtml();
@@ -82,16 +74,13 @@ public class Q255_Tutorial extends Quest
 				case 28:
 					htmltext = "tutorial_28.htm";
 			}
-		}
-		else if (event.startsWith("CE")) // Client Event
+		} else if (event.startsWith("CE")) // Client Event
 		{
 			int event_id = Integer.valueOf(event.substring(2));
 			int playerLevel = player.getLevel();
-			switch (event_id)
-			{
+			switch (event_id) {
 				case 1:
-					if (playerLevel < 6)
-					{
+					if (playerLevel < 6) {
 						st.playTutorialVoice("tutorial_voice_004");
 						htmltext = "tutorial_03.htm";
 						st.playSound("ItemSound.quest_tutorial");
@@ -99,8 +88,7 @@ public class Q255_Tutorial extends Quest
 					}
 					break;
 				case 2:
-					if (playerLevel < 6)
-					{
+					if (playerLevel < 6) {
 						st.playTutorialVoice("tutorial_voice_005");
 						htmltext = "tutorial_05.htm";
 						st.playSound("ItemSound.quest_tutorial");
@@ -108,16 +96,14 @@ public class Q255_Tutorial extends Quest
 					}
 					break;
 				case 8:
-					if (playerLevel < 6)
-					{
+					if (playerLevel < 6) {
 						st.playTutorialVoice("tutorial_voice_007");
 						htmltext = "tutorial_08.htm";
 						st.playSound("ItemSound.quest_tutorial");
 					}
 					break;
 				case 30:
-					if (playerLevel < 10 && st.getInt("Die") == 0)
-					{
+					if (playerLevel < 10 && st.getInt("Die") == 0) {
 						st.playTutorialVoice("tutorial_voice_016");
 						st.playSound("ItemSound.quest_tutorial");
 						st.set("Die", "1");
@@ -126,8 +112,7 @@ public class Q255_Tutorial extends Quest
 					}
 					break;
 				case 800000:
-					if (playerLevel < 6 && st.getInt("sit") == 0)
-					{
+					if (playerLevel < 6 && st.getInt("sit") == 0) {
 						st.playTutorialVoice("tutorial_voice_018");
 						st.playSound("ItemSound.quest_tutorial");
 						st.set("sit", "1");
@@ -136,12 +121,10 @@ public class Q255_Tutorial extends Quest
 					}
 					break;
 			}
-		}
-		else if (event.startsWith("QM")) // Question Mark clicked
+		} else if (event.startsWith("QM")) // Question Mark clicked
 		{
 			int markId = Integer.valueOf(event.substring(2));
-			switch (markId)
-			{
+			switch (markId) {
 				case 100:
 					st.playTutorialVoice("tutorial_voice_002");
 					st.set("Ex", "-5");
@@ -149,21 +132,18 @@ public class Q255_Tutorial extends Quest
 					break;
 			}
 		}
-		if (htmltext == "")
-		{
+		if (htmltext == "") {
 			return "";
 		}
 		st.showTutorialHTML(htmltext);
 		return "";
 	}
 
-	public Q255_Tutorial(int questId, String name, String descr)
-	{
+	public Q255_Tutorial(int questId, String name, String descr) {
 		super(questId, name, descr);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Q255_Tutorial(255, qn, "Tutorial");
 	}
 }

@@ -20,12 +20,10 @@ import java.util.logging.FileHandler;
 
 /**
  * @author zabbix
- *         Lets drink to code!
+ * Lets drink to code!
  */
-public class AuditLogHandler extends FileHandler
-{
-	public AuditLogHandler() throws IOException, SecurityException
-	{
+public class AuditLogHandler extends FileHandler {
+	public AuditLogHandler() throws IOException, SecurityException {
 		super();
 	}
 }

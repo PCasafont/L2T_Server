@@ -18,10 +18,8 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Pere
  */
-public class ExShowAPListWnd extends L2GameServerPacket
-{
+public class ExShowAPListWnd extends L2GameServerPacket {
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 	}
 }

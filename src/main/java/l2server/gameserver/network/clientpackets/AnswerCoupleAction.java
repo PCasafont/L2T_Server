@@ -26,44 +26,37 @@ import l2server.gameserver.util.Util;
 /**
  * @author JIV
  */
-public class AnswerCoupleAction extends L2GameClientPacket
-{
+public class AnswerCoupleAction extends L2GameClientPacket {
 
 	private int charObjId;
 	private int actionId;
 	private int answer;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		actionId = readD();
 		answer = readD();
 		charObjId = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
 		L2PcInstance target = L2World.getInstance().getPlayer(charObjId);
-		if (activeChar == null || target == null)
-		{
+		if (activeChar == null || target == null) {
 			return;
 		}
-		if (target.getMultiSocialTarget() != activeChar.getObjectId() || target.getMultiSociaAction() != actionId)
-		{
+		if (target.getMultiSocialTarget() != activeChar.getObjectId() || target.getMultiSociaAction() != actionId) {
 			return;
 		}
 		if (answer == 0) // cancel
 		{
 			target.setMultiSocialAction(0, 0);
 			target.sendPacket(SystemMessageId.COUPLE_ACTION_DENIED);
-		}
-		else if (answer == 1) // approve
+		} else if (answer == 1) // approve
 		{
 			double distance = activeChar.getPlanDistanceSq(target);
-			if (distance > 2000 || distance < 70)
-			{
+			if (distance > 2000 || distance < 70) {
 				activeChar.sendPacket(SystemMessageId.TARGET_DO_NOT_MEET_LOC_REQUIREMENTS);
 				target.sendPacket(SystemMessageId.TARGET_DO_NOT_MEET_LOC_REQUIREMENTS);
 				return;
@@ -76,8 +69,7 @@ public class AnswerCoupleAction extends L2GameClientPacket
 			target.broadcastPacket(new ExRotation(target.getObjectId(), heading));
 			activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), actionId));
 			target.broadcastPacket(new SocialAction(target.getObjectId(), actionId));
-		}
-		else if (answer == -1) // refused
+		} else if (answer == -1) // refused
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_SET_TO_REFUSE_COUPLE_ACTIONS);
 			sm.addPcName(activeChar);

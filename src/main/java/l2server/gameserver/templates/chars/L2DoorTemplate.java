@@ -20,8 +20,7 @@ import l2server.gameserver.templates.StatsSet;
 /**
  * @author JIV
  */
-public class L2DoorTemplate extends L2CharTemplate
-{
+public class L2DoorTemplate extends L2CharTemplate {
 	public final int doorId;
 	public final int nodeX[];
 	public final int nodeY[];
@@ -40,8 +39,7 @@ public class L2DoorTemplate extends L2CharTemplate
 	public final byte masterDoorClose;
 	public final byte masterDoorOpen;
 
-	public L2DoorTemplate(StatsSet set)
-	{
+	public L2DoorTemplate(StatsSet set) {
 		super(set);
 
 		//stats
@@ -57,8 +55,7 @@ public class L2DoorTemplate extends L2CharTemplate
 		nodeZ = set.getInteger("nodeZ") - 100;
 		nodeX = new int[4]; // 4 * x
 		nodeY = new int[4]; // 4 * y
-		for (int i = 0; i < 4; i++)
-		{
+		for (int i = 0; i < 4; i++) {
 			String split[] = set.getString("node" + (i + 1)).split(",");
 			nodeX[i] = Integer.parseInt(split[0]);
 			nodeY[i] = Integer.parseInt(split[1]);
@@ -77,8 +74,7 @@ public class L2DoorTemplate extends L2CharTemplate
 		childDoorId = set.getInteger("child_id_event", -1);
 		// true if door is opening
 		String masterevent = set.getString("master_close_event", "act_nothing");
-		switch (masterevent)
-		{
+		switch (masterevent) {
 			case "act_open":
 				masterDoorClose = 1;
 				break;
@@ -91,8 +87,7 @@ public class L2DoorTemplate extends L2CharTemplate
 		}
 		//#2
 		masterevent = set.getString("master_open_event", "act_nothing");
-		switch (masterevent)
-		{
+		switch (masterevent) {
 			case "act_open":
 				masterDoorOpen = 1;
 				break;

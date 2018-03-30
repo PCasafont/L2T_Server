@@ -23,33 +23,29 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @version $Revision: 1.7.2.2.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public class PrivateStoreListBuy extends L2ItemListPacket
-{
+public class PrivateStoreListBuy extends L2ItemListPacket {
 	private int objId;
 	private long playerAdena;
 	private TradeList.TradeItem[] items;
-
-	public PrivateStoreListBuy(L2PcInstance player, L2PcInstance storePlayer)
-	{
+	
+	public PrivateStoreListBuy(L2PcInstance player, L2PcInstance storePlayer) {
 		objId = storePlayer.getObjectId();
 		playerAdena = player.getAdena();
 		storePlayer.getSellList().updateItems(); // Update SellList for case inventory content has changed
 		items = storePlayer.getBuyList().getAvailableItems(player.getInventory());
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objId);
 		writeQ(playerAdena);
 		writeD(0x00); // GoD ???
-
+		
 		writeD(items.length);
-
-		for (TradeList.TradeItem item : items)
-		{
+		
+		for (TradeList.TradeItem item : items) {
 			writeItem(item);
-
+			
 			writeD(item.getObjectId());
 			writeQ(item.getPrice());
 			writeQ(item.getItem().getReferencePrice() * 2);

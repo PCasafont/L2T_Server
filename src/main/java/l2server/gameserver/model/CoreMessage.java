@@ -10,61 +10,50 @@ import java.util.Vector;
 /**
  * @author Pere
  */
-public class CoreMessage
-{
+public class CoreMessage {
 	private final String message;
 	private final Vector<String> value = new Vector<>();
 
-	public CoreMessage(String message)
-	{
+	public CoreMessage(String message) {
 		this.message = message;
 	}
 
-	public CoreMessage(int cmId)
-	{
+	public CoreMessage(int cmId) {
 		CoreMessage cm = CoreMessageTable.getInstance().getMessage(cmId);
 		message = cm.message;
 	}
 
-	public CoreMessage(CoreMessage cm)
-	{
+	public CoreMessage(CoreMessage cm) {
 		message = cm.message;
 	}
 
-	public String getString()
-	{
+	public String getString() {
 		return message;
 	}
 
-	public void addString(String text)
-	{
+	public void addString(String text) {
 		value.add(text);
 	}
 
-	public void addNumber(double num)
-	{
+	public void addNumber(double num) {
 		value.add(String.valueOf(num));
 	}
 
-	public void addNumber(long num)
-	{
+	public void addNumber(long num) {
 		value.add(String.valueOf(num));
 	}
 
-	public String renderMsg(String language)
-	{
+	public String renderMsg(String language) {
 		String message = this.message;
 		int i = 0;
-		for (String text : value)
-		{
+		for (String text : value) {
 			i++;
 			message = message.replace("$s" + i, text);
 		}
 		return message;
 	}
 
-	public void sendMessage(L2PcInstance player)
-	{
+	public void sendMessage(L2PcInstance player) {
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1);
 		sm.addString(renderMsg("en"));
 		player.sendPacket(sm);

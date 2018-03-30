@@ -20,20 +20,16 @@ import l2server.gameserver.network.serverpackets.ExAcquireAPSkillList;
 /**
  * @author Pere
  */
-public final class RequestAPSkillList extends L2GameClientPacket
-{
+public final class RequestAPSkillList extends L2GameClientPacket {
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 	}
 
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
-		if (getClient().getActiveChar() == null)
-		{
+	protected void runImpl() {
+		if (getClient().getActiveChar() == null) {
 			return;
 		}
 

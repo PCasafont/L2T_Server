@@ -21,15 +21,12 @@ import l2server.gameserver.model.actor.instance.L2AdventurerInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExShowQuestInfo;
 
-public class QuestList implements IBypassHandler
-{
+public class QuestList implements IBypassHandler {
 	private static final String[] COMMANDS = {"questlist"};
 
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (!(target instanceof L2AdventurerInstance))
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+		if (!(target instanceof L2AdventurerInstance)) {
 			return false;
 		}
 
@@ -38,8 +35,7 @@ public class QuestList implements IBypassHandler
 	}
 
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

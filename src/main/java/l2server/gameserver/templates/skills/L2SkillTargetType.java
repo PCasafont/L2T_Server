@@ -18,8 +18,7 @@ package l2server.gameserver.templates.skills;
 /**
  * @author Max
  */
-public enum L2SkillTargetType
-{
+public enum L2SkillTargetType {
 	TARGET_NONE,
 	TARGET_ITEM,
 	TARGET_AREA_CORPSE_MOB,

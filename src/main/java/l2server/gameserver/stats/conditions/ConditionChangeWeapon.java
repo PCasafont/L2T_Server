@@ -24,8 +24,7 @@ import l2server.gameserver.templates.item.L2Weapon;
  *
  * @author nBd
  */
-public class ConditionChangeWeapon extends Condition
-{
+public class ConditionChangeWeapon extends Condition {
 	private final boolean required;
 
 	/**
@@ -33,8 +32,7 @@ public class ConditionChangeWeapon extends Condition
 	 *
 	 * @param required the required
 	 */
-	public ConditionChangeWeapon(boolean required)
-	{
+	public ConditionChangeWeapon(boolean required) {
 		this.required = required;
 	}
 
@@ -46,29 +44,23 @@ public class ConditionChangeWeapon extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 
-		if (required)
-		{
+		if (required) {
 			L2Weapon weaponItem = env.player.getActiveWeaponItem();
 
-			if (weaponItem == null)
-			{
+			if (weaponItem == null) {
 				return false;
 			}
 
-			if (weaponItem.getChangeWeaponId() == 0)
-			{
+			if (weaponItem.getChangeWeaponId() == 0) {
 				return false;
 			}
 
-			if (((L2PcInstance) env.player).isEnchanting())
-			{
+			if (((L2PcInstance) env.player).isEnchanting()) {
 				return false;
 			}
 		}

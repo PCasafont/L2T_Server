@@ -25,15 +25,13 @@ import java.util.logging.Logger;
 /**
  * @author mrTJO
  */
-public class PlayerTracert extends BaseRecievePacket
-{
+public class PlayerTracert extends BaseRecievePacket {
 	protected static Logger log = Logger.getLogger(PlayerTracert.class.getName());
 
 	/**
 	 * @param decrypt
 	 */
-	public PlayerTracert(byte[] decrypt)
-	{
+	public PlayerTracert(byte[] decrypt) {
 		super(decrypt);
 		String account = readS();
 		String pcIp = readS();
@@ -43,8 +41,7 @@ public class PlayerTracert extends BaseRecievePacket
 		String hop4 = readS();
 
 		LoginController.getInstance().setAccountLastTracert(account, pcIp, hop1, hop2, hop3, hop4);
-		if (Config.DEBUG)
-		{
+		if (Config.DEBUG) {
 			Log.info("Saved " + account + " last tracert");
 		}
 	}

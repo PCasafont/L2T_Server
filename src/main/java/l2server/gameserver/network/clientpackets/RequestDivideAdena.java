@@ -21,32 +21,26 @@ import l2server.gameserver.network.serverpackets.ExDivideAdenaStart;
 /**
  * @author Pere
  */
-public final class RequestDivideAdena extends L2GameClientPacket
-{
+public final class RequestDivideAdena extends L2GameClientPacket {
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 	}
 
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
 
-		if (!player.isInParty())
-		{
+		if (!player.isInParty()) {
 			player.sendMessage("You cannot proceed as you are not in a party."); // TODO systemmessageid
 			return;
 		}
 
-		if (!player.getParty().isLeader(player))
-		{
+		if (!player.getParty().isLeader(player)) {
 			player.sendMessage("You cannot proceed as you are not a party leader."); // TODO systemmessageid
 			return;
 		}

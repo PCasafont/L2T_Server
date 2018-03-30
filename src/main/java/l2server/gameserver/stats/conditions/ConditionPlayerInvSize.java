@@ -23,8 +23,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author Kerberos
  */
-public class ConditionPlayerInvSize extends Condition
-{
+public class ConditionPlayerInvSize extends Condition {
 
 	private final int size;
 
@@ -33,8 +32,7 @@ public class ConditionPlayerInvSize extends Condition
 	 *
 	 * @param size the size
 	 */
-	public ConditionPlayerInvSize(int size)
-	{
+	public ConditionPlayerInvSize(int size) {
 		this.size = size;
 	}
 
@@ -42,12 +40,9 @@ public class ConditionPlayerInvSize extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (env.player instanceof L2PcInstance)
-		{
-			return ((L2PcInstance) env.player).getInventory().getSize(false) <=
-					((L2PcInstance) env.player).getInventoryLimit() - size;
+	public boolean testImpl(Env env) {
+		if (env.player instanceof L2PcInstance) {
+			return ((L2PcInstance) env.player).getInventory().getSize(false) <= ((L2PcInstance) env.player).getInventoryLimit() - size;
 		}
 		return true;
 	}

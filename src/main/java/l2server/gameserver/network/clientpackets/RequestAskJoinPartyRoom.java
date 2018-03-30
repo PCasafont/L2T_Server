@@ -22,19 +22,16 @@ import l2server.log.Log;
  *
  * @author -Wooden-
  */
-public class RequestAskJoinPartyRoom extends L2GameClientPacket
-{
+public class RequestAskJoinPartyRoom extends L2GameClientPacket {
 	private String player; // not tested, just guessed
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		player = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		// TODO
 		Log.info("C5:RequestAskJoinPartyRoom: S: " + player);
 	}

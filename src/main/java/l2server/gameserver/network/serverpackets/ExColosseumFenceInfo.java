@@ -35,21 +35,18 @@ import l2server.gameserver.model.actor.L2ColosseumFence;
  *
  * @author FBIagent
  */
-public class ExColosseumFenceInfo extends L2GameServerPacket
-{
+public class ExColosseumFenceInfo extends L2GameServerPacket {
 	private final L2ColosseumFence fence;
-
-	public ExColosseumFenceInfo(L2ColosseumFence fence)
-	{
+	
+	public ExColosseumFenceInfo(L2ColosseumFence fence) {
 		this.fence = fence;
 	}
-
+	
 	@Override
-	protected void writeImpl()
-	{
+	protected void writeImpl() {
 		writeC(0xfe);
 		writeH(0x0003);
-
+		
 		writeD(fence.getObjectId());
 		writeD(fence.getFenceState().ordinal());
 		writeD(fence.getX());

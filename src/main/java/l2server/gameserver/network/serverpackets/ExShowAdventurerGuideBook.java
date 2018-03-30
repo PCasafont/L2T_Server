@@ -20,13 +20,11 @@ package l2server.gameserver.network.serverpackets;
  *
  * @author KenM
  */
-public class ExShowAdventurerGuideBook extends L2GameServerPacket
-{
-
+public class ExShowAdventurerGuideBook extends L2GameServerPacket {
+	
 	/**
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 	}
 }

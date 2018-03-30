@@ -34,10 +34,8 @@ import java.util.Map;
 /**
  * @author Pere
  */
-public class EnsoulDataTable
-{
-	public static EnsoulDataTable getInstance()
-	{
+public class EnsoulDataTable {
+	public static EnsoulDataTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
@@ -46,91 +44,77 @@ public class EnsoulDataTable
 
 	// =========================================================
 	// Constructor
-	private EnsoulDataTable()
-	{
+	private EnsoulDataTable() {
 		load();
 	}
 
-	private void load()
-	{
+	private void load() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "ensoul/effects.xml");
-		if (!file.exists())
-		{
+		if (!file.exists()) {
 			Log.warning("File " + file.getAbsolutePath() + " does not exist");
 			return;
 		}
 
 		XmlDocument doc = new XmlDocument(file);
-        for (XmlNode effectNode : doc.getChildren())
-        {
-            if (!effectNode.getName().equalsIgnoreCase("effect"))
-            {
-                continue;
-            }
+		for (XmlNode effectNode : doc.getChildren()) {
+			if (!effectNode.getName().equalsIgnoreCase("effect")) {
+				continue;
+			}
 
-            int id = effectNode.getInt("id");
-            String name = effectNode.getString("name");
-            int group = effectNode.getInt("group");
-            int stage = effectNode.getInt("stage");
-            EnsoulEffect effect = new EnsoulEffect(id, name, group, stage);
+			int id = effectNode.getInt("id");
+			String name = effectNode.getString("name");
+			int group = effectNode.getInt("group");
+			int stage = effectNode.getInt("stage");
+			EnsoulEffect effect = new EnsoulEffect(id, name, group, stage);
 
-            for (XmlNode funcNode : effectNode.getChildren())
-            {
-                FuncTemplate ft = parseFunc(funcNode);
-                if (ft != null)
-                {
-                    effect.addFunc(ft.getFunc(effect));
-                }
-            }
+			for (XmlNode funcNode : effectNode.getChildren()) {
+				FuncTemplate ft = parseFunc(funcNode);
+				if (ft != null) {
+					effect.addFunc(ft.getFunc(effect));
+				}
+			}
 
-            effects.put(id, effect);
-        }
+			effects.put(id, effect);
+		}
 
 		Log.info("EnsoulDataTable: Loaded " + effects.size() + " ensoul effects.");
 
 		file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "ensoul/crystals.xml");
-		if (!file.exists())
-		{
+		if (!file.exists()) {
 			Log.warning("File " + file.getAbsolutePath() + " does not exist");
 			return;
 		}
 
 		doc = new XmlDocument(file);
-			for (XmlNode crystalNode : doc.getChildren())
-        {
-            if (!crystalNode.getName().equalsIgnoreCase("crystal"))
-            {
-                continue;
-            }
+		for (XmlNode crystalNode : doc.getChildren()) {
+			if (!crystalNode.getName().equalsIgnoreCase("crystal")) {
+				continue;
+			}
 
-            int id = crystalNode.getInt("id");
-            boolean special = crystalNode.getBool("special", false);
-            SoulCrystal sc = new SoulCrystal(id, special);
+			int id = crystalNode.getInt("id");
+			boolean special = crystalNode.getBool("special", false);
+			SoulCrystal sc = new SoulCrystal(id, special);
 
-            for (XmlNode effectNode : crystalNode.getChildren())
-            {
-                int effectId = effectNode.getInt("id");
-                sc.addEffect(effects.get(effectId));
-            }
+			for (XmlNode effectNode : crystalNode.getChildren()) {
+				int effectId = effectNode.getInt("id");
+				sc.addEffect(effects.get(effectId));
+			}
 
-            crystals.put(id, sc);
-        }
+			crystals.put(id, sc);
+		}
 
 		Log.info("EnsoulDataTable: Loaded " + crystals.size() + " soul crystals.");
 	}
 
-	public final EnsoulEffect getEffect(int id)
-	{
+	public final EnsoulEffect getEffect(int id) {
 		return effects.get(id);
 	}
 
-	public final SoulCrystal getCrystal(int id)
-	{
+	public final SoulCrystal getCrystal(int id) {
 		return crystals.get(id);
 	}
 
-	private FuncTemplate parseFunc(XmlNode n)
-	{
+	private FuncTemplate parseFunc(XmlNode n) {
 		String funcName = n.getName();
 		funcName = funcName.substring(0, 1).toUpperCase() + funcName.substring(1);
 		String statString = n.getString("stat");
@@ -143,8 +127,7 @@ public class EnsoulDataTable
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final EnsoulDataTable instance = new EnsoulDataTable();
 	}
 }

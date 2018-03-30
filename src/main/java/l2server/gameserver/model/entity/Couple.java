@@ -29,8 +29,7 @@ import java.util.logging.Level;
 /**
  * @author evill33t
  */
-public class Couple
-{
+public class Couple {
 
 	// =========================================================
 	// Data Field
@@ -43,13 +42,11 @@ public class Couple
 
 	// =========================================================
 	// Constructor
-	public Couple(int coupleId)
-	{
+	public Couple(int coupleId) {
 		Id = coupleId;
 
 		Connection con = null;
-		try
-		{
+		try {
 			PreparedStatement statement;
 			ResultSet rs;
 
@@ -59,8 +56,7 @@ public class Couple
 			statement.setInt(1, Id);
 			rs = statement.executeQuery();
 
-			while (rs.next())
-			{
+			while (rs.next()) {
 				player1Id = rs.getInt("player1Id");
 				player2Id = rs.getInt("player2Id");
 				maried = rs.getBoolean("married");
@@ -72,19 +68,14 @@ public class Couple
 				weddingDate.setTimeInMillis(rs.getLong("weddingDate"));
 			}
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Exception: Couple.load(): " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public Couple(L2PcInstance player1, L2PcInstance player2)
-	{
+	public Couple(L2PcInstance player1, L2PcInstance player2) {
 		int tempPlayer1Id = player1.getObjectId();
 		int tempPlayer2Id = player2.getObjectId();
 
@@ -98,8 +89,7 @@ public class Couple
 		weddingDate.setTimeInMillis(Calendar.getInstance().getTimeInMillis());
 
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement;
 			Id = IdFactory.getInstance().getNextId();
@@ -113,26 +103,20 @@ public class Couple
 			statement.setLong(6, weddingDate.getTimeInMillis());
 			statement.execute();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Could not create couple: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public void marry()
-	{
+	public void marry() {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement;
 
-			statement = con.prepareStatement("UPDATE mods_wedding set married = ?, weddingDate = ? where id = ?");
+			statement = con.prepareStatement("UPDATE mods_wedding SET married = ?, weddingDate = ? WHERE id = ?");
 			statement.setBoolean(1, true);
 			weddingDate = Calendar.getInstance();
 			statement.setLong(2, weddingDate.getTimeInMillis());
@@ -140,22 +124,16 @@ public class Couple
 			statement.execute();
 			statement.close();
 			maried = true;
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Could not marry: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public void divorce()
-	{
+	public void divorce() {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement;
 
@@ -163,44 +141,34 @@ public class Couple
 			statement.setInt(1, Id);
 			statement.execute();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Exception: Couple.divorce(): " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public final int getId()
-	{
+	public final int getId() {
 		return Id;
 	}
 
-	public final int getPlayer1Id()
-	{
+	public final int getPlayer1Id() {
 		return player1Id;
 	}
 
-	public final int getPlayer2Id()
-	{
+	public final int getPlayer2Id() {
 		return player2Id;
 	}
 
-	public final boolean getMaried()
-	{
+	public final boolean getMaried() {
 		return maried;
 	}
 
-	public final Calendar getAffiancedDate()
-	{
+	public final Calendar getAffiancedDate() {
 		return affiancedDate;
 	}
 
-	public final Calendar getWeddingDate()
-	{
+	public final Calendar getWeddingDate() {
 		return weddingDate;
 	}
 }

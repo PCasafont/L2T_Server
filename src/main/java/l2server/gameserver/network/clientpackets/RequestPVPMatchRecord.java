@@ -18,24 +18,21 @@ package l2server.gameserver.network.clientpackets;
 /**
  * @author KenM
  */
-public class RequestPVPMatchRecord extends L2GameClientPacket
-{
-
+public class RequestPVPMatchRecord extends L2GameClientPacket {
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// trigger, no data
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
-
+	protected void runImpl() {
+	
 	}
 }

@@ -20,8 +20,7 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.1.6.2 $ $Date: 2005/03/27 15:29:39 $
  */
-public class PlaySound extends L2GameServerPacket
-{
+public class PlaySound extends L2GameServerPacket {
 	private int unknown1;
 	private String soundFile;
 	private int unknown3;
@@ -31,8 +30,7 @@ public class PlaySound extends L2GameServerPacket
 	private int unknown7;
 	private int unknown8;
 
-	public PlaySound(String soundFile)
-	{
+	public PlaySound(String soundFile) {
 		unknown1 = 0;
 		this.soundFile = soundFile;
 		unknown3 = 0;
@@ -43,8 +41,7 @@ public class PlaySound extends L2GameServerPacket
 		unknown8 = 0;
 	}
 
-	public PlaySound(int unknown1, String soundFile, int unknown3, int unknown4, int unknown5, int unknown6, int unknown7)
-	{
+	public PlaySound(int unknown1, String soundFile, int unknown3, int unknown4, int unknown5, int unknown6, int unknown7) {
 		this.unknown1 = unknown1;
 		this.soundFile = soundFile;
 		this.unknown3 = unknown3;
@@ -56,8 +53,7 @@ public class PlaySound extends L2GameServerPacket
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(unknown1); //unknown 0 for quest and ship;
 		writeS(soundFile);
 		writeD(unknown3); //unknown 0 for quest; 1 for ship;

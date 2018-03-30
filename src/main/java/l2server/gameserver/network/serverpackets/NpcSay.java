@@ -23,8 +23,7 @@ import java.util.List;
 /**
  * @author Kerberos
  */
-public final class NpcSay extends L2GameServerPacket
-{
+public final class NpcSay extends L2GameServerPacket {
 	// cddddS
 	private int objectId;
 	private int textType;
@@ -35,8 +34,7 @@ public final class NpcSay extends L2GameServerPacket
 
 	/**
 	 */
-	public NpcSay(int objectId, int messageType, int npcId, String text)
-	{
+	public NpcSay(int objectId, int messageType, int npcId, String text) {
 		this.objectId = objectId;
 		textType = messageType;
 		this.npcId = 1000000 + npcId;
@@ -44,20 +42,18 @@ public final class NpcSay extends L2GameServerPacket
 		this.text = text;
 	}
 
-	public NpcSay(int objectId, int messageType, int npcId, int npcString)
-	{
+	public NpcSay(int objectId, int messageType, int npcId, int npcString) {
 		this.objectId = objectId;
 		textType = messageType;
-        this.npcId = 1000000 + npcId;
+		this.npcId = 1000000 + npcId;
 		this.npcString = npcString;
 		text = null;
 	}
 
-	public NpcSay(int objectId, int messageType, int npcId, NpcStringId npcStringId)
-	{
+	public NpcSay(int objectId, int messageType, int npcId, NpcStringId npcStringId) {
 		this.objectId = objectId;
 		textType = messageType;
-        this.npcId = 1000000 + npcId;
+		this.npcId = 1000000 + npcId;
 		npcString = npcStringId.getId();
 		text = null;
 	}
@@ -67,32 +63,24 @@ public final class NpcSay extends L2GameServerPacket
 	 *
 	 * @param text
 	 */
-	public void addStringParameter(String text)
-	{
-		if (parameters == null)
-		{
+	public void addStringParameter(String text) {
+		if (parameters == null) {
 			parameters = new ArrayList<>();
 		}
 		parameters.add(text);
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objectId);
 		writeD(textType);
 		writeD(npcId);
 		writeD(npcString);
-		if (npcString == -1)
-		{
+		if (npcString == -1) {
 			writeS(text);
-		}
-		else
-		{
-			if (parameters != null)
-			{
-				for (String s : parameters)
-				{
+		} else {
+			if (parameters != null) {
+				for (String s : parameters) {
 					writeS(s);
 				}
 			}

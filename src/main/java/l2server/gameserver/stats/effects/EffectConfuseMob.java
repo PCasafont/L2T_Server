@@ -32,13 +32,11 @@ import java.util.List;
 
 /**
  * @author littlecrow
- *         <p>
- *         Implementation of the Confusion Effect
+ * <p>
+ * Implementation of the Confusion Effect
  */
-public class EffectConfuseMob extends L2Effect
-{
-	public EffectConfuseMob(Env env, L2EffectTemplate template)
-	{
+public class EffectConfuseMob extends L2Effect {
+	public EffectConfuseMob(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -46,14 +44,12 @@ public class EffectConfuseMob extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.CONFUSION;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.CONFUSION;
 	}
 
@@ -61,8 +57,7 @@ public class EffectConfuseMob extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		getEffected().startConfused();
 		onActionTime();
 		return true;
@@ -72,8 +67,7 @@ public class EffectConfuseMob extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		getEffected().stopConfused(getAbnormal());
 	}
 
@@ -81,8 +75,7 @@ public class EffectConfuseMob extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		List<L2Character> targetList = new ArrayList<>();
 
 		// Getting the possible targets
@@ -90,17 +83,14 @@ public class EffectConfuseMob extends L2Effect
 		Collection<L2Object> objs = getEffected().getKnownList().getKnownObjects().values();
 		// synchronized (getEffected().getKnownList().getKnownObjects())
 		{
-			for (L2Object obj : objs)
-			{
-				if (obj instanceof L2Attackable && obj != getEffected())
-				{
+			for (L2Object obj : objs) {
+				if (obj instanceof L2Attackable && obj != getEffected()) {
 					targetList.add((L2Character) obj);
 				}
 			}
 		}
 		// if there is no target, exit function
-		if (targetList.isEmpty())
-		{
+		if (targetList.isEmpty()) {
 			return true;
 		}
 

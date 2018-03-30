@@ -31,51 +31,42 @@ import java.util.Map;
  * @author Pere
  */
 
-public class BeautyTable implements Reloadable
-{
-	public class BeautyTemplate
-	{
+public class BeautyTable implements Reloadable {
+	public class BeautyTemplate {
 		private int id;
 		private Map<Integer, BeautyInfo> hairStyles = new HashMap<>();
 		private Map<Integer, BeautyInfo> faceStyles = new HashMap<>();
 		private Map<Integer, BeautyInfo> hairColors = new HashMap<>();
 
-		public BeautyTemplate(int id)
-		{
+		public BeautyTemplate(int id) {
 			this.id = id;
 		}
 
-		public int getId()
-		{
+		public int getId() {
 			return id;
 		}
 
-		public Map<Integer, BeautyInfo> getHairStyles()
-		{
+		public Map<Integer, BeautyInfo> getHairStyles() {
 			return hairStyles;
 		}
 
-		public Map<Integer, BeautyInfo> getFaceStyles()
-		{
+		public Map<Integer, BeautyInfo> getFaceStyles() {
 			return faceStyles;
 		}
 
-		public Map<Integer, BeautyInfo> getHairColors()
-		{
+		public Map<Integer, BeautyInfo> getHairColors() {
 			return hairColors;
 		}
 	}
 
-	public class BeautyInfo
-	{
+	public class BeautyInfo {
 		private int id;
 		private int parentId;
 		private int unk;
 		private int adenaCost;
 		private int ticketCost;
 
-		private BeautyInfo(int id, int parentId, int unk, int adena, int tickets)
-		{
+		private BeautyInfo(int id, int parentId, int unk, int adena, int tickets) {
 			this.id = id;
 			this.parentId = parentId;
 			this.unk = unk;
@@ -83,109 +74,89 @@ public class BeautyTable implements Reloadable
 			ticketCost = tickets;
 		}
 
-		public int getId()
-		{
+		public int getId() {
 			return id;
 		}
 
-		public int getParentId()
-		{
+		public int getParentId() {
 			return parentId;
 		}
 
-		public int getUnk()
-		{
+		public int getUnk() {
 			return unk;
 		}
 
-		public int getAdenaPrice()
-		{
+		public int getAdenaPrice() {
 			return adenaCost;
 		}
 
-		public int getTicketPrice()
-		{
+		public int getTicketPrice() {
 			return ticketCost;
 		}
 	}
 
 	private Map<Integer, BeautyTemplate> beautyTable = new HashMap<>();
 
-	private BeautyTable()
-	{
-		if (!Config.IS_CLASSIC)
-		{
+	private BeautyTable() {
+		if (!Config.IS_CLASSIC) {
 			reload();
 			ReloadableManager.getInstance().register("beauty", this);
 		}
 	}
 
 	@Override
-	public boolean reload()
-	{
+	public boolean reload() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "beautyShop.xml");
 
 		XmlDocument doc = new XmlDocument(file);
 		beautyTable.clear();
-        BeautyTemplate template = new BeautyTemplate(0);
-        for (XmlNode d : doc.getChildren())
-        {
-            boolean isHairStyle = d.getName().equalsIgnoreCase("hairStyle");
-            boolean isFaceStyle = d.getName().equalsIgnoreCase("faceStyle");
-            boolean isHairColor = d.getName().equalsIgnoreCase("hairColor");
-            if (isHairStyle || isFaceStyle || isHairColor)
-            {
-                int id = d.getInt("id");
-                int parentId = d.getInt("parentId", 0);
-                int unk = d.getInt("unk");
-                int adenaCost = d.getInt("adenaCost");
-                int ticketCost = d.getInt("ticketCost");
+		BeautyTemplate template = new BeautyTemplate(0);
+		for (XmlNode d : doc.getChildren()) {
+			boolean isHairStyle = d.getName().equalsIgnoreCase("hairStyle");
+			boolean isFaceStyle = d.getName().equalsIgnoreCase("faceStyle");
+			boolean isHairColor = d.getName().equalsIgnoreCase("hairColor");
+			if (isHairStyle || isFaceStyle || isHairColor) {
+				int id = d.getInt("id");
+				int parentId = d.getInt("parentId", 0);
+				int unk = d.getInt("unk");
+				int adenaCost = d.getInt("adenaCost");
+				int ticketCost = d.getInt("ticketCost");
 
-                BeautyInfo info = new BeautyInfo(id, parentId, unk, adenaCost, ticketCost);
+				BeautyInfo info = new BeautyInfo(id, parentId, unk, adenaCost, ticketCost);
 
-                if (isHairStyle)
-                {
-                    template.getHairStyles().put(id, info);
-                }
-                else if (isFaceStyle)
-                {
-                    template.getFaceStyles().put(id, info);
-                }
-                else
-                {
-                    template.getHairColors().put(id, info);
-                }
-            }
-        }
+				if (isHairStyle) {
+					template.getHairStyles().put(id, info);
+				} else if (isFaceStyle) {
+					template.getFaceStyles().put(id, info);
+				} else {
+					template.getHairColors().put(id, info);
+				}
+			}
+		}
 
-        beautyTable.put(0, template);
+		beautyTable.put(0, template);
 
-        Log.info("BeautyTable: Loaded " + template.getHairStyles().size() + " hair styles, " +
-                template.getFaceStyles().size() + " face styles and " + template.getHairColors().size() +
-                " hair colors!");
+		Log.info("BeautyTable: Loaded " + template.getHairStyles().size() + " hair styles, " + template.getFaceStyles().size() + " face styles and " +
+				template.getHairColors().size() + " hair colors!");
 
 		return false;
 	}
 
 	@Override
-	public String getReloadMessage(boolean success)
-	{
+	public String getReloadMessage(boolean success) {
 		return "Beauty Table reloaded";
 	}
 
-	public BeautyTemplate getTemplate(int id)
-	{
+	public BeautyTemplate getTemplate(int id) {
 		return beautyTable.get(id);
 	}
 
-	public static BeautyTable getInstance()
-	{
+	public static BeautyTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final BeautyTable instance = new BeautyTable();
 	}
 }

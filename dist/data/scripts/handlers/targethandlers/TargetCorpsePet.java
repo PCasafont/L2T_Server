@@ -26,18 +26,14 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 /**
  * @author nBd
  */
-public class TargetCorpsePet implements ISkillTargetTypeHandler
-{
+public class TargetCorpsePet implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
-		if (activeChar instanceof L2PcInstance)
-		{
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
+		if (activeChar instanceof L2PcInstance) {
 			// FIXME target = activeChar.getPet();
-			if (target != null && target.isDead())
-			{
+			if (target != null && target.isDead()) {
 				return new L2Character[]{target};
 			}
 		}
@@ -48,14 +44,12 @@ public class TargetCorpsePet implements ISkillTargetTypeHandler
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
+	public Enum<L2SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub
 		return L2SkillTargetType.TARGET_CORPSE_PET;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetCorpsePet());
 	}
 }

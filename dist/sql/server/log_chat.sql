@@ -1,8 +1,8 @@
 CREATE TABLE IF NOT EXISTS `log_chat` (
-  `type` varchar(20) NOT NULL,
-  `talker` varchar(45) NOT NULL,
-  `listener` varchar(45) DEFAULT NULL,
-  `text` varchar(500) NOT NULL,
-  `time` bigint(20) NOT NULL,
+  `type`     VARCHAR(20)  NOT NULL,
+  `talker`   VARCHAR(45)  NOT NULL,
+  `listener` VARCHAR(45) DEFAULT NULL,
+  `text`     VARCHAR(500) NOT NULL,
+  `time`     BIGINT(20)   NOT NULL,
   PRIMARY KEY (`talker`, `time`)
 );

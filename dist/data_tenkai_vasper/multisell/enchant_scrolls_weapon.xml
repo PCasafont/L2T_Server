@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-    <!-- Scroll: Enchant Weapon (D) -->
-    <item>
-        <ingredient id="57" count="4" />
-        <production id="955" count="1" />
-    </item>
-    <!-- Scroll: Enchant Weapon (C) -->
-    <item>
-        <ingredient id="57" count="15" />
-        <production id="951" count="1" />
-    </item>
-    <!-- Scroll: Enchant Weapon (B) -->
-    <item>
-        <ingredient id="57" count="60" />
-        <production id="947" count="1" />
-    </item>
-    <!-- Scroll: Enchant Weapon (A) -->
-    <item>
-        <ingredient id="57" count="200" />
-        <production id="729" count="1" />
-    </item>
-    <!-- Scroll: Enchant Weapon (S) -->
-    <item>
-        <ingredient id="57" count="600" />
-        <production id="959" count="1" />
-    </item>
-    <!-- Scroll: Enchant Weapon (R) -->
-    <item>
-        <ingredient id="57" count="2500" />
-        <production id="17526" count="1" />
-    </item>
+	<!-- Scroll: Enchant Weapon (D) -->
+	<item>
+		<ingredient id="57" count="4" />
+		<production id="955" count="1" />
+	</item>
+	<!-- Scroll: Enchant Weapon (C) -->
+	<item>
+		<ingredient id="57" count="15" />
+		<production id="951" count="1" />
+	</item>
+	<!-- Scroll: Enchant Weapon (B) -->
+	<item>
+		<ingredient id="57" count="60" />
+		<production id="947" count="1" />
+	</item>
+	<!-- Scroll: Enchant Weapon (A) -->
+	<item>
+		<ingredient id="57" count="200" />
+		<production id="729" count="1" />
+	</item>
+	<!-- Scroll: Enchant Weapon (S) -->
+	<item>
+		<ingredient id="57" count="600" />
+		<production id="959" count="1" />
+	</item>
+	<!-- Scroll: Enchant Weapon (R) -->
+	<item>
+		<ingredient id="57" count="2500" />
+		<production id="17526" count="1" />
+	</item>
 </list>

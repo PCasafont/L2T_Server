@@ -19,14 +19,12 @@ package quests.SagasScripts;
  * @author Emperorc
  */
 
-public class SagaOfTheSpectralDancer extends SagasSuperClass
-{
+public class SagaOfTheSpectralDancer extends SagasSuperClass {
 	public static String qn1 = "96_SagaOfTheSpectralDancer";
 	public static int qnu = 96;
 	public static String qna = "Saga of the Spectral Dancer";
 
-	public SagaOfTheSpectralDancer()
-	{
+	public SagaOfTheSpectralDancer() {
 		super(qnu, qn1, qna);
 		NPC = new int[]{31582, 31623, 31284, 31284, 31611, 31646, 31649, 31653, 31654, 31655, 31656, 31284};
 		Items = new int[]{7080, 7527, 7081, 7511, 7294, 7325, 7356, 7387, 7418, 7449, 7092, 0};
@@ -43,20 +41,13 @@ public class SagaOfTheSpectralDancer extends SagasSuperClass
 				"I do not have the patience ..! I have been a giant force ...! Cough chatter ah ah ah!",
 				"Paying homage to those who disrupt the orderly will be PLAYERNAME's death!",
 				"Now, my soul freed from the shackles of the millennium, Halixia, to the back side I come ...",
-				"Why do you interfere others' battles?",
-				"This is a waste of time.. Say goodbye...!",
-				"...That is the enemy",
+				"Why do you interfere others' battles?", "This is a waste of time.. Say goodbye...!", "...That is the enemy",
 				"...Goodness! PLAYERNAME you are still looking?",
 				"PLAYERNAME ... Not just to whom the victory. Only personnel involved in the fighting are eligible to share in the victory.",
-				"Your sword is not an ornament. Don't you think, PLAYERNAME?",
-				"Goodness! I no longer sense a battle there now.",
-				"let...",
+				"Your sword is not an ornament. Don't you think, PLAYERNAME?", "Goodness! I no longer sense a battle there now.", "let...",
 				"Only engaged in the battle to bar their choice. Perhaps you should regret.",
-				"The human nation was foolish to try and Fight a giant's strength.",
-				"Must...Retreat... Too...Strong.",
-				"PLAYERNAME. Defeat...by...retaining...and...Mo...Hacker",
-				"....! Fight...Defeat...It...Fight...Defeat...It..."
-		};
+				"The human nation was foolish to try and Fight a giant's strength.", "Must...Retreat... Too...Strong.",
+				"PLAYERNAME. Defeat...by...retaining...and...Mo...Hacker", "....! Fight...Defeat...It...Fight...Defeat...It..."};
 		registerNPCs();
 	}
 }

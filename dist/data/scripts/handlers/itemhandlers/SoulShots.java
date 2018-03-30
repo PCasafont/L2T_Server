@@ -29,23 +29,19 @@ import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.templates.item.L2Weapon;
 import l2server.gameserver.util.Broadcast;
 
-
 /**
  * This class ...
  *
  * @version $Revision: 1.2.4.4 $ $Date: 2005/03/27 15:30:07 $
  */
 
-public class SoulShots implements IItemHandler
-{
+public class SoulShots implements IItemHandler {
 	/**
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-		{
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!(playable instanceof L2PcInstance)) {
 			return;
 		}
 
@@ -55,10 +51,8 @@ public class SoulShots implements IItemHandler
 		int itemId = item.getItemId();
 
 		// Check if Soul shot can be used
-		if (weaponInst == null || weaponItem == null || weaponItem.getSoulShotCount() == 0)
-		{
-			if (!activeChar.hasAutoSoulShot(item))
-			{
+		if (weaponInst == null || weaponItem == null || weaponItem.getSoulShotCount() == 0) {
+			if (!activeChar.hasAutoSoulShot(item)) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_USE_SOULSHOTS));
 			}
 			return;
@@ -67,60 +61,50 @@ public class SoulShots implements IItemHandler
 		final int weaponGrade = weaponItem.getCrystalType();
 		boolean gradeCheck = true;
 
-		switch (weaponGrade)
-		{
+		switch (weaponGrade) {
 			case L2Item.CRYSTAL_NONE:
-				if (itemId != 5789 && itemId != 1835)
-				{
+				if (itemId != 5789 && itemId != 1835) {
 					gradeCheck = false;
 				}
 				break;
 			case L2Item.CRYSTAL_D:
-				if (itemId != 1463 && itemId != 22082)
-				{
+				if (itemId != 1463 && itemId != 22082) {
 					gradeCheck = false;
 				}
 				break;
 			case L2Item.CRYSTAL_C:
-				if (itemId != 1464 && itemId != 22083)
-				{
+				if (itemId != 1464 && itemId != 22083) {
 					gradeCheck = false;
 				}
 				break;
 			case L2Item.CRYSTAL_B:
-				if (itemId != 1465 && itemId != 22084)
-				{
+				if (itemId != 1465 && itemId != 22084) {
 					gradeCheck = false;
 				}
 				break;
 			case L2Item.CRYSTAL_A:
-				if (itemId != 1466 && itemId != 22085)
-				{
+				if (itemId != 1466 && itemId != 22085) {
 					gradeCheck = false;
 				}
 				break;
 			case L2Item.CRYSTAL_S:
 			case L2Item.CRYSTAL_S80:
 			case L2Item.CRYSTAL_S84:
-				if (itemId != 1467 && itemId != 22086)
-				{
+				if (itemId != 1467 && itemId != 22086) {
 					gradeCheck = false;
 				}
 				break;
 			case L2Item.CRYSTAL_R:
 			case L2Item.CRYSTAL_R95:
 			case L2Item.CRYSTAL_R99:
-				if (itemId != 17754 && itemId != 22433)
-				{
+				if (itemId != 17754 && itemId != 22433) {
 					gradeCheck = false;
 				}
 				break;
 		}
 
-		if (!gradeCheck)
-		{
-			if (!activeChar.hasAutoSoulShot(item))
-			{
+		if (!gradeCheck) {
+			if (!activeChar.hasAutoSoulShot(item)) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SOULSHOTS_GRADE_MISMATCH));
 			}
 			return;
@@ -128,16 +112,11 @@ public class SoulShots implements IItemHandler
 
 		int rubyLvl = 0;
 		PcInventory playerInventory = activeChar.getInventory();
-		for (int i = Inventory.PAPERDOLL_JEWELRY1;
-			 i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount();
-			 i++)
-		{
+		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount(); i++) {
 			L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
-			if (jewel != null)
-			{
+			if (jewel != null) {
 				//Ruby
-				switch (jewel.getItemId())
-				{
+				switch (jewel.getItemId()) {
 					case 38855:
 						rubyLvl = 1;
 						break;
@@ -163,11 +142,9 @@ public class SoulShots implements IItemHandler
 		int skillId = 0;
 		int skillLvl = 1;
 		double rubyMul = 1.0;
-		switch (rubyLvl)
-		{
+		switch (rubyLvl) {
 			case 0:
-				switch (itemId)
-				{
+				switch (itemId) {
 					case 1835:
 					case 5789:
 						skillId = 2039;
@@ -236,11 +213,9 @@ public class SoulShots implements IItemHandler
 		}
 
 		activeChar.consumableLock.lock();
-		try
-		{
+		try {
 			// Check if Soul shot is already active
-			if (weaponInst.getChargedSoulShot() != L2ItemInstance.CHARGED_NONE)
-			{
+			if (weaponInst.getChargedSoulShot() != L2ItemInstance.CHARGED_NONE) {
 				return;
 			}
 
@@ -248,10 +223,8 @@ public class SoulShots implements IItemHandler
 			int saSSCount = (int) activeChar.getStat().calcStat(Stats.SOULSHOT_COUNT, 0, null, null);
 			int SSCount = saSSCount == 0 ? weaponItem.getSoulShotCount() : saSSCount;
 
-			if (!activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), SSCount, null, false))
-			{
-				if (!activeChar.disableAutoShot(item))
-				{
+			if (!activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), SSCount, null, false)) {
+				if (!activeChar.disableAutoShot(item)) {
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SOULSHOTS));
 				}
 				return;
@@ -259,15 +232,12 @@ public class SoulShots implements IItemHandler
 
 			// Charge soul shot
 			weaponInst.setChargedSoulShot(L2ItemInstance.CHARGED_SOULSHOT * rubyMul);
-		}
-		finally
-		{
+		} finally {
 			activeChar.consumableLock.unlock();
 		}
 
 		// Send message to client
 		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENABLED_SOULSHOT));
-		Broadcast.toSelfAndKnownPlayersInRadius(activeChar,
-				new MagicSkillUse(activeChar, activeChar, skillId, skillLvl, 0, 0, 0), 360000);
+		Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, skillId, skillLvl, 0, 0, 0), 360000);
 	}
 }

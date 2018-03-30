@@ -25,8 +25,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author MrPoke
  */
-public final class ConditionPlayerHasCastle extends Condition
-{
+public final class ConditionPlayerHasCastle extends Condition {
 
 	private final int castle;
 
@@ -35,8 +34,7 @@ public final class ConditionPlayerHasCastle extends Condition
 	 *
 	 * @param castle the castle
 	 */
-	public ConditionPlayerHasCastle(int castle)
-	{
+	public ConditionPlayerHasCastle(int castle) {
 		this.castle = castle;
 	}
 
@@ -48,32 +46,26 @@ public final class ConditionPlayerHasCastle extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 
-		if (env.player.isGM())
-		{
+		if (env.player.isGM()) {
 			return true;
 		}
 
 		L2Clan clan = ((L2PcInstance) env.player).getClan();
-		if (clan == null)
-		{
+		if (clan == null) {
 			return castle == 0;
 		}
 
 		// Any castle
-		if (castle == -1)
-		{
+		if (castle == -1) {
 			return clan.getHasCastle() > 0;
 		}
 
-		if (castle > 10 && clan.getHasCastle() > 0)
-		{
+		if (castle > 10 && clan.getHasCastle() > 0) {
 			return CastleManager.getInstance().getCastleById(clan.getHasCastle()).getTendency() == castle % 10;
 		}
 

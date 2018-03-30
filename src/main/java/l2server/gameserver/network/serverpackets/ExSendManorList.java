@@ -30,15 +30,12 @@ import l2server.gameserver.model.entity.Castle;
  *
  * @author l3x
  */
-public class ExSendManorList extends L2GameServerPacket
-{
-
+public class ExSendManorList extends L2GameServerPacket {
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(CastleManager.getInstance().getCastles().size());
-		for (Castle castle : CastleManager.getInstance().getCastles())
-		{
+		for (Castle castle : CastleManager.getInstance().getCastles()) {
 			writeD(castle.getCastleId());
 		}
 	}

@@ -37,15 +37,13 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
-public class L2SkillContinuousDrain extends L2Skill
-{
+public class L2SkillContinuousDrain extends L2Skill {
 	private static final Logger logDamage = Logger.getLogger("damage");
 
 	private float absorbPart;
 	private int absorbTime;
 
-	public L2SkillContinuousDrain(StatsSet set)
-	{
+	public L2SkillContinuousDrain(StatsSet set) {
 		super(set);
 
 		absorbPart = set.getFloat("absorbPart", 0.0f) / 100;
@@ -53,33 +51,27 @@ public class L2SkillContinuousDrain extends L2Skill
 	}
 
 	@Override
-	public void useSkill(L2Character activeChar, L2Object[] targets)
-	{
+	public void useSkill(L2Character activeChar, L2Object[] targets) {
 		ThreadPoolManager.getInstance().scheduleEffect(new DrainTask(activeChar, targets), 1000);
 	}
 
-	private class DrainTask implements Runnable
-	{
+	private class DrainTask implements Runnable {
 		private int count = absorbTime;
 		L2Character activeChar;
 		L2Object[] targets;
 
-		public DrainTask(L2Character activeChar, L2Object[] targets)
-		{
+		public DrainTask(L2Character activeChar, L2Object[] targets) {
 			this.activeChar = activeChar;
 			this.targets = targets;
 		}
 
 		@Override
-		public void run()
-		{
-			if (!drain(activeChar, targets))
-			{
+		public void run() {
+			if (!drain(activeChar, targets)) {
 				return;
 			}
 
-			if (count > 0)
-			{
+			if (count > 0) {
 				ThreadPoolManager.getInstance().scheduleEffect(this, 1000);
 			}
 
@@ -87,45 +79,35 @@ public class L2SkillContinuousDrain extends L2Skill
 		}
 	}
 
-	public boolean drain(L2Character activeChar, L2Object[] targets)
-	{
-		if (activeChar.isAlikeDead() || !activeChar.isCastingNow() || activeChar.getLastSkillCast() != this)
-		{
+	public boolean drain(L2Character activeChar, L2Object[] targets) {
+		if (activeChar.isAlikeDead() || !activeChar.isCastingNow() || activeChar.getLastSkillCast() != this) {
 			return false;
 		}
 
-		if (!Util.contains(targets, activeChar.getTarget()))
-		{
+		if (!Util.contains(targets, activeChar.getTarget())) {
 			activeChar.abortCast();
 			return false;
 		}
 
-		for (L2Character target : (L2Character[]) targets)
-		{
-			if (target.isAlikeDead() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)
-			{
+		for (L2Character target : (L2Character[]) targets) {
+			if (target.isAlikeDead() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB) {
 				return false;
 			}
 
-			if (activeChar != target && target.isInvul(activeChar))
-			{
+			if (activeChar != target && target.isInvul(activeChar)) {
 				return false; // No effect on invulnerable chars unless they cast it themselves.
 			}
 
-			if (activeChar.getDistanceSq(target) > 1400 * 1400)
-			{
+			if (activeChar.getDistanceSq(target) > 1400 * 1400) {
 				return false; // Too far away to continue draining
 			}
 
 			double ssMul = L2ItemInstance.CHARGED_NONE;
 			L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
-			if (weaponInst != null)
-			{
+			if (weaponInst != null) {
 				ssMul = weaponInst.getChargedSpiritShot();
 				weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-			}
-			else if (activeChar instanceof L2Summon)
-			{
+			} else if (activeChar instanceof L2Summon) {
 				L2Summon activeSummon = (L2Summon) activeChar;
 				ssMul = activeSummon.getChargedSpiritShot();
 				activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
@@ -139,9 +121,8 @@ public class L2SkillContinuousDrain extends L2Skill
 			//int _cp = (int)target.getCurrentCp();
 			int _hp = (int) target.getCurrentHp();
 
-			if (!(Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance &&
-					target instanceof L2MonsterInstance && ((L2PcInstance) activeChar).getPvpFlag() > 0))
-			{
+			if (!(Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance && target instanceof L2MonsterInstance &&
+					((L2PcInstance) activeChar).getPvpFlag() > 0)) {
 				/*if (cp > 0)
                 {
 					if (damage < cp)
@@ -150,19 +131,15 @@ public class L2SkillContinuousDrain extends L2Skill
 						drain = damage - cp;
 				}
 				else */
-				if (damage > _hp)
-				{
+				if (damage > _hp) {
 					drain = _hp;
-				}
-				else
-				{
+				} else {
 					drain = damage;
 				}
 			}
 
 			double hpAdd = absorbPart * drain;
-			double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar.getMaxHp() :
-					activeChar.getCurrentHp() + hpAdd;
+			double hp = activeChar.getCurrentHp() + hpAdd > activeChar.getMaxHp() ? activeChar.getMaxHp() : activeChar.getCurrentHp() + hpAdd;
 
 			activeChar.setCurrentHp(hp);
 
@@ -171,13 +148,10 @@ public class L2SkillContinuousDrain extends L2Skill
 			activeChar.sendPacket(suhp);
 
 			// Check to see if we should damage the target
-			if (damage > 0 && (!target.isDead() || getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB))
-			{
+			if (damage > 0 && (!target.isDead() || getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)) {
 				activeChar.sendDamageMessage(target, damage, mcrit, false, false);
 
-				if (Config.LOG_GAME_DAMAGE && activeChar instanceof L2Playable &&
-						damage > Config.LOG_GAME_DAMAGE_THRESHOLD)
-				{
+				if (Config.LOG_GAME_DAMAGE && activeChar instanceof L2Playable && damage > Config.LOG_GAME_DAMAGE_THRESHOLD) {
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[]{activeChar, " did damage ", damage, this, " to ", target});
 					record.setLoggerName("mdam");
@@ -188,13 +162,11 @@ public class L2SkillContinuousDrain extends L2Skill
 			}
 
 			// Check to see if we should do the decay right after the cast
-			if (target.isDead() && getTargetType() == L2SkillTargetType.TARGET_CORPSE_MOB && target instanceof L2Npc)
-			{
+			if (target.isDead() && getTargetType() == L2SkillTargetType.TARGET_CORPSE_MOB && target instanceof L2Npc) {
 				((L2Npc) target).endDecayTask();
 			}
 
-			if (activeChar instanceof L2PcInstance)
-			{
+			if (activeChar instanceof L2PcInstance) {
 				((L2PcInstance) activeChar).rechargeAutoSoulShot(false, true, false);
 			}
 		}

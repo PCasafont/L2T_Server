@@ -23,31 +23,26 @@ import java.util.Set;
 /**
  * @author Pere
  */
-public final class ExUserEffects extends L2GameServerPacket
-{
+public final class ExUserEffects extends L2GameServerPacket {
 	private int objectId;
 	private int transformId;
 	private Set<Integer> abnormals;
-
-	public ExUserEffects(L2PcInstance character)
-	{
+	
+	public ExUserEffects(L2PcInstance character) {
 		objectId = character.getObjectId();
 		transformId = character.getTransformationId();
 		abnormals = character.getAbnormalEffect();
-		if (character.getAppearance().getInvisible())
-		{
+		if (character.getAppearance().getInvisible()) {
 			abnormals.add(VisualEffect.STEALTH.getId());
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(objectId);
 		writeD(transformId);
 		writeD(abnormals.size());
-		for (int abnormalId : abnormals)
-		{
+		for (int abnormalId : abnormals) {
 			writeH(abnormalId);
 		}
 	}

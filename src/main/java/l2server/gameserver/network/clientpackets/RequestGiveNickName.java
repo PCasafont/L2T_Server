@@ -28,42 +28,35 @@ import java.util.logging.Logger;
  *
  * @version $Revision: 1.3.2.1.2.4 $ $Date: 2005/03/27 15:29:30 $
  */
-public class RequestGiveNickName extends L2GameClientPacket
-{
+public class RequestGiveNickName extends L2GameClientPacket {
 	static Logger log = Logger.getLogger(RequestGiveNickName.class.getName());
 
 	private String target;
 	private String title;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		target = readS();
 		title = readS();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
 		// Noblesse can bestow a title to themselves
-		if (activeChar.isNoble() && target.matches(activeChar.getName()))
-		{
+		if (activeChar.isNoble() && target.matches(activeChar.getName())) {
 			activeChar.setTitle(title);
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.TITLE_CHANGED);
 			activeChar.sendPacket(sm);
 			activeChar.broadcastTitleInfo();
 		}
 		//Can the player change/give a title?
-		else if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_GIVE_TITLE) == L2Clan.CP_CL_GIVE_TITLE)
-		{
-			if (activeChar.getClan().getLevel() < 3)
-			{
+		else if ((activeChar.getClanPrivileges() & L2Clan.CP_CL_GIVE_TITLE) == L2Clan.CP_CL_GIVE_TITLE) {
+			if (activeChar.getClan().getLevel() < 3) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_LVL_3_NEEDED_TO_ENDOWE_TITLE);
 				activeChar.sendPacket(sm);
 				sm = null;
@@ -71,25 +64,19 @@ public class RequestGiveNickName extends L2GameClientPacket
 			}
 
 			L2ClanMember member1 = activeChar.getClan().getClanMember(target);
-			if (member1 != null)
-			{
+			if (member1 != null) {
 				L2PcInstance member = member1.getPlayerInstance();
-				if (member != null)
-				{
+				if (member != null) {
 					//is target from the same clan?
 					member.setTitle(title);
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.TITLE_CHANGED);
 					member.sendPacket(sm);
 					member.broadcastTitleInfo();
 					sm = null;
-				}
-				else
-				{
+				} else {
 					activeChar.sendMessage("Target needs to be online to get a title");
 				}
-			}
-			else
-			{
+			} else {
 				activeChar.sendMessage("Target does not belong to your clan");
 			}
 		}

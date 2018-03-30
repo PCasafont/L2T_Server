@@ -20,11 +20,9 @@ package l2server.gameserver.network.serverpackets;
  *
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public class CharDeleteSuccess extends L2GameServerPacket
-{
-
+public class CharDeleteSuccess extends L2GameServerPacket {
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 	}
 }

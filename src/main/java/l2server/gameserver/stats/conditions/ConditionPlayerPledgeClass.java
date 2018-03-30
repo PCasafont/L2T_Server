@@ -23,8 +23,7 @@ import l2server.gameserver.stats.Env;
  *
  * @author MrPoke
  */
-public final class ConditionPlayerPledgeClass extends Condition
-{
+public final class ConditionPlayerPledgeClass extends Condition {
 
 	private final int pledgeClass;
 
@@ -33,8 +32,7 @@ public final class ConditionPlayerPledgeClass extends Condition
 	 *
 	 * @param pledgeClass the pledge class
 	 */
-	public ConditionPlayerPledgeClass(int pledgeClass)
-	{
+	public ConditionPlayerPledgeClass(int pledgeClass) {
 		this.pledgeClass = pledgeClass;
 	}
 
@@ -46,22 +44,18 @@ public final class ConditionPlayerPledgeClass extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 
 		final L2PcInstance player = (L2PcInstance) env.player;
 
-		if (player.getClan() == null)
-		{
+		if (player.getClan() == null) {
 			return false;
 		}
 
-		if (pledgeClass == -1)
-		{
+		if (pledgeClass == -1) {
 			return player.isClanLeader();
 		}
 

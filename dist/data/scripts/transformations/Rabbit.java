@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class Rabbit extends L2Transformation
-{
+public class Rabbit extends L2Transformation {
 	private static final int[] SKILLS = {629, 630, 5491, 619};
 
-	public Rabbit()
-	{
+	public Rabbit() {
 		// id, colRadius, colHeight
 		super(105, 5, 4.5);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 105 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 105 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		// Rabbit Magic Eye
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(629, 1), false);
 		// Rabbit Tornado
@@ -40,13 +35,11 @@ public class Rabbit extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		// Rabbit Magic Eye
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(629, 1), false);
 		// Rabbit Tornado
@@ -59,8 +52,7 @@ public class Rabbit extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new Rabbit());
 	}
 }

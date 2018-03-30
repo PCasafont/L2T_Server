@@ -22,53 +22,44 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * @author -Wooden-
- *         <p>
- *         D0 0F 00 5A 00 77 00 65 00 72 00 67 00 00 00
+ * <p>
+ * D0 0F 00 5A 00 77 00 65 00 72 00 67 00 00 00
  */
-public final class RequestExOustFromMPCC extends L2GameClientPacket
-{
+public final class RequestExOustFromMPCC extends L2GameClientPacket {
 	//
 	private String name;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		name = readS();
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.clientpackets.ClientBasePacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance target = L2World.getInstance().getPlayer(name);
 		L2PcInstance activeChar = getClient().getActiveChar();
-
-		if (target != null && target.isInParty() && activeChar.isInParty() &&
-				activeChar.getParty().isInCommandChannel() && target.getParty().isInCommandChannel() &&
-				activeChar.getParty().getCommandChannel().getChannelLeader().equals(activeChar))
-		{
-			if (activeChar.equals(target))
-			{
+		
+		if (target != null && target.isInParty() && activeChar.isInParty() && activeChar.getParty().isInCommandChannel() &&
+				target.getParty().isInCommandChannel() && activeChar.getParty().getCommandChannel().getChannelLeader().equals(activeChar)) {
+			if (activeChar.equals(target)) {
 				return;
 			}
-
+			
 			target.getParty().getCommandChannel().removeParty(target.getParty());
-
+			
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.DISMISSED_FROM_COMMAND_CHANNEL);
 			target.getParty().broadcastToPartyMembers(sm);
-
+			
 			// check if CC has not been canceled
-			if (activeChar.getParty().isInCommandChannel())
-			{
+			if (activeChar.getParty().isInCommandChannel()) {
 				sm = SystemMessage.getSystemMessage(SystemMessageId.C1_PARTY_DISMISSED_FROM_COMMAND_CHANNEL);
 				sm.addString(target.getParty().getLeader().getName());
 				activeChar.getParty().getCommandChannel().broadcastToChannelMembers(sm);
 			}
-		}
-		else
-		{
+		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_CANT_FOUND));
 		}
 	}

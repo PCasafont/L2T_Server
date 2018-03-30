@@ -22,8 +22,7 @@ import java.util.NoSuchElementException;
  *
  * @author mkizub
  */
-public enum Stats
-{
+public enum Stats {
 	// Base stats, for each in Calculator a slot is allocated
 
 	// HP & MP
@@ -340,23 +339,18 @@ public enum Stats
 
 	private String value;
 
-	public String getValue()
-	{
+	public String getValue() {
 		return value;
 	}
 
-	Stats(String s)
-	{
+	Stats(String s) {
 		value = s;
 	}
 
-	public static Stats fromString(String name)
-	{
+	public static Stats fromString(String name) {
 		name = name.intern();
-		for (Stats s : values())
-		{
-			if (s.getValue().equals(name))
-			{
+		for (Stats s : values()) {
+			if (s.getValue().equals(name)) {
 				return s;
 			}
 		}

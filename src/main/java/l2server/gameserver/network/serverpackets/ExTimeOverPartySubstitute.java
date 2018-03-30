@@ -18,19 +18,16 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Erlando
  */
-public class ExTimeOverPartySubstitute extends L2GameServerPacket
-{
-
+public class ExTimeOverPartySubstitute extends L2GameServerPacket {
+	
 	int k[];
-
-	public ExTimeOverPartySubstitute(int l[])
-	{
+	
+	public ExTimeOverPartySubstitute(int l[]) {
 		k = l;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(k[0]);
 		writeC(k[1]);
 	}

@@ -22,24 +22,19 @@ import l2server.gameserver.stats.VisualEffect;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
-public class EffectGrow extends L2Effect
-{
-	public EffectGrow(Env env, L2EffectTemplate template)
-	{
+public class EffectGrow extends L2Effect {
+	public EffectGrow(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.BUFF;
 	}
 
 	@Override
-	public boolean onStart()
-	{
-		if (getEffected() instanceof L2Npc)
-		{
+	public boolean onStart() {
+		if (getEffected() instanceof L2Npc) {
 			L2Npc npc = (L2Npc) getEffected();
 			//TODO: Uncomment line when fix for mobs falling underground is found
 			//npc.setCollisionHeight((int) (npc.getCollisionHeight() * 1.24));
@@ -52,16 +47,13 @@ public class EffectGrow extends L2Effect
 	}
 
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		return false;
 	}
 
 	@Override
-	public void onExit()
-	{
-		if (getEffected() instanceof L2Npc)
-		{
+	public void onExit() {
+		if (getEffected() instanceof L2Npc) {
 			L2Npc npc = (L2Npc) getEffected();
 			//TODO: Uncomment line when fix for mobs falling underground is found
 			//npc.setCollisionHeight(npc.getTemplate().collisionHeight);

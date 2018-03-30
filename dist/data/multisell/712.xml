@@ -1,80 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
-    <item>
-        <ingredient count="1" id="13722" /> <!-- Olympiad Token -->
-        <production count="1" id="-300" /> <!-- Fame -->
-    </item>
-    <item>
-        <ingredient count="1" id="21874" /> <!-- Medal of Glory -->
-        <production count="100" id="-300" /> <!-- Fame -->
-    </item>
-    <item>
-        <ingredient count="200" id="13722" /> <!-- Olympiad Token -->
-        <production count="1" id="14052" /> <!-- Vesper Noble Enhancement Stone -->
-    </item>
-    <item>
-        <ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
-        <production count="1" id="8916" /> <!-- Eyepatch -->
-    </item>
-    <item>
-        <ingredient count="220" id="13722" /> <!-- Olympiad Token -->
-        <ingredient count="1000000" id="57" /> <!-- Adena -->
-        <production count="1" id="37894" /> <!-- Enhanced Warrior's Quick Healing Potion -->
-    </item>
-    <item>
-        <ingredient count="4000" id="13722" /> <!-- Olympiad Token -->
-        <ingredient count="1310000" id="57" /> <!-- Adena -->
-        <production count="1" id="30297" /> <!-- Superior Giant's Codex -->
-    </item>
-    <item>
-        <ingredient count="8000" id="13722" /> <!-- Olympiad Token -->
-        <ingredient count="2580000" id="57" /> <!-- Adena -->
-        <production count="1" id="30300" /> <!-- Superior Giant's CoDEX - Oblivion -->
-    </item>
-    <item>
-        <ingredient count="15000" id="13722" /> <!-- Olympiad Token -->
-        <ingredient count="5080000" id="57" /> <!-- Adena -->
-        <production count="1" id="30299" /> <!-- Superior Giant's CoDEX - Discipline -->
-    </item>
-    <item>
-        <ingredient count="30000" id="13722" /> <!-- Olympiad Token -->
-        <ingredient count="10000000" id="57" /> <!-- Adena -->
-        <production count="1" id="30298" /> <!-- Superior Giant's CoDEX - Mastery -->
-    </item>
-    <item>
-        <ingredient count="220" id="13722" /> <!-- Olympiad Token -->
-        <production count="1" id="37792" /> <!-- Potion of Protection: Stun -->
-    </item>
-    <item>
-        <ingredient count="220" id="13722" /> <!-- Olympiad Token -->
-        <production count="1" id="37793" /> <!-- Potion of Protection: Hold -->
-    </item>
-    <item>
-        <ingredient count="220" id="13722" /> <!-- Olympiad Token -->
-        <production count="1" id="37794" /> <!-- Potion of Protection: Bleed -->
-    </item>
-    <item>
-        <ingredient count="220" id="13722" /> <!-- Olympiad Token -->
-        <production count="1" id="37795" /> <!-- Potion of Protection: Paralyze -->
-    </item>
-    <item>
-        <ingredient count="220" id="13722" /> <!-- Olympiad Token -->
-        <production count="1" id="37796" /> <!-- Potion of Protection: Mental -->
-    </item>
-    <item>
-        <ingredient count="220" id="13722" /> <!-- Olympiad Token -->
-        <production count="1" id="37797" /> <!-- Potion of Protection: Sleep -->
-    </item>
-    <item>
-        <ingredient count="220" id="13722" /> <!-- Olympiad Token -->
-        <production count="1" id="37798" /> <!-- Potion of Protection: Poison -->
-    </item>
-    <item>
-        <ingredient count="220" id="13722" /> <!-- Olympiad Token -->
-        <production count="1" id="37799" /> <!-- Potion of Protection: Knock Back/ Knock Down -->
-    </item>
-    <item>
-        <ingredient count="220" id="13722" /> <!-- Olympiad Token -->
-        <production count="1" id="37800" /> <!-- Potion of Protection: Aerial Yoke -->
-    </item>
+	<item>
+		<ingredient count="1" id="13722" /> <!-- Olympiad Token -->
+		<production count="1" id="-300" /> <!-- Fame -->
+	</item>
+	<item>
+		<ingredient count="1" id="21874" /> <!-- Medal of Glory -->
+		<production count="100" id="-300" /> <!-- Fame -->
+	</item>
+	<item>
+		<ingredient count="200" id="13722" /> <!-- Olympiad Token -->
+		<production count="1" id="14052" /> <!-- Vesper Noble Enhancement Stone -->
+	</item>
+	<item>
+		<ingredient count="10000" id="13722" /> <!-- Olympiad Token -->
+		<production count="1" id="8916" /> <!-- Eyepatch -->
+	</item>
+	<item>
+		<ingredient count="220" id="13722" /> <!-- Olympiad Token -->
+		<ingredient count="1000000" id="57" /> <!-- Adena -->
+		<production count="1" id="37894" /> <!-- Enhanced Warrior's Quick Healing Potion -->
+	</item>
+	<item>
+		<ingredient count="4000" id="13722" /> <!-- Olympiad Token -->
+		<ingredient count="1310000" id="57" /> <!-- Adena -->
+		<production count="1" id="30297" /> <!-- Superior Giant's Codex -->
+	</item>
+	<item>
+		<ingredient count="8000" id="13722" /> <!-- Olympiad Token -->
+		<ingredient count="2580000" id="57" /> <!-- Adena -->
+		<production count="1" id="30300" /> <!-- Superior Giant's CoDEX - Oblivion -->
+	</item>
+	<item>
+		<ingredient count="15000" id="13722" /> <!-- Olympiad Token -->
+		<ingredient count="5080000" id="57" /> <!-- Adena -->
+		<production count="1" id="30299" /> <!-- Superior Giant's CoDEX - Discipline -->
+	</item>
+	<item>
+		<ingredient count="30000" id="13722" /> <!-- Olympiad Token -->
+		<ingredient count="10000000" id="57" /> <!-- Adena -->
+		<production count="1" id="30298" /> <!-- Superior Giant's CoDEX - Mastery -->
+	</item>
+	<item>
+		<ingredient count="220" id="13722" /> <!-- Olympiad Token -->
+		<production count="1" id="37792" /> <!-- Potion of Protection: Stun -->
+	</item>
+	<item>
+		<ingredient count="220" id="13722" /> <!-- Olympiad Token -->
+		<production count="1" id="37793" /> <!-- Potion of Protection: Hold -->
+	</item>
+	<item>
+		<ingredient count="220" id="13722" /> <!-- Olympiad Token -->
+		<production count="1" id="37794" /> <!-- Potion of Protection: Bleed -->
+	</item>
+	<item>
+		<ingredient count="220" id="13722" /> <!-- Olympiad Token -->
+		<production count="1" id="37795" /> <!-- Potion of Protection: Paralyze -->
+	</item>
+	<item>
+		<ingredient count="220" id="13722" /> <!-- Olympiad Token -->
+		<production count="1" id="37796" /> <!-- Potion of Protection: Mental -->
+	</item>
+	<item>
+		<ingredient count="220" id="13722" /> <!-- Olympiad Token -->
+		<production count="1" id="37797" /> <!-- Potion of Protection: Sleep -->
+	</item>
+	<item>
+		<ingredient count="220" id="13722" /> <!-- Olympiad Token -->
+		<production count="1" id="37798" /> <!-- Potion of Protection: Poison -->
+	</item>
+	<item>
+		<ingredient count="220" id="13722" /> <!-- Olympiad Token -->
+		<production count="1" id="37799" /> <!-- Potion of Protection: Knock Back/ Knock Down -->
+	</item>
+	<item>
+		<ingredient count="220" id="13722" /> <!-- Olympiad Token -->
+		<production count="1" id="37800" /> <!-- Potion of Protection: Aerial Yoke -->
+	</item>
 </list>

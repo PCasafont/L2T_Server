@@ -24,31 +24,25 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.L2HelperBuff;
 import l2server.gameserver.templates.skills.L2SkillType;
 
-public class SupportMagic implements IBypassHandler
-{
+public class SupportMagic implements IBypassHandler {
 	private static final String[] COMMANDS = {"supportmagicservitor", "supportmagic"};
-
+	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null)
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+		if (target == null) {
 			return false;
 		}
-
+		
 		boolean result = false;
-		if (command.toLowerCase().startsWith(COMMANDS[0]))
-		{
+		if (command.toLowerCase().startsWith(COMMANDS[0])) {
 			result = makeSupportMagic(activeChar, target, true);
-		}
-		else if (command.toLowerCase().startsWith(COMMANDS[1]))
-		{
+		} else if (command.toLowerCase().startsWith(COMMANDS[1])) {
 			result = makeSupportMagic(activeChar, target, false);
 		}
-
+		
 		return result;
 	}
-
+	
 	/**
 	 * Add Newbie helper buffs to L2Player according to its level.<BR><BR>
 	 * <p>
@@ -61,112 +55,82 @@ public class SupportMagic implements IBypassHandler
 	 *
 	 * @param player The L2PcInstance that talk with the L2NpcInstance
 	 */
-	public static boolean makeSupportMagic(L2PcInstance player, L2Npc npc, boolean isSummon)
-	{
-		if (player == null)
-		{
+	public static boolean makeSupportMagic(L2PcInstance player, L2Npc npc, boolean isSummon) {
+		if (player == null) {
 			return false;
 		}
-
+		
 		// Prevent a cursed weapon weilder of being buffed
-		if (player.isCursedWeaponEquipped())
-		{
+		if (player.isCursedWeaponEquipped()) {
 			return false;
 		}
-
+		
 		int player_level = player.getLevel();
 		int lowestLevel = 0;
 		int highestLevel = 0;
-
-		if (isSummon)
-		{
-			if (player.getSummons().isEmpty())
-			{
+		
+		if (isSummon) {
+			if (player.getSummons().isEmpty()) {
 				String content =
 						"<html><body>Only servitors can receive this Support Magic. If you do not have a servitor, you cannot access these spells.</body></html>";
 				npc.insertObjectIdAndShowChatWindow(player, content);
 				return true;
 			}
 			npc.setTarget(player.getSummon(0)); //TODO correct target
-		}
-		else
+		} else
 		// 	Select the player
 		{
 			npc.setTarget(player);
 		}
-
-		if (isSummon)
-		{
+		
+		if (isSummon) {
 			lowestLevel = HelperBuffTable.getInstance().getServitorLowestLevel();
 			highestLevel = HelperBuffTable.getInstance().getServitorHighestLevel();
-		}
-		else
-		{
+		} else {
 			// 	Calculate the min and max level between which the player must be to obtain buff
-			if (player.isMageClass())
-			{
+			if (player.isMageClass()) {
 				lowestLevel = HelperBuffTable.getInstance().getMagicClassLowestLevel();
 				highestLevel = HelperBuffTable.getInstance().getMagicClassHighestLevel();
-			}
-			else
-			{
+			} else {
 				lowestLevel = HelperBuffTable.getInstance().getPhysicClassLowestLevel();
 				highestLevel = HelperBuffTable.getInstance().getPhysicClassHighestLevel();
 			}
 		}
 		// If the player is too high level, display a message and return
-		if (player_level > highestLevel)
-		{
-			String content = "<html><body>Newbie Guide:<br>Only a <font color=\"LEVEL\">novice character of level " +
-					highestLevel +
+		if (player_level > highestLevel) {
+			String content = "<html><body>Newbie Guide:<br>Only a <font color=\"LEVEL\">novice character of level " + highestLevel +
 					" or less</font> can receive my support magic.<br>Your novice character is the first one that you created and raised in this world.</body></html>";
 			npc.insertObjectIdAndShowChatWindow(player, content);
 			return true;
 		}
-
+		
 		// If the player is too low level, display a message and return
-		if (player_level < lowestLevel)
-		{
-			String content = "<html><body>Come back here when you have reached level " + lowestLevel +
-					". I will give you support magic then.</body></html>";
+		if (player_level < lowestLevel) {
+			String content =
+					"<html><body>Come back here when you have reached level " + lowestLevel + ". I will give you support magic then.</body></html>";
 			npc.insertObjectIdAndShowChatWindow(player, content);
 			return true;
 		}
-
+		
 		L2Skill skill = null;
-		if (isSummon)
-		{
-			for (L2HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable())
-			{
-				if (helperBuffItem.isForSummon())
-				{
-					skill = SkillTable.getInstance()
-							.getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
-					if (skill != null)
-					{
+		if (isSummon) {
+			for (L2HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable()) {
+				if (helperBuffItem.isForSummon()) {
+					skill = SkillTable.getInstance().getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
+					if (skill != null) {
 						npc.doCast(skill);
 					}
 				}
 			}
-		}
-		else
-		{
+		} else {
 			// 	Go through the Helper Buff list define in sql table helper_buff_list and cast skill
-			for (L2HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable())
-			{
-				if (helperBuffItem.isMagicClassBuff() == player.isMageClass())
-				{
-					if (player_level >= helperBuffItem.getLowerLevel() &&
-							player_level <= helperBuffItem.getUpperLevel())
-					{
-						skill = SkillTable.getInstance()
-								.getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
-						if (skill.getSkillType() == L2SkillType.SUMMON)
-						{
+			for (L2HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable()) {
+				if (helperBuffItem.isMagicClassBuff() == player.isMageClass()) {
+					if (player_level >= helperBuffItem.getLowerLevel() && player_level <= helperBuffItem.getUpperLevel()) {
+						skill = SkillTable.getInstance().getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
+						if (skill.getSkillType() == L2SkillType.SUMMON) {
 							player.doSimultaneousCast(skill);
-						}
-						else
-						{
+						} else {
 							npc.doCast(skill);
 						}
 					}
@@ -175,10 +139,9 @@ public class SupportMagic implements IBypassHandler
 		}
 		return true;
 	}
-
+	
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

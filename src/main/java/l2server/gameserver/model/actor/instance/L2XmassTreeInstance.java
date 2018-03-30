@@ -29,88 +29,73 @@ import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author Drunkard Zabb0x
- *         Lets drink2code!
+ * Lets drink2code!
  */
-public class L2XmassTreeInstance extends L2Npc
-{
+public class L2XmassTreeInstance extends L2Npc {
 	public static final int SPECIAL_TREE_ID = 13007;
 	private ScheduledFuture<?> aiTask;
-
-	class XmassAI implements Runnable
-	{
+	
+	class XmassAI implements Runnable {
 		private L2XmassTreeInstance caster;
 		private L2Skill skill;
-
-		protected XmassAI(L2XmassTreeInstance caster, L2Skill skill)
-		{
+		
+		protected XmassAI(L2XmassTreeInstance caster, L2Skill skill) {
 			this.caster = caster;
 			this.skill = skill;
 		}
-
+		
 		@Override
-		public void run()
-		{
-			if (skill == null || caster.isInsideZone(ZONE_PEACE))
-			{
+		public void run() {
+			if (skill == null || caster.isInsideZone(ZONE_PEACE)) {
 				caster.aiTask.cancel(false);
 				caster.aiTask = null;
 				return;
 			}
 			Collection<L2PcInstance> plrs = getKnownList().getKnownPlayersInRadius(200);
-			for (L2PcInstance player : plrs)
-			{
-				if (player.getFirstEffect(skill.getId()) == null)
-				{
+			for (L2PcInstance player : plrs) {
+				if (player.getFirstEffect(skill.getId()) == null) {
 					skill.getEffects(player, player);
 				}
 			}
 		}
 	}
-
-	public L2XmassTreeInstance(int objectId, L2NpcTemplate template)
-	{
+	
+	public L2XmassTreeInstance(int objectId, L2NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2XmassTreeInstance);
-		if (template.NpcId == SPECIAL_TREE_ID)
-		{
+		if (template.NpcId == SPECIAL_TREE_ID) {
 			aiTask = ThreadPoolManager.getInstance()
-					.scheduleGeneralAtFixedRate(new XmassAI(this, SkillTable.getInstance().getInfo(2139, 1)), 3000,
-							3000);
+					.scheduleGeneralAtFixedRate(new XmassAI(this, SkillTable.getInstance().getInfo(2139, 1)), 3000, 3000);
 		}
 	}
-
+	
 	@Override
-	public void deleteMe()
-	{
-		if (aiTask != null)
-		{
+	public void deleteMe() {
+		if (aiTask != null) {
 			aiTask.cancel(true);
 		}
-
+		
 		super.deleteMe();
 	}
-
+	
 	@Override
-	public int getDistanceToWatchObject(L2Object object)
-	{
+	public int getDistanceToWatchObject(L2Object object) {
 		return 900;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.model.L2Object#isAttackable()
 	 */
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
-	{
+	public boolean isAutoAttackable(L2Character attacker) {
 		return false;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.actor.L2Npc#onAction(l2server.gameserver.model.actor.instance.L2PcInstance, boolean)
 	 */
 	@Override
-	public void onAction(L2PcInstance player, boolean interact)
-	{
+	public void onAction(L2PcInstance player, boolean interact) {
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 }

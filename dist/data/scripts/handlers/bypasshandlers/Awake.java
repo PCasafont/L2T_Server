@@ -21,26 +21,20 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.ExChangeToAwakenedClass;
 
-public class Awake implements IBypassHandler
-{
+public class Awake implements IBypassHandler {
 	private static final String[] COMMANDS = {"Awake"};
 
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null)
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+		if (target == null) {
 			return false;
 		}
 
 		int awakenAtLevel = 85;
-		if (activeChar.getCurrentClass().getLevel() != 76)
-		{
+		if (activeChar.getCurrentClass().getLevel() != 76) {
 			activeChar.sendMessage("In order to awake you must have at least 3rd profession.");
 			return false;
-		}
-		else if (activeChar.getLevel() < awakenAtLevel)
-		{
+		} else if (activeChar.getLevel() < awakenAtLevel) {
 			activeChar.sendMessage("You must be level " + awakenAtLevel + " to awaken.");
 			return false;
 		}
@@ -53,8 +47,7 @@ public class Awake implements IBypassHandler
 	}
 
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

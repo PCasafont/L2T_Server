@@ -42,105 +42,84 @@ import java.util.logging.Level;
 /**
  * @author Nightmare
  */
-public class SpawnTable
-{
+public class SpawnTable {
 	private CopyOnWriteArraySet<L2Spawn> spawnTable = new CopyOnWriteArraySet<>();
 	private ConcurrentMap<String, List<L2Spawn>> specificSpawnTable = new ConcurrentHashMap<>();
 	private CopyOnWriteArraySet<SpawnGroup> spawnGroups = new CopyOnWriteArraySet<>();
 	private int customSpawnCount;
-
-	public static SpawnTable getInstance()
-	{
+	
+	public static SpawnTable getInstance() {
 		return SingletonHolder.instance;
 	}
-
-	private SpawnTable()
-	{
-		if (!Config.ALT_DEV_NO_SPAWNS)
-		{
+	
+	private SpawnTable() {
+		if (!Config.ALT_DEV_NO_SPAWNS) {
 			fillSpawnTable();
 		}
 	}
-
-	public CopyOnWriteArraySet<L2Spawn> getSpawnTable()
-	{
+	
+	public CopyOnWriteArraySet<L2Spawn> getSpawnTable() {
 		return spawnTable;
 	}
-
-	public List<L2Spawn> getSpecificSpawns(String name)
-	{
+	
+	public List<L2Spawn> getSpecificSpawns(String name) {
 		name = name.toLowerCase();
 		return specificSpawnTable.get(name);
 	}
-
-	public CopyOnWriteArraySet<SpawnGroup> getSpawnGroups()
-	{
+	
+	public CopyOnWriteArraySet<SpawnGroup> getSpawnGroups() {
 		return spawnGroups;
 	}
-
-	public void spawnSpecificTable(String tableName)
-	{
+	
+	public void spawnSpecificTable(String tableName) {
 		tableName = tableName.toLowerCase();
 		List<L2Spawn> table = specificSpawnTable.get(tableName);
-		if (table == null)
-		{
+		if (table == null) {
 			Log.warning("Specific spawn table not found: " + tableName);
 			return;
 		}
-
-		for (L2Spawn spawn : table)
-		{
-			if (spawn == null)
-			{
+		
+		for (L2Spawn spawn : table) {
+			if (spawn == null) {
 				continue;
 			}
-
-			if (spawn.isRespawnEnabled() || tableName.contains("gainak"))
-			{
+			
+			if (spawn.isRespawnEnabled() || tableName.contains("gainak")) {
 				spawn.startRespawn();
 			}
-
+			
 			spawn.doSpawn(true);
 		}
 	}
-
-	public void despawnSpecificTable(String tableName)
-	{
+	
+	public void despawnSpecificTable(String tableName) {
 		tableName = tableName.toLowerCase();
-
+		
 		List<L2Spawn> table = specificSpawnTable.get(tableName);
-		if (table == null)
-		{
+		if (table == null) {
 			Log.warning("Specific spawn table not found: " + tableName);
 			return;
 		}
-
-		for (L2Spawn spawn : table)
-		{
-			if (spawn == null)
-			{
+		
+		for (L2Spawn spawn : table) {
+			if (spawn == null) {
 				continue;
 			}
-
+			
 			spawn.stopRespawn();
-
+			
 			L2Npc npc = spawn.getNpc();
-			if (npc != null)
-			{
+			if (npc != null) {
 				npc.deleteMe();
 			}
 		}
 	}
-
-	private void fillSpawnTable()
-	{
+	
+	private void fillSpawnTable() {
 		int count = 0;
-		for (L2NpcTemplate t : NpcTable.getInstance().getAllTemplates())
-		{
-			for (SpawnData sp : t.getSpawns())
-			{
-				try
-				{
+		for (L2NpcTemplate t : NpcTable.getInstance().getAllTemplates()) {
+			for (SpawnData sp : t.getSpawns()) {
+				try {
 					L2Spawn spawn = new L2Spawn(t);
 					spawn.setX(sp.X);
 					spawn.setY(sp.Y);
@@ -149,114 +128,90 @@ public class SpawnTable
 					spawn.setRespawnDelay(sp.Respawn);
 					spawn.setRandomRespawnDelay(sp.RandomRespawn);
 					spawn.setDbName(sp.DbName);
-					if (sp.Respawn <= 0)
-					{
+					if (sp.Respawn <= 0) {
 						spawn.stopRespawn();
-					}
-					else
-					{
+					} else {
 						spawn.startRespawn();
 					}
-
+					
 					spawn.doSpawn();
-
+					
 					spawnTable.add(spawn);
-
+					
 					count++;
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		}
-
+		
 		Log.info("Template spawns: Loaded " + count + " Npc Spawn Locations.");
-
-		if (Config.DEBUG)
-		{
-			Log.fine("SpawnTable: Spawning completed, total number of NPCs in the world: " +
-					(spawnTable.size() + customSpawnCount + count));
+		
+		if (Config.DEBUG) {
+			Log.fine("SpawnTable: Spawning completed, total number of NPCs in the world: " + (spawnTable.size() + customSpawnCount + count));
 		}
-
+		
 		File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "spawns");
-		if (!dir.exists())
-		{
+		if (!dir.exists()) {
 			Log.warning("Dir " + dir.getAbsolutePath() + " doesn't exist");
 			return;
 		}
-
+		
 		// Override spawns by any custom folder
 		File custom = new File(Config.DATAPACK_ROOT, "/data_" + Config.SERVER_NAME + "/spawns");
-		if (custom.exists())
-		{
+		if (custom.exists()) {
 			dir = custom;
 		}
-
+		
 		count = 0;
 		File[] files = dir.listFiles();
-		for (File f : files)
-		{
-			if (!f.getName().endsWith(".xml"))
-			{
+		for (File f : files) {
+			if (!f.getName().endsWith(".xml")) {
 				continue;
 			}
-
-			try
-			{
+			
+			try {
 				XmlDocument doc = new XmlDocument(f);
 				List<L2Spawn> spawns = loadSpawns(doc.getRoot(), true);
 				//for (L2Spawn spawn : spawns)
 				//	spawn.doSpawn();
 				spawnTable.addAll(spawns);
 				count += spawns.size();
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.log(Level.WARNING, "Could not parse " + f.getName() + " file.", e);
 			}
 		}
-
+		
 		Log.info("SpawnTable: Loaded " + count + " global spawns!");
 		Log.info("SpawnTable: Loaded " + specificSpawnTable.size() + " specific spawn tables!");
 	}
-
-	private List<L2Spawn> loadSpawns(XmlNode node, boolean isRoot)
-	{
+	
+	private List<L2Spawn> loadSpawns(XmlNode node, boolean isRoot) {
 		List<L2Spawn> spawns = new ArrayList<>();
-		for (XmlNode npcNode : node.getChildren())
-		{
-			if (npcNode.getName().equalsIgnoreCase("specificSpawnList") && isRoot)
-			{
+		for (XmlNode npcNode : node.getChildren()) {
+			if (npcNode.getName().equalsIgnoreCase("specificSpawnList") && isRoot) {
 				String name = npcNode.getString("name");
 				specificSpawnTable.put(name, loadSpawns(npcNode, false));
-			}
-			else if (npcNode.getName().equalsIgnoreCase("group") && isRoot)
-			{
+			} else if (npcNode.getName().equalsIgnoreCase("group") && isRoot) {
 				SpawnGroup spawnGroup = new SpawnGroup(npcNode);
-
+				
 				spawnGroups.add(spawnGroup);
-
+				
 				spawnTable.addAll(spawnGroup.getSpawns());
-			}
-			else if (npcNode.getName().equalsIgnoreCase("spawn"))
-			{
+			} else if (npcNode.getName().equalsIgnoreCase("spawn")) {
 				int npcId = npcNode.getInt("npcId");
 				List<int[]> randomCoords = null;
 				int x = 0;
 				int y = 0;
 				int z = 0;
 				int heading = 0;
-				if (!npcNode.hasAttribute("x"))
-				{
+				if (!npcNode.hasAttribute("x")) {
 					randomCoords = new ArrayList<>();
-					for (XmlNode coordNode : npcNode.getChildren())
-					{
-						if (!coordNode.getName().equalsIgnoreCase("randomCoord"))
-						{
+					for (XmlNode coordNode : npcNode.getChildren()) {
+						if (!coordNode.getName().equalsIgnoreCase("randomCoord")) {
 							continue;
 						}
-
+						
 						x = coordNode.getInt("x");
 						y = coordNode.getInt("y");
 						z = coordNode.getInt("z");
@@ -264,248 +219,197 @@ public class SpawnTable
 						int chance = coordNode.getInt("chance");
 						randomCoords.add(new int[]{x, y, z, heading, chance});
 					}
-				}
-				else
-				{
+				} else {
 					x = npcNode.getInt("x");
 					y = npcNode.getInt("y");
 					z = npcNode.getInt("z");
 					heading = npcNode.getInt("heading");
 				}
-
+				
 				int respawn = npcNode.getInt("respawn");
 				int randomRespawn = npcNode.getInt("randomRespawn", 0);
 				String dbName = npcNode.getString("dbName", "");
-
+				
 				L2NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
-				if (template == null)
-				{
+				if (template == null) {
 					continue;
 				}
-
-				if (Config.isServer(Config.TENKAI_LEGACY))
-				{
-					if (template.Type.equals("L2RaidBoss") && template.Level <= 85)
-					{
+				
+				if (Config.isServer(Config.TENKAI_LEGACY)) {
+					if (template.Type.equals("L2RaidBoss") && template.Level <= 85) {
 						continue;
 					}
-
-					if (node.getName().endsWith("siege_guards"))
-					{
+					
+					if (node.getName().endsWith("siege_guards")) {
 						template.Level = 103;
 					}
 				}
-
+				
 				L2Spawn newSpawn = null;
-				try
-				{
+				try {
 					newSpawn = new L2Spawn(template);
-				}
-				catch (Exception e)
-				{
+				} catch (Exception e) {
 					e.printStackTrace();
 					continue;
 				}
-
+				
 				newSpawn.setX(x);
 				newSpawn.setY(y);
 				newSpawn.setZ(z);
 				newSpawn.setHeading(heading);
 				newSpawn.setRandomCoords(randomCoords);
-
+				
 				newSpawn.setRespawnDelay(respawn);
 				newSpawn.setRandomRespawnDelay(randomRespawn);
 				newSpawn.setDbName(dbName);
-
-				if (respawn <= 0)
-				{
+				
+				if (respawn <= 0) {
 					newSpawn.stopRespawn();
-				}
-				else
-				{
+				} else {
 					newSpawn.startRespawn();
 				}
-
-				if (isRoot)
-				{
+				
+				if (isRoot) {
 					newSpawn.doSpawn();
 				}
-
+				
 				spawns.add(newSpawn);
-
-				if (template.Type.equals("L2Monster"))
-				{
+				
+				if (template.Type.equals("L2Monster")) {
 					template.addKnownSpawn(newSpawn);
 				}
 			}
 		}
-
+		
 		return spawns;
 	}
-
-	public void addNewSpawn(L2Spawn spawn, boolean storeInDb)
-	{
+	
+	public void addNewSpawn(L2Spawn spawn, boolean storeInDb) {
 		spawnTable.add(spawn);
-
-		if (storeInDb)
-		{
-			SpawnData sp =
-					new SpawnData(spawn.getX(), spawn.getY(), spawn.getZ(), spawn.getHeading(), spawn.getRespawnDelay(),
-							spawn.getRandomRespawnDelay());
+		
+		if (storeInDb) {
+			SpawnData sp = new SpawnData(spawn.getX(),
+					spawn.getY(),
+					spawn.getZ(),
+					spawn.getHeading(),
+					spawn.getRespawnDelay(),
+					spawn.getRandomRespawnDelay());
 			sp.DbName = spawn.getDbName();
 			spawn.getTemplate().getSpawns().add(sp);
 		}
 	}
-
-	public void deleteSpawn(L2Spawn spawn, boolean updateDb)
-	{
-		if (!spawnTable.remove(spawn))
-		{
+	
+	public void deleteSpawn(L2Spawn spawn, boolean updateDb) {
+		if (!spawnTable.remove(spawn)) {
 			return;
 		}
-
-		if (updateDb)
-		{
-			for (SpawnData sp : spawn.getTemplate().getSpawns())
-			{
-				if (sp.X == spawn.getX() && sp.Y == spawn.getY() && sp.Z == spawn.getZ())
-				{
+		
+		if (updateDb) {
+			for (SpawnData sp : spawn.getTemplate().getSpawns()) {
+				if (sp.X == spawn.getX() && sp.Y == spawn.getY() && sp.Z == spawn.getZ()) {
 					spawn.getTemplate().getSpawns().remove(sp);
 					break;
 				}
 			}
 		}
 	}
-
+	
 	//just wrapper
-	public void reloadAll()
-	{
+	public void reloadAll() {
 		fillSpawnTable();
 	}
-
+	
 	/**
 	 * Get all the spawn of a NPC<BR><BR>
 	 *
 	 * @param npcId : ID of the NPC to find.
 	 * @return
 	 */
-	public void findNPCInstances(L2PcInstance activeChar, int npcId, int teleportIndex, boolean showposition)
-	{
+	public void findNPCInstances(L2PcInstance activeChar, int npcId, int teleportIndex, boolean showposition) {
 		int index = 0;
-		for (L2Spawn spawn : spawnTable)
-		{
-			if (npcId == spawn.getNpcId())
-			{
+		for (L2Spawn spawn : spawnTable) {
+			if (npcId == spawn.getNpcId()) {
 				index++;
 				L2Npc npc = spawn.getNpc();
-				if (teleportIndex > -1)
-				{
-					if (teleportIndex == index)
-					{
-						if (showposition && npc != null)
-						{
+				if (teleportIndex > -1) {
+					if (teleportIndex == index) {
+						if (showposition && npc != null) {
 							activeChar.teleToLocation(npc.getX(), npc.getY(), npc.getZ(), true);
-						}
-						else
-						{
+						} else {
 							activeChar.teleToLocation(spawn.getX(), spawn.getY(), spawn.getZ(), true);
 						}
 					}
-				}
-				else
-				{
-					if (showposition && npc != null)
-					{
+				} else {
+					if (showposition && npc != null) {
 						activeChar.sendMessage(
-								index + " - " + spawn.getTemplate().Name + " (" + spawn + "): " + npc.getX() + " " +
-										npc.getY() + " " + npc.getZ());
-					}
-					else
-					{
+								index + " - " + spawn.getTemplate().Name + " (" + spawn + "): " + npc.getX() + " " + npc.getY() + " " + npc.getZ());
+					} else {
 						activeChar.sendMessage(
-								index + " - " + spawn.getTemplate().Name + " (" + spawn + "): " + spawn.getX() + " " +
-										spawn.getY() + " " + spawn.getZ());
+								index + " - " + spawn.getTemplate().Name + " (" + spawn + "): " + spawn.getX() + " " + spawn.getY() + " " +
+										spawn.getZ());
 					}
 				}
 			}
 		}
-
-		if (index == 0)
-		{
+		
+		if (index == 0) {
 			activeChar.sendMessage("No current spawns found.");
 		}
 	}
-
-	public L2Spawn findFirst(String name)
-	{
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-		{
-			if (spawn.getTemplate().getName().equalsIgnoreCase(name) && spawn.getNpc() != null)
-			{
+	
+	public L2Spawn findFirst(String name) {
+		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable()) {
+			if (spawn.getTemplate().getName().equalsIgnoreCase(name) && spawn.getNpc() != null) {
 				return spawn;
 			}
 		}
-
-		for (SpawnGroup group : spawnGroups)
-		{
-			for (L2Spawn spawn : group.getSpawns())
-			{
-				if (spawn.getTemplate().getName().equalsIgnoreCase(name) && spawn.getNpc() != null)
-				{
+		
+		for (SpawnGroup group : spawnGroups) {
+			for (L2Spawn spawn : group.getSpawns()) {
+				if (spawn.getTemplate().getName().equalsIgnoreCase(name) && spawn.getNpc() != null) {
 					return spawn;
 				}
 			}
 		}
-
+		
 		return null;
 	}
-
-	public List<L2Spawn> getAllSpawns(final int npcId)
-	{
-		if (npcId == 0)
-		{
+	
+	public List<L2Spawn> getAllSpawns(final int npcId) {
+		if (npcId == 0) {
 			int min = 0;
 			int max = 0;
-			for (L2Spawn spawn : spawnTable)
-			{
-				if (spawn.getZ() < min)
-				{
+			for (L2Spawn spawn : spawnTable) {
+				if (spawn.getZ() < min) {
 					min = spawn.getZ();
 				}
-				if (spawn.getZ() > max)
-				{
+				if (spawn.getZ() > max) {
 					max = spawn.getZ();
 				}
 			}
-
+			
 			System.out.println(min + " " + max);
 		}
 		List<L2Spawn> result = new ArrayList<>();
-
-		for (L2Spawn spawn : spawnTable)
-		{
-			if (npcId != spawn.getNpcId())
-			{
+		
+		for (L2Spawn spawn : spawnTable) {
+			if (npcId != spawn.getNpcId()) {
 				continue;
 			}
-
+			
 			result.add(spawn);
 		}
-
+		
 		return result;
 	}
-
-	public L2Spawn getRandomMonsterSpawn()
-	{
+	
+	public L2Spawn getRandomMonsterSpawn() {
 		L2Spawn spawn = null;
-		while (spawn == null || spawn.getNpc() == null || !(spawn.getNpc() instanceof L2MonsterInstance))
-		{
+		while (spawn == null || spawn.getNpc() == null || !(spawn.getNpc() instanceof L2MonsterInstance)) {
 			int randomId = Rnd.get(spawnTable.size());
 			int i = 0;
-			for (L2Spawn s : spawnTable)
-			{
-				if (i == randomId)
-				{
+			for (L2Spawn s : spawnTable) {
+				if (i == randomId) {
 					spawn = s;
 					break;
 				}
@@ -514,45 +418,37 @@ public class SpawnTable
 		}
 		return spawn;
 	}
-
+	
 	private double totalDistributedSpawnWeight = 0.0;
 	private Map<L2Spawn, Double> distributedSpawnWeights = new LinkedHashMap<>();
-
-	public L2Spawn getRandomDistributedSpawn()
-	{
-		if (distributedSpawnWeights.isEmpty())
-		{
+	
+	public L2Spawn getRandomDistributedSpawn() {
+		if (distributedSpawnWeights.isEmpty()) {
 			calculateDistributedSpawnWeights();
 		}
-
+		
 		double random = Rnd.get() * totalDistributedSpawnWeight;
 		double current = 0.0;
-		for (Entry<L2Spawn, Double> entry : distributedSpawnWeights.entrySet())
-		{
+		for (Entry<L2Spawn, Double> entry : distributedSpawnWeights.entrySet()) {
 			current += entry.getValue();
-			if (current > random)
-			{
+			if (current > random) {
 				return entry.getKey();
 			}
 		}
-
+		
 		return null;
 	}
-
-	private void calculateDistributedSpawnWeights()
-	{
+	
+	private void calculateDistributedSpawnWeights() {
 		totalDistributedSpawnWeight = 0.0;
 		distributedSpawnWeights.clear();
-		for (L2Spawn spawn : spawnTable)
-		{
-			if (spawn == null)
-			{
+		for (L2Spawn spawn : spawnTable) {
+			if (spawn == null) {
 				continue;
 			}
-
+			
 			L2Npc npc = spawn.getNpc();
-			if (npc == null)
-			{
+			if (npc == null) {
 				continue;
 			}
 
@@ -570,18 +466,17 @@ public class SpawnTable
 				if (Util.checkIfInRange(radiusToCheck, npc, npcToCheck, true))
 					knownChars++;
 			}*/
-
+			
 			int knownChars = npc.getKnownList().getKnownCharactersInRadius(1000).size() + 1;
 			double weight = 1.0 / knownChars;
-
+			
 			totalDistributedSpawnWeight += weight;
 			distributedSpawnWeights.put(spawn, weight);
 		}
 	}
-
+	
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final SpawnTable instance = new SpawnTable();
 	}
 }

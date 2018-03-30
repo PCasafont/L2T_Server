@@ -21,16 +21,13 @@ import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.L2AbnormalType;
 import l2server.gameserver.templates.skills.L2EffectTemplate;
 
-public class EffectReset extends L2Effect
-{
-	public EffectReset(Env env, L2EffectTemplate template)
-	{
+public class EffectReset extends L2Effect {
+	public EffectReset(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.DEBUFF;
 	}
 
@@ -38,26 +35,21 @@ public class EffectReset extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		L2Abnormal[] effects = getEffected().getAllEffects();
-		if (effects == null || effects.length == 0)
-		{
+		if (effects == null || effects.length == 0) {
 			return false;
 		}
 
-		for (L2Abnormal e : effects)
-		{
-			if (e == null || !e.getSkill().isOffensive())
-			{
+		for (L2Abnormal e : effects) {
+			if (e == null || !e.getSkill().isOffensive()) {
 				continue;
 			}
 
 			// Devil's Sway: Resets the duration of the target's paralysis, hold, silence, sleep, shock, fear, petrification, and disarm.
 			if (getSkill().getId() == 11095) //Devil's Sway
 			{
-				switch (e.getType())
-				{
+				switch (e.getType()) {
 					case PARALYZE:
 					case HOLD:
 					case SILENCE:
@@ -82,8 +74,7 @@ public class EffectReset extends L2Effect
 			env.skill = e.getSkill();
 
 			L2Abnormal ef = e.getTemplate().getEffect(env);
-			if (ef != null)
-			{
+			if (ef != null) {
 				ef.scheduleEffect();
 			}
 		}
@@ -97,8 +88,7 @@ public class EffectReset extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 
 	}
 
@@ -106,8 +96,7 @@ public class EffectReset extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		// nothing
 		return false;
 	}

@@ -25,8 +25,7 @@ import java.util.logging.Level;
 /**
  * @author kombat
  */
-public final class ChanceCondition
-{
+public final class ChanceCondition {
 	public static final int EVT_HIT = 0x000001;
 	public static final int EVT_CRIT = 0x000002;
 	public static final int EVT_CAST = 0x000004;
@@ -47,44 +46,60 @@ public final class ChanceCondition
 	public static final int EVT_ON_EXIT = 0x020000;
 	public static final int EVT_KILL = 0x040000;
 	public static final int EVT_SHIELD_BLOCK = 0x080000;
-
-	public enum TriggerType
-	{
+	
+	public enum TriggerType {
 		// You hit an enemy
-		ON_HIT(EVT_HIT), // You hit an enemy - was crit
-		ON_CRIT(EVT_CRIT), // You cast a skill
-		ON_CAST(EVT_CAST), // You cast a skill - it was a physical one
-		ON_PHYSICAL(EVT_PHYSICAL), // You cast a skill - it was a magic one
-		ON_MAGIC(EVT_MAGIC), // You cast a skill - it was a magic one - good magic
-		ON_MAGIC_GOOD(EVT_MAGIC_GOOD), // You cast a skill - it was a magic one - offensive magic
-		ON_MAGIC_OFFENSIVE(EVT_MAGIC_OFFENSIVE), //You block an attack with shield
-		ON_SHIELD_BLOCK(EVT_SHIELD_BLOCK), // You are attacked by enemy
-		ON_ATTACKED(EVT_ATTACKED), // You are attacked by enemy - by hit
-		ON_ATTACKED_HIT(EVT_ATTACKED_HIT), // You are attacked by enemy - by hit - was crit
-		ON_ATTACKED_CRIT(EVT_ATTACKED_CRIT), // Your summon is attacked by enemy
-		ON_ATTACKED_SUMMON(EVT_ATTACKED_SUMMON), // A skill was casted on you
-		ON_HIT_BY_SKILL(EVT_HIT_BY_SKILL), // An evil skill was casted on you
-		ON_HIT_BY_OFFENSIVE_SKILL(EVT_HIT_BY_OFFENSIVE_SKILL), // A good skill was casted on you
-		ON_HIT_BY_GOOD_MAGIC(EVT_HIT_BY_GOOD_MAGIC), // Evading melee attack
-		ON_EVADED_HIT(EVT_EVADED_HIT), // Effect only - on start
-		ON_START(EVT_ON_START), // Effect only - each second
-		ON_ACTION_TIME(EVT_ON_ACTION_TIME), // Effect only - on exit
-		ON_EXIT(EVT_ON_EXIT), // You kill an enemy
+		ON_HIT(EVT_HIT),
+		// You hit an enemy - was crit
+		ON_CRIT(EVT_CRIT),
+		// You cast a skill
+		ON_CAST(EVT_CAST),
+		// You cast a skill - it was a physical one
+		ON_PHYSICAL(EVT_PHYSICAL),
+		// You cast a skill - it was a magic one
+		ON_MAGIC(EVT_MAGIC),
+		// You cast a skill - it was a magic one - good magic
+		ON_MAGIC_GOOD(EVT_MAGIC_GOOD),
+		// You cast a skill - it was a magic one - offensive magic
+		ON_MAGIC_OFFENSIVE(EVT_MAGIC_OFFENSIVE),
+		//You block an attack with shield
+		ON_SHIELD_BLOCK(EVT_SHIELD_BLOCK),
+		// You are attacked by enemy
+		ON_ATTACKED(EVT_ATTACKED),
+		// You are attacked by enemy - by hit
+		ON_ATTACKED_HIT(EVT_ATTACKED_HIT),
+		// You are attacked by enemy - by hit - was crit
+		ON_ATTACKED_CRIT(EVT_ATTACKED_CRIT),
+		// Your summon is attacked by enemy
+		ON_ATTACKED_SUMMON(EVT_ATTACKED_SUMMON),
+		// A skill was casted on you
+		ON_HIT_BY_SKILL(EVT_HIT_BY_SKILL),
+		// An evil skill was casted on you
+		ON_HIT_BY_OFFENSIVE_SKILL(EVT_HIT_BY_OFFENSIVE_SKILL),
+		// A good skill was casted on you
+		ON_HIT_BY_GOOD_MAGIC(EVT_HIT_BY_GOOD_MAGIC),
+		// Evading melee attack
+		ON_EVADED_HIT(EVT_EVADED_HIT),
+		// Effect only - on start
+		ON_START(EVT_ON_START),
+		// Effect only - each second
+		ON_ACTION_TIME(EVT_ON_ACTION_TIME),
+		// Effect only - on exit
+		ON_EXIT(EVT_ON_EXIT),
+		// You kill an enemy
 		ON_KILL(EVT_KILL);
-
+		
 		private final int mask;
-
-		TriggerType(int mask)
-		{
+		
+		TriggerType(int mask) {
 			this.mask = mask;
 		}
-
-		public final boolean check(int event)
-		{
+		
+		public final boolean check(int event) {
 			return (mask & event) != 0; // Trigger (sub-)type contains event (sub-)type
 		}
 	}
-
+	
 	private final TriggerType triggerType;
 	private final double chance;
 	private final double critChance;
@@ -92,9 +107,8 @@ public final class ChanceCondition
 	private final byte[] elements;
 	private final int[] activationSkills;
 	private final boolean pvpOnly;
-
-	private ChanceCondition(TriggerType trigger, double chance, int mindmg, byte[] elements, int[] activationSkills, boolean pvpOnly)
-	{
+	
+	private ChanceCondition(TriggerType trigger, double chance, int mindmg, byte[] elements, int[] activationSkills, boolean pvpOnly) {
 		triggerType = trigger;
 		this.chance = chance;
 		this.mindmg = mindmg;
@@ -103,9 +117,14 @@ public final class ChanceCondition
 		this.activationSkills = activationSkills;
 		critChance = -1;
 	}
-
-	private ChanceCondition(TriggerType trigger, double chance, double critChance, int mindmg, byte[] elements, int[] activationSkills, boolean pvpOnly)
-	{
+	
+	private ChanceCondition(TriggerType trigger,
+	                        double chance,
+	                        double critChance,
+	                        int mindmg,
+	                        byte[] elements,
+	                        int[] activationSkills,
+	                        boolean pvpOnly) {
 		triggerType = trigger;
 		this.chance = chance;
 		this.mindmg = mindmg;
@@ -114,11 +133,9 @@ public final class ChanceCondition
 		this.activationSkills = activationSkills;
 		this.critChance = critChance;
 	}
-
-	public static ChanceCondition parse(StatsSet set)
-	{
-		try
-		{
+	
+	public static ChanceCondition parse(StatsSet set) {
+		try {
 			TriggerType trigger = set.getEnum("chanceType", TriggerType.class, null);
 			int chance = set.getInteger("activationChance", -1);
 			int critChance = set.getInteger("activationCritChance", -1);
@@ -126,130 +143,119 @@ public final class ChanceCondition
 			String elements = set.getString("activationElements", null);
 			String activationSkills = set.getString("activationSkills", null);
 			boolean pvpOnly = set.getBool("pvpChanceOnly", false);
-
-			if (trigger != null)
-			{
-				return new ChanceCondition(trigger, chance, critChance, mindmg, parseElements(elements),
-						parseActivationSkills(activationSkills), pvpOnly);
+			
+			if (trigger != null) {
+				return new ChanceCondition(trigger,
+						chance,
+						critChance,
+						mindmg,
+						parseElements(elements),
+						parseActivationSkills(activationSkills),
+						pvpOnly);
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "", e);
 		}
 		return null;
 	}
-
-	public static ChanceCondition parse(String chanceType, double chance, double critChance, int mindmg, String elements, String activationSkills, boolean pvpOnly)
-	{
-		try
-		{
-			if (chanceType == null)
-			{
+	
+	public static ChanceCondition parse(String chanceType,
+	                                    double chance,
+	                                    double critChance,
+	                                    int mindmg,
+	                                    String elements,
+	                                    String activationSkills,
+	                                    boolean pvpOnly) {
+		try {
+			if (chanceType == null) {
 				return null;
 			}
-
+			
 			TriggerType trigger = Enum.valueOf(TriggerType.class, chanceType);
-
-			if (trigger != null)
-			{
-				return new ChanceCondition(trigger, chance, critChance, mindmg, parseElements(elements),
-						parseActivationSkills(activationSkills), pvpOnly);
+			
+			if (trigger != null) {
+				return new ChanceCondition(trigger,
+						chance,
+						critChance,
+						mindmg,
+						parseElements(elements),
+						parseActivationSkills(activationSkills),
+						pvpOnly);
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "", e);
 		}
-
+		
 		return null;
 	}
-
-	public static byte[] parseElements(String list)
-	{
-		if (list == null)
-		{
+	
+	public static byte[] parseElements(String list) {
+		if (list == null) {
 			return null;
 		}
-
+		
 		String[] valuesSplit = list.split(",");
 		byte[] elements = new byte[valuesSplit.length];
-		for (int i = 0; i < valuesSplit.length; i++)
-		{
+		for (int i = 0; i < valuesSplit.length; i++) {
 			elements[i] = Byte.parseByte(valuesSplit[i]);
 		}
-
+		
 		Arrays.sort(elements);
 		return elements;
 	}
-
-	public static int[] parseActivationSkills(String list)
-	{
-		if (list == null)
-		{
+	
+	public static int[] parseActivationSkills(String list) {
+		if (list == null) {
 			return null;
 		}
-
+		
 		String[] valuesSplit = list.split(",");
 		int[] skillIds = new int[valuesSplit.length];
-		for (int i = 0; i < valuesSplit.length; i++)
-		{
+		for (int i = 0; i < valuesSplit.length; i++) {
 			skillIds[i] = Integer.parseInt(valuesSplit[i]);
 		}
-
+		
 		return skillIds;
 	}
-
-	public boolean trigger(int event, int damage, boolean crit, byte element, boolean playable, L2Skill skill)
-	{
-		if (pvpOnly && !playable)
-		{
+	
+	public boolean trigger(int event, int damage, boolean crit, byte element, boolean playable, L2Skill skill) {
+		if (pvpOnly && !playable) {
 			return false;
 		}
-
-		if (elements != null && Arrays.binarySearch(elements, element) < 0)
-		{
+		
+		if (elements != null && Arrays.binarySearch(elements, element) < 0) {
 			return false;
 		}
-
-		if (activationSkills != null)
-		{
-			if (skill == null)
-			{
+		
+		if (activationSkills != null) {
+			if (skill == null) {
 				return false;
 			}
-
-			if (Arrays.binarySearch(activationSkills, skill.getId()) < 0)
-			{
+			
+			if (Arrays.binarySearch(activationSkills, skill.getId()) < 0) {
 				return false;
 			}
 		}
-
+		
 		// if the skill has "activationMinDamage" set to be higher than -1(default)
 		// and if "activationMinDamage" is still higher than the recieved damage, the skill wont trigger
-		if (mindmg > -1 && mindmg > damage)
-		{
+		if (mindmg > -1 && mindmg > damage) {
 			return false;
 		}
-
-		if (!crit || critChance == -1)
-		{
+		
+		if (!crit || critChance == -1) {
 			return triggerType.check(event) && (chance < 0 || Rnd.get(100) < chance);
-		}
-		else
-		{
+		} else {
 			return triggerType.check(event) && (critChance < 0 || Rnd.get(100) < critChance);
 		}
 	}
-
-	public TriggerType getTriggerType()
-	{
+	
+	public TriggerType getTriggerType() {
 		return triggerType;
 	}
-
+	
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return "Trigger[" + chance + ";" + triggerType.toString() + "]";
 	}
 }

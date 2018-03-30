@@ -2,11 +2,7 @@ package l2server.gameserver.events;
 
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.L2DropData;
-import l2server.gameserver.model.L2NpcAIData;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -21,53 +17,42 @@ import java.util.Calendar;
 /**
  * @author Pere
  */
-public class  CloneInvasion
-{
+public class CloneInvasion {
 	public static CloneInvasion instance = null;
 
 	private StartTask task;
 
-	public static CloneInvasion getInstance()
-	{
-		if (instance == null)
-		{
+	public static CloneInvasion getInstance() {
+		if (instance == null) {
 			instance = new CloneInvasion();
 		}
 		return instance;
 	}
 
-	public void start()
-	{
-		Announcements.getInstance().announceToAll(
-				"A lot of clones with your appearance have now appeared! They will charge upon you without any reason!");
+	public void start() {
+		Announcements.getInstance()
+				.announceToAll("A lot of clones with your appearance have now appeared! They will charge upon you without any reason!");
 		Announcements.getInstance().announceToAll("Prove that there isn't anyone as the original one!");
 
 		spawnNpcPlayers();
 	}
 
-	public void spawnNpcPlayers()
-	{
-		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
-		{
-			if (player == null || player.isGM() || player.isInStoreMode())
-			{
+	public void spawnNpcPlayers() {
+		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
+			if (player == null || player.isGM() || player.isInStoreMode()) {
 				continue;
 			}
-			try
-			{
+			try {
 				int pledgeClass = 0;
-				if (player.getClan() != null)
-				{
+				if (player.getClan() != null) {
 					pledgeClass = player.getClan().getClanMember(player.getObjectId()).calculatePledgeClass(player);
 				}
 
-				if (player.isNoble() && pledgeClass < 5)
-				{
+				if (player.isNoble() && pledgeClass < 5) {
 					pledgeClass = 5;
 				}
 
-				if (player.isHero() && pledgeClass < 8)
-				{
+				if (player.isHero() && pledgeClass < 8) {
 					pledgeClass = 8;
 				}
 
@@ -104,8 +89,8 @@ public class  CloneInvasion
 				L2NpcTemplate tmpl = new L2NpcTemplate(set);
 
 				L2NpcAIData npcAIDat = new L2NpcAIData();
-				npcAIDat.setAi(player.getActiveWeaponItem() != null ? player.isMageClass() ? "mage" :
-						player.getActiveWeaponItem().getItemType() == L2WeaponType.BOW ? "archer" : "Fighter" :
+				npcAIDat.setAi(player.getActiveWeaponItem() != null ?
+						player.isMageClass() ? "mage" : player.getActiveWeaponItem().getItemType() == L2WeaponType.BOW ? "archer" : "Fighter" :
 						"balanced");
 				npcAIDat.setSkillChance(player.isMageClass() ? 100 : 15);
 				npcAIDat.setCanMove(true);
@@ -117,10 +102,8 @@ public class  CloneInvasion
 				npcAIDat.setClanRange(500);
 				tmpl.setAIData(npcAIDat);
 
-				for (L2Skill skill : player.getAllSkills())
-				{
-					if (skill.isOffensive() && skill.getMagicLevel() > player.getLevel() - 5)
-					{
+				for (L2Skill skill : player.getAllSkills()) {
+					if (skill.isOffensive() && skill.getMagicLevel() > player.getLevel() - 5) {
 						tmpl.addSkill(skill);
 					}
 				}
@@ -135,24 +118,19 @@ public class  CloneInvasion
 				spawn.setZ(player.getPosition().getZ());
 
 				spawn.stopRespawn();
-				if (spawn.getNpc() != null && !spawn.getNpc().isInsideZone(L2Character.ZONE_NOLANDING))
-				{
+				if (spawn.getNpc() != null && !spawn.getNpc().isInsideZone(L2Character.ZONE_NOLANDING)) {
 					spawn.getNpc().setClonedPlayer(player);
 					spawn.doSpawn();
 				}
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				Log.warning("Error spawning a player clone: ");
 				e.printStackTrace();
 			}
 		}
 	}
 
-	public void scheduleEventStart()
-	{
-		try
-		{
+	public void scheduleEventStart() {
+		try {
 			Calendar currentTime = Calendar.getInstance();
 			Calendar nextStartTime = Calendar.getInstance();
 			nextStartTime.setLenient(true);
@@ -162,83 +140,65 @@ public class  CloneInvasion
 			nextStartTime.set(Calendar.MINUTE, minute);
 			nextStartTime.set(Calendar.SECOND, 0);
 			// If the date is in the past, make it the next day (Example: Checking for "1:00", when the time is 23:57.)
-			if (nextStartTime.getTimeInMillis() - 10000 < currentTime.getTimeInMillis())
-			{
+			if (nextStartTime.getTimeInMillis() - 10000 < currentTime.getTimeInMillis()) {
 				nextStartTime.add(Calendar.DAY_OF_MONTH, 1);
 			}
 			task = new StartTask(nextStartTime.getTimeInMillis());
 			ThreadPoolManager.getInstance().executeTask(task);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public StartTask getStartTask()
-	{
+	public StartTask getStartTask() {
 		return task;
 	}
 
-	public void showInfo(L2PcInstance activeChar)
-	{
+	public void showInfo(L2PcInstance activeChar) {
 		Calendar now = Calendar.getInstance();
 		Calendar startTime = Calendar.getInstance();
 		startTime.setTimeInMillis(task.getStartTime());
 		String time;
-		if (now.get(Calendar.DAY_OF_MONTH) == startTime.get(Calendar.DAY_OF_MONTH))
-		{
+		if (now.get(Calendar.DAY_OF_MONTH) == startTime.get(Calendar.DAY_OF_MONTH)) {
 			time = "today";
-		}
-		else
-		{
+		} else {
 			time = "tomorrow";
 		}
 		time += " at " + startTime.get(Calendar.HOUR_OF_DAY) + ":" + startTime.get(Calendar.MINUTE);
 		long toStart = task.getStartTime() - System.currentTimeMillis();
 		int hours = (int) (toStart / 3600000);
 		int minutes = (int) (toStart / 60000) % 60;
-		if (hours > 0 || minutes > 0)
-		{
+		if (hours > 0 || minutes > 0) {
 			time += ", in ";
-			if (hours > 0)
-			{
+			if (hours > 0) {
 				time += hours + " hour" + (hours == 1 ? "" : "s") + " and ";
 			}
 			time += minutes + " minute" + (minutes == 1 ? "" : "s");
 		}
-		String html =
-				"<html>" + "<title>Event</title>" + "<body>" + "<center><br><tr><td>Clone Invasion</td></tr><br>" +
-						"<br>" + "The next invasion will be " + time + ".<br>";
+		String html = "<html>" + "<title>Event</title>" + "<body>" + "<center><br><tr><td>Clone Invasion</td></tr><br>" + "<br>" +
+				"The next invasion will be " + time + ".<br>";
 		html += "</body></html>";
 		activeChar.sendPacket(new NpcHtmlMessage(0, html));
 	}
 
-	class StartTask implements Runnable
-	{
+	class StartTask implements Runnable {
 		private long startTime;
 
-		public StartTask(long startTime)
-		{
+		public StartTask(long startTime) {
 			this.startTime = startTime;
 		}
 
-		public long getStartTime()
-		{
+		public long getStartTime() {
 			return startTime;
 		}
 
 		@Override
-		public void run()
-		{
+		public void run() {
 			int delay = (int) Math.round((startTime - System.currentTimeMillis()) / 1000.0);
 
-			if (delay > 0)
-			{
+			if (delay > 0) {
 				ThreadPoolManager.getInstance().scheduleGeneral(this, delay * 1000);
-			}
-			else
-			{
+			} else {
 				start();
 
 				scheduleEventStart();

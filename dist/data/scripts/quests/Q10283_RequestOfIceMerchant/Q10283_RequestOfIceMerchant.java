@@ -27,16 +27,14 @@ import l2server.gameserver.model.quest.State;
  * * 2010-08-07 Based on Freya PTS
  */
 
-public class Q10283_RequestOfIceMerchant extends Quest
-{
+public class Q10283_RequestOfIceMerchant extends Quest {
 	private static final String qn = "10283_RequestOfIceMerchant";
 	// NPC's
 	private static final int rafforty = 32020;
 	private static final int kier = 32022;
 	private static final int jinia = 32760;
 
-	public Q10283_RequestOfIceMerchant(int questId, String name, String descr)
-	{
+	public Q10283_RequestOfIceMerchant(int questId, String name, String descr) {
 		super(questId, name, descr);
 
 		addStartNpc(rafforty);
@@ -47,37 +45,27 @@ public class Q10283_RequestOfIceMerchant extends Quest
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == rafforty)
-		{
-			if (event.equalsIgnoreCase("32020-03.htm"))
-			{
+		if (npc.getNpcId() == rafforty) {
+			if (event.equalsIgnoreCase("32020-03.htm")) {
 				st.setState(State.STARTED);
 				st.set("cond", "1");
 				st.playSound("ItemSound.quest_accept");
-			}
-			else if (event.equalsIgnoreCase("32020-07.htm"))
-			{
+			} else if (event.equalsIgnoreCase("32020-07.htm")) {
 				st.set("cond", "2");
 				st.playSound("ItemSound.quest_middle");
 			}
-		}
-		else if (npc.getNpcId() == kier && event.equalsIgnoreCase("spawn"))
-		{
+		} else if (npc.getNpcId() == kier && event.equalsIgnoreCase("spawn")) {
 			addSpawn(jinia, 104322, -107669, -3680, 44954, false, 60000);
 			return null;
-		}
-		else if (npc.getNpcId() == jinia && event.equalsIgnoreCase("32760-04.html"))
-		{
+		} else if (npc.getNpcId() == jinia && event.equalsIgnoreCase("32760-04.html")) {
 			st.giveItems(57, 190000);
 			st.addExpAndSp(627000, 50300);
 			st.playSound("ItemSound.quest_finish");
@@ -88,37 +76,27 @@ public class Q10283_RequestOfIceMerchant extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == rafforty)
-		{
-			switch (st.getState())
-			{
+		if (npc.getNpcId() == rafforty) {
+			switch (st.getState()) {
 				case State.CREATED:
 					QuestState prev = player.getQuestState("115_TheOtherSideOfTruth");
-					if (prev != null && prev.getState() == State.COMPLETED && player.getLevel() >= 82)
-					{
+					if (prev != null && prev.getState() == State.COMPLETED && player.getLevel() >= 82) {
 						htmltext = "32020-01.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32020-00.htm";
 					}
 					break;
 				case State.STARTED:
-					if (st.getInt("cond") == 1)
-					{
+					if (st.getInt("cond") == 1) {
 						htmltext = "32020-04.htm";
-					}
-					else if (st.getInt("cond") == 2)
-					{
+					} else if (st.getInt("cond") == 2) {
 						htmltext = "32020-08.htm";
 					}
 					break;
@@ -126,35 +104,27 @@ public class Q10283_RequestOfIceMerchant extends Quest
 					htmltext = "32020-09.htm";
 					break;
 			}
-		}
-		else if (npc.getNpcId() == kier && st.getInt("cond") == 2)
-		{
+		} else if (npc.getNpcId() == kier && st.getInt("cond") == 2) {
 			htmltext = "32022-01.html";
-		}
-		else if (npc.getNpcId() == jinia && st.getInt("cond") == 2)
-		{
+		} else if (npc.getNpcId() == jinia && st.getInt("cond") == 2) {
 			htmltext = "32760-02.html";
 		}
 		return htmltext;
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
-		if (npc.getNpcId() == jinia && st.getInt("cond") == 2)
-		{
+		if (npc.getNpcId() == jinia && st.getInt("cond") == 2) {
 			return "32760-01.html";
 		}
 		return null;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Q10283_RequestOfIceMerchant(10283, qn, "Request of Ice Merchant");
 	}
 }

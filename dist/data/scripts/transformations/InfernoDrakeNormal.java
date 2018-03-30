@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class InfernoDrakeNormal extends L2Transformation
-{
+public class InfernoDrakeNormal extends L2Transformation {
 	private static final int[] SKILLS = {619, 5491, 576, 577, 578, 579};
 
-	public InfernoDrakeNormal()
-	{
+	public InfernoDrakeNormal() {
 		// id, colRadius, colHeight
 		super(214, 15, 24);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 214 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 214 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		// Paw Strike (up to 4 levels)
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(576, 3), false);
 		// Fire Breath (up to 4 levels)
@@ -44,13 +39,11 @@ public class InfernoDrakeNormal extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		// Paw Strike (up to 4 levels)
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(576, 3), false);
 		// Fire Breath (up to 4 levels)
@@ -67,8 +60,7 @@ public class InfernoDrakeNormal extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new InfernoDrakeNormal());
 	}
 }

@@ -20,24 +20,20 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Pere
  */
-public final class RequestFlyMove extends L2GameClientPacket
-{
+public final class RequestFlyMove extends L2GameClientPacket {
 	private int stepId;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		stepId = readD();
 	}
 
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 

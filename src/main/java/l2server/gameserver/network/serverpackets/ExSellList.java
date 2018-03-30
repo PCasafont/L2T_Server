@@ -27,66 +27,52 @@ import java.util.List;
 /**
  * @author ShanSoft
  */
-public class ExSellList extends L2ItemListPacket
-{
+public class ExSellList extends L2ItemListPacket {
 
 	private List<L2TradeItem> buyList = new ArrayList<>();
 	private L2ItemInstance[] sellList = null;
 	private L2ItemInstance[] refundList = null;
 	private boolean done;
 
-	public ExSellList(L2PcInstance player, L2TradeList list, double taxRate, boolean done)
-	{
-		for (L2TradeItem item : list.getItems())
-		{
-			if (item.hasLimitedStock() && item.getCurrentCount() <= 0)
-			{
+	public ExSellList(L2PcInstance player, L2TradeList list, double taxRate, boolean done) {
+		for (L2TradeItem item : list.getItems()) {
+			if (item.hasLimitedStock() && item.getCurrentCount() <= 0) {
 				continue;
 			}
 			buyList.add(item);
 		}
 		sellList = player.getInventory().getAvailableItems(false, true);
-		if (player.hasRefund())
-		{
+		if (player.hasRefund()) {
 			refundList = player.getRefund().getItems();
 		}
 		this.done = done;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(0x00); // GoD ???
 
-		if (sellList != null && sellList.length > 0)
-		{
+		if (sellList != null && sellList.length > 0) {
 			writeH(sellList.length);
-			for (L2ItemInstance item : sellList)
-			{
+			for (L2ItemInstance item : sellList) {
 				writeItem(item);
 
 				writeQ(item.getItem().getSalePrice());
 			}
-		}
-		else
-		{
+		} else {
 			writeH(0x00);
 		}
 
-		if (refundList != null && refundList.length > 0)
-		{
+		if (refundList != null && refundList.length > 0) {
 			writeH(refundList.length);
 			int itemIndex = 0;
-			for (L2ItemInstance item : refundList)
-			{
+			for (L2ItemInstance item : refundList) {
 				writeItem(item);
 
 				writeD(itemIndex++); // Index
 				writeQ(item.getItem().getSalePrice() * item.getCount());
 			}
-		}
-		else
-		{
+		} else {
 			writeH(0x00);
 		}
 

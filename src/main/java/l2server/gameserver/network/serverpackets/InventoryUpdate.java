@@ -44,94 +44,72 @@ import java.util.List;
  * format   h (hh dddhhhd hh)   revision 415 <BR><BR>
  *
  * @version $Revision: 1.3.2.2.2.4 $ $Date: 2005/03/27 15:29:39 $
- *          Rebuild 23.2.2006 by Advi
+ * Rebuild 23.2.2006 by Advi
  */
 
-public class InventoryUpdate extends L2ItemListPacket
-{
-
+public class InventoryUpdate extends L2ItemListPacket {
+	
 	private List<ItemInfo> items;
-
-	public InventoryUpdate()
-	{
+	
+	public InventoryUpdate() {
 		items = new ArrayList<>();
-		if (Config.DEBUG)
-		{
+		if (Config.DEBUG) {
 			showDebug();
 		}
 	}
-
-	public InventoryUpdate(List<ItemInfo> items)
-	{
+	
+	public InventoryUpdate(List<ItemInfo> items) {
 		this.items = items;
-		if (Config.DEBUG)
-		{
+		if (Config.DEBUG) {
 			showDebug();
 		}
 	}
-
-	public void addItem(L2ItemInstance item)
-	{
-		if (item != null)
-		{
+	
+	public void addItem(L2ItemInstance item) {
+		if (item != null) {
 			items.add(new ItemInfo(item));
 		}
 	}
-
-	public void addNewItem(L2ItemInstance item)
-	{
-		if (item != null)
-		{
+	
+	public void addNewItem(L2ItemInstance item) {
+		if (item != null) {
 			items.add(new ItemInfo(item, 1));
 		}
 	}
-
-	public void addModifiedItem(L2ItemInstance item)
-	{
-		if (item != null)
-		{
+	
+	public void addModifiedItem(L2ItemInstance item) {
+		if (item != null) {
 			items.add(new ItemInfo(item, 2));
 		}
 	}
-
-	public void addRemovedItem(L2ItemInstance item)
-	{
-		if (item != null)
-		{
+	
+	public void addRemovedItem(L2ItemInstance item) {
+		if (item != null) {
 			items.add(new ItemInfo(item, 3));
 		}
 	}
-
-	public void addItems(List<L2ItemInstance> items)
-	{
-		if (items != null)
-		{
-			for (L2ItemInstance item : items)
-			{
-				if (item != null)
-				{
+	
+	public void addItems(List<L2ItemInstance> items) {
+		if (items != null) {
+			for (L2ItemInstance item : items) {
+				if (item != null) {
 					this.items.add(new ItemInfo(item));
 				}
 			}
 		}
 	}
-
-	private void showDebug()
-	{
-		for (ItemInfo item : items)
-		{
-			Log.fine("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem().getName() +
-					" last change:" + item.getChange());
+	
+	private void showDebug() {
+		for (ItemInfo item : items) {
+			Log.fine("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem().getName() + " last change:" + item.getChange());
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		int count = items.size();
 		writeH(count);
-		for (ItemInfo item : items)
-		{
+		for (ItemInfo item : items) {
 			writeH(item.getChange()); // Update type : 01-add, 02-modify, 03-remove
 			writeItem(item);
 		}

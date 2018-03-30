@@ -26,23 +26,20 @@ import l2server.gameserver.model.actor.L2Character;
  *
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public class ValidateLocation extends L2GameServerPacket
-{
+public class ValidateLocation extends L2GameServerPacket {
 	private int charObjId;
 	private int x, y, z, heading;
-
-	public ValidateLocation(L2Character cha)
-	{
+	
+	public ValidateLocation(L2Character cha) {
 		charObjId = cha.getObjectId();
 		x = cha.getX();
 		y = cha.getY();
 		z = cha.getZ();
 		heading = cha.getHeading();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(charObjId);
 		writeD(x);
 		writeD(y);

@@ -18,29 +18,26 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author nBd
  */
-public class ExPutEnchantTargetItemResult extends L2GameServerPacket
-{
-
+public class ExPutEnchantTargetItemResult extends L2GameServerPacket {
+	
 	private int result;
-
+	
 	/**
 	 *
 	 */
-	public ExPutEnchantTargetItemResult(int result)
-	{
+	public ExPutEnchantTargetItemResult(int result) {
 		this.result = result;
 	}
 
     /*
 	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
      */
-
+	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(result);
 	}
 }

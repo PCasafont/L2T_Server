@@ -27,47 +27,39 @@ import l2server.gameserver.network.serverpackets.ExPledgeRecruitApplyInfo;
 /**
  * @author Pere
  */
-public final class RequestPledgeRecruitApply extends L2GameClientPacket
-{
+public final class RequestPledgeRecruitApply extends L2GameClientPacket {
 	private int enter;
 	private int clanId;
 	private String application;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		enter = readD();
 		clanId = readD();
 		application = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null || activeChar.getClan() != null)
-		{
+		if (activeChar == null || activeChar.getClan() != null) {
 			return;
 		}
-
-		if (enter == 1)
-		{
-			if (ClanRecruitManager.getInstance().addApplicant(activeChar, clanId, application))
-			{
+		
+		if (enter == 1) {
+			if (ClanRecruitManager.getInstance().addApplicant(activeChar, clanId, application)) {
 				activeChar.sendPacket(new ExPledgeRecruitApplyInfo(2));
 				//activeChar.sendMessage(4039);
 				L2Clan clan = ClanTable.getInstance().getClan(clanId);
-
-				Message msg = new Message(clan.getLeaderId(), "Clan Application",
+				
+				Message msg = new Message(clan.getLeaderId(),
+						"Clan Application",
 						"There's a new applicant for your clan! Check out the clan entry for further information.",
 						SendBySystem.SYSTEM);
 				MailManager.getInstance().sendMessage(msg);
 			}
-		}
-		else
-		{
-			if (ClanRecruitManager.getInstance().removeApplicant(activeChar.getObjectId()))
-			{
+		} else {
+			if (ClanRecruitManager.getInstance().removeApplicant(activeChar.getObjectId())) {
 			}
 			{
 				//activeChar.sendMessage(4040);

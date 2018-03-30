@@ -15,6 +15,7 @@
 
 package ai.individual;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SpawnTable;
@@ -24,25 +25,21 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.util.Util;
 
-import ai.group_template.L2AttackableAIScript;
-
 /**
  * @author LasTravel
- *         <p>
- *         Wisp AI
- *         <p>
- *         Source:
- *         - http://l2wiki.com/Fairy_Settlement
+ * <p>
+ * Wisp AI
+ * <p>
+ * Source:
+ * - http://l2wiki.com/Fairy_Settlement
  */
 
-public class Wisps extends L2AttackableAIScript
-{
+public class Wisps extends L2AttackableAIScript {
 	private static final int wisp = 32915;
 	private static final int largeWisp = 32916;
 	private static final L2Skill healSkill = SkillTable.getInstance().getInfo(14064, 1);
 
-	public Wisps(int id, String name, String descr)
-	{
+	public Wisps(int id, String name, String descr) {
 		super(id, name, descr);
 
 		addSpawnId(wisp);
@@ -54,34 +51,28 @@ public class Wisps extends L2AttackableAIScript
 		addSpellFinishedId(wisp);
 		addSpellFinishedId(largeWisp);
 
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable())
-		{
-			if (spawn == null)
-			{
+		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable()) {
+			if (spawn == null) {
 				continue;
 			}
 
-			if (spawn.getNpcId() == wisp || spawn.getNpcId() == largeWisp)
-			{
+			if (spawn.getNpcId() == wisp || spawn.getNpcId() == largeWisp) {
 				notifySpawn(spawn.getNpc());
 			}
 		}
 	}
 
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
-	{
+	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill) {
 		npc.doDie(null);
 
 		return super.onSpellFinished(npc, player, skill);
 	}
 
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
-		if (!Util.checkIfInRange(500, player, npc, false) || !GeoData.getInstance().canSeeTarget(player, npc) ||
-				player.isDead() || player.isInvul(npc) || player.getPvpFlag() > 0 || player.isFakeDeath())
-		{
+	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet) {
+		if (!Util.checkIfInRange(500, player, npc, false) || !GeoData.getInstance().canSeeTarget(player, npc) || player.isDead() ||
+				player.isInvul(npc) || player.getPvpFlag() > 0 || player.isFakeDeath()) {
 			return super.onAggroRangeEnter(npc, player, isPet);
 		}
 
@@ -92,16 +83,14 @@ public class Wisps extends L2AttackableAIScript
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc)
-	{
+	public final String onSpawn(L2Npc npc) {
 		npc.setIsImmobilized(true);
 		npc.setIsInvul(true);
 
 		return super.onSpawn(npc);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Wisps(-1, "Wisps", "ai");
 	}
 }

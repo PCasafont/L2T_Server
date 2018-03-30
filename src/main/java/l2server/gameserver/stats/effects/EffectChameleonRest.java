@@ -26,87 +26,72 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 import l2server.gameserver.templates.skills.L2EffectType;
 import l2server.gameserver.templates.skills.L2SkillType;
 
-public class EffectChameleonRest extends L2Effect
-{
-	public EffectChameleonRest(Env env, L2EffectTemplate template)
-	{
+public class EffectChameleonRest extends L2Effect {
+	public EffectChameleonRest(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.RELAXING;
 	}
-
+	
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.BUFF;
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
-		if (getEffected() instanceof L2PcInstance)
-		{
+	public boolean onStart() {
+		if (getEffected() instanceof L2PcInstance) {
 			((L2PcInstance) getEffected()).sitDown(false);
-		}
-		else
-		{
+		} else {
 			getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_REST);
 		}
 		return super.onStart();
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		super.onExit();
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
-		if (getEffected().isDead())
-		{
+	public boolean onActionTime() {
+		if (getEffected().isDead()) {
 			return false;
 		}
-
+		
 		// Only cont skills shouldn't end
-		if (getSkill().getSkillType() != L2SkillType.CONT)
-		{
+		if (getSkill().getSkillType() != L2SkillType.CONT) {
 			return false;
 		}
-
-		if (getEffected() instanceof L2PcInstance)
-		{
-			if (!((L2PcInstance) getEffected()).isSitting())
-			{
+		
+		if (getEffected() instanceof L2PcInstance) {
+			if (!((L2PcInstance) getEffected()).isSitting()) {
 				return false;
 			}
 		}
-
+		
 		double manaDam = calc();
-
-		if (manaDam > getEffected().getCurrentMp())
-		{
+		
+		if (manaDam > getEffected().getCurrentMp()) {
 			getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
 			return false;
 		}
-
+		
 		getEffected().reduceCurrentMp(manaDam);
 		return true;
 	}

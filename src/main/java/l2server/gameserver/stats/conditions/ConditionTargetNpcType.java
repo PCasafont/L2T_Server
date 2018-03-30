@@ -21,8 +21,7 @@ import l2server.gameserver.stats.Env;
 /**
  * The Class ConditionTargetNpcType.
  */
-public class ConditionTargetNpcType extends Condition
-{
+public class ConditionTargetNpcType extends Condition {
 
 	private final InstanceType[] npcType;
 
@@ -31,8 +30,7 @@ public class ConditionTargetNpcType extends Condition
 	 *
 	 * @param type the type
 	 */
-	public ConditionTargetNpcType(InstanceType[] type)
-	{
+	public ConditionTargetNpcType(InstanceType[] type) {
 		npcType = type;
 	}
 
@@ -40,10 +38,8 @@ public class ConditionTargetNpcType extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (env.target == null)
-		{
+	public boolean testImpl(Env env) {
+		if (env.target == null) {
 			return false;
 		}
 

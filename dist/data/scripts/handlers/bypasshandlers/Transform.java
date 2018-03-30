@@ -25,80 +25,62 @@ import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
-public class Transform implements IBypassHandler
-{
+public class Transform implements IBypassHandler {
 	private static final String[] COMMANDS = {"transformskilllist", "buytransform", "transformtokukuru"};
-
+	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target)
-	{
-		if (target == null)
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+		if (target == null) {
 			return false;
 		}
-
+		
 		if (command.toLowerCase().startsWith(COMMANDS[0])) // skills list
 		{
-			if (canTransform(activeChar))
-			{
+			if (canTransform(activeChar)) {
 				L2TransformManagerInstance.showTransformSkillList(activeChar);
 				return true;
-			}
-			else
-			{
+			} else {
 				NpcHtmlMessage html = new NpcHtmlMessage(target.getObjectId());
 				html.setFile(activeChar.getHtmlPrefix(), "default/" + target.getNpcId() + "-cantlearn.htm");
 				activeChar.sendPacket(html);
 			}
-		}
-		else if (command.toLowerCase().startsWith(COMMANDS[1]))
-		{
-			if (canTransform(activeChar))
-			{
+		} else if (command.toLowerCase().startsWith(COMMANDS[1])) {
+			if (canTransform(activeChar)) {
 				MultiSell.getInstance().separateAndSend("32323001", activeChar, target, false);
 				return true;
-			}
-			else
-			{
+			} else {
 				NpcHtmlMessage html = new NpcHtmlMessage(target.getObjectId());
 				html.setFile(activeChar.getHtmlPrefix(), "default/" + target.getNpcId() + "-cantbuy.htm");
 				activeChar.sendPacket(html);
 			}
-		}
-		else if (command.toLowerCase().startsWith(COMMANDS[2]))
-		{
-			if (activeChar.isTransformed())
-			{
+		} else if (command.toLowerCase().startsWith(COMMANDS[2])) {
+			if (activeChar.isTransformed()) {
 				return false;
 			}
-
+			
 			activeChar.doSimultaneousCast(SkillTable.getInstance().getInfo(9204, 1));
-
+			
 			QuestState st = activeChar.getQuestState("Q10329_BackupSeekers");
-			if (st != null)
-			{
+			if (st != null) {
 				st.getQuest().notifyEvent("MountKookaru", target, activeChar);
 			}
-
+			
 			return true;
 		}
 		return false;
 	}
-
-	private static boolean canTransform(L2PcInstance player)
-	{
+	
+	private static boolean canTransform(L2PcInstance player) {
 		QuestState st = player.getQuestState("136_MoreThanMeetsTheEye");
-		if (st != null && st.getState() == State.COMPLETED)
-		{
+		if (st != null && st.getState() == State.COMPLETED) {
 			return true;
 		}
-
+		
 		return false;
 	}
-
+	
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

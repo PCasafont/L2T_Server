@@ -15,17 +15,15 @@
 
 package l2server.gameserver.handler;
 
-import l2server.gameserver.templates.item.L2EtcItem;
-
 import gnu.trove.TIntObjectHashMap;
+import l2server.gameserver.templates.item.L2EtcItem;
 
 /**
  * This class manages handlers of items
  *
  * @version $Revision: 1.1.4.3 $ $Date: 2005/03/27 15:30:09 $
  */
-public class ItemHandler
-{
+public class ItemHandler {
 	private TIntObjectHashMap<IItemHandler> datatable;
 
 	/**
@@ -33,8 +31,7 @@ public class ItemHandler
 	 *
 	 * @return ItemHandler
 	 */
-	public static ItemHandler getInstance()
-	{
+	public static ItemHandler getInstance() {
 		return SingletonHolder.instance;
 	}
 
@@ -43,16 +40,14 @@ public class ItemHandler
 	 *
 	 * @return int : Size of the datatable
 	 */
-	public int size()
-	{
+	public int size() {
 		return datatable.size();
 	}
 
 	/**
 	 * Constructor of ItemHandler
 	 */
-	private ItemHandler()
-	{
+	private ItemHandler() {
 		datatable = new TIntObjectHashMap<>();
 	}
 
@@ -64,8 +59,7 @@ public class ItemHandler
 	 *
 	 * @param handler (IItemHandler)
 	 */
-	public void registerItemHandler(IItemHandler handler)
-	{
+	public void registerItemHandler(IItemHandler handler) {
 		datatable.put(handler.getClass().getSimpleName().intern().hashCode(), handler);
 	}
 
@@ -74,18 +68,15 @@ public class ItemHandler
 	 *
 	 * @return IItemHandler
 	 */
-	public IItemHandler getItemHandler(L2EtcItem item)
-	{
-		if (item == null || item.getHandlerName() == null)
-		{
+	public IItemHandler getItemHandler(L2EtcItem item) {
+		if (item == null || item.getHandlerName() == null) {
 			return null;
 		}
 		return datatable.get(item.getHandlerName().hashCode());
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final ItemHandler instance = new ItemHandler();
 	}
 }

@@ -26,41 +26,33 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
  *
  * @version $Revision: 1.2.4.3 $ $Date: 2005/04/11 10:06:02 $
  */
-public class AdminHelpPage implements IAdminCommandHandler
-{
-
+public class AdminHelpPage implements IAdminCommandHandler {
+	
 	private static final String[] ADMIN_COMMANDS = {"admin_help"};
-
+	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-
-		if (command.startsWith("admin_help"))
-		{
-			try
-			{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+		
+		if (command.startsWith("admin_help")) {
+			try {
 				String val = command.substring(11);
 				showHelpPage(activeChar, val);
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
+			} catch (StringIndexOutOfBoundsException e) {
 				//case of empty filename
 			}
 		}
-
+		
 		return true;
 	}
-
+	
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 		return ADMIN_COMMANDS;
 	}
-
+	
 	//FIXME: implement method to send html to player in L2PcInstance directly
 	//PUBLIC & STATIC so other classes from package can include it directly
-	public static void showHelpPage(L2PcInstance targetChar, String filename)
-	{
+	public static void showHelpPage(L2PcInstance targetChar, String filename) {
 		String content = HtmCache.getInstance().getHtmForce(targetChar.getHtmlPrefix(), "admin/" + filename);
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		adminReply.setHtml(content);

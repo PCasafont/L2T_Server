@@ -29,8 +29,7 @@ import java.util.logging.Logger;
 /**
  * @author mkizub
  */
-public class L2AbnormalTemplate
-{
+public class L2AbnormalTemplate {
 	static Logger log = Logger.getLogger(L2AbnormalTemplate.class.getName());
 
 	public final Condition applayCond;
@@ -47,8 +46,16 @@ public class L2AbnormalTemplate
 
 	public L2EffectTemplate[] effects = {};
 
-	public L2AbnormalTemplate(Condition pApplayCond, int pCounter, int pDuration, VisualEffect[] pVisualEffect, String[] pStackType, byte pStackLvl, boolean showicon, double eLandRate, L2AbnormalType eType, int eComboId)
-	{
+	public L2AbnormalTemplate(Condition pApplayCond,
+	                          int pCounter,
+	                          int pDuration,
+	                          VisualEffect[] pVisualEffect,
+	                          String[] pStackType,
+	                          byte pStackLvl,
+	                          boolean showicon,
+	                          double eLandRate,
+	                          L2AbnormalType eType,
+	                          int eComboId) {
 		applayCond = pApplayCond;
 		counter = pCounter;
 		duration = pDuration;
@@ -61,14 +68,10 @@ public class L2AbnormalTemplate
 		comboId = eComboId;
 	}
 
-	public final void attach(L2EffectTemplate effect)
-	{
-		if (effects == null)
-		{
+	public final void attach(L2EffectTemplate effect) {
+		if (effects == null) {
 			effects = new L2EffectTemplate[]{effect};
-		}
-		else
-		{
+		} else {
 			int len = effects.length;
 			L2EffectTemplate[] tmp = new L2EffectTemplate[len + 1];
 			System.arraycopy(effects, 0, tmp, 0, len);
@@ -77,19 +80,16 @@ public class L2AbnormalTemplate
 		}
 	}
 
-	public L2Abnormal getEffect(Env env)
-	{
+	public L2Abnormal getEffect(Env env) {
 		List<L2Effect> list = new ArrayList<>();
-		for (L2EffectTemplate temp : effects)
-		{
+		for (L2EffectTemplate temp : effects) {
 			list.add(temp.getEffect(env));
 		}
 
 		L2Effect[] effs = new L2Effect[list.size()];
 		list.toArray(effs);
 		L2Abnormal abnormal = new L2Abnormal(env, this, effs);
-		for (L2Effect temp : effs)
-		{
+		for (L2Effect temp : effs) {
 			temp.setAbnormal(abnormal);
 		}
 
@@ -103,33 +103,26 @@ public class L2AbnormalTemplate
 	 * @param stolen
 	 * @return
 	 */
-	public L2Abnormal getStolenEffect(Env env, L2Abnormal stolen)
-	{
+	public L2Abnormal getStolenEffect(Env env, L2Abnormal stolen) {
 		List<L2Effect> list = new ArrayList<>();
-		for (L2Effect temp : stolen.getEffects())
-		{
+		for (L2Effect temp : stolen.getEffects()) {
 			list.add(L2EffectTemplate.getStolenEffect(env, temp));
 		}
 
 		L2Effect[] effs = new L2Effect[list.size()];
 		list.toArray(effs);
 		L2Abnormal abnormal = new L2Abnormal(env, this, effs);
-		for (L2Effect temp : effs)
-		{
+		for (L2Effect temp : effs) {
 			temp.setAbnormal(abnormal);
 		}
 
 		return abnormal;
 	}
 
-	public void attach(FuncTemplate f)
-	{
-		if (funcTemplates == null)
-		{
+	public void attach(FuncTemplate f) {
+		if (funcTemplates == null) {
 			funcTemplates = new FuncTemplate[]{f};
-		}
-		else
-		{
+		} else {
 			int len = funcTemplates.length;
 			FuncTemplate[] tmp = new FuncTemplate[len + 1];
 			System.arraycopy(funcTemplates, 0, tmp, 0, len);

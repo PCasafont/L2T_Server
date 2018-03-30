@@ -18,23 +18,20 @@ package l2server.gameserver.network.serverpackets;
 import l2server.gameserver.model.actor.instance.L2AirShipInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-public class ExAirShipStopMove extends L2GameServerPacket
-{
-
+public class ExAirShipStopMove extends L2GameServerPacket {
+	
 	private final int playerId, airShipId, x, y, z;
-
-	public ExAirShipStopMove(L2PcInstance player, L2AirShipInstance ship, int x, int y, int z)
-	{
+	
+	public ExAirShipStopMove(L2PcInstance player, L2AirShipInstance ship, int x, int y, int z) {
 		playerId = player.getObjectId();
 		airShipId = ship.getObjectId();
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(airShipId);
 		writeD(playerId);
 		writeD(x);

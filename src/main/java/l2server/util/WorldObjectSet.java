@@ -37,12 +37,10 @@ import java.util.concurrent.ConcurrentHashMap;
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
 
-public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
-{
+public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T> {
 	private Map<Integer, T> objectMap;
 
-	public WorldObjectSet()
-	{
+	public WorldObjectSet() {
 		objectMap = new ConcurrentHashMap<>();
 	}
 
@@ -50,8 +48,7 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 	 * @see l2server.util.L2ObjectSet#size()
 	 */
 	@Override
-	public int size()
-	{
+	public int size() {
 		return objectMap.size();
 	}
 
@@ -59,8 +56,7 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 	 * @see l2server.util.L2ObjectSet#isEmpty()
 	 */
 	@Override
-	public boolean isEmpty()
-	{
+	public boolean isEmpty() {
 		return objectMap.isEmpty();
 	}
 
@@ -68,8 +64,7 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 	 * @see l2server.util.L2ObjectSet#clear()
 	 */
 	@Override
-	public void clear()
-	{
+	public void clear() {
 		objectMap.clear();
 	}
 
@@ -77,8 +72,7 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 	 * @see l2server.util.L2ObjectSet#put(T)
 	 */
 	@Override
-	public void put(T obj)
-	{
+	public void put(T obj) {
 		objectMap.put(obj.getObjectId(), obj);
 	}
 
@@ -86,8 +80,7 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 	 * @see l2server.util.L2ObjectSet#remove(T)
 	 */
 	@Override
-	public void remove(T obj)
-	{
+	public void remove(T obj) {
 		objectMap.remove(obj.getObjectId());
 	}
 
@@ -95,8 +88,7 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 	 * @see l2server.util.L2ObjectSet#contains(T)
 	 */
 	@Override
-	public boolean contains(T obj)
-	{
+	public boolean contains(T obj) {
 		return objectMap.containsKey(obj.getObjectId());
 	}
 
@@ -104,8 +96,7 @@ public class WorldObjectSet<T extends L2Object> extends L2ObjectSet<T>
 	 * @see l2server.util.L2ObjectSet#iterator()
 	 */
 	@Override
-	public Iterator<T> iterator()
-	{
+	public Iterator<T> iterator() {
 		return objectMap.values().iterator();
 	}
 }

@@ -26,8 +26,7 @@ import java.util.logging.LogRecord;
  *
  * @version $Revision: 1.1.4.2 $ $Date: 2005/03/27 15:30:08 $
  */
-public class ConsoleLogFormatter extends Formatter
-{
+public class ConsoleLogFormatter extends Formatter {
 
 	/*
 	 * (non-Javadoc)
@@ -38,8 +37,7 @@ public class ConsoleLogFormatter extends Formatter
 	private static final String CRLF = "\r\n";
 
 	@Override
-	public String format(LogRecord record)
-	{
+	public String format(LogRecord record) {
 		final StringBuilder output = new StringBuilder(500);
 		// output.append(record.getLevel().getName());
 		// output.append(_);
@@ -47,14 +45,10 @@ public class ConsoleLogFormatter extends Formatter
 		// output.append(_);
 		StringUtil.append(output, record.getMessage(), CRLF);
 
-		if (record.getThrown() != null)
-		{
-			try
-			{
+		if (record.getThrown() != null) {
+			try {
 				StringUtil.append(output, Util.getStackTrace(record.getThrown()), CRLF);
-			}
-			catch (Exception ignored)
-			{
+			} catch (Exception ignored) {
 			}
 		}
 

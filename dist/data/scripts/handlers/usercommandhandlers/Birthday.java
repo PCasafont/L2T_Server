@@ -24,17 +24,14 @@ import java.util.Calendar;
 
 /**
  * @author JIV
- *         Support for /mybirthday command
+ * Support for /mybirthday command
  */
-public class Birthday implements IUserCommandHandler
-{
+public class Birthday implements IUserCommandHandler {
 	private static final int[] COMMAND_IDS = {126};
 
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
-	{
-		if (id != COMMAND_IDS[0])
-		{
+	public boolean useUserCommand(int id, L2PcInstance activeChar) {
+		if (id != COMMAND_IDS[0]) {
 			return false;
 		}
 
@@ -52,8 +49,7 @@ public class Birthday implements IUserCommandHandler
 	}
 
 	@Override
-	public int[] getUserCommandList()
-	{
+	public int[] getUserCommandList() {
 		return COMMAND_IDS;
 	}
 }

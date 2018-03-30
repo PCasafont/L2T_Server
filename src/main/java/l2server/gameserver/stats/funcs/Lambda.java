@@ -20,7 +20,6 @@ import l2server.gameserver.stats.Env;
 /**
  * @author mkizub
  */
-public abstract class Lambda
-{
+public abstract class Lambda {
 	public abstract double calc(Env env);
 }

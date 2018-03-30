@@ -30,31 +30,25 @@ import l2server.util.Rnd;
  * @author Kerberos
  */
 
-public class L2TownPetInstance extends L2Npc
-{
+public class L2TownPetInstance extends L2Npc {
 	int randomX, randomY, spawnX, spawnY;
 
-	public L2TownPetInstance(int objectId, L2NpcTemplate template)
-	{
+	public L2TownPetInstance(int objectId, L2NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2TownPetInstance);
 
-		if (Config.ALLOW_PET_WALKERS)
-		{
+		if (Config.ALLOW_PET_WALKERS) {
 			ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new RandomWalkTask(), 2000, 4000);
 		}
 	}
 
 	@Override
-	public void onAction(L2PcInstance player, boolean interact)
-	{
-		if (!canTarget(player))
-		{
+	public void onAction(L2PcInstance player, boolean interact) {
+		if (!canTarget(player)) {
 			return;
 		}
 
-		if (this != player.getTarget())
-		{
+		if (this != player.getTarget()) {
 			// Set the target of the L2PcInstance player
 			player.setTarget(this);
 
@@ -65,12 +59,9 @@ public class L2TownPetInstance extends L2Npc
 
 			// Send a Server->Client packet ValidateLocation to correct the L2ArtefactInstance position and heading on the client
 			player.sendPacket(new ValidateLocation(this));
-		}
-		else if (interact)
-		{
+		} else if (interact) {
 			// Calculate the distance between the L2PcInstance and the L2NpcInstance
-			if (!canInteract(player))
-			{
+			if (!canInteract(player)) {
 				// Notify the L2PcInstance AI with AI_INTENTION_INTERACT
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, this);
 			}
@@ -80,29 +71,23 @@ public class L2TownPetInstance extends L2Npc
 	}
 
 	@Override
-	public void onSpawn()
-	{
+	public void onSpawn() {
 		super.onSpawn();
 		spawnX = getX();
 		spawnY = getY();
 	}
 
-	public class RandomWalkTask implements Runnable
-	{
+	public class RandomWalkTask implements Runnable {
 		@Override
-		public void run()
-		{
-			if (!isInActiveRegion())
-			{
+		public void run() {
+			if (!isInActiveRegion()) {
 				return; // but rather the AI should be turned off completely..
 			}
 			randomX = spawnX + Rnd.get(2 * 50) - 50;
 			randomY = spawnY + Rnd.get(2 * 50) - 50;
 			setRunning();
-			if (randomX != getX() && randomY != getY())
-			{
-				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-						new L2CharPosition(randomX, randomY, getZ(), 0));
+			if (randomX != getX() && randomY != getY()) {
+				getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(randomX, randomY, getZ(), 0));
 			}
 		}
 	}

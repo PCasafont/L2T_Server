@@ -24,44 +24,37 @@ import java.util.ArrayList;
 /**
  * @author Kerberos
  */
-public class ExChooseInventoryAttributeItem extends L2GameServerPacket
-{
+public class ExChooseInventoryAttributeItem extends L2GameServerPacket {
 	private int itemId;
 	private ArrayList<L2ItemInstance> inventoryItems;
 	private byte attribute;
 	private int level;
 	private long maxCount;
-
-	public ExChooseInventoryAttributeItem(L2PcInstance player, L2ItemInstance item)
-	{
+	
+	public ExChooseInventoryAttributeItem(L2PcInstance player, L2ItemInstance item) {
 		inventoryItems = new ArrayList<>();
 		itemId = item.getItemId();
-		for (L2ItemInstance i : player.getInventory().getItems())
-		{
-			if (i.isEquipable())
-			{
+		for (L2ItemInstance i : player.getInventory().getItems()) {
+			if (i.isEquipable()) {
 				inventoryItems.add(i);
 			}
 		}
 		attribute = Elementals.getItemElement(itemId);
-		if (attribute == Elementals.NONE)
-		{
+		if (attribute == Elementals.NONE) {
 			throw new IllegalArgumentException("Undefined Atribute item: " + item);
 		}
 		level = Elementals.getMaxElementLevel(itemId);
-
+		
 		// Armors have the opposite element
-		if (item.isArmor())
-		{
+		if (item.isArmor()) {
 			attribute = Elementals.getOppositeElement(attribute);
 		}
-
+		
 		maxCount = item.getCount();
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(itemId);
 		writeQ(maxCount); // Maximum items that can be attempted to use
 		// Must be 0x01 for stone/crystal attribute type
@@ -73,8 +66,7 @@ public class ExChooseInventoryAttributeItem extends L2GameServerPacket
 		writeD(attribute == Elementals.DARK ? 1 : 0); // Unholy
 		writeD(level); // Item max attribute level
 		writeD(inventoryItems.size()); //equipable items count
-		for (L2ItemInstance item : inventoryItems)
-		{
+		for (L2ItemInstance item : inventoryItems) {
 			writeD(item.getObjectId());
 		}
 	}

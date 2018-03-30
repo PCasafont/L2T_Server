@@ -29,8 +29,7 @@ import l2server.util.Rnd;
  * *
  * * 2010-08-19 Based on Freya PTS
  */
-public class Q463_IMustBeaGenius extends Quest
-{
+public class Q463_IMustBeaGenius extends Quest {
 	private static final String qn = "463_IMustBeaGenius";
 	private static final int gutenhagen = 32069;
 	private static final int _corpse_log = 15510;
@@ -38,20 +37,16 @@ public class Q463_IMustBeaGenius extends Quest
 	private static final int[] mobs = {22801, 22802, 22804, 22805, 22807, 22808, 22809, 22810, 22811, 22812};
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == gutenhagen)
-		{
-			if (event.equalsIgnoreCase("32069-03.htm"))
-			{
+		if (npc.getNpcId() == gutenhagen) {
+			if (event.equalsIgnoreCase("32069-03.htm")) {
 				st.playSound("ItemSound.quest_accept");
 				st.setState(State.STARTED);
 				st.set("cond", "1");
@@ -59,11 +54,9 @@ public class Q463_IMustBeaGenius extends Quest
 				int number = Rnd.get(500, 600);
 				st.set("number", String.valueOf(number));
 				// Set drop for mobs
-				for (int mob : mobs)
-				{
+				for (int mob : mobs) {
 					int rand = Rnd.get(-2, 4);
-					if (rand == 0)
-					{
+					if (rand == 0) {
 						rand = 5;
 					}
 					st.set(String.valueOf(mob), String.valueOf(rand));
@@ -72,19 +65,14 @@ public class Q463_IMustBeaGenius extends Quest
 				st.set(String.valueOf(mobs[Rnd.get(0, mobs.length - 1)]), String.valueOf(Rnd.get(1, 100)));
 				htmltext = getHtm(st.getPlayer().getHtmlPrefix(), "32069-03.htm");
 				htmltext = htmltext.replace("%num%", String.valueOf(number));
-			}
-			else if (event.equalsIgnoreCase("32069-05.htm"))
-			{
+			} else if (event.equalsIgnoreCase("32069-05.htm")) {
 				htmltext = getHtm(st.getPlayer().getHtmlPrefix(), "32069-05.htm");
 				htmltext = htmltext.replace("%num%", st.get("number"));
-			}
-			else if (event.equalsIgnoreCase("32069-07.htm"))
-			{
+			} else if (event.equalsIgnoreCase("32069-07.htm")) {
 				st.addExpAndSp(317961, 25427);
 				st.unset("cond");
 				st.unset("number");
-				for (int mob : mobs)
-				{
+				for (int mob : mobs) {
 					st.unset(String.valueOf(mob));
 				}
 				st.takeItems(collection, -1);
@@ -96,36 +84,26 @@ public class Q463_IMustBeaGenius extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == gutenhagen)
-		{
-			switch (st.getState())
-			{
+		if (npc.getNpcId() == gutenhagen) {
+			switch (st.getState()) {
 				case State.CREATED:
-					if (player.getLevel() >= 70)
-					{
+					if (player.getLevel() >= 70) {
 						htmltext = "32069-01.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "32069-00.htm";
 					}
 					break;
 				case State.STARTED:
-					if (st.getInt("cond") == 1)
-					{
+					if (st.getInt("cond") == 1) {
 						htmltext = "32069-04.htm";
-					}
-					else if (st.getInt("cond") == 2)
-					{
+					} else if (st.getInt("cond") == 2) {
 						htmltext = "32069-06.htm";
 					}
 					break;
@@ -138,36 +116,33 @@ public class Q463_IMustBeaGenius extends Quest
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			return null;
 		}
 
-		if (st.getState() == State.STARTED && st.getInt("cond") == 1 && Util.contains(mobs, npc.getNpcId()))
-		{
+		if (st.getState() == State.STARTED && st.getInt("cond") == 1 && Util.contains(mobs, npc.getNpcId())) {
 			int _day_number = st.getInt("number");
 			int number = st.getInt(String.valueOf(npc.getNpcId()));
 
-			if (number > 0)
-			{
+			if (number > 0) {
 				st.giveItems(_corpse_log, number);
 				st.playSound("ItemSound.quest_itemget");
-				npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(),
+				npc.broadcastPacket(new NpcSay(npc.getObjectId(),
+						0,
+						npc.getNpcId(),
 						"Att... attack... " + player.getName() + "... Ro... rogue... " + number + ".."));
-			}
-			else if (number < 0 && st.getQuestItemsCount(_corpse_log) + number > 0)
-			{
+			} else if (number < 0 && st.getQuestItemsCount(_corpse_log) + number > 0) {
 				st.takeItems(_corpse_log, Math.abs(number));
 				st.playSound("ItemSound.quest_itemget");
-				npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(),
+				npc.broadcastPacket(new NpcSay(npc.getObjectId(),
+						0,
+						npc.getNpcId(),
 						"Att... attack... " + player.getName() + "... Ro... rogue... " + number + ".."));
 			}
 
-			if (st.getQuestItemsCount(_corpse_log) == _day_number)
-			{
+			if (st.getQuestItemsCount(_corpse_log) == _day_number) {
 				st.takeItems(_corpse_log, -1);
 				st.giveItems(collection, 1);
 				st.set("cond", "2");
@@ -176,20 +151,17 @@ public class Q463_IMustBeaGenius extends Quest
 		return null;
 	}
 
-	public Q463_IMustBeaGenius(int questId, String name, String descr)
-	{
+	public Q463_IMustBeaGenius(int questId, String name, String descr) {
 		super(questId, name, descr);
 
 		addStartNpc(gutenhagen);
 		addTalkId(gutenhagen);
-		for (int mob : mobs)
-		{
+		for (int mob : mobs) {
 			addKillId(mob);
 		}
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Q463_IMustBeaGenius(463, qn, "I Must Be a Genius");
 	}
 }

@@ -25,114 +25,89 @@ import l2server.log.Log;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class ItemsAutoDestroy
-{
+public class ItemsAutoDestroy {
 	protected List<L2ItemInstance> items = null;
 	protected static long sleep;
 
-	private ItemsAutoDestroy()
-	{
+	private ItemsAutoDestroy() {
 		Log.info("Initializing ItemsAutoDestroy.");
 		items = new CopyOnWriteArrayList<>();
 		sleep = Config.AUTODESTROY_ITEM_AFTER * 1000;
-		if (sleep ==
-				0) // it should not happend as it is not called when AUTODESTROY_ITEM_AFTER = 0 but we never know..
+		if (sleep == 0) // it should not happend as it is not called when AUTODESTROY_ITEM_AFTER = 0 but we never know..
 		{
 			sleep = 3600000;
 		}
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new CheckItemsForDestroy(), 5000, 5000);
 	}
 
-	public static ItemsAutoDestroy getInstance()
-	{
+	public static ItemsAutoDestroy getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	public synchronized void addItem(L2ItemInstance item)
-	{
+	public synchronized void addItem(L2ItemInstance item) {
 		item.setDropTime(System.currentTimeMillis());
 		items.add(item);
 	}
 
-	public synchronized void removeItems()
-	{
-		if (Config.DEBUG)
-		{
+	public synchronized void removeItems() {
+		if (Config.DEBUG) {
 			Log.info("[ItemsAutoDestroy] : " + items.size() + " items to check.");
 		}
 
-		if (items.isEmpty())
-		{
+		if (items.isEmpty()) {
 			return;
 		}
 
 		long curtime = System.currentTimeMillis();
-		for (L2ItemInstance item : items)
-		{
-			if (item == null || item.getDropTime() == 0 || item.getLocation() != L2ItemInstance.ItemLocation.VOID)
-			{
+		for (L2ItemInstance item : items) {
+			if (item == null || item.getDropTime() == 0 || item.getLocation() != L2ItemInstance.ItemLocation.VOID) {
 				items.remove(item);
-			}
-			else
-			{
-				if (item.getItem().getAutoDestroyTime() > 0)
-				{
-					if (curtime - item.getDropTime() > item.getItem().getAutoDestroyTime())
-					{
+			} else {
+				if (item.getItem().getAutoDestroyTime() > 0) {
+					if (curtime - item.getDropTime() > item.getItem().getAutoDestroyTime()) {
 						L2World.getInstance().removeVisibleObject(item, item.getWorldRegion());
 						L2World.getInstance().removeObject(item);
 						items.remove(item);
-						if (Config.SAVE_DROPPED_ITEM)
-						{
+						if (Config.SAVE_DROPPED_ITEM) {
 							ItemsOnGroundManager.getInstance().removeObject(item);
 						}
 					}
 				}
 
-				if (item.getItemType() == L2EtcItemType.HERB)
-				{
-					if (curtime - item.getDropTime() > Config.HERB_AUTO_DESTROY_TIME * 1000)
-					{
+				if (item.getItemType() == L2EtcItemType.HERB) {
+					if (curtime - item.getDropTime() > Config.HERB_AUTO_DESTROY_TIME * 1000) {
 						L2World.getInstance().removeVisibleObject(item, item.getWorldRegion());
 						L2World.getInstance().removeObject(item);
 						items.remove(item);
-						if (Config.SAVE_DROPPED_ITEM)
-						{
+						if (Config.SAVE_DROPPED_ITEM) {
 							ItemsOnGroundManager.getInstance().removeObject(item);
 						}
 					}
-				}
-				else if (curtime - item.getDropTime() > sleep)
-				{
+				} else if (curtime - item.getDropTime() > sleep) {
 					L2World.getInstance().removeVisibleObject(item, item.getWorldRegion());
 					L2World.getInstance().removeObject(item);
 					items.remove(item);
-					if (Config.SAVE_DROPPED_ITEM)
-					{
+					if (Config.SAVE_DROPPED_ITEM) {
 						ItemsOnGroundManager.getInstance().removeObject(item);
 					}
 				}
 			}
 		}
 
-		if (Config.DEBUG)
-		{
+		if (Config.DEBUG) {
 			Log.info("[ItemsAutoDestroy] : " + items.size() + " items remaining.");
 		}
 	}
 
-	protected class CheckItemsForDestroy extends Thread
-	{
+	protected class CheckItemsForDestroy extends Thread {
 		@Override
-		public void run()
-		{
+		public void run() {
 			removeItems();
 		}
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final ItemsAutoDestroy instance = new ItemsAutoDestroy();
 	}
 }

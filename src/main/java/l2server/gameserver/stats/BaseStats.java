@@ -26,8 +26,7 @@ import java.util.NoSuchElementException;
 /**
  * @author DS
  */
-public enum BaseStats
-{
+public enum BaseStats {
 	STR(new STR()),
 	INT(new INT()),
 	DEX(new DEX()),
@@ -50,33 +49,26 @@ public enum BaseStats
 
 	private final BaseStat stat;
 
-	public final String getValue()
-	{
+	public final String getValue() {
 		return stat.getClass().getSimpleName();
 	}
 
-	BaseStats(BaseStat s)
-	{
+	BaseStats(BaseStat s) {
 		stat = s;
 	}
 
-	public final double calcBonus(L2Character actor)
-	{
-		if (actor != null)
-		{
+	public final double calcBonus(L2Character actor) {
+		if (actor != null) {
 			return stat.calcBonus(actor);
 		}
 
 		return 1;
 	}
 
-	public static BaseStats valueOfXml(String name)
-	{
+	public static BaseStats valueOfXml(String name) {
 		name = name.intern();
-		for (BaseStats s : values())
-		{
-			if (s.getValue().equalsIgnoreCase(name))
-			{
+		for (BaseStats s : values()) {
+			if (s.getValue().equalsIgnoreCase(name)) {
 				return s;
 			}
 		}
@@ -84,87 +76,68 @@ public enum BaseStats
 		throw new NoSuchElementException("Unknown name '" + name + "' for enum BaseStats");
 	}
 
-	private interface BaseStat
-	{
+	private interface BaseStat {
 		double calcBonus(L2Character actor);
 	}
 
-	private static final class STR implements BaseStat
-	{
+	private static final class STR implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor)
-		{
+		public final double calcBonus(L2Character actor) {
 			return STRbonus[actor.getSTR() - 1];
 		}
 	}
 
-	private static final class INT implements BaseStat
-	{
+	private static final class INT implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor)
-		{
+		public final double calcBonus(L2Character actor) {
 			return INTbonus[actor.getINT() - 1];
 		}
 	}
 
-	private static final class DEX implements BaseStat
-	{
+	private static final class DEX implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor)
-		{
+		public final double calcBonus(L2Character actor) {
 			return DEXbonus[actor.getDEX() - 1];
 		}
 	}
 
-	private static final class WIT implements BaseStat
-	{
+	private static final class WIT implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor)
-		{
+		public final double calcBonus(L2Character actor) {
 			return WITbonus[actor.getWIT() - 1];
 		}
 	}
 
-	private static final class CON implements BaseStat
-	{
+	private static final class CON implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor)
-		{
+		public final double calcBonus(L2Character actor) {
 			return CONbonus[actor.getCON() - 1];
 		}
 	}
 
-	private static final class MEN implements BaseStat
-	{
+	private static final class MEN implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor)
-		{
+		public final double calcBonus(L2Character actor) {
 			return MENbonus[actor.getMEN() - 1];
 		}
 	}
 
-	private static final class LUC implements BaseStat
-	{
+	private static final class LUC implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor)
-		{
+		public final double calcBonus(L2Character actor) {
 			return LUCbonus[actor.getLUC() - 1];
 		}
 	}
 
-	private static final class CHA implements BaseStat
-	{
+	private static final class CHA implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor)
-		{
+		public final double calcBonus(L2Character actor) {
 			return CHAbonus[actor.getCHA() - 1];
 		}
 	}
 
-	static
-	{
-		for (int i = 0; i < MAX_STAT_VALUE; i++)
-		{
+	static {
+		for (int i = 0; i < MAX_STAT_VALUE; i++) {
 			STRbonus[i] = 1.0;
 			INTbonus[i] = 1.0;
 			CONbonus[i] = 1.0;
@@ -177,22 +150,17 @@ public enum BaseStats
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/statBonus.xml");
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode n : doc.getChildren())
-		{
-			if (!n.getName().equalsIgnoreCase("stat"))
-			{
+		for (XmlNode n : doc.getChildren()) {
+			if (!n.getName().equalsIgnoreCase("stat")) {
 				continue;
 			}
 
-			for (XmlNode bonusNode : n.getChildren())
-			{
-				if (!bonusNode.getName().equalsIgnoreCase("bonus"))
-				{
+			for (XmlNode bonusNode : n.getChildren()) {
+				if (!bonusNode.getName().equalsIgnoreCase("bonus")) {
 					continue;
 				}
 
-				switch (n.getString("name"))
-				{
+				switch (n.getString("name")) {
 					case "STR":
 						STRbonus[bonusNode.getInt("id") - 1] = bonusNode.getDouble("val");
 						break;

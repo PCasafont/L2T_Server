@@ -21,14 +21,12 @@ import l2server.gameserver.stats.Env;
 /**
  * @author DS
  */
-public class ConditionTargetPlayable extends Condition
-{
+public class ConditionTargetPlayable extends Condition {
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
+	public boolean testImpl(Env env) {
 		return env.target instanceof L2Playable;
 	}
 }

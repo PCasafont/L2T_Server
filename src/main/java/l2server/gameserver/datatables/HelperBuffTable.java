@@ -32,8 +32,7 @@ import java.util.List;
  * Author: Ayor
  */
 
-public class HelperBuffTable
-{
+public class HelperBuffTable {
 	/**
 	 * The table containing all Buff of the Newbie Helper
 	 */
@@ -57,16 +56,14 @@ public class HelperBuffTable
 
 	private int servitorHighestLevel = 1;
 
-	public static HelperBuffTable getInstance()
-	{
+	public static HelperBuffTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	/**
 	 * Create and Load the Newbie Helper Buff list from SQL Table helper_buff_list
 	 */
-	private HelperBuffTable()
-	{
+	private HelperBuffTable() {
 		helperBuff = new ArrayList<>();
 		restoreHelperBuffData();
 	}
@@ -74,66 +71,53 @@ public class HelperBuffTable
 	/**
 	 * Read and Load the Newbie Helper Buff list from SQL Table helper_buff_list
 	 */
-	private void restoreHelperBuffData()
-	{
+	private void restoreHelperBuffData() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "helperBuffTable.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-for (XmlNode d : doc.getChildren())
-        {
-            if (d.getName().equalsIgnoreCase("buff"))
-            {
-                StatsSet helperBuffDat = new StatsSet();
-                helperBuffDat.set("skillID", d.getInt("skillId"));
-                helperBuffDat.set("skillLevel", d.getInt("skillLevel"));
-                int lowerLevel = d.getInt("lowerLevel");
-                helperBuffDat.set("lowerLevel", lowerLevel);
-                int upperLevel = d.getInt("upperLevel");
-                helperBuffDat.set("upperLevel", upperLevel);
-                boolean isMagicClass = d.getBool("isMagic");
-                helperBuffDat.set("isMagicClass", isMagicClass);
-                boolean forSummon = d.getBool("forSummon");
-                helperBuffDat.set("forSummon", forSummon);
+		for (XmlNode d : doc.getChildren()) {
+			if (d.getName().equalsIgnoreCase("buff")) {
+				StatsSet helperBuffDat = new StatsSet();
+				helperBuffDat.set("skillID", d.getInt("skillId"));
+				helperBuffDat.set("skillLevel", d.getInt("skillLevel"));
+				int lowerLevel = d.getInt("lowerLevel");
+				helperBuffDat.set("lowerLevel", lowerLevel);
+				int upperLevel = d.getInt("upperLevel");
+				helperBuffDat.set("upperLevel", upperLevel);
+				boolean isMagicClass = d.getBool("isMagic");
+				helperBuffDat.set("isMagicClass", isMagicClass);
+				boolean forSummon = d.getBool("forSummon");
+				helperBuffDat.set("forSummon", forSummon);
 
-                if (!isMagicClass)
-                {
-                    if (lowerLevel < physicClassLowestLevel)
-                    {
-                        physicClassLowestLevel = lowerLevel;
-                    }
+				if (!isMagicClass) {
+					if (lowerLevel < physicClassLowestLevel) {
+						physicClassLowestLevel = lowerLevel;
+					}
 
-                    if (upperLevel > physicClassHighestLevel)
-                    {
-                        physicClassHighestLevel = upperLevel;
-                    }
-                }
-                else
-                {
-                    if (lowerLevel < magicClassLowestLevel)
-                    {
-                        magicClassLowestLevel = lowerLevel;
-                    }
+					if (upperLevel > physicClassHighestLevel) {
+						physicClassHighestLevel = upperLevel;
+					}
+				} else {
+					if (lowerLevel < magicClassLowestLevel) {
+						magicClassLowestLevel = lowerLevel;
+					}
 
-                    if (upperLevel > magicClassHighestLevel)
-                    {
-                        magicClassHighestLevel = upperLevel;
-                    }
-                }
-                if (forSummon)
-                {
-                    if (lowerLevel < servitorLowestLevel)
-                    {
-                        servitorLowestLevel = lowerLevel;
-                    }
+					if (upperLevel > magicClassHighestLevel) {
+						magicClassHighestLevel = upperLevel;
+					}
+				}
+				if (forSummon) {
+					if (lowerLevel < servitorLowestLevel) {
+						servitorLowestLevel = lowerLevel;
+					}
 
-                    if (upperLevel > servitorHighestLevel)
-                    {
-                        servitorHighestLevel = upperLevel;
-                    }
-                }
-                L2HelperBuff template = new L2HelperBuff(helperBuffDat);
-                helperBuff.add(template);
-            }
+					if (upperLevel > servitorHighestLevel) {
+						servitorHighestLevel = upperLevel;
+					}
+				}
+				L2HelperBuff template = new L2HelperBuff(helperBuffDat);
+				helperBuff.add(template);
+			}
 		}
 		Log.info("HelperBuffTable: Loaded: " + helperBuff.size() + " buffs!");
 	}
@@ -141,62 +125,54 @@ for (XmlNode d : doc.getChildren())
 	/**
 	 * Return the Helper Buff List
 	 */
-	public List<L2HelperBuff> getHelperBuffTable()
-	{
+	public List<L2HelperBuff> getHelperBuffTable() {
 		return helperBuff;
 	}
 
 	/**
 	 * @return Returns the magicClassHighestLevel.
 	 */
-	public int getMagicClassHighestLevel()
-	{
+	public int getMagicClassHighestLevel() {
 		return magicClassHighestLevel;
 	}
 
 	/**
 	 * @return Returns the magicClassLowestLevel.
 	 */
-	public int getMagicClassLowestLevel()
-	{
+	public int getMagicClassLowestLevel() {
 		return magicClassLowestLevel;
 	}
 
 	/**
 	 * @return Returns the physicClassHighestLevel.
 	 */
-	public int getPhysicClassHighestLevel()
-	{
+	public int getPhysicClassHighestLevel() {
 		return physicClassHighestLevel;
 	}
 
 	/**
 	 * @return Returns the physicClassLowestLevel.
 	 */
-	public int getPhysicClassLowestLevel()
-	{
+	public int getPhysicClassLowestLevel() {
 		return physicClassLowestLevel;
 	}
 
 	/**
 	 * @return Returns the servitorLowestLevel.
 	 */
-	public int getServitorLowestLevel()
-	{
+	public int getServitorLowestLevel() {
 		return servitorLowestLevel;
 	}
 
 	/**
 	 * @return Returns the servitorHighestLevel.
 	 */
-	public int getServitorHighestLevel()
-	{
+	public int getServitorHighestLevel() {
 		return servitorHighestLevel;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final HelperBuffTable instance = new HelperBuffTable();
 	}
 }

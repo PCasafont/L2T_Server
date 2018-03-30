@@ -23,24 +23,20 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Erb
  */
-public class PcPosition extends CharPosition
-{
+public class PcPosition extends CharPosition {
 	// =========================================================
 	// Constructor
-	public PcPosition(L2PcInstance activeObject)
-	{
+	public PcPosition(L2PcInstance activeObject) {
 		super(activeObject);
 	}
 
 	@Override
-	public L2PcInstance getActiveObject()
-	{
+	public L2PcInstance getActiveObject() {
 		return (L2PcInstance) super.getActiveObject();
 	}
 
 	@Override
-	protected void badCoords()
-	{
+	protected void badCoords() {
 		getActiveObject().teleToLocation(0, 0, 0, false);
 		getActiveObject().sendMessage("Error with your coords, Please ask a GM for help!");
 	}

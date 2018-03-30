@@ -21,21 +21,18 @@ package l2server.gameserver.network.serverpackets;
  * @author godson
  * @version $Revision: 1.4.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
-public class ExOlympiadMode extends L2GameServerPacket
-{
+public class ExOlympiadMode extends L2GameServerPacket {
 	// chc
 	private int mode;
-
+	
 	/**
 	 */
-	public ExOlympiadMode(int mode)
-	{
+	public ExOlympiadMode(int mode) {
 		this.mode = mode;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeC(mode);
 	}
 }

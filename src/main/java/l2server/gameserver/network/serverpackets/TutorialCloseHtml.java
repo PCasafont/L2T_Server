@@ -15,11 +15,9 @@
 
 package l2server.gameserver.network.serverpackets;
 
-public class TutorialCloseHtml extends L2GameServerPacket
-{
-
+public class TutorialCloseHtml extends L2GameServerPacket {
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 	}
 }

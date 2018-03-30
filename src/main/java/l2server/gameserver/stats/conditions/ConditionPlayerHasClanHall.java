@@ -26,8 +26,7 @@ import java.util.ArrayList;
  *
  * @author MrPoke
  */
-public final class ConditionPlayerHasClanHall extends Condition
-{
+public final class ConditionPlayerHasClanHall extends Condition {
 	private final ArrayList<Integer> clanHall;
 
 	/**
@@ -35,8 +34,7 @@ public final class ConditionPlayerHasClanHall extends Condition
 	 *
 	 * @param clanHall the clan hall
 	 */
-	public ConditionPlayerHasClanHall(ArrayList<Integer> clanHall)
-	{
+	public ConditionPlayerHasClanHall(ArrayList<Integer> clanHall) {
 		this.clanHall = clanHall;
 	}
 
@@ -48,27 +46,22 @@ public final class ConditionPlayerHasClanHall extends Condition
 	 * @see l2server.gameserver.stats.conditions.Condition#testImpl(l2server.gameserver.stats.Env)
 	 */
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 
 		L2Clan clan = ((L2PcInstance) env.player).getClan();
-		if (clan == null)
-		{
+		if (clan == null) {
 			return clanHall.size() == 1 && clanHall.get(0) == 0;
 		}
 
-		if (env.player.isGM())
-		{
+		if (env.player.isGM()) {
 			return true;
 		}
 
 		// All Clan Hall
-		if (clanHall.size() == 1 && clanHall.get(0) == -1)
-		{
+		if (clanHall.size() == 1 && clanHall.get(0) == -1) {
 			return clan.getHasHideout() > 0;
 		}
 

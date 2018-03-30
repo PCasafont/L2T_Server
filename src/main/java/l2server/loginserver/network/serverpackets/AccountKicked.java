@@ -18,40 +18,34 @@ package l2server.loginserver.network.serverpackets;
 /**
  * @author KenM
  */
-public final class AccountKicked extends L2LoginServerPacket
-{
-	public enum AccountKickedReason
-	{
+public final class AccountKicked extends L2LoginServerPacket {
+	public enum AccountKickedReason {
 		REASON_DATA_STEALER(0x01),
 		REASON_GENERIC_VIOLATION(0x08),
 		REASON_7_DAYS_SUSPENDED(0x10),
 		REASON_PERMANENTLY_BANNED(0x20);
-
+		
 		private final int code;
-
-		AccountKickedReason(int code)
-		{
+		
+		AccountKickedReason(int code) {
 			this.code = code;
 		}
-
-		public final int getCode()
-		{
+		
+		public final int getCode() {
 			return code;
 		}
 	}
-
+	
 	private AccountKickedReason reason;
-
-	public AccountKicked(AccountKickedReason reason)
-	{
+	
+	public AccountKicked(AccountKickedReason reason) {
 		this.reason = reason;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void write()
-	{
+	protected void write() {
 		writeC(0x02);
 		writeD(reason.getCode());
 	}

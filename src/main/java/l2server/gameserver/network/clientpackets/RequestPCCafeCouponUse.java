@@ -21,21 +21,18 @@ import l2server.log.Log;
  * Format: (ch) S
  *
  * @author -Wooden-
- *         TODO: GodKratos: This packet is wrong in Gracia Final!!
+ * TODO: GodKratos: This packet is wrong in Gracia Final!!
  */
-public final class RequestPCCafeCouponUse extends L2GameClientPacket
-{
+public final class RequestPCCafeCouponUse extends L2GameClientPacket {
 	private String str;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		str = readS();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		Log.info("C5: RequestPCCafeCouponUse: S: " + str);
 	}
 }

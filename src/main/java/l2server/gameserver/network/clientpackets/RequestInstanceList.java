@@ -17,20 +17,16 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.network.serverpackets.ExInstanceList;
 
-public final class RequestInstanceList extends L2GameClientPacket
-{
+public final class RequestInstanceList extends L2GameClientPacket {
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 
 	}
 
 	@Override
-	protected void runImpl()
-	{
-		if (getClient().getActiveChar() == null)
-		{
+	protected void runImpl() {
+		if (getClient().getActiveChar() == null) {
 			return;
 		}
 

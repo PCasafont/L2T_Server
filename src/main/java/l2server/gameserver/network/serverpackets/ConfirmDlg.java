@@ -30,10 +30,9 @@ import java.util.ArrayList;
 
 /**
  * @author kombat
- *         Format: cd d[d s/d/dd/ddd]
+ * Format: cd d[d s/d/dd/ddd]
  */
-public class ConfirmDlg extends L2GameServerPacket
-{
+public class ConfirmDlg extends L2GameServerPacket {
 	private int messageId;
 
 	private int skillLvL = 1;
@@ -50,118 +49,96 @@ public class ConfirmDlg extends L2GameServerPacket
 	private int time = 0;
 	private int requesterId = 0;
 
-	private static class CnfDlgData
-	{
+	private static class CnfDlgData {
 		protected final int type;
 		protected final Object value;
 
-		protected CnfDlgData(int t, Object val)
-		{
+		protected CnfDlgData(int t, Object val) {
 			type = t;
 			value = val;
 		}
 	}
 
-	public ConfirmDlg(int messageId)
-	{
+	public ConfirmDlg(int messageId) {
 		this.messageId = messageId;
 	}
 
-	public ConfirmDlg(SystemMessageId messageId)
-	{
-        this.messageId = messageId.getId();
+	public ConfirmDlg(SystemMessageId messageId) {
+		this.messageId = messageId.getId();
 	}
 
-	public ConfirmDlg addString(String text)
-	{
+	public ConfirmDlg addString(String text) {
 		info.add(new CnfDlgData(TYPE_TEXT, text));
 		return this;
 	}
 
-	public ConfirmDlg addNumber(int number)
-	{
+	public ConfirmDlg addNumber(int number) {
 		info.add(new CnfDlgData(TYPE_NUMBER, number));
 		return this;
 	}
 
-	public ConfirmDlg addCharName(L2Character cha)
-	{
-		if (cha instanceof L2Npc)
-		{
+	public ConfirmDlg addCharName(L2Character cha) {
+		if (cha instanceof L2Npc) {
 			return addNpcName((L2Npc) cha);
 		}
-		if (cha instanceof L2PcInstance)
-		{
+		if (cha instanceof L2PcInstance) {
 			return addPcName((L2PcInstance) cha);
 		}
-		if (cha instanceof L2Summon)
-		{
+		if (cha instanceof L2Summon) {
 			return addNpcName((L2Summon) cha);
 		}
 		return addString(cha.getName());
 	}
 
-	public ConfirmDlg addPcName(L2PcInstance pc)
-	{
+	public ConfirmDlg addPcName(L2PcInstance pc) {
 		return addString(pc.getAppearance().getVisibleName());
 	}
 
-	public ConfirmDlg addNpcName(L2Npc npc)
-	{
+	public ConfirmDlg addNpcName(L2Npc npc) {
 		return addNpcName(npc.getTemplate());
 	}
 
-	public ConfirmDlg addNpcName(L2Summon npc)
-	{
+	public ConfirmDlg addNpcName(L2Summon npc) {
 		return addNpcName(npc.getNpcId());
 	}
 
-	public ConfirmDlg addNpcName(L2NpcTemplate tpl)
-	{
-		if (tpl.isCustom())
-		{
+	public ConfirmDlg addNpcName(L2NpcTemplate tpl) {
+		if (tpl.isCustom()) {
 			return addString(tpl.Name);
 		}
 		return addNpcName(tpl.NpcId);
 	}
 
-	public ConfirmDlg addNpcName(int id)
-	{
+	public ConfirmDlg addNpcName(int id) {
 		info.add(new CnfDlgData(TYPE_NPC_NAME, id));
 		return this;
 	}
 
-	public ConfirmDlg addItemName(L2ItemInstance item)
-	{
+	public ConfirmDlg addItemName(L2ItemInstance item) {
 		return addItemName(item.getItem().getItemId());
 	}
 
-	public ConfirmDlg addItemName(L2Item item)
-	{
+	public ConfirmDlg addItemName(L2Item item) {
 		// TODO: template id for items
 		return addItemName(item.getItemId());
 	}
 
-	public ConfirmDlg addItemName(int id)
-	{
+	public ConfirmDlg addItemName(int id) {
 		info.add(new CnfDlgData(TYPE_ITEM_NAME, id));
 		return this;
 	}
 
-	public ConfirmDlg addZoneName(int x, int y, int z)
-	{
+	public ConfirmDlg addZoneName(int x, int y, int z) {
 		Integer[] coord = {x, y, z};
 		info.add(new CnfDlgData(TYPE_ZONE_NAME, coord));
 		return this;
 	}
 
-	public ConfirmDlg addSkillName(L2Abnormal effect)
-	{
+	public ConfirmDlg addSkillName(L2Abnormal effect) {
 		return addSkillName(effect.getSkill());
 	}
 
-	public ConfirmDlg addSkillName(L2Skill skill)
-	{
+	public ConfirmDlg addSkillName(L2Skill skill) {
 		if (skill.getId() != skill.getDisplayId()) //custom skill -  need nameId or smth like this.
 		{
 			return addString(skill.getName());
@@ -169,51 +146,41 @@ public class ConfirmDlg extends L2GameServerPacket
 		return addSkillName(skill.getId(), skill.getLevelHash());
 	}
 
-	public ConfirmDlg addSkillName(int id)
-	{
+	public ConfirmDlg addSkillName(int id) {
 		return addSkillName(id, 1);
 	}
 
-	public ConfirmDlg addSkillName(int id, int lvl)
-	{
+	public ConfirmDlg addSkillName(int id, int lvl) {
 		info.add(new CnfDlgData(TYPE_SKILL_NAME, id));
 		skillLvL = lvl;
 		return this;
 	}
 
-	public ConfirmDlg addTime(int time)
-	{
+	public ConfirmDlg addTime(int time) {
 		this.time = time;
 		return this;
 	}
 
-	public ConfirmDlg addRequesterId(int id)
-	{
+	public ConfirmDlg addRequesterId(int id) {
 		requesterId = id;
 		return this;
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(messageId);
 
-		if (info.isEmpty())
-		{
+		if (info.isEmpty()) {
 			writeD(0x00);
 			writeD(time);
 			writeD(requesterId);
-		}
-		else
-		{
+		} else {
 			writeD(info.size());
 
-			for (CnfDlgData data : info)
-			{
+			for (CnfDlgData data : info) {
 				writeD(data.type);
 
-				switch (data.type)
-				{
+				switch (data.type) {
 					case TYPE_TEXT:
 						writeS((String) data.value);
 						break;
@@ -234,12 +201,10 @@ public class ConfirmDlg extends L2GameServerPacket
 						break;
 				}
 			}
-			if (time != 0)
-			{
+			if (time != 0) {
 				writeD(time);
 			}
-			if (requesterId != 0)
-			{
+			if (requesterId != 0) {
 				writeD(requesterId);
 			}
 		}

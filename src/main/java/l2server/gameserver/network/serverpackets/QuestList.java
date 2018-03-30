@@ -36,29 +36,24 @@ import l2server.gameserver.model.quest.QuestState;
  *
  * @version $Revision: 1.4.2.2.2.2 $ $Date: 2005/02/10 16:44:28 $
  */
-public class QuestList extends L2GameServerPacket
-{
+public class QuestList extends L2GameServerPacket {
 	private Quest[] quests;
 	private L2PcInstance activeChar;
 
-	public QuestList()
-	{
+	public QuestList() {
 
 	}
 
 	@Override
-	public void runImpl()
-	{
-		if (getClient() != null && getClient().getActiveChar() != null)
-		{
+	public void runImpl() {
+		if (getClient() != null && getClient().getActiveChar() != null) {
 			activeChar = getClient().getActiveChar();
 			quests = activeChar.getAllActiveQuests();
 		}
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		/*
           This text was wrote by XaKa
           QuestList packet structure:
@@ -90,38 +85,29 @@ public class QuestList extends L2GameServerPacket
           the 10th but the 6th and 9th are not to be shown at all (not completed, either).
          */
 
-		if (quests != null)
-		{
+		if (quests != null) {
 			writeH(quests.length);
-			for (Quest q : quests)
-			{
+			for (Quest q : quests) {
 				writeD(q.getQuestIntId());
 				QuestState qs = activeChar.getQuestState(q.getName());
-				if (qs == null)
-				{
+				if (qs == null) {
 					writeD(0);
 					continue;
 				}
 
 				int states = qs.getInt("__compltdStateFlags");
-				if (states != 0)
-				{
+				if (states != 0) {
 					writeD(states);
-				}
-				else
-				{
+				} else {
 					writeD(qs.getInt("cond"));
 				}
 			}
-		}
-		else
-		{
+		} else {
 			// write empty size
 			writeH(0x00);
 		}
 
-		for (GlobalQuest q : GlobalQuest.values())
-		{
+		for (GlobalQuest q : GlobalQuest.values()) {
 			writeD(activeChar.getGlobalQuestState(q));
 		}
 	}

@@ -44,32 +44,27 @@ import java.util.List;
  *
  * @author l3x
  */
-public class ExShowSeedInfo extends L2GameServerPacket
-{
+public class ExShowSeedInfo extends L2GameServerPacket {
 	private List<SeedProduction> seeds;
 	private int manorId;
-
-	public ExShowSeedInfo(int manorId, List<SeedProduction> seeds)
-	{
+	
+	public ExShowSeedInfo(int manorId, List<SeedProduction> seeds) {
 		this.manorId = manorId;
 		this.seeds = seeds;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{ // Id
+	protected final void writeImpl() { // Id
 		writeH(0x24); // SubId
 		writeC(0);
 		writeD(manorId); // Manor ID
 		writeD(0);
-		if (seeds == null)
-		{
+		if (seeds == null) {
 			writeD(0);
 			return;
 		}
 		writeD(seeds.size());
-		for (SeedProduction seed : seeds)
-		{
+		for (SeedProduction seed : seeds) {
 			writeD(seed.getId()); // Seed id
 			writeQ(seed.getCanProduce()); // Left to buy
 			writeQ(seed.getStartProduce()); // Started amount

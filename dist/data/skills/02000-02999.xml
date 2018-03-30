@@ -1133,7 +1133,7 @@
 		<set name="neutral" val="true" />
 	</skill>
 	<skill id="2097" levels="3" name="Sowing">
-		<table name="#mpConsume">4 6 8		</table>
+		<table name="#mpConsume">4 6 8</table>
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="SOW" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1894,8 +1894,8 @@
 		</for>
 	</skill>
 	<skill id="2166" levels="2" name="Greater CP Potion">
-		<table name="#power">50 200		</table>
-		<table name="#name">CP Potion;Greater CP Potion		</table>
+		<table name="#power">50 200</table>
+		<table name="#name">CP Potion;Greater CP Potion</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="COMBATPOINTHEAL" />
@@ -1911,7 +1911,7 @@
 		</for>
 	</skill>
 	<skill id="2167" levels="4" name="SP Scroll">
-		<table name="#power">500 5000 100000 500000		</table>
+		<table name="#power">500 5000 100000 500000</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="GIVE_SP" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1929,7 +1929,7 @@
 	</skill>
 	<!-- Blessing which grants an exemption from the death penalty if you are killed by Boss/Raid Monsters. Effect 1. -->
 	<skill id="2168" levels="6" name="Lucky Charm">
-		<table name="#abnormalLvl">1 2 3 4 5 6		</table>
+		<table name="#abnormalLvl">1 2 3 4 5 6</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -1948,9 +1948,9 @@
 	</skill>
 	<!-- Increases Casting Spd. Effect 2. -->
 	<skill id="2169" levels="2" name="Greater Magic Haste Potion">
-		<table name="#mAtkSpd">23 30		</table>
-		<table name="#abnormalLvl">2 3		</table>
-		<table name="#name">Magic Haste Potion;Greater Magic Haste Potion		</table>
+		<table name="#mAtkSpd">23 30</table>
+		<table name="#abnormalLvl">2 3</table>
+		<table name="#name">Magic Haste Potion;Greater Magic Haste Potion</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -2004,7 +2004,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="5922,1,2.5;5923,1,2.5;5924,1,2.5;5925,1,2.5;5926,1,2.5;5927,1,2.5;5928,1,2.5;5929,1,2.5;5930,1,2.5;5931,1,2.5;5932,1,2.5;5933,1,2.5;5934,1,2.5;5935,1,2.5;5936,1,2.5;5937,1,2.5;5938,1,2.5;5939,1,2.5;5940,1,2.5;5941,1,2.5;5942,1,25;5943,1,25" />
+		<set name="capsuled_items_skill"
+			 val="5922,1,2.5;5923,1,2.5;5924,1,2.5;5925,1,2.5;5926,1,2.5;5927,1,2.5;5928,1,2.5;5929,1,2.5;5930,1,2.5;5931,1,2.5;5932,1,2.5;5933,1,2.5;5934,1,2.5;5935,1,2.5;5936,1,2.5;5937,1,2.5;5938,1,2.5;5939,1,2.5;5940,1,2.5;5941,1,2.5;5942,1,25;5943,1,25" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -2019,7 +2020,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="5945,1,5;5946,1,5;5947,1,5;5948,1,5;5949,1,5;5950,1,5;5951,1,5;5952,1,5;5953,1,5;5954,1,5;5942,1,25;5943,1,25" />
+		<set name="capsuled_items_skill"
+			 val="5945,1,5;5946,1,5;5947,1,5;5948,1,5;5949,1,5;5950,1,5;5951,1,5;5952,1,5;5953,1,5;5954,1,5;5942,1,25;5943,1,25" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -2032,7 +2034,8 @@
 	<skill id="2174" levels="3" name="Ingredient Bag">
 		<table name="#extractableItems">6019,2,30;6013,2,30;6014,1,20;6016,1,20
 			6017,2,10;6020,2,20;6014,1,35;6016,1,35
-			6012,1,20;6018,2,20;6019,2,20;6013,1,40		</table>
+			6012,1,20;6018,2,20;6019,2,20;6013,1,40
+		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -2199,8 +2202,11 @@
 			6908,6,41.6;6915,1,33.28
 			6908,12,15;6913,1,18;6920,8,24
 			6908,8,39.68;6911,2,37.2
-			6908,12,26.5;6915,1,42.4		</table>
-		<table name="#name">Small Green Nimble Fish;Small Green Ugly Fish;Small Green Fat Fish;Green Nimble Fish;Green;            Ugly Fish;Green Fat Fish;Large Green Nimble;Fish;Large Green Ugly Fish;Large Green Fat Fish;        		</table>
+			6908,12,26.5;6915,1,42.4
+		</table>
+		<table name="#name">Small Green Nimble Fish;Small Green Ugly Fish;Small Green Fat Fish;Green Nimble Fish;Green; Ugly Fish;Green Fat Fish;Large
+			Green Nimble;Fish;Large Green Ugly Fish;Large Green Fat Fish;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2225,8 +2231,11 @@
 			6908,12,35.5;6915,2,28.4
 			6908,12,24.3332;6913,2,16.6856;6920,16,19.4667
 			6908,16,30;6911,4,28.125
-			6908,12,38.5;6915,2,30.8		</table>
-		<table name="#name">Small Jade Nimble Fish;Small Jade Ugly Fish;Small Jade Fat Fish;Jade Nimble Fish;Jade Ugly;            Fish;Jade Fat Fish;Large Jade Nimble;Fish;Large Jade Ugly Fish;Large Jade Fat Fish;        		</table>
+			6908,12,38.5;6915,2,30.8
+		</table>
+		<table name="#name">Small Jade Nimble Fish;Small Jade Ugly Fish;Small Jade Fat Fish;Jade Nimble Fish;Jade Ugly; Fish;Jade Fat Fish;Large Jade
+			Nimble;Fish;Large Jade Ugly Fish;Large Jade Fat Fish;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2251,8 +2260,11 @@
 			6904,1,2.52;6908,16,16.8;6909,4,12.6;6915,4,14
 			6904,1,2.04;6908,14,14.5716;6909,4,13.6;6913,2,10.2;6920,16,13.6001
 			6904,1,2.0688;6908,10,19.7028;6909,2,16.5504;6911,4,12.9301;6921,4,13.7922
-			6904,1,2.61;6908,16,17.4;6909,4,13.05;6915,4,14.5		</table>
-		<table name="#name">Small Blue Nimble Fish;Small Blue Ugly Fish;Small Blue Fat Fish;Blue Nimble Fish;Blue Ugly;            Fish;Blue Fat Fish;Large Blue Nimble;Fish;Large Blue Ugly Fish;Large Blue Fat Fish;        		</table>
+			6904,1,2.61;6908,16,17.4;6909,4,13.05;6915,4,14.5
+		</table>
+		<table name="#name">Small Blue Nimble Fish;Small Blue Ugly Fish;Small Blue Fat Fish;Blue Nimble Fish;Blue Ugly; Fish;Blue Fat Fish;Large Blue
+			Nimble;Fish;Large Blue Ugly Fish;Large Blue Fat Fish;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2277,8 +2289,11 @@
 			6904,1,3.408;6908,16,22.72;6909,4,17.04;6915,4,18.9334
 			6904,1,2.784;6908,14,19.8856;6909,4,18.56;6913,2,13.92;6920,16,18.5599
 			6904,1,2.8512;6908,20,13.5772;6909,4,11.4049;6911,4,17.8201;6921,4,19.0082
-			6904,1,3.648;6908,16,24.3198;6909,4,18.2399;6915,4,20.2666		</table>
-		<table name="#name">Small Yellow Nimble Fish;Small Yellow Ugly Fish;Small Yellow Fat Fish;Yellow Nimble;            Fish;Yellow Ugly Fish;Yellow Fat Fish;Large Yellow;Nimble Fish;Large Yellow Ugly Fish;Large Yellow Fat Fish;        		</table>
+			6904,1,3.648;6908,16,24.3198;6909,4,18.2399;6915,4,20.2666
+		</table>
+		<table name="#name">Small Yellow Nimble Fish;Small Yellow Ugly Fish;Small Yellow Fat Fish;Yellow Nimble; Fish;Yellow Ugly Fish;Yellow Fat
+			Fish;Large Yellow;Nimble Fish;Large Yellow Ugly Fish;Large Yellow Fat Fish;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2303,8 +2318,11 @@
 			7697,1,6.336;6910,1,25.344;6916,4,23.4666
 			7698,1,6.528;6910,1,26.112;6914,2,16.3201
 			7686,1,6.72;6910,2,13.44;6912,8,18.6667
-			7697,1,6.864;6910,1,27.456;6916,4,25.4222		</table>
-		<table name="#name">Small Orange Nimble Fish;Small Orange Ugly Fish;Small Orange Fat Fish;Orange Nimble;            Fish;Orange Ugly Fish;Orange Fat Fish;Large Orange;Nimble Fish;Large Orange Ugly Fish;Large Orange Fat Fish;        		</table>
+			7697,1,6.864;6910,1,27.456;6916,4,25.4222
+		</table>
+		<table name="#name">Small Orange Nimble Fish;Small Orange Ugly Fish;Small Orange Fat Fish;Orange Nimble; Fish;Orange Ugly Fish;Orange Fat
+			Fish;Large Orange;Nimble Fish;Large Orange Ugly Fish;Large Orange Fat Fish;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2329,8 +2347,11 @@
 			7697,1,8.72;6910,2,17.44;6916,4,32.2964
 			7685,1,5.3328;7698,1,5.3328;6907,1,5.3328;6910,2,14.2208;6914,2,13.3321
 			7686,1,6.798;6905,1,6.798;6910,2,13.596;6912,8,18.8833
-			7697,1,6.942;6906,1,6.942;6910,2,13.884;6916,8,12.8555		</table>
-		<table name="#name">Small Purple Nimble Fish;Small Purple Ugly Fish;Small Purple Fat Fish;Purple Nimble;            Fish;Purple Ugly Fish;Purple Fat Fish;Large Purple;Nimble Fish;Large Purple Ugly Fish;Large Purple Fat Fish;        		</table>
+			7697,1,6.942;6906,1,6.942;6910,2,13.884;6916,8,12.8555
+		</table>
+		<table name="#name">Small Purple Nimble Fish;Small Purple Ugly Fish;Small Purple Fat Fish;Purple Nimble; Fish;Purple Ugly Fish;Purple Fat
+			Fish;Large Purple;Nimble Fish;Large Purple Ugly Fish;Large Purple Fat Fish;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2355,8 +2376,11 @@
 			7697,1,8.412;6906,1,8.412;6910,2,16.824;6916,8,15.5778
 			7685,1,7.5696;7698,1,7.5696;6907,1,7.5696;6910,4,10.0928;6914,2,18.9236
 			7686,1,9.648;6905,1,9.648;6910,2,19.296;6912,8,21.44
-			7697,1,10.29;6906,1,10.29;6910,2,20.58;6916,8,19.0555		</table>
-		<table name="#name">Small Red Nimble Fish;Small Red Ugly Fish;Small Red Fat Fish;Red Nimble Fish;Red Ugly;            Fish;Red Fat Fish;Large Red Nimble Fish;Large Red;Ugly Fish;Large Red Fat Fish;        		</table>
+			7697,1,10.29;6906,1,10.29;6910,2,20.58;6916,8,19.0555
+		</table>
+		<table name="#name">Small Red Nimble Fish;Small Red Ugly Fish;Small Red Fat Fish;Red Nimble Fish;Red Ugly; Fish;Red Fat Fish;Large Red Nimble
+			Fish;Large Red;Ugly Fish;Large Red Fat Fish;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2381,8 +2405,11 @@
 			7697,1,11.538;6906,1,11.538;6910,2,23.076;6916,8,17.0936
 			7685,1,9.4128;7698,1,9.4128;6907,1,9.4128;6910,4,12.5504;6914,4,11.7658
 			7686,1,12;6905,1,12;6910,2,24;6912,16,13.3334
-			7697,1,12.234;6906,1,12.234;6910,2,24.468;6916,8,18.1248		</table>
-		<table name="#name">Small White Nimble Fish;Small White Ugly Fish;Small White Fat Fish;White Nimble Fish;White;            Ugly Fish;White Fat Fish;Large White Nimble;Fish;Large White Ugly Fish;Large White Fat Fish;        		</table>
+			7697,1,12.234;6906,1,12.234;6910,2,24.468;6916,8,18.1248
+		</table>
+		<table name="#name">Small White Nimble Fish;Small White Ugly Fish;Small White Fat Fish;White Nimble Fish;White; Ugly Fish;White Fat Fish;Large
+			White Nimble;Fish;Large White Ugly Fish;Large White Fat Fish;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2407,8 +2434,11 @@
 			7697,1,14.418;6906,1,14.418;6910,4,14.418;6916,8,21.36
 			7685,1,11.7696;7698,1,11.7696;6907,1,11.7696;6910,4,12.554;6914,4,14.7122
 			7686,2,10.008;6905,1,15.0121;6910,4,15.0121;6912,16,16.6802
-			7697,2,10.208;6906,1,15.3121;6910,4,15.3121;6916,8,22.6844		</table>
-		<table name="#name">Small Black Nimble Fish;Small Black Ugly Fish;Small Black Fat Fish;Black Nimble Fish;Black;            Ugly Fish;Black Fat Fish;Large Black Nimble;Fish;Large Black Ugly Fish;Large Black Fat Fish;        		</table>
+			7697,2,10.208;6906,1,15.3121;6910,4,15.3121;6916,8,22.6844
+		</table>
+		<table name="#name">Small Black Nimble Fish;Small Black Ugly Fish;Small Black Fat Fish;Black Nimble Fish;Black; Ugly Fish;Black Fat Fish;Large
+			Black Nimble;Fish;Large Black Ugly Fish;Large Black Fat Fish;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2427,8 +2457,9 @@
 	<skill id="2199" levels="3" name="Large Green Treasure Chest">
 		<table name="#extractableItems">6908,12,30.6;7609,8,48.96
 			6908,12,41.6;7609,16,33.28
-			6908,24,26.5;7609,26,24.2284		</table>
-		<table name="#name">Small Green Treasure Chest;Green Treasure Chest;Large Green Treasure Chest		</table>
+			6908,24,26.5;7609,26,24.2284
+		</table>
+		<table name="#name">Small Green Treasure Chest;Green Treasure Chest;Large Green Treasure Chest</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2447,8 +2478,9 @@
 	<skill id="2200" levels="3" name="Large Jade Treasure Chest">
 		<table name="#extractableItems">6908,24,28.5;7609,26,26.0572
 			6908,24,31.5;7609,26,28.8
-			6908,24,34.5;7609,26,31.5428		</table>
-		<table name="#name">Small Jade Treasure Chest;Jade Treasure Chest;Large Jade Treasure Chest		</table>
+			6908,24,34.5;7609,26,31.5428
+		</table>
+		<table name="#name">Small Jade Treasure Chest;Jade Treasure Chest;Large Jade Treasure Chest</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2467,8 +2499,9 @@
 	<skill id="2201" levels="3" name="Large Blue Treasure Chest">
 		<table name="#extractableItems">6908,24,39.5;7609,26,36.1144
 			6904,1,5.028;6908,28,17.957;6909,8,16.76;7609,30,16.76
-			6904,1,5.22;6908,28,18.6428;6909,8,17.3999;7609,30,17.4		</table>
-		<table name="#name">Small Blue Treasure Chest;Blue Treasure Chest;Large Blue Treasure Chest		</table>
+			6904,1,5.22;6908,28,18.6428;6909,8,17.3999;7609,30,17.4
+		</table>
+		<table name="#name">Small Blue Treasure Chest;Blue Treasure Chest;Large Blue Treasure Chest</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2487,8 +2520,9 @@
 	<skill id="2202" levels="3" name="Large Yellow Treasure Chest">
 		<table name="#extractableItems">6904,1,5.424;6908,28,19.3714;6909,8,18.0799;7609,30,18.08
 			6904,1,6.816;6908,28,24.3428;6909,8,22.7199;7609,30,22.72
-			6904,1,7.296;6908,56,13.0286;6909,14,10.8088;7609,30,24.32		</table>
-		<table name="#name">Small Yellow Treasure Chest;Yellow Treasure Chest;Large Yellow Treasure Chest		</table>
+			6904,1,7.296;6908,56,13.0286;6909,14,10.8088;7609,30,24.32
+		</table>
+		<table name="#name">Small Yellow Treasure Chest;Yellow Treasure Chest;Large Yellow Treasure Chest</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2507,8 +2541,9 @@
 	<skill id="2203" levels="3" name="Large Orange Treasure Chest">
 		<table name="#extractableItems">6904,1,7.788;6908,56,13.9072;6909,14,11.5376;7609,60,12.98
 			6910,3,50.688
-			6910,3,54.912		</table>
-		<table name="#name">Small Orange Treasure Chest;Orange Treasure Chest;Large Orange Treasure Chest		</table>
+			6910,3,54.912
+		</table>
+		<table name="#name">Small Orange Treasure Chest;Orange Treasure Chest;Large Orange Treasure Chest</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2527,8 +2562,9 @@
 	<skill id="2204" levels="3" name="Large Purple Treasure Chest">
 		<table name="#extractableItems">6910,3,58.24
 			6910,3,69.76
-			6910,3,74.048		</table>
-		<table name="#name">Small Purple Treasure Chest;Purple Treasure Chest;Large Purple Treasure Chest		</table>
+			6910,3,74.048
+		</table>
+		<table name="#name">Small Purple Treasure Chest;Purple Treasure Chest;Large Purple Treasure Chest</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2547,8 +2583,9 @@
 	<skill id="2205" levels="3" name="Large Red Treasure Chest">
 		<table name="#extractableItems">6910,3,84.864
 			6910,3,89.728
-			6910,6,54.88		</table>
-		<table name="#name">Small Red Treasure Chest;Red Treasure Chest;Large Red Treasure Chest		</table>
+			6910,6,54.88
+		</table>
+		<table name="#name">Small Red Treasure Chest;Red Treasure Chest;Large Red Treasure Chest</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2567,8 +2604,9 @@
 	<skill id="2206" levels="3" name="Large White Treasure Chest">
 		<table name="#extractableItems">6910,6,58.048
 			6910,6,61.536
-			6910,6,65.248		</table>
-		<table name="#name">Small White Treasure Chest;White Treasure Chest;Large White Treasure Chest		</table>
+			6910,6,65.248
+		</table>
+		<table name="#name">Small White Treasure Chest;White Treasure Chest;Large White Treasure Chest</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2587,8 +2625,9 @@
 	<skill id="2207" levels="3" name="Large Black Treasure Chest">
 		<table name="#extractableItems">6910,6,69.312
 			6910,6,76.896
-			6910,6,81.664		</table>
-		<table name="#name">Small Black Treasure Chest;Black Treasure Chest;Large Black Treasure Chest		</table>
+			6910,6,81.664
+		</table>
+		<table name="#name">Small Black Treasure Chest;Black Treasure Chest;Large Black Treasure Chest</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2651,8 +2690,15 @@
 			87326,-143370,-1319
 			149800,-79999,-5568
 			107946,-52280,-2408
-			-118092,46955,342		</table>
-		<table name="#name">Scroll of Escape: Talking Island Village;Scroll of Escape: Elven Village;Scroll of Escape:;            Dark Elf Village;Scroll of Escape: Orc;Village;Scroll of Escape: Dwarven Village;Scroll of Escape: Gludin;            Village;Scroll of Escape: Town of Gludio;Scroll of Escape:;Town of Dion;Scroll of Escape: Floran;            Village;Scroll of Escape: Town of Giran;Scroll of Escape: Hardin's Academy;Scroll of;Escape: Heine;Scroll of;            Escape: Town of Oren;Scroll of Escape: Ivory Tower;Scroll of Escape: Hunter's Village;Scroll of Escape:;Town;            of Aden;Scroll of Escape: Town of Goddard;Scroll of Escape: Town of Rune;Scroll of Escape: Town of;           ;Schuttgart;Scroll of Escape: Ketra Orc Village;Scroll of Escape: Varka Silenos Village;Scroll of Escape:;            Kamael Village;       		</table>
+			-118092,46955,342
+		</table>
+		<table name="#name">Scroll of Escape: Talking Island Village;Scroll of Escape: Elven Village;Scroll of Escape:; Dark Elf Village;Scroll of
+			Escape: Orc;Village;Scroll of Escape: Dwarven Village;Scroll of Escape: Gludin; Village;Scroll of Escape: Town of Gludio;Scroll of
+			Escape:;Town of Dion;Scroll of Escape: Floran; Village;Scroll of Escape: Town of Giran;Scroll of Escape: Hardin's Academy;Scroll
+			of;Escape: Heine;Scroll of; Escape: Town of Oren;Scroll of Escape: Ivory Tower;Scroll of Escape: Hunter's Village;Scroll of Escape:;Town;
+			of Aden;Scroll of Escape: Town of Goddard;Scroll of Escape: Town of Rune;Scroll of Escape: Town of; ;Schuttgart;Scroll of Escape: Ketra
+			Orc Village;Scroll of Escape: Varka Silenos Village;Scroll of Escape:; Kamael Village;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="TELEPORT" />
@@ -2672,9 +2718,13 @@
 			0,0,0
 			0,0,0
 			0,0,0
-			83378,147999,-3400		</table>
-		<table name="#hitTime">20000 20000 20000 20000 20000 20000 0 0 0 20000		</table>
-		<table name="#name">Scroll of Escape: Talking Island Village;Scroll of Escape: Elven Village;Scroll of Escape:;            Dark Elf Village;Scroll of Escape: Orc;Village;Scroll of Escape: Dwarven Village;Scroll of Escape: Kamael;            Village;Scroll of Escape: Talking Island Village;Scroll of;Escape: Talking Island Village;Scroll of Escape:;            Talking Island Village;Scroll of Escape: Town of Giran;        		</table>
+			83378,147999,-3400
+		</table>
+		<table name="#hitTime">20000 20000 20000 20000 20000 20000 0 0 0 20000</table>
+		<table name="#name">Scroll of Escape: Talking Island Village;Scroll of Escape: Elven Village;Scroll of Escape:; Dark Elf Village;Scroll of
+			Escape: Orc;Village;Scroll of Escape: Dwarven Village;Scroll of Escape: Kamael; Village;Scroll of Escape: Talking Island Village;Scroll
+			of;Escape: Talking Island Village;Scroll of Escape:; Talking Island Village;Scroll of Escape: Town of Giran;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="TELEPORT" />
@@ -2688,8 +2738,10 @@
 		<table name="#extractableItems">57,100000,8;3456,1,10;3454,1,5.5;3455,1,5.5;3448,1,17.6;3449,1,17;3446,1,18;3468,1,18.4
 			57,100000,7.5;3456,1,6;3454,1,7;3455,1,7.4;3448,1,10;3449,1,22;3446,1,19.6;3468,1,20.4
 			57,100000,12;3456,1,10;3470,1,12;3454,1,6;3455,1,6.5;3450,1,10;3452,1,19.5;3447,1,24
-			57,100000,19;3456,1,10;3470,1,5.9;3454,1,4;3455,1,6.5;3450,1,10;3452,1,19.6;3447,1,25		</table>
-		<table name="#name">Chest Caught with Wind Bait;Chest Caught with Icy Air Bait;Chest Caught with Earth;            Bait;Chest Caught with Flaming Bait;        		</table>
+			57,100000,19;3456,1,10;3470,1,5.9;3454,1,4;3455,1,6.5;3450,1,10;3452,1,19.6;3447,1,25
+		</table>
+		<table name="#name">Chest Caught with Wind Bait;Chest Caught with Icy Air Bait;Chest Caught with Earth; Bait;Chest Caught with Flaming Bait;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE" />
@@ -2706,7 +2758,7 @@
 		</for>
 	</skill>
 	<skill id="2216" levels="4" name="Special Fish 4">
-		<table name="#name">Special Fish 1;Special Fish 2;Special Fish 3;Special Fish 4		</table>
+		<table name="#name">Special Fish 1;Special Fish 2;Special Fish 3;Special Fish 4</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE" />
@@ -2727,8 +2779,11 @@
 			6706,1,8.5;6710,1,8.5;6714,1,8.5;6703,1,8.5;6704,1,8.5;6708,1,8.5;6709,1,8.5;6712,1,8.5;6713,1,8.5;6705,1,8.5;13099,1,8.5;57,292000,15
 			6702,1,20;6701,1,20;6707,1,20;6711,1,20;57,93000,20
 			6857,1,8.5;6859,1,8.5;6867,1,8.5;6869,1,8.5;6875,1,8.5;6877,1,8.5;6861,1,8.5;13100,1,8.5;6863,1,8.5;6871,1,8.5;6879,1,8.5;57,340000,15
-			6855,1,20;6853,1,20;6865,1,20;6873,1,20;57,850000,20		</table>
-		<table name="#name">Looted Goods - White Cargo Box;Looted Goods - Blue Cargo Box;Looted Goods - Yellow Cargo;            Box;Looted Goods - Red Document Box;Looted;Goods - Purple Document Box;        		</table>
+			6855,1,20;6853,1,20;6865,1,20;6873,1,20;57,850000,20
+		</table>
+		<table name="#name">Looted Goods - White Cargo Box;Looted Goods - Blue Cargo Box;Looted Goods - Yellow Cargo; Box;Looted Goods - Red Document
+			Box;Looted;Goods - Purple Document Box;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE" />
@@ -2747,8 +2802,9 @@
 	<skill id="2218" levels="3" name="Booty - Grey Pouch">
 		<table name="#extractableItems">1882,3,20;1876,6,16;1879,3,12;1881,1,12;1880,4,10;1874,1,10;1875,3,10;1877,3,10
 			4039,4,20;4043,4,20;4044,4,20;4040,2,15;4042,2,15;4041,1,10
-			1060,1,39;1061,1,11.8;1539,1,32.2;1540,1,3;735,1,7;6035,1,7		</table>
-		<table name="#name">Booty - Yellow Pouch;Booty - Brown Pouch;Booty - Grey Pouch		</table>
+			1060,1,39;1061,1,11.8;1539,1,32.2;1540,1,3;735,1,7;6035,1,7
+		</table>
+		<table name="#name">Booty - Yellow Pouch;Booty - Brown Pouch;Booty - Grey Pouch</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE" />
@@ -2766,8 +2822,9 @@
 	</skill>
 	<skill id="2219" levels="2" name="Looted Goods - Grey Pouch">
 		<table name="#extractableItems">1882,20,18;1876,20,16;1879,20,10;1881,20,10;1880,20,5;1874,20,10;1875,20,10;1877,20,11;57,150000,10
-			4039,4,20;4043,4,20;4044,4,20;4040,4,10;4042,4,10;4041,4,10;57,160000,10		</table>
-		<table name="#name">Looted Goods - Brown Pouch;Looted Goods - Grey Pouch		</table>
+			4039,4,20;4043,4,20;4044,4,20;4040,4,10;4042,4,10;4041,4,10;57,160000,10
+		</table>
+		<table name="#name">Looted Goods - Brown Pouch;Looted Goods - Grey Pouch</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE" />
@@ -2792,8 +2849,12 @@
 			6908,3,83.2
 			6908,3,90.4
 			6908,3,99.2
-			6908,6,53.2		</table>
-		<table name="#name">Small Green Nimble Fish (Novice);Small Green Ugly Fish (Novice);Small Green Fat Fish;            (Novice);Green Nimble Fish (Novice);Green Ugly Fish;(Novice);Green Fat Fish (Novice);Large Green Nimble Fish;            (Novice);Large Green Ugly Fish (Novice);Large Green Fat Fish (Novice); ;      		</table>
+			6908,6,53.2
+		</table>
+		<table name="#name">Small Green Nimble Fish (Novice);Small Green Ugly Fish (Novice);Small Green Fat Fish; (Novice);Green Nimble Fish
+			(Novice);Green Ugly Fish;(Novice);Green Fat Fish (Novice);Large Green Nimble Fish; (Novice);Large Green Ugly Fish (Novice);Large Green Fat
+			Fish (Novice); ;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2818,8 +2879,11 @@
 			6908,6,66
 			6908,6,65.6
 			6908,6,65.6
-			6908,6,65.2		</table>
-		<table name="#name">Small Jade Nimble Fish (Novice);Small Jade Ugly Fish (Novice);Small Jade Fat Fish;            (Novice);Jade Nimble Fish (Novice);Jade Ugly Fish;(Novice);Jade Fat Fish (Novice);Large Jade Nimble Fish;            (Novice);Large Jade Ugly Fish (Novice);Large Jade Fat Fish (Novice);     ;  		</table>
+			6908,6,65.2
+		</table>
+		<table name="#name">Small Jade Nimble Fish (Novice);Small Jade Ugly Fish (Novice);Small Jade Fat Fish; (Novice);Jade Nimble Fish (Novice);Jade
+			Ugly Fish;(Novice);Jade Fat Fish (Novice);Large Jade Nimble Fish; (Novice);Large Jade Ugly Fish (Novice);Large Jade Fat Fish (Novice); ;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2844,8 +2908,11 @@
 			6904,1,1.68;6908,6,27.9998;6909,2,16.7998
 			6904,1,1.704;6908,6,28.3998;6909,2,17.0398
 			6904,1,1.728;6908,6,28.7998;6909,2,17.2798
-			6904,1,1.744;6908,6,29.0665;6909,2,17.4398		</table>
-		<table name="#name">Small Blue Nimble Fish (Novice);Small Blue Ugly Fish (Novice);Small Blue Fat Fish;            (Novice);Blue Nimble Fish (Novice);Blue Ugly Fish;(Novice);Blue Fat Fish (Novice);Large Blue Nimble Fish;            (Novice);Large Blue Ugly Fish (Novice);Large Blue Fat Fish (Novice);     ;  		</table>
+			6904,1,1.744;6908,6,29.0665;6909,2,17.4398
+		</table>
+		<table name="#name">Small Blue Nimble Fish (Novice);Small Blue Ugly Fish (Novice);Small Blue Fat Fish; (Novice);Blue Nimble Fish (Novice);Blue
+			Ugly Fish;(Novice);Blue Fat Fish (Novice);Large Blue Nimble Fish; (Novice);Large Blue Ugly Fish (Novice);Large Blue Fat Fish (Novice); ;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2870,8 +2937,12 @@
 			6904,1,2.272;6908,8,30.2932;6909,2,22.72
 			6904,1,2.32;6908,8,30.9332;6909,2,23.2
 			6904,1,2.376;6908,8,31.68;6909,2,23.76
-			6904,1,2.432;6908,8,32.4264;6909,2,24.32		</table>
-		<table name="#name">Small Yellow Nimble Fish (Novice);Small Yellow Ugly Fish (Novice);Small Yellow Fat Fish;            (Novice);Yellow Nimble Fish (Novice);Yellow Ugly;Fish (Novice);Yellow Fat Fish (Novice);Large Yellow Nimble;            Fish (Novice);Large Yellow Ugly Fish (Novice);Large Yellow Fat Fish;(Novice);        		</table>
+			6904,1,2.432;6908,8,32.4264;6909,2,24.32
+		</table>
+		<table name="#name">Small Yellow Nimble Fish (Novice);Small Yellow Ugly Fish (Novice);Small Yellow Fat Fish; (Novice);Yellow Nimble Fish
+			(Novice);Yellow Ugly;Fish (Novice);Yellow Fat Fish (Novice);Large Yellow Nimble; Fish (Novice);Large Yellow Ugly Fish (Novice);Large
+			Yellow Fat Fish;(Novice);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2896,8 +2967,12 @@
 			6910,1,38.016
 			6910,1,39.168
 			6910,1,40.32
-			6910,1,41.184		</table>
-		<table name="#name">Small Orange Nimble Fish (Novice);Small Orange Ugly Fish (Novice);Small Orange Fat Fish;            (Novice);Orange Nimble Fish (Novice);Orange Ugly;Fish (Novice);Orange Fat Fish (Novice);Large Orange Nimble;            Fish (Novice);Large Orange Ugly Fish (Novice);Large Orange Fat Fish;(Novice);        		</table>
+			6910,1,41.184
+		</table>
+		<table name="#name">Small Orange Nimble Fish (Novice);Small Orange Ugly Fish (Novice);Small Orange Fat Fish; (Novice);Orange Nimble Fish
+			(Novice);Orange Ugly;Fish (Novice);Orange Fat Fish (Novice);Large Orange Nimble; Fish (Novice);Large Orange Ugly Fish (Novice);Large
+			Orange Fat Fish;(Novice);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2922,8 +2997,12 @@
 			6910,2,26.16
 			6910,2,26.688
 			6910,2,27.216
-			6910,2,27.792		</table>
-		<table name="#name">Small Purple Nimble Fish (Novice);Small Purple Ugly Fish (Novice);Small Purple Fat Fish;            (Novice);Purple Nimble Fish (Novice);Purple Ugly;Fish (Novice);Purple Fat Fish (Novice);Large Purple Nimble;            Fish (Novice);Large Purple Ugly Fish (Novice);Large Purple Fat Fish;(Novice);        		</table>
+			6910,2,27.792
+		</table>
+		<table name="#name">Small Purple Nimble Fish (Novice);Small Purple Ugly Fish (Novice);Small Purple Fat Fish; (Novice);Purple Nimble Fish
+			(Novice);Purple Ugly;Fish (Novice);Purple Fat Fish (Novice);Large Purple Nimble; Fish (Novice);Large Purple Ugly Fish (Novice);Large
+			Purple Fat Fish;(Novice);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2948,8 +3027,11 @@
 			6910,2,33.648
 			6910,2,37.872
 			6910,2,38.592
-			6910,2,41.184		</table>
-		<table name="#name">Small Red Nimble Fish (Novice);Small Red Ugly Fish (Novice);Small Red Fat Fish (Novice);Red;            Nimble Fish (Novice);Red Ugly Fish;(Novice);Red Fat Fish (Novice);Large Red Nimble Fish (Novice);Large Red;            Ugly Fish (Novice);Large Red Fat Fish (Novice);        		</table>
+			6910,2,41.184
+		</table>
+		<table name="#name">Small Red Nimble Fish (Novice);Small Red Ugly Fish (Novice);Small Red Fat Fish (Novice);Red; Nimble Fish (Novice);Red Ugly
+			Fish;(Novice);Red Fat Fish (Novice);Large Red Nimble Fish (Novice);Large Red; Ugly Fish (Novice);Large Red Fat Fish (Novice);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -2974,8 +3056,12 @@
 			6910,2,46.176
 			6910,2,47.088
 			6910,2,48
-			6910,2,48.96		</table>
-		<table name="#name">Small White Nimble Fish (Novice);Small White Ugly Fish (Novice);Small White Fat Fish;            (Novice);White Nimble Fish (Novice);White Ugly Fish;(Novice);White Fat Fish (Novice);Large White Nimble Fish;            (Novice);Large White Ugly Fish (Novice);Large White Fat Fish (Novice); ;      		</table>
+			6910,2,48.96
+		</table>
+		<table name="#name">Small White Nimble Fish (Novice);Small White Ugly Fish (Novice);Small White Fat Fish; (Novice);White Nimble Fish
+			(Novice);White Ugly Fish;(Novice);White Fat Fish (Novice);Large White Nimble Fish; (Novice);Large White Ugly Fish (Novice);Large White Fat
+			Fish (Novice); ;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -3000,8 +3086,12 @@
 			6910,2,76.928
 			6910,2,78.464
 			6910,2,80.064
-			6910,2,81.664		</table>
-		<table name="#name">Small Black Nimble Fish (Novice);Small Black Ugly Fish (Novice);Small Black Fat Fish;            (Novice);Black Nimble Fish (Novice);Black Ugly Fish;(Novice);Black Fat Fish (Novice);Large Black Nimble Fish;            (Novice);Large Black Ugly Fish (Novice);Large Black Fat Fish (Novice); ;      		</table>
+			6910,2,81.664
+		</table>
+		<table name="#name">Small Black Nimble Fish (Novice);Small Black Ugly Fish (Novice);Small Black Fat Fish; (Novice);Black Nimble Fish
+			(Novice);Black Ugly Fish;(Novice);Black Fat Fish (Novice);Large Black Nimble Fish; (Novice);Large Black Ugly Fish (Novice);Large Black Fat
+			Fish (Novice); ;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -3018,7 +3108,9 @@
 		</for>
 	</skill>
 	<skill id="2229" levels="8" name="Deluxe Chest Key - Grade 8">
-		<table name="#name">Deluxe Chest Key - Grade 1;Deluxe Chest Key - Grade 2;Deluxe Chest Key - Grade 3;Deluxe;            Chest Key - Grade 4;Deluxe Chest Key - Grade;5;Deluxe Chest Key - Grade 6;Deluxe Chest Key - Grade 7;Deluxe;            Chest Key - Grade 8;        		</table>
+		<table name="#name">Deluxe Chest Key - Grade 1;Deluxe Chest Key - Grade 2;Deluxe Chest Key - Grade 3;Deluxe; Chest Key - Grade 4;Deluxe Chest
+			Key - Grade;5;Deluxe Chest Key - Grade 6;Deluxe Chest Key - Grade 7;Deluxe; Chest Key - Grade 8;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SINGLE" />
 		<set name="skillType" val="DELUXE_KEY_UNLOCK" />
@@ -3573,8 +3665,12 @@
 			6913,1,16.64;6911,2,27.7332;8353,4,20.8
 			6913,1,18;6911,2,30;8353,4,22.5
 			6913,1,19.84;6911,2,33.0666;8353,4,24.8
-			6913,1,16.96;6911,4,17.6667;8353,4,26.5		</table>
-		<table name="#name">Small Green Nimble Fish (High-grade);Small Green Ugly Fish (High-grade);Small Green Fat Fish;            (High-grade);Green Nimble Fish;(High-grade);Green Ugly Fish (High-grade);Green Fat Fish (High-grade);Large;            Green Nimble Fish (High-grade);Large Green Ugly Fish;(High-grade);Large Green Fat Fish (High-grade);        		</table>
+			6913,1,16.96;6911,4,17.6667;8353,4,26.5
+		</table>
+		<table name="#name">Small Green Nimble Fish (High-grade);Small Green Ugly Fish (High-grade);Small Green Fat Fish; (High-grade);Green Nimble
+			Fish;(High-grade);Green Ugly Fish (High-grade);Green Fat Fish (High-grade);Large; Green Nimble Fish (High-grade);Large Green Ugly
+			Fish;(High-grade);Large Green Fat Fish (High-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -3599,8 +3695,12 @@
 			6913,1,22.72;6911,4,17.75;8359,4,23.6666
 			6913,1,23.36;6911,4,18.25;8359,4,24.3333
 			6913,1,24;6911,4,18.75;8359,4,24.9999
-			6913,1,24.64;6911,4,19.25;8359,4,25.6666		</table>
-		<table name="#name">Small Jade Nimble Fish (High-grade);Small Jade Ugly Fish (High-grade);Small Jade Fat Fish;            (High-grade);Jade Nimble Fish;(High-grade);Jade Ugly Fish (High-grade);Jade Fat Fish (High-grade);Large Jade;            Nimble Fish (High-grade);Large Jade Ugly Fish;(High-grade);Large Jade Fat Fish (High-grade);        		</table>
+			6913,1,24.64;6911,4,19.25;8359,4,25.6666
+		</table>
+		<table name="#name">Small Jade Nimble Fish (High-grade);Small Jade Ugly Fish (High-grade);Small Jade Fat Fish; (High-grade);Jade Nimble
+			Fish;(High-grade);Jade Ugly Fish (High-grade);Jade Fat Fish (High-grade);Large Jade; Nimble Fish (High-grade);Large Jade Ugly
+			Fish;(High-grade);Large Jade Fat Fish (High-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -3625,8 +3725,12 @@
 			6913,1,26.88;6911,4,21;8355,4,18.6667
 			6913,1,27.2;6911,4,21.25;8355,4,18.8889
 			6913,1,27.584;6911,4,21.55;8355,4,19.1556
-			6913,1,27.84;6911,4,21.75;8355,4,19.3334		</table>
-		<table name="#name">Small Blue Nimble Fish (High-grade);Small Blue Ugly Fish (High-grade);Small Blue Fat Fish;            (High-grade);Blue Nimble Fish;(High-grade);Blue Ugly Fish (High-grade);Blue Fat Fish (High-grade);Large Blue;            Nimble Fish (High-grade);Large Blue Ugly Fish;(High-grade);Large Blue Fat Fish (High-grade);        		</table>
+			6913,1,27.84;6911,4,21.75;8355,4,19.3334
+		</table>
+		<table name="#name">Small Blue Nimble Fish (High-grade);Small Blue Ugly Fish (High-grade);Small Blue Fat Fish; (High-grade);Blue Nimble
+			Fish;(High-grade);Blue Ugly Fish (High-grade);Blue Fat Fish (High-grade);Large Blue; Nimble Fish (High-grade);Large Blue Ugly
+			Fish;(High-grade);Large Blue Fat Fish (High-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -3651,8 +3755,12 @@
 			6913,2,18.176;6911,8,18.9333;8354,2,28.4
 			6913,2,18.56;6911,8,19.3333;8354,2,29
 			6913,2,19.008;6911,8,19.7999;8354,2,29.7
-			6913,2,19.456;6911,8,20.2666;8354,2,30.4		</table>
-		<table name="#name">Small Yellow Nimble Fish (High-grade);Small Yellow Ugly Fish (High-grade);Small Yellow Fat;            Fish (High-grade);Yellow Nimble Fish;(High-grade);Yellow Ugly Fish (High-grade);Yellow Fat Fish;            (High-grade);Large Yellow Nimble Fish (High-grade);Large Yellow Ugly;Fish (High-grade);Large Yellow Fat Fish;            (High-grade);        		</table>
+			6913,2,19.456;6911,8,20.2666;8354,2,30.4
+		</table>
+		<table name="#name">Small Yellow Nimble Fish (High-grade);Small Yellow Ugly Fish (High-grade);Small Yellow Fat; Fish (High-grade);Yellow
+			Nimble Fish;(High-grade);Yellow Ugly Fish (High-grade);Yellow Fat Fish; (High-grade);Large Yellow Nimble Fish (High-grade);Large Yellow
+			Ugly;Fish (High-grade);Large Yellow Fat Fish; (High-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -3677,8 +3785,12 @@
 			6914,1,19.008;6912,4,19.8;8378,1,4.752;8357,4,15.8401
 			6914,1,26.112;6912,4,27.2;8357,4,21.76
 			6914,1,20.16;6912,4,21;8377,1,5.04;8357,4,16.8001
-			6914,1,20.592;6912,4,21.45;8378,1,5.148;8357,4,17.1601		</table>
-		<table name="#name">Small Orange Nimble Fish (High-grade);Small Orange Ugly Fish (High-grade);Small Orange Fat;            Fish (High-grade);Orange Nimble Fish;(High-grade);Orange Ugly Fish (High-grade);Orange Fat Fish;            (High-grade);Large Orange Nimble Fish (High-grade);Large Orange Ugly;Fish (High-grade);Large Orange Fat Fish;            (High-grade);        		</table>
+			6914,1,20.592;6912,4,21.45;8378,1,5.148;8357,4,17.1601
+		</table>
+		<table name="#name">Small Orange Nimble Fish (High-grade);Small Orange Ugly Fish (High-grade);Small Orange Fat; Fish (High-grade);Orange
+			Nimble Fish;(High-grade);Orange Ugly Fish (High-grade);Orange Fat Fish; (High-grade);Large Orange Nimble Fish (High-grade);Large Orange
+			Ugly;Fish (High-grade);Large Orange Fat Fish; (High-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -3703,8 +3815,12 @@
 			6914,2,13.08;6912,8,18.1667;8378,1,6.54;8358,4,13.625
 			6914,2,17.776;6912,9,16.4592;8358,4,18.5167
 			6914,2,13.596;6912,8,18.8833;8377,1,6.798;8358,4,14.1625
-			6914,2,13.884;6912,8,19.2833;8378,1,6.942;8358,4,14.4625		</table>
-		<table name="#name">Small Purple Nimble Fish (High-grade);Small Purple Ugly Fish (High-grade);Small Purple Fat;            Fish (High-grade);Purple Nimble Fish;(High-grade);Purple Ugly Fish (High-grade);Purple Fat Fish;            (High-grade);Large Purple Nimble Fish (High-grade);Large Purple Ugly;Fish (High-grade);Large Purple Fat Fish;            (High-grade);        		</table>
+			6914,2,13.884;6912,8,19.2833;8378,1,6.942;8358,4,14.4625
+		</table>
+		<table name="#name">Small Purple Nimble Fish (High-grade);Small Purple Ugly Fish (High-grade);Small Purple Fat; Fish (High-grade);Purple
+			Nimble Fish;(High-grade);Purple Ugly Fish (High-grade);Purple Fat Fish; (High-grade);Large Purple Nimble Fish (High-grade);Large Purple
+			Ugly;Fish (High-grade);Large Purple Fat Fish; (High-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -3729,8 +3845,12 @@
 			6914,2,13.4592;6912,8,18.6933;8378,1,6.7296;8375,1,1.6824;8352,4,12.0171
 			6914,2,18.924;6912,9,17.5224;8373,1,2.3655;8352,4,16.8964
 			6914,2,15.4368;6912,9,14.2932;8377,1,7.7184;8374,1,1.9296;8352,4,13.7828
-			6914,2,16.464;6912,9,15.2444;8378,1,8.232;8375,1,2.058;8352,4,14.6999		</table>
-		<table name="#name">Small Red Nimble Fish (High-grade);Small Red Ugly Fish (High-grade);Small Red Fat Fish;            (High-grade);Red Nimble Fish (High-grade);Red;Ugly Fish (High-grade);Red Fat Fish (High-grade);Large Red;            Nimble Fish (High-grade);Large Red Ugly Fish (High-grade);Large Red;Fat Fish (High-grade);        		</table>
+			6914,2,16.464;6912,9,15.2444;8378,1,8.232;8375,1,2.058;8352,4,14.6999
+		</table>
+		<table name="#name">Small Red Nimble Fish (High-grade);Small Red Ugly Fish (High-grade);Small Red Fat Fish; (High-grade);Red Nimble Fish
+			(High-grade);Red;Ugly Fish (High-grade);Red Fat Fish (High-grade);Large Red; Nimble Fish (High-grade);Large Red Ugly Fish
+			(High-grade);Large Red;Fat Fish (High-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -3755,8 +3875,12 @@
 			6914,2,18.4608;6912,9,17.0932;8378,1,9.2304;8375,1,2.3076;8356,4,14.4225
 			6914,2,23.532;6912,9,21.7888;8373,1,2.9415;8356,4,18.3844
 			6914,2,19.2;6912,9,17.778;8377,1,9.6;8374,1,2.4;8356,4,15
-			6914,2,19.5744;6912,9,18.1244;8378,1,9.7872;8375,1,2.4468;8356,4,15.2925		</table>
-		<table name="#name">Small White Nimble Fish (High-grade);Small White Ugly Fish (High-grade);Small White Fat Fish;            (High-grade);White Nimble Fish;(High-grade);White Ugly Fish (High-grade);White Fat Fish (High-grade);Large;            White Nimble Fish (High-grade);Large White Ugly Fish;(High-grade);Large White Fat Fish (High-grade);        		</table>
+			6914,2,19.5744;6912,9,18.1244;8378,1,9.7872;8375,1,2.4468;8356,4,15.2925
+		</table>
+		<table name="#name">Small White Nimble Fish (High-grade);Small White Ugly Fish (High-grade);Small White Fat Fish; (High-grade);White Nimble
+			Fish;(High-grade);White Ugly Fish (High-grade);White Fat Fish (High-grade);Large; White Nimble Fish (High-grade);Large White Ugly
+			Fish;(High-grade);Large White Fat Fish (High-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -3781,8 +3905,12 @@
 			6914,4,11.5344;6912,18,10.68;8378,1,11.5344;8375,1,2.8836;8351,4,16.0201
 			6914,4,14.712;6912,18,13.6222;8373,1,3.678;8351,4,20.4333
 			6914,4,12.0096;6912,18,11.12;8377,1,12.0096;8374,1,3.0024;8351,4,16.6801
-			6914,4,12.2496;6912,18,11.3422;8378,1,12.2496;8375,1,3.0624;8351,7,9.722		</table>
-		<table name="#name">Small Black Nimble Fish (High-grade);Small Black Ugly Fish (High-grade);Small Black Fat Fish;            (High-grade);Black Nimble Fish;(High-grade);Black Ugly Fish (High-grade);Black Fat Fish (High-grade);Large;            Black Nimble Fish (High-grade);Large Black Ugly Fish;(High-grade);Large Black Fat Fish (High-grade);        		</table>
+			6914,4,12.2496;6912,18,11.3422;8378,1,12.2496;8375,1,3.0624;8351,7,9.722
+		</table>
+		<table name="#name">Small Black Nimble Fish (High-grade);Small Black Ugly Fish (High-grade);Small Black Fat Fish; (High-grade);Black Nimble
+			Fish;(High-grade);Black Ugly Fish (High-grade);Black Fat Fish (High-grade);Large; Black Nimble Fish (High-grade);Large Black Ugly
+			Fish;(High-grade);Large Black Fat Fish (High-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE_FISH" />
@@ -3805,8 +3933,12 @@
 			856,1,13.7513;887,1,20.6270;918,1,10.3135
 			864,1,12.0250;895,1,18.0375;926,1,9.0334
 			8177,1,22.2222;8178,1,18.5185;8179,1,15.8730
-			8175,1,16.6666		</table>
-		<table name="#name">Adventurer's Box: C-grade Accessory (Low-grade);Adventurer's Box: C-grade Accessory;            (Mid-grade);Adventurer's Box: C-grade Accessory;(High-grade);Adventurer's Box: B-grade Accessory;            (Low-grade);Adventurer's Box: B-grade Accessory (High-grade);Adventurer's Box:;Hair Accessory;Adventurer's;            Box: Cradle of Creation;        		</table>
+			8175,1,16.6666
+		</table>
+		<table name="#name">Adventurer's Box: C-grade Accessory (Low-grade);Adventurer's Box: C-grade Accessory; (Mid-grade);Adventurer's Box: C-grade
+			Accessory;(High-grade);Adventurer's Box: B-grade Accessory; (Low-grade);Adventurer's Box: B-grade Accessory (High-grade);Adventurer's
+			Box:;Hair Accessory;Adventurer's; Box: Cradle of Creation;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE" />
@@ -3849,7 +3981,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="8552,1,25;8187,1,25;8555,5,25;6406,10,15;6407,5,9.991;5577,1,0.002;5578,1,0.002;5579,1,0.002;5580,1,0.001;5581,1,0.001;5582,1,0.001" />
+		<set name="capsuled_items_skill"
+			 val="8552,1,25;8187,1,25;8555,5,25;6406,10,15;6407,5,9.991;5577,1,0.002;5578,1,0.002;5579,1,0.002;5580,1,0.001;5581,1,0.001;5582,1,0.001" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -3870,7 +4003,7 @@
 		Level 8: Fisherman's Potion - White. Decreases Fishing Mastery Lv., enabling you to catch white fish.
 	-->
 	<skill id="2274" levels="8" name="Fisherman's Potion - White">
-		<table name="#power">2 5 8 11 14 17 20 23		</table>
+		<table name="#power">2 5 8 11 14 17 20 23</table>
 		<table name="#active_skill_id_lvl">1315,4
 			1315,7
 			1315,10
@@ -3878,8 +4011,11 @@
 			1315,16
 			1315,19
 			1315,22
-			1315,25		</table>
-		<table name="#name">Fisherman's Potion - Green;Fisherman's Potion - Jade;Fisherman's Potion - Blue;Fisherman's;            Potion - Yellow;Fisherman's Potion -;Orange;Fisherman's Potion - Purple;Fisherman's Potion - Red;Fisherman's;            Potion - White;        		</table>
+			1315,25
+		</table>
+		<table name="#name">Fisherman's Potion - Green;Fisherman's Potion - Jade;Fisherman's Potion - Blue;Fisherman's; Potion - Yellow;Fisherman's
+			Potion -;Orange;Fisherman's Potion - Purple;Fisherman's Potion - Red;Fisherman's; Potion - White;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -3928,7 +4064,8 @@
 			1539,20,87.00;952,1,7.0;951,1,2.05;1538,1,2.00;3936,1,1.05;4637,1,0.3;4659,1,0.3;4648,1,0.3
 			1539,20,90.70;948,1,4.0;947,1,1.5;1538,1,2.00;3936,1,1.05;4638,1,0.25;4660,1,0.25;4649,1,0.25
 			1539,20,93.00;730,1,2.0;729,1,0.50;1538,1,3.00;3936,1,1.41;4639,1,0.03;4650,1,0.03;4661,1,0.03
-			1539,20,93.00;730,1,2.0;729,1,0.50;1538,1,3.00;3936,1,1.41;4639,1,0.03;4650,1,0.03;4661,1,0.03		</table>
+			1539,20,93.00;730,1,2.0;729,1,0.50;1538,1,3.00;3936,1,1.41;4639,1,0.03;4650,1,0.03;4661,1,0.03
+		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -3944,8 +4081,8 @@
 		</for>
 	</skill>
 	<skill id="2278" levels="3" name="Superior Herb of Life">
-		<table name="#power">15 25 100		</table>
-		<table name="#name">Herb of Life;Major Herb of Life;Superior Herb of Life		</table>
+		<table name="#power">15 25 100</table>
+		<table name="#name">Herb of Life;Major Herb of Life;Superior Herb of Life</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="HEAL_PERCENT" />
@@ -3964,8 +4101,8 @@
 		</for>
 	</skill>
 	<skill id="2279" levels="3" name="Superior Herb of Mana">
-		<table name="#power">11 18 100		</table>
-		<table name="#name">Herb of Mana;Major Herb of Mana;Superior Herb of Mana		</table>
+		<table name="#power">11 18 100</table>
+		<table name="#name">Herb of Mana;Major Herb of Mana;Superior Herb of Mana</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="MANAHEAL_PERCENT" />
@@ -4116,8 +4253,10 @@
 		</for>
 	</skill>
 	<skill id="2286" levels="6" name="Scroll: Recovery (S-grade)">
-		<table name="#levelRange">1;19 20;39 40;51 52;60 61;75 76;85		</table>
-		<table name="#name">Scroll: Recovery (No-grade);Scroll: Recovery (D-grade);Scroll: Recovery (C-grade);Scroll:;            Recovery (B-grade);Scroll: Recovery;(A-grade);Scroll: Recovery (S-grade);        		</table>
+		<table name="#levelRange">1;19 20;39 40;51 52;60 61;75 76;85</table>
+		<table name="#name">Scroll: Recovery (No-grade);Scroll: Recovery (D-grade);Scroll: Recovery (C-grade);Scroll:; Recovery (B-grade);Scroll:
+			Recovery;(A-grade);Scroll: Recovery (S-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="BUFF" />
@@ -4138,10 +4277,12 @@
 		</for>
 	</skill>
 	<skill id="2287" levels="7" name="Elixir of Life (R-grade)">
-		<table name="#levelRange">1;19 20;39 40;51 52;60 61;75 1;84 1;84		</table>
-		<table name="#power">250 650 1100 1500 1900 2300 2300		</table>
-		<table name="#reuseDelay">600000 600000 600000 600000 600000 600000 120000		</table>
-		<table name="#name">Elixir of Life (No-grade);Elixir of Life (D-grade);Elixir of Life (C-grade);Elixir of Life;            (B-grade);Elixir of Life (A-grade);Elixir of;Life (S-grade);Elixir of Life (R-grade);        		</table>
+		<table name="#levelRange">1;19 20;39 40;51 52;60 61;75 1;84 1;84</table>
+		<table name="#power">250 650 1100 1500 1900 2300 2300</table>
+		<table name="#reuseDelay">600000 600000 600000 600000 600000 600000 120000</table>
+		<table name="#name">Elixir of Life (No-grade);Elixir of Life (D-grade);Elixir of Life (C-grade);Elixir of Life; (B-grade);Elixir of Life
+			(A-grade);Elixir of;Life (S-grade);Elixir of Life (R-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="HEAL_STATIC" />
@@ -4162,10 +4303,12 @@
 		</for>
 	</skill>
 	<skill id="2288" levels="7" name="Elixir of Mind (R-grade)">
-		<table name="#levelRange">1;19 20;39 40;51 52;60 61;75 1;84 1;84		</table>
-		<table name="#power">60 140 220 290 360 420 420		</table>
-		<table name="#reuseDelay">600000 600000 600000 600000 600000 600000 120000		</table>
-		<table name="#name">Elixir of Mind (No-grade);Elixir of Mind (D-grade);Elixir of Mind (C-grade);Elixir of Mind;            (B-grade);Elixir of Mind (A-grade);Elixir of;Mind (S-grade);Elixir of Mind (R-grade);        		</table>
+		<table name="#levelRange">1;19 20;39 40;51 52;60 61;75 1;84 1;84</table>
+		<table name="#power">60 140 220 290 360 420 420</table>
+		<table name="#reuseDelay">600000 600000 600000 600000 600000 600000 120000</table>
+		<table name="#name">Elixir of Mind (No-grade);Elixir of Mind (D-grade);Elixir of Mind (C-grade);Elixir of Mind; (B-grade);Elixir of Mind
+			(A-grade);Elixir of;Mind (S-grade);Elixir of Mind (R-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="MANAHEAL" />
@@ -4186,10 +4329,12 @@
 		</for>
 	</skill>
 	<skill id="2289" levels="7" name="Elixir of CP (R-grade)">
-		<table name="#levelRange">1;19 20;39 40;51 52;60 61;75 1;84 1;84		</table>
-		<table name="#power">150 350 600 800 1000 1200 1200		</table>
-		<table name="#reuseDelay">600000 600000 600000 600000 600000 600000 120000		</table>
-		<table name="#name">Elixir of CP (No-grade);Elixir of CP (D-grade);Elixir of CP (C-grade);Elixir of CP;            (B-grade);Elixir of CP (A-grade);Elixir of CP;(S-grade);Elixir of CP (R-grade);        		</table>
+		<table name="#levelRange">1;19 20;39 40;51 52;60 61;75 1;84 1;84</table>
+		<table name="#power">150 350 600 800 1000 1200 1200</table>
+		<table name="#reuseDelay">600000 600000 600000 600000 600000 600000 120000</table>
+		<table name="#name">Elixir of CP (No-grade);Elixir of CP (D-grade);Elixir of CP (C-grade);Elixir of CP; (B-grade);Elixir of CP
+			(A-grade);Elixir of CP;(S-grade);Elixir of CP (R-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="COMBATPOINTHEAL" />
@@ -4213,7 +4358,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="8661,1,15;8660,1,15;5234,3,30;6406,10,20;6407,5,19.991;5577,1,0.002;5578,1,0.002;5579,1,0.002;5580,1,0.001;5581,1,0.001;5582,1,0.001" />
+		<set name="capsuled_items_skill"
+			 val="8661,1,15;8660,1,15;5234,3,30;6406,10,20;6407,5,19.991;5577,1,0.002;5578,1,0.002;5579,1,0.002;5580,1,0.001;5581,1,0.001;5582,1,0.001" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -4438,8 +4584,8 @@
 		</for>
 	</skill>
 	<skill id="2306" levels="3" name="Red Primeval Crystal">
-		<table name="#power">50000 100000 200000		</table>
-		<table name="#name">Blue Primeval Crystal;Green Primeval Crystal;Red Primeval Crystal		</table>
+		<table name="#power">50000 100000 200000</table>
+		<table name="#name">Blue Primeval Crystal;Green Primeval Crystal;Red Primeval Crystal</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="GIVE_SP" />
@@ -4505,7 +4651,8 @@
 			2511,1000,8624,10,100
 			2512,500,8625,7,100
 			2513,300,8626,7,100
-			2513,300,8627,5,100		</table>
+			2513,300,8627,5,100
+		</table>
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
@@ -4757,7 +4904,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="9177,1,2.5;9184,1,2.5;9191,1,2.5;9198,1,2.5;9153,3,6.6;9146,3,6.6;9150,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8678,1,0.0015;8682,1,0.0015" />
+		<set name="capsuled_items_skill"
+			 val="9177,1,2.5;9184,1,2.5;9191,1,2.5;9198,1,2.5;9153,3,6.6;9146,3,6.6;9150,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8678,1,0.0015;8682,1,0.0015" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -4772,7 +4920,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="9178,1,2.5;9185,1,2.5;9192,1,2.5;9199,1,2.5;9147,3,6.6;9151,3,6.6;9149,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8685,1,0.0015;8679,1,0.0015" />
+		<set name="capsuled_items_skill"
+			 val="9178,1,2.5;9185,1,2.5;9192,1,2.5;9199,1,2.5;9147,3,6.6;9151,3,6.6;9149,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8685,1,0.0015;8679,1,0.0015" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -4787,7 +4936,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="9180,1,2.5;9187,1,2.5;9194,1,2.5;9201,1,2.5;9149,3,6.6;9155,3,6.6;9150,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8688,1,0.0015;8680,1,0.0015" />
+		<set name="capsuled_items_skill"
+			 val="9180,1,2.5;9187,1,2.5;9194,1,2.5;9201,1,2.5;9149,3,6.6;9155,3,6.6;9150,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8688,1,0.0015;8680,1,0.0015" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -4802,7 +4952,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="9182,1,2.5;9189,1,2.5;9196,1,2.5;9203,1,2.5;9148,3,6.6;9146,3,6.6;9154,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8681,1,0.0015;8687,1,0.0015" />
+		<set name="capsuled_items_skill"
+			 val="9182,1,2.5;9189,1,2.5;9196,1,2.5;9203,1,2.5;9148,3,6.6;9146,3,6.6;9154,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8681,1,0.0015;8687,1,0.0015" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -4817,7 +4968,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="9183,1,2.5;9190,1,2.5;9197,1,2.5;9204,1,2.5;9152,3,6.6;9155,3,6.6;9147,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8685,1,0.0015;8683,1,0.0015" />
+		<set name="capsuled_items_skill"
+			 val="9183,1,2.5;9190,1,2.5;9197,1,2.5;9204,1,2.5;9152,3,6.6;9155,3,6.6;9147,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8685,1,0.0015;8683,1,0.0015" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -4832,7 +4984,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="9179,1,2.5;9186,1,2.5;9193,1,2.5;9200,1,2.5;9148,3,6.6;9152,3,6.6;9154,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8686,1,0.0015;8684,1,0.0015" />
+		<set name="capsuled_items_skill"
+			 val="9179,1,2.5;9186,1,2.5;9193,1,2.5;9200,1,2.5;9148,3,6.6;9152,3,6.6;9154,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8686,1,0.0015;8684,1,0.0015" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -4843,42 +4996,42 @@
 		</for>
 	</skill>
 	<skill id="2329" levels="4" name="Energy of Fire">
-		<table name="#name">Fire Stone;Fire Crystal;Fire Jewel;Energy of Fire		</table>
+		<table name="#name">Fire Stone;Fire Crystal;Fire Jewel;Energy of Fire</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<skill id="2330" levels="4" name="Energy of Water">
-		<table name="#name">Water Stone;Water Crystal;Water Jewel;Energy of Water		</table>
+		<table name="#name">Water Stone;Water Crystal;Water Jewel;Energy of Water</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<skill id="2331" levels="4" name="Energy of Wind">
-		<table name="#name">Wind Stone;Wind Crystal;Wind Jewel;Energy of Wind		</table>
+		<table name="#name">Wind Stone;Wind Crystal;Wind Jewel;Energy of Wind</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<skill id="2332" levels="4" name="Energy of Earth">
-		<table name="#name">Earth Stone;Earth Crystal;Earth Jewel;Energy of Earth		</table>
+		<table name="#name">Earth Stone;Earth Crystal;Earth Jewel;Energy of Earth</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<skill id="2333" levels="4" name="Holy Energy">
-		<table name="#name">Holy Stone;Holy Crystal;Holy Jewel;Holy Energy		</table>
+		<table name="#name">Holy Stone;Holy Crystal;Holy Jewel;Holy Energy</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<skill id="2334" levels="4" name="Dark Energy">
-		<table name="#name">Dark Stone;Dark Crystal;Dark Jewel;Dark Energy		</table>
+		<table name="#name">Dark Stone;Dark Crystal;Dark Jewel;Dark Energy</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -6355,7 +6508,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="6373,1,1.19;6374,1,1.84;6375,1,4.47;6376,1,4.47;6377,1,4.25;6378,1,3.01;6379,1,0.19;6380,1,4.47;6381,1,4.47;6382,1,3.01;6383,1,0.19;6384,1,4.47;6385,1,4.47;6386,1,3.01;9570,1,3.16;9571,1,3.16;9572,1,3.16;5908,1,15.67;5911,1,15.67;5914,1,15.67" />
+		<set name="capsuled_items_skill"
+			 val="6373,1,1.19;6374,1,1.84;6375,1,4.47;6376,1,4.47;6377,1,4.25;6378,1,3.01;6379,1,0.19;6380,1,4.47;6381,1,4.47;6382,1,3.01;6383,1,0.19;6384,1,4.47;6385,1,4.47;6386,1,3.01;9570,1,3.16;9571,1,3.16;9572,1,3.16;5908,1,15.67;5911,1,15.67;5914,1,15.67" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -6370,7 +6524,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="9625,1,2.20;9626,1,1.42;9627,1,0.67;9546,1,15.30;9547,1,15.30;9548,1,15.30;9549,1,15.30;9550,1,15.30;9551,1,15.30;959,1,0.28;960,1,3.73" />
+		<set name="capsuled_items_skill"
+			 val="9625,1,2.20;9626,1,1.42;9627,1,0.67;9546,1,15.30;9547,1,15.30;9548,1,15.30;9549,1,15.30;9550,1,15.30;9551,1,15.30;959,1,0.28;960,1,3.73" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -6385,7 +6540,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="729,1,0.51;730,1,3.86;947,1,1.85;948,1,11.57;8736,1,32.15;8738,1,23.15;8741,1,12.86;8742,1,11.57;3936,1,2.48" />
+		<set name="capsuled_items_skill"
+			 val="729,1,0.51;730,1,3.86;947,1,1.85;948,1,11.57;8736,1,32.15;8738,1,23.15;8741,1,12.86;8742,1,11.57;3936,1,2.48" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -6430,7 +6586,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="10260,3,9.00;10261,3,9.00;10262,3,9.00;10263,3,9.00;10264,3,9.00;10265,3,9.00;10266,3,9.00;10267,3,9.00;10268,3,9.00;10269,3,9.00;10270,3,10.00" />
+		<set name="capsuled_items_skill"
+			 val="10260,3,9.00;10261,3,9.00;10262,3,9.00;10263,3,9.00;10264,3,9.00;10265,3,9.00;10266,3,9.00;10267,3,9.00;10268,3,9.00;10269,3,9.00;10270,3,10.00" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -7876,7 +8033,8 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="reuseDelay" val="-1000" />
 		<set name="staticReuse" val="true" />
-		<set name="capsuled_items_skill" val="10633,1,35;10642,1,25;10634,1,20;10643,1,10;10635,1,4;10644,1,3;10636,1,1.2;10645,1,0.8;10637,1,0.6;10646,1,0.4;21096,1,0.2;21097,1,0.2;21098,1,0.2;21099,1,0.2;21100,1,0.2;21101,1,0.1;21102,1,0.1;21103,1,0.1;21104,1,0.1;21105,1,0.1" />
+		<set name="capsuled_items_skill"
+			 val="10633,1,35;10642,1,25;10634,1,20;10643,1,10;10635,1,4;10644,1,3;10636,1,1.2;10645,1,0.8;10637,1,0.6;10646,1,0.4;21096,1,0.2;21097,1,0.2;21098,1,0.2;21099,1,0.2;21100,1,0.2;21101,1,0.1;21102,1,0.1;21103,1,0.1;21104,1,0.1;21105,1,0.1" />
 		<set name="staticHitTime" val="true" />
 		<for>
 			<cond msgId="129">
@@ -8769,7 +8927,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="9546,1,19.8;9548,1,19.8;9550,1,19.8;959,1,1.98;9442,1,0.1;9443,1,0.1;9444,1,0.1;9445,1,0.1;9446,1,0.1;9447,1,0.1;9448,1,0.1;9449,1,0.1;9450,1,0.1;10252,1,0.1;10253,1,0.1;9532,1,1;9537,1,1;9542,1,1" />
+		<set name="capsuled_items_skill"
+			 val="9546,1,19.8;9548,1,19.8;9550,1,19.8;959,1,1.98;9442,1,0.1;9443,1,0.1;9444,1,0.1;9445,1,0.1;9446,1,0.1;9447,1,0.1;9448,1,0.1;9449,1,0.1;9450,1,0.1;10252,1,0.1;10253,1,0.1;9532,1,1;9537,1,1;9542,1,1" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -8784,7 +8943,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="9546,1,26.4;9548,1,26.4;9550,1,26.4;959,1,3.84;10215,1,0.13;10216,1,0.13;10217,1,0.13;10218,1,0.13;10219,1,0.13;10220,1,0.13;10221,1,0.13;10222,1,0.13;10223,1,0.13" />
+		<set name="capsuled_items_skill"
+			 val="9546,1,26.4;9548,1,26.4;9550,1,26.4;959,1,3.84;10215,1,0.13;10216,1,0.13;10217,1,0.13;10218,1,0.13;10219,1,0.13;10220,1,0.13;10221,1,0.13;10222,1,0.13;10223,1,0.13" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -9029,7 +9189,8 @@
 		<set name="itemConsumeCount" val="1" />
 		<set name="reuseDelay" val="86400000" />
 		<set name="staticReuse" val="true" />
-		<set name="capsuled_items_skill" val="13259,1,0.8130;13258,1,1.626;13260,1,16.260;13261,10,4.645;13262,10,4.645;13263,10,4.645;13264,10,4.645;13265,10,4.645;13266,10,4.645;13267,10,4.645;13268,10,32.5260;13269,10,16.260" />
+		<set name="capsuled_items_skill"
+			 val="13259,1,0.8130;13258,1,1.626;13260,1,16.260;13261,10,4.645;13262,10,4.645;13263,10,4.645;13264,10,4.645;13265,10,4.645;13266,10,4.645;13267,10,4.645;13268,10,32.5260;13269,10,16.260" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -9057,8 +9218,8 @@
 		</for>
 	</skill>
 	<skill id="2608" levels="3" name="Fantasy Red Crystal">
-		<table name="#power">50000 100000 200000		</table>
-		<table name="#name">Blue Crystal of Fantasy;Fantasy Green Crystal;Fantasy Red Crystal		</table>
+		<table name="#power">50000 100000 200000</table>
+		<table name="#name">Blue Crystal of Fantasy;Fantasy Green Crystal;Fantasy Red Crystal</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="GIVE_SP" />
@@ -9098,8 +9259,15 @@
 			147928,-55273,-2734
 			43799,-47727,-798
 			87331,-142842,-1317
-			-117251,46771,360		</table>
-		<table name="#name">Scroll of Escape: Talking Island Village;Scroll of Escape: Elven Village;Scroll of Escape:;            Dark Elf Village;Scroll of Escape: Orc;Village;Scroll of Escape: Dwarven Village;Scroll of Escape: Gludin;            Village;Scroll of Escape: Town of Gludio;Scroll of Escape:;Town of Dion;Scroll of Escape: Floran;            Village;Scroll of Escape: Town of Giran;Scroll of Escape: Hardin's Academy;Scroll of;Escape: Heine;Scroll of;            Escape: Town of Oren;Scroll of Escape: Ivory Tower;Scroll of Escape: Hunter's Village;Scroll of Escape:;Town;            of Aden;Scroll of Escape: Town of Goddard;Scroll of Escape: Town of Rune;Scroll of Escape: Town of;           ;Schuttgart;Scroll of Escape: Kamael Village;        		</table>
+			-117251,46771,360
+		</table>
+		<table name="#name">Scroll of Escape: Talking Island Village;Scroll of Escape: Elven Village;Scroll of Escape:; Dark Elf Village;Scroll of
+			Escape: Orc;Village;Scroll of Escape: Dwarven Village;Scroll of Escape: Gludin; Village;Scroll of Escape: Town of Gludio;Scroll of
+			Escape:;Town of Dion;Scroll of Escape: Floran; Village;Scroll of Escape: Town of Giran;Scroll of Escape: Hardin's Academy;Scroll
+			of;Escape: Heine;Scroll of; Escape: Town of Oren;Scroll of Escape: Ivory Tower;Scroll of Escape: Hunter's Village;Scroll of Escape:;Town;
+			of Aden;Scroll of Escape: Town of Goddard;Scroll of Escape: Town of Rune;Scroll of Escape: Town of; ;Schuttgart;Scroll of Escape: Kamael
+			Village;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="TELEPORT" />
@@ -9403,7 +9571,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="10260,1,9.0;10261,1,9.0;10262,1,9.0;10263,1,9.0;10264,1,9.0;10265,1,9.0;10266,1,9.0;10267,1,9.0;10268,1,9.0;10269,1,9.0;10270,1,10.0" />
+		<set name="capsuled_items_skill"
+			 val="10260,1,9.0;10261,1,9.0;10262,1,9.0;10263,1,9.0;10264,1,9.0;10265,1,9.0;10266,1,9.0;10267,1,9.0;10268,1,9.0;10269,1,9.0;10270,1,10.0" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -9418,7 +9587,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="10260,2,9.0;10261,2,9.0;10262,2,9.0;10263,2,9.0;10264,2,9.0;10265,2,9.0;10266,2,9.0;10267,2,9.0;10268,2,9.0;10269,2,9.0;10270,2,10.0" />
+		<set name="capsuled_items_skill"
+			 val="10260,2,9.0;10261,2,9.0;10262,2,9.0;10263,2,9.0;10264,2,9.0;10265,2,9.0;10266,2,9.0;10267,2,9.0;10268,2,9.0;10269,2,9.0;10270,2,10.0" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -9433,7 +9603,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="10260,3,9.0;10261,3,9.0;10262,3,9.0;10263,3,9.0;10264,3,9.0;10265,3,9.0;10266,3,9.0;10267,3,9.0;10268,3,9.0;10269,3,9.0;10270,3,10.0" />
+		<set name="capsuled_items_skill"
+			 val="10260,3,9.0;10261,3,9.0;10262,3,9.0;10263,3,9.0;10264,3,9.0;10265,3,9.0;10266,3,9.0;10267,3,9.0;10268,3,9.0;10269,3,9.0;10270,3,10.0" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -9448,7 +9619,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="7122,1,7.14;7123,1,7.14;7124,1,7.14;7125,1,7.14;7126,1,7.14;7127,1,7.14;7128,1,7.14;7129,1,7.14;7130,1,7.18;7131,1,7.14;7132,1,7.14;7133,1,7.14;7134,1,7.14;7135,1,7.14" />
+		<set name="capsuled_items_skill"
+			 val="7122,1,7.14;7123,1,7.14;7124,1,7.14;7125,1,7.14;7126,1,7.14;7127,1,7.14;7128,1,7.14;7129,1,7.14;7130,1,7.18;7131,1,7.14;7132,1,7.14;7133,1,7.14;7134,1,7.14;7135,1,7.14" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -9463,7 +9635,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="7122,2,7.14;7123,2,7.14;7124,2,7.14;7125,2,7.14;7126,2,7.14;7127,2,7.14;7128,2,7.14;7129,2,7.14;7130,2,7.18;7131,2,7.14;7132,2,7.14;7133,2,7.14;7134,2,7.14;7135,2,7.14" />
+		<set name="capsuled_items_skill"
+			 val="7122,2,7.14;7123,2,7.14;7124,2,7.14;7125,2,7.14;7126,2,7.14;7127,2,7.14;7128,2,7.14;7129,2,7.14;7130,2,7.18;7131,2,7.14;7132,2,7.14;7133,2,7.14;7134,2,7.14;7135,2,7.14" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -9508,8 +9681,12 @@
 			146331,25762,-2018
 			147928,-55273,-2734
 			43799,-47727,-798
-			87331,-142842,-1317		</table>
-		<table name="#name">Scroll of Escape: Gludin Village;Scroll of Escape: Town of Dion;Scroll of Escape: Town of;            Giran;Scroll of Escape: Heine;Scroll of;Escape: Town of Oren;Scroll of Escape: Town of Aden;Scroll of;            Escape: Town of Goddard;Scroll of Escape: Town of Rune;Scroll of;Escape: Town of Schuttgart;        		</table>
+			87331,-142842,-1317
+		</table>
+		<table name="#name">Scroll of Escape: Gludin Village;Scroll of Escape: Town of Dion;Scroll of Escape: Town of; Giran;Scroll of Escape:
+			Heine;Scroll of;Escape: Town of Oren;Scroll of Escape: Town of Aden;Scroll of; Escape: Town of Goddard;Scroll of Escape: Town of
+			Rune;Scroll of;Escape: Town of Schuttgart;
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="TELEPORT" />
@@ -12870,8 +13047,8 @@
 		</for>
 	</skill>
 	<skill id="2792" levels="2" name="Greater Stone of Stamina">
-		<table name="#power">700 20000		</table>
-		<table name="#name">Stone of Stamina;Greater Stone of Stamina		</table>
+		<table name="#power">700 20000</table>
+		<table name="#name">Stone of Stamina;Greater Stone of Stamina</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="HEAL_STATIC" />
@@ -12889,8 +13066,8 @@
 		</for>
 	</skill>
 	<skill id="2793" levels="2" name="Greater Stone of Mana">
-		<table name="#power">500 20000		</table>
-		<table name="#name">Stone of Mana;Greater Stone of Mana		</table>
+		<table name="#power">500 20000</table>
+		<table name="#name">Stone of Mana;Greater Stone of Mana</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="MANAHEAL" />
@@ -12908,7 +13085,7 @@
 		</for>
 	</skill>
 	<skill id="2794" levels="2" name="Greater Stone of Recovery">
-		<table name="#name">Stone of Recovery;Greater Stone of Recovery		</table>
+		<table name="#name">Stone of Recovery;Greater Stone of Recovery</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -13639,7 +13816,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="9442,1,8.3333;9443,1,8.3333;9444,1,8.3333;9445,1,8.3333;9446,1,8.3333;9447,1,8.3333;9448,1,8.3333;9449,1,8.3333;9450,1,8.3333;10252,1,8.3333;10004,1,8.3333;10253,1,8.3333" />
+		<set name="capsuled_items_skill"
+			 val="9442,1,8.3333;9443,1,8.3333;9444,1,8.3333;9445,1,8.3333;9446,1,8.3333;9447,1,8.3333;9448,1,8.3333;9449,1,8.3333;9450,1,8.3333;10252,1,8.3333;10004,1,8.3333;10253,1,8.3333" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -13654,7 +13832,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="9514,1,6.25;9515,1,6.25;9516,1,6.25;9517,1,6.25;9518,1,6.25;9519,1,6.25;9520,1,6.25;9521,1,6.25;9522,1,6.25;9523,1,6.25;9524,1,6.25;9525,1,6.25;9526,1,6.25;9527,1,6.25;9528,1,6.25;9529,1,6.25" />
+		<set name="capsuled_items_skill"
+			 val="9514,1,6.25;9515,1,6.25;9516,1,6.25;9517,1,6.25;9518,1,6.25;9519,1,6.25;9520,1,6.25;9521,1,6.25;9522,1,6.25;9523,1,6.25;9524,1,6.25;9525,1,6.25;9526,1,6.25;9527,1,6.25;9528,1,6.25;9529,1,6.25" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -13669,7 +13848,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="7575,1,9.0909;6364,1,9.0909;6365,1,9.0909;6366,1,9.0909;6367,1,9.0909;6369,1,9.0909;6370,1,9.0909;6371,1,9.0909;6372,1,9.0909;6579,1,9.0909;6580,1,9.0909" />
+		<set name="capsuled_items_skill"
+			 val="7575,1,9.0909;6364,1,9.0909;6365,1,9.0909;6366,1,9.0909;6367,1,9.0909;6369,1,9.0909;6370,1,9.0909;6371,1,9.0909;6372,1,9.0909;6579,1,9.0909;6580,1,9.0909" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -13684,7 +13864,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="6674,1,7.142857;6675,1,7.142857;6676,1,7.142857;6677,1,7.142857;6678,1,7.142857;6679,1,7.142857;6680,1,7.142857;6681,1,7.142857;6682,1,7.142857;6683,1,7.142857;6684,1,7.142857;6685,1,7.142857;6686,1,7.142857;6687,1,7.142857" />
+		<set name="capsuled_items_skill"
+			 val="6674,1,7.142857;6675,1,7.142857;6676,1,7.142857;6677,1,7.142857;6678,1,7.142857;6679,1,7.142857;6680,1,7.142857;6681,1,7.142857;6682,1,7.142857;6683,1,7.142857;6684,1,7.142857;6685,1,7.142857;6686,1,7.142857;6687,1,7.142857" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -13772,7 +13953,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="8627,6,8633,6,8639,6,9628,4,9630,3,9629,3,84.0;10554,1,1.92;14213,1,1.93;10577,1,1.93;14209,1,1.93;14208,1,1.93;14212,1,1.93;14027,1,1.93;14052,30,2.50" />
+		<set name="capsuled_items_skill"
+			 val="8627,6,8633,6,8639,6,9628,4,9630,3,9629,3,84.0;10554,1,1.92;14213,1,1.93;10577,1,1.93;14209,1,1.93;14208,1,1.93;14212,1,1.93;14027,1,1.93;14052,30,2.50" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -13787,7 +13969,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="8627,6,8633,6,8639,6,9628,4,9630,3,9629,3,91.0;10554,1,1.07;14213,1,1.07;10577,1,1.07;14209,1,1.07;14208,1,1.07;14212,1,1.07;14027,1,1.08;14052,25,1.50" />
+		<set name="capsuled_items_skill"
+			 val="8627,6,8633,6,8639,6,9628,4,9630,3,9629,3,91.0;10554,1,1.07;14213,1,1.07;10577,1,1.07;14209,1,1.07;14208,1,1.07;14212,1,1.07;14027,1,1.08;14052,25,1.50" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -13802,7 +13985,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="8627,6,8633,6,8639,6,9628,4,9630,3,39.00;8627,6,8633,6,8639,6,9628,4,9630,3,9629,3,60.00;14027,1,1.00" />
+		<set name="capsuled_items_skill"
+			 val="8627,6,8633,6,8639,6,9628,4,9630,3,39.00;8627,6,8633,6,8639,6,9628,4,9630,3,9629,3,60.00;14027,1,1.00" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -13997,7 +14181,8 @@
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="reuseDelay" val="10000" />
-		<set name="capsuled_items_skill" val="14611,1,14619,1,17.665;14611,1,14614,1,17.665;5561,1,14619,1,23.665;5561,1,14614,1,23.665;14617,1,14619,1,8.665;14617,1,14614,1,8.665;14620,1,0.01" />
+		<set name="capsuled_items_skill"
+			 val="14611,1,14619,1,17.665;14611,1,14614,1,17.665;5561,1,14619,1,23.665;5561,1,14614,1,23.665;14617,1,14619,1,8.665;14617,1,14614,1,8.665;14620,1,0.01" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -14014,11 +14199,13 @@
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="2860" levels="7" name="Superior Elixir of Life (R-grade)">
-		<table name="#power">500 1300 2200 3000 3800 4600 4600		</table>
-		<table name="#minLvl">1 20 40 52 61 76 76		</table>
-		<table name="#maxLvl">20 40 52 61 76 86 86		</table>
-		<table name="#reuseDelay">600000 600000 600000 600000 600000 600000 120000		</table>
-		<table name="#name">Superior Elixir of Life (No-grade);Superior Elixir of Life (D-grade);Superior Elixir of Life;            (C-grade);Superior Elixir of Life;(B-grade);Superior Elixir of Life (A-grade);Superior Elixir of Life;            (S-grade);Superior Elixir of Life (R-grade);        		</table>
+		<table name="#power">500 1300 2200 3000 3800 4600 4600</table>
+		<table name="#minLvl">1 20 40 52 61 76 76</table>
+		<table name="#maxLvl">20 40 52 61 76 86 86</table>
+		<table name="#reuseDelay">600000 600000 600000 600000 600000 600000 120000</table>
+		<table name="#name">Superior Elixir of Life (No-grade);Superior Elixir of Life (D-grade);Superior Elixir of Life; (C-grade);Superior Elixir of
+			Life;(B-grade);Superior Elixir of Life (A-grade);Superior Elixir of Life; (S-grade);Superior Elixir of Life (R-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="HEAL_STATIC" />
@@ -14041,11 +14228,13 @@
 		</for>
 	</skill>
 	<skill id="2861" levels="7" name="Superior Elixir of Mind (R-grade)">
-		<table name="#power">120 280 440 580 720 840 840		</table>
-		<table name="#minLvl">0 20 40 52 61 76 76		</table>
-		<table name="#maxLvl">20 40 52 61 76 86 86		</table>
-		<table name="#reuseDelay">600000 600000 600000 600000 600000 600000 120000		</table>
-		<table name="#name">Superior Elixir of Mind (No-grade);Superior Elixir of Mind (D-grade);Superior Elixir of Mind;            (C-grade);Superior Elixir of Mind;(B-grade);Superior Elixir of Mind (A-grade);Superior Elixir of Mind;            (S-grade);Superior Elixir of Mind (R-grade);        		</table>
+		<table name="#power">120 280 440 580 720 840 840</table>
+		<table name="#minLvl">0 20 40 52 61 76 76</table>
+		<table name="#maxLvl">20 40 52 61 76 86 86</table>
+		<table name="#reuseDelay">600000 600000 600000 600000 600000 600000 120000</table>
+		<table name="#name">Superior Elixir of Mind (No-grade);Superior Elixir of Mind (D-grade);Superior Elixir of Mind; (C-grade);Superior Elixir of
+			Mind;(B-grade);Superior Elixir of Mind (A-grade);Superior Elixir of Mind; (S-grade);Superior Elixir of Mind (R-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="MANAHEAL" />
@@ -14068,11 +14257,13 @@
 		</for>
 	</skill>
 	<skill id="2862" levels="7" name="Superior Elixir of CP (R-grade)">
-		<table name="#power">300 700 1200 1600 2000 2400 2400		</table>
-		<table name="#minLvl">0 20 40 52 61 76 76		</table>
-		<table name="#maxLvl">20 40 52 61 76 86 86		</table>
-		<table name="#reuseDelay">600000 600000 600000 600000 600000 600000 120000		</table>
-		<table name="#name">Superior Elixir of CP (No-grade);Superior Elixir of CP (D-grade);Superior Elixir of CP;            (C-grade);Superior Elixir of CP;(B-grade);Superior Elixir of CP (A-grade);Superior Elixir of CP;            (S-grade);Superior Elixir of CP (R-grade);        		</table>
+		<table name="#power">300 700 1200 1600 2000 2400 2400</table>
+		<table name="#minLvl">0 20 40 52 61 76 76</table>
+		<table name="#maxLvl">20 40 52 61 76 86 86</table>
+		<table name="#reuseDelay">600000 600000 600000 600000 600000 600000 120000</table>
+		<table name="#name">Superior Elixir of CP (No-grade);Superior Elixir of CP (D-grade);Superior Elixir of CP; (C-grade);Superior Elixir of
+			CP;(B-grade);Superior Elixir of CP (A-grade);Superior Elixir of CP; (S-grade);Superior Elixir of CP (R-grade);
+		</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_SELF" />
 		<set name="skillType" val="COMBATPOINTHEAL" />
@@ -14119,7 +14310,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="14700,3,40.0;14701,3,26.0;9625,1,4.0;9626,1,4.0;14716,1,6.0;14717,1,6.0;14718,1,6.0;14709,1,3.9;14710,1,1.95;14711,1,0.15;14704,1,0.65;14705,1,0.325;14706,1,0.025;14678,1,0.6;14679,1,0.26;14680,1,0.13;14681,1,0.01" />
+		<set name="capsuled_items_skill"
+			 val="14700,3,40.0;14701,3,26.0;9625,1,4.0;9626,1,4.0;14716,1,6.0;14717,1,6.0;14718,1,6.0;14709,1,3.9;14710,1,1.95;14711,1,0.15;14704,1,0.65;14705,1,0.325;14706,1,0.025;14678,1,0.6;14679,1,0.26;14680,1,0.13;14681,1,0.01" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -14134,7 +14326,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="14700,3,40.0;14701,3,26.0;9625,1,4.0;9626,1,4.0;14716,1,6.0;14717,1,6.0;14718,1,6.0;14709,1,3.9;14710,1,1.95;14711,1,0.15;14704,1,0.65;14705,1,0.325;14706,1,0.025;14678,1,0.6;14679,1,0.26;14680,1,0.13;14681,1,0.01" />
+		<set name="capsuled_items_skill"
+			 val="14700,3,40.0;14701,3,26.0;9625,1,4.0;9626,1,4.0;14716,1,6.0;14717,1,6.0;14718,1,6.0;14709,1,3.9;14710,1,1.95;14711,1,0.15;14704,1,0.65;14705,1,0.325;14706,1,0.025;14678,1,0.6;14679,1,0.26;14680,1,0.13;14681,1,0.01" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -14550,7 +14743,7 @@
 		<set name="effectRange" val="400" />
 	</skill>
 	<skill id="2914" levels="3" name="Equipment Set Pack (90-day)">
-		<table name="#name">Equipment Set Pack (10-day);Equipment Set Pack (30-day);Equipment Set Pack (90-day)		</table>
+		<table name="#name">Equipment Set Pack (10-day);Equipment Set Pack (30-day);Equipment Set Pack (90-day)</table>
 		<set name="name" val="#name" />
 		<set name="target" val="TARGET_NONE" />
 		<set name="skillType" val="NOTDONE" />
@@ -14578,7 +14771,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="9575,1,2.77;10485,1,2.31;10577,1,3.2;14209,1,3.2;14208,1,3.2;14212,1,3.2;960,1,6.4;9625,1,3.2;9626,1,2.13;959,1,0.64;10373,1,1.54;10374,1,1.54;10375,1,1.54;10376,1,1.54;10377,1,1.54;10378,1,1.54;10379,1,1.54;10380,1,1.54;10381,1,1.54" />
+		<set name="capsuled_items_skill"
+			 val="9575,1,2.77;10485,1,2.31;10577,1,3.2;14209,1,3.2;14208,1,3.2;14212,1,3.2;960,1,6.4;9625,1,3.2;9626,1,2.13;959,1,0.64;10373,1,1.54;10374,1,1.54;10375,1,1.54;10376,1,1.54;10377,1,1.54;10378,1,1.54;10379,1,1.54;10380,1,1.54;10381,1,1.54" />
 		<for>
 			<cond msgId="129">
 				<and>
@@ -14593,7 +14787,8 @@
 		<set name="skillType" val="EXTRACTABLE" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="capsuled_items_skill" val="9575,1,2.36;10485,1,1.96;10577,1,2.72;14209,1,2.72;14208,1,2.72;14212,1,2.72;960,1,5.44;9625,1,2.72;9626,1,1.81;959,1,0.54;10373,1,1.31;10374,1,1.31;10375,1,1.31;10376,1,1.31;10377,1,1.31;10378,1,1.31;10379,1,1.31;10380,1,1.31;10381,1,1.31" />
+		<set name="capsuled_items_skill"
+			 val="9575,1,2.36;10485,1,1.96;10577,1,2.72;14209,1,2.72;14208,1,2.72;14212,1,2.72;960,1,5.44;9625,1,2.72;9626,1,1.81;959,1,0.54;10373,1,1.31;10374,1,1.31;10375,1,1.31;10376,1,1.31;10377,1,1.31;10378,1,1.31;10379,1,1.31;10380,1,1.31;10381,1,1.31" />
 		<for>
 			<cond msgId="129">
 				<and>

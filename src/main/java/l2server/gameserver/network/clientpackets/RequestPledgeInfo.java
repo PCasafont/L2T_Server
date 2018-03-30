@@ -29,37 +29,30 @@ import java.util.logging.Level;
  *
  * @version $Revision: 1.5.4.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestPledgeInfo extends L2GameClientPacket
-{
+public final class RequestPledgeInfo extends L2GameClientPacket {
 
 	private int clanId;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		clanId = readD();
 	}
 
 	@Override
-	protected void runImpl()
-	{
-		if (Config.DEBUG)
-		{
+	protected void runImpl() {
+		if (Config.DEBUG) {
 			Log.log(Level.FINE, "Info for clan " + clanId + " requested");
 		}
 
 		L2PcInstance activeChar = getClient().getActiveChar();
 
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
 		L2Clan clan = ClanTable.getInstance().getClan(clanId);
-		if (clan == null)
-		{
-			if (Config.DEBUG)
-			{
+		if (clan == null) {
+			if (Config.DEBUG) {
 				Log.warning("Clan data for clanId " + clanId + " is missing for player " + activeChar.getName());
 			}
 			return; // we have no clan data ?!? should not happen
@@ -70,8 +63,7 @@ public final class RequestPledgeInfo extends L2GameClientPacket
 	}
 
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

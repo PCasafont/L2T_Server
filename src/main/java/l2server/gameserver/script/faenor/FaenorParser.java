@@ -16,23 +16,20 @@
 package l2server.gameserver.script.faenor;
 
 import l2server.gameserver.script.Parser;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
+import javax.script.ScriptContext;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import javax.script.ScriptContext;
-
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
 /**
  * @author Luis Arias
  */
-public abstract class FaenorParser extends Parser
-{
+public abstract class FaenorParser extends Parser {
 	protected static FaenorInterface bridge = FaenorInterface.getInstance();
 	protected static final DateFormat DATE_FORMAT = new SimpleDateFormat("dd MMM yyyy", Locale.US);
 
@@ -41,88 +38,67 @@ public abstract class FaenorParser extends Parser
 	/*
 	 * UTILITY FUNCTIONS
 	 */
-	public static String attribute(Node node, String attributeName)
-	{
+	public static String attribute(Node node, String attributeName) {
 		return attribute(node, attributeName, null);
 	}
 
-	public static String element(Node node, String elementName)
-	{
+	public static String element(Node node, String elementName) {
 		return element(node, elementName, null);
 	}
 
-	public static String attribute(Node node, String attributeName, String defaultValue)
-	{
-		try
-		{
+	public static String attribute(Node node, String attributeName, String defaultValue) {
+		try {
 			return node.getAttributes().getNamedItem(attributeName).getNodeValue();
-		}
-		catch (Exception e)
-		{
-			if (defaultValue != null)
-			{
+		} catch (Exception e) {
+			if (defaultValue != null) {
 				return defaultValue;
 			}
 			throw new NullPointerException(e.getMessage());
 		}
 	}
 
-	public static String element(Node parentNode, String elementName, String defaultValue)
-	{
-		try
-		{
+	public static String element(Node parentNode, String elementName, String defaultValue) {
+		try {
 			NodeList list = parentNode.getChildNodes();
-			for (int i = 0; i < list.getLength(); i++)
-			{
+			for (int i = 0; i < list.getLength(); i++) {
 				Node node = list.item(i);
-				if (node.getNodeName().equalsIgnoreCase(elementName))
-				{
+				if (node.getNodeName().equalsIgnoreCase(elementName)) {
 					return node.getTextContent();
 				}
 			}
+		} catch (Exception ignored) {
 		}
-		catch (Exception ignored)
-		{
-		}
-		if (defaultValue != null)
-		{
+		if (defaultValue != null) {
 			return defaultValue;
 		}
 		throw new NullPointerException();
 	}
 
-	public static boolean isNodeName(Node node, String name)
-	{
+	public static boolean isNodeName(Node node, String name) {
 		return node.getNodeName().equalsIgnoreCase(name);
 	}
 
-	public static Date getDate(String date) throws ParseException
-	{
+	public static Date getDate(String date) throws ParseException {
 		return DATE_FORMAT.parse(date);
 	}
 
-	public static double getPercent(String percent)
-	{
+	public static double getPercent(String percent) {
 		return Double.parseDouble(percent.split("%")[0]) / 100.0;
 	}
 
-	protected static int getInt(String number)
-	{
+	protected static int getInt(String number) {
 		return Integer.parseInt(number);
 	}
 
-	protected static double getDouble(String number)
-	{
+	protected static double getDouble(String number) {
 		return Double.parseDouble(number);
 	}
 
-	protected static float getFloat(String number)
-	{
+	protected static float getFloat(String number) {
 		return Float.parseFloat(number);
 	}
 
-	protected static String getParserName(String name)
-	{
+	protected static String getParserName(String name) {
 		return "faenor.Faenor" + name + "Parser";
 	}
 

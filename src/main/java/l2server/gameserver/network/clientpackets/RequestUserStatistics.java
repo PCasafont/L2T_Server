@@ -21,25 +21,21 @@ import l2server.gameserver.network.serverpackets.ExLoadStatUser;
 /**
  * @author Pere
  */
-public final class RequestUserStatistics extends L2GameClientPacket
-{
+public final class RequestUserStatistics extends L2GameClientPacket {
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-
-		if (player == null)
-		{
+		
+		if (player == null) {
 			return;
 		}
-
+		
 		sendPacket(new ExLoadStatUser(player));
 	}
 }

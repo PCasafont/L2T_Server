@@ -20,18 +20,15 @@ import l2server.gameserver.network.serverpackets.ExCloseAPListWnd;
 /**
  * @author Pere
  */
-public final class RequestAPCloseListWnd extends L2GameClientPacket
-{
+public final class RequestAPCloseListWnd extends L2GameClientPacket {
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		sendPacket(new ExCloseAPListWnd());
 	}
 }

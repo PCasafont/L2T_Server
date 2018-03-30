@@ -20,10 +20,8 @@ package l2server.loginserver.network.serverpackets;
  *
  * @version $Revision: 1.2.4.1 $ $Date: 2005/03/27 15:30:11 $
  */
-public final class PlayFail extends L2LoginServerPacket
-{
-	public enum PlayFailReason
-	{
+public final class PlayFail extends L2LoginServerPacket {
+	public enum PlayFailReason {
 		REASON_NO_MESSAGE(0x00),
 		REASON_SYSTEM_ERROR_LOGIN_LATER(0x01),
 		REASON_USER_OR_PASS_WRONG(0x02),
@@ -63,32 +61,28 @@ public final class PlayFail extends L2LoginServerPacket
 		REASON_CERTIFICATION_FAILED_3_TIMES_GAMEPLAY_BLOCKED_30_MIN(0x36),
 		REASON_CERTIFICATION_DAILY_USE_EXCEEDED(0x37),
 		REASON_CERTIFICATION_UNDERWAY_TRY_AGAIN_LATER(0x38);
-
+		
 		private final int code;
-
-		PlayFailReason(int code)
-		{
+		
+		PlayFailReason(int code) {
 			this.code = code;
 		}
-
-		public final int getCode()
-		{
+		
+		public final int getCode() {
 			return code;
 		}
 	}
-
+	
 	private final PlayFailReason reason;
-
-	public PlayFail(PlayFailReason reason)
-	{
+	
+	public PlayFail(PlayFailReason reason) {
 		this.reason = reason;
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void write()
-	{
+	protected void write() {
 		writeC(0x06);
 		writeC(reason.getCode());
 	}

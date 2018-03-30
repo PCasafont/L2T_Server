@@ -30,17 +30,14 @@ import java.util.logging.Level;
 /**
  * @author evill33t
  */
-public class CoupleManager
-{
+public class CoupleManager {
 
-	private CoupleManager()
-	{
+	private CoupleManager() {
 		Log.info("L2JMOD: Initializing CoupleManager");
 		load();
 	}
 
-	public static CoupleManager getInstance()
-	{
+	public static CoupleManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
@@ -52,65 +49,51 @@ public class CoupleManager
 
 	// =========================================================
 	// Method - Public
-	public void reload()
-	{
+	public void reload() {
 		getCouples().clear();
 		load();
 	}
 
 	// =========================================================
 	// Method - Private
-	private void load()
-	{
+	private void load() {
 		Connection con = null;
-		try
-		{
+		try {
 			PreparedStatement statement;
 			ResultSet rs;
 
 			con = L2DatabaseFactory.getInstance().getConnection();
 
-			statement = con.prepareStatement("Select id from mods_wedding order by id");
+			statement = con.prepareStatement("SELECT id FROM mods_wedding ORDER BY id");
 			rs = statement.executeQuery();
 
-			while (rs.next())
-			{
+			while (rs.next()) {
 				getCouples().add(new Couple(rs.getInt("id")));
 			}
 
 			statement.close();
 
 			Log.info("Loaded: " + getCouples().size() + " couples(s)");
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Exception: CoupleManager.load(): " + e.getMessage(), e);
-		}
-
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
 	// =========================================================
 	// Property - Public
-	public final Couple getCouple(int coupleId)
-	{
+	public final Couple getCouple(int coupleId) {
 		int index = getCoupleIndex(coupleId);
-		if (index >= 0)
-		{
+		if (index >= 0) {
 			return getCouples().get(index);
 		}
 		return null;
 	}
 
-	public void createCouple(L2PcInstance player1, L2PcInstance player2)
-	{
-		if (player1 != null && player2 != null)
-		{
-			if (player1.getPartnerId() == 0 && player2.getPartnerId() == 0)
-			{
+	public void createCouple(L2PcInstance player1, L2PcInstance player2) {
+		if (player1 != null && player2 != null) {
+			if (player1.getPartnerId() == 0 && player2.getPartnerId() == 0) {
 				int player1id = player1.getObjectId();
 				int player2id = player2.getObjectId();
 
@@ -124,22 +107,18 @@ public class CoupleManager
 		}
 	}
 
-	public void deleteCouple(int coupleId)
-	{
+	public void deleteCouple(int coupleId) {
 		int index = getCoupleIndex(coupleId);
 		Couple couple = getCouples().get(index);
-		if (couple != null)
-		{
+		if (couple != null) {
 			L2PcInstance player1 = L2World.getInstance().getPlayer(couple.getPlayer1Id());
 			L2PcInstance player2 = L2World.getInstance().getPlayer(couple.getPlayer2Id());
-			if (player1 != null)
-			{
+			if (player1 != null) {
 				player1.setPartnerId(0);
 				player1.setMarried(false);
 				player1.setCoupleId(0);
 			}
-			if (player2 != null)
-			{
+			if (player2 != null) {
 				player2.setPartnerId(0);
 				player2.setMarried(false);
 				player2.setCoupleId(0);
@@ -149,13 +128,10 @@ public class CoupleManager
 		}
 	}
 
-	public final int getCoupleIndex(int coupleId)
-	{
+	public final int getCoupleIndex(int coupleId) {
 		int i = 0;
-		for (Couple temp : getCouples())
-		{
-			if (temp != null && temp.getId() == coupleId)
-			{
+		for (Couple temp : getCouples()) {
+			if (temp != null && temp.getId() == coupleId) {
 				return i;
 			}
 			i++;
@@ -163,18 +139,15 @@ public class CoupleManager
 		return -1;
 	}
 
-	public final ArrayList<Couple> getCouples()
-	{
-		if (couples == null)
-		{
+	public final ArrayList<Couple> getCouples() {
+		if (couples == null) {
 			couples = new ArrayList<>();
 		}
 		return couples;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final CoupleManager instance = new CoupleManager();
 	}
 }

@@ -21,20 +21,17 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Gnacik
  */
-public class PartyMatchDetail extends L2GameServerPacket
-{
+public class PartyMatchDetail extends L2GameServerPacket {
 	private PartyMatchRoom room;
-
+	
 	/**
 	 */
-	public PartyMatchDetail(L2PcInstance player, PartyMatchRoom room)
-	{
+	public PartyMatchDetail(L2PcInstance player, PartyMatchRoom room) {
 		this.room = room;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(room.getId()); //	Room ID
 		writeD(room.getMaxMembers()); //	Max Members
 		writeD(room.getMinLvl()); //	Level Min

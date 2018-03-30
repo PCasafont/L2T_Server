@@ -28,45 +28,39 @@ import java.util.Map;
 /**
  * @author mrTJO
  */
-public class RequestSaveKeyMapping extends L2GameClientPacket
-{
+public class RequestSaveKeyMapping extends L2GameClientPacket {
 	int tabNum;
-
+	
 	Map<Integer, List<ActionKey>> keyMap = new HashMap<>();
 	Map<Integer, List<Integer>> catMap = new HashMap<>();
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		int category = 0;
-
+		
 		readD(); // Unknown
 		readD(); // Unknown
 		tabNum = readD();
-		for (int i = 0; i < tabNum; i++)
-		{
+		for (int i = 0; i < tabNum; i++) {
 			int cmd1Size = readC();
-			for (int j = 0; j < cmd1Size; j++)
-			{
+			for (int j = 0; j < cmd1Size; j++) {
 				int cmdId = readC();
 				insertCategory(category, cmdId);
 			}
 			category++;
-
+			
 			int cmd2Size = readC();
-			for (int j = 0; j < cmd2Size; j++)
-			{
+			for (int j = 0; j < cmd2Size; j++) {
 				int cmdId = readC();
 				insertCategory(category, cmdId);
 			}
 			category++;
-
+			
 			int cmdSize = readD();
-			for (int j = 0; j < cmdSize; j++)
-			{
+			for (int j = 0; j < cmdSize; j++) {
 				int cmd = readD();
 				int key = readD();
 				int tgKey1 = readD();
@@ -78,54 +72,42 @@ public class RequestSaveKeyMapping extends L2GameClientPacket
 		readD();
 		readD();
 	}
-
-	public void insertCategory(int cat, int cmd)
-	{
-		if (catMap.containsKey(cat))
-		{
+	
+	public void insertCategory(int cat, int cmd) {
+		if (catMap.containsKey(cat)) {
 			catMap.get(cat).add(cmd);
-		}
-		else
-		{
+		} else {
 			List<Integer> tmp = new ArrayList<>();
 			tmp.add(cmd);
 			catMap.put(cat, tmp);
 		}
 	}
-
-	public void insertKey(int cat, int cmdId, int key, int tgKey1, int tgKey2, int show)
-	{
+	
+	public void insertKey(int cat, int cmdId, int key, int tgKey1, int tgKey2, int show) {
 		ActionKey tmk = new ActionKey(cat, cmdId, key, tgKey1, tgKey2, show);
-		if (keyMap.containsKey(cat))
-		{
+		if (keyMap.containsKey(cat)) {
 			keyMap.get(cat).add(tmk);
-		}
-		else
-		{
+		} else {
 			List<ActionKey> tmp = new ArrayList<>();
 			tmp.add(tmk);
 			keyMap.put(cat, tmp);
 		}
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-
-		if (player == null)
-		{
+		
+		if (player == null) {
 			return;
 		}
-		if (getClient().getState() != GameClientState.IN_GAME)
-		{
+		if (getClient().getState() != GameClientState.IN_GAME) {
 			return;
 		}
-		if (Config.STORE_UI_SETTINGS)
-		{
+		if (Config.STORE_UI_SETTINGS) {
 			player.getUISettings().storeAll(catMap, keyMap);
 		}
 	}

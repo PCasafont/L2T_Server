@@ -26,8 +26,7 @@ import l2server.log.Log;
  *
  * @version $Revision: 1.1.2.1.2.4 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class CannotMoveAnymore extends L2GameClientPacket
-{
+public final class CannotMoveAnymore extends L2GameClientPacket {
 
 	private int x;
 	private int y;
@@ -35,8 +34,7 @@ public final class CannotMoveAnymore extends L2GameClientPacket
 	private int heading;
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		x = readD();
 		y = readD();
 		z = readD();
@@ -44,23 +42,17 @@ public final class CannotMoveAnymore extends L2GameClientPacket
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
 
-		if (Config.DEBUG)
-		{
-			Log.fine(
-					"client: x:" + x + " y:" + y + " z:" + z + " server x:" + player.getX() + " y:" + player.getY() +
-							" z:" + player.getZ());
+		if (Config.DEBUG) {
+			Log.fine("client: x:" + x + " y:" + y + " z:" + z + " server x:" + player.getX() + " y:" + player.getY() + " z:" + player.getZ());
 		}
 
-		if (player.getAI() != null)
-		{
+		if (player.getAI() != null) {
 			player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, new L2CharPosition(x, y, z, heading));
 		}
 		/*if (player.getParty() != null)

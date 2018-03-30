@@ -15,31 +15,27 @@
 
 package l2server.gameserver.handler;
 
+import gnu.trove.TIntObjectHashMap;
 import l2server.Config;
 import l2server.log.Log;
-
-import gnu.trove.TIntObjectHashMap;
 
 /**
  * This class handles all chat handlers
  *
  * @author durgus
  */
-public class ChatHandler
-{
+public class ChatHandler {
 
 	private TIntObjectHashMap<IChatHandler> datatable;
 
-	public static ChatHandler getInstance()
-	{
+	public static ChatHandler getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	/**
 	 * Singleton constructor
 	 */
-	private ChatHandler()
-	{
+	private ChatHandler() {
 		datatable = new TIntObjectHashMap<>();
 	}
 
@@ -48,13 +44,10 @@ public class ChatHandler
 	 *
 	 * @param handler
 	 */
-	public void registerChatHandler(IChatHandler handler)
-	{
+	public void registerChatHandler(IChatHandler handler) {
 		int[] ids = handler.getChatTypeList();
-		for (int id : ids)
-		{
-			if (Config.DEBUG)
-			{
+		for (int id : ids) {
+			if (Config.DEBUG) {
 				Log.fine("Adding handler for chat type " + id);
 			}
 			datatable.put(id, handler);
@@ -67,8 +60,7 @@ public class ChatHandler
 	 * @param chatType
 	 * @return
 	 */
-	public IChatHandler getChatHandler(int chatType)
-	{
+	public IChatHandler getChatHandler(int chatType) {
 		return datatable.get(chatType);
 	}
 
@@ -77,14 +69,12 @@ public class ChatHandler
 	 *
 	 * @return
 	 */
-	public int size()
-	{
+	public int size() {
 		return datatable.size();
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final ChatHandler instance = new ChatHandler();
 	}
 }

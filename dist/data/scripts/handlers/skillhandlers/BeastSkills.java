@@ -26,22 +26,14 @@ import l2server.gameserver.templates.skills.L2SkillType;
 /**
  * @author _drunk_
  */
-public class BeastSkills implements ISkillHandler
-{
+public class BeastSkills implements ISkillHandler {
 	// private static Logger log = Logger.getLogger(BeastSkills.class.getName());
-	private static final L2SkillType[] SKILL_IDS = {
-			L2SkillType.BEAST_FEED,
-			L2SkillType.BEAST_RELEASE,
-			L2SkillType.BEAST_RELEASE_ALL,
-			L2SkillType.BEAST_SKILL,
-			L2SkillType.BEAST_ACCOMPANY
-	};
+	private static final L2SkillType[] SKILL_IDS =
+			{L2SkillType.BEAST_FEED, L2SkillType.BEAST_RELEASE, L2SkillType.BEAST_RELEASE_ALL, L2SkillType.BEAST_SKILL, L2SkillType.BEAST_ACCOMPANY};
 
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		if (!(activeChar instanceof L2PcInstance))
-		{
+	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+		if (!(activeChar instanceof L2PcInstance)) {
 			return;
 		}
 
@@ -49,13 +41,11 @@ public class BeastSkills implements ISkillHandler
 		L2PcInstance player = activeChar.getActingPlayer();
 		L2Object target = player.getTarget();
 
-		switch (type)
-		{
+		switch (type) {
 			case BEAST_FEED:
 				L2Object[] targetList = skill.getTargetList(activeChar);
 
-				if (targetList == null)
-				{
+				if (targetList == null) {
 					return;
 				}
 
@@ -63,16 +53,13 @@ public class BeastSkills implements ISkillHandler
 				// since the AI responce onSkillUse handles the rest.
 				break;
 			case BEAST_RELEASE:
-				if (target != null && target instanceof L2TamedBeastInstance)
-				{
+				if (target != null && target instanceof L2TamedBeastInstance) {
 					((L2TamedBeastInstance) target).deleteMe();
 				}
 				break;
 			case BEAST_RELEASE_ALL:
-				if (player.getTrainedBeasts() != null)
-				{
-					for (L2TamedBeastInstance beast : player.getTrainedBeasts())
-					{
+				if (player.getTrainedBeasts() != null) {
+					for (L2TamedBeastInstance beast : player.getTrainedBeasts()) {
 						beast.deleteMe();
 					}
 				}
@@ -81,8 +68,7 @@ public class BeastSkills implements ISkillHandler
 				// Unknown effect now
 				break;
 			case BEAST_SKILL:
-				if (target != null && target instanceof L2TamedBeastInstance)
-				{
+				if (target != null && target instanceof L2TamedBeastInstance) {
 					((L2TamedBeastInstance) target).castBeastSkills();
 				}
 				break;
@@ -91,8 +77,7 @@ public class BeastSkills implements ISkillHandler
 	}
 
 	@Override
-	public L2SkillType[] getSkillIds()
-	{
+	public L2SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

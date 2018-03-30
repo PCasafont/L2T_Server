@@ -20,27 +20,21 @@ import l2server.gameserver.stats.Env;
 
 import java.util.ArrayList;
 
-public class ConditionPlayerClassNameStartsWith extends Condition
-{
+public class ConditionPlayerClassNameStartsWith extends Condition {
 	private final ArrayList<String> className;
 
-	public ConditionPlayerClassNameStartsWith(ArrayList<String> className)
-	{
+	public ConditionPlayerClassNameStartsWith(ArrayList<String> className) {
 		this.className = className;
 	}
 
 	@Override
-	public boolean testImpl(Env env)
-	{
-		if (!(env.player instanceof L2PcInstance))
-		{
+	public boolean testImpl(Env env) {
+		if (!(env.player instanceof L2PcInstance)) {
 			return false;
 		}
 
-		for (String className : className)
-		{
-			if (((L2PcInstance) env.player).getCurrentClass().getName().startsWith(className))
-			{
+		for (String className : className) {
+			if (((L2PcInstance) env.player).getCurrentClass().getName().startsWith(className)) {
 				return true;
 			}
 		}

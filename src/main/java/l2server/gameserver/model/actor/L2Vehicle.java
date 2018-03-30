@@ -21,12 +21,7 @@ import l2server.gameserver.TimeController;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.ai.L2CharacterAI;
 import l2server.gameserver.datatables.MapRegionTable;
-import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.L2WorldRegion;
-import l2server.gameserver.model.Location;
-import l2server.gameserver.model.VehiclePathPoint;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.knownlist.VehicleKnownList;
 import l2server.gameserver.model.actor.stat.VehicleStat;
@@ -48,8 +43,7 @@ import java.util.logging.Level;
 /**
  * @author DS
  */
-public abstract class L2Vehicle extends L2Character
-{
+public abstract class L2Vehicle extends L2Character {
 	protected int dockId = 0;
 	protected final ArrayList<L2PcInstance> passengers = new ArrayList<>();
 	protected Location oustLoc = null;
@@ -58,60 +52,48 @@ public abstract class L2Vehicle extends L2Character
 	protected VehiclePathPoint[] currentPath = null;
 	protected int runState = 0;
 
-	public L2Vehicle(int objectId, L2CharTemplate template)
-	{
+	public L2Vehicle(int objectId, L2CharTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2Vehicle);
 		setIsFlying(true);
 	}
 
-	public boolean isBoat()
-	{
+	public boolean isBoat() {
 		return false;
 	}
 
-	public boolean isAirShip()
-	{
+	public boolean isAirShip() {
 		return false;
 	}
 
-	public boolean isShuttle()
-	{
+	public boolean isShuttle() {
 		return false;
 	}
 
-	public boolean canBeControlled()
-	{
+	public boolean canBeControlled() {
 		return engine == null;
 	}
 
-	public void registerEngine(Runnable r)
-	{
+	public void registerEngine(Runnable r) {
 		engine = r;
 	}
 
-	public void runEngine(int delay)
-	{
-		if (engine != null)
-		{
+	public void runEngine(int delay) {
+		if (engine != null) {
 			ThreadPoolManager.getInstance().scheduleGeneral(engine, delay);
 		}
 	}
 
-	public void executePath(VehiclePathPoint[] path)
-	{
+	public void executePath(VehiclePathPoint[] path) {
 		runState = 0;
 		currentPath = path;
 
-		if (currentPath != null && currentPath.length > 0)
-		{
+		if (currentPath != null && currentPath.length > 0) {
 			final VehiclePathPoint point = currentPath[0];
-			if (point.moveSpeed > 0)
-			{
+			if (point.moveSpeed > 0) {
 				getStat().setMoveSpeed(point.moveSpeed);
 			}
-			if (point.rotationSpeed > 0)
-			{
+			if (point.rotationSpeed > 0) {
 				getStat().setRotationSpeed(point.rotationSpeed);
 			}
 
@@ -122,31 +104,22 @@ public abstract class L2Vehicle extends L2Character
 	}
 
 	@Override
-	public boolean moveToNextRoutePoint()
-	{
+	public boolean moveToNextRoutePoint() {
 		move = null;
 
-		if (currentPath != null)
-		{
+		if (currentPath != null) {
 			runState++;
-			if (runState < currentPath.length)
-			{
+			if (runState < currentPath.length) {
 				final VehiclePathPoint point = currentPath[runState];
-				if (!isMovementDisabled())
-				{
-					if (point.moveSpeed == 0)
-					{
+				if (!isMovementDisabled()) {
+					if (point.moveSpeed == 0) {
 						teleToLocation(point.x, point.y, point.z, point.rotationSpeed, false);
 						currentPath = null;
-					}
-					else
-					{
-						if (point.moveSpeed > 0)
-						{
+					} else {
+						if (point.moveSpeed > 0) {
 							getStat().setMoveSpeed(point.moveSpeed);
 						}
-						if (point.rotationSpeed > 0)
-						{
+						if (point.rotationSpeed > 0) {
 							getStat().setRotationSpeed(point.rotationSpeed);
 						}
 
@@ -173,9 +146,7 @@ public abstract class L2Vehicle extends L2Character
 						return true;
 					}
 				}
-			}
-			else
-			{
+			} else {
 				currentPath = null;
 			}
 		}
@@ -185,83 +156,67 @@ public abstract class L2Vehicle extends L2Character
 	}
 
 	@Override
-	public void initKnownList()
-	{
+	public void initKnownList() {
 		setKnownList(new VehicleKnownList(this));
 	}
 
 	@Override
-	public VehicleStat getStat()
-	{
+	public VehicleStat getStat() {
 		return (VehicleStat) super.getStat();
 	}
 
 	@Override
-	public void initCharStat()
-	{
+	public void initCharStat() {
 		setStat(new VehicleStat(this));
 	}
 
-	public boolean isInDock()
-	{
+	public boolean isInDock() {
 		return dockId > 0;
 	}
 
-	public int getDockId()
-	{
+	public int getDockId() {
 		return dockId;
 	}
 
-	public void setInDock(int d)
-	{
+	public void setInDock(int d) {
 		dockId = d;
 	}
 
-	public void setOustLoc(Location loc)
-	{
+	public void setOustLoc(Location loc) {
 		oustLoc = loc;
 	}
 
-	public Location getOustLoc()
-	{
-		return oustLoc != null ? oustLoc :
-				MapRegionTable.getInstance().getTeleToLocation(this, MapRegionTable.TeleportWhereType.Town);
+	public Location getOustLoc() {
+		return oustLoc != null ? oustLoc : MapRegionTable.getInstance().getTeleToLocation(this, MapRegionTable.TeleportWhereType.Town);
 	}
 
-	public void oustPlayers()
-	{
+	public void oustPlayers() {
 		L2PcInstance player;
 
 		// Use iterator because oustPlayer will try to remove player from passengers
 		final Iterator<L2PcInstance> iter = passengers.iterator();
-		while (iter.hasNext())
-		{
+		while (iter.hasNext()) {
 			player = iter.next();
 			iter.remove();
-			if (player != null)
-			{
+			if (player != null) {
 				oustPlayer(player);
 			}
 		}
 	}
 
-	public void oustPlayer(L2PcInstance player)
-	{
+	public void oustPlayer(L2PcInstance player) {
 		player.setVehicle(null);
 		player.setInVehiclePosition(null);
 		removePassenger(player);
 	}
 
-	public boolean addPassenger(L2PcInstance player)
-	{
-		if (player == null || passengers.contains(player))
-		{
+	public boolean addPassenger(L2PcInstance player) {
+		if (player == null || passengers.contains(player)) {
 			return false;
 		}
 
 		// already in other vehicle
-		if (player.getVehicle() != null && player.getVehicle() != this)
-		{
+		if (player.getVehicle() != null && player.getVehicle() != this) {
 			return false;
 		}
 
@@ -269,33 +224,24 @@ public abstract class L2Vehicle extends L2Character
 		return true;
 	}
 
-	public void removePassenger(L2PcInstance player)
-	{
-		try
-		{
+	public void removePassenger(L2PcInstance player) {
+		try {
 			passengers.remove(player);
-		}
-		catch (Exception ignored)
-		{
+		} catch (Exception ignored) {
 		}
 	}
 
-	public boolean isEmpty()
-	{
+	public boolean isEmpty() {
 		return passengers.isEmpty();
 	}
 
-	public List<L2PcInstance> getPassengers()
-	{
+	public List<L2PcInstance> getPassengers() {
 		return passengers;
 	}
 
-	public void broadcastToPassengers(L2GameServerPacket sm)
-	{
-		for (L2PcInstance player : passengers)
-		{
-			if (player != null)
-			{
+	public void broadcastToPassengers(L2GameServerPacket sm) {
+		for (L2PcInstance player : passengers) {
+			if (player != null) {
 				player.sendPacket(sm);
 			}
 		}
@@ -310,27 +256,19 @@ public abstract class L2Vehicle extends L2Character
 	 * @param oustY
 	 * @param oustZ
 	 */
-	public void payForRide(int itemId, int count, int oustX, int oustY, int oustZ)
-	{
+	public void payForRide(int itemId, int count, int oustX, int oustY, int oustZ) {
 		final Collection<L2PcInstance> passengers = getKnownList().getKnownPlayersInRadius(1000);
-		if (passengers != null && !passengers.isEmpty())
-		{
+		if (passengers != null && !passengers.isEmpty()) {
 			L2ItemInstance ticket;
 			InventoryUpdate iu;
-			for (L2PcInstance player : passengers)
-			{
-				if (player == null)
-				{
+			for (L2PcInstance player : passengers) {
+				if (player == null) {
 					continue;
 				}
-				if (player.isInBoat() && player.getBoat() == this)
-				{
-					if (itemId > 0)
-					{
+				if (player.isInBoat() && player.getBoat() == this) {
+					if (itemId > 0) {
 						ticket = player.getInventory().getItemByItemId(itemId);
-						if (ticket == null ||
-								player.getInventory().destroyItem("Boat", ticket, count, player, this) == null)
-						{
+						if (ticket == null || player.getInventory().destroyItem("Boat", ticket, count, player, this) == null) {
 							player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_CORRECT_BOAT_TICKET));
 							player.teleToLocation(oustX, oustY, oustZ, true);
 							continue;
@@ -346,14 +284,11 @@ public abstract class L2Vehicle extends L2Character
 	}
 
 	@Override
-	public boolean updatePosition(int gameTicks)
-	{
+	public boolean updatePosition(int gameTicks) {
 		final boolean result = super.updatePosition(gameTicks);
 
-		for (L2PcInstance player : passengers)
-		{
-			if (player != null && player.getVehicle() == this)
-			{
+		for (L2PcInstance player : passengers) {
+			if (player != null && player.getVehicle() == this) {
 				player.getPosition().setXYZ(getX(), getY(), getZ());
 				player.revalidateZone(false);
 			}
@@ -363,10 +298,8 @@ public abstract class L2Vehicle extends L2Character
 	}
 
 	@Override
-	public void teleToLocation(int x, int y, int z, int heading, boolean allowRandomOffset)
-	{
-		if (isMoving())
-		{
+	public void teleToLocation(int x, int y, int z, int heading, boolean allowRandomOffset) {
+		if (isMoving()) {
 			stopMove(null, false);
 		}
 
@@ -374,10 +307,8 @@ public abstract class L2Vehicle extends L2Character
 
 		getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 
-		for (L2PcInstance player : passengers)
-		{
-			if (player != null)
-			{
+		for (L2PcInstance player : passengers) {
+			if (player != null) {
 				player.teleToLocation(x, y, z);
 			}
 		}
@@ -386,8 +317,7 @@ public abstract class L2Vehicle extends L2Character
 		setXYZ(x, y, z);
 
 		// temporary fix for heading on teleports
-		if (heading != 0)
-		{
+		if (heading != 0) {
 			getPosition().setHeading(heading);
 		}
 
@@ -396,70 +326,52 @@ public abstract class L2Vehicle extends L2Character
 	}
 
 	@Override
-	public void stopMove(L2CharPosition pos, boolean updateKnownObjects)
-	{
+	public void stopMove(L2CharPosition pos, boolean updateKnownObjects) {
 		move = null;
-		if (pos != null)
-		{
+		if (pos != null) {
 			setXYZ(pos.x, pos.y, pos.z);
 			setHeading(pos.heading);
 			revalidateZone(true);
 		}
 
-		if (Config.MOVE_BASED_KNOWNLIST && updateKnownObjects)
-		{
+		if (Config.MOVE_BASED_KNOWNLIST && updateKnownObjects) {
 			getKnownList().findObjects();
 		}
 	}
 
 	@Override
-	public void deleteMe()
-	{
+	public void deleteMe() {
 		engine = null;
 
-		try
-		{
-			if (isMoving())
-			{
+		try {
+			if (isMoving()) {
 				stopMove(null);
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Failed stopMove().", e);
 		}
 
-		try
-		{
+		try {
 			oustPlayers();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Failed oustPlayers().", e);
 		}
 
 		final L2WorldRegion oldRegion = getWorldRegion();
 
-		try
-		{
+		try {
 			decayMe();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Failed decayMe().", e);
 		}
 
-		if (oldRegion != null)
-		{
+		if (oldRegion != null) {
 			oldRegion.removeFromZones(this);
 		}
 
-		try
-		{
+		try {
 			getKnownList().removeAllKnownObjects();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Failed cleaning knownlist.", e);
 		}
 
@@ -470,51 +382,42 @@ public abstract class L2Vehicle extends L2Character
 	}
 
 	@Override
-	public void updateAbnormalEffect()
-	{
+	public void updateAbnormalEffect() {
 	}
 
 	@Override
-	public L2ItemInstance getActiveWeaponInstance()
-	{
+	public L2ItemInstance getActiveWeaponInstance() {
 		return null;
 	}
 
 	@Override
-	public L2Weapon getActiveWeaponItem()
-	{
+	public L2Weapon getActiveWeaponItem() {
 		return null;
 	}
 
 	@Override
-	public L2ItemInstance getSecondaryWeaponInstance()
-	{
+	public L2ItemInstance getSecondaryWeaponInstance() {
 		return null;
 	}
 
 	@Override
-	public L2Weapon getSecondaryWeaponItem()
-	{
+	public L2Weapon getSecondaryWeaponItem() {
 		return null;
 	}
 
 	@Override
-	public int getLevel()
-	{
+	public int getLevel() {
 		return 0;
 	}
 
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
-	{
+	public boolean isAutoAttackable(L2Character attacker) {
 		return false;
 	}
 
 	@Override
-	public void setAI(L2CharacterAI newAI)
-	{
-		if (ai == null)
-		{
+	public void setAI(L2CharacterAI newAI) {
+		if (ai == null) {
 			ai = newAI;
 		}
 	}

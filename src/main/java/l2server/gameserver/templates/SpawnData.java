@@ -18,8 +18,7 @@ package l2server.gameserver.templates;
 /**
  * @author Pere
  */
-public class SpawnData
-{
+public class SpawnData {
 	public int X;
 	public int Y;
 	public int Z;
@@ -28,8 +27,7 @@ public class SpawnData
 	public int RandomRespawn;
 	public String DbName = null;
 
-	public SpawnData(int x, int y, int z, int heading, int respawn, int randomRespawn)
-	{
+	public SpawnData(int x, int y, int z, int heading, int respawn, int randomRespawn) {
 		X = x;
 		Y = y;
 		Z = z;

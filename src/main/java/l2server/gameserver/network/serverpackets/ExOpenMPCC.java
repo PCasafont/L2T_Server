@@ -17,16 +17,14 @@ package l2server.gameserver.network.serverpackets;
 
 /**
  * @author chris_00
- *         <p>
- *         opens the CommandChannel Information window
+ * <p>
+ * opens the CommandChannel Information window
  */
-public class ExOpenMPCC extends L2GameServerPacket
-{
+public class ExOpenMPCC extends L2GameServerPacket {
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 	}
 }

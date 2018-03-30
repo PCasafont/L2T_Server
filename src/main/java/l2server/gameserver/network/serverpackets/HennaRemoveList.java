@@ -18,22 +18,18 @@ package l2server.gameserver.network.serverpackets;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.templates.item.L2Henna;
 
-public class HennaRemoveList extends L2GameServerPacket
-{
-
+public class HennaRemoveList extends L2GameServerPacket {
+	
 	private L2PcInstance player;
-
-	public HennaRemoveList(L2PcInstance player)
-	{
+	
+	public HennaRemoveList(L2PcInstance player) {
 		this.player = player;
 	}
-
+	
 	@SuppressWarnings("unused")
-	private int getHennaUsedSlots()
-	{
+	private int getHennaUsedSlots() {
 		int slots = 0;
-		switch (player.getHennaEmptySlots())
-		{
+		switch (player.getHennaEmptySlots()) {
 			case 0:
 				slots = 3;
 				break;
@@ -47,22 +43,19 @@ public class HennaRemoveList extends L2GameServerPacket
 				slots = 0;
 				break;
 		}
-
+		
 		return slots;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeQ(player.getAdena());
 		writeD(4);
 		writeD(4 - player.getHennaEmptySlots());
-
-		for (int i = 0; i <= 4; i++)
-		{
+		
+		for (int i = 0; i <= 4; i++) {
 			L2Henna henna = player.getHenna(i);
-			if (henna != null)
-			{
+			if (henna != null) {
 				writeD(henna.getSymbolId());
 				writeD(henna.getDyeId());
 				writeQ(henna.getAmountDyeRequire() / 2);

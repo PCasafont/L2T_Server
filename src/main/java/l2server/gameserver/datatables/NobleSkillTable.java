@@ -21,14 +21,11 @@ import l2server.gameserver.model.L2Skill;
 /**
  * @author -Nemesiss-
  */
-public class NobleSkillTable
-{
+public class NobleSkillTable {
 	private static final L2Skill[] nobleSkills = new L2Skill[8];
 
-	private NobleSkillTable()
-	{
-		if (Config.IS_CLASSIC)
-		{
+	private NobleSkillTable() {
+		if (Config.IS_CLASSIC) {
 			return;
 		}
 
@@ -42,19 +39,16 @@ public class NobleSkillTable
 		nobleSkills[7] = SkillTable.getInstance().getInfo(1327, 1);
 	}
 
-	public static NobleSkillTable getInstance()
-	{
+	public static NobleSkillTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	public L2Skill[] getNobleSkills()
-	{
+	public L2Skill[] getNobleSkills() {
 		return nobleSkills;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final NobleSkillTable instance = new NobleSkillTable();
 	}
 }

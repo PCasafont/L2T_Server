@@ -33,87 +33,66 @@ import java.util.List;
 /**
  * @author nBd
  */
-public class TargetAreaUndead implements ISkillTargetTypeHandler
-{
+public class TargetAreaUndead implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-	{
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
 		List<L2Character> targetList = new ArrayList<L2Character>();
 
 		L2Character cha;
 
 		int radius = skill.getSkillRadius();
 
-		if (skill.getCastRange() >= 0 && (target instanceof L2Npc || target instanceof L2SummonInstance) &&
-				target.isUndead() && !target.isAlikeDead())
-		{
+		if (skill.getCastRange() >= 0 && (target instanceof L2Npc || target instanceof L2SummonInstance) && target.isUndead() &&
+				!target.isAlikeDead()) {
 			cha = target;
 
-			if (onlyFirst == false)
-			{
+			if (onlyFirst == false) {
 				targetList.add(cha); // Add target to target list
-			}
-			else
-			{
+			} else {
 				return new L2Character[]{cha};
 			}
-		}
-		else
-		{
+		} else {
 			cha = activeChar;
 		}
 
 		Collection<L2Object> objs = cha.getKnownList().getKnownObjects().values();
 		//synchronized (cha.getKnownList().getKnownObjects())
 		{
-			for (L2Object obj : objs)
-			{
-				if (obj instanceof L2Npc)
-				{
+			for (L2Object obj : objs) {
+				if (obj instanceof L2Npc) {
 					target = (L2Npc) obj;
-				}
-				else if (obj instanceof L2SummonInstance)
-				{
+				} else if (obj instanceof L2SummonInstance) {
 					target = (L2SummonInstance) obj;
-				}
-				else
-				{
+				} else {
 					continue;
 				}
 
-				if (!GeoEngine.getInstance().canSeeTarget(activeChar, target))
-				{
+				if (!GeoEngine.getInstance().canSeeTarget(activeChar, target)) {
 					continue;
 				}
 
 				if (!target.isAlikeDead()) // If target is not dead/fake death and not self
 				{
-					if (!target.isUndead())
-					{
+					if (!target.isUndead()) {
 						continue;
 					}
 
-					if (!Util.checkIfInRange(radius, cha, obj, true))
-					{
+					if (!Util.checkIfInRange(radius, cha, obj, true)) {
 						continue;
 					}
 
-					if (onlyFirst == false)
-					{
+					if (onlyFirst == false) {
 						targetList.add((L2Character) obj);
-					}
-					else
-					{
+					} else {
 						return new L2Character[]{(L2Character) obj};
 					}
 				}
 			}
 		}
 
-		if (targetList.size() == 0)
-		{
+		if (targetList.size() == 0) {
 			return null;
 		}
 
@@ -123,14 +102,12 @@ public class TargetAreaUndead implements ISkillTargetTypeHandler
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType()
-	{
+	public Enum<L2SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub
 		return L2SkillTargetType.TARGET_AREA_UNDEAD;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		SkillTargetTypeHandler.getInstance().registerSkillTargetType(new TargetAreaUndead());
 	}
 }

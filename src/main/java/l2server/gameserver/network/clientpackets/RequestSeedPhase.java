@@ -21,12 +21,10 @@ import l2server.gameserver.network.serverpackets.ExShowSeedMapInfo;
 /**
  * RequestSeedPhase client packet
  */
-public class RequestSeedPhase extends L2GameClientPacket
-{
+public class RequestSeedPhase extends L2GameClientPacket {
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// trigger
 	}
 
@@ -34,11 +32,9 @@ public class RequestSeedPhase extends L2GameClientPacket
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
@@ -46,8 +42,7 @@ public class RequestSeedPhase extends L2GameClientPacket
 	}
 
 	@Override
-	protected boolean triggersOnActionRequest()
-	{
+	protected boolean triggersOnActionRequest() {
 		return false;
 	}
 }

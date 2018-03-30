@@ -25,36 +25,31 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  *
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
-public class RecipeShopSellList extends L2GameServerPacket
-{
-
+public class RecipeShopSellList extends L2GameServerPacket {
+	
 	private L2PcInstance buyer, manufacturer;
-
-	public RecipeShopSellList(L2PcInstance buyer, L2PcInstance manufacturer)
-	{
+	
+	public RecipeShopSellList(L2PcInstance buyer, L2PcInstance manufacturer) {
 		this.buyer = buyer;
 		this.manufacturer = manufacturer;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		L2ManufactureList createList = manufacturer.getCreateList();
-
-		if (createList != null)
-		{
+		
+		if (createList != null) {
 			//dddd d(ddd)
 			writeD(manufacturer.getObjectId());
 			writeD((int) manufacturer.getCurrentMp());//Creator's MP
 			writeD(manufacturer.getMaxMp());//Creator's MP
 			writeQ(buyer.getAdena());//Buyer Adena
-
+			
 			int count = createList.size();
 			writeD(count);
 			L2ManufactureItem temp;
-
-			for (int i = 0; i < count; i++)
-			{
+			
+			for (int i = 0; i < count; i++) {
 				temp = createList.getList().get(i);
 				writeD(temp.getRecipeId());
 				writeD(0x00); //unknown

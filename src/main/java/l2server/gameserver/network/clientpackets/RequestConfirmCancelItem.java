@@ -29,47 +29,39 @@ import l2server.gameserver.util.Util;
  *
  * @author -Wooden-
  */
-public final class RequestConfirmCancelItem extends L2GameClientPacket
-{
+public final class RequestConfirmCancelItem extends L2GameClientPacket {
 	private int objectId;
-
+	
 	/**
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		objectId = readD();
 	}
-
+	
 	/**
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(objectId);
-		if (item == null)
-		{
+		if (item == null) {
 			return;
 		}
-
-		if (item.getOwnerId() != activeChar.getObjectId())
-		{
+		
+		if (item.getOwnerId() != activeChar.getObjectId()) {
 			Util.handleIllegalPlayerAction(getClient().getActiveChar(),
-					"Warning!! Character " + getClient().getActiveChar().getName() + " of account " +
-							getClient().getActiveChar().getAccountName() +
-							" tryied to destroy augment on item that doesn't own.", Config.DEFAULT_PUNISH);
+					"Warning!! Character " + getClient().getActiveChar().getName() + " of account " + getClient().getActiveChar().getAccountName() +
+							" tryied to destroy augment on item that doesn't own.",
+					Config.DEFAULT_PUNISH);
 			return;
 		}
-
-		if (!item.isAugmented())
-		{
-			activeChar.sendPacket(SystemMessage
-					.getSystemMessage(SystemMessageId.AUGMENTATION_REMOVAL_CAN_ONLY_BE_DONE_ON_AN_AUGMENTED_ITEM));
+		
+		if (!item.isAugmented()) {
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.AUGMENTATION_REMOVAL_CAN_ONLY_BE_DONE_ON_AN_AUGMENTED_ITEM));
 			return;
 		}
 
@@ -78,45 +70,31 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM));
 			return;
 		}*/
-
+		
 		int price = 0;
-		switch (item.getItem().getCrystalType())
-		{
+		switch (item.getItem().getCrystalType()) {
 			case L2Item.CRYSTAL_C:
-				if (item.getCrystalCount() < 1720)
-				{
+				if (item.getCrystalCount() < 1720) {
 					price = 95000;
-				}
-				else if (item.getCrystalCount() < 2452)
-				{
+				} else if (item.getCrystalCount() < 2452) {
 					price = 150000;
-				}
-				else
-				{
+				} else {
 					price = 210000;
 				}
 				break;
 			case L2Item.CRYSTAL_B:
-				if (item.getCrystalCount() < 1746)
-				{
+				if (item.getCrystalCount() < 1746) {
 					price = 240000;
-				}
-				else
-				{
+				} else {
 					price = 270000;
 				}
 				break;
 			case L2Item.CRYSTAL_A:
-				if (item.getCrystalCount() < 2160)
-				{
+				if (item.getCrystalCount() < 2160) {
 					price = 330000;
-				}
-				else if (item.getCrystalCount() < 2824)
-				{
+				} else if (item.getCrystalCount() < 2824) {
 					price = 390000;
-				}
-				else
-				{
+				} else {
 					price = 420000;
 				}
 				break;
@@ -137,12 +115,11 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket
 			default:
 				return;
 		}
-
-		if (Config.isServer(Config.TENKAI_LEGACY))
-		{
+		
+		if (Config.isServer(Config.TENKAI_LEGACY)) {
 			price = (int) Math.sqrt(price);
 		}
-
+		
 		activeChar.sendPacket(new ExPutItemResultForVariationCancel(item, price));
 	}
 }

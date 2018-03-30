@@ -41,37 +41,33 @@ import java.util.stream.Collectors;
  * @author l3x
  */
 
-public final class BuyListSeed extends L2GameServerPacket
-{
-
+public final class BuyListSeed extends L2GameServerPacket {
+	
 	private int manorId;
 	private List<Seed> list = null;
 	private long money;
-
-	public BuyListSeed(long currentMoney, int castleId, List<SeedProduction> seeds)
-	{
+	
+	public BuyListSeed(long currentMoney, int castleId, List<SeedProduction> seeds) {
 		money = currentMoney;
 		manorId = castleId;
-
-		if (seeds != null && seeds.size() > 0)
-		{
+		
+		if (seeds != null && seeds.size() > 0) {
 			list = new ArrayList<>();
-			list.addAll(seeds.stream().filter(s -> s.getCanProduce() > 0 && s.getPrice() > 0)
-					.map(s -> new Seed(s.getId(), s.getCanProduce(), s.getPrice())).collect(Collectors.toList()));
+			list.addAll(seeds.stream()
+					.filter(s -> s.getCanProduce() > 0 && s.getPrice() > 0)
+					.map(s -> new Seed(s.getId(), s.getCanProduce(), s.getPrice()))
+					.collect(Collectors.toList()));
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeQ(money); // current money
 		writeD(manorId); // manor id
-
-		if (list != null && list.size() > 0)
-		{
+		
+		if (list != null && list.size() > 0) {
 			writeH(list.size()); // list length
-			for (Seed s : list)
-			{
+			for (Seed s : list) {
 				writeD(s.itemId);
 				writeD(s.itemId);
 				writeD(0x00);
@@ -87,8 +83,7 @@ public final class BuyListSeed extends L2GameServerPacket
 				writeD(-9999); // Time
 				writeH(0x00); // Element Type
 				writeH(0x00); // Element Power
-				for (byte i = 0; i < 6; i++)
-				{
+				for (byte i = 0; i < 6; i++) {
 					writeH(0x00);
 				}
 				// Enchant Effects
@@ -98,21 +93,17 @@ public final class BuyListSeed extends L2GameServerPacket
 				writeQ(s.price); // price
 			}
 			list.clear();
-		}
-		else
-		{
+		} else {
 			writeH(0x00);
 		}
 	}
-
-	private static class Seed
-	{
+	
+	private static class Seed {
 		public final int itemId;
 		public final long count;
 		public final long price;
-
-		public Seed(int itemId, long count, long price)
-		{
+		
+		public Seed(int itemId, long count, long price) {
 			this.itemId = itemId;
 			this.count = count;
 			this.price = price;

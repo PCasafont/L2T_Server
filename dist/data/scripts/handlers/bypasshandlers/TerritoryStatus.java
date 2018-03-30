@@ -22,29 +22,23 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
-public class TerritoryStatus implements IBypassHandler
-{
+public class TerritoryStatus implements IBypassHandler {
 	private static final String[] COMMANDS = {"TerritoryStatus"};
-
+	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc npc)
-	{
-		if (npc == null)
-		{
+	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc npc) {
+		if (npc == null) {
 			return false;
 		}
-
+		
 		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 		{
-			if (npc.getCastle().getOwnerId() > 0)
-			{
+			if (npc.getCastle().getOwnerId() > 0) {
 				html.setFile(activeChar.getHtmlPrefix(), "territorystatus.htm");
 				L2Clan clan = ClanTable.getInstance().getClan(npc.getCastle().getOwnerId());
 				html.replace("%clanname%", clan.getName());
 				html.replace("%clanleadername%", clan.getLeaderName());
-			}
-			else
-			{
+			} else {
 				html.setFile(activeChar.getHtmlPrefix(), "territorynoclan.htm");
 			}
 		}
@@ -52,22 +46,18 @@ public class TerritoryStatus implements IBypassHandler
 		html.replace("%taxpercent%", "" + npc.getCastle().getTaxPercent());
 		html.replace("%objectId%", String.valueOf(npc.getObjectId()));
 		{
-			if (npc.getCastle().getCastleId() > 6)
-			{
+			if (npc.getCastle().getCastleId() > 6) {
 				html.replace("%territory%", "The Kingdom of Elmore");
-			}
-			else
-			{
+			} else {
 				html.replace("%territory%", "The Kingdom of Aden");
 			}
 		}
 		activeChar.sendPacket(html);
 		return true;
 	}
-
+	
 	@Override
-	public String[] getBypassList()
-	{
+	public String[] getBypassList() {
 		return COMMANDS;
 	}
 }

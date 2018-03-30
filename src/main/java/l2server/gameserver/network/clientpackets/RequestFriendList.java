@@ -29,23 +29,19 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @version $Revision: 1.3.4.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestFriendList extends L2GameClientPacket
-{
+public final class RequestFriendList extends L2GameClientPacket {
 	//
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		// trigger
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
 
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
 
@@ -55,26 +51,21 @@ public final class RequestFriendList extends L2GameClientPacket
 		activeChar.sendPacket(SystemMessageId.FRIEND_LIST_HEADER);
 
 		L2PcInstance friend = null;
-		for (int id : activeChar.getFriendList())
-		{
+		for (int id : activeChar.getFriendList()) {
 			// int friendId = rset.getInt("friendId");
 			String friendName = CharNameTable.getInstance().getNameById(id);
 
-			if (friendName == null)
-			{
+			if (friendName == null) {
 				continue;
 			}
 
 			friend = L2World.getInstance().getPlayer(friendName);
 
-			if (friend == null || !friend.isOnline())
-			{
+			if (friend == null || !friend.isOnline()) {
 				// (Currently: Offline)
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_OFFLINE);
 				sm.addString(friendName);
-			}
-			else
-			{
+			} else {
 				// (Currently: Online)
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_ONLINE);
 				sm.addString(friendName);
@@ -86,10 +77,8 @@ public final class RequestFriendList extends L2GameClientPacket
 		// =========================
 		activeChar.sendPacket(SystemMessageId.FRIEND_LIST_FOOTER);
 		activeChar.sendPacket(new FriendList(activeChar));
-		if (activeChar.getFriendList().size() > 0)
-		{
-			for (int objId : activeChar.getFriendList())
-			{
+		if (activeChar.getFriendList().size() > 0) {
+			for (int objId : activeChar.getFriendList()) {
 				activeChar.sendPacket(new FriendPacket(true, objId, activeChar));
 			}
 		}

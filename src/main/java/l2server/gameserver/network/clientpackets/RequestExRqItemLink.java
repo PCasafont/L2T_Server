@@ -26,8 +26,7 @@ import l2server.log.Log;
 /**
  * @author KenM
  */
-public class RequestExRqItemLink extends L2GameClientPacket
-{
+public class RequestExRqItemLink extends L2GameClientPacket {
 	private static String name = "[C] DO:1E RequestExRqItemLink";
 	private int objectId;
 
@@ -35,8 +34,7 @@ public class RequestExRqItemLink extends L2GameClientPacket
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		objectId = readD();
 	}
 
@@ -44,25 +42,17 @@ public class RequestExRqItemLink extends L2GameClientPacket
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2GameClient client = getClient();
-		if (client != null)
-		{
+		if (client != null) {
 			L2Object object = L2World.getInstance().findObject(objectId);
-			if (object instanceof L2ItemInstance)
-			{
+			if (object instanceof L2ItemInstance) {
 				L2ItemInstance item = (L2ItemInstance) object;
-				if (item.isPublished())
-				{
+				if (item.isPublished()) {
 					client.sendPacket(new ExRpItemLink(item));
-				}
-				else
-				{
-					if (Config.DEBUG)
-					{
-						Log.info(getClient() + " requested " + name + " for item which wasnt published! ID:" +
-								objectId);
+				} else {
+					if (Config.DEBUG) {
+						Log.info(getClient() + " requested " + name + " for item which wasnt published! ID:" + objectId);
 					}
 				}
 			}

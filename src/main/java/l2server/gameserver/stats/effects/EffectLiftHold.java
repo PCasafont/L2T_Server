@@ -25,25 +25,19 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
 /**
  * @author mkizub
  */
-public class EffectLiftHold extends L2Effect
-{
-	public EffectLiftHold(Env env, L2EffectTemplate template)
-	{
+public class EffectLiftHold extends L2Effect {
+	public EffectLiftHold(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.AERIAL_YOKE;
 	}
 
 	@Override
-	public boolean onStart()
-	{
-		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() ||
-				getEffected().isRaid())
-		{
+	public boolean onStart() {
+		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() || getEffected().isRaid()) {
 			return false;
 		}
 
@@ -54,16 +48,14 @@ public class EffectLiftHold extends L2Effect
 	}
 
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		getEffected().setIsParalyzed(false);
 		getEffected().stopParalyze(false);
 		getEffected().stopVisualEffect(VisualEffect.S_LIFT_HOLD);
 	}
 
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		// just stop this effect
 		return true;
 	}

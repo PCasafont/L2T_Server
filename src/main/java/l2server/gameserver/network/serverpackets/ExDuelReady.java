@@ -20,18 +20,15 @@ package l2server.gameserver.network.serverpackets;
  *
  * @author KenM
  */
-public class ExDuelReady extends L2GameServerPacket
-{
+public class ExDuelReady extends L2GameServerPacket {
 	private int unk1;
-
-	public ExDuelReady(int unk1)
-	{
+	
+	public ExDuelReady(int unk1) {
 		this.unk1 = unk1;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(unk1);
 	}
 }

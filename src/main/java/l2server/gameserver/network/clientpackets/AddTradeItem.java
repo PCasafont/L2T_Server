@@ -29,49 +29,39 @@ import l2server.log.Log;
  *
  * @version $Revision: 1.5.2.2.2.5 $ $Date: 2005/03/27 15:29:29 $
  */
-public final class AddTradeItem extends L2GameClientPacket
-{
+public final class AddTradeItem extends L2GameClientPacket {
 
 	private int tradeId;
 	private int objectId;
 	private long count;
 
-	public AddTradeItem()
-	{
+	public AddTradeItem() {
 	}
 
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		tradeId = readD();
 		objectId = readD();
 		count = readQ();
 	}
 
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		final L2PcInstance player = getClient().getActiveChar();
-		if (player == null)
-		{
+		if (player == null) {
 			return;
 		}
 
 		final TradeList trade = player.getActiveTradeList();
-		if (trade == null)
-		{
-			Log.warning("Character: " + player.getName() + " requested item:" + objectId +
-					" add without active tradelist:" + tradeId);
+		if (trade == null) {
+			Log.warning("Character: " + player.getName() + " requested item:" + objectId + " add without active tradelist:" + tradeId);
 			return;
 		}
 
 		final L2PcInstance partner = trade.getPartner();
-		if (partner == null || L2World.getInstance().getPlayer(partner.getObjectId()) == null ||
-				partner.getActiveTradeList() == null)
-		{
+		if (partner == null || L2World.getInstance().getPlayer(partner.getObjectId()) == null || partner.getActiveTradeList() == null) {
 			// Trade partner not found, cancel trade
-			if (partner != null)
-			{
+			if (partner != null) {
 				Log.warning("Character:" + player.getName() + " requested invalid trade object: " + objectId);
 			}
 			SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME);
@@ -80,43 +70,36 @@ public final class AddTradeItem extends L2GameClientPacket
 			return;
 		}
 
-		if (trade.isConfirmed() || partner.getActiveTradeList().isConfirmed())
-		{
-			player.sendPacket(
-					SystemMessage.getSystemMessage(SystemMessageId.CANNOT_ADJUST_ITEMS_AFTER_TRADE_CONFIRMED));
+		if (trade.isConfirmed() || partner.getActiveTradeList().isConfirmed()) {
+			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_ADJUST_ITEMS_AFTER_TRADE_CONFIRMED));
 			return;
 		}
 
-		if (player.getEvent() != null)
-		{
+		if (player.getEvent() != null) {
 			player.sendMessage("You cannot trade while being involved in an event!");
 			player.cancelActiveTrade();
 			return;
 		}
 
-		if (player.getOlympiadGameId() > -1)
-		{
+		if (player.getOlympiadGameId() > -1) {
 			player.sendMessage("You cannot trade while being involved in the Grand Olympiad!");
 			player.cancelActiveTrade();
 			return;
 		}
 
-		if (!player.getAccessLevel().allowTransaction())
-		{
+		if (!player.getAccessLevel().allowTransaction()) {
 			player.sendMessage("Transactions are disable for your Access Level");
 			player.cancelActiveTrade();
 			return;
 		}
 
-		if (!player.validateItemManipulation(objectId, "trade"))
-		{
+		if (!player.validateItemManipulation(objectId, "trade")) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_HAPPENED));
 			return;
 		}
 
 		final TradeList.TradeItem item = trade.addItem(objectId, count);
-		if (item != null)
-		{
+		if (item != null) {
 			player.sendPacket(new TradeOwnAdd(item));
 			trade.getPartner().sendPacket(new TradeOtherAdd(item));
 		}

@@ -39,8 +39,7 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 
-public class Q350_EnhanceYourWeapon extends Quest
-{
+public class Q350_EnhanceYourWeapon extends Quest {
 	private static final String qn = "350_EnhanceYourWeapon";
 	private static final int[] STARTING_NPCS = {30115, 30856, 30194};
 	private static final int RED_SOUL_CRYSTAL0_ID = 4629;
@@ -51,281 +50,217 @@ public class Q350_EnhanceYourWeapon extends Quest
 
 	private final HashMap<Integer, SoulCrystal> soulCrystals = new HashMap<Integer, SoulCrystal>();
 	// <npcid, <level, LevelingInfo>>
-	private final HashMap<Integer, HashMap<Integer, LevelingInfo>> npcLevelingInfos =
-			new HashMap<Integer, HashMap<Integer, LevelingInfo>>();
+	private final HashMap<Integer, HashMap<Integer, LevelingInfo>> npcLevelingInfos = new HashMap<Integer, HashMap<Integer, LevelingInfo>>();
 
-	private static enum AbsorbCrystalType
-	{
-		LAST_HIT, FULL_PARTY, PARTY_ONE_RANDOM, PARTY_RANDOM
+	private static enum AbsorbCrystalType {
+		LAST_HIT,
+		FULL_PARTY,
+		PARTY_ONE_RANDOM,
+		PARTY_RANDOM
 	}
 
-	private static final class SoulCrystal
-	{
+	private static final class SoulCrystal {
 		private final int level;
 		private final int itemId;
 		private final int leveledItemId;
 
-		public SoulCrystal(int level, int itemId, int leveledItemId)
-		{
+		public SoulCrystal(int level, int itemId, int leveledItemId) {
 			this.level = level;
 			this.itemId = itemId;
 			this.leveledItemId = leveledItemId;
 		}
 
-		public final int getLevel()
-		{
+		public final int getLevel() {
 			return level;
 		}
 
-		public final int getItemId()
-		{
+		public final int getItemId() {
 			return itemId;
 		}
 
-		public final int getLeveledItemId()
-		{
+		public final int getLeveledItemId() {
 			return leveledItemId;
 		}
 	}
 
-	private static final class LevelingInfo
-	{
+	private static final class LevelingInfo {
 		private final AbsorbCrystalType absorbCrystalType;
 		private final boolean isSkillNeeded;
 		private final int chance;
 
-		public LevelingInfo(AbsorbCrystalType absorbCrystalType, boolean isSkillNeeded, int chance)
-		{
+		public LevelingInfo(AbsorbCrystalType absorbCrystalType, boolean isSkillNeeded, int chance) {
 			this.absorbCrystalType = absorbCrystalType;
 			this.isSkillNeeded = isSkillNeeded;
 			this.chance = chance;
 		}
 
-		public final AbsorbCrystalType getAbsorbCrystalType()
-		{
+		public final AbsorbCrystalType getAbsorbCrystalType() {
 			return absorbCrystalType;
 		}
 
-		public final boolean isSkillNeeded()
-		{
+		public final boolean isSkillNeeded() {
 			return isSkillNeeded;
 		}
 
-		public final int getChance()
-		{
+		public final int getChance() {
 			return chance;
 		}
 	}
 
-	private boolean check(QuestState st)
-	{
-		for (int i = 4629; i < 4665; i++)
-		{
-			if (st.getQuestItemsCount(i) > 0)
-			{
+	private boolean check(QuestState st) {
+		for (int i = 4629; i < 4665; i++) {
+			if (st.getQuestItemsCount(i) > 0) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	private void load()
-	{
-		try
-		{
-			File file = new File(
-					Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "scripts/quests/Q350_EnhanceYourWeapon/data.xml");
-			if (!file.exists())
-			{
+	private void load() {
+		try {
+			File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "scripts/quests/Q350_EnhanceYourWeapon/data.xml");
+			if (!file.exists()) {
 				Log.severe("[EnhanceYourWeapon] Missing data.xml. The quest wont work without it!");
 				return;
 			}
 
 			XmlDocument doc = new XmlDocument(file);
-            for (XmlNode n : doc.getChildren())
-            {
-                if (n.getName().equalsIgnoreCase("crystal"))
-                {
-                    for (XmlNode d : n.getChildren())
-                    {
-                        if (d.getName().equalsIgnoreCase("item"))
-                        {
-                            if (!d.hasAttribute("itemId"))
-                            {
-                                Log.severe("[EnhanceYourWeapon] Missing itemId in Crystal List, skipping");
-                                continue;
-                            }
-                            int itemId = d.getInt("itemId");
+			for (XmlNode n : doc.getChildren()) {
+				if (n.getName().equalsIgnoreCase("crystal")) {
+					for (XmlNode d : n.getChildren()) {
+						if (d.getName().equalsIgnoreCase("item")) {
+							if (!d.hasAttribute("itemId")) {
+								Log.severe("[EnhanceYourWeapon] Missing itemId in Crystal List, skipping");
+								continue;
+							}
+							int itemId = d.getInt("itemId");
 
-                            if (!d.hasAttribute("level"))
-                            {
-                                Log.severe("[EnhanceYourWeapon] Missing level in Crystal List itemId: " + itemId +
-                                        ", skipping");
-                                continue;
-                            }
-                            int level = d.getInt("level");
+							if (!d.hasAttribute("level")) {
+								Log.severe("[EnhanceYourWeapon] Missing level in Crystal List itemId: " + itemId + ", skipping");
+								continue;
+							}
+							int level = d.getInt("level");
 
-                            if (!d.hasAttribute("leveledItemId"))
-                            {
-                                Log.severe("[EnhanceYourWeapon] Missing leveledItemId in Crystal List itemId: " +
-                                        itemId + ", skipping");
-                                continue;
-                            }
-                            int leveledItemId = d.getInt("leveledItemId");
+							if (!d.hasAttribute("leveledItemId")) {
+								Log.severe("[EnhanceYourWeapon] Missing leveledItemId in Crystal List itemId: " + itemId + ", skipping");
+								continue;
+							}
+							int leveledItemId = d.getInt("leveledItemId");
 
-                            soulCrystals.put(itemId, new SoulCrystal(level, itemId, leveledItemId));
-                        }
-                    }
-                }
-                else if (n.getName().equalsIgnoreCase("npc"))
-                {
-                    for (XmlNode d : n.getChildren())
-                    {
-                        if (d.getName().equalsIgnoreCase("item"))
-                        {
-                            if (!d.hasAttribute("npcId"))
-                            {
-                                Log.severe("[EnhanceYourWeapon] Missing npcId in NPC List, skipping");
-                                continue;
-                            }
-                            int npcId = d.getInt("npcId");
+							soulCrystals.put(itemId, new SoulCrystal(level, itemId, leveledItemId));
+						}
+					}
+				} else if (n.getName().equalsIgnoreCase("npc")) {
+					for (XmlNode d : n.getChildren()) {
+						if (d.getName().equalsIgnoreCase("item")) {
+							if (!d.hasAttribute("npcId")) {
+								Log.severe("[EnhanceYourWeapon] Missing npcId in NPC List, skipping");
+								continue;
+							}
+							int npcId = d.getInt("npcId");
 
-                            HashMap<Integer, LevelingInfo> temp = new HashMap<Integer, LevelingInfo>();
+							HashMap<Integer, LevelingInfo> temp = new HashMap<Integer, LevelingInfo>();
 
-                            for (XmlNode cd : d.getChildren())
-                            {
-                                boolean isSkillNeeded = false;
-                                // int chance = 5;
-                                int chance = 25; // TnS chance for absorbing soul: 25% (Luna)
-                                AbsorbCrystalType absorbType = AbsorbCrystalType.LAST_HIT;
+							for (XmlNode cd : d.getChildren()) {
+								boolean isSkillNeeded = false;
+								// int chance = 5;
+								int chance = 25; // TnS chance for absorbing soul: 25% (Luna)
+								AbsorbCrystalType absorbType = AbsorbCrystalType.LAST_HIT;
 
-                                if (cd.getName().equalsIgnoreCase("detail"))
-                                {
-                                    if (cd.hasAttribute("absorbType"))
-                                    {
-                                        absorbType =
-                                                Enum.valueOf(AbsorbCrystalType.class, cd.getString("absorbType"));
-                                    }
+								if (cd.getName().equalsIgnoreCase("detail")) {
+									if (cd.hasAttribute("absorbType")) {
+										absorbType = Enum.valueOf(AbsorbCrystalType.class, cd.getString("absorbType"));
+									}
 
-                                    if (cd.hasAttribute("chance"))
-                                    {
-                                        chance = cd.getInt("chance") * CHANCE_MULTIPLIER >= 100 ? 100 :
-                                                cd.getInt("chance") * CHANCE_MULTIPLIER;
-                                    }
-                                    //chance = cd.getInt("chance");
+									if (cd.hasAttribute("chance")) {
+										chance = cd.getInt("chance") * CHANCE_MULTIPLIER >= 100 ? 100 : cd.getInt("chance") * CHANCE_MULTIPLIER;
+									}
+									//chance = cd.getInt("chance");
 
-                                    if (cd.hasAttribute("skill"))
-                                    {
-                                        isSkillNeeded = cd.getBool("skill");
-                                    }
+									if (cd.hasAttribute("skill")) {
+										isSkillNeeded = cd.getBool("skill");
+									}
 
-                                    if (!cd.hasAttribute("maxLevel") && !cd.hasAttribute("levelList"))
-                                    {
-                                        Log.severe(
-                                                "[EnhanceYourWeapon] Missing maxlevel/levelList in NPC List npcId: " +
-                                                        npcId + ", skipping");
-                                        continue;
-                                    }
-                                    LevelingInfo info = new LevelingInfo(absorbType, isSkillNeeded, chance);
-                                    if (cd.hasAttribute("maxLevel"))
-                                    {
-                                        int maxLevel = cd.getInt("maxLevel");
-                                        for (int i = 0; i <= maxLevel; i++)
-                                        {
-                                            temp.put(i, info);
-                                        }
-                                    }
-                                    else
-                                    {
-                                        StringTokenizer st = new StringTokenizer(cd.getString("levelList"), ",");
-                                        int tokenCount = st.countTokens();
-                                        for (int i = 0; i < tokenCount; i++)
-                                        {
-                                            Integer value = Integer.decode(st.nextToken().trim());
-                                            if (value == null)
-                                            {
-                                                Log.severe("[EnhanceYourWeapon] Bad Level value!! npcId: " + npcId +
-                                                        " token: " + i);
-                                                value = 0;
-                                            }
-                                            temp.put(value, info);
-                                        }
-                                    }
-                                }
-                            }
+									if (!cd.hasAttribute("maxLevel") && !cd.hasAttribute("levelList")) {
+										Log.severe("[EnhanceYourWeapon] Missing maxlevel/levelList in NPC List npcId: " + npcId + ", skipping");
+										continue;
+									}
+									LevelingInfo info = new LevelingInfo(absorbType, isSkillNeeded, chance);
+									if (cd.hasAttribute("maxLevel")) {
+										int maxLevel = cd.getInt("maxLevel");
+										for (int i = 0; i <= maxLevel; i++) {
+											temp.put(i, info);
+										}
+									} else {
+										StringTokenizer st = new StringTokenizer(cd.getString("levelList"), ",");
+										int tokenCount = st.countTokens();
+										for (int i = 0; i < tokenCount; i++) {
+											Integer value = Integer.decode(st.nextToken().trim());
+											if (value == null) {
+												Log.severe("[EnhanceYourWeapon] Bad Level value!! npcId: " + npcId + " token: " + i);
+												value = 0;
+											}
+											temp.put(value, info);
+										}
+									}
+								}
+							}
 
-                            if (temp.isEmpty())
-                            {
-                                Log.severe(
-                                        "[EnhanceYourWeapon] No leveling info for npcId: " + npcId + ", skipping");
-                                continue;
-                            }
-                            npcLevelingInfos.put(npcId, temp);
-                        }
-                    }
-                }
-            }
-        }
-		catch (Exception e)
-		{
+							if (temp.isEmpty()) {
+								Log.severe("[EnhanceYourWeapon] No leveling info for npcId: " + npcId + ", skipping");
+								continue;
+							}
+							npcLevelingInfos.put(npcId, temp);
+						}
+					}
+				}
+			}
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "[EnhanceYourWeapon] Could not parse data.xml file: " + e.getMessage(), e);
 		}
 		Log.info("[EnhanceYourWeapon] Loaded " + soulCrystals.size() + " Soul Crystal data.");
 		Log.info("[EnhanceYourWeapon] Loaded " + npcLevelingInfos.size() + " npc Leveling info data.");
 	}
 
-	public Q350_EnhanceYourWeapon(int questId, String name, String descr)
-	{
+	public Q350_EnhanceYourWeapon(int questId, String name, String descr) {
 		super(questId, name, descr);
 
-		for (int npcId : STARTING_NPCS)
-		{
+		for (int npcId : STARTING_NPCS) {
 			addStartNpc(npcId);
 			addTalkId(npcId);
 		}
 
 		load();
-		for (int npcId : npcLevelingInfos.keySet())
-		{
+		for (int npcId : npcLevelingInfos.keySet()) {
 			addSkillSeeId(npcId);
 			addKillId(npcId);
 		}
 	}
 
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
-	{
+	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet) {
 		super.onSkillSee(npc, caster, skill, targets, isPet);
 
-		if (skill == null || skill.getId() != 2096)
-		{
+		if (skill == null || skill.getId() != 2096) {
+			return null;
+		} else if (caster == null || caster.isDead()) {
 			return null;
 		}
-		else if (caster == null || caster.isDead())
-		{
-			return null;
-		}
-		if (!(npc instanceof L2Attackable) || npc.isDead() || !npcLevelingInfos.containsKey(npc.getNpcId()))
-		{
+		if (!(npc instanceof L2Attackable) || npc.isDead() || !npcLevelingInfos.containsKey(npc.getNpcId())) {
 			return null;
 		}
 
-		try
-		{
+		try {
 			((L2Attackable) npc).addAbsorber(caster);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.SEVERE, "", e);
 		}
 		return null;
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
-	{
-		if (npc instanceof L2Attackable && npcLevelingInfos.containsKey(npc.getNpcId()))
-		{
+	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+		if (npc instanceof L2Attackable && npcLevelingInfos.containsKey(npc.getNpcId())) {
 			levelSoulCrystals((L2Attackable) npc, killer);
 		}
 
@@ -333,78 +268,57 @@ public class Q350_EnhanceYourWeapon extends Quest
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
-		if (event.endsWith("-04.htm"))
-		{
+		if (event.endsWith("-04.htm")) {
 			st.set("cond", "1");
 			st.setState(State.STARTED);
 			st.playSound("ItemSound.quest_accept");
-		}
-		else if (event.endsWith("-09.htm"))
-		{
+		} else if (event.endsWith("-09.htm")) {
 			st.giveItems(RED_SOUL_CRYSTAL0_ID, 1);
-		}
-		else if (event.endsWith("-10.htm"))
-		{
+		} else if (event.endsWith("-10.htm")) {
 			st.giveItems(GREEN_SOUL_CRYSTAL0_ID, 1);
-		}
-		else if (event.endsWith("-11.htm"))
-		{
+		} else if (event.endsWith("-11.htm")) {
 			st.giveItems(BLUE_SOUL_CRYSTAL0_ID, 1);
-		}
-		else if (event.equalsIgnoreCase("exit.htm"))
-		{
+		} else if (event.equalsIgnoreCase("exit.htm")) {
 			st.exitQuest(true);
 		}
 		return htmltext;
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (st.getState() == State.CREATED)
-		{
+		if (st.getState() == State.CREATED) {
 			st.set("cond", "0");
 		}
-		if (st.getInt("cond") == 0)
-		{
+		if (st.getInt("cond") == 0) {
 			htmltext = npc.getNpcId() + "-01.htm";
-		}
-		else if (check(st))
-		{
+		} else if (check(st)) {
 			htmltext = npc.getNpcId() + "-03.htm";
-		}
-		else if (st.getQuestItemsCount(RED_SOUL_CRYSTAL0_ID) == 0 &&
-				st.getQuestItemsCount(GREEN_SOUL_CRYSTAL0_ID) == 0 && st.getQuestItemsCount(BLUE_SOUL_CRYSTAL0_ID) == 0)
-		{
+		} else if (st.getQuestItemsCount(RED_SOUL_CRYSTAL0_ID) == 0 && st.getQuestItemsCount(GREEN_SOUL_CRYSTAL0_ID) == 0 &&
+				st.getQuestItemsCount(BLUE_SOUL_CRYSTAL0_ID) == 0) {
 			htmltext = npc.getNpcId() + "-21.htm";
 		}
 		return htmltext;
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Q350_EnhanceYourWeapon(350, qn, "Enhance Your Weapon");
 	}
 
 	/**
 	 * Calculate the leveling chance of Soul Crystals based on the attacker that killed this L2Attackable
 	 */
-	public void levelSoulCrystals(L2Attackable mob, L2PcInstance killer)
-	{
+	public void levelSoulCrystals(L2Attackable mob, L2PcInstance killer) {
 		// Only L2PcInstance can absorb a soul
-		if (killer == null)
-		{
+		if (killer == null) {
 			mob.resetAbsorbList();
 			return;
 		}
@@ -413,37 +327,28 @@ public class Q350_EnhanceYourWeapon extends Quest
 		int maxSCLevel = 0;
 
 		//TODO: what if mob support last_hit + party?
-		if (isPartyLevelingMonster(mob.getNpcId()) && killer.getParty() != null)
-		{
+		if (isPartyLevelingMonster(mob.getNpcId()) && killer.getParty() != null) {
 			// First get the list of players who has one Soul Cry and the quest
-			for (L2PcInstance pl : killer.getParty().getPartyMembers())
-			{
-				if (pl == null)
-				{
+			for (L2PcInstance pl : killer.getParty().getPartyMembers()) {
+				if (pl == null) {
 					continue;
 				}
 
 				SoulCrystal sc = getSCForPlayer(pl);
-				if (sc == null)
-				{
+				if (sc == null) {
 					continue;
 				}
 
 				players.put(pl, sc);
-				if (maxSCLevel < sc.getLevel() && npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel()))
-				{
+				if (maxSCLevel < sc.getLevel() && npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel())) {
 					maxSCLevel = sc.getLevel();
 				}
 			}
-		}
-		else
-		{
+		} else {
 			SoulCrystal sc = getSCForPlayer(killer);
-			if (sc != null)
-			{
+			if (sc != null) {
 				players.put(killer, sc);
-				if (maxSCLevel < sc.getLevel() && npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel()))
-				{
+				if (maxSCLevel < sc.getLevel() && npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel())) {
 					maxSCLevel = sc.getLevel();
 				}
 			}
@@ -452,17 +357,14 @@ public class Q350_EnhanceYourWeapon extends Quest
 		LevelingInfo mainlvlInfo = npcLevelingInfos.get(mob.getNpcId()).get(maxSCLevel);
 
 		if (mainlvlInfo == null)
-			/*throw new NullPointerException("Target: "+mob+ " player: "+killer+" level: "+maxSCLevel);*/
-		{
+			/*throw new NullPointerException("Target: "+mob+ " player: "+killer+" level: "+maxSCLevel);*/ {
 			return;
 		}
 
 		// If this mob is not require skill, then skip some checkings
-		if (mainlvlInfo.isSkillNeeded())
-		{
+		if (mainlvlInfo.isSkillNeeded()) {
 			// Fail if this L2Attackable isn't absorbed or there's no one in its absorbersList
-			if (!mob.isAbsorbed() /*|| absorbersList == null*/)
-			{
+			if (!mob.isAbsorbed() /*|| absorbersList == null*/) {
 				mob.resetAbsorbList();
 				return;
 			}
@@ -470,72 +372,54 @@ public class Q350_EnhanceYourWeapon extends Quest
 			// Fail if the killer isn't in the absorbersList of this L2Attackable and mob is not boss
 			AbsorberInfo ai = mob.getAbsorbersList().get(killer.getObjectId());
 			boolean isSuccess = true;
-			if (ai == null || ai.objId != killer.getObjectId())
-			{
+			if (ai == null || ai.objId != killer.getObjectId()) {
 				isSuccess = false;
 			}
 
 			// Check if the soul crystal was used when HP of this L2Attackable wasn't higher than half of it
-			if (ai != null && ai.absorbedHP > mob.getMaxHp() / 2.0)
-			{
+			if (ai != null && ai.absorbedHP > mob.getMaxHp() / 2.0) {
 				isSuccess = false;
 			}
 
-			if (!isSuccess)
-			{
+			if (!isSuccess) {
 				mob.resetAbsorbList();
 				return;
 			}
 		}
 
-		switch (mainlvlInfo.getAbsorbCrystalType())
-		{
+		switch (mainlvlInfo.getAbsorbCrystalType()) {
 			case PARTY_ONE_RANDOM:
 				// Retail, go to hell
-				if (killer.getParty() != null)
-				{
+				if (killer.getParty() != null) {
 					boolean found = false;
 					int loops = 0;
-					while (!found && loops < 30)
-					{
-						L2PcInstance lucky =
-								killer.getParty().getPartyMembers().get(Rnd.get(killer.getParty().getMemberCount()));
+					while (!found && loops < 30) {
+						L2PcInstance lucky = killer.getParty().getPartyMembers().get(Rnd.get(killer.getParty().getMemberCount()));
 						found = tryToLevelCrystal(lucky, players.get(lucky), mob);
 						loops++;
 					}
-				}
-				else
-				{
+				} else {
 					tryToLevelCrystal(killer, players.get(killer), mob);
 				}
 				break;
 			case PARTY_RANDOM:
-				if (killer.getParty() != null)
-				{
-					for (L2PcInstance pl : killer.getParty().getPartyMembers())
-					{
-						if (Rnd.get(100) > 33)
-						{
+				if (killer.getParty() != null) {
+					for (L2PcInstance pl : killer.getParty().getPartyMembers()) {
+						if (Rnd.get(100) > 33) {
 							continue; // Your crystal won't level up :(
 						}
 						tryToLevelCrystal(pl, players.get(pl), mob);
 					}
-				}
-				else if (Rnd.get(100) < 33)
-				{
+				} else if (Rnd.get(100) < 33) {
 					tryToLevelCrystal(killer, players.get(killer), mob);
 				}
 				break;
 			case FULL_PARTY:
-				if (killer.getParty() != null)
-				{
-					for (L2PcInstance pl : killer.getParty().getPartyMembers())
-					{
+				if (killer.getParty() != null) {
+					for (L2PcInstance pl : killer.getParty().getPartyMembers()) {
 						tryToLevelCrystal(pl, players.get(pl), mob);
 					}
-				}
-				else
-				{
+				} else {
 					tryToLevelCrystal(killer, players.get(killer), mob);
 				}
 				break;
@@ -545,79 +429,61 @@ public class Q350_EnhanceYourWeapon extends Quest
 		}
 	}
 
-	private boolean isPartyLevelingMonster(int npcId)
-	{
-		for (LevelingInfo li : npcLevelingInfos.get(npcId).values())
-		{
-			if (li.getAbsorbCrystalType() != AbsorbCrystalType.LAST_HIT)
-			{
+	private boolean isPartyLevelingMonster(int npcId) {
+		for (LevelingInfo li : npcLevelingInfos.get(npcId).values()) {
+			if (li.getAbsorbCrystalType() != AbsorbCrystalType.LAST_HIT) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	private SoulCrystal getSCForPlayer(L2PcInstance player)
-	{
+	private SoulCrystal getSCForPlayer(L2PcInstance player) {
 		QuestState st = player.getQuestState(qn);
-		if (st == null || st.getState() != State.STARTED)
-		{
+		if (st == null || st.getState() != State.STARTED) {
 			return null;
 		}
 
 		L2ItemInstance[] inv = player.getInventory().getItems();
 		SoulCrystal ret = null;
-		for (L2ItemInstance item : inv)
-		{
+		for (L2ItemInstance item : inv) {
 			int itemId = item.getItemId();
-			if (!soulCrystals.containsKey(itemId))
-			{
+			if (!soulCrystals.containsKey(itemId)) {
 				continue;
 			}
 
-			if (ret != null)
-			{
+			if (ret != null) {
 				return null;
-			}
-			else
-			{
+			} else {
 				ret = soulCrystals.get(itemId);
 			}
 		}
 		return ret;
 	}
 
-	private boolean tryToLevelCrystal(L2PcInstance player, SoulCrystal sc, L2Attackable mob)
-	{
-		if (sc == null || !npcLevelingInfos.containsKey(mob.getNpcId()))
-		{
+	private boolean tryToLevelCrystal(L2PcInstance player, SoulCrystal sc, L2Attackable mob) {
+		if (sc == null || !npcLevelingInfos.containsKey(mob.getNpcId())) {
 			return false;
 		}
 
 		// If the crystal level is way too high for this mob, say that we can't increase it
-		if (!npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel()))
-		{
+		if (!npcLevelingInfos.get(mob.getNpcId()).containsKey(sc.getLevel())) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SOUL_CRYSTAL_ABSORBING_REFUSED));
 			return true;
 		}
 
-		if (Rnd.get(100) <= npcLevelingInfos.get(mob.getNpcId()).get(sc.getLevel()).getChance())
-		{
+		if (Rnd.get(100) <= npcLevelingInfos.get(mob.getNpcId()).get(sc.getLevel()).getChance()) {
 			exchangeCrystal(player, mob, sc.getItemId(), sc.getLeveledItemId(), false);
-		}
-		else
-		{
+		} else {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SOUL_CRYSTAL_ABSORBING_FAILED));
 		}
 		return true;
 	}
 
-	private void exchangeCrystal(L2PcInstance player, L2Attackable mob, int takeid, int giveid, boolean broke)
-	{
+	private void exchangeCrystal(L2PcInstance player, L2Attackable mob, int takeid, int giveid, boolean broke) {
 		L2ItemInstance Item = player.getInventory().destroyItemByItemId("SoulCrystal", takeid, 1, player, mob);
 
-		if (Item != null)
-		{
+		if (Item != null) {
 			// Prepare inventory update packet
 			InventoryUpdate playerIU = new InventoryUpdate();
 			playerIU.addRemovedItem(Item);
@@ -627,13 +493,9 @@ public class Q350_EnhanceYourWeapon extends Quest
 			playerIU.addItem(Item);
 
 			// Send a sound event and text message to the player
-			if (broke)
-			{
+			if (broke) {
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SOUL_CRYSTAL_BROKE));
-			}
-
-			else
-			{
+			} else {
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SOUL_CRYSTAL_ABSORBING_SUCCEEDED));
 			}
 

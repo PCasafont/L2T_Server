@@ -27,52 +27,45 @@ import java.util.ArrayList;
  *
  * @version $Revision: 1.4.2.1.2.4 $ $Date: 2005/03/27 15:29:39 $
  */
-public final class WareHouseDepositList extends L2ItemListPacket
-{
+public final class WareHouseDepositList extends L2ItemListPacket {
 	public static final int PRIVATE = 4;
 	public static final int CLAN = 4;
 	public static final int CASTLE = 3; //not sure
-
+	
 	private final long playerAdena;
 	private final ArrayList<L2ItemInstance> items;
 	private final int whType;
-
-	public WareHouseDepositList(L2PcInstance player, int type)
-	{
+	
+	public WareHouseDepositList(L2PcInstance player, int type) {
 		whType = type;
 		playerAdena = player.getAdena();
 		items = new ArrayList<>();
-
+		
 		final boolean isPrivate = whType == PRIVATE;
-		for (L2ItemInstance temp : player.getInventory().getAvailableItems(true, isPrivate))
-		{
-			if (temp != null && temp.isDepositable(isPrivate))
-			{
+		for (L2ItemInstance temp : player.getInventory().getAvailableItems(true, isPrivate)) {
+			if (temp != null && temp.isDepositable(isPrivate)) {
 				items.add(temp);
 			}
 		}
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		/* 0x01-Private Warehouse
-         * 0x02-Clan Warehouse
+		 * 0x02-Clan Warehouse
 		 * 0x03-Castle Warehouse
 		 * 0x04-Warehouse */
 		writeH(whType);
 		writeQ(playerAdena);
 		writeD(0x00); // Already stored items count
 		final int count = items.size();
-		if (Config.DEBUG)
-		{
+		if (Config.DEBUG) {
 			Log.fine("count:" + count);
 		}
 		//writeH(0x00); // Weird count that we don't care about
 		writeH(count);
-
-		for (L2ItemInstance item : items)
-		{
+		
+		for (L2ItemInstance item : items) {
 			writeItem(item);
 			writeD(item.getObjectId());
 		}

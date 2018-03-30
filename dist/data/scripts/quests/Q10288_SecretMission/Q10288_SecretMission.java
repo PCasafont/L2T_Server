@@ -28,8 +28,7 @@ import l2server.gameserver.model.quest.State;
  * * 2010-08-07 Based on Freya PTS
  */
 
-public class Q10288_SecretMission extends Quest
-{
+public class Q10288_SecretMission extends Quest {
 	private static final String qn = "10288_SecretMission";
 	// NPC's
 	private static final int dominic = 31350;
@@ -39,47 +38,35 @@ public class Q10288_SecretMission extends Quest
 	private static final int letter = 15529;
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == dominic)
-		{
-			if (event.equalsIgnoreCase("31350-05.htm"))
-			{
+		if (npc.getNpcId() == dominic) {
+			if (event.equalsIgnoreCase("31350-05.htm")) {
 				st.setState(State.STARTED);
 				st.set("cond", "1");
 				st.giveItems(letter, 1);
 				st.playSound("ItemSound.quest_accept");
 			}
-		}
-		else if (npc.getNpcId() == greymore && event.equalsIgnoreCase("32757-03.htm"))
-		{
+		} else if (npc.getNpcId() == greymore && event.equalsIgnoreCase("32757-03.htm")) {
 			st.unset("cond");
 			st.takeItems(letter, -1);
 			st.giveItems(57, 106583);
 			st.addExpAndSp(417788, 46320);
 			st.playSound("ItemSound.quest_finish");
 			st.exitQuest(false);
-		}
-		else if (npc.getNpcId() == aquilani)
-		{
-			if (st.getState() == State.STARTED)
-			{
-				if (event.equalsIgnoreCase("32780-05.html"))
-				{
+		} else if (npc.getNpcId() == aquilani) {
+			if (st.getState() == State.STARTED) {
+				if (event.equalsIgnoreCase("32780-05.html")) {
 					st.set("cond", "2");
 					st.playSound("ItemSound.quest_middle");
 				}
-			}
-			else if (st.getState() == State.COMPLETED && event.equalsIgnoreCase("teleport"))
-			{
+			} else if (st.getState() == State.COMPLETED && event.equalsIgnoreCase("teleport")) {
 				player.teleToLocation(118833, -80589, -2688);
 				return null;
 			}
@@ -88,36 +75,26 @@ public class Q10288_SecretMission extends Quest
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onTalk(L2Npc npc, L2PcInstance player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			return htmltext;
 		}
 
-		if (npc.getNpcId() == dominic)
-		{
-			switch (st.getState())
-			{
+		if (npc.getNpcId() == dominic) {
+			switch (st.getState()) {
 				case State.CREATED:
-					if (player.getLevel() >= 82)
-					{
+					if (player.getLevel() >= 82) {
 						htmltext = "31350-01.htm";
-					}
-					else
-					{
+					} else {
 						htmltext = "31350-00.htm";
 					}
 					break;
 				case State.STARTED:
-					if (st.getInt("cond") == 1)
-					{
+					if (st.getInt("cond") == 1) {
 						htmltext = "31350-06.htm";
-					}
-					else if (st.getInt("cond") == 2)
-					{
+					} else if (st.getInt("cond") == 2) {
 						htmltext = "31350-07.htm";
 					}
 					break;
@@ -125,50 +102,36 @@ public class Q10288_SecretMission extends Quest
 					htmltext = "31350-08.htm";
 					break;
 			}
-		}
-		else if (npc.getNpcId() == aquilani)
-		{
-			if (st.getInt("cond") == 1)
-			{
+		} else if (npc.getNpcId() == aquilani) {
+			if (st.getInt("cond") == 1) {
 				htmltext = "32780-03.html";
-			}
-			else if (st.getInt("cond") == 2)
-			{
+			} else if (st.getInt("cond") == 2) {
 				htmltext = "32780-06.html";
 			}
-		}
-		else if (npc.getNpcId() == greymore && st.getInt("cond") == 2)
-		{
+		} else if (npc.getNpcId() == greymore && st.getInt("cond") == 2) {
 			return "32757-01.htm";
 		}
 		return htmltext;
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
+	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
 		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
+		if (st == null) {
 			Quest q = QuestManager.getInstance().getQuest(qn);
 			st = q.newQuestState(player);
 		}
-		if (npc.getNpcId() == aquilani)
-		{
-			if (st.getState() == State.COMPLETED)
-			{
+		if (npc.getNpcId() == aquilani) {
+			if (st.getState() == State.COMPLETED) {
 				return "32780-01.html";
-			}
-			else
-			{
+			} else {
 				return "32780-00.html";
 			}
 		}
 		return null;
 	}
 
-	public Q10288_SecretMission(int questId, String name, String descr)
-	{
+	public Q10288_SecretMission(int questId, String name, String descr) {
 		super(questId, name, descr);
 
 		addStartNpc(dominic);
@@ -179,8 +142,7 @@ public class Q10288_SecretMission extends Quest
 		addFirstTalkId(aquilani);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Q10288_SecretMission(10288, qn, "Secret Mission");
 	}
 }

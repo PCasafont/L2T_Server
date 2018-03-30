@@ -18,32 +18,28 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author Xavi
  */
-public class ExLoadStatWorldRank extends L2GameServerPacket
-{
-
+public class ExLoadStatWorldRank extends L2GameServerPacket {
+	
 	private int pid1;
 	private int pid2;
-
-	public ExLoadStatWorldRank(int pid1, int pid2)
-	{
+	
+	public ExLoadStatWorldRank(int pid1, int pid2) {
 		this.pid1 = pid1;
 		this.pid2 = pid2;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
-		if (getClient().getActiveChar() == null)
-		{
+	protected final void writeImpl() {
+		if (getClient().getActiveChar() == null) {
 			return;
 		}
-
+		
 		//Map<Integer, Long> lastMap = MuseumManager.getInstance().getRanking(pid1, pid2, true);
 		//Map<Integer, Long> overallMap = MuseumManager.getInstance().getRanking(pid1, pid2, false);
-
+		
 		writeD(pid1);
 		writeD(pid2);
 		/*writeD(lastMap.size() < 100 ? lastMap.size() : 100);

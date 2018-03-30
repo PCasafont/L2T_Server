@@ -29,45 +29,38 @@ import java.util.List;
  *
  * @version $Revision: 1.4.2.3.2.4 $ $Date: 2005/03/27 15:29:39 $
  */
-public class SellList extends L2GameServerPacket
-{
+public class SellList extends L2GameServerPacket {
 
 	private final L2PcInstance activeChar;
 	private final L2MerchantInstance lease;
 	private long money;
 	private List<L2ItemInstance> selllist = new ArrayList<>();
 
-	public SellList(L2PcInstance player)
-	{
+	public SellList(L2PcInstance player) {
 		activeChar = player;
 		lease = null;
 		money = activeChar.getAdena();
 		doLease();
 	}
 
-	public SellList(L2PcInstance player, L2MerchantInstance lease)
-	{
+	public SellList(L2PcInstance player, L2MerchantInstance lease) {
 		activeChar = player;
 		this.lease = lease;
 		money = activeChar.getAdena();
 		doLease();
 	}
 
-	private void doLease()
-	{
-		if (lease == null)
-		{
-			for (L2ItemInstance item : activeChar.getInventory().getItems())
-			{
+	private void doLease() {
+		if (lease == null) {
+			for (L2ItemInstance item : activeChar.getInventory().getItems()) {
 				if (!item.isEquipped() && // Not equipped
 						item.isSellable() && // Item is sellable
 						(activeChar.getPet() == null || // Pet not summoned or
-								item.getObjectId() != activeChar.getPet()
-										.getControlObjectId())) // Pet is summoned and not the item that summoned the pet
+								item.getObjectId() !=
+										activeChar.getPet().getControlObjectId())) // Pet is summoned and not the item that summoned the pet
 				{
 					selllist.add(item);
-					if (Config.DEBUG)
-					{
+					if (Config.DEBUG) {
 						Log.fine("item added to selllist: " + item.getItem().getName());
 					}
 				}
@@ -76,14 +69,12 @@ public class SellList extends L2GameServerPacket
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeQ(money);
 		writeD(lease == null ? 0x00 : 1000000 + lease.getTemplate().NpcId);
 		writeH(selllist.size());
 
-		for (L2ItemInstance item : selllist)
-		{
+		for (L2ItemInstance item : selllist) {
 			writeH(item.getItem().getType1());
 			writeD(item.getObjectId());
 			writeD(item.getItemId());
@@ -97,8 +88,7 @@ public class SellList extends L2GameServerPacket
 			// T1
 			writeH(item.getAttackElementType());
 			writeH(item.getAttackElementPower());
-			for (byte i = 0; i < 6; i++)
-			{
+			for (byte i = 0; i < 6; i++) {
 				writeH(item.getElementDefAttr(i));
 			}
 

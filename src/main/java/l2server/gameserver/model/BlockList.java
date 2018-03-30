@@ -50,62 +50,51 @@ import java.util.logging.Level;
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
 
-public class BlockList
-{
+public class BlockList {
 
 	private static Map<Integer, List<Integer>> offlineList = new HashMap<>();
 
 	private final L2PcInstance owner;
 	private List<Integer> blockList;
 
-	public BlockList(L2PcInstance owner)
-	{
+	public BlockList(L2PcInstance owner) {
 		this.owner = owner;
 		blockList = offlineList.get(owner.getObjectId());
-		if (blockList == null)
-		{
+		if (blockList == null) {
 			blockList = loadList(owner.getObjectId());
 		}
 	}
 
-	private synchronized void addToBlockList(int target)
-	{
+	private synchronized void addToBlockList(int target) {
 		blockList.add(target);
 		updateInDB(target, true);
 		owner.sendPacket(new ExBlockAddResult(target));
 	}
 
-	private synchronized void removeFromBlockList(int target)
-	{
+	private synchronized void removeFromBlockList(int target) {
 		blockList.remove(Integer.valueOf(target));
 		updateInDB(target, false);
 		owner.sendPacket(new ExBlockRemoveResult(target));
 	}
 
-	public void playerLogout()
-	{
+	public void playerLogout() {
 		offlineList.put(owner.getObjectId(), blockList);
 	}
 
-	private static List<Integer> loadList(int ObjId)
-	{
+	private static List<Integer> loadList(int ObjId) {
 		Connection con = null;
 		List<Integer> list = new ArrayList<>();
 
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement =
-					con.prepareStatement("SELECT friendId, memo FROM character_friends WHERE charId=? AND relation=1");
+			PreparedStatement statement = con.prepareStatement("SELECT friendId, memo FROM character_friends WHERE charId=? AND relation=1");
 			statement.setInt(1, ObjId);
 			ResultSet rset = statement.executeQuery();
 
 			int friendId;
-			while (rset.next())
-			{
+			while (rset.next()) {
 				friendId = rset.getInt("friendId");
-				if (friendId == ObjId)
-				{
+				if (friendId == ObjId) {
 					continue;
 				}
 				list.add(friendId);
@@ -113,110 +102,85 @@ public class BlockList
 
 			rset.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
-			Log.log(Level.WARNING, "Error found in " + ObjId + " FriendList while loading BlockList: " + e.getMessage(),
-					e);
-		}
-		finally
-		{
+		} catch (Exception e) {
+			Log.log(Level.WARNING, "Error found in " + ObjId + " FriendList while loading BlockList: " + e.getMessage(), e);
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		return list;
 	}
 
-	private void updateInDB(int targetId, boolean state)
-	{
+	private void updateInDB(int targetId, boolean state) {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement;
 			if (state) //add
 			{
-				statement = con.prepareStatement(
-						"INSERT INTO character_friends (charId, friendId, relation) VALUES (?, ?, 1)");
+				statement = con.prepareStatement("INSERT INTO character_friends (charId, friendId, relation) VALUES (?, ?, 1)");
 				statement.setInt(1, owner.getObjectId());
 				statement.setInt(2, targetId);
-			}
-			else
+			} else
 			//remove
 			{
-				statement = con.prepareStatement(
-						"DELETE FROM character_friends WHERE charId=? AND friendId=? AND relation=1");
+				statement = con.prepareStatement("DELETE FROM character_friends WHERE charId=? AND friendId=? AND relation=1");
 				statement.setInt(1, owner.getObjectId());
 				statement.setInt(2, targetId);
 			}
 			statement.execute();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Could not add block player: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public boolean isInBlockList(L2PcInstance target)
-	{
+	public boolean isInBlockList(L2PcInstance target) {
 		return blockList.contains(target.getObjectId());
 	}
 
-	public boolean isInBlockList(int targetId)
-	{
+	public boolean isInBlockList(int targetId) {
 		return blockList.contains(targetId);
 	}
 
-	private boolean isBlockAll()
-	{
+	private boolean isBlockAll() {
 		return owner.getMessageRefusal();
 	}
 
-	public static boolean isBlocked(L2PcInstance listOwner, L2PcInstance target)
-	{
+	public static boolean isBlocked(L2PcInstance listOwner, L2PcInstance target) {
 		BlockList blockList = listOwner.getBlockList();
 		return blockList.isBlockAll() || blockList.isInBlockList(target);
 	}
 
-	public static boolean isBlocked(L2PcInstance listOwner, int targetId)
-	{
+	public static boolean isBlocked(L2PcInstance listOwner, int targetId) {
 		BlockList blockList = listOwner.getBlockList();
 		return blockList.isBlockAll() || blockList.isInBlockList(targetId);
 	}
 
-	private void setBlockAll(boolean state)
-	{
+	private void setBlockAll(boolean state) {
 		owner.setMessageRefusal(state);
 	}
 
-	public List<Integer> getBlockList()
-	{
+	public List<Integer> getBlockList() {
 		return blockList;
 	}
 
-	public static void addToBlockList(L2PcInstance listOwner, int targetId)
-	{
-		if (listOwner == null)
-		{
+	public static void addToBlockList(L2PcInstance listOwner, int targetId) {
+		if (listOwner == null) {
 			return;
 		}
 
 		String charName = CharNameTable.getInstance().getNameById(targetId);
 
-		if (listOwner.getFriendList().contains(targetId))
-		{
+		if (listOwner.getFriendList().contains(targetId)) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_ALREADY_IN_FRIENDS_LIST);
 			sm.addString(charName);
 			listOwner.sendPacket(sm);
 			return;
 		}
 
-		if (listOwner.getBlockList().getBlockList().contains(targetId))
-		{
+		if (listOwner.getBlockList().getBlockList().contains(targetId)) {
 			listOwner.sendMessage("Already in ignore list.");
 			return;
 		}
@@ -231,18 +195,15 @@ public class BlockList
 
 		L2PcInstance player = L2World.getInstance().getPlayer(targetId);
 
-		if (player != null)
-		{
+		if (player != null) {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_ADDED_YOU_TO_IGNORE_LIST);
 			sm.addString(listOwner.getName());
 			player.sendPacket(sm);
 		}
 	}
 
-	public static void removeFromBlockList(L2PcInstance listOwner, int targetId)
-	{
-		if (listOwner == null)
-		{
+	public static void removeFromBlockList(L2PcInstance listOwner, int targetId) {
+		if (listOwner == null) {
 			return;
 		}
 
@@ -250,8 +211,7 @@ public class BlockList
 
 		String charName = CharNameTable.getInstance().getNameById(targetId);
 
-		if (!listOwner.getBlockList().getBlockList().contains(targetId))
-		{
+		if (!listOwner.getBlockList().getBlockList().contains(targetId)) {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT);
 			listOwner.sendPacket(sm);
 			return;
@@ -266,18 +226,15 @@ public class BlockList
 		listOwner.sendPacket(sm);
 	}
 
-	public static boolean isInBlockList(L2PcInstance listOwner, L2PcInstance target)
-	{
+	public static boolean isInBlockList(L2PcInstance listOwner, L2PcInstance target) {
 		return listOwner.getBlockList().isInBlockList(target);
 	}
 
-	public boolean isBlockAll(L2PcInstance listOwner)
-	{
+	public boolean isBlockAll(L2PcInstance listOwner) {
 		return listOwner.getBlockList().isBlockAll();
 	}
 
-	public static void setBlockAll(L2PcInstance listOwner, boolean newValue)
-	{
+	public static void setBlockAll(L2PcInstance listOwner, boolean newValue) {
 		listOwner.getBlockList().setBlockAll(newValue);
 	}
 
@@ -286,15 +243,12 @@ public class BlockList
 	 * @param targetId object id of potential blocked player
 	 * @return true if blocked
 	 */
-	public static boolean isInBlockList(int ownerId, int targetId)
-	{
+	public static boolean isInBlockList(int ownerId, int targetId) {
 		L2PcInstance player = L2World.getInstance().getPlayer(ownerId);
-		if (player != null)
-		{
+		if (player != null) {
 			return BlockList.isBlocked(player, targetId);
 		}
-		if (!offlineList.containsKey(ownerId))
-		{
+		if (!offlineList.containsKey(ownerId)) {
 			offlineList.put(ownerId, loadList(ownerId));
 		}
 		return offlineList.get(ownerId).contains(targetId);

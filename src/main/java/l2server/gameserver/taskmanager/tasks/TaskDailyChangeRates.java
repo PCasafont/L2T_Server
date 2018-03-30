@@ -23,20 +23,17 @@ import l2server.gameserver.taskmanager.TaskTypes;
 /**
  * @author Soul
  */
-public class TaskDailyChangeRates extends Task
-{
+public class TaskDailyChangeRates extends Task {
 
 	private static final String NAME = "daily_rate_change";
 
 	@Override
-	public String getName()
-	{
+	public String getName() {
 		return NAME;
 	}
 
 	@Override
-	public void onTimeElapsed(ExecutedTask task)
-	{
+	public void onTimeElapsed(ExecutedTask task) {
 		/*String day = "fail";
 
 		// First, return params to its default values
@@ -92,8 +89,7 @@ public class TaskDailyChangeRates extends Task
 	}
 
 	@Override
-	public void initialize()
-	{
+	public void initialize() {
 		super.initialize();
 		// This task executes once every 24h (00:00:01 to be exact)
 		TaskManager.addUniqueTask(NAME, TaskTypes.TYPE_GLOBAL_TASK, "1", "00:00:01", "");

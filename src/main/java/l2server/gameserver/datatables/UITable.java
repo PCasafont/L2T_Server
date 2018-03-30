@@ -30,18 +30,15 @@ import java.util.Map;
 /**
  * @author mrTJO
  */
-public class UITable
-{
+public class UITable {
 	private Map<Integer, List<ActionKey>> storedKeys;
 	private Map<Integer, List<Integer>> storedCategories;
 
-	public static UITable getInstance()
-	{
+	public static UITable getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private UITable()
-	{
+	private UITable() {
 		storedKeys = new HashMap<>();
 		storedCategories = new HashMap<>();
 
@@ -51,83 +48,66 @@ public class UITable
 		Log.info("UITable: Loaded " + storedKeys.size() + " Keys.");
 	}
 
-	private void parseCatData()
-	{
+	private void parseCatData() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "uiCatsEn.xml");
 		XmlDocument doc = new XmlDocument(file);
 
-		for (XmlNode d : doc.getChildren())
-		{
-            if (d.getName().equalsIgnoreCase("category"))
-            {
-                int cat = d.getInt("cat");
-                int cmd = d.getInt("cmd");
-                insertCategory(cat, cmd);
-            }
-        }
+		for (XmlNode d : doc.getChildren()) {
+			if (d.getName().equalsIgnoreCase("category")) {
+				int cat = d.getInt("cat");
+				int cmd = d.getInt("cmd");
+				insertCategory(cat, cmd);
+			}
+		}
 	}
 
-	private void parseKeyData()
-	{
+	private void parseKeyData() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "uiKeysEn.xml");
 		XmlDocument doc = new XmlDocument(file);
-		for (XmlNode d : doc.getChildren())
-		{
-            if (d.getName().equalsIgnoreCase("key"))
-            {
-                int cat = d.getInt("cat");
-                int cmd = d.getInt("cmd");
-                int key = d.getInt("key");
-                int tk1 = d.getInt("tk1");
-                int tk2 = d.getInt("tk2");
-                int shw = d.getInt("shw");
-                insertKey(cat, cmd, key, tk1, tk2, shw);
-            }
-        }
+		for (XmlNode d : doc.getChildren()) {
+			if (d.getName().equalsIgnoreCase("key")) {
+				int cat = d.getInt("cat");
+				int cmd = d.getInt("cmd");
+				int key = d.getInt("key");
+				int tk1 = d.getInt("tk1");
+				int tk2 = d.getInt("tk2");
+				int shw = d.getInt("shw");
+				insertKey(cat, cmd, key, tk1, tk2, shw);
+			}
+		}
 	}
 
-	private void insertCategory(int cat, int cmd)
-	{
-		if (storedCategories.containsKey(cat))
-		{
+	private void insertCategory(int cat, int cmd) {
+		if (storedCategories.containsKey(cat)) {
 			storedCategories.get(cat).add(cmd);
-		}
-		else
-		{
+		} else {
 			List<Integer> tmp = new ArrayList<>();
 			tmp.add(cmd);
 			storedCategories.put(cat, tmp);
 		}
 	}
 
-	private void insertKey(int cat, int cmdId, int key, int tgKey1, int tgKey2, int show)
-	{
+	private void insertKey(int cat, int cmdId, int key, int tgKey1, int tgKey2, int show) {
 		ActionKey tmk = new ActionKey(cat, cmdId, key, tgKey1, tgKey2, show);
-		if (storedKeys.containsKey(cat))
-		{
+		if (storedKeys.containsKey(cat)) {
 			storedKeys.get(cat).add(tmk);
-		}
-		else
-		{
+		} else {
 			List<ActionKey> tmp = new ArrayList<>();
 			tmp.add(tmk);
 			storedKeys.put(cat, tmp);
 		}
 	}
 
-	public Map<Integer, List<Integer>> getCategories()
-	{
+	public Map<Integer, List<Integer>> getCategories() {
 		return storedCategories;
 	}
 
-	public Map<Integer, List<ActionKey>> getKeys()
-	{
+	public Map<Integer, List<ActionKey>> getKeys() {
 		return storedKeys;
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final UITable instance = new UITable();
 	}
 }

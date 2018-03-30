@@ -3,11 +3,9 @@ package l2server.gameserver.network.serverpackets;
 /**
  * @author MegaParzor!
  */
-public class ExEventMatchObserver extends L2GameServerPacket
-{
+public class ExEventMatchObserver extends L2GameServerPacket {
 	@Override
-	public void writeImpl()
-	{
+	public void writeImpl() {
 		writeD(0x00); // unk8
 		writeD(0x00); // unk6
 		writeD(0x00); // unk7

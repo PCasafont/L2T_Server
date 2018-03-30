@@ -28,77 +28,65 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 /**
  * @author KenM
  */
-public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket
-{
-
+public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket {
+	
 	private int objectId = 0;
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#readImpl()
 	 */
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		objectId = readD();
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.network.clientpackets.L2GameClientPacket#runImpl()
 	 */
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-
-		if (objectId == 0)
-		{
+		
+		if (objectId == 0) {
 			return;
 		}
-
-		if (activeChar == null)
-		{
+		
+		if (activeChar == null) {
 			return;
 		}
-
-		if (activeChar.isEnchanting())
-		{
+		
+		if (activeChar.isEnchanting()) {
 			return;
 		}
-
+		
 		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(objectId);
 		L2ItemInstance scroll = activeChar.getActiveEnchantItem();
-
-		if (item == null || scroll == null)
-		{
+		
+		if (item == null || scroll == null) {
 			return;
 		}
-
+		
 		// template for scroll
 		EnchantScroll scrollTemplate = EnchantItemTable.getInstance().getEnchantScroll(scroll);
-
-		if (!scrollTemplate.isValid(item) || !EnchantItemTable.isEnchantable(item))
-		{
+		
+		if (!scrollTemplate.isValid(item) || !EnchantItemTable.isEnchantable(item)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DOES_NOT_FIT_SCROLL_CONDITIONS));
 			activeChar.setActiveEnchantItem(null);
 			activeChar.sendPacket(new ExPutEnchantTargetItemResult(0));
 			return;
 		}
-
-		if (Config.ENCHANT_CHANCE_PER_LEVEL.length > 0)
-		{
+		
+		if (Config.ENCHANT_CHANCE_PER_LEVEL.length > 0) {
 			int chance = Math.round(scrollTemplate.getChance(item, null) * 10);
-			if (chance < 1000)
-			{
+			if (chance < 1000) {
 				String chanceText = String.valueOf(chance / 10);
-				if (chance % 10 > 0)
-				{
+				if (chance % 10 > 0) {
 					chanceText += "." + chance % 10;
 				}
-				activeChar.sendPacket(
-						new ExShowScreenMessage("This enchantment has a " + chanceText + "% chance to succeed", 3000));
+				activeChar.sendPacket(new ExShowScreenMessage("This enchantment has a " + chanceText + "% chance to succeed", 3000));
 			}
 		}
-
+		
 		activeChar.setIsEnchanting(true);
 		activeChar.setActiveEnchantTimestamp(System.currentTimeMillis());
 		activeChar.sendPacket(new ExPutEnchantTargetItemResult(1));

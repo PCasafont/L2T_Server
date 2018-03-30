@@ -31,37 +31,29 @@ import java.util.ArrayList;
  *
  * @author JIV
  */
-public class ExQuestItemList extends L2ItemListPacket
-{
-
+public class ExQuestItemList extends L2ItemListPacket {
+	
 	private ArrayList<L2ItemInstance> items;
 	private PcInventory inventory;
-
-	public ExQuestItemList(ArrayList<L2ItemInstance> items, PcInventory inv)
-	{
+	
+	public ExQuestItemList(ArrayList<L2ItemInstance> items, PcInventory inv) {
 		this.items = items;
 		inventory = inv;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeH(items.size());
-		for (L2ItemInstance item : items)
-		{
+		for (L2ItemInstance item : items) {
 			writeItem(item);
 		}
-		if (inventory.hasInventoryBlock())
-		{
+		if (inventory.hasInventoryBlock()) {
 			writeH(inventory.getBlockItems().length);
 			writeC(inventory.getBlockMode());
-			for (int i : inventory.getBlockItems())
-			{
+			for (int i : inventory.getBlockItems()) {
 				writeD(i);
 			}
-		}
-		else
-		{
+		} else {
 			writeH(0x00);
 		}
 	}

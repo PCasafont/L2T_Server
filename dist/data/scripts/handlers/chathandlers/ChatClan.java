@@ -26,8 +26,7 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
  *
  * @author durgus
  */
-public class ChatClan implements IChatHandler
-{
+public class ChatClan implements IChatHandler {
 	private static final int[] COMMAND_IDS = {4};
 
 	/**
@@ -40,23 +39,22 @@ public class ChatClan implements IChatHandler
 		}
 			else*/
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text)
-	{
-		if (activeChar.getClan() != null)
-		{
+	public void handleChat(int type, L2PcInstance activeChar, String target, String text) {
+		if (activeChar.getClan() != null) {
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
 			activeChar.getClan().broadcastCSToOnlineMembers(cs, activeChar);
 
-			while (text.contains("Type=") && text.contains("Title="))
-			{
+			while (text.contains("Type=") && text.contains("Title=")) {
 				int index1 = text.indexOf("Type=");
 				int index2 = text.indexOf("Title=") + 6;
 				text = text.substring(0, index1) + text.substring(index2);
 			}
 
 			String clanName = activeChar.getClan().getName();
-			ConsoleTab.appendMessage(ConsoleFilter.ClanChat, "[" + clanName + "] " + activeChar.getName() + ": " + text,
-					clanName, activeChar.getName());
+			ConsoleTab.appendMessage(ConsoleFilter.ClanChat,
+					"[" + clanName + "] " + activeChar.getName() + ": " + text,
+					clanName,
+					activeChar.getName());
 		}
 	}
 
@@ -66,8 +64,7 @@ public class ChatClan implements IChatHandler
 	 * @see l2server.gameserver.handler.IChatHandler#getChatTypeList()
 	 */
 	@Override
-	public int[] getChatTypeList()
-	{
+	public int[] getChatTypeList() {
 		return COMMAND_IDS;
 	}
 }

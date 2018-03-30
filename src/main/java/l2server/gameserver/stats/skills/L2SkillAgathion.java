@@ -24,36 +24,29 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.StatsSet;
 
-public class L2SkillAgathion extends L2Skill
-{
+public class L2SkillAgathion extends L2Skill {
 	private int npcId;
 
-	public L2SkillAgathion(StatsSet set)
-	{
+	public L2SkillAgathion(StatsSet set) {
 		super(set);
 		npcId = set.getInteger("npcId", 0);
 	}
 
 	@Override
-	public void useSkill(L2Character caster, L2Object[] targets)
-	{
-		if (caster.isAlikeDead() || !(caster instanceof L2PcInstance))
-		{
+	public void useSkill(L2Character caster, L2Object[] targets) {
+		if (caster.isAlikeDead() || !(caster instanceof L2PcInstance)) {
 			return;
 		}
 
 		L2PcInstance activeChar = (L2PcInstance) caster;
 
-		if (activeChar.isInOlympiadMode())
-		{
-			activeChar.sendPacket(
-					SystemMessage.getSystemMessage(SystemMessageId.THIS_SKILL_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+		if (activeChar.isInOlympiadMode()) {
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_SKILL_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
 			return;
 		}
 
 		// Ranked 1v1 Restriction Agathions
-		if (Ranked1v1.fighters.containsKey(activeChar))
-		{
+		if (Ranked1v1.fighters.containsKey(activeChar)) {
 			activeChar.sendMessage("You can't use this in 1v1!");
 			return;
 		}

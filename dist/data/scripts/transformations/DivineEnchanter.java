@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class DivineEnchanter extends L2Transformation
-{
+public class DivineEnchanter extends L2Transformation {
 	private static final int[] SKILLS = {704, 705, 706, 707, 708, 709, 5779, 619};
 
-	public DivineEnchanter()
-	{
+	public DivineEnchanter() {
 		// id, colRadius, colHeight
 		super(257, 8, 18.25);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 257 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 257 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		// Divine Enchanter Water Spirit
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(704, 1), false);
 		// Divine Enchanter Fire Spirit
@@ -48,13 +43,11 @@ public class DivineEnchanter extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		// Divine Enchanter Water Spirit
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(704, 1), false, false);
 		// Divine Enchanter Fire Spirit
@@ -75,8 +68,7 @@ public class DivineEnchanter extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new DivineEnchanter());
 	}
 }

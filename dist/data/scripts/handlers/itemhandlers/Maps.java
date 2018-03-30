@@ -28,16 +28,13 @@ import l2server.gameserver.network.serverpackets.ShowMiniMap;
  * @version $Revision: 1.1.4.3 $ $Date: 2005/03/27 15:30:07 $
  */
 
-public class Maps implements IItemHandler
-{
+public class Maps implements IItemHandler {
 	/**
 	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
-	{
-		if (!(playable instanceof L2PcInstance))
-		{
+	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+		if (!(playable instanceof L2PcInstance)) {
 			return;
 		}
 

@@ -31,8 +31,7 @@ import l2server.gameserver.network.serverpackets.StopMove;
  *
  * @version $Revision: 1.11.2.4.2.4 $ $Date: 2005/03/27 15:29:30 $
  */
-public class MoveBackwardToLocation extends L2GameClientPacket
-{
+public class MoveBackwardToLocation extends L2GameClientPacket {
 	//
 	// cdddddd
 	private int targetX;
@@ -42,21 +41,19 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 	private int originY;
 	private int originZ;
 	private int moveMovement;
-
+	
 	//For geodata
 	private int curX;
 	private int curY;
 	@SuppressWarnings("unused")
 	private int curZ;
-
-	public TaskPriority getPriority()
-	{
+	
+	public TaskPriority getPriority() {
 		return TaskPriority.PR_HIGH;
 	}
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		targetX = readD();
 		targetY = readD();
 		targetZ = readD();
@@ -65,22 +62,19 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		originZ = readD();
 		moveMovement = readD(); // is 0 if cursor keys are used  1 if mouse is used
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
+	protected void runImpl() {
 		L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
+		if (activeChar == null) {
 			return;
 		}
-
-		if (targetX == originX && targetY == originY && targetZ == originZ)
-		{
+		
+		if (targetX == originX && targetY == originY && targetZ == originZ) {
 			activeChar.sendPacket(new StopMove(activeChar));
 			return;
 		}
-
+		
 		// Correcting targetZ from floor level to head level (?)
 		// Client is giving floor level as targetZ but that floor level doesn't
 		// match our current geodata and teleport coords as good as head level!
@@ -88,43 +82,35 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		// sort of incompatibility fix.
 		// Validate position packets sends head level.
 		targetZ += activeChar.getTemplate().collisionHeight;
-
+		
 		curX = activeChar.getX();
 		curY = activeChar.getY();
 		curZ = activeChar.getZ();
-
+		
 		activeChar.stopWatcherMode();
-
-		if (activeChar.getTeleMode() > 0)
-		{
-			if (activeChar.getTeleMode() == 1)
-			{
+		
+		if (activeChar.getTeleMode() > 0) {
+			if (activeChar.getTeleMode() == 1) {
 				activeChar.setTeleMode(0);
 			}
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			if (activeChar.getTeleMode() == 3)
-			{
+			if (activeChar.getTeleMode() == 3) {
 				activeChar.sendPacket(new ExFlyMove(activeChar, 100, -1, targetX, targetY, targetZ));
 				ExFlyMoveBroadcast packet = new ExFlyMoveBroadcast(activeChar, targetX, targetY, targetZ);
-				for (L2PcInstance known : activeChar.getKnownList().getKnownPlayers().values())
-				{
+				for (L2PcInstance known : activeChar.getKnownList().getKnownPlayers().values()) {
 					known.sendPacket(packet);
 				}
-			}
-			else
-			{
+			} else {
 				activeChar.teleToLocation(targetX, targetY, targetZ, false);
 			}
 			return;
 		}
-
-		if (moveMovement == 0 && (Config.GEODATA < 1 || activeChar.isPlayingEvent() ||
-				activeChar.isInOlympiadMode())) // keys movement without geodata is disabled
+		
+		if (moveMovement == 0 &&
+				(Config.GEODATA < 1 || activeChar.isPlayingEvent() || activeChar.isInOlympiadMode())) // keys movement without geodata is disabled
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-		}
-		else
-		{
+		} else {
 			double dx = targetX - curX;
 			double dy = targetY - curY;
 			// Can't move if character is confused, or trying to move a huge distance
@@ -133,22 +119,19 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
-
-			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,
-					new L2CharPosition(targetX, targetY, targetZ, 0));
-
+			
+			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(targetX, targetY, targetZ, 0));
+			
 			//if (activeChar.isInOlympiadMode())
 			//	activeChar.broadcastPacket(new ValidateLocation(activeChar));
 			/*if (activeChar.getParty() != null)
                 activeChar.getParty().broadcastToPartyMembers(activeChar, new PartyMemberPosition(activeChar));*/
-
-			if (activeChar.getInstanceId() != activeChar.getObjectId())
-			{
+			
+			if (activeChar.getInstanceId() != activeChar.getObjectId()) {
 				InstanceManager.getInstance().destroyInstance(activeChar.getObjectId());
 			}
-
-			if (activeChar.getQueuedSkill() != null && activeChar.getQueuedSkill().getSkillId() == 30001)
-			{
+			
+			if (activeChar.getQueuedSkill() != null && activeChar.getQueuedSkill().getSkillId() == 30001) {
 				activeChar.setQueuedSkill(null, false, false);
 			}
 		}

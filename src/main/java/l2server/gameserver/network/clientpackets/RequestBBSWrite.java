@@ -22,8 +22,7 @@ import l2server.gameserver.communitybbs.CommunityBoard;
  *
  * @author -Wooden-
  */
-public final class RequestBBSWrite extends L2GameClientPacket
-{
+public final class RequestBBSWrite extends L2GameClientPacket {
 	private String url;
 	private String arg1;
 	private String arg2;
@@ -32,8 +31,7 @@ public final class RequestBBSWrite extends L2GameClientPacket
 	private String arg5;
 
 	@Override
-	protected final void readImpl()
-	{
+	protected final void readImpl() {
 		url = readS();
 		arg1 = readS();
 		arg2 = readS();
@@ -43,8 +41,7 @@ public final class RequestBBSWrite extends L2GameClientPacket
 	}
 
 	@Override
-	protected final void runImpl()
-	{
+	protected final void runImpl() {
 		CommunityBoard.getInstance().handleWriteCommands(getClient(), url, arg1, arg2, arg3, arg4, arg5);
 	}
 }

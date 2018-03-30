@@ -20,18 +20,14 @@ import l2server.L2DatabaseFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class GMAudit
-{
-	public static void auditGMAction(String gmName, String action, String target, String params)
-	{
+public class GMAudit {
+	public static void auditGMAction(String gmName, String action, String target, String params) {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
-
-			PreparedStatement statement =
-					con.prepareStatement("INSERT INTO gm_audit(time, gm, action, target, params) VALUES (?,?,?,?,?);");
-
+			
+			PreparedStatement statement = con.prepareStatement("INSERT INTO gm_audit(time, gm, action, target, params) VALUES (?,?,?,?,?);");
+			
 			statement.setInt(1, (int) (System.currentTimeMillis() / 1000));
 			statement.setString(2, gmName);
 			statement.setString(3, action);
@@ -39,19 +35,14 @@ public class GMAudit
 			statement.setString(5, params);
 			statement.execute();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
-
-	public static void auditGMAction(String gmName, String action, String target)
-	{
+	
+	public static void auditGMAction(String gmName, String action, String target) {
 		auditGMAction(gmName, action, target, "");
 	}
 }

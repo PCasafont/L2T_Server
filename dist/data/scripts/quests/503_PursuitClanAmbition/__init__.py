@@ -84,7 +84,7 @@ def offlineMemberExit(st):
     clan = st.getPlayer().getClan().getClanId()
     con = L2DatabaseFactory.getInstance().getConnection()
     offline = con.prepareStatement(
-        "DELETE FROM character_quests WHERE name = ? and charId IN (SELECT charId FROM characters WHERE clanId =? AND online=0")
+        "DELETE FROM character_quests WHERE name = ? AND charId IN (SELECT charId FROM characters WHERE clanId =? AND online=0")
     offline.setString(1, qn)
     offline.setInt(2, clan)
     try:

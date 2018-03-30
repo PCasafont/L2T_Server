@@ -25,8 +25,7 @@ import java.util.logging.Logger;
 /**
  * @author poltomb
  */
-public class AdminSummon implements IAdminCommandHandler
-{
+public class AdminSummon implements IAdminCommandHandler {
 	Logger log = Logger.getLogger(AdminSummon.class.getName());
 
 	public static final String[] ADMIN_COMMANDS = {"admin_summon"};
@@ -35,8 +34,7 @@ public class AdminSummon implements IAdminCommandHandler
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#getAdminCommandList()
 	 */
 	@Override
-	public String[] getAdminCommandList()
-	{
+	public String[] getAdminCommandList() {
 
 		return ADMIN_COMMANDS;
 	}
@@ -45,47 +43,35 @@ public class AdminSummon implements IAdminCommandHandler
 	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
+	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
 		int id;
 		long count = 1;
 		String[] data = command.split(" ");
-		try
-		{
+		try {
 			id = Integer.parseInt(data[1]);
-			if (data.length > 2)
-			{
+			if (data.length > 2) {
 				count = Long.parseLong(data[2]);
 			}
-		}
-		catch (NumberFormatException nfe)
-		{
+		} catch (NumberFormatException nfe) {
 			activeChar.sendMessage("Incorrect format for command 'summon'");
 			return false;
 		}
 
 		String subCommand;
-		if (id < 1000000)
-		{
+		if (id < 1000000) {
 			subCommand = "admin_create_item";
-			if (!AdminCommandAccessRights.getInstance().hasAccess(subCommand, activeChar.getAccessLevel()))
-			{
+			if (!AdminCommandAccessRights.getInstance().hasAccess(subCommand, activeChar.getAccessLevel())) {
 				activeChar.sendMessage("You don't have the access right to use this command!");
-				log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
-						", but have no access to it!");
+				log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand + ", but have no access to it!");
 				return false;
 			}
 			IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler(subCommand);
 			ach.useAdminCommand(subCommand + " " + id + " " + count, activeChar);
-		}
-		else
-		{
+		} else {
 			subCommand = "admin_spawn_once";
-			if (!AdminCommandAccessRights.getInstance().hasAccess(subCommand, activeChar.getAccessLevel()))
-			{
+			if (!AdminCommandAccessRights.getInstance().hasAccess(subCommand, activeChar.getAccessLevel())) {
 				activeChar.sendMessage("You don't have the access right to use this command!");
-				log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand +
-						", but have no access to it!");
+				log.warning("Character " + activeChar.getName() + " tryed to use admin command " + subCommand + ", but have no access to it!");
 				return false;
 			}
 			IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler(subCommand);

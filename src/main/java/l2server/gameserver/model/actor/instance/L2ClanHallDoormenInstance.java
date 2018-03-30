@@ -27,38 +27,31 @@ import l2server.gameserver.util.Evolve;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class L2ClanHallDoormenInstance extends L2DoormenInstance
-{
+public class L2ClanHallDoormenInstance extends L2DoormenInstance {
 	private boolean init = false;
 	private ClanHall clanHall = null;
 	private boolean hasEvolve = false;
-
+	
 	// list of clan halls with evolve function, should be sorted
 	private static final int[] CH_WITH_EVOLVE = {36, 37, 38, 39, 40, 41, 51, 52, 53, 54, 55, 56, 57};
-
-	public L2ClanHallDoormenInstance(int objectID, L2NpcTemplate template)
-	{
+	
+	public L2ClanHallDoormenInstance(int objectID, L2NpcTemplate template) {
 		super(objectID, template);
 		setInstanceType(InstanceType.L2ClanHallDoormenInstance);
 	}
-
+	
 	@Override
-	public void onBypassFeedback(L2PcInstance player, String command)
-	{
-		if (hasEvolve && command.startsWith("evolve"))
-		{
-			if (isOwnerClan(player))
-			{
+	public void onBypassFeedback(L2PcInstance player, String command) {
+		if (hasEvolve && command.startsWith("evolve")) {
+			if (isOwnerClan(player)) {
 				StringTokenizer st = new StringTokenizer(command, " ");
-				if (st.countTokens() < 2)
-				{
+				if (st.countTokens() < 2) {
 					return;
 				}
-
+				
 				st.nextToken();
 				boolean ok = false;
-				switch (Integer.parseInt(st.nextToken()))
-				{
+				switch (Integer.parseInt(st.nextToken())) {
 					case 1:
 						ok = Evolve.doEvolve(player, this, 9882, 10307, 55);
 						break;
@@ -76,12 +69,9 @@ public class L2ClanHallDoormenInstance extends L2DoormenInstance
 						break;
 				}
 				NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-				if (ok)
-				{
+				if (ok) {
 					html.setFile(player.getHtmlPrefix(), "clanHallDoormen/evolve-ok.htm");
-				}
-				else
-				{
+				} else {
 					html.setFile(player.getHtmlPrefix(), "clanHallDoormen/evolve-no.htm");
 				}
 				player.sendPacket(html);
@@ -90,102 +80,79 @@ public class L2ClanHallDoormenInstance extends L2DoormenInstance
 		}
 		super.onBypassFeedback(player, command);
 	}
-
+	
 	@Override
-	public void showChatWindow(L2PcInstance player)
-	{
+	public void showChatWindow(L2PcInstance player) {
 		player.sendPacket(ActionFailed.STATIC_PACKET);
-
+		
 		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-
-		if (getClanHall() != null)
-		{
+		
+		if (getClanHall() != null) {
 			L2Clan owner = ClanTable.getInstance().getClan(getClanHall().getOwnerId());
-			if (isOwnerClan(player))
-			{
-				if (hasEvolve)
-				{
+			if (isOwnerClan(player)) {
+				if (hasEvolve) {
 					html.setFile(player.getHtmlPrefix(), "clanHallDoormen/doormen2.htm");
 					html.replace("%clanname%", owner.getName());
-				}
-				else
-				{
+				} else {
 					html.setFile(player.getHtmlPrefix(), "clanHallDoormen/doormen1.htm");
 					html.replace("%clanname%", owner.getName());
 				}
-			}
-			else
-			{
-				if (owner != null && owner.getLeader() != null)
-				{
+			} else {
+				if (owner != null && owner.getLeader() != null) {
 					html.setFile(player.getHtmlPrefix(), "clanHallDoormen/doormen-no.htm");
 					html.replace("%leadername%", owner.getLeaderName());
 					html.replace("%clanname%", owner.getName());
-				}
-				else
-				{
+				} else {
 					html.setFile(player.getHtmlPrefix(), "clanHallDoormen/emptyowner.htm");
 					html.replace("%hallname%", getClanHall().getName());
 				}
 			}
-		}
-		else
-		{
+		} else {
 			return;
 		}
-
+		
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		player.sendPacket(html);
 	}
-
+	
 	@Override
-	protected final void openDoors(L2PcInstance player, String command)
-	{
+	protected final void openDoors(L2PcInstance player, String command) {
 		getClanHall().openCloseDoors(true);
 		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 		html.setFile(player.getHtmlPrefix(), "clanHallDoormen/doormen-opened.htm");
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		player.sendPacket(html);
 	}
-
+	
 	@Override
-	protected final void closeDoors(L2PcInstance player, String command)
-	{
+	protected final void closeDoors(L2PcInstance player, String command) {
 		getClanHall().openCloseDoors(false);
 		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 		html.setFile(player.getHtmlPrefix(), "clanHallDoormen/doormen-closed.htm");
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		player.sendPacket(html);
 	}
-
-	private ClanHall getClanHall()
-	{
-		if (!init)
-		{
-			synchronized (this)
-			{
-				if (!init)
-				{
+	
+	private ClanHall getClanHall() {
+		if (!init) {
+			synchronized (this) {
+				if (!init) {
 					clanHall = ClanHallManager.getInstance().getNearbyClanHall(getX(), getY(), 500);
-					if (clanHall != null)
-					{
+					if (clanHall != null) {
 						hasEvolve = Arrays.binarySearch(CH_WITH_EVOLVE, clanHall.getId()) >= 0;
 					}
-
+					
 					init = true;
 				}
 			}
 		}
 		return clanHall;
 	}
-
+	
 	@Override
-	protected final boolean isOwnerClan(L2PcInstance player)
-	{
-		if (player.getClan() != null && getClanHall() != null)
-		{
-			if (player.getClanId() == getClanHall().getOwnerId())
-			{
+	protected final boolean isOwnerClan(L2PcInstance player) {
+		if (player.getClan() != null && getClanHall() != null) {
+			if (player.getClanId() == getClanHall().getOwnerId()) {
 				return true;
 			}
 		}

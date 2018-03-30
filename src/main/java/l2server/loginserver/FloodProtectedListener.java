@@ -29,54 +29,41 @@ import java.util.logging.Level;
 /**
  * @author -Wooden-
  */
-public abstract class FloodProtectedListener extends Thread
-{
+public abstract class FloodProtectedListener extends Thread {
 	private Map<String, ForeignConnection> floodProtection = new HashMap<>();
 	private String listenIp;
 	private int port;
 	private ServerSocket serverSocket;
 
-	public FloodProtectedListener(String listenIp, int port) throws IOException
-	{
+	public FloodProtectedListener(String listenIp, int port) throws IOException {
 		this.port = port;
 		this.listenIp = listenIp;
-		if (listenIp.equals("*"))
-		{
+		if (listenIp.equals("*")) {
 			serverSocket = new ServerSocket(port);
-		}
-		else
-		{
+		} else {
 			serverSocket = new ServerSocket(port, 50, InetAddress.getByName(listenIp));
 		}
 	}
 
 	@Override
-	public void run()
-	{
+	public void run() {
 		Socket connection = null;
 
-		while (true)
-		{
-			try
-			{
+		while (true) {
+			try {
 				connection = serverSocket.accept();
-				if (Config.FLOOD_PROTECTION)
-				{
+				if (Config.FLOOD_PROTECTION) {
 					ForeignConnection fConnection = floodProtection.get(connection.getInetAddress().getHostAddress());
-					if (fConnection != null)
-					{
+					if (fConnection != null) {
 						fConnection.connectionNumber += 1;
 						if (fConnection.connectionNumber > Config.FAST_CONNECTION_LIMIT &&
-								System.currentTimeMillis() - fConnection.lastConnection <
-										Config.NORMAL_CONNECTION_TIME ||
+								System.currentTimeMillis() - fConnection.lastConnection < Config.NORMAL_CONNECTION_TIME ||
 								System.currentTimeMillis() - fConnection.lastConnection < Config.FAST_CONNECTION_TIME ||
-								fConnection.connectionNumber > Config.MAX_CONNECTION_PER_IP)
-						{
+								fConnection.connectionNumber > Config.MAX_CONNECTION_PER_IP) {
 							fConnection.lastConnection = System.currentTimeMillis();
 							connection.close();
 							fConnection.connectionNumber -= 1;
-							if (!fConnection.isFlooding)
-							{
+							if (!fConnection.isFlooding) {
 								Log.warning("Potential Flood from " + connection.getInetAddress().getHostAddress());
 							}
 							fConnection.isFlooding = true;
@@ -85,37 +72,25 @@ public abstract class FloodProtectedListener extends Thread
 						if (fConnection.isFlooding) //if connection was flooding server but now passed the check
 						{
 							fConnection.isFlooding = false;
-							Log.info(connection.getInetAddress().getHostAddress() +
-									" is not considered as flooding anymore.");
+							Log.info(connection.getInetAddress().getHostAddress() + " is not considered as flooding anymore.");
 						}
 						fConnection.lastConnection = System.currentTimeMillis();
-					}
-					else
-					{
+					} else {
 						fConnection = new ForeignConnection(System.currentTimeMillis());
 						floodProtection.put(connection.getInetAddress().getHostAddress(), fConnection);
 					}
 				}
 				addClient(connection);
-			}
-			catch (Exception e)
-			{
-				try
-				{
+			} catch (Exception e) {
+				try {
 					connection.close();
+				} catch (Exception ignored) {
 				}
-				catch (Exception ignored)
-				{
-				}
-				if (isInterrupted())
-				{
+				if (isInterrupted()) {
 					// shutdown?
-					try
-					{
+					try {
 						serverSocket.close();
-					}
-					catch (IOException io)
-					{
+					} catch (IOException io) {
 						Log.log(Level.INFO, "", io);
 					}
 					break;
@@ -124,8 +99,7 @@ public abstract class FloodProtectedListener extends Thread
 		}
 	}
 
-	protected static class ForeignConnection
-	{
+	protected static class ForeignConnection {
 		public int connectionNumber;
 		public long lastConnection;
 		public boolean isFlooding = false;
@@ -133,8 +107,7 @@ public abstract class FloodProtectedListener extends Thread
 		/**
 		 * @param time
 		 */
-		public ForeignConnection(long time)
-		{
+		public ForeignConnection(long time) {
 			lastConnection = time;
 			connectionNumber = 1;
 		}
@@ -142,35 +115,25 @@ public abstract class FloodProtectedListener extends Thread
 
 	public abstract void addClient(Socket s);
 
-	public void removeFloodProtection(String ip)
-	{
-		if (!Config.FLOOD_PROTECTION)
-		{
+	public void removeFloodProtection(String ip) {
+		if (!Config.FLOOD_PROTECTION) {
 			return;
 		}
 		ForeignConnection fConnection = floodProtection.get(ip);
-		if (fConnection != null)
-		{
+		if (fConnection != null) {
 			fConnection.connectionNumber -= 1;
-			if (fConnection.connectionNumber == 0)
-			{
+			if (fConnection.connectionNumber == 0) {
 				floodProtection.remove(ip);
 			}
-		}
-		else
-		{
+		} else {
 			Log.warning("Removing a flood protection for a GameServer that was not in the connection map??? :" + ip);
 		}
 	}
 
-	public void close()
-	{
-		try
-		{
+	public void close() {
+		try {
 			serverSocket.close();
-		}
-		catch (IOException e)
-		{
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

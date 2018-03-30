@@ -21,20 +21,17 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-public class Loc implements IUserCommandHandler
-{
+public class Loc implements IUserCommandHandler {
 	private static final int[] COMMAND_IDS = {0};
 
 	/**
 	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
 	 */
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
-	{
+	public boolean useUserCommand(int id, L2PcInstance activeChar) {
 		int nearestTown = MapRegionTable.getInstance().getClosestTownNumber(activeChar);
 		SystemMessageId msg;
-		switch (nearestTown)
-		{
+		switch (nearestTown) {
 			case 0:
 				msg = SystemMessageId.LOC_TI_S1_S2_S3;
 				break;
@@ -147,8 +144,7 @@ public class Loc implements IUserCommandHandler
 				msg = SystemMessageId.LOC_ADEN_S1_S2_S3;
 		}
 		SystemMessage sm = SystemMessage.getSystemMessage(msg);
-		if (msg.getParamCount() == 3)
-		{
+		if (msg.getParamCount() == 3) {
 			sm.addNumber(activeChar.getX());
 			sm.addNumber(activeChar.getY());
 			sm.addNumber(activeChar.getZ());
@@ -161,8 +157,7 @@ public class Loc implements IUserCommandHandler
 	 * @see l2server.gameserver.handler.IUserCommandHandler#getUserCommandList()
 	 */
 	@Override
-	public int[] getUserCommandList()
-	{
+	public int[] getUserCommandList() {
 		return COMMAND_IDS;
 	}
 }

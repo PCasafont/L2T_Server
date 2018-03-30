@@ -4,29 +4,24 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
 
-public class SnowKung extends L2Transformation
-{
+public class SnowKung extends L2Transformation {
 	private static final int[] SKILLS = {940, 943, 5437, 619};
 
-	public SnowKung()
-	{
+	public SnowKung() {
 		// id, colRadius, colHeight
 		super(114, 28, 30);
 	}
 
 	@Override
-	public void onTransform()
-	{
-		if (getPlayer().getTransformationId() != 114 || getPlayer().isCursedWeaponEquipped())
-		{
+	public void onTransform() {
+		if (getPlayer().getTransformationId() != 114 || getPlayer().isCursedWeaponEquipped()) {
 			return;
 		}
 
 		transformedSkills();
 	}
 
-	public void transformedSkills()
-	{
+	public void transformedSkills() {
 		// Fake Attack
 		getPlayer().addSkill(SkillTable.getInstance().getInfo(940, 1), false);
 		// Special Motion
@@ -40,13 +35,11 @@ public class SnowKung extends L2Transformation
 	}
 
 	@Override
-	public void onUntransform()
-	{
+	public void onUntransform() {
 		removeSkills();
 	}
 
-	public void removeSkills()
-	{
+	public void removeSkills() {
 		// Fake Attack
 		getPlayer().removeSkill(SkillTable.getInstance().getInfo(940, 1), false);
 		// Special Motion
@@ -59,8 +52,7 @@ public class SnowKung extends L2Transformation
 		getPlayer().setTransformAllowedSkills(EMPTY_ARRAY);
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		TransformationManager.getInstance().registerTransformation(new SnowKung());
 	}
 }

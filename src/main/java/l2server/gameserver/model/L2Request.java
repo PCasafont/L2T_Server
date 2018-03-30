@@ -26,8 +26,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @author kriau
  */
-public class L2Request
-{
+public class L2Request {
 	private static final int REQUEST_TIMEOUT = 15; //in secs
 
 	protected L2PcInstance player;
@@ -36,13 +35,11 @@ public class L2Request
 	protected boolean isAnswerer;
 	protected L2GameClientPacket requestPacket;
 
-	public L2Request(L2PcInstance player)
-	{
+	public L2Request(L2PcInstance player) {
 		this.player = player;
 	}
 
-	protected void clear()
-	{
+	protected void clear() {
 		partner = null;
 		requestPacket = null;
 		isRequestor = false;
@@ -52,55 +49,47 @@ public class L2Request
 	/**
 	 * Set the L2PcInstance member of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).<BR><BR>
 	 */
-	private synchronized void setPartner(L2PcInstance partner)
-	{
+	private synchronized void setPartner(L2PcInstance partner) {
 		this.partner = partner;
 	}
 
 	/**
 	 * Return the L2PcInstance member of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).<BR><BR>
 	 */
-	public L2PcInstance getPartner()
-	{
+	public L2PcInstance getPartner() {
 		return partner;
 	}
 
 	/**
 	 * Set the packet incomed from requestor.<BR><BR>
 	 */
-	private synchronized void setRequestPacket(L2GameClientPacket packet)
-	{
+	private synchronized void setRequestPacket(L2GameClientPacket packet) {
 		requestPacket = packet;
 	}
 
 	/**
 	 * Return the packet originally incomed from requestor.<BR><BR>
 	 */
-	public L2GameClientPacket getRequestPacket()
-	{
+	public L2GameClientPacket getRequestPacket() {
 		return requestPacket;
 	}
 
 	/**
 	 * Checks if request can be made and in success case puts both PC on request state.<BR><BR>
 	 */
-	public synchronized boolean setRequest(L2PcInstance partner, L2GameClientPacket packet)
-	{
-		if (partner == null)
-		{
+	public synchronized boolean setRequest(L2PcInstance partner, L2GameClientPacket packet) {
+		if (partner == null) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_INVITED_THE_WRONG_TARGET));
 			return false;
 		}
-		if (partner.getRequest().isProcessingRequest())
-		{
+		if (partner.getRequest().isProcessingRequest()) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_BUSY_TRY_LATER);
 			sm.addString(partner.getName());
 			player.sendPacket(sm);
 			sm = null;
 			return false;
 		}
-		if (isProcessingRequest())
-		{
+		if (isProcessingRequest()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WAITING_FOR_ANOTHER_REPLY));
 			return false;
 		}
@@ -114,8 +103,7 @@ public class L2Request
 		return true;
 	}
 
-	private void setOnRequestTimer(boolean isRequestor)
-	{
+	private void setOnRequestTimer(boolean isRequestor) {
 		this.isRequestor = isRequestor;
 		isAnswerer = !isRequestor;
 		ThreadPoolManager.getInstance().scheduleGeneral(this::clear, REQUEST_TIMEOUT * 1000);
@@ -124,10 +112,8 @@ public class L2Request
 	/**
 	 * Clears PC request state. Should be called after answer packet receive.<BR><BR>
 	 */
-	public void onRequestResponse()
-	{
-		if (partner != null)
-		{
+	public void onRequestResponse() {
+		if (partner != null) {
 			partner.getRequest().clear();
 		}
 		clear();
@@ -136,8 +122,7 @@ public class L2Request
 	/**
 	 * Return True if a transaction is in progress.<BR><BR>
 	 */
-	public boolean isProcessingRequest()
-	{
+	public boolean isProcessingRequest() {
 		return partner != null;
 	}
 }

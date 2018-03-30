@@ -30,8 +30,7 @@ import java.util.logging.Logger;
 /**
  * @author mkizub
  */
-public class L2EffectTemplate
-{
+public class L2EffectTemplate {
 	static Logger log = Logger.getLogger(L2EffectTemplate.class.getName());
 
 	private final Class<?> func;
@@ -49,8 +48,15 @@ public class L2EffectTemplate
 	public final int triggeredEnchantLevel;
 	public final ChanceCondition chanceCondition;
 
-	public L2EffectTemplate(L2AbnormalTemplate pAbnormal, Condition pApplayCond, Lambda pLambda, String func, int trigId, int trigLvl, int trigEnchRt, int trigEnchLvl, ChanceCondition chanceCond)
-	{
+	public L2EffectTemplate(L2AbnormalTemplate pAbnormal,
+	                        Condition pApplayCond,
+	                        Lambda pLambda,
+	                        String func,
+	                        int trigId,
+	                        int trigLvl,
+	                        int trigEnchRt,
+	                        int trigEnchLvl,
+	                        ChanceCondition chanceCond) {
 		abnormal = pAbnormal;
 
 		applayCond = pApplayCond;
@@ -63,44 +69,31 @@ public class L2EffectTemplate
 		triggeredEnchantLevel = trigEnchLvl;
 		chanceCondition = chanceCond;
 
-		try
-		{
-            this.func = Class.forName("l2server.gameserver.stats.effects.Effect" + func);
-		}
-		catch (ClassNotFoundException e)
-		{
+		try {
+			this.func = Class.forName("l2server.gameserver.stats.effects.Effect" + func);
+		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		}
-		try
-		{
+		try {
 			constructor = this.func.getConstructor(Env.class, L2EffectTemplate.class);
-		}
-		catch (NoSuchMethodException e)
-		{
+		} catch (NoSuchMethodException e) {
 			throw new RuntimeException(e);
 		}
 	}
 
-	public L2Effect getEffect(Env env)
-	{
-		try
-		{
+	public L2Effect getEffect(Env env) {
+		try {
 			return (L2Effect) constructor.newInstance(env, this);
-		}
-		catch (IllegalAccessException e)
-		{
+		} catch (IllegalAccessException e) {
 			Log.log(Level.WARNING, "", e);
 			return null;
-		}
-		catch (InstantiationException e)
-		{
+		} catch (InstantiationException e) {
 			Log.log(Level.WARNING, "", e);
 			return null;
-		}
-		catch (InvocationTargetException e)
-		{
-			Log.log(Level.WARNING, "Error creating new instance of Class " + func + " Exception was: " +
-					e.getTargetException().getMessage(), e.getTargetException());
+		} catch (InvocationTargetException e) {
+			Log.log(Level.WARNING,
+					"Error creating new instance of Class " + func + " Exception was: " + e.getTargetException().getMessage(),
+					e.getTargetException());
 			return null;
 		}
 	}
@@ -112,46 +105,33 @@ public class L2EffectTemplate
 	 * @param stolen
 	 * @return
 	 */
-	public static L2Effect getStolenEffect(Env env, L2Effect stolen)
-	{
+	public static L2Effect getStolenEffect(Env env, L2Effect stolen) {
 		Class<?> func;
 		Constructor<?> stolenCons;
-		try
-		{
+		try {
 			func = Class.forName("l2server.gameserver.stats.effects.Effect" + stolen.getTemplate().funcName);
-		}
-		catch (ClassNotFoundException e)
-		{
+		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		}
-		try
-		{
+		try {
 			stolenCons = func.getConstructor(Env.class, L2Effect.class);
-		}
-		catch (NoSuchMethodException e)
-		{
+		} catch (NoSuchMethodException e) {
 			throw new RuntimeException(e);
 		}
-		try
-		{
+		try {
 			// if (applayCond != null)
 			// effect.setCondition(applayCond);
 			return (L2Effect) stolenCons.newInstance(env, stolen);
-		}
-		catch (IllegalAccessException e)
-		{
+		} catch (IllegalAccessException e) {
 			Log.log(Level.WARNING, "", e);
 			return null;
-		}
-		catch (InstantiationException e)
-		{
+		} catch (InstantiationException e) {
 			Log.log(Level.WARNING, "", e);
 			return null;
-		}
-		catch (InvocationTargetException e)
-		{
-			Log.log(Level.WARNING, "Error creating new instance of Class " + func + " Exception was: " +
-					e.getTargetException().getMessage(), e.getTargetException());
+		} catch (InvocationTargetException e) {
+			Log.log(Level.WARNING,
+					"Error creating new instance of Class " + func + " Exception was: " + e.getTargetException().getMessage(),
+					e.getTargetException());
 			return null;
 		}
 	}

@@ -22,36 +22,28 @@ import l2server.gameserver.network.serverpackets.CharSelectionInfo;
  *
  * @version $Revision: 1.4.2.1.2.2 $ $Date: 2005/03/27 15:29:29 $
  */
-public final class CharacterRestore extends L2GameClientPacket
-{
+public final class CharacterRestore extends L2GameClientPacket {
 	//
-
+	
 	// cd
 	private int charSlot;
-
+	
 	@Override
-	protected void readImpl()
-	{
+	protected void readImpl() {
 		charSlot = readD();
 	}
-
+	
 	@Override
-	protected void runImpl()
-	{
-		if (!getClient().getFloodProtectors().getCharacterSelect().tryPerformAction("CharacterRestore"))
-		{
+	protected void runImpl() {
+		if (!getClient().getFloodProtectors().getCharacterSelect().tryPerformAction("CharacterRestore")) {
 			return;
 		}
-
-		try
-		{
+		
+		try {
 			getClient().markRestoredChar(charSlot);
+		} catch (Exception ignored) {
 		}
-		catch (Exception ignored)
-		{
-		}
-		CharSelectionInfo cl =
-				new CharSelectionInfo(getClient().getAccountName(), getClient().getSessionId().playOkID1, 0);
+		CharSelectionInfo cl = new CharSelectionInfo(getClient().getAccountName(), getClient().getSessionId().playOkID1, 0);
 		sendPacket(cl);
 		getClient().setCharSelection(cl.getCharInfo());
 	}

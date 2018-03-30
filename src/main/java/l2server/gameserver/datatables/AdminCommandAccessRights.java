@@ -29,8 +29,7 @@ import java.util.Map;
 /**
  * @author FBIagent<br>
  */
-public class AdminCommandAccessRights
-{
+public class AdminCommandAccessRights {
 	/**
 	 * The logger<br>
 	 */
@@ -42,53 +41,45 @@ public class AdminCommandAccessRights
 	 *
 	 * @return AdminCommandAccessRights: the one and only instance of this class<br>
 	 */
-	public static AdminCommandAccessRights getInstance()
-	{
+	public static AdminCommandAccessRights getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	/**
 	 * The access rights<br>
 	 */
-	private AdminCommandAccessRights()
-	{
+	private AdminCommandAccessRights() {
 		loadAdminCommandAccessRights();
 	}
 
 	/**
 	 * Loads admin command access rights from database<br>
 	 */
-	private void loadAdminCommandAccessRights()
-	{
+	private void loadAdminCommandAccessRights() {
 		adminCommandAccessRights = new HashMap<>();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "adminCommands.xml");
 
 		XmlDocument doc = new XmlDocument(file);
 		for (XmlNode n : doc.getChildren()) {
-            n.getChildren().stream().filter(d -> d.getName().equalsIgnoreCase("command")).forEachOrdered(d ->
-            {
-                String adminCommand = d.getString("name");
-                String accessLevels = d.getString("accessLevels");
-                boolean confirm = d.getBool("configmDlg", false);
-                adminCommandAccessRights
-                        .put(adminCommand, new L2AdminCommandAccessRight(adminCommand, accessLevels, confirm));
-            });
-        }
+			n.getChildren().stream().filter(d -> d.getName().equalsIgnoreCase("command")).forEachOrdered(d -> {
+				String adminCommand = d.getString("name");
+				String accessLevels = d.getString("accessLevels");
+				boolean confirm = d.getBool("configmDlg", false);
+				adminCommandAccessRights.put(adminCommand, new L2AdminCommandAccessRight(adminCommand, accessLevels, confirm));
+			});
+		}
 
 		Log.info("AdminCommandAccessRights: Loaded " + adminCommandAccessRights.size() + " from xml.");
 	}
 
-	public boolean hasAccess(String adminCommand, L2AccessLevel accessLevel)
-	{
-		if (accessLevel.getLevel() == AccessLevels.masterAccessLevelNum)
-		{
+	public boolean hasAccess(String adminCommand, L2AccessLevel accessLevel) {
+		if (accessLevel.getLevel() == AccessLevels.masterAccessLevelNum) {
 			return true;
 		}
 
 		L2AdminCommandAccessRight acar = adminCommandAccessRights.get(adminCommand);
 
-		if (acar == null)
-		{
+		if (acar == null) {
 			Log.info("AdminCommandAccessRights: No rights defined for admin command " + adminCommand + ".");
 			return false;
 		}
@@ -96,25 +87,21 @@ public class AdminCommandAccessRights
 		return acar.hasAccess(accessLevel);
 	}
 
-	public boolean requireConfirm(String command)
-	{
+	public boolean requireConfirm(String command) {
 		L2AdminCommandAccessRight acar = adminCommandAccessRights.get(command);
-		if (acar == null)
-		{
+		if (acar == null) {
 			Log.info("AdminCommandAccessRights: No rights defined for admin command " + command + ".");
 			return false;
 		}
 		return adminCommandAccessRights.get(command).getRequireConfirm();
 	}
 
-	public void reloadAdminCommandAccessRights()
-	{
+	public void reloadAdminCommandAccessRights() {
 		loadAdminCommandAccessRights();
 	}
 
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final AdminCommandAccessRights instance = new AdminCommandAccessRights();
 	}
 }

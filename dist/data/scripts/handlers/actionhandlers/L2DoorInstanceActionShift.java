@@ -25,13 +25,10 @@ import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.StaticObject;
 
-public class L2DoorInstanceActionShift implements IActionHandler
-{
+public class L2DoorInstanceActionShift implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
-	{
-		if (activeChar.getAccessLevel().isGm())
-		{
+	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
+		if (activeChar.getAccessLevel().isGm()) {
 			activeChar.setTarget(target);
 			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), activeChar.getLevel()));
 
@@ -53,16 +50,14 @@ public class L2DoorInstanceActionShift implements IActionHandler
 			html.replace("%maxx%", String.valueOf(((L2DoorInstance) target).getX(3)));
 			html.replace("%maxy%", String.valueOf(((L2DoorInstance) target).getY(3)));
 			html.replace("%maxz%", String.valueOf(((L2DoorInstance) target).getZMax()));
-			html.replace("%unlock%", ((L2DoorInstance) target).isOpenableBySkill() ? "<font color=00FF00>YES<font>" :
-					"<font color=FF0000>NO</font>");
+			html.replace("%unlock%", ((L2DoorInstance) target).isOpenableBySkill() ? "<font color=00FF00>YES<font>" : "<font color=FF0000>NO</font>");
 			activeChar.sendPacket(html);
 		}
 		return true;
 	}
 
 	@Override
-	public InstanceType getInstanceType()
-	{
+	public InstanceType getInstanceType() {
 		return InstanceType.L2DoorInstance;
 	}
 }

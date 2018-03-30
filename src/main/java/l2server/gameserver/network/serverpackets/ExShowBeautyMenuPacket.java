@@ -20,20 +20,17 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 /**
  * @author Pere
  */
-public final class ExShowBeautyMenuPacket extends L2GameServerPacket
-{
+public final class ExShowBeautyMenuPacket extends L2GameServerPacket {
 	private boolean isRestore;
 	private L2PcInstance player;
-
-	public ExShowBeautyMenuPacket(boolean isRestore, L2PcInstance player)
-	{
+	
+	public ExShowBeautyMenuPacket(boolean isRestore, L2PcInstance player) {
 		this.isRestore = isRestore;
 		this.player = player;
 	}
-
+	
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(isRestore ? 1 : 0); //0 add 1 remove
 		writeD(player.getAppearance().getHairStyle());
 		writeD(player.getAppearance().getHairColor());

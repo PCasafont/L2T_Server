@@ -34,68 +34,57 @@ import java.util.logging.Level;
  * d: second part of session id
  * c: server ID
  */
-public class RequestServerLogin extends L2LoginClientPacket
-{
+public class RequestServerLogin extends L2LoginClientPacket {
 	private int skey1;
 	private int skey2;
 	private int serverId;
-
+	
 	/**
 	 * @return
 	 */
-	public int getSessionKey1()
-	{
+	public int getSessionKey1() {
 		return skey1;
 	}
-
+	
 	/**
 	 * @return
 	 */
-	public int getSessionKey2()
-	{
+	public int getSessionKey2() {
 		return skey2;
 	}
-
+	
 	/**
 	 * @return
 	 */
-	public int getServerID()
-	{
+	public int getServerID() {
 		return serverId;
 	}
-
+	
 	@Override
-	public boolean readImpl()
-	{
-		if (super.buf.remaining() >= 9)
-		{
+	public boolean readImpl() {
+		if (super.buf.remaining() >= 9) {
 			skey1 = readD();
 			skey2 = readD();
 			serverId = readC();
 			return true;
-		}
-		else
-		{
+		} else {
 			return false;
 		}
 	}
-
+	
 	/**
 	 */
 	@Override
-	public void run()
-	{
+	public void run() {
 		SessionKey sk = getClient().getSessionKey();
-
+		
 		// if we didnt showed the license we cant check these values
-		if (!Config.SHOW_LICENCE || sk.checkLoginPair(skey1, skey2))
-		{
+		if (!Config.SHOW_LICENCE || sk.checkLoginPair(skey1, skey2)) {
 			//System.out.println("Logging Into Server " + serverId);
 			int logIntoDimensionId = 0;
-			if (serverId == 32)
-			{
+			if (serverId == 32) {
 				serverId = 31;
-
+				
 				logIntoDimensionId = 1;
 
 				/*
@@ -105,49 +94,38 @@ public class RequestServerLogin extends L2LoginClientPacket
 					return;
 				}*/
 			}
-
-			if (LoginController.getInstance().isLoginPossible(getClient(), serverId))
-			{
+			
+			if (LoginController.getInstance().isLoginPossible(getClient(), serverId)) {
 				getClient().setJoinedGS(true);
 				getClient().sendPacket(new PlayOk(sk));
-
-				if (!Config.DATABASE_LOGIN.contains("tenkai"))
-				{
+				
+				if (!Config.DATABASE_LOGIN.contains("tenkai")) {
 					//if (logIntoDimensionId == 1)
 					{
 						Connection con = null;
 						PreparedStatement statement = null;
-						try
-						{
+						try {
 							con = L2DatabaseFactory.getInstance().getConnection();
-
+							
 							String stmt = "UPDATE accounts SET lastDimensionId = ? WHERE login = ?";
 							statement = con.prepareStatement(stmt);
 							statement.setInt(1, logIntoDimensionId);
 							statement.setString(2, getClient().getAccount());
 							statement.executeUpdate();
 							statement.close();
-						}
-						catch (Exception e)
-						{
+						} catch (Exception e) {
 							Log.log(Level.WARNING, "Could not set LastDimensionId: " + e.getMessage(), e);
-						}
-						finally
-						{
+						} finally {
 							L2DatabaseFactory.close(con);
 						}
-
+						
 						Log.info("Update LastDimensionId = " + logIntoDimensionId + " for " + getClient().getAccount());
 					}
 				}
-			}
-			else
-			{
+			} else {
 				getClient().close(PlayFailReason.REASON_SERVER_OVERLOADED);
 			}
-		}
-		else
-		{
+		} else {
 			getClient().close(LoginFailReason.REASON_ACCESS_FAILED);
 		}
 	}

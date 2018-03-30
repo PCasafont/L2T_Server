@@ -20,41 +20,33 @@ import l2server.gameserver.pathfinding.geonodes.GeoNode;
 /**
  * @author -Nemesiss-
  */
-public class BinaryNodeHeap
-{
+public class BinaryNodeHeap {
 	private final GeoNode[] list;
 	private int size;
 
-	public BinaryNodeHeap(int size)
-	{
+	public BinaryNodeHeap(int size) {
 		list = new GeoNode[size + 1];
 		size = 0;
 	}
 
-	public void add(GeoNode n)
-	{
+	public void add(GeoNode n) {
 		size++;
 		int pos = size;
 		list[pos] = n;
-		while (pos != 1)
-		{
+		while (pos != 1) {
 			int p2 = pos / 2;
-			if (list[pos].getCost() <= list[p2].getCost())
-			{
+			if (list[pos].getCost() <= list[p2].getCost()) {
 				GeoNode temp = list[p2];
 				list[p2] = list[pos];
 				list[pos] = temp;
 				pos = p2;
-			}
-			else
-			{
+			} else {
 				break;
 			}
 		}
 	}
 
-	public GeoNode removeFirst()
-	{
+	public GeoNode removeFirst() {
 		GeoNode first = list[1];
 		list[1] = list[size];
 		list[size] = null;
@@ -63,61 +55,46 @@ public class BinaryNodeHeap
 		int cpos;
 		int dblcpos;
 		GeoNode temp;
-		while (true)
-		{
+		while (true) {
 			cpos = pos;
 			dblcpos = cpos * 2;
-			if (dblcpos + 1 <= size)
-			{
-				if (list[cpos].getCost() >= list[dblcpos].getCost())
-				{
+			if (dblcpos + 1 <= size) {
+				if (list[cpos].getCost() >= list[dblcpos].getCost()) {
 					pos = dblcpos;
 				}
-				if (list[pos].getCost() >= list[dblcpos + 1].getCost())
-				{
+				if (list[pos].getCost() >= list[dblcpos + 1].getCost()) {
 					pos = dblcpos + 1;
 				}
-			}
-			else if (dblcpos <= size)
-			{
-				if (list[cpos].getCost() >= list[dblcpos].getCost())
-				{
+			} else if (dblcpos <= size) {
+				if (list[cpos].getCost() >= list[dblcpos].getCost()) {
 					pos = dblcpos;
 				}
 			}
 
-			if (cpos != pos)
-			{
+			if (cpos != pos) {
 				temp = list[cpos];
 				list[cpos] = list[pos];
 				list[pos] = temp;
-			}
-			else
-			{
+			} else {
 				break;
 			}
 		}
 		return first;
 	}
 
-	public boolean contains(GeoNode n)
-	{
-		if (size == 0)
-		{
+	public boolean contains(GeoNode n) {
+		if (size == 0) {
 			return false;
 		}
-		for (int i = 1; i <= size; i++)
-		{
-			if (list[i].equals(n))
-			{
+		for (int i = 1; i <= size; i++) {
+			if (list[i].equals(n)) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	public boolean isEmpty()
-	{
+	public boolean isEmpty() {
 		return size == 0;
 	}
 }

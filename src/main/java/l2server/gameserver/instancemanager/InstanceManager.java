@@ -44,65 +44,50 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 
 /**
  * @author evill33t, GodKratos
  */
-public class InstanceManager
-{
+public class InstanceManager {
 	private ConcurrentHashMap<Integer, Instance> instanceList = new ConcurrentHashMap<>();
 	private HashMap<Integer, InstanceWorld> instanceWorlds = new HashMap<>();
 	private int dynamic = 300000;
-
+	
 	// InstanceId Names
 	private static final Map<Integer, String> instanceIdNames = new HashMap<>();
 	private Map<Integer, Map<Integer, Long>> playerInstanceTimes = new HashMap<>();
-
+	
 	private static final String ADD_INSTANCE_TIME =
-			"INSERT INTO character_instance_time (charId,instanceId,time) values (?,?,?) ON DUPLICATE KEY UPDATE time=?";
-	private static final String RESTORE_INSTANCE_TIMES =
-			"SELECT instanceId,time FROM character_instance_time WHERE charId=?";
-	private static final String DELETE_INSTANCE_TIME =
-			"DELETE FROM character_instance_time WHERE charId=? AND instanceId=?";
-
-	public long getInstanceTime(int playerObjId, int id)
-	{
-		if (!playerInstanceTimes.containsKey(playerObjId))
-		{
+			"INSERT INTO character_instance_time (charId,instanceId,time) VALUES (?,?,?) ON DUPLICATE KEY UPDATE time=?";
+	private static final String RESTORE_INSTANCE_TIMES = "SELECT instanceId,time FROM character_instance_time WHERE charId=?";
+	private static final String DELETE_INSTANCE_TIME = "DELETE FROM character_instance_time WHERE charId=? AND instanceId=?";
+	
+	public long getInstanceTime(int playerObjId, int id) {
+		if (!playerInstanceTimes.containsKey(playerObjId)) {
 			restoreInstanceTimes(playerObjId);
 		}
-		if (playerInstanceTimes.get(playerObjId).containsKey(id))
-		{
+		if (playerInstanceTimes.get(playerObjId).containsKey(id)) {
 			return playerInstanceTimes.get(playerObjId).get(id);
 		}
 		return -1;
 	}
-
-	public Map<Integer, Long> getAllInstanceTimes(int playerObjId)
-	{
-		if (!playerInstanceTimes.containsKey(playerObjId))
-		{
+	
+	public Map<Integer, Long> getAllInstanceTimes(int playerObjId) {
+		if (!playerInstanceTimes.containsKey(playerObjId)) {
 			restoreInstanceTimes(playerObjId);
 		}
 		return playerInstanceTimes.get(playerObjId);
 	}
-
-	public void setInstanceTime(int playerObjId, int id, long time)
-	{
-		if (!playerInstanceTimes.containsKey(playerObjId))
-		{
+	
+	public void setInstanceTime(int playerObjId, int id, long time) {
+		if (!playerInstanceTimes.containsKey(playerObjId)) {
 			restoreInstanceTimes(playerObjId);
 		}
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = null;
 			statement = con.prepareStatement(ADD_INSTANCE_TIME);
@@ -113,22 +98,16 @@ public class InstanceManager
 			statement.execute();
 			statement.close();
 			playerInstanceTimes.get(playerObjId).put(id, time);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Could not insert character instance time data: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
-
-	public void deleteInstanceTime(int playerObjId, int id)
-	{
+	
+	public void deleteInstanceTime(int playerObjId, int id) {
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = null;
 			statement = con.prepareStatement(DELETE_INSTANCE_TIME);
@@ -137,287 +116,226 @@ public class InstanceManager
 			statement.execute();
 			statement.close();
 			playerInstanceTimes.get(playerObjId).remove(id);
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Could not delete character instance time data: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
-
-	public void restoreInstanceTimes(int playerObjId)
-	{
-		if (playerInstanceTimes.containsKey(playerObjId))
-		{
+	
+	public void restoreInstanceTimes(int playerObjId) {
+		if (playerInstanceTimes.containsKey(playerObjId)) {
 			return; // already restored
 		}
 		playerInstanceTimes.put(playerObjId, new HashMap<>());
 		Connection con = null;
-		try
-		{
+		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(RESTORE_INSTANCE_TIMES);
 			statement.setInt(1, playerObjId);
 			ResultSet rset = statement.executeQuery();
-
-			while (rset.next())
-			{
+			
+			while (rset.next()) {
 				int id = rset.getInt("instanceId");
 				long time = rset.getLong("time");
-				if (time < System.currentTimeMillis())
-				{
+				if (time < System.currentTimeMillis()) {
 					deleteInstanceTime(playerObjId, id);
-				}
-				else
-				{
+				} else {
 					playerInstanceTimes.get(playerObjId).put(id, time);
 				}
 			}
-
+			
 			rset.close();
 			statement.close();
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Could not delete character instance time data: " + e.getMessage(), e);
-		}
-		finally
-		{
+		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
-
-	public String getInstanceIdName(int id)
-	{
-		if (instanceIdNames.containsKey(id))
-		{
+	
+	public String getInstanceIdName(int id) {
+		if (instanceIdNames.containsKey(id)) {
 			return instanceIdNames.get(id);
 		}
 		return "UnknownInstance";
 	}
-
-	private void loadInstanceNames()
-	{
-		try
-		{
-			XmlDocument doc =
-					new XmlDocument(new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "instancenames.xml"));
-			for (XmlNode node : doc.getChildren())
-			{
-				if (node.getName().equals("instance"))
-				{
+	
+	private void loadInstanceNames() {
+		try {
+			XmlDocument doc = new XmlDocument(new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "instancenames.xml"));
+			for (XmlNode node : doc.getChildren()) {
+				if (node.getName().equals("instance")) {
 					int id = node.getInt("id");
 					String name = node.getString("name");
 					instanceIdNames.put(id, name);
 				}
 			}
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			Log.log(Level.WARNING, "Error while loading instance names: " + e.getMessage(), e);
 		}
 	}
-
-	public static class InstanceWorld
-	{
+	
+	public static class InstanceWorld {
 		public int instanceId;
 		public int templateId = -1;
 		public ArrayList<Integer> allowed = new ArrayList<>();
 		public volatile int status;
 	}
-
-	public void addWorld(InstanceWorld world)
-	{
+	
+	public void addWorld(InstanceWorld world) {
 		instanceWorlds.put(world.instanceId, world);
 	}
-
-	public InstanceWorld getWorld(int instanceId)
-	{
+	
+	public InstanceWorld getWorld(int instanceId) {
 		return instanceWorlds.get(instanceId);
 	}
-
-	public InstanceWorld getPlayerWorld(L2PcInstance player)
-	{
-		for (InstanceWorld temp : instanceWorlds.values())
-		{
-			if (temp == null)
-			{
+	
+	public InstanceWorld getPlayerWorld(L2PcInstance player) {
+		for (InstanceWorld temp : instanceWorlds.values()) {
+			if (temp == null) {
 				continue;
 			}
 			// check if the player have a World Instance where he/she is allowed to enter
-			if (temp.allowed.contains(player.getObjectId()))
-			{
+			if (temp.allowed.contains(player.getObjectId())) {
 				return temp;
 			}
 		}
-
+		
 		return null;
 	}
-
-	private InstanceManager()
-	{
+	
+	private InstanceManager() {
 		Log.info("Initializing InstanceManager");
 		loadInstanceNames();
 		Log.info("Loaded " + instanceIdNames.size() + " instance names");
 		createWorld();
 	}
-
-	public static InstanceManager getInstance()
-	{
+	
+	public static InstanceManager getInstance() {
 		return SingletonHolder.instance;
 	}
-
-	private void createWorld()
-	{
+	
+	private void createWorld() {
 		Instance themultiverse = new Instance(-1);
 		themultiverse.setName("multiverse");
 		instanceList.put(-1, themultiverse);
 		Log.info("Multiverse Instance created");
-
+		
 		Instance universe = new Instance(0);
 		universe.setName("universe");
 		instanceList.put(0, universe);
 		Log.info("Universe Instance created");
 	}
-
-	public void destroyInstance(int instanceid)
-	{
-		if (instanceid <= 0)
-		{
+	
+	public void destroyInstance(int instanceid) {
+		if (instanceid <= 0) {
 			return;
 		}
 		Instance temp = instanceList.get(instanceid);
-		if (temp != null)
-		{
+		if (temp != null) {
 			temp.removeNpcs();
 			temp.removePlayers();
 			temp.removeDoors();
 			temp.cancelTimer();
 			instanceList.remove(instanceid);
-			if (instanceWorlds.containsKey(instanceid))
-			{
+			if (instanceWorlds.containsKey(instanceid)) {
 				instanceWorlds.remove(instanceid);
 			}
 		}
 	}
-
-	public Instance getInstance(int instanceid)
-	{
+	
+	public Instance getInstance(int instanceid) {
 		return instanceList.get(instanceid);
 	}
-
-	public ConcurrentHashMap<Integer, Instance> getInstances()
-	{
+	
+	public ConcurrentHashMap<Integer, Instance> getInstances() {
 		return instanceList;
 	}
-
-	public int getPlayerInstance(int objectId)
-	{
-		for (Instance temp : instanceList.values())
-		{
-			if (temp == null)
-			{
+	
+	public int getPlayerInstance(int objectId) {
+		for (Instance temp : instanceList.values()) {
+			if (temp == null) {
 				continue;
 			}
 			// check if the player is in any active instance
-			if (temp.containsPlayer(objectId))
-			{
+			if (temp.containsPlayer(objectId)) {
 				return temp.getId();
 			}
 		}
 		// 0 is default instance aka the world
 		return 0;
 	}
-
-	public boolean createInstance(int id)
-	{
-		if (getInstance(id) != null)
-		{
+	
+	public boolean createInstance(int id) {
+		if (getInstance(id) != null) {
 			return false;
 		}
-
+		
 		Instance instance = new Instance(id);
 		instanceList.put(id, instance);
 		return true;
 	}
-
-	public boolean createInstanceFromTemplate(int id, String template) throws FileNotFoundException
-	{
-		if (getInstance(id) != null)
-		{
+	
+	public boolean createInstanceFromTemplate(int id, String template) throws FileNotFoundException {
+		if (getInstance(id) != null) {
 			return false;
 		}
-
+		
 		Instance instance = new Instance(id);
 		instanceList.put(id, instance);
 		instance.loadInstanceTemplate(template);
 		return true;
 	}
-
+	
 	/**
 	 * Create a new instance with a dynamic instance id based on a template (or null)
 	 *
 	 * @param template xml file
 	 * @return
 	 */
-	public int createDynamicInstance(String template)
-	{
-
-		while (getInstance(dynamic) != null)
-		{
+	public int createDynamicInstance(String template) {
+		
+		while (getInstance(dynamic) != null) {
 			dynamic++;
-			if (dynamic == Integer.MAX_VALUE)
-			{
+			if (dynamic == Integer.MAX_VALUE) {
 				Log.warning("InstanceManager: More then " + (Integer.MAX_VALUE - 300000) + " instances created");
 				dynamic = 300000;
 			}
 		}
 		Instance instance = new Instance(dynamic);
 		instanceList.put(dynamic, instance);
-		if (template != null)
-		{
-			try
-			{
+		if (template != null) {
+			try {
 				instance.loadInstanceTemplate(template);
-			}
-			catch (Exception e)
-			{
-				Log.log(Level.WARNING,
-						"InstanceManager: Failed creating instance from template " + template + ", " + e.getMessage(),
-						e);
+			} catch (Exception e) {
+				Log.log(Level.WARNING, "InstanceManager: Failed creating instance from template " + template + ", " + e.getMessage(), e);
 			}
 		}
 		return dynamic;
 	}
-
+	
 	/**
 	 * @param vidId
 	 * @param instId
 	 */
-	public void showVidToInstance(int vidId, final int instId)
-	{
+	public void showVidToInstance(int vidId, final int instId) {
 		stopWholeInstance(instId);
 		broadcastMovie(vidId, instId);
-
-		ThreadPoolManager.getInstance().scheduleGeneral(() -> startWholeInstance(instId),
-				ScenePlayerDataTable.getInstance().getVideoDuration(vidId) + 1000);
+		
+		ThreadPoolManager.getInstance()
+				.scheduleGeneral(() -> startWholeInstance(instId), ScenePlayerDataTable.getInstance().getVideoDuration(vidId) + 1000);
 	}
-
+	
 	/**
 	 * @param instId
 	 */
-	public void stopWholeInstance(int instId)
-	{
-		for (L2Npc mobs : getInstance(instId).getNpcs())
-		{
-			if (mobs == null || !(mobs instanceof L2Attackable))
-			{
+	public void stopWholeInstance(int instId) {
+		for (L2Npc mobs : getInstance(instId).getNpcs()) {
+			if (mobs == null || !(mobs instanceof L2Attackable)) {
 				continue;
 			}
-
+			
 			mobs.setTarget(null);
 			mobs.abortAttack();
 			mobs.abortCast();
@@ -426,11 +344,9 @@ public class InstanceManager
 			mobs.setIsInvul(true);
 			mobs.setIsImmobilized(true);
 		}
-
-		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
-		{
-			if (pl != null && pl.getInstanceId() == instId && !pl.isGM())
-			{
+		
+		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values()) {
+			if (pl != null && pl.getInstanceId() == instId && !pl.isGM()) {
 				pl.setIsImmobilized(true);
 				pl.setTarget(null);
 				pl.disableAllSkills();
@@ -439,254 +355,213 @@ public class InstanceManager
 			}
 		}
 	}
-
+	
 	/**
 	 * @param vidId
 	 * @param instId
 	 */
-	public void broadcastMovie(int vidId, int instId)
-	{
-		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
-		{
-			if (pl != null && pl.getInstanceId() == instId)
-			{
+	public void broadcastMovie(int vidId, int instId) {
+		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values()) {
+			if (pl != null && pl.getInstanceId() == instId) {
 				pl.setMovieId(vidId);
 				pl.sendPacket(new ExStartScenePlayer(vidId));
 			}
 		}
 	}
-
+	
 	/**
 	 * @param instId
 	 */
-	public void startWholeInstance(int instId)
-	{
+	public void startWholeInstance(int instId) {
 		Instance inst = getInstance(instId);
-		if (inst == null)
-		{
+		if (inst == null) {
 			return;
 		}
-		for (L2Npc mobs : inst.getNpcs())
-		{
-			if (mobs == null || !(mobs instanceof L2Attackable))
-			{
+		for (L2Npc mobs : inst.getNpcs()) {
+			if (mobs == null || !(mobs instanceof L2Attackable)) {
 				continue;
 			}
-
+			
 			mobs.setIsInvul(false);
 			mobs.enableAllSkills();
 			mobs.setIsImmobilized(false);
 		}
-
-		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values())
-		{
-			if (pl != null && pl.getInstanceId() == instId && !pl.isGM())
-			{
+		
+		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values()) {
+			if (pl != null && pl.getInstanceId() == instId && !pl.isGM()) {
 				pl.enableAllSkills();
 				pl.setIsInvul(false);
 				pl.setIsImmobilized(false);
 			}
 		}
 	}
-
+	
 	/**
 	 * @param instanceId
 	 * @param packet
 	 */
-	public void sendPacket(int instanceId, L2GameServerPacket packet)
-	{
-		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
-		{
-			if (player != null && player.isOnline() && player.getInstanceId() == instanceId)
-			{
+	public void sendPacket(int instanceId, L2GameServerPacket packet) {
+		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
+			if (player != null && player.isOnline() && player.getInstanceId() == instanceId) {
 				player.sendPacket(packet);
 			}
 		}
 	}
-
+	
 	/**
 	 * @param instanceId
 	 * @param delaySec
 	 * @param packet
 	 */
-	public void sendDelayedPacketToInstance(final int instanceId, final int delaySec, final L2GameServerPacket packet)
-	{
+	public void sendDelayedPacketToInstance(final int instanceId, final int delaySec, final L2GameServerPacket packet) {
 		ThreadPoolManager.getInstance().scheduleGeneral(() -> sendPacket(instanceId, packet), delaySec * 1000);
 	}
-
+	
 	/**
 	 * @param player
 	 * @param delaySec
 	 * @param instanceId
 	 * @param packet
 	 */
-	public void sendDelayedPacketToPlayer(final L2PcInstance player, int delaySec, final int instanceId, final L2GameServerPacket packet)
-	{
-		ThreadPoolManager.getInstance().scheduleGeneral(() ->
-		{
-			if (player != null && player.getInstanceId() == instanceId)
-			{
+	public void sendDelayedPacketToPlayer(final L2PcInstance player, int delaySec, final int instanceId, final L2GameServerPacket packet) {
+		ThreadPoolManager.getInstance().scheduleGeneral(() -> {
+			if (player != null && player.getInstanceId() == instanceId) {
 				player.sendPacket(packet);
 			}
 		}, delaySec * 1000);
 	}
-
+	
 	/**
 	 * @param instanceId
 	 * @return
 	 */
-	public List<L2PcInstance> getPlayers(int instanceId)
-	{
+	public List<L2PcInstance> getPlayers(int instanceId) {
 		List<L2PcInstance> instancePlayers = new ArrayList<>();
-		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray())
-		{
-			if (player != null && player.getInstanceId() == instanceId)
-			{
+		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
+			if (player != null && player.getInstanceId() == instanceId) {
 				instancePlayers.add(player);
 			}
 		}
 		return instancePlayers;
 	}
-
+	
 	/**
 	 * @param isHard
 	 * @return
 	 */
-	private long calcInstanceReuse(boolean isHard)
-	{
+	private long calcInstanceReuse(boolean isHard) {
 		Calendar now = Calendar.getInstance();
 		Calendar reenterPointWed = (Calendar) now.clone();
 		reenterPointWed.set(Calendar.MINUTE, 30);
 		reenterPointWed.set(Calendar.HOUR_OF_DAY, 6);
 		reenterPointWed.set(Calendar.DAY_OF_WEEK, Calendar.WEDNESDAY);
-
+		
 		Calendar reenterPointSat = (Calendar) reenterPointWed.clone();
 		reenterPointSat.set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
-
-		if (now.after(reenterPointWed))
-		{
+		
+		if (now.after(reenterPointWed)) {
 			reenterPointWed.add(Calendar.WEEK_OF_MONTH, 1);
 		}
-		if (now.after(reenterPointSat))
-		{
+		if (now.after(reenterPointSat)) {
 			reenterPointSat.add(Calendar.WEEK_OF_MONTH, 1);
 		}
-
+		
 		Calendar reenter = reenterPointWed;
-		if (!isHard && reenterPointSat.before(reenterPointWed))
-		{
+		if (!isHard && reenterPointSat.before(reenterPointWed)) {
 			reenter = reenterPointSat;
 		}
-
+		
 		return reenter.getTimeInMillis();
 	}
-
+	
 	/**
 	 * @param instId
 	 */
-	public void despawnAll(int instId)
-	{
-		if (getInstance(instId) == null || getInstance(instId).getNpcs() == null)
-		{
+	public void despawnAll(int instId) {
+		if (getInstance(instId) == null || getInstance(instId).getNpcs() == null) {
 			return;
 		}
-
-		for (L2Npc npc : getInstance(instId).getNpcs())
-		{
-			if (npc == null)
-			{
+		
+		for (L2Npc npc : getInstance(instId).getNpcs()) {
+			if (npc == null) {
 				continue;
 			}
-
+			
 			L2Spawn spawn = npc.getSpawn();
-			if (spawn != null && spawn.getNpc() != null)
-			{
+			if (spawn != null && spawn.getNpc() != null) {
 				spawn.stopRespawn();
 			}
-
+			
 			npc.deleteMe();
 		}
 	}
-
+	
 	/**
 	 * @param instId
 	 * @param despawnAll
 	 */
-	public void finishInstance(int instId, boolean despawnAll)
-	{
-		if (despawnAll)
-		{
+	public void finishInstance(int instId, boolean despawnAll) {
+		if (despawnAll) {
 			despawnAll(instId);
 		}
-
+		
 		Instance inst = getInstance(instId);
-		if (inst != null)
-		{
+		if (inst != null) {
 			inst.setDuration(300000);
 		}
 	}
-
+	
 	/**
 	 * @param instanceId
 	 * @param templateId
 	 * @param isHard     (true: every Wednesday at 6.30 AM, otherwise: every Wednesday and Saturday at 6.30 AM)
 	 */
-	public void setInstanceReuse(int instanceId, int templateId, boolean isHard)
-	{
+	public void setInstanceReuse(int instanceId, int templateId, boolean isHard) {
 		InstanceWorld instance = instanceWorlds.get(instanceId);
-		if (instance != null)
-		{
-			for (int playerId : instance.allowed)
-			{
+		if (instance != null) {
+			for (int playerId : instance.allowed) {
 				long instanceReuse = calcInstanceReuse(isHard);
 				setInstanceTime(playerId, templateId, instanceReuse);
 			}
 		}
 	}
-
+	
 	/**
 	 * @param instanceId
 	 * @param templateId
 	 * @param reuseTime  in minutes
 	 */
-	public void setInstanceReuse(int instanceId, int templateId, int reuseTime)
-	{
+	public void setInstanceReuse(int instanceId, int templateId, int reuseTime) {
 		InstanceWorld instance = instanceWorlds.get(instanceId);
-		if (instance != null)
-		{
-			for (int playerId : instance.allowed)
-			{
+		if (instance != null) {
+			for (int playerId : instance.allowed) {
 				setInstanceTime(playerId, templateId, System.currentTimeMillis() + reuseTime * 60000);
 			}
 		}
 	}
-
+	
 	/**
 	 * @param instanceId
 	 * @param templateId
 	 * @param hour
 	 * @param minute
 	 */
-	public void setInstanceReuse(int instanceId, int templateId, int hour, int minute)
-	{
+	public void setInstanceReuse(int instanceId, int templateId, int hour, int minute) {
 		InstanceWorld instance = instanceWorlds.get(instanceId);
-		if (instance != null)
-		{
+		if (instance != null) {
 			Calendar reenter = Calendar.getInstance();
 			reenter.set(Calendar.MINUTE, minute);
-			if (reenter.get(Calendar.HOUR_OF_DAY) >= hour)
-			{
+			if (reenter.get(Calendar.HOUR_OF_DAY) >= hour) {
 				reenter.add(Calendar.DATE, 1);
 			}
 			reenter.set(Calendar.HOUR_OF_DAY, hour);
-
-			for (int playerId : instance.allowed)
-			{
+			
+			for (int playerId : instance.allowed) {
 				setInstanceTime(playerId, templateId, reenter.getTimeInMillis());
 			}
 		}
 	}
-
+	
 	/**
 	 * Under test
 	 *
@@ -694,37 +569,31 @@ public class InstanceManager
 	 * @param rewardedPlayers
 	 * @return
 	 */
-	public boolean canGetUniqueReward(L2PcInstance player, ArrayList<L2PcInstance> rewardedPlayers)
-	{
-		if (player == null)
-		{
+	public boolean canGetUniqueReward(L2PcInstance player, ArrayList<L2PcInstance> rewardedPlayers) {
+		if (player == null) {
 			return false;
 		}
-
-		for (L2PcInstance players : rewardedPlayers)
-		{
-			if (players == null)
-			{
+		
+		for (L2PcInstance players : rewardedPlayers) {
+			if (players == null) {
 				continue;
 			}
-
-			if (players == player)
-			{
+			
+			if (players == player) {
 				return false;
 			}
-
+			
 			if (players.getExternalIP().equalsIgnoreCase(player.getExternalIP()) &&
-					players.getInternalIP().equalsIgnoreCase(player.getInternalIP()))
-			{
+					players.getInternalIP().equalsIgnoreCase(player.getInternalIP())) {
 				return false;
 			}
-
+			
 			//	if (players.getHWID().equalsIgnoreCase(player.getHWID()) && players.getInternalIP().equalsIgnoreCase(player.getInternalIP()))
 			//	return false;
 		}
 		return true;
 	}
-
+	
 	/**
 	 * @param player
 	 * @param templateId
@@ -734,81 +603,61 @@ public class InstanceManager
 	 * @param maxLevel
 	 * @return
 	 */
-	public boolean checkInstanceConditions(L2PcInstance player, int templateId, int minPlayers, int maxPlayers, int minLevel, int maxLevel)
-	{
-		if (player == null)
-		{
+	public boolean checkInstanceConditions(L2PcInstance player, int templateId, int minPlayers, int maxPlayers, int minLevel, int maxLevel) {
+		if (player == null) {
 			return false;
 		}
-
+		
 		List<L2PcInstance> allPlayers = new ArrayList<>();
 		L2Party party = null;
 		L2CommandChannel cChannel = null;
-
-		if (minPlayers == 1 && maxPlayers == 1)
-		{
+		
+		if (minPlayers == 1 && maxPlayers == 1) {
 			allPlayers.add(player);
-		}
-		else if (minPlayers > 1)
-		{
+		} else if (minPlayers > 1) {
 			party = player.getParty();
-			if (party == null)
-			{
+			if (party == null) {
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_IN_PARTY_CANT_ENTER));
 				return false;
 			}
-
+			
 			cChannel = player.getParty().getCommandChannel();
-			if (cChannel == null)
-			{
-				if (minPlayers <= Config.MAX_MEMBERS_IN_PARTY)
-				{
-					if (party.getLeader() != player)
-					{
+			if (cChannel == null) {
+				if (minPlayers <= Config.MAX_MEMBERS_IN_PARTY) {
+					if (party.getLeader() != player) {
 						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER));
 						return false;
 					}
-
-					if (party.getMemberCount() < minPlayers)
-					{
-						player.sendPacket(SystemMessage
-								.getSystemMessage(SystemMessageId.YOU_MUST_HAVE_MINIMUM_OF_S1_PEOPLE_TO_ENTER)
+					
+					if (party.getMemberCount() < minPlayers) {
+						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_MUST_HAVE_MINIMUM_OF_S1_PEOPLE_TO_ENTER)
 								.addNumber(minPlayers));
 						return false;
-					}
-					else
-					{
+					} else {
 						allPlayers.addAll(party.getPartyMembers());
 					}
 				}
 			}
-
-			if (minPlayers > Config.MAX_MEMBERS_IN_PARTY || cChannel != null)
-			{
+			
+			if (minPlayers > Config.MAX_MEMBERS_IN_PARTY || cChannel != null) {
 				if (minPlayers > Config.MAX_MEMBERS_IN_PARTY) //Need command channel yes or yes
 				{
-					if (cChannel == null)
-					{
+					if (cChannel == null) {
 						player.sendPacket(SystemMessageId.NOT_IN_COMMAND_CHANNEL_CANT_ENTER);
 						return false;
 					}
 				}
-				if (cChannel != null)
-				{
-					if (cChannel.getChannelLeader() != player)
-					{
+				if (cChannel != null) {
+					if (cChannel.getChannelLeader() != player) {
 						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER));
 						return false;
 					}
-					if (cChannel.getMemberCount() < minPlayers)
-					{
-						player.sendPacket(SystemMessage
-								.getSystemMessage(SystemMessageId.YOU_MUST_HAVE_MINIMUM_OF_S1_PEOPLE_TO_ENTER)
+					if (cChannel.getMemberCount() < minPlayers) {
+						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_MUST_HAVE_MINIMUM_OF_S1_PEOPLE_TO_ENTER)
 								.addNumber(minPlayers));
 						return false;
 					}
-					if (cChannel.getMemberCount() > maxPlayers)
-					{
+					if (cChannel.getMemberCount() > maxPlayers) {
 						player.sendMessage("You exceeded the number of allowed participants.");
 						return false;
 					}
@@ -816,92 +665,74 @@ public class InstanceManager
 				allPlayers.addAll(cChannel.getMembers());
 			}
 		}
-
+		
 		//List checks
-		for (L2PcInstance enterPlayer : allPlayers)
-		{
-			if (enterPlayer == null)
-			{
+		for (L2PcInstance enterPlayer : allPlayers) {
+			if (enterPlayer == null) {
 				continue;
 			}
-
-			if (enterPlayer.isInDuel())
-			{
+			
+			if (enterPlayer.isInDuel()) {
 				return false;
 			}
-
-			if (enterPlayer.getLevel() < minLevel || enterPlayer.getLevel() > maxLevel)
-			{
+			
+			if (enterPlayer.getLevel() < minLevel || enterPlayer.getLevel() > maxLevel) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_LEVEL_REQUIREMENT_NOT_SUFFICIENT);
 				sm.addPcName(enterPlayer);
-
-				if (party != null)
-				{
+				
+				if (party != null) {
 					party.broadcastToPartyMembers(sm);
-				}
-				else
-				{
+				} else {
 					enterPlayer.sendPacket(sm);
 				}
-
+				
 				return false;
 			}
-
-			if (!Util.checkIfInRange(1000, player, enterPlayer, true))
-			{
-				SystemMessage sm =
-						SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
+			
+			if (!Util.checkIfInRange(1000, player, enterPlayer, true)) {
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_LOCATION_THAT_CANNOT_BE_ENTERED);
 				sm.addPcName(enterPlayer);
-
-				if (party != null)
-				{
+				
+				if (party != null) {
 					party.broadcastToPartyMembers(sm);
-				}
-				else
-				{
+				} else {
 					enterPlayer.sendPacket(sm);
 				}
-
+				
 				return false;
 			}
-
+			
 			Long reentertime = getInstanceTime(enterPlayer.getObjectId(), templateId);
-			if (System.currentTimeMillis() < reentertime)
-			{
+			if (System.currentTimeMillis() < reentertime) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_MAY_NOT_REENTER_YET);
 				sm.addPcName(enterPlayer);
-
-				if (party != null)
-				{
+				
+				if (party != null) {
 					party.broadcastToPartyMembers(sm);
-				}
-				else
-				{
+				} else {
 					enterPlayer.sendPacket(sm);
 				}
-
+				
 				SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE d MMMMMMM kk:mm:ss");
-
+				
 				player.sendMessage("Right now, it is " + dateFormat.format(System.currentTimeMillis()));
 				player.sendMessage("You will be able to re-enter at " + dateFormat.format(reentertime));
-
+				
 				return false;
 			}
 		}
-
+		
 		Broadcast.toGameMasters(player.getName() + " is entering Instance[" + templateId + "] with:");
-
-		for (L2PcInstance enterPlayer : allPlayers)
-		{
+		
+		for (L2PcInstance enterPlayer : allPlayers) {
 			Broadcast.toGameMasters("- " + enterPlayer.getName());
 		}
-
+		
 		return true;
 	}
-
+	
 	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
+	private static class SingletonHolder {
 		protected static final InstanceManager instance = new InstanceManager();
 	}
 }

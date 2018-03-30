@@ -24,8 +24,7 @@ import l2server.gameserver.taskmanager.TaskTypes;
 /**
  * @author Gigiikun
  */
-public class TaskGlobalVariablesSave extends Task
-{
+public class TaskGlobalVariablesSave extends Task {
 
 	public static final String NAME = "global_varibales_save";
 
@@ -33,8 +32,7 @@ public class TaskGlobalVariablesSave extends Task
 	 * @see l2server.gameserver.taskmanager.Task#getName()
 	 */
 	@Override
-	public String getName()
-	{
+	public String getName() {
 		return NAME;
 	}
 
@@ -42,8 +40,7 @@ public class TaskGlobalVariablesSave extends Task
 	 * @see l2server.gameserver.taskmanager.Task#onTimeElapsed(l2server.gameserver.taskmanager.TaskManager.ExecutedTask)
 	 */
 	@Override
-	public void onTimeElapsed(ExecutedTask task)
-	{
+	public void onTimeElapsed(ExecutedTask task) {
 		GlobalVariablesManager.getInstance().saveVars();
 	}
 
@@ -51,8 +48,7 @@ public class TaskGlobalVariablesSave extends Task
 	 * @see l2server.gameserver.taskmanager.Task#initialize()
 	 */
 	@Override
-	public void initialize()
-	{
+	public void initialize() {
 		super.initialize();
 		TaskManager.addUniqueTask(NAME, TaskTypes.TYPE_FIXED_SHEDULED, "500000", "1800000", "");
 	}

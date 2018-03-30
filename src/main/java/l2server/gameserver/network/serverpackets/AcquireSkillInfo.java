@@ -32,20 +32,17 @@ import java.util.List;
  *
  * @version $Revision: 1.3.2.1.2.4 $ $Date: 2005/03/27 15:29:39 $
  */
-public class AcquireSkillInfo extends L2GameServerPacket
-{
+public class AcquireSkillInfo extends L2GameServerPacket {
 	private List<Req> reqs;
 	private int id, level, spCost, mode;
 
-	private static class Req
-	{
+	private static class Req {
 		public int itemId;
 		public int count;
 		public int type;
 		public int unk;
 
-		public Req(int pType, int pItemId, int pCount, int pUnk)
-		{
+		public Req(int pType, int pItemId, int pCount, int pUnk) {
 			itemId = pItemId;
 			type = pType;
 			count = pCount;
@@ -53,8 +50,7 @@ public class AcquireSkillInfo extends L2GameServerPacket
 		}
 	}
 
-	public AcquireSkillInfo(int id, int level, int spCost, int mode)
-	{
+	public AcquireSkillInfo(int id, int level, int spCost, int mode) {
 		reqs = new ArrayList<>();
 		this.id = id;
 		this.level = level;
@@ -62,14 +58,12 @@ public class AcquireSkillInfo extends L2GameServerPacket
 		this.mode = mode;
 	}
 
-	public void addRequirement(int type, int id, int count, int unk)
-	{
+	public void addRequirement(int type, int id, int count, int unk) {
 		reqs.add(new Req(type, id, count, unk));
 	}
 
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(id);
 		writeD(level);
 		writeQ(spCost);
@@ -77,8 +71,7 @@ public class AcquireSkillInfo extends L2GameServerPacket
 
 		writeD(reqs.size());
 
-		for (Req temp : reqs)
-		{
+		for (Req temp : reqs) {
 			writeD(temp.type);
 			writeD(temp.itemId);
 			writeQ(temp.count);

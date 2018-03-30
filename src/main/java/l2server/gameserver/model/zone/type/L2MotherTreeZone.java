@@ -26,23 +26,19 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  *
  * @author durgus
  */
-public class L2MotherTreeZone extends L2ZoneType
-{
+public class L2MotherTreeZone extends L2ZoneType {
 	private int enterMsg;
 	private int leaveMsg;
 	private int mpRegen;
 	private int hpRegen;
 
-	public L2MotherTreeZone(int id)
-	{
+	public L2MotherTreeZone(int id) {
 		super(id);
 	}
 
 	@Override
-	public void setParameter(String name, String value)
-	{
-		switch (name)
-		{
+	public void setParameter(String name, String value) {
+		switch (name) {
 			case "enterMsgId":
 				enterMsg = Integer.valueOf(value);
 				break;
@@ -62,56 +58,46 @@ public class L2MotherTreeZone extends L2ZoneType
 	}
 
 	@Override
-	protected void onEnter(L2Character character)
-	{
-		if (character instanceof L2PcInstance)
-		{
+	protected void onEnter(L2Character character) {
+		if (character instanceof L2PcInstance) {
 			L2PcInstance player = (L2PcInstance) character;
 			player.setInsideZone(L2Character.ZONE_MOTHERTREE, true);
-			if (enterMsg != 0)
-			{
+			if (enterMsg != 0) {
 				player.sendPacket(SystemMessage.getSystemMessage(enterMsg));
 			}
 		}
 	}
 
 	@Override
-	protected void onExit(L2Character character)
-	{
-		if (character instanceof L2PcInstance)
-		{
+	protected void onExit(L2Character character) {
+		if (character instanceof L2PcInstance) {
 			L2PcInstance player = (L2PcInstance) character;
 			player.setInsideZone(L2Character.ZONE_MOTHERTREE, false);
-			if (leaveMsg != 0)
-			{
+			if (leaveMsg != 0) {
 				player.sendPacket(SystemMessage.getSystemMessage(leaveMsg));
 			}
 		}
 	}
 
 	@Override
-	public void onDieInside(L2Character character, L2Character killer)
-	{
+	public void onDieInside(L2Character character, L2Character killer) {
 	}
 
 	@Override
-	public void onReviveInside(L2Character character)
-	{
+	public void onReviveInside(L2Character character) {
 	}
 
 	/**
 	 * @return the mpRegen
 	 */
-	public int getMpRegenBonus()
-	{
+	public int getMpRegenBonus() {
 		return mpRegen;
 	}
 
 	/**
 	 * @return the hpRegen
 	 */
-	public int getHpRegenBonus()
-	{
+	public int getHpRegenBonus() {
 		return hpRegen;
 	}
 }

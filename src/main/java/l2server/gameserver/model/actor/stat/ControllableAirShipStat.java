@@ -17,28 +17,21 @@ package l2server.gameserver.model.actor.stat;
 
 import l2server.gameserver.model.actor.instance.L2ControllableAirShipInstance;
 
-public class ControllableAirShipStat extends VehicleStat
-{
-	public ControllableAirShipStat(L2ControllableAirShipInstance activeChar)
-	{
+public class ControllableAirShipStat extends VehicleStat {
+	public ControllableAirShipStat(L2ControllableAirShipInstance activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public L2ControllableAirShipInstance getActiveChar()
-	{
+	public L2ControllableAirShipInstance getActiveChar() {
 		return (L2ControllableAirShipInstance) super.getActiveChar();
 	}
 
 	@Override
-	public float getMoveSpeed()
-	{
-		if (getActiveChar().isInDock() || getActiveChar().getFuel() > 0)
-		{
+	public float getMoveSpeed() {
+		if (getActiveChar().isInDock() || getActiveChar().getFuel() > 0) {
 			return super.getMoveSpeed();
-		}
-		else
-		{
+		} else {
 			return super.getMoveSpeed() * 0.05f;
 		}
 	}

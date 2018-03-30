@@ -35,24 +35,20 @@ import l2server.util.Rnd;
 
 /**
  * @author LasTravel
- *         <p>
- *         Source:
- *         - http://l2wiki.com/Gainak
+ * <p>
+ * Source:
+ * - http://l2wiki.com/Gainak
  */
 
-public class Gainak extends Quest
-{
+public class Gainak extends Quest {
 	private static final int siegeEffect = 20140700;
 	private static boolean isInSiege = false;
 	private static final int gainakPeaceZoneId = 60018;
 	private static final int gainakSiegeZoneId = 60019;
-	private static final L2PeaceZone gainakPeaceZone =
-			ZoneManager.getInstance().getZoneById(gainakPeaceZoneId, L2PeaceZone.class);
-	private static final L2SiegeZone gainakSiegeZone =
-			ZoneManager.getInstance().getZoneById(gainakSiegeZoneId, L2SiegeZone.class);
+	private static final L2PeaceZone gainakPeaceZone = ZoneManager.getInstance().getZoneById(gainakPeaceZoneId, L2PeaceZone.class);
+	private static final L2SiegeZone gainakSiegeZone = ZoneManager.getInstance().getZoneById(gainakSiegeZoneId, L2SiegeZone.class);
 
-	public Gainak(int questId, String name, String descr)
-	{
+	public Gainak(int questId, String name, String descr) {
 		super(questId, name, descr);
 
 		addDieZoneId(gainakSiegeZoneId);
@@ -61,28 +57,22 @@ public class Gainak extends Quest
 		startQuestTimer("gainak_change", getTimeBetweenSieges() * 60000, null, null);
 	}
 
-	private final int getTimeBetweenSieges()
-	{
-		if (Config.isServer(Config.TENKAI))
-		{
+	private final int getTimeBetweenSieges() {
+		if (Config.isServer(Config.TENKAI)) {
 			return Rnd.get(120, 180); // 2 to 3 hours.
 		}
 
 		return 150;
 	}
 
-	private final int getSiegeDuration()
-	{
+	private final int getSiegeDuration() {
 		return 30;
 	}
 
 	@Override
-	public final String onEnterZone(L2Character character, L2ZoneType zone)
-	{
-		if (character instanceof L2PcInstance)
-		{
-			if (isInSiege)
-			{
+	public final String onEnterZone(L2Character character, L2ZoneType zone) {
+		if (character instanceof L2PcInstance) {
+			if (isInSiege) {
 				character.broadcastPacket(new EventTrigger(siegeEffect, true));
 			}
 		}
@@ -90,13 +80,10 @@ public class Gainak extends Quest
 	}
 
 	@Override
-	public String onDieZone(L2Character character, L2Character killer, L2ZoneType zone)
-	{
-		if (isInSiege)
-		{
+	public String onDieZone(L2Character character, L2Character killer, L2ZoneType zone) {
+		if (isInSiege) {
 			L2PcInstance player = killer.getActingPlayer();
-			if (player != null)
-			{
+			if (player != null) {
 				player.increasePvpKills(character);
 			}
 		}
@@ -104,12 +91,9 @@ public class Gainak extends Quest
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equalsIgnoreCase("gainak_change"))
-		{
-			if (isInSiege)
-			{
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+		if (event.equalsIgnoreCase("gainak_change")) {
+			if (isInSiege) {
 				SpawnTable.getInstance().despawnSpecificTable("gainak_siege");
 
 				isInSiege = false;
@@ -125,9 +109,7 @@ public class Gainak extends Quest
 				SystemMessage s = SystemMessage.getSystemMessage(SystemMessageId.LIGHT_BLUE_DOWNSTAIRS_S1);
 				s.addString("Gainak is now in peace.");
 				Announcements.getInstance().announceToAll(s);
-			}
-			else
-			{
+			} else {
 				SpawnTable.getInstance().spawnSpecificTable("gainak_siege");
 
 				isInSiege = true;
@@ -144,21 +126,18 @@ public class Gainak extends Quest
 				s.addString("Gainak is now under siege.");
 				Announcements.getInstance().announceToAll(s);
 
-				if (Config.isServer(Config.TENKAI_LEGACY))
-				{
+				if (Config.isServer(Config.TENKAI_LEGACY)) {
 					ExShowScreenMessage essm = new ExShowScreenMessage("Gainak is now under siege!", 5000);
 					Broadcast.toAllOnlinePlayers(essm);
 				}
 
-				ZoneManager.getInstance().getZoneByName("Gainak Siege Peace Zone", L2PeaceZone.class)
-						.setZoneEnabled(false);
+				ZoneManager.getInstance().getZoneByName("Gainak Siege Peace Zone", L2PeaceZone.class).setZoneEnabled(false);
 			}
 		}
 		return "";
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		new Gainak(-1, "Gainak", "ai");
 	}
 }

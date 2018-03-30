@@ -22,79 +22,67 @@ package l2server.network;
  * @param <E>
  * @author Forsaiken
  */
-public final class NioNetStackList<E>
-{
+public final class NioNetStackList<E> {
 	private final NioNetStackNode start = new NioNetStackNode();
-
+	
 	private final NioNetStackNodeBuf buf = new NioNetStackNodeBuf();
-
+	
 	private NioNetStackNode end = new NioNetStackNode();
-
-	public NioNetStackList()
-	{
+	
+	public NioNetStackList() {
 		clear();
 	}
-
-	public final void addLast(final E elem)
-	{
+	
+	public final void addLast(final E elem) {
 		final NioNetStackNode newEndNode = buf.removeFirst();
 		end.value = elem;
 		end.next = newEndNode;
 		end = newEndNode;
 	}
-
-	public final E removeFirst()
-	{
+	
+	public final E removeFirst() {
 		final NioNetStackNode old = start.next;
 		final E value = old.value;
 		start.next = old.next;
 		buf.addLast(old);
 		return value;
 	}
-
-	public final boolean isEmpty()
-	{
+	
+	public final boolean isEmpty() {
 		return start.next == end;
 	}
-
-	public final void clear()
-	{
+	
+	public final void clear() {
 		start.next = end;
 	}
-
-	protected final class NioNetStackNode
-	{
+	
+	protected final class NioNetStackNode {
 		protected NioNetStackNode next;
-
+		
 		protected E value;
 	}
-
-	private final class NioNetStackNodeBuf
-	{
+	
+	private final class NioNetStackNodeBuf {
 		private final NioNetStackNode start = new NioNetStackNode();
-
+		
 		private NioNetStackNode end = new NioNetStackNode();
-
-		NioNetStackNodeBuf()
-		{
+		
+		NioNetStackNodeBuf() {
 			start.next = end;
 		}
-
-		final void addLast(final NioNetStackNode node)
-		{
+		
+		final void addLast(final NioNetStackNode node) {
 			node.next = null;
 			node.value = null;
 			end.next = node;
 			end = node;
 		}
-
-		final NioNetStackNode removeFirst()
-		{
-			if (start.next == end)
-			{
+		
+		final NioNetStackNode removeFirst() {
+			if (start.next == end) {
 				return new NioNetStackNode();
 			}
-
+			
 			final NioNetStackNode old = start.next;
 			start.next = old.next;
 			return old;

@@ -22,13 +22,7 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.instance.L2DefenderInstance;
-import l2server.gameserver.model.actor.instance.L2FortCommanderInstance;
-import l2server.gameserver.model.actor.instance.L2NpcInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SiegeFlagInstance;
-import l2server.gameserver.model.actor.instance.L2SiegeSummonInstance;
+import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.VisualEffect;
 import l2server.gameserver.templates.skills.L2AbnormalType;
@@ -37,18 +31,16 @@ import l2server.gameserver.templates.skills.L2EffectType;
 
 /**
  * @author littlecrow
- *         <p>
- *         Implementation of the Fear Effect
+ * <p>
+ * Implementation of the Fear Effect
  */
-public class EffectFear extends L2Effect
-{
+public class EffectFear extends L2Effect {
 	public static final int FEAR_RANGE = 500;
 
 	private int dX = -1;
 	private int dY = -1;
 
-	public EffectFear(Env env, L2EffectTemplate template)
-	{
+	public EffectFear(Env env, L2EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -56,14 +48,12 @@ public class EffectFear extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType()
-	{
+	public L2EffectType getEffectType() {
 		return L2EffectType.FEAR;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType()
-	{
+	public L2AbnormalType getAbnormalType() {
 		return L2AbnormalType.FEAR;
 	}
 
@@ -71,11 +61,9 @@ public class EffectFear extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onStart()
 	 */
 	@Override
-	public boolean onStart()
-	{
+	public boolean onStart() {
 		// Fear skills cannot be used in event
-		if (getEffector() instanceof L2PcInstance && ((L2PcInstance) getEffector()).isPlayingEvent())
-		{
+		if (getEffector() instanceof L2PcInstance && ((L2PcInstance) getEffector()).isPlayingEvent()) {
 			return false;
 		}
 
@@ -105,24 +93,19 @@ public class EffectFear extends L2Effect
 
 		if (getEffected() instanceof L2NpcInstance || getEffected() instanceof L2DefenderInstance ||
 				getEffected() instanceof L2FortCommanderInstance || getEffected() instanceof L2SiegeFlagInstance ||
-				getEffected() instanceof L2SiegeSummonInstance)
-		{
+				getEffected() instanceof L2SiegeSummonInstance) {
 			return false;
 		}
 
-		if (!getEffected().isAfraid())
-		{
-			if (getEffected().isCastingNow() && getEffected().canAbortCast())
-			{
+		if (!getEffected().isAfraid()) {
+			if (getEffected().isCastingNow() && getEffected().canAbortCast()) {
 				getEffected().abortCast();
 			}
 
-			if (getEffected().getX() > getEffector().getX())
-			{
+			if (getEffected().getX() > getEffector().getX()) {
 				dX = 1;
 			}
-			if (getEffected().getY() > getEffector().getY())
-			{
+			if (getEffected().getY() > getEffector().getY()) {
 				dY = 1;
 			}
 
@@ -138,8 +121,7 @@ public class EffectFear extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onExit()
 	 */
 	@Override
-	public void onExit()
-	{
+	public void onExit() {
 		getEffected().stopVisualEffect(VisualEffect.SKULL_FEAR);
 		getEffected().stopFear(false);
 		getEffected().getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, getEffector());
@@ -149,35 +131,29 @@ public class EffectFear extends L2Effect
 	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
 	 */
 	@Override
-	public boolean onActionTime()
-	{
+	public boolean onActionTime() {
 		int posX = getEffected().getX();
 		int posY = getEffected().getY();
 		int posZ = getEffected().getZ();
 
-		if (getEffected().getX() > getEffector().getX())
-		{
+		if (getEffected().getX() > getEffector().getX()) {
 			dX = 1;
 		}
-		if (getEffected().getY() > getEffector().getY())
-		{
+		if (getEffected().getY() > getEffector().getY()) {
 			dY = 1;
 		}
 
 		posX += dX * FEAR_RANGE;
 		posY += dY * FEAR_RANGE;
 
-		if (Config.GEODATA > 0)
-		{
+		if (Config.GEODATA > 0) {
 			Location destiny = GeoData.getInstance()
-					.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), posX, posY, posZ,
-							getEffected().getInstanceId());
+					.moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), posX, posY, posZ, getEffected().getInstanceId());
 			posX = destiny.getX();
 			posY = destiny.getY();
 		}
 
-		if (!(getEffected() instanceof L2PetInstance))
-		{
+		if (!(getEffected() instanceof L2PetInstance)) {
 			getEffected().setRunning();
 		}
 

@@ -18,8 +18,7 @@ package l2server.gameserver.templates.skills;
 /**
  * @author Pere
  */
-public enum L2AbnormalType
-{
+public enum L2AbnormalType {
 	NONE,
 	BUFF,
 	DEBUFF,

@@ -22,8 +22,7 @@ import l2server.gameserver.model.actor.instance.L2StatueInstance;
 /**
  * @author devScarlet & mrTJO
  */
-public final class ServerObjectInfo extends L2GameServerPacket
-{
+public final class ServerObjectInfo extends L2GameServerPacket {
 	private L2Npc activeChar;
 	private int x, y, z, heading;
 	private int idTemplate;
@@ -31,9 +30,8 @@ public final class ServerObjectInfo extends L2GameServerPacket
 	private double collisionHeight, collisionRadius;
 	private String name;
 	private int type;
-
-	public ServerObjectInfo(L2Npc activeChar, L2Character actor)
-	{
+	
+	public ServerObjectInfo(L2Npc activeChar, L2Character actor) {
 		this.activeChar = activeChar;
 		idTemplate = activeChar.getTemplate().TemplateId + 1000000;
 		isAttackable = activeChar.isAutoAttackable(actor);
@@ -45,9 +43,8 @@ public final class ServerObjectInfo extends L2GameServerPacket
 		heading = activeChar.getHeading();
 		name = activeChar.getTemplate().ServerSideName ? activeChar.getTemplate().Name : "";
 		type = 4;
-
-		if (activeChar instanceof L2StatueInstance)
-		{
+		
+		if (activeChar instanceof L2StatueInstance) {
 			idTemplate = 0;
 			name = activeChar.getName();
 			isAttackable = false;
@@ -56,13 +53,12 @@ public final class ServerObjectInfo extends L2GameServerPacket
 			type = 7;
 		}
 	}
-
+	
 	/**
 	 * @see l2server.gameserver.network.serverpackets.L2GameServerPacket#writeImpl()
 	 */
 	@Override
-	protected final void writeImpl()
-	{
+	protected final void writeImpl() {
 		writeD(activeChar.getObjectId());
 		writeD(idTemplate);
 		writeS(name); // name
@@ -79,9 +75,8 @@ public final class ServerObjectInfo extends L2GameServerPacket
 		writeD(isAttackable ? activeChar.getMaxVisibleHp() : 0);
 		writeD(type); // object type
 		writeD(0x00); // special effects
-
-		if (type == 7)
-		{
+		
+		if (type == 7) {
 			L2StatueInstance statue = (L2StatueInstance) activeChar;
 			writeD(statue.getRecordId());
 			writeD(0x00); // ???

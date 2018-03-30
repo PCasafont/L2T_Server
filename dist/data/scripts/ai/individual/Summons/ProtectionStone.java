@@ -15,6 +15,7 @@
 
 package ai.individual.Summons;
 
+import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Abnormal;
@@ -23,106 +24,89 @@ import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 
-import ai.group_template.L2AttackableAIScript;
-
 import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author LasTravel
  * @author Pere
- *         <p>
- *         Summon Protection Stone (skill id: 11359) AI
+ * <p>
+ * Summon Protection Stone (skill id: 11359) AI
  */
 
-public class ProtectionStone extends L2AttackableAIScript
-{
-    private static final int protectionStoneId = 13423;
-    private static final int arcaneProtectionId = 11360;
-    private static final int summonProtectionStoneId = 11359;
+public class ProtectionStone extends L2AttackableAIScript {
+	private static final int protectionStoneId = 13423;
+	private static final int arcaneProtectionId = 11360;
+	private static final int summonProtectionStoneId = 11359;
 
-    public ProtectionStone(int id, String name, String descr)
-    {
-        super(id, name, descr);
+	public ProtectionStone(int id, String name, String descr) {
+		super(id, name, descr);
 
-        addSpawnId(protectionStoneId);
-    }
+		addSpawnId(protectionStoneId);
+	}
 
-    @Override
-    public final String onSpawn(L2Npc npc)
-    {
-        npc.disableCoreAI(true);
+	@Override
+	public final String onSpawn(L2Npc npc) {
+		npc.disableCoreAI(true);
 
-        ProtectionStoneAI ai = new ProtectionStoneAI(npc);
+		ProtectionStoneAI ai = new ProtectionStoneAI(npc);
 
-        ai.setSchedule(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(ai, 1000, 5000));
+		ai.setSchedule(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(ai, 1000, 5000));
 
-        return null;
-    }
+		return null;
+	}
 
-    class ProtectionStoneAI implements Runnable
-    {
-        private L2Npc protectionStone;
-        private L2PcInstance owner;
-        private ScheduledFuture<?> schedule = null;
-        @SuppressWarnings("unused")
-        private L2Skill arcaneProtection;
+	class ProtectionStoneAI implements Runnable {
+		private L2Npc protectionStone;
+		private L2PcInstance owner;
+		private ScheduledFuture<?> schedule = null;
+		@SuppressWarnings("unused")
+		private L2Skill arcaneProtection;
 
-        protected ProtectionStoneAI(L2Npc npc)
-        {
-            protectionStone = npc;
-            owner = npc.getOwner();
-            arcaneProtection = SkillTable.getInstance()
-                    .getInfo(arcaneProtectionId, owner.getSkillLevelHash(summonProtectionStoneId));
-        }
+		protected ProtectionStoneAI(L2Npc npc) {
+			protectionStone = npc;
+			owner = npc.getOwner();
+			arcaneProtection = SkillTable.getInstance().getInfo(arcaneProtectionId, owner.getSkillLevelHash(summonProtectionStoneId));
+		}
 
-        public void setSchedule(ScheduledFuture<?> schedule)
-        {
-            this.schedule = schedule;
-        }
+		public void setSchedule(ScheduledFuture<?> schedule) {
+			this.schedule = schedule;
+		}
 
-        @Override
-        public void run()
-        {
-            if (protectionStone == null || protectionStone.isDead() || protectionStone.isDecayed())
-            {
-                if (schedule != null)
-                {
-                    schedule.cancel(true);
-                    return;
-                }
-            }
+		@Override
+		public void run() {
+			if (protectionStone == null || protectionStone.isDead() || protectionStone.isDecayed()) {
+				if (schedule != null) {
+					schedule.cancel(true);
+					return;
+				}
+			}
 
-            L2Party party = owner.getParty();
-            for (L2PcInstance player : protectionStone.getKnownList().getKnownPlayersInRadius(250))
-            {
-                if (player != owner && (player.getParty() == null || player.getParty() != party))
-                {
-                    continue;
-                }
+			L2Party party = owner.getParty();
+			for (L2PcInstance player : protectionStone.getKnownList().getKnownPlayersInRadius(250)) {
+				if (player != owner && (player.getParty() == null || player.getParty() != party)) {
+					continue;
+				}
 
-                L2Abnormal effect = player.getFirstEffect(11360);
+				L2Abnormal effect = player.getFirstEffect(11360);
 
-                int buffLevel = effect == null ? 1 : effect.getLevel() + 1;
+				int buffLevel = effect == null ? 1 : effect.getLevel() + 1;
 
-                if (buffLevel > 3)
-                {
-                    buffLevel = 3;
-                }
+				if (buffLevel > 3) {
+					buffLevel = 3;
+				}
 
-                if (effect != null)
-                {
-                    effect.exit();
-                }
+				if (effect != null) {
+					effect.exit();
+				}
 
-                final L2Skill skill = SkillTable.getInstance().getInfo(11360, buffLevel);
+				final L2Skill skill = SkillTable.getInstance().getInfo(11360, buffLevel);
 
-                skill.getEffects(protectionStone, player);
-            }
-        }
-    }
+				skill.getEffects(protectionStone, player);
+			}
+		}
+	}
 
-    public static void main(String[] args)
-    {
-        new ProtectionStone(-1, "ProtectionStone", "ai/individual");
-    }
+	public static void main(String[] args) {
+		new ProtectionStone(-1, "ProtectionStone", "ai/individual");
+	}
 }
