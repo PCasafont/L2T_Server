@@ -1,6 +1,6 @@
 package l2server.gameserver.datatables;
 
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.L2Skill;
 import l2server.log.Log;
@@ -18,14 +18,14 @@ import java.util.ArrayList;
 public class ResidentialSkillTable {
 
 	private static ResidentialSkillTable instance = null;
-	private static TIntObjectHashMap<ArrayList<L2Skill>> list;
+	private static Map<Integer, ArrayList<L2Skill>> list;
 
 	ResidentialSkillTable() {
 		load();
 	}
 
 	private void load() {
-		list = new TIntObjectHashMap<>();
+		list = new HashMap<>();
 
 		if (Config.IS_CLASSIC) {
 			return;

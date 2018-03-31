@@ -15,7 +15,7 @@
 
 package quests.Q511_AwlUnderFoot;
 
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
@@ -69,7 +69,7 @@ public final class Q511_AwlUnderFoot extends Quest {
 	private static final long REENTERTIME = 14400000;
 	private static final long RAID_SPAWN_DELAY = 120000;
 
-	private TIntObjectHashMap<FortDungeon> fortDungeons = new TIntObjectHashMap<FortDungeon>(21);
+	private Map<Integer, FortDungeon> fortDungeons = new HashMap<>(21);
 
 	// QUEST ITEMS
 	private static final int DL_MARK = 9797;
@@ -354,7 +354,7 @@ public final class Q511_AwlUnderFoot extends Quest {
 		fortDungeons.put(36326, new FortDungeon(41));
 		fortDungeons.put(36364, new FortDungeon(42));
 
-		for (int i : fortDungeons.keys()) {
+		for (int i : fortDungeons.keySet()) {
 			addStartNpc(i);
 			addTalkId(i);
 		}

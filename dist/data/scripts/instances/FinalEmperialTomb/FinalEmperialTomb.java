@@ -15,7 +15,7 @@
 
 package instances.FinalEmperialTomb;
 
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
@@ -120,8 +120,8 @@ public class FinalEmperialTomb extends Quest {
 	private static final int INSTANCEID = 136; // this is the client number
 	private static final boolean debug = false;
 
-	private final TIntObjectHashMap<L2Territory> spawnZoneList = new TIntObjectHashMap<L2Territory>();
-	private final TIntObjectHashMap<List<FETSpawn>> spawnList = new TIntObjectHashMap<List<FETSpawn>>();
+	private final Map<Integer, L2Territory> spawnZoneList = new HashMap<>();
+	private final Map<Integer, List<FETSpawn>> spawnList = new HashMap<>();
 	private final List<Integer> mustKillMobsId = new ArrayList<Integer>();
 
 	// Teleports
@@ -200,7 +200,7 @@ public class FinalEmperialTomb extends Quest {
 								continue;
 							}
 							int flag = d.getInt("flag");
-							if (!spawnList.contains(flag)) {
+							if (!spawnList.containsKey(flag)) {
 								spawnList.put(flag, new ArrayList<FETSpawn>());
 							}
 
@@ -400,7 +400,7 @@ public class FinalEmperialTomb extends Quest {
 				for (FETSpawn spw : spawnList.get(flag)) {
 					if (spw.isZone) {
 						for (int i = 0; i < spw.count; i++) {
-							if (spawnZoneList.contains(spw.zone)) {
+							if (spawnZoneList.containsKey(spw.zone)) {
 								int[] point = spawnZoneList.get(spw.zone).getRandomPoint();
 								spawn(world,
 										spw.npcId,

@@ -15,7 +15,7 @@
 
 package l2server.gameserver.datatables;
 
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.L2DropCategory;
 import l2server.gameserver.model.L2DropData;
@@ -33,14 +33,14 @@ import java.util.ArrayList;
  */
 public class ExtraDropTable {
 
-	private TIntObjectHashMap<ArrayList<L2DropCategory>> extraGroups;
+	private Map<Integer, ArrayList<L2DropCategory>> extraGroups;
 
 	public static ExtraDropTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private ExtraDropTable() {
-		extraGroups = new TIntObjectHashMap<>();
+		extraGroups = new HashMap<>();
 		if (!Config.IS_CLASSIC) {
 			restoreData();
 		}

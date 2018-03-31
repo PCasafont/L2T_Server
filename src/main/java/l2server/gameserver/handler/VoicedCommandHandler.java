@@ -15,7 +15,7 @@
 
 package l2server.gameserver.handler;
 
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.log.Log;
 
@@ -26,14 +26,14 @@ import l2server.log.Log;
  */
 public class VoicedCommandHandler {
 
-	private TIntObjectHashMap<IVoicedCommandHandler> datatable;
+	private Map<Integer, IVoicedCommandHandler> datatable;
 
 	public static VoicedCommandHandler getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private VoicedCommandHandler() {
-		datatable = new TIntObjectHashMap<>();
+		datatable = new HashMap<>();
 	}
 
 	public void registerVoicedCommandHandler(IVoicedCommandHandler handler) {

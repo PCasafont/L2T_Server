@@ -15,7 +15,7 @@
 
 package l2server.gameserver.handler;
 
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.gameserver.templates.skills.L2SkillType;
 
 /**
@@ -24,14 +24,14 @@ import l2server.gameserver.templates.skills.L2SkillType;
  * @version $Revision: 1.1.4.4 $ $Date: 2005/04/03 15:55:06 $
  */
 public class SkillHandler {
-	private TIntObjectHashMap<ISkillHandler> datatable;
+	private Map<Integer, ISkillHandler> datatable;
 
 	public static SkillHandler getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private SkillHandler() {
-		datatable = new TIntObjectHashMap<>();
+		datatable = new HashMap<>();
 	}
 
 	public void registerSkillHandler(ISkillHandler handler) {

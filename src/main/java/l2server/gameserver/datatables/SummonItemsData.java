@@ -19,7 +19,7 @@
 
 package l2server.gameserver.datatables;
 
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.L2SummonItem;
 import l2server.log.Log;
@@ -29,14 +29,14 @@ import l2server.util.xml.XmlNode;
 import java.io.File;
 
 public class SummonItemsData {
-	private TIntObjectHashMap<L2SummonItem> summonitems;
+	private Map<Integer, L2SummonItem> summonitems;
 
 	public static SummonItemsData getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private SummonItemsData() {
-		summonitems = new TIntObjectHashMap<>();
+		summonitems = new HashMap<>();
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "summonItems.xml");
 		XmlDocument doc = new XmlDocument(file);
@@ -64,7 +64,7 @@ public class SummonItemsData {
 		int size = summonitems.size();
 		int[] result = new int[size];
 		int i = 0;
-		for (Object si : summonitems.getValues()) {
+		for (Object si : summonitems.values()) {
 			result[i++] = ((L2SummonItem) si).getItemId();
 		}
 		return result;

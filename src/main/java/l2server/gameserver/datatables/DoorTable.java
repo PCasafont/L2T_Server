@@ -15,13 +15,14 @@
 
 package l2server.gameserver.datatables;
 
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.ClanHallManager;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.actor.instance.L2DoorInstance;
 import l2server.gameserver.model.entity.ClanHall;
+import l2server.gameserver.model.itemauction.ItemAuctionInstance;
 import l2server.gameserver.pathfinding.AbstractNodeLoc;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2DoorTemplate;
@@ -35,18 +36,18 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class DoorTable {
-	private static final TIntObjectHashMap<Set<Integer>> groups = new TIntObjectHashMap<>();
+	private static final Map<Integer, Set<Integer>> groups = new HashMap<>();
 
-	private final TIntObjectHashMap<L2DoorInstance> doors;
-	private final TIntObjectHashMap<ArrayList<L2DoorInstance>> regions;
+	private final Map<Integer, L2DoorInstance> doors;
+	private final Map<Integer, ArrayList<L2DoorInstance>> regions;
 
 	public static DoorTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private DoorTable() {
-		doors = new TIntObjectHashMap<>();
-		regions = new TIntObjectHashMap<>();
+		doors = new HashMap<>();
+		regions = new HashMap<>();
 		parseData();
 	}
 
@@ -168,7 +169,7 @@ public class DoorTable {
 	public void putDoor(L2DoorInstance door, int region) {
 		doors.put(door.getDoorId(), door);
 
-		if (regions.contains(region)) {
+		if (regions.containsKey(region)) {
 			regions.get(region).add(door);
 		} else {
 			final ArrayList<L2DoorInstance> list = new ArrayList<>();
@@ -178,7 +179,7 @@ public class DoorTable {
 	}
 
 	public L2DoorInstance[] getDoors() {
-		return doors.getValues(new L2DoorInstance[doors.size()]);
+		return doors.values().toArray(new L2DoorInstance[doors.values().size()]);
 	}
 
 	public boolean checkIfDoorsBetween(AbstractNodeLoc start, AbstractNodeLoc end, int instanceId) {

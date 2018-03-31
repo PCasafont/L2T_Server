@@ -15,7 +15,7 @@
 
 package l2server.gameserver.datatables;
 
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.stats.Stats;
@@ -35,7 +35,7 @@ import java.util.StringTokenizer;
  */
 public class EnchantHPBonusData {
 
-	private final TIntObjectHashMap<Integer[]> armorHPBonus = new TIntObjectHashMap<>();
+	private final Map<Integer, Integer[]> armorHPBonus = new HashMap<>();
 	private static final float fullArmorModifier = 1.5f;
 
 	public static EnchantHPBonusData getInstance() {

@@ -16,7 +16,7 @@
 package ai.group_template;
 
 import gnu.trove.TIntHashSet;
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Npc;
@@ -31,7 +31,7 @@ public class SummonMinions extends L2AttackableAIScript {
 	private static int HasSpawned;
 	private static TIntHashSet myTrackingSet = new TIntHashSet(); //Used to track instances of npcs
 	private ConcurrentHashMap<Integer, ArrayList<L2PcInstance>> attackersList = new ConcurrentHashMap<Integer, ArrayList<L2PcInstance>>();
-	private static final TIntObjectHashMap<int[]> MINIONS = new TIntObjectHashMap<int[]>();
+	private static final Map<Integer, int[]> MINIONS = new HashMap<>();
 
 	static {
 		MINIONS.put(20767, new int[]{20768, 20769, 20770}); //Timak Orc Troop

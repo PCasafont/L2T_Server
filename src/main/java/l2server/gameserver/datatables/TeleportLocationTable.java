@@ -15,7 +15,7 @@
 
 package l2server.gameserver.datatables;
 
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
@@ -33,7 +33,7 @@ import java.io.File;
  */
 public class TeleportLocationTable implements Reloadable {
 
-	private TIntObjectHashMap<L2TeleportLocation> teleports;
+	private Map<Integer, L2TeleportLocation> teleports;
 
 	public static TeleportLocationTable getInstance() {
 		return SingletonHolder.instance;
@@ -47,7 +47,7 @@ public class TeleportLocationTable implements Reloadable {
 
 	@Override
 	public boolean reload() {
-		teleports = new TIntObjectHashMap<>();
+		teleports = new HashMap<>();
 		boolean success = true;
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "teleports.xml");
