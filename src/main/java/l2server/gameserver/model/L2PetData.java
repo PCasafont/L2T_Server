@@ -15,7 +15,7 @@
 
 package l2server.gameserver.model;
 
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.gameserver.datatables.SkillTable;
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ import java.util.List;
  * @author JIV
  */
 public class L2PetData {
-	private TIntObjectHashMap<L2PetLevelData> levelStats = new TIntObjectHashMap<>();
+	private Map<Integer, L2PetLevelData> levelStats = new HashMap<>();
 	private List<L2PetSkillLearn> skills = new ArrayList<>();
 
 	private int load = 20000;

@@ -15,7 +15,6 @@
 
 package l2server.gameserver.instancemanager;
 
-import gnu.trove.TIntObjectHashMap;
 import gnu.trove.TObjectProcedure;
 import l2server.Config;
 import l2server.gameserver.model.actor.L2Character;
@@ -32,7 +31,7 @@ public class AntiFeedManager {
 	public static final int TVT_ID = 2;
 
 	private Map<Integer, Long> lastDeathTimes;
-	private TIntObjectHashMap<Map<Integer, Connections>> eventIPs;
+	private Map<Integer, Map<Integer, Connections>> eventIPs;
 
 	public static AntiFeedManager getInstance() {
 		return SingletonHolder.instance;
@@ -40,7 +39,7 @@ public class AntiFeedManager {
 
 	private AntiFeedManager() {
 		lastDeathTimes = new ConcurrentHashMap<>();
-		eventIPs = new TIntObjectHashMap<>();
+		eventIPs = new HashMap<>();
 	}
 
 	/**
@@ -232,7 +231,7 @@ public class AntiFeedManager {
 		}
 
 		final Integer addrHash = client.getConnectionAddress().hashCode();
-		eventIPs.forEachValue(new DisconnectProcedure(addrHash));
+		eventIPs.values().forEach(ip -> new DisconnectProcedure(addrHash));
 	}
 
 	/**

@@ -15,7 +15,7 @@
 
 package quests.Q692_HowtoOpposeEvil;
 
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -32,7 +32,7 @@ public final class Q692_HowtoOpposeEvil extends Quest {
 	private static final int LEKONS_CERTIFICATE = 13857;
 	private static final int[] QUEST_ITEMS = {13863, 13864, 13865, 13866, 13867, 15535, 15536};
 
-	private static final TIntObjectHashMap<Integer[]> questMobs = new TIntObjectHashMap<Integer[]>();
+	private static final Map<Integer, Integer[]> questMobs = new HashMap<>();
 
 	static {
 		// Seed of Infinity
@@ -206,7 +206,7 @@ public final class Q692_HowtoOpposeEvil extends Quest {
 
 	public Q692_HowtoOpposeEvil(int questId, String name, String descr) {
 		super(questId, name, descr);
-		for (int i : questMobs.keys()) {
+		for (int i : questMobs.keySet()) {
 			addKillId(i);
 		}
 		addStartNpc(DILIOS);

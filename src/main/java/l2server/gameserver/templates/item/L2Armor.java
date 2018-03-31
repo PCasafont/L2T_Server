@@ -15,7 +15,7 @@
 
 package l2server.gameserver.templates.item;
 
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.stats.SkillHolder;
@@ -35,7 +35,7 @@ import java.util.ArrayList;
 public final class L2Armor extends L2Item {
 	public static final int MAX_ENCHANT_SKILL = 10;
 
-	private TIntObjectHashMap<SkillHolder> enchantSkills = new TIntObjectHashMap<>();
+	private Map<Integer, SkillHolder> enchantSkills = new HashMap<>();
 	// skill that activates when armor is enchanted +X
 	// private final String[] skill;
 	private L2ArmorType type;

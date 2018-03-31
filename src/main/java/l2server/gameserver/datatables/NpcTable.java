@@ -15,7 +15,7 @@
 
 package l2server.gameserver.datatables;
 
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.instancemanager.SearchDropManager;
 import l2server.gameserver.model.*;
@@ -47,7 +47,7 @@ import java.util.Set;
  * @version $Revision: 1.8.2.6.2.9 $ $Date: 2005/04/06 16:13:25 $
  */
 public class NpcTable {
-	private TIntObjectHashMap<L2NpcTemplate> npcs;
+	private Map<Integer, L2NpcTemplate> npcs;
 	
 	public static NpcTable getInstance() {
 		return SingletonHolder.instance;
@@ -59,7 +59,7 @@ public class NpcTable {
 	
 	// just wrapper
 	public void reloadAllNpc() {
-		npcs = new TIntObjectHashMap<>();
+		npcs = new HashMap<>();
 		
 		restoreNpcData(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "npcs", false);
 		
@@ -488,7 +488,7 @@ public class NpcTable {
 	}
 	
 	public L2NpcTemplate getTemplateByName(String name) {
-		for (Object npcTemplate : npcs.getValues()) {
+		for (Object npcTemplate : npcs.values()) {
 			if (((L2NpcTemplate) npcTemplate).Name.equalsIgnoreCase(name)) {
 				return (L2NpcTemplate) npcTemplate;
 			}
@@ -500,7 +500,7 @@ public class NpcTable {
 	public L2NpcTemplate[] getAllTemplates() {
 		List<L2NpcTemplate> list = new ArrayList<>();
 		
-		for (Object t : npcs.getValues()) {
+		for (Object t : npcs.values()) {
 			list.add((L2NpcTemplate) t);
 		}
 		
@@ -510,7 +510,7 @@ public class NpcTable {
 	public L2NpcTemplate[] getAllOfLevel(int lvl) {
 		List<L2NpcTemplate> list = new ArrayList<>();
 		
-		for (Object t : npcs.getValues()) {
+		for (Object t : npcs.values()) {
 			if (((L2NpcTemplate) t).Level == lvl) {
 				list.add((L2NpcTemplate) t);
 			}
@@ -522,7 +522,7 @@ public class NpcTable {
 	public L2NpcTemplate[] getAllMonstersOfLevel(int lvl) {
 		List<L2NpcTemplate> list = new ArrayList<>();
 		
-		for (Object t : npcs.getValues()) {
+		for (Object t : npcs.values()) {
 			if (((L2NpcTemplate) t).Level == lvl && "L2Monster".equals(((L2NpcTemplate) t).Type)) {
 				list.add((L2NpcTemplate) t);
 			}
@@ -534,7 +534,7 @@ public class NpcTable {
 	public L2NpcTemplate[] getAllNpcStartingWith(String letter) {
 		List<L2NpcTemplate> list = new ArrayList<>();
 		
-		for (Object t : npcs.getValues()) {
+		for (Object t : npcs.values()) {
 			if (((L2NpcTemplate) t).Name.startsWith(letter) && "L2Npc".equals(((L2NpcTemplate) t).Type)) {
 				list.add((L2NpcTemplate) t);
 			}
@@ -569,7 +569,7 @@ public class NpcTable {
 	public final L2NpcTemplate[] getAllRaidBoss() {
 		final ArrayList<L2NpcTemplate> list = new ArrayList<>();
 		
-		for (final Object t : npcs.getValues()) {
+		for (final Object t : npcs.values()) {
 			if ("L2Raidboss".equalsIgnoreCase(((L2NpcTemplate) t).Type)) {
 				list.add((L2NpcTemplate) t);
 			}
@@ -581,7 +581,7 @@ public class NpcTable {
 	public final L2NpcTemplate[] getAllMonsters() {
 		final ArrayList<L2NpcTemplate> list = new ArrayList<>();
 		
-		for (final Object t : npcs.getValues()) {
+		for (final Object t : npcs.values()) {
 			if ("L2Monster".equalsIgnoreCase(((L2NpcTemplate) t).Type)) {
 				list.add((L2NpcTemplate) t);
 			}
@@ -592,7 +592,7 @@ public class NpcTable {
 	public final L2NpcTemplate[] getAllNpcByType(final String type) {
 		final ArrayList<L2NpcTemplate> list = new ArrayList<>();
 		
-		for (final Object t : npcs.getValues()) {
+		for (final Object t : npcs.values()) {
 			if (type.equalsIgnoreCase(((L2NpcTemplate) t).Type)) {
 				list.add((L2NpcTemplate) t);
 			}
@@ -603,7 +603,7 @@ public class NpcTable {
 	public final L2NpcTemplate[] getAllMonstersBetweenLevels(final int minLevel, final int maxLevel) {
 		final ArrayList<L2NpcTemplate> list = new ArrayList<>();
 		
-		for (final Object t : npcs.getValues()) {
+		for (final Object t : npcs.values()) {
 			if (!((L2NpcTemplate) t).Type.equals("L2Monster")) {
 				continue;
 			} else if (((L2NpcTemplate) t).Level < minLevel || ((L2NpcTemplate) t).Level > maxLevel) {

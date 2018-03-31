@@ -16,7 +16,7 @@
 package l2server.gameserver.instancemanager;
 
 import gnu.trove.TIntIntHashMap;
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.NpcTable;
@@ -65,7 +65,7 @@ public class GrandBossManager {
 	
 	protected static Map<Integer, L2GrandBossInstance> bosses;
 	
-	protected static TIntObjectHashMap<StatsSet> storedInfo;
+	protected static Map<Integer, StatsSet> storedInfo;
 	
 	private TIntIntHashMap bossStatus;
 	
@@ -89,7 +89,7 @@ public class GrandBossManager {
 		zones = new ArrayList<>();
 		
 		bosses = new HashMap<>();
-		storedInfo = new TIntObjectHashMap<>();
+		storedInfo = new HashMap<>();
 		bossStatus = new TIntIntHashMap();
 		Connection con = null;
 		try {
@@ -150,11 +150,6 @@ public class GrandBossManager {
 		Connection con = null;
 		
 		HashMap<Integer, ArrayList<Integer>> zones = new HashMap<>();
-		
-		if (zones == null) {
-			Log.warning("GrandBossManager: Could not read Grand Boss zone data");
-			return;
-		}
 		
 		for (L2BossZone zone : this.zones) {
 			if (zone == null) {
@@ -309,7 +304,7 @@ public class GrandBossManager {
 			
 			PreparedStatement updateStatement1 = con.prepareStatement(UPDATE_GRAND_BOSS_DATA2);
 			PreparedStatement updateStatement2 = con.prepareStatement(UPDATE_GRAND_BOSS_DATA);
-			for (Integer bossId : storedInfo.keys()) {
+			for (Integer bossId : storedInfo.keySet()) {
 				L2GrandBossInstance boss = bosses.get(bossId);
 				StatsSet info = storedInfo.get(bossId);
 				if (boss == null || info == null) {

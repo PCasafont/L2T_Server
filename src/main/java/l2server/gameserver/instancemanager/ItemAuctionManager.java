@@ -15,7 +15,7 @@
 
 package l2server.gameserver.instancemanager;
 
-import gnu.trove.TIntObjectHashMap;
+import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.itemauction.ItemAuctionInstance;
@@ -39,11 +39,11 @@ public final class ItemAuctionManager {
 		return SingletonHolder.instance;
 	}
 
-	private final TIntObjectHashMap<ItemAuctionInstance> managerInstances;
+	private final Map<Integer, ItemAuctionInstance> managerInstances;
 	private final AtomicInteger auctionIds;
 
 	private ItemAuctionManager() {
-		managerInstances = new TIntObjectHashMap<>();
+		managerInstances = new HashMap<>();
 		auctionIds = new AtomicInteger(1);
 
 		if (!Config.ALT_ITEM_AUCTION_ENABLED || Config.IS_CLASSIC) {
@@ -92,7 +92,7 @@ public final class ItemAuctionManager {
 	}
 
 	public final void shutdown() {
-		final ItemAuctionInstance[] instances = managerInstances.getValues(new ItemAuctionInstance[managerInstances.size()]);
+		final ItemAuctionInstance[] instances = managerInstances.values().toArray(new ItemAuctionInstance[managerInstances.values().size()]);
 		for (final ItemAuctionInstance instance : instances) {
 			instance.shutdown();
 		}

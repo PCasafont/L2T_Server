@@ -709,7 +709,7 @@ public final class Config {
 	public static boolean L2JMOD_DEBUG_VOICE_COMMAND;
 	public static int L2JMOD_DUALBOX_CHECK_MAX_PLAYERS_PER_IP;
 	public static int L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP;
-	public static Map<String, Integer> L2JMOD_DUALBOX_CHECK_WHITELIST;
+	public static Map<Integer, Integer> L2JMOD_DUALBOX_CHECK_WHITELIST;
 	
 	//--------------------------------------------------
 	// NPC Settings
