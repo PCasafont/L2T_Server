@@ -140,9 +140,6 @@ public class ItemTable implements Reloadable {
 	 * Constructor.
 	 */
 	private ItemTable() {
-		etcItems;
-		armors = new HashMap<>();
-		weapons = new HashMap<>();
 		load();
 		
 		ReloadableManager.getInstance().register("items", this);
