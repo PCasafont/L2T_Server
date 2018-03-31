@@ -78,8 +78,9 @@ public class CharSelectionInfo extends L2GameServerPacket {
 		writeD(0x07);
 		writeC(0x00);
 		
-		writeD(0x01);
-		writeC(0x01);
+		writeC(0x02);
+		writeD(0x00);
+		writeC(0x00);
 		writeC(0x00);
 		
 		long lastAccess = 0L;
@@ -185,7 +186,7 @@ public class CharSelectionInfo extends L2GameServerPacket {
 			writeD(0x00);
 			writeH(0x00);
 			
-			// Salvation unkonwn
+			// Salvation unknown
 			writeD(0x00);
 			writeD(0x00);
 			writeD(0x00);
