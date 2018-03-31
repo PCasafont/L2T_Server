@@ -207,7 +207,7 @@ public class Lilith extends L2AttackableAIScript {
 				for (int i = 0; i < 2; i++) {
 					randomSpawn = spawns.get(Rnd.get(spawns.size()));
 					if (randomSpawn != null) {
-						L2Npc remnant = addSpawn(this.remnant,
+						L2Npc remnant = addSpawn(Lilith.remnant,
 								randomSpawn.getX(),
 								randomSpawn.getY(),
 								randomSpawn.getZ(),

@@ -15,7 +15,6 @@
 
 package l2server.gameserver.datatables;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.instancemanager.SearchDropManager;
 import l2server.gameserver.model.*;
@@ -36,10 +35,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 /**
  * This class ...
@@ -65,7 +62,7 @@ public class NpcTable {
 		
 		// Remove shit drops from highrate servers
 		if (Config.isServer(Config.TENKAI)) {
-			for (int npcId : npcs.keys()) {
+			for (int npcId : npcs.keySet()) {
 				L2NpcTemplate npc = npcs.get(npcId);
 				List<L2DropData> dropsToRemove = new ArrayList<>();
 				for (L2DropData dd : npc.getDropData()) {

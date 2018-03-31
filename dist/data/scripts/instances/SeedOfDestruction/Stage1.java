@@ -15,7 +15,6 @@
 
 package instances.SeedOfDestruction;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlIntention;
@@ -88,8 +87,8 @@ public class Stage1 extends Quest {
 	private static final int MAX_PLAYERS = 45;
 	private static final int MAX_DEVICESPAWNEDMOBCOUNT = 100; // prevent too much mob spawn
 
-	private Map<Integer, L2Territory> spawnZoneList = new HashMap<>();
-	private Map<Integer, List<SODSpawn>> spawnList = new HashMap<>();
+	private Map<Integer, L2Territory> spawnZoneList = new HashMap<Integer, L2Territory>();
+	private Map<Integer, List<SODSpawn>> spawnList = new HashMap<Integer, List<SODSpawn>>();
 	private List<Integer> mustKillMobsId = new ArrayList<Integer>();
 
 	// teleports
