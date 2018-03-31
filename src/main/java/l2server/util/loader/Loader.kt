@@ -21,7 +21,6 @@ package l2server.util.loader
 import l2server.util.ClassPathUtil
 import l2server.util.TreeNode
 import l2server.util.concurrent.ThreadPool
-import l2server.util.loader.annotations.InstanceGetter
 import l2server.util.loader.annotations.Load
 import l2server.util.loader.annotations.Reload
 import java.io.IOException
@@ -215,7 +214,7 @@ object Loader {
 
 	private fun findInstanceGetterMethod(clazz: Class<*>): Method {
 		val instanceGetterMethods = Arrays.stream(clazz.declaredMethods)
-				.filter { m -> m.isAnnotationPresent(InstanceGetter::class.java) }
+				.filter { it.parameterCount == 0 && it.name == "getInstance" }
 				.collect(Collectors.toList())
 		if (instanceGetterMethods.isEmpty()) {
 			throw UnsupportedOperationException(

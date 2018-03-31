@@ -60,9 +60,9 @@ public class ItemTable implements Reloadable {
 	public static final Map<String, L2ArmorType> armorTypes = new HashMap<>();
 	
 	private L2Item[] allTemplates;
-	private Map<Integer, L2EtcItem> etcItems;
-	private Map<Integer, L2Armor> armors;
-	private Map<Integer, L2Weapon> weapons;
+	private Map<Integer, L2EtcItem> etcItems = new HashMap<>();
+	private Map<Integer, L2Armor> armors = new HashMap<>();
+	private Map<Integer, L2Weapon> weapons = new HashMap<>();
 	
 	static {
 		crystalTypes.put("r99", L2Item.CRYSTAL_R99);
@@ -140,7 +140,7 @@ public class ItemTable implements Reloadable {
 	 * Constructor.
 	 */
 	private ItemTable() {
-		etcItems = new HashMap<>();
+		etcItems;
 		armors = new HashMap<>();
 		weapons = new HashMap<>();
 		load();
