@@ -18,6 +18,7 @@ package l2server.gameserver.datatables;
 import l2server.Config;
 import l2server.gameserver.model.entity.ActionKey;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -31,23 +32,24 @@ import java.util.Map;
  * @author mrTJO
  */
 public class UITable {
-	private Map<Integer, List<ActionKey>> storedKeys;
-	private Map<Integer, List<Integer>> storedCategories;
+	private Map<Integer, List<ActionKey>> storedKeys = new HashMap<>();
+	private Map<Integer, List<Integer>> storedCategories = new HashMap<>();
 
 	public static UITable getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private UITable() {
-		storedKeys = new HashMap<>();
-		storedCategories = new HashMap<>();
-
+	}
+	
+	@Load
+	public void load() {
 		parseCatData();
 		parseKeyData();
 		Log.info("UITable: Loaded " + storedCategories.size() + " Categories.");
 		Log.info("UITable: Loaded " + storedKeys.size() + " Keys.");
 	}
-
+	
 	private void parseCatData() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "uiCatsEn.xml");
 		XmlDocument doc = new XmlDocument(file);

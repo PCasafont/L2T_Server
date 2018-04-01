@@ -16,6 +16,7 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.Config;
+import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.model.L2DropCategory;
@@ -25,6 +26,7 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -65,12 +67,14 @@ public class FarmZoneManager {
 	}
 
 	private FarmZoneManager() {
-		if (!Config.SERVER_NAME.isEmpty()) {
-			load();
-		}
 	}
 
+	@Load(dependencies = NpcTable.class)
 	private void load() {
+		if (!Config.isServer(Config.TENKAI)) {
+			return;
+		}
+		
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "farmZones.xml");
 		XmlDocument doc = new XmlDocument(file);
 		for (XmlNode farmNode : doc.getChildren()) {

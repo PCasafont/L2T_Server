@@ -4,6 +4,7 @@ import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.L2Skill;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -20,11 +21,11 @@ public class ResidentialSkillTable {
 	private static ResidentialSkillTable instance = null;
 	private static Map<Integer, ArrayList<L2Skill>> list;
 
-	ResidentialSkillTable() {
-		load();
+	private ResidentialSkillTable() {
 	}
-
-	private void load() {
+	
+	@Load(dependencies = SkillTable.class)
+	public void load() {
 		list = new HashMap<>();
 
 		if (Config.IS_CLASSIC) {

@@ -16,14 +16,14 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.model.L2SkillLearn;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.base.Race;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -34,7 +34,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * @author Pere
  */
-public class PlayerClassTable implements Reloadable {
+public class PlayerClassTable {
 	private Map<Integer, PlayerClass> classes = new HashMap<>();
 
 	private Map<Long, Integer> minSkillLevels = new HashMap<>();
@@ -49,14 +49,9 @@ public class PlayerClassTable implements Reloadable {
 	}
 
 	private PlayerClassTable() {
-		try {
-			load();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		ReloadableManager.getInstance().register("classes", this);
 	}
 
+	@Load
 	public void load() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "classes.xml");
 		XmlDocument doc = new XmlDocument(file);
@@ -261,23 +256,14 @@ public class PlayerClassTable implements Reloadable {
 			}
 		}
 	}
-
-	@Override
-	public boolean reload() {
+	
+	@Reload("classes")
+	public void reload() {
 		load();
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
 			player.setClassTemplate(player.getCurrentClass().getId());
 			player.broadcastUserInfo();
 		}
-
-		HennaTable.getInstance().reload();
-
-		return true;
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Player Classes reloaded";
 	}
 
 	public final Collection<PlayerClass> getAllClasses() {

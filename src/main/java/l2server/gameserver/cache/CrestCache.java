@@ -21,6 +21,7 @@ import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2Clan;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.io.*;
 import java.sql.Connection;
@@ -48,10 +49,14 @@ public class CrestCache {
 	}
 
 	private CrestCache() {
+	}
+	
+	@Load
+	public void initialize() {
 		convertOldPedgeFiles();
 		reload();
 	}
-
+	
 	public void reload() {
 		FileFilter filter = new BmpFilter();
 

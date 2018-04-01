@@ -23,6 +23,7 @@ import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.templates.item.L2EtcItemType;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -37,27 +38,25 @@ import java.util.logging.Level;
  * @version $Revision: $ $Date: $
  */
 public class ItemsOnGroundManager {
-	protected List<L2ItemInstance> items = null;
+	protected List<L2ItemInstance> items = new ArrayList<>();
 	private final StoreInDb task = new StoreInDb();
 
 	private ItemsOnGroundManager() {
-		if (Config.SAVE_DROPPED_ITEM) {
-			items = new ArrayList<>();
-		}
-		if (Config.SAVE_DROPPED_ITEM_INTERVAL > 0) {
-			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(task, Config.SAVE_DROPPED_ITEM_INTERVAL, Config.SAVE_DROPPED_ITEM_INTERVAL);
-		}
-		load();
 	}
 
 	public static ItemsOnGroundManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	private void load() {
+	@Load
+	public void load() {
 		// If SaveDroppedItem is false, may want to delete all items previously stored to avoid add old items on reactivate
 		if (!Config.SAVE_DROPPED_ITEM && Config.CLEAR_DROPPED_ITEM_TABLE) {
 			emptyTable();
+		}
+		
+		if (Config.SAVE_DROPPED_ITEM_INTERVAL > 0) {
+			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(task, Config.SAVE_DROPPED_ITEM_INTERVAL, Config.SAVE_DROPPED_ITEM_INTERVAL);
 		}
 
 		if (!Config.SAVE_DROPPED_ITEM) {

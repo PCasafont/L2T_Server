@@ -20,6 +20,7 @@ import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -29,6 +30,7 @@ import java.io.File;
  * @author Pere
  */
 public class AbilityTable {
+	
 	public class Ability {
 		private int type;
 		private int skillId;
@@ -84,12 +86,13 @@ public class AbilityTable {
 	}
 
 	private AbilityTable() {
-		if (!Config.IS_CLASSIC) {
-			readAbilities();
-		}
 	}
 
-	private void readAbilities() {
+	@Load
+	public void readAbilities() {
+		if (Config.IS_CLASSIC) {
+			return;
+		}
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "abilities.xml");
 		XmlDocument doc = new XmlDocument(file);
 		for (XmlNode abilityNode : doc.getChildren()) {

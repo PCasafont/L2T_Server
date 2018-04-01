@@ -30,6 +30,7 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -165,12 +166,16 @@ public class CastleManorManager {
 	}
 
 	private CastleManorManager() {
+	}
+	
+	@Load(dependencies = CastleManager.class)
+	public void initialize() {
 		Log.info("Initializing CastleManorManager");
 		load(); // load data from database
 		init(); // schedule all manor related events
 		underMaintenance = false;
 		disabled = !Config.ALLOW_MANOR;
-
+		
 		boolean isApproved;
 		if (periodApprove.getTimeInMillis() > manorRefresh.getTimeInMillis())
 		// Next approve period already scheduled
@@ -180,12 +185,12 @@ public class CastleManorManager {
 			isApproved = periodApprove.getTimeInMillis() < Calendar.getInstance().getTimeInMillis() &&
 					manorRefresh.getTimeInMillis() > Calendar.getInstance().getTimeInMillis();
 		}
-
+		
 		for (Castle c : CastleManager.getInstance().getCastles()) {
 			c.setNextPeriodApproved(isApproved);
 		}
 	}
-
+	
 	private void load() {
 		Connection con = null;
 		ResultSet rs;

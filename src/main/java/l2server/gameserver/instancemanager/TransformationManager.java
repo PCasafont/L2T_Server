@@ -32,10 +32,9 @@ public class TransformationManager {
 		return SingletonHolder.instance;
 	}
 
-	private Map<Integer, L2Transformation> transformations;
+	private Map<Integer, L2Transformation> transformations = new HashMap<>();
 
 	private TransformationManager() {
-		transformations = new HashMap<>();
 	}
 
 	public void report() {

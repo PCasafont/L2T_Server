@@ -17,8 +17,6 @@ package l2server.gameserver.instancemanager;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.CharTemplateTable;
@@ -36,6 +34,8 @@ import l2server.gameserver.templates.chars.L2PcTemplate;
 import l2server.gameserver.templates.chars.L2PcTemplate.PcTemplateItem;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -50,23 +50,22 @@ import java.util.stream.Collectors;
 /**
  * @author Pere
  */
-public class ArtificialPlayersManager implements Reloadable {
+public class ArtificialPlayersManager {
 	List<L2ApInstance> players = new ArrayList<>();
 
 	ScheduledFuture<?> pvpCheck = null;
 	List<L2Party> partiesSent = new ArrayList<>();
 
 	private ArtificialPlayersManager() {
-		reload();
-		ReloadableManager.getInstance().register("aplayers", this);
 	}
 
 	public static ArtificialPlayersManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	@Override
-	public boolean reload() {
+	@Reload("aplayers")
+	@Load
+	public boolean load() {
 		players.clear();
 
 		Connection con = null;
@@ -364,10 +363,5 @@ public class ArtificialPlayersManager implements Reloadable {
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder {
 		protected static final ArtificialPlayersManager instance = new ArtificialPlayersManager();
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		return success ? "Artificial players reloaded!" : "Couldn't reload Artificial Players.";
 	}
 }

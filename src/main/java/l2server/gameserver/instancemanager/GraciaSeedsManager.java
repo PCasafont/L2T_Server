@@ -17,8 +17,10 @@ package l2server.gameserver.instancemanager;
 
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.model.quest.Quest;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.util.Calendar;
 
@@ -36,12 +38,16 @@ public class GraciaSeedsManager {
 	private Calendar SoDLastStateChangeDate;
 
 	private GraciaSeedsManager() {
+	}
+	
+	@Load
+	public void initialize() {
 		Log.info(getClass().getSimpleName() + ": Initializing");
 		SoDLastStateChangeDate = Calendar.getInstance();
 		loadData();
 		handleSodStages();
 	}
-
+	
 	public void saveData(byte seedType) {
 		switch (seedType) {
 			case SODTYPE:

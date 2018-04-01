@@ -20,6 +20,7 @@ import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.type.L2OlympiadStadiumZone;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.util.Collection;
 import java.util.List;
@@ -30,14 +31,18 @@ import java.util.List;
 public class OlympiadGameManager implements Runnable {
 
 	private volatile boolean battleStarted = false;
-	private final OlympiadGameTask[] tasks;
+	private OlympiadGameTask[] tasks;
 
 	private OlympiadGameManager() {
+	}
+	
+	@Load(dependencies = {Olympiad.class, ZoneManager.class})
+	public void initialize() {
 		final Collection<L2OlympiadStadiumZone> zones = ZoneManager.getInstance().getAllZones(L2OlympiadStadiumZone.class);
 		if (zones == null || zones.isEmpty()) {
 			throw new Error("No olympiad stadium zones defined !");
 		}
-
+		
 		tasks = new OlympiadGameTask[zones.size() * 40];
 		int i = 0;
 		for (L2OlympiadStadiumZone zone : zones) {
@@ -46,10 +51,10 @@ public class OlympiadGameManager implements Runnable {
 			}
 			i++;
 		}
-
+		
 		Log.info("Olympiad System: Loaded " + tasks.length + " stadium instances.");
 	}
-
+	
 	public static OlympiadGameManager getInstance() {
 		return SingletonHolder.instance;
 	}

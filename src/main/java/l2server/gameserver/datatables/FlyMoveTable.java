@@ -16,8 +16,6 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.L2FlyMove;
 import l2server.gameserver.model.L2FlyMove.L2FlyMoveChoose;
@@ -28,6 +26,8 @@ import l2server.gameserver.model.zone.form.ZoneCylinder;
 import l2server.gameserver.model.zone.type.L2FlyMoveZone;
 import l2server.log.Log;
 import l2server.util.Point3D;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -36,7 +36,7 @@ import java.io.File;
 /**
  * @author Pere
  */
-public class FlyMoveTable implements Reloadable {
+public class FlyMoveTable {
 	private static FlyMoveTable instance;
 
 	public static FlyMoveTable getInstance() {
@@ -48,13 +48,14 @@ public class FlyMoveTable implements Reloadable {
 	}
 
 	private FlyMoveTable() {
-		if (!Config.IS_CLASSIC) {
-			load();
-			ReloadableManager.getInstance().register("sayune", this);
-		}
 	}
 
+	@Load(dependencies = ZoneManager.class)
 	private void load() {
+		if (Config.IS_CLASSIC) {
+			return;
+		}
+		
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "flyMoves.xml");
 		XmlDocument doc = new XmlDocument(file);
 
@@ -126,15 +127,9 @@ public class FlyMoveTable implements Reloadable {
 		Log.info("FlyMoveTable: Loaded " + count + " fly moves.");
 	}
 
-	@Override
-	public boolean reload() {
+	@Reload("sayune")
+	public void reload() {
 		ZoneManager.getInstance().reload();
 		load();
-		return true;
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Sayune reloaded!";
 	}
 }

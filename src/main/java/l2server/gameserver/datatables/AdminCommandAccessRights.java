@@ -19,6 +19,8 @@ import l2server.Config;
 import l2server.gameserver.model.L2AccessLevel;
 import l2server.gameserver.model.L2AdminCommandAccessRight;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -49,13 +51,14 @@ public class AdminCommandAccessRights {
 	 * The access rights<br>
 	 */
 	private AdminCommandAccessRights() {
-		loadAdminCommandAccessRights();
 	}
 
 	/**
 	 * Loads admin command access rights from database<br>
 	 */
-	private void loadAdminCommandAccessRights() {
+	@Reload("access")
+	@Load
+	public void load() {
 		adminCommandAccessRights = new HashMap<>();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "adminCommands.xml");
 
@@ -94,10 +97,6 @@ public class AdminCommandAccessRights {
 			return false;
 		}
 		return adminCommandAccessRights.get(command).getRequireConfirm();
-	}
-
-	public void reloadAdminCommandAccessRights() {
-		loadAdminCommandAccessRights();
 	}
 
 	@SuppressWarnings("synthetic-access")

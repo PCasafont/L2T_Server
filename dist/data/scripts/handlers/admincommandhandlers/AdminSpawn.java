@@ -18,7 +18,6 @@ package handlers.admincommandhandlers;
 import l2server.gameserver.GmListTable;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SpawnTable;
-import l2server.gameserver.datatables.TeleportLocationTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.DayNightSpawnManager;
@@ -165,16 +164,13 @@ public class AdminSpawn implements IAdminCommandHandler {
 			DayNightSpawnManager.getInstance().cleanUp();
 			L2World.getInstance().deleteVisibleNpcSpawns();
 			// now respawn all
-			NpcTable.getInstance().reloadAllNpc();
+			NpcTable.getInstance().load();
 			CastleManager.getInstance().spawnCastleTendencyNPCs();
-			SpawnTable.getInstance().reloadAll();
+			SpawnTable.getInstance().load();
 			AutoSpawnHandler.getInstance().reload();
 			AutoChatHandler.getInstance().reload();
 			QuestManager.getInstance().reload();
 			GmListTable.broadcastMessageToGMs("NPC Respawn completed!");
-		} else if (command.startsWith("admin_teleport_reload")) {
-			TeleportLocationTable.getInstance().reload();
-			GmListTable.broadcastMessageToGMs("Teleport List Table reloaded.");
 		} else if (command.startsWith("admin_spawn_monster") || command.startsWith("admin_spawn")) {
 			StringTokenizer st = new StringTokenizer(command, " ");
 			try {

@@ -96,7 +96,7 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient> 
 	 */
 	public final String getType() {
 		String type = "[C]";
-		byte[] opcode = PacketOpcodes.getClientPacketOpcode(getClass());
+		byte[] opcode = PacketOpcodes.INSTANCE.getClientPacketOpcode(getClass());
 		if (opcode != null) {
 			type += " " + Integer.toHexString(opcode[0] & 0xff);
 			if (opcode.length > 2) {

@@ -24,6 +24,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.base.Race;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -50,7 +51,6 @@ public class SkillTreeTable {
 	}
 
 	private SkillTreeTable() {
-		load();
 	}
 
 	/**
@@ -79,7 +79,8 @@ public class SkillTreeTable {
 		return 0;
 	}
 
-	private void load() {
+	@Load(dependencies = SkillTable.class)
+	public void load() {
 		loading = true;
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "skilltrees/fishingSkillTree.xml");
@@ -664,9 +665,5 @@ public class SkillTreeTable {
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder {
 		protected static final SkillTreeTable instance = new SkillTreeTable();
-	}
-
-	public void reload() {
-		load();
 	}
 }

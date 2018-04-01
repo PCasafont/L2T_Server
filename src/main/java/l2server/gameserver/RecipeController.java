@@ -29,6 +29,7 @@ import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -38,7 +39,7 @@ import java.util.logging.Level;
 
 public class RecipeController {
 
-	private Map<Integer, L2RecipeList> lists;
+	private Map<Integer, L2RecipeList> lists = new HashMap<>();
 	private static final Map<Integer, RecipeItemMaker> activeMakers = new HashMap<>();
 	private static final String RECIPES_FILE = "recipes.xml";
 
@@ -47,14 +48,6 @@ public class RecipeController {
 	}
 
 	private RecipeController() {
-		lists = new HashMap<>();
-
-		try {
-			loadFromXML();
-			Log.info("RecipeController: Loaded " + lists.size() + " recipes.");
-		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Failed loading recipe list", e);
-		}
 	}
 
 	public int getRecipesCount() {
@@ -183,7 +176,8 @@ public class RecipeController {
 		}
 	}
 
-	private void loadFromXML() {
+	@Load
+	public void load() {
 		File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "" + RECIPES_FILE);
 		File customFile = new File(Config.DATAPACK_ROOT + "/data_" + Config.SERVER_NAME + "/recipes.xml");
 		if (customFile.exists()) {
@@ -262,6 +256,7 @@ public class RecipeController {
 					lists.put(id, recipeList);
 				}
 			}
+			Log.info("RecipeController: Loaded " + lists.size() + " recipes.");
 		} else {
 			Log.severe("Recipes file (" + file.getAbsolutePath() + ") it doesn't exist.");
 		}

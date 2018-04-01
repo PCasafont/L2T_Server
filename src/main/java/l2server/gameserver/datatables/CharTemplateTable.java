@@ -16,14 +16,14 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2PcTemplate;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -32,23 +32,20 @@ import java.io.File;
 /**
  * @author Unknown, Forsaiken
  */
-public final class CharTemplateTable implements Reloadable {
+public final class CharTemplateTable {
 	
 	public static CharTemplateTable getInstance() {
 		return SingletonHolder.instance;
 	}
 	
-	private final L2PcTemplate[] templates;
+	private final L2PcTemplate[] templates = new L2PcTemplate[Race.values().length * 2];
 	
 	private CharTemplateTable() {
-		templates = new L2PcTemplate[Race.values().length * 2];
-		load();
-		
-		ReloadableManager.getInstance().register("chartemplates", this);
 	}
 	
+	@Load(dependencies = ItemTable.class)
 	public void load() {
-		File file = null;
+		File file;
 		
 		File customFile = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/races.xml");
 		if (customFile.exists()) {
@@ -145,7 +142,7 @@ public final class CharTemplateTable implements Reloadable {
 		Log.info("CharTemplateTable: Loaded " + count + " Character Templates.");
 	}
 	
-	@Override
+	@Reload("charTemplates")
 	public boolean reload() {
 		load();
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
@@ -153,11 +150,6 @@ public final class CharTemplateTable implements Reloadable {
 			player.broadcastUserInfo();
 		}
 		return true;
-	}
-	
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Character templates reloaded";
 	}
 	
 	public L2PcTemplate getTemplate(int tId) {

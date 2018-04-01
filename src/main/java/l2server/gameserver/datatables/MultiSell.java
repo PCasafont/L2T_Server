@@ -16,8 +16,6 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.instancemanager.RaidBossPointsManager;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -30,6 +28,8 @@ import l2server.gameserver.network.serverpackets.MultiSellList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 
-public class MultiSell implements Reloadable {
+public class MultiSell {
 	public static final int PAGE_SIZE = 40;
 
 	public static final int PC_BANG_POINTS = -100;
@@ -56,22 +56,6 @@ public class MultiSell implements Reloadable {
 	}
 
 	private MultiSell() {
-		load();
-
-		ReloadableManager.getInstance().register("multisell", this);
-	}
-
-	@Override
-	public final boolean reload() {
-		entries.clear();
-		load();
-
-		return true;
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "All Multisells have been reloaded";
 	}
 
 	/**
@@ -192,7 +176,10 @@ public class MultiSell implements Reloadable {
 		}
 	}
 
-	private void load() {
+	@Load
+	@Reload("multisell")
+	void load() {
+		entries.clear();
 		List<File> files = new ArrayList<>();
 
 		if (!Config.SERVER_NAME.isEmpty()) {

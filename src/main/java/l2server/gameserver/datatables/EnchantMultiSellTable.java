@@ -16,9 +16,9 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * @author Pere
  */
-public class EnchantMultiSellTable implements Reloadable {
+public class EnchantMultiSellTable {
 	public static class EnchantMultiSellCategory {
 		public int Id;
 		public Map<Integer, EnchantMultiSellEntry> Entries = new HashMap<>();
@@ -54,12 +54,15 @@ public class EnchantMultiSellTable implements Reloadable {
 	public Map<Integer, EnchantMultiSellCategory> categories = new HashMap<>();
 
 	private EnchantMultiSellTable() {
-		ReloadableManager.getInstance().register("enchantmultisell", this);
-		reload();
 	}
 
-	@Override
-	public final boolean reload() {
+	@Reload("enchantMultiSell")
+	@Load
+	public final void load() {
+		if (!Config.isServer(Config.TENKAI_LEGACY)) {
+			return;
+		}
+		
 		File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/enchantMultiSell.xml");
 		XmlDocument doc = new XmlDocument(file);
 		int currentCategoryId = 1;
@@ -95,12 +98,6 @@ public class EnchantMultiSellTable implements Reloadable {
 		}
 
 		Log.info("EnchantMultisell: Loaded " + categories.size() + " categories.");
-		return true;
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Enchant Multisell Table reloaded";
 	}
 
 	public final Collection<EnchantMultiSellCategory> getCategories() {

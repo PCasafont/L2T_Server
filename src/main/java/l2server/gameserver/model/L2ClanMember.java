@@ -16,7 +16,7 @@
 package l2server.gameserver.model;
 
 import l2server.L2DatabaseFactory;
-import l2server.gameserver.instancemanager.SiegeManager;
+import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
 
@@ -123,7 +123,7 @@ public class L2ClanMember {
 		if (player != null) {
 			clan.addSkillEffects(player);
 			if (clan.getLevel() > 3 && player.isClanLeader()) {
-				SiegeManager.getInstance().addSiegeSkills(player);
+				CastleSiegeManager.getInstance().addSiegeSkills(player);
 			}
 			if (player.isClanLeader()) {
 				clan.setLeader(this);

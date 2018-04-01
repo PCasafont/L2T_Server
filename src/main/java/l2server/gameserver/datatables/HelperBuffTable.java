@@ -19,6 +19,7 @@ import l2server.Config;
 import l2server.gameserver.templates.L2HelperBuff;
 import l2server.gameserver.templates.StatsSet;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -36,7 +37,7 @@ public class HelperBuffTable {
 	/**
 	 * The table containing all Buff of the Newbie Helper
 	 */
-	private List<L2HelperBuff> helperBuff;
+	private List<L2HelperBuff> helperBuff = new ArrayList<>();
 
 	/**
 	 * The player level since Newbie Helper can give the fisrt buff <BR>
@@ -64,13 +65,12 @@ public class HelperBuffTable {
 	 * Create and Load the Newbie Helper Buff list from SQL Table helper_buff_list
 	 */
 	private HelperBuffTable() {
-		helperBuff = new ArrayList<>();
-		restoreHelperBuffData();
 	}
 
 	/**
 	 * Read and Load the Newbie Helper Buff list from SQL Table helper_buff_list
 	 */
+	@Load
 	private void restoreHelperBuffData() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "helperBuffTable.xml");
 		XmlDocument doc = new XmlDocument(file);

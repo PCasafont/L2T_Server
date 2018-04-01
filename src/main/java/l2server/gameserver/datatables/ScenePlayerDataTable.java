@@ -16,9 +16,9 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -30,12 +30,14 @@ import java.util.Map;
  * @author LasTravel
  */
 
-public class ScenePlayerDataTable implements Reloadable {
+public class ScenePlayerDataTable {
 
 	private Map<Integer, Integer> sceneDataTable;
 
-	@Override
-	public boolean reload() {
+	@Reload("scenes")
+	@Load
+	public boolean load() {
+		sceneDataTable = new HashMap<>();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "scenePlayerData.xml");
 		XmlDocument doc = new XmlDocument(file);
 
@@ -64,19 +66,6 @@ public class ScenePlayerDataTable implements Reloadable {
 
 	public int getVideoDuration(int vidId) {
 		return sceneDataTable.get(vidId);
-	}
-
-	private ScenePlayerDataTable() {
-		sceneDataTable = new HashMap<>();
-
-		reload();
-
-		ReloadableManager.getInstance().register("scenes", this);
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Scene Data Table reloaded";
 	}
 
 	@SuppressWarnings("synthetic-access")

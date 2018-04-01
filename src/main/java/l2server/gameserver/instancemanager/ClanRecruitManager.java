@@ -22,6 +22,7 @@ import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -60,10 +61,10 @@ public class ClanRecruitManager {
 	}
 
 	private ClanRecruitManager() {
-		load();
 	}
-
-	private void load() {
+	
+	@Load(dependencies = ClanTable.class)
+	public void load() {
 		Connection con = null;
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();

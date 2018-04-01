@@ -28,6 +28,7 @@ import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.log.Log;
 import l2server.util.Point3D;
 import l2server.util.StringUtil;
+import l2server.util.loader.annotations.Load;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -84,17 +85,17 @@ public final class L2World {
 	/**
 	 * HashMap(Integer Player id, L2PcInstance) containing all the players in game
 	 */
-	private Map<Integer, L2PcInstance> allPlayers;
+	private Map<Integer, L2PcInstance> allPlayers = new ConcurrentHashMap<>();
 	
 	/**
 	 * L2ObjectHashMap(L2Object) containing all visible objects
 	 */
-	private Map<Integer, L2Object> allObjects;
+	private Map<Integer, L2Object> allObjects = new ConcurrentHashMap<>();
 	
 	/**
 	 * List with the pets instances and their owner id
 	 */
-	private Map<Integer, L2PetInstance> petsInstance;
+	private Map<Integer, L2PetInstance> petsInstance = new ConcurrentHashMap<>();
 	
 	private L2WorldRegion[][] worldRegions;
 	
@@ -102,12 +103,6 @@ public final class L2World {
 	 * Constructor of L2World.<BR><BR>
 	 */
 	private L2World() {
-		//allGms	 = new HashMap<String, L2PcInstance>();
-		allPlayers = new ConcurrentHashMap<>();
-		petsInstance = new ConcurrentHashMap<>();
-		allObjects = new ConcurrentHashMap<>();
-		
-		initRegions();
 	}
 	
 	/**
@@ -729,7 +724,8 @@ public final class L2World {
 	 * <B><U> Example of use </U> :</B><BR><BR>
 	 * <li> Constructor of L2World </li><BR>
 	 */
-	private void initRegions() {
+	@Load
+	public void initRegions() {
 		worldRegions = new L2WorldRegion[REGIONS_X + 1][REGIONS_Y + 1];
 		
 		for (int i = 0; i <= REGIONS_X; i++) {

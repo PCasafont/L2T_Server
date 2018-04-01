@@ -17,41 +17,34 @@ package l2server.gameserver.datatables;
 
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.item.L2Henna;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
 
-/**
- * This class ...
- *
- * @version $Revision$ $Date$
- */
-public class HennaTable implements Reloadable {
-	private Map<Integer, L2Henna> henna;
+public class HennaTable {
+	private Map<Integer, L2Henna> henna = new HashMap<>();
 
 	public static HennaTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private HennaTable() {
-		henna = new HashMap<>();
-		if (!Config.IS_CLASSIC) {
-			restoreHennaData();
-			ReloadableManager.getInstance().register("henna", this);
-		}
 	}
-
-	private void restoreHennaData() {
+	
+	@Reload("henna")
+	@Load(dependencies = PlayerClassTable.class)
+	public void load() {
 		if (Config.IS_CLASSIC) {
 			return;
 		}
-
+		
+		henna.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "henna.xml");
 		XmlDocument doc = new XmlDocument(file);
 
@@ -129,17 +122,5 @@ public class HennaTable implements Reloadable {
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder {
 		protected static final HennaTable instance = new HennaTable();
-	}
-
-	@Override
-	public boolean reload() {
-		henna.clear();
-		restoreHennaData();
-		return true;
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Henna reloaded";
 	}
 }

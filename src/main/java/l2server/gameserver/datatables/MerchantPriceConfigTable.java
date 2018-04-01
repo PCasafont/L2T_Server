@@ -21,6 +21,7 @@ import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.entity.Castle;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -71,9 +72,8 @@ public class MerchantPriceConfigTable implements InstanceListManager {
 			} else {
 				defaultPriceConfigId = n.getInt("defaultPriceConfig");
 			}
-			MerchantPriceConfig mpc;
 			for (XmlNode subn : n.getChildren()) {
-				mpc = parseMerchantPriceConfig(subn);
+				MerchantPriceConfig mpc = parseMerchantPriceConfig(subn);
 				if (mpc != null) {
 					mpcs.put(mpc.getId(), mpc);
 				}
@@ -118,7 +118,8 @@ public class MerchantPriceConfigTable implements InstanceListManager {
 		}
 		return null;
 	}
-
+	
+	@Load
 	@Override
 	public void load() {
 		try {

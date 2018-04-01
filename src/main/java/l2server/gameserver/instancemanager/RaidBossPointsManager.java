@@ -18,6 +18,7 @@ package l2server.gameserver.instancemanager;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -43,10 +44,10 @@ public class RaidBossPointsManager {
 	}
 
 	public RaidBossPointsManager() {
-		init();
 	}
 
-	private void init() {
+	@Load
+	public void init() {
 		list = new HashMap<>();
 		Connection con = null;
 		try {

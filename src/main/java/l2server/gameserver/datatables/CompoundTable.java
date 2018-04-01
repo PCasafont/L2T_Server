@@ -16,9 +16,9 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -32,7 +32,7 @@ import java.util.Set;
  * @author Pere
  */
 
-public class CompoundTable implements Reloadable {
+public class CompoundTable {
 	public class Combination {
 		private final int item1;
 		private final int item2;
@@ -67,12 +67,11 @@ public class CompoundTable implements Reloadable {
 	private final Set<Integer> combinable = new HashSet<>();
 
 	private CompoundTable() {
-		reload();
-		ReloadableManager.getInstance().register("compound", this);
 	}
 
-	@Override
-	public boolean reload() {
+	@Reload("compound")
+	@Load
+	public void load() {
 		File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/compound.xml");
 		if (!file.exists()) {
 			file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "/compound.xml");
@@ -94,12 +93,6 @@ public class CompoundTable implements Reloadable {
 		}
 
 		Log.info("CompoundTable: Loaded " + combinations.size() + " combinations.");
-		return true;
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Compound table reloaded";
 	}
 
 	public Combination getCombination(int item1, int item2) {

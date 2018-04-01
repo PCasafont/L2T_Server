@@ -5,6 +5,7 @@ import l2server.Config;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.PledgeCrest;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.io.File;
 import java.util.HashMap;
@@ -27,9 +28,9 @@ public class ImageTable {
 	}
 
 	private ImageTable() {
-		readImages();
 	}
 
+	@Load
 	private void readImages() {
 		File folder = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "images/");
 		folder.mkdirs();

@@ -545,9 +545,9 @@ public final class L2NpcTemplate extends L2CharTemplate {
 	}
 
 	/**
-	 * Checks if obj can be assigned to the Class represented by clazz.<br>
-	 * This is true if, and only if, obj is the same class represented by clazz,
-	 * or a subclass of it or obj implements the interface represented by clazz.
+	 * Checks if obj can be assigned to the Class represented by value.<br>
+	 * This is true if, and only if, obj is the same class represented by value,
+	 * or a subclass of it or obj implements the interface represented by value.
 	 *
 	 * @param obj
 	 * @param clazz
@@ -558,9 +558,9 @@ public final class L2NpcTemplate extends L2CharTemplate {
 	}
 
 	public static boolean isAssignableTo(Class<?> sub, Class<?> clazz) {
-		// if clazz represents an interface
+		// if value represents an interface
 		if (clazz.isInterface()) {
-			// check if obj implements the clazz interface
+			// check if obj implements the value interface
 			Class<?>[] interfaces = sub.getInterfaces();
 			for (Class<?> interface1 : interfaces) {
 				if (clazz.getName().equals(interface1.getName())) {

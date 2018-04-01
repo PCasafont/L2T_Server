@@ -20,6 +20,7 @@ import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,16 +31,13 @@ import java.util.logging.Level;
  */
 public class DayNightSpawnManager {
 
-	private Map<L2Spawn, L2RaidBossInstance> bosses;
+	private Map<L2Spawn, L2RaidBossInstance> bosses = new HashMap<>();
 
 	public static DayNightSpawnManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private DayNightSpawnManager() {
-		bosses = new HashMap<>();
-
-		Log.info("DayNightSpawnManager: Day/Night handler initialized");
 	}
 
 	/**
@@ -74,6 +72,7 @@ public class DayNightSpawnManager {
 		}
 	}
 
+	@Load(dependencies = TimeController.class)
 	public void notifyChangeMode() {
 		try {
 			if (TimeController.getInstance().isNowNight()) {

@@ -38,6 +38,7 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -119,7 +120,8 @@ public class FourSepulchersManager {
 	public static FourSepulchersManager getInstance() {
 		return SingletonHolder.instance;
 	}
-
+	
+	@Load(dependencies = {SpawnTable.class, GrandBossManager.class})
 	public void init() {
 		if (Config.IS_CLASSIC) {
 			return;

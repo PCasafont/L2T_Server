@@ -29,6 +29,8 @@ import l2server.gameserver.model.zone.form.ZoneNPoly;
 import l2server.gameserver.model.zone.type.L2ArenaZone;
 import l2server.gameserver.model.zone.type.L2OlympiadStadiumZone;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -60,10 +62,10 @@ public class ZoneManager {
 	// =========================================================
 	// Constructor
 	private ZoneManager() {
-		load();
 	}
 	
 	@SuppressWarnings("deprecation")
+	@Reload("zones")
 	public void reload() {
 		// int zoneCount = 0;
 		
@@ -88,10 +90,8 @@ public class ZoneManager {
 		}
 	}
 	
-	// =========================================================
-	// Method - Private
-	
-	private void load() {
+	@Load(dependencies = {ClanHallManager.class, GrandBossManager.class})
+	public void load() {
 		Log.info("Loading zones...");
 		Connection con = null;
 		PreparedStatement statement = null;

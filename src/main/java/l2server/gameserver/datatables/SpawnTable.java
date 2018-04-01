@@ -16,6 +16,7 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
+import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.SpawnGroup;
 import l2server.gameserver.model.actor.L2Npc;
@@ -25,6 +26,7 @@ import l2server.gameserver.templates.SpawnData;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -53,9 +55,6 @@ public class SpawnTable {
 	}
 	
 	private SpawnTable() {
-		if (!Config.ALT_DEV_NO_SPAWNS) {
-			fillSpawnTable();
-		}
 	}
 	
 	public CopyOnWriteArraySet<L2Spawn> getSpawnTable() {
@@ -115,7 +114,12 @@ public class SpawnTable {
 		}
 	}
 	
-	private void fillSpawnTable() {
+	@Load(dependencies = {NpcTable.class, CastleManager.class})
+	public void load() {
+		if (Config.ALT_DEV_NO_SPAWNS) {
+			return;
+		}
+		
 		int count = 0;
 		for (L2NpcTemplate t : NpcTable.getInstance().getAllTemplates()) {
 			for (SpawnData sp : t.getSpawns()) {
@@ -312,11 +316,6 @@ public class SpawnTable {
 				}
 			}
 		}
-	}
-	
-	//just wrapper
-	public void reloadAll() {
-		fillSpawnTable();
 	}
 	
 	/**

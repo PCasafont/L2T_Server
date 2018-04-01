@@ -18,7 +18,6 @@ package handlers.admincommandhandlers;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.GmListTable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.datatables.*;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.QuestManager;
@@ -29,6 +28,8 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
+import l2server.util.loader.LoadHolder;
+import l2server.util.loader.Loader;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -180,30 +181,26 @@ public class AdminAdmin implements IAdminCommandHandler {
 					Config.load();
 					activeChar.sendMessage("All Config Settings have been reloaded");
 				} else if (type.equals("npc")) {
-					NpcTable.getInstance().reloadAllNpc();
+					NpcTable.getInstance().load();
 					QuestManager.getInstance().reload();
 					activeChar.sendMessage("All NPCs have been reloaded");
 				} else if (type.startsWith("npcwalkers")) {
 					NpcWalkersTable.getInstance().load();
 					activeChar.sendMessage("NPC Walker Routes have been reloaded");
-				} else if (type.startsWith("access")) {
-					AccessLevels.getInstance().reload();
-					AdminCommandAccessRights.getInstance().reloadAdminCommandAccessRights();
-					activeChar.sendMessage("Access Rights have been reloaded");
 				} else if (type.startsWith("quests")) {
 					QuestManager.getInstance().reload();
 					activeChar.sendMessage("All Quests have been reloaded");
-				} else if (type.startsWith("door")) {
-					DoorTable.getInstance().reload();
-					activeChar.sendMessage("All Doors have been reloaded");
-				} else if (type.startsWith("messages")) {
-					CoreMessageTable.getInstance().reload();
-					activeChar.sendMessage("Core Messages reloaded");
 				} else if (type.startsWith("exp")) {
 					Experience.reload();
 					activeChar.sendMessage("Experience reloaded");
 				} else {
-					activeChar.sendMessage(ReloadableManager.getInstance().reload(type));
+					LoadHolder loadHolder = Loader.INSTANCE.getReloads().get(type);
+					if (loadHolder != null) {
+						loadHolder.call();
+						GmListTable.broadcastMessageToGMs(activeChar.getName() + " has reloaded " + type);
+					}  else {
+						activeChar.sendMessage("Could not find reloadable " + type);
+					}
 				}
 			} catch (Exception e) {
 				activeChar.sendMessage("An error occured while reloading " + type + " !");

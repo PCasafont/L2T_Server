@@ -25,6 +25,7 @@ import l2server.gameserver.network.serverpackets.ExAirShipTeleportList;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2CharTemplate;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -50,18 +51,22 @@ public class AirShipManager {
 	}
 
 	private AirShipManager() {
+	}
+	
+	@Load
+	public void initialize() {
 		StatsSet npcDat = new StatsSet();
 		npcDat.set("npcId", 9);
 		npcDat.set("level", 0);
 		npcDat.set("jClass", "boat");
-
+		
 		npcDat.set("STR", 0);
 		npcDat.set("CON", 0);
 		npcDat.set("DEX", 0);
 		npcDat.set("INT", 0);
 		npcDat.set("WIT", 0);
 		npcDat.set("MEN", 0);
-
+		
 		npcDat.set("collisionRadius", 0);
 		npcDat.set("collisionHeight", 0);
 		npcDat.set("sex", "male");
@@ -88,10 +93,10 @@ public class AirShipManager {
 		npcDat.set("pDef", 100);
 		npcDat.set("mDef", 100);
 		airShipTemplate = new L2CharTemplate(npcDat);
-
+		
 		load();
 	}
-
+	
 	public L2AirShipInstance getNewAirShip(int x, int y, int z, int heading) {
 		final L2AirShipInstance airShip = new L2AirShipInstance(IdFactory.getInstance().getNextId(), airShipTemplate);
 

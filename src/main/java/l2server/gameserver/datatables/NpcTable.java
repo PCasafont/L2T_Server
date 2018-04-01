@@ -16,6 +16,7 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
+import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.instancemanager.SearchDropManager;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Npc;
@@ -28,6 +29,7 @@ import l2server.gameserver.templates.item.L2EtcItemType;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -38,11 +40,6 @@ import java.io.OutputStreamWriter;
 import java.util.*;
 import java.util.Map.Entry;
 
-/**
- * This class ...
- *
- * @version $Revision: 1.8.2.6.2.9 $ $Date: 2005/04/06 16:13:25 $
- */
 public class NpcTable {
 	private Map<Integer, L2NpcTemplate> npcs;
 	
@@ -51,11 +48,11 @@ public class NpcTable {
 	}
 	
 	private NpcTable() {
-		reloadAllNpc();
 	}
 	
 	// just wrapper
-	public void reloadAllNpc() {
+	@Load(dependencies = SkillTable.class)
+	public void load() {
 		npcs = new HashMap<>();
 		
 		restoreNpcData(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "npcs", false);

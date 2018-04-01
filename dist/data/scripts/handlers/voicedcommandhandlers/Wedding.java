@@ -24,7 +24,7 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IVoicedCommandHandler;
 import l2server.gameserver.instancemanager.CoupleManager;
 import l2server.gameserver.instancemanager.GrandBossManager;
-import l2server.gameserver.instancemanager.SiegeManager;
+import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.L2Character;
@@ -239,7 +239,7 @@ public class Wedding implements IVoicedCommandHandler {
 		} else if (activeChar.inObserverMode()) {
 			activeChar.sendMessage("You are in the observation.");
 			return false;
-		} else if (SiegeManager.getInstance().getSiege(activeChar) != null && SiegeManager.getInstance().getSiege(activeChar).getIsInProgress()) {
+		} else if (CastleSiegeManager.getInstance().getSiege(activeChar) != null && CastleSiegeManager.getInstance().getSiege(activeChar).getIsInProgress()) {
 			activeChar.sendMessage("You are in a siege, you cannot go to your partner.");
 			return false;
 		}
@@ -279,7 +279,7 @@ public class Wedding implements IVoicedCommandHandler {
 		} else if (partner.inObserverMode()) {
 			activeChar.sendMessage("Your partner is in the observation.");
 			return false;
-		} else if (SiegeManager.getInstance().getSiege(partner) != null && SiegeManager.getInstance().getSiege(partner).getIsInProgress()) {
+		} else if (CastleSiegeManager.getInstance().getSiege(partner) != null && CastleSiegeManager.getInstance().getSiege(partner).getIsInProgress()) {
 			activeChar.sendMessage("Your partner is in a siege, you cannot go to your partner.");
 			return false;
 		}
@@ -331,8 +331,8 @@ public class Wedding implements IVoicedCommandHandler {
 				return;
 			}
 
-			if (SiegeManager.getInstance().getSiege(partnerx, partnery, partnerz) != null &&
-					SiegeManager.getInstance().getSiege(partnerx, partnery, partnerz).getIsInProgress()) {
+			if (CastleSiegeManager.getInstance().getSiege(partnerx, partnery, partnerz) != null &&
+					CastleSiegeManager.getInstance().getSiege(partnerx, partnery, partnerz).getIsInProgress()) {
 				activeChar.sendMessage("Your partner is in siege, you can't go to your partner.");
 				return;
 			}

@@ -17,8 +17,6 @@ package l2server.gameserver.datatables;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2ItemInstance;
@@ -35,6 +33,8 @@ import l2server.gameserver.stats.funcs.LambdaConst;
 import l2server.gameserver.templates.item.*;
 import l2server.gameserver.util.GMAudit;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -52,7 +52,7 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
  *
  * @version $Revision: 1.9.2.6.2.9 $ $Date: 2005/04/02 15:57:34 $
  */
-public class ItemTable implements Reloadable {
+public class ItemTable {
 	
 	public static final Map<String, Integer> crystalTypes = new HashMap<>();
 	public static final Map<String, Integer> slots = new HashMap<>();
@@ -140,11 +140,10 @@ public class ItemTable implements Reloadable {
 	 * Constructor.
 	 */
 	private ItemTable() {
-		load();
-		
-		ReloadableManager.getInstance().register("items", this);
 	}
 	
+	@Reload("items")
+	@Load
 	private void load() {
 		int highest = 0;
 		armors.clear();
@@ -429,19 +428,6 @@ public class ItemTable implements Reloadable {
 				}
 			}
 		}
-	}
-	
-	@Override
-	public boolean reload() {
-		load();
-		EnchantHPBonusData.getInstance().reload();
-		
-		return true;
-	}
-	
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Item Templates have been reloaded";
 	}
 	
 	protected static class ResetOwner implements Runnable {

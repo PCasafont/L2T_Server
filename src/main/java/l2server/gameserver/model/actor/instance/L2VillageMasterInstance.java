@@ -23,7 +23,7 @@ import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.instancemanager.FortSiegeManager;
-import l2server.gameserver.instancemanager.SiegeManager;
+import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2Clan.SubPledge;
 import l2server.gameserver.model.L2ClanMember;
@@ -790,7 +790,7 @@ public class L2VillageMasterInstance extends L2NpcInstance {
 		}
 		
 		for (Castle castle : CastleManager.getInstance().getCastles()) {
-			if (SiegeManager.getInstance().checkIsRegistered(clan, castle.getCastleId())) {
+			if (CastleSiegeManager.getInstance().checkIsRegistered(clan, castle.getCastleId())) {
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISSOLVE_WHILE_IN_SIEGE));
 				return;
 			}
@@ -856,7 +856,7 @@ public class L2VillageMasterInstance extends L2NpcInstance {
 		}
 		
 		//Restrict change the clan leader while clan is in siege
-		for (Siege sg : SiegeManager.getInstance().getSieges()) {
+		for (Siege sg : CastleSiegeManager.getInstance().getSieges()) {
 			if (sg.getIsInProgress() && (sg.checkIsAttacker(clan) || sg.checkIsDefender(clan))) {
 				player.sendMessage("You can't change the clan leader while in siege!");
 				return;

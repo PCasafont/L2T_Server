@@ -17,10 +17,10 @@ package l2server.gameserver.datatables;
 
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.model.L2TeleportLocation;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -31,7 +31,7 @@ import java.io.File;
  *
  * @version $Revision: 1.3.2.2.2.3 $ $Date: 2005/03/27 15:29:18 $
  */
-public class TeleportLocationTable implements Reloadable {
+public class TeleportLocationTable {
 
 	private Map<Integer, L2TeleportLocation> teleports;
 
@@ -40,16 +40,12 @@ public class TeleportLocationTable implements Reloadable {
 	}
 
 	private TeleportLocationTable() {
-		reload();
-
-		ReloadableManager.getInstance().register("teleports", this);
 	}
 
-	@Override
-	public boolean reload() {
+	@Reload("teleports")
+	@Load
+	public void load() {
 		teleports = new HashMap<>();
-		boolean success = true;
-
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "teleports.xml");
 		XmlDocument doc = new XmlDocument(file);
 
@@ -75,16 +71,6 @@ public class TeleportLocationTable implements Reloadable {
 		}
 
 		Log.info("TeleportLocationTable: Loaded " + teleports.size() + " Teleport Location Templates.");
-
-		return success;
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		if (success) {
-			return "Teleport Locations have been reloaded";
-		}
-		return "There was an error while reloading Teleport Locations";
 	}
 
 	/**

@@ -17,6 +17,7 @@ package l2server.gameserver.datatables;
 
 import l2server.Config;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -40,10 +41,15 @@ public class ComboSkillTable {
 	private Map<Integer, Combo> combos = new HashMap<>();
 
 	private ComboSkillTable() {
+		load();
+	}
+	
+	@Load
+	private void load() {
 		if (Config.IS_CLASSIC) {
 			return;
 		}
-
+		
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "comboSkills.xml");
 		XmlDocument doc = new XmlDocument(file);
 		for (XmlNode n : doc.getChildren()) {
@@ -61,10 +67,10 @@ public class ComboSkillTable {
 				combos.put(id, combo);
 			}
 		}
-
+		
 		Log.info("Combo Skill table: loaded " + combos.size() + " combos.");
 	}
-
+	
 	public Combo getCombo(int id) {
 		return combos.get(id);
 	}

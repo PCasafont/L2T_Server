@@ -120,7 +120,7 @@ public class FaenorScriptEngine extends ScriptEngine {
 	}
 
 	public void parsePackages() {
-		L2ScriptEngineManager sem = L2ScriptEngineManager.getInstance();
+		L2ScriptEngineManager sem = L2ScriptEngineManager.INSTANCE;
 		ScriptContext context = sem.getScriptContext("beanshell");
 		try {
 			sem.eval("beanshell", "double log1p(double d) { return Math.log1p(d); }");

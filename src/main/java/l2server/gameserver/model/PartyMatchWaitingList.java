@@ -24,10 +24,9 @@ import java.util.List;
  * @author Gnacik
  */
 public class PartyMatchWaitingList {
-	private List<L2PcInstance> members;
+	private List<L2PcInstance> members = new ArrayList<>();
 	
 	private PartyMatchWaitingList() {
-		members = new ArrayList<>();
 	}
 	
 	public void addPlayer(L2PcInstance player) {

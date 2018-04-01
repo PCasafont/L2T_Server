@@ -31,7 +31,7 @@ public class SummonMinions extends L2AttackableAIScript {
 	private static int HasSpawned;
 	private static TIntHashSet myTrackingSet = new TIntHashSet(); //Used to track instances of npcs
 	private ConcurrentHashMap<Integer, ArrayList<L2PcInstance>> attackersList = new ConcurrentHashMap<Integer, ArrayList<L2PcInstance>>();
-	private static final Map<Integer, int[]> MINIONS = new HashMap<>();
+	private static final Map<Integer, int[]> MINIONS = new HashMap<Integer, int[]>();
 
 	static {
 		MINIONS.put(20767, new int[]{20768, 20769, 20770}); //Timak Orc Troop

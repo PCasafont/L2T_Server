@@ -22,10 +22,10 @@ package l2server.gameserver.datatables;
 import gnu.trove.TIntIntHashMap;
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.model.L2ArmorSet;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -34,23 +34,20 @@ import java.io.File;
 /**
  * @author Pere
  */
-public class ArmorSetsTable implements Reloadable {
+public class ArmorSetsTable {
 
-	private Map<Integer, L2ArmorSet> armorSets;
+	private Map<Integer, L2ArmorSet> armorSets = new HashMap<>();
 
 	public static ArmorSetsTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private ArmorSetsTable() {
-		armorSets = new HashMap<>();
-		reload();
-
-		ReloadableManager.getInstance().register("armorsets", this);
 	}
 
-	@Override
-	public boolean reload() {
+	@Reload("armorsets")
+	@Load
+	public void load() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "armorSets.xml");
 		XmlDocument doc = new XmlDocument(file);
 		for (XmlNode d : doc.getChildren()) {
@@ -77,13 +74,6 @@ public class ArmorSetsTable implements Reloadable {
 			}
 		}
 		Log.info("ArmorSetsTable: Loaded " + armorSets.size() + " armor sets.");
-
-		return true;
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Armor Sets reloaded";
 	}
 
 	public boolean setExists(int chestId) {

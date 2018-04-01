@@ -30,7 +30,7 @@ public abstract class ManagedScript {
 	private boolean isActive;
 	
 	public ManagedScript() {
-		scriptFile = L2ScriptEngineManager.getInstance().getCurrentLoadingScript();
+		scriptFile = L2ScriptEngineManager.INSTANCE.getCurrentLoadingScript();
 		setLastLoadTime(System.currentTimeMillis());
 	}
 	
@@ -42,7 +42,7 @@ public abstract class ManagedScript {
 	 */
 	public boolean reload() {
 		try {
-			L2ScriptEngineManager.getInstance().executeScript(getScriptFile());
+			L2ScriptEngineManager.INSTANCE.executeScript(getScriptFile());
 			return true;
 		} catch (FileNotFoundException e) {
 			return false;

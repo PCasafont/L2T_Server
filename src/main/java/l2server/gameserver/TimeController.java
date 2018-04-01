@@ -20,6 +20,7 @@ import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.instancemanager.DayNightSpawnManager;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -58,6 +59,10 @@ public class TimeController {
 	}
 	
 	private TimeController() {
+	}
+	
+	@Load
+	public void initialize() {
 		gameStartTime = System.currentTimeMillis() - 3600000; // offset so that the server starts a day begin
 		gameTicks = 3600000 / MILLIS_IN_TICK; // offset so that the server starts a day begin
 		

@@ -1266,7 +1266,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance {
 			return;
 		}
 		//Restrict change the clan leader while clan is in siege
-		for (Siege sg : SiegeManager.getInstance().getSieges()) {
+		for (Siege sg : CastleSiegeManager.getInstance().getSieges()) {
 			if (sg.getIsInProgress() && (sg.checkIsAttacker(clan) || sg.checkIsDefender(clan))) {
 				player.sendMessage("You can't change the clan leader while in siege!");
 				return;
@@ -1326,7 +1326,7 @@ public final class L2ServicesNpcInstance extends L2NpcInstance {
 			return;
 		}
 		for (Castle castle : CastleManager.getInstance().getCastles()) {
-			if (SiegeManager.getInstance().checkIsRegistered(clan, castle.getCastleId())) {
+			if (CastleSiegeManager.getInstance().checkIsRegistered(clan, castle.getCastleId())) {
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISSOLVE_CAUSE_CLAN_WILL_PARTICIPATE_IN_CASTLE_SIEGE));
 				return;
 			}

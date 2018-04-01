@@ -20,9 +20,9 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.communitybbs.Manager.ForumsBBSManager;
 import l2server.gameserver.idfactory.IdFactory;
+import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.instancemanager.FortSiegeManager;
-import l2server.gameserver.instancemanager.SiegeManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
 import l2server.gameserver.model.L2PledgeSkillLearn;
@@ -35,6 +35,7 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -43,28 +44,28 @@ import java.util.*;
 import java.util.logging.Level;
 
 /**
- * Sorts by member count - descending
- */
-class ClanByMemberCountComparator implements Comparator<L2Clan> {
-	@Override
-	public int compare(L2Clan o1, L2Clan o2) {
-		if (o1.getMembersCount() < o2.getMembersCount()) {
-			return -1;
-		} else if (o1.getMembersCount() > o2.getMembersCount()) {
-			return 1;
-		} else {
-			return 0;
-		}
-	}
-}
-
-/**
  * This class ...
  *
  * @version $Revision: 1.11.2.5.2.5 $ $Date: 2005/03/27 15:29:18 $
  */
 public class ClanTable {
-	private Map<Integer, L2Clan> clans;
+	
+	/**
+	 * Sorts by member count - descending
+	 */
+	class ClanByMemberCountComparator implements Comparator<L2Clan> {
+		@Override
+		public int compare(L2Clan o1, L2Clan o2) {
+			if (o1.getMembersCount() < o2.getMembersCount()) {
+				return -1;
+			} else if (o1.getMembersCount() > o2.getMembersCount()) {
+				return 1;
+			} else {
+				return 0;
+			}
+		}
+	}
+	private Map<Integer, L2Clan> clans = new HashMap<>();
 
 	// Tenkai custom - block recruiting if requesting clan is too big compared to others
 	private L2Clan[] topClansByMemberCount = new L2Clan[10];
@@ -82,13 +83,15 @@ public class ClanTable {
 	}
 
 	private ClanTable() {
+	}
+	
+	@Load
+	private void load() {
 		// forums has to be loaded before clan data, because of last forum id used should have also memo included
 		if (Config.COMMUNITY_TYPE > 0) {
 			ForumsBBSManager.getInstance().initRoot();
 		}
-
-		clans = new HashMap<>();
-		L2Clan clan;
+		
 		Connection con = null;
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
@@ -101,7 +104,7 @@ public class ClanTable {
 			while (result.next()) {
 				int clanId = result.getInt("clan_id");
 				clans.put(clanId, new L2Clan(clanId));
-				clan = getClan(clanId);
+				L2Clan clan = getClan(clanId);
 				if (clan.getDissolvingExpiryTime() != 0) {
 					scheduleRemoveClan(clan.getClanId());
 				}
@@ -116,14 +119,14 @@ public class ClanTable {
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
-
+		
 		allianceCheck();
-
+		
 		if (Config.isServer(Config.TENKAI)) {
 			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::determineTopClansByMemberCount, 0, 3600000);
 		}
 	}
-
+	
 	private synchronized void determineTopClansByMemberCount() {
 		Comparator<L2Clan> byMemberCount = new ClanByMemberCountComparator();
 
@@ -269,7 +272,7 @@ public class ClanTable {
 		clan.broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.CLAN_HAS_DISPERSED));
 		int castleId = clan.getHasCastle();
 		if (castleId == 0) {
-			for (Siege siege : SiegeManager.getInstance().getSieges()) {
+			for (Siege siege : CastleSiegeManager.getInstance().getSieges()) {
 				siege.removeSiegeClan(clan);
 			}
 		}

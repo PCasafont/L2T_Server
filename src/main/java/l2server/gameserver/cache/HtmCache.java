@@ -16,10 +16,10 @@
 package l2server.gameserver.cache;
 
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -33,7 +33,7 @@ import java.util.logging.Level;
 /**
  * @author Layane
  */
-public class HtmCache implements Reloadable {
+public class HtmCache {
 	private final Map<Integer, String> cache;
 
 	private int loadedFiles;
@@ -49,21 +49,13 @@ public class HtmCache implements Reloadable {
 		} else {
 			cache = new HashMap<>();
 		}
-		reload();
-
-		ReloadableManager.getInstance().register("htm", this);
 	}
 
-	@Override
+	@Reload("htm")
+	@Load
 	public boolean reload() {
 		reload(Config.DATAPACK_ROOT);
 		return true;
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Cache[HTML]: " + HtmCache.getInstance().getMemoryUsage() + " megabytes on " + HtmCache.getInstance().getLoadedFiles() +
-				" files loaded";
 	}
 
 	public void reload(File f) {

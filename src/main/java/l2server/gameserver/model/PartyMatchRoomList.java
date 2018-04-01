@@ -28,10 +28,9 @@ import java.util.Map;
  */
 public class PartyMatchRoomList {
 	private int maxid = 1;
-	private Map<Integer, PartyMatchRoom> rooms;
+	private Map<Integer, PartyMatchRoom> rooms = new HashMap<>();
 	
 	private PartyMatchRoomList() {
-		rooms = new HashMap<>();
 	}
 	
 	public synchronized void addPartyMatchRoom(int id, PartyMatchRoom room) {

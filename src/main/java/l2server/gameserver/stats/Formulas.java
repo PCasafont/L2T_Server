@@ -1324,7 +1324,7 @@ public final class Formulas {
 			return 0;
 		}
 
-		Siege siege = SiegeManager.getInstance()
+		Siege siege = CastleSiegeManager.getInstance()
 				.getSiege(activeChar.getPosition().getX(), activeChar.getPosition().getY(), activeChar.getPosition().getZ());
 		if (siege == null || !siege.getIsInProgress()) {
 			return 0;

@@ -18,6 +18,7 @@ package l2server.gameserver.datatables;
 import l2server.Config;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.util.loader.annotations.Load;
 
 /**
  * @author Gnacik
@@ -27,15 +28,19 @@ public class GMSkillTable {
 	private static final int[] gmSkillsId = {14779, 14780, 14781, 14782, 14783, 14784, 14785, 14786, 14787, 14788, 14789, 14790, 14993, 14994, 14995};
 
 	private GMSkillTable() {
+	}
+	
+	@Load(dependencies = SkillTable.class)
+	private void initialize() {
 		if (Config.IS_CLASSIC) {
 			return;
 		}
-
+		
 		for (int i = 0; i < gmSkillsId.length; i++) {
 			gmSkills[i] = SkillTable.getInstance().getInfo(gmSkillsId[i], 1);
 		}
 	}
-
+	
 	public static GMSkillTable getInstance() {
 		return SingletonHolder.instance;
 	}

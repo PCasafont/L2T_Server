@@ -19,6 +19,7 @@ import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.L2AccessLevel;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -74,14 +75,14 @@ public class AccessLevels {
 	}
 
 	private AccessLevels() {
-		loadAccessLevels();
 		accessLevels.put(userAccessLevelNum, userAccessLevel);
 	}
 
 	/**
 	 * Loads the access levels from database<br>
 	 */
-	private void loadAccessLevels() {
+	@Load
+	public void loadAccessLevels() {
 		accessLevels.clear();
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "accessLevels.xml");
@@ -171,10 +172,6 @@ public class AccessLevels {
 			accessLevels.put(accessLevel,
 					new L2AccessLevel(accessLevel, "Banned", -1, -1, null, false, false, false, false, false, false, false, false));
 		}
-	}
-
-	public void reload() {
-		loadAccessLevels();
 	}
 
 	@SuppressWarnings("synthetic-access")

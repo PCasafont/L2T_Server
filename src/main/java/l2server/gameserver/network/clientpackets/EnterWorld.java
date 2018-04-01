@@ -193,7 +193,7 @@ public class EnterWorld extends L2GameClientPacket {
 				}
 			}
 
-			for (Siege siege : SiegeManager.getInstance().getSieges()) {
+			for (Siege siege : CastleSiegeManager.getInstance().getSieges()) {
 				if (!siege.getIsInProgress()) {
 					continue;
 				}

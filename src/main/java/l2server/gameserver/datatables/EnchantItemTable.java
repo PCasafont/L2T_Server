@@ -2,17 +2,17 @@ package l2server.gameserver.datatables;
 
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.templates.item.L2WeaponType;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
 
-public class EnchantItemTable implements Reloadable {
+public class EnchantItemTable {
 	public enum EnchantTargetType {
 		WEAPON,
 		ARMOR,
@@ -218,13 +218,11 @@ public class EnchantItemTable implements Reloadable {
 	}
 
 	private EnchantItemTable() {
-		reload();
-
-		ReloadableManager.getInstance().register("globaldrops", this);
 	}
 
-	@Override
-	public boolean reload() {
+	@Reload("enchantItems")
+	@Load
+	public void load() {
 		scrolls.clear();
 		supports.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "enchantItems.xml");
@@ -254,13 +252,6 @@ public class EnchantItemTable implements Reloadable {
 				supports.put(id, new EnchantSupportItem(targetType, grade, maxLevel, extraChance, onlyOnItem));
 			}
 		}
-
-		return true;
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Enchant Items reloaded";
 	}
 
 	/**

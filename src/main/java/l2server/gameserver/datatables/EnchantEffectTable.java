@@ -20,6 +20,7 @@ import l2server.gameserver.model.EnchantEffect;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.stats.funcs.*;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -43,10 +44,10 @@ public class EnchantEffectTable {
 	// =========================================================
 	// Constructor
 	private EnchantEffectTable() {
-		load();
 	}
-
-	private void load() {
+	
+	@Load
+	public void load() {
 		File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "enchanteffects");
 		if (!dir.exists()) {
 			Log.warning("Dir " + dir.getAbsolutePath() + " does not exist");

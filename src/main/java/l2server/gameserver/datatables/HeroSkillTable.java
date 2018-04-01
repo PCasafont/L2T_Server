@@ -16,6 +16,7 @@
 package l2server.gameserver.datatables;
 
 import l2server.gameserver.model.L2Skill;
+import l2server.util.loader.annotations.Load;
 
 /**
  * @author BiTi
@@ -25,11 +26,15 @@ public class HeroSkillTable {
 	private static final int[] heroSkillsId = {395, 396, 1374, 1375, 1376};
 
 	private HeroSkillTable() {
+	}
+	
+	@Load(dependencies = SkillTable.class)
+	private void initialize() {
 		for (int i = 0; i < heroSkillsId.length; i++) {
 			heroSkills[i] = SkillTable.getInstance().getInfo(heroSkillsId[i], 1);
 		}
 	}
-
+	
 	public static HeroSkillTable getInstance() {
 		return SingletonHolder.instance;
 	}

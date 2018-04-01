@@ -20,6 +20,7 @@ import l2server.gameserver.model.L2PledgeSkillLearn;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -36,18 +37,14 @@ public class PledgeSkillTree {
 	private Map<Long, L2PledgeSkillLearn> skillTree = new HashMap<>();
 
 	public PledgeSkillTree() {
-		load();
 	}
 
 	public static PledgeSkillTree getInstance() {
 		return SingletonHolder.instance;
 	}
-
-	public void reload() {
-		load();
-	}
-
-	private void load() {
+	
+	@Load(dependencies = SkillTable.class)
+	public void load() {
 		skillTree.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "skilltrees/pledgeSkillTree.xml");
 		if (file.exists()) {

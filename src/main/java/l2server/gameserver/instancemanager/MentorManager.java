@@ -16,6 +16,7 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.util.HashMap;
 
@@ -26,9 +27,9 @@ public class MentorManager {
 	HashMap<Integer, Integer> coinsRewardForLevel;
 
 	public MentorManager() {
-		load();
 	}
 
+	@Load
 	public void load() {
 		coinsRewardForLevel = new HashMap<>();
 		coinsRewardForLevel.put(10, 1);

@@ -2,11 +2,11 @@ package l2server.gameserver.datatables;
 
 import gnu.trove.TIntIntHashMap;
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -19,7 +19,7 @@ import java.util.concurrent.ScheduledFuture;
 /**
  * @author Pere
  */
-public class GlobalDropTable implements Reloadable {
+public class GlobalDropTable {
 	public class GlobalDropCategory {
 		private List<Integer> itemIds = new ArrayList<>();
 		private String description;
@@ -154,13 +154,11 @@ public class GlobalDropTable implements Reloadable {
 	}
 
 	private GlobalDropTable() {
-		reload();
-
-		ReloadableManager.getInstance().register("globaldrops", this);
 	}
 
-	@Override
-	public boolean reload() {
+	@Reload("globaldrops")
+	@Load
+	public boolean load() {
 		globalDropCategories.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "globalDrops.xml");
 		XmlDocument doc = new XmlDocument(file);
@@ -211,11 +209,6 @@ public class GlobalDropTable implements Reloadable {
 		}, initial, delay);
 
 		return true;
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Global Drops reloaded";
 	}
 
 	public List<GlobalDropCategory> getGlobalDropCategories() {

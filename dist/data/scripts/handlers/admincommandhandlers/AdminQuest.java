@@ -88,13 +88,13 @@ public class AdminQuest implements IAdminCommandHandler {
 				//activeChar.sendMessage("Example: //script_load <questFolder>/<questSubFolders...>/<filename>.<ext> ");
 				activeChar.sendMessage("Example: //script_load quests/SagasSuperclass/__init__.py");
 			} else {
-				File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, parts[1]);
+				File file = new File(L2ScriptEngineManager.getSCRIPT_FOLDER(), parts[1]);
 				if (file.isFile()) {
 					try {
-						L2ScriptEngineManager.getInstance().executeScript(file);
+						L2ScriptEngineManager.INSTANCE.executeScript(file);
 					} catch (ScriptException e) {
 						activeChar.sendMessage("Failed loading: " + parts[1]);
-						L2ScriptEngineManager.getInstance().reportScriptFileError(file, e);
+						L2ScriptEngineManager.INSTANCE.reportScriptFileError(file, e);
 					} catch (Exception e) {
 						activeChar.sendMessage("Failed loading: " + parts[1]);
 					}

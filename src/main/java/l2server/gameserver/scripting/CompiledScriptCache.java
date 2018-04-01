@@ -38,7 +38,7 @@ public class CompiledScriptCache implements Serializable {
 	private transient boolean modified = false;
 	
 	public CompiledScript loadCompiledScript(ScriptEngine engine, File file) throws FileNotFoundException, ScriptException {
-		int len = L2ScriptEngineManager.SCRIPT_FOLDER.getPath().length() + 1;
+		int len = L2ScriptEngineManager.getSCRIPT_FOLDER().getPath().length() + 1;
 		String relativeName = file.getPath().substring(len);
 		
 		CompiledScriptHolder csh = compiledScripts.get(relativeName);
@@ -74,7 +74,7 @@ public class CompiledScriptCache implements Serializable {
 	public void purge() {
 		synchronized (compiledScripts) {
 			for (String path : compiledScripts.keySet()) {
-				File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, path);
+				File file = new File(L2ScriptEngineManager.getSCRIPT_FOLDER(), path);
 				if (!file.isFile()) {
 					compiledScripts.remove(path);
 					modified = true;
@@ -86,7 +86,7 @@ public class CompiledScriptCache implements Serializable {
 	public void save() throws IOException {
 		synchronized (compiledScripts) {
 			ObjectOutputStream oos =
-					new ObjectOutputStream(new FileOutputStream(new File(L2ScriptEngineManager.SCRIPT_FOLDER, "CompiledScripts.cache")));
+					new ObjectOutputStream(new FileOutputStream(new File(L2ScriptEngineManager.getSCRIPT_FOLDER(), "CompiledScripts.cache")));
 			oos.writeObject(this);
 			oos.close();
 			modified = false;
@@ -96,7 +96,7 @@ public class CompiledScriptCache implements Serializable {
 	public void checkFiles() {
 		synchronized (compiledScripts) {
 			for (String path : compiledScripts.keySet()) {
-				File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, path);
+				File file = new File(L2ScriptEngineManager.getSCRIPT_FOLDER(), path);
 				if (!compiledScripts.get(path).matches(file)) {
 					compiledScripts.clear();
 					return;

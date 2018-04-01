@@ -20,6 +20,7 @@ import l2server.Config;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2Skill;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -34,7 +35,6 @@ public class SubPledgeSkillTree {
 	private TLongObjectHashMap<SubUnitSkill> skilltree = new TLongObjectHashMap<>();
 
 	public SubPledgeSkillTree() {
-		load();
 	}
 
 	public static SubPledgeSkillTree getInstance() {
@@ -77,12 +77,9 @@ public class SubPledgeSkillTree {
 			return count;
 		}
 	}
-
-	public void reload() {
-		load();
-	}
-
-	private void load() {
+	
+	@Load(dependencies = SkillTable.class)
+	public void load() {
 		skilltree.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "skilltrees/subpledgeskilltree.xml");
 		if (file.exists()) {

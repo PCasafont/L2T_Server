@@ -98,7 +98,7 @@ public final class RequestMoveToLocationInVehicle extends L2GameClientPacket {
 				return;
 			}
 		} else {
-			boat = BoatManager.getInstance().getBoat(boatId);
+			boat = BoatManager.INSTANCE.getBoat(boatId);
 			if (boat == null || !boat.isInsideRadius(activeChar, 300, true, false)) {
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;

@@ -16,8 +16,6 @@
 package l2server.gameserver;
 
 import l2server.Config;
-import l2server.L2DatabaseFactory;
-import l2server.ServerMode;
 import l2server.gameserver.cache.CrestCache;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
@@ -30,12 +28,10 @@ import l2server.gameserver.handler.*;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.*;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.entity.ClanWarManager;
 import l2server.gameserver.model.olympiad.HeroesManager;
 import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.L2GamePacketHandler;
-import l2server.gameserver.network.PacketOpcodes;
 import l2server.gameserver.pathfinding.PathFinding;
 import l2server.gameserver.script.faenor.FaenorScriptEngine;
 import l2server.gameserver.scripting.CompiledScriptCache;
@@ -52,14 +48,11 @@ import l2server.util.IPv4Filter;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Calendar;
 import java.util.logging.Level;
-import java.util.logging.LogManager;
 
 public class Server {
 	private final Core<L2GameClient> selectorThread;
@@ -88,44 +81,14 @@ public class Server {
 	}
 	
 	public Server() throws Exception {
-		ServerMode.serverMode = ServerMode.MODE_GAMESERVER;
-		// Local Constants
-		final String LOG_FOLDER = "log"; // Name of folder for log file
-		final String LOG_NAME = "./log.cfg"; // Name of log file
-		
-		/* Main */
-		// Create log folder
-		File logFolder = new File(Config.DATAPACK_ROOT, LOG_FOLDER);
-		logFolder.mkdir();
-		
-		// Create input stream for log file -- or store file data into memory
-		InputStream is = new FileInputStream(new File(LOG_NAME));
-		LogManager.getLogManager().readConfiguration(is);
-		is.close();
-		
-		// Initialize config
-		Config.load();
-		
-		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		gui = new ServerGui();
-		gui.init();
-		
-		printSection("Database");
-		L2DatabaseFactory.getInstance();
-		
-		//SqlToXml.races();
-		//SqlToXml.classes();
-		//SqlToXml.shops();
-		//SqlToXml.customShops();
-		//SqlToXml.enchantSkillGroups();
-		//SqlToXml.armorSets();
-		//SqlToXml.henna();
-		//SqlToXml.fortSpawns();
 		
 		long serverLoadStart = System.currentTimeMillis();
 		
 		gameServer = this;
-		Log.finest("used mem:" + getUsedMemoryMB() + "MB");
+		
+		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		gui = new ServerGui();
+		gui.init();
 		
 		idFactory = IdFactory.getInstance();
 		
@@ -139,156 +102,28 @@ public class Server {
 		new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "crests").mkdirs();
 		new File("log/game").mkdirs();
 		
-		// load script engines
-		printSection("Engines");
-		L2ScriptEngineManager.getInstance();
-		
-		printSection("World");
-		// start game time control early
-		TimeController.getInstance();
-		InstanceManager.getInstance();
-		L2World.getInstance();
-		MapRegionTable.getInstance();
-		Announcements.getInstance();
-		GlobalVariablesManager.getInstance();
-		PacketOpcodes.init();
-		
-		printSection("Skills");
-		EnchantCostsTable.getInstance();
-		SkillTable.getInstance();
-		SkillTreeTable.getInstance();
-		PledgeSkillTree.getInstance();
-		NobleSkillTable.getInstance();
-		GMSkillTable.getInstance();
-		HeroSkillTable.getInstance();
-		ResidentialSkillTable.getInstance();
-		SubPledgeSkillTree.getInstance();
-		AbilityTable.getInstance();
-		ComboSkillTable.getInstance();
-		
-		printSection("Items");
-		ItemTable.getInstance();
-		SummonItemsData.getInstance();
-		EnchantHPBonusData.getInstance();
-		MerchantPriceConfigTable.getInstance().load();
-		TradeController.getInstance();
-		MultiSell.getInstance();
-		RecipeController.getInstance();
-		ArmorSetsTable.getInstance();
-		FishTable.getInstance();
-		if (Config.isServer(Config.TENKAI_LEGACY)) {
-			EnchantMultiSellTable.getInstance();
-		}
-		
-		printSection("Characters");
-		CharTemplateTable.getInstance();
-		PlayerStatDataTable.getInstance();
-		CharNameTable.getInstance();
-		AccessLevels.getInstance();
-		AdminCommandAccessRights.getInstance();
-		GmListTable.getInstance();
-		RaidBossPointsManager.getInstance();
-		PetDataTable.getInstance();
-		PartySearchManager.getInstance();
-		MentorManager.getInstance();
-		BeautyTable.getInstance();
-		ScenePlayerDataTable.getInstance();
-		CompoundTable.getInstance();
-		
-		printSection("Clans");
-		ClanTable.getInstance();
-		ClanHallAuctionManager.getInstance();
-		ClanHallManager.getInstance();
-		ClanWarManager.getInstance();
-		ClanRecruitManager.getInstance();
-		
-		printSection("Auction");
-		//AuctionManager.getInstance();
-		
 		printSection("Geodata");
 		GeoData.getInstance();
 		if (Config.GEODATA == 2) {
 			PathFinding.getInstance();
 		}
 		
-		printSection("NPCs");
-		CastleManager.getInstance().load();
-		ExtraDropTable.getInstance();
-		NpcTable.getInstance();
-		GrandBossManager.getInstance();
-		
-		if (Config.isServer(Config.TENKAI)) {
-			FarmZoneManager.getInstance();
-		}
-		
-		ZoneManager.getInstance();
-		FlyMoveTable.getInstance();
-		DoorTable.getInstance();
-		StaticObjects.getInstance();
-		ItemAuctionManager.getInstance();
-		FortManager.getInstance();
-		SpawnTable.getInstance();
-		NpcWalkersTable.getInstance();
-		GraciaSeedsManager.getInstance();
-		DayNightSpawnManager.getInstance().notifyChangeMode();
-		CastleManager.getInstance().spawnCastleTendencyNPCs();
-		GrandBossManager.getInstance().initZones();
-		FourSepulchersManager.getInstance().init();
-		EventDroplist.getInstance();
-		MainTownManager.getInstance();
-		
-		printSection("Siege");
-		SiegeManager.getInstance().getSieges();
-		FortSiegeManager.getInstance();
-		CastleManorManager.getInstance();
-		MercTicketManager.getInstance();
-		L2Manor.getInstance();
-		
-		printSection("Olympiad");
-		Olympiad.getInstance();
-		HeroesManager.getInstance();
-		
-		// Call to load caches
-		printSection("Cache");
-		HtmCache.getInstance();
-		CrestCache.getInstance();
-		TeleportLocationTable.getInstance();
-		UITable.getInstance();
-		PartyMatchWaitingList.getInstance();
-		PartyMatchRoomList.getInstance();
-		PetitionManager.getInstance();
-		HennaTable.getInstance();
-		HelperBuffTable.getInstance();
-		EnsoulDataTable.getInstance();
-		EnchantEffectTable.getInstance();
-		LifeStoneTable.getInstance();
-		CursedWeaponsManager.getInstance();
-		CoreMessageTable.getInstance();
-		ImageTable.getInstance();
-		
-		printSection("Scripts");
-		QuestManager.getInstance();
-		TransformationManager.getInstance();
-		BoatManager.getInstance();
-		AirShipManager.getInstance();
-		ShuttleTable.getInstance();
-		
 		try {
 			Log.info("Loading Server Scripts");
 			File scripts = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "scripts.cfg");
 			if (!Config.ALT_DEV_NO_HANDLERS || !Config.ALT_DEV_NO_QUESTS) {
-				L2ScriptEngineManager.getInstance().executeScriptList(scripts);
+				L2ScriptEngineManager.INSTANCE.executeScriptList(scripts);
 				
 				scripts = new File(Config.DATAPACK_ROOT + "/data_" + Config.SERVER_NAME + "/scripts.cfg");
 				if (scripts.exists()) {
-					L2ScriptEngineManager.getInstance().executeScriptList(scripts);
+					L2ScriptEngineManager.INSTANCE.executeScriptList(scripts);
 				}
 			}
 		} catch (IOException ioe) {
 			Log.severe("Failed loading scripts.cfg, no script going to be loaded");
 		}
 		try {
-			CompiledScriptCache compiledScriptCache = L2ScriptEngineManager.getInstance().getCompiledScriptCache();
+			CompiledScriptCache compiledScriptCache = L2ScriptEngineManager.INSTANCE.getCache();
 			if (compiledScriptCache == null) {
 				Log.info("Compiled Scripts Cache is disabled.");
 			} else {
@@ -306,10 +141,6 @@ public class Server {
 		}
 		QuestManager.getInstance().report();
 		TransformationManager.getInstance().report();
-		
-		if (Config.SAVE_DROPPED_ITEM) {
-			ItemsOnGroundManager.getInstance();
-		}
 		
 		if (Config.AUTODESTROY_ITEM_AFTER * 1000 > 0 || Config.HERB_AUTO_DESTROY_TIME * 1000 > 0) {
 			ItemsAutoDestroy.getInstance();

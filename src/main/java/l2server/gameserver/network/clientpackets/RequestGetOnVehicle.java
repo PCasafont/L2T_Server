@@ -57,7 +57,7 @@ public final class RequestGetOnVehicle extends L2GameClientPacket {
 				return;
 			}
 		} else {
-			boat = BoatManager.getInstance().getBoat(boatId);
+			boat = BoatManager.INSTANCE.getBoat(boatId);
 			if (boat == null || boat.isMoving() || !activeChar.isInsideRadius(boat, 1000, true, false)) {
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return;

@@ -26,6 +26,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -186,8 +188,6 @@ public class MercTicketManager {
 	private static final int GUARDIAN_TYPES_COUNT = 52;
 	
 	private MercTicketManager() {
-		Log.info("Initializing MercTicketManager");
-		load();
 	}
 	
 	// returns the castleId for the passed ticket item id
@@ -208,12 +208,15 @@ public class MercTicketManager {
 		return -1;
 	}
 	
+	@Reload("mercTicket")
 	public void reload() {
 		getDroppedTickets().clear();
 		load();
 	}
 	
+	@Load(dependencies = CastleManager.class)
 	private void load() {
+		Log.info("Initializing MercTicketManager");
 		Connection con = null;
 		// load merc tickets into the world
 		try {

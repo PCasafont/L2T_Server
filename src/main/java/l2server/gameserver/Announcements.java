@@ -27,6 +27,7 @@ import l2server.gameserver.script.DateRange;
 import l2server.gameserver.util.Broadcast;
 import l2server.log.Log;
 import l2server.util.StringUtil;
+import l2server.util.loader.annotations.Load;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -46,13 +47,13 @@ public class Announcements {
 	private List<List<Object>> eventAnnouncements = new ArrayList<>();
 
 	private Announcements() {
-		loadAnnouncements();
 	}
 
 	public static Announcements getInstance() {
 		return SingletonHolder.instance;
 	}
 
+	@Load
 	public void loadAnnouncements() {
 		announcements.clear();
 

@@ -45,13 +45,13 @@ public final class L2GamePacketHandler implements IPacketHandler<L2GameClient>, 
 		}
 		
 		GameClientState state = client.getState();
-		PacketFamily family = PacketOpcodes.ClientPacketsFamily;
+		PacketFamily family = PacketOpcodes.INSTANCE.getClientPacketsFamily();
 		L2GameClientPacket msg = null;
 		int[] accumOpcodes = new int[5];
 		int opcodeCount = 0;
 		while (msg == null) {
 			int opcode;
-			switch (family.switchLength) {
+			switch (family.getSwitchLength()) {
 				case 1:
 					opcode = buf.get() & 0xFF;
 					break;
@@ -65,7 +65,7 @@ public final class L2GamePacketHandler implements IPacketHandler<L2GameClient>, 
 			accumOpcodes[opcodeCount] = opcode;
 			opcodeCount++;
 			
-			Object obj = family.children.get(opcode);
+			Object obj = family.getChildren().get(opcode);
 			if (obj instanceof PacketFamily) {
 				family = (PacketFamily) obj;
 			} else if (obj instanceof Class<?>) {

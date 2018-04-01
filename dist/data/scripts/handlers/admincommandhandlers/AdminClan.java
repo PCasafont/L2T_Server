@@ -18,9 +18,9 @@ package handlers.admincommandhandlers;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.CastleManager;
+import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.instancemanager.ClanHallManager;
 import l2server.gameserver.instancemanager.FortManager;
-import l2server.gameserver.instancemanager.SiegeManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
 import l2server.gameserver.model.L2World;
@@ -105,7 +105,7 @@ public class AdminClan implements IAdminCommandHandler {
 						if (member.getObjectId() == player.getObjectId()) {
 							L2PcInstance exLeader = clan.getLeader().getPlayerInstance();
 							if (exLeader != null) {
-								SiegeManager.getInstance().removeSiegeSkills(exLeader);
+								CastleSiegeManager.getInstance().removeSiegeSkills(exLeader);
 								exLeader.setClan(clan);
 								exLeader.setClanPrivileges(L2Clan.CP_NOTHING);
 								exLeader.broadcastUserInfo();
@@ -124,8 +124,8 @@ public class AdminClan implements IAdminCommandHandler {
 							newLeader.setPledgeClass(member.calculatePledgeClass(newLeader));
 							newLeader.setClanPrivileges(L2Clan.CP_ALL);
 
-							if (clan.getLevel() >= SiegeManager.getInstance().getSiegeClanMinLevel()) {
-								SiegeManager.getInstance().addSiegeSkills(newLeader);
+							if (clan.getLevel() >= CastleSiegeManager.getInstance().getSiegeClanMinLevel()) {
+								CastleSiegeManager.getInstance().addSiegeSkills(newLeader);
 							}
 
 							newLeader.broadcastUserInfo();

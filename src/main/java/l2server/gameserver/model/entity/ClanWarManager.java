@@ -9,6 +9,7 @@ import l2server.gameserver.model.entity.ClanWarManager.ClanWar.WarState;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,14 +28,13 @@ public class ClanWarManager {
 	private List<ClanWar> wars = new ArrayList<>();
 
 	private ClanWarManager() {
-		load();
-		Log.info("Clan war manager started.");
 	}
 
 	public static ClanWarManager getInstance() {
 		return instance == null ? (instance = new ClanWarManager()) : instance;
 	}
-
+	
+	@Load(dependencies = ClanTable.class)
 	public final void load() {
 		List<ClanWar> wars = new ArrayList<>();
 		for (ClanWar war : wars) {
@@ -106,6 +106,7 @@ public class ClanWarManager {
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
+		Log.info("Clan war manager started.");
 	}
 
 	public void deleteWar(int clanId1, int clanId2) {

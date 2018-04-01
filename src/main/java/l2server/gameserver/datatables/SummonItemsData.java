@@ -23,21 +23,25 @@ import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.L2SummonItem;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
 
 public class SummonItemsData {
-	private Map<Integer, L2SummonItem> summonitems;
+	
+	private Map<Integer, L2SummonItem> summonitems = new HashMap<>();
 
 	public static SummonItemsData getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private SummonItemsData() {
-		summonitems = new HashMap<>();
-
+	}
+	
+	@Load
+	public void load() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "summonItems.xml");
 		XmlDocument doc = new XmlDocument(file);
 

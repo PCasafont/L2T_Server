@@ -16,9 +16,9 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -31,7 +31,7 @@ import java.util.Map;
  * @author Pere
  */
 
-public class BeautyTable implements Reloadable {
+public class BeautyTable {
 	public class BeautyTemplate {
 		private int id;
 		private Map<Integer, BeautyInfo> hairStyles = new HashMap<>();
@@ -98,14 +98,15 @@ public class BeautyTable implements Reloadable {
 	private Map<Integer, BeautyTemplate> beautyTable = new HashMap<>();
 
 	private BeautyTable() {
-		if (!Config.IS_CLASSIC) {
-			reload();
-			ReloadableManager.getInstance().register("beauty", this);
-		}
 	}
 
-	@Override
-	public boolean reload() {
+	@Reload("beauty")
+	@Load
+	public void reload() {
+		if (Config.IS_CLASSIC) {
+			return;
+		}
+		
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "beautyShop.xml");
 
 		XmlDocument doc = new XmlDocument(file);
@@ -138,13 +139,6 @@ public class BeautyTable implements Reloadable {
 
 		Log.info("BeautyTable: Loaded " + template.getHairStyles().size() + " hair styles, " + template.getFaceStyles().size() + " face styles and " +
 				template.getHairColors().size() + " hair colors!");
-
-		return false;
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Beauty Table reloaded";
 	}
 
 	public BeautyTemplate getTemplate(int id) {

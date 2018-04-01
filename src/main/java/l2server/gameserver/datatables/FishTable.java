@@ -18,6 +18,7 @@ package l2server.gameserver.datatables;
 import l2server.Config;
 import l2server.gameserver.model.FishData;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -37,11 +38,15 @@ public class FishTable {
 	public static FishTable getInstance() {
 		return SingletonHolder.instance;
 	}
-
+	
 	private FishTable() {
+	}
+	
+	@Load
+	public void load() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "fishes.xml");
 		XmlDocument doc = new XmlDocument(file);
-
+		
 		int count = 0;
 		for (XmlNode n : doc.getChildren()) {
 			if (n.getName().equalsIgnoreCase("fish")) {
@@ -71,10 +76,10 @@ public class FishTable {
 				count++;
 			}
 		}
-
+		
 		Log.info("FishTable: Loaded " + count + " Fishes.");
 	}
-
+	
 	/**
 	 * @return List of Fish that can be fished
 	 */

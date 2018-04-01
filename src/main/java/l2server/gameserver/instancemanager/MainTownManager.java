@@ -24,6 +24,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.zone.type.L2DummyZone;
 import l2server.gameserver.model.zone.type.L2TownZone;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -116,10 +117,10 @@ public class MainTownManager {
 	private long nextTownTimer = 0L;
 
 	public MainTownManager() {
-		load();
 	}
-
-	private void load() {
+	
+	@Load(dependencies = SpawnTable.class)
+	public void load() {
 		if (Config.isServer(Config.TENKAI_LEGACY)) {
 			return;
 		}

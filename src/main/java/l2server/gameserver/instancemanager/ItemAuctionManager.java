@@ -20,6 +20,7 @@ import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.itemauction.ItemAuctionInstance;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -39,18 +40,19 @@ public final class ItemAuctionManager {
 		return SingletonHolder.instance;
 	}
 
-	private final Map<Integer, ItemAuctionInstance> managerInstances;
-	private final AtomicInteger auctionIds;
+	private final Map<Integer, ItemAuctionInstance> managerInstances = new HashMap<>();
+	private final AtomicInteger auctionIds = new AtomicInteger(1);
 
 	private ItemAuctionManager() {
-		managerInstances = new HashMap<>();
-		auctionIds = new AtomicInteger(1);
-
+	}
+	
+	@Load
+	public void load() {
 		if (!Config.ALT_ITEM_AUCTION_ENABLED || Config.IS_CLASSIC) {
 			Log.info("ItemAuctionManager: Disabled by config.");
 			return;
 		}
-
+		
 		Connection con = null;
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
@@ -64,13 +66,13 @@ public final class ItemAuctionManager {
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
-
+		
 		final File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "ItemAuctions.xml");
 		if (!file.exists()) {
 			Log.warning("ItemAuctionManager: Missing ItemAuctions.xml!");
 			return;
 		}
-
+		
 		try {
 			XmlDocument doc = new XmlDocument(file);
 			for (XmlNode nb : doc.getChildren()) {
@@ -90,7 +92,7 @@ public final class ItemAuctionManager {
 			Log.log(Level.SEVERE, "ItemAuctionManager: Failed loading auctions from xml.", e);
 		}
 	}
-
+	
 	public final void shutdown() {
 		final ItemAuctionInstance[] instances = managerInstances.values().toArray(new ItemAuctionInstance[managerInstances.values().size()]);
 		for (final ItemAuctionInstance instance : instances) {

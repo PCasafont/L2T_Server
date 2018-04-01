@@ -20,6 +20,7 @@ import l2server.Config;
 import l2server.gameserver.model.L2DropCategory;
 import l2server.gameserver.model.L2DropData;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -33,23 +34,21 @@ import java.util.ArrayList;
  */
 public class ExtraDropTable {
 
-	private Map<Integer, ArrayList<L2DropCategory>> extraGroups;
+	private Map<Integer, ArrayList<L2DropCategory>> extraGroups = new HashMap<>();
 
 	public static ExtraDropTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private ExtraDropTable() {
-		extraGroups = new HashMap<>();
-		if (!Config.IS_CLASSIC) {
-			restoreData();
-		}
 	}
-
-	/**
-	 *
-	 */
+	
+	@Load(dependencies = ItemTable.class)
 	private void restoreData() {
+		if (Config.IS_CLASSIC) {
+			return;
+		}
+		
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "extraDropGroups.xml");
 		XmlDocument doc = new XmlDocument(file);
 

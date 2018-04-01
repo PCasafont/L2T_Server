@@ -29,6 +29,7 @@ import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.zone.type.L2ArenaZone;
 import l2server.gameserver.model.zone.type.L2ClanHallZone;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.io.*;
 import java.util.List;
@@ -55,11 +56,12 @@ public class MapRegionTable {
 	}
 
 	private MapRegionTable() {
-		LineNumberReader lnr = null;
-		try {
-			File data = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "mapregion.csv");
-			lnr = new LineNumberReader(new BufferedReader(new FileReader(data)));
-
+	}
+	
+	@Load
+	private void load() {
+		File data = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "mapregion.csv");
+		try (LineNumberReader lnr = new LineNumberReader(new BufferedReader(new FileReader(data)))) {
 			String line = null;
 			while ((line = lnr.readLine()) != null) {
 				if (line.trim().length() == 0 || line.startsWith("#")) {
@@ -81,15 +83,9 @@ public class MapRegionTable {
 			Log.warning("mapregion.csv is missing in data folder");
 		} catch (Exception e) {
 			Log.log(Level.WARNING, "Error while loading MapRegion table " + e.getMessage(), e);
-		} finally {
-			try {
-				lnr.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 		}
 	}
-
+	
 	public final int getMapRegion(int posX, int posY) {
 		try {
 			return regions[getMapRegionX(posX)][getMapRegionY(posY)];

@@ -22,6 +22,7 @@ import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.entity.Fort;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -37,9 +38,9 @@ public class FortManager implements InstanceListManager {
 	}
 
 	private FortManager() {
-		load();
 	}
 
+	@Load
 	@Override
 	public void load() {
 		Log.info("Initializing FortManager");

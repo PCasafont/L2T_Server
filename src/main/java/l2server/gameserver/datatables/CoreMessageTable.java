@@ -3,6 +3,8 @@ package l2server.gameserver.datatables;
 import l2server.Config;
 import l2server.gameserver.model.CoreMessage;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -27,14 +29,16 @@ public class CoreMessageTable {
 	}
 
 	private CoreMessageTable() {
+	}
+
+	@Load
+	public void readMessageTable() {
+		
 		CoreMessage cm = new CoreMessage("(Unknown Text)");
 		messages.put(-1, cm);
 		cm = new CoreMessage("$s1");
 		messages.put(0, cm);
-		readMessageTable();
-	}
-
-	private void readMessageTable() {
+		
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "coreMessages.xml");
 		XmlDocument doc = new XmlDocument(file);
 
@@ -58,6 +62,7 @@ public class CoreMessageTable {
 		}
 	}
 
+	@Reload("messages")
 	public void reload() {
 		messages.clear();
 		readMessageTable();

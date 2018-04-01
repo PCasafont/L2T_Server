@@ -17,8 +17,8 @@ package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.instancemanager.FortSiegeManager;
-import l2server.gameserver.instancemanager.SiegeManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2SiegeClan;
 import l2server.gameserver.model.L2Skill;
@@ -44,7 +44,7 @@ public class L2SiegeFlagInstance extends L2Npc {
 		clan = player.getClan();
 		this.player = player;
 		canTalk = true;
-		siege = SiegeManager.getInstance().getSiege(player.getX(), player.getY(), player.getZ());
+		siege = CastleSiegeManager.getInstance().getSiege(player.getX(), player.getY(), player.getZ());
 		if (siege == null) {
 			siege = FortSiegeManager.getInstance().getSiege(player.getX(), player.getY(), player.getZ());
 		}

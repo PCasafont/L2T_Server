@@ -29,7 +29,7 @@ import l2server.util.Rnd;
  * @author Slyce
  */
 public class PolymorphingOnAttack extends L2AttackableAIScript {
-	private static final Map<Integer, Integer[]> MOBSPAWNS = new HashMap<>();
+	private static final Map<Integer, Integer[]> MOBSPAWNS = new HashMap<Integer, Integer[]>();
 
 	static {
 		MOBSPAWNS.put(21258, new Integer[]{21259, 100, 100, -1}); //Fallen Orc Shaman -> Sharp Talon Tiger (always polymorphs)

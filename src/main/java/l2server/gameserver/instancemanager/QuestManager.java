@@ -16,10 +16,13 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.Config;
+import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.scripting.L2ScriptEngineManager;
 import l2server.gameserver.scripting.ScriptManager;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 
 import java.io.File;
 import java.io.IOException;
@@ -41,7 +44,6 @@ public class QuestManager extends ScriptManager<Quest> {
 	// =========================================================
 	// Constructor
 	private QuestManager() {
-		Log.info("Initializing QuestManager");
 	}
 
 	// =========================================================
@@ -68,7 +70,7 @@ public class QuestManager extends ScriptManager<Quest> {
 		}
 		return q.reload();
 	}
-
+	
 	public final void reload() {
 		Log.info("Reloading Server Scripts");
 		try {
@@ -82,11 +84,11 @@ public class QuestManager extends ScriptManager<Quest> {
 			quests.clear();
 			// now load all scripts
 			File scripts = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "scripts.cfg");
-			L2ScriptEngineManager.getInstance().executeScriptList(scripts);
+			L2ScriptEngineManager.INSTANCE.executeScriptList(scripts);
 
 			scripts = new File(Config.DATAPACK_ROOT + "/data_" + Config.SERVER_NAME + "/scripts.cfg");
 			if (scripts.exists()) {
-				L2ScriptEngineManager.getInstance().executeScriptList(scripts);
+				L2ScriptEngineManager.INSTANCE.executeScriptList(scripts);
 			}
 
 			QuestManager.getInstance().report();

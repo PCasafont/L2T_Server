@@ -23,6 +23,7 @@ import l2server.gameserver.network.clientpackets.CharacterCreate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -42,15 +43,10 @@ import java.util.logging.Level;
  */
 public class CharNameTable {
 
-	private final Map<Integer, String> chars;
-	private final Map<Integer, Integer> accessLevels;
+	private final Map<Integer, String> chars = new ConcurrentHashMap<>();
+	private final Map<Integer, Integer> accessLevels = new HashMap<>();
 
 	private CharNameTable() {
-		chars = new ConcurrentHashMap<>();
-		accessLevels = new HashMap<>();
-		if (Config.CACHE_CHAR_NAMES) {
-			loadAll();
-		}
 	}
 
 	public static CharNameTable getInstance() {
@@ -219,7 +215,11 @@ public class CharNameTable {
 		return number;
 	}
 
+	@Load
 	private void loadAll() {
+		if (!Config.CACHE_CHAR_NAMES) {
+			return;
+		}
 		String name;
 		int id = -1;
 		int accessLevel = 0;

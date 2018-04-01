@@ -3,8 +3,6 @@ package l2server.gameserver.instancemanager;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.Announcements;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.datatables.CharNameTable;
@@ -18,6 +16,8 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -39,7 +39,7 @@ import java.util.concurrent.TimeUnit;
  * @author Pere
  */
 
-public class TenkaiAuctionManager implements Reloadable {
+public class TenkaiAuctionManager {
 	private static final long ADDED_DURATION = 3600000L;
 	
 	/**
@@ -501,12 +501,13 @@ public class TenkaiAuctionManager implements Reloadable {
 	/**
 	 * Load all the stuff
 	 */
+	@Reload("customauctions")
+	@Load(dependencies = ItemTable.class)
 	private void load() {
 		if (!Config.ENABLE_CUSTOM_AUCTIONS) {
 			return;
 		}
 		
-		ReloadableManager.getInstance().register("customauctions", this);
 		loadTemplates();
 		
 		Connection con = null;
@@ -766,19 +767,7 @@ public class TenkaiAuctionManager implements Reloadable {
 		}
 	}
 	
-	@Override
-	public boolean reload() {
-		loadTemplates();
-		return true;
-	}
-	
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Custom Auction Templates reloaded";
-	}
-	
 	private TenkaiAuctionManager() {
-		load();
 	}
 	
 	public static TenkaiAuctionManager getInstance() {

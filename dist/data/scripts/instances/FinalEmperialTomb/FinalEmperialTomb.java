@@ -120,8 +120,8 @@ public class FinalEmperialTomb extends Quest {
 	private static final int INSTANCEID = 136; // this is the client number
 	private static final boolean debug = false;
 
-	private final Map<Integer, L2Territory> spawnZoneList = new HashMap<>();
-	private final Map<Integer, List<FETSpawn>> spawnList = new HashMap<>();
+	private final Map<Integer, L2Territory> spawnZoneList = new HashMap<Integer, L2Territory>();
+	private final Map<Integer, List<FETSpawn>> spawnList = new HashMap<Integer, List<FETSpawn>>();
 	private final List<Integer> mustKillMobsId = new ArrayList<Integer>();
 
 	// Teleports

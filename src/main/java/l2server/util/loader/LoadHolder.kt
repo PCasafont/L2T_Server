@@ -24,13 +24,13 @@ import java.lang.reflect.Method
 /**
  * @author NosKun
  */
-class LoadHolder(val instanceGetterMethod: Method, val loadMethod: Method) {
+class LoadHolder(val instance: Any, val loadMethod: Method) {
 
 	@Throws(InvocationTargetException::class, IllegalAccessException::class)
 	fun call() {
 		val loadMethodAccessible = loadMethod.isAccessible
 		loadMethod.isAccessible = true
-		loadMethod.invoke(instanceGetterMethod.invoke(null))
+		loadMethod.invoke(instance)
 		loadMethod.isAccessible = loadMethodAccessible
 	}
 
@@ -38,24 +38,25 @@ class LoadHolder(val instanceGetterMethod: Method, val loadMethod: Method) {
 		if (this === other) {
 			return true
 		}
+
 		if (other == null || javaClass != other.javaClass) {
 			return false
 		}
 
 		val that = other as LoadHolder?
-		return if (instanceGetterMethod != that!!.instanceGetterMethod) {
+		return if (instance != that!!.instance) {
 			false
 		} else loadMethod == that.loadMethod
 
 	}
 
 	override fun hashCode(): Int {
-		var result = instanceGetterMethod.hashCode()
+		var result = instance.hashCode()
 		result = 31 * result + loadMethod.hashCode()
 		return result
 	}
 
 	override fun toString(): String {
-		return instanceGetterMethod.declaringClass.name + "." + instanceGetterMethod.name + "()." + loadMethod.name + "()"
+		return instance.javaClass.name + "::" + loadMethod.name + "()"
 	}
 }

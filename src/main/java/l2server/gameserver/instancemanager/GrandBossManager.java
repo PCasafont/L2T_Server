@@ -29,6 +29,7 @@ import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -81,11 +82,11 @@ public class GrandBossManager {
 	}
 	
 	private GrandBossManager() {
-		Log.info("Initializing GrandBossManager");
-		init();
 	}
 	
-	private void init() {
+	@Load(dependencies = {NpcTable.class})
+	public void load() {
+		Log.info("Initializing GrandBossManager");
 		zones = new ArrayList<>();
 		
 		bosses = new HashMap<>();
@@ -141,12 +142,14 @@ public class GrandBossManager {
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
+		
+		initZones();
 	}
 	
 	/*
 	 * Zone Functions
 	 */
-	public void initZones() {
+	private void initZones() {
 		Connection con = null;
 		
 		HashMap<Integer, ArrayList<Integer>> zones = new HashMap<>();

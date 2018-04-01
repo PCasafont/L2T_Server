@@ -32,7 +32,7 @@ public final class Q692_HowtoOpposeEvil extends Quest {
 	private static final int LEKONS_CERTIFICATE = 13857;
 	private static final int[] QUEST_ITEMS = {13863, 13864, 13865, 13866, 13867, 15535, 15536};
 
-	private static final Map<Integer, Integer[]> questMobs = new HashMap<>();
+	private static final Map<Integer, Integer[]> questMobs = new HashMap<Integer, Integer[]>();
 
 	static {
 		// Seed of Infinity

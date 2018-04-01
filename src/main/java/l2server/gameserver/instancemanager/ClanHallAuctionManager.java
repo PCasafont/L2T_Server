@@ -18,6 +18,8 @@ package l2server.gameserver.instancemanager;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.entity.Auction;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,7 +29,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 public class ClanHallAuctionManager {
-	private List<Auction> auctions;
+	private List<Auction> auctions = new ArrayList<>();
 
 	private static final String[] ITEM_INIT_DATA = {"(22, 0, 'NPC', 'NPC Clan', 'ClanHall', 22, 0, 'Moonstone Hall', 1, 20000000, 0, 1164841200000)",
 			"(23, 0, 'NPC', 'NPC Clan', 'ClanHall', 23, 0, 'Onyx Hall', 1, 20000000, 0, 1164841200000)",
@@ -87,17 +89,11 @@ public class ClanHallAuctionManager {
 	}
 
 	private ClanHallAuctionManager() {
+	}
+
+	@Load
+	public void load() {
 		Log.info("Initializing AuctionManager");
-		auctions = new ArrayList<>();
-		load();
-	}
-
-	public void reload() {
-		auctions.clear();
-		load();
-	}
-
-	private void load() {
 		Connection con = null;
 		try {
 			PreparedStatement statement;

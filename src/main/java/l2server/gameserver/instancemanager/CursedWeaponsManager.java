@@ -26,6 +26,7 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Broadcast;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -56,10 +57,10 @@ public class CursedWeaponsManager {
 	// =========================================================
 	// Constructor
 	private CursedWeaponsManager() {
-		init();
 	}
 
-	private void init() {
+	@Load
+	public void init() {
 		Log.info("Initializing CursedWeaponsManager");
 		cursedWeapons = new HashMap<>();
 

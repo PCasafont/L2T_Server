@@ -16,6 +16,7 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.util.loader.annotations.Load;
 
 import java.util.ArrayList;
 
@@ -27,9 +28,9 @@ public class PartySearchManager {
 	ArrayList<L2PcInstance> wannaToChangeThisPlayer;
 
 	public PartySearchManager() {
-		load();
 	}
 
+	@Load
 	public void load() {
 		if (lookingForParty == null) {
 			lookingForParty = new ArrayList<>();

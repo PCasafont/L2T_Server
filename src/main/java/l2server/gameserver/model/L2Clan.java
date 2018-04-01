@@ -22,9 +22,9 @@ import l2server.gameserver.communitybbs.BB.Forum;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.CastleManager;
+import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.instancemanager.ClanRecruitManager;
 import l2server.gameserver.instancemanager.FortManager;
-import l2server.gameserver.instancemanager.SiegeManager;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance.TimeStamp;
@@ -269,7 +269,7 @@ public class L2Clan {
 		getWarehouse();
 
 		L2PcInstance exLeader = getLeader().getPlayerInstance();
-		SiegeManager.getInstance().removeSiegeSkills(exLeader);
+		CastleSiegeManager.getInstance().removeSiegeSkills(exLeader);
 		exLeader.setClan(this);
 		exLeader.setClanPrivileges(L2Clan.CP_NOTHING);
 		exLeader.broadcastUserInfo();
@@ -284,8 +284,8 @@ public class L2Clan {
 		newLeader.setClan(this);
 		newLeader.setPledgeClass(member.calculatePledgeClass(newLeader));
 		newLeader.setClanPrivileges(L2Clan.CP_ALL);
-		if (getLevel() >= SiegeManager.getInstance().getSiegeClanMinLevel()) {
-			SiegeManager.getInstance().addSiegeSkills(newLeader);
+		if (getLevel() >= CastleSiegeManager.getInstance().getSiegeClanMinLevel()) {
+			CastleSiegeManager.getInstance().addSiegeSkills(newLeader);
 
 			// Transferring siege skills TimeStamps from old leader to new leader to prevent unlimited headquarters
 			if (!exLeader.getReuseTimeStamp().isEmpty()) {
@@ -431,7 +431,7 @@ public class L2Clan {
 			player.setSponsor(0);
 
 			if (player.isClanLeader()) {
-				SiegeManager.getInstance().removeSiegeSkills(player);
+				CastleSiegeManager.getInstance().removeSiegeSkills(player);
 				player.setClanCreateExpiryTime(System.currentTimeMillis() + Config.ALT_CLAN_CREATE_DAYS * 86400000L); //24*60*60*1000 = 86400000
 			}
 			// remove Clanskills from Player
@@ -2554,10 +2554,10 @@ public class L2Clan {
 		if (getLeader().isOnline()) {
 			L2PcInstance leader = getLeader().getPlayerInstance();
 			if (4 < level) {
-				SiegeManager.getInstance().addSiegeSkills(leader);
+				CastleSiegeManager.getInstance().addSiegeSkills(leader);
 				leader.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLAN_CAN_ACCUMULATE_CLAN_REPUTATION_POINTS));
 			} else if (5 > level) {
-				SiegeManager.getInstance().removeSiegeSkills(leader);
+				CastleSiegeManager.getInstance().removeSiegeSkills(leader);
 			}
 		}
 

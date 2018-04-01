@@ -22,6 +22,7 @@ import l2server.gameserver.model.entity.Auction;
 import l2server.gameserver.model.entity.ClanHall;
 import l2server.gameserver.model.zone.type.L2ClanHallZone;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,9 +36,9 @@ import java.util.logging.Level;
  */
 public class ClanHallManager {
 
-	private Map<Integer, ClanHall> clanHall;
-	private Map<Integer, ClanHall> freeClanHall;
-	private Map<Integer, ClanHall> allClanHalls;
+	private Map<Integer, ClanHall> clanHall = new HashMap<>();
+	private Map<Integer, ClanHall> freeClanHall = new HashMap<>();
+	private Map<Integer, ClanHall> allClanHalls = new HashMap<>();
 	private boolean loaded = false;
 
 	public static ClanHallManager getInstance() {
@@ -49,11 +50,6 @@ public class ClanHallManager {
 	}
 
 	private ClanHallManager() {
-		Log.info("Initializing ClanHallManager");
-		clanHall = new HashMap<>();
-		freeClanHall = new HashMap<>();
-		allClanHalls = new HashMap<>();
-		load();
 	}
 
 	/* Reload All Clan Hall */
@@ -68,7 +64,9 @@ public class ClanHallManager {
 	/**
 	 * Load All Clan Hall
 	 */
-	private void load() {
+	@Load(dependencies = {ClanTable.class, ClanHallAuctionManager.class})
+	public void load() {
+		Log.info("Initializing ClanHallManager");
 		Connection con = null;
 		try {
 			int id, ownerId, grade = 0;

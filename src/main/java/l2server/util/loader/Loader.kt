@@ -46,14 +46,16 @@ object Loader {
 
 	fun initialize(prefix: String) {
 		try {
-			for (loadMethod in ClassPathUtil.getAllMethodsAnnotatedWith(prefix, Load::class.java)) {
-				val loadTreeNode = TreeNode(LoadHolder(findInstanceGetterMethod(loadMethod.declaringClass), loadMethod))
+            val loadMethods = ClassPathUtil.getAllMethodsAnnotatedWith(prefix, Load::class.java).associateBy { it.declaringClass }
+			for (loadable in loadMethods) {
+                val loadMethod = loadable.value
+				val loadTreeNode = TreeNode(LoadHolder(getInstance(loadMethod.declaringClass), loadMethod))
 				val loadAnnotation = loadMethod.getAnnotation(Load::class.java)
 				for (dependency in loadAnnotation.dependencies) {
-					for (dependencyMethod in dependency.method) {
 						try {
-							val dependencyLoadHolder = LoadHolder(findInstanceGetterMethod(dependency.clazz.java),
-									dependency.clazz.java.getDeclaredMethod(dependencyMethod))
+                            val dependencyLoader = loadMethods[dependency.java]
+                                    ?: throw RuntimeException("Loader not found for class ${dependency.simpleName}")
+							val dependencyLoadHolder = LoadHolder(getInstance(dependency.java), dependencyLoader)
 
 							loadTreeNode.addChild(dependencyLoadHolder)
 
@@ -62,10 +64,8 @@ object Loader {
 							}
 						} catch (e: NoSuchMethodException) {
 							throw RuntimeException(
-									"Dependency method for " + dependency.clazz.java.name + "." + dependencyMethod + "()" + " on " + loadTreeNode.value + " was not found.", e)
+									"Dependency load method for ${dependency.java.name} on ${loadTreeNode.value} was not found.", e)
 						}
-
-					}
 				}
 				loadTrees.add(loadTreeNode)
 			}
@@ -119,7 +119,7 @@ object Loader {
 		try {
 			for (reloadMethod in ClassPathUtil.getAllMethodsAnnotatedWith(prefix, Reload::class.java)) {
 				val reloadName = reloadMethod.getAnnotation(Reload::class.java).value
-				val loadHolder = LoadHolder(findInstanceGetterMethod(reloadMethod.declaringClass), reloadMethod)
+				val loadHolder = LoadHolder(getInstance(reloadMethod.declaringClass), reloadMethod)
 				val previousLoadHolder = reloads.putIfAbsent(reloadName, loadHolder)
 				if (previousLoadHolder != null) {
 					throw RuntimeException(
@@ -212,26 +212,34 @@ object Loader {
 		return reloads
 	}
 
-	private fun findInstanceGetterMethod(clazz: Class<*>): Method {
-		val instanceGetterMethods = Arrays.stream(clazz.declaredMethods)
-				.filter { it.parameterCount == 0 && it.name == "getInstance" }
-				.collect(Collectors.toList())
-		if (instanceGetterMethods.isEmpty()) {
-			throw UnsupportedOperationException(
-					"$clazz contains Load annotated method(s) but it does not have an InstanceGetter annotated method.")
+	private fun <T> getInstance(clazz: Class<T>): T {
+		val instanceGetterMethod = clazz.declaredMethods.firstOrNull { it.parameterCount == 0 && it.name == "getInstance" }
+		if (instanceGetterMethod != null) {
+            if (!Modifier.isPublic(instanceGetterMethod.modifiers)) {
+                throw UnsupportedOperationException("non public instance getter method ${instanceGetterMethod}")
+            }
+
+            if (!Modifier.isStatic(instanceGetterMethod.modifiers)) {
+                throw UnsupportedOperationException("non static instance getter method ${instanceGetterMethod}")
+            }
+
+            return instanceGetterMethod.invoke(null) as T
 		}
 
-		if (instanceGetterMethods.size != 1) {
-			throw UnsupportedOperationException("There should be only one InstanceGetter annotated method $instanceGetterMethods")
-		}
+        val instance = clazz.declaredFields.firstOrNull { it.name == "INSTANCE"}
+        if (instance != null) {
+            if (!Modifier.isPublic(instance.modifiers)) {
+                throw UnsupportedOperationException("non public instance attribute ${instance}")
+            }
 
-		if (!Modifier.isPublic(instanceGetterMethods[0].modifiers)) {
-			throw UnsupportedOperationException("non public InstanceGetter method ${instanceGetterMethods[0]}")
-		}
+            if (!Modifier.isStatic(instance.modifiers)) {
+                throw UnsupportedOperationException("non static instance attribute ${instance}")
+            }
 
-		if (!Modifier.isStatic(instanceGetterMethods[0].modifiers)) {
-			throw UnsupportedOperationException("non static InstanceGetter method ${instanceGetterMethods[0]}")
-		}
-		return instanceGetterMethods[0]
+            return instance.get(null) as T
+        }
+
+        throw UnsupportedOperationException(
+                "$clazz contains Load annotated method(s) but it does not have an instance getter.")
 	}
 }

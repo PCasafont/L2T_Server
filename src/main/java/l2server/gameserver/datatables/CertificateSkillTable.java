@@ -22,6 +22,7 @@ import l2server.gameserver.model.base.SubClass;
 import l2server.gameserver.network.serverpackets.ExAcquireSkillList;
 import l2server.gameserver.network.serverpackets.ExAcquireSkillList.SkillType;
 import l2server.gameserver.util.Broadcast;
+import l2server.util.loader.annotations.Load;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -62,11 +63,11 @@ public class CertificateSkillTable {
 	}
 
 	private CertificateSkillTable() {
-		load();
 	}
 
 	// Hardcoded load for now
-	private void load() {
+	@Load
+	public void load() {
 		// Sub - P. Atk./M. Atk. Increase
 		subClassSkills.put(1956, new CertificateSkillLearn(1956, 4, 1));
 		// Sub - P. Def./M. Def. Increase

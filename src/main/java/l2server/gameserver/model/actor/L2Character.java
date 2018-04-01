@@ -7713,7 +7713,7 @@ public abstract class L2Character extends L2Object {
 							if (skill.getSkillType() == L2SkillType.RESURRECT) {
 								if (activeChar.isInsideZone(L2Character.ZONE_CASTLE)) {
 									if (activeChar.getSiegeState() == 2 && target.getSiegeState() == 2) {
-										final Siege s = SiegeManager.getInstance().getSiege(getX(), getY(), getZ());
+										final Siege s = CastleSiegeManager.getInstance().getSiege(getX(), getY(), getZ());
 										
 										if (s != null) {
 											if (s.getControlTowerCount() > 0) {

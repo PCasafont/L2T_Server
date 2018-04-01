@@ -43,13 +43,13 @@ public class TaskScript extends Task {
 	 */
 	@Override
 	public void onTimeElapsed(ExecutedTask task) {
-		File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, "cron/" + task.getParams()[2]);
+		File file = new File(L2ScriptEngineManager.getSCRIPT_FOLDER(), "cron/" + task.getParams()[2]);
 		if (file.isFile()) {
 			try {
-				L2ScriptEngineManager.getInstance().executeScript(file);
+				L2ScriptEngineManager.INSTANCE.executeScript(file);
 			} catch (ScriptException e) {
 				Log.warning("Failed loading: " + task.getParams()[2]);
-				L2ScriptEngineManager.getInstance().reportScriptFileError(file, e);
+				L2ScriptEngineManager.INSTANCE.reportScriptFileError(file, e);
 			} catch (Exception e) {
 				Log.warning("Failed loading: " + task.getParams()[2]);
 			}

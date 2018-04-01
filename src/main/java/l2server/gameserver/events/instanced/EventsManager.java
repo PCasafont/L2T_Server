@@ -2,8 +2,6 @@ package l2server.gameserver.events.instanced;
 
 import l2server.Config;
 import l2server.gameserver.Announcements;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
@@ -17,6 +15,8 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.util.Broadcast;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -30,7 +30,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * @author Pere
  */
-public class EventsManager implements Reloadable {
+public class EventsManager {
 	public static EventsManager instance = null;
 	
 	private HashMap<Integer, EventLocation> locations = new HashMap<>();
@@ -49,6 +49,7 @@ public class EventsManager implements Reloadable {
 		return instance;
 	}
 	
+	@Load
 	public void start() {
 		if (!Config.INSTANCED_EVENT_ENABLED) {
 			Log.info("Instanced Events are disabled.");
@@ -57,7 +58,6 @@ public class EventsManager implements Reloadable {
 		
 		// Load the configuration
 		loadConfig();
-		ReloadableManager.getInstance().register("eventLocations", this);
 		
 		task = new EventManagerTask();
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(task, 10000L, 60000L);
@@ -637,10 +637,6 @@ public class EventsManager implements Reloadable {
 		return false;*/
 	}
 	
-	/**
-	 * @param activeChar
-	 * @param command
-	 */
 	public void handleBypass(L2PcInstance activeChar, String command) {
 		if (activeChar == null) {
 			return;
@@ -671,15 +667,9 @@ public class EventsManager implements Reloadable {
 		}*/
 	}
 	
-	@Override
-	public boolean reload() {
+	@Reload("eventLocations")
+	public void reload() {
 		locations.clear();
 		loadConfig();
-		return true;
-	}
-	
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Event configurations reloaded";
 	}
 }

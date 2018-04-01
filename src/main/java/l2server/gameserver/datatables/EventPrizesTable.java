@@ -16,14 +16,14 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.events.instanced.EventPrize;
 import l2server.gameserver.events.instanced.EventPrize.EventPrizeCategory;
 import l2server.gameserver.events.instanced.EventPrize.EventPrizeItem;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -36,15 +36,14 @@ import java.util.Map;
 /**
  * @author Pere
  */
-public class EventPrizesTable implements Reloadable {
+public class EventPrizesTable {
 	private final Map<String, List<EventPrize>> prizes = new HashMap<>();
 
 	private EventPrizesTable() {
-		ReloadableManager.getInstance().register("eventprizes", this);
-
-		load();
 	}
 
+	@Reload("eventPrizes")
+	@Load
 	public void load() {
 		prizes.clear();
 
@@ -120,17 +119,6 @@ public class EventPrizesTable implements Reloadable {
 				multiplier -= 1.0f;
 			}
 		}
-	}
-
-	@Override
-	public boolean reload() {
-		load();
-		return true;
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Event prizes reloaded";
 	}
 
 	private static EventPrizesTable instance;

@@ -43,6 +43,7 @@ import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.StringUtil;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -87,10 +88,10 @@ public class HeroesManager {
 	}
 
 	private HeroesManager() {
-		init();
 	}
-
-	private void init() {
+	
+	@Load(dependencies = ClanTable.class)
+	public void init() {
 		if (Config.IS_CLASSIC) {
 			return;
 		}

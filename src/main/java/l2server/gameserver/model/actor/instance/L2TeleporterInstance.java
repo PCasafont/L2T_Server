@@ -19,7 +19,7 @@ import l2server.Config;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.TeleportLocationTable;
 import l2server.gameserver.instancemanager.CastleManager;
-import l2server.gameserver.instancemanager.SiegeManager;
+import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.instancemanager.TownManager;
 import l2server.gameserver.model.L2TeleportLocation;
 import l2server.gameserver.model.actor.L2Character;
@@ -217,7 +217,7 @@ public class L2TeleporterInstance extends L2Npc {
 		L2TeleportLocation list = TeleportLocationTable.getInstance().getTemplate(val);
 		if (list != null) {
 			//you cannot teleport to village that is in siege
-			if (SiegeManager.getInstance().getSiege(list.getLocX(), list.getLocY(), list.getLocZ()) != null) {
+			if (CastleSiegeManager.getInstance().getSiege(list.getLocX(), list.getLocY(), list.getLocZ()) != null) {
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PORT_THAT_IS_IN_SIGE));
 				return;
 			} else if (TownManager.townHasCastleInSiege(list.getLocX(), list.getLocY()) &&

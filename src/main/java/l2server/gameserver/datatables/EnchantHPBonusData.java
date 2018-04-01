@@ -23,6 +23,8 @@ import l2server.gameserver.stats.funcs.FuncTemplate;
 import l2server.gameserver.stats.funcs.LambdaConst;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -43,13 +45,10 @@ public class EnchantHPBonusData {
 	}
 
 	private EnchantHPBonusData() {
-		load();
 	}
-
-	public void reload() {
-		load();
-	}
-
+	
+	@Reload("enchantHpBonus")
+	@Load(dependencies = ItemTable.class)
 	private void load() {
 		armorHPBonus.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "enchantHPBonus.xml");

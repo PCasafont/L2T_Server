@@ -20,6 +20,7 @@ import l2server.Config;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.ClanHallManager;
 import l2server.gameserver.instancemanager.InstanceManager;
+import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2DoorInstance;
 import l2server.gameserver.model.entity.ClanHall;
 import l2server.gameserver.model.itemauction.ItemAuctionInstance;
@@ -27,6 +28,8 @@ import l2server.gameserver.pathfinding.AbstractNodeLoc;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2DoorTemplate;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -38,27 +41,22 @@ import java.util.Set;
 public class DoorTable {
 	private static final Map<Integer, Set<Integer>> groups = new HashMap<>();
 
-	private final Map<Integer, L2DoorInstance> doors;
-	private final Map<Integer, ArrayList<L2DoorInstance>> regions;
+	private final Map<Integer, L2DoorInstance> doors = new HashMap<>();
+	private final Map<Integer, ArrayList<L2DoorInstance>> regions = new HashMap<>();
 
 	public static DoorTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private DoorTable() {
-		doors = new HashMap<>();
-		regions = new HashMap<>();
-		parseData();
 	}
 
-	public void reload() {
+	@Reload("doors")
+	@Load(dependencies = L2World.class)
+	public void parseData() {
 		doors.clear();
 		regions.clear();
 		groups.clear();
-		parseData();
-	}
-
-	public void parseData() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "doorData.xml");
 		XmlDocument doc = new XmlDocument(file);
 

@@ -23,6 +23,7 @@ import l2server.gameserver.model.actor.instance.L2ShuttleInstance;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2CharTemplate;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -45,10 +46,10 @@ public class ShuttleTable {
 	}
 
 	private ShuttleTable() {
-		readShuttles();
 	}
 
-	private void readShuttles() {
+	@Load
+	public void readShuttles() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "shuttles.xml");
 		XmlDocument doc = new XmlDocument(file);
 

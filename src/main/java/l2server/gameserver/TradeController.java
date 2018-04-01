@@ -24,6 +24,8 @@ import l2server.gameserver.model.L2TradeList.L2TradeItem;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -34,12 +36,7 @@ import java.sql.ResultSet;
 import java.util.*;
 import java.util.logging.Level;
 
-/**
- * This class ...
- *
- * @version $Revision: 1.5.4.13 $ $Date: 2005/04/06 16:13:38 $
- */
-public class TradeController implements Reloadable {
+public class TradeController {
 
 	private Map<Integer, L2TradeList> lists = new HashMap<>();
 
@@ -48,26 +45,21 @@ public class TradeController implements Reloadable {
 	}
 
 	private TradeController() {
-		reload();
-		loadItemCounts();
-
-		ReloadableManager.getInstance().register("shops", this);
 	}
 
-	@Override
-	public boolean reload() {
+	@Reload("shops")
+	@Load(dependencies = NpcTable.class)
+	public void load() {
 		lists.clear();
-		if (!load(Config.DATAPACK_ROOT + "/data_" + Config.SERVER_NAME + "/shops/")) {
-			return false;
-		}
-
-		return load(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "/shops/");
+		load(Config.DATAPACK_ROOT + "/data_" + Config.SERVER_NAME + "/shops/");
+		load(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "/shops/");
+		loadItemCounts();
 	}
 
-	public boolean load(String path) {
+	public void load(String path) {
 		File dir = new File(path);
 		if (!dir.exists()) {
-			return false;
+			return;
 		}
 
 		for (File file : dir.listFiles()) {
@@ -145,12 +137,6 @@ public class TradeController implements Reloadable {
 		}
 
 		Log.info("TradeController: Loaded " + lists.size() + " Buylists.");
-		return true;
-	}
-
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "Standard Shops reloaded";
 	}
 
 	private void loadItemCounts() {

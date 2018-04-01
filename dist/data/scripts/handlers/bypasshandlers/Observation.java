@@ -16,7 +16,7 @@
 package handlers.bypasshandlers;
 
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.instancemanager.SiegeManager;
+import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.SystemMessageId;
@@ -42,7 +42,7 @@ public class Observation implements IBypassHandler {
 				StringTokenizer st = new StringTokenizer(val);
 				st.nextToken(); // Bypass cost
 				
-				if (SiegeManager.getInstance()
+				if (CastleSiegeManager.getInstance()
 						.getSiege(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken())) != null) {
 					doObserve(activeChar, target, val);
 				} else {

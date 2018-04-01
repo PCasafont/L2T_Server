@@ -17,6 +17,7 @@ package l2server.gameserver.datatables;
 
 import l2server.Config;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -45,13 +46,9 @@ public class PlayerStatDataTable {
 	}
 
 	private PlayerStatDataTable() {
-		parseData();
 	}
 
-	public void reload() {
-		parseData();
-	}
-
+	@Load
 	public void parseData() {
 		regenData.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/regenData.xml");

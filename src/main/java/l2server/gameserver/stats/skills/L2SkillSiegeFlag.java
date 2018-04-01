@@ -19,8 +19,8 @@ import l2server.Config;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.CastleManager;
+import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.instancemanager.FortManager;
-import l2server.gameserver.instancemanager.SiegeManager;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.L2Character;
@@ -132,7 +132,7 @@ public class L2SkillSiegeFlag extends L2Skill {
 			text = "You must be an attacker to place a flag.";
 		} else if (player.getClan() == null || !player.isClanLeader()) {
 			text = "You must be a clan leader to place a flag.";
-		} else if (castle.getSiege().getAttackerClan(player.getClan()).getNumFlags() >= SiegeManager.getInstance().getFlagMaxCount()) {
+		} else if (castle.getSiege().getAttackerClan(player.getClan()).getNumFlags() >= CastleSiegeManager.getInstance().getFlagMaxCount()) {
 			text = "You have already placed the maximum number of flags possible.";
 		} else if (player.isInsideZone(L2Character.ZONE_NOHQ)) {
 			text = "You cannot place flag here.";

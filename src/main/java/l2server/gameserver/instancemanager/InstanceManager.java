@@ -35,6 +35,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Broadcast;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -206,6 +207,10 @@ public class InstanceManager {
 	}
 	
 	private InstanceManager() {
+	}
+	
+	@Load
+	private void load() {
 		Log.info("Initializing InstanceManager");
 		loadInstanceNames();
 		Log.info("Loaded " + instanceIdNames.size() + " instance names");

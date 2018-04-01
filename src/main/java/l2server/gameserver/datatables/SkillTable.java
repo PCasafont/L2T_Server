@@ -16,11 +16,11 @@ package l2server.gameserver.datatables;
 import gnu.trove.TIntIntHashMap;
 import gnu.trove.TLongObjectHashMap;
 import l2server.Config;
-import l2server.gameserver.Reloadable;
-import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.stats.SkillParser;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -34,41 +34,21 @@ import java.util.logging.Level;
 /**
  *
  */
-public class SkillTable implements Reloadable {
-	private final TLongObjectHashMap<L2Skill> skills;
-	private final TIntIntHashMap skillMaxLevel;
-	private final Set<Integer> enchantable;
+public class SkillTable {
+	private final TLongObjectHashMap<L2Skill> skills = new TLongObjectHashMap<>();
+	private final TIntIntHashMap skillMaxLevel = new TIntIntHashMap();
+	private final Set<Integer> enchantable = new HashSet<>();
 	
 	public static SkillTable getInstance() {
 		return SingletonHolder.instance;
 	}
 	
 	private SkillTable() {
-		skills = new TLongObjectHashMap<>();
-		skillMaxLevel = new TIntIntHashMap();
-		enchantable = new HashSet<>();
-		load();
-		
-		ReloadableManager.getInstance().register("skills", this);
 	}
 	
-	@Override
-	public boolean reload() {
-		load();
-		
-		//reload some related too
-		SkillTreeTable.getInstance().reload();
-		SubPledgeSkillTree.getInstance().reload();
-		
-		return true;
-	}
-	
-	@Override
-	public String getReloadMessage(boolean success) {
-		return "All Skills have been reloaded";
-	}
-	
-	private void load() {
+	@Reload("skills")
+	@Load
+	public void load() {
 		skills.clear();
 		skillMaxLevel.clear();
 		enchantable.clear();

@@ -23,6 +23,7 @@ import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -44,13 +45,15 @@ public class NpcWalkersTable {
 	}
 
 	private NpcWalkersTable() {
-		if (Config.ALLOW_NPC_WALKERS) {
-			Log.info("Initializing Walkers Routes Table.");
-			load();
-		}
 	}
-
+	
+	@Load(dependencies = NpcTable.class)
 	public void load() {
+		if (!Config.ALLOW_NPC_WALKERS) {
+			return;
+		}
+		
+		Log.info("Initializing Walkers Routes Table.");
 		routes.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "WalkerRoutes.xml");
 		if (file.exists()) {

@@ -54,7 +54,7 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient> {
 			//		&& getClient().getAccountName().equalsIgnoreCase("pere"))
 			//	Log.info(getType());
 			
-			byte[] opcode = PacketOpcodes.getServerPacketOpcode(getOpCodeClass());
+			byte[] opcode = PacketOpcodes.INSTANCE.getServerPacketOpcode(getOpCodeClass());
 			if (opcode != null) {
 				writeB(opcode);
 			}
@@ -80,7 +80,7 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient> {
 	 */
 	public final String getType() {
 		String type = "[S]";
-		byte[] opcode = PacketOpcodes.getServerPacketOpcode(getOpCodeClass());
+		byte[] opcode = PacketOpcodes.INSTANCE.getServerPacketOpcode(getOpCodeClass());
 		if (opcode != null) {
 			type += " " + Integer.toHexString(opcode[0] & 0xff);
 			if (opcode.length > 2) {

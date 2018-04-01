@@ -17,6 +17,7 @@ package l2server.gameserver.instancemanager;
 
 import l2server.L2DatabaseFactory;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -29,15 +30,13 @@ public class GlobalVariablesManager {
 	private static final String LOAD_VAR = "SELECT var,value FROM global_variables";
 	private static final String SAVE_VAR = "INSERT INTO global_variables (var,value) VALUES (?,?) ON DUPLICATE KEY UPDATE value=?";
 
-	private final Map<String, String> variablesMap;
+	private final Map<String, String> variablesMap = new HashMap<>();
 
 	private GlobalVariablesManager() {
-		variablesMap = new HashMap<>();
-
-		loadVars();
 	}
 
-	private void loadVars() {
+	@Load
+	public void loadVars() {
 		Connection con = null;
 		PreparedStatement statement = null;
 		ResultSet rset;

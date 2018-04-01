@@ -35,7 +35,7 @@ public class EventDroplist {
 	/**
 	 * The table containing all DataDrop object
 	 */
-	private List<DateDrop> allNpcDateDrops;
+	private List<DateDrop> allNpcDateDrops = new ArrayList<>();
 
 	public static EventDroplist getInstance() {
 		return SingletonHolder.instance;
@@ -72,7 +72,6 @@ public class EventDroplist {
 	 * Constructor of EventDroplist.<BR><BR>
 	 */
 	private EventDroplist() {
-		allNpcDateDrops = new ArrayList<>();
 	}
 
 	/**

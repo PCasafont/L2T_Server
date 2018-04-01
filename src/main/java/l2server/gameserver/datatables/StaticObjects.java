@@ -22,24 +22,23 @@ import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2CharTemplate;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
 
 public class StaticObjects {
-	private Map<Integer, L2StaticObjectInstance> staticObjects;
+	private Map<Integer, L2StaticObjectInstance> staticObjects = new HashMap<>();
 
 	public static StaticObjects getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private StaticObjects() {
-		staticObjects = new HashMap<>();
-		parseData();
-		Log.info("StaticObject: Loaded " + staticObjects.size() + " StaticObject Templates.");
 	}
-
+	
+	@Load
 	private void parseData() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "staticObjects.xml");
 		XmlDocument doc = new XmlDocument(file);
@@ -104,6 +103,7 @@ public class StaticObjects {
 				staticObjects.put(obj.getStaticObjectId(), obj);
 			}
 		}
+		Log.info("StaticObject: Loaded " + staticObjects.size() + " StaticObject Templates.");
 	}
 
 	public L2StaticObjectInstance getObject(int id) {

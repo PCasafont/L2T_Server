@@ -21,6 +21,7 @@ import l2server.gameserver.model.L2EnchantSkillLearn;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -30,6 +31,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author Pere
+ */
 public class EnchantCostsTable {
 	public static final int NORMAL_ENCHANT_COST_MULTIPLIER = 1;
 	public static final int SAFE_ENCHANT_COST_MULTIPLIER = 5;
@@ -143,7 +147,8 @@ public class EnchantCostsTable {
 			load();
 		}
 	}
-
+	
+	@Load
 	private void load() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "enchantSkillCosts.xml");
 		XmlDocument doc = new XmlDocument(file);

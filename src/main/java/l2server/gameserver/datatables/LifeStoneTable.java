@@ -27,6 +27,7 @@ import l2server.gameserver.templates.item.L2Item;
 import l2server.gameserver.templates.item.L2Weapon;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -150,9 +151,9 @@ public class LifeStoneTable {
 	// =========================================================
 	// Constructor
 	private LifeStoneTable() {
-		load();
 	}
-
+	
+	@Load(dependencies = EnchantEffectTable.class)
 	public final void load() {
 		lifeStones.clear();
 

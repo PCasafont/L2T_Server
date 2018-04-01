@@ -19,6 +19,7 @@ import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -33,11 +34,9 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 
 public class L2Manor {
-	private static ConcurrentHashMap<Integer, SeedData> seeds;
+	private static ConcurrentHashMap<Integer, SeedData> seeds = new ConcurrentHashMap<>();
 
 	private L2Manor() {
-		seeds = new ConcurrentHashMap<>();
-		parseData();
 	}
 
 	public static L2Manor getInstance() {
@@ -321,7 +320,8 @@ public class L2Manor {
 		}
 	}
 
-	private void parseData() {
+	@Load
+	public void parseData() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "seeds.xml");
 		XmlDocument doc = new XmlDocument(file);
 

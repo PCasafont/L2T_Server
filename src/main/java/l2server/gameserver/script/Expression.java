@@ -30,7 +30,7 @@ public class Expression {
 
 	public static Object eval(String lang, String code) {
 		try {
-			return L2ScriptEngineManager.getInstance().eval(lang, code);
+			return L2ScriptEngineManager.INSTANCE.eval(lang, code);
 		} catch (Exception e) {
 			Log.log(Level.WARNING, "", e);
 			return null;
@@ -39,7 +39,7 @@ public class Expression {
 
 	public static Object eval(ScriptContext context, String lang, String code) {
 		try {
-			return L2ScriptEngineManager.getInstance().eval(lang, code, context);
+			return L2ScriptEngineManager.INSTANCE.eval(lang, code, context);
 		} catch (Exception e) {
 			Log.log(Level.WARNING, "", e);
 			return null;

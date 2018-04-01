@@ -24,6 +24,7 @@ import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.GlobalVariablesManager;
 import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -31,6 +32,7 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Broadcast;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -134,15 +136,20 @@ public class Olympiad {
 	}
 
 	private Olympiad() {
+		initialize();
+	}
+	
+	@Load(dependencies = GlobalVariablesManager.class)
+	public void initialize() {
 		if (Config.IS_CLASSIC) {
 			return;
 		}
-
+		
 		load();
-
+		
 		init();
 	}
-
+	
 	private void load() {
 		nobles = new HashMap<>();
 

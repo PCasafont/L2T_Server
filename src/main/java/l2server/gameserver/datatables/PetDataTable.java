@@ -22,6 +22,7 @@ import l2server.gameserver.model.L2PetLevelData;
 import l2server.gameserver.templates.item.L2EtcItemType;
 import l2server.gameserver.templates.item.L2Item;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -29,17 +30,16 @@ import java.io.File;
 
 public class PetDataTable {
 
-	private static Map<Integer, L2PetData> petTable;
+	private static Map<Integer, L2PetData> petTable = new HashMap<>();
 
 	public static PetDataTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private PetDataTable() {
-		petTable = new HashMap<>();
-		load();
 	}
 
+	@Load
 	public void load() {
 		petTable.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "PetData.xml");

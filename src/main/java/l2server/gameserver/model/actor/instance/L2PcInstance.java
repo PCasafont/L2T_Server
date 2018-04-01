@@ -3055,8 +3055,8 @@ public class L2PcInstance extends L2Playable {
 			L2Clan clan = getClan();
 			clan.addSkillEffects(this);
 			
-			if (clan.getLevel() >= SiegeManager.getInstance().getSiegeClanMinLevel() && isClanLeader()) {
-				SiegeManager.getInstance().addSiegeSkills(this);
+			if (clan.getLevel() >= CastleSiegeManager.getInstance().getSiegeClanMinLevel() && isClanLeader()) {
+				CastleSiegeManager.getInstance().addSiegeSkills(this);
 			}
 			if (getClan().getHasCastle() > 0) {
 				CastleManager.getInstance().getCastleByOwner(getClan()).giveResidentialSkills(this);
@@ -8965,7 +8965,7 @@ public class L2PcInstance extends L2Playable {
 			}
 			
 			if (getClan() != null) {
-				Siege siege = SiegeManager.getInstance().getSiege(getX(), getY(), getZ());
+				Siege siege = CastleSiegeManager.getInstance().getSiege(getX(), getY(), getZ());
 				if (siege != null) {
 					// Check if a siege is in progress and if attacker and the L2PcInstance aren't in the Defender clan
 					if (siege.checkIsDefender(cha.getClan()) && siege.checkIsDefender(getClan())) {
@@ -8991,7 +8991,7 @@ public class L2PcInstance extends L2Playable {
 			}
 		} else if (attacker instanceof L2DefenderInstance) {
 			if (getClan() != null) {
-				Siege siege = SiegeManager.getInstance().getSiege(this);
+				Siege siege = CastleSiegeManager.getInstance().getSiege(this);
 				return siege != null && siege.checkIsAttacker(getClan());
 			}
 		}
@@ -9373,7 +9373,7 @@ public class L2PcInstance extends L2Playable {
 			int npcId = ((L2SkillSummon) skill).getNpcId();
 			L2NpcTemplate summonTemplate = NpcTable.getInstance().getTemplate(npcId);
 			if (summonTemplate != null) {
-				if (summonTemplate.Type.equalsIgnoreCase("L2SiegeSummon") && !SiegeManager.getInstance().checkIfOkToSummon(this, false) &&
+				if (summonTemplate.Type.equalsIgnoreCase("L2SiegeSummon") && !CastleSiegeManager.getInstance().checkIfOkToSummon(this, false) &&
 						!FortSiegeManager.getInstance().checkIfOkToSummon(this, false)) {
 					return false;
 				}
@@ -18503,7 +18503,7 @@ public class L2PcInstance extends L2Playable {
 			return false;
 		}
 		
-		final Siege s = SiegeManager.getInstance().getSiege(getX(), getY(), getZ());
+		final Siege s = CastleSiegeManager.getInstance().getSiege(getX(), getY(), getZ());
 		
 		if (s != null) {
 			if (s.checkIsDefender(getClan()) && s.checkIsDefender(target.getClan())) {

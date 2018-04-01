@@ -17,6 +17,7 @@ package l2server.gameserver.instancemanager;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.InstanceListManager;
+import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
 import l2server.gameserver.model.L2ItemInstance;
@@ -24,6 +25,7 @@ import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Castle;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -246,6 +248,7 @@ public class CastleManager implements InstanceListManager {
 		}
 	}
 	
+	@Load
 	@Override
 	public void load() {
 		Log.info("Initializing CastleManager");
@@ -272,6 +275,8 @@ public class CastleManager implements InstanceListManager {
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
+		
+		getCastles().forEach(Castle::manageTendencyChangeSpawns);
 	}
 	
 	@Override
@@ -284,7 +289,6 @@ public class CastleManager implements InstanceListManager {
 	}
 	
 	public void spawnCastleTendencyNPCs() {
-		getCastles().forEach(Castle::manageTendencyChangeSpawns);
 	}
 	
 	@SuppressWarnings("synthetic-access")
