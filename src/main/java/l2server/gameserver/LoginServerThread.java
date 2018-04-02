@@ -30,6 +30,7 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 import l2server.util.Util;
 import l2server.util.crypt.NewCrypt;
+import l2server.util.loader.annotations.Load;
 import l2server.util.network.BaseSendablePacket;
 
 import java.io.BufferedOutputStream;
@@ -120,6 +121,11 @@ public class LoginServerThread extends Thread {
 	
 	public static LoginServerThread getInstance() {
 		return SingletonHolder.instance;
+	}
+	
+	@Load
+	public synchronized void initialize() {
+		start();
 	}
 	
 	@Override
@@ -324,7 +330,9 @@ public class LoginServerThread extends Thread {
 				Log.log(Level.WARNING, "Disconnected from Login, Trying to reconnect: " + e.getMessage(), e);
 			} finally {
 				try {
-					loginSocket.close();
+					if (loginSocket != null) {
+						loginSocket.close();
+					}
 					if (isInterrupted()) {
 						return;
 					}

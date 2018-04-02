@@ -48,7 +48,7 @@ public class ShuttleTable {
 	private ShuttleTable() {
 	}
 
-	@Load
+	@Load(dependencies = DoorTable.class)
 	public void readShuttles() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "shuttles.xml");
 		XmlDocument doc = new XmlDocument(file);

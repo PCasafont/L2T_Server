@@ -17,8 +17,8 @@ package l2server.gameserver.instancemanager;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.InstanceListManager;
+import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.datatables.ResidentialSkillTable;
-import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
 import l2server.gameserver.model.L2ItemInstance;
@@ -284,6 +284,7 @@ public class CastleManager implements InstanceListManager {
 	public void updateReferences() {
 	}
 	
+	@Load(main = false, dependencies = {CastleManager.class, DoorTable.class, ZoneManager.class})
 	@Override
 	public void activateInstances() {
 		castles.forEach(Castle::activateInstance);

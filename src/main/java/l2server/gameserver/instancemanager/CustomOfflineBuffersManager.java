@@ -22,6 +22,7 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.PlayerClassTable;
+import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -37,6 +38,7 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -523,7 +525,12 @@ public class CustomOfflineBuffersManager {
 		return false;
 	}
 
-	private void restoreOfflineBuffers() {
+	@Load(dependencies = L2World.class)
+	public void restoreOfflineBuffers() {
+		if (!Config.OFFLINE_BUFFERS_RESTORE) {
+			return;
+		}
+		
 		Connection con = null;
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
@@ -657,9 +664,6 @@ public class CustomOfflineBuffersManager {
 	}
 
 	private CustomOfflineBuffersManager() {
-		if (Config.OFFLINE_BUFFERS_RESTORE) {
-			restoreOfflineBuffers();
-		}
 	}
 
 	public static CustomOfflineBuffersManager getInstance() {

@@ -25,6 +25,7 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2GuardInstance;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -41,9 +42,13 @@ public class KnownListUpdateTaskManager {
 	private static final HashSet<L2WorldRegion> failedRegions = new HashSet<>(1);
 
 	private KnownListUpdateTaskManager() {
+	}
+	
+	@Load(dependencies = L2World.class)
+	private void initialize() {
 		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new KnownListUpdate(), 1000, Config.KNOWNLIST_UPDATE_INTERVAL);
 	}
-
+	
 	public static KnownListUpdateTaskManager getInstance() {
 		return SingletonHolder.instance;
 	}

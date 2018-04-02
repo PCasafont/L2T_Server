@@ -17,6 +17,8 @@ package l2server.gameserver.instancemanager;
 
 import l2server.Config;
 import l2server.gameserver.InstanceListManager;
+import l2server.gameserver.datatables.DoorTable;
+import l2server.gameserver.datatables.ResidentialSkillTable;
 import l2server.gameserver.model.CombatFlag;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2Object;
@@ -40,7 +42,7 @@ public class FortManager implements InstanceListManager {
 	private FortManager() {
 	}
 
-	@Load
+	@Load(dependencies = ResidentialSkillTable.class)
 	@Override
 	public void load() {
 		Log.info("Initializing FortManager");
@@ -180,7 +182,8 @@ public class FortManager implements InstanceListManager {
 	@Override
 	public void updateReferences() {
 	}
-
+	
+	@Load(main = false, dependencies = {FortManager.class, DoorTable.class, ZoneManager.class})
 	@Override
 	public void activateInstances() {
 		for (final Fort fort : forts) {

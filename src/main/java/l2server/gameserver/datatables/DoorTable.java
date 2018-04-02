@@ -15,7 +15,6 @@
 
 package l2server.gameserver.datatables;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.ClanHallManager;
@@ -23,7 +22,6 @@ import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2DoorInstance;
 import l2server.gameserver.model.entity.ClanHall;
-import l2server.gameserver.model.itemauction.ItemAuctionInstance;
 import l2server.gameserver.pathfinding.AbstractNodeLoc;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2DoorTemplate;
@@ -34,9 +32,7 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class DoorTable {
 	private static final Map<Integer, Set<Integer>> groups = new HashMap<>();
@@ -52,7 +48,7 @@ public class DoorTable {
 	}
 
 	@Reload("doors")
-	@Load(dependencies = L2World.class)
+	@Load(dependencies = {L2World.class, MapRegionTable.class, ClanHallManager.class})
 	public void parseData() {
 		doors.clear();
 		regions.clear();

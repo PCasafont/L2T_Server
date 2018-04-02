@@ -444,9 +444,6 @@ public abstract class L2Object {
 	 * <li> Spawn : Monster, Minion, CTs, Summon...</li><BR>
 	 */
 	public final void spawnMe() {
-		assert getPosition().getWorldRegion() == null && getPosition().getWorldPosition().getX() != 0 &&
-				getPosition().getWorldPosition().getY() != 0 && getPosition().getWorldPosition().getZ() != 0;
-		
 		synchronized (this) {
 			// Set the x,y,z position of the L2Object spawn and update its worldregion
 			isVisible = true;
@@ -468,8 +465,6 @@ public abstract class L2Object {
 	}
 	
 	public final void spawnMe(int x, int y, int z) {
-		assert getPosition().getWorldRegion() == null;
-		
 		synchronized (this) {
 			// Set the x,y,z position of the L2Object spawn and update its worldregion
 			isVisible = true;

@@ -15,6 +15,7 @@
 
 package l2server.gameserver.model.olympiad;
 
+import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -36,7 +37,7 @@ public class OlympiadGameManager implements Runnable {
 	private OlympiadGameManager() {
 	}
 	
-	@Load(dependencies = {Olympiad.class, ZoneManager.class})
+	@Load(dependencies = {Olympiad.class, ZoneManager.class, DoorTable.class})
 	public void initialize() {
 		final Collection<L2OlympiadStadiumZone> zones = ZoneManager.getInstance().getAllZones(L2OlympiadStadiumZone.class);
 		if (zones == null || zones.isEmpty()) {

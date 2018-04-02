@@ -1,5 +1,6 @@
 package l2server.gameserver.events;
 
+import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
@@ -15,6 +16,7 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
 
 /**
  * @author Pere
@@ -33,7 +35,11 @@ public class HiddenChests {
 		return instance;
 	}
 
+	@Load(dependencies = SpawnTable.class)
 	public void spawnChests() {
+		if (!Config.isServer(Config.TENKAI)) {
+			return;
+		}
 		L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(50101);
 		try {
 			for (int i = 0; i < SPECIAL_CHEST_COUNT; i++) {

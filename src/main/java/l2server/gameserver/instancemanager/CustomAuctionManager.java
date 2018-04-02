@@ -18,6 +18,8 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -481,11 +483,24 @@ public class CustomAuctionManager {
 		sb.append("</table>");
 		return sb.toString();
 	}
+	
+	@Load
+	public void load() {
+		load(false);
+	}
+	
+	@Reload("auctions")
+	public void reload() {
+		load(true);
+	}
 
 	/**
 	 * Load all the shit
 	 */
 	public void load(boolean reload) {
+		if (!Config.ENABLE_CUSTOM_AUCTIONS || Config.isServer(Config.TENKAI)) {
+			return;
+		}
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		factory.setValidating(false);
 		factory.setIgnoringComments(true);
@@ -794,7 +809,6 @@ public class CustomAuctionManager {
 	}
 
 	private CustomAuctionManager() {
-		load(false);
 	}
 
 	public static CustomAuctionManager getInstance() {

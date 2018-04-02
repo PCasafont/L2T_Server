@@ -15,7 +15,6 @@
 
 package l2server.gameserver.datatables;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.item.L2Henna;
@@ -26,6 +25,8 @@ import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HennaTable {
 	private Map<Integer, L2Henna> henna = new HashMap<>();
@@ -38,7 +39,7 @@ public class HennaTable {
 	}
 	
 	@Reload("henna")
-	@Load(dependencies = PlayerClassTable.class)
+	@Load(dependencies = {PlayerClassTable.class, SkillTable.class})
 	public void load() {
 		if (Config.IS_CLASSIC) {
 			return;

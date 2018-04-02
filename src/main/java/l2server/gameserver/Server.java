@@ -16,28 +16,12 @@
 package l2server.gameserver;
 
 import l2server.Config;
-import l2server.gameserver.cache.CrestCache;
-import l2server.gameserver.cache.HtmCache;
-import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
-import l2server.gameserver.datatables.*;
-import l2server.gameserver.events.*;
-import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.geoeditorcon.GeoEditorListener;
 import l2server.gameserver.gui.ServerGui;
-import l2server.gameserver.handler.*;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.instancemanager.*;
-import l2server.gameserver.model.*;
-import l2server.gameserver.model.olympiad.HeroesManager;
-import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.L2GamePacketHandler;
 import l2server.gameserver.pathfinding.PathFinding;
-import l2server.gameserver.scripting.CompiledScriptCache;
-import l2server.gameserver.scripting.L2ScriptEngineManager;
-import l2server.gameserver.taskmanager.AutoAnnounceTaskManager;
-import l2server.gameserver.taskmanager.KnownListUpdateTaskManager;
-import l2server.gameserver.taskmanager.TaskManager;
 import l2server.log.Log;
 import l2server.network.Core;
 import l2server.network.CoreConfig;
@@ -107,50 +91,8 @@ public class Server {
 			PathFinding.getInstance();
 		}
 		
-		MerchantPriceConfigTable.getInstance().updateReferences();
-		CastleManager.getInstance().activateInstances();
-		FortManager.getInstance().activateInstances();
-		
 		if (Config.ACCEPT_GEOEDITOR_CONN) {
 			GeoEditorListener.getInstance();
-		}
-		
-		EventsManager.getInstance().start();
-		
-		if (Config.isServer(Config.TENKAI)) {
-			HiddenChests.getInstance().spawnChests();
-			//CloneInvasion.getInstance().scheduleEventStart();
-			MonsterInvasion.getInstance().scheduleEventStart();
-			//Curfew.getInstance().scheduleEventStart();
-			//ChessEvent.start();
-		}
-		
-		//CustomWarAreas.getInstance();
-		
-		if (Config.OFFLINE_BUFFERS_ENABLE) {
-			CustomOfflineBuffersManager.getInstance();
-		}
-		
-		if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER) {
-			DamageManager.getInstance();
-		}
-		
-		if (Config.ENABLE_CUSTOM_AUCTIONS) {
-			if (Config.isServer(Config.TENKAI)) {
-				TenkaiAuctionManager.getInstance();
-			} else {
-				CustomAuctionManager.getInstance();
-			}
-		}
-		
-		if (Config.ENABLE_CUSTOM_LOTTERY) {
-			LotterySystem.getInstance();
-		}
-		
-		KnownListUpdateTaskManager.getInstance();
-		
-		if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS) {
-			OfflineTradersTable.restoreOfflineTraders();
 		}
 		
 		//Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
@@ -174,9 +116,6 @@ public class Server {
 		long totalMem = Runtime.getRuntime().maxMemory() / 1048576;
 		Log.info("GameServer Started, free memory " + freeMem + " Mb of " + totalMem + " Mb");
 		Toolkit.getDefaultToolkit().beep();
-		
-		loginThread = LoginServerThread.getInstance();
-		loginThread.start();
 		
 		final CoreConfig sc = new CoreConfig();
 		sc.MAX_READ_PER_PASS = Config.MMO_MAX_READ_PER_PASS;
@@ -206,12 +145,6 @@ public class Server {
 		Log.info("Maximum Numbers of Connected Players: " + Config.MAXIMUM_ONLINE_USERS);
 		long serverLoadEnd = System.currentTimeMillis();
 		Log.info("Server Loaded in " + (serverLoadEnd - serverLoadStart) / 1000 + " seconds");
-		
-		AutoAnnounceTaskManager.getInstance();
-		//ArtificialPlayersManager.getInstance();
-		
-		//SqlToXml.spawns();
-		//SqlToXml.raidBosses();
 		
 		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
 		gameServer = this;

@@ -6,6 +6,7 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.events.instanced.EventInstance.EventState;
+import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.L2Abnormal;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
@@ -49,7 +50,7 @@ public class EventsManager {
 		return instance;
 	}
 	
-	@Load
+	@Load(dependencies = ZoneManager.class)
 	public void start() {
 		if (!Config.INSTANCED_EVENT_ENABLED) {
 			Log.info("Instanced Events are disabled.");

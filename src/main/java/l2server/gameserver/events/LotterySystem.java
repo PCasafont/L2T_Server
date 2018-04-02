@@ -34,6 +34,7 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -178,7 +179,11 @@ public class LotterySystem {
 		}
 	}
 
+	@Load
 	private void load() {
+		if (!Config.ENABLE_CUSTOM_LOTTERY) {
+			return;
+		}
 		Log.info("LotterySystem: Loading lottery information..!");
 		Connection con = null;
 		try {
@@ -288,7 +293,6 @@ public class LotterySystem {
 	}
 
 	private LotterySystem() {
-		load();
 	}
 
 	public static LotterySystem getInstance() {

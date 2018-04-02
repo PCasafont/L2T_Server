@@ -168,7 +168,7 @@ public class Shutdown extends Thread {
 		shuttingDown = true;
 		try {
 			if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS) {
-				OfflineTradersTable.storeOffliners();
+				OfflineTradersTable.INSTANCE.storeOffliners();
 			}
 		} catch (Throwable t) {
 			Log.log(Level.WARNING, "Error saving offline shops.", t);

@@ -121,6 +121,10 @@ artifacts {
 	archives gameJar, loginJar
 }
 
+test{
+	workingDir = new File('./dist')
+}
+
 distributions {
 	main {
 		contents {

@@ -130,6 +130,7 @@ public class MerchantPriceConfigTable implements InstanceListManager {
 		}
 	}
 
+	@Load(main = false, dependencies = {MerchantPriceConfigTable.class, CastleManager.class})
 	@Override
 	public void updateReferences() {
 		for (final MerchantPriceConfig mpc : mpcs.values()) {

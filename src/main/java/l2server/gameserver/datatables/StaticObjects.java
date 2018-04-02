@@ -18,6 +18,7 @@ package l2server.gameserver.datatables;
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.idfactory.IdFactory;
+import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.L2CharTemplate;
@@ -38,7 +39,7 @@ public class StaticObjects {
 	private StaticObjects() {
 	}
 	
-	@Load
+	@Load(dependencies = L2World.class)
 	private void parseData() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "staticObjects.xml");
 		XmlDocument doc = new XmlDocument(file);
