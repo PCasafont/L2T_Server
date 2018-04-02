@@ -17,12 +17,11 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.CompoundTable;
 import l2server.gameserver.datatables.CompoundTable.Combination;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2ItemInstance.ItemLocation;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Item.ItemLocation;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ExCompoundFail;
 import l2server.gameserver.network.serverpackets.ExCompoundSuccess;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 /**
@@ -35,13 +34,13 @@ public final class RequestCompoundStart extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
 		
-		L2ItemInstance compoundItem1 = activeChar.getCompoundItem1();
-		L2ItemInstance compoundItem2 = activeChar.getCompoundItem2();
+		Item compoundItem1 = activeChar.getCompoundItem1();
+		Item compoundItem2 = activeChar.getCompoundItem2();
 		activeChar.setCompoundItem1(null);
 		activeChar.setCompoundItem2(null);
 		
@@ -50,7 +49,7 @@ public final class RequestCompoundStart extends L2GameClientPacket {
 		}
 		
 		if (compoundItem1.getLocation() != ItemLocation.INVENTORY || compoundItem2.getLocation() != ItemLocation.INVENTORY) {
-			Log.info(activeChar.getName() + " is trying to cheat with the compound system!");
+			log.info(activeChar.getName() + " is trying to cheat with the compound system!");
 			return;
 		}
 		
@@ -64,7 +63,7 @@ public final class RequestCompoundStart extends L2GameClientPacket {
 			// The rarest item should be the one being destroyed
 			// In all compounds both items are the same, except on vasper' Venir's
 			if (compoundItem2.getItemId() > compoundItem1.getItemId()) {
-				L2ItemInstance tmp = compoundItem1;
+				Item tmp = compoundItem1;
 				compoundItem1 = compoundItem2;
 				compoundItem2 = tmp;
 			}

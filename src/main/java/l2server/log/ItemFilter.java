@@ -15,7 +15,7 @@
 
 package l2server.log;
 
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 
 import java.util.logging.Filter;
 import java.util.logging.LogRecord;
@@ -44,8 +44,8 @@ public class ItemFilter implements Filter {
 			}
 		}
 		if (excludeItemType != null) {
-			//			if (record.getParameters() == null || record.getParameters().length == 0 || !(record.getParameters()[0] instanceof L2ItemInstance)) return true;
-			L2ItemInstance item = (L2ItemInstance) record.getParameters()[0];
+			//			if (record.getParameters() == null || record.getParameters().length == 0 || !(record.getParameters()[0] instanceof Item)) return true;
+			Item item = (Item) record.getParameters()[0];
 			if (!excludeItemType.contains(item.getItemType().toString())) {
 				return true;
 			}

@@ -1,5 +1,5 @@
 <list>
-	<npc id="2081" name="Canabion of Plague" level="82" type="L2Npc" atkRange="40" hpMax="6303" hpReg="9.14"
+	<npc id="2081" name="Canabion of Plague" level="82" type="Npc" atkRange="40" hpMax="6303" hpReg="9.14"
 		 mpMax="2127" mpReg="6.63"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="12708" sp="4" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250"
@@ -11,7 +11,7 @@
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<itemDrop itemId="960" min="1" max="1" chance="0.10758" /> <!-- Scroll: Enchant Armor (S-grade) -->
 	</npc>
-	<npc id="2082" name="Canabion of Plague" title="Doppler" level="82" type="L2Npc" atkRange="40" hpMax="6303"
+	<npc id="2082" name="Canabion of Plague" title="Doppler" level="82" type="Npc" atkRange="40" hpMax="6303"
 		 hpReg="9.14"
 		 mpMax="2127" mpReg="6.63" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="12708" sp="4" pAtk="971"
 		 mAtk="663"
@@ -23,7 +23,7 @@
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<itemDrop itemId="960" min="1" max="1" chance="0.20554" /> <!-- Scroll: Enchant Armor (S-grade) -->
 	</npc>
-	<npc id="2083" name="Canabion of Plague" title="Void" level="83" type="L2Npc" atkRange="40" hpMax="6635"
+	<npc id="2083" name="Canabion of Plague" title="Void" level="83" type="Npc" atkRange="40" hpMax="6635"
 		 hpReg="9.31" mpMax="2168"
 		 mpReg="6.75" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="13020" sp="4" pAtk="971" mAtk="663"
 		 pDef="341"
@@ -35,7 +35,7 @@
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<itemDrop itemId="960" min="1" max="1" chance="0.05558" /> <!-- Scroll: Enchant Armor (S-grade) -->
 	</npc>
-	<npc id="2501" name="Lucky Pig" title="The Spirit of Fortune" level="80" type="L2Npc" atkRange="40" hpMax="4630"
+	<npc id="2501" name="Lucky Pig" title="The Spirit of Fortune" level="80" type="Npc" atkRange="40" hpMax="4630"
 		 hpReg="10.0"
 		 mpMax="2044" mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250"
@@ -44,7 +44,7 @@
 		 fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="3" /> <!-- Beast -->
 	</npc>
-	<npc id="2502" name="Wingless Lucky Pig" level="80" type="L2Monster" atkRange="40" hpMax="4630" hpReg="10.0"
+	<npc id="2502" name="Wingless Lucky Pig" level="80" type="Monster" atkRange="40" hpMax="4630" hpReg="10.0"
 		 mpMax="2044"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -59,7 +59,7 @@
 		<itemDrop itemId="9555" min="1" max="1" chance="5.88235" /> <!-- Wind Crystal -->
 		<itemDrop itemId="9557" min="1" max="1" chance="5.8823" /> <!-- Holy Crystal -->
 	</npc>
-	<npc id="2503" name="Wingless Lucky Pig" level="80" type="L2Monster" atkRange="40" hpMax="4630" hpReg="10.0"
+	<npc id="2503" name="Wingless Lucky Pig" level="80" type="Monster" atkRange="40" hpMax="4630" hpReg="10.0"
 		 mpMax="2044"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -69,7 +69,7 @@
 		<itemDrop itemId="14679" min="1" max="1" chance="50" /> <!-- Neolithic Crystal (A-grade) -->
 		<itemDrop itemId="14680" min="1" max="1" chance="50" /> <!-- Neolithic Crystal (S-grade) -->
 	</npc>
-	<npc id="2507" name="Ancient Kartia Scout" level="85" type="L2Npc" atkRange="40" hpMax="6710" hpReg="9.34"
+	<npc id="2507" name="Ancient Kartia Scout" level="85" type="Npc" atkRange="40" hpMax="6710" hpReg="9.34"
 		 mpMax="2044"
 		 mpReg="6.78" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -79,7 +79,7 @@
 		 aiType="fighter">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 	</npc>
-	<npc id="2508" name="Ancient Kartia Guard" level="86" type="L2Npc" atkRange="40" hpMax="7036" hpReg="9.5"
+	<npc id="2508" name="Ancient Kartia Guard" level="86" type="Npc" atkRange="40" hpMax="7036" hpReg="9.5"
 		 mpMax="2044" mpReg="6.89"
 		 STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -88,7 +88,7 @@
 		 fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 	</npc>
-	<npc id="2509" name="Ancient Kartia Watchman" level="86" type="L2Npc" atkRange="40" hpMax="7036" hpReg="9.5"
+	<npc id="2509" name="Ancient Kartia Watchman" level="86" type="Npc" atkRange="40" hpMax="7036" hpReg="9.5"
 		 mpMax="2044"
 		 mpReg="6.89" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -98,7 +98,7 @@
 		 aiType="fighter">
 		<skill id="4416" level="9" /> <!-- Demons -->
 	</npc>
-	<npc id="2510" name="Ancient Kartia Researcher" level="86" type="L2Npc" atkRange="40" hpMax="7036" hpReg="9.5"
+	<npc id="2510" name="Ancient Kartia Researcher" level="86" type="Npc" atkRange="40" hpMax="7036" hpReg="9.5"
 		 mpMax="2044"
 		 mpReg="6.89" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -108,7 +108,7 @@
 		 aiType="fighter">
 		<skill id="4416" level="9" /> <!-- Demons -->
 	</npc>
-	<npc id="2511" name="Kajin" title="Cool-headed" level="88" type="L2Npc" atkRange="80" hpMax="9297" hpReg="10.47"
+	<npc id="2511" name="Kajin" title="Cool-headed" level="88" type="Npc" atkRange="80" hpMax="9297" hpReg="10.47"
 		 mpMax="2044"
 		 mpReg="7.6" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -117,7 +117,7 @@
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="9" /> <!-- Demons -->
 	</npc>
-	<npc id="2512" name="Beryn" title="Valiant" level="88" type="L2Npc" atkRange="80" hpMax="9297" hpReg="10.47"
+	<npc id="2512" name="Beryn" title="Valiant" level="88" type="Npc" atkRange="80" hpMax="9297" hpReg="10.47"
 		 mpMax="2044"
 		 mpReg="7.6" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -126,7 +126,7 @@
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 	</npc>
-	<npc id="2513" name="Ancient Kartia Scout" level="90" type="L2Npc" atkRange="40" hpMax="8531" hpReg="10.16"
+	<npc id="2513" name="Ancient Kartia Scout" level="90" type="Npc" atkRange="40" hpMax="8531" hpReg="10.16"
 		 mpMax="2555"
 		 mpReg="7.37" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -136,7 +136,7 @@
 		 aiType="fighter">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 	</npc>
-	<npc id="2514" name="Ancient Kartia Guard" level="91" type="L2Npc" atkRange="40" hpMax="8958" hpReg="10.34"
+	<npc id="2514" name="Ancient Kartia Guard" level="91" type="Npc" atkRange="40" hpMax="8958" hpReg="10.34"
 		 mpMax="2555"
 		 mpReg="7.5" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -146,7 +146,7 @@
 		 aiType="fighter">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 	</npc>
-	<npc id="2515" name="Ancient Kartia Watchman" level="91" type="L2Npc" atkRange="40" hpMax="8958" hpReg="10.34"
+	<npc id="2515" name="Ancient Kartia Watchman" level="91" type="Npc" atkRange="40" hpMax="8958" hpReg="10.34"
 		 mpMax="2555"
 		 mpReg="7.5" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -156,7 +156,7 @@
 		 aiType="fighter">
 		<skill id="4416" level="9" /> <!-- Demons -->
 	</npc>
-	<npc id="2516" name="Ancient Kartia Researcher" level="91" type="L2Npc" atkRange="40" hpMax="8958" hpReg="10.34"
+	<npc id="2516" name="Ancient Kartia Researcher" level="91" type="Npc" atkRange="40" hpMax="8958" hpReg="10.34"
 		 mpMax="2555"
 		 mpReg="7.5" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -166,7 +166,7 @@
 		 aiType="fighter">
 		<skill id="4416" level="9" /> <!-- Demons -->
 	</npc>
-	<npc id="2517" name="Kajin" title="Cool-headed" level="93" type="L2Npc" atkRange="80" hpMax="11869" hpReg="11.41"
+	<npc id="2517" name="Kajin" title="Cool-headed" level="93" type="Npc" atkRange="80" hpMax="11869" hpReg="11.41"
 		 mpMax="2555"
 		 mpReg="8.28" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -175,7 +175,7 @@
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="9" /> <!-- Demons -->
 	</npc>
-	<npc id="2518" name="Beryn" title="Valiant" level="93" type="L2Npc" atkRange="80" hpMax="11869" hpReg="11.41"
+	<npc id="2518" name="Beryn" title="Valiant" level="93" type="Npc" atkRange="80" hpMax="11869" hpReg="11.41"
 		 mpMax="2555"
 		 mpReg="8.28" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -184,7 +184,7 @@
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 	</npc>
-	<npc id="2519" name="Ancient Kartia Scout" level="95" type="L2Npc" atkRange="40" hpMax="10923" hpReg="11.08"
+	<npc id="2519" name="Ancient Kartia Scout" level="95" type="Npc" atkRange="40" hpMax="10923" hpReg="11.08"
 		 mpMax="3066"
 		 mpReg="8.04" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -194,7 +194,7 @@
 		 aiType="fighter">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 	</npc>
-	<npc id="2520" name="Ancient Kartia Guard" level="96" type="L2Npc" atkRange="40" hpMax="11487" hpReg="11.28"
+	<npc id="2520" name="Ancient Kartia Guard" level="96" type="Npc" atkRange="40" hpMax="11487" hpReg="11.28"
 		 mpMax="3066"
 		 mpReg="8.18" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -204,7 +204,7 @@
 		 aiType="fighter">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 	</npc>
-	<npc id="2521" name="Ancient Kartia Watchman" level="96" type="L2Npc" atkRange="40" hpMax="11487" hpReg="11.28"
+	<npc id="2521" name="Ancient Kartia Watchman" level="96" type="Npc" atkRange="40" hpMax="11487" hpReg="11.28"
 		 mpMax="3066"
 		 mpReg="8.18" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -214,7 +214,7 @@
 		 aiType="fighter">
 		<skill id="4416" level="9" /> <!-- Demons -->
 	</npc>
-	<npc id="2522" name="Ancient Kartia Researcher" level="96" type="L2Npc" atkRange="40" hpMax="11487" hpReg="11.28"
+	<npc id="2522" name="Ancient Kartia Researcher" level="96" type="Npc" atkRange="40" hpMax="11487" hpReg="11.28"
 		 mpMax="3066"
 		 mpReg="8.18" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -224,7 +224,7 @@
 		 aiType="fighter">
 		<skill id="4416" level="9" /> <!-- Demons -->
 	</npc>
-	<npc id="2523" name="Kajin" title="Cool-headed" level="98" type="L2Npc" atkRange="80" hpMax="15269" hpReg="12.46"
+	<npc id="2523" name="Kajin" title="Cool-headed" level="98" type="Npc" atkRange="80" hpMax="15269" hpReg="12.46"
 		 mpMax="3066"
 		 mpReg="9.04" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -233,7 +233,7 @@
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="9" /> <!-- Demons -->
 	</npc>
-	<npc id="2524" name="Beryn" title="Valiant" level="98" type="L2Npc" atkRange="80" hpMax="15269" hpReg="12.46"
+	<npc id="2524" name="Beryn" title="Valiant" level="98" type="Npc" atkRange="80" hpMax="15269" hpReg="12.46"
 		 mpMax="3066"
 		 mpReg="9.04" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -242,7 +242,7 @@
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 	</npc>
-	<npc id="2525" name="Kartia Power Source" level="99" type="L2Npc" atkRange="40" hpMax="13881" hpReg="12.05"
+	<npc id="2525" name="Kartia Power Source" level="99" type="Npc" atkRange="40" hpMax="13881" hpReg="12.05"
 		 mpMax="3066"
 		 mpReg="8.74" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -250,7 +250,7 @@
 		 fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="2526" name="Ancient Kartia Watchman" title="35% Drop" level="99" type="L2Npc" atkRange="40" hpMax="13881"
+	<npc id="2526" name="Ancient Kartia Watchman" title="35% Drop" level="99" type="Npc" atkRange="40" hpMax="13881"
 		 hpReg="0.0"
 		 mpMax="3066" mpReg="0.0" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="100" mAtk="100" pDef="100"
 		 mDef="100"
@@ -259,7 +259,7 @@
 		 fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="9" /> <!-- Demons -->
 	</npc>
-	<npc id="2527" name="Ancient Kartia Researcher" title="50% Drop" level="99" type="L2Npc" atkRange="40" hpMax="13881"
+	<npc id="2527" name="Ancient Kartia Researcher" title="50% Drop" level="99" type="Npc" atkRange="40" hpMax="13881"
 		 hpReg="0.0"
 		 mpMax="3066" mpReg="0.0" STR="79" CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="100" mAtk="100" pDef="100"
 		 mDef="100"
@@ -268,7 +268,7 @@
 		 fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="9" /> <!-- Demons -->
 	</npc>
-	<npc id="2528" name="" level="99" type="L2Npc" atkRange="40" hpMax="6710" hpReg="9.34" mpMax="3066" mpReg="6.78"
+	<npc id="2528" name="" level="99" type="Npc" atkRange="40" hpMax="6710" hpReg="9.34" mpMax="3066" mpReg="6.78"
 		 STR="79"
 		 CON="75" DEX="42" INT="34" WIT="66" MEN="12" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -277,7 +277,7 @@
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="9" /> <!-- Demons -->
 	</npc>
-	<npc id="2529" name="Tree of Life" level="99" type="L2Npc" atkRange="0" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="2529" name="Tree of Life" level="99" type="Npc" atkRange="0" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -285,7 +285,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="2530" name="Festering Zombie" level="80" type="L2Npc" atkRange="0" hpMax="4630" hpReg="0.0" mpMax="2044"
+	<npc id="2530" name="Festering Zombie" level="80" type="Npc" atkRange="0" hpMax="4630" hpReg="0.0" mpMax="2044"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -294,7 +294,7 @@
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="1" /> <!-- Undead -->
 	</npc>
-	<npc id="2531" name="Festering Zombie Lord" level="80" type="L2Npc" atkRange="0" hpMax="4630" hpReg="0.0"
+	<npc id="2531" name="Festering Zombie Lord" level="80" type="Npc" atkRange="0" hpMax="4630" hpReg="0.0"
 		 mpMax="2044" mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -303,7 +303,7 @@
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="1" /> <!-- Undead -->
 	</npc>
-	<npc id="2532" name="Infected Zombie" level="80" type="L2Npc" atkRange="40" hpMax="4630" hpReg="0.0" mpMax="2044"
+	<npc id="2532" name="Infected Zombie" level="80" type="Npc" atkRange="40" hpMax="4630" hpReg="0.0" mpMax="2044"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -311,7 +311,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="2533" name="Festering Zombie" level="80" type="L2Npc" atkRange="0" hpMax="4630" hpReg="0.0" mpMax="2044"
+	<npc id="2533" name="Festering Zombie" level="80" type="Npc" atkRange="0" hpMax="4630" hpReg="0.0" mpMax="2044"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -320,7 +320,7 @@
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="1" /> <!-- Undead -->
 	</npc>
-	<npc id="2534" name="Festering Zombie Lord" level="80" type="L2Npc" atkRange="0" hpMax="4630" hpReg="0.0"
+	<npc id="2534" name="Festering Zombie Lord" level="80" type="Npc" atkRange="0" hpMax="4630" hpReg="0.0"
 		 mpMax="2044" mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -329,7 +329,7 @@
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="1" /> <!-- Undead -->
 	</npc>
-	<npc id="2535" name="Festering Zombie" level="80" type="L2Npc" atkRange="0" hpMax="4630" hpReg="0.0" mpMax="2044"
+	<npc id="2535" name="Festering Zombie" level="80" type="Npc" atkRange="0" hpMax="4630" hpReg="0.0" mpMax="2044"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -338,7 +338,7 @@
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="1" /> <!-- Undead -->
 	</npc>
-	<npc id="2536" name="Festering Zombie Lord" level="80" type="L2Npc" atkRange="0" hpMax="4630" hpReg="0.0"
+	<npc id="2536" name="Festering Zombie Lord" level="80" type="Npc" atkRange="0" hpMax="4630" hpReg="0.0"
 		 mpMax="2044" mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -347,7 +347,7 @@
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="1" /> <!-- Undead -->
 	</npc>
-	<npc id="2537" name="Festering Zombie" level="80" type="L2Npc" atkRange="0" hpMax="4630" hpReg="0.0" mpMax="2044"
+	<npc id="2537" name="Festering Zombie" level="80" type="Npc" atkRange="0" hpMax="4630" hpReg="0.0" mpMax="2044"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -356,7 +356,7 @@
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="1" /> <!-- Undead -->
 	</npc>
-	<npc id="2538" name="Festering Zombie Lord" level="80" type="L2Npc" atkRange="0" hpMax="4630" hpReg="0.0"
+	<npc id="2538" name="Festering Zombie Lord" level="80" type="Npc" atkRange="0" hpMax="4630" hpReg="0.0"
 		 mpMax="2044" mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -365,7 +365,7 @@
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="1" /> <!-- Undead -->
 	</npc>
-	<npc id="2539" name="Festering Parasite" level="80" type="L2Npc" atkRange="0" hpMax="4630" hpReg="0.0" mpMax="2044"
+	<npc id="2539" name="Festering Parasite" level="80" type="Npc" atkRange="0" hpMax="4630" hpReg="0.0" mpMax="2044"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"

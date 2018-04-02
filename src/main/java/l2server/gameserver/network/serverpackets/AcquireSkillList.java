@@ -17,7 +17,7 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.datatables.SkillTreeTable;
 import l2server.gameserver.model.L2SkillLearn;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.Map;
 
@@ -26,9 +26,9 @@ import java.util.Map;
  */
 public final class AcquireSkillList extends L2GameServerPacket {
 	private L2SkillLearn[] skills;
-	private L2PcInstance player;
+	private Player player;
 
-	public AcquireSkillList(L2PcInstance player) {
+	public AcquireSkillList(Player player) {
 		skills = SkillTreeTable.getInstance().getAvailableClassSkills(player);
 		this.player = player;
 	}

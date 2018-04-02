@@ -15,8 +15,8 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.instancemanager.PartySearchManager;
 import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 
 /**
  * sample 63 01 00 00 00 count
@@ -32,10 +32,10 @@ import l2server.gameserver.model.actor.instance.L2SummonInstance;
  */
 public final class PartySmallWindowAll extends L2GameServerPacket {
 	private L2Party party;
-	private L2PcInstance exclude;
+	private Player exclude;
 	private int dist, LeaderOID;
 	
-	public PartySmallWindowAll(L2PcInstance exclude, L2Party party) {
+	public PartySmallWindowAll(Player exclude, L2Party party) {
 		this.exclude = exclude;
 		this.party = party;
 		LeaderOID = party.getPartyLeaderOID();
@@ -48,7 +48,7 @@ public final class PartySmallWindowAll extends L2GameServerPacket {
 		writeC(dist);
 		writeC(party.getMemberCount() - 1);
 		
-		for (L2PcInstance member : party.getPartyMembers()) {
+		for (Player member : party.getPartyMembers()) {
 			if (member != null && member != exclude) {
 				writeD(member.getObjectId());
 				writeS(member.getName());
@@ -67,7 +67,7 @@ public final class PartySmallWindowAll extends L2GameServerPacket {
 				writeC(member.getRace().ordinal());
 				writeC(PartySearchManager.getInstance().getWannaToChangeThisPlayer(member.getObjectId()) ? 0x01 : 0x00); // GoD unknown
 				writeD(member.getSummons().size() + (member.getPet() != null ? 1 : 0));
-				for (L2SummonInstance summon : member.getSummons()) {
+				for (SummonInstance summon : member.getSummons()) {
 					writeD(summon.getObjectId());
 					writeD(summon.getNpcId() + 1000000);
 					writeC(summon.getSummonType());

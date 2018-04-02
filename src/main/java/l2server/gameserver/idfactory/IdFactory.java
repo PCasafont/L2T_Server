@@ -16,8 +16,10 @@ package l2server.gameserver.idfactory;
 import gnu.trove.TIntArrayList;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 
@@ -27,6 +29,8 @@ import java.sql.*;
  * @version $Revision: 1.3.2.1.2.7 $ $Date: 2005/04/11 10:06:12 $
  */
 public abstract class IdFactory {
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	
 	protected static final String[] ID_CHECKS = {"SELECT owner_id	FROM items				 WHERE object_id >= ?   AND object_id < ?",
 			"SELECT object_id   FROM items				 WHERE object_id >= ?   AND object_id < ?",
@@ -101,7 +105,7 @@ public abstract class IdFactory {
 			statement.executeUpdate("UPDATE characters SET online = 0");
 			statement.close();
 			
-			Log.info("Updated characters online status.");
+			log.info("Updated characters online status.");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -184,7 +188,7 @@ public abstract class IdFactory {
 			cleanCount += stmt.executeUpdate("DELETE FROM log_olys WHERE time <= " + time);
 			//cleanCount += stmt.executeUpdate("DELETE FROM log_damage WHERE time <= " + time);
 			cleanCount += stmt.executeUpdate("DELETE FROM gm_audit WHERE time <= " + time / 1000);
-			Log.info("Cleaned " + cleanCount + " elements from database in " + (System.currentTimeMillis() - cleanupStart) / 1000 + " s");
+			log.info("Cleaned " + cleanCount + " elements from database in " + (System.currentTimeMillis() - cleanupStart) / 1000 + " s");
 			stmt.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -206,7 +210,7 @@ public abstract class IdFactory {
 				stmt.close();
 			}
 			
-			Log.info("Cleaned " + cleanCount + " expired timestamps from database.");
+			log.info("Cleaned " + cleanCount + " expired timestamps from database.");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

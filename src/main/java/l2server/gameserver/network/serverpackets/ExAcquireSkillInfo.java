@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2SkillLearn;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.Map;
 
@@ -25,9 +25,9 @@ import java.util.Map;
  */
 public class ExAcquireSkillInfo extends L2GameServerPacket {
 	private L2SkillLearn skill;
-	private L2PcInstance player;
+	private Player player;
 	
-	public ExAcquireSkillInfo(L2SkillLearn skill, L2PcInstance player) {
+	public ExAcquireSkillInfo(L2SkillLearn skill, Player player) {
 		this.skill = skill;
 		this.player = player;
 	}

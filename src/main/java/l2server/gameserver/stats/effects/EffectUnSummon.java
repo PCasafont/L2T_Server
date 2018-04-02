@@ -15,20 +15,21 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 public class EffectUnSummon extends L2Effect {
-	public EffectUnSummon(Env env, L2EffectTemplate template) {
+	public EffectUnSummon(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
@@ -36,27 +37,27 @@ public class EffectUnSummon extends L2Effect {
 			return false;
 		}
 
-		L2Character target = getEffected();
-		if (target instanceof L2PcInstance) {
-			target = ((L2PcInstance) target).getSummon(0);
+		Creature target = getEffected();
+		if (target instanceof Player) {
+			target = ((Player) target).getSummon(0);
 		}
 
-		if (!(target instanceof L2SummonInstance)) {
+		if (!(target instanceof SummonInstance)) {
 			return false;
 		}
 
-		L2SummonInstance summon = (L2SummonInstance) target;
+		SummonInstance summon = (SummonInstance) target;
 		if (summon.isDead()) {
 			return false;
 		}
 
-		summon.unSummon((L2PcInstance) getEffector());
+		summon.unSummon((Player) getEffector());
 
 		return true;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

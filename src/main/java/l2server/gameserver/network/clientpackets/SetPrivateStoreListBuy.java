@@ -17,8 +17,8 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.model.TradeList;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.PrivateStoreManageListBuy;
@@ -75,13 +75,13 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
 		
 		if (items == null) {
-			player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
+			player.setPrivateStoreType(Player.STORE_PRIVATE_NONE);
 			player.broadcastUserInfo();
 			return;
 		}
@@ -108,7 +108,7 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket {
 			return;
 		}
 		
-		if (player.isInsideZone(L2Character.ZONE_NOSTORE)) {
+		if (player.isInsideZone(Creature.ZONE_NOSTORE)) {
 			player.sendPacket(new PrivateStoreManageListBuy(player));
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PRIVATE_STORE_HERE));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -125,8 +125,8 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket {
 			return;
 		}
 		
-		for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70)) {
-			if (!(c instanceof L2PcInstance && ((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE)) {
+		for (Creature c : player.getKnownList().getKnownCharactersInRadius(70)) {
+			if (!(c instanceof Player && ((Player) c).getPrivateStoreType() == Player.STORE_PRIVATE_NONE)) {
 				player.sendPacket(new PrivateStoreManageListBuy(player));
 				player.sendMessage("Try to put your store a little further from " + c.getName() + ", please.");
 				return;
@@ -161,7 +161,7 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket {
 		}
 		
 		player.sitDown();
-		player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_BUY);
+		player.setPrivateStoreType(Player.STORE_PRIVATE_BUY);
 		
 		player.broadcastUserInfo();
 		player.broadcastPacket(new PrivateStoreMsgBuy(player));

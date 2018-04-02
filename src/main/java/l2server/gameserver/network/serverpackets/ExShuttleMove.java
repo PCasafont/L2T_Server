@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2ShuttleInstance;
+import l2server.gameserver.model.actor.instance.ShuttleInstance;
 
 /**
  * @author Pere
@@ -23,7 +23,7 @@ import l2server.gameserver.model.actor.instance.L2ShuttleInstance;
 public class ExShuttleMove extends L2GameServerPacket {
 	private final int objId, x, y, z, moveSpeed, rotationSpeed;
 	
-	public ExShuttleMove(L2ShuttleInstance shut) {
+	public ExShuttleMove(ShuttleInstance shut) {
 		objId = shut.getObjectId();
 		x = shut.getXdestination();
 		y = shut.getYdestination();

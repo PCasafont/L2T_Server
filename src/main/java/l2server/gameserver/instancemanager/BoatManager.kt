@@ -17,13 +17,12 @@ package l2server.gameserver.instancemanager
 
 import l2server.Config
 import l2server.gameserver.idfactory.IdFactory
-import l2server.gameserver.model.L2World
+import l2server.gameserver.model.World
 import l2server.gameserver.model.VehiclePathPoint
-import l2server.gameserver.model.actor.instance.L2BoatInstance
-import l2server.gameserver.model.actor.instance.L2PcInstance
+import l2server.gameserver.model.actor.instance.BoatInstance
 import l2server.gameserver.network.serverpackets.L2GameServerPacket
 import l2server.gameserver.templates.StatsSet
-import l2server.gameserver.templates.chars.L2CharTemplate
+import l2server.gameserver.templates.chars.CreatureTemplate
 import java.util.HashMap
 
 object BoatManager {
@@ -32,10 +31,10 @@ object BoatManager {
     const val GLUDIN_HARBOR = 2
     const val RUNE_HARBOR = 3
 
-    private val boats = HashMap<Int, L2BoatInstance>()
+    private val boats = HashMap<Int, BoatInstance>()
     private val docksBusy = BooleanArray(3, { false })
 
-    fun getNewBoat(boatId: Int, x: Int, y: Int, z: Int, heading: Int): L2BoatInstance? {
+    fun getNewBoat(boatId: Int, x: Int, y: Int, z: Int, heading: Int): BoatInstance? {
         if (!Config.ALLOW_BOAT) {
             return null
         }
@@ -77,8 +76,8 @@ object BoatManager {
         npcDat.set("mpReg", 3e-3)
         npcDat.set("pDef", 100)
         npcDat.set("mDef", 100)
-        val template = L2CharTemplate(npcDat)
-        val boat = L2BoatInstance(IdFactory.getInstance().nextId, template)
+        val template = CreatureTemplate(npcDat)
+        val boat = BoatInstance(IdFactory.getInstance().nextId, template)
         boats[boat.objectId] = boat
         boat.heading = heading
         boat.setXYZInvisible(x, y, z)
@@ -90,7 +89,7 @@ object BoatManager {
      * @param boatId
      * @return
      */
-    fun getBoat(boatId: Int): L2BoatInstance? {
+    fun getBoat(boatId: Int): BoatInstance? {
         return boats[boatId]
     }
 
@@ -129,7 +128,7 @@ object BoatManager {
     fun broadcastPacket(point1: VehiclePathPoint, point2: VehiclePathPoint, packet: L2GameServerPacket) {
         var dx: Double
         var dy: Double
-        val players = L2World.getInstance().allPlayers.values
+        val players = World.getInstance().allPlayers.values
         for (player in players) {
             if (player == null) {
                 continue
@@ -155,7 +154,7 @@ object BoatManager {
     fun broadcastPackets(point1: VehiclePathPoint, point2: VehiclePathPoint, vararg packets: L2GameServerPacket) {
         var dx: Double
         var dy: Double
-        val players = L2World.getInstance().allPlayers.values
+        val players = World.getInstance().allPlayers.values
         for (player in players) {
             if (player == null) {
                 continue

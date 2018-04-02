@@ -18,7 +18,8 @@ package l2server.gameserver.datatables;
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.L2AccessLevel;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -29,6 +30,9 @@ import java.io.File;
  * @author FBIagent<br>
  */
 public class AccessLevels {
+	private static Logger log = LoggerFactory.getLogger(AccessLevels.class.getName());
+
+
 	/* The logger<br> */
 
 	/**
@@ -92,15 +96,15 @@ public class AccessLevels {
 				int accessLevel = n.getInt("id");
 				String name = n.getString("name");
 				if (accessLevel == userAccessLevelNum) {
-					Log.warning("AccessLevels: Access level with name " + name + " is using reserved user access level " + userAccessLevelNum +
+					log.warn("AccessLevels: Access level with name " + name + " is using reserved user access level " + userAccessLevelNum +
 							". Ignoring it!");
 					continue;
 				} else if (accessLevel == masterAccessLevelNum) {
-					Log.warning("AccessLevels: Access level with name " + name + " is using reserved master access level " + masterAccessLevelNum +
+					log.warn("AccessLevels: Access level with name " + name + " is using reserved master access level " + masterAccessLevelNum +
 							". Ignoring it!");
 					continue;
 				} else if (accessLevel < 0) {
-					Log.warning("AccessLevels: Access level with name " + name + " is using banned access level state(below 0). Ignoring it!");
+					log.warn("AccessLevels: Access level with name " + name + " is using banned access level state(below 0). Ignoring it!");
 					continue;
 				}
 
@@ -145,7 +149,7 @@ public class AccessLevels {
 			}
 		}
 
-		Log.info("AccessLevels: Loaded " + accessLevels.size() + " access levels.");
+		log.info("AccessLevels: Loaded " + accessLevels.size() + " access levels.");
 	}
 
 	/**

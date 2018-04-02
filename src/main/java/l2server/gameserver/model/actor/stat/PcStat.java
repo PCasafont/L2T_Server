@@ -24,11 +24,11 @@ import l2server.gameserver.events.Elpy;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.instancemanager.MailManager;
 import l2server.gameserver.instancemanager.MentorManager;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.Experience;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.entity.Message;
@@ -54,7 +54,7 @@ public class PcStat extends PlayableStat {
 
 	// =========================================================
 	// Constructor
-	public PcStat(L2PcInstance activeChar) {
+	public PcStat(Player activeChar) {
 		super(activeChar);
 	}
 
@@ -62,7 +62,7 @@ public class PcStat extends PlayableStat {
 	// Method - Public
 	@Override
 	public boolean addExp(long value) {
-		L2PcInstance activeChar = getActiveChar();
+		Player activeChar = getActiveChar();
 
 		// Allowed to gain exp?
 		if (!getActiveChar().getAccessLevel().canGainExp() && getActiveChar().isInParty() || getActiveChar().isNoExp() && value > 0) {
@@ -79,15 +79,15 @@ public class PcStat extends PlayableStat {
 	}
 
 	/**
-	 * Add Experience and SP rewards to the L2PcInstance, remove its Karma (if necessary) and Launch increase level task.<BR><BR>
+	 * Add Experience and SP rewards to the Player, remove its Karma (if necessary) and Launch increase level task.<BR><BR>
 	 * <p>
 	 * <B><U> Actions </U> :</B><BR><BR>
-	 * <li>Remove Karma when the player kills L2MonsterInstance</li>
-	 * <li>Send a Server->Client packet StatusUpdate to the L2PcInstance</li>
-	 * <li>Send a Server->Client System Message to the L2PcInstance </li>
-	 * <li>If the L2PcInstance increases it's level, send a Server->Client packet SocialAction (broadcast) </li>
-	 * <li>If the L2PcInstance increases it's level, manage the increase level task (Max MP, Max MP, Recommandation, Expertise and beginner skills...) </li>
-	 * <li>If the L2PcInstance increases it's level, send a Server->Client packet UserInfo to the L2PcInstance </li><BR><BR>
+	 * <li>Remove Karma when the player kills MonsterInstance</li>
+	 * <li>Send a Server->Client packet StatusUpdate to the Player</li>
+	 * <li>Send a Server->Client System Message to the Player </li>
+	 * <li>If the Player increases it's level, send a Server->Client packet SocialAction (broadcast) </li>
+	 * <li>If the Player increases it's level, manage the increase level task (Max MP, Max MP, Recommandation, Expertise and beginner skills...) </li>
+	 * <li>If the Player increases it's level, send a Server->Client packet UserInfo to the Player </li><BR><BR>
 	 *
 	 * @param addToExp The Experience value to add
 	 * @param addToSp  The SP value to add
@@ -100,7 +100,7 @@ public class PcStat extends PlayableStat {
 
 		float ratioTakenByPlayer = 0;
 		// Allowed to gain exp/sp?
-		L2PcInstance activeChar = getActiveChar();
+		Player activeChar = getActiveChar();
 		if (!activeChar.getAccessLevel().canGainExp()) {
 			return false;
 		}
@@ -108,7 +108,7 @@ public class PcStat extends PlayableStat {
 		// if this player has a pet that takes from the owner's Exp, give the pet Exp now
 
 		if (activeChar.getPet() != null) {
-			L2PetInstance pet = activeChar.getPet();
+			PetInstance pet = activeChar.getPet();
 			ratioTakenByPlayer = pet.getPetLevelData().getOwnerExpTaken() / 100f;
 
 			// only give exp/sp to the pet by taking from the owner if the pet has a non-zero, positive ratio
@@ -128,7 +128,7 @@ public class PcStat extends PlayableStat {
 			return false;
 		}
 
-		// Send a Server->Client System Message to the L2PcInstance
+		// Send a Server->Client System Message to the Player
 		if (bonusMultiplier > 1) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_EARNED_S1_EXP_BONUS_S2_AND_S3_SP_BONUS_S4);
 			int exp = (int) Math.round(addToExp / bonusMultiplier);
@@ -192,7 +192,7 @@ public class PcStat extends PlayableStat {
 		}
 
 		if (sendMessage) {
-			// Send a Server->Client System Message to the L2PcInstance
+			// Send a Server->Client System Message to the Player
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.EXP_DECREASED_BY_S1);
 			sm.addItemNumber(addToExp);
 			getActiveChar().sendPacket(sm);
@@ -242,13 +242,13 @@ public class PcStat extends PlayableStat {
 			if (getActiveChar().getBaseClass() == getActiveChar().getActiveClass() && getActiveChar().isMentee() && getLevel() >= 86) {
 				int mentorId = getActiveChar().getMentorId();
 				getActiveChar().removeMentor();
-				for (L2Abnormal e : getActiveChar().getAllEffects()) {
+				for (Abnormal e : getActiveChar().getAllEffects()) {
 					if (e.getSkill().getId() >= 9227 && e.getSkill().getId() <= 9233) {
 						e.exit();
 					}
 				}
 				getActiveChar().removeSkill(9379);
-				L2PcInstance mentor = L2World.getInstance().getPlayer(mentorId);
+				Player mentor = World.getInstance().getPlayer(mentorId);
 				if (mentor != null && mentor.isOnline()) {
 					mentor.giveMentorBuff();
 				}
@@ -256,9 +256,9 @@ public class PcStat extends PlayableStat {
 
 			if (getActiveChar().getFriendList().size() > 0) {
 				for (int i : getActiveChar().getFriendList()) {
-					L2PcInstance friend;
-					if (L2World.getInstance().getPlayer(i) != null) {
-						friend = L2World.getInstance().getPlayer(i);
+					Player friend;
+					if (World.getInstance().getPlayer(i) != null) {
+						friend = World.getInstance().getPlayer(i);
 						friend.sendPacket(new FriendPacket(true, getActiveChar().getObjectId(), friend));
 						friend.sendPacket(new FriendList(friend));
 					}
@@ -267,14 +267,14 @@ public class PcStat extends PlayableStat {
 
 			getActiveChar().sendPacket(new ExMentorList(getActiveChar()));
 			if (getActiveChar().isMentee()) {
-				if (L2World.getInstance().getPlayer(getActiveChar().getMentorId()) != null) {
-					L2PcInstance player = L2World.getInstance().getPlayer(getActiveChar().getMentorId());
+				if (World.getInstance().getPlayer(getActiveChar().getMentorId()) != null) {
+					Player player = World.getInstance().getPlayer(getActiveChar().getMentorId());
 					player.sendPacket(new ExMentorList(player));
 				}
 			} else if (getActiveChar().isMentor()) {
 				for (int objId : getActiveChar().getMenteeList()) {
-					if (L2World.getInstance().getPlayer(objId) != null) {
-						L2PcInstance player = L2World.getInstance().getPlayer(objId);
+					if (World.getInstance().getPlayer(objId) != null) {
+						Player player = World.getInstance().getPlayer(objId);
 						player.sendPacket(new ExMentorList(player));
 					}
 				}
@@ -305,11 +305,11 @@ public class PcStat extends PlayableStat {
 		su.addAttribute(StatusUpdate.MAX_MP, getMaxMp());
 		getActiveChar().sendPacket(su);
 
-		// Update the overloaded status of the L2PcInstance
+		// Update the overloaded status of the Player
 		getActiveChar().refreshOverloaded();
-		// Update the expertise status of the L2PcInstance
+		// Update the expertise status of the Player
 		getActiveChar().refreshExpertisePenalty();
-		// Send a Server->Client packet UserInfo to the L2PcInstance
+		// Send a Server->Client packet UserInfo to the Player
 		getActiveChar().sendPacket(new UserInfo(getActiveChar()));
 		getActiveChar().sendPacket(new ExVoteSystemInfo(getActiveChar()));
 		if (getLevel() >= 85 && getActiveChar().getClassId() < 139) {
@@ -341,8 +341,8 @@ public class PcStat extends PlayableStat {
 	}
 
 	@Override
-	public final L2PcInstance getActiveChar() {
-		return (L2PcInstance) super.getActiveChar();
+	public final Player getActiveChar() {
+		return (Player) super.getActiveChar();
 	}
 
 	@Override
@@ -407,7 +407,7 @@ public class PcStat extends PlayableStat {
 			return 0;
 		}
 
-		// Get the Max CP (base+modifier) of the L2PcInstance
+		// Get the Max CP (base+modifier) of the Player
 		int val = (int) calcStat(Stats.MAX_CP,
 				PlayerStatDataTable.getInstance().getMaxCp(getActiveChar().getClassId(), getActiveChar().getLevel()),
 				null,
@@ -431,7 +431,7 @@ public class PcStat extends PlayableStat {
 			return 1;
 		}
 
-		// Get the Max HP (base+modifier) of the L2PcInstance
+		// Get the Max HP (base+modifier) of the Player
 		int maxHp = (int) calcStat(Stats.MAX_HP,
 				PlayerStatDataTable.getInstance().getMaxHp(getActiveChar().getClassId(), getActiveChar().getLevel()),
 				null,
@@ -469,7 +469,7 @@ public class PcStat extends PlayableStat {
 			return 1;
 		}
 
-		// Get the Max MP (base+modifier) of the L2PcInstance
+		// Get the Max MP (base+modifier) of the Player
 		int val = (int) calcStat(Stats.MAX_MP,
 				PlayerStatDataTable.getInstance().getMaxMp(getActiveChar().getClassId(), getActiveChar().getLevel()),
 				null,
@@ -517,7 +517,7 @@ public class PcStat extends PlayableStat {
 
 		int val;
 
-		L2PcInstance player = getActiveChar();
+		Player player = getActiveChar();
 
 		//Event
 		if (Elpy.registered.contains(this.getActiveChar())) {
@@ -560,7 +560,7 @@ public class PcStat extends PlayableStat {
 	}
 
 	@Override
-	public int getEvasionRate(L2Character target) {
+	public int getEvasionRate(Creature target) {
 
 		//if (val > Config.MAX_EVASION && !getActiveChar().isGM())
 		//	return Config.MAX_EVASION;
@@ -569,7 +569,7 @@ public class PcStat extends PlayableStat {
 	}
 
 	@Override
-	public int getMEvasionRate(L2Character target) {
+	public int getMEvasionRate(Creature target) {
 
 		//if (val > Config.MAX_EVASION && !getActiveChar().isGM())
 		//	return Config.MAX_EVASION;

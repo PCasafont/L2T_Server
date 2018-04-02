@@ -17,7 +17,7 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * format   SdSS dddddddd d (Sddddd)
@@ -26,9 +26,9 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class GMViewPledgeInfo extends L2GameServerPacket {
 	private L2Clan clan;
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	
-	public GMViewPledgeInfo(L2Clan clan, L2PcInstance activeChar) {
+	public GMViewPledgeInfo(L2Clan clan, Player activeChar) {
 		this.clan = clan;
 		this.activeChar = activeChar;
 	}

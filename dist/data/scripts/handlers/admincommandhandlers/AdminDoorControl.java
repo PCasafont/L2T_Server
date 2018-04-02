@@ -18,9 +18,9 @@ package handlers.admincommandhandlers;
 import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.CastleManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 
 /**
@@ -46,7 +46,7 @@ public class AdminDoorControl implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_open", "admin_close", "admin_openall", "admin_closeall"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		try {
 			if (command.startsWith("admin_open ")) {
 				int doorId = Integer.parseInt(command.substring(11));
@@ -72,38 +72,38 @@ public class AdminDoorControl implements IAdminCommandHandler {
 				}
 			}
 			if (command.equals("admin_closeall")) {
-				for (L2DoorInstance door : doorTable.getDoors()) {
+				for (DoorInstance door : doorTable.getDoors()) {
 					door.closeMe();
 				}
 				for (Castle castle : CastleManager.getInstance().getCastles()) {
-					for (L2DoorInstance door : castle.getDoors()) {
+					for (DoorInstance door : castle.getDoors()) {
 						door.closeMe();
 					}
 				}
 			}
 			if (command.equals("admin_openall")) {
-				for (L2DoorInstance door : doorTable.getDoors()) {
+				for (DoorInstance door : doorTable.getDoors()) {
 					door.openMe();
 				}
 				for (Castle castle : CastleManager.getInstance().getCastles()) {
-					for (L2DoorInstance door : castle.getDoors()) {
+					for (DoorInstance door : castle.getDoors()) {
 						door.openMe();
 					}
 				}
 			}
 			if (command.equals("admin_open")) {
-				L2Object target = activeChar.getTarget();
-				if (target instanceof L2DoorInstance) {
-					((L2DoorInstance) target).openMe();
+				WorldObject target = activeChar.getTarget();
+				if (target instanceof DoorInstance) {
+					((DoorInstance) target).openMe();
 				} else {
 					activeChar.sendMessage("Incorrect target.");
 				}
 			}
 
 			if (command.equals("admin_close")) {
-				L2Object target = activeChar.getTarget();
-				if (target instanceof L2DoorInstance) {
-					((L2DoorInstance) target).closeMe();
+				WorldObject target = activeChar.getTarget();
+				if (target instanceof DoorInstance) {
+					((DoorInstance) target).closeMe();
 				} else {
 					activeChar.sendMessage("Incorrect target.");
 				}

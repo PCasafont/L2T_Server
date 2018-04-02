@@ -17,23 +17,23 @@ package l2server.gameserver.model.actor.knownlist;
 
 import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2FriendlyMobInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.FriendlyMobInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 public class FriendlyMobKnownList extends AttackableKnownList {
-	public FriendlyMobKnownList(L2FriendlyMobInstance activeChar) {
+	public FriendlyMobKnownList(FriendlyMobInstance activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public boolean addKnownObject(L2Object object) {
+	public boolean addKnownObject(WorldObject object) {
 		if (!super.addKnownObject(object)) {
 			return false;
 		}
 
-		if (object instanceof L2PcInstance && getActiveChar().getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE) {
+		if (object instanceof Player && getActiveChar().getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE) {
 			getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
 		}
 
@@ -41,12 +41,12 @@ public class FriendlyMobKnownList extends AttackableKnownList {
 	}
 
 	@Override
-	protected boolean removeKnownObject(L2Object object, boolean forget) {
+	protected boolean removeKnownObject(WorldObject object, boolean forget) {
 		if (!super.removeKnownObject(object, forget)) {
 			return false;
 		}
 
-		if (!(object instanceof L2Character)) {
+		if (!(object instanceof Creature)) {
 			return true;
 		}
 
@@ -69,7 +69,7 @@ public class FriendlyMobKnownList extends AttackableKnownList {
 	}
 
 	@Override
-	public final L2FriendlyMobInstance getActiveChar() {
-		return (L2FriendlyMobInstance) super.getActiveChar();
+	public final FriendlyMobInstance getActiveChar() {
+		return (FriendlyMobInstance) super.getActiveChar();
 	}
 }

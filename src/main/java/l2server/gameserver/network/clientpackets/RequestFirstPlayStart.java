@@ -11,6 +11,6 @@ public class RequestFirstPlayStart extends L2GameClientPacket {
 	@Override
 	public void runImpl() {
 		// TODO
-		//Log.info(getType() + " was received from " + getClient() + ".");
+		//log.info(getType() + " was received from " + getClient() + ".");
 	}
 }

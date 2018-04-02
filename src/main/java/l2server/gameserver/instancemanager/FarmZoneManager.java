@@ -16,16 +16,16 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.Config;
-import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.model.L2DropCategory;
 import l2server.gameserver.model.L2DropData;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import l2server.gameserver.templates.item.ItemTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -37,15 +37,18 @@ import java.util.*;
  * @author Pere
  */
 public class FarmZoneManager {
+	private static Logger log = LoggerFactory.getLogger(FarmZoneManager.class.getName());
+
+
 	public class FarmZone {
 		private String name;
-		private Set<L2NpcTemplate> mobs = new HashSet<>();
+		private Set<NpcTemplate> mobs = new HashSet<>();
 
 		public FarmZone(String name) {
 			this.name = name;
 		}
 
-		public void addMob(L2NpcTemplate mob) {
+		public void addMob(NpcTemplate mob) {
 			mobs.add(mob);
 		}
 
@@ -53,7 +56,7 @@ public class FarmZoneManager {
 			return name;
 		}
 
-		public Set<L2NpcTemplate> getMobs() {
+		public Set<NpcTemplate> getMobs() {
 			return mobs;
 		}
 	}
@@ -86,7 +89,7 @@ public class FarmZoneManager {
 				for (XmlNode mobNode : farmNode.getChildren()) {
 					if (mobNode.getName().equalsIgnoreCase("mob")) {
 						int mobId = mobNode.getInt("id");
-						L2NpcTemplate temp = NpcTable.getInstance().getTemplate(mobId);
+						NpcTemplate temp = NpcTable.getInstance().getTemplate(mobId);
 						if (temp == null) {
 							continue;
 						}
@@ -97,7 +100,7 @@ public class FarmZoneManager {
                         {
                             L2Spawn spawn = new L2Spawn(temp);
                             spawn.doSpawn();
-                            L2Npc mobInstance = spawn.getNpc();
+                            Npc mobInstance = spawn.getNpc();
                             float mobFarmCost = mobInstance.getMaxHp() * (float)(mobInstance.getPDef(null) + mobInstance.getMDef(null, null));
                             mobInstance.deleteMe();
                             if (mobInstance.getSpawn() != null)
@@ -120,7 +123,7 @@ public class FarmZoneManager {
 				farmZones.put(name, farmZone);
 			}
 		}
-		Log.info("Farm Zone Manager: loaded " + farmZones.size() + " farm zone definitions.");
+		log.info("Farm Zone Manager: loaded " + farmZones.size() + " farm zone definitions.");
 
 		file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/customFarm.xml");
 		if (!file.exists()) {
@@ -132,7 +135,7 @@ public class FarmZoneManager {
 		for (XmlNode farmNode : doc.getChildren()) {
 			if (farmNode.getName().equalsIgnoreCase("excludeDrop")) {
 				int itemId = farmNode.getInt("itemId");
-				for (L2NpcTemplate npc : NpcTable.getInstance().getAllTemplates()) {
+				for (NpcTemplate npc : NpcTable.getInstance().getAllTemplates()) {
 					List<L2DropData> dropsToRemove = new ArrayList<>();
 					for (L2DropData dd : npc.getDropData()) {
 						if (dd.getItemId() == itemId) {
@@ -158,24 +161,24 @@ public class FarmZoneManager {
 					}
 				}
 			} else if (farmNode.getName().equalsIgnoreCase("customFarm")) {
-				Set<L2NpcTemplate> mobs = new HashSet<>();
+				Set<NpcTemplate> mobs = new HashSet<>();
 				if (farmNode.hasAttribute("farmZone")) {
 					String name = farmNode.getString("farmZone");
 					FarmZone farmZone = farmZones.get(name);
-					for (L2NpcTemplate mob : farmZone.getMobs()) {
+					for (NpcTemplate mob : farmZone.getMobs()) {
 						mobs.add(mob);
 					}
 				} else if (farmNode.hasAttribute("levelRange")) {
 					String[] levelRange = farmNode.getString("levelRange").split("-");
 					int minLvl = Integer.parseInt(levelRange[0]);
 					int maxLvl = Integer.parseInt(levelRange[1]);
-					for (L2NpcTemplate mob : NpcTable.getInstance().getAllTemplates()) {
+					for (NpcTemplate mob : NpcTable.getInstance().getAllTemplates()) {
 						if (mob.Type.equals("L2Monster") && mob.Level >= minLvl && mob.Level <= maxLvl) {
 							mobs.add(mob);
 						}
 					}
 				} else {
-					Log.warning("There's a farm customization without any monster group specified!");
+					log.warn("There's a farm customization without any monster group specified!");
 					continue;
 				}
 
@@ -190,12 +193,12 @@ public class FarmZoneManager {
 				float baseMobFarmCost = 0.0f;
 				if (farmNode.hasAttribute("adjustDropsPerMob")) {
 					int baseMobId = farmNode.getInt("adjustDropsPerMob");
-					L2NpcTemplate baseMobTemplate = NpcTable.getInstance().getTemplate(baseMobId);
+					NpcTemplate baseMobTemplate = NpcTable.getInstance().getTemplate(baseMobId);
 					if (baseMobTemplate != null) {
 						try {
 							L2Spawn spawn = new L2Spawn(baseMobTemplate);
 							spawn.doSpawn();
-							L2Npc baseMob = spawn.getNpc();
+							Npc baseMob = spawn.getNpc();
 							baseMobFarmCost = baseMob.getMaxHp() * (float) (baseMob.getPDef(null) + baseMob.getMDef(null, null));
 							baseMob.deleteMe();
 							if (baseMob.getSpawn() != null) {
@@ -219,9 +222,9 @@ public class FarmZoneManager {
 
 						L2DropData dd = new L2DropData(itemId, min, max, chance);
 
-						L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
+						ItemTemplate item = ItemTable.getInstance().getTemplate(dd.getItemId());
 						if (item == null) {
-							Log.warning("Drop data for undefined item template in custom drop definitions!");
+							log.warn("Drop data for undefined item template in custom drop definitions!");
 							continue;
 						}
 
@@ -242,9 +245,9 @@ public class FarmZoneManager {
 								float chance2 = dropCategoryNode.getFloat("chance");
 								L2DropData dd = new L2DropData(itemId, min, max, chance2);
 
-								L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
+								ItemTemplate item = ItemTable.getInstance().getTemplate(dd.getItemId());
 								if (item == null) {
-									Log.warning("Drop data for undefined item template in custom drop definitions!");
+									log.warn("Drop data for undefined item template in custom drop definitions!");
 									continue;
 								}
 
@@ -256,13 +259,13 @@ public class FarmZoneManager {
 					}
 				}
 
-				for (L2NpcTemplate mob : mobs) {
+				for (NpcTemplate mob : mobs) {
 					float dropMultiplier = 1.0f;
 					if (baseMobFarmCost > 0.0f) {
 						try {
 							L2Spawn spawn = new L2Spawn(mob);
 							spawn.doSpawn();
-							L2Npc mobInstance = spawn.getNpc();
+							Npc mobInstance = spawn.getNpc();
 							float mobFarmCost = mobInstance.getMaxHp() * (float) (mobInstance.getPDef(null) + mobInstance.getMDef(null, null));
 							dropMultiplier = mobFarmCost / baseMobFarmCost;
 							mobInstance.deleteMe();
@@ -363,6 +366,6 @@ public class FarmZoneManager {
 				customized++;
 			}
 		}
-		Log.info("Farm Zone Manager: loaded " + customized + " farm zone customizations.");
+		log.info("Farm Zone Manager: loaded " + customized + " farm zone customizations.");
 	}
 }

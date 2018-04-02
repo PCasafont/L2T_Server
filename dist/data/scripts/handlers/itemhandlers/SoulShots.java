@@ -16,17 +16,17 @@
 package handlers.itemhandlers;
 
 import l2server.gameserver.handler.IItemHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.model.itemcontainer.PcInventory;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Stats;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.gameserver.templates.item.L2Weapon;
+import l2server.gameserver.templates.item.ItemTemplate;
+import l2server.gameserver.templates.item.WeaponTemplate;
 import l2server.gameserver.util.Broadcast;
 
 /**
@@ -37,17 +37,17 @@ import l2server.gameserver.util.Broadcast;
 
 public class SoulShots implements IItemHandler {
 	/**
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(Playable, Item, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
-		if (!(playable instanceof L2PcInstance)) {
+	public void useItem(Playable playable, Item item, boolean forceUse) {
+		if (!(playable instanceof Player)) {
 			return;
 		}
 
-		L2PcInstance activeChar = (L2PcInstance) playable;
-		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
-		L2Weapon weaponItem = activeChar.getActiveWeaponItem();
+		Player activeChar = (Player) playable;
+		Item weaponInst = activeChar.getActiveWeaponInstance();
+		WeaponTemplate weaponItem = activeChar.getActiveWeaponItem();
 		int itemId = item.getItemId();
 
 		// Check if Soul shot can be used
@@ -62,41 +62,41 @@ public class SoulShots implements IItemHandler {
 		boolean gradeCheck = true;
 
 		switch (weaponGrade) {
-			case L2Item.CRYSTAL_NONE:
+			case ItemTemplate.CRYSTAL_NONE:
 				if (itemId != 5789 && itemId != 1835) {
 					gradeCheck = false;
 				}
 				break;
-			case L2Item.CRYSTAL_D:
+			case ItemTemplate.CRYSTAL_D:
 				if (itemId != 1463 && itemId != 22082) {
 					gradeCheck = false;
 				}
 				break;
-			case L2Item.CRYSTAL_C:
+			case ItemTemplate.CRYSTAL_C:
 				if (itemId != 1464 && itemId != 22083) {
 					gradeCheck = false;
 				}
 				break;
-			case L2Item.CRYSTAL_B:
+			case ItemTemplate.CRYSTAL_B:
 				if (itemId != 1465 && itemId != 22084) {
 					gradeCheck = false;
 				}
 				break;
-			case L2Item.CRYSTAL_A:
+			case ItemTemplate.CRYSTAL_A:
 				if (itemId != 1466 && itemId != 22085) {
 					gradeCheck = false;
 				}
 				break;
-			case L2Item.CRYSTAL_S:
-			case L2Item.CRYSTAL_S80:
-			case L2Item.CRYSTAL_S84:
+			case ItemTemplate.CRYSTAL_S:
+			case ItemTemplate.CRYSTAL_S80:
+			case ItemTemplate.CRYSTAL_S84:
 				if (itemId != 1467 && itemId != 22086) {
 					gradeCheck = false;
 				}
 				break;
-			case L2Item.CRYSTAL_R:
-			case L2Item.CRYSTAL_R95:
-			case L2Item.CRYSTAL_R99:
+			case ItemTemplate.CRYSTAL_R:
+			case ItemTemplate.CRYSTAL_R95:
+			case ItemTemplate.CRYSTAL_R99:
 				if (itemId != 17754 && itemId != 22433) {
 					gradeCheck = false;
 				}
@@ -113,7 +113,7 @@ public class SoulShots implements IItemHandler {
 		int rubyLvl = 0;
 		PcInventory playerInventory = activeChar.getInventory();
 		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount(); i++) {
-			L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
+			Item jewel = playerInventory.getPaperdollItem(i);
 			if (jewel != null) {
 				//Ruby
 				switch (jewel.getItemId()) {
@@ -215,7 +215,7 @@ public class SoulShots implements IItemHandler {
 		activeChar.consumableLock.lock();
 		try {
 			// Check if Soul shot is already active
-			if (weaponInst.getChargedSoulShot() != L2ItemInstance.CHARGED_NONE) {
+			if (weaponInst.getChargedSoulShot() != Item.CHARGED_NONE) {
 				return;
 			}
 
@@ -231,7 +231,7 @@ public class SoulShots implements IItemHandler {
 			}
 
 			// Charge soul shot
-			weaponInst.setChargedSoulShot(L2ItemInstance.CHARGED_SOULSHOT * rubyMul);
+			weaponInst.setChargedSoulShot(Item.CHARGED_SOULSHOT * rubyMul);
 		} finally {
 			activeChar.consumableLock.unlock();
 		}

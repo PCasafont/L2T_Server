@@ -16,9 +16,10 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.templates.L2HelperBuff;
+import l2server.gameserver.templates.HelperBuff;
 import l2server.gameserver.templates.StatsSet;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -34,10 +35,13 @@ import java.util.List;
  */
 
 public class HelperBuffTable {
+	private static Logger log = LoggerFactory.getLogger(HelperBuffTable.class.getName());
+
+
 	/**
 	 * The table containing all Buff of the Newbie Helper
 	 */
-	private List<L2HelperBuff> helperBuff = new ArrayList<>();
+	private List<HelperBuff> helperBuff = new ArrayList<>();
 
 	/**
 	 * The player level since Newbie Helper can give the fisrt buff <BR>
@@ -115,17 +119,17 @@ public class HelperBuffTable {
 						servitorHighestLevel = upperLevel;
 					}
 				}
-				L2HelperBuff template = new L2HelperBuff(helperBuffDat);
+				HelperBuff template = new HelperBuff(helperBuffDat);
 				helperBuff.add(template);
 			}
 		}
-		Log.info("HelperBuffTable: Loaded: " + helperBuff.size() + " buffs!");
+		log.info("HelperBuffTable: Loaded: " + helperBuff.size() + " buffs!");
 	}
 
 	/**
 	 * Return the Helper Buff List
 	 */
-	public List<L2HelperBuff> getHelperBuffTable() {
+	public List<HelperBuff> getHelperBuffTable() {
 		return helperBuff;
 	}
 

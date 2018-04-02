@@ -18,13 +18,13 @@ package custom.RevelationSkills;
 import l2server.Config;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.Util;
 
 import java.util.ArrayList;
@@ -56,19 +56,19 @@ public class RevelationSkills extends Quest {
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.equalsIgnoreCase("show_skills")) {
 			if (getRevelationCount(player) < 2) {
 				String skillList = "<table>";
 				
-				L2Skill skillInfo = null;
+				Skill skillInfo = null;
 				for (int id : revelationSkills) {
 					if (player.getSkillLevelHash(id) != -1) {
 						continue;
 					}
 					
 					skillInfo = SkillTable.getInstance().getInfo(id, 1);
-					if (skillInfo != null && skillInfo.getSkillType() != L2SkillType.NOTDONE) {
+					if (skillInfo != null && skillInfo.getSkillType() != SkillType.NOTDONE) {
 						skillList += "<tr><td><a action=\"bypass -h Quest RevelationSkills " + skillInfo.getId() + "\">" + skillInfo.getName() +
 								"</a></td></tr>";
 					}
@@ -113,7 +113,7 @@ public class RevelationSkills extends Quest {
 			
 			//Anti exploit
 			if (getRevelationCount(player) < 2) {
-				L2Skill newSkill = SkillTable.getInstance().getInfo(skillId, 1);
+				Skill newSkill = SkillTable.getInstance().getInfo(skillId, 1);
 				
 				//Msg
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.LEARNED_SKILL_S1);
@@ -129,7 +129,7 @@ public class RevelationSkills extends Quest {
 		} else if (event.equalsIgnoreCase("reset_revelation")) {
 			if (player.getAdena() >= resetPrice) {
 				player.reduceAdena(qn, resetPrice, player, true);
-				for (L2Skill skill : player.getAllSkills()) {
+				for (Skill skill : player.getAllSkills()) {
 					if (skill == null) {
 						continue;
 					}
@@ -154,7 +154,7 @@ public class RevelationSkills extends Quest {
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		if (player.getCurrentClass().getLevel() < 85 && player.getCurrentClass().getParent() == null) {
 			return "no.html";
 		}
@@ -162,11 +162,11 @@ public class RevelationSkills extends Quest {
 		return "main.html";
 	}
 	
-	private int getRevelationCount(L2PcInstance player) {
+	private int getRevelationCount(Player player) {
 		int skillCount = 0;
 		
 		List<Integer> haveSkills = new ArrayList<Integer>();
-		for (L2Skill skill : player.getAllSkills()) {
+		for (Skill skill : player.getAllSkills()) {
 			if (skill == null) {
 				continue;
 			}

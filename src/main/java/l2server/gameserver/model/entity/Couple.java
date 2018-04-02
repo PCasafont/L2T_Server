@@ -17,8 +17,9 @@ package l2server.gameserver.model.entity;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,6 +31,9 @@ import java.util.logging.Level;
  * @author evill33t
  */
 public class Couple {
+	private static Logger log = LoggerFactory.getLogger(Couple.class.getName());
+
+
 
 	// =========================================================
 	// Data Field
@@ -69,13 +73,13 @@ public class Couple {
 			}
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Exception: Couple.load(): " + e.getMessage(), e);
+			log.error("Exception: Couple.load(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public Couple(L2PcInstance player1, L2PcInstance player2) {
+	public Couple(Player player1, Player player2) {
 		int tempPlayer1Id = player1.getObjectId();
 		int tempPlayer2Id = player2.getObjectId();
 
@@ -104,7 +108,7 @@ public class Couple {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Could not create couple: " + e.getMessage(), e);
+			log.error("Could not create couple: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -125,7 +129,7 @@ public class Couple {
 			statement.close();
 			maried = true;
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Could not marry: " + e.getMessage(), e);
+			log.error("Could not marry: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -142,7 +146,7 @@ public class Couple {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Exception: Couple.divorce(): " + e.getMessage(), e);
+			log.error("Exception: Couple.divorce(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

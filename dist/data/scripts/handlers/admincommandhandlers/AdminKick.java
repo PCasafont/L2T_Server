@@ -16,9 +16,9 @@
 package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2ApInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.ApInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.Collection;
 import java.util.StringTokenizer;
@@ -27,20 +27,20 @@ public class AdminKick implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_kick", "admin_kick_non_gm"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.startsWith("admin_kick")) {
 			StringTokenizer st = new StringTokenizer(command);
 			if (st.countTokens() > 1) {
 				st.nextToken();
 				String player = st.nextToken();
-				L2PcInstance plyr = L2World.getInstance().getPlayer(player);
+				Player plyr = World.getInstance().getPlayer(player);
 				if (plyr != null) {
 					plyr.logout();
 					activeChar.sendMessage("You kicked " + plyr.getName() + " from the game.");
 				}
-			} else if (activeChar.getTarget() instanceof L2PcInstance) {
-				L2PcInstance target = (L2PcInstance) activeChar.getTarget();
-				if (target instanceof L2ApInstance) {
+			} else if (activeChar.getTarget() instanceof Player) {
+				Player target = (Player) activeChar.getTarget();
+				if (target instanceof ApInstance) {
 					target.deleteMe();
 				} else {
 					target.logout();
@@ -50,10 +50,10 @@ public class AdminKick implements IAdminCommandHandler {
 		}
 		if (command.startsWith("admin_kick_non_gm")) {
 			int counter = 0;
-			Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-			//synchronized (L2World.getInstance().getAllPlayers())
+			Collection<Player> pls = World.getInstance().getAllPlayers().values();
+			//synchronized (World.getInstance().getAllPlayers())
 			{
-				for (L2PcInstance player : pls) {
+				for (Player player : pls) {
 					if (!player.isGM()) {
 						counter++;
 						player.logout();

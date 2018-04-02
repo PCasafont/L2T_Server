@@ -15,8 +15,8 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -34,11 +34,11 @@ public class ConditionPlayerHasSummon extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		if (!(env.player instanceof L2PcInstance)) {
+		if (!(env.player instanceof Player)) {
 			return false;
 		}
 
-		for (L2SummonInstance summon : ((L2PcInstance) env.player).getSummons()) {
+		for (SummonInstance summon : ((Player) env.player).getSummons()) {
 			if (!summon.isDead()) {
 				return value;
 			}

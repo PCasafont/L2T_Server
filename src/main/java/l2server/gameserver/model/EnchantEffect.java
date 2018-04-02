@@ -16,7 +16,7 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.funcs.Func;
 
 import java.util.ArrayList;
@@ -61,7 +61,7 @@ public class EnchantEffect {
 		return slot;
 	}
 	
-	public L2Skill getSkill() {
+	public Skill getSkill() {
 		if (skillId == 0) {
 			return null;
 		}
@@ -69,14 +69,14 @@ public class EnchantEffect {
 		return SkillTable.getInstance().getInfo(skillId, skillLevel);
 	}
 	
-	public void applyBonus(L2PcInstance player) {
+	public void applyBonus(Player player) {
 		player.removeStatsOwner(this);
 		for (Func f : funcs) {
 			player.addStatFunc(f);
 		}
 	}
 	
-	public void removeBonus(L2PcInstance player) {
+	public void removeBonus(Player player) {
 		player.removeStatsOwner(this);
 	}
 }

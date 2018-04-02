@@ -1,0 +1,372 @@
+/*
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option) any later
+ * version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+package l2server.gameserver.model.zone.type;
+
+import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.datatables.MapRegionTable;
+import l2server.gameserver.instancemanager.GrandBossManager;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.Location;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.zone.ZoneType;
+import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
+
+import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ScheduledFuture;
+
+/**
+ * @author DaRkRaGe
+ */
+public class BossZone extends ZoneType {
+	private int timeInvade;
+	private boolean enabled = true;
+	private HashMap<Integer, PlayerEntry> playerEntries;
+	protected CopyOnWriteArrayList<Creature> raidList;
+	private Location exitLocation;
+
+	public BossZone(int id) {
+		super(id);
+
+		playerEntries = new HashMap<>();
+		raidList = new CopyOnWriteArrayList<>();
+
+		GrandBossManager.getInstance().addZone(this);
+	}
+
+	private class PlayerEntry {
+		private int playerId;
+		private long allowedEntryTime;
+		private ScheduledFuture<?> kickTask;
+
+		private PlayerEntry(int playerId, long allowedEntryTime) {
+			this.playerId = playerId;
+			this.allowedEntryTime = allowedEntryTime;
+		}
+
+		private boolean isEntryAllowed() {
+			return allowedEntryTime > System.currentTimeMillis();
+		}
+
+		private void setAllowedEntryTime(long b) {
+			allowedEntryTime = b;
+		}
+
+		private void startKickTask() {
+			kickTask = ThreadPoolManager.getInstance().scheduleGeneral(new KickTask(), 300000);
+		}
+
+		private void stopKickTask() {
+			if (kickTask != null) {
+				kickTask.cancel(false);
+			}
+		}
+
+		private class KickTask implements Runnable {
+			@Override
+			public void run() {
+				Player player = World.getInstance().getPlayer(playerId);
+				if (player != null) {
+					kickPlayerFromEpicZone(player);
+				}
+			}
+		}
+	}
+
+	@Override
+	public void setParameter(String name, String value) {
+		switch (name) {
+			case "InvadeTime":
+				timeInvade = Integer.parseInt(value);
+				break;
+			case "EnabledByDefault":
+				enabled = Boolean.parseBoolean(value);
+				break;
+			case "oustLoc":
+				exitLocation = new Location(Integer.parseInt(value.split(",")[0]),
+						Integer.parseInt(value.split(",")[1]),
+						Integer.parseInt(value.split(",")[2]));
+				break;
+			default:
+				super.setParameter(name, value);
+				break;
+		}
+	}
+
+	/**
+	 * Boss zones have special behaviors for player characters. Players are
+	 * automatically teleported out when the attempt to enter these zones,
+	 * except if the time at which they enter the zone is prior to the entry
+	 * expiration time set for that player. Entry expiration times are set by
+	 * any one of the following: 1) A player logs out while in a zone
+	 * (Expiration gets set to logoutTime + timeInvade) 2) An external source
+	 * (such as a quest or AI of NPC) set up the player for entry.
+	 * <p>
+	 * There exists one more case in which the player will be allowed to enter.
+	 * That is if the server recently rebooted (boot-up time more recent than
+	 * currentTime - timeInvade) AND the player was in the zone prior to reboot.
+	 */
+	@Override
+	protected void onEnter(Creature character) {
+		if (enabled) {
+			if (!(character instanceof Playable)) {
+				return;
+			}
+
+			Player player = null;
+			if (character instanceof Player) {
+				player = (Player) character;
+			} else {
+				if (character instanceof Summon) {
+					player = ((Summon) character).getOwner();
+					if (!isInsideZone(player)) {
+						kickPlayerFromEpicZone(player);
+					}
+					return;
+				}
+			}
+
+			if (player == null) {
+				return;
+			}
+
+			//GM's and instance players are not checked
+			if (player.isGM() || player.getInstanceId() != 0) {
+				return;
+			}
+
+			PlayerEntry playerEntry = playerEntries.get(player.getObjectId());
+			if (playerEntry == null || !playerEntry.isEntryAllowed()) //Illegal entry
+			{
+				kickPlayerFromEpicZone(player);
+				return;
+			}
+
+			player.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, true);
+		}
+	}
+
+	@Override
+	protected void onExit(Creature character) {
+		if (enabled) {
+			if (character instanceof Player) {
+				final Player player = (Player) character;
+				if (player.isGM()) {
+					return;
+				}
+
+				PlayerEntry playerEntry = playerEntries.get(player.getObjectId());
+				if (playerEntry == null) {
+					return;
+				}
+
+				player.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, false);
+
+				if (!player.isOnline()) {
+					playerEntry.setAllowedEntryTime(System.currentTimeMillis() + timeInvade);
+				}
+			}
+		}
+
+		if (character instanceof Attackable && character.isRaid() && !character.isDead()) {
+			((Attackable) character).returnHome();
+		}
+	}
+
+	public void setAllowedPlayers(List<Integer> players) {
+		if (players == null) {
+			return;
+		}
+
+		playerEntries.clear();
+
+		for (int i : players) {
+			playerEntries.put(i, new PlayerEntry(i, System.currentTimeMillis() + 1200000)); //20 min
+		}
+	}
+
+	public Set<Integer> getAllowedPlayers() {
+		return playerEntries.keySet();
+	}
+
+	/**
+	 * Some GrandBosses send all players in zone to a specific part of the zone,
+	 * rather than just removing them all. If this is the case, this command should
+	 * be used. If this is no the case, then use oustAllPlayers().
+	 *
+	 * @param x
+	 * @param y
+	 * @param z
+	 */
+	public void movePlayersTo(int x, int y, int z) {
+		if (characterList.isEmpty()) {
+			return;
+		}
+
+		for (Creature character : characterList.values()) {
+			if (character == null) {
+				continue;
+			}
+
+			if (character instanceof Player) {
+				Player player = (Player) character;
+				if (player.isOnline()) {
+					player.teleToLocation(x, y, z);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Occasionally, all players need to be sent out of the zone (for example,
+	 * if the players are just running around without fighting for too long, or
+	 * if all players die, etc). This call sends all online players to town and
+	 * marks offline players to be teleported (by clearing their relog
+	 * expiration times) when they log back in (no real need for off-line
+	 * teleport).
+	 */
+	@Override
+	public void oustAllPlayers() {
+		if (characterList.isEmpty()) {
+			return;
+		}
+
+		for (Creature character : characterList.values()) {
+			if (character == null) {
+				continue;
+			}
+
+			if (character instanceof Player) {
+				Player player = (Player) character;
+				if (player.isOnline()) {
+					kickPlayerFromEpicZone(player);
+				}
+			}
+		}
+		playerEntries.clear();
+	}
+
+	/**
+	 * This function is to be used by external sources, such as quests and AI
+	 * in order to allow a player for entry into the zone for some time.  Naturally
+	 * if the player does not enter within the allowed time, he/she will be
+	 * teleported out again...
+	 *
+	 * @param player:        reference to the player we wish to allow
+	 * @param durationInSec: amount of time in seconds during which entry is valid.
+	 */
+	public void allowPlayerEntry(Player player, int durationInSec) {
+		if (player == null || player.isGM()) {
+			return;
+		}
+
+		PlayerEntry playerEntry = playerEntries.get(player.getObjectId());
+		if (playerEntry == null) {
+			playerEntries.put(player.getObjectId(), new PlayerEntry(player.getObjectId(), System.currentTimeMillis() + durationInSec * 1000));
+		} else {
+			playerEntry.setAllowedEntryTime(System.currentTimeMillis() + durationInSec * 1000);
+		}
+	}
+
+	public void removePlayer(Player player) {
+		if (player == null) {
+			return;
+		}
+
+		if (!player.isGM()) {
+			playerEntries.remove(player.getObjectId());
+		}
+	}
+
+	@Override
+	public void onDieInside(Creature character, Creature killer) {
+		if (!enabled) {
+			return;
+		}
+
+		if (character instanceof Player) {
+			Player player = (Player) character;
+			PlayerEntry entryPlayer = playerEntries.get(player.getObjectId());
+			if (entryPlayer == null) {
+				return;
+			}
+
+			entryPlayer.startKickTask();
+		}
+	}
+
+	@Override
+	public void onReviveInside(Creature character) {
+		if (!enabled) {
+			return;
+		}
+
+		if (character instanceof Player) {
+			Player player = (Player) character;
+			PlayerEntry entryPlayer = playerEntries.get(player.getObjectId());
+			if (entryPlayer == null) {
+				return;
+			}
+
+			entryPlayer.stopKickTask();
+		}
+	}
+
+	private void kickPlayerFromEpicZone(Creature chara) {
+		if (chara == null) {
+			return;
+		}
+
+		chara.setInsideZone(Creature.ZONE_NOSUMMONFRIEND, false);
+
+		if (exitLocation != null) {
+			chara.teleToLocation(exitLocation, true);
+		} else {
+			chara.teleToLocation(MapRegionTable.TeleportWhereType.Town);
+		}
+	}
+
+	public void kickDualBoxes() {
+		List<Player> toBeKicked = new ArrayList<>();
+		Map<String, String> allPlayerIps = new HashMap<>();
+		for (Player player : getPlayersInside()) {
+			if (player == null || !player.isOnline()) {
+				continue;
+			}
+			if (allPlayerIps.containsKey(player.getExternalIP())) {
+				if (allPlayerIps.get(player.getExternalIP()).equalsIgnoreCase(player.getInternalIP())) {
+					toBeKicked.add(player);
+				}
+			}
+			allPlayerIps.put(player.getExternalIP(), player.getInternalIP());
+		}
+
+		if (!toBeKicked.isEmpty()) {
+			for (final Player player : toBeKicked) {
+				if (player == null) {
+					continue;
+				}
+
+				player.sendPacket(new ExShowScreenMessage("You will be removed from the zone in 60 seconds because of dual box!", 5000));
+				ThreadPoolManager.getInstance().scheduleGeneral(() -> kickPlayerFromEpicZone(player), 60000);
+			}
+		}
+	}
+}

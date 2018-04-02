@@ -16,11 +16,11 @@
 package quests.Q10329_BackupSeekers;
 
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.ai.L2NpcWalkerAI;
+import l2server.gameserver.ai.NpcWalkerAI;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2NpcWalkerNode;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.GlobalQuest;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
@@ -92,7 +92,7 @@ public class Q10329_BackupSeekers extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, final L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, final Player player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
@@ -105,8 +105,8 @@ public class Q10329_BackupSeekers extends Quest {
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 
-			final L2Npc guide = addSpawn(guideId, -117996, 255845, -1320, 0, false, 600000);
-			L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide);
+			final Npc guide = addSpawn(guideId, -117996, 255845, -1320, 0, false, 600000);
+			NpcWalkerAI guideAI = new NpcWalkerAI(guide);
 			guide.setAI(guideAI);
 			guideAI.initializeRoute(guideRoute1, player);
 			guideAI.setWaiting(true);
@@ -169,8 +169,8 @@ public class Q10329_BackupSeekers extends Quest {
 			player.doSimultaneousCast(SkillTable.getInstance().getInfo(9204, 1));
 			st.set("secondRoute", "1");
 
-			final L2Npc guide = addSpawn(guideId, -114074, 252514, -1560, 0, false, 600000);
-			L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide);
+			final Npc guide = addSpawn(guideId, -114074, 252514, -1560, 0, false, 600000);
+			NpcWalkerAI guideAI = new NpcWalkerAI(guide);
 			guide.setAI(guideAI);
 			guideAI.initializeRoute(guideRoute2, player);
 			guideAI.setWaiting(true);
@@ -246,7 +246,7 @@ public class Q10329_BackupSeekers extends Quest {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
 		if (st == null) {
@@ -276,7 +276,7 @@ public class Q10329_BackupSeekers extends Quest {
 	}
 
 	@Override
-	public String onArrived(final L2NpcWalkerAI guideAI) {
+	public String onArrived(final NpcWalkerAI guideAI) {
 		List<L2NpcWalkerNode> guideRoute = guideRoute1;
 		int guideLastChatId = guideLastChatId1;
 
@@ -309,7 +309,7 @@ public class Q10329_BackupSeekers extends Quest {
 	}
 
 	@Override
-	public String onPlayerArrived(final L2NpcWalkerAI guideAI) {
+	public String onPlayerArrived(final NpcWalkerAI guideAI) {
 		List<L2NpcWalkerNode> guideRoute = guideRoute1;
 
 		if (guideAI.getGuided() == null || guideAI.getGuided().getQuestState(qn) == null) {
@@ -338,7 +338,7 @@ public class Q10329_BackupSeekers extends Quest {
 	}
 
 	@Override
-	public boolean canStart(L2PcInstance player) {
+	public boolean canStart(Player player) {
 		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 9) && player.getLevel() <= 20;
 	}
 

@@ -18,7 +18,8 @@ package l2server.gameserver.communitybbs.BB;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.communitybbs.Manager.ForumsBBSManager;
 import l2server.gameserver.communitybbs.Manager.TopicBBSManager;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,6 +31,9 @@ import java.util.Map;
 import java.util.logging.Level;
 
 public class Forum {
+	private static Logger log = LoggerFactory.getLogger(Forum.class.getName());
+
+
 	//type
 	public static final int ROOT = 0;
 	public static final int NORMAL = 1;
@@ -114,7 +118,7 @@ public class Forum {
 			result.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Data error on Forum " + forumId + " : " + e.getMessage(), e);
+			log.warn("Data error on Forum " + forumId + " : " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -142,7 +146,7 @@ public class Forum {
 			result.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Data error on Forum " + forumId + " : " + e.getMessage(), e);
+			log.warn("Data error on Forum " + forumId + " : " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -167,7 +171,7 @@ public class Forum {
 			result.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Data error on Forum (children): " + e.getMessage(), e);
+			log.warn("Data error on Forum (children): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -245,7 +249,7 @@ public class Forum {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error while saving new Forum to db " + e.getMessage(), e);
+			log.warn("Error while saving new Forum to db " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

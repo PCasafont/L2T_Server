@@ -18,9 +18,9 @@ package ai.individual.Summons;
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.concurrent.ScheduledFuture;
 
@@ -44,7 +44,7 @@ public class DeathGate extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public final String onSpawn(Npc npc) {
 		npc.disableCoreAI(true);
 		npc.setIsInvul(true);
 
@@ -56,14 +56,14 @@ public class DeathGate extends L2AttackableAIScript {
 	}
 
 	class DeathGateAI implements Runnable {
-		private L2Skill gateVortex;
-		private L2Skill gateRoot;
-		private L2Skill lastSkillUsed;
-		private L2Npc deathGate;
-		private L2PcInstance owner;
+		private Skill gateVortex;
+		private Skill gateRoot;
+		private Skill lastSkillUsed;
+		private Npc deathGate;
+		private Player owner;
 		private ScheduledFuture<?> schedule = null;
 
-		protected DeathGateAI(L2Npc npc, L2PcInstance owner) {
+		protected DeathGateAI(Npc npc, Player owner) {
 			deathGate = npc;
 
 			this.owner = owner;

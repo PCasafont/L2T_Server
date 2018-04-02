@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2ShortCut;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * ShortCutInit
@@ -27,9 +27,9 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public final class ShortCutInit extends L2GameServerPacket {
 	
 	private L2ShortCut[] shortCuts;
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	
-	public ShortCutInit(L2PcInstance activeChar) {
+	public ShortCutInit(Player activeChar) {
 		this.activeChar = activeChar;
 		
 		if (activeChar == null) {

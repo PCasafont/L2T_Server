@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 
 /**
  * Format (ch)dddcccd
@@ -30,10 +30,10 @@ import l2server.gameserver.model.actor.L2Character;
  * @author -Wooden-
  */
 public class ExFishingHpRegen extends L2GameServerPacket {
-	private L2Character activeChar;
+	private Creature activeChar;
 	private int time, fishHP, hpMode, anim, goodUse, penalty, hpBarColor;
 
-	public ExFishingHpRegen(L2Character character, int time, int fishHP, int HPmode, int GoodUse, int anim, int penalty, int hpBarColor) {
+	public ExFishingHpRegen(Creature character, int time, int fishHP, int HPmode, int GoodUse, int anim, int penalty, int hpBarColor) {
 		activeChar = character;
 		this.time = time;
 		this.fishHP = fishHP;

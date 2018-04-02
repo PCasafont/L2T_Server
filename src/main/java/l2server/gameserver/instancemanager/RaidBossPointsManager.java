@@ -16,8 +16,9 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.L2DatabaseFactory;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
@@ -34,6 +35,9 @@ import java.util.logging.Level;
  */
 
 public class RaidBossPointsManager {
+	private static Logger log = LoggerFactory.getLogger(RaidBossPointsManager.class.getName());
+
+
 	private HashMap<Integer, Map<Integer, Integer>> list;
 
 	private final Comparator<Map.Entry<Integer, Integer>> comparator =
@@ -69,15 +73,15 @@ public class RaidBossPointsManager {
 			}
 			rset.close();
 			statement.close();
-			Log.info(getClass().getSimpleName() + ": Loaded " + list.size() + " Characters Raid Points.");
+			log.info(getClass().getSimpleName() + ": Loaded " + list.size() + " Characters Raid Points.");
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "RaidPointsManager: Couldnt load raid points ", e);
+			log.warn("RaidPointsManager: Couldnt load raid points ", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public final void updatePointsInDB(L2PcInstance player, int raidId, int points) {
+	public final void updatePointsInDB(Player player, int raidId, int points) {
 		Connection con = null;
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
@@ -89,13 +93,13 @@ public class RaidBossPointsManager {
 			statement.executeUpdate();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "could not update char raid points:", e);
+			log.warn("could not update char raid points:", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public final void addPoints(L2PcInstance player, int bossId, int points) {
+	public final void addPoints(Player player, int bossId, int points) {
 		if (player == null) {
 			return;
 		}
@@ -130,7 +134,7 @@ public class RaidBossPointsManager {
 		return tmpPoint.get(0);
 	}
 
-	public final Map<Integer, Integer> getList(L2PcInstance player) {
+	public final Map<Integer, Integer> getList(Player player) {
 		Map<Integer, Integer> list = this.list.get(player.getObjectId());
 		if (list == null) {
 			list = new HashMap<>();
@@ -150,7 +154,7 @@ public class RaidBossPointsManager {
 			statement.close();
 			list.clear();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "could not clean raid points: ", e);
+			log.warn("could not clean raid points: ", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

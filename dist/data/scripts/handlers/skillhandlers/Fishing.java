@@ -19,37 +19,37 @@ import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
-import l2server.gameserver.model.zone.L2ZoneType;
-import l2server.gameserver.model.zone.type.L2FishingZone;
-import l2server.gameserver.model.zone.type.L2WaterZone;
+import l2server.gameserver.model.zone.ZoneType;
+import l2server.gameserver.model.zone.type.FishingZone;
+import l2server.gameserver.model.zone.type.WaterZone;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2Weapon;
-import l2server.gameserver.templates.item.L2WeaponType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.item.WeaponTemplate;
+import l2server.gameserver.templates.item.WeaponType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
 public class Fishing implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.FISHING};
+	private static final SkillType[] SKILL_IDS = {SkillType.FISHING};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		if (!(activeChar instanceof L2PcInstance)) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		if (!(activeChar instanceof Player)) {
 			return;
 		}
 
-		L2PcInstance player = (L2PcInstance) activeChar;
+		Player player = (Player) activeChar;
 
 		/*
 		 * If fishing is disabled, there isn't much point in doing anything
@@ -70,20 +70,20 @@ public class Fishing implements ISkillHandler {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FISHING_ATTEMPT_CANCELLED));
 			return;
 		}
-		L2Weapon weaponItem = player.getActiveWeaponItem();
-		if (weaponItem == null || weaponItem.getItemType() != L2WeaponType.FISHINGROD) {
+		WeaponTemplate weaponItem = player.getActiveWeaponItem();
+		if (weaponItem == null || weaponItem.getItemType() != WeaponType.FISHINGROD) {
 			// Fishing poles are not installed
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FISHING_POLE_NOT_EQUIPPED));
 			return;
 		}
-		L2ItemInstance lure = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
+		Item lure = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 		if (lure == null) {
 			// Bait not equiped.
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BAIT_ON_HOOK_BEFORE_FISHING));
 			return;
 		}
 		player.setLure(lure);
-		L2ItemInstance lure2 = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
+		Item lure2 = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 
 		if (lure2 == null || lure2.getCount() < 1) // Not enough bait.
 		{
@@ -103,7 +103,7 @@ public class Fishing implements ISkillHandler {
 				return;
 			}
 		}
-		if (player.isInsideZone(L2Character.ZONE_WATER)) {
+		if (player.isInsideZone(Creature.ZONE_WATER)) {
 			// You can't fish in water
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_FISH_UNDER_WATER));
 			if (!player.isGM()) {
@@ -112,7 +112,7 @@ public class Fishing implements ISkillHandler {
 		}
 		/*
 		 * If fishing is enabled, here is the code that was striped from
-		 * startFishing() in L2PcInstance. Decide now where will the hook be
+		 * startFishing() in Player. Decide now where will the hook be
 		 * cast...
 		 */
 		int rnd = Rnd.get(150) + 50;
@@ -129,16 +129,16 @@ public class Fishing implements ISkillHandler {
 		 * proceed past here... in that case, the hook will be positioned using
 		 * the old Z lookup method.
 		 */
-		L2FishingZone aimingTo = null;
-		L2WaterZone water = null;
+		FishingZone aimingTo = null;
+		WaterZone water = null;
 		boolean canFish = false;
-		for (L2ZoneType zone : ZoneManager.getInstance().getZones(x, y)) {
-			if (zone instanceof L2FishingZone) {
-				aimingTo = (L2FishingZone) zone;
+		for (ZoneType zone : ZoneManager.getInstance().getZones(x, y)) {
+			if (zone instanceof FishingZone) {
+				aimingTo = (FishingZone) zone;
 				continue;
 			}
-			if (zone instanceof L2WaterZone) {
-				water = (L2WaterZone) zone;
+			if (zone instanceof WaterZone) {
+				water = (WaterZone) zone;
 			}
 		}
 		if (aimingTo != null) {
@@ -196,7 +196,7 @@ public class Fishing implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

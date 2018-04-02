@@ -17,7 +17,8 @@ package l2server.gameserver.handler;
 
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -25,6 +26,9 @@ import l2server.log.Log;
  * @version $Revision: 1.1.2.1.2.5 $ $Date: 2005/03/27 15:30:09 $
  */
 public class UserCommandHandler {
+	private static Logger log = LoggerFactory.getLogger(UserCommandHandler.class.getName());
+
+
 
 	private Map<Integer, IUserCommandHandler> datatable = new HashMap<>();
 
@@ -39,7 +43,7 @@ public class UserCommandHandler {
 		int[] ids = handler.getUserCommandList();
 		for (int id : ids) {
 			if (Config.DEBUG) {
-				Log.fine("Adding handler for user command " + id);
+				log.debug("Adding handler for user command " + id);
 			}
 			datatable.put(id, handler);
 		}
@@ -47,7 +51,7 @@ public class UserCommandHandler {
 
 	public IUserCommandHandler getUserCommandHandler(int userCommand) {
 		if (Config.DEBUG) {
-			Log.fine("getting handler for user command: " + userCommand);
+			log.debug("getting handler for user command: " + userCommand);
 		}
 		return datatable.get(userCommand);
 	}

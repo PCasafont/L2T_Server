@@ -17,16 +17,17 @@ package l2server.gameserver.instancemanager;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.ScenePlayerDataTable;
 import l2server.gameserver.model.L2CommandChannel;
 import l2server.gameserver.model.L2Party;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExStartScenePlayer;
@@ -34,10 +35,11 @@ import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Broadcast;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -47,12 +49,13 @@ import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
 
 /**
  * @author evill33t, GodKratos
  */
 public class InstanceManager {
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	private ConcurrentHashMap<Integer, Instance> instanceList = new ConcurrentHashMap<>();
 	private HashMap<Integer, InstanceWorld> instanceWorlds = new HashMap<>();
 	private int dynamic = 300000;
@@ -100,7 +103,7 @@ public class InstanceManager {
 			statement.close();
 			playerInstanceTimes.get(playerObjId).put(id, time);
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not insert character instance time data: " + e.getMessage(), e);
+			log.warn("Could not insert character instance time data: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -118,7 +121,7 @@ public class InstanceManager {
 			statement.close();
 			playerInstanceTimes.get(playerObjId).remove(id);
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not delete character instance time data: " + e.getMessage(), e);
+			log.warn("Could not delete character instance time data: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -149,7 +152,7 @@ public class InstanceManager {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not delete character instance time data: " + e.getMessage(), e);
+			log.warn("Could not delete character instance time data: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -173,7 +176,7 @@ public class InstanceManager {
 				}
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error while loading instance names: " + e.getMessage(), e);
+			log.warn("Error while loading instance names: " + e.getMessage(), e);
 		}
 	}
 	
@@ -192,7 +195,7 @@ public class InstanceManager {
 		return instanceWorlds.get(instanceId);
 	}
 	
-	public InstanceWorld getPlayerWorld(L2PcInstance player) {
+	public InstanceWorld getPlayerWorld(Player player) {
 		for (InstanceWorld temp : instanceWorlds.values()) {
 			if (temp == null) {
 				continue;
@@ -211,9 +214,9 @@ public class InstanceManager {
 	
 	@Load
 	private void load() {
-		Log.info("Initializing InstanceManager");
+		log.info("Initializing InstanceManager");
 		loadInstanceNames();
-		Log.info("Loaded " + instanceIdNames.size() + " instance names");
+		log.info("Loaded " + instanceIdNames.size() + " instance names");
 		createWorld();
 	}
 	
@@ -225,12 +228,12 @@ public class InstanceManager {
 		Instance themultiverse = new Instance(-1);
 		themultiverse.setName("multiverse");
 		instanceList.put(-1, themultiverse);
-		Log.info("Multiverse Instance created");
+		log.info("Multiverse Instance created");
 		
 		Instance universe = new Instance(0);
 		universe.setName("universe");
 		instanceList.put(0, universe);
-		Log.info("Universe Instance created");
+		log.info("Universe Instance created");
 	}
 	
 	public void destroyInstance(int instanceid) {
@@ -304,7 +307,7 @@ public class InstanceManager {
 		while (getInstance(dynamic) != null) {
 			dynamic++;
 			if (dynamic == Integer.MAX_VALUE) {
-				Log.warning("InstanceManager: More then " + (Integer.MAX_VALUE - 300000) + " instances created");
+				log.warn("InstanceManager: More then " + (Integer.MAX_VALUE - 300000) + " instances created");
 				dynamic = 300000;
 			}
 		}
@@ -314,7 +317,7 @@ public class InstanceManager {
 			try {
 				instance.loadInstanceTemplate(template);
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "InstanceManager: Failed creating instance from template " + template + ", " + e.getMessage(), e);
+				log.warn("InstanceManager: Failed creating instance from template " + template + ", " + e.getMessage(), e);
 			}
 		}
 		return dynamic;
@@ -336,8 +339,8 @@ public class InstanceManager {
 	 * @param instId
 	 */
 	public void stopWholeInstance(int instId) {
-		for (L2Npc mobs : getInstance(instId).getNpcs()) {
-			if (mobs == null || !(mobs instanceof L2Attackable)) {
+		for (Npc mobs : getInstance(instId).getNpcs()) {
+			if (mobs == null || !(mobs instanceof Attackable)) {
 				continue;
 			}
 			
@@ -350,7 +353,7 @@ public class InstanceManager {
 			mobs.setIsImmobilized(true);
 		}
 		
-		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values()) {
+		for (Player pl : World.getInstance().getAllPlayers().values()) {
 			if (pl != null && pl.getInstanceId() == instId && !pl.isGM()) {
 				pl.setIsImmobilized(true);
 				pl.setTarget(null);
@@ -366,7 +369,7 @@ public class InstanceManager {
 	 * @param instId
 	 */
 	public void broadcastMovie(int vidId, int instId) {
-		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values()) {
+		for (Player pl : World.getInstance().getAllPlayers().values()) {
 			if (pl != null && pl.getInstanceId() == instId) {
 				pl.setMovieId(vidId);
 				pl.sendPacket(new ExStartScenePlayer(vidId));
@@ -382,8 +385,8 @@ public class InstanceManager {
 		if (inst == null) {
 			return;
 		}
-		for (L2Npc mobs : inst.getNpcs()) {
-			if (mobs == null || !(mobs instanceof L2Attackable)) {
+		for (Npc mobs : inst.getNpcs()) {
+			if (mobs == null || !(mobs instanceof Attackable)) {
 				continue;
 			}
 			
@@ -392,7 +395,7 @@ public class InstanceManager {
 			mobs.setIsImmobilized(false);
 		}
 		
-		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values()) {
+		for (Player pl : World.getInstance().getAllPlayers().values()) {
 			if (pl != null && pl.getInstanceId() == instId && !pl.isGM()) {
 				pl.enableAllSkills();
 				pl.setIsInvul(false);
@@ -406,7 +409,7 @@ public class InstanceManager {
 	 * @param packet
 	 */
 	public void sendPacket(int instanceId, L2GameServerPacket packet) {
-		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
+		for (Player player : World.getInstance().getAllPlayersArray()) {
 			if (player != null && player.isOnline() && player.getInstanceId() == instanceId) {
 				player.sendPacket(packet);
 			}
@@ -428,7 +431,7 @@ public class InstanceManager {
 	 * @param instanceId
 	 * @param packet
 	 */
-	public void sendDelayedPacketToPlayer(final L2PcInstance player, int delaySec, final int instanceId, final L2GameServerPacket packet) {
+	public void sendDelayedPacketToPlayer(final Player player, int delaySec, final int instanceId, final L2GameServerPacket packet) {
 		ThreadPoolManager.getInstance().scheduleGeneral(() -> {
 			if (player != null && player.getInstanceId() == instanceId) {
 				player.sendPacket(packet);
@@ -440,9 +443,9 @@ public class InstanceManager {
 	 * @param instanceId
 	 * @return
 	 */
-	public List<L2PcInstance> getPlayers(int instanceId) {
-		List<L2PcInstance> instancePlayers = new ArrayList<>();
-		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
+	public List<Player> getPlayers(int instanceId) {
+		List<Player> instancePlayers = new ArrayList<>();
+		for (Player player : World.getInstance().getAllPlayersArray()) {
 			if (player != null && player.getInstanceId() == instanceId) {
 				instancePlayers.add(player);
 			}
@@ -487,7 +490,7 @@ public class InstanceManager {
 			return;
 		}
 		
-		for (L2Npc npc : getInstance(instId).getNpcs()) {
+		for (Npc npc : getInstance(instId).getNpcs()) {
 			if (npc == null) {
 				continue;
 			}
@@ -574,12 +577,12 @@ public class InstanceManager {
 	 * @param rewardedPlayers
 	 * @return
 	 */
-	public boolean canGetUniqueReward(L2PcInstance player, ArrayList<L2PcInstance> rewardedPlayers) {
+	public boolean canGetUniqueReward(Player player, ArrayList<Player> rewardedPlayers) {
 		if (player == null) {
 			return false;
 		}
 		
-		for (L2PcInstance players : rewardedPlayers) {
+		for (Player players : rewardedPlayers) {
 			if (players == null) {
 				continue;
 			}
@@ -608,12 +611,12 @@ public class InstanceManager {
 	 * @param maxLevel
 	 * @return
 	 */
-	public boolean checkInstanceConditions(L2PcInstance player, int templateId, int minPlayers, int maxPlayers, int minLevel, int maxLevel) {
+	public boolean checkInstanceConditions(Player player, int templateId, int minPlayers, int maxPlayers, int minLevel, int maxLevel) {
 		if (player == null) {
 			return false;
 		}
 		
-		List<L2PcInstance> allPlayers = new ArrayList<>();
+		List<Player> allPlayers = new ArrayList<>();
 		L2Party party = null;
 		L2CommandChannel cChannel = null;
 		
@@ -672,7 +675,7 @@ public class InstanceManager {
 		}
 		
 		//List checks
-		for (L2PcInstance enterPlayer : allPlayers) {
+		for (Player enterPlayer : allPlayers) {
 			if (enterPlayer == null) {
 				continue;
 			}
@@ -729,7 +732,7 @@ public class InstanceManager {
 		
 		Broadcast.toGameMasters(player.getName() + " is entering Instance[" + templateId + "] with:");
 		
-		for (L2PcInstance enterPlayer : allPlayers) {
+		for (Player enterPlayer : allPlayers) {
 			Broadcast.toGameMasters("- " + enterPlayer.getName());
 		}
 		

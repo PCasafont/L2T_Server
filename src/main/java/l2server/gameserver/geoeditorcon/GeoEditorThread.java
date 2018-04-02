@@ -15,21 +15,24 @@
 
 package l2server.gameserver.geoeditorcon;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.GameApplication;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 /**
  * @author Luno, Dezmond
  */
 public class GeoEditorThread extends Thread {
-
+	
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	private boolean working = false;
 
 	private int mode = 0; // 0 - don't send coords, 1 - send each
@@ -42,7 +45,7 @@ public class GeoEditorThread extends Thread {
 
 	private OutputStream out;
 
-	private List<L2PcInstance> gms;
+	private List<Player> gms;
 
 	public GeoEditorThread(Socket ge) {
 		geSocket = ge;
@@ -72,7 +75,7 @@ public class GeoEditorThread extends Thread {
 				}
 
 				if (mode == 2 && timer > sendDelay) {
-					for (L2PcInstance gm : gms) {
+					for (Player gm : gms) {
 						if (!gm.getClient().getConnection().isClosed()) {
 							sendGmPosition(gm);
 						} else {
@@ -92,7 +95,7 @@ public class GeoEditorThread extends Thread {
 				}
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "GeoEditor disconnected. " + e.getMessage(), e);
+			log.warn("GeoEditor disconnected. " + e.getMessage(), e);
 		} finally {
 			try {
 				geSocket.close();
@@ -117,7 +120,7 @@ public class GeoEditorThread extends Thread {
 				out.flush();
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "GeoEditor disconnected. " + e.getMessage(), e);
+			log.warn("GeoEditor disconnected. " + e.getMessage(), e);
 			working = false;
 		} finally {
 			try {
@@ -128,7 +131,7 @@ public class GeoEditorThread extends Thread {
 		}
 	}
 
-	public void sendGmPosition(L2PcInstance gm) {
+	public void sendGmPosition(Player gm) {
 		sendGmPosition(gm.getX(), gm.getY(), (short) gm.getZ());
 	}
 
@@ -144,7 +147,7 @@ public class GeoEditorThread extends Thread {
 				out.flush();
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "GeoEditor disconnected. " + e.getMessage(), e);
+			log.warn("GeoEditor disconnected. " + e.getMessage(), e);
 			working = false;
 		} finally {
 			try {
@@ -185,19 +188,19 @@ public class GeoEditorThread extends Thread {
 		}
 	}
 
-	public void addGM(L2PcInstance gm) {
+	public void addGM(Player gm) {
 		if (!gms.contains(gm)) {
 			gms.add(gm);
 		}
 	}
 
-	public void removeGM(L2PcInstance gm) {
+	public void removeGM(Player gm) {
 		if (gms.contains(gm)) {
 			gms.remove(gm);
 		}
 	}
 
-	public boolean isSend(L2PcInstance gm) {
+	public boolean isSend(Player gm) {
 		return mode == 1 && gms.contains(gm);
 	}
 

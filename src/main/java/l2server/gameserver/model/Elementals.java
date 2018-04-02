@@ -16,7 +16,7 @@
 package l2server.gameserver.model;
 
 import java.util.HashMap; import java.util.Map;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.stats.funcs.FuncAdd;
 import l2server.gameserver.stats.funcs.LambdaConst;
@@ -212,7 +212,7 @@ public final class Elementals {
 			active = false;
 		}
 		
-		public void applyBonus(L2PcInstance player, boolean isArmor) {
+		public void applyBonus(Player player, boolean isArmor) {
 			// make sure the bonuses are not applied twice..
 			if (active) {
 				return;
@@ -242,7 +242,7 @@ public final class Elementals {
 			active = true;
 		}
 		
-		public void removeBonus(L2PcInstance player) {
+		public void removeBonus(Player player) {
 			// make sure the bonuses are not removed twice
 			if (!active) {
 				return;
@@ -296,15 +296,15 @@ public final class Elementals {
 		boni = new ElementalStatBoni(element, value);
 	}
 	
-	public void applyBonus(L2PcInstance player, boolean isArmor) {
+	public void applyBonus(Player player, boolean isArmor) {
 		boni.applyBonus(player, isArmor);
 	}
 	
-	public void removeBonus(L2PcInstance player) {
+	public void removeBonus(Player player) {
 		boni.removeBonus(player);
 	}
 	
-	public void updateBonus(L2PcInstance player, boolean isArmor) {
+	public void updateBonus(Player player, boolean isArmor) {
 		boni.removeBonus(player);
 		boni.applyBonus(player, isArmor);
 	}

@@ -15,9 +15,9 @@
 
 package l2server.gameserver.datatables;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.SubClass;
 import l2server.gameserver.network.serverpackets.ExAcquireSkillList;
 import l2server.gameserver.network.serverpackets.ExAcquireSkillList.SkillType;
@@ -131,12 +131,12 @@ public class CertificateSkillTable {
 		return dualClassSkills;
 	}
 
-	public void sendSubClassSkillList(L2PcInstance player) {
+	public void sendSubClassSkillList(Player player) {
 		ExAcquireSkillList asl = new ExAcquireSkillList(SkillType.SubClass);
 		boolean skillAdded = false;
 		for (CertificateSkillLearn csl : subClassSkills.values()) {
 			int curLevel = 0;
-			for (L2Skill skill : player.getAllSkills()) {
+			for (Skill skill : player.getAllSkills()) {
 				if (skill.getId() == csl.getSkillId()) {
 					curLevel = skill.getLevelHash();
 				}
@@ -153,12 +153,12 @@ public class CertificateSkillTable {
 		}
 	}
 
-	public void sendDualClassSkillList(L2PcInstance player) {
+	public void sendDualClassSkillList(Player player) {
 		ExAcquireSkillList asl = new ExAcquireSkillList(SkillType.DualClass);
 		boolean skillAdded = false;
 		for (CertificateSkillLearn csl : dualClassSkills.values()) {
 			int curLevel = 0;
-			for (L2Skill skill : player.getAllSkills()) {
+			for (Skill skill : player.getAllSkills()) {
 				if (skill.getId() == csl.getSkillId()) {
 					curLevel = skill.getLevelHash();
 				}
@@ -193,13 +193,13 @@ public class CertificateSkillTable {
 		return 0;
 	}
 
-	public void checkPlayer(L2PcInstance player) {
+	public void checkPlayer(Player player) {
 		int totalSubCerts = 12;
 		//for (SubClass sub : player.getSubClasses().values())
 		//	totalSubCerts += Math.min(sub.getCertificates(), 4);
 
 		int actualSubCerts = 0;
-		L2ItemInstance certsItem = player.getInventory().getItemByItemId(SUBCLASS_CERTIFICATE);
+		Item certsItem = player.getInventory().getItemByItemId(SUBCLASS_CERTIFICATE);
 		if (certsItem != null) {
 			actualSubCerts = (int) certsItem.getCount();
 		}
@@ -237,9 +237,9 @@ public class CertificateSkillTable {
 		}
 	}
 
-	public int getDualClassCertificatesAmount(final L2PcInstance player) {
+	public int getDualClassCertificatesAmount(final Player player) {
 		int actualDualCerts = 0;
-		L2ItemInstance certsItem = player.getInventory().getItemByItemId(DUALCLASS_CERTIFICATE);
+		Item certsItem = player.getInventory().getItemByItemId(DUALCLASS_CERTIFICATE);
 		if (certsItem != null) {
 			actualDualCerts = (int) certsItem.getCount();
 		}
@@ -253,9 +253,9 @@ public class CertificateSkillTable {
 		return actualDualCerts;
 	}
 
-	public int getSubclassCertificatesAmount(final L2PcInstance player) {
+	public int getSubclassCertificatesAmount(final Player player) {
 		int actualSubCerts = 0;
-		L2ItemInstance certsItem = player.getInventory().getItemByItemId(SUBCLASS_CERTIFICATE);
+		Item certsItem = player.getInventory().getItemByItemId(SUBCLASS_CERTIFICATE);
 		if (certsItem != null) {
 			actualSubCerts = (int) certsItem.getCount();
 		}
@@ -269,13 +269,13 @@ public class CertificateSkillTable {
 		return actualSubCerts;
 	}
 
-	public void resetSubClassCertificates(L2PcInstance player) {
-		L2ItemInstance certsItem = player.getInventory().getItemByItemId(SUBCLASS_CERTIFICATE);
+	public void resetSubClassCertificates(Player player) {
+		Item certsItem = player.getInventory().getItemByItemId(SUBCLASS_CERTIFICATE);
 		if (certsItem != null) {
 			player.destroyItem("SubCerts", certsItem, player, true);
 		}
 
-		for (L2Skill skill : player.getAllSkills()) {
+		for (Skill skill : player.getAllSkills()) {
 			if (subClassSkills.containsKey(skill.getId())) {
 				player.removeSkill(skill, true);
 			}
@@ -286,13 +286,13 @@ public class CertificateSkillTable {
 		}
 	}
 
-	public void resetDualClassCertificates(L2PcInstance player) {
-		L2ItemInstance certsItem = player.getInventory().getItemByItemId(DUALCLASS_CERTIFICATE);
+	public void resetDualClassCertificates(Player player) {
+		Item certsItem = player.getInventory().getItemByItemId(DUALCLASS_CERTIFICATE);
 		if (certsItem != null) {
 			player.destroyItem("SubCerts", certsItem, player, true);
 		}
 
-		for (L2Skill skill : player.getAllSkills()) {
+		for (Skill skill : player.getAllSkills()) {
 			if (dualClassSkills.containsKey(skill.getId())) {
 				player.removeSkill(skill, true);
 			}

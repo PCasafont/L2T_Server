@@ -17,8 +17,7 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
 import l2server.gameserver.cache.HtmCache;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * the HTML parser in the client knowns these standard and non-standard tags and attributes
@@ -184,7 +183,7 @@ public final class NpcHtmlMessage extends L2GameServerPacket {
 		
 		if (content == null) {
 			setHtml("<html><body>My Text is missing:<br>" + path + "</body></html>");
-			Log.warning("missing html page " + path);
+			log.warn("missing html page " + path);
 			return false;
 		}
 		
@@ -196,7 +195,7 @@ public final class NpcHtmlMessage extends L2GameServerPacket {
 		html = html.replaceAll(pattern, value.replaceAll("\\$", "\\\\\\$"));
 	}
 	
-	private void buildBypassCache(L2PcInstance activeChar) {
+	private void buildBypassCache(Player activeChar) {
 		if (activeChar == null) {
 			return;
 		}

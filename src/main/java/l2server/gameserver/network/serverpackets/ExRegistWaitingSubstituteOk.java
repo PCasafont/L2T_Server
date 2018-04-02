@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Erlandys
@@ -23,9 +23,9 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class ExRegistWaitingSubstituteOk extends L2GameServerPacket {
 	
 	int classId;
-	L2PcInstance player;
+	Player player;
 	
-	public ExRegistWaitingSubstituteOk(int classId, L2PcInstance player) {
+	public ExRegistWaitingSubstituteOk(int classId, Player player) {
 		this.classId = classId;
 		this.player = player.getParty().getLeader();
 	}

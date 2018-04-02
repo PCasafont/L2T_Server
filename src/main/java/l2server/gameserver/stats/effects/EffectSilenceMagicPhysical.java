@@ -15,34 +15,35 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2EffectType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.EffectType;
 
 public class EffectSilenceMagicPhysical extends L2Effect {
-	public EffectSilenceMagicPhysical(Env env, L2EffectTemplate template) {
+	public EffectSilenceMagicPhysical(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2EffectType getEffectType() {
-		return L2EffectType.MUTE;
+	public EffectType getEffectType() {
+		return EffectType.MUTE;
 	}
 
 	@Override
 	public long getEffectMask() {
-		return L2EffectType.MUTE.getMask() | L2EffectType.PHYSICAL_MUTE.getMask();
+		return EffectType.MUTE.getMask() | EffectType.PHYSICAL_MUTE.getMask();
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.SILENCE;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.SILENCE;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
@@ -52,7 +53,7 @@ public class EffectSilenceMagicPhysical extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {
@@ -60,7 +61,7 @@ public class EffectSilenceMagicPhysical extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {

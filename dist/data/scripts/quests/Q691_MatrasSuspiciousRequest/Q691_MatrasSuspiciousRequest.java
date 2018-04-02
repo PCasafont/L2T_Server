@@ -16,8 +16,8 @@
 package quests.Q691_MatrasSuspiciousRequest;
 
 import l2server.Config;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
@@ -66,7 +66,7 @@ public final class Q691_MatrasSuspiciousRequest extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		String htmltext = event;
 		final QuestState st = player.getQuestState(qn);
 		if (st == null) {
@@ -105,7 +105,7 @@ public final class Q691_MatrasSuspiciousRequest extends Quest {
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		String htmltext = Quest.getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
 
@@ -132,8 +132,8 @@ public final class Q691_MatrasSuspiciousRequest extends Quest {
 	}
 
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
-		L2PcInstance pl = getRandomPartyMember(player, "1");
+	public final String onKill(Npc npc, Player player, boolean isPet) {
+		Player pl = getRandomPartyMember(player, "1");
 		if (pl == null) {
 			return null;
 		}

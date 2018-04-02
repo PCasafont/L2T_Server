@@ -17,9 +17,9 @@ package events.CharacterBirthday;
 
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.QuestManager;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
@@ -51,7 +51,7 @@ public class CharacterBirthday extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		String htmltext = "";
 		QuestState st = player.getQuestState(getName());
 		htmltext = event;
@@ -67,7 +67,7 @@ public class CharacterBirthday extends Quest {
 			st.giveItems(10250, 1);
 
 			// Give Buff
-			L2Skill skill;
+			Skill skill;
 			skill = SkillTable.getInstance().getInfo(5950, 1);
 			if (skill != null) {
 				skill.getEffects(npc, player);
@@ -90,7 +90,7 @@ public class CharacterBirthday extends Quest {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		if (is_spawned) {
 			return null;
 		}
@@ -102,7 +102,7 @@ public class CharacterBirthday extends Quest {
 		}
 		if (st != null && player.checkBirthDay() == 0) {
 			player.sendPacket(new PlaySound(1, "HB01", 0, 0, 0, 0, 0));
-			L2Npc spawned = st.addSpawn(32600, player.getX() + 10, player.getY() + 10, player.getZ() + 10, 0, false, 0, true);
+			Npc spawned = st.addSpawn(32600, player.getX() + 10, player.getY() + 10, player.getZ() + 10, 0, false, 0, true);
 			st.setState(State.STARTED);
 			st.startQuestTimer("despawn_npc", 60000, spawned);
 			is_spawned = true;
@@ -114,7 +114,7 @@ public class CharacterBirthday extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		String htmltext = "";
 		QuestState st = player.getQuestState(getName());
 		if (st == null) {

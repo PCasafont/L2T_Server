@@ -19,10 +19,10 @@ import l2server.gameserver.TaskPriority;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.AirShipManager;
 import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.World;
 import l2server.gameserver.model.VehiclePathPoint;
-import l2server.gameserver.model.actor.instance.L2AirShipInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.AirShipInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
@@ -50,7 +50,7 @@ public class MoveToLocationAirShip extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -59,7 +59,7 @@ public class MoveToLocationAirShip extends L2GameClientPacket {
 			return;
 		}
 		
-		final L2AirShipInstance ship = activeChar.getAirShip();
+		final AirShipInstance ship = activeChar.getAirShip();
 		if (!ship.isCaptain(activeChar)) {
 			return;
 		}
@@ -71,7 +71,7 @@ public class MoveToLocationAirShip extends L2GameClientPacket {
 				if (!ship.canBeControlled()) {
 					return;
 				}
-				if (param1 < L2World.GRACIA_MAX_X) {
+				if (param1 < World.GRACIA_MAX_X) {
 					ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(param1, param2, z, 0));
 				}
 				break;
@@ -85,8 +85,8 @@ public class MoveToLocationAirShip extends L2GameClientPacket {
 				if (!ship.canBeControlled()) {
 					return;
 				}
-				if (z < L2World.GRACIA_MAX_Z) {
-					z = Math.min(z + STEP, L2World.GRACIA_MAX_Z);
+				if (z < World.GRACIA_MAX_Z) {
+					z = Math.min(z + STEP, World.GRACIA_MAX_Z);
 					ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(ship.getX(), ship.getY(), z, 0));
 				}
 				break;
@@ -94,8 +94,8 @@ public class MoveToLocationAirShip extends L2GameClientPacket {
 				if (!ship.canBeControlled()) {
 					return;
 				}
-				if (z > L2World.GRACIA_MIN_Z) {
-					z = Math.max(z - STEP, L2World.GRACIA_MIN_Z);
+				if (z > World.GRACIA_MIN_Z) {
+					z = Math.max(z - STEP, World.GRACIA_MIN_Z);
 					ship.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(ship.getX(), ship.getY(), z, 0));
 				}
 				break;

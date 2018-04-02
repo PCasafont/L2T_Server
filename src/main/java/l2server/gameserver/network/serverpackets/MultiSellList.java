@@ -31,7 +31,7 @@ import l2server.gameserver.model.multisell.Ingredient;
 import l2server.gameserver.model.multisell.ListContainer;
 import l2server.gameserver.model.multisell.MultiSellEntry;
 import l2server.gameserver.network.clientpackets.Say2;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 
 /**
  * This class ...
@@ -76,7 +76,7 @@ public final class MultiSellList extends L2GameServerPacket {
 			final Ingredient product = ent.getProducts().get(0);
 			
 			if (product.getItemId() > 0) {
-				L2Item productTemplate = ItemTable.getInstance().getTemplate(product.getItemId());
+				ItemTemplate productTemplate = ItemTable.getInstance().getTemplate(product.getItemId());
 				
 				if (productTemplate != null) {
 					productTemplate.setSalePrice(0);
@@ -92,7 +92,7 @@ public final class MultiSellList extends L2GameServerPacket {
             /*
 			for (Ingredient i : ent.getIngredients())
 			{
-				L2Item itemTemplate = ItemTable.getInstance().getTemplate(i.getItemId());
+				ItemTemplate itemTemplate = ItemTable.getInstance().getTemplate(i.getItemId());
 
 				if (itemTemplate == null)
 					continue;
@@ -178,8 +178,8 @@ public final class MultiSellList extends L2GameServerPacket {
 				writeQ(ing.getItemCount());
 				
 				if (ing.getItemCount() > Integer.MAX_VALUE) {
-					L2Item productItem = ItemTable.getInstance().getTemplate(ent.getProducts().get(0).getItemId());
-					L2Item ingItem = ItemTable.getInstance().getTemplate(ing.getItemId());
+					ItemTemplate productItem = ItemTable.getInstance().getTemplate(ent.getProducts().get(0).getItemId());
+					ItemTemplate ingItem = ItemTable.getInstance().getTemplate(ing.getItemId());
 					getWriteClient().sendPacket(new CreatureSay(0,
 							Say2.TELL,
 							"Store",

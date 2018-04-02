@@ -19,10 +19,10 @@ import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.Rnd;
 
 /**
@@ -55,14 +55,14 @@ public class NervaOrcMerchant extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc) {
+	public String onSpawn(Npc npc) {
 		npc.disableCoreAI(true);
 
 		return super.onSpawn(npc);
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet, Skill skill) {
 		if (!npc.isMoving()) {
 			npc.getAI()
 					.setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,

@@ -15,15 +15,15 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2StatueInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.StatueInstance;
 
 /**
  * @author devScarlet & mrTJO
  */
 public final class ServerObjectInfo extends L2GameServerPacket {
-	private L2Npc activeChar;
+	private Npc activeChar;
 	private int x, y, z, heading;
 	private int idTemplate;
 	private boolean isAttackable;
@@ -31,7 +31,7 @@ public final class ServerObjectInfo extends L2GameServerPacket {
 	private String name;
 	private int type;
 	
-	public ServerObjectInfo(L2Npc activeChar, L2Character actor) {
+	public ServerObjectInfo(Npc activeChar, Creature actor) {
 		this.activeChar = activeChar;
 		idTemplate = activeChar.getTemplate().TemplateId + 1000000;
 		isAttackable = activeChar.isAutoAttackable(actor);
@@ -44,7 +44,7 @@ public final class ServerObjectInfo extends L2GameServerPacket {
 		name = activeChar.getTemplate().ServerSideName ? activeChar.getTemplate().Name : "";
 		type = 4;
 		
-		if (activeChar instanceof L2StatueInstance) {
+		if (activeChar instanceof StatueInstance) {
 			idTemplate = 0;
 			name = activeChar.getName();
 			isAttackable = false;
@@ -77,7 +77,7 @@ public final class ServerObjectInfo extends L2GameServerPacket {
 		writeD(0x00); // special effects
 		
 		if (type == 7) {
-			L2StatueInstance statue = (L2StatueInstance) activeChar;
+			StatueInstance statue = (StatueInstance) activeChar;
 			writeD(statue.getRecordId());
 			writeD(0x00); // ???
 			writeD(statue.getSocialId());

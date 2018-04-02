@@ -21,7 +21,7 @@ package l2server.gameserver.communitybbs;
 
 import l2server.Config;
 import l2server.gameserver.communitybbs.Manager.*;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ShowBoard;
@@ -32,7 +32,7 @@ public class CommunityBoard {
 	}
 
 	public void handleCommands(L2GameClient client, String command) {
-		L2PcInstance activeChar = client.getActiveChar();
+		Player activeChar = client.getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -90,7 +90,7 @@ public class CommunityBoard {
 	 * @param arg5
 	 */
 	public void handleWriteCommands(L2GameClient client, String url, String arg1, String arg2, String arg3, String arg4, String arg5) {
-		L2PcInstance activeChar = client.getActiveChar();
+		Player activeChar = client.getActiveChar();
 		if (activeChar == null) {
 			return;
 		}

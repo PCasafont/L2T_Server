@@ -19,8 +19,8 @@ package quests.Q307_ControlDeviceOfTheGiants;
   @author Gladicek, malyelfik
  */
 
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
@@ -43,7 +43,7 @@ public class Q307_ControlDeviceOfTheGiants extends Quest {
 	private static final int respawnDelay = 3600000; // 1 hour
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		QuestState st = player.getQuestState(getName());
 		String htmltext = event;
 
@@ -100,7 +100,7 @@ public class Q307_ControlDeviceOfTheGiants extends Quest {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(getName());
 		if (st == null) {
@@ -138,8 +138,8 @@ public class Q307_ControlDeviceOfTheGiants extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
-		L2PcInstance partyMember = getRandomPartyMember(player, "1");
+	public String onKill(Npc npc, Player player, boolean isPet) {
+		Player partyMember = getRandomPartyMember(player, "1");
 		if (partyMember == null) {
 			return null;
 		}
@@ -163,7 +163,7 @@ public class Q307_ControlDeviceOfTheGiants extends Quest {
 			}
 			case HEKATON_PRIME: {
 				if (player.getParty() != null) {
-					for (L2PcInstance party : player.getParty().getPartyMembers()) {
+					for (Player party : player.getParty().getPartyMembers()) {
 						rewardPlayer(party);
 					}
 				} else {
@@ -175,7 +175,7 @@ public class Q307_ControlDeviceOfTheGiants extends Quest {
 		return null;
 	}
 
-	private void rewardPlayer(L2PcInstance player) {
+	private void rewardPlayer(Player player) {
 		QuestState st = player.getQuestState(getName());
 
 		if (st != null && st.getInt("spawned") == 1) {

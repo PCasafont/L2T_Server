@@ -18,8 +18,8 @@ package handlers.admincommandhandlers;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
@@ -40,7 +40,7 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_changelvl"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		handleChangeLevel(command, activeChar);
 		return true;
 	}
@@ -53,18 +53,18 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler {
 	/**
 	 * If no character name is specified, tries to change GM's target access
 	 * level. Else if a character name is provided, will try to reach it either
-	 * from L2World or from a database connection.
+	 * from World or from a database connection.
 	 *
 	 * @param command
 	 * @param activeChar
 	 */
-	private void handleChangeLevel(String command, L2PcInstance activeChar) {
+	private void handleChangeLevel(String command, Player activeChar) {
 		String[] parts = command.split(" ");
 		if (parts.length == 2) {
 			try {
 				int lvl = Integer.parseInt(parts[1]);
-				if (activeChar.getTarget() instanceof L2PcInstance) {
-					onLineChange(activeChar, (L2PcInstance) activeChar.getTarget(), lvl);
+				if (activeChar.getTarget() instanceof Player) {
+					onLineChange(activeChar, (Player) activeChar.getTarget(), lvl);
 				} else {
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 				}
@@ -74,7 +74,7 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler {
 		} else if (parts.length == 3) {
 			String name = parts[1];
 			int lvl = Integer.parseInt(parts[2]);
-			L2PcInstance player = L2World.getInstance().getPlayer(name);
+			Player player = World.getInstance().getPlayer(name);
 			if (player != null) {
 				onLineChange(activeChar, player, lvl);
 			} else {
@@ -109,7 +109,7 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler {
 	 * @param player
 	 * @param lvl
 	 */
-	private void onLineChange(L2PcInstance activeChar, L2PcInstance player, int lvl) {
+	private void onLineChange(Player activeChar, Player player, int lvl) {
 		player.setAccessLevel(lvl);
 		if (lvl >= 0) {
 			player.sendMessage("Your access level has been changed to " + lvl);

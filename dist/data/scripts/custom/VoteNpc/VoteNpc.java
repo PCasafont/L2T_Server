@@ -17,8 +17,8 @@ package custom.VoteNpc;
 
 import l2server.Config;
 import l2server.gameserver.cache.HtmCache;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.util.Util;
 
@@ -74,7 +74,7 @@ public class VoteNpc extends Quest {
 						int maxSkillLevel = 0;
 						if (isItem)
 						{
-							L2Item temp = ItemTable.getInstance().getTemplate(rewardId);
+							ItemTemplate temp = ItemTable.getInstance().getTemplate(rewardId);
 							if (temp == null)
 								continue;
 							rewardName = temp.getName();
@@ -82,7 +82,7 @@ public class VoteNpc extends Quest {
 						}
 						else
 						{
-							L2Skill temp = SkillTable.getInstance().getInfo(rewardId, 1);
+							Skill temp = SkillTable.getInstance().getInfo(rewardId, 1);
 							if (temp == null)
 								continue;
 							rewardName = temp.getName();
@@ -107,7 +107,7 @@ public class VoteNpc extends Quest {
 				}
 			}
 		}
-		Log.info("VoteNpc: Loaded " + voteRewards.size() + " rewards!");
+		log.info("VoteNpc: Loaded " + voteRewards.size() + " rewards!");
 	}
 
 	private class Rewards
@@ -168,12 +168,12 @@ public class VoteNpc extends Quest {
 	}*/
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		return super.onTalk(npc, player);
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
         /*if (!debug && ((player.getHWID() == null) || player.getHWID().equalsIgnoreCase("")))
 		{
 			player.sendMessage("You can't claim items right now!");
@@ -317,7 +317,7 @@ public class VoteNpc extends Quest {
 				Rewards reward = voteRewards.get(rewardId);
 				if (reward == null)
 				{
-					Log.info("VoteNpc: null reward for id " + rewardId);
+					log.info("VoteNpc: null reward for id " + rewardId);
 					return "";
 				}
 
@@ -338,7 +338,7 @@ public class VoteNpc extends Quest {
 						int skillLevelToLearn = getProperSkillLevel(player.getSkillLevelHash(reward.getRewardId()), reward.getMaxSkillLevel());
 						if (skillLevelToLearn != 0)
 						{
-							L2Skill rewardSkill = SkillTable.getInstance().getInfo(reward.getRewardId(), skillLevelToLearn);
+							Skill rewardSkill = SkillTable.getInstance().getInfo(reward.getRewardId(), skillLevelToLearn);
 							player.addSkill(rewardSkill, true);
 							player.sendSkillList();
 						}
@@ -378,7 +378,7 @@ public class VoteNpc extends Quest {
 		return skillLevelToLearn;
 	}
 
-	private boolean canGetReward(L2PcInstance player) {
+	private boolean canGetReward(Player player) {
 		if (player == null) {
 			return true;
 		}

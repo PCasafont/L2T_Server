@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2PremiumItem;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.Map;
 import java.util.Map.Entry;
@@ -28,11 +28,11 @@ import java.util.Map.Entry;
  */
 public class ExGetPremiumItemList extends L2GameServerPacket {
 	
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	
 	private Map<Integer, L2PremiumItem> map;
 	
-	public ExGetPremiumItemList(L2PcInstance activeChar) {
+	public ExGetPremiumItemList(Player activeChar) {
 		this.activeChar = activeChar;
 		map = activeChar.getPremiumItemList();
 	}

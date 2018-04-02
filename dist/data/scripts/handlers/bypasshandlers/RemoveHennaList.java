@@ -16,24 +16,24 @@
 package handlers.bypasshandlers;
 
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SymbolMakerInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SymbolMakerInstance;
 import l2server.gameserver.network.serverpackets.HennaRemoveList;
-import l2server.gameserver.templates.item.L2Henna;
+import l2server.gameserver.templates.item.HennaTemplate;
 
 public class RemoveHennaList implements IBypassHandler {
 	private static final String[] COMMANDS = {"RemoveList"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
-		if (!(target instanceof L2SymbolMakerInstance)) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
+		if (!(target instanceof SymbolMakerInstance)) {
 			return false;
 		}
 		
 		boolean hasHennas = false;
 		for (int i = 1; i <= 3; i++) {
-			L2Henna henna = activeChar.getHenna(i);
+			HennaTemplate henna = activeChar.getHenna(i);
 			
 			if (henna != null) {
 				hasHennas = true;

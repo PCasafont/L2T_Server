@@ -20,14 +20,14 @@
 package l2server.gameserver.communitybbs.Manager;
 
 import l2server.gameserver.cache.HtmCache;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ShowBoard;
 
 import java.util.StringTokenizer;
 
 public class TopBBSManager extends BaseBBSManager {
 	@Override
-	public void parsecmd(String command, L2PcInstance activeChar) {
+	public void parsecmd(String command, Player activeChar) {
 		if (command.equals("_bbstop")) {
 			String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "CommunityBoard/index.htm");
 			if (content == null) {
@@ -54,7 +54,7 @@ public class TopBBSManager extends BaseBBSManager {
 	}
 
 	@Override
-	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, L2PcInstance activeChar) {
+	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, Player activeChar) {
 	}
 
 	public static TopBBSManager getInstance() {

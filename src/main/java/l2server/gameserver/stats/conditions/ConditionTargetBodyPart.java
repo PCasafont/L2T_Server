@@ -17,8 +17,8 @@ package l2server.gameserver.stats.conditions;
 
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.item.L2Armor;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ArmorTemplate;
+import l2server.gameserver.templates.item.ItemTemplate;
 
 /**
  * The Class ConditionTargetBodyPart.
@@ -27,14 +27,14 @@ import l2server.gameserver.templates.item.L2Item;
  */
 public class ConditionTargetBodyPart extends Condition {
 
-	private L2Armor armor;
+	private ArmorTemplate armor;
 
 	/**
 	 * Instantiates a new condition target body part.
 	 *
 	 * @param armor the armor
 	 */
-	public ConditionTargetBodyPart(L2Armor armor) {
+	public ConditionTargetBodyPart(ArmorTemplate armor) {
 		this.armor = armor;
 	}
 
@@ -51,15 +51,15 @@ public class ConditionTargetBodyPart extends Condition {
 		int armor_part = armor.getBodyPart();
 		switch (bodypart) {
 			case Inventory.PAPERDOLL_CHEST:
-				return (armor_part & (L2Item.SLOT_CHEST | L2Item.SLOT_FULL_ARMOR | L2Item.SLOT_UNDERWEAR)) != 0;
+				return (armor_part & (ItemTemplate.SLOT_CHEST | ItemTemplate.SLOT_FULL_ARMOR | ItemTemplate.SLOT_UNDERWEAR)) != 0;
 			case Inventory.PAPERDOLL_LEGS:
-				return (armor_part & (L2Item.SLOT_LEGS | L2Item.SLOT_FULL_ARMOR)) != 0;
+				return (armor_part & (ItemTemplate.SLOT_LEGS | ItemTemplate.SLOT_FULL_ARMOR)) != 0;
 			case Inventory.PAPERDOLL_HEAD:
-				return (armor_part & L2Item.SLOT_HEAD) != 0;
+				return (armor_part & ItemTemplate.SLOT_HEAD) != 0;
 			case Inventory.PAPERDOLL_FEET:
-				return (armor_part & L2Item.SLOT_FEET) != 0;
+				return (armor_part & ItemTemplate.SLOT_FEET) != 0;
 			case Inventory.PAPERDOLL_GLOVES:
-				return (armor_part & L2Item.SLOT_GLOVES) != 0;
+				return (armor_part & ItemTemplate.SLOT_GLOVES) != 0;
 			default:
 				return true;
 		}

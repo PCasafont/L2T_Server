@@ -15,7 +15,7 @@
 
 package custom.SubClassCertification;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 
 /**
@@ -48,7 +48,7 @@ public class Validator extends Quest {
 	}
 
 	@Override
-	public final String onEnterWorld(L2PcInstance player) {
+	public final String onEnterWorld(Player player) {
 		return null;
 		/*if (!Config.SKILL_CHECK_ENABLE)
             return null;
@@ -56,13 +56,13 @@ public class Validator extends Quest {
 		if (player.isGM() && !Config.SKILL_CHECK_GM)
 			return null;
 
-		final L2Skill[] certSkills = getCertSkills(player);
+		final Skill[] certSkills = getCertSkills(player);
 		final boolean hasCertSkills = certSkills != null;
 		if (player.isSubClassActive())
 		{
 			if (hasCertSkills)
 			{
-				for (L2Skill s : certSkills)
+				for (Skill s : certSkills)
 				{
 					Util.handleIllegalPlayerAction(player, "Player "+player.getName() +
 							" has cert skill on subclass :" + s.getName() +
@@ -76,7 +76,7 @@ public class Validator extends Quest {
 			return null;
 		}
 
-		L2Skill skill;
+		Skill skill;
 		int[][] cSkills = null; // skillId/skillLvl
 		if (hasCertSkills)
 		{
@@ -89,9 +89,9 @@ public class Validator extends Quest {
 			}
 		}
 
-		L2ItemInstance item;
+		Item item;
 		int[][] cItems = null; // objectId/number
-		final L2ItemInstance[] certItems = getCertItems(player);
+		final Item[] certItems = getCertItems(player);
 		final boolean hasCertItems = certItems != null;
 		if (hasCertItems)
 		{
@@ -261,10 +261,10 @@ public class Validator extends Quest {
 		return null;
 		}
 
-		private final L2Skill[] getCertSkills(L2PcInstance player)
+		private final Skill[] getCertSkills(Player player)
 		{
-		ArrayList<L2Skill> tmp = null;
-		for (L2Skill s : player.getAllSkills())
+		ArrayList<Skill> tmp = null;
+		for (Skill s : player.getAllSkills())
 		{
 			if (s != null && Arrays.binarySearch(allCertSkillIds, s.getId()) >= 0)
 			{
@@ -277,15 +277,15 @@ public class Validator extends Quest {
 		if (tmp == null)
 			return null;
 
-		final L2Skill[] result = tmp.toArray(new L2Skill[tmp.size()]);
+		final Skill[] result = tmp.toArray(new Skill[tmp.size()]);
 		ArrayList.recycle(tmp);
 		return result;
 		}
 
-		private final L2ItemInstance[] getCertItems(L2PcInstance player)
+		private final Item[] getCertItems(Player player)
 		{
-		ArrayList<L2ItemInstance> tmp = null;
-		for (L2ItemInstance i : player.getInventory().getItems())
+		ArrayList<Item> tmp = null;
+		for (Item i : player.getInventory().getItems())
 		{
 			if (i != null && Arrays.binarySearch(allCertItemIds, i.getItemId()) >= 0)
 			{
@@ -298,7 +298,7 @@ public class Validator extends Quest {
 		if (tmp == null)
 			return null;
 
-		final L2ItemInstance[] result = tmp.toArray(new L2ItemInstance[tmp.size()]);
+		final Item[] result = tmp.toArray(new Item[tmp.size()]);
 		ArrayList.recycle(tmp);
 		return result;*/
 	}

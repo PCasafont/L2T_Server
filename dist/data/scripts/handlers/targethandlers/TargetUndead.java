@@ -17,14 +17,14 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.templates.skills.SkillTargetType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,10 +36,10 @@ public class TargetUndead implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		List<L2Character> targetList = new ArrayList<L2Character>();
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		List<Creature> targetList = new ArrayList<Creature>();
 
-		if (target instanceof L2Npc || target instanceof L2SummonInstance) {
+		if (target instanceof Npc || target instanceof SummonInstance) {
 			if (!target.isUndead() || target.isDead()) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 				return null;
@@ -48,10 +48,10 @@ public class TargetUndead implements ISkillTargetTypeHandler {
 			if (onlyFirst == false) {
 				targetList.add(target);
 			} else {
-				return new L2Character[]{target};
+				return new Creature[]{target};
 			}
 
-			return targetList.toArray(new L2Object[targetList.size()]);
+			return targetList.toArray(new WorldObject[targetList.size()]);
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return null;
@@ -61,9 +61,9 @@ public class TargetUndead implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
+	public Enum<SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub
-		return L2SkillTargetType.TARGET_UNDEAD;
+		return SkillTargetType.TARGET_UNDEAD;
 	}
 
 	public static void main(String[] args) {

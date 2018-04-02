@@ -16,7 +16,8 @@
 package l2server.gameserver.handler;
 
 import java.util.HashMap; import java.util.Map;
-import l2server.gameserver.templates.item.L2EtcItem;
+
+import l2server.gameserver.templates.item.EtcItemTemplate;
 
 /**
  * This class manages handlers of items
@@ -67,7 +68,7 @@ public class ItemHandler {
 	 *
 	 * @return IItemHandler
 	 */
-	public IItemHandler getItemHandler(L2EtcItem item) {
+	public IItemHandler getItemHandler(EtcItemTemplate item) {
 		if (item == null || item.getHandlerName() == null) {
 			return null;
 		}

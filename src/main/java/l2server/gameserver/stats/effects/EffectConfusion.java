@@ -16,13 +16,14 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2EffectType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.EffectType;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -35,25 +36,25 @@ import java.util.List;
  * Implementation of the Confusion Effect
  */
 public class EffectConfusion extends L2Effect {
-	public EffectConfusion(Env env, L2EffectTemplate template) {
+	public EffectConfusion(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 * @see Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType() {
-		return L2EffectType.CONFUSION;
+	public EffectType getEffectType() {
+		return EffectType.CONFUSION;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.CONFUSION;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.CONFUSION;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
@@ -63,7 +64,7 @@ public class EffectConfusion extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {
@@ -71,20 +72,20 @@ public class EffectConfusion extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {
-		List<L2Character> targetList = new ArrayList<>();
+		List<Creature> targetList = new ArrayList<>();
 
 		// Getting the possible targets
 
-		Collection<L2Object> objs = getEffected().getKnownList().getKnownObjects().values();
+		Collection<WorldObject> objs = getEffected().getKnownList().getKnownObjects().values();
 		// synchronized (getEffected().getKnownList().getKnownObjects())
 		{
-			for (L2Object obj : objs) {
-				if (obj instanceof L2Character && obj != getEffected()) {
-					targetList.add((L2Character) obj);
+			for (WorldObject obj : objs) {
+				if (obj instanceof Creature && obj != getEffected()) {
+					targetList.add((Creature) obj);
 				}
 			}
 		}
@@ -95,7 +96,7 @@ public class EffectConfusion extends L2Effect {
 
 		// Choosing randomly a new target
 		int nextTargetIdx = Rnd.nextInt(targetList.size());
-		L2Object target = targetList.get(nextTargetIdx);
+		WorldObject target = targetList.get(nextTargetIdx);
 
 		// Attacking the target
 		getEffected().setTarget(target);

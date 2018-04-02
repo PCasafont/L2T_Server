@@ -15,7 +15,8 @@
 
 package l2server.util;
 
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -26,6 +27,8 @@ import java.util.Properties;
  */
 
 public final class L2Properties extends Properties {
+	private static Logger log = LoggerFactory.getLogger(L2Properties.class.getName());
+	
 	private static final long serialVersionUID = 1L;
 
 	public L2Properties() {
@@ -83,7 +86,7 @@ public final class L2Properties extends Properties {
 		String property = super.getProperty(key);
 
 		if (property == null) {
-			//Log.info("L2Properties: Missing property for key - " + key);
+			//log.info("L2Properties: Missing property for key - " + key);
 
 			return null;
 		}
@@ -96,7 +99,7 @@ public final class L2Properties extends Properties {
 		String property = super.getProperty(key, defaultValue);
 
 		if (property == null) {
-			Log.warning("L2Properties: Missing defaultValue for key - " + key);
+			log.warn("L2Properties: Missing defaultValue for key - " + key);
 
 			return null;
 		}

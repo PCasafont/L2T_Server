@@ -17,14 +17,14 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.gameserver.util.Util;
 
 import java.util.ArrayList;
@@ -38,10 +38,10 @@ public class TargetMultiface implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		List<L2Character> targetList = new ArrayList<L2Character>();
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		List<Creature> targetList = new ArrayList<Creature>();
 
-		if (!(target instanceof L2Attackable) && !(target instanceof L2PcInstance)) {
+		if (!(target instanceof Attackable) && !(target instanceof Player)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return null;
 		}
@@ -49,21 +49,21 @@ public class TargetMultiface implements ISkillTargetTypeHandler {
 		if (onlyFirst == false) {
 			targetList.add(target);
 		} else {
-			return new L2Character[]{target};
+			return new Creature[]{target};
 		}
 
 		int radius = skill.getSkillRadius();
 
-		Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
+		Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
 		//synchronized (activeChar.getKnownList().getKnownObjects())
 		{
-			for (L2Object obj : objs) {
+			for (WorldObject obj : objs) {
 				if (!Util.checkIfInRange(radius, activeChar, obj, true)) {
 					continue;
 				}
 
-				if (obj instanceof L2Attackable && obj != target) {
-					targetList.add((L2Character) obj);
+				if (obj instanceof Attackable && obj != target) {
+					targetList.add((Creature) obj);
 				}
 
 				if (targetList.size() == 0) {
@@ -72,15 +72,15 @@ public class TargetMultiface implements ISkillTargetTypeHandler {
 				}
 			}
 		}
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(new Creature[targetList.size()]);
 		//TODO multiface targets all around right now.  need it to just get targets the character is facing.
 	}
 
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.TARGET_MULTIFACE;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.TARGET_MULTIFACE;
 	}
 
 	public static void main(String[] args) {

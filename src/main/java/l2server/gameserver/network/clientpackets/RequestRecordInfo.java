@@ -16,9 +16,9 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.TaskPriority;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.SpawnItem;
 import l2server.gameserver.network.serverpackets.UserInfo;
 
@@ -39,7 +39,7 @@ public class RequestRecordInfo extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 
 		if (activeChar == null) {
 			return;
@@ -47,21 +47,21 @@ public class RequestRecordInfo extends L2GameClientPacket {
 
 		activeChar.sendPacket(new UserInfo(activeChar));
 
-		Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
+		Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
 		//synchronized (activeChar.getKnownList().getKnownObjects())
 		{
-			for (L2Object object : objs) {
+			for (WorldObject object : objs) {
 				if (object.getPoly().isMorphed() && object.getPoly().getPolyType().equals("item")) {
 					activeChar.sendPacket(new SpawnItem(object));
 				} else {
 					object.sendInfo(activeChar);
 
-					if (object instanceof L2Character) {
-						// Update the state of the L2Character object client
+					if (object instanceof Creature) {
+						// Update the state of the Creature object client
 						// side by sending Server->Client packet
 						// MoveToPawn/CharMoveToLocation and AutoAttackStart to
-						// the L2PcInstance
-						L2Character obj = (L2Character) object;
+						// the Player
+						Creature obj = (Creature) object;
 						if (obj.getAI() != null) {
 							obj.getAI().describeStateToPlayer(activeChar);
 						}

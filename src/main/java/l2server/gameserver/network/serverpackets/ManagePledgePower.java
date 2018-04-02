@@ -37,10 +37,10 @@ public class ManagePledgePower extends L2GameServerPacket {
 		} else {
 			return;
 			/*
-            if (L2World.getInstance().findObject(clanId) == null)
+            if (World.getInstance().findObject(clanId) == null)
 				return;
 
-			privs = ((L2PcInstance)L2World.getInstance().findObject(clanId)).getClanPrivileges();
+			privs = ((Player)World.getInstance().findObject(clanId)).getClanPrivileges();
 			 */
 		}
 		

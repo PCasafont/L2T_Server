@@ -16,9 +16,9 @@
 package ai.group_template;
 
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 
 public class SearchingMaster extends L2AttackableAIScript {
 	private static final int[] mobs = {20965, 20966, 20967, 20968, 20969, 20970, 20971, 20972, 20973};
@@ -31,13 +31,13 @@ public class SearchingMaster extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet) {
+	public String onAttack(Npc npc, Player player, int damage, boolean isPet) {
 		if (player == null) {
 			return null;
 		}
 
 		npc.setIsRunning(true);
-		((L2Attackable) npc).addDamageHate(player, 0, 999);
+		((Attackable) npc).addDamageHate(player, 0, 999);
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 
 		return super.onAttack(npc, player, damage, isPet);

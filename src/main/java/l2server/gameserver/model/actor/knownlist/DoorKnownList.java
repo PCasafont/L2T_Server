@@ -15,10 +15,10 @@
 
 package l2server.gameserver.model.actor.knownlist;
 
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2DefenderInstance;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.DefenderInstance;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 public class DoorKnownList extends CharKnownList {
 	// =========================================================
@@ -26,7 +26,7 @@ public class DoorKnownList extends CharKnownList {
 
 	// =========================================================
 	// Constructor
-	public DoorKnownList(L2DoorInstance activeChar) {
+	public DoorKnownList(DoorInstance activeChar) {
 		super(activeChar);
 	}
 
@@ -39,16 +39,16 @@ public class DoorKnownList extends CharKnownList {
 	// =========================================================
 	// Property - Public
 	@Override
-	public final L2DoorInstance getActiveChar() {
-		return (L2DoorInstance) super.getActiveChar();
+	public final DoorInstance getActiveChar() {
+		return (DoorInstance) super.getActiveChar();
 	}
 
 	@Override
-	public int getDistanceToForgetObject(L2Object object) {
-		if (object instanceof L2DefenderInstance) {
+	public int getDistanceToForgetObject(WorldObject object) {
+		if (object instanceof DefenderInstance) {
 			return 800;
 		}
-		if (!(object instanceof L2PcInstance)) {
+		if (!(object instanceof Player)) {
 			return 0;
 		}
 
@@ -56,11 +56,11 @@ public class DoorKnownList extends CharKnownList {
 	}
 
 	@Override
-	public int getDistanceToWatchObject(L2Object object) {
-		if (object instanceof L2DefenderInstance) {
+	public int getDistanceToWatchObject(WorldObject object) {
+		if (object instanceof DefenderInstance) {
 			return 600;
 		}
-		if (!(object instanceof L2PcInstance)) {
+		if (!(object instanceof Player)) {
 			return 0;
 		}
 		return 3000;

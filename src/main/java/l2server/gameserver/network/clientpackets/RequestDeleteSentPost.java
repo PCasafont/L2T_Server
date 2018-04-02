@@ -17,14 +17,14 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.instancemanager.MailManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExChangePostState;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 
-import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
+import static l2server.gameserver.model.actor.Creature.ZONE_PEACE;
 
 /**
  * @author Pere, DS
@@ -50,7 +50,7 @@ public final class RequestDeleteSentPost extends L2GameClientPacket {
 	
 	@Override
 	public void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null || msgIds == null || !Config.ALLOW_MAIL) {
 			return;
 		}

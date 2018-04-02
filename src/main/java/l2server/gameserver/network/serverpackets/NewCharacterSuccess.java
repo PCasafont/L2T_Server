@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.templates.chars.L2PcTemplate;
+import l2server.gameserver.templates.chars.PcTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,13 +27,13 @@ import java.util.List;
  */
 public class NewCharacterSuccess extends L2GameServerPacket {
 	// dddddddddddddddddddd
-	private List<L2PcTemplate> chars = new ArrayList<>();
+	private List<PcTemplate> chars = new ArrayList<>();
 	
 	public NewCharacterSuccess() {
 	
 	}
 	
-	public void addChar(L2PcTemplate template) {
+	public void addChar(PcTemplate template) {
 		chars.add(template);
 	}
 	
@@ -41,7 +41,7 @@ public class NewCharacterSuccess extends L2GameServerPacket {
 	protected final void writeImpl() {
 		writeD(chars.size());
 		
-		for (L2PcTemplate temp : chars) {
+		for (PcTemplate temp : chars) {
 			if (temp == null) {
 				continue;
 			}

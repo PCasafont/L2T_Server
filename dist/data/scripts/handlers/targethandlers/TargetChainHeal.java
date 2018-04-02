@@ -18,16 +18,16 @@ package handlers.targethandlers;
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2NpcInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.NpcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.templates.skills.SkillTargetType;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -42,9 +42,9 @@ import java.util.TreeMap;
  */
 public class TargetChainHeal implements ISkillTargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		final L2PcInstance aPlayer = activeChar.getActingPlayer();
-		final ArrayList<L2Character> result = new ArrayList<L2Character>();
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		final Player aPlayer = activeChar.getActingPlayer();
+		final ArrayList<Creature> result = new ArrayList<Creature>();
 
 		// Check for null target or any other invalid target
 		if (target == null || target.isDead()) {
@@ -63,18 +63,18 @@ public class TargetChainHeal implements ISkillTargetTypeHandler {
 		}
 
 		//get objects in radius of target
-		for (L2Character o : target.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
+		for (Creature o : target.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
 			if (!GeoEngine.getInstance().canSeeTarget(target, o)) {
 				continue;
 			}
 
-			final L2PcInstance kTarget = o.getActingPlayer();
+			final Player kTarget = o.getActingPlayer();
 			if (kTarget != null) {
 				//dont add self when not targeted self (worked this way on retail))
 				if (kTarget == aPlayer) {
 					continue;
 				}
-				final L2Summon kPet = kTarget.getPet();
+				final Summon kPet = kTarget.getPet();
 				if (kPet != null) {
 					if (!isReachableTarget(aPlayer, kPet)) {
 						continue;
@@ -89,10 +89,10 @@ public class TargetChainHeal implements ISkillTargetTypeHandler {
 		}
 		if (result.size() <= 11) //target + 10 allies
 		{
-			return result.toArray(new L2Character[result.size()]);
+			return result.toArray(new Creature[result.size()]);
 		} else {
-			SortedMap<Double, L2Character> map = new TreeMap<Double, L2Character>();
-			for (L2Character obj : result) {
+			SortedMap<Double, Creature> map = new TreeMap<Double, Creature>();
+			for (Creature obj : result) {
 				double percentlost = obj.getCurrentHp() / obj.getMaxHp();
 				map.put(percentlost, obj);
 			}
@@ -104,20 +104,20 @@ public class TargetChainHeal implements ISkillTargetTypeHandler {
 				i++;
 				result.add(map.get(key));
 			}
-			return result.toArray(new L2Character[result.size()]);
+			return result.toArray(new Creature[result.size()]);
 		}
 	}
 
-	private final boolean isReachableTarget(final L2Character activeChar, final L2Character target) {
+	private final boolean isReachableTarget(final Creature activeChar, final Creature target) {
 		if (target.isDead()) {
 			return false;
 		}
 
-		if (target instanceof L2Playable) {
-			final L2PcInstance pTarget = target.getActingPlayer();
+		if (target instanceof Playable) {
+			final Player pTarget = target.getActingPlayer();
 
 			if (pTarget.isPlayingEvent()) {
-				if (!((L2PcInstance) activeChar).isPlayingEvent()) {
+				if (!((Player) activeChar).isPlayingEvent()) {
 					return false;
 				}
 
@@ -131,15 +131,15 @@ public class TargetChainHeal implements ISkillTargetTypeHandler {
 				}
 			}
 
-			if (activeChar instanceof L2PcInstance) {
-				final L2PcInstance player = (L2PcInstance) activeChar;
+			if (activeChar instanceof Player) {
+				final Player player = (Player) activeChar;
 				if (player.getDuelId() != 0) {
-					if (((L2PcInstance) activeChar).getDuelId() != pTarget.getDuelId()) {
+					if (((Player) activeChar).getDuelId() != pTarget.getDuelId()) {
 						return false;
 					}
 				}
 
-				if (((L2PcInstance) activeChar).isInSameClanWar(pTarget) || ((L2PcInstance) activeChar).isInOlympiadMode()) {
+				if (((Player) activeChar).isInSameClanWar(pTarget) || ((Player) activeChar).isInOlympiadMode()) {
 					return false;
 				}
 
@@ -153,12 +153,12 @@ public class TargetChainHeal implements ISkillTargetTypeHandler {
 			if (pTarget.isAvailableForCombat() || pTarget.isInsidePvpZone()) {
 				return false;
 			}
-			if (target.isInsideZone(L2Character.ZONE_TOWN)) {
+			if (target.isInsideZone(Creature.ZONE_TOWN)) {
 				return true;
 			}
-		} else if (target instanceof L2NpcInstance) {
-			final L2NpcInstance npc = (L2NpcInstance) target;
-			if (!npc.isInsideZone(L2Character.ZONE_TOWN)) {
+		} else if (target instanceof NpcInstance) {
+			final NpcInstance npc = (NpcInstance) target;
+			if (!npc.isInsideZone(Creature.ZONE_TOWN)) {
 				return false;
 			}
 		} else {
@@ -169,8 +169,8 @@ public class TargetChainHeal implements ISkillTargetTypeHandler {
 	}
 
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.TARGET_CHAIN_HEAL;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.TARGET_CHAIN_HEAL;
 	}
 
 	public static void main(String[] args) {

@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ import java.util.List;
 public class ExShowContactList extends L2GameServerPacket {
 	private final List<String> contacts;
 	
-	public ExShowContactList(L2PcInstance player) {
+	public ExShowContactList(Player player) {
 		contacts = new ArrayList<>();
 		contacts.addAll(player.getContactList().getAllContacts());
 	}

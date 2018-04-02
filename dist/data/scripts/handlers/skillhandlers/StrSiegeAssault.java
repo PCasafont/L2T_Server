@@ -18,40 +18,40 @@ package handlers.skillhandlers;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.FortManager;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.Fort;
 import l2server.gameserver.stats.Formulas;
-import l2server.gameserver.templates.item.L2WeaponType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.item.WeaponType;
+import l2server.gameserver.templates.skills.SkillType;
 
 /**
  * @author _tomciaaa_
  */
 public class StrSiegeAssault implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.STRSIEGEASSAULT};
+	private static final SkillType[] SKILL_IDS = {SkillType.STRSIEGEASSAULT};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
 
-		if (!(activeChar instanceof L2PcInstance)) {
+		if (!(activeChar instanceof Player)) {
 			return;
 		}
 
-		L2PcInstance player = (L2PcInstance) activeChar;
+		Player player = (Player) activeChar;
 
 		if (!player.isRidingStrider()) {
 			return;
 		}
-		if (!(player.getTarget() instanceof L2DoorInstance)) {
+		if (!(player.getTarget() instanceof DoorInstance)) {
 			return;
 		}
 
@@ -76,9 +76,9 @@ public class StrSiegeAssault implements ISkillHandler {
 			// damage calculation
 			int damage = 0;
 
-			for (L2Character target : (L2Character[]) targets) {
-				L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
-				if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance) target).isFakeDeath()) {
+			for (Creature target : (Creature[]) targets) {
+				Item weapon = activeChar.getActiveWeaponInstance();
+				if (activeChar instanceof Player && target instanceof Player && ((Player) target).isFakeDeath()) {
 					target.stopFakeDeath(true);
 				} else if (target.isDead()) {
 					continue;
@@ -87,12 +87,12 @@ public class StrSiegeAssault implements ISkillHandler {
 				boolean dual = activeChar.isUsingDualWeapon();
 				byte shld = Formulas.calcShldUse(activeChar, target, skill);
 				boolean crit = Formulas.calcCrit(activeChar.getCriticalHit(target, skill), target);
-				double soul = L2ItemInstance.CHARGED_NONE;
-				if (weapon != null && weapon.getItemType() != L2WeaponType.DAGGER) {
+				double soul = Item.CHARGED_NONE;
+				if (weapon != null && weapon.getItemType() != WeaponType.DAGGER) {
 					soul = weapon.getChargedSoulShot();
 				}
 
-				if (!crit && (skill.getCondition() & L2Skill.COND_CRIT) != 0) {
+				if (!crit && (skill.getCondition() & Skill.COND_CRIT) != 0) {
 					damage = 0;
 				} else {
 					damage = (int) Formulas.calcPhysSkillDam(activeChar, target, skill, shld, crit, dual, soul);
@@ -101,7 +101,7 @@ public class StrSiegeAssault implements ISkillHandler {
 				if (damage > 0) {
 					target.reduceCurrentHp(damage, activeChar, skill);
 					if (weapon != null) {
-						weapon.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
+						weapon.setChargedSoulShot(Item.CHARGED_NONE);
 					}
 
 					activeChar.sendDamageMessage(target, damage, false, false, false);
@@ -118,7 +118,7 @@ public class StrSiegeAssault implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 

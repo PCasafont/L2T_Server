@@ -17,13 +17,13 @@ package handlers.skillhandlers;
 
 import l2server.Config;
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Summon;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Summon;
 import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -33,9 +33,9 @@ import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.stats.funcs.Func;
 import l2server.gameserver.stats.funcs.FuncSet;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.item.ItemTemplate;
+import l2server.gameserver.templates.skills.SkillTargetType;
+import l2server.gameserver.templates.skills.SkillType;
 
 /**
  * This class ...
@@ -44,15 +44,15 @@ import l2server.gameserver.templates.skills.L2SkillType;
  */
 
 public class Heal implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.HEAL, L2SkillType.HEAL_STATIC, L2SkillType.OVERHEAL, L2SkillType.OVERHEAL_STATIC};
+	private static final SkillType[] SKILL_IDS = {SkillType.HEAL, SkillType.HEAL_STATIC, SkillType.OVERHEAL, SkillType.OVERHEAL_STATIC};
 	
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
 		//check for other effects
-		//ISkillHandler handler = SkillHandler.getInstance().getSkillHandler(L2SkillType.BUFF);
+		//ISkillHandler handler = SkillHandler.getInstance().getSkillHandler(SkillType.BUFF);
 		
 		//if (handler != null)
 		//	handler.useSkill(activeChar, skill, targets);
@@ -66,47 +66,47 @@ public class Heal implements ISkillHandler {
 			case OVERHEAL_STATIC:
 				break;
 			default:
-				final L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+				final Item weaponInst = activeChar.getActiveWeaponInstance();
 				double mAtkMul = 1; // mAtk multiplier
 				if (weaponInst != null) {
-					if (weaponInst.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE) {
-						if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isMageClass()) {
+					if (weaponInst.getChargedSpiritShot() != Item.CHARGED_NONE) {
+						if (activeChar instanceof Player && ((Player) activeChar).isMageClass()) {
 							mAtkMul = weaponInst.getChargedSpiritShot();
 						} else {
 							// no static bonus
 							// grade dynamic bonus
 							switch (weaponInst.getItem().getItemGrade()) {
-								case L2Item.CRYSTAL_S84:
+								case ItemTemplate.CRYSTAL_S84:
 									mAtkMul = 4;
 									break;
-								case L2Item.CRYSTAL_S80:
+								case ItemTemplate.CRYSTAL_S80:
 									mAtkMul = 2;
 									break;
 							}
 							// shot dynamic bonus
-							if (weaponInst.getChargedSpiritShot() >= L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT) {
+							if (weaponInst.getChargedSpiritShot() >= Item.CHARGED_BLESSED_SPIRITSHOT) {
 								mAtkMul *= 4; // 16x/8x/4x s84/s80/other
 							} else {
 								mAtkMul += 1; // 5x/3x/1x s84/s80/other
 							}
 						}
 						
-						weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+						weaponInst.setChargedSpiritShot(Item.CHARGED_NONE);
 					}
 				}
 				// If there is no weapon equipped, check for an active summon.
-				else if (activeChar instanceof L2Summon && ((L2Summon) activeChar).getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE) {
-					if (((L2Summon) activeChar).getChargedSpiritShot() == L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT) {
+				else if (activeChar instanceof Summon && ((Summon) activeChar).getChargedSpiritShot() != Item.CHARGED_NONE) {
+					if (((Summon) activeChar).getChargedSpiritShot() == Item.CHARGED_BLESSED_SPIRITSHOT) {
 						mAtkMul = 4;
 					} else {
 						mAtkMul = 2;
 					}
 					
-					((L2Summon) activeChar).setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-				} else if (activeChar instanceof L2Npc && ((L2Npc) activeChar).spiritshotcharged) {
+					((Summon) activeChar).setChargedSpiritShot(Item.CHARGED_NONE);
+				} else if (activeChar instanceof Npc && ((Npc) activeChar).spiritshotcharged) {
 					mAtkMul = 4;
 					
-					((L2Npc) activeChar).spiritshotcharged = false;
+					((Npc) activeChar).spiritshotcharged = false;
 				}
 				
 				baseHeal = power + Math.sqrt(mAtkMul * activeChar.getMAtk(activeChar, skill));
@@ -136,42 +136,42 @@ public class Heal implements ISkillHandler {
 		double hp = 0;
 		double cp = 0;
 		
-		for (L2Character target : (L2Character[]) targets) {
+		for (Creature target : (Creature[]) targets) {
 			// We should not heal if char is dead/invul
 			if (target == null || target.isDead() || target.isInvul(activeChar)) {
 				continue;
 			}
 			
 			// No healing from others for player in duels
-			if (target instanceof L2PcInstance && target.getActingPlayer().isInDuel() && target.getObjectId() != activeChar.getObjectId()) {
+			if (target instanceof Player && target.getActingPlayer().isInDuel() && target.getObjectId() != activeChar.getObjectId()) {
 				continue;
 			}
 			
-			if (target instanceof L2DoorInstance || target instanceof L2SiegeFlagInstance || target instanceof L2EventGolemInstance ||
-					target instanceof L2ArmyMonsterInstance) {
+			if (target instanceof DoorInstance || target instanceof SiegeFlagInstance || target instanceof EventGolemInstance ||
+					target instanceof ArmyMonsterInstance) {
 				continue;
 			}
 			
 			if (target != activeChar) {
 				// Player holding a cursed weapon can't be healed and can't heal
-				if (target instanceof L2PcInstance && ((L2PcInstance) target).isCursedWeaponEquipped()) {
+				if (target instanceof Player && ((Player) target).isCursedWeaponEquipped()) {
 					continue;
-				} else if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isCursedWeaponEquipped()) {
+				} else if (activeChar instanceof Player && ((Player) activeChar).isCursedWeaponEquipped()) {
 					continue;
 				}
 				
 				// Nor all vs all event player
-				if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isPlayingEvent() &&
-						((L2PcInstance) activeChar).getEvent().getConfig().isAllVsAll() &&
-						!(target instanceof L2Summon && ((L2Summon) target).getOwner() == activeChar)) {
+				if (activeChar instanceof Player && ((Player) activeChar).isPlayingEvent() &&
+						((Player) activeChar).getEvent().getConfig().isAllVsAll() &&
+						!(target instanceof Summon && ((Summon) target).getOwner() == activeChar)) {
 					continue;
 				}
 			}
 			
 			hp = baseHeal;
 			
-			if (skill.getSkillType() != L2SkillType.HEAL_STATIC) {
-				if (skill.getSkillType() != L2SkillType.OVERHEAL_STATIC) {
+			if (skill.getSkillType() != SkillType.HEAL_STATIC) {
+				if (skill.getSkillType() != SkillType.OVERHEAL_STATIC) {
 					hp *= target.calcStat(Stats.HEAL_EFFECTIVNESS, 1.0, null, null);
 					
 					// Healer proficiency (since CT1)
@@ -189,7 +189,7 @@ public class Heal implements ISkillHandler {
 					}
 					
 					// Healing critical, since CT2.3 Gracia Final
-					if (skill.getCritChance() != -1 && skill.getTargetType() != L2SkillTargetType.TARGET_SELF && !skill.isPotion() &&
+					if (skill.getCritChance() != -1 && skill.getTargetType() != SkillTargetType.TARGET_SELF && !skill.isPotion() &&
 							Formulas.calcMCrit(activeChar.getMCriticalHit(target, skill))) {
 						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CRITICAL_HIT_MAGIC));
 						hp *= 2;
@@ -199,7 +199,7 @@ public class Heal implements ISkillHandler {
 				// from CT2 u will receive exact HP, u can't go over it, if u have full HP and u get HP buff, u will receive 0HP restored message
 				// Soul: but from GoD onwards that "overheal" factor is converted into CP by some Areoe Healer skills
 				if (target.getCurrentHp() + hp >= target.getMaxHp()) {
-					if (skill.getSkillType() == L2SkillType.OVERHEAL || skill.getSkillType() == L2SkillType.OVERHEAL_STATIC) {
+					if (skill.getSkillType() == SkillType.OVERHEAL || skill.getSkillType() == SkillType.OVERHEAL_STATIC) {
 						// CP OVERHEAL needs to be calculated before recalculate HP heal
 						cp = hp - (target.getMaxHp() - target.getCurrentHp());
 						if (target.getCurrentCp() + cp >= target.getMaxCp()) {
@@ -210,11 +210,11 @@ public class Heal implements ISkillHandler {
 				}
 			}
 			
-			if (Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance && activeChar.isInParty() &&
-					(skill.getTargetType() == L2SkillTargetType.TARGET_FRIENDS || skill.getTargetType() == L2SkillTargetType.TARGET_FRIEND_NOTME)) {
-				int classId = ((L2PcInstance) activeChar).getCurrentClass().getParent().getAwakeningClassId();
+			if (Config.isServer(Config.TENKAI) && activeChar instanceof Player && activeChar.isInParty() &&
+					(skill.getTargetType() == SkillTargetType.TARGET_FRIENDS || skill.getTargetType() == SkillTargetType.TARGET_FRIEND_NOTME)) {
+				int classId = ((Player) activeChar).getCurrentClass().getParent().getAwakeningClassId();
 				int members = 0;
-				for (L2PcInstance partyMember : activeChar.getParty().getPartyMembers()) {
+				for (Player partyMember : activeChar.getParty().getPartyMembers()) {
 					if (partyMember.getCurrentClass().getParent() != null &&
 							partyMember.getCurrentClass().getParent().getAwakeningClassId() == classId) {
 						members++;
@@ -236,7 +236,7 @@ public class Heal implements ISkillHandler {
 			
 			target.setCurrentHp(hp + target.getCurrentHp());
 			
-			if (skill.getSkillType() == L2SkillType.OVERHEAL || skill.getSkillType() == L2SkillType.OVERHEAL_STATIC) {
+			if (skill.getSkillType() == SkillType.OVERHEAL || skill.getSkillType() == SkillType.OVERHEAL_STATIC) {
 				if (cp < 0) {
 					cp = 0;
 				}
@@ -249,12 +249,12 @@ public class Heal implements ISkillHandler {
 			
 			target.broadcastStatusUpdate();
 			
-			if (target instanceof L2PcInstance) {
+			if (target instanceof Player) {
 				if (skill.getId() == 4051) {
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.REJUVENATING_HP);
 					target.sendPacket(sm);
 				} else {
-					if (activeChar instanceof L2PcInstance && activeChar != target) {
+					if (activeChar instanceof Player && activeChar != target) {
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_RESTORED_BY_C1);
 						sm.addString(activeChar.getName());
 						sm.addNumber((int) hp);
@@ -267,7 +267,7 @@ public class Heal implements ISkillHandler {
 						target.sendPacket(sm);
 					}
 					
-					if (skill.getSkillType() == L2SkillType.OVERHEAL || skill.getSkillType() == L2SkillType.OVERHEAL_STATIC) {
+					if (skill.getSkillType() == SkillType.OVERHEAL || skill.getSkillType() == SkillType.OVERHEAL_STATIC) {
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CP_WILL_BE_RESTORED);
 						//sm.addString(activeChar.getName());
 						sm.addNumber((int) cp);
@@ -287,7 +287,7 @@ public class Heal implements ISkillHandler {
 		}
 		
 		if (skill.hasSelfEffects()) {
-			L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
+			Abnormal effect = activeChar.getFirstEffect(skill.getId());
 			if (effect != null && effect.isSelfEffect()) {
 				//Replace old effect with new one.
 				effect.exit();
@@ -301,7 +301,7 @@ public class Heal implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

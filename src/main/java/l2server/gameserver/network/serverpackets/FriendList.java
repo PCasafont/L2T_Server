@@ -17,9 +17,8 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -65,12 +64,12 @@ public class FriendList extends L2GameServerPacket {
 		}
 	}
 
-	public FriendList(L2PcInstance player) {
+	public FriendList(Player player) {
 		info = new ArrayList<>(player.getFriendList().size());
 		for (int objId : player.getFriendList()) {
 			memo = player.getFriendMemo(objId);
 			String name = CharNameTable.getInstance().getNameById(objId);
-			L2PcInstance player1 = L2World.getInstance().getPlayer(objId);
+			Player player1 = World.getInstance().getPlayer(objId);
 			boolean online = false;
 			if (player1 != null && player1.isOnline()) {
 				online = true;
@@ -105,7 +104,7 @@ public class FriendList extends L2GameServerPacket {
 		Connection con = null;
 
 		try {
-			// Retrieve the L2PcInstance from the characters table of the database
+			// Retrieve the Player from the characters table of the database
 			con = L2DatabaseFactory.getInstance().getConnection();
 
 			PreparedStatement statement = con.prepareStatement("SELECT level, classid, base_class FROM characters WHERE charId=?");
@@ -119,14 +118,14 @@ public class FriendList extends L2GameServerPacket {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.warning("Failed loading character.");
+			log.warn("Failed loading character.");
 			e.printStackTrace();
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		if (classId != bClassId) {
 			try {
-				// Retrieve the L2PcInstance from the characters table of the database
+				// Retrieve the Player from the characters table of the database
 				con = L2DatabaseFactory.getInstance().getConnection();
 
 				PreparedStatement statement = con.prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
@@ -141,7 +140,7 @@ public class FriendList extends L2GameServerPacket {
 				rset.close();
 				statement.close();
 			} catch (Exception e) {
-				Log.warning("Failed loading character_subclasses.");
+				log.warn("Failed loading character_subclasses.");
 				e.printStackTrace();
 			} finally {
 				L2DatabaseFactory.close(con);

@@ -16,7 +16,6 @@
 package l2server.loginserver.network;
 
 import l2server.Config;
-import l2server.log.Log;
 import l2server.loginserver.LoginController;
 import l2server.loginserver.SessionKey;
 import l2server.loginserver.network.serverpackets.L2LoginServerPacket;
@@ -30,6 +29,8 @@ import l2server.network.SendablePacket;
 import l2server.util.Rnd;
 import l2server.util.crypt.LoginCrypt;
 import l2server.util.crypt.ScrambledKeyPair;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -44,7 +45,9 @@ import java.util.Map;
  * @author KenM
  */
 public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>> {
-
+	private static Logger log = LoggerFactory.getLogger(L2LoginClient.class.getName());
+	
+	
 	public enum LoginClientState {
 		CONNECTED,
 		AUTHED_GG,
@@ -98,7 +101,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 			byte[] dump = new byte[size];
 			System.arraycopy(buf.array(), buf.position(), dump, 0, size);
 			if (dump[0] != 2 || dump[1] != 0) {
-				Log.warning("Wrong checksum from client: " + toString());
+				log.warn("Wrong checksum from client: " + toString());
 			}
 			//super.getConnection().close((SendablePacket<L2LoginClient>)null);
 		}
@@ -229,7 +232,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 	@Override
 	public void onDisconnection() {
 		if (Config.DEBUG) {
-			Log.info("DISCONNECTED: " + toString());
+			log.info("DISCONNECTED: " + toString());
 		}
 
 		if (!hasJoinedGS())// || (getConnectionStartTime() + LoginController.LOGIN_TIMEOUT) < System.currentTimeMillis())

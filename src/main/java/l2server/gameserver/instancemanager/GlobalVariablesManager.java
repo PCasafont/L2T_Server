@@ -16,7 +16,8 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.L2DatabaseFactory;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
@@ -26,6 +27,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GlobalVariablesManager {
+	private static Logger log = LoggerFactory.getLogger(GlobalVariablesManager.class.getName());
+
+
 
 	private static final String LOAD_VAR = "SELECT var,value FROM global_variables";
 	private static final String SAVE_VAR = "INSERT INTO global_variables (var,value) VALUES (?,?) ON DUPLICATE KEY UPDATE value=?";
@@ -55,7 +59,7 @@ public class GlobalVariablesManager {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.warning("GlobalVariablesManager: problem while loading variables: " + e);
+			log.warn("GlobalVariablesManager: problem while loading variables: " + e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -75,9 +79,9 @@ public class GlobalVariablesManager {
 				statement.execute();
 			}
 			statement.close();
-			//Log.info("GlobalVariablesManager: Database updated.");
+			//log.info("GlobalVariablesManager: Database updated.");
 		} catch (Exception e) {
-			Log.warning("GlobalVariablesManager: problem while saving variables: " + e);
+			log.warn("GlobalVariablesManager: problem while saving variables: " + e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

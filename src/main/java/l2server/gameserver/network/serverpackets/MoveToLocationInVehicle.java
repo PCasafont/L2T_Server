@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.Point3D;
 
 /**
@@ -31,7 +31,7 @@ public class MoveToLocationInVehicle extends L2GameServerPacket {
 	 * @param destination
 	 * @param origin
 	 */
-	public MoveToLocationInVehicle(L2PcInstance player, Point3D destination, Point3D origin) {
+	public MoveToLocationInVehicle(Player player, Point3D destination, Point3D origin) {
 		charObjId = player.getObjectId();
 		boatId = player.getBoat().getObjectId();
 		this.destination = destination;

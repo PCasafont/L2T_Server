@@ -23,12 +23,16 @@ import l2server.gameserver.taskmanager.Task;
 import l2server.gameserver.taskmanager.TaskManager;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
 import l2server.gameserver.taskmanager.TaskTypes;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Calendar;
 import java.util.Map;
 
 public class TaskRaidPointsReset extends Task {
+	private static Logger log = LoggerFactory.getLogger(TaskRaidPointsReset.class.getName());
+
+
 	public static final String NAME = "raid_points_reset";
 
 	@Override
@@ -92,7 +96,7 @@ public class TaskRaidPointsReset extends Task {
 			}
 
 			RaidBossPointsManager.getInstance().cleanUp();
-			Log.info("Raid Points Reset Global Task: launched.");
+			log.info("Raid Points Reset Global Task: launched.");
 		}
 	}
 

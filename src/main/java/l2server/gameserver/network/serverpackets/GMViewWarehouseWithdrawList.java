@@ -16,8 +16,8 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * Sdh(h dddhh [dhhh] d)
@@ -26,12 +26,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  * @version $Revision: 1.1.2.1.2.5 $ $Date: 2007/11/26 16:10:05 $
  */
 public class GMViewWarehouseWithdrawList extends L2ItemListPacket {
-	private L2ItemInstance[] items;
+	private Item[] items;
 	private String playerName;
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	private long money;
 	
-	public GMViewWarehouseWithdrawList(L2PcInstance cha) {
+	public GMViewWarehouseWithdrawList(Player cha) {
 		activeChar = cha;
 		items = activeChar.getWarehouse().getItems();
 		playerName = activeChar.getName();
@@ -51,7 +51,7 @@ public class GMViewWarehouseWithdrawList extends L2ItemListPacket {
 		writeH(items.length);
 		writeD(0x00); // GoD ???
 		
-		for (L2ItemInstance item : items) {
+		for (Item item : items) {
 			writeItem(item);
 		}
 	}

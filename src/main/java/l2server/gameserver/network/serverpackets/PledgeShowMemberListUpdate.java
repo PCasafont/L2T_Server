@@ -17,7 +17,7 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author -Wooden-
@@ -33,7 +33,7 @@ public final class PledgeShowMemberListUpdate extends L2GameServerPacket {
 	private int race;
 	private int sex;
 	
-	public PledgeShowMemberListUpdate(L2PcInstance player) {
+	public PledgeShowMemberListUpdate(Player player) {
 		pledgeType = player.getPledgeType();
 		if (pledgeType == L2Clan.SUBUNIT_ACADEMY) {
 			hasSponsor = player.getSponsor() != 0 ? 1 : 0;

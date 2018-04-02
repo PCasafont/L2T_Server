@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.Point3D;
 
 /**
@@ -27,7 +27,7 @@ public class StopMoveInVehicle extends L2GameServerPacket {
 	private Point3D pos;
 	private int heading;
 	
-	public StopMoveInVehicle(L2PcInstance player, int boatId) {
+	public StopMoveInVehicle(Player player, int boatId) {
 		charObjId = player.getObjectId();
 		this.boatId = boatId;
 		pos = player.getInVehiclePosition();

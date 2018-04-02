@@ -19,12 +19,12 @@ import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.model.L2ExtractableProduct;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2EtcItem;
+import l2server.gameserver.templates.item.EtcItemTemplate;
 import l2server.util.Rnd;
 
 import java.util.logging.Logger;
@@ -37,15 +37,15 @@ public class ExtractableItems implements IItemHandler {
 	private static Logger log = Logger.getLogger(ItemTable.class.getName());
 
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
-		if (!(playable instanceof L2PcInstance)) {
+	public void useItem(Playable playable, Item item, boolean forceUse) {
+		if (!(playable instanceof Player)) {
 			return;
 		}
 
-		L2PcInstance activeChar = (L2PcInstance) playable;
+		Player activeChar = (Player) playable;
 
 		int itemID = item.getItemId();
-		L2EtcItem etcitem = (L2EtcItem) item.getItem();
+		EtcItemTemplate etcitem = (EtcItemTemplate) item.getItem();
 		L2ExtractableProduct[] exitem = etcitem.getExtractableItems();
 
 		if (exitem == null) {

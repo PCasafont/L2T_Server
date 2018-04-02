@@ -15,18 +15,18 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Pere, DS
  */
 
 public class ExReplyPostItemList extends L2ItemListPacket {
-	L2PcInstance activeChar;
-	private L2ItemInstance[] itemList;
+	Player activeChar;
+	private Item[] itemList;
 	
-	public ExReplyPostItemList(L2PcInstance activeChar) {
+	public ExReplyPostItemList(Player activeChar) {
 		this.activeChar = activeChar;
 		itemList = activeChar.getInventory().getAvailableItems(true, false);
 	}
@@ -37,7 +37,7 @@ public class ExReplyPostItemList extends L2ItemListPacket {
 	@Override
 	protected final void writeImpl() {
 		writeD(itemList.length);
-		for (L2ItemInstance item : itemList) {
+		for (Item item : itemList) {
 			writeItem(item);
 		}
 	}

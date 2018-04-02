@@ -1,7 +1,7 @@
 <list>
 	<npc id="50101" templateId="18819" name="" serverSideName="true" title="L2Tenkai Treasure" serverSideTitle="true"
 		 level="99"
-		 type="L2Monster" atkRange="10" hpMax="35891228" hpReg="37.4" mpMax="1000000" mpReg="12.12" STR="100" CON="143"
+		 type="Monster" atkRange="10" hpMax="35891228" hpReg="37.4" mpMax="1000000" mpReg="12.12" STR="100" CON="143"
 		 DEX="89"
 		 INT="66" WIT="64" MEN="125" pAtk="81030" mAtk="39927" pDef="6747551" mDef="3096506" pAtkSpd="286" mAtkSpd="548"
 		 pCritRate="40"
@@ -17,7 +17,7 @@
 			<itemDrop itemId="19447" min="1" max="1" chance="40" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) ind-->
 		</dropCategory>
 	</npc>
-	<npc id="2512" templateId="2512" name="Beryn" title="Valiant" level="120" type="L2Npc" atkRange="40" hpMax="2"
+	<npc id="2512" templateId="2512" name="Beryn" title="Valiant" level="120" type="Npc" atkRange="40" hpMax="2"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3"
 		 pAtkSpd="299"
@@ -25,7 +25,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="80201" templateId="19269" name="Clan Flag" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0"
+	<npc id="80201" templateId="19269" name="Clan Flag" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" pAtk="3" mAtk="2" pDef="3" mDef="3"
 		 pAtkSpd="299"
@@ -33,7 +33,7 @@
 		 targetable="false"
 		 showName="false" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="80202" templateId="8416" name="Crystal of Protection" level="99" type="L2GrandBoss" atkRange="40"
+	<npc id="80202" templateId="8416" name="Crystal of Protection" level="99" type="GrandBoss" atkRange="40"
 		 hpMax="54705"
 		 hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="74" DEX="61" INT="28" WIT="23" MEN="62" pAtk="2" mAtk="1"
 		 pDef="44077"
@@ -42,7 +42,7 @@
 		 collisionHeight="24" fireRes="600" waterRes="600" windRes="600" earthRes="600" holyRes="600" darkRes="600"
 		 aiType="fighter">
 	</npc>
-	<npc id="80203" templateId="23126" name="Elite Escort" title="Embryo" level="99" type="L2Monster" atkRange="40"
+	<npc id="80203" templateId="23126" name="Elite Escort" title="Embryo" level="99" type="Monster" atkRange="40"
 		 hpMax="11237"
 		 hpReg="8.5" mpMax="1507" mpReg="3.0" STR="90" CON="89" DEX="75" INT="28" WIT="53" MEN="112" pAtk="20842"
 		 mAtk="14337"
@@ -65,7 +65,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="16204" level="3" /> <!-- Fatal Slasher -->
 	</npc>
-	<npc id="80204" templateId="23127" name="Elite Manhunter" title="Embryo" level="99" type="L2Monster" atkRange="1400"
+	<npc id="80204" templateId="23127" name="Elite Manhunter" title="Embryo" level="99" type="Monster" atkRange="1400"
 		 hpMax="11237"
 		 hpReg="8.5" mpMax="1507" mpReg="3.0" STR="90" CON="89" DEX="75" INT="28" WIT="53" MEN="112" pAtk="20842"
 		 mAtk="14337"
@@ -90,7 +90,7 @@
 		<skill id="16203" level="4" /> <!-- Fatal Shot -->
 		<skill id="16205" level="4" /> <!-- Burst Shot -->
 	</npc>
-	<npc id="80205" templateId="23128" name="Elite Warrior" title="Embryo" level="99" type="L2Monster" atkRange="80"
+	<npc id="80205" templateId="23128" name="Elite Warrior" title="Embryo" level="99" type="Monster" atkRange="80"
 		 hpMax="11237"
 		 hpReg="8.5" mpMax="1507" mpReg="3.0" STR="90" CON="89" DEX="75" INT="28" WIT="53" MEN="112" pAtk="20842"
 		 mAtk="14337"
@@ -114,7 +114,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="16204" level="3" /> <!-- Fatal Slasher -->
 	</npc>
-	<npc id="80206" templateId="23129" name="Elite Alchemist" title="Embryo" level="99" type="L2Monster" atkRange="40"
+	<npc id="80206" templateId="23129" name="Elite Alchemist" title="Embryo" level="99" type="Monster" atkRange="40"
 		 hpMax="11237"
 		 hpReg="8.5" mpMax="1507" mpReg="3.0" STR="90" CON="89" DEX="75" INT="28" WIT="53" MEN="112" pAtk="20842"
 		 mAtk="14337"
@@ -140,7 +140,7 @@
 		<skill id="16213" level="3" /> <!-- Dark Buster -->
 		<skill id="16219" level="3" /> <!-- Dark Blast -->
 	</npc>
-	<npc id="80207" templateId="23130" name="Elite High Priest" title="Embryo" level="99" type="L2Monster" atkRange="40"
+	<npc id="80207" templateId="23130" name="Elite High Priest" title="Embryo" level="99" type="Monster" atkRange="40"
 		 hpMax="11237"
 		 hpReg="8.5" mpMax="1507" mpReg="3.0" STR="90" CON="89" DEX="75" INT="28" WIT="53" MEN="112" pAtk="20842"
 		 mAtk="14337"
@@ -164,7 +164,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="16226" level="1" /> <!-- Battle Recovery -->
 	</npc>
-	<npc id="80208" templateId="23132" name="Shilen's Enchanter" title="Embryo" level="99" type="L2GrandBoss"
+	<npc id="80208" templateId="23132" name="Shilen's Enchanter" title="Embryo" level="99" type="GrandBoss"
 		 atkRange="40"
 		 hpMax="796923" hpReg="91.49309" mpMax="1641" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
 		 pAtk="179470"
@@ -182,7 +182,7 @@
 		<skill id="16229" level="4" /> <!-- Mass Hold -->
 		<skill id="16225" level="4" /> <!-- Mass Bleed -->
 	</npc>
-	<npc id="80209" templateId="23133" name="Shilen's Priest" title="Embryo" level="99" type="L2GrandBoss" atkRange="40"
+	<npc id="80209" templateId="23133" name="Shilen's Priest" title="Embryo" level="99" type="GrandBoss" atkRange="40"
 		 hpMax="796923"
 		 hpReg="91.49309" mpMax="1641" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="179470"
 		 mAtk="49510"
@@ -196,7 +196,7 @@
 		<skill id="4411" level="15" /> <!-- Strong M. Atk. -->
 		<skill id="16226" level="1" /> <!-- Battle Recovery -->
 	</npc>
-	<npc id="80210" templateId="23134" name="Shilen's Protector" title="Embryo" level="99" type="L2GrandBoss"
+	<npc id="80210" templateId="23134" name="Shilen's Protector" title="Embryo" level="99" type="GrandBoss"
 		 atkRange="40"
 		 hpMax="1793077" hpReg="91.49309" mpMax="1641" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
 		 pAtk="403811"
@@ -214,7 +214,7 @@
 		<skill id="4410" level="15" /> <!-- Strong P. Atk. -->
 		<skill id="16204" level="4" /> <!-- Fatal Slasher -->
 	</npc>
-	<npc id="80211" templateId="23135" name="Shilen's Warrior" title="Embryo" level="99" type="L2GrandBoss"
+	<npc id="80211" templateId="23135" name="Shilen's Warrior" title="Embryo" level="99" type="GrandBoss"
 		 atkRange="40" hpMax="796923"
 		 hpReg="91.49309" mpMax="1641" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="179470"
 		 mAtk="49510"
@@ -229,7 +229,7 @@
 		<skill id="16202" level="4" /> <!-- Fatal Strike -->
 		<skill id="16228" level="4" /> <!-- Wide Stun -->
 	</npc>
-	<npc id="80212" templateId="23136" name="Shilen's Mage" title="Embryo" level="99" type="L2GrandBoss" atkRange="40"
+	<npc id="80212" templateId="23136" name="Shilen's Mage" title="Embryo" level="99" type="GrandBoss" atkRange="40"
 		 hpMax="796923"
 		 hpReg="91.49309" mpMax="1641" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="179470"
 		 mAtk="49510"
@@ -245,7 +245,7 @@
 		<skill id="16213" level="4" /> <!-- Dark Buster -->
 		<skill id="16219" level="4" /> <!-- Dark Blast -->
 	</npc>
-	<npc id="80213" templateId="14798" name="Wild Hog Cannon" level="99" type="L2Monster" atkRange="40" hpMax="4792"
+	<npc id="80213" templateId="14798" name="Wild Hog Cannon" level="99" type="Monster" atkRange="40" hpMax="4792"
 		 hpReg="8.5"
 		 mpMax="21870" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="77" pAtk="2265" mAtk="876"
 		 pDef="1002" mDef="637"
@@ -266,7 +266,7 @@
 		<skill id="4332" level="1" /> <!-- Mental Aegis -->
 		<skill id="4230" level="1" /> <!-- Wild Cannon -->
 	</npc>
-	<npc id="80214" templateId="33503" name="Dwarf Soldier" level="120" type="L2Npc" atkRange="40" hpMax="7235"
+	<npc id="80214" templateId="33503" name="Dwarf Soldier" level="120" type="Npc" atkRange="40" hpMax="7235"
 		 hpReg="9.59"
 		 mpMax="2290" mpReg="3.77" STR="80" CON="74" DEX="61" INT="28" WIT="203" MEN="62" pAtk="3" mAtk="2" pDef="3"
 		 mDef="3"
@@ -276,7 +276,7 @@
 		 aiType="fighter">
 	</npc>
 	<npc id="80215" templateId="33151" name="Menila" serverSideName="true" title="Vote Manager" serverSideTitle="true"
-		 level="85" type="L2Npc"
+		 level="85" type="Npc"
 		 atkRange="40" hpMax="7324" hpReg="9.63" mpMax="2044"
 		 mpReg="6.99" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -285,7 +285,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="15" /> <!-- Elves -->
 	</npc>
-	<npc id="80216" templateId="29118" name="Beleth" level="99" type="L2GrandBoss" atkRange="40" hpMax="4504228"
+	<npc id="80216" templateId="29118" name="Beleth" level="99" type="GrandBoss" atkRange="40" hpMax="4504228"
 		 hpReg="200.0" mpMax="1820000"
 		 mpReg="1000.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="16050188" sp="1635181" pAtk="82560"
 		 mAtk="54650"
@@ -314,7 +314,7 @@
 		<skill id="5499" level="1" /> <!-- Dark Lightening -->
 		<itemDrop itemId="10314" min="1" max="2" chance="80" /> <!-- Beleth's Ring -->
 	</npc>
-	<npc id="80217" templateId="29119" name="Beleth" level="99" type="L2Monster" atkRange="40" hpMax="1569787"
+	<npc id="80217" templateId="29119" name="Beleth" level="99" type="Monster" atkRange="40" hpMax="1569787"
 		 hpReg="200.0" mpMax="1820000" mpReg="1000.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="82560" mAtk="54650" pDef="4000" mDef="2000"
 		 pAtkSpd="253"
@@ -340,7 +340,7 @@
 		<skill id="5497" level="1" /> <!-- Horn of Rising Darkness -->
 		<skill id="5499" level="1" /> <!-- Dark Lightening -->
 	</npc>
-	<npc id="25785" name="Teredor" level="99" type="L2GrandBoss" atkRange="40" hpMax="2571564" hpReg="82.423004"
+	<npc id="25785" name="Teredor" level="99" type="GrandBoss" atkRange="40" hpMax="2571564" hpReg="82.423004"
 		 mpMax="37385"
 		 mpReg="21.98" STR="80" CON="74" DEX="71" INT="28" WIT="74" MEN="62" exp="886192384" sp="80000" pAtk="127412"
 		 mAtk="8620"
@@ -364,7 +364,7 @@
 		<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->
 		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
 	</npc>
-	<npc id="19023" name="Egg" level="99" type="L2Monster" atkRange="40" hpMax="8545" hpReg="10.17" mpMax="2511"
+	<npc id="19023" name="Egg" level="99" type="Monster" atkRange="40" hpMax="8545" hpReg="10.17" mpMax="2511"
 		 mpReg="3.97"
 		 STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" pAtk="2" mAtk="2867" pDef="5877" mDef="6020"
 		 pAtkSpd="358" mAtkSpd="427"
@@ -374,7 +374,7 @@
 		 darkRes="0"
 		 aiType="balanced" skillChance="15" canMove="false" clan="teredor_clan" clanRange="800">
 	</npc>
-	<npc id="18996" name="Egg" level="99" type="L2Monster" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="18996" name="Egg" level="99" type="Monster" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80"
 		 CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="2" mAtk="2867" pDef="5877" mDef="6020" pAtkSpd="299"
 		 mAtkSpd="427"
@@ -384,7 +384,7 @@
 		 darkRes="0"
 		 aiType="balanced" skillChance="15" canMove="false" clan="teredor_clan" clanRange="800">
 	</npc>
-	<npc id="19015" name="Elite Millipede" level="99" type="L2Monster" atkRange="40" hpMax="491299" hpReg="41.98"
+	<npc id="19015" name="Elite Millipede" level="99" type="Monster" atkRange="40" hpMax="491299" hpReg="41.98"
 		 mpMax="24226"
 		 mpReg="13.38" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="388233" sp="250" pAtk="18227"
 		 mAtk="8600"
@@ -397,7 +397,7 @@
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="18993" name="Hatched Millipede" level="99" type="L2Monster" atkRange="40" hpMax="245649" hpReg="32.94"
+	<npc id="18993" name="Hatched Millipede" level="99" type="Monster" atkRange="40" hpMax="245649" hpReg="32.94"
 		 mpMax="24226"
 		 mpReg="10.86" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="102099" sp="250" pAtk="18227"
 		 mAtk="8600"
@@ -412,7 +412,7 @@
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="4412" level="9" /> <!-- Slightly Weak P. Def. -->
 	</npc>
-	<npc id="18994" name="Hatched Underbug" level="99" type="L2Monster" atkRange="40" hpMax="245649" hpReg="32.94"
+	<npc id="18994" name="Hatched Underbug" level="99" type="Monster" atkRange="40" hpMax="245649" hpReg="32.94"
 		 mpMax="24226"
 		 mpReg="10.86" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="102099" sp="250" pAtk="18227"
 		 mAtk="8600"
@@ -427,7 +427,7 @@
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="4412" level="9" /> <!-- Slightly Weak P. Def. -->
 	</npc>
-	<npc id="18995" name="Awakened Millipede" level="99" type="L2Monster" atkRange="40" hpMax="245649" hpReg="32.94"
+	<npc id="18995" name="Awakened Millipede" level="99" type="Monster" atkRange="40" hpMax="245649" hpReg="32.94"
 		 mpMax="24226"
 		 mpReg="10.86" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="102099" sp="300" pAtk="18227"
 		 mAtk="8600"
@@ -441,7 +441,7 @@
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="4412" level="9" /> <!-- Slightly Weak P. Def. -->
 	</npc>
-	<npc id="19016" name="Teredor's Larva" level="99" type="L2Monster" atkRange="40" hpMax="11594" hpReg="11.31"
+	<npc id="19016" name="Teredor's Larva" level="99" type="Monster" atkRange="40" hpMax="11594" hpReg="11.31"
 		 mpMax="2421"
 		 mpReg="4.35" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="3912" sp="77" pAtk="18227" mAtk="8600"
 		 pDef="2938" mDef="1649"
@@ -454,7 +454,7 @@
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="19024" name="Beetle" title="Hatcher" level="99" type="L2Monster" atkRange="40" hpMax="245649" hpReg="32.94"
+	<npc id="19024" name="Beetle" title="Hatcher" level="99" type="Monster" atkRange="40" hpMax="245649" hpReg="32.94"
 		 mpMax="24226"
 		 mpReg="10.86" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="52184" sp="300" pAtk="18227"
 		 mAtk="8600" pDef="2938" mDef="1649"
@@ -469,7 +469,7 @@
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="4412" level="9" /> <!-- Slightly Weak P. Def. -->
 	</npc>
-	<npc id="19000" name="Mutated Millipede" level="99" type="L2Monster" atkRange="40" hpMax="23190" hpReg="14.42"
+	<npc id="19000" name="Mutated Millipede" level="99" type="Monster" atkRange="40" hpMax="23190" hpReg="14.42"
 		 mpMax="2421"
 		 mpReg="5.35" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="13492" sp="268" pAtk="18227"
 		 mAtk="8600" pDef="2938" mDef="1649"
@@ -480,7 +480,7 @@
 		 aiType="balanced" skillChance="15" clan="teredor_clan" clanRange="800">
 		<skill id="4416" level="12" /> <!-- Bugs -->
 	</npc>
-	<npc id="80280" templateId="32996" name="Embryo Overseer" level="120" type="L2Npc" atkRange="40" hpMax="2"
+	<npc id="80280" templateId="32996" name="Embryo Overseer" level="120" type="Npc" atkRange="40" hpMax="2"
 		 hpReg="0.0" mpMax="0"
 		 mpReg="0.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="3" mAtk="2" pDef="3" mDef="3"
 		 pAtkSpd="299"
@@ -488,7 +488,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="80285" templateId="33556" name="Source of Power" level="120" type="L2Npc" atkRange="40" hpMax="2"
+	<npc id="80285" templateId="33556" name="Source of Power" level="120" type="Npc" atkRange="40" hpMax="2"
 		 hpReg="0.0" mpMax="10000"
 		 mpReg="0.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="3" mAtk="2" pDef="3" mDef="3"
 		 pAtkSpd="299"
@@ -496,7 +496,7 @@
 		 targetable="false"
 		 fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="600" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="80286" templateId="33557" name="Source of Power" level="120" type="L2Npc" atkRange="40" hpMax="2"
+	<npc id="80286" templateId="33557" name="Source of Power" level="120" type="Npc" atkRange="40" hpMax="2"
 		 hpReg="0.0" mpMax="10000"
 		 mpReg="0.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="3" mAtk="2" pDef="3" mDef="3"
 		 pAtkSpd="299"
@@ -504,7 +504,7 @@
 		 targetable="false"
 		 fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="80287" templateId="33501" name="Source of Power" level="120" type="L2Npc" atkRange="40" hpMax="2"
+	<npc id="80287" templateId="33501" name="Source of Power" level="120" type="Npc" atkRange="40" hpMax="2"
 		 hpReg="0.0" mpMax="10000"
 		 mpReg="0.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="3" mAtk="2" pDef="3" mDef="3"
 		 pAtkSpd="299"
@@ -513,7 +513,7 @@
 		 fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 
-	<npc id="80289" templateId="33340" name="Hermuncus" title="The Last Giant" level="120" type="L2Npc" atkRange="40"
+	<npc id="80289" templateId="33340" name="Hermuncus" title="The Last Giant" level="120" type="Npc" atkRange="40"
 		 hpMax="2"
 		 hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="3" mAtk="2"
 		 pDef="3" mDef="3"
@@ -521,7 +521,7 @@
 		 collisionHeight="24"
 		 fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="80290" templateId="33548" name="Seal Control Device" level="99" type="L2Npc" atkRange="40" hpMax="2"
+	<npc id="80290" templateId="33548" name="Seal Control Device" level="99" type="Npc" atkRange="40" hpMax="2"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="2" mAtk="1" pDef="3" mDef="2"
 		 pAtkSpd="299"
@@ -529,7 +529,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="80291" templateId="27445" name="Harnak's Wraith" title="Giant's Watchman" level="99" type="L2GrandBoss"
+	<npc id="80291" templateId="27445" name="Harnak's Wraith" title="Giant's Watchman" level="99" type="GrandBoss"
 		 atkRange="40"
 		 hpMax="547052" hpReg="65.5" mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62"
 		 exp="3669416"
@@ -558,7 +558,7 @@
 		<skill id="14692" level="1" /> <!-- Cry of Destiny - Death Strike -->
 		<skill id="14693" level="1" /> <!-- Cry of Destiny - Pipe Organ Melody -->
 	</npc>
-	<npc id="80292" templateId="27454" name="Weiss Ele" title="Aeore Healer" level="99" type="L2Monster" atkRange="40"
+	<npc id="80292" templateId="27454" name="Weiss Ele" title="Aeore Healer" level="99" type="Monster" atkRange="40"
 		 hpMax="263372"
 		 hpReg="65.5" mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="1791830"
 		 sp="230"
@@ -574,7 +574,7 @@
 		<skill id="4416" level="8" /> <!-- Angels -->
 		<skill id="4225" level="5" /> <!-- Stun Resistance -->
 	</npc>
-	<npc id="80293" templateId="27437" name="Krakia Bathus" title="Tyrr Warrior" level="99" type="L2Monster"
+	<npc id="80293" templateId="27437" name="Krakia Bathus" title="Tyrr Warrior" level="99" type="Monster"
 		 atkRange="40" hpMax="263372"
 		 hpReg="65.5" mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="1791830"
 		 sp="230"
@@ -594,7 +594,7 @@
 		<skill id="4412" level="10" /> <!-- Slightly Weak P. Def. -->
 		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 	</npc>
-	<npc id="80294" templateId="27440" name="Rakzan" title="Sigel Knight" level="99" type="L2Monster" atkRange="40"
+	<npc id="80294" templateId="27440" name="Rakzan" title="Sigel Knight" level="99" type="Monster" atkRange="40"
 		 hpMax="263372"
 		 hpReg="65.5" mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="1791830"
 		 sp="230"
@@ -613,7 +613,7 @@
 		<skill id="4412" level="6" /> <!-- Very Weak P. Def. -->
 		<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
 	</npc>
-	<npc id="80295" templateId="27443" name="Seknus" title="Iss Enchanter" level="99" type="L2Monster" atkRange="40"
+	<npc id="80295" templateId="27443" name="Seknus" title="Iss Enchanter" level="99" type="Monster" atkRange="40"
 		 hpMax="263372"
 		 hpReg="65.5" mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="1791830"
 		 sp="230"
@@ -634,7 +634,7 @@
 		<skill id="4412" level="8" /> <!-- Weak P. Def. -->
 		<skill id="4413" level="9" /> <!-- Slightly Weak M. Def. -->
 	</npc>
-	<npc id="80296" templateId="27442" name="Bamonti" title="Othell Rogue" level="99" type="L2Monster" atkRange="40"
+	<npc id="80296" templateId="27442" name="Bamonti" title="Othell Rogue" level="99" type="Monster" atkRange="40"
 		 hpMax="263372"
 		 hpReg="65.5" mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="1791830"
 		 sp="230"
@@ -654,7 +654,7 @@
 		<skill id="4412" level="9" /> <!-- Slightly Weak P. Def. -->
 		<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
 	</npc>
-	<npc id="80297" templateId="27438" name="Krakia Carcass" title="Yul Archer" level="99" type="L2Monster"
+	<npc id="80297" templateId="27438" name="Krakia Carcass" title="Yul Archer" level="99" type="Monster"
 		 atkRange="40" hpMax="263372"
 		 hpReg="65.5" mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="1791830"
 		 sp="230"
@@ -675,7 +675,7 @@
 		<skill id="14682" level="1" /> <!-- Cry of Destiny - Pinpoint Shot -->
 		<skill id="14683" level="1" /> <!-- Cry of Destiny - Quick Fire -->
 	</npc>
-	<npc id="80298" templateId="27441" name="Weiss Khan" title="Feoh Wizard" level="99" type="L2Monster" atkRange="40"
+	<npc id="80298" templateId="27441" name="Weiss Khan" title="Feoh Wizard" level="99" type="Monster" atkRange="40"
 		 hpMax="263372"
 		 hpReg="65.5" mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="1791830"
 		 sp="230"
@@ -696,7 +696,7 @@
 		<skill id="4412" level="10" /> <!-- Slightly Weak P. Def. -->
 		<skill id="4413" level="9" /> <!-- Slightly Weak M. Def. -->
 	</npc>
-	<npc id="80299" templateId="27439" name="Krakia Lotus" title="Wynn Summoner" level="99" type="L2Monster"
+	<npc id="80299" templateId="27439" name="Krakia Lotus" title="Wynn Summoner" level="99" type="Monster"
 		 atkRange="40" hpMax="263372"
 		 hpReg="65.5" mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="1791830"
 		 sp="230"
@@ -717,7 +717,7 @@
 		<skill id="4412" level="10" /> <!-- Slightly Weak P. Def. -->
 		<skill id="4413" level="8" /> <!-- Weak M. Def. -->
 	</npc>
-	<npc id="80310" templateId="19155" name="Infiltration Officer" title="Combat Assistant" level="99" type="L2Guard"
+	<npc id="80310" templateId="19155" name="Infiltration Officer" title="Combat Assistant" level="99" type="Guard"
 		 atkRange="40"
 		 hpMax="1572" hpReg="5.62" mpMax="108" mpReg="2.39" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
 		 pAtk="2278"
@@ -727,7 +727,7 @@
 		 holyRes="600" darkRes="600"
 		 aiType="fighter">
 	</npc>
-	<npc id="80311" templateId="33215" name="Belis Verification System" level="85" type="L2Npc" atkRange="40"
+	<npc id="80311" templateId="33215" name="Belis Verification System" level="85" type="Npc" atkRange="40"
 		 hpMax="7268" hpReg="9.61"
 		 mpMax="2290" mpReg="3.78" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="2" mAtk="1" pDef="3"
 		 mDef="2"
@@ -735,7 +735,7 @@
 		 collisionHeight="24"
 		 fireRes="20" waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
 	</npc>
-	<npc id="80312" templateId="33216" name="Electricity Generator" level="85" type="L2Monster" atkRange="40"
+	<npc id="80312" templateId="33216" name="Electricity Generator" level="85" type="Monster" atkRange="40"
 		 hpMax="7268" hpReg="9.61"
 		 mpMax="2290" mpReg="3.78" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="2" mAtk="1" pDef="3"
 		 mDef="2"
@@ -745,7 +745,7 @@
 		 darkRes="20"
 		 aiType="fighter" canMove="false">
 	</npc>
-	<npc id="80313" templateId="22998" name="Operative" title="Embryo" level="99" type="L2Monster" atkRange="40"
+	<npc id="80313" templateId="22998" name="Operative" title="Embryo" level="99" type="Monster" atkRange="40"
 		 hpMax="263372"
 		 hpReg="65.5" mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="1791830"
 		 sp="230"
@@ -762,7 +762,7 @@
 		<skill id="14170" level="1" /> <!-- Grappling Web -->
 		<skill id="14171" level="1" /> <!-- Steady Shot -->
 	</npc>
-	<npc id="80314" templateId="22997" name="Handyman" title="Embryo" level="99" type="L2Monster" atkRange="500"
+	<npc id="80314" templateId="22997" name="Handyman" title="Embryo" level="99" type="Monster" atkRange="500"
 		 hpMax="263372"
 		 hpReg="65.5" mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="1791830"
 		 sp="230"
@@ -778,7 +778,7 @@
 		<skill id="4413" level="9" /> <!-- Slightly Weak M. Def. -->
 		<skill id="14168" level="1" /> <!-- Throw Grenade -->
 	</npc>
-	<npc id="80315" templateId="22984" name="Nemertess" title="Escort" level="99" type="L2GrandBoss" atkRange="40"
+	<npc id="80315" templateId="22984" name="Nemertess" title="Escort" level="99" type="GrandBoss" atkRange="40"
 		 hpMax="547052"
 		 hpReg="65.5" mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="23669416"
 		 sp="80000"
@@ -792,7 +792,7 @@
 		<skill id="14136" level="3" /> <!-- Dark Counter -->
 		<skill id="14138" level="3" /> <!-- Dark Avenger -->
 	</npc>
-	<npc id="80316" templateId="27371" name="Lilim Butcher" level="95" type="L2Monster" atkRange="40" hpMax="263372"
+	<npc id="80316" templateId="27371" name="Lilim Butcher" level="95" type="Monster" atkRange="40" hpMax="263372"
 		 hpReg="65.5"
 		 mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="23669416" sp="230"
 		 pAtk="39174"
@@ -808,7 +808,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4067" level="4" /> <!-- Blow -->
 	</npc>
-	<npc id="80317" templateId="27372" name="Lilim Magus" level="99" type="L2Monster" atkRange="40" hpMax="263372"
+	<npc id="80317" templateId="27372" name="Lilim Magus" level="99" type="Monster" atkRange="40" hpMax="263372"
 		 hpReg="65.5"
 		 mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="23669416" sp="230"
 		 pAtk="30846"
@@ -826,7 +826,7 @@
 		<skill id="4094" level="4" /> <!-- Cancellation -->
 		<skill id="4046" level="4" /> <!-- Sleep -->
 	</npc>
-	<npc id="80318" templateId="27373" name="Lilim Knight-Errant" level="99" type="L2Monster" atkRange="40"
+	<npc id="80318" templateId="27373" name="Lilim Knight-Errant" level="99" type="Monster" atkRange="40"
 		 hpMax="263372" hpReg="65.5"
 		 mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="23669416" sp="230"
 		 pAtk="30846"
@@ -843,7 +843,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4032" level="4" /> <!-- Power Strike -->
 	</npc>
-	<npc id="80319" templateId="27374" name="Shilen's Evil Thoughts" level="99" type="L2Monster" atkRange="40"
+	<npc id="80319" templateId="27374" name="Shilen's Evil Thoughts" level="99" type="Monster" atkRange="40"
 		 hpMax="312600"
 		 hpReg="65.5" mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="730"
 		 sp="600"
@@ -862,7 +862,7 @@
 		<skill id="5976" level="1" /> <!-- Dark Storm -->
 		<skill id="5977" level="1" /> <!-- Dark Strike -->
 	</npc>
-	<npc id="80320" templateId="27375" name="Shilen's Evil Thoughts" level="99" type="L2Monster" atkRange="40"
+	<npc id="80320" templateId="27375" name="Shilen's Evil Thoughts" level="99" type="Monster" atkRange="40"
 		 hpMax="312600"
 		 hpReg="65.5" mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62" exp="730"
 		 sp="600"
@@ -879,7 +879,7 @@
 		<skill id="5975" level="1" /> <!-- Dark Attack -->
 		<skill id="5976" level="1" /> <!-- Dark Storm -->
 	</npc>
-	<npc id="80321" templateId="27384" name="Seal Device" title="Emperor Shunaiman's" level="99" type="L2Monster"
+	<npc id="80321" templateId="27384" name="Seal Device" title="Emperor Shunaiman's" level="99" type="Monster"
 		 atkRange="40"
 		 hpMax="312600" hpReg="65.5" mpMax="18674" mpReg="12.12" STR="80" CON="74" DEX="61" INT="28" WIT="64" MEN="62"
 		 exp="23669416"
@@ -892,7 +892,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="80322" templateId="25283" name="Lilith" title="Holy Mother of Abyss" level="99" type="L2GrandBoss"
+	<npc id="80322" templateId="25283" name="Lilith" title="Holy Mother of Abyss" level="99" type="GrandBoss"
 		 atkRange="40"
 		 hpMax="22248" hpReg="8.5" mpMax="11846" mpReg="200.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
 		 pAtk="2707"
@@ -918,7 +918,7 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="80323" templateId="25284" name="Lilith' Agent" level="99" type="L2Monster" atkRange="40" hpMax="22248"
+	<npc id="80323" templateId="25284" name="Lilith' Agent" level="99" type="Monster" atkRange="40" hpMax="22248"
 		 hpReg="8.5"
 		 mpMax="11846" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="2707" mAtk="1162"
 		 pDef="1061"
@@ -944,7 +944,7 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="80324" templateId="25285" name="Lilith' Escort" level="99" type="L2Monster" atkRange="40" hpMax="22248"
+	<npc id="80324" templateId="25285" name="Lilith' Escort" level="99" type="Monster" atkRange="40" hpMax="22248"
 		 hpReg="8.5"
 		 mpMax="11846" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="2707" mAtk="1162"
 		 pDef="1061"
@@ -970,7 +970,7 @@
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 		<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
 	</npc>
-	<npc id="80325" templateId="25286" name="Anakim" title="Flames of Sacred Fire" level="99" type="L2GrandBoss"
+	<npc id="80325" templateId="25286" name="Anakim" title="Flames of Sacred Fire" level="99" type="GrandBoss"
 		 atkRange="40"
 		 hpMax="22248" hpReg="8.5" mpMax="11846" mpReg="200.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62"
 		 pAtk="2707"
@@ -994,7 +994,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4314" level="9" /> <!-- Holy Light Burst -->
 	</npc>
-	<npc id="80326" templateId="25287" name="Anakim's Guardian" level="99" type="L2Monster" atkRange="40" hpMax="22248"
+	<npc id="80326" templateId="25287" name="Anakim's Guardian" level="99" type="Monster" atkRange="40" hpMax="22248"
 		 hpReg="8.5"
 		 mpMax="11846" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="2707" mAtk="1162"
 		 pDef="1061"
@@ -1018,7 +1018,7 @@
 		<skill id="4212" level="8" /> <!-- Shield -->
 		<skill id="4209" level="8" /> <!-- Heal -->
 	</npc>
-	<npc id="80327" templateId="25288" name="Anakim's Royal Guard" level="99" type="L2Monster" atkRange="40"
+	<npc id="80327" templateId="25288" name="Anakim's Royal Guard" level="99" type="Monster" atkRange="40"
 		 hpMax="22248" hpReg="8.5"
 		 mpMax="11846" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="2707" mAtk="1162"
 		 pDef="1061"
@@ -1041,7 +1041,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4273" level="3" /> <!-- Dagger/Rapier Resistance -->
 	</npc>
-	<npc id="80328" templateId="25289" name="Anakim's Executor" level="99" type="L2Monster" atkRange="40" hpMax="22248"
+	<npc id="80328" templateId="25289" name="Anakim's Executor" level="99" type="Monster" atkRange="40" hpMax="22248"
 		 hpReg="8.5"
 		 mpMax="11846" mpReg="3.0" STR="80" CON="74" DEX="61" INT="28" WIT="53" MEN="62" pAtk="2707" mAtk="1162"
 		 pDef="1061"
@@ -1063,7 +1063,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="80329" templateId="23033" name="Failed Creation" level="99" type="L2Monster" atkRange="40" hpMax="263372"
+	<npc id="80329" templateId="23033" name="Failed Creation" level="99" type="Monster" atkRange="40" hpMax="263372"
 		 hpReg="11.92" mpMax="2382"
 		 mpReg="4.55" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="536713" sp="230" pAtk="24750"
 		 mAtk="16500" pDef="1683"
@@ -1085,7 +1085,7 @@
 		<itemDrop itemId="36563" min="1" max="1" chance="0.09331" /> <!-- Synthetic Cokes -->
 		<itemDrop itemId="17526" min="1" max="1" chance="0.003" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</npc>
-	<npc id="80330" templateId="23034" name="Failed Creation" level="99" type="L2Monster" atkRange="40" hpMax="263372"
+	<npc id="80330" templateId="23034" name="Failed Creation" level="99" type="Monster" atkRange="40" hpMax="263372"
 		 hpReg="11.92" mpMax="2382"
 		 mpReg="4.55" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="568284" sp="230" pAtk="24750"
 		 mAtk="16500" pDef="2198"
@@ -1108,7 +1108,7 @@
 		<itemDrop itemId="30425" min="1" max="1" chance="0.03" /> <!-- Recipe: Blessed Spiritshot (R-grade) -->
 		<itemDrop itemId="17526" min="1" max="1" chance="0.003" /> <!-- Scroll: Enchant Weapon (R-grade) -->
 	</npc>
-	<npc id="80331" templateId="23035" name="Failed Creation" level="99" type="L2Monster" atkRange="40" hpMax="263372"
+	<npc id="80331" templateId="23035" name="Failed Creation" level="99" type="Monster" atkRange="40" hpMax="263372"
 		 hpReg="11.92" mpMax="2382"
 		 mpReg="4.55" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="864569" sp="280" pAtk="24750"
 		 mAtk="16500" pDef="1990"
@@ -1129,7 +1129,7 @@
 		<itemDrop itemId="17527" min="1" max="1" chance="0.12236" /> <!-- Scroll: Enchant Armor (R-grade) -->
 		<itemDrop itemId="36563" min="1" max="1" chance="0.06118" /> <!-- Synthetic Cokes -->
 	</npc>
-	<npc id="80332" templateId="23036" name="Failed Creation" level="99" type="L2Monster" atkRange="40" hpMax="263372"
+	<npc id="80332" templateId="23036" name="Failed Creation" level="99" type="Monster" atkRange="40" hpMax="263372"
 		 hpReg="11.92" mpMax="2382"
 		 mpReg="4.55" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="798998" sp="230" pAtk="24750"
 		 mAtk="16500" pDef="1990"
@@ -1150,7 +1150,7 @@
 		<itemDrop itemId="36563" min="1" max="1" chance="0.12464" /> <!-- Synthetic Cokes -->
 		<itemDrop itemId="17527" min="1" max="1" chance="0.03" /> <!-- Scroll: Enchant Armor (R-grade) -->
 	</npc>
-	<npc id="80350" templateId="13161" name="Scarecrow" title="Damage Dealer" level="99" type="L2RaidBoss" atkRange="0"
+	<npc id="80350" templateId="13161" name="Scarecrow" title="Damage Dealer" level="99" type="RaidBoss" atkRange="0"
 		 hpMax="191665744"
 		 hpReg="2536.0" mpMax="3025740" mpReg="1000.0" STR="50" CON="50" DEX="50" INT="50" WIT="50" MEN="50"
 		 exp="499688640"
@@ -1160,7 +1160,7 @@
 		 elemAtkValue="600" fireRes="600"
 		 waterRes="600" windRes="600" earthRes="600" holyRes="600" darkRes="600" aiType="fighter">
 	</npc>
-	<npc id="80351" templateId="23368" name="Klein Soldier" level="99" type="L2RaidBoss" atkRange="40" hpMax="10000000"
+	<npc id="80351" templateId="23368" name="Klein Soldier" level="99" type="RaidBoss" atkRange="40" hpMax="10000000"
 		 hpReg="200"
 		 mpMax="6317468" mpReg="119.99" STR="130" CON="143" DEX="150" INT="144" WIT="135" MEN="147" exp="9339738544"
 		 sp="2241537"
@@ -1180,7 +1180,7 @@
 		<skill id="14304" level="1" /> <!-- Energy of Defense -->
 		<skill id="14315" level="1" /> <!-- Powerful Defense -->
 	</npc>
-	<npc id="80352" templateId="23369" name="Disorder Warrior" level="99" type="L2RaidBoss" atkRange="40"
+	<npc id="80352" templateId="23369" name="Disorder Warrior" level="99" type="RaidBoss" atkRange="40"
 		 hpMax="10000000" hpReg="200"
 		 mpMax="6317468" mpReg="119.99" STR="130" CON="143" DEX="150" INT="144" WIT="135" MEN="147" exp="9339738544"
 		 sp="2241537"
@@ -1200,7 +1200,7 @@
 		<skill id="14304" level="1" /> <!-- Energy of Defense -->
 		<skill id="14315" level="1" /> <!-- Powerful Defense -->
 	</npc>
-	<npc id="80353" templateId="23372" name="Bizuard" level="99" type="L2RaidBoss" atkRange="40" hpMax="10000000"
+	<npc id="80353" templateId="23372" name="Bizuard" level="99" type="RaidBoss" atkRange="40" hpMax="10000000"
 		 hpReg="200"
 		 mpMax="6317468" mpReg="119.99" STR="130" CON="143" DEX="150" INT="144" WIT="135" MEN="147" exp="9339738544"
 		 sp="2241537"
@@ -1220,7 +1220,7 @@
 		<skill id="14304" level="1" /> <!-- Energy of Defense -->
 		<skill id="14315" level="1" /> <!-- Powerful Defense -->
 	</npc>
-	<npc id="80354" templateId="23373" name="Mutated Fly" level="99" type="L2RaidBoss" atkRange="40" hpMax="10000000"
+	<npc id="80354" templateId="23373" name="Mutated Fly" level="99" type="RaidBoss" atkRange="40" hpMax="10000000"
 		 hpReg="200"
 		 mpMax="6317468" mpReg="119.99" STR="130" CON="143" DEX="150" INT="144" WIT="135" MEN="147" exp="9339738544"
 		 sp="2241537"
@@ -1244,7 +1244,7 @@
 		<skill id="14304" level="1" /> <!-- Energy of Defense -->
 		<skill id="14315" level="1" /> <!-- Powerful Defense -->
 	</npc>
-	<npc id="80355" templateId="23370" name="Blow Archer" level="99" type="L2Monster" atkRange="1100" hpMax="2745786"
+	<npc id="80355" templateId="23370" name="Blow Archer" level="99" type="Monster" atkRange="1100" hpMax="2745786"
 		 hpReg="1411.3282"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="164" MEN="62" exp="3810645" sp="80619"
 		 pAtk="2235678"
@@ -1258,7 +1258,7 @@
 		<skill id="16203" level="4" /> <!-- Fatal Shot -->
 		<skill id="16205" level="4" /> <!-- Burst Shot -->
 	</npc>
-	<npc id="80356" templateId="23371" name="Blow Soldier" level="99" type="L2Monster" atkRange="40" hpMax="1989015"
+	<npc id="80356" templateId="23371" name="Blow Soldier" level="99" type="Monster" atkRange="40" hpMax="1989015"
 		 hpReg="39.743"
 		 mpMax="20000" mpReg="11.76" STR="90" CON="74" DEX="66" INT="28" WIT="74" MEN="62" exp="3065445" sp="80619"
 		 pAtk="138044"

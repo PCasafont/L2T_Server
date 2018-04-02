@@ -15,8 +15,8 @@
 
 package ai.group_template;
 
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.util.Rnd;
@@ -40,12 +40,12 @@ public class EvasGiftBoxes extends Quest {
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc) {
+	public String onSpawn(Npc npc) {
 		return super.onSpawn(npc);
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		if (npc.getNpcId() == GIFTBOX) {
 			QuestState st = killer.getQuestState(qn);
 			if (st == null) {

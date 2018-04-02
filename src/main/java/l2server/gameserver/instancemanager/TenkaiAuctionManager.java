@@ -8,13 +8,14 @@ import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
@@ -40,6 +41,9 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class TenkaiAuctionManager {
+	private static Logger log = LoggerFactory.getLogger(TenkaiAuctionManager.class.getName());
+
+
 	private static final long ADDED_DURATION = 3600000L;
 	
 	/**
@@ -526,7 +530,7 @@ public class TenkaiAuctionManager {
 				
 				AuctionTemplate template = auctionTemplates.get(rs.getInt("templateId"));
 				if (template == null) {
-					Log.warning("TenkaiAuctionManager: Found a null template with id:" + rs.getInt("templateId"));
+					log.warn("TenkaiAuctionManager: Found a null template with id:" + rs.getInt("templateId"));
 					continue;
 				}
 				Auction auction = new Auction(auctionId,
@@ -601,7 +605,7 @@ public class TenkaiAuctionManager {
 			}
 		}
 		
-		Log.info("ItemAuction: Loaded: " + auctionTemplates.size() + " auctions!");
+		log.info("ItemAuction: Loaded: " + auctionTemplates.size() + " auctions!");
 	}
 	
 	/**
@@ -611,7 +615,7 @@ public class TenkaiAuctionManager {
 	 * @param bidId
 	 * @param playerBid
 	 */
-	public void tryToBid(L2PcInstance activeChar, int bidId, long playerBid, String coin) {
+	public void tryToBid(Player activeChar, int bidId, long playerBid, String coin) {
 		if (activeChar == null) {
 			return;
 		}

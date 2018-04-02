@@ -16,16 +16,14 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.L2DatabaseFactory;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.FriendList;
 import l2server.gameserver.network.serverpackets.FriendPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.logging.Level;
 
 /**
  * sample
@@ -48,9 +46,9 @@ public final class RequestAnswerFriendInvite extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player != null) {
-			L2PcInstance requestor = player.getActiveRequester();
+			Player requestor = player.getActiveRequester();
 			if (requestor == null) {
 				return;
 			}
@@ -86,7 +84,7 @@ public final class RequestAnswerFriendInvite extends L2GameClientPacket {
 					player.sendPacket(new FriendList(player));
 					requestor.sendPacket(new FriendList(requestor));
 				} catch (Exception e) {
-					Log.log(Level.WARNING, "Could not add friend objectid: " + e.getMessage(), e);
+					log.warn("Could not add friend objectid: " + e.getMessage(), e);
 				} finally {
 					L2DatabaseFactory.close(con);
 				}

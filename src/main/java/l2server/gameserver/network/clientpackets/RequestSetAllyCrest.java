@@ -19,9 +19,8 @@ import l2server.gameserver.cache.CrestCache;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.AllyCrest;
-import l2server.log.Log;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -48,7 +47,7 @@ public final class RequestSetAllyCrest extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -80,7 +79,7 @@ public final class RequestSetAllyCrest extends L2GameClientPacket {
 			}
 			
 			if (!remove && !CrestCache.getInstance().saveAllyCrest(newId, data)) {
-				Log.log(Level.INFO, "Error saving crest for ally " + leaderclan.getAllyName() + " [" + leaderclan.getAllyId() + "]");
+				log.info("Error saving crest for ally " + leaderclan.getAllyName() + " [" + leaderclan.getAllyId() + "]");
 				return;
 			}
 			

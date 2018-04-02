@@ -3,11 +3,12 @@ package l2server.gameserver;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.events.TopRanked;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.util.NpcUtil;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 import java.sql.Connection;
@@ -26,6 +27,9 @@ import java.util.logging.Level;
  * -> Verifier la nouvelle restriction
  */
 public class Ranked1v1 {
+	private static Logger log = LoggerFactory.getLogger(Ranked1v1.class.getName());
+
+
 
 	public static enum State {
 		INACTIVE,
@@ -36,8 +40,8 @@ public class Ranked1v1 {
 
 	public static State state = State.INACTIVE;
 	public static final int timeEach = 2;
-	public static Vector<L2PcInstance> players = new Vector<>();
-	public static Map<L2PcInstance, Long> fighters = new HashMap<L2PcInstance, Long>();
+	public static Vector<Player> players = new Vector<>();
+	public static Map<Player, Long> fighters = new HashMap<Player, Long>();
 	public static Vector<Integer> fight = new Vector<>();
 	public ScheduledFuture<?> t;
 
@@ -57,7 +61,7 @@ public class Ranked1v1 {
 		fighters.put(players.get(rnd1), System.currentTimeMillis());
 		fighters.put(players.get(rnd2), System.currentTimeMillis());
 
-		for (Map.Entry<L2PcInstance, Long> sendMessage : fighters.entrySet()) {
+		for (Map.Entry<Player, Long> sendMessage : fighters.entrySet()) {
 			if (sendMessage == null) {
 				continue;
 			}
@@ -70,7 +74,7 @@ public class Ranked1v1 {
 
 	public void teleportFighters() {
 		if (fighters.size() < 2) {
-			for (Map.Entry<L2PcInstance, Long> sendMessage : fighters.entrySet()) {
+			for (Map.Entry<Player, Long> sendMessage : fighters.entrySet()) {
 				if (sendMessage == null) {
 					continue;
 				}
@@ -81,14 +85,14 @@ public class Ranked1v1 {
 
 		state = State.FIGHT;
 
-		L2Npc bufferOne = NpcUtil.addSpawn(40002, -88900 + 50, -252849, -3330, 0, false, 15000, false, 0);
-		L2Npc bufferTwo = NpcUtil.addSpawn(40002, -87322 + 50, -252849, -3332, 0, false, 15000, false, 0);
+		Npc bufferOne = NpcUtil.addSpawn(40002, -88900 + 50, -252849, -3330, 0, false, 15000, false, 0);
+		Npc bufferTwo = NpcUtil.addSpawn(40002, -87322 + 50, -252849, -3332, 0, false, 15000, false, 0);
 		bufferOne.spawnMe();
 		bufferTwo.spawnMe();
 
 		int i = 1;
 
-		for (Map.Entry<L2PcInstance, Long> fighter : fighters.entrySet()) {
+		for (Map.Entry<Player, Long> fighter : fighters.entrySet()) {
 			if (fighter == null) {
 				continue;
 			}
@@ -115,7 +119,7 @@ public class Ranked1v1 {
 			return;
 		}
 
-		for (Map.Entry<L2PcInstance, Long> fighter : fighters.entrySet()) {
+		for (Map.Entry<Player, Long> fighter : fighters.entrySet()) {
 			if (fighter == null) {
 				continue;
 			}
@@ -126,7 +130,7 @@ public class Ranked1v1 {
 		return;
 	}
 
-	public Long getTime(L2PcInstance player) {
+	public Long getTime(Player player) {
 		if (!fighters.containsKey(player)) {
 			return null;
 		}
@@ -134,7 +138,7 @@ public class Ranked1v1 {
 		return Seconds;
 	}
 
-	public void onKill2v2(L2PcInstance killer, L2PcInstance killed) {
+	public void onKill2v2(Player killer, Player killed) {
 
 		int killerCurrentPoints;
 		int killedCurrentPoints;
@@ -172,7 +176,7 @@ public class Ranked1v1 {
 		killed.sendMessage("You lost " + ((totalPoints / 2) - 1) + " points");
 		killed.sendMessage("Current points: " + getRankedPoints(killed));
 
-		for (Map.Entry<L2PcInstance, Long> fighter : fighters.entrySet()) {
+		for (Map.Entry<Player, Long> fighter : fighters.entrySet()) {
 			if (fighter == null) {
 				continue;
 			}
@@ -195,7 +199,7 @@ public class Ranked1v1 {
 
 	public void runFight() {
 		if (fighters.size() < 2) {
-			for (Map.Entry<L2PcInstance, Long> sendMessage : fighters.entrySet()) {
+			for (Map.Entry<Player, Long> sendMessage : fighters.entrySet()) {
 				if (sendMessage == null) {
 					continue;
 				}
@@ -206,7 +210,7 @@ public class Ranked1v1 {
 
 		state = State.FIGHT;
 
-		for (Map.Entry<L2PcInstance, Long> fighter : fighters.entrySet()) {
+		for (Map.Entry<Player, Long> fighter : fighters.entrySet()) {
 			if (fighter == null) {
 				continue;
 			}
@@ -228,7 +232,7 @@ public class Ranked1v1 {
 
 		int alive = 0;
 
-		for (Map.Entry<L2PcInstance, Long> fighter : fighters.entrySet()) {
+		for (Map.Entry<Player, Long> fighter : fighters.entrySet()) {
 			if (fighter == null) {
 				continue;
 			}
@@ -238,7 +242,7 @@ public class Ranked1v1 {
 		}
 
 		if (alive == 2) {
-			for (Map.Entry<L2PcInstance, Long> fighter : fighters.entrySet()) {
+			for (Map.Entry<Player, Long> fighter : fighters.entrySet()) {
 				if (fighter == null) {
 					continue;
 				}
@@ -255,7 +259,7 @@ public class Ranked1v1 {
 		return;
 	}
 
-	public void register(L2PcInstance player) {
+	public void register(Player player) {
 		if (player == null) {
 			return;
 		}
@@ -269,7 +273,7 @@ public class Ranked1v1 {
 		return;
 	}
 
-	public void unregister(L2PcInstance player) {
+	public void unregister(Player player) {
 		if (player == null) {
 			return;
 		}
@@ -283,7 +287,7 @@ public class Ranked1v1 {
 		return;
 	}
 
-	public int getRankedPoints(L2PcInstance player) {
+	public int getRankedPoints(Player player) {
 		Connection get = null;
 
 		try {
@@ -299,14 +303,14 @@ public class Ranked1v1 {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
+			log.warn("Couldn't get current ranked points : " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(get);
 		}
 		return 0;
 	}
 
-	public void setRankedPoints(L2PcInstance player, int amount) {
+	public void setRankedPoints(Player player, int amount) {
 		Connection con = null;
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
@@ -318,19 +322,19 @@ public class Ranked1v1 {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
+			log.error("Failed updating Ranked Points", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public void clear(L2PcInstance player) {
+	public void clear(Player player) {
 
 		if (!player.isGM()) {
 			return;
 		}
 
-		for (L2PcInstance register : players) {
+		for (Player register : players) {
 			if (player == null) {
 				continue;
 			}
@@ -360,7 +364,7 @@ public class Ranked1v1 {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
+			log.warn("Couldn't get current ranked points : " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(get);
 		}
@@ -376,15 +380,15 @@ public class Ranked1v1 {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
+			log.error("Failed updating Ranked Points", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public void doAll(L2PcInstance player) {
+	public void doAll(Player player) {
 		player.sendMessage("Adding everyone !");
-		for (Map.Entry<Integer, L2PcInstance> fighter : L2World.getInstance().getAllPlayers().entrySet()) {
+		for (Map.Entry<Integer, Player> fighter : World.getInstance().getAllPlayers().entrySet()) {
 			if (fighter.getValue() == null || fighter.getValue().isInStoreMode() || fighter.getValue().isInCraftMode()) {
 				continue;
 			}
@@ -393,7 +397,7 @@ public class Ranked1v1 {
 		return;
 	}
 
-	public void handleEventCommand(L2PcInstance player, String command) {
+	public void handleEventCommand(Player player, String command) {
 		if (player == null) {
 			return;
 		}

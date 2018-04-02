@@ -16,16 +16,18 @@
 package l2server.gameserver.util;
 
 import l2server.Config;
+import l2server.gameserver.Server;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2MinionData;
 import l2server.gameserver.model.L2RandomMinionData;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.util.Rnd;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -34,20 +36,21 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @author luisantonioa, DS
  */
 public class MinionList {
+	private static Logger log = LoggerFactory.getLogger(Server.class.getName());
 
-	private final L2MonsterInstance master;
+	private final MonsterInstance master;
 	/**
 	 * List containing the current spawned minions
 	 */
-	private final List<L2MonsterInstance> minionReferences;
+	private final List<MonsterInstance> minionReferences;
 	/**
 	 * List containing the cached deleted minions for reuse
 	 */
-	private List<L2MonsterInstance> reusedMinionReferences = null;
+	private List<MonsterInstance> reusedMinionReferences = null;
 
 	private int spawnedMinions;
 
-	public MinionList(L2MonsterInstance pMaster) {
+	public MinionList(MonsterInstance pMaster) {
 		if (pMaster == null) {
 			throw new NullPointerException("MinionList: master is null");
 		}
@@ -59,7 +62,7 @@ public class MinionList {
 	/**
 	 * Returns list of the spawned (alive) minions.
 	 */
-	public List<L2MonsterInstance> getSpawnedMinions() {
+	public List<MonsterInstance> getSpawnedMinions() {
 		return minionReferences;
 	}
 
@@ -121,7 +124,7 @@ public class MinionList {
 	public void deleteSpawnedMinions() {
 		//Broadcast.toGameMasters("Deleting Spawned Minions.. ");
 		if (!minionReferences.isEmpty()) {
-			for (L2MonsterInstance minion : minionReferences) {
+			for (MonsterInstance minion : minionReferences) {
 				if (minion != null) {
 					//Broadcast.toGameMasters("Deleting Spawned Minion... " + minion.getName());
 					if (!minion.isDead()) {
@@ -172,7 +175,7 @@ public class MinionList {
 	 * Called on the minion spawn
 	 * and added them in the list of the spawned minions.
 	 */
-	public void onMinionSpawn(L2MonsterInstance minion) {
+	public void onMinionSpawn(MonsterInstance minion) {
 		minionReferences.add(minion);
 	}
 
@@ -196,7 +199,7 @@ public class MinionList {
 	 * @param respawnTime (ms) enable respawning of this minion while master is alive.
 	 *                    -1 - use default value: 0 (disable) for mobs and config value for raids.
 	 */
-	public void onMinionDie(L2MonsterInstance minion, int respawnTime) {
+	public void onMinionDie(MonsterInstance minion, int respawnTime) {
 		minion.setLeader(null); // prevent memory leaks
 		minionReferences.remove(minion);
 		if (reusedMinionReferences != null) {
@@ -229,7 +232,7 @@ public class MinionList {
 	 * Called if master/minion was attacked.
 	 * Master and all free minions receive aggro against attacker.
 	 */
-	public void onAssist(L2Character caller, L2Character attacker) {
+	public void onAssist(Creature caller, Creature attacker) {
 		if (attacker == null) {
 			return;
 		}
@@ -244,7 +247,7 @@ public class MinionList {
 			aggro *= 10;
 		}
 
-		for (L2MonsterInstance minion : minionReferences) {
+		for (MonsterInstance minion : minionReferences) {
 			if (minion != null && !minion.isDead() && (callerIsMaster || !minion.isInCombat())) {
 				minion.addDamageHate(attacker, 0, aggro);
 			}
@@ -259,7 +262,7 @@ public class MinionList {
 		final int offset = 200;
 		final int minRadius = (int) master.getCollisionRadius() + 30;
 
-		for (L2MonsterInstance minion : minionReferences) {
+		for (MonsterInstance minion : minionReferences) {
 			if (minion != null && !minion.isDead() && !minion.isMovementDisabled()) {
 				int newX = Rnd.get(minRadius * 2, offset * 2); // x
 				int newY = Rnd.get(newX, offset * 2); // distance
@@ -287,8 +290,8 @@ public class MinionList {
 
 		// searching in reused minions
 		if (reusedMinionReferences != null && !reusedMinionReferences.isEmpty()) {
-			L2MonsterInstance minion;
-			Iterator<L2MonsterInstance> iter = reusedMinionReferences.iterator();
+			MonsterInstance minion;
+			Iterator<MonsterInstance> iter = reusedMinionReferences.iterator();
 			while (iter.hasNext()) {
 				minion = iter.next();
 				if (minion != null && minion.getNpcId() == minionId) {
@@ -304,9 +307,9 @@ public class MinionList {
 	}
 
 	private final class MinionRespawnTask implements Runnable {
-		private final L2MonsterInstance minion;
+		private final MonsterInstance minion;
 
-		public MinionRespawnTask(L2MonsterInstance minion) {
+		public MinionRespawnTask(MonsterInstance minion) {
 			this.minion = minion;
 		}
 
@@ -336,12 +339,12 @@ public class MinionList {
 	 * <li>Set the Minion leader to this RaidBoss </li>
 	 * <li>Init the position of the Minion and add it in the world as a visible object </li><BR><BR>
 	 *
-	 * @param master   L2MonsterInstance used as master for this minion
-	 * @param minionId The L2NpcTemplate Identifier of the Minion to spawn
+	 * @param master   MonsterInstance used as master for this minion
+	 * @param minionId The NpcTemplate Identifier of the Minion to spawn
 	 */
-	public static L2MonsterInstance spawnMinion(L2MonsterInstance master, int minionId) {
+	public static MonsterInstance spawnMinion(MonsterInstance master, int minionId) {
 		// Get the template of the Minion to spawn
-		L2NpcTemplate minionTemplate = NpcTable.getInstance().getTemplate(minionId);
+		NpcTemplate minionTemplate = NpcTable.getInstance().getTemplate(minionId);
 		if (minionTemplate == null) {
 			return null;
 		}
@@ -351,11 +354,11 @@ public class MinionList {
 		}
 
 		// Create and Init the Minion and generate its Identifier
-		L2MonsterInstance minion = new L2MonsterInstance(IdFactory.getInstance().getNextId(), minionTemplate);
+		MonsterInstance minion = new MonsterInstance(IdFactory.getInstance().getNextId(), minionTemplate);
 		return initializeMinion(master, minion);
 	}
 
-	private static L2MonsterInstance initializeMinion(L2MonsterInstance master, L2MonsterInstance minion) {
+	private static MonsterInstance initializeMinion(MonsterInstance master, MonsterInstance minion) {
 		minion.stopAllEffects();
 		minion.setIsDead(false);
 		minion.setDecayed(false);
@@ -391,7 +394,7 @@ public class MinionList {
 		minion.spawnMe(newX, newY, master.getZ());
 
 		if (Config.DEBUG) {
-			Log.fine("Spawned minion template " + minion.getNpcId() + " with objid: " + minion.getObjectId() + " to boss " + master.getObjectId() +
+			log.debug("Spawned minion template " + minion.getNpcId() + " with objid: " + minion.getObjectId() + " to boss " + master.getObjectId() +
 					" ,at: " + minion.getX() + " x, " + minion.getY() + " y, " + minion.getZ() + " z");
 		}
 
@@ -402,7 +405,7 @@ public class MinionList {
 
 	private int countSpawnedMinionsById(int minionId) {
 		int count = 0;
-		for (L2MonsterInstance minion : minionReferences) {
+		for (MonsterInstance minion : minionReferences) {
 			if (minion != null && minion.getNpcId() == minionId) {
 				count++;
 			}
@@ -416,7 +419,7 @@ public class MinionList {
 
 	public final int lazyCountSpawnedMinionsGroups() {
 		Set<Integer> seenGroups = new HashSet<>();
-		for (L2MonsterInstance minion : minionReferences) {
+		for (MonsterInstance minion : minionReferences) {
 			if (minion == null) {
 				continue;
 			}

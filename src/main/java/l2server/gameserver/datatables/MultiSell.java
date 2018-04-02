@@ -17,8 +17,8 @@ package l2server.gameserver.datatables;
 
 import l2server.Config;
 import l2server.gameserver.instancemanager.RaidBossPointsManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.multisell.Ingredient;
 import l2server.gameserver.model.multisell.ListContainer;
 import l2server.gameserver.model.multisell.MultiSellEntry;
@@ -27,7 +27,8 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.MultiSellList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
@@ -41,6 +42,9 @@ import java.util.Map;
 import java.util.logging.Level;
 
 public class MultiSell {
+	private static Logger log = LoggerFactory.getLogger(MultiSell.class.getName());
+
+
 	public static final int PAGE_SIZE = 40;
 
 	public static final int PC_BANG_POINTS = -100;
@@ -79,10 +83,10 @@ public class MultiSell {
 	 * be at +0
 	 * 3) apply taxes: Uses the "taxIngredient" entry in order to add a certain amount of adena to the ingredients
 	 */
-	public final void separateAndSend(String listName, L2PcInstance player, L2Npc npc, boolean inventoryOnly) {
+	public final void separateAndSend(String listName, Player player, Npc npc, boolean inventoryOnly) {
 		ListContainer template = entries.get(listName);
 		if (template == null) {
-			Log.warning("[MultiSell] can't find list: " + listName + " requested by player: " + player.getName() + ", npcId:" +
+			log.warn("[MultiSell] can't find list: " + listName + " requested by player: " + player.getName() + ", npcId:" +
 					(npc != null ? npc.getNpcId() : 0));
 			return;
 		}
@@ -98,7 +102,7 @@ public class MultiSell {
 		player.setMultiSell(list);
 	}
 
-	public static boolean checkSpecialIngredient(int id, long amount, L2PcInstance player) {
+	public static boolean checkSpecialIngredient(int id, long amount, Player player) {
 		switch (id) {
 			case CLAN_REPUTATION:
 				if (player.getClan() == null) {
@@ -130,7 +134,7 @@ public class MultiSell {
 		return false;
 	}
 
-	public static boolean getSpecialIngredient(int id, long amount, L2PcInstance player) {
+	public static boolean getSpecialIngredient(int id, long amount, Player player) {
 		switch (id) {
 			case CLAN_REPUTATION:
 				// Tenkai custom - Only the clan leader can shop for clan reputation (to avoid abuse)
@@ -158,7 +162,7 @@ public class MultiSell {
 		return false;
 	}
 
-	public static void addSpecialProduct(int id, long amount, L2PcInstance player) {
+	public static void addSpecialProduct(int id, long amount, Player player) {
 		switch (id) {
 			case CLAN_REPUTATION:
 				player.getClan().addReputationScore((int) amount, true);
@@ -193,7 +197,7 @@ public class MultiSell {
 
 			// Already got custom data, skipping default...
 			if (entries.containsKey(name)) {
-				//Log.log(Level.WARNING, "Already got custom data for Multisell[" + id + "], skipping default...");
+				//log.warn("Already got custom data for Multisell[" + id + "], skipping default...");
 				continue;
 			}
 
@@ -225,11 +229,11 @@ public class MultiSell {
                     }*/
 				}
 			} catch (Exception e) {
-				Log.log(Level.SEVERE, "Error in file " + f, e);
+				log.error("Error in file " + f, e);
 			}
 		}
 		verify();
-		Log.info("MultiSell: Loaded " + entries.size() + " lists.");
+		log.info("MultiSell: Loaded " + entries.size() + " lists.");
 	}
 
 	private ListContainer parseDocument(XmlDocument doc) {
@@ -288,7 +292,7 @@ public class MultiSell {
 	private void hashFiles(String directoryPath, List<File> hash) {
 		File dir = new File(directoryPath);
 		if (!dir.exists()) {
-			Log.warning("Dir " + dir.getAbsolutePath() + " does not exist");
+			log.warn("Dir " + dir.getAbsolutePath() + " does not exist");
 			return;
 		}
 
@@ -305,12 +309,12 @@ public class MultiSell {
 			for (MultiSellEntry ent : list.getEntries()) {
 				for (Ingredient ing : ent.getIngredients()) {
 					if (!verifyIngredient(ing)) {
-						Log.warning("[MultiSell] can't find ingredient with itemId: " + ing.getItemId() + " in list: " + list.getListId());
+						log.warn("[MultiSell] can't find ingredient with itemId: " + ing.getItemId() + " in list: " + list.getListId());
 					}
 				}
 				for (Ingredient ing : ent.getProducts()) {
 					if (!verifyIngredient(ing)) {
-						Log.warning("[MultiSell] can't find product with itemId: " + ing.getItemId() + " in list: " + list.getListId());
+						log.warn("[MultiSell] can't find product with itemId: " + ing.getItemId() + " in list: " + list.getListId());
 					}
 				}
 			}

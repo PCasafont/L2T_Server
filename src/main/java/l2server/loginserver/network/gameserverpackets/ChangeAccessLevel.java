@@ -15,18 +15,18 @@
 
 package l2server.loginserver.network.gameserverpackets;
 
-import l2server.log.Log;
 import l2server.loginserver.GameServerThread;
 import l2server.loginserver.LoginController;
 import l2server.util.network.BaseRecievePacket;
-
-import java.util.logging.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author -Wooden-
  */
 public class ChangeAccessLevel extends BaseRecievePacket {
-	protected static Logger log = Logger.getLogger(ChangeAccessLevel.class.getName());
+	private static org.slf4j.Logger log = LoggerFactory.getLogger(ChangeAccessLevel.class.getName());
+
+
 
 	/**
 	 * @param decrypt
@@ -37,6 +37,6 @@ public class ChangeAccessLevel extends BaseRecievePacket {
 		String account = readS();
 
 		LoginController.getInstance().setAccountAccessLevel(account, level);
-		Log.info("Changed " + account + " access level to " + level);
+		log.info("Changed " + account + " access level to " + level);
 	}
 }

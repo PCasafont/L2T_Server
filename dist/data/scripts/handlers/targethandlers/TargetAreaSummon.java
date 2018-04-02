@@ -17,13 +17,13 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.SummonInstance;
+import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.gameserver.util.Util;
 
 import java.util.ArrayList;
@@ -37,21 +37,21 @@ public class TargetAreaSummon implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		List<L2Character> targetList = new ArrayList<L2Character>();
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		List<Creature> targetList = new ArrayList<Creature>();
 		// FIXME target = activeChar.getPet();
-		if (target == null || !(target instanceof L2SummonInstance) || target.isDead()) {
+		if (target == null || !(target instanceof SummonInstance) || target.isDead()) {
 			return null;
 		}
 
 		if (onlyFirst) {
-			return new L2Character[]{target};
+			return new Creature[]{target};
 		}
 
-		final Collection<L2Character> objs = target.getKnownList().getKnownCharacters();
+		final Collection<Creature> objs = target.getKnownList().getKnownCharacters();
 		final int radius = skill.getSkillRadius();
 
-		for (L2Character obj : objs) {
+		for (Creature obj : objs) {
 			if (obj == null || obj == target || obj == activeChar) {
 				continue;
 			}
@@ -60,7 +60,7 @@ public class TargetAreaSummon implements ISkillTargetTypeHandler {
 				continue;
 			}
 
-			if (!(obj instanceof L2Attackable || obj instanceof L2Playable)) {
+			if (!(obj instanceof Attackable || obj instanceof Playable)) {
 				continue;
 			}
 
@@ -71,14 +71,14 @@ public class TargetAreaSummon implements ISkillTargetTypeHandler {
 			return null;
 		}
 
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(new Creature[targetList.size()]);
 	}
 
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.TARGET_AREA_SUMMON;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.TARGET_AREA_SUMMON;
 	}
 
 	public static void main(String[] args) {

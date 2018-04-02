@@ -15,10 +15,9 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.ItemContainer;
-import l2server.log.Log;
 
 /**
  * @author Pere, DS
@@ -26,7 +25,7 @@ import l2server.log.Log;
 public class ExReplySentPost extends L2ItemListPacket {
 	
 	private Message msg;
-	private L2ItemInstance[] items = null;
+	private Item[] items = null;
 	
 	public ExReplySentPost(Message msg) {
 		this.msg = msg;
@@ -35,7 +34,7 @@ public class ExReplySentPost extends L2ItemListPacket {
 			if (attachments != null && attachments.getSize() > 0) {
 				items = attachments.getItems();
 			} else {
-				Log.warning("Message " + msg.getId() + " has attachments but itemcontainer is empty (" + msg.getSenderName() + " > " +
+				log.warn("Message " + msg.getId() + " has attachments but itemcontainer is empty (" + msg.getSenderName() + " > " +
 						msg.getReceiverName() + ").");
 			}
 		}
@@ -55,7 +54,7 @@ public class ExReplySentPost extends L2ItemListPacket {
 		
 		if (items != null && items.length > 0) {
 			writeD(items.length);
-			for (L2ItemInstance item : items) {
+			for (Item item : items) {
 				writeItem(item);
 			}
 			writeQ(msg.getReqAdena());

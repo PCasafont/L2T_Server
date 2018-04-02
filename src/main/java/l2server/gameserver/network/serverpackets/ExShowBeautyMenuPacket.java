@@ -15,16 +15,16 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Pere
  */
 public final class ExShowBeautyMenuPacket extends L2GameServerPacket {
 	private boolean isRestore;
-	private L2PcInstance player;
+	private Player player;
 	
-	public ExShowBeautyMenuPacket(boolean isRestore, L2PcInstance player) {
+	public ExShowBeautyMenuPacket(boolean isRestore, Player player) {
 		this.isRestore = isRestore;
 		this.player = player;
 	}

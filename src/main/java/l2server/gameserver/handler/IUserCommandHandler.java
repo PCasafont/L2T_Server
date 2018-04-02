@@ -15,9 +15,9 @@
 
 package l2server.gameserver.handler;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-
-import java.util.logging.Logger;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -25,15 +25,16 @@ import java.util.logging.Logger;
  * @version $Revision: 1.1.2.1.2.2 $ $Date: 2005/03/27 15:30:10 $
  */
 public interface IUserCommandHandler {
-	Logger log = Logger.getLogger(IUserCommandHandler.class.getName());
-
+	Logger log = LoggerFactory.getLogger(IUserCommandHandler.class.getName());
+	
+	
 	/**
 	 * this is the worker method that is called when someone uses an admin command.
 	 *
 	 * @param activeChar
 	 * @return command success
 	 */
-	boolean useUserCommand(int id, L2PcInstance activeChar);
+	boolean useUserCommand(int id, Player activeChar);
 
 	/**
 	 * this method is called at initialization to register all the item ids automatically

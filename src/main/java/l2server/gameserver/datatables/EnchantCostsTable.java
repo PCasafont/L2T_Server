@@ -18,23 +18,25 @@ package l2server.gameserver.datatables;
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.L2EnchantSkillLearn;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author Pere
  */
 public class EnchantCostsTable {
+	private static Logger log = LoggerFactory.getLogger(EnchantCostsTable.class.getName());
+
+
 	public static final int NORMAL_ENCHANT_COST_MULTIPLIER = 1;
 	public static final int SAFE_ENCHANT_COST_MULTIPLIER = 5;
 	public static final int IMMORTAL_ENCHANT_COST_MULTIPLIER = 25;
@@ -120,7 +122,7 @@ public class EnchantCostsTable {
 			return adenaCost;
 		}
 
-		public byte getRate(L2PcInstance ply) {
+		public byte getRate(Player ply) {
 			if (ply.getLevel() < 85) {
 				return 0;
 			}
@@ -207,7 +209,7 @@ public class EnchantCostsTable {
 			}
 		}
 
-		Log.info("EnchantGroupsTable: Loaded " + enchantDetails.size() + " enchant details.");
+		log.info("EnchantGroupsTable: Loaded " + enchantDetails.size() + " enchant details.");
 	}
 
 	public int addNewRouteForSkill(int skillId, int maxLvL, int route) {
@@ -221,7 +223,7 @@ public class EnchantCostsTable {
 		return getEnchantGroupDetails().size();
 	}
 
-	public L2EnchantSkillLearn getSkillEnchantmentForSkill(L2Skill skill) {
+	public L2EnchantSkillLearn getSkillEnchantmentForSkill(Skill skill) {
 		L2EnchantSkillLearn esl = getSkillEnchantmentBySkillId(skill.getId());
 		// there is enchantment for this skill and we have the required level of it
 		if (esl != null && skill.getLevelHash() >= esl.getBaseLevel()) {
@@ -234,7 +236,7 @@ public class EnchantCostsTable {
 		return enchantSkillTrees.get(skillId);
 	}
 
-	public int getEnchantSkillSpCost(L2Skill skill) {
+	public int getEnchantSkillSpCost(Skill skill) {
 		L2EnchantSkillLearn enchantSkillLearn = enchantSkillTrees.get(skill.getId());
 		if (enchantSkillLearn != null) {
 			EnchantSkillDetail esd = enchantSkillLearn.getEnchantSkillDetail(skill.getEnchantRouteId(), skill.getEnchantLevel());
@@ -246,7 +248,7 @@ public class EnchantCostsTable {
 		return 0;
 	}
 
-	public int getEnchantSkillAdenaCost(L2Skill skill) {
+	public int getEnchantSkillAdenaCost(Skill skill) {
 		L2EnchantSkillLearn enchantSkillLearn = enchantSkillTrees.get(skill.getId());
 		if (enchantSkillLearn != null) {
 			EnchantSkillDetail esd = enchantSkillLearn.getEnchantSkillDetail(skill.getEnchantRouteId(), skill.getEnchantLevel());
@@ -258,7 +260,7 @@ public class EnchantCostsTable {
 		return Integer.MAX_VALUE;
 	}
 
-	public byte getEnchantSkillRate(L2PcInstance player, L2Skill skill) {
+	public byte getEnchantSkillRate(Player player, Skill skill) {
 		L2EnchantSkillLearn enchantSkillLearn = enchantSkillTrees.get(skill.getId());
 		if (enchantSkillLearn != null) {
 			EnchantSkillDetail esd = enchantSkillLearn.getEnchantSkillDetail(skill.getEnchantRouteId(), skill.getEnchantLevel());

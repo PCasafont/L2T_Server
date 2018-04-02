@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.instancemanager.PartySearchManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * This class ...
@@ -24,9 +24,9 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  * @version $Revision: 1.4.2.1.2.5 $ $Date: 2005/03/27 15:29:39 $
  */
 public final class PartySmallWindowUpdate extends L2GameServerPacket {
-	private L2PcInstance member;
+	private Player member;
 	
-	public PartySmallWindowUpdate(L2PcInstance member) {
+	public PartySmallWindowUpdate(Player member) {
 		this.member = member;
 	}
 	

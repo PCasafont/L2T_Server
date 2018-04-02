@@ -1,7 +1,7 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.datatables.CoreMessageTable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
@@ -53,7 +53,7 @@ public class CoreMessage {
 		return message;
 	}
 
-	public void sendMessage(L2PcInstance player) {
+	public void sendMessage(Player player) {
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1);
 		sm.addString(renderMsg("en"));
 		player.sendPacket(sm);

@@ -15,15 +15,17 @@
 
 package l2server.gameserver.stats;
 
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.model.L2CrystallizeReward;
 import l2server.gameserver.model.L2ExtractableProduct;
 import l2server.gameserver.stats.conditions.Condition;
 import l2server.gameserver.stats.funcs.FuncTemplate;
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.item.L2EtcItem;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.log.Log;
+import l2server.gameserver.templates.item.EtcItemTemplate;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Constructor;
 import java.util.Map.Entry;
@@ -32,9 +34,12 @@ import java.util.Map.Entry;
  * @author mkizub, JIV
  */
 public final class ItemParser extends StatsParser {
+	
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	private String type;
 	private StatsSet set;
-	private L2Item item = null;
+	private ItemTemplate item = null;
 
 	public ItemParser(XmlNode node) {
 		super(node);
@@ -120,16 +125,16 @@ public final class ItemParser extends StatsParser {
 				int count = n.getInt("count");
 				double chance = n.getDouble("chance");
 				item.attach(new L2CrystallizeReward(itemId, count, chance));
-			} else if (n.getName().equalsIgnoreCase("capsuledItem") && item instanceof L2EtcItem) {
+			} else if (n.getName().equalsIgnoreCase("capsuledItem") && item instanceof EtcItemTemplate) {
 				int itemId = n.getInt("id");
 				int min = n.getInt("min");
 				int max = n.getInt("max");
 				double chance = n.getDouble("chance");
 				if (max < min) {
-					Log.info("> Max amount < Min amount in part " + itemId + ", item " + item);
+					log.info("> Max amount < Min amount in part " + itemId + ", item " + item);
 					continue;
 				}
-				((L2EtcItem) item).attach(new L2ExtractableProduct(itemId, min, max, chance));
+				((EtcItemTemplate) item).attach(new L2ExtractableProduct(itemId, min, max, chance));
 			}
 		}
 	}
@@ -139,14 +144,14 @@ public final class ItemParser extends StatsParser {
 			return; // item is already created
 		}
 		try {
-			Constructor<?> c = Class.forName("l2server.gameserver.templates.item.L2" + type).getConstructor(StatsSet.class);
-			item = (L2Item) c.newInstance(set);
+			Constructor<?> c = Class.forName("l2server.gameserver.templates.item." + type + "Template").getConstructor(StatsSet.class);
+			item = (ItemTemplate) c.newInstance(set);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 	}
 
-	public L2Item getItem() {
+	public ItemTemplate getItem() {
 		return item;
 	}
 }

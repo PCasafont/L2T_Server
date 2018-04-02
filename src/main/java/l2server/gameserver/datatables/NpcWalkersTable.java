@@ -15,21 +15,24 @@
 
 package l2server.gameserver.datatables;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.Config;
-import l2server.gameserver.ai.L2NpcWalkerAI;
+import l2server.gameserver.GameApplication;
+import l2server.gameserver.ai.NpcWalkerAI;
 import l2server.gameserver.model.L2NpcWalkerNode;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Main Table to Load Npc Walkers Routes and Chat SQL Table.<br>
@@ -38,6 +41,8 @@ import java.util.List;
  * @since 927
  */
 public class NpcWalkersTable {
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	private Map<Integer, List<L2NpcWalkerNode>> routes = new HashMap<>();
 
 	public static NpcWalkersTable getInstance() {
@@ -53,7 +58,7 @@ public class NpcWalkersTable {
 			return;
 		}
 		
-		Log.info("Initializing Walkers Routes Table.");
+		log.info("Initializing Walkers Routes Table.");
 		routes.clear();
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "WalkerRoutes.xml");
 		if (file.exists()) {
@@ -76,7 +81,7 @@ public class NpcWalkersTable {
 					//routes.put(npcId, route);
 
 					try {
-						L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(npcId);
+						NpcTemplate tmpl = NpcTable.getInstance().getTemplate(npcId);
 						L2Spawn walkerSpawn = new L2Spawn(tmpl);
 
 						walkerSpawn.setX(route.get(0).getMoveX());
@@ -88,8 +93,8 @@ public class NpcWalkersTable {
 						walkerSpawn.startRespawn();
 						walkerSpawn.doSpawn();
 
-						L2Npc walker = walkerSpawn.getNpc();
-						L2NpcWalkerAI walkerAI = new L2NpcWalkerAI(walker);
+						Npc walker = walkerSpawn.getNpc();
+						NpcWalkerAI walkerAI = new NpcWalkerAI(walker);
 
 						walker.setAI(walkerAI);
 						walkerAI.initializeRoute(route);
@@ -104,7 +109,7 @@ public class NpcWalkersTable {
 			((ArrayList<?>) list).trimToSize();
 		}
 
-		Log.info("WalkerRoutesTable: Loaded " + routes.size() + " Npc Walker Routes.");
+		log.info("WalkerRoutesTable: Loaded " + routes.size() + " Npc Walker Routes.");
 	}
 
 	public List<L2NpcWalkerNode> getRouteForNpc(int id) {

@@ -16,7 +16,7 @@
 package handlers.usercommandhandlers;
 
 import l2server.gameserver.handler.IUserCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.util.StringUtil;
 
@@ -31,10 +31,10 @@ public class ClanPenalty implements IUserCommandHandler {
 	private static final int[] COMMAND_IDS = {100};
 
 	/**
-	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, Player)
 	 */
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar) {
+	public boolean useUserCommand(int id, Player activeChar) {
 		if (id != COMMAND_IDS[0]) {
 			return false;
 		}

@@ -19,15 +19,16 @@ import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.model.Location;
 import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.VisualEffect;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2EffectType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.EffectType;
 
 /**
  * @author littlecrow
@@ -35,36 +36,36 @@ import l2server.gameserver.templates.skills.L2EffectType;
  * Implementation of the Fear Effect
  */
 public class EffectLove extends L2Effect {
-	public EffectLove(Env env, L2EffectTemplate template) {
+	public EffectLove(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 * @see Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType() {
-		return L2EffectType.LOVE;
+	public EffectType getEffectType() {
+		return EffectType.LOVE;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.LOVE;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.LOVE;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
 		// Fear skills cannot be used in event
-		if (getEffector() instanceof L2PcInstance && ((L2PcInstance) getEffector()).isPlayingEvent()) {
+		if (getEffector() instanceof Player && ((Player) getEffector()).isPlayingEvent()) {
 			return false;
 		}
 
-		if (getEffected() instanceof L2NpcInstance || getEffected() instanceof L2DefenderInstance ||
-				getEffected() instanceof L2FortCommanderInstance || getEffected() instanceof L2SiegeFlagInstance ||
-				getEffected() instanceof L2SiegeSummonInstance) {
+		if (getEffected() instanceof NpcInstance || getEffected() instanceof DefenderInstance ||
+				getEffected() instanceof FortCommanderInstance || getEffected() instanceof SiegeFlagInstance ||
+				getEffected() instanceof SiegeSummonInstance) {
 			return false;
 		}
 
@@ -82,7 +83,7 @@ public class EffectLove extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {
@@ -92,7 +93,7 @@ public class EffectLove extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {
@@ -107,7 +108,7 @@ public class EffectLove extends L2Effect {
 			posY = destiny.getY();
 		}
 
-		if (!(getEffected() instanceof L2PetInstance)) {
+		if (!(getEffected() instanceof PetInstance)) {
 			getEffected().setRunning();
 		}
 

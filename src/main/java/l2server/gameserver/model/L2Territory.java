@@ -22,13 +22,17 @@
 
 package l2server.gameserver.model;
 
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class L2Territory {
+	private static Logger log = LoggerFactory.getLogger(L2Territory.class.getName());
+
+
 	public static class Point {
 		public int x, y, zmin, zmax, proc;
 
@@ -88,7 +92,7 @@ public class L2Territory {
 
 	public void print() {
 		for (Point p : points) {
-			Log.info("(" + p.x + "," + p.y + ")");
+			log.info("(" + p.x + "," + p.y + ")");
 		}
 	}
 
@@ -165,7 +169,7 @@ public class L2Territory {
 				return p;
 			}
 		}
-		Log.warning("Can't make point for territory " + terr);
+		log.warn("Can't make point for territory " + terr);
 		return p;
 	}
 

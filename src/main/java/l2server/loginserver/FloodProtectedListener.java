@@ -16,7 +16,8 @@
 package l2server.loginserver;
 
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -24,12 +25,13 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
 
 /**
  * @author -Wooden-
  */
 public abstract class FloodProtectedListener extends Thread {
+	private static Logger log = LoggerFactory.getLogger(FloodProtectedListener.class.getName());
+	
 	private Map<String, ForeignConnection> floodProtection = new HashMap<>();
 	private String listenIp;
 	private int port;
@@ -64,7 +66,7 @@ public abstract class FloodProtectedListener extends Thread {
 							connection.close();
 							fConnection.connectionNumber -= 1;
 							if (!fConnection.isFlooding) {
-								Log.warning("Potential Flood from " + connection.getInetAddress().getHostAddress());
+								log.warn("Potential Flood from " + connection.getInetAddress().getHostAddress());
 							}
 							fConnection.isFlooding = true;
 							continue;
@@ -72,7 +74,7 @@ public abstract class FloodProtectedListener extends Thread {
 						if (fConnection.isFlooding) //if connection was flooding server but now passed the check
 						{
 							fConnection.isFlooding = false;
-							Log.info(connection.getInetAddress().getHostAddress() + " is not considered as flooding anymore.");
+							log.info(connection.getInetAddress().getHostAddress() + " is not considered as flooding anymore.");
 						}
 						fConnection.lastConnection = System.currentTimeMillis();
 					} else {
@@ -91,7 +93,7 @@ public abstract class FloodProtectedListener extends Thread {
 					try {
 						serverSocket.close();
 					} catch (IOException io) {
-						Log.log(Level.INFO, "", io);
+						log.info("", io);
 					}
 					break;
 				}
@@ -126,7 +128,7 @@ public abstract class FloodProtectedListener extends Thread {
 				floodProtection.remove(ip);
 			}
 		} else {
-			Log.warning("Removing a flood protection for a GameServer that was not in the connection map??? :" + ip);
+			log.warn("Removing a flood protection for a GameServer that was not in the connection map??? :" + ip);
 		}
 	}
 

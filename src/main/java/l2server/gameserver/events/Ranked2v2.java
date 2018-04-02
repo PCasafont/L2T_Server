@@ -3,10 +3,11 @@ package l2server.gameserver.events;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.util.NpcUtil;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 import java.sql.Connection;
@@ -19,6 +20,9 @@ import java.util.logging.Level;
  * @author Inia
  */
 public class Ranked2v2 {
+	private static Logger log = LoggerFactory.getLogger(Ranked2v2.class.getName());
+
+
 
 	public static enum State {
 		INACTIVE,
@@ -29,10 +33,10 @@ public class Ranked2v2 {
 
 	public static State state = State.INACTIVE;
 	public static final int timeEach = 1;
-	public static Vector<L2PcInstance> players = new Vector<>();
-	public static Map<L2PcInstance, Long> fighters = new HashMap<L2PcInstance, Long>();
-	public static Vector<L2PcInstance> teamOne = new Vector<>();
-	public static Vector<L2PcInstance> teamTwo = new Vector<>();
+	public static Vector<Player> players = new Vector<>();
+	public static Map<Player, Long> fighters = new HashMap<Player, Long>();
+	public static Vector<Player> teamOne = new Vector<>();
+	public static Vector<Player> teamTwo = new Vector<>();
 
 	public void checkRegistered() {
 		if (teamTwo.isEmpty() && teamOne.isEmpty()) {
@@ -57,8 +61,8 @@ public class Ranked2v2 {
 				rnd2 = Rnd.get(players.size());
 			}
 
-			L2PcInstance player1 = players.get(rnd1);
-			L2PcInstance player2 = players.get(rnd2);
+			Player player1 = players.get(rnd1);
+			Player player2 = players.get(rnd2);
 
 			players.remove(player1);
 			players.remove(player2);
@@ -75,8 +79,8 @@ public class Ranked2v2 {
 				rnd4 = Rnd.get(players.size());
 			}
 
-			L2PcInstance player3 = players.get(rnd3);
-			L2PcInstance player4 = players.get(rnd4);
+			Player player3 = players.get(rnd3);
+			Player player4 = players.get(rnd4);
 
 			players.remove(player3);
 			players.remove(player4);
@@ -85,7 +89,7 @@ public class Ranked2v2 {
 			teamTwo.add(player4);
 		}
 
-		for (L2PcInstance fighter1 : teamTwo) {
+		for (Player fighter1 : teamTwo) {
 			if (fighter1 == null) {
 				continue;
 			}
@@ -93,7 +97,7 @@ public class Ranked2v2 {
 			fighter1.sendMessage("You will be teleported in 30 seconds");
 		}
 
-		for (L2PcInstance fighter2 : teamOne) {
+		for (Player fighter2 : teamOne) {
 			if (fighter2 == null) {
 				continue;
 			}
@@ -106,14 +110,14 @@ public class Ranked2v2 {
 
 	public void teleportFighters() {
 		if (teamOne.size() < 2 || teamTwo.size() < 2) {
-			for (L2PcInstance un : teamOne) {
+			for (Player un : teamOne) {
 				if (un == null) {
 					continue;
 				}
 				un.sendMessage("An enemy have left !");
 				un.teleToLocation(-114435, 253417, -1546);
 			}
-			for (L2PcInstance deux : teamTwo) {
+			for (Player deux : teamTwo) {
 				if (deux == null) {
 					continue;
 				}
@@ -127,14 +131,14 @@ public class Ranked2v2 {
 		}
 		state = State.FIGHT;
 
-		L2Npc bufferOne = NpcUtil.addSpawn(40002, -88900 + 50, -252849, -3330, 0, false, 15000, false, 0);
-		L2Npc bufferTwo = NpcUtil.addSpawn(40002, -87322 + 50, -252849, -3332, 0, false, 15000, false, 0);
+		Npc bufferOne = NpcUtil.addSpawn(40002, -88900 + 50, -252849, -3330, 0, false, 15000, false, 0);
+		Npc bufferTwo = NpcUtil.addSpawn(40002, -87322 + 50, -252849, -3332, 0, false, 15000, false, 0);
 		bufferOne.spawnMe();
 		bufferTwo.spawnMe();
 
 		int i = 1;
 
-		for (L2PcInstance team1 : teamOne) {
+		for (Player team1 : teamOne) {
 			if (team1 == null) {
 				continue;
 			}
@@ -145,7 +149,7 @@ public class Ranked2v2 {
 			team1.heal();
 			team1.sendMessage("Fight will start in 15 seconds");
 		}
-		for (L2PcInstance team2 : teamTwo) {
+		for (Player team2 : teamTwo) {
 			if (team2 == null) {
 				continue;
 			}
@@ -165,7 +169,7 @@ public class Ranked2v2 {
 			return;
 		}
 
-		for (Map.Entry<L2PcInstance, Long> fighter : fighters.entrySet()) {
+		for (Map.Entry<Player, Long> fighter : fighters.entrySet()) {
 			if (fighter == null) {
 				continue;
 			}
@@ -175,7 +179,7 @@ public class Ranked2v2 {
 		return;
 	}
 
-	public Long getTime(L2PcInstance player) {
+	public Long getTime(Player player) {
 		if (!fighters.containsKey(player)) {
 			return null;
 		}
@@ -183,7 +187,7 @@ public class Ranked2v2 {
 		return Seconds;
 	}
 
-	public void onKill2v2(L2PcInstance killer, L2PcInstance killed) {
+	public void onKill2v2(Player killer, Player killed) {
 		int killerCurrentPoints;
 		int killedCurrentPoints;
 
@@ -227,7 +231,7 @@ public class Ranked2v2 {
 		}
 		if (teamTwo.size() == 0 || teamOne.size() == 0) {
 			if (teamOne.size() > 0) {
-				for (L2PcInstance team1 : teamOne) {
+				for (Player team1 : teamOne) {
 					if (team1 == null) {
 						continue;
 					}
@@ -240,7 +244,7 @@ public class Ranked2v2 {
 				}
 			}
 			if (teamTwo.size() > 0) {
-				for (L2PcInstance team2 : teamTwo) {
+				for (Player team2 : teamTwo) {
 					if (team2 == null) {
 						continue;
 					}
@@ -260,14 +264,14 @@ public class Ranked2v2 {
 
 	public void runFight() {
 		if (teamOne.size() < 2 || teamTwo.size() < 2) {
-			for (L2PcInstance un : teamOne) {
+			for (Player un : teamOne) {
 				if (un == null) {
 					continue;
 				}
 				un.sendMessage("An enemy have left !");
 				un.teleToLocation(-114435, 253417, -1546);
 			}
-			for (L2PcInstance deux : teamTwo) {
+			for (Player deux : teamTwo) {
 				if (deux == null) {
 					continue;
 				}
@@ -282,7 +286,7 @@ public class Ranked2v2 {
 
 		state = State.FIGHT;
 
-		for (L2PcInstance team1 : teamOne) {
+		for (Player team1 : teamOne) {
 			if (team1 == null) {
 				continue;
 			}
@@ -290,7 +294,7 @@ public class Ranked2v2 {
 			team1.setIsParalyzed(false);
 			team1.sendMessage("[RANKED] Fight !");
 		}
-		for (L2PcInstance team2 : teamTwo) {
+		for (Player team2 : teamTwo) {
 			if (team2 == null) {
 				continue;
 			}
@@ -310,7 +314,7 @@ public class Ranked2v2 {
 		int alive1 = 0;
 		int alive2 = 0;
 
-		for (L2PcInstance team1 : teamOne) {
+		for (Player team1 : teamOne) {
 			if (team1 == null) {
 				continue;
 			}
@@ -319,7 +323,7 @@ public class Ranked2v2 {
 			}
 		}
 
-		for (L2PcInstance team2 : teamTwo) {
+		for (Player team2 : teamTwo) {
 			if (team2 == null) {
 				continue;
 			}
@@ -330,7 +334,7 @@ public class Ranked2v2 {
 
 		if (alive1 > 0 && alive2 > 0) {
 
-			for (L2PcInstance un : teamOne) {
+			for (Player un : teamOne) {
 				if (un == null) {
 					continue;
 				}
@@ -342,7 +346,7 @@ public class Ranked2v2 {
 				un.teleToLocation(-114435, 253417, -1546);
 				un.sendMessage("[RANKED] Tie !");
 			}
-			for (L2PcInstance deux : teamTwo) {
+			for (Player deux : teamTwo) {
 				if (deux == null) {
 					continue;
 				}
@@ -363,7 +367,7 @@ public class Ranked2v2 {
 		return;
 	}
 
-	public void registerpt(L2PcInstance player) {
+	public void registerpt(Player player) {
 		if (player == null) {
 			return;
 		}
@@ -379,10 +383,10 @@ public class Ranked2v2 {
 			player.sendMessage("You're party have more than 2 members !");
 			return;
 		}
-		List<L2PcInstance> party = player.getParty().getPartyMembers();
+		List<Player> party = player.getParty().getPartyMembers();
 
 		if (teamOne.isEmpty()) {
-			for (L2PcInstance pt : party) {
+			for (Player pt : party) {
 				if (pt == null) {
 					continue;
 				}
@@ -390,7 +394,7 @@ public class Ranked2v2 {
 				pt.sendMessage("You joined the queue !");
 			}
 		} else if (teamTwo.isEmpty()) {
-			for (L2PcInstance pt : party) {
+			for (Player pt : party) {
 				if (pt == null) {
 					continue;
 				}
@@ -398,7 +402,7 @@ public class Ranked2v2 {
 				pt.sendMessage("You joined the queue !");
 			}
 		} else {
-			for (L2PcInstance pt : party) {
+			for (Player pt : party) {
 				if (pt == null) {
 					continue;
 				}
@@ -410,7 +414,7 @@ public class Ranked2v2 {
 		return;
 	}
 
-	public void register(L2PcInstance player) {
+	public void register(Player player) {
 		if (player == null) {
 			return;
 		}
@@ -424,7 +428,7 @@ public class Ranked2v2 {
 		return;
 	}
 
-	public void unregister(L2PcInstance player) {
+	public void unregister(Player player) {
 		if (player == null) {
 			return;
 		}
@@ -438,7 +442,7 @@ public class Ranked2v2 {
 		return;
 	}
 
-	public int getRankedPoints(L2PcInstance player) {
+	public int getRankedPoints(Player player) {
 		Connection get = null;
 
 		try {
@@ -454,14 +458,14 @@ public class Ranked2v2 {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
+			log.warn("Couldn't get current ranked points : " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(get);
 		}
 		return 0;
 	}
 
-	public void setRankedPoints(L2PcInstance player, int amount) {
+	public void setRankedPoints(Player player, int amount) {
 		Connection con = null;
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
@@ -473,13 +477,13 @@ public class Ranked2v2 {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
+			log.error("Failed updating Ranked Points", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public void handleEventCommand(L2PcInstance player, String command) {
+	public void handleEventCommand(Player player, String command) {
 		if (player == null) {
 			return;
 		}

@@ -1,10 +1,10 @@
 package l2server.gameserver.events.chess;
 
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2ChessPieceInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.instance.ChessPieceInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
@@ -23,11 +23,11 @@ public class ChessEvent {
 
 	private static ChessEventSide[] sides = new ChessEventSide[2];
 
-	private static L2ChessPieceInstance[][] board = new L2ChessPieceInstance[8][8];
+	private static ChessPieceInstance[][] board = new ChessPieceInstance[8][8];
 
 	private static ChessState state = ChessState.PARTICIPATING;
 
-	private static L2PcInstance[][] waitingPlayers = new L2PcInstance[8][2];
+	private static Player[][] waitingPlayers = new Player[8][2];
 
 	private static int[] waitingPlayerSideIds = new int[8];
 
@@ -57,7 +57,7 @@ public class ChessEvent {
 		setState(ChessState.PARTICIPATING);
 	}
 
-	public static boolean startFight(L2PcInstance player1, L2PcInstance player2) {
+	public static boolean startFight(Player player1, Player player2) {
 		// Set state to STARTING
 		setState(ChessState.STARTING);
 
@@ -79,18 +79,18 @@ public class ChessEvent {
 		return true;
 	}
 
-	public static void calculateRewards(L2PcInstance winner, L2PcInstance loser) {
+	public static void calculateRewards(Player winner, Player loser) {
 		setState(ChessState.REWARDING);
 		rewardPlayer(winner);
 		stopFight(winner);
 		MagicSkillUse MSU = new MagicSkillUse(winner, winner, 2025, 1, 1, 0, 0);
-		L2Skill skill = SkillTable.getInstance().getInfo(2025, 1);
+		Skill skill = SkillTable.getInstance().getInfo(2025, 1);
 		winner.sendPacket(MSU);
 		winner.broadcastPacket(MSU);
 		winner.useMagic(skill, false, false);
 	}
 
-	private static void rewardPlayer(L2PcInstance player) {
+	private static void rewardPlayer(Player player) {
 		if (player == null) {
 			return;
 		}
@@ -112,7 +112,7 @@ public class ChessEvent {
 		player.sendPacket(npcHtmlMessage);
 	}
 
-	public static void stopFight(L2PcInstance winner) {
+	public static void stopFight(Player winner) {
 		// Set state INACTIVATING
 		setState(ChessState.INACTIVATING);
 
@@ -139,7 +139,7 @@ public class ChessEvent {
 		setState(ChessState.PARTICIPATING);
 	}
 
-	public static synchronized boolean addWaitingParticipant(L2PcInstance playerInstance, int sideId) {
+	public static synchronized boolean addWaitingParticipant(Player playerInstance, int sideId) {
 		if (playerInstance == null) {
 			return false;
 		}
@@ -161,7 +161,7 @@ public class ChessEvent {
 		return trobat;
 	}
 
-	public static synchronized boolean removeWaitingParticipant(L2PcInstance playerInstance) {
+	public static synchronized boolean removeWaitingParticipant(Player playerInstance) {
 		if (playerInstance == null) {
 			return false;
 		}
@@ -181,12 +181,12 @@ public class ChessEvent {
 		return trobat;
 	}
 
-	public static synchronized L2PcInstance challengeWaitingParticipant(L2PcInstance playerInstance, int cellId) {
+	public static synchronized Player challengeWaitingParticipant(Player playerInstance, int cellId) {
 		if (playerInstance == null) {
 			return null;
 		}
 
-		L2PcInstance target = null;
+		Player target = null;
 
 		if (waitingPlayers[cellId][0] != null) {
 			waitingPlayers[cellId][1] = playerInstance;
@@ -199,12 +199,12 @@ public class ChessEvent {
 		return target;
 	}
 
-	public static synchronized L2PcInstance acceptChallengingParticipant(L2PcInstance playerInstance) {
+	public static synchronized Player acceptChallengingParticipant(Player playerInstance) {
 		if (playerInstance == null) {
 			return null;
 		}
 
-		L2PcInstance target = null;
+		Player target = null;
 		int side = 0;
 
 		int i = 0;
@@ -228,12 +228,12 @@ public class ChessEvent {
 		return target;
 	}
 
-	public static synchronized L2PcInstance rejectChallengingParticipant(L2PcInstance playerInstance) {
+	public static synchronized Player rejectChallengingParticipant(Player playerInstance) {
 		if (playerInstance == null) {
 			return null;
 		}
 
-		L2PcInstance target = null;
+		Player target = null;
 
 		int i = 0;
 
@@ -269,10 +269,10 @@ public class ChessEvent {
 		sides[1].getPlayer().sendMessage(message);
 	}
 
-	public static void onLogout(L2PcInstance playerInstance) {
+	public static void onLogout(Player playerInstance) {
 		if (playerInstance != null && (isState(ChessState.STARTING) || isState(ChessState.STARTED) || isState(ChessState.PARTICIPATING))) {
 			if (isState(ChessState.STARTED) && isPlayerParticipant(playerInstance.getObjectId())) {
-				for (L2Abnormal effect : playerInstance.getAllEffects()) {
+				for (Abnormal effect : playerInstance.getAllEffects()) {
 					if (effect != null) {
 						effect.exit();
 					}
@@ -282,7 +282,7 @@ public class ChessEvent {
 		}
 	}
 
-	public static synchronized void onBypass(String command, L2PcInstance playerInstance) {
+	public static synchronized void onBypass(String command, Player playerInstance) {
 		if (playerInstance == null || !isState(ChessState.PARTICIPATING)) {
 			return;
 		}
@@ -319,7 +319,7 @@ public class ChessEvent {
 		} else if (command.startsWith("challenge")) {
 			int waitCell = Integer.valueOf(command.substring(9));
 
-			L2PcInstance target = null;
+			Player target = null;
 			target = challengeWaitingParticipant(playerInstance, waitCell);
 
 			NpcHtmlMessage npcHtmlMessage1 = new NpcHtmlMessage(0);
@@ -334,7 +334,7 @@ public class ChessEvent {
 					" has challenged you for a game. Do you accept?<br>" + "To accept talk with the Chess Manager.</body></html>");
 			target.sendPacket(npcHtmlMessage2);
 		} else if (command.equals("accept")) {
-			L2PcInstance target = null;
+			Player target = null;
 			target = acceptChallengingParticipant(playerInstance);
 
 			NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(0);
@@ -343,7 +343,7 @@ public class ChessEvent {
 			playerInstance.sendPacket(npcHtmlMessage);
 			target.sendPacket(npcHtmlMessage);
 		} else if (command.equals("reject")) {
-			L2PcInstance target = null;
+			Player target = null;
 			target = rejectChallengingParticipant(playerInstance);
 
 			NpcHtmlMessage npcHtmlMessage1 = new NpcHtmlMessage(0);
@@ -412,7 +412,7 @@ public class ChessEvent {
 		return false;
 	}
 
-	public static L2PcInstance[][] getWaitingPlayers() {
+	public static Player[][] getWaitingPlayers() {
 		return waitingPlayers;
 	}
 
@@ -420,15 +420,15 @@ public class ChessEvent {
 		return sides[id];
 	}
 
-	public static L2ChessPieceInstance[][] getBoard() {
+	public static ChessPieceInstance[][] getBoard() {
 		return board;
 	}
 
-	public static L2ChessPieceInstance[][] getBoard(int side) {
+	public static ChessPieceInstance[][] getBoard(int side) {
 		if (side == 0) {
 			return board;
 		} else {
-			L2ChessPieceInstance[][] board = new L2ChessPieceInstance[8][8];
+			ChessPieceInstance[][] board = new ChessPieceInstance[8][8];
 			for (int i = 0; i < 8; i++) {
 				for (int j = 0; j < 8; j++) {
 					board[i][j] = board[7 - i][7 - j];
@@ -438,11 +438,11 @@ public class ChessEvent {
 		}
 	}
 
-	public static void setBoard(int i, int j, L2ChessPieceInstance piece) {
+	public static void setBoard(int i, int j, ChessPieceInstance piece) {
 		board[i][j] = piece;
 	}
 
-	public static void setBoard(int i, int j, L2ChessPieceInstance piece, int side) {
+	public static void setBoard(int i, int j, ChessPieceInstance piece, int side) {
 		if (side != 0) {
 			i = 7 - i;
 			j = 7 - j;

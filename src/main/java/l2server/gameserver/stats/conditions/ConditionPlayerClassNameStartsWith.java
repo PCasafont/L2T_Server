@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 
 import java.util.ArrayList;
@@ -29,12 +29,12 @@ public class ConditionPlayerClassNameStartsWith extends Condition {
 
 	@Override
 	public boolean testImpl(Env env) {
-		if (!(env.player instanceof L2PcInstance)) {
+		if (!(env.player instanceof Player)) {
 			return false;
 		}
 
 		for (String className : className) {
-			if (((L2PcInstance) env.player).getCurrentClass().getName().startsWith(className)) {
+			if (((Player) env.player).getCurrentClass().getName().startsWith(className)) {
 				return true;
 			}
 		}

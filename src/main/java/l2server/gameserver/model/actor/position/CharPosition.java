@@ -18,8 +18,8 @@
 
 package l2server.gameserver.model.actor.position;
 
-import l2server.gameserver.model.L2WorldRegion;
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.WorldRegion;
+import l2server.gameserver.model.actor.Creature;
 
 /**
  * @author Erb
@@ -27,7 +27,7 @@ import l2server.gameserver.model.actor.L2Character;
 public class CharPosition extends ObjectPosition {
 	// =========================================================
 	// Constructor
-	public CharPosition(L2Character activeObject) {
+	public CharPosition(Creature activeObject) {
 		super(activeObject);
 	}
 
@@ -37,13 +37,13 @@ public class CharPosition extends ObjectPosition {
 	}
 
 	@Override
-	public final void setWorldRegion(L2WorldRegion value) {
-		if (getWorldRegion() != null && getActiveObject() instanceof L2Character) // confirm revalidation of old region's zones
+	public final void setWorldRegion(WorldRegion value) {
+		if (getWorldRegion() != null && getActiveObject() instanceof Creature) // confirm revalidation of old region's zones
 		{
 			if (value != null) {
-				getWorldRegion().revalidateZones((L2Character) getActiveObject()); // at world region change
+				getWorldRegion().revalidateZones((Creature) getActiveObject()); // at world region change
 			} else {
-				getWorldRegion().removeFromZones((L2Character) getActiveObject()); // at world region change
+				getWorldRegion().removeFromZones((Creature) getActiveObject()); // at world region change
 			}
 		}
 

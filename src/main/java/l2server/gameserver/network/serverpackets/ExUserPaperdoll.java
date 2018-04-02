@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
 
 import java.nio.ByteBuffer;
@@ -28,7 +28,7 @@ public final class ExUserPaperdoll extends L2GameServerPacket {
 	private int objectId;
 	private byte[] data;
 	
-	public ExUserPaperdoll(L2PcInstance character) {
+	public ExUserPaperdoll(Player character) {
 		objectId = character.getObjectId();
 		int airShipHelm = 0;
 		if (character.isInAirShip() && character.getAirShip().isCaptain(character)) {

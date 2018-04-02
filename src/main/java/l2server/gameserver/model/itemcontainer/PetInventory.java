@@ -16,27 +16,27 @@
 package l2server.gameserver.model.itemcontainer;
 
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2ItemInstance.ItemLocation;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.templates.item.L2EtcItemType;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Item.ItemLocation;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.templates.item.EtcItemType;
+import l2server.gameserver.templates.item.ItemTemplate;
 
 public class PetInventory extends Inventory {
-	private final L2PetInstance owner;
+	private final PetInstance owner;
 	
-	public PetInventory(L2PetInstance owner) {
+	public PetInventory(PetInstance owner) {
 		this.owner = owner;
 	}
 	
 	@Override
-	public L2PetInstance getOwner() {
+	public PetInstance getOwner() {
 		return owner;
 	}
 	
 	@Override
 	public int getOwnerId() {
-		// gets the L2PcInstance-owner's ID
+		// gets the Player-owner's ID
 		int id;
 		try {
 			id = owner.getOwner().getObjectId();
@@ -55,10 +55,10 @@ public class PetInventory extends Inventory {
 		getOwner().updateAndBroadcastStatus(1);
 	}
 	
-	public boolean validateCapacity(L2ItemInstance item) {
+	public boolean validateCapacity(Item item) {
 		int slots = 0;
 		
-		if (!(item.isStackable() && getItemByItemId(item.getItemId()) != null) && item.getItemType() != L2EtcItemType.HERB) {
+		if (!(item.isStackable() && getItemByItemId(item.getItemId()) != null) && item.getItemType() != EtcItemType.HERB) {
 			slots++;
 		}
 		
@@ -70,9 +70,9 @@ public class PetInventory extends Inventory {
 		return items.size() + slots <= owner.getInventoryLimit();
 	}
 	
-	public boolean validateWeight(L2ItemInstance item, long count) {
+	public boolean validateWeight(Item item, long count) {
 		int weight = 0;
-		L2Item template = ItemTable.getInstance().getTemplate(item.getItemId());
+		ItemTemplate template = ItemTable.getInstance().getTemplate(item.getItemId());
 		if (template == null) {
 			return false;
 		}
@@ -99,7 +99,7 @@ public class PetInventory extends Inventory {
 	public void restore() {
 		super.restore();
 		// check for equiped items from other pets
-		for (L2ItemInstance item : items.values()) {
+		for (Item item : items.values()) {
 			if (item.isEquipped()) {
 				if (!item.getItem().checkCondition(getOwner(), getOwner(), false)) {
 					unEquipItemInSlot(item.getLocationSlot());
@@ -109,7 +109,7 @@ public class PetInventory extends Inventory {
 	}
 	
 	public void transferItemsToOwner() {
-		for (L2ItemInstance item : items.values()) {
+		for (Item item : items.values()) {
 			getOwner().transferItem("return",
 					item.getObjectId(),
 					item.getCount(),

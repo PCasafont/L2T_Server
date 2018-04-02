@@ -15,36 +15,36 @@
 
 package handlers.actionhandlers;
 
-import l2server.gameserver.Nodes.L2Node;
+import l2server.gameserver.Nodes.Node;
 import l2server.gameserver.Nodes.NodesManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.events.instanced.EventInstance.EventState;
 import l2server.gameserver.handler.IActionHandler;
 import l2server.gameserver.instancemanager.GMEventManager;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.util.Rnd;
 
 public class L2NpcAction implements IActionHandler {
 	/**
-	 * Manage actions when a player click on the L2Npc.<BR><BR>
+	 * Manage actions when a player click on the Npc.<BR><BR>
 	 * <p>
-	 * <B><U> Actions on first click on the L2Npc (Select it)</U> :</B><BR><BR>
-	 * <li>Set the L2Npc as target of the L2PcInstance player (if necessary)</li>
-	 * <li>Send a Server->Client packet MyTargetSelected to the L2PcInstance player (display the select window)</li>
-	 * <li>If L2Npc is autoAttackable, send a Server->Client packet StatusUpdate to the L2PcInstance in order to update L2Npc HP bar </li>
-	 * <li>Send a Server->Client packet ValidateLocation to correct the L2Npc position and heading on the client </li><BR><BR>
+	 * <B><U> Actions on first click on the Npc (Select it)</U> :</B><BR><BR>
+	 * <li>Set the Npc as target of the Player player (if necessary)</li>
+	 * <li>Send a Server->Client packet MyTargetSelected to the Player player (display the select window)</li>
+	 * <li>If Npc is autoAttackable, send a Server->Client packet StatusUpdate to the Player in order to update Npc HP bar </li>
+	 * <li>Send a Server->Client packet ValidateLocation to correct the Npc position and heading on the client </li><BR><BR>
 	 * <p>
-	 * <B><U> Actions on second click on the L2Npc (Attack it/Intercat with it)</U> :</B><BR><BR>
-	 * <li>Send a Server->Client packet MyTargetSelected to the L2PcInstance player (display the select window)</li>
-	 * <li>If L2Npc is autoAttackable, notify the L2PcInstance AI with AI_INTENTION_ATTACK (after a height verification)</li>
-	 * <li>If L2Npc is NOT autoAttackable, notify the L2PcInstance AI with AI_INTENTION_INTERACT (after a distance verification) and show message</li><BR><BR>
+	 * <B><U> Actions on second click on the Npc (Attack it/Intercat with it)</U> :</B><BR><BR>
+	 * <li>Send a Server->Client packet MyTargetSelected to the Player player (display the select window)</li>
+	 * <li>If Npc is autoAttackable, notify the Player AI with AI_INTENTION_ATTACK (after a height verification)</li>
+	 * <li>If Npc is NOT autoAttackable, notify the Player AI with AI_INTENTION_INTERACT (after a distance verification) and show message</li><BR><BR>
 	 * <p>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : Each group of Server->Client packet must be terminated by a ActionFailed packet in order to avoid
 	 * that client wait an other packet</B></FONT><BR><BR>
@@ -52,11 +52,11 @@ public class L2NpcAction implements IActionHandler {
 	 * <B><U> Example of use </U> :</B><BR><BR>
 	 * <li> Client packet : Action, AttackRequest</li><BR><BR>
 	 *
-	 * @param activeChar The L2PcInstance that start an action on the L2Npc
+	 * @param activeChar The Player that start an action on the Npc
 	 */
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
-		if (!((L2Npc) target).canTarget(activeChar)) {
+	public boolean action(Player activeChar, WorldObject target, boolean interact) {
+		if (!((Npc) target).canTarget(activeChar)) {
 			return false;
 		}
 
@@ -65,7 +65,7 @@ public class L2NpcAction implements IActionHandler {
 			return false;
 		}
 
-		if ((((L2Npc) target).getNpcId() >= 95000 && ((L2Npc) target).getNpcId() <= 95004) && !activeChar.isInsideRadius(target, 200, true, true)) {
+		if ((((Npc) target).getNpcId() >= 95000 && ((Npc) target).getNpcId() <= 95004) && !activeChar.isInsideRadius(target, 200, true, true)) {
 			activeChar.sendMessage("You have to be closer from the totem.");
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
@@ -76,91 +76,91 @@ public class L2NpcAction implements IActionHandler {
 			return false;
 		}
 
-		activeChar.setLastFolkNPC((L2Npc) target);
+		activeChar.setLastFolkNPC((Npc) target);
 
-		// Check if the L2PcInstance already target the L2Npc
+		// Check if the Player already target the Npc
 		if (target != activeChar.getTarget()) {
-			// Set the target of the L2PcInstance activeChar
+			// Set the target of the Player activeChar
 			activeChar.setTarget(target);
 
 			// Check if the activeChar is attackable (without a forced attack)
 			if (target.isAutoAttackable(activeChar)) {
-				((L2Npc) target).getAI(); //wake up ai
-				// Send a Server->Client packet MyTargetSelected to the L2PcInstance activeChar
+				((Npc) target).getAI(); //wake up ai
+				// Send a Server->Client packet MyTargetSelected to the Player activeChar
 				// The activeChar.getLevel() - getLevel() permit to display the correct color in the select window
-				MyTargetSelected my = new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((L2Character) target).getLevel());
+				MyTargetSelected my = new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((Creature) target).getLevel());
 				activeChar.sendPacket(my);
-				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character) target));
+				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((Creature) target));
 
-				// Send a Server->Client packet StatusUpdate of the L2Npc to the L2PcInstance to update its HP bar
+				// Send a Server->Client packet StatusUpdate of the Npc to the Player to update its HP bar
 				StatusUpdate su = new StatusUpdate(target);
-				su.addAttribute(StatusUpdate.CUR_HP, (int) ((L2Character) target).getCurrentHp());
-				su.addAttribute(StatusUpdate.MAX_HP, ((L2Character) target).getMaxHp());
+				su.addAttribute(StatusUpdate.CUR_HP, (int) ((Creature) target).getCurrentHp());
+				su.addAttribute(StatusUpdate.MAX_HP, ((Creature) target).getMaxHp());
 				activeChar.sendPacket(su);
 
 				//TODO Temp fix for bugging paralysis bugs on monsters
-				for (L2Abnormal e : ((L2Npc) target).getAllEffects()) {
+				for (Abnormal e : ((Npc) target).getAllEffects()) {
 					if (e.getTime() > e.getDuration() && e.getDuration() != -1) //Not if duration is defined with -1 (perm effect)
 					{
 						e.exit();
 					}
 				}
 			} else {
-				// Send a Server->Client packet MyTargetSelected to the L2PcInstance activeChar
+				// Send a Server->Client packet MyTargetSelected to the Player activeChar
 				MyTargetSelected my = new MyTargetSelected(target.getObjectId(), 0);
 				activeChar.sendPacket(my);
-				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character) target));
+				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((Creature) target));
 			}
 
-			// Send a Server->Client packet ValidateLocation to correct the L2Npc position and heading on the client
-			activeChar.sendPacket(new ValidateLocation((L2Character) target));
+			// Send a Server->Client packet ValidateLocation to correct the Npc position and heading on the client
+			activeChar.sendPacket(new ValidateLocation((Creature) target));
 		} else if (interact) {
-			activeChar.sendPacket(new ValidateLocation((L2Character) target));
+			activeChar.sendPacket(new ValidateLocation((Creature) target));
 			
 			// Node Interact !
-			if ((((L2Npc) target).getNpcId() >= 95000 && ((L2Npc) target).getNpcId() <= 95004)) {
+			if ((((Npc) target).getNpcId() >= 95000 && ((Npc) target).getNpcId() <= 95004)) {
 				
-				((L2Node) target).TalkToMe(activeChar);
-				//NodesManager.getInstance().tryOwnNode(activeChar, (L2Npc) target);
+				((Node) target).TalkToMe(activeChar);
+				//NodesManager.getInstance().tryOwnNode(activeChar, (Npc) target);
 				return true;
 			}
 			// Check if the activeChar is attackable (without a forced attack) and isn't dead
-			if (target.isAutoAttackable(activeChar) && !((L2Character) target).isAlikeDead()) {
+			if (target.isAutoAttackable(activeChar) && !((Creature) target).isAlikeDead()) {
 				// Check the height difference
 				if (Math.abs(activeChar.getZ() - target.getZ()) < 400) // this max heigth difference might need some tweaking
 				{
-					// Set the L2PcInstance Intention to AI_INTENTION_ATTACK
+					// Set the Player Intention to AI_INTENTION_ATTACK
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 					// activeChar.startAttack(this);
 				} else {
-					// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
+					// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				}
 			} else if (!target.isAutoAttackable(activeChar)) {
-				// Calculate the distance between the L2PcInstance and the L2Npc
-				if (!((L2Npc) target).canInteract(activeChar)) {
-					// Notify the L2PcInstance AI with AI_INTENTION_INTERACT
+				// Calculate the distance between the Player and the Npc
+				if (!((Npc) target).canInteract(activeChar)) {
+					// Notify the Player AI with AI_INTENTION_INTERACT
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 				} else {
-					if (((L2Npc) target).hasRandomAnimation()) {
-						((L2Npc) target).onRandomAnimation(Rnd.get(8));
+					if (((Npc) target).hasRandomAnimation()) {
+						((Npc) target).onRandomAnimation(Rnd.get(8));
 					}
 
 					// Tenkai custom - instant action on touching certain NPC instead of html stuff etc.
-					if (((L2Npc) target).getNpcId() == 50101) {
-						NodesManager.getInstance().tryOwnNode(activeChar, (L2Npc) target);
+					if (((Npc) target).getNpcId() == 50101) {
+						NodesManager.getInstance().tryOwnNode(activeChar, (Npc) target);
 						return true;
 					}
 					
-					Quest[] qlsa = ((L2Npc) target).getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);
+					Quest[] qlsa = ((Npc) target).getTemplate().getEventQuests(Quest.QuestEventType.QUEST_START);
 					if (qlsa != null && qlsa.length > 0) {
 						activeChar.setLastQuestNpcObject(target.getObjectId());
 					}
-					Quest[] qlst = ((L2Npc) target).getTemplate().getEventQuests(Quest.QuestEventType.ON_FIRST_TALK);
+					Quest[] qlst = ((Npc) target).getTemplate().getEventQuests(Quest.QuestEventType.ON_FIRST_TALK);
 					if (qlst != null && qlst.length == 1) {
-						qlst[0].notifyFirstTalk((L2Npc) target, activeChar);
+						qlst[0].notifyFirstTalk((Npc) target, activeChar);
 					} else {
-						((L2Npc) target).showChatWindow(activeChar);
+						((Npc) target).showChatWindow(activeChar);
 					}
 
 					GMEventManager.getInstance().onNpcTalk(target, activeChar);

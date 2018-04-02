@@ -16,10 +16,10 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.ClanWarehouse;
 import l2server.gameserver.model.itemcontainer.ItemContainer;
 import l2server.gameserver.model.itemcontainer.PcWarehouse;
@@ -29,7 +29,6 @@ import l2server.gameserver.network.serverpackets.ItemList;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 
 /**
  * This class ...
@@ -70,7 +69,7 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket {
 			return;
 		}
 		
-		final L2PcInstance player = getClient().getActiveChar();
+		final Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -85,7 +84,7 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket {
 			return;
 		}
 		
-		final L2Npc manager = player.getLastFolkNPC();
+		final Npc manager = player.getLastFolkNPC();
 		if ((manager == null || !manager.isWarehouse() || !manager.canInteract(player)) && !player.isGM()) {
 			return;
 		}
@@ -127,7 +126,7 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket {
 		
 		for (WarehouseItem i : items) {
 			// Calculate needed slots
-			L2ItemInstance item = warehouse.getItemByObjectId(i.getObjectId());
+			Item item = warehouse.getItemByObjectId(i.getObjectId());
 			if (item == null || item.getCount() < i.getCount()) {
 				Util.handleIllegalPlayerAction(player,
 						"Warning!! Character " + player.getName() + " of account " + player.getAccountName() +
@@ -159,19 +158,19 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket {
 		// Proceed to the transfer
 		InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
 		for (WarehouseItem i : items) {
-			L2ItemInstance oldItem = warehouse.getItemByObjectId(i.getObjectId());
+			Item oldItem = warehouse.getItemByObjectId(i.getObjectId());
 			if (oldItem == null || oldItem.getCount() < i.getCount()) {
-				Log.warning("Error withdrawing a warehouse object for char " + player.getName() + " (olditem == null)");
+				log.warn("Error withdrawing a warehouse object for char " + player.getName() + " (olditem == null)");
 				return;
 			}
-			final L2ItemInstance newItem = warehouse.transferItem(warehouse.getOwnerId() + "'s " + warehouse.getName(),
+			final Item newItem = warehouse.transferItem(warehouse.getOwnerId() + "'s " + warehouse.getName(),
 					i.getObjectId(),
 					i.getCount(),
 					player.getInventory(),
 					player,
 					manager);
 			if (newItem == null) {
-				Log.warning("Error withdrawing a warehouse object for char " + player.getName() + " (newitem == null)");
+				log.warn("Error withdrawing a warehouse object for char " + player.getName() + " (newitem == null)");
 				return;
 			}
 			

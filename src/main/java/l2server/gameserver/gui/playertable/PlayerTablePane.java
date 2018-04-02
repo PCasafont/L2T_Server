@@ -20,7 +20,8 @@
 package l2server.gameserver.gui.playertable;
 
 import l2server.gameserver.ThreadPoolManager;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -34,6 +35,9 @@ import java.awt.event.MouseEvent;
  * @author KenM
  */
 public class PlayerTablePane extends JPanel {
+	private static Logger log = LoggerFactory.getLogger(PlayerTablePane.class.getName());
+
+
 	private static final long serialVersionUID = 1L;
 	
 	public class ButtonListeners implements ActionListener {
@@ -150,6 +154,6 @@ public class PlayerTablePane extends JPanel {
 	@Override
 	public void finalize() throws Throwable {
 		super.finalize();
-		Log.info("Finalized: " + getClass().getSimpleName());
+		log.info("Finalized: " + getClass().getSimpleName());
 	}
 }

@@ -1680,7 +1680,7 @@
 		GeoData options:
 		0 = GeoData and PathFinding OFF (default)
 		1 = GeoData is used to check Line Of Sight (LOS) targeting and
-		L2Playable movement. You need to download files for data/geodata folder.
+		Playable movement. You need to download files for data/geodata folder.
 		Monsters can pass walls but not aggro (no line of sight) through them.
 		2 = Full GeoData enabled. Includes PathFinding (requires also /data/pathnode
 		files if CellPathFinding not enabled) and all character moves go through

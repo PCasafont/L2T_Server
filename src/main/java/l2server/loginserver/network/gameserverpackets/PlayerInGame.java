@@ -16,7 +16,8 @@
 package l2server.loginserver.network.gameserverpackets;
 
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.loginserver.GameServerTable;
 import l2server.loginserver.GameServerThread;
 import l2server.util.network.BaseRecievePacket;
@@ -25,6 +26,9 @@ import l2server.util.network.BaseRecievePacket;
  * @author -Wooden-
  */
 public class PlayerInGame extends BaseRecievePacket {
+	private static Logger log = LoggerFactory.getLogger(PlayerInGame.class.getName());
+
+
 
 	/**
 	 * @param decrypt
@@ -36,7 +40,7 @@ public class PlayerInGame extends BaseRecievePacket {
 			String account = readS();
 			server.addAccountOnGameServer(account);
 			if (Config.DEBUG) {
-				Log.info("Account " + account + " logged in GameServer: [" + server.getServerId() + "] " +
+				log.info("Account " + account + " logged in GameServer: [" + server.getServerId() + "] " +
 						GameServerTable.getInstance().getServerNameById(server.getServerId()));
 			}
 		}

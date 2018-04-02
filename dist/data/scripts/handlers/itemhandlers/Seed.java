@@ -18,16 +18,16 @@ package handlers.itemhandlers;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.instancemanager.CastleManorManager;
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Manor;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2ChestInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.ChestInstance;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -38,11 +38,11 @@ import l2server.gameserver.stats.SkillHolder;
  */
 public class Seed implements IItemHandler {
 	/**
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(Playable, Item, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
-		if (!(playable instanceof L2PcInstance)) {
+	public void useItem(Playable playable, Item item, boolean forceUse) {
+		if (!(playable instanceof Player)) {
 			return;
 		}
 
@@ -50,19 +50,19 @@ public class Seed implements IItemHandler {
 			return;
 		}
 
-		final L2Object tgt = playable.getTarget();
-		if (!(tgt instanceof L2Npc)) {
+		final WorldObject tgt = playable.getTarget();
+		if (!(tgt instanceof Npc)) {
 			playable.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		if (!(tgt instanceof L2MonsterInstance) || tgt instanceof L2ChestInstance || ((L2Character) tgt).isRaid()) {
+		if (!(tgt instanceof MonsterInstance) || tgt instanceof ChestInstance || ((Creature) tgt).isRaid()) {
 			playable.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_TARGET_IS_UNAVAILABLE_FOR_SEEDING));
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
-		final L2MonsterInstance target = (L2MonsterInstance) tgt;
+		final MonsterInstance target = (MonsterInstance) tgt;
 		if (target.isDead()) {
 			playable.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
@@ -76,15 +76,15 @@ public class Seed implements IItemHandler {
 
 		final int seedId = item.getItemId();
 		if (areaValid(seedId, MapRegionTable.getInstance().getAreaCastle(playable))) {
-			target.setSeeded(seedId, (L2PcInstance) playable);
+			target.setSeeded(seedId, (Player) playable);
 			final SkillHolder[] skills = item.getEtcItem().getSkills();
 			if (skills != null) {
 				if (skills[0] == null) {
 					return;
 				}
 
-				L2Skill itemskill = skills[0].getSkill();
-				((L2PcInstance) playable).useMagic(itemskill, false, false);
+				Skill itemskill = skills[0].getSkill();
+				((Player) playable).useMagic(itemskill, false, false);
 			}
 		} else {
 			playable.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_SEED_MAY_NOT_BE_SOWN_HERE));

@@ -22,8 +22,8 @@ import l2server.gameserver.datatables.OfflineTradersTable;
 import l2server.gameserver.events.DamageManager;
 import l2server.gameserver.events.LotterySystem;
 import l2server.gameserver.instancemanager.*;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.ClanWarManager;
 import l2server.gameserver.model.olympiad.HeroesManager;
 import l2server.gameserver.model.olympiad.Olympiad;
@@ -33,10 +33,10 @@ import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.ServerClose;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Broadcast;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
-import java.util.logging.Level;
 
 /**
  * This class provides the functions for shutting down and restarting the server
@@ -45,6 +45,9 @@ import java.util.logging.Level;
  * @version $Revision: 1.2.4.5 $ $Date: 2005/03/27 15:29:09 $
  */
 public class Shutdown extends Thread {
+	private static Logger log = LoggerFactory.getLogger(Shutdown.class.getName());
+
+
 	public static final int SIGTERM = 0;
 	public static final int GM_SHUTDOWN = 1;
 	public static final int GM_RESTART = 2;
@@ -56,7 +59,7 @@ public class Shutdown extends Thread {
 
 	private boolean shuttingDown = false;
 
-	public void startShutdown(L2PcInstance activeChar, int seconds, boolean restart) {
+	public void startShutdown(Player activeChar, int seconds, boolean restart) {
 		String text = null;
 		if (activeChar != null) {
 			text = "GM: " + activeChar.getName() + " (" + activeChar.getObjectId() + ") issued shutdown command.";
@@ -79,9 +82,9 @@ public class Shutdown extends Thread {
 		}
 
 		if (text != null) {
-			Log.info(text);
+			log.info(text);
 		}
-		Log.info(MODE_TEXT[shutdownMode] + " in " + seconds + " seconds!");
+		log.info(MODE_TEXT[shutdownMode] + " in " + seconds + " seconds!");
 
 		if (shutdownMode > 0) {
 			switch (seconds) {
@@ -121,8 +124,8 @@ public class Shutdown extends Thread {
 	 *
 	 * @param activeChar GM who issued the abort command
 	 */
-	public void abort(L2PcInstance activeChar) {
-		Log.warning("GM: " + activeChar.getName() + " (" + activeChar.getObjectId() + ") issued shutdown ABORT. " + MODE_TEXT[shutdownMode] +
+	public void abort(Player activeChar) {
+		log.warn("GM: " + activeChar.getName() + " (" + activeChar.getObjectId() + ") issued shutdown ABORT. " + MODE_TEXT[shutdownMode] +
 				" has been stopped!");
 		if (task != null) {
 			task.abort();
@@ -171,7 +174,7 @@ public class Shutdown extends Thread {
 				OfflineTradersTable.INSTANCE.storeOffliners();
 			}
 		} catch (Throwable t) {
-			Log.log(Level.WARNING, "Error saving offline shops.", t);
+			log.warn("Error saving offline shops.", t);
 		}
 
 		try {
@@ -179,14 +182,14 @@ public class Shutdown extends Thread {
 				CustomOfflineBuffersManager.getInstance().storeOfflineBuffers();
 			}
 		} catch (Throwable t) {
-			Log.log(Level.WARNING, "Error saving offline buffers.", t);
+			log.warn("Error saving offline buffers.", t);
 		}
 
 		try {
 			disconnectAllCharacters();
-			Log.info("All players disconnected.");
+			log.info("All players disconnected.");
 		} catch (Throwable t) {
-			Log.warning("Something went wrong while disconnecting players: " + t.getMessage());
+			log.warn("Something went wrong while disconnecting players: " + t.getMessage());
 			t.printStackTrace();
 		}
 
@@ -194,7 +197,7 @@ public class Shutdown extends Thread {
 		try {
 			TimeController.getInstance().stopTimer();
 		} catch (Throwable t) {
-			Log.warning("Something went wrong while stopping GameTimeController: " + t.getMessage());
+			log.warn("Something went wrong while stopping GameTimeController: " + t.getMessage());
 			t.printStackTrace();
 		}
 
@@ -204,7 +207,7 @@ public class Shutdown extends Thread {
 		try {
 			LoginServerThread.getInstance().interrupt();
 		} catch (Throwable t) {
-			Log.warning("Something went wrong while shutting down Login Server connection: " + t.getMessage());
+			log.warn("Something went wrong while shutting down Login Server connection: " + t.getMessage());
 			t.printStackTrace();
 		}
 
@@ -215,7 +218,7 @@ public class Shutdown extends Thread {
 		try {
 			Server.gameServer.getSelectorThread().shutdown();
 		} catch (Throwable t) {
-			Log.warning("Something went wrong while shutting down selector thread: " + t.getMessage());
+			log.warn("Something went wrong while shutting down selector thread: " + t.getMessage());
 			t.printStackTrace();
 		}
 
@@ -223,7 +226,7 @@ public class Shutdown extends Thread {
 		try {
 			L2DatabaseFactory.getInstance().shutdown();
 		} catch (Throwable t) {
-			Log.warning("Something went wrong while shutting down DB connection: " + t.getMessage());
+			log.warn("Something went wrong while shutting down DB connection: " + t.getMessage());
 			t.printStackTrace();
 		}
 
@@ -241,13 +244,13 @@ public class Shutdown extends Thread {
 	private void saveData() {
 		switch (shutdownMode) {
 			case SIGTERM:
-				Log.info("SIGTERM received. Shutting down NOW!");
+				log.info("SIGTERM received. Shutting down NOW!");
 				break;
 			case GM_SHUTDOWN:
-				Log.info("GM shutdown received. Shutting down NOW!");
+				log.info("GM shutdown received. Shutting down NOW!");
 				break;
 			case GM_RESTART:
-				Log.info("GM restart received. Restarting NOW!");
+				log.info("GM restart received. Restarting NOW!");
 				break;
 		}
 
@@ -255,43 +258,43 @@ public class Shutdown extends Thread {
 			Universe.getInstance().implode(true);*/
 
 		SpawnDataManager.getInstance().saveDbSpawnData();
-		Log.info("SpawnDataManager: All spawn dynamic data saved");
+		log.info("SpawnDataManager: All spawn dynamic data saved");
 		GrandBossManager.getInstance().cleanUp();
-		Log.info("GrandBossManager: All Grand Boss info saved");
+		log.info("GrandBossManager: All Grand Boss info saved");
 		TradeController.INSTANCE.dataCountStore();
-		Log.info("TradeController: All count Item Saved");
+		log.info("TradeController: All count Item Saved");
 		ItemAuctionManager.getInstance().shutdown();
-		Log.info("Item Auctions shut down");
+		log.info("Item Auctions shut down");
 		Olympiad.getInstance().saveOlympiadStatus();
-		Log.info("Olympiad System: Data saved");
+		log.info("Olympiad System: Data saved");
 		HeroesManager.getInstance().shutdown();
-		Log.info("Hero System: Data saved");
+		log.info("Hero System: Data saved");
 		ClanTable.getInstance().storeClanScore();
-		Log.info("Clan System: Data saved");
+		log.info("Clan System: Data saved");
 		ClanWarManager.getInstance().storeWarData();
-		Log.info("Clan War System: Data saved");
+		log.info("Clan War System: Data saved");
 
 		// Save Cursed Weapons data before closing.
 		CursedWeaponsManager.getInstance().saveData();
-		Log.info("Cursed Weapon data saved");
+		log.info("Cursed Weapon data saved");
 
 		// Save all manor data
 		CastleManorManager.getInstance().save();
-		Log.info("Manor data saved");
+		log.info("Manor data saved");
 
 		// Save all global (non-player specific) Quest data that needs to persist after reboot
 		QuestManager.getInstance().save();
-		Log.info("Global Quest data saved");
+		log.info("Global Quest data saved");
 
 		// Save all global variables data
 		GlobalVariablesManager.getInstance().saveVars();
-		Log.info("Global Variables saved");
+		log.info("Global Variables saved");
 
 		//Save items on ground before closing
 		if (Config.SAVE_DROPPED_ITEM) {
 			ItemsOnGroundManager.getInstance().saveInDb();
 			ItemsOnGroundManager.getInstance().cleanUp();
-			Log.info("ItemsOnGroundManager: All items on ground saved!!");
+			log.info("ItemsOnGroundManager: All items on ground saved!!");
 		}
 
 		if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER) {
@@ -307,10 +310,10 @@ public class Shutdown extends Thread {
 	 * this disconnects all clients from the server
 	 */
 	public void disconnectAllCharacters() {
-		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-		//synchronized (L2World.getInstance().getAllPlayers())
+		Collection<Player> pls = World.getInstance().getAllPlayers().values();
+		//synchronized (World.getInstance().getAllPlayers())
 		{
-			for (L2PcInstance player : pls) {
+			for (Player player : pls) {
 				if (player == null) {
 					continue;
 				}
@@ -324,11 +327,11 @@ public class Shutdown extends Thread {
 						player.setClient(null);
 					}
 				} catch (Throwable t) {
-					Log.log(Level.WARNING, "Failed to log out char " + player, t);
+					log.warn("Failed to log out char " + player, t);
 				}
 			}
 
-			for (L2PcInstance player : pls) {
+			for (Player player : pls) {
 				if (player == null) {
 					continue;
 				}
@@ -337,7 +340,7 @@ public class Shutdown extends Thread {
 				try {
 					player.deleteMe();
 				} catch (Throwable t) {
-					Log.log(Level.WARNING, "Failed to store char " + player, t);
+					log.warn("Failed to store char " + player, t);
 				}
 			}
 		}
@@ -373,7 +376,7 @@ public class Shutdown extends Thread {
 			// gm shutdown: send warnings and then call exit to start shutdown sequence
 			countdown();
 			// last point where logging is operational :(
-			Log.warning("GM shutdown countdown is over. " + MODE_TEXT[shutdownMode] + " NOW!");
+			log.warn("GM shutdown countdown is over. " + MODE_TEXT[shutdownMode] + " NOW!");
 			switch (shutdownMode) {
 				case GM_SHUTDOWN:
 					System.exit(0);

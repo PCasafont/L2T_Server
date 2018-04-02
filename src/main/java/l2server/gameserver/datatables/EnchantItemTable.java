@@ -2,9 +2,9 @@ package l2server.gameserver.datatables;
 
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.gameserver.templates.item.L2WeaponType;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.templates.item.ItemTemplate;
+import l2server.gameserver.templates.item.WeaponType;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
@@ -38,7 +38,7 @@ public class EnchantItemTable {
 		/*
 		 * Return true if support item can be used for this item
 		 */
-		public final boolean isValid(L2ItemInstance enchantItem) {
+		public final boolean isValid(Item enchantItem) {
 			if (enchantItem == null) {
 				return false;
 			}
@@ -48,21 +48,21 @@ public class EnchantItemTable {
 			// checking scroll type and configured maximum enchant level
 			switch (type2) {
 				// weapon scrolls can enchant only weapons
-				case L2Item.TYPE2_WEAPON:
+				case ItemTemplate.TYPE2_WEAPON:
 					if (targetType != EnchantTargetType.WEAPON ||
 							Config.ENCHANT_MAX_WEAPON > 0 && enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_WEAPON) {
 						return false;
 					}
 					break;
 				// armor scrolls can enchant only accessory and armors
-				case L2Item.TYPE2_SHIELD_ARMOR:
+				case ItemTemplate.TYPE2_SHIELD_ARMOR:
 					if (targetType != EnchantTargetType.ELEMENTAL_SHIRT && (targetType != EnchantTargetType.ARMOR ||
 							Config.ENCHANT_MAX_ARMOR > 0 && enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_ARMOR)) {
 						return false;
 					}
 					break;
-				case L2Item.TYPE2_ACCESSORY:
-					if ((enchantItem.getItem().getBodyPart() & (L2Item.SLOT_HAIR | L2Item.SLOT_HAIR2 | L2Item.SLOT_HAIRALL)) > 0) {
+				case ItemTemplate.TYPE2_ACCESSORY:
+					if ((enchantItem.getItem().getBodyPart() & (ItemTemplate.SLOT_HAIR | ItemTemplate.SLOT_HAIR2 | ItemTemplate.SLOT_HAIRALL)) > 0) {
 						if (targetType != EnchantTargetType.HAIR_ACCESSORY ||
 								Config.ENCHANT_MAX_JEWELRY > 0 && enchantItem.getEnchantLevel() >= Config.ENCHANT_MAX_JEWELRY) {
 							return false;
@@ -79,7 +79,7 @@ public class EnchantItemTable {
 			}
 
 			// check for crystal types
-			if (grade != L2Item.CRYSTAL_NONE && grade != enchantItem.getItem().getItemGradePlain()) {
+			if (grade != ItemTemplate.CRYSTAL_NONE && grade != enchantItem.getItem().getItemGradePlain()) {
 				return false;
 			}
 
@@ -137,7 +137,7 @@ public class EnchantItemTable {
 			return isSafe;
 		}
 
-		public final boolean isValid(L2ItemInstance enchantItem, EnchantSupportItem supportItem) {
+		public final boolean isValid(Item enchantItem, EnchantSupportItem supportItem) {
 			// blessed scrolls can't use support items
 			if (supportItem != null && (!supportItem.isValid(enchantItem) || isBlessed())) {
 				return false;
@@ -146,17 +146,17 @@ public class EnchantItemTable {
 			return isValid(enchantItem);
 		}
 
-		public final float getChance(L2ItemInstance enchantItem, EnchantSupportItem supportItem) {
+		public final float getChance(Item enchantItem, EnchantSupportItem supportItem) {
 			if (!isValid(enchantItem, supportItem)) {
 				return -1;
 			}
 
-			boolean fullBody = enchantItem.getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR;
+			boolean fullBody = enchantItem.getItem().getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR;
 			if (enchantItem.getEnchantLevel() < Config.ENCHANT_SAFE_MAX || fullBody && enchantItem.getEnchantLevel() < Config.ENCHANT_SAFE_MAX_FULL) {
 				return 100;
 			}
 
-			boolean isAccessory = enchantItem.getItem().getType2() == L2Item.TYPE2_ACCESSORY;
+			boolean isAccessory = enchantItem.getItem().getType2() == ItemTemplate.TYPE2_ACCESSORY;
 
 			if (Config.ENCHANT_CHANCE_PER_LEVEL.length > 0) {
 				if (enchantItem.getEnchantLevel() >= Config.ENCHANT_CHANCE_PER_LEVEL.length) {
@@ -257,21 +257,21 @@ public class EnchantItemTable {
 	/**
 	 * Return enchant template for scroll
 	 */
-	public final EnchantScroll getEnchantScroll(L2ItemInstance scroll) {
+	public final EnchantScroll getEnchantScroll(Item scroll) {
 		return scrolls.get(scroll.getItemId());
 	}
 
 	/**
 	 * Return enchant template for support item
 	 */
-	public final EnchantSupportItem getSupportItem(L2ItemInstance item) {
+	public final EnchantSupportItem getSupportItem(Item item) {
 		return supports.get(item.getItemId());
 	}
 
 	/**
 	 * Return true if item can be enchanted
 	 */
-	public static boolean isEnchantable(L2ItemInstance item) {
+	public static boolean isEnchantable(Item item) {
 		if (item.isHeroItem() && !item.getItem().isEnchantable()) {
 			return false;
 		}
@@ -288,20 +288,20 @@ public class EnchantItemTable {
 			return false;
 		}
 		// rods
-		if (item.getItem().getItemType() == L2WeaponType.FISHINGROD) {
+		if (item.getItem().getItemType() == WeaponType.FISHINGROD) {
 			return false;
 		}
 		// bracelets
-		if (item.getItem().getBodyPart() == L2Item.SLOT_L_BRACELET) {
+		if (item.getItem().getBodyPart() == ItemTemplate.SLOT_L_BRACELET) {
 			return false;
 		}
-		if (item.getItem().getBodyPart() == L2Item.SLOT_R_BRACELET) {
+		if (item.getItem().getBodyPart() == ItemTemplate.SLOT_R_BRACELET) {
 			return false;
 		}
-		if (item.getItem().getBodyPart() == L2Item.SLOT_BACK) {
+		if (item.getItem().getBodyPart() == ItemTemplate.SLOT_BACK) {
 			return false;
 		}
-		if (item.getItem().getBodyPart() == L2Item.SLOT_BROOCH) {
+		if (item.getItem().getBodyPart() == ItemTemplate.SLOT_BROOCH) {
 			return false;
 		}
 		// blacklist check
@@ -309,7 +309,7 @@ public class EnchantItemTable {
 			return false;
 		}
 		// only items in inventory and equipped can be enchanted
-		if (item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY && item.getLocation() != L2ItemInstance.ItemLocation.PAPERDOLL) {
+		if (item.getLocation() != Item.ItemLocation.INVENTORY && item.getLocation() != Item.ItemLocation.EQUIPPED) {
 			return false;
 		}
 		return !item.getName().startsWith("Common");

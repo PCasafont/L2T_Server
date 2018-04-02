@@ -16,27 +16,27 @@
 package handlers.actionhandlers;
 
 import l2server.gameserver.handler.IActionHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2StatueInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.StatueInstance;
 import l2server.gameserver.network.serverpackets.ExLoadStatHotLink;
 import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
 
 public class L2StatueInstanceAction implements IActionHandler {
 	/**
-	 * Manage actions when a player click on the L2ArtefactInstance.<BR>
+	 * Manage actions when a player click on the ArtefactInstance.<BR>
 	 * <BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR>
 	 * <BR>
-	 * <li>Set the L2NpcInstance as target of the L2PcInstance player (if
+	 * <li>Set the NpcInstance as target of the Player player (if
 	 * necessary)</li> <li>Send a Server->Client packet MyTargetSelected to the
-	 * L2PcInstance player (display the select window)</li> <li>Send a
-	 * Server->Client packet ValidateLocation to correct the L2NpcInstance
+	 * Player player (display the select window)</li> <li>Send a
+	 * Server->Client packet ValidateLocation to correct the NpcInstance
 	 * position and heading on the client</li><BR>
 	 * <BR>
 	 * <p>
@@ -46,24 +46,24 @@ public class L2StatueInstanceAction implements IActionHandler {
 	 * <BR>
 	 */
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
-		if (!((L2Npc) target).canTarget(activeChar)) {
+	public boolean action(Player activeChar, WorldObject target, boolean interact) {
+		if (!((Npc) target).canTarget(activeChar)) {
 			return false;
 		}
 
 		if (activeChar.getTarget() != target) {
-			// Set the target of the L2PcInstance activeChar
+			// Set the target of the Player activeChar
 			activeChar.setTarget(target);
 
-			// Send a Server->Client packet MyTargetSelected to the L2PcInstance activeChar
+			// Send a Server->Client packet MyTargetSelected to the Player activeChar
 			MyTargetSelected my = new MyTargetSelected(target.getObjectId(), 0);
 			activeChar.sendPacket(my);
 
-			// Send a Server->Client packet ValidateLocation to correct the L2ArtefactInstance position and heading on the client
-			activeChar.sendPacket(new ValidateLocation((L2Character) target));
+			// Send a Server->Client packet ValidateLocation to correct the ArtefactInstance position and heading on the client
+			activeChar.sendPacket(new ValidateLocation((Creature) target));
 		} else if (interact) {
 			// Send the hot link packet
-			activeChar.sendPacket(new ExLoadStatHotLink(((L2StatueInstance) target).getRecordId()));
+			activeChar.sendPacket(new ExLoadStatHotLink(((StatueInstance) target).getRecordId()));
 		}
 		return true;
 	}

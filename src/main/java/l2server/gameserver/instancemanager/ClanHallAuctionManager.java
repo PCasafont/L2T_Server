@@ -17,7 +17,8 @@ package l2server.gameserver.instancemanager;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.entity.Auction;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 
@@ -29,6 +30,9 @@ import java.util.List;
 import java.util.logging.Level;
 
 public class ClanHallAuctionManager {
+	private static Logger log = LoggerFactory.getLogger(ClanHallAuctionManager.class.getName());
+
+
 	private List<Auction> auctions = new ArrayList<>();
 
 	private static final String[] ITEM_INIT_DATA = {"(22, 0, 'NPC', 'NPC Clan', 'ClanHall', 22, 0, 'Moonstone Hall', 1, 20000000, 0, 1164841200000)",
@@ -93,7 +97,7 @@ public class ClanHallAuctionManager {
 
 	@Load
 	public void load() {
-		Log.info("Initializing AuctionManager");
+		log.info("Initializing AuctionManager");
 		Connection con = null;
 		try {
 			PreparedStatement statement;
@@ -105,9 +109,9 @@ public class ClanHallAuctionManager {
 				auctions.add(new Auction(rs.getInt("id")));
 			}
 			statement.close();
-			Log.info("Loaded: " + getAuctions().size() + " auction(s)");
+			log.info("Loaded: " + getAuctions().size() + " auction(s)");
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: AuctionManager.load(): " + e.getMessage(), e);
+			log.warn("Exception: AuctionManager.load(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -148,7 +152,7 @@ public class ClanHallAuctionManager {
 			}
 		}
 		if (i >= ItemInitDataId.length || ItemInitDataId[i] != id) {
-			Log.warning("Clan Hall auction not found for Id :" + id);
+			log.warn("Clan Hall auction not found for Id :" + id);
 			return;
 		}
 		try {
@@ -157,9 +161,9 @@ public class ClanHallAuctionManager {
 			statement.execute();
 			statement.close();
 			auctions.add(new Auction(id));
-			Log.info("Created auction for ClanHall: " + id);
+			log.info("Created auction for ClanHall: " + id);
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Exception: Auction.initNPC(): " + e.getMessage(), e);
+			log.error("Exception: Auction.initNPC(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

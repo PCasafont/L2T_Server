@@ -17,7 +17,7 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.instancemanager.CursedWeaponsManager;
 import l2server.gameserver.model.CursedWeapon;
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.network.serverpackets.ExCursedWeaponLocation;
 import l2server.gameserver.network.serverpackets.ExCursedWeaponLocation.CursedWeaponInfo;
 import l2server.util.Point3D;
@@ -41,7 +41,7 @@ public final class RequestCursedWeaponLocation extends L2GameClientPacket {
 	 */
 	@Override
 	protected void runImpl() {
-		L2Character activeChar = getClient().getActiveChar();
+		Creature activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}

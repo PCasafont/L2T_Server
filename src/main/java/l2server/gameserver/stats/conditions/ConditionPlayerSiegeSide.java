@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -39,6 +39,6 @@ public class ConditionPlayerSiegeSide extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		return ((L2PcInstance) env.player).getSiegeSide() == siegeSide;
+		return ((Player) env.player).getSiegeSide() == siegeSide;
 	}
 }

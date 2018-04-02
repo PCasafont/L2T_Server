@@ -15,13 +15,13 @@
 
 package quests.Q636_TruthBeyond;
 
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
-import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.model.zone.ZoneType;
 
 /**
  * @author moved to java by DS, jython script by Polo, BiTi and DrLecter
@@ -46,7 +46,7 @@ public final class Q636_TruthBeyond extends Quest {
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		final QuestState st = player.getQuestState(QN);
 		if (st == null) {
 			return null;
@@ -65,7 +65,7 @@ public final class Q636_TruthBeyond extends Quest {
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		final QuestState st = player.getQuestState(QN);
 		if (st == null) {
 			return getNoQuestMsg(player);
@@ -99,11 +99,11 @@ public final class Q636_TruthBeyond extends Quest {
 	}
 
 	@Override
-	public final String onEnterZone(L2Character character, L2ZoneType zone) {
+	public final String onEnterZone(Creature character, ZoneType zone) {
 		// QuestState already null on enter because quest is finished
-		if (character instanceof L2PcInstance) {
-			if (((L2PcInstance) character).destroyItemByItemId("Mark", VISITOR_MARK, 1, character, false)) {
-				((L2PcInstance) character).addItem("Mark", FADED_MARK, 1, character, true);
+		if (character instanceof Player) {
+			if (((Player) character).destroyItemByItemId("Mark", VISITOR_MARK, 1, character, false)) {
+				((Player) character).addItem("Mark", FADED_MARK, 1, character, true);
 			}
 		}
 		return null;

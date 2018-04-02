@@ -17,25 +17,24 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.TradeController;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.L2TradeList;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2MerchantInstance;
-import l2server.gameserver.model.actor.instance.L2MerchantSummonInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.MerchantInstance;
+import l2server.gameserver.model.actor.instance.MerchantSummonInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ExSellList;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 
 import java.util.List;
 
-import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
+import static l2server.gameserver.model.actor.Npc.DEFAULT_INTERACTION_DISTANCE;
 
 /**
  * RequestRefundItem client packet class.
@@ -63,7 +62,7 @@ public final class RequestRefundItem extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		final L2PcInstance player = getClient().getActiveChar();
+		final Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -83,8 +82,8 @@ public final class RequestRefundItem extends L2GameClientPacket {
 			return;
 		}
 
-		L2Object target = player.getTarget();
-		if (!player.isGM() && (target == null || !(target instanceof L2MerchantInstance || target instanceof L2MerchantSummonInstance) ||
+		WorldObject target = player.getTarget();
+		if (!player.isGM() && (target == null || !(target instanceof MerchantInstance || target instanceof MerchantSummonInstance) ||
 				player.getInstanceId() != target.getInstanceId() ||
 				!player.isInsideRadius(target, DEFAULT_INTERACTION_DISTANCE, true, false))) // Distance is too far
 		{
@@ -92,9 +91,9 @@ public final class RequestRefundItem extends L2GameClientPacket {
 			return;
 		}
 
-		L2Character merchant = null;
-		if (target instanceof L2MerchantInstance || target instanceof L2MerchantSummonInstance) {
-			merchant = (L2Character) target;
+		Creature merchant = null;
+		if (target instanceof MerchantInstance || target instanceof MerchantSummonInstance) {
+			merchant = (Creature) target;
 		} else if (!player.isGM()) {
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -105,11 +104,11 @@ public final class RequestRefundItem extends L2GameClientPacket {
 
 		if (merchant != null) {
 			List<L2TradeList> lists;
-			if (merchant instanceof L2MerchantInstance) {
-				lists = TradeController.INSTANCE.getBuyListByNpcId(((L2MerchantInstance) merchant).getNpcId());
-				taxRate = ((L2MerchantInstance) merchant).getMpc().getTotalTaxRate();
+			if (merchant instanceof MerchantInstance) {
+				lists = TradeController.INSTANCE.getBuyListByNpcId(((MerchantInstance) merchant).getNpcId());
+				taxRate = ((MerchantInstance) merchant).getMpc().getTotalTaxRate();
 			} else {
-				lists = TradeController.INSTANCE.getBuyListByNpcId(((L2MerchantSummonInstance) merchant).getNpcId());
+				lists = TradeController.INSTANCE.getBuyListByNpcId(((MerchantSummonInstance) merchant).getNpcId());
 				taxRate = 50;
 			}
 
@@ -144,7 +143,7 @@ public final class RequestRefundItem extends L2GameClientPacket {
 		long adena = 0;
 		long slots = 0;
 
-		L2ItemInstance[] refund = player.getRefund().getItems();
+		Item[] refund = player.getRefund().getItems();
 		int[] objectIds = new int[items.length];
 
 		for (int i = 0; i < items.length; i++) {
@@ -166,8 +165,8 @@ public final class RequestRefundItem extends L2GameClientPacket {
 				}
 			}
 
-			final L2ItemInstance item = refund[idx];
-			final L2Item template = item.getItem();
+			final Item item = refund[idx];
+			final ItemTemplate template = item.getItem();
 			objectIds[i] = item.getObjectId();
 
 			// second check for duplicates - object ids
@@ -210,10 +209,10 @@ public final class RequestRefundItem extends L2GameClientPacket {
 		}
 
 		for (int i = 0; i < items.length; i++) {
-			L2ItemInstance item =
+			Item item =
 					player.getRefund().transferItem("Refund", objectIds[i], Long.MAX_VALUE, player.getInventory(), player, player.getLastFolkNPC());
 			if (item == null) {
-				Log.warning("Error refunding object for char " + player.getName() + " (newitem == null)");
+				log.warn("Error refunding object for char " + player.getName() + " (newitem == null)");
 			}
 		}
 

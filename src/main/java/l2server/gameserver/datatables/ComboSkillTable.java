@@ -16,7 +16,8 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -29,6 +30,9 @@ import java.util.Map;
  * @author Pere
  */
 public class ComboSkillTable {
+	private static Logger log = LoggerFactory.getLogger(ComboSkillTable.class.getName());
+
+
 	public class Combo {
 		public Combo(int i) {
 			id = i;
@@ -68,7 +72,7 @@ public class ComboSkillTable {
 			}
 		}
 		
-		Log.info("Combo Skill table: loaded " + combos.size() + " combos.");
+		log.info("Combo Skill table: loaded " + combos.size() + " combos.");
 	}
 	
 	public Combo getCombo(int id) {

@@ -18,7 +18,8 @@ package l2server.gameserver.network.serverpackets;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.entity.Castle;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -26,6 +27,9 @@ import java.util.List;
  * @author KenM
  */
 public class ExShowCastleInfo extends L2GameServerPacket {
+	private static Logger log = LoggerFactory.getLogger(ExShowCastleInfo.class.getName());
+
+
 
     /*
 	  @see l2server.gameserver.network.serverpackets.L2GameServerPacket#getType()
@@ -44,7 +48,7 @@ public class ExShowCastleInfo extends L2GameServerPacket {
 				if (ClanTable.getInstance().getClan(castle.getOwnerId()) != null) {
 					writeS(ClanTable.getInstance().getClan(castle.getOwnerId()).getName());
 				} else {
-					Log.warning("Castle owner with no name! Castle: " + castle.getName() + " has an OwnerId = " + castle.getOwnerId() +
+					log.warn("Castle owner with no name! Castle: " + castle.getName() + " has an OwnerId = " + castle.getOwnerId() +
 							" who does not have a  name!");
 					writeS("");
 				}

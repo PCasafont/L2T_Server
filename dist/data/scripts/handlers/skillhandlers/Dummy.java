@@ -18,12 +18,12 @@ package handlers.skillhandlers;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2BlockInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.BlockInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.skills.SkillType;
 
 /**
  * This class ...
@@ -32,23 +32,23 @@ import l2server.gameserver.templates.skills.L2SkillType;
  */
 
 public class Dummy implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.DUMMY};
+	private static final SkillType[] SKILL_IDS = {SkillType.DUMMY};
 	
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		if (!(activeChar instanceof L2PcInstance)) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		if (!(activeChar instanceof Player)) {
 			return;
 		}
 		
 		switch (skill.getId()) {
 			case 5852:
 			case 5853: {
-				final L2Object obj = targets[0];
+				final WorldObject obj = targets[0];
 				if (obj != null) {
-					useBlockCheckerSkill((L2PcInstance) activeChar, skill, obj);
+					useBlockCheckerSkill((Player) activeChar, skill, obj);
 				}
 				break;
 			}
@@ -59,16 +59,16 @@ public class Dummy implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 	
-	private final void useBlockCheckerSkill(L2PcInstance activeChar, L2Skill skill, L2Object target) {
-		if (!(target instanceof L2BlockInstance)) {
+	private final void useBlockCheckerSkill(Player activeChar, Skill skill, WorldObject target) {
+		if (!(target instanceof BlockInstance)) {
 			return;
 		}
 		
-		L2BlockInstance block = (L2BlockInstance) target;
+		BlockInstance block = (BlockInstance) target;
 		
 		final int arena = activeChar.getBlockCheckerArena();
 		if (arena != -1) {

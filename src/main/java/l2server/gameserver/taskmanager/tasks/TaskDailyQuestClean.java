@@ -20,7 +20,8 @@ import l2server.gameserver.taskmanager.Task;
 import l2server.gameserver.taskmanager.TaskManager;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
 import l2server.gameserver.taskmanager.TaskTypes;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,6 +32,9 @@ import java.util.logging.Level;
  * *
  */
 public class TaskDailyQuestClean extends Task {
+	private static Logger log = LoggerFactory.getLogger(TaskDailyQuestClean.class.getName());
+
+
 
 	private static final String NAME = "daily_quest_clean";
 
@@ -60,11 +64,11 @@ public class TaskDailyQuestClean extends Task {
 				statement.close();
 			}
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Could not reset daily quests: " + e);
+			log.error("Could not reset daily quests: " + e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
-		Log.config("Daily quests cleared");
+		log.debug("Daily quests cleared");
 	}
 
 	/**

@@ -5,11 +5,12 @@ import l2server.gameserver.Announcements;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.instancemanager.MailManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,6 +24,9 @@ import java.util.Map.Entry;
  */
 
 public class DMGManager {
+	private static Logger log = LoggerFactory.getLogger(DMGManager.class.getName());
+
+
 
 	// Config
 	private static final String eventname = "Damage Manager";
@@ -121,7 +125,7 @@ public class DMGManager {
 			return internalIP;
 		}
 
-		public void setNewData(int dmg, L2PcInstance pl) {
+		public void setNewData(int dmg, Player pl) {
 			pl.sendPacket(new CreatureSay(36610,
 					2,
 					eventname,
@@ -140,7 +144,7 @@ public class DMGManager {
 		}
 	}
 
-	public static void giveDamage(L2PcInstance pl, int dmg) {
+	public static void giveDamage(Player pl, int dmg) {
 		if (pl == null) {
 			return;
 		}
@@ -175,7 +179,7 @@ public class DMGManager {
 	}
 
 	public static void saveData() {
-		Log.info(eventname + ": Saving information..!");
+		log.info(eventname + ": Saving information..!");
 
 		Connection con = null;
 
@@ -234,7 +238,7 @@ public class DMGManager {
 
 				MailManager.getInstance().sendMessage(msg);
 
-				Log.warning(eventname + ": Player: " + info.getValue().getNewName() + " rewarded!");
+				log.warn(eventname + ": Player: " + info.getValue().getNewName() + " rewarded!");
 			}
 		}
 
@@ -275,7 +279,7 @@ public class DMGManager {
 		}
 	}
 
-	public static void updateIP(L2PcInstance pl) {
+	public static void updateIP(Player pl) {
 		if (pl == null) {
 			return;
 		}
@@ -293,7 +297,7 @@ public class DMGManager {
 	}
 
 	public static void load() {
-		Log.info(eventname + ": Loading DMG Ranking information..!");
+		log.info(eventname + ": Loading DMG Ranking information..!");
 
 		Connection con = null;
 

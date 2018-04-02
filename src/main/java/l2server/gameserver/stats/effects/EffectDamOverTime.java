@@ -15,25 +15,26 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.StatusUpdate.StatusUpdateDisplay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 public class EffectDamOverTime extends L2Effect {
-	public EffectDamOverTime(Env env, L2EffectTemplate template) {
+	public EffectDamOverTime(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.DEBUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.DEBUFF;
 	}
 	
 	@Override
@@ -42,7 +43,7 @@ public class EffectDamOverTime extends L2Effect {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {
@@ -91,7 +92,7 @@ public class EffectDamOverTime extends L2Effect {
 			getEffector().sendPacket(suhp);
 		}
 		
-		if (getEffector() instanceof L2PcInstance && getSkill().getId() == 11260) // Mark of Void
+		if (getEffector() instanceof Player && getSkill().getId() == 11260) // Mark of Void
 		{
 			double heal = damage * (getEffected().getActingPlayer() == null ? 0.5 : 0.75);
 			double hp = getEffector().getCurrentHp();
@@ -114,7 +115,7 @@ public class EffectDamOverTime extends L2Effect {
 			su.addAttribute(StatusUpdate.CUR_MP, (int) mp);
 			getEffector().sendPacket(su);
 			
-			for (L2SummonInstance summon : ((L2PcInstance) getEffector()).getSummons()) {
+			for (SummonInstance summon : ((Player) getEffector()).getSummons()) {
 				if (summon == null) {
 					continue;
 				}

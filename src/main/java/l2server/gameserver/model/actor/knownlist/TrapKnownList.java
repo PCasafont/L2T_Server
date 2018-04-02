@@ -15,21 +15,21 @@
 
 package l2server.gameserver.model.actor.knownlist;
 
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Trap;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Trap;
 
 public class TrapKnownList extends CharKnownList {
-	public TrapKnownList(L2Trap activeChar) {
+	public TrapKnownList(Trap activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public final L2Trap getActiveChar() {
-		return (L2Trap) super.getActiveChar();
+	public final Trap getActiveChar() {
+		return (Trap) super.getActiveChar();
 	}
 
 	@Override
-	public int getDistanceToForgetObject(L2Object object) {
+	public int getDistanceToForgetObject(WorldObject object) {
 		if (object == getActiveChar().getOwner() || object == getActiveChar().getTarget()) {
 			return 6000;
 		}
@@ -38,7 +38,7 @@ public class TrapKnownList extends CharKnownList {
 	}
 
 	@Override
-	public int getDistanceToWatchObject(L2Object object) {
+	public int getDistanceToWatchObject(WorldObject object) {
 		return 1500;
 	}
 }

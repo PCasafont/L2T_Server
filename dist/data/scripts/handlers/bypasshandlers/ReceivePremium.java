@@ -16,8 +16,8 @@
 package handlers.bypasshandlers;
 
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExGetPremiumItemList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -26,7 +26,7 @@ public class ReceivePremium implements IBypassHandler {
 	private static final String[] COMMANDS = {"ReceivePremium"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		if (target == null)
 		
 		{

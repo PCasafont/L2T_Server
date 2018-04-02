@@ -16,7 +16,7 @@
 package l2server.gameserver.stats;
 
 import l2server.Config;
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -57,7 +57,7 @@ public enum BaseStats {
 		stat = s;
 	}
 
-	public final double calcBonus(L2Character actor) {
+	public final double calcBonus(Creature actor) {
 		if (actor != null) {
 			return stat.calcBonus(actor);
 		}
@@ -77,61 +77,61 @@ public enum BaseStats {
 	}
 
 	private interface BaseStat {
-		double calcBonus(L2Character actor);
+		double calcBonus(Creature actor);
 	}
 
 	private static final class STR implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor) {
+		public final double calcBonus(Creature actor) {
 			return STRbonus[actor.getSTR() - 1];
 		}
 	}
 
 	private static final class INT implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor) {
+		public final double calcBonus(Creature actor) {
 			return INTbonus[actor.getINT() - 1];
 		}
 	}
 
 	private static final class DEX implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor) {
+		public final double calcBonus(Creature actor) {
 			return DEXbonus[actor.getDEX() - 1];
 		}
 	}
 
 	private static final class WIT implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor) {
+		public final double calcBonus(Creature actor) {
 			return WITbonus[actor.getWIT() - 1];
 		}
 	}
 
 	private static final class CON implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor) {
+		public final double calcBonus(Creature actor) {
 			return CONbonus[actor.getCON() - 1];
 		}
 	}
 
 	private static final class MEN implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor) {
+		public final double calcBonus(Creature actor) {
 			return MENbonus[actor.getMEN() - 1];
 		}
 	}
 
 	private static final class LUC implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor) {
+		public final double calcBonus(Creature actor) {
 			return LUCbonus[actor.getLUC() - 1];
 		}
 	}
 
 	private static final class CHA implements BaseStat {
 		@Override
-		public final double calcBonus(L2Character actor) {
+		public final double calcBonus(Creature actor) {
 			return CHAbonus[actor.getCHA() - 1];
 		}
 	}

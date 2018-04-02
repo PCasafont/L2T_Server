@@ -20,7 +20,7 @@ import l2server.gameserver.RecipeController;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.datatables.*;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.World;
 
 /**
  * @author Luis Arias
@@ -43,7 +43,7 @@ public interface EngineInterface {
 	NpcTable npcTable = NpcTable.getInstance();
 
 	TeleportLocationTable teleTable = TeleportLocationTable.getInstance();
-	L2World world = L2World.getInstance();
+	World world = World.getInstance();
 	SpawnTable spawnTable = SpawnTable.getInstance();
 	TimeController gameTimeController = TimeController.getInstance();
 	Announcements announcements = Announcements.getInstance();

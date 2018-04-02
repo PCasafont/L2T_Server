@@ -17,13 +17,13 @@ package ai.group_template;
 
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.actor.*;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.PetInstance;
 import l2server.gameserver.network.serverpackets.NpcSay;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
@@ -46,7 +46,7 @@ public class Monastery extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onAggroRangeEnter(Npc npc, Player player, boolean isPet) {
 		if (Util.contains(mobs1, npc.getNpcId()) && !npc.isInCombat() && npc.getTarget() == null) {
 			if (player.getActiveWeaponInstance() != null) {
 				npc.setTarget(player);
@@ -54,18 +54,18 @@ public class Monastery extends L2AttackableAIScript {
 				switch (npc.getNpcId()) {
 					case 22124:
 					case 22126: {
-						L2Skill skill = SkillTable.getInstance().getInfo(4589, 8);
+						Skill skill = SkillTable.getInstance().getInfo(4589, 8);
 						npc.doCast(skill);
 						break;
 					}
 					default: {
 						npc.setIsRunning(true);
-						((L2Attackable) npc).addDamageHate(player, 0, 999);
+						((Attackable) npc).addDamageHate(player, 0, 999);
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 						break;
 					}
 				}
-			} else if (((L2Attackable) npc).getMostHated() == null) {
+			} else if (((Attackable) npc).getMostHated() == null) {
 				return null;
 			}
 		}
@@ -73,15 +73,15 @@ public class Monastery extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet) {
+	public String onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isPet) {
 		if (Util.contains(mobs2, npc.getNpcId())) {
-			if (skill.getSkillType() == L2SkillType.AGGDAMAGE && targets.length != 0) {
-				for (L2Object obj : targets) {
+			if (skill.getSkillType() == SkillType.AGGDAMAGE && targets.length != 0) {
+				for (WorldObject obj : targets) {
 					if (obj.equals(npc)) {
 						NpcSay packet = new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), messages[Rnd.get(2) + 1]);
 						packet.addStringParameter(caster.getName());
 						npc.broadcastPacket(packet);
-						((L2Attackable) npc).addDamageHate(caster, 0, 999);
+						((Attackable) npc).addDamageHate(caster, 0, 999);
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, caster);
 						break;
 					}
@@ -92,21 +92,21 @@ public class Monastery extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc) {
+	public String onSpawn(Npc npc) {
 		if (Util.contains(mobs1, npc.getNpcId())) {
-			ArrayList<L2Playable> result = new ArrayList<L2Playable>();
-			Collection<L2Object> objs = npc.getKnownList().getKnownObjects().values();
-			for (L2Object obj : objs) {
-				if (obj instanceof L2PcInstance || obj instanceof L2PetInstance) {
-					if (Util.checkIfInRange(npc.getAggroRange(), npc, obj, true) && !((L2Character) obj).isDead()) {
-						result.add((L2Playable) obj);
+			ArrayList<Playable> result = new ArrayList<Playable>();
+			Collection<WorldObject> objs = npc.getKnownList().getKnownObjects().values();
+			for (WorldObject obj : objs) {
+				if (obj instanceof Player || obj instanceof PetInstance) {
+					if (Util.checkIfInRange(npc.getAggroRange(), npc, obj, true) && !((Creature) obj).isDead()) {
+						result.add((Playable) obj);
 					}
 				}
 			}
 			if (!result.isEmpty() && result.size() != 0) {
 				Object[] characters = result.toArray();
 				for (Object obj : characters) {
-					L2Playable target = (L2Playable) (obj instanceof L2PcInstance ? obj : ((L2Summon) obj).getOwner());
+					Playable target = (Playable) (obj instanceof Player ? obj : ((Summon) obj).getOwner());
 					if (target.getActiveWeaponInstance() != null && !npc.isInCombat() && npc.getTarget() == null) {
 						npc.setTarget(target);
 						npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getNpcId(), messages[0]));
@@ -114,13 +114,13 @@ public class Monastery extends L2AttackableAIScript {
 							case 22124:
 							case 22126:
 							case 22127: {
-								L2Skill skill = SkillTable.getInstance().getInfo(4589, 8);
+								Skill skill = SkillTable.getInstance().getInfo(4589, 8);
 								npc.doCast(skill);
 								break;
 							}
 							default: {
 								npc.setIsRunning(true);
-								((L2Attackable) npc).addDamageHate(target, 0, 999);
+								((Attackable) npc).addDamageHate(target, 0, 999);
 								npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 								break;
 							}
@@ -133,10 +133,10 @@ public class Monastery extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill) {
+	public String onSpellFinished(Npc npc, Player player, Skill skill) {
 		if (Util.contains(mobs1, npc.getNpcId()) && skill.getId() == 4589) {
 			npc.setIsRunning(true);
-			((L2Attackable) npc).addDamageHate(player, 0, 999);
+			((Attackable) npc).addDamageHate(player, 0, 999);
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 		}
 		return super.onSpellFinished(npc, player, skill);

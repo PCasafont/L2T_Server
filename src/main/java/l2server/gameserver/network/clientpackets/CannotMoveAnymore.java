@@ -18,8 +18,7 @@ package l2server.gameserver.network.clientpackets;
 import l2server.Config;
 import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * This class ...
@@ -43,13 +42,13 @@ public final class CannotMoveAnymore extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
 
 		if (Config.DEBUG) {
-			Log.fine("client: x:" + x + " y:" + y + " z:" + z + " server x:" + player.getX() + " y:" + player.getY() + " z:" + player.getZ());
+			log.debug("client: x:" + x + " y:" + y + " z:" + z + " server x:" + player.getX() + " y:" + player.getY() + " z:" + player.getZ());
 		}
 
 		if (player.getAI() != null) {

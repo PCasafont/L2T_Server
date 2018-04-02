@@ -18,7 +18,7 @@ package ai.individual;
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
 
 /**
  * @author LasTravel
@@ -38,7 +38,7 @@ public class SpiculaCaptain extends L2AttackableAIScript {
 			if (spawn.getNpcId() == captain) {
 				spawn.getNpc().setShowSummonAnimation(true);
 
-				for (L2MonsterInstance a : ((L2MonsterInstance) spawn.getNpc()).getMinionList().getSpawnedMinions()) {
+				for (MonsterInstance a : ((MonsterInstance) spawn.getNpc()).getMinionList().getSpawnedMinions()) {
 					a.setShowSummonAnimation(true);
 				}
 

@@ -17,9 +17,9 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.LifeStoneTable;
 import l2server.gameserver.datatables.LifeStoneTable.LifeStone;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Augmentation;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExVariationResult;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
@@ -49,19 +49,19 @@ public final class RequestRefine extends L2GameClientPacket {
 	 */
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
-		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(targetItemObjId);
+		Item targetItem = activeChar.getInventory().getItemByObjectId(targetItemObjId);
 		if (targetItem == null) {
 			return;
 		}
-		L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(refinerItemObjId);
+		Item refinerItem = activeChar.getInventory().getItemByObjectId(refinerItemObjId);
 		if (refinerItem == null) {
 			return;
 		}
-		L2ItemInstance gemStoneItem = activeChar.getInventory().getItemByObjectId(gemStoneItemObjId);
+		Item gemStoneItem = activeChar.getInventory().getItemByObjectId(gemStoneItemObjId);
 		if (gemStoneItem == null) {
 			return;
 		}
@@ -85,9 +85,9 @@ public final class RequestRefine extends L2GameClientPacket {
 
 		// unequip item
 		if (targetItem.isEquipped()) {
-			L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(targetItem.getLocationSlot());
+			Item[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(targetItem.getLocationSlot());
 			InventoryUpdate iu = new InventoryUpdate();
-			for (L2ItemInstance itm : unequiped) {
+			for (Item itm : unequiped) {
 				iu.addModifiedItem(itm);
 			}
 

@@ -17,7 +17,7 @@ package l2server.gameserver.model;
 
 import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.ItemList;
@@ -26,14 +26,14 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public class CombatFlag {
 	//
 
-	protected L2PcInstance player = null;
+	protected Player player = null;
 	public int playerId = 0;
 
-	public L2ItemInstance itemInstance;
+	public Item itemInstance;
 
 	public Location location;
 	public int itemId;
-	private L2ItemInstance item = null;
+	private Item item = null;
 
 	// =========================================================
 	// Constructor
@@ -43,10 +43,10 @@ public class CombatFlag {
 	}
 
 	public synchronized void spawnMe() {
-		// Init the dropped L2ItemInstance and add it in the world as a visible object at the position where mob was last
-		L2ItemInstance i = ItemTable.getInstance().createItem("Combat", itemId, 1, null, null);
+		// Init the dropped Item and add it in the world as a visible object at the position where mob was last
+		Item i = ItemTable.getInstance().createItem("Combat", itemId, 1, null, null);
 		// Remove it from the world because spawnme will insert it again
-		L2World.getInstance().removeObject(i);
+		World.getInstance().removeObject(i);
 		i.spawnMe(location.getX(), location.getY(), location.getZ());
 		itemInstance = i;
 	}
@@ -61,7 +61,7 @@ public class CombatFlag {
 		}
 	}
 
-	public boolean activate(L2PcInstance player, L2ItemInstance item) {
+	public boolean activate(Player player, Item item) {
 		if (player.isMounted()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
 			return false;

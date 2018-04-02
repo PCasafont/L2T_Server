@@ -17,12 +17,12 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.skills.SkillTargetType;
 
 /**
  * @author nBd
@@ -31,16 +31,16 @@ public class TargetEnemySummon implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		if (target instanceof L2Summon) {
-			L2Summon targetSummon = (L2Summon) target;
-			if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).getPet() != targetSummon && !targetSummon.isDead() &&
-					!((L2PcInstance) activeChar).getSummons().contains(targetSummon) &&
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		if (target instanceof Summon) {
+			Summon targetSummon = (Summon) target;
+			if (activeChar instanceof Player && ((Player) activeChar).getPet() != targetSummon && !targetSummon.isDead() &&
+					!((Player) activeChar).getSummons().contains(targetSummon) &&
 					(targetSummon.getOwner().getPvpFlag() != 0 || targetSummon.getOwner().getReputation() < 0) ||
-					targetSummon.getOwner().isInsideZone(L2Character.ZONE_PVP) && ((L2PcInstance) activeChar).isInsideZone(L2Character.ZONE_PVP) ||
-					targetSummon.getOwner().isInDuel() && ((L2PcInstance) activeChar).isInDuel() &&
-							targetSummon.getOwner().getDuelId() == ((L2PcInstance) activeChar).getDuelId()) {
-				return new L2Character[]{targetSummon};
+					targetSummon.getOwner().isInsideZone(Creature.ZONE_PVP) && ((Player) activeChar).isInsideZone(Creature.ZONE_PVP) ||
+					targetSummon.getOwner().isInDuel() && ((Player) activeChar).isInDuel() &&
+							targetSummon.getOwner().getDuelId() == ((Player) activeChar).getDuelId()) {
+				return new Creature[]{targetSummon};
 			}
 		}
 
@@ -50,9 +50,9 @@ public class TargetEnemySummon implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
+	public Enum<SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub
-		return L2SkillTargetType.TARGET_ENEMY_SUMMON;
+		return SkillTargetType.TARGET_ENEMY_SUMMON;
 	}
 
 	public static void main(String[] args) {

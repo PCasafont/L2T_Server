@@ -10,13 +10,14 @@ import l2server.gameserver.events.instanced.EventTeam;
 import l2server.gameserver.events.instanced.EventTeleporter;
 import l2server.gameserver.instancemanager.PlayerAssistsManager;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2EventGolemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.EventGolemInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,6 +26,9 @@ import java.util.List;
  * @author Pere
  */
 public class DestroyTheGolem extends EventInstance {
+	private static Logger log = LoggerFactory.getLogger(DestroyTheGolem.class.getName());
+
+
 
 	private boolean golemsSpawned = false;
 
@@ -113,7 +117,7 @@ public class DestroyTheGolem extends EventInstance {
 	}
 
 	@Override
-	public String getRunningInfo(L2PcInstance player) {
+	public String getRunningInfo(Player player) {
 		String html = "";
 		for (EventTeam team : teams) {
 			if (team.getParticipatedPlayerCount() > 0) {
@@ -126,7 +130,7 @@ public class DestroyTheGolem extends EventInstance {
 		return html;
 	}
 
-	public void onGolemDestroyed(L2PcInstance player, EventTeam team) {
+	public void onGolemDestroyed(Player player, EventTeam team) {
 		getParticipantTeam(player.getObjectId()).increasePoints();
 
 		sendToAllParticipants(
@@ -135,7 +139,7 @@ public class DestroyTheGolem extends EventInstance {
 
 		CreatureSay cs =
 				new CreatureSay(player.getObjectId(), Say2.TELL, player.getName(), "I have destroyed the " + team.getName() + " team's golem!");
-		for (L2PcInstance character : getParticipantTeam(player.getObjectId()).getParticipatedPlayers().values()) {
+		for (Player character : getParticipantTeam(player.getObjectId()).getParticipatedPlayers().values()) {
 			if (character != null) {
 				character.sendPacket(cs);
 			}
@@ -145,7 +149,7 @@ public class DestroyTheGolem extends EventInstance {
 	}
 
 	@Override
-	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayer) {
+	public void onKill(Creature killerCharacter, Player killedPlayer) {
 		if (killedPlayer == null || !isState(EventState.STARTED)) {
 			return;
 		}
@@ -155,14 +159,14 @@ public class DestroyTheGolem extends EventInstance {
 			return;
 		}
 
-		L2PcInstance killerPlayer = killerCharacter.getActingPlayer();
+		Player killerPlayer = killerCharacter.getActingPlayer();
 		if (killerPlayer == null) {
 			return;
 		}
 
 		killerPlayer.addEventPoints(3);
-		List<L2PcInstance> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
-		for (L2PcInstance assistant : assistants) {
+		List<Player> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
+		for (Player assistant : assistants) {
 			assistant.addEventPoints(1);
 		}
 
@@ -187,7 +191,7 @@ public class DestroyTheGolem extends EventInstance {
 	}
 
 	private void spawnGolem(EventTeam team) {
-		L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(team.getGolemId());
+		NpcTemplate tmpl = NpcTable.getInstance().getTemplate(team.getGolemId());
 
 		try {
 			team.setGolemSpawn(new L2Spawn(tmpl));
@@ -217,7 +221,7 @@ public class DestroyTheGolem extends EventInstance {
 
 			team.getGolemSpawn().startRespawn();
 			team.getGolemSpawn().doSpawn();
-			L2EventGolemInstance golem = (L2EventGolemInstance) team.getGolemSpawn().getNpc();
+			EventGolemInstance golem = (EventGolemInstance) team.getGolemSpawn().getNpc();
 			int maxHp = 25 * getParticipatedPlayersCount() / config.getLocation().getTeamCount();
 			golem.setMaxHp(maxHp);
 			golem.setCurrentHp(golem.getMaxHp());
@@ -225,7 +229,7 @@ public class DestroyTheGolem extends EventInstance {
 			golem.setTitle(team.getName());
 			golem.updateAbnormalEffect();
 		} catch (Exception e) {
-			Log.warning("Golem Engine[spawnGolem(" + team.getName() + ")]: exception: " + Arrays.toString(e.getStackTrace()));
+			log.warn("Golem Engine[spawnGolem(" + team.getName() + ")]: exception: " + Arrays.toString(e.getStackTrace()));
 		}
 	}
 

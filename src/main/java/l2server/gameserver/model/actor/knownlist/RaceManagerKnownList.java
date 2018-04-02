@@ -16,9 +16,9 @@
 package l2server.gameserver.model.actor.knownlist;
 
 import l2server.gameserver.MonsterRace;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2RaceManagerInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.RaceManagerInstance;
 import l2server.gameserver.network.serverpackets.DeleteObject;
 
 public class RaceManagerKnownList extends NpcKnownList {
@@ -27,22 +27,22 @@ public class RaceManagerKnownList extends NpcKnownList {
 
 	// =========================================================
 	// Constructor
-	public RaceManagerKnownList(L2RaceManagerInstance activeChar) {
+	public RaceManagerKnownList(RaceManagerInstance activeChar) {
 		super(activeChar);
 	}
 
 	// =========================================================
 	// Method - Public
 	@Override
-	public boolean addKnownObject(L2Object object) {
+	public boolean addKnownObject(WorldObject object) {
 		if (!super.addKnownObject(object)) {
 			return false;
 		}
 
 		/* DONT KNOW WHY WE NEED THIS WHEN RACE MANAGER HAS A METHOD THAT BROADCAST TO ITS KNOW PLAYERS
-		if (object instanceof L2PcInstance) {
+		if (object instanceof Player) {
 			if (packet != null)
-				((L2PcInstance) object).sendPacket(packet);
+				((Player) object).sendPacket(packet);
 		}
 		 */
 
@@ -50,12 +50,12 @@ public class RaceManagerKnownList extends NpcKnownList {
 	}
 
 	@Override
-	protected boolean removeKnownObject(L2Object object, boolean forget) {
+	protected boolean removeKnownObject(WorldObject object, boolean forget) {
 		if (!super.removeKnownObject(object, forget)) {
 			return false;
 		}
 
-		if (object instanceof L2PcInstance) {
+		if (object instanceof Player) {
 			//Logozo.info("Sending delete monsrac info.");
 			DeleteObject obj = null;
 			for (int i = 0; i < 8; i++) {
@@ -73,7 +73,7 @@ public class RaceManagerKnownList extends NpcKnownList {
 	// =========================================================
 	// Property - Public
 	@Override
-	public L2RaceManagerInstance getActiveChar() {
-		return (L2RaceManagerInstance) super.getActiveChar();
+	public RaceManagerInstance getActiveChar() {
+		return (RaceManagerInstance) super.getActiveChar();
 	}
 }

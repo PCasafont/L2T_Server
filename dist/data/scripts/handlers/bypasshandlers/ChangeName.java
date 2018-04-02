@@ -19,8 +19,8 @@ import l2server.Config;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
@@ -29,7 +29,7 @@ public class ChangeName implements IBypassHandler {
 	private static final String[] COMMANDS = {"ChangeCharName", "ChangeClanName"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		if (target == null || !Config.isServer(Config.TENKAI)) {
 			return false;
 		}
@@ -75,7 +75,7 @@ public class ChangeName implements IBypassHandler {
 					if (activeChar.isInParty()) {
 						// Delete party window for other party members
 						activeChar.getParty().broadcastToPartyMembers(activeChar, new PartySmallWindowDeleteAll());
-						for (L2PcInstance member : activeChar.getParty().getPartyMembers()) {
+						for (Player member : activeChar.getParty().getPartyMembers()) {
 							// And re-add
 							if (member != activeChar) {
 								member.sendPacket(new PartySmallWindowAll(member, activeChar.getParty()));

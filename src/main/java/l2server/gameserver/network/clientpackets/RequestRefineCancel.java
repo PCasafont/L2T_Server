@@ -16,13 +16,13 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExVariationCancelResult;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
 
 /**
@@ -42,12 +42,12 @@ public final class RequestRefineCancel extends L2GameClientPacket {
 	 */
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
 		
-		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(targetItemObjId);
+		Item targetItem = activeChar.getInventory().getItemByObjectId(targetItemObjId);
 		if (targetItem == null) {
 			activeChar.sendPacket(new ExVariationCancelResult(0));
 			return;
@@ -69,7 +69,7 @@ public final class RequestRefineCancel extends L2GameClientPacket {
 		// get the price
 		int price = 0;
 		switch (targetItem.getItem().getCrystalType()) {
-			case L2Item.CRYSTAL_C:
+			case ItemTemplate.CRYSTAL_C:
 				if (targetItem.getCrystalCount() < 1720) {
 					price = 95000;
 				} else if (targetItem.getCrystalCount() < 2452) {
@@ -78,14 +78,14 @@ public final class RequestRefineCancel extends L2GameClientPacket {
 					price = 210000;
 				}
 				break;
-			case L2Item.CRYSTAL_B:
+			case ItemTemplate.CRYSTAL_B:
 				if (targetItem.getCrystalCount() < 1746) {
 					price = 240000;
 				} else {
 					price = 270000;
 				}
 				break;
-			case L2Item.CRYSTAL_A:
+			case ItemTemplate.CRYSTAL_A:
 				if (targetItem.getCrystalCount() < 2160) {
 					price = 330000;
 				} else if (targetItem.getCrystalCount() < 2824) {
@@ -94,16 +94,16 @@ public final class RequestRefineCancel extends L2GameClientPacket {
 					price = 420000;
 				}
 				break;
-			case L2Item.CRYSTAL_S:
+			case ItemTemplate.CRYSTAL_S:
 				price = 480000;
 				break;
-			case L2Item.CRYSTAL_S80:
-			case L2Item.CRYSTAL_S84:
+			case ItemTemplate.CRYSTAL_S80:
+			case ItemTemplate.CRYSTAL_S84:
 				price = 920000;
 				break;
-			case L2Item.CRYSTAL_R:
-			case L2Item.CRYSTAL_R95:
-			case L2Item.CRYSTAL_R99:
+			case ItemTemplate.CRYSTAL_R:
+			case ItemTemplate.CRYSTAL_R95:
+			case ItemTemplate.CRYSTAL_R99:
 				price = 5300000;
 				break;
 			// any other item type is not augmentable
@@ -125,9 +125,9 @@ public final class RequestRefineCancel extends L2GameClientPacket {
 		
 		// unequip item
 		if (targetItem.isEquipped()) {
-			L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(targetItem.getLocationSlot());
+			Item[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(targetItem.getLocationSlot());
 			InventoryUpdate iu = new InventoryUpdate();
-			for (L2ItemInstance itm : unequiped) {
+			for (Item itm : unequiped) {
 				iu.addModifiedItem(itm);
 			}
 			

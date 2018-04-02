@@ -15,7 +15,7 @@
 
 package l2server.gameserver.model.entity;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Gnacik
@@ -27,7 +27,7 @@ public final class RecoBonus {
 					{6, 12, 18, 25, 31, 37, 43, 50, 50, 50}, {5, 11, 16, 22, 27, 33, 38, 44, 50, 50}, {5, 10, 15, 20, 25, 30, 35, 40, 45, 50},
 					{5, 10, 15, 20, 25, 30, 35, 40, 45, 50}};
 
-	public static int getRecoBonus(L2PcInstance activeChar) {
+	public static int getRecoBonus(Player activeChar) {
 		if (activeChar != null && activeChar.isOnline()) {
 			if (activeChar.getRecomHave() == 0) {
 				return 0;
@@ -41,7 +41,7 @@ public final class RecoBonus {
 		return 0;
 	}
 
-	public static double getRecoMultiplier(L2PcInstance activeChar) {
+	public static double getRecoMultiplier(Player activeChar) {
 		double multiplier = 1;
 
 		int bonus = getRecoBonus(activeChar);

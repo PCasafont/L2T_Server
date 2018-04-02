@@ -17,7 +17,7 @@ package l2server.gameserver.model.olympiad;
 
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.NpcSay;
 
@@ -66,7 +66,7 @@ public final class OlympiadAnnouncer implements Runnable {
 						continue;
 				}
 
-				L2Npc manager;
+				Npc manager;
 				NpcSay packet;
 				for (L2Spawn spawn : managers) {
 					manager = spawn.getNpc();

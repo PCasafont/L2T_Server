@@ -21,13 +21,13 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
-import l2server.gameserver.model.zone.type.L2BossZone;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.GrandBossInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
+import l2server.gameserver.model.zone.type.BossZone;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SpecialCamera;
@@ -77,9 +77,9 @@ public class Sailren extends L2AttackableAIScript {
 	private static final byte FIGHTING = 1; //SAILREN is engaged in battle, annihilating his foes. Entry is locked
 	private static final byte DEAD = 2; //SAILREN has been killed. Entry is locked
 
-	private L2BossZone Zone = null;
+	private BossZone Zone = null;
 
-	private List<L2PcInstance> playersInside = new ArrayList<L2PcInstance>();
+	private List<Player> playersInside = new ArrayList<Player>();
 	private ArrayList<Integer> allowedPlayers = new ArrayList<Integer>();
 
 	// Task
@@ -87,7 +87,7 @@ public class Sailren extends L2AttackableAIScript {
 	protected long LastAction = 0;
 	private static final int INACTIVITYTIME = 900000;
 
-	private List<L2Npc> velos;
+	private List<Npc> velos;
 
 	private static int[] MOBS = {SAILREN, GUARD1, GUARD2, GUARD3, 22198, 22223, 22218};
 
@@ -116,7 +116,7 @@ public class Sailren extends L2AttackableAIScript {
 		}
 	}
 
-	private boolean checkConditions(L2PcInstance player) {
+	private boolean checkConditions(Player player) {
 		if (player.getInventory().getItemByItemId(REQUIRED_ITEM) == null) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_REQUIRED_ITEMS);
 			player.sendPacket(sm);
@@ -139,7 +139,7 @@ public class Sailren extends L2AttackableAIScript {
 			return false;
 		}
 
-		for (L2PcInstance partyMember : party.getPartyMembers()) {
+		for (Player partyMember : party.getPartyMembers()) {
 
 			if (partyMember == null) {
 				continue;
@@ -160,11 +160,11 @@ public class Sailren extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.equalsIgnoreCase("start")) {
-			velos = new ArrayList<L2Npc>();
+			velos = new ArrayList<Npc>();
 			int x, y;
-			L2Npc temp;
+			Npc temp;
 			for (int i = 0; i < 3; i++) {
 				x = SAILREN_X + Rnd.get(100);
 				y = SAILREN_Y + Rnd.get(100);
@@ -174,7 +174,7 @@ public class Sailren extends L2AttackableAIScript {
 				velos.add(temp);
 			}
 		} else if (event.equalsIgnoreCase("spawn")) {
-			L2GrandBossInstance Sailren = (L2GrandBossInstance) addSpawn(SAILREN, SAILREN_X, SAILREN_Y, SAILREN_Z, 27306, false, 0);
+			GrandBossInstance Sailren = (GrandBossInstance) addSpawn(SAILREN, SAILREN_X, SAILREN_Y, SAILREN_Z, 27306, false, 0);
 			GrandBossManager.getInstance().addBoss(Sailren);
 
 			Zone.broadcastPacket(new SpecialCamera(Sailren.getObjectId(), 300, 275, 0, 1200, 10000));
@@ -193,7 +193,7 @@ public class Sailren extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		LastAction = System.currentTimeMillis();
 
 		return null;
@@ -213,19 +213,19 @@ public class Sailren extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		String htmltext = "";
 		if (npc.getNpcId() == MANAGER) {
 			if (GrandBossManager.getInstance().getBossStatus(SAILREN) == DORMANT) {
 				if (!checkConditions(player)) {
 					return htmltext;
 				} else {
-					L2ItemInstance item = player.getInventory().getItemByItemId(REQUIRED_ITEM);
+					Item item = player.getInventory().getItemByItemId(REQUIRED_ITEM);
 					player.getInventory().destroyItem("Sailren AI", item, 1, null, null);
 
 					GrandBossManager.getInstance().setBossStatus(SAILREN, FIGHTING);
 
-					for (L2PcInstance member : player.getParty().getPartyMembers()) {
+					for (Player member : player.getParty().getPartyMembers()) {
 						if (member != null) {
 							allowedPlayers.add(member.getObjectId());
 						}
@@ -233,13 +233,13 @@ public class Sailren extends L2AttackableAIScript {
 
 					Zone.setAllowedPlayers(allowedPlayers);
 
-					for (L2PcInstance member : player.getParty().getPartyMembers()) {
+					for (Player member : player.getParty().getPartyMembers()) {
 						if (member != null) {
 							member.teleToLocation(SPAWN_X + Rnd.get(50), SPAWN_Y + Rnd.get(50), SPAWN_Z, true);
 							if (member.getPet() != null) {
 								member.getPet().teleToLocation(SPAWN_X + Rnd.get(50), SPAWN_Y + Rnd.get(50), SPAWN_Z, true);
 							}
-							for (L2SummonInstance summon : member.getSummons()) {
+							for (SummonInstance summon : member.getSummons()) {
 								summon.teleToLocation(SPAWN_X + Rnd.get(50), SPAWN_Y + Rnd.get(50), SPAWN_Z, true);
 							}
 							playersInside.add(member);
@@ -268,7 +268,7 @@ public class Sailren extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		if (npc.getNpcId() == SAILREN) {
 			activityCheckTask.cancel(false);
 			GrandBossManager.getInstance().setBossStatus(SAILREN, DEAD);
@@ -278,27 +278,27 @@ public class Sailren extends L2AttackableAIScript {
 			StatsSet info = GrandBossManager.getInstance().getStatsSet(SAILREN);
 			info.set("respawn_time", System.currentTimeMillis() + respawnTime);
 			GrandBossManager.getInstance().setStatsSet(SAILREN, info);
-			L2Npc cube = addSpawn(CUBE, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), true, 0);
+			Npc cube = addSpawn(CUBE, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), true, 0);
 			startQuestTimer("despawn", 300000, cube, null);
 		} else if (npc.getNpcId() == VELO) {
 			if (velos == null) {
 				return "";
 			}
 			velos.remove(npc);
-			L2PcInstance target = (L2PcInstance) npc.getTarget();
+			Player target = (Player) npc.getTarget();
 			npc.deleteMe();
 			if (velos.isEmpty()) {
 				velos.clear();
 				velos = null;
-				L2Npc temp = this.addSpawn(PTERO, MOBS_X, MOBS_Y, MOBS_Z, 0, false, 0);
+				Npc temp = this.addSpawn(PTERO, MOBS_X, MOBS_Y, MOBS_Z, 0, false, 0);
 				temp.setTarget(target);
 				temp.setRunning();
 				temp.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 			}
-		} else if (npc.getNpcId() == PTERO && npc.getTarget() instanceof L2PcInstance) {
-			L2PcInstance target = (L2PcInstance) npc.getTarget();
+		} else if (npc.getNpcId() == PTERO && npc.getTarget() instanceof Player) {
+			Player target = (Player) npc.getTarget();
 			npc.deleteMe();
-			L2Npc temp = this.addSpawn(TREX, MOBS_X, MOBS_Y, MOBS_Z, 0, false, 0);
+			Npc temp = this.addSpawn(TREX, MOBS_X, MOBS_Y, MOBS_Z, 0, false, 0);
 			temp.setTarget(target);
 			temp.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 			temp.setRunning();

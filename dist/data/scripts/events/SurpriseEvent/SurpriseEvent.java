@@ -1,15 +1,15 @@
 package events.SurpriseEvent;
 
 import l2server.gameserver.Announcements;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.NpcSay;
-import l2server.gameserver.templates.item.L2Weapon;
+import l2server.gameserver.templates.item.WeaponTemplate;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -39,11 +39,11 @@ public class SurpriseEvent extends Quest {
 	private static Long nextInvasion;
 	private static Long nextSantaReward;
 	private static String lastSantaRewardedName;
-	private static L2PcInstance player;
-	private static L2Npc santa;
+	private static Player player;
+	private static Npc santa;
 	private static boolean isUnderInvasion = false;
 	private Map<Integer, invaderInfo> attackInfo = new HashMap<Integer, invaderInfo>();
-	private ArrayList<L2Character> invaders = new ArrayList<L2Character>();
+	private ArrayList<Creature> invaders = new ArrayList<Creature>();
 	private ArrayList<String> rewardedPlayers = new ArrayList<String>(); //IP based
 	private static final int[][] randomRewards = {
 			//Item Id, ammount
@@ -116,7 +116,7 @@ public class SurpriseEvent extends Quest {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet, L2Skill skill) {
+	public String onAttack(Npc npc, Player player, int damage, boolean isPet, Skill skill) {
 
 		synchronized (attackInfo) {
 			invaderInfo info = attackInfo.get(npc.getObjectId()); //Get the attack info from this npc
@@ -161,7 +161,7 @@ public class SurpriseEvent extends Quest {
 				}
 			}
 		}
-		L2Weapon playerWeapon = player.getActiveWeaponItem();
+		WeaponTemplate playerWeapon = player.getActiveWeaponItem();
 		if (playerWeapon != null) {
 			player.sendPacket(new NpcSay(npc.getObjectId(), 2, npc.getTemplate().TemplateId, player.getName() + " You should use your hands!"));
 			return "";
@@ -169,7 +169,7 @@ public class SurpriseEvent extends Quest {
 			attackInfo.remove(npc.getObjectId()); //Delete the stored info for this npc
 			int random = Rnd.get(randomRewards.length);
 			player.addItem("Surpise Event", randomRewards[random][0], randomRewards[random][1], player, true);
-			L2Character chara = (L2Character) player.getTarget();
+			Creature chara = (Creature) player.getTarget();
 			chara.deleteMe();
 			nb_box--;
 			Announcements.getInstance().announceToAll("A box has been found by " + player.getName() + "!");
@@ -177,7 +177,7 @@ public class SurpriseEvent extends Quest {
 			//	Announcements.getInstance().announceToAll( player.getName() + " found : " + randomRewards[random][1] + " " +  _reward_name[random][k]);
 			Announcements.getInstance().announceToAll("Boxes left :  " + nb_box + "!");
 			if (nb_box <= 0) {
-				for (L2Character charaa : invaders) {
+				for (Creature charaa : invaders) {
 					if (charaa == null) {
 						continue;
 					}
@@ -194,7 +194,7 @@ public class SurpriseEvent extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 
 		synchronized (attackInfo) {
 			invaderInfo info = attackInfo.get(npc.getObjectId()); //Get the attack info
@@ -207,7 +207,7 @@ public class SurpriseEvent extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		StringBuilder tb = new StringBuilder();
 		tb.append("<html><center><font color=\"3D81A8\">MEUUUH!</font></center><br1>Hohohoh! Hi " + player.getName() +
 				" If you give me some <font color=LEVEL>Milk</font> I can give you some gifts! Take all what you can!<br>");
@@ -267,7 +267,7 @@ public class SurpriseEvent extends Quest {
 
 	@SuppressWarnings("unused")
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 
 		if (event.startsWith("start_invasion")) {
 			if (isUnderInvasion) {
@@ -280,7 +280,7 @@ public class SurpriseEvent extends Quest {
 
 			for (int i = 0; i < nb_box; i++) {
 				int r = Rnd.get(loc.length);
-				L2Npc inv = addSpawn(invaderIds[Rnd.get(invaderIds.length)], loc[r][0], loc[r][1], loc[r][2] + 20, -1, false, 0);
+				Npc inv = addSpawn(invaderIds[Rnd.get(invaderIds.length)], loc[r][0], loc[r][1], loc[r][2] + 20, -1, false, 0);
 				inv.setIsImmobilized(true);
 				inv.setIsMortal(false);
 				invaders.add(inv);
@@ -300,7 +300,7 @@ public class SurpriseEvent extends Quest {
 				}
 			}
 
-			for (L2Character chara : invaders) {
+			for (Creature chara : invaders) {
 				if (chara == null) {
 					continue;
 				}

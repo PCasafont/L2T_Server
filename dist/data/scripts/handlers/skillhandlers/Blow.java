@@ -15,16 +15,14 @@
 
 package handlers.skillhandlers;
 
-import l2server.Config;
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.StatusUpdate.StatusUpdateDisplay;
@@ -34,39 +32,33 @@ import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.stats.funcs.Func;
-import l2server.gameserver.templates.item.L2WeaponType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.item.WeaponType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.util.Rnd;
-
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
 
 /**
  * @author Steuf
  */
 public class Blow implements ISkillHandler {
-	private static final Logger logDamage = Logger.getLogger("damage");
-
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.BLOW};
+	private static final SkillType[] SKILL_IDS = {SkillType.BLOW};
 
 	public static final byte FRONT = 50;
 	public static final byte SIDE = 60;
 	public static final byte BEHIND = 70;
 
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
 		if (activeChar.isAlikeDead()) {
 			return;
 		}
 
-		for (L2Character target : (L2Character[]) targets) {
+		for (Creature target : (Creature[]) targets) {
 			if (target.isAlikeDead()) {
 				continue;
 			}
 
-			if (activeChar instanceof L2PcInstance) {
-				final L2PcInstance player = (L2PcInstance) activeChar;
+			if (activeChar instanceof Player) {
+				final Player player = (Player) activeChar;
 
 				if (player.getExpertiseWeaponPenalty() != 0) {
 					return;
@@ -86,7 +78,7 @@ public class Blow implements ISkillHandler {
 			}
 
 			// Tenkai customization - Blow direction feedback for .stabs command
-			if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isShowingStabs()) {
+			if (activeChar instanceof Player && ((Player) activeChar).isShowingStabs()) {
 				if (activeChar.isBehindTarget()) {
 					activeChar.sendPacket(new ExShowScreenMessage(1, 0, 5, 0, 1, 0, 0, false, 400, 0, "Backstab!"));
 				} else if (activeChar.isInFrontOfTarget()) {
@@ -109,8 +101,8 @@ public class Blow implements ISkillHandler {
 					} else {
 						final byte shld = Formulas.calcShldUse(activeChar, target, skill);
 						//target.stopSkillEffects(skill.getId());
-						if (Formulas.calcSkillSuccess(activeChar, target, skill, shld, L2ItemInstance.CHARGED_NONE)) {
-							skill.getEffects(activeChar, target, new Env(shld, L2ItemInstance.CHARGED_NONE));
+						if (Formulas.calcSkillSuccess(activeChar, target, skill, shld, Item.CHARGED_NONE)) {
+							skill.getEffects(activeChar, target, new Env(shld, Item.CHARGED_NONE));
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
 							sm.addSkillName(skill);
 							target.sendPacket(sm);
@@ -122,10 +114,10 @@ public class Blow implements ISkillHandler {
 						}
 					}
 				}
-				L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
-				double soul = L2ItemInstance.CHARGED_NONE;
-				if (weapon != null && (weapon.getItemType() == L2WeaponType.DAGGER || weapon.getItemType() == L2WeaponType.DUALDAGGER ||
-						weapon.getItemType() == L2WeaponType.RAPIER)) {
+				Item weapon = activeChar.getActiveWeaponInstance();
+				double soul = Item.CHARGED_NONE;
+				if (weapon != null && (weapon.getItemType() == WeaponType.DAGGER || weapon.getItemType() == WeaponType.DUALDAGGER ||
+						weapon.getItemType() == WeaponType.RAPIER)) {
 					soul = weapon.getChargedSoulShot();
 				}
 				byte shld = Formulas.calcShldUse(activeChar, target, skill);
@@ -137,11 +129,11 @@ public class Blow implements ISkillHandler {
 				}
 				double damage = (int) Formulas.calcBlowDamage(activeChar, target, skill, shld, soul);
 
-				if (activeChar instanceof L2PcInstance) {
-					((L2PcInstance) activeChar).sendSysMessage("Dam = " + damage);
+				if (activeChar instanceof Player) {
+					((Player) activeChar).sendSysMessage("Dam = " + damage);
 				}
-				if (skill.getMaxSoulConsumeCount() > 0 && activeChar instanceof L2PcInstance) {
-					switch (((L2PcInstance) activeChar).getSouls()) {
+				if (skill.getMaxSoulConsumeCount() > 0 && activeChar instanceof Player) {
+					switch (((Player) activeChar).getSouls()) {
 						case 0:
 							break;
 						case 1:
@@ -162,13 +154,13 @@ public class Blow implements ISkillHandler {
 					}
 				}
 				if (crit) {
-					if (activeChar instanceof L2PcInstance) {
-						((L2PcInstance) activeChar).sendSysMessage("Crit.");
+					if (activeChar instanceof Player) {
+						((Player) activeChar).sendSysMessage("Crit.");
 					}
 					damage *= 2;
 					// Vicious Stance is special after C5, and only for BLOW skills
 					// Adds directly to damage
-					L2Abnormal vicious = activeChar.getFirstEffect(312);
+					Abnormal vicious = activeChar.getFirstEffect(312);
 					if (vicious != null && damage > 1) {
 						for (Func func : vicious.getStatFuncs()) {
 							Env env = new Env();
@@ -182,19 +174,12 @@ public class Blow implements ISkillHandler {
 					}
 				}
 
-				if (activeChar instanceof L2PcInstance) {
-					((L2PcInstance) activeChar).sendSysMessage("Dam = " + damage);
+				if (activeChar instanceof Player) {
+					((Player) activeChar).sendSysMessage("Dam = " + damage);
 				}
 
-				if (soul > L2ItemInstance.CHARGED_NONE) {
-					weapon.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
-				}
-
-				if (Config.LOG_GAME_DAMAGE && activeChar instanceof L2Playable && damage > Config.LOG_GAME_DAMAGE_THRESHOLD) {
-					LogRecord record = new LogRecord(Level.INFO, "");
-					record.setParameters(new Object[]{activeChar, " did damage ", (int) damage, skill, " to ", target});
-					record.setLoggerName("pdam");
-					logDamage.log(record);
+				if (soul > Item.CHARGED_NONE) {
+					weapon.setChargedSoulShot(Item.CHARGED_NONE);
 				}
 
 				int reflectedDamage = 0;
@@ -216,9 +201,9 @@ public class Blow implements ISkillHandler {
 							reflectedDamage = (int) (reflectPercent / 100. * Math.min(target.getCurrentHp(), damage));
 
 							// Half the reflected damage for bows
-							/*L2Weapon weaponItem = activeChar.getActiveWeaponItem();
-                            if (weaponItem != null && (weaponItem.getItemType() == L2WeaponType.BOW
-									 || weaponItem.getItemType() == L2WeaponType.CROSSBOW))
+							/*WeaponTemplate weaponItem = activeChar.getActiveWeaponItem();
+                            if (weaponItem != null && (weaponItem.getItemType() == WeaponType.BOW
+									 || weaponItem.getItemType() == WeaponType.CROSSBOW))
 								reflectedDamage *= 0.5f;*/
 
 							if (reflectedDamage > target.getMaxHp()) // to prevent extreme damage when hitting a low lvl char...
@@ -252,16 +237,16 @@ public class Blow implements ISkillHandler {
 					activeChar.reduceCurrentHp(reflectedDamage, target, true, false, null);
 
 					// Custom messages - nice but also more network load
-					if (target instanceof L2PcInstance) {
-						((L2PcInstance) target).sendMessage("You reflected " + reflectedDamage + " damage.");
-					} else if (target instanceof L2Summon) {
-						((L2Summon) target).getOwner().sendMessage("Summon reflected " + reflectedDamage + " damage.");
+					if (target instanceof Player) {
+						((Player) target).sendMessage("You reflected " + reflectedDamage + " damage.");
+					} else if (target instanceof Summon) {
+						((Summon) target).getOwner().sendMessage("Summon reflected " + reflectedDamage + " damage.");
 					}
 
-					if (activeChar instanceof L2PcInstance) {
-						((L2PcInstance) activeChar).sendMessage("Target reflected to you " + reflectedDamage + " damage.");
-					} else if (activeChar instanceof L2Summon) {
-						((L2Summon) activeChar).getOwner().sendMessage("Target reflected to your summon " + reflectedDamage + " damage.");
+					if (activeChar instanceof Player) {
+						((Player) activeChar).sendMessage("Target reflected to you " + reflectedDamage + " damage.");
+					} else if (activeChar instanceof Summon) {
+						((Summon) activeChar).getOwner().sendMessage("Target reflected to your summon " + reflectedDamage + " damage.");
 					}
 				}
 
@@ -289,12 +274,12 @@ public class Blow implements ISkillHandler {
 
 				// vengeance reflected damage
 				if ((reflect & Formulas.SKILL_REFLECT_VENGEANCE) != 0) {
-					if (target instanceof L2PcInstance) {
+					if (target instanceof Player) {
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.COUNTERED_C1_ATTACK);
 						sm.addCharName(activeChar);
 						target.sendPacket(sm);
 					}
-					if (activeChar instanceof L2PcInstance) {
+					if (activeChar instanceof Player) {
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_PERFORMING_COUNTERATTACK);
 						sm.addCharName(target);
 						activeChar.sendPacket(sm);
@@ -311,8 +296,8 @@ public class Blow implements ISkillHandler {
 					target.breakCast();
 				}
 
-				if (activeChar instanceof L2PcInstance) {
-					L2PcInstance activePlayer = (L2PcInstance) activeChar;
+				if (activeChar instanceof Player) {
+					Player activePlayer = (Player) activeChar;
 
 					activePlayer.sendDamageMessage(target, (int) damage, false, crit, false);
 				}
@@ -320,15 +305,15 @@ public class Blow implements ISkillHandler {
 
 			// Sending system messages
 			if (skillIsEvaded) {
-				if (activeChar instanceof L2PcInstance) {
+				if (activeChar instanceof Player) {
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_DODGES_ATTACK);
 					sm.addString(target.getName());
-					((L2PcInstance) activeChar).sendPacket(sm);
+					((Player) activeChar).sendPacket(sm);
 				}
-				if (target instanceof L2PcInstance) {
+				if (target instanceof Player) {
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.AVOIDED_C1_ATTACK);
 					sm.addString(activeChar.getName());
-					((L2PcInstance) target).sendPacket(sm);
+					((Player) target).sendPacket(sm);
 				}
 			}
 
@@ -337,7 +322,7 @@ public class Blow implements ISkillHandler {
 
 			//Self Effect
 			if (skill.hasSelfEffects()) {
-				final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
+				final Abnormal effect = activeChar.getFirstEffect(skill.getId());
 				if (effect != null && effect.isSelfEffect()) {
 					effect.exit();
 				}
@@ -347,7 +332,7 @@ public class Blow implements ISkillHandler {
 	}
 
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

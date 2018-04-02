@@ -19,18 +19,18 @@
 
 package l2server.gameserver.communitybbs.Manager;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ShowBoard;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class BaseBBSManager {
-	public abstract void parsecmd(String command, L2PcInstance activeChar);
+	public abstract void parsecmd(String command, Player activeChar);
 
-	public abstract void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, L2PcInstance activeChar);
+	public abstract void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, Player activeChar);
 
-	protected void separateAndSend(String html, L2PcInstance acha) {
+	protected void separateAndSend(String html, Player acha) {
 		if (html == null) {
 			return;
 		}
@@ -53,7 +53,7 @@ public abstract class BaseBBSManager {
 	 * @param html
 	 * @param acha
 	 */
-	protected void send1001(String html, L2PcInstance acha) {
+	protected void send1001(String html, Player acha) {
 		if (html.length() < 8192) {
 			acha.sendPacket(new ShowBoard(html, "1001"));
 		}
@@ -62,7 +62,7 @@ public abstract class BaseBBSManager {
 	/**
 	 * @param acha
 	 */
-	protected void send1002(L2PcInstance acha) {
+	protected void send1002(Player acha) {
 		send1002(acha, " ", " ", "0");
 	}
 
@@ -72,7 +72,7 @@ public abstract class BaseBBSManager {
 	 * @param string2
 	 * @param string3
 	 */
-	protected void send1002(L2PcInstance activeChar, String string, String string2, String string3) {
+	protected void send1002(Player activeChar, String string, String string2, String string3) {
 		List<String> arg = new ArrayList<>();
 		arg.add("0");
 		arg.add("0");

@@ -15,8 +15,8 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.stats.VisualEffect;
 
 import java.nio.ByteBuffer;
@@ -33,7 +33,7 @@ public final class ExSummonInfo extends L2GameServerPacket {
 	private byte[] data2;
 	private Set<Integer> abnormals;
 	
-	public ExSummonInfo(L2SummonInstance summon, L2Character attacker, int val) {
+	public ExSummonInfo(SummonInstance summon, Creature attacker, int val) {
 		objectId = summon.getObjectId();
 		val = 0;//summon.isShowSummonAnimation() ? 2 : val;
 		

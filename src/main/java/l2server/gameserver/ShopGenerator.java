@@ -16,7 +16,7 @@
 package l2server.gameserver;
 
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 
 /**
  * @author Pere
@@ -24,8 +24,8 @@ import l2server.gameserver.templates.item.L2Item;
 public class ShopGenerator {
 	public static void customShops() {
 		String result = "<?xml version='1.0' encoding='utf-8'?>\r\n<list>\r\n";
-		for (L2Item item : ItemTable.getInstance().getAllItems()) {
-			if (item != null && item.getBodyPart() == L2Item.SLOT_UNDERWEAR && item.getName().contains("Shirt")) {
+		for (ItemTemplate item : ItemTable.getInstance().getAllItems()) {
+			if (item != null && item.getBodyPart() == ItemTemplate.SLOT_UNDERWEAR && item.getName().contains("Shirt")) {
 				result += "\t<item>\r\n";
 				result += "\t\t<ingredient id=\"57\" count=\"1\"> <!-- Adena -->\r\n";
 				result += "\t\t<production id=\"" + item.getItemId() + "\" count=\"1\"> <!-- " + item.getName() + " -->\r\n";

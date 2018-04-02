@@ -17,8 +17,9 @@ package l2server.gameserver.stats;
 
 import l2server.Config;
 import l2server.gameserver.TimeController;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.Creature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -29,6 +30,9 @@ import java.util.logging.Level;
  * @author Nik
  */
 public class hitConditionBonus {
+	private static Logger log = LoggerFactory.getLogger(hitConditionBonus.class.getName());
+
+
 
 	private static int frontBonus = 0;
 	private static int sideBonus = 0;
@@ -39,7 +43,7 @@ public class hitConditionBonus {
 
 	//private static int rainBonus = 0;
 
-	protected static double getConditionBonus(L2Character attacker, L2Character target) {
+	protected static double getConditionBonus(Creature attacker, Creature target) {
 		double mod = 100;
 		// Get high or low bonus
 		if (attacker.getZ() - target.getZ() > 50) {
@@ -84,7 +88,7 @@ public class hitConditionBonus {
 							bonus = cond.getInt("val");
 						}
 					} catch (Exception e) {
-						Log.log(Level.WARNING, "[hitConditionBonus] Could not parse condition: " + e.getMessage(), e);
+						log.warn("[hitConditionBonus] Could not parse condition: " + e.getMessage(), e);
 					} finally {
 						if ("front".equals(name)) {
 							frontBonus = bonus;

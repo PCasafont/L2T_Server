@@ -15,8 +15,8 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * This class ...
@@ -42,7 +42,7 @@ public final class CreatureSay extends L2GameServerPacket {
 		this.text = text;
 	}
 	
-	public CreatureSay(L2Character activeChar, int messageType, String charName, String text) {
+	public CreatureSay(Creature activeChar, int messageType, String charName, String text) {
 		objectId = activeChar.getObjectId();
 		textType = messageType;
 		this.charName = charName;
@@ -76,7 +76,7 @@ public final class CreatureSay extends L2GameServerPacket {
 	
 	@Override
 	public final void runImpl() {
-		L2PcInstance pci = getClient().getActiveChar();
+		Player pci = getClient().getActiveChar();
 		if (pci != null) {
 			pci.broadcastSnoop(textType, charName, text);
 		}

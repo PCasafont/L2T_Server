@@ -18,10 +18,10 @@ package ai.individual.Summons;
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.FlyToLocation;
 import l2server.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
@@ -36,7 +36,7 @@ import l2server.util.Rnd;
 
 public class MovingPortal extends L2AttackableAIScript {
 	private static final int portalId = 13426;
-	private static final L2Skill instantTeleport = SkillTable.getInstance().getInfo(11363, 1);
+	private static final Skill instantTeleport = SkillTable.getInstance().getInfo(11363, 1);
 
 	public MovingPortal(int id, String name, String descr) {
 		super(id, name, descr);
@@ -45,7 +45,7 @@ public class MovingPortal extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet) {
+	public String onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isPet) {
 		if (skill.getId() == instantTeleport.getId()) {
 			if (!caster.isPlayingEvent() && npc.getOwner() == caster && GeoData.getInstance().canSeeTarget(npc, caster) &&
 					caster.isInsideRadius(npc, instantTeleport.getSkillRadius(), true, false)) {

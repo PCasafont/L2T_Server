@@ -16,36 +16,36 @@
 package l2server.gameserver.model.actor.status;
 
 import l2server.Config;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2ClanHallManagerInstance;
-import l2server.gameserver.model.actor.instance.L2NpcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.ClanHallManagerInstance;
+import l2server.gameserver.model.actor.instance.NpcInstance;
 
 public class FolkStatus extends NpcStatus {
-	public FolkStatus(L2Npc activeChar) {
+	public FolkStatus(Npc activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public final void reduceHp(double value, L2Character attacker) {
+	public final void reduceHp(double value, Creature attacker) {
 		reduceHp(value, attacker, true, false, false);
 	}
 
 	@Override
-	public final void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHpConsumption) {
+	public final void reduceHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean isHpConsumption) {
 	}
 
 	@Override
 	public final void reduceMp(double value) {
 		//If Clan Hall buff are free and it's a Clan Hall Manager MP won't get reduced.
-		if (Config.CH_BUFF_FREE && getActiveChar() instanceof L2ClanHallManagerInstance) {
+		if (Config.CH_BUFF_FREE && getActiveChar() instanceof ClanHallManagerInstance) {
 			return;
 		}
 		super.reduceMp(value);
 	}
 
 	@Override
-	public L2NpcInstance getActiveChar() {
-		return (L2NpcInstance) super.getActiveChar();
+	public NpcInstance getActiveChar() {
+		return (NpcInstance) super.getActiveChar();
 	}
 }

@@ -15,27 +15,27 @@
 
 package handlers.itemhandlers;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2AirShipInstance;
-import l2server.gameserver.model.actor.instance.L2ControllableAirShipInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.AirShipInstance;
+import l2server.gameserver.model.actor.instance.ControllableAirShipInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class EnergyStarStone extends ItemSkills {
 	/**
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(Playable, Item, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
-		if (!(playable instanceof L2PcInstance)) {
+	public void useItem(Playable playable, Item item, boolean forceUse) {
+		if (!(playable instanceof Player)) {
 			return;
 		}
 
-		final L2AirShipInstance ship = ((L2PcInstance) playable).getAirShip();
-		if (ship == null || !(ship instanceof L2ControllableAirShipInstance) || ship.getFuel() >= ship.getMaxFuel()) {
+		final AirShipInstance ship = ((Player) playable).getAirShip();
+		if (ship == null || !(ship instanceof ControllableAirShipInstance) || ship.getFuel() >= ship.getMaxFuel()) {
 			playable.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED).addItemName(item));
 			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

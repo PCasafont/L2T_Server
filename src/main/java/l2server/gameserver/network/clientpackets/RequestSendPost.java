@@ -21,17 +21,16 @@ import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.instancemanager.MailManager;
 import l2server.gameserver.model.BlockList;
 import l2server.gameserver.model.L2AccessLevel;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 import l2server.util.StringUtil;
 
-import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
+import static l2server.gameserver.model.actor.Creature.ZONE_PEACE;
 import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
 import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
 
@@ -96,7 +95,7 @@ public final class RequestSendPost extends L2GameClientPacket {
 			return;
 		}
 
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -239,14 +238,14 @@ public final class RequestSendPost extends L2GameClientPacket {
 		}
 	}
 
-	private boolean removeItems(L2PcInstance player, Message msg) {
+	private boolean removeItems(Player player, Message msg) {
 		long currentAdena = player.getAdena();
 		long fee = MESSAGE_FEE;
 
 		if (items != null) {
 			for (AttachmentItem i : items) {
 				// Check validity of requested item
-				L2ItemInstance item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "attach");
+				Item item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "attach");
 				if (item == null || !item.isTradeable() || item.isEquipped()) {
 					Util.logToFile("- Could not Attach " + (item == null ? i.getObjectId() : item.getName()) + ". Aborting.",
 							"Logs/Mails/" + player.getName() + "_Sent_Mails",
@@ -296,9 +295,9 @@ public final class RequestSendPost extends L2GameClientPacket {
 		InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
 		for (AttachmentItem i : items) {
 			// Check validity of requested item
-			L2ItemInstance oldItem = player.checkItemManipulation(i.getObjectId(), i.getCount(), "attach");
+			Item oldItem = player.checkItemManipulation(i.getObjectId(), i.getCount(), "attach");
 			if (oldItem == null || !oldItem.isTradeable() || oldItem.isEquipped()) {
-				Log.warning("Error adding attachment for char " + player.getName() + " (olditem == null)");
+				log.warn("Error adding attachment for char " + player.getName() + " (olditem == null)");
 
 				Util.logToFile("- Could not delete old item " + (oldItem == null ? i.getObjectId() : oldItem.getName()) + ". Aborting.",
 						"Logs/Mails/" + player.getName() + "_Sent_Mails",
@@ -309,10 +308,10 @@ public final class RequestSendPost extends L2GameClientPacket {
 				return false;
 			}
 
-			final L2ItemInstance newItem =
+			final Item newItem =
 					player.getInventory().transferItem("send mail to " + receiver, i.getObjectId(), i.getCount(), attachments, player, receiver);
 			if (newItem == null) {
-				Log.warning("Error adding attachment for char " + player.getName() + " (newitem == null)");
+				log.warn("Error adding attachment for char " + player.getName() + " (newitem == null)");
 
 				Util.logToFile("- Could not transfer " + oldItem.getName() + ". Aborting.",
 						"Logs/Mails/" + player.getName() + "_Sent_Mails",

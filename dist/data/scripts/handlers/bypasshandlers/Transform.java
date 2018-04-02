@@ -18,9 +18,9 @@ package handlers.bypasshandlers;
 import l2server.gameserver.datatables.MultiSell;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2TransformManagerInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.TransformManagerInstance;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -29,7 +29,7 @@ public class Transform implements IBypassHandler {
 	private static final String[] COMMANDS = {"transformskilllist", "buytransform", "transformtokukuru"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		if (target == null) {
 			return false;
 		}
@@ -37,7 +37,7 @@ public class Transform implements IBypassHandler {
 		if (command.toLowerCase().startsWith(COMMANDS[0])) // skills list
 		{
 			if (canTransform(activeChar)) {
-				L2TransformManagerInstance.showTransformSkillList(activeChar);
+				TransformManagerInstance.showTransformSkillList(activeChar);
 				return true;
 			} else {
 				NpcHtmlMessage html = new NpcHtmlMessage(target.getObjectId());
@@ -70,7 +70,7 @@ public class Transform implements IBypassHandler {
 		return false;
 	}
 	
-	private static boolean canTransform(L2PcInstance player) {
+	private static boolean canTransform(Player player) {
 		QuestState st = player.getQuestState("136_MoreThanMeetsTheEye");
 		if (st != null && st.getState() == State.COMPLETED) {
 			return true;

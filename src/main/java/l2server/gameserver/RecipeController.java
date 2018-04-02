@@ -18,16 +18,18 @@ package l2server.gameserver;
 import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
@@ -35,9 +37,11 @@ import l2server.util.xml.XmlNode;
 
 import java.io.File;
 import java.util.*;
-import java.util.logging.Level;
 
 public class RecipeController {
+	private static Logger log = LoggerFactory.getLogger(RecipeController.class.getName());
+
+
 
 	private Map<Integer, L2RecipeList> lists = new HashMap<>();
 	private static final Map<Integer, RecipeItemMaker> activeMakers = new HashMap<>();
@@ -76,7 +80,7 @@ public class RecipeController {
 		return idList;
 	}
 
-	public synchronized void requestBookOpen(L2PcInstance player, boolean isDwarvenCraft) {
+	public synchronized void requestBookOpen(Player player, boolean isDwarvenCraft) {
 		RecipeItemMaker maker = null;
 		if (Config.ALT_GAME_CREATION) {
 			maker = activeMakers.get(player.getObjectId());
@@ -92,11 +96,11 @@ public class RecipeController {
 		player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_ALTER_RECIPEBOOK_WHILE_CRAFTING));
 	}
 
-	public synchronized void requestMakeItemAbort(L2PcInstance player) {
+	public synchronized void requestMakeItemAbort(Player player) {
 		activeMakers.remove(player.getObjectId());
 	}
 
-	public synchronized void requestManufactureItem(L2PcInstance manufacturer, int recipeListId, L2PcInstance player) {
+	public synchronized void requestManufactureItem(Player manufacturer, int recipeListId, Player player) {
 		L2RecipeList recipeList = getValidRecipeList(player, recipeListId);
 
 		if (recipeList == null) {
@@ -132,7 +136,7 @@ public class RecipeController {
 		}
 	}
 
-	public synchronized void requestMakeItem(L2PcInstance player, int recipeListId) {
+	public synchronized void requestMakeItem(Player player, int recipeListId) {
 		if (AttackStanceTaskManager.getInstance().getAttackStanceTask(player) || player.isInDuel()) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_OPERATE_PRIVATE_STORE_DURING_COMBAT));
 			return;
@@ -215,7 +219,7 @@ public class RecipeController {
 							try {
 								recipeStatUseList.add(new L2RecipeStatInstance(statName, value));
 							} catch (Exception e) {
-								Log.severe("Error in StatUse parameter for recipe item id: " + id + ", skipping");
+								log.error("Error in StatUse parameter for recipe item id: " + id + ", skipping");
 								continue recipesFile;
 							}
 						} else if (c.getName().equalsIgnoreCase("altStatChange")) {
@@ -224,7 +228,7 @@ public class RecipeController {
 							try {
 								recipeAltStatChangeList.add(new L2RecipeStatInstance(statName, value));
 							} catch (Exception e) {
-								Log.severe("Error in AltStatChange parameter for recipe item id: " + id + ", skipping");
+								log.error("Error in AltStatChange parameter for recipe item id: " + id + ", skipping");
 								continue recipesFile;
 							}
 						} else if (c.getName().equalsIgnoreCase("ingredient")) {
@@ -256,9 +260,9 @@ public class RecipeController {
 					lists.put(id, recipeList);
 				}
 			}
-			Log.info("RecipeController: Loaded " + lists.size() + " recipes.");
+			log.info("RecipeController: Loaded " + lists.size() + " recipes.");
 		} else {
-			Log.severe("Recipes file (" + file.getAbsolutePath() + ") it doesn't exist.");
+			log.error("Recipes file (" + file.getAbsolutePath() + ") it doesn't exist.");
 		}
 	}
 
@@ -266,9 +270,9 @@ public class RecipeController {
 		protected boolean isValid;
 		protected List<TempItem> items = null;
 		protected final L2RecipeList recipeList;
-		protected final L2PcInstance player; // "crafter"
-		protected final L2PcInstance target; // "customer"
-		protected final L2Skill skill;
+		protected final Player player; // "crafter"
+		protected final Player target; // "customer"
+		protected final Skill skill;
 		protected final int skillId;
 		protected final int skillLevel;
 		protected int creationPasses = 1;
@@ -281,13 +285,13 @@ public class RecipeController {
 		protected int materialsRefPrice;
 		protected int delay;
 
-		public RecipeItemMaker(L2PcInstance pPlayer, L2RecipeList pRecipeList, L2PcInstance pTarget) {
+		public RecipeItemMaker(Player pPlayer, L2RecipeList pRecipeList, Player pTarget) {
 			player = pPlayer;
 			target = pTarget;
 			recipeList = pRecipeList;
 
 			isValid = false;
-			skillId = recipeList.isDwarvenRecipe() ? L2Skill.SKILL_CREATE_DWARVEN : L2Skill.SKILL_CREATE_COMMON;
+			skillId = recipeList.isDwarvenRecipe() ? Skill.SKILL_CREATE_DWARVEN : Skill.SKILL_CREATE_COMMON;
 			skillLevel = player.getSkillLevelHash(skillId);
 			skill = player.getKnownSkill(skillId);
 
@@ -388,13 +392,13 @@ public class RecipeController {
 			}
 
 			if (player == null || target == null) {
-				Log.warning("player or target == null (disconnected?), aborting" + target + player);
+				log.warn("player or target == null (disconnected?), aborting" + target + player);
 				abort();
 				return;
 			}
 
 			if (!player.isOnline() || !target.isOnline()) {
-				Log.warning("player or target is not online, aborting " + target + player);
+				log.warn("player or target is not online, aborting " + target + player);
 				abort();
 				return;
 			}
@@ -459,7 +463,7 @@ public class RecipeController {
 			if (target != player && price > 0) // customer must pay for services
 			{
 				// attempt to pay for item
-				L2ItemInstance adenatransfer = target.transferItem("PayManufacture",
+				Item adenatransfer = target.transferItem("PayManufacture",
 						target.getInventory().getAdenaInstance().getObjectId(),
 						price,
 						player.getInventory(),
@@ -634,7 +638,7 @@ public class RecipeController {
 				int quantity = recipeList.isConsumable() ? (int) (recipe.getQuantity() * Config.RATE_CONSUMABLE_COST) : recipe.getQuantity();
 
 				if (quantity > 0) {
-					L2ItemInstance item = inv.getItemByItemId(recipe.getItemId());
+					Item item = inv.getItemByItemId(recipe.getItemId());
 					long itemQuantityAmount = item == null ? 0 : item.getCount();
 
 					// check materials
@@ -697,7 +701,7 @@ public class RecipeController {
 			 * @param item
 			 * @param quantity of that item
 			 */
-			public TempItem(L2ItemInstance item, int quantity) {
+			public TempItem(Item item, int quantity) {
 				super();
 				itemId = item.getItemId();
 				this.quantity = quantity;
@@ -742,7 +746,7 @@ public class RecipeController {
 			int rareProdId = recipeList.getRareItemId();
 			int itemId = recipeList.getItemId();
 			int itemCount = recipeList.getCount();
-			L2Item template = ItemTable.getInstance().getTemplate(itemId);
+			ItemTemplate template = ItemTable.getInstance().getTemplate(itemId);
 
 			// check that the current recipe has a rare production or not
 			if (rareProdId != -1 && (rareProdId == itemId || Config.CRAFT_MASTERWORK)) {
@@ -843,7 +847,7 @@ public class RecipeController {
 		}
 	}
 
-	private L2RecipeList getValidRecipeList(L2PcInstance player, int id) {
+	private L2RecipeList getValidRecipeList(Player player, int id) {
 		L2RecipeList recipeList = getRecipeList(id);
 
 		if (recipeList == null || recipeList.getRecipes().length == 0) {

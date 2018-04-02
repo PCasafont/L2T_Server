@@ -15,7 +15,7 @@
 
 package l2server.gameserver.handler;
 
-import l2server.gameserver.model.L2Object.InstanceType;
+import l2server.gameserver.model.WorldObject.InstanceType;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -10,6 +10,6 @@ public class RequestMagicSkillList extends L2GameClientPacket {
 	
 	@Override
 	public void runImpl() {
-		//Log.info(getType() + " packet was received from " + getClient() + ".");
+		//log.info(getType() + " packet was received from " + getClient() + ".");
 	}
 }

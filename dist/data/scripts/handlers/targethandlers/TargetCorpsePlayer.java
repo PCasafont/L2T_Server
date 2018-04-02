@@ -18,16 +18,16 @@ package handlers.targethandlers;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
 import l2server.gameserver.instancemanager.CastleManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillTargetType;
+import l2server.gameserver.templates.skills.SkillType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,32 +39,32 @@ public class TargetCorpsePlayer implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		List<L2Character> targetList = new ArrayList<L2Character>();
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		List<Creature> targetList = new ArrayList<Creature>();
 
 		if (target != null && target.isDead()) {
-			L2PcInstance player = null;
+			Player player = null;
 
-			if (activeChar instanceof L2PcInstance) {
-				player = (L2PcInstance) activeChar;
+			if (activeChar instanceof Player) {
+				player = (Player) activeChar;
 			}
 
-			L2PcInstance targetPlayer = null;
+			Player targetPlayer = null;
 
-			if (target instanceof L2PcInstance) {
-				targetPlayer = (L2PcInstance) target;
+			if (target instanceof Player) {
+				targetPlayer = (Player) target;
 			}
 
-			L2PetInstance targetPet = null;
+			PetInstance targetPet = null;
 
-			if (target instanceof L2PetInstance) {
-				targetPet = (L2PetInstance) target;
+			if (target instanceof PetInstance) {
+				targetPet = (PetInstance) target;
 			}
 
 			if (player != null && (targetPlayer != null || targetPet != null)) {
 				boolean condGood = true;
 
-				if (skill.getSkillType() == L2SkillType.RESURRECT) {
+				if (skill.getSkillType() == SkillType.RESURRECT) {
 					// check target is not in a active siege zone
 					//check target is not in a active siege zone
 					Castle castle = null;
@@ -82,7 +82,7 @@ public class TargetCorpsePlayer implements ISkillTargetTypeHandler {
 								boolean isAttacker = castle.getSiege().checkIsAttacker(player.getClan());
 								boolean isDefender = castle.getSiege().checkIsDefender(player.getClan());
 								boolean none = !isAttacker && !isDefender;
-								if (none && targetPlayer.isInsideZone(L2Character.ZONE_SIEGE)) {
+								if (none && targetPlayer.isInsideZone(Creature.ZONE_SIEGE)) {
 									condGood = false;
 								} else if (isAttacker) {
 									condGood = false;
@@ -118,9 +118,9 @@ public class TargetCorpsePlayer implements ISkillTargetTypeHandler {
 				if (condGood) {
 					if (onlyFirst == false) {
 						targetList.add(target);
-						return targetList.toArray(new L2Object[targetList.size()]);
+						return targetList.toArray(new WorldObject[targetList.size()]);
 					} else {
-						return new L2Character[]{target};
+						return new Creature[]{target};
 					}
 				}
 			}
@@ -132,9 +132,9 @@ public class TargetCorpsePlayer implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
+	public Enum<SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub
-		return L2SkillTargetType.TARGET_CORPSE_PLAYER;
+		return SkillTargetType.TARGET_CORPSE_PLAYER;
 	}
 
 	public static void main(String[] args) {

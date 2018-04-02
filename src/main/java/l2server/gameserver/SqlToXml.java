@@ -25,10 +25,11 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.model.entity.Fort;
 import l2server.gameserver.templates.SpawnData;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -47,6 +48,9 @@ import java.util.logging.Level;
  * @author Pere
  */
 public class SqlToXml {
+	private static Logger log = LoggerFactory.getLogger(SqlToXml.class.getName());
+
+
 	public static void races() {
 		Connection con = null;
 		
@@ -223,7 +227,7 @@ public class SqlToXml {
 		Connection con = null;
 		
 		try {
-			Map<Integer, List<L2Item>> shops = new HashMap<>();
+			Map<Integer, List<ItemTemplate>> shops = new HashMap<>();
 			for (int i = 0; i < 23; i++) {
 				shops.put(i, new ArrayList<>());
 			}
@@ -238,19 +242,19 @@ public class SqlToXml {
 				ResultSet rset2 = st2.executeQuery();
 				
 				while (rset2.next()) {
-					L2Item item = ItemTable.getInstance().getTemplate(rset2.getInt("item_id"));
+					ItemTemplate item = ItemTable.getInstance().getTemplate(rset2.getInt("item_id"));
 					int shopId = item.getItemGradePlain();
-					if (shopId == L2Item.CRYSTAL_R) {
+					if (shopId == ItemTemplate.CRYSTAL_R) {
 						shopId -= 2;
 					}
-					if (item.getType2() == L2Item.TYPE2_SHIELD_ARMOR) {
+					if (item.getType2() == ItemTemplate.TYPE2_SHIELD_ARMOR) {
 						shopId += 7;
-					} else if (item.getType2() == L2Item.TYPE2_ACCESSORY) {
+					} else if (item.getType2() == ItemTemplate.TYPE2_ACCESSORY) {
 						shopId += 14;
-					} else if (item.getType2() == L2Item.TYPE2_OTHER || item.getBodyPart() == L2Item.SLOT_HAIR ||
-							item.getBodyPart() == L2Item.SLOT_HAIR2 || item.getBodyPart() == L2Item.SLOT_HAIRALL) {
+					} else if (item.getType2() == ItemTemplate.TYPE2_OTHER || item.getBodyPart() == ItemTemplate.SLOT_HAIR ||
+							item.getBodyPart() == ItemTemplate.SLOT_HAIR2 || item.getBodyPart() == ItemTemplate.SLOT_HAIRALL) {
 						shopId = 21;
-					} else if (item.getType2() != L2Item.TYPE2_WEAPON) {
+					} else if (item.getType2() != ItemTemplate.TYPE2_WEAPON) {
 						shopId = 22;
 					}
 					shops.get(shopId).add(item);
@@ -269,7 +273,7 @@ public class SqlToXml {
 				
 				content += "\t<shop id=\"" + shopId + "\" npcId=\"0\">\r\n";
 				
-				for (L2Item item : shops.get(shopId)) {
+				for (ItemTemplate item : shops.get(shopId)) {
 					content += "\t\t<item id=\"" + item.getItemId() + "\" /> <!-- " + item.getName() + " -->\r\n";
 				}
 				
@@ -547,7 +551,7 @@ public class SqlToXml {
 			statement = con.prepareStatement("SELECT * FROM raidboss_spawnlist ORDER BY boss_id");
 			ResultSet rset = statement.executeQuery();
 			while (rset.next()) {
-				L2NpcTemplate template = NpcTable.getInstance().getTemplate(rset.getInt("boss_id"));
+				NpcTemplate template = NpcTable.getInstance().getTemplate(rset.getInt("boss_id"));
 				if (template != null) {
 					int x = rset.getInt("loc_x");
 					int y = rset.getInt("loc_y");
@@ -559,16 +563,16 @@ public class SqlToXml {
 					spawn.DbName = template.Name;
 					template.addSpawn(spawn);
 				} else {
-					Log.warning("RaidBossSpawnManager: Could not load raidboss #" + rset.getInt("boss_id") + " from DB");
+					log.warn("RaidBossSpawnManager: Could not load raidboss #" + rset.getInt("boss_id") + " from DB");
 				}
 			}
 			
 			rset.close();
 			statement.close();
 		} catch (SQLException e) {
-			Log.warning("RaidBossSpawnManager: Couldnt load raidboss_spawnlist table");
+			log.warn("RaidBossSpawnManager: Couldnt load raidboss_spawnlist table");
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error while initializing RaidBossSpawnManager: " + e.getMessage(), e);
+			log.warn("Error while initializing RaidBossSpawnManager: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

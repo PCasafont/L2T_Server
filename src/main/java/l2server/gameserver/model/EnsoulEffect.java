@@ -15,7 +15,7 @@
 
 package l2server.gameserver.model;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.funcs.Func;
 
 import java.util.ArrayList;
@@ -58,13 +58,13 @@ public class EnsoulEffect {
 		return stage;
 	}
 	
-	public void applyBonus(L2PcInstance player) {
+	public void applyBonus(Player player) {
 		for (Func f : funcs) {
 			player.addStatFunc(f);
 		}
 	}
 	
-	public void removeBonus(L2PcInstance player) {
+	public void removeBonus(Player player) {
 		player.removeStatsOwner(this);
 	}
 }

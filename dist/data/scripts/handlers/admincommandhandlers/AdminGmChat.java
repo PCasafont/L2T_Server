@@ -17,9 +17,9 @@ package handlers.admincommandhandlers;
 
 import l2server.gameserver.GmListTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
@@ -37,7 +37,7 @@ public class AdminGmChat implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_gmchat", "admin_snoop", "admin_gmchat_menu"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.startsWith("admin_gmchat")) {
 			handleGmChat(command, activeChar);
 		} else if (command.startsWith("admin_snoop")) {
@@ -53,10 +53,10 @@ public class AdminGmChat implements IAdminCommandHandler {
 	 * @param command
 	 * @param activeChar
 	 */
-	private void snoop(String command, L2PcInstance activeChar) {
-		L2Object target = null;
+	private void snoop(String command, Player activeChar) {
+		WorldObject target = null;
 		if (command.length() > 12) {
-			target = L2World.getInstance().getPlayer(command.substring(12));
+			target = World.getInstance().getPlayer(command.substring(12));
 		}
 		if (target == null) {
 			target = activeChar.getTarget();
@@ -66,11 +66,11 @@ public class AdminGmChat implements IAdminCommandHandler {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SELECT_TARGET));
 			return;
 		}
-		if (!(target instanceof L2PcInstance)) {
+		if (!(target instanceof Player)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
 		}
-		L2PcInstance player = (L2PcInstance) target;
+		Player player = (Player) target;
 		player.addSnooper(activeChar);
 		activeChar.addSnooped(player);
 	}
@@ -84,7 +84,7 @@ public class AdminGmChat implements IAdminCommandHandler {
 	 * @param command
 	 * @param activeChar
 	 */
-	private void handleGmChat(String command, L2PcInstance activeChar) {
+	private void handleGmChat(String command, Player activeChar) {
 		try {
 			int offset = 0;
 			String text;

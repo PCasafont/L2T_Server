@@ -20,8 +20,9 @@ import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.entity.Auction;
 import l2server.gameserver.model.entity.ClanHall;
-import l2server.gameserver.model.zone.type.L2ClanHallZone;
-import l2server.log.Log;
+import l2server.gameserver.model.zone.type.ClanHallZone;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
@@ -35,6 +36,9 @@ import java.util.logging.Level;
  * @author Steuf
  */
 public class ClanHallManager {
+	private static Logger log = LoggerFactory.getLogger(ClanHallManager.class.getName());
+
+
 
 	private Map<Integer, ClanHall> clanHall = new HashMap<>();
 	private Map<Integer, ClanHall> freeClanHall = new HashMap<>();
@@ -66,7 +70,7 @@ public class ClanHallManager {
 	 */
 	@Load(dependencies = {ClanTable.class, ClanHallAuctionManager.class})
 	public void load() {
-		Log.info("Initializing ClanHallManager");
+		log.info("Initializing ClanHallManager");
 		Connection con = null;
 		try {
 			int id, ownerId, grade = 0;
@@ -111,11 +115,11 @@ public class ClanHallManager {
 			}
 
 			statement.close();
-			Log.info("Loaded: " + getClanHalls().size() + " clan halls");
-			Log.info("Loaded: " + getFreeClanHalls().size() + " free clan halls");
+			log.info("Loaded: " + getClanHalls().size() + " clan halls");
+			log.info("Loaded: " + getFreeClanHalls().size() + " free clan halls");
 			loaded = true;
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: ClanHallManager.load(): " + e.getMessage(), e);
+			log.warn("Exception: ClanHallManager.load(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -183,7 +187,7 @@ public class ClanHallManager {
 		if (freeClanHall.containsKey(clanHallId)) {
 			return freeClanHall.get(clanHallId);
 		}
-		Log.warning("Clan hall id " + clanHallId + " not found in clanhall table!");
+		log.warn("Clan hall id " + clanHallId + " not found in clanhall table!");
 		return null;
 	}
 
@@ -202,7 +206,7 @@ public class ClanHallManager {
 			return null;
 		}*/
 	public final ClanHall getNearbyClanHall(int x, int y, int maxDist) {
-		L2ClanHallZone zone = null;
+		ClanHallZone zone = null;
 
 		for (Map.Entry<Integer, ClanHall> ch : clanHall.entrySet()) {
 			zone = ch.getValue().getZone();

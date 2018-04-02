@@ -17,16 +17,18 @@ package l2server.gameserver.model;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,7 +39,6 @@ import java.util.Map;
 import java.util.Vector;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 import java.util.stream.Collectors;
 
 /**
@@ -66,6 +67,8 @@ import java.util.stream.Collectors;
  * @author Tempy
  */
 public class AutoSpawnHandler {
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	
 	private static final int DEFAULT_INITIAL_SPAWN = 30000; // 30 seconds after registration
 	private static final int DEFAULT_RESPAWN = 3600000; // 1 hour in millisecs
@@ -145,15 +148,15 @@ public class AutoSpawnHandler {
 			statement.close();
 			
 			if (Config.DEBUG) {
-				Log.info("AutoSpawnHandler: Loaded " + numLoaded + " spawn group(s) from the database.");
+				log.info("AutoSpawnHandler: Loaded " + numLoaded + " spawn group(s) from the database.");
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "AutoSpawnHandler: Could not restore spawn data: " + e.getMessage(), e);
+			log.warn("AutoSpawnHandler: Could not restore spawn data: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		
-		Log.info("AutoSpawnHandler: Loaded " + AutoSpawnHandler.getInstance().size() + " handlers in total.");
+		log.info("AutoSpawnHandler: Loaded " + AutoSpawnHandler.getInstance().size() + " handlers in total.");
 	}
 	
 	/**
@@ -191,7 +194,7 @@ public class AutoSpawnHandler {
 		setSpawnActive(newSpawn, true);
 		
 		if (Config.DEBUG) {
-			Log.info("AutoSpawnHandler: Registered auto spawn for NPC ID " + npcId + " (Object ID = " + newId + ").");
+			log.info("AutoSpawnHandler: Registered auto spawn for NPC ID " + npcId + " (Object ID = " + newId + ").");
 		}
 		
 		return newSpawn;
@@ -230,10 +233,10 @@ public class AutoSpawnHandler {
 			respawnTask.cancel(false);
 			
 			if (Config.DEBUG) {
-				Log.info("AutoSpawnHandler: Removed auto spawn for NPC ID " + spawnInst.npcId + " (Object ID = " + spawnInst.objectId + ").");
+				log.info("AutoSpawnHandler: Removed auto spawn for NPC ID " + spawnInst.npcId + " (Object ID = " + spawnInst.objectId + ").");
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING,
+			log.warn(
 					"AutoSpawnHandler: Could not auto spawn for NPC ID " + spawnInst.npcId + " (Object ID = " + spawnInst.objectId + "): " +
 							e.getMessage(),
 					e);
@@ -404,7 +407,7 @@ public class AutoSpawnHandler {
 				
 				// If there are no set co-ordinates, cancel the spawn task.
 				if (locationList.length == 0) {
-					Log.info("AutoSpawnHandler: No location co-ords specified for spawn instance (Object ID = " + objectId + ").");
+					log.info("AutoSpawnHandler: No location co-ords specified for spawn instance (Object ID = " + objectId + ").");
 					return;
 				}
 				
@@ -434,9 +437,9 @@ public class AutoSpawnHandler {
 				final int heading = locationList[locationIndex].getHeading();
 				
 				// Fetch the template for this NPC ID and create a new spawn.
-				L2NpcTemplate npcTemp = NpcTable.getInstance().getTemplate(spawnInst.getNpcId());
+				NpcTemplate npcTemp = NpcTable.getInstance().getTemplate(spawnInst.getNpcId());
 				if (npcTemp == null) {
-					Log.warning("Couldn't find NPC #" + spawnInst.getNpcId() + ". Try to update your DP");
+					log.warn("Couldn't find NPC #" + spawnInst.getNpcId() + ". Try to update your DP");
 					return;
 				}
 				L2Spawn newSpawn = new L2Spawn(npcTemp);
@@ -454,14 +457,14 @@ public class AutoSpawnHandler {
 				// Add the new spawn information to the spawn table, but do not
 				// store it.
 				SpawnTable.getInstance().addNewSpawn(newSpawn, false);
-				L2Npc npcInst = newSpawn.getNpc();
+				Npc npcInst = newSpawn.getNpc();
 				newSpawn.doSpawn();
 				spawnInst.addNpcInstance(npcInst);
 				
 				String nearestTown = MapRegionTable.getInstance().getClosestTownName(npcInst);
 				
 				if (Config.DEBUG) {
-					Log.info("AutoSpawnHandler: Spawned NPC ID " + spawnInst.getNpcId() + " at " + x + ", " + y + ", " + z + " (Near " + nearestTown +
+					log.info("AutoSpawnHandler: Spawned NPC ID " + spawnInst.getNpcId() + " at " + x + ", " + y + ", " + z + " (Near " + nearestTown +
 							") for " + spawnInst.getRespawnDelay() / 60000 + " minute(s).");
 				}
 				
@@ -471,7 +474,7 @@ public class AutoSpawnHandler {
 					ThreadPoolManager.getInstance().scheduleAi(rd, spawnInst.getDespawnDelay() - 1000);
 				}
 			} catch (Exception e) {
-				Log.log(Level.WARNING,
+				log.warn(
 						"AutoSpawnHandler: An error occurred while initializing spawn instance (Object ID = " + objectId + "): " + e.getMessage(),
 						e);
 			}
@@ -498,11 +501,11 @@ public class AutoSpawnHandler {
 				AutoSpawnInstance spawnInst = registeredSpawns.get(objectId);
 				
 				if (spawnInst == null) {
-					Log.info("AutoSpawnHandler: No spawn registered for object ID = " + objectId + ".");
+					log.info("AutoSpawnHandler: No spawn registered for object ID = " + objectId + ".");
 					return;
 				}
 				
-				for (L2Npc npcInst : spawnInst.getNPCInstanceList()) {
+				for (Npc npcInst : spawnInst.getNPCInstanceList()) {
 					if (npcInst == null) {
 						continue;
 					}
@@ -512,11 +515,11 @@ public class AutoSpawnHandler {
 					spawnInst.removeNpcInstance(npcInst);
 					
 					if (Config.DEBUG) {
-						Log.info("AutoSpawnHandler: Spawns removed for spawn instance (Object ID = " + objectId + ").");
+						log.info("AutoSpawnHandler: Spawns removed for spawn instance (Object ID = " + objectId + ").");
 					}
 				}
 			} catch (Exception e) {
-				Log.log(Level.WARNING,
+				log.warn(
 						"AutoSpawnHandler: An error occurred while despawning spawn (Object ID = " + objectId + "): " + e.getMessage(),
 						e);
 			}
@@ -545,7 +548,7 @@ public class AutoSpawnHandler {
 		
 		protected int lastLocIndex = -1;
 		
-		private List<L2Npc> npcList = new Vector<>();
+		private List<Npc> npcList = new Vector<>();
 		
 		private List<Location> locList = new Vector<>();
 		
@@ -566,11 +569,11 @@ public class AutoSpawnHandler {
 			spawnActive = activeValue;
 		}
 		
-		protected boolean addNpcInstance(L2Npc npcInst) {
+		protected boolean addNpcInstance(Npc npcInst) {
 			return npcList.add(npcInst);
 		}
 		
-		protected boolean removeNpcInstance(L2Npc npcInst) {
+		protected boolean removeNpcInstance(Npc npcInst) {
 			return npcList.remove(npcInst);
 		}
 		
@@ -598,10 +601,10 @@ public class AutoSpawnHandler {
 			return locList.toArray(new Location[locList.size()]);
 		}
 		
-		public L2Npc[] getNPCInstanceList() {
-			L2Npc[] ret;
+		public Npc[] getNPCInstanceList() {
+			Npc[] ret;
 			synchronized (npcList) {
-				ret = new L2Npc[npcList.size()];
+				ret = new Npc[npcList.size()];
 				npcList.toArray(ret);
 			}
 			
@@ -609,7 +612,7 @@ public class AutoSpawnHandler {
 		}
 		
 		public L2Spawn[] getSpawns() {
-			List<L2Spawn> npcSpawns = npcList.stream().map(L2Npc::getSpawn).collect(Collectors.toList());
+			List<L2Spawn> npcSpawns = npcList.stream().map(Npc::getSpawn).collect(Collectors.toList());
 			
 			return npcSpawns.toArray(new L2Spawn[npcSpawns.size()]);
 		}

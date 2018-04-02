@@ -15,7 +15,8 @@
 
 package l2server.gameserver.instancemanager;
 
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.util.HashMap;
@@ -24,6 +25,9 @@ import java.util.HashMap;
  * @author Erlandys
  */
 public class MentorManager {
+	private static Logger log = LoggerFactory.getLogger(MentorManager.class.getName());
+
+
 	HashMap<Integer, Integer> coinsRewardForLevel;
 
 	public MentorManager() {
@@ -72,7 +76,7 @@ public class MentorManager {
 		coinsRewardForLevel.put(84, 987);
 		coinsRewardForLevel.put(85, 1149);
 		coinsRewardForLevel.put(86, 2015);
-		Log.info("MentorManager: Successfully loaded - " + coinsRewardForLevel.size() + " reward to mentor for mentee level.");
+		log.info("MentorManager: Successfully loaded - " + coinsRewardForLevel.size() + " reward to mentor for mentee level.");
 	}
 
 	public int getItemsCount(int level) {

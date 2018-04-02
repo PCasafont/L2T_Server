@@ -15,8 +15,8 @@
 
 package quests.Q10364_ObligationsOfTheSeeker;
 
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.GlobalQuest;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
@@ -49,7 +49,7 @@ public class Q10364_ObligationsOfTheSeeker extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
@@ -82,7 +82,7 @@ public class Q10364_ObligationsOfTheSeeker extends Quest {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
 		if (st == null) {
@@ -114,7 +114,7 @@ public class Q10364_ObligationsOfTheSeeker extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		QuestState st = player.getQuestState(qn);
 		if (st == null || st.getInt("cond") != 2 || Rnd.get(100) < 0) //TODO chance?
 		{
@@ -135,7 +135,7 @@ public class Q10364_ObligationsOfTheSeeker extends Quest {
 	}
 
 	@Override
-	public boolean canStart(L2PcInstance player) {
+	public boolean canStart(Player player) {
 		return player.getLevel() >= 14 && player.getLevel() <= 25 && player.getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 12);
 	}
 

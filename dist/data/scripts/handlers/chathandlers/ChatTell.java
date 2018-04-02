@@ -20,8 +20,8 @@ import l2server.gameserver.gui.ConsoleTab;
 import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
 import l2server.gameserver.handler.IChatHandler;
 import l2server.gameserver.model.BlockList;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -38,7 +38,7 @@ public class ChatTell implements IChatHandler {
 	 * Handle chat type 'tell'
 	 */
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text) {
+	public void handleChat(int type, Player activeChar, String target, String text) {
 		if (activeChar.isChatBanned()) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CHATTING_PROHIBITED));
 			return;
@@ -55,9 +55,9 @@ public class ChatTell implements IChatHandler {
 		}
 
 		CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
-		L2PcInstance receiver = null;
+		Player receiver = null;
 
-		receiver = L2World.getInstance().getPlayer(target);
+		receiver = World.getInstance().getPlayer(target);
 
 		if (receiver == null) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME));

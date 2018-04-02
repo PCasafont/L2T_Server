@@ -17,7 +17,7 @@ package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.TransformationManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author
@@ -33,7 +33,7 @@ public class AdminRide implements IAdminCommandHandler {
 	private static final int JET_BIKE_TRANSFORMATION_ID = 20001;
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 
 		if (command.startsWith("admin_ride")) {
 			if (activeChar.isMounted() || activeChar.getPet() != null) {

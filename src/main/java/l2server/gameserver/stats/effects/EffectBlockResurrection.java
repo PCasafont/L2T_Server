@@ -15,35 +15,36 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2EffectType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.EffectType;
 
 /**
  * @author UnAfraid
  */
 public class EffectBlockResurrection extends L2Effect {
-	public EffectBlockResurrection(Env env, L2EffectTemplate template) {
+	public EffectBlockResurrection(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 * @see Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType() {
-		return L2EffectType.BLOCK_RESURRECTION;
+	public EffectType getEffectType() {
+		return EffectType.BLOCK_RESURRECTION;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.DEBUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.DEBUFF;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

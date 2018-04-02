@@ -17,16 +17,16 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExAttributeEnchantResult;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
-import l2server.gameserver.templates.item.L2ArmorType;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.gameserver.templates.item.L2WeaponType;
+import l2server.gameserver.templates.item.ArmorType;
+import l2server.gameserver.templates.item.ItemTemplate;
+import l2server.gameserver.templates.item.WeaponType;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
@@ -43,7 +43,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -51,7 +51,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket {
 		enchantItemAttribute(player, objectId, count);
 	}
 	
-	public static void enchantItemAttribute(L2PcInstance player, int itemObjId, long count) {
+	public static void enchantItemAttribute(Player player, int itemObjId, long count) {
 		if (itemObjId == 0xFFFFFFFF) {
 			// Player canceled enchant
 			player.setActiveEnchantAttrItem(null);
@@ -79,28 +79,28 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket {
 			return;
 		}
 		
-		L2ItemInstance item = player.getInventory().getItemByObjectId(itemObjId);
-		L2ItemInstance stone = player.getActiveEnchantAttrItem();
+		Item item = player.getInventory().getItemByObjectId(itemObjId);
+		Item stone = player.getActiveEnchantAttrItem();
 		if (item == null || stone == null) {
 			player.setActiveEnchantAttrItem(null);
 			return;
 		}
-		if (item.getLocation() != L2ItemInstance.ItemLocation.INVENTORY && item.getLocation() != L2ItemInstance.ItemLocation.PAPERDOLL) {
+		if (item.getLocation() != Item.ItemLocation.INVENTORY && item.getLocation() != Item.ItemLocation.EQUIPPED) {
 			player.setActiveEnchantAttrItem(null);
 			return;
 		}
 		
 		//can't enchant rods, shadow items, adventurers', Common Items, PvP items, hero items, cloaks, bracelets, underwear (e.g. shirt), belt, necklace, earring, ring
-		if (!item.getItem().isAttributable() || item.getItem().getItemType() == L2WeaponType.FISHINGROD || item.isShadowItem() ||
+		if (!item.getItem().isAttributable() || item.getItem().getItemType() == WeaponType.FISHINGROD || item.isShadowItem() ||
 				item.isCommonItem() || item.isPvp() || !item.getItem().isAttributable() && item.isHeroItem() || item.isTimeLimitedItem() ||
-				item.getItem().getItemType() == L2WeaponType.NONE ||
-				item.getItem().getItemGradePlain() != L2Item.CRYSTAL_S && item.getItem().getItemGradePlain() != L2Item.CRYSTAL_R ||
-				item.getItem().getBodyPart() == L2Item.SLOT_BACK || item.getItem().getBodyPart() == L2Item.SLOT_R_BRACELET ||
-				item.getItem().getBodyPart() == L2Item.SLOT_UNDERWEAR || item.getItem().getBodyPart() == L2Item.SLOT_BELT ||
-				item.getItem().getBodyPart() == L2Item.SLOT_NECK || (item.getItem().getBodyPart() & L2Item.SLOT_R_EAR) != 0 ||
-				(item.getItem().getBodyPart() & L2Item.SLOT_R_FINGER) != 0 || item.getItem().getElementals() != null ||
-				item.getItemType() == L2ArmorType.SHIELD || item.getItemType() == L2ArmorType.SIGIL ||
-				item.getItem().getBodyPart() == L2Item.SLOT_BROOCH) {
+				item.getItem().getItemType() == WeaponType.NONE ||
+				item.getItem().getItemGradePlain() != ItemTemplate.CRYSTAL_S && item.getItem().getItemGradePlain() != ItemTemplate.CRYSTAL_R ||
+				item.getItem().getBodyPart() == ItemTemplate.SLOT_BACK || item.getItem().getBodyPart() == ItemTemplate.SLOT_R_BRACELET ||
+				item.getItem().getBodyPart() == ItemTemplate.SLOT_UNDERWEAR || item.getItem().getBodyPart() == ItemTemplate.SLOT_BELT ||
+				item.getItem().getBodyPart() == ItemTemplate.SLOT_NECK || (item.getItem().getBodyPart() & ItemTemplate.SLOT_R_EAR) != 0 ||
+				(item.getItem().getBodyPart() & ItemTemplate.SLOT_R_FINGER) != 0 || item.getItem().getElementals() != null ||
+				item.getItemType() == ArmorType.SHIELD || item.getItemType() == ArmorType.SIGIL ||
+				item.getItem().getBodyPart() == ItemTemplate.SLOT_BROOCH) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ELEMENTAL_ENHANCE_REQUIREMENT_NOT_SUFFICIENT));
 			player.setActiveEnchantAttrItem(null);
 			return;
@@ -108,7 +108,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket {
 		
 		switch (item.getLocation()) {
 			case INVENTORY:
-			case PAPERDOLL: {
+			case EQUIPPED: {
 				if (item.getOwnerId() != player.getObjectId()) {
 					player.setActiveEnchantAttrItem(null);
 					return;
@@ -254,7 +254,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket {
 		player.setActiveEnchantAttrItem(null);
 	}
 	
-	public static int getLimit(L2ItemInstance item, int stoneId) {
+	public static int getLimit(Item item, int stoneId) {
 		Elementals.ElementalItems elementItem = Elementals.getItemElemental(stoneId);
 		if (elementItem == null) {
 			return 0;
@@ -267,7 +267,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket {
 		}
 	}
 	
-	public static int getPowerToAdd(int stoneId, int oldValue, L2ItemInstance item) {
+	public static int getPowerToAdd(int stoneId, int oldValue, Item item) {
 		if (Elementals.getItemElement(stoneId) != Elementals.NONE) {
 			if (item.isWeapon()) {
 				if (oldValue == 0) {

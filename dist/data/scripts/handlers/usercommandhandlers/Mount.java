@@ -16,7 +16,7 @@
 package handlers.usercommandhandlers;
 
 import l2server.gameserver.handler.IUserCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * Support for /mount command.
@@ -27,10 +27,10 @@ public class Mount implements IUserCommandHandler {
 	private static final int[] COMMAND_IDS = {61};
 
 	/**
-	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, Player)
 	 */
 	@Override
-	public synchronized boolean useUserCommand(int id, L2PcInstance activeChar) {
+	public synchronized boolean useUserCommand(int id, Player activeChar) {
 		if (id != COMMAND_IDS[0]) {
 			return false;
 		}

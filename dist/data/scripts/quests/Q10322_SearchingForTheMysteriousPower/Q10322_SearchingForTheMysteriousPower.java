@@ -16,13 +16,13 @@
 package quests.Q10322_SearchingForTheMysteriousPower;
 
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.ai.L2NpcWalkerAI;
+import l2server.gameserver.ai.NpcWalkerAI;
 import l2server.gameserver.datatables.HelperBuffTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2NpcWalkerNode;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.GlobalQuest;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
@@ -31,8 +31,8 @@ import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.TutorialShowHtml;
-import l2server.gameserver.templates.L2HelperBuff;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.HelperBuff;
+import l2server.gameserver.templates.skills.SkillType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +78,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, final L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, final Player player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
@@ -91,8 +91,8 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest {
 			st.set("cond", "1");
 			st.playSound("ItemSound.quest_accept");
 
-			final L2Npc guide = addSpawn(guideId, -111487, 255894, -1440, 1000, false, 600000);
-			final L2NpcWalkerAI guideAI = new L2NpcWalkerAI(guide);
+			final Npc guide = addSpawn(guideId, -111487, 255894, -1440, 1000, false, 600000);
+			final NpcWalkerAI guideAI = new NpcWalkerAI(guide);
 			guide.setAI(guideAI);
 
 			NpcSay ns = new NpcSay(guide.getObjectId(), Say2.ALL_NOT_RECORDED, guide.getNpcId(), guideFirstChatId);
@@ -125,10 +125,10 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest {
 		} else if (npc.getNpcId() == newbieHelper) {
 			if (event.equalsIgnoreCase("32981-02.htm")) {
 				npc.setTarget(player);
-				for (L2HelperBuff helperBuff : HelperBuffTable.getInstance().getHelperBuffTable()) {
+				for (HelperBuff helperBuff : HelperBuffTable.getInstance().getHelperBuffTable()) {
 					if (helperBuff.isMagicClassBuff() == player.isMageClass() && helperBuff.getLowerLevel() < 10) {
-						L2Skill skill = SkillTable.getInstance().getInfo(helperBuff.getSkillID(), helperBuff.getSkillLevel());
-						if (skill.getSkillType() == L2SkillType.SUMMON) {
+						Skill skill = SkillTable.getInstance().getInfo(helperBuff.getSkillID(), helperBuff.getSkillLevel());
+						if (skill.getSkillType() == SkillType.SUMMON) {
 							player.doSimultaneousCast(skill);
 						} else {
 							npc.doCast(skill);
@@ -144,7 +144,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
 		if (st == null) {
@@ -211,12 +211,12 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest {
 	}
 
 	@Override
-	public boolean canStart(L2PcInstance player) {
+	public boolean canStart(Player player) {
 		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 2) && player.getLevel() <= 20;
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		QuestState st = player.getQuestState(qn);
 		if (st == null) {
 			return null;
@@ -235,7 +235,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest {
 	}
 
 	@Override
-	public String onArrived(final L2NpcWalkerAI guideAI) {
+	public String onArrived(final NpcWalkerAI guideAI) {
 		if (!guideAI.getActor().isInsideRadius(guideAI.getGuided(), guideAI.getWaitRadius() + 50, false, false) ||
 				guideAI.getCurrentPos() == guideRoute.size() - 2) {
 			if (guideAI.getCurrentPos() == 1) {
@@ -261,7 +261,7 @@ public class Q10322_SearchingForTheMysteriousPower extends Quest {
 	}
 
 	@Override
-	public String onPlayerArrived(final L2NpcWalkerAI guideAI) {
+	public String onPlayerArrived(final NpcWalkerAI guideAI) {
 		if (guideAI.getCurrentPos() == guideRoute.size() - 2) {
 			// Walk and delete in 1.5 sec
 			ThreadPoolManager.getInstance().scheduleAi(new Runnable() {

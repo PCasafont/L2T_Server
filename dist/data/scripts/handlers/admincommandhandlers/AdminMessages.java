@@ -16,7 +16,7 @@
 package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
@@ -26,7 +26,7 @@ public class AdminMessages implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_msg"};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.startsWith("admin_msg")) {
 			try {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(Integer.parseInt(command.substring(10).trim())));

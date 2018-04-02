@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.Point3D;
 
 /**
@@ -27,7 +27,7 @@ public class ExStopMoveInShuttle extends L2GameServerPacket {
 	private Point3D pos;
 	private int heading;
 	
-	public ExStopMoveInShuttle(L2PcInstance player, int boatId) {
+	public ExStopMoveInShuttle(Player player, int boatId) {
 		charObjId = player.getObjectId();
 		shuttleId = boatId;
 		pos = player.getInVehiclePosition();

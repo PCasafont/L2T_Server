@@ -15,8 +15,8 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.actor.Creature;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ import java.util.List;
  * @author Pere
  */
 public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket {
-	private L2Character character;
+	private Creature character;
 	private List<Effect> effects;
 	
 	private static class Effect {
@@ -44,11 +44,11 @@ public class AbnormalStatusUpdateFromTarget extends L2GameServerPacket {
 		}
 	}
 	
-	public AbnormalStatusUpdateFromTarget(L2Character c) {
+	public AbnormalStatusUpdateFromTarget(Creature c) {
 		character = c;
 		effects = new ArrayList<>();
 		
-		for (L2Abnormal e : c.getAllEffects()) {
+		for (Abnormal e : c.getAllEffects()) {
 			if (e == null || !e.getShowIcon()) {
 				continue;
 			}

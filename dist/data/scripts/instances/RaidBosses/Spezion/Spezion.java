@@ -7,11 +7,11 @@ import l2server.gameserver.datatables.ScenePlayerDataTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -19,7 +19,6 @@ import l2server.gameserver.network.serverpackets.NicknameChanged;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.VisualEffect;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +45,7 @@ public class Spezion extends L2AttackableAIScript {
 	private static final int[] allMobs = {25779, 25780, 25781, 25782, 25867, 25872, 25873, 25874};
 	private static final Location enterCords = new Location(175475, 145044, -11897);
 	private static final int giantCannonball = 17611;
-	private static final L2Skill cannonBlast = SkillTable.getInstance().getInfo(14175, 1);
+	private static final Skill cannonBlast = SkillTable.getInstance().getInfo(14175, 1);
 
 	public Spezion(int questId, String name, String descr) {
 		super(questId, name, descr);
@@ -68,25 +67,25 @@ public class Spezion extends L2AttackableAIScript {
 	}
 
 	private class PrisonOfDarknessWorld extends InstanceWorld {
-		private L2Npc spezionBoss;
+		private Npc spezionBoss;
 		private int spezionId;
 		private int[] spezionGuards;
-		private List<L2Npc> minions;
-		private List<L2Npc> fakeMonsters;
+		private List<Npc> minions;
+		private List<Npc> fakeMonsters;
 		private boolean isHardMode;
 
 		private PrisonOfDarknessWorld() {
 			isHardMode = false;
 			spezionGuards = new int[3];
-			minions = new ArrayList<L2Npc>();
-			fakeMonsters = new ArrayList<L2Npc>();
+			minions = new ArrayList<Npc>();
+			fakeMonsters = new ArrayList<Npc>();
 		}
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -110,9 +109,9 @@ public class Spezion extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 
 		int npcId = npc.getNpcId();
@@ -128,9 +127,9 @@ public class Spezion extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill) {
+	public String onSpellFinished(Npc npc, Player player, Skill skill) {
 		if (debug) {
-			Log.warning(getName() + ": onSpellFinished: " + skill.getName());
+			log.warn(getName() + ": onSpellFinished: " + skill.getName());
 		}
 
 		InstanceWorld wrld = null;
@@ -139,7 +138,7 @@ public class Spezion extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onAdvEvent: Unable to get world.");
+			log.warn(getName() + ": onAdvEvent: Unable to get world.");
 			return null;
 		}
 
@@ -156,7 +155,7 @@ public class Spezion extends L2AttackableAIScript {
 
 					if (world.isHardMode) //Delete the fake shits
 					{
-						for (L2Npc fakeMonster : world.fakeMonsters) {
+						for (Npc fakeMonster : world.fakeMonsters) {
 							fakeMonster.deleteMe();
 						}
 						world.fakeMonsters.clear();
@@ -170,9 +169,9 @@ public class Spezion extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		InstanceWorld wrld = null;
@@ -181,7 +180,7 @@ public class Spezion extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onAdvEvent: Unable to get world.");
+			log.warn(getName() + ": onAdvEvent: Unable to get world.");
 			return null;
 		}
 
@@ -206,7 +205,7 @@ public class Spezion extends L2AttackableAIScript {
 			} else if (event.equalsIgnoreCase("stage_all_spawn_fake_spezions")) {
 				//Fake Invul Spezions
 				for (int i = 0; i < 3; i++) {
-					L2Npc fakeSpezion = addSpawn(this.fakeSpezion,
+					Npc fakeSpezion = addSpawn(this.fakeSpezion,
 							world.spezionBoss.getX(),
 							world.spezionBoss.getY(),
 							world.spezionBoss.getZ(),
@@ -221,10 +220,10 @@ public class Spezion extends L2AttackableAIScript {
 				}
 
 				//It's Invul minions
-				for (L2Npc fakeSpezion : world.fakeMonsters) {
+				for (Npc fakeSpezion : world.fakeMonsters) {
 					for (int a = 1; a < 3; a++) {
 						for (int b : world.spezionGuards) {
-							L2Npc newGuard = addSpawn(b,
+							Npc newGuard = addSpawn(b,
 									fakeSpezion.getX(),
 									fakeSpezion.getY(),
 									fakeSpezion.getZ(),
@@ -234,7 +233,7 @@ public class Spezion extends L2AttackableAIScript {
 									false,
 									world.instanceId);
 							world.fakeMonsters.add(newGuard);
-							((L2MonsterInstance) newGuard).setIsRaidMinion(true);
+							((MonsterInstance) newGuard).setIsRaidMinion(true);
 							newGuard.setIsRunning(true);
 							newGuard.setIsInvul(true);
 						}
@@ -247,7 +246,7 @@ public class Spezion extends L2AttackableAIScript {
 							if (world.minions.isEmpty()) {
 								for (int a = 1; a < 3; a++) {
 									for (int b : world.spezionGuards) {
-										L2Npc newGuard = addSpawn(b,
+										Npc newGuard = addSpawn(b,
 												world.spezionBoss.getX(),
 												world.spezionBoss.getY(),
 												world.spezionBoss.getZ(),
@@ -257,7 +256,7 @@ public class Spezion extends L2AttackableAIScript {
 												false,
 												world.instanceId);
 										world.minions.add(newGuard);
-										((L2MonsterInstance) newGuard).setIsRaidMinion(true);
+										((MonsterInstance) newGuard).setIsRaidMinion(true);
 										newGuard.setIsRunning(true);
 									}
 								}
@@ -299,7 +298,7 @@ public class Spezion extends L2AttackableAIScript {
 				}
 
 				if (debug) {
-					Log.warning(getName() + ": Range: " +
+					log.warn(getName() + ": Range: " +
 							Util.calculateDistance(npc.getX(), npc.getY(), world.spezionBoss.getX(), world.spezionBoss.getY()));
 				}
 			}
@@ -314,7 +313,7 @@ public class Spezion extends L2AttackableAIScript {
 		return null;
 	}
 
-	private final synchronized void enterInstance(L2PcInstance player, int template_id) {
+	private final synchronized void enterInstance(Player player, int template_id) {
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
 			if (!(world instanceof PrisonOfDarknessWorld)) {
@@ -346,14 +345,14 @@ public class Spezion extends L2AttackableAIScript {
 
 			setupIDs((PrisonOfDarknessWorld) world, template_id);
 
-			List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+			List<Player> allPlayers = new ArrayList<Player>();
 			if (debug) {
 				allPlayers.add(player);
 			} else {
 				allPlayers.addAll(player.getParty().getPartyMembers());
 			}
 
-			for (L2PcInstance enterPlayer : allPlayers) {
+			for (Player enterPlayer : allPlayers) {
 				if (enterPlayer == null) {
 					continue;
 				}
@@ -368,7 +367,7 @@ public class Spezion extends L2AttackableAIScript {
 
 			startQuestTimer("stage_1_start", 60000, null, player);
 
-			Log.fine(getName() + ":  instance started: " + instanceId + " created by player: " + player.getName());
+			log.debug(getName() + ":  instance started: " + instanceId + " created by player: " + player.getName());
 			return;
 		}
 	}

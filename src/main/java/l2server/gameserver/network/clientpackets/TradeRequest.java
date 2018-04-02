@@ -18,15 +18,14 @@ package l2server.gameserver.network.clientpackets;
 import l2server.Config;
 import l2server.gameserver.Ranked1v1;
 import l2server.gameserver.model.BlockList;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SendTradeRequest;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 
 /**
  * This class ...
@@ -44,7 +43,7 @@ public final class TradeRequest extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -65,8 +64,8 @@ public final class TradeRequest extends L2GameClientPacket {
 			return;
 		}
 
-		L2Object target = L2World.getInstance().findObject(objectId);
-		if (target == null || !player.getKnownList().knowsObject(target) || !(target instanceof L2PcInstance)) {
+		WorldObject target = World.getInstance().findObject(objectId);
+		if (target == null || !player.getKnownList().knowsObject(target) || !(target instanceof Player)) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
 		}
@@ -76,7 +75,7 @@ public final class TradeRequest extends L2GameClientPacket {
 			return;
 		}
 
-		L2PcInstance partner = (L2PcInstance) target;
+		Player partner = (Player) target;
 
 		// cant trade with players from other instance except from multiverse
 		if (partner.getInstanceId() != player.getInstanceId() && player.getInstanceId() != -1) {
@@ -111,7 +110,7 @@ public final class TradeRequest extends L2GameClientPacket {
 
 		if (player.isProcessingTransaction()) {
 			if (Config.DEBUG) {
-				Log.fine("already trading with someone");
+				log.debug("already trading with someone");
 			}
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_TRADING));
 			return;
@@ -119,7 +118,7 @@ public final class TradeRequest extends L2GameClientPacket {
 
 		if (partner.isProcessingRequest() || partner.isProcessingTransaction()) {
 			if (Config.DEBUG) {
-				Log.info("transaction already in progress.");
+				log.info("transaction already in progress.");
 			}
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_BUSY_TRY_LATER);
 			sm.addString(partner.getName());

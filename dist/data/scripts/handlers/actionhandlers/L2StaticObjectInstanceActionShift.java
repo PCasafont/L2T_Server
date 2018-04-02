@@ -16,10 +16,10 @@
 package handlers.actionhandlers;
 
 import l2server.gameserver.handler.IActionHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.StaticObjectInstance;
 import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.StaticObject;
@@ -27,12 +27,12 @@ import l2server.util.StringUtil;
 
 public class L2StaticObjectInstanceActionShift implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
+	public boolean action(Player activeChar, WorldObject target, boolean interact) {
 		if (activeChar.getAccessLevel().isGm()) {
 			activeChar.setTarget(target);
 			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), activeChar.getLevel()));
 
-			StaticObject su = new StaticObject((L2StaticObjectInstance) target);
+			StaticObject su = new StaticObject((StaticObjectInstance) target);
 			activeChar.sendPacket(su);
 
 			NpcHtmlMessage html = new NpcHtmlMessage(target.getObjectId());
@@ -46,9 +46,9 @@ public class L2StaticObjectInstanceActionShift implements IActionHandler {
 					"</td></tr><tr><td>Object ID: </td><td>",
 					String.valueOf(target.getObjectId()),
 					"</td></tr><tr><td>Static Object ID: </td><td>",
-					String.valueOf(((L2StaticObjectInstance) target).getStaticObjectId()),
+					String.valueOf(((StaticObjectInstance) target).getStaticObjectId()),
 					"</td></tr><tr><td>Mesh Index: </td><td>",
-					String.valueOf(((L2StaticObjectInstance) target).getMeshIndex()),
+					String.valueOf(((StaticObjectInstance) target).getMeshIndex()),
 					"</td></tr><tr><td><br></td></tr><tr><td>Class: </td><td>",
 					target.getClass().getSimpleName(),
 					"</td></tr></table></body></html>");

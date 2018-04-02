@@ -16,28 +16,28 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2EffectType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.EffectType;
 
 /**
  * @author kerberos_20
  */
 public class EffectProtectionBlessing extends L2Effect {
-	public EffectProtectionBlessing(Env env, L2EffectTemplate template) {
+	public EffectProtectionBlessing(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2EffectType getEffectType() {
-		return L2EffectType.PROTECTION_BLESSING;
+	public EffectType getEffectType() {
+		return EffectType.PROTECTION_BLESSING;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.BUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.BUFF;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class EffectProtectionBlessing extends L2Effect {
 	 */
 	@Override
 	public void onExit() {
-		((L2Playable) getEffected()).stopProtectionBlessing(getAbnormal());
+		((Playable) getEffected()).stopProtectionBlessing(getAbnormal());
 	}
 
 	@Override

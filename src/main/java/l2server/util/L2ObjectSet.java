@@ -26,8 +26,8 @@
 package l2server.util;
 
 import l2server.Config;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Playable;
 
 import java.util.Iterator;
 
@@ -37,8 +37,8 @@ import java.util.Iterator;
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
 
-public abstract class L2ObjectSet<T extends L2Object> implements Iterable<T> {
-	public static L2ObjectSet<L2Object> createL2ObjectSet() {
+public abstract class L2ObjectSet<T extends WorldObject> implements Iterable<T> {
+	public static L2ObjectSet<WorldObject> createL2ObjectSet() {
 		switch (Config.SET_TYPE) {
 			case WorldObjectSet:
 				return new WorldObjectSet<>();
@@ -47,7 +47,7 @@ public abstract class L2ObjectSet<T extends L2Object> implements Iterable<T> {
 		}
 	}
 
-	public static L2ObjectSet<L2Playable> createL2PlayerSet() {
+	public static L2ObjectSet<Playable> createL2PlayerSet() {
 		switch (Config.SET_TYPE) {
 			case WorldObjectSet:
 				return new WorldObjectSet<>();

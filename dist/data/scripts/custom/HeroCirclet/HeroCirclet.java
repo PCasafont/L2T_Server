@@ -15,8 +15,8 @@
 
 package custom.HeroCirclet;
 
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 
@@ -32,7 +32,7 @@ public class HeroCirclet extends Quest {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		String htmltext = "";
 		QuestState st = player.getQuestState(getName());
 		if (st == null) {

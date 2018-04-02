@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 
 /**
  * format  dddd
@@ -34,7 +34,7 @@ public class TargetUnselected extends L2GameServerPacket {
 	
 	/**
 	 */
-	public TargetUnselected(L2Character character) {
+	public TargetUnselected(Creature character) {
 		targetObjId = character.getObjectId();
 		x = character.getX();
 		y = character.getY();

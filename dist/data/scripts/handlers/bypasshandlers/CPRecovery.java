@@ -17,21 +17,21 @@ package handlers.bypasshandlers;
 
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 
 public class CPRecovery implements IBypassHandler {
 	private static final String[] COMMANDS = {"CPRecovery"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		if (target == null) {
 			return false;
 		}
 		
-		final L2Npc npc = target;
+		final Npc npc = target;
 		
 		if (npc.getNpcId() != 31225 && npc.getNpcId() != 31226) {
 			return false;
@@ -47,7 +47,7 @@ public class CPRecovery implements IBypassHandler {
 			return false;
 		}
 		
-		L2Skill skill = SkillTable.getInstance().getInfo(4380, 1);
+		Skill skill = SkillTable.getInstance().getInfo(4380, 1);
 		if (skill != null) {
 			npc.setTarget(activeChar);
 			npc.doCast(skill);

@@ -15,10 +15,11 @@
 
 package l2server.gameserver.handler;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Playable;
-
-import java.util.logging.Logger;
+import l2server.gameserver.GameApplication;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Playable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Mother class of all itemHandlers.<BR><BR>
@@ -28,14 +29,14 @@ import java.util.logging.Logger;
  */
 
 public interface IItemHandler {
-	Logger log = Logger.getLogger(IItemHandler.class.getName());
+	Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
 
 	/**
 	 * Launch task associated to the item.
 	 *
 	 * @param playable  : L2PlayableInstance designating the player
-	 * @param item      : L2ItemInstance designating the item to use
+	 * @param item      : Item designating the item to use
 	 * @param forceUse: ctrl hold on item use
 	 */
-	void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse);
+	void useItem(Playable playable, Item item, boolean forceUse);
 }

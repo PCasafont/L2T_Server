@@ -1,7 +1,7 @@
 <list>
 	<npc id="50007" templateId="31324" name="Andromeda" serverSideName="true" title="Wedding Manager"
 		 serverSideTitle="true"
-		 level="70" type="L2WeddingManager" atkRange="40" hpMax="6252" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="80"
+		 level="70" type="WeddingManager" atkRange="40" hpMax="6252" hpReg="20.0" mpMax="1500" mpReg="10.0" STR="80"
 		 CON="74"
 		 DEX="61" INT="28" WIT="53" MEN="31" pAtk="963" mAtk="606" pDef="4970" mDef="3599" pAtkSpd="359" mAtkSpd="377"
 		 pCritRate="40"
@@ -12,7 +12,7 @@
 	</npc>
 	<npc id="50008" templateId="33941" name="Charlotte" serverSideName="true" title="Event Merchant"
 		 serverSideTitle="true" level="70"
-		 type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
+		 type="Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
 		 INT="7" WIT="9"
 		 MEN="31" pAtk="777" mAtk="462" pDef="305" mDef="390" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
 		 walkSpd="50"
@@ -23,7 +23,7 @@
 	</npc>
 	<npc id="50009" templateId="13394" name="Salome" serverSideName="true" title="Augmented Item Merchant"
 		 serverSideTitle="true" level="70"
-		 type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
+		 type="Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
 		 INT="7" WIT="9"
 		 MEN="31" pAtk="777" mAtk="462" pDef="305" mDef="390" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
 		 walkSpd="50"
@@ -34,7 +34,7 @@
 	</npc>
 	<npc id="50010" templateId="33943" name="Katalin" serverSideName="true" title="Vote Manager"
 		 serverSideTitle="true"
-		 level="70" type="L2Npc" atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80" CON="74"
+		 level="70" type="Npc" atkRange="40" hpMax="6036" hpReg="10.0" mpMax="1494" mpReg="3.0" STR="80" CON="74"
 		 DEX="61"
 		 INT="28" WIT="53" MEN="31" sp="590" pAtk="2782" mAtk="921" pDef="1277" mDef="686" pAtkSpd="303" mAtkSpd="377"
 		 pCritRate="40"
@@ -43,7 +43,7 @@
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-82365" y="150981" z="-3129" heading="31847" respawn="1000" />
 	</npc>
-	<npc id="50011" templateId="33944" name="Inia" title="Helios" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5"
+	<npc id="50011" templateId="33944" name="Inia" title="Helios" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="7.5"
 		 mpMax="1642"
 		 mpReg="2.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
 		 pAtkSpd="253"
@@ -55,7 +55,7 @@
 	</npc>
 	<npc id="80200" templateId="13392" name="Leonard" serverSideName="true" title="Dimensional Cat"
 		 serverSideTitle="true" level="70"
-		 type="L2Npc" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
+		 type="Npc" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
 		 INT="7" WIT="9"
 		 MEN="31" pAtk="777" mAtk="462" pDef="305" mDef="390" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
 		 walkSpd="50"
@@ -66,7 +66,7 @@
 	</npc>
 	<npc id="80198" templateId="13189" name="Bull" serverSideName="true" title=""
 		 serverSideTitle="true" level="70"
-		 type="L2Monster" atkRange="40" hpMax="500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
+		 type="Monster" atkRange="40" hpMax="500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
 		 INT="7" WIT="9"
 		 MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
 		 walkSpd="50"
@@ -76,7 +76,7 @@
 	</npc>
 	<npc id="80498" templateId="13190" name="Head Bull" serverSideName="true" title=""
 		 serverSideTitle="true" level="70"
-		 type="L2Monster" atkRange="40" hpMax="500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
+		 type="Monster" atkRange="40" hpMax="500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
 		 INT="7" WIT="9"
 		 MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
 		 walkSpd="50"
@@ -86,7 +86,7 @@
 	</npc>
 	<npc id="80199" templateId="13187" name="Milk Cow" serverSideName="true" title=""
 		 serverSideTitle="true" level="70"
-		 type="L2Monster" atkRange="40" hpMax="500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
+		 type="Monster" atkRange="40" hpMax="500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
 		 INT="7" WIT="9"
 		 MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
 		 walkSpd="50"
@@ -96,7 +96,7 @@
 	</npc>
 	<npc id="80499" templateId="13188" name="Milk Cow Captain" serverSideName="true" title=""
 		 serverSideTitle="true" level="70"
-		 type="L2Monster" atkRange="40" hpMax="500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
+		 type="Monster" atkRange="40" hpMax="500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
 		 INT="7" WIT="9"
 		 MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
 		 walkSpd="50"
@@ -106,7 +106,7 @@
 	</npc>
 	<npc id="50012" templateId="13392" name="Alize" serverSideName="true" title="Bank Trader"
 		 serverSideTitle="true" level="70"
-		 type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
+		 type="Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
 		 INT="7" WIT="9"
 		 MEN="31" pAtk="777" mAtk="462" pDef="305" mDef="390" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
 		 walkSpd="50"
@@ -116,7 +116,7 @@
 	</npc>
 	<npc id="50013" templateId="8466" name="Caroline" serverSideName="true" title="Rules"
 		 serverSideTitle="true" level="70"
-		 type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
+		 type="Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
 		 INT="7" WIT="9"
 		 MEN="31" pAtk="777" mAtk="462" pDef="305" mDef="390" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
 		 walkSpd="50"
@@ -127,7 +127,7 @@
 	</npc>
 	<npc id="50015" templateId="13298" name="Eva" serverSideName="true" title="Beauty Shop"
 		 serverSideTitle="true" level="70"
-		 type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
+		 type="Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
 		 INT="7" WIT="9"
 		 MEN="31" pAtk="777" mAtk="462" pDef="305" mDef="390" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
 		 walkSpd="50"
@@ -138,7 +138,7 @@
 	</npc>
 	<npc id="50014" templateId="13198" name="King of the Cows" serverSideName="true" title="Cow Guy"
 		 serverSideTitle="true" level="70"
-		 type="L2Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
+		 type="Merchant" atkRange="40" hpMax="1585" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="1" DEX="7"
 		 INT="7" WIT="9"
 		 MEN="31" pAtk="777" mAtk="462" pDef="305" mDef="390" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
 		 walkSpd="50"
@@ -147,7 +147,7 @@
 		 darkRes="20" aiType="fighter">
 		<spawn x="-83404" y="150648" z="-3129" heading="2669" respawn="1000" />
 	</npc>
-	<npc id="80245" templateId="13190" name="Marguerite" serverSideName="true" level="99" type="L2Npc" atkRange="40" hpMax="14611" hpReg="11.42"
+	<npc id="80245" templateId="13190" name="Marguerite" serverSideName="true" level="99" type="Npc" atkRange="40" hpMax="14611" hpReg="11.42"
 		 mpMax="3046"
 		 mpReg="8.29"
 		 STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
@@ -156,7 +156,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="80246" templateId="13190" name="Frank" serverSideName="true" title="Marguerite's Dad" level="105" type="L2RaidBoss" atkRange="40"
+	<npc id="80246" templateId="13190" name="Frank" serverSideName="true" title="Marguerite's Dad" level="105" type="RaidBoss" atkRange="40"
 		 hpMax="60000000"
 		 hpReg="248.04001"
 		 mpMax="6317468" mpReg="119.99" STR="160" CON="163" DEX="150" INT="144" WIT="135" MEN="147" exp="9339738544"
@@ -186,7 +186,7 @@
 		<itemDrop itemId="36545" min="200" max="500" chance="80" /> <!-- Durandil Wire -->
 		<itemDrop itemId="36565" min="200" max="500" chance="80" /> <!-- Exquisite Synthetic Cokes -->
 	</npc>
-	<npc id="80247" templateId="13190" name="Genievre" serverSideName="true" title="Marguerite's Mom" level="102" type="L2RaidBoss" atkRange="40"
+	<npc id="80247" templateId="13190" name="Genievre" serverSideName="true" title="Marguerite's Mom" level="102" type="RaidBoss" atkRange="40"
 		 hpMax="50000000"
 		 hpReg="173.42"
 		 mpMax="854383" mpReg="109.43" STR="160" CON="163" DEX="150" INT="144" WIT="125" MEN="147" exp="7998784284"
@@ -216,7 +216,7 @@
 		<itemDrop itemId="36545" min="200" max="500" chance="80" /> <!-- Durandil Wire -->
 		<itemDrop itemId="36565" min="200" max="500" chance="80" /> <!-- Exquisite Synthetic Cokes -->
 	</npc>
-	<npc id="80248" templateId="13190" name="Quentin" serverSideName="true" title="Marguerite's Brother" level="110" type="L2RaidBoss" atkRange="40"
+	<npc id="80248" templateId="13190" name="Quentin" serverSideName="true" title="Marguerite's Brother" level="110" type="RaidBoss" atkRange="40"
 		 hpMax="35000000"
 		 hpReg="151.22101"
 		 mpMax="4256867" mpReg="104.51" STR="160" CON="163" DEX="150" INT="144" WIT="120" MEN="147" exp="6810821128"
@@ -246,7 +246,7 @@
 		<itemDrop itemId="36545" min="200" max="500" chance="80" /> <!-- Durandil Wire -->
 		<itemDrop itemId="36565" min="200" max="500" chance="80" /> <!-- Exquisite Synthetic Cokes -->
 	</npc>
-	<npc id="91000" templateId="13190" name="Box Npc" serverSideName="true" level="99" type="L2Npc" atkRange="40" hpMax="14611" hpReg="11.42"
+	<npc id="91000" templateId="13190" name="Box Npc" serverSideName="true" level="99" type="Npc" atkRange="40" hpMax="14611" hpReg="11.42"
 		 mpMax="3046"
 		 mpReg="8.29"
 		 STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
@@ -255,7 +255,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="91001" templateId="32076" name=" " serverSideName="true" level="70" type="L2RaidBoss" atkRange="40" hpMax="1" hpReg="7.5" mpMax="1642"
+	<npc id="91001" templateId="32076" name=" " serverSideName="true" level="70" type="RaidBoss" atkRange="40" hpMax="1" hpReg="7.5" mpMax="1642"
 		 mpReg="2.7"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421" pAtkSpd="253"
@@ -264,7 +264,7 @@
 		 waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter" skillChance="15">
 	</npc>
-	<npc id="91002" templateId="32076" name=" " serverSideName="true" level="70" type="L2RaidBoss" atkRange="40" hpMax="1" hpReg="7.5" mpMax="1642"
+	<npc id="91002" templateId="32076" name=" " serverSideName="true" level="70" type="RaidBoss" atkRange="40" hpMax="1" hpReg="7.5" mpMax="1642"
 		 mpReg="2.7"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -272,7 +272,7 @@
 		 waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter" skillChance="15" clanRange="300">
 	</npc>
-	<npc id="91003" templateId="22191" name="Jisoo" serverSideName="true" title="Priest of the Sun" serverSideTitle="true" level="99" type="L2Npc"
+	<npc id="91003" templateId="22191" name="Jisoo" serverSideName="true" title="Priest of the Sun" serverSideTitle="true" level="99" type="Npc"
 		 atkRange="40" hpMax="14611" hpReg="11.42" mpMax="3046"
 		 mpReg="8.29"
 		 STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
@@ -281,7 +281,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="91004" templateId="25950" name="Aulikel" serverSideName="true" title="Descendant of the Light" level="107" type="L2RaidBoss"
+	<npc id="91004" templateId="25950" name="Aulikel" serverSideName="true" title="Descendant of the Light" level="107" type="RaidBoss"
 		 atkRange="40" hpMax="60000000"
 		 hpReg="151.22101"
 		 mpMax="4256867" mpReg="104.51" STR="160" CON="163" DEX="150" INT="144" WIT="120" MEN="147" exp="6810821128"
@@ -308,7 +308,7 @@
 		<itemDrop itemId="46193" min="2" max="3" chance="100" /> <!-- P.Reflect -->
 		<itemDrop itemId="46194" min="2" max="3" chance="100" /> <!-- M.Reflect -->
 	</npc>
-	<npc id="91005" templateId="29275" name="Zlepx" serverSideName="true" title="Descendant of the Dark" level="107" type="L2RaidBoss" atkRange="40"
+	<npc id="91005" templateId="29275" name="Zlepx" serverSideName="true" title="Descendant of the Dark" level="107" type="RaidBoss" atkRange="40"
 		 hpMax="60000000"
 		 hpReg="151.22101"
 		 mpMax="4256867" mpReg="104.51" STR="160" CON="163" DEX="150" INT="144" WIT="120" MEN="147" exp="6856810821128"

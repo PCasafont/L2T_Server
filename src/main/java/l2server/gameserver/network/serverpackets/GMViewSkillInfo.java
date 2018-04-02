@@ -16,18 +16,18 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.instance.Player;
 
 public class GMViewSkillInfo extends L2GameServerPacket {
-	private L2PcInstance activeChar;
-	private L2Skill[] skills;
+	private Player activeChar;
+	private Skill[] skills;
 	
-	public GMViewSkillInfo(L2PcInstance cha) {
+	public GMViewSkillInfo(Player cha) {
 		activeChar = cha;
 		skills = activeChar.getAllSkills();
 		if (skills.length == 0) {
-			skills = new L2Skill[0];
+			skills = new Skill[0];
 		}
 	}
 	
@@ -41,7 +41,7 @@ public class GMViewSkillInfo extends L2GameServerPacket {
 			isDisabled = activeChar.getClan().getReputationScore() < 0;
 		}
 		
-		for (L2Skill skill : skills) {
+		for (Skill skill : skills) {
 			writeD(skill.isPassive() ? 1 : 0);
 			writeD(skill.getLevelHash());
 			writeD(skill.getId());

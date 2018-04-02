@@ -19,19 +19,20 @@ import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.network.serverpackets.NpcSay;
-import l2server.gameserver.templates.item.L2Weapon;
+import l2server.gameserver.templates.item.WeaponTemplate;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -46,6 +47,9 @@ import java.util.Map;
  * @author LasTravel
  */
 public class CreatureInvasion extends Quest {
+	private static Logger log = LoggerFactory.getLogger(CreatureInvasion.class.getName());
+
+
 	private static final boolean debug = false;
 	private static final String qn = "CreatureInvasion";
 
@@ -61,7 +65,7 @@ public class CreatureInvasion extends Quest {
 	private static Map<Integer, AttackInfo> attackInfo = new HashMap<Integer, AttackInfo>();
 	private static Map<String, String> rewardedIps = new HashMap<String, String>();
 	private static Map<String, List<DropChances>> dropInfo = new HashMap<String, List<DropChances>>();
-	private static ArrayList<L2Npc> allCreatures = new ArrayList<L2Npc>();
+	private static ArrayList<Npc> allCreatures = new ArrayList<Npc>();
 	private static boolean isEventStarted;
 	private static BossAttackInfo bossAttackInfo;
 
@@ -102,7 +106,7 @@ public class CreatureInvasion extends Quest {
 				dropInfo.put(category, dropChances);
 			}
 		}
-		Log.info(getName() + ": Loaded " + dropInfo.size() + " drop categories!");
+		log.info(getName() + ": Loaded " + dropInfo.size() + " drop categories!");
 	}
 
 	private class DropChances {
@@ -136,10 +140,10 @@ public class CreatureInvasion extends Quest {
 	}
 
 	private class BossAttackInfo {
-		private L2Npc boss;
+		private Npc boss;
 		private Map<Integer, Long> registredDamages;
 
-		private BossAttackInfo(L2Npc boss) {
+		private BossAttackInfo(Npc boss) {
 			this.boss = boss;
 			registredDamages = new HashMap<Integer, Long>();
 		}
@@ -162,7 +166,7 @@ public class CreatureInvasion extends Quest {
 
 		private void giveRewards() {
 			synchronized (registredDamages) {
-				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
+				for (Player player : World.getInstance().getAllPlayersArray()) {
 					if (player == null || player.getInstanceId() != 0 || player.isInStoreMode() || !player.isInsideRadius(boss, 3000, false, false) ||
 							registredDamages.get(player.getObjectId()) == null || registredDamages.get(player.getObjectId()) < 1000) {
 						continue;
@@ -185,7 +189,7 @@ public class CreatureInvasion extends Quest {
 						}
 					}
 				}
-				Log.info(getName() + ": Rewarded: " + rewardedIps.size() + " players!");
+				log.info(getName() + ": Rewarded: " + rewardedIps.size() + " players!");
 			}
 		}
 	}
@@ -232,9 +236,9 @@ public class CreatureInvasion extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		if (event.equalsIgnoreCase("start_invasion")) {
@@ -242,7 +246,7 @@ public class CreatureInvasion extends Quest {
 				isEventStarted = true;
 
 				Announcements.getInstance().announceToAll("The Creature Invasion has started!");
-				for (L2PcInstance pl : L2World.getInstance().getAllPlayersArray()) {
+				for (Player pl : World.getInstance().getAllPlayersArray()) {
 					if (pl == null || pl.getInstanceId() != 0 || pl.getEvent() != null || pl.getIsInsideGMEvent() || pl.inObserverMode() ||
 							pl.isInOlympiadMode() || pl.isInStoreMode() || GrandBossManager.getInstance().getZone(pl) != null) {
 						continue;
@@ -257,7 +261,7 @@ public class CreatureInvasion extends Quest {
 				notifyEvent("end_event", null, null);
 			}
 		} else if (event.equalsIgnoreCase("spawn_boss")) {
-			L2Npc boss = addSpawn(bossId, -114373, 252703, -1552, 65137, false, 0);
+			Npc boss = addSpawn(bossId, -114373, 252703, -1552, 65137, false, 0);
 			bossAttackInfo = new BossAttackInfo(boss);
 
 			Announcements.getInstance().announceToAll("The Golden Pig has appeared on Talking Island Village !");
@@ -275,7 +279,7 @@ public class CreatureInvasion extends Quest {
 				}
 
 				synchronized (allCreatures) {
-					for (L2Npc creature : allCreatures) {
+					for (Npc creature : allCreatures) {
 						if (creature == null) {
 							continue;
 						}
@@ -296,13 +300,13 @@ public class CreatureInvasion extends Quest {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet, L2Skill skill) {
+	public String onAttack(Npc npc, Player player, int damage, boolean isPet, Skill skill) {
 		if (debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 
 		if (player.getSummons() != null) {
-			for (L2Summon s : player.getSummons()) {
+			for (Summon s : player.getSummons()) {
 				s.unSummon(player);
 			}
 		}
@@ -316,7 +320,7 @@ public class CreatureInvasion extends Quest {
 		}
 
 		if (!isValidAttack(player, skill, npc)) {
-			if (!player.isGM() && player.isInsideZone(L2Character.ZONE_PEACE)) {
+			if (!player.isGM() && player.isInsideZone(Creature.ZONE_PEACE)) {
 				player.doDie(null);
 			}
 
@@ -404,13 +408,13 @@ public class CreatureInvasion extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		if (!isEventStarted) {
-			Log.warning(killer.getName() + ": is killing creatures out of the event...!");
+			log.warn(killer.getName() + ": is killing creatures out of the event...!");
 			return "";
 		}
 
@@ -467,18 +471,18 @@ public class CreatureInvasion extends Quest {
 			return;
 		}
 
-		L2Npc creature = addSpawn(getCreatureId(), x, y, z + 5, 0, true, 0);
+		Npc creature = addSpawn(getCreatureId(), x, y, z + 5, 0, true, 0);
 		synchronized (allCreatures) {
 			allCreatures.add(creature);
 		}
 	}
 
-	private boolean isValidAttack(L2PcInstance player, L2Skill skill, L2Npc npc) {
+	private boolean isValidAttack(Player player, Skill skill, Npc npc) {
 		if (player == null) {
 			return false;
 		}
 
-		L2Weapon playerWeapon = player.getActiveWeaponItem();
+		WeaponTemplate playerWeapon = player.getActiveWeaponItem();
 		if (playerWeapon == null || playerWeapon.getItemId() != bowId) {
 			player.sendPacket(new NpcSay(npc.getObjectId(),
 					2,
@@ -489,7 +493,7 @@ public class CreatureInvasion extends Quest {
 
 		if (skill == null || !Util.contains(bowSkillIds, skill.getId())) {
 			if (skill != null && skill.hasEffects()) {
-				L2Abnormal abn = npc.getFirstEffect(skill.getId());
+				Abnormal abn = npc.getFirstEffect(skill.getId());
 				if (abn != null) {
 					abn.exit();
 				}

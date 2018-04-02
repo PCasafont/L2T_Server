@@ -81,11 +81,11 @@ public class TaskDailyChangeRates extends Task {
 				day = "Party SP";
 				break;
 			default:
-				Log.warning("[" + NAME + "]: For some reason, we're out the 7 days of the week. That's akward.");
+				log.warn("[" + NAME + "]: For some reason, we're out the 7 days of the week. That's akward.");
 				return;
 		}
 
-		Log.config("[" + NAME + "]: Rates Changed. Today's " + day + " day!");*/
+		log.debug("[" + NAME + "]: Rates Changed. Today's " + day + " day!");*/
 	}
 
 	@Override

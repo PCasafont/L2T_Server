@@ -15,36 +15,37 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Attackable;
+import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.SkillTargetType;
 
 public class EffectAggroReduce extends L2Effect {
-	public EffectAggroReduce(Env env, L2EffectTemplate template) {
+	public EffectAggroReduce(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
 		//Works only on mobz
-		if (!(getEffected() instanceof L2Attackable)) {
+		if (!(getEffected() instanceof Attackable)) {
 			return false;
 		}
 		
-		if (getSkill().getTargetType() != L2SkillTargetType.TARGET_UNDEAD || getEffected().isUndead()) {
-			((L2Attackable) getEffected()).reduceHate(null, ((L2Attackable) getEffected()).getHating(((L2Attackable) getEffected()).getMostHated()));
+		if (getSkill().getTargetType() != SkillTargetType.TARGET_UNDEAD || getEffected().isUndead()) {
+			((Attackable) getEffected()).reduceHate(null, ((Attackable) getEffected()).getHating(((Attackable) getEffected()).getMostHated()));
 		}
 		
 		return true;
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {
@@ -52,7 +53,7 @@ public class EffectAggroReduce extends L2Effect {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

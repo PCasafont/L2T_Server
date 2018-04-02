@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.PartyMatchRoom;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Gnacik
@@ -26,7 +26,7 @@ public class PartyMatchDetail extends L2GameServerPacket {
 	
 	/**
 	 */
-	public PartyMatchDetail(L2PcInstance player, PartyMatchRoom room) {
+	public PartyMatchDetail(Player player, PartyMatchRoom room) {
 		this.room = room;
 	}
 	

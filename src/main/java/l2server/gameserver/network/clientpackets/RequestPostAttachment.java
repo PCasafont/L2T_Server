@@ -18,17 +18,17 @@ package l2server.gameserver.network.clientpackets;
 import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.instancemanager.MailManager;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2ItemInstance.ItemLocation;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Item.ItemLocation;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.ItemContainer;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
 
-import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
+import static l2server.gameserver.model.actor.Creature.ZONE_PEACE;
 import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
 
 /**
@@ -49,7 +49,7 @@ public final class RequestPostAttachment extends L2GameClientPacket {
 			return;
 		}
 		
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -115,7 +115,7 @@ public final class RequestPostAttachment extends L2GameClientPacket {
 		int weight = 0;
 		int slots = 0;
 		
-		for (L2ItemInstance item : attachments.getItems()) {
+		for (Item item : attachments.getItems()) {
 			if (item == null) {
 				continue;
 			}
@@ -176,7 +176,7 @@ public final class RequestPostAttachment extends L2GameClientPacket {
 		
 		// Proceed to the transfer
 		InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
-		for (L2ItemInstance item : attachments.getItems()) {
+		for (Item item : attachments.getItems()) {
 			if (item == null) {
 				continue;
 			}
@@ -196,7 +196,7 @@ public final class RequestPostAttachment extends L2GameClientPacket {
 			}
 			
 			long count = item.getCount();
-			final L2ItemInstance newItem = attachments.transferItem(attachments.getName() + " from " + msg.getSenderName(),
+			final Item newItem = attachments.transferItem(attachments.getName() + " from " + msg.getSenderName(),
 					item.getObjectId(),
 					item.getCount(),
 					activeChar.getInventory(),
@@ -242,7 +242,7 @@ public final class RequestPostAttachment extends L2GameClientPacket {
 		activeChar.sendPacket(su);
 		
 		SystemMessage sm;
-		final L2PcInstance sender = L2World.getInstance().getPlayer(msg.getSenderId());
+		final Player sender = World.getInstance().getPlayer(msg.getSenderId());
 		if (adena > 0) {
 			if (sender != null) {
 				sender.addAdena("PayMail", adena, activeChar, false);
@@ -251,11 +251,11 @@ public final class RequestPostAttachment extends L2GameClientPacket {
 				sm.addCharName(activeChar);
 				sender.sendPacket(sm);
 			} else {
-				L2ItemInstance paidAdena = ItemTable.getInstance().createItem("PayMail", ADENA_ID, adena, activeChar, null);
+				Item paidAdena = ItemTable.getInstance().createItem("PayMail", ADENA_ID, adena, activeChar, null);
 				paidAdena.setOwnerId(msg.getSenderId());
 				paidAdena.setLocation(ItemLocation.INVENTORY);
 				paidAdena.updateDatabase(true);
-				L2World.getInstance().removeObject(paidAdena);
+				World.getInstance().removeObject(paidAdena);
 			}
 		} else if (sender != null) {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_ACQUIRED_ATTACHED_ITEM);

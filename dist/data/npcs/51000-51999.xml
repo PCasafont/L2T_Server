@@ -1,6 +1,6 @@
 <list>
 	<npc id="51000" templateId="20969" name="Giant's Solo Mob" serverSideName="true" title="L2 Tenkai Test Mob" serverSideTitle="true"
-		 level="105" type="L2Monster" atkRange="500" hpMax="964696" hpReg="44.91" mpMax="45970"
+		 level="105" type="Monster" atkRange="500" hpMax="964696" hpReg="44.91" mpMax="45970"
 		 mpReg="30.46" STR="88" CON="82" DEX="65" INT="79" WIT="40" MEN="78" exp="153594288" sp="73724" pAtk="320000" mAtk="1600000" pDef="14800"
 		 mDef="14400" pAtkSpd="698" mAtkSpd="500" pCritRate="40" mCritRate="40" walkSpd="90" runSpd="180" randomWalk="true" rHand="4028"
 		 extraDropGroup="17" collisionRadius="50" collisionHeight="44" fireRes="120" waterRes="120" windRes="120" earthRes="120"
@@ -14,7 +14,7 @@
 		<skill id="4460" level="1" /> <!-- Sword Vulnerability -->
 		<itemDrop itemId="57" min="1000000" max="2000000" chance="100" /> <!-- Adena -->
 	</npc>
-	<npc id="51001" templateId="25162" name="Giant's Party Mob" title="Tenkai Party Mob" serverSideName="true" level="107" type="L2Monster"
+	<npc id="51001" templateId="25162" name="Giant's Party Mob" title="Tenkai Party Mob" serverSideName="true" level="107" type="Monster"
 		 atkRange="700" hpMax="1289650"
 		 hpReg="153.244"
 		 mpMax="789655" mpReg="2.4" STR="164" CON="111" DEX="111" INT="188" WIT="111" MEN="111" exp="26852500" sp="1250321650"
@@ -44,7 +44,7 @@
 		<skill id="16202" level="4" /> <!-- Fatal Strike -->
 		<itemDrop itemId="57" min="5000000" max="6000000" chance="100" /> <!-- Adena -->
 	</npc>
-	<npc id="92000" templateId="36777" name="Melonis" serverSideName="true" level="99" type="L2Npc" atkRange="40" hpMax="14611" hpReg="11.42"
+	<npc id="92000" templateId="36777" name="Melonis" serverSideName="true" level="99" type="Npc" atkRange="40" hpMax="14611" hpReg="11.42"
 		 mpMax="3046"
 		 mpReg="8.29"
 		 STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
@@ -55,7 +55,7 @@
 	</npc>
 	<npc id="92010" templateId="8457" name="Kartia" serverSideName="true" title="DC Event"
 		 serverSideTitle="true" level="70"
-		 type="L2Monster" atkRange="40" hpMax="2500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
+		 type="Monster" atkRange="40" hpMax="2500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
 		 INT="7" WIT="9"
 		 MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
 		 walkSpd="50"
@@ -65,7 +65,7 @@
 	</npc>
 	<npc id="92011" templateId="8456" name="Karthos" serverSideName="true" title="DC Event"
 		 serverSideTitle="true" level="70"
-		 type="L2Monster" atkRange="40" hpMax="2500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
+		 type="Monster" atkRange="40" hpMax="2500000" hpReg="7.5" mpMax="1345" mpReg="2.7" STR="40" CON="3" DEX="7"
 		 INT="7" WIT="9"
 		 MEN="31" pAtk="777" mAtk="462" pDef="1000" mDef="1000" pAtkSpd="240" mAtkSpd="377" pCritRate="40" mCritRate="40"
 		 walkSpd="50"
@@ -73,7 +73,7 @@
 		 holyRes="20"
 		 darkRes="20" aiType="fighter" isLethalImmune="true">
 	</npc>
-	<npc id="92012" templateId="8460" name="Herina" serverSideName="true" title="Sexy Shop" serverSideTitle="true" level="99" type="L2Npc"
+	<npc id="92012" templateId="8460" name="Herina" serverSideName="true" title="Sexy Shop" serverSideTitle="true" level="99" type="Npc"
 		 atkRange="40" hpMax="14611" hpReg="11.42" mpMax="3046"
 		 mpReg="8.29"
 		 STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
@@ -82,7 +82,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="99999" templateId="13190" name="Inia" serverSideName="true" title="Faction Npc" serverSideTitle="true" level="99" type="L2Npc"
+	<npc id="99999" templateId="13190" name="Inia" serverSideName="true" title="Faction Npc" serverSideTitle="true" level="99" type="Npc"
 		 atkRange="40" hpMax="14611" hpReg="11.42" mpMax="3046"
 		 mpReg="8.29"
 		 STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
@@ -92,7 +92,7 @@
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
 
-	<npc id="95000" templateId="8568" name="Fire Territory" serverSideName="true" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0"
+	<npc id="95000" templateId="8568" name="Fire Territory" serverSideName="true" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298"
@@ -101,7 +101,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="95001" templateId="8569" name="Water Territory" serverSideName="true" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0"
+	<npc id="95001" templateId="8569" name="Water Territory" serverSideName="true" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298"
@@ -110,7 +110,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="95002" templateId="8570" name="Dark Territory" serverSideName="true" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0"
+	<npc id="95002" templateId="8570" name="Dark Territory" serverSideName="true" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298"
@@ -119,7 +119,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="95003" templateId="8571" name="Earth Territory" serverSideName="true" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0"
+	<npc id="95003" templateId="8571" name="Earth Territory" serverSideName="true" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298"

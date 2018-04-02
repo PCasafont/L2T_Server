@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -41,10 +41,10 @@ public class ConditionPlayerWeight extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		if (env.player instanceof L2PcInstance) {
-			if (((L2PcInstance) env.player).getMaxLoad() > 0) {
-				int weightproc = ((L2PcInstance) env.player).getCurrentLoad() * 100 / ((L2PcInstance) env.player).getMaxLoad();
-				return weightproc < weight || ((L2PcInstance) env.player).getDietMode();
+		if (env.player instanceof Player) {
+			if (((Player) env.player).getMaxLoad() > 0) {
+				int weightproc = ((Player) env.player).getCurrentLoad() * 100 / ((Player) env.player).getMaxLoad();
+				return weightproc < weight || ((Player) env.player).getDietMode();
 			}
 		}
 		return true;

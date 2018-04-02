@@ -23,8 +23,8 @@ import l2server.gameserver.instancemanager.ClanHallManager;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -39,7 +39,7 @@ public class AdminClan implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_clan_info", "admin_clan_changeleader"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		StringTokenizer st = new StringTokenizer(command, " ");
 		String cmd = st.nextToken();
 		if (cmd.startsWith("admin_clan_info")) {
@@ -50,7 +50,7 @@ public class AdminClan implements IAdminCommandHandler {
 				} catch (NoSuchElementException NSEE) {
 					objectId = activeChar.getTargetId();
 				}
-				L2PcInstance player = L2World.getInstance().getPlayer(objectId);
+				Player player = World.getInstance().getPlayer(objectId);
 				if (player != null) {
 					L2Clan clan = player.getClan();
 					if (clan != null) {
@@ -94,7 +94,7 @@ public class AdminClan implements IAdminCommandHandler {
 			try {
 				int objectId = Integer.parseInt(st.nextToken());
 
-				L2PcInstance player = L2World.getInstance().getPlayer(objectId);
+				Player player = World.getInstance().getPlayer(objectId);
 				if (player != null) {
 					L2Clan clan = player.getClan();
 					if (clan == null) {
@@ -103,7 +103,7 @@ public class AdminClan implements IAdminCommandHandler {
 					}
 					for (L2ClanMember member : clan.getMembers()) {
 						if (member.getObjectId() == player.getObjectId()) {
-							L2PcInstance exLeader = clan.getLeader().getPlayerInstance();
+							Player exLeader = clan.getLeader().getPlayerInstance();
 							if (exLeader != null) {
 								CastleSiegeManager.getInstance().removeSiegeSkills(exLeader);
 								exLeader.setClan(clan);
@@ -119,7 +119,7 @@ public class AdminClan implements IAdminCommandHandler {
 							clan.setLeader(member);
 							clan.updateClanInDB();
 
-							L2PcInstance newLeader = member.getPlayerInstance();
+							Player newLeader = member.getPlayerInstance();
 							newLeader.setClan(clan);
 							newLeader.setPledgeClass(member.calculatePledgeClass(newLeader));
 							newLeader.setClanPrivileges(L2Clan.CP_ALL);

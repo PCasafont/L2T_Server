@@ -15,15 +15,15 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 
 /**
  * @author KenM
  */
 public final class ExRpItemLink extends L2ItemListPacket {
-	private final L2ItemInstance item;
+	private final Item item;
 	
-	public ExRpItemLink(L2ItemInstance item) {
+	public ExRpItemLink(Item item) {
 		this.item = item;
 	}
 

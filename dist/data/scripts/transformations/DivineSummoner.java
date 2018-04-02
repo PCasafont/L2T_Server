@@ -3,7 +3,7 @@ package transformations;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 
 public class DivineSummoner extends L2Transformation {
 	private static final int[] SKILLS = {710, 711, 712, 713, 714, 5779, 619};
@@ -22,7 +22,7 @@ public class DivineSummoner extends L2Transformation {
 		if (getPlayer().getPet() != null) {
 			getPlayer().getPet().unSummon(getPlayer());
 		}
-		for (L2SummonInstance summon : getPlayer().getSummons()) {
+		for (SummonInstance summon : getPlayer().getSummons()) {
 			summon.unSummon(getPlayer());
 		}
 
@@ -53,7 +53,7 @@ public class DivineSummoner extends L2Transformation {
 		if (getPlayer().getPet() != null) {
 			getPlayer().getPet().unSummon(getPlayer());
 		}
-		for (L2SummonInstance summon : getPlayer().getSummons()) {
+		for (SummonInstance summon : getPlayer().getSummons()) {
 			summon.unSummon(getPlayer());
 		}
 

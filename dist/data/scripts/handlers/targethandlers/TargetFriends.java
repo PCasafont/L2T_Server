@@ -20,19 +20,19 @@ import l2server.gameserver.events.instanced.EventTeam;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
 import l2server.gameserver.model.L2ClanMember;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillTargetDirection;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillTargetDirection;
+import l2server.gameserver.templates.skills.SkillTargetType;
+import l2server.gameserver.templates.skills.SkillType;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -45,24 +45,24 @@ import java.util.Collection;
  */
 public class TargetFriends implements ISkillTargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
 		if (skill.isUseableWithoutTarget()) {
-			final ArrayList<L2Character> result = new ArrayList<L2Character>();
+			final ArrayList<Creature> result = new ArrayList<Creature>();
 
-			if (activeChar instanceof L2Playable) {
-				final L2PcInstance aPlayer = activeChar.getActingPlayer();
+			if (activeChar instanceof Playable) {
+				final Player aPlayer = activeChar.getActingPlayer();
 
 				// Friendly targets for players...
-				if (skill.getTargetDirection() != L2SkillTargetDirection.PARTY_ALL_NOTME) {
+				if (skill.getTargetDirection() != SkillTargetDirection.PARTY_ALL_NOTME) {
 					result.add(aPlayer);
 				}
 
-				final L2Summon aPet = aPlayer.getPet();
+				final Summon aPet = aPlayer.getPet();
 				if (aPet != null && !aPet.isDead()) {
 					result.add(aPet);
 				}
 
-				for (L2SummonInstance summon : aPlayer.getSummons()) {
+				for (SummonInstance summon : aPlayer.getSummons()) {
 					if (summon.isDead()) {
 						continue;
 					}
@@ -71,14 +71,14 @@ public class TargetFriends implements ISkillTargetTypeHandler {
 				}
 
 				if (aPlayer.isInOlympiadMode()) {
-					return result.toArray(new L2Character[result.size()]);
+					return result.toArray(new Creature[result.size()]);
 				}
 
-				Collection<L2Character> candidates;
+				Collection<Creature> candidates;
 				if (skill.getSkillRadius() > 0) {
 					candidates = aPlayer.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius());
 				} else {
-					candidates = new ArrayList<L2Character>();
+					candidates = new ArrayList<Creature>();
 					if (aPlayer.isInParty()) {
 						candidates.addAll(aPlayer.getParty().getPartyMembers());
 					}
@@ -89,12 +89,12 @@ public class TargetFriends implements ISkillTargetTypeHandler {
 					}
 				}
 
-				for (L2Character obj : candidates) {
+				for (Creature obj : candidates) {
 					if (obj == null) {
 						continue;
 					}
 
-					final L2PcInstance kTarget = obj.getActingPlayer();
+					final Player kTarget = obj.getActingPlayer();
 					if (kTarget == null || aPlayer == kTarget) {
 						continue;
 					} else if (!aPlayer.isAbleToCastOnTarget(kTarget, skill, true)) {
@@ -113,7 +113,7 @@ public class TargetFriends implements ISkillTargetTypeHandler {
 						}
 					}
 
-					if (skill.getTargetDirection() == L2SkillTargetDirection.PARTY_ALL) {
+					if (skill.getTargetDirection() == SkillTargetDirection.PARTY_ALL) {
 						if (!aPlayer.isInSameParty(kTarget)) {
 							continue;
 						}
@@ -121,31 +121,31 @@ public class TargetFriends implements ISkillTargetTypeHandler {
 						// We need the check for cases where player actually isn't in a party.
 						//if (result.size() >= 9)
 						//	break;
-					} else if (skill.getTargetDirection() == L2SkillTargetDirection.PARTY_ALL_NOTME) {
+					} else if (skill.getTargetDirection() == SkillTargetDirection.PARTY_ALL_NOTME) {
 						if (aPlayer == kTarget || !aPlayer.isInSameParty(kTarget)) {
 							continue;
 						}
-					} else if (skill.getTargetDirection() == L2SkillTargetDirection.PARTY_AND_CLAN) {
+					} else if (skill.getTargetDirection() == SkillTargetDirection.PARTY_AND_CLAN) {
 						if (!aPlayer.isInSameParty(kTarget) && !aPlayer.isInSameClan(kTarget)) {
 							continue;
 						}
-					} else if (skill.getTargetDirection() == L2SkillTargetDirection.CLAN) {
+					} else if (skill.getTargetDirection() == SkillTargetDirection.CLAN) {
 						if (!aPlayer.isInSameClan(kTarget)) {
 							continue;
 						}
-					} else if (skill.getTargetDirection() == L2SkillTargetDirection.DEAD_PARTY_MEMBER) {
+					} else if (skill.getTargetDirection() == SkillTargetDirection.DEAD_PARTY_MEMBER) {
 						if (!aPlayer.isInSameParty(kTarget)) {
 							continue;
 						}
-					} else if (skill.getTargetDirection() == L2SkillTargetDirection.DEAD_CLAN_MEMBER) {
+					} else if (skill.getTargetDirection() == SkillTargetDirection.DEAD_CLAN_MEMBER) {
 						if (!aPlayer.isInSameClan(kTarget)) {
 							continue;
 						}
-					} else if (skill.getTargetDirection() == L2SkillTargetDirection.DEAD_PARTY_AND_CLAN_MEMBER) {
+					} else if (skill.getTargetDirection() == SkillTargetDirection.DEAD_PARTY_AND_CLAN_MEMBER) {
 						if (!aPlayer.isInSameClan(kTarget)) {
 							continue;
 						}
-					} else if (skill.getTargetDirection() == L2SkillTargetDirection.ALLIANCE) {
+					} else if (skill.getTargetDirection() == SkillTargetDirection.ALLIANCE) {
 						if (!aPlayer.isInSameAlly(kTarget)) {
 							continue;
 						}
@@ -155,12 +155,12 @@ public class TargetFriends implements ISkillTargetTypeHandler {
 					}
 
 					result.add(kTarget);
-					final L2Summon kPet = kTarget.getPet();
+					final Summon kPet = kTarget.getPet();
 					if (kPet != null && !kPet.isDead()) {
 						result.add(kPet);
 					}
 
-					for (L2SummonInstance summon : kTarget.getSummons()) {
+					for (SummonInstance summon : kTarget.getSummons()) {
 						if (summon.isDead()) {
 							continue;
 						}
@@ -168,15 +168,15 @@ public class TargetFriends implements ISkillTargetTypeHandler {
 						result.add(summon);
 					}
 				}
-			} else if (activeChar instanceof L2MonsterInstance) {
-				final L2MonsterInstance aMonster = (L2MonsterInstance) activeChar;
+			} else if (activeChar instanceof MonsterInstance) {
+				final MonsterInstance aMonster = (MonsterInstance) activeChar;
 
-				for (L2Character obj : aMonster.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
-					if (!(obj instanceof L2MonsterInstance)) {
+				for (Creature obj : aMonster.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
+					if (!(obj instanceof MonsterInstance)) {
 						continue;
 					}
 
-					final L2MonsterInstance kMonster = (L2MonsterInstance) obj;
+					final MonsterInstance kMonster = (MonsterInstance) obj;
 
 					if (aMonster == kMonster) {
 						continue;
@@ -190,36 +190,36 @@ public class TargetFriends implements ISkillTargetTypeHandler {
 				}
 			}
 
-			return result.toArray(new L2Character[result.size()]);
+			return result.toArray(new Creature[result.size()]);
 		} else {
-			if (target != null && (GeoEngine.getInstance().canSeeTarget(activeChar, target) || skill.getSkillType() == L2SkillType.SUMMON_FRIEND)) {
-				if (activeChar instanceof L2MonsterInstance) {
-					final L2MonsterInstance aMonster = (L2MonsterInstance) activeChar;
+			if (target != null && (GeoEngine.getInstance().canSeeTarget(activeChar, target) || skill.getSkillType() == SkillType.SUMMON_FRIEND)) {
+				if (activeChar instanceof MonsterInstance) {
+					final MonsterInstance aMonster = (MonsterInstance) activeChar;
 
-					if (target instanceof L2MonsterInstance) {
-						final L2MonsterInstance mTarget = (L2MonsterInstance) target;
+					if (target instanceof MonsterInstance) {
+						final MonsterInstance mTarget = (MonsterInstance) target;
 
 						if (aMonster.getFactionId() != null && mTarget.getFactionId() != null &&
 								aMonster.getFactionId().equals(mTarget.getFactionId())) {
-							return new L2Character[]{mTarget};
+							return new Creature[]{mTarget};
 						}
 					}
-				} else if (activeChar instanceof L2Playable) {
-					final L2PcInstance aPlayer = activeChar.getActingPlayer();
-					if (target instanceof L2Playable) {
-						final L2PcInstance tPlayer = target.getActingPlayer();
+				} else if (activeChar instanceof Playable) {
+					final Player aPlayer = activeChar.getActingPlayer();
+					if (target instanceof Playable) {
+						final Player tPlayer = target.getActingPlayer();
 
-						if (skill.getTargetDirection() == L2SkillTargetDirection.PARTY_ONE) {
+						if (skill.getTargetDirection() == SkillTargetDirection.PARTY_ONE) {
 							if (aPlayer == tPlayer || aPlayer.isInSameParty(tPlayer)) {
-								return new L2Character[]{target};
+								return new Creature[]{target};
 							}
-						} else if (skill.getTargetDirection() == L2SkillTargetDirection.PARTY_AND_CLAN) {
+						} else if (skill.getTargetDirection() == SkillTargetDirection.PARTY_AND_CLAN) {
 							if (aPlayer == tPlayer || aPlayer.isInSameParty(tPlayer) || aPlayer.isInSameClan(tPlayer)) {
-								return new L2Character[]{target};
+								return new Creature[]{target};
 							}
-						} else if (skill.getTargetDirection() == L2SkillTargetDirection.PARTY_ONE_NOTME) {
+						} else if (skill.getTargetDirection() == SkillTargetDirection.PARTY_ONE_NOTME) {
 							if (aPlayer != tPlayer && aPlayer.isInSameParty(tPlayer)) {
-								return new L2Character[]{target};
+								return new Creature[]{target};
 							}
 						}
 					}
@@ -232,8 +232,8 @@ public class TargetFriends implements ISkillTargetTypeHandler {
 	}
 
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.TARGET_FRIENDS;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.TARGET_FRIENDS;
 	}
 
 	public static void main(String[] args) {

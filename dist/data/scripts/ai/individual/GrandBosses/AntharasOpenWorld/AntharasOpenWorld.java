@@ -22,17 +22,18 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.GrandBossInstance;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.QuestTimer;
-import l2server.gameserver.model.zone.L2ZoneType;
-import l2server.gameserver.model.zone.type.L2BossZone;
+import l2server.gameserver.model.zone.ZoneType;
+import l2server.gameserver.model.zone.type.BossZone;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Broadcast;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -46,6 +47,9 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class AntharasOpenWorld extends L2AttackableAIScript {
+	private static Logger log = LoggerFactory.getLogger(AntharasOpenWorld.class.getName());
+
+
 	//Quest
 	private static final boolean debug = false;
 	private static final String qn = "AntharasOpenWorld";
@@ -59,11 +63,11 @@ public class AntharasOpenWorld extends L2AttackableAIScript {
 	private static final int[] allMobIds = {behemothDragon, taraskDragon, dragonBombers[0], dragonBombers[1], antharasId};
 	private static final int heartOfWarding = 13001;
 	private static final int teleportCubic = 31859;
-	private static final L2BossZone bossZone = GrandBossManager.getInstance().getZone(179700, 113800, -7709);
+	private static final BossZone bossZone = GrandBossManager.getInstance().getZone(179700, 113800, -7709);
 
 	//Others
-	private static final List<L2Npc> allMonsters = new ArrayList<L2Npc>();
-	private static L2Npc antharasBoss;
+	private static final List<Npc> allMonsters = new ArrayList<Npc>();
+	private static Npc antharasBoss;
 	private static long LastAction;
 
 	public AntharasOpenWorld(int id, String name, String descr) {
@@ -88,15 +92,15 @@ public class AntharasOpenWorld extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 
 		if (npc.getNpcId() == heartOfWarding) {
 			int anthyStatus = GrandBossManager.getInstance().getBossStatus(antharasId);
 
-			final List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+			final List<Player> allPlayers = new ArrayList<Player>();
 
 			if (anthyStatus == GrandBossManager.getInstance().DEAD) {
 				return "13001-01.html";
@@ -129,7 +133,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript {
 						player.getParty().getCommandChannel().getMembers() : player.getParty().getPartyMembers());
 			}
 
-			for (L2PcInstance enterPlayer : allPlayers) {
+			for (Player enterPlayer : allPlayers) {
 				if (enterPlayer == null) {
 					continue;
 				}
@@ -145,9 +149,9 @@ public class AntharasOpenWorld extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		if (event.equalsIgnoreCase("unlock_antharas")) {
@@ -162,7 +166,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript {
 
 			allMonsters.add(antharasBoss);
 
-			GrandBossManager.getInstance().addBoss((L2GrandBossInstance) antharasBoss);
+			GrandBossManager.getInstance().addBoss((GrandBossInstance) antharasBoss);
 
 			antharasBoss.setIsImmobilized(true);
 
@@ -216,7 +220,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript {
 
 			bossZone.oustAllPlayers();
 
-			for (L2Npc mob : allMonsters) {
+			for (Npc mob : allMonsters) {
 				mob.getSpawn().stopRespawn();
 				mob.deleteMe();
 			}
@@ -267,7 +271,7 @@ public class AntharasOpenWorld extends L2AttackableAIScript {
 						}
 					}
 
-					L2Npc minion = addSpawn(minionsToSpawn.get(i), x, y, -7704, 0, true, 120 * 2 * 60000);
+					Npc minion = addSpawn(minionsToSpawn.get(i), x, y, -7704, 0, true, 120 * 2 * 60000);
 					minion.setIsRunning(true);
 					allMonsters.add(minion);
 				}
@@ -277,9 +281,9 @@ public class AntharasOpenWorld extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 
 		if (npc.getNpcId() == antharasId) {
@@ -293,9 +297,9 @@ public class AntharasOpenWorld extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		if (npc.getNpcId() == antharasId) {
@@ -315,11 +319,11 @@ public class AntharasOpenWorld extends L2AttackableAIScript {
 			int countMPHerb = Rnd.get(6, 18);
 
 			for (int i = 0; i < countHPHerb; i++) {
-				((L2MonsterInstance) npc).dropItem(killer, 8602, 1);
+				((MonsterInstance) npc).dropItem(killer, 8602, 1);
 			}
 
 			for (int i = 0; i < countMPHerb; i++) {
-				((L2MonsterInstance) npc).dropItem(killer, 8605, 1);
+				((MonsterInstance) npc).dropItem(killer, 8605, 1);
 			}
 		}
 
@@ -331,8 +335,8 @@ public class AntharasOpenWorld extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onEnterZone(L2Character character, L2ZoneType zone) {
-		if (character instanceof L2PcInstance) {
+	public final String onEnterZone(Creature character, ZoneType zone) {
+		if (character instanceof Player) {
 			if (GrandBossManager.getInstance().getBossStatus(antharasId) == GrandBossManager.getInstance().WAITING) {
 				character.sendPacket(new ExSendUIEvent(0,
 						0,
@@ -345,8 +349,8 @@ public class AntharasOpenWorld extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onExitZone(L2Character character, L2ZoneType zone) {
-		if (character instanceof L2PcInstance) {
+	public final String onExitZone(Creature character, ZoneType zone) {
+		if (character instanceof Player) {
 			if (GrandBossManager.getInstance().getBossStatus(antharasId) == GrandBossManager.getInstance().WAITING) {
 				character.sendPacket(new ExSendUIEventRemove());
 			}

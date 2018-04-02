@@ -22,12 +22,10 @@ import l2server.gameserver.LoginServerThread.SessionKey;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.serverpackets.ExLoginVitalityEffectInfo;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
-import l2server.log.Log;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.logging.Level;
 
 /**
  * This class ...
@@ -62,8 +60,8 @@ public final class AuthLogin extends L2GameClientPacket {
 		}
 		SessionKey key = new SessionKey(loginKey1, loginKey2, playKey1, playKey2);
 		if (Config.DEBUG) {
-			Log.info("user:" + loginName);
-			Log.info("key:" + key);
+			log.info("user:" + loginName);
+			log.info("key:" + key);
 		}
 
 		// avoid potential exploits
@@ -110,7 +108,7 @@ public final class AuthLogin extends L2GameClientPacket {
 			}
 			catch (Exception e)
 			{
-				Logozo.log(Level.WARNING, "Could not load player vitality items used count: " + e.getMessage(), e);
+				Logozo.warn( "Could not load player vitality items used count: " + e.getMessage(), e);
 			}
 			finally
 			{
@@ -157,7 +155,7 @@ public final class AuthLogin extends L2GameClientPacket {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not restore account vitality points: " + e.getMessage(), e);
+			log.warn("Could not restore account vitality points: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

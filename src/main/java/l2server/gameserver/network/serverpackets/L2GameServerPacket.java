@@ -17,15 +17,16 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.PacketOpcodes;
-import l2server.log.Log;
 import l2server.network.SendablePacket;
-
-import java.util.logging.Level;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author KenM
  */
 public abstract class L2GameServerPacket extends SendablePacket<L2GameClient> {
+	protected static Logger log = LoggerFactory.getLogger(L2GameServerPacket.class.getName());
+	
 	protected int invisibleCharacter = 0;
 	
 	/**
@@ -52,7 +53,7 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient> {
 		try {
 			//if (getClient() != null && getClient().getAccountName() != null
 			//		&& getClient().getAccountName().equalsIgnoreCase("pere"))
-			//	Log.info(getType());
+			//	log.info(getType());
 			
 			byte[] opcode = PacketOpcodes.INSTANCE.getServerPacketOpcode(getOpCodeClass());
 			if (opcode != null) {
@@ -61,7 +62,7 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient> {
 			
 			writeImpl();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Client: " + getClient().toString() + " - Failed writing: " + getType() + " ; " + e.getMessage(), e);
+			log.error("Client: " + getClient().toString() + " - Failed writing: " + getType() + " ; " + e.getMessage(), e);
 		}
 	}
 	

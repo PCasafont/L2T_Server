@@ -19,8 +19,8 @@ import gnu.trove.TIntIntHashMap;
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.events.instanced.EventsManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.BlockCheckerEngine;
 import l2server.gameserver.model.itemcontainer.PcInventory;
 import l2server.gameserver.model.olympiad.OlympiadManager;
@@ -137,7 +137,7 @@ public final class HandysBlockCheckerManager {
 	 * @param player
 	 * @param arenaId
 	 */
-	public boolean addPlayerToArena(L2PcInstance player, int arenaId) {
+	public boolean addPlayerToArena(Player player, int arenaId) {
 		ArenaParticipantsHolder holder = arenaPlayers[arenaId];
 
 		synchronized (holder) {
@@ -204,7 +204,7 @@ public final class HandysBlockCheckerManager {
 	 * @param player
 	 * @param arenaId
 	 */
-	public void removePlayer(L2PcInstance player, int arenaId, int team) {
+	public void removePlayer(Player player, int arenaId, int team) {
 		ArenaParticipantsHolder holder = arenaPlayers[arenaId];
 		synchronized (holder) {
 			boolean isRed = team == 0;
@@ -234,7 +234,7 @@ public final class HandysBlockCheckerManager {
 	 * @param arena
 	 * @param team
 	 */
-	public void changePlayerToTeam(L2PcInstance player, int arena, int team) {
+	public void changePlayerToTeam(Player player, int arena, int team) {
 		ArenaParticipantsHolder holder = arenaPlayers[arena];
 
 		synchronized (holder) {
@@ -305,7 +305,7 @@ public final class HandysBlockCheckerManager {
 	 * Called when played logs out while participating
 	 * in Block Checker Event
 	 */
-	public void onDisconnect(L2PcInstance player) {
+	public void onDisconnect(Player player) {
 		int arena = player.getBlockCheckerArena();
 		int team = getHolder(arena).getPlayerTeam(player);
 		HandysBlockCheckerManager.getInstance().removePlayer(player, arena, team);
@@ -325,7 +325,7 @@ public final class HandysBlockCheckerManager {
 				long count = inv.getInventoryItemCount(13788, 0);
 				inv.destroyItemByItemId("Handys Block Checker", 13788, count, player, player);
 			}
-			player.setInsideZone(L2Character.ZONE_PVP, false);
+			player.setInsideZone(Creature.ZONE_PVP, false);
 			// Teleport Back
 			player.teleToLocation(-57478, -60367, -2370);
 		}
@@ -341,8 +341,8 @@ public final class HandysBlockCheckerManager {
 
 	public class ArenaParticipantsHolder {
 		int arena;
-		List<L2PcInstance> redPlayers;
-		List<L2PcInstance> bluePlayers;
+		List<Player> redPlayers;
+		List<Player> bluePlayers;
 		BlockCheckerEngine engine;
 
 		public ArenaParticipantsHolder(int arena) {
@@ -352,22 +352,22 @@ public final class HandysBlockCheckerManager {
 			engine = new BlockCheckerEngine(this, arena);
 		}
 
-		public List<L2PcInstance> getRedPlayers() {
+		public List<Player> getRedPlayers() {
 			return redPlayers;
 		}
 
-		public List<L2PcInstance> getBluePlayers() {
+		public List<Player> getBluePlayers() {
 			return bluePlayers;
 		}
 
-		public ArrayList<L2PcInstance> getAllPlayers() {
-			ArrayList<L2PcInstance> all = new ArrayList<>(12);
+		public ArrayList<Player> getAllPlayers() {
+			ArrayList<Player> all = new ArrayList<>(12);
 			all.addAll(redPlayers);
 			all.addAll(bluePlayers);
 			return all;
 		}
 
-		public void addPlayer(L2PcInstance player, int team) {
+		public void addPlayer(Player player, int team) {
 			if (team == 0) {
 				redPlayers.add(player);
 			} else {
@@ -375,7 +375,7 @@ public final class HandysBlockCheckerManager {
 			}
 		}
 
-		public void removePlayer(L2PcInstance player, int team) {
+		public void removePlayer(Player player, int team) {
 			if (team == 0) {
 				redPlayers.remove(player);
 			} else {
@@ -383,7 +383,7 @@ public final class HandysBlockCheckerManager {
 			}
 		}
 
-		public int getPlayerTeam(L2PcInstance player) {
+		public int getPlayerTeam(Player player) {
 			if (redPlayers.contains(player)) {
 				return 0;
 			} else if (bluePlayers.contains(player)) {
@@ -402,10 +402,10 @@ public final class HandysBlockCheckerManager {
 		}
 
 		public void broadCastPacketToTeam(L2GameServerPacket packet) {
-			for (L2PcInstance p : redPlayers) {
+			for (Player p : redPlayers) {
 				p.sendPacket(packet);
 			}
-			for (L2PcInstance p : bluePlayers) {
+			for (Player p : bluePlayers) {
 				p.sendPacket(packet);
 			}
 		}
@@ -430,7 +430,7 @@ public final class HandysBlockCheckerManager {
 				broadCastPacketToTeam(SystemMessage.getSystemMessage(SystemMessageId.TEAM_ADJUSTED_BECAUSE_WRONG_POPULATION_RATIO));
 				int needed = redSize - (blueSize + 1);
 				for (int i = 0; i < needed + 1; i++) {
-					L2PcInstance plr = redPlayers.get(i);
+					Player plr = redPlayers.get(i);
 					if (plr == null) {
 						continue;
 					}
@@ -440,7 +440,7 @@ public final class HandysBlockCheckerManager {
 				broadCastPacketToTeam(SystemMessage.getSystemMessage(SystemMessageId.TEAM_ADJUSTED_BECAUSE_WRONG_POPULATION_RATIO));
 				int needed = blueSize - (redSize + 1);
 				for (int i = 0; i < needed + 1; i++) {
-					L2PcInstance plr = bluePlayers.get(i);
+					Player plr = bluePlayers.get(i);
 					if (plr == null) {
 						continue;
 					}

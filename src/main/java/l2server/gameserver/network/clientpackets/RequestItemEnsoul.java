@@ -2,9 +2,9 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.EnsoulDataTable;
 import l2server.gameserver.model.EnsoulEffect;
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.SoulCrystal;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ExEnsoulResult;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.ItemList;
@@ -42,12 +42,12 @@ public class RequestItemEnsoul extends L2GameClientPacket {
 
 	@Override
 	public void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
 
-		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(this.targetItem);
+		Item targetItem = activeChar.getInventory().getItemByObjectId(this.targetItem);
 		if (targetItem == null || targetItem.isEquipped()) {
 			activeChar.sendPacket(new ExShowScreenMessage("Please, unequip your " + targetItem.getName() + " before giving it any soul enhancement.",
 					5000));
@@ -65,7 +65,7 @@ public class RequestItemEnsoul extends L2GameClientPacket {
 				index = 2;
 			}
 
-			L2ItemInstance soulCrystalItem = activeChar.getInventory().getItemByObjectId(ced.crystalId);
+			Item soulCrystalItem = activeChar.getInventory().getItemByObjectId(ced.crystalId);
 			if (soulCrystalItem == null) {
 				continue;
 			}

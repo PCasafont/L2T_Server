@@ -4,11 +4,11 @@ import l2server.gameserver.Announcements;
 import l2server.gameserver.GmListTable;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.network.NpcStringId;
@@ -46,10 +46,10 @@ public class Christmas extends Quest {
 	private static Long nextInvasion;
 	private static Long nextSantaReward;
 	private static String lastSantaRewardedName;
-	private static L2Npc santa;
+	private static Npc santa;
 	private static boolean isUnderInvasion = false;
 	private Map<Integer, invaderInfo> attackInfo = new HashMap<Integer, invaderInfo>();
-	private ArrayList<L2Character> invaders = new ArrayList<L2Character>();
+	private ArrayList<Creature> invaders = new ArrayList<Creature>();
 	private ArrayList<String> rewardedPlayers = new ArrayList<String>(); //IP based
 
 	private static final int[][] randomRewards = {
@@ -170,7 +170,7 @@ public class Christmas extends Quest {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet, L2Skill skill) {
+	public String onAttack(Npc npc, Player player, int damage, boolean isPet, Skill skill) {
 		if (!isUnderInvasion) {
 			player.doDie(npc);
 			return "";
@@ -251,7 +251,7 @@ public class Christmas extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		synchronized (attackInfo) {
 			invaderInfo info = attackInfo.get(npc.getObjectId()); //Get the attack info
 			if (info != null) {
@@ -260,7 +260,7 @@ public class Christmas extends Quest {
 		}
 
 		if (isUnderInvasion) {
-			L2Npc inv =
+			Npc inv =
 					addSpawn(invaderIds[Rnd.get(invaderIds.length)], npc.getX() + Rnd.get(100), npc.getY() + Rnd.get(100), npc.getZ(), 0, false, 0);
 			invaders.add(inv);
 		}
@@ -268,7 +268,7 @@ public class Christmas extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		StringBuilder tb = new StringBuilder();
 		tb.append("<html><center><font color=\"3D81A8\">Merry Christmas!</font></center><br1>Hohohoh! Hi " + player.getName() +
 				" If you give me some <font color=LEVEL>Star Ornament's</font> I can give you some gifts! Take all what you can!<br>");
@@ -331,7 +331,7 @@ public class Christmas extends Quest {
 
 	@SuppressWarnings("unused")
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.equalsIgnoreCase("santas_talks")) {
 			if (exChangeOnly) {
 				Announcements.getInstance()
@@ -357,9 +357,9 @@ public class Christmas extends Quest {
 				return "";
 			}
 
-			List<L2PcInstance> playerList = new ArrayList<L2PcInstance>();
-			for (L2PcInstance pl : L2World.getInstance().getAllPlayersArray()) {
-				if (pl != null && pl.isOnline() && pl.isInCombat() && !pl.isInsideZone(L2Character.ZONE_PEACE) && !pl.isFlyingMounted() &&
+			List<Player> playerList = new ArrayList<Player>();
+			for (Player pl : World.getInstance().getAllPlayersArray()) {
+				if (pl != null && pl.isOnline() && pl.isInCombat() && !pl.isInsideZone(Creature.ZONE_PEACE) && !pl.isFlyingMounted() &&
 						pl.getClient() != null && !pl.getClient().isDetached()) {
 					if (rewardedPlayers.contains(pl.getExternalIP())) {
 						continue;
@@ -427,7 +427,8 @@ public class Christmas extends Quest {
 					int x = (int) (radius * Math.cos(i * 0.618));
 					int y = (int) (radius * Math.sin(i * 0.618));
 
-					L2Npc inv = addSpawn(invaderIds[Rnd.get(invaderIds.length)], -59718 + x, -56909 + y, -2029 + 20, -1, false, 0, false, 0);
+					Npc
+							inv = addSpawn(invaderIds[Rnd.get(invaderIds.length)], -59718 + x, -56909 + y, -2029 + 20, -1, false, 0, false, 0);
 					invaders.add(inv);
 				}
 				radius += 300;
@@ -449,7 +450,7 @@ public class Christmas extends Quest {
 				}
 			}
 
-			for (L2Character chara : invaders) {
+			for (Creature chara : invaders) {
 				if (chara == null) {
 					continue;
 				}

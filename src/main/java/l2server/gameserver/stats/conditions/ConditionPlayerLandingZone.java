@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -41,6 +41,6 @@ public class ConditionPlayerLandingZone extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		return env.player.isInsideZone(L2Character.ZONE_LANDING) == val;
+		return env.player.isInsideZone(Creature.ZONE_LANDING) == val;
 	}
 }

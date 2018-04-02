@@ -16,42 +16,43 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2EffectType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.EffectType;
 
 /**
  * @author decad
  */
 public class EffectBetray extends L2Effect {
-	public EffectBetray(Env env, L2EffectTemplate template) {
+	public EffectBetray(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 * @see Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType() {
-		return L2EffectType.BETRAY;
+	public EffectType getEffectType() {
+		return EffectType.BETRAY;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.BETRAY;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.BETRAY;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		if (getEffector() instanceof L2PcInstance && getEffected() instanceof L2Summon) {
-			L2PcInstance targetOwner = getEffected().getActingPlayer();
+		if (getEffector() instanceof Player && getEffected() instanceof Summon) {
+			Player targetOwner = getEffected().getActingPlayer();
 			getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, targetOwner);
 			return true;
 		}
@@ -59,7 +60,7 @@ public class EffectBetray extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {
@@ -67,7 +68,7 @@ public class EffectBetray extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

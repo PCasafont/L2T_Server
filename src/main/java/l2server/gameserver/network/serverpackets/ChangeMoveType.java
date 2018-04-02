@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 
 /**
  * sample
@@ -33,7 +33,7 @@ public class ChangeMoveType extends L2GameServerPacket {
 	private int charObjId;
 	private boolean running;
 	
-	public ChangeMoveType(L2Character character) {
+	public ChangeMoveType(Creature character) {
 		charObjId = character.getObjectId();
 		running = character.isRunning();
 	}

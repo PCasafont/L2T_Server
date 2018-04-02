@@ -18,8 +18,8 @@ package ai.individual;
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.util.Rnd;
 
@@ -35,7 +35,7 @@ public class FleeNpc extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (npc.getNpcId() >= 18150 && npc.getNpcId() <= 18157) {
 			npc.getAI()
 					.setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,

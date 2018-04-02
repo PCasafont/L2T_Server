@@ -17,10 +17,10 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.templates.skills.SkillTargetType;
 
 /**
  * @author nBd
@@ -29,20 +29,20 @@ public class TargetPartyMember implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
 		/*
         if ((target != null && target == activeChar)
 			|| (target != null && activeChar.getParty() != null && target.getParty() != null
 					&& activeChar.getParty().getPartyLeaderOID() == target.getParty().getPartyLeaderOID())
-			|| (target != null && activeChar instanceof L2PcInstance
-					&& target instanceof L2Summon && activeChar.getPet() == target)
-			|| (target != null && activeChar instanceof L2Summon
-					&& target instanceof L2PcInstance && activeChar == target.getPet()))
+			|| (target != null && activeChar instanceof Player
+					&& target instanceof Summon && activeChar.getPet() == target)
+			|| (target != null && activeChar instanceof Summon
+					&& target instanceof Player && activeChar == target.getPet()))
 		{
 			if (!target.isDead())
 			{
 				// If a target is found, return it in a table else send a system message TARGET_IS_INCORRECT
-				return new L2Character[]{target};
+				return new Creature[]{target};
 			}
 			else
 				return null;
@@ -59,8 +59,8 @@ public class TargetPartyMember implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.TARGET_PARTY_MEMBER;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.TARGET_PARTY_MEMBER;
 	}
 
 	public static void main(String[] args) {

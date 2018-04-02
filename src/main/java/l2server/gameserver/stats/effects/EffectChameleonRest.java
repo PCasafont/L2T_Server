@@ -16,41 +16,42 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2EffectType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.EffectType;
+import l2server.gameserver.templates.skills.SkillType;
 
 public class EffectChameleonRest extends L2Effect {
-	public EffectChameleonRest(Env env, L2EffectTemplate template) {
+	public EffectChameleonRest(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 * @see Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType() {
-		return L2EffectType.RELAXING;
+	public EffectType getEffectType() {
+		return EffectType.RELAXING;
 	}
 	
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.BUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.BUFF;
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		if (getEffected() instanceof L2PcInstance) {
-			((L2PcInstance) getEffected()).sitDown(false);
+		if (getEffected() instanceof Player) {
+			((Player) getEffected()).sitDown(false);
 		} else {
 			getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_REST);
 		}
@@ -58,7 +59,7 @@ public class EffectChameleonRest extends L2Effect {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {
@@ -66,7 +67,7 @@ public class EffectChameleonRest extends L2Effect {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {
@@ -75,12 +76,12 @@ public class EffectChameleonRest extends L2Effect {
 		}
 		
 		// Only cont skills shouldn't end
-		if (getSkill().getSkillType() != L2SkillType.CONT) {
+		if (getSkill().getSkillType() != SkillType.CONT) {
 			return false;
 		}
 		
-		if (getEffected() instanceof L2PcInstance) {
-			if (!((L2PcInstance) getEffected()).isSitting()) {
+		if (getEffected() instanceof Player) {
+			if (!((Player) getEffected()).isSitting()) {
 				return false;
 			}
 		}

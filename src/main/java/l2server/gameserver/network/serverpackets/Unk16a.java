@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Pere
@@ -25,7 +25,7 @@ public final class Unk16a extends L2GameServerPacket {
 	private int unk1;
 	private int unk2;
 
-	public Unk16a(L2PcInstance character) {
+	public Unk16a(Player character) {
 		objectId = character.getObjectId();
 
 		unk1 = 9259;

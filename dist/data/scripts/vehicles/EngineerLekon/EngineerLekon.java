@@ -16,8 +16,8 @@
 package vehicles.EngineerLekon;
 
 import l2server.gameserver.instancemanager.AirShipManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -35,7 +35,7 @@ public class EngineerLekon extends Quest {
 			SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_SUMMON_LICENSE_ALREADY_ACQUIRED);
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.equalsIgnoreCase("license")) {
 			if (player.getClan() == null || player.getClan().getLevel() < 5) {
 				player.sendPacket(SM_NEED_CLANLVL5);
@@ -65,7 +65,7 @@ public class EngineerLekon extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		if (player.getQuestState(getName()) == null) {
 			newQuestState(player);
 		}

@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Stats;
 
 /**
@@ -33,7 +33,7 @@ import l2server.gameserver.stats.Stats;
  * format from KenM
  */
 public class ExStorageMaxCount extends L2GameServerPacket {
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	private int inventory;
 	private int warehouse;
 	private int clan;
@@ -44,7 +44,7 @@ public class ExStorageMaxCount extends L2GameServerPacket {
 	private int inventoryExtraSlots;
 	private int inventoryQuestItems;
 	
-	public ExStorageMaxCount(L2PcInstance character) {
+	public ExStorageMaxCount(Player character) {
 		activeChar = character;
 		inventory = activeChar.getInventoryLimit();
 		warehouse = activeChar.getWareHouseLimit();

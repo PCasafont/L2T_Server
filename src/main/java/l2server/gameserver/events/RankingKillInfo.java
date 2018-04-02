@@ -19,7 +19,7 @@ import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -34,7 +34,7 @@ import java.util.*;
 public class RankingKillInfo {
 	private static Map<String, KillInfo> specificKillInfo = new HashMap<>();
 
-	public void updateSpecificKillInfo(L2PcInstance killerPlayer, L2PcInstance killedPlayer) {
+	public void updateSpecificKillInfo(Player killerPlayer, Player killedPlayer) {
 		if (killerPlayer == null || killedPlayer == null) {
 			return;
 		}
@@ -71,7 +71,7 @@ public class RankingKillInfo {
 	}
 
 	@SuppressWarnings("unused")
-	private boolean checkConditions(L2PcInstance killerPlayer, L2PcInstance killedPlayer) {
+	private boolean checkConditions(Player killerPlayer, Player killedPlayer) {
 		if (killerPlayer == null || killedPlayer == null) {
 			return false;
 		}
@@ -114,13 +114,13 @@ public class RankingKillInfo {
 		return (true);
 	}
 
-	private void giveKillRewards(L2PcInstance killer, L2PcInstance killed) {
+	private void giveKillRewards(Player killer, Player killed) {
 		if (killer == null || killed == null) {
 			return;
 		}
 
 		List<String> rewardedPlayers = new ArrayList<String>();
-		List<L2PcInstance> allPlayersToBuff = new ArrayList<L2PcInstance>();
+		List<Player> allPlayersToBuff = new ArrayList<Player>();
 		L2Party party = killer.getParty();
 		if (party == null) {
 			allPlayersToBuff.add(killer);
@@ -134,28 +134,28 @@ public class RankingKillInfo {
 		}
 
 		if (!allPlayersToBuff.isEmpty()) {
-			for (L2PcInstance pl : allPlayersToBuff) {
+			for (Player pl : allPlayersToBuff) {
 				if (pl == null || pl.getInstanceId() != pl.getInstanceId() || !Util.checkIfInShortRadius(1600, killer, pl, false)) {
 					continue;
 				}
 
-				L2Abnormal currentBuff = pl.getFirstEffect(21365);
+				Abnormal currentBuff = pl.getFirstEffect(21365);
 				if (currentBuff != null) {
 					int currentLevel = currentBuff.getLevel();
 					if (currentLevel < 5) {
-						L2Skill buff = SkillTable.getInstance().getInfo(21365, currentLevel + 1);
+						Skill buff = SkillTable.getInstance().getInfo(21365, currentLevel + 1);
 						if (buff != null) {
 							buff.getEffects(pl, pl);
 						}
 					} else if (currentLevel == 5) {
 						//Renew the last buff
-						L2Skill buff = SkillTable.getInstance().getInfo(21365, 5);
+						Skill buff = SkillTable.getInstance().getInfo(21365, 5);
 						if (buff != null) {
 							buff.getEffects(pl, pl);
 						}
 					}
 				} else {
-					L2Skill buff = SkillTable.getInstance().getInfo(21365, 1);
+					Skill buff = SkillTable.getInstance().getInfo(21365, 1);
 					if (buff != null) {
 						buff.getEffects(pl, pl);
 					}
@@ -184,7 +184,7 @@ public class RankingKillInfo {
 			return i;
 		}
 
-		private void increaseKills(L2PcInstance killerPlayer, String killedName) {
+		private void increaseKills(Player killerPlayer, String killedName) {
 			if (killerPlayer == null) {
 				return;
 			}
@@ -223,7 +223,7 @@ public class RankingKillInfo {
 			}
 
 			if (skillLevel > 0) {
-				L2Skill starSkill = SkillTable.getInstance().getInfo(18363, skillLevel);
+				Skill starSkill = SkillTable.getInstance().getInfo(18363, skillLevel);
 				if (starSkill != null) {
 					starSkill.getEffects(killerPlayer, killerPlayer);
 				}
@@ -244,15 +244,15 @@ public class RankingKillInfo {
 		}
 	}
 
-	private void sendRegionalMessage(L2PcInstance player, String message) {
+	private void sendRegionalMessage(Player player, String message) {
 		if (player == null) {
 			return;
 		}
 
 		CreatureSay cs = new CreatureSay(-1, Say2.CRITICAL_ANNOUNCE, player.getName(), player.getName() + message);
 		int region = MapRegionTable.getInstance().getMapRegion(player.getX(), player.getY());
-		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-		for (L2PcInstance worldPlayer : pls) {
+		Collection<Player> pls = World.getInstance().getAllPlayers().values();
+		for (Player worldPlayer : pls) {
 			if (region == MapRegionTable.getInstance().getMapRegion(worldPlayer.getX(), worldPlayer.getY()) && worldPlayer.getEvent() == null &&
 					worldPlayer.getInstanceId() == 0) {
 				worldPlayer.sendPacket(cs);
@@ -292,7 +292,7 @@ public class RankingKillInfo {
 		return "Epic Grade";
 	}
 
-	private String getBasicKillInfo(L2PcInstance killed, L2PcInstance killer) {
+	private String getBasicKillInfo(Player killed, Player killer) {
 		StringBuilder tb = new StringBuilder();
 		String rankName = getRank(killer.getPvpKills());
 		if (rankName == null) {

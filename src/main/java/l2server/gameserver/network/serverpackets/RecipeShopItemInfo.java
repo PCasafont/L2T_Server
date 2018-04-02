@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * ddddd
@@ -24,10 +24,10 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class RecipeShopItemInfo extends L2GameServerPacket {
 	
-	private L2PcInstance player;
+	private Player player;
 	private int recipeId;
 	
-	public RecipeShopItemInfo(L2PcInstance player, int recipeId) {
+	public RecipeShopItemInfo(Player player, int recipeId) {
 		this.player = player;
 		this.recipeId = recipeId;
 	}

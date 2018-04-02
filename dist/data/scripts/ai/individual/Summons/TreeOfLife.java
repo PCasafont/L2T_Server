@@ -20,8 +20,8 @@ import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.concurrent.ScheduledFuture;
 
@@ -45,7 +45,7 @@ public class TreeOfLife extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Summon npc) {
+	public final String onSpawn(Summon npc) {
 		TreeOfLifeAI ai = new TreeOfLifeAI(npc);
 
 		ai.setSchedule(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(ai, 5000, 10000));
@@ -54,11 +54,11 @@ public class TreeOfLife extends L2AttackableAIScript {
 	}
 
 	class TreeOfLifeAI implements Runnable {
-		private L2Summon treeOfLife;
-		private L2PcInstance owner;
+		private Summon treeOfLife;
+		private Player owner;
 		private ScheduledFuture<?> schedule = null;
 
-		protected TreeOfLifeAI(L2Summon npc) {
+		protected TreeOfLifeAI(Summon npc) {
 			treeOfLife = npc;
 			owner = npc.getOwner();
 		}
@@ -79,7 +79,7 @@ public class TreeOfLife extends L2AttackableAIScript {
 			L2Party party = treeOfLife.getOwner().getParty();
 
 			if (party != null) {
-				for (L2PcInstance player : party.getPartyMembers()) {
+				for (Player player : party.getPartyMembers()) {
 					if (player == null || !GeoData.getInstance().canSeeTarget(treeOfLife, player)) {
 						continue;
 					}

@@ -15,7 +15,8 @@
 
 package l2server.gameserver.util;
 
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
@@ -31,6 +32,9 @@ import java.net.URL;
  */
 
 public class HttpHandler {
+	private static Logger log = LoggerFactory.getLogger(HttpHandler.class.getName());
+
+
 	private static final String USER_AGENT =
 			"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";
 
@@ -56,8 +60,8 @@ public class HttpHandler {
 			int responseCode = con.getResponseCode();
 
 			if (DEV_MODE) {
-				Log.info("\nSending 'GET' request to URL : " + url);
-				Log.info("Response Code : " + responseCode);
+				log.info("\nSending 'GET' request to URL : " + url);
+				log.info("Response Code : " + responseCode);
 			}
 
 			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -101,9 +105,9 @@ public class HttpHandler {
 			int responseCode = connection.getResponseCode();
 
 			if (DEV_MODE) {
-				Log.info("Sending 'POST' request to...: " + url + ".");
-				Log.info("Post...: " + post + ".");
-				Log.info("Response Code...: " + responseCode + ".");
+				log.info("Sending 'POST' request to...: " + url + ".");
+				log.info("Post...: " + post + ".");
+				log.info("Response Code...: " + responseCode + ".");
 			}
 
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));

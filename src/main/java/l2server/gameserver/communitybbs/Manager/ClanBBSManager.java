@@ -21,7 +21,7 @@ package l2server.gameserver.communitybbs.Manager;
 
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.util.StringUtil;
 
@@ -37,7 +37,7 @@ public class ClanBBSManager extends BaseBBSManager {
 	 * @param activeChar
 	 */
 	@Override
-	public void parsecmd(String command, L2PcInstance activeChar) {
+	public void parsecmd(String command, Player activeChar) {
 		if (command.equals("_bbsclan")) {
 			if (activeChar.getClan() == null || activeChar.getClan().getLevel() < 2) {
 				clanlist(activeChar, 1);
@@ -80,7 +80,7 @@ public class ClanBBSManager extends BaseBBSManager {
 		}
 	}
 
-	private void clanNotice(L2PcInstance activeChar, int clanId) {
+	private void clanNotice(Player activeChar, int clanId) {
 		final L2Clan cl = ClanTable.getInstance().getClan(clanId);
 		if (cl != null) {
 			if (cl.getLevel() < 2) {
@@ -126,7 +126,7 @@ public class ClanBBSManager extends BaseBBSManager {
 	 * @param activeChar
 	 * @param index
 	 */
-	private void clanlist(L2PcInstance activeChar, int index) {
+	private void clanlist(Player activeChar, int index) {
 		if (index < 1) {
 			index = 1;
 		}
@@ -201,7 +201,7 @@ public class ClanBBSManager extends BaseBBSManager {
 	/**
 	 * @param activeChar
 	 */
-	private void clanhome(L2PcInstance activeChar) {
+	private void clanhome(Player activeChar) {
 		clanhome(activeChar, activeChar.getClan().getClanId());
 	}
 
@@ -213,7 +213,7 @@ public class ClanBBSManager extends BaseBBSManager {
 	 * @param activeChar
 	 * @param clanId
 	 */
-	private void clanhome(L2PcInstance activeChar, int clanId) {
+	private void clanhome(Player activeChar, int clanId) {
 		L2Clan cl = ClanTable.getInstance().getClan(clanId);
 		if (cl != null) {
 			if (cl.getLevel() < 2) {
@@ -256,7 +256,7 @@ public class ClanBBSManager extends BaseBBSManager {
 	}
 
 	@Override
-	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, L2PcInstance activeChar) {
+	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, Player activeChar) {
 		if (ar1.equals("Set")) {
 			activeChar.getClan().setNotice(ar4);
 			parsecmd("_bbsclan_clanhome;" + activeChar.getClan().getClanId(), activeChar);

@@ -15,7 +15,8 @@
 
 package l2server.gameserver.script;
 
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -26,6 +27,9 @@ import java.util.logging.Level;
  * @author Luis Arias
  */
 public class DateRange {
+	private static Logger log = LoggerFactory.getLogger(DateRange.class.getName());
+
+
 	private Date startDate, endDate;
 
 	public DateRange(Date from, Date to) {
@@ -42,7 +46,7 @@ public class DateRange {
 
 				return new DateRange(start, end);
 			} catch (ParseException e) {
-				Log.log(Level.WARNING, "Invalid Date Format.", e);
+				log.warn("Invalid Date Format.", e);
 			}
 		}
 		return new DateRange(null, null);

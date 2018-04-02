@@ -17,8 +17,8 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.EnchantCostsTable;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ExEnchantSkillInfo;
 
 /**
@@ -53,7 +53,7 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket {
 			return;
 		}
 		
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		
 		if (activeChar == null) {
 			return;
@@ -63,14 +63,14 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket {
 			return;
 		}
 
-		/* L2Npc trainer = activeChar.getLastFolkNPC();
-		if (!(trainer instanceof L2NpcInstance))
+		/* Npc trainer = activeChar.getLastFolkNPC();
+		if (!(trainer instanceof NpcInstance))
 			return;
 
 		if (!trainer.canInteract(activeChar) && !activeChar.isGM())
 			return;*/
 		
-		L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl, skillEnchant);
+		Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl, skillEnchant);
 		if (skill == null || skill.getId() != skillId) {
 			return;
 		}

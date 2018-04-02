@@ -17,13 +17,12 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.FriendList;
 import l2server.gameserver.network.serverpackets.FriendPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -47,7 +46,7 @@ public final class RequestFriendDel extends L2GameClientPacket {
 	protected void runImpl() {
 		SystemMessage sm;
 		
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -90,7 +89,7 @@ public final class RequestFriendDel extends L2GameClientPacket {
 			activeChar.sendPacket(new FriendPacket(false, id, activeChar));
 			activeChar.sendPacket(new FriendList(activeChar));
 			
-			L2PcInstance player = L2World.getInstance().getPlayer(name);
+			Player player = World.getInstance().getPlayer(name);
 			if (player != null) {
 				activeChar.removeFriendMemo(player.getObjectId());
 				player.getFriendList().remove(Integer.valueOf(activeChar.getObjectId()));
@@ -99,7 +98,7 @@ public final class RequestFriendDel extends L2GameClientPacket {
 				player.sendPacket(new FriendList(player));
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "could not del friend objectid: ", e);
+			log.warn("could not del friend objectid: ", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

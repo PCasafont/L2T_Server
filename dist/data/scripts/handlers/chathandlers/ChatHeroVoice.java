@@ -21,8 +21,8 @@ import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
 import l2server.gameserver.handler.IChatHandler;
 import l2server.gameserver.instancemanager.DiscussionManager;
 import l2server.gameserver.model.BlockList;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 
 import java.util.Collection;
@@ -39,7 +39,7 @@ public class ChatHeroVoice implements IChatHandler {
 	 * Handle chat type 'hero voice'
 	 */
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text) {
+	public void handleChat(int type, Player activeChar, String target, String text) {
 		if (activeChar.isHero() && !EventsManager.getInstance().isPlayerParticipant(activeChar.getObjectId()) && activeChar.getEvent() == null ||
 				activeChar.isGM()) {
 			if (!activeChar.isGM()) {
@@ -60,8 +60,8 @@ public class ChatHeroVoice implements IChatHandler {
 
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
 
-			Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-			for (L2PcInstance player : pls) {
+			Collection<Player> pls = World.getInstance().getAllPlayers().values();
+			for (Player player : pls) {
 				if (player == null) {
 					continue;
 				}

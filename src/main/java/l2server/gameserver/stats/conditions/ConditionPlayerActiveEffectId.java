@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -52,7 +52,7 @@ public class ConditionPlayerActiveEffectId extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		final L2Abnormal e = env.player.getFirstEffect(effectId);
+		final Abnormal e = env.player.getFirstEffect(effectId);
 		return e != null && (effectLvl == -1 || effectLvl <= e.getSkill().getLevel());
 	}
 }

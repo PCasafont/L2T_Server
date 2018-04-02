@@ -15,7 +15,7 @@
 
 package l2server.util;
 
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -41,7 +41,7 @@ import java.util.NoSuchElementException;
  * @param <T> type of values stored in this hashtable
  * @author mkizub
  */
-public final class L2ObjectHashMap<T extends L2Object> extends L2ObjectMap<T> {
+public final class L2ObjectHashMap<T extends WorldObject> extends L2ObjectMap<T> {
 
 	private static final boolean TRACE = false;
 	private static final boolean DEBUG = false;
@@ -68,7 +68,7 @@ public final class L2ObjectHashMap<T extends L2Object> extends L2ObjectMap<T> {
 	@SuppressWarnings("unchecked")
 	public L2ObjectHashMap() {
 		int size = PRIMES[0];
-		table = (T[]) new L2Object[size];
+		table = (T[]) new WorldObject[size];
 		keys = new int[size];
 		if (DEBUG) {
 			check();
@@ -98,7 +98,7 @@ public final class L2ObjectHashMap<T extends L2Object> extends L2ObjectMap<T> {
 	@SuppressWarnings("unchecked")
 	public synchronized void clear() {
 		int size = PRIMES[0];
-		table = (T[]) new L2Object[size];
+		table = (T[]) new WorldObject[size];
 		keys = new int[size];
 		count = 0;
 		if (DEBUG) {
@@ -110,7 +110,7 @@ public final class L2ObjectHashMap<T extends L2Object> extends L2ObjectMap<T> {
 		if (DEBUG) {
 			int cnt = 0;
 			for (int i = 0; i < table.length; i++) {
-				L2Object obj = table[i];
+				WorldObject obj = table[i];
 				if (obj == null) {
 					assert keys[i] == 0 || keys[i] == 0x80000000;
 				} else {
@@ -278,13 +278,13 @@ public final class L2ObjectHashMap<T extends L2Object> extends L2ObjectMap<T> {
 	@SuppressWarnings("unchecked")
 	private/*already synchronized in put()*/void expand() {
 		int newSize = getPrime(table.length + 1);
-		L2Object[] newTable = new L2Object[newSize];
+		WorldObject[] newTable = new WorldObject[newSize];
 		int[] newKeys = new int[newSize];
 
 		// over all old entries
 		next_entry:
 		for (int i = 0; i < table.length; i++) {
-			L2Object obj = table[i];
+			WorldObject obj = table[i];
 			if (obj == null) {
 				continue;
 			}

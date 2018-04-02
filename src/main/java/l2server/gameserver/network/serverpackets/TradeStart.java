@@ -16,8 +16,8 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * This class ...
@@ -25,10 +25,10 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  * @version $Revision: 1.4.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
 public final class TradeStart extends L2ItemListPacket {
-	private L2PcInstance activeChar;
-	private L2ItemInstance[] itemList;
+	private Player activeChar;
+	private Item[] itemList;
 
-	public TradeStart(L2PcInstance player) {
+	public TradeStart(Player player) {
 		activeChar = player;
 		itemList = activeChar.getInventory().getAvailableItems(true, activeChar.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS);
 	}
@@ -46,7 +46,7 @@ public final class TradeStart extends L2ItemListPacket {
 		writeC(activeChar.getLevel());
 
 		writeH(itemList.length);
-		for (L2ItemInstance item : itemList) {
+		for (Item item : itemList) {
 			writeItem(item);
 		}
 	}

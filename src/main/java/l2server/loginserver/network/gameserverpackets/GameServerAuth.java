@@ -16,7 +16,6 @@
 package l2server.loginserver.network.gameserverpackets;
 
 import l2server.Config;
-import l2server.log.Log;
 import l2server.loginserver.GameServerTable;
 import l2server.loginserver.GameServerTable.GameServerInfo;
 import l2server.loginserver.GameServerThread;
@@ -24,9 +23,9 @@ import l2server.loginserver.network.L2JGameServerPacketHandler.GameServerState;
 import l2server.loginserver.network.loginserverpackets.AuthResponse;
 import l2server.loginserver.network.loginserverpackets.LoginServerFail;
 import l2server.util.network.BaseRecievePacket;
+import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
-import java.util.logging.Logger;
 
 /**
  * Format: cccddb
@@ -42,7 +41,9 @@ import java.util.logging.Logger;
  * @author -Wooden-
  */
 public class GameServerAuth extends BaseRecievePacket {
-	protected static Logger log = Logger.getLogger(GameServerAuth.class.getName());
+	private static org.slf4j.Logger log = LoggerFactory.getLogger(GameServerAuth.class.getName());
+
+
 	GameServerThread server;
 	private byte[] hexId;
 	private int desiredId;
@@ -73,14 +74,14 @@ public class GameServerAuth extends BaseRecievePacket {
 		}
 
 		if (Config.DEBUG) {
-			Log.info("Auth request received");
+			log.info("Auth request received");
 		}
 
 		if (handleRegProcess()) {
 			AuthResponse ar = new AuthResponse(server.getGameServerInfo().getId());
 			server.sendPacket(ar);
 			if (Config.DEBUG) {
-				Log.info("Authed: id: " + server.getGameServerInfo().getId());
+				log.info("Authed: id: " + server.getGameServerInfo().getId());
 			}
 			server.setLoginConnectionState(GameServerState.AUTHED);
 		}

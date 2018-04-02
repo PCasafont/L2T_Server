@@ -2,8 +2,8 @@ package l2server.gameserver.events.instanced;
 
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.instance.L2EventFlagInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.EventFlagInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
 
@@ -31,14 +31,14 @@ public class EventTeam {
 	/**
 	 * Name and instance of all participated players in HashMap<br>
 	 */
-	private Map<Integer, L2PcInstance> participatedPlayers = new LinkedHashMap<>();
+	private Map<Integer, Player> participatedPlayers = new LinkedHashMap<>();
 	
 	private int flagId = 44004;
 	private L2Spawn flagSpawn;
 	private int golemId = 44003;
 	private L2Spawn golemSpawn;
 	
-	private L2PcInstance VIP;
+	private Player VIP;
 	
 	/**
 	 * C'tor initialize the team<br><br>
@@ -57,10 +57,10 @@ public class EventTeam {
 	/**
 	 * Adds a player to the team<br><br>
 	 *
-	 * @param playerInstance as L2PcInstance<br>
+	 * @param playerInstance as Player<br>
 	 * @return boolean: true if success, otherwise false<br>
 	 */
-	public boolean addPlayer(L2PcInstance playerInstance) {
+	public boolean addPlayer(Player playerInstance) {
 		if (playerInstance == null) {
 			return false;
 		}
@@ -106,7 +106,7 @@ public class EventTeam {
 	}
 	
 	public void onEventNotStarted() {
-		for (L2PcInstance player : participatedPlayers.values()) {
+		for (Player player : participatedPlayers.values()) {
 			if (player != null) {
 				player.setEvent(null);
 			}
@@ -159,10 +159,10 @@ public class EventTeam {
 	/**
 	 * Returns name and instance of all participated players in HashMap<br><br>
 	 *
-	 * @return Map<String   ,       L2PcInstance>: map of players in this team<br>
+	 * @return Map<String   ,       Player>: map of players in this team<br>
 	 */
-	public Map<Integer, L2PcInstance> getParticipatedPlayers() {
-		Map<Integer, L2PcInstance> participatedPlayers = null;
+	public Map<Integer, Player> getParticipatedPlayers() {
+		Map<Integer, Player> participatedPlayers = null;
 		
 		synchronized (participatedPlayers) {
 			this.participatedPlayers = participatedPlayers;
@@ -189,8 +189,8 @@ public class EventTeam {
 	public int getAlivePlayerCount() {
 		int alivePlayerCount = 0;
 		
-		ArrayList<L2PcInstance> toIterate = new ArrayList<>(participatedPlayers.values());
-		for (L2PcInstance player : toIterate) {
+		ArrayList<Player> toIterate = new ArrayList<>(participatedPlayers.values());
+		for (Player player : toIterate) {
 			if (!player.isOnline() || player.getClient() == null || player.getEvent() == null) {
 				participatedPlayers.remove(player.getObjectId());
 			}
@@ -204,7 +204,7 @@ public class EventTeam {
 	public int getHealersCount() {
 		int count = 0;
 		
-		for (L2PcInstance player : participatedPlayers.values()) {
+		for (Player player : participatedPlayers.values()) {
 			if (player.getCurrentClass().getId() == 146) {
 				count++;
 			}
@@ -212,10 +212,10 @@ public class EventTeam {
 		return count;
 	}
 	
-	public L2PcInstance selectRandomParticipant() {
+	public Player selectRandomParticipant() {
 		int rnd = Rnd.get(participatedPlayers.size());
 		int i = 0;
-		for (L2PcInstance participant : participatedPlayers.values()) {
+		for (Player participant : participatedPlayers.values()) {
 			if (i == rnd) {
 				return participant;
 			}
@@ -238,7 +238,7 @@ public class EventTeam {
 	
 	public void setFlagSpawn(L2Spawn spawn) {
 		if (flagSpawn != null && flagSpawn.getNpc() != null) {
-			((L2EventFlagInstance) flagSpawn.getNpc()).shouldBeDeleted();
+			((EventFlagInstance) flagSpawn.getNpc()).shouldBeDeleted();
 			flagSpawn.getNpc().deleteMe();
 			flagSpawn.stopRespawn();
 			SpawnTable.getInstance().deleteSpawn(flagSpawn, false);
@@ -251,11 +251,11 @@ public class EventTeam {
 		return flagId;
 	}
 	
-	public void setVIP(L2PcInstance character) {
+	public void setVIP(Player character) {
 		VIP = character;
 	}
 	
-	public L2PcInstance getVIP() {
+	public Player getVIP() {
 		return VIP;
 	}
 	

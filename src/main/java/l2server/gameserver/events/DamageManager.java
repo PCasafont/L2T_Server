@@ -7,11 +7,12 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.instancemanager.MailManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
@@ -28,6 +29,9 @@ import java.util.concurrent.ScheduledFuture;
  * @author LasTravel
  */
 public class DamageManager {
+	private static Logger log = LoggerFactory.getLogger(DamageManager.class.getName());
+
+
 	private static Map<Integer, DamageInfo> dmgIinfo = new HashMap<>();
 	protected static ScheduledFuture<?> saveTask;
 
@@ -96,7 +100,7 @@ public class DamageManager {
 			return hwId;
 		}
 
-		private void setNewData(int dmg, L2PcInstance pl) {
+		private void setNewData(int dmg, Player pl) {
 			pl.sendPacket(new CreatureSay(36610,
 					2,
 					"Damage Manager",
@@ -110,7 +114,7 @@ public class DamageManager {
 		}
 	}
 
-	public void giveDamage(L2PcInstance pl, int dmg) {
+	public void giveDamage(Player pl, int dmg) {
 		if (pl == null) {
 			return;
 		}
@@ -145,7 +149,7 @@ public class DamageManager {
 	}
 
 	public void saveData() {
-		Log.fine("Damage Manager: Saving information..!");
+		log.debug("Damage Manager: Saving information..!");
 		Connection con = null;
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
@@ -211,7 +215,7 @@ public class DamageManager {
 			attachments.addItem("Damage Manager", Config.CUSTOM_DAMAGE_MANAGER_REWARD_ID, Config.CUSTOM_DAMAGE_MANAGER_REWARD_AMOUNT, null, null);
 
 			MailManager.getInstance().sendMessage(msg);
-			//Log.info("Damage Manager: Player: " + damageInfo.getValue().getNewName() + " rewarded!");
+			//log.info("Damage Manager: Player: " + damageInfo.getValue().getNewName() + " rewarded!");
 		}
 
 		// Restart The Ranking (BD)
@@ -247,7 +251,7 @@ public class DamageManager {
 
 	@Load
 	private void load() {
-		Log.info("Damage Manager: Loading DMG Ranking information..!");
+		log.info("Damage Manager: Loading DMG Ranking information..!");
 		Connection con = null;
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();

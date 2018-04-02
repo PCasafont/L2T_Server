@@ -16,14 +16,14 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.util.loader.annotations.Load;
 
 /**
  * @author -Nemesiss-
  */
 public class NobleSkillTable {
-	private static final L2Skill[] nobleSkills = new L2Skill[8];
+	private static final Skill[] nobleSkills = new Skill[8];
 
 	private NobleSkillTable() {
 	}
@@ -48,7 +48,7 @@ public class NobleSkillTable {
 		return SingletonHolder.instance;
 	}
 
-	public L2Skill[] getNobleSkills() {
+	public Skill[] getNobleSkills() {
 		return nobleSkills;
 	}
 

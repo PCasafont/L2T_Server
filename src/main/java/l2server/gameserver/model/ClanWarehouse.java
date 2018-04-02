@@ -16,8 +16,8 @@
 package l2server.gameserver.model;
 
 import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance.ItemLocation;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item.ItemLocation;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Warehouse;
 
 public final class ClanWarehouse extends Warehouse {
@@ -38,7 +38,7 @@ public final class ClanWarehouse extends Warehouse {
 	}
 
 	@Override
-	public L2PcInstance getOwner() {
+	public Player getOwner() {
 		return clan.getLeader() != null ? clan.getLeader().getPlayerInstance() : null;
 	}
 
@@ -54,7 +54,7 @@ public final class ClanWarehouse extends Warehouse {
 
 	public void updateItemsOwnerId() {
 		int newOwnerId = getOwnerId();
-		for (L2ItemInstance item : items.values()) {
+		for (Item item : items.values()) {
 			item.setOwnerId(newOwnerId);
 		}
 	}

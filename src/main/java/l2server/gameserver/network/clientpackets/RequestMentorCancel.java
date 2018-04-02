@@ -17,13 +17,14 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExMentorList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -33,6 +34,9 @@ import java.util.logging.Level;
  * @author Erlandys
  */
 public class RequestMentorCancel extends L2GameClientPacket {
+	private static Logger log = LoggerFactory.getLogger(RequestMentorCancel.class.getName());
+
+
 	
 	private String name;
 	boolean isMentor;
@@ -47,7 +51,7 @@ public class RequestMentorCancel extends L2GameClientPacket {
 	protected void runImpl() {
 		SystemMessage sm;
 		
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -71,14 +75,14 @@ public class RequestMentorCancel extends L2GameClientPacket {
 				sm.addString(name);
 				activeChar.sendPacket(sm);
 				
-				for (L2Abnormal e : activeChar.getAllEffects()) {
+				for (Abnormal e : activeChar.getAllEffects()) {
 					if (e.getSkill().getId() >= 9227 && e.getSkill().getId() <= 9233) {
 						e.exit();
 					}
 				}
 				activeChar.removeSkill(9379);
-				if (L2World.getInstance().getPlayer(id) != null) {
-					L2PcInstance player = L2World.getInstance().getPlayer(id);
+				if (World.getInstance().getPlayer(id) != null) {
+					Player player = World.getInstance().getPlayer(id);
 					player.sendPacket(new ExMentorList(player));
 					sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_CAN_BOND_WITH_A_NEW_MENTEE_IN_S1_DAY_S2_HOUR_S3_MINUTE);
 					sm.addString("0"); // TODO: Days
@@ -105,13 +109,13 @@ public class RequestMentorCancel extends L2GameClientPacket {
 				activeChar.sendPacket(sm);
 				
 				activeChar.sendPacket(new ExMentorList(activeChar));
-				if (L2World.getInstance().getPlayer(id) != null) {
-					L2PcInstance player = L2World.getInstance().getPlayer(id);
+				if (World.getInstance().getPlayer(id) != null) {
+					Player player = World.getInstance().getPlayer(id);
 					player.sendPacket(new ExMentorList(player));
 					sm = SystemMessage.getSystemMessage(SystemMessageId.THE_MENTORING_RELATIONSHIP_WITH_S1_HAS_BEEN_CANCELED);
 					sm.addString(activeChar.getName());
 					player.sendPacket(sm);
-					for (L2Abnormal e : player.getAllEffects()) {
+					for (Abnormal e : player.getAllEffects()) {
 						if (e.getSkill().getId() >= 9227 && e.getSkill().getId() <= 9233) {
 							e.exit();
 						}
@@ -121,7 +125,7 @@ public class RequestMentorCancel extends L2GameClientPacket {
 				activeChar.giveMentorBuff();
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "could not del friend objectid: ", e);
+			log.warn("could not del friend objectid: ", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

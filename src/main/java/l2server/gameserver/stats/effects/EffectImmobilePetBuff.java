@@ -16,33 +16,33 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @author demonia
  */
 public class EffectImmobilePetBuff extends L2Effect {
-	private L2Summon pet;
+	private Summon pet;
 
-	public EffectImmobilePetBuff(Env env, L2EffectTemplate template) {
+	public EffectImmobilePetBuff(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.BUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.BUFF;
 	}
 
 	@Override
 	public boolean onStart() {
 		pet = null;
 
-		if (getEffected() instanceof L2Summon && getEffector() instanceof L2PcInstance && ((L2Summon) getEffected()).getOwner() == getEffector()) {
-			pet = (L2Summon) getEffected();
+		if (getEffected() instanceof Summon && getEffector() instanceof Player && ((Summon) getEffected()).getOwner() == getEffector()) {
+			pet = (Summon) getEffected();
 			pet.setIsImmobilized(true);
 			return true;
 		}

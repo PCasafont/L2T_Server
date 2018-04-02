@@ -16,10 +16,11 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2MerchantInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.MerchantInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,20 +31,23 @@ import java.util.List;
  * @version $Revision: 1.4.2.3.2.4 $ $Date: 2005/03/27 15:29:39 $
  */
 public class SellList extends L2GameServerPacket {
+	private static Logger log = LoggerFactory.getLogger(SellList.class.getName());
 
-	private final L2PcInstance activeChar;
-	private final L2MerchantInstance lease;
+
+
+	private final Player activeChar;
+	private final MerchantInstance lease;
 	private long money;
-	private List<L2ItemInstance> selllist = new ArrayList<>();
+	private List<Item> selllist = new ArrayList<>();
 
-	public SellList(L2PcInstance player) {
+	public SellList(Player player) {
 		activeChar = player;
 		lease = null;
 		money = activeChar.getAdena();
 		doLease();
 	}
 
-	public SellList(L2PcInstance player, L2MerchantInstance lease) {
+	public SellList(Player player, MerchantInstance lease) {
 		activeChar = player;
 		this.lease = lease;
 		money = activeChar.getAdena();
@@ -52,7 +56,7 @@ public class SellList extends L2GameServerPacket {
 
 	private void doLease() {
 		if (lease == null) {
-			for (L2ItemInstance item : activeChar.getInventory().getItems()) {
+			for (Item item : activeChar.getInventory().getItems()) {
 				if (!item.isEquipped() && // Not equipped
 						item.isSellable() && // Item is sellable
 						(activeChar.getPet() == null || // Pet not summoned or
@@ -61,7 +65,7 @@ public class SellList extends L2GameServerPacket {
 				{
 					selllist.add(item);
 					if (Config.DEBUG) {
-						Log.fine("item added to selllist: " + item.getItem().getName());
+						log.debug("item added to selllist: " + item.getItem().getName());
 					}
 				}
 			}
@@ -74,7 +78,7 @@ public class SellList extends L2GameServerPacket {
 		writeD(lease == null ? 0x00 : 1000000 + lease.getTemplate().NpcId);
 		writeH(selllist.size());
 
-		for (L2ItemInstance item : selllist) {
+		for (Item item : selllist) {
 			writeH(item.getItem().getType1());
 			writeD(item.getObjectId());
 			writeD(item.getItemId());

@@ -18,16 +18,16 @@ package handlers.targethandlers;
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2NpcInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.skills.L2SkillTargetDirection;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.NpcInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.skills.SkillTargetDirection;
+import l2server.gameserver.templates.skills.SkillTargetType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.Util;
 
 import java.util.ArrayList;
@@ -40,14 +40,14 @@ import java.util.ArrayList;
  */
 public class TargetAroundCaster implements ISkillTargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		final ArrayList<L2Character> result = new ArrayList<L2Character>();
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		final ArrayList<Creature> result = new ArrayList<Creature>();
 
-		L2Character actualCaster = activeChar;
-		if (activeChar instanceof L2NpcInstance && ((L2NpcInstance) activeChar).getOwner() != null) {
-			actualCaster = ((L2NpcInstance) activeChar).getOwner();
+		Creature actualCaster = activeChar;
+		if (activeChar instanceof NpcInstance && ((NpcInstance) activeChar).getOwner() != null) {
+			actualCaster = ((NpcInstance) activeChar).getOwner();
 		}
-		for (L2Character obj : activeChar.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
+		for (Creature obj : activeChar.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
 			if (skill.getSkillSafeRadius() != 0) {
 				int safeRadius = skill.getSkillSafeRadius();
 				int distance = (int) Util.calculateDistance(activeChar.getX(), activeChar.getY(), obj.getX(), obj.getY());
@@ -66,26 +66,26 @@ public class TargetAroundCaster implements ISkillTargetTypeHandler {
 				continue;
 			}
 
-			if (actualCaster instanceof L2PcInstance && !((L2PcInstance) actualCaster).checkPvpSkill(obj, skill)) {
+			if (actualCaster instanceof Player && !((Player) actualCaster).checkPvpSkill(obj, skill)) {
 				continue;
 			}
 
-			if (result.size() > 20 && skill.getSkillType() != L2SkillType.AGGDAMAGE) {
+			if (result.size() > 20 && skill.getSkillType() != SkillType.AGGDAMAGE) {
 				break;
 			}
 
 			result.add(obj);
 		}
 
-		return result.toArray(new L2Character[result.size()]);
+		return result.toArray(new Creature[result.size()]);
 	}
 
-	private final boolean isReachableTarget(final L2Character activeChar, final L2Character target, L2SkillTargetDirection td) {
-		if (activeChar instanceof L2NpcInstance) {
-			final L2NpcInstance aNpc = (L2NpcInstance) activeChar;
+	private final boolean isReachableTarget(final Creature activeChar, final Creature target, SkillTargetDirection td) {
+		if (activeChar instanceof NpcInstance) {
+			final NpcInstance aNpc = (NpcInstance) activeChar;
 
-			if (target instanceof L2Playable) {
-				final L2PcInstance tPlayer = target.getActingPlayer();
+			if (target instanceof Playable) {
+				final Player tPlayer = target.getActingPlayer();
 
 				if (tPlayer == aNpc.getOwner()) {
 					return false;
@@ -94,28 +94,28 @@ public class TargetAroundCaster implements ISkillTargetTypeHandler {
 		}
 
 		if (!target.isDead()) {
-			if (td == L2SkillTargetDirection.UNDEAD) {
+			if (td == SkillTargetDirection.UNDEAD) {
 				if (target.isUndead()) {
 					return true;
 				}
-			} else if (td == L2SkillTargetDirection.FRONT) {
+			} else if (td == SkillTargetDirection.FRONT) {
 				if (target.isInFrontOf(activeChar)) {
 					return true;
 				}
-			} else if (td == L2SkillTargetDirection.BEHIND) {
+			} else if (td == SkillTargetDirection.BEHIND) {
 				if (target.isBehind(activeChar)) {
 					return true;
 				}
-			} else if (td == L2SkillTargetDirection.DEFAULT || td == L2SkillTargetDirection.AROUND) {
+			} else if (td == SkillTargetDirection.DEFAULT || td == SkillTargetDirection.AROUND) {
 				return true;
-			} else if (td == L2SkillTargetDirection.PLAYER) {
-				if (target instanceof L2Playable) {
+			} else if (td == SkillTargetDirection.PLAYER) {
+				if (target instanceof Playable) {
 					return true;
 				}
 			}
 		} else {
-			if (td == L2SkillTargetDirection.DEAD_MONSTER) {
-				if (target instanceof L2MonsterInstance && target.isDead()) {
+			if (td == SkillTargetDirection.DEAD_MONSTER) {
+				if (target instanceof MonsterInstance && target.isDead()) {
 					return true;
 				}
 			}
@@ -125,8 +125,8 @@ public class TargetAroundCaster implements ISkillTargetTypeHandler {
 	}
 
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.TARGET_AROUND_CASTER;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.TARGET_AROUND_CASTER;
 	}
 
 	public static void main(String[] args) {

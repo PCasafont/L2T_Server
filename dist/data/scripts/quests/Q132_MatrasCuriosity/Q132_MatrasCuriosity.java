@@ -15,8 +15,8 @@
 
 package quests.Q132_MatrasCuriosity;
 
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
@@ -53,7 +53,7 @@ public final class Q132_MatrasCuriosity extends Quest {
 	private static final int BLUEPRINT_PRINCE = 9801;
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
@@ -87,7 +87,7 @@ public final class Q132_MatrasCuriosity extends Quest {
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		String htmltext = Quest.getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
 
@@ -126,8 +126,8 @@ public final class Q132_MatrasCuriosity extends Quest {
 	}
 
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
-		L2PcInstance pl = null;
+	public final String onKill(Npc npc, Player player, boolean isPet) {
+		Player pl = null;
 		switch (npc.getNpcId()) {
 			case DEMON_PRINCE:
 				pl = getRandomPartyMember(player, "rewarded_prince", "1");

@@ -20,15 +20,17 @@ import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.itemcontainer.ItemContainer;
-import l2server.log.Log;
-
-import java.util.logging.Level;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Thorgrim - 2005
  * Class managing periodical events with castle
  */
 public class CastleUpdater implements Runnable {
+	private static Logger log = LoggerFactory.getLogger(CastleUpdater.class.getName());
+
+
 	private L2Clan clan;
 	private int runCount = 0;
 
@@ -49,7 +51,7 @@ public class CastleUpdater implements Runnable {
 						castle.saveSeedData();
 						castle.saveCropData();
 						if (Config.DEBUG) {
-							Log.info("Manor System: all data for " + castle.getName() + " saved");
+							log.info("Manor System: all data for " + castle.getName() + " saved");
 						}
 					}
 				}
@@ -57,7 +59,7 @@ public class CastleUpdater implements Runnable {
 				ThreadPoolManager.getInstance().scheduleGeneral(cu, 3600000);
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 		}
 	}
 }

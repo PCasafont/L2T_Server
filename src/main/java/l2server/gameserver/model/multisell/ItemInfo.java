@@ -16,7 +16,7 @@
 package l2server.gameserver.model.multisell;
 
 import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 
 /**
  * @author DS
@@ -30,7 +30,7 @@ public class ItemInfo {
 	private final int elementPower;
 	private final int[] elementals = new int[6];
 
-	public ItemInfo(L2ItemInstance item) {
+	public ItemInfo(Item item) {
 		enchantLevel = item.getEnchantLevel();
 		ensoulEffectIds = item.getEnsoulEffectIds();
 		ensoulSpecialEffectIds = item.getEnsoulSpecialEffectIds();

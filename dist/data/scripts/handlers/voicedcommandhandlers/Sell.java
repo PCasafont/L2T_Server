@@ -18,18 +18,18 @@ package handlers.voicedcommandhandlers;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.handler.IVoicedCommandHandler;
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.TradeList;
 import l2server.gameserver.model.TradeList.TradeItem;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.PrivateStoreMsgSell;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
 
 import java.util.Map.Entry;
@@ -45,10 +45,10 @@ public class Sell implements IVoicedCommandHandler {
 	private static final String[] VOICED_COMMANDS = {"sell"};
 
 	/**
-	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, Player, java.lang.String)
 	 */
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance player, String params) {
+	public boolean useVoicedCommand(String command, Player player, String params) {
 		if (command.equalsIgnoreCase("sell")) {
 			if (!player.getClient().getFloodProtectors().getTransaction().tryPerformAction("buy")) {
 				return false;
@@ -62,7 +62,7 @@ public class Sell implements IVoicedCommandHandler {
 				params = "";
 			}
 
-			boolean isSelling = player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_CUSTOM_SELL;
+			boolean isSelling = player.getPrivateStoreType() == Player.STORE_PRIVATE_CUSTOM_SELL;
 			if (!isSelling && player.getPrivateStoreType() > 0) {
 				return false;
 			}
@@ -80,7 +80,7 @@ public class Sell implements IVoicedCommandHandler {
 							}
 
 							int itemObjdId = Integer.parseInt(values[1]);
-							L2ItemInstance targetItem = player.getInventory().getItemByObjectId(itemObjdId);
+							Item targetItem = player.getInventory().getItemByObjectId(itemObjdId);
 							if (targetItem != null && targetItem.getCount() >= 1) {
 								list.addItem(itemObjdId, 1L);
 							}
@@ -105,7 +105,7 @@ public class Sell implements IVoicedCommandHandler {
 								int itemObjId = Integer.parseInt(values[1]);
 								int itemId = Integer.parseInt(values[2]);
 
-								L2Item toSell = ItemTable.getInstance().getTemplate(itemId);
+								ItemTemplate toSell = ItemTable.getInstance().getTemplate(itemId);
 								if (toSell != null && toSell.isTradeable()) {
 									for (TradeItem item : list.getItems()) {
 										if (item == null) {
@@ -141,7 +141,7 @@ public class Sell implements IVoicedCommandHandler {
 								return false;
 							}
 
-							L2ItemInstance targetItem = player.getInventory().getItemByObjectId(itemObjId);
+							Item targetItem = player.getInventory().getItemByObjectId(itemObjId);
 							if (targetItem != null) {
 								if (player.checkItemManipulation(itemObjId, priceCount, "Custom Sell") == null) {
 									player.sendMessage("Sell: You don't have enough " + targetItem.getName() + "!");
@@ -181,7 +181,7 @@ public class Sell implements IVoicedCommandHandler {
 									continue;
 								}
 								if (item.getObjectId() == itemObjId) {
-									for (Entry<L2Item, Long> i : item.getPriceItems().entrySet()) {
+									for (Entry<ItemTemplate, Long> i : item.getPriceItems().entrySet()) {
 										if (i.getKey().getItemId() == itemId) {
 											item.getPriceItems().put(i.getKey(), priceCount);
 											break;
@@ -197,7 +197,7 @@ public class Sell implements IVoicedCommandHandler {
 						if (values.length == 3) {
 							int itemObjId = Integer.parseInt(values[1]);
 							int itemId = Integer.parseInt(values[2]);
-							L2Item temp = ItemTable.getInstance().getTemplate(itemId);
+							ItemTemplate temp = ItemTable.getInstance().getTemplate(itemId);
 							if (temp == null) {
 								return false;
 							}
@@ -263,20 +263,20 @@ public class Sell implements IVoicedCommandHandler {
 						return false;
 					}
 
-					if (player.isInsideZone(L2Character.ZONE_NOSTORE)) {
+					if (player.isInsideZone(Creature.ZONE_NOSTORE)) {
 						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PRIVATE_STORE_HERE));
 						return false;
 					}
 
-					for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70)) {
-						if (!(c instanceof L2PcInstance && ((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE)) {
+					for (Creature c : player.getKnownList().getKnownCharactersInRadius(70)) {
+						if (!(c instanceof Player && ((Player) c).getPrivateStoreType() == Player.STORE_PRIVATE_NONE)) {
 							player.sendMessage("Sell: Try to put your store a little further from " + c.getName() + ", please.");
 							return false;
 						}
 					}
 
 					isSelling = true;
-					player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_CUSTOM_SELL);
+					player.setPrivateStoreType(Player.STORE_PRIVATE_CUSTOM_SELL);
 					player.broadcastUserInfo();
 					player.broadcastPacket(new PrivateStoreMsgSell(player));
 					player.sitDown();
@@ -285,7 +285,7 @@ public class Sell implements IVoicedCommandHandler {
 						String log = player.getName() + " (" + list.getTitle() + ")\n";
 						for (TradeItem item : list.getItems()) {
 							log += "\t" + item.getItem().getName() + " (max " + item.getCount() + ")\n";
-							for (Entry<L2Item, Long> priceItem : item.getPriceItems().entrySet()) {
+							for (Entry<ItemTemplate, Long> priceItem : item.getPriceItems().entrySet()) {
 								log += "\t\t" + priceItem.getKey().getName() + " (" + priceItem.getValue() + ")\n";
 							}
 						}
@@ -294,7 +294,7 @@ public class Sell implements IVoicedCommandHandler {
 				}
 			} else {
 				if (params.equalsIgnoreCase("stop")) {
-					player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
+					player.setPrivateStoreType(Player.STORE_PRIVATE_NONE);
 					player.standUp();
 					player.broadcastUserInfo();
 					isSelling = false;
@@ -370,7 +370,7 @@ public class Sell implements IVoicedCommandHandler {
 					sb.append("<center><table width=250 bgcolor=666666><tr><td FIXWIDTH=270 align=center>Price per unit</td></tr></table></center>");
 
 					int index = 0;
-					for (Entry<L2Item, Long> b : item.getPriceItems().entrySet()) {
+					for (Entry<ItemTemplate, Long> b : item.getPriceItems().entrySet()) {
 						String priceName = b.getKey().getName();
 						if (priceName.length() > 35) {
 							priceName = priceName.substring(0, 35) + "...";
@@ -403,7 +403,7 @@ public class Sell implements IVoicedCommandHandler {
 		return true;
 	}
 
-	private boolean canAddMoreItems(L2PcInstance player) {
+	private boolean canAddMoreItems(Player player) {
 		TradeList list = player.getCustomSellList();
 		int count = list.getItems().length;
 		for (TradeItem item : list.getItems()) {

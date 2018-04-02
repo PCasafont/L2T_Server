@@ -17,9 +17,9 @@ package handlers.bypasshandlers;
 
 import l2server.gameserver.datatables.CertificateSkillTable;
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.SubClass;
 
 public class Certificate implements IBypassHandler {
@@ -27,7 +27,7 @@ public class Certificate implements IBypassHandler {
 			{"CertificateSub", "LearnSubCertSkills", "ResetSubCertificates", "CertificateDual", "LearnDualCertSkills", "ResetDualCertificates"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance player, L2Npc target) {
+	public boolean useBypass(String command, Player player, Npc target) {
 		if (target == null) {
 			return false;
 		}
@@ -75,7 +75,7 @@ public class Certificate implements IBypassHandler {
 				return false;
 			}
 			
-			L2ItemInstance certsItem = player.getInventory().getItemByItemId(CertificateSkillTable.SUBCLASS_CERTIFICATE);
+			Item certsItem = player.getInventory().getItemByItemId(CertificateSkillTable.SUBCLASS_CERTIFICATE);
 			if (certsItem == null) {
 				// TODO: Proper message/HTML
 				player.sendMessage("You don't have certificates");
@@ -159,7 +159,7 @@ public class Certificate implements IBypassHandler {
 				return false;
 			}
 			
-			L2ItemInstance certsItem = player.getInventory().getItemByItemId(CertificateSkillTable.DUALCLASS_CERTIFICATE);
+			Item certsItem = player.getInventory().getItemByItemId(CertificateSkillTable.DUALCLASS_CERTIFICATE);
 			if (certsItem == null) {
 				// TODO: Proper message/HTML
 				player.sendMessage("You don't have certificates");

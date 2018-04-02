@@ -17,16 +17,16 @@ package handlers.voicedcommandhandlers;
 
 import l2server.gameserver.datatables.AdminCommandAccessRights;
 import l2server.gameserver.handler.IVoicedCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 public class Debug implements IVoicedCommandHandler {
 	private static final String[] VOICED_COMMANDS = {"debug"};
 
 	/**
-	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, Player, java.lang.String)
 	 */
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params) {
+	public boolean useVoicedCommand(String command, Player activeChar, String params) {
 		if (!AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel())) {
 			return false;
 		}

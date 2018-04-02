@@ -3,9 +3,9 @@ package l2server.gameserver.events.chess;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.instance.L2ChessPieceInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.model.actor.instance.ChessPieceInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.chars.NpcTemplate;
 
 /**
  * @author Pere
@@ -17,7 +17,7 @@ public class ChessEventSide {
 	private int startY;
 	private int startZ;
 
-	private L2PcInstance player;
+	private Player player;
 
 	private int endX;
 	private int endY;
@@ -27,7 +27,7 @@ public class ChessEventSide {
 
 	private L2Spawn[] pieceSpawns;
 
-	private L2ChessPieceInstance king;
+	private ChessPieceInstance king;
 
 	private boolean canTheKingBeKilled = false;
 
@@ -51,7 +51,7 @@ public class ChessEventSide {
 		startZ = -1932;
 	}
 
-	public boolean setPlayer(L2PcInstance playerInstance) {
+	public boolean setPlayer(Player playerInstance) {
 		if (playerInstance == null) {
 			return false;
 		}
@@ -93,7 +93,7 @@ public class ChessEventSide {
 		return id;
 	}
 
-	public L2PcInstance getPlayer() {
+	public Player getPlayer() {
 		return player;
 	}
 
@@ -114,7 +114,7 @@ public class ChessEventSide {
 	}
 
 	public void spawnPieces() {
-		L2NpcTemplate tmpl;
+		NpcTemplate tmpl;
 
 		int baseX = -60165;
 		int baseY = -59752;
@@ -179,7 +179,7 @@ public class ChessEventSide {
 				pieceSpawns[i].stopRespawn();
 				pieceSpawns[i].doSpawn();
 				//pieceSpawns[i].getNpc().spawnMe(pieceSpawns[i].getNpc().getX(), pieceSpawns[i].getNpc().getY(), pieceSpawns[i].getNpc().getZ());
-				L2ChessPieceInstance piece = (L2ChessPieceInstance) pieceSpawns[i].getNpc();
+				ChessPieceInstance piece = (ChessPieceInstance) pieceSpawns[i].getNpc();
 				if (piece.getType() == 6) {
 					king = piece;
 				}
@@ -243,15 +243,15 @@ public class ChessEventSide {
 		}
 	}
 
-	public L2ChessPieceInstance getPiece(int x, int y) {
+	public ChessPieceInstance getPiece(int x, int y) {
 		return ChessEvent.getBoard(getId())[x][y];
 	}
 
-	public void setPiece(int x, int y, L2ChessPieceInstance piece) {
+	public void setPiece(int x, int y, ChessPieceInstance piece) {
 		ChessEvent.setBoard(x, y, piece, getId());
 	}
 
-	public L2ChessPieceInstance getKing() {
+	public ChessPieceInstance getKing() {
 		return king;
 	}
 
@@ -265,7 +265,7 @@ public class ChessEventSide {
 		}
 		canTheKingBeKilled = false;
 		for (int i = 0; i < 8; i++) {
-			for (L2ChessPieceInstance piece : ChessEvent.getBoard(getId())[i]) {
+			for (ChessPieceInstance piece : ChessEvent.getBoard(getId())[i]) {
 				if (piece != null && piece.getType() != 6 && piece.getSide().getId() != getId() && piece.canKillTheKing()) {
 					canTheKingBeKilled = true;
 				}

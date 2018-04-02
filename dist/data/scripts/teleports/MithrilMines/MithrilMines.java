@@ -15,8 +15,8 @@
 
 package teleports.MithrilMines;
 
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 
@@ -35,7 +35,7 @@ public class MithrilMines extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		String htmltext = "";
 		QuestState st = player.getQuestState(getName());
 
@@ -53,18 +53,18 @@ public class MithrilMines extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		String htmltext = "";
 		QuestState st = player.getQuestState(getName());
 		if (st == null) {
 			st = newQuestState(player);
 		}
 
-		if (npc.isInsideRadius(173147, -173762, L2Npc.DEFAULT_INTERACTION_DISTANCE, true)) {
+		if (npc.isInsideRadius(173147, -173762, Npc.DEFAULT_INTERACTION_DISTANCE, true)) {
 			htmltext = "32652-01.htm";
-		} else if (npc.isInsideRadius(181941, -174614, L2Npc.DEFAULT_INTERACTION_DISTANCE, true)) {
+		} else if (npc.isInsideRadius(181941, -174614, Npc.DEFAULT_INTERACTION_DISTANCE, true)) {
 			htmltext = "32652-02.htm";
-		} else if (npc.isInsideRadius(179560, -182956, L2Npc.DEFAULT_INTERACTION_DISTANCE, true)) {
+		} else if (npc.isInsideRadius(179560, -182956, Npc.DEFAULT_INTERACTION_DISTANCE, true)) {
 			htmltext = "32652-03.htm";
 		}
 

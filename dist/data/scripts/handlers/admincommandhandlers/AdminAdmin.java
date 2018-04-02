@@ -18,24 +18,22 @@ package handlers.admincommandhandlers;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.GmListTable;
-import l2server.gameserver.datatables.*;
+import l2server.gameserver.datatables.NpcTable;
+import l2server.gameserver.datatables.NpcWalkersTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.QuestManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.Experience;
 import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 import l2server.util.loader.LoadHolder;
 import l2server.util.loader.Loader;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.StringTokenizer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:
@@ -52,7 +50,6 @@ import java.util.logging.Logger;
  * @version $Revision: 1.3.2.1.2.4 $ $Date: 2007/07/28 10:06:06 $
  */
 public class AdminAdmin implements IAdminCommandHandler {
-	private static Logger log = Logger.getLogger(AdminAdmin.class.getName());
 
 	private static final String[] ADMIN_COMMANDS =
 			{"admin_admin", "admin_admin1", "admin_admin2", "admin_admin3", "admin_admin4", "admin_admin5", "admin_admin6", "admin_admin7",
@@ -61,7 +58,7 @@ public class AdminAdmin implements IAdminCommandHandler {
 					"admin_config_server", "admin_setPoints"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.startsWith("admin_admin")) {
 			showMainPage(activeChar, command);
 		} else if (command.equals("admin_config_server")) {
@@ -91,14 +88,14 @@ public class AdminAdmin implements IAdminCommandHandler {
 			try {
 				Olympiad.getInstance().manualSelectHeroes();
 			} catch (Exception e) {
-				log.warning("An error occured while ending olympiad: " + e);
+				log.warn("An error occured while ending olympiad: " + e);
 			}
 			activeChar.sendMessage("Heroes formed");
 		} else if (command.startsWith("admin_manualhero") || command.startsWith("admin_sethero")) {
-			L2PcInstance target = null;
+			Player target = null;
 
-			if (activeChar.getTarget() instanceof L2PcInstance) {
-				target = (L2PcInstance) activeChar.getTarget();
+			if (activeChar.getTarget() instanceof Player) {
+				target = (Player) activeChar.getTarget();
 				target.setHero(target.isHero() ? false : true);
 			} else {
 				target = activeChar;
@@ -124,7 +121,7 @@ public class AdminAdmin implements IAdminCommandHandler {
 				statement.close();
 				activeChar.sendMessage("You changed " + name + "'s points to " + Points);
 			} catch (Exception e) {
-				Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
+				log.error("Failed updating Ranked Points", e);
 			} finally {
 				L2DatabaseFactory.close(coni);
 			}
@@ -204,7 +201,7 @@ public class AdminAdmin implements IAdminCommandHandler {
 				}
 			} catch (Exception e) {
 				activeChar.sendMessage("An error occured while reloading " + type + " !");
-				log.warning("An error occured while reloading " + type + ": ");
+				log.warn("An error occured while reloading " + type + ": ");
 				e.printStackTrace();
 			}
 		}
@@ -216,7 +213,7 @@ public class AdminAdmin implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	private void showMainPage(L2PcInstance activeChar, String command) {
+	private void showMainPage(Player activeChar, String command) {
 		int mode = 0;
 		String filename = null;
 		try {
@@ -259,7 +256,7 @@ public class AdminAdmin implements IAdminCommandHandler {
 		AdminHelpPage.showHelpPage(activeChar, filename + "_menu.htm");
 	}
 
-	public void showConfigPage(L2PcInstance activeChar) {
+	public void showConfigPage(Player activeChar) {
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		StringBuilder replyMSG = new StringBuilder("<html><title>L2J :: Config</title><body>");
 		replyMSG.append(

@@ -18,25 +18,24 @@ package l2server.gameserver.network.clientpackets;
 import l2server.Config;
 import l2server.gameserver.TradeController;
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2TradeList;
 import l2server.gameserver.model.L2TradeList.L2TradeItem;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2MerchantInstance;
-import l2server.gameserver.model.actor.instance.L2MerchantSummonInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.MerchantInstance;
+import l2server.gameserver.model.actor.instance.MerchantSummonInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ExSellList;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 
 import java.util.List;
 
-import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
+import static l2server.gameserver.model.actor.Npc.DEFAULT_INTERACTION_DISTANCE;
 import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
 
 /**
@@ -71,7 +70,7 @@ public final class RequestBuyItem extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -92,8 +91,8 @@ public final class RequestBuyItem extends L2GameClientPacket {
 			return;
 		}
 
-		L2Object target = player.getTarget();
-		L2Character merchant = null;
+		WorldObject target = player.getTarget();
+		Creature merchant = null;
 		if (!player.isGM()) {
 			if (target == null || !player.isInsideRadius(target, DEFAULT_INTERACTION_DISTANCE, true, false)
 					// Distance is too far)
@@ -101,8 +100,8 @@ public final class RequestBuyItem extends L2GameClientPacket {
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
-			if (target instanceof L2MerchantInstance || target instanceof L2MerchantSummonInstance) {
-				merchant = (L2Character) target;
+			if (target instanceof MerchantInstance || target instanceof MerchantSummonInstance) {
+				merchant = (Creature) target;
 			} else {
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return;
@@ -116,12 +115,12 @@ public final class RequestBuyItem extends L2GameClientPacket {
 
 		if (merchant != null) {
 			List<L2TradeList> lists;
-			if (merchant instanceof L2MerchantInstance) {
-				lists = TradeController.INSTANCE.getBuyListByNpcId(((L2MerchantInstance) merchant).getNpcId());
-				castleTaxRate = ((L2MerchantInstance) merchant).getMpc().getCastleTaxRate();
-				baseTaxRate = ((L2MerchantInstance) merchant).getMpc().getBaseTaxRate();
+			if (merchant instanceof MerchantInstance) {
+				lists = TradeController.INSTANCE.getBuyListByNpcId(((MerchantInstance) merchant).getNpcId());
+				castleTaxRate = ((MerchantInstance) merchant).getMpc().getCastleTaxRate();
+				baseTaxRate = ((MerchantInstance) merchant).getMpc().getBaseTaxRate();
 			} else {
-				lists = TradeController.INSTANCE.getBuyListByNpcId(((L2MerchantSummonInstance) merchant).getNpcId());
+				lists = TradeController.INSTANCE.getBuyListByNpcId(((MerchantSummonInstance) merchant).getNpcId());
 				baseTaxRate = 50;
 			}
 
@@ -171,7 +170,7 @@ public final class RequestBuyItem extends L2GameClientPacket {
 				return;
 			}
 
-			L2Item template = ItemTable.getInstance().getTemplate(i.getItemId());
+			ItemTemplate template = ItemTable.getInstance().getTemplate(i.getItemId());
 			if (template == null) {
 				continue;
 			}
@@ -193,7 +192,7 @@ public final class RequestBuyItem extends L2GameClientPacket {
 			}
 
 			if (price < 0) {
-				Log.warning("ERROR, no price found .. wrong buylist ??");
+				log.warn("ERROR, no price found .. wrong buylist ??");
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
@@ -279,8 +278,8 @@ public final class RequestBuyItem extends L2GameClientPacket {
 		}
 
 		// add to castle treasury
-		if (merchant instanceof L2MerchantInstance) {
-			((L2MerchantInstance) merchant).getCastle().addToTreasury((long) (subTotal * castleTaxRate));
+		if (merchant instanceof MerchantInstance) {
+			((MerchantInstance) merchant).getCastle().addToTreasury((long) (subTotal * castleTaxRate));
 		}
 
 		StatusUpdate su = new StatusUpdate(player);

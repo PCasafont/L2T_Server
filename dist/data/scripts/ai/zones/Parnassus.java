@@ -1,7 +1,7 @@
 package ai.zones;
 
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.serverpackets.EventTrigger;
 
@@ -21,7 +21,7 @@ public class Parnassus extends Quest {
 	}
 
 	@Override
-	public String onCreatureSee(L2Npc npc, L2PcInstance player, boolean isSummon) {
+	public String onCreatureSee(Npc npc, Player player, boolean isSummon) {
 		if (player != null) {
 			if (npc.getNpcId() == crystalPrisonEntrance) {
 				player.sendPacket(new EventTrigger(24230010, true));

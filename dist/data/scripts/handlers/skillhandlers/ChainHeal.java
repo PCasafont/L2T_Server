@@ -19,17 +19,17 @@ import l2server.Config;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.SkillHandler;
 import l2server.gameserver.instancemanager.PlayerAssistsManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2NpcInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.NpcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.stats.Stats;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.util.ValueSortMap;
 
 import java.util.LinkedHashMap;
@@ -43,15 +43,15 @@ import java.util.Map;
  */
 
 public class ChainHeal implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.CHAIN_HEAL};
+	private static final SkillType[] SKILL_IDS = {SkillType.CHAIN_HEAL};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
 		//check for other effects
-		ISkillHandler handler = SkillHandler.getInstance().getSkillHandler(L2SkillType.BUFF);
+		ISkillHandler handler = SkillHandler.getInstance().getSkillHandler(SkillType.BUFF);
 
 		if (handler != null) {
 			handler.useSkill(activeChar, skill, targets);
@@ -60,7 +60,7 @@ public class ChainHeal implements ISkillHandler {
 
 		double amount = 0;
 
-		L2Character[] characters = getTargetsToHeal((L2Character[]) targets, activeChar, skill.getSkillRadius());
+		Creature[] characters = getTargetsToHeal((Creature[]) targets, activeChar, skill.getSkillRadius());
 
 		double power = skill.getPower();
 		// Healing critical, since CT2.3 Gracia Final
@@ -69,10 +69,10 @@ public class ChainHeal implements ISkillHandler {
 			power *= 2;
 		}
 
-		if (Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance && activeChar.isInParty()) {
-			int classId = ((L2PcInstance) activeChar).getCurrentClass().getParent().getAwakeningClassId();
+		if (Config.isServer(Config.TENKAI) && activeChar instanceof Player && activeChar.isInParty()) {
+			int classId = ((Player) activeChar).getCurrentClass().getParent().getAwakeningClassId();
 			int members = 0;
-			for (L2PcInstance partyMember : activeChar.getParty().getPartyMembers()) {
+			for (Player partyMember : activeChar.getParty().getPartyMembers()) {
 				if (partyMember.getCurrentClass().getParent() != null && partyMember.getCurrentClass().getParent().getAwakeningClassId() == classId) {
 					members++;
 				}
@@ -88,7 +88,7 @@ public class ChainHeal implements ISkillHandler {
 		}
 
 		// Get top 10 most damaged and iterate the heal over them
-		for (L2Character character : characters) {
+		for (Creature character : characters) {
 			//1505 - sublime self sacrifice
 			if ((character == null || character.isDead() || character.isInvul(activeChar)) && skill.getId() != 1505) {
 				continue;
@@ -123,28 +123,28 @@ public class ChainHeal implements ISkillHandler {
 
 			character.broadcastStatusUpdate();
 
-			if (activeChar instanceof L2PcInstance && character instanceof L2PcInstance) {
-				if (((L2PcInstance) activeChar).getPvpFlag() == 0 && ((L2PcInstance) character).getPvpFlag() > 0) {
-					((L2PcInstance) activeChar).updatePvPStatus();
+			if (activeChar instanceof Player && character instanceof Player) {
+				if (((Player) activeChar).getPvpFlag() == 0 && ((Player) character).getPvpFlag() > 0) {
+					((Player) activeChar).updatePvPStatus();
 				}
 
-				PlayerAssistsManager.getInstance().updateHelpTimer((L2PcInstance) activeChar, (L2PcInstance) character);
+				PlayerAssistsManager.getInstance().updateHelpTimer((Player) activeChar, (Player) character);
 			}
 
 			power -= 3;
 		}
 	}
 
-	private L2Character[] getTargetsToHeal(L2Character[] targets, L2Character caster, int skillRadius) {
-		Map<L2Character, Double> tmpTargets = new LinkedHashMap<L2Character, Double>();
+	private Creature[] getTargetsToHeal(Creature[] targets, Creature caster, int skillRadius) {
+		Map<Creature, Double> tmpTargets = new LinkedHashMap<Creature, Double>();
 
-		List<L2Character> sortedListToReturn = new LinkedList<L2Character>();
+		List<Creature> sortedListToReturn = new LinkedList<Creature>();
 
 		if (caster.getTarget() == caster) {
 			tmpTargets.put(caster, caster.getCurrentHp() / caster.getMaxHp());
 		}
 
-		for (L2Character target : caster.getKnownList().getKnownCharactersInRadius(skillRadius)) {
+		for (Creature target : caster.getKnownList().getKnownCharactersInRadius(skillRadius)) {
 			//caster.sendMessage("Trying to add " + target.getName());
 			if (canAddCharacter(caster, target, tmpTargets.size(), skillRadius)) {
 				double hpPercent = target.getCurrentHp() / target.getMaxHp();
@@ -159,10 +159,10 @@ public class ChainHeal implements ISkillHandler {
 
 		sortedListToReturn.addAll(tmpTargets.keySet());
 
-		return sortedListToReturn.toArray(new L2Character[sortedListToReturn.size()]);
+		return sortedListToReturn.toArray(new Creature[sortedListToReturn.size()]);
 	}
 
-	private static boolean canAddCharacter(L2Character caster, L2Character target, int listZie, int skillRadius) {
+	private static boolean canAddCharacter(Creature caster, Creature target, int listZie, int skillRadius) {
 		if (listZie >= 10) {
 			return false;
 		}
@@ -171,14 +171,14 @@ public class ChainHeal implements ISkillHandler {
 			return false;
 		}
 
-		if (!(caster instanceof L2PcInstance)) {
+		if (!(caster instanceof Player)) {
 			return false;
 		}
 
-		final L2PcInstance activeChar = (L2PcInstance) caster;
+		final Player activeChar = (Player) caster;
 
-		if (target instanceof L2Playable) {
-			final L2PcInstance pTarget = target.getActingPlayer();
+		if (target instanceof Playable) {
+			final Player pTarget = target.getActingPlayer();
 
 			if (!pTarget.isVisible()) {
 				return false;
@@ -213,12 +213,12 @@ public class ChainHeal implements ISkillHandler {
 			if (activeChar.isInSameOlympiadGame(pTarget) || activeChar.isInSameClan(pTarget)) {
 				return false;
 			}
-			if (target.isInsideZone(L2Character.ZONE_TOWN)) {
+			if (target.isInsideZone(Creature.ZONE_TOWN)) {
 				return true;
 			}
-		} else if (target instanceof L2NpcInstance) {
-			final L2NpcInstance npc = (L2NpcInstance) target;
-			if (!npc.isInsideZone(L2Character.ZONE_TOWN)) {
+		} else if (target instanceof NpcInstance) {
+			final NpcInstance npc = (NpcInstance) target;
+			if (!npc.isInsideZone(Creature.ZONE_TOWN)) {
 				return false;
 			}
 		} else {
@@ -232,7 +232,7 @@ public class ChainHeal implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

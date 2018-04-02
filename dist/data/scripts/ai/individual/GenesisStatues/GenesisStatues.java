@@ -18,10 +18,10 @@ package ai.individual.GenesisStatues;
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +35,7 @@ import java.util.Map;
 public class GenesisStatues extends L2AttackableAIScript {
 	private static final int[] statues = {33138, 33139, 33140};
 	private static final int[] keepers = {23038, 23039, 23040};
-	private static final L2Skill blessingOfGarden = SkillTable.getInstance().getInfo(14200, 1);
+	private static final Skill blessingOfGarden = SkillTable.getInstance().getInfo(14200, 1);
 	private static Map<Integer, Long> spawns = new HashMap<Integer, Long>(3);
 	
 	public GenesisStatues(int id, String name, String descr) {
@@ -54,7 +54,7 @@ public class GenesisStatues extends L2AttackableAIScript {
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		long currentTime = System.currentTimeMillis();
 		if (!spawns.containsKey(npc.getNpcId()) || spawns.get(npc.getNpcId()) + 3600000 > currentTime) {
 			//final SimpleDateFormat dateFormatter = new SimpleDateFormat("[EEEE d MMMMMMM] @ k:m:s: ");
@@ -64,8 +64,8 @@ public class GenesisStatues extends L2AttackableAIScript {
 		} else {
 			spawns.put(npc.getNpcId(), currentTime);
 			
-			L2MonsterInstance angelStatue =
-					(L2MonsterInstance) addSpawn(npc.getNpcId() - 10100, player.getX(), player.getY(), player.getZ(), 0, false, 0, false);
+			MonsterInstance angelStatue =
+					(MonsterInstance) addSpawn(npc.getNpcId() - 10100, player.getX(), player.getY(), player.getZ(), 0, false, 0, false);
 			angelStatue.setTarget(player);
 			angelStatue.addDamageHate(player, 500, 99999);
 			angelStatue.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
@@ -74,7 +74,7 @@ public class GenesisStatues extends L2AttackableAIScript {
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		blessingOfGarden.getEffects(killer, killer);
 		
 		return super.onKill(npc, killer, isPet);

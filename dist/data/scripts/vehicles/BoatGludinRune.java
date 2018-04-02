@@ -15,23 +15,24 @@
 
 package vehicles;
 
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.BoatManager;
 import l2server.gameserver.model.VehiclePathPoint;
-import l2server.gameserver.model.actor.instance.L2BoatInstance;
+import l2server.gameserver.model.actor.instance.BoatInstance;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.PlaySound;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author DS
  */
 public class BoatGludinRune implements Runnable {
-	private static final Logger log = Logger.getLogger(BoatGludinRune.class.getName());
-
+	
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	// Time: 1151s
 	private static final VehiclePathPoint[] GLUDIN_TO_RUNE =
 			{new VehiclePathPoint(-95686, 155514, -3610, 150, 800), new VehiclePathPoint(-98112, 159040, -3610, 150, 800),
@@ -67,7 +68,7 @@ public class BoatGludinRune implements Runnable {
 
 	private static final VehiclePathPoint[] GLUDIN_DOCK = {new VehiclePathPoint(-95686, 150514, -3610, 150, 800)};
 
-	private final L2BoatInstance boat;
+	private final BoatInstance boat;
 	private int cycle = 0;
 	private int shoutCount = 0;
 
@@ -98,7 +99,7 @@ public class BoatGludinRune implements Runnable {
 	private final PlaySound GLUDIN_SOUND;
 	private final PlaySound RUNE_SOUND;
 
-	public BoatGludinRune(L2BoatInstance boat) {
+	public BoatGludinRune(BoatInstance boat) {
 		this.boat = boat;
 
 		ARRIVED_AT_GLUDIN = new CreatureSay(0, Say2.BOAT, 801, 986);
@@ -255,12 +256,12 @@ public class BoatGludinRune implements Runnable {
 				cycle = 0;
 			}
 		} catch (Exception e) {
-			log.log(Level.WARNING, e.getMessage());
+			log.warn(e.getMessage());
 		}
 	}
 
 	public static void main(String[] args) {
-		final L2BoatInstance boat = BoatManager.INSTANCE.getNewBoat(3, -95686, 150514, -3610, 16723);
+		final BoatInstance boat = BoatManager.INSTANCE.getNewBoat(3, -95686, 150514, -3610, 16723);
 		if (boat != null) {
 			boat.registerEngine(new BoatGludinRune(boat));
 			boat.runEngine(180000);

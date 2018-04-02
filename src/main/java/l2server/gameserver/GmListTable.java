@@ -16,11 +16,12 @@
 package l2server.gameserver;
 
 import l2server.Config;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Map.Entry;
@@ -32,18 +33,21 @@ import java.util.concurrent.ConcurrentHashMap;
  * @version $Revision: 1.2.2.1.2.7 $ $Date: 2005/04/05 19:41:24 $
  */
 public class GmListTable {
+	private static Logger log = LoggerFactory.getLogger(GmListTable.class.getName());
+
+
 	/**
-	 * Set(L2PcInstance>) containing all the GM in game
+	 * Set(Player>) containing all the GM in game
 	 */
-	private ConcurrentHashMap<L2PcInstance, Boolean> gmList;
+	private ConcurrentHashMap<Player, Boolean> gmList;
 
 	public static GmListTable getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	public ArrayList<L2PcInstance> getAllGms(boolean includeHidden) {
-		ArrayList<L2PcInstance> tmpGmList = new ArrayList<>();
-		for (Entry<L2PcInstance, Boolean> n : gmList.entrySet()) {
+	public ArrayList<Player> getAllGms(boolean includeHidden) {
+		ArrayList<Player> tmpGmList = new ArrayList<>();
+		for (Entry<Player, Boolean> n : gmList.entrySet()) {
 			if (includeHidden || !n.getValue()) {
 				tmpGmList.add(n.getKey());
 			}
@@ -54,7 +58,7 @@ public class GmListTable {
 
 	public ArrayList<String> getAllGmNames(boolean includeHidden) {
 		ArrayList<String> tmpGmList = new ArrayList<>();
-		for (Entry<L2PcInstance, Boolean> n : gmList.entrySet()) {
+		for (Entry<Player, Boolean> n : gmList.entrySet()) {
 			if (!n.getValue()) {
 				tmpGmList.add(n.getKey().getName());
 			} else if (includeHidden) {
@@ -70,18 +74,18 @@ public class GmListTable {
 	}
 
 	/**
-	 * Add a L2PcInstance player to the Set gmList
+	 * Add a Player player to the Set gmList
 	 */
-	public void addGm(L2PcInstance player, boolean hidden) {
+	public void addGm(Player player, boolean hidden) {
 		if (Config.DEBUG) {
-			Log.fine("added gm: " + player.getName());
+			log.debug("added gm: " + player.getName());
 		}
 		gmList.put(player, hidden);
 	}
 
-	public void deleteGm(L2PcInstance player) {
+	public void deleteGm(Player player) {
 		if (Config.DEBUG) {
-			Log.fine("deleted gm: " + player.getName());
+			log.debug("deleted gm: " + player.getName());
 		}
 
 		gmList.remove(player);
@@ -92,7 +96,7 @@ public class GmListTable {
 	 *
 	 * @param player
 	 */
-	public void showGm(L2PcInstance player) {
+	public void showGm(Player player) {
 		if (gmList.containsKey(player)) {
 			gmList.put(player, false);
 		}
@@ -103,7 +107,7 @@ public class GmListTable {
 	 *
 	 * @param player
 	 */
-	public void hideGm(L2PcInstance player) {
+	public void hideGm(Player player) {
 		if (gmList.containsKey(player)) {
 			gmList.put(player, true);
 		}
@@ -119,7 +123,7 @@ public class GmListTable {
 		return false;
 	}
 
-	public void sendListToPlayer(L2PcInstance player) {
+	public void sendListToPlayer(Player player) {
 		if (isGmOnline(player.isGM())) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.GM_LIST));
 
@@ -134,13 +138,13 @@ public class GmListTable {
 	}
 
 	public static void broadcastToGMs(L2GameServerPacket packet) {
-		for (L2PcInstance gm : getInstance().getAllGms(true)) {
+		for (Player gm : getInstance().getAllGms(true)) {
 			gm.sendPacket(packet);
 		}
 	}
 
 	public static void broadcastMessageToGMs(String message) {
-		for (L2PcInstance gm : getInstance().getAllGms(true)) {
+		for (Player gm : getInstance().getAllGms(true)) {
 			gm.sendMessage(message);
 		}
 	}

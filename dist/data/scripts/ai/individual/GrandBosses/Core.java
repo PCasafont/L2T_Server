@@ -17,13 +17,12 @@ package ai.individual.GrandBosses;
 
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.instancemanager.GrandBossManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.GrandBossInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.PlaySound;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 /**
@@ -54,15 +53,15 @@ public class Core extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		if (event.equalsIgnoreCase("unlock_core")) {
 			alreadyAttacked = false;
 
-			L2GrandBossInstance core = (L2GrandBossInstance) addSpawn(coreId, 17726, 108915, -6480, 0, false, 0);
+			GrandBossInstance core = (GrandBossInstance) addSpawn(coreId, 17726, 108915, -6480, 0, false, 0);
 
 			GrandBossManager.getInstance().addBoss(core);
 
@@ -87,9 +86,9 @@ public class Core extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 
 		if (npc.getNpcId() == coreId) {
@@ -115,9 +114,9 @@ public class Core extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		if (npc.getNpcId() == coreId) {

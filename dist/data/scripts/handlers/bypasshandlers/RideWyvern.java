@@ -18,9 +18,9 @@ package handlers.bypasshandlers;
 import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2WyvernManagerInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.WyvernManagerInstance;
 import l2server.gameserver.util.Util;
 
 public class RideWyvern implements IBypassHandler {
@@ -29,12 +29,12 @@ public class RideWyvern implements IBypassHandler {
 	private static final int[] STRIDERS = {12526, 12527, 12528, 16038, 16039, 16040, 16068, 13197};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		if (target == null) {
 			return false;
 		}
 		
-		L2WyvernManagerInstance npc = (L2WyvernManagerInstance) target;
+		WyvernManagerInstance npc = (WyvernManagerInstance) target;
 		if (!npc.isOwnerClan(activeChar)) {
 			return false;
 		}

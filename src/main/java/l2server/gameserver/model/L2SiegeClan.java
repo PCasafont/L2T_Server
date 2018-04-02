@@ -15,7 +15,7 @@
 
 package l2server.gameserver.model;
 
-import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.Npc;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ public class L2SiegeClan {
 	// ===============================================================
 	// Data Field
 	private int clanId = 0;
-	private List<L2Npc> flag = new ArrayList<>();
+	private List<Npc> flag = new ArrayList<>();
 	private int numFlagsAdded = 0;
 	private SiegeClanType type;
 
@@ -51,12 +51,12 @@ public class L2SiegeClan {
 		return numFlagsAdded;
 	}
 
-	public void addFlag(L2Npc flag) {
+	public void addFlag(Npc flag) {
 		numFlagsAdded++;
 		getFlag().add(flag);
 	}
 
-	public boolean removeFlag(L2Npc flag) {
+	public boolean removeFlag(Npc flag) {
 		if (flag == null) {
 			return false;
 		}
@@ -75,7 +75,7 @@ public class L2SiegeClan {
 	}
 
 	public void removeFlags() {
-		for (L2Npc flag : getFlag()) {
+		for (Npc flag : getFlag()) {
 			removeFlag(flag);
 		}
 	}
@@ -86,7 +86,7 @@ public class L2SiegeClan {
 		return clanId;
 	}
 
-	public final List<L2Npc> getFlag() {
+	public final List<Npc> getFlag() {
 		if (flag == null) {
 			flag = new ArrayList<>();
 		}

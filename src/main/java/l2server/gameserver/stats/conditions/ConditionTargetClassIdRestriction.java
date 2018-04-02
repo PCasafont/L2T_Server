@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 
 import java.util.ArrayList;
@@ -40,9 +40,9 @@ public class ConditionTargetClassIdRestriction extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		if (!(env.target instanceof L2PcInstance)) {
+		if (!(env.target instanceof Player)) {
 			return false;
 		}
-		return classIds.contains(((L2PcInstance) env.target).getCurrentClass().getId());
+		return classIds.contains(((Player) env.target).getCurrentClass().getId());
 	}
 }

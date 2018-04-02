@@ -22,8 +22,8 @@ package l2server.gameserver.communitybbs.Manager;
 import l2server.Config;
 import l2server.gameserver.Server;
 import l2server.gameserver.model.BlockList;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.PcInventory;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.Say2;
@@ -41,15 +41,15 @@ import java.util.logging.Logger;
 public class RegionBBSManager extends BaseBBSManager {
 	private static Logger logChat = Logger.getLogger("chat");
 
-	private static final Comparator<L2PcInstance> PLAYER_NAME_COMPARATOR = (p1, p2) -> p1.getName().compareToIgnoreCase(p2.getName());
+	private static final Comparator<Player> PLAYER_NAME_COMPARATOR = (p1, p2) -> p1.getName().compareToIgnoreCase(p2.getName());
 
 	private int onlineCount = 0;
 	private int onlineCountGm = 0;
-	private static Map<Integer, List<L2PcInstance>> onlinePlayers = new ConcurrentHashMap<>();
+	private static Map<Integer, List<Player>> onlinePlayers = new ConcurrentHashMap<>();
 	private static Map<Integer, Map<String, String>> communityPages = new ConcurrentHashMap<>();
 
 	@Override
-	public void parsecmd(String command, L2PcInstance activeChar) {
+	public void parsecmd(String command, Player activeChar) {
 		if (command.equals("_bbsloc")) {
 			showOldCommunity(activeChar, 1);
 		} else if (command.startsWith("_bbsloc;page;")) {
@@ -88,10 +88,10 @@ public class RegionBBSManager extends BaseBBSManager {
 	 * @param activeChar the active char
 	 * @param name       the player name
 	 */
-	private void showOldCommunityPI(L2PcInstance activeChar, String name) {
+	private void showOldCommunityPI(Player activeChar, String name) {
 		final StringBuilder htmlCode = StringUtil.startAppend(1000,
 				"<html><body><br><table border=0><tr><td FIXWIDTH=15></td><td align=center>L2J Community Board<img src=\"sek.cbui355\" width=610 height=1></td></tr><tr><td FIXWIDTH=15></td><td>");
-		L2PcInstance player = L2World.getInstance().getPlayer(name);
+		Player player = World.getInstance().getPlayer(name);
 
 		if (player != null) {
 			String sex = "Male";
@@ -177,12 +177,12 @@ public class RegionBBSManager extends BaseBBSManager {
 	 * @param activeChar the active char
 	 * @param page       the page
 	 */
-	private void showOldCommunity(L2PcInstance activeChar, int page) {
+	private void showOldCommunity(Player activeChar, int page) {
 		separateAndSend(getCommunityPage(page, activeChar.isGM() ? "gm" : "pl"), activeChar);
 	}
 
 	@Override
-	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, L2PcInstance activeChar) {
+	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, Player activeChar) {
 		if (activeChar == null) {
 			return;
 		}
@@ -193,7 +193,7 @@ public class RegionBBSManager extends BaseBBSManager {
 
 			try {
 
-				L2PcInstance receiver = L2World.getInstance().getPlayer(ar2);
+				Player receiver = World.getInstance().getPlayer(ar2);
 				if (receiver == null) {
 					StringUtil.append(htmlCode,
 							"Player not found!<br><button value=\"Back\" action=\"bypass _bbsloc;playerinfo;",
@@ -254,8 +254,8 @@ public class RegionBBSManager extends BaseBBSManager {
 	 * Change community board.
 	 */
 	public void changeCommunityBoard() {
-		final List<L2PcInstance> sortedPlayers = new ArrayList<>();
-		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
+		final List<Player> sortedPlayers = new ArrayList<>();
+		for (Player player : World.getInstance().getAllPlayersArray()) {
 			if (player != null) {
 				sortedPlayers.add(player);
 			}
@@ -267,7 +267,7 @@ public class RegionBBSManager extends BaseBBSManager {
 		onlineCount = 0;
 		onlineCountGm = 0;
 
-		for (L2PcInstance player : sortedPlayers) {
+		for (Player player : sortedPlayers) {
 			addOnlinePlayer(player);
 		}
 
@@ -280,10 +280,10 @@ public class RegionBBSManager extends BaseBBSManager {
 	 *
 	 * @param player the player
 	 */
-	private void addOnlinePlayer(L2PcInstance player) {
+	private void addOnlinePlayer(Player player) {
 		boolean added = false;
 
-		for (List<L2PcInstance> page : onlinePlayers.values()) {
+		for (List<Player> page : onlinePlayers.values()) {
 			if (page.size() < Config.NAME_PAGE_SIZE_COMMUNITYBOARD) {
 				if (!page.contains(player)) {
 					page.add(player);
@@ -301,7 +301,7 @@ public class RegionBBSManager extends BaseBBSManager {
 		}
 
 		if (!added) {
-			List<L2PcInstance> temp = new ArrayList<>();
+			List<Player> temp = new ArrayList<>();
 			int page = onlinePlayers.size() + 1;
 			if (temp.add(player)) {
 				onlinePlayers.put(page, temp);
@@ -350,7 +350,7 @@ public class RegionBBSManager extends BaseBBSManager {
 					String.valueOf(Config.RATE_DROP_ITEMS_ID.get(PcInventory.ADENA_ID)),
 					tdClose + trClose + "</table><table>" + trOpen + "<td><img src=\"sek.cbui355\" width=600 height=1><br></td>" + trClose + trOpen +
 							tdOpen,
-					String.valueOf(L2World.getInstance().getAllVisibleObjectsCount()),
+					String.valueOf(World.getInstance().getAllVisibleObjectsCount()),
 					" Object count</td>" + trClose + trOpen + tdOpen,
 					String.valueOf(getOnlineCount("gm")),
 					" Player(s) Online</td>" + trClose + "</table>");
@@ -359,7 +359,7 @@ public class RegionBBSManager extends BaseBBSManager {
 			if (Config.BBS_SHOW_PLAYERLIST) {
 				htmlCode.append("<table border=0><tr><td><table border=0>");
 
-				for (L2PcInstance player : getOnlinePlayers(page)) {
+				for (Player player : getOnlinePlayers(page)) {
 					cell++;
 
 					if (cell == 1) {
@@ -461,7 +461,7 @@ public class RegionBBSManager extends BaseBBSManager {
 				htmlCode.append("<table border=0><tr><td><table border=0>");
 
 				cell = 0;
-				for (L2PcInstance player : getOnlinePlayers(page)) {
+				for (Player player : getOnlinePlayers(page)) {
 					if (player == null || player.getAppearance().getInvisible()) {
 						continue; // Go to next
 					}
@@ -563,7 +563,7 @@ public class RegionBBSManager extends BaseBBSManager {
 	 * @param page the page
 	 * @return the online players
 	 */
-	private List<L2PcInstance> getOnlinePlayers(int page) {
+	private List<Player> getOnlinePlayers(int page) {
 		return onlinePlayers.get(page);
 	}
 

@@ -16,11 +16,13 @@
 package l2server.gameserver.model;
 
 import l2server.L2DatabaseFactory;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -28,7 +30,6 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.logging.Level;
 
 /**
  * @author UnAfraid & mrTJO
@@ -42,14 +43,16 @@ import java.util.logging.Level;
  * END OF DEL
  */
 public class L2ContactList {
-	private final L2PcInstance activeChar;
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	private final Player activeChar;
 	private final List<String> contacts;
 
 	private final String QUERY_ADD = "INSERT INTO character_contacts (charId, contactId) VALUES (?, ?)";
 	private final String QUERY_REMOVE = "DELETE FROM character_contacts WHERE charId = ? AND contactId = ?";
 	private final String QUERY_LOAD = "SELECT contactId FROM character_contacts WHERE charId = ?";
 
-	public L2ContactList(L2PcInstance player) {
+	public L2ContactList(Player player) {
 		activeChar = player;
 		contacts = new CopyOnWriteArrayList<>();
 		restore();
@@ -81,7 +84,7 @@ public class L2ContactList {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error found in " + activeChar.getName() + "'s ContactsList: " + e.getMessage(), e);
+			log.warn("Error found in " + activeChar.getName() + "'s ContactsList: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -129,7 +132,7 @@ public class L2ContactList {
 			sm.addString(name);
 			activeChar.sendPacket(sm);
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error found in " + activeChar.getName() + "'s ContactsList: " + e.getMessage(), e);
+			log.warn("Error found in " + activeChar.getName() + "'s ContactsList: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -162,7 +165,7 @@ public class L2ContactList {
 			sm.addString(name);
 			activeChar.sendPacket(sm);
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error found in " + activeChar.getName() + "'s ContactsList: " + e.getMessage(), e);
+			log.warn("Error found in " + activeChar.getName() + "'s ContactsList: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

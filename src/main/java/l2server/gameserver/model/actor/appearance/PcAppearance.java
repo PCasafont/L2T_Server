@@ -16,13 +16,13 @@
 package l2server.gameserver.model.actor.appearance;
 
 import l2server.gameserver.events.instanced.EventInstance.EventType;
-import l2server.gameserver.model.actor.instance.L2ApInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.ApInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 public class PcAppearance {
 	// =========================================================
 	// Data Field
-	private L2PcInstance owner;
+	private Player owner;
 
 	private int face;
 	private int hairColor;
@@ -108,7 +108,7 @@ public class PcAppearance {
 			return "";
 		}
 
-		if (owner instanceof L2ApInstance) {
+		if (owner instanceof ApInstance) {
 			String title = "L2 Tenkai";
 			if (owner.getParty() != null) {
 				title += " #" + owner.getParty().getLeader().getObjectId() % 100;
@@ -219,14 +219,14 @@ public class PcAppearance {
 	/**
 	 * @param owner The owner to set.
 	 */
-	public void setOwner(L2PcInstance owner) {
+	public void setOwner(Player owner) {
 		this.owner = owner;
 	}
 
 	/**
 	 * @return Returns the owner.
 	 */
-	public L2PcInstance getOwner() {
+	public Player getOwner() {
 		return owner;
 	}
 }

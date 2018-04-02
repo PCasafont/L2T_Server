@@ -19,9 +19,9 @@ import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.Collection;
 import java.util.concurrent.ScheduledFuture;
@@ -38,8 +38,8 @@ import java.util.concurrent.ScheduledFuture;
 
 public class ClanFlag extends L2AttackableAIScript {
 	private static final int clanFlagId = 19269;
-	private static final L2Skill clanRising = SkillTable.getInstance().getInfo(15095, 1);
-	private static final L2Skill clanCurse = SkillTable.getInstance().getInfo(15096, 1);
+	private static final Skill clanRising = SkillTable.getInstance().getInfo(15095, 1);
+	private static final Skill clanCurse = SkillTable.getInstance().getInfo(15096, 1);
 
 	public ClanFlag(int id, String name, String descr) {
 		super(id, name, descr);
@@ -48,7 +48,7 @@ public class ClanFlag extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public final String onSpawn(Npc npc) {
 		npc.disableCoreAI(true);
 
 		ClanFlagAI ai = new ClanFlagAI(npc);
@@ -59,10 +59,10 @@ public class ClanFlag extends L2AttackableAIScript {
 	}
 
 	class ClanFlagAI implements Runnable {
-		private L2Npc clanFlag;
+		private Npc clanFlag;
 		private ScheduledFuture<?> schedule = null;
 
-		protected ClanFlagAI(L2Npc npc) {
+		protected ClanFlagAI(Npc npc) {
 			clanFlag = npc;
 		}
 
@@ -81,14 +81,14 @@ public class ClanFlag extends L2AttackableAIScript {
 
 			clanFlag.setTitle(clanFlag.getOwner().getClan().getName());
 
-			Collection<L2PcInstance> players = clanFlag.getKnownList().getKnownPlayersInRadius(2000);
-			for (L2PcInstance player : players) {
+			Collection<Player> players = clanFlag.getKnownList().getKnownPlayersInRadius(2000);
+			for (Player player : players) {
 				doAction(player, clanFlag);
 			}
 		}
 	}
 
-	private void doAction(L2PcInstance target, L2Npc npc) {
+	private void doAction(Player target, Npc npc) {
 		if (target == null || npc == null || npc.getOwner() == null) {
 			return;
 		}

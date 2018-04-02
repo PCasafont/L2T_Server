@@ -20,13 +20,13 @@ import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.L2ExtractableProductItem;
 import l2server.gameserver.model.L2ExtractableSkill;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.util.Rnd;
 
 /**
@@ -36,11 +36,11 @@ public class Extractable implements ISkillHandler {
 	//FIXME: Remove this once skill reuse will be global for main/subclass.
 	//private static final int[] protectedSkillIds = { 323, 324, 419, 519, 520, 620, 1324, 1387, 11316 };
 
-	private static final L2SkillType[] SKILL_TYPES = {L2SkillType.EXTRACTABLE, L2SkillType.EXTRACTABLE_FISH};
+	private static final SkillType[] SKILL_TYPES = {SkillType.EXTRACTABLE, SkillType.EXTRACTABLE_FISH};
 
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		if (!(activeChar instanceof L2PcInstance)) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		if (!(activeChar instanceof Player)) {
 			return;
 		}
 
@@ -51,7 +51,7 @@ public class Extractable implements ISkillHandler {
 		}
 
 		if (exItem.getProductItemsArray().isEmpty()) {
-			log.warning("Extractable Item Skill with no data, probably wrong/empty table with Skill Id: " + skill.getId());
+			log.warn("Extractable Item Skill with no data, probably wrong/empty table with Skill Id: " + skill.getId());
 			return;
 		}
 
@@ -76,7 +76,7 @@ public class Extractable implements ISkillHandler {
 				for (int i = 0; i < expi.getId().length; i++) {
 					createItemID[i] = expi.getId()[i];
 
-					if (skill.getSkillType() == L2SkillType.EXTRACTABLE_FISH) {
+					if (skill.getSkillType() == SkillType.EXTRACTABLE_FISH) {
 						createAmount[i] = (int) (expi.getAmmount()[i] * Config.RATE_EXTR_FISH);
 					} else {
 						createAmount[i] = expi.getAmmount()[i];
@@ -87,7 +87,7 @@ public class Extractable implements ISkillHandler {
 			chanceFrom += chance;
 		}
 
-		L2PcInstance player = (L2PcInstance) activeChar;
+		Player player = (Player) activeChar;
 
 		//FIXME: remove this once skill reuse will be global for main/subclass.
 		/*
@@ -108,7 +108,7 @@ public class Extractable implements ISkillHandler {
 				}
 
 				if (ItemTable.getInstance().createDummyItem(createItemID[i]) == null) {
-					log.warning("Extractable Item Skill Id:" + skill.getId() + " createItemID " + createItemID[i] + " doesn't have a template!");
+					log.warn("Extractable Item Skill Id:" + skill.getId() + " createItemID " + createItemID[i] + " doesn't have a template!");
 					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOTHING_INSIDE_THAT));
 					return;
 				}
@@ -140,7 +140,7 @@ public class Extractable implements ISkillHandler {
 	}
 
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_TYPES;
 	}
 }

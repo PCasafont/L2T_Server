@@ -15,33 +15,34 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 public class EffectDirectPcDmg extends L2Effect {
-	public EffectDirectPcDmg(Env env, L2EffectTemplate template) {
+	public EffectDirectPcDmg(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.DEBUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.DEBUFF;
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onStart() {
-		if (getEffected().isDead() || !(getEffected() instanceof L2PcInstance) || getEffected().getLevel() < 85) {
+		if (getEffected().isDead() || !(getEffected() instanceof Player) || getEffected().getLevel() < 85) {
 			return false;
 		}
 		
 		double damage = calc();
-		((L2PcInstance) getEffected()).getStatus().reduceHp(damage, getEffector(), true, false, false, true, false);
+		((Player) getEffected()).getStatus().reduceHp(damage, getEffector(), true, false, false, true, false);
 		
 		return true;
 	}

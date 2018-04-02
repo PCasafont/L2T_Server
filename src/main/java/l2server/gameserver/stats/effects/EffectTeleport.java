@@ -18,14 +18,15 @@ package l2server.gameserver.stats.effects;
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.network.serverpackets.FlyToLocation;
 import l2server.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.EffectTemplate;
 import l2server.gameserver.util.Util;
 
 /**
@@ -49,14 +50,14 @@ import l2server.gameserver.util.Util;
  * @author House
  */
 public class EffectTeleport extends L2Effect {
-	private L2Character actor;
+	private Creature actor;
 
-	public EffectTeleport(Env env, L2EffectTemplate template) {
+	public EffectTeleport(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
@@ -101,7 +102,7 @@ public class EffectTeleport extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

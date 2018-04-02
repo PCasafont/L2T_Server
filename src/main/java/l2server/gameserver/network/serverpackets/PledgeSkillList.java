@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 
 /**
  * Format: (ch) dd[dd][ddd]
@@ -24,7 +24,7 @@ import l2server.gameserver.model.L2Skill;
  * @author -Wooden-
  */
 public class PledgeSkillList extends L2GameServerPacket {
-	private L2Skill[] skills;
+	private Skill[] skills;
 	private SubPledgeSkill[] subSkills;
 
 	public static class SubPledgeSkill {
@@ -51,7 +51,7 @@ public class PledgeSkillList extends L2GameServerPacket {
 	protected final void writeImpl() {
 		writeD(skills.length);
 		writeD(subSkills.length); // squad skill length
-		for (L2Skill sk : skills) {
+		for (Skill sk : skills) {
 			writeD(sk.getId());
 			writeD(sk.getLevelHash());
 		}

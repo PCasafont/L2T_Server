@@ -16,49 +16,50 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.ai.CtrlEvent;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2EffectPointInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.EffectPointInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @author Forsaiken
  */
 public class EffectSignetAntiSummon extends L2Effect {
-	private L2EffectPointInstance actor;
+	private EffectPointInstance actor;
 
-	public EffectSignetAntiSummon(Env env, L2EffectTemplate template) {
+	public EffectSignetAntiSummon(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.SIGNET_GROUND;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.SIGNET_GROUND;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		if (!(getEffector() instanceof L2PcInstance)) {
+		if (!(getEffector() instanceof Player)) {
 			return false;
 		}
 
-		actor = (L2EffectPointInstance) getEffected();
+		actor = (EffectPointInstance) getEffected();
 		return true;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {
@@ -68,27 +69,27 @@ public class EffectSignetAntiSummon extends L2Effect {
 
 		int mpConsume = getSkill().getMpConsume();
 
-		L2PcInstance caster = (L2PcInstance) getEffector();
+		Player caster = (Player) getEffector();
 
-		for (L2Character cha : actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius())) {
+		for (Creature cha : actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius())) {
 			if (cha == null) {
 				continue;
 			}
 
-			if (cha instanceof L2PcInstance) {
-				L2PcInstance player = (L2PcInstance) cha;
-				if (!player.isInsideZone(L2Character.ZONE_PVP) && player.getPvpFlag() == 0) {
+			if (cha instanceof Player) {
+				Player player = (Player) cha;
+				if (!player.isInsideZone(Creature.ZONE_PVP) && player.getPvpFlag() == 0) {
 					continue;
 				}
 			}
 
-			if (cha instanceof L2Playable) {
+			if (cha instanceof Playable) {
 				if (caster.canAttackCharacter(cha)) {
-					L2PcInstance owner = null;
-					if (cha instanceof L2Summon) {
-						owner = ((L2Summon) cha).getOwner();
+					Player owner = null;
+					if (cha instanceof Summon) {
+						owner = ((Summon) cha).getOwner();
 					} else {
-						owner = (L2PcInstance) cha;
+						owner = (Player) cha;
 					}
 
 					if (owner != null && (owner.getPet() != null || !owner.getSummons().isEmpty())) {
@@ -102,7 +103,7 @@ public class EffectSignetAntiSummon extends L2Effect {
 						if (owner.getPet() != null) {
 							owner.getPet().unSummon(owner);
 						}
-						for (L2SummonInstance summon : owner.getSummons()) {
+						for (SummonInstance summon : owner.getSummons()) {
 							summon.unSummon(owner);
 						}
 						owner.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, getEffector());
@@ -114,7 +115,7 @@ public class EffectSignetAntiSummon extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {

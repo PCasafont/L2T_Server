@@ -16,10 +16,11 @@
 package l2server.gameserver.model.itemcontainer;
 
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2ItemInstance.ItemLocation;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Item.ItemLocation;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.logging.Level;
 
@@ -27,9 +28,12 @@ import java.util.logging.Level;
  * @author DS
  */
 public class PcRefund extends ItemContainer {
-	private L2PcInstance owner;
+	private static Logger log = LoggerFactory.getLogger(PcRefund.class.getName());
 
-	public PcRefund(L2PcInstance owner) {
+
+	private Player owner;
+
+	public PcRefund(Player owner) {
 		this.owner = owner;
 	}
 
@@ -39,7 +43,7 @@ public class PcRefund extends ItemContainer {
 	}
 
 	@Override
-	public L2PcInstance getOwner() {
+	public Player getOwner() {
 		return owner;
 	}
 
@@ -49,11 +53,11 @@ public class PcRefund extends ItemContainer {
 	}
 
 	@Override
-	protected void addItem(L2ItemInstance item) {
+	protected void addItem(Item item) {
 		super.addItem(item);
 		try {
 			if (getSize() > 12) {
-				L2ItemInstance removedItem = null;
+				Item removedItem = null;
 				synchronized (items) {
 					removedItem = items.remove(0);
 				}
@@ -64,7 +68,7 @@ public class PcRefund extends ItemContainer {
 				}
 			}
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "addItem()", e);
+			log.error("addItem()", e);
 		}
 	}
 
@@ -75,14 +79,14 @@ public class PcRefund extends ItemContainer {
 	@Override
 	public void deleteMe() {
 		try {
-			for (L2ItemInstance item : items.values()) {
+			for (Item item : items.values()) {
 				if (item != null) {
 					ItemTable.getInstance().destroyItem("ClearRefund", item, getOwner(), null);
 					item.updateDatabase(true);
 				}
 			}
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "deleteMe()", e);
+			log.error("deleteMe()", e);
 		}
 		items.clear();
 	}

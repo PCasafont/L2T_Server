@@ -18,14 +18,14 @@ package l2server.gameserver;
 import l2server.Config;
 import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.instancemanager.DayNightSpawnManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.Creature;
 import l2server.util.loader.annotations.Load;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
 
 /**
  * Removed TimerThread watcher [DrHouse]
@@ -33,6 +33,8 @@ import java.util.logging.Level;
  * @version $Date: 2010/02/02 22:43:00 $
  */
 public class TimeController {
+	private static Logger log = LoggerFactory.getLogger(TimeController.class.getName());
+	
 	public static final int TICKS_PER_SECOND = 10; // not able to change this without checking through code
 	public static final int MILLIS_IN_TICK = 1000 / TICKS_PER_SECOND;
 	public static final int IG_DAYS_PER_DAY = 6;
@@ -47,7 +49,7 @@ public class TimeController {
 	protected static boolean isNight = false;
 	protected static boolean interruptRequest = false;
 	
-	private static final ConcurrentHashMap<Integer, L2Character> movingObjects = new ConcurrentHashMap<>();
+	private static final ConcurrentHashMap<Integer, Creature> movingObjects = new ConcurrentHashMap<>();
 	
 	protected static TimerThread timer;
 	
@@ -85,14 +87,14 @@ public class TimeController {
 	}
 	
 	/**
-	 * Add a L2Character to movingObjects of GameTimeController.<BR><BR>
+	 * Add a Creature to movingObjects of GameTimeController.<BR><BR>
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR><BR>
-	 * All L2Character in movement are identified in <B>movingObjects</B> of GameTimeController.<BR><BR>
+	 * All Creature in movement are identified in <B>movingObjects</B> of GameTimeController.<BR><BR>
 	 *
-	 * @param cha The L2Character to add to movingObjects of GameTimeController
+	 * @param cha The Creature to add to movingObjects of GameTimeController
 	 */
-	public void registerMovingObject(L2Character cha) {
+	public void registerMovingObject(Creature cha) {
 		if (cha == null) {
 			return;
 		}
@@ -104,20 +106,20 @@ public class TimeController {
 	 * Move all L2Characters contained in movingObjects of GameTimeController.<BR><BR>
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR><BR>
-	 * All L2Character in movement are identified in <B>movingObjects</B> of GameTimeController.<BR><BR>
+	 * All Creature in movement are identified in <B>movingObjects</B> of GameTimeController.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Update the position of each L2Character </li>
-	 * <li>If movement is finished, the L2Character is removed from movingObjects </li>
-	 * <li>Create a task to update the knownObject and knowPlayers of each L2Character that finished its movement and of their already known L2Object then notify AI with EVT_ARRIVED </li><BR><BR>
+	 * <li>Update the position of each Creature </li>
+	 * <li>If movement is finished, the Creature is removed from movingObjects </li>
+	 * <li>Create a task to update the knownObject and knowPlayers of each Creature that finished its movement and of their already known WorldObject then notify AI with EVT_ARRIVED </li><BR><BR>
 	 */
 	protected void moveObjects() {
-		// Go throw the table containing L2Character in movement
-		Iterator<Map.Entry<Integer, L2Character>> it = movingObjects.entrySet().iterator();
+		// Go throw the table containing Creature in movement
+		Iterator<Map.Entry<Integer, Creature>> it = movingObjects.entrySet().iterator();
 		while (it.hasNext()) {
-			// If movement is finished, the L2Character is removed from
+			// If movement is finished, the Creature is removed from
 			// movingObjects and added to the ArrayList ended
-			L2Character ch = it.next().getValue();
+			Creature ch = it.next().getValue();
 			if (ch.updatePosition(gameTicks)) {
 				it.remove();
 				ThreadPoolManager.getInstance().executeTask(new MovingObjectArrived(ch));
@@ -169,21 +171,21 @@ public class TimeController {
 						return;
 					}
 					
-					Log.log(Level.WARNING, "", ie);
+					log.warn("", ie);
 				} catch (Exception e) {
-					Log.log(Level.WARNING, "", e);
+					log.warn("", e);
 				}
 			}
 		}
 	}
 	
 	/**
-	 * Update the knownObject and knowPlayers of each L2Character that finished its movement and of their already known L2Object then notify AI with EVT_ARRIVED.<BR><BR>
+	 * Update the knownObject and knowPlayers of each Creature that finished its movement and of their already known WorldObject then notify AI with EVT_ARRIVED.<BR><BR>
 	 */
 	private static class MovingObjectArrived implements Runnable {
-		private final L2Character ended;
+		private final Creature ended;
 		
-		MovingObjectArrived(L2Character ended) {
+		MovingObjectArrived(Creature ended) {
 			this.ended = ended;
 		}
 		
@@ -198,7 +200,7 @@ public class TimeController {
 					ended.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED);
 				}
 			} catch (NullPointerException e) {
-				Log.log(Level.WARNING, "", e);
+				log.warn("", e);
 			}
 		}
 	}

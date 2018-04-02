@@ -15,9 +15,9 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.stats.VisualEffect;
 
 import java.util.Set;
@@ -30,7 +30,7 @@ import java.util.Set;
 public class PetInfo extends L2GameServerPacket {
 	//
 
-	private L2Summon summon;
+	private Summon summon;
 	private int x, y, z, heading;
 	private boolean isSummoned;
 	private int val;
@@ -43,7 +43,7 @@ public class PetInfo extends L2GameServerPacket {
 	/**
 	 * rev 478  dddddddddddddddddddffffdddcccccSSdddddddddddddddddddddddddddhc
 	 */
-	public PetInfo(L2Summon summon, int val) {
+	public PetInfo(Summon summon, int val) {
 		this.summon = summon;
 		isSummoned = summon.isShowSummonAnimation();
 		x = summon.getX();
@@ -60,12 +60,12 @@ public class PetInfo extends L2GameServerPacket {
 		maxHp = summon.getMaxVisibleHp();
 		maxMp = summon.getMaxMp();
 		this.val = val;
-		if (summon instanceof L2PetInstance) {
-			L2PetInstance pet = (L2PetInstance) summon;
+		if (summon instanceof PetInstance) {
+			PetInstance pet = (PetInstance) summon;
 			curFed = pet.getCurrentFed(); // how fed it is
 			maxFed = pet.getMaxFed(); //max fed it can be
-		} else if (summon instanceof L2SummonInstance) {
-			L2SummonInstance sum = (L2SummonInstance) summon;
+		} else if (summon instanceof SummonInstance) {
+			SummonInstance sum = (SummonInstance) summon;
 			curFed = sum.getTimeRemaining();
 			maxFed = sum.getTotalLifeTime();
 		}
@@ -123,7 +123,7 @@ public class PetInfo extends L2GameServerPacket {
 		}
 
 		writeQ(summon.getExpForNextLevel());// 100% absoulte value
-		writeD(summon instanceof L2PetInstance ? summon.getInventory().getTotalWeight() : 0);//weight
+		writeD(summon instanceof PetInstance ? summon.getInventory().getTotalWeight() : 0);//weight
 		writeD(summon.getMaxLoad());//max weight it can carry
 		writeD(summon.getPAtk(null));//patk
 		writeD(summon.getPDef(null));//pdef
@@ -134,7 +134,7 @@ public class PetInfo extends L2GameServerPacket {
 		writeD(summon.getMDef(null, null));//mdef
 		writeD(summon.getMAccuracy()); // M. Accuracy
 		writeD(summon.getMEvasionRate(null)); // M. Evasion
-		//Log.info(summon.getMEvasionRate(null)); // M. Evasion
+		//log.info(summon.getMEvasionRate(null)); // M. Evasion
 		writeD(summon.getMCriticalHit(null, null)); // M. Critical
 		writeD((int) summon.getStat().getMoveSpeed());//speed
 		writeD(summon.getPAtkSpd());//atkspeed

@@ -6,12 +6,12 @@ import l2server.gameserver.events.instanced.EventConfig;
 import l2server.gameserver.events.instanced.EventInstance;
 import l2server.gameserver.events.instanced.EventTeleporter;
 import l2server.gameserver.instancemanager.PlayerAssistsManager;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.stats.VisualEffect;
 
 import java.util.ArrayList;
@@ -21,9 +21,9 @@ import java.util.List;
  * @author Pere
  */
 public class CursedBattle extends EventInstance {
-	private L2PcInstance cursedPlayer;
+	private Player cursedPlayer;
 
-	List<L2PcInstance> winners = new ArrayList<>();
+	List<Player> winners = new ArrayList<>();
 
 	public CursedBattle(int id, EventConfig config) {
 		super(id, config);
@@ -43,7 +43,7 @@ public class CursedBattle extends EventInstance {
 		} else if (lvl > 11) {
 			lvl = 11;
 		}
-		L2Skill curse = SkillTable.getInstance().getInfo(9940, lvl);
+		Skill curse = SkillTable.getInstance().getInfo(9940, lvl);
 		cursedPlayer.addSkill(curse, false);
 		cursedPlayer.setCurrentHp(cursedPlayer.getMaxHp());
 		cursedPlayer.startVisualEffect(VisualEffect.S_AIR_STUN);
@@ -74,7 +74,7 @@ public class CursedBattle extends EventInstance {
 	}
 
 	@Override
-	public String getRunningInfo(L2PcInstance player) {
+	public String getRunningInfo(Player player) {
 		String html = "";
 		if (cursedPlayer == null) {
 			cursedPlayer = selectRandomParticipant();
@@ -88,24 +88,24 @@ public class CursedBattle extends EventInstance {
 	}
 
 	@Override
-	public boolean onAction(L2PcInstance playerInstance, int targetedPlayerObjectId) {
+	public boolean onAction(Player playerInstance, int targetedPlayerObjectId) {
 		return !(!isCursedPlayer(targetedPlayerObjectId) && !isCursedPlayer(playerInstance.getObjectId()));
 	}
 
 	@Override
-	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayer) {
+	public void onKill(Creature killerCharacter, Player killedPlayer) {
 		if (killedPlayer == null || !isState(EventState.STARTED)) {
 			return;
 		}
 
 		new EventTeleporter(killedPlayer, teams[0].getCoords(), false, false);
 
-		L2PcInstance killerPlayer = null;
+		Player killerPlayer = null;
 
-		if (killerCharacter instanceof L2PetInstance || killerCharacter instanceof L2SummonInstance) {
-			killerPlayer = ((L2Summon) killerCharacter).getOwner();
-		} else if (killerCharacter instanceof L2PcInstance) {
-			killerPlayer = (L2PcInstance) killerCharacter;
+		if (killerCharacter instanceof PetInstance || killerCharacter instanceof SummonInstance) {
+			killerPlayer = ((Summon) killerCharacter).getOwner();
+		} else if (killerCharacter instanceof Player) {
+			killerPlayer = (Player) killerCharacter;
 		}
 
 		if (cursedPlayer == null || !cursedPlayer.isOnline() || !isPlayerParticipant(cursedPlayer.getObjectId())) {
@@ -116,7 +116,7 @@ public class CursedBattle extends EventInstance {
 			} else if (lvl > 11) {
 				lvl = 11;
 			}
-			L2Skill curse = SkillTable.getInstance().getInfo(9940, lvl);
+			Skill curse = SkillTable.getInstance().getInfo(9940, lvl);
 			cursedPlayer.addSkill(curse, false);
 			cursedPlayer.setCurrentHp(cursedPlayer.getMaxHp());
 			cursedPlayer.startVisualEffect(VisualEffect.S_AIR_STUN);
@@ -125,15 +125,15 @@ public class CursedBattle extends EventInstance {
 			killedPlayer.removeSkill(9940);
 			killedPlayer.stopVisualEffect(VisualEffect.S_AIR_STUN);
 			killedPlayer.broadcastUserInfo();
-			if (killerCharacter instanceof L2PcInstance && killedPlayer.getObjectId() != killerCharacter.getObjectId()) {
-				cursedPlayer = (L2PcInstance) killerCharacter;
+			if (killerCharacter instanceof Player && killedPlayer.getObjectId() != killerCharacter.getObjectId()) {
+				cursedPlayer = (Player) killerCharacter;
 				int lvl = (int) Math.round(Math.log10(getParticipatedPlayersCount()) / Math.log10(2));
 				if (lvl < 1) {
 					lvl = 1;
 				} else if (lvl > 11) {
 					lvl = 11;
 				}
-				L2Skill curse = SkillTable.getInstance().getInfo(9940, lvl);
+				Skill curse = SkillTable.getInstance().getInfo(9940, lvl);
 				cursedPlayer.addSkill(curse, false);
 				cursedPlayer.setCurrentHp(cursedPlayer.getMaxHp());
 				cursedPlayer.startVisualEffect(VisualEffect.S_AIR_STUN);
@@ -143,8 +143,8 @@ public class CursedBattle extends EventInstance {
 						". Now he is the cursed player!");
 
 				killerPlayer.addEventPoints(3);
-				List<L2PcInstance> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
-				for (L2PcInstance assistant : assistants) {
+				List<Player> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
+				for (Player assistant : assistants) {
 					assistant.addEventPoints(1);
 				}
 			} else {

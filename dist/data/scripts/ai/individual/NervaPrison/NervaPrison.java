@@ -18,13 +18,13 @@ package ai.individual.NervaPrison;
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.zone.ZoneType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,7 +48,7 @@ public class NervaPrison extends L2AttackableAIScript {
 	private static final int kaysen = 19458;
 	private static final int nervaKey = 36665;
 	private static final int kaiser = 23329;
-	private static final Map<L2ZoneType, List<L2DoorInstance>> prisons = new HashMap<L2ZoneType, List<L2DoorInstance>>();
+	private static final Map<ZoneType, List<DoorInstance>> prisons = new HashMap<ZoneType, List<DoorInstance>>();
 
 	public NervaPrison(int id, String name, String descr) {
 		super(id, name, descr);
@@ -60,11 +60,11 @@ public class NervaPrison extends L2AttackableAIScript {
 		addSpawnId(kaysen);
 
 		for (int i = 60052; i <= 60059; i++) {
-			List<L2DoorInstance> doors = new ArrayList<L2DoorInstance>(2);
-			L2ZoneType zone = ZoneManager.getInstance().getZoneById(i);
-			for (L2Character door : zone.getCharactersInside().values()) {
-				if (door instanceof L2DoorInstance) {
-					doors.add((L2DoorInstance) door);
+			List<DoorInstance> doors = new ArrayList<DoorInstance>(2);
+			ZoneType zone = ZoneManager.getInstance().getZoneById(i);
+			for (Creature door : zone.getCharactersInside().values()) {
+				if (door instanceof DoorInstance) {
+					doors.add((DoorInstance) door);
 				}
 			}
 
@@ -73,21 +73,21 @@ public class NervaPrison extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		if (npc.getNpcId() == doorNpc) {
 			if (!player.destroyItemByItemId(qn, nervaKey, 1, player, true)) {
 				return "19459-1.html";
 			}
 
-			for (Entry<L2ZoneType, List<L2DoorInstance>> currentZone : prisons.entrySet()) {
+			for (Entry<ZoneType, List<DoorInstance>> currentZone : prisons.entrySet()) {
 				if (currentZone.getKey().isInsideZone(npc)) {
-					for (L2DoorInstance door : currentZone.getValue()) {
+					for (DoorInstance door : currentZone.getValue()) {
 						if (door.getOpen()) {
 							return super.onFirstTalk(npc, player); //Cheating
 						}
 					}
 
-					for (L2DoorInstance door : currentZone.getValue()) {
+					for (DoorInstance door : currentZone.getValue()) {
 						door.openMe();
 					}
 				}
@@ -98,17 +98,17 @@ public class NervaPrison extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		if (!npc.isDead() && npc.isInsideRadius(player, 50, false, false)) {
-			for (Entry<L2ZoneType, List<L2DoorInstance>> currentZone : prisons.entrySet()) {
+			for (Entry<ZoneType, List<DoorInstance>> currentZone : prisons.entrySet()) {
 				if (currentZone.getKey().isInsideZone(npc)) {
-					for (L2DoorInstance door : currentZone.getValue()) {
+					for (DoorInstance door : currentZone.getValue()) {
 						if (!door.getOpen()) {
 							return super.onFirstTalk(npc, player); //Cheating
 						}
 					}
 
-					for (L2DoorInstance door : currentZone.getValue()) {
+					for (DoorInstance door : currentZone.getValue()) {
 						door.closeMe();
 					}
 				}
@@ -116,8 +116,8 @@ public class NervaPrison extends L2AttackableAIScript {
 
 			npc.deleteMe();
 
-			L2MonsterInstance kaiser =
-					(L2MonsterInstance) addSpawn(NervaPrison.kaiser, npc.getX(), npc.getY(), npc.getZ(), 0, false, 180000, false); //3min
+			MonsterInstance kaiser =
+					(MonsterInstance) addSpawn(NervaPrison.kaiser, npc.getX(), npc.getY(), npc.getZ(), 0, false, 180000, false); //3min
 			kaiser.setTarget(player);
 			kaiser.addDamageHate(player, 500, 99999);
 			kaiser.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
@@ -128,10 +128,10 @@ public class NervaPrison extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
-		for (Entry<L2ZoneType, List<L2DoorInstance>> currentZone : prisons.entrySet()) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
+		for (Entry<ZoneType, List<DoorInstance>> currentZone : prisons.entrySet()) {
 			if (currentZone.getKey().isInsideZone(npc)) {
-				for (L2DoorInstance door : currentZone.getValue()) {
+				for (DoorInstance door : currentZone.getValue()) {
 					door.openMe();
 				}
 			}
@@ -140,20 +140,20 @@ public class NervaPrison extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc) {
-		for (Entry<L2ZoneType, List<L2DoorInstance>> currentZone : prisons.entrySet()) {
+	public final String onSpawn(Npc npc) {
+		for (Entry<ZoneType, List<DoorInstance>> currentZone : prisons.entrySet()) {
 			if (currentZone.getKey().isInsideZone(npc)) {
-				for (L2DoorInstance door : currentZone.getValue()) {
+				for (DoorInstance door : currentZone.getValue()) {
 					door.closeMe();
 				}
 
 				//Kick players inside...
-				for (L2Character chara : currentZone.getKey().getCharactersInside().values()) {
+				for (Creature chara : currentZone.getKey().getCharactersInside().values()) {
 					if (chara == null) {
 						continue;
 					}
 
-					if (chara instanceof L2Playable) {
+					if (chara instanceof Playable) {
 						chara.teleToLocation(npc.getX(), npc.getY() + 500, npc.getZ());
 					}
 				}

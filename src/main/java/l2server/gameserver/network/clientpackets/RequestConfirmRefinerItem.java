@@ -17,8 +17,8 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.LifeStoneTable;
 import l2server.gameserver.datatables.LifeStoneTable.LifeStone;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExPutIntensiveResultForVariationMake;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -41,17 +41,17 @@ public class RequestConfirmRefinerItem extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
 		
-		final L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(targetItemObjId);
+		final Item targetItem = activeChar.getInventory().getItemByObjectId(targetItemObjId);
 		if (targetItem == null) {
 			return;
 		}
 		
-		final L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(refinerItemObjId);
+		final Item refinerItem = activeChar.getInventory().getItemByObjectId(refinerItemObjId);
 		if (refinerItem == null) {
 			return;
 		}

@@ -19,9 +19,9 @@ import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.PledgeSkillList;
@@ -29,8 +29,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.util.StringUtil;
 
 import java.util.StringTokenizer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:
@@ -50,17 +48,16 @@ import java.util.logging.Logger;
  * Small fixes by Zoey76 24/02/2011
  */
 public class AdminSkill implements IAdminCommandHandler {
-	private static Logger log = Logger.getLogger(AdminSkill.class.getName());
 
 	private static final String[] ADMIN_COMMANDS =
 			{"admin_show_skills", "admin_remove_skills", "admin_skill_list", "admin_skill_index", "admin_add_skill", "admin_remove_skill",
 					"admin_get_skills", "admin_reset_skills", "admin_give_all_skills", "admin_remove_all_skills", "admin_add_clan_skill",
 					"admin_setskill"};
 
-	private static L2Skill[] adminSkills;
+	private static Skill[] adminSkills;
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.equals("admin_show_skills")) {
 			showMainPage(activeChar);
 		} else if (command.startsWith("admin_remove_skills")) {
@@ -99,9 +96,9 @@ public class AdminSkill implements IAdminCommandHandler {
 		} else if (command.equals("admin_give_all_skills")) {
 			adminGiveAllSkills(activeChar);
 		} else if (command.equals("admin_remove_all_skills")) {
-			if (activeChar.getTarget() instanceof L2PcInstance) {
-				L2PcInstance player = (L2PcInstance) activeChar.getTarget();
-				for (L2Skill skill : player.getAllSkills()) {
+			if (activeChar.getTarget() instanceof Player) {
+				Player player = (Player) activeChar.getTarget();
+				for (Skill skill : player.getAllSkills()) {
 					player.removeSkill(skill);
 				}
 				activeChar.sendMessage("You removed all skills from " + player.getName());
@@ -120,7 +117,7 @@ public class AdminSkill implements IAdminCommandHandler {
 			String[] split = command.split(" ");
 			int id = Integer.parseInt(split[1]);
 			int lvl = Integer.parseInt(split[2]);
-			L2Skill skill = SkillTable.getInstance().getInfo(id, lvl);
+			Skill skill = SkillTable.getInstance().getInfo(id, lvl);
 			activeChar.addSkill(skill);
 			activeChar.sendSkillList();
 			activeChar.sendMessage("You added yourself skill " + skill.getName() + "(" + id + ") level " + lvl);
@@ -133,11 +130,11 @@ public class AdminSkill implements IAdminCommandHandler {
 	 *
 	 * @param activeChar: the gm char
 	 */
-	private void adminGiveAllSkills(L2PcInstance activeChar) {
-		L2Object target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+	private void adminGiveAllSkills(Player activeChar) {
+		WorldObject target = activeChar.getTarget();
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
@@ -152,17 +149,17 @@ public class AdminSkill implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	private void removeSkillsPage(L2PcInstance activeChar, int page) { //TODO: Externalize HTML
-		L2Object target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+	private void removeSkillsPage(Player activeChar, int page) { //TODO: Externalize HTML
+		WorldObject target = activeChar.getTarget();
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return;
 		}
 
-		L2Skill[] skills = player.getAllSkills();
+		Skill[] skills = player.getAllSkills();
 
 		int maxSkillsPerPage = 10;
 		int maxPages = skills.length / maxSkillsPerPage;
@@ -231,11 +228,11 @@ public class AdminSkill implements IAdminCommandHandler {
 		activeChar.sendPacket(adminReply);
 	}
 
-	private void showMainPage(L2PcInstance activeChar) {
-		L2Object target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+	private void showMainPage(Player activeChar) {
+		WorldObject target = activeChar.getTarget();
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
@@ -248,11 +245,11 @@ public class AdminSkill implements IAdminCommandHandler {
 		activeChar.sendPacket(adminReply);
 	}
 
-	private void adminGetSkills(L2PcInstance activeChar) {
-		L2Object target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+	private void adminGetSkills(Player activeChar) {
+		WorldObject target = activeChar.getTarget();
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
@@ -260,12 +257,12 @@ public class AdminSkill implements IAdminCommandHandler {
 		if (player.getName().equals(activeChar.getName())) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_USE_ON_YOURSELF));
 		} else {
-			L2Skill[] skills = player.getAllSkills();
+			Skill[] skills = player.getAllSkills();
 			adminSkills = activeChar.getAllSkills();
-			for (L2Skill skill : adminSkills) {
+			for (Skill skill : adminSkills) {
 				activeChar.removeSkill(skill);
 			}
-			for (L2Skill skill : skills) {
+			for (Skill skill : skills) {
 				activeChar.addSkill(skill, true);
 			}
 			activeChar.sendMessage("You now have all the skills of " + player.getName() + ".");
@@ -274,11 +271,11 @@ public class AdminSkill implements IAdminCommandHandler {
 		showMainPage(activeChar);
 	}
 
-	private void adminResetSkills(L2PcInstance activeChar) {
-		L2Object target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+	private void adminResetSkills(Player activeChar) {
+		WorldObject target = activeChar.getTarget();
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
@@ -286,17 +283,17 @@ public class AdminSkill implements IAdminCommandHandler {
 		if (adminSkills == null) {
 			activeChar.sendMessage("You must get the skills of someone in order to do this.");
 		} else {
-			L2Skill[] skills = player.getAllSkills();
-			for (L2Skill skill : skills) {
+			Skill[] skills = player.getAllSkills();
+			for (Skill skill : skills) {
 				player.removeSkill(skill);
 			}
-			for (L2Skill skill : activeChar.getAllSkills()) {
+			for (Skill skill : activeChar.getAllSkills()) {
 				player.addSkill(skill, true);
 			}
-			for (L2Skill skill : skills) {
+			for (Skill skill : skills) {
 				activeChar.removeSkill(skill);
 			}
-			for (L2Skill skill : adminSkills) {
+			for (Skill skill : adminSkills) {
 				activeChar.addSkill(skill, true);
 			}
 			player.sendMessage("[GM]" + activeChar.getName() + " updated your skills.");
@@ -308,11 +305,11 @@ public class AdminSkill implements IAdminCommandHandler {
 		showMainPage(activeChar);
 	}
 
-	private void adminAddSkill(L2PcInstance activeChar, String val) {
-		L2Object target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+	private void adminAddSkill(Player activeChar, String val) {
+		WorldObject target = activeChar.getTarget();
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			showMainPage(activeChar);
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
@@ -322,7 +319,7 @@ public class AdminSkill implements IAdminCommandHandler {
 		if (st.countTokens() != 2) {
 			showMainPage(activeChar);
 		} else {
-			L2Skill skill = null;
+			Skill skill = null;
 			try {
 				String id = st.nextToken();
 				String level = st.nextToken();
@@ -330,7 +327,7 @@ public class AdminSkill implements IAdminCommandHandler {
 				int levelval = Integer.parseInt(level);
 				skill = SkillTable.getInstance().getInfo(idval, levelval);
 			} catch (Exception e) {
-				log.log(Level.WARNING, "", e);
+				log.warn("", e);
 			}
 			if (skill != null) {
 				String name = skill.getName();
@@ -341,7 +338,7 @@ public class AdminSkill implements IAdminCommandHandler {
 				// Admin info.
 				activeChar.sendMessage("You gave the skill " + name + " to " + player.getName() + ".");
 				if (Config.DEBUG) {
-					log.fine("[GM]" + activeChar.getName() + " gave skill " + name + " to " + player.getName() + ".");
+					log.debug("[GM]" + activeChar.getName() + " gave skill " + name + " to " + player.getName() + ".");
 				}
 				activeChar.sendSkillList();
 			} else {
@@ -351,16 +348,16 @@ public class AdminSkill implements IAdminCommandHandler {
 		}
 	}
 
-	private void adminRemoveSkill(L2PcInstance activeChar, int idval) {
-		L2Object target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+	private void adminRemoveSkill(Player activeChar, int idval) {
+		WorldObject target = activeChar.getTarget();
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
 		}
-		L2Skill skill = SkillTable.getInstance().getInfo(idval, player.getSkillLevelHash(idval));
+		Skill skill = SkillTable.getInstance().getInfo(idval, player.getSkillLevelHash(idval));
 		if (skill != null) {
 			String skillname = skill.getName();
 			player.sendMessage("Admin removed the skill " + skillname + " from your skills list.");
@@ -368,7 +365,7 @@ public class AdminSkill implements IAdminCommandHandler {
 			//Admin information
 			activeChar.sendMessage("You removed the skill " + skillname + " from " + player.getName() + ".");
 			if (Config.DEBUG) {
-				log.fine("[GM]" + activeChar.getName() + " removed skill " + skillname + " from " + player.getName() + ".");
+				log.debug("[GM]" + activeChar.getName() + " removed skill " + skillname + " from " + player.getName() + ".");
 			}
 			activeChar.sendSkillList();
 		} else {
@@ -377,11 +374,11 @@ public class AdminSkill implements IAdminCommandHandler {
 		removeSkillsPage(activeChar, 0); //Back to previous page
 	}
 
-	private void adminAddClanSkill(L2PcInstance activeChar, int id, int level) {
-		L2Object target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+	private void adminAddClanSkill(Player activeChar, int id, int level) {
+		WorldObject target = activeChar.getTarget();
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			showMainPage(activeChar);
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
@@ -397,7 +394,7 @@ public class AdminSkill implements IAdminCommandHandler {
 			showMainPage(activeChar);
 			return;
 		} else {
-			L2Skill skill = SkillTable.getInstance().getInfo(id, level);
+			Skill skill = SkillTable.getInstance().getInfo(id, level);
 			if (skill != null) {
 				String skillname = skill.getName();
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_SKILL_S1_ADDED);
@@ -409,7 +406,7 @@ public class AdminSkill implements IAdminCommandHandler {
 				activeChar.sendMessage("You gave the Clan Skill: " + skillname + " to the clan " + clan.getName() + ".");
 
 				clan.broadcastToOnlineMembers(new PledgeSkillList(clan));
-				for (L2PcInstance member : clan.getOnlineMembers(0)) {
+				for (Player member : clan.getOnlineMembers(0)) {
 					member.sendSkillList();
 				}
 

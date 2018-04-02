@@ -15,18 +15,18 @@
 
 package l2server.gameserver.model.actor.knownlist;
 
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 
 public class VehicleKnownList extends CharKnownList {
-	public VehicleKnownList(L2Character activeChar) {
+	public VehicleKnownList(Creature activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public int getDistanceToForgetObject(L2Object object) {
-		if (!(object instanceof L2PcInstance)) {
+	public int getDistanceToForgetObject(WorldObject object) {
+		if (!(object instanceof Player)) {
 			return 0;
 		}
 
@@ -34,8 +34,8 @@ public class VehicleKnownList extends CharKnownList {
 	}
 
 	@Override
-	public int getDistanceToWatchObject(L2Object object) {
-		if (!(object instanceof L2PcInstance)) {
+	public int getDistanceToWatchObject(WorldObject object) {
+		if (!(object instanceof Player)) {
 			return 0;
 		}
 

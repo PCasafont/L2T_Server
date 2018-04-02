@@ -22,15 +22,16 @@ import l2server.gameserver.events.HiddenChests;
 import l2server.gameserver.handler.IVoicedCommandHandler;
 import l2server.gameserver.instancemanager.CustomOfflineBuffersManager;
 import l2server.gameserver.instancemanager.DiscussionManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.CharInfo;
 import l2server.gameserver.network.serverpackets.ExVoteSystemInfo;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.gameserver.stats.BaseStats;
 import l2server.gameserver.stats.Stats;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,6 +41,9 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 
 public class CustomVoiced implements IVoicedCommandHandler {
+	private static Logger log = LoggerFactory.getLogger(CustomVoiced.class.getName());
+
+
 	private static final String[] VOICED_COMMANDS = {"itemid", // shows item ID of an item
 			"event", // shows information about the event
 			"noexp", // ignores XP/SP gain when hunting
@@ -64,10 +68,10 @@ public class CustomVoiced implements IVoicedCommandHandler {
 			"offlinebuffer", "setPoint"};
 
 	/**
-	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, Player, java.lang.String)
 	 */
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance player, String params) {
+	public boolean useVoicedCommand(String command, Player player, String params) {
 		if (command.equalsIgnoreCase("itemid")) {
 			player.setIsItemId(true);
 			player.sendMessage("Double click on the item you want to know its itemid.");
@@ -93,7 +97,7 @@ public class CustomVoiced implements IVoicedCommandHandler {
 				statement.close();
 				player.sendMessage("You changed " + name + "'s points to " + Points);
 			} catch (Exception e) {
-				Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
+				log.error("Failed updating Ranked Points", e);
 			} finally {
 				L2DatabaseFactory.close(coni);
 			}
@@ -103,7 +107,7 @@ public class CustomVoiced implements IVoicedCommandHandler {
 				CustomCommunityBoard.getInstance().parseCmd("_bbscustom;currentEvent", player);
 			}
 		} else if (command.equalsIgnoreCase("remember")) {
-			if (!player.isInsideZone(L2Character.ZONE_TOWN)) {
+			if (!player.isInsideZone(Creature.ZONE_TOWN)) {
 				player.sendMessage("You cannot use the remember mode outside of town!");
 				return true;
 			}
@@ -159,7 +163,7 @@ public class CustomVoiced implements IVoicedCommandHandler {
 		} else if (command.equalsIgnoreCase("disablenicknamewings")) {
 			player.setNickNameWingsDisabled(!player.isNickNameWingsDisabled());
 
-			for (L2PcInstance pl : player.getKnownList().getKnownPlayers().values()) {
+			for (Player pl : player.getKnownList().getKnownPlayers().values()) {
 				if (pl == null) {
 					continue;
 				}
@@ -258,7 +262,7 @@ public class CustomVoiced implements IVoicedCommandHandler {
 		return true;
 	}
 
-	private void sendHiddenStats(L2PcInstance player) {
+	private void sendHiddenStats(Player player) {
 		String html = "<html>" + "<body>" +
 				"<center><table><tr><td><img src=icon.etc_alphabet_h_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_i_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_d_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_d_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_e_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_n_i00 width=32 height=32></td></tr></table></center>" +
 				"<center><table><tr><td><img src=icon.etc_alphabet_s_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_t_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_a_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_t_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_s_i00 width=32 height=32></td></tr></table></center><br><br>" +

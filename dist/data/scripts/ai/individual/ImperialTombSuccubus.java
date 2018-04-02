@@ -19,8 +19,8 @@ import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
@@ -56,7 +56,7 @@ public class ImperialTombSuccubus extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		if (Rnd.get(100) > 50) {
 			SkillTable.getInstance().getInfo(buffIds[Rnd.get(buffIds.length)], 1).getEffects(killer, killer);
 		}

@@ -6,18 +6,17 @@ import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2GuardInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.GuardInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.serverpackets.*;
-import l2server.gameserver.templates.skills.L2EffectType;
-import l2server.log.Log;
+import l2server.gameserver.templates.skills.EffectType;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -49,20 +48,20 @@ public class Halloween extends Quest {
 	private static final int jiniaId = 80333;
 	
 	//Vars
-	private static L2Npc boss = null;
-	private static L2Npc dummy = null;
+	private static Npc boss = null;
+	private static Npc dummy = null;
 	
-	private static L2Npc kegor = null;
-	private static L2Npc jinia = null;
+	private static Npc kegor = null;
+	private static Npc jinia = null;
 	
 	private static int eventState = 0;
 	private static int instanceId = 0;
 	private static int round = 0;
 	
 	//Others
-	private static List<L2Npc> allMinions = new ArrayList<L2Npc>();
-	private static List<L2Npc> townBuffers = new ArrayList<L2Npc>();
-	private static final L2Skill blessingOfHalloween = SkillTable.getInstance().getInfo(21129, 1);
+	private static List<Npc> allMinions = new ArrayList<Npc>();
+	private static List<Npc> townBuffers = new ArrayList<Npc>();
+	private static final Skill blessingOfHalloween = SkillTable.getInstance().getInfo(21129, 1);
 	
 	public Halloween(int questId, String name, String descr) {
 		super(questId, name, descr);
@@ -96,9 +95,9 @@ public class Halloween extends Quest {
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public final String onFirstTalk(Npc npc, Player player) {
 		if (Debug) {
-			Log.warning(getName() + ": onFirstTalk: " + player.getName());
+			log.warn(getName() + ": onFirstTalk: " + player.getName());
 		}
 		
 		if (npc.getNpcId() == pumpkinGhostId) {
@@ -113,18 +112,18 @@ public class Halloween extends Quest {
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (Debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 		
 		if (event.equalsIgnoreCase("stage_all_buff_players")) {
-			for (L2Npc buffers : townBuffers) {
+			for (Npc buffers : townBuffers) {
 				if (buffers == null) {
 					continue;
 				}
 				
-				for (L2PcInstance players : buffers.getKnownList().getKnownPlayersInRadius(15000)) {
+				for (Player players : buffers.getKnownList().getKnownPlayersInRadius(15000)) {
 					if (players == null) {
 						continue;
 					}
@@ -199,13 +198,13 @@ public class Halloween extends Quest {
 			
 			int minionId = minionIds[Rnd.get(minionIds.length)];
 			
-			L2Skill passiveSkill = SkillTable.getInstance().getInfo(passiveSkillId, round);
+			Skill passiveSkill = SkillTable.getInstance().getInfo(passiveSkillId, round);
 			if (round < 20) {
 				for (int i = 0; i < 60; i++) {
 					int x = (int) (600 * Math.cos(i * 0.618));
 					int y = (int) (600 * Math.sin(i * 0.618));
 					
-					L2Npc minion = addSpawn(minionId, 153569 + x, 142075 + y, -12742 + 20, -1, false, 0, false, instanceId);
+					Npc minion = addSpawn(minionId, 153569 + x, 142075 + y, -12742 + 20, -1, false, 0, false, instanceId);
 					minion.addSkill(passiveSkill);
 					minion.setCurrentHpMp(minion.getMaxHp(), minion.getMaxMp());
 					
@@ -225,12 +224,12 @@ public class Halloween extends Quest {
 			InstanceManager.getInstance().sendPacket(instanceId, new Earthquake(153581, 142081, -12741, 8, 10));
 			
 			//Paralyze the whole instance
-			for (L2PcInstance players : L2World.getInstance().getAllPlayersArray()) {
+			for (Player players : World.getInstance().getAllPlayersArray()) {
 				if (players == null || players.getInstanceId() != instanceId) {
 					continue;
 				}
 				
-				players.stopEffects(L2EffectType.PHOENIX_BLESSING);
+				players.stopEffects(EffectType.PHOENIX_BLESSING);
 				players.reduceCurrentHp(players.getMaxHp(), boss, null);
 				players.setIsImmobilized(true);
 			}
@@ -259,13 +258,13 @@ public class Halloween extends Quest {
 			
 			//Supports
 			kegor = addSpawn(kegorId, 153511, 142101, -12741, 62606, false, 0, false, instanceId);
-			((L2GuardInstance) kegor).setCanReturnToSpawnPoint(false);
+			((GuardInstance) kegor).setCanReturnToSpawnPoint(false);
 			kegor.setIsInvul(true);
 			kegor.setIsMortal(false);
 			kegor.setIsImmobilized(true);
 			
 			jinia = addSpawn(jiniaId, 153610, 142129, -12741, 40159, false, 0, false, instanceId);
-			((L2GuardInstance) jinia).setCanReturnToSpawnPoint(false);
+			((GuardInstance) jinia).setCanReturnToSpawnPoint(false);
 			jinia.setIsInvul(true);
 			jinia.setIsMortal(false);
 			jinia.setIsImmobilized(true);
@@ -301,7 +300,7 @@ public class Halloween extends Quest {
 			
 			startQuestTimer("stage_all_help_process_players_res", 7000, null, null);
 		} else if (event.equalsIgnoreCase("stage_all_help_process_players_res")) {
-			for (L2PcInstance players : L2World.getInstance().getAllPlayersArray()) {
+			for (Player players : World.getInstance().getAllPlayersArray()) {
 				if (players == null || players.getInstanceId() != instanceId) {
 					continue;
 				}
@@ -321,13 +320,13 @@ public class Halloween extends Quest {
 			
 			kegor.setTarget(boss);
 			
-			((L2Attackable) kegor).addDamageHate(boss, 500, 99999);
+			((Attackable) kegor).addDamageHate(boss, 500, 99999);
 			kegor.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, boss, null);
 			kegor.setIsRunning(true);
 			
 			jinia.setTarget(boss);
 			
-			((L2Attackable) jinia).addDamageHate(boss, 500, 99999);
+			((Attackable) jinia).addDamageHate(boss, 500, 99999);
 			jinia.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, boss, null);
 			jinia.setIsRunning(true);
 			jinia.setIsImmobilized(false);
@@ -361,9 +360,9 @@ public class Halloween extends Quest {
 	}
 	
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public final String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (Debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 		
 		if (npc.getNpcId() == mountedRaidId) {
@@ -387,9 +386,9 @@ public class Halloween extends Quest {
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (Debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 		
 		if (allMinions.contains(npc)) {
@@ -410,7 +409,7 @@ public class Halloween extends Quest {
 				count += round;
 			}
 			
-			L2ItemInstance item = null;
+			Item item = null;
 			for (int a = 1; a <= count; a++) {
 				item = ItemTable.getInstance().createItem(qn, doorGuildCoin, 1, null, npc);
 				item.setInstanceId(instanceId);
@@ -421,7 +420,7 @@ public class Halloween extends Quest {
 		if (npc.getNpcId() == finalRaidId) {
 			cancelQuestTimers("stop_event");
 			
-			L2ItemInstance item = null;
+			Item item = null;
 			for (int a = 1; a <= 2000; a++) {
 				item = ItemTable.getInstance().createItem(qn, doorGuildCoin, 1, null, npc);
 				item.dropMe(npc, npc.getX() + Rnd.get(500), npc.getY() + Rnd.get(500), npc.getZ() + 50);
@@ -435,7 +434,7 @@ public class Halloween extends Quest {
 		return "";
 	}
 	
-	private static boolean checkConditions(L2PcInstance player) {
+	private static boolean checkConditions(Player player) {
 		if (player == null) {
 			return false;
 		}
@@ -455,7 +454,7 @@ public class Halloween extends Quest {
 		}
 		
 		//Ip checks
-		for (L2PcInstance players : L2World.getInstance().getAllPlayersArray()) {
+		for (Player players : World.getInstance().getAllPlayersArray()) {
 			if (players == null || players.getClient() != null && players.getClient().isDetached()) {
 				continue;
 			}

@@ -20,10 +20,10 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.zone.ZoneType;
 import l2server.gameserver.network.serverpackets.ExSendUIEvent;
 import l2server.gameserver.network.serverpackets.ExSendUIEventRemove;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -41,13 +41,13 @@ import java.util.Map.Entry;
 
 public class HarnakUndergroundRuins extends L2AttackableAIScript {
 	private static final int[] normalMobs = {22931, 22932, 22933, 22934, 22935, 22936, 22937, 22938, 23349};
-	private static Map<L2ZoneType, zoneInfo> roomInfo = new HashMap<L2ZoneType, zoneInfo>(24);
+	private static Map<ZoneType, zoneInfo> roomInfo = new HashMap<ZoneType, zoneInfo>(24);
 
 	public HarnakUndergroundRuins(int id, String name, String descr) {
 		super(id, name, descr);
 
 		for (int zoneId = 60028; zoneId <= 60051; zoneId++) {
-			L2ZoneType zone = ZoneManager.getInstance().getZoneById(zoneId);
+			ZoneType zone = ZoneManager.getInstance().getZoneById(zoneId);
 			roomInfo.put(zone, new zoneInfo());
 
 			//Spawn the normal mobs here
@@ -97,9 +97,9 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript {
 	}
 
 	private static final class changeZoneStage implements Runnable {
-		private final L2ZoneType zone;
+		private final ZoneType zone;
 
-		public changeZoneStage(L2ZoneType a) {
+		public changeZoneStage(ZoneType a) {
 			zone = a;
 		}
 
@@ -177,8 +177,8 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
-		for (Entry<L2ZoneType, zoneInfo> currentZone : roomInfo.entrySet()) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
+		for (Entry<ZoneType, zoneInfo> currentZone : roomInfo.entrySet()) {
 			if (currentZone.getKey().isInsideZone(npc)) {
 				zoneInfo currentInfo = currentZone.getValue();
 
@@ -218,7 +218,7 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript {
 		}
 
 		if (npc.getDisplayEffect() > 0) {
-			L2MonsterInstance copy = (L2MonsterInstance) addSpawn(npc.getNpcId(), npc.getX(), npc.getY(), npc.getZ(), 0, true, 0, false);
+			MonsterInstance copy = (MonsterInstance) addSpawn(npc.getNpcId(), npc.getX(), npc.getY(), npc.getZ(), 0, true, 0, false);
 			copy.setTarget(killer);
 			copy.addDamageHate(killer, 500, 99999);
 			copy.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, killer);
@@ -227,7 +227,7 @@ public class HarnakUndergroundRuins extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public final String onSpawn(Npc npc) {
 		if (Rnd.get(20) > 15) {
 			npc.setDisplayEffect(1);
 		}

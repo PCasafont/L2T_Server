@@ -17,13 +17,14 @@ package l2server.gameserver.datatables;
 
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.L2SkillLearn;
 import l2server.gameserver.model.L2TransformSkillLearn;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.base.Race;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -32,6 +33,9 @@ import java.io.File;
 import java.util.*;
 
 public class SkillTreeTable {
+	private static Logger log = LoggerFactory.getLogger(SkillTreeTable.class.getName());
+
+
 	private List<L2SkillLearn> fishingSkillTrees = new ArrayList<>();
 	//all common skills (taught by Fisherman)
 	private List<L2SkillLearn> expandDwarfCraftSkillTrees = new ArrayList<>();
@@ -75,7 +79,7 @@ public class SkillTreeTable {
 			return learnMap.get(skillHashCode).getMinLevel();
 		}
 
-		Log.severe("Expertise not found for grade " + grade);
+		log.error("Expertise not found for grade " + grade);
 		return 0;
 	}
 
@@ -163,10 +167,10 @@ public class SkillTreeTable {
 
 		generateCheckArrays();
 
-		Log.info("FishingSkillTreeTable: Loaded " + fishingSkillTrees.size() + " general skills.");
-		Log.info("DwarvenCraftSkillTreeTable: Loaded " + expandDwarfCraftSkillTrees.size() + " dwarven skills.");
-		Log.info("TransformSkillTreeTable: Loaded " + transformSkillTrees.size() + " transform skills");
-		Log.info("SpecialSkillTreeTable: Loaded " + specialSkillTrees.size() + " special skills");
+		log.info("FishingSkillTreeTable: Loaded " + fishingSkillTrees.size() + " general skills.");
+		log.info("DwarvenCraftSkillTreeTable: Loaded " + expandDwarfCraftSkillTrees.size() + " dwarven skills.");
+		log.info("TransformSkillTreeTable: Loaded " + transformSkillTrees.size() + " transform skills");
+		log.info("SpecialSkillTreeTable: Loaded " + specialSkillTrees.size() + " special skills");
 		loading = false;
 	}
 
@@ -225,17 +229,17 @@ public class SkillTreeTable {
 		allSkillsHashCodes = array;
 	}
 
-	public L2SkillLearn[] getAvailableClassSkills(L2PcInstance cha) {
+	public L2SkillLearn[] getAvailableClassSkills(Player cha) {
 		List<L2SkillLearn> result = new ArrayList<>();
 		Set<Long> skillIds = cha.getCurrentClass().getSkills().keySet();
 
 		if (skillIds == null) {
 			// the skilltree for this class is undefined, so we give an empty list
-			Log.warning("Skilltree for class " + cha.getCurrentClass().getName() + " is not defined!");
+			log.warn("Skilltree for class " + cha.getCurrentClass().getName() + " is not defined!");
 			return new L2SkillLearn[0];
 		}
 
-		L2Skill[] oldSkills = cha.getAllSkills();
+		Skill[] oldSkills = cha.getAllSkills();
 
 		for (long skillId : skillIds) {
 			L2SkillLearn temp = cha.getCurrentClass().getSkills().get(skillId);
@@ -266,18 +270,18 @@ public class SkillTreeTable {
 	}
 
 	// Very inefficient function but works
-	public boolean hasNewSkillsToLearn(L2PcInstance cha, PlayerClass cl) {
+	public boolean hasNewSkillsToLearn(Player cha, PlayerClass cl) {
 		List<L2SkillLearn> result1 = new ArrayList<>();
 		List<L2SkillLearn> result2 = new ArrayList<>();
 		Collection<L2SkillLearn> skills = PlayerClassTable.getInstance().getClassById(cl.getId()).getSkills().values();
 
 		if (skills == null) {
 			// the skilltree for this class is undefined, so we give an empty list
-			Log.warning("Skilltree for class " + cl.getName() + " is not defined!");
+			log.warn("Skilltree for class " + cl.getName() + " is not defined!");
 			return false;
 		}
 
-		L2Skill[] oldSkills = cha.getAllSkills();
+		Skill[] oldSkills = cha.getAllSkills();
 
 		for (L2SkillLearn temp : skills) {
 			//Let's get all auto-get skills and all skill learn from npc, but transfer skills.
@@ -330,7 +334,7 @@ public class SkillTreeTable {
 		return result1.size() > result2.size();
 	}
 
-	public L2SkillLearn[] getAvailableSkills(L2PcInstance cha) {
+	public L2SkillLearn[] getAvailableSkills(Player cha) {
 		List<L2SkillLearn> result = new ArrayList<>();
 		List<L2SkillLearn> skills = new ArrayList<>();
 
@@ -338,7 +342,7 @@ public class SkillTreeTable {
 
 		if (skills.size() < 1) {
 			// the skilltree for this class is undefined, so we give an empty list
-			Log.warning("Skilltree for fishing is not defined!");
+			log.warn("Skilltree for fishing is not defined!");
 			return new L2SkillLearn[0];
 		}
 
@@ -346,7 +350,7 @@ public class SkillTreeTable {
 			skills.addAll(expandDwarfCraftSkillTrees);
 		}
 
-		L2Skill[] oldSkills = cha.getAllSkills();
+		Skill[] oldSkills = cha.getAllSkills();
 
 		for (L2SkillLearn temp : skills) {
 			if (temp.isLearnedFromPanel() && temp.getMinLevel() <= cha.getLevel() && temp.getMinDualLevel() <= cha.getDualLevel()) {
@@ -373,7 +377,7 @@ public class SkillTreeTable {
 		return result.toArray(new L2SkillLearn[result.size()]);
 	}
 
-	public L2SkillLearn[] getAvailableSpecialSkills(L2PcInstance cha) {
+	public L2SkillLearn[] getAvailableSpecialSkills(Player cha) {
 		List<L2SkillLearn> result = new ArrayList<>();
 		List<L2SkillLearn> skills = new ArrayList<>();
 
@@ -381,11 +385,11 @@ public class SkillTreeTable {
 
 		if (skills.size() < 1) {
 			// the skilltree for this class is undefined, so we give an empty list
-			Log.warning("Skilltree for special is not defined!");
+			log.warn("Skilltree for special is not defined!");
 			return new L2SkillLearn[0];
 		}
 
-		L2Skill[] oldSkills = cha.getAllSkills();
+		Skill[] oldSkills = cha.getAllSkills();
 
 		for (L2SkillLearn temp : skills) {
 			boolean knownSkill = false;
@@ -410,18 +414,18 @@ public class SkillTreeTable {
 		return result.toArray(new L2SkillLearn[result.size()]);
 	}
 
-	public L2TransformSkillLearn[] getAvailableTransformSkills(L2PcInstance cha) {
+	public L2TransformSkillLearn[] getAvailableTransformSkills(Player cha) {
 		List<L2TransformSkillLearn> result = new ArrayList<>();
 		List<L2TransformSkillLearn> skills = transformSkillTrees;
 
 		if (skills == null) {
 			// the skilltree for this class is undefined, so we give an empty list
 
-			Log.warning("No Transform skills defined!");
+			log.warn("No Transform skills defined!");
 			return new L2TransformSkillLearn[0];
 		}
 
-		L2Skill[] oldSkills = cha.getAllSkills();
+		Skill[] oldSkills = cha.getAllSkills();
 
 		for (L2TransformSkillLearn temp : skills) {
 			if (temp.getMinLevel() <= cha.getLevel() && (temp.getRace() == cha.getRace().ordinal() || temp.getRace() == -1)) {
@@ -448,7 +452,7 @@ public class SkillTreeTable {
 		return result.toArray(new L2TransformSkillLearn[result.size()]);
 	}
 
-	public int getMinLevelForNewSkill(L2PcInstance cha) {
+	public int getMinLevelForNewSkill(Player cha) {
 		int minLevel = 0;
 		List<L2SkillLearn> skills = new ArrayList<>();
 
@@ -456,7 +460,7 @@ public class SkillTreeTable {
 
 		if (skills.size() < 1) {
 			// the skilltree for this class is undefined, so we give an empty list
-			Log.warning("SkillTree for fishing is not defined!");
+			log.warn("SkillTree for fishing is not defined!");
 			return minLevel;
 		}
 
@@ -475,7 +479,7 @@ public class SkillTreeTable {
 		return minLevel;
 	}
 
-	public int getMinLevelForNewTransformSkill(L2PcInstance cha) {
+	public int getMinLevelForNewTransformSkill(Player cha) {
 		int minLevel = 0;
 		List<L2TransformSkillLearn> skills = new ArrayList<>();
 
@@ -483,7 +487,7 @@ public class SkillTreeTable {
 
 		if (skills.size() < 1) {
 			// the skilltree for this class is undefined, so we give an empty list
-			Log.warning("SkillTree for fishing is not defined!");
+			log.warn("SkillTree for fishing is not defined!");
 			return minLevel;
 		}
 
@@ -498,7 +502,7 @@ public class SkillTreeTable {
 		return minLevel;
 	}
 
-	public int getSkillCost(L2PcInstance player, L2Skill skill) {
+	public int getSkillCost(Player player, Skill skill) {
 		int skillCost = 100000000;
 		long skillHashCode = SkillTable.getSkillHashCode(skill);
 
@@ -521,7 +525,7 @@ public class SkillTreeTable {
 		return null;
 	}
 
-	public List<Integer> getAllAllowedSkillId(L2PcInstance player) {
+	public List<Integer> getAllAllowedSkillId(Player player) {
 		ArrayList<Integer> skills = new ArrayList<>();
 
 		for (L2SkillLearn tmp : player.getCurrentClass().getSkills().values()) {
@@ -533,7 +537,7 @@ public class SkillTreeTable {
 		return skills;
 	}
 
-	public boolean isSkillAllowed(L2PcInstance player, L2Skill skill) {
+	public boolean isSkillAllowed(Player player, Skill skill) {
 		if (skill.isExcludedFromCheck()) {
 			return true;
 		}
@@ -565,7 +569,7 @@ public class SkillTreeTable {
 		return Arrays.binarySearch(allSkillsHashCodes, hashCode) >= 0;
 	}
 
-	public L2SkillLearn[] getAvailableSkillsForPlayer(final L2PcInstance player, boolean missingOnesOnly, boolean topLevelOnly) {
+	public L2SkillLearn[] getAvailableSkillsForPlayer(final Player player, boolean missingOnesOnly, boolean topLevelOnly) {
 		List<L2SkillLearn> result = new ArrayList<>();
 
 		@SuppressWarnings("unused") final int classId = player.getCurrentClass().getId();
@@ -574,14 +578,14 @@ public class SkillTreeTable {
 
 		if (skillIds == null) {
 			// the skilltree for this class is undefined, so we give an empty list
-			//Log.log(Level.WARNING, "Skilltree for class " + classId + " is not defined !");
+			//log.warn("Skilltree for class " + classId + " is not defined !");
 			return new L2SkillLearn[0];
 		}
 
 		//int lastPickedUpSkillId = 0;
 		L2SkillLearn learnableSkill = null;
 		for (Long skillId : skillIds) {
-			final L2Skill playerSkill = player.getSkills().get(skillId);
+			final Skill playerSkill = player.getSkills().get(skillId);
 
 			final int playerSkillLevel = playerSkill == null ? 0 : playerSkill.getLevel();
 
@@ -630,7 +634,7 @@ public class SkillTreeTable {
 		return result.toArray(new L2SkillLearn[result.size()]);
 	}
 
-	public final L2SkillLearn getSkillTopLevelFor(final int skillId, final L2PcInstance player) {
+	public final L2SkillLearn getSkillTopLevelFor(final int skillId, final Player player) {
 		Set<Long> skillIds = player.getCurrentClass().getSkills().keySet();
 
 		L2SkillLearn result = null;

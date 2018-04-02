@@ -15,16 +15,17 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Stats;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 public class EffectManaHealOverTime extends L2Effect {
-	public EffectManaHealOverTime(Env env, L2EffectTemplate template) {
+	public EffectManaHealOverTime(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -34,7 +35,7 @@ public class EffectManaHealOverTime extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#effectCanBeStolen()
+	 * @see Abnormal#effectCanBeStolen()
 	 */
 	@Override
 	protected boolean effectCanBeStolen() {
@@ -42,16 +43,16 @@ public class EffectManaHealOverTime extends L2Effect {
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.BUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.BUFF;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {
-		if (getEffected().isDead() || getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).getCurrentClass().getId() == 146) {
+		if (getEffected().isDead() || getEffected() instanceof Player && ((Player) getEffected()).getCurrentClass().getId() == 146) {
 			return false;
 		}
 

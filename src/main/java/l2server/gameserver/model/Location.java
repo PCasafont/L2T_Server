@@ -15,7 +15,7 @@
 
 package l2server.gameserver.model;
 
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 
 /**
  * This class ...
@@ -35,13 +35,13 @@ public final class Location {
 		this.z = z;
 	}
 	
-	public Location(L2Object obj) {
+	public Location(WorldObject obj) {
 		x = obj.getX();
 		y = obj.getY();
 		z = obj.getZ();
 	}
 	
-	public Location(L2Character obj) {
+	public Location(Creature obj) {
 		x = obj.getX();
 		y = obj.getY();
 		z = obj.getZ();

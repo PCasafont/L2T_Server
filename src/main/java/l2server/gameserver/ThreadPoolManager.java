@@ -16,13 +16,13 @@
 package l2server.gameserver;
 
 import l2server.Config;
-import l2server.log.Log;
 import l2server.util.StringUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Level;
 
 /**
  * <p>This class is made to handle all the ThreadPools used in L2j.</p>
@@ -56,6 +56,7 @@ import java.util.logging.Level;
  * @author -Wooden-
  */
 public class ThreadPoolManager {
+	private static Logger log = LoggerFactory.getLogger(ThreadPoolManager.class.getName());
 	
 	private static final class RunnableWrapper implements Runnable {
 		private final Runnable r;
@@ -296,9 +297,9 @@ public class ThreadPoolManager {
 			generalScheduledThreadPool.shutdown();
 			aiScheduledThreadPool.shutdown();
 			generalThreadPool.shutdown();
-			Log.info("All ThreadPools are now stopped");
+			log.info("All ThreadPools are now stopped");
 		} catch (InterruptedException e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 		}
 	}
 	

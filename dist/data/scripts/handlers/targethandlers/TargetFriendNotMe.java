@@ -18,13 +18,13 @@ package handlers.targethandlers;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
 import l2server.gameserver.model.L2CommandChannel;
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.gameserver.util.Util;
 
 import java.util.ArrayList;
@@ -45,25 +45,25 @@ public class TargetFriendNotMe implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		List<L2Character> targetList = new ArrayList<L2Character>();
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		List<Creature> targetList = new ArrayList<Creature>();
 
 		int radius = skill.getSkillRadius();
 
 		if (onlyFirst) {
-			return new L2Character[]{activeChar};
+			return new Creature[]{activeChar};
 		}
 
-		L2PcInstance player = null;
+		Player player = null;
 
-		if (activeChar instanceof L2Summon) {
-			player = ((L2Summon) activeChar).getOwner();
+		if (activeChar instanceof Summon) {
+			player = ((Summon) activeChar).getOwner();
 			targetList.add(player);
 		}
 		/* FIXME
-        else if (activeChar instanceof L2PcInstance)
+        else if (activeChar instanceof Player)
 		{
-			player = (L2PcInstance) activeChar;
+			player = (Player) activeChar;
 			if (activeChar.getPet() != null)
 				targetList.add(activeChar.getPet());
 		}*/
@@ -71,7 +71,7 @@ public class TargetFriendNotMe implements ISkillTargetTypeHandler {
 		L2Party playerPt = player.getParty();
 		L2CommandChannel cmdChannel = playerPt == null ? null : playerPt.getCommandChannel();
 
-		for (L2PcInstance tempChar : player.getKnownList().getKnownPlayersInRadius(radius)) {
+		for (Player tempChar : player.getKnownList().getKnownPlayersInRadius(radius)) {
 			if (tempChar == player || tempChar.isDead()) {
 				continue;
 			}
@@ -96,18 +96,18 @@ public class TargetFriendNotMe implements ISkillTargetTypeHandler {
 				if (!onlyFirst) {
 					targetList.add(tempChar);
 				} else {
-					return new L2Character[]{tempChar};
+					return new Creature[]{tempChar};
 				}
 			}
 		}
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(new Creature[targetList.size()]);
 	}
 
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.TARGET_FRIEND_NOTME;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.TARGET_FRIEND_NOTME;
 	}
 
 	public static void main(String[] args) {

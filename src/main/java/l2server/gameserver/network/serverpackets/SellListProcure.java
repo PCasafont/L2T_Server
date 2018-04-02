@@ -17,8 +17,8 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleManorManager.CropProcure;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,19 +28,19 @@ import java.util.Map;
 public class SellListProcure extends L2GameServerPacket {
 	//
 
-	private final L2PcInstance activeChar;
+	private final Player activeChar;
 	private long money;
-	private Map<L2ItemInstance, Long> sellList = new HashMap<>();
+	private Map<Item, Long> sellList = new HashMap<>();
 	private List<CropProcure> procureList = new ArrayList<>();
 	private int castle;
 
-	public SellListProcure(L2PcInstance player, int castleId) {
+	public SellListProcure(Player player, int castleId) {
 		money = player.getAdena();
 		activeChar = player;
 		castle = castleId;
 		procureList = CastleManager.getInstance().getCastleById(castle).getCropProcure(0);
 		for (CropProcure c : procureList) {
-			L2ItemInstance item = activeChar.getInventory().getItemByItemId(c.getId());
+			Item item = activeChar.getInventory().getItemByItemId(c.getId());
 			if (item != null && c.getAmount() > 0) {
 				sellList.put(item, c.getAmount());
 			}
@@ -53,7 +53,7 @@ public class SellListProcure extends L2GameServerPacket {
 		writeD(0x00); // lease ?
 		writeH(sellList.size()); // list size
 
-		for (L2ItemInstance item : sellList.keySet()) {
+		for (Item item : sellList.keySet()) {
 			writeH(item.getItem().getType1());
 			writeD(item.getObjectId());
 			writeD(item.getItemId());

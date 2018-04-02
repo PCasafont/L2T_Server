@@ -18,13 +18,12 @@ package l2server.gameserver.network.clientpackets;
 import l2server.Config;
 import l2server.gameserver.model.BlockList;
 import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2ApInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.ApInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.AskJoinParty;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 /**
  * sample
@@ -52,8 +51,8 @@ public final class RequestJoinParty extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance requestor = getClient().getActiveChar();
-		L2PcInstance target = L2World.getInstance().getPlayer(name);
+		Player requestor = getClient().getActiveChar();
+		Player target = World.getInstance().getPlayer(name);
 		
 		if (requestor == null) {
 			return;
@@ -121,7 +120,7 @@ public final class RequestJoinParty extends L2GameClientPacket {
 			return;
 		}*/
 		
-		if (target instanceof L2ApInstance) {
+		if (target instanceof ApInstance) {
 			requestor.sendMessage("You can't invite an artificial player.");
 			return;
 		}
@@ -151,7 +150,7 @@ public final class RequestJoinParty extends L2GameClientPacket {
 	 * @param target
 	 * @param requestor
 	 */
-	private void addTargetToParty(L2PcInstance target, L2PcInstance requestor) {
+	private void addTargetToParty(Player target, Player requestor) {
 		SystemMessage msg;
 		L2Party party = requestor.getParty();
 		
@@ -185,7 +184,7 @@ public final class RequestJoinParty extends L2GameClientPacket {
 			party.setPendingInvitation(true);
 			
 			if (Config.DEBUG) {
-				Log.fine("sent out a party invitation to:" + target.getName());
+				log.debug("sent out a party invitation to:" + target.getName());
 			}
 		} else {
 			msg = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_BUSY_TRY_LATER);
@@ -193,7 +192,7 @@ public final class RequestJoinParty extends L2GameClientPacket {
 			requestor.sendPacket(msg);
 			
 			if (Config.DEBUG) {
-				Log.warning(requestor.getName() + " already received a party invitation");
+				log.warn(requestor.getName() + " already received a party invitation");
 			}
 		}
 		msg = null;
@@ -203,7 +202,7 @@ public final class RequestJoinParty extends L2GameClientPacket {
 	 * @param target
 	 * @param requestor
 	 */
-	private void createNewParty(L2PcInstance target, L2PcInstance requestor) {
+	private void createNewParty(Player target, Player requestor) {
 		if (requestor.isGM()) {
 			if (!target.isInParty()) {
 				requestor.setParty(new L2Party(requestor, itemDistribution));
@@ -223,13 +222,13 @@ public final class RequestJoinParty extends L2GameClientPacket {
 			requestor.getParty().setPendingInvitation(true);
 			
 			if (Config.DEBUG) {
-				Log.fine("sent out a party invitation to:" + target.getName());
+				log.debug("sent out a party invitation to:" + target.getName());
 			}
 		} else {
 			requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WAITING_FOR_ANOTHER_REPLY));
 			
 			if (Config.DEBUG) {
-				Log.warning(requestor.getName() + " already received a party invitation");
+				log.warn(requestor.getName() + " already received a party invitation");
 			}
 		}
 	}

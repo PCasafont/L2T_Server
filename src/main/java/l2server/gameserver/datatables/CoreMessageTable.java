@@ -2,7 +2,8 @@ package l2server.gameserver.datatables;
 
 import l2server.Config;
 import l2server.gameserver.model.CoreMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
@@ -16,6 +17,9 @@ import java.util.Map;
  * @author Pere
  */
 public class CoreMessageTable {
+	private static Logger log = LoggerFactory.getLogger(CoreMessageTable.class.getName());
+
+
 	private static CoreMessageTable instance;
 
 	private static Map<Integer, CoreMessage> messages = new HashMap<>();
@@ -50,14 +54,14 @@ public class CoreMessageTable {
 			}
 		}
 
-		Log.info("Message Table: Loading " + messages.size() + " Core Messages Sucessfully");
+		log.info("Message Table: Loading " + messages.size() + " Core Messages Sucessfully");
 	}
 
 	public CoreMessage getMessage(int id) {
 		if (messages.containsKey(id)) {
 			return messages.get(id);
 		} else {
-			Log.warning("Unknown text: " + id);
+			log.warn("Unknown text: " + id);
 			return messages.get(-1);
 		}
 	}

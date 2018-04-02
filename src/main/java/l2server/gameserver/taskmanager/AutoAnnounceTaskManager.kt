@@ -14,12 +14,12 @@
 package l2server.gameserver.taskmanager
 
 import l2server.Config
-import l2server.gameserver.model.L2World
+import l2server.gameserver.model.World
 import l2server.gameserver.util.Broadcast
-import l2server.log.Log
 import l2server.util.concurrent.ThreadPool
 import l2server.util.loader.annotations.Load
 import l2server.util.xml.XmlDocument
+import org.slf4j.LoggerFactory
 import java.io.File
 
 /**
@@ -27,7 +27,9 @@ import java.io.File
  */
 object AutoAnnounceTaskManager {
 
-    @Load(dependencies = [L2World::class])
+    private val log = LoggerFactory.getLogger(AutoAnnounceTaskManager::class.java)
+
+    @Load(dependencies = [World::class])
     private fun load() {
         val file = File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/autoAnnouncements.xml")
         if (!file.exists()) {
@@ -45,7 +47,7 @@ object AutoAnnounceTaskManager {
                 count++
             }
         }
-        Log.info("AutoAnnouncements: Loaded: $count auto announcements!")
+        log.info("AutoAnnouncements: Loaded: $count auto announcements!")
     }
 
     private class AutoAnnouncement private constructor(private val text: String) : Runnable {

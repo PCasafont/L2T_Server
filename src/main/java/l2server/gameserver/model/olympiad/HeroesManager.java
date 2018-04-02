@@ -27,10 +27,10 @@ import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.instancemanager.CastleManager;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.model.olympiad.HeroInfo.DiaryEntry;
@@ -40,10 +40,11 @@ import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.util.StringUtil;
 import l2server.util.loader.annotations.Load;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -51,9 +52,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.logging.Level;
 
 public class HeroesManager {
+	private static Logger log = LoggerFactory.getLogger(HeroesManager.class.getName());
+
 	private static final String GET_HEROES =
 			"SELECT heroes.charId, characters.char_name, heroes.class_id, heroes.count, heroes.played FROM heroes, characters WHERE characters.charId = heroes.charId AND heroes.played = 1";
 	private static final String GET_ALL_HEROES =
@@ -208,16 +210,16 @@ public class HeroesManager {
 			rset.close();
 			statement.close();
 		} catch (SQLException e) {
-			Log.warning("Hero System: Couldnt load Heroes");
+			log.warn("Hero System: Couldnt load Heroes");
 			if (Config.DEBUG) {
-				Log.log(Level.WARNING, "", e);
+				log.warn("", e);
 			}
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 
-		Log.info("Hero System: Loaded " + heroes.size() + " Heroes.");
-		Log.info("Hero System: Loaded " + pastAndCurrentHeroes.size() + " all time Heroes.");
+		log.info("Hero System: Loaded " + heroes.size() + " Heroes.");
+		log.info("Hero System: Loaded " + pastAndCurrentHeroes.size() + " all time Heroes.");
 	}
 
 	private String calcFightDuration(long FightTime) {
@@ -244,7 +246,7 @@ public class HeroesManager {
 			rset.close();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Hero System: Couldn't load Hero Message for hero: " + hero.getName(), e);
+			log.warn("Hero System: Couldn't load Hero Message for hero: " + hero.getName(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -268,7 +270,7 @@ public class HeroesManager {
 				int param = rset.getInt("param");
 				switch (action) {
 					case ACTION_RAID_KILLED:
-						L2NpcTemplate template = NpcTable.getInstance().getTemplate(param);
+						NpcTemplate template = NpcTable.getInstance().getTemplate(param);
 						if (template != null) {
 							diaryentry.action = template.getName() + " was defeated";
 						}
@@ -290,11 +292,11 @@ public class HeroesManager {
 			rset.close();
 			statement.close();
 
-			Log.fine("Hero System: Loaded " + diaryentries + " diary entries for hero: " + hero.getName());
+			log.debug("Hero System: Loaded " + diaryentries + " diary entries for hero: " + hero.getName());
 		} catch (Exception e) {
-			Log.warning("Hero System: Couldnt load Hero Diary for hero: " + hero.getName());
+			log.warn("Hero System: Couldnt load Hero Diary for hero: " + hero.getName());
 			if (Config.DEBUG) {
-				Log.log(Level.WARNING, "", e);
+				log.warn("", e);
 			}
 		} finally {
 			L2DatabaseFactory.close(con);
@@ -398,11 +400,11 @@ public class HeroesManager {
 			hero.setDefeats(defeats);
 			hero.setDraws(draws);
 
-			Log.fine("Hero System: Loaded " + numberOfFights + " fights for hero: " + hero.getName());
+			log.debug("Hero System: Loaded " + numberOfFights + " fights for hero: " + hero.getName());
 		} catch (SQLException e) {
-			Log.warning("Hero System: Couldnt load Hero fights history for hero: " + hero.getName());
+			log.warn("Hero System: Couldnt load Hero fights history for hero: " + hero.getName());
 			if (Config.DEBUG) {
-				Log.log(Level.WARNING, "", e);
+				log.warn("", e);
 			}
 		} finally {
 			L2DatabaseFactory.close(con);
@@ -423,7 +425,7 @@ public class HeroesManager {
 		return 0;
 	}
 
-	public void showHeroDiary(L2PcInstance activeChar, int heroclass, int charId, int page) {
+	public void showHeroDiary(Player activeChar, int heroclass, int charId, int page) {
 		final int perpage = 10;
 
 		if (heroes.containsKey(charId)) {
@@ -495,7 +497,7 @@ public class HeroesManager {
 		}
 	}
 
-	public void showHeroFights(L2PcInstance activeChar, int heroclass, int charid, int page) {
+	public void showHeroFights(Player activeChar, int heroclass, int charid, int page) {
 		final int perpage = 20;
 		if (heroes.containsKey(charid)) {
 			HeroInfo hero = heroes.get(charid);
@@ -576,7 +578,7 @@ public class HeroesManager {
 
 		if (!heroes.isEmpty()) {
 			for (HeroInfo hero : heroes.values()) {
-				L2PcInstance player = L2World.getInstance().getPlayer(hero.getId());
+				Player player = World.getInstance().getPlayer(hero.getId());
 				if (player == null) {
 					continue;
 				}
@@ -585,13 +587,13 @@ public class HeroesManager {
 					player.setHero(false);
 
 					for (int i = 0; i < Inventory.PAPERDOLL_TOTALSLOTS; i++) {
-						L2ItemInstance equippedItem = player.getInventory().getPaperdollItem(i);
+						Item equippedItem = player.getInventory().getPaperdollItem(i);
 						if (equippedItem != null && equippedItem.isHeroItem()) {
 							player.getInventory().unEquipItemInSlot(i);
 						}
 					}
 
-					for (L2ItemInstance item : player.getInventory().getAvailableItems(false, false)) {
+					for (Item item : player.getInventory().getAvailableItems(false, false)) {
 						if (item != null && item.isHeroItem()) {
 							player.destroyItem("Hero", item, null, true);
 							InventoryUpdate iu = new InventoryUpdate();
@@ -648,7 +650,7 @@ public class HeroesManager {
 			loadDiary(hero);
 			hero.setMessage("");
 
-			L2PcInstance player = L2World.getInstance().getPlayer(hero.getId());
+			Player player = World.getInstance().getPlayer(hero.getId());
 
 			if (player != null) {
 				player.setHero(true);
@@ -688,7 +690,7 @@ public class HeroesManager {
 					rset.close();
 					statement.close();
 				} catch (Exception e) {
-					Log.warning("could not get clan name of player with objectId:" + hero.getId() + ": " + e);
+					log.warn("could not get clan name of player with objectId:" + hero.getId() + ": " + e);
 				} finally {
 					L2DatabaseFactory.close(con);
 				}
@@ -766,9 +768,9 @@ public class HeroesManager {
 				}
 			}
 		} catch (SQLException e) {
-			Log.warning("Hero System: Couldnt update Heroes");
+			log.warn("Hero System: Couldnt update Heroes");
 			if (Config.DEBUG) {
-				Log.log(Level.WARNING, "", e);
+				log.warn("", e);
 			}
 		} finally {
 			L2DatabaseFactory.close(con);
@@ -787,7 +789,7 @@ public class HeroesManager {
 	}
 
 	public void setRBkilled(int charId, int npcId) {
-		L2NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
+		NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
 		if (heroes.containsKey(charId) && template != null) {
 			DiaryEntry diaryentry = new DiaryEntry();
 			diaryentry.time = System.currentTimeMillis();
@@ -822,15 +824,13 @@ public class HeroesManager {
 			statement.execute();
 			statement.close();
 		} catch (SQLException e) {
-			if (Log.isLoggable(Level.SEVERE)) {
-				Log.log(Level.SEVERE, "SQL exception while saving DiaryData.", e);
-			}
+			log.error("SQL exception while saving DiaryData.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public void setHeroMessage(L2PcInstance player, String heroWords) {
+	public void setHeroMessage(Player player, String heroWords) {
 		if (!heroes.containsKey(player.getObjectId())) {
 			return;
 		}
@@ -857,7 +857,7 @@ public class HeroesManager {
 			statement.execute();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.SEVERE, "SQL exception while saving HeroMessage.", e);
+			log.error("SQL exception while saving HeroMessage.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -872,7 +872,7 @@ public class HeroesManager {
 			statement.execute();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -889,7 +889,7 @@ public class HeroesManager {
 			statement.execute();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

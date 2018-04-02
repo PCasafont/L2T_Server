@@ -17,17 +17,17 @@ package handlers.skillhandlers;
 
 import l2server.Config;
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -42,33 +42,33 @@ import java.util.logging.Logger;
 public class Mark implements ISkillHandler {
 	private static final Logger logDamage = Logger.getLogger("damage");
 	
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.MARK};
+	private static final SkillType[] SKILL_IDS = {SkillType.MARK};
 	
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
 		if (activeChar.isAlikeDead()) {
 			return;
 		}
 		
-		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+		Item weaponInst = activeChar.getActiveWeaponInstance();
 		if (weaponInst != null) {
-			weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-		} else if (activeChar instanceof L2Summon) {
-			L2Summon activeSummon = (L2Summon) activeChar;
-			activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+			weaponInst.setChargedSpiritShot(Item.CHARGED_NONE);
+		} else if (activeChar instanceof Summon) {
+			Summon activeSummon = (Summon) activeChar;
+			activeSummon.setChargedSpiritShot(Item.CHARGED_NONE);
 		}
 		
-		for (L2Object obj : targets) {
-			if (!(obj instanceof L2Character)) {
+		for (WorldObject obj : targets) {
+			if (!(obj instanceof Creature)) {
 				continue;
 			}
 			
-			L2Character target = (L2Character) obj;
+			Creature target = (Creature) obj;
 			
-			if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance) target).isFakeDeath()) {
+			if (activeChar instanceof Player && target instanceof Player && ((Player) target).isFakeDeath()) {
 				target.stopFakeDeath(true);
 			} else if (target.isDead()) {
 				continue;
@@ -89,7 +89,7 @@ public class Mark implements ISkillHandler {
 				target.reduceCurrentHp(damage, activeChar, skill);
 				
 				// Logging damage
-				if (Config.LOG_GAME_DAMAGE && activeChar instanceof L2Playable && damage > Config.LOG_GAME_DAMAGE_THRESHOLD) {
+				if (Config.LOG_GAME_DAMAGE && activeChar instanceof Playable && damage > Config.LOG_GAME_DAMAGE_THRESHOLD) {
 					LogRecord record = new LogRecord(Level.INFO, "");
 					record.setParameters(new Object[]{activeChar, " did damage ", damage, skill, " to ", target});
 					record.setLoggerName("mdam");
@@ -102,13 +102,13 @@ public class Mark implements ISkillHandler {
 						target,
 						new Env(shld,
 								activeChar.getActiveWeaponInstance() != null ? activeChar.getActiveWeaponInstance().getChargedSoulShot() :
-										L2ItemInstance.CHARGED_NONE));
+										Item.CHARGED_NONE));
 			}
 		}
 		
 		// self Effect
 		if (skill.hasSelfEffects()) {
-			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
+			final Abnormal effect = activeChar.getFirstEffect(skill.getId());
 			if (effect != null && effect.isSelfEffect()) {
 				//Replace old effect with new one.
 				effect.exit();
@@ -125,7 +125,7 @@ public class Mark implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

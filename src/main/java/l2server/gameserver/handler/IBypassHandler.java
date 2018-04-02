@@ -15,16 +15,16 @@
 
 package l2server.gameserver.handler;
 
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-
-import java.util.logging.Logger;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author nBd
  */
 public interface IBypassHandler {
-	Logger log = Logger.getLogger(IBypassHandler.class.getName());
+	Logger log = LoggerFactory.getLogger(IBypassHandler.class.getName());
 
 	/**
 	 * this is the worker method that is called when someone uses an bypass command
@@ -34,7 +34,7 @@ public interface IBypassHandler {
 	 * @param target
 	 * @return success
 	 */
-	boolean useBypass(String command, L2PcInstance activeChar, L2Npc target);
+	boolean useBypass(String command, Player activeChar, Npc target);
 
 	/**
 	 * this method is called at initialization to register all bypasses automatically

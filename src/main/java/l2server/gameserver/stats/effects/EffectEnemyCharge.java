@@ -23,25 +23,29 @@ import l2server.gameserver.network.serverpackets.FlyToLocation;
 import l2server.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class EffectEnemyCharge extends L2Effect {
+	private static Logger log = LoggerFactory.getLogger(EffectEnemyCharge.class.getName());
+
+
 	private int x, y, z;
 	
-	public EffectEnemyCharge(Env env, L2EffectTemplate template) {
+	public EffectEnemyCharge(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.BUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.BUFF;
 	}
 	
 	@Override
 	public boolean onStart() {
-		// Get current position of the L2Character
+		// Get current position of the Creature
 		final int curX = getEffector().getX();
 		final int curY = getEffector().getY();
 		final int curZ = getEffector().getZ();
@@ -52,7 +56,7 @@ public class EffectEnemyCharge extends L2Effect {
 		double dz = getEffected().getZ() - curZ;
 		double distance = Math.sqrt(dx * dx + dy * dy);
 		if (distance > 2000) {
-			Log.info("EffectEnemyCharge was going to use invalid coordinates for characters, getEffector: " + curX + "," + curY +
+			log.info("EffectEnemyCharge was going to use invalid coordinates for characters, getEffector: " + curX + "," + curY +
 					" and getEffected: " + getEffected().getX() + "," + getEffected().getY());
 			return false;
 		}

@@ -22,9 +22,9 @@ import l2server.gameserver.datatables.NpcTable.DropChances;
 import l2server.gameserver.model.L2DropCategory;
 import l2server.gameserver.model.L2DropData;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
 
 import java.util.ArrayList;
@@ -44,12 +44,12 @@ public class SearchDropManager {
 		private int itemId;
 		private String iemName;
 		private String itemIcon;
-		private List<L2NpcTemplate> droppedBy = new ArrayList<>();
-		private List<L2NpcTemplate> spoilBy = new ArrayList<>();
+		private List<NpcTemplate> droppedBy = new ArrayList<>();
+		private List<NpcTemplate> spoilBy = new ArrayList<>();
 		
-		private Drops(int itemId, L2NpcTemplate npc, boolean isSpoil) {
+		private Drops(int itemId, NpcTemplate npc, boolean isSpoil) {
 			this.itemId = itemId;
-			L2Item temp = ItemTable.getInstance().getTemplate(itemId);
+			ItemTemplate temp = ItemTable.getInstance().getTemplate(itemId);
 			iemName = temp.getName();
 			itemIcon = temp.getIcon();
 			if (isSpoil) {
@@ -59,7 +59,7 @@ public class SearchDropManager {
 			}
 		}
 		
-		private List<L2NpcTemplate> getDroppedBy(boolean isSpoil) {
+		private List<NpcTemplate> getDroppedBy(boolean isSpoil) {
 			if (isSpoil) {
 				return spoilBy;
 			}
@@ -78,7 +78,7 @@ public class SearchDropManager {
 			return itemIcon;
 		}
 		
-		private void addMonster(L2NpcTemplate t, boolean isSpoil) {
+		private void addMonster(NpcTemplate t, boolean isSpoil) {
 			if (isSpoil) {
 				spoilBy.add(t);
 			} else {
@@ -103,12 +103,12 @@ public class SearchDropManager {
 		return toReturn;
 	}
 	
-	public void addLootInfo(L2NpcTemplate temp, boolean overrideDrops) {
+	public void addLootInfo(NpcTemplate temp, boolean overrideDrops) {
 		if (temp == null) {
 			return;
 		}
 		
-		if (temp.Type.equalsIgnoreCase("L2Npc")) {
+		if (temp.Type.equalsIgnoreCase("Npc")) {
 			return;
 		}
 		
@@ -172,7 +172,7 @@ public class SearchDropManager {
 		}
 	}
 	
-	public String getDrops(L2PcInstance player, int itemId, boolean isSpoil, int pageToShow) {
+	public String getDrops(Player player, int itemId, boolean isSpoil, int pageToShow) {
 		Drops i = allDrops.get(itemId);
 		if (i == null) {
 			return "ERROR";
@@ -208,7 +208,7 @@ public class SearchDropManager {
 		
 		int playerLevel = player.getLevel();
 		for (int b = pageStart; b < pageEnd; b++) {
-			L2NpcTemplate temp = i.getDroppedBy(isSpoil).get(b);
+			NpcTemplate temp = i.getDroppedBy(isSpoil).get(b);
 			if (temp == null) {
 				continue;
 			}
@@ -246,7 +246,7 @@ public class SearchDropManager {
 		return sb.toString();
 	}
 	
-	public String searchPossiblesResults(L2PcInstance player, String itemName, boolean isSpoil) {
+	public String searchPossiblesResults(Player player, String itemName, boolean isSpoil) {
 		List<Drops> drops = getPossibleDropItem(itemName);
 		if (drops.isEmpty()) {
 			return "<font color=LEVEL>Wops.. We can't find that item... Try with other name!</font>";
@@ -267,7 +267,7 @@ public class SearchDropManager {
 		return sb.toString();
 	}
 	
-	private DropChances getDropChance(L2NpcTemplate temp, L2PcInstance pl, int itemId, boolean isSpoil) {
+	private DropChances getDropChance(NpcTemplate temp, Player pl, int itemId, boolean isSpoil) {
 		if (isSpoil) {
 			if (!temp.getSpoilData().isEmpty()) {
 				for (L2DropData drop : temp.getSpoilData()) {
@@ -298,18 +298,18 @@ public class SearchDropManager {
 		return null;
 	}
 	
-	public void overrideDrops(L2NpcTemplate temp) {
+	public void overrideDrops(NpcTemplate temp) {
 		for (Entry<Integer, Drops> i : allDrops.entrySet()) {
 			Drops d = i.getValue();
-			List<L2NpcTemplate> dropped = new ArrayList<>(d.getDroppedBy(false));
-			for (L2NpcTemplate b : dropped) {
+			List<NpcTemplate> dropped = new ArrayList<>(d.getDroppedBy(false));
+			for (NpcTemplate b : dropped) {
 				if (b.NpcId == temp.NpcId) {
 					d.getDroppedBy(false).remove(b);
 				}
 			}
 			
 			dropped = new ArrayList<>(d.getDroppedBy(true));
-			for (L2NpcTemplate b : dropped) {
+			for (NpcTemplate b : dropped) {
 				if (b.NpcId == temp.NpcId) {
 					d.getDroppedBy(true).remove(b);
 				}

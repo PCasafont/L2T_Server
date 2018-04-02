@@ -1,7 +1,7 @@
 package quests.Q10290_LandDragonConqueror;
 
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
@@ -23,7 +23,7 @@ public class Q10290_LandDragonConqueror extends Quest {
 	private static final int AntharaSlayerCirclet = 8568;
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
@@ -41,7 +41,7 @@ public class Q10290_LandDragonConqueror extends Quest {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
 
@@ -88,9 +88,9 @@ public class Q10290_LandDragonConqueror extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (player.getParty() != null) {
-			for (L2PcInstance partyMember : player.getParty().getPartyMembers()) {
+			for (Player partyMember : player.getParty().getPartyMembers()) {
 				rewardPlayer(partyMember);
 			}
 		} else {
@@ -99,7 +99,7 @@ public class Q10290_LandDragonConqueror extends Quest {
 		return null;
 	}
 
-	private void rewardPlayer(L2PcInstance player) {
+	private void rewardPlayer(Player player) {
 		QuestState st = player.getQuestState(qn);
 
 		if (st != null && st.getInt("cond") == 1) {

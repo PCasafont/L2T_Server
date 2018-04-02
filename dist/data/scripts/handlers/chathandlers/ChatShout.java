@@ -23,8 +23,8 @@ import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
 import l2server.gameserver.handler.IChatHandler;
 import l2server.gameserver.instancemanager.DiscussionManager;
 import l2server.gameserver.model.BlockList;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 
 import java.util.Collection;
@@ -41,7 +41,7 @@ public class ChatShout implements IChatHandler {
 	 * Handle chat type 'shout'
 	 */
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text) {
+	public void handleChat(int type, Player activeChar, String target, String text) {
 		if (Config.isServer(Config.TENKAI) && activeChar.isGM()) {
 			Announcements.getInstance().handleAnnounce(activeChar.getName() + ": " + text, 0);
 			return;
@@ -72,11 +72,11 @@ public class ChatShout implements IChatHandler {
 				activeChar.getName(),
 				"[" + MapRegionTable.getInstance().getClosestTownSimpleName(activeChar) + "]" + text);
 
-		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
+		Collection<Player> pls = World.getInstance().getAllPlayers().values();
 
 		if (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("on") || Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("gm") && activeChar.isGM()) {
 			int region = MapRegionTable.getInstance().getMapRegion(activeChar.getX(), activeChar.getY());
-			for (L2PcInstance player : pls) {
+			for (Player player : pls) {
 				/*
 				if (!player.isGM())
 				{
@@ -93,7 +93,7 @@ public class ChatShout implements IChatHandler {
 				}
 			}
 		} else if (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("global")) {
-			for (L2PcInstance player : pls) {
+			for (Player player : pls) {
 				if (!BlockList.isBlocked(player, activeChar)) {
 					player.sendPacket(cs);
 				}

@@ -7,14 +7,15 @@ import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.events.instanced.EventInstance.EventState;
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.util.Broadcast;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
@@ -32,6 +33,9 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author Pere
  */
 public class EventsManager {
+	private static Logger log = LoggerFactory.getLogger(EventsManager.class.getName());
+
+
 	public static EventsManager instance = null;
 	
 	private HashMap<Integer, EventLocation> locations = new HashMap<>();
@@ -41,7 +45,7 @@ public class EventsManager {
 	private int nextInstanceId = 1;
 	
 	private EventConfig currentConfig = null;
-	private Map<Integer, L2PcInstance> registeredPlayers = new HashMap<>();
+	private Map<Integer, Player> registeredPlayers = new HashMap<>();
 	
 	public static EventsManager getInstance() {
 		if (instance == null) {
@@ -53,7 +57,7 @@ public class EventsManager {
 	@Load(dependencies = ZoneManager.class)
 	public void start() {
 		if (!Config.INSTANCED_EVENT_ENABLED) {
-			Log.info("Instanced Events are disabled.");
+			log.info("Instanced Events are disabled.");
 			return;
 		}
 		
@@ -65,7 +69,7 @@ public class EventsManager {
 		
 		currentConfig = new EventConfig();
 		
-		Log.info("Instanced Events started.");
+		log.info("Instanced Events started.");
 	}
 	
 	public void loadConfig() {
@@ -82,7 +86,7 @@ public class EventsManager {
 			}
 		}
 		
-		Log.info("Events Manager: loaded " + locCount + " locations");
+		log.info("Events Manager: loaded " + locCount + " locations");
 	}
 	
 	public EventLocation getRandomLocation() {
@@ -144,7 +148,7 @@ public class EventsManager {
 				// Auto join!
 				/*if (minutesToStart == 1)
                 {
-					for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
+					for (Player player : World.getInstance().getAllPlayers().values())
 					{
 						if (player == null || player.isGM())
 							continue;
@@ -172,7 +176,7 @@ public class EventsManager {
 		return currentConfig;
 	}
 	
-	public Map<Integer, L2PcInstance> getRegisteredPlayers() {
+	public Map<Integer, Player> getRegisteredPlayers() {
 		return registeredPlayers;
 	}
 	
@@ -184,7 +188,7 @@ public class EventsManager {
 		// First sort the registered players
 		int[][] sorted = new int[registeredPlayers.size()][2];
 		int i = 0;
-		for (L2PcInstance player : registeredPlayers.values()) {
+		for (Player player : registeredPlayers.values()) {
 			if (player == null || OlympiadManager.getInstance().isRegisteredInComp(player) || player.isInOlympiadMode() || player.isOlympiadStart() ||
 					player.isFlyingMounted() || player.inObserverMode()) {
 				continue;
@@ -261,11 +265,11 @@ public class EventsManager {
 		return false;
 	}
 	
-	public void onLogin(L2PcInstance playerInstance) {
+	public void onLogin(Player playerInstance) {
 		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId())) {
 			removeParticipant(playerInstance.getObjectId());
 			if (playerInstance.getEvent() != null) {
-				for (L2Abnormal effect : playerInstance.getAllEffects()) {
+				for (Abnormal effect : playerInstance.getAllEffects()) {
 					if (effect != null) {
 						effect.exit();
 					}
@@ -276,10 +280,10 @@ public class EventsManager {
 		}
 	}
 	
-	public void onLogout(L2PcInstance playerInstance) {
+	public void onLogout(Player playerInstance) {
 		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId())) {
 			if (playerInstance.getEvent() != null) {
-				for (L2Abnormal effect : playerInstance.getAllEffects()) {
+				for (Abnormal effect : playerInstance.getAllEffects()) {
 					if (effect != null) {
 						effect.exit();
 					}
@@ -294,7 +298,7 @@ public class EventsManager {
 		playerInstance.setEvent(null);
 	}
 	
-	public void join(L2PcInstance playerInstance) {
+	public void join(Player playerInstance) {
 		if (isPlayerParticipant(playerInstance.getObjectId())) {
 			return;
 		}
@@ -334,7 +338,7 @@ public class EventsManager {
 		playerInstance.sendPacket(npcHtmlMessage);
 	}
 	
-	public synchronized boolean addParticipant(L2PcInstance playerInstance) {
+	public synchronized boolean addParticipant(Player playerInstance) {
 		// Check for nullpoitner
 		if (playerInstance == null) {
 			return false;
@@ -345,7 +349,7 @@ public class EventsManager {
 		return true;
 	}
 	
-	public void leave(L2PcInstance playerInstance) {
+	public void leave(Player playerInstance) {
 		if (!isPlayerParticipant(playerInstance.getObjectId())) {
 			return;
 		}
@@ -373,7 +377,7 @@ public class EventsManager {
 		return false;
 	}
 	
-	public String getEventInfoPage(L2PcInstance player) {
+	public String getEventInfoPage(Player player) {
 		if (!Config.INSTANCED_EVENT_ENABLED) {
 			return "";
 		}
@@ -465,14 +469,14 @@ public class EventsManager {
 		return result;
 	}
 	
-	private String getRegisteredPlayers(L2PcInstance player) {
+	private String getRegisteredPlayers(Player player) {
 		String result = "";
 		
 		if (registeredPlayers.isEmpty()) {
 			return result;
 		}
 		
-		for (L2PcInstance participant : registeredPlayers.values()) {
+		for (Player participant : registeredPlayers.values()) {
 			if (participant == null) {
 				continue;
 			}
@@ -488,7 +492,7 @@ public class EventsManager {
 		return result;
 	}
 	
-	public String getPlayerString(L2PcInstance player, L2PcInstance reader) {
+	public String getPlayerString(Player player, Player reader) {
 		String color = "FFFFFF";
 		if (player == reader) {
 			color = "FFFF00";
@@ -565,20 +569,20 @@ public class EventsManager {
 	
 	public EventInstance createInstance(int id, List<Integer> group, EventConfig config) {
 		// A map of lists to access the players sorted by class
-		Map<Integer, List<L2PcInstance>> playersByClass = new HashMap<>();
+		Map<Integer, List<Player>> playersByClass = new HashMap<>();
 		// Classify the players according to their class
 		for (int playerId : group) {
 			if (playerId == 0) {
 				continue;
 			}
 			
-			L2PcInstance player = L2World.getInstance().getPlayer(playerId);
+			Player player = World.getInstance().getPlayer(playerId);
 			int classId = player.getCurrentClass().getAwakeningClassId();
 			if (classId == -1) {
 				classId = 147;
 			}
 			
-			List<L2PcInstance> players = playersByClass.get(classId);
+			List<Player> players = playersByClass.get(classId);
 			if (players == null) {
 				players = new ArrayList<>();
 				playersByClass.put(classId, players);
@@ -595,12 +599,12 @@ public class EventsManager {
 		// Create the event and fill it with the players, in class order
 		EventInstance event = config.createInstance(id);
 		for (int classId = 139; classId <= 147; classId++) {
-			List<L2PcInstance> players = playersByClass.get(classId);
+			List<Player> players = playersByClass.get(classId);
 			if (players == null) {
 				continue;
 			}
 			
-			for (L2PcInstance player : players) {
+			for (Player player : players) {
 				event.addParticipant(player);
 			}
 		}
@@ -608,12 +612,12 @@ public class EventsManager {
 		return event;
 	}
 	
-	private boolean checkDualBox(L2PcInstance player) {
+	private boolean checkDualBox(Player player) {
 		if (player == null) {
 			return false;
 		}
 		
-		for (L2PcInstance registered : registeredPlayers.values()) {
+		for (Player registered : registeredPlayers.values()) {
 			if (registered == null) {
 				continue;
 			}
@@ -628,7 +632,7 @@ public class EventsManager {
 		
 		//TODO LasTravel: Hwid check don't work if we don't have LG
         /*String hwId = player.getClient().getHWId();
-		for (L2PcInstance registered : registeredPlayers.values())
+		for (Player registered : registeredPlayers.values())
 		{
 			if (registered.getClient() != null
 					&& registered.getClient().getHWId() != null
@@ -638,7 +642,7 @@ public class EventsManager {
 		return false;*/
 	}
 	
-	public void handleBypass(L2PcInstance activeChar, String command) {
+	public void handleBypass(Player activeChar, String command) {
 		if (activeChar == null) {
 			return;
 		}

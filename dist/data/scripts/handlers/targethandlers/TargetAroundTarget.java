@@ -18,19 +18,19 @@ package handlers.targethandlers;
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.L2Trap;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.Trap;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillBehaviorType;
-import l2server.gameserver.templates.skills.L2SkillTargetDirection;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.templates.skills.SkillBehaviorType;
+import l2server.gameserver.templates.skills.SkillTargetDirection;
+import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.gameserver.util.Util;
 
 import java.util.ArrayList;
@@ -43,9 +43,9 @@ import java.util.ArrayList;
  */
 public class TargetAroundTarget implements ISkillTargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		final ArrayList<L2Character> result = new ArrayList<L2Character>();
-		final L2PcInstance src = activeChar.getActingPlayer();
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		final ArrayList<Creature> result = new ArrayList<Creature>();
+		final Player src = activeChar.getActingPlayer();
 		boolean isAttackingPlayer = false;
 
 		if (activeChar == target || target == null ||
@@ -53,15 +53,15 @@ public class TargetAroundTarget implements ISkillTargetTypeHandler {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return null;
 		} else {
-			if (target instanceof L2Playable) {
+			if (target instanceof Playable) {
 				isAttackingPlayer = true;
 			}
 
 			result.add(target);
 		}
 
-		if (target instanceof L2Playable) {
-			for (L2Character obj : target.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
+		if (target instanceof Playable) {
+			for (Creature obj : target.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
 				if (!isReachableTarget(activeChar, obj, skill, true) || !activeChar.isAbleToCastOnTarget(obj, skill, true)) {
 					continue;
 				}
@@ -73,8 +73,8 @@ public class TargetAroundTarget implements ISkillTargetTypeHandler {
 				result.add(obj);
 			}
 		} else {
-			for (L2Object obj : activeChar.getKnownList().getKnownObjects().values()) {
-				if (activeChar == obj || obj == target || !(obj instanceof L2Character) || !isAttackingPlayer && obj instanceof L2Playable) {
+			for (WorldObject obj : activeChar.getKnownList().getKnownObjects().values()) {
+				if (activeChar == obj || obj == target || !(obj instanceof Creature) || !isAttackingPlayer && obj instanceof Playable) {
 					continue;
 				}
 
@@ -82,7 +82,7 @@ public class TargetAroundTarget implements ISkillTargetTypeHandler {
 					continue;
 				}
 
-				if (!isReachableTarget(target, (L2Character) obj, skill, true) || !activeChar.isAbleToCastOnTarget(obj, skill, true)) {
+				if (!isReachableTarget(target, (Creature) obj, skill, true) || !activeChar.isAbleToCastOnTarget(obj, skill, true)) {
 					continue;
 				}
 
@@ -90,26 +90,26 @@ public class TargetAroundTarget implements ISkillTargetTypeHandler {
 					continue;
 				}
 
-				result.add((L2Character) obj);
+				result.add((Creature) obj);
 			}
 		}
 
-		return result.toArray(new L2Character[result.size()]);
+		return result.toArray(new Creature[result.size()]);
 	}
 
-	private final boolean isReachableTarget(final L2Character activeChar,
-	                                        final L2Character target,
-	                                        final L2Skill skill,
+	private final boolean isReachableTarget(final Creature activeChar,
+	                                        final Creature target,
+	                                        final Skill skill,
 	                                        final boolean isMassiveCheck) {
-		if (target instanceof L2Trap) {
+		if (target instanceof Trap) {
 			return false;
 		}
 
-		final L2SkillTargetDirection td = skill.getTargetDirection();
+		final SkillTargetDirection td = skill.getTargetDirection();
 
-		if (td == L2SkillTargetDirection.DEAD_MONSTER) {
-			if (target instanceof L2MonsterInstance) {
-				if (skill.getSkillBehavior() == L2SkillBehaviorType.ATTACK) {
+		if (td == SkillTargetDirection.DEAD_MONSTER) {
+			if (target instanceof MonsterInstance) {
+				if (skill.getSkillBehavior() == SkillBehaviorType.ATTACK) {
 					if (!isMassiveCheck && !target.isDead()) {
 						return false;
 					}
@@ -123,31 +123,31 @@ public class TargetAroundTarget implements ISkillTargetTypeHandler {
 			}
 		} else {
 			if (!target.isDead()) {
-				if (td == L2SkillTargetDirection.UNDEAD) {
+				if (td == SkillTargetDirection.UNDEAD) {
 					if (target.isUndead()) {
 						return true;
 					}
 				}
 
 				if (isMassiveCheck) {
-					if (td == L2SkillTargetDirection.FRONT) {
+					if (td == SkillTargetDirection.FRONT) {
 						if (activeChar.isFacing(target, 180)) {
 							return true;
 						}
 						//else
 						//	Broadcast.toGameMasters(target.getName() + " was unreachable");
-					} else if (td == L2SkillTargetDirection.BEHIND) {
+					} else if (td == SkillTargetDirection.BEHIND) {
 						if (!target.isFacing(activeChar, 140)) {
 							return true;
 						}
-					} else if (td == L2SkillTargetDirection.DEFAULT || td == L2SkillTargetDirection.AROUND) {
+					} else if (td == SkillTargetDirection.DEFAULT || td == SkillTargetDirection.AROUND) {
 						return true;
-					} else if (td == L2SkillTargetDirection.PLAYER) {
-						if (target instanceof L2Playable) {
+					} else if (td == SkillTargetDirection.PLAYER) {
+						if (target instanceof Playable) {
 							return true;
 						}
-					} else if (td == L2SkillTargetDirection.ALL_SUMMONS) {
-						if (target instanceof L2Summon) {
+					} else if (td == SkillTargetDirection.ALL_SUMMONS) {
+						if (target instanceof Summon) {
 							return true;
 						}
 					}
@@ -161,8 +161,8 @@ public class TargetAroundTarget implements ISkillTargetTypeHandler {
 	}
 
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.TARGET_AROUND_TARGET;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.TARGET_AROUND_TARGET;
 	}
 
 	public static void main(String[] args) {

@@ -16,9 +16,8 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.ItemInfo;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.log.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,33 +64,33 @@ public class InventoryUpdate extends L2ItemListPacket {
 		}
 	}
 	
-	public void addItem(L2ItemInstance item) {
+	public void addItem(Item item) {
 		if (item != null) {
 			items.add(new ItemInfo(item));
 		}
 	}
 	
-	public void addNewItem(L2ItemInstance item) {
+	public void addNewItem(Item item) {
 		if (item != null) {
 			items.add(new ItemInfo(item, 1));
 		}
 	}
 	
-	public void addModifiedItem(L2ItemInstance item) {
+	public void addModifiedItem(Item item) {
 		if (item != null) {
 			items.add(new ItemInfo(item, 2));
 		}
 	}
 	
-	public void addRemovedItem(L2ItemInstance item) {
+	public void addRemovedItem(Item item) {
 		if (item != null) {
 			items.add(new ItemInfo(item, 3));
 		}
 	}
 	
-	public void addItems(List<L2ItemInstance> items) {
+	public void addItems(List<Item> items) {
 		if (items != null) {
-			for (L2ItemInstance item : items) {
+			for (Item item : items) {
 				if (item != null) {
 					this.items.add(new ItemInfo(item));
 				}
@@ -101,7 +100,7 @@ public class InventoryUpdate extends L2ItemListPacket {
 	
 	private void showDebug() {
 		for (ItemInfo item : items) {
-			Log.fine("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem().getName() + " last change:" + item.getChange());
+			log.debug("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem().getName() + " last change:" + item.getChange());
 		}
 	}
 	

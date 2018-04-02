@@ -19,9 +19,9 @@ import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.GMViewPledgeInfo;
 import l2server.gameserver.network.serverpackets.PledgeSkillList;
@@ -46,11 +46,11 @@ public class AdminPledge implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_pledge"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
-		L2Object target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+	public boolean useAdminCommand(String command, Player activeChar) {
+		WorldObject target = activeChar.getTarget();
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			showMainPage(activeChar);
@@ -116,7 +116,7 @@ public class AdminPledge implements IAdminCommandHandler {
 				skills.put(390, 2);
 				skills.put(391, 1);
 				for (int id : skills.keySet()) {
-					L2Skill skill = SkillTable.getInstance().getInfo(id, skills.get(id));
+					Skill skill = SkillTable.getInstance().getInfo(id, skills.get(id));
 					if (skill != null) {
 						String skillname = skill.getName();
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_SKILL_S1_ADDED);
@@ -127,7 +127,7 @@ public class AdminPledge implements IAdminCommandHandler {
 						activeChar.sendMessage("You gave the Clan Skill: " + skillname + " to the clan " + player.getClan().getName() + ".");
 
 						activeChar.getClan().broadcastToOnlineMembers(new PledgeSkillList(activeChar.getClan()));
-						for (L2PcInstance member : activeChar.getClan().getOnlineMembers(0)) {
+						for (Player member : activeChar.getClan().getOnlineMembers(0)) {
 							member.sendSkillList();
 						}
 					}
@@ -169,7 +169,7 @@ public class AdminPledge implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	private void showMainPage(L2PcInstance activeChar) {
+	private void showMainPage(Player activeChar) {
 		AdminHelpPage.showHelpPage(activeChar, "game_menu.htm");
 	}
 }

@@ -15,8 +15,8 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
 
 /**
  * @author KenM
@@ -41,7 +41,7 @@ public final class FlyToLocation extends L2GameServerPacket {
 		DRAG
 	}
 	
-	public FlyToLocation(L2Character cha, int destX, int destY, int destZ, FlyType type) {
+	public FlyToLocation(Creature cha, int destX, int destY, int destZ, FlyType type) {
 		chaObjId = cha.getObjectId();
 		chaX = cha.getX();
 		chaY = cha.getY();
@@ -52,7 +52,7 @@ public final class FlyToLocation extends L2GameServerPacket {
 		this.type = type;
 	}
 	
-	public FlyToLocation(L2Character cha, L2Object dest, FlyType type) {
+	public FlyToLocation(Creature cha, WorldObject dest, FlyType type) {
 		this(cha, dest.getX(), dest.getY(), dest.getZ(), type);
 	}
 

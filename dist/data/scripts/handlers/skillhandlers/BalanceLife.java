@@ -17,14 +17,14 @@ package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.SkillHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2MobSummonInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.MobSummonInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.StatusUpdate.StatusUpdateDisplay;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 
 /**
  * This class ...
@@ -34,39 +34,39 @@ import l2server.gameserver.templates.skills.L2SkillType;
  */
 
 public class BalanceLife implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.BALANCE_LIFE};
+	private static final SkillType[] SKILL_IDS = {SkillType.BALANCE_LIFE};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		// L2Character activeChar = activeChar;
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		// Creature activeChar = activeChar;
 		// check for other effects
-		ISkillHandler handler = SkillHandler.getInstance().getSkillHandler(L2SkillType.BUFF);
+		ISkillHandler handler = SkillHandler.getInstance().getSkillHandler(SkillType.BUFF);
 
 		if (handler != null) {
 			handler.useSkill(activeChar, skill, targets);
 		}
 
-		L2PcInstance player = null;
-		if (activeChar instanceof L2PcInstance) {
-			player = (L2PcInstance) activeChar;
+		Player player = null;
+		if (activeChar instanceof Player) {
+			player = (Player) activeChar;
 		}
 
 		double fullHP = 0;
 		double currentHPs = 0;
 
-		for (L2Character target : (L2Character[]) targets) {
+		for (Creature target : (Creature[]) targets) {
 			// We should not heal if char is dead/
-			if (target == null || target.isDead() || target instanceof L2MobSummonInstance) // Tenkai custom - don't consider coke mobs
+			if (target == null || target.isDead() || target instanceof MobSummonInstance) // Tenkai custom - don't consider coke mobs
 			{
 				continue;
 			}
 
 			// Player holding a cursed weapon can't be healed and can't heal
 			if (target != activeChar) {
-				if (target instanceof L2PcInstance && ((L2PcInstance) target).isCursedWeaponEquipped()) {
+				if (target instanceof Player && ((Player) target).isCursedWeaponEquipped()) {
 					continue;
 				} else if (player != null && player.isCursedWeaponEquipped()) {
 					continue;
@@ -79,15 +79,15 @@ public class BalanceLife implements ISkillHandler {
 
 		double percentHP = currentHPs / fullHP;
 
-		for (L2Character target : (L2Character[]) targets) {
-			if (target == null || target.isDead() || target instanceof L2MobSummonInstance) // Tenkai custom - don't consider coke mobs
+		for (Creature target : (Creature[]) targets) {
+			if (target == null || target.isDead() || target instanceof MobSummonInstance) // Tenkai custom - don't consider coke mobs
 			{
 				continue;
 			}
 
 			// Player holding a cursed weapon can't be healed and can't heal
 			if (target != activeChar) {
-				if (target instanceof L2PcInstance && ((L2PcInstance) target).isCursedWeaponEquipped()) {
+				if (target instanceof Player && ((Player) target).isCursedWeaponEquipped()) {
 					continue;
 				} else if (player != null && player.isCursedWeaponEquipped()) {
 					continue;
@@ -108,7 +108,7 @@ public class BalanceLife implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

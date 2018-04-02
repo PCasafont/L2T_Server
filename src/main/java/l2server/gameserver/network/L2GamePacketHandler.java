@@ -16,12 +16,14 @@
 package l2server.gameserver.network;
 
 import l2server.Config;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.network.L2GameClient.GameClientState;
 import l2server.gameserver.network.PacketOpcodes.PacketFamily;
 import l2server.gameserver.network.clientpackets.L2GameClientPacket;
-import l2server.log.Log;
 import l2server.network.*;
 import l2server.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.nio.ByteBuffer;
 
@@ -36,6 +38,8 @@ import java.nio.ByteBuffer;
  * @author KenM
  */
 public final class L2GamePacketHandler implements IPacketHandler<L2GameClient>, IClientFactory<L2GameClient>, IMMOExecutor<L2GameClient> {
+	
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
 	
 	// implementation
 	@Override
@@ -73,7 +77,7 @@ public final class L2GamePacketHandler implements IPacketHandler<L2GameClient>, 
 				try {
 					msg = packetClass.newInstance();
 				} catch (Exception e) {
-					Log.warning("Error while trying to create packet of type: " + packetClass.getCanonicalName());
+					log.warn("Error while trying to create packet of type: " + packetClass.getCanonicalName());
 					e.printStackTrace();
 				}
 			} else {
@@ -97,10 +101,10 @@ public final class L2GamePacketHandler implements IPacketHandler<L2GameClient>, 
 		}
 		
 		int size = buf.remaining();
-		Log.warning("Unknown Packet: " + opcode + " on State: " + state.name() + " Client: " + client.toString());
+		log.warn("Unknown Packet: " + opcode + " on State: " + state.name() + " Client: " + client.toString());
 		byte[] array = new byte[size];
 		buf.get(array);
-		Log.warning(Util.printData(array, size));
+		log.warn(Util.printData(array, size));
 	}
 	
 	// impl

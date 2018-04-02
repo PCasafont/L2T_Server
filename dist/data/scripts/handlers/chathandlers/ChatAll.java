@@ -23,12 +23,11 @@ import l2server.gameserver.handler.IChatHandler;
 import l2server.gameserver.handler.IVoicedCommandHandler;
 import l2server.gameserver.handler.VoicedCommandHandler;
 import l2server.gameserver.model.BlockList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 
 import java.util.Collection;
 import java.util.StringTokenizer;
-import java.util.logging.Logger;
 
 /**
  * A chat handler
@@ -38,13 +37,11 @@ import java.util.logging.Logger;
 public class ChatAll implements IChatHandler {
 	private static final int[] COMMAND_IDS = {0};
 
-	private static Logger log = Logger.getLogger(ChatAll.class.getName());
-
 	/**
 	 * Handle chat type 'all'
 	 */
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String params, String text) {
+	public void handleChat(int type, Player activeChar, String params, String text) {
 		boolean vcd_used = false;
 		if (text.startsWith(".")) {
 			StringTokenizer st = new StringTokenizer(text);
@@ -67,7 +64,7 @@ public class ChatAll implements IChatHandler {
 				vcd_used = true;
 			} else {
 				if (Config.DEBUG) {
-					log.warning("No handler registered for bypass '" + command + "'");
+					log.warn("No handler registered for bypass '" + command + "'");
 				}
 				vcd_used = false;
 			}
@@ -76,8 +73,8 @@ public class ChatAll implements IChatHandler {
 		if (!vcd_used) {
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getAppearance().getVisibleName(), text);
 
-			Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
-			for (L2PcInstance player : plrs) {
+			Collection<Player> plrs = activeChar.getKnownList().getKnownPlayers().values();
+			for (Player player : plrs) {
 				if (player != null && activeChar.isInsideRadius(player, 1250, false, true) && !BlockList.isBlocked(player, activeChar)) {
 					player.sendPacket(cs);
 				}

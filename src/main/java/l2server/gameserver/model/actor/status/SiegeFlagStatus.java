@@ -1,20 +1,20 @@
 package l2server.gameserver.model.actor.status;
 
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2SiegeFlagInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.SiegeFlagInstance;
 
 public class SiegeFlagStatus extends NpcStatus {
-	public SiegeFlagStatus(L2SiegeFlagInstance activeChar) {
+	public SiegeFlagStatus(SiegeFlagInstance activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public void reduceHp(double value, L2Character attacker) {
+	public void reduceHp(double value, Creature attacker) {
 		reduceHp(value, attacker, true, false, false);
 	}
 
 	@Override
-	public void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHpConsumption) {
+	public void reduceHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean isHpConsumption) {
 		if (getActiveChar().isAdvancedHeadquarter()) {
 			value /= 2.;
 		}
@@ -23,7 +23,7 @@ public class SiegeFlagStatus extends NpcStatus {
 	}
 
 	@Override
-	public L2SiegeFlagInstance getActiveChar() {
-		return (L2SiegeFlagInstance) super.getActiveChar();
+	public SiegeFlagInstance getActiveChar() {
+		return (SiegeFlagInstance) super.getActiveChar();
 	}
 }

@@ -17,8 +17,8 @@ package handlers.bypasshandlers;
 
 import l2server.Config;
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.network.serverpackets.SortedWareHouseWithdrawalList.WarehouseListType;
@@ -27,7 +27,7 @@ public class PrivateWarehouse implements IBypassHandler {
 	private static final String[] COMMANDS = {"withdrawp", "withdrawsortedp", "depositp"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		if (target == null) {
 			return false;
 		}
@@ -67,7 +67,7 @@ public class PrivateWarehouse implements IBypassHandler {
 				activeChar.tempInventoryDisable();
 				
 				if (Config.DEBUG) {
-					log.fine("Source: L2WarehouseInstance.java; Player: " + activeChar.getName() +
+					log.debug("Source: WarehouseInstance.java; Player: " + activeChar.getName() +
 							"; Command: showDepositWindow; Message: Showing items to deposit.");
 				}
 				
@@ -82,7 +82,7 @@ public class PrivateWarehouse implements IBypassHandler {
 		return false;
 	}
 	
-	private static void showWithdrawWindow(L2PcInstance player, WarehouseListType itemtype, byte sortorder) {
+	private static void showWithdrawWindow(Player player, WarehouseListType itemtype, byte sortorder) {
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 		player.setActiveWarehouse(player.getWarehouse());
 		
@@ -98,7 +98,7 @@ public class PrivateWarehouse implements IBypassHandler {
 		}
 		
 		if (Config.DEBUG) {
-			log.fine("Source: L2WarehouseInstance.java; Player: " + player.getName() +
+			log.debug("Source: WarehouseInstance.java; Player: " + player.getName() +
 					"; Command: showRetrieveWindow; Message: Showing stored items.");
 		}
 	}

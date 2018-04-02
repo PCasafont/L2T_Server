@@ -18,8 +18,8 @@ package handlers.bypasshandlers;
 import l2server.Config;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.instancemanager.ItemAuctionManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemauction.ItemAuction;
 import l2server.gameserver.model.itemauction.ItemAuctionInstance;
 import l2server.gameserver.network.SystemMessageId;
@@ -36,7 +36,7 @@ public class ItemAuctionLink implements IBypassHandler {
 	private static final String[] COMMANDS = {"ItemAuction"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		if (target == null) {
 			return false;
 		}
@@ -97,7 +97,7 @@ public class ItemAuctionLink implements IBypassHandler {
 				return false;
 			}
 		} catch (Exception e) {
-			log.severe("Exception in: " + getClass().getSimpleName() + ":" + e.getMessage());
+			log.error("Exception in: " + getClass().getSimpleName() + ":" + e.getMessage());
 		}
 		
 		return true;

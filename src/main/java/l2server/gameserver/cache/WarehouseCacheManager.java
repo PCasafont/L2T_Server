@@ -17,7 +17,7 @@ package l2server.gameserver.cache;
 
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -25,7 +25,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author -Nemesiss-
  */
 public class WarehouseCacheManager {
-	protected final ConcurrentHashMap<L2PcInstance, Long> cachedWh;
+	protected final ConcurrentHashMap<Player, Long> cachedWh;
 	protected final long cacheTime;
 
 	public static WarehouseCacheManager getInstance() {
@@ -38,11 +38,11 @@ public class WarehouseCacheManager {
 		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new CacheScheduler(), 120000, 60000);
 	}
 
-	public void addCacheTask(L2PcInstance pc) {
+	public void addCacheTask(Player pc) {
 		cachedWh.put(pc, System.currentTimeMillis());
 	}
 
-	public void remCacheTask(L2PcInstance pc) {
+	public void remCacheTask(Player pc) {
 		cachedWh.remove(pc);
 	}
 
@@ -50,7 +50,7 @@ public class WarehouseCacheManager {
 		@Override
 		public void run() {
 			long cTime = System.currentTimeMillis();
-			for (L2PcInstance pc : cachedWh.keySet()) {
+			for (Player pc : cachedWh.keySet()) {
 				if (cTime - cachedWh.get(pc) > cacheTime) {
 					pc.clearWarehouse();
 					cachedWh.remove(pc);

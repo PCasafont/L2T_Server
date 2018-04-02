@@ -19,7 +19,8 @@ import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.L2DropCategory;
 import l2server.gameserver.model.L2DropData;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -33,6 +34,9 @@ import java.util.ArrayList;
  * @version $Revision$ $Date$
  */
 public class ExtraDropTable {
+	private static Logger log = LoggerFactory.getLogger(ExtraDropTable.class.getName());
+
+
 
 	private Map<Integer, ArrayList<L2DropCategory>> extraGroups = new HashMap<>();
 
@@ -70,7 +74,7 @@ public class ExtraDropTable {
 								L2DropData dd = new L2DropData(itemId, min, max, chance2);
 
 								if (ItemTable.getInstance().getTemplate(dd.getItemId()) == null) {
-									Log.warning(
+									log.warn(
 											"Drop data for undefined item template! Extra drop category id: " + id + " itemId: " + dd.getItemId());
 									continue;
 								}

@@ -17,8 +17,8 @@ package l2server.gameserver.model.entity;
 
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2SiegeClan;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.Calendar;
 import java.util.List;
@@ -37,7 +37,7 @@ public interface Siegable {
 
 	List<L2SiegeClan> getAttackerClans();
 
-	List<L2PcInstance> getAttackersInZone();
+	List<Player> getAttackersInZone();
 
 	boolean checkIsAttacker(L2Clan clan);
 
@@ -49,7 +49,7 @@ public interface Siegable {
 
 	boolean checkIsDefender(L2Clan clan);
 
-	List<L2Npc> getFlag(L2Clan clan);
+	List<Npc> getFlag(L2Clan clan);
 
 	Calendar getSiegeDate();
 

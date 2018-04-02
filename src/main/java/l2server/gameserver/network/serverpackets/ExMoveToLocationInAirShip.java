@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.Point3D;
 
 public class ExMoveToLocationInAirShip extends L2GameServerPacket {
@@ -26,7 +26,7 @@ public class ExMoveToLocationInAirShip extends L2GameServerPacket {
 	
 	/**
 	 */
-	public ExMoveToLocationInAirShip(L2PcInstance player) {
+	public ExMoveToLocationInAirShip(Player player) {
 		charObjId = player.getObjectId();
 		airShipId = player.getAirShip().getObjectId();
 		destination = player.getInVehiclePosition();

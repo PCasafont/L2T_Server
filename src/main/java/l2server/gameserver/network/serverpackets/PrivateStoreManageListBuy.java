@@ -15,9 +15,9 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.TradeList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * This class ...
@@ -27,10 +27,10 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class PrivateStoreManageListBuy extends L2ItemListPacket {
 	private int objId;
 	private long playerAdena;
-	private L2ItemInstance[] itemList;
+	private Item[] itemList;
 	private TradeList.TradeItem[] buyList;
 	
-	public PrivateStoreManageListBuy(L2PcInstance player) {
+	public PrivateStoreManageListBuy(Player player) {
 		objId = player.getObjectId();
 		playerAdena = player.getAdena();
 		itemList = player.getInventory().getUniqueItems(false, true);
@@ -45,7 +45,7 @@ public class PrivateStoreManageListBuy extends L2ItemListPacket {
 		
 		//section2
 		writeD(itemList.length); // inventory items for potential buy
-		for (L2ItemInstance item : itemList) {
+		for (Item item : itemList) {
 			writeItem(item);
 			writeQ(item.getItem().getReferencePrice() * 2);
 		}

@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 
 /**
  * @author Pere
@@ -24,7 +24,7 @@ public abstract class L2ItemListPacket extends L2GameServerPacket {
 	public interface ItemInstanceInfo {
 		int getObjectId();
 		
-		L2Item getItem();
+		ItemTemplate getItem();
 		
 		int getLocationSlot();
 		

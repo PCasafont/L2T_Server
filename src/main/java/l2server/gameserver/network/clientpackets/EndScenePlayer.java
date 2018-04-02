@@ -15,8 +15,7 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author JIV
@@ -32,7 +31,7 @@ public final class EndScenePlayer extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -40,12 +39,12 @@ public final class EndScenePlayer extends L2GameClientPacket {
 			return;
 		}
 		if (activeChar.getMovieId() != movieId) {
-			Log.warning("Player " + getClient() + " sent EndScenePlayer with wrong movie id: " + movieId);
+			log.warn("Player " + getClient() + " sent EndScenePlayer with wrong movie id: " + movieId);
 			return;
 		}
 		activeChar.setMovieId(0);
 		/* L2j guarrineitorada, we'll see if it explodes but it won't most probably
-		 * activeChar.setIsTeleporting(true, false); // avoid to get player removed from L2World
+		 * activeChar.setIsTeleporting(true, false); // avoid to get player removed from World
 		 * activeChar.decayMe();
 		 * activeChar.spawnMe(activeChar.getPosition().getX(), activeChar.getPosition().getY(), activeChar.getPosition().getZ());
 		 * activeChar.setIsTeleporting(false, false);

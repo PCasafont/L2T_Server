@@ -17,8 +17,8 @@ package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.PetitionManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
@@ -33,7 +33,7 @@ public class AdminPetition implements IAdminCommandHandler {
 					"admin_force_peti"};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		int petitionId = -1;
 		
 		try {
@@ -73,12 +73,12 @@ public class AdminPetition implements IAdminCommandHandler {
 			PetitionManager.getInstance().sendPendingPetitionList(activeChar);
 		} else if (command.startsWith("admin_force_peti")) {
 			try {
-				L2Object targetChar = activeChar.getTarget();
-				if (targetChar == null || !(targetChar instanceof L2PcInstance)) {
+				WorldObject targetChar = activeChar.getTarget();
+				if (targetChar == null || !(targetChar instanceof Player)) {
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 					return false;
 				}
-				L2PcInstance targetPlayer = (L2PcInstance) targetChar;
+				Player targetPlayer = (Player) targetChar;
 				
 				String val = command.substring(15);
 				

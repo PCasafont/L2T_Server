@@ -4,11 +4,12 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.MailManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,6 +21,9 @@ import java.util.logging.Level;
  * @author Inia
  */
 public class TopRanked {
+	private static Logger log = LoggerFactory.getLogger(TopRanked.class.getName());
+
+
 	private StartTask task;
 
 	public int getRankedPoints(int id) {
@@ -38,7 +42,7 @@ public class TopRanked {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
+			log.warn("Couldn't get current ranked points : " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(get);
 		}
@@ -57,7 +61,7 @@ public class TopRanked {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
+			log.error("Failed updating Ranked Points", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -119,7 +123,7 @@ public class TopRanked {
 
 				if (position <= 5) {
 
-					L2PcInstance test = L2PcInstance.load(x);
+					Player test = Player.load(x);
 					Announcements.getInstance()
 							.announceToAll(
 									"n°" + position + "  " + test.getName() + " with " + currentPoints + " points won " + rewardAmount + " CoLs");
@@ -130,7 +134,7 @@ public class TopRanked {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
+			log.warn("Couldn't get current ranked points : " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(get);
 		}
@@ -165,7 +169,7 @@ public class TopRanked {
 		return task;
 	}
 
-	public void showInfo(L2PcInstance activeChar) {
+	public void showInfo(Player activeChar) {
 		Calendar now = Calendar.getInstance();
 		Calendar startTime = Calendar.getInstance();
 		startTime.setTimeInMillis(task.getStartTime());

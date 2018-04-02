@@ -15,8 +15,10 @@
 
 package l2server.util.crypt;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
-import java.util.logging.Logger;
 
 /**
  * This class ...
@@ -24,7 +26,7 @@ import java.util.logging.Logger;
  * @version $Revision: 1.3.4.1 $ $Date: 2005/03/27 15:30:09 $
  */
 public class NewCrypt {
-	protected static Logger log = Logger.getLogger(NewCrypt.class.getName());
+	protected static Logger log = LoggerFactory.getLogger(NewCrypt.class.getName());
 	BlowfishEngine crypt;
 	BlowfishEngine decrypt;
 

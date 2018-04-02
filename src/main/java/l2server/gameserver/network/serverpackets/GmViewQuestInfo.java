@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 
@@ -26,9 +26,9 @@ import l2server.gameserver.model.quest.QuestState;
  */
 public class GmViewQuestInfo extends L2GameServerPacket {
 	
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	
-	public GmViewQuestInfo(L2PcInstance cha) {
+	public GmViewQuestInfo(Player cha) {
 		activeChar = cha;
 	}
 	

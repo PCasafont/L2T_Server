@@ -16,13 +16,11 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.Config;
-import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.scripting.L2ScriptEngineManager;
 import l2server.gameserver.scripting.ScriptManager;
-import l2server.log.Log;
-import l2server.util.loader.annotations.Load;
-import l2server.util.loader.annotations.Reload;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +28,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class QuestManager extends ScriptManager<Quest> {
-
+	
+	private static Logger log = LoggerFactory.getLogger(QuestManager.class.getName());
+	
 	public static QuestManager getInstance() {
 		return SingletonHolder.instance;
 	}
@@ -72,7 +72,7 @@ public class QuestManager extends ScriptManager<Quest> {
 	}
 	
 	public final void reload() {
-		Log.info("Reloading Server Scripts");
+		log.info("Reloading Server Scripts");
 		try {
 			// unload all scripts
 			for (Quest quest : quests.values()) {
@@ -93,12 +93,12 @@ public class QuestManager extends ScriptManager<Quest> {
 
 			QuestManager.getInstance().report();
 		} catch (IOException ioe) {
-			Log.severe("Failed loading scripts.cfg, no script going to be loaded");
+			log.error("Failed loading scripts.cfg, no script going to be loaded");
 		}
 	}
 
 	public final void report() {
-		Log.info("Loaded: " + quests.size() + " quests");
+		log.info("Loaded: " + quests.size() + " quests");
 	}
 
 	public final void save() {
@@ -139,7 +139,7 @@ public class QuestManager extends ScriptManager<Quest> {
 		// ignores the data; perhaps the least of all evils...
 		if (old != null) {
 			old.unload();
-			Log.info("Replaced: (" + old.getName() + ") with a new version (" + newQuest.getName() + ")");
+			log.info("Replaced: (" + old.getName() + ") with a new version (" + newQuest.getName() + ")");
 		}
 		quests.put(newQuest.getName(), newQuest);
 	}

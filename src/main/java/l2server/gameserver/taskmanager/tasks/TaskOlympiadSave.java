@@ -20,7 +20,8 @@ import l2server.gameserver.taskmanager.Task;
 import l2server.gameserver.taskmanager.TaskManager;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
 import l2server.gameserver.taskmanager.TaskTypes;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Updates all data of Olympiad nobles in db
@@ -28,6 +29,9 @@ import l2server.log.Log;
  * @author godson
  */
 public class TaskOlympiadSave extends Task {
+	private static Logger log = LoggerFactory.getLogger(TaskOlympiadSave.class.getName());
+
+
 
 	public static final String NAME = "olympiad_save";
 
@@ -46,7 +50,7 @@ public class TaskOlympiadSave extends Task {
 	public void onTimeElapsed(ExecutedTask task) {
 		if (Olympiad.getInstance().inCompPeriod()) {
 			Olympiad.getInstance().saveOlympiadStatus();
-			Log.info("Olympiad System: Data updated.");
+			log.info("Olympiad System: Data updated.");
 		}
 	}
 

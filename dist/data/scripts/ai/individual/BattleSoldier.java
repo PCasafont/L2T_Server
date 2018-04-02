@@ -16,9 +16,9 @@
 package ai.individual;
 
 import ai.group_template.L2AttackableAIScript;
-import l2server.gameserver.ai.L2NpcWalkerAI;
+import l2server.gameserver.ai.NpcWalkerAI;
 import l2server.gameserver.model.L2NpcWalkerNode;
-import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.Npc;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +53,7 @@ public class BattleSoldier extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onArrived(final L2NpcWalkerAI guideAI) {
+	public String onArrived(final NpcWalkerAI guideAI) {
 		if (guideAI.getCurrentPos() == 4) {
 			guideAI.getActor().decayMe();
 			addSpawn(BATTLE_SOLDIER, -115199, 237369, -3088, 0, true, 0);
@@ -65,8 +65,8 @@ public class BattleSoldier extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc) {
-		L2NpcWalkerAI battleSoldierAI = new L2NpcWalkerAI(npc);
+	public final String onSpawn(Npc npc) {
+		NpcWalkerAI battleSoldierAI = new NpcWalkerAI(npc);
 
 		npc.setAI(battleSoldierAI);
 

@@ -22,10 +22,10 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2NpcInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.NpcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.util.Util;
@@ -55,7 +55,7 @@ public class SuperMewCatZ extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public final String onSpawn(Npc npc) {
 		ThreadPoolManager.getInstance().scheduleGeneral(new MoveTheFucker(npc), 3000);
 
 		return super.onSpawn(npc);
@@ -65,7 +65,7 @@ public class SuperMewCatZ extends L2AttackableAIScript {
 		new SuperMewCatZ(-1, "SuperMewCatZ", "ai");
 	}
 
-	private final int moveTheFucker(final L2Npc npc) {
+	private final int moveTheFucker(final Npc npc) {
 		final int x = 83420 + Rnd.get(-250, 250);
 		final int y = 148376 + Rnd.get(-250, 250);
 		final int z = -3406;
@@ -73,7 +73,7 @@ public class SuperMewCatZ extends L2AttackableAIScript {
 		npc.setIsRunning(Rnd.nextBoolean());
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(x, y, z, 0));
 
-		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
+		for (Player player : World.getInstance().getAllPlayersArray()) {
 			if (player.getHWID().equals("")) {
 				continue;
 			}
@@ -99,7 +99,7 @@ public class SuperMewCatZ extends L2AttackableAIScript {
 				L2DatabaseFactory.close(con);
 			}
 
-			L2NpcInstance cat = Util.getNpcCloseTo(1603, player);
+			NpcInstance cat = Util.getNpcCloseTo(1603, player);
 
 			int catObjectId = 0;
 			if (cat != null) {
@@ -116,9 +116,9 @@ public class SuperMewCatZ extends L2AttackableAIScript {
 	}
 
 	private final class MoveTheFucker implements Runnable {
-		private final L2Npc npc;
+		private final Npc npc;
 
-		public MoveTheFucker(L2Npc npc) {
+		public MoveTheFucker(Npc npc) {
 			this.npc = npc;
 		}
 

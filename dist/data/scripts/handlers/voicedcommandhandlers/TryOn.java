@@ -18,12 +18,12 @@ package handlers.voicedcommandhandlers;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.handler.IVoicedCommandHandler;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.templates.item.L2EtcItem;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.gameserver.templates.item.L2Weapon;
+import l2server.gameserver.templates.item.EtcItemTemplate;
+import l2server.gameserver.templates.item.ItemTemplate;
+import l2server.gameserver.templates.item.WeaponTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,10 +38,10 @@ public class TryOn implements IVoicedCommandHandler {
 	private static final int ITEMS_PER_PAGE = 6;
 
 	/**
-	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, Player, java.lang.String)
 	 */
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance player, String params) {
+	public boolean useVoicedCommand(String command, Player player, String params) {
 		if (!command.equalsIgnoreCase("tryon")) {
 			return false;
 		}
@@ -50,7 +50,7 @@ public class TryOn implements IVoicedCommandHandler {
 			return false;
 		}
 
-		if (!player.isGM() && !player.isInsideZone(L2Character.ZONE_TOWN)) {
+		if (!player.isGM() && !player.isInsideZone(Creature.ZONE_TOWN)) {
 			player.sendMessage("You can't try on apps outside of town!");
 			return false;
 		}
@@ -114,7 +114,7 @@ public class TryOn implements IVoicedCommandHandler {
 		}
 		sb.append("</table></center><br>");
 
-		List<L2Item> items = getItems(search);
+		List<ItemTemplate> items = getItems(search);
 		int totalCount = items.size();
 		int pageCount = (int) Math.ceil(totalCount / (float) ITEMS_PER_PAGE);
 		if (page > pageCount) {
@@ -132,7 +132,7 @@ public class TryOn implements IVoicedCommandHandler {
 		sb.append("<table width=300>");
 
 		int index = 0;
-		for (L2Item item : items) {
+		for (ItemTemplate item : items) {
 			sb.append("<tr>");
 			sb.append("<td width=300>");
 
@@ -182,11 +182,11 @@ public class TryOn implements IVoicedCommandHandler {
 		return true;
 	}
 
-	private List<L2Item> getItems(String search) {
-		List<L2Item> items = new ArrayList<L2Item>();
-		for (L2Item it : ItemTable.getInstance().getAllItems()) {
-			L2Item item = null;
-			if (it instanceof L2Weapon) {
+	private List<ItemTemplate> getItems(String search) {
+		List<ItemTemplate> items = new ArrayList<ItemTemplate>();
+		for (ItemTemplate it : ItemTable.getInstance().getAllItems()) {
+			ItemTemplate item = null;
+			if (it instanceof WeaponTemplate) {
 				switch (it.getItemId()) {
 					case 36417: // Antharas Shaper - Fragment
 					case 36441: // Antharas Shaper - Standard
@@ -317,11 +317,11 @@ public class TryOn implements IVoicedCommandHandler {
 					}
 				}
 			} else {
-				if (!(it instanceof L2EtcItem)) {
+				if (!(it instanceof EtcItemTemplate)) {
 					continue;
 				}
 
-				L2EtcItem stone = (L2EtcItem) it;
+				EtcItemTemplate stone = (EtcItemTemplate) it;
 				if (stone.getHandlerName() == null || !stone.getHandlerName().equals("AppearanceStone") || stone.getStandardItem() <= 0) {
 					continue;
 				}
@@ -337,7 +337,7 @@ public class TryOn implements IVoicedCommandHandler {
 			}
 
 			boolean contained = false;
-			for (L2Item i : items) {
+			for (ItemTemplate i : items) {
 				if (i.getName().equalsIgnoreCase(item.getName())) {
 					contained = true;
 				}
@@ -353,10 +353,10 @@ public class TryOn implements IVoicedCommandHandler {
 		return items;
 	}
 
-	private List<L2Item> getPage(List<L2Item> allItems, int page) {
-		List<L2Item> items = new ArrayList<L2Item>();
+	private List<ItemTemplate> getPage(List<ItemTemplate> allItems, int page) {
+		List<ItemTemplate> items = new ArrayList<ItemTemplate>();
 		int index = 0;
-		for (L2Item item : allItems) {
+		for (ItemTemplate item : allItems) {
 			if (index >= (page - 1) * ITEMS_PER_PAGE) {
 				items.add(item);
 			}

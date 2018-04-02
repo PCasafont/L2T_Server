@@ -27,9 +27,9 @@ package handlers.admincommandhandlers;
 
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.Experience;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -40,11 +40,11 @@ public class AdminLevel implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_add_level", "admin_set_level"};
 
 	/**
-	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, Player)
 	 */
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
-		L2Object targetChar = activeChar.getTarget();
+	public boolean useAdminCommand(String command, Player activeChar) {
+		WorldObject targetChar = activeChar.getTarget();
 		StringTokenizer st = new StringTokenizer(command, " ");
 		String actualCommand = st.nextToken(); // Get actual command
 
@@ -55,19 +55,19 @@ public class AdminLevel implements IAdminCommandHandler {
 
 		if (actualCommand.equalsIgnoreCase("admin_add_level")) {
 			try {
-				if (targetChar instanceof L2Playable) {
-					((L2Playable) targetChar).getStat().addLevel(Byte.parseByte(val));
+				if (targetChar instanceof Playable) {
+					((Playable) targetChar).getStat().addLevel(Byte.parseByte(val));
 				}
 			} catch (NumberFormatException e) {
 				activeChar.sendMessage("Wrong Number Format");
 			}
 		} else if (actualCommand.equalsIgnoreCase("admin_set_level")) {
 			try {
-				if (!(targetChar instanceof L2PcInstance)) {
+				if (!(targetChar instanceof Player)) {
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT)); // incorrect target!
 					return false;
 				}
-				L2PcInstance targetPlayer = (L2PcInstance) targetChar;
+				Player targetPlayer = (Player) targetChar;
 
 				byte lvl = Byte.parseByte(val);
 				if (lvl >= 1 && lvl <= Config.MAX_LEVEL + 1) {

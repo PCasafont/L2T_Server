@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Pere
@@ -23,7 +23,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public final class MagicAndSkillUse extends L2GameServerPacket {
 	private int objId;
 	
-	public MagicAndSkillUse(L2PcInstance player) {
+	public MagicAndSkillUse(Player player) {
 		objId = player.getObjectId();
 	}
 	

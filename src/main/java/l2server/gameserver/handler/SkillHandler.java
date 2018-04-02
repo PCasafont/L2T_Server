@@ -15,8 +15,10 @@
 
 package l2server.gameserver.handler;
 
-import java.util.HashMap; import java.util.Map;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class ...
@@ -34,13 +36,13 @@ public class SkillHandler {
 	}
 
 	public void registerSkillHandler(ISkillHandler handler) {
-		L2SkillType[] types = handler.getSkillIds();
-		for (L2SkillType t : types) {
+		SkillType[] types = handler.getSkillIds();
+		for (SkillType t : types) {
 			datatable.put(t.ordinal(), handler);
 		}
 	}
 
-	public ISkillHandler getSkillHandler(L2SkillType skillType) {
+	public ISkillHandler getSkillHandler(SkillType skillType) {
 		return datatable.get(skillType.ordinal());
 	}
 

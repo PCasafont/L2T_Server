@@ -17,10 +17,11 @@ package l2server.gameserver.model;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ShortCutInit;
 import l2server.gameserver.network.serverpackets.ShortCutRegister;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -36,12 +37,15 @@ import java.util.logging.Level;
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:33 $
  */
 public class ShortCuts {
-	private L2PcInstance owner;
+	private static Logger log = LoggerFactory.getLogger(ShortCuts.class.getName());
+
+
+	private Player owner;
 	private Map<Integer, Map<Integer, Map<Integer, L2ShortCut>>> shortCuts = new TreeMap<>();
 
 	private boolean hasPresetForCurrentLevel;
 
-	public ShortCuts(L2PcInstance owner) {
+	public ShortCuts(Player owner) {
 		this.owner = owner;
 	}
 
@@ -75,7 +79,7 @@ public class ShortCuts {
 	public synchronized void registerShortCut(L2ShortCut shortcut) {
 		// verify shortcut
 		if (shortcut.getType() == L2ShortCut.TYPE_ITEM) {
-			L2ItemInstance item = owner.getInventory().getItemByObjectId(shortcut.getId());
+			Item item = owner.getInventory().getItemByObjectId(shortcut.getId());
 			if (item == null) {
 				return;
 			}
@@ -84,7 +88,7 @@ public class ShortCuts {
 			}
 		}
 		if (shortcut.getType() == L2ShortCut.TYPE_SKILL) {
-			L2Skill skill = SkillTable.getInstance().getInfo(shortcut.getId(), shortcut.getLevel());
+			Skill skill = SkillTable.getInstance().getInfo(shortcut.getId(), shortcut.getLevel());
 			shortcut.setSharedReuseGroup(skill.getReuseHashCode());
 		}
 
@@ -136,7 +140,7 @@ public class ShortCuts {
 				rset.close();
 				statement.close();
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "Could not check if the character had preset for current level " + e.getMessage(), e);
+				log.warn("Could not check if the character had preset for current level " + e.getMessage(), e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -171,7 +175,7 @@ public class ShortCuts {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not store character shortcut: " + e.getMessage(), e);
+			log.warn("Could not store character shortcut: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -256,7 +260,7 @@ public class ShortCuts {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not delete character shortcut: " + e.getMessage(), e);
+			log.warn("Could not delete character shortcut: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -304,7 +308,7 @@ public class ShortCuts {
 				rset.close();
 				statement.close();
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "Could not check if the character had preset for current level " + e.getMessage(), e);
+				log.warn("Could not check if the character had preset for current level " + e.getMessage(), e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -346,7 +350,7 @@ public class ShortCuts {
 					rset.close();
 					statement.close();
 				} catch (Exception e) {
-					Log.log(Level.WARNING, "Could not restore character shortcuts: " + e.getMessage(), e);
+					log.warn("Could not restore character shortcuts: " + e.getMessage(), e);
 				} finally {
 					L2DatabaseFactory.close(con);
 				}
@@ -366,7 +370,7 @@ public class ShortCuts {
 			}
 
 			if (sc.getType() == L2ShortCut.TYPE_ITEM) {
-				L2ItemInstance item = owner.getInventory().getItemByObjectId(sc.getId());
+				Item item = owner.getInventory().getItemByObjectId(sc.getId());
 				if (item == null) {
 					deleteShortCut(sc.getSlot(), sc.getPage());
 				} else if (item.isEtcItem()) {
@@ -374,7 +378,7 @@ public class ShortCuts {
 				}
 			}
 			if (sc.getType() == L2ShortCut.TYPE_SKILL) {
-				L2Skill skill = SkillTable.getInstance().getInfo(sc.getId(), sc.getLevel());
+				Skill skill = SkillTable.getInstance().getInfo(sc.getId(), sc.getLevel());
 				sc.setSharedReuseGroup(skill.getReuseHashCode());
 			}
 		}

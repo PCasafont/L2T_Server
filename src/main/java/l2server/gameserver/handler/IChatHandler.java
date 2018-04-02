@@ -15,7 +15,9 @@
 
 package l2server.gameserver.handler;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Interface for chat handlers
@@ -23,6 +25,8 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  * @author durgus
  */
 public interface IChatHandler {
+	Logger log = LoggerFactory.getLogger(IChatHandler.class.getName());
+	
 	/**
 	 * Handles a specific type of chat messages
 	 *
@@ -30,7 +34,7 @@ public interface IChatHandler {
 	 * @param activeChar
 	 * @param target
 	 */
-	void handleChat(int type, L2PcInstance activeChar, String target, String text);
+	void handleChat(int type, Player activeChar, String target, String text);
 
 	/**
 	 * Returns a list of all chat types registered to this handler

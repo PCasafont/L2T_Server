@@ -18,7 +18,7 @@ package handlers.admincommandhandlers;
 import l2server.Config;
 import l2server.gameserver.LoginServerThread;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.gameserverpackets.ServerStatus;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
@@ -35,10 +35,10 @@ public class AdminLogin implements IAdminCommandHandler {
 					"admin_server_login"};
 
 	/**
-	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, Player)
 	 */
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.equals("admin_server_gm_only")) {
 			gmOnly();
 			activeChar.sendMessage("Server is now GM only");
@@ -122,7 +122,7 @@ public class AdminLogin implements IAdminCommandHandler {
 	/**
 	 *
 	 */
-	private void showMainPage(L2PcInstance activeChar) {
+	private void showMainPage(Player activeChar) {
 		NpcHtmlMessage html = new NpcHtmlMessage(1);
 		html.setFile(activeChar.getHtmlPrefix(), "admin/login.htm");
 		html.replace("%server_name%", LoginServerThread.getInstance().getServerName());

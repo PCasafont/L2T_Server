@@ -18,10 +18,9 @@ package l2server.gameserver.network.clientpackets;
 import l2server.Config;
 import l2server.gameserver.model.L2Macro;
 import l2server.gameserver.model.L2Macro.L2MacroCmd;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 public final class RequestMakeMacro extends L2GameClientPacket {
 	private L2Macro macro;
@@ -66,7 +65,7 @@ public final class RequestMakeMacro extends L2GameClientPacket {
 		L2MacroCmd[] commands = new L2MacroCmd[count];
 		
 		if (Config.DEBUG) {
-			Log.info("Make macro id:" + id + "\tname:" + name + "\tdesc:" + desc + "\tacronym:" + acronym + "\ticon:" + icon + "\tcount:" + count);
+			log.info("Make macro id:" + id + "\tname:" + name + "\tdesc:" + desc + "\tacronym:" + acronym + "\ticon:" + icon + "\tcount:" + count);
 		}
 		for (int i = 0; i < count; i++) {
 			int entry = readC();
@@ -77,7 +76,7 @@ public final class RequestMakeMacro extends L2GameClientPacket {
 			commandsLenght += command.length();
 			commands[i] = new L2MacroCmd(entry, type, d1, d2, command);
 			if (Config.DEBUG) {
-				Log.info("entry:" + entry + "\ttype:" + type + "\td1:" + d1 + "\td2:" + d2 + "\tcommand:" + command);
+				log.info("entry:" + entry + "\ttype:" + type + "\td1:" + d1 + "\td2:" + d2 + "\tcommand:" + command);
 			}
 		}
 		macro = new L2Macro(id, icon, name, desc, acronym, commands);
@@ -85,7 +84,7 @@ public final class RequestMakeMacro extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}

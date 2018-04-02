@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 
 /**
  * 16
@@ -34,16 +34,16 @@ import l2server.gameserver.model.L2ItemInstance;
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
 public class DropItem extends L2GameServerPacket {
-	private L2ItemInstance item;
+	private Item item;
 	private int charObjId;
 
 	/**
 	 * Constructor of the DropItem server packet
 	 *
-	 * @param item        : L2ItemInstance designating the item
+	 * @param item        : Item designating the item
 	 * @param playerObjId : int designating the player ID who dropped the item
 	 */
-	public DropItem(L2ItemInstance item, int playerObjId) {
+	public DropItem(Item item, int playerObjId) {
 		this.item = item;
 		charObjId = playerObjId;
 	}

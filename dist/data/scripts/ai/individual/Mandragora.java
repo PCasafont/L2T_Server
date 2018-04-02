@@ -17,10 +17,10 @@ package ai.individual;
 
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.Rnd;
 
 /**
@@ -42,15 +42,15 @@ public class Mandragora extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet, Skill skill) {
 		npc.deleteMe();
 
-		L2Npc mandragora =
+		Npc mandragora =
 				addSpawn(sumonedMandragoras[Rnd.get(sumonedMandragoras.length)], npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 60000);
 
 		mandragora.setTarget(attacker);
 
-		((L2MonsterInstance) mandragora).addDamageHate(attacker, 500, 99999);
+		((MonsterInstance) mandragora).addDamageHate(attacker, 500, 99999);
 
 		mandragora.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
 

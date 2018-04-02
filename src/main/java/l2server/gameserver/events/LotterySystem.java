@@ -26,13 +26,14 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.instancemanager.MailManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 
@@ -48,13 +49,16 @@ import java.util.concurrent.ScheduledFuture;
  */
 
 public class LotterySystem {
+	private static Logger log = LoggerFactory.getLogger(LotterySystem.class.getName());
+
+
 	private static Map<Integer, List<Integer>> allNumbers = new HashMap<>();
 	private static final String LOAD_LOTTERY = "SELECT `ownerId`, `numbers` FROM `lottery_data`";
 	private static final String SAVE_LOTTERY = "INSERT INTO lottery_data(ownerId, numbers) VALUES (?, ?) ON DUPLICATE KEY UPDATE numbers=?";
 	private static long collectedCoins = 0;
 	protected static ScheduledFuture<?> saveTask;
 
-	public void buyNumber(L2PcInstance pl, int number) {
+	public void buyNumber(Player pl, int number) {
 		if (pl == null) {
 			return;
 		}
@@ -123,7 +127,7 @@ public class LotterySystem {
 			long eachReward = totalCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER / winnerNames.size();
 			if (eachReward < 0) //Afaik shouldn't happens never
 			{
-				Log.info("LotterySystem: Smth has been fucked on the reward calculation: " + eachReward);
+				log.info("LotterySystem: Smth has been fucked on the reward calculation: " + eachReward);
 				eachReward = Config.CUSTOM_LOTTERY_PRICE_AMOUNT;
 			}
 
@@ -140,7 +144,7 @@ public class LotterySystem {
 				attachments.addItem("Lottery System", Config.CUSTOM_LOTTERY_PRICE_ITEM_ID, eachReward, null, null);
 				MailManager.getInstance().sendMessage(msg);
 
-				Log.info("LotterySystem: Player: " + name + ", rewarded with: " + NumberFormat.getNumberInstance(Locale.US).format(eachReward) +
+				log.info("LotterySystem: Player: " + name + ", rewarded with: " + NumberFormat.getNumberInstance(Locale.US).format(eachReward) +
 						" Adena!");
 			}
 
@@ -151,11 +155,11 @@ public class LotterySystem {
 							winnerNames.size() + " winners has been rewarded with: " + NumberFormat.getNumberInstance(Locale.US).format(eachReward) +
 							" Adena!");
 
-			Log.info("LotterySystem: " + luckyNumber + " was the winner number, lottery ends with total coins: " + totalCoins + " and " +
+			log.info("LotterySystem: " + luckyNumber + " was the winner number, lottery ends with total coins: " + totalCoins + " and " +
 					winnerNames.size() + " winners (" + allNumbers.size() + " participants), with: " + eachReward + " coins for each player!");
 		}
 
-		Log.warning("Lottery System: Cleaning info...!");
+		log.warn("Lottery System: Cleaning info...!");
 
 		allNumbers.clear();
 		collectedCoins = 0;
@@ -184,7 +188,7 @@ public class LotterySystem {
 		if (!Config.ENABLE_CUSTOM_LOTTERY) {
 			return;
 		}
-		Log.info("LotterySystem: Loading lottery information..!");
+		log.info("LotterySystem: Loading lottery information..!");
 		Connection con = null;
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
@@ -218,7 +222,7 @@ public class LotterySystem {
 			return;
 		}
 
-		Log.fine("LotterySystem: Saving lottery information..!");
+		log.debug("LotterySystem: Saving lottery information..!");
 		Connection con = null;
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
@@ -259,7 +263,7 @@ public class LotterySystem {
 		return collectedCoins * Config.CUSTOM_LOTTERY_REWARD_MULTIPLIER;
 	}
 
-	public String getAvailableNumbers(L2PcInstance pl) {
+	public String getAvailableNumbers(Player pl) {
 		List<Integer> playerNumbers = allNumbers.get(pl.getObjectId());
 
 		StringBuilder sb = new StringBuilder();
@@ -304,7 +308,7 @@ public class LotterySystem {
 		protected static final LotterySystem instance = new LotterySystem();
 	}
 
-	public NpcHtmlMessage parseLotteryPanel(L2PcInstance pl, NpcHtmlMessage htmlPage) {
+	public NpcHtmlMessage parseLotteryPanel(Player pl, NpcHtmlMessage htmlPage) {
 		// TODO Auto-generated method stub
 		return null;
 	}

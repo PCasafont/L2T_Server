@@ -17,12 +17,12 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.SummonInstance;
+import l2server.gameserver.templates.skills.SkillTargetType;
+import l2server.gameserver.templates.skills.SkillType;
 
 /**
  * @author KenM
@@ -51,21 +51,21 @@ public class RequestDispel extends L2GameClientPacket {
 			return;
 		}
 
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
 
-		L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLevel);
+		Skill skill = SkillTable.getInstance().getInfo(skillId, skillLevel);
 		if (skill == null) {
 			return;
 		}
 		if (!skill.canBeDispeled() || skill.isStayAfterDeath() || skill.isDebuff()) {
 			return;
 		}
-		if (skill.getTransformId() > 0 && skill.getTargetType() != L2SkillTargetType.TARGET_SELF &&
-				skill.getTargetType() != L2SkillTargetType.TARGET_PARTY &&
-				skill.getSkillType() != L2SkillType.BUFF) //LasTravel: Self/Party transformation buffs can be cancelled
+		if (skill.getTransformId() > 0 && skill.getTargetType() != SkillTargetType.TARGET_SELF &&
+				skill.getTargetType() != SkillTargetType.TARGET_PARTY &&
+				skill.getSkillType() != SkillType.BUFF) //LasTravel: Self/Party transformation buffs can be cancelled
 		{
 			return;
 		}
@@ -75,11 +75,11 @@ public class RequestDispel extends L2GameClientPacket {
 		if (activeChar.getObjectId() == objectId) {
 			activeChar.stopSkillEffects(skillId);
 		} else {
-			final L2PetInstance pet = activeChar.getPet();
+			final PetInstance pet = activeChar.getPet();
 			if (pet != null && pet.getObjectId() == objectId) {
 				pet.stopSkillEffects(skillId);
 			}
-			for (L2SummonInstance summon : activeChar.getSummons()) {
+			for (SummonInstance summon : activeChar.getSummons()) {
 				summon.stopSkillEffects(skillId);
 			}
 		}

@@ -18,10 +18,10 @@ package handlers.bypasshandlers;
 import l2server.Config;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2ClanHallManagerInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2WarehouseInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.ClanHallManagerInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.WarehouseInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.network.serverpackets.SortedWareHouseWithdrawalList.WarehouseListType;
@@ -30,8 +30,8 @@ public class ClanWarehouse implements IBypassHandler {
 	private static final String[] COMMANDS = {"withdrawc", "withdrawsortedc", "depositc"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
-		if (!(target instanceof L2WarehouseInstance) && !(target instanceof L2ClanHallManagerInstance)) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
+		if (!(target instanceof WarehouseInstance) && !(target instanceof ClanHallManagerInstance)) {
 			return false;
 		}
 		
@@ -80,7 +80,7 @@ public class ClanWarehouse implements IBypassHandler {
 				activeChar.tempInventoryDisable();
 				
 				if (Config.DEBUG) {
-					log.fine("Source: L2WarehouseInstance.java; Player: " + activeChar.getName() +
+					log.debug("Source: WarehouseInstance.java; Player: " + activeChar.getName() +
 							"; Command: showDepositWindowClan; Message: Showing items to deposit.");
 				}
 				
@@ -95,7 +95,7 @@ public class ClanWarehouse implements IBypassHandler {
 		return false;
 	}
 	
-	private static void showWithdrawWindow(L2PcInstance player, WarehouseListType itemtype, byte sortorder) {
+	private static void showWithdrawWindow(Player player, WarehouseListType itemtype, byte sortorder) {
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 		
 		if ((player.getClanPrivileges() & L2Clan.CP_CL_VIEW_WAREHOUSE) != L2Clan.CP_CL_VIEW_WAREHOUSE) {
@@ -117,7 +117,7 @@ public class ClanWarehouse implements IBypassHandler {
 		}
 		
 		if (Config.DEBUG) {
-			log.fine("Source: L2WarehouseInstance.java; Player: " + player.getName() +
+			log.debug("Source: WarehouseInstance.java; Player: " + player.getName() +
 					"; Command: showRetrieveWindowClan; Message: Showing stored items.");
 		}
 	}

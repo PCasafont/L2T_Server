@@ -19,7 +19,7 @@ import l2server.Config;
 import l2server.gameserver.cache.CrestCache;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.io.File;
 
@@ -37,7 +37,7 @@ public class AdminCache implements IAdminCommandHandler {
 	}
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 
 		if (command.startsWith("admin_cache_htm_rebuild") || command.equals("admin_cache_htm_reload")) {
 			HtmCache.getInstance().reload(Config.DATAPACK_ROOT);

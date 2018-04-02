@@ -16,25 +16,25 @@
 package l2server.gameserver.model.actor.status;
 
 import l2server.gameserver.ai.CtrlEvent;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.PetInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class PetStatus extends SummonStatus {
-	private int currentFed = 0; //Current Fed of the L2PetInstance
+	private int currentFed = 0; //Current Fed of the PetInstance
 
-	public PetStatus(L2PetInstance activeChar) {
+	public PetStatus(PetInstance activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public final void reduceHp(double value, L2Character attacker) {
+	public final void reduceHp(double value, Creature attacker) {
 		reduceHp(value, attacker, true, false, false);
 	}
 
 	@Override
-	public final void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHpConsumption) {
+	public final void reduceHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean isHpConsumption) {
 		if (getActiveChar().isDead()) {
 			return;
 		}
@@ -61,7 +61,7 @@ public class PetStatus extends SummonStatus {
 	}
 
 	@Override
-	public L2PetInstance getActiveChar() {
-		return (L2PetInstance) super.getActiveChar();
+	public PetInstance getActiveChar() {
+		return (PetInstance) super.getActiveChar();
 	}
 }

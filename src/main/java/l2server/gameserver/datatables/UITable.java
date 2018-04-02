@@ -17,7 +17,8 @@ package l2server.gameserver.datatables;
 
 import l2server.Config;
 import l2server.gameserver.model.entity.ActionKey;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -32,6 +33,9 @@ import java.util.Map;
  * @author mrTJO
  */
 public class UITable {
+	private static Logger log = LoggerFactory.getLogger(UITable.class.getName());
+
+
 	private Map<Integer, List<ActionKey>> storedKeys = new HashMap<>();
 	private Map<Integer, List<Integer>> storedCategories = new HashMap<>();
 
@@ -46,8 +50,8 @@ public class UITable {
 	public void load() {
 		parseCatData();
 		parseKeyData();
-		Log.info("UITable: Loaded " + storedCategories.size() + " Categories.");
-		Log.info("UITable: Loaded " + storedKeys.size() + " Keys.");
+		log.info("UITable: Loaded " + storedCategories.size() + " Categories.");
+		log.info("UITable: Loaded " + storedKeys.size() + " Keys.");
 	}
 	
 	private void parseCatData() {

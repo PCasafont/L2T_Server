@@ -19,12 +19,13 @@ import l2server.Config;
 import l2server.gameserver.datatables.*;
 import l2server.gameserver.datatables.SubPledgeSkillTree.SubUnitSkill;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2TransformManagerInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.TransformManagerInstance;
 import l2server.gameserver.network.serverpackets.AcquireSkillInfo;
 import l2server.gameserver.network.serverpackets.ExAcquireSkillInfo;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -32,6 +33,9 @@ import l2server.log.Log;
  * @version $Revision: 1.5.2.1.2.5 $ $Date: 2005/04/06 16:13:48 $
  */
 public class RequestAcquireSkillInfo extends L2GameClientPacket {
+	private static Logger log = LoggerFactory.getLogger(RequestAcquireSkillInfo.class.getName());
+
+
 	
 	private int id;
 	private int level;
@@ -51,28 +55,28 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket {
 			return;
 		}
 		
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		
 		if (activeChar == null) {
 			return;
 		}
 		
-		final L2Npc trainer = activeChar.getLastFolkNPC();
+		final Npc trainer = activeChar.getLastFolkNPC();
 		
-		final L2Skill skill = SkillTable.getInstance().getInfo(id, level);
+		final Skill skill = SkillTable.getInstance().getInfo(id, level);
 		
 		boolean canteach = false;
 		
 		if (skill == null) {
 			if (Config.DEBUG) {
-				Log.warning("skill id " + id + " level " + level + " is undefined. aquireSkillInfo failed.");
+				log.warn("skill id " + id + " level " + level + " is undefined. aquireSkillInfo failed.");
 			}
 			
 			return;
 		}
 		
 		if (skillType == 0) {
-			if (trainer instanceof L2TransformManagerInstance) {
+			if (trainer instanceof TransformManagerInstance) {
 				int itemId = 0;
 				L2TransformSkillLearn[] skillst = SkillTreeTable.getInstance().getAvailableTransformSkills(activeChar);
 				
@@ -156,7 +160,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket {
 			int costcount = 0;
 			L2SkillLearn[] skillsc = SkillTreeTable.getInstance().getAvailableSpecialSkills(activeChar);
 			for (L2SkillLearn s : skillsc) {
-				L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
+				Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
 				
 				if (sk == null || sk != skill) {
 					continue;
@@ -177,7 +181,7 @@ public class RequestAcquireSkillInfo extends L2GameClientPacket {
 			L2SkillLearn[] skillsc = SkillTreeTable.getInstance().getAvailableSkills(activeChar);
 			
 			for (L2SkillLearn s : skillsc) {
-				L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
+				Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
 				
 				if (sk == null || sk != skill) {
 					continue;

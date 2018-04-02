@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2UIKeysSettings;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.ActionKey;
 
 import java.util.List;
@@ -29,7 +29,7 @@ public class ExUISetting extends L2GameServerPacket {
 	private final L2UIKeysSettings uiSettings;
 	private int buffsize, categories;
 	
-	public ExUISetting(L2PcInstance player) {
+	public ExUISetting(Player player) {
 		uiSettings = player.getUISettings();
 		calcSize();
 	}

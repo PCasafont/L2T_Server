@@ -16,18 +16,20 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.L2DatabaseFactory;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.AutoChatHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2DefenderInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.DefenderInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,7 +37,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Level;
 
 /**
  * @author yellowperil & Fulminus
@@ -52,6 +53,8 @@ import java.util.logging.Level;
  * help avoid mixing them up.
  */
 public class MercTicketManager {
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	
 	public static MercTicketManager getInstance() {
 		return SingletonHolder.instance;
@@ -61,7 +64,7 @@ public class MercTicketManager {
 	
 	// =========================================================
 	// Data Field
-	private List<L2ItemInstance> droppedTickets; // to keep track of items on the ground
+	private List<Item> droppedTickets; // to keep track of items on the ground
 	
 	// max tickets per merc type = 10 + (castleid * 2)?
 	// max ticker per castle = 40 + (castleid * 20)?
@@ -216,7 +219,7 @@ public class MercTicketManager {
 	
 	@Load(dependencies = CastleManager.class)
 	private void load() {
-		Log.info("Initializing MercTicketManager");
+		log.info("Initializing MercTicketManager");
 		Connection con = null;
 		// load merc tickets into the world
 		try {
@@ -259,11 +262,11 @@ public class MercTicketManager {
 						if (castle != null && !castle.getSiege().getIsInProgress()) {
 							itemId = ITEM_IDS[i];
 							// create the ticket in the gameworld
-							L2ItemInstance dropticket = new L2ItemInstance(IdFactory.getInstance().getNextId(), itemId);
-							dropticket.setLocation(L2ItemInstance.ItemLocation.VOID);
+							Item dropticket = new Item(IdFactory.getInstance().getNextId(), itemId);
+							dropticket.setLocation(Item.ItemLocation.VOID);
 							dropticket.dropMe(null, x, y, z);
 							dropticket.setDropTime(0); //avoids it from beeing removed by the auto item destroyer
-							L2World.getInstance().storeObject(dropticket);
+							World.getInstance().storeObject(dropticket);
 							getDroppedTickets().add(dropticket);
 						}
 						break;
@@ -272,9 +275,9 @@ public class MercTicketManager {
 			}
 			statement.close();
 			
-			Log.info("Loaded: " + getDroppedTickets().size() + " Mercenary Tickets");
+			log.info("Loaded: " + getDroppedTickets().size() + " Mercenary Tickets");
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: loadMercenaryData(): " + e.getMessage(), e);
+			log.warn("Exception: loadMercenaryData(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -300,7 +303,7 @@ public class MercTicketManager {
 		}
 		
 		int count = 0;
-		for (L2ItemInstance ticket : getDroppedTickets()) {
+		for (Item ticket : getDroppedTickets()) {
 			if (ticket != null && ticket.getItemId() == itemId) {
 				count++;
 			}
@@ -323,7 +326,7 @@ public class MercTicketManager {
 		}
 		
 		int count = 0;
-		for (L2ItemInstance ticket : getDroppedTickets()) {
+		for (Item ticket : getDroppedTickets()) {
 			if (ticket != null && getTicketCastleId(ticket.getItemId()) == castleId) {
 				count++;
 			}
@@ -336,7 +339,7 @@ public class MercTicketManager {
 	}
 	
 	public boolean isTooCloseToAnotherTicket(int x, int y, int z) {
-		for (L2ItemInstance item : getDroppedTickets()) {
+		for (Item item : getDroppedTickets()) {
 			double dx = x - item.getX();
 			double dy = y - item.getY();
 			double dz = z - item.getZ();
@@ -356,7 +359,7 @@ public class MercTicketManager {
 	 * returns the id of the mercenary npc that was added to the spawn
 	 * returns -1 if this fails.
 	 */
-	public int addTicket(int itemId, L2PcInstance activeChar, String[] messages) {
+	public int addTicket(int itemId, Player activeChar, String[] messages) {
 		int x = activeChar.getX();
 		int y = activeChar.getY();
 		int z = activeChar.getZ();
@@ -377,11 +380,11 @@ public class MercTicketManager {
 				castle.getSiege().getSiegeGuardManager().hireMerc(x, y, z, heading, NPC_IDS[i]);
 				
 				// create the ticket in the gameworld
-				L2ItemInstance dropticket = new L2ItemInstance(IdFactory.getInstance().getNextId(), itemId);
-				dropticket.setLocation(L2ItemInstance.ItemLocation.VOID);
+				Item dropticket = new Item(IdFactory.getInstance().getNextId(), itemId);
+				dropticket.setLocation(Item.ItemLocation.VOID);
 				dropticket.dropMe(null, x, y, z);
 				dropticket.setDropTime(0); //avoids it from beeing removed by the auto item destroyer
-				L2World.getInstance().storeObject(dropticket); //add to the world
+				World.getInstance().storeObject(dropticket); //add to the world
 				// and keep track of this ticket in the list
 				droppedTickets.add(dropticket);
 				
@@ -392,9 +395,9 @@ public class MercTicketManager {
 	}
 	
 	private void spawnMercenary(int npcId, int x, int y, int z, int despawnDelay, String[] messages, int chatDelay) {
-		L2NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
+		NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
 		if (template != null) {
-			final L2DefenderInstance npc = new L2DefenderInstance(IdFactory.getInstance().getNextId(), template);
+			final DefenderInstance npc = new DefenderInstance(IdFactory.getInstance().getNextId(), template);
 			npc.setCurrentHpMp(npc.getMaxHp(), npc.getMaxMp());
 			npc.setDecayed(false);
 			npc.spawnMe(x, y, z + 20);
@@ -414,12 +417,12 @@ public class MercTicketManager {
 	 * remove the items from the world and remove references to them from this class
 	 */
 	public void deleteTickets(int castleId) {
-		Iterator<L2ItemInstance> it = getDroppedTickets().iterator();
+		Iterator<Item> it = getDroppedTickets().iterator();
 		while (it.hasNext()) {
-			L2ItemInstance item = it.next();
+			Item item = it.next();
 			if (item != null && getTicketCastleId(item.getItemId()) == castleId) {
 				item.decayMe();
-				L2World.getInstance().removeObject(item);
+				World.getInstance().removeObject(item);
 				it.remove();
 			}
 		}
@@ -429,7 +432,7 @@ public class MercTicketManager {
 	 * remove a single ticket and its associated spawn from the world
 	 * (used when the castle lord picks up a ticket, for example)
 	 */
-	public void removeTicket(L2ItemInstance item) {
+	public void removeTicket(Item item) {
 		int itemId = item.getItemId();
 		int npcId = -1;
 		
@@ -455,7 +458,7 @@ public class MercTicketManager {
 		return ITEM_IDS;
 	}
 	
-	public final List<L2ItemInstance> getDroppedTickets() {
+	public final List<Item> getDroppedTickets() {
 		if (droppedTickets == null) {
 			synchronized (this) {
 				if (droppedTickets == null) {

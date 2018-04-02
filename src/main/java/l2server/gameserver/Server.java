@@ -22,7 +22,8 @@ import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.L2GamePacketHandler;
 import l2server.gameserver.pathfinding.PathFinding;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.network.Core;
 import l2server.network.CoreConfig;
 import l2server.util.DeadLockDetector;
@@ -38,6 +39,9 @@ import java.util.Calendar;
 import java.util.logging.Level;
 
 public class Server {
+	private static Logger log = LoggerFactory.getLogger(Server.class.getName());
+
+
 	private final Core<L2GameClient> selectorThread;
 	private final L2GamePacketHandler gamePacketHandler;
 	private final DeadLockDetector deadDetectThread;
@@ -76,7 +80,7 @@ public class Server {
 		idFactory = IdFactory.getInstance();
 		
 		if (!idFactory.isInitialized()) {
-			Log.severe("Could not read object IDs from DB. Please Check Your Data.");
+			log.error("Could not read object IDs from DB. Please Check Your Data.");
 			throw new Exception("Could not initialize the ID factory");
 		}
 		
@@ -97,7 +101,7 @@ public class Server {
 		
 		//Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
 		
-		Log.info("IdFactory: Free ObjectID's remaining: " + IdFactory.getInstance().size());
+		log.info("IdFactory: Free ObjectID's remaining: " + IdFactory.getInstance().size());
 		
 		if (Config.DEADLOCK_DETECTOR) {
 			deadDetectThread = new DeadLockDetector();
@@ -114,7 +118,7 @@ public class Server {
 		// allocation pool
 		long freeMem = (Runtime.getRuntime().maxMemory() - Runtime.getRuntime().totalMemory() + Runtime.getRuntime().freeMemory()) / 1048576;
 		long totalMem = Runtime.getRuntime().maxMemory() / 1048576;
-		Log.info("GameServer Started, free memory " + freeMem + " Mb of " + totalMem + " Mb");
+		log.info("GameServer Started, free memory " + freeMem + " Mb of " + totalMem + " Mb");
 		Toolkit.getDefaultToolkit().beep();
 		
 		final CoreConfig sc = new CoreConfig();
@@ -131,20 +135,20 @@ public class Server {
 			try {
 				bindAddress = InetAddress.getByName(Config.GAMESERVER_HOSTNAME);
 			} catch (UnknownHostException e1) {
-				Log.log(Level.SEVERE, "WARNING: The GameServer bind address is invalid, using all avaliable IPs. Reason: " + e1.getMessage(), e1);
+				log.error("WARNING: The GameServer bind address is invalid, using all avaliable IPs. Reason: " + e1.getMessage(), e1);
 			}
 		}
 		
 		try {
 			selectorThread.openServerSocket(bindAddress, Config.PORT_GAME);
 		} catch (IOException e) {
-			Log.log(Level.SEVERE, "FATAL: Failed to open server socket. Reason: " + e.getMessage(), e);
+			log.error("FATAL: Failed to open server socket. Reason: " + e.getMessage(), e);
 			System.exit(1);
 		}
 		selectorThread.start();
-		Log.info("Maximum Numbers of Connected Players: " + Config.MAXIMUM_ONLINE_USERS);
+		log.info("Maximum Numbers of Connected Players: " + Config.MAXIMUM_ONLINE_USERS);
 		long serverLoadEnd = System.currentTimeMillis();
-		Log.info("Server Loaded in " + (serverLoadEnd - serverLoadStart) / 1000 + " seconds");
+		log.info("Server Loaded in " + (serverLoadEnd - serverLoadStart) / 1000 + " seconds");
 		
 		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
 		gameServer = this;
@@ -154,13 +158,13 @@ public class Server {
 	
 	public static void printSection(String s) {
 		//if (t > 0)
-		//	Log.info("Time spent in last section: " + (t - t) / 1000 + "s");
+		//	log.info("Time spent in last section: " + (t - t) / 1000 + "s");
 		t = System.currentTimeMillis();
 		
 		s = "=[ " + s + " ]";
 		while (s.length() < 78) {
 			s = "-" + s;
 		}
-		Log.info(s);
+		log.info(s);
 	}
 }

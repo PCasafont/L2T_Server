@@ -24,25 +24,26 @@ import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.GrandBossInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.model.quest.QuestTimer;
-import l2server.gameserver.model.zone.L2ZoneType;
-import l2server.gameserver.model.zone.type.L2BossZone;
+import l2server.gameserver.model.zone.ZoneType;
+import l2server.gameserver.model.zone.type.BossZone;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.util.Broadcast;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -56,6 +57,9 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class Valakas extends L2AttackableAIScript {
+	private static Logger log = LoggerFactory.getLogger(Valakas.class.getName());
+
+
 	//Quest
 	private static final boolean debug = false;
 	private static final String qn = "Valakas";
@@ -68,7 +72,7 @@ public class Valakas extends L2AttackableAIScript {
 	private static final int klein = 31540;
 	private static final int heartOfVolkano = 31385;
 	private static final int teleportCubic = 31759;
-	private static final L2BossZone bossZone = GrandBossManager.getInstance().getZone(212852, -114842, -1632);
+	private static final BossZone bossZone = GrandBossManager.getInstance().getZone(212852, -114842, -1632);
 
 	//Skills
 	private static final SkillHolder VALAKAS_LAVA_SKIN = new SkillHolder(4680, 1);
@@ -95,8 +99,8 @@ public class Valakas extends L2AttackableAIScript {
 	};
 
 	//Others
-	private L2Playable actualVictim;
-	private static L2Npc valakasBoss;
+	private Playable actualVictim;
+	private static Npc valakasBoss;
 	private static long LastAction;
 
 	private static final Location teleportCubicLocs[] =
@@ -134,14 +138,14 @@ public class Valakas extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 
 		if (npc.getNpcId() == heartOfVolkano) {
 			int vallyStatus = GrandBossManager.getInstance().getBossStatus(valakasId);
-			final List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+			final List<Player> allPlayers = new ArrayList<Player>();
 
 			if (bossZone.getPlayersInside().size() > 200) {
 				return "31385-02.html";
@@ -178,7 +182,7 @@ public class Valakas extends L2AttackableAIScript {
 						player.getParty().getCommandChannel().getMembers() : player.getParty().getPartyMembers());
 			}
 
-			for (L2PcInstance enterPlayer : allPlayers) {
+			for (Player enterPlayer : allPlayers) {
 				if (enterPlayer == null) {
 					continue;
 				}
@@ -212,9 +216,9 @@ public class Valakas extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		if (event.equalsIgnoreCase("unlock_valakas")) {
@@ -230,12 +234,12 @@ public class Valakas extends L2AttackableAIScript {
 			valakasBoss.setIsInvul(true);
 			valakasBoss.disableCoreAI(true);
 
-			GrandBossManager.getInstance().addBoss((L2GrandBossInstance) valakasBoss);
+			GrandBossManager.getInstance().addBoss((GrandBossInstance) valakasBoss);
 			GrandBossManager.getInstance().setBossStatus(valakasId, GrandBossManager.getInstance().FIGHTING);
 
 			LastAction = System.currentTimeMillis();
 
-			for (L2PcInstance plyr : bossZone.getPlayersInside()) {
+			for (Player plyr : bossZone.getPlayersInside()) {
 				plyr.sendPacket(new PlaySound(1, "B03_A", 0, 0, 0, 0, 0));
 				plyr.sendPacket(new SocialAction(valakasBoss.getObjectId(), 3));
 			}
@@ -287,7 +291,7 @@ public class Valakas extends L2AttackableAIScript {
 				}
 
 				if (debug) {
-					Log.warning(getName() + ": " + (actualVictim != null ? actualVictim.getName() : " victim is null!"));
+					log.warn(getName() + ": " + (actualVictim != null ? actualVictim.getName() : " victim is null!"));
 				}
 
 				// If result is still null, Valakas will roam. Don't go deeper in skill AI.
@@ -305,7 +309,7 @@ public class Valakas extends L2AttackableAIScript {
 						}
 					}
 				} else {
-					final L2Skill skill = getRandomSkill().getSkill();
+					final Skill skill = getRandomSkill().getSkill();
 
 					// Cast the skill or follow the target.
 					if (Util.checkIfInRange(skill.getCastRange() < 600 ? 600 : skill.getCastRange(), valakasBoss, actualVictim, true)) {
@@ -325,7 +329,7 @@ public class Valakas extends L2AttackableAIScript {
 			}
 		} else if (event.equalsIgnoreCase("valakas_recovery_task")) {
 			if (valakasBoss != null && !valakasBoss.isDead()) {
-				L2Abnormal valakasRecovery = valakasBoss.getFirstEffect(valakasRecoveryId);
+				Abnormal valakasRecovery = valakasBoss.getFirstEffect(valakasRecoveryId);
 				if (valakasRecovery == null) {
 					valakasBoss.setTarget(valakasBoss);
 
@@ -371,7 +375,7 @@ public class Valakas extends L2AttackableAIScript {
 				valakasBoss.deleteMe();
 			}
 
-			for (L2Npc raidMobs : bossZone.getNpcsInside()) {
+			for (Npc raidMobs : bossZone.getNpcsInside()) {
 				raidMobs.getSpawn().stopRespawn();
 				raidMobs.deleteMe();
 			}
@@ -384,9 +388,9 @@ public class Valakas extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 
 		if (npc.getNpcId() == valakasId) {
@@ -401,7 +405,7 @@ public class Valakas extends L2AttackableAIScript {
 			{
 				attacker.doDie(null);
 				if (debug) {
-					Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " out of the boss zone!");
+					log.warn(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " out of the boss zone!");
 				}
 			}
 
@@ -411,7 +415,7 @@ public class Valakas extends L2AttackableAIScript {
 				npc.teleToLocation(randPoint[0], randPoint[1], randPoint[2]);
 
 				if (debug) {
-					Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " wich is out of the boss zone!");
+					log.warn(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " wich is out of the boss zone!");
 				}
 			}
 		}
@@ -419,9 +423,9 @@ public class Valakas extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		if (npc.getNpcId() == valakasId) {
@@ -482,13 +486,13 @@ public class Valakas extends L2AttackableAIScript {
 		return VALAKAS_LOWHP_SKILLS[Rnd.get(VALAKAS_LOWHP_SKILLS.length)];
 	}
 
-	private L2Playable getRandomTarget() {
-		List<L2Playable> result = new ArrayList<L2Playable>();
-		for (L2Character obj : valakasBoss.getKnownList().getKnownCharacters()) {
-			if (obj == null || obj instanceof L2PetInstance || obj instanceof L2SummonInstance || obj.getZ() > valakasBoss.getZ() + 200) {
+	private Playable getRandomTarget() {
+		List<Playable> result = new ArrayList<Playable>();
+		for (Creature obj : valakasBoss.getKnownList().getKnownCharacters()) {
+			if (obj == null || obj instanceof PetInstance || obj instanceof SummonInstance || obj.getZ() > valakasBoss.getZ() + 200) {
 				continue;
-			} else if (!obj.isDead() && obj instanceof L2Playable) {
-				result.add((L2Playable) obj);
+			} else if (!obj.isDead() && obj instanceof Playable) {
+				result.add((Playable) obj);
 			}
 		}
 
@@ -496,8 +500,8 @@ public class Valakas extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onEnterZone(L2Character character, L2ZoneType zone) {
-		if (character instanceof L2PcInstance) {
+	public final String onEnterZone(Creature character, ZoneType zone) {
+		if (character instanceof Player) {
 			if (GrandBossManager.getInstance().getBossStatus(valakasId) == GrandBossManager.getInstance().WAITING) {
 				character.sendPacket(new ExSendUIEvent(0,
 						0,
@@ -510,8 +514,8 @@ public class Valakas extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onExitZone(L2Character character, L2ZoneType zone) {
-		if (character instanceof L2PcInstance) {
+	public final String onExitZone(Creature character, ZoneType zone) {
+		if (character instanceof Player) {
 			if (GrandBossManager.getInstance().getBossStatus(valakasId) == GrandBossManager.getInstance().WAITING) {
 				character.sendPacket(new ExSendUIEventRemove());
 			}

@@ -15,10 +15,10 @@
 
 package l2server.gameserver.model.actor.knownlist;
 
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2DefenderInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.DefenderInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.StaticObjectInstance;
 
 public class StaticObjectKnownList extends CharKnownList {
 	// =========================================================
@@ -26,7 +26,7 @@ public class StaticObjectKnownList extends CharKnownList {
 
 	// =========================================================
 	// Constructor
-	public StaticObjectKnownList(L2StaticObjectInstance activeChar) {
+	public StaticObjectKnownList(StaticObjectInstance activeChar) {
 		super(activeChar);
 	}
 
@@ -39,16 +39,16 @@ public class StaticObjectKnownList extends CharKnownList {
 	// =========================================================
 	// Property - Public
 	@Override
-	public final L2StaticObjectInstance getActiveChar() {
-		return (L2StaticObjectInstance) super.getActiveChar();
+	public final StaticObjectInstance getActiveChar() {
+		return (StaticObjectInstance) super.getActiveChar();
 	}
 
 	@Override
-	public int getDistanceToForgetObject(L2Object object) {
-		if (object instanceof L2DefenderInstance) {
+	public int getDistanceToForgetObject(WorldObject object) {
+		if (object instanceof DefenderInstance) {
 			return 800;
 		}
-		if (!(object instanceof L2PcInstance)) {
+		if (!(object instanceof Player)) {
 			return 0;
 		}
 
@@ -56,11 +56,11 @@ public class StaticObjectKnownList extends CharKnownList {
 	}
 
 	@Override
-	public int getDistanceToWatchObject(L2Object object) {
-		if (object instanceof L2DefenderInstance) {
+	public int getDistanceToWatchObject(WorldObject object) {
+		if (object instanceof DefenderInstance) {
 			return 600;
 		}
-		if (!(object instanceof L2PcInstance)) {
+		if (!(object instanceof Player)) {
 			return 0;
 		}
 		return 2000;

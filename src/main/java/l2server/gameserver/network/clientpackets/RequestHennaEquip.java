@@ -17,11 +17,11 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.datatables.HennaTable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2Henna;
+import l2server.gameserver.templates.item.HennaTemplate;
 import l2server.gameserver.util.Util;
 
 /**
@@ -45,7 +45,7 @@ public final class RequestHennaEquip extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -54,7 +54,7 @@ public final class RequestHennaEquip extends L2GameClientPacket {
 			return;
 		}
 
-		L2Henna henna = HennaTable.getInstance().getTemplate(symbolId);
+		HennaTemplate henna = HennaTable.getInstance().getTemplate(symbolId);
 		if (henna == null) {
 			return;
 		}
@@ -63,14 +63,14 @@ public final class RequestHennaEquip extends L2GameClientPacket {
 
         /*
 		   Prevents henna drawing exploit:
-          1) talk to L2SymbolMakerInstance
+          1) talk to SymbolMakerInstance
           2) RequestHennaList
           3) Don't close the window and go to a GrandMaster and change your subclass
           4) Get SymbolMaker range again and press draw
           You could draw any kind of henna just having the required subclass...
          */
 		boolean cheater = true;
-		for (L2Henna h : activeChar.getCurrentClass().getAllowedDyes()) {
+		for (HennaTemplate h : activeChar.getCurrentClass().getAllowedDyes()) {
 			if (h.getSymbolId() == henna.getSymbolId()) {
 				cheater = false;
 				break;

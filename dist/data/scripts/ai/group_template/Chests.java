@@ -16,12 +16,12 @@
 package ai.group_template;
 
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2ChestInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.ChestInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
@@ -57,14 +57,14 @@ public class Chests extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet) {
-		if (npc instanceof L2ChestInstance) {
+	public String onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isPet) {
+		if (npc instanceof ChestInstance) {
 			// this behavior is only run when the target of skill is the passed npc (chest)
 			// i.e. when the player is attempting to open the chest using a skill
 			if (!Util.contains(targets, npc)) {
 				return super.onSkillSee(npc, caster, skill, targets, isPet);
 			}
-			L2ChestInstance chest = (L2ChestInstance) npc;
+			ChestInstance chest = (ChestInstance) npc;
 			int npcId = chest.getNpcId();
 			int skillId = skill.getId();
 			int skillLevel = skill.getLevel();
@@ -99,7 +99,7 @@ public class Chests extends L2AttackableAIScript {
 					// used a skill other than chest-key, or used a chest-key but failed to open: disappear with no rewards
 					chest.deleteMe();
 				} else {
-					L2Character originalCaster = isPet ? caster.getPet() : caster;
+					Creature originalCaster = isPet ? caster.getPet() : caster;
 					chest.setRunning();
 					chest.addDamageHate(originalCaster, 0, 999);
 					chest.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, originalCaster);
@@ -110,9 +110,9 @@ public class Chests extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
-		if (npc instanceof L2ChestInstance) {
-			L2ChestInstance chest = (L2ChestInstance) npc;
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
+		if (npc instanceof ChestInstance) {
+			ChestInstance chest = (ChestInstance) npc;
 			int npcId = chest.getNpcId();
 			// check if the chest and skills used are valid for this script.  Exit if invalid.
 			if (!Util.contains(NPC_IDS, npcId)) {
@@ -127,7 +127,7 @@ public class Chests extends L2AttackableAIScript {
 				} else {
 					// if this weren't a box, upon interaction start the mimic behaviors...
 					// todo: perhaps a self-buff (skill id 4245) with random chance goes here?
-					L2Character originalAttacker = isPet ? attacker.getPet() : attacker;
+					Creature originalAttacker = isPet ? attacker.getPet() : attacker;
 					chest.setRunning();
 					chest.addDamageHate(originalAttacker, 0, damage * 100 / (chest.getLevel() + 7));
 					chest.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, originalAttacker);

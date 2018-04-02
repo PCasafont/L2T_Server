@@ -16,20 +16,21 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.instancemanager.TransformationManager;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @author nBd
  */
 public class EffectTransformation extends L2Effect {
-	public EffectTransformation(Env env, L2EffectTemplate template) {
+	public EffectTransformation(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
@@ -39,20 +40,20 @@ public class EffectTransformation extends L2Effect {
 	}
 	
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.MUTATE;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.MUTATE;
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		if (!(getEffected() instanceof L2PcInstance)) {
+		if (!(getEffected() instanceof Player)) {
 			return false;
 		}
 		
-		L2PcInstance trg = (L2PcInstance) getEffected();
+		Player trg = (Player) getEffected();
 		if (trg == null) {
 			return false;
 		}
@@ -67,7 +68,7 @@ public class EffectTransformation extends L2Effect {
 		}
 		
 		//LasTravel: Avoiding use mounts for enter to castles
-		if (TransformationManager.getInstance().isMountable(getSkill().getTransformId()) && trg.isInsideZone(L2Character.ZONE_CASTLE)) {
+		if (TransformationManager.getInstance().isMountable(getSkill().getTransformId()) && trg.isInsideZone(Creature.ZONE_CASTLE)) {
 			trg.getFirstEffect(getSkill().getId()).exit();
 			return false;
 		}
@@ -77,7 +78,7 @@ public class EffectTransformation extends L2Effect {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

@@ -18,16 +18,16 @@ package l2server.gameserver.instancemanager;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.Siege;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.io.File;
@@ -42,6 +42,9 @@ import java.util.Properties;
 import java.util.logging.Level;
 
 public class CastleSiegeManager {
+	private static Logger log = LoggerFactory.getLogger(CastleSiegeManager.class.getName());
+
+
 
 	public static CastleSiegeManager getInstance() {
 		return SingletonHolder.instance;
@@ -65,8 +68,8 @@ public class CastleSiegeManager {
 
 	// =========================================================
 	// Method - Public
-	public final void addSiegeSkills(L2PcInstance character) {
-		for (L2Skill sk : SkillTable.getInstance().getSiegeSkills(character.isNoble(), character.getClan().getHasCastle() > 0)) {
+	public final void addSiegeSkills(Player character) {
+		for (Skill sk : SkillTable.getInstance().getSiegeSkills(character.isNoble(), character.getClan().getHasCastle() > 0)) {
 			character.addSkill(sk, false);
 		}
 	}
@@ -74,15 +77,15 @@ public class CastleSiegeManager {
 	/**
 	 * Return true if character summon<BR><BR>
 	 *
-	 * @param activeChar The L2Character of the character can summon
+	 * @param activeChar The Creature of the character can summon
 	 */
-	public final boolean checkIfOkToSummon(L2Character activeChar, boolean isCheckOnly) {
-		if (!(activeChar instanceof L2PcInstance)) {
+	public final boolean checkIfOkToSummon(Creature activeChar, boolean isCheckOnly) {
+		if (!(activeChar instanceof Player)) {
 			return false;
 		}
 
 		String text = "";
-		L2PcInstance player = (L2PcInstance) activeChar;
+		Player player = (Player) activeChar;
 		Castle castle = CastleManager.getInstance().getCastle(player);
 
 		if (castle == null || castle.getCastleId() <= 0) {
@@ -131,15 +134,15 @@ public class CastleSiegeManager {
 			rs.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: checkIsRegistered(): " + e.getMessage(), e);
+			log.warn("Exception: checkIsRegistered(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		return register;
 	}
 
-	public final void removeSiegeSkills(L2PcInstance character) {
-		for (L2Skill sk : SkillTable.getInstance().getSiegeSkills(character.isNoble(), character.getClan().getHasCastle() > 0)) {
+	public final void removeSiegeSkills(Player character) {
+		for (Skill sk : SkillTable.getInstance().getSiegeSkills(character.isNoble(), character.getClan().getHasCastle() > 0)) {
 			character.removeSkill(sk);
 		}
 	}
@@ -147,7 +150,7 @@ public class CastleSiegeManager {
 	
 	@Load(dependencies = CastleManager.class)
 	public void load() {
-		Log.info("Initializing CastleSiegeManager");
+		log.info("Initializing CastleSiegeManager");
 		InputStream is = null;
 		try {
 			is = new FileInputStream(new File(Config.CONFIG_DIRECTORY + Config.CONFIG_FILE));
@@ -170,7 +173,7 @@ public class CastleSiegeManager {
 			}
 		} catch (Exception e) {
 			//initialized = false;
-			Log.log(Level.WARNING, "Error while loading siege data: " + e.getMessage(), e);
+			log.warn("Error while loading siege data: " + e.getMessage(), e);
 		} finally {
 			try {
 				is.close();
@@ -198,7 +201,7 @@ public class CastleSiegeManager {
 		return flagMaxCount;
 	}
 
-	public final Siege getSiege(L2Object activeObject) {
+	public final Siege getSiege(WorldObject activeObject) {
 		return getSiege(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}
 

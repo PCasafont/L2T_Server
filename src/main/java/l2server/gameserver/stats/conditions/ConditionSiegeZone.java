@@ -17,8 +17,8 @@ package l2server.gameserver.stats.conditions;
 
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.FortManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.Fort;
 import l2server.gameserver.stats.Env;
@@ -59,7 +59,7 @@ public final class ConditionSiegeZone extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		L2Character target = self ? env.player : env.target;
+		Creature target = self ? env.player : env.target;
 		Castle castle = CastleManager.getInstance().getCastle(target);
 		Fort fort = FortManager.getInstance().getFort(target);
 
@@ -81,12 +81,12 @@ public final class ConditionSiegeZone extends Condition {
 	 * @param value      the value
 	 * @return true, if successful
 	 */
-	public static boolean checkIfOk(L2Character activeChar, Castle castle, int value) {
-		if (activeChar == null || !(activeChar instanceof L2PcInstance)) {
+	public static boolean checkIfOk(Creature activeChar, Castle castle, int value) {
+		if (activeChar == null || !(activeChar instanceof Player)) {
 			return false;
 		}
 
-		L2PcInstance player = (L2PcInstance) activeChar;
+		Player player = (Player) activeChar;
 
 		if (castle == null || castle.getCastleId() <= 0) {
 			if ((value & COND_NOT_ZONE) != 0) {
@@ -115,12 +115,12 @@ public final class ConditionSiegeZone extends Condition {
 	 * @param value      the value
 	 * @return true, if successful
 	 */
-	public static boolean checkIfOk(L2Character activeChar, Fort fort, int value) {
-		if (activeChar == null || !(activeChar instanceof L2PcInstance)) {
+	public static boolean checkIfOk(Creature activeChar, Fort fort, int value) {
+		if (activeChar == null || !(activeChar instanceof Player)) {
 			return false;
 		}
 
-		L2PcInstance player = (L2PcInstance) activeChar;
+		Player player = (Player) activeChar;
 
 		if (fort == null || fort.getFortId() <= 0) {
 			if ((value & COND_NOT_ZONE) != 0) {

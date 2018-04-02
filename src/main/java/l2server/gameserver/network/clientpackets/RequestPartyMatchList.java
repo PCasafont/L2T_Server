@@ -18,18 +18,22 @@ package l2server.gameserver.network.clientpackets;
 import l2server.gameserver.model.PartyMatchRoom;
 import l2server.gameserver.model.PartyMatchRoomList;
 import l2server.gameserver.model.PartyMatchWaitingList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExPartyRoomMembers;
 import l2server.gameserver.network.serverpackets.PartyMatchDetail;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * author: Gnacik
  */
 
 public class RequestPartyMatchList extends L2GameClientPacket {
+	private static Logger log = LoggerFactory.getLogger(RequestPartyMatchList.class.getName());
+
+
 	
 	private int roomid;
 	private int membersmax;
@@ -50,7 +54,7 @@ public class RequestPartyMatchList extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		
 		if (activeChar == null) {
 			return;
@@ -59,14 +63,14 @@ public class RequestPartyMatchList extends L2GameClientPacket {
 		if (roomid > 0) {
 			PartyMatchRoom room = PartyMatchRoomList.getInstance().getRoom(roomid);
 			if (room != null) {
-				Log.info("PartyMatchRoom #" + room.getId() + " changed by " + activeChar.getName());
+				log.info("PartyMatchRoom #" + room.getId() + " changed by " + activeChar.getName());
 				room.setMaxMembers(membersmax);
 				room.setMinLvl(lvlmin);
 				room.setMaxLvl(lvlmax);
 				room.setLootType(loot);
 				room.setTitle(roomtitle);
 				
-				for (L2PcInstance member : room.getPartyMembers()) {
+				for (Player member : room.getPartyMembers()) {
 					if (member == null) {
 						continue;
 					}
@@ -80,14 +84,14 @@ public class RequestPartyMatchList extends L2GameClientPacket {
 			
 			PartyMatchRoom room = new PartyMatchRoom(maxid, roomtitle, loot, lvlmin, lvlmax, membersmax, activeChar);
 			
-			Log.info("PartyMatchRoom #" + maxid + " created by " + activeChar.getName());
+			log.info("PartyMatchRoom #" + maxid + " created by " + activeChar.getName());
 			// Remove from waiting list
 			PartyMatchWaitingList.getInstance().removePlayer(activeChar);
 			
 			PartyMatchRoomList.getInstance().addPartyMatchRoom(maxid, room);
 			
 			if (activeChar.isInParty()) {
-				for (L2PcInstance ptmember : activeChar.getParty().getPartyMembers()) {
+				for (Player ptmember : activeChar.getParty().getPartyMembers()) {
 					if (ptmember == null) {
 						continue;
 					}

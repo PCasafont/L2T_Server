@@ -19,36 +19,36 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.handler.IActionHandler;
 import l2server.gameserver.instancemanager.GMEventManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.StaticObjectInstance;
 import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class L2StaticObjectInstanceAction implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
-		if (((L2StaticObjectInstance) target).getType() < 0) {
-			log.info("L2StaticObjectInstance: StaticObject with invalid type! StaticObjectId: " +
-					((L2StaticObjectInstance) target).getStaticObjectId());
+	public boolean action(Player activeChar, WorldObject target, boolean interact) {
+		if (((StaticObjectInstance) target).getType() < 0) {
+			log.info("StaticObjectInstance: StaticObject with invalid type! StaticObjectId: " +
+					((StaticObjectInstance) target).getStaticObjectId());
 		}
 
-		// Check if the L2PcInstance already target the L2NpcInstance
+		// Check if the Player already target the NpcInstance
 		if (activeChar.getTarget() != target) {
-			// Set the target of the L2PcInstance activeChar
+			// Set the target of the Player activeChar
 			activeChar.setTarget(target);
 			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
 		} else if (interact) {
 			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
 
-			// Calculate the distance between the L2PcInstance and the L2NpcInstance
-			if (!activeChar.isInsideRadius(target, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false)) {
-				// Notify the L2PcInstance AI with AI_INTENTION_INTERACT
+			// Calculate the distance between the Player and the NpcInstance
+			if (!activeChar.isInsideRadius(target, Npc.DEFAULT_INTERACTION_DISTANCE, false, false)) {
+				// Notify the Player AI with AI_INTENTION_INTERACT
 				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 			} else {
-				if (((L2StaticObjectInstance) target).getType() == 2) {
+				if (((StaticObjectInstance) target).getType() == 2) {
 					String filename = "signboard.htm";
 					String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), filename);
 					NpcHtmlMessage html = new NpcHtmlMessage(target.getObjectId());
@@ -62,8 +62,8 @@ public class L2StaticObjectInstanceAction implements IActionHandler {
 					activeChar.sendPacket(html);
 
 					GMEventManager.getInstance().onNpcTalk(target, activeChar);
-				} else if (((L2StaticObjectInstance) target).getType() == 0) {
-					activeChar.sendPacket(((L2StaticObjectInstance) target).getMap());
+				} else if (((StaticObjectInstance) target).getType() == 0) {
+					activeChar.sendPacket(((StaticObjectInstance) target).getMap());
 				}
 			}
 		}

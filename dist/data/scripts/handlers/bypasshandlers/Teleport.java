@@ -20,9 +20,9 @@ import l2server.gameserver.GeoData;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.instancemanager.MainTownManager;
 import l2server.gameserver.instancemanager.MainTownManager.MainTownInfo;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
@@ -38,7 +38,7 @@ public class Teleport implements IBypassHandler {
 	private static final String[] COMMANDS = {"teleto", "maintown", "pvpzone"};
 
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		if (target == null) {
 			return false;
 		}
@@ -66,7 +66,7 @@ public class Teleport implements IBypassHandler {
 				activeChar.teleToLocation(coords[0], coords[1], coords[2]);
 				activeChar.setInstanceId(0);
 			} catch (Exception e) {
-				log.warning(
+				log.warn(
 						"L2Teleporter - " + target.getName() + "(" + target.getNpcId() + ") - failed to parse raw teleport coordinates from html");
 				e.printStackTrace();
 			}
@@ -91,7 +91,7 @@ public class Teleport implements IBypassHandler {
 				return true;
 			}
 
-			L2PcInstance mostPvP = L2World.getInstance().getMostPvP(parties, artificialPlayers);
+			Player mostPvP = World.getInstance().getMostPvP(parties, artificialPlayers);
 			if (mostPvP != null) {
 				// Check if the player's clan is already outnumbering the PvP
 				if (activeChar.getClan() != null) {
@@ -101,7 +101,7 @@ public class Teleport implements IBypassHandler {
 						allyId = activeChar.getClanId();
 					}
 					clanNumbers.put(allyId, 1);
-					for (L2PcInstance known : mostPvP.getKnownList().getKnownPlayers().values()) {
+					for (Player known : mostPvP.getKnownList().getKnownPlayers().values()) {
 						int knownAllyId = known.getAllyId();
 						if (knownAllyId == 0) {
 							knownAllyId = known.getClanId();

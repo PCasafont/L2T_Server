@@ -16,7 +16,8 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
@@ -31,6 +32,9 @@ import java.util.Map;
  */
 
 public class ScenePlayerDataTable {
+	private static Logger log = LoggerFactory.getLogger(ScenePlayerDataTable.class.getName());
+
+
 
 	private Map<Integer, Integer> sceneDataTable;
 
@@ -51,7 +55,7 @@ public class ScenePlayerDataTable {
 			}
 		}
 
-		Log.info("ScenePlayerTable: Loaded: " + sceneDataTable.size() + " scenes!");
+		log.info("ScenePlayerTable: Loaded: " + sceneDataTable.size() + " scenes!");
 
 		return false;
 	}

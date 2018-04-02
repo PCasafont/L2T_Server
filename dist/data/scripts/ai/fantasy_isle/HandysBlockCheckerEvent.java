@@ -18,15 +18,14 @@ package ai.fantasy_isle;
 import l2server.Config;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExCubeGameChangeTimeToStart;
 import l2server.gameserver.network.serverpackets.ExCubeGameRequestReady;
 import l2server.gameserver.network.serverpackets.ExCubeGameTeamList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 /**
  * @authors BiggBoss, Gigiikun
@@ -41,7 +40,7 @@ public class HandysBlockCheckerEvent extends Quest {
 	private static final int A_MANAGER_4 = 32524;
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		if (npc == null || player == null) {
 			return null;
 		}
@@ -111,11 +110,11 @@ public class HandysBlockCheckerEvent extends Quest {
 
 	public static void main(String[] args) {
 		if (!Config.ENABLE_BLOCK_CHECKER_EVENT) {
-			Log.info("Handy's Block Checker Event is disabled");
+			log.info("Handy's Block Checker Event is disabled");
 		} else {
 			new HandysBlockCheckerEvent(-1, qn, "Handy's Block Checker Event");
 			HandysBlockCheckerManager.getInstance().startUpParticipantsQueue();
-			Log.info("Handy's Block Checker Event is enabled");
+			log.info("Handy's Block Checker Event is enabled");
 		}
 	}
 }

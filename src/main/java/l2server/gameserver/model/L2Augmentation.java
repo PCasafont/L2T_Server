@@ -16,14 +16,17 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.datatables.EnchantEffectTable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.SkillCoolTime;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Pere
  */
 public final class L2Augmentation {
+	private static Logger log = LoggerFactory.getLogger(L2Augmentation.class.getName());
+	
 	private final EnchantEffect effect1;
 	private final EnchantEffect effect2;
 
@@ -45,10 +48,10 @@ public final class L2Augmentation {
 		effect1 = EnchantEffectTable.getInstance().getEffect(id1);
 		effect2 = EnchantEffectTable.getInstance().getEffect(id2);
 		if (effect1 == null) {
-			Log.warning("Null augment1 for augment with id = " + id + " and calculated id1 = " + id1);
+			log.warn("Null augment1 for augment with id = " + id + " and calculated id1 = " + id1);
 		}
 		//if (augment2 == null)
-		//	Log.warning("Null augment2 for augment with id = " + id + " and calculated id2 = " + id2);
+		//	log.warn("Null augment2 for augment with id = " + id + " and calculated id2 = " + id2);
 	}
 
 	public EnchantEffect getAugment1() {
@@ -72,7 +75,7 @@ public final class L2Augmentation {
 		return id;
 	}
 
-	public L2Skill getSkill() {
+	public Skill getSkill() {
 		if (effect2 != null && effect2.getSkill() != null) {
 			return effect2.getSkill();
 		}
@@ -89,7 +92,7 @@ public final class L2Augmentation {
 	 *
 	 * @param player
 	 */
-	public void applyBonus(L2PcInstance player) {
+	public void applyBonus(Player player) {
 		effect1.applyBonus(player);
 		if (effect2 != null) {
 			effect2.applyBonus(player);
@@ -98,7 +101,7 @@ public final class L2Augmentation {
 		boolean updateTimeStamp = false;
 
 		// add the skill if any
-		L2Skill skill = getSkill();
+		Skill skill = getSkill();
 		if (skill != null) {
 			player.addSkill(skill);
 			if (skill.isActive()) {
@@ -127,14 +130,14 @@ public final class L2Augmentation {
 	 *
 	 * @param player
 	 */
-	public void removeBonus(L2PcInstance player) {
+	public void removeBonus(Player player) {
 		effect1.removeBonus(player);
 		if (effect2 != null) {
 			effect2.removeBonus(player);
 		}
 
 		// remove the skill if any
-		L2Skill skill = getSkill();
+		Skill skill = getSkill();
 		if (skill != null) {
 			if (skill.isPassive() /*|| Config.isServer(Config.LOW | Config.MID | Config.HIGH)*/) {
 				player.removeSkill(skill, false, true);

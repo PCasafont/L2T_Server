@@ -19,15 +19,16 @@ import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.model.Location;
 import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.VisualEffect;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2EffectType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.EffectType;
 
 /**
  * @author littlecrow
@@ -40,30 +41,30 @@ public class EffectFear extends L2Effect {
 	private int dX = -1;
 	private int dY = -1;
 
-	public EffectFear(Env env, L2EffectTemplate template) {
+	public EffectFear(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 * @see Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType() {
-		return L2EffectType.FEAR;
+	public EffectType getEffectType() {
+		return EffectType.FEAR;
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.FEAR;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.FEAR;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
 		// Fear skills cannot be used in event
-		if (getEffector() instanceof L2PcInstance && ((L2PcInstance) getEffector()).isPlayingEvent()) {
+		if (getEffector() instanceof Player && ((Player) getEffector()).isPlayingEvent()) {
 			return false;
 		}
 
@@ -71,8 +72,8 @@ public class EffectFear extends L2Effect {
 		// Fear skills cannot be used l2pcinstance to l2pcinstance. Heroic
 		// Dread, Curse: Fear, Fear, Horror, Sword Symphony, Word of Fear, Hell Scream and
 		// Mass Curse Fear are the exceptions.
-		if (getEffected() instanceof L2PcInstance
-				&& getEffector() instanceof L2PcInstance)
+		if (getEffected() instanceof Player
+				&& getEffector() instanceof Player)
 		{
 			switch (getSkill().getId())
 			{
@@ -91,9 +92,9 @@ public class EffectFear extends L2Effect {
 		}
 		 */
 
-		if (getEffected() instanceof L2NpcInstance || getEffected() instanceof L2DefenderInstance ||
-				getEffected() instanceof L2FortCommanderInstance || getEffected() instanceof L2SiegeFlagInstance ||
-				getEffected() instanceof L2SiegeSummonInstance) {
+		if (getEffected() instanceof NpcInstance || getEffected() instanceof DefenderInstance ||
+				getEffected() instanceof FortCommanderInstance || getEffected() instanceof SiegeFlagInstance ||
+				getEffected() instanceof SiegeSummonInstance) {
 			return false;
 		}
 
@@ -118,7 +119,7 @@ public class EffectFear extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {
@@ -128,7 +129,7 @@ public class EffectFear extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {
@@ -153,7 +154,7 @@ public class EffectFear extends L2Effect {
 			posY = destiny.getY();
 		}
 
-		if (!(getEffected() instanceof L2PetInstance)) {
+		if (!(getEffected() instanceof PetInstance)) {
 			getEffected().setRunning();
 		}
 

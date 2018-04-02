@@ -16,16 +16,16 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.datatables.AbilityTable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Pere
  */
 public class ExAcquireAPSkillList extends L2GameServerPacket {
-	private L2PcInstance player;
+	private Player player;
 	private boolean success;
 	
-	public ExAcquireAPSkillList(L2PcInstance player, boolean success) {
+	public ExAcquireAPSkillList(Player player, boolean success) {
 		this.player = player;
 		this.success = success;
 	}

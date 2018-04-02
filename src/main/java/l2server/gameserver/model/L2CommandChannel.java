@@ -16,8 +16,8 @@
 package l2server.gameserver.model;
 
 import l2server.Config;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 
@@ -30,13 +30,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class L2CommandChannel {
 	private final List<L2Party> partys;
-	private L2PcInstance commandLeader = null;
+	private Player commandLeader = null;
 	private int channelLvl;
 	
 	/**
 	 * Creates a New Command Channel and Add the Leaders party to the CC
 	 */
-	public L2CommandChannel(L2PcInstance leader) {
+	public L2CommandChannel(Player leader) {
 		commandLeader = leader;
 		partys = new CopyOnWriteArrayList<>();
 		partys.add(leader.getParty());
@@ -131,7 +131,7 @@ public class L2CommandChannel {
 		}
 	}
 	
-	public void broadcastCSToChannelMembers(CreatureSay gsp, L2PcInstance broadcaster) {
+	public void broadcastCSToChannelMembers(CreatureSay gsp, Player broadcaster) {
 		if (partys != null && !partys.isEmpty()) {
 			for (L2Party party : partys) {
 				if (party != null) {
@@ -151,8 +151,8 @@ public class L2CommandChannel {
 	/**
 	 * @return list of all Members in Command Channel
 	 */
-	public List<L2PcInstance> getMembers() {
-		List<L2PcInstance> members = new ArrayList<>();
+	public List<Player> getMembers() {
+		List<Player> members = new ArrayList<>();
 		for (L2Party party : getPartys()) {
 			members.addAll(party.getPartyMembers());
 		}
@@ -168,14 +168,14 @@ public class L2CommandChannel {
 	
 	/**
 	 */
-	public void setChannelLeader(L2PcInstance leader) {
+	public void setChannelLeader(Player leader) {
 		commandLeader = leader;
 	}
 	
 	/**
 	 * @return the leader of the Command Channel
 	 */
-	public L2PcInstance getChannelLeader() {
+	public Player getChannelLeader() {
 		return commandLeader;
 	}
 	
@@ -183,8 +183,8 @@ public class L2CommandChannel {
 	 * @param obj
 	 * @return true if proper condition for RaidWar
 	 */
-	public boolean meetRaidWarCondition(L2Object obj) {
-		if (!(obj instanceof L2Character && ((L2Character) obj).isRaid())) {
+	public boolean meetRaidWarCondition(WorldObject obj) {
+		if (!(obj instanceof Creature && ((Creature) obj).isRaid())) {
 			return false;
 		}
 		return getMemberCount() >= Config.LOOT_RAIDS_PRIVILEGE_CC_SIZE;

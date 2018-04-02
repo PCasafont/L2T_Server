@@ -17,16 +17,16 @@ package l2server.gameserver.instancemanager;
 
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.events.Curfew;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
-import l2server.gameserver.model.zone.L2ZoneType;
-import l2server.gameserver.model.zone.type.L2TownZone;
+import l2server.gameserver.model.zone.ZoneType;
+import l2server.gameserver.model.zone.type.TownZone;
 
 public class TownManager {
-	public static L2TownZone getClosestTown(L2Object activeObject) {
-		if (Curfew.getInstance().getOnlyPeaceTown() != -1 && activeObject instanceof L2PcInstance) {
-			L2PcInstance player = (L2PcInstance) activeObject;
+	public static TownZone getClosestTown(WorldObject activeObject) {
+		if (Curfew.getInstance().getOnlyPeaceTown() != -1 && activeObject instanceof Player) {
+			Player player = (Player) activeObject;
 			Castle castle = CastleManager.getInstance().findNearestCastle(player);
 			if (!(castle != null && castle.getSiege().getIsInProgress() &&
 					(castle.getSiege().checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan())))) {
@@ -34,8 +34,8 @@ public class TownManager {
 			}
 		}
 
-		if (MainTownManager.getInstance().getCurrentMainTown() != null && activeObject instanceof L2PcInstance) {
-			L2PcInstance player = (L2PcInstance) activeObject;
+		if (MainTownManager.getInstance().getCurrentMainTown() != null && activeObject instanceof Player) {
+			Player player = (Player) activeObject;
 			Castle castle = CastleManager.getInstance().findNearestCastle(player);
 			if (!(castle != null && castle.getSiege().getIsInProgress() &&
 					(castle.getSiege().checkIsDefender(player.getClan()) || castle.getSiege().checkIsAttacker(player.getClan())))) {
@@ -128,7 +128,7 @@ public class TownManager {
 		return getTown(16); // Default to floran
 	}
 
-	public static int getClosestLocation(L2Object activeObject) {
+	public static int getClosestLocation(WorldObject activeObject) {
 		switch (MapRegionTable.getInstance().getMapRegion(activeObject.getPosition().getX(), activeObject.getPosition().getY())) {
 			case 0:
 				return 1; // TI
@@ -237,8 +237,8 @@ public class TownManager {
 		return false;
 	}
 
-	public static L2TownZone getTown(int townId) {
-		for (L2TownZone temp : ZoneManager.getInstance().getAllZones(L2TownZone.class)) {
+	public static TownZone getTown(int townId) {
+		for (TownZone temp : ZoneManager.getInstance().getAllZones(TownZone.class)) {
 			if (temp.getTownId() == townId) {
 				return temp;
 			}
@@ -254,10 +254,10 @@ public class TownManager {
 	 * @param z
 	 * @return
 	 */
-	public static L2TownZone getTown(int x, int y, int z) {
-		for (L2ZoneType temp : ZoneManager.getInstance().getZones(x, y, z)) {
-			if (temp instanceof L2TownZone) {
-				return (L2TownZone) temp;
+	public static TownZone getTown(int x, int y, int z) {
+		for (ZoneType temp : ZoneManager.getInstance().getZones(x, y, z)) {
+			if (temp instanceof TownZone) {
+				return (TownZone) temp;
 			}
 		}
 		return null;

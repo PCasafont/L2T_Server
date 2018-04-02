@@ -17,7 +17,8 @@ package l2server.gameserver.handler;
 
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class handles all chat handlers
@@ -25,6 +26,9 @@ import l2server.log.Log;
  * @author durgus
  */
 public class ChatHandler {
+	private static Logger log = LoggerFactory.getLogger(ChatHandler.class.getName());
+
+
 
 	private Map<Integer, IChatHandler> datatable = new HashMap<>();
 
@@ -47,7 +51,7 @@ public class ChatHandler {
 		int[] ids = handler.getChatTypeList();
 		for (int id : ids) {
 			if (Config.DEBUG) {
-				Log.fine("Adding handler for chat type " + id);
+				log.debug("Adding handler for chat type " + id);
 			}
 			datatable.put(id, handler);
 		}

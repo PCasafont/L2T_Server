@@ -17,15 +17,14 @@ package l2server;
 
 import com.jolbox.bonecp.BoneCP;
 import com.jolbox.bonecp.BoneCPConfig;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class L2DatabaseFactory {
-	static Logger log = Logger.getLogger(L2DatabaseFactory.class.getName());
+	private static Logger log = LoggerFactory.getLogger(L2DatabaseFactory.class.getName());
 
 	public enum ProviderType {
 		MySql,
@@ -52,7 +51,7 @@ public class L2DatabaseFactory {
 		try {
 			if (Config.DATABASE_MAX_CONNECTIONS < 2) {
 				Config.DATABASE_MAX_CONNECTIONS = 2;
-				Log.warning("A minimum of " + Config.DATABASE_MAX_CONNECTIONS + " db connections are required.");
+				log.warn("A minimum of " + Config.DATABASE_MAX_CONNECTIONS + " db connections are required.");
 			}
 
 			config = new BoneCPConfig();
@@ -86,7 +85,7 @@ public class L2DatabaseFactory {
 			gameDatabase.getConnection().close();
 
 			if (Config.DEBUG) {
-				Log.fine("Database Connection Working");
+				log.debug("Database Connection Working");
 			}
 
 			if (Config.DATABASE_DRIVER.toLowerCase().contains("microsoft")) {
@@ -96,7 +95,7 @@ public class L2DatabaseFactory {
 			}
 		} catch (Exception e) {
 			if (Config.DEBUG) {
-				Log.fine("Database Connection FAILED");
+				log.debug("Database Connection FAILED");
 			}
 		}
 	}
@@ -118,16 +117,16 @@ public class L2DatabaseFactory {
 	}
 
 	public void shutdown() {
-		Log.info("During this session the connection pool initialized " + gameDatabase.getTotalCreatedConnections() + " connections.");
+		log.info("During this session the connection pool initialized " + gameDatabase.getTotalCreatedConnections() + " connections.");
 		if (gameDatabase.getTotalLeased() > 0) {
-			Log.info(gameDatabase.getTotalLeased() + " of them are still in use by the application at this moment.");
+			log.info(gameDatabase.getTotalLeased() + " of them are still in use by the application at this moment.");
 		}
-		Log.info("Shutting down pool...");
+		log.info("Shutting down pool...");
 
 		try {
 			gameDatabase.close();
 		} catch (Exception e) {
-			Log.log(Level.INFO, "", e);
+			log.info("", e);
 		}
 
 		gameDatabase = null;
@@ -135,7 +134,7 @@ public class L2DatabaseFactory {
 		try {
 			webDatabase.close();
 		} catch (Exception e) {
-			Log.log(Level.INFO, "", e);
+			log.info("", e);
 		}
 
 		webDatabase = null;
@@ -187,7 +186,7 @@ public class L2DatabaseFactory {
 			try {
 				con = gameDatabase.getConnection();
 			} catch (SQLException e) {
-				Log.log(Level.WARNING, "L2DatabaseFactory: getConnection() failed for GameDatabase, trying again " + e.getMessage(), e);
+				log.warn("L2DatabaseFactory: getConnection() failed for GameDatabase, trying again " + e.getMessage(), e);
 			}
 		}
 
@@ -200,7 +199,7 @@ public class L2DatabaseFactory {
 			try {
 				con = webDatabase.getConnection();
 			} catch (SQLException e) {
-				Log.log(Level.WARNING, "L2DatabaseFactory: getConnection() failed for WebDatabase, trying again " + e.getMessage(), e);
+				log.warn("L2DatabaseFactory: getConnection() failed for WebDatabase, trying again " + e.getMessage(), e);
 			}
 		}
 
@@ -215,7 +214,7 @@ public class L2DatabaseFactory {
 		try {
 			con.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Failed to close database connection!", e);
+			log.warn("Failed to close database connection!", e);
 		}
 	}
 

@@ -17,8 +17,8 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.model.TradeList;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
@@ -62,14 +62,14 @@ public class SetPrivateStoreListSell extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
 		
 		if (items == null) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_ITEM_COUNT));
-			player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
+			player.setPrivateStoreType(Player.STORE_PRIVATE_NONE);
 			player.broadcastUserInfo();
 			return;
 		}
@@ -86,7 +86,7 @@ public class SetPrivateStoreListSell extends L2GameClientPacket {
 			return;
 		}
 		
-		if (player.isInsideZone(L2Character.ZONE_NOSTORE)) {
+		if (player.isInsideZone(Creature.ZONE_NOSTORE)) {
 			player.sendPacket(new PrivateStoreManageListSell(player, packageSale));
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PRIVATE_STORE_HERE));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -100,8 +100,8 @@ public class SetPrivateStoreListSell extends L2GameClientPacket {
 			return;
 		}
 		
-		for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70)) {
-			if (!(c instanceof L2PcInstance && ((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE)) {
+		for (Creature c : player.getKnownList().getKnownCharactersInRadius(70)) {
+			if (!(c instanceof Player && ((Player) c).getPrivateStoreType() == Player.STORE_PRIVATE_NONE)) {
 				player.sendPacket(new PrivateStoreManageListSell(player, packageSale));
 				player.sendMessage("Try to put your store a little further from " + c.getName() + ", please.");
 				return;
@@ -135,9 +135,9 @@ public class SetPrivateStoreListSell extends L2GameClientPacket {
 		player.sitDown();
 		
 		if (packageSale) {
-			player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_PACKAGE_SELL);
+			player.setPrivateStoreType(Player.STORE_PRIVATE_PACKAGE_SELL);
 		} else {
-			player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_SELL);
+			player.setPrivateStoreType(Player.STORE_PRIVATE_SELL);
 		}
 		
 		player.broadcastUserInfo();

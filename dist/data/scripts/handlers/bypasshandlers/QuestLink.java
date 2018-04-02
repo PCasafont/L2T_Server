@@ -19,8 +19,8 @@ import l2server.Config;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.instancemanager.QuestManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
@@ -36,7 +36,7 @@ public class QuestLink implements IBypassHandler {
 	private static final String[] COMMANDS = {"Quest"};
 
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		if (target == null) {
 			return false;
 		}
@@ -56,15 +56,15 @@ public class QuestLink implements IBypassHandler {
 	}
 
 	/**
-	 * Open a choose quest window on client with all quests available of the L2NpcInstance.<BR><BR>
+	 * Open a choose quest window on client with all quests available of the NpcInstance.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance </li><BR><BR>
+	 * <li>Send a Server->Client NpcHtmlMessage containing the text of the NpcInstance to the Player </li><BR><BR>
 	 *
-	 * @param player The L2PcInstance that talk with the L2NpcInstance
-	 * @param quests The table containing quests of the L2NpcInstance
+	 * @param player The Player that talk with the NpcInstance
+	 * @param quests The table containing quests of the NpcInstance
 	 */
-	public static void showQuestChooseWindow(L2PcInstance player, L2Npc npc, Quest[] quests) {
+	public static void showQuestChooseWindow(Player player, Npc npc, Quest[] quests) {
 		final StringBuilder sb = StringUtil.startAppend(150, "<html><body>");
 		for (Quest q : quests) {
 			StringUtil.append(sb, "<a action=\"bypass -h npc_", String.valueOf(npc.getObjectId()), "_Quest ", q.getName(), "\">");
@@ -110,22 +110,22 @@ public class QuestLink implements IBypassHandler {
 
 		sb.append("</body></html>");
 
-		// Send a Server->Client packet NpcHtmlMessage to the L2PcInstance in order to display the message of the L2NpcInstance
+		// Send a Server->Client packet NpcHtmlMessage to the Player in order to display the message of the NpcInstance
 		npc.insertObjectIdAndShowChatWindow(player, sb.toString(), true);
 	}
 
 	/**
-	 * Open a quest window on client with the text of the L2NpcInstance.<BR><BR>
+	 * Open a quest window on client with the text of the NpcInstance.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Get the text of the quest state in the folder data/scripts/quests/questId/stateId.htm </li>
-	 * <li>Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance </li>
-	 * <li>Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet </li><BR><BR>
+	 * <li>Send a Server->Client NpcHtmlMessage containing the text of the NpcInstance to the Player </li>
+	 * <li>Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet </li><BR><BR>
 	 *
-	 * @param player  The L2PcInstance that talk with the L2NpcInstance
+	 * @param player  The Player that talk with the NpcInstance
 	 * @param questId The Identifier of the quest to display the message
 	 */
-	public static void showQuestWindow(L2PcInstance player, L2Npc npc, String questId) {
+	public static void showQuestWindow(Player player, Npc npc, String questId) {
 		String content = null;
 
 		Quest q = QuestManager.getInstance().getQuest(questId);
@@ -176,28 +176,28 @@ public class QuestLink implements IBypassHandler {
 
 			if (Config.DEBUG) {
 				if (content != null) {
-					log.fine("Showing quest window for quest " + questId + " html path: " + path);
+					log.debug("Showing quest window for quest " + questId + " html path: " + path);
 				} else {
-					log.fine("File not exists for quest " + questId + " html path: " + path);
+					log.debug("File not exists for quest " + questId + " html path: " + path);
 				}
 			}
 		}
 
-		// Send a Server->Client packet NpcHtmlMessage to the L2PcInstance in order to display the message of the L2NpcInstance
+		// Send a Server->Client packet NpcHtmlMessage to the Player in order to display the message of the NpcInstance
 		if (content != null) {
 			npc.insertObjectIdAndShowChatWindow(player, content, true);
 		}
 
-		// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
+		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 
 	/**
 	 * Collect awaiting quests/start points and display a QuestChooseWindow (if several available) or QuestWindow.<BR><BR>
 	 *
-	 * @param player The L2PcInstance that talk with the L2NpcInstance
+	 * @param player The Player that talk with the NpcInstance
 	 */
-	public static void showQuestWindow(L2PcInstance player, L2Npc npc) {
+	public static void showQuestWindow(Player player, Npc npc) {
 		// collect awaiting quests and start points
 		List<Quest> options = new ArrayList<Quest>();
 

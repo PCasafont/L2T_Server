@@ -29,8 +29,8 @@ import l2server.gameserver.datatables.*;
 import l2server.gameserver.datatables.EnchantMultiSellTable.EnchantMultiSellCategory;
 import l2server.gameserver.datatables.EnchantMultiSellTable.EnchantMultiSellEntry;
 import l2server.gameserver.datatables.MerchantPriceConfigTable.MerchantPriceConfig;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -47,14 +47,14 @@ public final class EnchantMultiSellList extends L2GameServerPacket {
 	public static int ShopId = 4000000;
 	public static int ItemIdMod = 100000000;
 	
-	private final Map<Integer, List<L2ItemInstance>> mainIngredients = new LinkedHashMap<>();
+	private final Map<Integer, List<Item>> mainIngredients = new LinkedHashMap<>();
 	private final MerchantPriceConfig mpc;
 	
-	public EnchantMultiSellList(L2PcInstance player) {
+	public EnchantMultiSellList(Player player) {
 		mpc = MerchantPriceConfigTable.getInstance().getMerchantPriceConfig(player);
 		for (EnchantMultiSellCategory category : EnchantMultiSellTable.getInstance().getCategories()) {
-			List<L2ItemInstance> mainIngredients = new ArrayList<>();
-			for (L2ItemInstance item : player.getInventory().getItems()) {
+			List<Item> mainIngredients = new ArrayList<>();
+			for (Item item : player.getInventory().getItems()) {
 				if (!item.isEquipped() && EnchantItemTable.isEnchantable(item) && category.Entries.containsKey(item.getEnchantLevel() + 1)) {
 					mainIngredients.add(item);
 				}
@@ -67,7 +67,7 @@ public final class EnchantMultiSellList extends L2GameServerPacket {
 	@Override
 	protected final void writeImpl() {
 		int ingredientsSize = 0;
-		for (List<L2ItemInstance> items : mainIngredients.values()) {
+		for (List<Item> items : mainIngredients.values()) {
 			ingredientsSize += items.size();
 		}
 		
@@ -82,7 +82,7 @@ public final class EnchantMultiSellList extends L2GameServerPacket {
 		writeD(0x00);
 		
 		for (EnchantMultiSellCategory category : EnchantMultiSellTable.getInstance().getCategories()) {
-			for (L2ItemInstance item : mainIngredients.get(category.Id)) {
+			for (Item item : mainIngredients.get(category.Id)) {
 				EnchantMultiSellEntry entry = category.Entries.get(item.getEnchantLevel() + 1);
 				
 				writeD(category.Id * ItemIdMod + item.getObjectId() % ItemIdMod); // entry id

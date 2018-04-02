@@ -16,11 +16,12 @@
 package l2server.gameserver.model.itemcontainer;
 
 import l2server.L2DatabaseFactory;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2ItemInstance.ItemLocation;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Item.ItemLocation;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,6 +32,9 @@ import java.util.logging.Level;
  * @author DS
  */
 public class Mail extends ItemContainer {
+	private static Logger log = LoggerFactory.getLogger(Mail.class.getName());
+
+
 	private final int ownerId;
 	private int messageId;
 
@@ -45,7 +49,7 @@ public class Mail extends ItemContainer {
 	}
 
 	@Override
-	public L2PcInstance getOwner() {
+	public Player getOwner() {
 		return null;
 	}
 
@@ -60,7 +64,7 @@ public class Mail extends ItemContainer {
 
 	public void setNewMessageId(int messageId) {
 		this.messageId = messageId;
-		for (L2ItemInstance item : items.values()) {
+		for (Item item : items.values()) {
 			if (item == null) {
 				continue;
 			}
@@ -72,7 +76,7 @@ public class Mail extends ItemContainer {
 	}
 
 	public void returnToWh(ItemContainer wh) {
-		for (L2ItemInstance item : items.values()) {
+		for (Item item : items.values()) {
 			if (item == null) {
 				continue;
 			}
@@ -85,7 +89,7 @@ public class Mail extends ItemContainer {
 	}
 
 	@Override
-	protected void addItem(L2ItemInstance item) {
+	protected void addItem(Item item) {
 		super.addItem(item);
 		item.setLocation(getBaseLocation(), messageId);
 	}
@@ -95,7 +99,7 @@ public class Mail extends ItemContainer {
 	 */
 	@Override
 	public void updateDatabase() {
-		for (L2ItemInstance item : items.values()) {
+		for (Item item : items.values()) {
 			if (item != null) {
 				item.updateDatabase(true);
 			}
@@ -115,14 +119,14 @@ public class Mail extends ItemContainer {
 			statement.setInt(3, getMessageId());
 			ResultSet inv = statement.executeQuery();
 
-			L2ItemInstance item;
+			Item item;
 			while (inv.next()) {
-				item = L2ItemInstance.restoreFromDb(getOwnerId(), inv);
+				item = Item.restoreFromDb(getOwnerId(), inv);
 				if (item == null) {
 					continue;
 				}
 
-				L2World.getInstance().storeObject(item);
+				World.getInstance().storeObject(item);
 
 				// If stackable item is found just add to current quantity
 				if (item.isStackable() && getItemByItemId(item.getItemId()) != null) {
@@ -133,7 +137,7 @@ public class Mail extends ItemContainer {
 			}
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "could not restore container:", e);
+			log.warn("could not restore container:", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

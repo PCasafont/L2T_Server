@@ -24,19 +24,18 @@ import l2server.gameserver.instancemanager.DayNightSpawnManager;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.QuestManager;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.util.Broadcast;
 import l2server.util.StringUtil;
 
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -54,22 +53,21 @@ public class AdminSpawn implements IAdminCommandHandler {
 					"admin_spawn_reload", "admin_npc_index", "admin_spawn_once", "admin_show_npcs", "admin_teleport_reload", "admin_spawnnight",
 					"admin_spawnday", "admin_instance_spawns", "admin_list_spawns", "admin_list_positions", "admin_spawn_debug_menu",
 					"admin_spawn_debug_print", "admin_spawn_debug_print_menu"};
-	public static Logger log = Logger.getLogger(AdminSpawn.class.getName());
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.equals("admin_show_spawns")) {
 			AdminHelpPage.showHelpPage(activeChar, "spawns.htm");
 		} else if (command.equalsIgnoreCase("admin_spawn_debug_menu")) {
 			AdminHelpPage.showHelpPage(activeChar, "spawns_debug.htm");
 		} else if (command.startsWith("admin_spawn_debug_print")) {
 			StringTokenizer st = new StringTokenizer(command, " ");
-			L2Object target = activeChar.getTarget();
-			if (target instanceof L2Npc) {
+			WorldObject target = activeChar.getTarget();
+			if (target instanceof Npc) {
 				try {
 					st.nextToken();
 					int type = Integer.parseInt(st.nextToken());
-					printSpawn((L2Npc) target, type);
+					printSpawn((Npc) target, type);
 					if (command.contains("_menu")) {
 						AdminHelpPage.showHelpPage(activeChar, "spawns_debug.htm");
 					}
@@ -123,7 +121,7 @@ public class AdminSpawn implements IAdminCommandHandler {
 					int skiped = 0;
 					Instance inst = InstanceManager.getInstance().getInstance(instance);
 					if (inst != null) {
-						for (L2Npc npc : inst.getNpcs()) {
+						for (Npc npc : inst.getNpcs()) {
 							if (!npc.isDead()) {
 								// Only 50 because of client html limitation
 								if (counter < 50) {
@@ -153,7 +151,7 @@ public class AdminSpawn implements IAdminCommandHandler {
 		} else if (command.startsWith("admin_unspawnall")) {
 			Broadcast.toAllOnlinePlayers(SystemMessage.getSystemMessage(SystemMessageId.NPC_SERVER_NOT_OPERATING));
 			DayNightSpawnManager.getInstance().cleanUp();
-			L2World.getInstance().deleteVisibleNpcSpawns();
+			World.getInstance().deleteVisibleNpcSpawns();
 			GmListTable.broadcastMessageToGMs("NPC Unspawn completed!");
 		} else if (command.startsWith("admin_spawnday")) {
 			DayNightSpawnManager.getInstance().spawnDayCreatures();
@@ -162,7 +160,7 @@ public class AdminSpawn implements IAdminCommandHandler {
 		} else if (command.startsWith("admin_respawnall") || command.startsWith("admin_spawn_reload")) {
 			// make sure all spawns are deleted
 			DayNightSpawnManager.getInstance().cleanUp();
-			L2World.getInstance().deleteVisibleNpcSpawns();
+			World.getInstance().deleteVisibleNpcSpawns();
 			// now respawn all
 			NpcTable.getInstance().load();
 			CastleManager.getInstance().spawnCastleTendencyNPCs();
@@ -221,7 +219,7 @@ public class AdminSpawn implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	private void printSpawn(L2Npc target, int type) {
+	private void printSpawn(Npc target, int type) {
 		int i = target.getNpcId();
 		int x = target.getSpawn().getX();
 		int y = target.getSpawn().getY();
@@ -241,13 +239,13 @@ public class AdminSpawn implements IAdminCommandHandler {
 		}
 	}
 
-	private void spawnMonster(L2PcInstance activeChar, String monsterId, int respawnTime, boolean permanent) {
-		L2Object target = activeChar.getTarget();
+	private void spawnMonster(Player activeChar, String monsterId, int respawnTime, boolean permanent) {
+		WorldObject target = activeChar.getTarget();
 		if (target == null) {
 			target = activeChar;
 		}
 
-		L2NpcTemplate template1;
+		NpcTemplate template1;
 		if (monsterId.matches("[0-9]*")) {
 			//First parameter was an ID number
 			int monsterTemplate = Integer.parseInt(monsterId);
@@ -290,8 +288,8 @@ public class AdminSpawn implements IAdminCommandHandler {
 		}
 	}
 
-	private void showMonsters(L2PcInstance activeChar, int level, int from) {
-		L2NpcTemplate[] mobs = NpcTable.getInstance().getAllMonstersOfLevel(level);
+	private void showMonsters(Player activeChar, int level, int from) {
+		NpcTemplate[] mobs = NpcTable.getInstance().getAllMonstersOfLevel(level);
 		final StringBuilder tb = StringUtil.startAppend(500 + mobs.length * 80,
 				"<html><title>Spawn Monster:</title><body><p> Level : ",
 				Integer.toString(level),
@@ -320,8 +318,8 @@ public class AdminSpawn implements IAdminCommandHandler {
 		activeChar.sendPacket(new NpcHtmlMessage(5, tb.toString()));
 	}
 
-	private void showNpcs(L2PcInstance activeChar, String starting, int from) {
-		L2NpcTemplate[] mobs = NpcTable.getInstance().getAllNpcStartingWith(starting);
+	private void showNpcs(Player activeChar, String starting, int from) {
+		NpcTemplate[] mobs = NpcTable.getInstance().getAllNpcStartingWith(starting);
 		final StringBuilder tb = StringUtil.startAppend(500 + mobs.length * 80,
 				"<html><title>Spawn Monster:</title><body><p> There are ",
 				Integer.toString(mobs.length),

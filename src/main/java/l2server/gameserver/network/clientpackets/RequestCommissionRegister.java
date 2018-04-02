@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ExResponseCommissionInfo;
 import l2server.gameserver.network.serverpackets.ExResponseCommissionItemList;
 import l2server.gameserver.network.serverpackets.ExResponseCommissionList;
@@ -43,7 +43,7 @@ public final class RequestCommissionRegister extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 		}
 
@@ -94,7 +94,7 @@ public final class RequestCommissionRegister extends L2GameClientPacket {
 		}
 
 		int itemID = player.getInventory().getItemByObjectId(itemOID).getItemId();
-		L2Item item = ItemTable.getInstance().getTemplate(itemID);
+		ItemTemplate item = ItemTable.getInstance().getTemplate(itemID);
 
 		if ((player.getAuctionInventory().getSize() >= 10 && !player.isGM()) || (player.getAuctionInventory().getSize() >= 99999 && player.isGM()) || !item.isTradeable() || !item.isSellable())
 		{
@@ -123,7 +123,7 @@ public final class RequestCommissionRegister extends L2GameClientPacket {
 	}
 	
 	@SuppressWarnings("unused")
-	private void reloadAuction(L2PcInstance player, boolean success) {
+	private void reloadAuction(Player player, boolean success) {
 		player.sendPacket(new ExResponseCommissionRegister(success));
 		player.sendPacket(new ExResponseCommissionList(player));
 		player.sendPacket(new ExResponseCommissionInfo(player, 0, success));

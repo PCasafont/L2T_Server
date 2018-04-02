@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 
 /**
  * 0000: 75  7a 07 80 49  63 27 00 4a  ea 01 00 00  c1 37 fe	uz..Ic'.J.....7. <p>
@@ -32,7 +32,7 @@ public class MoveToPawn extends L2GameServerPacket {
 	private int distance;
 	private int x, y, z, tx, ty, tz;
 
-	public MoveToPawn(L2Character cha, L2Character target, int distance) {
+	public MoveToPawn(Creature cha, Creature target, int distance) {
 		charObjId = cha.getObjectId();
 		targetId = target.getObjectId();
 		this.distance = distance;

@@ -15,7 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.log.Log;
 
 /**
  * Format: (ch)
@@ -34,6 +33,6 @@ public final class RequestExFishRanking extends L2GameClientPacket {
 	 */
 	@Override
 	protected void runImpl() {
-		Log.info("C5: RequestExFishRanking");
+		log.info("C5: RequestExFishRanking");
 	}
 }

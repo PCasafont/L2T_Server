@@ -1,6 +1,6 @@
 package custom.CustomColorName;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 
@@ -15,7 +15,7 @@ public class CustomColorName extends Quest {
 	}
 	
 	@Override
-	public final String onEnterWorld(L2PcInstance player) {
+	public final String onEnterWorld(Player player) {
 		QuestState st = player.getQuestState("CustomColorName");
 		if (st == null) {
 			st = newQuestState(player);

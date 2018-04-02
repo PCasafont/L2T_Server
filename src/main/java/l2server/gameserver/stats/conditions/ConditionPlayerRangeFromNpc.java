@@ -15,8 +15,8 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -37,9 +37,9 @@ public class ConditionPlayerRangeFromNpc extends Condition {
 			return false;
 		}
 
-		for (L2Character target : env.player.getKnownList().getKnownCharactersInRadius(radius)) {
-			if (target instanceof L2Npc) {
-				if (((L2Npc) target).getNpcId() == npcId) {
+		for (Creature target : env.player.getKnownList().getKnownCharactersInRadius(radius)) {
+			if (target instanceof Npc) {
+				if (((Npc) target).getNpcId() == npcId) {
 					return true;
 				}
 			}

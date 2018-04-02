@@ -17,8 +17,9 @@ package l2server.gameserver.model;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.instancemanager.CastleSiegeManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -29,6 +30,9 @@ import java.util.logging.Level;
  * Clan member class.
  */
 public class L2ClanMember {
+	private static Logger log = LoggerFactory.getLogger(L2ClanMember.class.getName());
+
+
 	private L2Clan clan;
 	private int objectId;
 	private String name;
@@ -38,7 +42,7 @@ public class L2ClanMember {
 	private int classId;
 	private boolean sex;
 	private int raceOrdinal;
-	private L2PcInstance player;
+	private Player player;
 	private int pledgeType;
 	private int apprentice;
 	private int sponsor;
@@ -70,7 +74,7 @@ public class L2ClanMember {
 		this.raceOrdinal = raceOrdinal;
 	}
 
-	public L2ClanMember(L2Clan clan, L2PcInstance player) {
+	public L2ClanMember(L2Clan clan, Player player) {
 		this.clan = clan;
 		name = player.getName();
 		level = player.getLevel();
@@ -85,7 +89,7 @@ public class L2ClanMember {
 		raceOrdinal = player.getRace().ordinal();
 	}
 
-	public L2ClanMember(L2PcInstance player) {
+	public L2ClanMember(Player player) {
 		if (player.getClan() == null) {
 			throw new IllegalArgumentException("Can not create a ClanMember if player has a null clan.");
 		}
@@ -104,7 +108,7 @@ public class L2ClanMember {
 		raceOrdinal = player.getRace().ordinal();
 	}
 
-	public void setPlayerInstance(L2PcInstance player) {
+	public void setPlayerInstance(Player player) {
 		if (player == null && player != null) {
 			// this is here to keep the data when the player logs off
 			name = player.getName();
@@ -133,7 +137,7 @@ public class L2ClanMember {
 		this.player = player;
 	}
 
-	public L2PcInstance getPlayerInstance() {
+	public Player getPlayerInstance() {
 		return player;
 	}
 
@@ -222,7 +226,7 @@ public class L2ClanMember {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not update pledge type: " + e.getMessage(), e);
+			log.warn("Could not update pledge type: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -262,7 +266,7 @@ public class L2ClanMember {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not update power _grade: " + e.getMessage(), e);
+			log.warn("Could not update power _grade: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -334,7 +338,7 @@ public class L2ClanMember {
 		return clan;
 	}
 
-	public int calculatePledgeClass(L2PcInstance player) {
+	public int calculatePledgeClass(Player player) {
 		int pledgeClass = 0;
 
 		if (player == null) {
@@ -598,7 +602,7 @@ public class L2ClanMember {
 			statement.execute();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Could not save apprentice/sponsor: " + e.getMessage(), e);
+			log.warn("Could not save apprentice/sponsor: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

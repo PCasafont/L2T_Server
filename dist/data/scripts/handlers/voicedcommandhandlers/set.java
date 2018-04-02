@@ -16,7 +16,7 @@
 package handlers.voicedcommandhandlers;
 
 import l2server.gameserver.handler.IVoicedCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  *
@@ -26,13 +26,13 @@ public class set implements IVoicedCommandHandler {
 	private static final String[] VOICED_COMMANDS = {"set name", "set home", "set group"};
 
 	/**
-	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, Player, java.lang.String)
 	 */
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params) {
+	public boolean useVoicedCommand(String command, Player activeChar, String params) {
 		if (command.startsWith("set privileges")) {
 			int n = Integer.parseInt(command.substring(15));
-			L2PcInstance pc = (L2PcInstance) activeChar.getTarget();
+			Player pc = (Player) activeChar.getTarget();
 			if (pc != null) {
 				if (activeChar.getClan().getClanId() == pc.getClan().getClanId() && activeChar.getClanPrivileges() > n || activeChar.isClanLeader()) {
 					pc.setClanPrivileges(n);

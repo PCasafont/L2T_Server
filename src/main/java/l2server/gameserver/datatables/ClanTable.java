@@ -26,15 +26,16 @@ import l2server.gameserver.instancemanager.FortSiegeManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
 import l2server.gameserver.model.L2PledgeSkillLearn;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Fort;
 import l2server.gameserver.model.entity.FortSiege;
 import l2server.gameserver.model.entity.Siege;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
@@ -49,6 +50,9 @@ import java.util.logging.Level;
  * @version $Revision: 1.11.2.5.2.5 $ $Date: 2005/03/27 15:29:18 $
  */
 public class ClanTable {
+	private static Logger log = LoggerFactory.getLogger(ClanTable.class.getName());
+
+
 	
 	/**
 	 * Sorts by member count - descending
@@ -113,9 +117,9 @@ public class ClanTable {
 			result.close();
 			statement.close();
 
-			Log.info("Restored " + clanCount + " clans from the database.");
+			log.info("Restored " + clanCount + " clans from the database.");
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error restoring ClanTable.", e);
+			log.error("Error restoring ClanTable.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -164,13 +168,13 @@ public class ClanTable {
 	 * @param player
 	 * @return NULL if clan with same name already exists
 	 */
-	public L2Clan createClan(L2PcInstance player, String clanName) {
+	public L2Clan createClan(Player player, String clanName) {
 		if (null == player) {
 			return null;
 		}
 
 		if (Config.DEBUG) {
-			Log.fine(player.getObjectId() + " (" + player.getName() + ") requested a clan creation.");
+			log.debug(player.getObjectId() + " (" + player.getName() + ") requested a clan creation.");
 		}
 
 		if (10 > player.getLevel()) {
@@ -216,7 +220,7 @@ public class ClanTable {
 				L2PledgeSkillLearn[] skills = PledgeSkillTree.getInstance().getAvailableSkills(player);
 				if (skills != null) {
 					for (L2PledgeSkillLearn sk : skills) {
-						L2Skill s = SkillTable.getInstance().getInfo(sk.getId(), sk.getLevel());
+						Skill s = SkillTable.getInstance().getInfo(sk.getId(), sk.getLevel());
 						if (s != null) {
 							clan.addNewSkill(s);
 						}
@@ -226,7 +230,7 @@ public class ClanTable {
 		}
 
 		if (Config.DEBUG) {
-			Log.fine("New clan created: " + clan.getClanId() + " " + clan.getName());
+			log.debug("New clan created: " + clan.getClanId() + " " + clan.getName());
 		}
 
 		clans.put(clan.getClanId(), clan);
@@ -241,7 +245,7 @@ public class ClanTable {
 		return clan;
 	}
 
-	public boolean setClanNameConditions(L2PcInstance player, String clanName) {
+	public boolean setClanNameConditions(Player player, String clanName) {
 		if (player == null) {
 			return false;
 		}
@@ -346,10 +350,10 @@ public class ClanTable {
 				}
 			}
 			if (Config.DEBUG) {
-				Log.fine("clan removed in db: " + clanId);
+				log.debug("clan removed in db: " + clanId);
 			}
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error removing clan from DB.", e);
+			log.error("Error removing clan from DB.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -387,7 +391,7 @@ public class ClanTable {
 					clan.setAllyName(null);
 					clan.changeAllyCrest(0, true);
 					clan.updateClanInDB();
-					Log.info(getClass().getSimpleName() + ": Removed alliance from clan: " + clan);
+					log.info(getClass().getSimpleName() + ": Removed alliance from clan: " + clan);
 				}
 			}
 		}

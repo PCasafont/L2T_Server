@@ -16,24 +16,28 @@
 package l2server.gameserver;
 
 import l2server.Config;
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Point3D;
 
 /**
  * @author -Nemesiss-
  */
 public class GeoData {
+	private static Logger log = LoggerFactory.getLogger(GeoData.class.getName());
+
+
 
 	protected GeoData() {
 	}
 
 	private GeoData(final boolean disabled) {
 		if (disabled) {
-			Log.info("Geodata Engine: Disabled.");
+			log.info("Geodata Engine: Disabled.");
 		}
 	}
 
@@ -87,13 +91,13 @@ public class GeoData {
 	 * @param target
 	 * @return True if cha can see target (LOS)
 	 */
-	public boolean canSeeTarget(L2Object cha, L2Object target) {
+	public boolean canSeeTarget(WorldObject cha, WorldObject target) {
 		//If geo is off do simple check :]
 		//Don't allow casting on players on different dungeon lvls etc
 		return Math.abs(target.getZ() - cha.getZ()) < 1000;
 	}
 
-	public boolean canSeeTarget(L2Object cha, Point3D worldPosition) {
+	public boolean canSeeTarget(WorldObject cha, Point3D worldPosition) {
 		//If geo is off do simple check :]
 		//Don't allow casting on players on different dungeon lvls etc
 		return Math.abs(worldPosition.getZ() - cha.getZ()) < 1000;
@@ -109,7 +113,7 @@ public class GeoData {
 	 * @param target
 	 * @return True if cha can see target (LOS) and send usful info to PC
 	 */
-	public boolean canSeeTargetDebug(L2PcInstance gm, L2Object target) {
+	public boolean canSeeTargetDebug(Player gm, WorldObject target) {
 		return true;
 	}
 
@@ -149,7 +153,7 @@ public class GeoData {
 	 * @param gm
 	 * @param comment
 	 */
-	public void addGeoDataBug(L2PcInstance gm, String comment) {
+	public void addGeoDataBug(Player gm, String comment) {
 		//Do Nothing
 	}
 

@@ -16,8 +16,8 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.PetNameTable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.PetInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
@@ -38,12 +38,12 @@ public final class RequestChangePetName extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
 		
-		final L2PetInstance pet = activeChar.getPet();
+		final PetInstance pet = activeChar.getPet();
 		if (pet == null) {
 			return;
 		}

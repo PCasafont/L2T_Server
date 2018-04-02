@@ -18,18 +18,19 @@ package l2server.gameserver.datatables;
 import l2server.Config;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.SpawnGroup;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.templates.SpawnData;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -40,12 +41,14 @@ import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArraySet;
-import java.util.logging.Level;
 
 /**
  * @author Nightmare
  */
 public class SpawnTable {
+	private static Logger log = LoggerFactory.getLogger(SpawnTable.class.getName());
+
+
 	private CopyOnWriteArraySet<L2Spawn> spawnTable = new CopyOnWriteArraySet<>();
 	private ConcurrentMap<String, List<L2Spawn>> specificSpawnTable = new ConcurrentHashMap<>();
 	private CopyOnWriteArraySet<SpawnGroup> spawnGroups = new CopyOnWriteArraySet<>();
@@ -75,7 +78,7 @@ public class SpawnTable {
 		tableName = tableName.toLowerCase();
 		List<L2Spawn> table = specificSpawnTable.get(tableName);
 		if (table == null) {
-			Log.warning("Specific spawn table not found: " + tableName);
+			log.warn("Specific spawn table not found: " + tableName);
 			return;
 		}
 		
@@ -97,7 +100,7 @@ public class SpawnTable {
 		
 		List<L2Spawn> table = specificSpawnTable.get(tableName);
 		if (table == null) {
-			Log.warning("Specific spawn table not found: " + tableName);
+			log.warn("Specific spawn table not found: " + tableName);
 			return;
 		}
 		
@@ -108,21 +111,21 @@ public class SpawnTable {
 			
 			spawn.stopRespawn();
 			
-			L2Npc npc = spawn.getNpc();
+			Npc npc = spawn.getNpc();
 			if (npc != null) {
 				npc.deleteMe();
 			}
 		}
 	}
 	
-	@Load(dependencies = {NpcTable.class, CastleManager.class, L2World.class})
+	@Load(dependencies = {NpcTable.class, CastleManager.class, World.class})
 	public void load() {
 		if (Config.ALT_DEV_NO_SPAWNS) {
 			return;
 		}
 		
 		int count = 0;
-		for (L2NpcTemplate t : NpcTable.getInstance().getAllTemplates()) {
+		for (NpcTemplate t : NpcTable.getInstance().getAllTemplates()) {
 			for (SpawnData sp : t.getSpawns()) {
 				try {
 					L2Spawn spawn = new L2Spawn(t);
@@ -150,15 +153,15 @@ public class SpawnTable {
 			}
 		}
 		
-		Log.info("Template spawns: Loaded " + count + " Npc Spawn Locations.");
+		log.info("Template spawns: Loaded " + count + " Npc Spawn Locations.");
 		
 		if (Config.DEBUG) {
-			Log.fine("SpawnTable: Spawning completed, total number of NPCs in the world: " + (spawnTable.size() + customSpawnCount + count));
+			log.debug("SpawnTable: Spawning completed, total number of NPCs in the world: " + (spawnTable.size() + customSpawnCount + count));
 		}
 		
 		File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "spawns");
 		if (!dir.exists()) {
-			Log.warning("Dir " + dir.getAbsolutePath() + " doesn't exist");
+			log.warn("Dir " + dir.getAbsolutePath() + " doesn't exist");
 			return;
 		}
 		
@@ -183,12 +186,12 @@ public class SpawnTable {
 				spawnTable.addAll(spawns);
 				count += spawns.size();
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "Could not parse " + f.getName() + " file.", e);
+				log.warn("Could not parse " + f.getName() + " file.", e);
 			}
 		}
 		
-		Log.info("SpawnTable: Loaded " + count + " global spawns!");
-		Log.info("SpawnTable: Loaded " + specificSpawnTable.size() + " specific spawn tables!");
+		log.info("SpawnTable: Loaded " + count + " global spawns!");
+		log.info("SpawnTable: Loaded " + specificSpawnTable.size() + " specific spawn tables!");
 	}
 	
 	private List<L2Spawn> loadSpawns(XmlNode node, boolean isRoot) {
@@ -235,7 +238,7 @@ public class SpawnTable {
 				int randomRespawn = npcNode.getInt("randomRespawn", 0);
 				String dbName = npcNode.getString("dbName", "");
 				
-				L2NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
+				NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
 				if (template == null) {
 					continue;
 				}
@@ -325,12 +328,12 @@ public class SpawnTable {
 	 * @param npcId : ID of the NPC to find.
 	 * @return
 	 */
-	public void findNPCInstances(L2PcInstance activeChar, int npcId, int teleportIndex, boolean showposition) {
+	public void findNPCInstances(Player activeChar, int npcId, int teleportIndex, boolean showposition) {
 		int index = 0;
 		for (L2Spawn spawn : spawnTable) {
 			if (npcId == spawn.getNpcId()) {
 				index++;
-				L2Npc npc = spawn.getNpc();
+				Npc npc = spawn.getNpc();
 				if (teleportIndex > -1) {
 					if (teleportIndex == index) {
 						if (showposition && npc != null) {
@@ -405,7 +408,7 @@ public class SpawnTable {
 	
 	public L2Spawn getRandomMonsterSpawn() {
 		L2Spawn spawn = null;
-		while (spawn == null || spawn.getNpc() == null || !(spawn.getNpc() instanceof L2MonsterInstance)) {
+		while (spawn == null || spawn.getNpc() == null || !(spawn.getNpc() instanceof MonsterInstance)) {
 			int randomId = Rnd.get(spawnTable.size());
 			int i = 0;
 			for (L2Spawn s : spawnTable) {
@@ -447,7 +450,7 @@ public class SpawnTable {
 				continue;
 			}
 			
-			L2Npc npc = spawn.getNpc();
+			Npc npc = spawn.getNpc();
 			if (npc == null) {
 				continue;
 			}
@@ -459,7 +462,7 @@ public class SpawnTable {
 				if (toCheck == null)
 					continue;
 
-				L2Npc npcToCheck = toCheck.getNpc();
+				Npc npcToCheck = toCheck.getNpc();
 				if (npcToCheck == null)
 					continue;
 

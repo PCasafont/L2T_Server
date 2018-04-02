@@ -19,7 +19,7 @@ import l2server.Config;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2Clan.SubPledge;
 import l2server.gameserver.model.L2ClanMember;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 //import java.util.logging.Logger;
 
@@ -66,13 +66,13 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class PledgeShowMemberListAll extends L2GameServerPacket {
 	private L2Clan clan;
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	private L2ClanMember[] members;
 	private int pledgeType;
 	
 	//
 	
-	public PledgeShowMemberListAll(L2Clan clan, L2PcInstance activeChar) {
+	public PledgeShowMemberListAll(L2Clan clan, Player activeChar) {
 		this.clan = clan;
 		this.activeChar = activeChar;
 		members = clan.getMembers();
@@ -133,7 +133,7 @@ public class PledgeShowMemberListAll extends L2GameServerPacket {
 			writeS(m.getName());
 			writeD(m.getLevel());
 			writeD(m.getCurrentClass());
-			L2PcInstance player;
+			Player player;
 			if ((player = m.getPlayerInstance()) != null) {
 				writeD(player.getAppearance().getSex() ? 1 : 0); // no visible effect
 				writeD(player.getRace().ordinal());//writeD(1);

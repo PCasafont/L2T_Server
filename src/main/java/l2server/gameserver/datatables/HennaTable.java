@@ -17,8 +17,9 @@ package l2server.gameserver.datatables;
 
 import l2server.Config;
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.item.L2Henna;
-import l2server.log.Log;
+import l2server.gameserver.templates.item.HennaTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
@@ -29,7 +30,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HennaTable {
-	private Map<Integer, L2Henna> henna = new HashMap<>();
+	private static Logger log = LoggerFactory.getLogger(HennaTable.class.getName());
+
+
+	private Map<Integer, HennaTemplate> henna = new HashMap<>();
 
 	public static HennaTable getInstance() {
 		return SingletonHolder.instance;
@@ -101,7 +105,7 @@ public class HennaTable {
 					hennaDat.set("skills", hennaNode.getString("skills"));
 				}
 
-				L2Henna henna = new L2Henna(hennaDat);
+				HennaTemplate henna = new HennaTemplate(hennaDat);
 
 				for (XmlNode allowedClassNode : hennaNode.getChildren()) {
 					if (allowedClassNode.getName().equalsIgnoreCase("allowedClass")) {
@@ -113,10 +117,10 @@ public class HennaTable {
 				this.henna.put(id, henna);
 			}
 		}
-		Log.info("HennaTable: Loaded " + henna.size() + " Templates.");
+		log.info("HennaTable: Loaded " + henna.size() + " Templates.");
 	}
 
-	public L2Henna getTemplate(int id) {
+	public HennaTemplate getTemplate(int id) {
 		return henna.get(id);
 	}
 

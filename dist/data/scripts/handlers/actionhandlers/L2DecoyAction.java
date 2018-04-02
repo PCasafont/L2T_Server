@@ -16,17 +16,17 @@
 package handlers.actionhandlers;
 
 import l2server.gameserver.handler.IActionHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class L2DecoyAction implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
+	public boolean action(Player activeChar, WorldObject target, boolean interact) {
 		// Aggression target lock effect
 		if (activeChar.isLockedTarget() && activeChar.getLockedTarget() != target) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_CHANGE_TARGET));
@@ -34,7 +34,7 @@ public class L2DecoyAction implements IActionHandler {
 		}
 
 		activeChar.setTarget(target);
-		activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((L2Character) target).getLevel()));
+		activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((Creature) target).getLevel()));
 		return true;
 	}
 

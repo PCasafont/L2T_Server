@@ -16,10 +16,10 @@
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.Util;
 
 /**
@@ -27,14 +27,14 @@ import l2server.gameserver.util.Util;
  */
 public class GoToFriend implements ISkillHandler {
 	//private static Logger log = Logger.getLogger(SummonFriend.class.getName());
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.GO_TO_FRIEND};
+	private static final SkillType[] SKILL_IDS = {SkillType.GO_TO_FRIEND};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		for (L2Character target : (L2Character[]) targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		for (Creature target : (Creature[]) targets) {
 			if (activeChar == target) {
 				continue;
 			}
@@ -50,7 +50,7 @@ public class GoToFriend implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

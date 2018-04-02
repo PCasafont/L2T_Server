@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2BoatInstance;
+import l2server.gameserver.model.actor.instance.BoatInstance;
 
 /**
  * @author Maktakien
@@ -26,7 +26,7 @@ public class VehicleDeparture extends L2GameServerPacket {
 	
 	/**
 	 */
-	public VehicleDeparture(L2BoatInstance boat) {
+	public VehicleDeparture(BoatInstance boat) {
 		objId = boat.getObjectId();
 		x = boat.getXdestination();
 		y = boat.getYdestination();

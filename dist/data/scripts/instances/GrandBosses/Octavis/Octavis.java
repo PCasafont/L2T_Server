@@ -2,23 +2,22 @@ package instances.GrandBosses.Octavis;
 
 import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
-import l2server.gameserver.ai.L2NpcWalkerAI;
+import l2server.gameserver.ai.NpcWalkerAI;
 import l2server.gameserver.datatables.ScenePlayerDataTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -55,11 +54,11 @@ public class Octavis extends L2AttackableAIScript {
 	private static final int[] octavisInfluenceIds = {14279, 14280, 14281};
 
 	//Skills
-	private static final L2Skill heroArrowShaft = SkillTable.getInstance().getInfo(14285, 1);
-	private static final L2Skill heroInfluence1 = SkillTable.getInstance().getInfo(14028, 1); //Stage 1
-	//private static final L2Skill	heroInfluence2		= SkillTable.getInstance().getInfo(14029, 1);	//Last stage
-	private static final L2Skill lionsAttack = SkillTable.getInstance().getInfo(14024, 1);
-	private static final L2Skill octavisObedience = SkillTable.getInstance().getInfo(14282, 1);
+	private static final Skill heroArrowShaft = SkillTable.getInstance().getInfo(14285, 1);
+	private static final Skill heroInfluence1 = SkillTable.getInstance().getInfo(14028, 1); //Stage 1
+	//private static final Skill	heroInfluence2		= SkillTable.getInstance().getInfo(14029, 1);	//Last stage
+	private static final Skill lionsAttack = SkillTable.getInstance().getInfo(14024, 1);
+	private static final Skill octavisObedience = SkillTable.getInstance().getInfo(14282, 1);
 
 	//Cords
 	private static final Location[] enterCords =
@@ -95,13 +94,13 @@ public class Octavis extends L2AttackableAIScript {
 			{207530, 119756, -10008}, {208013, 120228, -10008}};
 
 	private class OctavisWorld extends InstanceWorld {
-		private ArrayList<L2PcInstance> rewardedPlayers;
-		private ArrayList<L2Npc> curatorMinions;
-		private ArrayList<L2Npc> allMinions;
-		private L2NpcWalkerAI lionsAI;
-		private L2Npc Dummy;
-		private L2Npc octavisBoss;
-		private L2Npc octavisLions;
+		private ArrayList<Player> rewardedPlayers;
+		private ArrayList<Npc> curatorMinions;
+		private ArrayList<Npc> allMinions;
+		private NpcWalkerAI lionsAI;
+		private Npc Dummy;
+		private Npc octavisBoss;
+		private Npc octavisLions;
 		private int octavisLionsId;
 		private int firstOctavisId;
 		private int secondOctavisId;
@@ -113,9 +112,9 @@ public class Octavis extends L2AttackableAIScript {
 
 		public OctavisWorld() {
 			isHardMode = false;
-			rewardedPlayers = new ArrayList<L2PcInstance>();
-			curatorMinions = new ArrayList<L2Npc>();
-			allMinions = new ArrayList<L2Npc>();
+			rewardedPlayers = new ArrayList<Player>();
+			curatorMinions = new ArrayList<Npc>();
+			allMinions = new ArrayList<Npc>();
 		}
 	}
 
@@ -136,9 +135,9 @@ public class Octavis extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onFirstTalk: " + player);
+			log.warn(getName() + ": onFirstTalk: " + player);
 		}
 
 		InstanceWorld wrld = null;
@@ -147,7 +146,7 @@ public class Octavis extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onFirstTalk: Unable to get world.");
+			log.warn(getName() + ": onFirstTalk: Unable to get world.");
 			return null;
 		}
 
@@ -160,9 +159,9 @@ public class Octavis extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill) {
+	public String onSpellFinished(Npc npc, Player player, Skill skill) {
 		if (debug) {
-			Log.warning(getName() + ": onSpellFinished: " + skill.getName());
+			log.warn(getName() + ": onSpellFinished: " + skill.getName());
 		}
 
 		InstanceWorld wrld = null;
@@ -171,7 +170,7 @@ public class Octavis extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onSpellFinished: Unable to get world.");
+			log.warn(getName() + ": onSpellFinished: Unable to get world.");
 			return null;
 		}
 
@@ -189,9 +188,9 @@ public class Octavis extends L2AttackableAIScript {
 					int playerId = world.allowed.get(Rnd.get(world.allowed.size()));
 					world.octavisBoss.setTarget(world.octavisBoss);
 
-					L2PcInstance target = L2World.getInstance().getPlayer(playerId);
+					Player target = World.getInstance().getPlayer(playerId);
 					if (debug) {
-						Log.warning(getName() + ": Target: " + target.getName());
+						log.warn(getName() + ": Target: " + target.getName());
 					}
 
 					world.Dummy.setTarget(target);
@@ -199,13 +198,13 @@ public class Octavis extends L2AttackableAIScript {
 				}
 			} else if (npc.getNpcId() == world.lastOctavisId) {
 				if (Util.contains(octavisInfluenceIds, skill.getId())) {
-					for (L2Npc curator : world.curatorMinions) {
+					for (Npc curator : world.curatorMinions) {
 						if (curator == null || curator.isDead()) {
 							continue;
 						}
 
 						curator.disableCoreAI(true);
-						((L2Attackable) curator).clearAggroList();
+						((Attackable) curator).clearAggroList();
 						curator.setTarget(world.octavisBoss);
 						curator.doCast(octavisObedience);
 					}
@@ -220,9 +219,9 @@ public class Octavis extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		InstanceWorld wrld = null;
@@ -231,26 +230,26 @@ public class Octavis extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onAdvEvent: Unable to get world.");
+			log.warn(getName() + ": onAdvEvent: Unable to get world.");
 			return null;
 		}
 
 		if (wrld != null && wrld instanceof OctavisWorld) {
 			OctavisWorld world = (OctavisWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_open_doors")) {
-				for (L2DoorInstance door : InstanceManager.getInstance().getInstance(world.instanceId).getDoors()) {
+				for (DoorInstance door : InstanceManager.getInstance().getInstance(world.instanceId).getDoors()) {
 					door.openMe();
 				}
 				startQuestTimer("stage_1_intro", debug ? 60000 : 5 * 60000, null, player);
 			} else if (event.equalsIgnoreCase("stage_1_intro")) {
-				for (L2DoorInstance door : InstanceManager.getInstance().getInstance(world.instanceId).getDoors()) {
+				for (DoorInstance door : InstanceManager.getInstance().getInstance(world.instanceId).getDoors()) {
 					door.closeMe();
 				}
 
 				//kick buggers
                 /*for (int objId : world.allowed)
                 {
-					L2PcInstance pl = L2World.getInstance().getPlayer(objId);
+					Player pl = World.getInstance().getPlayer(objId);
 					if (pl != null && pl.isOnline() && pl.getInstanceId() == world.instanceId)
 					{
 						if (pl != null && pl.getY()  < 145039)
@@ -276,7 +275,7 @@ public class Octavis extends L2AttackableAIScript {
 
 				world.Dummy = addSpawn(octavisInfluenceDummy, 207190, 120568, -10011, 47671, false, 0, false, world.instanceId);
 			} else if (event.equalsIgnoreCase("stage_1_start_run")) {
-				world.lionsAI = new L2NpcWalkerAI(world.octavisLions);
+				world.lionsAI = new NpcWalkerAI(world.octavisLions);
 
 				world.octavisLions.setAI(world.lionsAI);
 
@@ -299,7 +298,7 @@ public class Octavis extends L2AttackableAIScript {
 
 				world.octavisLions.stopMove(null);
 
-				for (L2PcInstance target : world.octavisLions.getKnownList().getKnownPlayersInRadius(150)) {
+				for (Player target : world.octavisLions.getKnownList().getKnownPlayersInRadius(150)) {
 					if (target == null) {
 						continue;
 					}
@@ -322,7 +321,7 @@ public class Octavis extends L2AttackableAIScript {
 			} else if (event.equalsIgnoreCase("stage_2_spawnMinions")) {
 				if (world.status == 4) {
 					for (int[] id : beastSpawns) {
-						L2Npc minion = addSpawn(world.beastOfTheArena, id[0], id[1], id[2], id[3], false, 0, true, world.instanceId);
+						Npc minion = addSpawn(world.beastOfTheArena, id[0], id[1], id[2], id[3], false, 0, true, world.instanceId);
 						world.allMinions.add(minion);
 						minion.setIsRunning(true);
 
@@ -332,7 +331,7 @@ public class Octavis extends L2AttackableAIScript {
 					}
 
 					for (int[] id : gladiatorSpawns) {
-						L2Npc minion = addSpawn(world.octavisGladiatorId, id[0], id[1], id[2], id[3], false, 0, true, world.instanceId);
+						Npc minion = addSpawn(world.octavisGladiatorId, id[0], id[1], id[2], id[3], false, 0, true, world.instanceId);
 						world.allMinions.add(minion);
 						minion.setIsRunning(true);
 
@@ -348,7 +347,7 @@ public class Octavis extends L2AttackableAIScript {
 			} else if (event.equalsIgnoreCase("stage_2_spawnHeros")) {
 				if (world.status == 4) {
 					for (int[] id : heroOfTheArenaSpawns) {
-						L2Npc minion = addSpawn(heroOfTheArena, id[0], id[1], id[2], id[3], false, 0, true, world.instanceId);
+						Npc minion = addSpawn(heroOfTheArena, id[0], id[1], id[2], id[3], false, 0, true, world.instanceId);
 						world.allMinions.add(minion);
 						minion.setIsRunning(true);
 
@@ -363,7 +362,7 @@ public class Octavis extends L2AttackableAIScript {
 				world.octavisBoss = addSpawn(world.lastOctavisId, 207187, 120575, -10008, 65457, false, 0, false, world.instanceId);
 			} else if (event.equalsIgnoreCase("stage_last_spawnCurators")) {
 				for (int[] id : curatorSpawns) {
-					L2Npc minion = addSpawn(world.octavisCuratorId, id[0], id[1], id[2], id[3], false, 0, true, world.instanceId);
+					Npc minion = addSpawn(world.octavisCuratorId, id[0], id[1], id[2], id[3], false, 0, true, world.instanceId);
 					world.allMinions.add(minion);
 					world.curatorMinions.add(minion);
 					minion.setIsRunning(true);
@@ -400,9 +399,9 @@ public class Octavis extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public final String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -476,9 +475,9 @@ public class Octavis extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -499,9 +498,9 @@ public class Octavis extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 
 		int npcId = npc.getNpcId();
@@ -536,7 +535,7 @@ public class Octavis extends L2AttackableAIScript {
 		}
 	}
 
-	private final synchronized void enterInstance(L2PcInstance player, int template_id) {
+	private final synchronized void enterInstance(Player player, int template_id) {
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
 			if (!(world instanceof OctavisWorld)) {
@@ -569,7 +568,7 @@ public class Octavis extends L2AttackableAIScript {
 
 			setupIDs((OctavisWorld) world, template_id);
 
-			List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+			List<Player> allPlayers = new ArrayList<Player>();
 			if (debug) {
 				allPlayers.add(player);
 			} else {
@@ -578,7 +577,7 @@ public class Octavis extends L2AttackableAIScript {
 								player.getParty().getPartyMembers());
 			}
 
-			for (L2PcInstance enterPlayer : allPlayers) {
+			for (Player enterPlayer : allPlayers) {
 				if (enterPlayer == null) {
 					continue;
 				}
@@ -592,7 +591,7 @@ public class Octavis extends L2AttackableAIScript {
 
 			startQuestTimer("stage_1_open_doors", 3000, null, player);
 
-			Log.fine(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " + player.getName());
+			log.debug(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " + player.getName());
 			return;
 		}
 	}

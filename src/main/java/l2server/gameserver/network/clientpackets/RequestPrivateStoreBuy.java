@@ -17,13 +17,12 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.model.ItemRequest;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.TradeList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 
 import java.util.HashSet;
 
@@ -64,7 +63,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -80,7 +79,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket {
 			return;
 		}
 		
-		L2Object object = L2World.getInstance().getPlayer(storePlayerId);
+		WorldObject object = World.getInstance().getPlayer(storePlayerId);
 		if (object == null) {
 			player.sendMessage("ERR1.");
 			return;
@@ -91,15 +90,15 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket {
 			return;
 		}
 		
-		L2PcInstance storePlayer = (L2PcInstance) object;
+		Player storePlayer = (Player) object;
 		
 		if (player.getInstanceId() != storePlayer.getInstanceId() && player.getInstanceId() != -1) {
 			player.sendMessage("ERR2.");
 			return;
 		}
 		
-		if (!(storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_SELL ||
-				storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_PACKAGE_SELL)) {
+		if (!(storePlayer.getPrivateStoreType() == Player.STORE_PRIVATE_SELL ||
+				storePlayer.getPrivateStoreType() == Player.STORE_PRIVATE_PACKAGE_SELL)) {
 			player.sendMessage("ERR3.");
 			return;
 		}
@@ -128,7 +127,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket {
 			return;
 		}
 		
-		if (storePlayer.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_PACKAGE_SELL) {
+		if (storePlayer.getPrivateStoreType() == Player.STORE_PRIVATE_PACKAGE_SELL) {
 			if (storeList.getItemCount() > items.size()) {
 				String msgErr = "[RequestPrivateStoreBuy] player " + getClient().getActiveChar().getName() +
 						" tried to buy less items than sold by package-sell, ban this player for bot usage!";
@@ -142,14 +141,14 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket {
 		if (result > 0) {
 			sendPacket(ActionFailed.STATIC_PACKET);
 			if (result > 1) {
-				Log.warning("PrivateStore buy has failed due to invalid list or request. Player: " + player.getName() + ", Private store of: " +
+				log.warn("PrivateStore buy has failed due to invalid list or request. Player: " + player.getName() + ", Private store of: " +
 						storePlayer.getName());
 			}
 			return;
 		}
 		
 		if (storeList.getItemCount() == 0) {
-			storePlayer.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
+			storePlayer.setPrivateStoreType(Player.STORE_PRIVATE_NONE);
 			storePlayer.broadcastUserInfo();
 		}
 
@@ -157,10 +156,10 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket {
 				else if (seller != null)
 				{
 					// lease shop sell
-					L2MerchantInstance seller = (L2MerchantInstance)seller;
-					L2ItemInstance ladena = seller.getLeaseAdena();
+					MerchantInstance seller = (MerchantInstance)seller;
+					Item ladena = seller.getLeaseAdena();
 					for (TradeItem ti : buyerlist) {
-						L2ItemInstance li = seller.getLeaseItemByObjectId(ti.getObjectId());
+						Item li = seller.getLeaseItemByObjectId(ti.getObjectId());
 						if (li == null) {
 							if (ti.getObjectId() == ladena.getObjectId())
 							{
@@ -175,7 +174,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket {
 							ti.setCount(cnt);
 						if (ti.getCount() <= 0)
 							continue;
-						L2ItemInstance inst = ItemTable.getInstance().createItem(li.getItemId());
+						Item inst = ItemTable.getInstance().createItem(li.getItemId());
 						inst.setCount(ti.getCount());
 						inst.setEnchantLevel(li.getEnchantLevel());
 						buyer.getInventory().addItem(inst);

@@ -16,17 +16,17 @@
 package l2server.loginserver.network.gameserverpackets;
 
 import l2server.Config;
-import l2server.log.Log;
 import l2server.loginserver.LoginController;
 import l2server.util.network.BaseRecievePacket;
-
-import java.util.logging.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author mrTJO
  */
 public class PlayerTracert extends BaseRecievePacket {
-	protected static Logger log = Logger.getLogger(PlayerTracert.class.getName());
+	private static org.slf4j.Logger log = LoggerFactory.getLogger(PlayerTracert.class.getName());
+
+
 
 	/**
 	 * @param decrypt
@@ -42,7 +42,7 @@ public class PlayerTracert extends BaseRecievePacket {
 
 		LoginController.getInstance().setAccountLastTracert(account, pcIp, hop1, hop2, hop3, hop4);
 		if (Config.DEBUG) {
-			Log.info("Saved " + account + " last tracert");
+			log.info("Saved " + account + " last tracert");
 		}
 	}
 }

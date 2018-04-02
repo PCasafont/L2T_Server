@@ -24,7 +24,7 @@ public class ExResponseCommissionBuyInfo extends L2GameServerPacket {
 	protected final void writeImpl() {
 		writeD(0x01); // Unknown
 
-		/*L2ItemInstance item = auction.getItem();
+		/*Item item = auction.getItem();
 
 		writeQ(auction.getPrice());
 		writeD(auction.getCategory());

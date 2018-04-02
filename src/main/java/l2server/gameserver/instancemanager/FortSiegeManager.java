@@ -18,13 +18,14 @@ package l2server.gameserver.instancemanager;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Fort;
 import l2server.gameserver.model.entity.FortSiege;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -34,6 +35,9 @@ import java.util.List;
 import java.util.logging.Level;
 
 public class FortSiegeManager {
+	private static Logger log = LoggerFactory.getLogger(FortSiegeManager.class.getName());
+
+
 
 	public static FortSiegeManager getInstance() {
 		return SingletonHolder.instance;
@@ -41,7 +45,7 @@ public class FortSiegeManager {
 
 	private List<FortSiege> sieges;
 
-	public final void addSiegeSkills(L2PcInstance character) {
+	public final void addSiegeSkills(Player character) {
 		character.addSkill(SkillTable.FrequentSkill.IMPRINT_OF_LIGHT.getSkill(), false);
 		character.addSkill(SkillTable.FrequentSkill.IMPRINT_OF_DARKNESS.getSkill(), false);
 		character.addSkill(SkillTable.FrequentSkill.BUILD_HEADQUARTERS.getSkill(), false);
@@ -50,15 +54,15 @@ public class FortSiegeManager {
 	/**
 	 * Return true if character summon<BR><BR>
 	 *
-	 * @param activeChar The L2Character of the character can summon
+	 * @param activeChar The Creature of the character can summon
 	 */
-	public final boolean checkIfOkToSummon(L2Character activeChar, boolean isCheckOnly) {
-		if (!(activeChar instanceof L2PcInstance)) {
+	public final boolean checkIfOkToSummon(Creature activeChar, boolean isCheckOnly) {
+		if (!(activeChar instanceof Player)) {
 			return false;
 		}
 
 		String text = "";
-		L2PcInstance player = (L2PcInstance) activeChar;
+		Player player = (Player) activeChar;
 		Fort fort = FortManager.getInstance().getFort(player);
 
 		if (fort == null || fort.getFortId() <= 0) {
@@ -103,14 +107,14 @@ public class FortSiegeManager {
 			rs.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: checkIsRegistered(): " + e.getMessage(), e);
+			log.warn("Exception: checkIsRegistered(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		return register;
 	}
 
-	public final FortSiege getSiege(L2Object activeObject) {
+	public final FortSiege getSiege(WorldObject activeObject) {
 		return getSiege(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}
 
@@ -141,7 +145,7 @@ public class FortSiegeManager {
 		return itemId == 9819;
 	}
 
-	public boolean activateCombatFlag(L2PcInstance player, L2ItemInstance item) {
+	public boolean activateCombatFlag(Player player, Item item) {
 		if (!checkIfCanPickup(player)) {
 			return false;
 		}
@@ -157,7 +161,7 @@ public class FortSiegeManager {
 		return true;
 	}
 
-	public boolean checkIfCanPickup(L2PcInstance player) {
+	public boolean checkIfCanPickup(Player player) {
 		SystemMessage sm;
 		sm = SystemMessage.getSystemMessage(SystemMessageId.THE_FORTRESS_BATTLE_OF_S1_HAS_FINISHED);
 		sm.addItemName(9819);
@@ -184,7 +188,7 @@ public class FortSiegeManager {
 		return true;
 	}
 
-	public void dropCombatFlag(L2PcInstance player, int fortId) {
+	public void dropCombatFlag(Player player, int fortId) {
 		Fort fort = FortManager.getInstance().getFortById(fortId);
 
 		List<CombatFlag> fcf = fort.getFlags();

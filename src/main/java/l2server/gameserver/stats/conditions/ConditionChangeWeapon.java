@@ -15,9 +15,9 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.item.L2Weapon;
+import l2server.gameserver.templates.item.WeaponTemplate;
 
 /**
  * The Class ConditionChangeWeapon.
@@ -45,12 +45,12 @@ public class ConditionChangeWeapon extends Condition {
 	 */
 	@Override
 	boolean testImpl(Env env) {
-		if (!(env.player instanceof L2PcInstance)) {
+		if (!(env.player instanceof Player)) {
 			return false;
 		}
 
 		if (required) {
-			L2Weapon weaponItem = env.player.getActiveWeaponItem();
+			WeaponTemplate weaponItem = env.player.getActiveWeaponItem();
 
 			if (weaponItem == null) {
 				return false;
@@ -60,7 +60,7 @@ public class ConditionChangeWeapon extends Condition {
 				return false;
 			}
 
-			if (((L2PcInstance) env.player).isEnchanting()) {
+			if (((Player) env.player).isEnchanting()) {
 				return false;
 			}
 		}

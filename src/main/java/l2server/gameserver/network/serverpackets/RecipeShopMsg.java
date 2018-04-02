@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * This class ...
@@ -23,9 +23,9 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
 public class RecipeShopMsg extends L2GameServerPacket {
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	
-	public RecipeShopMsg(L2PcInstance player) {
+	public RecipeShopMsg(Player player) {
 		activeChar = player;
 	}
 	

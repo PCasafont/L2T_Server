@@ -1,5 +1,5 @@
 <list>
-	<npc id="100" name="Thomas D. Turkey" level="1" type="L2Npc" atkRange="40" hpMax="4630" hpReg="0.0" mpMax="1642"
+	<npc id="100" name="Thomas D. Turkey" level="1" type="Npc" atkRange="40" hpMax="4630" hpReg="0.0" mpMax="1642"
 		 mpReg="0.9"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -17,7 +17,7 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 	</npc>
-	<npc id="101" name="" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="8.5" mpMax="1642" mpReg="3.0"
+	<npc id="101" name="" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="8.5" mpMax="1642" mpReg="3.0"
 		 STR="88" CON="82"
 		 DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="333"
 		 pCritRate="40"
@@ -35,7 +35,7 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 	</npc>
-	<npc id="102" name="Santa Trainee" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
+	<npc id="102" name="Santa Trainee" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
 		 mpReg="2.7"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="490" sp="10" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250"
@@ -54,7 +54,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="103" name="Holiday Santa" title="Happy Holidays~" level="70" type="L2Npc" atkRange="40" hpMax="4228"
+	<npc id="103" name="Holiday Santa" title="Happy Holidays~" level="70" type="Npc" atkRange="40" hpMax="4228"
 		 hpReg="7.5"
 		 mpMax="1642" mpReg="2.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="490" sp="10" pAtk="971"
 		 mAtk="663"
@@ -74,7 +74,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="104" name="Holiday Santa" title="Happy Holidays~" level="70" type="L2Npc" atkRange="40" hpMax="4228"
+	<npc id="104" name="Holiday Santa" title="Happy Holidays~" level="70" type="Npc" atkRange="40" hpMax="4228"
 		 hpReg="7.5"
 		 mpMax="1642" mpReg="2.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="490" sp="10" pAtk="971"
 		 mAtk="663"
@@ -94,7 +94,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="105" name="Holiday Sled" title="Happy Holidays~" level="70" type="L2Npc" atkRange="40" hpMax="4228"
+	<npc id="105" name="Holiday Sled" title="Happy Holidays~" level="70" type="Npc" atkRange="40" hpMax="4228"
 		 hpReg="7.5"
 		 mpMax="1642" mpReg="2.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="490" sp="10" pAtk="971"
 		 mAtk="663"
@@ -114,7 +114,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="106" name="Birthday Cake" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
+	<npc id="106" name="Birthday Cake" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
 		 mpReg="2.7"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="490" sp="10" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250"
@@ -133,7 +133,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="107" name="Fire Spirit" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
+	<npc id="107" name="Fire Spirit" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -151,7 +151,7 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 	</npc>
-	<npc id="108" name="Reckless Fire Spirit" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0"
+	<npc id="108" name="Reckless Fire Spirit" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="0.0"
 		 mpMax="1642" mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -169,7 +169,7 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 	</npc>
-	<npc id="109" name="Jack Sage" title="Eva's High Priest" level="70" type="L2Npc" atkRange="40" hpMax="4228"
+	<npc id="109" name="Jack Sage" title="Eva's High Priest" level="70" type="Npc" atkRange="40" hpMax="4228"
 		 hpReg="7.5"
 		 mpMax="1642" mpReg="2.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="723" sp="10" pAtk="971"
 		 mAtk="663"
@@ -189,7 +189,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="110" name="Eva's Obelisk" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
+	<npc id="110" name="Eva's Obelisk" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
 		 mpReg="2.7"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="490" sp="10" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250"
@@ -209,7 +209,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="111" name="" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="8.5" mpMax="1642" mpReg="3.0"
+	<npc id="111" name="" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="8.5" mpMax="1642" mpReg="3.0"
 		 STR="88" CON="82"
 		 DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="500"
 		 pCritRate="40"
@@ -227,7 +227,7 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 	</npc>
-	<npc id="112" name="Snow" title="Newbie Supporter" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="6.5"
+	<npc id="112" name="Snow" title="Newbie Supporter" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="6.5"
 		 mpMax="1642"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -245,7 +245,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="113" name="Snow" title="Newbie Supporter" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="6.5"
+	<npc id="113" name="Snow" title="Newbie Supporter" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="6.5"
 		 mpMax="1642"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -263,7 +263,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="114" name="Snow" title="Newbie Supporter" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="6.5"
+	<npc id="114" name="Snow" title="Newbie Supporter" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="6.5"
 		 mpMax="1642"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -281,7 +281,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="115" name="Snow" title="Newbie Supporter" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="6.5"
+	<npc id="115" name="Snow" title="Newbie Supporter" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="6.5"
 		 mpMax="1642"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -299,7 +299,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="116" name="Snow" title="Newbie Supporter" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="6.5"
+	<npc id="116" name="Snow" title="Newbie Supporter" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="6.5"
 		 mpMax="1642"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -317,7 +317,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="117" name="Snow" title="Newbie Supporter" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="6.5"
+	<npc id="117" name="Snow" title="Newbie Supporter" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="6.5"
 		 mpMax="1642"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -335,7 +335,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="118" name="Uldie" title="Halloween's Three Siblings" level="70" type="L2Npc" atkRange="40" hpMax="4228"
+	<npc id="118" name="Uldie" title="Halloween's Three Siblings" level="70" type="Npc" atkRange="40" hpMax="4228"
 		 hpReg="8.5"
 		 mpMax="1642" mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250"
@@ -355,7 +355,7 @@
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="119" name="Belldandy" title="Halloween's Three Siblings" level="70" type="L2Npc" atkRange="40" hpMax="4228"
+	<npc id="119" name="Belldandy" title="Halloween's Three Siblings" level="70" type="Npc" atkRange="40" hpMax="4228"
 		 hpReg="8.5"
 		 mpMax="1642" mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250"
@@ -375,7 +375,7 @@
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="120" name="Skooldie" title="Jack Game Trainer" level="70" type="L2Npc" atkRange="40" hpMax="4228"
+	<npc id="120" name="Skooldie" title="Jack Game Trainer" level="70" type="Npc" atkRange="40" hpMax="4228"
 		 hpReg="8.5" mpMax="1642"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -394,7 +394,7 @@
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="121" name="Lucky Lamp" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
+	<npc id="121" name="Lucky Lamp" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
 		 mpReg="2.7"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="490" sp="10" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250"
@@ -413,7 +413,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="122" name="Environment Lamp" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
+	<npc id="122" name="Environment Lamp" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
 		 mpReg="2.7"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="490" sp="10" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250"
@@ -432,7 +432,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="123" name="Rolling Lamp" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
+	<npc id="123" name="Rolling Lamp" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
 		 mpReg="2.7"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="490" sp="10" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250"
@@ -451,7 +451,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="124" name="Comfort Sky Lantern" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
+	<npc id="124" name="Comfort Sky Lantern" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642"
 		 mpReg="2.7"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="490" sp="10" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250"
@@ -470,7 +470,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="125" name="Halloween Event Manager" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="8.5"
+	<npc id="125" name="Halloween Event Manager" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="8.5"
 		 mpMax="1642"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -490,7 +490,7 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 	</npc>
-	<npc id="126" name="Kadomas" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642" mpReg="0.9"
+	<npc id="126" name="Kadomas" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642" mpReg="0.9"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -509,7 +509,7 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 	</npc>
-	<npc id="127" name="Kotatz" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642" mpReg="2.7"
+	<npc id="127" name="Kotatz" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="7.5" mpMax="1642" mpReg="2.7"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -529,7 +529,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="128" name="Flame Box" title="Flame Box" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="7.5"
+	<npc id="128" name="Flame Box" title="Flame Box" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="7.5"
 		 mpMax="1642"
 		 mpReg="2.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="490" sp="10" pAtk="971" mAtk="663"
 		 pDef="341"
@@ -548,7 +548,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="129" name="White-Bearded Santa" title="Happy Holidays~" level="70" type="L2Npc" atkRange="40" hpMax="4228"
+	<npc id="129" name="White-Bearded Santa" title="Happy Holidays~" level="70" type="Npc" atkRange="40" hpMax="4228"
 		 hpReg="7.5"
 		 mpMax="1642" mpReg="2.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="490" sp="10" pAtk="971"
 		 mAtk="663"
@@ -568,7 +568,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="130" name="" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="8.5" mpMax="1642" mpReg="3.0"
+	<npc id="130" name="" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="8.5" mpMax="1642" mpReg="3.0"
 		 STR="88" CON="82"
 		 DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253" mAtkSpd="333"
 		 pCritRate="40"
@@ -586,7 +586,7 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 	</npc>
-	<npc id="131" name="Jet Bike" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="8.5" mpMax="1642"
+	<npc id="131" name="Jet Bike" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="8.5" mpMax="1642"
 		 mpReg="3.0" STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -604,7 +604,7 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 	</npc>
-	<npc id="132" name="Trejuo" title="Blessed Child" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="8.5"
+	<npc id="132" name="Trejuo" title="Blessed Child" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="8.5"
 		 mpMax="1642"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -621,7 +621,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="133" name="Sujin" title="Blessed Child" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="8.5"
+	<npc id="133" name="Sujin" title="Blessed Child" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="8.5"
 		 mpMax="1642"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -638,7 +638,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="134" name="Dragon Master Lee" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
+	<npc id="134" name="Dragon Master Lee" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -646,7 +646,7 @@
 		 waterRes="20"
 		 windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
 	</npc>
-	<npc id="135" name="Dragon Master Karin" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0"
+	<npc id="135" name="Dragon Master Karin" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0"
 		 mpMax="1642" mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -654,7 +654,7 @@
 		 waterRes="20"
 		 windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
 	</npc>
-	<npc id="136" name="Shiny Platform" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
+	<npc id="136" name="Shiny Platform" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -662,7 +662,7 @@
 		 waterRes="20"
 		 windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
 	</npc>
-	<npc id="137" name="Big Wedding Cake" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
+	<npc id="137" name="Big Wedding Cake" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -670,7 +670,7 @@
 		 waterRes="160"
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="138" name="Jet Bike" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
+	<npc id="138" name="Jet Bike" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
 		 mpReg="3.0" STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -678,7 +678,7 @@
 		 waterRes="160"
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="139" name="Birthday Cake" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
+	<npc id="139" name="Birthday Cake" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -687,7 +687,7 @@
 		 showName="false" fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160"
 		 aiType="fighter">
 	</npc>
-	<npc id="140" name="Block Checker Blue" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
+	<npc id="140" name="Block Checker Blue" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -696,7 +696,7 @@
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="141" name="Dimensional Door" title="Customer Support" level="70" type="L2Npc" atkRange="40" hpMax="4228"
+	<npc id="141" name="Dimensional Door" title="Customer Support" level="70" type="Npc" atkRange="40" hpMax="4228"
 		 hpReg="10.0"
 		 mpMax="1642" mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250"
@@ -705,7 +705,7 @@
 		 fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="18" /> <!-- Dwarves -->
 	</npc>
-	<npc id="142" name="Dimensional Door" title="Customer Support" level="70" type="L2Npc" atkRange="40" hpMax="4228"
+	<npc id="142" name="Dimensional Door" title="Customer Support" level="70" type="Npc" atkRange="40" hpMax="4228"
 		 hpReg="10.0"
 		 mpMax="1642" mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250"
@@ -714,7 +714,7 @@
 		 fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="18" /> <!-- Dwarves -->
 	</npc>
-	<npc id="143" name="Totem of Body" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
+	<npc id="143" name="Totem of Body" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -722,7 +722,7 @@
 		 waterRes="20"
 		 windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
 	</npc>
-	<npc id="144" name="Totem of Spirit" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
+	<npc id="144" name="Totem of Spirit" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -730,7 +730,7 @@
 		 waterRes="20"
 		 windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
 	</npc>
-	<npc id="145" name="Totem of Courage" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
+	<npc id="145" name="Totem of Courage" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -738,7 +738,7 @@
 		 waterRes="20"
 		 windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
 	</npc>
-	<npc id="146" name="Totem of Fortitude" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
+	<npc id="146" name="Totem of Fortitude" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -746,7 +746,7 @@
 		 waterRes="20"
 		 windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter">
 	</npc>
-	<npc id="147" name="Party Cake" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
+	<npc id="147" name="Party Cake" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -754,7 +754,7 @@
 		 waterRes="160"
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="148" name="Campfire" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
+	<npc id="148" name="Campfire" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
 		 mpReg="3.0" STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -762,7 +762,7 @@
 		 waterRes="160"
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="149" name="Bad Bunny" level="83" type="L2Npc" atkRange="40" hpMax="1040" hpReg="10.0" mpMax="1996"
+	<npc id="149" name="Bad Bunny" level="83" type="Npc" atkRange="40" hpMax="1040" hpReg="10.0" mpMax="1996"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -771,7 +771,7 @@
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="150" name="Bad Bunny Captain" level="83" type="L2Npc" atkRange="40" hpMax="13084" hpReg="10.0" mpMax="1996"
+	<npc id="150" name="Bad Bunny Captain" level="83" type="Npc" atkRange="40" hpMax="13084" hpReg="10.0" mpMax="1996"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -780,7 +780,7 @@
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="151" name="Liverless Bunny" level="83" type="L2Npc" atkRange="40" hpMax="1040" hpReg="10.0" mpMax="1996"
+	<npc id="151" name="Liverless Bunny" level="83" type="Npc" atkRange="40" hpMax="1040" hpReg="10.0" mpMax="1996"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -789,7 +789,7 @@
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="152" name="Liverless Bunny Captain" level="83" type="L2Npc" atkRange="40" hpMax="13084" hpReg="10.0"
+	<npc id="152" name="Liverless Bunny Captain" level="83" type="Npc" atkRange="40" hpMax="13084" hpReg="10.0"
 		 mpMax="1996"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -798,7 +798,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="153" name="Employee of Magic Research Institute" title="Event Manager" level="75" type="L2Npc"
+	<npc id="153" name="Employee of Magic Research Institute" title="Event Manager" level="75" type="Npc"
 		 atkRange="40" hpMax="4630"
 		 hpReg="10.0" mpMax="1840" mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971"
 		 mAtk="663" pDef="341"
@@ -806,7 +806,7 @@
 		 collisionHeight="17.5"
 		 fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="154" name="" level="85" type="L2Npc" atkRange="40" hpMax="7324" hpReg="10.0" mpMax="2044" mpReg="3.0"
+	<npc id="154" name="" level="85" type="Npc" atkRange="40" hpMax="7324" hpReg="10.0" mpMax="2044" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -815,7 +815,7 @@
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="155" name="" level="85" type="L2Npc" atkRange="40" hpMax="7324" hpReg="10.0" mpMax="2044" mpReg="3.0"
+	<npc id="155" name="" level="85" type="Npc" atkRange="40" hpMax="7324" hpReg="10.0" mpMax="2044" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -824,7 +824,7 @@
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="156" name="Big Liver Bunny" level="85" type="L2Npc" atkRange="40" hpMax="1040" hpReg="10.0" mpMax="2044"
+	<npc id="156" name="Big Liver Bunny" level="85" type="Npc" atkRange="40" hpMax="1040" hpReg="10.0" mpMax="2044"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -833,7 +833,7 @@
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="157" name="Big Liver Bunny Captain" level="83" type="L2Npc" atkRange="40" hpMax="13084" hpReg="10.0"
+	<npc id="157" name="Big Liver Bunny Captain" level="83" type="Npc" atkRange="40" hpMax="13084" hpReg="10.0"
 		 mpMax="1996"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -842,7 +842,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="158" name="Wood Horse" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
+	<npc id="158" name="Wood Horse" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -850,7 +850,7 @@
 		 waterRes="160"
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="159" name="Tame Princess Ant" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
+	<npc id="159" name="Tame Princess Ant" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="398"
@@ -858,7 +858,7 @@
 		 waterRes="300"
 		 windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
 	</npc>
-	<npc id="160" name="Black Bear" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
+	<npc id="160" name="Black Bear" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="0.0" mpMax="1642"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="398"
@@ -866,7 +866,7 @@
 		 waterRes="300"
 		 windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
 	</npc>
-	<npc id="161" name="Halloween Witch's Broomstick" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0"
+	<npc id="161" name="Halloween Witch's Broomstick" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="0.0"
 		 mpMax="1642"
 		 mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840"
 		 mDef="825" pAtkSpd="253"

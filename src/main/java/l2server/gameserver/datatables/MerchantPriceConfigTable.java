@@ -18,9 +18,10 @@ package l2server.gameserver.datatables;
 import l2server.Config;
 import l2server.gameserver.InstanceListManager;
 import l2server.gameserver.instancemanager.CastleManager;
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.entity.Castle;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -34,6 +35,9 @@ import java.util.logging.Level;
  * @author KenM
  */
 public class MerchantPriceConfigTable implements InstanceListManager {
+	private static Logger log = LoggerFactory.getLogger(MerchantPriceConfigTable.class.getName());
+
+
 
 	public static MerchantPriceConfigTable getInstance() {
 		return SingletonHolder.instance;
@@ -47,7 +51,7 @@ public class MerchantPriceConfigTable implements InstanceListManager {
 	private MerchantPriceConfigTable() {
 	}
 
-	public MerchantPriceConfig getMerchantPriceConfig(L2Character cha) {
+	public MerchantPriceConfig getMerchantPriceConfig(Creature cha) {
 		for (MerchantPriceConfig mpc : mpcs.values()) {
 			if (cha.getWorldRegion() != null && cha.getWorldRegion().containsZone(mpc.getZoneId())) {
 				return mpc;
@@ -124,9 +128,9 @@ public class MerchantPriceConfigTable implements InstanceListManager {
 	public void load() {
 		try {
 			loadXML();
-			Log.info("MerchantPriceConfigTable: Loaded " + mpcs.size() + " merchant price configs.");
+			log.info("MerchantPriceConfigTable: Loaded " + mpcs.size() + " merchant price configs.");
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Failed loading MerchantPriceConfigTable. Reason: " + e.getMessage(), e);
+			log.error("Failed loading MerchantPriceConfigTable. Reason: " + e.getMessage(), e);
 		}
 	}
 

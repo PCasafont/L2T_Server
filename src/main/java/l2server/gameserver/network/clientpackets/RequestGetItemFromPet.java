@@ -16,10 +16,9 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 
 /**
  * This class ...
@@ -42,7 +41,7 @@ public final class RequestGetItemFromPet extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -52,7 +51,7 @@ public final class RequestGetItemFromPet extends L2GameClientPacket {
 			return;
 		}
 		
-		L2PetInstance pet = player.getPet();
+		PetInstance pet = player.getPet();
 		if (player.getActiveEnchantItem() != null) {
 			return;
 		}
@@ -67,7 +66,7 @@ public final class RequestGetItemFromPet extends L2GameClientPacket {
 		}
 		
 		if (pet.transferItem("Transfer", objectId, amount, player.getInventory(), player, pet) == null) {
-			Log.warning("Invalid item transfer request: " + pet.getName() + " (pet) --> " + player.getName());
+			log.warn("Invalid item transfer request: " + pet.getName() + " (pet) --> " + player.getName());
 		}
 	}
 }

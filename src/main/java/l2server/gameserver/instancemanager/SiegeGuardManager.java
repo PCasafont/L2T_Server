@@ -19,10 +19,11 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,6 +33,9 @@ import java.util.List;
 import java.util.logging.Level;
 
 public class SiegeGuardManager {
+	private static Logger log = LoggerFactory.getLogger(SiegeGuardManager.class.getName());
+
+
 
 	// =========================================================
 	// Data Field
@@ -50,7 +54,7 @@ public class SiegeGuardManager {
 	/**
 	 * Add guard.<BR><BR>
 	 */
-	public void addSiegeGuard(L2PcInstance activeChar, int npcId) {
+	public void addSiegeGuard(Player activeChar, int npcId) {
 		if (activeChar == null) {
 			return;
 		}
@@ -67,7 +71,7 @@ public class SiegeGuardManager {
 	/**
 	 * Hire merc.<BR><BR>
 	 */
-	public void hireMerc(L2PcInstance activeChar, int npcId) {
+	public void hireMerc(Player activeChar, int npcId) {
 		if (activeChar == null) {
 			return;
 		}
@@ -98,7 +102,7 @@ public class SiegeGuardManager {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error deleting hired siege guard at " + x + ',' + y + ',' + z + ": " + e.getMessage(), e);
+			log.warn("Error deleting hired siege guard at " + x + ',' + y + ',' + z + ": " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -116,7 +120,7 @@ public class SiegeGuardManager {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error deleting hired siege guard for castle " + getCastle().getName() + ": " + e.getMessage(), e);
+			log.warn("Error deleting hired siege guard for castle " + getCastle().getName() + ": " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -147,7 +151,7 @@ public class SiegeGuardManager {
 				SpawnTable.getInstance().spawnSpecificTable(getCastle().getName() + "_siege_guards");
 			}
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error spawning siege guards for castle " + getCastle().getName(), e);
+			log.error("Error spawning siege guards for castle " + getCastle().getName(), e);
 		}
 	}
 
@@ -185,7 +189,7 @@ public class SiegeGuardManager {
 			ResultSet rs = statement.executeQuery();
 
 			L2Spawn spawn1;
-			L2NpcTemplate template1;
+			NpcTemplate template1;
 
 			while (rs.next()) {
 				template1 = NpcTable.getInstance().getTemplate(rs.getInt("npcId"));
@@ -199,12 +203,12 @@ public class SiegeGuardManager {
 
 					siegeGuardSpawn.add(spawn1);
 				} else {
-					Log.warning("Missing npc data in npc table for id: " + rs.getInt("npcId"));
+					log.warn("Missing npc data in npc table for id: " + rs.getInt("npcId"));
 				}
 			}
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error loading siege guard for castle " + getCastle().getName() + ": " + e.getMessage(), e);
+			log.warn("Error loading siege guard for castle " + getCastle().getName() + ": " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -234,7 +238,7 @@ public class SiegeGuardManager {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error adding siege guard for castle " + getCastle().getName() + ": " + e.getMessage(), e);
+			log.warn("Error adding siege guard for castle " + getCastle().getName() + ": " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

@@ -17,7 +17,7 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.instancemanager.TownManager;
 import l2server.gameserver.model.PartyMatchRoom;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Gnacik
@@ -26,7 +26,7 @@ public class ExPartyRoomMembers extends L2GameServerPacket {
 	private final PartyMatchRoom room;
 	private final int mode;
 	
-	public ExPartyRoomMembers(L2PcInstance player, PartyMatchRoom room, int mode) {
+	public ExPartyRoomMembers(Player player, PartyMatchRoom room, int mode) {
 		this.room = room;
 		this.mode = mode;
 	}
@@ -35,7 +35,7 @@ public class ExPartyRoomMembers extends L2GameServerPacket {
 	protected final void writeImpl() {
 		writeD(mode);
 		writeD(room.getMembers());
-		for (L2PcInstance member : room.getPartyMembers()) {
+		for (Player member : room.getPartyMembers()) {
 			writeD(member.getObjectId());
 			writeS(member.getName());
 			writeD(member.getClassId());

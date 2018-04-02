@@ -15,7 +15,8 @@
 
 package l2server.util.crypt;
 
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.math.BigInteger;
 import java.security.KeyPair;
@@ -25,6 +26,9 @@ import java.security.interfaces.RSAPublicKey;
  *
  */
 public class ScrambledKeyPair {
+	private static Logger log = LoggerFactory.getLogger(ScrambledKeyPair.class.getName());
+
+
 
 	public KeyPair pair;
 	public byte[] scrambledModulus;
@@ -60,7 +64,7 @@ public class ScrambledKeyPair {
 		for (int i = 0; i < 0x40; i++) {
 			scrambledMod[0x40 + i] = (byte) (scrambledMod[0x40 + i] ^ scrambledMod[i]);
 		}
-		Log.fine("Modulus was scrambled");
+		log.debug("Modulus was scrambled");
 
 		return scrambledMod;
 	}

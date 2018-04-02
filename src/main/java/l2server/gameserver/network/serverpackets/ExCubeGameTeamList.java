@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.List;
 
@@ -39,8 +39,8 @@ import java.util.List;
 public class ExCubeGameTeamList extends L2GameServerPacket {
 	
 	// Players Lists
-	List<L2PcInstance> bluePlayers;
-	List<L2PcInstance> redPlayers;
+	List<Player> bluePlayers;
+	List<Player> redPlayers;
 	
 	// Common Values
 	int roomNumber;
@@ -52,7 +52,7 @@ public class ExCubeGameTeamList extends L2GameServerPacket {
 	 * @param bluePlayers Blue Players List
 	 * @param roomNumber  Arena/Room ID
 	 */
-	public ExCubeGameTeamList(List<L2PcInstance> redPlayers, List<L2PcInstance> bluePlayers, int roomNumber) {
+	public ExCubeGameTeamList(List<Player> redPlayers, List<Player> bluePlayers, int roomNumber) {
 		this.redPlayers = redPlayers;
 		this.bluePlayers = bluePlayers;
 		this.roomNumber = roomNumber - 1;
@@ -67,12 +67,12 @@ public class ExCubeGameTeamList extends L2GameServerPacket {
 		writeD(0xffffffff);
 		
 		writeD(bluePlayers.size());
-		for (L2PcInstance player : bluePlayers) {
+		for (Player player : bluePlayers) {
 			writeD(player.getObjectId());
 			writeS(player.getName());
 		}
 		writeD(redPlayers.size());
-		for (L2PcInstance player : redPlayers) {
+		for (Player player : redPlayers) {
 			writeD(player.getObjectId());
 			writeS(player.getName());
 		}

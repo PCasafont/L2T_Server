@@ -15,67 +15,67 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.gameserver.templates.item.L2Weapon;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.item.ItemTemplate;
+import l2server.gameserver.templates.item.WeaponTemplate;
 
 public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket {
-	private L2ItemInstance[] items;
+	private Item[] items;
 	private long price;
 	
-	public ExShowBaseAttributeCancelWindow(L2PcInstance player) {
+	public ExShowBaseAttributeCancelWindow(Player player) {
 		items = player.getInventory().getElementItems();
 	}
 	
 	@Override
 	protected final void writeImpl() {
 		writeD(items.length);
-		for (L2ItemInstance item : items) {
+		for (Item item : items) {
 			writeD(item.getObjectId());
 			writeQ(getPrice(item));
 		}
 	}
 	
-	private long getPrice(L2ItemInstance item) {
+	private long getPrice(Item item) {
 		switch (item.getItem().getCrystalType()) {
-			case L2Item.CRYSTAL_S:
-				if (item.getItem() instanceof L2Weapon) {
+			case ItemTemplate.CRYSTAL_S:
+				if (item.getItem() instanceof WeaponTemplate) {
 					price = 50000;
 				} else {
 					price = 40000;
 				}
 				break;
-			case L2Item.CRYSTAL_S80:
-				if (item.getItem() instanceof L2Weapon) {
+			case ItemTemplate.CRYSTAL_S80:
+				if (item.getItem() instanceof WeaponTemplate) {
 					price = 100000;
 				} else {
 					price = 80000;
 				}
 				break;
-			case L2Item.CRYSTAL_S84:
-				if (item.getItem() instanceof L2Weapon) {
+			case ItemTemplate.CRYSTAL_S84:
+				if (item.getItem() instanceof WeaponTemplate) {
 					price = 200000;
 				} else {
 					price = 160000;
 				}
 				break;
-			case L2Item.CRYSTAL_R:
-				if (item.getItem() instanceof L2Weapon) {
+			case ItemTemplate.CRYSTAL_R:
+				if (item.getItem() instanceof WeaponTemplate) {
 					price = 250000;
 				} else {
 					price = 240000;
 				}
 				break;
-			case L2Item.CRYSTAL_R95:
-				if (item.getItem() instanceof L2Weapon) {
+			case ItemTemplate.CRYSTAL_R95:
+				if (item.getItem() instanceof WeaponTemplate) {
 					price = 300000;
 				} else {
 					price = 280000;
 				}
 				break;
-			case L2Item.CRYSTAL_R99:
-				if (item.getItem() instanceof L2Weapon) {
+			case ItemTemplate.CRYSTAL_R99:
+				if (item.getItem() instanceof WeaponTemplate) {
 					price = 350000;
 				} else {
 					price = 320000;

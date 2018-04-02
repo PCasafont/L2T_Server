@@ -16,7 +16,7 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.instancemanager.ItemAuctionManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemauction.ItemAuction;
 import l2server.gameserver.model.itemauction.ItemAuctionInstance;
 import l2server.gameserver.network.serverpackets.ExItemAuctionInfoPacket;
@@ -34,7 +34,7 @@ public final class RequestInfoItemAuction extends L2GameClientPacket {
 	
 	@Override
 	protected final void runImpl() {
-		final L2PcInstance activeChar = super.getClient().getActiveChar();
+		final Player activeChar = super.getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}

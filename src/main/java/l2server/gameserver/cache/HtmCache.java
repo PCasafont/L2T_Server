@@ -17,7 +17,8 @@ package l2server.gameserver.cache;
 
 import l2server.Config;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 
@@ -34,6 +35,9 @@ import java.util.logging.Level;
  * @author Layane
  */
 public class HtmCache {
+	private static Logger log = LoggerFactory.getLogger(HtmCache.class.getName());
+
+
 	private final Map<Integer, String> cache;
 
 	private int loadedFiles;
@@ -60,20 +64,20 @@ public class HtmCache {
 
 	public void reload(File f) {
 		if (!Config.LAZY_CACHE) {
-			Log.info("Html cache start...");
+			log.info("Html cache start...");
 			parseDir(f);
-			Log.info("Cache[HTML]: " + String.format("%.3f", getMemoryUsage()) + " megabytes on " + getLoadedFiles() + " files loaded");
+			log.info("Cache[HTML]: " + String.format("%.3f", getMemoryUsage()) + " megabytes on " + getLoadedFiles() + " files loaded");
 		} else {
 			cache.clear();
 			loadedFiles = 0;
 			bytesBuffLen = 0;
-			Log.info("Cache[HTML]: Running lazy cache");
+			log.info("Cache[HTML]: Running lazy cache");
 		}
 	}
 
 	public void reloadPath(File f) {
 		parseDir(f);
-		Log.info("Cache[HTML]: Reloaded specified path.");
+		log.info("Cache[HTML]: Reloaded specified path.");
 	}
 
 	public double getMemoryUsage() {
@@ -140,7 +144,7 @@ public class HtmCache {
 
 				return content;
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "Problem with htm file " + e.getMessage(), e);
+				log.warn("Problem with htm file " + e.getMessage(), e);
 			} finally {
 				try {
 					fis.close();
@@ -157,7 +161,7 @@ public class HtmCache {
 
 		if (content == null) {
 			content = "<html><body>My text is missing:<br>" + path + "</body></html>";
-			Log.warning("Cache[HTML]: Missing HTML page: " + path);
+			log.warn("Cache[HTML]: Missing HTML page: " + path);
 		}
 
 		return content;

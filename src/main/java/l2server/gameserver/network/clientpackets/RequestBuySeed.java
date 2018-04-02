@@ -20,17 +20,17 @@ import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleManorManager;
 import l2server.gameserver.instancemanager.CastleManorManager.SeedProduction;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2ManorManagerInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.ManorManagerInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
 
-import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
+import static l2server.gameserver.model.actor.Npc.DEFAULT_INTERACTION_DISTANCE;
 import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
 
 /**
@@ -77,7 +77,7 @@ public class RequestBuySeed extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -91,13 +91,13 @@ public class RequestBuySeed extends L2GameClientPacket {
 			return;
 		}
 
-		L2Object manager = player.getTarget();
+		WorldObject manager = player.getTarget();
 
-		if (!(manager instanceof L2ManorManagerInstance)) {
+		if (!(manager instanceof ManorManagerInstance)) {
 			manager = player.getLastFolkNPC();
 		}
 
-		if (!(manager instanceof L2ManorManagerInstance)) {
+		if (!(manager instanceof ManorManagerInstance)) {
 			return;
 		}
 
@@ -126,7 +126,7 @@ public class RequestBuySeed extends L2GameClientPacket {
 				return;
 			}
 
-			L2Item template = ItemTable.getInstance().getTemplate(i.getSeedId());
+			ItemTemplate template = ItemTable.getInstance().getTemplate(i.getSeedId());
 			totalWeight += i.getCount() * template.getWeight();
 			if (!template.isStackable()) {
 				slots += i.getCount();

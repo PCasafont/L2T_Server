@@ -19,9 +19,6 @@ import l2server.Config;
 import l2server.gameserver.network.serverpackets.CharDeleteFail;
 import l2server.gameserver.network.serverpackets.CharDeleteSuccess;
 import l2server.gameserver.network.serverpackets.CharSelectionInfo;
-import l2server.log.Log;
-
-import java.util.logging.Level;
 
 /**
  * This class ...
@@ -46,7 +43,7 @@ public final class CharacterDelete extends L2GameClientPacket {
 		}
 
 		if (Config.DEBUG) {
-			Log.fine("deleting slot:" + charSlot);
+			log.debug("deleting slot:" + charSlot);
 		}
 
 		try {
@@ -67,7 +64,7 @@ public final class CharacterDelete extends L2GameClientPacket {
 					break;
 			}
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error:", e);
+			log.error("Error:", e);
 		}
 
 		CharSelectionInfo cl = new CharSelectionInfo(getClient().getAccountName(), getClient().getSessionId().playOkID1, 0);

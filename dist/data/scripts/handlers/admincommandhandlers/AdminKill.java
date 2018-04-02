@@ -17,19 +17,18 @@ package handlers.admincommandhandlers;
 
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
 import java.util.StringTokenizer;
-import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:
- * - kill = kills target L2Character
+ * - kill = kills target Creature
  * - kill_monster = kills target non-player
  * <p>
  * - kill <radius> = If radius is specified, then ALL players only in that radius will be killed.
@@ -38,23 +37,22 @@ import java.util.logging.Logger;
  * @version $Revision: 1.2.4.5 $ $Date: 2007/07/31 10:06:06 $
  */
 public class AdminKill implements IAdminCommandHandler {
-	private static Logger log = Logger.getLogger(AdminKill.class.getName());
 	private static final String[] ADMIN_COMMANDS = {"admin_kill", "admin_kill_monster"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.startsWith("admin_kill")) {
 			StringTokenizer st = new StringTokenizer(command, " ");
 			st.nextToken(); // skip command
 
 			if (st.hasMoreTokens()) {
 				String firstParam = st.nextToken();
-				L2PcInstance plyr = L2World.getInstance().getPlayer(firstParam);
+				Player plyr = World.getInstance().getPlayer(firstParam);
 				if (plyr != null) {
 					if (st.hasMoreTokens()) {
 						try {
 							int radius = Integer.parseInt(st.nextToken());
-							for (L2Character knownChar : plyr.getKnownList().getKnownCharactersInRadius(radius)) {
+							for (Creature knownChar : plyr.getKnownList().getKnownCharactersInRadius(radius)) {
 								if (knownChar == activeChar) {
 									continue;
 								}
@@ -75,7 +73,7 @@ public class AdminKill implements IAdminCommandHandler {
 					try {
 						int radius = Integer.parseInt(firstParam);
 
-						for (L2Character knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius)) {
+						for (Creature knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius)) {
 							if (knownChar == activeChar) {
 								continue;
 							}
@@ -90,20 +88,20 @@ public class AdminKill implements IAdminCommandHandler {
 					}
 				}
 			} else {
-				L2Object obj = activeChar.getTarget();
-				if (!(obj instanceof L2Character)) {
+				WorldObject obj = activeChar.getTarget();
+				if (!(obj instanceof Creature)) {
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 				} else {
-					kill(activeChar, (L2Character) obj);
+					kill(activeChar, (Creature) obj);
 				}
 			}
 		}
 		return true;
 	}
 
-	private void kill(L2PcInstance activeChar, L2Character target) {
-		if (target instanceof L2PcInstance) {
-			if (!((L2PcInstance) target).isGM()) {
+	private void kill(Player activeChar, Creature target) {
+		if (target instanceof Player) {
+			if (!((Player) target).isGM()) {
 				target.stopAllEffects(); // e.g. invincibility effect
 			}
 			target.reduceCurrentHp(target.getMaxHp() + target.getMaxCp() + 1, activeChar, null);
@@ -123,7 +121,7 @@ public class AdminKill implements IAdminCommandHandler {
 			}
 		}
 		if (Config.DEBUG) {
-			log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ")" + " killed character " + target.getObjectId());
+			log.debug("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ")" + " killed character " + target.getObjectId());
 		}
 	}
 

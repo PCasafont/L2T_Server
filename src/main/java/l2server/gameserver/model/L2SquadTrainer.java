@@ -15,11 +15,11 @@
 
 package l2server.gameserver.model;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author JIV
  */
 public interface L2SquadTrainer {
-	void showSubUnitSkillList(L2PcInstance player);
+	void showSubUnitSkillList(Player player);
 }

@@ -16,9 +16,9 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.ItemContainer;
 import l2server.gameserver.model.itemcontainer.PcWarehouse;
 import l2server.gameserver.network.SystemMessageId;
@@ -27,7 +27,6 @@ import l2server.gameserver.network.serverpackets.ItemList;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 
 import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
 
@@ -69,7 +68,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket {
 			return;
 		}
 		
-		final L2PcInstance player = getClient().getActiveChar();
+		final Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -85,7 +84,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket {
 		}
 		final boolean isPrivate = warehouse instanceof PcWarehouse;
 		
-		final L2Npc manager = player.getLastFolkNPC();
+		final Npc manager = player.getLastFolkNPC();
 		if ((manager == null || !manager.isWarehouse() || !manager.canInteract(player)) && !player.isGM()) {
 			return;
 		}
@@ -111,9 +110,9 @@ public final class SendWareHouseDepositList extends L2GameClientPacket {
 		int slots = 0;
 		
 		for (WarehouseItem i : items) {
-			L2ItemInstance item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "deposit");
+			Item item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "deposit");
 			if (item == null) {
-				Log.warning("Error depositing a warehouse object for char " + player.getName() + " (validity check)");
+				log.warn("Error depositing a warehouse object for char " + player.getName() + " (validity check)");
 				return;
 			}
 			
@@ -149,9 +148,9 @@ public final class SendWareHouseDepositList extends L2GameClientPacket {
 		InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
 		for (WarehouseItem i : items) {
 			// Check validity of requested item
-			L2ItemInstance oldItem = player.checkItemManipulation(i.getObjectId(), i.getCount(), "deposit");
+			Item oldItem = player.checkItemManipulation(i.getObjectId(), i.getCount(), "deposit");
 			if (oldItem == null) {
-				Log.warning("Error depositing a warehouse object for char " + player.getName() + " (olditem == null)");
+				log.warn("Error depositing a warehouse object for char " + player.getName() + " (olditem == null)");
 				return;
 			}
 			
@@ -159,10 +158,10 @@ public final class SendWareHouseDepositList extends L2GameClientPacket {
 				continue;
 			}
 			
-			final L2ItemInstance newItem =
+			final Item newItem =
 					player.getInventory().transferItem(warehouse.getName(), i.getObjectId(), i.getCount(), warehouse, player, manager);
 			if (newItem == null) {
-				Log.warning("Error depositing a warehouse object for char " + player.getName() + " (newitem == null)");
+				log.warn("Error depositing a warehouse object for char " + player.getName() + " (newitem == null)");
 				continue;
 			}
 			

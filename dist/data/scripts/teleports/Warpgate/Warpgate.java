@@ -16,18 +16,18 @@
 package teleports.Warpgate;
 
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.model.zone.ZoneType;
 
 public class Warpgate extends Quest {
 	private static final int ZONE = 40101;
 
 	private static final int[] WARPGATES = {32314, 32315, 32316, 32317, 32318, 32319, 33900};
 
-	private static boolean canEnter(L2PcInstance player) {
+	private static boolean canEnter(Player player) {
 		if (player.isFlying()) {
 			return false;
 		}
@@ -40,12 +40,12 @@ public class Warpgate extends Quest {
 	}
 
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public final String onFirstTalk(Npc npc, Player player) {
 		return npc.getNpcId() + ".html";
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		if (!canEnter(player)) {
 			return "warpgate-no.html";
 		}
@@ -56,9 +56,9 @@ public class Warpgate extends Quest {
 	}
 
 	@Override
-	public final String onEnterZone(L2Character character, L2ZoneType zone) {
-		if (character instanceof L2PcInstance) {
-			if (!canEnter((L2PcInstance) character) && !character.isGM()) {
+	public final String onEnterZone(Creature character, ZoneType zone) {
+		if (character instanceof Player) {
+			if (!canEnter((Player) character) && !character.isGM()) {
 				ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(character), 1000);
 			}
 		}
@@ -66,9 +66,9 @@ public class Warpgate extends Quest {
 	}
 
 	private static final class Teleport implements Runnable {
-		private final L2Character cha;
+		private final Creature cha;
 
-		public Teleport(L2Character c) {
+		public Teleport(Creature c) {
 			cha = c;
 		}
 

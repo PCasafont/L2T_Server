@@ -19,8 +19,8 @@ import l2server.Config;
 import l2server.gameserver.Shutdown;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 import java.text.SimpleDateFormat;
@@ -38,7 +38,7 @@ public class AdminShutdown implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_server_shutdown", "admin_server_restart", "admin_server_abort"};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.startsWith("admin_server_shutdown")) {
 			try {
 				int val = Integer.parseInt(command.substring(22));
@@ -65,7 +65,7 @@ public class AdminShutdown implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 	
-	private void sendHtmlForm(L2PcInstance activeChar) {
+	private void sendHtmlForm(Player activeChar) {
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		int t = TimeController.getInstance().getGameTime();
 		int h = t / 60;
@@ -76,10 +76,10 @@ public class AdminShutdown implements IAdminCommandHandler {
 		cal.set(Calendar.MINUTE, m);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "admin/shutdown.htm");
 		
-		int totalPlayers = L2World.getInstance().getAllPlayersCount();
+		int totalPlayers = World.getInstance().getAllPlayersCount();
 		int actualPlayers = 0;
 		
-		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
+		for (Player player : World.getInstance().getAllPlayersArray()) {
 			if (!player.isOnline()) {
 				continue;
 			}
@@ -97,11 +97,11 @@ public class AdminShutdown implements IAdminCommandHandler {
 		activeChar.sendPacket(adminReply);
 	}
 	
-	private void serverShutdown(L2PcInstance activeChar, int seconds, boolean restart) {
+	private void serverShutdown(Player activeChar, int seconds, boolean restart) {
 		Shutdown.getInstance().startShutdown(activeChar, seconds, restart);
 	}
 	
-	private void serverAbort(L2PcInstance activeChar) {
+	private void serverAbort(Player activeChar) {
 		Shutdown.getInstance().abort(activeChar);
 	}
 }

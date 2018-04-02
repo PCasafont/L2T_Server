@@ -15,46 +15,46 @@
 
 package l2server.gameserver.model.actor.status;
 
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Duel;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.util.Util;
 
 public class SummonStatus extends PlayableStatus {
-	public SummonStatus(L2Summon activeChar) {
+	public SummonStatus(Summon activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public void reduceHp(double value, L2Character attacker) {
+	public void reduceHp(double value, Creature attacker) {
 		reduceHp(value, attacker, true, false, false);
 	}
 
 	@Override
-	public void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHPConsumption) {
+	public void reduceHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean isHPConsumption) {
 		if (attacker == null || getActiveChar().isDead()) {
 			return;
 		}
 
-		final L2PcInstance attackerPlayer = attacker.getActingPlayer();
+		final Player attackerPlayer = attacker.getActingPlayer();
 		if (attackerPlayer != null && (getActiveChar().getOwner() == null || getActiveChar().getOwner().getDuelId() != attackerPlayer.getDuelId())) {
 			attackerPlayer.setDuelState(Duel.DUELSTATE_INTERRUPTED);
 		}
 
 		if (getActiveChar().getOwner().getParty() != null) {
-			final L2PcInstance caster = getActiveChar().getTransferingDamageTo();
+			final Player caster = getActiveChar().getTransferingDamageTo();
 			if (caster != null && getActiveChar().getParty() != null && Util.checkIfInRange(1000, getActiveChar(), caster, true) &&
 					!caster.isDead() && getActiveChar().getOwner() != caster && getActiveChar().getParty().getPartyMembers().contains(caster)) {
 				int transferDmg = 0;
 
 				transferDmg = (int) value * (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_TO_PLAYER, 0, null, null) / 100;
 				transferDmg = Math.min((int) caster.getCurrentHp() - 1, transferDmg);
-				if (transferDmg > 0 && attacker instanceof L2Playable) {
+				if (transferDmg > 0 && attacker instanceof Playable) {
 					int membersInRange = 0;
-					for (L2PcInstance member : caster.getParty().getPartyMembers()) {
+					for (Player member : caster.getParty().getPartyMembers()) {
 						if (Util.checkIfInRange(1000, member, caster, false) && member != caster) {
 							membersInRange++;
 						}
@@ -80,7 +80,7 @@ public class SummonStatus extends PlayableStatus {
 	}
 
 	@Override
-	public L2Summon getActiveChar() {
-		return (L2Summon) super.getActiveChar();
+	public Summon getActiveChar() {
+		return (Summon) super.getActiveChar();
 	}
 }

@@ -15,8 +15,8 @@
 
 package l2server.gameserver.model.actor.knownlist;
 
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Summon;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Summon;
 
 public class SummonKnownList extends PlayableKnownList {
 	// =========================================================
@@ -24,7 +24,7 @@ public class SummonKnownList extends PlayableKnownList {
 
 	// =========================================================
 	// Constructor
-	public SummonKnownList(L2Summon activeChar) {
+	public SummonKnownList(Summon activeChar) {
 		super(activeChar);
 	}
 
@@ -37,12 +37,12 @@ public class SummonKnownList extends PlayableKnownList {
 	// =========================================================
 	// Property - Public
 	@Override
-	public final L2Summon getActiveChar() {
-		return (L2Summon) super.getActiveChar();
+	public final Summon getActiveChar() {
+		return (Summon) super.getActiveChar();
 	}
 
 	@Override
-	public int getDistanceToForgetObject(L2Object object) {
+	public int getDistanceToForgetObject(WorldObject object) {
 		if (object == getActiveChar().getOwner() || object == getActiveChar().getTarget()) {
 			return 6000;
 		}
@@ -50,7 +50,7 @@ public class SummonKnownList extends PlayableKnownList {
 	}
 
 	@Override
-	public int getDistanceToWatchObject(L2Object object) {
+	public int getDistanceToWatchObject(WorldObject object) {
 		return 1500;
 	}
 }

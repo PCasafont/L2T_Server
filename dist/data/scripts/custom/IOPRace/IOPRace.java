@@ -16,10 +16,10 @@
 package custom.IOPRace;
 
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 
@@ -38,7 +38,7 @@ public class IOPRace extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		QuestState st = player.getQuestState(getName());
 		if (st == null) {
 			st = newQuestState(player);
@@ -57,7 +57,7 @@ public class IOPRace extends Quest {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		QuestState st = player.getQuestState(getName());
 		if (st == null) {
 			st = newQuestState(player);
@@ -69,7 +69,7 @@ public class IOPRace extends Quest {
 			if (player.getPet() != null) {
 				player.getPet().stopSkillEffects(5239);
 			}
-			for (L2SummonInstance summon : player.getSummons()) {
+			for (SummonInstance summon : player.getSummons()) {
 				summon.stopSkillEffects(5239);
 			}
 
@@ -79,7 +79,7 @@ public class IOPRace extends Quest {
 			st.set("3rd", "0");
 			st.set("4th", "0");
 
-			L2Skill skill = SkillTable.getInstance().getInfo(5239, 5);
+			Skill skill = SkillTable.getInstance().getInfo(5239, 5);
 			if (skill != null) {
 				skill.getEffects(npc, player);
 				if (player.getPet() != null) {
@@ -95,7 +95,7 @@ public class IOPRace extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		String htmltext = "";
 
 		if (event.equalsIgnoreCase("timer")) {

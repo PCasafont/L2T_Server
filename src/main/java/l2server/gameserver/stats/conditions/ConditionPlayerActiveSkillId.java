@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -53,7 +53,7 @@ public class ConditionPlayerActiveSkillId extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		for (L2Skill sk : env.player.getAllSkills()) {
+		for (Skill sk : env.player.getAllSkills()) {
 			if (sk != null) {
 				if (sk.getId() == skillId) {
 					if (skillLevel == -1 || skillLevel <= sk.getLevel()) {

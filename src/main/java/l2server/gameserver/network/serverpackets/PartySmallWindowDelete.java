@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * This class ...
@@ -23,9 +23,9 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
 public final class PartySmallWindowDelete extends L2GameServerPacket {
-	private L2PcInstance member;
+	private Player member;
 	
-	public PartySmallWindowDelete(L2PcInstance member) {
+	public PartySmallWindowDelete(Player member) {
 		this.member = member;
 	}
 	

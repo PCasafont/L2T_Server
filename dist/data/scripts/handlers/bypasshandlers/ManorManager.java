@@ -19,11 +19,11 @@ import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleManorManager;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2CastleChamberlainInstance;
-import l2server.gameserver.model.actor.instance.L2ManorManagerInstance;
-import l2server.gameserver.model.actor.instance.L2MerchantInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.CastleChamberlainInstance;
+import l2server.gameserver.model.actor.instance.ManorManagerInstance;
+import l2server.gameserver.model.actor.instance.MerchantInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
@@ -34,14 +34,14 @@ public class ManorManager implements IBypassHandler {
 	private static final String[] COMMANDS = {"manor_menu_select"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
-		final L2Npc manager = activeChar.getLastFolkNPC();
-		final boolean isCastle = manager instanceof L2CastleChamberlainInstance;
-		if (!(manager instanceof L2ManorManagerInstance || isCastle)) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
+		final Npc manager = activeChar.getLastFolkNPC();
+		final boolean isCastle = manager instanceof CastleChamberlainInstance;
+		if (!(manager instanceof ManorManagerInstance || isCastle)) {
 			return false;
 		}
 		
-		if (!activeChar.isInsideRadius(manager, L2Npc.DEFAULT_INTERACTION_DISTANCE, true, false)) {
+		if (!activeChar.isInsideRadius(manager, Npc.DEFAULT_INTERACTION_DISTANCE, true, false)) {
 			return false;
 		}
 		
@@ -120,7 +120,7 @@ public class ManorManager implements IBypassHandler {
 					if (isCastle) {
 						break;
 					}
-					((L2MerchantInstance) manager).showBuyWindow(activeChar, 300000 + manager.getNpcId());
+					((MerchantInstance) manager).showBuyWindow(activeChar, 300000 + manager.getNpcId());
 					break;
 				case 7: // Edit seed setup
 					if (!isCastle) {

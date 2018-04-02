@@ -18,8 +18,9 @@ package l2server.gameserver.instancemanager;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.instance.RaidBossInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.util.HashMap;
@@ -30,8 +31,11 @@ import java.util.logging.Level;
  * @author godson
  */
 public class DayNightSpawnManager {
+	private static Logger log = LoggerFactory.getLogger(DayNightSpawnManager.class.getName());
 
-	private Map<L2Spawn, L2RaidBossInstance> bosses = new HashMap<>();
+
+
+	private Map<L2Spawn, RaidBossInstance> bosses = new HashMap<>();
 
 	public static DayNightSpawnManager getInstance() {
 		return SingletonHolder.instance;
@@ -67,12 +71,12 @@ public class DayNightSpawnManager {
 				spawnNightCreatures();
 				break;
 			default:
-				Log.warning("DayNightSpawnManager: Wrong mode sent");
+				log.warn("DayNightSpawnManager: Wrong mode sent");
 				break;
 		}
 	}
 
-	@Load(dependencies = TimeController.class)
+	@Load(dependencies = {TimeController.class, SpawnTable.class})
 	public void notifyChangeMode() {
 		try {
 			if (TimeController.getInstance().isNowNight()) {
@@ -81,7 +85,7 @@ public class DayNightSpawnManager {
 				changeMode(0);
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error while notifyChangeMode(): " + e.getMessage(), e);
+			log.warn("Error while notifyChangeMode(): " + e.getMessage(), e);
 		}
 	}
 

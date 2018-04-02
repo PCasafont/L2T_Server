@@ -19,16 +19,16 @@ import l2server.Config;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.L2Manor;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.util.Rnd;
 
 import java.util.logging.Logger;
@@ -39,18 +39,18 @@ import java.util.logging.Logger;
 public class Sow implements ISkillHandler {
 	private static Logger log = Logger.getLogger(Sow.class.getName());
 
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.SOW};
+	private static final SkillType[] SKILL_IDS = {SkillType.SOW};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		if (!(activeChar instanceof L2PcInstance)) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		if (!(activeChar instanceof Player)) {
 			return;
 		}
 
-		final L2Object[] targetList = skill.getTargetList(activeChar);
+		final WorldObject[] targetList = skill.getTargetList(activeChar);
 		if (targetList == null || targetList.length == 0) {
 			return;
 		}
@@ -59,14 +59,14 @@ public class Sow implements ISkillHandler {
 			log.info("Casting sow");
 		}
 
-		L2MonsterInstance target;
+		MonsterInstance target;
 
-		for (L2Object tgt : targetList) {
-			if (!(tgt instanceof L2MonsterInstance)) {
+		for (WorldObject tgt : targetList) {
+			if (!(tgt instanceof MonsterInstance)) {
 				continue;
 			}
 
-			target = (L2MonsterInstance) tgt;
+			target = (MonsterInstance) tgt;
 			if (target.isDead() || target.isSeeded() || target.getSeederId() != activeChar.getObjectId()) {
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				continue;
@@ -87,7 +87,7 @@ public class Sow implements ISkillHandler {
 			SystemMessage sm;
 			if (calcSuccess(activeChar, target, seedId)) {
 				activeChar.sendPacket(new PlaySound("Itemsound.quest_itemget"));
-				target.setSeeded((L2PcInstance) activeChar);
+				target.setSeeded((Player) activeChar);
 				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_SEED_WAS_SUCCESSFULLY_SOWN);
 			} else {
 				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_SEED_WAS_NOT_SOWN);
@@ -104,7 +104,7 @@ public class Sow implements ISkillHandler {
 		}
 	}
 
-	private boolean calcSuccess(L2Character activeChar, L2Character target, int seedId) {
+	private boolean calcSuccess(Creature activeChar, Creature target, int seedId) {
 		// TODO: check all the chances
 		int basicSuccess = L2Manor.getInstance().isAlternative(seedId) ? 20 : 90;
 		final int minlevelSeed = L2Manor.getInstance().getSeedMinLevel(seedId);
@@ -142,7 +142,7 @@ public class Sow implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

@@ -15,13 +15,15 @@
 
 package l2server.gameserver.model.olympiad;
 
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.zone.type.L2OlympiadStadiumZone;
-import l2server.log.Log;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.zone.type.OlympiadStadiumZone;
 import l2server.util.loader.annotations.Load;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
 import java.util.List;
@@ -30,7 +32,9 @@ import java.util.List;
  * @author GodKratos, DS
  */
 public class OlympiadGameManager implements Runnable {
-
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	
 	private volatile boolean battleStarted = false;
 	private OlympiadGameTask[] tasks;
 
@@ -39,21 +43,21 @@ public class OlympiadGameManager implements Runnable {
 	
 	@Load(dependencies = {Olympiad.class, ZoneManager.class, DoorTable.class})
 	public void initialize() {
-		final Collection<L2OlympiadStadiumZone> zones = ZoneManager.getInstance().getAllZones(L2OlympiadStadiumZone.class);
+		final Collection<OlympiadStadiumZone> zones = ZoneManager.getInstance().getAllZones(OlympiadStadiumZone.class);
 		if (zones == null || zones.isEmpty()) {
 			throw new Error("No olympiad stadium zones defined !");
 		}
 		
 		tasks = new OlympiadGameTask[zones.size() * 40];
 		int i = 0;
-		for (L2OlympiadStadiumZone zone : zones) {
+		for (OlympiadStadiumZone zone : zones) {
 			for (int j = 0; j < 40; j++) {
 				tasks[j * 4 + i] = new OlympiadGameTask(zone, j * 4 + i);
 			}
 			i++;
 		}
 		
-		Log.info("Olympiad System: Loaded " + tasks.length + " stadium instances.");
+		log.info("Olympiad System: Loaded " + tasks.length + " stadium instances.");
 	}
 	
 	public static OlympiadGameManager getInstance() {
@@ -80,7 +84,7 @@ public class OlympiadGameManager implements Runnable {
 			if (readyClassed == null) {
 				for (List<Integer> list : OlympiadManager.getInstance().getRegisteredClassBased().values()) {
 					for (int objId : list) {
-						L2PcInstance player = L2World.getInstance().getPlayer(objId);
+						Player player = World.getInstance().getPlayer(objId);
 						if (player != null) {
 							player.sendMessage("Your match may not begin yet because there are not enough participants registered.");
 						}
@@ -89,7 +93,7 @@ public class OlympiadGameManager implements Runnable {
 			}
 			if (!readyNonClassed) {
 				for (int objId : OlympiadManager.getInstance().getRegisteredNonClassBased()) {
-					L2PcInstance player = L2World.getInstance().getPlayer(objId);
+					Player player = World.getInstance().getPlayer(objId);
 					if (player != null) {
 						player.sendMessage("Your match may not begin yet because there are not enough participants registered.");
 					}
@@ -132,7 +136,7 @@ public class OlympiadGameManager implements Runnable {
 		} else if (isAllTasksFinished() && battleStarted) {
 			OlympiadManager.getInstance().clearRegistered();
 			battleStarted = false;
-			Log.info("Olympiad System: All current games finished.");
+			log.info("Olympiad System: All current games finished.");
 		}
 	}
 
@@ -157,7 +161,7 @@ public class OlympiadGameManager implements Runnable {
 		return tasks.length;
 	}
 
-	public final void notifyCompetitorDamage(L2PcInstance player, int damage) {
+	public final void notifyCompetitorDamage(Player player, int damage) {
 		if (player == null) {
 			return;
 		}

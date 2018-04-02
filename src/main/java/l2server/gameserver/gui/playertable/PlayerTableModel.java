@@ -6,8 +6,8 @@ package l2server.gameserver.gui.playertable;
 
 import l2server.Config;
 import l2server.gameserver.gui.ServerGui;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 
 import javax.swing.table.AbstractTableModel;
 
@@ -19,7 +19,7 @@ class PlayerTableModel extends AbstractTableModel {
 	
 	private static final String[] columnNames = {"Id", "Name", "Level"};
 	
-	private L2PcInstance[] players = new L2PcInstance[]{};
+	private Player[] players = new Player[]{};
 	
 	public PlayerTableModel() {
 	}
@@ -53,11 +53,11 @@ class PlayerTableModel extends AbstractTableModel {
 	}
 	
 	public synchronized boolean updateData() {
-		L2PcInstance[] players = new L2PcInstance[L2World.getInstance().getAllPlayersCount()];
-		L2World.getInstance().getAllPlayersArray().toArray(players);
+		Player[] players = new Player[World.getInstance().getAllPlayersCount()];
+		World.getInstance().getAllPlayersArray().toArray(players);
 		int playerCount = 0;
 		int shopCount = 0;
-		for (L2PcInstance player : players) {
+		for (Player player : players) {
 			if (player != null && player.isOnline()) {
 				if (player.getClient() == null || player.getClient().isDetached()) {
 					shopCount++;

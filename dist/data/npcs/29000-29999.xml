@@ -1,5 +1,5 @@
 <list>
-	<npc id="29001" name="Queen Ant" level="40" type="L2GrandBoss" atkRange="40" hpMax="95760032" hpReg="208.0"
+	<npc id="29001" name="Queen Ant" level="40" type="GrandBoss" atkRange="40" hpMax="95760032" hpReg="208.0"
 		 mpMax="366"
 		 mpReg="2.1" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="2179535" sp="523" pAtk="330"
 		 mAtk="78" pDef="1616"
@@ -81,7 +81,7 @@
 			<itemDrop itemId="6660" min="1" max="1" chance="100" /> <!-- Queen Ant's Ring -->
 		</dropCategory>
 	</npc>
-	<npc id="29002" name="Queen Ant Larva" level="38" type="L2Monster" atkRange="40" hpMax="1023" hpReg="3.5"
+	<npc id="29002" name="Queen Ant Larva" level="38" type="Monster" atkRange="40" hpMax="1023" hpReg="3.5"
 		 mpMax="385" mpReg="1.5"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="1" pAtk="136" mAtk="63" pDef="151" mDef="131"
 		 pAtkSpd="253"
@@ -102,7 +102,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29003" name="Nurse Ant" level="35" type="L2Monster" atkRange="40" hpMax="6920" hpReg="108.0" mpMax="492"
+	<npc id="29003" name="Nurse Ant" level="35" type="Monster" atkRange="40" hpMax="6920" hpReg="108.0" mpMax="492"
 		 mpReg="1.8"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="1" pAtk="948" mAtk="399" pDef="679" mDef="303"
 		 pAtkSpd="253"
@@ -122,7 +122,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29004" name="Escort Ant" level="37" type="L2Monster" atkRange="40" hpMax="7513" hpReg="115.0" mpMax="528"
+	<npc id="29004" name="Escort Ant" level="37" type="Monster" atkRange="40" hpMax="7513" hpReg="115.0" mpMax="528"
 		 mpReg="1.8"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="1" pAtk="270" mAtk="29" pDef="729" mDef="325"
 		 pAtkSpd="253"
@@ -167,7 +167,7 @@
 		<spawn x="-22700" y="182486" z="-5734" heading="0" respawn="360" />
 		<spawn x="-22015" y="181518" z="-5734" heading="0" respawn="360" />
 	</npc>
-	<npc id="29005" name="Royal Guard Ant" level="39" type="L2Monster" atkRange="40" hpMax="12198" hpReg="122.0"
+	<npc id="29005" name="Royal Guard Ant" level="39" type="Monster" atkRange="40" hpMax="12198" hpReg="122.0"
 		 mpMax="566"
 		 mpReg="1.8" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="1" pAtk="1828" mAtk="1155" pDef="781"
 		 mDef="349"
@@ -187,7 +187,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29006" name="Core" level="50" type="L2GrandBoss" atkRange="40" hpMax="622755" hpReg="441.65" mpMax="2084"
+	<npc id="29006" name="Core" level="50" type="GrandBoss" atkRange="40" hpMax="622755" hpReg="441.65" mpMax="2084"
 		 mpReg="20.0"
 		 STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="2041407" sp="489" pAtk="2440" mAtk="15827"
 		 pDef="2227"
@@ -259,7 +259,7 @@
 			<itemDrop itemId="6662" min="1" max="1" chance="100" /> <!-- Ring of Core -->
 		</dropCategory>
 	</npc>
-	<npc id="29007" name="Death Knight" level="50" type="L2Monster" atkRange="40" hpMax="23903" hpReg="166.0"
+	<npc id="29007" name="Death Knight" level="50" type="Monster" atkRange="40" hpMax="23903" hpReg="166.0"
 		 mpMax="913" mpReg="2.1"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="1" pAtk="684" mAtk="88" pDef="1114" mDef="497"
 		 pAtkSpd="253"
@@ -282,7 +282,7 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="29008" name="Doom Wraith" level="55" type="L2Monster" atkRange="40" hpMax="27700" hpReg="185.0"
+	<npc id="29008" name="Doom Wraith" level="55" type="Monster" atkRange="40" hpMax="27700" hpReg="185.0"
 		 mpMax="1086" mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="1" pAtk="813" mAtk="973" pDef="1289" mDef="575"
 		 pAtkSpd="253"
@@ -306,7 +306,7 @@
 		<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
 		<skill id="4278" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="29009" name="Dicor" level="47" type="L2Monster" atkRange="40" hpMax="21701" hpReg="154.0" mpMax="812"
+	<npc id="29009" name="Dicor" level="47" type="Monster" atkRange="40" hpMax="21701" hpReg="154.0" mpMax="812"
 		 mpReg="2.1"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="1" pAtk="578" mAtk="73" pDef="1016" mDef="453"
 		 pAtkSpd="253"
@@ -333,7 +333,7 @@
 		<spawn x="16647" y="112937" z="-6580" heading="40331" respawn="10800" />
 		<spawn x="17154" y="113014" z="-6580" heading="29087" respawn="10800" />
 	</npc>
-	<npc id="29010" name="Validus" level="46" type="L2Monster" atkRange="40" hpMax="20984" hpReg="150.0" mpMax="779"
+	<npc id="29010" name="Validus" level="46" type="Monster" atkRange="40" hpMax="20984" hpReg="150.0" mpMax="779"
 		 mpReg="2.1"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="1" pAtk="546" mAtk="70" pDef="985" mDef="440"
 		 pAtkSpd="253"
@@ -354,7 +354,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<spawn x="16520" y="113202" z="-6580" heading="29114" respawn="10800" />
 	</npc>
-	<npc id="29011" name="Susceptor" level="49" type="L2Monster" atkRange="40" hpMax="23162" hpReg="162.0" mpMax="879"
+	<npc id="29011" name="Susceptor" level="49" type="Monster" atkRange="40" hpMax="23162" hpReg="162.0" mpMax="879"
 		 mpReg="2.1"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="1" pAtk="648" mAtk="83" pDef="1081" mDef="482"
 		 pAtkSpd="253"
@@ -386,7 +386,7 @@
 		<spawn x="17502" y="112768" z="-6580" heading="2402" respawn="10800" />
 		<spawn x="17148" y="112911" z="-6580" heading="38585" respawn="10800" />
 	</npc>
-	<npc id="29012" name="Perum" level="48" type="L2Monster" atkRange="40" hpMax="22427" hpReg="158.0" mpMax="845"
+	<npc id="29012" name="Perum" level="48" type="Monster" atkRange="40" hpMax="22427" hpReg="158.0" mpMax="845"
 		 mpReg="2.1"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="1" pAtk="612" mAtk="78" pDef="1049" mDef="468"
 		 pAtkSpd="253"
@@ -415,7 +415,7 @@
 		<spawn x="18086" y="112977" z="-6580" heading="36221" respawn="10800" />
 		<spawn x="18263" y="112789" z="-6580" heading="65137" respawn="10800" />
 	</npc>
-	<npc id="29013" name="Premo" level="45" type="L2Monster" atkRange="40" hpMax="20277" hpReg="146.0" mpMax="746"
+	<npc id="29013" name="Premo" level="45" type="Monster" atkRange="40" hpMax="20277" hpReg="146.0" mpMax="746"
 		 mpReg="2.1"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="1" pAtk="515" mAtk="65" pDef="953" mDef="426"
 		 pAtkSpd="253"
@@ -437,7 +437,7 @@
 		<spawn x="18324" y="113037" z="-6580" heading="33345" respawn="10800" />
 		<spawn x="18649" y="113055" z="-6580" heading="14832" respawn="10800" />
 	</npc>
-	<npc id="29014" name="Orfen" level="60" type="L2GrandBoss" atkRange="40" hpMax="115920000" hpReg="441.65"
+	<npc id="29014" name="Orfen" level="60" type="GrandBoss" atkRange="40" hpMax="115920000" hpReg="441.65"
 		 mpMax="45066"
 		 mpReg="20.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="12776400" sp="3066" pAtk="2440"
 		 mAtk="15827"
@@ -514,7 +514,7 @@
 			<itemDrop itemId="6661" min="1" max="1" chance="100" /> <!-- Orfen's Earring -->
 		</dropCategory>
 	</npc>
-	<npc id="29015" name="Laikel" level="59" type="L2Monster" atkRange="40" hpMax="18370" hpReg="158.0" mpMax="845"
+	<npc id="29015" name="Laikel" level="59" type="Monster" atkRange="40" hpMax="18370" hpReg="158.0" mpMax="845"
 		 mpReg="2.1"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="1" pAtk="490" mAtk="50" pDef="1049" mDef="468"
 		 pAtkSpd="253"
@@ -539,7 +539,7 @@
 		<spawn x="43255" y="17641" z="-4392" heading="36796" respawn="360" />
 		<spawn x="43090" y="16054" z="-4392" heading="43570" respawn="360" />
 	</npc>
-	<npc id="29016" name="Laikel Leos" level="59" type="L2Monster" atkRange="40" hpMax="18370" hpReg="162.0" mpMax="879"
+	<npc id="29016" name="Laikel Leos" level="59" type="Monster" atkRange="40" hpMax="18370" hpReg="162.0" mpMax="879"
 		 mpReg="2.1"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="1" pAtk="1753" mAtk="1953" pDef="1081" mDef="482"
 		 pAtkSpd="253"
@@ -560,7 +560,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4067" level="4" /> <!-- Blow -->
 	</npc>
-	<npc id="29017" name="Riba" level="59" type="L2Monster" atkRange="40" hpMax="18370" hpReg="158.0" mpMax="845"
+	<npc id="29017" name="Riba" level="59" type="Monster" atkRange="40" hpMax="18370" hpReg="158.0" mpMax="845"
 		 mpReg="2.1"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="1" pAtk="490" mAtk="50" pDef="1049" mDef="468"
 		 pAtkSpd="253"
@@ -586,7 +586,7 @@
 		<spawn x="43612" y="17300" z="-4392" heading="45502" respawn="360" />
 		<spawn x="45216" y="16508" z="-4368" heading="31287" respawn="360" />
 	</npc>
-	<npc id="29018" name="Riba Iren" level="59" type="L2Monster" atkRange="40" hpMax="18370" hpReg="162.0" mpMax="879"
+	<npc id="29018" name="Riba Iren" level="59" type="Monster" atkRange="40" hpMax="18370" hpReg="162.0" mpMax="879"
 		 mpReg="2.1"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="1" pAtk="1753" mAtk="1953" pDef="1081" mDef="482"
 		 pAtkSpd="253"
@@ -609,7 +609,7 @@
 		<spawn x="43602" y="16055" z="-4392" heading="51150" respawn="360" />
 		<spawn x="44681" y="18047" z="-4392" heading="12257" respawn="360" />
 	</npc>
-	<npc id="29019" name="Antharas" level="79" type="L2GrandBoss" atkRange="40" hpMax="17915344" hpReg="1100.0"
+	<npc id="29019" name="Antharas" level="79" type="GrandBoss" atkRange="40" hpMax="17915344" hpReg="1100.0"
 		 mpMax="39960"
 		 mpReg="99.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="262720918" sp="29116376"
 		 pAtk="20004" mAtk="42150"
@@ -788,7 +788,7 @@
 			<itemDrop itemId="6656" min="1" max="1" chance="100" /> <!-- Antharas' Earring -->
 		</dropCategory>
 	</npc>
-	<npc id="29020" name="Baium" level="78" type="L2GrandBoss" atkRange="40" hpMax="127008000" hpReg="750.0"
+	<npc id="29020" name="Baium" level="78" type="GrandBoss" atkRange="40" hpMax="127008000" hpReg="750.0"
 		 mpMax="21960" mpReg="99.0"
 		 STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="11090077" sp="2661" pAtk="26894" mAtk="51981"
 		 pDef="5412"
@@ -848,7 +848,7 @@
 			<itemDrop itemId="6658" min="1" max="1" chance="100" /> <!-- Baium's Ring -->
 		</dropCategory>
 	</npc>
-	<npc id="29021" name="Archangel" level="77" type="L2Monster" atkRange="80" hpMax="323362" hpReg="158.0" mpMax="1800"
+	<npc id="29021" name="Archangel" level="77" type="Monster" atkRange="80" hpMax="323362" hpReg="158.0" mpMax="1800"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="6571" sp="343" pAtk="13645" mAtk="3235" pDef="8327"
 		 mDef="3353"
@@ -871,7 +871,7 @@
 		<skill id="4132" level="1" /> <!-- Spear Attack -->
 		<skill id="4133" level="1" /> <!-- Heal -->
 	</npc>
-	<npc id="29022" name="Zaken" level="60" type="L2GrandBoss" atkRange="40" hpMax="858879" hpReg="346.8" mpMax="399601"
+	<npc id="29022" name="Zaken" level="60" type="GrandBoss" atkRange="40" hpMax="858879" hpReg="346.8" mpMax="399601"
 		 mpReg="100.0"
 		 STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="4879745" sp="101661" pAtk="13093" mAtk="19763"
 		 pDef="2952"
@@ -981,7 +981,7 @@
 			<itemDrop itemId="8922" min="1" max="1" chance="100" /> <!-- Pirate Hat -->
 		</dropCategory>
 	</npc>
-	<npc id="29023" name="Doll Blader" level="58" type="L2Monster" atkRange="40" hpMax="3162" hpReg="6.5" mpMax="1016"
+	<npc id="29023" name="Doll Blader" level="58" type="Monster" atkRange="40" hpMax="3162" hpReg="6.5" mpMax="1016"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="780" mAtk="429" pDef="384" mDef="343" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -1009,7 +1009,7 @@
 			<itemDrop itemId="1061" min="4" max="8" chance="100" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="29024" name="Veil Master" level="59" type="L2Monster" atkRange="40" hpMax="3252" hpReg="6.5" mpMax="1051"
+	<npc id="29024" name="Veil Master" level="59" type="Monster" atkRange="40" hpMax="3252" hpReg="6.5" mpMax="1051"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="819" mAtk="453" pDef="396" mDef="353" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -1037,7 +1037,7 @@
 			<itemDrop itemId="1061" min="4" max="8" chance="100" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="29025" name="Baium" level="75" type="L2Npc" atkRange="40" hpMax="4070081" hpReg="718.0" mpMax="39960"
+	<npc id="29025" name="Baium" level="75" type="Npc" atkRange="40" hpMax="4070081" hpReg="718.0" mpMax="39960"
 		 mpReg="99.0"
 		 STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="7469" mAtk="25155" pDef="5412" mDef="8010"
 		 pAtkSpd="253"
@@ -1057,7 +1057,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29026" name="Pirate Zombie Captain" level="60" type="L2Monster" atkRange="40" hpMax="3344" hpReg="6.5"
+	<npc id="29026" name="Pirate Zombie Captain" level="60" type="Monster" atkRange="40" hpMax="3344" hpReg="6.5"
 		 mpMax="981"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="751" mAtk="478" pDef="406" mDef="362"
 		 pAtkSpd="253"
@@ -1082,7 +1082,7 @@
 			<itemDrop itemId="1061" min="4" max="8" chance="100" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="29027" name="Pirate Zombie" level="57" type="L2Monster" atkRange="40" hpMax="3072" hpReg="6.5" mpMax="713"
+	<npc id="29027" name="Pirate Zombie" level="57" type="Monster" atkRange="40" hpMax="3072" hpReg="6.5" mpMax="713"
 		 mpReg="2.1"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="650" mAtk="405" pDef="374" mDef="334" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -1107,7 +1107,7 @@
 			<itemDrop itemId="1061" min="4" max="8" chance="100" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="29028" name="Valakas" title="Fire Dragon" level="99" type="L2GrandBoss" atkRange="40" hpMax="1172612305"
+	<npc id="29028" name="Valakas" title="Fire Dragon" level="99" type="GrandBoss" atkRange="40" hpMax="1172612305"
 		 hpReg="1900.0"
 		 mpMax="2471403" mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="141209671680"
 		 sp="33890321"
@@ -1185,7 +1185,7 @@
 			<itemDrop itemId="18561" min="3" max="5" chance="33.3" /> <!-- Teal Soul Crystal (R99-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="29029" name="Lavasaurus Alpha" level="85" type="L2Monster" atkRange="1100" hpMax="7144" hpReg="67.006996"
+	<npc id="29029" name="Lavasaurus Alpha" level="85" type="Monster" atkRange="1100" hpMax="7144" hpReg="67.006996"
 		 mpMax="2416"
 		 mpReg="3.96" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5576" mAtk="1614" pDef="676"
 		 mDef="603" pAtkSpd="253"
@@ -1208,7 +1208,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="6656" level="1" /> <!-- Lavasaurus Alpha Attack -->
 	</npc>
-	<npc id="29030" name="Fenril Hound Kerinne" title="Family of Valakas" level="84" type="L2RaidBoss" atkRange="40"
+	<npc id="29030" name="Fenril Hound Kerinne" title="Family of Valakas" level="84" type="RaidBoss" atkRange="40"
 		 hpMax="249020"
 		 hpReg="170.72" mpMax="2022" mpReg="9.7" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="2407886"
 		 sp="1471881"
@@ -1238,7 +1238,7 @@
 			<itemDrop itemId="6655" min="14" max="42" chance="14.2135" /> <!-- Amulet: Slay Valakas -->
 		</dropCategory>
 	</npc>
-	<npc id="29031" name="Kerinne's Ifrit" level="84" type="L2Monster" atkRange="40" hpMax="35722" hpReg="33.792"
+	<npc id="29031" name="Kerinne's Ifrit" level="84" type="Monster" atkRange="40" hpMax="35722" hpReg="33.792"
 		 mpMax="1962"
 		 mpReg="3.84" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10099" mAtk="6651" pDef="2268"
 		 mDef="1013"
@@ -1260,7 +1260,7 @@
 		<skill id="4213" level="9" /> <!-- Haste -->
 		<skill id="4209" level="9" /> <!-- Heal -->
 	</npc>
-	<npc id="29032" name="Kerinne's Golem" level="84" type="L2Monster" atkRange="40" hpMax="4938" hpReg="48.0"
+	<npc id="29032" name="Kerinne's Golem" level="84" type="Monster" atkRange="40" hpMax="4938" hpReg="48.0"
 		 mpMax="1962"
 		 mpReg="3.84" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10099" mAtk="6651" pDef="2268"
 		 mDef="1013"
@@ -1280,7 +1280,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29033" name="Fenril Hound Freki" title="Family of Valakas" level="84" type="L2RaidBoss" atkRange="40"
+	<npc id="29033" name="Fenril Hound Freki" title="Family of Valakas" level="84" type="RaidBoss" atkRange="40"
 		 hpMax="252082"
 		 hpReg="171.99" mpMax="2084" mpReg="9.8" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="2434088"
 		 sp="1508414"
@@ -1309,7 +1309,7 @@
 			<itemDrop itemId="6655" min="14" max="42" chance="14.2135" /> <!-- Amulet: Slay Valakas -->
 		</dropCategory>
 	</npc>
-	<npc id="29034" name="Freki's Ifrit" level="84" type="L2Monster" atkRange="40" hpMax="36186" hpReg="34.92"
+	<npc id="29034" name="Freki's Ifrit" level="84" type="Monster" atkRange="40" hpMax="36186" hpReg="34.92"
 		 mpMax="2023"
 		 mpReg="3.88" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="13874" mAtk="12359" pDef="2320"
 		 mDef="1036"
@@ -1331,7 +1331,7 @@
 		<skill id="4193" level="9" /> <!-- Life Drain -->
 		<skill id="4203" level="9" /> <!-- Decrease Speed -->
 	</npc>
-	<npc id="29035" name="Freki's Golem" level="84" type="L2Monster" atkRange="40" hpMax="36186" hpReg="34.92"
+	<npc id="29035" name="Freki's Golem" level="84" type="Monster" atkRange="40" hpMax="36186" hpReg="34.92"
 		 mpMax="2023"
 		 mpReg="3.88" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10432" mAtk="6951" pDef="2320"
 		 mDef="1036"
@@ -1351,7 +1351,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29036" name="Fenril Hound Uruz" title="Family of Valakas" level="84" type="L2RaidBoss" atkRange="40"
+	<npc id="29036" name="Fenril Hound Uruz" title="Family of Valakas" level="84" type="RaidBoss" atkRange="40"
 		 hpMax="510008"
 		 hpReg="345.51" mpMax="2146" mpReg="9.9" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="2466262"
 		 sp="1547594"
@@ -1384,7 +1384,7 @@
 			<itemDrop itemId="6655" min="14" max="42" chance="14.2135" /> <!-- Amulet: Slay Valakas -->
 		</dropCategory>
 	</npc>
-	<npc id="29037" name="Fenril Hound Kinaz" title="Family of Valakas" level="84" type="L2RaidBoss" atkRange="40"
+	<npc id="29037" name="Fenril Hound Kinaz" title="Family of Valakas" level="84" type="RaidBoss" atkRange="40"
 		 hpMax="257782"
 		 hpReg="174.0" mpMax="2211" mpReg="10.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="2504880"
 		 sp="1587225"
@@ -1415,7 +1415,7 @@
 			<itemDrop itemId="6655" min="14" max="42" chance="14.2135" /> <!-- Amulet: Slay Valakas -->
 		</dropCategory>
 	</npc>
-	<npc id="29038" name="Kinaz' Ifrit" level="84" type="L2Monster" atkRange="40" hpMax="36186" hpReg="34.92"
+	<npc id="29038" name="Kinaz' Ifrit" level="84" type="Monster" atkRange="40" hpMax="36186" hpReg="34.92"
 		 mpMax="2022" mpReg="3.88"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="13874" mAtk="12359" pDef="2320" mDef="1036"
 		 pAtkSpd="253"
@@ -1437,7 +1437,7 @@
 		<skill id="4191" level="9" /> <!-- Wind Strike -->
 		<skill id="4201" level="9" /> <!-- Sleep -->
 	</npc>
-	<npc id="29039" name="Kinaz' Ifrit" level="84" type="L2Monster" atkRange="40" hpMax="36186" hpReg="34.92"
+	<npc id="29039" name="Kinaz' Ifrit" level="84" type="Monster" atkRange="40" hpMax="36186" hpReg="34.92"
 		 mpMax="2023" mpReg="3.88"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10432" mAtk="6951" pDef="2320" mDef="1036"
 		 pAtkSpd="253"
@@ -1459,7 +1459,7 @@
 		<skill id="4212" level="9" /> <!-- Shield -->
 		<skill id="4210" level="9" /> <!-- Chant of Life -->
 	</npc>
-	<npc id="29040" name="Wings of Flame, Ixion" title="Gatekeeper of Valakas" level="84" type="L2Monster" atkRange="40"
+	<npc id="29040" name="Wings of Flame, Ixion" title="Gatekeeper of Valakas" level="84" type="Monster" atkRange="40"
 		 hpMax="520824"
 		 hpReg="349.46" mpMax="2276" mpReg="10.1" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149"
 		 exp="2535974" sp="1356048"
@@ -1496,7 +1496,7 @@
 			<itemDrop itemId="6655" min="14" max="42" chance="14.2135" /> <!-- Amulet: Slay Valakas -->
 		</dropCategory>
 	</npc>
-	<npc id="29041" name="Inferno Golem" level="84" type="L2Monster" atkRange="40" hpMax="36186" hpReg="34.92"
+	<npc id="29041" name="Inferno Golem" level="84" type="Monster" atkRange="40" hpMax="36186" hpReg="34.92"
 		 mpMax="2023"
 		 mpReg="3.88" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="20863" mAtk="27803" pDef="2320"
 		 mDef="1036"
@@ -1517,7 +1517,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4179" level="9" /> <!-- Power Strike -->
 	</npc>
-	<npc id="29042" name="Inferno Golem" level="84" type="L2Monster" atkRange="40" hpMax="36186" hpReg="34.92"
+	<npc id="29042" name="Inferno Golem" level="84" type="Monster" atkRange="40" hpMax="36186" hpReg="34.92"
 		 mpMax="2023"
 		 mpReg="3.88" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10432" mAtk="6951" pDef="2320"
 		 mDef="1036"
@@ -1537,7 +1537,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29043" name="Howling Ifrit" level="84" type="L2Monster" atkRange="40" hpMax="36186" hpReg="34.92"
+	<npc id="29043" name="Howling Ifrit" level="84" type="Monster" atkRange="40" hpMax="36186" hpReg="34.92"
 		 mpMax="2023"
 		 mpReg="3.88" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10432" mAtk="6951" pDef="2320"
 		 mDef="1036"
@@ -1559,7 +1559,7 @@
 		<skill id="4211" level="9" /> <!-- Might -->
 		<skill id="4209" level="9" /> <!-- Heal -->
 	</npc>
-	<npc id="29044" name="Howling Ifrit" level="84" type="L2Monster" atkRange="40" hpMax="36186" hpReg="34.92"
+	<npc id="29044" name="Howling Ifrit" level="84" type="Monster" atkRange="40" hpMax="36186" hpReg="34.92"
 		 mpMax="2023"
 		 mpReg="3.88" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="13874" mAtk="12359" pDef="2320"
 		 mDef="1036"
@@ -1581,7 +1581,7 @@
 		<skill id="4191" level="9" /> <!-- Wind Strike -->
 		<skill id="4199" level="9" /> <!-- Decrease P. Atk. -->
 	</npc>
-	<npc id="29045" name="Frintezza" level="85" type="L2GrandBoss" atkRange="40" hpMax="1019249" hpReg="2484.3"
+	<npc id="29045" name="Frintezza" level="85" type="GrandBoss" atkRange="40" hpMax="1019249" hpReg="2484.3"
 		 mpMax="28577"
 		 mpReg="3.15" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="11170" mAtk="17232" pDef="7341"
 		 mDef="11950"
@@ -1602,7 +1602,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29046" name="Scarlet van Halisha" level="85" type="L2GrandBoss" atkRange="40" hpMax="45588020"
+	<npc id="29046" name="Scarlet van Halisha" level="85" type="GrandBoss" atkRange="40" hpMax="45588020"
 		 hpReg="248.43" mpMax="24480"
 		 mpReg="109.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="130849003" sp="10028450"
 		 pAtk="13260" mAtk="25578"
@@ -1633,7 +1633,7 @@
 		<skill id="5018" level="1" /> <!-- Frintezza Demon Field -->
 		<skill id="5016" level="1" /> <!-- Yoke of Scarlet -->
 	</npc>
-	<npc id="29047" name="Scarlet van Halisha" level="85" type="L2GrandBoss" atkRange="40" hpMax="77696824"
+	<npc id="29047" name="Scarlet van Halisha" level="85" type="GrandBoss" atkRange="40" hpMax="77696824"
 		 hpReg="248.43" mpMax="28251"
 		 mpReg="109.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="130849003" sp="31403" pAtk="37590"
 		 mAtk="159384"
@@ -1724,7 +1724,7 @@
 			<itemDrop itemId="21893" min="1" max="1" chance="100" /> <!-- Halisha's Helmet -->
 		</dropCategory>
 	</npc>
-	<npc id="29048" name="Evil Spirit" level="85" type="L2Monster" atkRange="40" hpMax="143321" hpReg="1.03"
+	<npc id="29048" name="Evil Spirit" level="85" type="Monster" atkRange="40" hpMax="143321" hpReg="1.03"
 		 mpMax="2657" mpReg="1.03"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3419" mAtk="2288" pDef="2850" mDef="2318"
 		 pAtkSpd="253"
@@ -1745,7 +1745,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29049" name="Evil Spirit" level="85" type="L2Monster" atkRange="40" hpMax="143321" hpReg="1.03"
+	<npc id="29049" name="Evil Spirit" level="85" type="Monster" atkRange="40" hpMax="143321" hpReg="1.03"
 		 mpMax="2657" mpReg="1.03"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3419" mAtk="2288" pDef="2850" mDef="2318"
 		 pAtkSpd="253"
@@ -1766,7 +1766,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29050" name="Halisha's Breath" level="85" type="L2Monster" atkRange="40" hpMax="22483" hpReg="1.01"
+	<npc id="29050" name="Halisha's Breath" level="85" type="Monster" atkRange="40" hpMax="22483" hpReg="1.01"
 		 mpMax="25084"
 		 mpReg="3.03" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3251" mAtk="2133" pDef="894"
 		 mDef="909" pAtkSpd="253"
@@ -1787,7 +1787,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29051" name="Halisha's Breath" level="85" type="L2Monster" atkRange="40" hpMax="22483" hpReg="1.01"
+	<npc id="29051" name="Halisha's Breath" level="85" type="Monster" atkRange="40" hpMax="22483" hpReg="1.01"
 		 mpMax="25084"
 		 mpReg="3.03" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3251" mAtk="2133" pDef="894"
 		 mDef="909" pAtkSpd="253"
@@ -1808,7 +1808,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29052" name="" level="85" type="L2Monster" atkRange="40" hpMax="6850" hpReg="8.585" mpMax="2510"
+	<npc id="29052" name="" level="85" type="Monster" atkRange="40" hpMax="6850" hpReg="8.585" mpMax="2510"
 		 mpReg="3.03" STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2540" mAtk="1667" pDef="6726" mDef="6001" pAtkSpd="253"
 		 mAtkSpd="2901"
@@ -1826,7 +1826,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="29053" name="" level="84" type="L2Monster" atkRange="40" hpMax="9426" hpReg="8.5" mpMax="2485" mpReg="3.0"
+	<npc id="29053" name="" level="84" type="Monster" atkRange="40" hpMax="9426" hpReg="8.5" mpMax="2485" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3041" mAtk="1976" pDef="668" mDef="596" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -1843,7 +1843,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="29054" name="Benom" title="Triol's Leader" level="99" type="L2GrandBoss" atkRange="40" hpMax="1353318"
+	<npc id="29054" name="Benom" title="Triol's Leader" level="99" type="GrandBoss" atkRange="40" hpMax="1353318"
 		 hpReg="357.0"
 		 mpMax="4967" mpReg="8.1" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="4355914" sp="1045"
 		 pAtk="17974"
@@ -1879,7 +1879,7 @@
 			<itemDrop itemId="6696" min="24" max="72" chance="23.0994" /> <!-- Heaven's Divider Edge -->
 		</dropCategory>
 	</npc>
-	<npc id="29055" name="Teleportation Cubic" level="70" type="L2Teleporter" atkRange="40" hpMax="4228" hpReg="7.5"
+	<npc id="29055" name="Teleportation Cubic" level="70" type="Teleporter" atkRange="40" hpMax="4228" hpReg="7.5"
 		 mpMax="1642"
 		 mpReg="2.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
 		 pAtkSpd="253"
@@ -1899,7 +1899,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29056" name="Ice Fairy Sirra" title="Raid Boss" level="60" type="L2RaidBoss" atkRange="40" hpMax="188455"
+	<npc id="29056" name="Ice Fairy Sirra" title="Raid Boss" level="60" type="RaidBoss" atkRange="40" hpMax="188455"
 		 hpReg="147.55765"
 		 mpMax="1264" mpReg="2.4" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="1610847" sp="386"
 		 pAtk="4628"
@@ -1952,7 +1952,7 @@
 			<itemDrop itemId="1343" min="100" max="200" chance="100" /> <!-- Silver Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="29057" name="Sirra's Servant" title="Raid Fighter" level="59" type="L2Monster" atkRange="40" hpMax="13358"
+	<npc id="29057" name="Sirra's Servant" title="Raid Fighter" level="59" type="Monster" atkRange="40" hpMax="13358"
 		 hpReg="57.96894"
 		 mpMax="1229" mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2098" mAtk="557"
 		 pDef="1150" mDef="642"
@@ -1978,7 +1978,7 @@
 			<itemDrop itemId="1344" min="20" max="60" chance="100" /> <!-- Mithril Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="29058" name="Sirra's Beholder" title="Raid Fighter" level="59" type="L2Monster" atkRange="40" hpMax="6679"
+	<npc id="29058" name="Sirra's Beholder" title="Raid Fighter" level="59" type="Monster" atkRange="40" hpMax="6679"
 		 hpReg="57.96894"
 		 mpMax="1229" mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2098" mAtk="557"
 		 pDef="1150" mDef="642"
@@ -2002,7 +2002,7 @@
 			<itemDrop itemId="1539" min="1" max="1" chance="100" /> <!-- Major Healing Potion -->
 		</dropCategory>
 	</npc>
-	<npc id="29059" name="" level="80" type="L2Monster" atkRange="40" hpMax="5534" hpReg="8.925" mpMax="2366"
+	<npc id="29059" name="" level="80" type="Monster" atkRange="40" hpMax="5534" hpReg="8.925" mpMax="2366"
 		 mpReg="3.15" STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2094" mAtk="1387" pDef="642" mDef="574" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -2021,7 +2021,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29060" name="Ice Queen's Escort Captain" title="Raid Boss" level="59" type="L2RaidBoss" atkRange="40"
+	<npc id="29060" name="Ice Queen's Escort Captain" title="Raid Boss" level="59" type="RaidBoss" atkRange="40"
 		 hpMax="157584"
 		 hpReg="124.21916" mpMax="1229" mpReg="2.4" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149"
 		 exp="1749006" sp="419"
@@ -2062,7 +2062,7 @@
 			<itemDrop itemId="4618" min="1" max="1" chance="54.5455" /> <!-- Greater DEX Dye [Dex + 4 CON - 4] -->
 		</dropCategory>
 	</npc>
-	<npc id="29061" name="Teleportation Cubic" level="70" type="L2Teleporter" atkRange="40" hpMax="4228" hpReg="7.5"
+	<npc id="29061" name="Teleportation Cubic" level="70" type="Teleporter" atkRange="40" hpMax="4228" hpReg="7.5"
 		 mpMax="1642"
 		 mpReg="2.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
 		 pAtkSpd="253"
@@ -2082,7 +2082,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29062" name="Andreas Van Halter" title="Seer of Pagan" level="99" type="L2RaidBoss" atkRange="40"
+	<npc id="29062" name="Andreas Van Halter" title="Seer of Pagan" level="99" type="RaidBoss" atkRange="40"
 		 hpMax="36816712"
 		 hpReg="364.87" mpMax="57462" mpReg="3.21" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149"
 		 exp="6751585467"
@@ -2151,7 +2151,7 @@
 		<itemDrop itemId="36164" min="1" max="1" chance="1.154" /> <!-- Giant's Scroll: Enchant Armor (R-grade) -->
 		<itemDrop itemId="36163" min="1" max="1" chance="0.5" /> <!-- Giant's Scroll: Enchant Weapon (R-grade) -->
 	</npc>
-	<npc id="29063" name="Andreas' Acolyte" title="Raid Fighter" level="99" type="L2Monster" atkRange="40"
+	<npc id="29063" name="Andreas' Acolyte" title="Raid Fighter" level="99" type="Monster" atkRange="40"
 		 hpMax="324814" hpReg="145.856"
 		 mpMax="27816" mpReg="3.18" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="30000" mAtk="15000"
 		 pDef="944"
@@ -2177,7 +2177,7 @@
 			<itemDrop itemId="1344" min="60" max="180" chance="100" /> <!-- Mithril Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="29064" name="Andreas' Acolyte" title="Raid Fighter" level="99" type="L2Monster" atkRange="40"
+	<npc id="29064" name="Andreas' Acolyte" title="Raid Fighter" level="99" type="Monster" atkRange="40"
 		 hpMax="324814" hpReg="145.32"
 		 mpMax="2366" mpReg="3.15" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="30000" mAtk="15000"
 		 pDef="944"
@@ -2203,7 +2203,7 @@
 			<itemDrop itemId="1344" min="60" max="180" chance="100" /> <!-- Mithril Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="29065" name="Sailren" title="Sealed Evil Power" level="80" type="L2GrandBoss" atkRange="40" hpMax="1640654"
+	<npc id="29065" name="Sailren" title="Sealed Evil Power" level="80" type="GrandBoss" atkRange="40" hpMax="1640654"
 		 hpReg="264.82407"
 		 mpMax="2503" mpReg="3.21" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="4569144" sp="1096"
 		 pAtk="13619"
@@ -2242,7 +2242,7 @@
 			<itemDrop itemId="6577" min="1" max="1" chance="1.4926" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="29066" name="Antharas" level="79" type="L2GrandBoss" atkRange="40" hpMax="14571147" hpReg="1100.0"
+	<npc id="29066" name="Antharas" level="79" type="GrandBoss" atkRange="40" hpMax="14571147" hpReg="1100.0"
 		 mpMax="3996001"
 		 mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="262720918" sp="29116376"
 		 pAtk="20004"
@@ -2427,7 +2427,7 @@
 			<itemDrop itemId="6656" min="1" max="1" chance="100" /> <!-- Antharas' Earring -->
 		</dropCategory>
 	</npc>
-	<npc id="29067" name="Antharas" level="79" type="L2GrandBoss" atkRange="40" hpMax="16243246" hpReg="1100.0"
+	<npc id="29067" name="Antharas" level="79" type="GrandBoss" atkRange="40" hpMax="16243246" hpReg="1100.0"
 		 mpMax="3996001"
 		 mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="354676030" sp="39307416"
 		 pAtk="20004"
@@ -2615,7 +2615,7 @@
 			<itemDrop itemId="6656" min="1" max="1" chance="100" /> <!-- Antharas' Earring -->
 		</dropCategory>
 	</npc>
-	<npc id="29068" name="Antharas" title="Land Dragon" level="99" type="L2GrandBoss" atkRange="40" hpMax="1172612305"
+	<npc id="29068" name="Antharas" title="Land Dragon" level="99" type="GrandBoss" atkRange="40" hpMax="1172612305"
 		 hpReg="1830.0"
 		 mpMax="3996001" mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="141209671680"
 		 sp="33890321"
@@ -2728,7 +2728,7 @@
 			<itemDrop itemId="6656" min="1" max="1" chance="100" /> <!-- Antharas' Earring -->
 		</dropCategory>
 	</npc>
-	<npc id="29069" name="Behemoth Dragon" level="99" type="L2Monster" atkRange="40" hpMax="696050" hpReg="76.71"
+	<npc id="29069" name="Behemoth Dragon" level="99" type="Monster" atkRange="40" hpMax="696050" hpReg="76.71"
 		 mpMax="4016"
 		 mpReg="3.0" STR="164" CON="111" DEX="48" INT="188" WIT="71" MEN="149" pAtk="15157" mAtk="24587" pDef="1865"
 		 mDef="2019"
@@ -2752,7 +2752,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5095" level="1" /> <!-- Antharas Strike -->
 	</npc>
-	<npc id="29070" name="Dragon Bomber" level="99" type="L2Monster" atkRange="40" hpMax="3223" hpReg="8.5" mpMax="4016"
+	<npc id="29070" name="Dragon Bomber" level="99" type="Monster" atkRange="40" hpMax="3223" hpReg="8.5" mpMax="4016"
 		 mpReg="3.0"
 		 STR="164" CON="111" DEX="48" INT="188" WIT="71" MEN="149" pAtk="4627" mAtk="86921" pDef="622" mDef="1010"
 		 pAtkSpd="253"
@@ -2775,7 +2775,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5097" level="1" /> <!-- Antharas Self-destruction -->
 	</npc>
-	<npc id="29071" name="Dragon Bomber" level="78" type="L2Monster" atkRange="40" hpMax="2389" hpReg="8.5" mpMax="3569"
+	<npc id="29071" name="Dragon Bomber" level="78" type="Monster" atkRange="40" hpMax="2389" hpReg="8.5" mpMax="3569"
 		 mpReg="3.0"
 		 STR="164" CON="111" DEX="48" INT="188" WIT="71" MEN="149" pAtk="3473" mAtk="9546" pDef="556" mDef="903"
 		 pAtkSpd="253"
@@ -2796,7 +2796,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5097" level="1" /> <!-- Antharas Self-destruction -->
 	</npc>
-	<npc id="29072" name="Dragon Bomber" level="78" type="L2Monster" atkRange="40" hpMax="2389" hpReg="8.5" mpMax="3569"
+	<npc id="29072" name="Dragon Bomber" level="78" type="Monster" atkRange="40" hpMax="2389" hpReg="8.5" mpMax="3569"
 		 mpReg="3.0"
 		 STR="164" CON="111" DEX="48" INT="188" WIT="71" MEN="149" pAtk="3473" mAtk="9546" pDef="556" mDef="903"
 		 pAtkSpd="253"
@@ -2817,7 +2817,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5097" level="1" /> <!-- Antharas Self-destruction -->
 	</npc>
-	<npc id="29073" name="Dragon Bomber" level="78" type="L2Monster" atkRange="40" hpMax="2389" hpReg="8.5" mpMax="3569"
+	<npc id="29073" name="Dragon Bomber" level="78" type="Monster" atkRange="40" hpMax="2389" hpReg="8.5" mpMax="3569"
 		 mpReg="3.0"
 		 STR="164" CON="111" DEX="48" INT="188" WIT="71" MEN="149" pAtk="3473" mAtk="9546" pDef="556" mDef="903"
 		 pAtkSpd="253"
@@ -2838,7 +2838,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5097" level="1" /> <!-- Antharas Self-destruction -->
 	</npc>
-	<npc id="29074" name="Dragon Bomber" level="78" type="L2Monster" atkRange="40" hpMax="2389" hpReg="8.5" mpMax="3569"
+	<npc id="29074" name="Dragon Bomber" level="78" type="Monster" atkRange="40" hpMax="2389" hpReg="8.5" mpMax="3569"
 		 mpReg="3.0"
 		 STR="164" CON="111" DEX="48" INT="188" WIT="71" MEN="149" pAtk="3473" mAtk="9546" pDef="556" mDef="903"
 		 pAtkSpd="253"
@@ -2859,7 +2859,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5097" level="1" /> <!-- Antharas Self-destruction -->
 	</npc>
-	<npc id="29075" name="Dragon Bomber" level="78" type="L2Monster" atkRange="40" hpMax="2389" hpReg="8.5" mpMax="3569"
+	<npc id="29075" name="Dragon Bomber" level="78" type="Monster" atkRange="40" hpMax="2389" hpReg="8.5" mpMax="3569"
 		 mpReg="3.0"
 		 STR="164" CON="111" DEX="48" INT="188" WIT="71" MEN="149" pAtk="3473" mAtk="9546" pDef="556" mDef="903"
 		 pAtkSpd="253"
@@ -2880,7 +2880,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5097" level="1" /> <!-- Antharas Self-destruction -->
 	</npc>
-	<npc id="29076" name="Dragon Bomber" level="99" type="L2Monster" atkRange="40" hpMax="3223" hpReg="8.5" mpMax="4016"
+	<npc id="29076" name="Dragon Bomber" level="99" type="Monster" atkRange="40" hpMax="3223" hpReg="8.5" mpMax="4016"
 		 mpReg="3.0"
 		 STR="164" CON="111" DEX="48" INT="188" WIT="71" MEN="149" pAtk="4627" mAtk="86921" pDef="622" mDef="1010"
 		 pAtkSpd="253"
@@ -2903,7 +2903,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5094" level="1" /> <!-- Antharas Self-destruction -->
 	</npc>
-	<npc id="29077" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29077" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -2921,7 +2921,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29078" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29078" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -2939,7 +2939,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29079" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29079" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -2957,7 +2957,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29080" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29080" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -2975,7 +2975,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29081" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29081" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -2993,7 +2993,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29082" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29082" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3011,7 +3011,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29083" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29083" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3029,7 +3029,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29084" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29084" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3047,7 +3047,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29085" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29085" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3065,7 +3065,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29086" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29086" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3083,7 +3083,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29087" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29087" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3101,7 +3101,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29088" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29088" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3119,7 +3119,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29089" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29089" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3137,7 +3137,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29090" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29090" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3155,7 +3155,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29091" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29091" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3173,7 +3173,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29092" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29092" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3191,7 +3191,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29093" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29093" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3209,7 +3209,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29094" name="" level="78" type="L2Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
+	<npc id="29094" name="" level="78" type="Monster" atkRange="40" hpMax="4849" hpReg="8.5" mpMax="1962" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1716" mAtk="1070" pDef="556" mDef="497" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3227,7 +3227,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29095" name="Gordon" title="Knight of Destruction" level="80" type="L2RaidBoss" atkRange="40"
+	<npc id="29095" name="Gordon" title="Knight of Destruction" level="80" type="RaidBoss" atkRange="40"
 		 hpMax="2289999" hpReg="369.6137"
 		 mpMax="4554" mpReg="3.21" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="5885016" sp="1412"
 		 pAtk="25173"
@@ -3266,7 +3266,7 @@
 			<itemDrop itemId="6577" min="1" max="1" chance="1.4926" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="29096" name="Anais" title="Lord of Splendor" level="84" type="L2RaidBoss" atkRange="40" hpMax="1148709"
+	<npc id="29096" name="Anais" title="Lord of Splendor" level="84" type="RaidBoss" atkRange="40" hpMax="1148709"
 		 hpReg="147.84547"
 		 mpMax="4554" mpReg="3.21" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="8827525" sp="2036475"
 		 pAtk="12587"
@@ -3312,7 +3312,7 @@
 			<itemDrop itemId="8920" min="1" max="1" chance="47.2441" /> <!-- Angel Halo -->
 		</dropCategory>
 	</npc>
-	<npc id="29097" name="Disciple of Splendor" title="Raid Fighter" level="80" type="L2Monster" atkRange="40"
+	<npc id="29097" name="Disciple of Splendor" title="Raid Fighter" level="80" type="Monster" atkRange="40"
 		 hpMax="59556"
 		 hpReg="145.01361" mpMax="2434" mpReg="3.18" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="12193"
 		 mAtk="8868"
@@ -3337,7 +3337,7 @@
 			<itemDrop itemId="1344" min="60" max="180" chance="100" /> <!-- Mithril Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="29098" name="Worshiper of Splendor" title="Raid Fighter" level="80" type="L2Monster" atkRange="40"
+	<npc id="29098" name="Worshiper of Splendor" title="Raid Fighter" level="80" type="Monster" atkRange="40"
 		 hpMax="79806"
 		 hpReg="145.01361" mpMax="2434" mpReg="3.18" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="12193"
 		 mAtk="8868"
@@ -3362,7 +3362,7 @@
 			<itemDrop itemId="1344" min="60" max="180" chance="100" /> <!-- Mithril Arrow -->
 		</dropCategory>
 	</npc>
-	<npc id="29099" name="Baylor" title="Warden" level="83" type="L2GrandBoss" atkRange="40" hpMax="2576020"
+	<npc id="29099" name="Baylor" title="Warden" level="83" type="GrandBoss" atkRange="40" hpMax="2576020"
 		 hpReg="100.86274"
 		 mpMax="222001" mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="3190204"
 		 sp="2630019" pAtk="8772"
@@ -3391,7 +3391,7 @@
 		<skill id="5226" level="1" /> <!-- Imprison -->
 		<skill id="5478" level="1" /> <!-- Raid Boss (Lv. 83) -->
 	</npc>
-	<npc id="29100" name="Crystal Prison Guard" level="83" type="L2Monster" atkRange="40" hpMax="29569"
+	<npc id="29100" name="Crystal Prison Guard" level="83" type="Monster" atkRange="40" hpMax="29569"
 		 hpReg="190.89705" mpMax="2169"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3657" mAtk="2349" pDef="974" mDef="870"
 		 pAtkSpd="253"
@@ -3415,7 +3415,7 @@
 		<skill id="5043" level="9" /> <!-- Supersonic Blaster -->
 		<skill id="4032" level="9" /> <!-- Power Strike -->
 	</npc>
-	<npc id="29101" name="Crystalline Golem" level="83" type="L2Monster" atkRange="40" hpMax="177270" hpReg="190.74538"
+	<npc id="29101" name="Crystalline Golem" level="83" type="Monster" atkRange="40" hpMax="177270" hpReg="190.74538"
 		 mpMax="2169"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1960" mAtk="1259" pDef="609" mDef="544"
 		 pAtkSpd="253"
@@ -3434,7 +3434,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29102" name="Crystalline Golem" level="83" type="L2Npc" atkRange="40" hpMax="4712" hpReg="8.5" mpMax="2169"
+	<npc id="29102" name="Crystalline Golem" level="83" type="Npc" atkRange="40" hpMax="4712" hpReg="8.5" mpMax="2169"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1960" mAtk="1259" pDef="609" mDef="544"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -3452,7 +3452,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29103" name="Baylor" title="Warden" level="83" type="L2GrandBoss" atkRange="40" hpMax="4712" hpReg="8.5"
+	<npc id="29103" name="Baylor" title="Warden" level="83" type="GrandBoss" atkRange="40" hpMax="4712" hpReg="8.5"
 		 mpMax="2169"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1960" mAtk="1259" pDef="609" mDef="544"
 		 pAtkSpd="253"
@@ -3473,7 +3473,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5479" level="1" /> <!-- Boss Petrification Resistance -->
 	</npc>
-	<npc id="29104" name="Crystal Prison Guard" level="83" type="L2Monster" atkRange="40" hpMax="5164" hpReg="8.5"
+	<npc id="29104" name="Crystal Prison Guard" level="83" type="Monster" atkRange="40" hpMax="5164" hpReg="8.5"
 		 mpMax="2169"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1960" mAtk="1259" pDef="609" mDef="544"
 		 pAtkSpd="253"
@@ -3493,7 +3493,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5479" level="1" /> <!-- Boss Petrification Resistance -->
 	</npc>
-	<npc id="29105" name="Crystalline Golem" level="83" type="L2Monster" atkRange="40" hpMax="4712" hpReg="8.5"
+	<npc id="29105" name="Crystalline Golem" level="83" type="Monster" atkRange="40" hpMax="4712" hpReg="8.5"
 		 mpMax="2169"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1960" mAtk="1259" pDef="609" mDef="544"
 		 pAtkSpd="253"
@@ -3513,7 +3513,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="5479" level="1" /> <!-- Boss Petrification Resistance -->
 	</npc>
-	<npc id="29106" name="" level="83" type="L2Npc" atkRange="40" hpMax="5164" hpReg="8.5" mpMax="2169" mpReg="3.0"
+	<npc id="29106" name="" level="83" type="Npc" atkRange="40" hpMax="5164" hpReg="8.5" mpMax="2169" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1960" mAtk="1259" pDef="609" mDef="544" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3530,7 +3530,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29107" name="" level="83" type="L2Npc" atkRange="40" hpMax="1" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
+	<npc id="29107" name="" level="83" type="Npc" atkRange="40" hpMax="1" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
 		 CON="82"
 		 DEX="55" INT="79" WIT="78" MEN="78" pAtk="3" mAtk="2" pDef="2" mDef="3" pAtkSpd="253" mAtkSpd="500"
 		 pCritRate="40" mCritRate="40"
@@ -3547,7 +3547,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29108" name="" level="83" type="L2Npc" atkRange="40" hpMax="1" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
+	<npc id="29108" name="" level="83" type="Npc" atkRange="40" hpMax="1" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
 		 CON="82"
 		 DEX="55" INT="79" WIT="78" MEN="78" pAtk="3" mAtk="2" pDef="2" mDef="3" pAtkSpd="253" mAtkSpd="500"
 		 pCritRate="40" mCritRate="40"
@@ -3564,7 +3564,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29109" name="" level="83" type="L2Npc" atkRange="40" hpMax="1" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
+	<npc id="29109" name="" level="83" type="Npc" atkRange="40" hpMax="1" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
 		 CON="82"
 		 DEX="55" INT="79" WIT="78" MEN="78" pAtk="3" mAtk="2" pDef="2" mDef="3" pAtkSpd="253" mAtkSpd="500"
 		 pCritRate="40" mCritRate="40"
@@ -3581,7 +3581,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29110" name="" level="83" type="L2Npc" atkRange="40" hpMax="2" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
+	<npc id="29110" name="" level="83" type="Npc" atkRange="40" hpMax="2" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
 		 CON="82"
 		 DEX="55" INT="79" WIT="78" MEN="78" pAtk="3" mAtk="2" pDef="2" mDef="3" pAtkSpd="253" mAtkSpd="500"
 		 pCritRate="40" mCritRate="40"
@@ -3598,7 +3598,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29111" name="" level="83" type="L2Npc" atkRange="40" hpMax="2" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
+	<npc id="29111" name="" level="83" type="Npc" atkRange="40" hpMax="2" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
 		 CON="82"
 		 DEX="55" INT="79" WIT="78" MEN="78" pAtk="3" mAtk="2" pDef="2" mDef="3" pAtkSpd="253" mAtkSpd="500"
 		 pCritRate="40" mCritRate="40"
@@ -3615,7 +3615,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29112" name="" level="83" type="L2Npc" atkRange="40" hpMax="2" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
+	<npc id="29112" name="" level="83" type="Npc" atkRange="40" hpMax="2" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
 		 CON="82"
 		 DEX="55" INT="79" WIT="78" MEN="78" pAtk="3" mAtk="2" pDef="2" mDef="3" pAtkSpd="253" mAtkSpd="500"
 		 pCritRate="40" mCritRate="40"
@@ -3632,7 +3632,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29113" name="" level="83" type="L2Npc" atkRange="40" hpMax="2" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
+	<npc id="29113" name="" level="83" type="Npc" atkRange="40" hpMax="2" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
 		 CON="82"
 		 DEX="55" INT="79" WIT="78" MEN="78" pAtk="3" mAtk="2" pDef="2" mDef="3" pAtkSpd="253" mAtkSpd="500"
 		 pCritRate="40" mCritRate="40"
@@ -3649,7 +3649,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29114" name="" level="83" type="L2Npc" atkRange="40" hpMax="2" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
+	<npc id="29114" name="" level="83" type="Npc" atkRange="40" hpMax="2" hpReg="1.0" mpMax="2" mpReg="1.0" STR="88"
 		 CON="82"
 		 DEX="55" INT="79" WIT="78" MEN="78" pAtk="3" mAtk="2" pDef="2" mDef="3" pAtkSpd="253" mAtkSpd="500"
 		 pCritRate="40" mCritRate="40"
@@ -3666,7 +3666,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29115" name="Crystal Prison Guard" level="83" type="L2Npc" atkRange="40" hpMax="4712" hpReg="8.5"
+	<npc id="29115" name="Crystal Prison Guard" level="83" type="Npc" atkRange="40" hpMax="4712" hpReg="8.5"
 		 mpMax="2169"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1960" mAtk="1259" pDef="609" mDef="544"
 		 pAtkSpd="253"
@@ -3686,7 +3686,7 @@
 		<skill id="4032" level="9" /> <!-- Power Strike -->
 		<skill id="5043" level="9" /> <!-- Supersonic Blaster -->
 	</npc>
-	<npc id="29116" name="Baylor's Treasure Chest" level="83" type="L2Monster" atkRange="40" hpMax="4712" hpReg="8.5"
+	<npc id="29116" name="Baylor's Treasure Chest" level="83" type="Monster" atkRange="40" hpMax="4712" hpReg="8.5"
 		 mpMax="2169"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1960" mAtk="1259" pDef="609" mDef="544"
 		 pAtkSpd="253"
@@ -3733,7 +3733,7 @@
 			<itemDrop itemId="6578" min="1" max="1" chance="86.9565" /> <!-- Blessed Scroll: Enchant Armor (S-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="29117" name="Baylor's Treasure Chest" level="83" type="L2Monster" atkRange="40" hpMax="4712" hpReg="8.5"
+	<npc id="29117" name="Baylor's Treasure Chest" level="83" type="Monster" atkRange="40" hpMax="4712" hpReg="8.5"
 		 mpMax="2169"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1960" mAtk="1259" pDef="609" mDef="544"
 		 pAtkSpd="253"
@@ -3770,7 +3770,7 @@
 			<itemDrop itemId="6578" min="1" max="1" chance="86.9565" /> <!-- Blessed Scroll: Enchant Armor (S-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="29118" name="Beleth" level="83" type="L2GrandBoss" atkRange="40" hpMax="4504228" hpReg="200.0"
+	<npc id="29118" name="Beleth" level="83" type="GrandBoss" atkRange="40" hpMax="4504228" hpReg="200.0"
 		 mpMax="1220000"
 		 mpReg="1000.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="16050188" sp="1635181" pAtk="82560"
 		 mAtk="44650"
@@ -3825,7 +3825,7 @@
 			<itemDrop itemId="10223" min="1" max="1" chance="6.51" /> <!-- Icarus Spitter -->
 		</dropCategory>
 	</npc>
-	<npc id="29119" name="Beleth" level="83" type="L2Monster" atkRange="40" hpMax="1569787" hpReg="200.0"
+	<npc id="29119" name="Beleth" level="83" type="Monster" atkRange="40" hpMax="1569787" hpReg="200.0"
 		 mpMax="1220000" mpReg="1000.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="82560" mAtk="44650" pDef="812" mDef="1364"
 		 pAtkSpd="253"
@@ -3851,7 +3851,7 @@
 		<skill id="5497" level="1" /> <!-- Horn of Rising Darkness -->
 		<skill id="5499" level="1" /> <!-- Dark Lightening -->
 	</npc>
-	<npc id="29120" name="" level="80" type="L2Npc" atkRange="40" hpMax="5691" hpReg="8.5" mpMax="2044" mpReg="3.0"
+	<npc id="29120" name="" level="80" type="Npc" atkRange="40" hpMax="5691" hpReg="8.5" mpMax="2044" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1969" mAtk="1242" pDef="577" mDef="516" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3870,7 +3870,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29121" name="" level="80" type="L2Npc" atkRange="40" hpMax="5691" hpReg="8.5" mpMax="2044" mpReg="3.0"
+	<npc id="29121" name="" level="80" type="Npc" atkRange="40" hpMax="5691" hpReg="8.5" mpMax="2044" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1969" mAtk="1242" pDef="577" mDef="516" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3889,7 +3889,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29122" name="" level="80" type="L2Npc" atkRange="40" hpMax="5691" hpReg="8.5" mpMax="2044" mpReg="3.0"
+	<npc id="29122" name="" level="80" type="Npc" atkRange="40" hpMax="5691" hpReg="8.5" mpMax="2044" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1969" mAtk="1242" pDef="577" mDef="516" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3908,7 +3908,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29123" name="" level="80" type="L2Npc" atkRange="40" hpMax="5691" hpReg="8.5" mpMax="2044" mpReg="3.0"
+	<npc id="29123" name="" level="80" type="Npc" atkRange="40" hpMax="5691" hpReg="8.5" mpMax="2044" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1969" mAtk="1242" pDef="577" mDef="516" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3927,7 +3927,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29124" name="" level="80" type="L2Npc" atkRange="40" hpMax="5691" hpReg="8.5" mpMax="2044" mpReg="3.0"
+	<npc id="29124" name="" level="80" type="Npc" atkRange="40" hpMax="5691" hpReg="8.5" mpMax="2044" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1969" mAtk="1242" pDef="577" mDef="516" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3946,7 +3946,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29125" name="" level="80" type="L2Npc" atkRange="40" hpMax="5691" hpReg="8.5" mpMax="2044" mpReg="3.0"
+	<npc id="29125" name="" level="80" type="Npc" atkRange="40" hpMax="5691" hpReg="8.5" mpMax="2044" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1969" mAtk="1242" pDef="577" mDef="516" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3965,7 +3965,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29126" name="" level="80" type="L2Npc" atkRange="80" hpMax="4983" hpReg="8.5" mpMax="2044" mpReg="3.0"
+	<npc id="29126" name="" level="80" type="Npc" atkRange="80" hpMax="4983" hpReg="8.5" mpMax="2044" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1815" mAtk="1145" pDef="462" mDef="516" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -3983,7 +3983,7 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29127" name="" level="80" type="L2Npc" atkRange="80" hpMax="4983" hpReg="8.5" mpMax="2044" mpReg="3.0"
+	<npc id="29127" name="" level="80" type="Npc" atkRange="80" hpMax="4983" hpReg="8.5" mpMax="2044" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1815" mAtk="1145" pDef="462" mDef="516" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -4001,7 +4001,7 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29128" name="" level="80" type="L2Npc" atkRange="40" hpMax="4546" hpReg="8.5" mpMax="2044" mpReg="3.0"
+	<npc id="29128" name="" level="80" type="Npc" atkRange="40" hpMax="4546" hpReg="8.5" mpMax="2044" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1815" mAtk="1145" pDef="577" mDef="516" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -4019,7 +4019,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29129" name="Lost Guard Captain" level="29" type="L2RaidBoss" atkRange="40" hpMax="98340" hpReg="9.658559"
+	<npc id="29129" name="Lost Guard Captain" level="29" type="RaidBoss" atkRange="40" hpMax="98340" hpReg="9.658559"
 		 mpMax="385"
 		 mpReg="1.5" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="1002626" sp="240" pAtk="1433"
 		 mAtk="928"
@@ -4057,7 +4057,7 @@
 			<itemDrop itemId="6576" min="3" max="9" chance="100" /> <!-- Blessed Scroll: Enchant Armor (D-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="29130" name="Lost Guard" level="29" type="L2Monster" atkRange="40" hpMax="4489" hpReg="4.8292794"
+	<npc id="29130" name="Lost Guard" level="29" type="Monster" atkRange="40" hpMax="4489" hpReg="4.8292794"
 		 mpMax="385" mpReg="1.5"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="354" mAtk="156" pDef="204" mDef="122" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -4076,7 +4076,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29131" name="Lost Assistant Guard" level="29" type="L2Monster" atkRange="40" hpMax="4489" hpReg="4.8292794"
+	<npc id="29131" name="Lost Assistant Guard" level="29" type="Monster" atkRange="40" hpMax="4489" hpReg="4.8292794"
 		 mpMax="385"
 		 mpReg="7.5" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="236" mAtk="104" pDef="204" mDef="122"
 		 pAtkSpd="253"
@@ -4100,7 +4100,7 @@
 		<skill id="4214" level="2" /> <!-- Reflect Damage -->
 		<skill id="4780" level="2" /> <!-- Heal -->
 	</npc>
-	<npc id="29132" name="Lost Guard Captain" level="39" type="L2RaidBoss" atkRange="40" hpMax="160978"
+	<npc id="29132" name="Lost Guard Captain" level="39" type="RaidBoss" atkRange="40" hpMax="160978"
 		 hpReg="14.1234865" mpMax="565"
 		 mpReg="1.8" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="990443" sp="237" pAtk="3320"
 		 mAtk="2331"
@@ -4142,7 +4142,7 @@
 			<itemDrop itemId="6574" min="1" max="1" chance="47.2131" /> <!-- Blessed Scroll: Enchant Armor (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="29133" name="Lost Guard" level="39" type="L2Monster" atkRange="80" hpMax="7169" hpReg="7.0617433"
+	<npc id="29133" name="Lost Guard" level="39" type="Monster" atkRange="80" hpMax="7169" hpReg="7.0617433"
 		 mpMax="565" mpReg="1.8"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="820" mAtk="392" pDef="234" mDef="175" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -4161,7 +4161,7 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29134" name="Lost Assistant Guard" level="39" type="L2Monster" atkRange="40" hpMax="7169" hpReg="7.0617433"
+	<npc id="29134" name="Lost Assistant Guard" level="39" type="Monster" atkRange="40" hpMax="7169" hpReg="7.0617433"
 		 mpMax="565"
 		 mpReg="9.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="547" mAtk="262" pDef="234" mDef="175"
 		 pAtkSpd="253"
@@ -4185,7 +4185,7 @@
 		<skill id="4214" level="3" /> <!-- Reflect Damage -->
 		<skill id="4780" level="3" /> <!-- Heal -->
 	</npc>
-	<npc id="29135" name="Lost Guard Captain" level="49" type="L2RaidBoss" atkRange="40" hpMax="263613"
+	<npc id="29135" name="Lost Guard Captain" level="49" type="RaidBoss" atkRange="40" hpMax="263613"
 		 hpReg="21.125446" mpMax="879"
 		 mpReg="2.1" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="3019381" sp="724" pAtk="7015"
 		 mAtk="5311"
@@ -4228,7 +4228,7 @@
 			<itemDrop itemId="6573" min="1" max="1" chance="4.2056" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="29136" name="Lost Guard" level="49" type="L2Monster" atkRange="40" hpMax="11474" hpReg="10.562723"
+	<npc id="29136" name="Lost Guard" level="49" type="Monster" atkRange="40" hpMax="11474" hpReg="10.562723"
 		 mpMax="879"
 		 mpReg="2.1" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1732" mAtk="893" pDef="487" mDef="242"
 		 pAtkSpd="253"
@@ -4247,7 +4247,7 @@
 		<skill id="4415" level="4" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29137" name="Lost Assistant Guard" level="49" type="L2Monster" atkRange="40" hpMax="11474"
+	<npc id="29137" name="Lost Assistant Guard" level="49" type="Monster" atkRange="40" hpMax="11474"
 		 hpReg="10.562723" mpMax="879"
 		 mpReg="10.5" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1155" mAtk="595" pDef="487" mDef="242"
 		 pAtkSpd="253"
@@ -4271,7 +4271,7 @@
 		<skill id="4214" level="4" /> <!-- Reflect Damage -->
 		<skill id="4780" level="4" /> <!-- Heal -->
 	</npc>
-	<npc id="29138" name="Lost Guard Captain" level="59" type="L2RaidBoss" atkRange="40" hpMax="374664" hpReg="28.07804"
+	<npc id="29138" name="Lost Guard Captain" level="59" type="RaidBoss" atkRange="40" hpMax="374664" hpReg="28.07804"
 		 mpMax="1229"
 		 mpReg="2.4" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="3594131" sp="862" pAtk="13083"
 		 mAtk="10622"
@@ -4318,7 +4318,7 @@
 			<itemDrop itemId="6572" min="1" max="1" chance="22.0533" /> <!-- Blessed Scroll: Enchant Armor (B-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="29139" name="Lost Guard" level="59" type="L2Monster" atkRange="40" hpMax="16105" hpReg="14.03902"
+	<npc id="29139" name="Lost Guard" level="59" type="Monster" atkRange="40" hpMax="16105" hpReg="14.03902"
 		 mpMax="1229"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3231" mAtk="1785" pDef="432" mDef="321"
 		 pAtkSpd="253"
@@ -4337,7 +4337,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29140" name="Lost Assistant Guard" level="59" type="L2Monster" atkRange="40" hpMax="16105" hpReg="14.03902"
+	<npc id="29140" name="Lost Assistant Guard" level="59" type="Monster" atkRange="40" hpMax="16105" hpReg="14.03902"
 		 mpMax="1229"
 		 mpReg="12.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2154" mAtk="1190" pDef="432"
 		 mDef="321" pAtkSpd="253"
@@ -4361,7 +4361,7 @@
 		<skill id="4214" level="5" /> <!-- Reflect Damage -->
 		<skill id="4780" level="5" /> <!-- Heal -->
 	</npc>
-	<npc id="29141" name="Lost Guard Captain" level="69" type="L2RaidBoss" atkRange="40" hpMax="456669"
+	<npc id="29141" name="Lost Guard Captain" level="69" type="RaidBoss" atkRange="40" hpMax="456669"
 		 hpReg="32.463535" mpMax="1604"
 		 mpReg="2.7" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="8315796" sp="1995" pAtk="20989"
 		 mAtk="18192"
@@ -4401,7 +4401,7 @@
 			<itemDrop itemId="729" min="1" max="1" chance="11.6009" /> <!-- Scroll: Enchant Weapon (A-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="29142" name="Lost Guard" level="69" type="L2Monster" atkRange="40" hpMax="19540" hpReg="16.231768"
+	<npc id="29142" name="Lost Guard" level="69" type="Monster" atkRange="40" hpMax="19540" hpReg="16.231768"
 		 mpMax="1604"
 		 mpReg="2.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="5183" mAtk="3058" pDef="691" mDef="411"
 		 pAtkSpd="253"
@@ -4420,7 +4420,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29143" name="Lost Assistant Guard" level="69" type="L2Monster" atkRange="40" hpMax="19540"
+	<npc id="29143" name="Lost Assistant Guard" level="69" type="Monster" atkRange="40" hpMax="19540"
 		 hpReg="16.231768" mpMax="1604"
 		 mpReg="13.5" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3455" mAtk="2039" pDef="691"
 		 mDef="411" pAtkSpd="253"
@@ -4444,7 +4444,7 @@
 		<skill id="4214" level="6" /> <!-- Reflect Damage -->
 		<skill id="4780" level="6" /> <!-- Heal -->
 	</npc>
-	<npc id="29144" name="Lost Guard Captain" level="78" type="L2RaidBoss" atkRange="80" hpMax="508720"
+	<npc id="29144" name="Lost Guard Captain" level="78" type="RaidBoss" atkRange="80" hpMax="508720"
 		 hpReg="35.161358" mpMax="1961"
 		 mpReg="3.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="12606594" sp="3025" pAtk="27701"
 		 mAtk="25378"
@@ -4483,7 +4483,7 @@
 			<itemDrop itemId="6577" min="1" max="1" chance="1.4926" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="29145" name="Lost Guard" level="78" type="L2Monster" atkRange="40" hpMax="21742" hpReg="17.580679"
+	<npc id="29145" name="Lost Guard" level="78" type="Monster" atkRange="40" hpMax="21742" hpReg="17.580679"
 		 mpMax="1962"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="6840" mAtk="4265" pDef="834" mDef="497"
 		 pAtkSpd="253"
@@ -4504,7 +4504,7 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29146" name="Lost Assistant Guard" level="78" type="L2Monster" atkRange="40" hpMax="21742"
+	<npc id="29146" name="Lost Assistant Guard" level="78" type="Monster" atkRange="40" hpMax="21742"
 		 hpReg="17.580679" mpMax="1961"
 		 mpReg="15.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4560" mAtk="2844" pDef="834"
 		 mDef="497" pAtkSpd="253"
@@ -4530,7 +4530,7 @@
 		<skill id="4214" level="7" /> <!-- Reflect Damage -->
 		<skill id="4780" level="7" /> <!-- Heal -->
 	</npc>
-	<npc id="29147" name="Lost Guard Captain" level="81" type="L2RaidBoss" atkRange="40" hpMax="524537"
+	<npc id="29147" name="Lost Guard Captain" level="81" type="RaidBoss" atkRange="40" hpMax="524537"
 		 hpReg="36.164974" mpMax="2084"
 		 mpReg="3.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="12961356" sp="3110" pAtk="29364"
 		 mAtk="27384"
@@ -4577,7 +4577,7 @@
 			<itemDrop itemId="6577" min="1" max="1" chance="1.4926" /> <!-- Blessed Scroll: Enchant Weapon (S-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="29148" name="Lost Guard" level="81" type="L2Monster" atkRange="40" hpMax="22417" hpReg="18.082487"
+	<npc id="29148" name="Lost Guard" level="81" type="Monster" atkRange="40" hpMax="22417" hpReg="18.082487"
 		 mpMax="2084"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="7251" mAtk="4602" pDef="882" mDef="525"
 		 pAtkSpd="253"
@@ -4598,7 +4598,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29149" name="Lost Assistant Guard" level="81" type="L2Monster" atkRange="40" hpMax="22417"
+	<npc id="29149" name="Lost Assistant Guard" level="81" type="Monster" atkRange="40" hpMax="22417"
 		 hpReg="18.082487" mpMax="2084"
 		 mpReg="15.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4834" mAtk="3068" pDef="882"
 		 mDef="525" pAtkSpd="253"
@@ -4624,7 +4624,7 @@
 		<skill id="4214" level="8" /> <!-- Reflect Damage -->
 		<skill id="4780" level="8" /> <!-- Heal -->
 	</npc>
-	<npc id="29150" name="Ekimus" title="Immortal Lord" level="85" type="L2GrandBoss" atkRange="40" hpMax="2805810"
+	<npc id="29150" name="Ekimus" title="Immortal Lord" level="85" type="GrandBoss" atkRange="40" hpMax="2805810"
 		 hpReg="1754.501"
 		 mpMax="2049950" mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="8536"
 		 mAtk="25791" pDef="21777"
@@ -4688,7 +4688,7 @@
 			<itemDrop itemId="17017" min="1" max="1" chance="2.98" /> <!-- Sealed Vesper Noble Shoes -->
 		</dropCategory>
 	</npc>
-	<npc id="29151" name="Feral Hound of the Netherworld" level="82" type="L2Monster" atkRange="40" hpMax="7324"
+	<npc id="29151" name="Feral Hound of the Netherworld" level="82" type="Monster" atkRange="40" hpMax="7324"
 		 hpReg="8.5"
 		 mpMax="1126550" mpReg="1000.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2440" mAtk="1558"
 		 pDef="619"
@@ -4709,7 +4709,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29152" name="Feral Hound of the Netherworld" level="82" type="L2Monster" atkRange="40" hpMax="6683"
+	<npc id="29152" name="Feral Hound of the Netherworld" level="82" type="Monster" atkRange="40" hpMax="6683"
 		 hpReg="8.5"
 		 mpMax="1126550" mpReg="1000.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4276" mAtk="1558"
 		 pDef="619"
@@ -4730,7 +4730,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29153" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29153" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -4747,7 +4747,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29154" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29154" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -4764,7 +4764,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29155" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29155" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -4781,7 +4781,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29156" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29156" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -4798,7 +4798,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29157" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29157" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -4815,7 +4815,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29158" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29158" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -4832,7 +4832,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29159" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29159" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -4849,7 +4849,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29160" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29160" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -4866,7 +4866,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29161" name="Pre-Awakened Ekimus" level="73" type="L2Npc" atkRange="40" hpMax="4474" hpReg="8.5"
+	<npc id="29161" name="Pre-Awakened Ekimus" level="73" type="Npc" atkRange="40" hpMax="4474" hpReg="8.5"
 		 mpMax="1760" mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -4885,7 +4885,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29162" name="Soldiers of Bravery" title="Tiat's Escort" level="82" type="L2Monster" atkRange="80"
+	<npc id="29162" name="Soldiers of Bravery" title="Tiat's Escort" level="82" type="Monster" atkRange="80"
 		 hpMax="578927"
 		 hpReg="187.26079" mpMax="225310" mpReg="1000.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78"
 		 pAtk="16220" mAtk="10356"
@@ -4907,7 +4907,7 @@
 		<skill id="4415" level="11" /> <!-- Spear -->
 		<skill id="5309" level="5" /> <!-- Bleed -->
 	</npc>
-	<npc id="29163" name="Tiat" title="Witch of the Dragon of Darkness" level="82" type="L2GrandBoss" atkRange="40"
+	<npc id="29163" name="Tiat" title="Witch of the Dragon of Darkness" level="82" type="GrandBoss" atkRange="40"
 		 hpMax="13152277"
 		 hpReg="548.2837" mpMax="409990" mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149"
 		 exp="10771181568"
@@ -4958,7 +4958,7 @@
 			<itemDrop itemId="10223" min="1" max="1" chance="6.51" /> <!-- Icarus Spitter -->
 		</dropCategory>
 	</npc>
-	<npc id="29164" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29164" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -4975,7 +4975,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29165" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29165" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -4992,7 +4992,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29166" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29166" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -5009,7 +5009,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29167" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29167" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -5026,7 +5026,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29168" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29168" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -5047,7 +5047,7 @@
 		<skill id="4415" level="4" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29169" name="" level="73" type="L2Monster" atkRange="40" hpMax="4474" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29169" name="" level="73" type="Monster" atkRange="40" hpMax="4474" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -5064,7 +5064,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29170" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29170" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -5081,7 +5081,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29171" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29171" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -5098,7 +5098,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29172" name="" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
+	<npc id="29172" name="" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760" mpReg="3.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -5115,7 +5115,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29173" name="Priest Tiat" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760"
+	<npc id="29173" name="Priest Tiat" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -5132,7 +5132,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29174" name="Priest Tiat" level="73" type="L2Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760"
+	<npc id="29174" name="Priest Tiat" level="73" type="Npc" atkRange="40" hpMax="4083" hpReg="8.5" mpMax="1760"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1464" mAtk="886" pDef="503" mDef="449"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -5149,7 +5149,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29175" name="Tiat" title="Witch of the Dragon of Darkness" level="82" type="L2GrandBoss" atkRange="40"
+	<npc id="29175" name="Tiat" title="Witch of the Dragon of Darkness" level="82" type="GrandBoss" atkRange="40"
 		 hpMax="13194881"
 		 hpReg="548.2837" mpMax="409990" mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149"
 		 exp="11480334"
@@ -5198,7 +5198,7 @@
 			<itemDrop itemId="3936" min="1" max="3" chance="84.9057" /> <!-- Blessed Scroll of Resurrection -->
 		</dropCategory>
 	</npc>
-	<npc id="29176" name="Zaken" level="60" type="L2GrandBoss" atkRange="40" hpMax="215376" hpReg="337.0" mpMax="66600"
+	<npc id="29176" name="Zaken" level="60" type="GrandBoss" atkRange="40" hpMax="215376" hpReg="337.0" mpMax="66600"
 		 mpReg="200.0"
 		 STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="4154684" sp="140992" pAtk="4387" mAtk="4274"
 		 pDef="369"
@@ -5248,7 +5248,7 @@
 					  chance="100" /> <!-- Ancient Book: Divine Inspiration (Original Language Version) -->
 		</dropCategory>
 	</npc>
-	<npc id="29177" name="Freya" title="Ice Queen" level="85" type="L2GrandBoss" atkRange="40" hpMax="4736058"
+	<npc id="29177" name="Freya" title="Ice Queen" level="85" type="GrandBoss" atkRange="40" hpMax="4736058"
 		 hpReg="556.4821"
 		 mpMax="409990" mpReg="300.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="34605"
 		 mAtk="45728" pDef="1889"
@@ -5280,7 +5280,7 @@
 		<skill id="6285" level="1" /> <!-- Rage of Ice -->
 		<skill id="6283" level="1" /> <!-- Ice Storm -->
 	</npc>
-	<npc id="29178" name="Freya" title="Ice Queen" level="85" type="L2Npc" atkRange="40" hpMax="4736058"
+	<npc id="29178" name="Freya" title="Ice Queen" level="85" type="Npc" atkRange="40" hpMax="4736058"
 		 hpReg="556.4821" mpMax="409990"
 		 mpReg="300.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="34605" mAtk="45728" pDef="1889"
 		 mDef="2046"
@@ -5316,7 +5316,7 @@
 		<skill id="6299" level="1" /> <!-- Icy Breath - Ice Storm -->
 		<skill id="6301" level="1" /> <!-- Cold Mana Fragment -->
 	</npc>
-	<npc id="29179" name="Freya" title="Ice Queen" level="85" type="L2GrandBoss" atkRange="40" hpMax="6338224"
+	<npc id="29179" name="Freya" title="Ice Queen" level="85" type="GrandBoss" atkRange="40" hpMax="6338224"
 		 hpReg="612.1303"
 		 mpMax="409990" mpReg="300.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="51569936"
 		 sp="12376" pAtk="38065"
@@ -5401,7 +5401,7 @@
 			<itemDrop itemId="16025" min="1" max="1" chance="100" /> <!-- Freya's Necklace -->
 		</dropCategory>
 	</npc>
-	<npc id="29180" name="Freya" title="Ice Queen" level="88" type="L2GrandBoss" atkRange="40" hpMax="112413776"
+	<npc id="29180" name="Freya" title="Ice Queen" level="88" type="GrandBoss" atkRange="40" hpMax="112413776"
 		 hpReg="800.4821"
 		 mpMax="409990" mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="8789285120"
 		 sp="2109428"
@@ -5483,7 +5483,7 @@
 			<itemDrop itemId="16026" min="1" max="1" chance="20" /> <!-- Blessed Freya's Necklace -->
 		</dropCategory>
 	</npc>
-	<npc id="29181" name="Zaken" level="83" type="L2GrandBoss" atkRange="40" hpMax="7514198" hpReg="818.2758"
+	<npc id="29181" name="Zaken" level="83" type="GrandBoss" atkRange="40" hpMax="7514198" hpReg="818.2758"
 		 mpMax="394583"
 		 mpReg="300.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="15282888" sp="492433" pAtk="33533"
 		 mAtk="44353"
@@ -5578,7 +5578,7 @@
 			<itemDrop itemId="21712" min="1" max="1" chance="100" /> <!-- Blessed Zaken's Earring -->
 		</dropCategory>
 	</npc>
-	<npc id="29182" name="Doll Blader" level="81" type="L2Monster" atkRange="40" hpMax="5988" hpReg="8.5" mpMax="2085"
+	<npc id="29182" name="Doll Blader" level="81" type="Monster" atkRange="40" hpMax="5988" hpReg="8.5" mpMax="2085"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2066" mAtk="1311" pDef="588" mDef="525"
 		 pAtkSpd="253" mAtkSpd="333"
@@ -5602,7 +5602,7 @@
 		<skill id="4086" level="1" /> <!-- Critical Chance -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29183" name="Veil Master" level="82" type="L2Monster" atkRange="40" hpMax="6303" hpReg="8.5" mpMax="2127"
+	<npc id="29183" name="Veil Master" level="82" type="Monster" atkRange="40" hpMax="6303" hpReg="8.5" mpMax="2127"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2166" mAtk="1383" pDef="599" mDef="534"
 		 pAtkSpd="253" mAtkSpd="333"
@@ -5625,7 +5625,7 @@
 		<skill id="4086" level="1" /> <!-- Critical Chance -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29184" name="Pirate Zombie Captain" level="83" type="L2Monster" atkRange="40" hpMax="6635" hpReg="8.5"
+	<npc id="29184" name="Pirate Zombie Captain" level="83" type="Monster" atkRange="40" hpMax="6635" hpReg="8.5"
 		 mpMax="2169"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2270" mAtk="1458" pDef="609" mDef="544"
 		 pAtkSpd="253"
@@ -5649,7 +5649,7 @@
 		<skill id="5709" level="2" /> <!-- Whirlpool -->
 		<skill id="5710" level="2" /> <!-- Triple Sword -->
 	</npc>
-	<npc id="29185" name="Pirate Zombie" level="81" type="L2Monster" atkRange="40" hpMax="5988" hpReg="8.5" mpMax="2085"
+	<npc id="29185" name="Pirate Zombie" level="81" type="Monster" atkRange="40" hpMax="5988" hpReg="8.5" mpMax="2085"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2066" mAtk="1311" pDef="588" mDef="525"
 		 pAtkSpd="253" mAtkSpd="333"
@@ -5670,7 +5670,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="29186" name="Baylor" title="Warden" level="85" type="L2Npc" atkRange="40" hpMax="2353582" hpReg="378.67368"
+	<npc id="29186" name="Baylor" title="Warden" level="85" type="Npc" atkRange="40" hpMax="2353582" hpReg="378.67368"
 		 mpMax="4341"
 		 mpReg="300.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="9930637" sp="1322209" pAtk="16173"
 		 mAtk="32996"
@@ -5715,7 +5715,7 @@
 			<itemDrop itemId="6578" min="1" max="1" chance="86.9565" /> <!-- Blessed Scroll: Enchant Armor (S-grade) -->
 		</dropCategory>
 	</npc>
-	<npc id="29187" name="Crystal Prison Guard" level="85" type="L2Npc" atkRange="40" hpMax="29697" hpReg="187.368"
+	<npc id="29187" name="Crystal Prison Guard" level="85" type="Npc" atkRange="40" hpMax="29697" hpReg="187.368"
 		 mpMax="2386"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="3831" mAtk="2489" pDef="1049"
 		 mDef="937" pAtkSpd="253"
@@ -5740,7 +5740,7 @@
 		<skill id="5043" level="9" /> <!-- Supersonic Blaster -->
 		<skill id="4032" level="9" /> <!-- Power Strike -->
 	</npc>
-	<npc id="29188" name="Crystalline Golem" level="85" type="L2Npc" atkRange="40" hpMax="180924" hpReg="187.368"
+	<npc id="29188" name="Crystalline Golem" level="85" type="Npc" atkRange="40" hpMax="180924" hpReg="187.368"
 		 mpMax="2254"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2053" mAtk="1334" pDef="630" mDef="562"
 		 pAtkSpd="253"
@@ -5760,7 +5760,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29189" name="Crystalline Golem" level="85" type="L2Npc" atkRange="40" hpMax="4809" hpReg="8.5" mpMax="2254"
+	<npc id="29189" name="Crystalline Golem" level="85" type="Npc" atkRange="40" hpMax="4809" hpReg="8.5" mpMax="2254"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="2053" mAtk="1334" pDef="630" mDef="562"
 		 pAtkSpd="253" mAtkSpd="333"
@@ -5780,7 +5780,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 	</npc>
-	<npc id="29190" name="Tarask Dragon" level="99" type="L2Npc" atkRange="40" hpMax="696050" hpReg="76.71" mpMax="4016"
+	<npc id="29190" name="Tarask Dragon" level="99" type="Npc" atkRange="40" hpMax="696050" hpReg="76.71" mpMax="4016"
 		 mpReg="3.0"
 		 STR="164" CON="111" DEX="48" INT="188" WIT="71" MEN="149" pAtk="15157" mAtk="24587" pDef="1865" mDef="2019"
 		 pAtkSpd="253"
@@ -5804,7 +5804,7 @@
 		<skill id="5095" level="1" /> <!-- Antharas Strike -->
 		<skill id="5096" level="1" /> <!-- Antharas Power Shot -->
 	</npc>
-	<npc id="29191" name="Octavis" level="98" type="L2GrandBoss" atkRange="40" hpMax="47211216" hpReg="200.0"
+	<npc id="29191" name="Octavis" level="98" type="GrandBoss" atkRange="40" hpMax="47211216" hpReg="200.0"
 		 mpMax="27816"
 		 mpReg="200.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="2732594106" sp="186080440"
 		 pAtk="450000"
@@ -5818,7 +5818,7 @@
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 		<skill id="14285" level="1" /> <!-- Octavis' Arrow Shaft -->
 	</npc>
-	<npc id="29192" name="Octavis' Beast" level="98" type="L2GrandBoss" atkRange="40" hpMax="2159243" hpReg="912.1303"
+	<npc id="29192" name="Octavis' Beast" level="98" type="GrandBoss" atkRange="40" hpMax="2159243" hpReg="912.1303"
 		 mpMax="27816"
 		 mpReg="700.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="68550544" sp="6164678" pAtk="250000"
 		 mAtk="150000"
@@ -5832,7 +5832,7 @@
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 		<skill id="4416" level="3" /> <!-- Beast -->
 	</npc>
-	<npc id="29193" name="Octavis" level="98" type="L2GrandBoss" atkRange="40" hpMax="29579580" hpReg="19000.9"
+	<npc id="29193" name="Octavis" level="98" type="GrandBoss" atkRange="40" hpMax="29579580" hpReg="19000.9"
 		 mpMax="27816"
 		 mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="2788645860" sp="186080440"
 		 pAtk="600000"
@@ -5848,7 +5848,7 @@
 		<skill id="14026" level="1" /> <!-- Hero's Sword Energy -->
 		<skill id="14575" level="1" /> <!-- Medusa's Soul -->
 	</npc>
-	<npc id="29194" name="Octavis" level="98" type="L2GrandBoss" atkRange="40" hpMax="37360856" hpReg="20000.9"
+	<npc id="29194" name="Octavis" level="98" type="GrandBoss" atkRange="40" hpMax="37360856" hpReg="20000.9"
 		 mpMax="27816"
 		 mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="16629786992" sp="3991148"
 		 pAtk="800000"
@@ -5905,7 +5905,7 @@
 		<itemDrop itemId="17400" min="1" max="1" chance="0.28901" /> <!-- Seraph Boots - Heavy Armor -->
 		<itemDrop itemId="17403" min="1" max="1" chance="0.28901" /> <!-- Seraph Leather Armor - Light Armor -->
 	</npc>
-	<npc id="29195" name="Istina" title="Queen of Annihilation" level="94" type="L2GrandBoss" atkRange="40"
+	<npc id="29195" name="Istina" title="Queen of Annihilation" level="94" type="GrandBoss" atkRange="40"
 		 hpMax="40836020"
 		 hpReg="852.1303" mpMax="27816" mpReg="700.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149"
 		 exp="7840606928"
@@ -5961,7 +5961,7 @@
 		<itemDrop itemId="17327" min="1" max="1" chance="0.3" /> <!-- Apocalypse Avenger -->
 		<itemDrop itemId="17325" min="1" max="1" chance="0.3" /> <!-- Apocalypse Cutter -->
 	</npc>
-	<npc id="29196" name="Istina" title="Queen of Annihilation" level="99" type="L2GrandBoss" atkRange="40"
+	<npc id="29196" name="Istina" title="Queen of Annihilation" level="99" type="GrandBoss" atkRange="40"
 		 hpMax="41029788"
 		 hpReg="20363.91" mpMax="27816" mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149"
 		 exp="11505119472"
@@ -6058,7 +6058,7 @@
 		<itemDrop itemId="17433" min="1" max="1" chance="0.3" /> <!-- Eternal Gauntlets - Heavy Armor -->
 		<itemDrop itemId="17441" min="1" max="1" chance="0.3" /> <!-- Eternal Circlet - Robe -->
 	</npc>
-	<npc id="29197" name="Earth Wyrm Trasken" title="Hell's Gate" level="99" type="L2Npc" atkRange="40"
+	<npc id="29197" name="Earth Wyrm Trasken" title="Hell's Gate" level="99" type="Npc" atkRange="40"
 		 hpMax="871083456" hpReg="575.58"
 		 mpMax="27816" mpReg="417.66" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="971" mAtk="663"
 		 pDef="341"
@@ -6134,7 +6134,7 @@
 		<itemDrop itemId="18073" min="1" max="1" chance="0.75" /> <!-- Blessed Amaranthine Fighter -->
 		<itemDrop itemId="18075" min="1" max="1" chance="0.75" /> <!-- Blessed Amaranthine Thrower -->
 	</npc>
-	<npc id="29198" name="Tentacle" level="99" type="L2Monster" atkRange="40" hpMax="2208510" hpReg="70.74"
+	<npc id="29198" name="Tentacle" level="99" type="Monster" atkRange="40" hpMax="2208510" hpReg="70.74"
 		 mpMax="27816" mpReg="20.92"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -6152,7 +6152,7 @@
 		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
 		<skill id="4439" level="5" /> <!-- Greater Hold Resistance -->
 	</npc>
-	<npc id="29199" name="Giant Tentacle" level="99" type="L2Npc" atkRange="40" hpMax="2208510" hpReg="71.04"
+	<npc id="29199" name="Giant Tentacle" level="99" type="Npc" atkRange="40" hpMax="2208510" hpReg="71.04"
 		 mpMax="27816"
 		 mpReg="51.55" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -6166,7 +6166,7 @@
 		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
 		<skill id="4439" level="5" /> <!-- Greater Hold Resistance -->
 	</npc>
-	<npc id="29200" name="Earth Wyrm Tail" level="99" type="L2GrandBoss" atkRange="40" hpMax="229638944" hpReg="65.5"
+	<npc id="29200" name="Earth Wyrm Tail" level="99" type="GrandBoss" atkRange="40" hpMax="229638944" hpReg="65.5"
 		 mpMax="27816"
 		 mpReg="12.12" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="23669416" sp="494322" pAtk="971"
 		 mAtk="663"
@@ -6178,7 +6178,7 @@
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="29201" name="Earth Wyrm Victim" level="99" type="L2Npc" atkRange="40" hpMax="1536018" hpReg="62.56"
+	<npc id="29201" name="Earth Wyrm Victim" level="99" type="Npc" atkRange="40" hpMax="1536018" hpReg="62.56"
 		 mpMax="27816"
 		 mpReg="45.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -6193,7 +6193,7 @@
 		<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
 		<skill id="4413" level="9" /> <!-- Slightly Weak M. Def. -->
 	</npc>
-	<npc id="29202" name="Earth Wyrm Victim" level="99" type="L2Npc" atkRange="40" hpMax="1536018" hpReg="62.56"
+	<npc id="29202" name="Earth Wyrm Victim" level="99" type="Npc" atkRange="40" hpMax="1536018" hpReg="62.56"
 		 mpMax="27816"
 		 mpReg="45.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -6208,7 +6208,7 @@
 		<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
 		<skill id="4413" level="9" /> <!-- Slightly Weak M. Def. -->
 	</npc>
-	<npc id="29203" name="Earth Wyrm Victim" level="99" type="L2Npc" atkRange="40" hpMax="1536018" hpReg="62.56"
+	<npc id="29203" name="Earth Wyrm Victim" level="99" type="Npc" atkRange="40" hpMax="1536018" hpReg="62.56"
 		 mpMax="27816"
 		 mpReg="45.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -6223,7 +6223,7 @@
 		<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
 		<skill id="4413" level="9" /> <!-- Slightly Weak M. Def. -->
 	</npc>
-	<npc id="29204" name="Larva" level="99" type="L2Npc" atkRange="40" hpMax="6144074" hpReg="101.64" mpMax="27816"
+	<npc id="29204" name="Larva" level="99" type="Npc" atkRange="40" hpMax="6144074" hpReg="101.64" mpMax="27816"
 		 mpReg="73.75"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -6237,7 +6237,7 @@
 		<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
 		<skill id="4413" level="9" /> <!-- Slightly Weak M. Def. -->
 	</npc>
-	<npc id="29205" name="Tentacle" level="99" type="L2Monster" atkRange="40" hpMax="2111848" hpReg="69.64"
+	<npc id="29205" name="Tentacle" level="99" type="Monster" atkRange="40" hpMax="2111848" hpReg="69.64"
 		 mpMax="27816" mpReg="20.64"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -6255,7 +6255,7 @@
 		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
 		<skill id="4439" level="5" /> <!-- Greater Hold Resistance -->
 	</npc>
-	<npc id="29206" name="Stomach Gland" level="99" type="L2Monster" atkRange="40" hpMax="736170" hpReg="65.5"
+	<npc id="29206" name="Stomach Gland" level="99" type="Monster" atkRange="40" hpMax="736170" hpReg="65.5"
 		 mpMax="27816"
 		 mpReg="12.12" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="23669416" sp="494322" pAtk="971"
 		 mAtk="663"
@@ -6268,7 +6268,7 @@
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="29207" name="Larva" level="99" type="L2Monster" atkRange="40" hpMax="3248143" hpReg="65.5" mpMax="27816"
+	<npc id="29207" name="Larva" level="99" type="Monster" atkRange="40" hpMax="3248143" hpReg="65.5" mpMax="27816"
 		 mpReg="12.12"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="23669416" sp="494322" pAtk="971" mAtk="663"
 		 pDef="341" mDef="250"
@@ -6284,7 +6284,7 @@
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="29208" name="Larva" level="99" type="L2Monster" atkRange="40" hpMax="2111848" hpReg="65.5" mpMax="27816"
+	<npc id="29208" name="Larva" level="99" type="Monster" atkRange="40" hpMax="2111848" hpReg="65.5" mpMax="27816"
 		 mpReg="12.12"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="23669416" sp="494322" pAtk="971" mAtk="663"
 		 pDef="341" mDef="250"
@@ -6300,7 +6300,7 @@
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="29209" name="Octavis" level="99" type="L2GrandBoss" atkRange="40" hpMax="84518704" hpReg="200.0"
+	<npc id="29209" name="Octavis" level="99" type="GrandBoss" atkRange="40" hpMax="84518704" hpReg="200.0"
 		 mpMax="27816"
 		 mpReg="200.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="600000" mAtk="400000" pDef="6000"
 		 mDef="4000"
@@ -6314,7 +6314,7 @@
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 		<skill id="14285" level="1" /> <!-- Octavis' Arrow Shaft -->
 	</npc>
-	<npc id="29210" name="Octavis' Beast" level="99" type="L2GrandBoss" atkRange="40" hpMax="2208510" hpReg="912.1303"
+	<npc id="29210" name="Octavis' Beast" level="99" type="GrandBoss" atkRange="40" hpMax="2208510" hpReg="912.1303"
 		 mpMax="27816"
 		 mpReg="700.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="69956672" sp="6164678" pAtk="300000"
 		 mAtk="250000"
@@ -6328,7 +6328,7 @@
 		<skill id="4416" level="3" /> <!-- Beast -->
 		<skill id="5464" level="1" /> <!-- Wind Attack -->
 	</npc>
-	<npc id="29211" name="Octavis" level="99" type="L2GrandBoss" atkRange="40" hpMax="73285056" hpReg="19000.9"
+	<npc id="29211" name="Octavis" level="99" type="GrandBoss" atkRange="40" hpMax="73285056" hpReg="19000.9"
 		 mpMax="27816"
 		 mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="147590928" sp="12524212"
 		 pAtk="800000"
@@ -6344,7 +6344,7 @@
 		<skill id="14026" level="1" /> <!-- Hero's Sword Energy -->
 		<skill id="14575" level="1" /> <!-- Medusa's Soul -->
 	</npc>
-	<npc id="29212" name="Octavis" level="99" type="L2GrandBoss" atkRange="40" hpMax="46010816" hpReg="20000.9"
+	<npc id="29212" name="Octavis" level="99" type="GrandBoss" atkRange="40" hpMax="46010816" hpReg="20000.9"
 		 mpMax="27816"
 		 mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="29747926593" sp="7139502"
 		 pAtk="1000000"
@@ -6426,7 +6426,7 @@
 		<itemDrop itemId="17416" min="1" max="1" chance="0.3" /> <!-- Amaranthine Shaper -->
 		<itemDrop itemId="17421" min="1" max="1" chance="0.3" /> <!-- Amaranthine Stormer -->
 	</npc>
-	<npc id="29213" name="Baylor" title="Warden" level="98" type="L2GrandBoss" atkRange="40" hpMax="4101847"
+	<npc id="29213" name="Baylor" title="Warden" level="98" type="GrandBoss" atkRange="40" hpMax="4101847"
 		 hpReg="88.23" mpMax="27816"
 		 mpReg="64.02" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="738701264" sp="177288"
 		 pAtk="223536" mAtk="197808"
@@ -6508,7 +6508,7 @@
 		<itemDrop itemId="35353" min="1" max="1" chance="0.5" /> <!-- Eternal Shoe Ingredient -->
 		<itemDrop itemId="35338" min="1" max="1" chance="0.5" /> <!-- Eternal Helmet Ingredient -->
 	</npc>
-	<npc id="29214" name="Crystal Prison Guard" level="97" type="L2Npc" atkRange="40" hpMax="36245" hpReg="0.0"
+	<npc id="29214" name="Crystal Prison Guard" level="97" type="Npc" atkRange="40" hpMax="36245" hpReg="0.0"
 		 mpMax="27816"
 		 mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -6519,7 +6519,7 @@
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="29215" name="Crystalline Golem" level="97" type="L2Npc" atkRange="40" hpMax="362451" hpReg="37.74"
+	<npc id="29215" name="Crystalline Golem" level="97" type="Npc" atkRange="40" hpMax="362451" hpReg="37.74"
 		 mpMax="27816"
 		 mpReg="27.39" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -6529,7 +6529,7 @@
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="5464" level="1" /> <!-- Wind Attack -->
 	</npc>
-	<npc id="29216" name="Crystalline Golem" level="97" type="L2Npc" atkRange="40" hpMax="36245" hpReg="0.0"
+	<npc id="29216" name="Crystalline Golem" level="97" type="Npc" atkRange="40" hpMax="36245" hpReg="0.0"
 		 mpMax="27816" mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -6539,7 +6539,7 @@
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="5464" level="1" /> <!-- Wind Attack -->
 	</npc>
-	<npc id="29217" name="Crystal Prison Guard" level="97" type="L2Npc" atkRange="40" hpMax="24903" hpReg="14.78"
+	<npc id="29217" name="Crystal Prison Guard" level="97" type="Npc" atkRange="40" hpMax="24903" hpReg="14.78"
 		 mpMax="27816"
 		 mpReg="10.73" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -6550,7 +6550,7 @@
 		<skill id="4416" level="9" /> <!-- Demons -->
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="29218" name="Balok" title="Hell's Warden" level="99" type="L2GrandBoss" atkRange="40" hpMax="19813664"
+	<npc id="29218" name="Balok" title="Hell's Warden" level="99" type="GrandBoss" atkRange="40" hpMax="19813664"
 		 hpReg="37502.273"
 		 mpMax="27816" mpReg="700.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="4269384207"
 		 sp="1024652"
@@ -6632,7 +6632,7 @@
 		<itemDrop itemId="17405" min="1" max="1" chance="0.075" /> <!-- Seraph Leather Gloves - Light Armor -->
 		<itemDrop itemId="17398" min="1" max="1" chance="0.075" /> <!-- Seraph Gaiters - Heavy Armor -->
 	</npc>
-	<npc id="29219" name="Hell's Disciple" level="98" type="L2Npc" atkRange="40" hpMax="180317" hpReg="29.56"
+	<npc id="29219" name="Hell's Disciple" level="98" type="Npc" atkRange="40" hpMax="180317" hpReg="29.56"
 		 mpMax="27816"
 		 mpReg="21.45" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="670608" mAtk="593424" pDef="4541"
 		 mDef="5550"
@@ -6644,7 +6644,7 @@
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="29220" name="Larva" level="99" type="L2Monster" atkRange="40" hpMax="2208510" hpReg="65.5" mpMax="27816"
+	<npc id="29220" name="Larva" level="99" type="Monster" atkRange="40" hpMax="2208510" hpReg="65.5" mpMax="27816"
 		 mpReg="12.12"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="23669416" sp="494322" pAtk="971" mAtk="663"
 		 pDef="341" mDef="250"
@@ -6660,7 +6660,7 @@
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="29221" name="Larva" level="99" type="L2Monster" atkRange="40" hpMax="3248143" hpReg="65.5" mpMax="27816"
+	<npc id="29221" name="Larva" level="99" type="Monster" atkRange="40" hpMax="3248143" hpReg="65.5" mpMax="27816"
 		 mpReg="12.12"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="23669416" sp="494322" pAtk="971" mAtk="663"
 		 pDef="341" mDef="250"
@@ -6676,7 +6676,7 @@
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="29222" name="Earth Wyrm Tail" level="99" type="L2Npc" atkRange="40" hpMax="18720498" hpReg="150.11"
+	<npc id="29222" name="Earth Wyrm Tail" level="99" type="Npc" atkRange="40" hpMax="18720498" hpReg="150.11"
 		 mpMax="27816"
 		 mpReg="108.92" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250" pAtkSpd="253"
@@ -6686,7 +6686,7 @@
 		<skill id="4416" level="12" /> <!-- Bugs -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="29223" name="Antharas" title="Land Dragon" level="97" type="L2GrandBoss" atkRange="40" hpMax="203200992"
+	<npc id="29223" name="Antharas" title="Land Dragon" level="97" type="GrandBoss" atkRange="40" hpMax="203200992"
 		 hpReg="1900.0"
 		 mpMax="27816" mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="730548992"
 		 sp="52769504"
@@ -6721,7 +6721,7 @@
 		<skill id="14388" level="1" /> <!-- Antharas Fear -->
 		<skill id="14389" level="1" /> <!-- Antharas -->
 	</npc>
-	<npc id="29224" name="Behemoth Dragon" level="97" type="L2Monster" atkRange="40" hpMax="1055924" hpReg="65.5"
+	<npc id="29224" name="Behemoth Dragon" level="97" type="Monster" atkRange="40" hpMax="1055924" hpReg="65.5"
 		 mpMax="27816"
 		 mpReg="12.12" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="23669416" sp="494322" pAtk="84000"
 		 mAtk="63000"
@@ -6739,7 +6739,7 @@
 		<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->
 		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
 	</npc>
-	<npc id="29225" name="Tarask Dragon" level="97" type="L2Monster" atkRange="40" hpMax="1055924" hpReg="65.5"
+	<npc id="29225" name="Tarask Dragon" level="97" type="Monster" atkRange="40" hpMax="1055924" hpReg="65.5"
 		 mpMax="27816"
 		 mpReg="12.12" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="23669416" sp="494322" pAtk="84000"
 		 mAtk="63000"
@@ -6758,7 +6758,7 @@
 		<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->
 		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
 	</npc>
-	<npc id="29226" name="Dragon Bomber" level="97" type="L2Monster" atkRange="40" hpMax="54848" hpReg="65.5"
+	<npc id="29226" name="Dragon Bomber" level="97" type="Monster" atkRange="40" hpMax="54848" hpReg="65.5"
 		 mpMax="27816"
 		 mpReg="12.12" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="23669416" sp="494322" pAtk="84000"
 		 mAtk="63000"
@@ -6772,7 +6772,7 @@
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="29227" name="Dragon Bomber" level="97" type="L2Npc" atkRange="40" hpMax="54848" hpReg="0.0" mpMax="27816"
+	<npc id="29227" name="Dragon Bomber" level="97" type="Npc" atkRange="40" hpMax="54848" hpReg="0.0" mpMax="27816"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="84000" mAtk="63000" pDef="2520" mDef="2565"
 		 pAtkSpd="253"
@@ -6784,7 +6784,7 @@
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="29228" name="Valakas" title="Fire Dragon" level="99" type="L2Npc" atkRange="40" hpMax="203200992"
+	<npc id="29228" name="Valakas" title="Fire Dragon" level="99" type="Npc" atkRange="40" hpMax="203200992"
 		 hpReg="0.0" mpMax="27816"
 		 mpReg="0.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="336000" mAtk="252000" pDef="3780"
 		 mDef="3848"
@@ -6798,7 +6798,7 @@
 		<skill id="4679" level="1" /> <!-- Valakas -->
 		<skill id="4071" level="2" /> <!-- Bow/Crossbow Resistance -->
 	</npc>
-	<npc id="29229" name="Lavasaurus Alpha" level="99" type="L2Npc" atkRange="40" hpMax="71440" hpReg="0.0"
+	<npc id="29229" name="Lavasaurus Alpha" level="99" type="Npc" atkRange="40" hpMax="71440" hpReg="0.0"
 		 mpMax="27816" mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="84000" mAtk="63000" pDef="1680" mDef="1710"
 		 pAtkSpd="253"
@@ -6810,7 +6810,7 @@
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		<skill id="5462" level="1" /> <!-- Fire Attack -->
 	</npc>
-	<npc id="29230" name="Dragon Treater" level="97" type="L2Monster" atkRange="40" hpMax="20314" hpReg="65.5"
+	<npc id="29230" name="Dragon Treater" level="97" type="Monster" atkRange="40" hpMax="20314" hpReg="65.5"
 		 mpMax="27816"
 		 mpReg="12.12" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="23669416" sp="494322" pAtk="84000"
 		 mAtk="63000"
@@ -6824,7 +6824,7 @@
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="29231" name="Earth Wyrm Victim" level="95" type="L2Npc" atkRange="80" hpMax="1613321" hpReg="63.65"
+	<npc id="29231" name="Earth Wyrm Victim" level="95" type="Npc" atkRange="80" hpMax="1613321" hpReg="63.65"
 		 mpMax="27816"
 		 mpReg="46.19" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -6840,7 +6840,7 @@
 		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
 		<skill id="4439" level="5" /> <!-- Greater Hold Resistance -->
 	</npc>
-	<npc id="29232" name="Reward" title="Earth Wyrm" level="95" type="L2Npc" atkRange="40" hpMax="1613321" hpReg="0.0"
+	<npc id="29232" name="Reward" title="Earth Wyrm" level="95" type="Npc" atkRange="40" hpMax="1613321" hpReg="0.0"
 		 mpMax="27816"
 		 mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -6848,7 +6848,7 @@
 		 fireRes="160"
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="29233" name="Tauti" level="99" type="L2GrandBoss" atkRange="80" hpMax="98413152" hpReg="20000.9"
+	<npc id="29233" name="Tauti" level="99" type="GrandBoss" atkRange="80" hpMax="98413152" hpReg="20000.9"
 		 mpMax="27816"
 		 mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="147590928" sp="12524212"
 		 pAtk="450000"
@@ -6877,7 +6877,7 @@
 		<skill id="15202" level="1" /> <!-- Tauti Ultra Typhoon -->
 		<skill id="15204" level="1" /> <!-- Tauti Omega Whirlwind -->
 	</npc>
-	<npc id="29234" name="Tauti" level="99" type="L2GrandBoss" atkRange="80" hpMax="238200784" hpReg="20000.9"
+	<npc id="29234" name="Tauti" level="99" type="GrandBoss" atkRange="80" hpMax="238200784" hpReg="20000.9"
 		 mpMax="27816"
 		 mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="147590928" sp="12524212"
 		 pAtk="600000"
@@ -6906,7 +6906,7 @@
 		<skill id="15202" level="1" /> <!-- Tauti Ultra Typhoon -->
 		<skill id="15204" level="1" /> <!-- Tauti Omega Whirlwind -->
 	</npc>
-	<npc id="29235" name="Tauti" level="99" type="L2Npc" atkRange="80" hpMax="238200784" hpReg="365.61" mpMax="27816"
+	<npc id="29235" name="Tauti" level="99" type="Npc" atkRange="80" hpMax="238200784" hpReg="365.61" mpMax="27816"
 		 mpReg="265.3"
 		 STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" pAtk="450000" mAtk="300000" pDef="6000" mDef="4000"
 		 pAtkSpd="253"
@@ -6919,7 +6919,7 @@
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 		<skill id="16101" level="1" /> <!-- Tauti -->
 	</npc>
-	<npc id="29236" name="Tauti" level="99" type="L2GrandBoss" atkRange="80" hpMax="98413152" hpReg="20000.9"
+	<npc id="29236" name="Tauti" level="99" type="GrandBoss" atkRange="80" hpMax="98413152" hpReg="20000.9"
 		 mpMax="27816"
 		 mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="12833899848" sp="3080135"
 		 pAtk="600000"
@@ -7012,7 +7012,7 @@
 		<itemDrop itemId="17444" min="1" max="1" chance="0.3" /> <!-- Eternal Gloves - Robe -->
 		<itemDrop itemId="17438" min="1" max="1" chance="0.3" /> <!-- Eternal Leather Leggings - Light Armor -->
 	</npc>
-	<npc id="29237" name="Tauti" level="99" type="L2GrandBoss" atkRange="80" hpMax="238200784" hpReg="20000.9"
+	<npc id="29237" name="Tauti" level="99" type="GrandBoss" atkRange="80" hpMax="238200784" hpReg="20000.9"
 		 mpMax="27816"
 		 mpReg="1000.0" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="16977958668" sp="4074710"
 		 pAtk="750000"
@@ -7106,7 +7106,7 @@
 		<itemDrop itemId="17426" min="1" max="1" chance="0.3" /> <!-- Amaranthine Retributer -->
 		<itemDrop itemId="17422" min="1" max="1" chance="0.3" /> <!-- Amaranthine Thrower -->
 	</npc>
-	<npc id="29238" name="Tauti" level="99" type="L2Npc" atkRange="80" hpMax="238200784" hpReg="365.61" mpMax="27816"
+	<npc id="29238" name="Tauti" level="99" type="Npc" atkRange="80" hpMax="238200784" hpReg="365.61" mpMax="27816"
 		 mpReg="265.3"
 		 STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="16977958668" sp="4074710" pAtk="750000"
 		 mAtk="500000"
@@ -7210,7 +7210,7 @@
 		<itemDrop itemId="18087" min="1" max="1" chance="0.0055" /> <!-- Blessed Eternal Boots - Heavy Armor -->
 		<itemDrop itemId="18085" min="1" max="1" chance="0.0055" /> <!-- Blessed Eternal Gaiters - Heavy Armor -->
 	</npc>
-	<npc id="29239" name="Tauti" level="99" type="L2Npc" atkRange="40" hpMax="98413152" hpReg="20000.9" mpMax="27816"
+	<npc id="29239" name="Tauti" level="99" type="Npc" atkRange="40" hpMax="98413152" hpReg="20000.9" mpMax="27816"
 		 mpReg="1000.0"
 		 STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="147590928" sp="12524212" pAtk="750000"
 		 mAtk="500000"
@@ -7223,7 +7223,7 @@
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 		<skill id="16101" level="1" /> <!-- Tauti -->
 	</npc>
-	<npc id="29240" name="Lindvior" title="Wind Dragon" level="99" type="L2GrandBoss" atkRange="40" hpMax="1172612305"
+	<npc id="29240" name="Lindvior" title="Wind Dragon" level="99" type="GrandBoss" atkRange="40" hpMax="1172612305"
 		 hpReg="440.76"
 		 mpMax="2471403" mpReg="319.83" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149" exp="183572573184"
 		 sp="44057417"
@@ -7326,7 +7326,7 @@
 		<itemDrop itemId="36434" min="1" max="1" chance="0.3" /> <!-- Lindvior Shaper - Fragment -->
 		<itemDrop itemId="18075" min="1" max="1" chance="0.3" /> <!-- Blessed Amaranthine Thrower -->
 	</npc>
-	<npc id="29241" name="Lyn Draco" level="99" type="L2Monster" atkRange="40" hpMax="1594379" hpReg="59.0"
+	<npc id="29241" name="Lyn Draco" level="99" type="Monster" atkRange="40" hpMax="1594379" hpReg="59.0"
 		 mpMax="27816" mpReg="42.81"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="500000" mAtk="400000" pDef="5000" mDef="4000"
 		 pAtkSpd="253"
@@ -7338,7 +7338,7 @@
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="5464" level="1" /> <!-- Wind Attack -->
 	</npc>
-	<npc id="29242" name="Lyn Draco" level="99" type="L2Monster" atkRange="40" hpMax="1594379" hpReg="59.0"
+	<npc id="29242" name="Lyn Draco" level="99" type="Monster" atkRange="40" hpMax="1594379" hpReg="59.0"
 		 mpMax="27816" mpReg="42.81"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="500000" mAtk="400000" pDef="5000" mDef="4000"
 		 pAtkSpd="253"
@@ -7350,7 +7350,7 @@
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="5464" level="1" /> <!-- Wind Attack -->
 	</npc>
-	<npc id="29243" name="Lyn Draco" level="99" type="L2Monster" atkRange="40" hpMax="1594379" hpReg="59.0"
+	<npc id="29243" name="Lyn Draco" level="99" type="Monster" atkRange="40" hpMax="1594379" hpReg="59.0"
 		 mpMax="27816" mpReg="42.81"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="500000" mAtk="400000" pDef="5000" mDef="4000"
 		 pAtkSpd="253"
@@ -7362,7 +7362,7 @@
 		<skill id="4416" level="10" /> <!-- Dragons -->
 		<skill id="5464" level="1" /> <!-- Wind Attack -->
 	</npc>
-	<npc id="29244" name="Beleth" level="99" type="L2Npc" atkRange="40" hpMax="81091752" hpReg="233.4" mpMax="16909428"
+	<npc id="29244" name="Beleth" level="99" type="Npc" atkRange="40" hpMax="81091752" hpReg="233.4" mpMax="16909428"
 		 mpReg="169.36"
 		 STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
 		 mAtkSpd="407"
@@ -7376,7 +7376,7 @@
 		<spawn x="-16876" y="245929" z="-840" heading="32767" respawn="60" />
 		<spawn x="-16869" y="245732" z="-840" heading="32767" respawn="60" />
 	</npc>
-	<npc id="29245" name="Beleth" level="99" type="L2Npc" atkRange="40" hpMax="729825728" hpReg="503.59"
+	<npc id="29245" name="Beleth" level="99" type="Npc" atkRange="40" hpMax="729825728" hpReg="503.59"
 		 mpMax="152184832" mpReg="365.43"
 		 STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
 		 mAtkSpd="407"
@@ -7387,7 +7387,7 @@
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 		<skill id="16179" level="1" /> <!-- Beleth -->
 	</npc>
-	<npc id="29246" name="Darion" level="99" type="L2Npc" atkRange="40" hpMax="729825728" hpReg="503.59"
+	<npc id="29246" name="Darion" level="99" type="Npc" atkRange="40" hpMax="729825728" hpReg="503.59"
 		 mpMax="152184832" mpReg="365.43"
 		 STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
 		 mAtkSpd="407"
@@ -7398,7 +7398,7 @@
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 		<skill id="16180" level="1" /> <!-- Darion -->
 	</npc>
-	<npc id="29247" name="Beleth" level="99" type="L2Npc" atkRange="40" hpMax="729825728" hpReg="503.59"
+	<npc id="29247" name="Beleth" level="99" type="Npc" atkRange="40" hpMax="729825728" hpReg="503.59"
 		 mpMax="152184832" mpReg="365.43"
 		 STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
 		 mAtkSpd="407"
@@ -7409,7 +7409,7 @@
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 		<skill id="16179" level="1" /> <!-- Beleth -->
 	</npc>
-	<npc id="29248" name="Darion's Minion" level="120" type="L2Npc" atkRange="40" hpMax="729825728" hpReg="503.59"
+	<npc id="29248" name="Darion's Minion" level="120" type="Npc" atkRange="40" hpMax="729825728" hpReg="503.59"
 		 mpMax="152184832"
 		 mpReg="365.43" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3"
 		 pAtkSpd="299"
@@ -7419,7 +7419,7 @@
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="29249" name="Darion's Minion" level="120" type="L2Npc" atkRange="40" hpMax="729825728" hpReg="503.59"
+	<npc id="29249" name="Darion's Minion" level="120" type="Npc" atkRange="40" hpMax="729825728" hpReg="503.59"
 		 mpMax="152184832"
 		 mpReg="365.43" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3"
 		 pAtkSpd="299"
@@ -7429,7 +7429,7 @@
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="29250" name="Beleth" level="99" type="L2Npc" atkRange="40" hpMax="729825728" hpReg="503.59"
+	<npc id="29250" name="Beleth" level="99" type="Npc" atkRange="40" hpMax="729825728" hpReg="503.59"
 		 mpMax="152184832" mpReg="365.43"
 		 STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2" pAtkSpd="299"
 		 mAtkSpd="407"
@@ -7440,7 +7440,7 @@
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 		<skill id="16179" level="1" /> <!-- Beleth -->
 	</npc>
-	<npc id="29251" name="Ekimus" title="Immortal Lord" level="99" type="L2Npc" atkRange="40" hpMax="127545936"
+	<npc id="29251" name="Ekimus" title="Immortal Lord" level="99" type="Npc" atkRange="40" hpMax="127545936"
 		 hpReg="273.49"
 		 mpMax="26596154" mpReg="198.45" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" exp="17393795496"
 		 sp="4174510"
@@ -7515,7 +7515,7 @@
 		<itemDrop itemId="17416" min="1" max="1" chance="0.3" /> <!-- Amaranthine Shaper -->
 		<itemDrop itemId="17417" min="1" max="1" chance="0.3" /> <!-- Amaranthine Cutter -->
 	</npc>
-	<npc id="29252" name="Curain" title="Screaming Ghost" level="99" type="L2Npc" atkRange="40" hpMax="1853459"
+	<npc id="29252" name="Curain" title="Screaming Ghost" level="99" type="Npc" atkRange="40" hpMax="1853459"
 		 hpReg="62.19"
 		 mpMax="386487" mpReg="45.13" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4"
 		 mDef="2"
@@ -7525,7 +7525,7 @@
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="29253" name="Flan" title="Suffering Ghost" level="99" type="L2Npc" atkRange="40" hpMax="1853459"
+	<npc id="29253" name="Flan" title="Suffering Ghost" level="99" type="Npc" atkRange="40" hpMax="1853459"
 		 hpReg="62.19"
 		 mpMax="386487" mpReg="45.13" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4"
 		 mDef="2"
@@ -7535,7 +7535,7 @@
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="29254" name="Aschedor" title="Howling Ghost" level="99" type="L2Npc" atkRange="40" hpMax="1853459"
+	<npc id="29254" name="Aschedor" title="Howling Ghost" level="99" type="Npc" atkRange="40" hpMax="1853459"
 		 hpReg="62.19"
 		 mpMax="386487" mpReg="45.13" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4"
 		 mDef="2"
@@ -7545,7 +7545,7 @@
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="29255" name="Panahon" title="Wailing Ghost" level="99" type="L2Npc" atkRange="40" hpMax="1853459"
+	<npc id="29255" name="Panahon" title="Wailing Ghost" level="99" type="Npc" atkRange="40" hpMax="1853459"
 		 hpReg="62.19"
 		 mpMax="386487" mpReg="45.13" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4"
 		 mDef="2"
@@ -7555,7 +7555,7 @@
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="29256" name="Yehan Klodekus' Ghost" level="99" type="L2Npc" atkRange="40" hpMax="1853459" hpReg="62.19"
+	<npc id="29256" name="Yehan Klodekus' Ghost" level="99" type="Npc" atkRange="40" hpMax="1853459" hpReg="62.19"
 		 mpMax="386487"
 		 mpReg="45.13" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2"
 		 pAtkSpd="299"
@@ -7565,7 +7565,7 @@
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="29257" name="Yehan Klodekus' Ghost" level="99" type="L2Npc" atkRange="40" hpMax="1853459" hpReg="62.19"
+	<npc id="29257" name="Yehan Klodekus' Ghost" level="99" type="Npc" atkRange="40" hpMax="1853459" hpReg="62.19"
 		 mpMax="386487"
 		 mpReg="45.13" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2"
 		 pAtkSpd="299"
@@ -7575,7 +7575,7 @@
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="29258" name="Yehan Klodekus" level="99" type="L2Npc" atkRange="40" hpMax="1853459" hpReg="62.19"
+	<npc id="29258" name="Yehan Klodekus" level="99" type="Npc" atkRange="40" hpMax="1853459" hpReg="62.19"
 		 mpMax="386487"
 		 mpReg="45.13" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2"
 		 pAtkSpd="299"
@@ -7585,7 +7585,7 @@
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 	</npc>
-	<npc id="29259" name="Yehan Klanikus" level="99" type="L2Npc" atkRange="40" hpMax="1853459" hpReg="62.19"
+	<npc id="29259" name="Yehan Klanikus" level="99" type="Npc" atkRange="40" hpMax="1853459" hpReg="62.19"
 		 mpMax="386487"
 		 mpReg="45.13" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4" mDef="2"
 		 pAtkSpd="299"
@@ -7595,7 +7595,7 @@
 		<skill id="4416" level="1" /> <!-- Undead -->
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 	</npc>
-	<npc id="29260" name="Maliss" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29260" name="Maliss" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0" mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7603,7 +7603,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29261" name="Isadora" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29261" name="Isadora" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7611,7 +7611,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29262" name="Flint" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29262" name="Flint" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0" mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7619,7 +7619,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29263" name="Harp" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="29263" name="Harp" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7627,7 +7627,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29264" name="Mad Maliss" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29264" name="Mad Maliss" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7635,7 +7635,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29265" name="Mad Isadora" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29265" name="Mad Isadora" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7643,7 +7643,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29266" name="Corrupted Captain" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="29266" name="Corrupted Captain" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -7651,7 +7651,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29267" name="Corrupted High Priest" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="29267" name="Corrupted High Priest" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -7659,7 +7659,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29268" name="Crook the Mad" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29268" name="Crook the Mad" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7667,7 +7667,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29269" name="Houpon the Warden Overseer" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40"
+	<npc id="29269" name="Houpon the Warden Overseer" title="Dimensional Invader" level="120" type="Npc" atkRange="40"
 		 hpMax="1"
 		 hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1"
 		 pDef="1" mDef="1"
@@ -7675,7 +7675,7 @@
 		 collisionHeight="24"
 		 fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29270" name="Guillotine of Death" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40"
+	<npc id="29270" name="Guillotine of Death" title="Dimensional Invader" level="120" type="Npc" atkRange="40"
 		 hpMax="1"
 		 hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1"
 		 pDef="1" mDef="1"
@@ -7683,7 +7683,7 @@
 		 collisionHeight="24"
 		 fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29271" name="Pafuron" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="29271" name="Pafuron" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40"
@@ -7691,7 +7691,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29272" name="Krutati" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="29272" name="Krutati" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40"
@@ -7699,7 +7699,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29273" name="Lindvior's Herald Numa" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40"
+	<npc id="29273" name="Lindvior's Herald Numa" title="Dimensional Invader" level="120" type="Npc" atkRange="40"
 		 hpMax="1"
 		 hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1"
 		 pDef="1" mDef="1"
@@ -7707,7 +7707,7 @@
 		 collisionHeight="24"
 		 fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29274" name="Valakas' Herald Potigia" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40"
+	<npc id="29274" name="Valakas' Herald Potigia" title="Dimensional Invader" level="120" type="Npc" atkRange="40"
 		 hpMax="1"
 		 hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1"
 		 pDef="1" mDef="1"
@@ -7715,7 +7715,7 @@
 		 collisionHeight="24"
 		 fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29275" name="Antharas' Herald Komabor" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40"
+	<npc id="29275" name="Antharas' Herald Komabor" title="Dimensional Invader" level="120" type="Npc" atkRange="40"
 		 hpMax="1"
 		 hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1"
 		 pDef="1" mDef="1"
@@ -7723,7 +7723,7 @@
 		 collisionHeight="24"
 		 fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29276" name="Mino Muscle Bomber" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="29276" name="Mino Muscle Bomber" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -7731,7 +7731,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29277" name="Mino Dragon" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="29277" name="Mino Dragon" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0" STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40"
@@ -7739,7 +7739,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29278" name="Vengeful Agarez" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29278" name="Vengeful Agarez" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7747,7 +7747,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29279" name="Vengeful Oretross" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40"
+	<npc id="29279" name="Vengeful Oretross" title="Dimensional Invader" level="120" type="Npc" atkRange="40"
 		 hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7755,7 +7755,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29280" name="Vengeful Eligos" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29280" name="Vengeful Eligos" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7763,7 +7763,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29281" name="Dark Spicula" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="29281" name="Dark Spicula" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0" STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40"
@@ -7771,7 +7771,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29282" name="Bloody Spicula" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="29282" name="Bloody Spicula" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -7779,7 +7779,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29283" name="Vengeful Lerazia" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29283" name="Vengeful Lerazia" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7787,7 +7787,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29284" name="Vengeful Edaire" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29284" name="Vengeful Edaire" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7795,7 +7795,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29285" name="Vengeful Agonia" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29285" name="Vengeful Agonia" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7803,7 +7803,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29286" name="Dark Weiss" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="29286" name="Dark Weiss" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40"
@@ -7811,7 +7811,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29287" name="Bloody Weiss" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="29287" name="Bloody Weiss" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0" STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40"
@@ -7819,7 +7819,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29288" name="Nerva Orc Nergatt" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40"
+	<npc id="29288" name="Nerva Orc Nergatt" title="Dimensional Invader" level="120" type="Npc" atkRange="40"
 		 hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7827,7 +7827,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29289" name="Amden Orc Turation" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40"
+	<npc id="29289" name="Amden Orc Turation" title="Dimensional Invader" level="120" type="Npc" atkRange="40"
 		 hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7835,7 +7835,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29290" name="Nerva Chief Turakan" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40"
+	<npc id="29290" name="Nerva Chief Turakan" title="Dimensional Invader" level="120" type="Npc" atkRange="40"
 		 hpMax="1"
 		 hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1"
 		 pDef="1" mDef="1"
@@ -7843,7 +7843,7 @@
 		 collisionHeight="24"
 		 fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29291" name="Nerva Orc Raider" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="29291" name="Nerva Orc Raider" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -7851,7 +7851,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29292" name="Nerva Orc Elite" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="29292" name="Nerva Orc Elite" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -7859,7 +7859,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29293" name="Theor" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29293" name="Theor" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0" mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7867,7 +7867,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29294" name="Tebird" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29294" name="Tebird" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0" mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7875,7 +7875,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29295" name="Tegape" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29295" name="Tegape" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0" mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7883,7 +7883,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29296" name="Nerva Orc Assassin" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="29296" name="Nerva Orc Assassin" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -7891,7 +7891,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29297" name="Nerva Orc Ambusher" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="29297" name="Nerva Orc Ambusher" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -7899,7 +7899,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29298" name="Varbasion" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29298" name="Varbasion" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7907,7 +7907,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29299" name="Varmonia" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29299" name="Varmonia" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7915,7 +7915,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29300" name="Varkaron" title="Dimensional Invader" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="29300" name="Varkaron" title="Dimensional Invader" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -7923,7 +7923,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29301" name="Minion Monisac" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="29301" name="Minion Monisac" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -7931,7 +7931,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29302" name="Minion Monishe" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="29302" name="Minion Monishe" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -7939,7 +7939,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="29303" name="Helios" level="110" type="L2Monster" atkRange="1100" hpMax="1000130" hpReg="8.5" mpMax="1961"
+	<npc id="29303" name="Helios" level="110" type="Monster" atkRange="1100" hpMax="1000130" hpReg="8.5" mpMax="1961"
 		 mpReg="3.0" STR="90" CON="120" DEX="120" INT="120" WIT="96" MEN="80" exp="103954" sp="95566" pAtk="50000" mAtk="50000" pDef="2000"
 		 mDef="20000" pAtkSpd="1400" mAtkSpd="1403" pCritRate="10" mCritRate="80" walkSpd="80" runSpd="180" randomWalk="true" rHand="4028"
 		 extraDropGroup="17" collisionRadius="50" collisionHeight="44" fireRes="20" waterRes="20" windRes="20" earthRes="20"
@@ -7966,14 +7966,14 @@
 
 		<spawn x="91802" y="161529" z="2034" heading="32294" respawn="345600" />
 	</npc>
-	<npc id="29304" name="Helios" level="110" type="L2Monster" atkRange="1100" hpMax="14130" hpReg="8.5" mpMax="1961"
+	<npc id="29304" name="Helios" level="110" type="Monster" atkRange="1100" hpMax="14130" hpReg="8.5" mpMax="1961"
 		 mpReg="3.0" STR="90" CON="90" DEX="60" INT="80" WIT="66" MEN="80" exp="103954" sp="95566" pAtk="1" mAtk="1" pDef="1"
 		 mDef="1" pAtkSpd="400" mAtkSpd="333" pCritRate="80" mCritRate="80" walkSpd="80" runSpd="180" randomWalk="true" rHand="4028"
 		 extraDropGroup="17" collisionRadius="50" collisionHeight="44" fireRes="20" waterRes="20" windRes="20" earthRes="20"
 		 holyRes="20" darkRes="20" aiType="fighter" skillChance="15" clanRange="300">
 		<skill id="4416" level="11" /> <!-- Giants -->
 	</npc>
-	<npc id="29305" name="Helios" level="110" type="L2Monster" atkRange="1100" hpMax="14130" hpReg="8.5" mpMax="1961"
+	<npc id="29305" name="Helios" level="110" type="Monster" atkRange="1100" hpMax="14130" hpReg="8.5" mpMax="1961"
 		 mpReg="3.0" STR="90" CON="90" DEX="60" INT="80" WIT="66" MEN="80" exp="103954" sp="95566" pAtk="1" mAtk="1" pDef="1"
 		 mDef="1" pAtkSpd="400" mAtkSpd="333" pCritRate="80" mCritRate="80" walkSpd="80" runSpd="180" randomWalk="true" rHand="4028"
 		 extraDropGroup="17" collisionRadius="50" collisionHeight="44" fireRes="20" waterRes="20" windRes="20" earthRes="20"

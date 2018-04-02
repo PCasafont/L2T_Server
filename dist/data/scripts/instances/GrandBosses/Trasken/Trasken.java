@@ -2,25 +2,26 @@ package instances.GrandBosses.Trasken;
 
 import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
-import l2server.gameserver.ai.L2AttackableAI;
-import l2server.gameserver.ai.L2NpcWalkerAI;
+import l2server.gameserver.ai.AttackableAI;
+import l2server.gameserver.ai.NpcWalkerAI;
 import l2server.gameserver.datatables.ScenePlayerDataTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
 import l2server.gameserver.model.L2NpcWalkerNode;
-import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 import l2server.util.Rnd;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,8 @@ import java.util.List;
  */
 
 public class Trasken extends L2AttackableAIScript {
+	private static Logger log = LoggerFactory.getLogger(Trasken.class.getName());
+	
 	//Quest
 	private static final boolean debug = false;
 	private static final String qn = "Trasken";
@@ -59,9 +62,9 @@ public class Trasken extends L2AttackableAIScript {
 	private static final int zoneDoor = 22120001;
 
 	//Skills
-	private static final L2Skill tailHiding = SkillTable.getInstance().getInfo(14343, 1);
-	private static final L2Skill tailHaunting = SkillTable.getInstance().getInfo(14342, 1);
-	private static final L2Skill traskenHaunting = SkillTable.getInstance().getInfo(14505, 1);
+	private static final Skill tailHiding = SkillTable.getInstance().getInfo(14343, 1);
+	private static final Skill tailHaunting = SkillTable.getInstance().getInfo(14342, 1);
+	private static final Skill traskenHaunting = SkillTable.getInstance().getInfo(14505, 1);
 
 	//Cords
 	private static final Location traskenInterior = new Location(88604, -173907, -15989, 32324);
@@ -86,19 +89,19 @@ public class Trasken extends L2AttackableAIScript {
 					{80988, -183857, -9902, 39299}};
 
 	private class TraskenWorld extends InstanceWorld {
-		private ArrayList<L2Npc> teredors;
-		private L2Npc TraskenHeart;
-		private L2Npc Trasken;
+		private ArrayList<Npc> teredors;
+		private Npc TraskenHeart;
+		private Npc Trasken;
 		private int mobCount;
 		private double tailHP;
 		private boolean isTeredorTime;
 		private boolean isTraskenTime;
 		private long lastTailSpawned;
-		private L2NpcWalkerAI teredor_WalkAI;
-		private L2AttackableAI teredor_AttackAI;
+		private NpcWalkerAI teredor_WalkAI;
+		private AttackableAI teredor_AttackAI;
 
 		public TraskenWorld() {
-			teredors = new ArrayList<L2Npc>();
+			teredors = new ArrayList<Npc>();
 			isTeredorTime = false;
 			isTraskenTime = false;
 		}
@@ -125,8 +128,8 @@ public class Trasken extends L2AttackableAIScript {
 		}
 	}
 
-	private void stopTeredorWalk(TraskenWorld world, L2Npc npc) {
-		for (L2Npc teredor : world.teredors) {
+	private void stopTeredorWalk(TraskenWorld world, Npc npc) {
+		for (Npc teredor : world.teredors) {
 			if (teredor == null || teredor != npc) {
 				continue;
 			}
@@ -134,13 +137,13 @@ public class Trasken extends L2AttackableAIScript {
 			teredor.stopMove(null);
 			world.teredor_WalkAI.cancelTask();
 			teredor.setIsInvul(false);
-			world.teredor_AttackAI = new L2AttackableAI(teredor);
+			world.teredor_AttackAI = new AttackableAI(teredor);
 			teredor.setAI(world.teredor_AttackAI);
 		}
 	}
 
 	private void startTeredorWalk(TraskenWorld world) {
-		for (L2Npc teredor : world.teredors) {
+		for (Npc teredor : world.teredors) {
 			if (teredor == null) {
 				continue;
 			}
@@ -151,7 +154,7 @@ public class Trasken extends L2AttackableAIScript {
 
 			teredor.setIsInvul(true);
 			teredor.setIsRunning(true);
-			world.teredor_WalkAI = new L2NpcWalkerAI(teredor);
+			world.teredor_WalkAI = new NpcWalkerAI(teredor);
 			teredor.setAI(world.teredor_WalkAI);
 			world.teredor_WalkAI.initializeRoute(route, null);
 			world.teredor_WalkAI.walkToLocation();
@@ -159,9 +162,9 @@ public class Trasken extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		InstanceWorld wrld = null;
@@ -170,7 +173,7 @@ public class Trasken extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onAdvEvent: Unable to get world.");
+			log.warn(getName() + ": onAdvEvent: Unable to get world.");
 			return null;
 		}
 
@@ -184,7 +187,7 @@ public class Trasken extends L2AttackableAIScript {
 
 				//Teredors
 				for (int i = 0; i < Rnd.get(1, 6); i++) {
-					L2Npc teredor = addSpawn(teredorId, 82366, -183533, -9888, 56178, false, 0, false, world.instanceId);
+					Npc teredor = addSpawn(teredorId, 82366, -183533, -9888, 56178, false, 0, false, world.instanceId);
 					teredor.setIsInvul(true);
 					world.teredors.add(teredor);
 				}
@@ -268,7 +271,7 @@ public class Trasken extends L2AttackableAIScript {
 				}
 			} else if (event.equalsIgnoreCase("stage_last_spawn_larvas")) {
 				for (int[] a : larvaSpawns) {
-					L2Npc larva = addSpawn(larvas[Rnd.get(larvas.length)], a[0], a[1], a[2], a[3], false, 0, false, world.instanceId);
+					Npc larva = addSpawn(larvas[Rnd.get(larvas.length)], a[0], a[1], a[2], a[3], false, 0, false, world.instanceId);
 					larva.setIsRunning(true);
 				}
 			} else if (event.equalsIgnoreCase("stage_last_stomach_glands_message")) {
@@ -307,7 +310,7 @@ public class Trasken extends L2AttackableAIScript {
 				world.status = 3;
 
 				//Teleport back the players for take the drop?
-				for (L2PcInstance pl : InstanceManager.getInstance().getPlayers(world.instanceId)) {
+				for (Player pl : InstanceManager.getInstance().getPlayers(world.instanceId)) {
 					if (pl == null) {
 						continue;
 					}
@@ -330,9 +333,9 @@ public class Trasken extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public final String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -370,7 +373,7 @@ public class Trasken extends L2AttackableAIScript {
 						world.TraskenHeart.setIsInvul(true);
 
 						//Teleport players to Heart
-						for (L2PcInstance pl : InstanceManager.getInstance().getPlayers(world.instanceId)) {
+						for (Player pl : InstanceManager.getInstance().getPlayers(world.instanceId)) {
 							if (pl == null) {
 								continue;
 							}
@@ -395,9 +398,9 @@ public class Trasken extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -411,7 +414,7 @@ public class Trasken extends L2AttackableAIScript {
 					}
 
 					if (debug) {
-						Log.warning(getName() + ": mobCount: " + world.mobCount);
+						log.warn(getName() + ": mobCount: " + world.mobCount);
 					}
 
 					if (world.mobCount == tentaclesToKill && !world.isTeredorTime) {
@@ -431,7 +434,7 @@ public class Trasken extends L2AttackableAIScript {
 					break;
 
 				case stomachGland:
-					for (L2Npc gland : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs()) {
+					for (Npc gland : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs()) {
 						if (gland == null || gland.getNpcId() != stomachGland) {
 							continue;
 						}
@@ -464,7 +467,7 @@ public class Trasken extends L2AttackableAIScript {
 
 					//System.out.println(getName() + " heart killer is: " + (player == null ? "NULL" : player.getName()));
 
-					((L2Attackable) world.Trasken).addDamageHate(player, 99999, 99999);
+					((Attackable) world.Trasken).addDamageHate(player, 99999, 99999);
 
 					world.Trasken.reduceCurrentHp(world.Trasken.getMaxHp(), player, null); //Kill trasken
 
@@ -484,9 +487,9 @@ public class Trasken extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 
 		int npcId = npc.getNpcId();
@@ -500,9 +503,9 @@ public class Trasken extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc) {
+	public String onSpawn(Npc npc) {
 		if (debug) {
-			Log.warning(getName() + ": onSpawn: " + npc.getName());
+			log.warn(getName() + ": onSpawn: " + npc.getName());
 		}
 
 		switch (npc.getNpcId()) {
@@ -516,7 +519,7 @@ public class Trasken extends L2AttackableAIScript {
 		return super.onSpawn(npc);
 	}
 
-	private final synchronized void enterInstance(L2PcInstance player, int template_id) {
+	private final synchronized void enterInstance(Player player, int template_id) {
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
 			if (!(world instanceof TraskenWorld)) {
@@ -563,7 +566,7 @@ public class Trasken extends L2AttackableAIScript {
 
 			InstanceManager.getInstance().addWorld(world);
 
-			List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+			List<Player> allPlayers = new ArrayList<Player>();
 			if (debug) {
 				allPlayers.add(player);
 			} else {
@@ -572,7 +575,7 @@ public class Trasken extends L2AttackableAIScript {
 								player.getParty().getPartyMembers());
 			}
 
-			for (L2PcInstance enterPlayer : allPlayers) {
+			for (Player enterPlayer : allPlayers) {
 				if (enterPlayer == null) {
 					continue;
 				}
@@ -586,7 +589,7 @@ public class Trasken extends L2AttackableAIScript {
 
 			startQuestTimer("stage_1_start", 60000, null, player);
 
-			Log.fine(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " + player.getName());
+			log.debug(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " + player.getName());
 			return;
 		}
 	}

@@ -17,9 +17,10 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,8 +31,11 @@ import java.util.Calendar;
  * @author Erlando
  */
 public class ExFriendDetailInfo extends L2GameServerPacket {
+	private static Logger log = LoggerFactory.getLogger(ExFriendDetailInfo.class.getName());
+
+
 	
-	private L2PcInstance player;
+	private Player player;
 	int friendObjId;
 	private String name;
 	private int isOnline;
@@ -48,14 +52,14 @@ public class ExFriendDetailInfo extends L2GameServerPacket {
 	private long lastLogin;
 	private String memo;
 	
-	public ExFriendDetailInfo(L2PcInstance activeChar, String charName) {
+	public ExFriendDetailInfo(Player activeChar, String charName) {
 		player = activeChar;
 		friendObjId = CharNameTable.getInstance().getIdByName(charName);
 		name = charName;
-		isOnline = L2World.getInstance().getPlayer(friendObjId) != null && L2World.getInstance().getPlayer(friendObjId).isOnline() ? 1 : 0;
+		isOnline = World.getInstance().getPlayer(friendObjId) != null && World.getInstance().getPlayer(friendObjId).isOnline() ? 1 : 0;
 		memo = activeChar.getFriendMemo(friendObjId);
 		if (isOnline == 1) {
-			L2PcInstance friend = L2World.getInstance().getPlayer(friendObjId);
+			Player friend = World.getInstance().getPlayer(friendObjId);
 			level = friend.getLevel();
 			classId = friend.getClassId();
 			clanId = friend.getClanId();
@@ -80,7 +84,7 @@ public class ExFriendDetailInfo extends L2GameServerPacket {
 		Connection con = null;
 		
 		try {
-			// Retrieve the L2PcInstance from the characters table of the database
+			// Retrieve the Player from the characters table of the database
 			con = L2DatabaseFactory.getInstance().getConnection();
 			
 			PreparedStatement statement = con.prepareStatement("SELECT * FROM characters WHERE charId=?");
@@ -99,14 +103,14 @@ public class ExFriendDetailInfo extends L2GameServerPacket {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.warning("Failed loading character. " + e);
+			log.warn("Failed loading character. " + e);
 			e.printStackTrace();
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		if (classId != bClassId) {
 			try {
-				// Retrieve the L2PcInstance from the characters table of the database
+				// Retrieve the Player from the characters table of the database
 				con = L2DatabaseFactory.getInstance().getConnection();
 				
 				PreparedStatement statement = con.prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
@@ -122,7 +126,7 @@ public class ExFriendDetailInfo extends L2GameServerPacket {
 				rset.close();
 				statement.close();
 			} catch (Exception e) {
-				Log.warning("Failed loading character_subclasses. " + e);
+				log.warn("Failed loading character_subclasses. " + e);
 				e.printStackTrace();
 			} finally {
 				L2DatabaseFactory.close(con);
@@ -132,7 +136,7 @@ public class ExFriendDetailInfo extends L2GameServerPacket {
 		}
 		if (clanId != 0) {
 			try {
-				// Retrieve the L2PcInstance from the characters table of the database
+				// Retrieve the Player from the characters table of the database
 				con = L2DatabaseFactory.getInstance().getConnection();
 				
 				PreparedStatement statement = con.prepareStatement("SELECT * FROM clan_data WHERE clan_id=?");
@@ -149,7 +153,7 @@ public class ExFriendDetailInfo extends L2GameServerPacket {
 				rset.close();
 				statement.close();
 			} catch (Exception e) {
-				Log.warning("Failed loading clan_data. " + e);
+				log.warn("Failed loading clan_data. " + e);
 				e.printStackTrace();
 			} finally {
 				L2DatabaseFactory.close(con);

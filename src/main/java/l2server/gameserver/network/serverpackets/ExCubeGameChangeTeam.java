@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * Format: (chd) ddd
@@ -26,7 +26,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  * @author mrTJO
  */
 public class ExCubeGameChangeTeam extends L2GameServerPacket {
-	L2PcInstance player;
+	Player player;
 	boolean fromRedTeam;
 	
 	/**
@@ -35,7 +35,7 @@ public class ExCubeGameChangeTeam extends L2GameServerPacket {
 	 * @param player      Player Instance
 	 * @param fromRedTeam Is Player from Red Team?
 	 */
-	public ExCubeGameChangeTeam(L2PcInstance player, boolean fromRedTeam) {
+	public ExCubeGameChangeTeam(Player player, boolean fromRedTeam) {
 		this.player = player;
 		this.fromRedTeam = fromRedTeam;
 	}

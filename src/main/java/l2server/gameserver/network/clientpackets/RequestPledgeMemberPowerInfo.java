@@ -17,7 +17,7 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.PledgeReceivePowerInfo;
 
 /**
@@ -42,7 +42,7 @@ public final class RequestPledgeMemberPowerInfo extends L2GameClientPacket {
 	protected void runImpl() {
 		//Logozo.info("C5: RequestPledgeMemberPowerInfo d:"+unk1);
 		//Logozo.info("C5: RequestPledgeMemberPowerInfo S:"+player);
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}

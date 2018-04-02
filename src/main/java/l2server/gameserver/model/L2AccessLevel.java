@@ -16,12 +16,16 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.datatables.AccessLevels;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author FBIagent<br>
  */
 public class L2AccessLevel {
+	private static Logger log = LoggerFactory.getLogger(L2AccessLevel.class.getName());
+
+
 	/**
 	 * The access level<br>
 	 */
@@ -269,12 +273,12 @@ public class L2AccessLevel {
 			L2AccessLevel accessLevelInst = AccessLevels.getInstance().getAccessLevel(Integer.parseInt(childsSplit[i]));
 
 			if (accessLevelInst == null) {
-				Log.warning("AccessLevel: Undefined child access level " + childsSplit[i]);
+				log.warn("AccessLevel: Undefined child access level " + childsSplit[i]);
 				continue;
 			}
 
 			if (accessLevelInst.hasChildAccess(this)) {
-				Log.warning("AccessLevel: Child access tree overlapping for " + name + " and " + accessLevelInst.getName());
+				log.warn("AccessLevel: Child access tree overlapping for " + name + " and " + accessLevelInst.getName());
 				continue;
 			}
 

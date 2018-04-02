@@ -7,18 +7,17 @@ import l2server.gameserver.datatables.ScenePlayerDataTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -45,8 +44,8 @@ public class Balok extends L2AttackableAIScript {
 	private static final int minionId = 23123;
 	private static final int balokId = 29218;
 	private static final Location enterCords = new Location(153573, 142867, -12737);
-	private static final L2Skill darknessDrain = SkillTable.getInstance().getInfo(14367, 1);
-	private static final L2Skill invincibilityActivation = SkillTable.getInstance().getInfo(14190, 1);
+	private static final Skill darknessDrain = SkillTable.getInstance().getInfo(14367, 1);
+	private static final Skill invincibilityActivation = SkillTable.getInstance().getInfo(14190, 1);
 	private static final int[][] minionSpawns =
 			{{154592, 141488, -12738, 26941}, {154759, 142073, -12738, 32333}, {154158, 143112, -12738, 43737}, {152963, 143102, -12738, 53988},
 					{152360, 142067, -12740, 0}, {152530, 141457, -12740, 7246}, {153571, 140878, -12738, 16756}, {154174, 141057, -12738, 22165}};
@@ -67,19 +66,19 @@ public class Balok extends L2AttackableAIScript {
 	}
 
 	private class CrystalPrisonWorld extends InstanceWorld {
-		private List<L2Npc> minionList;
-		private L2Npc balok;
-		private L2Npc currentMinion;
+		private List<Npc> minionList;
+		private Npc balok;
+		private Npc currentMinion;
 
 		private CrystalPrisonWorld() {
-			minionList = new ArrayList<L2Npc>();
+			minionList = new ArrayList<Npc>();
 		}
 	}
 
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill) {
+	public String onSpellFinished(Npc npc, Player player, Skill skill) {
 		if (debug) {
-			Log.warning(getName() + ": onSpellFinished: " + skill.getName());
+			log.warn(getName() + ": onSpellFinished: " + skill.getName());
 		}
 
 		InstanceWorld wrld = null;
@@ -88,7 +87,7 @@ public class Balok extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onSpellFinished: Unable to get world.");
+			log.warn(getName() + ": onSpellFinished: Unable to get world.");
 			return null;
 		}
 
@@ -105,9 +104,9 @@ public class Balok extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		InstanceWorld wrld = null;
@@ -116,7 +115,7 @@ public class Balok extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onAdvEvent: Unable to get world.");
+			log.warn(getName() + ": onAdvEvent: Unable to get world.");
 			return null;
 		}
 
@@ -134,10 +133,10 @@ public class Balok extends L2AttackableAIScript {
 				world.balok = addSpawn(balokId, 153573, 142071, -12738, 16565, false, 0, false, world.instanceId);
 			} else if (event.equalsIgnoreCase("stage_last_send_minions")) {
 				synchronized (world.minionList) {
-					L2Npc minion = world.minionList.get(Rnd.get(world.minionList.size()));
+					Npc minion = world.minionList.get(Rnd.get(world.minionList.size()));
 					if (minion != null) {
 						minion.setIsRunning(true);
-						((L2Attackable) minion).setCanReturnToSpawnPoint(false);
+						((Attackable) minion).setCanReturnToSpawnPoint(false);
 
 						world.currentMinion = minion;
 
@@ -154,7 +153,7 @@ public class Balok extends L2AttackableAIScript {
 											world.balok.getHeading()));
 					startQuestTimer("stage_last_minion_walk", 2000, npc, null);
 				} else {
-					L2Abnormal invul = npc.getFirstEffect(invincibilityActivation);
+					Abnormal invul = npc.getFirstEffect(invincibilityActivation);
 					if (invul != null) {
 						invul.exit();
 					}
@@ -175,9 +174,9 @@ public class Balok extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public final String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -188,7 +187,7 @@ public class Balok extends L2AttackableAIScript {
 					world.status = 1;
 
 					for (int[] a : minionSpawns) {
-						L2Npc minion = addSpawn(minionId, a[0], a[1], a[2], a[3], false, 0, false, world.instanceId);
+						Npc minion = addSpawn(minionId, a[0], a[1], a[2], a[3], false, 0, false, world.instanceId);
 						world.minionList.add(minion);
 
 						invincibilityActivation.getEffects(minion, minion);
@@ -199,7 +198,7 @@ public class Balok extends L2AttackableAIScript {
 					invincibilityActivation.getEffects(world.balok, world.balok);
 
 					//Jail random players?
-					for (L2PcInstance instPlayer : world.balok.getKnownList().getKnownPlayers().values()) {
+					for (Player instPlayer : world.balok.getKnownList().getKnownPlayers().values()) {
 						if (instPlayer == null || Rnd.get(100) > 40) {
 							continue;
 						}
@@ -221,9 +220,9 @@ public class Balok extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -252,9 +251,9 @@ public class Balok extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 
 		int npcId = npc.getNpcId();
@@ -266,7 +265,7 @@ public class Balok extends L2AttackableAIScript {
 		return "";
 	}
 
-	private final synchronized void enterInstance(L2PcInstance player) {
+	private final synchronized void enterInstance(Player player) {
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
 			if (!(world instanceof CrystalPrisonWorld)) {
@@ -295,7 +294,7 @@ public class Balok extends L2AttackableAIScript {
 
 			InstanceManager.getInstance().addWorld(world);
 
-			List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+			List<Player> allPlayers = new ArrayList<Player>();
 			if (debug) {
 				allPlayers.add(player);
 			} else {
@@ -303,7 +302,7 @@ public class Balok extends L2AttackableAIScript {
 						player.getParty().getPartyMembers());
 			}
 
-			for (L2PcInstance enterPlayer : allPlayers) {
+			for (Player enterPlayer : allPlayers) {
 				if (enterPlayer == null) {
 					continue;
 				}
@@ -319,7 +318,7 @@ public class Balok extends L2AttackableAIScript {
 
 			startQuestTimer("stage_1_start", 60000, null, player);
 
-			Log.fine(getName() + ":  instance started: " + instanceId + " created by player: " + player.getName());
+			log.debug(getName() + ":  instance started: " + instanceId + " created by player: " + player.getName());
 
 			return;
 		}

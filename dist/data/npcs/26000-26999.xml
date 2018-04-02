@@ -1,5 +1,5 @@
 <list>
-	<npc id="26000" name="Amden Orc Turahot" title="Raid Boss" level="92" type="L2RaidBoss" atkRange="40"
+	<npc id="26000" name="Amden Orc Turahot" title="Raid Boss" level="92" type="RaidBoss" atkRange="40"
 		 hpMax="43746872" hpReg="173.6845"
 		 mpMax="4875495" mpReg="109.59" STR="130" CON="143" DEX="150" INT="144" WIT="125" MEN="147" exp="7749416067"
 		 sp="1859859"
@@ -70,7 +70,7 @@
 		<spawn x="-96212" y="111442" z="-3382" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Amden Orc Turahot" />
 	</npc>
-	<npc id="26001" name="Amden Orc Turation" title="Raid Boss" level="92" type="L2RaidBoss" atkRange="40"
+	<npc id="26001" name="Amden Orc Turation" title="Raid Boss" level="92" type="RaidBoss" atkRange="40"
 		 hpMax="32302104"
 		 hpReg="156.19301" mpMax="3600000" mpReg="98.55" STR="130" CON="143" DEX="150" INT="144" WIT="125" MEN="147"
 		 exp="7749416067"
@@ -149,7 +149,7 @@
 		<spawn x="-98657" y="116391" z="-3238" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Amden Orc Turation" />
 	</npc>
-	<npc id="26002" name="Amden Orc Turamathia" title="Raid Boss" level="92" type="L2RaidBoss" atkRange="40"
+	<npc id="26002" name="Amden Orc Turamathia" title="Raid Boss" level="92" type="RaidBoss" atkRange="40"
 		 hpMax="32302104"
 		 hpReg="156.19301" mpMax="3600000" mpReg="98.55" STR="130" CON="143" DEX="130" INT="144" WIT="145" MEN="147"
 		 exp="7749416067"
@@ -220,7 +220,7 @@
 		<spawn x="-101360" y="110614" z="-3174" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Amden Orc Turamathia" />
 	</npc>
-	<npc id="26003" name="Amden Orc Turabait" title="Raid Boss" level="92" type="L2RaidBoss" atkRange="40"
+	<npc id="26003" name="Amden Orc Turabait" title="Raid Boss" level="92" type="RaidBoss" atkRange="40"
 		 hpMax="32302104"
 		 hpReg="156.19301" mpMax="3600000" mpReg="98.55" STR="130" CON="143" DEX="150" INT="144" WIT="125" MEN="147"
 		 exp="7749416067"
@@ -298,7 +298,7 @@
 		<spawn x="-98725" y="101356" z="-3478" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Amden Orc Turabait" />
 	</npc>
-	<npc id="26004" name="Nerva Orc Nermion" title="Raid Boss" level="92" type="L2RaidBoss" atkRange="40"
+	<npc id="26004" name="Nerva Orc Nermion" title="Raid Boss" level="92" type="RaidBoss" atkRange="40"
 		 hpMax="32302104" hpReg="156.19301"
 		 mpMax="3600000" mpReg="98.55" STR="130" CON="143" DEX="130" INT="144" WIT="145" MEN="147" exp="7749416067"
 		 sp="1859859"
@@ -374,7 +374,7 @@
 		<spawn x="-90301" y="96540" z="-3550" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Nerva Orc Nermion" />
 	</npc>
-	<npc id="26005" name="Nerva Orc Nergatt" title="Raid Boss" level="92" type="L2RaidBoss" atkRange="40"
+	<npc id="26005" name="Nerva Orc Nergatt" title="Raid Boss" level="92" type="RaidBoss" atkRange="40"
 		 hpMax="22250088" hpReg="137.08"
 		 mpMax="2479724" mpReg="86.5" STR="130" CON="143" DEX="150" INT="144" WIT="125" MEN="147" exp="7749416067"
 		 sp="1859859"
@@ -443,7 +443,7 @@
 		<spawn x="-86326" y="100291" z="-3438" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Nerva Orc Nergatt" />
 	</npc>
-	<npc id="26006" name="Encroached Orc Warrior" title="Raid Minion" level="92" type="L2Monster" atkRange="40"
+	<npc id="26006" name="Encroached Orc Warrior" title="Raid Minion" level="92" type="Monster" atkRange="40"
 		 hpMax="2119055"
 		 hpReg="182.90811" mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="124" MEN="62"
 		 exp="3732480" sp="80619"
@@ -459,7 +459,7 @@
 		<skill id="16202" level="2" /> <!-- Fatal Strike -->
 		<skill id="16228" level="2" /> <!-- Wide Stun -->
 	</npc>
-	<npc id="26007" name="Encroached Orc Thrower" title="Raid Minion" level="92" type="L2Monster" atkRange="1100"
+	<npc id="26007" name="Encroached Orc Thrower" title="Raid Minion" level="92" type="Monster" atkRange="1100"
 		 hpMax="2119055"
 		 hpReg="182.90811" mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="124" MEN="62"
 		 exp="3732480" sp="80619"
@@ -475,7 +475,7 @@
 		<skill id="16203" level="2" /> <!-- Fatal Shot -->
 		<skill id="16205" level="2" /> <!-- Burst Shot -->
 	</npc>
-	<npc id="26008" name="Encroached Orc Wizard" title="Raid Minion" level="92" type="L2Monster" atkRange="40"
+	<npc id="26008" name="Encroached Orc Wizard" title="Raid Minion" level="92" type="Monster" atkRange="40"
 		 hpMax="2119055"
 		 hpReg="182.90811" mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="124" MEN="62"
 		 exp="3732480" sp="80619"
@@ -489,7 +489,7 @@
 		<skill id="4411" level="9" /> <!-- Slightly Weak M. Atk. -->
 		<skill id="16211" level="3" /> <!-- Earth Spike -->
 	</npc>
-	<npc id="26009" name="Encroached Orc Priest" title="Raid Minion" level="92" type="L2Monster" atkRange="40"
+	<npc id="26009" name="Encroached Orc Priest" title="Raid Minion" level="92" type="Monster" atkRange="40"
 		 hpMax="2119055"
 		 hpReg="182.90811" mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="124" MEN="62"
 		 exp="3732480" sp="80619"
@@ -503,7 +503,7 @@
 		<skill id="16226" level="1" /> <!-- Battle Recovery -->
 		<skill id="16229" level="3" /> <!-- Mass Hold -->
 	</npc>
-	<npc id="26010" name="Encroached Orc Assassin" title="Raid Minion" level="92" type="L2Monster" atkRange="40"
+	<npc id="26010" name="Encroached Orc Assassin" title="Raid Minion" level="92" type="Monster" atkRange="40"
 		 hpMax="2106982"
 		 hpReg="54.195" mpMax="20000" mpReg="11.76" STR="90" CON="74" DEX="66" INT="28" WIT="79" MEN="62" exp="3732480"
 		 sp="80619"
@@ -517,7 +517,7 @@
 		<skill id="4414" level="3" /> <!-- Light Armor Type -->
 		<skill id="16202" level="2" /> <!-- Fatal Strike -->
 	</npc>
-	<npc id="26011" name="Bloody Earth Dragon Gagia" title="Raid Boss" level="88" type="L2RaidBoss" atkRange="40"
+	<npc id="26011" name="Bloody Earth Dragon Gagia" title="Raid Boss" level="88" type="RaidBoss" atkRange="40"
 		 hpMax="38196048"
 		 hpReg="151.22101" mpMax="4256867" mpReg="104.51" STR="130" CON="143" DEX="150" INT="144" WIT="120" MEN="147"
 		 exp="6810821128"
@@ -587,7 +587,7 @@
 		<spawn x="-27905" y="48030" z="-3622" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Bloody Earth Dragon Gagia" />
 	</npc>
-	<npc id="26012" name="Demon Fardune" title="Raid Boss" level="88" type="L2RaidBoss" atkRange="40" hpMax="26737234"
+	<npc id="26012" name="Demon Fardune" title="Raid Boss" level="88" type="RaidBoss" atkRange="40" hpMax="26737234"
 		 hpReg="133.476"
 		 mpMax="2979807" mpReg="92.24" STR="130" CON="143" DEX="150" INT="144" WIT="120" MEN="147" exp="6810821128"
 		 sp="1634597"
@@ -664,7 +664,7 @@
 		<spawn x="-28354" y="18297" z="-3566" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Demon Fardune" />
 	</npc>
-	<npc id="26013" name="Demon Harsia" title="Raid Boss" level="88" type="L2RaidBoss" atkRange="40" hpMax="26737234"
+	<npc id="26013" name="Demon Harsia" title="Raid Boss" level="88" type="RaidBoss" atkRange="40" hpMax="26737234"
 		 hpReg="133.476"
 		 mpMax="2979807" mpReg="92.24" STR="130" CON="143" DEX="130" INT="144" WIT="140" MEN="147" exp="6810821128"
 		 sp="1634597"
@@ -733,7 +733,7 @@
 				  chance="0.75" /> <!-- Monster Weapon Appearance Stone: Tegaffe's Dualsword -->
 		<spawn x="-7653" y="19062" z="-3062" heading="0" respawn="55636" randomRespawn="73964" dbName="Demon Harsia" />
 	</npc>
-	<npc id="26014" name="Demon Bedukel" title="Raid Boss" level="88" type="L2RaidBoss" atkRange="40" hpMax="26737234"
+	<npc id="26014" name="Demon Bedukel" title="Raid Boss" level="88" type="RaidBoss" atkRange="40" hpMax="26737234"
 		 hpReg="133.476"
 		 mpMax="2979807" mpReg="92.24" STR="130" CON="143" DEX="150" INT="144" WIT="120" MEN="147" exp="6810821128"
 		 sp="1634597"
@@ -808,7 +808,7 @@
 				  chance="0.75" /> <!-- Monster Weapon Appearance Stone: Mimilead's Staff -->
 		<spawn x="-6695" y="39757" z="-3630" heading="0" respawn="55636" randomRespawn="73964" dbName="Demon Bedukel" />
 	</npc>
-	<npc id="26015" name="Bloody Witch Rumilla" title="Raid Boss" level="88" type="L2RaidBoss" atkRange="40"
+	<npc id="26015" name="Bloody Witch Rumilla" title="Raid Boss" level="88" type="RaidBoss" atkRange="40"
 		 hpMax="26737234"
 		 hpReg="133.476" mpMax="2979807" mpReg="92.24" STR="130" CON="143" DEX="130" INT="144" WIT="140" MEN="147"
 		 exp="6810821128"
@@ -882,7 +882,7 @@
 		<spawn x="-30119" y="32358" z="-3286" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Bloody Witch Rumilla" />
 	</npc>
-	<npc id="26016" name="Shilen's Priest Sasia" title="Raid Boss" level="88" type="L2RaidBoss" atkRange="40"
+	<npc id="26016" name="Shilen's Priest Sasia" title="Raid Boss" level="88" type="RaidBoss" atkRange="40"
 		 hpMax="26737234"
 		 hpReg="133.476" mpMax="2979807" mpReg="92.24" STR="130" CON="143" DEX="150" INT="144" WIT="120" MEN="147"
 		 exp="6810821128"
@@ -950,7 +950,7 @@
 		<spawn x="-14030" y="54059" z="-3638" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Shilen's Priest Sasia" />
 	</npc>
-	<npc id="26017" name="Demon Collector" title="Raid Minion" level="88" type="L2Monster" atkRange="40" hpMax="1850178"
+	<npc id="26017" name="Demon Collector" title="Raid Minion" level="88" type="Monster" atkRange="40" hpMax="1850178"
 		 hpReg="52.897934"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="104" MEN="62" exp="3065445" sp="80619"
 		 pAtk="62812"
@@ -966,7 +966,7 @@
 		<skill id="16202" level="1" /> <!-- Fatal Strike -->
 		<skill id="16228" level="1" /> <!-- Wide Stun -->
 	</npc>
-	<npc id="26018" name="Demon Servant" title="Raid Minion" level="88" type="L2Monster" atkRange="1100" hpMax="1850178"
+	<npc id="26018" name="Demon Servant" title="Raid Minion" level="88" type="Monster" atkRange="1100" hpMax="1850178"
 		 hpReg="52.897934"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="104" MEN="62" exp="3065445" sp="80619"
 		 pAtk="62812"
@@ -982,7 +982,7 @@
 		<skill id="16203" level="1" /> <!-- Fatal Shot -->
 		<skill id="16205" level="1" /> <!-- Burst Shot -->
 	</npc>
-	<npc id="26019" name="Demon Watcher" title="Raid Minion" level="88" type="L2Monster" atkRange="40" hpMax="1850178"
+	<npc id="26019" name="Demon Watcher" title="Raid Minion" level="88" type="Monster" atkRange="40" hpMax="1850178"
 		 hpReg="52.897934"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="104" MEN="62" exp="3065445" sp="80619"
 		 pAtk="52147"
@@ -996,7 +996,7 @@
 		<skill id="4411" level="9" /> <!-- Slightly Weak M. Atk. -->
 		<skill id="16211" level="1" /> <!-- Earth Spike -->
 	</npc>
-	<npc id="26020" name="Demon Aide" title="Raid Minion" level="88" type="L2Monster" atkRange="40" hpMax="1850178"
+	<npc id="26020" name="Demon Aide" title="Raid Minion" level="88" type="Monster" atkRange="40" hpMax="1850178"
 		 hpReg="52.897934"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="104" MEN="62" exp="3065445" sp="80619"
 		 pAtk="52147"
@@ -1010,7 +1010,7 @@
 		<skill id="16226" level="1" /> <!-- Battle Recovery -->
 		<skill id="16229" level="1" /> <!-- Mass Hold -->
 	</npc>
-	<npc id="26021" name="Sasia's Servant" title="Raid Minion" level="88" type="L2Monster" atkRange="40" hpMax="1989015"
+	<npc id="26021" name="Sasia's Servant" title="Raid Minion" level="88" type="Monster" atkRange="40" hpMax="1989015"
 		 hpReg="39.743"
 		 mpMax="20000" mpReg="11.76" STR="90" CON="74" DEX="66" INT="28" WIT="74" MEN="62" exp="3065445" sp="80619"
 		 pAtk="80923"
@@ -1024,7 +1024,7 @@
 		<skill id="4414" level="3" /> <!-- Light Armor Type -->
 		<skill id="16202" level="1" /> <!-- Fatal Strike -->
 	</npc>
-	<npc id="26022" name="Dark Messenger Afjak" title="Raid Boss" level="98" type="L2RaidBoss" atkRange="40"
+	<npc id="26022" name="Dark Messenger Afjak" title="Raid Boss" level="98" type="RaidBoss" atkRange="40"
 		 hpMax="56685420"
 		 hpReg="248.04001" mpMax="6317468" mpReg="119.99" STR="130" CON="143" DEX="150" INT="144" WIT="135" MEN="147"
 		 exp="9339738544"
@@ -1095,7 +1095,7 @@
 		<spawn x="187704" y="7955" z="-2678" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Dark Messenger Afjak" />
 	</npc>
-	<npc id="26023" name="Dusk Knight Feilnor" title="Raid Boss" level="98" type="L2RaidBoss" atkRange="40"
+	<npc id="26023" name="Dusk Knight Feilnor" title="Raid Boss" level="98" type="RaidBoss" atkRange="40"
 		 hpMax="48182608"
 		 hpReg="234.33" mpMax="5369848" mpReg="113.36" STR="130" CON="143" DEX="150" INT="144" WIT="135" MEN="147"
 		 exp="9339738544"
@@ -1173,7 +1173,7 @@
 		<spawn x="186348" y="29482" z="-3598" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Dusk Knight Feilnor" />
 	</npc>
-	<npc id="26024" name="Chaos Wizard Amormio" title="Raid Boss" level="98" type="L2RaidBoss" atkRange="40"
+	<npc id="26024" name="Chaos Wizard Amormio" title="Raid Boss" level="98" type="RaidBoss" atkRange="40"
 		 hpMax="48182608"
 		 hpReg="234.33" mpMax="5369848" mpReg="113.36" STR="130" CON="143" DEX="130" INT="144" WIT="155" MEN="147"
 		 exp="9339738544"
@@ -1245,7 +1245,7 @@
 		<spawn x="176260" y="30524" z="-3774" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Chaos Wizard Amormio" />
 	</npc>
-	<npc id="26025" name="Insolence Knight Lahav" title="Raid Boss" level="98" type="L2RaidBoss" atkRange="40"
+	<npc id="26025" name="Insolence Knight Lahav" title="Raid Boss" level="98" type="RaidBoss" atkRange="40"
 		 hpMax="48182608"
 		 hpReg="234.33" mpMax="5369848" mpReg="113.36" STR="130" CON="143" DEX="150" INT="144" WIT="135" MEN="147"
 		 exp="9339738544"
@@ -1324,7 +1324,7 @@
 		<spawn x="163454" y="23511" z="-3662" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Insolence Knight Lahav" />
 	</npc>
-	<npc id="26026" name="Death Priest Borhunt" title="Raid Boss" level="98" type="L2RaidBoss" atkRange="40"
+	<npc id="26026" name="Death Priest Borhunt" title="Raid Boss" level="98" type="RaidBoss" atkRange="40"
 		 hpMax="48182608"
 		 hpReg="234.33" mpMax="5369848" mpReg="113.36" STR="130" CON="143" DEX="130" INT="144" WIT="155" MEN="147"
 		 exp="9339738544"
@@ -1400,7 +1400,7 @@
 		<spawn x="168961" y="5084" z="-2678" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Death Priest Borhunt" />
 	</npc>
-	<npc id="26027" name="Destruction Knight Zeruel" title="Raid Boss" level="98" type="L2RaidBoss" atkRange="40"
+	<npc id="26027" name="Destruction Knight Zeruel" title="Raid Boss" level="98" type="RaidBoss" atkRange="40"
 		 hpMax="48182608"
 		 hpReg="234.33" mpMax="5369848" mpReg="113.36" STR="130" CON="143" DEX="150" INT="144" WIT="135" MEN="147"
 		 exp="9339738544"
@@ -1469,7 +1469,7 @@
 		<spawn x="176750" y="5861" z="-2678" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Destruction Knight Zeruel" />
 	</npc>
-	<npc id="26028" name="Unsealed Warrior" title="Raid Minion" level="98" type="L2Monster" atkRange="40"
+	<npc id="26028" name="Unsealed Warrior" title="Raid Minion" level="98" type="Monster" atkRange="40"
 		 hpMax="2745786" hpReg="1411.3282"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="164" MEN="62" exp="3810645" sp="80619"
 		 pAtk="1770535"
@@ -1484,7 +1484,7 @@
 		<skill id="16202" level="4" /> <!-- Fatal Strike -->
 		<skill id="16228" level="4" /> <!-- Wide Stun -->
 	</npc>
-	<npc id="26029" name="Unsealed Archer" title="Raid Minion" level="98" type="L2Monster" atkRange="1100"
+	<npc id="26029" name="Unsealed Archer" title="Raid Minion" level="98" type="Monster" atkRange="1100"
 		 hpMax="2745786" hpReg="1411.3282"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="164" MEN="62" exp="3810645" sp="80619"
 		 pAtk="1770535"
@@ -1499,7 +1499,7 @@
 		<skill id="16203" level="4" /> <!-- Fatal Shot -->
 		<skill id="16205" level="4" /> <!-- Burst Shot -->
 	</npc>
-	<npc id="26030" name="Unsealed Wizard" title="Raid Minion" level="98" type="L2Monster" atkRange="40" hpMax="2745786"
+	<npc id="26030" name="Unsealed Wizard" title="Raid Minion" level="98" type="Monster" atkRange="40" hpMax="2745786"
 		 hpReg="1411.3282"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="164" MEN="62" exp="3810645" sp="80619"
 		 pAtk="1633084"
@@ -1512,7 +1512,7 @@
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 		<skill id="16207" level="4" /> <!-- Dark Spike -->
 	</npc>
-	<npc id="26031" name="Unsealed Priest" title="Raid Minion" level="98" type="L2Monster" atkRange="40" hpMax="2745786"
+	<npc id="26031" name="Unsealed Priest" title="Raid Minion" level="98" type="Monster" atkRange="40" hpMax="2745786"
 		 hpReg="1411.3282"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="164" MEN="62" exp="3810645" sp="80619"
 		 pAtk="1633084"
@@ -1526,7 +1526,7 @@
 		<skill id="16226" level="1" /> <!-- Battle Recovery -->
 		<skill id="16229" level="4" /> <!-- Mass Hold -->
 	</npc>
-	<npc id="26032" name="Unsealed Soldier" title="Raid Minion" level="98" type="L2Monster" atkRange="80"
+	<npc id="26032" name="Unsealed Soldier" title="Raid Minion" level="98" type="Monster" atkRange="80"
 		 hpMax="2463607" hpReg="90.325005"
 		 mpMax="20000" mpReg="11.76" STR="90" CON="74" DEX="66" INT="28" WIT="89" MEN="62" exp="3810645" sp="80619"
 		 pAtk="194308"
@@ -1540,7 +1540,7 @@
 		<skill id="4414" level="3" /> <!-- Light Armor Type -->
 		<skill id="16202" level="4" /> <!-- Fatal Strike -->
 	</npc>
-	<npc id="26033" name="Fallen Angel Tiera" title="Raid Boss" level="98" type="L2RaidBoss" atkRange="40"
+	<npc id="26033" name="Fallen Angel Tiera" title="Raid Boss" level="98" type="RaidBoss" atkRange="40"
 		 hpMax="56685420"
 		 hpReg="248.04001" mpMax="6317468" mpReg="119.99" STR="130" CON="143" DEX="150" INT="144" WIT="135" MEN="147"
 		 exp="9339738544"
@@ -1613,7 +1613,7 @@
 		<spawn x="94712" y="-84407" z="-3750" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Fallen Angel Tiera" />
 	</npc>
-	<npc id="26034" name="Corrupted Goblier" title="Raid Boss" level="98" type="L2RaidBoss" atkRange="40"
+	<npc id="26034" name="Corrupted Goblier" title="Raid Boss" level="98" type="RaidBoss" atkRange="40"
 		 hpMax="48182608" hpReg="234.33"
 		 mpMax="5369848" mpReg="113.36" STR="130" CON="143" DEX="150" INT="144" WIT="135" MEN="147" exp="9339738544"
 		 sp="2241537"
@@ -1689,7 +1689,7 @@
 		<spawn x="69109" y="-87204" z="-2878" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Corrupted Goblier" />
 	</npc>
-	<npc id="26035" name="Corrupted Cherkia" title="Raid Boss" level="98" type="L2RaidBoss" atkRange="40"
+	<npc id="26035" name="Corrupted Cherkia" title="Raid Boss" level="98" type="RaidBoss" atkRange="40"
 		 hpMax="48182608" hpReg="234.33"
 		 mpMax="5369848" mpReg="113.36" STR="130" CON="143" DEX="130" INT="144" WIT="155" MEN="147" exp="9339738544"
 		 sp="2241537"
@@ -1761,7 +1761,7 @@
 		<spawn x="77305" y="-92857" z="-3342" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Corrupted Cherkia" />
 	</npc>
-	<npc id="26036" name="Corrupted Harthemon" title="Raid Boss" level="98" type="L2RaidBoss" atkRange="40"
+	<npc id="26036" name="Corrupted Harthemon" title="Raid Boss" level="98" type="RaidBoss" atkRange="40"
 		 hpMax="48182608"
 		 hpReg="234.33" mpMax="5369848" mpReg="113.36" STR="130" CON="143" DEX="150" INT="144" WIT="135" MEN="147"
 		 exp="9339738544"
@@ -1839,7 +1839,7 @@
 		<spawn x="92226" y="-79863" z="-3654" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Corrupted Harthemon" />
 	</npc>
-	<npc id="26037" name="Corrupted Sarboth" title="Raid Boss" level="98" type="L2RaidBoss" atkRange="40"
+	<npc id="26037" name="Corrupted Sarboth" title="Raid Boss" level="98" type="RaidBoss" atkRange="40"
 		 hpMax="48182608" hpReg="234.33"
 		 mpMax="5369848" mpReg="113.36" STR="130" CON="143" DEX="130" INT="144" WIT="155" MEN="147" exp="9339738544"
 		 sp="2241537"
@@ -1915,7 +1915,7 @@
 		<spawn x="87812" y="-76106" z="-3430" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Corrupted Sarboth" />
 	</npc>
-	<npc id="26038" name="Fallen Angel Eloule" title="Raid Boss" level="98" type="L2RaidBoss" atkRange="40"
+	<npc id="26038" name="Fallen Angel Eloule" title="Raid Boss" level="98" type="RaidBoss" atkRange="40"
 		 hpMax="48182608"
 		 hpReg="234.33" mpMax="5369848" mpReg="113.36" STR="130" CON="143" DEX="150" INT="144" WIT="135" MEN="147"
 		 exp="9339738544"
@@ -1984,7 +1984,7 @@
 		<spawn x="74443" y="-71152" z="-3606" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Fallen Angel Eloule" />
 	</npc>
-	<npc id="26039" name="Aenkazel Warrior" title="Raid Minion" level="98" type="L2Monster" atkRange="40"
+	<npc id="26039" name="Aenkazel Warrior" title="Raid Minion" level="98" type="Monster" atkRange="40"
 		 hpMax="2745786" hpReg="1411.3282"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="164" MEN="62" exp="3810645" sp="80619"
 		 pAtk="1770535"
@@ -1999,7 +1999,7 @@
 		<skill id="16202" level="4" /> <!-- Fatal Strike -->
 		<skill id="16228" level="4" /> <!-- Wide Stun -->
 	</npc>
-	<npc id="26040" name="Aenkazel Archer" title="Raid Minion" level="98" type="L2Monster" atkRange="1100"
+	<npc id="26040" name="Aenkazel Archer" title="Raid Minion" level="98" type="Monster" atkRange="1100"
 		 hpMax="2745786" hpReg="1411.3282"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="164" MEN="62" exp="3810645" sp="80619"
 		 pAtk="1770535"
@@ -2014,7 +2014,7 @@
 		<skill id="16203" level="4" /> <!-- Fatal Shot -->
 		<skill id="16205" level="4" /> <!-- Burst Shot -->
 	</npc>
-	<npc id="26041" name="Aenkazel Wizard" title="Raid Minion" level="98" type="L2Monster" atkRange="40" hpMax="2745786"
+	<npc id="26041" name="Aenkazel Wizard" title="Raid Minion" level="98" type="Monster" atkRange="40" hpMax="2745786"
 		 hpReg="1411.3282"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="164" MEN="62" exp="3810645" sp="80619"
 		 pAtk="1633084"
@@ -2027,7 +2027,7 @@
 		<skill id="5467" level="1" /> <!-- Dark Attack -->
 		<skill id="16207" level="4" /> <!-- Dark Spike -->
 	</npc>
-	<npc id="26042" name="Aenkazel Priest" title="Raid Minion" level="98" type="L2Monster" atkRange="40" hpMax="2745786"
+	<npc id="26042" name="Aenkazel Priest" title="Raid Minion" level="98" type="Monster" atkRange="40" hpMax="2745786"
 		 hpReg="1411.3282"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="164" MEN="62" exp="3810645" sp="80619"
 		 pAtk="1633084"
@@ -2041,7 +2041,7 @@
 		<skill id="16226" level="1" /> <!-- Battle Recovery -->
 		<skill id="16229" level="4" /> <!-- Mass Hold -->
 	</npc>
-	<npc id="26043" name="Wing Pentomino" title="Raid Minion" level="98" type="L2Monster" atkRange="40" hpMax="2463607"
+	<npc id="26043" name="Wing Pentomino" title="Raid Minion" level="98" type="Monster" atkRange="40" hpMax="2463607"
 		 hpReg="90.325005"
 		 mpMax="20000" mpReg="11.76" STR="90" CON="74" DEX="66" INT="28" WIT="89" MEN="62" exp="3810645" sp="80619"
 		 pAtk="194308"
@@ -2055,7 +2055,7 @@
 		<skill id="4414" level="3" /> <!-- Light Armor Type -->
 		<skill id="16202" level="4" /> <!-- Fatal Strike -->
 	</npc>
-	<npc id="26044" name="Evil Magikus" title="Raid Boss" level="97" type="L2RaidBoss" atkRange="40" hpMax="52069756"
+	<npc id="26044" name="Evil Magikus" title="Raid Boss" level="97" type="RaidBoss" atkRange="40" hpMax="52069756"
 		 hpReg="200.65001"
 		 mpMax="5803062" mpReg="116.48" STR="130" CON="143" DEX="150" INT="144" WIT="130" MEN="147" exp="9058597718"
 		 sp="2174063"
@@ -2121,7 +2121,7 @@
 				  chance="0.3" /> <!-- Monster Weapon Appearance Stone: Mimilead's Staff -->
 		<spawn x="93036" y="168960" z="-3614" heading="0" respawn="55636" randomRespawn="73964" dbName="Evil Magikus" />
 	</npc>
-	<npc id="26045" name="Kerfaus" title="Raid Boss" level="97" type="L2RaidBoss" atkRange="40" hpMax="44259292"
+	<npc id="26045" name="Kerfaus" title="Raid Boss" level="97" type="RaidBoss" atkRange="40" hpMax="44259292"
 		 hpReg="189.55"
 		 mpMax="4932603" mpReg="110.04" STR="130" CON="143" DEX="150" INT="144" WIT="130" MEN="147" exp="9058597718"
 		 sp="2174063"
@@ -2198,7 +2198,7 @@
 		<itemDrop itemId="37072" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Tebot's Axe -->
 		<spawn x="96672" y="223568" z="-3270" heading="0" respawn="55636" randomRespawn="73964" dbName="Kerfaus" />
 	</npc>
-	<npc id="26046" name="Milinaus" title="Raid Boss" level="97" type="L2RaidBoss" atkRange="40" hpMax="44259292"
+	<npc id="26046" name="Milinaus" title="Raid Boss" level="97" type="RaidBoss" atkRange="40" hpMax="44259292"
 		 hpReg="189.55"
 		 mpMax="4932603" mpReg="110.04" STR="130" CON="143" DEX="130" INT="144" WIT="150" MEN="147" exp="9058597718"
 		 sp="2174063"
@@ -2265,7 +2265,7 @@
 				  chance="0.3" /> <!-- Monster Weapon Appearance Stone: Tegaffe's Dualsword -->
 		<spawn x="94774" y="203676" z="-3374" heading="0" respawn="55636" randomRespawn="73964" dbName="Milinaus" />
 	</npc>
-	<npc id="26047" name="Sarkaus" title="Raid Boss" level="97" type="L2RaidBoss" atkRange="40" hpMax="44259292"
+	<npc id="26047" name="Sarkaus" title="Raid Boss" level="97" type="RaidBoss" atkRange="40" hpMax="44259292"
 		 hpReg="189.55"
 		 mpMax="4932603" mpReg="110.04" STR="130" CON="143" DEX="150" INT="144" WIT="130" MEN="147" exp="9058597718"
 		 sp="2174063"
@@ -2338,7 +2338,7 @@
 		<itemDrop itemId="37081" min="1" max="1" chance="0.3" /> <!-- Monster Weapon Appearance Stone: Kanadis' Hand -->
 		<spawn x="81165" y="196936" z="-3030" heading="0" respawn="55636" randomRespawn="73964" dbName="Sarkaus" />
 	</npc>
-	<npc id="26048" name="Shimeus" title="Raid Boss" level="97" type="L2RaidBoss" atkRange="40" hpMax="44259292"
+	<npc id="26048" name="Shimeus" title="Raid Boss" level="97" type="RaidBoss" atkRange="40" hpMax="44259292"
 		 hpReg="189.55"
 		 mpMax="4932603" mpReg="110.04" STR="130" CON="143" DEX="130" INT="144" WIT="150" MEN="147" exp="9058597718"
 		 sp="2174063"
@@ -2413,7 +2413,7 @@
 				  chance="0.75" /> <!-- Monster Weapon Appearance Stone: Satyr's Staff -->
 		<spawn x="72384" y="210897" z="-3254" heading="0" respawn="55636" randomRespawn="73964" dbName="Shimeus" />
 	</npc>
-	<npc id="26049" name="Evil Kinigos" title="Raid Boss" level="97" type="L2RaidBoss" atkRange="40" hpMax="44259292"
+	<npc id="26049" name="Evil Kinigos" title="Raid Boss" level="97" type="RaidBoss" atkRange="40" hpMax="44259292"
 		 hpReg="189.55"
 		 mpMax="4932603" mpReg="110.04" STR="130" CON="143" DEX="150" INT="144" WIT="130" MEN="147" exp="9058597718"
 		 sp="2174063"
@@ -2477,7 +2477,7 @@
 				  chance="0.3" /> <!-- Monster Weapon Appearance Stone: Drakos' Dual Dagger -->
 		<spawn x="93965" y="183147" z="-3638" heading="0" respawn="55636" randomRespawn="73964" dbName="Evil Kinigos" />
 	</npc>
-	<npc id="26050" name="Centaur Warrior" title="Raid Minion" level="97" type="L2Monster" atkRange="40" hpMax="2522208"
+	<npc id="26050" name="Centaur Warrior" title="Raid Minion" level="97" type="Monster" atkRange="40" hpMax="2522208"
 		 hpReg="578.08"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="144" MEN="62" exp="3732480" sp="80619"
 		 pAtk="721333"
@@ -2492,7 +2492,7 @@
 		<skill id="16202" level="3" /> <!-- Fatal Strike -->
 		<skill id="16228" level="3" /> <!-- Wide Stun -->
 	</npc>
-	<npc id="26051" name="Centaur Thrower" title="Raid Minion" level="97" type="L2Monster" atkRange="1100"
+	<npc id="26051" name="Centaur Thrower" title="Raid Minion" level="97" type="Monster" atkRange="1100"
 		 hpMax="2522208" hpReg="578.08"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="144" MEN="62" exp="3732480" sp="80619"
 		 pAtk="721333"
@@ -2507,7 +2507,7 @@
 		<skill id="16203" level="3" /> <!-- Fatal Shot -->
 		<skill id="16205" level="3" /> <!-- Burst Shot -->
 	</npc>
-	<npc id="26052" name="Centaur Wizard" title="Raid Minion" level="97" type="L2Monster" atkRange="40" hpMax="2522208"
+	<npc id="26052" name="Centaur Wizard" title="Raid Minion" level="97" type="Monster" atkRange="40" hpMax="2522208"
 		 hpReg="578.08"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="144" MEN="62" exp="3732480" sp="80619"
 		 pAtk="651860"
@@ -2520,7 +2520,7 @@
 		<skill id="5465" level="1" /> <!-- Earth Attack -->
 		<skill id="16211" level="4" /> <!-- Earth Spike -->
 	</npc>
-	<npc id="26053" name="Centaur Healer" title="Raid Minion" level="97" type="L2Monster" atkRange="40" hpMax="2522208"
+	<npc id="26053" name="Centaur Healer" title="Raid Minion" level="97" type="Monster" atkRange="40" hpMax="2522208"
 		 hpReg="578.08"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="144" MEN="62" exp="3732480" sp="80619"
 		 pAtk="651860"
@@ -2534,7 +2534,7 @@
 		<skill id="16226" level="1" /> <!-- Battle Recovery -->
 		<skill id="16229" level="4" /> <!-- Mass Hold -->
 	</npc>
-	<npc id="26054" name="Evil Kaniss" title="Raid Minion" level="97" type="L2Monster" atkRange="40" hpMax="2462991"
+	<npc id="26054" name="Evil Kaniss" title="Raid Minion" level="97" type="Monster" atkRange="40" hpMax="2462991"
 		 hpReg="72.26"
 		 mpMax="20000" mpReg="11.76" STR="90" CON="74" DEX="66" INT="28" WIT="84" MEN="62" exp="3732480" sp="80619"
 		 pAtk="154616"
@@ -2548,7 +2548,7 @@
 		<skill id="4414" level="3" /> <!-- Light Armor Type -->
 		<skill id="16202" level="3" /> <!-- Fatal Strike -->
 	</npc>
-	<npc id="26055" name="Ekidna's Statue Tarstan" title="Raid Boss" level="93" type="L2RaidBoss" atkRange="40"
+	<npc id="26055" name="Ekidna's Statue Tarstan" title="Raid Boss" level="93" type="RaidBoss" atkRange="40"
 		 hpMax="43557440"
 		 hpReg="173.42" mpMax="4854383" mpReg="109.43" STR="130" CON="143" DEX="150" INT="144" WIT="125" MEN="147"
 		 exp="7998784284"
@@ -2619,7 +2619,7 @@
 		<spawn x="205950" y="79733" z="474" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Ekidna's Statue Tarstan" />
 	</npc>
-	<npc id="26056" name="Ekidna's Statue Abelsnif" title="Raid Boss" level="93" type="L2RaidBoss" atkRange="40"
+	<npc id="26056" name="Ekidna's Statue Abelsnif" title="Raid Boss" level="93" type="RaidBoss" atkRange="40"
 		 hpMax="32302104"
 		 hpReg="156.19301" mpMax="3600000" mpReg="98.55" STR="130" CON="143" DEX="150" INT="144" WIT="125" MEN="147"
 		 exp="7998784284"
@@ -2698,7 +2698,7 @@
 		<spawn x="205859" y="72285" z="834" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Ekidna's Statue Abelsnif" />
 	</npc>
-	<npc id="26057" name="Ekidna's Statue Kimesis" title="Raid Boss" level="93" type="L2RaidBoss" atkRange="40"
+	<npc id="26057" name="Ekidna's Statue Kimesis" title="Raid Boss" level="93" type="RaidBoss" atkRange="40"
 		 hpMax="32302104"
 		 hpReg="156.19301" mpMax="3600000" mpReg="98.55" STR="130" CON="143" DEX="130" INT="144" WIT="145" MEN="147"
 		 exp="7998784284"
@@ -2769,7 +2769,7 @@
 		<spawn x="210732" y="77108" z="850" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Ekidna's Statue Kimesis" />
 	</npc>
-	<npc id="26058" name="Ekidna's Statue Kathargon" title="Raid Boss" level="93" type="L2RaidBoss" atkRange="40"
+	<npc id="26058" name="Ekidna's Statue Kathargon" title="Raid Boss" level="93" type="RaidBoss" atkRange="40"
 		 hpMax="32302104"
 		 hpReg="156.19301" mpMax="3600000" mpReg="98.55" STR="130" CON="143" DEX="150" INT="144" WIT="125" MEN="147"
 		 exp="7998784284"
@@ -2846,7 +2846,7 @@
 		<spawn x="219266" y="79060" z="1018" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Ekidna's Statue Kathargon" />
 	</npc>
-	<npc id="26059" name="Ekidna's Statue Pantasaus" title="Raid Boss" level="93" type="L2RaidBoss" atkRange="40"
+	<npc id="26059" name="Ekidna's Statue Pantasaus" title="Raid Boss" level="93" type="RaidBoss" atkRange="40"
 		 hpMax="32302104"
 		 hpReg="156.19301" mpMax="3600000" mpReg="98.55" STR="130" CON="143" DEX="130" INT="144" WIT="145" MEN="147"
 		 exp="7998784284"
@@ -2921,7 +2921,7 @@
 		<spawn x="215061" y="73433" z="1018" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Ekidna's Statue Pantasaus" />
 	</npc>
-	<npc id="26060" name="Ekidna's Statue Ixignon" title="Raid Boss" level="93" type="L2RaidBoss" atkRange="40"
+	<npc id="26060" name="Ekidna's Statue Ixignon" title="Raid Boss" level="93" type="RaidBoss" atkRange="40"
 		 hpMax="32302104"
 		 hpReg="156.19301" mpMax="3600000" mpReg="98.55" STR="130" CON="143" DEX="150" INT="144" WIT="125" MEN="147"
 		 exp="7998784284"
@@ -2990,7 +2990,7 @@
 		<spawn x="222295" y="73705" z="1290" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Ekidna's Statue Ixignon" />
 	</npc>
-	<npc id="26061" name="Warrior Statue" title="Raid Minion" level="93" type="L2Monster" atkRange="40" hpMax="2109880"
+	<npc id="26061" name="Warrior Statue" title="Raid Minion" level="93" type="Monster" atkRange="40" hpMax="2109880"
 		 hpReg="182.90811"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="124" MEN="62" exp="3427920" sp="80619"
 		 pAtk="223326"
@@ -3006,7 +3006,7 @@
 		<skill id="16202" level="2" /> <!-- Fatal Strike -->
 		<skill id="16228" level="2" /> <!-- Wide Stun -->
 	</npc>
-	<npc id="26062" name="Thrower Statue" title="Raid Minion" level="93" type="L2Monster" atkRange="1100"
+	<npc id="26062" name="Thrower Statue" title="Raid Minion" level="93" type="Monster" atkRange="1100"
 		 hpMax="2109880" hpReg="182.90811"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="124" MEN="62" exp="3427920" sp="80619"
 		 pAtk="223326"
@@ -3022,7 +3022,7 @@
 		<skill id="16203" level="2" /> <!-- Fatal Shot -->
 		<skill id="16205" level="2" /> <!-- Burst Shot -->
 	</npc>
-	<npc id="26063" name="Wizard Statue" title="Raid Minion" level="93" type="L2Monster" atkRange="40" hpMax="2109880"
+	<npc id="26063" name="Wizard Statue" title="Raid Minion" level="93" type="Monster" atkRange="40" hpMax="2109880"
 		 hpReg="182.90811"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="124" MEN="62" exp="3427920" sp="80619"
 		 pAtk="195005"
@@ -3036,7 +3036,7 @@
 		<skill id="4411" level="9" /> <!-- Slightly Weak M. Atk. -->
 		<skill id="16209" level="3" /> <!-- Water Spike -->
 	</npc>
-	<npc id="26064" name="Priest Statue" title="Raid Minion" level="93" type="L2Monster" atkRange="40" hpMax="2109880"
+	<npc id="26064" name="Priest Statue" title="Raid Minion" level="93" type="Monster" atkRange="40" hpMax="2109880"
 		 hpReg="182.90811"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="124" MEN="62" exp="3427920" sp="80619"
 		 pAtk="195005"
@@ -3050,7 +3050,7 @@
 		<skill id="16226" level="1" /> <!-- Battle Recovery -->
 		<skill id="16229" level="3" /> <!-- Mass Hold -->
 	</npc>
-	<npc id="26065" name="Gladiator Statue" title="Raid Minion" level="93" type="L2Monster" atkRange="40"
+	<npc id="26065" name="Gladiator Statue" title="Raid Minion" level="93" type="Monster" atkRange="40"
 		 hpMax="2164882" hpReg="54.195"
 		 mpMax="20000" mpReg="11.76" STR="90" CON="74" DEX="66" INT="28" WIT="79" MEN="62" exp="3427920" sp="80619"
 		 pAtk="113466"
@@ -3064,7 +3064,7 @@
 		<skill id="4414" level="3" /> <!-- Light Armor Type -->
 		<skill id="16202" level="2" /> <!-- Fatal Strike -->
 	</npc>
-	<npc id="26066" name="Enhanced Mahum Radium" title="Raid Boss" level="94" type="L2RaidBoss" atkRange="40"
+	<npc id="26066" name="Enhanced Mahum Radium" title="Raid Boss" level="94" type="RaidBoss" atkRange="40"
 		 hpMax="48349968"
 		 hpReg="179.8715" mpMax="5388499" mpReg="113.5" STR="130" CON="143" DEX="150" INT="144" WIT="125" MEN="147"
 		 exp="8254270241"
@@ -3135,7 +3135,7 @@
 		<spawn x="137901" y="-54271" z="-3118" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Enhanced Mahum Radium" />
 	</npc>
-	<npc id="26067" name="Typheron" title="Raid Boss" level="94" type="L2RaidBoss" atkRange="40" hpMax="32302104"
+	<npc id="26067" name="Typheron" title="Raid Boss" level="94" type="RaidBoss" atkRange="40" hpMax="32302104"
 		 hpReg="156.19301"
 		 mpMax="3600000" mpReg="98.55" STR="130" CON="143" DEX="150" INT="144" WIT="125" MEN="147" exp="8254270241"
 		 sp="1981024"
@@ -3213,7 +3213,7 @@
 		<itemDrop itemId="37072" min="1" max="1" chance="0.75" /> <!-- Monster Weapon Appearance Stone: Tebot's Axe -->
 		<spawn x="143636" y="-62897" z="-3350" heading="0" respawn="55636" randomRespawn="73964" dbName="Typheron" />
 	</npc>
-	<npc id="26068" name="Timarga" title="Raid Boss" level="94" type="L2RaidBoss" atkRange="40" hpMax="32302104"
+	<npc id="26068" name="Timarga" title="Raid Boss" level="94" type="RaidBoss" atkRange="40" hpMax="32302104"
 		 hpReg="156.19301"
 		 mpMax="3600000" mpReg="98.55" STR="130" CON="143" DEX="130" INT="144" WIT="145" MEN="147" exp="8254270241"
 		 sp="1981024"
@@ -3283,7 +3283,7 @@
 				  chance="0.75" /> <!-- Monster Weapon Appearance Stone: Mimilead's Staff -->
 		<spawn x="157570" y="-56840" z="-3102" heading="0" respawn="55636" randomRespawn="73964" dbName="Timarga" />
 	</npc>
-	<npc id="26069" name="Tycepton" title="Raid Boss" level="94" type="L2RaidBoss" atkRange="40" hpMax="32302104"
+	<npc id="26069" name="Tycepton" title="Raid Boss" level="94" type="RaidBoss" atkRange="40" hpMax="32302104"
 		 hpReg="156.19301"
 		 mpMax="3600000" mpReg="98.55" STR="130" CON="143" DEX="150" INT="144" WIT="125" MEN="147" exp="8254270241"
 		 sp="1981024"
@@ -3360,7 +3360,7 @@
 				  chance="0.75" /> <!-- Monster Weapon Appearance Stone: Kanadis' Hand -->
 		<spawn x="155050" y="-44811" z="-3694" heading="0" respawn="55636" randomRespawn="73964" dbName="Tycepton" />
 	</npc>
-	<npc id="26070" name="Tiverga" title="Raid Boss" level="94" type="L2RaidBoss" atkRange="40" hpMax="32302104"
+	<npc id="26070" name="Tiverga" title="Raid Boss" level="94" type="RaidBoss" atkRange="40" hpMax="32302104"
 		 hpReg="156.19301"
 		 mpMax="3600000" mpReg="98.55" STR="130" CON="143" DEX="130" INT="144" WIT="145" MEN="147" exp="8254270241"
 		 sp="1981024"
@@ -3434,7 +3434,7 @@
 				  chance="0.75" /> <!-- Monster Weapon Appearance Stone: Kanadis' Hand -->
 		<spawn x="146680" y="-43186" z="-2246" heading="0" respawn="55636" randomRespawn="73964" dbName="Tiverga" />
 	</npc>
-	<npc id="26071" name="Enhanced Mahum Supercium" title="Raid Boss" level="94" type="L2RaidBoss" atkRange="40"
+	<npc id="26071" name="Enhanced Mahum Supercium" title="Raid Boss" level="94" type="RaidBoss" atkRange="40"
 		 hpMax="32302104"
 		 hpReg="156.19301" mpMax="3600000" mpReg="98.55" STR="130" CON="143" DEX="150" INT="144" WIT="125" MEN="147"
 		 exp="8254270241"
@@ -3503,7 +3503,7 @@
 		<spawn x="137929" y="-49067" z="-3206" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Enhanced Mahum Supercium" />
 	</npc>
-	<npc id="26072" name="Tayga Warrior" title="Raid Minion" level="94" type="L2Monster" atkRange="40" hpMax="2342024"
+	<npc id="26072" name="Tayga Warrior" title="Raid Minion" level="94" type="Monster" atkRange="40" hpMax="2342024"
 		 hpReg="182.90811"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="124" MEN="62" exp="3502845" sp="80619"
 		 pAtk="224553"
@@ -3519,7 +3519,7 @@
 		<skill id="16202" level="2" /> <!-- Fatal Strike -->
 		<skill id="16228" level="2" /> <!-- Wide Stun -->
 	</npc>
-	<npc id="26073" name="Tayga Archer" title="Raid Minion" level="94" type="L2Monster" atkRange="1100" hpMax="2342024"
+	<npc id="26073" name="Tayga Archer" title="Raid Minion" level="94" type="Monster" atkRange="1100" hpMax="2342024"
 		 hpReg="182.90811"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="124" MEN="62" exp="3502845" sp="80619"
 		 pAtk="224553"
@@ -3535,7 +3535,7 @@
 		<skill id="16203" level="2" /> <!-- Fatal Shot -->
 		<skill id="16205" level="2" /> <!-- Burst Shot -->
 	</npc>
-	<npc id="26074" name="Tayga Wizard" title="Raid Minion" level="94" type="L2Monster" atkRange="40" hpMax="2342024"
+	<npc id="26074" name="Tayga Wizard" title="Raid Minion" level="94" type="Monster" atkRange="40" hpMax="2342024"
 		 hpReg="182.90811"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="124" MEN="62" exp="3502845" sp="80619"
 		 pAtk="196077"
@@ -3549,7 +3549,7 @@
 		<skill id="4411" level="9" /> <!-- Slightly Weak M. Atk. -->
 		<skill id="16208" level="3" /> <!-- Fire Spike -->
 	</npc>
-	<npc id="26075" name="Tayga Healer" title="Raid Minion" level="94" type="L2Monster" atkRange="40" hpMax="2342024"
+	<npc id="26075" name="Tayga Healer" title="Raid Minion" level="94" type="Monster" atkRange="40" hpMax="2342024"
 		 hpReg="182.90811"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="124" MEN="62" exp="3502845" sp="80619"
 		 pAtk="196077"
@@ -3563,7 +3563,7 @@
 		<skill id="16226" level="1" /> <!-- Battle Recovery -->
 		<skill id="16229" level="3" /> <!-- Mass Hold -->
 	</npc>
-	<npc id="26076" name="Supercium's Minion" title="Raid Minion" level="94" type="L2Monster" atkRange="40"
+	<npc id="26076" name="Supercium's Minion" title="Raid Minion" level="94" type="Monster" atkRange="40"
 		 hpMax="2168502"
 		 hpReg="54.195" mpMax="20000" mpReg="11.76" STR="90" CON="74" DEX="66" INT="28" WIT="79" MEN="62" exp="3502845"
 		 sp="80619"
@@ -3578,7 +3578,7 @@
 		<skill id="4414" level="3" /> <!-- Light Armor Type -->
 		<skill id="16202" level="2" /> <!-- Fatal Strike -->
 	</npc>
-	<npc id="26077" name="Monster Laum" title="Raid Boss" level="88" type="L2RaidBoss" atkRange="40" hpMax="38196048"
+	<npc id="26077" name="Monster Laum" title="Raid Boss" level="88" type="RaidBoss" atkRange="40" hpMax="38196048"
 		 hpReg="151.22101"
 		 mpMax="4256867" mpReg="104.51" STR="130" CON="143" DEX="150" INT="144" WIT="120" MEN="147" exp="6810821128"
 		 sp="1634597"
@@ -3648,7 +3648,7 @@
 		<spawn x="-25896" y="119324" z="-3646" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Monster Laum" />
 	</npc>
-	<npc id="26078" name="Monster Minotaur" title="Raid Boss" level="88" type="L2RaidBoss" atkRange="40"
+	<npc id="26078" name="Monster Minotaur" title="Raid Boss" level="88" type="RaidBoss" atkRange="40"
 		 hpMax="26737234" hpReg="133.476"
 		 mpMax="2979807" mpReg="92.24" STR="130" CON="143" DEX="150" INT="144" WIT="120" MEN="147" exp="6810821128"
 		 sp="1634597"
@@ -3726,7 +3726,7 @@
 		<spawn x="-27299" y="107892" z="-3670" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Monster Minotaur" />
 	</npc>
-	<npc id="26079" name="Monster Sarga" title="Raid Boss" level="88" type="L2RaidBoss" atkRange="40" hpMax="26737234"
+	<npc id="26079" name="Monster Sarga" title="Raid Boss" level="88" type="RaidBoss" atkRange="40" hpMax="26737234"
 		 hpReg="133.476"
 		 mpMax="2979807" mpReg="92.24" STR="130" CON="143" DEX="130" INT="144" WIT="140" MEN="147" exp="6810821128"
 		 sp="1634597"
@@ -3796,7 +3796,7 @@
 		<spawn x="-28085" y="95639" z="-3542" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Monster Sarga" />
 	</npc>
-	<npc id="26080" name="Monster Hogliff" title="Raid Boss" level="88" type="L2RaidBoss" atkRange="40" hpMax="26737234"
+	<npc id="26080" name="Monster Hogliff" title="Raid Boss" level="88" type="RaidBoss" atkRange="40" hpMax="26737234"
 		 hpReg="133.476"
 		 mpMax="2979807" mpReg="92.24" STR="130" CON="143" DEX="150" INT="144" WIT="120" MEN="147" exp="6810821128"
 		 sp="1634597"
@@ -3872,7 +3872,7 @@
 		<spawn x="-38225" y="97672" z="-3630" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Monster Hogliff" />
 	</npc>
-	<npc id="26081" name="Monster Artarot" title="Raid Boss" level="88" type="L2RaidBoss" atkRange="40" hpMax="26737234"
+	<npc id="26081" name="Monster Artarot" title="Raid Boss" level="88" type="RaidBoss" atkRange="40" hpMax="26737234"
 		 hpReg="133.476"
 		 mpMax="2979807" mpReg="92.24" STR="130" CON="143" DEX="130" INT="144" WIT="140" MEN="147" exp="6810821128"
 		 sp="1634597"
@@ -3946,7 +3946,7 @@
 		<spawn x="-47776" y="103537" z="-2942" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Monster Artarot" />
 	</npc>
-	<npc id="26082" name="Monster Centaur" title="Raid Boss" level="88" type="L2RaidBoss" atkRange="40" hpMax="26737234"
+	<npc id="26082" name="Monster Centaur" title="Raid Boss" level="88" type="RaidBoss" atkRange="40" hpMax="26737234"
 		 hpReg="133.476"
 		 mpMax="2979807" mpReg="92.24" STR="130" CON="143" DEX="150" INT="144" WIT="120" MEN="147" exp="6810821128"
 		 sp="1634597"
@@ -4014,7 +4014,7 @@
 		<spawn x="-51308" y="97821" z="-3670" heading="0" respawn="55636" randomRespawn="73964"
 			   dbName="Monster Centaur" />
 	</npc>
-	<npc id="26083" name="Minotaur Warrior" title="Raid Minion" level="88" type="L2Monster" atkRange="40"
+	<npc id="26083" name="Minotaur Warrior" title="Raid Minion" level="88" type="Monster" atkRange="40"
 		 hpMax="1850178" hpReg="52.897934"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="104" MEN="62" exp="3065445" sp="80619"
 		 pAtk="62812"
@@ -4030,7 +4030,7 @@
 		<skill id="16202" level="1" /> <!-- Fatal Strike -->
 		<skill id="16228" level="1" /> <!-- Wide Stun -->
 	</npc>
-	<npc id="26084" name="Minotaur Thrower" title="Raid Minion" level="88" type="L2Monster" atkRange="600"
+	<npc id="26084" name="Minotaur Thrower" title="Raid Minion" level="88" type="Monster" atkRange="600"
 		 hpMax="1850178" hpReg="52.897934"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="104" MEN="62" exp="3065445" sp="80619"
 		 pAtk="62812"
@@ -4046,7 +4046,7 @@
 		<skill id="16203" level="1" /> <!-- Fatal Shot -->
 		<skill id="16205" level="1" /> <!-- Burst Shot -->
 	</npc>
-	<npc id="26085" name="Minotaur Wizard" title="Raid Minion" level="88" type="L2Monster" atkRange="40" hpMax="1850178"
+	<npc id="26085" name="Minotaur Wizard" title="Raid Minion" level="88" type="Monster" atkRange="40" hpMax="1850178"
 		 hpReg="52.897934"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="104" MEN="62" exp="3065445" sp="80619"
 		 pAtk="52147"
@@ -4060,7 +4060,7 @@
 		<skill id="4411" level="9" /> <!-- Slightly Weak M. Atk. -->
 		<skill id="16208" level="1" /> <!-- Fire Spike -->
 	</npc>
-	<npc id="26086" name="Minotaur Healer" title="Raid Minion" level="88" type="L2Monster" atkRange="40" hpMax="1850178"
+	<npc id="26086" name="Minotaur Healer" title="Raid Minion" level="88" type="Monster" atkRange="40" hpMax="1850178"
 		 hpReg="52.897934"
 		 mpMax="20000" mpReg="11.76" STR="80" CON="74" DEX="61" INT="28" WIT="104" MEN="62" exp="3065445" sp="80619"
 		 pAtk="52147"
@@ -4074,7 +4074,7 @@
 		<skill id="16226" level="1" /> <!-- Battle Recovery -->
 		<skill id="16229" level="1" /> <!-- Mass Hold -->
 	</npc>
-	<npc id="26087" name="Centaur's Minion Dantaros" title="Raid Minion" level="88" type="L2Monster" atkRange="1100"
+	<npc id="26087" name="Centaur's Minion Dantaros" title="Raid Minion" level="88" type="Monster" atkRange="1100"
 		 hpMax="1989015"
 		 hpReg="39.743" mpMax="20000" mpReg="11.76" STR="90" CON="74" DEX="66" INT="28" WIT="74" MEN="62" exp="3065445"
 		 sp="80619"
@@ -4090,7 +4090,7 @@
 		<skill id="16203" level="1" /> <!-- Fatal Shot -->
 		<skill id="16205" level="1" /> <!-- Burst Shot -->
 	</npc>
-	<npc id="26088" name="Undine" title="Time-defying" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0"
+	<npc id="26088" name="Undine" title="Time-defying" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3"
 		 pAtkSpd="299"
@@ -4099,7 +4099,7 @@
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<skill id="4416" level="7" /> <!-- Spirits -->
 	</npc>
-	<npc id="26089" name="Frederick the Destroyer" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0"
+	<npc id="26089" name="Frederick the Destroyer" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="3" mAtk="2" pDef="4" mDef="3" pAtkSpd="299"
 		 mAtkSpd="407"
@@ -4108,7 +4108,7 @@
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<skill id="4416" level="6" /> <!-- Humanoids -->
 	</npc>
-	<npc id="26090" name="Abyssal Makkum" title="Raid Boss" level="99" type="L2GrandBoss" atkRange="40" hpMax="10000000"
+	<npc id="26090" name="Abyssal Makkum" title="Raid Boss" level="99" type="GrandBoss" atkRange="40" hpMax="10000000"
 		 hpReg="200.0"
 		 mpMax="6317468" mpReg="119.99" STR="130" CON="143" DEX="150" INT="144" WIT="135" MEN="147" exp="9339738544"
 		 sp="2241537"
@@ -4132,7 +4132,7 @@
 		<skill id="14304" level="1" /> <!-- Energy of Defense -->
 		<skill id="14315" level="1" /> <!-- Powerful Defense -->
 	</npc>
-	<npc id="26091" name="Aspiring Orc Ruler of Aden" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0"
+	<npc id="26091" name="Aspiring Orc Ruler of Aden" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2"
 		 pAtkSpd="298"
@@ -4140,7 +4140,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26092" name="Gigantic Golden Pig" title="Raid Boss" level="120" type="L2Npc" atkRange="40" hpMax="2"
+	<npc id="26092" name="Gigantic Golden Pig" title="Raid Boss" level="120" type="Npc" atkRange="40" hpMax="2"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2"
 		 pAtkSpd="298"
@@ -4148,7 +4148,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26093" name="Mino" title="Tracker" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26093" name="Mino" title="Tracker" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4156,7 +4156,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26094" name="Sola" title="Ill-fated Princess" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="26094" name="Sola" title="Ill-fated Princess" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -4164,7 +4164,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26095" name="Knife Maid" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="26095" name="Knife Maid" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40"
@@ -4172,7 +4172,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26096" name="Ariarc" title="Fallen Angel" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="26096" name="Ariarc" title="Fallen Angel" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -4180,7 +4180,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26097" name="Angel of Punishment" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26097" name="Angel of Punishment" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4188,7 +4188,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26098" name="Angel of Death" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26098" name="Angel of Death" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4196,7 +4196,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26099" name="Sirra" title="Confined Princess" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="26099" name="Sirra" title="Confined Princess" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -4204,7 +4204,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26100" name="Sirra's Knight" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26100" name="Sirra's Knight" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4212,7 +4212,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26101" name="Sirra's Ice Golem" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26101" name="Sirra's Ice Golem" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4220,7 +4220,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26102" name="Dark Rider" title="Betrayed" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="26102" name="Dark Rider" title="Betrayed" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -4228,7 +4228,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26103" name="Berserk Dragon Warrior" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26103" name="Berserk Dragon Warrior" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4236,7 +4236,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26104" name="Berserk Dragon Wizard" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26104" name="Berserk Dragon Wizard" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4244,7 +4244,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26105" name="Veridan" title="Armed" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26105" name="Veridan" title="Armed" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4252,7 +4252,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26106" name="Veridan" title="Wealthy" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="26106" name="Veridan" title="Wealthy" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4260,7 +4260,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26107" name="Veridan" title="Wise" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26107" name="Veridan" title="Wise" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4268,7 +4268,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26108" name="Veridan" title="Armed" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26108" name="Veridan" title="Armed" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4276,7 +4276,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26109" name="Veridan" title="Wealthy" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="26109" name="Veridan" title="Wealthy" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4284,7 +4284,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26110" name="Veridan" title="Wise" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26110" name="Veridan" title="Wise" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4292,7 +4292,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26111" name="Kechi" title="Armed" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26111" name="Kechi" title="Armed" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4300,7 +4300,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26112" name="Kechi" title="Wealthy" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26112" name="Kechi" title="Wealthy" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4308,7 +4308,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26113" name="Kechi" title="Wise" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26113" name="Kechi" title="Wise" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4316,7 +4316,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26114" name="Michaela" title="Armed" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26114" name="Michaela" title="Armed" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4324,7 +4324,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26115" name="Michaela" title="Wealthy" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="26115" name="Michaela" title="Wealthy" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4332,7 +4332,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26116" name="Michaela" title="Wise" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26116" name="Michaela" title="Wise" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4340,7 +4340,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26120" name="Michaela" title="Armed" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26120" name="Michaela" title="Armed" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4348,7 +4348,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26121" name="Michaela" title="Wealthy" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="26121" name="Michaela" title="Wealthy" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4356,7 +4356,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26122" name="Michaela" title="Wise" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26122" name="Michaela" title="Wise" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4364,7 +4364,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26123" name="Golden Pig" title="Dimensional Vagabond" level="105" type="L2Monster" atkRange="40"
+	<npc id="26123" name="Golden Pig" title="Dimensional Vagabond" level="105" type="Monster" atkRange="40"
 		 hpMax="1000000"
 		 hpReg="0.0" mpMax="2440" mpReg="0.9" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="18" mAtk="11"
 		 pDef="2000"
@@ -4374,7 +4374,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26124" name="Kelbim" title="Fallen Guardian of Atelia" level="104" type="L2GrandBoss" atkRange="40"
+	<npc id="26124" name="Kelbim" title="Fallen Guardian of Atelia" level="104" type="GrandBoss" atkRange="40"
 		 hpMax="164165721"
 		 hpReg="440.76" mpMax="2471403" mpReg="319.83" STR="164" CON="111" DEX="55" INT="188" WIT="78" MEN="149"
 		 pAtk="450000"
@@ -4393,7 +4393,7 @@
 		<skill id="23681" level="1" /> <!-- Harpe Stone Cancel -->
 		<itemDrop itemId="46079" min="1" max="2" chance="100" /> <!-- Kelbim's Atelia Fragment -->
 	</npc>
-	<npc id="26125" name="Giant Atelia" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26125" name="Giant Atelia" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0" STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40"
@@ -4401,7 +4401,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26126" name="Guardian Sinistra" title="Kelbim's Minion" level="103" type="L2Monster" atkRange="40"
+	<npc id="26126" name="Guardian Sinistra" title="Kelbim's Minion" level="103" type="Monster" atkRange="40"
 		 hpMax="729003"
 		 hpReg="48.0" mpMax="28731" mpReg="32.56" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="111937319"
 		 sp="53729"
@@ -4411,7 +4411,7 @@
 		 earthRes="100" holyRes="100"
 		 darkRes="100" aiType="fighter" clan="kelbim_clan" clanRange="10000">
 	</npc>
-	<npc id="26127" name="Guardian Destra" title="Kelbim's Minion" level="103" type="L2Monster" atkRange="40"
+	<npc id="26127" name="Guardian Destra" title="Kelbim's Minion" level="103" type="Monster" atkRange="40"
 		 hpMax="729003"
 		 hpReg="48.0" mpMax="28731" mpReg="32.56" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="111937319"
 		 sp="53729"
@@ -4421,7 +4421,7 @@
 		 earthRes="100" holyRes="100"
 		 darkRes="100" aiType="fighter" clan="kelbim_clan" clanRange="10000">
 	</npc>
-	<npc id="26128" name="Kelbim's Clone" title="Fallen Guardian of Atelia" level="120" type="L2Npc" atkRange="40"
+	<npc id="26128" name="Kelbim's Clone" title="Fallen Guardian of Atelia" level="120" type="Npc" atkRange="40"
 		 hpMax="1"
 		 hpReg="0.0" mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1"
 		 pDef="1" mDef="1"
@@ -4429,7 +4429,7 @@
 		 collisionHeight="24"
 		 fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26129" name="Kelbim's Guard" level="103" type="L2Monster" atkRange="80" hpMax="729003" hpReg="48.0"
+	<npc id="26129" name="Kelbim's Guard" level="103" type="Monster" atkRange="80" hpMax="729003" hpReg="48.0"
 		 mpMax="28731"
 		 mpReg="32.56" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="111937319" sp="53729" pAtk="2220000"
 		 mAtk="500000"
@@ -4439,7 +4439,7 @@
 		 earthRes="100" holyRes="100"
 		 darkRes="100" aiType="fighter" clan="kelbim_clan" clanRange="10000">
 	</npc>
-	<npc id="26130" name="Atelia Safety Device" level="99" type="L2Monster" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="26130" name="Atelia Safety Device" level="99" type="Monster" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4447,7 +4447,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26131" name="Isabella" title="Raid Boss" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="26131" name="Isabella" title="Raid Boss" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -4455,7 +4455,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26132" name="Croa" title="Raid Minion" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="26132" name="Croa" title="Raid Minion" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4463,7 +4463,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26133" name="Amis" title="Raid Minion" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="26133" name="Amis" title="Raid Minion" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4471,7 +4471,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26134" name="Atelia Dark Wizard" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="26134" name="Atelia Dark Wizard" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -4479,7 +4479,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26135" name="Geork" title="Embryo Master Artisan" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="26135" name="Geork" title="Embryo Master Artisan" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -4487,7 +4487,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="26136" name="Burnstein" title="Embryo Commander" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="26136" name="Burnstein" title="Embryo Commander" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0" mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"

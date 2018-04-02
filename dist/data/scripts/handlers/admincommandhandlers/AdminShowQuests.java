@@ -18,9 +18,9 @@ package handlers.admincommandhandlers;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.QuestManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
@@ -43,15 +43,15 @@ public class AdminShowQuests implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_charquestmenu", "admin_setcharquest"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		String[] cmdParams = command.split(" ");
-		L2PcInstance target = null;
-		L2Object targetObject = null;
+		Player target = null;
+		WorldObject targetObject = null;
 		String[] val = new String[4];
 		val[0] = null;
 
 		if (cmdParams.length > 1) {
-			target = L2World.getInstance().getPlayer(cmdParams[1]);
+			target = World.getInstance().getPlayer(cmdParams[1]);
 			if (cmdParams.length > 2) {
 				if (cmdParams[2].equals("0")) {
 					val[0] = "var";
@@ -82,8 +82,8 @@ public class AdminShowQuests implements IAdminCommandHandler {
 		} else {
 			targetObject = activeChar.getTarget();
 
-			if (targetObject != null && targetObject instanceof L2PcInstance) {
-				target = (L2PcInstance) targetObject;
+			if (targetObject != null && targetObject instanceof Player) {
+				target = (Player) targetObject;
 			}
 		}
 
@@ -121,7 +121,7 @@ public class AdminShowQuests implements IAdminCommandHandler {
 		return true;
 	}
 
-	private void showfirstquestmenu(L2PcInstance target, L2PcInstance actor) {
+	private void showfirstquestmenu(Player target, Player actor) {
 		StringBuilder replyMSG = new StringBuilder("<html><body><table width=270>" +
 				"<tr><td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" +
 				"<td width=180><center>Player: " + target.getName() + "</center></td>" +
@@ -147,7 +147,7 @@ public class AdminShowQuests implements IAdminCommandHandler {
 		actor.sendPacket(adminReply);
 	}
 
-	private void showquestmenu(L2PcInstance target, L2PcInstance actor, String[] val) throws SQLException {
+	private void showquestmenu(Player target, Player actor, String[] val) throws SQLException {
 		Connection con = null;
 		try {
 			ResultSet rs;
@@ -304,7 +304,7 @@ public class AdminShowQuests implements IAdminCommandHandler {
 		}
 	}
 
-	private void setquestvar(L2PcInstance target, L2PcInstance actor, String[] val) {
+	private void setquestvar(Player target, Player actor, String[] val) {
 		QuestState qs = target.getQuestState(val[0]);
 		String[] outval = new String[3];
 

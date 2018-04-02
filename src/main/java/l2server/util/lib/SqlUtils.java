@@ -16,7 +16,8 @@
 package l2server.util.lib;
 
 import l2server.L2DatabaseFactory;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -24,6 +25,9 @@ import java.sql.ResultSet;
 import java.util.logging.Level;
 
 public class SqlUtils {
+	private static Logger log = LoggerFactory.getLogger(SqlUtils.class.getName());
+
+
 
 	private SqlUtils() {
 	}
@@ -56,7 +60,7 @@ public class SqlUtils {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error in query '" + query + "':", e);
+			log.warn("Error in query '" + query + "':", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -97,7 +101,7 @@ public class SqlUtils {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "mSGI: Error in query '" + query + "':", e);
+			log.warn("mSGI: Error in query '" + query + "':", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -139,12 +143,12 @@ public class SqlUtils {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error in query '" + query + "':", e);
+			log.warn("Error in query '" + query + "':", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 
-		Log.fine("Get all rows in query '" + query + "' in " + (System.currentTimeMillis() - start) + "ms");
+		log.debug("Get all rows in query '" + query + "' in " + (System.currentTimeMillis() - start) + "ms");
 		return res;
 	}
 

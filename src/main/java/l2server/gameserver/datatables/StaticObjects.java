@@ -18,11 +18,12 @@ package l2server.gameserver.datatables;
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.StaticObjectInstance;
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.chars.L2CharTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.CreatureTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -30,7 +31,10 @@ import l2server.util.xml.XmlNode;
 import java.io.File;
 
 public class StaticObjects {
-	private Map<Integer, L2StaticObjectInstance> staticObjects = new HashMap<>();
+	private static Logger log = LoggerFactory.getLogger(StaticObjects.class.getName());
+
+
+	private Map<Integer, StaticObjectInstance> staticObjects = new HashMap<>();
 
 	public static StaticObjects getInstance() {
 		return SingletonHolder.instance;
@@ -39,7 +43,7 @@ public class StaticObjects {
 	private StaticObjects() {
 	}
 	
-	@Load(dependencies = L2World.class)
+	@Load(dependencies = World.class)
 	private void parseData() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "staticObjects.xml");
 		XmlDocument doc = new XmlDocument(file);
@@ -94,8 +98,8 @@ public class StaticObjects {
 				npcDat.set("pDef", 1);
 				npcDat.set("mDef", 1);
 
-				L2CharTemplate template = new L2CharTemplate(npcDat);
-				L2StaticObjectInstance obj = new L2StaticObjectInstance(IdFactory.getInstance().getNextId(), template, id);
+				CreatureTemplate template = new CreatureTemplate(npcDat);
+				StaticObjectInstance obj = new StaticObjectInstance(IdFactory.getInstance().getNextId(), template, id);
 				obj.setType(type);
 				obj.setXYZ(x, y, z);
 				obj.setMap(texture, map_x, map_y);
@@ -104,10 +108,10 @@ public class StaticObjects {
 				staticObjects.put(obj.getStaticObjectId(), obj);
 			}
 		}
-		Log.info("StaticObject: Loaded " + staticObjects.size() + " StaticObject Templates.");
+		log.info("StaticObject: Loaded " + staticObjects.size() + " StaticObject Templates.");
 	}
 
-	public L2StaticObjectInstance getObject(int id) {
+	public StaticObjectInstance getObject(int id) {
 		return staticObjects.get(id);
 	}
 

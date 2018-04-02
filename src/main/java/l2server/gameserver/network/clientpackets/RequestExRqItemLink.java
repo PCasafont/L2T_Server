@@ -16,17 +16,21 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.World;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.serverpackets.ExRpItemLink;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author KenM
  */
 public class RequestExRqItemLink extends L2GameClientPacket {
+	private static Logger log = LoggerFactory.getLogger(RequestExRqItemLink.class.getName());
+
+
 	private static String name = "[C] DO:1E RequestExRqItemLink";
 	private int objectId;
 
@@ -45,14 +49,14 @@ public class RequestExRqItemLink extends L2GameClientPacket {
 	protected void runImpl() {
 		L2GameClient client = getClient();
 		if (client != null) {
-			L2Object object = L2World.getInstance().findObject(objectId);
-			if (object instanceof L2ItemInstance) {
-				L2ItemInstance item = (L2ItemInstance) object;
+			WorldObject object = World.getInstance().findObject(objectId);
+			if (object instanceof Item) {
+				Item item = (Item) object;
 				if (item.isPublished()) {
 					client.sendPacket(new ExRpItemLink(item));
 				} else {
 					if (Config.DEBUG) {
-						Log.info(getClient() + " requested " + name + " for item which wasnt published! ID:" + objectId);
+						log.info(getClient() + " requested " + name + " for item which wasnt published! ID:" + objectId);
 					}
 				}
 			}

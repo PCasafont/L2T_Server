@@ -18,7 +18,8 @@ package l2server.gameserver.datatables;
 import l2server.Config;
 import l2server.gameserver.model.L2AccessLevel;
 import l2server.gameserver.model.L2AdminCommandAccessRight;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
@@ -32,6 +33,9 @@ import java.util.Map;
  * @author FBIagent<br>
  */
 public class AdminCommandAccessRights {
+	private static Logger log = LoggerFactory.getLogger(AdminCommandAccessRights.class.getName());
+
+
 	/**
 	 * The logger<br>
 	 */
@@ -72,7 +76,7 @@ public class AdminCommandAccessRights {
 			});
 		}
 
-		Log.info("AdminCommandAccessRights: Loaded " + adminCommandAccessRights.size() + " from xml.");
+		log.info("AdminCommandAccessRights: Loaded " + adminCommandAccessRights.size() + " from xml.");
 	}
 
 	public boolean hasAccess(String adminCommand, L2AccessLevel accessLevel) {
@@ -83,7 +87,7 @@ public class AdminCommandAccessRights {
 		L2AdminCommandAccessRight acar = adminCommandAccessRights.get(adminCommand);
 
 		if (acar == null) {
-			Log.info("AdminCommandAccessRights: No rights defined for admin command " + adminCommand + ".");
+			log.info("AdminCommandAccessRights: No rights defined for admin command " + adminCommand + ".");
 			return false;
 		}
 
@@ -93,7 +97,7 @@ public class AdminCommandAccessRights {
 	public boolean requireConfirm(String command) {
 		L2AdminCommandAccessRight acar = adminCommandAccessRights.get(command);
 		if (acar == null) {
-			Log.info("AdminCommandAccessRights: No rights defined for admin command " + command + ".");
+			log.info("AdminCommandAccessRights: No rights defined for admin command " + command + ".");
 			return false;
 		}
 		return adminCommandAccessRights.get(command).getRequireConfirm();

@@ -15,7 +15,7 @@
 
 package l2server.gameserver.instancemanager;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -25,13 +25,13 @@ import java.util.Map.Entry;
  */
 public class PlayerAssistsManager {
 	public class PlayerInfo {
-		public Map<L2PcInstance, Long> AttackTimers = new HashMap<>();
-		public Map<L2PcInstance, Long> HelpTimers = new HashMap<>();
+		public Map<Player, Long> AttackTimers = new HashMap<>();
+		public Map<Player, Long> HelpTimers = new HashMap<>();
 	}
 
 	Map<Integer, PlayerInfo> players = new HashMap<>();
 
-	public void updateAttackTimer(L2PcInstance attacker, L2PcInstance target) {
+	public void updateAttackTimer(Player attacker, Player target) {
 		synchronized (players) {
 			PlayerInfo playerInfo = players.get(target.getObjectId());
 			if (playerInfo == null) {
@@ -46,7 +46,7 @@ public class PlayerAssistsManager {
 		}
 	}
 
-	public void updateHelpTimer(L2PcInstance helper, L2PcInstance target) {
+	public void updateHelpTimer(Player helper, Player target) {
 		synchronized (players) {
 			PlayerInfo playerInfo = players.get(target.getObjectId());
 			if (playerInfo == null) {
@@ -61,15 +61,15 @@ public class PlayerAssistsManager {
 		}
 	}
 
-	public List<L2PcInstance> getAssistants(L2PcInstance killer, L2PcInstance victim, boolean killed) {
+	public List<Player> getAssistants(Player killer, Player victim, boolean killed) {
 		long curTime = System.currentTimeMillis();
-		Set<L2PcInstance> assistants = new HashSet<>();
+		Set<Player> assistants = new HashSet<>();
 		if (killer != null && players.containsKey(killer.getObjectId())) {
 			PlayerInfo killerInfo = players.get(killer.getObjectId());
 
 			// Gather the assistants
-			List<L2PcInstance> toDeleteList = new ArrayList<>();
-			for (L2PcInstance assistant : killerInfo.HelpTimers.keySet()) {
+			List<Player> toDeleteList = new ArrayList<>();
+			for (Player assistant : killerInfo.HelpTimers.keySet()) {
 				if (killerInfo.HelpTimers.get(assistant) > curTime) {
 					assistants.add(assistant);
 				} else {
@@ -78,7 +78,7 @@ public class PlayerAssistsManager {
 			}
 
 			// Delete unnecessary assistants
-			for (L2PcInstance toDelete : toDeleteList) {
+			for (Player toDelete : toDeleteList) {
 				killerInfo.HelpTimers.remove(toDelete);
 			}
 		}
@@ -87,15 +87,15 @@ public class PlayerAssistsManager {
 			PlayerInfo victimInfo = players.get(victim.getObjectId());
 
 			// Gather more assistants
-			for (L2PcInstance assistant : victimInfo.AttackTimers.keySet()) {
+			for (Player assistant : victimInfo.AttackTimers.keySet()) {
 				if (victimInfo.AttackTimers.get(assistant) > curTime) {
 					assistants.add(assistant);
 					if (players.containsKey(assistant.getObjectId())) {
 						PlayerInfo assistantInfo = players.get(assistant.getObjectId());
 
 						// Gather the assistant's assistants
-						List<L2PcInstance> toDeleteList = new ArrayList<>();
-						for (Entry<L2PcInstance, Long> assistantsAssistant : assistantInfo.HelpTimers.entrySet()) {
+						List<Player> toDeleteList = new ArrayList<>();
+						for (Entry<Player, Long> assistantsAssistant : assistantInfo.HelpTimers.entrySet()) {
 							if (assistantsAssistant.getValue() > curTime) {
 								assistants.add(assistantsAssistant.getKey());
 							} else {
@@ -104,7 +104,7 @@ public class PlayerAssistsManager {
 						}
 
 						// Delete unnecessary assistants
-						for (L2PcInstance toDelete : toDeleteList) {
+						for (Player toDelete : toDeleteList) {
 							assistantInfo.HelpTimers.remove(toDelete);
 						}
 					}

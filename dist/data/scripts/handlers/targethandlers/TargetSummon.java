@@ -17,13 +17,13 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.skills.L2SkillTargetDirection;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.skills.SkillTargetDirection;
+import l2server.gameserver.templates.skills.SkillTargetType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,32 +35,32 @@ public class TargetSummon implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		if (skill.getTargetDirection() == L2SkillTargetDirection.ALL_SUMMONS) {
-			if (!(activeChar instanceof L2PcInstance)) {
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		if (skill.getTargetDirection() == SkillTargetDirection.ALL_SUMMONS) {
+			if (!(activeChar instanceof Player)) {
 				return null;
 			}
 
-			List<L2Character> targetList = new ArrayList<L2Character>();
+			List<Creature> targetList = new ArrayList<Creature>();
 
 			//LasTravel: Servitor Balance Life should balance owner too
 			if (skill.getId() == 11299) {
 				targetList.add(activeChar);
 			}
 
-			for (L2Summon summon : ((L2PcInstance) activeChar).getSummons()) {
+			for (Summon summon : ((Player) activeChar).getSummons()) {
 				if (!summon.isDead()) {
 					targetList.add(summon);
 				}
 			}
 
-			return targetList.toArray(new L2Character[targetList.size()]);
+			return targetList.toArray(new Creature[targetList.size()]);
 		} else {
-			if (!(target instanceof L2Summon)) {
-				target = ((L2PcInstance) activeChar).getSummon(0);
+			if (!(target instanceof Summon)) {
+				target = ((Player) activeChar).getSummon(0);
 			}
-			if (target != null && !target.isDead() && target instanceof L2Summon && ((L2PcInstance) activeChar).getSummons().contains(target)) {
-				return new L2Character[]{target};
+			if (target != null && !target.isDead() && target instanceof Summon && ((Player) activeChar).getSummons().contains(target)) {
+				return new Creature[]{target};
 			}
 		}
 
@@ -70,8 +70,8 @@ public class TargetSummon implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.TARGET_SUMMON;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.TARGET_SUMMON;
 	}
 
 	public static void main(String[] args) {

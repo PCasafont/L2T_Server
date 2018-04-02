@@ -15,12 +15,13 @@
 
 package l2server.gameserver.templates;
 
-import l2server.log.Log;
+import l2server.gameserver.Server;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.logging.Level;
 
 /**
  * @author mkizub
@@ -29,6 +30,7 @@ import java.util.logging.Level;
  * Methods deployed are accessors to the set (add/get value from its key) and addition of a whole set in the current one.
  */
 public final class StatsSet {
+	private static Logger log = LoggerFactory.getLogger(Server.class.getName());
 	
 	private final Map<String, Object> set = new HashMap<>();
 	
@@ -508,7 +510,7 @@ public final class StatsSet {
 	public void safeSet(String name, int value, int min, int max, String reference) {
 		assert !(min <= max && (value < min || value >= max));
 		if (min <= max && (value < min || value >= max)) {
-			Log.log(Level.SEVERE, "Incorrect value: " + value + "for: " + name + "Ref: " + reference);
+			log.error("Incorrect value: " + value + "for: " + name + "Ref: " + reference);
 		}
 		
 		set(name, value);

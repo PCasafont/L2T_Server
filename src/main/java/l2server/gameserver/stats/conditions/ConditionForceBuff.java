@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.effects.EffectFusion;
@@ -51,7 +51,7 @@ public final class ConditionForceBuff extends Condition {
 	@Override
 	public boolean testImpl(Env env) {
 		if (forces[0] > 0) {
-			L2Abnormal force = env.player.getFirstEffect(BATTLE_FORCE);
+			Abnormal force = env.player.getFirstEffect(BATTLE_FORCE);
 			if (force == null) {
 				return false;
 			}
@@ -74,7 +74,7 @@ public final class ConditionForceBuff extends Condition {
 		}
 
 		if (forces[1] > 0) {
-			L2Abnormal force = env.player.getFirstEffect(SPELL_FORCE);
+			Abnormal force = env.player.getFirstEffect(SPELL_FORCE);
 			if (force == null) {
 				return false;
 			}

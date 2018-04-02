@@ -17,27 +17,30 @@ package l2server.gameserver.model.itemauction;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.ItemInfo;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 
 /**
  * @author Forsaiken
  */
 public final class ItemAuction {
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	private static final long ENDING_TIME_EXTEND_5 = TimeUnit.MILLISECONDS.convert(5, TimeUnit.MINUTES);
 	private static final long ENDING_TIME_EXTEND_3 = TimeUnit.MILLISECONDS.convert(3, TimeUnit.MINUTES);
 
@@ -80,9 +83,9 @@ public final class ItemAuction {
 		scheduledAuctionEndingExtendState = ItemAuctionExtendState.INITIAL;
 		auctionEndingExtendState = ItemAuctionExtendState.INITIAL;
 
-		final L2ItemInstance item = auctionItem.createNewItemInstance();
+		final Item item = auctionItem.createNewItemInstance();
 		itemInfo = new ItemInfo(item);
-		L2World.getInstance().removeObject(item);
+		World.getInstance().removeObject(item);
 
 		for (final ItemAuctionBid bid : auctionBids) {
 			if (highestBid == null || highestBid.getLastBid() < bid.getLastBid()) {
@@ -125,7 +128,7 @@ public final class ItemAuction {
 		return itemInfo;
 	}
 
-	public final L2ItemInstance createNewItemInstance() {
+	public final Item createNewItemInstance() {
 		return auctionItem.createNewItemInstance();
 	}
 
@@ -181,7 +184,7 @@ public final class ItemAuction {
 			statement.execute();
 			statement.close();
 		} catch (final SQLException e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -219,13 +222,13 @@ public final class ItemAuction {
 			statement.execute();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public final void registerBid(final L2PcInstance player, final long newBid) {
+	public final void registerBid(final Player player, final long newBid) {
 		if (player == null) {
 			throw new NullPointerException();
 		}
@@ -288,11 +291,11 @@ public final class ItemAuction {
 		}
 	}
 
-	private void onPlayerBid(final L2PcInstance player, final ItemAuctionBid bid) {
+	private void onPlayerBid(final Player player, final ItemAuctionBid bid) {
 		if (highestBid == null) {
 			highestBid = bid;
 		} else if (highestBid.getLastBid() < bid.getLastBid()) {
-			final L2PcInstance old = highestBid.getPlayer();
+			final Player old = highestBid.getPlayer();
 			if (old != null) {
 				old.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_BEEN_OUTBID));
 			}
@@ -354,7 +357,7 @@ public final class ItemAuction {
 		for (int i = auctionBids.size(); i-- > 0; ) {
 			final ItemAuctionBid bid = auctionBids.get(i);
 			if (bid != null) {
-				final L2PcInstance player = bid.getPlayer();
+				final Player player = bid.getPlayer();
 				if (player != null) {
 					player.sendPacket(packet);
 				}
@@ -362,7 +365,7 @@ public final class ItemAuction {
 		}
 	}
 
-	public final boolean cancelBid(final L2PcInstance player) {
+	public final boolean cancelBid(final Player player) {
 		if (player == null) {
 			throw new NullPointerException();
 		}
@@ -432,7 +435,7 @@ public final class ItemAuction {
 		}
 	}
 
-	private boolean reduceItemCount(final L2PcInstance player, final long count) {
+	private boolean reduceItemCount(final Player player, final long count) {
 		if (!player.reduceAdena("ItemAuction", count, player, true)) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_ADENA_FOR_THIS_BID));
 			return false;
@@ -440,7 +443,7 @@ public final class ItemAuction {
 		return true;
 	}
 
-	private void increaseItemCount(final L2PcInstance player, final long count) {
+	private void increaseItemCount(final Player player, final long count) {
 		player.addAdena("ItemAuction", count, player, true);
 	}
 
@@ -450,7 +453,7 @@ public final class ItemAuction {
 	 * @param player The player that made the bid
 	 * @return The last bid the player made or -1
 	 */
-	public final long getLastBid(final L2PcInstance player) {
+	public final long getLastBid(final Player player) {
 		final ItemAuctionBid bid = getBidfor(player.getObjectId());
 		return bid != null ? bid.getLastBid() : -1L;
 	}

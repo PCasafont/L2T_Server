@@ -8,7 +8,8 @@ import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.entity.ClanWarManager.ClanWar.WarState;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
@@ -23,6 +24,9 @@ import java.util.logging.Level;
  * @author Xavi
  */
 public class ClanWarManager {
+	private static Logger log = LoggerFactory.getLogger(ClanWarManager.class.getName());
+
+
 	private static ClanWarManager instance = null;
 
 	private List<ClanWar> wars = new ArrayList<>();
@@ -100,13 +104,13 @@ public class ClanWarManager {
 				}
 			}
 			statement.close();
-			Log.info("Loaded " + wars.size() + " clan wars.");
+			log.info("Loaded " + wars.size() + " clan wars.");
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error restoring clan wars data.", e);
+			log.error("Error restoring clan wars data.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
-		Log.info("Clan war manager started.");
+		log.info("Clan war manager started.");
 	}
 
 	public void deleteWar(int clanId1, int clanId2) {
@@ -120,7 +124,7 @@ public class ClanWarManager {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error updating clan war time.", e);
+			log.error("Error updating clan war time.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -181,7 +185,7 @@ public class ClanWarManager {
 			clan1.addWar(war);
 			clan2.addWar(war);
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error storing clan wars data.", e);
+			log.error("Error storing clan wars data.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -225,7 +229,7 @@ public class ClanWarManager {
 			war.saveData();
 		}
 
-		Log.log(Level.INFO, "Saved " + wars.size() + " wars data.");
+		log.info("Saved " + wars.size() + " wars data.");
 	}
 
 	public void removeWar(ClanWar war) {
@@ -396,7 +400,7 @@ public class ClanWarManager {
 
 				scheduleStart();
 			} catch (Exception e) {
-				Log.log(Level.SEVERE, "Error updating clan war time.", e);
+				log.error("Error updating clan war time.", e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -429,7 +433,7 @@ public class ClanWarManager {
 
 				scheduleStop();
 			} catch (Exception e) {
-				Log.log(Level.SEVERE, "Error updating clan war time.", e);
+				log.error("Error updating clan war time.", e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -466,7 +470,7 @@ public class ClanWarManager {
 
 				scheduleDelete();
 			} catch (Exception e) {
-				Log.log(Level.SEVERE, "Error updating clan war time.", e);
+				log.error("Error updating clan war time.", e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -492,7 +496,7 @@ public class ClanWarManager {
 
 				ClanWarManager.getInstance().removeWar(this);
 			} catch (Exception e) {
-				Log.log(Level.SEVERE, "Error deleting clan war time.", e);
+				log.error("Error deleting clan war time.", e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -514,7 +518,7 @@ public class ClanWarManager {
 				statement.execute();
 				statement.close();
 			} catch (Exception e) {
-				Log.log(Level.SEVERE, "Error updating clan war info.", e);
+				log.error("Error updating clan war info.", e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -532,7 +536,7 @@ public class ClanWarManager {
 				statement.execute();
 				statement.close();
 			} catch (Exception e) {
-				Log.log(Level.INFO, "Cannot update the second war declarator.", e);
+				log.info("Cannot update the second war declarator.", e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -563,7 +567,7 @@ public class ClanWarManager {
 					statement.execute();
 					statement.close();
 				} catch (Exception e) {
-					Log.log(Level.INFO, "Cannot update the second war declarator.", e);
+					log.info("Cannot update the second war declarator.", e);
 				} finally {
 					L2DatabaseFactory.close(con);
 				}

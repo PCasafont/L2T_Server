@@ -17,7 +17,6 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.RecipeController;
-import l2server.log.Log;
 
 public final class RequestRecipeBookOpen extends L2GameClientPacket {
 	
@@ -27,7 +26,7 @@ public final class RequestRecipeBookOpen extends L2GameClientPacket {
 	protected void readImpl() {
 		isDwarvenCraft = readD() == 0;
 		if (Config.DEBUG) {
-			Log.info("RequestRecipeBookOpen : " + (isDwarvenCraft ? "dwarvenCraft" : "commonCraft"));
+			log.info("RequestRecipeBookOpen : " + (isDwarvenCraft ? "dwarvenCraft" : "commonCraft"));
 		}
 	}
 	

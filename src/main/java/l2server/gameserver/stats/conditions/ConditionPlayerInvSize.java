@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -41,8 +41,8 @@ public class ConditionPlayerInvSize extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		if (env.player instanceof L2PcInstance) {
-			return ((L2PcInstance) env.player).getInventory().getSize(false) <= ((L2PcInstance) env.player).getInventoryLimit() - size;
+		if (env.player instanceof Player) {
+			return ((Player) env.player).getInventory().getSize(false) <= ((Player) env.player).getInventoryLimit() - size;
 		}
 		return true;
 	}

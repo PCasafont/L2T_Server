@@ -19,51 +19,51 @@ import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.handler.IActionHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 
 public class L2PetInstanceAction implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
+	public boolean action(Player activeChar, WorldObject target, boolean interact) {
 		// Aggression target lock effect
 		if (activeChar.isLockedTarget() && activeChar.getLockedTarget() != target) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_CHANGE_TARGET));
 			return false;
 		}
 
-		boolean isOwner = activeChar.getObjectId() == ((L2PetInstance) target).getOwner().getObjectId();
+		boolean isOwner = activeChar.getObjectId() == ((PetInstance) target).getOwner().getObjectId();
 
-		activeChar.sendPacket(new ValidateLocation((L2Character) target));
-		if (isOwner && activeChar != ((L2PetInstance) target).getOwner()) {
-			((L2PetInstance) target).updateRefOwner(activeChar);
+		activeChar.sendPacket(new ValidateLocation((Creature) target));
+		if (isOwner && activeChar != ((PetInstance) target).getOwner()) {
+			((PetInstance) target).updateRefOwner(activeChar);
 		}
 
 		if (activeChar.getTarget() != target) {
 			if (Config.DEBUG) {
-				log.fine("new target selected:" + target.getObjectId());
+				log.debug("new target selected:" + target.getObjectId());
 			}
 
-			// Set the target of the L2PcInstance activeChar
+			// Set the target of the Player activeChar
 			activeChar.setTarget(target);
 
-			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((L2Character) target).getLevel()));
+			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((Creature) target).getLevel()));
 
-			// Send a Server->Client packet StatusUpdate of the L2PetInstance to the L2PcInstance to update its HP bar
+			// Send a Server->Client packet StatusUpdate of the PetInstance to the Player to update its HP bar
 			StatusUpdate su = new StatusUpdate(target);
-			su.addAttribute(StatusUpdate.CUR_HP, (int) ((L2Character) target).getCurrentHp());
-			su.addAttribute(StatusUpdate.MAX_HP, ((L2Character) target).getMaxHp());
+			su.addAttribute(StatusUpdate.CUR_HP, (int) ((Creature) target).getCurrentHp());
+			su.addAttribute(StatusUpdate.MAX_HP, ((Creature) target).getMaxHp());
 			activeChar.sendPacket(su);
 		} else if (interact) {
 			// Check if the pet is attackable (without a forced attack) and isn't dead
 			if (target.isAutoAttackable(activeChar) && !isOwner) {
 				if (Config.GEODATA > 0) {
 					if (GeoData.getInstance().canSeeTarget(activeChar, target)) {
-						// Set the L2PcInstance Intention to AI_INTENTION_ATTACK
+						// Set the Player Intention to AI_INTENTION_ATTACK
 						activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 						activeChar.onActionRequest();
 					}
@@ -71,7 +71,7 @@ public class L2PetInstanceAction implements IActionHandler {
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 					activeChar.onActionRequest();
 				}
-			} else if (!((L2Character) target).isInsideRadius(activeChar, 150, false, false)) {
+			} else if (!((Creature) target).isInsideRadius(activeChar, 150, false, false)) {
 				if (Config.GEODATA > 0) {
 					if (GeoData.getInstance().canSeeTarget(activeChar, target)) {
 						activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
@@ -83,7 +83,7 @@ public class L2PetInstanceAction implements IActionHandler {
 				}
 			} else {
 				if (isOwner) {
-					activeChar.sendPacket(new PetStatusShow((L2PetInstance) target));
+					activeChar.sendPacket(new PetStatusShow((PetInstance) target));
 				}
 			}
 		}

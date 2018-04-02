@@ -16,9 +16,8 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * 0x42 WarehouseWithdrawalList  dh (h dddhh dhhh d)
@@ -31,27 +30,27 @@ public final class WareHouseWithdrawalList extends L2ItemListPacket {
 	public static final int CASTLE = 3; //not sure
 	public static final int FREIGHT = 1;
 	
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	private long playerAdena;
-	private L2ItemInstance[] items;
+	private Item[] items;
 	private int whType;
 	
-	public WareHouseWithdrawalList(L2PcInstance player, int type) {
+	public WareHouseWithdrawalList(Player player, int type) {
 		activeChar = player;
 		whType = type;
 		
 		playerAdena = activeChar.getAdena();
 		if (activeChar.getActiveWarehouse() == null) {
 			// Something went wrong!
-			Log.warning("error while sending withdraw request to: " + activeChar.getName());
+			log.warn("error while sending withdraw request to: " + activeChar.getName());
 			return;
 		} else {
 			items = activeChar.getActiveWarehouse().getItems();
 		}
 		
 		if (Config.DEBUG) {
-			for (L2ItemInstance item : items) {
-				Log.fine("item:" + item.getItem().getName() + " type1:" + item.getItem().getType1() + " type2:" + item.getItem().getType2());
+			for (Item item : items) {
+				log.debug("item:" + item.getItem().getName() + " type1:" + item.getItem().getType1() + " type2:" + item.getItem().getType2());
 			}
 		}
 	}
@@ -68,7 +67,7 @@ public final class WareHouseWithdrawalList extends L2ItemListPacket {
 		writeH(0x00); // GoD ???
 		writeD(0x00); // TODO: Amount of already deposited items
 		
-		for (L2ItemInstance item : items) {
+		for (Item item : items) {
 			writeItem(item);
 			
 			writeD(item.getObjectId());

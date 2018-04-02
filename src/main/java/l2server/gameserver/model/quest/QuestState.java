@@ -22,17 +22,18 @@ import l2server.gameserver.TimeController;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.instancemanager.QuestManager;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2DropData;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.stats.Stats;
-import l2server.log.Log;
 import l2server.util.Rnd;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,12 +41,12 @@ import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
 
 /**
  * @author Luis Arias
  */
 public final class QuestState {
+	private static Logger log = LoggerFactory.getLogger(QuestState.class.getName());
 
 	/**
 	 * Quest associated to the QuestState
@@ -55,7 +56,7 @@ public final class QuestState {
 	/**
 	 * Player who engaged the quest
 	 */
-	private final L2PcInstance player;
+	private final Player player;
 
 	/**
 	 * State of the quest
@@ -84,10 +85,10 @@ public final class QuestState {
 	 * <BR/>
 	 *
 	 * @param quest  : quest associated with the QuestState
-	 * @param player : L2PcInstance pointing out the player
+	 * @param player : Player pointing out the player
 	 * @param state  : state of the quest
 	 */
-	public QuestState(Quest quest, L2PcInstance player, byte state) {
+	public QuestState(Quest quest, Player player, byte state) {
 		questName = quest.getName();
 		this.player = player;
 
@@ -112,11 +113,11 @@ public final class QuestState {
 	}
 
 	/**
-	 * Return the L2PcInstance
+	 * Return the Player
 	 *
-	 * @return L2PcInstance
+	 * @return Player
 	 */
-	public L2PcInstance getPlayer() {
+	public Player getPlayer() {
 		return player;
 	}
 
@@ -256,7 +257,7 @@ public final class QuestState {
 				}
 				setCond(Integer.parseInt(val), previousVal);
 			} catch (Exception e) {
-				Log.log(Level.WARNING,
+				log.warn(
 						getPlayer().getName() + ", " + getQuestName() + " cond [" + val +
 								"] is not an integer.  Value stored, but no packet was sent: " + e.getMessage(),
 						e);
@@ -406,7 +407,7 @@ public final class QuestState {
 			statement.executeUpdate();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not insert player's global quest variable: " + e.getMessage(), e);
+			log.warn("Could not insert player's global quest variable: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -438,7 +439,7 @@ public final class QuestState {
 			rs.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not load player's global quest variable: " + e.getMessage(), e);
+			log.warn("Could not load player's global quest variable: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -461,7 +462,7 @@ public final class QuestState {
 			statement.executeUpdate();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "could not delete player's global quest variable: " + e.getMessage(), e);
+			log.warn("could not delete player's global quest variable: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -501,7 +502,7 @@ public final class QuestState {
 		try {
 			varint = Integer.parseInt(variable);
 		} catch (Exception e) {
-			Log.log(Level.FINER, getPlayer().getName() + ": variable " + var + " isn't an integer: " + varint + " ! " + e.getMessage(), e);
+			log.trace(getPlayer().getName() + ": variable " + var + " isn't an integer: " + varint + " ! " + e.getMessage(), e);
 			//		if (Config.AUTODELETE_INVALID_QUEST_DATA)
 			//		exitQuest(true);
 		}
@@ -512,14 +513,14 @@ public final class QuestState {
 	/**
 	 * Add player to get notification of characters death
 	 *
-	 * @param character : L2Character of the character to get notification of death
+	 * @param character : Creature of the character to get notification of death
 	 */
-	public void addNotifyOfDeath(L2Character character) {
-		if (character == null || !(character instanceof L2PcInstance)) {
+	public void addNotifyOfDeath(Creature character) {
+		if (character == null || !(character instanceof Player)) {
 			return;
 		}
 
-		((L2PcInstance) character).addNotifyQuestOfDeath(this);
+		((Player) character).addNotifyQuestOfDeath(this);
 	}
 
 	/**
@@ -531,7 +532,7 @@ public final class QuestState {
 	public long getQuestItemsCount(int itemId) {
 		long count = 0;
 
-		for (L2ItemInstance item : getPlayer().getInventory().getItems()) {
+		for (Item item : getPlayer().getInventory().getItems()) {
 			if (item != null && item.getItemId() == itemId) {
 				count += item.getCount();
 			}
@@ -554,7 +555,7 @@ public final class QuestState {
 	 * @return int
 	 */
 	public int getEnchantLevel(int itemId) {
-		L2ItemInstance enchanteditem = getPlayer().getInventory().getItemByItemId(itemId);
+		Item enchanteditem = getPlayer().getInventory().getItemByItemId(itemId);
 
 		if (enchanteditem == null) {
 			return 0;
@@ -584,7 +585,7 @@ public final class QuestState {
 			return;
 		}
 
-		L2ItemInstance tmpItem = ItemTable.getInstance().createDummyItem(itemId);
+		Item tmpItem = ItemTable.getInstance().createDummyItem(itemId);
 
 		if (tmpItem == null) {
 			return;
@@ -618,7 +619,7 @@ public final class QuestState {
 		}
 
 		// Add items to player's inventory
-		L2ItemInstance item = getPlayer().getInventory().addItem("Quest", itemId, count, getPlayer(), getPlayer().getTarget());
+		Item item = getPlayer().getInventory().addItem("Quest", itemId, count, getPlayer(), getPlayer().getTarget());
 
 		if (item == null) {
 			return;
@@ -670,7 +671,7 @@ public final class QuestState {
 		}
 
 		// Add items to player's inventory
-		L2ItemInstance item = getPlayer().getInventory().addItem("Quest", itemId, count, getPlayer(), getPlayer().getTarget());
+		Item item = getPlayer().getInventory().addItem("Quest", itemId, count, getPlayer(), getPlayer().getTarget());
 
 		if (item == null) {
 			return;
@@ -712,7 +713,7 @@ public final class QuestState {
 		}
 
 		// Add items to player's inventory
-		L2ItemInstance item = getPlayer().getInventory().addItem("Quest", itemId, count, getPlayer(), getPlayer().getTarget());
+		Item item = getPlayer().getInventory().addItem("Quest", itemId, count, getPlayer(), getPlayer().getTarget());
 
 		if (item == null) {
 			return;
@@ -847,7 +848,7 @@ public final class QuestState {
 	 */
 	public void takeItems(int itemId, long count) {
 		// Get object item from player's inventory list
-		L2ItemInstance item = getPlayer().getInventory().getItemByItemId(itemId);
+		Item item = getPlayer().getInventory().getItemByItemId(itemId);
 		if (item == null) {
 			return;
 		}
@@ -859,9 +860,9 @@ public final class QuestState {
 
 		// Destroy the quantity of items wanted
 		if (item.isEquipped()) {
-			L2ItemInstance[] unequiped = getPlayer().getInventory().unEquipItemInBodySlotAndRecord(item.getItem().getBodyPart());
+			Item[] unequiped = getPlayer().getInventory().unEquipItemInBodySlotAndRecord(item.getItem().getBodyPart());
 			InventoryUpdate iu = new InventoryUpdate();
-			for (L2ItemInstance itm : unequiped) {
+			for (Item itm : unequiped) {
 				iu.addModifiedItem(itm);
 			}
 			getPlayer().sendPacket(iu);
@@ -947,7 +948,7 @@ public final class QuestState {
 		getQuest().startQuestTimer(name, time, null, getPlayer(), false);
 	}
 
-	public void startQuestTimer(String name, long time, L2Npc npc) {
+	public void startQuestTimer(String name, long time, Npc npc) {
 		getQuest().startQuestTimer(name, time, npc, getPlayer(), false);
 	}
 
@@ -955,7 +956,7 @@ public final class QuestState {
 		getQuest().startQuestTimer(name, time, null, getPlayer(), true);
 	}
 
-	public void startRepeatingQuestTimer(String name, long time, L2Npc npc) {
+	public void startRepeatingQuestTimer(String name, long time, Npc npc) {
 		getQuest().startQuestTimer(name, time, npc, getPlayer(), true);
 	}
 
@@ -972,15 +973,15 @@ public final class QuestState {
 	 * Add spawn for player instance
 	 * Return object id of newly spawned npc
 	 */
-	public L2Npc addSpawn(int npcId) {
+	public Npc addSpawn(int npcId) {
 		return addSpawn(npcId, getPlayer().getX(), getPlayer().getY(), getPlayer().getZ(), 0, false, 0);
 	}
 
-	public L2Npc addSpawn(int npcId, int despawnDelay) {
+	public Npc addSpawn(int npcId, int despawnDelay) {
 		return addSpawn(npcId, getPlayer().getX(), getPlayer().getY(), getPlayer().getZ(), 0, false, despawnDelay);
 	}
 
-	public L2Npc addSpawn(int npcId, int x, int y, int z) {
+	public Npc addSpawn(int npcId, int x, int y, int z) {
 		return addSpawn(npcId, x, y, z, 0, false, 0);
 	}
 
@@ -991,11 +992,11 @@ public final class QuestState {
 	 * Adds a little randomization in the x y coords
 	 * Return object id of newly spawned npc
 	 */
-	public L2Npc addSpawn(int npcId, L2Character cha) {
+	public Npc addSpawn(int npcId, Creature cha) {
 		return addSpawn(npcId, cha, true, 0);
 	}
 
-	public L2Npc addSpawn(int npcId, L2Character cha, int despawnDelay) {
+	public Npc addSpawn(int npcId, Creature cha, int despawnDelay) {
 		return addSpawn(npcId, cha.getX(), cha.getY(), cha.getZ(), cha.getHeading(), true, despawnDelay);
 	}
 
@@ -1004,17 +1005,17 @@ public final class QuestState {
 	 * Will despawn after the spawn length expires
 	 * Return object id of newly spawned npc
 	 */
-	public L2Npc addSpawn(int npcId, int x, int y, int z, int despawnDelay) {
+	public Npc addSpawn(int npcId, int x, int y, int z, int despawnDelay) {
 		return addSpawn(npcId, x, y, z, 0, false, despawnDelay);
 	}
 
 	/**
 	 * Add spawn for player instance
-	 * Inherits coords and heading from specified L2Character instance.
+	 * Inherits coords and heading from specified Creature instance.
 	 * It could be either the player, or any killed/attacked mob
 	 * Return object id of newly spawned npc
 	 */
-	public L2Npc addSpawn(int npcId, L2Character cha, boolean randomOffset, int despawnDelay) {
+	public Npc addSpawn(int npcId, Creature cha, boolean randomOffset, int despawnDelay) {
 		return addSpawn(npcId, cha.getX(), cha.getY(), cha.getZ(), cha.getHeading(), randomOffset, despawnDelay);
 	}
 
@@ -1022,7 +1023,7 @@ public final class QuestState {
 	 * Add spawn for player instance
 	 * Return object id of newly spawned npc
 	 */
-	public L2Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay) {
+	public Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay) {
 		return getQuest().addSpawn(npcId, x, y, z, heading, randomOffset, despawnDelay, false);
 	}
 
@@ -1030,7 +1031,7 @@ public final class QuestState {
 	 * Add spawn for player instance
 	 * Return object id of newly spawned npc
 	 */
-	public L2Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay, boolean isSummonSpawn) {
+	public Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay, boolean isSummonSpawn) {
 		return getQuest().addSpawn(npcId, x, y, z, heading, randomOffset, despawnDelay, isSummonSpawn);
 	}
 
@@ -1095,7 +1096,7 @@ public final class QuestState {
 	public void showTutorialHTML(String html) {
 		String text = HtmCache.getInstance().getHtm(getPlayer().getHtmlPrefix(), Config.DATA_FOLDER + "scripts/quests/Q255_Tutorial/" + html);
 		if (text == null) {
-			Log.warning("missing html page data/scripts/quests/Q255_Tutorial/" + html);
+			log.warn("missing html page data/scripts/quests/Q255_Tutorial/" + html);
 			text = "<html><body>File data/scripts/quests/Q255_Tutorial/" + html + " not found or file is empty.</body></html>";
 		}
 		getPlayer().sendPacket(new TutorialShowHtml(1, text));
@@ -1109,7 +1110,7 @@ public final class QuestState {
 		getPlayer().sendPacket(new TutorialEnableClientEvent(number));
 	}
 
-	public void dropItem(L2MonsterInstance npc, L2PcInstance player, int itemId, int count) {
+	public void dropItem(MonsterInstance npc, Player player, int itemId, int count) {
 		npc.dropItem(player, itemId, count);
 	}
 

@@ -5,18 +5,18 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
-import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.model.zone.ZoneType;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SpecialCamera;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -153,41 +153,41 @@ public class PailakaInjuredDragon extends Quest {
 			// itemId, count, chance
 			{8604, 1, 40}, {8603, 1, 70}};
 
-	private static void dropHerb(L2Npc mob, L2PcInstance player, int[][] drop) {
+	private static void dropHerb(Npc mob, Player player, int[][] drop) {
 		final int chance = Rnd.get(100);
 		for (int[] element : drop) {
 			if (chance < element[2]) {
-				((L2MonsterInstance) mob).dropItem(player, element[0], element[1]);
+				((MonsterInstance) mob).dropItem(player, element[0], element[1]);
 				return;
 			}
 		}
 	}
 
-	private static void dropItem(L2Npc mob, L2PcInstance player) {
+	private static void dropItem(Npc mob, Player player) {
 		// To make random drops, we shuffle the droplist every time its used
 		Collections.shuffle(DROPLIST);
 		for (PailakaDrop pd : DROPLIST) {
 			if (Rnd.get(100) < pd.getChance()) {
-				((L2MonsterInstance) mob).dropItem(player, pd.getItemID(), Rnd.get(1, 6));
+				((MonsterInstance) mob).dropItem(player, pd.getItemID(), Rnd.get(1, 6));
 				return;
 			}
 		}
 	}
 
-	private static void giveBuff(L2Npc npc, L2PcInstance player, int skillId, int level) {
+	private static void giveBuff(Npc npc, Player player, int skillId, int level) {
 		npc.setTarget(player);
 		npc.doCast(SkillTable.getInstance().getInfo(skillId, level));
 		buff_counter--;
 		return;
 	}
 
-	private static void teleportPlayer(L2Playable player, int[] coords, int instanceId) {
+	private static void teleportPlayer(Playable player, int[] coords, int instanceId) {
 		player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		player.setInstanceId(instanceId);
 		player.teleToLocation(coords[0], coords[1], coords[2], true);
 	}
 
-	private final synchronized void enterInstance(L2PcInstance player, boolean isNewQuest) {
+	private final synchronized void enterInstance(Player player, boolean isNewQuest) {
 		// Check for existing instances for this player
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
@@ -227,8 +227,8 @@ public class PailakaInjuredDragon extends Quest {
 	}
 
 	//  - Checks if the summon or pet that the player has can be used
-	private final void checkMaxSummonLevel(L2PcInstance player) {
-		final L2PetInstance pet = player.getPet();
+	private final void checkMaxSummonLevel(Player player) {
+		final PetInstance pet = player.getPet();
 		if (pet != null) {
 			if (pet.getLevel() > MAX_SUMMON_LEVEL) {
 				pet.unSummon(player);
@@ -237,7 +237,7 @@ public class PailakaInjuredDragon extends Quest {
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		final QuestState st = player.getQuestState(qn);
 		if (st == null) {
 			return getNoQuestMsg(player);
@@ -349,7 +349,7 @@ public class PailakaInjuredDragon extends Quest {
 				player.getPet().stopMove(null);
 				player.getPet().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			}
-			for (L2SummonInstance summon : player.getSummons()) {
+			for (SummonInstance summon : player.getSummons()) {
 				summon.abortAttack();
 				summon.abortCast();
 				summon.stopMove(null);
@@ -368,7 +368,7 @@ public class PailakaInjuredDragon extends Quest {
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		final QuestState st = player.getQuestState(qn);
 		if (st == null) {
 			return getNoQuestMsg(player);
@@ -421,7 +421,7 @@ public class PailakaInjuredDragon extends Quest {
 	}
 
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public final String onKill(Npc npc, Player player, boolean isPet) {
 		QuestState st = player.getQuestState(qn);
 		if (st == null || st.getState() != State.STARTED) {
 			return null;
@@ -575,21 +575,21 @@ public class PailakaInjuredDragon extends Quest {
 	}
 
 	// Spawns Mage Type silenos behind the one that was killed. Aggro against the player that kill the mob
-	private final void spawnMageBehind(L2Npc npc, L2PcInstance player, int mageId) {
+	private final void spawnMageBehind(Npc npc, Player player, int mageId) {
 		final double rads = Math.toRadians(Util.convertHeadingToDegree(npc.getSpawn().getHeading()) + 180);
 		final int mageX = (int) (npc.getX() + 150 * Math.cos(rads));
 		final int mageY = (int) (npc.getY() + 150 * Math.sin(rads));
-		final L2Npc mageBack = addSpawn(mageId, mageX, mageY, npc.getZ(), npc.getSpawn().getHeading(), false, 0, true, npc.getInstanceId());
+		final Npc mageBack = addSpawn(mageId, mageX, mageY, npc.getZ(), npc.getSpawn().getHeading(), false, 0, true, npc.getInstanceId());
 		mageBack.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, player, 1000);
 	}
 
 	/* This function will check if there is other mob alive in this wall of mobs. If all mobs in the first row are dead
 	 * then despawn the second row mobs, the mages
 	 */
-	private final void checkIfLastInWall(L2Npc npc) {
-		final Collection<L2Character> knowns = npc.getKnownList().getKnownCharactersInRadius(700);
-		for (L2Character npcs : knowns) {
-			if (!(npcs instanceof L2Npc)) {
+	private final void checkIfLastInWall(Npc npc) {
+		final Collection<Creature> knowns = npc.getKnownList().getKnownCharactersInRadius(700);
+		for (Creature npcs : knowns) {
+			if (!(npcs instanceof Npc)) {
 				continue;
 			}
 
@@ -597,7 +597,7 @@ public class PailakaInjuredDragon extends Quest {
 				continue;
 			}
 
-			final L2Npc knownNpc = (L2Npc) npcs;
+			final Npc knownNpc = (Npc) npcs;
 
 			switch (npc.getNpcId()) {
 				case VARKA_SILENOS_FOOTMAN:
@@ -642,8 +642,8 @@ public class PailakaInjuredDragon extends Quest {
 		}
 
 		// We didnt find any mob on the first row alive, so despawn the second row mobs
-		for (L2Character npcs : knowns) {
-			if (!(npcs instanceof L2Npc)) {
+		for (Creature npcs : knowns) {
+			if (!(npcs instanceof Npc)) {
 				continue;
 			}
 
@@ -651,7 +651,7 @@ public class PailakaInjuredDragon extends Quest {
 				continue;
 			}
 
-			final L2Npc knownNpc = (L2Npc) npcs;
+			final Npc knownNpc = (Npc) npcs;
 
 			switch (npc.getNpcId()) {
 				case VARKA_SILENOS_FOOTMAN:
@@ -702,7 +702,7 @@ public class PailakaInjuredDragon extends Quest {
 	}
 
 	@Override
-	public final String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public final String onAggroRangeEnter(Npc npc, Player player, boolean isPet) {
 		final QuestState st = player.getQuestState(qn);
 		if (st == null || st.getState() != State.STARTED) {
 			return null;
@@ -726,7 +726,7 @@ public class PailakaInjuredDragon extends Quest {
 	}
 
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public final String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (attacker == null) {
 			return super.onAttack(npc, attacker, damage, isPet);
 		}
@@ -751,15 +751,15 @@ public class PailakaInjuredDragon extends Quest {
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc) {
-		if (npc instanceof L2MonsterInstance) {
+	public String onSpawn(Npc npc) {
+		if (npc instanceof MonsterInstance) {
 			for (int mobId : WALL_MONSTERS) {
 				/* Every monster on pailaka should be Aggresive and Active, with the same clan, also
 				 * wall mobs cannot move, they all use magic from far, and if you get in combat range
 				 * they hit
 				 */
 				if (mobId == npc.getNpcId()) {
-					final L2MonsterInstance monster = (L2MonsterInstance) npc;
+					final MonsterInstance monster = (MonsterInstance) npc;
 					//monster.setIsAggresiveOverride(900);
 					//monster.setClanOverride("pailaka_clan");
 					monster.setIsImmobilized(true);
@@ -771,27 +771,27 @@ public class PailakaInjuredDragon extends Quest {
 	}
 
 	@Override
-	public String onExitZone(L2Character character, L2ZoneType zone) {
+	public String onExitZone(Creature character, ZoneType zone) {
         /*
-         if (character instanceof L2PcInstance
+         if (character instanceof Player
          && !character.isDead()
          && !character.isTeleporting()
-         && ((L2PcInstance)character).isOnline())
+         && ((Player)character).isOnline())
          {
          InstanceWorld world = InstanceManager.getInstance().getWorld(character.getInstanceId());
          if (world != null && world.templateId == INSTANCE_ID)
          ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(character, world.instanceId), 1000);
          }
          */
-		if (character instanceof L2Playable && !character.isDead() && !character.isTeleporting() && character.getActingPlayer().isOnline()) {
+		if (character instanceof Playable && !character.isDead() && !character.isTeleporting() && character.getActingPlayer().isOnline()) {
 			InstanceWorld world = InstanceManager.getInstance().getWorld(character.getInstanceId());
 			if (world != null && world.templateId == INSTANCE_ID) {
 				//  - If a player wants to go by a mob wall without kill it, he will be returned back to a spawn point
 				final int[] zoneTeleport = NOEXIT_ZONES.get(zone.getId());
 				if (zoneTeleport != null) {
-					final Collection<L2Character> knowns = character.getKnownList().getKnownCharactersInRadius(700);
-					for (L2Character npcs : knowns) {
-						if (!(npcs instanceof L2Npc)) {
+					final Collection<Creature> knowns = character.getKnownList().getKnownCharactersInRadius(700);
+					for (Creature npcs : knowns) {
+						if (!(npcs instanceof Npc)) {
 							continue;
 						}
 
@@ -810,10 +810,10 @@ public class PailakaInjuredDragon extends Quest {
 	}
 
 	static final class Teleport implements Runnable {
-		private final L2Character cha;
+		private final Creature cha;
 		private final int instanceId;
 
-		public Teleport(L2Character c, int id) {
+		public Teleport(Creature c, int id) {
 			cha = c;
 			instanceId = id;
 		}
@@ -821,7 +821,7 @@ public class PailakaInjuredDragon extends Quest {
 		@Override
 		public void run() {
 			try {
-				teleportPlayer((L2PcInstance) cha, TELEPORT, instanceId);
+				teleportPlayer((Player) cha, TELEPORT, instanceId);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

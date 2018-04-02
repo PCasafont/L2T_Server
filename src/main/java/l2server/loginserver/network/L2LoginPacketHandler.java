@@ -15,12 +15,14 @@
 
 package l2server.loginserver.network;
 
-import l2server.log.Log;
+import l2server.gameserver.GameApplication;
 import l2server.loginserver.network.L2LoginClient.LoginClientState;
 import l2server.loginserver.network.clientpackets.*;
 import l2server.network.IPacketHandler;
 import l2server.network.ReceivablePacket;
 import l2server.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.nio.ByteBuffer;
 
@@ -30,7 +32,9 @@ import java.nio.ByteBuffer;
  * @author KenM
  */
 public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient> {
-
+	
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	/**
 	 */
 	@Override
@@ -82,13 +86,13 @@ public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient>
 	}
 
 	private void debugOpcode(ByteBuffer buf, int opcode, LoginClientState state) {
-		Log.info("Unknown Opcode: " + opcode + " for state: " + state.name());
+		log.info("Unknown Opcode: " + opcode + " for state: " + state.name());
 		String op = "0x" + Integer.toHexString(opcode);
 
 		int size = buf.remaining();
-		Log.warning("Unknown Packet: " + op + " on State: " + state.name());
+		log.warn("Unknown Packet: " + op + " on State: " + state.name());
 		byte[] array = new byte[size];
 		buf.get(array);
-		Log.warning(Util.printData(array, size));
+		log.warn(Util.printData(array, size));
 	}
 }

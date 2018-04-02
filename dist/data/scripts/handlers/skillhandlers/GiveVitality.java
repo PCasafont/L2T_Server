@@ -16,37 +16,37 @@
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 
 public class GiveVitality implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.GIVE_VITALITY};
+	private static final SkillType[] SKILL_IDS = {SkillType.GIVE_VITALITY};
 
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		for (L2Object target : targets) {
-			if (target instanceof L2PcInstance) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		for (WorldObject target : targets) {
+			if (target instanceof Player) {
 				if (skill.hasEffects()) {
-					//((L2PcInstance) target).stopSkillEffects(skill.getId());
-					skill.getEffects(activeChar, (L2PcInstance) target);
+					//((Player) target).stopSkillEffects(skill.getId());
+					skill.getEffects(activeChar, (Player) target);
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
 					sm.addSkillName(skill);
 					target.sendPacket(sm);
 				}
-				((L2PcInstance) target).updateVitalityPoints((float) skill.getPower(), false, false);
-				((L2PcInstance) target).sendPacket(new UserInfo((L2PcInstance) target));
+				((Player) target).updateVitalityPoints((float) skill.getPower(), false, false);
+				((Player) target).sendPacket(new UserInfo((Player) target));
 			}
 		}
 	}
 
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

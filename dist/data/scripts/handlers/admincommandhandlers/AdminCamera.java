@@ -17,17 +17,17 @@ package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.GamePlayWatcher;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.SpecialCamera;
 
 public class AdminCamera implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_camera"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		try {
-			final L2Character target = (L2Character) activeChar.getTarget();
+			final Creature target = (Creature) activeChar.getTarget();
 			final String[] com = command.split(" ");
 
 			target.broadcastPacket(new SpecialCamera(target.getObjectId(),
@@ -42,7 +42,7 @@ public class AdminCamera implements IAdminCommandHandler {
 					Integer.parseInt(com[9])));
 		} catch (Exception e) {
 			/*List<Point3D> positions = new ArrayList<Point3D>();
-            for (L2PcInstance player : activeChar.getKnownList().getKnownPlayers().values())
+            for (Player player : activeChar.getKnownList().getKnownPlayers().values())
 			{
 				if (player == null)
 					continue;
@@ -93,9 +93,9 @@ public class AdminCamera implements IAdminCommandHandler {
 
 			activeChar.sendMessage("Usage: //camera dist yaw pitch time duration turn rise widescreen unknown");*/
 
-			L2PcInstance watcher = activeChar;
-			if (activeChar.getTarget() instanceof L2PcInstance) {
-				watcher = (L2PcInstance) activeChar.getTarget();
+			Player watcher = activeChar;
+			if (activeChar.getTarget() instanceof Player) {
+				watcher = (Player) activeChar.getTarget();
 			}
 
 			watcher.startWatcherMode();

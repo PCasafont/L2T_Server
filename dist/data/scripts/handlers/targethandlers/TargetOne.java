@@ -17,14 +17,14 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.StaticObjectInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillTargetType;
+import l2server.gameserver.templates.skills.SkillType;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,8 +36,8 @@ public class TargetOne implements ISkillTargetTypeHandler {
 	protected static final Logger log = Logger.getLogger(TargetOne.class.getName());
 	
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		L2SkillType skillType = skill.getSkillType();
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		SkillType skillType = skill.getSkillType();
 		
 		boolean canTargetSelf = false;
 		
@@ -63,10 +63,10 @@ public class TargetOne implements ISkillTargetTypeHandler {
 				canTargetSelf = true;
 				break;
 			case TAKEFORT: {
-				if (target instanceof L2StaticObjectInstance) {
-					return new L2Character[]{target};
+				if (target instanceof StaticObjectInstance) {
+					return new Creature[]{target};
 				} else {
-					log.log(Level.INFO, "TargetOne: Target is Incorrect for Player - " + activeChar.getName());
+					log.info("TargetOne: Target is Incorrect for Player - " + activeChar.getName());
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 					return null;
 				}
@@ -81,13 +81,13 @@ public class TargetOne implements ISkillTargetTypeHandler {
 		}
 		
 		// If a target is found, return it in a table else send a system message TARGET_IS_INCORRECT
-		return new L2Character[]{target};
+		return new Creature[]{target};
 	}
 	
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
+	public Enum<SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub
-		return L2SkillTargetType.TARGET_ONE;
+		return SkillTargetType.TARGET_ONE;
 	}
 	
 	public static void main(String[] args) {

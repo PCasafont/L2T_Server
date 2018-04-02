@@ -15,18 +15,18 @@
 
 package l2server.gameserver.model.multisell;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.item.L2Armor;
-import l2server.gameserver.templates.item.L2Weapon;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.item.ArmorTemplate;
+import l2server.gameserver.templates.item.WeaponTemplate;
 
 import java.util.ArrayList;
 
 public class PreparedListContainer extends ListContainer {
 	private int npcObjectId = 0;
 
-	public PreparedListContainer(ListContainer template, boolean inventoryOnly, L2PcInstance player, L2Npc npc) {
+	public PreparedListContainer(ListContainer template, boolean inventoryOnly, Player player, Npc npc) {
 		super(template.getListId());
 		maintainEnchantment = template.getMaintainEnchantment();
 
@@ -48,7 +48,7 @@ public class PreparedListContainer extends ListContainer {
 				return;
 			}
 
-			final L2ItemInstance[] items;
+			final Item[] items;
 			if (maintainEnchantment) {
 				items = player.getInventory().getUniqueItemsByEnchantLevel(false, false, false);
 			} else {
@@ -57,10 +57,10 @@ public class PreparedListContainer extends ListContainer {
 
 			// size is not known - using ArrayList
 			entries = new ArrayList<>();
-			for (L2ItemInstance item : items) {
+			for (Item item : items) {
 				// only do the matchup on equipable items that are not currently equipped
 				// so for each appropriate item, produce a set of entries for the multisell list.
-				if (!item.isEquipped() && (item.getItem() instanceof L2Armor || item.getItem() instanceof L2Weapon)) {
+				if (!item.isEquipped() && (item.getItem() instanceof ArmorTemplate || item.getItem() instanceof WeaponTemplate)) {
 					// loop through the entries to see which ones we wish to include
 					for (MultiSellEntry ent : template.getEntries()) {
 						// check ingredients of this entry to see if it's an entry we'd like to include.

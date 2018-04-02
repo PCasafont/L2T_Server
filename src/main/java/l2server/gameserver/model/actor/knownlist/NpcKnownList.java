@@ -17,10 +17,10 @@ package l2server.gameserver.model.actor.knownlist;
 
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.*;
-import l2server.gameserver.model.actor.instance.L2NpcInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.NpcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 
 import java.util.Collection;
@@ -33,7 +33,7 @@ public class NpcKnownList extends CharKnownList {
 
 	// =========================================================
 	// Constructor
-	public NpcKnownList(L2Npc activeChar) {
+	public NpcKnownList(Npc activeChar) {
 		super(activeChar);
 	}
 
@@ -47,18 +47,18 @@ public class NpcKnownList extends CharKnownList {
 	// Property - Public
 
 	@Override
-	public boolean addKnownObject(L2Object object) {
+	public boolean addKnownObject(WorldObject object) {
 		if (!super.addKnownObject(object)) {
 			return false;
 		}
 
-		if (getActiveObject() instanceof L2NpcInstance && object instanceof L2PcInstance) {
-			final L2Npc npc = (L2Npc) getActiveObject();
+		if (getActiveObject() instanceof NpcInstance && object instanceof Player) {
+			final Npc npc = (Npc) getActiveObject();
 
 			// Notify to scripts
 			if (npc.getTemplate().getEventQuests(Quest.QuestEventType.ON_CREATURE_SEE) != null) {
 				for (Quest quest : npc.getTemplate().getEventQuests(Quest.QuestEventType.ON_CREATURE_SEE)) {
-					quest.notifyCreatureSee(npc, (L2PcInstance) object, object instanceof L2Summon);
+					quest.notifyCreatureSee(npc, (Player) object, object instanceof Summon);
 				}
 			}
 		}
@@ -66,22 +66,22 @@ public class NpcKnownList extends CharKnownList {
 	}
 
 	@Override
-	public L2Npc getActiveChar() {
-		return (L2Npc) super.getActiveChar();
+	public Npc getActiveChar() {
+		return (Npc) super.getActiveChar();
 	}
 
 	@Override
-	public int getDistanceToForgetObject(L2Object object) {
+	public int getDistanceToForgetObject(WorldObject object) {
 		return getDistanceToWatchObject(object) + 200;
 	}
 
 	@Override
-	public int getDistanceToWatchObject(L2Object object) {
-		if (object instanceof L2NpcInstance || !(object instanceof L2Character)) {
+	public int getDistanceToWatchObject(WorldObject object) {
+		if (object instanceof NpcInstance || !(object instanceof Creature)) {
 			return 0;
 		}
 
-		if (object instanceof L2Playable) {
+		if (object instanceof Playable) {
 			return object.getKnownList().getDistanceToWatchObject(getActiveObject());
 		}
 
@@ -111,12 +111,12 @@ public class NpcKnownList extends CharKnownList {
 
 		@Override
 		public void run() {
-			if (getActiveChar() instanceof L2Attackable) {
-				final L2Attackable monster = (L2Attackable) getActiveChar();
+			if (getActiveChar() instanceof Attackable) {
+				final Attackable monster = (Attackable) getActiveChar();
 				if (monster.getAI().getIntention() == CtrlIntention.AI_INTENTION_MOVE_TO) {
-					final Collection<L2PcInstance> players = getKnownPlayers().values();
+					final Collection<Player> players = getKnownPlayers().values();
 					if (players != null) {
-						for (L2PcInstance pl : players) {
+						for (Player pl : players) {
 							if (pl.isInsideRadius(monster, monster.getAggroRange(), true, false) && !pl.isDead() && !pl.isInvul(monster)) {
 								monster.addDamageHate(pl, 0, 100);
 								monster.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, pl, null);

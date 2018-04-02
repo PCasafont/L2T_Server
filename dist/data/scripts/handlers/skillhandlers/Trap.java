@@ -16,33 +16,32 @@
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Trap;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.Quest.TrapAction;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 
 public class Trap implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.DETECT_TRAP, L2SkillType.REMOVE_TRAP};
+	private static final SkillType[] SKILL_IDS = {SkillType.DETECT_TRAP, SkillType.REMOVE_TRAP};
 	
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
 		if (activeChar == null || skill == null) {
 			return;
 		}
 		
 		switch (skill.getSkillType()) {
 			case DETECT_TRAP: {
-				for (L2Character target : activeChar.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
-					if (!(target instanceof L2Trap)) {
+				for (Creature target : activeChar.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
+					if (!(target instanceof l2server.gameserver.model.actor.Trap)) {
 						continue;
 					}
 					
@@ -50,7 +49,7 @@ public class Trap implements ISkillHandler {
 						continue;
 					}
 					
-					final L2Trap trap = (L2Trap) target;
+					final l2server.gameserver.model.actor.Trap trap = (l2server.gameserver.model.actor.Trap) target;
 					
 					if (trap.getLevel() <= skill.getPower()) {
 						trap.setDetected(activeChar);
@@ -59,8 +58,8 @@ public class Trap implements ISkillHandler {
 				break;
 			}
 			case REMOVE_TRAP: {
-				for (L2Character target : (L2Character[]) targets) {
-					if (!(target instanceof L2Trap)) {
+				for (Creature target : (Creature[]) targets) {
+					if (!(target instanceof l2server.gameserver.model.actor.Trap)) {
 						continue;
 					}
 					
@@ -68,11 +67,11 @@ public class Trap implements ISkillHandler {
 						continue;
 					}
 					
-					final L2Trap trap = (L2Trap) target;
+					final l2server.gameserver.model.actor.Trap trap = (l2server.gameserver.model.actor.Trap) target;
 					
 					if (!trap.canSee(activeChar)) {
-						if (activeChar instanceof L2PcInstance) {
-							((L2PcInstance) activeChar).sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
+						if (activeChar instanceof Player) {
+							((Player) activeChar).sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 						}
 						continue;
 					}
@@ -88,8 +87,8 @@ public class Trap implements ISkillHandler {
 					}
 					
 					trap.unSummon();
-					if (activeChar instanceof L2PcInstance) {
-						((L2PcInstance) activeChar).sendPacket(SystemMessage.getSystemMessage(SystemMessageId.A_TRAP_DEVICE_HAS_BEEN_STOPPED));
+					if (activeChar instanceof Player) {
+						((Player) activeChar).sendPacket(SystemMessage.getSystemMessage(SystemMessageId.A_TRAP_DEVICE_HAS_BEEN_STOPPED));
 					}
 				}
 			}
@@ -101,7 +100,7 @@ public class Trap implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

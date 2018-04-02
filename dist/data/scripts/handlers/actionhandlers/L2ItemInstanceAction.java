@@ -18,17 +18,17 @@ package handlers.actionhandlers;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.handler.IActionHandler;
 import l2server.gameserver.instancemanager.MercTicketManager;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.actor.instance.Player;
 
 public class L2ItemInstanceAction implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
+	public boolean action(Player activeChar, WorldObject target, boolean interact) {
 		// this causes the validate position handler to do the pickup if the location is reached.
 		// mercenary tickets can only be picked up by the castle owner.
-		final int castleId = MercTicketManager.getInstance().getTicketCastleId(((L2ItemInstance) target).getItemId());
+		final int castleId = MercTicketManager.getInstance().getTicketCastleId(((Item) target).getItemId());
 
 		if (castleId > 0 && (!activeChar.isCastleLord(castleId) || activeChar.isInParty())) {
 			if (activeChar.isInParty()) //do not allow owner who is in party to pick tickets up

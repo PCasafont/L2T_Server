@@ -98,7 +98,7 @@ public class DesireTable {
 		}
 	}
 
-	private Map<L2Object, Desires> objectDesireTable;
+	private Map<WorldObject, Desires> objectDesireTable;
 	private Desires generalDesires;
 	private DesireType[] desireTypes;
 
@@ -112,7 +112,7 @@ public class DesireTable {
 		return generalDesires.getDesireValue(type).getValue();
 	}
 
-	public float getDesireValue(L2Object object, DesireType type) {
+	public float getDesireValue(WorldObject object, DesireType type) {
 		Desires desireList = objectDesireTable.get(object);
 		if (desireList == null) {
 			return 0f;
@@ -124,7 +124,7 @@ public class DesireTable {
 		generalDesires.addValue(type, value);
 	}
 
-	public void addDesireValue(L2Object object, DesireType type, float value) {
+	public void addDesireValue(WorldObject object, DesireType type, float value) {
 		Desires desireList = objectDesireTable.get(object);
 		if (desireList != null) {
 			desireList.addValue(type, value);
@@ -139,27 +139,27 @@ public class DesireTable {
 		generalDesires.deleteDesire(type);
 	}
 
-	public void createDesire(L2Object object, DesireType type) {
+	public void createDesire(WorldObject object, DesireType type) {
 		Desires desireList = objectDesireTable.get(object);
 		if (desireList != null) {
 			desireList.createDesire(type);
 		}
 	}
 
-	public void deleteDesire(L2Object object, DesireType type) {
+	public void deleteDesire(WorldObject object, DesireType type) {
 		Desires desireList = objectDesireTable.get(object);
 		if (desireList != null) {
 			desireList.deleteDesire(type);
 		}
 	}
 
-	public void addKnownObject(L2Object object) {
+	public void addKnownObject(WorldObject object) {
 		if (object != null) {
 			addKnownObject(object, DesireType.DISLIKE, DesireType.FEAR, DesireType.DAMAGE, DesireType.HATE);
 		}
 	}
 
-	public void addKnownObject(L2Object object, DesireType... desireList) {
+	public void addKnownObject(WorldObject object, DesireType... desireList) {
 		if (object != null) {
 			objectDesireTable.put(object, new Desires(desireList));
 		}

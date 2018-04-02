@@ -16,17 +16,17 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.EffectTemplate;
 import l2server.gameserver.util.Util;
 
 public class EffectAuraForces extends L2Effect {
-	public EffectAuraForces(Env env, L2EffectTemplate template) {
+	public EffectAuraForces(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -36,7 +36,7 @@ public class EffectAuraForces extends L2Effect {
 		if (getSkill().getId() != 1955 && getSkill().getName().contains("Aura")) {
 			// Do check for players party if party exists give members (and you too) the force, if member is in range
 			if (getEffector().getParty() != null) {
-				for (L2PcInstance member : getEffector().getParty().getPartyMembers()) {
+				for (Player member : getEffector().getParty().getPartyMembers()) {
 					if (!Util.checkIfInRange(getSkill().getSkillRadius(), getEffector(), member, false)) {
 						continue;
 					}
@@ -85,16 +85,16 @@ public class EffectAuraForces extends L2Effect {
 		// Do the simple check just like in onStart
 		if (getSkill().getId() != 1955 && getSkill().getName().contains("Aura")) {
 			if (getEffector().getParty() != null) {
-				for (L2PcInstance member : getEffector().getParty().getPartyMembers()) {
+				for (Player member : getEffector().getParty().getPartyMembers()) {
 					if (member == null) {
 						continue;
 					}
 
 					int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() : getSkill().getPartyChangeSkill();
 
-					L2Abnormal abn = member.getFirstEffect(1955);
+					Abnormal abn = member.getFirstEffect(1955);
 
-					for (L2Abnormal effect : member.getAllEffects()) {
+					for (Abnormal effect : member.getAllEffects()) {
 						if (effect == null) {
 							continue;
 						}
@@ -124,8 +124,8 @@ public class EffectAuraForces extends L2Effect {
 			} else {
 				int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() : getSkill().getPartyChangeSkill();
 
-				L2Abnormal abn = getEffected().getActingPlayer().getFirstEffect(1955);
-				L2Abnormal ab = getEffector().getFirstEffect(newSkillId);
+				Abnormal abn = getEffected().getActingPlayer().getFirstEffect(1955);
+				Abnormal ab = getEffector().getFirstEffect(newSkillId);
 				if (ab != null) {
 					ab.exit();
 				}
@@ -148,7 +148,7 @@ public class EffectAuraForces extends L2Effect {
 			}
 		} else if (getSkill().getName().contains("Force")) // this is needed if player removes Force the force counter must decrease too.
 		{
-			L2Abnormal abn = getEffected().getActingPlayer().getFirstEffect(1955);
+			Abnormal abn = getEffected().getActingPlayer().getFirstEffect(1955);
 
 			if (getEffected().getActingPlayer().getActiveForcesCount() - 1 >= 0) {
 				getEffected().getActingPlayer().setActiveForcesCount(getEffected().getActingPlayer().getActiveForcesCount() - 1);
@@ -204,7 +204,7 @@ public class EffectAuraForces extends L2Effect {
 
 			// Then for player who have Aura (the effector) finishes the time (onActionTime), must be check for all party if all of them have Force.
 			if (getEffector().getParty() != null) {
-				for (L2PcInstance member : getEffector().getParty().getPartyMembers()) {
+				for (Player member : getEffector().getParty().getPartyMembers()) {
 					if (member.getObjectId() == getEffector().getObjectId()) {
 						continue;
 					}

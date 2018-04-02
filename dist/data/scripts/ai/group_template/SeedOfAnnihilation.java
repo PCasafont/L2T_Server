@@ -19,13 +19,13 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.zone.L2ZoneType;
-import l2server.gameserver.model.zone.type.L2EffectZone;
+import l2server.gameserver.model.zone.ZoneType;
+import l2server.gameserver.model.zone.type.EffectZone;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
@@ -50,7 +50,7 @@ public class SeedOfAnnihilation extends Quest {
 		public int[][] minion_lists;
 		public int buff_zone;
 		public int[][] af_spawns;
-		public L2Npc[] af_npcs = new L2Npc[2];
+		public Npc[] af_npcs = new Npc[2];
 		public int activeBuff = 0;
 
 		public SeedRegion(int[] emi, int[][] ml, int bz, int[][] as) {
@@ -144,7 +144,7 @@ public class SeedOfAnnihilation extends Quest {
 						0);
 				regionsData[i].af_npcs[j].setDisplayEffect(regionsData[i].activeBuff);
 			}
-			ZoneManager.getInstance().getZoneById(regionsData[i].buff_zone, L2EffectZone.class).addSkill(ZONE_BUFFS[regionsData[i].activeBuff], 1);
+			ZoneManager.getInstance().getZoneById(regionsData[i].buff_zone, EffectZone.class).addSkill(ZONE_BUFFS[regionsData[i].activeBuff], 1);
 		}
 		startQuestTimer("ChangeSeedsStatus", seedsNextStatusChange - System.currentTimeMillis(), null, null);
 	}
@@ -156,7 +156,7 @@ public class SeedOfAnnihilation extends Quest {
 			}
 			for (SeedRegion element : regionsData) {
 				if (Util.contains(element.elite_mob_ids, spawn.getNpcId())) {
-					L2MonsterInstance mob = (L2MonsterInstance) spawn.getNpc();
+					MonsterInstance mob = (MonsterInstance) spawn.getNpc();
 					if (mob != null) {
 						spawnGroupOfMinion(mob, element.minion_lists[Rnd.get(element.minion_lists.length)]);
 					}
@@ -165,24 +165,24 @@ public class SeedOfAnnihilation extends Quest {
 		}
 	}
 
-	private void spawnGroupOfMinion(L2MonsterInstance npc, int[] mobIds) {
+	private void spawnGroupOfMinion(MonsterInstance npc, int[] mobIds) {
 		for (int mobId : mobIds) {
 			addMinion(npc, mobId);
 		}
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc) {
+	public String onSpawn(Npc npc) {
 		for (SeedRegion element : regionsData) {
 			if (Util.contains(element.elite_mob_ids, npc.getNpcId())) {
-				spawnGroupOfMinion((L2MonsterInstance) npc, element.minion_lists[Rnd.get(element.minion_lists.length)]);
+				spawnGroupOfMinion((MonsterInstance) npc, element.minion_lists[Rnd.get(element.minion_lists.length)]);
 			}
 		}
 		return super.onSpawn(npc);
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.equalsIgnoreCase("ChangeSeedsStatus")) {
 			int buffsNow = Rnd.get(ZONE_BUFFS_LIST.length);
 			saveGlobalQuestVar("SeedBuffsList", String.valueOf(buffsNow));
@@ -191,11 +191,11 @@ public class SeedOfAnnihilation extends Quest {
 			for (int i = 0; i < regionsData.length; i++) {
 				regionsData[i].activeBuff = ZONE_BUFFS_LIST[buffsNow][i];
 
-				for (L2Npc af : regionsData[i].af_npcs) {
+				for (Npc af : regionsData[i].af_npcs) {
 					af.setDisplayEffect(regionsData[i].activeBuff);
 				}
 
-				L2EffectZone zone = ZoneManager.getInstance().getZoneById(regionsData[i].buff_zone, L2EffectZone.class);
+				EffectZone zone = ZoneManager.getInstance().getZoneById(regionsData[i].buff_zone, EffectZone.class);
 				zone.clearSkills();
 				zone.addSkill(ZONE_BUFFS[regionsData[i].activeBuff], 1);
 			}
@@ -214,12 +214,12 @@ public class SeedOfAnnihilation extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		return super.onKill(npc, killer, isPet);
 	}
 
 	@Override
-	public String onEnterZone(L2Character character, L2ZoneType zone) {
+	public String onEnterZone(Creature character, ZoneType zone) {
 		if (teleportZones.containsKey(zone.getId())) {
 			int[] teleLoc = teleportZones.get(zone.getId());
 			character.teleToLocation(teleLoc[0], teleLoc[1], teleLoc[2]);

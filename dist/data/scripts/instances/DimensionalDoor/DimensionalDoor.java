@@ -2,18 +2,22 @@ package instances.DimensionalDoor;
 
 import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class DimensionalDoor extends Quest {
+	private static Logger log = LoggerFactory.getLogger(DimensionalDoor.class.getName());
+
+
 	private static final String qn = "DimensionalDoor";
 	private static final boolean debug = false;
 
@@ -44,14 +48,14 @@ public class DimensionalDoor extends Quest {
 		}
 	}
 
-	public String onTalkNpc(L2Npc npc, L2PcInstance player) {
+	public String onTalkNpc(Npc npc, Player player) {
 		return null;
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		if (event.equalsIgnoreCase("main")) {
@@ -68,7 +72,7 @@ public class DimensionalDoor extends Quest {
 						return "";
 					}
 
-					L2Skill rewardSkill = SkillTable.getInstance().getInfo(rewardId, skillLevelToLearn);
+					Skill rewardSkill = SkillTable.getInstance().getInfo(rewardId, skillLevelToLearn);
 					player.addSkill(rewardSkill, true);
 					player.sendSkillList();
 
@@ -86,9 +90,9 @@ public class DimensionalDoor extends Quest {
 	}
 
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public final String onFirstTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onFirstTalk: " + player.getName());
+			log.warn(getName() + ": onFirstTalk: " + player.getName());
 		}
 
 		return qn + (Config.SERVER_NAME.contains("vasper") ? "_old" : "") + ".html";

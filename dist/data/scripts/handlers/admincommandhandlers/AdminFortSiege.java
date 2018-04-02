@@ -18,8 +18,8 @@ package handlers.admincommandhandlers;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Fort;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -41,7 +41,7 @@ public class AdminFortSiege implements IAdminCommandHandler {
 					"admin_endfortsiege", "admin_startfortsiege", "admin_setfort", "admin_removefort"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		StringTokenizer st = new StringTokenizer(command, " ");
 		command = st.nextToken(); // Get actual command
 
@@ -58,10 +58,10 @@ public class AdminFortSiege implements IAdminCommandHandler {
 		{
 			showFortSelectPage(activeChar);
 		} else {
-			L2Object target = activeChar.getTarget();
-			L2PcInstance player = null;
-			if (target instanceof L2PcInstance) {
-				player = (L2PcInstance) target;
+			WorldObject target = activeChar.getTarget();
+			Player player = null;
+			if (target instanceof Player) {
+				player = (Player) target;
 			}
 
 			if (command.equalsIgnoreCase("admin_add_fortattacker")) {
@@ -102,7 +102,7 @@ public class AdminFortSiege implements IAdminCommandHandler {
 		return true;
 	}
 
-	private void showFortSelectPage(L2PcInstance activeChar) {
+	private void showFortSelectPage(Player activeChar) {
 		int i = 0;
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "admin/forts.htm");
@@ -133,7 +133,7 @@ public class AdminFortSiege implements IAdminCommandHandler {
 		activeChar.sendPacket(adminReply);
 	}
 
-	private void showFortSiegePage(L2PcInstance activeChar, Fort fort) {
+	private void showFortSiegePage(Player activeChar, Fort fort) {
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "admin/fort.htm");
 		adminReply.replace("%fortName%", fort.getName());

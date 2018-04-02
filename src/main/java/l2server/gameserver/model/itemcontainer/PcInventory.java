@@ -18,22 +18,23 @@ package l2server.gameserver.model.itemcontainer;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2ItemInstance.ItemLocation;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Item.ItemLocation;
 import l2server.gameserver.model.TradeList;
 import l2server.gameserver.model.TradeList.TradeItem;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ExAdenaInvenCount;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.ItemList;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.stats.SkillHolder;
-import l2server.gameserver.templates.item.L2EtcItemType;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.gameserver.templates.item.L2Weapon;
-import l2server.gameserver.templates.item.L2WeaponType;
+import l2server.gameserver.templates.item.EtcItemType;
+import l2server.gameserver.templates.item.ItemTemplate;
+import l2server.gameserver.templates.item.WeaponTemplate;
+import l2server.gameserver.templates.item.WeaponType;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -43,13 +44,16 @@ import java.util.List;
 import java.util.logging.Level;
 
 public class PcInventory extends Inventory {
+	private static Logger log = LoggerFactory.getLogger(PcInventory.class.getName());
+
+
 	public static final int ADENA_ID = 57;
 	public static final int ANCIENT_ADENA_ID = 5575;
 	public static final long MAX_ADENA = 1000000000000000L;
 	
-	private final L2PcInstance owner;
-	private L2ItemInstance adena;
-	private L2ItemInstance ancientAdena;
+	private final Player owner;
+	private Item adena;
+	private Item ancientAdena;
 	
 	private int[] blockItems = null;
 	
@@ -64,12 +68,12 @@ public class PcInventory extends Inventory {
 	 */
 	private int blockMode = -1;
 	
-	public PcInventory(L2PcInstance owner) {
+	public PcInventory(Player owner) {
 		this.owner = owner;
 	}
 	
 	@Override
-	public L2PcInstance getOwner() {
+	public Player getOwner() {
 		return owner;
 	}
 	
@@ -80,10 +84,10 @@ public class PcInventory extends Inventory {
 	
 	@Override
 	protected ItemLocation getEquipLocation() {
-		return ItemLocation.PAPERDOLL;
+		return ItemLocation.EQUIPPED;
 	}
 	
-	public L2ItemInstance getAdenaInstance() {
+	public Item getAdenaInstance() {
 		return adena;
 	}
 	
@@ -92,7 +96,7 @@ public class PcInventory extends Inventory {
 		return adena != null ? adena.getCount() : 0;
 	}
 	
-	public L2ItemInstance getAncientAdenaInstance() {
+	public Item getAncientAdenaInstance() {
 		return ancientAdena;
 	}
 	
@@ -103,15 +107,15 @@ public class PcInventory extends Inventory {
 	/**
 	 * Returns the list of items in inventory available for transaction
 	 *
-	 * @return L2ItemInstance : items in inventory
+	 * @return Item : items in inventory
 	 */
-	public L2ItemInstance[] getUniqueItems(boolean allowAdena, boolean allowAncientAdena) {
+	public Item[] getUniqueItems(boolean allowAdena, boolean allowAncientAdena) {
 		return getUniqueItems(allowAdena, allowAncientAdena, true);
 	}
 	
-	public L2ItemInstance[] getUniqueItems(boolean allowAdena, boolean allowAncientAdena, boolean onlyAvailable) {
-		ArrayList<L2ItemInstance> list = new ArrayList<>();
-		for (L2ItemInstance item : items.values()) {
+	public Item[] getUniqueItems(boolean allowAdena, boolean allowAncientAdena, boolean onlyAvailable) {
+		ArrayList<Item> list = new ArrayList<>();
+		for (Item item : items.values()) {
 			if (!allowAdena && item.getItemId() == 57) {
 				continue;
 			}
@@ -120,7 +124,7 @@ public class PcInventory extends Inventory {
 			}
 			
 			boolean isDuplicate = false;
-			for (L2ItemInstance litem : list) {
+			for (Item litem : list) {
 				if (item == null) {
 					continue;
 				}
@@ -135,22 +139,22 @@ public class PcInventory extends Inventory {
 			}
 		}
 		
-		return list.toArray(new L2ItemInstance[list.size()]);
+		return list.toArray(new Item[list.size()]);
 	}
 	
 	/**
 	 * Returns the list of items in inventory available for transaction
 	 * Allows an item to appear twice if and only if there is a difference in enchantment level.
 	 *
-	 * @return L2ItemInstance : items in inventory
+	 * @return Item : items in inventory
 	 */
-	public L2ItemInstance[] getUniqueItemsByEnchantLevel(boolean allowAdena, boolean allowAncientAdena) {
+	public Item[] getUniqueItemsByEnchantLevel(boolean allowAdena, boolean allowAncientAdena) {
 		return getUniqueItemsByEnchantLevel(allowAdena, allowAncientAdena, true);
 	}
 	
-	public L2ItemInstance[] getUniqueItemsByEnchantLevel(boolean allowAdena, boolean allowAncientAdena, boolean onlyAvailable) {
-		ArrayList<L2ItemInstance> list = new ArrayList<>();
-		for (L2ItemInstance item : items.values()) {
+	public Item[] getUniqueItemsByEnchantLevel(boolean allowAdena, boolean allowAncientAdena, boolean onlyAvailable) {
+		ArrayList<Item> list = new ArrayList<>();
+		for (Item item : items.values()) {
 			if (item == null) {
 				continue;
 			}
@@ -162,7 +166,7 @@ public class PcInventory extends Inventory {
 			}
 			
 			boolean isDuplicate = false;
-			for (L2ItemInstance litem : list) {
+			for (Item litem : list) {
 				if (litem.getItemId() == item.getItemId() && litem.getEnchantLevel() == item.getEnchantLevel()) {
 					isDuplicate = true;
 					break;
@@ -173,13 +177,13 @@ public class PcInventory extends Inventory {
 			}
 		}
 		
-		return list.toArray(new L2ItemInstance[list.size()]);
+		return list.toArray(new Item[list.size()]);
 	}
 	
 	/**
 	 * @see l2server.gameserver.model.itemcontainer.PcInventory#getAllItemsByItemId(int, boolean)
 	 */
-	public L2ItemInstance[] getAllItemsByItemId(int itemId) {
+	public Item[] getAllItemsByItemId(int itemId) {
 		return getAllItemsByItemId(itemId, true);
 	}
 	
@@ -188,11 +192,11 @@ public class PcInventory extends Inventory {
 	 *
 	 * @param itemId          : ID of item
 	 * @param includeEquipped : include equipped items
-	 * @return L2ItemInstance[] : matching items from inventory
+	 * @return Item[] : matching items from inventory
 	 */
-	public L2ItemInstance[] getAllItemsByItemId(int itemId, boolean includeEquipped) {
-		ArrayList<L2ItemInstance> list = new ArrayList<>();
-		for (L2ItemInstance item : items.values()) {
+	public Item[] getAllItemsByItemId(int itemId, boolean includeEquipped) {
+		ArrayList<Item> list = new ArrayList<>();
+		for (Item item : items.values()) {
 			if (item == null) {
 				continue;
 			}
@@ -202,13 +206,13 @@ public class PcInventory extends Inventory {
 			}
 		}
 		
-		return list.toArray(new L2ItemInstance[list.size()]);
+		return list.toArray(new Item[list.size()]);
 	}
 	
 	/**
 	 * @see l2server.gameserver.model.itemcontainer.PcInventory#getAllItemsByItemId(int, int, boolean)
 	 */
-	public L2ItemInstance[] getAllItemsByItemId(int itemId, int enchantment) {
+	public Item[] getAllItemsByItemId(int itemId, int enchantment) {
 		return getAllItemsByItemId(itemId, enchantment, true);
 	}
 	
@@ -218,11 +222,11 @@ public class PcInventory extends Inventory {
 	 * @param itemId          : ID of item
 	 * @param enchantment     : enchant level of item
 	 * @param includeEquipped : include equipped items
-	 * @return L2ItemInstance[] : matching items from inventory
+	 * @return Item[] : matching items from inventory
 	 */
-	public L2ItemInstance[] getAllItemsByItemId(int itemId, int enchantment, boolean includeEquipped) {
-		ArrayList<L2ItemInstance> list = new ArrayList<>();
-		for (L2ItemInstance item : items.values()) {
+	public Item[] getAllItemsByItemId(int itemId, int enchantment, boolean includeEquipped) {
+		ArrayList<Item> list = new ArrayList<>();
+		for (Item item : items.values()) {
 			if (item == null) {
 				continue;
 			}
@@ -232,23 +236,23 @@ public class PcInventory extends Inventory {
 			}
 		}
 		
-		return list.toArray(new L2ItemInstance[list.size()]);
+		return list.toArray(new Item[list.size()]);
 	}
 	
 	/**
 	 * Returns the list of items in inventory available for transaction
 	 *
-	 * @return L2ItemInstance : items in inventory
+	 * @return Item : items in inventory
 	 */
-	public L2ItemInstance[] getAvailableItems(boolean allowAdena, boolean allowNonTradeable) {
-		ArrayList<L2ItemInstance> list = new ArrayList<>();
-		for (L2ItemInstance item : items.values()) {
+	public Item[] getAvailableItems(boolean allowAdena, boolean allowNonTradeable) {
+		ArrayList<Item> list = new ArrayList<>();
+		for (Item item : items.values()) {
 			if (item != null && item.isAvailable(getOwner(), allowAdena, allowNonTradeable) && canManipulateWithItemId(item.getItemId())) {
 				list.add(item);
 			}
 		}
 		
-		return list.toArray(new L2ItemInstance[list.size()]);
+		return list.toArray(new Item[list.size()]);
 	}
 	
 	/**
@@ -256,15 +260,15 @@ public class PcInventory extends Inventory {
 	 *
 	 * @return
 	 */
-	public L2ItemInstance[] getAugmentedItems() {
-		ArrayList<L2ItemInstance> list = new ArrayList<>();
-		for (L2ItemInstance item : items.values()) {
+	public Item[] getAugmentedItems() {
+		ArrayList<Item> list = new ArrayList<>();
+		for (Item item : items.values()) {
 			if (item != null && item.isAugmented()) {
 				list.add(item);
 			}
 		}
 		
-		return list.toArray(new L2ItemInstance[list.size()]);
+		return list.toArray(new Item[list.size()]);
 	}
 	
 	/**
@@ -272,25 +276,25 @@ public class PcInventory extends Inventory {
 	 *
 	 * @return
 	 */
-	public L2ItemInstance[] getElementItems() {
-		ArrayList<L2ItemInstance> list = new ArrayList<>();
-		for (L2ItemInstance item : items.values()) {
+	public Item[] getElementItems() {
+		ArrayList<Item> list = new ArrayList<>();
+		for (Item item : items.values()) {
 			if (item != null && item.getElementals() != null) {
 				list.add(item);
 			}
 		}
 		
-		return list.toArray(new L2ItemInstance[list.size()]);
+		return list.toArray(new Item[list.size()]);
 	}
 	
 	/**
 	 * Returns the list of items in inventory available for transaction adjusted by tradeList
 	 *
-	 * @return L2ItemInstance : items in inventory
+	 * @return Item : items in inventory
 	 */
 	public TradeList.TradeItem[] getAvailableItems(TradeList tradeList) {
 		ArrayList<TradeList.TradeItem> list = new ArrayList<>();
-		for (L2ItemInstance item : items.values()) {
+		for (Item item : items.values()) {
 			if (item != null && item.isAvailable(getOwner(), false, false)) {
 				TradeList.TradeItem adjItem = tradeList.adjustAvailableItem(item);
 				if (adjItem != null) {
@@ -302,9 +306,9 @@ public class PcInventory extends Inventory {
 		return list.toArray(new TradeItem[list.size()]);
 	}
 	
-	public L2ItemInstance getWeaponByTypeAndGrade(final L2WeaponType weaponType, final int crystalType) {
-		for (L2ItemInstance item : items.values()) {
-			if (item == null || !(item.getItem() instanceof L2Weapon)) {
+	public Item getWeaponByTypeAndGrade(final WeaponType weaponType, final int crystalType) {
+		for (Item item : items.values()) {
+			if (item == null || !(item.getItem() instanceof WeaponTemplate)) {
 				continue;
 			} else if (item.getItem().getItemType() != weaponType) {
 				continue;
@@ -321,12 +325,12 @@ public class PcInventory extends Inventory {
 	/**
 	 * Adjust TradeItem according his status in inventory
 	 *
-	 * @param item : L2ItemInstance to be adjusten
+	 * @param item : Item to be adjusten
 	 * @return TradeItem representing adjusted item
 	 */
 	public void adjustAvailableItem(TradeItem item) {
 		boolean notAllEquipped = false;
-		for (L2ItemInstance adjItem : getItemsByItemId(item.getItem().getItemId())) {
+		for (Item adjItem : getItemsByItemId(item.getItem().getItemId())) {
 			if (adjItem.isEquipable()) {
 				if (!adjItem.isEquipped()) {
 					notAllEquipped |= true;
@@ -337,7 +341,7 @@ public class PcInventory extends Inventory {
 			}
 		}
 		if (notAllEquipped) {
-			L2ItemInstance adjItem = getItemByItemId(item.getItem().getItemId());
+			Item adjItem = getItemByItemId(item.getItem().getItemId());
 			item.setObjectId(adjItem.getObjectId());
 			item.setEnchant(adjItem.getEnchantLevel());
 			
@@ -356,10 +360,10 @@ public class PcInventory extends Inventory {
 	 *
 	 * @param process   : String Identifier of process triggering this action
 	 * @param count     : int Quantity of adena to be added
-	 * @param actor     : L2PcInstance Player requesting the item add
+	 * @param actor     : Player Player requesting the item add
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */
-	public void addAdena(String process, long count, L2PcInstance actor, Object reference) {
+	public void addAdena(String process, long count, Player actor, Object reference) {
 		if (count > 0) {
 			addItem(process, ADENA_ID, count, actor, reference);
 		}
@@ -370,11 +374,11 @@ public class PcInventory extends Inventory {
 	 *
 	 * @param process   : String Identifier of process triggering this action
 	 * @param count     : int Quantity of adena to be removed
-	 * @param actor     : L2PcInstance Player requesting the item add
+	 * @param actor     : Player Player requesting the item add
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return boolean : true if adena was reduced
 	 */
-	public boolean reduceAdena(String process, long count, L2PcInstance actor, Object reference) {
+	public boolean reduceAdena(String process, long count, Player actor, Object reference) {
 		if (count > 0) {
 			return destroyItemByItemId(process, ADENA_ID, count, actor, reference) != null;
 		}
@@ -386,10 +390,10 @@ public class PcInventory extends Inventory {
 	 *
 	 * @param process   : String Identifier of process triggering this action
 	 * @param count     : int Quantity of adena to be added
-	 * @param actor     : L2PcInstance Player requesting the item add
+	 * @param actor     : Player Player requesting the item add
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */
-	public void addAncientAdena(String process, long count, L2PcInstance actor, Object reference) {
+	public void addAncientAdena(String process, long count, Player actor, Object reference) {
 		if (count > 0) {
 			addItem(process, ANCIENT_ADENA_ID, count, actor, reference);
 		}
@@ -400,11 +404,11 @@ public class PcInventory extends Inventory {
 	 *
 	 * @param process   : String Identifier of process triggering this action
 	 * @param count     : int Quantity of adena to be removed
-	 * @param actor     : L2PcInstance Player requesting the item add
+	 * @param actor     : Player Player requesting the item add
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return boolean : true if adena was reduced
 	 */
-	public boolean reduceAncientAdena(String process, long count, L2PcInstance actor, Object reference) {
+	public boolean reduceAncientAdena(String process, long count, Player actor, Object reference) {
 		if (count > 0) {
 			return destroyItemByItemId(process, ANCIENT_ADENA_ID, count, actor, reference) != null;
 		}
@@ -415,13 +419,13 @@ public class PcInventory extends Inventory {
 	 * Adds item in inventory and checks adena and ancientAdena
 	 *
 	 * @param process   : String Identifier of process triggering this action
-	 * @param item      : L2ItemInstance to be added
-	 * @param actor     : L2PcInstance Player requesting the item add
+	 * @param item      : Item to be added
+	 * @param actor     : Player Player requesting the item add
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the new item or the updated item in inventory
+	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
 	@Override
-	public L2ItemInstance addItem(String process, L2ItemInstance item, L2PcInstance actor, Object reference) {
+	public Item addItem(String process, Item item, Player actor, Object reference) {
 		item = super.addItem(process, item, actor, reference);
 		
 		if (item != null && item.getItemId() == ADENA_ID && !item.equals(adena)) {
@@ -441,13 +445,13 @@ public class PcInventory extends Inventory {
 	 * @param process   : String Identifier of process triggering this action
 	 * @param itemId    : int Item Identifier of the item to be added
 	 * @param count     : int Quantity of items to be added
-	 * @param actor     : L2PcInstance Player requesting the item creation
+	 * @param actor     : Player Player requesting the item creation
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the new item or the updated item in inventory
+	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
 	@Override
-	public L2ItemInstance addItem(String process, int itemId, long count, L2PcInstance actor, Object reference) {
-		L2ItemInstance item = super.addItem(process, itemId, count, actor, reference);
+	public Item addItem(String process, int itemId, long count, Player actor, Object reference) {
+		Item item = super.addItem(process, itemId, count, actor, reference);
 		
 		if (item != null && item.getItemId() == ADENA_ID && !item.equals(adena)) {
 			adena = item;
@@ -485,13 +489,13 @@ public class PcInventory extends Inventory {
 	 *
 	 * @param process   : String Identifier of process triggering this action
 	 * @param count     : int Quantity of items to be transfered
-	 * @param actor     : L2PcInstance Player requesting the item transfer
+	 * @param actor     : Player Player requesting the item transfer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the new item or the updated item in inventory
+	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
 	@Override
-	public L2ItemInstance transferItem(String process, int objectId, long count, ItemContainer target, L2PcInstance actor, Object reference) {
-		L2ItemInstance item = super.transferItem(process, objectId, count, target, actor, reference);
+	public Item transferItem(String process, int objectId, long count, ItemContainer target, Player actor, Object reference) {
+		Item item = super.transferItem(process, objectId, count, target, actor, reference);
 		
 		if (adena != null && (adena.getCount() <= 0 || adena.getOwnerId() != getOwnerId())) {
 			adena = null;
@@ -508,13 +512,13 @@ public class PcInventory extends Inventory {
 	 * Destroy item from inventory and checks adena and ancientAdena
 	 *
 	 * @param process   : String Identifier of process triggering this action
-	 * @param item      : L2ItemInstance to be destroyed
-	 * @param actor     : L2PcInstance Player requesting the item destroy
+	 * @param item      : Item to be destroyed
+	 * @param actor     : Player Player requesting the item destroy
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the destroyed item or the updated item in inventory
+	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
 	@Override
-	public L2ItemInstance destroyItem(String process, L2ItemInstance item, L2PcInstance actor, Object reference) {
+	public Item destroyItem(String process, Item item, Player actor, Object reference) {
 		return this.destroyItem(process, item, item.getCount(), actor, reference);
 	}
 	
@@ -522,13 +526,13 @@ public class PcInventory extends Inventory {
 	 * Destroy item from inventory and checks adena and ancientAdena
 	 *
 	 * @param process   : String Identifier of process triggering this action
-	 * @param item      : L2ItemInstance to be destroyed
-	 * @param actor     : L2PcInstance Player requesting the item destroy
+	 * @param item      : Item to be destroyed
+	 * @param actor     : Player Player requesting the item destroy
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the destroyed item or the updated item in inventory
+	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
 	@Override
-	public L2ItemInstance destroyItem(String process, L2ItemInstance item, long count, L2PcInstance actor, Object reference) {
+	public Item destroyItem(String process, Item item, long count, Player actor, Object reference) {
 		item = super.destroyItem(process, item, count, actor, reference);
 		
 		if (adena != null && adena.getCount() <= 0) {
@@ -540,7 +544,7 @@ public class PcInventory extends Inventory {
 		}
 		
 		//Runes Skills
-		if (item != null && item.getItem() != null && item.getItemType() == L2EtcItemType.RUNE && item.getItem().getSkills() != null) {
+		if (item != null && item.getItem() != null && item.getItemType() == EtcItemType.RUNE && item.getItem().getSkills() != null) {
 			SkillHolder[] runeSkills = item.getItem().getSkills();
 			if (runeSkills != null) {
 				for (SkillHolder skill : runeSkills) {
@@ -561,13 +565,13 @@ public class PcInventory extends Inventory {
 	 * @param process   : String Identifier of process triggering this action
 	 * @param objectId  : int Item Instance identifier of the item to be destroyed
 	 * @param count     : int Quantity of items to be destroyed
-	 * @param actor     : L2PcInstance Player requesting the item destroy
+	 * @param actor     : Player Player requesting the item destroy
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the destroyed item or the updated item in inventory
+	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
 	@Override
-	public L2ItemInstance destroyItem(String process, int objectId, long count, L2PcInstance actor, Object reference) {
-		L2ItemInstance item = getItemByObjectId(objectId);
+	public Item destroyItem(String process, int objectId, long count, Player actor, Object reference) {
+		Item item = getItemByObjectId(objectId);
 		if (item == null) {
 			return null;
 		}
@@ -580,13 +584,13 @@ public class PcInventory extends Inventory {
 	 * @param process   : String Identifier of process triggering this action
 	 * @param itemId    : int Item identifier of the item to be destroyed
 	 * @param count     : int Quantity of items to be destroyed
-	 * @param actor     : L2PcInstance Player requesting the item destroy
+	 * @param actor     : Player Player requesting the item destroy
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the destroyed item or the updated item in inventory
+	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
 	@Override
-	public L2ItemInstance destroyItemByItemId(String process, int itemId, long count, L2PcInstance actor, Object reference) {
-		L2ItemInstance item = getItemByItemId(itemId);
+	public Item destroyItemByItemId(String process, int itemId, long count, Player actor, Object reference) {
+		Item item = getItemByItemId(itemId);
 		if (item == null) {
 			return null;
 		}
@@ -597,13 +601,13 @@ public class PcInventory extends Inventory {
 	 * Drop item from inventory and checks adena and ancientAdena
 	 *
 	 * @param process   : String Identifier of process triggering this action
-	 * @param item      : L2ItemInstance to be dropped
-	 * @param actor     : L2PcInstance Player requesting the item drop
+	 * @param item      : Item to be dropped
+	 * @param actor     : Player Player requesting the item drop
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the destroyed item or the updated item in inventory
+	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
 	@Override
-	public L2ItemInstance dropItem(String process, L2ItemInstance item, L2PcInstance actor, Object reference) {
+	public Item dropItem(String process, Item item, Player actor, Object reference) {
 		item = super.dropItem(process, item, actor, reference);
 		
 		if (adena != null && (adena.getCount() <= 0 || adena.getOwnerId() != getOwnerId())) {
@@ -623,13 +627,13 @@ public class PcInventory extends Inventory {
 	 * @param process   : String Identifier of process triggering this action
 	 * @param objectId  : int Item Instance identifier of the item to be dropped
 	 * @param count     : int Quantity of items to be dropped
-	 * @param actor     : L2PcInstance Player requesting the item drop
+	 * @param actor     : Player Player requesting the item drop
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the destroyed item or the updated item in inventory
+	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
 	@Override
-	public L2ItemInstance dropItem(String process, int objectId, long count, L2PcInstance actor, Object reference) {
-		L2ItemInstance item = super.dropItem(process, objectId, count, actor, reference);
+	public Item dropItem(String process, int objectId, long count, Player actor, Object reference) {
+		Item item = super.dropItem(process, objectId, count, actor, reference);
 		
 		if (adena != null && (adena.getCount() <= 0 || adena.getOwnerId() != getOwnerId())) {
 			adena = null;
@@ -645,10 +649,10 @@ public class PcInventory extends Inventory {
 	/**
 	 * <b>Overloaded</b>, when removes item from inventory, remove also owner shortcuts.
 	 *
-	 * @param item : L2ItemInstance to be removed from inventory
+	 * @param item : Item to be removed from inventory
 	 */
 	@Override
-	protected boolean removeItem(L2ItemInstance item) {
+	protected boolean removeItem(Item item) {
 		// Removes any reference to the item from Shortcut bar
 		getOwner().removeItemFromShortCut(item.getObjectId());
 		
@@ -668,7 +672,7 @@ public class PcInventory extends Inventory {
 				questSlots--;
 				if (questSlots < 0) {
 					questSlots = 0;
-					Log.warning(this + ": QuestInventory size < 0!");
+					log.warn(this + ": QuestInventory size < 0!");
 				}
 			}
 			
@@ -702,7 +706,7 @@ public class PcInventory extends Inventory {
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement2 =
-					con.prepareStatement("SELECT object_id,item_id,loc_data,enchant_level,appearance FROM items WHERE owner_id=? AND loc='PAPERDOLL'");
+					con.prepareStatement("SELECT object_id,item_id,loc_data,enchant_level,appearance FROM items WHERE owner_id=? AND loc='EQUIPPED'");
 			statement2.setInt(1, objectId);
 			ResultSet invdata = statement2.executeQuery();
 			
@@ -727,17 +731,17 @@ public class PcInventory extends Inventory {
 			invdata.close();
 			statement2.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not restore inventory: " + e.getMessage(), e);
+			log.warn("Could not restore inventory: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		return paperdoll;
 	}
 	
-	public boolean validateCapacity(L2ItemInstance item) {
+	public boolean validateCapacity(Item item) {
 		int slots = 0;
 		
-		if (!(item.isStackable() && getItemByItemId(item.getItemId()) != null) && item.getItemType() != L2EtcItemType.HERB) {
+		if (!(item.isStackable() && getItemByItemId(item.getItemId()) != null) && item.getItemType() != EtcItemType.HERB) {
 			slots++;
 		}
 		
@@ -745,10 +749,10 @@ public class PcInventory extends Inventory {
 	}
 	
 	@Deprecated
-	public boolean validateCapacity(List<L2ItemInstance> items) {
+	public boolean validateCapacity(List<Item> items) {
 		int slots = 0;
 		
-		for (L2ItemInstance item : items) {
+		for (Item item : items) {
 			if (!(item.isStackable() && getItemByItemId(item.getItemId()) != null)) {
 				slots++;
 			}
@@ -759,9 +763,9 @@ public class PcInventory extends Inventory {
 	
 	public boolean validateCapacityByItemId(int ItemId) {
 		int slots = 0;
-		L2Item item = ItemTable.getInstance().getTemplate(ItemId);
-		L2ItemInstance invItem = getItemByItemId(ItemId);
-		if (!(invItem != null && (invItem.isStackable() || invItem.getItem().getType2() == L2Item.TYPE2_QUEST))) {
+		ItemTemplate item = ItemTable.getInstance().getTemplate(ItemId);
+		Item invItem = getItemByItemId(ItemId);
+		if (!(invItem != null && (invItem.isStackable() || invItem.getItem().getType2() == ItemTemplate.TYPE2_QUEST))) {
 			slots++;
 		}
 		
@@ -859,7 +863,7 @@ public class PcInventory extends Inventory {
 	}
 	
 	@Override
-	protected void addItem(L2ItemInstance item) {
+	protected void addItem(Item item) {
 		synchronized (items) {
 			if (item.isQuestItem()) {
 				questSlots++;
@@ -869,7 +873,7 @@ public class PcInventory extends Inventory {
 		}
 		
 		//Runes Skills
-		if (item.getItemType() == L2EtcItemType.RUNE && item.getItem().getSkills() != null) {
+		if (item.getItemType() == EtcItemType.RUNE && item.getItem().getSkills() != null) {
 			SkillHolder[] runeSkills = item.getItem().getSkills();
 			if (runeSkills != null) {
 				for (SkillHolder skill : runeSkills) {
@@ -898,7 +902,7 @@ public class PcInventory extends Inventory {
 		}
 		
 		// Check for chest parts with full body appearance
-		L2ItemInstance item = getPaperdollItem(slot);
+		Item item = getPaperdollItem(slot);
 		if (item != null) {
 			return item.getAppearance();
 		}

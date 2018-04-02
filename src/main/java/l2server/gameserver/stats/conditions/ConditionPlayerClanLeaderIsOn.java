@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -30,8 +30,8 @@ public class ConditionPlayerClanLeaderIsOn extends Condition {
 
 	@Override
 	public boolean testImpl(Env env) {
-		if (env.player instanceof L2PcInstance) {
-			L2PcInstance player = (L2PcInstance) env.player;
+		if (env.player instanceof Player) {
+			Player player = (Player) env.player;
 
 			if (player == null || player.getClan() == null) {
 				return false;

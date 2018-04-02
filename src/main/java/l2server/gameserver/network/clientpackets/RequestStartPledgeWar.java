@@ -18,8 +18,8 @@ package l2server.gameserver.network.clientpackets;
 import l2server.Config;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.ClanWarManager;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
@@ -32,7 +32,7 @@ public final class RequestStartPledgeWar extends L2GameClientPacket {
 	
 	private String pledgeName;
 	private L2Clan clan;
-	private L2PcInstance player;
+	private Player player;
 	
 	@Override
 	protected void readImpl() {
@@ -105,8 +105,8 @@ public final class RequestStartPledgeWar extends L2GameClientPacket {
 		}
 		
 		ClanWarManager.getInstance().storeClansWars(player.getClanId(), clan.getClanId(), player.getObjectId());
-		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-		for (L2PcInstance cha : pls) {
+		Collection<Player> pls = World.getInstance().getAllPlayers().values();
+		for (Player cha : pls) {
 			if (cha.getClan() == player.getClan() || cha.getClan() == clan) {
 				cha.broadcastUserInfo();
 			}

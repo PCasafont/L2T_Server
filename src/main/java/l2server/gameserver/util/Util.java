@@ -26,16 +26,18 @@
 package l2server.gameserver.util;
 
 import l2server.Config;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2NpcInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.NpcInstance;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
@@ -45,20 +47,21 @@ import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
 
 /**
  * General Utility functions related to Gameserver
  */
 public final class Util {
+	private static Logger log = LoggerFactory.getLogger(Util.class.getName());
+	
 	public static Node getFirstNodeFromXML(File base, String fileName) {
 		Node result = null;
 
 		File file = new File(base, fileName);
 
 		if (!file.exists()) {
-			Log.warning("The following XML could not be loaded:");
-			Log.warning("- " + file.getAbsolutePath());
+			log.warn("The following XML could not be loaded:");
+			log.warn("- " + file.getAbsolutePath());
 			return null;
 		}
 
@@ -77,7 +80,7 @@ public final class Util {
 		return result;
 	}
 
-	public static void handleIllegalPlayerAction(L2PcInstance actor, String message, int punishment) {
+	public static void handleIllegalPlayerAction(Player actor, String message, int punishment) {
 		Broadcast.toGameMasters(message);
 		ThreadPoolManager.getInstance().scheduleGeneral(new IllegalPlayerAction(actor, message, punishment), 5000);
 	}
@@ -90,7 +93,7 @@ public final class Util {
 	 * Return degree value of object 2 to the horizontal line with object 1
 	 * being the origin
 	 */
-	public static double calculateAngleFrom(L2Object obj1, L2Object obj2) {
+	public static double calculateAngleFrom(WorldObject obj1, WorldObject obj2) {
 		return calculateAngleFrom(obj1.getX(), obj1.getY(), obj2.getX(), obj2.getY());
 	}
 
@@ -117,7 +120,7 @@ public final class Util {
 		return (int) (degree * 182.044444444);
 	}
 
-	public static int calculateHeadingFrom(L2Object obj1, L2Object obj2) {
+	public static int calculateHeadingFrom(WorldObject obj1, WorldObject obj2) {
 		return calculateHeadingFrom(obj1.getX(), obj1.getY(), obj2.getX(), obj2.getY());
 	}
 
@@ -164,7 +167,7 @@ public final class Util {
 	 * @param includeZAxis - if true, includes also the Z axis in the calculation
 	 * @return the distance between the two objects
 	 */
-	public static double calculateDistance(L2Object obj1, L2Object obj2, boolean includeZAxis) {
+	public static double calculateDistance(WorldObject obj1, WorldObject obj2, boolean includeZAxis) {
 		if (obj1 == null || obj2 == null) {
 			return 1000000;
 		}
@@ -215,7 +218,7 @@ public final class Util {
 	/**
 	 * @return {@code true} if the two objects are within specified range between each other, {@code false} otherwise
 	 */
-	public static boolean checkIfInRange(int range, L2Object obj1, L2Object obj2, boolean includeZAxis) {
+	public static boolean checkIfInRange(int range, WorldObject obj1, WorldObject obj2, boolean includeZAxis) {
 		if (obj1 == null || obj2 == null) {
 			return false;
 		}
@@ -227,11 +230,11 @@ public final class Util {
 		}
 
 		int rad = 0;
-		if (obj1 instanceof L2Character) {
-			rad += ((L2Character) obj1).getTemplate().collisionRadius;
+		if (obj1 instanceof Creature) {
+			rad += ((Creature) obj1).getTemplate().collisionRadius;
 		}
-		if (obj2 instanceof L2Character) {
-			rad += ((L2Character) obj2).getTemplate().collisionRadius;
+		if (obj2 instanceof Creature) {
+			rad += ((Creature) obj2).getTemplate().collisionRadius;
 		}
 
 		double dx = obj1.getX() - obj2.getX();
@@ -280,7 +283,7 @@ public final class Util {
 	 * @param includeZAxis - if true, check also Z axis (3-dimensional check), otherwise only 2D
 	 * @return {@code true} if objects are within specified range between each other, {@code false} otherwise
 	 */
-	public static boolean checkIfInShortRadius(int radius, L2Object obj1, L2Object obj2, boolean includeZAxis) {
+	public static boolean checkIfInShortRadius(int radius, WorldObject obj1, WorldObject obj2, boolean includeZAxis) {
 		if (obj1 == null || obj2 == null) {
 			return false;
 		}
@@ -519,16 +522,16 @@ public final class Util {
 	 * @param invisible : if {@code true}, count invisible characters aswell
 	 * @return the number of targets found
 	 */
-	public static int getPlayersCountInRadius(int range, L2Object npc, boolean playable, boolean invisible) {
+	public static int getPlayersCountInRadius(int range, WorldObject npc, boolean playable, boolean invisible) {
 		int count = 0;
-		final Collection<L2Object> objs = npc.getKnownList().getKnownObjects().values();
-		for (L2Object obj : objs) {
-			if (obj != null && (obj instanceof L2Playable && playable || obj instanceof L2PetInstance || obj instanceof L2SummonInstance)) {
-				if (obj instanceof L2PcInstance && !invisible && obj.getActingPlayer().getAppearance().getInvisible()) {
+		final Collection<WorldObject> objs = npc.getKnownList().getKnownObjects().values();
+		for (WorldObject obj : objs) {
+			if (obj != null && (obj instanceof Playable && playable || obj instanceof PetInstance || obj instanceof SummonInstance)) {
+				if (obj instanceof Player && !invisible && obj.getActingPlayer().getAppearance().getInvisible()) {
 					continue;
 				}
 
-				final L2Character cha = (L2Character) obj;
+				final Creature cha = (Creature) obj;
 				if (cha.getZ() < npc.getZ() - 100 && cha.getZ() > npc.getZ() + 100 ||
 						!GeoData.getInstance().canSeeTarget(cha.getX(), cha.getY(), cha.getZ(), npc.getX(), npc.getY(), npc.getZ())) {
 					continue;
@@ -564,7 +567,7 @@ public final class Util {
 			file.newLine();
 			file.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Util: Error while logging to File - " + filename, e);
+			log.warn("Util: Error while logging to File - " + filename, e);
 		}
 	}
 
@@ -601,14 +604,14 @@ public final class Util {
 		}
 	}
 
-	public static L2NpcInstance getNpcCloseTo(final int npcId, final L2PcInstance activeChar) {
-		Collection<L2Character> knownCharacters = activeChar.getKnownList().getKnownCharactersInRadius(900);
-		for (L2Character character : knownCharacters) {
-			if (!(character instanceof L2NpcInstance)) {
+	public static NpcInstance getNpcCloseTo(final int npcId, final Player activeChar) {
+		Collection<Creature> knownCharacters = activeChar.getKnownList().getKnownCharactersInRadius(900);
+		for (Creature character : knownCharacters) {
+			if (!(character instanceof NpcInstance)) {
 				continue;
 			}
 
-			final L2NpcInstance npc = (L2NpcInstance) character;
+			final NpcInstance npc = (NpcInstance) character;
 
 			if (npcId != npc.getNpcId()) {
 				continue;

@@ -16,12 +16,12 @@
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.util.Rnd;
 
 /*
@@ -29,19 +29,19 @@ import l2server.util.Rnd;
  */
 
 public class GetPlayer implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.GET_PLAYER};
+	private static final SkillType[] SKILL_IDS = {SkillType.GET_PLAYER};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
 		if (activeChar.isAlikeDead()) {
 			return;
 		}
-		for (L2Object target : targets) {
-			if (target instanceof L2PcInstance) {
-				L2PcInstance trg = (L2PcInstance) target;
+		for (WorldObject target : targets) {
+			if (target instanceof Player) {
+				Player trg = (Player) target;
 				if (trg.isAlikeDead()) {
 					continue;
 				}
@@ -56,7 +56,7 @@ public class GetPlayer implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

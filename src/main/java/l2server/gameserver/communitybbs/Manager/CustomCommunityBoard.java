@@ -16,20 +16,21 @@ import l2server.gameserver.handler.IVoicedCommandHandler;
 import l2server.gameserver.handler.VoicedCommandHandler;
 import l2server.gameserver.instancemanager.*;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.RaidBossInstance;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.ClanWarManager.ClanWar;
 import l2server.gameserver.model.olympiad.Olympiad;
-import l2server.gameserver.model.zone.type.L2PeaceZone;
-import l2server.gameserver.model.zone.type.L2SiegeZone;
+import l2server.gameserver.model.zone.type.PeaceZone;
+import l2server.gameserver.model.zone.type.SiegeZone;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.ShowBoard;
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 
@@ -47,6 +48,9 @@ import java.util.logging.Level;
  * @author LasTravel
  */
 public class CustomCommunityBoard {
+	private static Logger log = LoggerFactory.getLogger(CustomCommunityBoard.class.getName());
+
+
 	private static String newsInfo = "";
 
 	// Other
@@ -268,7 +272,7 @@ public class CustomCommunityBoard {
 	@Load(dependencies = SpawnTable.class)
 	public void loadRaidData() {
 		Map<Object, Long> raidIds = new HashMap<>();
-		for (L2RaidBossInstance raid : BossManager.getInstance().getBosses().values()) {
+		for (RaidBossInstance raid : BossManager.getInstance().getBosses().values()) {
 			if (raid != null && raid.getSpawn().getRespawnDelay() >= 3600) {
 				raidIds.put(raid.getNpcId(), (long) raid.getMaxHp() * (raid.getPDef(null) + raid.getMDef(null, null)));
 			}
@@ -286,7 +290,7 @@ public class CustomCommunityBoard {
 			ResultSet rset = stmt.executeQuery();
 
 			while (rset.next()) {
-				L2NpcTemplate boss = NpcTable.getInstance().getTemplate(rset.getInt("boss_id"));
+				NpcTemplate boss = NpcTable.getInstance().getTemplate(rset.getInt("boss_id"));
 				if (boss != null) {
 					bossIds.put(rset.getInt("boss_id"), (long) NpcTable.getInstance().getTemplate(rset.getInt("boss_id")).Level);
 				}
@@ -314,7 +318,7 @@ public class CustomCommunityBoard {
 		sb.append(
 				"<table width=750 bgcolor=999999><tr><td FIXWIDTH=20>#</td><td FIXWIDTH=50>Name</td><td FIXWIDTH=30>Level</td><td FIXWIDTH=150>Respawn</td><td FIXWIDTH=120>Status</td><td FIXWIDTH=20>Drop</td></tr></table>");
 
-		L2NpcTemplate boss = null;
+		NpcTemplate boss = null;
 
 		int pos = 0;
 		int spawnTime = 0;
@@ -444,8 +448,8 @@ public class CustomCommunityBoard {
 		sb.append(
 				"<table width=750 bgcolor=999999><tr><td FIXWIDTH=20>#</td><td FIXWIDTH=140>Name</td><td FIXWIDTH=40>Level</td><td FIXWIDTH=50>Respawn</td><td FIXWIDTH=120>Status</td><td FIXWIDTH=20>Drop</td></tr></table>");
 
-		L2NpcTemplate npc = null; // Get the npc template
-		L2RaidBossInstance boss = null; // Get the current npc
+		NpcTemplate npc = null; // Get the npc template
+		RaidBossInstance boss = null; // Get the current npc
 		Long respawn = null; // Just the respawn time
 		for (int i = pageStart; i < pageEnd; i++) {
 			npc = NpcTable.getInstance().getTemplate((Integer) raidIds.get(i));
@@ -504,7 +508,7 @@ public class CustomCommunityBoard {
 		return sb.toString();
 	}
 
-	public void parseCmd(String command, L2PcInstance activeChar) {
+	public void parseCmd(String command, Player activeChar) {
 		StringTokenizer st = new StringTokenizer(command, ";");
 		st.nextToken();
 
@@ -532,7 +536,7 @@ public class CustomCommunityBoard {
 						break;
 
 					case "trade":
-						L2PcInstance target = L2World.getInstance().getPlayer(st.nextToken());
+						Player target = World.getInstance().getPlayer(st.nextToken());
 						if (target == null) {
 							return;
 						}
@@ -690,7 +694,7 @@ public class CustomCommunityBoard {
 						break;
 
 					default:
-						Log.warning("CustomCommunityBoard: Wrong command in parseCmd void, command: " + command);
+						log.warn("CustomCommunityBoard: Wrong command in parseCmd void, command: " + command);
 						break;
 				}
 				break;
@@ -782,26 +786,26 @@ public class CustomCommunityBoard {
 				break;
 
 			default:
-				Log.warning("CustomCommunityBoard: Wrong command in parseCmd void, command: " + command);
+				log.warn("CustomCommunityBoard: Wrong command in parseCmd void, command: " + command);
 				break;
 		}
 	}
 
-	private String getGainakStatus(L2PcInstance pl, int pageToShow) {
+	private String getGainakStatus(Player pl, int pageToShow) {
 		StringBuilder sb = new StringBuilder();
 
 		//Easy way to check if it's in war mode...
-		L2SiegeZone gainakSiegeZone = ZoneManager.getInstance().getZone(15547, -114380, -240, L2SiegeZone.class);
-		L2PeaceZone gainakSafeZone = ZoneManager.getInstance().getZone(15547, -114380, -240, L2PeaceZone.class);
+		SiegeZone gainakSiegeZone = ZoneManager.getInstance().getZone(15547, -114380, -240, SiegeZone.class);
+		PeaceZone gainakSafeZone = ZoneManager.getInstance().getZone(15547, -114380, -240, PeaceZone.class);
 		if (gainakSiegeZone != null) {
 			sb.append("<table><tr><td><img src=\"Crest.pledge_crest_%serverId%_" + (gainakSiegeZone.isActive() ? 51 : 50) +
 					"\"  width=512 height=128></td></tr></table>");
 			sb.append("<br><br>");
 
 			if (gainakSiegeZone.isActive()) {
-				List<L2PcInstance> gainakPlayers = gainakSiegeZone.getPlayersInside();
+				List<Player> gainakPlayers = gainakSiegeZone.getPlayersInside();
 				if (gainakSafeZone != null) {
-					for (L2PcInstance zonePl : gainakSafeZone.getPlayersInside()) {
+					for (Player zonePl : gainakSafeZone.getPlayersInside()) {
 						if (zonePl == null || gainakPlayers.contains(zonePl)) {
 							continue;
 						}
@@ -831,7 +835,7 @@ public class CustomCommunityBoard {
 						"<table width=600 bgcolor=999999><tr><td FIXWIDTH=100 align=center>Name</td><td FIXWIDTH=100 align=center>Clan</td><td FIXWIDTH=100 align=center>Ally</td></tr></table>");
 
 				for (int i = pageStart; i < pageEnd; i++) {
-					L2PcInstance player = gainakPlayers.get(i);
+					Player player = gainakPlayers.get(i);
 					if (player == null || player.isGM()) {
 						continue;
 					}
@@ -861,7 +865,7 @@ public class CustomCommunityBoard {
 		return sb.toString();
 	}
 
-	public void sendDropPage(L2PcInstance pl, int npcId, int page, L2Npc npc) {
+	public void sendDropPage(Player pl, int npcId, int page, Npc npc) {
 		if (pl == null) {
 			return;
 		}
@@ -888,7 +892,7 @@ public class CustomCommunityBoard {
 			npcId = 25867;
 		}
 
-		L2NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
+		NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
 		if (template == null) {
 			return;
 		}
@@ -1036,7 +1040,7 @@ public class CustomCommunityBoard {
 		pl.sendPacket(new NpcHtmlMessage(0, replyMSG));
 	}
 
-	private String getCustomPlayerPanelInfo(L2PcInstance pl) {
+	private String getCustomPlayerPanelInfo(Player pl) {
 		String a = getCommunityPage("playerPanel");
 		String isNoExp = pl.isNoExp() ? "Disable" : "Enable";
 		String isRefusingBuffs = pl.isRefusingBuffs() ? "Disable" : "Enable";
@@ -1082,7 +1086,7 @@ public class CustomCommunityBoard {
 		return a;
 	}
 
-	public int getRankedPoints(L2PcInstance player) {
+	public int getRankedPoints(Player player) {
 		Connection get = null;
 
 		try {
@@ -1098,14 +1102,14 @@ public class CustomCommunityBoard {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
+			log.warn("Couldn't get current ranked points : " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(get);
 		}
 		return 0;
 	}
 
-	private String getCustomBuyPage(int pageToShow, int type, L2PcInstance player) {
+	private String getCustomBuyPage(int pageToShow, int type, Player player) {
 
 		StringBuilder sb = new StringBuilder();
 
@@ -1165,7 +1169,7 @@ public class CustomCommunityBoard {
 		int maxToDisplay = 6;
 		sb.append("<td>  In queue : </td>");
 		int i = 0;
-		for (L2PcInstance registered : Ranked1v1.players) {
+		for (Player registered : Ranked1v1.players) {
 			if (registered == null) {
 				continue;
 			}
@@ -1246,7 +1250,7 @@ public class CustomCommunityBoard {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
+			log.warn("Couldn't get current ranked points : " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(get);
 		}
@@ -1262,7 +1266,7 @@ public class CustomCommunityBoard {
 		sb.append(
 				"<html><body>%menu%<br><center><table><tr><td><img src=\"icon.etc_alphabet_P_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_l_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_a_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_y_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_e_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_r_i00\" width=32 height=32></td><td></td><td></td><td></td><td></td><td><img src=\"icon.etc_alphabet_S_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_h_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_o_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_p_i00\" width=32 height=32></td><td><img src=\"icon.etc_alphabet_s_i00\" width=32 height=32></td></tr></table></center><br><br>");
 
-		List<L2PcInstance> shops = L2World.getInstance().getAllPlayerShops();
+		List<Player> shops = World.getInstance().getAllPlayerShops();
 
 		int maxPlayersPerPage = 20;
 		int playersSize = shops.size();
@@ -1288,7 +1292,7 @@ public class CustomCommunityBoard {
 				"<table width=750 bgcolor=999999><tr><td FIXWIDTH=25>#</td><td FIXWIDTH=150>Name</td><td FIXWIDTH=90>Shop Type</td><td FIXWIDTH=110>Message</td></tr></table>");
 
 		for (int i = pageStart; i < pageEnd; i++) {
-			L2PcInstance shop = shops.get(i);
+			Player shop = shops.get(i);
 			if (type == 1 && shop.getPrivateStoreType() != 3 || type == 10 && shop.getPrivateStoreType() != 10 ||
 					type == 2 && shop.getPrivateStoreType() != 1 || type == 3 && shop.getPrivateStoreType() != 5) {
 				continue;
@@ -1315,7 +1319,7 @@ public class CustomCommunityBoard {
 		return HtmCache.getInstance().getHtm(null, "CommunityBoard/" + pageName + ".htm");
 	}
 
-	private void sendNormalChatWindow(L2PcInstance pl, String path) {
+	private void sendNormalChatWindow(Player pl, String path) {
 		if (pl == null) {
 			return;
 		}
@@ -1340,9 +1344,9 @@ public class CustomCommunityBoard {
 		//Little glitch  to integrate the farm info to the GK npc with back button...
 		if (path.contains("Farm")) {
 			int targetObjId = 0;
-			L2Npc target = null;
-			if (pl.getTarget() != null && pl.getTarget() instanceof L2Npc) {
-				target = (L2Npc) pl.getTarget();
+			Npc target = null;
+			if (pl.getTarget() != null && pl.getTarget() instanceof Npc) {
+				target = (Npc) pl.getTarget();
 			}
 			if (target != null && target.getInstanceId() == pl.getObjectId() && target.getNpcId() == 40001) {
 				targetObjId = pl.getTarget().getObjectId();
@@ -1357,7 +1361,7 @@ public class CustomCommunityBoard {
 		pl.sendPacket(htmlPage);
 	}
 
-	private void sendCommunityBoardPage(String html, L2PcInstance player) {
+	private void sendCommunityBoardPage(String html, Player player) {
 		if (html == null) {
 			return;
 		}
@@ -1380,7 +1384,7 @@ public class CustomCommunityBoard {
 			player.sendPacket(new ShowBoard(html.substring(8180, 8180 * 2), "102"));
 			player.sendPacket(new ShowBoard(html.substring(8180 * 2, html.length()), "103"));
 		} else {
-			Log.warning("CustomCommunityBoard: sendCommunityBoardPage this html exceeds the max html size supported by the client, requestor: " +
+			log.warn("CustomCommunityBoard: sendCommunityBoardPage this html exceeds the max html size supported by the client, requestor: " +
 					player.getName() + " html size: " + html.length());
 		}
 	}
@@ -1393,10 +1397,10 @@ public class CustomCommunityBoard {
 		if (multiplier < 1)
 			multiplier = 1;*/
 
-		return (int) Math.round(L2World.getInstance().getAllPlayersCount() * multiplier + Rnd.get(1));
+		return (int) Math.round(World.getInstance().getAllPlayersCount() * multiplier + Rnd.get(1));
 	}
 
-	private String getRankingInfo(String rankingType, L2PcInstance player) {
+	private String getRankingInfo(String rankingType, Player player) {
 		if (rankingType.equalsIgnoreCase("damageDealer")) {
 			return DamageManager.getInstance().getRankingInfo();
 		} else if (rankingType.equalsIgnoreCase("main")) {
@@ -1414,7 +1418,7 @@ public class CustomCommunityBoard {
 		boolean playerIsInTop = false;
 
 		Map<Object, Long> allPlayers = new HashMap<>();
-		for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values()) {
+		for (Player pl : World.getInstance().getAllPlayers().values()) {
 			if (pl == null || pl.isInStoreMode() || pl.isGM()) {
 				continue;
 			}

@@ -17,8 +17,8 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.L2FriendSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -50,7 +50,7 @@ public final class RequestSendFriendMsg extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -59,7 +59,7 @@ public final class RequestSendFriendMsg extends L2GameClientPacket {
 			return;
 		}
 		
-		final L2PcInstance targetPlayer = L2World.getInstance().getPlayer(reciever);
+		final Player targetPlayer = World.getInstance().getPlayer(reciever);
 		if (targetPlayer == null || !targetPlayer.getFriendList().contains(activeChar.getObjectId())) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME));
 			return;

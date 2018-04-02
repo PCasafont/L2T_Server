@@ -19,13 +19,12 @@ import l2server.Config;
 import l2server.gameserver.datatables.PetDataTable;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.handler.ItemHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.PetItemList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 public final class RequestPetUseItem extends L2GameClientPacket {
 
@@ -41,12 +40,12 @@ public final class RequestPetUseItem extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
 
-		final L2PetInstance pet = activeChar.getPet();
+		final PetInstance pet = activeChar.getPet();
 		if (pet == null) {
 			return;
 		}
@@ -55,7 +54,7 @@ public final class RequestPetUseItem extends L2GameClientPacket {
 			return;
 		}
 
-		final L2ItemInstance item = pet.getInventory().getItemByObjectId(objectId);
+		final Item item = pet.getInventory().getItemByObjectId(objectId);
 		if (item == null) {
 			return;
 		}
@@ -68,7 +67,7 @@ public final class RequestPetUseItem extends L2GameClientPacket {
 		}
 
 		if (Config.DEBUG) {
-			Log.finest(activeChar.getObjectId() + ": pet use item " + objectId);
+			log.trace(activeChar.getObjectId() + ": pet use item " + objectId);
 		}
 
 		if (!item.isEquipped()) {
@@ -106,7 +105,7 @@ public final class RequestPetUseItem extends L2GameClientPacket {
 		}
 	}
 
-	private void useItem(L2PetInstance pet, L2ItemInstance item, L2PcInstance activeChar) {
+	private void useItem(PetInstance pet, Item item, Player activeChar) {
 		if (item.isEquipable()) {
 			if (item.isEquipped()) {
 				pet.getInventory().unEquipItemInSlot(item.getLocationSlot());
@@ -122,7 +121,7 @@ public final class RequestPetUseItem extends L2GameClientPacket {
 				handler.useItem(pet, item, false);
 				pet.updateAndBroadcastStatus(1);
 			} else {
-				Log.warning("no itemhandler registered for itemId:" + item.getItemId());
+				log.warn("no itemhandler registered for itemId:" + item.getItemId());
 			}
 		}
 	}

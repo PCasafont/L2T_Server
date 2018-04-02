@@ -15,35 +15,36 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.VisualEffect;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @author ZaKaX (Ghost @ L2D)
  */
 public class EffectClanGate extends L2Effect {
-	public EffectClanGate(Env env, L2EffectTemplate template) {
+	public EffectClanGate(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
 		getEffected().startVisualEffect(VisualEffect.MAGIC_CIRCLE);
-		if (getEffected() instanceof L2PcInstance) {
-			L2Clan clan = ((L2PcInstance) getEffected()).getClan();
+		if (getEffected() instanceof Player) {
+			L2Clan clan = ((Player) getEffected()).getClan();
 			if (clan != null) {
 				SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.COURT_MAGICIAN_CREATED_PORTAL);
-				clan.broadcastToOtherOnlineMembers(msg, (L2PcInstance) getEffected());
+				clan.broadcastToOtherOnlineMembers(msg, (Player) getEffected());
 			}
 		}
 
@@ -51,7 +52,7 @@ public class EffectClanGate extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {
@@ -59,7 +60,7 @@ public class EffectClanGate extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {
@@ -67,7 +68,7 @@ public class EffectClanGate extends L2Effect {
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.CLAN_GATE;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.CLAN_GATE;
 	}
 }

@@ -2,8 +2,8 @@ package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.util.GMAudit;
 import l2server.util.StringUtil;
@@ -15,7 +15,7 @@ public class AdminInstanceZone implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_instancezone", "admin_instancezone_clear"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		String target = activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target";
 		GMAudit.auditGMAction(activeChar.getName(), command, target, "");
 
@@ -24,7 +24,7 @@ public class AdminInstanceZone implements IAdminCommandHandler {
 				StringTokenizer st = new StringTokenizer(command, " ");
 
 				st.nextToken();
-				final L2PcInstance player = L2World.getInstance().getPlayer(st.nextToken());
+				final Player player = World.getInstance().getPlayer(st.nextToken());
 				final int instanceId = Integer.parseInt(st.nextToken());
 				final String name = InstanceManager.getInstance().getInstanceIdName(instanceId);
 				InstanceManager.getInstance().deleteInstanceTime(player.getObjectId(), instanceId);
@@ -42,11 +42,11 @@ public class AdminInstanceZone implements IAdminCommandHandler {
 			command = st.nextToken();
 
 			if (st.hasMoreTokens()) {
-				L2PcInstance player = null;
+				Player player = null;
 				String playername = st.nextToken();
 
 				try {
-					player = L2World.getInstance().getPlayer(playername);
+					player = World.getInstance().getPlayer(playername);
 				} catch (Exception e) {
 				}
 
@@ -58,8 +58,8 @@ public class AdminInstanceZone implements IAdminCommandHandler {
 					return false;
 				}
 			} else if (activeChar.getTarget() != null) {
-				if (activeChar.getTarget() instanceof L2PcInstance) {
-					display((L2PcInstance) activeChar.getTarget(), activeChar);
+				if (activeChar.getTarget() instanceof Player) {
+					display((Player) activeChar.getTarget(), activeChar);
 				}
 			} else {
 				display(activeChar, activeChar);
@@ -73,7 +73,7 @@ public class AdminInstanceZone implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	private void display(L2PcInstance player, L2PcInstance activeChar) {
+	private void display(Player player, Player activeChar) {
 		Map<Integer, Long> instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(player.getObjectId());
 
 		final StringBuilder html = StringUtil.startAppend(500 + instanceTimes.size() * 200,

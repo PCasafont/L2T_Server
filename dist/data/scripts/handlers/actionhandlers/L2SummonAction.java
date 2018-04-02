@@ -18,70 +18,70 @@ package handlers.actionhandlers;
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.ai.L2SummonAI;
+import l2server.gameserver.ai.SummonAI;
 import l2server.gameserver.handler.IActionHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2CloneInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.CloneInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
 
 public class L2SummonAction implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
+	public boolean action(Player activeChar, WorldObject target, boolean interact) {
 		// Aggression target lock effect
 		if (activeChar.isLockedTarget() && activeChar.getLockedTarget() != target) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_CHANGE_TARGET));
 			return false;
 		}
 
-		if (activeChar == ((L2Summon) target).getOwner() && !(target instanceof L2CloneInstance)) {
-			if (target instanceof L2SummonInstance) {
-				activeChar.setActiveSummon((L2SummonInstance) target);
+		if (activeChar == ((Summon) target).getOwner() && !(target instanceof CloneInstance)) {
+			if (target instanceof SummonInstance) {
+				activeChar.setActiveSummon((SummonInstance) target);
 			}
 
 			if (activeChar.getTarget() == target) {
-				for (L2SummonInstance summon : activeChar.getSummons()) {
-					if (Util.checkIfInRange(5000, activeChar, target, true) || ((L2Summon) target).isOutOfControl()) {
+				for (SummonInstance summon : activeChar.getSummons()) {
+					if (Util.checkIfInRange(5000, activeChar, target, true) || ((Summon) target).isOutOfControl()) {
 						continue;
 					}
 
 					summon.setFollowStatus(false);
 					summon.teleToLocation(activeChar.getX(), activeChar.getY(), activeChar.getZ(), false);
-					((L2SummonAI) summon.getAI()).setStartFollowController(true);
+					((SummonAI) summon.getAI()).setStartFollowController(true);
 					summon.setFollowStatus(true);
 					summon.updateAndBroadcastStatus(0);
 				}
-				activeChar.sendPacket(new PetStatusShow((L2Summon) target));
+				activeChar.sendPacket(new PetStatusShow((Summon) target));
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return true;
 			}
 		}
 		if (activeChar.getTarget() != target) {
 			if (Config.DEBUG) {
-				log.fine("new target selected:" + target.getObjectId());
+				log.debug("new target selected:" + target.getObjectId());
 			}
 
-			if (((L2Summon) target).getTemplate().Targetable || ((L2Summon) target).getOwner() == activeChar) {
+			if (((Summon) target).getTemplate().Targetable || ((Summon) target).getOwner() == activeChar) {
 				activeChar.setTarget(target);
-				activeChar.sendPacket(new ValidateLocation((L2Character) target));
-				MyTargetSelected my = new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((L2Character) target).getLevel());
-				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character) target));
+				activeChar.sendPacket(new ValidateLocation((Creature) target));
+				MyTargetSelected my = new MyTargetSelected(target.getObjectId(), activeChar.getLevel() - ((Creature) target).getLevel());
+				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((Creature) target));
 				activeChar.sendPacket(my);
 
 				//sends HP/MP status of the summon to other characters
 				StatusUpdate su = new StatusUpdate(target);
-				su.addAttribute(StatusUpdate.CUR_HP, (int) ((L2Character) target).getCurrentHp());
-				su.addAttribute(StatusUpdate.MAX_HP, ((L2Character) target).getMaxHp());
+				su.addAttribute(StatusUpdate.CUR_HP, (int) ((Creature) target).getCurrentHp());
+				su.addAttribute(StatusUpdate.MAX_HP, ((Creature) target).getMaxHp());
 				activeChar.sendPacket(su);
 			}
 		} else if (interact) {
-			activeChar.sendPacket(new ValidateLocation((L2Character) target));
+			activeChar.sendPacket(new ValidateLocation((Creature) target));
 			if (target.isAutoAttackable(activeChar)) {
 				if (Config.GEODATA > 0) {
 					if (GeoData.getInstance().canSeeTarget(activeChar, target)) {

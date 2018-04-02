@@ -17,51 +17,55 @@ package l2server.gameserver.model.actor.knownlist;
 
 import l2server.Config;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2GuardInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.GuardInstance;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class GuardKnownList extends AttackableKnownList {
+	private static Logger log = LoggerFactory.getLogger(GuardKnownList.class.getName());
 
-	public GuardKnownList(L2GuardInstance activeChar) {
+
+
+	public GuardKnownList(GuardInstance activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public boolean addKnownObject(L2Object object) {
+	public boolean addKnownObject(WorldObject object) {
 		if (!super.addKnownObject(object)) {
 			return false;
 		}
 
-		if (object instanceof L2PcInstance) {
-			// Check if the object added is a L2PcInstance that owns Karma
-			if (((L2PcInstance) object).getReputation() < 0) {
+		if (object instanceof Player) {
+			// Check if the object added is a Player that owns Karma
+			if (((Player) object).getReputation() < 0) {
 				if (Config.DEBUG) {
-					Log.fine(getActiveChar().getObjectId() + ": PK " + object.getObjectId() + " entered scan range");
+					log.debug(getActiveChar().getObjectId() + ": PK " + object.getObjectId() + " entered scan range");
 				}
 
-				// Set the L2GuardInstance Intention to AI_INTENTION_ACTIVE
+				// Set the GuardInstance Intention to AI_INTENTION_ACTIVE
 				if (getActiveChar().getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE) {
 					getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
 				}
 			}
-		} else if (Config.GUARD_ATTACK_AGGRO_MOB && getActiveChar().isInActiveRegion() && object instanceof L2MonsterInstance) {
-			// Check if the object added is an aggressive L2MonsterInstance
-			if (((L2MonsterInstance) object).isAggressive()) {
+		} else if (Config.GUARD_ATTACK_AGGRO_MOB && getActiveChar().isInActiveRegion() && object instanceof MonsterInstance) {
+			// Check if the object added is an aggressive MonsterInstance
+			if (((MonsterInstance) object).isAggressive()) {
 				if (Config.DEBUG) {
-					Log.fine(getActiveChar().getObjectId() + ": Aggressive mob " + object.getObjectId() + " entered scan range");
+					log.debug(getActiveChar().getObjectId() + ": Aggressive mob " + object.getObjectId() + " entered scan range");
 				}
 
-				// Set the L2GuardInstance Intention to AI_INTENTION_ACTIVE
+				// Set the GuardInstance Intention to AI_INTENTION_ACTIVE
 				if (getActiveChar().getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE) {
 					getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
 				}
 			}
-		} else if (object instanceof L2Npc && ((L2Npc) object).getClan() != null &&
-				((L2Npc) object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan())) {
+		} else if (object instanceof Npc && ((Npc) object).getClan() != null &&
+				((Npc) object).getClan().equalsIgnoreCase(getActiveChar().getEnemyClan())) {
 			if (getActiveChar().getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE) {
 				getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
 			}
@@ -71,16 +75,16 @@ public class GuardKnownList extends AttackableKnownList {
 	}
 
 	@Override
-	protected boolean removeKnownObject(L2Object object, boolean forget) {
+	protected boolean removeKnownObject(WorldObject object, boolean forget) {
 		if (!super.removeKnownObject(object, forget)) {
 			return false;
 		}
 
-		// Check if the aggroList of the L2GuardInstance is Empty
+		// Check if the aggroList of the GuardInstance is Empty
 		if (getActiveChar().noTarget()) {
 			//removeAllKnownObjects();
 
-			// Set the L2GuardInstance to AI_INTENTION_IDLE
+			// Set the GuardInstance to AI_INTENTION_IDLE
 			if (getActiveChar().hasAI()) {
 				getActiveChar().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
 			}
@@ -90,7 +94,7 @@ public class GuardKnownList extends AttackableKnownList {
 	}
 
 	@Override
-	public final L2GuardInstance getActiveChar() {
-		return (L2GuardInstance) super.getActiveChar();
+	public final GuardInstance getActiveChar() {
+		return (GuardInstance) super.getActiveChar();
 	}
 }

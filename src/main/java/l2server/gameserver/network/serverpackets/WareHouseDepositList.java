@@ -16,9 +16,8 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 
@@ -33,16 +32,16 @@ public final class WareHouseDepositList extends L2ItemListPacket {
 	public static final int CASTLE = 3; //not sure
 	
 	private final long playerAdena;
-	private final ArrayList<L2ItemInstance> items;
+	private final ArrayList<Item> items;
 	private final int whType;
 	
-	public WareHouseDepositList(L2PcInstance player, int type) {
+	public WareHouseDepositList(Player player, int type) {
 		whType = type;
 		playerAdena = player.getAdena();
 		items = new ArrayList<>();
 		
 		final boolean isPrivate = whType == PRIVATE;
-		for (L2ItemInstance temp : player.getInventory().getAvailableItems(true, isPrivate)) {
+		for (Item temp : player.getInventory().getAvailableItems(true, isPrivate)) {
 			if (temp != null && temp.isDepositable(isPrivate)) {
 				items.add(temp);
 			}
@@ -60,12 +59,12 @@ public final class WareHouseDepositList extends L2ItemListPacket {
 		writeD(0x00); // Already stored items count
 		final int count = items.size();
 		if (Config.DEBUG) {
-			Log.fine("count:" + count);
+			log.debug("count:" + count);
 		}
 		//writeH(0x00); // Weird count that we don't care about
 		writeH(count);
 		
-		for (L2ItemInstance item : items) {
+		for (Item item : items) {
 			writeItem(item);
 			writeD(item.getObjectId());
 		}

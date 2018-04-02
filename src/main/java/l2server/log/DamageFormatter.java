@@ -15,11 +15,11 @@
 
 package l2server.log;
 
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.StringUtil;
 
 import java.text.SimpleDateFormat;
@@ -44,22 +44,22 @@ public class DamageFormatter extends Formatter {
 				continue;
 			}
 
-			if (p instanceof L2Character) {
-				if (p instanceof L2Attackable && ((L2Attackable) p).isRaid()) {
+			if (p instanceof Creature) {
+				if (p instanceof Attackable && ((Attackable) p).isRaid()) {
 					StringUtil.append(output, "RaidBoss ");
 				}
 
-				StringUtil.append(output, ((L2Character) p).getName(), "(", String.valueOf(((L2Character) p).getObjectId()), ") ");
-				StringUtil.append(output, String.valueOf(((L2Character) p).getLevel()), " lvl");
+				StringUtil.append(output, ((Creature) p).getName(), "(", String.valueOf(((Creature) p).getObjectId()), ") ");
+				StringUtil.append(output, String.valueOf(((Creature) p).getLevel()), " lvl");
 
-				if (p instanceof L2Summon) {
-					L2PcInstance owner = ((L2Summon) p).getOwner();
+				if (p instanceof Summon) {
+					Player owner = ((Summon) p).getOwner();
 					if (owner != null) {
 						StringUtil.append(output, " Owner:", owner.getName(), "(", String.valueOf(owner.getObjectId()), ")");
 					}
 				}
-			} else if (p instanceof L2Skill) {
-				StringUtil.append(output, " with skill ", ((L2Skill) p).getName(), "(", String.valueOf(((L2Skill) p).getId()), ")");
+			} else if (p instanceof Skill) {
+				StringUtil.append(output, " with skill ", ((Skill) p).getName(), "(", String.valueOf(((Skill) p).getId()), ")");
 			} else {
 				StringUtil.append(output, p.toString());
 			}

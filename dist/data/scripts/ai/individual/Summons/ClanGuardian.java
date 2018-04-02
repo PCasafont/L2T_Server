@@ -19,9 +19,9 @@ import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.Collection;
 import java.util.concurrent.ScheduledFuture;
@@ -35,7 +35,7 @@ import java.util.concurrent.ScheduledFuture;
 
 public class ClanGuardian extends L2AttackableAIScript {
 	private static final int clanGuardian = 15053;
-	private static final L2Skill clanGuardianRecovery = SkillTable.getInstance().getInfo(19018, 1);
+	private static final Skill clanGuardianRecovery = SkillTable.getInstance().getInfo(19018, 1);
 
 	public ClanGuardian(int id, String name, String descr) {
 		super(id, name, descr);
@@ -44,7 +44,7 @@ public class ClanGuardian extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Summon npc) {
+	public final String onSpawn(Summon npc) {
 		ClanGuardianAI ai = new ClanGuardianAI(npc);
 
 		ai.setSchedule(ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(ai, 5000, 10000));
@@ -53,11 +53,11 @@ public class ClanGuardian extends L2AttackableAIScript {
 	}
 
 	class ClanGuardianAI implements Runnable {
-		private L2Summon clanGuardian;
-		private L2PcInstance owner;
+		private Summon clanGuardian;
+		private Player owner;
 		private ScheduledFuture<?> schedule = null;
 
-		protected ClanGuardianAI(L2Summon npc) {
+		protected ClanGuardianAI(Summon npc) {
 			clanGuardian = npc;
 			owner = npc.getOwner();
 		}
@@ -75,9 +75,9 @@ public class ClanGuardian extends L2AttackableAIScript {
 				}
 			}
 
-			Collection<L2PcInstance> players = clanGuardian.getKnownList().getKnownPlayersInRadius(500);
+			Collection<Player> players = clanGuardian.getKnownList().getKnownPlayersInRadius(500);
 
-			for (L2PcInstance player : players) {
+			for (Player player : players) {
 				if (isValidTarget(player, clanGuardian)) {
 					clanGuardian.setTarget(player);
 					clanGuardian.doCast(clanGuardianRecovery);
@@ -86,7 +86,7 @@ public class ClanGuardian extends L2AttackableAIScript {
 		}
 	}
 
-	private boolean isValidTarget(L2PcInstance target, L2Summon summon) {
+	private boolean isValidTarget(Player target, Summon summon) {
 		if (target == null || summon == null) {
 			return false;
 		}

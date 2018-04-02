@@ -15,10 +15,10 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2Henna;
+import l2server.gameserver.templates.item.HennaTemplate;
 
 /**
  * This class ...
@@ -41,7 +41,7 @@ public final class RequestHennaRemove extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -51,7 +51,7 @@ public final class RequestHennaRemove extends L2GameClientPacket {
 		}
 
 		for (int i = 1; i <= 4; i++) {
-			L2Henna henna = activeChar.getHenna(i);
+			HennaTemplate henna = activeChar.getHenna(i);
 			if (henna != null && henna.getSymbolId() == symbolId) {
 				if (activeChar.getAdena() >= henna.getPrice() / 5) {
 					activeChar.removeHenna(i);

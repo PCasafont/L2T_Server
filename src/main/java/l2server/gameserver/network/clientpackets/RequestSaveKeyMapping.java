@@ -16,7 +16,7 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.ActionKey;
 import l2server.gameserver.network.L2GameClient.GameClientState;
 
@@ -99,7 +99,7 @@ public class RequestSaveKeyMapping extends L2GameClientPacket {
 	 */
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		
 		if (player == null) {
 			return;

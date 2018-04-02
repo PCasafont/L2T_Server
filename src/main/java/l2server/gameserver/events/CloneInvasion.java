@@ -3,13 +3,14 @@ package l2server.gameserver.events;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.gameserver.templates.item.L2WeaponType;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import l2server.gameserver.templates.item.WeaponType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 import java.util.Calendar;
@@ -18,6 +19,9 @@ import java.util.Calendar;
  * @author Pere
  */
 public class CloneInvasion {
+	private static Logger log = LoggerFactory.getLogger(CloneInvasion.class.getName());
+
+
 	public static CloneInvasion instance = null;
 
 	private StartTask task;
@@ -38,7 +42,7 @@ public class CloneInvasion {
 	}
 
 	public void spawnNpcPlayers() {
-		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
+		for (Player player : World.getInstance().getAllPlayers().values()) {
 			if (player == null || player.isGM() || player.isInStoreMode()) {
 				continue;
 			}
@@ -86,11 +90,11 @@ public class CloneInvasion {
 				set.set("aggressive", true);
 				set.set("aggroRange", 500);
 
-				L2NpcTemplate tmpl = new L2NpcTemplate(set);
+				NpcTemplate tmpl = new NpcTemplate(set);
 
 				L2NpcAIData npcAIDat = new L2NpcAIData();
 				npcAIDat.setAi(player.getActiveWeaponItem() != null ?
-						player.isMageClass() ? "mage" : player.getActiveWeaponItem().getItemType() == L2WeaponType.BOW ? "archer" : "Fighter" :
+						player.isMageClass() ? "mage" : player.getActiveWeaponItem().getItemType() == WeaponType.BOW ? "archer" : "Fighter" :
 						"balanced");
 				npcAIDat.setSkillChance(player.isMageClass() ? 100 : 15);
 				npcAIDat.setCanMove(true);
@@ -102,7 +106,7 @@ public class CloneInvasion {
 				npcAIDat.setClanRange(500);
 				tmpl.setAIData(npcAIDat);
 
-				for (L2Skill skill : player.getAllSkills()) {
+				for (Skill skill : player.getAllSkills()) {
 					if (skill.isOffensive() && skill.getMagicLevel() > player.getLevel() - 5) {
 						tmpl.addSkill(skill);
 					}
@@ -118,12 +122,12 @@ public class CloneInvasion {
 				spawn.setZ(player.getPosition().getZ());
 
 				spawn.stopRespawn();
-				if (spawn.getNpc() != null && !spawn.getNpc().isInsideZone(L2Character.ZONE_NOLANDING)) {
+				if (spawn.getNpc() != null && !spawn.getNpc().isInsideZone(Creature.ZONE_NOLANDING)) {
 					spawn.getNpc().setClonedPlayer(player);
 					spawn.doSpawn();
 				}
 			} catch (Exception e) {
-				Log.warning("Error spawning a player clone: ");
+				log.warn("Error spawning a player clone: ");
 				e.printStackTrace();
 			}
 		}
@@ -154,7 +158,7 @@ public class CloneInvasion {
 		return task;
 	}
 
-	public void showInfo(L2PcInstance activeChar) {
+	public void showInfo(Player activeChar) {
 		Calendar now = Calendar.getInstance();
 		Calendar startTime = Calendar.getInstance();
 		startTime.setTimeInMillis(task.getStartTime());

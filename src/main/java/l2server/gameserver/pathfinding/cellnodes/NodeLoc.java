@@ -16,7 +16,7 @@
 package l2server.gameserver.pathfinding.cellnodes;
 
 import l2server.gameserver.GeoData;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.World;
 import l2server.gameserver.pathfinding.AbstractNodeLoc;
 
 /**
@@ -48,7 +48,7 @@ public class NodeLoc extends AbstractNodeLoc {
 	 */
 	@Override
 	public int getX() {
-		return (x << 4) + L2World.MAP_MIN_X;
+		return (x << 4) + World.MAP_MIN_X;
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class NodeLoc extends AbstractNodeLoc {
 	 */
 	@Override
 	public int getY() {
-		return (y << 4) + L2World.MAP_MIN_Y;
+		return (y << 4) + World.MAP_MIN_Y;
 	}
 
 	/**

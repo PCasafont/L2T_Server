@@ -19,13 +19,14 @@ import l2server.Config;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.ClanHallManager;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.DoorInstance;
 import l2server.gameserver.model.entity.ClanHall;
 import l2server.gameserver.pathfinding.AbstractNodeLoc;
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.chars.L2DoorTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.DoorTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
@@ -35,10 +36,13 @@ import java.io.File;
 import java.util.*;
 
 public class DoorTable {
+	private static Logger log = LoggerFactory.getLogger(DoorTable.class.getName());
+
+
 	private static final Map<Integer, Set<Integer>> groups = new HashMap<>();
 
-	private final Map<Integer, L2DoorInstance> doors = new HashMap<>();
-	private final Map<Integer, ArrayList<L2DoorInstance>> regions = new HashMap<>();
+	private final Map<Integer, DoorInstance> doors = new HashMap<>();
+	private final Map<Integer, ArrayList<DoorInstance>> regions = new HashMap<>();
 
 	public static DoorTable getInstance() {
 		return SingletonHolder.instance;
@@ -48,7 +52,7 @@ public class DoorTable {
 	}
 
 	@Reload("doors")
-	@Load(dependencies = {L2World.class, MapRegionTable.class, ClanHallManager.class})
+	@Load(dependencies = {World.class, MapRegionTable.class, ClanHallManager.class})
 	public void parseData() {
 		doors.clear();
 		regions.clear();
@@ -71,7 +75,7 @@ public class DoorTable {
 				makeDoor(id, set);
 			}
 		}
-		Log.info("DoorTable: Loaded " + doors.size() + " Door Templates for " + regions.size() + " regions.");
+		log.info("DoorTable: Loaded " + doors.size() + " Door Templates for " + regions.size() + " regions.");
 	}
 
 	public void insertCollisionData(StatsSet set) {
@@ -139,8 +143,8 @@ public class DoorTable {
 	private void makeDoor(int id, StatsSet set) {
 		insertCollisionData(set);
 		insertStatsData(set);
-		L2DoorTemplate template = new L2DoorTemplate(set);
-		L2DoorInstance door = new L2DoorInstance(IdFactory.getInstance().getNextId(), template, set);
+		DoorTemplate template = new DoorTemplate(set);
+		DoorInstance door = new DoorInstance(IdFactory.getInstance().getNextId(), template, set);
 		door.setCurrentHp(door.getMaxHp());
 		door.spawnMe(template.posX, template.posY, template.posZ);
 		putDoor(door, MapRegionTable.getInstance().getMapRegion(door.getX(), door.getY()));
@@ -152,28 +156,28 @@ public class DoorTable {
 		}
 	}
 
-	public L2DoorTemplate getDoorTemplate(int doorId) {
+	public DoorTemplate getDoorTemplate(int doorId) {
 		return doors.get(doorId).getTemplate();
 	}
 
-	public L2DoorInstance getDoor(int doorId) {
+	public DoorInstance getDoor(int doorId) {
 		return doors.get(doorId);
 	}
 
-	public void putDoor(L2DoorInstance door, int region) {
+	public void putDoor(DoorInstance door, int region) {
 		doors.put(door.getDoorId(), door);
 
 		if (regions.containsKey(region)) {
 			regions.get(region).add(door);
 		} else {
-			final ArrayList<L2DoorInstance> list = new ArrayList<>();
+			final ArrayList<DoorInstance> list = new ArrayList<>();
 			list.add(door);
 			regions.put(region, list);
 		}
 	}
 
-	public L2DoorInstance[] getDoors() {
-		return doors.values().toArray(new L2DoorInstance[doors.values().size()]);
+	public DoorInstance[] getDoors() {
+		return doors.values().toArray(new DoorInstance[doors.values().size()]);
 	}
 
 	public boolean checkIfDoorsBetween(AbstractNodeLoc start, AbstractNodeLoc end, int instanceId) {
@@ -185,7 +189,7 @@ public class DoorTable {
 	}
 
 	public boolean checkIfDoorsBetween(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean doubleFaceCheck) {
-		ArrayList<L2DoorInstance> allDoors;
+		ArrayList<DoorInstance> allDoors;
 		if (instanceId > 0 && InstanceManager.getInstance().getInstance(instanceId) != null) {
 			allDoors = InstanceManager.getInstance().getInstance(instanceId).getDoors();
 		} else {
@@ -196,7 +200,7 @@ public class DoorTable {
 			return false;
 		}
 
-		for (L2DoorInstance doorInst : allDoors) {
+		for (DoorInstance doorInst : allDoors) {
 			//check dead and open
 			if (doorInst.isDead() || doorInst.getOpen() || !doorInst.checkCollision() || doorInst.getX(0) == 0) {
 				continue;

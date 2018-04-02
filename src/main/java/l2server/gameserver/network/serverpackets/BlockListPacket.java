@@ -16,16 +16,16 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Erlando
  */
 public class BlockListPacket extends L2GameServerPacket {
 	
-	private L2PcInstance player;
+	private Player player;
 	
-	public BlockListPacket(L2PcInstance activeChar) {
+	public BlockListPacket(Player activeChar) {
 		player = activeChar;
 	}
 	

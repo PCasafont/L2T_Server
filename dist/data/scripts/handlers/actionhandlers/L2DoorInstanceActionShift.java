@@ -16,41 +16,41 @@
 package handlers.actionhandlers;
 
 import l2server.gameserver.handler.IActionHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.StaticObject;
 
 public class L2DoorInstanceActionShift implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
+	public boolean action(Player activeChar, WorldObject target, boolean interact) {
 		if (activeChar.getAccessLevel().isGm()) {
 			activeChar.setTarget(target);
 			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), activeChar.getLevel()));
 
-			StaticObject su = new StaticObject((L2DoorInstance) target, activeChar.isGM());
+			StaticObject su = new StaticObject((DoorInstance) target, activeChar.isGM());
 			activeChar.sendPacket(su);
 
 			NpcHtmlMessage html = new NpcHtmlMessage(0);
 			html.setFile(activeChar.getHtmlPrefix(), "admin/doorinfo.htm");
 			html.replace("%class%", target.getClass().getSimpleName());
-			html.replace("%hp%", String.valueOf((int) ((L2Character) target).getCurrentHp()));
-			html.replace("%hpmax%", String.valueOf(((L2Character) target).getMaxHp()));
-			html.replace("%pdef%", String.valueOf(((L2Character) target).getPDef((L2Character) target)));
-			html.replace("%mdef%", String.valueOf(((L2Character) target).getMDef((L2Character) target, null)));
+			html.replace("%hp%", String.valueOf((int) ((Creature) target).getCurrentHp()));
+			html.replace("%hpmax%", String.valueOf(((Creature) target).getMaxHp()));
+			html.replace("%pdef%", String.valueOf(((Creature) target).getPDef((Creature) target)));
+			html.replace("%mdef%", String.valueOf(((Creature) target).getMDef((Creature) target, null)));
 			html.replace("%objid%", String.valueOf(target.getObjectId()));
-			html.replace("%doorid%", String.valueOf(((L2DoorInstance) target).getDoorId()));
-			html.replace("%minx%", String.valueOf(((L2DoorInstance) target).getX(1)));
-			html.replace("%miny%", String.valueOf(((L2DoorInstance) target).getY(1)));
-			html.replace("%minz%", String.valueOf(((L2DoorInstance) target).getZMin()));
-			html.replace("%maxx%", String.valueOf(((L2DoorInstance) target).getX(3)));
-			html.replace("%maxy%", String.valueOf(((L2DoorInstance) target).getY(3)));
-			html.replace("%maxz%", String.valueOf(((L2DoorInstance) target).getZMax()));
-			html.replace("%unlock%", ((L2DoorInstance) target).isOpenableBySkill() ? "<font color=00FF00>YES<font>" : "<font color=FF0000>NO</font>");
+			html.replace("%doorid%", String.valueOf(((DoorInstance) target).getDoorId()));
+			html.replace("%minx%", String.valueOf(((DoorInstance) target).getX(1)));
+			html.replace("%miny%", String.valueOf(((DoorInstance) target).getY(1)));
+			html.replace("%minz%", String.valueOf(((DoorInstance) target).getZMin()));
+			html.replace("%maxx%", String.valueOf(((DoorInstance) target).getX(3)));
+			html.replace("%maxy%", String.valueOf(((DoorInstance) target).getY(3)));
+			html.replace("%maxz%", String.valueOf(((DoorInstance) target).getZMax()));
+			html.replace("%unlock%", ((DoorInstance) target).isOpenableBySkill() ? "<font color=00FF00>YES<font>" : "<font color=FF0000>NO</font>");
 			activeChar.sendPacket(html);
 		}
 		return true;

@@ -24,11 +24,12 @@ import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.ClanHallAuctionManager;
 import l2server.gameserver.instancemanager.ClanHallManager;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -36,13 +37,14 @@ import java.sql.ResultSet;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
 
 import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
 
 //import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
 
 public class Auction {
+	private static Logger log = LoggerFactory.getLogger(Auction.class.getName());
+	
 	private int id = 0;
 	private long endDate;
 	private int highestBidderId = 0;
@@ -118,7 +120,7 @@ public class Auction {
 			try {
 				endAuction();
 			} catch (Exception e) {
-				Log.log(Level.SEVERE, "", e);
+				log.error("", e);
 			}
 		}
 	}
@@ -185,7 +187,7 @@ public class Auction {
 			statement.close();
 			loadBid();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: Auction.load(): " + e.getMessage(), e);
+			log.warn("Exception: Auction.load(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -223,7 +225,7 @@ public class Auction {
 
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: Auction.loadBid(): " + e.getMessage(), e);
+			log.warn("Exception: Auction.loadBid(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -262,7 +264,7 @@ public class Auction {
 
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Exception: saveAuctionDate(): " + e.getMessage(), e);
+			log.error("Exception: saveAuctionDate(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -271,7 +273,7 @@ public class Auction {
 	/**
 	 * Set a bid
 	 */
-	public synchronized void setBid(L2PcInstance bidder, long bid) {
+	public synchronized void setBid(Player bidder, long bid) {
 		long requiredAdena = bid;
 		if (getHighestBidderName().equals(bidder.getClan().getLeaderName())) {
 			requiredAdena = bid - getHighestBidderMaxBid();
@@ -312,7 +314,7 @@ public class Auction {
 	/**
 	 * Take Item in WHC
 	 */
-	private boolean takeItem(L2PcInstance bidder, long quantity) {
+	private boolean takeItem(Player bidder, long quantity) {
 		if (bidder.getClan() != null && bidder.getClan().getWarehouse().getItemByItemId(Config.CH_BID_ITEMID) != null &&
 				bidder.getClan().getWarehouse().getItemByItemId(Config.CH_BID_ITEMID).getCount() >= quantity) {
 			bidder.getClan().getWarehouse().destroyItemByItemId("Buy", Config.CH_BID_ITEMID, quantity, bidder, bidder);
@@ -330,7 +332,7 @@ public class Auction {
 	/**
 	 * Update auction in DB
 	 */
-	private void updateInDB(L2PcInstance bidder, long bid) {
+	private void updateInDB(Player bidder, long bid) {
 		Connection con = null;
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
@@ -359,8 +361,8 @@ public class Auction {
 				statement.setLong(7, System.currentTimeMillis());
 				statement.execute();
 				statement.close();
-				if (L2World.getInstance().getPlayer(highestBidderName) != null) {
-					L2World.getInstance().getPlayer(highestBidderName).sendMessage("You have been out bidded");
+				if (World.getInstance().getPlayer(highestBidderName) != null) {
+					World.getInstance().getPlayer(highestBidderName).sendMessage("You have been out bidded");
 				}
 			}
 			highestBidderId = bidder.getClanId();
@@ -375,7 +377,7 @@ public class Auction {
 			}
 			bidder.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BID_IN_CLANHALL_AUCTION));
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Exception: Auction.updateInDB(L2PcInstance bidder, int bid): " + e.getMessage(), e);
+			log.error("Exception: Auction.updateInDB(Player bidder, int bid): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -396,7 +398,7 @@ public class Auction {
 
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Exception: Auction.deleteFromDB(): " + e.getMessage(), e);
+			log.error("Exception: Auction.deleteFromDB(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -404,8 +406,8 @@ public class Auction {
 			if (ClanTable.getInstance().getClanByName(b.getClanName()).getHasHideout() == 0) {
 				returnItem(b.getClanName(), b.getBid(), true); // 10 % tax
 			} else {
-				if (L2World.getInstance().getPlayer(b.getName()) != null) {
-					L2World.getInstance().getPlayer(b.getName()).sendMessage("Congratulation you have won ClanHall!");
+				if (World.getInstance().getPlayer(b.getName()) != null) {
+					World.getInstance().getPlayer(b.getName()).sendMessage("Congratulation you have won ClanHall!");
 				}
 			}
 			ClanTable.getInstance().getClanByName(b.getClanName()).setAuctionBiddedAt(0, true);
@@ -427,7 +429,7 @@ public class Auction {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Exception: Auction.deleteFromDB(): " + e.getMessage(), e);
+			log.error("Exception: Auction.deleteFromDB(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -483,7 +485,7 @@ public class Auction {
 
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Exception: Auction.cancelBid(String bidder): " + e.getMessage(), e);
+			log.error("Exception: Auction.cancelBid(String bidder): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -529,7 +531,7 @@ public class Auction {
 			statement.close();
 			loadBid();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Exception: Auction.load(): " + e.getMessage(), e);
+			log.error("Exception: Auction.load(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

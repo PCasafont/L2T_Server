@@ -18,11 +18,12 @@ package l2server.gameserver.datatables;
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2ShuttleInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.ShuttleInstance;
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.chars.L2CharTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.CreatureTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -33,7 +34,10 @@ import java.io.File;
  * @author Pere
  */
 public class ShuttleTable {
-	private Map<Integer, L2ShuttleInstance> shuttles = new HashMap<>();
+	private static Logger log = LoggerFactory.getLogger(ShuttleTable.class.getName());
+
+
+	private Map<Integer, ShuttleInstance> shuttles = new HashMap<>();
 
 	private static ShuttleTable instance;
 
@@ -73,8 +77,8 @@ public class ShuttleTable {
 				npcDat.set("pDef", 100);
 				npcDat.set("mDef", 100);
 
-				L2ShuttleInstance shuttle = new L2ShuttleInstance(IdFactory.getInstance().getNextId(), new L2CharTemplate(npcDat), id);
-				L2World.getInstance().storeObject(shuttle);
+				ShuttleInstance shuttle = new ShuttleInstance(IdFactory.getInstance().getNextId(), new CreatureTemplate(npcDat), id);
+				World.getInstance().storeObject(shuttle);
 
 				for (XmlNode stopNode : shuttleNode.getChildren()) {
 					if (stopNode.getName().equalsIgnoreCase("stop")) {
@@ -96,6 +100,6 @@ public class ShuttleTable {
 				shuttles.put(id, shuttle);
 			}
 		}
-		Log.info("ShuttleTable: Loaded " + shuttles.size() + " shuttles.");
+		log.info("ShuttleTable: Loaded " + shuttles.size() + " shuttles.");
 	}
 }

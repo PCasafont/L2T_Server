@@ -17,11 +17,9 @@ package handlers.admincommandhandlers;
 
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-
-import java.util.logging.Logger;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * This class handles following admin commands:
@@ -30,21 +28,20 @@ import java.util.logging.Logger;
  * @version $Revision: 1.2.4.4 $ $Date: 2007/07/31 10:06:02 $
  */
 public class AdminInvul implements IAdminCommandHandler {
-	private static Logger log = Logger.getLogger(AdminInvul.class.getName());
 	private static final String[] ADMIN_COMMANDS = {"admin_invul", "admin_setinvul"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.equals("admin_invul")) {
 			handleInvul(activeChar);
 			//AdminHelpPage.showHelpPage(activeChar, "gm_menu.htm");
 		}
 		if (command.equals("admin_setinvul")) {
-			L2Object target = activeChar.getTarget();
-			if (target instanceof L2PcInstance) {
-				handleInvul((L2PcInstance) target);
-			} else if (target instanceof L2Character) {
-				((L2Character) target).setIsInvul(((L2Character) target).isInvul());
+			WorldObject target = activeChar.getTarget();
+			if (target instanceof Player) {
+				handleInvul((Player) target);
+			} else if (target instanceof Creature) {
+				((Creature) target).setIsInvul(((Creature) target).isInvul());
 			}
 		}
 		return true;
@@ -55,19 +52,19 @@ public class AdminInvul implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	private void handleInvul(L2PcInstance activeChar) {
+	private void handleInvul(Player activeChar) {
 		String text;
 		if (activeChar.isInvul()) {
 			activeChar.setIsInvul(false);
 			text = activeChar.getName() + " is now mortal";
 			if (Config.DEBUG) {
-				log.fine("GM: Gm removed invul mode from character " + activeChar.getName() + "(" + activeChar.getObjectId() + ")");
+				log.debug("GM: Gm removed invul mode from character " + activeChar.getName() + "(" + activeChar.getObjectId() + ")");
 			}
 		} else {
 			activeChar.setIsInvul(true);
 			text = activeChar.getName() + " is now invulnerable";
 			if (Config.DEBUG) {
-				log.fine("GM: Gm activated invul mode for character " + activeChar.getName() + "(" + activeChar.getObjectId() + ")");
+				log.debug("GM: Gm activated invul mode for character " + activeChar.getName() + "(" + activeChar.getObjectId() + ")");
 			}
 		}
 		activeChar.sendMessage(text);

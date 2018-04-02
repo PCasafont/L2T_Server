@@ -15,41 +15,41 @@
 
 package l2server.gameserver.stats.effects;
 
-import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2EffectPointInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.EffectPointInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @authors Forsaiken, Sami
  */
 public class EffectSignetNoise extends L2Effect {
-	private L2EffectPointInstance actor;
+	private EffectPointInstance actor;
 	
-	public EffectSignetNoise(Env env, L2EffectTemplate template) {
+	public EffectSignetNoise(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.SIGNET_GROUND;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.SIGNET_GROUND;
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		actor = (L2EffectPointInstance) getEffected();
+		actor = (EffectPointInstance) getEffected();
 		return true;
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {
@@ -57,28 +57,28 @@ public class EffectSignetNoise extends L2Effect {
 			return true; // do nothing first time
 		}
 		
-		if (!(getEffector() instanceof L2PcInstance)) {
+		if (!(getEffector() instanceof Player)) {
 			return false;
 		}
 		
-		L2PcInstance caster = (L2PcInstance) getEffector();
+		Player caster = (Player) getEffector();
 		
-		for (L2Character target : actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius())) {
+		for (Creature target : actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius())) {
 			if (target == null || target == caster) {
 				continue;
 			}
 			
-			if (target instanceof L2PcInstance) {
-				L2PcInstance player = (L2PcInstance) target;
-				if (!player.isInsideZone(L2Character.ZONE_PVP) && player.getPvpFlag() == 0) {
+			if (target instanceof Player) {
+				Player player = (Player) target;
+				if (!player.isInsideZone(Creature.ZONE_PVP) && player.getPvpFlag() == 0) {
 					continue;
 				}
 			}
 			
 			if (caster.canAttackCharacter(target)) {
-				L2Abnormal[] effects = target.getAllEffects();
+				Abnormal[] effects = target.getAllEffects();
 				if (effects != null) {
-					for (L2Abnormal effect : effects) {
+					for (Abnormal effect : effects) {
 						if (effect.getSkill().isDance()) {
 							effect.exit();
 						}
@@ -90,7 +90,7 @@ public class EffectSignetNoise extends L2Effect {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {

@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.itemcontainer.PcInventory;
 
 import java.util.ArrayList;
@@ -33,10 +33,10 @@ import java.util.ArrayList;
  */
 public class ExQuestItemList extends L2ItemListPacket {
 	
-	private ArrayList<L2ItemInstance> items;
+	private ArrayList<Item> items;
 	private PcInventory inventory;
 	
-	public ExQuestItemList(ArrayList<L2ItemInstance> items, PcInventory inv) {
+	public ExQuestItemList(ArrayList<Item> items, PcInventory inv) {
 		this.items = items;
 		inventory = inv;
 	}
@@ -44,7 +44,7 @@ public class ExQuestItemList extends L2ItemListPacket {
 	@Override
 	protected final void writeImpl() {
 		writeH(items.size());
-		for (L2ItemInstance item : items) {
+		for (Item item : items) {
 			writeItem(item);
 		}
 		if (inventory.hasInventoryBlock()) {

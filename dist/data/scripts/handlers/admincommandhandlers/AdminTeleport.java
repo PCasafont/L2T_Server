@@ -26,16 +26,16 @@ import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.GrandBossInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.RaidBossInstance;
 import l2server.gameserver.model.entity.Instance;
-import l2server.gameserver.model.zone.type.L2BossZone;
+import l2server.gameserver.model.zone.type.BossZone;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.util.StringUtil;
 
 import java.sql.Connection;
@@ -43,7 +43,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
-import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:
@@ -57,7 +56,6 @@ import java.util.logging.Logger;
  * con.close() change and small typo fix by Zoey76 24/02/2011
  */
 public class AdminTeleport implements IAdminCommandHandler {
-	private static final Logger log = Logger.getLogger(AdminTeleport.class.getName());
 	
 	private static final String[] ADMIN_COMMANDS =
 			{"admin_show_moves", "admin_show_moves_other", "admin_show_teleport", "admin_teleport_to_character", "admin_teleportto", "admin_move_to",
@@ -66,7 +64,7 @@ public class AdminTeleport implements IAdminCommandHandler {
 					"admin_teleto", "admin_instant_move"};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.equals("admin_teleto")) {
 			activeChar.setTeleMode(1);
 		}
@@ -133,12 +131,12 @@ public class AdminTeleport implements IAdminCommandHandler {
 			}
 		} else if (command.startsWith("admin_teleportto ")) {
 			String targetName = null;
-			L2PcInstance player = null;
+			Player player = null;
 			try {
 				targetName = command.substring(17);
-				player = L2World.getInstance().getPlayer(targetName);
+				player = World.getInstance().getPlayer(targetName);
 				if (player == null) {
-					for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values()) {
+					for (Player pl : World.getInstance().getAllPlayers().values()) {
 						if (pl != null && pl.getName().equalsIgnoreCase(targetName)) {
 							player = pl;
 							break;
@@ -164,15 +162,15 @@ public class AdminTeleport implements IAdminCommandHandler {
 			}
 			
 			if (targetObjId != 0) {
-				L2Object targetObj = L2World.getInstance().findObject(targetObjId);
-				if (targetObj instanceof L2Npc) {
+				WorldObject targetObj = World.getInstance().findObject(targetObjId);
+				if (targetObj instanceof Npc) {
 					activeChar.teleToLocation(targetObj.getX(), targetObj.getY(), targetObj.getZ());
 				}
 				return true;
 			}
 			
 			for (Instance inst : InstanceManager.getInstance().getInstances().values()) {
-				for (L2Npc npc : inst.getNpcs()) {
+				for (Npc npc : inst.getNpcs()) {
 					if (npc.getName().equalsIgnoreCase(targetName)) {
 						activeChar.teleToLocation(npc.getX(), npc.getY(), npc.getZ());
 						return true;
@@ -185,7 +183,7 @@ public class AdminTeleport implements IAdminCommandHandler {
 			try {
 				String[] param = command.split(" ");
 				if (param.length != 2) {
-					for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values()) {
+					for (Player pl : World.getInstance().getAllPlayers().values()) {
 						if (pl != null && pl.getEvent() == null && pl.isInOlympiadMode() && pl.getPrivateStoreType() == 0) {
 							teleportCharacter(pl, activeChar.getX(), activeChar.getY(), activeChar.getZ(), activeChar);
 							break;
@@ -195,9 +193,9 @@ public class AdminTeleport implements IAdminCommandHandler {
 					return false;
 				}
 				String targetName = param[1];
-				L2PcInstance player = L2World.getInstance().getPlayer(targetName);
+				Player player = World.getInstance().getPlayer(targetName);
 				if (player == null) {
-					for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values()) {
+					for (Player pl : World.getInstance().getAllPlayers().values()) {
 						if (pl != null && pl.getName().equalsIgnoreCase(targetName)) {
 							player = pl;
 							break;
@@ -205,7 +203,7 @@ public class AdminTeleport implements IAdminCommandHandler {
 					}
 				}
 				if (player != null) {
-					L2BossZone zone = GrandBossManager.getInstance().getZone(activeChar);
+					BossZone zone = GrandBossManager.getInstance().getZone(activeChar);
 					if (zone != null) {
 						zone.allowPlayerEntry(player, 30);
 					}
@@ -216,14 +214,14 @@ public class AdminTeleport implements IAdminCommandHandler {
 			} catch (StringIndexOutOfBoundsException e) {
 			}
 		} else if (command.startsWith("admin_sendhome")) {
-			L2PcInstance player = null;
+			Player player = null;
 			
 			if (command.length() > 14) // Parameter given
 			{
-				player = L2World.getInstance().getPlayer(command.substring(15));
-			} else if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2PcInstance) // Take targeted player
+				player = World.getInstance().getPlayer(command.substring(15));
+			} else if (activeChar.getTarget() != null && activeChar.getTarget() instanceof Player) // Take targeted player
 			{
-				player = (L2PcInstance) activeChar.getTarget();
+				player = (Player) activeChar.getTarget();
 			}
 			
 			// GM has no one on target and didn't provide name as parameter
@@ -278,7 +276,7 @@ public class AdminTeleport implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 	
-	private void teleportTo(L2PcInstance activeChar, String Coords) {
+	private void teleportTo(Player activeChar, String Coords) {
 		try {
 			StringTokenizer st = new StringTokenizer(Coords);
 			String x1 = st.nextToken();
@@ -311,15 +309,15 @@ public class AdminTeleport implements IAdminCommandHandler {
 		}
 	}
 	
-	private void showTeleportWindow(L2PcInstance activeChar) {
+	private void showTeleportWindow(Player activeChar) {
 		AdminHelpPage.showHelpPage(activeChar, "move.htm");
 	}
 	
-	private void showTeleportCharWindow(L2PcInstance activeChar) {
-		L2Object target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+	private void showTeleportCharWindow(Player activeChar) {
+		WorldObject target = activeChar.getTarget();
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
@@ -344,11 +342,11 @@ public class AdminTeleport implements IAdminCommandHandler {
 		activeChar.sendPacket(adminReply);
 	}
 	
-	private void teleportCharacter(L2PcInstance activeChar, String Cords) {
-		L2Object target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+	private void teleportCharacter(Player activeChar, String Cords) {
+		WorldObject target = activeChar.getTarget();
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
@@ -377,7 +375,7 @@ public class AdminTeleport implements IAdminCommandHandler {
 	 * @param y
 	 * @param z
 	 */
-	private void teleportCharacter(L2PcInstance player, int x, int y, int z, L2PcInstance activeChar) {
+	private void teleportCharacter(Player player, int x, int y, int z, Player activeChar) {
 		if (player != null) {
 			// Check for jail
 			if (player.isInJail()) {
@@ -400,15 +398,15 @@ public class AdminTeleport implements IAdminCommandHandler {
 		}
 	}
 	
-	private void teleportToCharacter(L2PcInstance activeChar, L2Object target) {
+	private void teleportToCharacter(Player activeChar, WorldObject target) {
 		if (target == null) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
 		}
 		
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
@@ -431,7 +429,7 @@ public class AdminTeleport implements IAdminCommandHandler {
 		}
 	}
 	
-	private void changeCharacterPosition(L2PcInstance activeChar, String name) {
+	private void changeCharacterPosition(Player activeChar, String name) {
 		Connection con = null;
 		final int x = activeChar.getX();
 		final int y = activeChar.getY();
@@ -458,23 +456,23 @@ public class AdminTeleport implements IAdminCommandHandler {
 		}
 	}
 	
-	private void recallNPC(L2PcInstance activeChar) {
-		L2Object obj = activeChar.getTarget();
-		if (obj instanceof L2Npc && !((L2Npc) obj).isMinion() && !(obj instanceof L2RaidBossInstance) && !(obj instanceof L2GrandBossInstance)) {
-			L2Npc target = (L2Npc) obj;
+	private void recallNPC(Player activeChar) {
+		WorldObject obj = activeChar.getTarget();
+		if (obj instanceof Npc && !((Npc) obj).isMinion() && !(obj instanceof RaidBossInstance) && !(obj instanceof GrandBossInstance)) {
+			Npc target = (Npc) obj;
 			
 			int monsterTemplate = target.getTemplate().NpcId;
-			L2NpcTemplate template1 = NpcTable.getInstance().getTemplate(monsterTemplate);
+			NpcTemplate template1 = NpcTable.getInstance().getTemplate(monsterTemplate);
 			if (template1 == null) {
 				activeChar.sendMessage("Incorrect monster template.");
-				log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' template.");
+				log.warn("ERROR: NPC " + target.getObjectId() + " has a 'null' template.");
 				return;
 			}
 			
 			L2Spawn spawn = target.getSpawn();
 			if (spawn == null) {
 				activeChar.sendMessage("Incorrect monster spawn.");
-				log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' spawn.");
+				log.warn("ERROR: NPC " + target.getObjectId() + " has a 'null' spawn.");
 				return;
 			}
 			int respawnTime = spawn.getRespawnDelay() / 1000;
@@ -484,7 +482,7 @@ public class AdminTeleport implements IAdminCommandHandler {
 			SpawnTable.getInstance().deleteSpawn(spawn, true);
 			
 			try {
-				//L2MonsterInstance mob = new L2MonsterInstance(monsterTemplate, template1);
+				//MonsterInstance mob = new MonsterInstance(monsterTemplate, template1);
 				
 				spawn = new L2Spawn(template1);
 				//spawn.setCustom(true);
@@ -505,8 +503,8 @@ public class AdminTeleport implements IAdminCommandHandler {
 				activeChar.sendMessage("Created " + template1.Name + " on " + target.getObjectId() + ".");
 				
 				if (Config.DEBUG) {
-					log.fine("Spawn at X=" + spawn.getX() + " Y=" + spawn.getY() + " Z=" + spawn.getZ());
-					log.warning("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") moved NPC " + target.getObjectId());
+					log.debug("Spawn at X=" + spawn.getX() + " Y=" + spawn.getY() + " Z=" + spawn.getZ());
+					log.warn("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") moved NPC " + target.getObjectId());
 				}
 			} catch (Exception e) {
 				activeChar.sendMessage("Target is not in game.");

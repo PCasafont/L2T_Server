@@ -15,15 +15,15 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Summon;
+import l2server.gameserver.model.actor.Summon;
 
 /**
  * @author KenM
  */
 public final class ExPartyPetWindowAdd extends L2GameServerPacket {
-	private final L2Summon summon;
+	private final Summon summon;
 	
-	public ExPartyPetWindowAdd(L2Summon summon) {
+	public ExPartyPetWindowAdd(Summon summon) {
 		this.summon = summon;
 	}
 

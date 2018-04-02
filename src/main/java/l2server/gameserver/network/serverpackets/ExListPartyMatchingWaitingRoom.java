@@ -17,7 +17,7 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.instancemanager.TownManager;
 import l2server.gameserver.model.PartyMatchWaitingList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 
@@ -26,23 +26,23 @@ import java.util.ArrayList;
  */
 public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket {
 	@SuppressWarnings("unused")
-	private final L2PcInstance activeChar;
+	private final Player activeChar;
 	@SuppressWarnings("unused")
 	private int page;
 	private int minlvl;
 	private int maxlvl;
 	@SuppressWarnings("unused")
 	private int mode;
-	private ArrayList<L2PcInstance> members;
+	private ArrayList<Player> members;
 	
-	public ExListPartyMatchingWaitingRoom(L2PcInstance player, int page, int minlvl, int maxlvl, int mode) {
+	public ExListPartyMatchingWaitingRoom(Player player, int page, int minlvl, int maxlvl, int mode) {
 		activeChar = player;
 		this.page = page;
 		this.minlvl = minlvl;
 		this.maxlvl = maxlvl;
 		this.mode = mode;
 		members = new ArrayList<>();
-		for (L2PcInstance cha : PartyMatchWaitingList.getInstance().getPlayers()) {
+		for (Player cha : PartyMatchWaitingList.getInstance().getPlayers()) {
 			if (cha == null) {
 				continue;
 			}
@@ -71,7 +71,7 @@ public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket {
 		
 		writeD(members.size());
 		writeD(members.size());
-		for (L2PcInstance member : members) {
+		for (Player member : members) {
 			writeS(member.getName());
 			writeD(member.getClassId());
 			writeD(member.getLevel());

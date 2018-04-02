@@ -17,14 +17,14 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.TaskPriority;
 import l2server.gameserver.instancemanager.BoatManager;
-import l2server.gameserver.model.actor.instance.L2BoatInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.BoatInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.MoveToLocationInVehicle;
 import l2server.gameserver.network.serverpackets.StopMoveInVehicle;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2WeaponType;
+import l2server.gameserver.templates.item.WeaponType;
 import l2server.util.Point3D;
 
 public final class RequestMoveToLocationInVehicle extends L2GameClientPacket {
@@ -57,7 +57,7 @@ public final class RequestMoveToLocationInVehicle extends L2GameClientPacket {
 	 */
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -68,7 +68,7 @@ public final class RequestMoveToLocationInVehicle extends L2GameClientPacket {
 		}
 		
 		if (activeChar.isAttackingNow() && activeChar.getActiveWeaponItem() != null &&
-				activeChar.getActiveWeaponItem().getItemType() == L2WeaponType.BOW) {
+				activeChar.getActiveWeaponItem().getItemType() == WeaponType.BOW) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
@@ -90,7 +90,7 @@ public final class RequestMoveToLocationInVehicle extends L2GameClientPacket {
 			return;
 		}
 		
-		final L2BoatInstance boat;
+		final BoatInstance boat;
 		if (activeChar.isInBoat()) {
 			boat = activeChar.getBoat();
 			if (boat.getObjectId() != boatId) {

@@ -18,13 +18,13 @@ package l2server.gameserver.stats.effects;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @author Zoey76
  */
 public class EffectCpDamPercent extends L2Effect {
-	public EffectCpDamPercent(Env env, L2EffectTemplate template) {
+	public EffectCpDamPercent(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	

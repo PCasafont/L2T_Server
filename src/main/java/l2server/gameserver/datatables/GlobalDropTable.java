@@ -3,7 +3,7 @@ package l2server.gameserver.datatables;
 import gnu.trove.TIntIntHashMap;
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
@@ -102,7 +102,7 @@ public class GlobalDropTable {
 			return maxDailyCount;
 		}
 
-		public int getCountForPlayer(L2PcInstance player) {
+		public int getCountForPlayer(Player player) {
 			int count = 0;
 			synchronized (countsPerPlayer) {
 				if (countsPerPlayer.containsKey(player.getObjectId())) {
@@ -113,7 +113,7 @@ public class GlobalDropTable {
 			return count;
 		}
 
-		public void increaseCountForPlayer(L2PcInstance player) {
+		public void increaseCountForPlayer(Player player) {
 			synchronized (countsPerPlayer) {
 				int count = 0;
 				if (countsPerPlayer.containsKey(player.getObjectId())) {
@@ -130,7 +130,7 @@ public class GlobalDropTable {
 			}
 		}
 
-		public boolean canLootNow(L2PcInstance player) {
+		public boolean canLootNow(Player player) {
 			if (maxDailyCount <= 0) {
 				return true;
 			}

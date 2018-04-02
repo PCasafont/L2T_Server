@@ -20,7 +20,7 @@ import l2server.gameserver.TaskPriority;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ExFlyMove;
 import l2server.gameserver.network.serverpackets.ExFlyMoveBroadcast;
@@ -65,7 +65,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -97,7 +97,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket {
 			if (activeChar.getTeleMode() == 3) {
 				activeChar.sendPacket(new ExFlyMove(activeChar, 100, -1, targetX, targetY, targetZ));
 				ExFlyMoveBroadcast packet = new ExFlyMoveBroadcast(activeChar, targetX, targetY, targetZ);
-				for (L2PcInstance known : activeChar.getKnownList().getKnownPlayers().values()) {
+				for (Player known : activeChar.getKnownList().getKnownPlayers().values()) {
 					known.sendPacket(packet);
 				}
 			} else {

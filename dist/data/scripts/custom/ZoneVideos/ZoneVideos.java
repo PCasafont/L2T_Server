@@ -15,12 +15,12 @@
 
 package custom.ZoneVideos;
 
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
-import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.model.zone.ZoneType;
 import l2server.gameserver.network.serverpackets.ExShowUsmPacket;
 
 public class ZoneVideos extends Quest {
@@ -31,7 +31,7 @@ public class ZoneVideos extends Quest {
 	private static final int[] VIDEOS = {101, 102, 103, 78, 77};
 
 	@Override
-	public final String onEnterWorld(L2PcInstance player) {
+	public final String onEnterWorld(Player player) {
 		QuestState st = player.getQuestState("ZoneVideos");
 		if (st == null) {
 			st = newQuestState(player);
@@ -47,9 +47,9 @@ public class ZoneVideos extends Quest {
 	}
 
 	@Override
-	public final String onEnterZone(L2Character character, L2ZoneType zone) {
-		if (character instanceof L2PcInstance) {
-			L2PcInstance player = (L2PcInstance) character;
+	public final String onEnterZone(Creature character, ZoneType zone) {
+		if (character instanceof Player) {
+			Player player = (Player) character;
 			QuestState st = player.getQuestState("ZoneVideos");
 			if (st == null) {
 				st = newQuestState(player);

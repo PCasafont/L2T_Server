@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.olympiad.OlympiadParticipant;
 
 /**
@@ -26,14 +26,14 @@ import l2server.gameserver.model.olympiad.OlympiadParticipant;
  */
 public class ExOlympiadUserInfo extends L2GameServerPacket {
 	// chcdSddddd
-	private L2PcInstance player;
+	private Player player;
 	private OlympiadParticipant par = null;
 	private int curHp;
 	private int maxHp;
 	private int curCp;
 	private int maxCp;
 	
-	public ExOlympiadUserInfo(L2PcInstance player) {
+	public ExOlympiadUserInfo(Player player) {
 		this.player = player;
 		if (player != null) {
 			curHp = (int) player.getCurrentHp();

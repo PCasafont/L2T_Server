@@ -21,9 +21,9 @@ import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.instancemanager.QuestManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2PledgeSkillLearn;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.model.itemcontainer.PcInventory;
 import l2server.gameserver.model.quest.Quest;
@@ -33,7 +33,7 @@ import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.PartySmallWindowAll;
 import l2server.gameserver.network.serverpackets.PartySmallWindowDeleteAll;
-import l2server.gameserver.templates.chars.L2PcTemplate;
+import l2server.gameserver.templates.chars.PcTemplate;
 import l2server.gameserver.util.Util;
 
 public class CustomBypass implements IBypassHandler {
@@ -42,7 +42,7 @@ public class CustomBypass implements IBypassHandler {
 					"removePlayerClanPenalty"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance player, L2Npc target) {
+	public boolean useBypass(String command, Player player, Npc target) {
 		if (target == null || !Config.isServer(Config.TENKAI)) {
 			return false;
 		}
@@ -155,7 +155,7 @@ public class CustomBypass implements IBypassHandler {
 				return false;
 			}
 			
-			L2PcTemplate temp = CharTemplateTable.getInstance().getTemplate(templateId);
+			PcTemplate temp = CharTemplateTable.getInstance().getTemplate(templateId);
 			if (temp == null || temp.race == Race.Dwarf && temp.isMage || temp.race == Race.Ertheia && !player.getAppearance().getSex()) {
 				player.sendMessage("Special Services: Sorry, but I can't change your race appearance!");
 				return false;
@@ -224,7 +224,7 @@ public class CustomBypass implements IBypassHandler {
 					
 					if (player.isInParty()) {
 						player.getParty().broadcastToPartyMembers(player, new PartySmallWindowDeleteAll());
-						for (L2PcInstance member : player.getParty().getPartyMembers()) {
+						for (Player member : player.getParty().getPartyMembers()) {
 							if (member == null) {
 								continue;
 							}
@@ -269,7 +269,7 @@ public class CustomBypass implements IBypassHandler {
 				L2PledgeSkillLearn[] skills = PledgeSkillTree.getInstance().getAvailableSkills(player);
 				if (skills != null) {
 					for (L2PledgeSkillLearn sk : skills) {
-						L2Skill s = SkillTable.getInstance().getInfo(sk.getId(), sk.getLevel());
+						Skill s = SkillTable.getInstance().getInfo(sk.getId(), sk.getLevel());
 						if (s != null) {
 							playerClan.addNewSkill(s);
 						}

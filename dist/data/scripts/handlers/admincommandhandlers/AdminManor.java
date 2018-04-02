@@ -18,7 +18,7 @@ package handlers.admincommandhandlers;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleManorManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.util.StringUtil;
@@ -45,7 +45,7 @@ public class AdminManor implements IAdminCommandHandler {
 					"admin_manor_disable"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		StringTokenizer st = new StringTokenizer(command);
 		command = st.nextToken();
 
@@ -129,7 +129,7 @@ public class AdminManor implements IAdminCommandHandler {
 		return s;
 	}
 
-	private void showMainPage(L2PcInstance activeChar) {
+	private void showMainPage(Player activeChar) {
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		final List<Castle> castles = CastleManager.getInstance().getCastles();
 		final StringBuilder replyMSG = StringUtil.startAppend(1000 + castles.size() * 50,

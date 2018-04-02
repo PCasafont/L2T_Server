@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 
 /**
  * Format (ch)ddddd
@@ -23,11 +23,11 @@ import l2server.gameserver.model.actor.L2Character;
  * @author -Wooden-
  */
 public class ExFishingStart extends L2GameServerPacket {
-	private L2Character activeChar;
+	private Creature activeChar;
 	private int x, y, z, fishType;
 	private boolean isNightLure;
 	
-	public ExFishingStart(L2Character character, int fishType, int x, int y, int z, boolean isNightLure) {
+	public ExFishingStart(Creature character, int fishType, int x, int y, int z, boolean isNightLure) {
 		activeChar = character;
 		this.fishType = fishType;
 		this.x = x;

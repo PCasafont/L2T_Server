@@ -18,8 +18,8 @@ package ai.individual;
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.util.Rnd;
@@ -36,8 +36,8 @@ public class GeneralDilios extends L2AttackableAIScript {
 	private static final int generalId = 32549;
 	private static final int guardId = 32619;
 
-	private L2Npc general;
-	private List<L2Npc> guards = new ArrayList<L2Npc>();
+	private Npc general;
+	private List<Npc> guards = new ArrayList<Npc>();
 
 	private static final int[] diliosText = {1800695,
 			// Messenger, inform the patrons of the Keucereus Alliance Base! We're gathering brave adventurers to attack Tiat's Mounted Troop that's rooted in the Seed of Destruction.
@@ -74,7 +74,7 @@ public class GeneralDilios extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.startsWith("command_")) {
 			int value = Integer.parseInt(event.substring(8));
 			if (value < 6) {
@@ -87,7 +87,7 @@ public class GeneralDilios extends L2AttackableAIScript {
 			startQuestTimer("command_" + (value + 1), 60000, null, null);
 		} else if (event.startsWith("guard_animation_")) {
 			int value = Integer.parseInt(event.substring(16));
-			for (L2Npc guard : guards) {
+			for (Npc guard : guards) {
 				guard.broadcastPacket(new SocialAction(guard.getObjectId(), 4));
 			}
 			if (value < 2) {

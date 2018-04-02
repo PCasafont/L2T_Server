@@ -19,8 +19,8 @@ import l2server.Config;
 import l2server.gameserver.TradeController;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.model.L2TradeList;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ShopPreviewList;
 
@@ -30,7 +30,7 @@ public class Wear implements IBypassHandler {
 	private static final String[] COMMANDS = {"Wear"};
 
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		if (target == null) {
 			return false;
 		}
@@ -55,11 +55,11 @@ public class Wear implements IBypassHandler {
 		return false;
 	}
 
-	private static void showWearWindow(L2PcInstance player, int val) {
+	private static void showWearWindow(Player player, int val) {
 		player.tempInventoryDisable();
 
 		if (Config.DEBUG) {
-			log.fine("Showing wearlist");
+			log.debug("Showing wearlist");
 		}
 
 		L2TradeList list = TradeController.INSTANCE.getBuyList(val);
@@ -68,7 +68,7 @@ public class Wear implements IBypassHandler {
 			ShopPreviewList bl = new ShopPreviewList(list, player.getAdena(), player.getExpertiseIndex());
 			player.sendPacket(bl);
 		} else {
-			log.warning("no buylist with id:" + val);
+			log.warn("no buylist with id:" + val);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 		}
 	}

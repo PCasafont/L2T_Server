@@ -24,15 +24,15 @@ import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.GlobalVariablesManager;
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Broadcast;
-import l2server.log.Log;
 import l2server.util.loader.annotations.Load;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,12 +40,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
 
 public class Olympiad {
-	protected static final Logger logResults = Logger.getLogger("olympiad");
+	private static Logger log = LoggerFactory.getLogger(Olympiad.class.getName());
 
 	private Map<Integer, OlympiadNobleInfo> nobles;
 	private TIntIntHashMap noblesRank;
@@ -200,22 +197,22 @@ public class Olympiad {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Olympiad System: Error loading noblesse data from database: ", e);
+			log.warn("Olympiad System: Error loading noblesse data from database: ", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 
 		synchronized (this) {
-			Log.info("Olympiad System: Loading Olympiad System....");
+			log.info("Olympiad System: Loading Olympiad System....");
 
 			long milliToEnd = getMillisToOlympiadEnd();
-			Log.info("Olympiad System: " + Math.round(milliToEnd / 60000) + " minutes until period ends");
+			log.info("Olympiad System: " + Math.round(milliToEnd / 60000) + " minutes until period ends");
 
 			milliToEnd = getMillisToWeekChange();
-			Log.info("Olympiad System: Next weekly change is in " + Math.round(milliToEnd / 60000) + " minutes");
+			log.info("Olympiad System: Next weekly change is in " + Math.round(milliToEnd / 60000) + " minutes");
 		}
 
-		Log.info("Olympiad System: Loaded " + nobles.size() + " Nobles");
+		log.info("Olympiad System: Loaded " + nobles.size() + " Nobles");
 	}
 
 	public void loadNoblesRank() {
@@ -236,7 +233,7 @@ public class Olympiad {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Olympiad System: Error loading noblesse data from database for Ranking: ", e);
+			log.warn("Olympiad System: Error loading noblesse data from database for Ranking: ", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -323,8 +320,7 @@ public class Olympiad {
 		inCompPeriod = true;
 
 		Announcements.getInstance().announceToAll(SystemMessage.getSystemMessage(SystemMessageId.THE_OLYMPIAD_GAME_HAS_STARTED));
-		Log.info("Olympiad System: Olympiad Game Started");
-		logResults.info("Result,Player1,Player2,Player1 HP,Player2 HP,Player1 Damage,Player2 Damage,Points,Classed");
+		log.info("Olympiad System: Olympiad Game Started");
 
 		gameManager = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(OlympiadGameManager.getInstance(), 30000, 30000);
 		if (Config.ALT_OLY_ANNOUNCE_GAMES) {
@@ -397,9 +393,9 @@ public class Olympiad {
 		int numHours = (int) Math.floor(countDown % 24);
 		int numDays = (int) Math.floor((countDown - numHours) / 24);
 
-		Log.info("Olympiad System: Competition Period Starts in " + numDays + " days, " + numHours + " hours and " + numMins + " mins.");
+		log.info("Olympiad System: Competition Period Starts in " + numDays + " days, " + numHours + " hours and " + numMins + " mins.");
 
-		Log.info("Olympiad System: Event starts/started : " + compStart.getTime());
+		log.info("Olympiad System: Event starts/started : " + compStart.getTime());
 
 		scheduledCompStart = ThreadPoolManager.getInstance().scheduleGeneral(new CompStartTask(), getMillisToCompBegin());
 	}
@@ -482,7 +478,7 @@ public class Olympiad {
 		compStart.add(Calendar.HOUR_OF_DAY, 24);
 		compEnd = compStart.getTimeInMillis() + COMP_PERIOD;
 
-		Log.info("Olympiad System: New Schedule @ " + compStart.getTime());
+		log.info("Olympiad System: New Schedule @ " + compStart.getTime());
 
 		return compStart.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
 	}
@@ -503,7 +499,7 @@ public class Olympiad {
 	private void scheduleWeeklyChange() {
 		scheduledWeeklyTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() -> {
 			addWeeklyPoints();
-			Log.info("Olympiad System: Added weekly points to nobles");
+			log.info("Olympiad System: Added weekly points to nobles");
 
 			Calendar nextChange = Calendar.getInstance();
 			nextWeeklyChange = nextChange.getTimeInMillis() + WEEKLY_PERIOD;
@@ -521,7 +517,7 @@ public class Olympiad {
 		return currentCycle;
 	}
 
-	public boolean playerInStadia(L2PcInstance player) {
+	public boolean playerInStadia(Player player) {
 		return ZoneManager.getInstance().getOlympiadStadium(player) != null;
 	}
 
@@ -573,7 +569,7 @@ public class Olympiad {
 				statement.execute();
 				statement.close();
 			} catch (SQLException e) {
-				Log.log(Level.SEVERE, "Olympiad System: Failed to save noblesse data to database: ", e);
+				log.error("Olympiad System: Failed to save noblesse data to database: ", e);
 
 				OlympiadNobleInfo nobleInfo = nobles.get(nobleId);
 				if (nobleInfo != null) {
@@ -607,30 +603,13 @@ public class Olympiad {
 			statement.execute();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.SEVERE, "Olympiad System: Failed to update monthly noblese data: ", e);
+			log.error("Olympiad System: Failed to update monthly noblese data: ", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
 	private Map<Integer, OlympiadNobleInfo> getHeroesToBe() {
-		LogRecord record;
-		if (nobles != null) {
-			logResults.info("Noble,charid,classid,compDone,points");
-
-			for (Integer nobleId : nobles.keySet()) {
-				OlympiadNobleInfo nobleInfo = nobles.get(nobleId);
-
-				if (nobleInfo == null) {
-					continue;
-				}
-
-				record = new LogRecord(Level.INFO, nobleInfo.getName());
-				record.setParameters(new Object[]{nobleInfo.getId(), nobleInfo.getClassId(), nobleInfo.getMatches(), nobleInfo.getPoints()});
-				logResults.log(record);
-			}
-		}
-
 		Map<Integer, OlympiadNobleInfo> heroesToBe = new LinkedHashMap<>();
 		Connection con = null;
 
@@ -644,9 +623,6 @@ public class Olympiad {
 
 				if (rset.next()) {
 					OlympiadNobleInfo hero = getNobleInfo(rset.getInt(CHAR_ID));
-					record = new LogRecord(Level.INFO, "Hero " + hero.getName());
-					record.setParameters(new Object[]{hero.getId(), hero.getClassId()});
-					logResults.log(record);
 					heroesToBe.put(classId, hero);
 				}
 
@@ -654,7 +630,7 @@ public class Olympiad {
 			}
 			statement.close();
 		} catch (SQLException e) {
-			Log.warning("Olympiad System: Couldnt load heros from DB");
+			log.warn("Olympiad System: Couldnt load heros from DB");
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -663,7 +639,7 @@ public class Olympiad {
 	}
 
 	// TODO: That's a fucking ugly patch
-	public int getPosition(L2PcInstance player) {
+	public int getPosition(Player player) {
 		int position = 1;
 		for (String name : getClassLeaderBoard(player.getBaseClass())) {
 			if (name.equalsIgnoreCase(player.getName())) {
@@ -704,7 +680,7 @@ public class Olympiad {
 
 			return names;
 		} catch (SQLException e) {
-			Log.warning("Olympiad System: Couldnt load olympiad leaders from DB");
+			log.warn("Olympiad System: Couldnt load olympiad leaders from DB");
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -712,7 +688,7 @@ public class Olympiad {
 		return names;
 	}
 
-	public int getTokensCount(L2PcInstance player, boolean clear) {
+	public int getTokensCount(Player player, boolean clear) {
 		if (noblesRank.isEmpty()) {
 			player.sendMessage("Noble Ranks Empty");
 			return 0;
@@ -774,7 +750,7 @@ public class Olympiad {
 				statement.execute();
 				statement.close();
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "Could not save nobless settled:", e);
+				log.warn("Could not save nobless settled:", e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -801,7 +777,7 @@ public class Olympiad {
 			rs.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not load last olympiad points:", e);
+			log.warn("Could not load last olympiad points:", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -818,7 +794,7 @@ public class Olympiad {
 			statement.execute();
 			statement.close();
 		} catch (SQLException e) {
-			Log.warning("Olympiad System: Couldn't delete nobles from DB");
+			log.warn("Olympiad System: Couldn't delete nobles from DB");
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -846,8 +822,7 @@ public class Olympiad {
 			inCompPeriod = true;
 
 			Announcements.getInstance().announceToAll(SystemMessage.getSystemMessage(SystemMessageId.THE_OLYMPIAD_GAME_HAS_STARTED));
-			Log.info("Olympiad System: Olympiad Game Started");
-			logResults.info("Result,Player1,Player2,Player1 HP,Player2 HP,Player1 Damage,Player2 Damage,Points,Classed");
+			log.info("Olympiad System: Olympiad Game Started");
 
 			gameManager = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(OlympiadGameManager.getInstance(), 30000, 30000);
 			if (Config.ALT_OLY_ANNOUNCE_GAMES) {
@@ -871,7 +846,7 @@ public class Olympiad {
 		public void run() {
 			inCompPeriod = false;
 			Announcements.getInstance().announceToAll(SystemMessage.getSystemMessage(SystemMessageId.THE_OLYMPIAD_GAME_HAS_ENDED));
-			Log.info("Olympiad System: Olympiad Game Ended");
+			log.info("Olympiad System: Olympiad Game Ended");
 
 			while (OlympiadGameManager.getInstance().isBattleStarted()) // cleared in game manager
 			{

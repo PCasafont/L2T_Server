@@ -15,7 +15,7 @@
 
 package l2server.gameserver.model.actor.knownlist;
 
-import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.Playable;
 
 public class PlayableKnownList extends CharKnownList {
 	// =========================================================
@@ -23,7 +23,7 @@ public class PlayableKnownList extends CharKnownList {
 
 	// =========================================================
 	// Constructor
-	public PlayableKnownList(L2Playable activeChar) {
+	public PlayableKnownList(Playable activeChar) {
 		super(activeChar);
 	}
 
@@ -36,7 +36,7 @@ public class PlayableKnownList extends CharKnownList {
 	// =========================================================
 	// Property - Public
 	@Override
-	public L2Playable getActiveChar() {
-		return (L2Playable) super.getActiveChar();
+	public Playable getActiveChar() {
+		return (Playable) super.getActiveChar();
 	}
 }

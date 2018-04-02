@@ -15,59 +15,60 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.EtcStatusUpdate;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2EffectType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.EffectType;
 
 /**
  * @author nBd
  */
 public class EffectCharmOfCourage extends L2Effect {
-	public EffectCharmOfCourage(Env env, L2EffectTemplate template) {
+	public EffectCharmOfCourage(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 * @see Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType() {
-		return L2EffectType.CHARMOFCOURAGE;
+	public EffectType getEffectType() {
+		return EffectType.CHARMOFCOURAGE;
 	}
 	
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.BUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.BUFF;
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		if (getEffected() instanceof L2PcInstance) {
-			getEffected().broadcastPacket(new EtcStatusUpdate((L2PcInstance) getEffected()));
+		if (getEffected() instanceof Player) {
+			getEffected().broadcastPacket(new EtcStatusUpdate((Player) getEffected()));
 			return true;
 		}
 		return false;
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {
-		if (getEffected() instanceof L2PcInstance) {
-			getEffected().broadcastPacket(new EtcStatusUpdate((L2PcInstance) getEffected()));
+		if (getEffected() instanceof Player) {
+			getEffected().broadcastPacket(new EtcStatusUpdate((Player) getEffected()));
 		}
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

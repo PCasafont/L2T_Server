@@ -16,17 +16,21 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 /**
  * @author Erlandys
  */
 public class RequestChangeAttributeItem extends L2GameClientPacket {
+	private static Logger log = LoggerFactory.getLogger(RequestChangeAttributeItem.class.getName());
+
+
 	
 	private int attributeOID, itemOID, newAttributeID;
 	
@@ -39,12 +43,12 @@ public class RequestChangeAttributeItem extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
-		Log.info(itemOID + "");
-		L2ItemInstance item = player.getInventory().getItemByObjectId(itemOID);
+		log.info(itemOID + "");
+		Item item = player.getInventory().getItemByObjectId(itemOID);
 		
 		if (player.getPrivateStoreType() != 0) {
 			player.sendPacket(SystemMessageId.YOU_CANNOT_CHANGE_AN_ATTRIBUTE_WHILE_USING_A_PRIVATE_SHOP_OR_WORKSHOP);
@@ -67,7 +71,7 @@ public class RequestChangeAttributeItem extends L2GameClientPacket {
 			player.sendPacket(new ExChangeAttributeItemList(player, attributeOID));
 			return;
 		}
-		L2ItemInstance attribute = player.getInventory().getItemByObjectId(attributeOID);
+		Item attribute = player.getInventory().getItemByObjectId(attributeOID);
 		player.getInventory().destroyItem("ChangingAttribute", attributeOID, 1, player, null);
 		
 		if (Rnd.get(100) < Config.CHANGE_CHANCE_ELEMENT) {

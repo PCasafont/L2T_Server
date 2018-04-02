@@ -9,18 +9,22 @@ import l2server.gameserver.events.instanced.EventInstance;
 import l2server.gameserver.events.instanced.EventTeam;
 import l2server.gameserver.events.instanced.EventTeleporter;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 /**
  * @author Pere
  */
 public class LuckyChests extends EventInstance {
+	private static Logger log = LoggerFactory.getLogger(LuckyChests.class.getName());
+
+
 
 	private boolean chestsSpawned = false;
 	private L2Spawn[] chestSpawns = new L2Spawn[200];
@@ -110,7 +114,7 @@ public class LuckyChests extends EventInstance {
 	}
 
 	@Override
-	public String getRunningInfo(L2PcInstance player) {
+	public String getRunningInfo(Player player) {
 		String html = "";
 		for (EventTeam team : teams) {
 			if (team.getParticipatedPlayerCount() > 0) {
@@ -123,7 +127,7 @@ public class LuckyChests extends EventInstance {
 		return html;
 	}
 
-	public void chestPoints(L2PcInstance playerInstance, int points) {
+	public void chestPoints(Player playerInstance, int points) {
 		EventTeam team = getParticipantTeam(playerInstance.getObjectId());
 		if (!isState(EventState.STARTED) || team == null) {
 			return;
@@ -150,7 +154,7 @@ public class LuckyChests extends EventInstance {
 					playerInstance.getName(),
 					"I have opened a chest that contained 20 points!!!");
 		}
-		for (L2PcInstance character : team.getParticipatedPlayers().values()) {
+		for (Player character : team.getParticipatedPlayers().values()) {
 			if (character != null) {
 				character.sendPacket(cs);
 			}
@@ -158,7 +162,7 @@ public class LuckyChests extends EventInstance {
 	}
 
 	@Override
-	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance) {
+	public void onKill(Creature killerCharacter, Player killedPlayerInstance) {
 		if (killedPlayerInstance == null || !isState(EventState.STARTED)) {
 			return;
 		}
@@ -173,7 +177,7 @@ public class LuckyChests extends EventInstance {
 	}
 
 	private void spawnChests() {
-		L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(44000);
+		NpcTemplate tmpl = NpcTable.getInstance().getTemplate(44000);
 
 		try {
 			int chestAmount;
@@ -203,7 +207,7 @@ public class LuckyChests extends EventInstance {
 			}
 			chestsSpawned = true;
 		} catch (Exception e) {
-			Log.warning("Chest event exception (" + config.getLocation().getName() + "):");
+			log.warn("Chest event exception (" + config.getLocation().getName() + "):");
 			e.printStackTrace();
 		}
 	}

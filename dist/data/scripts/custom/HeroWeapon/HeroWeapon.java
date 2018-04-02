@@ -15,8 +15,8 @@
 
 package custom.HeroWeapon;
 
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.util.Util;
@@ -35,7 +35,7 @@ public class HeroWeapon extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		QuestState st = player.getQuestState(getName());
 
 		int weaponId = Integer.valueOf(event);
@@ -48,7 +48,7 @@ public class HeroWeapon extends Quest {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		String htmltext = "";
 		QuestState st = player.getQuestState(getName());
 		if (st == null) {
@@ -70,7 +70,7 @@ public class HeroWeapon extends Quest {
 		return htmltext;
 	}
 
-	private boolean hasHeroWeapon(L2PcInstance player) {
+	private boolean hasHeroWeapon(Player player) {
 		for (int i : weaponIds) {
 			if (player.getInventory().getItemByItemId(i) != null) {
 				return true;

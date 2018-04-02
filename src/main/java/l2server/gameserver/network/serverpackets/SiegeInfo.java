@@ -17,9 +17,8 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
-import l2server.log.Log;
 
 import java.util.Calendar;
 
@@ -53,7 +52,7 @@ public class SiegeInfo extends L2GameServerPacket {
 
 	@Override
 	protected final void writeImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -69,7 +68,7 @@ public class SiegeInfo extends L2GameServerPacket {
 				writeD(owner.getAllyId()); // Ally ID
 				writeS(owner.getAllyName()); // Ally Name
 			} else {
-				Log.warning("Null owner for castle: " + castle.getName());
+				log.warn("Null owner for castle: " + castle.getName());
 			}
 		} else {
 			writeS(""); // Clan Name

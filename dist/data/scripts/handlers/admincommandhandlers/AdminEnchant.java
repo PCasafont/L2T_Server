@@ -17,17 +17,15 @@ package handlers.admincommandhandlers;
 
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.CharInfo;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
-
-import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:
@@ -36,7 +34,6 @@ import java.util.logging.Logger;
  * @version $Revision: 1.3.2.1.2.10 $ $Date: 2005/08/24 21:06:06 $
  */
 public class AdminEnchant implements IAdminCommandHandler {
-	private static Logger log = Logger.getLogger(AdminEnchant.class.getName());
 
 	private static final String[] ADMIN_COMMANDS = {"admin_seteh",//6
 			"admin_setec",//10
@@ -55,7 +52,7 @@ public class AdminEnchant implements IAdminCommandHandler {
 			"admin_setbe", "admin_enchant"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.equals("admin_enchant")) {
 			showMainPage(activeChar);
 		} else {
@@ -105,12 +102,12 @@ public class AdminEnchant implements IAdminCommandHandler {
 					}
 				} catch (StringIndexOutOfBoundsException e) {
 					if (Config.DEVELOPER) {
-						log.warning("Set enchant error: " + e);
+						log.warn("Set enchant error: " + e);
 					}
 					activeChar.sendMessage("Please specify a new enchant value.");
 				} catch (NumberFormatException e) {
 					if (Config.DEVELOPER) {
-						log.warning("Set enchant error: " + e);
+						log.warn("Set enchant error: " + e);
 					}
 					activeChar.sendMessage("Please specify a valid new enchant value.");
 				}
@@ -123,15 +120,15 @@ public class AdminEnchant implements IAdminCommandHandler {
 		return true;
 	}
 
-	private void setEnchant(L2PcInstance activeChar, int ench, int armorType) {
+	private void setEnchant(Player activeChar, int ench, int armorType) {
 		// get the target
-		L2Object target = activeChar.getTarget();
+		WorldObject target = activeChar.getTarget();
 		if (target == null) {
 			target = activeChar;
 		}
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
@@ -139,10 +136,10 @@ public class AdminEnchant implements IAdminCommandHandler {
 
 		// now we need to find the equipped weapon of the targeted character...
 		int curEnchant = 0; // display purposes only
-		L2ItemInstance itemInstance = null;
+		Item itemInstance = null;
 
 		// only attempt to enchant if there is a weapon equipped
-		L2ItemInstance parmorInstance = player.getInventory().getPaperdollItem(armorType);
+		Item parmorInstance = player.getInventory().getPaperdollItem(armorType);
 		if (parmorInstance != null && parmorInstance.getLocationSlot() == armorType) {
 			itemInstance = parmorInstance;
 		}
@@ -171,7 +168,7 @@ public class AdminEnchant implements IAdminCommandHandler {
 		}
 	}
 
-	private void showMainPage(L2PcInstance activeChar) {
+	private void showMainPage(Player activeChar) {
 		AdminHelpPage.showHelpPage(activeChar, "enchant.htm");
 	}
 

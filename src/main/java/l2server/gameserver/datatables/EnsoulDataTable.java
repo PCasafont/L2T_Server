@@ -23,7 +23,8 @@ import l2server.gameserver.stats.conditions.Condition;
 import l2server.gameserver.stats.funcs.FuncTemplate;
 import l2server.gameserver.stats.funcs.Lambda;
 import l2server.gameserver.stats.funcs.LambdaConst;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -36,6 +37,9 @@ import java.util.Map;
  * @author Pere
  */
 public class EnsoulDataTable {
+	private static Logger log = LoggerFactory.getLogger(EnsoulDataTable.class.getName());
+
+
 	public static EnsoulDataTable getInstance() {
 		return SingletonHolder.instance;
 	}
@@ -52,7 +56,7 @@ public class EnsoulDataTable {
 	private void load() {
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "ensoul/effects.xml");
 		if (!file.exists()) {
-			Log.warning("File " + file.getAbsolutePath() + " does not exist");
+			log.warn("File " + file.getAbsolutePath() + " does not exist");
 			return;
 		}
 
@@ -78,11 +82,11 @@ public class EnsoulDataTable {
 			effects.put(id, effect);
 		}
 
-		Log.info("EnsoulDataTable: Loaded " + effects.size() + " ensoul effects.");
+		log.info("EnsoulDataTable: Loaded " + effects.size() + " ensoul effects.");
 
 		file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "ensoul/crystals.xml");
 		if (!file.exists()) {
-			Log.warning("File " + file.getAbsolutePath() + " does not exist");
+			log.warn("File " + file.getAbsolutePath() + " does not exist");
 			return;
 		}
 
@@ -104,7 +108,7 @@ public class EnsoulDataTable {
 			crystals.put(id, sc);
 		}
 
-		Log.info("EnsoulDataTable: Loaded " + crystals.size() + " soul crystals.");
+		log.info("EnsoulDataTable: Loaded " + crystals.size() + " soul crystals.");
 	}
 
 	public final EnsoulEffect getEffect(int id) {

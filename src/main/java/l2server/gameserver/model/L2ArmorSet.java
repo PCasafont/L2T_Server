@@ -14,7 +14,7 @@
 package l2server.gameserver.model;
 
 import gnu.trove.TIntIntHashMap;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
 
 /**
@@ -43,28 +43,28 @@ public final class L2ArmorSet {
 	 * @param player whose inventory is being checked
 	 * @return True if player equips whole set
 	 */
-	public boolean containsAll(L2PcInstance player) {
+	public boolean containsAll(Player player) {
 		return countMissingParts(player) == 0;
 	}
 
-	public int countMissingParts(L2PcInstance player) {
+	public int countMissingParts(Player player) {
 		return parts - countParts(player);
 	}
 
-	private int countParts(L2PcInstance player) {
+	private int countParts(Player player) {
 		Inventory inv = player.getInventory();
 
-		L2ItemInstance chestItem = inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
-		L2ItemInstance legsItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
-		L2ItemInstance headItem = inv.getPaperdollItem(Inventory.PAPERDOLL_HEAD);
-		L2ItemInstance glovesItem = inv.getPaperdollItem(Inventory.PAPERDOLL_GLOVES);
-		L2ItemInstance feetItem = inv.getPaperdollItem(Inventory.PAPERDOLL_FEET);
-		L2ItemInstance greaterItem1 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY1);
-		L2ItemInstance greaterItem2 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY2);
-		L2ItemInstance greaterItem3 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY3);
-		L2ItemInstance greaterItem4 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY4);
-		L2ItemInstance greaterItem5 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY5);
-		L2ItemInstance greaterItem6 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY6);
+		Item chestItem = inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
+		Item legsItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
+		Item headItem = inv.getPaperdollItem(Inventory.PAPERDOLL_HEAD);
+		Item glovesItem = inv.getPaperdollItem(Inventory.PAPERDOLL_GLOVES);
+		Item feetItem = inv.getPaperdollItem(Inventory.PAPERDOLL_FEET);
+		Item greaterItem1 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY1);
+		Item greaterItem2 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY2);
+		Item greaterItem3 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY3);
+		Item greaterItem4 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY4);
+		Item greaterItem5 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY5);
+		Item greaterItem6 = inv.getPaperdollItem(Inventory.PAPERDOLL_JEWELRY6);
 		int count = 0;
 		if (chestItem != null && chestItem.getArmorItem().isArmorSetPart(id)) {
 			count++;
@@ -103,10 +103,10 @@ public final class L2ArmorSet {
 		return count;
 	}
 
-	public boolean containsShield(L2PcInstance player) {
+	public boolean containsShield(Player player) {
 		Inventory inv = player.getInventory();
 
-		L2ItemInstance shieldItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LHAND);
+		Item shieldItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 		return shieldItem != null && shieldItem.getArmorItem() != null && shieldItem.getArmorItem().isArmorSetPart(id);
 	}
 
@@ -128,18 +128,18 @@ public final class L2ArmorSet {
 	 * @param player
 	 * @return
 	 */
-	public int getEnchantLevel(L2PcInstance player) {
+	public int getEnchantLevel(Player player) {
 		if (!containsAll(player)) {
 			return 0;
 		}
 
 		Inventory inv = player.getInventory();
 
-		L2ItemInstance chestItem = inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
-		L2ItemInstance legsItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
-		L2ItemInstance headItem = inv.getPaperdollItem(Inventory.PAPERDOLL_HEAD);
-		L2ItemInstance glovesItem = inv.getPaperdollItem(Inventory.PAPERDOLL_GLOVES);
-		L2ItemInstance feetItem = inv.getPaperdollItem(Inventory.PAPERDOLL_FEET);
+		Item chestItem = inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
+		Item legsItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
+		Item headItem = inv.getPaperdollItem(Inventory.PAPERDOLL_HEAD);
+		Item glovesItem = inv.getPaperdollItem(Inventory.PAPERDOLL_GLOVES);
+		Item feetItem = inv.getPaperdollItem(Inventory.PAPERDOLL_FEET);
 
 		int enchant = Integer.MAX_VALUE;
 		if (chestItem != null && chestItem.getArmorItem().isArmorSetPart(id) && chestItem.getEnchantLevel() < enchant) {

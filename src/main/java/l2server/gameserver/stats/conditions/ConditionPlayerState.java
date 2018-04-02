@@ -15,8 +15,8 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.PlayerState;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
@@ -46,8 +46,8 @@ public class ConditionPlayerState extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		final L2Character character = env.player;
-		L2PcInstance player = null;
+		final Creature character = env.player;
+		Player player = null;
 		switch (check) {
 			case RESTING:
 				player = character.getActingPlayer();

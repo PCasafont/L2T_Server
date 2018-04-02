@@ -18,18 +18,22 @@ package l2server.gameserver.model.actor.stat;
 import l2server.Config;
 import l2server.gameserver.datatables.PetDataTable;
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.zone.type.L2SwampZone;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.zone.type.SwampZone;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PlayableStat extends CharStat {
+	private static Logger log = LoggerFactory.getLogger(PlayableStat.class.getName());
+
+
 
 	private static final long MAX_SP = 50000000000L;
 
-	public PlayableStat(L2Playable activeChar) {
+	public PlayableStat(Playable activeChar) {
 		super(activeChar);
 	}
 
@@ -46,9 +50,9 @@ public class PlayableStat extends CharStat {
 		setExp(getExp() + value);
 
 		byte minimumLevel = 1;
-		if (getActiveChar() instanceof L2PetInstance) {
-			// get minimum level from L2NpcTemplate
-			minimumLevel = (byte) PetDataTable.getInstance().getPetMinLevel(((L2PetInstance) getActiveChar()).getTemplate().NpcId);
+		if (getActiveChar() instanceof PetInstance) {
+			// get minimum level from NpcTemplate
+			minimumLevel = (byte) PetDataTable.getInstance().getPetMinLevel(((PetInstance) getActiveChar()).getTemplate().NpcId);
 		}
 
 		byte level = minimumLevel; // minimum level
@@ -76,9 +80,9 @@ public class PlayableStat extends CharStat {
 		setExp(getExp() - value);
 
 		byte minimumLevel = 1;
-		if (getActiveChar() instanceof L2PetInstance) {
-			// get minimum level from L2NpcTemplate
-			minimumLevel = (byte) PetDataTable.getInstance().getPetMinLevel(((L2PetInstance) getActiveChar()).getTemplate().NpcId);
+		if (getActiveChar() instanceof PetInstance) {
+			// get minimum level from NpcTemplate
+			minimumLevel = (byte) PetDataTable.getInstance().getPetMinLevel(((PetInstance) getActiveChar()).getTemplate().NpcId);
 		}
 		byte level = minimumLevel;
 
@@ -139,8 +143,8 @@ public class PlayableStat extends CharStat {
 			setExp(getExpForLevel(getLevel()));
 		}
 
-		if (!levelIncreased && getActiveChar() instanceof L2PcInstance && !getActiveChar().isGM() && Config.DECREASE_SKILL_LEVEL) {
-			((L2PcInstance) getActiveChar()).checkPlayerSkills();
+		if (!levelIncreased && getActiveChar() instanceof Player && !getActiveChar().isGM() && Config.DECREASE_SKILL_LEVEL) {
+			((Player) getActiveChar()).checkPlayerSkills();
 		}
 
 		if (!levelIncreased) {
@@ -155,7 +159,7 @@ public class PlayableStat extends CharStat {
 
 	public boolean addSp(long value) {
 		if (value < 0) {
-			Log.warning("wrong usage");
+			log.warn("wrong usage");
 			return false;
 		}
 
@@ -188,12 +192,12 @@ public class PlayableStat extends CharStat {
 	@Override
 	public int getRunSpeed() {
 		int val = super.getRunSpeed();
-		if (getActiveChar().isInsideZone(L2Character.ZONE_WATER)) {
+		if (getActiveChar().isInsideZone(Creature.ZONE_WATER)) {
 			val /= 2;
 		}
 
-		if (getActiveChar().isInsideZone(L2Character.ZONE_SWAMP)) {
-			L2SwampZone zone = ZoneManager.getInstance().getZone(getActiveChar(), L2SwampZone.class);
+		if (getActiveChar().isInsideZone(Creature.ZONE_SWAMP)) {
+			SwampZone zone = ZoneManager.getInstance().getZone(getActiveChar(), SwampZone.class);
 			int bonus = zone == null ? 0 : zone.getMoveBonus();
 			double dbonus = bonus / 100.0; //%
 			val += val * dbonus;
@@ -203,8 +207,8 @@ public class PlayableStat extends CharStat {
 	}
 
 	@Override
-	public L2Playable getActiveChar() {
-		return (L2Playable) super.getActiveChar();
+	public Playable getActiveChar() {
+		return (Playable) super.getActiveChar();
 	}
 
 	public int getMaxLevel() {

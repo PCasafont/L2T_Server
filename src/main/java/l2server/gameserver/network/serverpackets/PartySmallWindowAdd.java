@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * This class ...
@@ -25,11 +25,11 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public final class PartySmallWindowAdd extends L2GameServerPacket {
 	
-	private final L2PcInstance member;
+	private final Player member;
 	private final int leaderId;
 	private final int distribution;
 	
-	public PartySmallWindowAdd(L2PcInstance member, L2Party party) {
+	public PartySmallWindowAdd(Player member, L2Party party) {
 		this.member = member;
 		leaderId = party.getPartyLeaderOID();
 		distribution = party.getLootDistribution();
@@ -55,7 +55,7 @@ public final class PartySmallWindowAdd extends L2GameServerPacket {
 		writeC(member.getRace().ordinal());
 		writeC(PartySearchManager.getInstance().getWannaToChangeThisPlayer(member.getObjectId()) ? 0x01 : 0x00); // GoD unknown
 		writeD(member.getSummons().size() + (member.getPet() != null ? 1 : 0));
-		for (L2SummonInstance summon : member.getSummons())
+		for (SummonInstance summon : member.getSummons())
 		{
 			writeD(summon.getObjectId());
 			writeD(summon.getNpcId() + 1000000);

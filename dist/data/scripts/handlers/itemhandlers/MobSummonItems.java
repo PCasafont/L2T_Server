@@ -21,24 +21,24 @@ package handlers.itemhandlers;
 
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.handler.IItemHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ConfirmDlg;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.templates.chars.NpcTemplate;
 
 public class MobSummonItems implements IItemHandler {
 	/**
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forcedUse) {
-		if (!(playable instanceof L2PcInstance)) {
+	public void useItem(Playable playable, Item item, boolean forcedUse) {
+		if (!(playable instanceof Player)) {
 			return;
 		}
 
-		L2PcInstance activeChar = (L2PcInstance) playable;
+		Player activeChar = (Player) playable;
 
 		if (activeChar.getEvent() != null && !activeChar.getEvent().onItemSummon(activeChar.getObjectId())) {
 			return;
@@ -63,7 +63,7 @@ public class MobSummonItems implements IItemHandler {
 		if (mobId == 0) {
 			confirmText = "This CokeBall is empty. Do you want to use it to catch a monster?";
 		} else {
-			L2NpcTemplate npcTemplate = NpcTable.getInstance().getTemplate(mobId);
+			NpcTemplate npcTemplate = NpcTable.getInstance().getTemplate(mobId);
 			if (npcTemplate != null) {
 				confirmText = "This CokeBall contains a " + npcTemplate.getName() + ". Do you want to call it?";
 			}

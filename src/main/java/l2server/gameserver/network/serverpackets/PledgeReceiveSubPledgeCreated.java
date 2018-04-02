@@ -49,7 +49,7 @@ public class PledgeReceiveSubPledgeCreated extends L2GameServerPacket {
 		if (subPledge.getId() == L2Clan.SUBUNIT_ACADEMY || leaderId == 0) {
 			return "";
 		} else if (clan.getClanMember(leaderId) == null) {
-			//Log.warning("SubPledgeLeader: "+ leaderId + " is missing from clan: "+ clan.getName()+"["+clan.getClanId()+"]");
+			//log.warn("SubPledgeLeader: "+ leaderId + " is missing from clan: "+ clan.getName()+"["+clan.getClanId()+"]");
 			String name = "";
 			for (L2ClanMember temp : clan.getMembers()) {
 				if (temp.getPledgeType() == subPledge.getId()) {

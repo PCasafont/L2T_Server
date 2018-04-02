@@ -27,7 +27,7 @@ package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.QuestManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.scripting.L2ScriptEngineManager;
 
 import javax.script.ScriptException;
@@ -37,10 +37,10 @@ public class AdminQuest implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_quest_reload", "admin_script_load"};
 
 	/**
-	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, Player)
 	 */
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (activeChar == null) {
 			return false;
 		}

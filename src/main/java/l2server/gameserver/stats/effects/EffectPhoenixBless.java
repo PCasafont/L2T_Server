@@ -15,36 +15,37 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2EffectType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.EffectType;
 
 /**
  * @author Faror
  */
 public class EffectPhoenixBless extends L2Effect {
-	public EffectPhoenixBless(Env env, L2EffectTemplate template) {
+	public EffectPhoenixBless(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 * @see Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType() {
-		return L2EffectType.PHOENIX_BLESSING;
+	public EffectType getEffectType() {
+		return EffectType.PHOENIX_BLESSING;
 	}
 	
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.BUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.BUFF;
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
@@ -52,17 +53,17 @@ public class EffectPhoenixBless extends L2Effect {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {
-		if (getEffected() instanceof L2Playable) {
-			((L2Playable) getEffected()).stopPhoenixBlessing(getAbnormal());
+		if (getEffected() instanceof Playable) {
+			((Playable) getEffected()).stopPhoenixBlessing(getAbnormal());
 		}
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

@@ -15,7 +15,7 @@
 
 package l2server.log;
 
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.util.StringUtil;
 
 import java.text.SimpleDateFormat;
@@ -44,8 +44,8 @@ public class ItemLogFormatter extends Formatter {
 				continue;
 			}
 			output.append(", ");
-			if (p instanceof L2ItemInstance) {
-				L2ItemInstance item = (L2ItemInstance) p;
+			if (p instanceof Item) {
+				Item item = (Item) p;
 				StringUtil.append(output, "item ", String.valueOf(item.getObjectId()), ":");
 				if (item.getEnchantLevel() > 0) {
 					StringUtil.append(output, "+", String.valueOf(item.getEnchantLevel()), " ");
@@ -53,10 +53,10 @@ public class ItemLogFormatter extends Formatter {
 
 				StringUtil.append(output, item.getItem().getName(), "(", String.valueOf(item.getCount()), ")");
 			}
-			// else if (p instanceof L2PcInstance)
-			// output.append(((L2PcInstance)p).getName());
+			// else if (p instanceof Player)
+			// output.append(((Player)p).getName());
 			else {
-				output.append(p.toString()/* + ":" + ((L2Object)p).getObjectId() */);
+				output.append(p.toString()/* + ":" + ((WorldObject)p).getObjectId() */);
 			}
 		}
 		output.append(CRLF);

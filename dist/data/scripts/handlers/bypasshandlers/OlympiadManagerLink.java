@@ -18,13 +18,12 @@ package handlers.bypasshandlers;
 import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2OlympiadManagerInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.*;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.model.olympiad.OlympiadNobleInfo;
@@ -44,8 +43,8 @@ public class OlympiadManagerLink implements IBypassHandler {
 	private static final int GATE_PASS = Config.ALT_OLY_COMP_RITEM;
 	
 	@Override
-	public final boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
-		if (!(target instanceof L2OlympiadManagerInstance)) {
+	public final boolean useBypass(String command, Player activeChar, Npc target) {
+		if (!(target instanceof OlympiadManagerInstance)) {
 			return false;
 		}
 		
@@ -54,7 +53,7 @@ public class OlympiadManagerLink implements IBypassHandler {
 			{
 				int val = Integer.parseInt(command.substring(13, 14));
 				String suffix = command.substring(14);
-				((L2OlympiadManagerInstance) target).showChatWindow(activeChar, val, suffix);
+				((OlympiadManagerInstance) target).showChatWindow(activeChar, val, suffix);
 			} else if (command.toLowerCase().startsWith(COMMANDS[1])) // noble
 			{
 				if (!activeChar.isNoble() || activeChar.isSubClassActive()) {
@@ -130,7 +129,7 @@ public class OlympiadManagerLink implements IBypassHandler {
 					case 10:
 						passes = Olympiad.getInstance().getTokensCount(activeChar, true);
 						if (passes > 0) {
-							L2ItemInstance item = activeChar.getInventory().addItem("Olympiad", GATE_PASS, passes, activeChar, target);
+							Item item = activeChar.getInventory().addItem("Olympiad", GATE_PASS, passes, activeChar, target);
 							
 							InventoryUpdate iu = new InventoryUpdate();
 							iu.addModifiedItem(item);
@@ -143,7 +142,7 @@ public class OlympiadManagerLink implements IBypassHandler {
 						}
 						break;
 					default:
-						log.warning("Olympiad System: Couldnt send packet for request " + val);
+						log.warn("Olympiad System: Couldnt send packet for request " + val);
 						break;
 				}
 			} else if (command.toLowerCase().startsWith(COMMANDS[2])) // buff
@@ -156,13 +155,13 @@ public class OlympiadManagerLink implements IBypassHandler {
 				String[] params = command.split(" ");
 				
 				if (params[1] == null) {
-					log.warning(
+					log.warn(
 							"Olympiad Buffer Warning: npcId = " + target.getNpcId() + " has no buffGroup set in the bypass for the buff selected.");
 					return false;
 				}
 				int skillId = Integer.parseInt(params[1]);
 				
-				L2Skill skill = SkillTable.getInstance().getInfo(skillId, 1);
+				Skill skill = SkillTable.getInstance().getInfo(skillId, 1);
 				
 				target.setTarget(activeChar);
 				
@@ -171,12 +170,12 @@ public class OlympiadManagerLink implements IBypassHandler {
 						activeChar.olyBuff--;
 						target.broadcastPacket(new MagicSkillUse(target, activeChar, skill.getId(), skill.getLevelHash(), 0, 0, 0));
 						skill.getEffects(activeChar, activeChar);
-						L2PetInstance pet = activeChar.getPet();
+						PetInstance pet = activeChar.getPet();
 						if (pet != null) {
 							target.broadcastPacket(new MagicSkillUse(target, pet, skill.getId(), skill.getLevelHash(), 0, 0, 0));
 							skill.getEffects(pet, pet);
 						}
-						for (L2SummonInstance summon : activeChar.getSummons()) {
+						for (SummonInstance summon : activeChar.getSummons()) {
 							target.broadcastPacket(new MagicSkillUse(target, summon, skill.getId(), skill.getLevelHash(), 0, 0, 0));
 							skill.getEffects(summon, summon);
 						}
@@ -241,12 +240,12 @@ public class OlympiadManagerLink implements IBypassHandler {
 						activeChar.sendPacket(new ExHeroList());
 						break;
 					default:
-						log.warning("Olympiad System: Couldnt send packet for request " + val);
+						log.warn("Olympiad System: Couldnt send packet for request " + val);
 						break;
 				}
 			}
 		} catch (Exception e) {
-			log.log(Level.INFO, "Exception in " + e.getMessage(), e);
+			log.info("Exception in " + e.getMessage(), e);
 		}
 		
 		return true;

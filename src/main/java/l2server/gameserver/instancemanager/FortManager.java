@@ -19,11 +19,13 @@ import l2server.Config;
 import l2server.gameserver.InstanceListManager;
 import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.datatables.ResidentialSkillTable;
+import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.CombatFlag;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.entity.Fort;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -33,6 +35,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FortManager implements InstanceListManager {
+	private static Logger log = LoggerFactory.getLogger(FortManager.class.getName());
+
+
 	private List<Fort> forts = new ArrayList<>();
 
 	public static FortManager getInstance() {
@@ -42,10 +47,10 @@ public class FortManager implements InstanceListManager {
 	private FortManager() {
 	}
 
-	@Load(dependencies = ResidentialSkillTable.class)
+	@Load(dependencies = {ResidentialSkillTable.class, SpawnTable.class})
 	@Override
 	public void load() {
-		Log.info("Initializing FortManager");
+		log.info("Initializing FortManager");
 
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "forts.xml");
 		XmlDocument doc = new XmlDocument(file);
@@ -80,14 +85,14 @@ public class FortManager implements InstanceListManager {
 
 			forts.add(fort);
 		}
-		Log.info("Loaded: " + forts.size() + " forts");
+		log.info("Loaded: " + forts.size() + " forts");
 	}
 
-	public final int findNearestFortIndex(L2Object obj) {
+	public final int findNearestFortIndex(WorldObject obj) {
 		return findNearestFortIndex(obj, Long.MAX_VALUE);
 	}
 
-	public final int findNearestFortIndex(L2Object obj, long maxDistance) {
+	public final int findNearestFortIndex(WorldObject obj, long maxDistance) {
 		int index = getFortIndex(obj);
 		if (index < 0) {
 			double distance;
@@ -145,7 +150,7 @@ public class FortManager implements InstanceListManager {
 		return null;
 	}
 
-	public final Fort getFort(L2Object activeObject) {
+	public final Fort getFort(WorldObject activeObject) {
 		return getFort(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}
 
@@ -160,7 +165,7 @@ public class FortManager implements InstanceListManager {
 		return -1;
 	}
 
-	public final int getFortIndex(L2Object activeObject) {
+	public final int getFortIndex(WorldObject activeObject) {
 		return getFortIndex(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}
 

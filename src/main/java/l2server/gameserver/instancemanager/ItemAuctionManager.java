@@ -17,12 +17,14 @@ package l2server.gameserver.instancemanager;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.model.itemauction.ItemAuctionInstance;
-import l2server.log.Log;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.sql.Connection;
@@ -32,12 +34,13 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Level;
 
 /**
  * @author Forsaiken
  */
 public final class ItemAuctionManager {
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	public static ItemAuctionManager getInstance() {
 		return SingletonHolder.instance;
 	}
@@ -51,7 +54,7 @@ public final class ItemAuctionManager {
 	@Load(dependencies = ItemTable.class)
 	public void load() {
 		if (!Config.ALT_ITEM_AUCTION_ENABLED || Config.IS_CLASSIC) {
-			Log.info("ItemAuctionManager: Disabled by config.");
+			log.info("ItemAuctionManager: Disabled by config.");
 			return;
 		}
 		
@@ -64,14 +67,14 @@ public final class ItemAuctionManager {
 				auctionIds.set(rset.getInt(1) + 1);
 			}
 		} catch (final SQLException e) {
-			Log.log(Level.SEVERE, "ItemAuctionManager: Failed loading auctions.", e);
+			log.error("ItemAuctionManager: Failed loading auctions.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		
 		final File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "ItemAuctions.xml");
 		if (!file.exists()) {
-			Log.warning("ItemAuctionManager: Missing ItemAuctions.xml!");
+			log.warn("ItemAuctionManager: Missing ItemAuctions.xml!");
 			return;
 		}
 		
@@ -89,9 +92,9 @@ public final class ItemAuctionManager {
 					managerInstances.put(instanceId, instance);
 				}
 			}
-			Log.info("ItemAuctionManager: Loaded " + managerInstances.size() + " instance(s).");
+			log.info("ItemAuctionManager: Loaded " + managerInstances.size() + " instance(s).");
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "ItemAuctionManager: Failed loading auctions from xml.", e);
+			log.error("ItemAuctionManager: Failed loading auctions from xml.", e);
 		}
 	}
 	
@@ -124,7 +127,7 @@ public final class ItemAuctionManager {
 			statement.execute();
 			statement.close();
 		} catch (final SQLException e) {
-			Log.log(Level.SEVERE, "L2ItemAuctionManagerInstance: Failed deleting auction: " + auctionId, e);
+			log.error("L2ItemAuctionManagerInstance: Failed deleting auction: " + auctionId, e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

@@ -23,7 +23,7 @@
 package l2server.gameserver.util;
 
 import l2server.Config;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -39,14 +39,14 @@ public final class IllegalPlayerAction implements Runnable {
 
 	private String message;
 	private int punishment;
-	private L2PcInstance actor;
+	private Player actor;
 
 	public static final int PUNISH_BROADCAST = 1;
 	public static final int PUNISH_KICK = 2;
 	public static final int PUNISH_KICKBAN = 3;
 	public static final int PUNISH_JAIL = 4;
 
-	public IllegalPlayerAction(L2PcInstance actor, String message, int punishment) {
+	public IllegalPlayerAction(Player actor, String message, int punishment) {
 		this.message = message;
 		this.punishment = punishment;
 		this.actor = actor;
@@ -90,7 +90,7 @@ public final class IllegalPlayerAction implements Runnable {
 				actor.logout();
 				break;
 			case PUNISH_JAIL:
-				actor.setPunishLevel(L2PcInstance.PunishLevel.JAIL, Config.DEFAULT_PUNISH_PARAM);
+				actor.setPunishLevel(Player.PunishLevel.JAIL, Config.DEFAULT_PUNISH_PARAM);
 				break;
 		}
 	}

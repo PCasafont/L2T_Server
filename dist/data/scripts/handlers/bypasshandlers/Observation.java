@@ -17,8 +17,8 @@ package handlers.bypasshandlers;
 
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.instancemanager.CastleSiegeManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ItemList;
@@ -30,7 +30,7 @@ public class Observation implements IBypassHandler {
 	private static final String[] COMMANDS = {"observesiege", "observeoracle", "observe"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		if (target == null) {
 			return false;
 		}
@@ -69,7 +69,7 @@ public class Observation implements IBypassHandler {
 		return false;
 	}
 	
-	private static void doObserve(L2PcInstance player, L2Npc npc, String val) {
+	private static void doObserve(Player player, Npc npc, String val) {
 		StringTokenizer st = new StringTokenizer(val);
 		long cost = Long.parseLong(st.nextToken());
 		int x = Integer.parseInt(st.nextToken());

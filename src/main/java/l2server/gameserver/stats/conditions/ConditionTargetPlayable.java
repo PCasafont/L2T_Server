@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -27,6 +27,6 @@ public class ConditionTargetPlayable extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		return env.target instanceof L2Playable;
+		return env.target instanceof Playable;
 	}
 }

@@ -15,8 +15,8 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Pere
@@ -24,7 +24,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class ExShuttleGetOff extends L2GameServerPacket {
 	private final int playerId, shuttleId, x, y, z;
 	
-	public ExShuttleGetOff(L2PcInstance player, L2Character shuttle, int x, int y, int z) {
+	public ExShuttleGetOff(Player player, Creature shuttle, int x, int y, int z) {
 		playerId = player.getObjectId();
 		shuttleId = shuttle.getObjectId();
 		this.x = x;

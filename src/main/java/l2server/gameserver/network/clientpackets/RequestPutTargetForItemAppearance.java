@@ -16,13 +16,13 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExPutTargetResultForItemAppearance;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 
 /**
  * @author Pere
@@ -39,17 +39,17 @@ public final class RequestPutTargetForItemAppearance extends L2GameClientPacket 
 	 */
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
 		
-		L2ItemInstance stone = player.getActiveAppearanceStone();
+		Item stone = player.getActiveAppearanceStone();
 		if (stone == null) {
 			return;
 		}
 		
-		L2ItemInstance item = player.getInventory().getItemByObjectId(objectId);
+		Item item = player.getInventory().getItemByObjectId(objectId);
 		if (item == null) {
 			return;
 		}
@@ -61,15 +61,15 @@ public final class RequestPutTargetForItemAppearance extends L2GameClientPacket 
 		
 		int type = stone.getStoneType();
 		int itemType = item.getItem().getType2();
-		if (item.getItem().getBodyPart() == L2Item.SLOT_BACK) {
-			itemType = L2Item.TYPE2_SHIELD_ARMOR;
+		if (item.getItem().getBodyPart() == ItemTemplate.SLOT_BACK) {
+			itemType = ItemTemplate.TYPE2_SHIELD_ARMOR;
 		}
 		
 		switch (item.getItem().getBodyPart()) {
-			case L2Item.SLOT_HAIR:
-			case L2Item.SLOT_HAIR2:
-			case L2Item.SLOT_HAIRALL:
-			case L2Item.SLOT_BACK:
+			case ItemTemplate.SLOT_HAIR:
+			case ItemTemplate.SLOT_HAIR2:
+			case ItemTemplate.SLOT_HAIRALL:
+			case ItemTemplate.SLOT_BACK:
 				break;
 			default: {
 				boolean isCorrectGrade = item.getItem().getItemGradePlain() == stone.getItem().getItemGradePlain();

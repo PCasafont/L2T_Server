@@ -15,20 +15,21 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Stats;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @author ZaKaX - nBd
  */
 public class EffectHeavyPunch extends L2Effect {
-	public EffectHeavyPunch(Env env, L2EffectTemplate template) {
+	public EffectHeavyPunch(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -37,21 +38,21 @@ public class EffectHeavyPunch extends L2Effect {
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.HEAVY_PUNCH;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.HEAVY_PUNCH;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		if (!(getEffector() instanceof L2PcInstance)) {
+		if (!(getEffector() instanceof Player)) {
 			return false;
 		}
 
-		L2PcInstance attacker = (L2PcInstance) getEffector();
-		L2Character target = getEffected();
+		Player attacker = (Player) getEffector();
+		Creature target = getEffected();
 
 		int lastPhysicalDamages = attacker.getLastPhysicalDamages();
 
@@ -73,13 +74,13 @@ public class EffectHeavyPunch extends L2Effect {
 			damage = 10000 + (int) Math.pow(damage - 10000, 0.9);
 		}
 
-		attacker.onHitTimer(target, damage, false, false, L2ItemInstance.CHARGED_SOULSHOT, (byte) 0, true);
+		attacker.onHitTimer(target, damage, false, false, Item.CHARGED_SOULSHOT, (byte) 0, true);
 
 		return true;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {
@@ -87,7 +88,7 @@ public class EffectHeavyPunch extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

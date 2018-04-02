@@ -17,13 +17,14 @@ package l2server.gameserver.pathfinding.geonodes;
 
 import l2server.Config;
 import l2server.gameserver.GeoData;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.World;
 import l2server.gameserver.model.Location;
 import l2server.gameserver.pathfinding.AbstractNode;
 import l2server.gameserver.pathfinding.AbstractNodeLoc;
 import l2server.gameserver.pathfinding.PathFinding;
 import l2server.gameserver.pathfinding.utils.FastNodeList;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.nio.ByteBuffer;
@@ -37,6 +38,9 @@ import java.util.logging.Level;
  * @author -Nemesiss-
  */
 public class GeoPathFinding extends PathFinding {
+	private static Logger log = LoggerFactory.getLogger(GeoPathFinding.class.getName());
+
+
 
 	private static Map<Short, ByteBuffer> pathNodes = new HashMap<>();
 	private static Map<Short, IntBuffer> pathNodesIndex = new HashMap<>();
@@ -56,11 +60,11 @@ public class GeoPathFinding extends PathFinding {
 	 */
 	@Override
 	public List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean playable) {
-		int gx = x - L2World.MAP_MIN_X >> 4;
-		int gy = y - L2World.MAP_MIN_Y >> 4;
+		int gx = x - World.MAP_MIN_X >> 4;
+		int gy = y - World.MAP_MIN_Y >> 4;
 		short gz = (short) z;
-		int gtx = tx - L2World.MAP_MIN_X >> 4;
-		int gty = ty - L2World.MAP_MIN_Y >> 4;
+		int gtx = tx - World.MAP_MIN_X >> 4;
+		int gty = ty - World.MAP_MIN_Y >> 4;
 		short gtz = (short) tz;
 
 		GeoNode start = readNode(gx, gy, gz);
@@ -295,7 +299,7 @@ public class GeoPathFinding extends PathFinding {
 		byte nodes = pn.get(idx);
 		idx += layer * 10 + 1;//byte + layer*10byte
 		if (nodes < layer) {
-			Log.warning("SmthWrong!");
+			log.warn("SmthWrong!");
 		}
 		short node_z = pn.getShort(idx);
 		idx += 2;
@@ -332,7 +336,7 @@ public class GeoPathFinding extends PathFinding {
 	private GeoPathFinding() {
 		LineNumberReader lnr = null;
 		try {
-			Log.info("PathFinding Engine: - Loading Path Nodes...");
+			log.info("PathFinding Engine: - Loading Path Nodes...");
 			File Data = new File("./data/pathnode/pn_index.txt");
 			if (!Data.exists()) {
 				return;
@@ -340,7 +344,7 @@ public class GeoPathFinding extends PathFinding {
 
 			lnr = new LineNumberReader(new BufferedReader(new FileReader(Data)));
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 			throw new Error("Failed to Load pn_index File.");
 		}
 		String line;
@@ -355,7 +359,7 @@ public class GeoPathFinding extends PathFinding {
 				LoadPathNodeFile(rx, ry);
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 			throw new Error("Failed to Read pn_index File.");
 		} finally {
 			try {
@@ -368,7 +372,7 @@ public class GeoPathFinding extends PathFinding {
 
 	private void LoadPathNodeFile(byte rx, byte ry) {
 		if (rx < Config.WORLD_X_MIN || rx > Config.WORLD_X_MAX || ry < Config.WORLD_Y_MIN || ry > Config.WORLD_Y_MAX) {
-			Log.warning("Failed to Load PathNode File: invalid region " + rx + "," + ry + "\n");
+			log.warn("Failed to Load PathNode File: invalid region " + rx + "," + ry + "\n");
 			return;
 		}
 		String fname = "./data/pathnode/" + rx + "_" + ry + ".pn";
@@ -404,7 +408,7 @@ public class GeoPathFinding extends PathFinding {
 			pathNodesIndex.put(regionoffset, indexs);
 			pathNodes.put(regionoffset, nodes);
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Failed to Load PathNode File: " + fname + " : " + e.getMessage(), e);
+			log.warn("Failed to Load PathNode File: " + fname + " : " + e.getMessage(), e);
 		} finally {
 			try {
 				roChannel.close();

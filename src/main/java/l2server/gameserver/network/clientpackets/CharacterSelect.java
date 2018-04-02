@@ -20,16 +20,12 @@ import l2server.gameserver.Shutdown;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.instancemanager.AntiFeedManager;
 import l2server.gameserver.model.CharSelectInfoPackage;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.L2GameClient.GameClientState;
 import l2server.gameserver.network.serverpackets.CharSelected;
 import l2server.gameserver.network.serverpackets.ExSubjobInfo;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.log.Log;
-
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -37,8 +33,7 @@ import java.util.logging.Logger;
  * @version $Revision: 1.5.2.1.2.5 $ $Date: 2005/03/27 15:29:30 $
  */
 public class CharacterSelect extends L2GameClientPacket {
-
-	protected static final Logger logAccounting = Logger.getLogger("accounting");
+	private static org.slf4j.Logger log = LoggerFactory.getLogger(CharacterSelect.class.getName());
 
 	// cd
 	private int charSlot;
@@ -94,13 +89,13 @@ public class CharacterSelect extends L2GameClientPacket {
 						return;
 					}
 
-					// The L2PcInstance must be created here, so that it can be attached to the L2GameClient
+					// The Player must be created here, so that it can be attached to the L2GameClient
 					if (Config.DEBUG) {
-						Log.fine("selected slot:" + charSlot);
+						log.debug("selected slot:" + charSlot);
 					}
 
 					//load up character from disk
-					L2PcInstance cha = getClient().loadCharFromDisk(charSlot);
+					Player cha = getClient().loadCharFromDisk(charSlot);
 					if (cha == null) {
 						return; // handled in L2GameClient
 					}
@@ -126,10 +121,6 @@ public class CharacterSelect extends L2GameClientPacket {
 			} finally {
 				getClient().getActiveCharLock().unlock();
 			}
-
-			LogRecord record = new LogRecord(Level.INFO, "Logged in");
-			record.setParameters(new Object[]{getClient()});
-			logAccounting.log(record);
 		}
 	}
 }

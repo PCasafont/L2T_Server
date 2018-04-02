@@ -20,13 +20,12 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.gameserver.network.serverpackets.SocialAction;
-import l2server.log.Log;
 
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
@@ -224,18 +223,18 @@ public class MC_Show extends Quest {
 		diff = hourDiff + minDiff;
 		if (Config.DEBUG) {
 			SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-			Log.info("Fantasy Isle: MC show script starting at " + format.format(System.currentTimeMillis() + diff) +
+			log.info("Fantasy Isle: MC show script starting at " + format.format(System.currentTimeMillis() + diff) +
 					" and is scheduled each next 4 hours.");
 		}
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new StartMCShow(), diff, 14400000L);
 	}
 
-	private void autoChat(L2Npc npc, int stringId, int type) {
+	private void autoChat(Npc npc, int stringId, int type) {
 		npc.broadcastPacket(new NpcSay(npc.getObjectId(), type, npc.getNpcId(), stringId));
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc) {
+	public String onSpawn(Npc npc) {
 		if (isStarted) {
 			switch (npc.getNpcId()) {
 				case 32433:
@@ -273,7 +272,7 @@ public class MC_Show extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.equalsIgnoreCase("Start")) {
 			isStarted = true;
 			addSpawn(mc, -56698, -56430, -2008, 32768, false, 0);

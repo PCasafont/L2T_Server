@@ -15,8 +15,8 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author KenM, Gnacik
@@ -52,7 +52,7 @@ public class RequestChangeNicknameColor extends L2GameClientPacket {
 	 */
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -61,7 +61,7 @@ public class RequestChangeNicknameColor extends L2GameClientPacket {
 			return;
 		}
 		
-		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(itemObjectId);
+		final Item item = activeChar.getInventory().getItemByObjectId(itemObjectId);
 		if (item == null || item.getEtcItem() == null || item.getEtcItem().getHandlerName() == null ||
 				!item.getEtcItem().getHandlerName().equalsIgnoreCase("NicknameColor")) {
 			return;

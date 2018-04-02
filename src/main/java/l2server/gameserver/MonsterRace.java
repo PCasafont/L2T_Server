@@ -17,23 +17,27 @@ package l2server.gameserver;
 
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 import java.lang.reflect.Constructor;
 import java.util.logging.Level;
 
 public class MonsterRace {
+	private static Logger log = LoggerFactory.getLogger(MonsterRace.class.getName());
 
-	private L2Npc[] monsters;
+
+
+	private Npc[] monsters;
 	private Constructor<?> constructor;
 	private int[][] speeds;
 	private int[] first, second;
 
 	private MonsterRace() {
-		monsters = new L2Npc[8];
+		monsters = new Npc[8];
 		speeds = new int[8][20];
 		first = new int[2];
 		second = new int[2];
@@ -56,12 +60,12 @@ public class MonsterRace {
 			}
 
 			try {
-				L2NpcTemplate template = NpcTable.getInstance().getTemplate(id + random);
+				NpcTemplate template = NpcTable.getInstance().getTemplate(id + random);
 				constructor = Class.forName("l2server.gameserver.model.actor.instance." + template.Type + "Instance").getConstructors()[0];
 				int objectId = IdFactory.getInstance().getNextId();
-				monsters[i] = (L2Npc) constructor.newInstance(objectId, template);
+				monsters[i] = (Npc) constructor.newInstance(objectId, template);
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "", e);
+				log.warn("", e);
 			}
 			//Logozo.info("Monster "+i+" is id: "+(id+random));
 		}
@@ -98,7 +102,7 @@ public class MonsterRace {
 	/**
 	 * @return Returns the monsters.
 	 */
-	public L2Npc[] getMonsters() {
+	public Npc[] getMonsters() {
 		return monsters;
 	}
 

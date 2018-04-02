@@ -15,9 +15,9 @@
 
 package l2server.gameserver.handler;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-
-import java.util.logging.Logger;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -25,7 +25,7 @@ import java.util.logging.Logger;
  * @version $Revision: 1.1.4.2 $ $Date: 2005/03/27 15:30:09 $
  */
 public interface IVoicedCommandHandler {
-	Logger log = Logger.getLogger(IVoicedCommandHandler.class.getName());
+	Logger log = LoggerFactory.getLogger(IVoicedCommandHandler.class.getName());
 
 	/**
 	 * this is the worker method that is called when someone uses an admin command.
@@ -34,7 +34,7 @@ public interface IVoicedCommandHandler {
 	 * @param command
 	 * @return command success
 	 */
-	boolean useVoicedCommand(String command, L2PcInstance activeChar, String params);
+	boolean useVoicedCommand(String command, Player activeChar, String params);
 
 	/**
 	 * this method is called at initialization to register all the item ids automatically

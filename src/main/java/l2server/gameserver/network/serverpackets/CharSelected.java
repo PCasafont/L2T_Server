@@ -14,7 +14,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.TimeController;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * This class ...
@@ -23,12 +23,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class CharSelected extends L2GameServerPacket {
 	// SdSddddddddddffddddddddddddddddddddddddddddddddddddddddd d
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	private int sessionId;
 	
 	/**
 	 */
-	public CharSelected(L2PcInstance cha, int sessionId) {
+	public CharSelected(Player cha, int sessionId) {
 		activeChar = cha;
 		this.sessionId = sessionId;
 	}

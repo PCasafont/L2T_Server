@@ -17,10 +17,12 @@ package l2server.gameserver.taskmanager;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.taskmanager.tasks.*;
-import l2server.log.Log;
 import l2server.util.loader.annotations.Load;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,7 +34,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
 
 import static l2server.gameserver.taskmanager.TaskTypes.*;
 
@@ -40,6 +41,7 @@ import static l2server.gameserver.taskmanager.TaskTypes.*;
  * @author Layane
  */
 public final class TaskManager {
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
 
 	protected static final String[] SQL_STATEMENTS =
 			{"SELECT id,task,type,last_activation,param1,param2,param3 FROM global_tasks", "UPDATE global_tasks SET last_activation=? WHERE id=?",
@@ -80,7 +82,7 @@ public final class TaskManager {
 				statement.executeUpdate();
 				statement.close();
 			} catch (SQLException e) {
-				Log.log(Level.WARNING, "Cannot updated the Global Task " + id + ": " + e.getMessage(), e);
+				log.warn("Cannot updated the Global Task " + id + ": " + e.getMessage(), e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -188,7 +190,7 @@ public final class TaskManager {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error while loading Global Task table: " + e.getMessage(), e);
+			log.error("Error while loading Global Task table: " + e.getMessage(), e);
 		} finally {
 			try {
 				L2DatabaseFactory.close(con);
@@ -224,7 +226,7 @@ public final class TaskManager {
 						task.scheduled = scheduler.scheduleGeneral(task, diff);
 						return true;
 					}
-					Log.info("Task " + task.getId() + " is obsoleted.");
+					log.info("Task " + task.getId() + " is obsoleted.");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -241,7 +243,7 @@ public final class TaskManager {
 				String[] hour = task.getParams()[1].split(":");
 
 				if (hour.length != 3) {
-					Log.warning("Task " + task.getId() + " has incorrect parameters");
+					log.warn("Task " + task.getId() + " has incorrect parameters");
 					return false;
 				}
 
@@ -257,7 +259,7 @@ public final class TaskManager {
 					min.set(Calendar.MINUTE, Integer.parseInt(hour[1]));
 					min.set(Calendar.SECOND, Integer.parseInt(hour[2]));
 				} catch (Exception e) {
-					Log.log(Level.WARNING, "Bad parameter on task " + task.getId() + ": " + e.getMessage(), e);
+					log.warn("Bad parameter on task " + task.getId() + ": " + e.getMessage(), e);
 					return false;
 				}
 
@@ -307,7 +309,7 @@ public final class TaskManager {
 
 			return true;
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Cannot add the unique task: " + e.getMessage(), e);
+			log.warn("Cannot add the unique task: " + e.getMessage(), e);
 		} finally {
 			try {
 				L2DatabaseFactory.close(con);
@@ -340,7 +342,7 @@ public final class TaskManager {
 			statement.close();
 			return true;
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Cannot add the task:  " + e.getMessage(), e);
+			log.warn("Cannot add the task:  " + e.getMessage(), e);
 		} finally {
 			try {
 				L2DatabaseFactory.close(con);

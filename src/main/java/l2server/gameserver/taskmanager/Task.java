@@ -16,8 +16,10 @@
 package l2server.gameserver.taskmanager;
 
 import l2server.Config;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.ScheduledFuture;
 
@@ -25,10 +27,11 @@ import java.util.concurrent.ScheduledFuture;
  * @author Layane
  */
 public abstract class Task {
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
 
 	public void initialize() {
 		if (Config.DEBUG) {
-			Log.info("Task" + getName() + " inializate");
+			log.info("Task" + getName() + " inializate");
 		}
 	}
 

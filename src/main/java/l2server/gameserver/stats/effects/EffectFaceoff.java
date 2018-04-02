@@ -17,21 +17,21 @@ package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @author Pere
  */
 
 public class EffectFaceoff extends L2Effect {
-	public EffectFaceoff(Env env, L2EffectTemplate template) {
+	public EffectFaceoff(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.DEBUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.DEBUFF;
 	}
 
 	@Override

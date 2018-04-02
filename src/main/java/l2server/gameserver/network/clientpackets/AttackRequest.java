@@ -15,9 +15,9 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 
 /**
@@ -48,19 +48,19 @@ public final class AttackRequest extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
 		// avoid using expensive operations if not needed
-		L2Object target;
+		WorldObject target;
 		if (activeChar.getTargetId() == objectId) {
 			target = activeChar.getTarget();
 		} else {
-			target = L2World.getInstance().findObject(objectId);
+			target = World.getInstance().findObject(objectId);
 		}
 		if (target == null) {
-			target = L2World.getInstance().getPlayer(objectId);
+			target = World.getInstance().getPlayer(objectId);
 			if (target == null) {
 				return;
 			}
@@ -73,7 +73,7 @@ public final class AttackRequest extends L2GameClientPacket {
 		}
 
 		// Only GMs can directly attack invisible characters
-		if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().getInvisible() && !activeChar.isGM()) {
+		if (target instanceof Player && ((Player) target).getAppearance().getInvisible() && !activeChar.isGM()) {
 			return;
 		}
 

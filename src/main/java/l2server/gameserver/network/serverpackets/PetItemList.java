@@ -16,9 +16,10 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -26,26 +27,29 @@ import l2server.log.Log;
  * @version $Revision: 1.4.2.1.2.4 $ $Date: 2005/03/27 15:29:39 $
  */
 public class PetItemList extends L2ItemListPacket {
+	private static Logger log = LoggerFactory.getLogger(PetItemList.class.getName());
+
+
 	
-	private L2PetInstance activeChar;
+	private PetInstance activeChar;
 	
-	public PetItemList(L2PetInstance character) {
+	public PetItemList(PetInstance character) {
 		activeChar = character;
 		if (Config.DEBUG) {
-			L2ItemInstance[] items = activeChar.getInventory().getItems();
-			for (L2ItemInstance temp : items) {
-				Log.fine("item:" + temp.getItem().getName() + " type1:" + temp.getItem().getType1() + " type2:" + temp.getItem().getType2());
+			Item[] items = activeChar.getInventory().getItems();
+			for (Item temp : items) {
+				log.debug("item:" + temp.getItem().getName() + " type1:" + temp.getItem().getType1() + " type2:" + temp.getItem().getType2());
 			}
 		}
 	}
 	
 	@Override
 	protected final void writeImpl() {
-		L2ItemInstance[] items = activeChar.getInventory().getItems();
+		Item[] items = activeChar.getInventory().getItems();
 		int count = items.length;
 		writeH(count);
 		
-		for (L2ItemInstance item : items) {
+		for (Item item : items) {
 			writeItem(item);
 		}
 	}

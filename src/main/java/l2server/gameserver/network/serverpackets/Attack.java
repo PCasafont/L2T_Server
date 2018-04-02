@@ -15,10 +15,10 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * sample
@@ -47,7 +47,7 @@ public class Attack extends L2GameServerPacket {
 		protected int flags;
 		protected int ssGrade;
 
-		Hit(L2Object target, int damage, boolean miss, boolean crit, byte shld) {
+		Hit(WorldObject target, int damage, boolean miss, boolean crit, byte shld) {
 			targetId = target.getObjectId();
 			this.damage = damage;
 			if (miss) {
@@ -57,12 +57,12 @@ public class Attack extends L2GameServerPacket {
 			if (crit) {
 				flags |= HITFLAG_CRIT;
 			}
-			if (soulshotCharge > L2ItemInstance.CHARGED_NONE) {
+			if (soulshotCharge > Item.CHARGED_NONE) {
 				flags |= HITFLAG_USESS;
 				ssGrade = Attack.this.ssGrade;
 			}
 			// dirty fix for lags on olympiad
-			if (shld > 0 && !(target instanceof L2PcInstance && ((L2PcInstance) target).isInOlympiadMode())) {
+			if (shld > 0 && !(target instanceof Player && ((Player) target).isInOlympiadMode())) {
 				flags |= HITFLAG_SHLD;
 			}
 
@@ -84,12 +84,12 @@ public class Attack extends L2GameServerPacket {
 	private Hit[] hits;
 
 	/**
-	 * @param attacker: the attacking L2Character<br>
-	 * @param target:   the target L2Object<br>
+	 * @param attacker: the attacking Creature<br>
+	 * @param target:   the target WorldObject<br>
 	 * @param ssCharge: true if soulshots used
 	 * @param ssGrade:  the grade of the soulshots
 	 */
-	public Attack(L2Character attacker, L2Object target, double ssCharge, int ssGrade) {
+	public Attack(Creature attacker, WorldObject target, double ssCharge, int ssGrade) {
 		attackerObjId = attacker.getObjectId();
 		targetObjId = target.getObjectId();
 		soulshotCharge = ssCharge;
@@ -102,7 +102,7 @@ public class Attack extends L2GameServerPacket {
 		tz = target.getZ();
 	}
 
-	public Hit createHit(L2Object target, int damage, boolean miss, boolean crit, byte shld) {
+	public Hit createHit(WorldObject target, int damage, boolean miss, boolean crit, byte shld) {
 		return new Hit(target, damage, miss, crit, shld);
 	}
 

@@ -4,9 +4,10 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.PlayerAssistsManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.util.Broadcast;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,6 +20,9 @@ import java.util.logging.Level;
  * @author Inia
  */
 public class PvpZone {
+	private static Logger log = LoggerFactory.getLogger(PvpZone.class.getName());
+
+
 
 	public static enum State {
 		INACTIVE,
@@ -28,8 +32,8 @@ public class PvpZone {
 	}
 
 	public static State state = State.INACTIVE;
-	public static Vector<L2PcInstance> players = new Vector<>();
-	public static Vector<L2PcInstance> fighters = new Vector<>();
+	public static Vector<Player> players = new Vector<>();
+	public static Vector<Player> fighters = new Vector<>();
 	public static Vector<Integer> fight = new Vector<>();
 
 	protected void openRegistrations() {
@@ -43,7 +47,7 @@ public class PvpZone {
 			return;
 		}
 
-		for (L2PcInstance player : players) {
+		for (Player player : players) {
 			if (player == null) {
 				continue;
 			}
@@ -55,7 +59,7 @@ public class PvpZone {
 		}
 	}
 
-	public int getRankedPoints(L2PcInstance player) {
+	public int getRankedPoints(Player player) {
 		Connection get = null;
 
 		try {
@@ -71,14 +75,14 @@ public class PvpZone {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
+			log.warn("Couldn't get current ranked points : " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(get);
 		}
 		return 0;
 	}
 
-	public void setRankedPoints(L2PcInstance player, int amount) {
+	public void setRankedPoints(Player player, int amount) {
 		Connection con = null;
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
@@ -90,13 +94,13 @@ public class PvpZone {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
+			log.error("Failed updating Ranked Points", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public void onKillPvpZone(L2PcInstance killed, L2PcInstance killer) {
+	public void onKillPvpZone(Player killed, Player killer) {
 		int killerCurrentPoints = getRankedPoints(killer);
 		int killedCurrentPoints = getRankedPoints(killed);
 
@@ -123,8 +127,8 @@ public class PvpZone {
 		killed.sendMessage("You lost " + totalPoints / 3 + " points");
 		killed.sendMessage("Current points: " + getRankedPoints(killed));
 
-		List<L2PcInstance> assistants = PlayerAssistsManager.getInstance().getAssistants(killer, killed, true);
-		for (L2PcInstance assistant : assistants) {
+		List<Player> assistants = PlayerAssistsManager.getInstance().getAssistants(killer, killed, true);
+		for (Player assistant : assistants) {
 			int assistantCurrentPoints = getRankedPoints(killer);
 
 			totalPoints = ((killedCurrentPoints + 1) / (killerCurrentPoints + 1)) + 2;
@@ -147,7 +151,7 @@ public class PvpZone {
 		reviveKilled(killed);
 	}
 
-	public void reviveKilled(L2PcInstance player) {
+	public void reviveKilled(Player player) {
 		player.sendMessage("You will revive in 10 seconds!");
 		//Pause of 10 Seconds
 		try {
@@ -181,7 +185,7 @@ public class PvpZone {
 
 	public static void revert() {
 		if (!players.isEmpty()) {
-			for (L2PcInstance p : players) {
+			for (Player p : players) {
 				if (p == null) {
 					continue;
 				}
@@ -203,7 +207,7 @@ public class PvpZone {
 	public static void clean() {
 
 		if (state == State.FIGHT) {
-			for (L2PcInstance p : players) {
+			for (Player p : players) {
 				p.setTeam(0);
 			}
 		}

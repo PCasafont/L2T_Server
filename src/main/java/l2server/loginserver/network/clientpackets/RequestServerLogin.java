@@ -17,7 +17,8 @@ package l2server.loginserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.loginserver.LoginController;
 import l2server.loginserver.SessionKey;
 import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
@@ -35,6 +36,9 @@ import java.util.logging.Level;
  * c: server ID
  */
 public class RequestServerLogin extends L2LoginClientPacket {
+	private static Logger log = LoggerFactory.getLogger(RequestServerLogin.class.getName());
+
+
 	private int skey1;
 	private int skey2;
 	private int serverId;
@@ -114,12 +118,12 @@ public class RequestServerLogin extends L2LoginClientPacket {
 							statement.executeUpdate();
 							statement.close();
 						} catch (Exception e) {
-							Log.log(Level.WARNING, "Could not set LastDimensionId: " + e.getMessage(), e);
+							log.warn("Could not set LastDimensionId: " + e.getMessage(), e);
 						} finally {
 							L2DatabaseFactory.close(con);
 						}
 						
-						Log.info("Update LastDimensionId = " + logIntoDimensionId + " for " + getClient().getAccount());
+						log.info("Update LastDimensionId = " + logIntoDimensionId + " for " + getClient().getAccount());
 					}
 				}
 			} else {

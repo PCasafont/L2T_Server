@@ -22,35 +22,35 @@ import l2server.gameserver.events.instanced.EventInstance.EventState;
 import l2server.gameserver.handler.IActionHandler;
 import l2server.gameserver.instancemanager.CustomOfflineBuffersManager;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
-import l2server.gameserver.templates.skills.L2EffectType;
+import l2server.gameserver.templates.skills.EffectType;
 
 public class L2PcInstanceAction implements IActionHandler {
 	/**
-	 * Manage actions when a player click on this L2PcInstance.<BR><BR>
+	 * Manage actions when a player click on this Player.<BR><BR>
 	 * <p>
-	 * <B><U> Actions on first click on the L2PcInstance (Select it)</U> :</B><BR><BR>
+	 * <B><U> Actions on first click on the Player (Select it)</U> :</B><BR><BR>
 	 * <li>Set the target of the player</li>
 	 * <li>Send a Server->Client packet MyTargetSelected to the player (display the select window)</li><BR><BR>
 	 * <p>
-	 * <B><U> Actions on second click on the L2PcInstance (Follow it/Attack it/Intercat with it)</U> :</B><BR><BR>
+	 * <B><U> Actions on second click on the Player (Follow it/Attack it/Intercat with it)</U> :</B><BR><BR>
 	 * <li>Send a Server->Client packet MyTargetSelected to the player (display the select window)</li>
-	 * <li>If target L2PcInstance has a Private Store, notify the player AI with AI_INTENTION_INTERACT</li>
-	 * <li>If target L2PcInstance is autoAttackable, notify the player AI with AI_INTENTION_ATTACK</li><BR><BR>
-	 * <li>If target L2PcInstance is NOT autoAttackable, notify the player AI with AI_INTENTION_FOLLOW</li><BR><BR>
+	 * <li>If target Player has a Private Store, notify the player AI with AI_INTENTION_INTERACT</li>
+	 * <li>If target Player is autoAttackable, notify the player AI with AI_INTENTION_ATTACK</li><BR><BR>
+	 * <li>If target Player is NOT autoAttackable, notify the player AI with AI_INTENTION_FOLLOW</li><BR><BR>
 	 * <p>
 	 * <B><U> Example of use </U> :</B><BR><BR>
 	 * <li> Client packet : Action, AttackRequest</li><BR><BR>
 	 *
-	 * @param activeChar The player that start an action on target L2PcInstance
+	 * @param activeChar The player that start an action on target Player
 	 */
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
+	public boolean action(Player activeChar, WorldObject target, boolean interact) {
 		activeChar.onActionRequest();
 
 		// See description in Events.java
@@ -68,7 +68,7 @@ public class L2PcInstanceAction implements IActionHandler {
 			return false;
 		}
 
-		// Check if the L2PcInstance is confused
+		// Check if the Player is confused
 		if (activeChar.isOutOfControl()) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
@@ -81,8 +81,8 @@ public class L2PcInstanceAction implements IActionHandler {
 			return false;
 		}
 
-		if (activeChar != target && (activeChar.getParty() == null || activeChar.getParty() != ((L2PcInstance) target).getParty()) &&
-				((L2PcInstance) target).isAffected(L2EffectType.UNTARGETABLE.getMask()) && !activeChar.isGM()) {
+		if (activeChar != target && (activeChar.getParty() == null || activeChar.getParty() != ((Player) target).getParty()) &&
+				((Player) target).isAffected(EffectType.UNTARGETABLE.getMask()) && !activeChar.isGM()) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
@@ -91,7 +91,7 @@ public class L2PcInstanceAction implements IActionHandler {
 			InstanceManager.getInstance().destroyInstance(activeChar.getObjectId());
 		}
 
-		// Check if the activeChar already target this L2PcInstance
+		// Check if the activeChar already target this Player
 		if (activeChar.getTarget() != target) {
 			// Set the target of the activeChar
 			activeChar.setTarget(target);
@@ -99,26 +99,26 @@ public class L2PcInstanceAction implements IActionHandler {
 			// Send a Server->Client packet MyTargetSelected to the activeChar
 			// The color to display in the select window is White
 			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
-			if (target instanceof L2Character) {
-				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character) target));
+			if (target instanceof Creature) {
+				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((Creature) target));
 			}
 			if (activeChar != target) {
-				activeChar.sendPacket(new ValidateLocation((L2Character) target));
+				activeChar.sendPacket(new ValidateLocation((Creature) target));
 			}
 		} else if (interact) {
 			if (activeChar != target) {
-				activeChar.sendPacket(new ValidateLocation((L2Character) target));
+				activeChar.sendPacket(new ValidateLocation((Creature) target));
 			}
-			// Check if this L2PcInstance has a Private Store
-			if (((L2PcInstance) target).getPrivateStoreType() != 0) {
+			// Check if this Player has a Private Store
+			if (((Player) target).getPrivateStoreType() != 0) {
 				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 			} else {
-				// Check if this L2PcInstance is autoAttackable
+				// Check if this Player is autoAttackable
 				if (target.isAutoAttackable(activeChar)) {
 					// activeChar with lvl < 21 can't attack a cursed weapon holder
 					// And a cursed weapon holder  can't attack activeChars with lvl < 21
-					if (((L2PcInstance) target).isCursedWeaponEquipped() && activeChar.getLevel() < 21 ||
-							activeChar.isCursedWeaponEquipped() && ((L2Character) target).getLevel() < 21) {
+					if (((Player) target).isCursedWeaponEquipped() && activeChar.getLevel() < 21 ||
+							activeChar.isCursedWeaponEquipped() && ((Creature) target).getLevel() < 21) {
 						activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 					} else {
 						if (Config.GEODATA > 0) {
@@ -142,8 +142,8 @@ public class L2PcInstanceAction implements IActionHandler {
 						activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
 					}
 
-					if (Config.OFFLINE_BUFFERS_ENABLE && target instanceof L2PcInstance && ((L2PcInstance) target).getClient() != null &&
-							((L2PcInstance) target).getClient().isDetached() && ((L2PcInstance) target).getIsOfflineBuffer()) {
+					if (Config.OFFLINE_BUFFERS_ENABLE && target instanceof Player && ((Player) target).getClient() != null &&
+							((Player) target).getClient().isDetached() && ((Player) target).getIsOfflineBuffer()) {
 						CustomOfflineBuffersManager.getInstance().getSpecificBufferInfo(activeChar, target.getObjectId());
 					}
 				}

@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -40,8 +40,8 @@ public class ConditionPlayerCharges extends Condition {
 	@Override
 	public boolean testImpl(Env env) {
 		//This can be used by monsters but getCharges not exist
-		if (env.player instanceof L2PcInstance) {
-			return ((L2PcInstance) env.player).getCharges() >= charges;
+		if (env.player instanceof Player) {
+			return ((Player) env.player).getCharges() >= charges;
 		}
 
 		return false;

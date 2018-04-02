@@ -17,7 +17,8 @@ package l2server.loginserver;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.loginserver.network.gameserverpackets.ServerStatus;
 import l2server.util.IPSubnet;
 import l2server.util.Rnd;
@@ -45,6 +46,9 @@ import java.util.logging.Level;
  * @author KenM
  */
 public class GameServerTable {
+	private static Logger log = LoggerFactory.getLogger(GameServerTable.class.getName());
+
+
 	
 	private static GameServerTable instance;
 	
@@ -74,13 +78,13 @@ public class GameServerTable {
 	
 	public GameServerTable() throws SQLException, NoSuchAlgorithmException, InvalidAlgorithmParameterException {
 		loadServerNames();
-		Log.info("Loaded " + serverNames.size() + " server names");
+		log.info("Loaded " + serverNames.size() + " server names");
 		
 		loadRegisteredGameServers();
-		Log.info("Loaded " + gameServerTable.size() + " registered Game Servers");
+		log.info("Loaded " + gameServerTable.size() + " registered Game Servers");
 		
 		loadRSAKeys();
-		Log.info("Cached " + keyPairs.length + " RSA keys for Game Server communication.");
+		log.info("Cached " + keyPairs.length + " RSA keys for Game Server communication.");
 	}
 	
 	private void loadRSAKeys() throws NoSuchAlgorithmException, InvalidAlgorithmParameterException {
@@ -184,7 +188,7 @@ public class GameServerTable {
 			
 			register(id, new GameServerInfo(id, hexId));
 		} catch (SQLException e) {
-			Log.log(Level.SEVERE, "SQL error while saving gameserver.", e);
+			log.error("SQL error while saving gameserver.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

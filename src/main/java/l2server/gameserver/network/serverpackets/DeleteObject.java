@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 
 /**
  * format  cdd
@@ -25,7 +25,7 @@ import l2server.gameserver.model.L2Object;
 public final class DeleteObject extends L2GameServerPacket {
 	private final int objectId;
 	
-	public DeleteObject(L2Object obj) {
+	public DeleteObject(WorldObject obj) {
 		objectId = obj.getObjectId();
 	}
 	

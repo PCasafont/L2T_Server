@@ -16,7 +16,8 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -26,6 +27,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PlayerStatDataTable {
+	private static Logger log = LoggerFactory.getLogger(PlayerStatDataTable.class.getName());
+
+
 	public class PlayerStatData {
 		public final float HP;
 		public final float MP;
@@ -65,7 +69,7 @@ public class PlayerStatDataTable {
 			regenData.put(level, new PlayerStatData(hp, mp, cp));
 		}
 
-		Log.info("PlayerStatData: Loaded regen data for " + regenData.size() + " levels.");
+		log.info("PlayerStatData: Loaded regen data for " + regenData.size() + " levels.");
 
 		classMaxData.clear();
 		file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "stats/classStats.xml");
@@ -94,7 +98,7 @@ public class PlayerStatDataTable {
 			}
 		}
 
-		Log.info("PlayerStatData: Loaded class max stat data for " + classMaxData.size() + " classes.");
+		log.info("PlayerStatData: Loaded class max stat data for " + classMaxData.size() + " classes.");
 	}
 
 	public float getHpRegen(int level) {

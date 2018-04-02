@@ -16,8 +16,7 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * Format: chdd
@@ -44,7 +43,7 @@ public final class RequestExCubeGameChangeTeam extends L2GameClientPacket {
 		if (HandysBlockCheckerManager.getInstance().arenaIsBeingUsed(arena)) {
 			return;
 		}
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		
 		switch (team) {
 			case 0:
@@ -62,7 +61,7 @@ public final class RequestExCubeGameChangeTeam extends L2GameClientPacket {
 				}
 				break;
 			default:
-				Log.warning("Wrong Cube Game Team ID: " + this.team);
+				log.warn("Wrong Cube Game Team ID: " + this.team);
 				break;
 		}
 	}

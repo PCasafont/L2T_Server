@@ -21,12 +21,11 @@ import l2server.gameserver.datatables.EnchantCostsTable;
 import l2server.gameserver.datatables.EnchantCostsTable.EnchantSkillDetail;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2EnchantSkillLearn;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.sql.Connection;
@@ -66,7 +65,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket {
 			return;
 		}
 		
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -89,7 +88,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket {
 		
 		int enchantRoute = skillEnchant / 1000;
 		int enchantLevel = skillEnchant % 1000;
-		L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl, enchantRoute, enchantLevel);
+		Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl, enchantRoute, enchantLevel);
 		if (skill == null) {
 			return;
 		}
@@ -103,7 +102,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket {
 			return;
 		}
 		
-		L2Skill currentSkill = player.getKnownSkill(skillId);
+		Skill currentSkill = player.getKnownSkill(skillId);
 		int currentLevel = currentSkill.getLevel();
 		int currentEnchantRoute = currentSkill.getEnchantRouteId();
 		int currentEnchantLevel = currentSkill.getEnchantLevel();
@@ -139,7 +138,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket {
 		if (player.getSp() >= requiredSp || type == 2) {
 			// only first lvl requires book
 			boolean firstLevel = enchantLevel % 10 == 1; // 101, 201, 301 ...
-			L2ItemInstance spb = player.getInventory().getItemByItemId(reqItemId);
+			Item spb = player.getInventory().getItemByItemId(reqItemId);
 			
 			boolean useBook = type == 1 || Config.ES_SP_BOOK_NEEDED && (type != 0 || firstLevel);
 			if (useBook && spb == null)// Haven't spellbook
@@ -206,7 +205,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket {
 				player.sendPacket(ExEnchantSkillResult.valueOf(true));
 				
 				if (Config.DEBUG) {
-					Log.fine("Learned skill ID: " + skillId + " Level: " + skillLvl + " for " + requiredSp + " SP, " + requireditems + " Adena.");
+					log.debug("Learned skill ID: " + skillId + " Level: " + skillLvl + " for " + requiredSp + " SP, " + requireditems + " Adena.");
 				}
 				
 				if (enchantRoute > 0) {
@@ -224,7 +223,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket {
 				player.addSkill(skill, true);
 				
 				if (Config.DEBUG) {
-					Log.fine("Learned skill ID: " + skillId + " Level: " + skillLvl + " for " + requiredSp + " SP, " + requireditems + " Adena.");
+					log.debug("Learned skill ID: " + skillId + " Level: " + skillLvl + " for " + requiredSp + " SP, " + requireditems + " Adena.");
 				}
 				
 				player.sendPacket(ExEnchantSkillResult.valueOf(true));
@@ -267,7 +266,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket {
 		}
 	}
 	
-	private void logSkillEnchant(L2PcInstance player, L2Skill skill, L2ItemInstance spb, int rate) {
+	private void logSkillEnchant(Player player, Skill skill, Item spb, int rate) {
 		if (Config.LOG_SKILL_ENCHANTS) {
 			Connection con = null;
 			try {

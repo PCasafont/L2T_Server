@@ -17,9 +17,10 @@ package l2server.gameserver.model;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.UITable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.ActionKey;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -34,15 +35,18 @@ import java.util.logging.Level;
  * @author mrTJO
  */
 public class L2UIKeysSettings {
+	private static Logger log = LoggerFactory.getLogger(L2UIKeysSettings.class.getName());
+
+
 	
-	private final L2PcInstance player;
+	private final Player player;
 	
 	Map<Integer, List<ActionKey>> storedKeys;
 	Map<Integer, List<Integer>> storedCategories;
 	
 	boolean saved = true;
 	
-	public L2UIKeysSettings(L2PcInstance player) {
+	public L2UIKeysSettings(Player player) {
 		this.player = player;
 		loadFromDB();
 	}
@@ -106,7 +110,7 @@ public class L2UIKeysSettings {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: saveInDB(): " + e.getMessage(), e);
+			log.warn("Exception: saveInDB(): " + e.getMessage(), e);
 		}
 		
 		query = "REPLACE INTO character_ui_actions (`charId`, `cat`, `order`, `cmd`, `key`, `tgKey1`, `tgKey2`, `show`) VALUES";
@@ -127,7 +131,7 @@ public class L2UIKeysSettings {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: saveInDB(): " + e.getMessage(), e);
+			log.warn("Exception: saveInDB(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -157,7 +161,7 @@ public class L2UIKeysSettings {
 			stmt.close();
 			rs.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: getCatsFromDB(): " + e.getMessage(), e);
+			log.warn("Exception: getCatsFromDB(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -193,7 +197,7 @@ public class L2UIKeysSettings {
 			stmt.close();
 			rs.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: getKeysFromDB(): " + e.getMessage(), e);
+			log.warn("Exception: getKeysFromDB(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

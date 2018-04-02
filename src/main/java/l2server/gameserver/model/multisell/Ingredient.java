@@ -16,10 +16,10 @@
 package l2server.gameserver.model.multisell;
 
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.templates.item.L2Armor;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.gameserver.templates.item.L2Weapon;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.templates.item.ArmorTemplate;
+import l2server.gameserver.templates.item.ItemTemplate;
+import l2server.gameserver.templates.item.WeaponTemplate;
 
 /**
  * @author DS
@@ -30,7 +30,7 @@ public class Ingredient implements Cloneable {
 	private float chance = 0;
 	private boolean isTaxIngredient, maintainIngredient;
 
-	private L2Item template = null;
+	private ItemTemplate template = null;
 	private ItemInfo itemInfo = null;
 
 	public Ingredient(int itemId, long itemCount, boolean isTaxIngredient, boolean maintainIngredient) {
@@ -52,11 +52,11 @@ public class Ingredient implements Cloneable {
 		}
 	}
 
-	public final L2Item getTemplate() {
+	public final ItemTemplate getTemplate() {
 		return template;
 	}
 
-	public final void setItemInfo(L2ItemInstance item) {
+	public final void setItemInfo(Item item) {
 		itemInfo = new ItemInfo(item);
 	}
 
@@ -117,7 +117,7 @@ public class Ingredient implements Cloneable {
 	}
 
 	public final boolean isArmorOrWeapon() {
-		return template != null && (template instanceof L2Armor || template instanceof L2Weapon);
+		return template != null && (template instanceof ArmorTemplate || template instanceof WeaponTemplate);
 	}
 
 	public final int getWeight() {

@@ -15,18 +15,19 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @author UnAfraid
  */
 
 public class EffectTransferDamage extends L2Effect {
-	public EffectTransferDamage(Env env, L2EffectTemplate template) {
+	public EffectTransferDamage(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
@@ -35,28 +36,28 @@ public class EffectTransferDamage extends L2Effect {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		if (getEffected() instanceof L2Playable && getEffector() instanceof L2PcInstance) {
-			((L2Playable) getEffected()).setTransferDamageTo((L2PcInstance) getEffector());
+		if (getEffected() instanceof Playable && getEffector() instanceof Player) {
+			((Playable) getEffected()).setTransferDamageTo((Player) getEffector());
 		}
 		return true;
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {
-		if (getEffected() instanceof L2Playable && getEffector() instanceof L2PcInstance) {
-			((L2Playable) getEffected()).setTransferDamageTo(null);
+		if (getEffected() instanceof Playable && getEffector() instanceof Player) {
+			((Playable) getEffected()).setTransferDamageTo(null);
 		}
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

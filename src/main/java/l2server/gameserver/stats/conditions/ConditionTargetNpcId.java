@@ -15,8 +15,8 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.DoorInstance;
 import l2server.gameserver.stats.Env;
 
 import java.util.ArrayList;
@@ -41,12 +41,12 @@ public class ConditionTargetNpcId extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		if (env.target instanceof L2Npc) {
-			return npcIds.contains(((L2Npc) env.target).getNpcId());
+		if (env.target instanceof Npc) {
+			return npcIds.contains(((Npc) env.target).getNpcId());
 		}
 
-		if (env.target instanceof L2DoorInstance) {
-			return npcIds.contains(((L2DoorInstance) env.target).getDoorId());
+		if (env.target instanceof DoorInstance) {
+			return npcIds.contains(((DoorInstance) env.target).getDoorId());
 		}
 
 		return false;

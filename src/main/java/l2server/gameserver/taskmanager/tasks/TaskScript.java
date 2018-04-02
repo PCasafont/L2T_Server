@@ -18,7 +18,8 @@ package l2server.gameserver.taskmanager.tasks;
 import l2server.gameserver.scripting.L2ScriptEngineManager;
 import l2server.gameserver.taskmanager.Task;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.script.ScriptException;
 import java.io.File;
@@ -27,6 +28,9 @@ import java.io.File;
  * @author janiii
  */
 public class TaskScript extends Task {
+	private static Logger log = LoggerFactory.getLogger(TaskScript.class.getName());
+
+
 
 	public static final String NAME = "script";
 
@@ -48,13 +52,13 @@ public class TaskScript extends Task {
 			try {
 				L2ScriptEngineManager.INSTANCE.executeScript(file);
 			} catch (ScriptException e) {
-				Log.warning("Failed loading: " + task.getParams()[2]);
+				log.warn("Failed loading: " + task.getParams()[2]);
 				L2ScriptEngineManager.INSTANCE.reportScriptFileError(file, e);
 			} catch (Exception e) {
-				Log.warning("Failed loading: " + task.getParams()[2]);
+				log.warn("Failed loading: " + task.getParams()[2]);
 			}
 		} else {
-			Log.warning("File Not Found: " + task.getParams()[2]);
+			log.warn("File Not Found: " + task.getParams()[2]);
 		}
 	}
 }

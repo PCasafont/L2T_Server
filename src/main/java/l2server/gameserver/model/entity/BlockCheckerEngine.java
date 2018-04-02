@@ -22,37 +22,38 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager;
 import l2server.gameserver.instancemanager.HandysBlockCheckerManager.ArenaParticipantsHolder;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2BlockInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.BlockInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.model.itemcontainer.PcInventory;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.util.Rnd;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
 
 /**
  * @author BiggBoss
  */
 public final class BlockCheckerEngine {
+	private static Logger log = LoggerFactory.getLogger(BlockCheckerEngine.class.getName());
 
 	// The object which holds all basic members info
 	private HandysBlockCheckerManager.ArenaParticipantsHolder holder;
 	// Maps to hold player of each team and his points
-	private HashMap<L2PcInstance, Integer> redTeamPoints = new HashMap<>();
-	private HashMap<L2PcInstance, Integer> blueTeamPoints = new HashMap<>();
+	private HashMap<Player, Integer> redTeamPoints = new HashMap<>();
+	private HashMap<Player, Integer> blueTeamPoints = new HashMap<>();
 	// The initial points of the event
 	private int redPoints = 15;
 	private int bluePoints = 15;
@@ -78,7 +79,7 @@ public final class BlockCheckerEngine {
 	// Common z coordinate
 	private static final int zCoord = -2405;
 	// List of dropped items in event (for later deletion)
-	private ArrayList<L2ItemInstance> drops = new ArrayList<>();
+	private ArrayList<Item> drops = new ArrayList<>();
 	// Default arena
 	private static final byte DEFAULT_ARENA = -1;
 	// Event is started
@@ -94,10 +95,10 @@ public final class BlockCheckerEngine {
 			this.arena = arena;
 		}
 
-		for (L2PcInstance player : holder.getRedPlayers()) {
+		for (Player player : holder.getRedPlayers()) {
 			redTeamPoints.put(player, 0);
 		}
-		for (L2PcInstance player : holder.getBluePlayers()) {
+		for (Player player : holder.getBluePlayers()) {
 			blueTeamPoints.put(player, 0);
 		}
 	}
@@ -171,7 +172,7 @@ public final class BlockCheckerEngine {
 	 * @param isRed
 	 * @return int
 	 */
-	public int getPlayerPoints(L2PcInstance player, boolean isRed) {
+	public int getPlayerPoints(Player player, boolean isRed) {
 		if (!redTeamPoints.containsKey(player) && !blueTeamPoints.containsKey(player)) {
 			return 0;
 		}
@@ -189,7 +190,7 @@ public final class BlockCheckerEngine {
 	 * @param player
 	 * @param team
 	 */
-	public synchronized void increasePlayerPoints(L2PcInstance player, int team) {
+	public synchronized void increasePlayerPoints(Player player, int team) {
 		if (player == null) {
 			return;
 		}
@@ -213,7 +214,7 @@ public final class BlockCheckerEngine {
 	 *
 	 * @param item
 	 */
-	public void addNewDrop(L2ItemInstance item) {
+	public void addNewDrop(Item item) {
 		if (item != null) {
 			drops.add(item);
 		}
@@ -233,8 +234,8 @@ public final class BlockCheckerEngine {
 	 * Will send all packets for the event members with
 	 * the relation info
 	 */
-	private void broadcastRelationChanged(L2PcInstance plr) {
-		for (L2PcInstance p : holder.getAllPlayers()) {
+	private void broadcastRelationChanged(Player plr) {
+		for (Player p : holder.getAllPlayers()) {
 			p.sendPacket(new RelationChanged(plr, plr.getRelation(p), plr.isAutoAttackable(p)));
 		}
 	}
@@ -257,11 +258,11 @@ public final class BlockCheckerEngine {
 				ThreadPoolManager.getInstance().executeTask(new EndEvent());
 
 				if (Config.DEBUG) {
-					Log.config("Handys Block Checker Event at arena " + arena + " ended due lack of players!");
+					log.debug("Handys Block Checker Event at arena " + arena + " ended due lack of players!");
 				}
 			}
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Couldnt end Block Checker event at " + arena, e);
+			log.error("Couldnt end Block Checker event at " + arena, e);
 		}
 	}
 
@@ -271,7 +272,7 @@ public final class BlockCheckerEngine {
 	 */
 	public class StartEvent implements Runnable {
 		// In event used skills
-		private L2Skill freeze, transformationRed, transformationBlue;
+		private Skill freeze, transformationRed, transformationBlue;
 		// Common and unparametizer packet
 		private final ExCubeGameCloseUI closeUserInterface = new ExCubeGameCloseUI();
 
@@ -297,7 +298,7 @@ public final class BlockCheckerEngine {
 			final ExCubeGameChangePoints initialPoints = new ExCubeGameChangePoints(300, bluePoints, redPoints);
 			ExCubeGameExtendedChangePoints clientSetUp;
 
-			for (L2PcInstance player : holder.getAllPlayers()) {
+			for (Player player : holder.getAllPlayers()) {
 				if (player == null) {
 					continue;
 				}
@@ -331,7 +332,7 @@ public final class BlockCheckerEngine {
 				if (player.getPet() != null) {
 					player.getPet().unSummon(player);
 				}
-				for (L2SummonInstance summon : player.getSummons()) {
+				for (SummonInstance summon : player.getSummons()) {
 					summon.unSummon(player);
 				}
 
@@ -346,7 +347,7 @@ public final class BlockCheckerEngine {
 				}
 				// Set the current player arena
 				player.setBlockCheckerArena((byte) arena);
-				player.setInsideZone(L2Character.ZONE_PVP, true);
+				player.setInsideZone(Creature.ZONE_PVP, true);
 				// Send needed packets
 				player.sendPacket(initialPoints);
 				player.sendPacket(closeUserInterface);
@@ -361,7 +362,7 @@ public final class BlockCheckerEngine {
 		public void run() {
 			// Wrong arena passed, stop event
 			if (arena == -1) {
-				Log.severe("Couldnt set up the arena Id for the Block Checker event, cancelling event...");
+				log.error("Couldnt set up the arena Id for the Block Checker event, cancelling event...");
 				return;
 			}
 			isStarted = true;
@@ -411,7 +412,7 @@ public final class BlockCheckerEngine {
 			// if != 0, will spawn a blue block
 			byte random = 2;
 			// common template
-			final L2NpcTemplate template = NpcTable.getInstance().getTemplate(18672);
+			final NpcTemplate template = NpcTable.getInstance().getTemplate(18672);
 			// Spawn blocks
 			try {
 				// Creates 50 new blocks
@@ -425,7 +426,7 @@ public final class BlockCheckerEngine {
 					SpawnTable.getInstance().addNewSpawn(spawn, false);
 					spawn.startRespawn();
 					spawn.doSpawn();
-					L2BlockInstance block = (L2BlockInstance) spawn.getNpc();
+					BlockInstance block = (BlockInstance) spawn.getNpc();
 					// switch color
 					if (random % 2 == 0) {
 						block.setRed(true);
@@ -443,7 +444,7 @@ public final class BlockCheckerEngine {
 
 			// Spawn the block carrying girl
 			if (round == 1 || round == 2) {
-				L2NpcTemplate girl = NpcTable.getInstance().getTemplate(18676);
+				NpcTemplate girl = NpcTable.getInstance().getTemplate(18676);
 				try {
 					final L2Spawn girlSpawn = new L2Spawn(girl);
 					girlSpawn.setX(arenaCoordinates[arena][4] + Rnd.get(-400, 400));
@@ -457,7 +458,7 @@ public final class BlockCheckerEngine {
 					// Schedule his deletion after 9 secs of spawn
 					ThreadPoolManager.getInstance().scheduleGeneral(new CarryingGirlUnspawn(girlSpawn), 9000);
 				} catch (Exception e) {
-					Log.warning("Couldnt Spawn Block Checker NPCs! Wrong instance type at npc table?");
+					log.warn("Couldnt Spawn Block Checker NPCs! Wrong instance type at npc table?");
 					if (Config.DEBUG) {
 						e.printStackTrace();
 					}
@@ -483,7 +484,7 @@ public final class BlockCheckerEngine {
 		@Override
 		public void run() {
 			if (spawn == null) {
-				Log.warning("HBCE: Block Carrying Girl is null");
+				log.warn("HBCE: Block Carrying Girl is null");
 				return;
 			}
 			SpawnTable.getInstance().deleteSpawn(spawn, false);
@@ -527,7 +528,7 @@ public final class BlockCheckerEngine {
 			}
 			spawns.clear();
 
-			for (L2ItemInstance item : drops) {
+			for (Item item : drops) {
 				// npe
 				if (item == null) {
 					continue;
@@ -539,7 +540,7 @@ public final class BlockCheckerEngine {
 				}
 
 				item.decayMe();
-				L2World.getInstance().removeObject(item);
+				World.getInstance().removeObject(item);
 			}
 			drops.clear();
 		}
@@ -581,10 +582,10 @@ public final class BlockCheckerEngine {
 		 * @param isRed
 		 */
 		private void rewardAsWinner(boolean isRed) {
-			HashMap<L2PcInstance, Integer> tempPoints = isRed ? redTeamPoints : blueTeamPoints;
+			HashMap<Player, Integer> tempPoints = isRed ? redTeamPoints : blueTeamPoints;
 
 			// Main give
-			for (L2PcInstance pc : tempPoints.keySet()) {
+			for (Player pc : tempPoints.keySet()) {
 				if (pc == null) {
 					continue;
 				}
@@ -597,9 +598,9 @@ public final class BlockCheckerEngine {
 			}
 
 			int first = 0, second = 0;
-			L2PcInstance winner1 = null, winner2 = null;
-			for (Entry<L2PcInstance, Integer> entry : tempPoints.entrySet()) {
-				L2PcInstance pc = entry.getKey();
+			Player winner1 = null, winner2 = null;
+			for (Entry<Player, Integer> entry : tempPoints.entrySet()) {
+				Player pc = entry.getKey();
 				int pcPoints = entry.getValue();
 				if (pcPoints > first) {
 					// Move old data
@@ -630,10 +631,10 @@ public final class BlockCheckerEngine {
 		 * @param isRed
 		 */
 		private void rewardAsLooser(boolean isRed) {
-			HashMap<L2PcInstance, Integer> tempPoints = isRed ? redTeamPoints : blueTeamPoints;
+			HashMap<Player, Integer> tempPoints = isRed ? redTeamPoints : blueTeamPoints;
 
-			for (Entry<L2PcInstance, Integer> entry : tempPoints.entrySet()) {
-				L2PcInstance player = entry.getKey();
+			for (Entry<Player, Integer> entry : tempPoints.entrySet()) {
+				Player player = entry.getKey();
 				if (player != null && entry.getValue() >= 10) {
 					player.addItem("Block Checker", 13067, 2, player, true);
 				}
@@ -647,7 +648,7 @@ public final class BlockCheckerEngine {
 		private void setPlayersBack() {
 			final ExCubeGameEnd end = new ExCubeGameEnd(isRedWinner);
 
-			for (L2PcInstance player : holder.getAllPlayers()) {
+			for (Player player : holder.getAllPlayers()) {
 				if (player == null) {
 					continue;
 				}
@@ -670,7 +671,7 @@ public final class BlockCheckerEngine {
 				broadcastRelationChanged(player);
 				// Teleport Back
 				player.teleToLocation(-57478, -60367, -2370);
-				player.setInsideZone(L2Character.ZONE_PVP, false);
+				player.setInsideZone(Creature.ZONE_PVP, false);
 				// Send end packet
 				player.sendPacket(end);
 				player.broadcastUserInfo();

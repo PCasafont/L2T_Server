@@ -15,7 +15,7 @@
 
 package l2server.gameserver.model;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -128,7 +128,7 @@ public final class L2SkillLearn {
 		return costSkills;
 	}
 
-	public Map<Integer, Integer> getCostSkills(L2PcInstance player) {
+	public Map<Integer, Integer> getCostSkills(Player player) {
 		Map<Integer, Integer> costSkills = new HashMap<>();
 		for (int skillId : this.costSkills) {
 			int skillLevel = player.getSkillLevelHash(skillId);

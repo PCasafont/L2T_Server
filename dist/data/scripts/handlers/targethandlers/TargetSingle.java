@@ -17,19 +17,19 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2TrapInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.TrapInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillTargetDirection;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.templates.skills.SkillTargetDirection;
+import l2server.gameserver.templates.skills.SkillTargetType;
 
 /**
  * Used by all skills that affects a single target.
@@ -39,19 +39,19 @@ import l2server.gameserver.templates.skills.L2SkillTargetType;
  */
 public class TargetSingle implements ISkillTargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		final L2PcInstance aPlayer = activeChar.getActingPlayer();
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		final Player aPlayer = activeChar.getActingPlayer();
 
 		// Traps cant hit rabbits!
-		if (activeChar instanceof L2TrapInstance && target instanceof L2MonsterInstance) {
-			final L2MonsterInstance monster = (L2MonsterInstance) target;
+		if (activeChar instanceof TrapInstance && target instanceof MonsterInstance) {
+			final MonsterInstance monster = (MonsterInstance) target;
 
 			if (monster.getNpcId() == 155001) {
 				return null;
 			}
 		}
 
-		if (skill.getTargetDirection() == L2SkillTargetDirection.ALL_SUMMONS && aPlayer.getSummon(0) != null && !(target instanceof L2Summon)) {
+		if (skill.getTargetDirection() == SkillTargetDirection.ALL_SUMMONS && aPlayer.getSummon(0) != null && !(target instanceof Summon)) {
 			target = aPlayer.getSummon(0);
 		}
 
@@ -62,7 +62,7 @@ public class TargetSingle implements ISkillTargetTypeHandler {
 			return null;
 		}
 
-		return new L2Character[]{target};
+		return new Creature[]{target};
 	}
 
 	/**
@@ -70,15 +70,15 @@ public class TargetSingle implements ISkillTargetTypeHandler {
 	 * For example if the target direction of the skill is set to Dead Players, we'll check here if the target is a player, and if it's dead.
 	 * Returning false will result in the target being unreachable. "Incorrect target" is sent if the attack wasn't massive, otherwise it's just skipped.
 	 */
-	private final boolean isReachableTarget(final L2PcInstance activeChar, final L2Character target, L2SkillTargetDirection targetDirection) {
+	private final boolean isReachableTarget(final Player activeChar, final Creature target, SkillTargetDirection targetDirection) {
 		if (target == null) {
 			return false;
 		}
 
 		switch (targetDirection) {
 			case DEAD_CLAN_MEMBER: {
-				if (target instanceof L2Playable) {
-					final L2PcInstance tPlayer = target.getActingPlayer();
+				if (target instanceof Playable) {
+					final Player tPlayer = target.getActingPlayer();
 					if (tPlayer.isDead() && activeChar.isInSameClan(tPlayer)) {
 						return true;
 					}
@@ -86,8 +86,8 @@ public class TargetSingle implements ISkillTargetTypeHandler {
 				break;
 			}
 			case DEAD_ALLY_MEMBER: {
-				if (target instanceof L2Playable) {
-					final L2PcInstance tPlayer = target.getActingPlayer();
+				if (target instanceof Playable) {
+					final Player tPlayer = target.getActingPlayer();
 					if (tPlayer.isDead() && activeChar.isInSameAlly(tPlayer)) {
 						return true;
 					}
@@ -95,8 +95,8 @@ public class TargetSingle implements ISkillTargetTypeHandler {
 				break;
 			}
 			case DEAD_PET: {
-				if (target instanceof L2Summon) {
-					final L2Summon sTarget = (L2Summon) target;
+				if (target instanceof Summon) {
+					final Summon sTarget = (Summon) target;
 					if (sTarget.isDead()) {
 						return true;
 					}
@@ -104,7 +104,7 @@ public class TargetSingle implements ISkillTargetTypeHandler {
 				break;
 			}
 			case DEAD_PLAYABLE: {
-				if (target instanceof L2PcInstance || target instanceof L2PetInstance) {
+				if (target instanceof Player || target instanceof PetInstance) {
 					if (target.isDead()) {
 						return true;
 					}
@@ -112,8 +112,8 @@ public class TargetSingle implements ISkillTargetTypeHandler {
 				break;
 			}
 			case DEAD_MONSTER: {
-				if (target instanceof L2MonsterInstance) {
-					final L2MonsterInstance mTarget = (L2MonsterInstance) target;
+				if (target instanceof MonsterInstance) {
+					final MonsterInstance mTarget = (MonsterInstance) target;
 					if (mTarget.isDead()) {
 						return true;
 					}
@@ -121,8 +121,8 @@ public class TargetSingle implements ISkillTargetTypeHandler {
 				break;
 			}
 			case MONSTERS: {
-				if (target instanceof L2MonsterInstance) {
-					final L2MonsterInstance mTarget = (L2MonsterInstance) target;
+				if (target instanceof MonsterInstance) {
+					final MonsterInstance mTarget = (MonsterInstance) target;
 					if (!mTarget.isDead()) {
 						return true;
 					}
@@ -130,8 +130,8 @@ public class TargetSingle implements ISkillTargetTypeHandler {
 				break;
 			}
 			case UNDEAD: {
-				if (target instanceof L2MonsterInstance) {
-					final L2MonsterInstance mTarget = (L2MonsterInstance) target;
+				if (target instanceof MonsterInstance) {
+					final MonsterInstance mTarget = (MonsterInstance) target;
 					if (!mTarget.isDead() && mTarget.isUndead()) {
 						return true;
 					}
@@ -139,9 +139,9 @@ public class TargetSingle implements ISkillTargetTypeHandler {
 				break;
 			}
 			case ENNEMY_SUMMON: {
-				if (target instanceof L2Summon) {
-					final L2Summon sTarget = (L2Summon) target;
-					final L2PcInstance sOwner = sTarget.getOwner();
+				if (target instanceof Summon) {
+					final Summon sTarget = (Summon) target;
+					final Player sOwner = sTarget.getOwner();
 					if (!sTarget.isDead() && sOwner != null && activeChar != sOwner) {
 						return true;
 					}
@@ -149,8 +149,8 @@ public class TargetSingle implements ISkillTargetTypeHandler {
 				break;
 			}
 			case ALL_SUMMONS: {
-				if (target instanceof L2Summon) {
-					final L2Summon sTarget = (L2Summon) target;
+				if (target instanceof Summon) {
+					final Summon sTarget = (Summon) target;
 					if (!sTarget.isDead() && sTarget.getOwner() == activeChar) {
 						return true;
 					}
@@ -158,14 +158,14 @@ public class TargetSingle implements ISkillTargetTypeHandler {
 				break;
 			}
 			case ONE_NOT_SUMMONS: {
-				if (!(target instanceof L2Summon) && !target.isDead()) {
+				if (!(target instanceof Summon) && !target.isDead()) {
 					return true;
 				}
 				break;
 			}
 			case PARTY_ONE: {
-				if (target instanceof L2Playable) {
-					final L2PcInstance tPlayer = target.getActingPlayer();
+				if (target instanceof Playable) {
+					final Player tPlayer = target.getActingPlayer();
 					if (activeChar == tPlayer || activeChar.isInSameParty(tPlayer)) {
 						return true;
 					}
@@ -173,8 +173,8 @@ public class TargetSingle implements ISkillTargetTypeHandler {
 				break;
 			}
 			case PARTY_ONE_NOTME: {
-				if (target instanceof L2PcInstance) {
-					final L2PcInstance tPlayer = (L2PcInstance) target;
+				if (target instanceof Player) {
+					final Player tPlayer = (Player) target;
 					if (activeChar != tPlayer && activeChar.isInSameParty(tPlayer)) {
 						return true;
 					}
@@ -182,8 +182,8 @@ public class TargetSingle implements ISkillTargetTypeHandler {
 				break;
 			}
 			case PLAYER: {
-				if (target instanceof L2Playable) {
-					final L2PcInstance tPlayer = (L2PcInstance) target;
+				if (target instanceof Playable) {
+					final Player tPlayer = (Player) target;
 					if (activeChar != tPlayer) {
 						return true;
 					}
@@ -203,8 +203,8 @@ public class TargetSingle implements ISkillTargetTypeHandler {
 	}
 
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.TARGET_SINGLE;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.TARGET_SINGLE;
 	}
 
 	public static void main(String[] args) {

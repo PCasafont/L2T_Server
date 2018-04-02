@@ -9,19 +9,18 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.GrandBossInstance;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.QuestTimer;
-import l2server.gameserver.model.zone.type.L2BossZone;
+import l2server.gameserver.model.zone.type.BossZone;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Broadcast;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -67,7 +66,7 @@ public class Lindvior extends L2AttackableAIScript {
 	//private static final int redCircle					= 19391;
 	//private static final int blueCircle					= 19392;
 	private static final double maxGeneratorDamage = 1500000;
-	private static final L2BossZone bossZone = GrandBossManager.getInstance().getZone(45697, -26269, -1409);
+	private static final BossZone bossZone = GrandBossManager.getInstance().getZone(45697, -26269, -1409);
 
 	//Effects
 	private static final int allGeneratorsConnectedEffect = 21170110;
@@ -83,17 +82,17 @@ public class Lindvior extends L2AttackableAIScript {
 	private static final Location enterCords = new Location(46931, -28813, -1406);
 
 	//Skills
-	//private static final L2Skill rechargePossible 		= SkillTable.getInstance().getInfo(15605, 1);
-	//private static final L2Skill recharge 				= SkillTable.getInstance().getInfo(15606, 1);
-	private static final L2Skill takeOff = SkillTable.getInstance().getInfo(15596, 1);
+	//private static final Skill rechargePossible 		= SkillTable.getInstance().getInfo(15605, 1);
+	//private static final Skill recharge 				= SkillTable.getInstance().getInfo(15606, 1);
+	private static final Skill takeOff = SkillTable.getInstance().getInfo(15596, 1);
 
 	//Vars
-	private L2Npc dummyLindvior;
-	private L2Npc lindviorBoss;
+	private Npc dummyLindvior;
+	private Npc lindviorBoss;
 	private Location bossLocation;
 	private static long LastAction;
 	private int bossStage;
-	private Map<L2Npc, Double> manageGenerators = new HashMap<L2Npc, Double>();
+	private Map<Npc, Double> manageGenerators = new HashMap<Npc, Double>();
 
 	public Lindvior(int questId, String name, String descr) {
 		super(questId, name, descr);
@@ -123,9 +122,9 @@ public class Lindvior extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc) {
+	public String onSpawn(Npc npc) {
 		if (debug) {
-			Log.warning(getName() + ": onSpawn: " + npc.getName());
+			log.warn(getName() + ": onSpawn: " + npc.getName());
 		}
 
 		if (npc.getNpcId() == generatorId) {
@@ -143,9 +142,9 @@ public class Lindvior extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onFirstTalk: " + player.getName());
+			log.warn(getName() + ": onFirstTalk: " + player.getName());
 		}
 
 		if (npc.getNpcId() == generatorId) {
@@ -160,16 +159,16 @@ public class Lindvior extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 
 		int npcId = npc.getNpcId();
 		if (npcId == npcEnterId) {
 			int lindStatus = GrandBossManager.getInstance().getBossStatus(secondFloorLindvior);
 
-			final List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+			final List<Player> allPlayers = new ArrayList<Player>();
 			if (lindStatus == GrandBossManager.getInstance().DEAD) {
 				return "33881-01.html";
 			} else {
@@ -199,7 +198,7 @@ public class Lindvior extends L2AttackableAIScript {
 						player.getParty().getCommandChannel().getMembers() : player.getParty().getPartyMembers());
 			}
 
-			for (L2PcInstance enterPlayer : allPlayers) {
+			for (Player enterPlayer : allPlayers) {
 				if (enterPlayer == null) {
 					continue;
 				}
@@ -215,15 +214,15 @@ public class Lindvior extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		if (event.equalsIgnoreCase("unlock_lindvior")) {
-			L2Npc lindvior = addSpawn(secondFloorLindvior, -105200, -253104, -15264, 32768, false, 0);
+			Npc lindvior = addSpawn(secondFloorLindvior, -105200, -253104, -15264, 32768, false, 0);
 
-			GrandBossManager.getInstance().addBoss((L2GrandBossInstance) lindvior);
+			GrandBossManager.getInstance().addBoss((GrandBossInstance) lindvior);
 			GrandBossManager.getInstance().setBossStatus(secondFloorLindvior, GrandBossManager.getInstance().ALIVE);
 
 			Broadcast.toAllOnlinePlayers(new Earthquake(45697, -26269, -1409, 20, 10));
@@ -279,7 +278,7 @@ public class Lindvior extends L2AttackableAIScript {
 							bossStage = 2;
 
 							//Spawn the dummy cyclone
-							for (L2Npc generator : manageGenerators.keySet()) {
+							for (Npc generator : manageGenerators.keySet()) {
 								if (generator == null) {
 									continue;
 								}
@@ -363,7 +362,7 @@ public class Lindvior extends L2AttackableAIScript {
 				}
 
 				//Individual Player Cyclone always
-				for (L2PcInstance players : bossZone.getPlayersInside()) {
+				for (Player players : bossZone.getPlayersInside()) {
 					if (players == null) {
 						continue;
 					}
@@ -394,7 +393,7 @@ public class Lindvior extends L2AttackableAIScript {
 
 			SpawnTable.getInstance().despawnSpecificTable("lindvior_boss");
 
-			for (L2Npc mob : bossZone.getNpcsInside()) {
+			for (Npc mob : bossZone.getNpcsInside()) {
 				if (mob == null) {
 					continue;
 				}
@@ -411,7 +410,7 @@ public class Lindvior extends L2AttackableAIScript {
 		return super.onAdvEvent(event, npc, player);
 	}
 
-	private void spawnMinions(L2Character npc, int minionId, int rad, int amount) {
+	private void spawnMinions(Creature npc, int minionId, int rad, int amount) {
 		int radius = rad;
 		int mobCount = bossZone.getNpcsInside().size();
 		if (mobCount < 70) {
@@ -419,7 +418,8 @@ public class Lindvior extends L2AttackableAIScript {
 				int x = (int) (radius * Math.cos(i * 0.618));
 				int y = (int) (radius * Math.sin(i * 0.618));
 
-				L2MonsterInstance minion = (L2MonsterInstance) addSpawn(minionId == -1 ? lynDracoIds[Rnd.get(lynDracoIds.length)] : minionId,
+				MonsterInstance
+						minion = (MonsterInstance) addSpawn(minionId == -1 ? lynDracoIds[Rnd.get(lynDracoIds.length)] : minionId,
 						npc.getX() + x,
 						npc.getY() + y,
 						npc.getZ() + 20,
@@ -439,9 +439,9 @@ public class Lindvior extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill) {
+	public final String onAttack(Npc npc, Player attacker, int damage, boolean isPet, Skill skill) {
 		if (debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 
 		LastAction = System.currentTimeMillis();
@@ -452,7 +452,7 @@ public class Lindvior extends L2AttackableAIScript {
 			attacker.doDie(null);
 
 			if (debug) {
-				Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " out of the boss zone!");
+				log.warn(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " out of the boss zone!");
 			}
 		}
 
@@ -462,7 +462,7 @@ public class Lindvior extends L2AttackableAIScript {
 			npc.teleToLocation(randPoint[0], randPoint[1], randPoint[2]);
 
 			if (debug) {
-				Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " wich is out of the boss zone!");
+				log.warn(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " wich is out of the boss zone!");
 			}
 		}
 
@@ -498,7 +498,7 @@ public class Lindvior extends L2AttackableAIScript {
 
 										int count = 0;
 
-										for (Entry<L2Npc, Double> generator : manageGenerators.entrySet()) {
+										for (Entry<Npc, Double> generator : manageGenerators.entrySet()) {
 											if (generator.getValue() == maxGeneratorDamage) {
 												count++;
 											}
@@ -525,12 +525,12 @@ public class Lindvior extends L2AttackableAIScript {
 											startQuestTimer("spawn_minion_task", 3 * 60000, null, null, true);
 
 											//At this point all the start instance npcs are deleted
-											for (L2Character chara : bossZone.getCharactersInside().values()) {
-												if (chara == null || !(chara instanceof L2Npc)) {
+											for (Creature chara : bossZone.getCharactersInside().values()) {
+												if (chara == null || !(chara instanceof Npc)) {
 													continue;
 												}
 
-												if (((L2Npc) chara).getNpcId() != firstFloorLindvior) {
+												if (((Npc) chara).getNpcId() != firstFloorLindvior) {
 													chara.deleteMe();
 												}
 											}
@@ -659,9 +659,9 @@ public class Lindvior extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		if (npc.getNpcId() == secondFloorLindvior) {

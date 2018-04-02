@@ -16,14 +16,18 @@
 package l2server.gameserver.model.quest;
 
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 
 public class QuestTimer {
+	private static Logger log = LoggerFactory.getLogger(QuestTimer.class.getName());
+
+
 	// =========================================================
 	// Schedule Task
 	public class ScheduleTimerTask implements Runnable {
@@ -39,7 +43,7 @@ public class QuestTimer {
 				}
 				getQuest().notifyEvent(getName(), getNpc(), getPlayer());
 			} catch (Exception e) {
-				Log.log(Level.SEVERE, "", e);
+				log.error("", e);
 			}
 		}
 	}
@@ -49,14 +53,14 @@ public class QuestTimer {
 	private boolean isActive = true;
 	private String name;
 	private Quest quest;
-	private L2Npc npc;
-	private L2PcInstance player;
+	private Npc npc;
+	private Player player;
 	private boolean isRepeating;
 	private ScheduledFuture<?> schedular;
 
 	// =========================================================
 	// Constructor
-	public QuestTimer(Quest quest, String name, long time, L2Npc npc, L2PcInstance player, boolean repeating) {
+	public QuestTimer(Quest quest, String name, long time, Npc npc, Player player, boolean repeating) {
 		this.name = name;
 		this.quest = quest;
 		this.player = player;
@@ -69,7 +73,7 @@ public class QuestTimer {
 		}
 	}
 
-	public QuestTimer(Quest quest, String name, long time, L2Npc npc, L2PcInstance player) {
+	public QuestTimer(Quest quest, String name, long time, Npc npc, Player player) {
 		this(quest, name, time, npc, player, false);
 	}
 
@@ -97,7 +101,7 @@ public class QuestTimer {
 	 * @param npc    : Npc instance attached to the desired timer (null if no npc attached)
 	 * @param player : Player instance attached to the desired timer (null if no player attached)
 	 */
-	public boolean isMatch(Quest quest, String name, L2Npc npc, L2PcInstance player) {
+	public boolean isMatch(Quest quest, String name, Npc npc, Player player) {
 		if (quest == null || name == null) {
 			return false;
 		}
@@ -125,11 +129,11 @@ public class QuestTimer {
 		return name;
 	}
 
-	public final L2Npc getNpc() {
+	public final Npc getNpc() {
 		return npc;
 	}
 
-	public final L2PcInstance getPlayer() {
+	public final Player getPlayer() {
 		return player;
 	}
 

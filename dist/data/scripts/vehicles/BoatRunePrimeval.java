@@ -15,23 +15,24 @@
 
 package vehicles;
 
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.BoatManager;
 import l2server.gameserver.model.VehiclePathPoint;
-import l2server.gameserver.model.actor.instance.L2BoatInstance;
+import l2server.gameserver.model.actor.instance.BoatInstance;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.PlaySound;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author DS
  */
 public class BoatRunePrimeval implements Runnable {
-	private static final Logger log = Logger.getLogger(BoatRunePrimeval.class.getName());
-
+	
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	// Time: 239s
 	private static final VehiclePathPoint[] RUNE_TO_PRIMEVAL =
 			{new VehiclePathPoint(32750, -39300, -3610, 180, 800), new VehiclePathPoint(27440, -39328, -3610, 250, 1000),
@@ -52,7 +53,7 @@ public class BoatRunePrimeval implements Runnable {
 
 	private static final VehiclePathPoint PRIMEVAL_DOCK = RUNE_TO_PRIMEVAL[RUNE_TO_PRIMEVAL.length - 1];
 
-	private final L2BoatInstance boat;
+	private final BoatInstance boat;
 	private int cycle = 0;
 	private int shoutCount = 0;
 
@@ -67,7 +68,7 @@ public class BoatRunePrimeval implements Runnable {
 	private final PlaySound RUNE_SOUND;
 	private final PlaySound PRIMEVAL_SOUND;
 
-	public BoatRunePrimeval(L2BoatInstance boat) {
+	public BoatRunePrimeval(BoatInstance boat) {
 		this.boat = boat;
 
 		ARRIVED_AT_RUNE = new CreatureSay(0, Say2.BOAT, 801, 1620);
@@ -131,12 +132,12 @@ public class BoatRunePrimeval implements Runnable {
 				cycle = 0;
 			}
 		} catch (Exception e) {
-			log.log(Level.WARNING, e.getMessage());
+			log.warn(e.getMessage());
 		}
 	}
 
 	public static void main(String[] args) {
-		final L2BoatInstance boat = BoatManager.INSTANCE.getNewBoat(5, 34381, -37680, -3610, 40785);
+		final BoatInstance boat = BoatManager.INSTANCE.getNewBoat(5, 34381, -37680, -3610, 40785);
 		if (boat != null) {
 			boat.registerEngine(new BoatRunePrimeval(boat));
 			boat.runEngine(180000);

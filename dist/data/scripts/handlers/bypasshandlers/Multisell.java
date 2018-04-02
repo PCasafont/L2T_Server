@@ -17,14 +17,14 @@ package handlers.bypasshandlers;
 
 import l2server.gameserver.datatables.MultiSell;
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 
 public class Multisell implements IBypassHandler {
 	private static final String[] COMMANDS = {"multisell", "exc_multisell"};
 
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		try {
 			String listId;
 			if (command.toLowerCase().startsWith(COMMANDS[0])) // multisell

@@ -16,28 +16,28 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Attackable;
+import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.VisualEffect;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @author mkizub
  */
 public class EffectLiftHold extends L2Effect {
-	public EffectLiftHold(Env env, L2EffectTemplate template) {
+	public EffectLiftHold(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.AERIAL_YOKE;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.AERIAL_YOKE;
 	}
 
 	@Override
 	public boolean onStart() {
-		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() || getEffected().isRaid()) {
+		if (getEffected() instanceof Attackable && getEffected().isImmobilized() || getEffected().isRaid()) {
 			return false;
 		}
 

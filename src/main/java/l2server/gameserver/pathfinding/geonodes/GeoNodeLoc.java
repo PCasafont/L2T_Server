@@ -15,7 +15,7 @@
 
 package l2server.gameserver.pathfinding.geonodes;
 
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.World;
 import l2server.gameserver.pathfinding.AbstractNodeLoc;
 
 /**
@@ -37,7 +37,7 @@ public class GeoNodeLoc extends AbstractNodeLoc {
 	 */
 	@Override
 	public int getX() {
-		return L2World.MAP_MIN_X + x * 128 + 48;
+		return World.MAP_MIN_X + x * 128 + 48;
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class GeoNodeLoc extends AbstractNodeLoc {
 	 */
 	@Override
 	public int getY() {
-		return L2World.MAP_MIN_Y + y * 128 + 48;
+		return World.MAP_MIN_Y + y * 128 + 48;
 	}
 
 	/**

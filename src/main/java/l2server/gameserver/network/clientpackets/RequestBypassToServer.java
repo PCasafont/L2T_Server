@@ -29,13 +29,13 @@ import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.instancemanager.SurveyManager;
 import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2MerchantSummonInstance;
-import l2server.gameserver.model.actor.instance.L2MobSummonInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.MerchantSummonInstance;
+import l2server.gameserver.model.actor.instance.MobSummonInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.olympiad.HeroesManager;
 import l2server.gameserver.model.olympiad.OlympiadGameManager;
 import l2server.gameserver.model.olympiad.OlympiadGameTask;
@@ -43,7 +43,6 @@ import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.GMAudit;
-import l2server.log.Log;
 
 import java.util.StringTokenizer;
 import java.util.logging.Level;
@@ -65,7 +64,7 @@ public final class RequestBypassToServer extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -75,7 +74,7 @@ public final class RequestBypassToServer extends L2GameClientPacket {
 		}
 		
 		if (command.isEmpty()) {
-			Log.info(activeChar.getName() + " send empty requestbypass");
+			log.info(activeChar.getName() + " send empty requestbypass");
 			activeChar.logout();
 			return;
 		}
@@ -92,13 +91,13 @@ public final class RequestBypassToServer extends L2GameClientPacket {
 						activeChar.sendMessage("The command " + command.substring(6) + " does not exist!");
 					}
 					
-					Log.warning("No handler registered for admin command '" + command + "'");
+					log.warn("No handler registered for admin command '" + command + "'");
 					return;
 				}
 				
 				if (!AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel())) {
 					activeChar.sendMessage("You don't have the access rights to use this command!");
-					Log.warning("Character " + activeChar.getName() + " tried to use admin command " + command + ", without proper access level!");
+					log.warn("Character " + activeChar.getName() + " tried to use admin command " + command + ", without proper access level!");
 					return;
 				}
 				
@@ -131,11 +130,11 @@ public final class RequestBypassToServer extends L2GameClientPacket {
 					id = command.substring(4);
 				}
 				try {
-					L2Object object = L2World.getInstance().findObject(Integer.parseInt(id));
+					WorldObject object = World.getInstance().findObject(Integer.parseInt(id));
 					
-					if (object instanceof L2Npc && endOfId > 0 &&
-							activeChar.isInsideRadius(object, ((L2Npc) object).getTemplate().InteractionDistance, false, false)) {
-						((L2Npc) object).onBypassFeedback(activeChar, command.substring(endOfId + 1));
+					if (object instanceof Npc && endOfId > 0 &&
+							activeChar.isInsideRadius(object, ((Npc) object).getTemplate().InteractionDistance, false, false)) {
+						((Npc) object).onBypassFeedback(activeChar, command.substring(endOfId + 1));
 					}
 					
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -154,11 +153,11 @@ public final class RequestBypassToServer extends L2GameClientPacket {
 					id = command.substring(7);
 				}
 				try {
-					L2Object object = L2World.getInstance().findObject(Integer.parseInt(id));
+					WorldObject object = World.getInstance().findObject(Integer.parseInt(id));
 					
-					if (object instanceof L2MerchantSummonInstance && endOfId > 0 &&
-							activeChar.isInsideRadius(object, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false)) {
-						((L2MerchantSummonInstance) object).onBypassFeedback(activeChar, command.substring(endOfId + 1));
+					if (object instanceof MerchantSummonInstance && endOfId > 0 &&
+							activeChar.isInsideRadius(object, Npc.DEFAULT_INTERACTION_DISTANCE, false, false)) {
+						((MerchantSummonInstance) object).onBypassFeedback(activeChar, command.substring(endOfId + 1));
 					}
 					
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -184,7 +183,7 @@ public final class RequestBypassToServer extends L2GameClientPacket {
 					return;
 				}
 				
-				L2PcInstance player = getClient().getActiveChar();
+				Player player = getClient().getActiveChar();
 				if (player == null) {
 					return;
 				}
@@ -197,7 +196,7 @@ public final class RequestBypassToServer extends L2GameClientPacket {
 					player.processQuestEvent(p.substring(0, idx), p.substring(idx).trim());
 				}
 			} else if (command.startsWith("_match")) {
-				L2PcInstance player = getClient().getActiveChar();
+				Player player = getClient().getActiveChar();
 				if (player == null) {
 					return;
 				}
@@ -211,7 +210,7 @@ public final class RequestBypassToServer extends L2GameClientPacket {
 					HeroesManager.getInstance().showHeroFights(player, heroclass, heroid, heropage);
 				}
 			} else if (command.startsWith("_diary")) {
-				L2PcInstance player = getClient().getActiveChar();
+				Player player = getClient().getActiveChar();
 				if (player == null) {
 					return;
 				}
@@ -225,12 +224,12 @@ public final class RequestBypassToServer extends L2GameClientPacket {
 					HeroesManager.getInstance().showHeroDiary(player, heroclass, heroid, heropage);
 				}
 			} else if (command.startsWith("MobSummon")) {
-				for (L2Summon summon : activeChar.getSummons()) {
-					if (!(summon instanceof L2MobSummonInstance)) {
+				for (Summon summon : activeChar.getSummons()) {
+					if (!(summon instanceof MobSummonInstance)) {
 						continue;
 					}
 					
-					L2MobSummonInstance mobSummon = (L2MobSummonInstance) summon;
+					MobSummonInstance mobSummon = (MobSummonInstance) summon;
 					mobSummon.onBypass(activeChar, command.substring(10));
 				}
 			} else if (command.startsWith("InstancedEvent")) {
@@ -328,11 +327,11 @@ public final class RequestBypassToServer extends L2GameClientPacket {
 				if (handler != null) {
 					handler.useBypass(command, activeChar, null);
 				} else {
-					Log.log(Level.WARNING, getClient() + " sent not handled RequestBypassToServer: [" + command + "]");
+					log.warn(getClient() + " sent not handled RequestBypassToServer: [" + command + "]");
 				}
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, getClient() + " sent bad RequestBypassToServer: \"" + command + "\"", e);
+			log.warn(getClient() + " sent bad RequestBypassToServer: \"" + command + "\"", e);
 			if (activeChar.isGM()) {
 				StringBuilder sb = new StringBuilder(200);
 				sb.append("<html><body>");
@@ -354,13 +353,13 @@ public final class RequestBypassToServer extends L2GameClientPacket {
 	
 	/**
 	 */
-	private static void comeHere(L2PcInstance activeChar) {
-		L2Object obj = activeChar.getTarget();
+	private static void comeHere(Player activeChar) {
+		WorldObject obj = activeChar.getTarget();
 		if (obj == null) {
 			return;
 		}
-		if (obj instanceof L2Npc) {
-			L2Npc temp = (L2Npc) obj;
+		if (obj instanceof Npc) {
+			Npc temp = (Npc) obj;
 			temp.setTarget(activeChar);
 			temp.getAI()
 					.setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(activeChar.getX(), activeChar.getY(), activeChar.getZ(), 0));

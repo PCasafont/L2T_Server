@@ -15,15 +15,15 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.Npc;
 
 /**
  * @author Pere
  */
 public final class ExNpcStatus extends L2GameServerPacket {
-	private L2Npc npc;
+	private Npc npc;
 	
-	public ExNpcStatus(L2Npc npc) {
+	public ExNpcStatus(Npc npc) {
 		this.npc = npc;
 	}
 	

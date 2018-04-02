@@ -15,7 +15,7 @@
 
 package l2server.gameserver.instancemanager;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.loader.annotations.Load;
 
 import java.util.ArrayList;
@@ -24,8 +24,8 @@ import java.util.ArrayList;
  * @author Erlandys
  */
 public class PartySearchManager {
-	ArrayList<L2PcInstance> lookingForParty;
-	ArrayList<L2PcInstance> wannaToChangeThisPlayer;
+	ArrayList<Player> lookingForParty;
+	ArrayList<Player> wannaToChangeThisPlayer;
 
 	public PartySearchManager() {
 	}
@@ -44,32 +44,32 @@ public class PartySearchManager {
 		}
 	}
 
-	public void addLookingForParty(L2PcInstance player) {
+	public void addLookingForParty(Player player) {
 		lookingForParty.add(player);
 	}
 
-	public void addChangeThisPlayer(L2PcInstance player) {
+	public void addChangeThisPlayer(Player player) {
 		wannaToChangeThisPlayer.add(player);
 	}
 
-	public ArrayList<L2PcInstance> getLookingForPartyPlayers() {
+	public ArrayList<Player> getLookingForPartyPlayers() {
 		return lookingForParty;
 	}
 
-	public ArrayList<L2PcInstance> getWannaToChangeThisPlayers() {
+	public ArrayList<Player> getWannaToChangeThisPlayers() {
 		return wannaToChangeThisPlayer;
 	}
 
-	public void removeLookingForParty(L2PcInstance player) {
+	public void removeLookingForParty(Player player) {
 		lookingForParty.remove(player);
 	}
 
-	public void removeChangeThisPlayer(L2PcInstance player) {
+	public void removeChangeThisPlayer(Player player) {
 		wannaToChangeThisPlayer.remove(player);
 	}
 
-	public L2PcInstance getLookingForParty(int level, int classId) {
-		for (L2PcInstance player : lookingForParty) {
+	public Player getLookingForParty(int level, int classId) {
+		for (Player player : lookingForParty) {
 			if (player == null) {
 				continue;
 			}
@@ -81,8 +81,8 @@ public class PartySearchManager {
 		return null;
 	}
 
-	public L2PcInstance getWannaToChangeThisPlayer(int level, int classId) {
-		for (L2PcInstance player : wannaToChangeThisPlayer) {
+	public Player getWannaToChangeThisPlayer(int level, int classId) {
+		for (Player player : wannaToChangeThisPlayer) {
 			if (player.getLevel() == level && player.getClassId() == classId) {
 				return player;
 			}
@@ -91,7 +91,7 @@ public class PartySearchManager {
 	}
 
 	public boolean getWannaToChangeThisPlayer(int objectID) {
-		for (L2PcInstance player : wannaToChangeThisPlayer) {
+		for (Player player : wannaToChangeThisPlayer) {
 			if (player == null) {
 				continue;
 			}
@@ -103,8 +103,8 @@ public class PartySearchManager {
 		return false;
 	}
 
-	public L2PcInstance getPlayerFromChange(int level, int classId) {
-		for (L2PcInstance player : wannaToChangeThisPlayer) {
+	public Player getPlayerFromChange(int level, int classId) {
+		for (Player player : wannaToChangeThisPlayer) {
 			if (player.getLevel() == level && player.getClassId() == classId) {
 				return player;
 			}

@@ -19,13 +19,15 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.InstanceListManager;
 import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.datatables.ResidentialSkillTable;
+import l2server.gameserver.datatables.SpawnTable;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
@@ -36,6 +38,9 @@ import java.util.List;
 import java.util.logging.Level;
 
 public class CastleManager implements InstanceListManager {
+	private static Logger log = LoggerFactory.getLogger(CastleManager.class.getName());
+
+
 	
 	public static CastleManager getInstance() {
 		return SingletonHolder.instance;
@@ -57,11 +62,11 @@ public class CastleManager implements InstanceListManager {
 	// =========================================================
 	// Method - Public
 	
-	public final int findNearestCastleIndex(L2Object obj) {
+	public final int findNearestCastleIndex(WorldObject obj) {
 		return findNearestCastleIndex(obj, Long.MAX_VALUE);
 	}
 	
-	public final int findNearestCastleIndex(L2Object obj, long maxDistance) {
+	public final int findNearestCastleIndex(WorldObject obj, long maxDistance) {
 		int index = getCastleIndex(obj);
 		if (index < 0) {
 			double distance;
@@ -84,7 +89,7 @@ public class CastleManager implements InstanceListManager {
 	// =========================================================
 	// Method - Public
 	
-	public Castle findNearestCastle(L2Object obj) {
+	public Castle findNearestCastle(WorldObject obj) {
 		Castle castle = null;
 		double closestDistance = 99999999;
 		double distance;
@@ -142,7 +147,7 @@ public class CastleManager implements InstanceListManager {
 		return null;
 	}
 	
-	public final Castle getCastle(L2Object activeObject) {
+	public final Castle getCastle(WorldObject activeObject) {
 		return getCastle(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}
 	
@@ -157,7 +162,7 @@ public class CastleManager implements InstanceListManager {
 		return -1;
 	}
 	
-	public final int getCastleIndex(L2Object activeObject) {
+	public final int getCastleIndex(WorldObject activeObject) {
 		return getCastleIndex(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}
 	
@@ -213,14 +218,14 @@ public class CastleManager implements InstanceListManager {
 		if (member == null) {
 			return;
 		}
-		L2PcInstance player = member.getPlayerInstance();
+		Player player = member.getPlayerInstance();
 		int circletId = getCircletByCastleId(castleId);
 		
 		if (circletId != 0) {
 			// online-player circlet removal
 			if (player != null) {
 				try {
-					L2ItemInstance circlet = player.getInventory().getItemByItemId(circletId);
+					Item circlet = player.getInventory().getItemByItemId(circletId);
 					if (circlet != null) {
 						if (circlet.isEquipped()) {
 							player.getInventory().unEquipItemInSlot(circlet.getLocationSlot());
@@ -242,7 +247,7 @@ public class CastleManager implements InstanceListManager {
 				statement.execute();
 				statement.close();
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "Failed to remove castle circlets offline for player " + member.getName() + ": " + e.getMessage(), e);
+				log.warn("Failed to remove castle circlets offline for player " + member.getName() + ": " + e.getMessage(), e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -252,7 +257,7 @@ public class CastleManager implements InstanceListManager {
 	@Load(dependencies = {ResidentialSkillTable.class, ZoneManager.class})
 	@Override
 	public void load() {
-		Log.info("Initializing CastleManager");
+		log.info("Initializing CastleManager");
 		Connection con = null;
 		try {
 			PreparedStatement statement;
@@ -270,13 +275,16 @@ public class CastleManager implements InstanceListManager {
 			
 			statement.close();
 			
-			Log.info("Loaded: " + getCastles().size() + " castles");
+			log.info("Loaded: " + getCastles().size() + " castles");
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: loadCastleData(): " + e.getMessage(), e);
+			log.warn("Exception: loadCastleData(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
-		
+	}
+	
+	@Load(main = false, dependencies = {CastleManager.class, SpawnTable.class})
+	private void initializeTendency() {
 		getCastles().forEach(Castle::manageTendencyChangeSpawns);
 	}
 	

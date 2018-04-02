@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -38,10 +38,10 @@ public class ConditionPlayerCloakStatus extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		if (!(env.player instanceof L2PcInstance)) {
+		if (!(env.player instanceof Player)) {
 			return false;
 		}
 
-		return ((L2PcInstance) env.player).getInventory().getCloakStatus() >= val;
+		return ((Player) env.player).getInventory().getCloakStatus() >= val;
 	}
 }

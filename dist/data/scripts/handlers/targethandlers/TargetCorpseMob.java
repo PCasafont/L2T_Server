@@ -17,14 +17,14 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.taskmanager.DecayTaskManager;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.templates.skills.SkillTargetType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,10 +34,10 @@ import java.util.List;
  */
 public class TargetCorpseMob implements ISkillTargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		List<L2Character> targetList = new ArrayList<L2Character>();
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		List<Creature> targetList = new ArrayList<Creature>();
 
-		if (!(target instanceof L2Attackable) || !target.isDead()) {
+		if (!(target instanceof Attackable) || !target.isDead()) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_INCORRECT));
 			return null;
 		}
@@ -59,17 +59,17 @@ public class TargetCorpseMob implements ISkillTargetTypeHandler {
 
 		if (!onlyFirst) {
 			targetList.add(target);
-			return targetList.toArray(new L2Object[targetList.size()]);
+			return targetList.toArray(new WorldObject[targetList.size()]);
 		} else {
-			return new L2Character[]{target};
+			return new Creature[]{target};
 		}
 	}
 
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.TARGET_CORPSE_MOB;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.TARGET_CORPSE_MOB;
 	}
 
 	public static void main(String[] args) {

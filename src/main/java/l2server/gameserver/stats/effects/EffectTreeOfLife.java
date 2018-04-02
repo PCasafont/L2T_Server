@@ -16,21 +16,22 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.Config;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.stats.Stats;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.Util;
 
 public class EffectTreeOfLife extends L2Effect {
-	public EffectTreeOfLife(Env env, L2EffectTemplate template) {
+	public EffectTreeOfLife(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
@@ -40,38 +41,38 @@ public class EffectTreeOfLife extends L2Effect {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
 		double hp = getSkill().getPower();
 		double cp = 0;
 		
-		L2Character target = getEffected();
+		Creature target = getEffected();
 		
-		L2Character activeChar = getEffector();
+		Creature activeChar = getEffector();
 		
 		if (target == null || target.isDead() || target.isInvul(activeChar) || !Util.checkIfInRange(600, activeChar, target, true)) {
 			return false;
 		}
 		
 		// No healing from others for player in duels
-		if (Config.isServer(Config.TENKAI) && target instanceof L2PcInstance && target.getActingPlayer().isInDuel() &&
+		if (Config.isServer(Config.TENKAI) && target instanceof Player && target.getActingPlayer().isInDuel() &&
 				target.getObjectId() != activeChar.getObjectId()) {
 			return false;
 		}
 		
 		if (target != activeChar) {
 			// Player holding a cursed weapon can't be healed and can't heal
-			if (target instanceof L2PcInstance && ((L2PcInstance) target).isCursedWeaponEquipped()) {
+			if (target instanceof Player && ((Player) target).isCursedWeaponEquipped()) {
 				return false;
-			} else if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isCursedWeaponEquipped()) {
+			} else if (activeChar instanceof Player && ((Player) activeChar).isCursedWeaponEquipped()) {
 				return false;
 			}
 			
 			// Nor all vs all event player
-			if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isPlayingEvent() &&
-					((L2PcInstance) activeChar).getEvent().getConfig().isAllVsAll()) {
+			if (activeChar instanceof Player && ((Player) activeChar).isPlayingEvent() &&
+					((Player) activeChar).getEvent().getConfig().isAllVsAll()) {
 				return false;
 			}
 		}
@@ -85,7 +86,7 @@ public class EffectTreeOfLife extends L2Effect {
 		}
 		
 		// Heal critic, since CT2.3 Gracia Final
-		if (getSkill().getSkillType() == L2SkillType.HEAL && !getSkill().isPotion() &&
+		if (getSkill().getSkillType() == SkillType.HEAL && !getSkill().isPotion() &&
 				Formulas.calcMCrit(activeChar.getMCriticalHit(target, getSkill()))) {
 			hp *= 3;
 		}
@@ -123,7 +124,7 @@ public class EffectTreeOfLife extends L2Effect {
 			target.sendPacket(su);
 		}
 		
-		if (target instanceof L2PcInstance) {
+		if (target instanceof Player) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_RESTORED_BY_C1);
 			sm.addString(activeChar.getName());
 			sm.addNumber((int) hp);
@@ -139,7 +140,7 @@ public class EffectTreeOfLife extends L2Effect {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

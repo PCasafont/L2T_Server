@@ -15,7 +15,7 @@
 
 package l2server.gameserver.model;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author KenM
@@ -32,7 +32,7 @@ public abstract class L2Transformation implements Cloneable, Runnable {
 	
 	protected static final int[] EMPTY_ARRAY = {};
 	
-	private L2PcInstance player;
+	private Player player;
 	
 	/**
 	 * @param id              Internal id that server will use to associate this transformation
@@ -118,14 +118,14 @@ public abstract class L2Transformation implements Cloneable, Runnable {
 	/**
 	 * @param player The player to set.
 	 */
-	private void setPlayer(L2PcInstance player) {
+	private void setPlayer(Player player) {
 		this.player = player;
 	}
 	
 	/**
 	 * @return Returns the player.
 	 */
-	public L2PcInstance getPlayer() {
+	public Player getPlayer() {
 		return player;
 	}
 	
@@ -146,7 +146,7 @@ public abstract class L2Transformation implements Cloneable, Runnable {
 		getPlayer().unTransform(true);
 	}
 	
-	public L2Transformation createTransformationForPlayer(L2PcInstance player) {
+	public L2Transformation createTransformationForPlayer(Player player) {
 		try {
 			L2Transformation transformation = (L2Transformation) clone();
 			transformation.setPlayer(player);

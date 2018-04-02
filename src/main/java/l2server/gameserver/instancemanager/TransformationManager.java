@@ -18,15 +18,18 @@ package l2server.gameserver.instancemanager;
 import java.util.HashMap;
 import java.util.Map;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.gameserver.model.L2Transformation;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author KenM
  */
 public class TransformationManager {
+	private static Logger log = LoggerFactory.getLogger(TransformationManager.class.getName());
+
+
 
 	public static TransformationManager getInstance() {
 		return SingletonHolder.instance;
@@ -38,10 +41,10 @@ public class TransformationManager {
 	}
 
 	public void report() {
-		Log.info("Loaded: " + transformations.size() + " transformations.");
+		log.info("Loaded: " + transformations.size() + " transformations.");
 	}
 
-	public boolean transformPlayer(int id, L2PcInstance player) {
+	public boolean transformPlayer(int id, Player player) {
 		L2Transformation template = getTransformationById(id);
 		if (template != null) {
 			L2Transformation trans = template.createTransformationForPlayer(player);

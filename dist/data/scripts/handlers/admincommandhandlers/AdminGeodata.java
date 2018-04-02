@@ -18,7 +18,7 @@ package handlers.admincommandhandlers;
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author -Nemesiss-
@@ -29,7 +29,7 @@ public class AdminGeodata implements IAdminCommandHandler {
 					"admin_geo_unload"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (Config.GEODATA < 1) {
 			activeChar.sendMessage("Geo Engine is Turned Off!");
 			return true;

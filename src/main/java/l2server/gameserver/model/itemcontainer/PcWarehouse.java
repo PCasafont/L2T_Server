@@ -15,15 +15,15 @@
 
 package l2server.gameserver.model.itemcontainer;
 
-import l2server.gameserver.model.L2ItemInstance.ItemLocation;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item.ItemLocation;
+import l2server.gameserver.model.actor.instance.Player;
 
 public class PcWarehouse extends Warehouse {
 	//
 
-	private L2PcInstance owner;
+	private Player owner;
 
-	public PcWarehouse(L2PcInstance owner) {
+	public PcWarehouse(Player owner) {
 		this.owner = owner;
 	}
 
@@ -33,7 +33,7 @@ public class PcWarehouse extends Warehouse {
 	}
 
 	@Override
-	public L2PcInstance getOwner() {
+	public Player getOwner() {
 		return owner;
 	}
 
@@ -50,7 +50,7 @@ public class PcWarehouse extends Warehouse {
 		return 0;
 	}
 
-	public void setLocationId(L2PcInstance dummy) {
+	public void setLocationId(Player dummy) {
 	}
 
 	@Override

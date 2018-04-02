@@ -19,12 +19,12 @@ import l2server.Config;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.instancemanager.CastleManager;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
@@ -38,15 +38,15 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class ScrollOfResurrection implements IItemHandler {
 	/**
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(Playable, Item, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
-		if (!(playable instanceof L2PcInstance)) {
+	public void useItem(Playable playable, Item item, boolean forceUse) {
+		if (!(playable instanceof Player)) {
 			return;
 		}
 
-		L2PcInstance activeChar = (L2PcInstance) playable;
+		Player activeChar = (Player) playable;
 		// Custom, in order to avoid blessed resurrection scroll usages
 		if (Config.isServer(Config.TENKAI) && activeChar.getPvpFlag() > 0) {
 			switch (item.getItemId()) {
@@ -79,19 +79,19 @@ public class ScrollOfResurrection implements IItemHandler {
 		boolean petScroll = itemId == 6387;
 
 		// SoR Animation section
-		L2Character target = (L2Character) activeChar.getTarget();
+		Creature target = (Creature) activeChar.getTarget();
 
 		if (target != null && target.isDead()) {
-			L2PcInstance targetPlayer = null;
+			Player targetPlayer = null;
 
-			if (target instanceof L2PcInstance) {
-				targetPlayer = (L2PcInstance) target;
+			if (target instanceof Player) {
+				targetPlayer = (Player) target;
 			}
 
-			L2PetInstance targetPet = null;
+			PetInstance targetPet = null;
 
-			if (target instanceof L2PetInstance) {
-				targetPet = (L2PetInstance) target;
+			if (target instanceof PetInstance) {
+				targetPet = (PetInstance) target;
 			}
 
 			if (targetPlayer != null || targetPet != null) {
@@ -174,7 +174,7 @@ public class ScrollOfResurrection implements IItemHandler {
 						sm.addItemName(item);
 						activeChar.sendPacket(sm);
 
-						L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLevel);
+						Skill skill = SkillTable.getInstance().getInfo(skillId, skillLevel);
 						activeChar.useMagic(skill, true, true);
 					}
 				}

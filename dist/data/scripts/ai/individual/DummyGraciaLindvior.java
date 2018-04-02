@@ -16,9 +16,9 @@
 package ai.individual;
 
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.util.Rnd;
 
@@ -37,12 +37,12 @@ public class DummyGraciaLindvior extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.equalsIgnoreCase("showMovie")) {
 			if (Rnd.get(100000) >= chance) {
-				for (L2Character pls : ZoneManager.getInstance().getZoneById(11040).getCharactersInside().values()) {
-					if (pls != null && pls instanceof L2PcInstance) {
-						((L2PcInstance) pls).showQuestMovie(1);
+				for (Creature pls : ZoneManager.getInstance().getZoneById(11040).getCharactersInside().values()) {
+					if (pls != null && pls instanceof Player) {
+						((Player) pls).showQuestMovie(1);
 					}
 				}
 			}

@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 
 /**
  * sample
@@ -26,10 +26,10 @@ import l2server.gameserver.model.L2ItemInstance;
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:39 $
  */
 public final class GetItem extends L2GameServerPacket {
-	private L2ItemInstance item;
+	private Item item;
 	private int playerId;
 
-	public GetItem(L2ItemInstance item, int playerId) {
+	public GetItem(Item item, int playerId) {
 		this.item = item;
 		this.playerId = playerId;
 	}

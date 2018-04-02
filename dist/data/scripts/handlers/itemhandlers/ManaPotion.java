@@ -15,26 +15,26 @@
 
 package handlers.itemhandlers;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
 public class ManaPotion extends ItemSkillsTemplate {
 	/**
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(Playable, Item, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
-		L2PcInstance activeChar; // use activeChar only for L2PcInstance checks where cannot be used PetInstance
+	public void useItem(Playable playable, Item item, boolean forceUse) {
+		Player activeChar; // use activeChar only for Player checks where cannot be used PetInstance
 
-		if (playable instanceof L2PcInstance) {
-			activeChar = (L2PcInstance) playable;
-		} else if (playable instanceof L2PetInstance) {
-			activeChar = ((L2PetInstance) playable).getOwner();
+		if (playable instanceof Player) {
+			activeChar = (Player) playable;
+		} else if (playable instanceof PetInstance) {
+			activeChar = ((PetInstance) playable).getOwner();
 		} else {
 			return;
 		}

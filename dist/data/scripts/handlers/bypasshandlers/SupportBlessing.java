@@ -17,16 +17,16 @@ package handlers.bypasshandlers;
 
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class SupportBlessing implements IBypassHandler {
 	private static final String[] COMMANDS = {"GiveBlessing"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		if (target == null) {
 			return false;
 		}
@@ -47,7 +47,7 @@ public class SupportBlessing implements IBypassHandler {
 			activeChar.sendPacket(msg);
 			return true;
 		}
-		L2Skill skill = SkillTable.FrequentSkill.BLESSING_OF_PROTECTION.getSkill();
+		Skill skill = SkillTable.FrequentSkill.BLESSING_OF_PROTECTION.getSkill();
 		target.doCast(skill);
 		
 		return false;

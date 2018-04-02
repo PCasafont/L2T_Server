@@ -2,9 +2,10 @@ package l2server.gameserver.datatables;
 
 import gov.nasa.worldwind.formats.dds.DDSConverter;
 import l2server.Config;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.PledgeCrest;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.io.File;
@@ -15,6 +16,9 @@ import java.util.Map;
  * @author Pere
  */
 public class ImageTable {
+	private static Logger log = LoggerFactory.getLogger(ImageTable.class.getName());
+
+
 	private static ImageTable instance;
 
 	private static Map<Integer, PledgeCrest> images = new HashMap<>();
@@ -51,7 +55,7 @@ public class ImageTable {
 				images.put(id, new PledgeCrest(id, array));
 			}
 		} catch (Exception e) {
-			Log.warning("Image table: error loading image id " + id + ": " + e);
+			log.warn("Image table: error loading image id " + id + ": " + e);
 			e.printStackTrace();
 		}
 
@@ -69,14 +73,14 @@ public class ImageTable {
 				images.put(id, new PledgeCrest(id, array));
 			}
 		} catch (Exception e) {
-			Log.warning("Image table: error loading image id " + id + ": " + e);
+			log.warn("Image table: error loading image id " + id + ": " + e);
 			e.printStackTrace();
 		}
 
-		Log.info("ImageTable: Loaded " + images.size() + " custom images.");
+		log.info("ImageTable: Loaded " + images.size() + " custom images.");
 	}
 
-	public void sendImages(L2PcInstance player) {
+	public void sendImages(Player player) {
 		for (int imageId : images.keySet()) {
 			if (images.get(imageId) != null) {
 				player.sendPacket(images.get(imageId));

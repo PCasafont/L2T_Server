@@ -15,16 +15,16 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.SubClass;
 
 /**
  * @author Pere
  */
 public final class ExSubjobInfo extends L2GameServerPacket {
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	
-	public ExSubjobInfo(L2PcInstance activeChar) {
+	public ExSubjobInfo(Player activeChar) {
 		this.activeChar = activeChar;
 	}
 	

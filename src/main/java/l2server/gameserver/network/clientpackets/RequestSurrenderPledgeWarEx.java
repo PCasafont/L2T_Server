@@ -17,8 +17,8 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.ClanWarManager;
 import l2server.gameserver.model.entity.ClanWarManager.ClanWar;
 import l2server.gameserver.network.SystemMessageId;
@@ -41,7 +41,7 @@ public final class RequestSurrenderPledgeWarEx extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -79,8 +79,8 @@ public final class RequestSurrenderPledgeWarEx extends L2GameClientPacket {
 		war.setLoser(playerClan);
 		war.setWinner(clan);
 		war.stop();
-		Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-		for (L2PcInstance cha : pls) {
+		Collection<Player> pls = World.getInstance().getAllPlayers().values();
+		for (Player cha : pls) {
 			if (cha.getClan() == player.getClan() || cha.getClan() == clan) {
 				cha.broadcastUserInfo();
 			}

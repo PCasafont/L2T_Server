@@ -21,14 +21,15 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2Manor;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.itemcontainer.ClanWarehouse;
 import l2server.gameserver.model.itemcontainer.ItemContainer;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 
@@ -49,6 +50,9 @@ import java.util.stream.Collectors;
  */
 
 public class CastleManorManager {
+	private static Logger log = LoggerFactory.getLogger(CastleManorManager.class.getName());
+
+
 
 	public static final int PERIOD_CURRENT = 0;
 	public static final int PERIOD_NEXT = 1;
@@ -170,7 +174,7 @@ public class CastleManorManager {
 	
 	@Load(dependencies = CastleManager.class)
 	public void initialize() {
-		Log.info("Initializing CastleManorManager");
+		log.info("Initializing CastleManorManager");
 		load(); // load data from database
 		init(); // schedule all manor related events
 		underMaintenance = false;
@@ -250,13 +254,13 @@ public class CastleManorManager {
 				castle.setCropProcure(procureNext, PERIOD_NEXT);
 
 				if (!procure.isEmpty() || !procureNext.isEmpty() || !production.isEmpty() || !productionNext.isEmpty()) {
-					Log.fine(castle.getName() + ": Data loaded");
+					log.debug(castle.getName() + ": Data loaded");
 				}
 			}
 			statementProduction.close();
 			statementProcure.close();
 		} catch (Exception e) {
-			Log.severe("Error restoring manor data: " + e.getMessage());
+			log.error("Error restoring manor data: " + e.getMessage());
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -276,20 +280,20 @@ public class CastleManorManager {
 	}
 
 	public void updateManorRefresh() {
-		Log.info("Manor System: Manor refresh updated");
+		log.info("Manor System: Manor refresh updated");
 
 		scheduledManorRefresh = ThreadPoolManager.getInstance().scheduleGeneral(() -> {
 			if (!isDisabled()) {
 				setUnderMaintenance(true);
-				Log.info("Manor System: Under maintenance mode started");
+				log.info("Manor System: Under maintenance mode started");
 
 				scheduledMaintenanceEnd = ThreadPoolManager.getInstance().scheduleGeneral(() -> {
-					Log.info("Manor System: Next period started");
+					log.info("Manor System: Next period started");
 					setNextPeriod();
 					try {
 						save();
 					} catch (Exception e) {
-						Log.log(Level.WARNING, "Manor System: Failed to save manor data: " + e.getMessage(), e);
+						log.warn("Manor System: Failed to save manor data: " + e.getMessage(), e);
 					}
 					setUnderMaintenance(false);
 				}, MAINTENANCE_PERIOD);
@@ -299,12 +303,12 @@ public class CastleManorManager {
 	}
 
 	public void updatePeriodApprove() {
-		Log.info("Manor System: Manor period approve updated");
+		log.info("Manor System: Manor period approve updated");
 
 		scheduledNextPeriodapprove = ThreadPoolManager.getInstance().scheduleGeneral(() -> {
 			if (!isDisabled()) {
 				approveNextPeriod();
-				Log.info("Manor System: Next period approved");
+				log.info("Manor System: Next period approved");
 			}
 			updatePeriodApprove();
 		}, getMillisToNextPeriodApprove());
@@ -316,7 +320,7 @@ public class CastleManorManager {
 			setNewManorRefresh();
 		}
 
-		Log.info("Manor System: New Schedule for manor refresh @ " + manorRefresh.getTime());
+		log.info("Manor System: New Schedule for manor refresh @ " + manorRefresh.getTime());
 
 		return manorRefresh.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
 	}
@@ -335,7 +339,7 @@ public class CastleManorManager {
 			setNewPeriodApprove();
 		}
 
-		Log.info("Manor System: New Schedule for period approve @ " + periodApprove.getTime());
+		log.info("Manor System: New Schedule for period approve @ " + periodApprove.getTime());
 
 		return periodApprove.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
 	}
@@ -360,7 +364,7 @@ public class CastleManorManager {
 
 			ItemContainer cwh = clan.getWarehouse();
 			if (!(cwh instanceof ClanWarehouse)) {
-				Log.info("Can't get clan warehouse for clan " + ClanTable.getInstance().getClan(c.getOwnerId()));
+				log.info("Can't get clan warehouse for clan " + ClanTable.getInstance().getClan(c.getOwnerId()));
 				continue;
 			}
 
@@ -414,8 +418,8 @@ public class CastleManorManager {
 			}
 
 			// Sending notification to a clan leader
-			L2PcInstance clanLeader = null;
-			clanLeader = L2World.getInstance().getPlayer(clan.getLeaderName());
+			Player clanLeader = null;
+			clanLeader = World.getInstance().getPlayer(clan.getLeaderName());
 			if (clanLeader != null) {
 				clanLeader.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_MANOR_INFORMATION_HAS_BEEN_UPDATED));
 			}
@@ -433,14 +437,14 @@ public class CastleManorManager {
 				c.setSeedProduction(new ArrayList<>(), PERIOD_NEXT);
 			} else if (c.getTreasury() < c.getManorCost(PERIOD_NEXT)) {
 				notFunc = true;
-				Log.info("Manor for castle " + c.getName() + " disabled, not enough adena in treasury: " + c.getTreasury() + ", " +
+				log.info("Manor for castle " + c.getName() + " disabled, not enough adena in treasury: " + c.getTreasury() + ", " +
 						c.getManorCost(PERIOD_NEXT) + " required.");
 				c.setSeedProduction(getNewSeedsList(c.getCastleId()), PERIOD_NEXT);
 				c.setCropProcure(getNewCropsList(c.getCastleId()), PERIOD_NEXT);
 			} else {
 				ItemContainer cwh = ClanTable.getInstance().getClan(c.getOwnerId()).getWarehouse();
 				if (!(cwh instanceof ClanWarehouse)) {
-					Log.info("Can't get clan warehouse for clan " + ClanTable.getInstance().getClan(c.getOwnerId()));
+					log.info("Can't get clan warehouse for clan " + ClanTable.getInstance().getClan(c.getOwnerId()));
 					continue;
 				}
 				int slots = 0;
@@ -453,7 +457,7 @@ public class CastleManorManager {
 				}
 				if (!cwh.validateCapacity(slots)) {
 					notFunc = true;
-					Log.info("Manor for castle " + c.getName() + " disabled, not enough free slots in clan warehouse: " +
+					log.info("Manor for castle " + c.getName() + " disabled, not enough free slots in clan warehouse: " +
 							(Config.WAREHOUSE_SLOTS_CLAN - cwh.getSize()) + ", but " + slots + " required.");
 					c.setSeedProduction(getNewSeedsList(c.getCastleId()), PERIOD_NEXT);
 					c.setCropProcure(getNewCropsList(c.getCastleId()), PERIOD_NEXT);
@@ -464,9 +468,9 @@ public class CastleManorManager {
 
 			if (notFunc) {
 				L2Clan clan = ClanTable.getInstance().getClan(c.getOwnerId());
-				L2PcInstance clanLeader = null;
+				Player clanLeader = null;
 				if (clan != null) {
-					clanLeader = L2World.getInstance().getPlayer(clan.getLeaderId());
+					clanLeader = World.getInstance().getPlayer(clan.getLeaderId());
 				}
 				if (clanLeader != null) {
 					clanLeader.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_AMOUNT_IS_NOT_SUFFICIENT_AND_SO_THE_MANOR_IS_NOT_IN_OPERATION));

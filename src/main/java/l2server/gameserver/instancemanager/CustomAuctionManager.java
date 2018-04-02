@@ -6,9 +6,9 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2NpcInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.NpcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.gameserver.network.SystemMessageId;
@@ -16,7 +16,8 @@ import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
@@ -39,6 +40,9 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class CustomAuctionManager {
+	private static Logger log = LoggerFactory.getLogger(CustomAuctionManager.class.getName());
+
+
 	private static final long ADDED_DURATION = 3600000L;
 
 	private enum Currency {
@@ -368,8 +372,8 @@ public class CustomAuctionManager {
 
 		auctions.put(auctionId, new Auction(auctionId, itemId, auctionTemplate));
 
-		L2NpcInstance auctionManager = null;
-		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
+		NpcInstance auctionManager = null;
+		for (Player player : World.getInstance().getAllPlayers().values()) {
 			if (auctionManager == null) {
 				auctionManager = Util.getNpcCloseTo(33782, player);
 			}
@@ -560,7 +564,7 @@ public class CustomAuctionManager {
 			}
 		}
 
-		Log.info("ItemAuction: Loaded: " + auctionTemplates.size() + " auctions!");
+		log.info("ItemAuction: Loaded: " + auctionTemplates.size() + " auctions!");
 
 		if (!reload) {
 			Connection con = null;
@@ -579,7 +583,7 @@ public class CustomAuctionManager {
 
 					AuctionTemplate template = auctionTemplates.get(rs.getInt("templateId"));
 					if (template == null) {
-						Log.warning("CustomAuctionManager: Found a null template with id:" + rs.getInt("templateId"));
+						log.warn("CustomAuctionManager: Found a null template with id:" + rs.getInt("templateId"));
 						continue;
 					}
 					Auction auction = new Auction(auctionId,
@@ -607,7 +611,7 @@ public class CustomAuctionManager {
 	 * @param bidId
 	 * @param playerBid
 	 */
-	public void tryToBid(L2PcInstance activeChar, int bidId, long playerBid, String coin) {
+	public void tryToBid(Player activeChar, int bidId, long playerBid, String coin) {
 		if (activeChar == null) {
 			return;
 		}
@@ -769,8 +773,8 @@ public class CustomAuctionManager {
 								".";
 			}
 
-			L2NpcInstance auctionManager = null;
-			for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
+			NpcInstance auctionManager = null;
+			for (Player player : World.getInstance().getAllPlayers().values()) {
 				if (auctionManager == null) {
 					auctionManager = Util.getNpcCloseTo(33782, player);
 				}

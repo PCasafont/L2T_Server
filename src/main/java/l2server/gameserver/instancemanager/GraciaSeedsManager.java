@@ -19,12 +19,16 @@ import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.model.quest.Quest;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.util.Calendar;
 
 public class GraciaSeedsManager {
+	private static Logger log = LoggerFactory.getLogger(GraciaSeedsManager.class.getName());
+
+
 
 	public static String qn = "EnergySeeds";
 
@@ -42,7 +46,7 @@ public class GraciaSeedsManager {
 	
 	@Load
 	public void initialize() {
-		Log.info(getClass().getSimpleName() + ": Initializing");
+		log.info(getClass().getSimpleName() + ": Initializing");
 		SoDLastStateChangeDate = Calendar.getInstance();
 		loadData();
 		handleSodStages();
@@ -63,7 +67,7 @@ public class GraciaSeedsManager {
 				// Seed of Annihilation
 				break;
 			default:
-				Log.warning("GraciaSeedManager: Unknown SeedType in SaveData: " + seedType);
+				log.warn("GraciaSeedManager: Unknown SeedType in SaveData: " + seedType);
 				break;
 		}
 	}
@@ -97,7 +101,7 @@ public class GraciaSeedsManager {
 						setSoDState(1, true);
 						Quest esQuest = QuestManager.getInstance().getQuest(qn);
 						if (esQuest == null) {
-							Log.warning("GraciaSeedManager: missing EnergySeeds Quest!");
+							log.warn("GraciaSeedManager: missing EnergySeeds Quest!");
 						} else {
 							esQuest.notifyEvent("StopSoDAi", null, null);
 						}
@@ -109,7 +113,7 @@ public class GraciaSeedsManager {
 				setSoDState(1, true);
 				break;
 			default:
-				Log.warning("GraciaSeedManager: Unknown Seed of Destruction state(" + SoDState + ")! ");
+				log.warn("GraciaSeedManager: Unknown Seed of Destruction state(" + SoDState + ")! ");
 		}
 	}
 
@@ -122,7 +126,7 @@ public class GraciaSeedsManager {
 			saveData(SODTYPE);
 			Quest esQuest = QuestManager.getInstance().getQuest(qn);
 			if (esQuest == null) {
-				Log.warning("GraciaSeedManager: missing EnergySeeds Quest!");
+				log.warn("GraciaSeedManager: missing EnergySeeds Quest!");
 			} else {
 				esQuest.notifyEvent("StartSoDAi", null, null);
 			}
@@ -134,7 +138,7 @@ public class GraciaSeedsManager {
 	}
 
 	public void setSoDState(int value, boolean doSave) {
-		Log.info("GraciaSeedManager: New Seed of Destruction state -> " + value + ".");
+		log.info("GraciaSeedManager: New Seed of Destruction state -> " + value + ".");
 		SoDLastStateChangeDate.setTimeInMillis(System.currentTimeMillis());
 		SoDState = value;
 		// reset number of Tiat kills

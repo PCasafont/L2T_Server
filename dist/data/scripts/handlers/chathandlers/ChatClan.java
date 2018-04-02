@@ -18,7 +18,7 @@ package handlers.chathandlers;
 import l2server.gameserver.gui.ConsoleTab;
 import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
 import l2server.gameserver.handler.IChatHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 
 /**
@@ -39,7 +39,7 @@ public class ChatClan implements IChatHandler {
 		}
 			else*/
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text) {
+	public void handleChat(int type, Player activeChar, String target, String text) {
 		if (activeChar.getClan() != null) {
 			CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
 			activeChar.getClan().broadcastCSToOnlineMembers(cs, activeChar);

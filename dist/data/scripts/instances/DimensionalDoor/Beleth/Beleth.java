@@ -7,15 +7,14 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -98,39 +97,39 @@ public class Beleth extends L2AttackableAIScript {
 	}
 
 	private class belethWorld extends InstanceWorld {
-		private ArrayList<L2PcInstance> rewardedPlayers;
-		private ArrayList<L2Npc> minions;
-		private L2Npc belethBoss;
-		private L2Npc priest;
-		private L2Npc camera1;
-		private L2Npc camera2;
-		private L2Npc camera3;
-		private L2Npc camera4;
+		private ArrayList<Player> rewardedPlayers;
+		private ArrayList<Npc> minions;
+		private Npc belethBoss;
+		private Npc priest;
+		private Npc camera1;
+		private Npc camera2;
+		private Npc camera3;
+		private Npc camera4;
 
 		public belethWorld() {
-			minions = new ArrayList<L2Npc>();
-			rewardedPlayers = new ArrayList<L2PcInstance>();
+			minions = new ArrayList<Npc>();
+			rewardedPlayers = new ArrayList<Player>();
 		}
 	}
 
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onAggroRangeEnter(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onAggroRangeEnter: " + player);
+			log.warn(getName() + ": onAggroRangeEnter: " + player);
 		}
 
 		if (npc.getNpcId() == realBelethId || npc.getNpcId() == fakeBelethId) {
 			if (isPet) {
 				if (player.getPet() != null) {
-					((L2Attackable) npc).addDamageHate(player.getPet(), 0, 999);
+					((Attackable) npc).addDamageHate(player.getPet(), 0, 999);
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player.getPet());
 				} else if (player.getSummons() != null) {
-					for (L2SummonInstance summon : player.getSummons()) {
+					for (SummonInstance summon : player.getSummons()) {
 						if (summon == null) {
 							continue;
 						}
 
-						((L2Attackable) npc).addDamageHate(summon, 0, 999);
+						((Attackable) npc).addDamageHate(summon, 0, 999);
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, summon);
 					}
 				}
@@ -140,9 +139,9 @@ public class Beleth extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		InstanceWorld wrld = null;
@@ -151,7 +150,7 @@ public class Beleth extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onAdvEvent: Unable to get world.");
+			log.warn(getName() + ": onAdvEvent: Unable to get world.");
 			return null;
 		}
 
@@ -235,7 +234,7 @@ public class Beleth extends L2AttackableAIScript {
 					int x = (int) (150 * Math.cos(i * 1.046666667) + 16323);
 					int y = (int) (150 * Math.sin(i * 1.046666667) + 213059);
 
-					L2Npc minion = addSpawn(fakeBelethId, x, y, -9357, 49152, false, 0, false, world.instanceId);
+					Npc minion = addSpawn(fakeBelethId, x, y, -9357, 49152, false, 0, false, world.instanceId);
 					minion.setShowSummonAnimation(true);
 					minion.decayMe();
 					world.minions.add(minion);
@@ -285,7 +284,7 @@ public class Beleth extends L2AttackableAIScript {
 			} else if (event.equalsIgnoreCase("stage_1_intro_1_19")) {
 				InstanceManager.getInstance()
 						.sendPacket(world.instanceId, new SpecialCamera(world.camera3.getObjectId(), 40, 260, 0, 0, 4000, 0, 0, 1, 0));
-				for (L2Npc blth : world.minions) {
+				for (Npc blth : world.minions) {
 					blth.spawnMe();
 					blth.setIsImmobilized(true);//3000
 				}
@@ -294,7 +293,7 @@ public class Beleth extends L2AttackableAIScript {
 				InstanceManager.getInstance()
 						.sendPacket(world.instanceId, new SpecialCamera(world.camera3.getObjectId(), 40, 280, 0, 0, 4000, 5, 0, 1, 0));
 
-				L2Npc minion = addSpawn(fakeBelethId, 16253, 213144, -9357, 49152, false, 0, false, world.instanceId);
+				Npc minion = addSpawn(fakeBelethId, 16253, 213144, -9357, 49152, false, 0, false, world.instanceId);
 				minion.setShowSummonAnimation(true);
 				minion.decayMe();
 				world.minions.add(minion);
@@ -321,7 +320,7 @@ public class Beleth extends L2AttackableAIScript {
 
 				startQuestTimer("stage_1_intro_1_25", 1000, null, player);
 			} else if (event.equalsIgnoreCase("stage_1_intro_1_25")) {
-				for (L2Npc bel : world.minions) {
+				for (Npc bel : world.minions) {
 					bel.deleteMe();
 				}
 
@@ -416,9 +415,9 @@ public class Beleth extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		InstanceWorld wrld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -440,7 +439,7 @@ public class Beleth extends L2AttackableAIScript {
 				addSpawn(stoneId, 12470, 215607, -9381, 49152, false, 0, false, world.instanceId); //Stone
 
 				if (player.isInParty()) {
-					for (L2PcInstance pMember : player.getParty().getPartyMembers()) {
+					for (Player pMember : player.getParty().getPartyMembers()) {
 						if (pMember == null || pMember.getInstanceId() != world.instanceId) {
 							continue;
 						}
@@ -464,9 +463,9 @@ public class Beleth extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 
 		if (npc.getNpcId() == DimensionalDoor.getNpcManagerId()) {
@@ -479,7 +478,7 @@ public class Beleth extends L2AttackableAIScript {
 	private void spawnBeleths(belethWorld world) {
 		int realbeleth = Rnd.get(32);
 
-		L2Npc npc;
+		Npc npc;
 
 		for (int i = 0; i < 32; i++) {
 			if (i == realbeleth) {
@@ -495,14 +494,14 @@ public class Beleth extends L2AttackableAIScript {
 	}
 
 	private void despawnAll(belethWorld world) {
-		for (L2Npc npc : world.minions) {
+		for (Npc npc : world.minions) {
 			npc.getSpawn().stopRespawn();
 			npc.deleteMe();
 		}
 		world.minions.clear();
 	}
 
-	private final synchronized void enterInstance(L2PcInstance player) {
+	private final synchronized void enterInstance(Player player) {
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
 			if (!(world instanceof belethWorld)) {
@@ -532,14 +531,14 @@ public class Beleth extends L2AttackableAIScript {
 
 			InstanceManager.getInstance().addWorld(world);
 
-			List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+			List<Player> allPlayers = new ArrayList<Player>();
 			if (debug) {
 				allPlayers.add(player);
 			} else {
 				allPlayers.addAll(player.getParty().getPartyMembers());
 			}
 
-			for (L2PcInstance enterPlayer : allPlayers) {
+			for (Player enterPlayer : allPlayers) {
 				if (enterPlayer == null) {
 					continue;
 				}
@@ -553,7 +552,7 @@ public class Beleth extends L2AttackableAIScript {
 
 			startQuestTimer("stage_1_open_door", 3000, null, player);
 
-			Log.fine(getName() + ": [" + instanceTemplateId + "] instance started: " + instanceId + " created by player: " + player.getName());
+			log.debug(getName() + ": [" + instanceTemplateId + "] instance started: " + instanceId + " created by player: " + player.getName());
 			return;
 		}
 	}

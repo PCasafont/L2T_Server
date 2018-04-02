@@ -17,16 +17,18 @@ package l2server.gameserver.stats.funcs;
 
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.stats.conditions.Condition;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.logging.Level;
 
 /**
  * @author mkizub
  */
 public final class FuncTemplate {
+	private static Logger log = LoggerFactory.getLogger(FuncTemplate.class.getName());
+	
 	public Condition applayCond;
 	public final Class<?> func;
 	public final Constructor<?> constructor;
@@ -60,13 +62,13 @@ public final class FuncTemplate {
 			}
 			return f;
 		} catch (IllegalAccessException e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 			return null;
 		} catch (InstantiationException e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 			return null;
 		} catch (InvocationTargetException e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 			return null;
 		}
 	}

@@ -7,11 +7,11 @@ import l2server.gameserver.events.instanced.EventInstance;
 import l2server.gameserver.events.instanced.EventTeam;
 import l2server.gameserver.events.instanced.EventTeleporter;
 import l2server.gameserver.instancemanager.PlayerAssistsManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 
@@ -107,7 +107,7 @@ public class VIPTeamVsTeam extends EventInstance {
 	}
 
 	@Override
-	public String getRunningInfo(L2PcInstance player) {
+	public String getRunningInfo(Player player) {
 		String html = "";
 		for (EventTeam team : teams) {
 			if (team.getVIP() == null) {
@@ -130,7 +130,7 @@ public class VIPTeamVsTeam extends EventInstance {
 	}
 
 	@Override
-	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance) {
+	public void onKill(Creature killerCharacter, Player killedPlayerInstance) {
 		if (killedPlayerInstance == null || !isState(EventState.STARTED)) {
 			return;
 		}
@@ -147,16 +147,16 @@ public class VIPTeamVsTeam extends EventInstance {
 			return;
 		}
 
-		L2PcInstance killerPlayerInstance = null;
+		Player killerPlayerInstance = null;
 
-		if (killerCharacter instanceof L2PetInstance || killerCharacter instanceof L2SummonInstance) {
-			killerPlayerInstance = ((L2Summon) killerCharacter).getOwner();
+		if (killerCharacter instanceof PetInstance || killerCharacter instanceof SummonInstance) {
+			killerPlayerInstance = ((Summon) killerCharacter).getOwner();
 
 			if (killerPlayerInstance == null) {
 				return;
 			}
-		} else if (killerCharacter instanceof L2PcInstance) {
-			killerPlayerInstance = (L2PcInstance) killerCharacter;
+		} else if (killerCharacter instanceof Player) {
+			killerPlayerInstance = (Player) killerCharacter;
 		} else {
 			return;
 		}
@@ -173,15 +173,15 @@ public class VIPTeamVsTeam extends EventInstance {
 					Say2.TELL,
 					killerPlayerInstance.getName(),
 					"I have killed " + killedPlayerInstance.getName() + "!");
-			for (L2PcInstance playerInstance : teams[killerTeamId].getParticipatedPlayers().values()) {
+			for (Player playerInstance : teams[killerTeamId].getParticipatedPlayers().values()) {
 				if (playerInstance != null) {
 					playerInstance.sendPacket(cs);
 				}
 			}
 
 			killerPlayerInstance.addEventPoints(3);
-			List<L2PcInstance> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayerInstance, killedPlayerInstance, true);
-			for (L2PcInstance assistant : assistants) {
+			List<Player> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayerInstance, killedPlayerInstance, true);
+			for (Player assistant : assistants) {
 				assistant.addEventPoints(1);
 			}
 		}

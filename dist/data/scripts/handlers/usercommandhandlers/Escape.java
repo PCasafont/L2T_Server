@@ -23,8 +23,8 @@ import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IUserCommandHandler;
 import l2server.gameserver.instancemanager.GrandBossManager;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SetupGauge;
@@ -40,10 +40,10 @@ public class Escape implements IUserCommandHandler {
 	private static final int[] COMMAND_IDS = {52};
 
 	/**
-	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, Player)
 	 */
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar) {
+	public boolean useUserCommand(int id, Player activeChar) {
 		// Thanks nbd, such leetness
 		if (activeChar.getEvent() != null && !activeChar.getEvent().onEscapeUse(activeChar.getObjectId())) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -85,8 +85,8 @@ public class Escape implements IUserCommandHandler {
 		}
 		activeChar.forceIsCasting(TimeController.getGameTicks() + unstuckTimer / TimeController.MILLIS_IN_TICK);
 
-		L2Skill escape = SkillTable.getInstance().getInfo(2099, 1); // 5 minutes escape
-		L2Skill GM_escape = SkillTable.getInstance().getInfo(2100, 1); // 1 second escape
+		Skill escape = SkillTable.getInstance().getInfo(2099, 1); // 5 minutes escape
+		Skill GM_escape = SkillTable.getInstance().getInfo(2100, 1); // 1 second escape
 		if (activeChar.getAccessLevel().isGm()) {
 			if (GM_escape != null) {
 				activeChar.doCast(GM_escape);
@@ -122,9 +122,9 @@ public class Escape implements IUserCommandHandler {
 	}
 
 	static class EscapeFinalizer implements Runnable {
-		private L2PcInstance activeChar;
+		private Player activeChar;
 
-		EscapeFinalizer(L2PcInstance activeChar) {
+		EscapeFinalizer(Player activeChar) {
 			this.activeChar = activeChar;
 		}
 
@@ -141,7 +141,7 @@ public class Escape implements IUserCommandHandler {
 			try {
 				activeChar.teleToLocation(MapRegionTable.TeleportWhereType.Town);
 			} catch (Exception e) {
-				log.log(Level.SEVERE, "", e);
+				log.error("", e);
 			}
 		}
 	}

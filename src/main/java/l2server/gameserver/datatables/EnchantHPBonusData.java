@@ -17,12 +17,13 @@ package l2server.gameserver.datatables;
 
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.stats.funcs.FuncTemplate;
 import l2server.gameserver.stats.funcs.LambdaConst;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.log.Log;
+import l2server.gameserver.templates.item.ItemTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
@@ -36,6 +37,9 @@ import java.util.StringTokenizer;
  * @author MrPoke
  */
 public class EnchantHPBonusData {
+	private static Logger log = LoggerFactory.getLogger(EnchantHPBonusData.class.getName());
+
+
 
 	private final Map<Integer, Integer[]> armorHPBonus = new HashMap<>();
 	private static final float fullArmorModifier = 1.5f;
@@ -58,13 +62,13 @@ public class EnchantHPBonusData {
 			for (XmlNode d : doc.getChildren()) {
 				if (d.getName().equalsIgnoreCase("enchantHP")) {
 					if (!d.hasAttribute("grade")) {
-						Log.severe("[EnchantHPBonusData] Missing grade, skipping");
+						log.error("[EnchantHPBonusData] Missing grade, skipping");
 						continue;
 					}
 					int grade = d.getInt("grade");
 
 					if (!d.hasAttribute("values")) {
-						Log.severe("[EnchantHPBonusData] Missing bonus id: " + grade + ", skipping");
+						log.error("[EnchantHPBonusData] Missing bonus id: " + grade + ", skipping");
 						continue;
 					}
 					StringTokenizer st = new StringTokenizer(d.getString("values"), ",");
@@ -73,7 +77,7 @@ public class EnchantHPBonusData {
 					for (int i = 0; i < tokenCount; i++) {
 						Integer value = Integer.decode(st.nextToken().trim());
 						if (value == null) {
-							Log.severe("[EnchantHPBonusData] Bad Hp value!! grade: " + grade + " token: " + i);
+							log.error("[EnchantHPBonusData] Bad Hp value!! grade: " + grade + " token: " + i);
 							value = 0;
 						}
 						bonus[i] = value;
@@ -89,18 +93,18 @@ public class EnchantHPBonusData {
 			int count = 0;
 
 			for (Integer itemId : itemIds) {
-				L2Item item = ItemTable.getInstance().getTemplate(itemId);
-				if (item != null && item.getCrystalType() != L2Item.CRYSTAL_NONE) {
+				ItemTemplate item = ItemTable.getInstance().getTemplate(itemId);
+				if (item != null && item.getCrystalType() != ItemTemplate.CRYSTAL_NONE) {
 					switch (item.getBodyPart()) {
-						case L2Item.SLOT_CHEST:
-						case L2Item.SLOT_FEET:
-						case L2Item.SLOT_GLOVES:
-						case L2Item.SLOT_HEAD:
-						case L2Item.SLOT_LEGS:
-						case L2Item.SLOT_BACK:
-						case L2Item.SLOT_FULL_ARMOR:
-						case L2Item.SLOT_UNDERWEAR:
-						case L2Item.SLOT_L_HAND:
+						case ItemTemplate.SLOT_CHEST:
+						case ItemTemplate.SLOT_FEET:
+						case ItemTemplate.SLOT_GLOVES:
+						case ItemTemplate.SLOT_HEAD:
+						case ItemTemplate.SLOT_LEGS:
+						case ItemTemplate.SLOT_BACK:
+						case ItemTemplate.SLOT_FULL_ARMOR:
+						case ItemTemplate.SLOT_UNDERWEAR:
+						case ItemTemplate.SLOT_L_HAND:
 							count++;
 							FuncTemplate ft = new FuncTemplate(null, "EnchantHp", Stats.MAX_HP, new LambdaConst(0));
 							item.attach(ft);
@@ -112,10 +116,10 @@ public class EnchantHPBonusData {
 			// shields in the weapons table
 			itemIds = ItemTable.getInstance().getAllWeaponsId();
 			for (Integer itemId : itemIds) {
-				L2Item item = ItemTable.getInstance().getTemplate(itemId);
-				if (item != null && item.getCrystalType() != L2Item.CRYSTAL_NONE) {
+				ItemTemplate item = ItemTable.getInstance().getTemplate(itemId);
+				if (item != null && item.getCrystalType() != ItemTemplate.CRYSTAL_NONE) {
 					switch (item.getBodyPart()) {
-						case L2Item.SLOT_L_HAND:
+						case ItemTemplate.SLOT_L_HAND:
 							count++;
 							FuncTemplate ft = new FuncTemplate(null, "EnchantHp", Stats.MAX_HP, new LambdaConst(0));
 							item.attach(ft);
@@ -123,18 +127,18 @@ public class EnchantHPBonusData {
 					}
 				}
 			}
-			Log.info("Enchant HP Bonus registered for " + count + " items.");
+			log.info("Enchant HP Bonus registered for " + count + " items.");
 		}
 	}
 
-	public final int getHPBonus(L2ItemInstance item) {
+	public final int getHPBonus(Item item) {
 		final Integer[] values = armorHPBonus.get(item.getItem().getItemGradePlain());
 
 		if (values == null || values.length == 0) {
 			return 0;
 		}
 
-		if (item.getItem().getBodyPart() == L2Item.SLOT_FULL_ARMOR) {
+		if (item.getItem().getBodyPart() == ItemTemplate.SLOT_FULL_ARMOR) {
 			return (int) (values[Math.min(item.getEnchantLevel(), values.length) - 1] * fullArmorModifier);
 		} else {
 			return values[Math.min(item.getEnchantLevel(), values.length) - 1];

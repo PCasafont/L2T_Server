@@ -15,8 +15,8 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 
 import java.util.ArrayList;
@@ -45,11 +45,11 @@ public class ConditionPlayerHasPet extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		if (!(env.player instanceof L2PcInstance)) {
+		if (!(env.player instanceof Player)) {
 			return false;
 		}
 
-		if (((L2PcInstance) env.player).getPet() == null) {
+		if (((Player) env.player).getPet() == null) {
 			return false;
 		}
 
@@ -57,7 +57,7 @@ public class ConditionPlayerHasPet extends Condition {
 			return true;
 		}
 
-		final L2ItemInstance controlItem = ((L2PcInstance) env.player).getPet().getControlItem();
+		final Item controlItem = ((Player) env.player).getPet().getControlItem();
 		if (controlItem == null) {
 			return false;
 		}

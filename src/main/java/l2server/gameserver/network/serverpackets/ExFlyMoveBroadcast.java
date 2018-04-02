@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2FlyMove.L2FlyMoveType;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Pere
@@ -31,7 +31,7 @@ public class ExFlyMoveBroadcast extends L2GameServerPacket {
 	private int targetY;
 	private int targetZ;
 	
-	public ExFlyMoveBroadcast(L2PcInstance activeChar, int x, int y, int z) {
+	public ExFlyMoveBroadcast(Player activeChar, int x, int y, int z) {
 		objectId = activeChar.getObjectId();
 		type = L2FlyMoveType.MOVE;
 		originX = activeChar.getX();
@@ -42,7 +42,7 @@ public class ExFlyMoveBroadcast extends L2GameServerPacket {
 		targetZ = z;
 	}
 	
-	public ExFlyMoveBroadcast(L2PcInstance activeChar, boolean start) {
+	public ExFlyMoveBroadcast(Player activeChar, boolean start) {
 		objectId = activeChar.getObjectId();
 		type = start ? L2FlyMoveType.START : L2FlyMoveType.CHOOSE;
 		originX = activeChar.getX();

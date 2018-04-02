@@ -7,9 +7,10 @@ import l2server.gameserver.datatables.AccessLevels;
 import l2server.gameserver.datatables.AdminCommandAccessRights;
 import l2server.gameserver.handler.AdminCommandHandler;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.util.GMAudit;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
@@ -20,10 +21,13 @@ import java.sql.ResultSet;
  * @author Pere
  */
 public class OfflineAdminCommandsManager {
+	private static Logger log = LoggerFactory.getLogger(OfflineAdminCommandsManager.class.getName());
+
+
 
 	private final int TIME_BETWEEN_CHECKS = 60000; // 1 min
 
-	private L2PcInstance dummy;
+	private Player dummy;
 
 	public static OfflineAdminCommandsManager getInstance() {
 		return SingletonHolder.instance;
@@ -42,21 +46,21 @@ public class OfflineAdminCommandsManager {
 		Connection con = null;
 
 		try {
-			// Retrieve the L2PcInstance from the characters table of the database
+			// Retrieve the Player from the characters table of the database
 			con = L2DatabaseFactory.getInstance().getConnection();
 
 			PreparedStatement statement = con.prepareStatement("SELECT charId, char_name FROM characters WHERE char_name LIKE 'OffDummy'");
 			ResultSet rset = statement.executeQuery();
 
 			if (rset.next()) {
-				L2PcInstance pal = L2PcInstance.load(rset.getInt("charId"));
+				Player pal = Player.load(rset.getInt("charId"));
 				pal.setClient(null);
 				dummy = pal;
 			}
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.severe("Could not restore char data: " + e);
+			log.error("Could not restore char data: " + e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -69,13 +73,13 @@ public class OfflineAdminCommandsManager {
 		IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler(commandName);
 
 		if (ach == null) {
-			Log.warning("No handler registered for admin command '" + commandName + "' (website)");
+			log.warn("No handler registered for admin command '" + commandName + "' (website)");
 			saveCommandExecution(date);
 			return;
 		}
 
 		if (!AdminCommandAccessRights.getInstance().hasAccess(commandName, AccessLevels.getInstance().getAccessLevel(accessLevel))) {
-			Log.warning("Character " + author + " tried to use admin command " + commandName + " from the website, but have no access to it!");
+			log.warn("Character " + author + " tried to use admin command " + commandName + " from the website, but have no access to it!");
 			saveCommandExecution(date);
 			return;
 		}
@@ -98,7 +102,7 @@ public class OfflineAdminCommandsManager {
 		Connection con = null;
 
 		try {
-			// Retrieve the L2PcInstance from the characters table of the database
+			// Retrieve the Player from the characters table of the database
 			con = L2DatabaseFactory.getInstance().getConnection();
 
 			PreparedStatement statement = con.prepareStatement("UPDATE offline_admin_commands SET executed = 1 WHERE date = ?");
@@ -106,7 +110,7 @@ public class OfflineAdminCommandsManager {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.severe("Could not set offline admin command status to executed: " + e);
+			log.error("Could not set offline admin command status to executed: " + e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -118,7 +122,7 @@ public class OfflineAdminCommandsManager {
 			Connection con = null;
 
 			try {
-				// Retrieve the L2PcInstance from the characters table of the database
+				// Retrieve the Player from the characters table of the database
 				con = L2DatabaseFactory.getInstance().getConnection();
 
 				PreparedStatement statement = con.prepareStatement(
@@ -140,7 +144,7 @@ public class OfflineAdminCommandsManager {
 					statement.close();
 				}
 			} catch (Exception e) {
-				Log.severe("Could not check for offline admin commands: " + e);
+				log.error("Could not check for offline admin commands: " + e);
 				e.printStackTrace();
 			} finally {
 				L2DatabaseFactory.close(con);

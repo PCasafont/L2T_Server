@@ -15,29 +15,29 @@
 
 package l2server.gameserver.model.actor.stat;
 
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2CloneInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.CloneInstance;
 import l2server.gameserver.stats.Stats;
 
 public class SummonStat extends PlayableStat {
-	public SummonStat(L2Summon activeChar) {
+	public SummonStat(Summon activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public L2Summon getActiveChar() {
-		return (L2Summon) super.getActiveChar();
+	public Summon getActiveChar() {
+		return (Summon) super.getActiveChar();
 	}
 
 	@Override
-	public int getPAtk(L2Character target) {
+	public int getPAtk(Creature target) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getPAtk(target);
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance) {
+		if (getActiveChar() instanceof CloneInstance) {
 			return getActiveChar().getOwner().getPAtk(target);
 		}
 
@@ -48,12 +48,12 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public int getPDef(L2Character target) {
+	public int getPDef(Creature target) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getPAtkSpd();
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance) {
+		if (getActiveChar() instanceof CloneInstance) {
 			return (int) (getActiveChar().getOwner().getPDef(target) * 0.25);
 		}
 
@@ -64,12 +64,12 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public int getMAtk(L2Character target, L2Skill skill) {
+	public int getMAtk(Creature target, Skill skill) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getMAtk(target, skill);
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance) {
+		if (getActiveChar() instanceof CloneInstance) {
 			return (int) (getActiveChar().getOwner().getMAtk(target, skill) * 0.25);
 		}
 
@@ -80,12 +80,12 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public int getMDef(L2Character target, L2Skill skill) {
+	public int getMDef(Creature target, Skill skill) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getMDef(target, skill);
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance) {
+		if (getActiveChar() instanceof CloneInstance) {
 			return (int) (getActiveChar().getOwner().getMDef(target, skill) * 0.25);
 		}
 
@@ -101,7 +101,7 @@ public class SummonStat extends PlayableStat {
 			return super.getMaxVisibleHp();
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance) {
+		if (getActiveChar() instanceof CloneInstance) {
 			return (int) (getActiveChar().getOwner().getMaxVisibleHp() * 0.25);
 		}
 
@@ -117,7 +117,7 @@ public class SummonStat extends PlayableStat {
 			return super.getMaxMp();
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance) {
+		if (getActiveChar() instanceof CloneInstance) {
 			return (int) (getActiveChar().getOwner().getMaxMp() * 0.25);
 		}
 
@@ -128,12 +128,12 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public int getCriticalHit(L2Character target, L2Skill skill) {
+	public int getCriticalHit(Creature target, Skill skill) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getCriticalHit(target, skill);
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance) {
+		if (getActiveChar() instanceof CloneInstance) {
 			return getActiveChar().getOwner().getCriticalHit(target, skill);
 		}
 
@@ -144,7 +144,7 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public double getPCriticalDamage(L2Character target, double damage, L2Skill skill) {
+	public double getPCriticalDamage(Creature target, double damage, Skill skill) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getPCriticalDamage(target, damage, skill);
 		}
@@ -162,7 +162,7 @@ public class SummonStat extends PlayableStat {
 			return super.getPAtkSpd();
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance) {
+		if (getActiveChar() instanceof CloneInstance) {
 			return getActiveChar().getOwner().getPAtkSpd();
 		}
 
@@ -191,7 +191,7 @@ public class SummonStat extends PlayableStat {
 			return super.getAccuracy();
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance) {
+		if (getActiveChar() instanceof CloneInstance) {
 			return getActiveChar().getOwner().getAccuracy();
 		}
 
@@ -205,7 +205,7 @@ public class SummonStat extends PlayableStat {
 			return super.getMAccuracy();
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance) {
+		if (getActiveChar() instanceof CloneInstance) {
 			return getActiveChar().getOwner().getMAccuracy();
 		}
 
@@ -213,12 +213,12 @@ public class SummonStat extends PlayableStat {
 	}
 
 	//code to give pets physical evasion
-	public int getEvasionRate(L2Character target) {
+	public int getEvasionRate(Creature target) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getEvasionRate(target);
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance)
+		if (getActiveChar() instanceof CloneInstance)
 
 		{
 			return getActiveChar().getOwner().getEvasionRate(target);
@@ -227,12 +227,12 @@ public class SummonStat extends PlayableStat {
 	}
 
 	//code to give pets magic evasion
-	public int getMEvasionRate(L2Character target) {
+	public int getMEvasionRate(Creature target) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getMEvasionRate(target);
 		}
 
-		if (getActiveChar() instanceof L2CloneInstance)
+		if (getActiveChar() instanceof CloneInstance)
 
 		{
 			return getActiveChar().getOwner().getMEvasionRate(target);
@@ -241,7 +241,7 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public double getPvPPhysicalDamage(L2Character target) {
+	public double getPvPPhysicalDamage(Creature target) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getPvPPhysicalDamage(target);
 		}
@@ -254,7 +254,7 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public double getPvPPhysicalSkillDamage(L2Character target) {
+	public double getPvPPhysicalSkillDamage(Creature target) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getPvPPhysicalSkillDamage(target);
 		}
@@ -267,7 +267,7 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public double getPvPPhysicalDefense(L2Character attacker) {
+	public double getPvPPhysicalDefense(Creature attacker) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getPvPPhysicalDefense(attacker);
 		}
@@ -280,7 +280,7 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public double getPvPPhysicalSkillDefense(L2Character attacker) {
+	public double getPvPPhysicalSkillDefense(Creature attacker) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getPvPPhysicalDefense(attacker);
 		}
@@ -293,7 +293,7 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public double getPvPMagicDamage(L2Character target) {
+	public double getPvPMagicDamage(Creature target) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getPvPMagicDamage(target);
 		}
@@ -306,7 +306,7 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public double getPvPMagicDefense(L2Character attacker) {
+	public double getPvPMagicDefense(Creature attacker) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getPvPMagicDamage(attacker);
 		}
@@ -319,7 +319,7 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public double getPvEPhysicalSkillDamage(L2Character target) {
+	public double getPvEPhysicalSkillDamage(Creature target) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getPvPMagicDamage(target);
 		}
@@ -332,7 +332,7 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public double getPvEPhysicalSkillDefense(L2Character attacker) {
+	public double getPvEPhysicalSkillDefense(Creature attacker) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getPvPMagicDamage(attacker);
 		}
@@ -345,7 +345,7 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public double getPvEPhysicalDamage(L2Character target) {
+	public double getPvEPhysicalDamage(Creature target) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getPvEPhysicalDamage(target);
 		}
@@ -358,7 +358,7 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public double getPvEPhysicalDefense(L2Character attacker) {
+	public double getPvEPhysicalDefense(Creature attacker) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getPvEPhysicalDefense(attacker);
 		}
@@ -371,7 +371,7 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public double getPvEMagicDamage(L2Character target) {
+	public double getPvEMagicDamage(Creature target) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getPvEMagicDamage(target);
 		}
@@ -384,7 +384,7 @@ public class SummonStat extends PlayableStat {
 	}
 
 	@Override
-	public double getPvEMagicDefense(L2Character attacker) {
+	public double getPvEMagicDefense(Creature attacker) {
 		if (getActiveChar().getOwner() == null) {
 			return super.getPvEMagicDefense(attacker);
 		}

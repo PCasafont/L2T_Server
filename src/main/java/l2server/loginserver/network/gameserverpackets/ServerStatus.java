@@ -19,14 +19,14 @@ import l2server.loginserver.GameServerTable;
 import l2server.loginserver.GameServerTable.GameServerInfo;
 import l2server.loginserver.GameServerThread;
 import l2server.util.network.BaseRecievePacket;
-
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author -Wooden-
  */
 public class ServerStatus extends BaseRecievePacket {
-	protected static Logger log = Logger.getLogger(ServerStatus.class.getName());
+	protected static Logger log = LoggerFactory.getLogger(ServerStatus.class.getName());
 
 	public static final String[] STATUS_STRING = {"Auto", "Good", "Normal", "Full", "Down", "Gm Only"};
 

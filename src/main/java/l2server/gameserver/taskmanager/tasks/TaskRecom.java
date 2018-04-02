@@ -20,7 +20,8 @@ import l2server.gameserver.taskmanager.Task;
 import l2server.gameserver.taskmanager.TaskManager;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
 import l2server.gameserver.taskmanager.TaskTypes;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,6 +31,9 @@ import java.util.logging.Level;
  * @author Layane
  */
 public class TaskRecom extends Task {
+	private static Logger log = LoggerFactory.getLogger(TaskRecom.class.getName());
+
+
 
 	private static final String NAME = "recommendations";
 
@@ -62,11 +66,11 @@ public class TaskRecom extends Task {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Could not reset Recommendations System: " + e);
+			log.error("Could not reset Recommendations System: " + e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
-		Log.config("Recommendations System reseted");
+		log.debug("Recommendations System reseted");
 	}
 
 	/**

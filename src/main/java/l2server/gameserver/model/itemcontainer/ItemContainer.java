@@ -20,14 +20,15 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.model.EnsoulEffect;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2ItemInstance.ItemLocation;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.log.Log;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Item.ItemLocation;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.item.ItemTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -36,15 +37,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
 
 /**
  * @author Advi
  */
 public abstract class ItemContainer {
-	protected final Map<Integer, L2ItemInstance> items = new ConcurrentHashMap<>();
+	protected static Logger log = LoggerFactory.getLogger(ItemContainer.class.getName());
 	
-	protected abstract L2Character getOwner();
+	protected final Map<Integer, Item> items = new ConcurrentHashMap<>();
+	
+	protected abstract Creature getOwner();
 	
 	protected abstract ItemLocation getBaseLocation();
 	
@@ -73,11 +75,11 @@ public abstract class ItemContainer {
 	/**
 	 * Returns the list of items in inventory
 	 *
-	 * @return L2ItemInstance : items in inventory
+	 * @return Item : items in inventory
 	 */
-	public L2ItemInstance[] getItems() {
+	public Item[] getItems() {
 		synchronized (items) {
-			return items.values().toArray(new L2ItemInstance[items.size()]);
+			return items.values().toArray(new Item[items.size()]);
 		}
 	}
 	
@@ -85,10 +87,10 @@ public abstract class ItemContainer {
 	 * Returns the item from inventory by using its <B>itemId</B><BR><BR>
 	 *
 	 * @param itemId : int designating the ID of the item
-	 * @return L2ItemInstance designating the item or null if not found in inventory
+	 * @return Item designating the item or null if not found in inventory
 	 */
-	public L2ItemInstance getItemByItemId(int itemId) {
-		for (L2ItemInstance item : items.values()) {
+	public Item getItemByItemId(int itemId) {
+		for (Item item : items.values()) {
 			if (item != null && item.getItemId() == itemId) {
 				return item;
 			}
@@ -101,11 +103,11 @@ public abstract class ItemContainer {
 	 * Returns the item's list from inventory by using its <B>itemId</B><BR><BR>
 	 *
 	 * @param itemId : int designating the ID of the item
-	 * @return List<L2ItemInstance> designating the items list (empty list if not found)
+	 * @return List<Item> designating the items list (empty list if not found)
 	 */
-	public List<L2ItemInstance> getItemsByItemId(int itemId) {
-		List<L2ItemInstance> returnList = new ArrayList<>();
-		for (L2ItemInstance item : items.values()) {
+	public List<Item> getItemsByItemId(int itemId) {
+		List<Item> returnList = new ArrayList<>();
+		for (Item item : items.values()) {
 			if (item != null && item.getItemId() == itemId) {
 				returnList.add(item);
 			}
@@ -119,10 +121,10 @@ public abstract class ItemContainer {
 	 *
 	 * @param itemId       : int designating the ID of the item
 	 * @param itemToIgnore : used during a loop, to avoid returning the same item
-	 * @return L2ItemInstance designating the item or null if not found in inventory
+	 * @return Item designating the item or null if not found in inventory
 	 */
-	public L2ItemInstance getItemByItemId(int itemId, L2ItemInstance itemToIgnore) {
-		for (L2ItemInstance item : items.values()) {
+	public Item getItemByItemId(int itemId, Item itemToIgnore) {
+		for (Item item : items.values()) {
 			if (item != null && item.getItemId() == itemId && !item.equals(itemToIgnore)) {
 				return item;
 			}
@@ -135,10 +137,10 @@ public abstract class ItemContainer {
 	 * Returns item from inventory by using its <B>objectId</B>
 	 *
 	 * @param objectId : int designating the ID of the object
-	 * @return L2ItemInstance designating the item or null if not found in inventory
+	 * @return Item designating the item or null if not found in inventory
 	 */
-	public L2ItemInstance getItemByObjectId(int objectId) {
-		for (L2ItemInstance item : items.values()) {
+	public Item getItemByObjectId(int objectId) {
+		for (Item item : items.values()) {
 			if (item == null) {
 				continue;
 			}
@@ -168,10 +170,10 @@ public abstract class ItemContainer {
 	public long getInventoryItemCount(int itemId, int enchantLevel, boolean includeEquipped) {
 		long count = 0;
 		
-		for (L2ItemInstance item : items.values()) {
+		for (Item item : items.values()) {
 			if (item.getItemId() == itemId && (item.getEnchantLevel() == enchantLevel || enchantLevel < 0) &&
 					(includeEquipped || !item.isEquipped())) {
-				//if (item.isAvailable((L2PcInstance)getOwner(), true) || item.getItem().getType2() == 3)//available or quest item
+				//if (item.isAvailable((Player)getOwner(), true) || item.getItem().getType2() == 3)//available or quest item
 				if (item.isStackable()) {
 					count = item.getCount();
 				} else {
@@ -187,19 +189,19 @@ public abstract class ItemContainer {
 	 * Adds item to inventory
 	 *
 	 * @param process   : String Identifier of process triggering this action
-	 * @param item      : L2ItemInstance to be added
-	 * @param actor     : L2PcInstance Player requesting the item add
+	 * @param item      : Item to be added
+	 * @param actor     : Player Player requesting the item add
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the new item or the updated item in inventory
+	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public L2ItemInstance addItem(String process, L2ItemInstance item, L2PcInstance actor, Object reference) {
-		L2ItemInstance olditem = getItemByItemId(item.getItemId());
+	public Item addItem(String process, Item item, Player actor, Object reference) {
+		Item olditem = getItemByItemId(item.getItemId());
 		
 		// If stackable item is found in inventory just add to current quantity
 		if (olditem != null && olditem.isStackable()) {
 			long count = item.getCount();
 			olditem.changeCount(process, count, actor, reference);
-			olditem.setLastChange(L2ItemInstance.MODIFIED);
+			olditem.setLastChange(Item.MODIFIED);
 			
 			// And destroys the item
 			ItemTable.getInstance().destroyItem(process, item, actor, reference);
@@ -220,7 +222,7 @@ public abstract class ItemContainer {
 		else {
 			item.setOwnerId(process, getOwnerId(), actor, reference);
 			item.setLocation(getBaseLocation());
-			item.setLastChange(L2ItemInstance.ADDED);
+			item.setLastChange(Item.ADDED);
 			
 			// Add item in inventory
 			addItem(item);
@@ -239,17 +241,17 @@ public abstract class ItemContainer {
 	 * @param process   : String Identifier of process triggering this action
 	 * @param itemId    : int Item Identifier of the item to be added
 	 * @param count     : int Quantity of items to be added
-	 * @param actor     : L2PcInstance Player requesting the item add
+	 * @param actor     : Player Player requesting the item add
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the new item or the updated item in inventory
+	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public L2ItemInstance addItem(String process, int itemId, long count, L2PcInstance actor, Object reference) {
-		L2ItemInstance item = getItemByItemId(itemId);
+	public Item addItem(String process, int itemId, long count, Player actor, Object reference) {
+		Item item = getItemByItemId(itemId);
 		
 		// If stackable item is found in inventory just add to current quantity
 		if (item != null && item.isStackable()) {
 			item.changeCount(process, count, actor, reference);
-			item.setLastChange(L2ItemInstance.MODIFIED);
+			item.setLastChange(Item.MODIFIED);
 			// Updates database
 			if (itemId == 57 && count < 10000 * Config.RATE_DROP_ITEMS_ID.get(57)) {
 				// Small adena changes won't be saved to database all the time
@@ -263,16 +265,16 @@ public abstract class ItemContainer {
 		// If item hasn't be found in inventory, create new one
 		else {
 			for (int i = 0; i < count; i++) {
-				L2Item template = ItemTable.getInstance().getTemplate(itemId);
+				ItemTemplate template = ItemTable.getInstance().getTemplate(itemId);
 				if (template == null) {
-					Log.log(Level.WARNING, (actor != null ? "[" + actor.getName() + "] " : "") + "Invalid ItemId requested: ", itemId);
+					log.warn((actor != null ? "[" + actor.getName() + "] " : "") + "Invalid ItemId requested: ", itemId);
 					return null;
 				}
 				
 				item = ItemTable.getInstance().createItem(process, itemId, template.isStackable() ? count : 1, actor, reference);
 				item.setOwnerId(getOwnerId());
 				item.setLocation(getBaseLocation());
-				item.setLastChange(L2ItemInstance.ADDED);
+				item.setLastChange(Item.ADDED);
 				
 				// Add item in inventory
 				addItem(item);
@@ -296,21 +298,21 @@ public abstract class ItemContainer {
 	 * @param process   : String Identifier of process triggering this action
 	 * @param objectId  : int Item Identifier of the item to be transfered
 	 * @param count     : int Quantity of items to be transfered
-	 * @param actor     : L2PcInstance Player requesting the item transfer
+	 * @param actor     : Player Player requesting the item transfer
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the new item or the updated item in inventory
+	 * @return Item corresponding to the new item or the updated item in inventory
 	 */
-	public L2ItemInstance transferItem(String process, int objectId, long count, ItemContainer target, L2PcInstance actor, Object reference) {
+	public Item transferItem(String process, int objectId, long count, ItemContainer target, Player actor, Object reference) {
 		if (target == null) {
 			return null;
 		}
 		
-		L2ItemInstance sourceitem = getItemByObjectId(objectId);
+		Item sourceitem = getItemByObjectId(objectId);
 		if (sourceitem == null) {
 			return null;
 		}
 		
-		L2ItemInstance targetitem = sourceitem.isStackable() ? target.getItemByItemId(sourceitem.getItemId()) : null;
+		Item targetitem = sourceitem.isStackable() ? target.getItemByItemId(sourceitem.getItemId()) : null;
 		if (targetitem != null && sourceitem.getObjectId() == targetitem.getObjectId()) {
 			return null;
 		}
@@ -375,12 +377,12 @@ public abstract class ItemContainer {
 	 * Destroy item from inventory and updates database
 	 *
 	 * @param process   : String Identifier of process triggering this action
-	 * @param item      : L2ItemInstance to be destroyed
-	 * @param actor     : L2PcInstance Player requesting the item destroy
+	 * @param item      : Item to be destroyed
+	 * @param actor     : Player Player requesting the item destroy
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the destroyed item or the updated item in inventory
+	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public L2ItemInstance destroyItem(String process, L2ItemInstance item, L2PcInstance actor, Object reference) {
+	public Item destroyItem(String process, Item item, Player actor, Object reference) {
 		return this.destroyItem(process, item, item.getCount(), actor, reference);
 	}
 	
@@ -388,17 +390,17 @@ public abstract class ItemContainer {
 	 * Destroy item from inventory and updates database
 	 *
 	 * @param process   : String Identifier of process triggering this action
-	 * @param item      : L2ItemInstance to be destroyed
-	 * @param actor     : L2PcInstance Player requesting the item destroy
+	 * @param item      : Item to be destroyed
+	 * @param actor     : Player Player requesting the item destroy
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the destroyed item or the updated item in inventory
+	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public L2ItemInstance destroyItem(String process, L2ItemInstance item, long count, L2PcInstance actor, Object reference) {
+	public Item destroyItem(String process, Item item, long count, Player actor, Object reference) {
 		synchronized (item) {
 			// Adjust item quantity
 			if (item.getCount() > count) {
 				item.changeCount(process, -count, actor, reference);
-				item.setLastChange(L2ItemInstance.MODIFIED);
+				item.setLastChange(Item.MODIFIED);
 				
 				// don't update often for untraced items
 				if (process != null || TimeController.getGameTicks() % 10 == 0) {
@@ -433,12 +435,12 @@ public abstract class ItemContainer {
 	 * @param process   : String Identifier of process triggering this action
 	 * @param objectId  : int Item Instance identifier of the item to be destroyed
 	 * @param count     : int Quantity of items to be destroyed
-	 * @param actor     : L2PcInstance Player requesting the item destroy
+	 * @param actor     : Player Player requesting the item destroy
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the destroyed item or the updated item in inventory
+	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public L2ItemInstance destroyItem(String process, int objectId, long count, L2PcInstance actor, Object reference) {
-		L2ItemInstance item = getItemByObjectId(objectId);
+	public Item destroyItem(String process, int objectId, long count, Player actor, Object reference) {
+		Item item = getItemByObjectId(objectId);
 		if (item == null) {
 			return null;
 		}
@@ -451,12 +453,12 @@ public abstract class ItemContainer {
 	 * @param process   : String Identifier of process triggering this action
 	 * @param itemId    : int Item identifier of the item to be destroyed
 	 * @param count     : int Quantity of items to be destroyed
-	 * @param actor     : L2PcInstance Player requesting the item destroy
+	 * @param actor     : Player Player requesting the item destroy
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
-	 * @return L2ItemInstance corresponding to the destroyed item or the updated item in inventory
+	 * @return Item corresponding to the destroyed item or the updated item in inventory
 	 */
-	public L2ItemInstance destroyItemByItemId(String process, int itemId, long count, L2PcInstance actor, Object reference) {
-		L2ItemInstance item = getItemByItemId(itemId);
+	public Item destroyItemByItemId(String process, int itemId, long count, Player actor, Object reference) {
+		Item item = getItemByItemId(itemId);
 		if (item == null) {
 			return null;
 		}
@@ -467,11 +469,11 @@ public abstract class ItemContainer {
 	 * Destroy all items from inventory and updates database
 	 *
 	 * @param process   : String Identifier of process triggering this action
-	 * @param actor     : L2PcInstance Player requesting the item destroy
+	 * @param actor     : Player Player requesting the item destroy
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */
-	public synchronized void destroyAllItems(String process, L2PcInstance actor, Object reference) {
-		for (L2ItemInstance item : items.values()) {
+	public synchronized void destroyAllItems(String process, Player actor, Object reference) {
+		for (Item item : items.values()) {
 			if (item != null) {
 				destroyItem(process, item, actor, reference);
 			}
@@ -484,7 +486,7 @@ public abstract class ItemContainer {
 	public long getAdena() {
 		long count = 0;
 		
-		for (L2ItemInstance item : items.values()) {
+		for (Item item : items.values()) {
 			if (item != null && item.getItemId() == 57) {
 				count = item.getCount();
 				return count;
@@ -497,9 +499,9 @@ public abstract class ItemContainer {
 	/**
 	 * Adds item to inventory for further adjustments.
 	 *
-	 * @param item : L2ItemInstance to be added from inventory
+	 * @param item : Item to be added from inventory
 	 */
-	protected void addItem(L2ItemInstance item) {
+	protected void addItem(Item item) {
 		synchronized (items) {
 			items.put(item.getObjectId(), item);
 		}
@@ -508,9 +510,9 @@ public abstract class ItemContainer {
 	/**
 	 * Removes item from inventory for further adjustments.
 	 *
-	 * @param item : L2ItemInstance to be removed from inventory
+	 * @param item : Item to be removed from inventory
 	 */
-	protected boolean removeItem(L2ItemInstance item) {
+	protected boolean removeItem(Item item) {
 		synchronized (items) {
 			return items.remove(item.getObjectId()) != null;
 		}
@@ -529,12 +531,12 @@ public abstract class ItemContainer {
 		try {
 			updateDatabase();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "deletedMe()", e);
+			log.error("deletedMe()", e);
 		}
-		List<L2Object> items = new ArrayList<>(this.items.values());
+		List<WorldObject> items = new ArrayList<>(this.items.values());
 		items.clear();
 		
-		L2World.getInstance().removeObjects(items);
+		World.getInstance().removeObjects(items);
 	}
 	
 	/**
@@ -542,11 +544,11 @@ public abstract class ItemContainer {
 	 */
 	public void updateDatabase() {
 		if (getOwner() != null) {
-			for (L2ItemInstance item : items.values()) {
+			for (Item item : items.values()) {
 				if (item != null) {
 					if (item.getOwnerId() != getOwner().getObjectId()) {
 						item.setOwnerId(getOwner().getObjectId());
-						Log.severe(item.getName() + " had incorrect ownerId, corrected. ( " + getOwner().getName() + ")");
+						log.error(item.getName() + " had incorrect ownerId, corrected. ( " + getOwner().getName() + ")");
 					}
 					
 					item.updateDatabase(true);
@@ -568,16 +570,16 @@ public abstract class ItemContainer {
 			statement.setString(2, getBaseLocation().name());
 			ResultSet inv = statement.executeQuery();
 			
-			L2ItemInstance item;
+			Item item;
 			while (inv.next()) {
-				item = L2ItemInstance.restoreFromDb(getOwnerId(), inv);
+				item = Item.restoreFromDb(getOwnerId(), inv);
 				if (item == null) {
 					continue;
 				}
 				
-				L2World.getInstance().storeObject(item);
+				World.getInstance().storeObject(item);
 				
-				L2PcInstance owner = getOwner() == null ? null : getOwner().getActingPlayer();
+				Player owner = getOwner() == null ? null : getOwner().getActingPlayer();
 				
 				// If stackable item is found in inventory just add to current quantity
 				if (item.isStackable() && getItemByItemId(item.getItemId()) != null) {
@@ -591,7 +593,7 @@ public abstract class ItemContainer {
 			statement.close();
 			refreshWeight();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "could not restore container:", e);
+			log.warn("could not restore container:", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -613,7 +615,7 @@ public abstract class ItemContainer {
 	 * @return {@code true} if the item doesn't exists or it validates its slot count
 	 */
 	public boolean validateCapacityByItemId(int itemId, long count) {
-		final L2Item template = ItemTable.getInstance().getTemplate(itemId);
+		final ItemTemplate template = ItemTable.getInstance().getTemplate(itemId);
 		return template == null || (template.isStackable() ? validateCapacity(1) : validateCapacity(count));
 	}
 	
@@ -623,7 +625,7 @@ public abstract class ItemContainer {
 	 * @return {@code true} if the item doesn't exists or it validates its weight
 	 */
 	public boolean validateWeightByItemId(int itemId, long count) {
-		final L2Item template = ItemTable.getInstance().getTemplate(itemId);
+		final ItemTemplate template = ItemTable.getInstance().getTemplate(itemId);
 		return template == null || validateWeight(template.getWeight() * count);
 	}
 }

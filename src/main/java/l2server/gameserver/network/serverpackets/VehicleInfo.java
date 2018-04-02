@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2BoatInstance;
+import l2server.gameserver.model.actor.instance.BoatInstance;
 
 /**
  * @author Maktakien
@@ -24,7 +24,7 @@ public class VehicleInfo extends L2GameServerPacket {
 	// Store some parameters here because they can be changed during broadcast
 	private final int objId, x, y, z, heading;
 	
-	public VehicleInfo(L2BoatInstance boat) {
+	public VehicleInfo(BoatInstance boat) {
 		objId = boat.getObjectId();
 		x = boat.getX();
 		y = boat.getY();

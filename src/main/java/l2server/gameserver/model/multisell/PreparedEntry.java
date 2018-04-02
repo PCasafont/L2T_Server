@@ -15,7 +15,7 @@
 
 package l2server.gameserver.model.multisell;
 
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 
 import java.util.ArrayList;
 
@@ -27,7 +27,7 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
 public class PreparedEntry extends MultiSellEntry {
 	private long taxAmount = 0;
 
-	public PreparedEntry(MultiSellEntry template, L2ItemInstance item, boolean applyTaxes, boolean maintainEnchantment, double taxRate) {
+	public PreparedEntry(MultiSellEntry template, Item item, boolean applyTaxes, boolean maintainEnchantment, double taxRate) {
 		entryId = template.getEntryId() * 100000;
 		if (maintainEnchantment && item != null) {
 			entryId += item.getEnchantLevel();

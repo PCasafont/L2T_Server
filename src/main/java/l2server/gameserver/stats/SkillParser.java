@@ -16,26 +16,29 @@
 package l2server.gameserver.stats;
 
 import l2server.Config;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.datatables.EnchantCostsTable;
 import l2server.gameserver.model.ChanceCondition;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.stats.conditions.Condition;
 import l2server.gameserver.stats.funcs.Lambda;
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.skills.L2AbnormalTemplate;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2SkillType;
-import l2server.log.Log;
+import l2server.gameserver.templates.skills.AbnormalTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
-import java.util.logging.Level;
 
 /**
  * @author mkizub
  */
 public final class SkillParser extends StatsParser {
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	private enum SkillEnchantBonusType {
 		SET,
 		ADD,
@@ -62,7 +65,7 @@ public final class SkillParser extends StatsParser {
 	protected Map<String, String[]> tables = new HashMap<>();
 	Map<String, Map<Integer, Map<Integer, SkillEnchantBonusData>>> enchantTables = new HashMap<>();
 
-	private Map<Integer, L2Skill> skills = new HashMap<>();
+	private Map<Integer, Skill> skills = new HashMap<>();
 
 	public SkillParser(XmlNode node) {
 		super(node);
@@ -127,7 +130,7 @@ public final class SkillParser extends StatsParser {
 
 			return table[level - 1];
 		} catch (RuntimeException e) {
-			Log.log(Level.SEVERE, "Error in table: " + name + " of Skill Id " + id, e);
+			log.error("Error in table: " + name + " of Skill Id " + id, e);
 			return null;
 		}
 	}
@@ -272,14 +275,14 @@ public final class SkillParser extends StatsParser {
 
 		// Creating the skill instances
 		for (int i = 0; i < levels; i++) {
-			skills.put(i + 1, sets[i].getEnum("skillType", L2SkillType.class).makeSkill(sets[i]));
+			skills.put(i + 1, sets[i].getEnum("skillType", SkillType.class).makeSkill(sets[i]));
 			Map<Integer, StatsSet[]> levelEnchants = enchantSets.get(i + 1);
 			if (levelEnchants != null) {
 				for (int route : levelEnchants.keySet()) {
 					StatsSet[] enchSets = levelEnchants.get(route);
 					for (int j = 0; j < enchSets.length; j++) {
 						int hash = (i + 1) * 1000000 + route * 1000 + j + 1;
-						skills.put(hash, enchSets[j].getEnum("skillType", L2SkillType.class).makeSkill(enchSets[j]));
+						skills.put(hash, enchSets[j].getEnum("skillType", SkillType.class).makeSkill(enchSets[j]));
 					}
 				}
 			}
@@ -327,7 +330,7 @@ public final class SkillParser extends StatsParser {
 		}
 	}
 
-	protected void attachAbnormal(XmlNode n, L2Skill template) {
+	protected void attachAbnormal(XmlNode n, Skill template) {
 		/*
           Keep this values as default ones, DP needs it
          */
@@ -348,7 +351,7 @@ public final class SkillParser extends StatsParser {
 					duration = Config.SKILL_DURATION_LIST.get(template.getId());
 				}
 				if (Config.DEBUG) {
-					Log.info("*** Skill " + template.getName() + " (" + template.getLevelHash() + ") changed duration to " + duration + " seconds.");
+					log.info("*** Skill " + template.getName() + " (" + template.getLevelHash() + ") changed duration to " + duration + " seconds.");
 				}
 			}
 		} else if (template.getBuffDuration() > 0) {
@@ -389,16 +392,16 @@ public final class SkillParser extends StatsParser {
 		double landRate = -1;
 		if (n.hasAttribute("landRate")) {
 			landRate = Double.parseDouble(getValue(n.getString("landRate")));
-		} else if (template.getSkillType() == L2SkillType.DEBUFF && template.getPower() > 0.0) {
+		} else if (template.getSkillType() == SkillType.DEBUFF && template.getPower() > 0.0) {
 			landRate = template.getPower();
 		}
 
-		L2AbnormalType type = L2AbnormalType.NONE;
+		AbnormalType type = AbnormalType.NONE;
 		if (n.hasAttribute("effectType")) {
 			String typeName = getValue(n.getString("effectType"));
 
 			try {
-				type = Enum.valueOf(L2AbnormalType.class, typeName);
+				type = Enum.valueOf(AbnormalType.class, typeName);
 			} catch (Exception e) {
 				throw new IllegalArgumentException("No effect type found for: " + typeName);
 			}
@@ -409,7 +412,8 @@ public final class SkillParser extends StatsParser {
 			comboId = Integer.parseInt(getValue(n.getString("comboId")));
 		}
 
-		L2AbnormalTemplate lt = new L2AbnormalTemplate(applayCond, count, duration, visualEffect, stackType, stackLvl, icon, landRate, type, comboId);
+		AbnormalTemplate
+				lt = new AbnormalTemplate(applayCond, count, duration, visualEffect, stackType, stackLvl, icon, landRate, type, comboId);
 		parseTemplate(n, lt);
 		if (self) {
 			template.attachSelf(lt);
@@ -418,10 +422,10 @@ public final class SkillParser extends StatsParser {
 		}
 	}
 
-	protected void attachEffect(XmlNode n, L2AbnormalTemplate template) {
+	protected void attachEffect(XmlNode n, AbnormalTemplate template) {
 		String type = getValue(n.getString("type").intern());
 		Condition applayCond = parseCondition(n.getFirstChild(), template);
-		L2EffectTemplate lt;
+		EffectTemplate lt;
 
 		final boolean isChanceSkillTrigger = Objects.equals(type, "ChanceSkillTrigger");
 		int trigId = 0;
@@ -489,7 +493,7 @@ public final class SkillParser extends StatsParser {
 		}
 
 		Lambda lambda = getLambda(n, template);
-		lt = new L2EffectTemplate(template, applayCond, lambda, type, trigId, trigLvl, trigEnchRt, trigEnchLvl, chance);
+		lt = new EffectTemplate(template, applayCond, lambda, type, trigId, trigLvl, trigEnchRt, trigEnchLvl, chance);
 		parseTemplate(n, lt);
 		template.attach(lt);
 	}
@@ -504,7 +508,7 @@ public final class SkillParser extends StatsParser {
 		return value;
 	}
 
-	public Map<Integer, L2Skill> getSkills() {
+	public Map<Integer, Skill> getSkills() {
 		return skills;
 	}
 }

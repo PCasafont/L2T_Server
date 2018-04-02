@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.olympiad.Olympiad;
 
 /**
@@ -39,7 +39,7 @@ public class ExOlympiadResult extends L2GameServerPacket {
 			int participants = (Integer) info[2];
 			writeD(participants);
 			for (int j = 0; j < participants; j++) {
-				L2PcInstance player = (L2PcInstance) info[i * participants + j + 4];
+				Player player = (Player) info[i * participants + j + 4];
 				if (player == null) {
 					writeS("");
 					writeS("");

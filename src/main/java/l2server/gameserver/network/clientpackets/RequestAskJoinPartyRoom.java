@@ -15,7 +15,8 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Format: (ch) S
@@ -23,6 +24,9 @@ import l2server.log.Log;
  * @author -Wooden-
  */
 public class RequestAskJoinPartyRoom extends L2GameClientPacket {
+	private static Logger log = LoggerFactory.getLogger(RequestAskJoinPartyRoom.class.getName());
+
+
 	private String player; // not tested, just guessed
 	
 	@Override
@@ -33,6 +37,6 @@ public class RequestAskJoinPartyRoom extends L2GameClientPacket {
 	@Override
 	protected void runImpl() {
 		// TODO
-		Log.info("C5:RequestAskJoinPartyRoom: S: " + player);
+		log.info("C5:RequestAskJoinPartyRoom: S: " + player);
 	}
 }

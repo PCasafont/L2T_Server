@@ -19,10 +19,11 @@ import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 import java.sql.Connection;
@@ -33,6 +34,9 @@ import java.util.Calendar;
 import java.util.logging.Level;
 
 public class Lottery {
+	private static Logger log = LoggerFactory.getLogger(Lottery.class.getName());
+
+
 	public static final long SECOND = 1000;
 	public static final long MINUTE = 60000;
 	
@@ -92,7 +96,7 @@ public class Lottery {
 			statement.execute();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Lottery: Could not increase current lottery prize: " + e.getMessage(), e);
+			log.warn("Lottery: Could not increase current lottery prize: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -155,13 +159,13 @@ public class Lottery {
 				rset.close();
 				statement.close();
 			} catch (SQLException e) {
-				Log.log(Level.WARNING, "Lottery: Could not restore lottery data: " + e.getMessage(), e);
+				log.warn("Lottery: Could not restore lottery data: " + e.getMessage(), e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
 			
 			if (Config.DEBUG) {
-				Log.info("Lottery: Starting ticket sell for lottery #" + getId() + ".");
+				log.info("Lottery: Starting ticket sell for lottery #" + getId() + ".");
 			}
 			isSellingTickets = true;
 			isStarted = true;
@@ -196,7 +200,7 @@ public class Lottery {
 				statement.execute();
 				statement.close();
 			} catch (SQLException e) {
-				Log.log(Level.WARNING, "Lottery: Could not store new lottery data: " + e.getMessage(), e);
+				log.warn("Lottery: Could not store new lottery data: " + e.getMessage(), e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -211,7 +215,7 @@ public class Lottery {
 		@Override
 		public void run() {
 			if (Config.DEBUG) {
-				Log.info("Lottery: Stopping ticket sell for lottery #" + getId() + ".");
+				log.info("Lottery: Stopping ticket sell for lottery #" + getId() + ".");
 			}
 			isSellingTickets = false;
 			
@@ -227,7 +231,7 @@ public class Lottery {
 		@Override
 		public void run() {
 			if (Config.DEBUG) {
-				Log.info("Lottery: Ending lottery #" + getId() + ".");
+				log.info("Lottery: Ending lottery #" + getId() + ".");
 			}
 			
 			int[] luckynums = new int[5];
@@ -251,7 +255,7 @@ public class Lottery {
 			}
 			
 			if (Config.DEBUG) {
-				Log.info("Lottery: The lucky numbers are " + luckynums[0] + ", " + luckynums[1] + ", " + luckynums[2] + ", " + luckynums[3] + ", " +
+				log.info("Lottery: The lucky numbers are " + luckynums[0] + ", " + luckynums[1] + ", " + luckynums[2] + ", " + luckynums[3] + ", " +
 						luckynums[4] + ".");
 			}
 			
@@ -267,7 +271,7 @@ public class Lottery {
 			}
 			
 			if (Config.DEBUG) {
-				Log.info("Lottery: Encoded lucky numbers are " + enchant + ", " + type2);
+				log.info("Lottery: Encoded lucky numbers are " + enchant + ", " + type2);
 			}
 			
 			int count1 = 0;
@@ -323,7 +327,7 @@ public class Lottery {
 				rset.close();
 				statement.close();
 			} catch (SQLException e) {
-				Log.log(Level.WARNING, "Lottery: Could restore lottery data: " + e.getMessage(), e);
+				log.warn("Lottery: Could restore lottery data: " + e.getMessage(), e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -346,15 +350,15 @@ public class Lottery {
 			}
 			
 			if (Config.DEBUG) {
-				Log.info("Lottery: " + count1 + " players with all FIVE numbers each win " + prize1 + ".");
-				Log.info("Lottery: " + count2 + " players with FOUR numbers each win " + prize2 + ".");
-				Log.info("Lottery: " + count3 + " players with THREE numbers each win " + prize3 + ".");
-				Log.info("Lottery: " + count4 + " players with ONE or TWO numbers each win " + prize4 + ".");
+				log.info("Lottery: " + count1 + " players with all FIVE numbers each win " + prize1 + ".");
+				log.info("Lottery: " + count2 + " players with FOUR numbers each win " + prize2 + ".");
+				log.info("Lottery: " + count3 + " players with THREE numbers each win " + prize3 + ".");
+				log.info("Lottery: " + count4 + " players with ONE or TWO numbers each win " + prize4 + ".");
 			}
 			
 			long newprize = getPrize() - (prize1 + prize2 + prize3 + prize4);
 			if (Config.DEBUG) {
-				Log.info("Lottery: Jackpot for next lottery is " + newprize + ".");
+				log.info("Lottery: Jackpot for next lottery is " + newprize + ".");
 			}
 			
 			SystemMessage sm;
@@ -387,7 +391,7 @@ public class Lottery {
 				statement.execute();
 				statement.close();
 			} catch (SQLException e) {
-				Log.log(Level.WARNING, "Lottery: Could not store finished lottery data: " + e.getMessage(), e);
+				log.warn("Lottery: Could not store finished lottery data: " + e.getMessage(), e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -427,7 +431,7 @@ public class Lottery {
 		return res;
 	}
 	
-	public long[] checkTicket(L2ItemInstance item) {
+	public long[] checkTicket(Item item) {
 		return checkTicket(item.getCustomType1(), item.getEnchantLevel(), item.getCustomType2());
 	}
 	
@@ -489,14 +493,14 @@ public class Lottery {
 				}
 				
 				if (Config.DEBUG) {
-					Log.warning("count: " + count + ", id: " + id + ", enchant: " + enchant + ", type2: " + type2);
+					log.warn("count: " + count + ", id: " + id + ", enchant: " + enchant + ", type2: " + type2);
 				}
 			}
 			
 			rset.close();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Lottery: Could not check lottery ticket #" + id + ": " + e.getMessage(), e);
+			log.warn("Lottery: Could not check lottery ticket #" + id + ": " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

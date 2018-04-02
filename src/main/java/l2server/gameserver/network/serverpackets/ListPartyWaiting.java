@@ -17,7 +17,7 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.PartyMatchRoom;
 import l2server.gameserver.model.PartyMatchRoomList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 
@@ -25,12 +25,12 @@ import java.util.ArrayList;
  * @author Gnacik
  */
 public class ListPartyWaiting extends L2GameServerPacket {
-	private L2PcInstance cha;
+	private Player cha;
 	private int loc;
 	private int lim;
 	private ArrayList<PartyMatchRoom> rooms;
 	
-	public ListPartyWaiting(L2PcInstance player, int auto, int location, int limit) {
+	public ListPartyWaiting(Player player, int auto, int location, int limit) {
 		cha = player;
 		loc = location;
 		lim = limit;
@@ -64,7 +64,7 @@ public class ListPartyWaiting extends L2GameServerPacket {
 			writeD(room.getMaxMembers());
 			writeS(room.getOwner().getName());
 			writeD(room.getMembers());
-			for (L2PcInstance member : room.getPartyMembers()) {
+			for (Player member : room.getPartyMembers()) {
 				writeD(member.getClassId());
 				writeS(member.getName());
 			}

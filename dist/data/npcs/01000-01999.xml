@@ -1,5 +1,5 @@
 <list>
-	<npc id="1501" name="Majo Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1501" name="Majo Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -17,7 +17,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1502" name="Gold Crown Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1502" name="Gold Crown Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139" mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -35,7 +35,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1503" name="Black Crown Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1503" name="Black Crown Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139" mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -53,7 +53,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1504" name="Plaipitak Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1504" name="Plaipitak Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -71,43 +71,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1505" name="Baby Panda Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
-		 mpMax="1139" mpReg="2.4"
-		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
-		 mAtkSpd="333"
-		 pCritRate="40" mCritRate="40" walkSpd="60" runSpd="180" collisionRadius="5" collisionHeight="3.75" fireRes="20"
-		 waterRes="20"
-		 windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2"
-		 spiritshots="2">
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="1" /> <!-- Bare Hands -->
-	</npc>
-	<npc id="1506" name="Bamboo Panda Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
-		 mpMax="1139"
-		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
-		 pAtkSpd="253"
-		 mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="180" collisionRadius="5"
-		 collisionHeight="3.75" fireRes="20"
-		 waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15"
-		 soulshots="2" spiritshots="2">
-		<skill id="4416" level="19" /> <!-- Misc. -->
-		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-		<skill id="4412" level="11" /> <!-- Average P. Def. -->
-		<skill id="4413" level="11" /> <!-- Average M. Def. -->
-		<skill id="4414" level="2" /> <!-- Standard Type -->
-		<skill id="4415" level="1" /> <!-- Bare Hands -->
-	</npc>
-	<npc id="1507" name="Sexy Panda Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1505" name="Baby Panda Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139" mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -125,7 +89,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1508" name="Charming Cupid Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1506" name="Bamboo Panda Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -143,7 +107,25 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1509" name="Naughty Cupid Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1507" name="Sexy Panda Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+		 mpMax="1139" mpReg="2.4"
+		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
+		 mAtkSpd="333"
+		 pCritRate="40" mCritRate="40" walkSpd="60" runSpd="180" collisionRadius="5" collisionHeight="3.75" fireRes="20"
+		 waterRes="20"
+		 windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15" soulshots="2"
+		 spiritshots="2">
+		<skill id="4416" level="19" /> <!-- Misc. -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="1" /> <!-- Bare Hands -->
+	</npc>
+	<npc id="1508" name="Charming Cupid Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -161,7 +143,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1510" name="White Maneki Neko Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1509" name="Naughty Cupid Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -179,7 +161,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1511" name="Black Maneki Neko Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1510" name="White Maneki Neko Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -197,7 +179,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1512" name="Brown Maneki Neko Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1511" name="Black Maneki Neko Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -215,7 +197,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1513" name="One-eyed Bat Drove Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1512" name="Brown Maneki Neko Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -233,7 +215,25 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1514" name="Pegasus Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1513" name="One-eyed Bat Drove Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+		 mpMax="1139"
+		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
+		 pAtkSpd="253"
+		 mAtkSpd="333" pCritRate="40" mCritRate="40" walkSpd="60" runSpd="180" collisionRadius="5"
+		 collisionHeight="3.75" fireRes="20"
+		 waterRes="20" windRes="20" earthRes="20" holyRes="20" darkRes="20" aiType="fighter" skillChance="15"
+		 soulshots="2" spiritshots="2">
+		<skill id="4416" level="19" /> <!-- Misc. -->
+		<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
+		<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
+		<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+		<skill id="4411" level="11" /> <!-- Average M. Atk. -->
+		<skill id="4412" level="11" /> <!-- Average P. Def. -->
+		<skill id="4413" level="11" /> <!-- Average M. Def. -->
+		<skill id="4414" level="2" /> <!-- Standard Type -->
+		<skill id="4415" level="1" /> <!-- Bare Hands -->
+	</npc>
+	<npc id="1514" name="Pegasus Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -251,7 +251,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1515" name="Yellow-robed Tojigong Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1515" name="Yellow-robed Tojigong Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -269,7 +269,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1516" name="Blue-robed Tojigong Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1516" name="Blue-robed Tojigong Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -287,7 +287,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1517" name="Green-robed Tojigong Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1517" name="Green-robed Tojigong Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -305,7 +305,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1518" name="Bugbear Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1518" name="Bugbear Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -323,7 +323,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1519" name="Red Sumo Wrestler Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1519" name="Red Sumo Wrestler Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -341,7 +341,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1520" name="Blue Sumo Wrestler Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1520" name="Blue Sumo Wrestler Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -359,7 +359,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1521" name="Great Sumo Match Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1521" name="Great Sumo Match Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -377,7 +377,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1522" name="Button-eyed Bear Doll" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1522" name="Button-eyed Bear Doll" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -395,7 +395,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1523" name="God of Fortune" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1523" name="God of Fortune" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -413,7 +413,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1524" name="Dryad Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1524" name="Dryad Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -431,7 +431,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1525" name="Wonboso Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1525" name="Wonboso Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -449,7 +449,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1526" name="Daewoonso Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1526" name="Daewoonso Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -467,7 +467,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1527" name="Pomona Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1527" name="Pomona Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -485,7 +485,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1528" name="Weaver Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1528" name="Weaver Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -503,7 +503,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1529" name="Lucky Girl Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1529" name="Lucky Girl Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139" mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -521,7 +521,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1530" name="Lucky Boy Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1530" name="Lucky Boy Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -539,7 +539,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1531" name="Dancing Lucky Kid Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1531" name="Dancing Lucky Kid Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -557,7 +557,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1532" name="Agathion - Monkey King" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1532" name="Agathion - Monkey King" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -575,7 +575,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1533" name="Uthanka Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1533" name="Uthanka Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -593,7 +593,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1534" name="Bonus B Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1534" name="Bonus B Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -611,7 +611,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1535" name="Zombie Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1535" name="Zombie Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -629,7 +629,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1536" name="Bluebird Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1536" name="Bluebird Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -647,7 +647,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1537" name="Hatbird Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1537" name="Hatbird Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -665,7 +665,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1538" name="Baby Rudolph" level="55" type="L2Pet" atkRange="40" hpMax="2211" hpReg="6.5" mpMax="1139"
+	<npc id="1538" name="Baby Rudolph" level="55" type="Pet" atkRange="40" hpMax="2211" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="565" mAtk="561" pDef="86400" mDef="36864"
 		 pAtkSpd="279"
@@ -685,7 +685,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4679" level="1" /> <!-- Valakas -->
 	</npc>
-	<npc id="1539" name="Iken Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1539" name="Iken Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -703,7 +703,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1540" name="Lanya Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1540" name="Lanya Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -721,7 +721,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1541" name="Gnosian Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1541" name="Gnosian Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -739,7 +739,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1542" name="Orodriel Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1542" name="Orodriel Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -757,7 +757,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1543" name="Lakinos Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1543" name="Lakinos Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -775,7 +775,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1544" name="Mortia Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1544" name="Mortia Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -793,7 +793,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1545" name="Heintz Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1545" name="Heintz Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -811,7 +811,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1546" name="Meruril Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1546" name="Meruril Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -829,7 +829,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1547" name="Taman Zu Rapatui Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1547" name="Taman Zu Rapatui Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -847,7 +847,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1548" name="Kaurin Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1548" name="Kaurin Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -865,7 +865,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1549" name="Ahertbein Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1549" name="Ahertbein Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -883,7 +883,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1550" name="Naonin Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1550" name="Naonin Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -901,7 +901,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1551" name="Guangong Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1551" name="Guangong Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -919,7 +919,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1552" name="Gwanseum Nyang Nyang Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1552" name="Gwanseum Nyang Nyang Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -937,7 +937,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1553" name="Blue Opera Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1553" name="Blue Opera Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139" mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -955,7 +955,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1554" name="Red Opera Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1554" name="Red Opera Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -973,7 +973,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1555" name="Opera Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1555" name="Opera Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -991,7 +991,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1556" name="Miss Chipao Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1556" name="Miss Chipao Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139" mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1009,7 +1009,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1557" name="Nepal Snow Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1557" name="Nepal Snow Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139" mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1027,7 +1027,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1558" name="Round Ball Snow Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1558" name="Round Ball Snow Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -1045,7 +1045,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1559" name="Ladder Snow Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1559" name="Ladder Snow Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139" mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1063,7 +1063,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1560" name="Blue Opera Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1560" name="Blue Opera Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139" mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1081,7 +1081,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1561" name="Baby Rudolph" level="55" type="L2Pet" atkRange="40" hpMax="2211" hpReg="6.5" mpMax="1139"
+	<npc id="1561" name="Baby Rudolph" level="55" type="Pet" atkRange="40" hpMax="2211" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="565" mAtk="561" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="333"
@@ -1099,7 +1099,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1562" name="Desheloph" level="55" type="L2Pet" atkRange="40" hpMax="2211" hpReg="6.5" mpMax="1139"
+	<npc id="1562" name="Desheloph" level="55" type="Pet" atkRange="40" hpMax="2211" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="565" mAtk="561" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="333"
@@ -1119,7 +1119,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="1563" name="Hyum" level="55" type="L2Pet" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139" mpReg="2.4"
+	<npc id="1563" name="Hyum" level="55" type="Pet" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139" mpReg="2.4"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="333"
@@ -1139,7 +1139,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="1564" name="Lekang" level="55" type="L2Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
+	<npc id="1564" name="Lekang" level="55" type="Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="626" mAtk="446" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="333"
@@ -1159,7 +1159,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="1565" name="Lilias" level="55" type="L2Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
+	<npc id="1565" name="Lilias" level="55" type="Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="626" mAtk="446" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="333"
@@ -1179,7 +1179,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="1566" name="Lapham" level="55" type="L2Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
+	<npc id="1566" name="Lapham" level="55" type="Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="626" mAtk="446" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="333"
@@ -1199,7 +1199,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="1567" name="Mafum" level="55" type="L2Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
+	<npc id="1567" name="Mafum" level="55" type="Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="626" mAtk="446" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="333"
@@ -1219,7 +1219,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="1568" name="Desheloph" level="55" type="L2Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139"
+	<npc id="1568" name="Desheloph" level="55" type="Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="626" mAtk="446" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="333"
@@ -1239,7 +1239,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="1569" name="Hyum" level="55" type="L2Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
+	<npc id="1569" name="Hyum" level="55" type="Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="626" mAtk="446" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="333"
@@ -1259,7 +1259,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="1570" name="Lekang" level="55" type="L2Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
+	<npc id="1570" name="Lekang" level="55" type="Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="626" mAtk="446" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="333"
@@ -1279,7 +1279,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="1571" name="Lilias" level="55" type="L2Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
+	<npc id="1571" name="Lilias" level="55" type="Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="626" mAtk="446" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="333"
@@ -1299,7 +1299,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="1572" name="Lapham" level="55" type="L2Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
+	<npc id="1572" name="Lapham" level="55" type="Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="626" mAtk="446" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="333"
@@ -1319,7 +1319,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="1573" name="Mafum" level="55" type="L2Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
+	<npc id="1573" name="Mafum" level="55" type="Pet" atkRange="40" hpMax="2416" hpReg="6.5" mpMax="1139" mpReg="2.4"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="626" mAtk="446" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="333"
@@ -1339,7 +1339,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="1574" name="Phoenix" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1574" name="Phoenix" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4" STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1357,7 +1357,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1575" name="Three-headed Dragon" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1575" name="Three-headed Dragon" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139" mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1375,7 +1375,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1576" name="Ball Trapping Gnosian" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1576" name="Ball Trapping Gnosian" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -1393,7 +1393,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1577" name="Ball Trapping Orodriel" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1577" name="Ball Trapping Orodriel" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -1411,7 +1411,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1578" name="Penalty Kick" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1578" name="Penalty Kick" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1429,7 +1429,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1579" name="Ball Trapping Gnosian" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1579" name="Ball Trapping Gnosian" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -1447,7 +1447,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1580" name="Ball Trapping Orodriel" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1580" name="Ball Trapping Orodriel" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -1465,7 +1465,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1581" name="Penalty Kick" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1581" name="Penalty Kick" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1483,7 +1483,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1582" name="Ball Trapping Gnosian" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1582" name="Ball Trapping Gnosian" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -1501,7 +1501,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1583" name="Ball Trapping Orodriel" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1583" name="Ball Trapping Orodriel" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139"
 		 mpReg="2.4" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302"
 		 pAtkSpd="253"
@@ -1519,7 +1519,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1584" name="Penalty Kick" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1584" name="Penalty Kick" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1537,7 +1537,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1585" name="Granny Tiger" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1585" name="Granny Tiger" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1555,7 +1555,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1586" name="Flower Fairy Spirit" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1586" name="Flower Fairy Spirit" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139" mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1573,7 +1573,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1587" name="Cheerleader Orodriel" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1587" name="Cheerleader Orodriel" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139" mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1591,7 +1591,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1588" name="Cheerleader Lanya" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1588" name="Cheerleader Lanya" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1609,7 +1609,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1589" name="Cheerleader Naonin" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1589" name="Cheerleader Naonin" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1627,7 +1627,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1590" name="Cheerleader Mortia" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1590" name="Cheerleader Mortia" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1645,7 +1645,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1591" name="Cheerleader Kaurin" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="1591" name="Cheerleader Kaurin" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1663,7 +1663,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1592" name="Cheerleader Meruril" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5"
+	<npc id="1592" name="Cheerleader Meruril" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5"
 		 mpMax="1139" mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1681,7 +1681,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1593" name="Handy" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139" mpReg="2.4"
+	<npc id="1593" name="Handy" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139" mpReg="2.4"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1699,7 +1699,7 @@
 		<skill id="4414" level="2" /> <!-- Standard Type -->
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 	</npc>
-	<npc id="1594" name="Singer &amp; Dancer Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="10.0"
+	<npc id="1594" name="Singer &amp; Dancer Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="10.0"
 		 mpMax="1139"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -1707,7 +1707,7 @@
 		 fireRes="160"
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="1595" name="Zakensword Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="10.0"
+	<npc id="1595" name="Zakensword Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="10.0"
 		 mpMax="1139" mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1715,7 +1715,7 @@
 		 waterRes="160"
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="1596" name="Cow Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="10.0" mpMax="1139"
+	<npc id="1596" name="Cow Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="10.0" mpMax="1139"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1723,7 +1723,7 @@
 		 waterRes="160"
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="1597" name="Makeshift Bat Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="10.0"
+	<npc id="1597" name="Makeshift Bat Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="10.0"
 		 mpMax="1139"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -1731,7 +1731,7 @@
 		 fireRes="160"
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="1598" name="Rudolph Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="10.0" mpMax="1139"
+	<npc id="1598" name="Rudolph Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="10.0" mpMax="1139"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1739,7 +1739,7 @@
 		 waterRes="160"
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="1599" name="Zinyanzi Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="10.0" mpMax="1139"
+	<npc id="1599" name="Zinyanzi Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="10.0" mpMax="1139"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1747,7 +1747,7 @@
 		 waterRes="160"
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="1600" name="Yanzi Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="10.0" mpMax="1139"
+	<npc id="1600" name="Yanzi Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="10.0" mpMax="1139"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1755,7 +1755,7 @@
 		 waterRes="160"
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="1601" name="Super Feline Queen Z" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="10.0"
+	<npc id="1601" name="Super Feline Queen Z" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="10.0"
 		 mpMax="1139"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -1764,7 +1764,7 @@
 		 waterRes="160" windRes="250" earthRes="135" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="7" /> <!-- Spirits -->
 	</npc>
-	<npc id="1602" name="Super Kat the Cat Z" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="10.0"
+	<npc id="1602" name="Super Kat the Cat Z" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="10.0"
 		 mpMax="1139" mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1773,7 +1773,7 @@
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 	</npc>
-	<npc id="1603" name="Super Mew the Cat Z" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="10.0"
+	<npc id="1603" name="Super Mew the Cat Z" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="10.0"
 		 mpMax="1139" mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1782,7 +1782,7 @@
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="1604" name="Hanbok Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="10.0" mpMax="1139"
+	<npc id="1604" name="Hanbok Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="10.0" mpMax="1139"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -1790,7 +1790,7 @@
 		 waterRes="160"
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="1605" name="Juju Agathion" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
+	<npc id="1605" name="Juju Agathion" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -1798,7 +1798,7 @@
 		 waterRes="160"
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="1606" name="Valakas1" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
+	<npc id="1606" name="Valakas1" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
 		 mpReg="0.0" STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -1806,7 +1806,7 @@
 		 waterRes="300"
 		 windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
 	</npc>
-	<npc id="1607" name="Valakas2" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
+	<npc id="1607" name="Valakas2" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
 		 mpReg="0.0" STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -1814,7 +1814,7 @@
 		 waterRes="300"
 		 windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
 	</npc>
-	<npc id="1608" name="Valakas3" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
+	<npc id="1608" name="Valakas3" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
 		 mpReg="0.0" STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -1822,7 +1822,7 @@
 		 waterRes="300"
 		 windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
 	</npc>
-	<npc id="1609" name="Valakas4" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
+	<npc id="1609" name="Valakas4" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
 		 mpReg="0.0" STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -1830,7 +1830,7 @@
 		 waterRes="300"
 		 windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
 	</npc>
-	<npc id="1610" name="Valakas5" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
+	<npc id="1610" name="Valakas5" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
 		 mpReg="0.0" STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -1838,7 +1838,7 @@
 		 waterRes="300"
 		 windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
 	</npc>
-	<npc id="1611" name="Valakas6" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
+	<npc id="1611" name="Valakas6" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
 		 mpReg="0.0" STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -1846,7 +1846,7 @@
 		 waterRes="300"
 		 windRes="300" earthRes="300" holyRes="300" darkRes="300" aiType="fighter">
 	</npc>
-	<npc id="1612" name="Valakas7" level="55" type="L2Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
+	<npc id="1612" name="Valakas7" level="55" type="Npc" atkRange="40" hpMax="2641" hpReg="0.0" mpMax="1139"
 		 mpReg="0.0" STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"

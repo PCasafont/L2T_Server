@@ -16,18 +16,17 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.ItemList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2EtcItemType;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.EtcItemType;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.GMAudit;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 
 /**
  * This class ...
@@ -53,7 +52,7 @@ public final class RequestDropItem extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null || activeChar.isDead()) {
 			return;
 		}
@@ -62,12 +61,12 @@ public final class RequestDropItem extends L2GameClientPacket {
 			return;
 		}
 
-		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(objectId);
+		Item item = activeChar.getInventory().getItemByObjectId(objectId);
 
 		if (item == null || count == 0 || !activeChar.validateItemManipulation(objectId, "drop") || !Config.ALLOW_DISCARDITEM && !activeChar.isGM() ||
 				!item.isDropable() && !(activeChar.isGM() && Config.GM_TRADE_RESTRICTED_ITEMS) ||
-				item.getItemType() == L2EtcItemType.PET_COLLAR && activeChar.havePetInvItems() ||
-				activeChar.isInsideZone(L2Character.ZONE_NOITEMDROP)) {
+				item.getItemType() == EtcItemType.PET_COLLAR && activeChar.havePetInvItems() ||
+				activeChar.isInsideZone(Creature.ZONE_NOITEMDROP)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
 			return;
 		}
@@ -143,9 +142,9 @@ public final class RequestDropItem extends L2GameClientPacket {
 			}
 		}
 
-		if (L2Item.TYPE2_QUEST == item.getItem().getType2() && !activeChar.isGM()) {
+		if (ItemTemplate.TYPE2_QUEST == item.getItem().getType2() && !activeChar.isGM()) {
 			if (Config.DEBUG) {
-				Log.finest(activeChar.getObjectId() + ":player tried to drop quest item");
+				log.trace(activeChar.getObjectId() + ":player tried to drop quest item");
 			}
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISCARD_EXCHANGE_ITEM));
 			return;
@@ -153,7 +152,7 @@ public final class RequestDropItem extends L2GameClientPacket {
 
 		if (!activeChar.isInsideRadius(x, y, 150, false) || Math.abs(z - activeChar.getZ()) > 50) {
 			if (Config.DEBUG) {
-				Log.finest(activeChar.getObjectId() + ": trying to drop too far away");
+				log.trace(activeChar.getObjectId() + ": trying to drop too far away");
 			}
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISCARD_DISTANCE_TOO_FAR));
 			return;
@@ -165,13 +164,13 @@ public final class RequestDropItem extends L2GameClientPacket {
 		}
 
 		if (Config.DEBUG) {
-			Log.fine("requested drop item " + objectId + " (" + item.getCount() + ") at " + x + "/" + y + "/" + z);
+			log.debug("requested drop item " + objectId + " (" + item.getCount() + ") at " + x + "/" + y + "/" + z);
 		}
 
 		if (item.isEquipped()) {
-			L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(item.getLocationSlot());
+			Item[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(item.getLocationSlot());
 			InventoryUpdate iu = new InventoryUpdate();
-			for (L2ItemInstance itm : unequiped) {
+			for (Item itm : unequiped) {
 				activeChar.checkSShotsMatch(null, itm);
 
 				iu.addModifiedItem(itm);
@@ -183,10 +182,10 @@ public final class RequestDropItem extends L2GameClientPacket {
 			activeChar.sendPacket(il);
 		}
 
-		L2ItemInstance dropedItem = activeChar.dropItem("Drop", objectId, count, x, y, z, null, false);
+		Item dropedItem = activeChar.dropItem("Drop", objectId, count, x, y, z, null, false);
 
 		if (Config.DEBUG) {
-			Log.fine("dropping " + objectId + " item(" + count + ") at: " + x + " " + y + " " + z);
+			log.debug("dropping " + objectId + " item(" + count + ") at: " + x + " " + y + " " + z);
 		}
 
 		// activeChar.broadcastUserInfo();
@@ -203,7 +202,7 @@ public final class RequestDropItem extends L2GameClientPacket {
 		/*if (dropedItem != null && dropedItem.getItemId() == 57 && dropedItem.getCount() >= 1000000)
 		{
 			String msg = "Character (" + activeChar.getName() + ") has dropped (" + dropedItem.getCount() + ")adena at (" + x + "," + y + "," + z + ")";
-			Log.warning(msg);
+			log.warn(msg);
 			GmListTable.broadcastMessageToGMs(msg);
 		}*/
 	}

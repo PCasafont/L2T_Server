@@ -16,12 +16,12 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExPutItemResultForVariationCancel;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
 
 /**
@@ -43,11 +43,11 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket {
 	 */
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
-		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(objectId);
+		final Item item = activeChar.getInventory().getItemByObjectId(objectId);
 		if (item == null) {
 			return;
 		}
@@ -73,7 +73,7 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket {
 		
 		int price = 0;
 		switch (item.getItem().getCrystalType()) {
-			case L2Item.CRYSTAL_C:
+			case ItemTemplate.CRYSTAL_C:
 				if (item.getCrystalCount() < 1720) {
 					price = 95000;
 				} else if (item.getCrystalCount() < 2452) {
@@ -82,14 +82,14 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket {
 					price = 210000;
 				}
 				break;
-			case L2Item.CRYSTAL_B:
+			case ItemTemplate.CRYSTAL_B:
 				if (item.getCrystalCount() < 1746) {
 					price = 240000;
 				} else {
 					price = 270000;
 				}
 				break;
-			case L2Item.CRYSTAL_A:
+			case ItemTemplate.CRYSTAL_A:
 				if (item.getCrystalCount() < 2160) {
 					price = 330000;
 				} else if (item.getCrystalCount() < 2824) {
@@ -98,16 +98,16 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket {
 					price = 420000;
 				}
 				break;
-			case L2Item.CRYSTAL_S:
+			case ItemTemplate.CRYSTAL_S:
 				price = 480000;
 				break;
-			case L2Item.CRYSTAL_S80:
-			case L2Item.CRYSTAL_S84:
+			case ItemTemplate.CRYSTAL_S80:
+			case ItemTemplate.CRYSTAL_S84:
 				price = 920000;
 				break;
-			case L2Item.CRYSTAL_R:
-			case L2Item.CRYSTAL_R95:
-			case L2Item.CRYSTAL_R99:
+			case ItemTemplate.CRYSTAL_R:
+			case ItemTemplate.CRYSTAL_R95:
+			case ItemTemplate.CRYSTAL_R99:
 				price = 5300000;
 				break;
 			//TODO: S84 TOP price 3.2M

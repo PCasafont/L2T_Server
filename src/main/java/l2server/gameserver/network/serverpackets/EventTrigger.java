@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
+import l2server.gameserver.model.actor.instance.DoorInstance;
 import l2server.gameserver.util.Util;
 
 /*
@@ -28,7 +28,7 @@ public class EventTrigger extends L2GameServerPacket {
 	
 	private static final int[] _reverse_doors = {16200023, 16200024, 16200025};
 	
-	public EventTrigger(L2DoorInstance door, boolean opened) {
+	public EventTrigger(DoorInstance door, boolean opened) {
 		emitterId = door.getEmitter();
 		
 		if (Util.contains(_reverse_doors, door.getDoorId())) {

@@ -15,8 +15,8 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 
@@ -24,14 +24,14 @@ import java.util.ArrayList;
  * @author Erlandys
  */
 public class ExMenteeSearch extends L2GameServerPacket {
-	ArrayList<L2PcInstance> mentees;
+	ArrayList<Player> mentees;
 	int page, playersInPage;
 	
 	public ExMenteeSearch(int page, int minLevel, int maxLevel) {
 		mentees = new ArrayList<>();
 		this.page = page;
 		playersInPage = 64;
-		for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
+		for (Player player : World.getInstance().getAllPlayersArray()) {
 			if (player.getSubClasses().isEmpty() && player.getLevel() >= minLevel && player.getLevel() <= maxLevel) {
 				mentees.add(player);
 			}
@@ -45,7 +45,7 @@ public class ExMenteeSearch extends L2GameServerPacket {
 			writeD(mentees.size());
 			writeD(mentees.size() % playersInPage);
 			int i = 1;
-			for (L2PcInstance player : mentees) {
+			for (Player player : mentees) {
 				if (i <= playersInPage * page && i > playersInPage * (page - 1)) {
 					writeS(player.getName());
 					writeD(player.getClassId());

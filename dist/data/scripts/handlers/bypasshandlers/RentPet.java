@@ -17,9 +17,9 @@ package handlers.bypasshandlers;
 
 import l2server.Config;
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MerchantInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MerchantInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SetupGauge;
 
@@ -29,8 +29,8 @@ public class RentPet implements IBypassHandler {
 	private static final String[] COMMANDS = {"RentPet"};
 
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
-		if (!(target instanceof L2MerchantInstance)) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
+		if (!(target instanceof MerchantInstance)) {
 			return false;
 		}
 
@@ -68,7 +68,7 @@ public class RentPet implements IBypassHandler {
 		return false;
 	}
 
-	public static void tryRentPet(L2PcInstance player, int val) {
+	public static void tryRentPet(Player player, int val) {
 		if (player == null || player.getPet() != null || player.isMounted() || player.isRentedPet() || player.isTransformed() ||
 				player.isCursedWeaponEquipped() || !player.disarmWeapons()) {
 			return;

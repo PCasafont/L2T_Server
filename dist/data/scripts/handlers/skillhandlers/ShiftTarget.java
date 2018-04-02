@@ -16,47 +16,47 @@
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.util.Rnd;
 
 public class ShiftTarget implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.SHIFT_TARGET};
+	private static final SkillType[] SKILL_IDS = {SkillType.SHIFT_TARGET};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
 		if (targets == null) {
 			return;
 		}
-		L2Character target = (L2Character) targets[0];
+		Creature target = (Creature) targets[0];
 
-		if (activeChar.isAlikeDead() || target == null || !(target instanceof L2PcInstance)) {
+		if (activeChar.isAlikeDead() || target == null || !(target instanceof Player)) {
 			return;
 		}
 
-		L2PcInstance targetPlayer = (L2PcInstance) target;
+		Player targetPlayer = (Player) target;
 		if (!targetPlayer.isInParty()) {
 			return;
 		}
 
-		L2PcInstance otherMember = targetPlayer;
+		Player otherMember = targetPlayer;
 		while (otherMember == targetPlayer) {
 			otherMember = targetPlayer.getParty().getPartyMembers().get(Rnd.get(targetPlayer.getParty().getMemberCount()));
 		}
 
-		for (L2Character obj : activeChar.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
-			if (!(obj instanceof L2Attackable) || obj.isDead()) {
+		for (Creature obj : activeChar.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
+			if (!(obj instanceof Attackable) || obj.isDead()) {
 				continue;
 			}
 
-			L2Attackable hater = (L2Attackable) obj;
+			Attackable hater = (Attackable) obj;
 			int hating = hater.getHating(targetPlayer);
 			if (hating == 0) {
 				continue;
@@ -71,7 +71,7 @@ public class ShiftTarget implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

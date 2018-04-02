@@ -19,9 +19,10 @@ import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.L2PetData;
 import l2server.gameserver.model.L2PetLevelData;
-import l2server.gameserver.templates.item.L2EtcItemType;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.log.Log;
+import l2server.gameserver.templates.item.EtcItemType;
+import l2server.gameserver.templates.item.ItemTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -29,6 +30,9 @@ import l2server.util.xml.XmlNode;
 import java.io.File;
 
 public class PetDataTable {
+	private static Logger log = LoggerFactory.getLogger(PetDataTable.class.getName());
+
+
 
 	private static Map<Integer, L2PetData> petTable = new HashMap<>();
 
@@ -131,10 +135,10 @@ public class PetDataTable {
 				}
 			}
 		} else {
-			Log.warning("Not found PetData.xml");
+			log.warn("Not found PetData.xml");
 		}
 
-		Log.info(getClass().getSimpleName() + ": Loaded " + petTable.size() + " Pets.");
+		log.info(getClass().getSimpleName() + ": Loaded " + petTable.size() + " Pets.");
 	}
 
 	public L2PetLevelData getPetLevelData(int petID, int petLevel) {
@@ -143,7 +147,7 @@ public class PetDataTable {
 
 	public L2PetData getPetData(int petID) {
 		if (!petTable.containsKey(petID)) {
-			Log.info("Missing pet data for npcid: " + petID);
+			log.info("Missing pet data for npcid: " + petID);
 		}
 		return petTable.get(petID);
 	}
@@ -253,8 +257,8 @@ public class PetDataTable {
 	}
 
 	public static boolean isPetItem(int itemId) {
-		L2Item item = ItemTable.getInstance().getTemplate(itemId);
-		return item != null && item.getItemType() == L2EtcItemType.PET_COLLAR;
+		ItemTemplate item = ItemTable.getInstance().getTemplate(itemId);
+		return item != null && item.getItemType() == EtcItemType.PET_COLLAR;
 
 		/*switch (itemId)
 		{

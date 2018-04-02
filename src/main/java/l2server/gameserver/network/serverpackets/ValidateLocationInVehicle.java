@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.Point3D;
 
 /**
@@ -33,7 +33,7 @@ public class ValidateLocationInVehicle extends L2GameServerPacket {
 	/**
 	 * 0x80 ValidateLocationInVehicle		 hdd
 	 */
-	public ValidateLocationInVehicle(L2PcInstance player) {
+	public ValidateLocationInVehicle(Player player) {
 		charObjId = player.getObjectId();
 		boatObjId = player.getBoat().getObjectId();
 		heading = player.getHeading();

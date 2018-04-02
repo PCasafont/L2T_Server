@@ -28,9 +28,9 @@ package l2server.gameserver.network.serverpackets;
 import l2server.gameserver.datatables.EnchantItemTable;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.MultiSell;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.item.ItemTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,18 +72,18 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket {
 	}
 	
 	private final DirectEnchantMultiSellConfig config;
-	private final List<L2ItemInstance> mainIngredients = new ArrayList<>();
+	private final List<Item> mainIngredients = new ArrayList<>();
 	
-	public DirectEnchantMultiSellList(L2PcInstance player, DirectEnchantMultiSellConfig config) {
+	public DirectEnchantMultiSellList(Player player, DirectEnchantMultiSellConfig config) {
 		this.config = config;
 		
-		for (L2ItemInstance item : player.getInventory().getItems()) {
-			if (item.getItem().getCrystalType() == L2Item.CRYSTAL_NONE) {
+		for (Item item : player.getInventory().getItems()) {
+			if (item.getItem().getCrystalType() == ItemTemplate.CRYSTAL_NONE) {
 				continue;
 			}
 			
 			int currencyId = item.isWeapon() ? config.weaponMaterialId :
-					item.getItem().getBodyPart() >= L2Item.SLOT_R_EAR && item.getItem().getBodyPart() <= L2Item.SLOT_LR_FINGER ?
+					item.getItem().getBodyPart() >= ItemTemplate.SLOT_R_EAR && item.getItem().getBodyPart() <= ItemTemplate.SLOT_LR_FINGER ?
 							config.jewelMaterialId : config.armorMaterialId;
 			
 			System.out.println("Currency " + currencyId + " for " + item.getName());
@@ -106,7 +106,7 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket {
 		writeD(0x00);
 		
 		if (!mainIngredients.isEmpty()) {
-			for (L2ItemInstance item : mainIngredients) {
+			for (Item item : mainIngredients) {
 				writeD(item.getObjectId()); // entry id
 				writeC(0x00); // stackable
 				writeH(0x00); // C6
@@ -185,7 +185,7 @@ public final class DirectEnchantMultiSellList extends L2GameServerPacket {
 				
 				// Currency
 				int currencyId = item.isWeapon() ? config.weaponMaterialId :
-						item.getItem().getBodyPart() >= L2Item.SLOT_R_EAR && item.getItem().getBodyPart() <= L2Item.SLOT_LR_FINGER ?
+						item.getItem().getBodyPart() >= ItemTemplate.SLOT_R_EAR && item.getItem().getBodyPart() <= ItemTemplate.SLOT_LR_FINGER ?
 								config.jewelMaterialId : config.armorMaterialId;
 				writeD(currencyId);
 				writeH(ItemTable.getInstance().getTemplate(currencyId).getType2());

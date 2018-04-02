@@ -21,13 +21,14 @@
 package l2server.gameserver.taskmanager;
 
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2CubicInstance;
-import l2server.gameserver.model.actor.instance.L2MobSummonInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.CubicInstance;
+import l2server.gameserver.model.actor.instance.MobSummonInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.AutoAttackStop;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 import java.util.Map.Entry;
@@ -41,8 +42,11 @@ import java.util.logging.Level;
  * @version $Revision: $ $Date: $
  */
 public class AttackStanceTaskManager {
+	private static Logger log = LoggerFactory.getLogger(AttackStanceTaskManager.class.getName());
 
-	protected Map<L2Character, Long> attackStanceTasks = new ConcurrentHashMap<>();
+
+
+	protected Map<Creature, Long> attackStanceTasks = new ConcurrentHashMap<>();
 
 	private AttackStanceTaskManager() {
 		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new FightModeScheduler(), 0, 1000);
@@ -52,37 +56,37 @@ public class AttackStanceTaskManager {
 		return SingletonHolder.instance;
 	}
 
-	public void addAttackStanceTask(L2Character actor) {
-		if (actor instanceof L2Summon) {
-			L2Summon summon = (L2Summon) actor;
+	public void addAttackStanceTask(Creature actor) {
+		if (actor instanceof Summon) {
+			Summon summon = (Summon) actor;
 			actor = summon.getOwner();
 		}
-		if (actor instanceof L2PcInstance) {
-			L2PcInstance player = (L2PcInstance) actor;
+		if (actor instanceof Player) {
+			Player player = (Player) actor;
 			player.setFightStanceTime(System.currentTimeMillis());
 			player.onCombatStanceStart();
-			player.getCubics().values().stream().filter(cubic -> cubic.getId() != L2CubicInstance.LIFE_CUBIC).forEach(L2CubicInstance::doAction);
+			player.getCubics().values().stream().filter(cubic -> cubic.getId() != CubicInstance.LIFE_CUBIC).forEach(CubicInstance::doAction);
 
-			player.getSummons().stream().filter(summon -> summon instanceof L2MobSummonInstance).forEach(summon -> summon.unSummon(player));
+			player.getSummons().stream().filter(summon -> summon instanceof MobSummonInstance).forEach(summon -> summon.unSummon(player));
 		}
 		attackStanceTasks.put(actor, System.currentTimeMillis());
 	}
 
-	public void removeAttackStanceTask(L2Character actor) {
-		if (actor instanceof L2Summon) {
-			L2Summon summon = (L2Summon) actor;
+	public void removeAttackStanceTask(Creature actor) {
+		if (actor instanceof Summon) {
+			Summon summon = (Summon) actor;
 			actor = summon.getOwner();
 		}
-		if (actor instanceof L2PcInstance) {
-			((L2PcInstance) actor).onCombatStanceEnd();
+		if (actor instanceof Player) {
+			((Player) actor).onCombatStanceEnd();
 		}
 
 		attackStanceTasks.remove(actor);
 	}
 
-	public boolean getAttackStanceTask(L2Character actor) {
-		if (actor instanceof L2Summon) {
-			L2Summon summon = (L2Summon) actor;
+	public boolean getAttackStanceTask(Creature actor) {
+		if (actor instanceof Summon) {
+			Summon summon = (Summon) actor;
 			actor = summon.getOwner();
 		}
 
@@ -100,18 +104,18 @@ public class AttackStanceTaskManager {
 			try {
 				if (attackStanceTasks != null) {
 					synchronized (this) {
-						for (Entry<L2Character, Long> entry : attackStanceTasks.entrySet()) {
-							L2Character actor = entry.getKey();
+						for (Entry<Creature, Long> entry : attackStanceTasks.entrySet()) {
+							Creature actor = entry.getKey();
 							if (current - entry.getValue() > 15000) {
 								actor.broadcastPacket(new AutoAttackStop(actor.getObjectId()));
-								if (actor instanceof L2PcInstance) {
-									if (((L2PcInstance) actor).getPet() != null) {
-										((L2PcInstance) actor).getPet()
-												.broadcastPacket(new AutoAttackStop(((L2PcInstance) actor).getPet().getObjectId()));
+								if (actor instanceof Player) {
+									if (((Player) actor).getPet() != null) {
+										((Player) actor).getPet()
+												.broadcastPacket(new AutoAttackStop(((Player) actor).getPet().getObjectId()));
 									}
 
-									if (((L2PcInstance) actor).getSummons() != null) {
-										((L2PcInstance) actor).getSummons()
+									if (((Player) actor).getSummons() != null) {
+										((Player) actor).getSummons()
 												.stream()
 												.filter(summon -> summon != null)
 												.forEach(summon -> summon.broadcastPacket(new AutoAttackStop(summon.getObjectId())));
@@ -124,7 +128,7 @@ public class AttackStanceTaskManager {
 					}
 				}
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "Error in FightModeScheduler: " + e.getMessage(), e);
+				log.warn("Error in FightModeScheduler: " + e.getMessage(), e);
 			}
 		}
 	}

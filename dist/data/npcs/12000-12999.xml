@@ -1,5 +1,5 @@
 <list>
-	<npc id="12077" name="Wolf" level="15" type="L2Pet" atkRange="40" hpMax="390" hpReg="2.5" mpMax="191" mpReg="1.2"
+	<npc id="12077" name="Wolf" level="15" type="Pet" atkRange="40" hpMax="390" hpReg="2.5" mpMax="191" mpReg="1.2"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="37" mAtk="15" pDef="77" mDef="72" pAtkSpd="279"
 		 mAtkSpd="333" pCritRate="40"
@@ -17,7 +17,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="12311" name="Hatchling of the Wind" level="35" type="L2Pet" atkRange="40" hpMax="1220" hpReg="4.5"
+	<npc id="12311" name="Hatchling of the Wind" level="35" type="Pet" atkRange="40" hpMax="1220" hpReg="4.5"
 		 mpMax="516"
 		 mpReg="1.8" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="193" mAtk="90" pDef="170" mDef="159"
 		 pAtkSpd="279"
@@ -38,7 +38,7 @@
 		<skill id="4715" level="1" /> <!-- Wind Dragon -->
 		<skill id="4710" level="1" /> <!-- Wild Stun -->
 	</npc>
-	<npc id="12312" name="Hatchling of the Stars" level="35" type="L2Pet" atkRange="40" hpMax="1220" hpReg="4.5"
+	<npc id="12312" name="Hatchling of the Stars" level="35" type="Pet" atkRange="40" hpMax="1220" hpReg="4.5"
 		 mpMax="516"
 		 mpReg="1.8" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="193" mAtk="90" pDef="170" mDef="159"
 		 pAtkSpd="279"
@@ -59,7 +59,7 @@
 		<skill id="4716" level="1" /> <!-- Star Dragon -->
 		<skill id="4712" level="1" /> <!-- Bright Burst -->
 	</npc>
-	<npc id="12313" name="Hatchling of Twilight" level="35" type="L2Pet" atkRange="40" hpMax="1220" hpReg="4.5"
+	<npc id="12313" name="Hatchling of Twilight" level="35" type="Pet" atkRange="40" hpMax="1220" hpReg="4.5"
 		 mpMax="516"
 		 mpReg="1.8" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="193" mAtk="90" pDef="170" mDef="159"
 		 pAtkSpd="279"
@@ -79,7 +79,7 @@
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4714" level="1" /> <!-- Twilight Dragon -->
 	</npc>
-	<npc id="12526" name="Wind Strider" level="55" type="L2Pet" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="12526" name="Wind Strider" level="55" type="Pet" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="257"
@@ -101,7 +101,7 @@
 		<skill id="4710" level="1" /> <!-- Wild Stun -->
 		<skill id="4270" level="1" /> <!-- Weight Penalty -->
 	</npc>
-	<npc id="12527" name="Star Strider" level="55" type="L2Pet" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="12527" name="Star Strider" level="55" type="Pet" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="257"
@@ -123,7 +123,7 @@
 		<skill id="4712" level="1" /> <!-- Bright Burst -->
 		<skill id="4270" level="1" /> <!-- Weight Penalty -->
 	</npc>
-	<npc id="12528" name="Strider of Dusk" level="55" type="L2Pet" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
+	<npc id="12528" name="Strider of Dusk" level="55" type="Pet" atkRange="40" hpMax="2641" hpReg="6.5" mpMax="1139"
 		 mpReg="2.4"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="671" mAtk="361" pDef="323" mDef="302" pAtkSpd="279"
 		 mAtkSpd="257"
@@ -144,7 +144,7 @@
 		<skill id="4714" level="1" /> <!-- Twilight Dragon -->
 		<skill id="4270" level="1" /> <!-- Weight Penalty -->
 	</npc>
-	<npc id="12564" name="Sin Eater" level="15" type="L2Pet" atkRange="40" hpMax="193" hpReg="7.2513" mpMax="191"
+	<npc id="12564" name="Sin Eater" level="15" type="Pet" atkRange="40" hpMax="193" hpReg="7.2513" mpMax="191"
 		 mpReg="1.2"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="37" mAtk="15" pDef="77" mDef="72" pAtkSpd="279"
 		 mAtkSpd="257"
@@ -163,7 +163,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 	</npc>
-	<npc id="12621" name="Wyvern" level="70" type="L2Pet" atkRange="40" hpMax="3858" hpReg="7.5" mpMax="1723"
+	<npc id="12621" name="Wyvern" level="70" type="Pet" atkRange="40" hpMax="3858" hpReg="7.5" mpMax="1723"
 		 mpReg="2.7" STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="441" pAtkSpd="279"
 		 mAtkSpd="500"
@@ -183,7 +183,7 @@
 		<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
 		<skill id="4289" level="1" /> <!-- Wyvern Breath -->
 	</npc>
-	<npc id="12774" name="Young Squash" level="1" type="L2Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45"
+	<npc id="12774" name="Young Squash" level="1" type="Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45"
 		 mpReg="0.9" STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253" mAtkSpd="500"
 		 pCritRate="10"
@@ -202,7 +202,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
 	</npc>
-	<npc id="12775" name="High Quality Squash" level="1" type="L2Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45"
+	<npc id="12775" name="High Quality Squash" level="1" type="Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45"
 		 mpReg="0.9"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -221,7 +221,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
 	</npc>
-	<npc id="12776" name="Defective Squash" level="1" type="L2Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45"
+	<npc id="12776" name="Defective Squash" level="1" type="Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45"
 		 mpReg="0.9"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -240,7 +240,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
 	</npc>
-	<npc id="12777" name="Large Young Squash" level="1" type="L2Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45"
+	<npc id="12777" name="Large Young Squash" level="1" type="Npc" atkRange="40" hpMax="50" hpReg="2.0" mpMax="45"
 		 mpReg="0.9"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -259,7 +259,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
 	</npc>
-	<npc id="12778" name="High Quality Large Squash" level="1" type="L2Npc" atkRange="40" hpMax="60" hpReg="2.0"
+	<npc id="12778" name="High Quality Large Squash" level="1" type="Npc" atkRange="40" hpMax="60" hpReg="2.0"
 		 mpMax="45"
 		 mpReg="0.9" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33"
 		 pAtkSpd="253"
@@ -278,7 +278,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
 	</npc>
-	<npc id="12779" name="Defective Large Squash" level="1" type="L2Npc" atkRange="40" hpMax="60" hpReg="2.0" mpMax="45"
+	<npc id="12779" name="Defective Large Squash" level="1" type="Npc" atkRange="40" hpMax="60" hpReg="2.0" mpMax="45"
 		 mpReg="0.9"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="32" mDef="33" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -297,7 +297,7 @@
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 		<skill id="4441" level="5" /> <!-- Greater Mental Attack Resistance -->
 	</npc>
-	<npc id="12780" name="Baby Buffalo" level="25" type="L2BabyPet" atkRange="40" hpMax="728" hpReg="3.5" mpMax="332"
+	<npc id="12780" name="Baby Buffalo" level="25" type="BabyPet" atkRange="40" hpMax="728" hpReg="3.5" mpMax="332"
 		 mpReg="1.5"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="89" mAtk="38" pDef="117" mDef="109" pAtkSpd="279"
 		 mAtkSpd="257"
@@ -316,7 +316,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="12781" name="Baby Kookaburra" level="25" type="L2BabyPet" atkRange="40" hpMax="728" hpReg="3.5" mpMax="332"
+	<npc id="12781" name="Baby Kookaburra" level="25" type="BabyPet" atkRange="40" hpMax="728" hpReg="3.5" mpMax="332"
 		 mpReg="1.5"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="89" mAtk="38" pDef="117" mDef="109" pAtkSpd="279"
 		 mAtkSpd="333"
@@ -335,7 +335,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="12782" name="Baby Cougar" level="25" type="L2BabyPet" atkRange="40" hpMax="728" hpReg="3.5" mpMax="332"
+	<npc id="12782" name="Baby Cougar" level="25" type="BabyPet" atkRange="40" hpMax="728" hpReg="3.5" mpMax="332"
 		 mpReg="1.5"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="89" mAtk="38" pDef="117" mDef="109" pAtkSpd="279"
 		 mAtkSpd="257"

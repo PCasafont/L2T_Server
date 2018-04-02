@@ -5,10 +5,10 @@ import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.events.instanced.EventInstance.EventState;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
 
@@ -16,12 +16,12 @@ import l2server.util.Rnd;
  * @author Pere
  */
 public class EventTeleporter implements Runnable {
-	private L2PcInstance playerInstance = null;
+	private Player playerInstance = null;
 	private Point3D coordinates = null;
 	private boolean restore = false;
 	private boolean heal = true;
 
-	public EventTeleporter(L2PcInstance playerInstance, Point3D coordinates, boolean fastSchedule, boolean restore) {
+	public EventTeleporter(Player playerInstance, Point3D coordinates, boolean fastSchedule, boolean restore) {
 		this.playerInstance = playerInstance;
 		this.coordinates = coordinates;
 		this.restore = restore;
@@ -32,7 +32,7 @@ public class EventTeleporter implements Runnable {
 		ThreadPoolManager.getInstance().scheduleGeneral(this, fastSchedule ? 0 : delay);
 	}
 
-	public EventTeleporter(L2PcInstance playerInstance, Point3D coordinates, boolean fastSchedule, boolean restore, boolean heal) {
+	public EventTeleporter(Player playerInstance, Point3D coordinates, boolean fastSchedule, boolean restore, boolean heal) {
 		this.playerInstance = playerInstance;
 		this.coordinates = coordinates;
 		this.restore = restore;
@@ -56,33 +56,33 @@ public class EventTeleporter implements Runnable {
 		}
 
 		try {
-			for (L2Abnormal effect : playerInstance.getAllEffects()) {
+			for (Abnormal effect : playerInstance.getAllEffects()) {
 				if (effect != null) {
 					effect.exit();
 				}
 			}
 
-			L2PetInstance pet = playerInstance.getPet();
+			PetInstance pet = playerInstance.getPet();
 			if (pet != null) {
 				// In LC, SS and SS2, players don't need summons and summons are even able to attack during event so better unsummon
 				if (pet.isMountable() || event.isType(EventType.LuckyChests) || event.isType(EventType.StalkedSalkers) ||
 						event.isType(EventType.SimonSays)) {
 					pet.unSummon(playerInstance);
 				} else {
-					for (L2Abnormal effect : pet.getAllEffects()) {
+					for (Abnormal effect : pet.getAllEffects()) {
 						if (effect != null) {
 							effect.exit();
 						}
 					}
 				}
 			}
-			for (L2SummonInstance summon : playerInstance.getSummons()) {
+			for (SummonInstance summon : playerInstance.getSummons()) {
 				// In LC, SS and SS2, players don't need summons and summons are even able to attack during event so better unsummon
 				if (summon.isMountable() || event.isType(EventType.LuckyChests) || event.isType(EventType.StalkedSalkers) ||
 						event.isType(EventType.SimonSays)) {
 					summon.unSummon(playerInstance);
 				} else {
-					for (L2Abnormal effect : summon.getAllEffects()) {
+					for (Abnormal effect : summon.getAllEffects()) {
 						if (effect != null) {
 							effect.exit();
 						}
@@ -94,12 +94,12 @@ public class EventTeleporter implements Runnable {
 				playerInstance.leaveParty();
 			}
 
-			for (L2SummonInstance summon : playerInstance.getSummons()) {
+			for (SummonInstance summon : playerInstance.getSummons()) {
 				// In LC, SS and SS2, players don't need summons and summons are even able to attack during event so better unsummon
 				if (event.isType(EventType.LuckyChests) || event.isType(EventType.StalkedSalkers) || event.isType(EventType.SimonSays)) {
 					summon.unSummon(playerInstance);
 				} else {
-					for (L2Abnormal effect : summon.getAllEffects()) {
+					for (Abnormal effect : summon.getAllEffects()) {
 						if (effect != null) {
 							effect.exit();
 						}

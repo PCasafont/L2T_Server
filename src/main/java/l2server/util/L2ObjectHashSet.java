@@ -15,7 +15,7 @@
 
 package l2server.util;
 
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -41,7 +41,7 @@ import java.util.NoSuchElementException;
  * @param <T> type of values stored in this hashtable
  * @author mkizub
  */
-public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> implements Iterable<T> {
+public final class L2ObjectHashSet<T extends WorldObject> extends L2ObjectSet<T> implements Iterable<T> {
 
 	private static final boolean TRACE = false;
 	private static final boolean DEBUG = false;
@@ -68,7 +68,7 @@ public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> im
 	@SuppressWarnings("unchecked")
 	public L2ObjectHashSet() {
 		int size = PRIMES[0];
-		table = (T[]) new L2Object[size];
+		table = (T[]) new WorldObject[size];
 		collisions = new int[size + 31 >> 5];
 		if (DEBUG) {
 			check();
@@ -98,7 +98,7 @@ public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> im
 	@SuppressWarnings("unchecked")
 	public synchronized void clear() {
 		int size = PRIMES[0];
-		table = (T[]) new L2Object[size];
+		table = (T[]) new WorldObject[size];
 		collisions = new int[size + 31 >> 5];
 		count = 0;
 		if (DEBUG) {
@@ -275,13 +275,13 @@ public final class L2ObjectHashSet<T extends L2Object> extends L2ObjectSet<T> im
 	@SuppressWarnings("unchecked")
 	private/*already synchronized in put()*/void expand() {
 		int newSize = getPrime(table.length + 1);
-		L2Object[] newTable = new L2Object[newSize];
+		WorldObject[] newTable = new WorldObject[newSize];
 		int[] newCollisions = new int[newSize + 31 >> 5];
 
 		// over all old entries
 		next_entry:
 		for (int i = 0; i < table.length; i++) {
-			L2Object obj = table[i];
+			WorldObject obj = table[i];
 			if (obj == null) {
 				continue;
 			}

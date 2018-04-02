@@ -17,7 +17,7 @@ package l2server.gameserver;
 
 import l2server.Config;
 import l2server.gameserver.cache.HtmCache;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
@@ -25,7 +25,8 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.script.DateRange;
 import l2server.gameserver.util.Broadcast;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.StringUtil;
 import l2server.util.loader.annotations.Load;
 
@@ -42,6 +43,9 @@ import java.util.logging.Level;
  * @version $Revision: 1.5.2.1.2.7 $ $Date: 2005/03/29 23:15:14 $
  */
 public class Announcements {
+	private static Logger log = LoggerFactory.getLogger(Announcements.class.getName());
+
+
 
 	private List<String> announcements = new ArrayList<>();
 	private List<List<Object>> eventAnnouncements = new ArrayList<>();
@@ -65,12 +69,12 @@ public class Announcements {
 			if (file.exists()) {
 				readFromDisk(file);
 			} else {
-				Log.warning(Config.DATA_FOLDER + "announcements.txt doesn't exist");
+				log.warn(Config.DATA_FOLDER + "announcements.txt doesn't exist");
 			}
 		}
 	}
 
-	public void showAnnouncements(L2PcInstance activeChar) {
+	public void showAnnouncements(Player activeChar) {
 		for (String announcement : announcements) {
 			CreatureSay cs = new CreatureSay(0, Say2.ANNOUNCEMENT, activeChar.getName(), announcement);
 			activeChar.sendPacket(cs);
@@ -98,7 +102,7 @@ public class Announcements {
 		eventAnnouncements.add(entry);
 	}
 
-	public void listAnnouncements(L2PcInstance activeChar) {
+	public void listAnnouncements(Player activeChar) {
 		String content = HtmCache.getInstance().getHtmForce(activeChar.getHtmlPrefix(), "admin/announce.htm");
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		adminReply.setHtml(content);
@@ -142,10 +146,10 @@ public class Announcements {
 			}
 
 			if (Config.DEBUG) {
-				Log.info("Announcements: Loaded " + i + " Announcements.");
+				log.info("Announcements: Loaded " + i + " Announcements.");
 			}
 		} catch (IOException e1) {
-			Log.log(Level.SEVERE, "Error reading announcements: ", e1);
+			log.error("Error reading announcements: ", e1);
 		} finally {
 			try {
 				lnr.close();
@@ -166,7 +170,7 @@ public class Announcements {
 				save.write("\r\n");
 			}
 		} catch (IOException e) {
-			Log.log(Level.SEVERE, "Saving to the announcements file has failed: ", e);
+			log.error("Saving to the announcements file has failed: ", e);
 		} finally {
 			try {
 				save.close();

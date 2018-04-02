@@ -26,7 +26,8 @@
 package l2server.gameserver.idfactory;
 
 import l2server.gameserver.ThreadPoolManager;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.PrimeFinder;
 
 import java.util.BitSet;
@@ -40,6 +41,9 @@ import java.util.logging.Level;
  */
 
 public class BitSetIDFactory extends IdFactory {
+	private static Logger log = LoggerFactory.getLogger(BitSetIDFactory.class.getName());
+
+
 	
 	private BitSet freeIds;
 	private AtomicInteger freeIdCount;
@@ -63,7 +67,7 @@ public class BitSetIDFactory extends IdFactory {
 			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new BitSetCapacityCheck(), 30000, 30000);
 			initialize();
 		}
-		Log.info("IDFactory: " + freeIds.size() + " ids available.");
+		log.info("IDFactory: " + freeIds.size() + " ids available.");
 	}
 	
 	public void initialize() {
@@ -75,7 +79,7 @@ public class BitSetIDFactory extends IdFactory {
 			for (int usedObjectId : extractUsedObjectIDTable()) {
 				int objectID = usedObjectId - FIRST_OID;
 				if (objectID < 0 || usedObjectId < FIRST_OID) {
-					Log.warning("Object ID " + usedObjectId + " in DB is less than minimum ID of " + FIRST_OID);
+					log.warn("Object ID " + usedObjectId + " in DB is less than minimum ID of " + FIRST_OID);
 					continue;
 				}
 				freeIds.set(usedObjectId - FIRST_OID);
@@ -86,7 +90,7 @@ public class BitSetIDFactory extends IdFactory {
 			initialized = true;
 		} catch (Exception e) {
 			initialized = false;
-			Log.log(Level.SEVERE, "BitSet ID Factory could not be initialized correctly: " + e.getMessage(), e);
+			log.error("BitSet ID Factory could not be initialized correctly: " + e.getMessage(), e);
 		}
 	}
 	
@@ -99,7 +103,7 @@ public class BitSetIDFactory extends IdFactory {
 			freeIds.clear(objectID - FIRST_OID);
 			freeIdCount.incrementAndGet();
 		} else {
-			Log.warning("BitSet ID Factory: release objectID " + objectID + " failed (< " + FIRST_OID + ")");
+			log.warn("BitSet ID Factory: release objectID " + objectID + " failed (< " + FIRST_OID + ")");
 		}
 	}
 	

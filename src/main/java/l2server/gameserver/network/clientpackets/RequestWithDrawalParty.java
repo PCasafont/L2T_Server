@@ -19,7 +19,7 @@ import l2server.gameserver.model.L2Party;
 import l2server.gameserver.model.L2Party.messageType;
 import l2server.gameserver.model.PartyMatchRoom;
 import l2server.gameserver.model.PartyMatchRoomList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ExClosePartyRoom;
 import l2server.gameserver.network.serverpackets.ExPartyRoomMembers;
 import l2server.gameserver.network.serverpackets.PartyMatchDetail;
@@ -39,7 +39,7 @@ public final class RequestWithDrawalParty extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}

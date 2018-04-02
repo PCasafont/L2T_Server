@@ -18,11 +18,11 @@ package ai.individual;
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SpawnTable;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 
 import java.util.HashMap;
@@ -60,7 +60,7 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public final String onSpawn(Npc npc) {
 		if (npc.getNpcId() == yin) {
 			npc.setIsInvul(true);
 		}
@@ -71,7 +71,7 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet, Skill skill) {
 		if (yinControl.containsKey(npc.getObjectId())) {
 			if (System.currentTimeMillis() >= yinControl.get(npc.getObjectId()) + 180000) {
 				yinControl.put(npc.getObjectId(), System.currentTimeMillis());
@@ -88,24 +88,24 @@ public class SpiculaCloneGenerator extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		spawnSpiculas(npc, killer);
 
 		return super.onKill(npc, killer, isPet);
 	}
 
-	private void spawnSpiculas(L2Npc npc, L2PcInstance killer) {
+	private void spawnSpiculas(Npc npc, Player killer) {
 		npc.broadcastPacket(new ExShowScreenMessage("$s1 has summoned Elite Soldiers through the Clone Generator.".replace("$s1", killer.getName()),
 				3000)); //id: 1802277
 
 		for (int a = 0; a <= (npc.getNpcId() == yinFragment ? 2 : 4); a++) {
-			L2Npc minion = addSpawn(spiculaElite, killer.getX(), killer.getY(), killer.getZ(), 0, true, 180000, true);
+			Npc minion = addSpawn(spiculaElite, killer.getX(), killer.getY(), killer.getZ(), 0, true, 180000, true);
 
 			minion.setIsRunning(true);
 
 			minion.setTarget(killer);
 
-			((L2MonsterInstance) minion).addDamageHate(killer, 500, 99999);
+			((MonsterInstance) minion).addDamageHate(killer, 500, 99999);
 
 			minion.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, killer);
 		}

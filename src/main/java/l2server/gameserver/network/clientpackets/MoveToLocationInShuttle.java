@@ -16,12 +16,12 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.TaskPriority;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2ShuttleInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.ShuttleInstance;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ExMoveToLocationInShuttle;
 import l2server.gameserver.network.serverpackets.ExStopMoveInShuttle;
-import l2server.gameserver.templates.item.L2WeaponType;
+import l2server.gameserver.templates.item.WeaponType;
 import l2server.util.Point3D;
 
 /**
@@ -53,7 +53,7 @@ public class MoveToLocationInShuttle extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -64,7 +64,7 @@ public class MoveToLocationInShuttle extends L2GameClientPacket {
 		}
 		
 		if (activeChar.isAttackingNow() && activeChar.getActiveWeaponItem() != null &&
-				activeChar.getActiveWeaponItem().getItemType() == L2WeaponType.BOW) {
+				activeChar.getActiveWeaponItem().getItemType() == WeaponType.BOW) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
@@ -79,7 +79,7 @@ public class MoveToLocationInShuttle extends L2GameClientPacket {
 			return;
 		}
 		
-		final L2ShuttleInstance shuttle = activeChar.getShuttle();
+		final ShuttleInstance shuttle = activeChar.getShuttle();
 		if (shuttle.getObjectId() != shuttleId) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

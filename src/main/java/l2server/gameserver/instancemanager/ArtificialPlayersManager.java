@@ -22,17 +22,18 @@ import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.CharTemplateTable;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2ApInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.ApInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.base.Race;
-import l2server.gameserver.templates.chars.L2PcTemplate;
-import l2server.gameserver.templates.chars.L2PcTemplate.PcTemplateItem;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.PcTemplate;
+import l2server.gameserver.templates.chars.PcTemplate.PcTemplateItem;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
@@ -51,7 +52,10 @@ import java.util.stream.Collectors;
  * @author Pere
  */
 public class ArtificialPlayersManager {
-	List<L2ApInstance> players = new ArrayList<>();
+	private static Logger log = LoggerFactory.getLogger(ArtificialPlayersManager.class.getName());
+
+
+	List<ApInstance> players = new ArrayList<>();
 
 	ScheduledFuture<?> pvpCheck = null;
 	List<L2Party> partiesSent = new ArrayList<>();
@@ -78,10 +82,10 @@ public class ArtificialPlayersManager {
 			while (rset.next()) {
 				int charId = rset.getInt("charId");
 
-				L2ApInstance player = (L2ApInstance) L2World.getInstance().getPlayer(charId);
+				ApInstance player = (ApInstance) World.getInstance().getPlayer(charId);
 
 				if (player == null || !player.isOnline()) {
-					player = (L2ApInstance) L2PcInstance.load(charId);
+					player = (ApInstance) Player.load(charId);
 					//player.setOnlineStatus(true, false);
 					//player.spawnMe();
 				}
@@ -103,7 +107,7 @@ public class ArtificialPlayersManager {
 
 		//createRandomParty();
 
-		Log.info("Loaded " + players.size() + " artificial players.");
+		log.info("Loaded " + players.size() + " artificial players.");
 
 		if (pvpCheck != null) {
 			pvpCheck.cancel(false);
@@ -111,7 +115,7 @@ public class ArtificialPlayersManager {
 
 		pvpCheck = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() -> {
 			for (L2Party party : partiesSent) {
-				party.getPartyMembers().forEach(L2PcInstance::deleteMe);
+				party.getPartyMembers().forEach(Player::deleteMe);
 			}
 
 			partiesSent.clear();
@@ -121,14 +125,14 @@ public class ArtificialPlayersManager {
 
 			int pvpers = 0;
 			Map<Integer, Integer> allies = new HashMap<>();
-			for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
-				if (player.getPvpFlag() == 0 || player.isInsideZone(L2Character.ZONE_PEACE) || player.isInsideZone(L2Character.ZONE_SIEGE) ||
-						player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || player.getInstanceId() != 0) {
+			for (Player player : World.getInstance().getAllPlayers().values()) {
+				if (player.getPvpFlag() == 0 || player.isInsideZone(Creature.ZONE_PEACE) || player.isInsideZone(Creature.ZONE_SIEGE) ||
+						player.isInsideZone(Creature.ZONE_NOSUMMONFRIEND) || player.getInstanceId() != 0) {
 					continue;
 				}
 
 				pvpers++;
-				if (player instanceof L2ApInstance) {
+				if (player instanceof ApInstance) {
 					continue;
 				}
 
@@ -153,7 +157,7 @@ public class ArtificialPlayersManager {
 			if (biggestAlly - smallestAlly > 5) {
 				while (partiesSent.size() * 7 < biggestAlly) {
 					L2Party party = createRandomParty();
-					for (L2PcInstance member : party.getPartyMembers()) {
+					for (Player member : party.getPartyMembers()) {
 						member.teleToLocation(-20893, 186060, -4103, true);
 						member.setPvpFlagLasts(System.currentTimeMillis() + Config.PVP_NORMAL_TIME);
 						member.startPvPFlag();
@@ -163,7 +167,7 @@ public class ArtificialPlayersManager {
 			} else if (pvpers < 5) {
 				while (partiesSent.size() < 2) {
 					L2Party party = createRandomParty();
-					for (L2PcInstance member : party.getPartyMembers()) {
+					for (Player member : party.getPartyMembers()) {
 						member.teleToLocation(-24501, 187976, -3975, true);
 						member.startPvPFlag();
 					}
@@ -171,7 +175,7 @@ public class ArtificialPlayersManager {
 				}
 			} else if (partiesSent.size() > 0 && pvpers > 20) {
 				L2Party party = partiesSent.remove(0);
-				party.getPartyMembers().forEach(L2PcInstance::deleteMe);
+				party.getPartyMembers().forEach(Player::deleteMe);
 			}
 		}, 100000L, 100000L);
 
@@ -179,13 +183,13 @@ public class ArtificialPlayersManager {
 	}
 
 	/**
-	 * Creates a new L2ApInstance based on the given Class ID
+	 * Creates a new ApInstance based on the given Class ID
 	 *
 	 * @param classId the classId of the AP to create
-	 * @return a new (and spawned) L2ApInstance
+	 * @return a new (and spawned) ApInstance
 	 */
-	public L2ApInstance createChar(int classId) {
-		L2PcTemplate template = CharTemplateTable.getInstance().getTemplate(Rnd.get(6) * 2 + Rnd.get(2));
+	public ApInstance createChar(int classId) {
+		PcTemplate template = CharTemplateTable.getInstance().getTemplate(Rnd.get(6) * 2 + Rnd.get(2));
 		PlayerClass cl = PlayerClassTable.getInstance().getClassById(classId);
 		switch (cl.getParent().getAwakeningClassId()) {
 			case 139:
@@ -210,8 +214,8 @@ public class ArtificialPlayersManager {
 		}
 
 		int objectId = IdFactory.getInstance().getNextId();
-		L2PcInstance newChar =
-				L2PcInstance.create(objectId, template, "!", name, (byte) Rnd.get(5), (byte) Rnd.get(4), (byte) Rnd.get(3), Rnd.get(2) == 0, classId);
+		Player newChar =
+				Player.create(objectId, template, "!", name, (byte) Rnd.get(5), (byte) Rnd.get(4), (byte) Rnd.get(3), Rnd.get(2) == 0, classId);
 
 		newChar.setCurrentHp(newChar.getMaxHp());
 		newChar.setCurrentCp(newChar.getMaxCp());
@@ -227,10 +231,10 @@ public class ArtificialPlayersManager {
 		newChar.getStat().addLevel((byte) 104);
 
 		for (PcTemplateItem ia : template.getItems()) {
-			L2ItemInstance item = newChar.getInventory().addItem("Init", ia.getItemId(), ia.getAmount(), newChar, null);
+			Item item = newChar.getInventory().addItem("Init", ia.getItemId(), ia.getAmount(), newChar, null);
 
 			if (item == null) {
-				Log.warning("Could not create item during char creation: itemId " + ia.getItemId() + ", amount " + ia.getAmount() + ".");
+				log.warn("Could not create item during char creation: itemId " + ia.getItemId() + ", amount " + ia.getAmount() + ".");
 				continue;
 			}
 
@@ -240,7 +244,7 @@ public class ArtificialPlayersManager {
 		}
 
 		for (int itemId : new int[]{1}) {
-			L2ItemInstance item = newChar.getInventory().addItem("Init", itemId, 1, newChar, null);
+			Item item = newChar.getInventory().addItem("Init", itemId, 1, newChar, null);
 
 			if (item == null) {
 				continue;
@@ -254,7 +258,7 @@ public class ArtificialPlayersManager {
 		newChar.giveAvailableSkills(true);
 		newChar.store();
 
-		L2ApInstance player = (L2ApInstance) L2PcInstance.load(objectId);
+		ApInstance player = (ApInstance) Player.load(objectId);
 
 		if (player == null) {
 			return null;
@@ -273,16 +277,16 @@ public class ArtificialPlayersManager {
 	 * @param classCombination List of ClassIDs
 	 */
 	public L2Party createParty(List<Integer> classCombination) {
-		List<L2ApInstance> available = players.stream().filter(player -> player.getParty() == null).collect(Collectors.toList());
+		List<ApInstance> available = players.stream().filter(player -> player.getParty() == null).collect(Collectors.toList());
 
-		List<L2ApInstance> members = new ArrayList<>();
+		List<ApInstance> members = new ArrayList<>();
 		available.stream().filter(player -> classCombination.contains(player.getClassId())).forEachOrdered(player -> {
 			members.add(player);
 			classCombination.remove((Integer) player.getClassId());
 		});
 
 		for (Integer classId : classCombination) {
-			L2ApInstance newChar = createChar(classId);
+			ApInstance newChar = createChar(classId);
 			if (newChar != null) {
 				members.add(newChar);
 			}
@@ -294,7 +298,7 @@ public class ArtificialPlayersManager {
 
 		L2Party party = new L2Party(members.get(0), L2Party.ITEM_RANDOM);
 
-		for (L2ApInstance member : members) {
+		for (ApInstance member : members) {
 			CharNameTable.getInstance().addName(member);
 			member.setOnlineStatus(true, false);
 			member.spawnMe();
@@ -356,7 +360,7 @@ public class ArtificialPlayersManager {
 		return createParty(classCombination);
 	}
 
-	public List<L2ApInstance> getAllAPlayers() {
+	public List<ApInstance> getAllAPlayers() {
 		return players;
 	}
 

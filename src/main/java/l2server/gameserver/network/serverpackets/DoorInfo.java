@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
+import l2server.gameserver.model.actor.instance.DoorInstance;
 
 /**
  * 60
@@ -31,9 +31,9 @@ import l2server.gameserver.model.actor.instance.L2DoorInstance;
  * @version $Revision: 1.3.2.2.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
 public final class DoorInfo extends L2GameServerPacket {
-	private final L2DoorInstance door;
+	private final DoorInstance door;
 
-	public DoorInfo(L2DoorInstance door) {
+	public DoorInfo(DoorInstance door) {
 		this.door = door;
 	}
 

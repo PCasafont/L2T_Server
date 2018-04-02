@@ -18,10 +18,10 @@ package ai.individual.Summons;
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.templates.skills.L2AbnormalType;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.templates.skills.AbnormalType;
 
 import java.util.concurrent.ScheduledFuture;
 
@@ -34,7 +34,7 @@ import java.util.concurrent.ScheduledFuture;
 
 public class WarpedSpace extends L2AttackableAIScript {
 	private static final int gravityCoreId = 13432;
-	private static final L2Skill spatialTrap = SkillTable.getInstance().getInfo(30528, 1);
+	private static final Skill spatialTrap = SkillTable.getInstance().getInfo(30528, 1);
 
 	public WarpedSpace(int id, String name, String descr) {
 		super(id, name, descr);
@@ -43,7 +43,7 @@ public class WarpedSpace extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public final String onSpawn(Npc npc) {
 		npc.disableCoreAI(true);
 
 		WarpedSpaceAI ai = new WarpedSpaceAI(npc);
@@ -54,10 +54,10 @@ public class WarpedSpace extends L2AttackableAIScript {
 	}
 
 	class WarpedSpaceAI implements Runnable {
-		private L2Npc gravityCore;
+		private Npc gravityCore;
 		private ScheduledFuture<?> schedule = null;
 
-		protected WarpedSpaceAI(L2Npc npc) {
+		protected WarpedSpaceAI(Npc npc) {
 			gravityCore = npc;
 		}
 
@@ -68,9 +68,9 @@ public class WarpedSpace extends L2AttackableAIScript {
 		@Override
 		public void run() {
 			if (gravityCore == null || gravityCore.isDead() || gravityCore.isDecayed() || gravityCore.getOwner().isAlikeDead()) {
-				for (L2Character ch : gravityCore.getKnownList().getKnownCharactersInRadius(175)) {
-					if (ch.getFirstEffect(L2AbnormalType.SPATIAL_TRAP) != null) {
-						ch.getFirstEffect(L2AbnormalType.SPATIAL_TRAP).exit();
+				for (Creature ch : gravityCore.getKnownList().getKnownCharactersInRadius(175)) {
+					if (ch.getFirstEffect(AbnormalType.SPATIAL_TRAP) != null) {
+						ch.getFirstEffect(AbnormalType.SPATIAL_TRAP).exit();
 					}
 				}
 
@@ -80,7 +80,7 @@ public class WarpedSpace extends L2AttackableAIScript {
 				}
 			}
 
-			for (L2Character ch : gravityCore.getKnownList().getKnownCharactersInRadius(175)) {
+			for (Creature ch : gravityCore.getKnownList().getKnownCharactersInRadius(175)) {
 				if (ch.getFirstEffect(spatialTrap.getId()) != null) {
 					continue;
 				} else if (gravityCore.getOwner() == ch) {

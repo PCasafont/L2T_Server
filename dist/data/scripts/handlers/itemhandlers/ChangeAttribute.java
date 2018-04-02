@@ -16,9 +16,9 @@
 package handlers.itemhandlers;
 
 import l2server.gameserver.handler.IItemHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExChangeAttributeItemList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -28,12 +28,12 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class ChangeAttribute implements IItemHandler {
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
-		if (!(playable instanceof L2PcInstance)) {
+	public void useItem(Playable playable, Item item, boolean forceUse) {
+		if (!(playable instanceof Player)) {
 			return;
 		}
 
-		final L2PcInstance activeChar = (L2PcInstance) playable;
+		final Player activeChar = (Player) playable;
 		if (activeChar.isCastingNow()) {
 			return;
 		}

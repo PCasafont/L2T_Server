@@ -18,8 +18,8 @@ package handlers.voicedcommandhandlers;
 import l2server.gameserver.datatables.AdminCommandAccessRights;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.handler.IVoicedCommandHandler;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.StringTokenizer;
 
@@ -27,10 +27,10 @@ public class ChatAdmin implements IVoicedCommandHandler {
 	private static final String[] VOICED_COMMANDS = {"banchat", "unbanchat"};
 
 	/**
-	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance, java.lang.String)
+	 * @see l2server.gameserver.handler.IVoicedCommandHandler#useVoicedCommand(java.lang.String, Player, java.lang.String)
 	 */
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params) {
+	public boolean useVoicedCommand(String command, Player activeChar, String params) {
 		if (!AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel())) {
 			return false;
 		}
@@ -59,12 +59,12 @@ public class ChatAdmin implements IVoicedCommandHandler {
 
 				int objId = CharNameTable.getInstance().getIdByName(name);
 				if (objId > 0) {
-					L2PcInstance player = L2World.getInstance().getPlayer(objId);
+					Player player = World.getInstance().getPlayer(objId);
 					if (player == null || !player.isOnline()) {
 						activeChar.sendMessage("Player not online !");
 						return false;
 					}
-					if (player.getPunishLevel() != L2PcInstance.PunishLevel.NONE) {
+					if (player.getPunishLevel() != Player.PunishLevel.NONE) {
 						activeChar.sendMessage("Player is already punished !");
 						return false;
 					}
@@ -81,7 +81,7 @@ public class ChatAdmin implements IVoicedCommandHandler {
 						return false;
 					}
 
-					player.setPunishLevel(L2PcInstance.PunishLevel.CHAT, length);
+					player.setPunishLevel(Player.PunishLevel.CHAT, length);
 					player.sendMessage("Chat banned by moderator " + activeChar.getName());
 
 					if (length > 0) {
@@ -106,17 +106,17 @@ public class ChatAdmin implements IVoicedCommandHandler {
 
 				int objId = CharNameTable.getInstance().getIdByName(name);
 				if (objId > 0) {
-					L2PcInstance player = L2World.getInstance().getPlayer(objId);
+					Player player = World.getInstance().getPlayer(objId);
 					if (player == null || !player.isOnline()) {
 						activeChar.sendMessage("Player not online !");
 						return false;
 					}
-					if (player.getPunishLevel() != L2PcInstance.PunishLevel.CHAT) {
+					if (player.getPunishLevel() != Player.PunishLevel.CHAT) {
 						activeChar.sendMessage("Player is not chat banned !");
 						return false;
 					}
 
-					player.setPunishLevel(L2PcInstance.PunishLevel.NONE, 0);
+					player.setPunishLevel(Player.PunishLevel.NONE, 0);
 
 					activeChar.sendMessage("Player " + player.getName() + " chat unbanned.");
 					player.sendMessage("Chat unbanned by moderator " + activeChar.getName());

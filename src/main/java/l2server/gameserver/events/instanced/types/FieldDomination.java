@@ -10,11 +10,12 @@ import l2server.gameserver.events.instanced.EventTeam;
 import l2server.gameserver.events.instanced.EventTeleporter;
 import l2server.gameserver.instancemanager.PlayerAssistsManager;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2EventFlagInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.EventFlagInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -22,6 +23,9 @@ import java.util.List;
  * @author Pere
  */
 public class FieldDomination extends EventInstance {
+	private static Logger log = LoggerFactory.getLogger(FieldDomination.class.getName());
+
+
 
 	private boolean FDflagsSpawned = false;
 	private L2Spawn[] FDFlagSpawns = new L2Spawn[5];
@@ -46,8 +50,8 @@ public class FieldDomination extends EventInstance {
 	@Override
 	public void calculateRewards() {
 		for (int i = 0; i < 5; i++) {
-			if (FDFlagSpawns[i] != null && ((L2EventFlagInstance) FDFlagSpawns[i].getNpc()).getTeam() != null) {
-				((L2EventFlagInstance) FDFlagSpawns[i].getNpc()).getTeam().increasePoints();
+			if (FDFlagSpawns[i] != null && ((EventFlagInstance) FDFlagSpawns[i].getNpc()).getTeam() != null) {
+				((EventFlagInstance) FDFlagSpawns[i].getNpc()).getTeam().increasePoints();
 			}
 		}
 		EventTeam team;
@@ -119,13 +123,13 @@ public class FieldDomination extends EventInstance {
 	}
 
 	@Override
-	public String getRunningInfo(L2PcInstance player) {
+	public String getRunningInfo(Player player) {
 		String html = "";
-		L2EventFlagInstance flag;
+		EventFlagInstance flag;
 		String flagStatus;
 		for (int i = 0; i < 5; i++) {
 			if (FDFlagSpawns[i] != null && FDFlagSpawns[i].getNpc() != null) {
-				flag = (L2EventFlagInstance) FDFlagSpawns[i].getNpc();
+				flag = (EventFlagInstance) FDFlagSpawns[i].getNpc();
 				if (flag.getTeam() == null) {
 					flagStatus = "Neutral";
 				} else {
@@ -145,7 +149,7 @@ public class FieldDomination extends EventInstance {
 	}
 
 	@Override
-	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayer) {
+	public void onKill(Creature killerCharacter, Player killedPlayer) {
 		if (killedPlayer == null || !isState(EventState.STARTED)) {
 			return;
 		}
@@ -155,14 +159,14 @@ public class FieldDomination extends EventInstance {
 			return;
 		}
 
-		L2PcInstance killerPlayer = killerCharacter.getActingPlayer();
+		Player killerPlayer = killerCharacter.getActingPlayer();
 		if (killerPlayer == null) {
 			return;
 		}
 
 		killerPlayer.addEventPoints(3);
-		List<L2PcInstance> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
-		for (L2PcInstance assistant : assistants) {
+		List<Player> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
+		for (Player assistant : assistants) {
 			assistant.addEventPoints(1);
 		}
 
@@ -184,7 +188,7 @@ public class FieldDomination extends EventInstance {
 		for (int i = 0; i < 5; i++) {
 			if (FDFlagSpawns[i] != null) {
 				if (FDFlagSpawns[i].getNpc() != null) {
-					((L2EventFlagInstance) FDFlagSpawns[i].getNpc()).shouldBeDeleted();
+					((EventFlagInstance) FDFlagSpawns[i].getNpc()).shouldBeDeleted();
 					FDFlagSpawns[i].getNpc().deleteMe();
 				}
 				FDFlagSpawns[i].stopRespawn();
@@ -195,7 +199,7 @@ public class FieldDomination extends EventInstance {
 	}
 
 	public void spawnNeutralFlag(EventTeam team) {
-		L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(44008);
+		NpcTemplate tmpl = NpcTable.getInstance().getTemplate(44008);
 
 		try {
 			int x = 0;
@@ -239,20 +243,20 @@ public class FieldDomination extends EventInstance {
 				FDFlagSpawns[team.getFlagId() - 44004] = flagSpawn;
 			}
 
-			L2EventFlagInstance flag = (L2EventFlagInstance) flagSpawn.getNpc();
+			EventFlagInstance flag = (EventFlagInstance) flagSpawn.getNpc();
 			flag.setEvent(this);
 			flag.setTeam(null);
 			flag.setTitle("Neutral");
 			flag.updateAbnormalEffect();
 		} catch (Exception e) {
-			Log.warning("Field Domination exception:");
+			log.warn("Field Domination exception:");
 			e.printStackTrace();
 		}
 	}
 
-	public void convertFlag(L2EventFlagInstance flag, EventTeam team, L2PcInstance player) {
+	public void convertFlag(EventFlagInstance flag, EventTeam team, Player player) {
 		int flagId = team == null ? 44008 : team.getFlagId();
-		L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(flagId);
+		NpcTemplate tmpl = NpcTable.getInstance().getTemplate(flagId);
 
 		try {
 			int x = 0;
@@ -285,7 +289,7 @@ public class FieldDomination extends EventInstance {
 			flagSpawn.stopRespawn();
 			flagSpawn.doSpawn();
 
-			L2EventFlagInstance newFlag = (L2EventFlagInstance) flagSpawn.getNpc();
+			EventFlagInstance newFlag = (EventFlagInstance) flagSpawn.getNpc();
 			newFlag.setEvent(this);
 			newFlag.setTeam(team);
 
@@ -308,8 +312,8 @@ public class FieldDomination extends EventInstance {
 					if (FDFlagSpawns[i].getX() == flagSpawn.getX() && FDFlagSpawns[i].getY() == flagSpawn.getY()) {
 						FDFlagSpawns[i] = flagSpawn;
 					}
-					if (((L2EventFlagInstance) FDFlagSpawns[i].getNpc()).getTeam() == null || team == null ||
-							((L2EventFlagInstance) FDFlagSpawns[i].getNpc()).getTeam().getFlagId() != team.getFlagId()) {
+					if (((EventFlagInstance) FDFlagSpawns[i].getNpc()).getTeam() == null || team == null ||
+							((EventFlagInstance) FDFlagSpawns[i].getNpc()).getTeam().getFlagId() != team.getFlagId()) {
 						allFlagsOwned = false;
 					}
 				}
@@ -324,7 +328,7 @@ public class FieldDomination extends EventInstance {
 			flag.getSpawn().stopRespawn();
 			SpawnTable.getInstance().deleteSpawn(flag.getSpawn(), false);
 		} catch (Exception e) {
-			Log.warning("Field Domination exception:");
+			log.warn("Field Domination exception:");
 			e.printStackTrace();
 		}
 	}

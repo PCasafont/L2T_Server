@@ -15,16 +15,16 @@
 
 package l2server.gameserver.model.actor.stat;
 
-import l2server.gameserver.model.actor.instance.L2ControllableAirShipInstance;
+import l2server.gameserver.model.actor.instance.ControllableAirShipInstance;
 
 public class ControllableAirShipStat extends VehicleStat {
-	public ControllableAirShipStat(L2ControllableAirShipInstance activeChar) {
+	public ControllableAirShipStat(ControllableAirShipInstance activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public L2ControllableAirShipInstance getActiveChar() {
-		return (L2ControllableAirShipInstance) super.getActiveChar();
+	public ControllableAirShipInstance getActiveChar() {
+		return (ControllableAirShipInstance) super.getActiveChar();
 	}
 
 	@Override

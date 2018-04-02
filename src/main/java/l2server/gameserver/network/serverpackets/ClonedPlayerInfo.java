@@ -19,8 +19,8 @@ import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.instancemanager.CursedWeaponsManager;
 import l2server.gameserver.model.L2Transformation;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.model.itemcontainer.PcInventory;
 import l2server.gameserver.stats.VisualEffect;
@@ -51,8 +51,8 @@ import java.util.Set;
  * @version $Revision: 1.7.2.6.2.11 $ $Date: 2005/04/11 10:05:54 $
  */
 public class ClonedPlayerInfo extends L2GameServerPacket {
-	private L2Npc npc;
-	private L2PcInstance activeChar;
+	private Npc npc;
+	private Player activeChar;
 	private PcInventory inv;
 	private int objId;
 	private int x, y, z, heading;
@@ -69,7 +69,7 @@ public class ClonedPlayerInfo extends L2GameServerPacket {
 
 	/**
 	 */
-	public ClonedPlayerInfo(L2Npc npc, L2PcInstance cha) {
+	public ClonedPlayerInfo(Npc npc, Player cha) {
 		this.npc = npc;
 		activeChar = cha;
 		objId = npc.getObjectId();
@@ -191,8 +191,8 @@ public class ClonedPlayerInfo extends L2GameServerPacket {
 		writeC(0);
 
 		writeC(activeChar.getMountType()); // 1-on Strider, 2-on Wyvern, 3-on Great Wolf, 0-no mount
-		writeC(activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ? activeChar.getPrivateStoreType() :
-				L2PcInstance.STORE_PRIVATE_SELL);
+		writeC(activeChar.getPrivateStoreType() != Player.STORE_PRIVATE_CUSTOM_SELL ? activeChar.getPrivateStoreType() :
+				Player.STORE_PRIVATE_SELL);
 
 		writeH(activeChar.getCubics().size());
 		for (int id : activeChar.getCubics().keySet()) {

@@ -16,14 +16,15 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.ai.CtrlEvent;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @author Ahmed
@@ -33,24 +34,24 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  * This was originally done by _drunk_
  */
 public class EffectSpoil extends L2Effect {
-	public EffectSpoil(Env env, L2EffectTemplate template) {
+	public EffectSpoil(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		if (!(getEffector() instanceof L2PcInstance)) {
+		if (!(getEffector() instanceof Player)) {
 			return false;
 		}
 
-		if (!(getEffected() instanceof L2MonsterInstance)) {
+		if (!(getEffected() instanceof MonsterInstance)) {
 			return false;
 		}
 
-		L2MonsterInstance target = (L2MonsterInstance) getEffected();
+		MonsterInstance target = (MonsterInstance) getEffected();
 
 		if (target == null) {
 			return false;
@@ -77,7 +78,7 @@ public class EffectSpoil extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

@@ -16,16 +16,16 @@
 package handlers.itemhandlers;
 
 import l2server.gameserver.handler.IItemHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.model.itemcontainer.PcInventory;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.gameserver.templates.item.L2Weapon;
+import l2server.gameserver.templates.item.ItemTemplate;
+import l2server.gameserver.templates.item.WeaponTemplate;
 import l2server.gameserver.util.Broadcast;
 
 /**
@@ -36,17 +36,17 @@ import l2server.gameserver.util.Broadcast;
 
 public class BlessedSpiritShot implements IItemHandler {
 	/**
-	 * @see IItemHandler#useItem(L2Playable, L2ItemInstance, boolean)
+	 * @see IItemHandler#useItem(Playable, Item, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
-		if (!(playable instanceof L2PcInstance)) {
+	public void useItem(Playable playable, Item item, boolean forceUse) {
+		if (!(playable instanceof Player)) {
 			return;
 		}
 
-		L2PcInstance activeChar = (L2PcInstance) playable;
-		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
-		L2Weapon weaponItem = activeChar.getActiveWeaponItem();
+		Player activeChar = (Player) playable;
+		Item weaponInst = activeChar.getActiveWeaponInstance();
+		WeaponTemplate weaponItem = activeChar.getActiveWeaponItem();
 		int itemId = item.getItemId();
 
 		// Check if Blessed SpiritShot can be used
@@ -58,7 +58,7 @@ public class BlessedSpiritShot implements IItemHandler {
 		}
 
 		// Check if Blessed SpiritShot is already active (it can be charged over SpiritShot)
-		if (weaponInst.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE) {
+		if (weaponInst.getChargedSpiritShot() != Item.CHARGED_NONE) {
 			return;
 		}
 
@@ -67,41 +67,41 @@ public class BlessedSpiritShot implements IItemHandler {
 		boolean gradeCheck = true;
 
 		switch (weaponGrade) {
-			case L2Item.CRYSTAL_NONE:
+			case ItemTemplate.CRYSTAL_NONE:
 				if (itemId != 3947) {
 					gradeCheck = false;
 				}
 				break;
-			case L2Item.CRYSTAL_D:
+			case ItemTemplate.CRYSTAL_D:
 				if (itemId != 3948 && itemId != 22072) {
 					gradeCheck = false;
 				}
 				break;
-			case L2Item.CRYSTAL_C:
+			case ItemTemplate.CRYSTAL_C:
 				if (itemId != 3949 && itemId != 22073) {
 					gradeCheck = false;
 				}
 				break;
-			case L2Item.CRYSTAL_B:
+			case ItemTemplate.CRYSTAL_B:
 				if (itemId != 3950 && itemId != 22074) {
 					gradeCheck = false;
 				}
 				break;
-			case L2Item.CRYSTAL_A:
+			case ItemTemplate.CRYSTAL_A:
 				if (itemId != 3951 && itemId != 22075) {
 					gradeCheck = false;
 				}
 				break;
-			case L2Item.CRYSTAL_S:
-			case L2Item.CRYSTAL_S80:
-			case L2Item.CRYSTAL_S84:
+			case ItemTemplate.CRYSTAL_S:
+			case ItemTemplate.CRYSTAL_S80:
+			case ItemTemplate.CRYSTAL_S84:
 				if (itemId != 3952 && itemId != 22076) {
 					gradeCheck = false;
 				}
 				break;
-			case L2Item.CRYSTAL_R:
-			case L2Item.CRYSTAL_R95:
-			case L2Item.CRYSTAL_R99:
+			case ItemTemplate.CRYSTAL_R:
+			case ItemTemplate.CRYSTAL_R95:
+			case ItemTemplate.CRYSTAL_R99:
 				if (itemId != 19442 && itemId != 22434) {
 					gradeCheck = false;
 				}
@@ -119,7 +119,7 @@ public class BlessedSpiritShot implements IItemHandler {
 		int sapphireLvl = 0;
 		PcInventory playerInventory = activeChar.getInventory();
 		for (int i = Inventory.PAPERDOLL_JEWELRY1; i < Inventory.PAPERDOLL_JEWELRY1 + playerInventory.getMaxJewelryCount(); i++) {
-			L2ItemInstance jewel = playerInventory.getPaperdollItem(i);
+			Item jewel = playerInventory.getPaperdollItem(i);
 			if (jewel != null) {
 				//Sapphire
 				switch (jewel.getItemId()) {
@@ -219,7 +219,7 @@ public class BlessedSpiritShot implements IItemHandler {
 		activeChar.consumableLock.lock();
 		try {
 			// Check if Soul shot is already active
-			if (weaponInst.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE) {
+			if (weaponInst.getChargedSpiritShot() != Item.CHARGED_NONE) {
 				return;
 			}
 
@@ -232,7 +232,7 @@ public class BlessedSpiritShot implements IItemHandler {
 			}
 
 			// Charge Blessed SpiritShot
-			weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT * sapphireMul);
+			weaponInst.setChargedSpiritShot(Item.CHARGED_BLESSED_SPIRITSHOT * sapphireMul);
 		} finally {
 			activeChar.consumableLock.unlock();
 		}

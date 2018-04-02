@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.Npc;
 
 /**
  * sample
@@ -30,10 +30,10 @@ import l2server.gameserver.model.actor.L2Npc;
 public class MonRaceInfo extends L2GameServerPacket {
 	private int unknown1;
 	private int unknown2;
-	private L2Npc[] monsters;
+	private Npc[] monsters;
 	private int[][] speeds;
 	
-	public MonRaceInfo(int unknown1, int unknown2, L2Npc[] monsters, int[][] speeds) {
+	public MonRaceInfo(int unknown1, int unknown2, Npc[] monsters, int[][] speeds) {
 		/*
 		 * -1 0 to initial the race
 		 * 0 15322 to start race

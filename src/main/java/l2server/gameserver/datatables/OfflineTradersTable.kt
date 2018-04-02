@@ -21,17 +21,18 @@ import l2server.gameserver.LoginServerThread
 import l2server.gameserver.Server
 import l2server.gameserver.model.L2ManufactureItem
 import l2server.gameserver.model.L2ManufactureList
-import l2server.gameserver.model.L2World
-import l2server.gameserver.model.actor.instance.L2PcInstance
+import l2server.gameserver.model.World
+import l2server.gameserver.model.actor.instance.Player
 import l2server.gameserver.network.L2GameClient
 import l2server.gameserver.network.L2GameClient.GameClientState
-import l2server.log.Log
 import l2server.util.loader.annotations.Load
+import org.slf4j.LoggerFactory
 import java.sql.Connection
 import java.util.*
-import java.util.logging.Level
 
 object OfflineTradersTable {
+
+    private val log = LoggerFactory.getLogger(OfflineTradersTable::class.java)
 
     //SQL DEFINITIONS
     private const val SAVE_OFFLINE_STATUS = "INSERT INTO character_offline_trade (`charId`,`time`,`type`,`title`) VALUES (?,?,?,?)"
@@ -64,9 +65,9 @@ object OfflineTradersTable {
 
             //StringBuilder items = StringBuilder.newInstance();
             val checkInactiveStores = Config.isServer(Config.TENKAI) && System.currentTimeMillis() - Server.dateTimeServerStarted.timeInMillis > 36000000
-            loop@for (pc in L2World.getInstance().allPlayers.values) {
+            loop@for (pc in World.getInstance().allPlayers.values) {
                 try {
-                    if (pc.privateStoreType != L2PcInstance.STORE_PRIVATE_NONE && (pc.client == null || pc.client.isDetached) &&
+                    if (pc.privateStoreType != Player.STORE_PRIVATE_NONE && (pc.client == null || pc.client.isDetached) &&
                             (!checkInactiveStores || pc.hadStoreActivity())) {
                         stm.setInt(1, pc.objectId) //Char Id
                         stm.setLong(2, pc.offlineStartTime)
@@ -74,7 +75,7 @@ object OfflineTradersTable {
                         var title: String? = null
 
                         when (pc.privateStoreType) {
-                            L2PcInstance.STORE_PRIVATE_BUY -> {
+                            Player.STORE_PRIVATE_BUY -> {
                                 if (!Config.OFFLINE_TRADE_ENABLE) {
                                     continue@loop
                                 }
@@ -88,7 +89,7 @@ object OfflineTradersTable {
                                     stm_items.clearParameters()
                                 }
                             }
-                            L2PcInstance.STORE_PRIVATE_SELL, L2PcInstance.STORE_PRIVATE_PACKAGE_SELL -> {
+                            Player.STORE_PRIVATE_SELL, Player.STORE_PRIVATE_PACKAGE_SELL -> {
                                 if (!Config.OFFLINE_TRADE_ENABLE) {
                                     continue@loop
                                 }
@@ -102,7 +103,7 @@ object OfflineTradersTable {
                                     stm_items.clearParameters()
                                 }
                             }
-                            L2PcInstance.STORE_PRIVATE_MANUFACTURE -> {
+                            Player.STORE_PRIVATE_MANUFACTURE -> {
                                 if (!Config.OFFLINE_CRAFT_ENABLE) {
                                     continue@loop
                                 }
@@ -116,7 +117,7 @@ object OfflineTradersTable {
                                     stm_items.clearParameters()
                                 }
                             }
-                            L2PcInstance.STORE_PRIVATE_CUSTOM_SELL -> {
+                            Player.STORE_PRIVATE_CUSTOM_SELL -> {
                                 if (!Config.OFFLINE_TRADE_ENABLE) {
                                     continue@loop
                                 }
@@ -146,7 +147,7 @@ object OfflineTradersTable {
                         stm.clearParameters()
                     }
                 } catch (e: Exception) {
-                    Log.log(Level.WARNING,
+                    log.warn(
                             "OfflineTradersTable[storeTradeItems()]: Error while saving offline trader: " + pc.objectId + " " + e,
                             e)
                 }
@@ -155,21 +156,21 @@ object OfflineTradersTable {
             stm.close()
             stm_items.close()
             stm_prices.close()
-            Log.info("Offline traders stored.")
+            log.info("Offline traders stored.")
         } catch (e: Exception) {
-            Log.log(Level.WARNING, "OfflineTradersTable[storeTradeItems()]: Error while saving offline traders: $e", e)
+            log.warn("OfflineTradersTable[storeTradeItems()]: Error while saving offline traders: $e", e)
         } finally {
             L2DatabaseFactory.close(con)
         }
     }
 
-    @Load(dependencies = [L2World::class, ItemTable::class])
+    @Load(dependencies = [World::class, ItemTable::class])
     fun restoreOfflineTraders() {
         if (!(((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS))) {
             return
         }
 
-        Log.info("Loading offline traders...")
+        log.info("Loading offline traders...")
 
         val restoreThread = Thread {
             var con: Connection? = null
@@ -192,16 +193,16 @@ object OfflineTradersTable {
                     }
 
                     val type = rs.getInt("type")
-                    if (type == L2PcInstance.STORE_PRIVATE_NONE) {
+                    if (type == Player.STORE_PRIVATE_NONE) {
                         continue
                     }
 
-                    var player: L2PcInstance? = null
+                    var player: Player? = null
 
                     try {
                         val client = L2GameClient(null)
                         client.isDetached = true
-                        player = L2PcInstance.load(rs.getInt("charId"))
+                        player = Player.load(rs.getInt("charId"))
                         client.activeChar = player
                         player!!.setOnlineStatus(true, false)
                         client.accountName = player.accountNamePlayer
@@ -215,7 +216,7 @@ object OfflineTradersTable {
                         val items = stm_items.executeQuery()
 
                         when (type) {
-                            L2PcInstance.STORE_PRIVATE_BUY -> {
+                            Player.STORE_PRIVATE_BUY -> {
                                 while (items.next()) {
                                     if (player.buyList.addItemByItemId(items.getInt(2), items.getLong(3), items.getLong(4)) == null) {
                                         throw NullPointerException()
@@ -223,16 +224,16 @@ object OfflineTradersTable {
                                 }
                                 player.buyList.title = rs.getString("title")
                             }
-                            L2PcInstance.STORE_PRIVATE_SELL, L2PcInstance.STORE_PRIVATE_PACKAGE_SELL -> {
+                            Player.STORE_PRIVATE_SELL, Player.STORE_PRIVATE_PACKAGE_SELL -> {
                                 while (items.next()) {
                                     if (player.sellList.addItem(items.getInt(2), items.getLong(3), items.getLong(4)) == null) {
                                         throw NullPointerException()
                                     }
                                 }
                                 player.sellList.title = rs.getString("title")
-                                player.sellList.isPackaged = type == L2PcInstance.STORE_PRIVATE_PACKAGE_SELL
+                                player.sellList.isPackaged = type == Player.STORE_PRIVATE_PACKAGE_SELL
                             }
-                            L2PcInstance.STORE_PRIVATE_MANUFACTURE -> {
+                            Player.STORE_PRIVATE_MANUFACTURE -> {
                                 val createList = L2ManufactureList()
                                 while (items.next()) {
                                     createList.add(L2ManufactureItem(items.getInt(2), items.getLong(4)))
@@ -240,7 +241,7 @@ object OfflineTradersTable {
                                 player.createList = createList
                                 player.createList.storeName = rs.getString("title")
                             }
-                            L2PcInstance.STORE_PRIVATE_CUSTOM_SELL -> {
+                            Player.STORE_PRIVATE_CUSTOM_SELL -> {
                                 while (items.next()) {
                                     val item = player.customSellList.addItem(items.getInt(2), items.getLong(3))
                                             ?: throw NullPointerException()
@@ -275,7 +276,7 @@ object OfflineTradersTable {
 
                         nTraders++
                     } catch (e: Exception) {
-                        Log.log(Level.WARNING, "OfflineTradersTable[loadOffliners()]: Error loading trader: " + player!!, e)
+                        log.warn("OfflineTradersTable[loadOffliners()]: Error loading trader: " + player!!, e)
                         player.deleteMe()
                     }
 
@@ -289,14 +290,14 @@ object OfflineTradersTable {
                 stm.execute()
                 stm.close()
             } catch (e: Exception) {
-                Log.log(Level.WARNING, "OfflineTradersTable[loadOffliners()]: Error while loading offline traders: ", e)
+                log.warn("OfflineTradersTable[loadOffliners()]: Error while loading offline traders: ", e)
                 e.printStackTrace()
             } finally {
                 L2DatabaseFactory.close(con)
             }
 
             val finishTime = System.nanoTime()
-            Log.info("Asynch restoring of " + nTraders + " offline traders took " + (finishTime - startTime) / 1000000 + " ms")
+            log.info("Asynch restoring of " + nTraders + " offline traders took " + (finishTime - startTime) / 1000000 + " ms")
         }
         restoreThread.priority = Thread.MIN_PRIORITY
         restoreThread.name = "restoreOfflineTraders"

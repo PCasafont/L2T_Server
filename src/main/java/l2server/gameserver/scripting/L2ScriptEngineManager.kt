@@ -21,15 +21,11 @@ import l2server.gameserver.datatables.DoorTable
 import l2server.gameserver.datatables.SpawnTable
 import l2server.gameserver.instancemanager.QuestManager
 import l2server.gameserver.instancemanager.TransformationManager
-import l2server.gameserver.templates.SpawnData
-import l2server.log.Log
 import l2server.util.loader.annotations.Load
-
-import javax.script.*
+import org.slf4j.LoggerFactory
 import java.io.*
-import java.util.HashMap
-import java.util.LinkedList
-import java.util.logging.Level
+import java.util.*
+import javax.script.*
 
 /**
  * Caches script engines and provides funcionality for executing and managing scripts.<BR></BR>
@@ -37,6 +33,8 @@ import java.util.logging.Level
  * @author KenM
  */
 object L2ScriptEngineManager {
+
+    private val log = LoggerFactory.getLogger(L2ScriptEngineManager::class.java)
 
     @JvmStatic
     val SCRIPT_FOLDER = File(Config.DATAPACK_ROOT.absolutePath, Config.DATA_FOLDER + "scripts")
@@ -91,7 +89,7 @@ object L2ScriptEngineManager {
         } else {
             cache = null
         }
-        Log.info("Initializing Script Engine Manager")
+        log.info("Initializing Script Engine Manager")
 
         for (factory in factories) {
             try {
@@ -114,7 +112,7 @@ object L2ScriptEngineManager {
                 }
 
                 if (reg) {
-                    Log.info("Script Engine: " + factory.engineName + " " + factory.engineVersion + " - Language: " +
+                    log.info("Script Engine: " + factory.engineName + " " + factory.engineVersion + " - Language: " +
                             factory.languageName + " - Language Version: " + factory.languageVersion)
                 }
 
@@ -124,7 +122,7 @@ object L2ScriptEngineManager {
                     }
                 }
             } catch (e: Exception) {
-                Log.log(Level.WARNING, "Failed initializing factory: " + e.message, e)
+                log.warn("Failed initializing factory: " + e.message, e)
             }
 
         }
@@ -132,7 +130,7 @@ object L2ScriptEngineManager {
         preConfigure()
 
         try {
-            Log.info("Loading Server Scripts")
+            log.info("Loading Server Scripts")
             var scripts = File(Config.DATAPACK_ROOT.toString() + "/" + Config.DATA_FOLDER + "scripts.cfg")
             if (!Config.ALT_DEV_NO_HANDLERS || !Config.ALT_DEV_NO_QUESTS) {
                 L2ScriptEngineManager.executeScriptList(scripts)
@@ -143,25 +141,25 @@ object L2ScriptEngineManager {
                 }
             }
         } catch (ioe: IOException) {
-            Log.severe("Failed loading scripts.cfg, no script going to be loaded")
+            log.error("Failed loading scripts.cfg, no script going to be loaded")
         }
 
         try {
             val compiledScriptCache = L2ScriptEngineManager.cache
             if (compiledScriptCache == null) {
-                Log.info("Compiled Scripts Cache is disabled.")
+                log.info("Compiled Scripts Cache is disabled.")
             } else {
                 compiledScriptCache.purge()
 
                 if (compiledScriptCache.isModified) {
                     compiledScriptCache.save()
-                    Log.info("Compiled Scripts Cache was saved.")
+                    log.info("Compiled Scripts Cache was saved.")
                 } else {
-                    Log.info("Compiled Scripts Cache is up-to-date.")
+                    log.info("Compiled Scripts Cache is up-to-date.")
                 }
             }
         } catch (e: IOException) {
-            Log.log(Level.SEVERE, "Failed to store Compiled Scripts Cache.", e)
+            log.error("Failed to store Compiled Scripts Cache.", e)
         }
 
         QuestManager.getInstance().report()
@@ -177,7 +175,7 @@ object L2ScriptEngineManager {
         try {
             this.eval("jython", configScript)
         } catch (e: ScriptException) {
-            Log.severe("Failed preconfiguring jython: " + e.message)
+            log.error("Failed preconfiguring jython: " + e.message)
         }
 
     }
@@ -199,10 +197,10 @@ object L2ScriptEngineManager {
 
             try {
                 executeScript(file)
-                Log.info("Handlers loaded, all other scripts skipped")
+                log.info("Handlers loaded, all other scripts skipped")
                 return
             } catch (se: ScriptException) {
-                Log.log(Level.WARNING, "", se)
+                log.warn("", se)
             }
 
         }
@@ -244,7 +242,7 @@ object L2ScriptEngineManager {
                         }
 
                     } else {
-                        Log.warning("Failed loading: (" + file.canonicalPath + ") @ " + list.name + ":" + lnr.lineNumber +
+                        log.warn("Failed loading: (" + file.canonicalPath + ") @ " + list.name + ":" + lnr.lineNumber +
                                 " - Reason: it doesn't exist or it's not a file.")
                     }
                 }
@@ -270,7 +268,7 @@ object L2ScriptEngineManager {
             for (file in dir.listFiles()!!) {
                 if (file.isDirectory && recurseDown && maxDepth > currentDepth) {
                     if (VERBOSE_LOADING) {
-                        Log.info("Entering folder: " + file.name)
+                        log.info("Entering folder: " + file.name)
                     }
                     executeAllScriptsInDirectory(file, recurseDown, maxDepth, currentDepth + 1)
                 } else if (file.isFile) {
@@ -287,10 +285,10 @@ object L2ScriptEngineManager {
                         }
                     } catch (e: FileNotFoundException) {
                         // should never happen
-                        Log.log(Level.WARNING, "", e)
+                        log.warn("", e)
                     } catch (e: ScriptException) {
                         reportScriptFileError(file, e)
-                        //Logozo.log(Level.WARNING, "", e);
+                        //Logozo.warn( "", e);
                     }
 
                 }
@@ -311,11 +309,11 @@ object L2ScriptEngineManager {
                     cache.checkFiles()
                     return cache
                 } catch (e: InvalidClassException) {
-                    Log.log(Level.SEVERE, "Failed loading Compiled Scripts Cache, invalid class (Possibly outdated).", e)
+                    log.error("Failed loading Compiled Scripts Cache, invalid class (Possibly outdated).", e)
                 } catch (e: IOException) {
-                    Log.log(Level.SEVERE, "Failed loading Compiled Scripts Cache from file.", e)
+                    log.error("Failed loading Compiled Scripts Cache from file.", e)
                 } catch (e: ClassNotFoundException) {
-                    Log.log(Level.SEVERE, "Failed loading Compiled Scripts Cache, class not found.", e)
+                    log.error("Failed loading Compiled Scripts Cache, class not found.", e)
                 } finally {
                     try {
                         ois!!.close()
@@ -366,7 +364,7 @@ object L2ScriptEngineManager {
         val reader = BufferedReader(InputStreamReader(FileInputStream(file)))
 
         if (VERBOSE_LOADING) {
-            Log.info("Loading Script: " + file.absolutePath)
+            log.info("Loading Script: " + file.absolutePath)
         }
 
         if (PURGE_ERROR_LOG) {
@@ -468,11 +466,11 @@ object L2ScriptEngineManager {
         val dir = script.parent
         if (dir != null) {
             val errorHeader = "Error on: " + script.absolutePath + "\r\nLine: " + e.lineNumber + " - Column: " + e.columnNumber + "\r\n\r\n"
-            Log.warning("Failed executing script: " + script.absolutePath + ":")
-            Log.warning(errorHeader)
-            Log.warning(e.message)
+            log.warn("Failed executing script: " + script.absolutePath + ":")
+            log.warn(errorHeader)
+            log.warn(e.message)
         } else {
-            Log.log(Level.WARNING,
+            log.warn(
                     "Failed executing script: " + script.absolutePath + "\r\n" + e.message +
                             "Additionally failed when trying to write an error report on script directory.",
                     e)

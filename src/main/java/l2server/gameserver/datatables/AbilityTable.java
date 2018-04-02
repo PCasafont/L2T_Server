@@ -18,8 +18,9 @@ package l2server.gameserver.datatables;
 import java.util.HashMap;
 import java.util.Map;
 import l2server.Config;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -30,6 +31,9 @@ import java.io.File;
  * @author Pere
  */
 public class AbilityTable {
+	private static Logger log = LoggerFactory.getLogger(AbilityTable.class.getName());
+
+
 	
 	public class Ability {
 		private int type;
@@ -113,7 +117,7 @@ public class AbilityTable {
 			}
 		}
 
-		Log.info("AbilityTable: Loaded " + abilities.size() + " abilities.");
+		log.info("AbilityTable: Loaded " + abilities.size() + " abilities.");
 	}
 
 	public Ability getAbility(int skillId) {
@@ -142,7 +146,7 @@ public class AbilityTable {
 		return 1000000000;
 	}
 
-	public void manageHiddenSkill(L2PcInstance player, int skillId, int level, boolean isAdd) {
+	public void manageHiddenSkill(Player player, int skillId, int level, boolean isAdd) {
 		if (player == null) {
 			return;
 		}
@@ -224,7 +228,7 @@ public class AbilityTable {
 						}
 
 						if (hiddenSkillId == 0) {
-							Log.warning("AbilityTable: Can't locate the hidden skill id for the class " +
+							log.warn("AbilityTable: Can't locate the hidden skill id for the class " +
 									PlayerClassTable.getInstance().getClassNameById(classId) + "(" + classId + ") player " + player.getName());
 						} else {
 							player.addSkill(SkillTable.getInstance().getInfo(hiddenSkillId, 1), true);

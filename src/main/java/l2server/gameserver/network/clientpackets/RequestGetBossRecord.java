@@ -16,9 +16,10 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.instancemanager.RaidBossPointsManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ExGetBossRecord;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
@@ -28,6 +29,9 @@ import java.util.Map;
  * @author -Wooden-
  */
 public class RequestGetBossRecord extends L2GameClientPacket {
+	private static Logger log = LoggerFactory.getLogger(RequestGetBossRecord.class.getName());
+
+
 	private int bossId;
 	
 	@Override
@@ -39,13 +43,13 @@ public class RequestGetBossRecord extends L2GameClientPacket {
 	 */
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
 		
 		if (bossId != 0) {
-			Log.info("C5: RequestGetBossRecord: d: " + bossId + " ActiveChar: " +
+			log.info("C5: RequestGetBossRecord: d: " + bossId + " ActiveChar: " +
 					activeChar); // should be always 0, log it if isnt 0 for furture research
 		}
 		

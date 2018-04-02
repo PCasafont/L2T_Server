@@ -18,7 +18,7 @@ package l2server.gameserver.model.olympiad;
 import l2server.Config;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.instancemanager.AntiFeedManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -73,11 +73,11 @@ public class OlympiadManager {
 		AntiFeedManager.getInstance().clear(AntiFeedManager.OLYMPIAD_ID);
 	}
 	
-	public final boolean isRegistered(L2PcInstance player) {
+	public final boolean isRegistered(Player player) {
 		return isRegistered(player, false);
 	}
 	
-	private boolean isRegistered(L2PcInstance player, boolean showMessage) {
+	private boolean isRegistered(Player player, boolean showMessage) {
 		final Integer objId = player.getObjectId();
 		// party may be already dispersed
 		
@@ -108,11 +108,11 @@ public class OlympiadManager {
 		return false;
 	}
 	
-	public final boolean isRegisteredInComp(L2PcInstance player) {
+	public final boolean isRegisteredInComp(Player player) {
 		return isRegistered(player, false) || isInCompetition(player, false);
 	}
 	
-	public final boolean isInCompetition(L2PcInstance player, boolean showMessage) {
+	public final boolean isInCompetition(Player player, boolean showMessage) {
 		if (!Olympiad.inCompPeriod) {
 			return false;
 		}
@@ -151,7 +151,7 @@ public class OlympiadManager {
 		return false;
 	}
 	
-	public final boolean registerNoble(L2PcInstance player) {
+	public final boolean registerNoble(Player player) {
 		CompetitionType type = CompetitionType.CLASSED;
 		
 		if (Config.isServer(Config.TENKAI_LEGACY)) {
@@ -221,7 +221,7 @@ public class OlympiadManager {
 		return true;
 	}
 	
-	public final boolean unRegisterNoble(L2PcInstance player) {
+	public final boolean unRegisterNoble(Player player) {
 		SystemMessage sm;
 		if (!Olympiad.inCompPeriod) {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.THE_OLYMPIAD_GAME_IS_NOT_CURRENTLY_IN_PROGRESS);
@@ -273,7 +273,7 @@ public class OlympiadManager {
 		return false;
 	}
 	
-	public final void removeDisconnectedCompetitor(L2PcInstance player) {
+	public final void removeDisconnectedCompetitor(Player player) {
 		final OlympiadGameTask task = OlympiadGameManager.getInstance().getOlympiadTask(player.getOlympiadGameId());
 		if (task != null && task.isGameStarted()) {
 			task.getGame().handleDisconnect(player);
@@ -294,11 +294,11 @@ public class OlympiadManager {
 	}
 	
 	/**
-	 * @param player - messages will be sent to this L2PcInstance
+	 * @param player - messages will be sent to this Player
 	 * @return true if all requirements are met
 	 */
 	// TODO: move to the bypass handler after reworking points system
-	private OlympiadNobleInfo checkNoble(L2PcInstance player) {
+	private OlympiadNobleInfo checkNoble(Player player) {
 		SystemMessage sm;
 		if (!player.isNoble()) {
 			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_DOES_NOT_MEET_REQUIREMENTS_ONLY_NOBLESS_CAN_PARTICIPATE_IN_THE_OLYMPIAD);
@@ -347,7 +347,7 @@ public class OlympiadManager {
 		}
 		
 		//If we have access to the player HWID we will use it to check dualbox otherwise we will use the external ip and the internal ip
-		/*for (L2PcInstance pl : L2World.getInstance().getAllOlympiadPlayers())
+		/*for (Player pl : World.getInstance().getAllOlympiadPlayers())
         {
 			if (pl == null)
 				continue;

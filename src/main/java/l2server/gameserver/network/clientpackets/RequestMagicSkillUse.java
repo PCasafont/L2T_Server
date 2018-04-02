@@ -19,14 +19,13 @@ import l2server.Config;
 import l2server.gameserver.datatables.ComboSkillTable;
 import l2server.gameserver.datatables.ComboSkillTable.Combo;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.GMAudit;
-import l2server.log.Log;
 
 import java.util.Map.Entry;
 
@@ -50,8 +49,8 @@ public final class RequestMagicSkillUse extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		// Get the current L2PcInstance of the player
-		L2PcInstance activeChar = getClient().getActiveChar();
+		// Get the current Player of the player
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -77,8 +76,8 @@ public final class RequestMagicSkillUse extends L2GameClientPacket {
 		int level = activeChar.getSkillLevelHash(magicId);
 		
 		// Check combo
-		if (activeChar.getTarget() instanceof L2Character) {
-			for (L2Abnormal ab : ((L2Character) activeChar.getTarget()).getAllEffects()) {
+		if (activeChar.getTarget() instanceof Creature) {
+			for (Abnormal ab : ((Creature) activeChar.getTarget()).getAllEffects()) {
 				if (ab.getComboId() != 0) {
 					Combo combo = ComboSkillTable.getInstance().getCombo(ab.getComboId());
 					if (combo.skills.containsKey(magicId)) {
@@ -102,29 +101,29 @@ public final class RequestMagicSkillUse extends L2GameClientPacket {
 			return;
 		}
 		
-		// Get the L2Skill template corresponding to the skillID received from the client
-		L2Skill skill = SkillTable.getInstance().getInfo(magicId, level);
+		// Get the Skill template corresponding to the skillID received from the client
+		Skill skill = SkillTable.getInstance().getInfo(magicId, level);
 		
 		// Check the validity of the skill
 		if (skill != null) {
-			if (skill.getSkillType() != L2SkillType.STRSIEGEASSAULT && activeChar.isMounted()) {
+			if (skill.getSkillType() != SkillType.STRSIEGEASSAULT && activeChar.isMounted()) {
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 			
-			if (skill.getSkillType() != L2SkillType.TRANSFORMDISPEL && (activeChar.isTransformed() || activeChar.isInStance()) &&
+			if (skill.getSkillType() != SkillType.TRANSFORMDISPEL && (activeChar.isTransformed() || activeChar.isInStance()) &&
 					(!activeChar.containsAllowedTransformSkill(skill.getId()) ||
-							activeChar.getLastSkillCast() != null && activeChar.getLastSkillCast().getSkillType() == L2SkillType.TRANSFORMDISPEL)) {
+							activeChar.getLastSkillCast() != null && activeChar.getLastSkillCast().getSkillType() == SkillType.TRANSFORMDISPEL)) {
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
-			// Log.fine("	skill:"+skill.getName() + " level:"+skill.getLevel() + " passive:"+skill.isPassive());
-			// Log.fine("	range:"+skill.getCastRange()+" targettype:"+skill.getTargetType()+" optype:"+skill.getOperateType()+" power:"+skill.getPower());
-			// Log.fine("	reusedelay:"+skill.getReuseDelay()+" hittime:"+skill.getHitTime());
-			// Log.fine("	currentState:"+activeChar.getCurrentState());	//for debug
+			// log.debug("	skill:"+skill.getName() + " level:"+skill.getLevel() + " passive:"+skill.isPassive());
+			// log.debug("	range:"+skill.getCastRange()+" targettype:"+skill.getTargetType()+" optype:"+skill.getOperateType()+" power:"+skill.getPower());
+			// log.debug("	reusedelay:"+skill.getReuseDelay()+" hittime:"+skill.getHitTime());
+			// log.debug("	currentState:"+activeChar.getCurrentState());	//for debug
 			
 			// If Alternate rule Karma punishment is set to true, forbid skill Return to player with Karma
-			if (skill.getSkillType() == L2SkillType.RECALL && !Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && activeChar.getReputation() < 0) {
+			if (skill.getSkillType() == SkillType.RECALL && !Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && activeChar.getReputation() < 0) {
 				return;
 			}
 			
@@ -149,7 +148,7 @@ public final class RequestMagicSkillUse extends L2GameClientPacket {
 					offset = offset < 5 ? 0 : 12;
 				}
 				
-				L2Skill magic = SkillTable.getInstance().getInfo(skill.getId() + offset, skill.getLevelHash());
+				Skill magic = SkillTable.getInstance().getInfo(skill.getId() + offset, skill.getLevelHash());
 				activeChar.useMagic(magic, ctrlPressed, shiftPressed);
 				return;
 			}
@@ -163,7 +162,7 @@ public final class RequestMagicSkillUse extends L2GameClientPacket {
 			activeChar.useMagic(skill, ctrlPressed, shiftPressed);
 		} else {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			Log.warning("No skill found with id " + magicId + " and level " + level + " !!");
+			log.warn("No skill found with id " + magicId + " and level " + level + " !!");
 		}
 	}
 }

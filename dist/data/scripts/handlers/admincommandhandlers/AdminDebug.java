@@ -16,21 +16,21 @@
 package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 
 public class AdminDebug implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_debug"};
 
 	@Override
-	public final boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public final boolean useAdminCommand(String command, Player activeChar) {
 		String[] commandSplit = command.split(" ");
 		if (ADMIN_COMMANDS[0].equalsIgnoreCase(commandSplit[0])) {
-			L2Object target;
+			WorldObject target;
 			if (commandSplit.length > 1) {
-				target = L2World.getInstance().getPlayer(commandSplit[1].trim());
+				target = World.getInstance().getPlayer(commandSplit[1].trim());
 				if (target == null) {
 					activeChar.sendMessage("Player not found.");
 					return true;
@@ -39,8 +39,8 @@ public class AdminDebug implements IAdminCommandHandler {
 				target = activeChar.getTarget();
 			}
 
-			if (target instanceof L2Character) {
-				setDebug(activeChar, (L2Character) target);
+			if (target instanceof Creature) {
+				setDebug(activeChar, (Creature) target);
 			} else {
 				setDebug(activeChar, activeChar);
 			}
@@ -53,7 +53,7 @@ public class AdminDebug implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	private final void setDebug(L2PcInstance activeChar, L2Character target) {
+	private final void setDebug(Player activeChar, Creature target) {
 		if (target.isDebug()) {
 			target.setDebug(null);
 			activeChar.sendMessage("Stop debugging " + target.getName());

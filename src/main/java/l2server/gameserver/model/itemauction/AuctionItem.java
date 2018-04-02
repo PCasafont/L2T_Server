@@ -16,10 +16,10 @@
 package l2server.gameserver.model.itemauction;
 
 import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Augmentation;
-import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 
 /**
  * @author Forsaiken
@@ -49,7 +49,7 @@ public final class AuctionItem {
 	}
 
 	public final boolean checkItemExists() {
-		final L2Item item = ItemTable.getInstance().getTemplate(itemId);
+		final ItemTemplate item = ItemTable.getInstance().getTemplate(itemId);
 		return item != null;
 	}
 
@@ -73,8 +73,8 @@ public final class AuctionItem {
 		return itemCount;
 	}
 
-	public final L2ItemInstance createNewItemInstance() {
-		final L2ItemInstance item = ItemTable.getInstance().createItem("ItemAuction", itemId, itemCount, null, null);
+	public final Item createNewItemInstance() {
+		final Item item = ItemTable.getInstance().createItem("ItemAuction", itemId, itemCount, null, null);
 
 		final int enchantLevel = itemExtra.getInteger("enchant_level", 0);
 		item.setEnchantLevel(enchantLevel);

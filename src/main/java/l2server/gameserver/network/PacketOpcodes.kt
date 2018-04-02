@@ -3,18 +3,19 @@ package l2server.gameserver.network
 import l2server.Config
 import l2server.gameserver.ThreadPoolManager
 import l2server.gameserver.util.Util
-import l2server.log.Log
 import l2server.util.loader.annotations.Load
 import l2server.util.xml.XmlDocument
 import l2server.util.xml.XmlNode
-
+import org.slf4j.LoggerFactory
 import java.io.File
-import java.util.HashMap
+import java.util.*
 
 /**
  * @author Pere
  */
 object PacketOpcodes {
+
+    private val log = LoggerFactory.getLogger(PacketOpcodes::class.java)
 
     private var PROTOCOL_FILE: String? = null
     private val GENERATE_MISSING_PACKETS = true
@@ -44,7 +45,7 @@ object PacketOpcodes {
             val f = File(Config.DATAPACK_ROOT, PROTOCOL_FILE!!)
             if (!f.isDirectory && f.lastModified() > lastModified) {
                 load()
-                //Log.info("Updated the protocols from the file " + f.getName());
+                //log.info("Updated the protocols from the file " + f.getName());
             }
         }, 10000, 10000)
     }
@@ -52,7 +53,7 @@ object PacketOpcodes {
     private fun load() {
         val file = File(Config.DATAPACK_ROOT, PROTOCOL_FILE!!)
         if (!file.exists()) {
-            Log.warning("File " + file.absolutePath + " doesn't exist")
+            log.warn("File " + file.absolutePath + " doesn't exist")
             return
         }
 
@@ -76,7 +77,7 @@ object PacketOpcodes {
             }
         }
 
-        Log.info("PacketOpcodes: Loaded " + ClientPackets.size + " Client Packets and " + ServerPackets.size + " Server Packets.")
+        log.info("PacketOpcodes: Loaded " + ClientPackets.size + " Client Packets and " + ServerPackets.size + " Server Packets.")
 
         lastModified = file.lastModified()
 
@@ -93,7 +94,7 @@ object PacketOpcodes {
 				{
 					Class<?> cl = Class.forName("l2server.gameserver.network.clientpackets." + f.getName().substring(0, f.getName().length() - 5));
 
-					Log.info("This client" + (parserGenerated ? " (parser generated)" : "") + " packet doesn't figure in the protocol: " + cl.getSimpleName());
+					log.info("This client" + (parserGenerated ? " (parser generated)" : "") + " packet doesn't figure in the protocol: " + cl.getSimpleName());
 				}
 				catch (Exception e)
 				{
@@ -117,7 +118,7 @@ object PacketOpcodes {
 					if (ServerPackets.containsKey(cl))
 						continue;
 
-					Log.info("This server" + (parserGenerated ? " (parser generated)" : "") + " packet doesn't figure in the protocol: " + cl.getSimpleName());
+					log.info("This server" + (parserGenerated ? " (parser generated)" : "") + " packet doesn't figure in the protocol: " + cl.getSimpleName());
 				}
 				catch (Exception e)
 				{
@@ -134,7 +135,7 @@ object PacketOpcodes {
             "h" -> length = 2
             "d" -> length = 4
             else -> {
-                Log.warning("'" + d.getString("switchtype") + "' switch type is not supported.")
+                log.warn("'" + d.getString("switchtype") + "' switch type is not supported.")
                 return
             }
         }
@@ -206,7 +207,7 @@ object PacketOpcodes {
                 }
 
                 if (isClientPacket) {
-                    Log.warning("Client packet not implemented: $name")
+                    log.warn("Client packet not implemented: $name")
 
                     if (!GENERATE_MISSING_PACKETS) {
                         continue
@@ -253,10 +254,10 @@ object PacketOpcodes {
                     }
 
                     content += "\t}\n" + "\t\n" + "\t@Override\n" + "\tpublic void runImpl()\n" + "\t{\n" + "\t\t// TODO\n" +
-                            "\t\tLog.info(getType() + \" was received from \" + getClient() + \".\");\n" + "\t}\n" + "}\n" + "\n"
+                            "\t\tlog.info(getType() + \" was received from \" + getClient() + \".\");\n" + "\t}\n" + "}\n" + "\n"
                     Util.writeFile("./java/l2server/gameserver/network/clientpackets/$name.java", content)
                 } else {
-                    Log.warning("Server packet not implemented: $name")
+                    log.warn("Server packet not implemented: $name")
 
                     if (!GENERATE_MISSING_PACKETS) {
                         continue
@@ -354,7 +355,7 @@ object PacketOpcodes {
     fun getClientPacketOpcode(packetClass: Class<*>): ByteArray? {
         val opcode = ClientPackets[packetClass]
         if (opcode == null) {
-            Log.warning("There's no opcode for the client packet " + packetClass.simpleName)
+            log.warn("There's no opcode for the client packet " + packetClass.simpleName)
         }
 
         return opcode
@@ -363,7 +364,7 @@ object PacketOpcodes {
     fun getServerPacketOpcode(packetClass: Class<*>): ByteArray? {
         val opcode = ServerPackets[packetClass]
         if (opcode == null) {
-            Log.warning("There's no opcode for the server packet " + packetClass.simpleName)
+            log.warn("There's no opcode for the server packet " + packetClass.simpleName)
         }
 
         return opcode

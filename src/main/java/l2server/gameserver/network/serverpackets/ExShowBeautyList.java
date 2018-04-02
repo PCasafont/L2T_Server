@@ -17,7 +17,7 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.datatables.BeautyTable;
 import l2server.gameserver.datatables.BeautyTable.BeautyInfo;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.Map;
 
@@ -38,7 +38,7 @@ public final class ExShowBeautyList extends L2GameServerPacket {
 
 	@Override
 	protected final void writeImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 
 		if (activeChar == null) {
 			return;

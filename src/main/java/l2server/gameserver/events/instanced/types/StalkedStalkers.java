@@ -7,12 +7,12 @@ import l2server.gameserver.events.instanced.EventConfig;
 import l2server.gameserver.events.instanced.EventInstance;
 import l2server.gameserver.events.instanced.EventTeleporter;
 import l2server.gameserver.events.instanced.EventsManager;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.util.Point3D;
@@ -39,9 +39,9 @@ public class StalkedStalkers extends EventInstance {
 		}
 
 		// Iterate over all participated players
-		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values()) {
+		for (Player playerInstance : teams[0].getParticipatedPlayers().values()) {
 			if (playerInstance != null) {
-				L2PcInstance randomStalkedPlayer = selectRandomParticipant();
+				Player randomStalkedPlayer = selectRandomParticipant();
 				int limit = 0;
 				while (randomStalkedPlayer.getObjectId() == playerInstance.getObjectId() && limit < 10) {
 					randomStalkedPlayer = selectRandomParticipant();
@@ -58,11 +58,11 @@ public class StalkedStalkers extends EventInstance {
 
 	@Override
 	public void calculateRewards() {
-		List<L2PcInstance> sorted = new ArrayList<>();
-		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values()) {
+		List<Player> sorted = new ArrayList<>();
+		for (Player playerInstance : teams[0].getParticipatedPlayers().values()) {
 			boolean added = false;
 			int index = 0;
-			for (L2PcInstance listed : sorted) {
+			for (Player listed : sorted) {
 				if (playerInstance.getEventPoints() > listed.getEventPoints()) {
 					sorted.add(index, playerInstance);
 					added = true;
@@ -88,11 +88,11 @@ public class StalkedStalkers extends EventInstance {
 	}
 
 	@Override
-	public String getRunningInfo(L2PcInstance player) {
+	public String getRunningInfo(Player player) {
 		String html = "";
 		if (teams[0].getParticipatedPlayerCount() > 0) {
 			html += "Participant points:<br>";
-			for (L2PcInstance participant : teams[0].getParticipatedPlayers().values()) {
+			for (Player participant : teams[0].getParticipatedPlayers().values()) {
 				if (participant != null) {
 					html += EventsManager.getInstance().getPlayerString(participant, player) + ": " + participant.getEventPoints() + "<br>";
 				}
@@ -105,7 +105,7 @@ public class StalkedStalkers extends EventInstance {
 	}
 
 	@Override
-	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance) {
+	public void onKill(Creature killerCharacter, Player killedPlayerInstance) {
 		if (killedPlayerInstance == null || !isState(EventState.STARTED)) {
 			return;
 		}
@@ -116,23 +116,23 @@ public class StalkedStalkers extends EventInstance {
 			return;
 		}
 
-		L2PcInstance killerPlayerInstance = null;
+		Player killerPlayerInstance = null;
 
-		if (killerCharacter instanceof L2PetInstance || killerCharacter instanceof L2SummonInstance) {
-			killerPlayerInstance = ((L2Summon) killerCharacter).getOwner();
+		if (killerCharacter instanceof PetInstance || killerCharacter instanceof SummonInstance) {
+			killerPlayerInstance = ((Summon) killerCharacter).getOwner();
 
 			if (killerPlayerInstance == null) {
 				return;
 			}
-		} else if (killerCharacter instanceof L2PcInstance) {
-			killerPlayerInstance = (L2PcInstance) killerCharacter;
+		} else if (killerCharacter instanceof Player) {
+			killerPlayerInstance = (Player) killerCharacter;
 		} else {
 			return;
 		}
 
 		if (killedPlayerInstance.getName().equalsIgnoreCase(assignedStalkers.get(killerPlayerInstance.getObjectId()))) {
 			assignedStalkers.remove(killerPlayerInstance.getObjectId());
-			L2PcInstance randomStalkedPlayer = selectRandomParticipant();
+			Player randomStalkedPlayer = selectRandomParticipant();
 			while (randomStalkedPlayer.getObjectId() == killerPlayerInstance.getObjectId()) {
 				randomStalkedPlayer = selectRandomParticipant();
 			}
@@ -151,21 +151,21 @@ public class StalkedStalkers extends EventInstance {
 		}
 	}
 
-	public void stalkerMessage(L2PcInstance stalker, int level) {
+	public void stalkerMessage(Player stalker, int level) {
 		if (stalker == null) {
 			return;
 		}
 
-		L2PcInstance player = null;
+		Player player = null;
 		String hint;
 		if (level < 0 || level == 5) {
 			stalker.startStalkerHintsTask();
 		}
 		if (level > 0) {
-			player = L2World.getInstance().getPlayer(assignedStalkers.get(stalker.getObjectId()));
+			player = World.getInstance().getPlayer(assignedStalkers.get(stalker.getObjectId()));
 			if (player == null || player.getEvent() != this) {
 				assignedStalkers.remove(stalker.getObjectId());
-				L2PcInstance randomStalkedPlayer = selectRandomParticipant();
+				Player randomStalkedPlayer = selectRandomParticipant();
 				while (randomStalkedPlayer.getObjectId() == stalker.getObjectId()) {
 					randomStalkedPlayer = selectRandomParticipant();
 				}
@@ -223,12 +223,12 @@ public class StalkedStalkers extends EventInstance {
 		for (int stalkerObjId : toIterate) {
 			if (assignedStalkers.get(stalkerObjId).equals(playerName)) {
 				assignedStalkers.remove(stalkerObjId);
-				L2PcInstance randomStalkedPlayer = selectRandomParticipant();
+				Player randomStalkedPlayer = selectRandomParticipant();
 				while (randomStalkedPlayer.getObjectId() == stalkerObjId) {
 					randomStalkedPlayer = selectRandomParticipant();
 				}
 				assignedStalkers.put(stalkerObjId, randomStalkedPlayer.getName());
-				stalkerMessage(L2World.getInstance().getAllPlayers().get(stalkerObjId), -3);
+				stalkerMessage(World.getInstance().getAllPlayers().get(stalkerObjId), -3);
 			}
 		}
 

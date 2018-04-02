@@ -16,15 +16,15 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.PacketOpcodes;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
-import l2server.log.Log;
 import l2server.network.ReceivablePacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.nio.BufferUnderflowException;
-import java.util.logging.Level;
 
 /**
  * Packets received by the game server from clients
@@ -32,16 +32,18 @@ import java.util.logging.Level;
  * @author KenM
  */
 public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient> {
+	protected static Logger log = LoggerFactory.getLogger(ReceivablePacket.class.getName());
+	
 	@Override
 	public boolean read() {
 		//if (getClient() != null && getClient().getAccountName() != null
 		//		&& getClient().getAccountName().equalsIgnoreCase("pere"))
-		//	Log.info("C: " + this.getType());
+		//	log.info("C: " + this.getType());
 		try {
 			readImpl();
 			return true;
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Client: " + getClient().toString() + " - Failed reading: " + getType() + " ; " + e.getMessage(), e);
+			log.error("Client: " + getClient().toString() + " - Failed reading: " + getType() + " ; " + e.getMessage(), e);
 			
 			if (e instanceof BufferUnderflowException) // only one allowed per client per minute
 			{
@@ -61,12 +63,12 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient> 
 			 * except RequestItemList and UseItem (in case the item is a Scroll of Escape (736)
 			 */
 			if (triggersOnActionRequest()) {
-				final L2PcInstance actor = getClient().getActiveChar();
+				final Player actor = getClient().getActiveChar();
 				if (actor != null) {
 					if (actor.isSpawnProtected() || actor.isInvul()) {
 						actor.onActionRequest();
 						if (Config.DEBUG) {
-							Log.info("Spawn protection for player " + actor.getName() + " removed by packet: " + getType());
+							log.info("Spawn protection for player " + actor.getName() + " removed by packet: " + getType());
 						}
 					}
 					
@@ -77,7 +79,7 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient> 
 			runImpl();
 			cleanUp();
 		} catch (Throwable t) {
-			Log.log(Level.SEVERE, "Client: " + getClient().toString() + " - Failed running: " + getType() + " ; " + t.getMessage(), t);
+			log.error("Client: " + getClient().toString() + " - Failed running: " + getType() + " ; " + t.getMessage(), t);
 			// in case of EnterWorld error kick player from game
 			if (this instanceof EnterWorld) {
 				getClient().closeNow();

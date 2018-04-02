@@ -15,10 +15,10 @@
 
 package l2server.gameserver.handler;
 
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.templates.skills.SkillTargetType;
 
 /**
  * @author Max
@@ -31,10 +31,10 @@ public interface ISkillTargetTypeHandler {
 	 * @param target
 	 * @return
 	 */
-	L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target);
+	WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target);
 
 	/**
 	 * @return
 	 */
-	Enum<L2SkillTargetType> getTargetType();
+	Enum<SkillTargetType> getTargetType();
 }

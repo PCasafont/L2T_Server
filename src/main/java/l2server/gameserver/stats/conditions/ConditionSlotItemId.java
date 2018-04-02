@@ -15,8 +15,8 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.stats.Env;
 
@@ -48,11 +48,11 @@ public final class ConditionSlotItemId extends ConditionInventory {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		if (!(env.player instanceof L2PcInstance)) {
+		if (!(env.player instanceof Player)) {
 			return false;
 		}
-		Inventory inv = ((L2PcInstance) env.player).getInventory();
-		L2ItemInstance item = inv.getPaperdollItem(slot);
+		Inventory inv = ((Player) env.player).getInventory();
+		Item item = inv.getPaperdollItem(slot);
 		if (item == null) {
 			return itemId == 0;
 		}

@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.VisualEffect;
 
 import java.util.Set;
@@ -28,7 +28,7 @@ public final class ExUserEffects extends L2GameServerPacket {
 	private int transformId;
 	private Set<Integer> abnormals;
 	
-	public ExUserEffects(L2PcInstance character) {
+	public ExUserEffects(Player character) {
 		objectId = character.getObjectId();
 		transformId = character.getTransformationId();
 		abnormals = character.getAbnormalEffect();

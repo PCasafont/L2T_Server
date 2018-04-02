@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public final class ExShowTrace extends L2GameServerPacket {
 		traces.add(new Trace(x, y, z, time));
 	}
 	
-	public void addTrace(L2Object obj, int time) {
+	public void addTrace(WorldObject obj, int time) {
 		this.addTrace(obj.getX(), obj.getY(), obj.getZ(), time);
 	}
 	

@@ -15,13 +15,13 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 
 public class ExMoveToLocationAirShip extends L2GameServerPacket {
 	
 	private final int objId, tx, ty, tz, x, y, z;
 	
-	public ExMoveToLocationAirShip(L2Character cha) {
+	public ExMoveToLocationAirShip(Creature cha) {
 		objId = cha.getObjectId();
 		tx = cha.getXdestination();
 		ty = cha.getYdestination();

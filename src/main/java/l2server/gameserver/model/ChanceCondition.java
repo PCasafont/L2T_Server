@@ -16,16 +16,18 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.templates.StatsSet;
-import l2server.log.Log;
 import l2server.util.Rnd;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
-import java.util.logging.Level;
 
 /**
  * @author kombat
  */
 public final class ChanceCondition {
+	private static Logger log = LoggerFactory.getLogger(ChanceCondition.class.getName());
+	
 	public static final int EVT_HIT = 0x000001;
 	public static final int EVT_CRIT = 0x000002;
 	public static final int EVT_CAST = 0x000004;
@@ -154,7 +156,7 @@ public final class ChanceCondition {
 						pvpOnly);
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 		}
 		return null;
 	}
@@ -183,7 +185,7 @@ public final class ChanceCondition {
 						pvpOnly);
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 		}
 		
 		return null;
@@ -218,7 +220,7 @@ public final class ChanceCondition {
 		return skillIds;
 	}
 	
-	public boolean trigger(int event, int damage, boolean crit, byte element, boolean playable, L2Skill skill) {
+	public boolean trigger(int event, int damage, boolean crit, byte element, boolean playable, Skill skill) {
 		if (pvpOnly && !playable) {
 			return false;
 		}

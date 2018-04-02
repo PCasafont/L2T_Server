@@ -18,8 +18,9 @@ package l2server.gameserver.network.serverpackets;
 import l2server.Config;
 import l2server.gameserver.RecipeController;
 import l2server.gameserver.model.L2RecipeList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * format   dddd
@@ -27,18 +28,21 @@ import l2server.log.Log;
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
 public class RecipeItemMakeInfo extends L2GameServerPacket {
+	private static Logger log = LoggerFactory.getLogger(RecipeItemMakeInfo.class.getName());
+
+
 	
 	private int id;
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	private boolean success;
 	
-	public RecipeItemMakeInfo(int id, L2PcInstance player, boolean success) {
+	public RecipeItemMakeInfo(int id, Player player, boolean success) {
 		this.id = id;
 		activeChar = player;
 		this.success = success;
 	}
 	
-	public RecipeItemMakeInfo(int id, L2PcInstance player) {
+	public RecipeItemMakeInfo(int id, Player player) {
 		this.id = id;
 		activeChar = player;
 		success = true;
@@ -55,7 +59,7 @@ public class RecipeItemMakeInfo extends L2GameServerPacket {
 			writeD(activeChar.getMaxMp());
 			writeD(success ? 1 : 0); // item creation success/failed
 		} else if (Config.DEBUG) {
-			Log.info("No recipe found with ID = " + id);
+			log.info("No recipe found with ID = " + id);
 		}
 	}
 }

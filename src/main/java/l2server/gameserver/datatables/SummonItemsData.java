@@ -22,7 +22,8 @@ package l2server.gameserver.datatables;
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.L2SummonItem;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -30,6 +31,9 @@ import l2server.util.xml.XmlNode;
 import java.io.File;
 
 public class SummonItemsData {
+	private static Logger log = LoggerFactory.getLogger(SummonItemsData.class.getName());
+
+
 	
 	private Map<Integer, L2SummonItem> summonitems = new HashMap<>();
 
@@ -57,7 +61,7 @@ public class SummonItemsData {
 			}
 		}
 
-		Log.info("Summon items data: Loaded " + summonitems.size() + " summon items.");
+		log.info("Summon items data: Loaded " + summonitems.size() + " summon items.");
 	}
 
 	public L2SummonItem getSummonItem(int itemId) {

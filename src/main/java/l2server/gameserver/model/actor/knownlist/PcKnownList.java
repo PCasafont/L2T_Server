@@ -16,50 +16,50 @@
 package l2server.gameserver.model.actor.knownlist;
 
 import l2server.Config;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.L2Vehicle;
-import l2server.gameserver.model.actor.instance.L2AirShipInstance;
-import l2server.gameserver.model.actor.instance.L2GuardInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.Vehicle;
+import l2server.gameserver.model.actor.instance.AirShipInstance;
+import l2server.gameserver.model.actor.instance.GuardInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.DeleteObject;
 import l2server.gameserver.network.serverpackets.SpawnItem;
 
 public class PcKnownList extends PlayableKnownList {
-	public PcKnownList(L2PcInstance activeChar) {
+	public PcKnownList(Player activeChar) {
 		super(activeChar);
 	}
 
 	/**
-	 * Add a visible L2Object to L2PcInstance knownObjects and knownPlayer (if necessary) and send Server-Client Packets needed to inform the L2PcInstance of its state and actions in progress.<BR><BR>
+	 * Add a visible WorldObject to Player knownObjects and knownPlayer (if necessary) and send Server-Client Packets needed to inform the Player of its state and actions in progress.<BR><BR>
 	 * <p>
-	 * <B><U> object is a L2ItemInstance </U> :</B><BR><BR>
-	 * <li> Send Server-Client Packet DropItem/SpawnItem to the L2PcInstance </li><BR><BR>
+	 * <B><U> object is a Item </U> :</B><BR><BR>
+	 * <li> Send Server-Client Packet DropItem/SpawnItem to the Player </li><BR><BR>
 	 * <p>
-	 * <B><U> object is a L2DoorInstance </U> :</B><BR><BR>
-	 * <li> Send Server-Client Packets DoorInfo and DoorStatusUpdate to the L2PcInstance </li>
-	 * <li> Send Server->Client packet MoveToPawn/CharMoveToLocation and AutoAttackStart to the L2PcInstance </li><BR><BR>
+	 * <B><U> object is a DoorInstance </U> :</B><BR><BR>
+	 * <li> Send Server-Client Packets DoorInfo and DoorStatusUpdate to the Player </li>
+	 * <li> Send Server->Client packet MoveToPawn/CharMoveToLocation and AutoAttackStart to the Player </li><BR><BR>
 	 * <p>
-	 * <B><U> object is a L2NpcInstance </U> :</B><BR><BR>
-	 * <li> Send Server-Client Packet NpcInfo to the L2PcInstance </li>
-	 * <li> Send Server->Client packet MoveToPawn/CharMoveToLocation and AutoAttackStart to the L2PcInstance </li><BR><BR>
+	 * <B><U> object is a NpcInstance </U> :</B><BR><BR>
+	 * <li> Send Server-Client Packet NpcInfo to the Player </li>
+	 * <li> Send Server->Client packet MoveToPawn/CharMoveToLocation and AutoAttackStart to the Player </li><BR><BR>
 	 * <p>
-	 * <B><U> object is a L2Summon </U> :</B><BR><BR>
-	 * <li> Send Server-Client Packet NpcInfo/PetItemList (if the L2PcInstance is the owner) to the L2PcInstance </li>
-	 * <li> Send Server->Client packet MoveToPawn/CharMoveToLocation and AutoAttackStart to the L2PcInstance </li><BR><BR>
+	 * <B><U> object is a Summon </U> :</B><BR><BR>
+	 * <li> Send Server-Client Packet NpcInfo/PetItemList (if the Player is the owner) to the Player </li>
+	 * <li> Send Server->Client packet MoveToPawn/CharMoveToLocation and AutoAttackStart to the Player </li><BR><BR>
 	 * <p>
-	 * <B><U> object is a L2PcInstance </U> :</B><BR><BR>
-	 * <li> Send Server-Client Packet CharInfo to the L2PcInstance </li>
-	 * <li> If the object has a private store, Send Server-Client Packet PrivateStoreMsgSell to the L2PcInstance </li>
-	 * <li> Send Server->Client packet MoveToPawn/CharMoveToLocation and AutoAttackStart to the L2PcInstance </li><BR><BR>
+	 * <B><U> object is a Player </U> :</B><BR><BR>
+	 * <li> Send Server-Client Packet CharInfo to the Player </li>
+	 * <li> If the object has a private store, Send Server-Client Packet PrivateStoreMsgSell to the Player </li>
+	 * <li> Send Server->Client packet MoveToPawn/CharMoveToLocation and AutoAttackStart to the Player </li><BR><BR>
 	 *
-	 * @param object The L2Object to add to knownObjects and knownPlayer
+	 * @param object The WorldObject to add to knownObjects and knownPlayer
 	 */
 	@Override
-	public boolean addKnownObject(L2Object object) {
-		if (object instanceof L2GuardInstance && ((L2GuardInstance) object).isDecayed()) {
+	public boolean addKnownObject(WorldObject object) {
+		if (object instanceof GuardInstance && ((GuardInstance) object).isDecayed()) {
 			return false;
 		}
 
@@ -75,9 +75,9 @@ public class PcKnownList extends PlayableKnownList {
 		} else {
 			object.sendInfo(getActiveChar());
 
-			if (object instanceof L2Character) {
-				// Update the state of the L2Character object client side by sending Server->Client packet MoveToPawn/CharMoveToLocation and AutoAttackStart to the L2PcInstance
-				L2Character obj = (L2Character) object;
+			if (object instanceof Creature) {
+				// Update the state of the Creature object client side by sending Server->Client packet MoveToPawn/CharMoveToLocation and AutoAttackStart to the Player
+				Creature obj = (Creature) object;
 				if (obj.hasAI()) {
 					obj.getAI().describeStateToPlayer(getActiveChar());
 				}
@@ -88,29 +88,29 @@ public class PcKnownList extends PlayableKnownList {
 	}
 
 	/**
-	 * Remove a L2Object from L2PcInstance knownObjects and knownPlayer (if necessary) and send Server-Client Packet DeleteObject to the L2PcInstance.<BR><BR>
+	 * Remove a WorldObject from Player knownObjects and knownPlayer (if necessary) and send Server-Client Packet DeleteObject to the Player.<BR><BR>
 	 *
-	 * @param object The L2Object to remove from knownObjects and knownPlayer
+	 * @param object The WorldObject to remove from knownObjects and knownPlayer
 	 */
 	@Override
-	protected boolean removeKnownObject(L2Object object, boolean forget) {
+	protected boolean removeKnownObject(WorldObject object, boolean forget) {
 		if (!super.removeKnownObject(object, forget)) {
 			return false;
 		}
 
-		if (object instanceof L2AirShipInstance) {
-			if (((L2AirShipInstance) object).getCaptainId() != 0 && ((L2AirShipInstance) object).getCaptainId() != getActiveChar().getObjectId()) {
-				getActiveChar().sendPacket(new DeleteObject(((L2AirShipInstance) object).getCaptainId()));
+		if (object instanceof AirShipInstance) {
+			if (((AirShipInstance) object).getCaptainId() != 0 && ((AirShipInstance) object).getCaptainId() != getActiveChar().getObjectId()) {
+				getActiveChar().sendPacket(new DeleteObject(((AirShipInstance) object).getCaptainId()));
 			}
-			if (((L2AirShipInstance) object).getHelmObjectId() != 0) {
-				getActiveChar().sendPacket(new DeleteObject(((L2AirShipInstance) object).getHelmObjectId()));
+			if (((AirShipInstance) object).getHelmObjectId() != 0) {
+				getActiveChar().sendPacket(new DeleteObject(((AirShipInstance) object).getHelmObjectId()));
 			}
 		}
 
-		// Send Server-Client Packet DeleteObject to the L2PcInstance
+		// Send Server-Client Packet DeleteObject to the Player
 		getActiveChar().sendPacket(new DeleteObject(object));
 
-		if (Config.CHECK_KNOWN && object instanceof L2Npc && getActiveChar().isGM()) {
+		if (Config.CHECK_KNOWN && object instanceof Npc && getActiveChar().isGM()) {
 			getActiveChar().sendMessage("Removed NPC: " + object.getName());
 		}
 
@@ -118,13 +118,13 @@ public class PcKnownList extends PlayableKnownList {
 	}
 
 	@Override
-	public final L2PcInstance getActiveChar() {
-		return (L2PcInstance) super.getActiveChar();
+	public final Player getActiveChar() {
+		return (Player) super.getActiveChar();
 	}
 
 	@Override
-	public int getDistanceToForgetObject(L2Object object) {
-		if (object instanceof L2Vehicle) {
+	public int getDistanceToForgetObject(WorldObject object) {
+		if (object instanceof Vehicle) {
 			return 10000;
 		}
 
@@ -132,7 +132,7 @@ public class PcKnownList extends PlayableKnownList {
 			return 1500;
 		}
 
-		if (object instanceof L2Summon && ((L2Summon) object).getOwner() == getActiveChar()) {
+		if (object instanceof Summon && ((Summon) object).getOwner() == getActiveChar()) {
 			return 45000;
 		}
 
@@ -154,8 +154,8 @@ public class PcKnownList extends PlayableKnownList {
 	}
 
 	@Override
-	public int getDistanceToWatchObject(L2Object object) {
-		if (object instanceof L2Vehicle) {
+	public int getDistanceToWatchObject(WorldObject object) {
+		if (object instanceof Vehicle) {
 			return 8000;
 		}
 

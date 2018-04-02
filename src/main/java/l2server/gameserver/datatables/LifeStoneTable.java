@@ -17,15 +17,16 @@ package l2server.gameserver.datatables;
 
 import l2server.Config;
 import l2server.gameserver.model.EnchantEffect;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Augmentation;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2Armor;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.gameserver.templates.item.L2Weapon;
-import l2server.log.Log;
+import l2server.gameserver.templates.item.ArmorTemplate;
+import l2server.gameserver.templates.item.ItemTemplate;
+import l2server.gameserver.templates.item.WeaponTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
@@ -42,6 +43,9 @@ import java.util.logging.Level;
  * @author Pere
  */
 public class LifeStoneTable {
+	private static Logger log = LoggerFactory.getLogger(LifeStoneTable.class.getName());
+
+
 	public static final class EnchantEffectSet {
 		private final List<EnchantEffect> enchantEffects;
 		private final float chance;
@@ -120,7 +124,7 @@ public class LifeStoneTable {
 		public final EnchantEffect getRandomEffect(String type, int order) {
 			EnchantEffectGroup[] augments = effects.get(type);
 			if (augments == null || augments[order] == null) {
-				Log.warning("Null augment: " + type + ", " + order);
+				log.warn("Null augment: " + type + ", " + order);
 				return null;
 			}
 
@@ -170,7 +174,7 @@ public class LifeStoneTable {
 
 			if (!file.exists()) {
 				if (Config.DEBUG) {
-					Log.info("The life stones file is missing.");
+					log.info("The life stones file is missing.");
 				}
 				return;
 			}
@@ -226,9 +230,9 @@ public class LifeStoneTable {
 				lifeStones.put(id, lifeStone);
 			}
 
-			Log.info("LifeStoneTable: Loaded " + lifeStones.size() + " life stones.");
+			log.info("LifeStoneTable: Loaded " + lifeStones.size() + " life stones.");
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error loading life stone data", e);
+			log.error("Error loading life stone data", e);
 		}
 	}
 
@@ -237,13 +241,13 @@ public class LifeStoneTable {
 	 *
 	 * @return L2Augmentation
 	 */
-	public L2Augmentation generateRandomAugmentation(LifeStone lifeStone, L2ItemInstance targetItem) {
+	public L2Augmentation generateRandomAugmentation(LifeStone lifeStone, Item targetItem) {
 		switch (targetItem.getItem().getBodyPart()) {
-			case L2Item.SLOT_LR_FINGER:
+			case ItemTemplate.SLOT_LR_FINGER:
 				return generateRandomAugmentation(lifeStone, "ring");
-			case L2Item.SLOT_LR_EAR:
+			case ItemTemplate.SLOT_LR_EAR:
 				return generateRandomAugmentation(lifeStone, "earring");
-			case L2Item.SLOT_NECK:
+			case ItemTemplate.SLOT_NECK:
 				return generateRandomAugmentation(lifeStone, "necklace");
 			default:
 				return generateRandomAugmentation(lifeStone, targetItem.getWeaponItem().isMagicWeapon() ? "mage" : "warrior");
@@ -267,7 +271,7 @@ public class LifeStoneTable {
 	/*
 	 * Checks player, source item, lifestone and gemstone validity for augmentation process
 	 */
-	public final boolean isValid(L2PcInstance player, L2ItemInstance item, L2ItemInstance refinerItem, L2ItemInstance gemStones) {
+	public final boolean isValid(Player player, Item item, Item refinerItem, Item gemStones) {
 		if (!isValid(player, item, refinerItem)) {
 			return false;
 		}
@@ -277,7 +281,7 @@ public class LifeStoneTable {
 			return false;
 		}
 		// .. and located in inventory
-		if (gemStones.getLocation() != L2ItemInstance.ItemLocation.INVENTORY) {
+		if (gemStones.getLocation() != Item.ItemLocation.INVENTORY) {
 			return false;
 		}
 
@@ -295,7 +299,7 @@ public class LifeStoneTable {
 	/*
 	 * Checks player, source item and lifestone validity for augmentation process
 	 */
-	public final boolean isValid(L2PcInstance player, L2ItemInstance item, L2ItemInstance refinerItem) {
+	public final boolean isValid(Player player, Item item, Item refinerItem) {
 		if (!isValid(player, item)) {
 			return false;
 		}
@@ -305,7 +309,7 @@ public class LifeStoneTable {
 			return false;
 		}
 		// Lifestone must be located in inventory
-		if (refinerItem.getLocation() != L2ItemInstance.ItemLocation.INVENTORY) {
+		if (refinerItem.getLocation() != Item.ItemLocation.INVENTORY) {
 			return false;
 		}
 
@@ -319,11 +323,11 @@ public class LifeStoneTable {
 		}
 
 		// weapons can't be augmented with accessory ls
-		if (item.getItem() instanceof L2Weapon && (ls.getGrade() == GRADE_ACC || ls.getGrade() == GRADE_ARIA)) {
+		if (item.getItem() instanceof WeaponTemplate && (ls.getGrade() == GRADE_ACC || ls.getGrade() == GRADE_ARIA)) {
 			return false;
 		}
 		// and accessory can't be augmented with weapon ls
-		if (item.getItem() instanceof L2Armor && ls.getGrade() < GRADE_ACC) {
+		if (item.getItem() instanceof ArmorTemplate && ls.getGrade() < GRADE_ACC) {
 			return false;
 		}
 		// check for level of the lifestone
@@ -333,7 +337,7 @@ public class LifeStoneTable {
 	/*
 	 * Check both player and source item conditions for augmentation process
 	 */
-	public static boolean isValid(L2PcInstance player, L2ItemInstance item) {
+	public static boolean isValid(Player player, Item item) {
 		if (!isValid(player)) {
 			return false;
 		}
@@ -362,33 +366,33 @@ public class LifeStoneTable {
 		}
 		//if (item.isPvp())
 		//	return false;
-		if (item.getItem().getCrystalType() < L2Item.CRYSTAL_C) {
+		if (item.getItem().getCrystalType() < ItemTemplate.CRYSTAL_C) {
 			return false;
 		}
 
 		// Source item can be equipped or in inventory
 		switch (item.getLocation()) {
 			case INVENTORY:
-			case PAPERDOLL:
+			case EQUIPPED:
 				break;
 			default:
 				return false;
 		}
 
-		if (item.getItem() instanceof L2Weapon) {
-			switch (((L2Weapon) item.getItem()).getItemType()) {
+		if (item.getItem() instanceof WeaponTemplate) {
+			switch (((WeaponTemplate) item.getItem()).getItemType()) {
 				case NONE:
 				case FISHINGROD:
 					return false;
 				default:
 					break;
 			}
-		} else if (item.getItem() instanceof L2Armor) {
+		} else if (item.getItem() instanceof ArmorTemplate) {
 			// only accessories can be augmented
 			switch (item.getItem().getBodyPart()) {
-				case L2Item.SLOT_LR_FINGER:
-				case L2Item.SLOT_LR_EAR:
-				case L2Item.SLOT_NECK:
+				case ItemTemplate.SLOT_LR_FINGER:
+				case ItemTemplate.SLOT_LR_EAR:
+				case ItemTemplate.SLOT_NECK:
 					break;
 				default:
 					return false;
@@ -404,8 +408,8 @@ public class LifeStoneTable {
 	/*
 	 * Check if player's conditions valid for augmentation process
 	 */
-	public static boolean isValid(L2PcInstance player) {
-		if (player.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_NONE) {
+	public static boolean isValid(Player player) {
+		if (player.getPrivateStoreType() != Player.STORE_PRIVATE_NONE) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CANNOT_AUGMENT_ITEMS_WHILE_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP_IS_IN_OPERATION));
 			return false;
 		}
@@ -444,18 +448,18 @@ public class LifeStoneTable {
 		}
 
 		switch (itemGrade) {
-			case L2Item.CRYSTAL_C:
-			case L2Item.CRYSTAL_B:
+			case ItemTemplate.CRYSTAL_C:
+			case ItemTemplate.CRYSTAL_B:
 				return GEMSTONE_D;
-			case L2Item.CRYSTAL_A:
-			case L2Item.CRYSTAL_S:
+			case ItemTemplate.CRYSTAL_A:
+			case ItemTemplate.CRYSTAL_S:
 				return GEMSTONE_C;
-			case L2Item.CRYSTAL_S80:
-			case L2Item.CRYSTAL_S84:
+			case ItemTemplate.CRYSTAL_S80:
+			case ItemTemplate.CRYSTAL_S84:
 				return GEMSTONE_B;
-			case L2Item.CRYSTAL_R:
-			case L2Item.CRYSTAL_R95:
-			case L2Item.CRYSTAL_R99:
+			case ItemTemplate.CRYSTAL_R:
+			case ItemTemplate.CRYSTAL_R95:
+			case ItemTemplate.CRYSTAL_R99:
 				return GEMSTONE_A;
 			default:
 				return 0;
@@ -472,46 +476,46 @@ public class LifeStoneTable {
 				return 100;
 			case GRADE_ACC:
 				switch (itemGrade) {
-					case L2Item.CRYSTAL_C:
+					case ItemTemplate.CRYSTAL_C:
 						return 200;
-					case L2Item.CRYSTAL_B:
+					case ItemTemplate.CRYSTAL_B:
 						return 300;
-					case L2Item.CRYSTAL_A:
+					case ItemTemplate.CRYSTAL_A:
 						return 200;
-					case L2Item.CRYSTAL_S:
+					case ItemTemplate.CRYSTAL_S:
 						return 250;
-					case L2Item.CRYSTAL_S80:
+					case ItemTemplate.CRYSTAL_S80:
 						return 360;
-					case L2Item.CRYSTAL_S84:
+					case ItemTemplate.CRYSTAL_S84:
 						return 480;
-					case L2Item.CRYSTAL_R:
+					case ItemTemplate.CRYSTAL_R:
 						return 26;
-					case L2Item.CRYSTAL_R95:
+					case ItemTemplate.CRYSTAL_R95:
 						return 90;
-					case L2Item.CRYSTAL_R99:
+					case ItemTemplate.CRYSTAL_R99:
 						return 236;
 					default:
 						return 0;
 				}
 			default:
 				switch (itemGrade) {
-					case L2Item.CRYSTAL_C:
+					case ItemTemplate.CRYSTAL_C:
 						return 20;
-					case L2Item.CRYSTAL_B:
+					case ItemTemplate.CRYSTAL_B:
 						return 30;
-					case L2Item.CRYSTAL_A:
+					case ItemTemplate.CRYSTAL_A:
 						return 20;
-					case L2Item.CRYSTAL_S:
+					case ItemTemplate.CRYSTAL_S:
 						return 25;
-					case L2Item.CRYSTAL_S80:
+					case ItemTemplate.CRYSTAL_S80:
 						return 36;
-					case L2Item.CRYSTAL_S84:
+					case ItemTemplate.CRYSTAL_S84:
 						return 48;
-					case L2Item.CRYSTAL_R:
+					case ItemTemplate.CRYSTAL_R:
 						return 13;
-					case L2Item.CRYSTAL_R95:
+					case ItemTemplate.CRYSTAL_R95:
 						return 45;
-					case L2Item.CRYSTAL_R99:
+					case ItemTemplate.CRYSTAL_R99:
 						return 118;
 					default:
 						return 0;

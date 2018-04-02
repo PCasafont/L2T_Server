@@ -21,22 +21,21 @@ import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.util.Calendar;
@@ -54,9 +53,9 @@ Please maintain consistency between the Seed scripts.
 public class HallOfSuffering extends Quest {
 
 	private class HSWorld extends InstanceWorld {
-		public Map<L2Npc, Boolean> npcList = new HashMap<L2Npc, Boolean>();
-		public L2Npc klodekus = null;
-		public L2Npc klanikus = null;
+		public Map<Npc, Boolean> npcList = new HashMap<Npc, Boolean>();
+		public Npc klodekus = null;
+		public Npc klanikus = null;
 		public boolean isBossesAttacked = false;
 		public long startTime = 0;
 		public String ptLeaderName = "";
@@ -123,7 +122,7 @@ public class HallOfSuffering extends Quest {
 	// default: 24h
 	private static final int INSTANCEPENALTY = 24;
 
-	private boolean checkConditions(L2PcInstance player) {
+	private boolean checkConditions(Player player) {
 		if (debug) {
 			return true;
 		}
@@ -136,7 +135,7 @@ public class HallOfSuffering extends Quest {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER));
 			return false;
 		}
-		for (L2PcInstance partyMember : party.getPartyMembers()) {
+		for (Player partyMember : party.getPartyMembers()) {
 			if (partyMember.getLevel() < 75) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_LEVEL_REQUIREMENT_NOT_SUFFICIENT);
 				sm.addPcName(partyMember);
@@ -160,12 +159,12 @@ public class HallOfSuffering extends Quest {
 		return true;
 	}
 
-	private void teleportPlayer(L2PcInstance player, int[] coords, int instanceId) {
+	private void teleportPlayer(Player player, int[] coords, int instanceId) {
 		player.setInstanceId(instanceId);
 		player.teleToLocation(coords[0], coords[1], coords[2]);
 	}
 
-	protected int enterInstance(L2PcInstance player, String template, int[] coords) {
+	protected int enterInstance(Player player, String template, int[] coords) {
 		int instanceId = 0;
 		//check for existing instances for this player
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
@@ -192,7 +191,7 @@ public class HallOfSuffering extends Quest {
 			((HSWorld) world).startTime = System.currentTimeMillis();
 			((HSWorld) world).ptLeaderName = player.getName();
 			InstanceManager.getInstance().addWorld(world);
-			Log.info("Hall Of Suffering started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
+			log.info("Hall Of Suffering started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
 			runTumors((HSWorld) world);
 
 			// teleport players
@@ -200,7 +199,7 @@ public class HallOfSuffering extends Quest {
 				teleportPlayer(player, coords, instanceId);
 				world.allowed.add(player.getObjectId());
 			} else {
-				for (L2PcInstance partyMember : party.getPartyMembers()) {
+				for (Player partyMember : party.getPartyMembers()) {
 					teleportPlayer(partyMember, coords, instanceId);
 					world.allowed.add(partyMember.getObjectId());
 					if (partyMember.getQuestState(qn) == null) {
@@ -212,7 +211,7 @@ public class HallOfSuffering extends Quest {
 		}
 	}
 
-	protected boolean checkKillProgress(L2Npc mob, HSWorld world) {
+	protected boolean checkKillProgress(Npc mob, HSWorld world) {
 		if (world.npcList.containsKey(mob)) {
 			world.npcList.put(mob, true);
 		}
@@ -237,16 +236,16 @@ public class HallOfSuffering extends Quest {
 			case 4:
 				return ROOM_5_MOBS;
 		}
-		Log.warning("");
+		log.warn("");
 		return new int[][]{};
 	}
 
 	protected void runTumors(HSWorld world) {
 		for (int[] mob : getRoomSpawns(world.status)) {
-			L2Npc npc = addSpawn(mob[0], mob[1], mob[2], mob[3], 0, false, 0, false, world.instanceId);
+			Npc npc = addSpawn(mob[0], mob[1], mob[2], mob[3], 0, false, 0, false, world.instanceId);
 			world.npcList.put(npc, false);
 		}
-		L2Npc mob = addSpawn(TUMOR_ALIVE,
+		Npc mob = addSpawn(TUMOR_ALIVE,
 				TUMOR_SPAWNS[world.status][0],
 				TUMOR_SPAWNS[world.status][1],
 				TUMOR_SPAWNS[world.status][2],
@@ -270,7 +269,7 @@ public class HallOfSuffering extends Quest {
 		world.klodekus.setIsMortal(false);
 	}
 
-	protected void bossSimpleDie(L2Npc boss) {
+	protected void bossSimpleDie(Npc boss) {
 		// killing is only possible one time
 		synchronized (this) {
 			if (boss.isDead()) {
@@ -292,10 +291,10 @@ public class HallOfSuffering extends Quest {
 
 		boss.stopAllEffectsExceptThoseThatLastThroughDeath();
 
-		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
+		// Send the Server->Client packet StatusUpdate with current HP and MP to all other Player to inform
 		boss.broadcastStatusUpdate();
 
-		// Notify L2Character AI
+		// Notify Creature AI
 		boss.getAI().notifyEvent(CtrlEvent.EVT_DEAD);
 
 		if (boss.getWorldRegion() != null) {
@@ -338,27 +337,27 @@ public class HallOfSuffering extends Quest {
 		}
 	}
 
-	private String getPtLeaderText(L2PcInstance player, HSWorld world) {
+	private String getPtLeaderText(Player player, HSWorld world) {
 		String htmltext = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), Config.DATA_FOLDER + "scripts/instances/SeedOfInfinity/32530-10.htm");
 		htmltext = htmltext.replaceAll("%ptLeader%", String.valueOf(world.ptLeaderName));
 		return htmltext;
 	}
 
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet) {
-		if (skill.getSkillType() == L2SkillType.BALANCE_LIFE || skill.getSkillType() == L2SkillType.HEAL ||
-				skill.getSkillType() == L2SkillType.HEAL_PERCENT || skill.getSkillType() == L2SkillType.HEAL_STATIC) {
+	public String onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isPet) {
+		if (skill.getSkillType() == SkillType.BALANCE_LIFE || skill.getSkillType() == SkillType.HEAL ||
+				skill.getSkillType() == SkillType.HEAL_PERCENT || skill.getSkillType() == SkillType.HEAL_STATIC) {
 			int hate = 2 * skill.getAggroPoints();
 			if (hate < 2) {
 				hate = 1000;
 			}
-			((L2Attackable) npc).addDamageHate(caster, 0, hate);
+			((Attackable) npc).addDamageHate(caster, 0, hate);
 		}
 		return super.onSkillSee(npc, caster, skill, targets, isPet);
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof HSWorld) {
 			HSWorld world = (HSWorld) tmpworld;
@@ -367,7 +366,7 @@ public class HallOfSuffering extends Quest {
 					world.isBossesAttacked = false;
 					return "";
 				}
-				L2Npc mob = addSpawn(TWIN_MOBIDS[Rnd.get(TWIN_MOBIDS.length)],
+				Npc mob = addSpawn(TWIN_MOBIDS[Rnd.get(TWIN_MOBIDS.length)],
 						TWIN_SPAWNS[0][1],
 						TWIN_SPAWNS[0][2],
 						TWIN_SPAWNS[0][3],
@@ -376,7 +375,7 @@ public class HallOfSuffering extends Quest {
 						0,
 						false,
 						npc.getInstanceId());
-				((L2Attackable) mob).addDamageHate(((L2Attackable) npc).getMostHated(), 0, 1);
+				((Attackable) mob).addDamageHate(((Attackable) npc).getMostHated(), 0, 1);
 				if (Rnd.get(100) < 33) {
 					mob = addSpawn(TWIN_MOBIDS[Rnd.get(TWIN_MOBIDS.length)],
 							TWIN_SPAWNS[1][1],
@@ -387,7 +386,7 @@ public class HallOfSuffering extends Quest {
 							0,
 							false,
 							npc.getInstanceId());
-					((L2Attackable) mob).addDamageHate(((L2Attackable) npc).getMostHated(), 0, 1);
+					((Attackable) mob).addDamageHate(((Attackable) npc).getMostHated(), 0, 1);
 				}
 				startQuestTimer("spawnBossGuards", BOSS_MINION_SPAWN_TIME, npc, null);
 			} else if (event.equalsIgnoreCase("isTwinSeparated")) {
@@ -400,14 +399,14 @@ public class HallOfSuffering extends Quest {
 				}
 				startQuestTimer("isTwinSeparated", 10000, npc, null);
 			} else if (event.equalsIgnoreCase("ressurectTwin")) {
-				L2Skill skill = SkillTable.getInstance().getInfo(5824, 1);
-				L2Npc aliveTwin = world.klanikus == npc ? world.klodekus : world.klanikus;
+				Skill skill = SkillTable.getInstance().getInfo(5824, 1);
+				Npc aliveTwin = world.klanikus == npc ? world.klodekus : world.klanikus;
 				npc.doRevive();
 				npc.doCast(skill);
 				npc.setCurrentHp(aliveTwin.getCurrentHp());
 
 				// get most hated of other boss
-				L2Character hated = ((L2MonsterInstance) aliveTwin).getMostHated();
+				Creature hated = ((MonsterInstance) aliveTwin).getMostHated();
 				if (hated != null) //to prevent revived idling
 				{
 					npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, hated, 1000);
@@ -423,7 +422,7 @@ public class HallOfSuffering extends Quest {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet, Skill skill) {
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof HSWorld) {
 			if (!((HSWorld) tmpworld).isBossesAttacked) {
@@ -436,7 +435,7 @@ public class HallOfSuffering extends Quest {
 
 				// set instance reenter time for all allowed players
 				for (int objectId : tmpworld.allowed) {
-					L2PcInstance player = L2World.getInstance().getPlayer(objectId);
+					Player player = World.getInstance().getPlayer(objectId);
 					if (player != null && player.isOnline()) {
 						InstanceManager.getInstance().setInstanceTime(objectId, tmpworld.templateId, reenter.getTimeInMillis());
 						player.sendPacket(sm);
@@ -463,7 +462,7 @@ public class HallOfSuffering extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof HSWorld) {
 			HSWorld world = (HSWorld) tmpworld;
@@ -497,11 +496,11 @@ public class HallOfSuffering extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		if (npc.getNpcId() == TEPIOS) {
 			InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 			if (((HSWorld) world).rewardItemId == -1) {
-				Log.warning("Hall of Suffering: " + player.getName() + "(" + player.getObjectId() + ") is try to cheat!");
+				log.warn("Hall of Suffering: " + player.getName() + "(" + player.getObjectId() + ") is try to cheat!");
 				return getPtLeaderText(player, (HSWorld) world);
 			} else if (((HSWorld) world).isRewarded) {
 				return "32530-11.htm";
@@ -515,7 +514,7 @@ public class HallOfSuffering extends Quest {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		int npcId = npc.getNpcId();
 		QuestState st = player.getQuestState(qn);
 		if (st == null) {
@@ -527,13 +526,13 @@ public class HallOfSuffering extends Quest {
 		} else if (npcId == TEPIOS) {
 			InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 			if (((HSWorld) world).rewardItemId == -1) {
-				Log.warning("Hall of Suffering: " + player.getName() + "(" + player.getObjectId() + ") is try to cheat!");
+				log.warn("Hall of Suffering: " + player.getName() + "(" + player.getObjectId() + ") is try to cheat!");
 				return getPtLeaderText(player, (HSWorld) world);
 			} else if (((HSWorld) world).isRewarded) {
 				return "32530-11.htm";
 			} else if (player.getParty() != null && player.getParty().getPartyLeaderOID() == player.getObjectId()) {
 				((HSWorld) world).isRewarded = true;
-				for (L2PcInstance pl : player.getParty().getPartyMembers()) {
+				for (Player pl : player.getParty().getPartyMembers()) {
 					if (pl != null) {
 						st = pl.getQuestState(qn);
 						if (st != null) {

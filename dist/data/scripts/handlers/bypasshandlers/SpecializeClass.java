@@ -19,9 +19,9 @@ import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.datatables.SkillTreeTable;
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.olympiad.HeroesManager;
 import l2server.gameserver.model.olympiad.Olympiad;
@@ -35,7 +35,7 @@ public class SpecializeClass implements IBypassHandler {
 	private static final String[] COMMANDS = {"SpecializeClass"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		if (target == null || activeChar == null || activeChar.getCurrentClass().getLevel() != 85) {
 			activeChar.sendMessage("You must be on an awakened class to do this.");
 			return false;
@@ -131,7 +131,7 @@ public class SpecializeClass implements IBypassHandler {
 					activeChar.setBaseClass(classId);
 				}
 				
-				for (L2Skill skill : activeChar.getAllSkills()) {
+				for (Skill skill : activeChar.getAllSkills()) {
 					if (!SkillTreeTable.getInstance().isSkillAllowed(activeChar, skill)) {
 						activeChar.removeSkill(skill, true);
 					}

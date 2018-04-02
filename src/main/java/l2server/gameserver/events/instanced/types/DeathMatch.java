@@ -6,8 +6,8 @@ import l2server.gameserver.events.instanced.EventInstance;
 import l2server.gameserver.events.instanced.EventTeleporter;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.instancemanager.PlayerAssistsManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 
@@ -25,11 +25,11 @@ public class DeathMatch extends EventInstance {
 
 	@Override
 	public void calculateRewards() {
-		List<L2PcInstance> sorted = new ArrayList<>();
-		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values()) {
+		List<Player> sorted = new ArrayList<>();
+		for (Player playerInstance : teams[0].getParticipatedPlayers().values()) {
 			boolean added = false;
 			int index = 0;
-			for (L2PcInstance listed : sorted) {
+			for (Player listed : sorted) {
 				if (playerInstance.getEventPoints() > listed.getEventPoints()) {
 					sorted.add(index, playerInstance);
 					added = true;
@@ -49,11 +49,11 @@ public class DeathMatch extends EventInstance {
 	}
 
 	@Override
-	public String getRunningInfo(L2PcInstance player) {
+	public String getRunningInfo(Player player) {
 		String html = "";
 		if (teams[0].getParticipatedPlayerCount() > 0) {
 			html += "Participants' points:<br>";
-			for (L2PcInstance participant : teams[0].getParticipatedPlayers().values()) {
+			for (Player participant : teams[0].getParticipatedPlayers().values()) {
 				if (participant != null) {
 					html += EventsManager.getInstance().getPlayerString(participant, player) + ": " + participant.getEventPoints() + "<br>";
 				}
@@ -66,7 +66,7 @@ public class DeathMatch extends EventInstance {
 	}
 
 	@Override
-	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayer) {
+	public void onKill(Creature killerCharacter, Player killedPlayer) {
 		if (killedPlayer == null || !isState(EventState.STARTED)) {
 			return;
 		}
@@ -77,7 +77,7 @@ public class DeathMatch extends EventInstance {
 			return;
 		}
 
-		L2PcInstance killerPlayer = killerCharacter.getActingPlayer();
+		Player killerPlayer = killerCharacter.getActingPlayer();
 		if (killerPlayer == null) {
 			return;
 		}
@@ -89,8 +89,8 @@ public class DeathMatch extends EventInstance {
 		killerPlayer.sendPacket(cs);
 
 		killerPlayer.addEventPoints(3);
-		List<L2PcInstance> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
-		for (L2PcInstance assistant : assistants) {
+		List<Player> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
+		for (Player assistant : assistants) {
 			assistant.addEventPoints(1);
 		}
 	}

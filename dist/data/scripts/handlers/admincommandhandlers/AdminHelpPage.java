@@ -17,7 +17,7 @@ package handlers.admincommandhandlers;
 
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
@@ -31,7 +31,7 @@ public class AdminHelpPage implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_help"};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		
 		if (command.startsWith("admin_help")) {
 			try {
@@ -50,9 +50,9 @@ public class AdminHelpPage implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 	
-	//FIXME: implement method to send html to player in L2PcInstance directly
+	//FIXME: implement method to send html to player in Player directly
 	//PUBLIC & STATIC so other classes from package can include it directly
-	public static void showHelpPage(L2PcInstance targetChar, String filename) {
+	public static void showHelpPage(Player targetChar, String filename) {
 		String content = HtmCache.getInstance().getHtmForce(targetChar.getHtmlPrefix(), "admin/" + filename);
 		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
 		adminReply.setHtml(content);

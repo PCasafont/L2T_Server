@@ -18,12 +18,12 @@ package handlers.targethandlers;
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2TrapInstance;
-import l2server.gameserver.templates.skills.L2SkillTargetDirection;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.TrapInstance;
+import l2server.gameserver.templates.skills.SkillTargetDirection;
+import l2server.gameserver.templates.skills.SkillTargetType;
 
 import java.util.ArrayList;
 
@@ -34,16 +34,16 @@ import java.util.ArrayList;
  */
 public class TrapTarget implements ISkillTargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		L2TrapInstance aTrap = activeChar instanceof L2TrapInstance ? (L2TrapInstance) activeChar : null;
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		TrapInstance aTrap = activeChar instanceof TrapInstance ? (TrapInstance) activeChar : null;
 
 		if (aTrap == null) {
 			return null;
 		}
 
-		final ArrayList<L2Character> result = new ArrayList<L2Character>();
+		final ArrayList<Creature> result = new ArrayList<Creature>();
 
-		for (L2Character o : aTrap.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
+		for (Creature o : aTrap.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
 			if (o == aTrap.getOwner() || o.isDead()) {
 				continue;
 			}
@@ -54,19 +54,19 @@ public class TrapTarget implements ISkillTargetTypeHandler {
 				continue;
 			}
 
-			if (skill.getTargetDirection() == L2SkillTargetDirection.SINGLE) {
-				return new L2Character[]{o};
+			if (skill.getTargetDirection() == SkillTargetDirection.SINGLE) {
+				return new Creature[]{o};
 			}
 
 			result.add(o);
 		}
 
-		return result.toArray(new L2Character[result.size()]);
+		return result.toArray(new Creature[result.size()]);
 	}
 
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.TRAP_TARGET;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.TRAP_TARGET;
 	}
 
 	public static void main(String[] args) {

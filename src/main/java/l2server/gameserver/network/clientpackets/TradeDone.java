@@ -16,12 +16,11 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.World;
 import l2server.gameserver.model.TradeList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 /**
  * This class ...
@@ -39,7 +38,7 @@ public final class TradeDone extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		final L2PcInstance player = getClient().getActiveChar();
+		final Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -52,7 +51,7 @@ public final class TradeDone extends L2GameClientPacket {
 		final TradeList trade = player.getActiveTradeList();
 		if (trade == null) {
 			if (Config.DEBUG) {
-				Log.warning("player.getTradeList == null in " + getType() + " for player " + player.getName());
+				log.warn("player.getTradeList == null in " + getType() + " for player " + player.getName());
 			}
 			return;
 		}
@@ -61,7 +60,7 @@ public final class TradeDone extends L2GameClientPacket {
 		}
 
 		if (response == 1) {
-			if (trade.getPartner() == null || L2World.getInstance().getPlayer(trade.getPartner().getObjectId()) == null) {
+			if (trade.getPartner() == null || World.getInstance().getPlayer(trade.getPartner().getObjectId()) == null) {
 				// Trade partner not found, cancel trade
 				player.cancelActiveTrade();
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME));

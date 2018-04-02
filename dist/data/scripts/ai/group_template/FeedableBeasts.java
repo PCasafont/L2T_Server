@@ -18,16 +18,16 @@ package ai.group_template;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2TamedBeastInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.TamedBeastInstance;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.SocialAction;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
@@ -294,7 +294,7 @@ public class FeedableBeasts extends L2AttackableAIScript {
 		GrowthCapableMobs.put(21505, temp);
 	}
 
-	public void spawnNext(L2Npc npc, int growthLevel, L2PcInstance player, int food) {
+	public void spawnNext(Npc npc, int growthLevel, Player player, int food) {
 		int npcId = npc.getNpcId();
 		int nextNpcId = 0;
 
@@ -342,13 +342,13 @@ public class FeedableBeasts extends L2AttackableAIScript {
 		// player might have and initialize the Tamed Beast.
 		if (Util.contains(TAMED_BEASTS, nextNpcId)) {
 			if (player.getTrainedBeasts() != null && !player.getTrainedBeasts().isEmpty()) {
-				for (L2TamedBeastInstance oldTrained : player.getTrainedBeasts()) {
+				for (TamedBeastInstance oldTrained : player.getTrainedBeasts()) {
 					oldTrained.deleteMe();
 				}
 			}
 
-			L2NpcTemplate template = NpcTable.getInstance().getTemplate(nextNpcId);
-			L2TamedBeastInstance nextNpc = new L2TamedBeastInstance(IdFactory.getInstance().getNextId(),
+			NpcTemplate template = NpcTable.getInstance().getTemplate(nextNpcId);
+			TamedBeastInstance nextNpc = new TamedBeastInstance(IdFactory.getInstance().getNextId(),
 					template,
 					player,
 					food - FOODSKILLDIFF,
@@ -387,7 +387,7 @@ public class FeedableBeasts extends L2AttackableAIScript {
 		} else {
 			// if not trained, the newly spawned mob will automatically be agro against its feeder
 			// (what happened to "never bite the hand that feeds you" anyway?!)
-			L2Attackable nextNpc = (L2Attackable) this.addSpawn(nextNpcId, npc);
+			Attackable nextNpc = (Attackable) this.addSpawn(nextNpcId, npc);
 
 			if (MAD_COW_POLYMORPH.containsKey(nextNpcId)) {
 				this.startQuestTimer("polymorph Mad Cow", 10000, nextNpc, player);
@@ -402,7 +402,7 @@ public class FeedableBeasts extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.equalsIgnoreCase("polymorph Mad Cow") && npc != null && player != null) {
 			if (MAD_COW_POLYMORPH.containsKey(npc.getNpcId())) {
 				// remove the feed info from the previous mob
@@ -412,7 +412,7 @@ public class FeedableBeasts extends L2AttackableAIScript {
 				// despawn the mad cow
 				npc.deleteMe();
 				// spawn the new mob
-				L2Attackable nextNpc = (L2Attackable) this.addSpawn(MAD_COW_POLYMORPH.get(npc.getNpcId()), npc);
+				Attackable nextNpc = (Attackable) this.addSpawn(MAD_COW_POLYMORPH.get(npc.getNpcId()), npc);
 
 				// register the player in the feedinfo for the mob that just spawned
 				FeedInfo.put(nextNpc.getObjectId(), player.getObjectId());
@@ -425,7 +425,7 @@ public class FeedableBeasts extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet) {
+	public String onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isPet) {
 		// this behavior is only run when the target of skill is the passed npc (chest)
 		// i.e. when the player is attempting to open the chest using a skill
 		if (!Util.contains(targets, npc)) {
@@ -486,8 +486,8 @@ public class FeedableBeasts extends L2AttackableAIScript {
 			if (Rnd.get(100) < GrowthCapableMobs.get(npcId).getChance()) {
 				spawnNext(npc, growthLevel, caster, food);
 			}
-		} else if (Util.contains(TAMED_BEASTS, npcId) && npc instanceof L2TamedBeastInstance) {
-			L2TamedBeastInstance beast = (L2TamedBeastInstance) npc;
+		} else if (Util.contains(TAMED_BEASTS, npcId) && npc instanceof TamedBeastInstance) {
+			TamedBeastInstance beast = (TamedBeastInstance) npc;
 			if (skillId == beast.getFoodType()) {
 				beast.onReceiveFood();
 				beast.broadcastPacket(new NpcSay(objectId, 0, npcId, TAMED_TEXT[Rnd.get(TAMED_TEXT.length)]));
@@ -497,7 +497,7 @@ public class FeedableBeasts extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		// remove the feedinfo of the mob that got killed, if any
 		if (FeedInfo.containsKey(npc.getObjectId())) {
 			FeedInfo.remove(npc.getObjectId());

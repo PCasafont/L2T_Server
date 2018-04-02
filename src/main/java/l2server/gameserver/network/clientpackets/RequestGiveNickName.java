@@ -17,7 +17,7 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
@@ -42,7 +42,7 @@ public class RequestGiveNickName extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -65,7 +65,7 @@ public class RequestGiveNickName extends L2GameClientPacket {
 
 			L2ClanMember member1 = activeChar.getClan().getClanMember(target);
 			if (member1 != null) {
-				L2PcInstance member = member1.getPlayerInstance();
+				Player member = member1.getPlayerInstance();
 				if (member != null) {
 					//is target from the same clan?
 					member.setTitle(title);

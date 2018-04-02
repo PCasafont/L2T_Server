@@ -4,6 +4,7 @@ import gnu.trove.TIntHashSet;
 import gnu.trove.TIntProcedure;
 import l2server.Config;
 import l2server.gameserver.Announcements;
+import l2server.gameserver.Server;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.datatables.MapRegionTable;
@@ -11,43 +12,45 @@ import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.L2WorldRegion;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldRegion;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.chars.L2DoorTemplate;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.DoorTemplate;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
 
 /**
  * @author evill33t, GodKratos
  */
 public class Instance {
+	private static Logger log = LoggerFactory.getLogger(Server.class.getName());
+	
 	private int id;
 	private String name;
 
 	private TIntHashSet players = new TIntHashSet();
 	private final EjectPlayerProcedure ejectProc;
 
-	private CopyOnWriteArrayList<L2Npc> npcs = new CopyOnWriteArrayList<>();
-	private ArrayList<L2DoorInstance> doors = null;
+	private CopyOnWriteArrayList<Npc> npcs = new CopyOnWriteArrayList<>();
+	private ArrayList<DoorInstance> doors = null;
 	private int[] spawnLoc = new int[3];
 	private boolean allowSummon = true;
 	private long emptyDestroyTime = -1;
@@ -188,7 +191,7 @@ public class Instance {
 	 * @param objectId
 	 */
 	public void ejectPlayer(int objectId) {
-		L2PcInstance player = L2World.getInstance().getPlayer(objectId);
+		Player player = World.getInstance().getPlayer(objectId);
 		if (player != null && player.getInstanceId() == getId()) {
 			player.setInstanceId(0);
 			player.sendMessage("You were removed from the instance");
@@ -200,11 +203,11 @@ public class Instance {
 		}
 	}
 
-	public void addNpc(L2Npc npc) {
+	public void addNpc(Npc npc) {
 		npcs.add(npc);
 	}
 
-	public void removeNpc(L2Npc npc) {
+	public void removeNpc(Npc npc) {
 		if (npc.getSpawn() != null) {
 			npc.getSpawn().stopRespawn();
 		}
@@ -222,15 +225,15 @@ public class Instance {
 			doors = new ArrayList<>(2);
 		}
 
-		for (L2DoorInstance door : doors) {
+		for (DoorInstance door : doors) {
 			if (door.getDoorId() == doorId) {
-				Log.warning("Door ID " + doorId + " already exists in instance " + getId());
+				log.warn("Door ID " + doorId + " already exists in instance " + getId());
 				return;
 			}
 		}
 
-		L2DoorTemplate temp = DoorTable.getInstance().getDoorTemplate(doorId);
-		L2DoorInstance newdoor = new L2DoorInstance(IdFactory.getInstance().getNextId(), temp, set);
+		DoorTemplate temp = DoorTable.getInstance().getDoorTemplate(doorId);
+		DoorInstance newdoor = new DoorInstance(IdFactory.getInstance().getNextId(), temp, set);
 		newdoor.setInstanceId(getId());
 		newdoor.setCurrentHp(newdoor.getMaxHp());
 		newdoor.spawnMe(temp.posX, temp.posY, temp.posZ);
@@ -241,16 +244,16 @@ public class Instance {
 		return players;
 	}
 
-	public CopyOnWriteArrayList<L2Npc> getNpcs() {
+	public CopyOnWriteArrayList<Npc> getNpcs() {
 		return npcs;
 	}
 
-	public ArrayList<L2DoorInstance> getDoors() {
+	public ArrayList<DoorInstance> getDoors() {
 		return doors;
 	}
 
-	public L2DoorInstance getDoor(int id) {
-		for (L2DoorInstance temp : getDoors()) {
+	public DoorInstance getDoor(int id) {
+		for (DoorInstance temp : getDoors()) {
 			if (temp.getDoorId() == id) {
 				return temp;
 			}
@@ -306,7 +309,7 @@ public class Instance {
 	}
 
 	public void removeNpcs() {
-		for (L2Npc mob : npcs) {
+		for (Npc mob : npcs) {
 			if (mob != null) {
 				if (mob.getSpawn() != null) {
 					mob.getSpawn().stopRespawn();
@@ -323,9 +326,9 @@ public class Instance {
 			return;
 		}
 
-		for (L2DoorInstance door : doors) {
+		for (DoorInstance door : doors) {
 			if (door != null) {
-				L2WorldRegion region = door.getWorldRegion();
+				WorldRegion region = door.getWorldRegion();
 				door.decayMe();
 
 				if (region != null) {
@@ -333,7 +336,7 @@ public class Instance {
 				}
 
 				door.getKnownList().removeAllKnownObjects();
-				L2World.getInstance().removeObject(door);
+				World.getInstance().removeObject(door);
 			}
 		}
 		doors.clear();
@@ -351,15 +354,15 @@ public class Instance {
 				}
 			}
 		} catch (IOException e) {
-			Log.log(Level.WARNING, "Instance: can not find " + xml.getAbsolutePath() + " ! " + e.getMessage(), e);
+			log.warn("Instance: can not find " + xml.getAbsolutePath() + " ! " + e.getMessage(), e);
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Instance: error while loading " + xml.getAbsolutePath() + " ! " + e.getMessage(), e);
+			log.warn("Instance: error while loading " + xml.getAbsolutePath() + " ! " + e.getMessage(), e);
 		}
 	}
 
 	private void parseInstance(XmlNode node) throws Exception {
 		L2Spawn spawnDat;
-		L2NpcTemplate npcTemplate;
+		NpcTemplate npcTemplate;
 		String name = node.getString("name");
 		setName(name);
 
@@ -444,13 +447,13 @@ public class Instance {
 								spawnDat.startRespawn();
 							}
 							spawnDat.setInstanceId(getId());
-							L2Npc spawned = spawnDat.getNpc();
+							Npc spawned = spawnDat.getNpc();
 							spawnDat.doSpawn();
-							if (delay >= 0 && spawned instanceof L2Attackable) {
-								((L2Attackable) spawned).setOnKillDelay(delay);
+							if (delay >= 0 && spawned instanceof Attackable) {
+								((Attackable) spawned).setOnKillDelay(delay);
 							}
 						} else {
-							Log.warning("Instance: Data missing in NPC table for ID: " + npcId + " in Instance " + getId());
+							log.warn("Instance: Data missing in NPC table for ID: " + npcId + " in Instance " + getId());
 						}
 					}
 				}
@@ -460,13 +463,13 @@ public class Instance {
 					spawnLoc[1] = n.getInt("spawnY");
 					spawnLoc[2] = n.getInt("spawnZ");
 				} catch (Exception e) {
-					Log.log(Level.WARNING, "Error parsing instance xml: " + e.getMessage(), e);
+					log.warn("Error parsing instance xml: " + e.getMessage(), e);
 					spawnLoc = new int[3];
 				}
 			}
 		}
 		if (Config.DEBUG) {
-			Log.info(name + " Instance Template for Instance " + getId() + " loaded");
+			log.info(name + " Instance Template for Instance " + getId() + " loaded");
 		}
 	}
 
@@ -582,7 +585,7 @@ public class Instance {
 
 		@Override
 		public final boolean execute(final int objId) {
-			L2PcInstance player = L2World.getInstance().getPlayer(objId);
+			Player player = World.getInstance().getPlayer(objId);
 
 			if (player.getInstanceId() == getId()) {
 				player.sendPacket(packet);

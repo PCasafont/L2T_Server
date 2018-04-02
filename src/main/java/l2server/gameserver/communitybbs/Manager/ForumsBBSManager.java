@@ -21,8 +21,9 @@ package l2server.gameserver.communitybbs.Manager;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.communitybbs.BB.Forum;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,6 +33,9 @@ import java.util.List;
 import java.util.logging.Level;
 
 public class ForumsBBSManager extends BaseBBSManager {
+	private static Logger log = LoggerFactory.getLogger(ForumsBBSManager.class.getName());
+
+
 
 	private final List<Forum> table;
 	private int lastid = 1;
@@ -55,7 +59,7 @@ public class ForumsBBSManager extends BaseBBSManager {
 			result.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Data error on Forum (root): " + e.getMessage(), e);
+			log.warn("Data error on Forum (root): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -69,7 +73,7 @@ public class ForumsBBSManager extends BaseBBSManager {
 		for (Forum f : copy) {
 			f.vload();
 		}
-		Log.info("Loaded " + table.size() + " forums. Last forum id used: " + lastid);
+		log.info("Loaded " + table.size() + " forums. Last forum id used: " + lastid);
 	}
 
 	/**
@@ -90,7 +94,7 @@ public class ForumsBBSManager extends BaseBBSManager {
 	}
 
 	@Override
-	public void parsecmd(String command, L2PcInstance activeChar) {
+	public void parsecmd(String command, Player activeChar) {
 	}
 
 	/**
@@ -149,7 +153,7 @@ public class ForumsBBSManager extends BaseBBSManager {
 	}
 
 	@Override
-	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, L2PcInstance activeChar) {
+	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, Player activeChar) {
 
 	}
 

@@ -16,7 +16,7 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.L2ManufactureList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.RecipeShopManageList;
 
@@ -35,7 +35,7 @@ public final class RequestRecipeShopManageList extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -46,7 +46,7 @@ public final class RequestRecipeShopManageList extends L2GameClientPacket {
 			return;
 		}
 		if (player.getPrivateStoreType() != 0) {
-			player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
+			player.setPrivateStoreType(Player.STORE_PRIVATE_NONE);
 			player.broadcastUserInfo();
 			if (player.isSitting()) {
 				player.standUp();

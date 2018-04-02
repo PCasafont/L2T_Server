@@ -19,17 +19,17 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2TamedBeastInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.TamedBeastInstance;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.stats.SkillHolder;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
@@ -252,7 +252,7 @@ public class BeastFarm extends L2AttackableAIScript {
 		TamedBeastsData.put("%name% of Vigor", stemp);
 	}
 
-	public void spawnNext(L2Npc npc, L2PcInstance player, int nextNpcId, int food) {
+	public void spawnNext(Npc npc, Player player, int nextNpcId, int food) {
 		// remove the feedinfo of the mob that got despawned, if any
 		if (FeedInfo.containsKey(npc.getObjectId())) {
 			if (FeedInfo.get(npc.getObjectId()) == player.getObjectId()) {
@@ -273,9 +273,9 @@ public class BeastFarm extends L2AttackableAIScript {
 		// if this is finally a trained mob, then despawn any other trained mobs that the
 		// player might have and initialize the Tamed Beast.
 		if (Util.contains(TAMED_BEASTS, nextNpcId)) {
-			L2NpcTemplate template = NpcTable.getInstance().getTemplate(nextNpcId);
-			L2TamedBeastInstance nextNpc =
-					new L2TamedBeastInstance(IdFactory.getInstance().getNextId(), template, player, food, npc.getX(), npc.getY(), npc.getZ(), true);
+			NpcTemplate template = NpcTable.getInstance().getTemplate(nextNpcId);
+			TamedBeastInstance nextNpc =
+					new TamedBeastInstance(IdFactory.getInstance().getNextId(), template, player, food, npc.getX(), npc.getY(), npc.getZ(), true);
 
 			String name = TamedBeastsData.keySet().toArray(new String[TamedBeastsData.keySet().size()])[Rnd.get(TamedBeastsData.size())];
 			SkillHolder[] skillList = TamedBeastsData.get(name);
@@ -310,7 +310,7 @@ public class BeastFarm extends L2AttackableAIScript {
 		} else {
 			// if not trained, the newly spawned mob will automatically be agro against its feeder
 			// (what happened to "never bite the hand that feeds you" anyway?!)
-			L2Attackable nextNpc = (L2Attackable) this.addSpawn(nextNpcId, npc);
+			Attackable nextNpc = (Attackable) this.addSpawn(nextNpcId, npc);
 
 			// register the player in the feedinfo for the mob that just spawned
 			FeedInfo.put(nextNpc.getObjectId(), player.getObjectId());
@@ -328,7 +328,7 @@ public class BeastFarm extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet) {
+	public String onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isPet) {
 		// this behavior is only run when the target of skill is the passed npc (chest)
 		// i.e. when the player is attempting to open the chest using a skill
 		if (!Util.contains(targets, npc)) {
@@ -377,7 +377,7 @@ public class BeastFarm extends L2AttackableAIScript {
 				if (growthLevel == 0) {
 					FeedInfo.remove(objectId);
 					npc.setRunning();
-					((L2Attackable) npc).addDamageHate(caster, 0, 1);
+					((Attackable) npc).addDamageHate(caster, 0, 1);
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, caster);
 				}
 				return super.onSkillSee(npc, caster, skill, targets, isPet);
@@ -389,13 +389,13 @@ public class BeastFarm extends L2AttackableAIScript {
 			spawnNext(npc, caster, newNpcId, food);
 		} else {
 			caster.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1).addString("The beast spit out the feed instead of eating it."));
-			((L2Attackable) npc).dropItem(caster, food, 1);
+			((Attackable) npc).dropItem(caster, food, 1);
 		}
 		return super.onSkillSee(npc, caster, skill, targets, isPet);
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		// remove the feedinfo of the mob that got killed, if any
 		if (FeedInfo.containsKey(npc.getObjectId())) {
 			FeedInfo.remove(npc.getObjectId());

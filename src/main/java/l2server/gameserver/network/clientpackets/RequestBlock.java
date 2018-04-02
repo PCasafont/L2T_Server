@@ -17,11 +17,10 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.model.BlockList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.BlockListPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 public final class RequestBlock extends L2GameClientPacket {
 
@@ -45,7 +44,7 @@ public final class RequestBlock extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		final int targetId = CharNameTable.getInstance().getIdByName(name);
 		final int targetAL = CharNameTable.getInstance().getAccessLevelById(targetId);
 
@@ -91,7 +90,7 @@ public final class RequestBlock extends L2GameClientPacket {
 				BlockList.setBlockAll(activeChar, false);
 				break;
 			default:
-				Log.info("Unknown 0x0a block type: " + type);
+				log.info("Unknown 0x0a block type: " + type);
 		}
 	}
 }

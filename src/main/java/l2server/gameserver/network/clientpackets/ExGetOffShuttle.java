@@ -15,10 +15,10 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2ShuttleInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.ShuttleInstance;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 
 /**
@@ -40,18 +40,18 @@ public class ExGetOffShuttle extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null || !player.canGetOnOffShuttle()) {
 			return;
 		}
 
-		L2Object obj = L2World.getInstance().findObject(shuttleId);
-		if (!(obj instanceof L2ShuttleInstance)) {
+		WorldObject obj = World.getInstance().findObject(shuttleId);
+		if (!(obj instanceof ShuttleInstance)) {
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
-		L2ShuttleInstance shuttle = (L2ShuttleInstance) obj;
+		ShuttleInstance shuttle = (ShuttleInstance) obj;
 		if (shuttle.isClosed()) {
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;

@@ -18,14 +18,15 @@ package l2server.gameserver.instancemanager;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.CursedWeapon;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Broadcast;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -45,6 +46,9 @@ import java.util.logging.Level;
  * @author Micht
  */
 public class CursedWeaponsManager {
+	private static Logger log = LoggerFactory.getLogger(CursedWeaponsManager.class.getName());
+
+
 
 	public static CursedWeaponsManager getInstance() {
 		return SingletonHolder.instance;
@@ -61,7 +65,7 @@ public class CursedWeaponsManager {
 
 	@Load
 	public void init() {
-		Log.info("Initializing CursedWeaponsManager");
+		log.info("Initializing CursedWeaponsManager");
 		cursedWeapons = new HashMap<>();
 
 		if (!Config.ALLOW_CURSED_WEAPONS) {
@@ -71,7 +75,7 @@ public class CursedWeaponsManager {
 		load();
 		restore();
 		controlPlayers();
-		Log.info("Loaded : " + cursedWeapons.size() + " cursed weapon(s).");
+		log.info("Loaded : " + cursedWeapons.size() + " cursed weapon(s).");
 	}
 
 	// =========================================================
@@ -82,13 +86,13 @@ public class CursedWeaponsManager {
 
 	private void load() {
 		if (Config.DEBUG) {
-			Log.info("  Parsing ... ");
+			log.info("  Parsing ... ");
 		}
 		try {
 			File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "cursedWeapons.xml");
 			if (!file.exists()) {
 				if (Config.DEBUG) {
-					Log.info("NO FILE");
+					log.info("NO FILE");
 				}
 				return;
 			}
@@ -128,20 +132,20 @@ public class CursedWeaponsManager {
 			}
 
 			if (Config.DEBUG) {
-				Log.info("OK");
+				log.info("OK");
 			}
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error parsing cursed weapons file.", e);
+			log.error("Error parsing cursed weapons file.", e);
 		}
 	}
 
 	private void restore() {
 		if (Config.DEBUG) {
-			Log.info("  Restoring ... ");
+			log.info("  Restoring ... ");
 		}
 		Connection con = null;
 		try {
-			// Retrieve the L2PcInstance from the characters table of the database
+			// Retrieve the Player from the characters table of the database
 			con = L2DatabaseFactory.getInstance().getConnection();
 
 			PreparedStatement statement =
@@ -169,10 +173,10 @@ public class CursedWeaponsManager {
 			statement.close();
 
 			if (Config.DEBUG) {
-				Log.info("OK");
+				log.info("OK");
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not restore CursedWeapons data: " + e.getMessage(), e);
+			log.warn("Could not restore CursedWeapons data: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -180,12 +184,12 @@ public class CursedWeaponsManager {
 
 	private void controlPlayers() {
 		if (Config.DEBUG) {
-			Log.info("  Checking players ... ");
+			log.info("  Checking players ... ");
 		}
 
 		Connection con = null;
 		try {
-			// Retrieve the L2PcInstance from the characters table of the database
+			// Retrieve the Player from the characters table of the database
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = null;
 			ResultSet rset = null;
@@ -211,14 +215,14 @@ public class CursedWeaponsManager {
 					if (rset.next()) {
 						// A player has the cursed weapon in his inventory ...
 						int playerId = rset.getInt("owner_id");
-						Log.info("PROBLEM : Player " + playerId + " owns the cursed weapon " + itemId + " but he shouldn't.");
+						log.info("PROBLEM : Player " + playerId + " owns the cursed weapon " + itemId + " but he shouldn't.");
 
 						// Delete the item
 						statement = con.prepareStatement("DELETE FROM items WHERE owner_id=? AND item_id=?");
 						statement.setInt(1, playerId);
 						statement.setInt(2, itemId);
 						if (statement.executeUpdate() != 1) {
-							Log.warning("Error while deleting cursed weapon " + itemId + " from userId " + playerId);
+							log.warn("Error while deleting cursed weapon " + itemId + " from userId " + playerId);
 						}
 						statement.close();
 
@@ -238,7 +242,7 @@ public class CursedWeaponsManager {
 						statement.setInt(2, cw.getPlayerPkKills());
 						statement.setInt(3, playerId);
 						if (statement.executeUpdate() != 1) {
-							Log.warning("Error while updating karma & pkkills for userId " + cw.getPlayerId());
+							log.warn("Error while updating karma & pkkills for userId " + cw.getPlayerId());
 						}
 						// clean up the cursedweapons table.
 						removeFromDb(itemId);
@@ -250,7 +254,7 @@ public class CursedWeaponsManager {
 			}
 		} catch (Exception e) {
 			if (Config.DEBUG) {
-				Log.log(Level.WARNING, "Could not check CursedWeapons data: " + e.getMessage(), e);
+				log.warn("Could not check CursedWeapons data: " + e.getMessage(), e);
 			}
 			return;
 		} finally {
@@ -258,15 +262,15 @@ public class CursedWeaponsManager {
 		}
 
 		if (Config.DEBUG) {
-			Log.info("DONE");
+			log.info("DONE");
 		}
 	}
 
 	// =========================================================
 	// Properties - Public
-	public synchronized void checkDrop(L2Attackable attackable, L2PcInstance player) {
-		if (attackable instanceof L2DefenderInstance || attackable instanceof L2GuardInstance || attackable instanceof L2GrandBossInstance ||
-				attackable instanceof L2FeedableBeastInstance || attackable instanceof L2FortCommanderInstance) {
+	public synchronized void checkDrop(Attackable attackable, Player player) {
+		if (attackable instanceof DefenderInstance || attackable instanceof GuardInstance || attackable instanceof GrandBossInstance ||
+				attackable instanceof FeedableBeastInstance || attackable instanceof FortCommanderInstance) {
 			return;
 		}
 
@@ -281,7 +285,7 @@ public class CursedWeaponsManager {
 		}
 	}
 
-	public void activate(L2PcInstance player, L2ItemInstance item) {
+	public void activate(Player player, Item item) {
 		CursedWeapon cw = cursedWeapons.get(item.getItemId());
 		if (player.isCursedWeaponEquipped()) // cannot own 2 cursed swords
 		{
@@ -305,7 +309,7 @@ public class CursedWeaponsManager {
 		}
 	}
 
-	public void drop(int itemId, L2Character killer) {
+	public void drop(int itemId, Creature killer) {
 		CursedWeapon cw = cursedWeapons.get(itemId);
 
 		cw.dropIt(killer);
@@ -327,7 +331,7 @@ public class CursedWeaponsManager {
 		Broadcast.toAllOnlinePlayers(sm);
 	}
 
-	public void checkPlayer(L2PcInstance player) {
+	public void checkPlayer(Player player) {
 		if (player == null) {
 			return;
 		}
@@ -369,7 +373,7 @@ public class CursedWeaponsManager {
 
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.SEVERE, "CursedWeaponsManager: Failed to remove data: " + e.getMessage(), e);
+			log.error("CursedWeaponsManager: Failed to remove data: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

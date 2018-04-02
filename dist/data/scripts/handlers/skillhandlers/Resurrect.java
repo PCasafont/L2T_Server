@@ -16,16 +16,16 @@
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.PetInstance;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.taskmanager.DecayTaskManager;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillTargetType;
+import l2server.gameserver.templates.skills.SkillType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,31 +37,31 @@ import java.util.List;
  */
 
 public class Resurrect implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.RESURRECT};
+	private static final SkillType[] SKILL_IDS = {SkillType.RESURRECT};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		L2PcInstance player = null;
-		if (activeChar instanceof L2PcInstance) {
-			player = (L2PcInstance) activeChar;
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		Player player = null;
+		if (activeChar instanceof Player) {
+			player = (Player) activeChar;
 		}
 
 		if (player != null && player.isInOlympiadMode() && player.isOlympiadStart()) {
 			return;
 		}
 
-		L2PcInstance targetPlayer;
-		List<L2Character> targetToRes = new ArrayList<L2Character>();
+		Player targetPlayer;
+		List<Creature> targetToRes = new ArrayList<Creature>();
 
-		for (L2Character target : (L2Character[]) targets) {
-			if (target instanceof L2PcInstance) {
-				targetPlayer = (L2PcInstance) target;
+		for (Creature target : (Creature[]) targets) {
+			if (target instanceof Player) {
+				targetPlayer = (Player) target;
 
 				// Check for same party or for same clan, if target is for clan.
-				if (skill.getTargetType() == L2SkillTargetType.TARGET_CORPSE_CLAN) {
+				if (skill.getTargetType() == SkillTargetType.TARGET_CORPSE_CLAN) {
 					if (player.getClanId() != targetPlayer.getClanId()) {
 						continue;
 					}
@@ -85,12 +85,12 @@ public class Resurrect implements ISkillHandler {
 			return;
 		}
 
-		for (L2Character cha : targetToRes) {
-			if (activeChar instanceof L2PcInstance) {
-				if (cha instanceof L2PcInstance) {
-					((L2PcInstance) cha).reviveRequest((L2PcInstance) activeChar, skill, false);
-				} else if (cha instanceof L2PetInstance) {
-					((L2PetInstance) cha).getOwner().reviveRequest((L2PcInstance) activeChar, skill, true);
+		for (Creature cha : targetToRes) {
+			if (activeChar instanceof Player) {
+				if (cha instanceof Player) {
+					((Player) cha).reviveRequest((Player) activeChar, skill, false);
+				} else if (cha instanceof PetInstance) {
+					((PetInstance) cha).getOwner().reviveRequest((Player) activeChar, skill, true);
 				}
 			} else {
 				DecayTaskManager.getInstance().cancelDecayTask(cha);
@@ -103,7 +103,7 @@ public class Resurrect implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

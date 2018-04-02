@@ -15,16 +15,16 @@
 
 package l2server.gameserver.model.actor.stat;
 
-import l2server.gameserver.model.actor.instance.L2DecoyInstance;
+import l2server.gameserver.model.actor.instance.DecoyInstance;
 
 public class DecoyStat extends NpcStat {
-	public DecoyStat(L2DecoyInstance activeChar) {
+	public DecoyStat(DecoyInstance activeChar) {
 		super(activeChar);
 	}
 	
 	@Override
-	public final L2DecoyInstance getActiveChar() {
-		return (L2DecoyInstance) super.getActiveChar();
+	public final DecoyInstance getActiveChar() {
+		return (DecoyInstance) super.getActiveChar();
 	}
 	
 	@Override

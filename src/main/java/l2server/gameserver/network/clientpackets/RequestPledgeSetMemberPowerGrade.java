@@ -17,7 +17,7 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * Format: (ch) Sd
@@ -38,7 +38,7 @@ public final class RequestPledgeSetMemberPowerGrade extends L2GameClientPacket {
 	 */
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}

@@ -18,21 +18,21 @@ package handlers.skillhandlers;
 import l2server.Config;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.SkillHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SiegeFlagInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SiegeFlagInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.stats.Stats;
-import l2server.gameserver.templates.skills.L2SkillTargetDirection;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillTargetDirection;
+import l2server.gameserver.templates.skills.SkillTargetType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.util.ValueSortMap;
 
 import java.util.ArrayList;
@@ -41,17 +41,17 @@ import java.util.List;
 import java.util.Map;
 
 public class HealPercent implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS =
-			{L2SkillType.HEAL_PERCENT, L2SkillType.MANAHEAL_PERCENT, L2SkillType.CPHEAL_PERCENT, L2SkillType.HPMPHEAL_PERCENT,
-					L2SkillType.HPMPCPHEAL_PERCENT, L2SkillType.HPCPHEAL_PERCENT};
+	private static final SkillType[] SKILL_IDS =
+			{SkillType.HEAL_PERCENT, SkillType.MANAHEAL_PERCENT, SkillType.CPHEAL_PERCENT, SkillType.HPMPHEAL_PERCENT,
+			 SkillType.HPMPCPHEAL_PERCENT, SkillType.HPCPHEAL_PERCENT};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
 		//check for other effects
-		ISkillHandler handler = SkillHandler.getInstance().getSkillHandler(L2SkillType.BUFF);
+		ISkillHandler handler = SkillHandler.getInstance().getSkillHandler(SkillType.BUFF);
 
 		if (handler != null) {
 			handler.useSkill(activeChar, skill, targets);
@@ -59,23 +59,23 @@ public class HealPercent implements ISkillHandler {
 
 		double chainHp = 0;
 		// Sort by most injured targets now.
-		if (skill.getTargetDirection() == L2SkillTargetDirection.CHAIN_HEAL) {
-			Map<L2Character, Double> tmpTargets = new HashMap<L2Character, Double>();
+		if (skill.getTargetDirection() == SkillTargetDirection.CHAIN_HEAL) {
+			Map<Creature, Double> tmpTargets = new HashMap<Creature, Double>();
 
-			List<L2Character> sortedListToReturn = new ArrayList<L2Character>();
+			List<Creature> sortedListToReturn = new ArrayList<Creature>();
 
 			//activeChar.sendMessage("Main Target = " + activeChar.getTarget().getName());
 
-			L2Character currentTarget = (L2Character) activeChar.getTarget();
+			Creature currentTarget = (Creature) activeChar.getTarget();
 
-			if (currentTarget instanceof L2Playable) {
+			if (currentTarget instanceof Playable) {
 				tmpTargets.put(currentTarget, 150.000);
 			} else {
 				currentTarget = activeChar;
 			}
 
 			chainHp = currentTarget.getMaxHp() * skill.getPower() / 100.0;
-			for (L2Character target : (L2Character[]) targets) {
+			for (Creature target : (Creature[]) targets) {
 				double hpPercent = target.getCurrentHp() / target.getMaxHp();
 
 				if (!tmpTargets.containsKey(target)) {
@@ -91,11 +91,11 @@ public class HealPercent implements ISkillHandler {
 
 			sortedListToReturn.addAll(tmpTargets.keySet());
 
-			targets = sortedListToReturn.toArray(new L2Character[sortedListToReturn.size()]);
+			targets = sortedListToReturn.toArray(new Creature[sortedListToReturn.size()]);
 
 			/*
 			int i = 0;
-			for (L2Character target: (L2Character[]) targets)
+			for (Creature target: (Creature[]) targets)
 			{
 				activeChar.sendMessage(++i + " - " + target.getName());
 			}*/
@@ -134,17 +134,17 @@ public class HealPercent implements ISkillHandler {
 		double amount = 0;
 		double percent = skill.getPower();
 		// Healing critical, since CT2.3 Gracia Final
-		if (skill.getCritChance() != -1 && skill.getTargetType() != L2SkillTargetType.TARGET_SELF && !skill.isPotion() &&
+		if (skill.getCritChance() != -1 && skill.getTargetType() != SkillTargetType.TARGET_SELF && !skill.isPotion() &&
 				Formulas.calcMCrit(activeChar.getMCriticalHit(activeChar, skill))) {
 			activeChar.sendMessage("Healing critical!");
 			percent *= 2;
 		}
 
-		if (Config.isServer(Config.TENKAI) && activeChar instanceof L2PcInstance && activeChar.isInParty() &&
-				(skill.getTargetType() == L2SkillTargetType.TARGET_FRIENDS || skill.getTargetType() == L2SkillTargetType.TARGET_FRIEND_NOTME)) {
-			int classId = ((L2PcInstance) activeChar).getCurrentClass().getParent().getAwakeningClassId();
+		if (Config.isServer(Config.TENKAI) && activeChar instanceof Player && activeChar.isInParty() &&
+				(skill.getTargetType() == SkillTargetType.TARGET_FRIENDS || skill.getTargetType() == SkillTargetType.TARGET_FRIEND_NOTME)) {
+			int classId = ((Player) activeChar).getCurrentClass().getParent().getAwakeningClassId();
 			int members = 0;
-			for (L2PcInstance partyMember : activeChar.getParty().getPartyMembers()) {
+			for (Player partyMember : activeChar.getParty().getPartyMembers()) {
 				if (partyMember.getCurrentClass().getParent().getAwakeningClassId() == classId) {
 					members++;
 				}
@@ -162,7 +162,7 @@ public class HealPercent implements ISkillHandler {
 		boolean full = percent == 100.0;
 		boolean targetPlayer = false;
 
-		for (L2Character target : (L2Character[]) targets) {
+		for (Creature target : (Creature[]) targets) {
 			//1505  - sublime self sacrifice
 			//11560 - celestial aegis
 			if ((target == null || target.isDead() || target.isInvul(activeChar)) && skill.getId() != 1505 && skill.getId() != 11560) {
@@ -177,27 +177,27 @@ public class HealPercent implements ISkillHandler {
 				percent *= 0.98;
 			}
 
-			targetPlayer = target instanceof L2PcInstance;
+			targetPlayer = target instanceof Player;
 
 			if (target != activeChar) {
 				// Cursed weapon owner can't heal or be healed
-				if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isCursedWeaponEquipped()) {
+				if (activeChar instanceof Player && ((Player) activeChar).isCursedWeaponEquipped()) {
 					continue;
 				}
-				if (targetPlayer && ((L2PcInstance) target).isCursedWeaponEquipped()) {
+				if (targetPlayer && ((Player) target).isCursedWeaponEquipped()) {
 					continue;
 				}
 
 				// Nor all vs all event player
-				if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isPlayingEvent() &&
-						((L2PcInstance) activeChar).getEvent().getConfig().isAllVsAll() &&
-						!(target instanceof L2Summon && ((L2Summon) target).getOwner() == activeChar)) {
+				if (activeChar instanceof Player && ((Player) activeChar).isPlayingEvent() &&
+						((Player) activeChar).getEvent().getConfig().isAllVsAll() &&
+						!(target instanceof Summon && ((Summon) target).getOwner() == activeChar)) {
 					continue;
 				}
 			}
 
 			// Doors and flags can't be healed in any way
-			if (hp && (target instanceof L2DoorInstance || target instanceof L2SiegeFlagInstance)) {
+			if (hp && (target instanceof DoorInstance || target instanceof SiegeFlagInstance)) {
 				continue;
 			}
 
@@ -308,7 +308,7 @@ public class HealPercent implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

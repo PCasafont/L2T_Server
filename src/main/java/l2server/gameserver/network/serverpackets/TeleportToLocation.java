@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 
 /**
  * format:  dddddd
@@ -33,7 +33,7 @@ public final class TeleportToLocation extends L2GameServerPacket {
 	private int z;
 	private int heading;
 	
-	public TeleportToLocation(L2Object obj, int x, int y, int z, int heading) {
+	public TeleportToLocation(WorldObject obj, int x, int y, int z, int heading) {
 		targetObjId = obj.getObjectId();
 		this.x = x;
 		this.y = y;

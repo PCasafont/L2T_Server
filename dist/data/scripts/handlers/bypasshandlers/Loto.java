@@ -19,9 +19,9 @@ import l2server.Config;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.games.Lottery;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
@@ -34,7 +34,7 @@ public class Loto implements IBypassHandler {
 	private static final String[] COMMANDS = {"Loto"};
 
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		if (target == null) {
 			return false;
 		}
@@ -57,16 +57,16 @@ public class Loto implements IBypassHandler {
 	}
 
 	/**
-	 * Open a Loto window on client with the text of the L2NpcInstance.<BR><BR>
+	 * Open a Loto window on client with the text of the NpcInstance.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
 	 * <li>Get the text of the selected HTML file in function of the npcId and of the page number </li>
-	 * <li>Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance </li>
-	 * <li>Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet </li><BR>
+	 * <li>Send a Server->Client NpcHtmlMessage containing the text of the NpcInstance to the Player </li>
+	 * <li>Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet </li><BR>
 	 *
-	 * @param player The L2PcInstance that talk with the L2NpcInstance
-	 * @param npc    L2Npc loto instance
-	 * @param val    The number of the page of the L2NpcInstance to display
+	 * @param player The Player that talk with the NpcInstance
+	 * @param npc    Npc loto instance
+	 * @param val    The number of the page of the NpcInstance to display
 	 */
 	// 0 - first buy lottery ticket window
 	// 1-20 - buttons
@@ -75,7 +75,7 @@ public class Loto implements IBypassHandler {
 	// 23 - current lottery jackpot
 	// 24 - Previous winning numbers/Prize claim
 	// >24 - check lottery ticket by item object id
-	public static void showLotoWindow(L2PcInstance player, L2Npc npc, int val) {
+	public static void showLotoWindow(Player player, Npc npc, int val) {
 		int npcId = npc.getTemplate().NpcId;
 		String filename;
 		SystemMessage sm;
@@ -188,7 +188,7 @@ public class Loto implements IBypassHandler {
 			sm.addItemName(4442);
 			player.sendPacket(sm);
 
-			L2ItemInstance item = new L2ItemInstance(IdFactory.getInstance().getNextId(), 4442);
+			Item item = new Item(IdFactory.getInstance().getNextId(), 4442);
 			item.setCount(1);
 			item.setCustomType1(lotonumber);
 			item.setEnchantLevel(enchant);
@@ -197,7 +197,7 @@ public class Loto implements IBypassHandler {
 
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addItem(item);
-			L2ItemInstance adenaupdate = player.getInventory().getItemByItemId(57);
+			Item adenaupdate = player.getInventory().getItemByItemId(57);
 			iu.addModifiedItem(adenaupdate);
 			player.sendPacket(iu);
 
@@ -214,7 +214,7 @@ public class Loto implements IBypassHandler {
 
 			int lotonumber = Lottery.getInstance().getId();
 			String message = "";
-			for (L2ItemInstance item : player.getInventory().getItems()) {
+			for (Item item : player.getInventory().getItems()) {
 				if (item == null) {
 					continue;
 				}
@@ -257,7 +257,7 @@ public class Loto implements IBypassHandler {
 		} else if (val > 25) // >25 - check lottery ticket by item object id
 		{
 			int lotonumber = Lottery.getInstance().getId();
-			L2ItemInstance item = player.getInventory().getItemByObjectId(val);
+			Item item = player.getInventory().getItemByObjectId(val);
 			if (item == null || item.getItemId() != 4442 || item.getCustomType1() >= lotonumber) {
 				return;
 			}
@@ -285,7 +285,7 @@ public class Loto implements IBypassHandler {
 		html.replace("%enddate%", "" + DateFormat.getDateInstance().format(Lottery.getInstance().getEndDate()));
 		player.sendPacket(html);
 
-		// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
+		// Send a Server->Client ActionFailed to the Player in order to avoid that the client wait another packet
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 

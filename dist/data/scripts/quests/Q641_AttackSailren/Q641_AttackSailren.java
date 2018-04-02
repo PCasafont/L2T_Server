@@ -16,8 +16,8 @@
 package quests.Q641_AttackSailren;
 
 import l2server.gameserver.cache.HtmCache;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
@@ -49,7 +49,7 @@ public class Q641_AttackSailren extends Quest {
 		}
 	}
 
-	public static String getNoQuestMsg(L2PcInstance player) {
+	public static String getNoQuestMsg(Player player) {
 		String DEFAULT_NO_QUEST_MSG =
 				"<html><body>You are either not on a quest that involves this NPC, or you don't meet this NPC's minimum quest requirements.</body></html>";
 		final String result = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "noquest.htm");
@@ -61,7 +61,7 @@ public class Q641_AttackSailren extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (DEBUG) {
 			player.sendMessage("onAdvEvent: " + event + " npcId: " + npc.getNpcId());
 		}
@@ -90,7 +90,7 @@ public class Q641_AttackSailren extends Quest {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		if (DEBUG) {
 			player.sendMessage("onTalk: " + npc.getNpcId());
 		}
@@ -142,7 +142,7 @@ public class Q641_AttackSailren extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (DEBUG) {
 			player.sendMessage("onKill: " + npc.getNpcId());
 		}

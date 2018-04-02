@@ -16,14 +16,13 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 /**
  * This class ...
@@ -53,14 +52,14 @@ public final class Action extends L2GameClientPacket {
 	@Override
 	protected void runImpl() {
 		if (Config.DEBUG) {
-			Log.fine("Action:" + actionId);
+			log.debug("Action:" + actionId);
 		}
 		if (Config.DEBUG) {
-			Log.fine("oid:" + objectId);
+			log.debug("oid:" + objectId);
 		}
 
-		// Get the current L2PcInstance of the player
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		// Get the current Player of the player
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -71,22 +70,22 @@ public final class Action extends L2GameClientPacket {
 			return;
 		}
 
-		L2Object obj;
+		WorldObject obj;
 		if (activeChar.getTargetId() == objectId) {
 			obj = activeChar.getTarget();
 		} else if (activeChar.isInAirShip() && activeChar.getAirShip().getHelmObjectId() == objectId) {
 			obj = activeChar.getAirShip();
 		} else {
-			obj = L2World.getInstance().findObject(objectId);
+			obj = World.getInstance().findObject(objectId);
 		}
 
 		// If object requested does not exist, add warn msg into logs
 		if (obj == null) {
 			// pressing e.g. pickup many times quickly would get you here
-			// Log.warning("Character: " + activeChar.getName() + " request action with non existent ObjectID:" + objectId);
+			// log.warn("Character: " + activeChar.getName() + " request action with non existent ObjectID:" + objectId);
 			//activeChar.sendSysMessage("Obj was null (" + objectId);
 
-			obj = L2World.getInstance().getPlayer(objectId);
+			obj = World.getInstance().getPlayer(objectId);
 			//activeChar.sendSysMessage("Obj = " + obj);
 
 			if (obj == null) {
@@ -105,7 +104,7 @@ public final class Action extends L2GameClientPacket {
 		}
 
 		// Only GMs can directly interact with invisible characters, but an invis char can target itself
-		if (obj instanceof L2PcInstance && ((L2PcInstance) obj).getAppearance().getInvisible() && !activeChar.isGM() && obj != activeChar) {
+		if (obj instanceof Player && ((Player) obj).getAppearance().getInvisible() && !activeChar.isGM() && obj != activeChar) {
 			activeChar.sendSysMessage("ERR2");
 			getClient().sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -125,7 +124,7 @@ public final class Action extends L2GameClientPacket {
 					obj.onAction(activeChar);
 					break;
 				case 1:
-					if (!activeChar.isGM() && !(obj instanceof L2Npc && Config.ALT_GAME_VIEWNPC)) {
+					if (!activeChar.isGM() && !(obj instanceof Npc && Config.ALT_GAME_VIEWNPC)) {
 						obj.onAction(activeChar, false);
 					} else {
 						obj.onActionShift(activeChar);
@@ -133,7 +132,7 @@ public final class Action extends L2GameClientPacket {
 					break;
 				default:
 					// Ivalid action detected (probably client cheating), log this
-					Log.warning("Character: " + activeChar.getName() + " requested invalid action: " + actionId);
+					log.warn("Character: " + activeChar.getName() + " requested invalid action: " + actionId);
 					getClient().sendPacket(ActionFailed.STATIC_PACKET);
 					break;
 			}
@@ -143,10 +142,10 @@ public final class Action extends L2GameClientPacket {
 			getClient().sendPacket(ActionFailed.STATIC_PACKET);
 		}
 
-		/*if (!L2World.getInstance().getAllPlayersArray().contains(activeChar))
+		/*if (!World.getInstance().getAllPlayersArray().contains(activeChar))
 		{
 			GmListTable.broadcastMessageToGMs("WARNING: " + activeChar.getName() + "("+activeChar.getAccountName()+") is using the target exploit!");
-			Log.warning("WARNING: " + activeChar.getName() + "("+activeChar.getAccountName()+") is using the target exploit!");
+			log.warn("WARNING: " + activeChar.getName() + "("+activeChar.getAccountName()+") is using the target exploit!");
 			activeChar.getClient().closeNow();
 		}*/
 	}

@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.PledgeReceiveWarList;
 
 /**
@@ -40,7 +40,7 @@ public final class RequestPledgeWarList extends L2GameClientPacket {
 	protected void runImpl() {
 		//Logozo.info("C5: RequestPledgeWarList d:"+unk1);
 		//Logozo.info("C5: RequestPledgeWarList d:"+tab);
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}

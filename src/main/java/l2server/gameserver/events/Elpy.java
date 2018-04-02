@@ -3,8 +3,8 @@ package l2server.gameserver.events;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.TransformationManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.Rnd;
 
 import java.util.HashMap;
@@ -22,7 +22,7 @@ public class Elpy {
 	}
 
 	public static State state = State.INNACTIVE;
-	public static Vector<L2PcInstance> registered = new Vector<>();
+	public static Vector<Player> registered = new Vector<>();
 	public static Map<Integer, Integer> elpy = new HashMap<Integer, Integer>();
 	public static int runEach = 1; //Min
 	public static int registTime = 60; //Seconds
@@ -40,7 +40,7 @@ public class Elpy {
 		ThreadPoolManager.getInstance().scheduleGeneral(new Run(), 1000 * registTime);
 	}
 	
-	public void addPlayer(L2PcInstance player) {
+	public void addPlayer(Player player) {
 		if (player == null) {
 			return;
 		}
@@ -57,7 +57,7 @@ public class Elpy {
 		return;
 	}
 	
-	public void removePlayer(L2PcInstance player) {
+	public void removePlayer(Player player) {
 		if (player == null || state != State.REGISTRATION) {
 			return;
 		}
@@ -85,7 +85,7 @@ public class Elpy {
 		
 		state = State.ACTIVE;
 		Announcements.getInstance().announceToAll("Participants : " + registered.size());
-		for (L2PcInstance player : registered) {
+		for (Player player : registered) {
 			if (player == null) {
 				continue;
 			}
@@ -106,7 +106,7 @@ public class Elpy {
 			return;
 		}
 		Announcements.getInstance().announceToAll("Event finished.");
-		for (L2PcInstance player : registered) {
+		for (Player player : registered) {
 			if (player == null) {
 				continue;
 			}
@@ -123,11 +123,11 @@ public class Elpy {
 		state = State.INNACTIVE;
 	}
 	
-	public void onAttack(L2PcInstance attacker, L2PcInstance target) {
+	public void onAttack(Player attacker, Player target) {
 		int hit = elpy.get(target.getObjectId());
 		int atLife = elpy.get(attacker.getObjectId());
 		
-		L2Character one = (L2Character) attacker;
+		Creature one = (Creature) attacker;
 		
 		if (!one.isTransformed() || !attacker.isTransformed()) {
 			attacker.sendMessage("You're not an Elpy.");
@@ -171,7 +171,7 @@ public class Elpy {
 		}
 	}
 	
-	public void onDie(L2PcInstance attacker, L2PcInstance target) {
+	public void onDie(Player attacker, Player target) {
 		target.setTitle("");
 		target.doDie(attacker);
 		target.unTransform(true);

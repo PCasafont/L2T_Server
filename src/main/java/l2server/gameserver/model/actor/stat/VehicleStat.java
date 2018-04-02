@@ -15,13 +15,13 @@
 
 package l2server.gameserver.model.actor.stat;
 
-import l2server.gameserver.model.actor.L2Vehicle;
+import l2server.gameserver.model.actor.Vehicle;
 
 public class VehicleStat extends CharStat {
 	private float moveSpeed = 0;
 	private int rotationSpeed = 0;
 	
-	public VehicleStat(L2Vehicle activeChar) {
+	public VehicleStat(Vehicle activeChar) {
 		super(activeChar);
 	}
 	

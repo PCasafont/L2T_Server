@@ -16,15 +16,15 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.Config;
-import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2EffectType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.EffectType;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -33,33 +33,33 @@ import java.util.ArrayList;
  * @author Pere
  */
 public class EffectCancel extends L2Effect {
-	public EffectCancel(Env env, L2EffectTemplate template) {
+	public EffectCancel(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.CANCEL;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.CANCEL;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		L2Character caster = getEffector();
-		L2Skill skill = getSkill();
+		Creature caster = getEffector();
+		Skill skill = getSkill();
 
 		int minNegate = skill.getMinNegatedEffects(); // Skill cancels at least this amount of buffs
 		int maxNegate = skill.getMaxNegatedEffects(); // Skill cancels up to this amount of buffs
 		double rate = calc(); // After cancelling the min amount, this is the chance of each additional buff to be cancelled
 
 		// Only apply cancellation effect to players
-		if (!(getEffected() instanceof L2PcInstance)) {
+		if (!(getEffected() instanceof Player)) {
 			return false;
 		}
 
-		L2PcInstance target = (L2PcInstance) getEffected();
+		Player target = (Player) getEffected();
 
 		// No effect on dead targets
 		if (target.isDead()) {
@@ -67,12 +67,12 @@ public class EffectCancel extends L2Effect {
 		}
 
 		// Reference to the collection of target's buffs and debuffs
-		final L2Abnormal[] effects = target.getAllEffects();
+		final Abnormal[] effects = target.getAllEffects();
 
 		// Filter buff-type effects out of the effect collection
-		ArrayList<L2Abnormal> removableBuffs = new ArrayList<>();
-		for (L2Abnormal effect : effects) {
-			if (effect.canBeStolen() || effect.getEffectMask() == L2EffectType.INVINCIBLE.getMask()) {
+		ArrayList<Abnormal> removableBuffs = new ArrayList<>();
+		for (Abnormal effect : effects) {
+			if (effect.canBeStolen() || effect.getEffectMask() == EffectType.INVINCIBLE.getMask()) {
 				removableBuffs.add(effect);
 			}
 		}
@@ -86,13 +86,13 @@ public class EffectCancel extends L2Effect {
 			int candidate = Rnd.get(removableBuffs.size());
 
 			// More detailed .landrates feedback considering enchanted buffs
-			if (caster instanceof L2PcInstance && i > minNegate && caster.getActingPlayer().isLandRates()) {
+			if (caster instanceof Player && i > minNegate && caster.getActingPlayer().isLandRates()) {
 				caster.sendMessage("Attempted to remove " + removableBuffs.get(candidate).getSkill().getName() + " with " + rate + "% chance.");
 			}
 
 			// Give it a try with rate% chance
 			if (i < minNegate || Rnd.get(100) < rate) {
-				L2Abnormal buff = removableBuffs.get(candidate);
+				Abnormal buff = removableBuffs.get(candidate);
 				if (buff == null) {
 					continue;
 				}
@@ -101,11 +101,11 @@ public class EffectCancel extends L2Effect {
 				buff.exit();
 
 				// Tenkai custom: recover buffs 1 minute after they're cancelled!
-				if (Config.isServer(Config.TENKAI) && !Config.isServer(Config.TENKAI_LEGACY) && buff.getEffected() instanceof L2PcInstance) {
+				if (Config.isServer(Config.TENKAI) && !Config.isServer(Config.TENKAI_LEGACY) && buff.getEffected() instanceof Player) {
 					target.scheduleEffectRecovery(buff, 60, target.isInOlympiadMode());
 				}
 
-				if (caster instanceof L2PcInstance && caster.getActingPlayer().isLandRates()) {
+				if (caster instanceof Player && caster.getActingPlayer().isLandRates()) {
 					caster.sendMessage("Attempt to remove " + buff.getSkill().getName() + " succeeded.");
 				}
 
@@ -118,7 +118,7 @@ public class EffectCancel extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

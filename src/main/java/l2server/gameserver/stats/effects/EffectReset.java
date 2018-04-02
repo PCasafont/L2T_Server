@@ -15,33 +15,33 @@
 
 package l2server.gameserver.stats.effects;
 
-import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 public class EffectReset extends L2Effect {
-	public EffectReset(Env env, L2EffectTemplate template) {
+	public EffectReset(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.DEBUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.DEBUFF;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		L2Abnormal[] effects = getEffected().getAllEffects();
+		Abnormal[] effects = getEffected().getAllEffects();
 		if (effects == null || effects.length == 0) {
 			return false;
 		}
 
-		for (L2Abnormal e : effects) {
+		for (Abnormal e : effects) {
 			if (e == null || !e.getSkill().isOffensive()) {
 				continue;
 			}
@@ -64,7 +64,7 @@ public class EffectReset extends L2Effect {
 				}
 			}
 
-			//if (e.isRemovedOnDamage(true) || e.getType() == L2AbnormalType.AERIAL_YOKE)
+			//if (e.isRemovedOnDamage(true) || e.getType() == AbnormalType.AERIAL_YOKE)
 			//	continue;
 
 			e.exit();
@@ -73,7 +73,7 @@ public class EffectReset extends L2Effect {
 			env.target = getEffected();
 			env.skill = e.getSkill();
 
-			L2Abnormal ef = e.getTemplate().getEffect(env);
+			Abnormal ef = e.getTemplate().getEffect(env);
 			if (ef != null) {
 				ef.scheduleEffect();
 			}
@@ -85,7 +85,7 @@ public class EffectReset extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {
@@ -93,7 +93,7 @@ public class EffectReset extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

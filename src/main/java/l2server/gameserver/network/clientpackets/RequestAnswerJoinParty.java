@@ -19,7 +19,7 @@ import l2server.Config;
 import l2server.gameserver.model.L2Party.messageType;
 import l2server.gameserver.model.PartyMatchRoom;
 import l2server.gameserver.model.PartyMatchRoomList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExManagePartyRoomMember;
 import l2server.gameserver.network.serverpackets.JoinParty;
@@ -46,12 +46,12 @@ public final class RequestAnswerJoinParty extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		final L2PcInstance player = getClient().getActiveChar();
+		final Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
 		
-		final L2PcInstance requestor = player.getActiveRequester();
+		final Player requestor = player.getActiveRequester();
 		if (requestor == null) {
 			return;
 		}
@@ -74,7 +74,7 @@ public final class RequestAnswerJoinParty extends L2GameClientPacket {
 					final PartyMatchRoom room = list.getPlayerRoom(requestor);
 					if (room != null) {
 						final ExManagePartyRoomMember packet = new ExManagePartyRoomMember(player, room, 1);
-						for (L2PcInstance member : room.getPartyMembers()) {
+						for (Player member : room.getPartyMembers()) {
 							if (member != null) {
 								member.sendPacket(packet);
 							}
@@ -88,7 +88,7 @@ public final class RequestAnswerJoinParty extends L2GameClientPacket {
 					if (room != null) {
 						room.addMember(player);
 						ExManagePartyRoomMember packet = new ExManagePartyRoomMember(player, room, 1);
-						for (L2PcInstance member : room.getPartyMembers()) {
+						for (Player member : room.getPartyMembers()) {
 							if (member != null) {
 								member.sendPacket(packet);
 							}

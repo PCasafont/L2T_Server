@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.Experience;
 import l2server.gameserver.model.itemcontainer.Inventory;
 
@@ -30,11 +30,11 @@ import l2server.gameserver.model.itemcontainer.Inventory;
  * @version $Revision: 1.2.2.2.2.8 $ $Date: 2005/03/27 15:29:39 $
  */
 public class GMViewCharacterInfo extends L2GameServerPacket {
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	
 	/**
 	 */
-	public GMViewCharacterInfo(L2PcInstance character) {
+	public GMViewCharacterInfo(Player character) {
 		activeChar = character;
 	}
 	
@@ -228,8 +228,8 @@ public class GMViewCharacterInfo extends L2GameServerPacket {
 		writeD(activeChar.getClanCrestId()); // pledge crest id
 		writeD(activeChar.getAllyId()); // ally id
 		writeC(activeChar.getMountType()); // mount type
-		writeC(activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ? activeChar.getPrivateStoreType() :
-				L2PcInstance.STORE_PRIVATE_SELL);
+		writeC(activeChar.getPrivateStoreType() != Player.STORE_PRIVATE_CUSTOM_SELL ? activeChar.getPrivateStoreType() :
+				Player.STORE_PRIVATE_SELL);
 		writeC(activeChar.hasDwarvenCraft() ? 1 : 0);
 		writeD(activeChar.getPkKills());
 		writeD(activeChar.getPvpKills());

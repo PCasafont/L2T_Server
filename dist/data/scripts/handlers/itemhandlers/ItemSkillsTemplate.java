@@ -17,18 +17,18 @@ package handlers.itemhandlers;
 
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.handler.IItemHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance.TimeStamp;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.Player.TimeStamp;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExUseSharedGroupItem;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.SkillHolder;
-import l2server.gameserver.templates.item.L2EtcItemType;
+import l2server.gameserver.templates.item.EtcItemType;
 
 import java.util.Map;
 
@@ -38,16 +38,16 @@ import java.util.Map;
  */
 public class ItemSkillsTemplate implements IItemHandler {
 	/**
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(Playable, Item, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
-		L2PcInstance activeChar;
-		boolean isPet = playable instanceof L2PetInstance;
+	public void useItem(Playable playable, Item item, boolean forceUse) {
+		Player activeChar;
+		boolean isPet = playable instanceof PetInstance;
 		if (isPet) {
-			activeChar = ((L2PetInstance) playable).getOwner();
-		} else if (playable instanceof L2PcInstance) {
-			activeChar = (L2PcInstance) playable;
+			activeChar = ((PetInstance) playable).getOwner();
+		} else if (playable instanceof Player) {
+			activeChar = (Player) playable;
 		} else {
 			return;
 		}
@@ -83,7 +83,7 @@ public class ItemSkillsTemplate implements IItemHandler {
 
 				skillId = skillInfo.getSkillId();
 				skillLvl = skillInfo.getSkillLvl();
-				L2Skill itemSkill = skillInfo.getSkill();
+				Skill itemSkill = skillInfo.getSkill();
 
 				if (itemSkill != null) {
 					if (!itemSkill.checkCondition(playable, playable.getTarget(), false)) {
@@ -144,11 +144,11 @@ public class ItemSkillsTemplate implements IItemHandler {
 					if (itemSkill.isPotion() || itemSkill.isSimultaneousCast()) {
 						playable.doSimultaneousCast(itemSkill);
 						// Summons should be affected by herbs too, self time effect is handled at L2Effect constructor
-						if (!isPet && item.getItemType() == L2EtcItemType.HERB) {
+						if (!isPet && item.getItemType() == EtcItemType.HERB) {
 							if (activeChar.getPet() != null) {
 								activeChar.getPet().doSimultaneousCast(itemSkill);
 							}
-							for (L2SummonInstance summon : activeChar.getSummons()) {
+							for (SummonInstance summon : activeChar.getSummons()) {
 								summon.doSimultaneousCast(itemSkill);
 							}
 						}
@@ -187,7 +187,7 @@ public class ItemSkillsTemplate implements IItemHandler {
 		}
 	}
 
-	private void reuse(L2PcInstance player, L2Skill skill, L2ItemInstance item) {
+	private void reuse(Player player, Skill skill, Item item) {
 		SystemMessage sm = null;
 		final Map<Integer, TimeStamp> timeStamp = player.getReuseTimeStamp();
 

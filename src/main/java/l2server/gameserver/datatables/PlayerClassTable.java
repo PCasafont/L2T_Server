@@ -17,11 +17,12 @@ package l2server.gameserver.datatables;
 
 import l2server.Config;
 import l2server.gameserver.model.L2SkillLearn;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.base.Race;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
@@ -35,6 +36,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @author Pere
  */
 public class PlayerClassTable {
+	private static Logger log = LoggerFactory.getLogger(PlayerClassTable.class.getName());
+
+
 	private Map<Integer, PlayerClass> classes = new HashMap<>();
 
 	private Map<Long, Integer> minSkillLevels = new HashMap<>();
@@ -229,7 +233,7 @@ public class PlayerClassTable {
 				}
 			}
 		}
-		Log.info("PlayerClassTable: loaded " + count + " classes.");
+		log.info("PlayerClassTable: loaded " + count + " classes.");
 
 		if (Config.IS_CLASSIC) {
 			return;
@@ -260,7 +264,7 @@ public class PlayerClassTable {
 	@Reload("classes")
 	public void reload() {
 		load();
-		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
+		for (Player player : World.getInstance().getAllPlayers().values()) {
 			player.setClassTemplate(player.getCurrentClass().getId());
 			player.broadcastUserInfo();
 		}
@@ -297,7 +301,7 @@ public class PlayerClassTable {
 		return 0;
 	}
 
-	public final List<Integer> getAvailableSubclasses(L2PcInstance player, int baseClassId) {
+	public final List<Integer> getAvailableSubclasses(Player player, int baseClassId) {
 		if (player.getLevel() < 76) {
 			return null;
 		}
@@ -410,7 +414,7 @@ public class PlayerClassTable {
 				sec++;
 			}
 			if (sec >= 150) {
-				Log.warning("There was a problem getting the awakening class for the class id " + classId + " (" + pc.getName() + ")");
+				log.warn("There was a problem getting the awakening class for the class id " + classId + " (" + pc.getName() + ")");
 			}
 		}
 

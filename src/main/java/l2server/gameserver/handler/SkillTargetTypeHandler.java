@@ -15,8 +15,9 @@
 
 package l2server.gameserver.handler;
 
-import l2server.gameserver.templates.skills.L2SkillTargetType;
-import l2server.log.Log;
+import l2server.gameserver.templates.skills.SkillTargetType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +26,10 @@ import java.util.Map;
  * @author Max
  */
 public class SkillTargetTypeHandler {
-	private Map<Enum<L2SkillTargetType>, ISkillTargetTypeHandler> datatable;
+	private static Logger log = LoggerFactory.getLogger(SkillTargetTypeHandler.class.getName());
+
+
+	private Map<Enum<SkillTargetType>, ISkillTargetTypeHandler> datatable;
 
 	public static SkillTargetTypeHandler getInstance() {
 		return SingletonHolder.instance;
@@ -36,13 +40,13 @@ public class SkillTargetTypeHandler {
 	}
 
 	public void registerSkillTargetType(ISkillTargetTypeHandler handler) {
-		Enum<L2SkillTargetType> ids = handler.getTargetType();
+		Enum<SkillTargetType> ids = handler.getTargetType();
 		datatable.put(ids, handler);
 	}
 
-	public ISkillTargetTypeHandler getSkillTarget(Enum<L2SkillTargetType> skillTargetType) {
+	public ISkillTargetTypeHandler getSkillTarget(Enum<SkillTargetType> skillTargetType) {
 
-		Log.fine("getting handler for command: " + skillTargetType.toString() + " -> " + (datatable.get(skillTargetType) != null));
+		log.debug("getting handler for command: " + skillTargetType.toString() + " -> " + (datatable.get(skillTargetType) != null));
 		return datatable.get(skillTargetType);
 	}
 

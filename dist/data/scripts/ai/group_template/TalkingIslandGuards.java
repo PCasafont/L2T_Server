@@ -17,8 +17,8 @@ package ai.group_template;
 
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.util.Rnd;
 
@@ -33,8 +33,8 @@ public class TalkingIslandGuards extends L2AttackableAIScript {
 	private static final int generalId = 33007;
 	private static final int guardId = 33018;
 	private static int action = 0;
-	private List<L2Npc> generals = new ArrayList<L2Npc>();
-	private List<L2Npc> guards = new ArrayList<L2Npc>();
+	private List<Npc> generals = new ArrayList<Npc>();
+	private List<Npc> guards = new ArrayList<Npc>();
 
 	public TalkingIslandGuards(int questId, String name, String descr) {
 		super(questId, name, descr);
@@ -59,17 +59,17 @@ public class TalkingIslandGuards extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.startsWith("socialgeneral")) {
 			action = Rnd.get(12);
 
-			for (L2Npc general : generals) {
+			for (Npc general : generals) {
 				general.broadcastPacket(new SocialAction(general.getObjectId(), action));
 			}
 
 			startQuestTimer("socialguards", 2000, null, null);
 		} else if (event.startsWith("socialguards")) {
-			for (L2Npc guard : guards) {
+			for (Npc guard : guards) {
 				guard.broadcastPacket(new SocialAction(guard.getObjectId(), action));
 			}
 

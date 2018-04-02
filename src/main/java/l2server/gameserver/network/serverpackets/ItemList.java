@@ -15,10 +15,9 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.PcInventory;
-import l2server.log.Log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -62,12 +61,12 @@ import java.util.Arrays;
  */
 public final class ItemList extends L2ItemListPacket {
 	private PcInventory inventory;
-	private L2ItemInstance[] items;
+	private Item[] items;
 	private boolean showWindow;
 	private int length;
-	private ArrayList<L2ItemInstance> questItems;
+	private ArrayList<Item> questItems;
 
-	public ItemList(L2PcInstance cha, boolean showWindow) {
+	public ItemList(Player cha, boolean showWindow) {
 		inventory = cha.getInventory();
 		items = cha.getInventory().getItems();
 		this.showWindow = showWindow;
@@ -98,8 +97,8 @@ public final class ItemList extends L2ItemListPacket {
 
 	@SuppressWarnings("unused")
 	private void showDebug() {
-		for (L2ItemInstance temp : items) {
-			Log.fine("item:" + temp.getItem().getName() + " type1:" + temp.getItem().getType1() + " type2:" + temp.getItem().getType2());
+		for (Item temp : items) {
+			log.debug("item:" + temp.getItem().getName() + " type1:" + temp.getItem().getType1() + " type2:" + temp.getItem().getType2());
 		}
 	}
 
@@ -110,7 +109,7 @@ public final class ItemList extends L2ItemListPacket {
 		//int count = items.length;
 		writeH(length);
 
-		for (L2ItemInstance item : items) {
+		for (Item item : items) {
 			if (item == null || item.getItem() == null) {
 				continue;
 			}

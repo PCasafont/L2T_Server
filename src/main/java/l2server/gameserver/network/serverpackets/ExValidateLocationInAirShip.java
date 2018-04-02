@@ -15,17 +15,17 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author kerberos
  * JIV update 27.8.10
  */
 public class ExValidateLocationInAirShip extends L2GameServerPacket {
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	private int shipId, x, y, z, h;
 	
-	public ExValidateLocationInAirShip(L2PcInstance player) {
+	public ExValidateLocationInAirShip(Player player) {
 		activeChar = player;
 		shipId = activeChar.getAirShip().getObjectId();
 		x = player.getInVehiclePosition().getX();

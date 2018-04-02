@@ -1,8 +1,8 @@
 package retail.AdventurerHelper;
 
 import l2server.gameserver.instancemanager.QuestManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.util.Rnd;
@@ -24,7 +24,7 @@ public class AdventurerHelper extends Quest {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		QuestState st = player.getQuestState(getName());
 		Quest q = QuestManager.getInstance().getQuest(getName());
 
@@ -46,7 +46,7 @@ public class AdventurerHelper extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.equalsIgnoreCase("showRandom")) {
 			return "33463-" + Rnd.get(1, 236) + ".htm";
 		}

@@ -15,14 +15,14 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.item.L2Henna;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.item.HennaTemplate;
 
 public class HennaRemoveList extends L2GameServerPacket {
 	
-	private L2PcInstance player;
+	private Player player;
 	
-	public HennaRemoveList(L2PcInstance player) {
+	public HennaRemoveList(Player player) {
 		this.player = player;
 	}
 	
@@ -54,7 +54,7 @@ public class HennaRemoveList extends L2GameServerPacket {
 		writeD(4 - player.getHennaEmptySlots());
 		
 		for (int i = 0; i <= 4; i++) {
-			L2Henna henna = player.getHenna(i);
+			HennaTemplate henna = player.getHenna(i);
 			if (henna != null) {
 				writeD(henna.getSymbolId());
 				writeD(henna.getDyeId());

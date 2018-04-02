@@ -16,11 +16,11 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Trap;
-import l2server.gameserver.model.actor.instance.L2CloneInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Trap;
+import l2server.gameserver.model.actor.instance.CloneInstance;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
 import l2server.gameserver.stats.VisualEffect;
 
 import java.nio.ByteBuffer;
@@ -37,7 +37,7 @@ public final class NpcInfo extends L2GameServerPacket {
 	private byte[] data2;
 	private Set<Integer> abnormals;
 
-	public NpcInfo(L2Npc npc, L2Character attacker) {
+	public NpcInfo(Npc npc, Creature attacker) {
 		if (npc.getClonedPlayer() != null) {
 			attacker.sendPacket(new ClonedPlayerInfo(npc, npc.getClonedPlayer()));
 			return;
@@ -51,7 +51,7 @@ public final class NpcInfo extends L2GameServerPacket {
 		buffer.put((byte) (npc.isAttackable() ? 1 : 0));
 		buffer.putInt(0);
 		String title = npc.getTitle();
-		if (Config.SHOW_NPC_LVL && npc instanceof L2MonsterInstance) {
+		if (Config.SHOW_NPC_LVL && npc instanceof MonsterInstance) {
 			String t = "Lv " + npc.getLevel() + (npc.getAggroRange() > 0 ? "*" : "");
 
 			title = npc.getTitle();
@@ -188,7 +188,7 @@ public final class NpcInfo extends L2GameServerPacket {
 		}
 	}
 
-	public NpcInfo(L2CloneInstance npc) {
+	public NpcInfo(CloneInstance npc) {
 		objectId = npc.getObjectId();
 		val = npc.isShowSummonAnimation() ? 2 : 0;
 
@@ -305,7 +305,7 @@ public final class NpcInfo extends L2GameServerPacket {
 		abnormals = npc.getAbnormalEffect();
 	}
 
-	public NpcInfo(L2Trap trap) {
+	public NpcInfo(Trap trap) {
 		objectId = trap.getObjectId();
 
 		data1 = new byte[7];

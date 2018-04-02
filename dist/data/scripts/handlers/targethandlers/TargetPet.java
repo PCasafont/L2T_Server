@@ -17,10 +17,10 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.templates.skills.SkillTargetType;
 
 /**
  * @author nBd
@@ -29,11 +29,11 @@ public class TargetPet implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
 		// FIXME target = activeChar.getPet();
 		
 		if (target != null && !target.isDead()) {
-			return new L2Character[]{target};
+			return new Creature[]{target};
 		}
 		
 		return null;
@@ -42,8 +42,8 @@ public class TargetPet implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.TARGET_PET;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.TARGET_PET;
 	}
 	
 	public static void main(String[] args) {

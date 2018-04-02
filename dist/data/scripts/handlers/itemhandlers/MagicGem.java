@@ -23,30 +23,30 @@ import l2server.Config;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 
 public class MagicGem implements IItemHandler {
 	/**
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance magicGem, boolean forcedUse) {
-		if (!(playable instanceof L2PcInstance)) {
+	public void useItem(Playable playable, Item magicGem, boolean forcedUse) {
+		if (!(playable instanceof Player)) {
 			return;
 		}
 
-		L2PcInstance player = (L2PcInstance) playable;
+		Player player = (Player) playable;
 
 		if (!player.getFloodProtectors().getMagicGem().tryPerformAction("Magic Gem")) {
 			return;
 		}
 
 		if (Config.isServer(Config.TENKAI)) {
-			if (!GrandBossManager.getInstance().checkIfInZone(player) && player.getInstanceId() == 0 && !player.isInsideZone(L2Character.ZONE_PVP) &&
-					(!player.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || player.isInsideZone(L2Character.ZONE_TOWN)) &&
+			if (!GrandBossManager.getInstance().checkIfInZone(player) && player.getInstanceId() == 0 && !player.isInsideZone(Creature.ZONE_PVP) &&
+					(!player.isInsideZone(Creature.ZONE_NOSUMMONFRIEND) || player.isInsideZone(Creature.ZONE_TOWN)) &&
 					player.getEvent() == null && !player.isInOlympiadMode() && !AttackStanceTaskManager.getInstance().getAttackStanceTask(player) &&
 					InstanceManager.getInstance().getInstance(player.getObjectId()) == null && player.getPvpFlag() == 0) {
 				player.spawnServitors();

@@ -18,8 +18,8 @@ package l2server.gameserver.network.clientpackets;
 import l2server.Config;
 import l2server.gameserver.datatables.EnchantItemTable;
 import l2server.gameserver.datatables.EnchantItemTable.EnchantScroll;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExPutEnchantTargetItemResult;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -45,7 +45,7 @@ public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket {
 	 */
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		
 		if (objectId == 0) {
 			return;
@@ -59,8 +59,8 @@ public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket {
 			return;
 		}
 		
-		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(objectId);
-		L2ItemInstance scroll = activeChar.getActiveEnchantItem();
+		Item item = activeChar.getInventory().getItemByObjectId(objectId);
+		Item scroll = activeChar.getActiveEnchantItem();
 		
 		if (item == null || scroll == null) {
 			return;

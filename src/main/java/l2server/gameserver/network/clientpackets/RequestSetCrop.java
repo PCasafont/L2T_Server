@@ -20,16 +20,16 @@ import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleManorManager;
 import l2server.gameserver.instancemanager.CastleManorManager.CropProcure;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2CastleChamberlainInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.CastleChamberlainInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
+import static l2server.gameserver.model.actor.Npc.DEFAULT_INTERACTION_DISTANCE;
 import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
 
 /**
@@ -81,7 +81,7 @@ public class RequestSetCrop extends L2GameClientPacket {
 			return;
 		}
 
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		// check player privileges
 		if (player == null || player.getClan() == null || (player.getClanPrivileges() & L2Clan.CP_CS_MANOR_ADMIN) == 0) {
 			return;
@@ -93,17 +93,17 @@ public class RequestSetCrop extends L2GameClientPacket {
 			return;
 		}
 
-		L2Object manager = player.getTarget();
+		WorldObject manager = player.getTarget();
 
-		if (!(manager instanceof L2CastleChamberlainInstance)) {
+		if (!(manager instanceof CastleChamberlainInstance)) {
 			manager = player.getLastFolkNPC();
 		}
 
-		if (!(manager instanceof L2CastleChamberlainInstance)) {
+		if (!(manager instanceof CastleChamberlainInstance)) {
 			return;
 		}
 
-		if (((L2CastleChamberlainInstance) manager).getCastle() != currentCastle) {
+		if (((CastleChamberlainInstance) manager).getCastle() != currentCastle) {
 			return;
 		}
 

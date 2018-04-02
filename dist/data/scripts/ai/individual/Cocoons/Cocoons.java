@@ -18,11 +18,11 @@ package ai.individual.Cocoons;
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SpawnTable;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.Rnd;
 
 /**
@@ -71,14 +71,14 @@ public class Cocoons extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public final String onSpawn(Npc npc) {
 		npc.setIsImmobilized(true);
 
 		return super.onSpawn(npc);
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		int mobs[] = null;
 		if (event.equalsIgnoreCase("normalAttack")) {
 			if (!npc.isDead() && !npc.isDecayed()) {
@@ -112,10 +112,10 @@ public class Cocoons extends L2AttackableAIScript {
 
 		if (mobs != null) {
 			for (int a = 0; a <= 3; a++) {
-				L2Npc mob = addSpawn(mobs[Rnd.get(mobs.length)], npc.getX(), npc.getY(), npc.getZ(), 0, false, 180000, true); //3 min self-despawn
+				Npc mob = addSpawn(mobs[Rnd.get(mobs.length)], npc.getX(), npc.getY(), npc.getZ(), 0, false, 180000, true); //3 min self-despawn
 				mob.setIsRunning(true);
 				mob.setTarget(player);
-				((L2MonsterInstance) mob).addDamageHate(player, 500, 99999);
+				((MonsterInstance) mob).addDamageHate(player, 500, 99999);
 				mob.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 
 				if (event.equalsIgnoreCase("strongAttack")) {
@@ -127,12 +127,12 @@ public class Cocoons extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		return "cocoon.html";
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet, Skill skill) {
 		if (skill == null) {
 			notifyEvent("normalAttack", npc, attacker);
 		} else {

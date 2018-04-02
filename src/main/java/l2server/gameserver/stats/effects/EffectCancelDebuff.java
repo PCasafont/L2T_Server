@@ -15,12 +15,12 @@
 
 package l2server.gameserver.stats.effects;
 
-import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.EffectTemplate;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -29,33 +29,33 @@ import java.util.ArrayList;
  * @author Kilian
  */
 public class EffectCancelDebuff extends L2Effect {
-	public EffectCancelDebuff(Env env, L2EffectTemplate template) {
+	public EffectCancelDebuff(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
 		// Only for players
-		if (!(getEffected() instanceof L2Playable)) {
+		if (!(getEffected() instanceof Playable)) {
 			return false;
 		}
 		
-		L2Playable effected = (L2Playable) getEffected();
+		Playable effected = (Playable) getEffected();
 		
 		if (effected == null || effected.isDead()) {
 			return false;
 		}
 		
-		if (getEffected() instanceof L2MonsterInstance && ((L2MonsterInstance) getEffected()).getNpcId() == 19036) //TODO TEMP LasTravel, don't remove
+		if (getEffected() instanceof MonsterInstance && ((MonsterInstance) getEffected()).getNpcId() == 19036) //TODO TEMP LasTravel, don't remove
 		{
 			return false;
 		}
 		
-		L2Abnormal[] effects = effected.getAllEffects();
-		ArrayList<L2Abnormal> debuffs = new ArrayList<>();
+		Abnormal[] effects = effected.getAllEffects();
+		ArrayList<Abnormal> debuffs = new ArrayList<>();
 		
 		int chance = (int) getAbnormal().getLandRate();
 		if (chance < 0) {
@@ -63,7 +63,7 @@ public class EffectCancelDebuff extends L2Effect {
 		}
 		
 		// Filter out debuffs
-		for (L2Abnormal e : effects) {
+		for (Abnormal e : effects) {
 			if (e.getSkill().isDebuff()) {
 				debuffs.add(e);
 			}
@@ -80,7 +80,7 @@ public class EffectCancelDebuff extends L2Effect {
 		}
 		
 		// Remove all debuffs if chance test succeeded
-		for (L2Abnormal e : debuffs) {
+		for (Abnormal e : debuffs) {
 			e.exit();
 		}
 		
@@ -88,7 +88,7 @@ public class EffectCancelDebuff extends L2Effect {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

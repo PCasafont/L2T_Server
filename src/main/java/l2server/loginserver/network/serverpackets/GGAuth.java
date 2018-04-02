@@ -16,16 +16,12 @@
 package l2server.loginserver.network.serverpackets;
 
 import l2server.Config;
-import l2server.log.Log;
-
-import java.util.logging.Logger;
 
 /**
  * Fromat: d
  * d: response
  */
 public final class GGAuth extends L2LoginServerPacket {
-	static final Logger log = Logger.getLogger(GGAuth.class.getName());
 	public static final int SKIP_GG_AUTH_REQUEST = 0x0b;
 	
 	private int response;
@@ -33,7 +29,7 @@ public final class GGAuth extends L2LoginServerPacket {
 	public GGAuth(int response) {
 		this.response = response;
 		if (Config.DEBUG) {
-			Log.warning("Reason Hex: " + Integer.toHexString(response));
+			log.warn("Reason Hex: " + Integer.toHexString(response));
 		}
 	}
 	

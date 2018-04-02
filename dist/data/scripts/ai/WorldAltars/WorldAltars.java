@@ -17,8 +17,8 @@ package ai.WorldAltars;
 
 import l2server.gameserver.instancemanager.CustomWorldAltars;
 import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 
 import java.util.HashMap;
@@ -49,12 +49,12 @@ public class WorldAltars extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		return "WorldAltars.html";
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.startsWith("trySpawnBoss")) {
 			if (!debug) {
 				L2Party party = player.getParty();
@@ -72,7 +72,7 @@ public class WorldAltars extends Quest {
 				}
 				//Check if have at least 4 different players
 				Map<String, String> pIps = new HashMap<String, String>();
-				for (L2PcInstance pMember : party.getPartyMembers()) {
+				for (Player pMember : party.getPartyMembers()) {
 					if (pMember == null) {
 						continue;
 					}
@@ -112,7 +112,7 @@ public class WorldAltars extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		CustomWorldAltars.getInstance().notifyBossKilled(npc);
 
 		return super.onKill(npc, player, isPet);

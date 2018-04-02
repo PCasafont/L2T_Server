@@ -17,14 +17,13 @@ package handlers.admincommandhandlers;
 
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
 import java.util.StringTokenizer;
-import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:
@@ -35,12 +34,11 @@ import java.util.logging.Logger;
  * @version $Revision: 1.2.4.6 $ $Date: 2005/04/11 10:06:06 $
  */
 public class AdminExpSp implements IAdminCommandHandler {
-	private static Logger log = Logger.getLogger(AdminExpSp.class.getName());
-
+	
 	private static final String[] ADMIN_COMMANDS = {"admin_add_exp_sp_to_character", "admin_add_exp_sp", "admin_remove_exp_sp"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.startsWith("admin_add_exp_sp")) {
 			try {
 				String val = command.substring(16);
@@ -69,11 +67,11 @@ public class AdminExpSp implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	private void addExpSp(L2PcInstance activeChar) {
-		L2Object target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+	private void addExpSp(Player activeChar) {
+		WorldObject target = activeChar.getTarget();
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
@@ -88,11 +86,11 @@ public class AdminExpSp implements IAdminCommandHandler {
 		activeChar.sendPacket(adminReply);
 	}
 
-	private boolean adminAddExpSp(L2PcInstance activeChar, String ExpSp) {
-		L2Object target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+	private boolean adminAddExpSp(Player activeChar, String ExpSp) {
+		WorldObject target = activeChar.getTarget();
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return false;
@@ -118,7 +116,7 @@ public class AdminExpSp implements IAdminCommandHandler {
 				//Admin information
 				activeChar.sendMessage("Added " + expval + " xp and " + spval + " sp to " + player.getName() + ".");
 				if (Config.DEBUG) {
-					log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") added " + expval + " xp and " + spval + " sp to " +
+					log.debug("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") added " + expval + " xp and " + spval + " sp to " +
 							player.getObjectId() + ".");
 				}
 			}
@@ -126,11 +124,11 @@ public class AdminExpSp implements IAdminCommandHandler {
 		return true;
 	}
 
-	private boolean adminRemoveExpSP(L2PcInstance activeChar, String ExpSp) {
-		L2Object target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+	private boolean adminRemoveExpSP(Player activeChar, String ExpSp) {
+		WorldObject target = activeChar.getTarget();
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return false;
@@ -156,7 +154,7 @@ public class AdminExpSp implements IAdminCommandHandler {
 				//Admin information
 				activeChar.sendMessage("Removed " + expval + " xp and " + spval + " sp from " + player.getName() + ".");
 				if (Config.DEBUG) {
-					log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") removed " + expval + " xp and " + spval +
+					log.debug("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") removed " + expval + " xp and " + spval +
 							" sp from " + player.getObjectId() + ".");
 				}
 			}

@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * Format: ch d[Sdd]
@@ -35,7 +35,7 @@ public class ExMPCCShowPartyMemberInfo extends L2GameServerPacket {
 	@Override
 	protected final void writeImpl() {
 		writeD(party.getMemberCount()); // Number of Members
-		for (L2PcInstance pc : party.getPartyMembers()) {
+		for (Player pc : party.getPartyMembers()) {
 			writeS(pc.getName()); // Membername
 			writeD(pc.getObjectId()); // ObjId
 			writeD(pc.getCurrentClass().getId()); // Classid

@@ -16,28 +16,31 @@
 package l2server.gameserver.model.olympiad;
 
 import l2server.Config;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
+import l2server.gameserver.model.actor.instance.DoorInstance;
 import l2server.gameserver.model.entity.Instance;
-import l2server.gameserver.model.zone.type.L2OlympiadStadiumZone;
+import l2server.gameserver.model.zone.type.OlympiadStadiumZone;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 /**
  * @author DS
  */
 public final class OlympiadGameTask implements Runnable {
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	protected static final long BATTLE_PERIOD = Config.ALT_OLY_BATTLE; // 6 mins
 
 	public static final int[] TELEPORT_TO_ARENA = {120, 60, 30, 15, 10, 5, 4, 3, 2, 1, 0};
@@ -45,13 +48,13 @@ public final class OlympiadGameTask implements Runnable {
 	public static final int[] BATTLE_START_TIME_SECOND = {10, 5, 4, 3, 2, 1, 0};
 	public static final int[] TELEPORT_TO_TOWN = {40, 30, 20, 10, 5, 4, 3, 2, 1, 0};
 
-	private final L2OlympiadStadiumZone zone;
+	private final OlympiadStadiumZone zone;
 	private AbstractOlympiadGame game;
 	private GameState state = GameState.IDLE;
 	private boolean needAnnounce = false;
 	private int countDown = 0;
 
-	private final List<L2DoorInstance> doors;
+	private final List<DoorInstance> doors;
 	private final List<L2Spawn> buffers;
 
 	private enum GameState {
@@ -68,7 +71,7 @@ public final class OlympiadGameTask implements Runnable {
 		IDLE
 	}
 
-	public OlympiadGameTask(L2OlympiadStadiumZone zone, int id) {
+	public OlympiadGameTask(OlympiadStadiumZone zone, int id) {
 		this.zone = zone;
 		zone.registerTask(this, id);
 		InstanceManager.getInstance().createInstance(id + Olympiad.BASE_INSTANCE_ID);
@@ -85,7 +88,7 @@ public final class OlympiadGameTask implements Runnable {
 		doors.add(instance.getDoor(door2Id));
 
 		try {
-			L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(36402);
+			NpcTemplate tmpl = NpcTable.getInstance().getTemplate(36402);
 			L2Spawn bufferSpawn = new L2Spawn(tmpl);
 
 			bufferSpawn.setX(zone.getSpawns().get(6).getX());
@@ -143,7 +146,7 @@ public final class OlympiadGameTask implements Runnable {
 		}
 	}
 
-	public final L2OlympiadStadiumZone getZone() {
+	public final OlympiadStadiumZone getZone() {
 		return zone;
 	}
 
@@ -153,7 +156,7 @@ public final class OlympiadGameTask implements Runnable {
 
 	public final void attachGame(AbstractOlympiadGame game) {
 		if (game != null && state != GameState.IDLE) {
-			Log.log(Level.WARNING, "Attempt to overwrite non-finished game in state " + state);
+			log.warn("Attempt to overwrite non-finished game in state " + state);
 			return;
 		}
 
@@ -291,14 +294,14 @@ public final class OlympiadGameTask implements Runnable {
 				case TELEPORT_TO_TOWN:
 				case CLEANUP:
 				case IDLE: {
-					Log.log(Level.WARNING, "Unable to return players back in town, exception: " + e.getMessage());
+					log.warn("Unable to return players back in town, exception: " + e.getMessage());
 					state = GameState.IDLE;
 					game = null;
 					return;
 				}
 			}
 
-			Log.log(Level.WARNING, "Exception in " + state + ", trying to port players back: " + e.getMessage(), e);
+			log.warn("Exception in " + state + ", trying to port players back: " + e.getMessage(), e);
 			state = GameState.GAME_STOPPED;
 			ThreadPoolManager.getInstance().scheduleGeneral(this, 1000);
 		}
@@ -346,7 +349,7 @@ public final class OlympiadGameTask implements Runnable {
 			OlympiadGameManager.getInstance().startBattle(); // inform manager
 			return true;
 		} catch (Exception e) {
-			Log.log(Level.WARNING, e.getMessage(), e);
+			log.warn(e.getMessage(), e);
 		}
 		return false;
 	}
@@ -359,7 +362,7 @@ public final class OlympiadGameTask implements Runnable {
 			game.resetDamage();
 			openDoors();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, e.getMessage(), e);
+			log.warn(e.getMessage(), e);
 		}
 	}
 
@@ -381,7 +384,7 @@ public final class OlympiadGameTask implements Runnable {
 				return true;
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, e.getMessage(), e);
+			log.warn(e.getMessage(), e);
 		}
 		return false;
 	}
@@ -393,7 +396,7 @@ public final class OlympiadGameTask implements Runnable {
 		try {
 			return game.haveWinner();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, e.getMessage(), e);
+			log.warn(e.getMessage(), e);
 		}
 
 		return true;
@@ -406,19 +409,19 @@ public final class OlympiadGameTask implements Runnable {
 		try {
 			game.validateWinner(zone);
 		} catch (Exception e) {
-			Log.log(Level.WARNING, e.getMessage(), e);
+			log.warn(e.getMessage(), e);
 		}
 
 		try {
 			zone.updateZoneStatusForCharactersInside(game.getGameId());
 		} catch (Exception e) {
-			Log.log(Level.WARNING, e.getMessage(), e);
+			log.warn(e.getMessage(), e);
 		}
 
 		try {
 			game.cleanEffects();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, e.getMessage(), e);
+			log.warn(e.getMessage(), e);
 		}
 	}
 
@@ -429,30 +432,30 @@ public final class OlympiadGameTask implements Runnable {
 		try {
 			game.playersStatusBack();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, e.getMessage(), e);
+			log.warn(e.getMessage(), e);
 		}
 
 		try {
 			game.portPlayersBack();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, e.getMessage(), e);
+			log.warn(e.getMessage(), e);
 		}
 
 		try {
 			game.clearPlayers();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, e.getMessage(), e);
+			log.warn(e.getMessage(), e);
 		}
 
 		try {
 			closeDoors();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, e.getMessage(), e);
+			log.warn(e.getMessage(), e);
 		}
 	}
 
 	public void openDoors() {
-		for (L2DoorInstance door : doors) {
+		for (DoorInstance door : doors) {
 			if (door != null && !door.getOpen()) {
 				door.openMe();
 			}
@@ -460,7 +463,7 @@ public final class OlympiadGameTask implements Runnable {
 	}
 
 	public void closeDoors() {
-		for (L2DoorInstance door : doors) {
+		for (DoorInstance door : doors) {
 			if (door != null && door.getOpen()) {
 				door.closeMe();
 			}
@@ -483,7 +486,7 @@ public final class OlympiadGameTask implements Runnable {
 		}
 	}
 
-	public List<L2DoorInstance> getDoors() {
+	public List<DoorInstance> getDoors() {
 		return doors;
 	}
 

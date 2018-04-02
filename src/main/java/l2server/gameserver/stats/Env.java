@@ -15,29 +15,29 @@
 
 package l2server.gameserver.stats;
 
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2CubicInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.CubicInstance;
 
 /**
- * An Env object is just a class to pass parameters to a calculator such as L2PcInstance, L2ItemInstance, Initial value.
+ * An Env object is just a class to pass parameters to a calculator such as Player, Item, Initial value.
  */
 
 public final class Env {
 
-	public L2Character player;
-	public L2CubicInstance cubic;
-	public L2Character target;
-	public L2ItemInstance item;
-	public L2Skill skill;
-	public L2Abnormal effect;
+	public Creature player;
+	public CubicInstance cubic;
+	public Creature target;
+	public Item item;
+	public Skill skill;
+	public Abnormal effect;
 	public double value;
 	public double baseValue;
 	public boolean skillMastery = false;
 	public byte shld = 0;
-	public double ssMul = L2ItemInstance.CHARGED_NONE;
+	public double ssMul = Item.CHARGED_NONE;
 
 	public Env() {
 

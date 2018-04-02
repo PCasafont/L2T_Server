@@ -2,7 +2,7 @@ package transformations;
 
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
-import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Transformation;
 
 public class VanguardShilienKnight extends L2Transformation {
@@ -47,7 +47,7 @@ public class VanguardShilienKnight extends L2Transformation {
 		removeSkills();
 
 		// Remove Boost Morale effect
-		for (L2Abnormal e : getPlayer().getAllEffects()) {
+		for (Abnormal e : getPlayer().getAllEffects()) {
 			if (e != null && e.getSkill().getId() == 956) {
 				e.exit();
 			}

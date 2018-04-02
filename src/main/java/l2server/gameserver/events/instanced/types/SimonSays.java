@@ -6,8 +6,8 @@ import l2server.gameserver.events.instanced.EventConfig;
 import l2server.gameserver.events.instanced.EventInstance;
 import l2server.gameserver.events.instanced.EventTeleporter;
 import l2server.gameserver.events.instanced.EventsManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.util.Point3D;
@@ -26,7 +26,7 @@ public class SimonSays extends EventInstance {
 	private SimonSaysTask simonSaysTask;
 	private ArrayList<Integer> actedPlayers = new ArrayList<>();
 
-	List<L2PcInstance> winners = new ArrayList<>();
+	List<Player> winners = new ArrayList<>();
 
 	public SimonSays(int id, EventConfig config) {
 		super(id, config);
@@ -45,13 +45,13 @@ public class SimonSays extends EventInstance {
 
 	@Override
 	public void calculateRewards() {
-		L2PcInstance winner = null;
+		Player winner = null;
 		if (teams[0].getParticipatedPlayerCount() != 1) {
 			Announcements.getInstance().announceToAll("The event has ended in a tie");
 			return;
 		}
 
-		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values()) {
+		for (Player playerInstance : teams[0].getParticipatedPlayers().values()) {
 			winner = playerInstance;
 		}
 
@@ -69,11 +69,11 @@ public class SimonSays extends EventInstance {
 	}
 
 	@Override
-	public String getRunningInfo(L2PcInstance player) {
+	public String getRunningInfo(Player player) {
 		String html = "";
 		if (teams[0].getParticipatedPlayerCount() > 0) {
 			html += "Players staying:<br>";
-			for (L2PcInstance participant : teams[0].getParticipatedPlayers().values()) {
+			for (Player participant : teams[0].getParticipatedPlayers().values()) {
 				if (participant != null) {
 					html += EventsManager.getInstance().getPlayerString(participant, player) + ", ";
 				}
@@ -84,12 +84,12 @@ public class SimonSays extends EventInstance {
 	}
 
 	@Override
-	public boolean onAction(L2PcInstance playerInstance, int targetedPlayerObjectId) {
+	public boolean onAction(Player playerInstance, int targetedPlayerObjectId) {
 		return false;
 	}
 
 	@Override
-	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance) {
+	public void onKill(Creature killerCharacter, Player killedPlayerInstance) {
 		if (killedPlayerInstance == null || !isState(EventState.STARTED)) {
 			return;
 		}
@@ -97,7 +97,7 @@ public class SimonSays extends EventInstance {
 		new EventTeleporter(killedPlayerInstance, teams[0].getCoords(), false, false);
 	}
 
-	public void onSocialAction(L2PcInstance player, int actionId) {
+	public void onSocialAction(Player player, int actionId) {
 		if (simonSaysTask.isWaiting() || !isPlayerParticipant(player.getObjectId())) {
 			return;
 		}
@@ -123,7 +123,7 @@ public class SimonSays extends EventInstance {
 		}
 
 		CreatureSay cs = new CreatureSay(0, Say2.BATTLEFIELD, "Simon", getActionString(currentSocialActionId));
-		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values()) {
+		for (Player playerInstance : teams[0].getParticipatedPlayers().values()) {
 			if (playerInstance != null) {
 				playerInstance.sendPacket(cs);
 			}
@@ -190,8 +190,8 @@ public class SimonSays extends EventInstance {
 		CreatureSay cs2 = new CreatureSay(0, Say2.TELL, "Instanced Events", "You have been disqualified for being the last player acting!");
 		CreatureSay cs3 = new CreatureSay(0, Say2.TELL, "Instanced Events", "You have been disqualified for not doing anything!");
 
-		List<L2PcInstance> participants = new ArrayList<>(teams[0].getParticipatedPlayers().values());
-		for (L2PcInstance playerInstance : participants) {
+		List<Player> participants = new ArrayList<>(teams[0].getParticipatedPlayers().values());
+		for (Player playerInstance : participants) {
 			if (playerInstance != null && !actedPlayers.contains(playerInstance.getObjectId())) {
 				someoneFailed = true;
 				removeParticipant(playerInstance.getObjectId());
@@ -201,7 +201,7 @@ public class SimonSays extends EventInstance {
 		}
 
 		if (!someoneFailed && getParticipatedPlayersCount() > 1) {
-			L2PcInstance player = teams[0].getParticipatedPlayers().get(actedPlayers.get(actedPlayers.size() - 1));
+			Player player = teams[0].getParticipatedPlayers().get(actedPlayers.get(actedPlayers.size() - 1));
 			if (player != null) {
 				removeParticipant(player.getObjectId());
 				new EventTeleporter(player, new Point3D(0, 0, 0), false, true);
@@ -210,7 +210,7 @@ public class SimonSays extends EventInstance {
 			}
 		}
 
-		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values()) {
+		for (Player playerInstance : teams[0].getParticipatedPlayers().values()) {
 			if (playerInstance != null) {
 				playerInstance.sendPacket(cs);
 			}

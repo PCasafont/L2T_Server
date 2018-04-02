@@ -15,8 +15,8 @@
 
 package l2server.gameserver.model.itemauction;
 
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Forsaiken
@@ -50,7 +50,7 @@ public final class ItemAuctionBid {
 		return lastBid <= 0;
 	}
 
-	final L2PcInstance getPlayer() {
-		return L2World.getInstance().getPlayer(playerObjId);
+	final Player getPlayer() {
+		return World.getInstance().getPlayer(playerObjId);
 	}
 }

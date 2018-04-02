@@ -15,8 +15,8 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author KenM
@@ -30,7 +30,7 @@ public class ExSpawnEmitter extends L2GameServerPacket {
 		this.npcObjectId = npcObjectId;
 	}
 	
-	public ExSpawnEmitter(L2PcInstance player, L2Npc npc) {
+	public ExSpawnEmitter(Player player, Npc npc) {
 		this(player.getObjectId(), npc.getObjectId());
 	}
 

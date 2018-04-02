@@ -16,11 +16,11 @@
 package l2server.gameserver.model.actor.knownlist;
 
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2DefenderInstance;
-import l2server.gameserver.model.actor.instance.L2FortCommanderInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.DefenderInstance;
+import l2server.gameserver.model.actor.instance.FortCommanderInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.Fort;
 
@@ -30,14 +30,14 @@ public class DefenderKnownList extends AttackableKnownList {
 
 	// =========================================================
 	// Constructor
-	public DefenderKnownList(L2DefenderInstance activeChar) {
+	public DefenderKnownList(DefenderInstance activeChar) {
 		super(activeChar);
 	}
 
 	// =========================================================
 	// Method - Public
 	@Override
-	public boolean addKnownObject(L2Object object) {
+	public boolean addKnownObject(WorldObject object) {
 		if (!super.addKnownObject(object)) {
 			return false;
 		}
@@ -46,11 +46,11 @@ public class DefenderKnownList extends AttackableKnownList {
 		Fort fortress = getActiveChar().getFort();
 		// Check if siege is in progress
 		if (fortress != null && fortress.getZone().isActive() || castle != null && castle.getZone().isActive()) {
-			L2PcInstance player = null;
-			if (object instanceof L2PcInstance) {
-				player = (L2PcInstance) object;
-			} else if (object instanceof L2Summon) {
-				player = ((L2Summon) object).getOwner();
+			Player player = null;
+			if (object instanceof Player) {
+				player = (Player) object;
+			} else if (object instanceof Summon) {
+				player = ((Summon) object).getOwner();
 			}
 			int activeSiegeId = fortress != null ? fortress.getFortId() : castle != null ? castle.getCastleId() : 0;
 
@@ -68,11 +68,11 @@ public class DefenderKnownList extends AttackableKnownList {
 	// =========================================================
 	// Property - Public
 	@Override
-	public final L2DefenderInstance getActiveChar() {
-		if (super.getActiveChar() instanceof L2FortCommanderInstance) {
-			return (L2FortCommanderInstance) super.getActiveChar();
+	public final DefenderInstance getActiveChar() {
+		if (super.getActiveChar() instanceof FortCommanderInstance) {
+			return (FortCommanderInstance) super.getActiveChar();
 		}
 
-		return (L2DefenderInstance) super.getActiveChar();
+		return (DefenderInstance) super.getActiveChar();
 	}
 }

@@ -17,7 +17,7 @@ package handlers.chathandlers;
 
 import l2server.gameserver.handler.IChatHandler;
 import l2server.gameserver.instancemanager.PetitionManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
@@ -33,7 +33,7 @@ public class ChatPetition implements IChatHandler {
 	 * Handle chat type 'petition player'
 	 */
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text) {
+	public void handleChat(int type, Player activeChar, String target, String text) {
 		if (!PetitionManager.getInstance().isPlayerInConsultation(activeChar)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_IN_PETITION_CHAT));
 			return;

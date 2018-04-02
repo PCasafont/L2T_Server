@@ -17,52 +17,57 @@ package l2server.gameserver.stats.effects;
 
 import l2server.Config;
 import l2server.gameserver.GeoData;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.FlyToLocation;
 import l2server.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.VisualEffect;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 /**
  * @author Pere
  */
 public class EffectKnockBack extends L2Effect {
+	private static Logger log = LoggerFactory.getLogger(EffectKnockBack.class.getName());
+
+
 	private int x, y, z;
 
-	public EffectKnockBack(Env env, L2EffectTemplate template) {
+	public EffectKnockBack(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.KNOCK_BACK;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.KNOCK_BACK;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		if (getEffected() instanceof L2Attackable && getEffected().isImmobilized() || getEffected().isRaid()) {
+		if (getEffected() instanceof Attackable && getEffected().isImmobilized() || getEffected().isRaid()) {
 			return false;
 		}
 
 		//TW bug restrictions for avoid players with TW flags stuck his char into the walls, under live test
-		if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCombatFlagEquipped()) {
+		if (getEffected() instanceof Player && ((Player) getEffected()).isCombatFlagEquipped()) {
 			return false;
 		}
 
 		if (getSkill().getId() == 30012 || getSkill().getId() == 30506) {
 			if (Rnd.get(100) > 70) {
-				// Get current position of the L2Character
+				// Get current position of the Creature
 				final int curX = getEffected().getX() + 1; // + 1 to correct when the effector came using a charge skill
 				final int curY = getEffected().getY();
 				final int curZ = getEffected().getZ();
@@ -73,7 +78,7 @@ public class EffectKnockBack extends L2Effect {
 				double dz = getEffector().getZ() - curZ;
 				double distance = Math.sqrt(dx * dx + dy * dy);
 				if (distance > 2000) {
-					Log.info("EffectKnockDown (skill id: " + getSkill().getId() +
+					log.info("EffectKnockDown (skill id: " + getSkill().getId() +
 							") was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY + " and getEffector: " +
 							getEffector().getX() + "," + getEffector().getY());
 					return false;
@@ -120,7 +125,7 @@ public class EffectKnockBack extends L2Effect {
 		} else if (getSkill().getId() == 30505) {
 			//if (Rnd.get(100) > 70)
 			{
-				// Get current position of the L2Character
+				// Get current position of the Creature
 				final int curX = getEffected().getX();
 				final int curY = getEffected().getY();
 				final int curZ = getEffected().getZ();
@@ -131,7 +136,7 @@ public class EffectKnockBack extends L2Effect {
 				double dz = getEffector().getZ() - curZ;
 				double distance = Math.sqrt(dx * dx + dy * dy);
 				if (distance > 2000) {
-					Log.info("EffectDrag (skill id: " + getSkill().getId() + ") was going to use invalid coordinates for characters, getEffected: " +
+					log.info("EffectDrag (skill id: " + getSkill().getId() + ") was going to use invalid coordinates for characters, getEffected: " +
 							curX + "," + curY + " and getEffector: " + getEffector().getX() + "," + getEffector().getY());
 					return false;
 				}
@@ -188,7 +193,7 @@ public class EffectKnockBack extends L2Effect {
 			}
 		}
 
-		// Get current position of the L2Character
+		// Get current position of the Creature
 		final int curX = getEffected().getX() + 1; // + 1 to correct when the effector came using a charge skill
 		final int curY = getEffected().getY();
 		final int curZ = getEffected().getZ();
@@ -199,7 +204,7 @@ public class EffectKnockBack extends L2Effect {
 		double dz = getEffector().getZ() - curZ;
 		double distance = Math.sqrt(dx * dx + dy * dy);
 		if (distance > 2000) {
-			Log.info("EffectKnockBack (skill id: " + getSkill().getId() + ") was going to use invalid coordinates for characters, getEffected: " +
+			log.info("EffectKnockBack (skill id: " + getSkill().getId() + ") was going to use invalid coordinates for characters, getEffected: " +
 					curX + "," + curY + " and getEffector: " + getEffector().getX() + "," + getEffector().getY());
 			return false;
 		}
@@ -248,7 +253,7 @@ public class EffectKnockBack extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {
@@ -256,7 +261,7 @@ public class EffectKnockBack extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {

@@ -19,24 +19,22 @@ import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.CastleManager;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.SystemMessageId.SMLocalisation;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import l2server.gameserver.templates.item.ItemTemplate;
 
 import java.io.PrintStream;
 import java.util.Arrays;
-import java.util.logging.Level;
 
 public final class SystemMessage extends L2GameServerPacket {
 	
@@ -152,7 +150,7 @@ public final class SystemMessage extends L2GameServerPacket {
 		if (paramIndex >= params.length) {
 			params = Arrays.copyOf(params, paramIndex + 1);
 			smId.setParamCount(paramIndex + 1);
-			Log.log(Level.INFO, "Wrong parameter count '" + (paramIndex + 1) + "' for SystemMessageId: " + smId);
+			log.info("Wrong parameter count '" + (paramIndex + 1) + "' for SystemMessageId: " + smId);
 		}
 		
 		params[paramIndex++] = param;
@@ -188,39 +186,39 @@ public final class SystemMessage extends L2GameServerPacket {
 		return this;
 	}
 	
-	public final SystemMessage addCharName(final L2Character cha) {
-		if (cha instanceof L2Npc) {
-			if (((L2Npc) cha).getTemplate().ServerSideName) {
-				return addString(((L2Npc) cha).getTemplate().Name);
+	public final SystemMessage addCharName(final Creature cha) {
+		if (cha instanceof Npc) {
+			if (((Npc) cha).getTemplate().ServerSideName) {
+				return addString(((Npc) cha).getTemplate().Name);
 			} else {
-				return addNpcName((L2Npc) cha);
+				return addNpcName((Npc) cha);
 			}
-		} else if (cha instanceof L2PcInstance) {
-			return addPcName((L2PcInstance) cha);
-		} else if (cha instanceof L2Summon) {
-			if (((L2Summon) cha).getTemplate().ServerSideName) {
-				return addString(((L2Summon) cha).getTemplate().Name);
+		} else if (cha instanceof Player) {
+			return addPcName((Player) cha);
+		} else if (cha instanceof Summon) {
+			if (((Summon) cha).getTemplate().ServerSideName) {
+				return addString(((Summon) cha).getTemplate().Name);
 			} else {
-				return addNpcName((L2Summon) cha);
+				return addNpcName((Summon) cha);
 			}
 		}
 		return addString(cha.getName());
 	}
 	
-	public final SystemMessage addPcName(final L2PcInstance pc) {
+	public final SystemMessage addPcName(final Player pc) {
 		append(new SMParam(TYPE_PLAYER_NAME, pc.getAppearance().getVisibleName()));
 		return this;
 	}
 	
-	public final SystemMessage addNpcName(final L2Npc npc) {
+	public final SystemMessage addNpcName(final Npc npc) {
 		return addNpcName(npc.getTemplate());
 	}
 	
-	public final SystemMessage addNpcName(final L2Summon npc) {
+	public final SystemMessage addNpcName(final Summon npc) {
 		return addNpcName(npc.getNpcId());
 	}
 	
-	public final SystemMessage addNpcName(final L2NpcTemplate template) {
+	public final SystemMessage addNpcName(final NpcTemplate template) {
 		if (template.isCustom()) {
 			return addString(template.Name);
 		}
@@ -232,11 +230,11 @@ public final class SystemMessage extends L2GameServerPacket {
 		return this;
 	}
 	
-	public final SystemMessage addItemName(final L2ItemInstance item) {
+	public final SystemMessage addItemName(final Item item) {
 		return addItemName(item.getItem().getItemId());
 	}
 	
-	public final SystemMessage addItemName(final L2Item item) {
+	public final SystemMessage addItemName(final ItemTemplate item) {
 		return addItemName(item.getItemId());
 	}
 	
@@ -250,11 +248,11 @@ public final class SystemMessage extends L2GameServerPacket {
 		return this;
 	}
 	
-	public final SystemMessage addSkillName(final L2Abnormal effect) {
+	public final SystemMessage addSkillName(final Abnormal effect) {
 		return addSkillName(effect.getSkill());
 	}
 	
-	public final SystemMessage addSkillName(final L2Skill skill) {
+	public final SystemMessage addSkillName(final Skill skill) {
 		if (skill.getId() != skill.getDisplayId()) //custom skill -  need nameId or smth like this.
 		{
 			return addString(skill.getName());
@@ -343,7 +341,7 @@ public final class SystemMessage extends L2GameServerPacket {
 				}
 				
 				case TYPE_ITEM_NAME: {
-					final L2Item item = ItemTable.getInstance().getTemplate(param.getIntValue());
+					final ItemTemplate item = ItemTable.getInstance().getTemplate(param.getIntValue());
 					params[i] = item == null ? "Unknown" : item.getName();
 					break;
 				}
@@ -360,7 +358,7 @@ public final class SystemMessage extends L2GameServerPacket {
 				}
 				
 				case TYPE_NPC_NAME: {
-					final L2NpcTemplate template = NpcTable.getInstance().getTemplate(param.getIntValue());
+					final NpcTemplate template = NpcTable.getInstance().getTemplate(param.getIntValue());
 					params[i] = template == null ? "Unknown" : template.getName();
 					break;
 				}
@@ -382,7 +380,7 @@ public final class SystemMessage extends L2GameServerPacket {
 				
 				case TYPE_SKILL_NAME: {
 					final int[] array = param.getIntArrayValue();
-					final L2Skill skill = SkillTable.getInstance().getInfo(array[0], array[1]);
+					final Skill skill = SkillTable.getInstance().getInfo(array[0], array[1]);
 					params[i] = skill == null ? "Unknown" : skill.getName();
 					break;
 				}

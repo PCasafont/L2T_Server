@@ -15,8 +15,8 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -36,7 +36,7 @@ public class ConditionPlayerBaseStats extends Condition {
 	 * @param stat   the stat
 	 * @param value  the value
 	 */
-	public ConditionPlayerBaseStats(L2Character player, BaseStat stat, int value) {
+	public ConditionPlayerBaseStats(Creature player, BaseStat stat, int value) {
 		super();
 		this.stat = stat;
 		this.value = value;
@@ -51,10 +51,10 @@ public class ConditionPlayerBaseStats extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		if (!(env.player instanceof L2PcInstance)) {
+		if (!(env.player instanceof Player)) {
 			return false;
 		}
-		L2PcInstance player = (L2PcInstance) env.player;
+		Player player = (Player) env.player;
 		switch (stat) {
 			case Int:
 				return player.getINT() >= value;

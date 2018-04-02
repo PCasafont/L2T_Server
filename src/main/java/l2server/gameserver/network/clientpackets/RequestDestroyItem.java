@@ -19,24 +19,22 @@ import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.PetDataTable;
 import l2server.gameserver.instancemanager.CursedWeaponsManager;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2CrystallizeReward;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.ItemList;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.logging.Level;
 
 /**
  * This class ...
@@ -56,7 +54,7 @@ public final class RequestDestroyItem extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -87,7 +85,7 @@ public final class RequestDestroyItem extends L2GameClientPacket {
 			return;
 		}
 
-		L2ItemInstance itemToRemove = activeChar.getInventory().getItemByObjectId(objectId);
+		Item itemToRemove = activeChar.getInventory().getItemByObjectId(objectId);
 		// if we can't find the requested item, its actually a cheat
 		if (itemToRemove == null) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DISCARD_THIS_ITEM));
@@ -139,9 +137,9 @@ public final class RequestDestroyItem extends L2GameClientPacket {
 		}
 
 		if (itemToRemove.isEquipped()) {
-			L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(itemToRemove.getLocationSlot());
+			Item[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(itemToRemove.getLocationSlot());
 			InventoryUpdate iu = new InventoryUpdate();
-			for (L2ItemInstance item : unequiped) {
+			for (Item item : unequiped) {
 				activeChar.checkSShotsMatch(null, item);
 
 				iu.addModifiedItem(item);
@@ -164,7 +162,7 @@ public final class RequestDestroyItem extends L2GameClientPacket {
 				statement.execute();
 				statement.close();
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "could not delete pet objectid: ", e);
+				log.warn("could not delete pet objectid: ", e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -174,33 +172,33 @@ public final class RequestDestroyItem extends L2GameClientPacket {
 		}
 
 		// Crystallize the item instead of destroying it, if possible
-		int skillLevel = activeChar.getSkillLevelHash(L2Skill.SKILL_CRYSTALLIZE);
+		int skillLevel = activeChar.getSkillLevelHash(Skill.SKILL_CRYSTALLIZE);
 		boolean hasBeenCrystallized = false;
 		if (skillLevel > 0 && itemToRemove.getItem().isCrystallizable() && itemToRemove.getCrystalCount() > 0 &&
-				!(itemToRemove.getItem().getCrystalType() == L2Item.CRYSTAL_NONE) && !itemToRemove.isEquipped()) {
+				!(itemToRemove.getItem().getCrystalType() == ItemTemplate.CRYSTAL_NONE) && !itemToRemove.isEquipped()) {
 			// Check if the char can crystallize items and return if false;
 			boolean canCrystallize = true;
 
 			switch (itemToRemove.getItem().getItemGradePlain()) {
-				case L2Item.CRYSTAL_C: {
+				case ItemTemplate.CRYSTAL_C: {
 					if (skillLevel <= 1) {
 						canCrystallize = false;
 					}
 					break;
 				}
-				case L2Item.CRYSTAL_B: {
+				case ItemTemplate.CRYSTAL_B: {
 					if (skillLevel <= 2) {
 						canCrystallize = false;
 					}
 					break;
 				}
-				case L2Item.CRYSTAL_A: {
+				case ItemTemplate.CRYSTAL_A: {
 					if (skillLevel <= 3) {
 						canCrystallize = false;
 					}
 					break;
 				}
-				case L2Item.CRYSTAL_S: {
+				case ItemTemplate.CRYSTAL_S: {
 					if (skillLevel <= 4) {
 						canCrystallize = false;
 					}
@@ -210,7 +208,7 @@ public final class RequestDestroyItem extends L2GameClientPacket {
 
 			if (canCrystallize) {
 				// remove from inventory
-				L2ItemInstance removedItem = activeChar.getInventory().destroyItem("Crystalize", objectId, count, activeChar, null);
+				Item removedItem = activeChar.getInventory().destroyItem("Crystalize", objectId, count, activeChar, null);
 				if (removedItem == null) {
 					return;
 				}
@@ -224,7 +222,7 @@ public final class RequestDestroyItem extends L2GameClientPacket {
 				// add crystals
 				int crystalId = itemToRemove.getItem().getCrystalItemId();
 				int crystalAmount = itemToRemove.getCrystalCount();
-				L2ItemInstance createditem = activeChar.getInventory().addItem("Crystallize", crystalId, crystalAmount, activeChar, activeChar);
+				Item createditem = activeChar.getInventory().addItem("Crystallize", crystalId, crystalAmount, activeChar, activeChar);
 
 				SystemMessage sm;
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CRYSTALLIZED);
@@ -246,7 +244,7 @@ public final class RequestDestroyItem extends L2GameClientPacket {
 
 				activeChar.broadcastUserInfo();
 
-				L2World world = L2World.getInstance();
+				World world = World.getInstance();
 				world.removeObject(removedItem);
 
 				hasBeenCrystallized = true;
@@ -259,7 +257,7 @@ public final class RequestDestroyItem extends L2GameClientPacket {
 			return;
 		}
 
-		L2ItemInstance removedItem = activeChar.getInventory().destroyItem("Destroy", objectId, count, activeChar, null);
+		Item removedItem = activeChar.getInventory().destroyItem("Destroy", objectId, count, activeChar, null);
 
 		if (removedItem == null) {
 			return;

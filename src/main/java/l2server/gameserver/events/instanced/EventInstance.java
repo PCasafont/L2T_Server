@@ -7,8 +7,8 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.EventPrizesTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.*;
@@ -75,7 +75,7 @@ public abstract class EventInstance {
 	
 	public boolean startFight() {
 		for (EventTeam team : teams) {
-			for (L2PcInstance player : team.getParticipatedPlayers().values()) {
+			for (Player player : team.getParticipatedPlayers().values()) {
 				if (player != null &&
 						(OlympiadManager.getInstance().isRegisteredInComp(player) || player.isInOlympiadMode() || player.isOlympiadStart() ||
 								player.isFlyingMounted() || player.inObserverMode())) {
@@ -138,7 +138,7 @@ public abstract class EventInstance {
 			L2Party[] parties = new L2Party[partyCount];
 			int currentParty = 0;
 			// Iterate over all participated player instances in this team
-			for (L2PcInstance playerInstance : team.getParticipatedPlayers().values()) {
+			for (Player playerInstance : team.getParticipatedPlayers().values()) {
 				if (playerInstance != null) {
 					playerInstance.setEventPoints(0);
 					
@@ -196,7 +196,7 @@ public abstract class EventInstance {
 	
 	public abstract void calculateRewards();
 	
-	protected void onContribution(L2PcInstance player, int weight) {
+	protected void onContribution(Player player, int weight) {
 		if (player == null) {
 		}
 
@@ -220,7 +220,7 @@ public abstract class EventInstance {
 		
 		for (EventTeam team : teams) {
 			int totalPoints = 0;
-			for (L2PcInstance player : team.getParticipatedPlayers().values()) {
+			for (Player player : team.getParticipatedPlayers().values()) {
 				if (player != null) {
 					totalPoints += player.getEventPoints();
 				}
@@ -235,7 +235,7 @@ public abstract class EventInstance {
 				}
 			}
 			
-			for (L2PcInstance player : team.getParticipatedPlayers().values()) {
+			for (Player player : team.getParticipatedPlayers().values()) {
 				if (player == null) {
 					continue;
 				}
@@ -275,19 +275,19 @@ public abstract class EventInstance {
 		}
 	}
 	
-	protected void rewardPlayers(List<L2PcInstance> players) {
+	protected void rewardPlayers(List<Player> players) {
 		if (players == null || players.isEmpty()) {
 			return;
 		}
 		
 		int totalPoints = 0;
-		for (L2PcInstance player : players) {
+		for (Player player : players) {
 			if (player != null) {
 				totalPoints += player.getEventPoints();
 			}
 		}
 		
-		for (L2PcInstance player : players) {
+		for (Player player : players) {
 			if (player == null) {
 				continue;
 			}
@@ -311,7 +311,7 @@ public abstract class EventInstance {
 			
 			// TODO: Place this at the HTML
 			player.sendPacket(new CreatureSay(0, Say2.PARTYROOM_ALL, "Instanced Events", "Event score:"));
-			for (L2PcInstance rewarded : players) {
+			for (Player rewarded : players) {
 				if (rewarded != null) {
 					player.sendPacket(new CreatureSay(0,
 							Say2.PARTYROOM_ALL,
@@ -328,7 +328,7 @@ public abstract class EventInstance {
 		
 		// Iterate over all teams
 		for (EventTeam team : teams) {
-			for (L2PcInstance playerInstance : team.getParticipatedPlayers().values()) {
+			for (Player playerInstance : team.getParticipatedPlayers().values()) {
 				// Check for nullpointer
 				if (playerInstance != null) {
 					if (playerInstance.getCtfFlag() != null) {
@@ -355,7 +355,7 @@ public abstract class EventInstance {
 		}, 5000L);
 	}
 	
-	public synchronized boolean addParticipant(L2PcInstance playerInstance) {
+	public synchronized boolean addParticipant(Player playerInstance) {
 		// Check for nullpointer
 		if (playerInstance == null) {
 			return false;
@@ -491,25 +491,25 @@ public abstract class EventInstance {
 	}
 	
 	public void sendToAllParticipants(L2GameServerPacket packet) {
-		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values()) {
+		for (Player playerInstance : teams[0].getParticipatedPlayers().values()) {
 			if (playerInstance != null) {
 				playerInstance.sendPacket(packet);
 			}
 		}
 		
-		for (L2PcInstance playerInstance : teams[1].getParticipatedPlayers().values()) {
+		for (Player playerInstance : teams[1].getParticipatedPlayers().values()) {
 			if (playerInstance != null) {
 				playerInstance.sendPacket(packet);
 			}
 		}
 		
 		if (config.getLocation().getTeamCount() == 4) {
-			for (L2PcInstance playerInstance : teams[2].getParticipatedPlayers().values()) {
+			for (Player playerInstance : teams[2].getParticipatedPlayers().values()) {
 				if (playerInstance != null) {
 					playerInstance.sendPacket(packet);
 				}
 			}
-			for (L2PcInstance playerInstance : teams[3].getParticipatedPlayers().values()) {
+			for (Player playerInstance : teams[3].getParticipatedPlayers().values()) {
 				if (playerInstance != null) {
 					playerInstance.sendPacket(packet);
 				}
@@ -521,7 +521,7 @@ public abstract class EventInstance {
 		sendToAllParticipants(new CreatureSay(0, Say2.PARTYROOM_ALL, "Instanced Events", message));
 	}
 	
-	public void onLogin(L2PcInstance playerInstance) {
+	public void onLogin(Player playerInstance) {
 		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId())) {
 			removeParticipant(playerInstance.getObjectId());
             /*EventTeam team = getParticipantTeam(playerInstance.getObjectId());
@@ -534,19 +534,19 @@ public abstract class EventInstance {
 		}
 	}
 	
-	public void onLogout(L2PcInstance playerInstance) {
+	public void onLogout(Player playerInstance) {
 		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId())) {
 			removeParticipant(playerInstance.getObjectId());
 		}
 	}
 	
-	public String getInfo(L2PcInstance player) {
+	public String getInfo(Player player) {
 		String html = "<center><font color=\"LEVEL\">" + config.getEventString() + "</font></center><br>";
 		if (isState(EventState.READY)) {
 			if (config.isAllVsAll()) {
 				if (teams[0].getParticipatedPlayerCount() > 0) {
 					html += "Participants:<br>";
-					for (L2PcInstance participant : teams[0].getParticipatedPlayers().values()) {
+					for (Player participant : teams[0].getParticipatedPlayers().values()) {
 						if (participant != null) {
 							html += EventsManager.getInstance().getPlayerString(participant, player) + ", ";
 						}
@@ -557,7 +557,7 @@ public abstract class EventInstance {
 				for (EventTeam team : teams) {
 					if (team.getParticipatedPlayerCount() > 0) {
 						html += "Team " + team.getName() + " participants:<br>";
-						for (L2PcInstance participant : team.getParticipatedPlayers().values()) {
+						for (Player participant : team.getParticipatedPlayers().values()) {
 							if (participant != null) {
 								html += EventsManager.getInstance().getPlayerString(participant, player) + ", ";
 							}
@@ -578,9 +578,9 @@ public abstract class EventInstance {
 		return html;
 	}
 	
-	public abstract String getRunningInfo(L2PcInstance player);
+	public abstract String getRunningInfo(Player player);
 	
-	public void observe(L2PcInstance playerInstance) {
+	public void observe(Player playerInstance) {
 		if (playerInstance.getEvent() != null) {
 			playerInstance.sendMessage("You cannot observe an event when you are participating on it.");
 			playerInstance.sendPacket(ActionFailed.STATIC_PACKET);
@@ -591,7 +591,7 @@ public abstract class EventInstance {
 			playerInstance.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		if (playerInstance.isInsideZone(L2Character.ZONE_NOSUMMONFRIEND) || playerInstance.inObserverMode()) {
+		if (playerInstance.isInsideZone(Creature.ZONE_NOSUMMONFRIEND) || playerInstance.inObserverMode()) {
 			playerInstance.sendMessage("You cannot observe an event from here.");
 			playerInstance.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -615,7 +615,7 @@ public abstract class EventInstance {
 		playerInstance.enterEventObserverMode(x, y, z);
 	}
 	
-	public boolean onAction(L2PcInstance playerInstance, int targetPlayerObjectId) {
+	public boolean onAction(Player playerInstance, int targetPlayerObjectId) {
 		EventTeam playerTeam = getParticipantTeam(playerInstance.getObjectId());
 		EventTeam targetPlayerTeam = getParticipantTeam(targetPlayerObjectId);
 		
@@ -627,7 +627,7 @@ public abstract class EventInstance {
 				!Config.INSTANCED_EVENT_TARGET_TEAM_MEMBERS_ALLOWED);
 	}
 	
-	public boolean onForcedAttack(L2PcInstance playerInstance, int targetPlayerObjectId) {
+	public boolean onForcedAttack(Player playerInstance, int targetPlayerObjectId) {
 		EventTeam playerTeam = getParticipantTeam(playerInstance.getObjectId());
 		EventTeam targetPlayerTeam = getParticipantTeam(targetPlayerObjectId);
 		
@@ -670,7 +670,7 @@ public abstract class EventInstance {
 		return !(isPlayerParticipant(playerObjectId) && !Config.INSTANCED_EVENT_SUMMON_BY_ITEM_ALLOWED);
 	}
 	
-	public abstract void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance);
+	public abstract void onKill(Creature killerCharacter, Player killedPlayerInstance);
 	
 	public boolean isType(EventType type) {
 		return config.getType() == type;
@@ -750,7 +750,7 @@ public abstract class EventInstance {
 		return count;
 	}
 	
-	protected L2PcInstance selectRandomParticipant() {
+	protected Player selectRandomParticipant() {
 		return teams[0].selectRandomParticipant();
 	}
 	
@@ -766,7 +766,7 @@ public abstract class EventInstance {
 		return instanceId;
 	}
 	
-	public void setImportant(L2PcInstance player, boolean important) {
+	public void setImportant(Player player, boolean important) {
 		if (player == null) {
 			return;
 		}

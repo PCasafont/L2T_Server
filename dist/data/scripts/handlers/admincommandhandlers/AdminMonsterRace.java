@@ -18,7 +18,7 @@ package handlers.admincommandhandlers;
 import l2server.gameserver.MonsterRace;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.DeleteObject;
 import l2server.gameserver.network.serverpackets.MonRaceInfo;
@@ -39,7 +39,7 @@ public class AdminMonsterRace implements IAdminCommandHandler {
 	protected static int state = -1;
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.equalsIgnoreCase("admin_mons")) {
 			handleSendPacket(activeChar);
 		}
@@ -51,7 +51,7 @@ public class AdminMonsterRace implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	private void handleSendPacket(L2PcInstance activeChar) {
+	private void handleSendPacket(Player activeChar) {
 		/*
 		 * -1 0 to initialize the race
 		 * 0 15322 to start race
@@ -93,9 +93,9 @@ public class AdminMonsterRace implements IAdminCommandHandler {
 	class RunRace implements Runnable {
 
 		private int[][] codes;
-		private L2PcInstance activeChar;
+		private Player activeChar;
 
-		public RunRace(int[][] pCodes, L2PcInstance pActiveChar) {
+		public RunRace(int[][] pCodes, Player pActiveChar) {
 			codes = pCodes;
 			activeChar = pActiveChar;
 		}
@@ -126,9 +126,9 @@ public class AdminMonsterRace implements IAdminCommandHandler {
 	}
 
 	private static class RunEnd implements Runnable {
-		private L2PcInstance activeChar;
+		private Player activeChar;
 
-		public RunEnd(L2PcInstance pActiveChar) {
+		public RunEnd(Player pActiveChar) {
 			activeChar = pActiveChar;
 		}
 

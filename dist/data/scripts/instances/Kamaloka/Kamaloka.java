@@ -5,23 +5,27 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 import java.util.*;
 import java.util.logging.Level;
 
 public class Kamaloka extends Quest {
+	private static Logger log = LoggerFactory.getLogger(Kamaloka.class.getName());
+
+
 	private static String qn = "Kamaloka";
 
 	/*
@@ -223,7 +227,7 @@ public class Kamaloka extends Quest {
 		public List<L2Spawn> firstRoom; // list of the spawns in the first room (excluding shaman)
 		public List<Integer> secondRoom;// list of objectIds mobs in the second room
 		public int miniBoss = 0; // objectId of the miniboss
-		public L2Npc boss = null; // boss
+		public Npc boss = null; // boss
 
 		public KamaWorld() {
 
@@ -237,7 +241,7 @@ public class Kamaloka extends Quest {
 	 * @param index  (0-18) index of the kamaloka in arrays
 	 * @return true if party allowed to enter
 	 */
-	private static boolean checkConditions(L2PcInstance player, int index) {
+	private static boolean checkConditions(Player player, int index) {
 		final L2Party party = player.getParty();
 		// player must be in party
 		if (party == null) {
@@ -262,7 +266,7 @@ public class Kamaloka extends Quest {
 
 		Map<Integer, Long> instanceTimes;
 		// for each party member
-		for (L2PcInstance partyMember : party.getPartyMembers()) {
+		for (Player partyMember : party.getPartyMembers()) {
 			// player level must be in range
 			if (Math.abs(partyMember.getLevel() - level) > MAX_LEVEL_DIFFERENCE) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_LEVEL_REQUIREMENT_NOT_SUFFICIENT);
@@ -303,12 +307,12 @@ public class Kamaloka extends Quest {
 	 *
 	 * @param ch player
 	 */
-	private static void removeBuffs(L2Character ch) {
-		for (L2Abnormal e : ch.getAllEffects()) {
+	private static void removeBuffs(Creature ch) {
+		for (Abnormal e : ch.getAllEffects()) {
 			if (e == null) {
 				continue;
 			}
-			L2Skill skill = e.getSkill();
+			Skill skill = e.getSkill();
 			if (skill.isDebuff() || skill.isStayAfterDeath()) {
 				continue;
 			}
@@ -317,14 +321,14 @@ public class Kamaloka extends Quest {
 			}
 			e.exit();
 		}
-		if (ch instanceof L2PcInstance) {
-			L2PcInstance player = (L2PcInstance) ch;
+		if (ch instanceof Player) {
+			Player player = (Player) ch;
 			if (player.getPet() != null) {
-				for (L2Abnormal e : player.getPet().getAllEffects()) {
+				for (Abnormal e : player.getPet().getAllEffects()) {
 					if (e == null) {
 						continue;
 					}
-					L2Skill skill = e.getSkill();
+					Skill skill = e.getSkill();
 					if (skill.isDebuff() || skill.isStayAfterDeath()) {
 						continue;
 					}
@@ -334,12 +338,12 @@ public class Kamaloka extends Quest {
 					e.exit();
 				}
 			}
-			for (L2SummonInstance summon : player.getSummons()) {
-				for (L2Abnormal e : summon.getAllEffects()) {
+			for (SummonInstance summon : player.getSummons()) {
+				for (Abnormal e : summon.getAllEffects()) {
 					if (e == null) {
 						continue;
 					}
-					L2Skill skill = e.getSkill();
+					Skill skill = e.getSkill();
 					if (skill.isDebuff() || skill.isStayAfterDeath()) {
 						continue;
 					}
@@ -359,7 +363,7 @@ public class Kamaloka extends Quest {
 	 * @param coords     x,y,z
 	 * @param instanceId
 	 */
-	private static void teleportPlayer(L2PcInstance player, int[] coords, int instanceId) {
+	private static void teleportPlayer(Player player, int[] coords, int instanceId) {
 		player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		player.setInstanceId(instanceId);
 		player.teleToLocation(coords[0], coords[1], coords[2], true);
@@ -371,7 +375,7 @@ public class Kamaloka extends Quest {
 	 * @param player party leader
 	 * @param index  (0-18) kamaloka index in arrays
 	 */
-	private final synchronized void enterInstance(L2PcInstance player, int index) {
+	private final synchronized void enterInstance(Player player, int index) {
 		int templateId;
 		try {
 			templateId = INSTANCE_IDS[index];
@@ -436,7 +440,7 @@ public class Kamaloka extends Quest {
 
 			// and finally teleport party into instance
 			final L2Party party = player.getParty();
-			for (L2PcInstance partyMember : party.getPartyMembers()) {
+			for (Player partyMember : party.getPartyMembers()) {
 				if (partyMember.getQuestState(qn) == null) {
 					newQuestState(partyMember);
 				}
@@ -469,7 +473,7 @@ public class Kamaloka extends Quest {
 
 			// set instance reenter time for all allowed players
 			for (int objectId : world.allowed) {
-				L2PcInstance obj = L2World.getInstance().getPlayer(objectId);
+				Player obj = World.getInstance().getPlayer(objectId);
 				if (obj != null && obj.isOnline()) {
 					InstanceManager.getInstance().setInstanceTime(objectId, world.templateId, reenter.getTimeInMillis());
 					obj.sendPacket(sm);
@@ -492,7 +496,7 @@ public class Kamaloka extends Quest {
 	private final void spawnKama(KamaWorld world) {
 		int[] npcs;
 		int[][] spawns;
-		L2Npc npc;
+		Npc npc;
 		final int index = world.index;
 
 		// first room
@@ -550,7 +554,7 @@ public class Kamaloka extends Quest {
 
 		// boss
 		npc = addSpawn(BOSS[index][0], BOSS[index][1], BOSS[index][2], BOSS[index][3], 0, false, 0, false, world.instanceId);
-		((L2MonsterInstance) npc).setOnKillDelay(100);
+		((MonsterInstance) npc).setOnKillDelay(100);
 		world.boss = npc;
 	}
 
@@ -558,7 +562,7 @@ public class Kamaloka extends Quest {
 	 * Handles only player's enter, single parameter - integer kamaloka index
 	 */
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (npc == null) {
 			return "";
 		}
@@ -566,7 +570,7 @@ public class Kamaloka extends Quest {
 		try {
 			enterInstance(player, Integer.parseInt(event));
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 		}
 		return "";
 	}
@@ -575,7 +579,7 @@ public class Kamaloka extends Quest {
 	 * Talk with captains and using of the escape teleporter
 	 */
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		QuestState st = player.getQuestState(qn);
 		if (st == null) {
 			newQuestState(player);
@@ -593,7 +597,7 @@ public class Kamaloka extends Quest {
 						Instance inst = InstanceManager.getInstance().getInstance(world.instanceId);
 
 						// teleports entire party away
-						for (L2PcInstance partyMember : party.getPartyMembers()) {
+						for (Player partyMember : party.getPartyMembers()) {
 							if (partyMember != null && partyMember.getInstanceId() == world.instanceId) {
 								teleportPlayer(partyMember, inst.getSpawnLoc(), 0);
 							}
@@ -612,7 +616,7 @@ public class Kamaloka extends Quest {
 	 * Only escape teleporters first talk handled
 	 */
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public final String onFirstTalk(Npc npc, Player player) {
 		if (npc.getNpcId() == TELEPORTER) {
 			if (player.isInParty() && player.getParty().isLeader(player)) {
 				return "32496.htm";
@@ -625,7 +629,7 @@ public class Kamaloka extends Quest {
 	}
 
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public final String onKill(Npc npc, Player player, boolean isPet) {
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpWorld instanceof KamaWorld) {
 			final KamaWorld world = (KamaWorld) tmpWorld;
@@ -649,7 +653,7 @@ public class Kamaloka extends Quest {
 						final int skillId = FIRST_ROOM[world.index][2];
 						final int skillLvl = FIRST_ROOM[world.index][3];
 						if (skillId != 0 && skillLvl != 0) {
-							final L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
+							final Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
 							if (skill != null) {
 								skill.getEffects(world.boss, world.boss);
 							}
@@ -683,7 +687,7 @@ public class Kamaloka extends Quest {
 						final int skillId = SECOND_ROOM[world.index][1];
 						final int skillLvl = SECOND_ROOM[world.index][2];
 						if (skillId != 0 && skillLvl != 0) {
-							final L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
+							final Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
 							if (skill != null) {
 								skill.getEffects(world.boss, world.boss);
 							}
@@ -702,7 +706,7 @@ public class Kamaloka extends Quest {
 					final int skillId = MINIBOSS[world.index][4];
 					final int skillLvl = MINIBOSS[world.index][5];
 					if (skillId != 0 && skillLvl != 0) {
-						final L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
+						final Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
 						if (skill != null) {
 							skill.getEffects(world.boss, world.boss);
 						}

@@ -18,16 +18,17 @@ package ai.group_template;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.zone.type.L2EffectZone;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.zone.type.EffectZone;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 /**
@@ -37,6 +38,9 @@ import l2server.util.Rnd;
  */
 
 public class DenOfEvil extends L2AttackableAIScript {
+	private static Logger log = LoggerFactory.getLogger(DenOfEvil.class.getName());
+
+
 	// private static final int _buffer_id = 32656;
 
 	private static final int[] _eye_ids = {18812, 18813, 18814};
@@ -74,13 +78,13 @@ public class DenOfEvil extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc) {
+	public String onSpawn(Npc npc) {
 		if (Util.contains(_eye_ids, npc.getNpcId())) {
 			npc.disableCoreAI(true);
 			npc.setIsImmobilized(true);
-			L2EffectZone zone = ZoneManager.getInstance().getZone(npc, L2EffectZone.class);
+			EffectZone zone = ZoneManager.getInstance().getZone(npc, EffectZone.class);
 			if (zone == null) {
-				Log.warning("NPC " + npc + " spawned outside of L2EffectZone, check your zone coords! X:" + npc.getX() + " Y:" + npc.getY() + " Z:" +
+				log.warn("NPC " + npc + " spawned outside of EffectZone, check your zone coords! X:" + npc.getX() + " Y:" + npc.getY() + " Z:" +
 						npc.getZ());
 				return null;
 			}
@@ -100,12 +104,12 @@ public class DenOfEvil extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		if (Util.contains(_eye_ids, npc.getNpcId())) {
 			ThreadPoolManager.getInstance().scheduleAi(new RespawnNewEye(npc.getX(), npc.getY(), npc.getZ(), npc.getHeading()), 15000);
-			L2EffectZone zone = ZoneManager.getInstance().getZone(npc, L2EffectZone.class);
+			EffectZone zone = ZoneManager.getInstance().getZone(npc, EffectZone.class);
 			if (zone == null) {
-				Log.warning("NPC " + npc + " killed outside of L2EffectZone, check your zone coords! X:" + npc.getX() + " Y:" + npc.getY() + " Z:" +
+				log.warn("NPC " + npc + " killed outside of EffectZone, check your zone coords! X:" + npc.getX() + " Y:" + npc.getY() + " Z:" +
 						npc.getZ());
 				return null;
 			}
@@ -139,9 +143,9 @@ public class DenOfEvil extends L2AttackableAIScript {
 	}
 
 	private class KashaDestruction implements Runnable {
-		L2EffectZone zone;
+		EffectZone zone;
 
-		public KashaDestruction(L2EffectZone zone) {
+		public KashaDestruction(EffectZone zone) {
 			this.zone = zone;
 		}
 
@@ -160,19 +164,19 @@ public class DenOfEvil extends L2AttackableAIScript {
 		}
 
 		private void destroyZone() {
-			for (L2Character character : zone.getCharactersInside().values()) {
+			for (Creature character : zone.getCharactersInside().values()) {
 				if (character == null) {
 					continue;
 				}
-				if (character instanceof L2Playable) {
-					L2Skill skill = SkillTable.getInstance().getInfo(6149, 1);
+				if (character instanceof Playable) {
+					Skill skill = SkillTable.getInstance().getInfo(6149, 1);
 					skill.getEffects(character, character); // apply effect
 				} else {
 					if (character.doDie(null)) // mobs die
 					{
-						if (character instanceof L2Npc) {
+						if (character instanceof Npc) {
 							// respawn eye
-							L2Npc npc = (L2Npc) character;
+							Npc npc = (Npc) character;
 							if (Util.contains(_eye_ids, npc.getNpcId())) {
 								ThreadPoolManager.getInstance()
 										.scheduleAi(new RespawnNewEye(npc.getX(), npc.getY(), npc.getZ(), npc.getHeading()), 15000);

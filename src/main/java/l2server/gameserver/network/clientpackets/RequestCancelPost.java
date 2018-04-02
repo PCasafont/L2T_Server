@@ -17,17 +17,17 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.instancemanager.MailManager;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2ItemInstance.ItemLocation;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Item.ItemLocation;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.ItemContainer;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
 
-import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
+import static l2server.gameserver.model.actor.Creature.ZONE_PEACE;
 
 /**
  * @author Pere, DS
@@ -43,7 +43,7 @@ public final class RequestCancelPost extends L2GameClientPacket {
 
 	@Override
 	public void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null || !Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS) {
 			return;
 		}
@@ -105,7 +105,7 @@ public final class RequestCancelPost extends L2GameClientPacket {
 		int weight = 0;
 		int slots = 0;
 
-		for (L2ItemInstance item : attachments.getItems()) {
+		for (Item item : attachments.getItems()) {
 			if (item == null) {
 				continue;
 			}
@@ -151,13 +151,13 @@ public final class RequestCancelPost extends L2GameClientPacket {
 
 		// Proceed to the transfer
 		InventoryUpdate playerIU = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
-		for (L2ItemInstance item : attachments.getItems()) {
+		for (Item item : attachments.getItems()) {
 			if (item == null) {
 				continue;
 			}
 
 			long count = item.getCount();
-			final L2ItemInstance newItem = attachments.transferItem(attachments.getName() + " from " + msg.getSenderName(),
+			final Item newItem = attachments.transferItem(attachments.getName() + " from " + msg.getSenderName(),
 					item.getObjectId(),
 					count,
 					activeChar.getInventory(),
@@ -194,7 +194,7 @@ public final class RequestCancelPost extends L2GameClientPacket {
 		su.addAttribute(StatusUpdate.CUR_LOAD, activeChar.getCurrentLoad());
 		activeChar.sendPacket(su);
 
-		final L2PcInstance receiver = L2World.getInstance().getPlayer(msg.getReceiverId());
+		final Player receiver = World.getInstance().getPlayer(msg.getReceiverId());
 		if (receiver != null) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANCELLED_MAIL);
 			sm.addCharName(activeChar);

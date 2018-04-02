@@ -22,13 +22,14 @@ import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.instancemanager.CursedWeaponsManager;
 import l2server.gameserver.model.CharSelectInfoPackage;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.actor.stat.PcStat;
 import l2server.gameserver.model.base.Experience;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.network.L2GameClient;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -43,6 +44,9 @@ import java.util.logging.Level;
  * @version $Revision: 1.8.2.4.2.6 $ $Date: 2005/04/06 16:13:46 $
  */
 public class CharSelectionInfo extends L2GameServerPacket {
+	private static Logger log = LoggerFactory.getLogger(CharSelectionInfo.class.getName());
+
+
 	// d SdSddddddddddffddddddddddddddddddddddddddddddddddddddddddddddffd
 	
 	private String loginName;
@@ -269,7 +273,7 @@ public class CharSelectionInfo extends L2GameServerPacket {
 			
 			return characterList.toArray(new CharSelectInfoPackage[characterList.size()]);
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not restore char info: " + e.getMessage(), e);
+			log.warn("Could not restore char info: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -297,7 +301,7 @@ public class CharSelectionInfo extends L2GameServerPacket {
 			charList.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not restore char subclass info: " + e.getMessage(), e);
+			log.warn("Could not restore char subclass info: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -307,7 +311,7 @@ public class CharSelectionInfo extends L2GameServerPacket {
 		int objectId = chardata.getInt("charId");
 		String name = chardata.getString("char_name");
 		
-		L2PcInstance loggedPlayer = L2World.getInstance().getPlayer(name);
+		Player loggedPlayer = World.getInstance().getPlayer(name);
 		if (loggedPlayer != null) {
 			loggedPlayer.logout();
 		}
@@ -400,7 +404,7 @@ public class CharSelectionInfo extends L2GameServerPacket {
 				result.close();
 				statement.close();
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "Could not restore augmentation info: " + e.getMessage(), e);
+				log.warn("Could not restore augmentation info: " + e.getMessage(), e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -429,7 +433,7 @@ public class CharSelectionInfo extends L2GameServerPacket {
 			rs.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not restore vitality points info: " + e.getMessage(), e);
+			log.warn("Could not restore vitality points info: " + e.getMessage(), e);
 		}
 		return charInfopackage;
 	}

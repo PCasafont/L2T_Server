@@ -19,8 +19,9 @@ import l2server.Config;
 import l2server.gameserver.events.instanced.EventPrize;
 import l2server.gameserver.events.instanced.EventPrize.EventPrizeCategory;
 import l2server.gameserver.events.instanced.EventPrize.EventPrizeItem;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
@@ -37,6 +38,9 @@ import java.util.Map;
  * @author Pere
  */
 public class EventPrizesTable {
+	private static Logger log = LoggerFactory.getLogger(EventPrizesTable.class.getName());
+
+
 	private final Map<String, List<EventPrize>> prizes = new HashMap<>();
 
 	private EventPrizesTable() {
@@ -78,10 +82,10 @@ public class EventPrizesTable {
 			}
 		}
 
-		Log.info("Event Prizes Table: loaded " + przCount + " prizes in " + prizes.size() + " categories.");
+		log.info("Event Prizes Table: loaded " + przCount + " prizes in " + prizes.size() + " categories.");
 	}
 
-	public void rewardPlayer(String prizeName, L2PcInstance player, float teamMultiplier, float performanceMultiplier) {
+	public void rewardPlayer(String prizeName, Player player, float teamMultiplier, float performanceMultiplier) {
 		List<EventPrize> list = prizes.get(prizeName);
 		if (list == null) {
 			return;

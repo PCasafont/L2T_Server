@@ -16,7 +16,8 @@
 package l2server.gameserver.scripting;
 
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.script.Compilable;
 import javax.script.CompiledScript;
@@ -32,6 +33,9 @@ import java.util.Map;
  * @author KenM
  */
 public class CompiledScriptCache implements Serializable {
+	private static Logger log = LoggerFactory.getLogger(CompiledScriptCache.class.getName());
+
+
 	private static final long serialVersionUID = 3L;
 	
 	private final Map<String, CompiledScriptHolder> compiledScripts = new HashMap<>();
@@ -44,12 +48,12 @@ public class CompiledScriptCache implements Serializable {
 		CompiledScriptHolder csh = compiledScripts.get(relativeName);
 		if (csh != null && csh.matches(file)) {
 			if (Config.DEBUG) {
-				Log.fine("Reusing cached compiled script: " + file);
+				log.debug("Reusing cached compiled script: " + file);
 			}
 			return csh.getCompiledScript();
 		} else {
 			if (Config.DEBUG) {
-				Log.info("Compiling script: " + file);
+				log.info("Compiling script: " + file);
 			}
 			Compilable eng = (Compilable) engine;
 			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));

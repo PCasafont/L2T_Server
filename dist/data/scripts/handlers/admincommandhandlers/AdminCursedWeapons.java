@@ -18,8 +18,8 @@ package handlers.admincommandhandlers;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.CursedWeaponsManager;
 import l2server.gameserver.model.CursedWeapon;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -45,7 +45,7 @@ public class AdminCursedWeapons implements IAdminCommandHandler {
 	private int itemId;
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 
 		CursedWeaponsManager cwm = CursedWeaponsManager.getInstance();
 		int id = 0;
@@ -59,7 +59,7 @@ public class AdminCursedWeapons implements IAdminCommandHandler {
 				for (CursedWeapon cw : cwm.getCursedWeapons()) {
 					activeChar.sendMessage("> " + cw.getName() + " (" + cw.getItemId() + ")");
 					if (cw.isActivated()) {
-						L2PcInstance pl = cw.getPlayer();
+						Player pl = cw.getPlayer();
 						activeChar.sendMessage("  Player holding: " + (pl == null ? "null" : pl.getName()));
 						activeChar.sendMessage("    Player karma: " + cw.getPlayerKarma());
 						activeChar.sendMessage("    Time Remaining: " + cw.getTimeLeft() / 60000 + " min.");
@@ -84,7 +84,7 @@ public class AdminCursedWeapons implements IAdminCommandHandler {
 					StringUtil.append(replyMSG, "<table width=270><tr><td>Name:</td><td>", cw.getName(), "</td></tr>");
 
 					if (cw.isActivated()) {
-						L2PcInstance pl = cw.getPlayer();
+						Player pl = cw.getPlayer();
 						StringUtil.append(replyMSG,
 								"<tr><td>Weilder:</td><td>",
 								pl == null ? "null" : pl.getName(),
@@ -164,9 +164,9 @@ public class AdminCursedWeapons implements IAdminCommandHandler {
 				} else if (cw.isActive()) {
 					activeChar.sendMessage("This cursed weapon is already active.");
 				} else {
-					L2Object target = activeChar.getTarget();
-					if (target instanceof L2PcInstance) {
-						((L2PcInstance) target).addItem("AdminCursedWeaponAdd", id, 1, target, true);
+					WorldObject target = activeChar.getTarget();
+					if (target instanceof Player) {
+						((Player) target).addItem("AdminCursedWeaponAdd", id, 1, target, true);
 					} else {
 						activeChar.addItem("AdminCursedWeaponAdd", id, 1, activeChar, true);
 					}

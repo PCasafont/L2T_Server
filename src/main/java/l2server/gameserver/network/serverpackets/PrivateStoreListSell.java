@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.TradeList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * This class ...
@@ -30,7 +30,7 @@ public class PrivateStoreListSell extends L2ItemListPacket {
 	private TradeList.TradeItem[] items;
 	
 	// player's private shop
-	public PrivateStoreListSell(L2PcInstance player, L2PcInstance storePlayer) {
+	public PrivateStoreListSell(Player player, Player storePlayer) {
 		objId = storePlayer.getObjectId();
 		playerAdena = player.getAdena();
 		items = storePlayer.getSellList().getItems();

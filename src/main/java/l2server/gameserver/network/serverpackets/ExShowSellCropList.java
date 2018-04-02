@@ -16,9 +16,9 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.instancemanager.CastleManorManager.CropProcure;
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Manor;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,17 +37,17 @@ import java.util.List;
 public class ExShowSellCropList extends L2GameServerPacket {
 	
 	private int manorId = 1;
-	private final HashMap<Integer, L2ItemInstance> cropsItems;
+	private final HashMap<Integer, Item> cropsItems;
 	private final HashMap<Integer, CropProcure> castleCrops;
 	
-	public ExShowSellCropList(L2PcInstance player, int manorId, List<CropProcure> crops) {
+	public ExShowSellCropList(Player player, int manorId, List<CropProcure> crops) {
 		this.manorId = manorId;
 		castleCrops = new HashMap<>();
 		cropsItems = new HashMap<>();
 		
 		ArrayList<Integer> allCrops = L2Manor.getInstance().getAllCrops();
 		for (int cropId : allCrops) {
-			L2ItemInstance item = player.getInventory().getItemByItemId(cropId);
+			Item item = player.getInventory().getItemByItemId(cropId);
 			if (item != null) {
 				cropsItems.put(cropId, item);
 			}
@@ -70,7 +70,7 @@ public class ExShowSellCropList extends L2GameServerPacket {
 		writeD(manorId); // manor id
 		writeD(cropsItems.size()); // size
 		
-		for (L2ItemInstance item : cropsItems.values()) {
+		for (Item item : cropsItems.values()) {
 			writeD(item.getObjectId()); // Object id
 			writeD(item.getItemId()); // crop id
 			writeD(L2Manor.getInstance().getSeedLevelByCrop(item.getItemId())); // seed level

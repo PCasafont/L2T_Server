@@ -17,26 +17,30 @@ package l2server.gameserver.util;
 
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 import java.util.logging.Level;
 
 public class NpcUtil {
-	public static L2Npc addSpawn(int npcId,
-	                             int x,
-	                             int y,
-	                             int z,
-	                             int heading,
-	                             boolean randomOffset,
-	                             long despawnDelay,
-	                             boolean isSummonSpawn,
-	                             int instanceId) {
-		L2Npc result = null;
+	private static Logger log = LoggerFactory.getLogger(NpcUtil.class.getName());
+
+
+	public static Npc addSpawn(int npcId,
+	                           int x,
+	                           int y,
+	                           int z,
+	                           int heading,
+	                           boolean randomOffset,
+	                           long despawnDelay,
+	                           boolean isSummonSpawn,
+	                           int instanceId) {
+		Npc result = null;
 		try {
-			L2NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
+			NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
 			if (template != null) {
 				// Sometimes, even if the quest script specifies some xyz (for example npc.getX() etc) by the time the code
 				// reaches here, xyz have become 0!  Also, a questdev might have purposely set xy to 0,0...however,
@@ -44,7 +48,7 @@ public class NpcUtil {
 				// with quest spawns!  For both of the above cases, we need a fail-safe spawn.  For this, we use the
 				// default spawn location, which is at the player's loc.
 				if (x == 0 && y == 0) {
-					Log.log(Level.SEVERE, "Failed to adjust bad coords for quest spawn! Spawn aborted!");
+					log.error("Failed to adjust bad coords for quest spawn! Spawn aborted!");
 					return null;
 				}
 				if (randomOffset) {
@@ -81,14 +85,14 @@ public class NpcUtil {
 				return result;
 			}
 		} catch (Exception e1) {
-			Log.warning("Could not spawn Npc " + npcId);
+			log.warn("Could not spawn Npc " + npcId);
 		}
 
 		return null;
 	}
 
 	public static L2Spawn newSpawn(int npcId, int x, int y, int z, int heading, int respawn, int instanceId) {
-		L2NpcTemplate spawnTemplate = NpcTable.getInstance().getTemplate(npcId);
+		NpcTemplate spawnTemplate = NpcTable.getInstance().getTemplate(npcId);
 		if (spawnTemplate == null) {
 			return null;
 		}

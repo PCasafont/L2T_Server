@@ -18,8 +18,9 @@ package l2server.gameserver.instancemanager;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.Npc;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -33,6 +34,9 @@ import java.util.logging.Level;
  * @author Pere
  */
 public class SpawnDataManager {
+	private static Logger log = LoggerFactory.getLogger(SpawnDataManager.class.getName());
+
+
 	public class DbSpawnData {
 		public long respawnTime;
 		public int currentHp;
@@ -70,7 +74,7 @@ public class SpawnDataManager {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error while loading database spawn data: " + e.getMessage(), e);
+			log.warn("Error while loading database spawn data: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -91,7 +95,7 @@ public class SpawnDataManager {
 	}
 	
 	public void updateDbSpawnData(L2Spawn spawn) {
-		L2Npc npc = spawn.getNpc();
+		Npc npc = spawn.getNpc();
 		if (spawn.getNextRespawn() == 0 && npc.getCurrentHp() == npc.getMaxHp() && npc.getCurrentMp() == npc.getMaxMp() ||
 				spawn.getX() == 0 && spawn.getY() == 0 && npc.getCurrentHp() == 0) {
 			return;
@@ -109,7 +113,7 @@ public class SpawnDataManager {
 			statement.executeUpdate();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "SQL error while updating spawn to database: " + e.getMessage(), e);
+			log.warn("SQL error while updating spawn to database: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

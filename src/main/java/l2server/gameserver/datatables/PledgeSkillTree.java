@@ -17,9 +17,10 @@ package l2server.gameserver.datatables;
 
 import l2server.Config;
 import l2server.gameserver.model.L2PledgeSkillLearn;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -34,6 +35,9 @@ import java.util.Map;
  * @author JIV
  */
 public class PledgeSkillTree {
+	private static Logger log = LoggerFactory.getLogger(PledgeSkillTree.class.getName());
+
+
 	private Map<Long, L2PledgeSkillLearn> skillTree = new HashMap<>();
 
 	public PledgeSkillTree() {
@@ -57,32 +61,32 @@ public class PledgeSkillTree {
 					int reputation;
 
 					if (!d.hasAttribute("id")) {
-						Log.severe("[PledgeSkillTree] Missing id, skipping");
+						log.error("[PledgeSkillTree] Missing id, skipping");
 						continue;
 					}
 					skillId = d.getInt("id");
 
 					if (!d.hasAttribute("level")) {
-						Log.severe("[PledgeSkillTree] Missing level, skipping");
+						log.error("[PledgeSkillTree] Missing level, skipping");
 						continue;
 					}
 					skillLvl = d.getInt("level");
 
 					if (!d.hasAttribute("reputation")) {
-						Log.severe("[PledgeSkillTree] Missing reputation, skipping");
+						log.error("[PledgeSkillTree] Missing reputation, skipping");
 						continue;
 					}
 					reputation = d.getInt("reputation");
 
 					if (!d.hasAttribute("clanLevel")) {
-						Log.severe("[PledgeSkillTree] Missing clan_level, skipping");
+						log.error("[PledgeSkillTree] Missing clan_level, skipping");
 						continue;
 					}
 					clanLvl = d.getInt("clanLevel");
 
-					L2Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
+					Skill skill = SkillTable.getInstance().getInfo(skillId, skillLvl);
 					if (skill == null) {
-						Log.severe("[PledgeSkillTree] Skill " + skillId + " not exist, skipping");
+						log.error("[PledgeSkillTree] Skill " + skillId + " not exist, skipping");
 						continue;
 					}
 
@@ -90,21 +94,21 @@ public class PledgeSkillTree {
 				}
 			}
 		}
-		Log.info(getClass().getSimpleName() + ": Loaded " + skillTree.size() + " Pledge Skills");
+		log.info(getClass().getSimpleName() + ": Loaded " + skillTree.size() + " Pledge Skills");
 	}
 
-	public L2PledgeSkillLearn[] getAvailableSkills(L2PcInstance cha) {
+	public L2PledgeSkillLearn[] getAvailableSkills(Player cha) {
 		List<L2PledgeSkillLearn> result = new ArrayList<>();
 		Map<Long, L2PledgeSkillLearn> skills = skillTree;
 
 		if (skills == null) {
 			// the skillTree for this class is undefined, so we give an empty list
 
-			Log.warning("No clan skills defined!");
+			log.warn("No clan skills defined!");
 			return new L2PledgeSkillLearn[]{};
 		}
 
-		L2Skill[] oldSkills = cha.getClan().getAllSkills();
+		Skill[] oldSkills = cha.getClan().getAllSkills();
 
 		for (L2PledgeSkillLearn temp : skills.values()) {
 			if (temp.getBaseLevel() <= cha.getClan().getLevel()) {

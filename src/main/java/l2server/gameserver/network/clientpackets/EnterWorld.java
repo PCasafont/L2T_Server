@@ -27,8 +27,8 @@ import l2server.gameserver.datatables.*;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.instancemanager.*;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.actor.stat.PcStat;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.entity.*;
@@ -37,9 +37,10 @@ import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -55,6 +56,9 @@ import java.util.logging.Level;
  * <p>
  */
 public class EnterWorld extends L2GameClientPacket {
+	private static Logger log = LoggerFactory.getLogger(EnterWorld.class.getName());
+
+
 
 	private int[][] tracert = new int[5][4];
 
@@ -81,10 +85,10 @@ public class EnterWorld extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 
 		if (activeChar == null) {
-			Log.warning("EnterWorld failed! activeChar returned 'null'.");
+			log.warn("EnterWorld failed! activeChar returned 'null'.");
 			getClient().closeNow();
 			return;
 		}
@@ -106,7 +110,7 @@ public class EnterWorld extends L2GameClientPacket {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not save client's HWId: " + e.getMessage(), e);
+			log.warn("Could not save client's HWId: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -123,9 +127,9 @@ public class EnterWorld extends L2GameClientPacket {
 			}
 		}
 
-		if (L2World.getInstance().findObject(activeChar.getObjectId()) != null) {
+		if (World.getInstance().findObject(activeChar.getObjectId()) != null) {
 			if (Config.DEBUG) {
-				Log.warning("User already exists in Object ID map! User " + activeChar.getName() + " is a character clone.");
+				log.warn("User already exists in Object ID map! User " + activeChar.getName() + " is a character clone.");
 			}
 		}
 
@@ -236,7 +240,7 @@ public class EnterWorld extends L2GameClientPacket {
 			showClanNotice = activeChar.getClan().isNoticeEnabled();
 
 			if (activeChar.getSkillLevelHash(19009) >= 1) {
-				L2Skill clanAdvent = SkillTable.getInstance().getInfo(19009, 1);
+				Skill clanAdvent = SkillTable.getInstance().getInfo(19009, 1);
 				if (activeChar.isClanLeader()) {
 					for (L2ClanMember member : activeChar.getClan().getMembers()) {
 						if (member.getPlayerInstance() != null &&
@@ -333,7 +337,7 @@ public class EnterWorld extends L2GameClientPacket {
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.FRIEND_S1_HAS_LOGGED_IN);
 		sm.addString(activeChar.getName());
 		for (int id : activeChar.getFriendList()) {
-			L2Object obj = L2World.getInstance().findObject(id);
+			WorldObject obj = World.getInstance().findObject(id);
 			if (obj != null) {
 				obj.sendPacket(sm);
 			}
@@ -432,7 +436,7 @@ public class EnterWorld extends L2GameClientPacket {
 
 		sendPacket(new ExUnreadMailCount(MailManager.getInstance().getUnreadInboxSize(activeChar.getObjectId())));
 
-		for (L2ItemInstance i : activeChar.getInventory().getItems()) {
+		for (Item i : activeChar.getInventory().getItems()) {
 			if (i.isTimeLimitedItem()) {
 				i.scheduleLifeTimeTask();
 			}
@@ -441,7 +445,7 @@ public class EnterWorld extends L2GameClientPacket {
 			}
 		}
 
-		for (L2ItemInstance i : activeChar.getWarehouse().getItems()) {
+		for (Item i : activeChar.getWarehouse().getItems()) {
 			if (i.isTimeLimitedItem()) {
 				i.scheduleLifeTimeTask();
 			}
@@ -467,7 +471,7 @@ public class EnterWorld extends L2GameClientPacket {
 		// Attacker or spectator logging in to a siege zone. Actually should be checked for inside castle only?
 		if (!activeChar.isGM()
 				// inside siege zone
-				&& activeChar.isInsideZone(L2Character.ZONE_SIEGE)
+				&& activeChar.isInsideZone(Creature.ZONE_SIEGE)
 				// but non-participant or attacker
 				&& (!activeChar.isInSiege() || activeChar.getSiegeState() < 2)) {
 			activeChar.teleToLocation(MapRegionTable.TeleportWhereType.Town);
@@ -520,9 +524,9 @@ public class EnterWorld extends L2GameClientPacket {
 
 		if (activeChar.getFriendList().size() > 0) {
 			for (int objId : activeChar.getFriendList()) {
-				L2PcInstance friend;
-				if (L2World.getInstance().getPlayer(objId) != null) {
-					friend = L2World.getInstance().getPlayer(objId);
+				Player friend;
+				if (World.getInstance().getPlayer(objId) != null) {
+					friend = World.getInstance().getPlayer(objId);
 					friend.sendPacket(new FriendPacket(true, activeChar.getObjectId(), friend));
 					friend.sendPacket(new FriendList(friend));
 				}
@@ -572,7 +576,7 @@ public class EnterWorld extends L2GameClientPacket {
 		if (activeChar.isMentor()) {
 			activeChar.giveMentorBuff();
 		} else if (activeChar.isMentee()) {
-			L2PcInstance mentor = L2World.getInstance().getPlayer(activeChar.getMentorId());
+			Player mentor = World.getInstance().getPlayer(activeChar.getMentorId());
 			if (mentor != null && mentor.isOnline()) {
 				mentor.giveMentorBuff();
 			}
@@ -629,12 +633,12 @@ public class EnterWorld extends L2GameClientPacket {
 					}
 
 					getClient().setDetached(true);
-					/*Log.info("Player " + activeChar.getName() + " tried to log in but he/she was banned.");
-					Log.info("Account: " + activeChar.getAccountName());
-					Log.info("HWID: " + activeChar.getHWID());
-					Log.info("Ban author: " + author);
-					Log.info("Ban reason: " + reason);
-					Log.info(expiration);*/
+					/*log.info("Player " + activeChar.getName() + " tried to log in but he/she was banned.");
+					log.info("Account: " + activeChar.getAccountName());
+					log.info("HWID: " + activeChar.getHWID());
+					log.info("Ban author: " + author);
+					log.info("Ban reason: " + reason);
+					log.info(expiration);*/
 				} else {
 					PreparedStatement statement2 = con.prepareStatement("DELETE FROM ban_timers WHERE timer < ? AND timer > 0");
 					statement2.setInt(1, (int) (System.currentTimeMillis() / 1000));
@@ -645,7 +649,7 @@ public class EnterWorld extends L2GameClientPacket {
 
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not check bans: " + e.getMessage(), e);
+			log.warn("Could not check bans: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -666,7 +670,7 @@ public class EnterWorld extends L2GameClientPacket {
 	/**
 	 * @param cha
 	 */
-	private void engage(L2PcInstance cha) {
+	private void engage(Player cha) {
 		int chaid = cha.getObjectId();
 
 		for (Couple cl : CoupleManager.getInstance().getCouples()) {
@@ -690,12 +694,12 @@ public class EnterWorld extends L2GameClientPacket {
 	 * @param cha
 	 * @param partnerId
 	 */
-	private void notifyPartner(L2PcInstance cha, int partnerId) {
+	private void notifyPartner(Player cha, int partnerId) {
 		if (cha.getPartnerId() != 0) {
 			int objId = cha.getPartnerId();
 
 			try {
-				L2PcInstance partner = L2World.getInstance().getPlayer(objId);
+				Player partner = World.getInstance().getPlayer(objId);
 
 				if (partner != null) {
 					partner.sendMessage("Your Partner has logged in.");
@@ -703,8 +707,8 @@ public class EnterWorld extends L2GameClientPacket {
 
 				partner = null;
 			} catch (ClassCastException cce) {
-				Log.warning(
-						"Wedding Error: ID " + objId + " is now owned by a(n) " + L2World.getInstance().findObject(objId).getClass().getSimpleName());
+				log.warn(
+						"Wedding Error: ID " + objId + " is now owned by a(n) " + World.getInstance().findObject(objId).getClass().getSimpleName());
 			}
 		}
 	}
@@ -712,7 +716,7 @@ public class EnterWorld extends L2GameClientPacket {
 	/**
 	 * @param activeChar
 	 */
-	private void notifyClanMembers(L2PcInstance activeChar) {
+	private void notifyClanMembers(Player activeChar) {
 		if (activeChar == null) {
 			return;
 		}
@@ -734,9 +738,9 @@ public class EnterWorld extends L2GameClientPacket {
 	/**
 	 * @param activeChar
 	 */
-	private void notifySponsorOrApprentice(L2PcInstance activeChar) {
+	private void notifySponsorOrApprentice(Player activeChar) {
 		if (activeChar.getSponsor() != 0) {
-			L2PcInstance sponsor = L2World.getInstance().getPlayer(activeChar.getSponsor());
+			Player sponsor = World.getInstance().getPlayer(activeChar.getSponsor());
 
 			if (sponsor != null) {
 				SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOUR_APPRENTICE_S1_HAS_LOGGED_IN);
@@ -744,7 +748,7 @@ public class EnterWorld extends L2GameClientPacket {
 				sponsor.sendPacket(msg);
 			}
 		} else if (activeChar.getApprentice() != 0) {
-			L2PcInstance apprentice = L2World.getInstance().getPlayer(activeChar.getApprentice());
+			Player apprentice = World.getInstance().getPlayer(activeChar.getApprentice());
 
 			if (apprentice != null) {
 				SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOUR_SPONSOR_C1_HAS_LOGGED_IN);
@@ -754,7 +758,7 @@ public class EnterWorld extends L2GameClientPacket {
 		}
 	}
 
-	private void loadTutorial(L2PcInstance player) {
+	private void loadTutorial(Player player) {
 		QuestState qs = player.getQuestState("Q255_Tutorial");
 
 		if (qs != null) {
@@ -767,7 +771,7 @@ public class EnterWorld extends L2GameClientPacket {
 		return false;
 	}
 
-	private void checkDonations(L2PcInstance player) {
+	private void checkDonations(Player player) {
 		if (player == null) {
 			return;
 		}
@@ -780,7 +784,7 @@ public class EnterWorld extends L2GameClientPacket {
 			ResultSet rset = statement.executeQuery();
 
 			while (rset.next()) {
-				player = L2World.getInstance().getPlayer(rset.getString("user_name"));
+				player = World.getInstance().getPlayer(rset.getString("user_name"));
 				if (player == null) {
 					continue;
 				}
@@ -791,7 +795,7 @@ public class EnterWorld extends L2GameClientPacket {
 				if (itemId != 4037 && itemId != 4356) //Coin of Luck, Gold Einhasad
 				{
 					String itemName = String.valueOf(itemId);
-					L2Item temp = ItemTable.getInstance().getTemplate(itemId);
+					ItemTemplate temp = ItemTable.getInstance().getTemplate(itemId);
 					if (temp != null) {
 						itemName = temp.getName();
 					}
@@ -834,7 +838,7 @@ public class EnterWorld extends L2GameClientPacket {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.warning("Exception checking for items to add: " + e.getMessage());
+			log.warn("Exception checking for items to add: " + e.getMessage());
 			e.printStackTrace();
 		} finally {
 			L2DatabaseFactory.close(con);

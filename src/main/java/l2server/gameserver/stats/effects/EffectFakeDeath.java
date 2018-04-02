@@ -15,43 +15,44 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2EffectType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.EffectType;
 
 /**
  * @author mkizub
  */
 public class EffectFakeDeath extends L2Effect {
-	public EffectFakeDeath(Env env, L2EffectTemplate template) {
+	public EffectFakeDeath(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 * @see Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType() {
-		return L2EffectType.FAKE_DEATH;
+	public EffectType getEffectType() {
+		return EffectType.FAKE_DEATH;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		if (getEffected() instanceof L2PcInstance && !((L2PcInstance) getEffected()).isCombatFlagEquipped()) {
+		if (getEffected() instanceof Player && !((Player) getEffected()).isCombatFlagEquipped()) {
 			getEffected().startFakeDeath();
 		}
 		return true;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {
@@ -59,11 +60,11 @@ public class EffectFakeDeath extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {
-		if (getEffected().isDead() || ((L2PcInstance) getEffected()).isCombatFlagEquipped()) {
+		if (getEffected().isDead() || ((Player) getEffected()).isCombatFlagEquipped()) {
 			return false;
 		}
 

@@ -16,7 +16,7 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.PrivateStoreMsgBuy;
 import l2server.gameserver.util.Util;
 
@@ -39,7 +39,7 @@ public final class SetPrivateStoreMsgBuy extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		final L2PcInstance player = getClient().getActiveChar();
+		final Player player = getClient().getActiveChar();
 		if (player == null || player.getBuyList() == null) {
 			return;
 		}

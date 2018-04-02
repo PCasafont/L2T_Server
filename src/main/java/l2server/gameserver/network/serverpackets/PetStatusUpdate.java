@@ -15,9 +15,9 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 
 /**
  * This class ...
@@ -26,20 +26,20 @@ import l2server.gameserver.model.actor.instance.L2SummonInstance;
  */
 public class PetStatusUpdate extends L2GameServerPacket {
 
-	private L2Summon summon;
+	private Summon summon;
 	private int maxHp, maxMp;
 	private int maxFed, curFed;
 
-	public PetStatusUpdate(L2Summon summon) {
+	public PetStatusUpdate(Summon summon) {
 		this.summon = summon;
 		maxHp = summon.getMaxVisibleHp();
 		maxMp = summon.getMaxMp();
-		if (summon instanceof L2PetInstance) {
-			L2PetInstance pet = (L2PetInstance) summon;
+		if (summon instanceof PetInstance) {
+			PetInstance pet = (PetInstance) summon;
 			curFed = pet.getCurrentFed(); // how fed it is
 			maxFed = pet.getMaxFed(); //max fed it can be
-		} else if (summon instanceof L2SummonInstance) {
-			L2SummonInstance sum = (L2SummonInstance) summon;
+		} else if (summon instanceof SummonInstance) {
+			SummonInstance sum = (SummonInstance) summon;
 			curFed = sum.getTimeRemaining();
 			maxFed = sum.getTotalLifeTime();
 		}

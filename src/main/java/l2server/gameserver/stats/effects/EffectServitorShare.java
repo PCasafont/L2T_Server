@@ -16,30 +16,30 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 public class EffectServitorShare extends L2Effect {
-	public EffectServitorShare(Env env, L2EffectTemplate template) {
+	public EffectServitorShare(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.BUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.BUFF;
 	}
 	
 	@Override
 	public boolean onStart() {
-		if (!(getEffected() instanceof L2PcInstance)) {
+		if (!(getEffected() instanceof Player)) {
 			return false;
 		}
 		
-		L2PcInstance player = (L2PcInstance) getEffected();
-		for (L2Summon summon : player.getSummons()) {
+		Player player = (Player) getEffected();
+		for (Summon summon : player.getSummons()) {
 			summon.updateAndBroadcastStatus(1);
 		}
 		
@@ -53,13 +53,13 @@ public class EffectServitorShare extends L2Effect {
 	
 	@Override
 	public void onExit() {
-		if (!(getEffected() instanceof L2PcInstance)) {
+		if (!(getEffected() instanceof Player)) {
 			return;
 		}
 		
-		L2PcInstance player = (L2PcInstance) getEffected();
+		Player player = (Player) getEffected();
 		if (player.getSummons().size() != 0) {
-			for (L2Summon summon : player.getSummons()) {
+			for (Summon summon : player.getSummons()) {
 				summon.updateAndBroadcastStatus(1);
 			}
 		}

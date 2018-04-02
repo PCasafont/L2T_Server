@@ -19,8 +19,8 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.gameserver.network.serverpackets.SocialAction;
@@ -45,7 +45,7 @@ public class DrChaos extends Quest {
 		IsGolemSpawned = false;
 	}
 
-	public L2Npc findTemplate(int npcId) {
+	public Npc findTemplate(int npcId) {
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawnTable()) {
 			if (spawn != null && spawn.getNpcId() == npcId) {
 				return spawn.getNpc();
@@ -55,9 +55,9 @@ public class DrChaos extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.equalsIgnoreCase("1")) {
-			L2Npc machine_instance = findTemplate(STRANGE_MACHINE);
+			Npc machine_instance = findTemplate(STRANGE_MACHINE);
 			if (machine_instance != null) {
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, machine_instance);
 				machine_instance.broadcastPacket(new SpecialCamera(machine_instance.getObjectId(), 1, -200, 15, 10000, 20000, 0, 0, 1, 0));
@@ -79,7 +79,7 @@ public class DrChaos extends Quest {
 			player.teleToLocation(94832, -112624, -3304);
 			npc.teleToLocation(-113091, -243942, -15536);
 			if (!IsGolemSpawned) {
-				L2Npc golem = addSpawn(CHAOS_GOLEM, 94640, -112496, -3336, 0, false, 0);
+				Npc golem = addSpawn(CHAOS_GOLEM, 94640, -112496, -3336, 0, false, 0);
 				IsGolemSpawned = true;
 				startQuestTimer("6", 1000, golem, player);
 				player.sendPacket(new PlaySound(1, "Rm03_A", 0, 0, 0, 0, 0));
@@ -91,7 +91,7 @@ public class DrChaos extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		if (npc.getNpcId() == DOCTER_CHAOS) {
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(96323, -110914, -3328, 0));
 			this.startQuestTimer("1", 3000, npc, player);

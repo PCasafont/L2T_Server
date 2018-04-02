@@ -18,10 +18,10 @@ package ai.individual;
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.NpcTable;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.HashSet;
 import java.util.concurrent.ConcurrentHashMap;
@@ -36,7 +36,7 @@ public class DarkWaterDragon extends L2AttackableAIScript {
 	private static HashSet<Integer> secondSpawn = new HashSet<Integer>();
 	//Used to track if second Shades were already spawned
 	private static HashSet<Integer> myTrackingSet = new HashSet<Integer>(); //Used to track instances of npcs
-	private static ConcurrentHashMap<Integer, L2PcInstance> idmap = new ConcurrentHashMap<Integer, L2PcInstance>();
+	private static ConcurrentHashMap<Integer, Player> idmap = new ConcurrentHashMap<Integer, Player>();
 	//Used to track instances of npcs
 
 	public DarkWaterDragon(int id, String name, String descr) {
@@ -48,7 +48,7 @@ public class DarkWaterDragon extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (npc != null) {
 			if (event.equalsIgnoreCase("first_spawn")) //timer to start timer "1"
 			{
@@ -86,7 +86,7 @@ public class DarkWaterDragon extends L2AttackableAIScript {
 				player = idmap.remove(npc.getObjectId());
 				if (player != null) //You never know ...
 				{
-					((L2Attackable) npc).doItemDrop(NpcTable.getInstance().getTemplate(18485), player);
+					((Attackable) npc).doItemDrop(NpcTable.getInstance().getTemplate(18485), player);
 				}
 
 				npc.deleteMe();
@@ -112,7 +112,7 @@ public class DarkWaterDragon extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		int npcId = npc.getNpcId();
 		int npcObjId = npc.getObjectId();
 		if (npcId == DRAGON) {
@@ -120,7 +120,7 @@ public class DarkWaterDragon extends L2AttackableAIScript {
 			{
 				myTrackingSet.add(npcObjId);
 				//Spawn first 5 shades on first attack on Dark Water Dragon
-				L2Character originalAttacker = isPet ? attacker.getPet() : attacker;
+				Creature originalAttacker = isPet ? attacker.getPet() : attacker;
 				spawnShade(originalAttacker, SHADE1, npc.getX() + 100, npc.getY() + 100, npc.getZ());
 				spawnShade(originalAttacker, SHADE2, npc.getX() + 100, npc.getY() - 100, npc.getZ());
 				spawnShade(originalAttacker, SHADE1, npc.getX() - 100, npc.getY() + 100, npc.getZ());
@@ -129,7 +129,7 @@ public class DarkWaterDragon extends L2AttackableAIScript {
 			} else if (npc.getCurrentHp() < npc.getMaxHp() / 2.0 && !secondSpawn.contains(npcObjId)) {
 				secondSpawn.add(npcObjId);
 				//Spawn second 5 shades on half hp of on Dark Water Dragon
-				L2Character originalAttacker = isPet ? attacker.getPet() : attacker;
+				Creature originalAttacker = isPet ? attacker.getPet() : attacker;
 				spawnShade(originalAttacker, SHADE2, npc.getX() + 100, npc.getY() + 100, npc.getZ());
 				spawnShade(originalAttacker, SHADE1, npc.getX() + 100, npc.getY() - 100, npc.getZ());
 				spawnShade(originalAttacker, SHADE2, npc.getX() - 100, npc.getY() + 100, npc.getZ());
@@ -141,13 +141,13 @@ public class DarkWaterDragon extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		int npcId = npc.getNpcId();
 		int npcObjId = npc.getObjectId();
 		if (npcId == DRAGON) {
 			myTrackingSet.remove(npcObjId);
 			secondSpawn.remove(npcObjId);
-			L2Attackable faf = (L2Attackable) this.addSpawn(FAFURION,
+			Attackable faf = (Attackable) this.addSpawn(FAFURION,
 					npc.getX(),
 					npc.getY(),
 					npc.getZ(),
@@ -173,7 +173,7 @@ public class DarkWaterDragon extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc) {
+	public String onSpawn(Npc npc) {
 		int npcId = npc.getNpcId();
 		int npcObjId = npc.getObjectId();
 		if (npcId == FAFURION) {
@@ -197,10 +197,10 @@ public class DarkWaterDragon extends L2AttackableAIScript {
 		return super.onSpawn(npc);
 	}
 
-	public void spawnShade(L2Character attacker, int npcId, int x, int y, int z) {
-		final L2Npc shade = addSpawn(npcId, x, y, z, 0, false, 0);
+	public void spawnShade(Creature attacker, int npcId, int x, int y, int z) {
+		final Npc shade = addSpawn(npcId, x, y, z, 0, false, 0);
 		shade.setRunning();
-		((L2Attackable) shade).addDamageHate(attacker, 0, 999);
+		((Attackable) shade).addDamageHate(attacker, 0, 999);
 		shade.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
 	}
 

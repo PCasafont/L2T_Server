@@ -17,28 +17,25 @@ package handlers.admincommandhandlers;
 
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.taskmanager.DecayTaskManager;
 
-import java.util.logging.Logger;
-
 /**
  * This class handles following admin commands:
- * - res = resurrects target L2Character
+ * - res = resurrects target Creature
  *
  * @version $Revision: 1.2.4.5 $ $Date: 2005/04/11 10:06:06 $
  */
 public class AdminRes implements IAdminCommandHandler {
-	private static Logger log = Logger.getLogger(AdminRes.class.getName());
 	private static final String[] ADMIN_COMMANDS = {"admin_res", "admin_res_monster"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.startsWith("admin_res ")) {
 			handleRes(activeChar, command.split(" ")[1]);
 		} else if (command.equals("admin_res")) {
@@ -57,16 +54,16 @@ public class AdminRes implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	private void handleRes(L2PcInstance activeChar) {
+	private void handleRes(Player activeChar) {
 		handleRes(activeChar, null);
 	}
 
-	private void handleRes(L2PcInstance activeChar, String resParam) {
-		L2Object obj = activeChar.getTarget();
+	private void handleRes(Player activeChar, String resParam) {
+		WorldObject obj = activeChar.getTarget();
 
 		if (resParam != null) {
 			// Check if a player name was specified as a param.
-			L2PcInstance plyr = L2World.getInstance().getPlayer(resParam);
+			Player plyr = World.getInstance().getPlayer(resParam);
 
 			if (plyr != null) {
 				obj = plyr;
@@ -75,7 +72,7 @@ public class AdminRes implements IAdminCommandHandler {
 				try {
 					int radius = Integer.parseInt(resParam);
 
-					for (L2PcInstance knownPlayer : activeChar.getKnownList().getKnownPlayersInRadius(radius)) {
+					for (Player knownPlayer : activeChar.getKnownList().getKnownPlayersInRadius(radius)) {
 						doResurrect(knownPlayer);
 					}
 
@@ -92,19 +89,19 @@ public class AdminRes implements IAdminCommandHandler {
 			obj = activeChar;
 		}
 
-		doResurrect((L2Character) obj);
+		doResurrect((Creature) obj);
 
 		if (Config.DEBUG) {
-			log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") resurrected character " + obj.getObjectId());
+			log.debug("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") resurrected character " + obj.getObjectId());
 		}
 	}
 
-	private void handleNonPlayerRes(L2PcInstance activeChar) {
+	private void handleNonPlayerRes(Player activeChar) {
 		handleNonPlayerRes(activeChar, "");
 	}
 
-	private void handleNonPlayerRes(L2PcInstance activeChar, String radiusStr) {
-		L2Object obj = activeChar.getTarget();
+	private void handleNonPlayerRes(Player activeChar, String radiusStr) {
+		WorldObject obj = activeChar.getTarget();
 
 		try {
 			int radius = 0;
@@ -112,8 +109,8 @@ public class AdminRes implements IAdminCommandHandler {
 			if (!radiusStr.isEmpty()) {
 				radius = Integer.parseInt(radiusStr);
 
-				for (L2Character knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius)) {
-					if (!(knownChar instanceof L2PcInstance)) {
+				for (Creature knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius)) {
+					if (!(knownChar instanceof Player)) {
 						doResurrect(knownChar);
 					}
 				}
@@ -125,22 +122,22 @@ public class AdminRes implements IAdminCommandHandler {
 			return;
 		}
 
-		if (obj instanceof L2PcInstance) {
+		if (obj instanceof Player) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
 		}
 
-		doResurrect((L2Character) obj);
+		doResurrect((Creature) obj);
 	}
 
-	private void doResurrect(L2Character targetChar) {
+	private void doResurrect(Creature targetChar) {
 		if (!targetChar.isDead()) {
 			return;
 		}
 
 		// If the target is a player, then restore the XP lost on death.
-		if (targetChar instanceof L2PcInstance) {
-			((L2PcInstance) targetChar).restoreExp(100.0);
+		if (targetChar instanceof Player) {
+			((Player) targetChar).restoreExp(100.0);
 		}
 
 		// If the target is an NPC, then abort it's auto decay and respawn.

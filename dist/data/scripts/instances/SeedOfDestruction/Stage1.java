@@ -22,14 +22,14 @@ import l2server.gameserver.instancemanager.GraciaSeedsManager;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Trap;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Trap;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.network.SystemMessageId;
@@ -37,7 +37,8 @@ import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -60,8 +61,11 @@ import java.util.logging.Level;
  * @author Gigiikun
  */
 public class Stage1 extends Quest {
+	private static Logger log = LoggerFactory.getLogger(Stage1.class.getName());
+
+
 	private class SOD1World extends InstanceWorld {
-		public Map<L2Npc, Boolean> npcList = new HashMap<L2Npc, Boolean>();
+		public Map<Npc, Boolean> npcList = new HashMap<Npc, Boolean>();
 		public int deviceSpawnedMobCount = 0;
 		public Lock lock = new ReentrantLock();
 
@@ -146,7 +150,7 @@ public class Stage1 extends Quest {
 		try {
 			File file = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "scripts/instances/SeedOfDestruction/data.xml");
 			if (!file.exists()) {
-				Log.severe("[Seed of Destruction] Missing data.xml. The quest wont work without it!");
+				log.error("[Seed of Destruction] Missing data.xml. The quest wont work without it!");
 				return;
 			}
 
@@ -156,13 +160,13 @@ public class Stage1 extends Quest {
 					for (XmlNode d : n.getChildren()) {
 						if (d.getName().equalsIgnoreCase("spawn")) {
 							if (!d.hasAttribute("npcId")) {
-								Log.severe("[Seed of Destruction] Missing npcId in npc List, skipping");
+								log.error("[Seed of Destruction] Missing npcId in npc List, skipping");
 								continue;
 							}
 							int npcId = d.getInt("npcId");
 
 							if (!d.hasAttribute("flag")) {
-								Log.severe("[Seed of Destruction] Missing flag in npc List npcId: " + npcId + ", skipping");
+								log.error("[Seed of Destruction] Missing flag in npc List npcId: " + npcId + ", skipping");
 								continue;
 							}
 							int flag = d.getInt("flag");
@@ -236,19 +240,19 @@ public class Stage1 extends Quest {
 					for (XmlNode d : n.getChildren()) {
 						if (d.getName().equalsIgnoreCase("zone")) {
 							if (!d.hasAttribute("id")) {
-								Log.severe("[Seed of Destruction] Missing id in spawnZones List, skipping");
+								log.error("[Seed of Destruction] Missing id in spawnZones List, skipping");
 								continue;
 							}
 							int id = d.getInt("id");
 
 							if (!d.hasAttribute("minZ")) {
-								Log.severe("[Seed of Destruction] Missing minZ in spawnZones List id: " + id + ", skipping");
+								log.error("[Seed of Destruction] Missing minZ in spawnZones List id: " + id + ", skipping");
 								continue;
 							}
 							int minz = d.getInt("minZ");
 
 							if (!d.hasAttribute("maxZ")) {
-								Log.severe("[Seed of Destruction] Missing maxZ in spawnZones List id: " + id + ", skipping");
+								log.error("[Seed of Destruction] Missing maxZ in spawnZones List id: " + id + ", skipping");
 								continue;
 							}
 							int maxz = d.getInt("maxZ");
@@ -279,16 +283,16 @@ public class Stage1 extends Quest {
 				}
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "[Seed of Destruction] Could not parse data.xml file: " + e.getMessage(), e);
+			log.warn("[Seed of Destruction] Could not parse data.xml file: " + e.getMessage(), e);
 		}
 		if (Config.DEBUG) {
-			Log.info("[Seed of Destruction] Loaded " + spawnCount + " spawns data.");
-			Log.info("[Seed of Destruction] Loaded " + spawnZoneList.size() + " spawn zones data.");
+			log.info("[Seed of Destruction] Loaded " + spawnCount + " spawns data.");
+			log.info("[Seed of Destruction] Loaded " + spawnZoneList.size() + " spawn zones data.");
 		}
 	}
 
 	protected void openDoor(int doorId, int instanceId) {
-		for (L2DoorInstance door : InstanceManager.getInstance().getInstance(instanceId).getDoors()) {
+		for (DoorInstance door : InstanceManager.getInstance().getInstance(instanceId).getDoors()) {
 			if (door.getDoorId() == doorId) {
 				door.openMe();
 			}
@@ -296,7 +300,7 @@ public class Stage1 extends Quest {
 	}
 
 	protected void closeDoor(int doorId, int instanceId) {
-		for (L2DoorInstance door : InstanceManager.getInstance().getInstance(instanceId).getDoors()) {
+		for (DoorInstance door : InstanceManager.getInstance().getInstance(instanceId).getDoors()) {
 			if (door.getDoorId() == doorId) {
 				if (door.getOpen()) {
 					door.closeMe();
@@ -305,7 +309,7 @@ public class Stage1 extends Quest {
 		}
 	}
 
-	private boolean checkConditions(L2PcInstance player) {
+	private boolean checkConditions(Player player) {
 		final L2Party party = player.getParty();
 		if (party == null) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_IN_PARTY_CANT_ENTER));
@@ -322,7 +326,7 @@ public class Stage1 extends Quest {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_EXCEEDED_THE_LIMIT_CANT_ENTER));
 			return false;
 		}
-		for (L2PcInstance partyMember : channel.getMembers()) {
+		for (Player partyMember : channel.getMembers()) {
 			if (partyMember.getLevel() < 75) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_LEVEL_REQUIREMENT_NOT_SUFFICIENT);
 				sm.addPcName(partyMember);
@@ -346,12 +350,12 @@ public class Stage1 extends Quest {
 		return true;
 	}
 
-	private void teleportPlayer(L2PcInstance player, int[] coords, int instanceId) {
+	private void teleportPlayer(Player player, int[] coords, int instanceId) {
 		player.setInstanceId(instanceId);
 		player.teleToLocation(coords[0], coords[1], coords[2]);
 	}
 
-	protected int enterInstance(L2PcInstance player, String template, int[] coords) {
+	protected int enterInstance(Player player, String template, int[] coords) {
 		int instanceId = 0;
 		//check for existing instances for this player
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
@@ -375,18 +379,18 @@ public class Stage1 extends Quest {
 			world.status = 0;
 			InstanceManager.getInstance().addWorld(world);
 			spawnState((SOD1World) world);
-			for (L2DoorInstance door : InstanceManager.getInstance().getInstance(instanceId).getDoors()) {
+			for (DoorInstance door : InstanceManager.getInstance().getInstance(instanceId).getDoors()) {
 				if (Util.contains(ATTACKABLE_DOORS, door.getDoorId())) {
 					door.setIsAttackableDoor(true);
 				}
 			}
-			Log.info("Seed of Destruction started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
+			log.info("Seed of Destruction started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
 			// teleport players
 			if (player.getParty() == null || player.getParty().getCommandChannel() == null) {
 				teleportPlayer(player, coords, instanceId);
 				world.allowed.add(player.getObjectId());
 			} else {
-				for (L2PcInstance channelMember : player.getParty().getCommandChannel().getMembers()) {
+				for (Player channelMember : player.getParty().getCommandChannel().getMembers()) {
 					teleportPlayer(channelMember, coords, instanceId);
 					world.allowed.add(channelMember.getObjectId());
 				}
@@ -395,7 +399,7 @@ public class Stage1 extends Quest {
 		}
 	}
 
-	protected boolean checkKillProgress(L2Npc mob, SOD1World world) {
+	protected boolean checkKillProgress(Npc mob, SOD1World world) {
 		if (world.npcList.containsKey(mob)) {
 			world.npcList.put(mob, true);
 		}
@@ -423,7 +427,7 @@ public class Stage1 extends Quest {
 										Rnd.get(65535),
 										spw.isNeededNextFlag);
 							} else {
-								Log.info("[Seed of Destruction] Missing zone: " + spw.zone);
+								log.info("[Seed of Destruction] Missing zone: " + spw.zone);
 							}
 						}
 					} else {
@@ -518,7 +522,7 @@ public class Stage1 extends Quest {
 	protected void spawn(SOD1World world, int npcId, int x, int y, int z, int h, boolean addToKillTable) {
 		// traps
 		if (npcId >= 18720 && npcId <= 18774) {
-			L2Skill skill = null;
+			Skill skill = null;
 			if (npcId <= 18728) {
 				skill = TRAP_HOLD.getSkill();
 			} else if (npcId <= 18736) {
@@ -531,12 +535,12 @@ public class Stage1 extends Quest {
 			addTrap(npcId, x, y, z, h, skill, world.instanceId);
 			return;
 		}
-		L2Npc npc = addSpawn(npcId, x, y, z, h, false, 0, false, world.instanceId);
+		Npc npc = addSpawn(npcId, x, y, z, h, false, 0, false, world.instanceId);
 		if (addToKillTable) {
 			world.npcList.put(npc, false);
 		}
 		if (npc.isInstanceType(InstanceType.L2Attackable)) {
-			((L2Attackable) npc).setCanSeeThroughSilentMove(true);
+			((Attackable) npc).setCanSeeThroughSilentMove(true);
 		}
 		if (npcId == TIAT_VIDEO_NPC) {
 			startQuestTimer("DoorCheck", 10000, npc, null);
@@ -545,7 +549,7 @@ public class Stage1 extends Quest {
 			startQuestTimer("Spawn", 10000, npc, null, true);
 		} else if (npcId == TIAT) {
 			for (int i = 0; i < TIAT_GUARD_NUMBER; i++) {
-				addMinion((L2MonsterInstance) npc, TIAT_GUARD);
+				addMinion((MonsterInstance) npc, TIAT_GUARD);
 			}
 		}
 	}
@@ -573,7 +577,7 @@ public class Stage1 extends Quest {
 
 		// set instance reenter time for all allowed players
 		for (int objectId : world.allowed) {
-			L2PcInstance player = L2World.getInstance().getPlayer(objectId);
+			Player player = World.getInstance().getPlayer(objectId);
 			InstanceManager.getInstance().setInstanceTime(objectId, INSTANCEID, reenter.getTimeInMillis());
 			if (player != null && player.isOnline()) {
 				player.sendPacket(sm);
@@ -583,7 +587,7 @@ public class Stage1 extends Quest {
 
 	private void sendScreenMessage(SOD1World world, ExShowScreenMessage message) {
 		for (int objId : world.allowed) {
-			L2PcInstance player = L2World.getInstance().getPlayer(objId);
+			Player player = World.getInstance().getPlayer(objId);
 			if (player != null) {
 				player.sendPacket(message);
 			}
@@ -591,7 +595,7 @@ public class Stage1 extends Quest {
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc) {
+	public String onSpawn(Npc npc) {
 		if (npc.getNpcId() == TIAT_GUARD) {
 			startQuestTimer("GuardThink", 2500 + Rnd.get(-200, 200), npc, null, true);
 		} else {
@@ -601,7 +605,7 @@ public class Stage1 extends Quest {
 	}
 
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onAggroRangeEnter(Npc npc, Player player, boolean isPet) {
 		if (isPet == false && player != null) {
 			InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(player.getInstanceId());
 			if (tmpworld instanceof SOD1World) {
@@ -609,7 +613,7 @@ public class Stage1 extends Quest {
 				if (world.status == 7) {
 					if (spawnState(world)) {
 						for (int objId : world.allowed) {
-							L2PcInstance pl = L2World.getInstance().getPlayer(objId);
+							Player pl = World.getInstance().getPlayer(objId);
 							if (pl != null) {
 								pl.showQuestMovie(5);
 							}
@@ -623,7 +627,7 @@ public class Stage1 extends Quest {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet, Skill skill) {
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof SOD1World) {
 			SOD1World world = (SOD1World) tmpworld;
@@ -646,15 +650,15 @@ public class Stage1 extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof SOD1World) {
 			SOD1World world = (SOD1World) tmpworld;
 			if (event.equalsIgnoreCase("Spawn")) {
-				L2PcInstance target = L2World.getInstance().getPlayer(world.allowed.get(Rnd.get(world.allowed.size())));
+				Player target = World.getInstance().getPlayer(world.allowed.get(Rnd.get(world.allowed.size())));
 				if (world.deviceSpawnedMobCount < MAX_DEVICESPAWNEDMOBCOUNT && target != null && target.getInstanceId() == npc.getInstanceId() &&
 						!target.isDead()) {
-					L2Attackable mob = (L2Attackable) addSpawn(SPAWN_MOB_IDS[Rnd.get(SPAWN_MOB_IDS.length)],
+					Attackable mob = (Attackable) addSpawn(SPAWN_MOB_IDS[Rnd.get(SPAWN_MOB_IDS.length)],
 							npc.getSpawn().getX(),
 							npc.getSpawn().getY(),
 							npc.getSpawn().getZ(),
@@ -673,7 +677,7 @@ public class Stage1 extends Quest {
 					}
 				}
 			} else if (event.equalsIgnoreCase("DoorCheck")) {
-				L2DoorInstance tmp = InstanceManager.getInstance().getInstance(npc.getInstanceId()).getDoor(FORTRESS_DOOR);
+				DoorInstance tmp = InstanceManager.getInstance().getInstance(npc.getInstanceId()).getDoor(FORTRESS_DOOR);
 				if (tmp.getCurrentHp() < tmp.getMaxHp()) {
 					world.deviceSpawnedMobCount = 0;
 					spawnFlaggedNPCs(world, 6);
@@ -697,18 +701,18 @@ public class Stage1 extends Quest {
 					npc.setCurrentHp(npc.getMaxHp());
 				}
 			} else if (event.equalsIgnoreCase("BodyGuardThink")) {
-				L2Character mostHate = ((L2Attackable) npc).getMostHated();
+				Creature mostHate = ((Attackable) npc).getMostHated();
 				if (mostHate != null) {
 					double dist = Util.calculateDistance(mostHate.getXdestination(),
 							mostHate.getYdestination(),
 							npc.getSpawn().getX(),
 							npc.getSpawn().getY());
 					if (dist > 900) {
-						((L2Attackable) npc).reduceHate(mostHate, ((L2Attackable) npc).getHating(mostHate));
+						((Attackable) npc).reduceHate(mostHate, ((Attackable) npc).getHating(mostHate));
 					}
-					mostHate = ((L2Attackable) npc).getMostHated();
-					if (mostHate != null || ((L2Attackable) npc).getHating(mostHate) < 5) {
-						((L2Attackable) npc).returnHome();
+					mostHate = ((Attackable) npc).getMostHated();
+					if (mostHate != null || ((Attackable) npc).getHating(mostHate) < 5) {
+						((Attackable) npc).returnHome();
 					}
 				}
 			}
@@ -717,7 +721,7 @@ public class Stage1 extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (npc.getNpcId() == SPAWN_DEVICE) {
 			cancelQuestTimer("Spawn", npc, null);
 			return "";
@@ -747,18 +751,18 @@ public class Stage1 extends Quest {
 				if (npc.getNpcId() == TIAT) {
 					world.status++;
 					for (int objId : world.allowed) {
-						L2PcInstance pl = L2World.getInstance().getPlayer(objId);
+						Player pl = World.getInstance().getPlayer(objId);
 						if (pl != null) {
 							pl.showQuestMovie(6);
 						}
 					}
-					for (L2Npc mob : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs()) {
+					for (Npc mob : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs()) {
 						mob.deleteMe();
 					}
 
 					GraciaSeedsManager.getInstance().increaseSoDTiatKilled();
 				} else if (npc.getNpcId() == TIAT_GUARD) {
-					addMinion(((L2MonsterInstance) npc).getLeader(), TIAT_GUARD);
+					addMinion(((MonsterInstance) npc).getLeader(), TIAT_GUARD);
 				}
 			}
 		}
@@ -766,7 +770,7 @@ public class Stage1 extends Quest {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		int npcId = npc.getNpcId();
 		QuestState st = player.getQuestState(qn);
 		if (st == null) {
@@ -786,7 +790,7 @@ public class Stage1 extends Quest {
 	}
 
 	@Override
-	public String onTrapAction(L2Trap trap, L2Character trigger, TrapAction action) {
+	public String onTrapAction(Trap trap, Creature trigger, TrapAction action) {
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(trap.getInstanceId());
 		if (tmpworld instanceof SOD1World) {
 			SOD1World world = (SOD1World) tmpworld;

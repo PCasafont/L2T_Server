@@ -16,7 +16,8 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
@@ -32,6 +33,9 @@ import java.util.Map;
  * @author Pere
  */
 public class EnchantMultiSellTable {
+	private static Logger log = LoggerFactory.getLogger(EnchantMultiSellTable.class.getName());
+
+
 	public static class EnchantMultiSellCategory {
 		public int Id;
 		public Map<Integer, EnchantMultiSellEntry> Entries = new HashMap<>();
@@ -97,7 +101,7 @@ public class EnchantMultiSellTable {
 			categories.put(category.Id, category);
 		}
 
-		Log.info("EnchantMultisell: Loaded " + categories.size() + " categories.");
+		log.info("EnchantMultisell: Loaded " + categories.size() + " categories.");
 	}
 
 	public final Collection<EnchantMultiSellCategory> getCategories() {

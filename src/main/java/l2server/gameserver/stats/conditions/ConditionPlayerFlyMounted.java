@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -41,6 +41,6 @@ public class ConditionPlayerFlyMounted extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		return !(env.player instanceof L2PcInstance) || ((L2PcInstance) env.player).isFlyingMounted() == val;
+		return !(env.player instanceof Player) || ((Player) env.player).isFlyingMounted() == val;
 	}
 }

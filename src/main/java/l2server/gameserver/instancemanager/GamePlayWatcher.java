@@ -17,9 +17,9 @@ package l2server.gameserver.instancemanager;
 
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.SpecialCamera;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.gameserver.util.Util;
@@ -42,20 +42,20 @@ public class GamePlayWatcher {
 		return instance;
 	}
 
-	public void makeWatcher(L2PcInstance watcher) {
+	public void makeWatcher(Player watcher) {
 		WatchTask watchTask = new WatchTask(watcher);
 		ScheduledFuture<?> schedule = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(watchTask, 1000L, 1000L);
 		watchTask.setSchedule(schedule);
 	}
 
 	private class WatchTask implements Runnable {
-		private final L2PcInstance watcher;
-		private L2PcInstance pivot = null;
+		private final Player watcher;
+		private Player pivot = null;
 		private long checkForAnotherPivotTimer = 0L;
 
 		private ScheduledFuture<?> schedule = null;
 
-		public WatchTask(L2PcInstance watcher) {
+		public WatchTask(Player watcher) {
 			this.watcher = watcher;
 		}
 
@@ -78,7 +78,7 @@ public class GamePlayWatcher {
 			if (pivot == null) {
 				int bestCombatPvPCount = 0;
 				int bestCombatPvECount = 0;
-				for (L2PcInstance player : L2World.getInstance().getAllPlayersArray()) {
+				for (Player player : World.getInstance().getAllPlayersArray()) {
 					if (!AttackStanceTaskManager.getInstance().getAttackStanceTask(player) || player.isInsidePeaceZone(player) || player.isDead() ||
 							player.inObserverMode() || player == watcher) {
 						continue;
@@ -87,14 +87,14 @@ public class GamePlayWatcher {
 					int flaggedCount = 0;
 					int combatPvPCount = 0;
 					int combatPvECount = 0;
-					for (L2Character c : player.getKnownList().getKnownCharacters()) {
+					for (Creature c : player.getKnownList().getKnownCharacters()) {
 						if (Util.checkIfInRange(1000, player, c, false)) {
-							if (c instanceof L2PcInstance) {
-								if (((L2PcInstance) c).getPvpFlag() > 0) {
+							if (c instanceof Player) {
+								if (((Player) c).getPvpFlag() > 0) {
 									flaggedCount++; // That's someone making PvP for sure
 								}
 								if (AttackStanceTaskManager.getInstance().getAttackStanceTask(c)) {
-									if (c.getTarget() instanceof L2PcInstance) {
+									if (c.getTarget() instanceof Player) {
 										combatPvPCount++; // Less valuable than a flagged player but ok
 									} else {
 										combatPvECount++; // Target can be null, let's consider it pve
@@ -114,7 +114,7 @@ public class GamePlayWatcher {
 				}
 			}
 
-			//pivot = L2World.getInstance().getPlayer("pere");
+			//pivot = World.getInstance().getPlayer("pere");
 
 			if (pivot == null || watcher.isTeleporting()) {
 				// We stream Gludio when no mini game is going on.

@@ -15,16 +15,16 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 
 /**
  * @author Pere
  */
 public class ExItemAppearanceResult extends L2GameServerPacket {
 	private int answer;
-	L2ItemInstance result;
+	Item result;
 	
-	public ExItemAppearanceResult(int answer, L2ItemInstance result) {
+	public ExItemAppearanceResult(int answer, Item result) {
 		this.answer = answer;
 		this.result = result;
 	}

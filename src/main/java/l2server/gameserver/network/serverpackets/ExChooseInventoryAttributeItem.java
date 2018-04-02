@@ -16,8 +16,8 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 
@@ -26,15 +26,15 @@ import java.util.ArrayList;
  */
 public class ExChooseInventoryAttributeItem extends L2GameServerPacket {
 	private int itemId;
-	private ArrayList<L2ItemInstance> inventoryItems;
+	private ArrayList<Item> inventoryItems;
 	private byte attribute;
 	private int level;
 	private long maxCount;
 	
-	public ExChooseInventoryAttributeItem(L2PcInstance player, L2ItemInstance item) {
+	public ExChooseInventoryAttributeItem(Player player, Item item) {
 		inventoryItems = new ArrayList<>();
 		itemId = item.getItemId();
-		for (L2ItemInstance i : player.getInventory().getItems()) {
+		for (Item i : player.getInventory().getItems()) {
 			if (i.isEquipable()) {
 				inventoryItems.add(i);
 			}
@@ -66,7 +66,7 @@ public class ExChooseInventoryAttributeItem extends L2GameServerPacket {
 		writeD(attribute == Elementals.DARK ? 1 : 0); // Unholy
 		writeD(level); // Item max attribute level
 		writeD(inventoryItems.size()); //equipable items count
-		for (L2ItemInstance item : inventoryItems) {
+		for (Item item : inventoryItems) {
 			writeD(item.getObjectId());
 		}
 	}

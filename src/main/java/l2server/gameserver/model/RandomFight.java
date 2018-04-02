@@ -2,12 +2,13 @@ package l2server.gameserver.model;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.SkillCoolTime;
 import l2server.gameserver.util.Broadcast;
 import l2server.gameserver.util.NpcUtil;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 import java.sql.Connection;
@@ -20,6 +21,9 @@ import java.util.logging.Level;
  * @author Inia
  */
 public class RandomFight {
+	private static Logger log = LoggerFactory.getLogger(RandomFight.class.getName());
+
+
 
 	public static enum State {
 		INACTIVE,
@@ -30,7 +34,7 @@ public class RandomFight {
 
 	public static State state = State.INACTIVE;
 	public static final int timeEach = 10;
-	public static Vector<L2PcInstance> players = new Vector<>();
+	public static Vector<Player> players = new Vector<>();
 
 	protected void openRegistrations() {
 		return;
@@ -54,8 +58,8 @@ public class RandomFight {
 			rnd2 = Rnd.get(players.size());
 		}
 
-		L2PcInstance player1 = players.get(rnd1);
-		L2PcInstance player2 = players.get(rnd2);
+		Player player1 = players.get(rnd1);
+		Player player2 = players.get(rnd2);
 
 		players.clear();
 		players.add(player1);
@@ -71,7 +75,7 @@ public class RandomFight {
 			return;
 		}
 
-		for (L2PcInstance player : players) {
+		for (Player player : players) {
 			if (player == null) {
 				continue;
 			}
@@ -87,8 +91,8 @@ public class RandomFight {
 			return;
 		}
 
-		L2Npc bufferOne = NpcUtil.addSpawn(40002, -88900 + 50, -252849, -3330, 0, false, 15000, false, 0);
-		L2Npc bufferTwo = NpcUtil.addSpawn(40002, -87322 + 50, -252849, -3332, 0, false, 15000, false, 0);
+		Npc bufferOne = NpcUtil.addSpawn(40002, -88900 + 50, -252849, -3330, 0, false, 15000, false, 0);
+		Npc bufferTwo = NpcUtil.addSpawn(40002, -87322 + 50, -252849, -3332, 0, false, 15000, false, 0);
 		bufferOne.spawnMe();
 		bufferTwo.spawnMe();
 
@@ -113,7 +117,7 @@ public class RandomFight {
 		ThreadPoolManager.getInstance().scheduleGeneral(new fight(), 15000);
 	}
 
-	public int getRankedPoints(L2PcInstance player) {
+	public int getRankedPoints(Player player) {
 		Connection get = null;
 
 		try {
@@ -129,14 +133,14 @@ public class RandomFight {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Couldn't get current ranked points : " + e.getMessage(), e);
+			log.warn("Couldn't get current ranked points : " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(get);
 		}
 		return 0;
 	}
 
-	public void setRankedPoints(L2PcInstance player, int amount) {
+	public void setRankedPoints(Player player, int amount) {
 		Connection con = null;
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
@@ -148,13 +152,13 @@ public class RandomFight {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Failed updating Ranked Points", e);
+			log.error("Failed updating Ranked Points", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 	}
 
-	public void onKillInia(L2PcInstance killer, L2PcInstance killed) {
+	public void onKillInia(Player killer, Player killed) {
 		int killerCurrentPoints;
 		int killedCurrentPoints;
 
@@ -210,11 +214,11 @@ public class RandomFight {
 		players.firstElement().sendMessage("Fight!");
 		players.lastElement().sendMessage("Fight!");
 
-		for (L2PcInstance player : players) {
+		for (Player player : players) {
 			if (player == null) {
 				continue;
 			}
-			for (L2Skill skill : player.getAllSkills()) {
+			for (Skill skill : player.getAllSkills()) {
 				if (skill.getReuseDelay() <= 3600000) {
 					player.enableSkill(skill);
 				}
@@ -235,7 +239,7 @@ public class RandomFight {
 			}
 
 			int alive = 0;
-			for (L2PcInstance player : players) {
+			for (Player player : players) {
 				if (!player.isDead()) {
 					alive++;
 				}
@@ -251,7 +255,7 @@ public class RandomFight {
 
 	public static void revert() {
 		if (!players.isEmpty()) {
-			for (L2PcInstance p : players) {
+			for (Player p : players) {
 				if (p == null) {
 					continue;
 				}
@@ -272,7 +276,7 @@ public class RandomFight {
 	public static void clean() {
 
 		if (state == State.FIGHT) {
-			for (L2PcInstance p : players) {
+			for (Player p : players) {
 				p.setTeam(0);
 			}
 		}

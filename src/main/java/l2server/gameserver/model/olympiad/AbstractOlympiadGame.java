@@ -16,36 +16,38 @@
 package l2server.gameserver.model.olympiad;
 
 import l2server.Config;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.HeroSkillTable;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.instancemanager.AntiFeedManager;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.FortManager;
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Party;
 import l2server.gameserver.model.L2Party.messageType;
-import l2server.gameserver.model.L2Skill;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2MobSummonInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
-import l2server.gameserver.model.zone.type.L2OlympiadStadiumZone;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.MobSummonInstance;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
+import l2server.gameserver.model.zone.type.OlympiadStadiumZone;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+
 
 /**
  * @author godson, GodKratos, Pere, DS
  */
 public abstract class AbstractOlympiadGame {
-	protected static final Logger logResults = Logger.getLogger("olympiad");
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
 
 	protected static final String POINTS = "olympiad_points";
 	protected static final String COMP_DONE = "competitions_done";
@@ -101,7 +103,7 @@ public abstract class AbstractOlympiadGame {
 	 * @return
 	 */
 	protected final SystemMessage checkDefaulted(OlympiadParticipant par) {
-		L2PcInstance player = par.player;
+		Player player = par.player;
 		if (player == null || !player.isOnline() || player.getClient() == null || player.getClient().isDetached()) {
 			int playerPoints = par.nobleInfo.getPoints();
 			int points = Math.min(playerPoints / 2, Config.ALT_OLY_MAX_POINTS);
@@ -144,7 +146,7 @@ public abstract class AbstractOlympiadGame {
 	}
 
 	protected static boolean portPlayerToArena(OlympiadParticipant par, Location loc, int id) {
-		final L2PcInstance player = par.player;
+		final Player player = par.player;
 		if (player == null || !player.isOnline()) {
 			return false;
 		}
@@ -156,7 +158,7 @@ public abstract class AbstractOlympiadGame {
 			}
 			player.setTarget(null);
 
-			player.getSummons().stream().filter(summon -> summon instanceof L2MobSummonInstance).forEach(summon -> summon.unSummon(player));
+			player.getSummons().stream().filter(summon -> summon instanceof MobSummonInstance).forEach(summon -> summon.unSummon(player));
 
 			player.setOlympiadGameId(id);
 			player.setInstanceId(id + Olympiad.BASE_INSTANCE_ID);
@@ -168,13 +170,13 @@ public abstract class AbstractOlympiadGame {
 			player.teleToLocation(loc, false);
 			player.sendPacket(new ExOlympiadMode(2));
 		} catch (Exception e) {
-			Log.log(Level.WARNING, e.getMessage(), e);
+			log.warn(e.getMessage(), e);
 			return false;
 		}
 		return true;
 	}
 
-	protected static void removals(L2PcInstance player, boolean removeParty) {
+	protected static void removals(Player player, boolean removeParty) {
 		try {
 			if (player == null) {
 				return;
@@ -206,7 +208,7 @@ public abstract class AbstractOlympiadGame {
 
 			// Remove Hero Skills
 			if (player.isHero()) {
-				for (L2Skill skill : HeroSkillTable.getHeroSkills()) {
+				for (Skill skill : HeroSkillTable.getHeroSkills()) {
 					player.removeSkill(skill, false);
 				}
 			}
@@ -217,14 +219,14 @@ public abstract class AbstractOlympiadGame {
 			player.setCurrentMp(player.getMaxMp());
 
 			// Remove Summon's Buffs
-			final L2PetInstance pet = player.getPet();
+			final PetInstance pet = player.getPet();
 			if (pet != null) {
 				pet.stopAllEffectsExceptThoseThatLastThroughDeath();
 				pet.abortAttack();
 				pet.abortCast();
 				pet.unSummon(player);
 			}
-			for (L2SummonInstance summon : player.getSummons()) {
+			for (SummonInstance summon : player.getSummons()) {
 				summon.stopAllEffectsExceptThoseThatLastThroughDeath();
 				summon.abortAttack();
 				summon.abortCast();
@@ -253,12 +255,12 @@ public abstract class AbstractOlympiadGame {
 
 			// Discharge any active shots
 			if (player.getActiveWeaponInstance() != null) {
-				player.getActiveWeaponInstance().setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
-				player.getActiveWeaponInstance().setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+				player.getActiveWeaponInstance().setChargedSoulShot(Item.CHARGED_NONE);
+				player.getActiveWeaponInstance().setChargedSpiritShot(Item.CHARGED_NONE);
 			}
 
 			// enable skills with cool time <= 15 minutes
-			for (L2Skill skill : player.getAllSkills()) {
+			for (Skill skill : player.getAllSkills()) {
 				if (skill.getReuseDelay() <= 3600000) {
 					player.enableSkill(skill);
 				}
@@ -267,11 +269,11 @@ public abstract class AbstractOlympiadGame {
 			player.sendSkillList();
 			player.sendPacket(new SkillCoolTime(player));
 		} catch (Exception e) {
-			Log.log(Level.WARNING, e.getMessage(), e);
+			log.warn(e.getMessage(), e);
 		}
 	}
 
-	protected static void cleanEffects(L2PcInstance player) {
+	protected static void cleanEffects(Player player) {
 		try {
 			// prevent players kill each other
 			player.setIsOlympiadStart(false);
@@ -293,7 +295,7 @@ public abstract class AbstractOlympiadGame {
 			if (player.getAgathionId() > 0) {
 				player.setAgathionId(0);
 			}
-			final L2PetInstance pet = player.getPet();
+			final PetInstance pet = player.getPet();
 			if (pet != null && !pet.isDead()) {
 				pet.setTarget(null);
 				pet.abortAttack();
@@ -301,7 +303,7 @@ public abstract class AbstractOlympiadGame {
 				pet.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 				pet.stopAllEffectsExceptThoseThatLastThroughDeath();
 			}
-			for (L2SummonInstance summon : player.getSummons()) {
+			for (SummonInstance summon : player.getSummons()) {
 				if (summon.isDead()) {
 					continue;
 				}
@@ -318,11 +320,11 @@ public abstract class AbstractOlympiadGame {
 			player.setCurrentMp(player.getMaxMp());
 			player.getStatus().startHpMpRegeneration();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, e.getMessage(), e);
+			log.warn(e.getMessage(), e);
 		}
 	}
 
-	protected static void playerStatusBack(L2PcInstance player) {
+	protected static void playerStatusBack(Player player) {
 		try {
 			if (player.isTransformed()) {
 				player.unTransform(true);
@@ -347,7 +349,7 @@ public abstract class AbstractOlympiadGame {
 
 			// Add Hero Skills
 			if (player.isHero()) {
-				for (L2Skill skill : HeroSkillTable.getHeroSkills()) {
+				for (Skill skill : HeroSkillTable.getHeroSkills()) {
 					player.addSkill(skill, false);
 				}
 			}
@@ -363,11 +365,11 @@ public abstract class AbstractOlympiadGame {
 				AntiFeedManager.getInstance().removePlayer(AntiFeedManager.OLYMPIAD_ID, player);
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "portPlayersToArena()", e);
+			log.warn("portPlayersToArena()", e);
 		}
 	}
 
-	protected static void portPlayerBack(L2PcInstance player) {
+	protected static void portPlayerBack(Player player) {
 		if (player == null) {
 			return;
 		}
@@ -381,14 +383,14 @@ public abstract class AbstractOlympiadGame {
 		player.setLastCords(0, 0, 0);
 	}
 
-	public static void rewardParticipant(L2PcInstance player, int[][] reward) {
+	public static void rewardParticipant(Player player, int[][] reward) {
 		if (player == null || !player.isOnline() || reward == null) {
 			return;
 		}
 
 		try {
 			SystemMessage sm;
-			L2ItemInstance item;
+			Item item;
 			final InventoryUpdate iu = new InventoryUpdate();
 			for (int[] it : reward) {
 				if (it == null || it.length != 2) {
@@ -408,11 +410,11 @@ public abstract class AbstractOlympiadGame {
 			}
 			player.sendPacket(iu);
 		} catch (Exception e) {
-			Log.log(Level.WARNING, e.getMessage(), e);
+			log.warn(e.getMessage(), e);
 		}
 	}
 
-	protected final void broadcastPacket(L2GameServerPacket packet, L2OlympiadStadiumZone stadium) {
+	protected final void broadcastPacket(L2GameServerPacket packet, OlympiadStadiumZone stadium) {
 		broadcastPacketToParticipants(packet);
 		stadium.broadcastPacketToObservers(packet, gameId);
 	}
@@ -423,9 +425,9 @@ public abstract class AbstractOlympiadGame {
 
 	public abstract boolean containsParticipant(int playerId);
 
-	public abstract void sendOlympiadInfo(L2Character player);
+	public abstract void sendOlympiadInfo(Creature player);
 
-	public abstract void broadcastOlympiadInfo(L2OlympiadStadiumZone stadium);
+	public abstract void broadcastOlympiadInfo(OlympiadStadiumZone stadium);
 
 	protected abstract void broadcastPacketToParticipants(L2GameServerPacket packet);
 
@@ -445,17 +447,17 @@ public abstract class AbstractOlympiadGame {
 
 	protected abstract void clearPlayers();
 
-	protected abstract void handleDisconnect(L2PcInstance player);
+	protected abstract void handleDisconnect(Player player);
 
 	protected abstract void resetDamage();
 
-	protected abstract void addDamage(L2PcInstance player, int damage);
+	protected abstract void addDamage(Player player, int damage);
 
 	protected abstract boolean checkBattleStatus();
 
 	protected abstract boolean haveWinner();
 
-	protected abstract void validateWinner(L2OlympiadStadiumZone stadium);
+	protected abstract void validateWinner(OlympiadStadiumZone stadium);
 
 	protected abstract int getDivider();
 

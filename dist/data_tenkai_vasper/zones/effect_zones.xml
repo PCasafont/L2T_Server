@@ -2004,7 +2004,7 @@
 	<!-- stat name="skillIdLvl" val="6170-1;" / --> <!-- s_area_stakato_nest_fury -->
 	<!-- stat name="chance" val="100" / -->
 	<!-- stat name="unitTick" val="90" / -->
-	<!-- stat name="targetClass" val="L2Npc" / -->
+	<!-- stat name="targetClass" val="Npc" / -->
 	<!-- stat name="defaultStatus" val="off" / -->
 	<!-- stat name="reuse" val="60000" / --> <!-- Guess -->
 	<!-- node X="73945" Y="-57263" / -->

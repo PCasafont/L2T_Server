@@ -6,8 +6,8 @@ import l2server.gameserver.events.instanced.EventConfig;
 import l2server.gameserver.events.instanced.EventInstance;
 import l2server.gameserver.events.instanced.EventTeleporter;
 import l2server.gameserver.events.instanced.EventsManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,8 +33,8 @@ public class KingOfTheHill extends EventInstance {
 					return;
 				}
 
-				L2PcInstance highest = null;
-				for (L2PcInstance player : teams[0].getParticipatedPlayers().values()) {
+				Player highest = null;
+				for (Player player : teams[0].getParticipatedPlayers().values()) {
 					if (player == null) {
 						continue;
 					}
@@ -56,11 +56,11 @@ public class KingOfTheHill extends EventInstance {
 
 	@Override
 	public void calculateRewards() {
-		List<L2PcInstance> sorted = new ArrayList<>();
-		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values()) {
+		List<Player> sorted = new ArrayList<>();
+		for (Player playerInstance : teams[0].getParticipatedPlayers().values()) {
 			boolean added = false;
 			int index = 0;
-			for (L2PcInstance listed : sorted) {
+			for (Player listed : sorted) {
 				if (playerInstance.getEventPoints() > listed.getEventPoints()) {
 					sorted.add(index, playerInstance);
 					added = true;
@@ -80,11 +80,11 @@ public class KingOfTheHill extends EventInstance {
 	}
 
 	@Override
-	public String getRunningInfo(L2PcInstance player) {
+	public String getRunningInfo(Player player) {
 		String html = "";
 		if (teams[0].getParticipatedPlayerCount() > 0) {
 			html += "Participant heights:<br>";
-			for (L2PcInstance participant : teams[0].getParticipatedPlayers().values()) {
+			for (Player participant : teams[0].getParticipatedPlayers().values()) {
 				if (participant != null) {
 					html += EventsManager.getInstance().getPlayerString(participant, player) + ": " +
 							(participant.getZ() - config.getLocation().getGlobalZ()) + "<br>";
@@ -98,7 +98,7 @@ public class KingOfTheHill extends EventInstance {
 	}
 
 	@Override
-	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance) {
+	public void onKill(Creature killerCharacter, Player killedPlayerInstance) {
 		if (killedPlayerInstance == null || !isState(EventState.STARTED)) {
 			return;
 		}

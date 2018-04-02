@@ -20,14 +20,13 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.handler.ChatHandler;
 import l2server.gameserver.handler.IChatHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -88,23 +87,23 @@ public final class Say2 extends L2GameClientPacket {
 	@Override
 	protected void runImpl() {
 		if (Config.DEBUG) {
-			Log.info("Say2: Msg Type = '" + type + "' Text = '" + text + "'.");
+			log.info("Say2: Msg Type = '" + type + "' Text = '" + text + "'.");
 		}
 
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
 
 		if (type < 0 || type >= CHAT_NAMES.length) {
-			Log.warning("Say2: Invalid type: " + type + " Player : " + activeChar.getName() + " text: " + String.valueOf(text));
+			log.warn("Say2: Invalid type: " + type + " Player : " + activeChar.getName() + " text: " + String.valueOf(text));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			activeChar.logout();
 			return;
 		}
 
 		if (text.isEmpty()) {
-			Log.warning(activeChar.getName() + ": sending empty text. Possible packet hack!");
+			log.warn(activeChar.getName() + ": sending empty text. Possible packet hack!");
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			activeChar.logout();
 			return;
@@ -218,7 +217,7 @@ public final class Say2 extends L2GameClientPacket {
 
 			handler.handleChat(type, activeChar, target, text);
 		} else {
-			Log.info("No handler registered for ChatType: " + type + " Player: " + getClient());
+			log.info("No handler registered for ChatType: " + type + " Player: " + getClient());
 		}
 	}
 
@@ -230,7 +229,7 @@ public final class Say2 extends L2GameClientPacket {
 		text = filteredText;
 	}
 
-	private boolean parseAndPublishItem(L2PcInstance owner) {
+	private boolean parseAndPublishItem(Player owner) {
 		int pos1 = -1;
 		while ((pos1 = text.indexOf(8, pos1)) > -1) {
 			int pos = text.indexOf("ID=", pos1);
@@ -243,21 +242,21 @@ public final class Say2 extends L2GameClientPacket {
 				result.append(text.charAt(pos++));
 			}
 			int id = Integer.parseInt(result.toString());
-			L2Object item = L2World.getInstance().findObject(id);
-			if (item instanceof L2ItemInstance) {
+			WorldObject item = World.getInstance().findObject(id);
+			if (item instanceof Item) {
 				if (owner.getInventory().getItemByObjectId(id) == null) {
-					Log.info(getClient() + " trying publish item which doesnt own! ID:" + id);
+					log.info(getClient() + " trying publish item which doesnt own! ID:" + id);
 					return false;
 				}
-				((L2ItemInstance) item).publish();
+				((Item) item).publish();
 			} else {
-				Log.info(getClient() + " trying publish object which is not item! Object:" + item);
+				log.info(getClient() + " trying publish object which is not item! Object:" + item);
 				return false;
 			}
 			pos1 = text.indexOf(8, pos) + 1;
 			if (pos1 == 0) // missing ending tag
 			{
-				Log.info(getClient() + " sent invalid publish item msg! ID:" + id);
+				log.info(getClient() + " sent invalid publish item msg! ID:" + id);
 				return false;
 			}
 		}

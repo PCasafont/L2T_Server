@@ -16,71 +16,71 @@
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 
 /*
  * Just a quick draft to support Wrath skill. Missing angle based calculation etc.
  */
 
 public class CpDamPercent implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.CPDAMPERCENT};
+	private static final SkillType[] SKILL_IDS = {SkillType.CPDAMPERCENT};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
 		if (activeChar.isAlikeDead()) {
 			return;
 		}
 
-		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
-		double ssMul = L2ItemInstance.CHARGED_NONE;
+		Item weaponInst = activeChar.getActiveWeaponInstance();
+		double ssMul = Item.CHARGED_NONE;
 		if (weaponInst != null) {
 			if (skill.isMagic()) {
 				ssMul = weaponInst.getChargedSpiritShot();
-				weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+				weaponInst.setChargedSpiritShot(Item.CHARGED_NONE);
 			} else {
 				ssMul = weaponInst.getChargedSoulShot();
-				weaponInst.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
+				weaponInst.setChargedSoulShot(Item.CHARGED_NONE);
 			}
 		}
 		// If there is no weapon equipped, check for an active summon.
-		else if (activeChar instanceof L2Summon) {
-			L2Summon activeSummon = (L2Summon) activeChar;
+		else if (activeChar instanceof Summon) {
+			Summon activeSummon = (Summon) activeChar;
 			if (skill.isMagic()) {
 				ssMul = activeSummon.getChargedSpiritShot();
-				activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+				activeSummon.setChargedSpiritShot(Item.CHARGED_NONE);
 			} else {
 				ssMul = activeSummon.getChargedSoulShot();
-				activeSummon.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
+				activeSummon.setChargedSoulShot(Item.CHARGED_NONE);
 			}
-		} else if (activeChar instanceof L2Npc) {
+		} else if (activeChar instanceof Npc) {
 			if (skill.isMagic()) {
-				ssMul = ((L2Npc) activeChar).soulshotcharged ? L2ItemInstance.CHARGED_SOULSHOT : L2ItemInstance.CHARGED_NONE;
-				((L2Npc) activeChar).soulshotcharged = false;
+				ssMul = ((Npc) activeChar).soulshotcharged ? Item.CHARGED_SOULSHOT : Item.CHARGED_NONE;
+				((Npc) activeChar).soulshotcharged = false;
 			} else {
-				ssMul = ((L2Npc) activeChar).spiritshotcharged ? L2ItemInstance.CHARGED_SPIRITSHOT : L2ItemInstance.CHARGED_NONE;
-				((L2Npc) activeChar).spiritshotcharged = false;
+				ssMul = ((Npc) activeChar).spiritshotcharged ? Item.CHARGED_SPIRITSHOT : Item.CHARGED_NONE;
+				((Npc) activeChar).spiritshotcharged = false;
 			}
 		}
 
-		for (L2Object obj : targets) {
-			if (!(obj instanceof L2Character)) {
+		for (WorldObject obj : targets) {
+			if (!(obj instanceof Creature)) {
 				continue;
 			}
 
-			L2Character target = (L2Character) obj;
-			if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance) target).isFakeDeath()) {
+			Creature target = (Creature) obj;
+			if (activeChar instanceof Player && target instanceof Player && ((Player) target).isFakeDeath()) {
 				target.stopFakeDeath(true);
 			} else if (target.isDead() || target.isInvul(activeChar) ||
 					target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar) {
@@ -106,7 +106,7 @@ public class CpDamPercent implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

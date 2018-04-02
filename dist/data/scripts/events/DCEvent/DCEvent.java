@@ -1,12 +1,12 @@
 package events.DCEvent;
 
 import l2server.gameserver.Announcements;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestTimer;
-import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.model.zone.ZoneType;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.PlaySound;
@@ -31,12 +31,12 @@ public class DCEvent extends Quest {
 
 	//Vars
 	private static Long nextInvasion;
-	private static L2PcInstance player;
+	private static Player player;
 	private static boolean isUnderInvasion = false;
 	private Map<Integer, invaderInfo> attackInfo = new HashMap<Integer, invaderInfo>();
-	private ArrayList<L2Character> invaders = new ArrayList<L2Character>();
-	private ArrayList<L2Character> registered = new ArrayList<L2Character>();
-	private Map<L2Character, Integer> testPlayer = new HashMap<L2Character, Integer>();
+	private ArrayList<Creature> invaders = new ArrayList<Creature>();
+	private ArrayList<Creature> registered = new ArrayList<Creature>();
+	private Map<Creature, Integer> testPlayer = new HashMap<Creature, Integer>();
 
 	public DCEvent(int id, String name, String descr) {
 		super(id, name, descr);
@@ -93,9 +93,9 @@ public class DCEvent extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 
-		L2Npc inv = addSpawn(invaderIds[Rnd.get(invaderIds.length)], npc.getX() + Rnd.get(100), npc.getY() + Rnd.get(100), npc.getZ(), 0, false, 0);
+		Npc inv = addSpawn(invaderIds[Rnd.get(invaderIds.length)], npc.getX() + Rnd.get(100), npc.getY() + Rnd.get(100), npc.getZ(), 0, false, 0);
 		invaders.add(inv);
 		int points = testPlayer.get(player);
 		int toAdd = 1;
@@ -106,9 +106,9 @@ public class DCEvent extends Quest {
 	}
 
 	@Override
-	public String onDieZone(L2Character character, L2Character killer, L2ZoneType zone) {
+	public String onDieZone(Creature character, Creature killer, ZoneType zone) {
 		if (isUnderInvasion) {
-			L2PcInstance player = killer.getActingPlayer();
+			Player player = killer.getActingPlayer();
 			if (player != null) {
 				player.increasePvpKills(character);
 				player.addItem("coin", 4037, 1, player, true);
@@ -118,7 +118,7 @@ public class DCEvent extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		if (isUnderInvasion) {
 			StringBuilder tb = new StringBuilder();
 			tb.append("<html><center><font color=\"3D81A8\">Melonis!</font></center><br1>Hi " + player.getName() +
@@ -138,7 +138,7 @@ public class DCEvent extends Quest {
 
 	@SuppressWarnings("unused")
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.startsWith("trySpawnBoss")) {
 			timeToEndInvasion = Integer.valueOf(event.split(" ")[1]);
 
@@ -197,7 +197,7 @@ public class DCEvent extends Quest {
 					int x2 = (int) (radius * Math.cos(i * 0.618));
 					int y2 = (int) (radius * Math.sin(i * 0.618));
 
-					L2Npc inv = addSpawn(invaderIds[Rnd.get(invaderIds.length)], x, y, -3416 + 20, -1, false, 0, false, 0);
+					Npc inv = addSpawn(invaderIds[Rnd.get(invaderIds.length)], x, y, -3416 + 20, -1, false, 0, false, 0);
 
 					invaders.add(inv);
 				}
@@ -208,17 +208,17 @@ public class DCEvent extends Quest {
 		} else if (event.startsWith("spawn_boss")) {
 
 			startQuestTimer("delete_boss", 60000, null, null);
-			L2Npc boss = addSpawn(boosId, -54481, -69402, -3416, 0, false, 0, true);
+			Npc boss = addSpawn(boosId, -54481, -69402, -3416, 0, false, 0, true);
 			invaders.add(boss);
 		} else if (event.startsWith("delete_boss")) {
-			for (L2Character delete : invaders) {
+			for (Creature delete : invaders) {
 				if (delete == null) {
 					continue;
 				}
 				delete.deleteMe();
 			}
 
-			for (L2Character test : registered) {
+			for (Creature test : registered) {
 				if (test == null) {
 					continue;
 				}
@@ -239,21 +239,21 @@ public class DCEvent extends Quest {
 				}
 			}
 
-			for (L2Character chara : invaders) {
+			for (Creature chara : invaders) {
 				if (chara == null) {
 					continue;
 				}
 				chara.deleteMe();
 			}
 
-			for (Map.Entry<L2Character, Integer> ontest : testPlayer.entrySet()) {
+			for (Map.Entry<Creature, Integer> ontest : testPlayer.entrySet()) {
 				if (ontest == null) {
 					continue;
 				}
-				L2Character toTp = ontest.getKey();
+				Creature toTp = ontest.getKey();
 				int totalPoints = ontest.getValue();
 
-				L2PcInstance oui = (L2PcInstance) ontest.getKey();
+				Player oui = (Player) ontest.getKey();
 				Announcements.getInstance().announceToAll("Player : " + toTp.getName() + " Points 1" + totalPoints);
 				oui.addItem("coin", 36414, totalPoints, oui, true);
 				toTp.teleToLocation(-114435, 253417, -1546, true);

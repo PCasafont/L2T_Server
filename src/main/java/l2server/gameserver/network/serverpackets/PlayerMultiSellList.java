@@ -27,9 +27,9 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.model.TradeList.TradeItem;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.clientpackets.Say2;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 
 import static l2server.gameserver.datatables.MultiSell.PAGE_SIZE;
 
@@ -39,9 +39,9 @@ import static l2server.gameserver.datatables.MultiSell.PAGE_SIZE;
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
 public final class PlayerMultiSellList extends L2GameServerPacket {
-	private L2PcInstance player;
+	private Player player;
 	
-	public PlayerMultiSellList(L2PcInstance player) {
+	public PlayerMultiSellList(Player player) {
 		this.player = player;
 	}
 	
@@ -60,7 +60,7 @@ public final class PlayerMultiSellList extends L2GameServerPacket {
 		int i = 1;
 		for (TradeItem item : player.getCustomSellList().getItems()) {
 			if (item.getAppearance() > 0) {
-				L2Item app = ItemTable.getInstance().getTemplate(item.getAppearance());
+				ItemTemplate app = ItemTable.getInstance().getTemplate(item.getAppearance());
 				getClient().sendPacket(new CreatureSay(player.getObjectId(),
 						Say2.TELL,
 						player.getName(),
@@ -114,7 +114,7 @@ public final class PlayerMultiSellList extends L2GameServerPacket {
 				writeD(effect);
 			}
 			
-			for (L2Item priceItem : item.getPriceItems().keySet()) {
+			for (ItemTemplate priceItem : item.getPriceItems().keySet()) {
 				writeD(priceItem.getItemId());
 				writeH(priceItem.getType2());
 				writeQ(item.getPriceItems().get(priceItem));

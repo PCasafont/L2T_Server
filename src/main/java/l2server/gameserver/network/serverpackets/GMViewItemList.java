@@ -15,26 +15,26 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @version $Revision: 1.1.2.1.2.3 $ $Date: 2005/03/27 15:29:57 $
  */
 public class GMViewItemList extends L2ItemListPacket {
 	//
-	private L2ItemInstance[] items;
+	private Item[] items;
 	private int limit;
 	private String playerName;
 	
-	public GMViewItemList(L2PcInstance cha) {
+	public GMViewItemList(Player cha) {
 		items = cha.getInventory().getItems();
 		playerName = cha.getName();
 		limit = cha.getInventoryLimit();
 	}
 	
-	public GMViewItemList(L2PetInstance cha) {
+	public GMViewItemList(PetInstance cha) {
 		items = cha.getInventory().getItems();
 		playerName = cha.getName();
 		limit = cha.getInventoryLimit();
@@ -47,7 +47,7 @@ public class GMViewItemList extends L2ItemListPacket {
 		writeH(0x01); // show window ??
 		writeH(items.length);
 		
-		for (L2ItemInstance item : items) {
+		for (Item item : items) {
 			writeItem(item);
 		}
 		

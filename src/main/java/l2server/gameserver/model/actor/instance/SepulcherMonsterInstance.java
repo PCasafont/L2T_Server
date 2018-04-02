@@ -1,0 +1,467 @@
+/*
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option) any later
+ * version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+package l2server.gameserver.model.actor.instance;
+
+import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.datatables.SkillTable;
+import l2server.gameserver.instancemanager.FourSepulchersManager;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.quest.QuestState;
+import l2server.gameserver.network.serverpackets.NpcSay;
+import l2server.gameserver.templates.chars.NpcTemplate;
+
+import java.util.concurrent.Future;
+
+/**
+ * @author sandman
+ */
+public class SepulcherMonsterInstance extends MonsterInstance {
+	public int mysteriousBoxId = 0;
+	
+	protected Future<?> victimSpawnKeyBoxTask = null;
+	protected Future<?> victimShout = null;
+	protected Future<?> changeImmortalTask = null;
+	protected Future<?> onDeadEventTask = null;
+	
+	public SepulcherMonsterInstance(int objectId, NpcTemplate template) {
+		super(objectId, template);
+		setInstanceType(InstanceType.L2SepulcherMonsterInstance);
+		setShowSummonAnimation(true);
+		switch (template.NpcId) {
+			case 25339:
+			case 25342:
+			case 25346:
+			case 25349:
+				setIsRaid(true);
+		}
+	}
+	
+	@Override
+	public void onSpawn() {
+		setShowSummonAnimation(false);
+		switch (getNpcId()) {
+			case 18150:
+			case 18151:
+			case 18152:
+			case 18153:
+			case 18154:
+			case 18155:
+			case 18156:
+			case 18157:
+				if (victimSpawnKeyBoxTask != null) {
+					victimSpawnKeyBoxTask.cancel(true);
+				}
+				victimSpawnKeyBoxTask = ThreadPoolManager.getInstance().scheduleEffect(new VictimSpawnKeyBox(this), 300000);
+				if (victimShout != null) {
+					victimShout.cancel(true);
+				}
+				victimShout = ThreadPoolManager.getInstance().scheduleEffect(new VictimShout(this), 5000);
+				break;
+			case 18196:
+			case 18197:
+			case 18198:
+			case 18199:
+			case 18200:
+			case 18201:
+			case 18202:
+			case 18203:
+			case 18204:
+			case 18205:
+			case 18206:
+			case 18207:
+			case 18208:
+			case 18209:
+			case 18210:
+			case 18211:
+				break;
+			
+			case 18231:
+			case 18232:
+			case 18233:
+			case 18234:
+			case 18235:
+			case 18236:
+			case 18237:
+			case 18238:
+			case 18239:
+			case 18240:
+			case 18241:
+			case 18242:
+			case 18243:
+				if (changeImmortalTask != null) {
+					changeImmortalTask.cancel(true);
+				}
+				changeImmortalTask = ThreadPoolManager.getInstance().scheduleEffect(new ChangeImmortal(this), 1600);
+				
+				break;
+			case 18256:
+				break;
+			case 25339:
+			case 25342:
+			case 25346:
+			case 25349:
+				setIsRaid(true);
+				break;
+		}
+		super.onSpawn();
+	}
+	
+	@Override
+	public boolean doDie(Creature killer) {
+		if (!super.doDie(killer)) {
+			return false;
+		}
+		
+		switch (getNpcId()) {
+			case 18120:
+			case 18121:
+			case 18122:
+			case 18123:
+			case 18124:
+			case 18125:
+			case 18126:
+			case 18127:
+			case 18128:
+			case 18129:
+			case 18130:
+			case 18131:
+			case 18149:
+			case 18158:
+			case 18159:
+			case 18160:
+			case 18161:
+			case 18162:
+			case 18163:
+			case 18164:
+			case 18165:
+			case 18183:
+			case 18184:
+			case 18212:
+			case 18213:
+			case 18214:
+			case 18215:
+			case 18216:
+			case 18217:
+			case 18218:
+			case 18219:
+				if (onDeadEventTask != null) {
+					onDeadEventTask.cancel(true);
+				}
+				onDeadEventTask = ThreadPoolManager.getInstance().scheduleEffect(new OnDeadEvent(this), 3500);
+				break;
+			
+			case 18150:
+			case 18151:
+			case 18152:
+			case 18153:
+			case 18154:
+			case 18155:
+			case 18156:
+			case 18157:
+				if (victimSpawnKeyBoxTask != null) {
+					victimSpawnKeyBoxTask.cancel(true);
+					victimSpawnKeyBoxTask = null;
+				}
+				if (victimShout != null) {
+					victimShout.cancel(true);
+					victimShout = null;
+				}
+				if (onDeadEventTask != null) {
+					onDeadEventTask.cancel(true);
+				}
+				onDeadEventTask = ThreadPoolManager.getInstance().scheduleEffect(new OnDeadEvent(this), 3500);
+				break;
+			
+			case 18141:
+			case 18142:
+			case 18143:
+			case 18144:
+			case 18145:
+			case 18146:
+			case 18147:
+			case 18148:
+				if (FourSepulchersManager.getInstance().isViscountMobsAnnihilated(mysteriousBoxId)) {
+					if (onDeadEventTask != null) {
+						onDeadEventTask.cancel(true);
+					}
+					onDeadEventTask = ThreadPoolManager.getInstance().scheduleEffect(new OnDeadEvent(this), 3500);
+				}
+				break;
+			
+			case 18220:
+			case 18221:
+			case 18222:
+			case 18223:
+			case 18224:
+			case 18225:
+			case 18226:
+			case 18227:
+			case 18228:
+			case 18229:
+			case 18230:
+			case 18231:
+			case 18232:
+			case 18233:
+			case 18234:
+			case 18235:
+			case 18236:
+			case 18237:
+			case 18238:
+			case 18239:
+			case 18240:
+				if (FourSepulchersManager.getInstance().isDukeMobsAnnihilated(mysteriousBoxId)) {
+					if (onDeadEventTask != null) {
+						onDeadEventTask.cancel(true);
+					}
+					onDeadEventTask = ThreadPoolManager.getInstance().scheduleEffect(new OnDeadEvent(this), 3500);
+				}
+				break;
+			
+			case 25339:
+			case 25342:
+			case 25346:
+			case 25349:
+				giveCup(killer);
+				if (onDeadEventTask != null) {
+					onDeadEventTask.cancel(true);
+				}
+				onDeadEventTask = ThreadPoolManager.getInstance().scheduleEffect(new OnDeadEvent(this), 8500);
+				break;
+		}
+		return true;
+	}
+	
+	@Override
+	public void deleteMe() {
+		if (victimSpawnKeyBoxTask != null) {
+			victimSpawnKeyBoxTask.cancel(true);
+			victimSpawnKeyBoxTask = null;
+		}
+		if (onDeadEventTask != null) {
+			onDeadEventTask.cancel(true);
+			onDeadEventTask = null;
+		}
+		
+		super.deleteMe();
+	}
+	
+	private void giveCup(Creature killer) {
+		String questId = "620_FourGoblets";
+		int cupId = 0;
+		int oldBrooch = 7262;
+		
+		switch (getNpcId()) {
+			case 25339:
+				cupId = 7256;
+				break;
+			case 25342:
+				cupId = 7257;
+				break;
+			case 25346:
+				cupId = 7258;
+				break;
+			case 25349:
+				cupId = 7259;
+				break;
+		}
+		
+		Player player = killer.getActingPlayer();
+		
+		if (player == null) {
+			return;
+		}
+		
+		if (player.getParty() != null) {
+			for (Player mem : player.getParty().getPartyMembers()) {
+				QuestState qs = mem.getQuestState(questId);
+				if (qs != null && (qs.isStarted() || qs.isCompleted()) && mem.getInventory().getItemByItemId(oldBrooch) == null) {
+					mem.addItem("Quest", cupId, 1, mem, true);
+				}
+			}
+		} else {
+			QuestState qs = player.getQuestState(questId);
+			if (qs != null && (qs.isStarted() || qs.isCompleted()) && player.getInventory().getItemByItemId(oldBrooch) == null) {
+				player.addItem("Quest", cupId, 1, player, true);
+			}
+		}
+	}
+	
+	private class VictimShout implements Runnable {
+		private SepulcherMonsterInstance activeChar;
+		
+		public VictimShout(SepulcherMonsterInstance activeChar) {
+			this.activeChar = activeChar;
+		}
+		
+		@Override
+		public void run() {
+			if (activeChar.isDead()) {
+				return;
+			}
+			
+			if (!activeChar.isVisible()) {
+				return;
+			}
+			
+			broadcastPacket(new NpcSay(getObjectId(), 0, getNpcId(), "forgive me!!"));
+		}
+	}
+	
+	private class VictimSpawnKeyBox implements Runnable {
+		private SepulcherMonsterInstance activeChar;
+		
+		public VictimSpawnKeyBox(SepulcherMonsterInstance activeChar) {
+			this.activeChar = activeChar;
+		}
+		
+		@Override
+		public void run() {
+			if (activeChar.isDead()) {
+				return;
+			}
+			
+			if (!activeChar.isVisible()) {
+				return;
+			}
+			
+			FourSepulchersManager.getInstance().spawnKeyBox(activeChar);
+			broadcastPacket(new NpcSay(getObjectId(), 0, getNpcId(), "Many thanks for rescue me."));
+			if (victimShout != null) {
+				victimShout.cancel(true);
+			}
+		}
+	}
+	
+	private static class OnDeadEvent implements Runnable {
+		SepulcherMonsterInstance activeChar;
+		
+		public OnDeadEvent(SepulcherMonsterInstance activeChar) {
+			this.activeChar = activeChar;
+		}
+		
+		@Override
+		public void run() {
+			switch (activeChar.getNpcId()) {
+				case 18120:
+				case 18121:
+				case 18122:
+				case 18123:
+				case 18124:
+				case 18125:
+				case 18126:
+				case 18127:
+				case 18128:
+				case 18129:
+				case 18130:
+				case 18131:
+				case 18149:
+				case 18158:
+				case 18159:
+				case 18160:
+				case 18161:
+				case 18162:
+				case 18163:
+				case 18164:
+				case 18165:
+				case 18183:
+				case 18184:
+				case 18212:
+				case 18213:
+				case 18214:
+				case 18215:
+				case 18216:
+				case 18217:
+				case 18218:
+				case 18219:
+					FourSepulchersManager.getInstance().spawnKeyBox(activeChar);
+					break;
+				
+				case 18150:
+				case 18151:
+				case 18152:
+				case 18153:
+				case 18154:
+				case 18155:
+				case 18156:
+				case 18157:
+					FourSepulchersManager.getInstance().spawnExecutionerOfHalisha(activeChar);
+					break;
+				
+				case 18141:
+				case 18142:
+				case 18143:
+				case 18144:
+				case 18145:
+				case 18146:
+				case 18147:
+				case 18148:
+					FourSepulchersManager.getInstance().spawnMonster(activeChar.mysteriousBoxId);
+					break;
+				
+				case 18220:
+				case 18221:
+				case 18222:
+				case 18223:
+				case 18224:
+				case 18225:
+				case 18226:
+				case 18227:
+				case 18228:
+				case 18229:
+				case 18230:
+				case 18231:
+				case 18232:
+				case 18233:
+				case 18234:
+				case 18235:
+				case 18236:
+				case 18237:
+				case 18238:
+				case 18239:
+				case 18240:
+					FourSepulchersManager.getInstance().spawnArchonOfHalisha(activeChar.mysteriousBoxId);
+					break;
+				
+				case 25339:
+				case 25342:
+				case 25346:
+				case 25349:
+					FourSepulchersManager.getInstance().spawnEmperorsGraveNpc(activeChar.mysteriousBoxId);
+					break;
+			}
+		}
+	}
+	
+	private static class ChangeImmortal implements Runnable {
+		SepulcherMonsterInstance activeChar;
+		
+		public ChangeImmortal(SepulcherMonsterInstance mob) {
+			activeChar = mob;
+		}
+		
+		@Override
+		public void run() {
+			Skill fp = SkillTable.FrequentSkill.FAKE_PETRIFICATION.getSkill(); // Invulnerable	by petrification
+			fp.getEffects(activeChar, activeChar);
+		}
+	}
+	
+	@Override
+	public boolean isAutoAttackable(Creature attacker) {
+		return true;
+	}
+}

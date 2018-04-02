@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Summon;
+import l2server.gameserver.model.actor.Summon;
 
 /**
  * This class ...
@@ -27,7 +27,7 @@ public class PetStatusShow extends L2GameServerPacket {
 	private int summonType;
 	private int summonId;
 	
-	public PetStatusShow(L2Summon summon) {
+	public PetStatusShow(Summon summon) {
 		summonType = summon.getSummonType();
 		summonId = summon.getObjectId();
 	}

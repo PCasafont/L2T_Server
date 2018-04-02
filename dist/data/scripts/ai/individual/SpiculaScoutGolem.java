@@ -17,9 +17,9 @@ package ai.individual;
 
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.Rnd;
 
 /**
@@ -41,17 +41,17 @@ public class SpiculaScoutGolem extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		npc.deleteMe();
 
 		for (int a = 0; a < Rnd.get(2, 3); a++) {
-			L2Npc golem = addSpawn(battleGolem, npc.getX(), npc.getY(), npc.getZ(), 0, true, 120000);
+			Npc golem = addSpawn(battleGolem, npc.getX(), npc.getY(), npc.getZ(), 0, true, 120000);
 
 			golem.setIsRunning(true);
 
 			golem.setTarget(player);
 
-			((L2MonsterInstance) golem).addDamageHate(player, 500, 99999);
+			((MonsterInstance) golem).addDamageHate(player, 500, 99999);
 
 			golem.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 		}
@@ -60,7 +60,7 @@ public class SpiculaScoutGolem extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		if (Rnd.get(10) > 7) {
 			addSpawn(golemGenerator, npc.getX(), npc.getY(), npc.getZ(), 0, false, 120000, true);
 		}

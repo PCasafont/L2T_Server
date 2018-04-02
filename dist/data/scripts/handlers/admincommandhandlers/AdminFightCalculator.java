@@ -18,15 +18,15 @@ package handlers.admincommandhandlers;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Formulas;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.util.StringUtil;
 
 import java.util.StringTokenizer;
@@ -42,7 +42,7 @@ public class AdminFightCalculator implements IAdminCommandHandler {
 
 	//TODO: remove from gm list etc etc
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		try {
 			if (command.startsWith("admin_fight_calculator_show")) {
 				handleShow(command.substring("admin_fight_calculator_show".length()), activeChar);
@@ -61,7 +61,7 @@ public class AdminFightCalculator implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	private void handleStart(String params, L2PcInstance activeChar) {
+	private void handleStart(String params, Player activeChar) {
 		StringTokenizer st = new StringTokenizer(params);
 		int lvl1 = 0;
 		int lvl2 = 0;
@@ -87,11 +87,11 @@ public class AdminFightCalculator implements IAdminCommandHandler {
 			}
 		}
 
-		L2NpcTemplate npc1 = null;
+		NpcTemplate npc1 = null;
 		if (mid1 != 0) {
 			npc1 = NpcTable.getInstance().getTemplate(mid1);
 		}
-		L2NpcTemplate npc2 = null;
+		NpcTemplate npc2 = null;
 		if (mid2 != 0) {
 			npc2 = NpcTable.getInstance().getTemplate(mid2);
 		}
@@ -121,11 +121,11 @@ public class AdminFightCalculator implements IAdminCommandHandler {
 					String.valueOf(npc2.NpcId),
 					"\"  width=100 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">" + "</center>" + "</body></html>");
 		} else if (lvl1 != 0 && npc1 == null) {
-			L2NpcTemplate[] npcs = NpcTable.getInstance().getAllOfLevel(lvl1);
+			NpcTemplate[] npcs = NpcTable.getInstance().getAllOfLevel(lvl1);
 			final StringBuilder sb =
 					StringUtil.startAppend(50 + npcs.length * 200, "<html><title>Select first mob to Fight</title>" + "<body><table>");
 
-			for (L2NpcTemplate n : npcs) {
+			for (NpcTemplate n : npcs) {
 				StringUtil.append(sb,
 						"<tr><td><a action=\"bypass -h admin_fight_calculator lvl1 ",
 						String.valueOf(lvl1),
@@ -143,11 +143,11 @@ public class AdminFightCalculator implements IAdminCommandHandler {
 			sb.append("</table></body></html>");
 			replyMSG = sb.toString();
 		} else if (lvl2 != 0 && npc2 == null) {
-			L2NpcTemplate[] npcs = NpcTable.getInstance().getAllOfLevel(lvl2);
+			NpcTemplate[] npcs = NpcTable.getInstance().getAllOfLevel(lvl2);
 			final StringBuilder sb =
 					StringUtil.startAppend(50 + npcs.length * 200, "<html><title>Select second mob to Fight</title>" + "<body><table>");
 
-			for (L2NpcTemplate n : npcs) {
+			for (NpcTemplate n : npcs) {
 				StringUtil.append(sb,
 						"<tr><td><a action=\"bypass -h admin_fight_calculator lvl1 ",
 						String.valueOf(lvl1),
@@ -175,14 +175,14 @@ public class AdminFightCalculator implements IAdminCommandHandler {
 		activeChar.sendPacket(adminReply);
 	}
 
-	private void handleShow(String params, L2PcInstance activeChar) {
+	private void handleShow(String params, Player activeChar) {
 		params = params.trim();
 
-		L2Character npc1 = null;
-		L2Character npc2 = null;
+		Creature npc1 = null;
+		Creature npc2 = null;
 		if (params.length() == 0) {
 			npc1 = activeChar;
-			npc2 = (L2Character) activeChar.getTarget();
+			npc2 = (Creature) activeChar.getTarget();
 			if (npc2 == null) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 				return;
@@ -194,8 +194,8 @@ public class AdminFightCalculator implements IAdminCommandHandler {
 			mid1 = Integer.parseInt(st.nextToken());
 			mid2 = Integer.parseInt(st.nextToken());
 
-			npc1 = new L2MonsterInstance(IdFactory.getInstance().getNextId(), NpcTable.getInstance().getTemplate(mid1));
-			npc2 = new L2MonsterInstance(IdFactory.getInstance().getNextId(), NpcTable.getInstance().getTemplate(mid2));
+			npc1 = new MonsterInstance(IdFactory.getInstance().getNextId(), NpcTable.getInstance().getTemplate(mid1));
+			npc2 = new MonsterInstance(IdFactory.getInstance().getNextId(), NpcTable.getInstance().getTemplate(mid2));
 		}
 
 		int miss1 = 0;
@@ -241,7 +241,7 @@ public class AdminFightCalculator implements IAdminCommandHandler {
 
 			if (!_miss1) {
 				npc1.setAttackingBodypart();
-				double _dmg1 = Formulas.calcPhysDam(npc1, npc2, _shld1, _crit1, false, L2ItemInstance.CHARGED_NONE);
+				double _dmg1 = Formulas.calcPhysDam(npc1, npc2, _shld1, _crit1, false, Item.CHARGED_NONE);
 				dmg1 += _dmg1;
 				npc1.abortAttack();
 			}
@@ -270,7 +270,7 @@ public class AdminFightCalculator implements IAdminCommandHandler {
 
 			if (!_miss2) {
 				npc2.setAttackingBodypart();
-				double _dmg2 = Formulas.calcPhysDam(npc2, npc1, _shld2, _crit2, false, L2ItemInstance.CHARGED_NONE);
+				double _dmg2 = Formulas.calcPhysDam(npc2, npc1, _shld2, _crit2, false, Item.CHARGED_NONE);
 				dmg2 += _dmg2;
 				npc2.abortAttack();
 			}
@@ -308,9 +308,9 @@ public class AdminFightCalculator implements IAdminCommandHandler {
 		} else {
 			StringUtil.append(replyMSG,
 					"<tr><td width=140>Parameter</td><td width=70>",
-					((L2NpcTemplate) npc1.getTemplate()).Name,
+					((NpcTemplate) npc1.getTemplate()).Name,
 					"</td><td width=70>",
-					((L2NpcTemplate) npc2.getTemplate()).Name,
+					((NpcTemplate) npc2.getTemplate()).Name,
 					"</td></tr>");
 		}
 
@@ -377,9 +377,9 @@ public class AdminFightCalculator implements IAdminCommandHandler {
 		} else {
 			StringUtil.append(replyMSG,
 					"<button value=\"Retry\" action=\"bypass -h admin_fight_calculator_show ",
-					String.valueOf(((L2NpcTemplate) npc1.getTemplate()).NpcId),
+					String.valueOf(((NpcTemplate) npc1.getTemplate()).NpcId),
 					" ",
-					String.valueOf(((L2NpcTemplate) npc2.getTemplate()).NpcId),
+					String.valueOf(((NpcTemplate) npc2.getTemplate()).NpcId),
 					"\"  width=100 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 		}
 
@@ -388,8 +388,8 @@ public class AdminFightCalculator implements IAdminCommandHandler {
 		activeChar.sendPacket(adminReply);
 
 		if (params.length() != 0) {
-			((L2MonsterInstance) npc1).deleteMe();
-			((L2MonsterInstance) npc2).deleteMe();
+			((MonsterInstance) npc1).deleteMe();
+			((MonsterInstance) npc2).deleteMe();
 		}
 	}
 }

@@ -17,17 +17,17 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
 import l2server.gameserver.model.L2CrystallizeReward;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 
 /**
  * @author Erlandys
  */
 public class ExCrystalizingEstimation extends L2GameServerPacket {
 	
-	private L2Item item;
+	private ItemTemplate item;
 	private long crystalCount;
 	
-	public ExCrystalizingEstimation(L2Item item, long crystalCount) {
+	public ExCrystalizingEstimation(ItemTemplate item, long crystalCount) {
 		this.item = item;
 		this.crystalCount = crystalCount;
 	}

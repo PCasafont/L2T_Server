@@ -18,12 +18,12 @@ package handlers.targethandlers;
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.SummonInstance;
+import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.gameserver.util.Util;
 
 import java.util.ArrayList;
@@ -37,34 +37,34 @@ public class TargetAreaUndead implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		List<L2Character> targetList = new ArrayList<L2Character>();
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		List<Creature> targetList = new ArrayList<Creature>();
 
-		L2Character cha;
+		Creature cha;
 
 		int radius = skill.getSkillRadius();
 
-		if (skill.getCastRange() >= 0 && (target instanceof L2Npc || target instanceof L2SummonInstance) && target.isUndead() &&
+		if (skill.getCastRange() >= 0 && (target instanceof Npc || target instanceof SummonInstance) && target.isUndead() &&
 				!target.isAlikeDead()) {
 			cha = target;
 
 			if (onlyFirst == false) {
 				targetList.add(cha); // Add target to target list
 			} else {
-				return new L2Character[]{cha};
+				return new Creature[]{cha};
 			}
 		} else {
 			cha = activeChar;
 		}
 
-		Collection<L2Object> objs = cha.getKnownList().getKnownObjects().values();
+		Collection<WorldObject> objs = cha.getKnownList().getKnownObjects().values();
 		//synchronized (cha.getKnownList().getKnownObjects())
 		{
-			for (L2Object obj : objs) {
-				if (obj instanceof L2Npc) {
-					target = (L2Npc) obj;
-				} else if (obj instanceof L2SummonInstance) {
-					target = (L2SummonInstance) obj;
+			for (WorldObject obj : objs) {
+				if (obj instanceof Npc) {
+					target = (Npc) obj;
+				} else if (obj instanceof SummonInstance) {
+					target = (SummonInstance) obj;
 				} else {
 					continue;
 				}
@@ -84,9 +84,9 @@ public class TargetAreaUndead implements ISkillTargetTypeHandler {
 					}
 
 					if (onlyFirst == false) {
-						targetList.add((L2Character) obj);
+						targetList.add((Creature) obj);
 					} else {
-						return new L2Character[]{(L2Character) obj};
+						return new Creature[]{(Creature) obj};
 					}
 				}
 			}
@@ -96,15 +96,15 @@ public class TargetAreaUndead implements ISkillTargetTypeHandler {
 			return null;
 		}
 
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(new Creature[targetList.size()]);
 	}
 
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
+	public Enum<SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub
-		return L2SkillTargetType.TARGET_AREA_UNDEAD;
+		return SkillTargetType.TARGET_AREA_UNDEAD;
 	}
 
 	public static void main(String[] args) {

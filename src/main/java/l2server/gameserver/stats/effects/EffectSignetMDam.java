@@ -22,62 +22,62 @@ package l2server.gameserver.stats.effects;
 import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2EffectPointInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.*;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.EffectPointInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.MagicSkillLaunched;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
-import l2server.gameserver.stats.skills.L2SkillSignetCasttime;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.stats.skills.SkillSignetCasttime;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.util.Point3D;
 
 import java.util.ArrayList;
 
 public class EffectSignetMDam extends L2Effect {
-	private L2EffectPointInstance actor;
+	private EffectPointInstance actor;
 
-	public EffectSignetMDam(Env env, L2EffectTemplate template) {
+	public EffectSignetMDam(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.SIGNET_GROUND;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.SIGNET_GROUND;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		L2NpcTemplate template;
-		if (getSkill() instanceof L2SkillSignetCasttime) {
-			template = NpcTable.getInstance().getTemplate(((L2SkillSignetCasttime) getSkill()).effectNpcId);
+		NpcTemplate template;
+		if (getSkill() instanceof SkillSignetCasttime) {
+			template = NpcTable.getInstance().getTemplate(((SkillSignetCasttime) getSkill()).effectNpcId);
 		} else {
 			return false;
 		}
 
-		L2EffectPointInstance effectPoint = new L2EffectPointInstance(IdFactory.getInstance().getNextId(), template, getEffector());
+		EffectPointInstance effectPoint = new EffectPointInstance(IdFactory.getInstance().getNextId(), template, getEffector());
 		effectPoint.setCurrentHp(effectPoint.getMaxHp());
 		effectPoint.setCurrentMp(effectPoint.getMaxMp());
-		//L2World.getInstance().storeObject(effectPoint);
+		//World.getInstance().storeObject(effectPoint);
 
 		int x = getEffector().getX();
 		int y = getEffector().getY();
 		int z = getEffector().getZ();
 
-		if (getEffector() instanceof L2PcInstance && getSkill().getTargetType() == L2SkillTargetType.TARGET_GROUND) {
+		if (getEffector() instanceof Player && getSkill().getTargetType() == SkillTargetType.TARGET_GROUND) {
 			Point3D wordPosition = getEffector().getSkillCastPosition();
 
 			if (wordPosition != null) {
@@ -94,7 +94,7 @@ public class EffectSignetMDam extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {
@@ -103,31 +103,31 @@ public class EffectSignetMDam extends L2Effect {
 		}
 		int mpConsume = getSkill().getMpConsume();
 
-		L2PcInstance caster = (L2PcInstance) getEffector();
+		Player caster = (Player) getEffector();
 
-		double ssMul = L2ItemInstance.CHARGED_NONE;
+		double ssMul = Item.CHARGED_NONE;
 
-		L2ItemInstance weaponInst = caster.getActiveWeaponInstance();
+		Item weaponInst = caster.getActiveWeaponInstance();
 		if (weaponInst != null) {
 			ssMul = weaponInst.getChargedSpiritShot();
-			weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+			weaponInst.setChargedSpiritShot(Item.CHARGED_NONE);
 		}
 
-		ArrayList<L2Character> targets = new ArrayList<>();
+		ArrayList<Creature> targets = new ArrayList<>();
 
-		for (L2Character cha : actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius())) {
+		for (Creature cha : actor.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius())) {
 			if (cha == null || cha == caster) {
 				continue;
 			}
 
-			if (cha instanceof L2PcInstance) {
-				L2PcInstance player = (L2PcInstance) cha;
-				if (!player.isInsideZone(L2Character.ZONE_PVP) && player.getPvpFlag() == 0) {
+			if (cha instanceof Player) {
+				Player player = (Player) cha;
+				if (!player.isInsideZone(Creature.ZONE_PVP) && player.getPvpFlag() == 0) {
 					continue;
 				}
 			}
 
-			if (cha instanceof L2Attackable || cha instanceof L2Playable) {
+			if (cha instanceof Attackable || cha instanceof Playable) {
 				if (cha.isAlikeDead()) {
 					continue;
 				}
@@ -139,7 +139,7 @@ public class EffectSignetMDam extends L2Effect {
 					caster.reduceCurrentMp(mpConsume);
 				}
 
-				if (cha instanceof L2Playable) {
+				if (cha instanceof Playable) {
 					if (caster.canAttackCharacter(cha)) {
 						targets.add(cha);
 						caster.updatePvPStatus(cha);
@@ -154,13 +154,13 @@ public class EffectSignetMDam extends L2Effect {
 			caster.broadcastPacket(new MagicSkillLaunched(caster,
 					getSkill().getId(),
 					getSkill().getLevelHash(),
-					targets.toArray(new L2Character[targets.size()])));
-			for (L2Character target : targets) {
+					targets.toArray(new Creature[targets.size()])));
+			for (Creature target : targets) {
 				boolean mcrit = Formulas.calcMCrit(caster.getMCriticalHit(target, getSkill()));
 				byte shld = Formulas.calcShldUse(caster, target, getSkill());
 				int mdam = (int) Formulas.calcMagicDam(caster, target, getSkill(), shld, ssMul, mcrit);
 
-				if (target instanceof L2Summon) {
+				if (target instanceof Summon) {
 					target.broadcastStatusUpdate();
 				}
 
@@ -179,7 +179,7 @@ public class EffectSignetMDam extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {

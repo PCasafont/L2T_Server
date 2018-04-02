@@ -17,12 +17,13 @@ package l2server.gameserver.datatables;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.CharacterCreate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
@@ -42,6 +43,9 @@ import java.util.logging.Level;
  * @version $Revision: 1.3.2.2.2.1 $ $Date: 2005/03/27 15:29:18 $
  */
 public class CharNameTable {
+	private static Logger log = LoggerFactory.getLogger(CharNameTable.class.getName());
+
+
 
 	private final Map<Integer, String> chars = new ConcurrentHashMap<>();
 	private final Map<Integer, Integer> accessLevels = new HashMap<>();
@@ -53,7 +57,7 @@ public class CharNameTable {
 		return SingletonHolder.instance;
 	}
 
-	public final void addName(L2PcInstance player) {
+	public final void addName(Player player) {
 		if (player != null) {
 			addName(player.getObjectId(), player.getName());
 			accessLevels.put(player.getObjectId(), player.getAccessLevel().getLevel());
@@ -108,7 +112,7 @@ public class CharNameTable {
 			rset.close();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Could not check existing char name: " + e.getMessage(), e);
+			log.warn("Could not check existing char name: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -150,7 +154,7 @@ public class CharNameTable {
 			rset.close();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Could not check existing char id: " + e.getMessage(), e);
+			log.warn("Could not check existing char id: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -184,7 +188,7 @@ public class CharNameTable {
 			rset.close();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Could not check existing charname: " + e.getMessage(), e);
+			log.warn("Could not check existing charname: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -207,7 +211,7 @@ public class CharNameTable {
 			rset.close();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Could not check existing char number: " + e.getMessage(), e);
+			log.warn("Could not check existing char number: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -239,14 +243,14 @@ public class CharNameTable {
 			rset.close();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Could not load char name: " + e.getMessage(), e);
+			log.warn("Could not load char name: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
-		Log.info(getClass().getSimpleName() + ": Loaded " + chars.size() + " char names.");
+		log.info(getClass().getSimpleName() + ": Loaded " + chars.size() + " char names.");
 	}
 
-	public boolean setCharNameConditions(L2PcInstance player, String name) {
+	public boolean setCharNameConditions(Player player, String name) {
 		if (Config.FORBIDDEN_NAMES.length > 1) {
 			for (String st : Config.FORBIDDEN_NAMES) {
 				if (name.toLowerCase().contains(st.toLowerCase())) {

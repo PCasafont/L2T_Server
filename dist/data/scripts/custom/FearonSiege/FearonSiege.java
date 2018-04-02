@@ -8,20 +8,19 @@ import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2GuardInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.GuardInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.network.serverpackets.*;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.util.*;
@@ -51,21 +50,21 @@ public class FearonSiege extends Quest {
 	private static final int summonTreeId = 27486;
 	private static final int gravityCoreId = 13435;
 	//Dummy Effects
-	private static final L2Skill portalEffect1 = SkillTable.getInstance().getInfo(6783, 1);
-	private static final L2Skill portalEffect2 = SkillTable.getInstance().getInfo(6799, 1);
-	private static final L2Skill warriorsSpawnEffect = SkillTable.getInstance().getInfo(6176, 1);
+	private static final Skill portalEffect1 = SkillTable.getInstance().getInfo(6783, 1);
+	private static final Skill portalEffect2 = SkillTable.getInstance().getInfo(6799, 1);
+	private static final Skill warriorsSpawnEffect = SkillTable.getInstance().getInfo(6176, 1);
 	//Protection Stone AI Skill
-	private static final L2Skill protectionSkill = SkillTable.getInstance().getInfo(14085, 1);
-	private static final L2Skill weakMoment = SkillTable.getInstance().getInfo(14558, 1);
+	private static final Skill protectionSkill = SkillTable.getInstance().getInfo(14085, 1);
+	private static final Skill weakMoment = SkillTable.getInstance().getInfo(14558, 1);
 	//Humman Support AI Skills
 	private static final int[] fullBuffsIds = {15129, 15133, 15137};
-	private static final L2Skill buffPresentation = SkillTable.getInstance().getInfo(15368, 6);
-	private static final L2Skill resSkill = SkillTable.getInstance().getInfo(1016, 6);
-	private static final L2Skill healSkill = SkillTable.getInstance().getInfo(11570, 1);
-	private static final L2Skill summonTree = SkillTable.getInstance().getInfo(14902, 1);
-	private static final L2Skill blessingOfTree = SkillTable.getInstance().getInfo(11806, 4);
-	private static final L2Skill ultimateDef = SkillTable.getInstance().getInfo(23451, 3);
-	private static final L2Skill summonCore = SkillTable.getInstance().getInfo(6848, 1);
+	private static final Skill buffPresentation = SkillTable.getInstance().getInfo(15368, 6);
+	private static final Skill resSkill = SkillTable.getInstance().getInfo(1016, 6);
+	private static final Skill healSkill = SkillTable.getInstance().getInfo(11570, 1);
+	private static final Skill summonTree = SkillTable.getInstance().getInfo(14902, 1);
+	private static final Skill blessingOfTree = SkillTable.getInstance().getInfo(11806, 4);
+	private static final Skill ultimateDef = SkillTable.getInstance().getInfo(23451, 3);
+	private static final Skill summonCore = SkillTable.getInstance().getInfo(6848, 1);
 	private static final int passiveSkillId = 90003;
 	private static final String[] dummyKainTexts =
 			{"They... They are coming...", "They will arrive soon...", "No one will be safe...", "But... The Aden army will be ready to Fight!",
@@ -75,18 +74,18 @@ public class FearonSiege extends Quest {
 	private static int eventStatus = 0;
 	private static int eventRound = 0;
 	private static int instanceId = 0;
-	private static L2Npc protectionStone = null;
-	private static L2Npc dummyKain = null;
-	private static L2Npc bossMakkum = null;
+	private static Npc protectionStone = null;
+	private static Npc dummyKain = null;
+	private static Npc bossMakkum = null;
 	//Warrior Npcs
-	private static L2Npc warriorLeona = null;
-	private static L2Npc warriorKain = null;
-	private static L2Npc warriorMageSup = null;
+	private static Npc warriorLeona = null;
+	private static Npc warriorKain = null;
+	private static Npc warriorMageSup = null;
 	//Warrior Summons
-	private static L2Npc summonTreeHelper = null;
-	private static L2Npc summonGravityCore = null;
-	private static List<L2Npc> guardArmy = new ArrayList<L2Npc>();
-	private static List<L2Npc> allMinions = new ArrayList<L2Npc>();
+	private static Npc summonTreeHelper = null;
+	private static Npc summonGravityCore = null;
+	private static List<Npc> guardArmy = new ArrayList<Npc>();
+	private static List<Npc> allMinions = new ArrayList<Npc>();
 	private static List<String> hwids = new ArrayList<String>();
 	private static List<Integer> playerIds = new ArrayList<Integer>();
 	private static Map<Integer, Map<L2Party, Long>> attackerParty = new HashMap<Integer, Map<L2Party, Long>>();
@@ -175,9 +174,9 @@ public class FearonSiege extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		if (event.equalsIgnoreCase("random_text")) {
@@ -272,18 +271,18 @@ public class FearonSiege extends Quest {
 		} else if (event.equalsIgnoreCase("kain_ai")) {
 			warriorKain.setIsRunning(true);
 			warriorKain.setIsInvul(true);
-			((L2GuardInstance) warriorKain).setCanReturnToSpawnPoint(false);
+			((GuardInstance) warriorKain).setCanReturnToSpawnPoint(false);
 
 			warriorKain.setTarget(bossMakkum);
-			((L2GuardInstance) warriorKain).addDamageHate(bossMakkum, 500, 9999);
+			((GuardInstance) warriorKain).addDamageHate(bossMakkum, 500, 9999);
 			warriorKain.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, bossMakkum);
 		} else if (event.equalsIgnoreCase("leona_ai")) {
 			warriorLeona.setIsRunning(true);
 			warriorLeona.setIsInvul(true);
-			((L2GuardInstance) warriorLeona).setCanReturnToSpawnPoint(false);
+			((GuardInstance) warriorLeona).setCanReturnToSpawnPoint(false);
 
 			warriorLeona.setTarget(bossMakkum);
-			((L2GuardInstance) warriorLeona).addDamageHate(bossMakkum, 500, 9999);
+			((GuardInstance) warriorLeona).addDamageHate(bossMakkum, 500, 9999);
 			warriorLeona.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, bossMakkum);
 		} else if (event.equalsIgnoreCase("stone_ai")) {
 			/**
@@ -291,16 +290,16 @@ public class FearonSiege extends Quest {
 			 *
 			 * This NPC will cast non-stop one buff to all the players that are inside his activity radius.
 			 */
-			Collection<L2Character> chars = protectionStone.getKnownList().getKnownCharactersInRadius(protectionSkill.getSkillRadius());
+			Collection<Creature> chars = protectionStone.getKnownList().getKnownCharactersInRadius(protectionSkill.getSkillRadius());
 
 			if (chars != null && !chars.isEmpty()) {
-				for (L2Character chara : chars) {
+				for (Creature chara : chars) {
 					if (chara == null) {
 						continue;
 					}
 
 					if (chara.isInsideRadius(protectionStone, protectionSkill.getSkillRadius(), false, false)) {
-						if (chara instanceof L2Playable) {
+						if (chara instanceof Playable) {
 							protectionSkill.getEffects(chara, chara);
 						} else {
 							if (eventRound >= 17) {
@@ -317,12 +316,12 @@ public class FearonSiege extends Quest {
 			 * This NPC will cast non-stop a heal skill to all players around
 			 */
 			if (summonTreeHelper != null && !summonTreeHelper.isDecayed()) {
-				Collection<L2Character> chars = summonTreeHelper.getKnownList().getKnownCharactersInRadius(blessingOfTree.getSkillRadius());
+				Collection<Creature> chars = summonTreeHelper.getKnownList().getKnownCharactersInRadius(blessingOfTree.getSkillRadius());
 
 				if (chars != null && !chars.isEmpty()) {
-					for (L2Character chara : chars) {
+					for (Creature chara : chars) {
 						if (chara == null || !chara.isInsideRadius(summonTreeHelper, blessingOfTree.getSkillRadius(), false, false) ||
-								!(chara instanceof L2Playable)) {
+								!(chara instanceof Playable)) {
 							continue;
 						}
 
@@ -337,12 +336,12 @@ public class FearonSiege extends Quest {
 			 * This NPC will cast non-stop a UD skill to all players inside
 			 */
 			if (summonGravityCore != null && !summonGravityCore.isDecayed()) {
-				Collection<L2Character> chars = summonGravityCore.getKnownList().getKnownCharactersInRadius(ultimateDef.getSkillRadius());
+				Collection<Creature> chars = summonGravityCore.getKnownList().getKnownCharactersInRadius(ultimateDef.getSkillRadius());
 
 				if (chars != null && !chars.isEmpty()) {
-					for (L2Character chara : chars) {
+					for (Creature chara : chars) {
 						if (chara == null || !chara.isInsideRadius(summonGravityCore, ultimateDef.getSkillRadius(), false, false) ||
-								!(chara instanceof L2Playable)) {
+								!(chara instanceof Playable)) {
 							continue;
 						}
 
@@ -356,17 +355,17 @@ public class FearonSiege extends Quest {
 			 *
 			 * We will just start the attack to the boss
 			 */
-			for (L2Npc guard : guardArmy) {
+			for (Npc guard : guardArmy) {
 				if (guard == null) {
 					continue;
 				}
 
 				guard.setIsRunning(true);
 				guard.setIsInvul(true);
-				((L2GuardInstance) guard).setCanReturnToSpawnPoint(false);
+				((GuardInstance) guard).setCanReturnToSpawnPoint(false);
 
 				guard.setTarget(bossMakkum);
-				((L2GuardInstance) guard).addDamageHate(bossMakkum, 500, 9999);
+				((GuardInstance) guard).addDamageHate(bossMakkum, 500, 9999);
 				guard.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, bossMakkum);
 			}
 		} else if (event.equalsIgnoreCase("ai_magic_sup")) {
@@ -379,7 +378,7 @@ public class FearonSiege extends Quest {
 			 * 		- Summon a protective shield that will full-protect all the players inside
 			 * 		- Res dead players that are inside the ress cast skill range
 			 */
-			final Collection<L2PcInstance> chars = warriorMageSup.getKnownList().getKnownPlayersInRadius(1600);
+			final Collection<Player> chars = warriorMageSup.getKnownList().getKnownPlayersInRadius(1600);
 
 			if (chars != null && !chars.isEmpty()) {
 				if (warriorMageSup.getCurrentMp() < 800) {
@@ -389,9 +388,9 @@ public class FearonSiege extends Quest {
 							"My mana power are decreasing so fast...!"));
 				}
 
-				List<L2PcInstance> fuckedPlayers = new ArrayList<L2PcInstance>();
-				List<L2PcInstance> deadPlayers = new ArrayList<L2PcInstance>();
-				for (L2PcInstance chara : chars) {
+				List<Player> fuckedPlayers = new ArrayList<Player>();
+				List<Player> deadPlayers = new ArrayList<Player>();
+				for (Player chara : chars) {
 					if (chara == null) {
 						continue;
 					}
@@ -406,7 +405,7 @@ public class FearonSiege extends Quest {
 				int fuckedCount = fuckedPlayers.size();
 				int nextActionTime = 10000; //10sec
 				if (deadPlayers.size() > 0) {
-					final L2PcInstance target = deadPlayers.get(Rnd.get(deadPlayers.size() - 1));
+					final Player target = deadPlayers.get(Rnd.get(deadPlayers.size() - 1));
 					if (target != null && target.isDead() && warriorMageSup.isInsideRadius(target, resSkill.getCastRange(), false, false)) {
 						warriorMageSup.broadcastPacket(new CreatureSay(warriorMageSup.getObjectId(),
 								1,
@@ -420,7 +419,7 @@ public class FearonSiege extends Quest {
 					}
 				} else if (fuckedCount > 0 && fuckedCount <= 5) //HEAL
 				{
-					L2PcInstance target = fuckedPlayers.get(Rnd.get(fuckedPlayers.size() - 1));
+					Player target = fuckedPlayers.get(Rnd.get(fuckedPlayers.size() - 1));
 
 					if (target != null && warriorMageSup.getCurrentMp() >= healSkill.getMpConsume()) {
 						warriorMageSup.broadcastPacket(new CreatureSay(warriorMageSup.getObjectId(),
@@ -517,7 +516,7 @@ public class FearonSiege extends Quest {
 						buffLevel = 3;
 					}
 
-					final L2Skill buffSkill = SkillTable.getInstance().getInfo(fullBuffsIds[Rnd.get(fullBuffsIds.length)] + buffLevel, 1);
+					final Skill buffSkill = SkillTable.getInstance().getInfo(fullBuffsIds[Rnd.get(fullBuffsIds.length)] + buffLevel, 1);
 					if (buffSkill != null && warriorMageSup.getCurrentMp() >= buffSkill.getMpConsume()) {
 						String skillType = buffSkill.getName().split(" ")[2];
 
@@ -533,7 +532,7 @@ public class FearonSiege extends Quest {
 						ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
 							@Override
 							public void run() {
-								for (L2PcInstance chara : chars) {
+								for (Player chara : chars) {
 									if (chara == null || !chara.isInsideRadius(warriorMageSup, 150, false, false)) {
 										continue;
 									}
@@ -609,14 +608,14 @@ public class FearonSiege extends Quest {
 								new ExShowScreenMessage(1, 0, 2, 0, 0, 0, 0, true, 5 * 1000, 0, "The entrance to the instance is now closed!"));
 			}
 
-			L2Skill passiveSkill = SkillTable.getInstance().getInfo(passiveSkillId, eventRound < 20 ? eventRound : 10);
+			Skill passiveSkill = SkillTable.getInstance().getInfo(passiveSkillId, eventRound < 20 ? eventRound : 10);
 
 			if (eventRound < 20) {
 				for (int i = 0; i < 61; i++) {
 					int x = (int) (1200 * Math.cos(i * 0.618));
 					int y = (int) (1200 * Math.sin(i * 0.618));
 
-					L2Npc minion =
+					Npc minion =
 							addSpawn(invadeMobs[Rnd.get(invadeMobs.length)], -79660 + x, 244954 + y, -3651 + 20, -1, false, 0, true, instanceId);
 					minion.setIsRunning(true);
 					minion.addSkill(passiveSkill);
@@ -643,15 +642,15 @@ public class FearonSiege extends Quest {
 	}
 
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance player, L2Skill skill, L2Object[] targets, boolean isPet) {
+	public String onSkillSee(Npc npc, Player player, Skill skill, WorldObject[] targets, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onSkillSee: " + npc.getName());
+			log.warn(getName() + ": onSkillSee: " + npc.getName());
 		}
 
 		//Register indirectly attackers (Healers and Supporters)
 		L2Party party = player.getParty();
 		if (party != null) {
-			if (skill.getTargetType() != L2SkillTargetType.TARGET_SELF &&
+			if (skill.getTargetType() != SkillTargetType.TARGET_SELF &&
 					(skill.getSkillType().toString().contains("HEAL") || skill.getSkillType().toString().contains("BUFF"))) {
 				synchronized (attackerParty) {
 					Map<L2Party, Long> registredAttacks = attackerParty.get(npc.getObjectId());
@@ -678,14 +677,14 @@ public class FearonSiege extends Quest {
 		return super.onSkillSee(npc, player, skill, targets, isPet);
 	}
 
-	private static void rewardDetectedAttackers(L2Npc npc) {
+	private static void rewardDetectedAttackers(Npc npc) {
 		if (!isEventOn || npc.isMinion()) {
 			return;
 		}
 
 		if (!npc.isInsideRadius(protectionStone, 2000, false, false)) {
 			if (debug) {
-				Log.warning(qn + ": Npc: " + npc.getName() + " wont give reward because it's out of the limit!");
+				log.warn(qn + ": Npc: " + npc.getName() + " wont give reward because it's out of the limit!");
 			}
 			return;
 		}
@@ -707,14 +706,14 @@ public class FearonSiege extends Quest {
 					int rewardId = i.getKey();
 					int count = Rnd.get(i.getValue()) + 1;
 
-					L2ItemInstance dropItem = new L2ItemInstance(IdFactory.getInstance().getNextId(), rewardId);
+					Item dropItem = new Item(IdFactory.getInstance().getNextId(), rewardId);
 					if (dropItem != null)
 					{
 						dropItem.dropMe(npc, npc.getX() + Rnd.get(100), npc.getY() + Rnd.get(100), npc.getZ() + 20);
 
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), 0, npc.getName(), " drop: " + ItemTable.getInstance().getTemplate(rewardId).getName() + "("+count+")"));
 
-						Log.warning(qn + ": Npc: " + npc.getName() + " drops: " + ItemTable.getInstance().getTemplate(rewardId).getName() +"("+count+")");
+						log.warn(qn + ": Npc: " + npc.getName() + " drops: " + ItemTable.getInstance().getTemplate(rewardId).getName() +"("+count+")");
 
 						synchronized(rewardedInfo)
 						{
@@ -751,7 +750,7 @@ public class FearonSiege extends Quest {
 
 					if (rewardParty != null)
 					{
-						for (L2PcInstance partyMember : rewardParty.getPartyMembers())
+						for (Player partyMember : rewardParty.getPartyMembers())
 						{
 							if (partyMember == null || partyMember.getInstanceId() != instanceId || !partyMember.isInsideRadius(protectionStone, 2000, false, false))
 								continue;
@@ -760,7 +759,7 @@ public class FearonSiege extends Quest {
 							int count = Rnd.get(possibleRewards.get(rndRewardId)) + 1;
 							partyMember.addItem(qn, rndRewardId, count, npc, true);
 
-							//Log.warning(qn + ": player: " + partyMember.getName() + " rewarded with " + ItemTable.getInstance().getTemplate(rndRewardId).getName() +"("+count+")");
+							//log.warn(qn + ": player: " + partyMember.getName() + " rewarded with " + ItemTable.getInstance().getTemplate(rndRewardId).getName() +"("+count+")");
 
 							synchronized(rewardedInfo)
 							{
@@ -781,9 +780,9 @@ public class FearonSiege extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		rewardDetectedAttackers(npc);
@@ -818,7 +817,7 @@ public class FearonSiege extends Quest {
 						continue;
 					}
 
-					Log.warning(qn + ": Rewarded in total :" + ItemTable.getInstance().getTemplate(i.getKey()).getName() + "(" + i.getValue() + ")");
+					log.warn(qn + ": Rewarded in total :" + ItemTable.getInstance().getTemplate(i.getKey()).getName() + "(" + i.getValue() + ")");
 				}
 			}
 		}
@@ -827,9 +826,9 @@ public class FearonSiege extends Quest {
 	}
 
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill) {
+	public final String onAttack(Npc npc, Player attacker, int damage, boolean isPet, Skill skill) {
 		if (debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 
 		L2Party party = attacker.getParty();
@@ -881,7 +880,7 @@ public class FearonSiege extends Quest {
 												portalEffect2.getReuseDelay()));
 
 						for (int i = 0; i < 15; i++) {
-							L2Npc guard = addSpawn(warriorGuard,
+							Npc guard = addSpawn(warriorGuard,
 									protectionStone.getX(),
 									protectionStone.getY(),
 									protectionStone.getZ(),
@@ -927,7 +926,7 @@ public class FearonSiege extends Quest {
 			} else if (eventStatus == 2 && npc.getCurrentHp() < npc.getMaxHp() * 0.50) {
 				eventStatus = 3;
 
-				L2Skill passiveSkill = SkillTable.getInstance().getInfo(passiveSkillId, 15);
+				Skill passiveSkill = SkillTable.getInstance().getInfo(passiveSkillId, 15);
 				npc.addSkill(passiveSkill);
 
 				//Supporters
@@ -1036,7 +1035,7 @@ public class FearonSiege extends Quest {
 			} else if (eventStatus == 3 && npc.getCurrentHp() < npc.getMaxHp() * 0.10) {
 				eventStatus = 4;
 
-				L2Skill passiveSkill = SkillTable.getInstance().getInfo(passiveSkillId, 20);
+				Skill passiveSkill = SkillTable.getInstance().getInfo(passiveSkillId, 20);
 				npc.addSkill(passiveSkill);
 			}
 		}
@@ -1044,7 +1043,7 @@ public class FearonSiege extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		if (isEventOn) {
 			if (npc.getNpcId() == dummyKainVanHalter) {
 				if (player.isGM()) {

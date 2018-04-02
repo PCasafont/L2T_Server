@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 
 /**
  * 0000: 76  7a 07 80 49  ea 01 00 00  c1 37 fe	uz..Ic'.J.....7. <p>
@@ -30,7 +30,7 @@ public class ValidateLocation extends L2GameServerPacket {
 	private int charObjId;
 	private int x, y, z, heading;
 	
-	public ValidateLocation(L2Character cha) {
+	public ValidateLocation(Creature cha) {
 		charObjId = cha.getObjectId();
 		x = cha.getX();
 		y = cha.getY();

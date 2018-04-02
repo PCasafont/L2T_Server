@@ -15,18 +15,18 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author kerberos
  * JIV update 27.8.10
  */
 public class ExStopMoveInAirShip extends L2GameServerPacket {
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	private int shipObjId;
 	private int x, y, z, h;
 	
-	public ExStopMoveInAirShip(L2PcInstance player, int shipObjId) {
+	public ExStopMoveInAirShip(Player player, int shipObjId) {
 		activeChar = player;
 		this.shipObjId = shipObjId;
 		x = player.getInVehiclePosition().getX();

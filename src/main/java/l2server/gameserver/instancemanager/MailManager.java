@@ -17,16 +17,18 @@ package l2server.gameserver.instancemanager;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExNoticePostArrived;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 import l2server.util.loader.annotations.Load;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -36,12 +38,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
 
 /**
  * @author Pere, DS
  */
 public class MailManager {
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	private Map<Integer, Message> messages = new ConcurrentHashMap<>();
 
 	public static MailManager getInstance() {
@@ -88,18 +91,18 @@ public class MailManager {
 			stmt1.close();
 			stmt2.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Mail Manager: Error loading from database:" + e.getMessage(), e);
+			log.warn("Mail Manager: Error loading from database:" + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
-		Log.info("Mail Manager: Successfully loaded " + readed + " messages.");
+		log.info("Mail Manager: Successfully loaded " + readed + " messages.");
 	}
 
 	public final Message getMessage(int msgId) {
 		return messages.get(msgId);
 	}
 
-	public final boolean hasUnreadPost(L2PcInstance player) {
+	public final boolean hasUnreadPost(Player player) {
 		final int objectId = player.getObjectId();
 		for (Message msg : messages.values()) {
 			if (msg != null && msg.getReceiverId() == objectId && msg.isUnread()) {
@@ -170,12 +173,12 @@ public class MailManager {
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Mail Manager: Error saving message:" + e.getMessage(), e);
+			log.warn("Mail Manager: Error saving message:" + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 
-		final L2PcInstance receiver = L2World.getInstance().getPlayer(msg.getReceiverId());
+		final Player receiver = World.getInstance().getPlayer(msg.getReceiverId());
 		if (receiver != null) {
 			receiver.sendPacket(ExNoticePostArrived.valueOf(true));
 		}
@@ -199,7 +202,7 @@ public class MailManager {
 
 			if (msg.hasAttachments()) {
 				try {
-					final L2PcInstance sender = L2World.getInstance().getPlayer(msg.getSenderId());
+					final Player sender = World.getInstance().getPlayer(msg.getSenderId());
 					if (sender != null) {
 						msg.getAttachments().returnToWh(sender.getWarehouse());
 						sender.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MAIL_RETURNED));
@@ -210,14 +213,14 @@ public class MailManager {
 					msg.getAttachments().deleteMe();
 					msg.removeAttachments();
 
-					final L2PcInstance receiver = L2World.getInstance().getPlayer(msg.getReceiverId());
+					final Player receiver = World.getInstance().getPlayer(msg.getReceiverId());
 					if (receiver != null) {
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.MAIL_RETURNED);
 						//sm.addString(msg.getReceiverName());
 						receiver.sendPacket(sm);
 					}
 				} catch (Exception e) {
-					Log.log(Level.WARNING, "Mail Manager: Error returning items:" + e.getMessage(), e);
+					log.warn("Mail Manager: Error returning items:" + e.getMessage(), e);
 				}
 			}
 			deleteMessageInDb(msg.getId());
@@ -234,7 +237,7 @@ public class MailManager {
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Mail Manager: Error marking as read message:" + e.getMessage(), e);
+			log.warn("Mail Manager: Error marking as read message:" + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -253,7 +256,7 @@ public class MailManager {
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Mail Manager: Error marking as deleted by sender message:" + e.getMessage(), e);
+			log.warn("Mail Manager: Error marking as deleted by sender message:" + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -272,7 +275,7 @@ public class MailManager {
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Mail Manager: Error marking as deleted by receiver message:" + e.getMessage(), e);
+			log.warn("Mail Manager: Error marking as deleted by receiver message:" + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -291,7 +294,7 @@ public class MailManager {
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Mail Manager: Error removing attachments in message:" + e.getMessage(), e);
+			log.warn("Mail Manager: Error removing attachments in message:" + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -310,7 +313,7 @@ public class MailManager {
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Mail Manager: Error deleting message:" + e.getMessage(), e);
+			log.warn("Mail Manager: Error deleting message:" + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

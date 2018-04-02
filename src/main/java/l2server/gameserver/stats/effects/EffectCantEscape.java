@@ -15,24 +15,25 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @author DS
  * <p>
- * Effect will generate charges for L2PcInstance targets
+ * Effect will generate charges for Player targets
  * Number of charges in "value", maximum number in "count" effect variables
  */
 public class EffectCantEscape extends L2Effect {
-	public EffectCantEscape(Env env, L2EffectTemplate template) {
+	public EffectCantEscape(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
@@ -40,24 +41,24 @@ public class EffectCantEscape extends L2Effect {
 			return false;
 		}
 
-		if (!(getEffected() instanceof L2PcInstance)) {
+		if (!(getEffected() instanceof Player)) {
 			return false;
 		}
 
-		((L2PcInstance) getEffected()).setCanEscape(false);
+		((Player) getEffected()).setCanEscape(false);
 		return true;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {
-		((L2PcInstance) getEffected()).setCanEscape(true);
+		((Player) getEffected()).setCanEscape(true);
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

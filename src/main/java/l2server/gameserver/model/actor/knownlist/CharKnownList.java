@@ -15,10 +15,10 @@
 
 package l2server.gameserver.model.actor.knownlist;
 
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.util.Util;
 
 import java.util.ArrayList;
@@ -29,40 +29,40 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 public class CharKnownList extends ObjectKnownList {
-	private Map<Integer, L2PcInstance> knownPlayers;
-	private Map<Integer, L2Summon> knownSummons;
+	private Map<Integer, Player> knownPlayers;
+	private Map<Integer, Summon> knownSummons;
 	private Map<Integer, Integer> knownRelations;
 
-	public CharKnownList(L2Character activeChar) {
+	public CharKnownList(Creature activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public boolean addKnownObject(L2Object object) {
+	public boolean addKnownObject(WorldObject object) {
 		if (!super.addKnownObject(object)) {
 			return false;
 		}
-		if (object instanceof L2PcInstance) {
-			getKnownPlayers().put(object.getObjectId(), (L2PcInstance) object);
+		if (object instanceof Player) {
+			getKnownPlayers().put(object.getObjectId(), (Player) object);
 			getKnownRelations().put(object.getObjectId(), -1);
-		} else if (object instanceof L2Summon) {
-			getKnownSummons().put(object.getObjectId(), (L2Summon) object);
+		} else if (object instanceof Summon) {
+			getKnownSummons().put(object.getObjectId(), (Summon) object);
 		}
 
 		return true;
 	}
 
 	/**
-	 * Return True if the L2PcInstance is in knownPlayer of the L2Character.<BR><BR>
+	 * Return True if the Player is in knownPlayer of the Creature.<BR><BR>
 	 *
-	 * @param player The L2PcInstance to search in knownPlayer
+	 * @param player The Player to search in knownPlayer
 	 */
-	public final boolean knowsThePlayer(L2PcInstance player) {
+	public final boolean knowsThePlayer(Player player) {
 		return getActiveChar() == player || getKnownPlayers().containsKey(player.getObjectId());
 	}
 
 	/**
-	 * Remove all L2Object from knownObjects and knownPlayer of the L2Character then cancel Attack or Cast and notify AI.
+	 * Remove all WorldObject from knownObjects and knownPlayer of the Creature then cancel Attack or Cast and notify AI.
 	 */
 	@Override
 	public final void removeAllKnownObjects() {
@@ -71,7 +71,7 @@ public class CharKnownList extends ObjectKnownList {
 		getKnownRelations().clear();
 		getKnownSummons().clear();
 
-		// Set target of the L2Character to null
+		// Set target of the Creature to null
 		// Cancel Attack or Cast
 		getActiveChar().setTarget(null);
 
@@ -82,22 +82,22 @@ public class CharKnownList extends ObjectKnownList {
 	}
 
 	@Override
-	protected boolean removeKnownObject(L2Object object, boolean forget) {
+	protected boolean removeKnownObject(WorldObject object, boolean forget) {
 		if (!super.removeKnownObject(object, forget)) {
 			return false;
 		}
 
 		if (!forget) // on forget objects removed by iterator
 		{
-			if (object instanceof L2PcInstance) {
+			if (object instanceof Player) {
 				getKnownPlayers().remove(object.getObjectId());
 				getKnownRelations().remove(object.getObjectId());
-			} else if (object instanceof L2Summon) {
+			} else if (object instanceof Summon) {
 				getKnownSummons().remove(object.getObjectId());
 			}
 		}
 
-		// If object is targeted by the L2Character, cancel Attack or Cast
+		// If object is targeted by the Creature, cancel Attack or Cast
 		if (object == getActiveChar().getTarget()) {
 			getActiveChar().setTarget(null);
 		}
@@ -108,9 +108,9 @@ public class CharKnownList extends ObjectKnownList {
 	@Override
 	public void forgetObjects(boolean fullCheck) {
 		if (!fullCheck) {
-			final Collection<L2PcInstance> plrs = getKnownPlayers().values();
-			final Iterator<L2PcInstance> pIter = plrs.iterator();
-			L2PcInstance player;
+			final Collection<Player> plrs = getKnownPlayers().values();
+			final Iterator<Player> pIter = plrs.iterator();
+			Player player;
 			//synchronized (getKnownPlayers())
 			{
 				while (pIter.hasNext()) {
@@ -127,9 +127,9 @@ public class CharKnownList extends ObjectKnownList {
 				}
 			}
 
-			final Collection<L2Summon> sums = getKnownSummons().values();
-			final Iterator<L2Summon> sIter = sums.iterator();
-			L2Summon summon;
+			final Collection<Summon> sums = getKnownSummons().values();
+			final Iterator<Summon> sIter = sums.iterator();
+			Summon summon;
 			//synchronized (sums)
 			{
 				while (sIter.hasNext()) {
@@ -147,9 +147,9 @@ public class CharKnownList extends ObjectKnownList {
 			return;
 		}
 		// Go through knownObjects
-		final Collection<L2Object> objs = getKnownObjects().values();
-		final Iterator<L2Object> oIter = objs.iterator();
-		L2Object object;
+		final Collection<WorldObject> objs = getKnownObjects().values();
+		final Iterator<WorldObject> oIter = objs.iterator();
+		WorldObject object;
 		//synchronized (getKnownObjects())
 		{
 			while (oIter.hasNext()) {
@@ -160,10 +160,10 @@ public class CharKnownList extends ObjectKnownList {
 					oIter.remove();
 					removeKnownObject(object, true);
 
-					if (object instanceof L2PcInstance) {
+					if (object instanceof Player) {
 						getKnownPlayers().remove(object.getObjectId());
 						getKnownRelations().remove(object.getObjectId());
-					} else if (object instanceof L2Summon) {
+					} else if (object instanceof Summon) {
 						getKnownSummons().remove(object.getObjectId());
 					}
 				}
@@ -171,37 +171,37 @@ public class CharKnownList extends ObjectKnownList {
 		}
 	}
 
-	public L2Character getActiveChar() {
-		return (L2Character) super.getActiveObject();
+	public Creature getActiveChar() {
+		return (Creature) super.getActiveObject();
 	}
 
-	public Collection<L2Character> getKnownCharacters() {
-		ArrayList<L2Character> result = new ArrayList<>();
+	public Collection<Creature> getKnownCharacters() {
+		ArrayList<Creature> result = new ArrayList<>();
 
-		final Collection<L2Object> objs = getKnownObjects().values();
+		final Collection<WorldObject> objs = getKnownObjects().values();
 		//synchronized (getKnownObjects())
 		{
-			result.addAll(objs.stream().filter(obj -> obj instanceof L2Character).map(obj -> (L2Character) obj).collect(Collectors.toList()));
+			result.addAll(objs.stream().filter(obj -> obj instanceof Creature).map(obj -> (Creature) obj).collect(Collectors.toList()));
 		}
 		return result;
 	}
 
-	public Collection<L2Character> getKnownCharactersInRadius(long radius) {
-		ArrayList<L2Character> result = new ArrayList<>();
+	public Collection<Creature> getKnownCharactersInRadius(long radius) {
+		ArrayList<Creature> result = new ArrayList<>();
 
-		final Collection<L2Object> objs = getKnownObjects().values();
+		final Collection<WorldObject> objs = getKnownObjects().values();
 		//synchronized (getKnownObjects())
 		{
 			result.addAll(objs.stream()
-					.filter(obj -> obj instanceof L2Character)
+					.filter(obj -> obj instanceof Creature)
 					.filter(obj -> Util.checkIfInRange((int) radius, getActiveChar(), obj, true))
-					.map(obj -> (L2Character) obj)
+					.map(obj -> (Creature) obj)
 					.collect(Collectors.toList()));
 		}
 		return result;
 	}
 
-	public final Map<Integer, L2PcInstance> getKnownPlayers() {
+	public final Map<Integer, Player> getKnownPlayers() {
 		if (knownPlayers == null) {
 			knownPlayers = new ConcurrentHashMap<>();
 		}
@@ -215,17 +215,17 @@ public class CharKnownList extends ObjectKnownList {
 		return knownRelations;
 	}
 
-	public final Map<Integer, L2Summon> getKnownSummons() {
+	public final Map<Integer, Summon> getKnownSummons() {
 		if (knownSummons == null) {
 			knownSummons = new ConcurrentHashMap<>();
 		}
 		return knownSummons;
 	}
 
-	public final Collection<L2PcInstance> getKnownPlayersInRadius(long radius) {
-		ArrayList<L2PcInstance> result = new ArrayList<>();
+	public final Collection<Player> getKnownPlayersInRadius(long radius) {
+		ArrayList<Player> result = new ArrayList<>();
 
-		final Collection<L2PcInstance> plrs = getKnownPlayers().values();
+		final Collection<Player> plrs = getKnownPlayers().values();
 		//synchronized (getKnownPlayers())
 		{
 			result.addAll(plrs.stream()

@@ -15,7 +15,6 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.log.Log;
 
 /**
  * Format: (ch) S
@@ -33,6 +32,6 @@ public final class RequestPCCafeCouponUse extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		Log.info("C5: RequestPCCafeCouponUse: S: " + str);
+		log.info("C5: RequestPCCafeCouponUse: S: " + str);
 	}
 }

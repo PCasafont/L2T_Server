@@ -19,9 +19,9 @@ import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.instancemanager.RaidBossPointsManager;
 import l2server.gameserver.model.Elementals;
 import l2server.gameserver.model.L2Transformation;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.Experience;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.templates.chars.NpcTemplate;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -33,7 +33,7 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket {
 	private int objectId;
 	private byte[] data;
 	
-	public ExGmViewCharacterInfo(L2PcInstance player) {
+	public ExGmViewCharacterInfo(Player player) {
 		objectId = player.getObjectId();
 		
 		ByteBuffer buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
@@ -116,8 +116,8 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket {
 		// Unknown
 		buffer.putShort((short) 6);
 		buffer.put((byte) player.getMountType());
-		buffer.put((byte) (player.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ? player.getPrivateStoreType() :
-				L2PcInstance.STORE_PRIVATE_SELL));
+		buffer.put((byte) (player.getPrivateStoreType() != Player.STORE_PRIVATE_CUSTOM_SELL ? player.getPrivateStoreType() :
+				Player.STORE_PRIVATE_SELL));
 		buffer.put((byte) (player.canCrystallize() ? 1 : 0));
 		buffer.put((byte) player.getSpentAbilityPoints());
 		
@@ -181,7 +181,7 @@ public final class ExGmViewCharacterInfo extends L2GameServerPacket {
 			buffer.putDouble(trans.getCollisionRadius());
 			buffer.putDouble(trans.getCollisionHeight());
 		} else if (player.getMountType() != 0 && mountNpcId != 0) {
-			L2NpcTemplate mountTemplate = NpcTable.getInstance().getTemplate(mountNpcId);
+			NpcTemplate mountTemplate = NpcTable.getInstance().getTemplate(mountNpcId);
 			buffer.putDouble(mountTemplate.fCollisionRadius);
 			buffer.putDouble(mountTemplate.fCollisionHeight);
 		} else {

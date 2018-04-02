@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * This class ...
@@ -26,10 +26,10 @@ public class PrivateStoreMsgSell extends L2GameServerPacket {
 	private int objId;
 	private String storeMsg;
 	
-	public PrivateStoreMsgSell(L2PcInstance player) {
+	public PrivateStoreMsgSell(Player player) {
 		objId = player.getObjectId();
 		storeMsg = player.getSellList().getTitle();
-		if (player.getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_CUSTOM_SELL) {
+		if (player.getPrivateStoreType() == Player.STORE_PRIVATE_CUSTOM_SELL) {
 			storeMsg = player.getCustomSellList().getTitle();
 		}
 	}

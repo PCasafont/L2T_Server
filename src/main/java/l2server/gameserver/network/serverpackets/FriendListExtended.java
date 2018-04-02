@@ -17,8 +17,8 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -63,11 +63,11 @@ public class FriendListExtended extends L2GameServerPacket {
 		}
 	}
 	
-	public FriendListExtended(L2PcInstance player) {
+	public FriendListExtended(Player player) {
 		info = new ArrayList<>(player.getFriendList().size());
 		for (int objId : player.getFriendList()) {
 			String name = CharNameTable.getInstance().getNameById(objId);
-			L2PcInstance player1 = L2World.getInstance().getPlayer(objId);
+			Player player1 = World.getInstance().getPlayer(objId);
 			
 			boolean online = false;
 			int classid = 0;

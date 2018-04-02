@@ -16,9 +16,10 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.Config;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.ItemInfo;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,9 @@ import java.util.List;
  * Rebuild 23.2.2006 by Advi
  */
 public class PetInventoryUpdate extends L2ItemListPacket {
+	private static Logger log = LoggerFactory.getLogger(PetInventoryUpdate.class.getName());
+
+
 	
 	private List<ItemInfo> items;
 	
@@ -48,31 +52,31 @@ public class PetInventoryUpdate extends L2ItemListPacket {
 		this(new ArrayList<>());
 	}
 	
-	public void addItem(L2ItemInstance item) {
+	public void addItem(Item item) {
 		items.add(new ItemInfo(item));
 	}
 	
-	public void addNewItem(L2ItemInstance item) {
+	public void addNewItem(Item item) {
 		items.add(new ItemInfo(item, 1));
 	}
 	
-	public void addModifiedItem(L2ItemInstance item) {
+	public void addModifiedItem(Item item) {
 		items.add(new ItemInfo(item, 2));
 	}
 	
-	public void addRemovedItem(L2ItemInstance item) {
+	public void addRemovedItem(Item item) {
 		items.add(new ItemInfo(item, 3));
 	}
 	
-	public void addItems(List<L2ItemInstance> items) {
-		for (L2ItemInstance item : items) {
+	public void addItems(List<Item> items) {
+		for (Item item : items) {
 			this.items.add(new ItemInfo(item));
 		}
 	}
 	
 	private void showDebug() {
 		for (ItemInfo item : items) {
-			Log.fine("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem().getName() + " last change:" + item.getChange());
+			log.debug("oid:" + Integer.toHexString(item.getObjectId()) + " item:" + item.getItem().getName() + " last change:" + item.getChange());
 		}
 	}
 	

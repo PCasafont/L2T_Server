@@ -20,11 +20,12 @@ import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.L2FlyMove;
 import l2server.gameserver.model.L2FlyMove.L2FlyMoveChoose;
 import l2server.gameserver.model.L2FlyMove.L2FlyMoveOption;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.L2WorldRegion;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldRegion;
 import l2server.gameserver.model.zone.form.ZoneCylinder;
-import l2server.gameserver.model.zone.type.L2FlyMoveZone;
-import l2server.log.Log;
+import l2server.gameserver.model.zone.type.FlyMoveZone;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Point3D;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
@@ -37,6 +38,9 @@ import java.io.File;
  * @author Pere
  */
 public class FlyMoveTable {
+	private static Logger log = LoggerFactory.getLogger(FlyMoveTable.class.getName());
+
+
 	private static FlyMoveTable instance;
 
 	public static FlyMoveTable getInstance() {
@@ -60,7 +64,7 @@ public class FlyMoveTable {
 		XmlDocument doc = new XmlDocument(file);
 
 		int count = 0;
-		L2WorldRegion[][] worldRegions = L2World.getInstance().getAllWorldRegions();
+		WorldRegion[][] worldRegions = World.getInstance().getAllWorldRegions();
 		for (XmlNode d : doc.getChildren()) {
 			if (d.getName().equalsIgnoreCase("move")) {
 				int id = d.getInt("id");
@@ -68,7 +72,7 @@ public class FlyMoveTable {
 				int y = d.getInt("y");
 				int z = d.getInt("z");
 
-				L2FlyMoveZone zone = new L2FlyMoveZone(id);
+				FlyMoveZone zone = new FlyMoveZone(id);
 				zone.setZone(new ZoneCylinder(x, y, z - 100, z + 200, 40));
 
 				L2FlyMove move = new L2FlyMove(id);
@@ -107,14 +111,14 @@ public class FlyMoveTable {
 				int ax, ay, bx, by;
 				for (x = 0; x < worldRegions.length; x++) {
 					for (y = 0; y < worldRegions[x].length; y++) {
-						ax = x - L2World.OFFSET_X << L2World.SHIFT_BY;
-						bx = x + 1 - L2World.OFFSET_X << L2World.SHIFT_BY;
-						ay = y - L2World.OFFSET_Y << L2World.SHIFT_BY;
-						by = y + 1 - L2World.OFFSET_Y << L2World.SHIFT_BY;
+						ax = x - World.OFFSET_X << World.SHIFT_BY;
+						bx = x + 1 - World.OFFSET_X << World.SHIFT_BY;
+						ay = y - World.OFFSET_Y << World.SHIFT_BY;
+						by = y + 1 - World.OFFSET_Y << World.SHIFT_BY;
 
 						if (zone.getZone().intersectsRectangle(ax, bx, ay, by)) {
 							if (Config.DEBUG) {
-								Log.info("Zone (" + move.getId() + ") added to: " + x + " " + y);
+								log.info("Zone (" + move.getId() + ") added to: " + x + " " + y);
 							}
 							worldRegions[x][y].addZone(zone);
 						}
@@ -124,7 +128,7 @@ public class FlyMoveTable {
 			}
 		}
 
-		Log.info("FlyMoveTable: Loaded " + count + " fly moves.");
+		log.info("FlyMoveTable: Loaded " + count + " fly moves.");
 	}
 
 	@Reload("sayune")

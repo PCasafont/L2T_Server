@@ -17,7 +17,7 @@ package l2server.gameserver.stats.conditions;
 
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class ConditionPlayerInstanceId extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		if (!(env.player instanceof L2PcInstance)) {
+		if (!(env.player instanceof Player)) {
 			return false;
 		}
 
@@ -52,7 +52,7 @@ public class ConditionPlayerInstanceId extends Condition {
 			return false; // player not in instance
 		}
 
-		final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld((L2PcInstance) env.player);
+		final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld((Player) env.player);
 
 		if (world == null) {
 			return false;

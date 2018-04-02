@@ -21,14 +21,14 @@ import l2server.gameserver.datatables.EnchantItemTable;
 import l2server.gameserver.datatables.EnchantItemTable.EnchantScroll;
 import l2server.gameserver.datatables.EnchantItemTable.EnchantSupportItem;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
-import l2server.gameserver.templates.item.L2Armor;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ArmorTemplate;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
@@ -50,7 +50,7 @@ public final class RequestEnchantItem extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 
 		if (activeChar == null || objectId == 0) {
 			return;
@@ -67,9 +67,9 @@ public final class RequestEnchantItem extends L2GameClientPacket {
 			return;
 		}
 
-		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(objectId);
-		L2ItemInstance scroll = activeChar.getActiveEnchantItem();
-		L2ItemInstance support = activeChar.getActiveEnchantSupportItem();
+		Item item = activeChar.getInventory().getItemByObjectId(objectId);
+		Item scroll = activeChar.getActiveEnchantItem();
+		Item support = activeChar.getActiveEnchantSupportItem();
 
 		if (item == null || scroll == null) {
 			activeChar.setActiveEnchantItem(null);
@@ -143,7 +143,7 @@ public final class RequestEnchantItem extends L2GameClientPacket {
 			boolean success = rnd < chance;
 
 			// last validation check
-			L2Item it = item.getItem();
+			ItemTemplate it = item.getItem();
 			if (item.getOwnerId() != activeChar.getObjectId() || !EnchantItemTable.isEnchantable(item) || chance < 0) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITION));
 				activeChar.setActiveEnchantItem(null);
@@ -159,7 +159,7 @@ public final class RequestEnchantItem extends L2GameClientPacket {
 				success = true;
 
 				//LUC animation
-				L2Skill skill = SkillTable.FrequentSkill.LUCKY_CLOVER.getSkill();
+				Skill skill = SkillTable.FrequentSkill.LUCKY_CLOVER.getSkill();
 				if (skill != null) {
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LADY_LUCK_SMILES_UPON_YOU));
 					activeChar.broadcastPacket(new MagicSkillUse(activeChar,
@@ -218,7 +218,7 @@ public final class RequestEnchantItem extends L2GameClientPacket {
 					sm.addItemName(item);
 					activeChar.broadcastPacket(sm);
 
-					L2Skill skill = SkillTable.FrequentSkill.FIREWORK.getSkill();
+					Skill skill = SkillTable.FrequentSkill.FIREWORK.getSkill();
 					if (skill != null) {
 						activeChar.broadcastPacket(new MagicSkillUse(activeChar,
 								activeChar,
@@ -232,9 +232,9 @@ public final class RequestEnchantItem extends L2GameClientPacket {
 					}
 				}
 
-				if (it instanceof L2Armor && activeChar.getInventory().getItemByObjectId(item.getObjectId()).isEquipped()) {
-					for (int enchant = 1; enchant <= L2Armor.MAX_ENCHANT_SKILL; enchant++) {
-						L2Skill enchantSkill = ((L2Armor) it).getEnchantSkill(enchant);
+				if (it instanceof ArmorTemplate && activeChar.getInventory().getItemByObjectId(item.getObjectId()).isEquipped()) {
+					for (int enchant = 1; enchant <= ArmorTemplate.MAX_ENCHANT_SKILL; enchant++) {
+						Skill enchantSkill = ((ArmorTemplate) it).getEnchantSkill(enchant);
 						if (enchantSkill != null && item.getEnchantLevel() == enchant) {
 							// add skills bestowed from +X armor
 							activeChar.addSkill(enchantSkill, false);
@@ -283,9 +283,9 @@ public final class RequestEnchantItem extends L2GameClientPacket {
 							activeChar.sendPacket(sm);
 						}
 
-						L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(item.getLocationSlot());
+						Item[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(item.getLocationSlot());
 						InventoryUpdate iu = new InventoryUpdate();
-						for (L2ItemInstance itm : unequiped) {
+						for (Item itm : unequiped) {
 							iu.addModifiedItem(itm);
 						}
 
@@ -330,7 +330,7 @@ public final class RequestEnchantItem extends L2GameClientPacket {
 							count = 1;
 						}
 
-						L2ItemInstance destroyItem = activeChar.getInventory().destroyItem("Enchant", item, activeChar, null);
+						Item destroyItem = activeChar.getInventory().destroyItem("Enchant", item, activeChar, null);
 						if (destroyItem == null) {
 							// unable to destroy item, cheater ?
 							Util.handleIllegalPlayerAction(activeChar,
@@ -363,7 +363,7 @@ public final class RequestEnchantItem extends L2GameClientPacket {
 							return;
 						}
 
-						L2ItemInstance crystals = null;
+						Item crystals = null;
 						if (crystalId != 0) {
 							crystals = activeChar.getInventory().addItem("Enchant", crystalId, count, activeChar, destroyItem);
 
@@ -390,7 +390,7 @@ public final class RequestEnchantItem extends L2GameClientPacket {
 							activeChar.sendPacket(new ItemList(activeChar, true));
 						}
 
-						L2World world = L2World.getInstance();
+						World world = World.getInstance();
 						world.removeObject(destroyItem);
 						if (crystalId == 0) {
 							activeChar.sendPacket(new EnchantResult(4, 0, 0, 0));

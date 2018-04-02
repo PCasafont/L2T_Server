@@ -18,7 +18,7 @@
 
 package l2server.gameserver.model.actor.position;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Erb
@@ -26,13 +26,13 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class PcPosition extends CharPosition {
 	// =========================================================
 	// Constructor
-	public PcPosition(L2PcInstance activeObject) {
+	public PcPosition(Player activeObject) {
 		super(activeObject);
 	}
 
 	@Override
-	public L2PcInstance getActiveObject() {
-		return (L2PcInstance) super.getActiveObject();
+	public Player getActiveObject() {
+		return (Player) super.getActiveObject();
 	}
 
 	@Override

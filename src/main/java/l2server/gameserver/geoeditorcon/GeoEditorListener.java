@@ -15,7 +15,8 @@
 
 package l2server.gameserver.geoeditorcon;
 
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -26,6 +27,9 @@ import java.util.logging.Level;
  * @author Dezmond
  */
 public class GeoEditorListener extends Thread {
+	private static Logger log = LoggerFactory.getLogger(GeoEditorListener.class.getName());
+
+
 	private static GeoEditorListener instance;
 	private static final int PORT = 9011;
 
@@ -38,9 +42,9 @@ public class GeoEditorListener extends Thread {
 				try {
 					instance = new GeoEditorListener();
 					instance.start();
-					Log.info("GeoEditorListener Initialized.");
+					log.info("GeoEditorListener Initialized.");
 				} catch (IOException e) {
-					Log.log(Level.SEVERE, "Error creating geoeditor listener! " + e.getMessage(), e);
+					log.error("Error creating geoeditor listener! " + e.getMessage(), e);
 					System.exit(1);
 				}
 			}
@@ -70,16 +74,16 @@ public class GeoEditorListener extends Thread {
 			while (true) {
 				connection = serverSocket.accept();
 				if (geoEditor != null && geoEditor.isWorking()) {
-					Log.warning("Geoeditor already connected!");
+					log.warn("Geoeditor already connected!");
 					connection.close();
 					continue;
 				}
-				Log.info("Received geoeditor connection from: " + connection.getInetAddress().getHostAddress());
+				log.info("Received geoeditor connection from: " + connection.getInetAddress().getHostAddress());
 				geoEditor = new GeoEditorThread(connection);
 				geoEditor.start();
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "GeoEditorListener: " + e.getMessage(), e);
+			log.warn("GeoEditorListener: " + e.getMessage(), e);
 			try {
 				connection.close();
 			} catch (Exception ignored) {
@@ -88,9 +92,9 @@ public class GeoEditorListener extends Thread {
 			try {
 				serverSocket.close();
 			} catch (IOException io) {
-				Log.log(Level.INFO, "", io);
+				log.info("", io);
 			}
-			Log.warning("GeoEditorListener Closed!");
+			log.warn("GeoEditorListener Closed!");
 		}
 	}
 }

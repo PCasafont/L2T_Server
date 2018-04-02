@@ -17,11 +17,10 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.model.ItemRequest;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.World;
 import l2server.gameserver.model.TradeList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.log.Log;
 
 /**
  * This class ...
@@ -63,7 +62,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -78,7 +77,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket {
 			return;
 		}
 		
-		L2PcInstance object = L2World.getInstance().getPlayer(storePlayerId);
+		Player object = World.getInstance().getPlayer(storePlayerId);
 		if (object == null) {
 			return;
 		}
@@ -87,7 +86,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket {
 			return;
 		}
 		
-		if (object.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_BUY) {
+		if (object.getPrivateStoreType() != Player.STORE_PRIVATE_BUY) {
 			return;
 		}
 		
@@ -110,13 +109,13 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket {
 		
 		if (!storeList.privateStoreSell(player, items)) {
 			sendPacket(ActionFailed.STATIC_PACKET);
-			Log.warning("PrivateStore sell has failed due to invalid list or request. Player: " + player.getName() + ", Private store of: " +
+			log.warn("PrivateStore sell has failed due to invalid list or request. Player: " + player.getName() + ", Private store of: " +
 					object.getName());
 			return;
 		}
 		
 		if (storeList.getItemCount() == 0) {
-			object.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
+			object.setPrivateStoreType(Player.STORE_PRIVATE_NONE);
 			object.broadcastUserInfo();
 		}
 	}

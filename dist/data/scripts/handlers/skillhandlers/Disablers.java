@@ -16,28 +16,27 @@
 package handlers.skillhandlers;
 
 import l2server.Config;
+import l2server.gameserver.ai.AttackableAI;
 import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.ai.L2AttackableAI;
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SiegeSummonInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.*;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SiegeSummonInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.stats.Stats;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.SkillTargetType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.util.Rnd;
 
 /**
@@ -46,58 +45,58 @@ import l2server.util.Rnd;
  * @author _drunk_
  */
 public class Disablers implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS =
-			{L2SkillType.AGGDAMAGE, L2SkillType.AGGREDUCE, L2SkillType.AGGREDUCE_CHAR, L2SkillType.AGGREMOVE, L2SkillType.FAKE_DEATH,
-					L2SkillType.NEGATE, L2SkillType.CANCEL_DEBUFF, L2SkillType.ERASE, L2SkillType.BETRAY, L2SkillType.RESET};
+	private static final SkillType[] SKILL_IDS =
+			{SkillType.AGGDAMAGE, SkillType.AGGREDUCE, SkillType.AGGREDUCE_CHAR, SkillType.AGGREMOVE, SkillType.FAKE_DEATH,
+			 SkillType.NEGATE, SkillType.CANCEL_DEBUFF, SkillType.ERASE, SkillType.BETRAY, SkillType.RESET};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		L2SkillType type = skill.getSkillType();
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		SkillType type = skill.getSkillType();
 
 		byte shld = 0;
-		double ssMul = L2ItemInstance.CHARGED_NONE;
-		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+		double ssMul = Item.CHARGED_NONE;
+		Item weaponInst = activeChar.getActiveWeaponInstance();
 		if (weaponInst != null) {
 			if (skill.isMagic()) {
 				ssMul = weaponInst.getChargedSpiritShot();
 				if (skill.getId() != 1020) // vitalize
 				{
-					weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+					weaponInst.setChargedSpiritShot(Item.CHARGED_NONE);
 				}
 			} else {
 				ssMul = weaponInst.getChargedSoulShot();
-				weaponInst.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
+				weaponInst.setChargedSoulShot(Item.CHARGED_NONE);
 			}
 		}
 		// If there is no weapon equipped, check for an active summon.
-		else if (activeChar instanceof L2Summon) {
-			L2Summon activeSummon = (L2Summon) activeChar;
+		else if (activeChar instanceof Summon) {
+			Summon activeSummon = (Summon) activeChar;
 			if (skill.isMagic()) {
 				ssMul = activeSummon.getChargedSpiritShot();
-				activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+				activeSummon.setChargedSpiritShot(Item.CHARGED_NONE);
 			} else {
 				ssMul = activeSummon.getChargedSoulShot();
-				activeSummon.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
+				activeSummon.setChargedSoulShot(Item.CHARGED_NONE);
 			}
-		} else if (activeChar instanceof L2Npc) {
+		} else if (activeChar instanceof Npc) {
 			if (skill.isMagic()) {
-				ssMul = ((L2Npc) activeChar).soulshotcharged ? L2ItemInstance.CHARGED_SOULSHOT : L2ItemInstance.CHARGED_NONE;
-				((L2Npc) activeChar).soulshotcharged = false;
+				ssMul = ((Npc) activeChar).soulshotcharged ? Item.CHARGED_SOULSHOT : Item.CHARGED_NONE;
+				((Npc) activeChar).soulshotcharged = false;
 			} else {
-				ssMul = ((L2Npc) activeChar).spiritshotcharged ? L2ItemInstance.CHARGED_SPIRITSHOT : L2ItemInstance.CHARGED_NONE;
-				((L2Npc) activeChar).spiritshotcharged = false;
+				ssMul = ((Npc) activeChar).spiritshotcharged ? Item.CHARGED_SPIRITSHOT : Item.CHARGED_NONE;
+				((Npc) activeChar).spiritshotcharged = false;
 			}
 		}
 
-		for (L2Object obj : targets) {
-			if (!(obj instanceof L2Character)) {
+		for (WorldObject obj : targets) {
+			if (!(obj instanceof Creature)) {
 				continue;
 			}
-			L2Character target = (L2Character) obj;
-			if (target.isDead() || target.isInvul(activeChar) && !skill.ignoreImmunity() && type != L2SkillType.NEGATE &&
+			Creature target = (Creature) obj;
+			if (target.isDead() || target.isInvul(activeChar) && !skill.ignoreImmunity() && type != SkillType.NEGATE &&
 					!target.isParalyzed()) // bypass if target is null, dead or invul (excluding invul from Petrification)
 			{
 				continue;
@@ -134,7 +133,7 @@ public class Disablers implements ISkillHandler {
 				case AGGDAMAGE: {
 					int aggDamage = (int) (500 * skill.getPower() / (target.getLevel() + 7));
 					aggDamage = (int) activeChar.calcStat(Stats.AGGRESSION_PROF, aggDamage, target, skill);
-					if (target instanceof L2Attackable) {
+					if (target instanceof Attackable) {
 						target.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, activeChar, aggDamage);
 					}
 					// TODO [Nemesiss] should this have 100% chance?
@@ -143,16 +142,16 @@ public class Disablers implements ISkillHandler {
 				}
 				case AGGREDUCE: {
 					// these skills needs to be rechecked
-					if (target instanceof L2Attackable) {
+					if (target instanceof Attackable) {
 						skill.getEffects(activeChar, target, new Env(shld, ssMul));
 
-						double aggdiff = ((L2Attackable) target).getHating(activeChar) -
-								target.calcStat(Stats.AGGRESSION, ((L2Attackable) target).getHating(activeChar), target, skill);
+						double aggdiff = ((Attackable) target).getHating(activeChar) -
+								target.calcStat(Stats.AGGRESSION, ((Attackable) target).getHating(activeChar), target, skill);
 
 						if (skill.getPower() > 0) {
-							((L2Attackable) target).reduceHate(null, (int) skill.getPower());
+							((Attackable) target).reduceHate(null, (int) skill.getPower());
 						} else if (aggdiff > 0) {
-							((L2Attackable) target).reduceHate(null, (int) aggdiff);
+							((Attackable) target).reduceHate(null, (int) aggdiff);
 						}
 					}
 					// when fail, target.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, activeChar);
@@ -161,11 +160,11 @@ public class Disablers implements ISkillHandler {
 				case AGGREDUCE_CHAR: {
 					// these skills needs to be rechecked
 					if (Formulas.calcSkillSuccess(activeChar, target, skill, shld, ssMul)) {
-						if (target instanceof L2Attackable) {
-							L2Attackable targ = (L2Attackable) target;
+						if (target instanceof Attackable) {
+							Attackable targ = (Attackable) target;
 							targ.stopHating(activeChar);
-							if (targ.getMostHated() == null && targ.hasAI() && targ.getAI() instanceof L2AttackableAI) {
-								((L2AttackableAI) targ.getAI()).setGlobalAggro(-25);
+							if (targ.getMostHated() == null && targ.hasAI() && targ.getAI() instanceof AttackableAI) {
+								((AttackableAI) targ.getAI()).setGlobalAggro(-25);
 								targ.clearAggroList();
 								targ.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 								targ.setWalking();
@@ -173,7 +172,7 @@ public class Disablers implements ISkillHandler {
 						}
 						skill.getEffects(activeChar, target, new Env(shld, ssMul));
 					} else {
-						if (activeChar instanceof L2PcInstance) {
+						if (activeChar instanceof Player) {
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_YOUR_S2);
 							sm.addCharName(target);
 							sm.addSkillName(skill);
@@ -185,18 +184,18 @@ public class Disablers implements ISkillHandler {
 				}
 				case AGGREMOVE: {
 					// these skills needs to be rechecked
-					if (target instanceof L2Attackable && !target.isRaid()) {
+					if (target instanceof Attackable && !target.isRaid()) {
 						if (Formulas.calcSkillSuccess(activeChar, target, skill, shld, ssMul)) {
-							if (skill.getTargetType() == L2SkillTargetType.TARGET_UNDEAD) {
+							if (skill.getTargetType() == SkillTargetType.TARGET_UNDEAD) {
 								if (target.isUndead()) {
-									((L2Attackable) target).reduceHate(null,
-											((L2Attackable) target).getHating(((L2Attackable) target).getMostHated()));
+									((Attackable) target).reduceHate(null,
+											((Attackable) target).getHating(((Attackable) target).getMostHated()));
 								}
 							} else {
-								((L2Attackable) target).reduceHate(null, ((L2Attackable) target).getHating(((L2Attackable) target).getMostHated()));
+								((Attackable) target).reduceHate(null, ((Attackable) target).getHating(((Attackable) target).getMostHated()));
 							}
 						} else {
-							if (activeChar instanceof L2PcInstance) {
+							if (activeChar instanceof Player) {
 								SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_YOUR_S2);
 								sm.addCharName(target);
 								sm.addSkillName(skill);
@@ -212,14 +211,14 @@ public class Disablers implements ISkillHandler {
 				case ERASE: {
 					if (Formulas.calcSkillSuccess(activeChar, target, skill, shld, ssMul)
 							// doesn't affect siege golem or wild hog cannon
-							&& !(target instanceof L2SiegeSummonInstance)) {
-						L2Summon summonPet = (L2Summon) target;
-						L2PcInstance summonOwner = summonPet.getOwner();
+							&& !(target instanceof SiegeSummonInstance)) {
+						Summon summonPet = (Summon) target;
+						Player summonOwner = summonPet.getOwner();
 						summonPet.unSummon(summonOwner);
 						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOUR_SERVITOR_HAS_VANISHED);
 						summonOwner.sendPacket(sm);
 					} else {
-						if (activeChar instanceof L2PcInstance) {
+						if (activeChar instanceof Player) {
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_YOUR_S2);
 							sm.addCharName(target);
 							sm.addSkillName(skill);
@@ -229,16 +228,16 @@ public class Disablers implements ISkillHandler {
 					break;
 				}
 				case RESET: {
-					L2Abnormal[] effects = target.getAllEffects();
+					Abnormal[] effects = target.getAllEffects();
 
 					if (effects == null || effects.length == 0) {
 						break;
 					}
 
-					for (L2Abnormal e : effects) {
+					for (Abnormal e : effects) {
 						if (e == null || !e.getSkill().isOffensive()) {
 							continue;
-						} else if (e.getType() == L2AbnormalType.SLEEP) {
+						} else if (e.getType() == AbnormalType.SLEEP) {
 							continue;
 						}
 
@@ -261,7 +260,7 @@ public class Disablers implements ISkillHandler {
 						env.player = activeChar;
 						env.target = target;
 						env.skill = e.getSkill();
-						L2Abnormal ef = e.getTemplate().getEffect(env);
+						Abnormal ef = e.getTemplate().getEffect(env);
 						if (ef != null) {
 							ef.scheduleEffect();
 						}
@@ -272,14 +271,14 @@ public class Disablers implements ISkillHandler {
 					break;
 				}
 				case CANCEL_DEBUFF: {
-					L2Abnormal[] effects = target.getAllEffects();
+					Abnormal[] effects = target.getAllEffects();
 
 					if (effects == null || effects.length == 0) {
 						break;
 					}
 
 					int count = skill.getMaxNegatedEffects() > 0 ? 0 : -2;
-					for (L2Abnormal e : effects) {
+					for (Abnormal e : effects) {
 						if (e == null || !e.getSkill().isDebuff() || !e.getSkill().canBeDispeled()) {
 							continue;
 						}
@@ -298,14 +297,14 @@ public class Disablers implements ISkillHandler {
 				}
 				case CANCEL_STATS: // same than CANCEL but
 				{
-					L2Character attacker = activeChar;
+					Creature attacker = activeChar;
 					if (Formulas.calcSkillReflect(target, skill) == Formulas.SKILL_REFLECT_EFFECTS) {
 						target = activeChar;
 						attacker = target;
 					}
 
 					if (Formulas.calcSkillSuccess(attacker, target, skill, shld, ssMul)) {
-						L2Abnormal[] effects = target.getAllEffects();
+						Abnormal[] effects = target.getAllEffects();
 
 						int max = skill.getMaxNegatedEffects();
 						if (max == 0) {
@@ -321,7 +320,7 @@ public class Disablers implements ISkillHandler {
 
 						int count = 1;
 
-						for (L2Abnormal a : effects) {
+						for (Abnormal a : effects) {
 							// do not delete signet effects!
 							switch (a.getType()) {
 								case SIGNET_GROUND:
@@ -359,7 +358,7 @@ public class Disablers implements ISkillHandler {
 							}
 							if (Rnd.get(1000) < rate * 1000) {
 								boolean exit = false;
-								for (L2AbnormalType skillType : skill.getNegateStats()) {
+								for (AbnormalType skillType : skill.getNegateStats()) {
 									if (skillType == a.getType()) {
 										exit = true;
 										break;
@@ -377,7 +376,7 @@ public class Disablers implements ISkillHandler {
 							}
 						}
 					} else {
-						if (attacker instanceof L2PcInstance) {
+						if (attacker instanceof Player) {
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_YOUR_S2);
 							sm.addCharName(target);
 							sm.addSkillName(skill);
@@ -399,7 +398,7 @@ public class Disablers implements ISkillHandler {
 							}
 						}
 					} else if (skill.getNegateAbnormals() != null) {
-						for (L2Abnormal effect : target.getAllEffects()) {
+						for (Abnormal effect : target.getAllEffects()) {
 							if (effect == null) {
 								continue;
 							}
@@ -417,7 +416,7 @@ public class Disablers implements ISkillHandler {
 					// all others negate type skills
 					{
 						int removedBuffs = skill.getMaxNegatedEffects() > 0 ? 0 : -2;
-						for (L2AbnormalType skillType : skill.getNegateStats()) {
+						for (AbnormalType skillType : skill.getNegateStats()) {
 							if (removedBuffs > skill.getMaxNegatedEffects()) {
 								break;
 							}
@@ -436,7 +435,7 @@ public class Disablers implements ISkillHandler {
 									landrate = (int) activeChar.calcStat(Stats.CANCEL_RES, landrate, target, null);
 
 									if (Rnd.get(100) < landrate) {
-										removedBuffs += negateEffect(target, L2AbnormalType.BUFF, skill.getMaxNegatedEffects());
+										removedBuffs += negateEffect(target, AbnormalType.BUFF, skill.getMaxNegatedEffects());
 									}
 									break;
 								default:
@@ -459,7 +458,7 @@ public class Disablers implements ISkillHandler {
 
 		// self Effect :]
 		if (skill.hasSelfEffects()) {
-			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
+			final Abnormal effect = activeChar.getFirstEffect(skill.getId());
 			if (effect != null && effect.isSelfEffect()) {
 				//Replace old effect with new one.
 				effect.exit();
@@ -474,7 +473,7 @@ public class Disablers implements ISkillHandler {
 	 * @param maxRemoved
 	 * @return
 	 */
-	private int negateEffect(L2Character target, L2AbnormalType type, int maxRemoved) {
+	private int negateEffect(Creature target, AbnormalType type, int maxRemoved) {
 		return negateEffect(target, type, 0, maxRemoved);
 	}
 
@@ -485,10 +484,10 @@ public class Disablers implements ISkillHandler {
 	 * @param maxRemoved
 	 * @return
 	 */
-	private int negateEffect(L2Character target, L2AbnormalType type, int skillId, int maxRemoved) {
-		L2Abnormal[] effects = target.getAllEffects();
+	private int negateEffect(Creature target, AbnormalType type, int skillId, int maxRemoved) {
+		Abnormal[] effects = target.getAllEffects();
 		int count = maxRemoved <= 0 ? -2 : 0;
-		for (L2Abnormal e : effects) {
+		for (Abnormal e : effects) {
 			if (e.getType() == type) {
 				if (skillId != 0) {
 					if (skillId == e.getSkill().getId() && count < maxRemoved) {
@@ -509,11 +508,11 @@ public class Disablers implements ISkillHandler {
 		return maxRemoved <= 0 ? count + 2 : count;
 	}
 
-	private L2Abnormal[] SortEffects(L2Abnormal[] initial) {
+	private Abnormal[] SortEffects(Abnormal[] initial) {
 		//this is just classic insert sort
 		//If u can find better sort for max 20-30 units, rewrite this... :)
 		int min, index = 0;
-		L2Abnormal pom;
+		Abnormal pom;
 		for (int i = 0; i < initial.length; i++) {
 			min = initial[i].getSkill().getMagicLevel();
 			for (int j = i; j < initial.length; j++) {
@@ -534,7 +533,7 @@ public class Disablers implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

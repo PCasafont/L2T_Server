@@ -21,22 +21,17 @@ import l2server.gameserver.datatables.ItemTable
 import l2server.gameserver.datatables.NpcTable
 import l2server.gameserver.model.L2TradeList
 import l2server.gameserver.model.L2TradeList.L2TradeItem
-import l2server.gameserver.templates.chars.L2NpcTemplate
-import l2server.gameserver.templates.item.L2Item
-import l2server.log.Log
 import l2server.util.loader.annotations.Load
 import l2server.util.loader.annotations.Reload
 import l2server.util.xml.XmlDocument
-import l2server.util.xml.XmlNode
-
+import org.slf4j.LoggerFactory
 import java.io.File
 import java.sql.Connection
-import java.sql.PreparedStatement
-import java.sql.ResultSet
 import java.util.*
-import java.util.logging.Level
 
 object TradeController {
+
+    private val log = LoggerFactory.getLogger(TradeController::class.java)
 
     private val lists = HashMap<Int, L2TradeList>()
 
@@ -75,7 +70,7 @@ object TradeController {
                     val npcTemplate = NpcTable.getInstance().getTemplate(npcId)
                     if (npcTemplate == null) {
                         if (npcId != -1) {
-                            Log.warning("No template found for NpcId $npcId")
+                            log.warn("No template found for NpcId $npcId")
                         }
 
                         continue
@@ -87,7 +82,7 @@ object TradeController {
 
                             val itemTemplate = ItemTable.getInstance().getTemplate(itemId)
                             if (itemTemplate == null) {
-                                Log.warning("Skipping itemId: $itemId on buylistId: $id, missing data for that item.")
+                                log.warn("Skipping itemId: $itemId on buylistId: $id, missing data for that item.")
                                 continue
                             }
 
@@ -98,7 +93,7 @@ object TradeController {
                             if (price <= -1) {
                                 price = itemTemplate.referencePrice.toLong()
                                 if (price == 0L && npcId != -1) {
-                                    Log.warning("ItemId: $itemId on buylistId: $id has price = 0!")
+                                    log.warn("ItemId: $itemId on buylistId: $id has price = 0!")
                                 }
                             }
 
@@ -106,7 +101,7 @@ object TradeController {
                                 // debug
                                 val diff = price.toDouble() / ItemTable.getInstance().getTemplate(itemId)!!.referencePrice
                                 if (diff < 0.8 || diff > 1.2) {
-                                    Log.severe("PRICING DEBUG: TradeListId: " + id + " -  ItemId: " + itemId + " (" +
+                                    log.error("PRICING DEBUG: TradeListId: " + id + " -  ItemId: " + itemId + " (" +
                                             ItemTable.getInstance().getTemplate(itemId)!!.name + ") diff: " + diff + " - Price: " + price +
                                             " - Reference: " + ItemTable.getInstance().getTemplate(itemId)!!.referencePrice)
                                 }
@@ -129,7 +124,7 @@ object TradeController {
             }
         }
 
-        Log.info("TradeController: Loaded " + lists.size + " Buylists.")
+        log.info("TradeController: Loaded " + lists.size + " Buylists.")
     }
 
     private fun loadItemCounts() {
@@ -219,7 +214,7 @@ object TradeController {
             }
             statement.close()
         } catch (e: Exception) {
-            Log.log(Level.SEVERE, "TradeController: Could not store Count Item: " + e.message, e)
+            log.error("TradeController: Could not store Count Item: " + e.message, e)
         } finally {
             L2DatabaseFactory.close(con)
         }

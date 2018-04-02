@@ -17,10 +17,13 @@ package l2server.loginserver.network.serverpackets;
 
 import l2server.loginserver.network.L2LoginClient;
 import l2server.network.SendablePacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author KenM
  */
 public abstract class L2LoginServerPacket extends SendablePacket<L2LoginClient> {
-
+	protected static Logger log = LoggerFactory.getLogger(L2LoginServerPacket.class.getName());
+	
 }

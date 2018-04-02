@@ -15,15 +15,15 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Pere
  */
 public final class ExUserCubics extends L2GameServerPacket {
-	private L2PcInstance player;
+	private Player player;
 	
-	public ExUserCubics(L2PcInstance character) {
+	public ExUserCubics(Player character) {
 		player = character;
 	}
 	

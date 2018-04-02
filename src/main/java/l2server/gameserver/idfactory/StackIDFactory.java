@@ -17,7 +17,8 @@ package l2server.gameserver.idfactory;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,6 +33,9 @@ import java.util.logging.Level;
  * @version $Revision: 1.3.2.1.2.7 $ $Date: 2005/04/11 10:06:12 $
  */
 public class StackIDFactory extends IdFactory {
+	private static Logger log = LoggerFactory.getLogger(StackIDFactory.class.getName());
+
+
 	
 	private int curOID;
 	private int tempOID;
@@ -52,7 +56,7 @@ public class StackIDFactory extends IdFactory {
 			if (tmp_obj_ids.length > 0) {
 				curOID = tmp_obj_ids[tmp_obj_ids.length - 1];
 			}
-			Log.info("Max Id = " + curOID);
+			log.info("Max Id = " + curOID);
 			
 			int N = tmp_obj_ids.length;
 			for (int idx = 0; idx < N; idx++) {
@@ -60,10 +64,10 @@ public class StackIDFactory extends IdFactory {
 			}
 			
 			curOID++;
-			Log.info("IdFactory: Next usable Object ID is: " + curOID);
+			log.info("IdFactory: Next usable Object ID is: " + curOID);
 			initialized = true;
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "ID Factory could not be initialized correctly:" + e.getMessage(), e);
+			log.error("ID Factory could not be initialized correctly:" + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -85,7 +89,7 @@ public class StackIDFactory extends IdFactory {
 				ResultSet rs = ps.executeQuery();
 				if (rs.next()) {
 					int badId = rs.getInt(1);
-					Log.severe("Bad ID " + badId + " in DB found by: " + check);
+					log.error("Bad ID " + badId + " in DB found by: " + check);
 					throw new RuntimeException();
 				}
 				rs.close();

@@ -4,10 +4,10 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
 import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
@@ -15,13 +15,17 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DarkCloudMansion extends Quest {
+	private static Logger log = LoggerFactory.getLogger(DarkCloudMansion.class.getName());
+
+
 	public DarkCloudMansion(int questId, String name, String descr) {
 		super(questId, name, descr);
 
@@ -44,9 +48,9 @@ public class DarkCloudMansion extends Quest {
 	}
 
 	private static class DMCNpc {
-		public L2Npc npc;
+		public Npc npc;
 		public boolean isDead = false;
-		public L2Npc golem = null;
+		public Npc golem = null;
 		public int status = 0;
 		public int order = 0;
 		public int count = 0;
@@ -155,14 +159,14 @@ public class DarkCloudMansion extends Quest {
 					{0, 1, 0, 1, 0, 1, 0}, {0, 0, 0, 1, 1, 1, 0}, {1, 0, 1, 0, 0, 1, 0}, {0, 1, 1, 0, 0, 0, 1}};
 
 	protected void openDoor(int doorId, int instanceId) {
-		for (L2DoorInstance door : InstanceManager.getInstance().getInstance(instanceId).getDoors()) {
+		for (DoorInstance door : InstanceManager.getInstance().getInstance(instanceId).getDoors()) {
 			if (door.getDoorId() == doorId) {
 				door.openMe();
 			}
 		}
 	}
 
-	private boolean checkConditions(L2PcInstance player) {
+	private boolean checkConditions(Player player) {
 		if (debug) {
 			return true;
 		} else {
@@ -179,7 +183,7 @@ public class DarkCloudMansion extends Quest {
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PARTY_EXCEEDED_THE_LIMIT_CANT_ENTER));
 				return false;
 			}
-			for (L2PcInstance partyMember : party.getPartyMembers()) {
+			for (Player partyMember : party.getPartyMembers()) {
 				if (partyMember.getLevel() < 78) {
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_LEVEL_REQUIREMENT_NOT_SUFFICIENT);
 					sm.addPcName(partyMember);
@@ -198,14 +202,14 @@ public class DarkCloudMansion extends Quest {
 		}
 	}
 
-	private void teleportplayer(L2PcInstance player, teleCoord teleto) {
+	private void teleportplayer(Player player, teleCoord teleto) {
 		player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		player.setInstanceId(teleto.instanceId);
 		player.teleToLocation(teleto.x, teleto.y, teleto.z);
 		return;
 	}
 
-	protected int enterInstance(L2PcInstance player, String template, teleCoord teleto) {
+	protected int enterInstance(Player player, String template, teleCoord teleto) {
 		int instanceId = 0;
 		//check for existing instances for this player
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
@@ -230,7 +234,7 @@ public class DarkCloudMansion extends Quest {
 			world.instanceId = instanceId;
 			world.templateId = INSTANCEID;
 			InstanceManager.getInstance().addWorld(world);
-			Log.info("DarkCloudMansion: started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
+			log.info("DarkCloudMansion: started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
 			runStartRoom((DMCWorld) world);
 			// teleport players
 			teleto.instanceId = instanceId;
@@ -238,7 +242,7 @@ public class DarkCloudMansion extends Quest {
 				world.allowed.add(player.getObjectId());
 				teleportplayer(player, teleto);
 			} else {
-				for (L2PcInstance partyMember : party.getPartyMembers()) {
+				for (Player partyMember : party.getPartyMembers()) {
 					if (partyMember.getQuestState(qn) == null) {
 						newQuestState(partyMember);
 					}
@@ -251,7 +255,7 @@ public class DarkCloudMansion extends Quest {
 		}
 	}
 
-	protected void exitInstance(L2PcInstance player, teleCoord tele) {
+	protected void exitInstance(Player player, teleCoord tele) {
 		player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		player.setInstanceId(0);
 		player.teleToLocation(tele.x, tele.y, tele.z);
@@ -271,7 +275,7 @@ public class DarkCloudMansion extends Quest {
 		StartRoom.npcList.add(thisnpc);
 		world.rooms.put("StartRoom", StartRoom);
 		if (debug) {
-			Log.info("DarkCloudMansion: first room spawned in instance " + world.instanceId);
+			log.info("DarkCloudMansion: first room spawned in instance " + world.instanceId);
 		}
 	}
 
@@ -314,7 +318,7 @@ public class DarkCloudMansion extends Quest {
 
 		world.rooms.put("Hall", Hall);
 		if (debug) {
-			Log.info("DarkCloudMansion: hall spawned");
+			log.info("DarkCloudMansion: hall spawned");
 		}
 	}
 
@@ -348,7 +352,7 @@ public class DarkCloudMansion extends Quest {
 		world.status = 2;
 		openDoor(D2, world.instanceId);
 		if (debug) {
-			Log.info("DarkCloudMansion: spawned first room");
+			log.info("DarkCloudMansion: spawned first room");
 		}
 	}
 
@@ -405,7 +409,7 @@ public class DarkCloudMansion extends Quest {
 		world.status = 4;
 		openDoor(D3, world.instanceId);
 		if (debug) {
-			Log.info("DarkCloudMansion: spawned second room");
+			log.info("DarkCloudMansion: spawned second room");
 		}
 	}
 
@@ -435,7 +439,7 @@ public class DarkCloudMansion extends Quest {
 		world.status = 6;
 		openDoor(D4, world.instanceId);
 		if (debug) {
-			Log.info("DarkCloudMansion: spawned third room");
+			log.info("DarkCloudMansion: spawned third room");
 		}
 	}
 
@@ -459,7 +463,7 @@ public class DarkCloudMansion extends Quest {
 		world.rooms.put("ThirdRoom2", ThirdRoom);
 		world.status = 8;
 		if (debug) {
-			Log.info("DarkCloudMansion: spawned third room second time");
+			log.info("DarkCloudMansion: spawned third room second time");
 		}
 	}
 
@@ -502,7 +506,7 @@ public class DarkCloudMansion extends Quest {
 		world.status = 7;
 		openDoor(D5, world.instanceId);
 		if (debug) {
-			Log.info("DarkCloudMansion: spawned forth room");
+			log.info("DarkCloudMansion: spawned forth room");
 		}
 	}
 
@@ -511,7 +515,7 @@ public class DarkCloudMansion extends Quest {
 		world.status = 9;
 		openDoor(D6, world.instanceId);
 		if (debug) {
-			Log.info("DarkCloudMansion: spawned fifth room");
+			log.info("DarkCloudMansion: spawned fifth room");
 		}
 	}
 
@@ -544,7 +548,7 @@ public class DarkCloudMansion extends Quest {
 		world.rooms.put("FifthRoom", FifthRoom);
 	}
 
-	protected boolean checkKillProgress(L2Npc npc, DMCRoom room) {
+	protected boolean checkKillProgress(Npc npc, DMCRoom room) {
 		boolean cont = true;
 		for (DMCNpc npcobj : room.npcList) {
 			if (npcobj.npc == npc) {
@@ -571,7 +575,7 @@ public class DarkCloudMansion extends Quest {
 		npc.golem = addSpawn(mobId, x, y, -6117, 0, false, 0, false, world.instanceId);
 	}
 
-	protected void checkStone(L2Npc npc, int order[], DMCNpc npcObj, DMCWorld world) {
+	protected void checkStone(Npc npc, int order[], DMCNpc npcObj, DMCWorld world) {
 		for (int i = 1; i < 7; i++) {
 			//if there is a non zero value in the precedent step, the sequence is ok
 			if (order[i] == 0 && order[i - 1] != 0) {
@@ -593,11 +597,11 @@ public class DarkCloudMansion extends Quest {
 		addSpawn(SOTruth, 148911, 181940, -6117, 16383, false, 0, false, world.instanceId);
 		world.rooms.clear();
 		if (debug) {
-			Log.info("DarkCloudMansion: finished");
+			log.info("DarkCloudMansion: finished");
 		}
 	}
 
-	protected void checkBelethSample(DMCWorld world, L2Npc npc, L2PcInstance player) {
+	protected void checkBelethSample(DMCWorld world, Npc npc, Player player) {
 		DMCRoom FifthRoom = world.rooms.get("FifthRoom");
 
 		for (DMCNpc mob : FifthRoom.npcList) {
@@ -621,7 +625,7 @@ public class DarkCloudMansion extends Quest {
 		}
 	}
 
-	protected void killedBelethSample(DMCWorld world, L2Npc npc) {
+	protected void killedBelethSample(DMCWorld world, Npc npc) {
 		int decayedSamples = 0;
 		DMCRoom FifthRoom = world.rooms.get("FifthRoom");
 
@@ -679,7 +683,7 @@ public class DarkCloudMansion extends Quest {
 		}
 	}
 
-	protected void chkShadowColumn(DMCWorld world, L2Npc npc) {
+	protected void chkShadowColumn(DMCWorld world, Npc npc) {
 		DMCRoom ForthRoom = world.rooms.get("ForthRoom");
 
 		for (DMCNpc mob : ForthRoom.npcList) {
@@ -698,7 +702,7 @@ public class DarkCloudMansion extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (npc == null) {
 			return "";
 		}
@@ -745,7 +749,7 @@ public class DarkCloudMansion extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		DMCWorld world;
 		if (tmpworld instanceof DMCWorld) {
@@ -805,7 +809,7 @@ public class DarkCloudMansion extends Quest {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet, L2Skill skill) {
+	public String onAttack(Npc npc, Player player, int damage, boolean isPet, Skill skill) {
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		DMCWorld world;
 		if (tmpworld instanceof DMCWorld) {
@@ -816,7 +820,7 @@ public class DarkCloudMansion extends Quest {
 					if (mob.npc == npc) {
 						if (mob.npc.isInvul() && Rnd.get(100) < 12) {
 							if (debug) {
-								Log.info("DarkCloudMansion: spawn room 4 guard");
+								log.info("DarkCloudMansion: spawn room 4 guard");
 							}
 							addSpawn(BM[Rnd.get(BM.length)], player.getX(), player.getY(), player.getZ(), 0, false, 0, false, world.instanceId);
 						}
@@ -832,7 +836,7 @@ public class DarkCloudMansion extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		DMCWorld world;
 		if (tmpworld instanceof DMCWorld) {
@@ -868,7 +872,7 @@ public class DarkCloudMansion extends Quest {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		int npcId = npc.getNpcId();
 		if (npcId == YIYEN) {
 			teleCoord tele = new teleCoord();
@@ -892,7 +896,7 @@ public class DarkCloudMansion extends Quest {
 				tele.z = -3111;
 				if (world.allowed.contains(player.getObjectId())) {
 					if (debug) {
-						Log.info("DarkCloudMansion - id " + player.getObjectId() + " removed from allowed player in this Instances.");
+						log.info("DarkCloudMansion - id " + player.getObjectId() + " removed from allowed player in this Instances.");
 					}
 					world.allowed.remove(world.allowed.indexOf(player.getObjectId()));
 				}

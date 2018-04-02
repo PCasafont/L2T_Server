@@ -16,7 +16,8 @@
 package l2server.loginserver.network.gameserverpackets;
 
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.loginserver.GameServerThread;
 import l2server.loginserver.LoginController;
 import l2server.loginserver.SessionKey;
@@ -28,6 +29,9 @@ import l2server.util.network.BaseRecievePacket;
  * @author -Wooden-
  */
 public class PlayerAuthRequest extends BaseRecievePacket {
+	private static Logger log = LoggerFactory.getLogger(PlayerAuthRequest.class.getName());
+
+
 	/**
 	 * @param decrypt
 	 */
@@ -42,13 +46,13 @@ public class PlayerAuthRequest extends BaseRecievePacket {
 
 		PlayerAuthResponse authResponse;
 		if (Config.DEBUG) {
-			Log.info("auth request received for Player " + account);
+			log.info("auth request received for Player " + account);
 		}
 
 		L2LoginClient client = LoginController.getInstance().getClientForKey(sessionKey);
 		if (client != null) {
 			if (Config.DEBUG) {
-				Log.info("auth request: OK");
+				log.info("auth request: OK");
 			}
 			LoginController.getInstance().removeAuthedLoginClient(client.getAccount());
 			if (account.equalsIgnoreCase("IdEmpty")) {
@@ -58,8 +62,8 @@ public class PlayerAuthRequest extends BaseRecievePacket {
 			}
 		} else {
 			if (Config.DEBUG) {
-				Log.info("auth request: NO");
-				Log.info("session key sent: " + sessionKey);
+				log.info("auth request: NO");
+				log.info("session key sent: " + sessionKey);
 			}
 			authResponse = new PlayerAuthResponse(account, false);
 		}

@@ -17,7 +17,8 @@ package l2server.gameserver.handler;
 
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -25,6 +26,9 @@ import l2server.log.Log;
  * @version $Revision: 1.1.4.5 $ $Date: 2005/03/27 15:30:09 $
  */
 public class AdminCommandHandler {
+	private static Logger log = LoggerFactory.getLogger(AdminCommandHandler.class.getName());
+
+
 
 	private Map<Integer, IAdminCommandHandler> datatable = new HashMap<>();
 
@@ -39,7 +43,7 @@ public class AdminCommandHandler {
 		String[] ids = handler.getAdminCommandList();
 		for (String id : ids) {
 			if (Config.DEBUG) {
-				Log.fine("Adding handler for command " + id);
+				log.debug("Adding handler for command " + id);
 			}
 			datatable.put(id.hashCode(), handler);
 		}
@@ -51,9 +55,9 @@ public class AdminCommandHandler {
 			command = adminCommand.substring(0, adminCommand.indexOf(" "));
 		}
 		if (Config.DEBUG) {
-			Log.fine("getting handler for command: " + command + " -> " + (datatable.get(command.hashCode()) != null));
+			log.debug("getting handler for command: " + command + " -> " + (datatable.get(command.hashCode()) != null));
 		}
-		//Log.info(command);
+		//log.info(command);
 
 		return datatable.get(command.hashCode());
 	}

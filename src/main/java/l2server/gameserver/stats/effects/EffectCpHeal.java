@@ -15,15 +15,16 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
+import l2server.gameserver.model.actor.instance.DoorInstance;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 public class EffectCpHeal extends L2Effect {
-	public EffectCpHeal(Env env, L2EffectTemplate template) {
+	public EffectCpHeal(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -33,12 +34,12 @@ public class EffectCpHeal extends L2Effect {
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.BUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.BUFF;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
@@ -46,7 +47,7 @@ public class EffectCpHeal extends L2Effect {
 			return false;
 		}
 
-		if (getEffected() instanceof L2DoorInstance) {
+		if (getEffected() instanceof DoorInstance) {
 			return false;
 		}
 
@@ -62,7 +63,7 @@ public class EffectCpHeal extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

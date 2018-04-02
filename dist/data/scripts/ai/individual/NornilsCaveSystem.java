@@ -19,9 +19,9 @@ import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.zone.ZoneType;
 import l2server.gameserver.network.serverpackets.ExSendUIEvent;
 
 import java.util.HashMap;
@@ -37,7 +37,7 @@ import java.util.Map.Entry;
 public class NornilsCaveSystem extends L2AttackableAIScript {
 	private static final int pointsPerKill = 2;
 	private static final int[] mobs = {23275, 23273, 23272, 23268, 23269};
-	private static Map<L2ZoneType, zoneInfo> roomInfo = new HashMap<L2ZoneType, zoneInfo>(3);
+	private static Map<ZoneType, zoneInfo> roomInfo = new HashMap<ZoneType, zoneInfo>(3);
 
 	public NornilsCaveSystem(int id, String name, String descr) {
 		super(id, name, descr);
@@ -47,7 +47,7 @@ public class NornilsCaveSystem extends L2AttackableAIScript {
 		}
 
 		for (int zoneId = 60025; zoneId <= 60027; zoneId++) {
-			L2ZoneType zone = ZoneManager.getInstance().getZoneById(zoneId);
+			ZoneType zone = ZoneManager.getInstance().getZoneById(zoneId);
 
 			roomInfo.put(zone, new zoneInfo());
 
@@ -83,8 +83,8 @@ public class NornilsCaveSystem extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
-		for (Entry<L2ZoneType, zoneInfo> currentZone : roomInfo.entrySet()) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
+		for (Entry<ZoneType, zoneInfo> currentZone : roomInfo.entrySet()) {
 			if (currentZone.getKey().isInsideZone(npc)) {
 				zoneInfo currentInfo = currentZone.getValue();
 				int currentPoints = currentInfo.getCurrentPoints();
@@ -114,9 +114,9 @@ public class NornilsCaveSystem extends L2AttackableAIScript {
 	}
 
 	private static final class changeZoneStage implements Runnable {
-		private final L2ZoneType zone;
+		private final ZoneType zone;
 
-		public changeZoneStage(L2ZoneType a) {
+		public changeZoneStage(ZoneType a) {
 			zone = a;
 		}
 

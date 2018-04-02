@@ -18,7 +18,7 @@ package l2server.gameserver.network.clientpackets;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -46,7 +46,7 @@ public final class RequestJoinSiege extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -87,7 +87,7 @@ public final class RequestJoinSiege extends L2GameClientPacket {
 		castle.getSiege().listRegisterClan(activeChar);
 	}
 	
-	public static boolean canRegister(L2PcInstance player) {
+	public static boolean canRegister(Player player) {
 		if (player == null) {
 			return false;
 		}
@@ -124,7 +124,7 @@ public final class RequestJoinSiege extends L2GameClientPacket {
 			return false;
 		}
 		
-		for (L2PcInstance member : clan.getOnlineMembers(0)) {
+		for (Player member : clan.getOnlineMembers(0)) {
 			if (member == null) {
 				continue;
 			}

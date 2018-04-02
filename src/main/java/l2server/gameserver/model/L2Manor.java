@@ -17,8 +17,9 @@ package l2server.gameserver.model;
 
 import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.log.Log;
+import l2server.gameserver.templates.item.ItemTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -34,6 +35,9 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 
 public class L2Manor {
+	private static Logger log = LoggerFactory.getLogger(L2Manor.class.getName());
+
+
 	private static ConcurrentHashMap<Integer, SeedData> seeds = new ConcurrentHashMap<>();
 
 	private L2Manor() {
@@ -56,7 +60,7 @@ public class L2Manor {
 	}
 
 	public int getSeedBasicPrice(int seedId) {
-		L2Item seedItem = ItemTable.getInstance().getTemplate(seedId);
+		ItemTemplate seedItem = ItemTable.getInstance().getTemplate(seedId);
 
 		if (seedItem != null) {
 			return seedItem.getReferencePrice();
@@ -75,7 +79,7 @@ public class L2Manor {
 	}
 
 	public int getCropBasicPrice(int cropId) {
-		L2Item cropItem = ItemTable.getInstance().getTemplate(cropId);
+		ItemTemplate cropItem = ItemTable.getInstance().getTemplate(cropId);
 
 		if (cropItem != null) {
 			return cropItem.getReferencePrice();
@@ -369,7 +373,7 @@ public class L2Manor {
 					}
 				}
 			}
-			Log.info(getClass().getSimpleName() + ": Loaded " + seeds.size() + " Seeds.");
+			log.info(getClass().getSimpleName() + ": Loaded " + seeds.size() + " Seeds.");
 		}
 	}
 

@@ -16,46 +16,46 @@
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Fishing;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2Weapon;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.item.WeaponTemplate;
+import l2server.gameserver.templates.skills.SkillType;
 
 public class FishingSkill implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.PUMPING, L2SkillType.REELING};
+	private static final SkillType[] SKILL_IDS = {SkillType.PUMPING, SkillType.REELING};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		if (!(activeChar instanceof L2PcInstance)) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		if (!(activeChar instanceof Player)) {
 			return;
 		}
 
-		L2PcInstance player = (L2PcInstance) activeChar;
+		Player player = (Player) activeChar;
 
 		L2Fishing fish = player.getFishCombat();
 		if (fish == null) {
-			if (skill.getSkillType() == L2SkillType.PUMPING) {
+			if (skill.getSkillType() == SkillType.PUMPING) {
 				//Pumping skill is available only while fishing
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CAN_USE_PUMPING_ONLY_WHILE_FISHING));
-			} else if (skill.getSkillType() == L2SkillType.REELING) {
+			} else if (skill.getSkillType() == SkillType.REELING) {
 				//Reeling skill is available only while fishing
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CAN_USE_REELING_ONLY_WHILE_FISHING));
 			}
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		L2Weapon weaponItem = player.getActiveWeaponItem();
-		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+		WeaponTemplate weaponItem = player.getActiveWeaponItem();
+		Item weaponInst = activeChar.getActiveWeaponInstance();
 		if (weaponInst == null || weaponItem == null) {
 			return;
 		}
@@ -79,7 +79,7 @@ public class FishingSkill implements ISkillHandler {
 		if (SS > 1) {
 			weaponInst.setChargedFishshot(false);
 		}
-		if (skill.getSkillType() == L2SkillType.REELING)//Realing
+		if (skill.getSkillType() == SkillType.REELING)//Realing
 		{
 			fish.useRealing(dmg, pen);
 		} else
@@ -93,7 +93,7 @@ public class FishingSkill implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

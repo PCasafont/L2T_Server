@@ -14,13 +14,13 @@
 package l2server.gameserver.util;
 
 import l2server.gameserver.TimeController;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.L2GameClient;
-import l2server.log.Log;
 import l2server.util.StringUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Level;
 
 /**
  * Flood protector implementation.
@@ -28,6 +28,8 @@ import java.util.logging.Level;
  * @author fordfrog
  */
 public final class FloodProtectorAction {
+	
+	private static Logger log = LoggerFactory.getLogger(FloodProtectorAction.class.getName());
 
     /*
 	  Logger
@@ -80,7 +82,7 @@ public final class FloodProtectorAction {
 		final int curTick = TimeController.getGameTicks();
 
 		if (curTick < nextGameTick || punishmentInProgress) {
-			if (config.LOG_FLOODING && !logged && Log.isLoggable(Level.WARNING)) {
+			if (config.LOG_FLOODING && !logged) {
 				log(" called command ",
 						command,
 						" ~",
@@ -109,7 +111,7 @@ public final class FloodProtectorAction {
 		}
 
 		if (count.get() > 0) {
-			if (config.LOG_FLOODING && Log.isLoggable(Level.WARNING)) {
+			if (config.LOG_FLOODING) {
 				log(" issued ",
 						String.valueOf(count),
 						" extra requests within ~",
@@ -135,9 +137,7 @@ public final class FloodProtectorAction {
 			client.closeNow();
 		}
 
-		if (Log.isLoggable(Level.WARNING)) {
 			log("kicked for flooding");
-		}
 	}
 
 	/**
@@ -145,11 +145,9 @@ public final class FloodProtectorAction {
 	 */
 	private void banAccount() {
 		if (client.getActiveChar() != null) {
-			client.getActiveChar().setPunishLevel(L2PcInstance.PunishLevel.ACC, config.PUNISHMENT_TIME);
+			client.getActiveChar().setPunishLevel(Player.PunishLevel.ACC, config.PUNISHMENT_TIME);
 
-			if (Log.isLoggable(Level.WARNING)) {
 				log(" banned for flooding ", config.PUNISHMENT_TIME <= 0 ? "forever" : "for " + config.PUNISHMENT_TIME + " mins");
-			}
 
 			client.getActiveChar().logout();
 		} else {
@@ -162,11 +160,9 @@ public final class FloodProtectorAction {
 	 */
 	private void jailChar() {
 		if (client.getActiveChar() != null) {
-			client.getActiveChar().setPunishLevel(L2PcInstance.PunishLevel.JAIL, config.PUNISHMENT_TIME);
+			client.getActiveChar().setPunishLevel(Player.PunishLevel.JAIL, config.PUNISHMENT_TIME);
 
-			if (Log.isLoggable(Level.WARNING)) {
 				log(" jailed for flooding ", config.PUNISHMENT_TIME <= 0 ? "forever" : "for " + config.PUNISHMENT_TIME + " mins");
-			}
 		} else {
 			log(" unable to jail: no active player");
 		}
@@ -203,6 +199,6 @@ public final class FloodProtectorAction {
 		}
 
 		StringUtil.append(output, lines);
-		Log.warning(output.toString());
+		log.warn(output.toString());
 	}
 }

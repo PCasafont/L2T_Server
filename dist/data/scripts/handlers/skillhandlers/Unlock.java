@@ -18,36 +18,36 @@ package handlers.skillhandlers;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2ChestInstance;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.ChestInstance;
+import l2server.gameserver.model.actor.instance.DoorInstance;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.util.Rnd;
 
 public class Unlock implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.UNLOCK, L2SkillType.UNLOCK_SPECIAL};
+	private static final SkillType[] SKILL_IDS = {SkillType.UNLOCK, SkillType.UNLOCK_SPECIAL};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		L2Object[] targetList = skill.getTargetList(activeChar);
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		WorldObject[] targetList = skill.getTargetList(activeChar);
 
 		if (targetList == null) {
 			return;
 		}
 
-		for (L2Object target : targets) {
-			if (target instanceof L2DoorInstance) {
-				L2DoorInstance door = (L2DoorInstance) target;
+		for (WorldObject target : targets) {
+			if (target instanceof DoorInstance) {
+				DoorInstance door = (DoorInstance) target;
 				// Check if door in the different instance
 				if (activeChar.getInstanceId() != door.getInstanceId()) {
 					// Search for the instance
@@ -57,7 +57,7 @@ public class Unlock implements ISkillHandler {
 						activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 						return;
 					}
-					for (L2DoorInstance instanceDoor : inst.getDoors()) {
+					for (DoorInstance instanceDoor : inst.getDoors()) {
 						if (instanceDoor.getDoorId() == door.getDoorId()) {
 							// Door found
 							door = instanceDoor;
@@ -71,7 +71,7 @@ public class Unlock implements ISkillHandler {
 					}
 				}
 
-				if (!door.isOpenableBySkill() && skill.getSkillType() != L2SkillType.UNLOCK_SPECIAL || door.getFort() != null) {
+				if (!door.isOpenableBySkill() && skill.getSkillType() != SkillType.UNLOCK_SPECIAL || door.getFort() != null) {
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.UNABLE_TO_UNLOCK_DOOR));
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
@@ -84,8 +84,8 @@ public class Unlock implements ISkillHandler {
 				} else {
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_UNLOCK_DOOR));
 				}
-			} else if (target instanceof L2ChestInstance) {
-				L2ChestInstance chest = (L2ChestInstance) target;
+			} else if (target instanceof ChestInstance) {
+				ChestInstance chest = (ChestInstance) target;
 				if (chest.getCurrentHp() <= 0 || chest.isInteracted() || activeChar.getInstanceId() != chest.getInstanceId()) {
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
@@ -109,8 +109,8 @@ public class Unlock implements ISkillHandler {
 		}
 	}
 
-	private static boolean doorUnlock(L2Skill skill) {
-		if (skill.getSkillType() == L2SkillType.UNLOCK_SPECIAL) {
+	private static boolean doorUnlock(Skill skill) {
+		if (skill.getSkillType() == SkillType.UNLOCK_SPECIAL) {
 			return Rnd.get(100) < skill.getPower();
 		}
 
@@ -128,7 +128,7 @@ public class Unlock implements ISkillHandler {
 		}
 	}
 
-	private static boolean chestUnlock(L2Skill skill, L2Character chest) {
+	private static boolean chestUnlock(Skill skill, Creature chest) {
 		int chance = 0;
 		if (chest.getLevel() > 60) {
 			if (skill.getLevel() < 10) {
@@ -163,7 +163,7 @@ public class Unlock implements ISkillHandler {
 		return Rnd.get(100) < chance;
 	}
 
-	private static boolean chestTrap(L2Character chest) {
+	private static boolean chestTrap(Creature chest) {
 		if (chest.getLevel() > 60) {
 			return Rnd.get(100) < 80;
 		}
@@ -180,7 +180,7 @@ public class Unlock implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

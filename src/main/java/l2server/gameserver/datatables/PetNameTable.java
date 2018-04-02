@@ -17,7 +17,8 @@ package l2server.gameserver.datatables;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -29,6 +30,9 @@ import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 public class PetNameTable {
+	private static Logger log = LoggerFactory.getLogger(PetNameTable.class.getName());
+
+
 
 	private PetNameTable() {
 	}
@@ -60,7 +64,7 @@ public class PetNameTable {
 			rset.close();
 			statement.close();
 		} catch (SQLException e) {
-			Log.log(Level.WARNING, "Could not check existing petname:" + e.getMessage(), e);
+			log.warn("Could not check existing petname:" + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -79,7 +83,7 @@ public class PetNameTable {
 			pattern = Pattern.compile(Config.PET_NAME_TEMPLATE);
 		} catch (PatternSyntaxException e) // case of illegal pattern
 		{
-			Log.warning("ERROR : Pet name pattern of config is wrong!");
+			log.warn("ERROR : Pet name pattern of config is wrong!");
 			pattern = Pattern.compile(".*");
 		}
 		Matcher regexp = pattern.matcher(name);

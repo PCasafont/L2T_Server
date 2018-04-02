@@ -16,22 +16,22 @@
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 public class StealBuffs implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.STEAL_BUFF};
+	private static final SkillType[] SKILL_IDS = {SkillType.STEAL_BUFF};
 
 	// Resistance given by each buff enchant level
 	private final double ENCHANT_BENEFIT = 0.5;
@@ -51,50 +51,50 @@ public class StealBuffs implements ISkillHandler {
 	private double PER_LVL_PENALTY = 5;
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
 		dischargeShots(activeChar, skill);
 
-		L2Character target;
-		L2Abnormal effect;
+		Creature target;
+		Abnormal effect;
 		int maxNegate = skill.getMaxNegatedEffects();
 		double chance = skill.getPower();
 		boolean targetWasInOlys = false;
 
-		for (L2Object obj : targets) {
-			if (!(obj instanceof L2Character)) {
+		for (WorldObject obj : targets) {
+			if (!(obj instanceof Creature)) {
 				continue;
 			}
 
-			if (obj instanceof L2PcInstance) {
-				targetWasInOlys = ((L2PcInstance) obj).isInOlympiadMode();
-			} else if (obj instanceof L2SummonInstance) {
-				((L2SummonInstance) obj).getOwner().isInOlympiadMode();
-			} else if (obj instanceof L2PetInstance) {
-				((L2PetInstance) obj).getOwner().isInOlympiadMode();
+			if (obj instanceof Player) {
+				targetWasInOlys = ((Player) obj).isInOlympiadMode();
+			} else if (obj instanceof SummonInstance) {
+				((SummonInstance) obj).getOwner().isInOlympiadMode();
+			} else if (obj instanceof PetInstance) {
+				((PetInstance) obj).getOwner().isInOlympiadMode();
 			}
 
-			target = (L2Character) obj;
+			target = (Creature) obj;
 
 			if (target.isDead()) {
 				continue;
 			}
 
-			if (!(target instanceof L2PcInstance)) {
+			if (!(target instanceof Player)) {
 				continue;
 			}
 
 			Env env;
 			int lastSkillId = 0;
-			final L2Abnormal[] effects = target.getAllEffects();
-			final List<L2Abnormal> toSteal = new ArrayList<L2Abnormal>(maxNegate);
+			final Abnormal[] effects = target.getAllEffects();
+			final List<Abnormal> toSteal = new ArrayList<Abnormal>(maxNegate);
 
 			// Consider caster skill and target level
 			chance -= (target.getLevel() - skill.getMagicLevel()) * PER_LVL_PENALTY;
-			chance *= Formulas.calcEffectTypeProficiency(activeChar, target, L2AbnormalType.CANCEL) /
-					Formulas.calcEffectTypeResistance(target, L2AbnormalType.CANCEL);
+			chance *= Formulas.calcEffectTypeProficiency(activeChar, target, AbnormalType.CANCEL) /
+					Formulas.calcEffectTypeResistance(target, AbnormalType.CANCEL);
 			if (chance < 0.0) {
 				chance = 0.0;
 			}
@@ -202,7 +202,7 @@ public class StealBuffs implements ISkillHandler {
 			}
 
 			// stealing effects
-			for (L2Abnormal eff : toSteal) {
+			for (Abnormal eff : toSteal) {
 				env = new Env();
 				env.player = target;
 				env.target = activeChar;
@@ -211,7 +211,7 @@ public class StealBuffs implements ISkillHandler {
 					effect = eff.getTemplate().getStolenEffect(env, eff);
 					if (effect != null) {
 						effect.scheduleEffect();
-						if (effect.getShowIcon() && activeChar instanceof L2PcInstance) {
+						if (effect.getShowIcon() && activeChar instanceof Player) {
 							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
 							sm.addSkillName(effect);
 							activeChar.sendPacket(sm);
@@ -221,11 +221,11 @@ public class StealBuffs implements ISkillHandler {
 					eff.exit();
 
 					// Tenkai custom - Buffs returning
-					if (eff.getEffected() instanceof L2PcInstance) {
+					if (eff.getEffected() instanceof Player) {
 						eff.getEffected().getActingPlayer().scheduleEffectRecovery(eff, 15, targetWasInOlys);
 					}
 				} catch (RuntimeException e) {
-					log.log(Level.WARNING, "Cannot steal effect: " + eff + " Stealer: " + activeChar + " Stolen: " + target, e);
+					log.warn("Cannot steal effect: " + eff + " Stealer: " + activeChar + " Stolen: " + target, e);
 				}
 			}
 
@@ -244,29 +244,29 @@ public class StealBuffs implements ISkillHandler {
 		}
 	}
 
-	private void dischargeShots(L2Character activeChar, L2Skill skill) {
+	private void dischargeShots(Creature activeChar, Skill skill) {
 		// discharge shots
-		final L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+		final Item weaponInst = activeChar.getActiveWeaponInstance();
 		if (weaponInst != null) {
 			if (skill.isMagic()) {
-				if (weaponInst.getChargedSpiritShot() == L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT) {
-					weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-				} else if (weaponInst.getChargedSpiritShot() == L2ItemInstance.CHARGED_SPIRITSHOT) {
-					weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+				if (weaponInst.getChargedSpiritShot() == Item.CHARGED_BLESSED_SPIRITSHOT) {
+					weaponInst.setChargedSpiritShot(Item.CHARGED_NONE);
+				} else if (weaponInst.getChargedSpiritShot() == Item.CHARGED_SPIRITSHOT) {
+					weaponInst.setChargedSpiritShot(Item.CHARGED_NONE);
 				}
 			}
-		} else if (activeChar instanceof L2Summon) {
-			final L2Summon activeSummon = (L2Summon) activeChar;
+		} else if (activeChar instanceof Summon) {
+			final Summon activeSummon = (Summon) activeChar;
 
 			if (skill.isMagic()) {
-				if (activeSummon.getChargedSpiritShot() == L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT) {
-					activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-				} else if (activeSummon.getChargedSpiritShot() == L2ItemInstance.CHARGED_SPIRITSHOT) {
-					activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+				if (activeSummon.getChargedSpiritShot() == Item.CHARGED_BLESSED_SPIRITSHOT) {
+					activeSummon.setChargedSpiritShot(Item.CHARGED_NONE);
+				} else if (activeSummon.getChargedSpiritShot() == Item.CHARGED_SPIRITSHOT) {
+					activeSummon.setChargedSpiritShot(Item.CHARGED_NONE);
 				}
 			}
-		} else if (activeChar instanceof L2Npc) {
-			((L2Npc) activeChar).spiritshotcharged = false;
+		} else if (activeChar instanceof Npc) {
+			((Npc) activeChar).spiritshotcharged = false;
 		}
 	}
 
@@ -274,7 +274,7 @@ public class StealBuffs implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

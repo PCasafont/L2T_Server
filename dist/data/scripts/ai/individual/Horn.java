@@ -17,10 +17,10 @@ package ai.individual;
 
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author LasTravel
@@ -45,17 +45,17 @@ public class Horn extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		switch (npc.getNpcId()) {
 			case 19460: //Green
-				for (L2Character chara : npc.getKnownList().getKnownCharactersInRadius(600)) {
-					if (chara == null || !(chara instanceof L2MonsterInstance)) {
+				for (Creature chara : npc.getKnownList().getKnownCharactersInRadius(600)) {
+					if (chara == null || !(chara instanceof MonsterInstance)) {
 						continue;
 					}
 
-					((L2MonsterInstance) chara).setTarget(killer);
-					((L2MonsterInstance) chara).addDamageHate(killer, 500, 99999);
-					((L2MonsterInstance) chara).getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, killer);
+					((MonsterInstance) chara).setTarget(killer);
+					((MonsterInstance) chara).addDamageHate(killer, 500, 99999);
+					((MonsterInstance) chara).getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, killer);
 				}
 				break;
 

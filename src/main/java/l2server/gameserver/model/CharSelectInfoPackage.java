@@ -17,7 +17,7 @@ package l2server.gameserver.model;
 
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.model.itemcontainer.PcInventory;
-import l2server.gameserver.templates.chars.L2PcTemplate;
+import l2server.gameserver.templates.chars.PcTemplate;
 
 /**
  * Used to Store data sent to Client for Character
@@ -32,7 +32,7 @@ public class CharSelectInfoPackage {
 	private long exp = 0;
 	private long sp = 0;
 	private int clanId = 0;
-	private L2PcTemplate template = null;
+	private PcTemplate template = null;
 	private int classId = 0;
 	private long deleteTimer = 0L;
 	private long lastAccess = 0L;
@@ -202,11 +202,11 @@ public class CharSelectInfoPackage {
 		this.name = name;
 	}
 	
-	public L2PcTemplate getTemplate() {
+	public PcTemplate getTemplate() {
 		return template;
 	}
 	
-	public void setTemplate(L2PcTemplate t) {
+	public void setTemplate(PcTemplate t) {
 		template = t;
 	}
 	

@@ -16,7 +16,7 @@
 package l2server.gameserver.pathfinding;
 
 import l2server.Config;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.World;
 import l2server.gameserver.pathfinding.cellnodes.CellPathFinding;
 import l2server.gameserver.pathfinding.geonodes.GeoPathFinding;
 
@@ -182,7 +182,7 @@ public abstract class PathFinding {
 	 * @return
 	 */
 	public int calculateWorldX(short node_x) {
-		return L2World.MAP_MIN_X + node_x * 128 + 48;
+		return World.MAP_MIN_X + node_x * 128 + 48;
 	}
 
 	/**
@@ -192,7 +192,7 @@ public abstract class PathFinding {
 	 * @return
 	 */
 	public int calculateWorldY(short node_y) {
-		return L2World.MAP_MIN_Y + node_y * 128 + 48;
+		return World.MAP_MIN_Y + node_y * 128 + 48;
 	}
 
 	public String[] getStat() {

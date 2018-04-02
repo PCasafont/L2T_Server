@@ -19,11 +19,12 @@ import gnu.trove.TIntArrayList;
 import gnu.trove.TIntFloatHashMap;
 import gnu.trove.TIntIntHashMap;
 import l2server.gameserver.util.FloodProtectorConfig;
-import l2server.log.Log;
 import l2server.util.L2Properties;
 import l2server.util.StringUtil;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.lang.reflect.Field;
@@ -38,6 +39,8 @@ import java.util.List;
 import java.util.Map;
 
 public final class Config {
+	private static Logger log = LoggerFactory.getLogger(Config.class.getName());
+	
 	public static final int DEFAULT = 0x01;
 	public static final int TENKAI = 0x02;
 	public static final int TENKAI_LEGACY = 0x20;
@@ -1002,7 +1005,7 @@ public final class Config {
 		try {
 			File f = new File("./config.cfg");
 			if (!f.exists()) {
-				Log.warning("./config.cfg could not be found!!!");
+				log.warn("./config.cfg could not be found!!!");
 				failedLoadingBoot = true;
 			} else {
 				List<String> allLines = Files.readAllLines(Paths.get("./config.cfg"), StandardCharsets.UTF_8);
@@ -1019,13 +1022,13 @@ public final class Config {
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
-			Log.warning("There was an issue loading your config.cfg.");
+			log.warn("There was an issue loading your config.cfg.");
 			failedLoadingBoot = true;
 		}
 		
 		if (failedLoadingBoot) {
 			try {
-				Log.info("DEFAULT CONFIGURATIONS WILL BE LOADED. Press ENTER to continue.");
+				log.info("DEFAULT CONFIGURATIONS WILL BE LOADED. Press ENTER to continue.");
 				CONFIG_FILE = "default.cfg";
 				System.in.read();
 			} catch (IOException e) {
@@ -1034,7 +1037,7 @@ public final class Config {
 		}
 		
 		if (ServerMode.serverMode == ServerMode.MODE_GAMESERVER) {
-			Log.info("Loading GameServer[" + CONFIG_FILE + "] Configuration Files...");
+			log.info("Loading GameServer[" + CONFIG_FILE + "] Configuration Files...");
 			InputStream is = null;
 			try {
 				loadConfigVars("./config/game.xml");
@@ -1074,7 +1077,7 @@ public final class Config {
 						FILTER_LIST.add(line.trim());
 					}
 					lnr.close();
-					Log.info("Loaded " + FILTER_LIST.size() + " Filter Words.");
+					log.info("Loaded " + FILTER_LIST.size() + " Filter Words.");
 				} catch (Exception e) {
 					e.printStackTrace();
 					throw new Error("Failed to Load " + CONFIG_DIRECTORY + CHAT_FILTER_FILE + " File.");
@@ -1093,7 +1096,7 @@ public final class Config {
 						
 						LANGUAGE_FILTER.add(line.trim());
 					}
-					Log.info("Loaded " + LANGUAGE_FILTER.size() + " Foreign Keywords.");
+					log.info("Loaded " + LANGUAGE_FILTER.size() + " Foreign Keywords.");
 					lnr.close();
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -1107,7 +1110,7 @@ public final class Config {
 					SERVER_ID = Integer.parseInt(Settings.getProperty("ServerID"));
 					HEX_ID = new BigInteger(Settings.getProperty("HexID"), 16).toByteArray();
 				} catch (Exception e) {
-					Log.warning("Could not load HexID file (" + CONFIG_DIRECTORY + HEXID_FILE + "). Hopefully login will give us one.");
+					log.warn("Could not load HexID file (" + CONFIG_DIRECTORY + HEXID_FILE + "). Hopefully login will give us one.");
 				}
 			} finally {
 				try {
@@ -1116,7 +1119,7 @@ public final class Config {
 				}
 			}
 		} else if (ServerMode.serverMode == ServerMode.MODE_LOGINSERVER) {
-			Log.info("loading login config");
+			log.info("loading login config");
 			InputStream is = null;
 			try {
 				loadConfigVars("./config/login.xml");
@@ -1128,7 +1131,7 @@ public final class Config {
 				}
 			}
 		} else {
-			Log.severe("Could not Load Config: server mode was not set");
+			log.error("Could not Load Config: server mode was not set");
 		}
 	}
 	
@@ -1160,7 +1163,7 @@ public final class Config {
 			hexSetting.store(out, "the hexID to auth into login");
 			out.close();
 		} catch (Exception e) {
-			Log.warning(StringUtil.concat("Failed to save hex id to ", fileName, " File."));
+			log.warn(StringUtil.concat("Failed to save hex id to ", fileName, " File."));
 			e.printStackTrace();
 		}
 	}
@@ -1194,14 +1197,14 @@ public final class Config {
 				try {
 					field = Config.class.getField(conf.fieldName);
 				} catch (Exception e) {
-					Log.warning("Non existing config: " + conf.fieldName);
+					log.warn("Non existing config: " + conf.fieldName);
 					e.printStackTrace();
 					continue;
 				}
 				
 				int modifiers = field.getModifiers();
 				if (!Modifier.isStatic(modifiers) || !Modifier.isPublic(modifiers)) {
-					Log.warning("Cannot modify non public or non static config: " + conf.fieldName);
+					log.warn("Cannot modify non public or non static config: " + conf.fieldName);
 					continue;
 				}
 				
@@ -1258,7 +1261,7 @@ public final class Config {
 				} else if (field.getType() == IdFactoryType.class) {
 					field.set(field, IdFactoryType.valueOf(value));
 				} else {
-					Log.warning("Unsupported field type: " + field.getType());
+					log.warn("Unsupported field type: " + field.getType());
 				}
 			}
 			
@@ -1420,14 +1423,14 @@ public final class Config {
 		for (String prop : propertySplit) {
 			String[] propSplit = prop.split(",");
 			if (propSplit.length != 2) {
-				Log.warning(StringUtil.concat("Invalid config property -> \"", prop, "\""));
+				log.warn(StringUtil.concat("Invalid config property -> \"", prop, "\""));
 			}
 			
 			try {
 				result.put(Integer.valueOf(propSplit[0]), Integer.valueOf(propSplit[1]));
 			} catch (NumberFormatException nfe) {
 				if (!prop.isEmpty()) {
-					Log.warning(StringUtil.concat("Invalid config property -> \"", propSplit[0], "\"", propSplit[1]));
+					log.warn(StringUtil.concat("Invalid config property -> \"", propSplit[0], "\"", propSplit[1]));
 				}
 			}
 		}
@@ -1464,14 +1467,14 @@ public final class Config {
 		for (String prop : propertySplit) {
 			String[] propSplit = prop.split(",");
 			if (propSplit.length != 2) {
-				Log.warning(StringUtil.concat("Invalid config property -> \"", prop, "\""));
+				log.warn(StringUtil.concat("Invalid config property -> \"", prop, "\""));
 			}
 			
 			try {
 				result.put(propSplit[0], Integer.valueOf(propSplit[1]));
 			} catch (NumberFormatException nfe) {
 				if (!prop.isEmpty()) {
-					Log.warning(StringUtil.concat("Invalid config property -> \"", propSplit[0], "\"", propSplit[1]));
+					log.warn(StringUtil.concat("Invalid config property -> \"", propSplit[0], "\"", propSplit[1]));
 				}
 			}
 		}
@@ -1507,7 +1510,7 @@ public final class Config {
 				}
 			}
 		} catch (Exception e) {
-			Log.warning("Error while loading double array");
+			log.warn("Error while loading double array");
 			e.printStackTrace();
 		}
 		
@@ -1530,7 +1533,7 @@ public final class Config {
 		for (String value : propertySplit) {
 			valueSplit = value.split(",");
 			if (valueSplit.length != 2) {
-				Log.warning(StringUtil.concat("parseItemsList[Config.load()]: invalid entry -> \"",
+				log.warn(StringUtil.concat("parseItemsList[Config.load()]: invalid entry -> \"",
 						valueSplit[0],
 						"\", should be itemId,itemNumber"));
 				return null;
@@ -1540,13 +1543,13 @@ public final class Config {
 			try {
 				result[i][0] = Integer.parseInt(valueSplit[0]);
 			} catch (NumberFormatException e) {
-				Log.warning(StringUtil.concat("parseItemsList[Config.load()]: invalid itemId -> \"", valueSplit[0], "\""));
+				log.warn(StringUtil.concat("parseItemsList[Config.load()]: invalid itemId -> \"", valueSplit[0], "\""));
 				return null;
 			}
 			try {
 				result[i][1] = Integer.parseInt(valueSplit[1]);
 			} catch (NumberFormatException e) {
-				Log.warning(StringUtil.concat("parseItemsList[Config.load()]: invalid item number -> \"", valueSplit[1], "\""));
+				log.warn(StringUtil.concat("parseItemsList[Config.load()]: invalid item number -> \"", valueSplit[1], "\""));
 				return null;
 			}
 			i++;
@@ -1678,7 +1681,7 @@ public final class Config {
 			return custom;
 		}
 		
-		Log.warning("Config: Custom Path doesn't exist: " + path);
+		log.warn("Config: Custom Path doesn't exist: " + path);
 		
 		return findNonCustomResource(path);
 	}

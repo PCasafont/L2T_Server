@@ -17,10 +17,10 @@ package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.util.Rnd;
@@ -35,7 +35,7 @@ public class AdminInstance implements IAdminCommandHandler {
 			{"admin_setinstance", "admin_ghoston", "admin_ghostoff", "admin_createinstance", "admin_destroyinstance", "admin_listinstances"};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		StringTokenizer st = new StringTokenizer(command);
 		st.nextToken();
 		
@@ -79,24 +79,24 @@ public class AdminInstance implements IAdminCommandHandler {
 					activeChar.sendMessage("Instance " + val + " doesnt exist.");
 					return false;
 				} else {
-					L2Object target = activeChar.getTarget();
-					if (target == null || target instanceof L2Summon) // Don't separate summons from masters
+					WorldObject target = activeChar.getTarget();
+					if (target == null || target instanceof Summon) // Don't separate summons from masters
 					{
 						activeChar.sendMessage("Incorrect target.");
 						return false;
 					}
 					target.setInstanceId(val);
-					if (target instanceof L2PcInstance) {
-						L2PcInstance player = (L2PcInstance) target;
+					if (target instanceof Player) {
+						Player player = (Player) target;
 						player.sendMessage("Admin set your instance to:" + val);
 						player.teleToLocation(player.getX(), player.getY(), player.getZ());
-						L2Summon pet = player.getPet();
+						Summon pet = player.getPet();
 						if (pet != null) {
 							pet.setInstanceId(val);
 							pet.teleToLocation(pet.getX(), pet.getY(), pet.getZ());
 							player.sendMessage("Admin set " + pet.getName() + "'s instance to:" + val);
 						}
-						for (L2SummonInstance summon : ((L2PcInstance) target).getSummons()) {
+						for (SummonInstance summon : ((Player) target).getSummons()) {
 							summon.setInstanceId(val);
 							summon.teleToLocation(summon.getX(), summon.getY(), summon.getZ());
 							player.sendMessage("Admin set " + summon.getName() + "'s instance to:" + val);
@@ -125,7 +125,7 @@ public class AdminInstance implements IAdminCommandHandler {
 		
 		int size = InstanceManager.getInstance().getPlayers(instId).size();
 		
-		L2PcInstance player = null;
+		Player player = null;
 		
 		if (size > 0) {
 			player = InstanceManager.getInstance().getPlayers(instId).get(Rnd.get(size));

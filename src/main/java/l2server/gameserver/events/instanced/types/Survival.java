@@ -6,8 +6,8 @@ import l2server.gameserver.events.instanced.EventInstance;
 import l2server.gameserver.events.instanced.EventTeleporter;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.instancemanager.PlayerAssistsManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.Point3D;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.util.List;
  * @author Pere
  */
 public class Survival extends EventInstance {
-	List<L2PcInstance> winners = new ArrayList<>();
+	List<Player> winners = new ArrayList<>();
 	
 	public Survival(int id, EventConfig config) {
 		super(id, config);
@@ -25,13 +25,13 @@ public class Survival extends EventInstance {
 	
 	@Override
 	public void calculateRewards() {
-		L2PcInstance winner = null;
+		Player winner = null;
 		if (teams[0].getParticipatedPlayerCount() != 1) {
 			Announcements.getInstance().announceToAll("The event has ended in a tie");
 			return;
 		}
 		
-		for (L2PcInstance playerInstance : teams[0].getParticipatedPlayers().values()) {
+		for (Player playerInstance : teams[0].getParticipatedPlayers().values()) {
 			winner = playerInstance;
 		}
 		
@@ -41,7 +41,7 @@ public class Survival extends EventInstance {
 		
 		if (!winners.isEmpty()) {
 			int extraPoints = winners.size() * 3;
-			for (L2PcInstance player : winners) {
+			for (Player player : winners) {
 				player.addEventPoints(extraPoints);
 				extraPoints /= 2;
 			}
@@ -54,12 +54,12 @@ public class Survival extends EventInstance {
 	}
 	
 	@Override
-	public String getRunningInfo(L2PcInstance player) {
+	public String getRunningInfo(Player player) {
 		String html = "";
 		int alive = 0;
 		if (teams[0].getParticipatedPlayerCount() > 0) {
 			html += "Survivors:<br>";
-			for (L2PcInstance participant : teams[0].getParticipatedPlayers().values()) {
+			for (Player participant : teams[0].getParticipatedPlayers().values()) {
 				if (participant != null) {
 					html += EventsManager.getInstance().getPlayerString(participant, player) + ", ";
 					alive++;
@@ -76,12 +76,12 @@ public class Survival extends EventInstance {
 	}
 	
 	@Override
-	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance) {
+	public void onKill(Creature killerCharacter, Player killedPlayerInstance) {
 		if (killedPlayerInstance == null || !isState(EventState.STARTED)) {
 			return;
 		}
 		
-		L2PcInstance killerPlayer = killerCharacter.getActingPlayer();
+		Player killerPlayer = killerCharacter.getActingPlayer();
 		if (killerPlayer == null) {
 			return;
 		}
@@ -92,8 +92,8 @@ public class Survival extends EventInstance {
 		new EventTeleporter(killedPlayerInstance, new Point3D(0, 0, 0), false, true);
 		
 		killerPlayer.addEventPoints(3);
-		List<L2PcInstance> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayerInstance, true);
-		for (L2PcInstance assistant : assistants) {
+		List<Player> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayerInstance, true);
+		for (Player assistant : assistants) {
 			assistant.addEventPoints(1);
 		}
 		

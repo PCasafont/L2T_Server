@@ -16,12 +16,11 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 import l2server.util.Point3D;
 
 /**
@@ -52,8 +51,8 @@ public final class RequestExMagicSkillUseGround extends L2GameClientPacket {
 	 */
 	@Override
 	protected void runImpl() {
-		// Get the current L2PcInstance of the player
-		L2PcInstance activeChar = getClient().getActiveChar();
+		// Get the current Player of the player
+		Player activeChar = getClient().getActiveChar();
 		
 		if (activeChar == null) {
 			return;
@@ -66,8 +65,8 @@ public final class RequestExMagicSkillUseGround extends L2GameClientPacket {
 			return;
 		}
 		
-		// Get the L2Skill template corresponding to the skillID received from the client
-		L2Skill skill = SkillTable.getInstance().getInfo(skillId, level);
+		// Get the Skill template corresponding to the skillID received from the client
+		Skill skill = SkillTable.getInstance().getInfo(skillId, level);
 		
 		// Check the validity of the skill
 		if (skill != null) {
@@ -80,7 +79,7 @@ public final class RequestExMagicSkillUseGround extends L2GameClientPacket {
 			activeChar.useMagic(skill, ctrlPressed, shiftPressed);
 		} else {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			Log.warning("No skill found with id " + skillId + " and level " + level + " !!");
+			log.warn("No skill found with id " + skillId + " and level " + level + " !!");
 		}
 	}
 }

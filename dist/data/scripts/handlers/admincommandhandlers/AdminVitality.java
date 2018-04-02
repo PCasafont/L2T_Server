@@ -17,7 +17,7 @@ package handlers.admincommandhandlers;
 
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.actor.stat.PcStat;
 
 import java.util.StringTokenizer;
@@ -32,7 +32,7 @@ public class AdminVitality implements IAdminCommandHandler {
 			{"admin_set_vitality", "admin_set_vitality_level", "admin_full_vitality", "admin_empty_vitality", "admin_get_vitality"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (activeChar == null) {
 			return false;
 		}
@@ -48,9 +48,9 @@ public class AdminVitality implements IAdminCommandHandler {
 		StringTokenizer st = new StringTokenizer(command, " ");
 		String cmd = st.nextToken();
 
-		if (activeChar.getTarget() instanceof L2PcInstance) {
-			L2PcInstance target;
-			target = (L2PcInstance) activeChar.getTarget();
+		if (activeChar.getTarget() instanceof Player) {
+			Player target;
+			target = (Player) activeChar.getTarget();
 
 			if (cmd.equals("admin_set_vitality")) {
 				try {

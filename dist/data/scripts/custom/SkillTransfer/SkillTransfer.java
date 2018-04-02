@@ -16,9 +16,9 @@
 package custom.SkillTransfer;
 
 import l2server.Config;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.network.SystemMessageId;
@@ -62,7 +62,7 @@ public class SkillTransfer extends Quest {
 					{1311, 6}, {1393, 3}, {1394, 10}, {1396, 10}, {1397, 3}, {1399, 5}, {1400, 10}, {1401, 11}, {1402, 5}, {1418, 1}}};
 	
 	@Override
-	public final String onAcquireSkillList(L2Npc npc, L2PcInstance player) {
+	public final String onAcquireSkillList(Npc npc, Player player) {
 		if (player == null) {
 			return null;
 		}
@@ -94,7 +94,7 @@ public class SkillTransfer extends Quest {
 	}
 	
 	@Override
-	public final String onAcquireSkill(L2Npc npc, L2PcInstance player, L2Skill skill) {
+	public final String onAcquireSkill(Npc npc, Player player, Skill skill) {
 		if (player == null || skill == null) {
 			return null;
 		}
@@ -122,7 +122,7 @@ public class SkillTransfer extends Quest {
 	}
 	
 	@Override
-	public final String onAcquireSkillInfo(L2Npc npc, L2PcInstance player, L2Skill skill) {
+	public final String onAcquireSkillInfo(Npc npc, Player player, Skill skill) {
 		if (player == null || skill == null) {
 			return null;
 		}
@@ -145,7 +145,7 @@ public class SkillTransfer extends Quest {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		String htmltext = "";
 		
 		if (player == null) {
@@ -175,7 +175,7 @@ public class SkillTransfer extends Quest {
 					int[][] skillsList = SKILL_TRANSFER_TREE[index];
 					boolean found = false;
 					
-					for (L2Skill skill : player.getAllSkills()) {
+					for (Skill skill : player.getAllSkills()) {
 						for (int[] element : skillsList) {
 							if (skill.getId() == element[0]) {
 								if (!found) {
@@ -205,12 +205,12 @@ public class SkillTransfer extends Quest {
 	}
 	
 	@Override
-	public final String onEnterWorld(L2PcInstance player) {
+	public final String onEnterWorld(Player player) {
 		givePormanders(null, player);
 		return null;
 	}
 	
-	private final synchronized void givePormanders(L2Npc npc, L2PcInstance player) {
+	private final synchronized void givePormanders(Npc npc, Player player) {
 		final int index = getTransferClassIndex(player);
 		if (index >= 0) {
 			QuestState st = player.getQuestState(qn);
@@ -229,7 +229,7 @@ public class SkillTransfer extends Quest {
 			
 			if (Config.SKILL_CHECK_ENABLE && (!player.isGM() || Config.SKILL_CHECK_GM)) {
 				int count = PORMANDERS[index][1] - (int) player.getInventory().getInventoryItemCount(PORMANDERS[index][0], -1, false);
-				for (L2Skill s : player.getAllSkills()) {
+				for (Skill s : player.getAllSkills()) {
 					for (int i = SKILL_TRANSFER_TREE[index].length; --i >= 0; ) {
 						if (SKILL_TRANSFER_TREE[index][i][0] == s.getId()) {
 							// Holy Weapon allowed for Shilien Saint/Inquisitor stance
@@ -255,11 +255,11 @@ public class SkillTransfer extends Quest {
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		return "main.htm";
 	}
 	
-	private final int getTransferClassIndex(L2PcInstance player) {
+	private final int getTransferClassIndex(Player player) {
 		switch (player.getCurrentClass().getId()) {
 			case 97: // Cardinal
 				return 0;

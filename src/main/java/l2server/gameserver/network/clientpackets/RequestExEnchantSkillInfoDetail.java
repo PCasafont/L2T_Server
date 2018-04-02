@@ -17,8 +17,8 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.datatables.EnchantCostsTable;
 import l2server.gameserver.model.L2EnchantSkillLearn;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ExEnchantSkillInfoDetail;
 
 /**
@@ -52,7 +52,7 @@ public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket {
 			return;
 		}
 		
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -66,7 +66,7 @@ public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket {
 		int enchLvl = skillEnch % 1000;
 		int reqEnchLvl = -2;
 		
-		L2Skill curSkill = activeChar.getKnownSkill(skillId);
+		Skill curSkill = activeChar.getKnownSkill(skillId);
 		if (curSkill == null) {
 			return;
 		}

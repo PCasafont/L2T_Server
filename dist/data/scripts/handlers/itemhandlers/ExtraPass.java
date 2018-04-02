@@ -17,32 +17,32 @@ package handlers.itemhandlers;
 
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.SkillHolder;
 
 import java.util.Map;
 
 public class ExtraPass implements IItemHandler {
 	/**
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(Playable, Item, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
-		if (!(playable instanceof L2PcInstance)) {
+	public void useItem(Playable playable, Item item, boolean forceUse) {
+		if (!(playable instanceof Player)) {
 			return;
 		}
 
-		L2PcInstance activeChar = (L2PcInstance) playable;
+		Player activeChar = (Player) playable;
 
 		SkillHolder[] skills = item.getItem().getSkills();
 		if (skills == null) {
 			return;
 		}
 
-		L2Skill instanceSkill = skills[0].getSkill();
+		Skill instanceSkill = skills[0].getSkill();
 		if (instanceSkill == null) {
 			return;
 		}

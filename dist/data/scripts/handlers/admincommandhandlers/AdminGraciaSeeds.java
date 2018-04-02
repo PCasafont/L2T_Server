@@ -27,7 +27,7 @@ package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.GraciaSeedsManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 import java.util.Calendar;
@@ -37,10 +37,10 @@ public class AdminGraciaSeeds implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_gracia_seeds", "admin_kill_tiat", "admin_set_sodstate"};
 
 	/**
-	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, l2server.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2server.gameserver.handler.IAdminCommandHandler#useAdminCommand(java.lang.String, Player)
 	 */
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		StringTokenizer st = new StringTokenizer(command, " ");
 		String actualCommand = st.nextToken(); // Get actual command
 
@@ -59,7 +59,7 @@ public class AdminGraciaSeeds implements IAdminCommandHandler {
 		return true;
 	}
 
-	private void showMenu(L2PcInstance activeChar) {
+	private void showMenu(Player activeChar) {
 		NpcHtmlMessage html = new NpcHtmlMessage(0);
 		html.setFile(activeChar.getHtmlPrefix(), "admin/graciaseeds.htm");
 		html.replace("%sodstate%", String.valueOf(GraciaSeedsManager.getInstance().getSoDState()));

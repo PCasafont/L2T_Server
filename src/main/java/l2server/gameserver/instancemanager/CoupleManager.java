@@ -17,10 +17,11 @@ package l2server.gameserver.instancemanager;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Couple;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 
@@ -34,6 +35,9 @@ import java.util.logging.Level;
  * @author evill33t
  */
 public class CoupleManager {
+	private static Logger log = LoggerFactory.getLogger(CoupleManager.class.getName());
+
+
 
 	private CoupleManager() {
 	}
@@ -60,7 +64,7 @@ public class CoupleManager {
 			return;
 		}
 		
-		Log.info("L2JMOD: Initializing CoupleManager");
+		log.info("L2JMOD: Initializing CoupleManager");
 		Connection con = null;
 		try {
 			PreparedStatement statement;
@@ -77,9 +81,9 @@ public class CoupleManager {
 
 			statement.close();
 
-			Log.info("Loaded: " + getCouples().size() + " couples(s)");
+			log.info("Loaded: " + getCouples().size() + " couples(s)");
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Exception: CoupleManager.load(): " + e.getMessage(), e);
+			log.error("Exception: CoupleManager.load(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -95,7 +99,7 @@ public class CoupleManager {
 		return null;
 	}
 
-	public void createCouple(L2PcInstance player1, L2PcInstance player2) {
+	public void createCouple(Player player1, Player player2) {
 		if (player1 != null && player2 != null) {
 			if (player1.getPartnerId() == 0 && player2.getPartnerId() == 0) {
 				int player1id = player1.getObjectId();
@@ -115,8 +119,8 @@ public class CoupleManager {
 		int index = getCoupleIndex(coupleId);
 		Couple couple = getCouples().get(index);
 		if (couple != null) {
-			L2PcInstance player1 = L2World.getInstance().getPlayer(couple.getPlayer1Id());
-			L2PcInstance player2 = L2World.getInstance().getPlayer(couple.getPlayer2Id());
+			Player player1 = World.getInstance().getPlayer(couple.getPlayer1Id());
+			Player player2 = World.getInstance().getPlayer(couple.getPlayer2Id());
 			if (player1 != null) {
 				player1.setPartnerId(0);
 				player1.setMarried(false);

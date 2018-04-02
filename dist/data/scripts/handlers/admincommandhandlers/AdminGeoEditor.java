@@ -18,7 +18,7 @@ package handlers.admincommandhandlers;
 import l2server.Config;
 import l2server.gameserver.geoeditorcon.GeoEditorListener;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.StringTokenizer;
 
@@ -29,7 +29,7 @@ public class AdminGeoEditor implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_ge_status", "admin_ge_mode", "admin_ge_join", "admin_ge_leave"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (!Config.ACCEPT_GEOEDITOR_CONN) {
 			activeChar.sendMessage("Server do not accepts geoeditor connections now.");
 			return true;

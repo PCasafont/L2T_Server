@@ -23,7 +23,7 @@
 package l2server.gameserver;
 
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 
 /**
  * This class ...
@@ -41,5 +41,5 @@ public class Item {
 
 	public int currentLevel;
 
-	public L2Item item;
+	public ItemTemplate item;
 }

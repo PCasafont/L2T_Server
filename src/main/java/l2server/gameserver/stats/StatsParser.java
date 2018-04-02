@@ -16,32 +16,33 @@
 package l2server.gameserver.stats;
 
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject.InstanceType;
 import l2server.gameserver.model.base.PlayerState;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.stats.conditions.*;
 import l2server.gameserver.stats.conditions.ConditionGameTime.CheckGameTime;
 import l2server.gameserver.stats.funcs.*;
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.item.L2ArmorType;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.gameserver.templates.item.L2WeaponType;
-import l2server.gameserver.templates.skills.L2AbnormalTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.item.ArmorType;
+import l2server.gameserver.templates.item.ItemTemplate;
+import l2server.gameserver.templates.item.WeaponType;
+import l2server.gameserver.templates.skills.AbnormalTemplate;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Map.Entry;
 import java.util.StringTokenizer;
-import java.util.logging.Logger;
 
 /**
  * @author mkizub
  */
 public abstract class StatsParser {
-	static Logger log = Logger.getLogger(StatsParser.class.getName());
-
+	private static Logger log = LoggerFactory.getLogger(StatsParser.class.getName());
+	
+	
 	protected int id;
 	protected String name;
 
@@ -75,10 +76,10 @@ public abstract class StatsParser {
 					}
 				}
 
-				if (template instanceof L2Skill) {
-					((L2Skill) template).attach(condition, false);
-				} else if (template instanceof L2Item) {
-					((L2Item) template).attach(condition);
+				if (template instanceof Skill) {
+					((Skill) template).attach(condition, false);
+				} else if (template instanceof ItemTemplate) {
+					((ItemTemplate) template).attach(condition);
 				}
 			}
 		}
@@ -118,15 +119,15 @@ public abstract class StatsParser {
 			} else if (nodeType.equalsIgnoreCase("enchanthp")) {
 				attachFunc(n, template, "EnchantHp");
 			} else if (nodeType.equalsIgnoreCase("abnormal")) {
-				if (!(this instanceof SkillParser) && !(template instanceof L2Skill)) {
+				if (!(this instanceof SkillParser) && !(template instanceof Skill)) {
 					throw new RuntimeException("Abnormals in something that's not a skill");
 				}
-				((SkillParser) this).attachAbnormal(n, (L2Skill) template);
+				((SkillParser) this).attachAbnormal(n, (Skill) template);
 			} else if (nodeType.equalsIgnoreCase("effect")) {
-				if (!(this instanceof SkillParser) && !(template instanceof L2AbnormalTemplate)) {
+				if (!(this instanceof SkillParser) && !(template instanceof AbnormalTemplate)) {
 					throw new RuntimeException("Effects in something that's not an abnormal");
 				}
-				((SkillParser) this).attachEffect(n, (L2AbnormalTemplate) template);
+				((SkillParser) this).attachEffect(n, (AbnormalTemplate) template);
 			}
 		}
 	}
@@ -136,12 +137,12 @@ public abstract class StatsParser {
 		Lambda lambda = getLambda(n, template);
 		Condition applayCond = parseCondition(n.getFirstChild(), template);
 		FuncTemplate ft = new FuncTemplate(applayCond, name, stat, lambda);
-		if (template instanceof L2Item) {
-			((L2Item) template).attach(ft);
-		} else if (template instanceof L2Skill) {
-			((L2Skill) template).attach(ft);
-		} else if (template instanceof L2AbnormalTemplate) {
-			((L2AbnormalTemplate) template).attach(ft);
+		if (template instanceof ItemTemplate) {
+			((ItemTemplate) template).attach(ft);
+		} else if (template instanceof Skill) {
+			((Skill) template).attach(ft);
+		} else if (template instanceof AbnormalTemplate) {
+			((AbnormalTemplate) template).attach(ft);
 		}
 	}
 
@@ -190,7 +191,7 @@ public abstract class StatsParser {
 		}
 
 		if (cond.conditions == null || cond.conditions.length == 0) {
-			Log.severe("Empty <and> condition in " + name);
+			log.error("Empty <and> condition in " + name);
 		}
 		return cond;
 	}
@@ -202,7 +203,7 @@ public abstract class StatsParser {
 		}
 
 		if (cond.conditions == null || cond.conditions.length == 0) {
-			Log.severe("Empty <or> condition in " + name);
+			log.error("Empty <or> condition in " + name);
 		}
 		return cond;
 	}
@@ -212,7 +213,7 @@ public abstract class StatsParser {
 			return new ConditionLogicNot(parseCondition(node.getFirstChild(), template));
 		}
 
-		Log.severe("Empty <not> condition in " + name);
+		log.error("Empty <not> condition in " + name);
 		return null;
 	}
 
@@ -447,7 +448,7 @@ public abstract class StatsParser {
 		}
 
 		if (cond == null) {
-			Log.severe("Unrecognized <player> condition in " + name);
+			log.error("Unrecognized <player> condition in " + name);
 		}
 		return cond;
 	}
@@ -528,13 +529,13 @@ public abstract class StatsParser {
 				StringTokenizer st = new StringTokenizer(a.getValue(), ",");
 				while (st.hasMoreTokens()) {
 					String item = st.nextToken().trim();
-					for (L2WeaponType wt : L2WeaponType.values()) {
+					for (WeaponType wt : WeaponType.values()) {
 						if (wt.toString().equals(item)) {
 							mask |= wt.mask();
 							break;
 						}
 					}
-					for (L2ArmorType at : L2ArmorType.values()) {
+					for (ArmorType at : ArmorType.values()) {
 						if (at.toString().equals(item)) {
 							mask |= at.mask();
 							break;
@@ -567,7 +568,7 @@ public abstract class StatsParser {
 
 				cond = joinAnd(cond, new ConditionTargetNpcType(types));
 			} else {
-				Log.severe("Unrecognized <target> " + a.getKey() + " condition in " + name);
+				log.error("Unrecognized <target> " + a.getKey() + " condition in " + name);
 			}
 		}
 		return cond;
@@ -591,11 +592,11 @@ public abstract class StatsParser {
 					}
 
 					if (item.equals("crossbow")) {
-						mask |= L2WeaponType.CROSSBOWK.mask();
+						mask |= WeaponType.CROSSBOWK.mask();
 					}
 
 					if (old == mask) {
-						Log.info("[parseUsingCondition=\"kind\"] Unknown item type name: " + item);
+						log.info("[parseUsingCondition=\"kind\"] Unknown item type name: " + item);
 					}
 				}
 				cond = joinAnd(cond, new ConditionUsingItemType(mask));
@@ -617,7 +618,7 @@ public abstract class StatsParser {
 			}
 		}
 		if (cond == null) {
-			Log.severe("Unrecognized <using> condition in " + name);
+			log.error("Unrecognized <using> condition in " + name);
 		}
 		return cond;
 	}
@@ -639,7 +640,7 @@ public abstract class StatsParser {
 			}
 		}
 		if (cond == null) {
-			Log.severe("Unrecognized <game> condition in " + name);
+			log.error("Unrecognized <game> condition in " + name);
 		}
 		return cond;
 	}

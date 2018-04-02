@@ -18,11 +18,11 @@ package ai.individual.Summons;
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.concurrent.ScheduledFuture;
 
@@ -45,7 +45,7 @@ public class ProtectionStone extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public final String onSpawn(Npc npc) {
 		npc.disableCoreAI(true);
 
 		ProtectionStoneAI ai = new ProtectionStoneAI(npc);
@@ -56,13 +56,13 @@ public class ProtectionStone extends L2AttackableAIScript {
 	}
 
 	class ProtectionStoneAI implements Runnable {
-		private L2Npc protectionStone;
-		private L2PcInstance owner;
+		private Npc protectionStone;
+		private Player owner;
 		private ScheduledFuture<?> schedule = null;
 		@SuppressWarnings("unused")
-		private L2Skill arcaneProtection;
+		private Skill arcaneProtection;
 
-		protected ProtectionStoneAI(L2Npc npc) {
+		protected ProtectionStoneAI(Npc npc) {
 			protectionStone = npc;
 			owner = npc.getOwner();
 			arcaneProtection = SkillTable.getInstance().getInfo(arcaneProtectionId, owner.getSkillLevelHash(summonProtectionStoneId));
@@ -82,12 +82,12 @@ public class ProtectionStone extends L2AttackableAIScript {
 			}
 
 			L2Party party = owner.getParty();
-			for (L2PcInstance player : protectionStone.getKnownList().getKnownPlayersInRadius(250)) {
+			for (Player player : protectionStone.getKnownList().getKnownPlayersInRadius(250)) {
 				if (player != owner && (player.getParty() == null || player.getParty() != party)) {
 					continue;
 				}
 
-				L2Abnormal effect = player.getFirstEffect(11360);
+				Abnormal effect = player.getFirstEffect(11360);
 
 				int buffLevel = effect == null ? 1 : effect.getLevel() + 1;
 
@@ -99,7 +99,7 @@ public class ProtectionStone extends L2AttackableAIScript {
 					effect.exit();
 				}
 
-				final L2Skill skill = SkillTable.getInstance().getInfo(11360, buffLevel);
+				final Skill skill = SkillTable.getInstance().getInfo(11360, buffLevel);
 
 				skill.getEffects(protectionStone, player);
 			}

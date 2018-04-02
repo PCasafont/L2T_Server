@@ -3,7 +3,7 @@ package l2server.gameserver.instancemanager;
 import l2server.gameserver.instancemanager.arena.Fight;
 import l2server.gameserver.instancemanager.arena.Fighter;
 import l2server.gameserver.instancemanager.arena.Rule;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.Vector;
 
@@ -32,7 +32,7 @@ public class ArenaManager {
 		}
 	}
 
-	public Fight getFight(L2PcInstance player) {
+	public Fight getFight(Player player) {
 
 		if (player == null) {
 			return null;
@@ -68,14 +68,14 @@ public class ArenaManager {
 
 	;
 
-	public boolean isInFight(L2PcInstance player) {
+	public boolean isInFight(Player player) {
 		if (getFight(player) != null) {
 			return true;
 		}
 		return false;
 	}
 
-	public Fighter getFighter(L2PcInstance player) {
+	public Fighter getFighter(Player player) {
 
 		Fight fight = getFight(player);
 		if (fight == null) {

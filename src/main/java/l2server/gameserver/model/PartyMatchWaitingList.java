@@ -15,7 +15,7 @@
 
 package l2server.gameserver.model;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,26 +24,26 @@ import java.util.List;
  * @author Gnacik
  */
 public class PartyMatchWaitingList {
-	private List<L2PcInstance> members = new ArrayList<>();
+	private List<Player> members = new ArrayList<>();
 	
 	private PartyMatchWaitingList() {
 	}
 	
-	public void addPlayer(L2PcInstance player) {
+	public void addPlayer(Player player) {
 		// player.setPartyWait(1);
 		if (!members.contains(player)) {
 			members.add(player);
 		}
 	}
 	
-	public void removePlayer(L2PcInstance player) {
+	public void removePlayer(Player player) {
 		//player.setPartyWait(0);
 		if (members.contains(player)) {
 			members.remove(player);
 		}
 	}
 	
-	public List<L2PcInstance> getPlayers() {
+	public List<Player> getPlayers() {
 		return members;
 	}
 	

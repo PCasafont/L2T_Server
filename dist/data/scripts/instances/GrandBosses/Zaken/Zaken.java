@@ -7,18 +7,17 @@ import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
 import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Instance;
-import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.model.zone.ZoneType;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExSendUIEvent;
 import l2server.gameserver.network.serverpackets.ExSendUIEventRemove;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -55,7 +54,7 @@ public class Zaken extends L2AttackableAIScript {
 	private static final int barrelId = 32705;
 
 	//Others
-	private static final List<L2ZoneType> zakenRooms = new ArrayList<L2ZoneType>(15);
+	private static final List<ZoneType> zakenRooms = new ArrayList<ZoneType>(15);
 
 	private static final Location[] zakenSpawns =
 			{new Location(54237, 218135, -3496), new Location(56288, 218087, -3496), new Location(55273, 219140, -3496),
@@ -111,18 +110,18 @@ public class Zaken extends L2AttackableAIScript {
 	private static final Location playerEnter = new Location(52646, 219100, -3233);
 
 	private class ZakenWorld extends InstanceWorld {
-		private Map<L2Npc, Integer> barrelInfo;
+		private Map<Npc, Integer> barrelInfo;
 		private int blueCandlesCount;
 		private int zakenId;
 		private int dollBladerId;
 		private int valeMasterId;
 		private int zombieCaptainId;
 		private int zombieId;
-		private L2Npc zakenBoss;
+		private Npc zakenBoss;
 		private Location zakenLocation;
 
 		public ZakenWorld() {
-			barrelInfo = new HashMap<L2Npc, Integer>();
+			barrelInfo = new HashMap<Npc, Integer>();
 		}
 	}
 
@@ -138,16 +137,16 @@ public class Zaken extends L2AttackableAIScript {
 		addKillId(zakenDayTimeHard);
 
 		for (int zoneId = 120111; zoneId <= 120125; zoneId++) {
-			L2ZoneType zakenRoom = ZoneManager.getInstance().getZoneById(zoneId);
+			ZoneType zakenRoom = ZoneManager.getInstance().getZoneById(zoneId);
 
 			zakenRooms.add(zakenRoom);
 		}
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		InstanceWorld wrld = null;
@@ -156,7 +155,7 @@ public class Zaken extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onAdvEvent: Unable to get world.");
+			log.warn(getName() + ": onAdvEvent: Unable to get world.");
 			return null;
 		}
 
@@ -181,7 +180,7 @@ public class Zaken extends L2AttackableAIScript {
 				} else {
 					//Barrels
 					for (Entry<Location, Integer> barrelInfo : barrelSpawnsInfo.entrySet()) {
-						L2Npc barrel = addSpawn(barrelId,
+						Npc barrel = addSpawn(barrelId,
 								barrelInfo.getKey().getX(),
 								barrelInfo.getKey().getY(),
 								barrelInfo.getKey().getZ(),
@@ -197,7 +196,7 @@ public class Zaken extends L2AttackableAIScript {
 				}
 
 				if (debug) {
-					Log.warning(
+					log.warn(
 							getName() + ": Zaken will be spawned on cords: " + world.zakenLocation.getX() + ", " + world.zakenLocation.getY() + ", " +
 									world.zakenLocation.getZ());
 				}
@@ -227,19 +226,19 @@ public class Zaken extends L2AttackableAIScript {
 						world.zakenBoss.setTarget(player);
 						world.zakenBoss.setIsRunning(true);
 
-						((L2Attackable) world.zakenBoss).addDamageHate(player, 500, 99999);
-						((L2Attackable) world.zakenBoss).getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
+						((Attackable) world.zakenBoss).addDamageHate(player, 500, 99999);
+						((Attackable) world.zakenBoss).getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 					}
 				} else {
 					npc.setDisplayEffect(2);
 
 					//Spawn Minions
-					for (L2ZoneType zakenRoom : zakenRooms) {
+					for (ZoneType zakenRoom : zakenRooms) {
 						if (world.barrelInfo.get(npc) == zakenRoom.getId()) {
 							int[] randomSpawn = null;
 
 							if (debug) {
-								Log.warning(getName() + ": Found the nearest zone!");
+								log.warn(getName() + ": Found the nearest zone!");
 							}
 
 							for (int i = 1; i <= 6; i++) {
@@ -315,9 +314,9 @@ public class Zaken extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance attacker, boolean isPet) {
+	public String onKill(Npc npc, Player attacker, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + attacker.getName());
+			log.warn(getName() + ": onKill: " + attacker.getName());
 		}
 
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -338,9 +337,9 @@ public class Zaken extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onFirstTalk: " + player.getName());
+			log.warn(getName() + ": onFirstTalk: " + player.getName());
 		}
 
 		if (npc.getNpcId() == barrelId) {
@@ -378,7 +377,7 @@ public class Zaken extends L2AttackableAIScript {
 		}
 	}
 
-	private final synchronized void enterInstance(L2PcInstance player, int template_id) {
+	private final synchronized void enterInstance(Player player, int template_id) {
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
 			if (!(world instanceof ZakenWorld)) {
@@ -421,7 +420,7 @@ public class Zaken extends L2AttackableAIScript {
 
 			setupIDs((ZakenWorld) world, template_id);
 
-			List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+			List<Player> allPlayers = new ArrayList<Player>();
 			if (debug) {
 				allPlayers.add(player);
 			} else {
@@ -432,7 +431,7 @@ public class Zaken extends L2AttackableAIScript {
 				}
 			}
 
-			for (L2PcInstance enterPlayer : allPlayers) {
+			for (Player enterPlayer : allPlayers) {
 				if (enterPlayer == null) {
 					continue;
 				}
@@ -446,7 +445,7 @@ public class Zaken extends L2AttackableAIScript {
 
 			startQuestTimer("stage_0_start", 5000, null, player);
 
-			Log.fine(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " + player.getName());
+			log.debug(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " + player.getName());
 			return;
 		}
 	}

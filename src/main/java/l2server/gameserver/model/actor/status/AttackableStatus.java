@@ -15,21 +15,21 @@
 
 package l2server.gameserver.model.actor.status;
 
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
 
 public class AttackableStatus extends NpcStatus {
-	public AttackableStatus(L2Attackable activeChar) {
+	public AttackableStatus(Attackable activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public final void reduceHp(double value, L2Character attacker) {
+	public final void reduceHp(double value, Creature attacker) {
 		reduceHp(value, attacker, true, false, false);
 	}
 
 	@Override
-	public final void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHpConsumption) {
+	public final void reduceHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean isHpConsumption) {
 		if (getActiveChar().isDead()) {
 			return;
 		}
@@ -54,7 +54,7 @@ public class AttackableStatus extends NpcStatus {
 	}
 
 	@Override
-	public L2Attackable getActiveChar() {
-		return (L2Attackable) super.getActiveChar();
+	public Attackable getActiveChar() {
+		return (Attackable) super.getActiveChar();
 	}
 }

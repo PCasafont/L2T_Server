@@ -21,7 +21,7 @@ import l2server.gameserver.events.Elpy;
 import l2server.gameserver.events.Ranked2v2;
 import l2server.gameserver.instancemanager.AntiFeedManager;
 import l2server.gameserver.model.RandomFight;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.L2GameClient.GameClientState;
 import l2server.gameserver.network.SystemMessageId;
@@ -30,7 +30,6 @@ import l2server.gameserver.network.serverpackets.CharSelectionInfo;
 import l2server.gameserver.network.serverpackets.RestartResponse;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
-import l2server.log.Log;
 
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -52,7 +51,7 @@ public final class RequestRestart extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		final L2PcInstance player = getClient().getActiveChar();
+		final Player player = getClient().getActiveChar();
 
 		if (player == null) {
 			return;
@@ -78,7 +77,7 @@ public final class RequestRestart extends L2GameClientPacket {
 			Ranked2v2.teamTwo.clear();
 		}
 		if (player.isLocked()) {
-			Log.warning("Player " + player.getName() + " tried to restart during class change.");
+			log.warn("Player " + player.getName() + " tried to restart during class change.");
 			sendPacket(RestartResponse.valueOf(false));
 			return;
 		}
@@ -97,7 +96,7 @@ public final class RequestRestart extends L2GameClientPacket {
 
 		if (AttackStanceTaskManager.getInstance().getAttackStanceTask(player) && !(player.isGM() && Config.GM_RESTART_FIGHTING)) {
 			if (Config.DEBUG) {
-				Log.fine("Player " + player.getName() + " tried to logout while fighting.");
+				log.debug("Player " + player.getName() + " tried to logout while fighting.");
 			}
 
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_RESTART_WHILE_FIGHTING));

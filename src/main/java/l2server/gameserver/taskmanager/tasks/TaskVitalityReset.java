@@ -20,7 +20,8 @@ import l2server.gameserver.taskmanager.Task;
 import l2server.gameserver.taskmanager.TaskManager;
 import l2server.gameserver.taskmanager.TaskManager.ExecutedTask;
 import l2server.gameserver.taskmanager.TaskTypes;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,6 +31,9 @@ import java.util.logging.Level;
  * @author Xavi
  */
 public class TaskVitalityReset extends Task {
+	private static Logger log = LoggerFactory.getLogger(TaskVitalityReset.class.getName());
+
+
 
 	private static final String NAME = "vitalty reset";
 
@@ -54,11 +58,11 @@ public class TaskVitalityReset extends Task {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Could not reset Vitalty system: " + e);
+			log.error("Could not reset Vitalty system: " + e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
-		Log.config("Vitalty system reset.");
+		log.debug("Vitalty system reset.");
 	}
 
 	/**

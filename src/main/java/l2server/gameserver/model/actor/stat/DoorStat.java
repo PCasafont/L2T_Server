@@ -15,7 +15,7 @@
 
 package l2server.gameserver.model.actor.stat;
 
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
+import l2server.gameserver.model.actor.instance.DoorInstance;
 
 public class DoorStat extends CharStat {
 	// =========================================================
@@ -23,7 +23,7 @@ public class DoorStat extends CharStat {
 
 	// =========================================================
 	// Constructor
-	public DoorStat(L2DoorInstance activeChar) {
+	public DoorStat(DoorInstance activeChar) {
 		super(activeChar);
 
 		setLevel((byte) 1);
@@ -38,8 +38,8 @@ public class DoorStat extends CharStat {
 	// =========================================================
 	// Property - Public
 	@Override
-	public L2DoorInstance getActiveChar() {
-		return (L2DoorInstance) super.getActiveChar();
+	public DoorInstance getActiveChar() {
+		return (DoorInstance) super.getActiveChar();
 	}
 
 	@Override

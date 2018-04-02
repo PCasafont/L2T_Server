@@ -23,7 +23,8 @@ import gnu.trove.TIntIntHashMap;
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.L2ArmorSet;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
@@ -35,6 +36,9 @@ import java.io.File;
  * @author Pere
  */
 public class ArmorSetsTable {
+	private static Logger log = LoggerFactory.getLogger(ArmorSetsTable.class.getName());
+
+
 
 	private Map<Integer, L2ArmorSet> armorSets = new HashMap<>();
 
@@ -73,7 +77,7 @@ public class ArmorSetsTable {
 				armorSets.put(id, new L2ArmorSet(id, parts, skills, enchant6Skill, shieldSkill));
 			}
 		}
-		Log.info("ArmorSetsTable: Loaded " + armorSets.size() + " armor sets.");
+		log.info("ArmorSetsTable: Loaded " + armorSets.size() + " armor sets.");
 	}
 
 	public boolean setExists(int chestId) {

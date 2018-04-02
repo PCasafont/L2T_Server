@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.GlobalQuest;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
@@ -38,7 +38,7 @@ import l2server.gameserver.model.quest.QuestState;
  */
 public class QuestList extends L2GameServerPacket {
 	private Quest[] quests;
-	private L2PcInstance activeChar;
+	private Player activeChar;
 
 	public QuestList() {
 

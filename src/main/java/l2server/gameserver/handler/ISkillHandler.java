@@ -15,12 +15,12 @@
 
 package l2server.gameserver.handler;
 
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.templates.skills.L2SkillType;
-
-import java.util.logging.Logger;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.templates.skills.SkillType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * an IItemHandler implementation has to be stateless
@@ -29,7 +29,7 @@ import java.util.logging.Logger;
  */
 
 public interface ISkillHandler {
-	Logger log = Logger.getLogger(ISkillHandler.class.getName());
+	Logger log = LoggerFactory.getLogger(ISkillHandler.class.getName());
 	
 	/**
 	 * this is the worker method that is called when using an item.
@@ -37,12 +37,12 @@ public interface ISkillHandler {
 	 * @param activeChar
 	 * @return count reduction after usage
 	 */
-	void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets);
+	void useSkill(Creature activeChar, Skill skill, WorldObject[] targets);
 	
 	/**
 	 * this method is called at initialization to register all the item ids automatically
 	 *
 	 * @return all known itemIds
 	 */
-	L2SkillType[] getSkillIds();
+	SkillType[] getSkillIds();
 }

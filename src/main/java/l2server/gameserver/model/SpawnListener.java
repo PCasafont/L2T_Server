@@ -25,7 +25,7 @@
 
 package l2server.gameserver.model;
 
-import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.Npc;
 
 /**
  * This class ...
@@ -34,5 +34,5 @@ import l2server.gameserver.model.actor.L2Npc;
  */
 
 public interface SpawnListener {
-	void npcSpawned(L2Npc npc);
+	void npcSpawned(Npc npc);
 }

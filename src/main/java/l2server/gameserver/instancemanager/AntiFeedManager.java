@@ -17,8 +17,8 @@ package l2server.gameserver.instancemanager;
 
 import gnu.trove.TObjectProcedure;
 import l2server.Config;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.L2GameClient;
 import l2server.util.loader.annotations.Load;
 
@@ -62,7 +62,7 @@ public class AntiFeedManager {
 	 * @param target   Target character
 	 * @return True if kill is non-feeded.
 	 */
-	public final boolean check(L2Character attacker, L2Character target) {
+	public final boolean check(Creature attacker, Creature target) {
 		if (!Config.L2JMOD_ANTIFEED_ENABLE) {
 			return true;
 		}
@@ -71,7 +71,7 @@ public class AntiFeedManager {
 			return false;
 		}
 
-		final L2PcInstance targetPlayer = target.getActingPlayer();
+		final Player targetPlayer = target.getActingPlayer();
 		if (targetPlayer == null) {
 			return false;
 		}
@@ -80,7 +80,7 @@ public class AntiFeedManager {
 			return false;
 		}
 
-		final L2PcInstance attackerPlayer = attacker.getActingPlayer();
+		final Player attackerPlayer = attacker.getActingPlayer();
 
 		if (attackerPlayer == null) {
 			return false;
@@ -150,7 +150,7 @@ public class AntiFeedManager {
 	 * @param max
 	 * @return
 	 */
-	public final boolean tryAddPlayer(int eventId, L2PcInstance player, int max) {
+	public final boolean tryAddPlayer(int eventId, Player player, int max) {
 		return tryAddClient(eventId, player.getClient(), max);
 	}
 
@@ -200,7 +200,7 @@ public class AntiFeedManager {
 	 * @param player
 	 * @return
 	 */
-	public final boolean removePlayer(int eventId, L2PcInstance player) {
+	public final boolean removePlayer(int eventId, Player player) {
 		final L2GameClient client = player.getClient();
 		if (client == null) {
 			return false; // unable to determine IP address
@@ -257,7 +257,7 @@ public class AntiFeedManager {
 	 * @param max
 	 * @return
 	 */
-	public final int getLimit(L2PcInstance player, int max) {
+	public final int getLimit(Player player, int max) {
 		return getLimit(player.getClient(), max);
 	}
 

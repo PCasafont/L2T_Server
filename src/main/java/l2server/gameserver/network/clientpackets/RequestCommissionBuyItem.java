@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Erlandys
@@ -35,7 +35,7 @@ public final class RequestCommissionBuyItem extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 		}
 
@@ -82,9 +82,9 @@ public final class RequestCommissionBuyItem extends L2GameClientPacket {
 			sm.addItemNumber(auction.getCount());
 			sm.addString(auction.getItemName());
 			player.sendPacket(sm);
-			if (L2World.getInstance().getPlayer(auction.getPlayerID()) != null)
+			if (World.getInstance().getPlayer(auction.getPlayerID()) != null)
 			{
-				L2PcInstance seller = L2World.getInstance().getPlayer(auction.getPlayerID());
+				Player seller = World.getInstance().getPlayer(auction.getPlayerID());
 				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_ITEM_YOU_REGISTERED_HAS_BEEN_SOLD);
 				seller.sendPacket(sm);
 			}

@@ -19,9 +19,10 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.PlayerClass;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
@@ -34,6 +35,9 @@ import java.util.logging.Level;
  * @author Pere
  */
 public class ClanRecruitManager {
+	private static Logger log = LoggerFactory.getLogger(ClanRecruitManager.class.getName());
+
+
 	public class ClanRecruitData {
 		public L2Clan clan = null;
 		public int karma = 0;
@@ -117,7 +121,7 @@ public class ClanRecruitManager {
 					rset2.close();
 					statement2.close();
 				} catch (Exception e) {
-					Log.log(Level.SEVERE, "Error restoring the clan recruit manager.", e);
+					log.error("Error restoring the clan recruit manager.", e);
 				} finally {
 					L2DatabaseFactory.close(con2);
 				}
@@ -125,11 +129,11 @@ public class ClanRecruitManager {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error restoring the clan recruit manager.", e);
+			log.error("Error restoring the clan recruit manager.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
-		Log.info("Clan recruit manager loaded.");
+		log.info("Clan recruit manager loaded.");
 	}
 
 	public boolean addClan(L2Clan clan, int karma, String introduction, String largeIntroduction) {
@@ -156,7 +160,7 @@ public class ClanRecruitManager {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error storing clan recruit data.", e);
+			log.error("Error storing clan recruit data.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -186,7 +190,7 @@ public class ClanRecruitManager {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error updating clan recruit data.", e);
+			log.error("Error updating clan recruit data.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -213,7 +217,7 @@ public class ClanRecruitManager {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error deleting clan recruit data.", e);
+			log.error("Error deleting clan recruit data.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -283,7 +287,7 @@ public class ClanRecruitManager {
 		return list;
 	}
 
-	public boolean addApplicant(L2PcInstance player, int clanId, String application) {
+	public boolean addApplicant(Player player, int clanId, String application) {
 		if (allApplicants.containsKey(player.getObjectId())) {
 			return false;
 		}
@@ -315,7 +319,7 @@ public class ClanRecruitManager {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error storing clan application data.", e);
+			log.error("Error storing clan application data.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -340,7 +344,7 @@ public class ClanRecruitManager {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error deleting clan application data.", e);
+			log.error("Error deleting clan application data.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -352,7 +356,7 @@ public class ClanRecruitManager {
 		return allApplicants.get(playerId);
 	}
 
-	public boolean addWaitingUser(L2PcInstance player, int karma) {
+	public boolean addWaitingUser(Player player, int karma) {
 		if (waitingUsers.containsKey(player.getObjectId()) || allApplicants.containsKey(player.getObjectId())) {
 			return false;
 		}
@@ -375,14 +379,14 @@ public class ClanRecruitManager {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error storing clan waiting user data.", e);
+			log.error("Error storing clan waiting user data.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		return true;
 	}
 
-	public boolean removeWaitingUser(L2PcInstance player) {
+	public boolean removeWaitingUser(Player player) {
 		ClanRecruitWaitingUser waitingUser = waitingUsers.get(player.getObjectId());
 		if (waitingUser == null) {
 			return false;
@@ -398,7 +402,7 @@ public class ClanRecruitManager {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error deleting clan application data.", e);
+			log.error("Error deleting clan application data.", e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

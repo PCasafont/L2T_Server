@@ -30,7 +30,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  */
 public final class RejectedExecutionHandlerImpl implements RejectedExecutionHandler
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(RejectedExecutionHandlerImpl.class);
+	private static final Logger log = LoggerFactory.getLogger(RejectedExecutionHandlerImpl.class);
 	
 	@Override
 	public void rejectedExecution(Runnable r, ThreadPoolExecutor executor)
@@ -40,7 +40,7 @@ public final class RejectedExecutionHandlerImpl implements RejectedExecutionHand
 			return;
 		}
 		
-		LOGGER.warn(r + " from " + executor, new RejectedExecutionException());
+		log.warn(r + " from " + executor, new RejectedExecutionException());
 		
 		if (Thread.currentThread().getPriority() > Thread.NORM_PRIORITY)
 		{

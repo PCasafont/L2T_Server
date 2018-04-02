@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 
 /**
  * sample
@@ -42,8 +42,8 @@ public final class MagicSkillUse extends L2GameServerPacket {
 	
 	//private int flags;
 	
-	public MagicSkillUse(L2Character cha,
-	                     L2Character target,
+	public MagicSkillUse(Creature cha,
+	                     Creature target,
 	                     int skillId,
 	                     int skillLevel,
 	                     int hitTime,
@@ -54,12 +54,12 @@ public final class MagicSkillUse extends L2GameServerPacket {
 		this(cha, target, skillId, skillLevel, hitTime, reuseDelay, reuseGroup, gauge, false, skillActionId);
 	}
 	
-	public MagicSkillUse(L2Character cha, L2Character target, int skillId, int skillLevel, int hitTime, int reuseDelay, int skillActionId) {
+	public MagicSkillUse(Creature cha, Creature target, int skillId, int skillLevel, int hitTime, int reuseDelay, int skillActionId) {
 		this(cha, target, skillId, skillLevel, hitTime, reuseDelay, reuseDelay > 0 ? 0 : -1, 0, skillActionId);
 	}
 	
-	public MagicSkillUse(L2Character cha,
-	                     L2Character target,
+	public MagicSkillUse(Creature cha,
+	                     Creature target,
 	                     int skillId,
 	                     int skillLevel,
 	                     int hitTime,
@@ -94,7 +94,7 @@ public final class MagicSkillUse extends L2GameServerPacket {
 		this.skillActionId = skillActionId;
 	}
 	
-	public MagicSkillUse(L2Character cha, int skillId, int skillLevel, int hitTime, int reuseDelay) {
+	public MagicSkillUse(Creature cha, int skillId, int skillLevel, int hitTime, int reuseDelay) {
 		charObjId = cha.getObjectId();
 		targetId = cha.getTargetId();
 		gauge = 0;

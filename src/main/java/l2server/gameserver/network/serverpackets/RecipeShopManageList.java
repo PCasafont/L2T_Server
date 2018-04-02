@@ -18,7 +18,7 @@ package l2server.gameserver.network.serverpackets;
 import l2server.gameserver.model.L2ManufactureItem;
 import l2server.gameserver.model.L2ManufactureList;
 import l2server.gameserver.model.L2RecipeList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,11 +30,11 @@ import java.util.List;
  */
 public class RecipeShopManageList extends L2GameServerPacket {
 	
-	private L2PcInstance seller;
+	private Player seller;
 	private boolean isDwarven;
 	private L2RecipeList[] recipes;
 	
-	public RecipeShopManageList(L2PcInstance seller, boolean isDwarven) {
+	public RecipeShopManageList(Player seller, boolean isDwarven) {
 		this.seller = seller;
 		this.isDwarven = isDwarven;
 		

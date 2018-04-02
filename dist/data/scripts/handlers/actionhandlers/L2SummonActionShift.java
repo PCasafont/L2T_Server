@@ -18,29 +18,29 @@ package handlers.actionhandlers;
 import l2server.gameserver.handler.AdminCommandHandler;
 import l2server.gameserver.handler.IActionHandler;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.AbnormalStatusUpdateFromTarget;
 import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
 
 public class L2SummonActionShift implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
+	public boolean action(Player activeChar, WorldObject target, boolean interact) {
 		if (activeChar.isGM()) {
 			if (activeChar.getTarget() != target) {
-				// Set the target of the L2PcInstance activeChar
+				// Set the target of the Player activeChar
 				activeChar.setTarget(target);
 
-				// Send a Server->Client packet MyTargetSelected to the L2PcInstance activeChar
+				// Send a Server->Client packet MyTargetSelected to the Player activeChar
 				activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
-				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((L2Character) target));
+				activeChar.sendPacket(new AbnormalStatusUpdateFromTarget((Creature) target));
 			}
 
-			// Send a Server->Client packet ValidateLocation to correct the L2PcInstance position and heading on the client
-			activeChar.sendPacket(new ValidateLocation((L2Character) target));
+			// Send a Server->Client packet ValidateLocation to correct the Player position and heading on the client
+			activeChar.sendPacket(new ValidateLocation((Creature) target));
 
 			IAdminCommandHandler ach = AdminCommandHandler.getInstance().getAdminCommandHandler("admin_summon_info");
 			if (ach != null) {

@@ -17,7 +17,7 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.handler.IUserCommandHandler;
 import l2server.gameserver.handler.UserCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.logging.Logger;
 
@@ -38,7 +38,7 @@ public class BypassUserCmd extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}

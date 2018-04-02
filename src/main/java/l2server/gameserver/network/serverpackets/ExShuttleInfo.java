@@ -15,16 +15,16 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2ShuttleInstance;
-import l2server.gameserver.model.actor.instance.L2ShuttleInstance.ShuttleStop;
+import l2server.gameserver.model.actor.instance.ShuttleInstance;
+import l2server.gameserver.model.actor.instance.ShuttleInstance.ShuttleStop;
 
 /**
  * @author Pere
  */
 public class ExShuttleInfo extends L2GameServerPacket {
-	private final L2ShuttleInstance shuttle;
+	private final ShuttleInstance shuttle;
 	
-	public ExShuttleInfo(L2ShuttleInstance shuttle) {
+	public ExShuttleInfo(ShuttleInstance shuttle) {
 		this.shuttle = shuttle;
 	}
 	

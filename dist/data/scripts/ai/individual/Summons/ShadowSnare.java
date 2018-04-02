@@ -18,8 +18,8 @@ package ai.individual.Summons;
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
 
 import java.util.concurrent.ScheduledFuture;
 
@@ -32,7 +32,7 @@ import java.util.concurrent.ScheduledFuture;
 
 public class ShadowSnare extends L2AttackableAIScript {
 	private static final int[] whisperOfFearIds = {13323, 13324, 13325};
-	private static final L2Skill shadowSnareZone = SkillTable.getInstance().getInfo(11059, 1);
+	private static final Skill shadowSnareZone = SkillTable.getInstance().getInfo(11059, 1);
 
 	public ShadowSnare(int id, String name, String descr) {
 		super(id, name, descr);
@@ -43,7 +43,7 @@ public class ShadowSnare extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public final String onSpawn(Npc npc) {
 		npc.disableCoreAI(true);
 
 		ShadowSnareAI ai = new ShadowSnareAI(npc);
@@ -54,10 +54,10 @@ public class ShadowSnare extends L2AttackableAIScript {
 	}
 
 	class ShadowSnareAI implements Runnable {
-		private L2Npc whisperOfFear;
+		private Npc whisperOfFear;
 		private ScheduledFuture<?> schedule = null;
 
-		protected ShadowSnareAI(L2Npc npc) {
+		protected ShadowSnareAI(Npc npc) {
 			whisperOfFear = npc;
 		}
 

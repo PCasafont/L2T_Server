@@ -17,23 +17,23 @@ package handlers.skillhandlers;
 
 import l2server.Config;
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.StatusUpdate.StatusUpdateDisplay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.stats.Stats;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
@@ -50,37 +50,37 @@ import java.util.logging.Logger;
 public class Mdam implements ISkillHandler {
 	private static final Logger logDamage = Logger.getLogger("damage");
 	
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.MDAM, L2SkillType.DEATHLINK};
+	private static final SkillType[] SKILL_IDS = {SkillType.MDAM, SkillType.DEATHLINK};
 	
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
 		if (activeChar.isAlikeDead()) {
 			return;
 		}
 		
-		double ssMul = L2ItemInstance.CHARGED_NONE;
-		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+		double ssMul = Item.CHARGED_NONE;
+		Item weaponInst = activeChar.getActiveWeaponInstance();
 		if (weaponInst != null) {
 			ssMul = weaponInst.getChargedSpiritShot();
-			weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-		} else if (activeChar instanceof L2Summon) {
-			L2Summon activeSummon = (L2Summon) activeChar;
+			weaponInst.setChargedSpiritShot(Item.CHARGED_NONE);
+		} else if (activeChar instanceof Summon) {
+			Summon activeSummon = (Summon) activeChar;
 			ssMul = activeSummon.getChargedSpiritShot();
-			activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+			activeSummon.setChargedSpiritShot(Item.CHARGED_NONE);
 		}
 		
 		double pveAoeNerf = 1.0;
-		for (L2Object obj : targets) {
-			if (!(obj instanceof L2Character)) {
+		for (WorldObject obj : targets) {
+			if (!(obj instanceof Creature)) {
 				continue;
 			}
 			
-			L2Character target = (L2Character) obj;
+			Creature target = (Creature) obj;
 			
-			if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && ((L2PcInstance) target).isFakeDeath()) {
+			if (activeChar instanceof Player && target instanceof Player && ((Player) target).isFakeDeath()) {
 				target.stopFakeDeath(true);
 			} else if (target.isDead()) {
 				continue;
@@ -91,14 +91,14 @@ public class Mdam implements ISkillHandler {
 			final byte reflect = Formulas.calcSkillReflect(target, skill);
 			
 			int damage = (int) Formulas.calcMagicDam(activeChar, target, skill, shld, ssMul, mcrit);
-			if (target instanceof L2MonsterInstance && Config.isServer(Config.TENKAI)) {
+			if (target instanceof MonsterInstance && Config.isServer(Config.TENKAI)) {
 				damage *= pveAoeNerf;
 				pveAoeNerf *= 0.5;
 			}
 			
 			if (damage != 0) {
-				if (target instanceof L2PcInstance && ((L2PcInstance) target).getAppearance().getInvisible()) {
-					L2Abnormal eInvisible = target.getFirstEffect(L2AbnormalType.HIDE);
+				if (target instanceof Player && ((Player) target).getAppearance().getInvisible()) {
+					Abnormal eInvisible = target.getFirstEffect(AbnormalType.HIDE);
 					
 					if (eInvisible != null) {
 						eInvisible.exit();
@@ -106,8 +106,8 @@ public class Mdam implements ISkillHandler {
 				}
 			}
 			
-			if (skill.getMaxSoulConsumeCount() > 0 && activeChar instanceof L2PcInstance) {
-				switch (((L2PcInstance) activeChar).getSouls()) {
+			if (skill.getMaxSoulConsumeCount() > 0 && activeChar instanceof Player) {
+				switch (((Player) activeChar).getSouls()) {
 					case 0:
 						break;
 					case 1:
@@ -128,7 +128,7 @@ public class Mdam implements ISkillHandler {
 				}
 			}
 			
-			if (target.getFirstEffect(L2AbnormalType.SPALLATION) != null && !Util.checkIfInRange(130, activeChar, target, false)) {
+			if (target.getFirstEffect(AbnormalType.SPALLATION) != null && !Util.checkIfInRange(130, activeChar, target, false)) {
 				activeChar.sendMessage("Your attack has been blocked.");
 				
 				target.sendMessage("You blocked an attack.");
@@ -194,16 +194,16 @@ public class Mdam implements ISkillHandler {
 						activeChar.reduceCurrentHp(reflectedDamage, target, true, false, null);
 						
 						// Custom messages - nice but also more network load
-						if (target instanceof L2PcInstance) {
-							((L2PcInstance) target).sendMessage("You reflected " + reflectedDamage + " damage.");
-						} else if (target instanceof L2Summon) {
-							((L2Summon) target).getOwner().sendMessage("Summon reflected " + reflectedDamage + " damage.");
+						if (target instanceof Player) {
+							((Player) target).sendMessage("You reflected " + reflectedDamage + " damage.");
+						} else if (target instanceof Summon) {
+							((Summon) target).getOwner().sendMessage("Summon reflected " + reflectedDamage + " damage.");
 						}
 						
-						if (activeChar instanceof L2PcInstance) {
-							((L2PcInstance) activeChar).sendMessage("Target reflected to you " + reflectedDamage + " damage.");
-						} else if (activeChar instanceof L2Summon) {
-							((L2Summon) activeChar).getOwner().sendMessage("Target reflected to your summon " + reflectedDamage + " damage.");
+						if (activeChar instanceof Player) {
+							((Player) activeChar).sendMessage("Target reflected to you " + reflectedDamage + " damage.");
+						} else if (activeChar instanceof Summon) {
+							((Summon) activeChar).getOwner().sendMessage("Target reflected to your summon " + reflectedDamage + " damage.");
 						}
 					}
 					
@@ -231,7 +231,7 @@ public class Mdam implements ISkillHandler {
 									target,
 									new Env(shld,
 											activeChar.getActiveWeaponInstance() != null ? activeChar.getActiveWeaponInstance().getChargedSoulShot() :
-													L2ItemInstance.CHARGED_NONE));
+													Item.CHARGED_NONE));
 						}
 					}
 					
@@ -256,7 +256,7 @@ public class Mdam implements ISkillHandler {
 					}
 					
 					// Logging damage
-					if (Config.LOG_GAME_DAMAGE && activeChar instanceof L2Playable && damage > Config.LOG_GAME_DAMAGE_THRESHOLD) {
+					if (Config.LOG_GAME_DAMAGE && activeChar instanceof Playable && damage > Config.LOG_GAME_DAMAGE_THRESHOLD) {
 						LogRecord record = new LogRecord(Level.INFO, "");
 						record.setParameters(new Object[]{activeChar, " did damage ", damage, skill, " to ", target});
 						record.setLoggerName("mdam");
@@ -264,22 +264,22 @@ public class Mdam implements ISkillHandler {
 					}
 				}
 			} else {
-				if (activeChar instanceof L2PcInstance) {
+				if (activeChar instanceof Player) {
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_DODGES_ATTACK);
 					sm.addString(target.getName());
-					((L2PcInstance) activeChar).sendPacket(sm);
+					((Player) activeChar).sendPacket(sm);
 				}
-				if (target instanceof L2PcInstance) {
+				if (target instanceof Player) {
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.AVOIDED_C1_ATTACK);
 					sm.addString(activeChar.getName());
-					((L2PcInstance) target).sendPacket(sm);
+					((Player) target).sendPacket(sm);
 				}
 			}
 		}
 		
 		// self Effect :]
 		if (skill.hasSelfEffects()) {
-			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
+			final Abnormal effect = activeChar.getFirstEffect(skill.getId());
 			if (effect != null && effect.isSelfEffect()) {
 				//Replace old effect with new one.
 				effect.exit();
@@ -296,7 +296,7 @@ public class Mdam implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

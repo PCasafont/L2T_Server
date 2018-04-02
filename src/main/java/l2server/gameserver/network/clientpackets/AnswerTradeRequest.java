@@ -15,8 +15,8 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -39,7 +39,7 @@ public final class AnswerTradeRequest extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -62,7 +62,7 @@ public final class AnswerTradeRequest extends L2GameClientPacket {
 			return;
 		}
 
-		L2PcInstance partner = player.getActiveRequester();
+		Player partner = player.getActiveRequester();
 		if (partner == null) {
 			// Trade partner not found, cancel trade
 			player.sendPacket(new TradeDone(0));
@@ -71,7 +71,7 @@ public final class AnswerTradeRequest extends L2GameClientPacket {
 			player.setActiveRequester(null);
 			msg = null;
 			return;
-		} else if (L2World.getInstance().getPlayer(partner.getObjectId()) == null) {
+		} else if (World.getInstance().getPlayer(partner.getObjectId()) == null) {
 			// Trade partner not found, cancel trade
 			player.sendPacket(new TradeDone(0));
 			SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME);

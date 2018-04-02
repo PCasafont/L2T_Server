@@ -15,8 +15,8 @@
 
 package l2server.gameserver.model.olympiad;
 
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.QuestState;
 
 /**
@@ -24,7 +24,7 @@ import l2server.gameserver.model.quest.QuestState;
  */
 public final class OlympiadParticipant {
 	public final int objectId;
-	public L2PcInstance player;
+	public Player player;
 	public final String name;
 	public final int side;
 	public final int baseClass;
@@ -32,7 +32,7 @@ public final class OlympiadParticipant {
 	public boolean defaulted = false;
 	public final OlympiadNobleInfo nobleInfo;
 
-	public OlympiadParticipant(L2PcInstance plr, int olympiadSide) {
+	public OlympiadParticipant(Player plr, int olympiadSide) {
 		objectId = plr.getObjectId();
 		player = plr;
 		name = plr.getName();
@@ -43,7 +43,7 @@ public final class OlympiadParticipant {
 
 	public final void updatePlayer() {
 		if (player == null || !player.isOnline()) {
-			player = L2World.getInstance().getPlayer(objectId);
+			player = World.getInstance().getPlayer(objectId);
 		}
 	}
 

@@ -10,13 +10,14 @@ import l2server.gameserver.events.instanced.EventTeam;
 import l2server.gameserver.events.instanced.EventTeleporter;
 import l2server.gameserver.instancemanager.PlayerAssistsManager;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2EventFlagInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.EventFlagInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -24,6 +25,9 @@ import java.util.List;
  * @author Pere
  */
 public class CaptureTheFlag extends EventInstance {
+	private static Logger log = LoggerFactory.getLogger(CaptureTheFlag.class.getName());
+
+
 
 	private boolean flagsSpawned = false;
 
@@ -113,7 +117,7 @@ public class CaptureTheFlag extends EventInstance {
 	}
 
 	@Override
-	public String getRunningInfo(L2PcInstance player) {
+	public String getRunningInfo(Player player) {
 		String html = "";
 		for (EventTeam team : teams) {
 			if (team.getParticipatedPlayerCount() > 0) {
@@ -126,7 +130,7 @@ public class CaptureTheFlag extends EventInstance {
 		return html;
 	}
 
-	public void onFlagTouched(L2PcInstance player, EventTeam team) {
+	public void onFlagTouched(Player player, EventTeam team) {
 		EventTeam playerTeam = getParticipantTeam(player.getObjectId());
 		if (playerTeam == null) {
 			return;
@@ -158,7 +162,7 @@ public class CaptureTheFlag extends EventInstance {
 	}
 
 	@Override
-	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayer) {
+	public void onKill(Creature killerCharacter, Player killedPlayer) {
 		spawnFlags();
 		if (killedPlayer == null || !isState(EventState.STARTED)) {
 			return;
@@ -181,14 +185,14 @@ public class CaptureTheFlag extends EventInstance {
 			killValue = 4;
 		}
 
-		L2PcInstance killerPlayer = killerCharacter.getActingPlayer();
+		Player killerPlayer = killerCharacter.getActingPlayer();
 		if (killerPlayer == null) {
 			return;
 		}
 
 		killerPlayer.addEventPoints(3 * killValue);
-		List<L2PcInstance> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
-		for (L2PcInstance assistant : assistants) {
+		List<Player> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayer, true);
+		for (Player assistant : assistants) {
 			assistant.addEventPoints(killValue);
 		}
 
@@ -213,7 +217,7 @@ public class CaptureTheFlag extends EventInstance {
 	}
 
 	public void spawnFlag(EventTeam team) {
-		L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(team.getFlagId());
+		NpcTemplate tmpl = NpcTable.getInstance().getTemplate(team.getFlagId());
 
 		try {
 			int x = 0;
@@ -244,20 +248,20 @@ public class CaptureTheFlag extends EventInstance {
 
 			flagSpawn.stopRespawn();
 			flagSpawn.doSpawn();
-			L2EventFlagInstance flag = (L2EventFlagInstance) flagSpawn.getNpc();
+			EventFlagInstance flag = (EventFlagInstance) flagSpawn.getNpc();
 			flag.setEvent(this);
 			flag.setTeam(team);
 			flag.setTitle(team.getName());
 			flag.updateAbnormalEffect();
 		} catch (Exception e) {
-			Log.warning("CTF Engine[spawnFlag(" + team.getName() + ")]: exception:");
+			log.warn("CTF Engine[spawnFlag(" + team.getName() + ")]: exception:");
 			e.printStackTrace();
 		}
 	}
 
 	private void unspawnFlag(EventTeam team) {
 		if (team.getFlagSpawn() != null) {
-			((L2EventFlagInstance) team.getFlagSpawn().getNpc()).shouldBeDeleted();
+			((EventFlagInstance) team.getFlagSpawn().getNpc()).shouldBeDeleted();
 			team.getFlagSpawn().getNpc().deleteMe();
 			team.getFlagSpawn().stopRespawn();
 			SpawnTable.getInstance().deleteSpawn(team.getFlagSpawn(), false);

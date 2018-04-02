@@ -18,8 +18,8 @@ package handlers.bypasshandlers;
 import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.handler.IVoicedCommandHandler;
 import l2server.gameserver.handler.VoicedCommandHandler;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author DS
@@ -28,7 +28,7 @@ public class VoiceCommand implements IBypassHandler {
 	private static final String[] COMMANDS = {"voice"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		// only voice commands allowed
 		if (command.length() > 7 && command.charAt(6) == '.') {
 			final String vc, vparams;

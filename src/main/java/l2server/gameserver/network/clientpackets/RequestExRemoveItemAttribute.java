@@ -16,15 +16,15 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExBaseAttributeCancelResult;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.gameserver.templates.item.L2Weapon;
+import l2server.gameserver.templates.item.ItemTemplate;
+import l2server.gameserver.templates.item.WeaponTemplate;
 
 public class RequestExRemoveItemAttribute extends L2GameClientPacket {
 	private int objectId;
@@ -42,12 +42,12 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket {
 	
 	@Override
 	public void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
 		
-		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(objectId);
+		Item targetItem = activeChar.getInventory().getItemByObjectId(objectId);
 		
 		if (targetItem == null) {
 			return;
@@ -100,24 +100,24 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket {
 		}
 	}
 	
-	private long getPrice(L2ItemInstance item) {
+	private long getPrice(Item item) {
 		switch (item.getItem().getCrystalType()) {
-			case L2Item.CRYSTAL_S:
-				if (item.getItem() instanceof L2Weapon) {
+			case ItemTemplate.CRYSTAL_S:
+				if (item.getItem() instanceof WeaponTemplate) {
 					price = 50000;
 				} else {
 					price = 40000;
 				}
 				break;
-			case L2Item.CRYSTAL_S80:
-				if (item.getItem() instanceof L2Weapon) {
+			case ItemTemplate.CRYSTAL_S80:
+				if (item.getItem() instanceof WeaponTemplate) {
 					price = 100000;
 				} else {
 					price = 80000;
 				}
 				break;
-			case L2Item.CRYSTAL_S84:
-				if (item.getItem() instanceof L2Weapon) {
+			case ItemTemplate.CRYSTAL_S84:
+				if (item.getItem() instanceof WeaponTemplate) {
 					price = 200000;
 				} else {
 					price = 160000;

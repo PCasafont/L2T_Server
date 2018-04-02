@@ -18,8 +18,8 @@ package ai.individual;
 import ai.group_template.L2AttackableAIScript;
 import l2server.Config;
 import l2server.gameserver.events.DamageManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author LasTravel
@@ -32,7 +32,7 @@ public class DamageDealer extends L2AttackableAIScript {
 		super(questId, name, descr);
 
 		if (Config.ENABLE_CUSTOM_DAMAGE_MANAGER) {
-			L2Npc scarecrow = addSpawn(80350, -114361, 253054, -1542, 14661, false, 0);
+			Npc scarecrow = addSpawn(80350, -114361, 253054, -1542, 14661, false, 0);
 			
 			scarecrow.setIsImmobilized(true);
 			scarecrow.setIsMortal(false);
@@ -42,7 +42,7 @@ public class DamageDealer extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (npc.getNpcId() == DAMAGE_DEALER) {
 			if (attacker.isGM()) {
 				return "";

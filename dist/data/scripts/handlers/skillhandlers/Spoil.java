@@ -17,28 +17,28 @@ package handlers.skillhandlers;
 
 import l2server.gameserver.ai.CtrlEvent;
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Formulas;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 
 /**
  * @author _drunk_
  */
 public class Spoil implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.SPOIL};
+	private static final SkillType[] SKILL_IDS = {SkillType.SPOIL};
 	
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		if (!(activeChar instanceof L2PcInstance)) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		if (!(activeChar instanceof Player)) {
 			return;
 		}
 		
@@ -46,12 +46,12 @@ public class Spoil implements ISkillHandler {
 			return;
 		}
 		
-		for (L2Object tgt : targets) {
-			if (!(tgt instanceof L2MonsterInstance)) {
+		for (WorldObject tgt : targets) {
+			if (!(tgt instanceof MonsterInstance)) {
 				continue;
 			}
 			
-			L2MonsterInstance target = (L2MonsterInstance) tgt;
+			MonsterInstance target = (MonsterInstance) tgt;
 			
 			if (target.isSpoil()) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ALREADY_SPOILED));
@@ -60,7 +60,7 @@ public class Spoil implements ISkillHandler {
 			
 			// SPOIL SYSTEM by Lbaldi
 			if (target.isDead() == false) {
-				boolean spoil = Formulas.calcMagicSuccess(activeChar, (L2Character) tgt, skill);
+				boolean spoil = Formulas.calcMagicSuccess(activeChar, (Creature) tgt, skill);
 				if (spoil) {
 					target.setSpoil(true);
 					target.setIsSpoiledBy(activeChar.getObjectId());
@@ -80,7 +80,7 @@ public class Spoil implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

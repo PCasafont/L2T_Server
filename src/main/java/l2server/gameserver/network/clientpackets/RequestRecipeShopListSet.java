@@ -20,8 +20,8 @@ import l2server.gameserver.RecipeController;
 import l2server.gameserver.model.L2ManufactureItem;
 import l2server.gameserver.model.L2ManufactureList;
 import l2server.gameserver.model.L2RecipeList;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.RecipeShopMsg;
@@ -68,13 +68,13 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
 		
 		if (items == null) {
-			player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_NONE);
+			player.setPrivateStoreType(Player.STORE_PRIVATE_NONE);
 			player.broadcastUserInfo();
 			return;
 		}
@@ -85,14 +85,14 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket {
 			return;
 		}
 		
-		if (player.isInsideZone(L2Character.ZONE_NOSTORE)) {
+		if (player.isInsideZone(Creature.ZONE_NOSTORE)) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_PRIVATE_WORKSHOP_HERE));
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
-		for (L2Character c : player.getKnownList().getKnownCharactersInRadius(70)) {
-			if (!(c instanceof L2PcInstance && ((L2PcInstance) c).getPrivateStoreType() == L2PcInstance.STORE_PRIVATE_NONE)) {
+		for (Creature c : player.getKnownList().getKnownCharactersInRadius(70)) {
+			if (!(c instanceof Player && ((Player) c).getPrivateStoreType() == Player.STORE_PRIVATE_NONE)) {
 				player.sendMessage("Try to put your store a little further from " + c.getName() + ", please.");
 				player.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
@@ -127,7 +127,7 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket {
 		createList.setStoreName(player.getCreateList() != null ? player.getCreateList().getStoreName() : "");
 		player.setCreateList(createList);
 		
-		player.setPrivateStoreType(L2PcInstance.STORE_PRIVATE_MANUFACTURE);
+		player.setPrivateStoreType(Player.STORE_PRIVATE_MANUFACTURE);
 		player.sitDown();
 		player.broadcastUserInfo();
 		player.sendPacket(new RecipeShopMsg(player));

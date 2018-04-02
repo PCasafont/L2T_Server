@@ -20,14 +20,15 @@ import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.zone.type.L2SiegeZone;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.zone.type.SiegeZone;
 import l2server.gameserver.network.serverpackets.Earthquake;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.util.NpcUtil;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
@@ -43,6 +44,9 @@ import java.util.concurrent.ScheduledFuture;
  */
 
 public class CustomWorldAltars {
+	private static Logger log = LoggerFactory.getLogger(CustomWorldAltars.class.getName());
+
+
 	private static List<Integer> bosssIds = new ArrayList<>();
 	private static List<AltarsSpawns> spawnInfo = new ArrayList<>();
 	private static List<WorldAltarsInfo> altarsList = new ArrayList<>();
@@ -76,7 +80,7 @@ public class CustomWorldAltars {
 		}
 		
 		private boolean isZoneActive() {
-			L2SiegeZone zone = ZoneManager.getInstance().getZoneById(getZoneId(), L2SiegeZone.class);
+			SiegeZone zone = ZoneManager.getInstance().getZoneById(getZoneId(), SiegeZone.class);
 			if (zone != null) {
 				return zone.isActive();
 			}
@@ -86,7 +90,7 @@ public class CustomWorldAltars {
 		private void setInUse(boolean zoneInUse, boolean shouldBePvp) {
 			isUnderUse = zoneInUse;
 			
-			L2SiegeZone zone = ZoneManager.getInstance().getZoneById(getZoneId(), L2SiegeZone.class);
+			SiegeZone zone = ZoneManager.getInstance().getZoneById(getZoneId(), SiegeZone.class);
 			if (zone != null) {
 				zone.setIsActive(shouldBePvp);
 				zone.updateZoneStatusForCharactersInside();
@@ -102,8 +106,8 @@ public class CustomWorldAltars {
 		private int altarImageId;
 		private String altarName;
 		private int altarId;
-		private L2Npc altarNpc;
-		private L2Npc bossNpc;
+		private Npc altarNpc;
+		private Npc bossNpc;
 		private AltarsSpawns currentSpawn;
 		@SuppressWarnings("unused")
 		private ScheduledFuture<?> spawnTask;
@@ -117,7 +121,7 @@ public class CustomWorldAltars {
 			respawnAltar();
 		}
 		
-		private L2Npc getBossNpc() {
+		private Npc getBossNpc() {
 			return bossNpc;
 		}
 		
@@ -197,7 +201,7 @@ public class CustomWorldAltars {
 					true,
 					0);
 			if (isCursed) {
-				((L2Attackable) bossNpc).setChampion(true);
+				((Attackable) bossNpc).setChampion(true);
 			}
 			
 			altarNpc.broadcastPacket(new Earthquake(altarNpc.getX(), altarNpc.getY(), altarNpc.getZ(), 8, 10));
@@ -245,7 +249,7 @@ public class CustomWorldAltars {
 		}
 	}
 	
-	public void notifyBossKilled(L2Npc npc) {
+	public void notifyBossKilled(Npc npc) {
 		synchronized (altarsList) {
 			for (WorldAltarsInfo altar : altarsList) {
 				if (altar.getBossNpc() == null) {
@@ -260,7 +264,7 @@ public class CustomWorldAltars {
 		}
 	}
 	
-	public boolean notifyTrySpawnBosss(L2Npc npc) {
+	public boolean notifyTrySpawnBosss(Npc npc) {
 		synchronized (altarsList) {
 			for (WorldAltarsInfo altar : altarsList) {
 				if (altar.getAltarId() == npc.getNpcId()) {
@@ -359,7 +363,7 @@ public class CustomWorldAltars {
 			}
 		}
 		
-		Log.info("WorldAltars: Loaded: " + spawnInfo.size() + " altar spawns, " + altarsList.size() + " altars and " + bosssIds.size() + " bosses!");
+		log.info("WorldAltars: Loaded: " + spawnInfo.size() + " altar spawns, " + altarsList.size() + " altars and " + bosssIds.size() + " bosses!");
 	}
 	
 	private CustomWorldAltars() {

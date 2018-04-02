@@ -15,7 +15,7 @@
 
 package l2server.gameserver.model;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExClosePartyRoom;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -39,7 +39,7 @@ public class PartyMatchRoomList {
 	}
 	
 	public void deleteRoom(int id) {
-		for (L2PcInstance member : getRoom(id).getPartyMembers()) {
+		for (Player member : getRoom(id).getPartyMembers()) {
 			if (member == null) {
 				continue;
 			}
@@ -70,9 +70,9 @@ public class PartyMatchRoomList {
 		return maxid;
 	}
 	
-	public PartyMatchRoom getPlayerRoom(L2PcInstance player) {
+	public PartyMatchRoom getPlayerRoom(Player player) {
 		for (PartyMatchRoom room : rooms.values()) {
-			for (L2PcInstance member : room.getPartyMembers()) {
+			for (Player member : room.getPartyMembers()) {
 				if (member.equals(player)) {
 					return room;
 				}
@@ -81,9 +81,9 @@ public class PartyMatchRoomList {
 		return null;
 	}
 	
-	public int getPlayerRoomId(L2PcInstance player) {
+	public int getPlayerRoomId(Player player) {
 		for (PartyMatchRoom room : rooms.values()) {
-			for (L2PcInstance member : room.getPartyMembers()) {
+			for (Player member : room.getPartyMembers()) {
 				if (member.equals(player)) {
 					return room.getId();
 				}

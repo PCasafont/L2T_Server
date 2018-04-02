@@ -16,7 +16,8 @@
 package l2server.loginserver;
 
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -27,6 +28,9 @@ import java.util.List;
  * @author KenM
  */
 public class GameServerListener extends FloodProtectedListener {
+	private static Logger log = LoggerFactory.getLogger(GameServerListener.class.getName());
+
+
 
 	private static List<GameServerThread> gameServers = new ArrayList<>();
 
@@ -41,7 +45,7 @@ public class GameServerListener extends FloodProtectedListener {
 	@Override
 	public void addClient(Socket s) {
 		if (Config.DEBUG) {
-			Log.info("Received gameserver connection from: " + s.getInetAddress().getHostAddress());
+			log.info("Received gameserver connection from: " + s.getInetAddress().getHostAddress());
 		}
 		GameServerThread gst = new GameServerThread(s);
 		gameServers.add(gst);

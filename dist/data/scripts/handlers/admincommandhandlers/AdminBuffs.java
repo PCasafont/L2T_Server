@@ -2,10 +2,10 @@ package handlers.admincommandhandlers;
 
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.util.GMAudit;
@@ -20,19 +20,19 @@ public class AdminBuffs implements IAdminCommandHandler {
 			{"admin_getbuffs", "admin_stopbuff", "admin_stopallbuffs", "admin_areacancel", "admin_removereuse"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.startsWith("admin_getbuffs")) {
 			StringTokenizer st = new StringTokenizer(command, " ");
 			command = st.nextToken();
 
 			if (st.hasMoreTokens()) {
-				L2PcInstance player = null;
+				Player player = null;
 				String playername = st.nextToken();
 
 				try {
-					player = L2World.getInstance().getPlayer(playername);
+					player = World.getInstance().getPlayer(playername);
 					if (player == null) {
-						for (L2PcInstance pl : L2World.getInstance().getAllPlayers().values()) {
+						for (Player pl : World.getInstance().getAllPlayers().values()) {
 							if (pl != null && pl.getName().equalsIgnoreCase(playername)) {
 								player = pl;
 								break;
@@ -53,8 +53,8 @@ public class AdminBuffs implements IAdminCommandHandler {
 					activeChar.sendMessage("The player " + playername + " is not online");
 					return false;
 				}
-			} else if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2Character) {
-				showBuffs(activeChar, (L2Character) activeChar.getTarget(), 1);
+			} else if (activeChar.getTarget() != null && activeChar.getTarget() instanceof Creature) {
+				showBuffs(activeChar, (Creature) activeChar.getTarget(), 1);
 				return true;
 			} else {
 				activeChar.sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
@@ -94,8 +94,8 @@ public class AdminBuffs implements IAdminCommandHandler {
 			try {
 				int radius = Integer.parseInt(val);
 
-				for (L2Character knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius)) {
-					if (knownChar instanceof L2PcInstance && !knownChar.equals(activeChar)) {
+				for (Creature knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius)) {
+					if (knownChar instanceof Player && !knownChar.equals(activeChar)) {
 						knownChar.stopAllEffects();
 					}
 				}
@@ -110,12 +110,12 @@ public class AdminBuffs implements IAdminCommandHandler {
 			StringTokenizer st = new StringTokenizer(command, " ");
 			command = st.nextToken();
 
-			L2PcInstance player = null;
+			Player player = null;
 			if (st.hasMoreTokens()) {
 				String playername = st.nextToken();
 
 				try {
-					player = L2World.getInstance().getPlayer(playername);
+					player = World.getInstance().getPlayer(playername);
 				} catch (Exception e) {
 				}
 
@@ -123,8 +123,8 @@ public class AdminBuffs implements IAdminCommandHandler {
 					activeChar.sendMessage("The player " + playername + " is not online.");
 					return false;
 				}
-			} else if (activeChar.getTarget() instanceof L2PcInstance) {
-				player = (L2PcInstance) activeChar.getTarget();
+			} else if (activeChar.getTarget() instanceof Player) {
+				player = (Player) activeChar.getTarget();
 			} else {
 				activeChar.sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
 				return false;
@@ -147,8 +147,8 @@ public class AdminBuffs implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	public void showBuffs(L2PcInstance activeChar, L2Character target, int page) {
-		final L2Abnormal[] effects = target.getAllEffects();
+	public void showBuffs(Player activeChar, Creature target, int page) {
+		final Abnormal[] effects = target.getAllEffects();
 
 		if (page > effects.length / PAGE_LIMIT + 1 || page < 1) {
 			return;
@@ -168,7 +168,7 @@ public class AdminBuffs implements IAdminCommandHandler {
 		int end = Math.min((page - 1) * PAGE_LIMIT + PAGE_LIMIT, effects.length);
 
 		for (int i = start; i < end; i++) {
-			L2Abnormal e = effects[i];
+			Abnormal e = effects[i];
 			if (e != null) {
 				StringUtil.append(html,
 						"<tr><td>",
@@ -217,17 +217,17 @@ public class AdminBuffs implements IAdminCommandHandler {
 		}
 	}
 
-	private void removeBuff(L2PcInstance activeChar, int objId, int skillId) {
-		L2Character target = null;
+	private void removeBuff(Player activeChar, int objId, int skillId) {
+		Creature target = null;
 		try {
-			target = (L2Character) L2World.getInstance().findObject(objId);
+			target = (Creature) World.getInstance().findObject(objId);
 		} catch (Exception e) {
 		}
 
 		if (target != null && skillId > 0) {
-			L2Abnormal[] effects = target.getAllEffects();
+			Abnormal[] effects = target.getAllEffects();
 
-			for (L2Abnormal e : effects) {
+			for (Abnormal e : effects) {
 				if (e != null && e.getSkill().getId() == skillId) {
 					e.exit();
 					activeChar.sendMessage(
@@ -242,10 +242,10 @@ public class AdminBuffs implements IAdminCommandHandler {
 		}
 	}
 
-	private void removeAllBuffs(L2PcInstance activeChar, int objId) {
-		L2Character target = null;
+	private void removeAllBuffs(Player activeChar, int objId) {
+		Creature target = null;
 		try {
-			target = (L2Character) L2World.getInstance().findObject(objId);
+			target = (Creature) World.getInstance().findObject(objId);
 		} catch (Exception e) {
 		}
 

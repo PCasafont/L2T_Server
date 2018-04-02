@@ -16,7 +16,7 @@
 package l2server.gameserver.stats.conditions;
 
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.item.L2Weapon;
+import l2server.gameserver.templates.item.WeaponTemplate;
 
 /**
  * The Class ConditionTargetUsesWeaponKind.
@@ -46,7 +46,7 @@ public class ConditionTargetUsesWeaponKind extends Condition {
 			return false;
 		}
 
-		L2Weapon item = env.target.getActiveWeaponItem();
+		WeaponTemplate item = env.target.getActiveWeaponItem();
 
 		if (item == null) {
 			return false;

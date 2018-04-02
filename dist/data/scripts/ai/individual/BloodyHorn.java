@@ -18,10 +18,10 @@ package ai.individual;
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SpawnTable;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.util.Rnd;
 
@@ -59,14 +59,14 @@ public class BloodyHorn extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill) {
+	public String onSpellFinished(Npc npc, Player player, Skill skill) {
 		npc.doDie(null);
 
 		return super.onSpellFinished(npc, player, skill);
 	}
 
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public final String onFirstTalk(Npc npc, Player player) {
 		if (npc.getTarget() == null) {
 			npc.setTarget(player);
 
@@ -81,7 +81,7 @@ public class BloodyHorn extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public final String onSpawn(Npc npc) {
 		npc.setIsImmobilized(true);
 
 		npc.setIsInvul(true);

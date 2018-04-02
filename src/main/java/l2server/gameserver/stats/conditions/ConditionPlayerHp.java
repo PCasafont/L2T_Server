@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -41,7 +41,7 @@ public class ConditionPlayerHp extends Condition {
 	@Override
 	public boolean testImpl(Env env) {
 		return env.player.getCurrentHp() * 100 / env.player.getMaxVisibleHp() <= hp &&
-				!(env.player instanceof L2PcInstance && ((L2PcInstance) env.player).isInOlympiadMode() &&
-						!((L2PcInstance) env.player).isOlympiadStart());
+				!(env.player instanceof Player && ((Player) env.player).isInOlympiadMode() &&
+						!((Player) env.player).isOlympiadStart());
 	}
 }

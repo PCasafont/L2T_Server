@@ -19,7 +19,7 @@ import l2server.Config;
 import l2server.gameserver.datatables.EnchantCostsTable;
 import l2server.gameserver.datatables.EnchantCostsTable.EnchantSkillDetail;
 import l2server.gameserver.model.L2EnchantSkillLearn;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author KenM
@@ -42,7 +42,7 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket {
 	private int sp;
 	private final int adenacount;
 	
-	public ExEnchantSkillInfoDetail(int type, int skillId, int skillLvl, int skillEnchRoute, int skillEnchLvl, L2PcInstance ply) {
+	public ExEnchantSkillInfoDetail(int type, int skillId, int skillLvl, int skillEnchRoute, int skillEnchLvl, Player ply) {
 		L2EnchantSkillLearn enchantLearn = EnchantCostsTable.getInstance().getSkillEnchantmentBySkillId(skillId);
 		EnchantSkillDetail esd = null;
 		// do we have this skill?

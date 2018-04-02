@@ -15,8 +15,8 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.RecipeShopItemInfo;
 
 /**
@@ -39,12 +39,12 @@ public final class RequestRecipeShopMakeInfo extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		final L2PcInstance player = getClient().getActiveChar();
+		final Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
 		
-		final L2PcInstance shop = L2World.getInstance().getPlayer(playerObjectId);
+		final Player shop = World.getInstance().getPlayer(playerObjectId);
 		if (shop == null || shop.getPrivateStoreType() != 5) {
 			return;
 		}

@@ -17,35 +17,35 @@ package handlers.skillhandlers;
 
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 
 /**
  * @author nBd
  */
 
 public class Soul implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.CHARGESOUL};
+	private static final SkillType[] SKILL_IDS = {SkillType.CHARGESOUL};
 	
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		if (!(activeChar instanceof L2PcInstance) || activeChar.isAlikeDead()) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		if (!(activeChar instanceof Player) || activeChar.isAlikeDead()) {
 			return;
 		}
 		
-		L2PcInstance player = (L2PcInstance) activeChar;
+		Player player = (Player) activeChar;
 		
 		int level = player.getSkillLevelHash(467);
 		if (level > 0) {
-			L2Skill soulmastery = SkillTable.getInstance().getInfo(467, level);
+			Skill soulmastery = SkillTable.getInstance().getInfo(467, level);
 			
 			if (soulmastery != null) {
 				if (player.getSouls() < soulmastery.getNumSouls()) {
@@ -71,7 +71,7 @@ public class Soul implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

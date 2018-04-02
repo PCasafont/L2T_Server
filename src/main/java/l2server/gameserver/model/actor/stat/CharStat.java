@@ -18,27 +18,27 @@ package l2server.gameserver.model.actor.stat;
 import l2server.Config;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.*;
-import l2server.gameserver.templates.item.L2Weapon;
-import l2server.gameserver.templates.item.L2WeaponType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.item.WeaponTemplate;
+import l2server.gameserver.templates.item.WeaponType;
+import l2server.gameserver.templates.skills.SkillType;
 
 public class CharStat {
 	// =========================================================
 	// Data Field
-	private L2Character activeChar;
+	private Creature activeChar;
 	private long exp = 0;
 	private long sp = 0;
 	private byte level = 1;
 	
 	// =========================================================
 	// Constructor
-	public CharStat(L2Character activeChar) {
+	public CharStat(Creature activeChar) {
 		this.activeChar = activeChar;
 	}
 	
@@ -47,12 +47,12 @@ public class CharStat {
 	
 	/**
 	 * Calculate the new value of the state with modifiers that will be applied
-	 * on the targeted L2Character.<BR>
+	 * on the targeted Creature.<BR>
 	 * <BR>
 	 * <p>
 	 * <B><U> Concept</U> :</B><BR>
 	 * <BR>
-	 * A L2Character owns a table of Calculators called <B>calculators</B>.
+	 * A Creature owns a table of Calculators called <B>calculators</B>.
 	 * Each Calculator (a calculator per state) own a table of Func object. A
 	 * Func object is a mathematic function that permit to calculate the
 	 * modifier of a state (ex : REGENERATE_HP_RATE...) : <BR>
@@ -72,10 +72,10 @@ public class CharStat {
 	 * @param init   The initial value of the stat before applying modifiers
 	 * @param target The L2Charcater whose properties will be used in the
 	 *               calculation (ex : CON, INT...)
-	 * @param skill  The L2Skill whose properties will be used in the calculation
+	 * @param skill  The Skill whose properties will be used in the calculation
 	 *               (ex : Level...)
 	 */
-	public final double calcStat(Stats stat, double init, L2Character target, L2Skill skill) {
+	public final double calcStat(Stats stat, double init, Creature target, Skill skill) {
 		if (activeChar == null || stat == null) {
 			return init;
 		}
@@ -134,7 +134,7 @@ public class CharStat {
 	// Property - Public
 	
 	/**
-	 * Return the Accuracy (base+modifier) of the L2Character in function of the
+	 * Return the Accuracy (base+modifier) of the Creature in function of the
 	 * Weapon Expertise Penalty.
 	 */
 	public int getAccuracy() {
@@ -142,13 +142,13 @@ public class CharStat {
 			return 0;
 		}
 		
-		if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isPlayingEvent() &&
-				((L2PcInstance) activeChar).getEvent().isType(EventType.StalkedSalkers)) {
+		if (activeChar instanceof Player && ((Player) activeChar).isPlayingEvent() &&
+				((Player) activeChar).getEvent().isType(EventType.StalkedSalkers)) {
 			return 1000;
 		}
 		
-		if (activeChar instanceof L2MonsterInstance) {
-			final L2MonsterInstance monster = (L2MonsterInstance) activeChar;
+		if (activeChar instanceof MonsterInstance) {
+			final MonsterInstance monster = (MonsterInstance) activeChar;
 			
 			if (monster.getTemplate().FixedAccuracy != 0) {
 				return monster.getTemplate().FixedAccuracy;
@@ -163,20 +163,20 @@ public class CharStat {
 			return 0;
 		}
 		
-		if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isPlayingEvent() &&
-				((L2PcInstance) activeChar).getEvent().isType(EventType.StalkedSalkers)) {
+		if (activeChar instanceof Player && ((Player) activeChar).isPlayingEvent() &&
+				((Player) activeChar).getEvent().isType(EventType.StalkedSalkers)) {
 			return 1000;
 		}
 		
 		return (int) Math.round(calcStat(Stats.ACCURACY_MAGIC, 0, null, null));
 	}
 	
-	public L2Character getActiveChar() {
+	public Creature getActiveChar() {
 		return activeChar;
 	}
 	
 	/**
-	 * Return the Attack Speed multiplier (base+modifier) of the L2Character to
+	 * Return the Attack Speed multiplier (base+modifier) of the Creature to
 	 * get proper animations.
 	 */
 	public final float getAttackSpeedMultiplier() {
@@ -189,7 +189,7 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the CON of the L2Character (base+modifier).
+	 * Return the CON of the Creature (base+modifier).
 	 */
 	public final int getCON() {
 		if (activeChar == null) {
@@ -200,9 +200,9 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the Critical Hit rate (base+modifier) of the L2Character.
+	 * Return the Critical Hit rate (base+modifier) of the Creature.
 	 */
-	public int getCriticalHit(L2Character target, L2Skill skill) {
+	public int getCriticalHit(Creature target, Skill skill) {
 		if (activeChar == null) {
 			return 1;
 		}
@@ -233,7 +233,7 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the DEX of the L2Character (base+modifier).
+	 * Return the DEX of the Creature (base+modifier).
 	 */
 	public final int getDEX() {
 		if (activeChar == null) {
@@ -244,17 +244,17 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the Attack Evasion rate (base+modifier) of the L2Character.
+	 * Return the Attack Evasion rate (base+modifier) of the Creature.
 	 */
-	public int getEvasionRate(L2Character target) {
+	public int getEvasionRate(Creature target) {
 		if (activeChar == null) {
 			return 1;
 		}
 		
 		int val = (int) Math.round(calcStat(Stats.P_EVASION_RATE, 0, target, null));
 		
-		if (activeChar instanceof L2MonsterInstance) {
-			final L2MonsterInstance monster = (L2MonsterInstance) activeChar;
+		if (activeChar instanceof MonsterInstance) {
+			final MonsterInstance monster = (MonsterInstance) activeChar;
 			
 			if (monster.getTemplate().FixedEvasion != 0) {
 				return monster.getTemplate().FixedEvasion;
@@ -266,15 +266,15 @@ public class CharStat {
 		return val;
 	}
 	
-	public int getMEvasionRate(L2Character target) {
+	public int getMEvasionRate(Creature target) {
 		if (activeChar == null) {
 			return 1;
 		}
 		
 		int val = (int) Math.round(calcStat(Stats.M_EVASION_RATE, 0, target, null));
 		
-		if (activeChar instanceof L2MonsterInstance) {
-			final L2MonsterInstance monster = (L2MonsterInstance) activeChar;
+		if (activeChar instanceof MonsterInstance) {
+			final MonsterInstance monster = (MonsterInstance) activeChar;
 			
 			if (monster.getTemplate().FixedEvasion != 0) {
 				return monster.getTemplate().FixedEvasion;
@@ -295,7 +295,7 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the INT of the L2Character (base+modifier).
+	 * Return the INT of the Creature (base+modifier).
 	 */
 	public int getINT() {
 		if (activeChar == null) {
@@ -307,9 +307,9 @@ public class CharStat {
 	
 	public byte getLevel() {
 		/*
-		if (activeChar instanceof L2PcInstance)
+		if (activeChar instanceof Player)
 		{
-			final L2PcInstance activeChar = (L2PcInstance) activeChar;
+			final Player activeChar = (Player) activeChar;
 
 			if (activeChar.getTemporaryLevel() != 0)
 				return activeChar.getTemporaryLevel();
@@ -323,9 +323,9 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the Magical Attack range (base+modifier) of the L2Character.
+	 * Return the Magical Attack range (base+modifier) of the Creature.
 	 */
-	public final int getMagicalAttackRange(L2Skill skill) {
+	public final int getMagicalAttackRange(Skill skill) {
 		if (activeChar == null) {
 			return 1;
 		}
@@ -370,7 +370,7 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the MAtk (base+modifier) of the L2Character for a skill used in
+	 * Return the MAtk (base+modifier) of the Creature for a skill used in
 	 * function of abnormal effects in progress.<BR>
 	 * <BR>
 	 * <p>
@@ -380,10 +380,10 @@ public class CharStat {
 	 * <BR>
 	 * <BR>
 	 *
-	 * @param target The L2Character targeted by the skill
-	 * @param skill  The L2Skill used against the target
+	 * @param target The Creature targeted by the skill
+	 * @param skill  The Skill used against the target
 	 */
-	public int getMAtk(L2Character target, L2Skill skill) {
+	public int getMAtk(Creature target, Skill skill) {
 		if (activeChar == null) {
 			return 1;
 		}
@@ -406,7 +406,7 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the MAtk Speed (base+modifier) of the L2Character in function of
+	 * Return the MAtk Speed (base+modifier) of the Creature in function of
 	 * the Armour Expertise Penalty.
 	 */
 	public int getMAtkSpd() {
@@ -430,9 +430,9 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the Magic Critical Hit rate (base+modifier) of the L2Character.
+	 * Return the Magic Critical Hit rate (base+modifier) of the Creature.
 	 */
-	public final int getMCriticalHit(L2Character target, L2Skill skill) {
+	public final int getMCriticalHit(Creature target, Skill skill) {
 		if (activeChar == null) {
 			return 1;
 		}
@@ -440,7 +440,7 @@ public class CharStat {
 		double mrate = calcStat(Stats.MCRITICAL_RATE, activeChar.getTemplate().baseMCritRate, target, skill);
 		if (target != null) {
 			//Radiant Heal Panic Heal Brilliant Heal have 100% critical when the target have this stat
-			if (calcStat(Stats.HEAL_CRIT_RATE, 1, target, skill) > 1 && skill.getSkillType() == L2SkillType.OVERHEAL && skill.getId() >= 11755 &&
+			if (calcStat(Stats.HEAL_CRIT_RATE, 1, target, skill) > 1 && skill.getSkillType() == SkillType.OVERHEAL && skill.getId() >= 11755 &&
 					skill.getId() <= 11757) {
 				return 1550;
 			}
@@ -466,7 +466,7 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the MDef (base+modifier) of the L2Character against a skill in
+	 * Return the MDef (base+modifier) of the Creature against a skill in
 	 * function of abnormal effects in progress.<BR>
 	 * <BR>
 	 * <p>
@@ -475,15 +475,15 @@ public class CharStat {
 	 * <li> Calculate Magic damage </li>
 	 * <BR>
 	 *
-	 * @param target The L2Character targeted by the skill
-	 * @param skill  The L2Skill used against the target
+	 * @param target The Creature targeted by the skill
+	 * @param skill  The Skill used against the target
 	 */
-	public int getMDef(L2Character target, L2Skill skill) {
+	public int getMDef(Creature target, Skill skill) {
 		if (activeChar == null) {
 			return 1;
 		}
 		
-		// Get the base MAtk of the L2Character
+		// Get the base MAtk of the Creature
 		double defense = activeChar.getTemplate().baseMDef;
 		
 		// Calculate modifier for Raid Bosses
@@ -501,7 +501,7 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the MEN of the L2Character (base+modifier).
+	 * Return the MEN of the Creature (base+modifier).
 	 */
 	public final int getMEN() {
 		if (activeChar == null) {
@@ -523,15 +523,15 @@ public class CharStat {
 	
 	/**
 	 * Return the RunSpeed (base+modifier) or WalkSpeed (base+modifier) of the
-	 * L2Character in function of the movement type.
+	 * Creature in function of the movement type.
 	 */
 	public float getMoveSpeed() {
 		if (activeChar == null) {
 			return 1;
 		}
 		
-		if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isPlayingEvent() &&
-				((L2PcInstance) activeChar).getEvent().isType(EventType.StalkedSalkers)) {
+		if (activeChar instanceof Player && ((Player) activeChar).isPlayingEvent() &&
+				((Player) activeChar).getEvent().isType(EventType.StalkedSalkers)) {
 			return 150;
 		}
 		
@@ -544,9 +544,9 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the MReuse rate (base+modifier) of the L2Character.
+	 * Return the MReuse rate (base+modifier) of the Creature.
 	 */
-	public final double getMReuseRate(L2Skill skill) {
+	public final double getMReuseRate(Skill skill) {
 		if (activeChar == null) {
 			return 1;
 		}
@@ -555,9 +555,9 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the PReuse rate (base+modifier) of the L2Character.
+	 * Return the PReuse rate (base+modifier) of the Creature.
 	 */
-	public final double getPReuseRate(L2Skill skill) {
+	public final double getPReuseRate(Skill skill) {
 		if (activeChar == null) {
 			return 1;
 		}
@@ -566,15 +566,15 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the PAtk (base+modifier) of the L2Character.
+	 * Return the PAtk (base+modifier) of the Creature.
 	 */
-	public int getPAtk(L2Character target) {
+	public int getPAtk(Creature target) {
 		if (activeChar == null) {
 			return 1;
 		}
 		
-		if (activeChar instanceof L2MonsterInstance) {
-			final L2MonsterInstance monster = (L2MonsterInstance) activeChar;
+		if (activeChar instanceof MonsterInstance) {
+			final MonsterInstance monster = (MonsterInstance) activeChar;
 			if (!monster.getTemplate().BonusFromBaseStats) {
 				return (int) monster.getTemplate().basePAtk;
 			}
@@ -597,8 +597,8 @@ public class CharStat {
 		
 		double val = calcStat(Stats.SKILL_MASTERY, 0, null, null);
 		
-		if (activeChar instanceof L2PcInstance) {
-			if (((L2PcInstance) activeChar).isMageClass()) {
+		if (activeChar instanceof Player) {
+			if (((Player) activeChar).isMageClass()) {
 				val *= BaseStats.INT.calcBonus(activeChar);
 			} else {
 				val *= BaseStats.STR.calcBonus(activeChar);
@@ -610,54 +610,54 @@ public class CharStat {
 	/**
 	 * Return the PAtk Modifier against animals.
 	 */
-	public final double getPAtkAnimals(L2Character target) {
+	public final double getPAtkAnimals(Creature target) {
 		return calcStat(Stats.PATK_ANIMALS, 1, target, null);
 	}
 	
 	/**
 	 * Return the PAtk Modifier against dragons.
 	 */
-	public final double getPAtkDragons(L2Character target) {
+	public final double getPAtkDragons(Creature target) {
 		return calcStat(Stats.PATK_DRAGONS, 1, target, null);
 	}
 	
 	/**
 	 * Return the PAtk Modifier against insects.
 	 */
-	public final double getPAtkInsects(L2Character target) {
+	public final double getPAtkInsects(Creature target) {
 		return calcStat(Stats.PATK_INSECTS, 1, target, null);
 	}
 	
 	/**
 	 * Return the PAtk Modifier against monsters.
 	 */
-	public final double getPAtkMonsters(L2Character target) {
+	public final double getPAtkMonsters(Creature target) {
 		return calcStat(Stats.PATK_MONSTERS, 1, target, null);
 	}
 	
 	/**
 	 * Return the PAtk Modifier against plants.
 	 */
-	public final double getPAtkPlants(L2Character target) {
+	public final double getPAtkPlants(Creature target) {
 		return calcStat(Stats.PATK_PLANTS, 1, target, null);
 	}
 	
 	/**
 	 * Return the PAtk Modifier against giants.
 	 */
-	public final double getPAtkGiants(L2Character target) {
+	public final double getPAtkGiants(Creature target) {
 		return calcStat(Stats.PATK_GIANTS, 1, target, null);
 	}
 	
 	/**
 	 * Return the PAtk Modifier against magic creatures
 	 */
-	public final double getPAtkMagicCreatures(L2Character target) {
+	public final double getPAtkMagicCreatures(Creature target) {
 		return calcStat(Stats.PATK_MCREATURES, 1, target, null);
 	}
 	
 	/**
-	 * Return the PAtk Speed (base+modifier) of the L2Character in function of
+	 * Return the PAtk Speed (base+modifier) of the Creature in function of
 	 * the Armour Expertise Penalty.
 	 */
 	public int getPAtkSpd() {
@@ -665,8 +665,8 @@ public class CharStat {
 			return 1;
 		}
 		
-		if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isPlayingEvent() &&
-				((L2PcInstance) activeChar).getEvent().isType(EventType.StalkedSalkers)) {
+		if (activeChar instanceof Player && ((Player) activeChar).isPlayingEvent() &&
+				((Player) activeChar).getEvent().isType(EventType.StalkedSalkers)) {
 			return 300;
 		}
 		
@@ -686,62 +686,62 @@ public class CharStat {
 	/**
 	 * Return the PDef Modifier against animals.
 	 */
-	public final double getPDefAnimals(L2Character target) {
+	public final double getPDefAnimals(Creature target) {
 		return calcStat(Stats.PDEF_ANIMALS, 1, target, null);
 	}
 	
 	/**
 	 * Return the PDef Modifier against dragons.
 	 */
-	public final double getPDefDragons(L2Character target) {
+	public final double getPDefDragons(Creature target) {
 		return calcStat(Stats.PDEF_DRAGONS, 1, target, null);
 	}
 	
 	/**
 	 * Return the PDef Modifier against insects.
 	 */
-	public final double getPDefInsects(L2Character target) {
+	public final double getPDefInsects(Creature target) {
 		return calcStat(Stats.PDEF_INSECTS, 1, target, null);
 	}
 	
 	/**
 	 * Return the PDef Modifier against monsters.
 	 */
-	public final double getPDefMonsters(L2Character target) {
+	public final double getPDefMonsters(Creature target) {
 		return calcStat(Stats.PDEF_MONSTERS, 1, target, null);
 	}
 	
 	/**
 	 * Return the PDef Modifier against plants.
 	 */
-	public final double getPDefPlants(L2Character target) {
+	public final double getPDefPlants(Creature target) {
 		return calcStat(Stats.PDEF_PLANTS, 1, target, null);
 	}
 	
 	/**
 	 * Return the PDef Modifier against giants.
 	 */
-	public final double getPDefGiants(L2Character target) {
+	public final double getPDefGiants(Creature target) {
 		return calcStat(Stats.PDEF_GIANTS, 1, target, null);
 	}
 	
 	/**
 	 * Return the PDef Modifier against giants.
 	 */
-	public final double getPDefMagicCreatures(L2Character target) {
+	public final double getPDefMagicCreatures(Creature target) {
 		return calcStat(Stats.PDEF_MCREATURES, 1, target, null);
 	}
 	
 	/**
-	 * Return the PDef (base+modifier) of the L2Character.
+	 * Return the PDef (base+modifier) of the Creature.
 	 */
-	public int getPDef(L2Character target) {
+	public int getPDef(Creature target) {
 		if (activeChar == null) {
 			return 1;
 		}
 		
-		if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isPlayingEvent() &&
-				((L2PcInstance) activeChar).getEvent().isType(EventType.StalkedSalkers)) {
+		if (activeChar instanceof Player && ((Player) activeChar).isPlayingEvent() &&
+				((Player) activeChar).getEvent().isType(EventType.StalkedSalkers)) {
 			return 100;
 		}
 		
@@ -761,7 +761,7 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the Physical Attack range (base+modifier) of the L2Character.
+	 * Return the Physical Attack range (base+modifier) of the Creature.
 	 */
 	public final int getPhysicalAttackRange() {
 		if (activeChar == null) {
@@ -771,10 +771,10 @@ public class CharStat {
 		if (activeChar.isTransformed()) {
 			return activeChar.getTemplate().baseAtkRange;
 		}
-		// Polearm handled here for now. Basically L2PcInstance could have a function
+		// Polearm handled here for now. Basically Player could have a function
 		// similar to FuncBowAtkRange and NPC are defined in DP.
-		L2Weapon weaponItem = activeChar.getActiveWeaponItem();
-		if (weaponItem != null && weaponItem.getItemType() == L2WeaponType.POLE) {
+		WeaponTemplate weaponItem = activeChar.getActiveWeaponItem();
+		if (weaponItem != null && weaponItem.getItemType() == WeaponType.POLE) {
 			return (int) calcStat(Stats.POWER_ATTACK_RANGE, 66, null, null);
 		}
 		
@@ -784,12 +784,12 @@ public class CharStat {
 	/**
 	 * Return the weapon reuse modifier
 	 */
-	public final double getWeaponReuseModifier(L2Character target) {
+	public final double getWeaponReuseModifier(Creature target) {
 		return calcStat(Stats.ATK_REUSE, 1, target, null);
 	}
 	
 	/**
-	 * Return the RunSpeed (base+modifier) of the L2Character in function of the
+	 * Return the RunSpeed (base+modifier) of the Creature in function of the
 	 * Armour Expertise Penalty.
 	 */
 	public int getRunSpeed() {
@@ -797,8 +797,8 @@ public class CharStat {
 			return 1;
 		}
 		
-		if (activeChar instanceof L2PcInstance && ((L2PcInstance) activeChar).isPlayingEvent() &&
-				((L2PcInstance) activeChar).getEvent().isType(EventType.StalkedSalkers)) {
+		if (activeChar instanceof Player && ((Player) activeChar).isPlayingEvent() &&
+				((Player) activeChar).getEvent().isType(EventType.StalkedSalkers)) {
 			return 180;
 		}
 		
@@ -825,7 +825,7 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the ShieldDef rate (base+modifier) of the L2Character.
+	 * Return the ShieldDef rate (base+modifier) of the Creature.
 	 */
 	public final int getShldDef() {
 		return (int) calcStat(Stats.SHIELD_DEFENCE, 0, null, null);
@@ -856,7 +856,7 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the STR of the L2Character (base+modifier).
+	 * Return the STR of the Creature (base+modifier).
 	 */
 	public final int getSTR() {
 		if (activeChar == null) {
@@ -867,7 +867,7 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the WalkSpeed (base+modifier) of the L2Character.
+	 * Return the WalkSpeed (base+modifier) of the Creature.
 	 */
 	public int getWalkSpeed() {
 		if (activeChar == null) {
@@ -884,7 +884,7 @@ public class CharStat {
 	}
 	
 	/**
-	 * Return the WIT of the L2Character (base+modifier).
+	 * Return the WIT of the Creature (base+modifier).
 	 */
 	public final int getWIT() {
 		if (activeChar == null) {
@@ -897,7 +897,7 @@ public class CharStat {
 	/**
 	 * Return the mpConsume.
 	 */
-	public final int getMpConsume(L2Skill skill) {
+	public final int getMpConsume(Skill skill) {
 		if (skill == null) {
 			return 1;
 		}
@@ -925,7 +925,7 @@ public class CharStat {
 	/**
 	 * Return the mpInitialConsume.
 	 */
-	public final int getMpInitialConsume(L2Skill skill) {
+	public final int getMpInitialConsume(Skill skill) {
 		if (skill == null) {
 			return 1;
 		}
@@ -945,7 +945,7 @@ public class CharStat {
 	}
 	
 	public byte getAttackElement() {
-		L2ItemInstance weaponInstance = activeChar.getActiveWeaponInstance();
+		Item weaponInstance = activeChar.getActiveWeaponInstance();
 		// 1st order - weapon element
 		if (weaponInstance != null && weaponInstance.getAttackElementType() >= 0) {
 			return weaponInstance.getAttackElementType();
@@ -1044,55 +1044,55 @@ public class CharStat {
 		}
 	}
 	
-	public double getPvPPhysicalDamage(L2Character target) {
+	public double getPvPPhysicalDamage(Creature target) {
 		return calcStat(Stats.PVP_PHYSICAL_DMG, 1, target, null);
 	}
 	
-	public double getPvPPhysicalSkillDamage(L2Character target) {
+	public double getPvPPhysicalSkillDamage(Creature target) {
 		return calcStat(Stats.PVP_PHYS_SKILL_DMG, 1, target, null);
 	}
 	
-	public double getPvPPhysicalDefense(L2Character attacker) {
+	public double getPvPPhysicalDefense(Creature attacker) {
 		return calcStat(Stats.PVP_PHYSICAL_DEF, 1, attacker, null);
 	}
 	
-	public double getPvPPhysicalSkillDefense(L2Character attacker) {
+	public double getPvPPhysicalSkillDefense(Creature attacker) {
 		return calcStat(Stats.PVP_PHYS_SKILL_DEF, 1, attacker, null);
 	}
 	
-	public double getPvPMagicDamage(L2Character target) {
+	public double getPvPMagicDamage(Creature target) {
 		return calcStat(Stats.PVP_MAGICAL_DMG, 1, target, null);
 	}
 	
-	public double getPvPMagicDefense(L2Character attacker) {
+	public double getPvPMagicDefense(Creature attacker) {
 		return calcStat(Stats.PVP_MAGICAL_DEF, 1, attacker, null);
 	}
 	
-	public double getPvEPhysicalSkillDamage(L2Character target) {
+	public double getPvEPhysicalSkillDamage(Creature target) {
 		return calcStat(Stats.PVE_PHYS_SKILL_DMG, 1, target, null);
 	}
 	
-	public double getPvEPhysicalSkillDefense(L2Character attacker) {
+	public double getPvEPhysicalSkillDefense(Creature attacker) {
 		return calcStat(Stats.PVE_PHYS_SKILL_DEF, 1, attacker, null);
 	}
 	
-	public double getPvEPhysicalDamage(L2Character target) {
+	public double getPvEPhysicalDamage(Creature target) {
 		return calcStat(Stats.PVE_PHYSICAL_DMG, 1, target, null);
 	}
 	
-	public double getPvEPhysicalDefense(L2Character attacker) {
+	public double getPvEPhysicalDefense(Creature attacker) {
 		return calcStat(Stats.PVE_PHYSICAL_DEF, 1, attacker, null);
 	}
 	
-	public double getPvEMagicDamage(L2Character target) {
+	public double getPvEMagicDamage(Creature target) {
 		return calcStat(Stats.PVE_MAGICAL_DMG, 1, target, null);
 	}
 	
-	public double getPvEMagicDefense(L2Character attacker) {
+	public double getPvEMagicDefense(Creature attacker) {
 		return calcStat(Stats.PVE_MAGICAL_DEF, 1, attacker, null);
 	}
 	
-	public double getPCriticalDamage(L2Character target, double damage, L2Skill skill) {
+	public double getPCriticalDamage(Creature target, double damage, Skill skill) {
 		double var = calcStat(Stats.CRITICAL_DAMAGE, damage, target, skill);
 		
 		if (var > 150) {

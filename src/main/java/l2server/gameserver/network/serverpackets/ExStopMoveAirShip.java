@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 
 /**
  * @author kerberos
@@ -24,7 +24,7 @@ public class ExStopMoveAirShip extends L2GameServerPacket {
 	// store coords here because they can be changed from other threads
 	final int objectId, x, y, z, heading;
 	
-	public ExStopMoveAirShip(L2Character ship) {
+	public ExStopMoveAirShip(Creature ship) {
 		objectId = ship.getObjectId();
 		x = ship.getX();
 		y = ship.getY();

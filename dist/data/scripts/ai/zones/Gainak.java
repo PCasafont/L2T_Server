@@ -19,13 +19,13 @@ import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.zone.L2ZoneType;
-import l2server.gameserver.model.zone.type.L2PeaceZone;
-import l2server.gameserver.model.zone.type.L2SiegeZone;
+import l2server.gameserver.model.zone.ZoneType;
+import l2server.gameserver.model.zone.type.PeaceZone;
+import l2server.gameserver.model.zone.type.SiegeZone;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.EventTrigger;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -45,8 +45,8 @@ public class Gainak extends Quest {
 	private static boolean isInSiege = false;
 	private static final int gainakPeaceZoneId = 60018;
 	private static final int gainakSiegeZoneId = 60019;
-	private static final L2PeaceZone gainakPeaceZone = ZoneManager.getInstance().getZoneById(gainakPeaceZoneId, L2PeaceZone.class);
-	private static final L2SiegeZone gainakSiegeZone = ZoneManager.getInstance().getZoneById(gainakSiegeZoneId, L2SiegeZone.class);
+	private static final PeaceZone gainakPeaceZone = ZoneManager.getInstance().getZoneById(gainakPeaceZoneId, PeaceZone.class);
+	private static final SiegeZone gainakSiegeZone = ZoneManager.getInstance().getZoneById(gainakSiegeZoneId, SiegeZone.class);
 
 	public Gainak(int questId, String name, String descr) {
 		super(questId, name, descr);
@@ -70,8 +70,8 @@ public class Gainak extends Quest {
 	}
 
 	@Override
-	public final String onEnterZone(L2Character character, L2ZoneType zone) {
-		if (character instanceof L2PcInstance) {
+	public final String onEnterZone(Creature character, ZoneType zone) {
+		if (character instanceof Player) {
 			if (isInSiege) {
 				character.broadcastPacket(new EventTrigger(siegeEffect, true));
 			}
@@ -80,9 +80,9 @@ public class Gainak extends Quest {
 	}
 
 	@Override
-	public String onDieZone(L2Character character, L2Character killer, L2ZoneType zone) {
+	public String onDieZone(Creature character, Creature killer, ZoneType zone) {
 		if (isInSiege) {
-			L2PcInstance player = killer.getActingPlayer();
+			Player player = killer.getActingPlayer();
 			if (player != null) {
 				player.increasePvpKills(character);
 			}
@@ -91,7 +91,7 @@ public class Gainak extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.equalsIgnoreCase("gainak_change")) {
 			if (isInSiege) {
 				SpawnTable.getInstance().despawnSpecificTable("gainak_siege");
@@ -131,7 +131,7 @@ public class Gainak extends Quest {
 					Broadcast.toAllOnlinePlayers(essm);
 				}
 
-				ZoneManager.getInstance().getZoneByName("Gainak Siege Peace Zone", L2PeaceZone.class).setZoneEnabled(false);
+				ZoneManager.getInstance().getZoneByName("Gainak Siege Peace Zone", PeaceZone.class).setZoneEnabled(false);
 			}
 		}
 		return "";

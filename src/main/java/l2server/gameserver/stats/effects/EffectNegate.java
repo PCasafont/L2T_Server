@@ -15,35 +15,35 @@
 
 package l2server.gameserver.stats.effects;
 
-import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @author Gnat
  */
 public class EffectNegate extends L2Effect {
-	public EffectNegate(Env env, L2EffectTemplate template) {
+	public EffectNegate(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
 	public boolean onStart() {
-		L2Skill skill = getSkill();
+		Skill skill = getSkill();
 
 		for (int negateSkillId : skill.getNegateId()) {
 			if (negateSkillId != 0) {
 				getEffected().stopSkillEffects(negateSkillId);
 			}
 		}
-		for (L2AbnormalType negateEffectType : skill.getNegateStats()) {
+		for (AbnormalType negateEffectType : skill.getNegateStats()) {
 			getEffected().stopEffects(negateEffectType);
 		}
 		if (skill.getNegateAbnormals() != null) {
-			for (L2Abnormal effect : getEffected().getAllEffects()) {
+			for (Abnormal effect : getEffected().getAllEffects()) {
 				if (effect == null) {
 					continue;
 				}

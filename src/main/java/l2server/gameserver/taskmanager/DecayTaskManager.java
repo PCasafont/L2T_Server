@@ -15,24 +15,27 @@
 
 package l2server.gameserver.taskmanager;
 
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.NoSuchElementException;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
 
 /**
  * @author la2 Lets drink to code!
  */
 public class DecayTaskManager {
-
-	protected Map<L2Character, Long> decayTasks = new ConcurrentHashMap<>();
+	
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	protected Map<Creature, Long> decayTasks = new ConcurrentHashMap<>();
 
 	public static final int RAID_BOSS_DECAY_TIME = 30000;
 	public static final int ATTACKABLE_DECAY_TIME = 8500;
@@ -45,15 +48,15 @@ public class DecayTaskManager {
 		return SingletonHolder.instance;
 	}
 
-	public void addDecayTask(L2Character actor) {
+	public void addDecayTask(Creature actor) {
 		decayTasks.put(actor, System.currentTimeMillis());
 	}
 
-	public void addDecayTask(L2Character actor, int interval) {
+	public void addDecayTask(Creature actor, int interval) {
 		decayTasks.put(actor, System.currentTimeMillis() + interval);
 	}
 
-	public void cancelDecayTask(L2Character actor) {
+	public void cancelDecayTask(Creature actor) {
 		try {
 			decayTasks.remove(actor);
 		} catch (NoSuchElementException e) {
@@ -71,17 +74,17 @@ public class DecayTaskManager {
 			long current = System.currentTimeMillis();
 			int delay;
 			try {
-				Iterator<Entry<L2Character, Long>> it = decayTasks.entrySet().iterator();
+				Iterator<Entry<Creature, Long>> it = decayTasks.entrySet().iterator();
 				while (it.hasNext()) {
-					Entry<L2Character, Long> e = it.next();
-					L2Character actor = e.getKey();
+					Entry<Creature, Long> e = it.next();
+					Creature actor = e.getKey();
 					Long next = e.getValue();
 					if (next == null) {
 						continue;
 					}
 					if (actor.isRaid() && !actor.isRaidMinion()) {
 						delay = RAID_BOSS_DECAY_TIME;
-					} else if (actor instanceof L2Attackable && (((L2Attackable) actor).isSpoil() || ((L2Attackable) actor).isSeeded())) {
+					} else if (actor instanceof Attackable && (((Attackable) actor).isSpoil() || ((Attackable) actor).isSeeded())) {
 						delay = ATTACKABLE_DECAY_TIME * 2;
 					} else {
 						delay = ATTACKABLE_DECAY_TIME;
@@ -92,7 +95,7 @@ public class DecayTaskManager {
 					}
 				}
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "Error in DecayScheduler: " + e.getMessage(), e);
+				log.warn("Error in DecayScheduler: " + e.getMessage(), e);
 			}
 		}
 	}
@@ -104,7 +107,7 @@ public class DecayTaskManager {
 		ret += "Tasks dump:\r\n";
 
 		Long current = System.currentTimeMillis();
-		for (L2Character actor : decayTasks.keySet()) {
+		for (Creature actor : decayTasks.keySet()) {
 			ret += "Class/Name: " + actor.getClass().getSimpleName() + "/" + actor.getName() + " decay timer: " + (current - decayTasks.get(actor)) +
 					"\r\n";
 		}
@@ -115,7 +118,7 @@ public class DecayTaskManager {
 	/**
 	 * <u><b><font color="FF0000">Read only</font></b></u>
 	 */
-	public Map<L2Character, Long> getTasks() {
+	public Map<Creature, Long> getTasks() {
 		return decayTasks;
 	}
 

@@ -18,8 +18,8 @@ package handlers.admincommandhandlers;
 import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.Collection;
 
@@ -41,7 +41,7 @@ public class AdminAnnouncements implements IAdminCommandHandler {
 					"admin_del_announcement", "admin_announce", "admin_announce_menu"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.equals("admin_list_announcements")) {
 			Announcements.getInstance().listAnnouncements(activeChar);
 		} else if (command.equals("admin_reload_announcements")) {
@@ -54,10 +54,10 @@ public class AdminAnnouncements implements IAdminCommandHandler {
 			Announcements.getInstance().handleAnnounce(command, 20);
 			AdminHelpPage.showHelpPage(activeChar, "gm_menu.htm");
 		} else if (command.equals("admin_announce_announcements")) {
-			Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-			// synchronized (L2World.getInstance().getAllPlayers())
+			Collection<Player> pls = World.getInstance().getAllPlayers().values();
+			// synchronized (World.getInstance().getAllPlayers())
 			{
-				for (L2PcInstance player : pls) {
+				for (Player player : pls) {
 					Announcements.getInstance().showAnnouncements(player);
 				}
 			}

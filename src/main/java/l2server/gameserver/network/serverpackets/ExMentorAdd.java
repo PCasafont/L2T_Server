@@ -15,15 +15,15 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Erlandys
  */
 public class ExMentorAdd extends L2GameServerPacket {
-	L2PcInstance player;
+	Player player;
 	
-	public ExMentorAdd(L2PcInstance activeChar) {
+	public ExMentorAdd(Player activeChar) {
 		player = activeChar;
 	}
 	

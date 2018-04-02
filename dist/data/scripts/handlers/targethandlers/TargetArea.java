@@ -18,16 +18,15 @@ package handlers.targethandlers;
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.*;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.gameserver.util.Util;
 import l2server.util.Point3D;
 
@@ -40,12 +39,12 @@ import java.util.List;
  */
 public class TargetArea implements ISkillTargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		List<L2Character> targetList = new ArrayList<L2Character>();
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		List<Creature> targetList = new ArrayList<Creature>();
 		Point3D targetPoint = null; // FIXME activeChar.getLastRepeatingSkillTargetPoint();
 
-		if (targetPoint == null && (!(target instanceof L2Attackable || target instanceof L2Playable) ||
-				// Target is not L2Attackable or L2PlayableInstance
+		if (targetPoint == null && (!(target instanceof Attackable || target instanceof Playable) ||
+				// Target is not Attackable or L2PlayableInstance
 				skill.getCastRange() >= 0 &&
 						(target == null || target == activeChar || target.isAlikeDead()))) // target is null or self or dead/faking
 		{
@@ -53,33 +52,33 @@ public class TargetArea implements ISkillTargetTypeHandler {
 			return null;
 		}
 
-		L2Character cha;
+		Creature cha;
 		if (skill.getCastRange() >= 0 && targetPoint == null) {
 			cha = target;
 
 			if (!onlyFirst) {
 				targetList.add(cha); // Add target to target list
 			} else {
-				return new L2Character[]{cha};
+				return new Creature[]{cha};
 			}
 		} else {
 			cha = activeChar;
 		}
-		boolean effectOriginIsL2PlayableInstance = cha instanceof L2Playable;
+		boolean effectOriginIsL2PlayableInstance = cha instanceof Playable;
 
-		boolean srcIsSummon = activeChar instanceof L2Summon;
+		boolean srcIsSummon = activeChar instanceof Summon;
 
-		L2PcInstance src = activeChar.getActingPlayer();
+		Player src = activeChar.getActingPlayer();
 
 		int radius = skill.getSkillRadius();
 
-		boolean srcInArena = activeChar.isInsideZone(L2Character.ZONE_PVP) && !activeChar.isInsideZone(L2Character.ZONE_SIEGE);
+		boolean srcInArena = activeChar.isInsideZone(Creature.ZONE_PVP) && !activeChar.isInsideZone(Creature.ZONE_SIEGE);
 
-		Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
+		Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
 		//synchronized (activeChar.getKnownList().getKnownObjects())
 		{
-			for (L2Object obj : objs) {
-				if (!(obj instanceof L2Attackable || obj instanceof L2Playable)) {
+			for (WorldObject obj : objs) {
+				if (!(obj instanceof Attackable || obj instanceof Playable)) {
 					continue;
 				}
 
@@ -87,7 +86,7 @@ public class TargetArea implements ISkillTargetTypeHandler {
 					continue;
 				}
 
-				target = (L2Character) obj;
+				target = (Creature) obj;
 
 				if (!GeoEngine.getInstance().canSeeTarget(activeChar, target)) {
 					continue;
@@ -107,8 +106,8 @@ public class TargetArea implements ISkillTargetTypeHandler {
 
 					if (src != null) // caster is l2playableinstance and exists
 					{
-						if (obj instanceof L2PcInstance) {
-							L2PcInstance trg = (L2PcInstance) obj;
+						if (obj instanceof Player) {
+							Player trg = (Player) obj;
 
 							if (trg == src) {
 								continue;
@@ -119,11 +118,11 @@ public class TargetArea implements ISkillTargetTypeHandler {
 								continue;
 							}
 
-							if (trg.isInsideZone(L2Character.ZONE_PEACE) && trg.getReputation() < 0 && trg.getPvpFlag() == 0) {
+							if (trg.isInsideZone(Creature.ZONE_PEACE) && trg.getReputation() < 0 && trg.getPvpFlag() == 0) {
 								continue;
 							}
 
-							if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) && !trg.isInsideZone(L2Character.ZONE_SIEGE))) {
+							if (!srcInArena && !(trg.isInsideZone(Creature.ZONE_PVP) && !trg.isInsideZone(Creature.ZONE_SIEGE))) {
 								if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0) {
 									continue;
 								}
@@ -139,8 +138,8 @@ public class TargetArea implements ISkillTargetTypeHandler {
 								}
 							}
 						}
-						if (obj instanceof L2Summon) {
-							L2PcInstance trg = ((L2Summon) obj).getOwner();
+						if (obj instanceof Summon) {
+							Player trg = ((Summon) obj).getOwner();
 
 							if (trg == src) {
 								continue;
@@ -151,10 +150,10 @@ public class TargetArea implements ISkillTargetTypeHandler {
 								continue;
 							}
 
-							if (trg.isInsideZone(L2Character.ZONE_PEACE) && trg.getReputation() < 0 && trg.getPvpFlag() == 0)
+							if (trg.isInsideZone(Creature.ZONE_PEACE) && trg.getReputation() < 0 && trg.getPvpFlag() == 0)
 
 							{
-								if (!srcInArena && !(trg.isInsideZone(L2Character.ZONE_PVP) && !trg.isInsideZone(L2Character.ZONE_SIEGE))) {
+								if (!srcInArena && !(trg.isInsideZone(Creature.ZONE_PVP) && !trg.isInsideZone(Creature.ZONE_SIEGE))) {
 									if (src.getAllyId() == trg.getAllyId() && src.getAllyId() != 0) {
 										continue;
 									}
@@ -171,7 +170,7 @@ public class TargetArea implements ISkillTargetTypeHandler {
 								}
 							}
 
-							if (((L2Summon) obj).isInsideZone(L2Character.ZONE_PEACE)) {
+							if (((Summon) obj).isInsideZone(Creature.ZONE_PEACE)) {
 								continue;
 							}
 						}
@@ -179,12 +178,12 @@ public class TargetArea implements ISkillTargetTypeHandler {
 					// Skill user is not L2PlayableInstance
 					{
 						if (effectOriginIsL2PlayableInstance && // If effect starts at L2PlayableInstance and
-								!(obj instanceof L2Playable)) // Object is not L2PlayableInstance
+								!(obj instanceof Playable)) // Object is not L2PlayableInstance
 						{
 							continue;
 						}
 					}
-					targetList.add((L2Character) obj);
+					targetList.add((Creature) obj);
 				}
 			}
 		}
@@ -193,14 +192,14 @@ public class TargetArea implements ISkillTargetTypeHandler {
 			return null;
 		}
 
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(new Creature[targetList.size()]);
 	}
 
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.TARGET_AREA;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.TARGET_AREA;
 	}
 
 	public static void main(String[] args) {

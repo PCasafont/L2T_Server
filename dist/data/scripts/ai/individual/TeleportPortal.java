@@ -15,8 +15,8 @@
 
 package ai.individual;
 
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 
 /**
@@ -35,7 +35,7 @@ public class TeleportPortal extends Quest {
 	}
 
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onAggroRangeEnter(Npc npc, Player player, boolean isPet) {
 		if (!npc.isImmobilized()) {
 			npc.disableCoreAI(true);
 			npc.setIsImmobilized(true);

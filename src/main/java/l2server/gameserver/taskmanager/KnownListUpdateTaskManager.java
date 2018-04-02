@@ -17,14 +17,15 @@ package l2server.gameserver.taskmanager;
 
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.L2WorldRegion;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2GuardInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.WorldRegion;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.GuardInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.util.Collection;
@@ -32,6 +33,9 @@ import java.util.HashSet;
 import java.util.logging.Level;
 
 public class KnownListUpdateTaskManager {
+	private static Logger log = LoggerFactory.getLogger(KnownListUpdateTaskManager.class.getName());
+
+
 
 	private static final int FULL_UPDATE_TIMER = 100;
 	public static boolean updatePass = true;
@@ -39,12 +43,12 @@ public class KnownListUpdateTaskManager {
 	// Do full update every FULL_UPDATE_TIMER * KNOWNLIST_UPDATE_INTERVAL
 	public static int fullUpdateTimer = FULL_UPDATE_TIMER;
 
-	private static final HashSet<L2WorldRegion> failedRegions = new HashSet<>(1);
+	private static final HashSet<WorldRegion> failedRegions = new HashSet<>(1);
 
 	private KnownListUpdateTaskManager() {
 	}
 	
-	@Load(dependencies = L2World.class)
+	@Load(dependencies = World.class)
 	private void initialize() {
 		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new KnownListUpdate(), 1000, Config.KNOWNLIST_UPDATE_INTERVAL);
 	}
@@ -61,8 +65,8 @@ public class KnownListUpdateTaskManager {
 		public void run() {
 			try {
 				boolean failed;
-				for (L2WorldRegion regions[] : L2World.getInstance().getAllWorldRegions()) {
-					for (L2WorldRegion r : regions) // go through all world regions
+				for (WorldRegion regions[] : World.getInstance().getAllWorldRegions()) {
+					for (WorldRegion r : regions) // go through all world regions
 					{
 						// avoid stopping update if something went wrong in updateRegion()
 						try {
@@ -75,7 +79,7 @@ public class KnownListUpdateTaskManager {
 								failedRegions.remove(r); // if all ok, remove
 							}
 						} catch (Exception e) {
-							Log.log(Level.WARNING,
+							log.warn(
 									"KnownListUpdateTaskManager: updateRegion(" + fullUpdateTimer + "," + updatePass + ") failed for region " +
 											r.getName() + ". Full update scheduled. " + e.getMessage(),
 									e);
@@ -91,48 +95,48 @@ public class KnownListUpdateTaskManager {
 					fullUpdateTimer = FULL_UPDATE_TIMER;
 				}
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "", e);
+				log.warn("", e);
 			}
 		}
 	}
 
-	public void updateRegion(L2WorldRegion region, boolean fullUpdate, boolean forgetObjects) {
+	public void updateRegion(WorldRegion region, boolean fullUpdate, boolean forgetObjects) {
 		// synchronized (syncObject)
 		{
-			Collection<L2Object> vObj = region.getVisibleObjects().values();
+			Collection<WorldObject> vObj = region.getVisibleObjects().values();
 			// synchronized (region.getVisibleObjects())
 			{
-				for (L2Object object : vObj) // and for all members in region
+				for (WorldObject object : vObj) // and for all members in region
 				{
 					if (object == null || !object.isVisible()) {
 						continue; // skip dying objects
 					}
 
 					// Some mobs need faster knownlist update
-					final boolean aggro = Config.GUARD_ATTACK_AGGRO_MOB && object instanceof L2GuardInstance ||
-							object instanceof L2Attackable && ((L2Attackable) object).getEnemyClan() != null;
+					final boolean aggro = Config.GUARD_ATTACK_AGGRO_MOB && object instanceof GuardInstance ||
+							object instanceof Attackable && ((Attackable) object).getEnemyClan() != null;
 
 					if (forgetObjects) {
 						object.getKnownList().forgetObjects(aggro || fullUpdate);
 						continue;
 					}
-					for (L2WorldRegion regi : region.getSurroundingRegions()) {
-						if (object instanceof L2Playable || aggro && regi.isActive() || fullUpdate) {
-							Collection<L2Object> inrObj = regi.getVisibleObjects().values();
+					for (WorldRegion regi : region.getSurroundingRegions()) {
+						if (object instanceof Playable || aggro && regi.isActive() || fullUpdate) {
+							Collection<WorldObject> inrObj = regi.getVisibleObjects().values();
 							// synchronized (regi.getVisibleObjects())
 							{
-								for (L2Object obj : inrObj) {
+								for (WorldObject obj : inrObj) {
 									if (obj != object) {
 										object.getKnownList().addKnownObject(obj);
 									}
 								}
 							}
-						} else if (object instanceof L2Character) {
+						} else if (object instanceof Creature) {
 							if (regi.isActive()) {
-								Collection<L2Playable> inrPls = regi.getVisiblePlayable().values();
+								Collection<Playable> inrPls = regi.getVisiblePlayable().values();
 								// synchronized (regi.getVisiblePlayable())
 								{
-									for (L2Object obj : inrPls) {
+									for (WorldObject obj : inrPls) {
 										if (obj != object) {
 											object.getKnownList().addKnownObject(obj);
 										}

@@ -17,15 +17,14 @@ package handlers.admincommandhandlers;
 
 import l2server.Config;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
 import java.util.Collection;
-import java.util.logging.Logger;
 
 /**
  * This class handles following admin commands:
@@ -35,11 +34,10 @@ import java.util.logging.Logger;
  * Small typo fix by Zoey76 24/02/2011
  */
 public class AdminHeal implements IAdminCommandHandler {
-	private static Logger log = Logger.getLogger(AdminRes.class.getName());
 	private static final String[] ADMIN_COMMANDS = {"admin_heal"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 
 		if (command.equals("admin_heal")) {
 			handleHeal(activeChar);
@@ -49,7 +47,7 @@ public class AdminHeal implements IAdminCommandHandler {
 				handleHeal(activeChar, healTarget);
 			} catch (StringIndexOutOfBoundsException e) {
 				if (Config.DEVELOPER) {
-					log.warning("Heal error: " + e);
+					log.warn("Heal error: " + e);
 				}
 				activeChar.sendMessage("Incorrect target/radius specified.");
 			}
@@ -62,29 +60,29 @@ public class AdminHeal implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	private void handleHeal(L2PcInstance activeChar) {
+	private void handleHeal(Player activeChar) {
 		handleHeal(activeChar, null);
 	}
 
-	private void handleHeal(L2PcInstance activeChar, String player) {
+	private void handleHeal(Player activeChar, String player) {
 
-		L2Object obj = activeChar.getTarget();
+		WorldObject obj = activeChar.getTarget();
 		if (player != null) {
-			L2PcInstance plyr = L2World.getInstance().getPlayer(player);
+			Player plyr = World.getInstance().getPlayer(player);
 
 			if (plyr != null) {
 				obj = plyr;
 			} else {
 				try {
 					int radius = Integer.parseInt(player);
-					Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
+					Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
 					//synchronized (activeChar.getKnownList().getKnownObjects())
 					{
-						for (L2Object object : objs) {
-							if (object instanceof L2Character) {
-								L2Character character = (L2Character) object;
+						for (WorldObject object : objs) {
+							if (object instanceof Creature) {
+								Creature character = (Creature) object;
 								character.setCurrentHpMp(character.getMaxHp(), character.getMaxMp());
-								if (object instanceof L2PcInstance) {
+								if (object instanceof Player) {
 									character.setCurrentCp(character.getMaxCp());
 								}
 							}
@@ -99,14 +97,14 @@ public class AdminHeal implements IAdminCommandHandler {
 		if (obj == null) {
 			obj = activeChar;
 		}
-		if (obj instanceof L2Character) {
-			L2Character target = (L2Character) obj;
+		if (obj instanceof Creature) {
+			Creature target = (Creature) obj;
 			target.setCurrentHpMp(target.getMaxHp(), target.getMaxMp());
-			if (target instanceof L2PcInstance) {
+			if (target instanceof Player) {
 				target.setCurrentCp(target.getMaxCp());
 			}
 			if (Config.DEBUG) {
-				log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") healed character " + target.getName());
+				log.debug("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") healed character " + target.getName());
 			}
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));

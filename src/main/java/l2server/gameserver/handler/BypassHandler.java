@@ -15,16 +15,20 @@
 
 package l2server.gameserver.handler;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.util.logging.Level;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author nBd
  */
 public class BypassHandler {
+	private static Logger log = LoggerFactory.getLogger(BypassHandler.class.getName());
+
+
 
 	private Map<Integer, IBypassHandler> datatable;
 
@@ -39,7 +43,7 @@ public class BypassHandler {
 	public void registerBypassHandler(IBypassHandler handler) {
 		for (String element : handler.getBypassList()) {
 			if (Config.DEBUG) {
-				Log.log(Level.FINE, "Adding handler for command " + element);
+				log.debug("Adding handler for command " + element);
 			}
 
 			datatable.put(element.toLowerCase().hashCode(), handler);
@@ -54,7 +58,7 @@ public class BypassHandler {
 		}
 
 		if (Config.DEBUG) {
-			Log.fine("getting handler for command: " + command + " -> " + (datatable.get(command.hashCode()) != null));
+			log.debug("getting handler for command: " + command + " -> " + (datatable.get(command.hashCode()) != null));
 		}
 
 		return datatable.get(command.toLowerCase().hashCode());

@@ -15,9 +15,9 @@
 
 package l2server.log;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.StringUtil;
 
 import java.text.SimpleDateFormat;
@@ -44,8 +44,8 @@ public class EnchantFormatter extends Formatter {
 
 			StringUtil.append(output, ", ");
 
-			if (p instanceof L2PcInstance) {
-				L2PcInstance player = (L2PcInstance) p;
+			if (p instanceof Player) {
+				Player player = (Player) p;
 				StringUtil.append(output,
 						"Character:",
 						player.getName(),
@@ -54,15 +54,15 @@ public class EnchantFormatter extends Formatter {
 				if (player.getClient() != null && !player.getClient().isDetached()) {
 					StringUtil.append(output, " IP:", player.getClient().getConnection().getInetAddress().getHostAddress());
 				}
-			} else if (p instanceof L2ItemInstance) {
-				L2ItemInstance item = (L2ItemInstance) p;
+			} else if (p instanceof Item) {
+				Item item = (Item) p;
 				if (item.getEnchantLevel() > 0) {
 					StringUtil.append(output, "+", String.valueOf(item.getEnchantLevel()), " ");
 				}
 				StringUtil.append(output, item.getItem().getName(), "(", String.valueOf(item.getCount()), ")");
 				StringUtil.append(output, " [", String.valueOf(item.getObjectId()), "]");
-			} else if (p instanceof L2Skill) {
-				L2Skill skill = (L2Skill) p;
+			} else if (p instanceof Skill) {
+				Skill skill = (Skill) p;
 				if (skill.getEnchantRouteId() > 0) {
 					StringUtil.append(output, "+", String.valueOf(skill.getEnchantLevel()), " ");
 				}

@@ -17,8 +17,8 @@ package quests.Q692_HowtoOpposeEvil;
 
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
@@ -101,7 +101,7 @@ public final class Q692_HowtoOpposeEvil extends Quest {
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(QN);
 		if (st == null) {
@@ -142,7 +142,7 @@ public final class Q692_HowtoOpposeEvil extends Quest {
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		final QuestState st = player.getQuestState(QN);
 		if (st == null) {
 			return getNoQuestMsg(player);
@@ -183,8 +183,8 @@ public final class Q692_HowtoOpposeEvil extends Quest {
 	}
 
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
-		L2PcInstance partyMember = getRandomPartyMember(player, "3");
+	public final String onKill(Npc npc, Player player, boolean isPet) {
+		Player partyMember = getRandomPartyMember(player, "3");
 		if (partyMember == null) {
 			return null;
 		}

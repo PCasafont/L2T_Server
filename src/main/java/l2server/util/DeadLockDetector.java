@@ -17,7 +17,8 @@ package l2server.util;
 import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.Shutdown;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.management.*;
 import java.util.logging.Level;
@@ -26,6 +27,9 @@ import java.util.logging.Level;
  * @author -Nemesiss- L2M
  */
 public class DeadLockDetector extends Thread {
+	private static Logger log = LoggerFactory.getLogger(DeadLockDetector.class.getName());
+
+
 
 	private static final int sleepTime = Config.DEADLOCK_CHECK_INTERVAL * 1000;
 
@@ -67,7 +71,7 @@ public class DeadLockDetector extends Thread {
 									dl.getLockOwnerName() + "\n";
 						}
 					}
-					Log.warning(info);
+					log.warn(info);
 
 					if (Config.RESTART_ON_DEADLOCK) {
 						Announcements an = Announcements.getInstance();
@@ -77,7 +81,7 @@ public class DeadLockDetector extends Thread {
 				}
 				Thread.sleep(sleepTime);
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "DeadLockDetector: ", e);
+				log.warn("DeadLockDetector: ", e);
 			}
 		}
 	}

@@ -16,15 +16,15 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.loader.annotations.Load;
 
 /**
  * @author Gnacik
  */
 public class GMSkillTable {
-	private static final L2Skill[] gmSkills = new L2Skill[34];
+	private static final Skill[] gmSkills = new Skill[34];
 	private static final int[] gmSkillsId = {14779, 14780, 14781, 14782, 14783, 14784, 14785, 14786, 14787, 14788, 14789, 14790, 14993, 14994, 14995};
 
 	private GMSkillTable() {
@@ -45,7 +45,7 @@ public class GMSkillTable {
 		return SingletonHolder.instance;
 	}
 
-	public L2Skill[] getGMSkills() {
+	public Skill[] getGMSkills() {
 		return gmSkills;
 	}
 
@@ -59,8 +59,8 @@ public class GMSkillTable {
 		return false;
 	}
 
-	public void addSkills(L2PcInstance gmchar) {
-		for (L2Skill s : getGMSkills()) {
+	public void addSkills(Player gmchar) {
+		for (Skill s : getGMSkills()) {
 			gmchar.addSkill(s, false); // Don't Save GM skills to database
 		}
 	}

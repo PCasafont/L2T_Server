@@ -22,16 +22,17 @@
 
 package l2server.util.lib;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class LoginLog {
-	private static final Logger log = Logger.getLogger(LoginLog.class.getName());
+	private static final Logger log = LoggerFactory.getLogger(LoginLog.class.getName());
 
 	public static void add(String text, String cat) {
 		/*
@@ -50,7 +51,7 @@ public class LoginLog {
 			String out = "[" + date + "] " + text + "\n";
 			save.write(out);
 		} catch (IOException e) {
-			log.log(Level.WARNING, "Error saving logfile: ", e);
+			log.warn("Error saving logfile: ", e);
 		} finally {
 			try {
 				save.close();

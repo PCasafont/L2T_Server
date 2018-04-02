@@ -14,7 +14,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.World;
 
 /**
  * Support for "Chat with Friends" dialog.
@@ -36,7 +36,7 @@ public class FriendStatusPacket extends L2GameServerPacket {
 	public FriendStatusPacket(int objId) {
 		objid = objId;
 		name = CharNameTable.getInstance().getNameById(objId);
-		online = L2World.getInstance().getPlayer(objId) != null;
+		online = World.getInstance().getPlayer(objId) != null;
 	}
 	
 	@Override

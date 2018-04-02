@@ -17,18 +17,18 @@ package handlers.skillhandlers;
 
 import l2server.Config;
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.ItemList;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.util.Rnd;
 
 import java.util.logging.Logger;
@@ -39,18 +39,18 @@ import java.util.logging.Logger;
 public class Harvest implements ISkillHandler {
 	private static Logger log = Logger.getLogger(Harvest.class.getName());
 
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.HARVEST};
+	private static final SkillType[] SKILL_IDS = {SkillType.HARVEST};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		if (!(activeChar instanceof L2PcInstance)) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		if (!(activeChar instanceof Player)) {
 			return;
 		}
 
-		final L2Object[] targetList = skill.getTargetList(activeChar);
+		final WorldObject[] targetList = skill.getTargetList(activeChar);
 
 		if (targetList == null || targetList.length == 0) {
 			return;
@@ -60,15 +60,15 @@ public class Harvest implements ISkillHandler {
 			log.info("Casting harvest");
 		}
 
-		L2MonsterInstance target;
+		MonsterInstance target;
 		InventoryUpdate iu = Config.FORCE_INVENTORY_UPDATE ? null : new InventoryUpdate();
 
-		for (L2Object tgt : targetList) {
-			if (!(tgt instanceof L2MonsterInstance)) {
+		for (WorldObject tgt : targetList) {
+			if (!(tgt instanceof MonsterInstance)) {
 				continue;
 			}
 
-			target = (L2MonsterInstance) tgt;
+			target = (MonsterInstance) tgt;
 
 			if (activeChar.getObjectId() != target.getSeederId()) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_HARVEST);
@@ -83,15 +83,15 @@ public class Harvest implements ISkillHandler {
 			// TODO: check items and amount of items player harvest
 			if (target.isSeeded()) {
 				if (calcSuccess(activeChar, target)) {
-					L2Attackable.RewardItem[] items = target.takeHarvest();
+					Attackable.RewardItem[] items = target.takeHarvest();
 					if (items != null && items.length > 0) {
-						for (L2Attackable.RewardItem ritem : items) {
+						for (Attackable.RewardItem ritem : items) {
 							cropId = ritem.getItemId(); // always got 1 type of crop as reward
 							if (activeChar.isInParty()) {
-								activeChar.getParty().distributeItem((L2PcInstance) activeChar, ritem, true, target);
+								activeChar.getParty().distributeItem((Player) activeChar, ritem, true, target);
 							} else {
-								L2ItemInstance item = activeChar.getInventory()
-										.addItem("Manor", ritem.getItemId(), ritem.getCount(), (L2PcInstance) activeChar, target);
+								Item item = activeChar.getInventory()
+										.addItem("Manor", ritem.getItemId(), ritem.getCount(), (Player) activeChar, target);
 								if (iu != null) {
 									iu.addItem(item);
 								}
@@ -109,13 +109,13 @@ public class Harvest implements ISkillHandler {
 								smsg.addString(activeChar.getName());
 								smsg.addNumber(total);
 								smsg.addItemName(cropId);
-								activeChar.getParty().broadcastToPartyMembers((L2PcInstance) activeChar, smsg);
+								activeChar.getParty().broadcastToPartyMembers((Player) activeChar, smsg);
 							}
 
 							if (iu != null) {
 								activeChar.sendPacket(iu);
 							} else {
-								activeChar.sendPacket(new ItemList((L2PcInstance) activeChar, false));
+								activeChar.sendPacket(new ItemList((Player) activeChar, false));
 							}
 						}
 					}
@@ -131,7 +131,7 @@ public class Harvest implements ISkillHandler {
 	/**
 	 * @return
 	 */
-	private boolean calcSuccess(L2Character activeChar, L2Character target) {
+	private boolean calcSuccess(Creature activeChar, Creature target) {
 		int basicSuccess = 100;
 		final int levelPlayer = activeChar.getLevel();
 		final int levelTarget = target.getLevel();
@@ -159,7 +159,7 @@ public class Harvest implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

@@ -18,11 +18,11 @@ package handlers.itemhandlers;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.instancemanager.CastleManorManager;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -31,15 +31,15 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  * @author l3x
  */
 public class Harvester implements IItemHandler {
-	L2PcInstance activeChar;
-	L2MonsterInstance target;
+	Player activeChar;
+	MonsterInstance target;
 
 	/**
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(Playable, Item, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
-		if (!(playable instanceof L2PcInstance)) {
+	public void useItem(Playable playable, Item item, boolean forceUse) {
+		if (!(playable instanceof Player)) {
 			return;
 		}
 
@@ -47,22 +47,22 @@ public class Harvester implements IItemHandler {
 			return;
 		}
 
-		activeChar = (L2PcInstance) playable;
+		activeChar = (Player) playable;
 
-		if (!(activeChar.getTarget() instanceof L2MonsterInstance)) {
+		if (!(activeChar.getTarget() instanceof MonsterInstance)) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
-		target = (L2MonsterInstance) activeChar.getTarget();
+		target = (MonsterInstance) activeChar.getTarget();
 
 		if (target == null || !target.isDead()) {
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 
-		L2Skill skill = SkillTable.getInstance().getInfo(2098, 1); //harvesting skill
+		Skill skill = SkillTable.getInstance().getInfo(2098, 1); //harvesting skill
 		if (skill != null) {
 			activeChar.useMagic(skill, false, false);
 		}

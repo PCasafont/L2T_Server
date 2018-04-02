@@ -15,14 +15,13 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.TradeList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.TradeOtherAdd;
 import l2server.gameserver.network.serverpackets.TradeOwnAdd;
-import l2server.log.Log;
 
 /**
  * This class ...
@@ -47,22 +46,22 @@ public final class AddTradeItem extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		final L2PcInstance player = getClient().getActiveChar();
+		final Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
 
 		final TradeList trade = player.getActiveTradeList();
 		if (trade == null) {
-			Log.warning("Character: " + player.getName() + " requested item:" + objectId + " add without active tradelist:" + tradeId);
+			log.warn("Character: " + player.getName() + " requested item:" + objectId + " add without active tradelist:" + tradeId);
 			return;
 		}
 
-		final L2PcInstance partner = trade.getPartner();
-		if (partner == null || L2World.getInstance().getPlayer(partner.getObjectId()) == null || partner.getActiveTradeList() == null) {
+		final Player partner = trade.getPartner();
+		if (partner == null || World.getInstance().getPlayer(partner.getObjectId()) == null || partner.getActiveTradeList() == null) {
 			// Trade partner not found, cancel trade
 			if (partner != null) {
-				Log.warning("Character:" + player.getName() + " requested invalid trade object: " + objectId);
+				log.warn("Character:" + player.getName() + " requested invalid trade object: " + objectId);
 			}
 			SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME);
 			player.sendPacket(msg);

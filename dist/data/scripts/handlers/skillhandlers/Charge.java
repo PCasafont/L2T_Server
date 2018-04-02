@@ -16,12 +16,12 @@
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.skills.SkillType;
 
 import java.util.logging.Logger;
 
@@ -35,23 +35,23 @@ public class Charge implements ISkillHandler {
 	static Logger log = Logger.getLogger(Charge.class.getName());
 
 	/* (non-Javadoc)
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.L2PcInstance, l2server.gameserver.model.L2ItemInstance)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.Player, l2server.gameserver.model.Item)
 	 */
-	private static final L2SkillType[] SKILL_IDS = {/*L2SkillType.CHARGE*/};
+	private static final SkillType[] SKILL_IDS = {/*SkillType.CHARGE*/};
 
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
 
-		for (L2Object target : targets) {
-			if (!(target instanceof L2PcInstance)) {
+		for (WorldObject target : targets) {
+			if (!(target instanceof Player)) {
 				continue;
 			}
-			skill.getEffects(activeChar, (L2PcInstance) target);
+			skill.getEffects(activeChar, (Player) target);
 		}
 
 		// self Effect :]
 		if (skill.hasSelfEffects()) {
-			final L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
+			final Abnormal effect = activeChar.getFirstEffect(skill.getId());
 			if (effect != null && effect.isSelfEffect()) {
 				//Replace old effect with new one.
 				effect.exit();
@@ -61,7 +61,7 @@ public class Charge implements ISkillHandler {
 	}
 
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

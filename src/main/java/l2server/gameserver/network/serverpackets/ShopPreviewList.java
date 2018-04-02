@@ -18,7 +18,7 @@ package l2server.gameserver.network.serverpackets;
 import l2server.Config;
 import l2server.gameserver.model.L2TradeList;
 import l2server.gameserver.model.L2TradeList.L2TradeItem;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 
 import java.util.Collection;
 
@@ -63,7 +63,7 @@ public class ShopPreviewList extends L2GameServerPacket {
 				writeD(item.getItemId());
 				writeH(item.getTemplate().getType2()); // item type2
 
-				if (item.getTemplate().getType1() != L2Item.TYPE1_ITEM_QUESTITEM_ADENA) {
+				if (item.getTemplate().getType1() != ItemTemplate.TYPE1_ITEM_QUESTITEM_ADENA) {
 					writeH(item.getTemplate()
 							.getBodyPart()); // rev 415  slot	0006-lr.ear  0008-neck  0030-lr.finger  0040-head  0080-??  0100-l.hand  0200-gloves  0400-chest  0800-pants  1000-feet  2000-??  4000-r.hand  8000-r.hand
 				} else {

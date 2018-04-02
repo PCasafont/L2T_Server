@@ -16,8 +16,8 @@
 package handlers.bypasshandlers;
 
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 import java.util.StringTokenizer;
@@ -27,7 +27,7 @@ public class PlayerHelp implements IBypassHandler {
 	private static final String[] COMMANDS = {"player_help"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		try {
 			if (command.length() < 13) {
 				return false;
@@ -53,7 +53,7 @@ public class PlayerHelp implements IBypassHandler {
 			html.disableValidation();
 			activeChar.sendPacket(html);
 		} catch (Exception e) {
-			log.log(Level.INFO, "Exception in " + e.getMessage(), e);
+			log.info("Exception in " + e.getMessage(), e);
 		}
 		return true;
 	}

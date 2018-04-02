@@ -17,9 +17,10 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,6 +32,9 @@ import java.util.List;
  * @author Pere
  */
 public class ExMentorList extends L2GameServerPacket {
+	private static Logger log = LoggerFactory.getLogger(ExMentorList.class.getName());
+
+
 	private class PartnerInfo {
 		public int objId;
 		public String name;
@@ -39,15 +43,15 @@ public class ExMentorList extends L2GameServerPacket {
 		public boolean online;
 	}
 	
-	private L2PcInstance player;
+	private Player player;
 	private List<PartnerInfo> partners = new ArrayList<>();
 	
-	public ExMentorList(L2PcInstance activeChar) {
+	public ExMentorList(Player activeChar) {
 		if (activeChar.isMentor()) {
 			for (int objId : activeChar.getMenteeList()) {
 				PartnerInfo partnerInfo = new PartnerInfo();
 				partnerInfo.objId = objId;
-				L2PcInstance partner = L2World.getInstance().getPlayer(objId);
+				Player partner = World.getInstance().getPlayer(objId);
 				if (partner != null) {
 					partnerInfo.name = partner.getName();
 					partnerInfo.classId = partner.getClassId();
@@ -63,7 +67,7 @@ public class ExMentorList extends L2GameServerPacket {
 		} else if (activeChar.isMentee()) {
 			PartnerInfo partnerInfo = new PartnerInfo();
 			partnerInfo.objId = activeChar.getMentorId();
-			L2PcInstance partner = L2World.getInstance().getPlayer(activeChar.getMentorId());
+			Player partner = World.getInstance().getPlayer(activeChar.getMentorId());
 			if (partner != null) {
 				partnerInfo.name = partner.getName();
 				partnerInfo.classId = partner.getClassId();
@@ -83,7 +87,7 @@ public class ExMentorList extends L2GameServerPacket {
 	private void getClassIdAndLevel(PartnerInfo partnerInfo) {
 		Connection con = null;
 		try {
-			// Retrieve the L2PcInstance from the characters table of the database
+			// Retrieve the Player from the characters table of the database
 			con = L2DatabaseFactory.getInstance().getConnection();
 			
 			PreparedStatement statement = con.prepareStatement("SELECT level, classid, base_class FROM characters WHERE charId=?");
@@ -96,7 +100,7 @@ public class ExMentorList extends L2GameServerPacket {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.info("Failed loading character.");
+			log.info("Failed loading character.");
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

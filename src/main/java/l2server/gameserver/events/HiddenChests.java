@@ -7,14 +7,15 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.MagicSkillLaunched;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 
@@ -22,6 +23,9 @@ import l2server.util.loader.annotations.Load;
  * @author Pere
  */
 public class HiddenChests {
+	private static Logger log = LoggerFactory.getLogger(HiddenChests.class.getName());
+
+
 	public static HiddenChests instance = null;
 
 	private static final int SPECIAL_CHEST_COUNT = 5;
@@ -40,7 +44,7 @@ public class HiddenChests {
 		if (!Config.isServer(Config.TENKAI)) {
 			return;
 		}
-		L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(50101);
+		NpcTemplate tmpl = NpcTable.getInstance().getTemplate(50101);
 		try {
 			for (int i = 0; i < SPECIAL_CHEST_COUNT; i++) {
 				L2Spawn chestSpawn = new L2Spawn(tmpl);
@@ -50,11 +54,11 @@ public class HiddenChests {
 				boolean found = false;
 				while (!found) {
 					L2Spawn randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
-					L2Npc randomNpc = randomSpawn.getNpc();
+					Npc randomNpc = randomSpawn.getNpc();
 					while (randomSpawn.getNpc().getX() < 150000 || randomSpawn.getNpc().getY() > 227000 ||
-							randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CASTLE) ||
-							randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CLANHALL) ||
-							randomSpawn.getNpc().isInsideZone(L2Character.ZONE_FORT)) {
+							randomSpawn.getNpc().isInsideZone(Creature.ZONE_CASTLE) ||
+							randomSpawn.getNpc().isInsideZone(Creature.ZONE_CLANHALL) ||
+							randomSpawn.getNpc().isInsideZone(Creature.ZONE_FORT)) {
 						randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
 					}
 
@@ -106,19 +110,19 @@ public class HiddenChests {
 				specialChestSpawns[i] = chestSpawn;
 			}
 		} catch (Exception e) {
-			Log.warning("Chest event exception:");
+			log.warn("Chest event exception:");
 			e.printStackTrace();
 		}
 	}
 
-	public void moveChest(L2Npc chest, final boolean delayed) {
+	public void moveChest(Npc chest, final boolean delayed) {
 		if (chest == null) {
 			return;
 		}
 
-		final L2NpcTemplate tmpl = NpcTable.getInstance().getTemplate(50101);
+		final NpcTemplate tmpl = NpcTable.getInstance().getTemplate(50101);
 		if (tmpl == null) {
-			Log.warning("ERROR: NPC " + chest.getObjectId() + " has a null template.");
+			log.warn("ERROR: NPC " + chest.getObjectId() + " has a null template.");
 			return;
 		}
 
@@ -131,7 +135,7 @@ public class HiddenChests {
 		}
 
 		if (index >= specialChestSpawns.length) {
-			Log.warning("ERROR: NPC " + chest.getObjectId() + " is not in the chest spawns list.");
+			log.warn("ERROR: NPC " + chest.getObjectId() + " is not in the chest spawns list.");
 			chest.deleteMe();
 			chest.getSpawn().stopRespawn();
 			return;
@@ -155,11 +159,11 @@ public class HiddenChests {
 				boolean found = false;
 				while (!found) {
 					L2Spawn randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
-					L2Npc randomNpc = randomSpawn.getNpc();
+					Npc randomNpc = randomSpawn.getNpc();
 					while (randomSpawn.getNpc().getX() < 150000 || randomSpawn.getNpc().getY() > 227000 ||
-							randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CASTLE) ||
-							randomSpawn.getNpc().isInsideZone(L2Character.ZONE_CLANHALL) ||
-							randomSpawn.getNpc().isInsideZone(L2Character.ZONE_FORT)) {
+							randomSpawn.getNpc().isInsideZone(Creature.ZONE_CASTLE) ||
+							randomSpawn.getNpc().isInsideZone(Creature.ZONE_CLANHALL) ||
+							randomSpawn.getNpc().isInsideZone(Creature.ZONE_FORT)) {
 						randomSpawn = SpawnTable.getInstance().getRandomDistributedSpawn();
 					}
 
@@ -219,7 +223,7 @@ public class HiddenChests {
 		}, delayed ? 6 * 3600 * 1000 : 1000);
 	}
 
-	public void showInfo(L2PcInstance activeChar) {
+	public void showInfo(Player activeChar) {
 		String html = "<html>" + "<body>" +
 				"<center><table><tr><td><img src=icon.etc_alphabet_h_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_i_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_d_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_d_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_e_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_n_i00 width=32 height=32></td></tr></table></center>" +
 				"<table><tr><td><img src=icon.etc_alphabet_t_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_r_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_e_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_a_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_s_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_u_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_r_i00 width=32 height=32></td><td><img src=icon.etc_alphabet_e_i00 width=32 height=32></td></tr></table>" +
@@ -304,10 +308,10 @@ public class HiddenChests {
 	}
 
 	class OpenChestCastFinalizer implements Runnable {
-		private L2PcInstance player;
-		private L2Npc chest;
+		private Player player;
+		private Npc chest;
 
-		OpenChestCastFinalizer(L2PcInstance player, L2Npc chest) {
+		OpenChestCastFinalizer(Player player, Npc chest) {
 			this.player = player;
 			this.chest = chest;
 		}
@@ -332,7 +336,7 @@ public class HiddenChests {
 		}
 	}
 
-/*	public void tryOpenChest(L2PcInstance activeChar, L2Npc npc)
+/*	public void tryOpenChest(Player activeChar, Npc npc)
 	{
 		if (activeChar == null)
 		{

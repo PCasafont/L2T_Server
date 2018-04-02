@@ -25,12 +25,16 @@ import handlers.usercommandhandlers.*;
 import handlers.voicedcommandhandlers.*;
 import l2server.Config;
 import l2server.gameserver.handler.*;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author nBd
  */
 public class MasterHandler {
+	private static Logger log = LoggerFactory.getLogger(MasterHandler.class.getName());
+
+
 	private static void loadActionHandlers() {
 		ActionHandler.getInstance().registerActionHandler(new L2ArtefactInstanceAction());
 		ActionHandler.getInstance().registerActionHandler(new L2DecoyAction());
@@ -43,7 +47,7 @@ public class MasterHandler {
 		ActionHandler.getInstance().registerActionHandler(new L2SummonAction());
 		ActionHandler.getInstance().registerActionHandler(new L2TrapAction());
 		ActionHandler.getInstance().registerActionHandler(new L2StatueInstanceAction());
-		Log.config("Loaded " + ActionHandler.getInstance().size() + "  ActionHandlers");
+		log.debug("Loaded " + ActionHandler.getInstance().size() + "  ActionHandlers");
 	}
 
 	private static void loadActionShiftHandlers() {
@@ -53,7 +57,7 @@ public class MasterHandler {
 		ActionHandler.getInstance().registerActionShiftHandler(new L2PcInstanceActionShift());
 		ActionHandler.getInstance().registerActionShiftHandler(new L2StaticObjectInstanceActionShift());
 		ActionHandler.getInstance().registerActionShiftHandler(new L2SummonActionShift());
-		Log.config("Loaded " + ActionHandler.getInstance().sizeShift() + " ActionShiftHandlers");
+		log.debug("Loaded " + ActionHandler.getInstance().sizeShift() + " ActionShiftHandlers");
 	}
 
 	private static void loadAdminHandlers() {
@@ -123,7 +127,7 @@ public class MasterHandler {
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminVitality());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminZone());
 		AdminCommandHandler.getInstance().registerAdminCommandHandler(new AdminAPlayer());
-		Log.config("Loaded " + AdminCommandHandler.getInstance().size() + " AdminCommandHandlers");
+		log.debug("Loaded " + AdminCommandHandler.getInstance().size() + " AdminCommandHandlers");
 	}
 
 	private static void loadBypassHandlers() {
@@ -171,7 +175,7 @@ public class MasterHandler {
 		BypassHandler.getInstance().registerBypassHandler(new CustomBypass());
 		BypassHandler.getInstance().registerBypassHandler(new ShowAuction());
 
-		Log.config("Loaded " + BypassHandler.getInstance().size() + "  BypassHandlers");
+		log.debug("Loaded " + BypassHandler.getInstance().size() + "  BypassHandlers");
 	}
 
 	private static void loadChatHandlers() {
@@ -188,7 +192,7 @@ public class MasterHandler {
 		ChatHandler.getInstance().registerChatHandler(new ChatTell());
 		ChatHandler.getInstance().registerChatHandler(new ChatTrade());
 		ChatHandler.getInstance().registerChatHandler(new ChatGlobal());
-		Log.config("Loaded " + ChatHandler.getInstance().size() + "  ChatHandlers");
+		log.debug("Loaded " + ChatHandler.getInstance().size() + "  ChatHandlers");
 	}
 
 	private static void loadItemHandlers() {
@@ -231,7 +235,7 @@ public class MasterHandler {
 		ItemHandler.getInstance().registerItemHandler(new AppearanceStone());
 		ItemHandler.getInstance().registerItemHandler(new EventItem());
 		ItemHandler.getInstance().registerItemHandler(new ChangeAttribute());
-		Log.config("Loaded " + ItemHandler.getInstance().size() + " ItemHandlers");
+		log.debug("Loaded " + ItemHandler.getInstance().size() + " ItemHandlers");
 	}
 
 	private static void loadSkillHandlers() {
@@ -287,7 +291,7 @@ public class MasterHandler {
 		SkillHandler.getInstance().registerSkillHandler(new GoToFriend());
 		SkillHandler.getInstance().registerSkillHandler(new SwitchPosition());
 		SkillHandler.getInstance().registerSkillHandler(new ChangeHairAccessory());
-		Log.config("Loaded " + SkillHandler.getInstance().size() + " SkillHandlers");
+		log.debug("Loaded " + SkillHandler.getInstance().size() + " SkillHandlers");
 	}
 
 	private static void loadUserHandlers() {
@@ -304,7 +308,7 @@ public class MasterHandler {
 		UserCommandHandler.getInstance().registerUserCommandHandler(new ChannelDelete());
 		UserCommandHandler.getInstance().registerUserCommandHandler(new ChannelListUpdate());
 		UserCommandHandler.getInstance().registerUserCommandHandler(new Birthday());
-		Log.config("Loaded " + UserCommandHandler.getInstance().size() + " UserHandlers");
+		log.debug("Loaded " + UserCommandHandler.getInstance().size() + " UserHandlers");
 	}
 
 	private static void loadVoicedHandlers() {
@@ -325,14 +329,14 @@ public class MasterHandler {
 
 		VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new Sell());
 		VoicedCommandHandler.getInstance().registerVoicedCommandHandler(new TryOn());
-		Log.config("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
+		log.debug("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
 	}
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Log.config("Loading Handlers...");
+		log.debug("Loading Handlers...");
 		loadActionHandlers();
 		loadActionShiftHandlers();
 		loadAdminHandlers();
@@ -342,6 +346,6 @@ public class MasterHandler {
 		loadSkillHandlers();
 		loadUserHandlers();
 		loadVoicedHandlers();
-		Log.config("Handlers Loaded...");
+		log.debug("Handlers Loaded...");
 	}
 }

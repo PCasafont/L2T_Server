@@ -15,42 +15,43 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.StatusUpdate.StatusUpdateDisplay;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 public class EffectLakcisDisc extends L2Effect {
-	public EffectLakcisDisc(Env env, L2EffectTemplate template) {
+	public EffectLakcisDisc(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.BUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.BUFF;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {
-		if (getEffected().isDead() || !(getEffected() instanceof L2PcInstance)) {
+		if (getEffected().isDead() || !(getEffected() instanceof Player)) {
 			return false;
 		}
 
-		L2PcInstance player = (L2PcInstance) getEffected();
+		Player player = (Player) getEffected();
 
 		double amount = calc();
-		for (L2Character target : player.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius())) {
+		for (Creature target : player.getKnownList().getKnownCharactersInRadius(getSkill().getSkillRadius())) {
 			if (target.isAutoAttackable(player)) {
 				target.reduceCurrentHpByDOT(amount, getEffector(), getSkill());
 			} else if (target.getActingPlayer() != null) {
-				L2PcInstance targetPlayer = target.getActingPlayer();
+				Player targetPlayer = target.getActingPlayer();
 				if (targetPlayer.isInParty() && targetPlayer.getParty() == player.getParty() ||
 						target.getActingPlayer().getClanId() != 0 && target.getActingPlayer().getClanId() == player.getClanId() ||
 						target.getActingPlayer().getAllyId() != 0 && target.getActingPlayer().getAllyId() == player.getAllyId()) {

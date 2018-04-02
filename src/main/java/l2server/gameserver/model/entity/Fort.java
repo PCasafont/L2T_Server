@@ -25,17 +25,18 @@ import l2server.gameserver.datatables.*;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2FortBallistaInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
-import l2server.gameserver.model.zone.type.L2FortZone;
-import l2server.gameserver.model.zone.type.L2SiegeZone;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.FortBallistaInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.StaticObjectInstance;
+import l2server.gameserver.model.zone.type.FortZone;
+import l2server.gameserver.model.zone.type.SiegeZone;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.gameserver.network.serverpackets.PledgeShowInfoUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -46,17 +47,20 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 public class Fort {
+	private static Logger log = LoggerFactory.getLogger(Fort.class.getName());
+
+
 	// =========================================================
 	// Data Field
 	private int fortId = 0;
-	private List<L2DoorInstance> doors = new ArrayList<>();
-	private L2StaticObjectInstance flagPole = null;
+	private List<DoorInstance> doors = new ArrayList<>();
+	private StaticObjectInstance flagPole = null;
 	private String name = "";
 	private FortSiege siege = null;
 	private Calendar siegeDate;
 	private Calendar lastOwnedTime;
-	private L2FortZone fortZone;
-	private L2SiegeZone zone;
+	private FortZone fortZone;
+	private SiegeZone zone;
 	private L2Clan fortOwner = null;
 	private int fortType = 0;
 	private int state = 0;
@@ -64,7 +68,7 @@ public class Fort {
 	private int blood = 0;
 	private int supplyLvL = 0;
 	private HashMap<Integer, FortFunction> function;
-	private ArrayList<L2Skill> residentialSkills = new ArrayList<>();
+	private ArrayList<Skill> residentialSkills = new ArrayList<>();
 	private ScheduledFuture<?>[] fortUpdater = new ScheduledFuture<?>[2];
 	private boolean isSuspiciousMerchantSpawned = false;
 
@@ -167,7 +171,7 @@ public class Fort {
 						if (cwh) {
 							getOwnerClan().getWarehouse().destroyItemByItemId("CS_function_fee", 57, fee, null, null);
 							if (Config.DEBUG) {
-								Log.warning("Deducted " + fee + " adena from " + getName() + " owner's cwh for function id : " + getType());
+								log.warn("Deducted " + fee + " adena from " + getName() + " owner's cwh for function id : " + getType());
 							}
 						}
 						ThreadPoolManager.getInstance().scheduleGeneral(new FunctionTask(true), getRate());
@@ -195,7 +199,7 @@ public class Fort {
 				statement.execute();
 				statement.close();
 			} catch (Exception e) {
-				Log.log(Level.SEVERE,
+				log.error(
 						"Exception: Fort.updateFunctions(int type, int lvl, int lease, long rate, long time, boolean addNew): " + e.getMessage(),
 						e);
 			} finally {
@@ -240,7 +244,7 @@ public class Fort {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception when creating fort's dynamic data: " + e.getMessage(), e);
+			log.warn("Exception when creating fort's dynamic data: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -272,7 +276,7 @@ public class Fort {
 				}
 				fortInst.despawnSpecialEnvoys();
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "Exception: ScheduleSpecialEnvoysSpawn() for Fort " + fortInst.getName() + ": " + e.getMessage(), e);
+				log.warn("Exception: ScheduleSpecialEnvoysSpawn() for Fort " + fortInst.getName() + ": " + e.getMessage(), e);
 			}
 		}
 	}
@@ -302,9 +306,9 @@ public class Fort {
 		return getZone().isInsideZone(x, y, z);
 	}
 
-	public L2SiegeZone getZone() {
+	public SiegeZone getZone() {
 		if (zone == null) {
-			for (L2SiegeZone zone : ZoneManager.getInstance().getAllZones(L2SiegeZone.class)) {
+			for (SiegeZone zone : ZoneManager.getInstance().getAllZones(SiegeZone.class)) {
 				if (zone.getSiegeObjectId() == fortId) {
 					this.zone = zone;
 					break;
@@ -314,9 +318,9 @@ public class Fort {
 		return zone;
 	}
 
-	public L2FortZone getFortZone() {
+	public FortZone getFortZone() {
 		if (fortZone == null) {
-			for (L2FortZone zone : ZoneManager.getInstance().getAllZones(L2FortZone.class)) {
+			for (FortZone zone : ZoneManager.getInstance().getAllZones(FortZone.class)) {
 				if (zone.getFortId() == fortId) {
 					fortZone = zone;
 					break;
@@ -331,24 +335,24 @@ public class Fort {
 	 *
 	 * @return
 	 */
-	public double getDistance(L2Object obj) {
+	public double getDistance(WorldObject obj) {
 		return getZone().getDistanceToZone(obj);
 	}
 
-	public void closeDoor(L2PcInstance activeChar, int doorId) {
+	public void closeDoor(Player activeChar, int doorId) {
 		openCloseDoor(activeChar, doorId, false);
 	}
 
-	public void openDoor(L2PcInstance activeChar, int doorId) {
+	public void openDoor(Player activeChar, int doorId) {
 		openCloseDoor(activeChar, doorId, true);
 	}
 
-	public void openCloseDoor(L2PcInstance activeChar, int doorId, boolean open) {
+	public void openCloseDoor(Player activeChar, int doorId, boolean open) {
 		if (activeChar.getClan() != getOwnerClan()) {
 			return;
 		}
 
-		L2DoorInstance door = getDoor(doorId);
+		DoorInstance door = getDoor(doorId);
 		if (door != null) {
 			if (open) {
 				door.openMe();
@@ -371,14 +375,14 @@ public class Fort {
 			// Remove points from old owner
 			updateClansReputation(oldowner, true);
 			try {
-				L2PcInstance oldleader = oldowner.getLeader().getPlayerInstance();
+				Player oldleader = oldowner.getLeader().getPlayerInstance();
 				if (oldleader != null) {
 					if (oldleader.getMountType() == 2) {
 						oldleader.dismount();
 					}
 				}
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "Exception in setOwner: " + e.getMessage(), e);
+				log.warn("Exception in setOwner: " + e.getMessage(), e);
 			}
 			removeOwner(true);
 		}
@@ -413,7 +417,7 @@ public class Fort {
 				getSiege().endSiege();
 			}
 
-			for (L2PcInstance member : clan.getOnlineMembers(0)) {
+			for (Player member : clan.getOnlineMembers(0)) {
 				giveResidentialSkills(member);
 				member.sendSkillList();
 			}
@@ -424,7 +428,7 @@ public class Fort {
 	public void removeOwner(boolean updateDB) {
 		L2Clan clan = getOwnerClan();
 		if (clan != null) {
-			for (L2PcInstance member : clan.getOnlineMembers(0)) {
+			for (Player member : clan.getOnlineMembers(0)) {
 				removeResidentialSkills(member);
 				member.sendSkillList();
 			}
@@ -479,7 +483,7 @@ public class Fort {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: saveFortVariables(): " + e.getMessage(), e);
+			log.warn("Exception: saveFortVariables(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -489,7 +493,7 @@ public class Fort {
 	 * Show or hide flag inside flagpole<BR><BR>
 	 */
 	public void setVisibleFlag(boolean val) {
-		L2StaticObjectInstance flagPole = getFlagPole();
+		StaticObjectInstance flagPole = getFlagPole();
 		if (flagPole != null) {
 			flagPole.setMeshIndex(val ? 1 : 0);
 		}
@@ -499,7 +503,7 @@ public class Fort {
 	 * Respawn all doors on fort grounds<BR><BR>
 	 */
 	public void resetDoors() {
-		for (L2DoorInstance door : doors) {
+		for (DoorInstance door : doors) {
 			if (door.getOpen()) {
 				door.closeMe();
 			}
@@ -572,7 +576,7 @@ public class Fort {
 				setOwnerClan(null);
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: loadFortData(): " + e.getMessage(), e);
+			log.warn("Exception: loadFortData(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -602,7 +606,7 @@ public class Fort {
 			}
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Exception: Fort.loadFunctions(): " + e.getMessage(), e);
+			log.error("Exception: Fort.loadFunctions(): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -623,7 +627,7 @@ public class Fort {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Exception: Fort.removeFunctions(int functionType): " + e.getMessage(), e);
+			log.error("Exception: Fort.removeFunctions(int functionType): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -639,12 +643,12 @@ public class Fort {
 		}
 	}
 
-	public boolean updateFunctions(L2PcInstance player, int type, int lvl, int lease, long rate, boolean addNew) {
+	public boolean updateFunctions(Player player, int type, int lvl, int lease, long rate, boolean addNew) {
 		if (player == null) {
 			return false;
 		}
 		if (Config.DEBUG) {
-			Log.warning("Called Fort.updateFunctions(int type, int lvl, int lease, long rate, boolean addNew) Owner : " + getOwnerClan());
+			log.warn("Called Fort.updateFunctions(int type, int lvl, int lease, long rate, boolean addNew) Owner : " + getOwnerClan());
 		}
 		if (lease > 0) {
 			if (!player.destroyItemByItemId("Consume", 57, lease, null, true)) {
@@ -659,7 +663,7 @@ public class Fort {
 			} else {
 				int diffLease = lease - function.get(type).getLease();
 				if (Config.DEBUG) {
-					Log.warning("Called Fort.updateFunctions diffLease : " + diffLease);
+					log.warn("Called Fort.updateFunctions diffLease : " + diffLease);
 				}
 				if (diffLease > 0) {
 					function.remove(type);
@@ -680,7 +684,7 @@ public class Fort {
 
 	// This method loads fort door data from database
 	private void loadDoor() {
-		for (L2DoorInstance door : DoorTable.getInstance().getDoors()) {
+		for (DoorInstance door : DoorTable.getInstance().getDoors()) {
 			if (door.getFort() != null && door.getFort().fortId == fortId) {
 				doors.add(door);
 			}
@@ -720,8 +724,8 @@ public class Fort {
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CLAN_IS_VICTORIOUS_IN_THE_FORTRESS_BATTLE_OF_S2);
 				sm.addString(clan.getName());
 				sm.addFortId(fortId);
-				Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
-				for (L2PcInstance player : pls) {
+				Collection<Player> pls = World.getInstance().getAllPlayers().values();
+				for (Player player : pls) {
 					player.sendPacket(sm);
 				}
 				clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
@@ -753,7 +757,7 @@ public class Fort {
 				fortUpdater[1] = null;
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: updateOwnerInDB(L2Clan clan): " + e.getMessage(), e);
+			log.warn("Exception: updateOwnerInDB(L2Clan clan): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -772,12 +776,12 @@ public class Fort {
 		fortOwner = clan;
 	}
 
-	public final L2DoorInstance getDoor(int doorId) {
+	public final DoorInstance getDoor(int doorId) {
 		if (doorId <= 0) {
 			return null;
 		}
 
-		for (L2DoorInstance door : getDoors()) {
+		for (DoorInstance door : getDoors()) {
 			if (door.getDoorId() == doorId) {
 				return door;
 			}
@@ -785,11 +789,11 @@ public class Fort {
 		return null;
 	}
 
-	public final List<L2DoorInstance> getDoors() {
+	public final List<DoorInstance> getDoors() {
 		return doors;
 	}
 
-	public final L2StaticObjectInstance getFlagPole() {
+	public final StaticObjectInstance getFlagPole() {
 		return flagPole;
 	}
 
@@ -859,7 +863,7 @@ public class Fort {
 			try {
 				f.engrave(clan);
 			} catch (Exception e) {
-				Log.log(Level.WARNING, "Exception in endFortressSiege " + e.getMessage(), e);
+				log.warn("Exception in endFortressSiege " + e.getMessage(), e);
 			}
 		}
 	}
@@ -891,7 +895,7 @@ public class Fort {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Exception: setFortState(int state, int castleId): " + e.getMessage(), e);
+			log.warn("Exception: setFortState(int state, int castleId): " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -978,14 +982,14 @@ public class Fort {
 			List<L2Spawn> spawns = SpawnTable.getInstance().getSpecificSpawns(name + "_siege_guards");
 			for (L2Spawn spawnDat : spawns) {
 				spawnDat.doSpawn();
-				if (spawnDat.getNpc() instanceof L2FortBallistaInstance) {
+				if (spawnDat.getNpc() instanceof FortBallistaInstance) {
 					spawnDat.stopRespawn();
 				} else {
 					spawnDat.startRespawn();
 				}
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error spawning siege guards for fort " + getName() + ":" + e.getMessage(), e);
+			log.warn("Error spawning siege guards for fort " + getName() + ":" + e.getMessage(), e);
 		}
 	}
 
@@ -1002,25 +1006,25 @@ public class Fort {
 				}
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error unspawning siege guards for fort " + getName() + ":" + e.getMessage(), e);
+			log.warn("Error unspawning siege guards for fort " + getName() + ":" + e.getMessage(), e);
 		}
 	}
 
-	public ArrayList<L2Skill> getResidentialSkills() {
+	public ArrayList<Skill> getResidentialSkills() {
 		return residentialSkills;
 	}
 
-	public void giveResidentialSkills(L2PcInstance player) {
+	public void giveResidentialSkills(Player player) {
 		if (residentialSkills != null && !residentialSkills.isEmpty()) {
-			for (L2Skill sk : residentialSkills) {
+			for (Skill sk : residentialSkills) {
 				player.addSkill(sk, false);
 			}
 		}
 	}
 
-	public void removeResidentialSkills(L2PcInstance player) {
+	public void removeResidentialSkills(Player player) {
 		if (residentialSkills != null && !residentialSkills.isEmpty()) {
-			for (L2Skill sk : residentialSkills) {
+			for (Skill sk : residentialSkills) {
 				player.removeSkill(sk, false, true);
 			}
 		}

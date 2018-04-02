@@ -18,8 +18,8 @@ package handlers.admincommandhandlers;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.AutoSpawnHandler;
 import l2server.gameserver.model.AutoSpawnHandler.AutoSpawnInstance;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * Admin Command Handler for Mammon NPCs
@@ -32,7 +32,7 @@ public class AdminMammon implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_mammon_find", "admin_mammon_respawn",};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		int teleportIndex = -1;
 		AutoSpawnInstance blackSpawnInst = AutoSpawnHandler.getInstance().getAutoSpawnInstance(31126, false); // Blacksmith
 		AutoSpawnInstance merchSpawnInst = AutoSpawnHandler.getInstance().getAutoSpawnInstance(31113, false); // Merchant
@@ -48,7 +48,7 @@ public class AdminMammon implements IAdminCommandHandler {
 			}
 
 			if (blackSpawnInst != null) {
-				L2Npc[] blackInst = blackSpawnInst.getNPCInstanceList();
+				Npc[] blackInst = blackSpawnInst.getNPCInstanceList();
 				if (blackInst.length > 0) {
 					int x1 = blackInst[0].getX(), y1 = blackInst[0].getY(), z1 = blackInst[0].getZ();
 					activeChar.sendMessage("Blacksmith of Mammon: " + x1 + " " + y1 + " " + z1);
@@ -61,7 +61,7 @@ public class AdminMammon implements IAdminCommandHandler {
 			}
 
 			if (merchSpawnInst != null) {
-				L2Npc[] merchInst = merchSpawnInst.getNPCInstanceList();
+				Npc[] merchInst = merchSpawnInst.getNPCInstanceList();
 				if (merchInst.length > 0) {
 					int x2 = merchInst[0].getX(), y2 = merchInst[0].getY(), z2 = merchInst[0].getZ();
 					activeChar.sendMessage("Merchant of Mammon: " + x2 + " " + y2 + " " + z2);

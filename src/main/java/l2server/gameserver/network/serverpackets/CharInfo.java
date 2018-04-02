@@ -19,13 +19,12 @@ import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.instancemanager.CursedWeaponsManager;
 import l2server.gameserver.model.L2Transformation;
-import l2server.gameserver.model.actor.instance.L2DecoyInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.DecoyInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.model.itemcontainer.PcInventory;
 import l2server.gameserver.stats.VisualEffect;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.NpcTemplate;
 
 import java.util.Set;
 
@@ -53,7 +52,7 @@ import java.util.Set;
  * @version $Revision: 1.7.2.6.2.11 $ $Date: 2005/04/11 10:05:54 $
  */
 public class CharInfo extends L2GameServerPacket {
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	private PcInventory inv;
 	private int objId;
 	private int x, y, z, heading;
@@ -75,7 +74,7 @@ public class CharInfo extends L2GameServerPacket {
 
 	/**
 	 */
-	public CharInfo(L2PcInstance cha) {
+	public CharInfo(Player cha) {
 		activeChar = cha;
 		objId = cha.getObjectId();
 		inv = cha.getInventory();
@@ -108,7 +107,7 @@ public class CharInfo extends L2GameServerPacket {
 		//isDisguised = TerritoryWarManager.getInstance().isDisguised(cha.getObjectId());
 	}
 
-	public CharInfo(L2DecoyInstance decoy) {
+	public CharInfo(DecoyInstance decoy) {
 		this(decoy.getActingPlayer()); // init
 		vehicleId = 0;
 		airShipHelm = 0;
@@ -123,14 +122,14 @@ public class CharInfo extends L2GameServerPacket {
 	protected final void writeImpl() {
 		boolean gmSeeInvis = false;
 		if (invisibleCharacter != 0) {
-			L2PcInstance tmp = getClient().getActiveChar();
+			Player tmp = getClient().getActiveChar();
 			if (tmp != null && (tmp.isGM() || tmp.isInSameParty(activeChar))) {
 				gmSeeInvis = true;
 			}
 		}
 
 		if (activeChar.getPoly().isMorphed()) {
-			L2NpcTemplate template = NpcTable.getInstance().getTemplate(activeChar.getPoly().getPolyId());
+			NpcTemplate template = NpcTable.getInstance().getTemplate(activeChar.getPoly().getPolyId());
 
 			if (template != null) {
 				writeC(0x0c);
@@ -198,7 +197,7 @@ public class CharInfo extends L2GameServerPacket {
 				writeC(0x01);
 				writeD(0x00);
 			} else {
-				Log.warning("Character " + activeChar.getName() + " (" + activeChar.getObjectId() + ") morphed in a Npc (" +
+				log.warn("Character " + activeChar.getName() + " (" + activeChar.getObjectId() + ") morphed in a Npc (" +
 						activeChar.getPoly().getPolyId() + ") w/o template.");
 			}
 		} else {
@@ -370,8 +369,8 @@ public class CharInfo extends L2GameServerPacket {
 			}
 
 			writeC(activeChar.getMountType()); // 1-on Strider, 2-on Wyvern, 3-on Great Wolf, 0-no mount
-			writeC(activeChar.getPrivateStoreType() != L2PcInstance.STORE_PRIVATE_CUSTOM_SELL ? activeChar.getPrivateStoreType() :
-					L2PcInstance.STORE_PRIVATE_SELL);
+			writeC(activeChar.getPrivateStoreType() != Player.STORE_PRIVATE_CUSTOM_SELL ? activeChar.getPrivateStoreType() :
+					Player.STORE_PRIVATE_SELL);
 
 			writeH(activeChar.getCubics().size());
 			activeChar.getCubics().keySet().forEach(this::writeH);
@@ -447,7 +446,7 @@ public class CharInfo extends L2GameServerPacket {
 			writeC(inv.getCloakStatus());
 			boolean showWings = true;
 			if (getWriteClient() != null && getWriteClient().getActiveChar() != null) {
-				final L2PcInstance player = getWriteClient().getActiveChar();
+				final Player player = getWriteClient().getActiveChar();
 				showWings = !player.isNickNameWingsDisabled() && !player.isPlayingEvent();
 			}
 

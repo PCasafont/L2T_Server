@@ -16,38 +16,35 @@
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.skills.L2SkillType;
-
-import java.util.logging.Logger;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.skills.SkillType;
 
 /**
  * @author Julian
  */
 public class DeluxeKey implements ISkillHandler {
-	private static Logger log = Logger.getLogger(DeluxeKey.class.getName());
 
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.DELUXE_KEY_UNLOCK};
+	private static final SkillType[] SKILL_IDS = {SkillType.DELUXE_KEY_UNLOCK};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		if (!(activeChar instanceof L2PcInstance)) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		if (!(activeChar instanceof Player)) {
 			return;
 		}
 
-		L2Object[] targetList = skill.getTargetList(activeChar);
+		WorldObject[] targetList = skill.getTargetList(activeChar);
 
 		if (targetList == null) {
 			return;
 		}
 
-		log.fine("Delux key casting succeded.");
+		log.debug("Delux key casting succeded.");
 
 		// This is just a dummy skill handler for the golden food and crystal food skills,
 		// since the AI responce onSkillUse handles the rest.
@@ -58,7 +55,7 @@ public class DeluxeKey implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

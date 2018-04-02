@@ -17,7 +17,7 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.Map;
 
@@ -30,7 +30,7 @@ public class ExInstanceList extends L2GameServerPacket {
 	private int current = -1;
 	private int objId;
 	
-	public ExInstanceList(L2PcInstance player) {
+	public ExInstanceList(Player player) {
 		objId = player.getObjectId();
 		
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);

@@ -21,9 +21,9 @@ import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.L2SiegeClan;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.gameserver.network.serverpackets.SpecialCamera;
@@ -36,7 +36,7 @@ import java.util.List;
  * @author theOne
  */
 public class Benom extends L2AttackableAIScript {
-	private L2Npc benom = null;
+	private Npc benom = null;
 	private static final int benomId = 29054;
 	private static final int dungeonGk = 35506;
 
@@ -101,7 +101,7 @@ public class Benom extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		if (npc.getCastle().getSiege().getIsInProgress()) {
 			npc.showChatWindow(player, 1);
 		} else {
@@ -115,7 +115,7 @@ public class Benom extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		int benomStatus = GrandBossManager.getInstance().getBossStatus(benomId);
 
 		if (event.equals("BenomRaidRoomSpawn")) {
@@ -145,14 +145,14 @@ public class Benom extends L2AttackableAIScript {
 			startQuestTimer("BenomWalk", 5000, npc, null);
 			benomWalkRouteStep = 0;
 		} else if (event.equals("Attacking")) {
-			ArrayList<L2PcInstance> numPlayers = new ArrayList<L2PcInstance>();
-			for (L2PcInstance plr : npc.getKnownList().getKnownPlayers().values()) {
+			ArrayList<Player> numPlayers = new ArrayList<Player>();
+			for (Player plr : npc.getKnownList().getKnownPlayers().values()) {
 				numPlayers.add(plr);
 			}
 
 			if (numPlayers.size() > 0) {
-				L2PcInstance target = numPlayers.get(Rnd.get(numPlayers.size()));
-				((L2Attackable) npc).addDamageHate(target, 0, 999);
+				Player target = numPlayers.get(Rnd.get(numPlayers.size()));
+				((Attackable) npc).addDamageHate(target, 0, 999);
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 
 				startQuestTimer("Attacking", 2000, npc, player);
@@ -221,19 +221,19 @@ public class Benom extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onAggroRangeEnter(Npc npc, Player player, boolean isPet) {
 		if (npc.getCastle().getSiege().getIsInProgress()) {
 			cancelQuestTimer("BenomWalk", npc, null);
 			cancelQuestTimer("BenomWalkFinish", npc, null);
 			startQuestTimer("Attacking", 100, npc, player);
-		} else if (((L2Attackable) npc).getMostHated() == null) {
+		} else if (((Attackable) npc).getMostHated() == null) {
 			return null;
 		}
 
 		return super.onAggroRangeEnter(npc, player, isPet);
 	}
 
-	public String onKill(L2Npc npc, L2PcInstance player, Boolean isPet) {
+	public String onKill(Npc npc, Player player, Boolean isPet) {
 		GrandBossManager.getInstance().setBossStatus(benomId, DEAD);
 
 		cancelQuestTimer("BenomWalk", npc, null);
@@ -246,7 +246,7 @@ public class Benom extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc) {
+	public String onSpawn(Npc npc) {
 		npc.broadcastPacket(new NpcSay(npc.getObjectId(),
 				1,
 				npc.getNpcId(),

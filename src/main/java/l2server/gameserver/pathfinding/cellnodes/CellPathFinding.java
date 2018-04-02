@@ -16,26 +16,28 @@
 package l2server.gameserver.pathfinding.cellnodes;
 
 import l2server.Config;
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.World;
 import l2server.gameserver.pathfinding.AbstractNode;
 import l2server.gameserver.pathfinding.AbstractNodeLoc;
 import l2server.gameserver.pathfinding.PathFinding;
-import l2server.log.Log;
 import l2server.util.StringUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.logging.Level;
 
 /**
  * @author Sami, DS
  * Credits to Diamond
  */
 public class CellPathFinding extends PathFinding {
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
 	private BufferInfo[] allBuffers;
 	private int findSuccess = 0;
 	private int findFails = 0;
@@ -44,7 +46,7 @@ public class CellPathFinding extends PathFinding {
 	private int postFilterPasses = 0;
 	private long postFilterElapsed = 0;
 
-	private ArrayList<L2ItemInstance> debugItems = null;
+	private ArrayList<Item> debugItems = null;
 
 	public static CellPathFinding getInstance() {
 		return SingletonHolder.instance;
@@ -68,7 +70,7 @@ public class CellPathFinding extends PathFinding {
 				allBuffers[i] = new BufferInfo(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "CellPathFinding: Problem during buffer init: " + e.getMessage(), e);
+			log.warn("CellPathFinding: Problem during buffer init: " + e.getMessage(), e);
 			throw new Error("CellPathFinding: load aborted");
 		}
 	}
@@ -84,14 +86,14 @@ public class CellPathFinding extends PathFinding {
 	 */
 	@Override
 	public List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean playable) {
-		int gx = x - L2World.MAP_MIN_X >> 4;
-		int gy = y - L2World.MAP_MIN_Y >> 4;
+		int gx = x - World.MAP_MIN_X >> 4;
+		int gy = y - World.MAP_MIN_Y >> 4;
 		if (!GeoData.getInstance().hasGeo(x, y)) {
 			return null;
 		}
 		short gz = GeoData.getInstance().getHeight(x, y, z);
-		int gtx = tx - L2World.MAP_MIN_X >> 4;
-		int gty = ty - L2World.MAP_MIN_Y >> 4;
+		int gtx = tx - World.MAP_MIN_X >> 4;
+		int gty = ty - World.MAP_MIN_Y >> 4;
 		if (!GeoData.getInstance().hasGeo(tx, ty)) {
 			return null;
 		}
@@ -107,7 +109,7 @@ public class CellPathFinding extends PathFinding {
 			if (debugItems == null) {
 				debugItems = new ArrayList<>();
 			} else {
-				for (L2ItemInstance item : debugItems) {
+				for (Item item : debugItems) {
 					if (item == null) {
 						continue;
 					}
@@ -142,7 +144,7 @@ public class CellPathFinding extends PathFinding {
 
 			path = constructPath(result);
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 			return null;
 		} finally {
 			buffer.free();
@@ -288,7 +290,7 @@ public class CellPathFinding extends PathFinding {
 	}
 
 	private void dropDebugItem(int itemId, int num, AbstractNodeLoc loc) {
-		final L2ItemInstance item = new L2ItemInstance(IdFactory.getInstance().getNextId(), itemId);
+		final Item item = new Item(IdFactory.getInstance().getNextId(), itemId);
 		item.setCount(num);
 		item.spawnMe(loc.getX(), loc.getY(), loc.getZ());
 		debugItems.add(item);

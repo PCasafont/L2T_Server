@@ -20,16 +20,16 @@ import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleManorManager;
 import l2server.gameserver.instancemanager.CastleManorManager.CropProcure;
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Manor;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2ManorManagerInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.ManorManagerInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 
-import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
+import static l2server.gameserver.model.actor.Npc.DEFAULT_INTERACTION_DISTANCE;
 import static l2server.gameserver.model.itemcontainer.PcInventory.MAX_ADENA;
 
 /**
@@ -77,18 +77,18 @@ public class RequestProcureCropList extends L2GameClientPacket {
 			return;
 		}
 		
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
 		
-		L2Object manager = player.getTarget();
+		WorldObject manager = player.getTarget();
 		
-		if (!(manager instanceof L2ManorManagerInstance)) {
+		if (!(manager instanceof ManorManagerInstance)) {
 			manager = player.getLastFolkNPC();
 		}
 		
-		if (!(manager instanceof L2ManorManagerInstance)) {
+		if (!(manager instanceof ManorManagerInstance)) {
 			return;
 		}
 		
@@ -96,7 +96,7 @@ public class RequestProcureCropList extends L2GameClientPacket {
 			return;
 		}
 		
-		int castleId = ((L2ManorManagerInstance) manager).getCastle().getCastleId();
+		int castleId = ((ManorManagerInstance) manager).getCastle().getCastleId();
 		
 		// Calculate summary values
 		int slots = 0;
@@ -107,7 +107,7 @@ public class RequestProcureCropList extends L2GameClientPacket {
 				continue;
 			}
 			
-			L2Item template = ItemTable.getInstance().getTemplate(i.getReward());
+			ItemTemplate template = ItemTable.getInstance().getTemplate(i.getReward());
 			weight += i.getCount() * template.getWeight();
 			
 			if (!template.isStackable()) {
@@ -160,7 +160,7 @@ public class RequestProcureCropList extends L2GameClientPacket {
 			}
 			
 			// check if player have correct items count
-			L2ItemInstance item = player.getInventory().getItemByObjectId(i.getObjectId());
+			Item item = player.getInventory().getItemByObjectId(i.getObjectId());
 			if (item == null || item.getCount() < i.getCount()) {
 				continue;
 			}

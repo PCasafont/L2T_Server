@@ -17,17 +17,21 @@ package l2server.gameserver;
 
 import l2server.Config;
 import l2server.gameserver.instancemanager.ItemsOnGroundManager;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.templates.item.L2EtcItemType;
-import l2server.log.Log;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.World;
+import l2server.gameserver.templates.item.EtcItemType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ItemsAutoDestroy {
-	protected List<L2ItemInstance> items = null;
+	private static Logger log = LoggerFactory.getLogger(ItemsAutoDestroy.class.getName());
+
+
+	protected List<Item> items = null;
 	protected static long sleep;
 
 	private ItemsAutoDestroy() {
@@ -38,7 +42,7 @@ public class ItemsAutoDestroy {
 		if (Config.AUTODESTROY_ITEM_AFTER * 1000 <= 0 && Config.HERB_AUTO_DESTROY_TIME * 1000 <= 0) {
 			return;
 		}
-		Log.info("Initializing ItemsAutoDestroy.");
+		log.info("Initializing ItemsAutoDestroy.");
 		items = new CopyOnWriteArrayList<>();
 		sleep = Config.AUTODESTROY_ITEM_AFTER * 1000;
 		if (sleep == 0) // it should not happend as it is not called when AUTODESTROY_ITEM_AFTER = 0 but we never know..
@@ -52,14 +56,14 @@ public class ItemsAutoDestroy {
 		return SingletonHolder.instance;
 	}
 
-	public synchronized void addItem(L2ItemInstance item) {
+	public synchronized void addItem(Item item) {
 		item.setDropTime(System.currentTimeMillis());
 		items.add(item);
 	}
 
 	public synchronized void removeItems() {
 		if (Config.DEBUG) {
-			Log.info("[ItemsAutoDestroy] : " + items.size() + " items to check.");
+			log.info("[ItemsAutoDestroy] : " + items.size() + " items to check.");
 		}
 
 		if (items.isEmpty()) {
@@ -67,14 +71,14 @@ public class ItemsAutoDestroy {
 		}
 
 		long curtime = System.currentTimeMillis();
-		for (L2ItemInstance item : items) {
-			if (item == null || item.getDropTime() == 0 || item.getLocation() != L2ItemInstance.ItemLocation.VOID) {
+		for (Item item : items) {
+			if (item == null || item.getDropTime() == 0 || item.getLocation() != Item.ItemLocation.VOID) {
 				items.remove(item);
 			} else {
 				if (item.getItem().getAutoDestroyTime() > 0) {
 					if (curtime - item.getDropTime() > item.getItem().getAutoDestroyTime()) {
-						L2World.getInstance().removeVisibleObject(item, item.getWorldRegion());
-						L2World.getInstance().removeObject(item);
+						World.getInstance().removeVisibleObject(item, item.getWorldRegion());
+						World.getInstance().removeObject(item);
 						items.remove(item);
 						if (Config.SAVE_DROPPED_ITEM) {
 							ItemsOnGroundManager.getInstance().removeObject(item);
@@ -82,18 +86,18 @@ public class ItemsAutoDestroy {
 					}
 				}
 
-				if (item.getItemType() == L2EtcItemType.HERB) {
+				if (item.getItemType() == EtcItemType.HERB) {
 					if (curtime - item.getDropTime() > Config.HERB_AUTO_DESTROY_TIME * 1000) {
-						L2World.getInstance().removeVisibleObject(item, item.getWorldRegion());
-						L2World.getInstance().removeObject(item);
+						World.getInstance().removeVisibleObject(item, item.getWorldRegion());
+						World.getInstance().removeObject(item);
 						items.remove(item);
 						if (Config.SAVE_DROPPED_ITEM) {
 							ItemsOnGroundManager.getInstance().removeObject(item);
 						}
 					}
 				} else if (curtime - item.getDropTime() > sleep) {
-					L2World.getInstance().removeVisibleObject(item, item.getWorldRegion());
-					L2World.getInstance().removeObject(item);
+					World.getInstance().removeVisibleObject(item, item.getWorldRegion());
+					World.getInstance().removeObject(item);
 					items.remove(item);
 					if (Config.SAVE_DROPPED_ITEM) {
 						ItemsOnGroundManager.getInstance().removeObject(item);
@@ -103,7 +107,7 @@ public class ItemsAutoDestroy {
 		}
 
 		if (Config.DEBUG) {
-			Log.info("[ItemsAutoDestroy] : " + items.size() + " items remaining.");
+			log.info("[ItemsAutoDestroy] : " + items.size() + " items remaining.");
 		}
 	}
 

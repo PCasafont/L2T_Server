@@ -15,10 +15,10 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.World;
 import l2server.gameserver.model.PartyMatchRoom;
 import l2server.gameserver.model.PartyMatchRoomList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExClosePartyRoom;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -39,12 +39,12 @@ public final class RequestOustFromPartyRoom extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
 		
-		L2PcInstance member = L2World.getInstance().getPlayer(charid);
+		Player member = World.getInstance().getPlayer(charid);
 		if (member == null) {
 			return;
 		}

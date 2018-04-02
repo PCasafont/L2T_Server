@@ -15,8 +15,8 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
 
 /**
  * sample
@@ -34,10 +34,10 @@ public class MagicSkillLaunched extends L2GameServerPacket {
 	private int skillId;
 	private int skillLevel;
 	private int numberOfTargets;
-	private L2Object[] targets;
+	private WorldObject[] targets;
 	private int singleTargetId;
 	
-	public MagicSkillLaunched(L2Character cha, int skillId, int skillLevel, L2Object[] targets) {
+	public MagicSkillLaunched(Creature cha, int skillId, int skillLevel, WorldObject[] targets) {
 		charObjId = cha.getObjectId();
 		this.skillId = skillId;
 		this.skillLevel = skillLevel;
@@ -47,12 +47,12 @@ public class MagicSkillLaunched extends L2GameServerPacket {
 			this.targets = targets;
 		} else {
 			numberOfTargets = 1;
-			this.targets = new L2Object[]{cha};
+			this.targets = new WorldObject[]{cha};
 		}
 		singleTargetId = 0;
 	}
 	
-	public MagicSkillLaunched(L2Character cha, int skillId, int skillLevel) {
+	public MagicSkillLaunched(Creature cha, int skillId, int skillLevel) {
 		charObjId = cha.getObjectId();
 		this.skillId = skillId;
 		this.skillLevel = skillLevel;
@@ -70,7 +70,7 @@ public class MagicSkillLaunched extends L2GameServerPacket {
 		if (singleTargetId != 0 || numberOfTargets == 0) {
 			writeD(singleTargetId);
 		} else {
-			for (L2Object target : targets) {
+			for (WorldObject target : targets) {
 				writeD(target.getObjectId());
 			}
 		}

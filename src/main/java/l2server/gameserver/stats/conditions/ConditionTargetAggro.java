@@ -15,9 +15,9 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 
 /**
@@ -43,12 +43,12 @@ public class ConditionTargetAggro extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		L2Character target = env.target;
-		if (target instanceof L2MonsterInstance) {
-			return ((L2MonsterInstance) target).isAggressive() == isAggro;
+		Creature target = env.target;
+		if (target instanceof MonsterInstance) {
+			return ((MonsterInstance) target).isAggressive() == isAggro;
 		}
-		if (target instanceof L2PcInstance) {
-			return ((L2PcInstance) target).getReputation() < 0;
+		if (target instanceof Player) {
+			return ((Player) target).getReputation() < 0;
 		}
 		return false;
 	}

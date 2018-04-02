@@ -17,7 +17,8 @@ package l2server.gameserver.datatables;
 
 import l2server.Config;
 import l2server.gameserver.model.FishData;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -30,6 +31,9 @@ import java.util.List;
  * @author -Nemesiss-
  */
 public class FishTable {
+	private static Logger log = LoggerFactory.getLogger(FishTable.class.getName());
+
+
 
 	private static List<FishData> fishsNormal = new ArrayList<>();
 	private static List<FishData> fishsEasy = new ArrayList<>();
@@ -77,7 +81,7 @@ public class FishTable {
 			}
 		}
 		
-		Log.info("FishTable: Loaded " + count + " Fishes.");
+		log.info("FishTable: Loaded " + count + " Fishes.");
 	}
 	
 	/**
@@ -98,7 +102,7 @@ public class FishTable {
 		}
 		if (Fishs == null) {
 			// the fish list is empty
-			Log.warning("Fish are not defined !");
+			log.warn("Fish are not defined !");
 			return null;
 		}
 		for (FishData f : Fishs) {
@@ -112,7 +116,7 @@ public class FishTable {
 			result.add(f);
 		}
 		if (result.isEmpty()) {
-			Log.warning("Cant Find Any Fish!? - Lvl: " + lvl + " Type: " + type);
+			log.warn("Cant Find Any Fish!? - Lvl: " + lvl + " Type: " + type);
 		}
 		return result;
 	}

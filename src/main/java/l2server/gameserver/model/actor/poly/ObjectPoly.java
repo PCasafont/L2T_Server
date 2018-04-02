@@ -15,18 +15,18 @@
 
 package l2server.gameserver.model.actor.poly;
 
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 
 public class ObjectPoly {
 	// =========================================================
 	// Data Field
-	private L2Object activeObject;
+	private WorldObject activeObject;
 	private int polyId;
 	private String polyType;
 
 	// =========================================================
 	// Constructor
-	public ObjectPoly(L2Object activeObject) {
+	public ObjectPoly(WorldObject activeObject) {
 		this.activeObject = activeObject;
 	}
 
@@ -42,7 +42,7 @@ public class ObjectPoly {
 
 	// =========================================================
 	// Property - Public
-	public final L2Object getActiveObject() {
+	public final WorldObject getActiveObject() {
 		return activeObject;
 	}
 

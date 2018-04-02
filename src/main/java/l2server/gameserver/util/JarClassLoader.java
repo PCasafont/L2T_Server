@@ -15,7 +15,8 @@
 
 package l2server.gameserver.util;
 
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.DataInputStream;
 import java.io.File;
@@ -32,6 +33,9 @@ import java.util.zip.ZipFile;
  * @version $Revision: $ $Date: $
  */
 public class JarClassLoader extends ClassLoader {
+	private static Logger log = LoggerFactory.getLogger(JarClassLoader.class.getName());
+
+
 	HashSet<String> jars = new HashSet<>();
 
 	public void addJarFile(String filename) {
@@ -66,7 +70,7 @@ public class JarClassLoader extends ClassLoader {
 				zipStream.readFully(classData, 0, (int) entry.getSize());
 				break;
 			} catch (IOException e) {
-				Log.log(Level.WARNING, jarFile + ": " + e.getMessage(), e);
+				log.warn(jarFile + ": " + e.getMessage(), e);
 			} finally {
 				try {
 					zipFile.close();

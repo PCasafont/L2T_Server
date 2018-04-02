@@ -15,10 +15,11 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @author ZaKaX
@@ -28,7 +29,7 @@ public class EffectSpatialTrap extends L2Effect {
 	private int trapY;
 	private int trapZ;
 	
-	public EffectSpatialTrap(Env env, L2EffectTemplate template) {
+	public EffectSpatialTrap(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
@@ -37,12 +38,12 @@ public class EffectSpatialTrap extends L2Effect {
 	}
 	
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.SPATIAL_TRAP;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.SPATIAL_TRAP;
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
@@ -54,7 +55,7 @@ public class EffectSpatialTrap extends L2Effect {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

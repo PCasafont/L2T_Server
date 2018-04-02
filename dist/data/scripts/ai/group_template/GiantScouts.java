@@ -17,12 +17,12 @@ package ai.group_template;
 
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 
@@ -39,8 +39,8 @@ public class GiantScouts extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet) {
-		L2Character target = isPet ? player.getPet() : player;
+	public String onAggroRangeEnter(Npc npc, Player player, boolean isPet) {
+		Creature target = isPet ? player.getPet() : player;
 
 		if (GeoData.getInstance().canSeeTarget(npc, target)) {
 			if (!npc.isInCombat() && npc.getTarget() == null) {
@@ -49,15 +49,15 @@ public class GiantScouts extends L2AttackableAIScript {
 
 			npc.setTarget(target);
 			npc.setRunning();
-			((L2Attackable) npc).addDamageHate(target, 0, 999);
+			((Attackable) npc).addDamageHate(target, 0, 999);
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 
 			// Notify clan
-			Collection<L2Object> objs = npc.getKnownList().getKnownObjects().values();
-			for (L2Object obj : objs) {
+			Collection<WorldObject> objs = npc.getKnownList().getKnownObjects().values();
+			for (WorldObject obj : objs) {
 				if (obj != null) {
-					if (obj instanceof L2MonsterInstance) {
-						L2MonsterInstance monster = (L2MonsterInstance) obj;
+					if (obj instanceof MonsterInstance) {
+						MonsterInstance monster = (MonsterInstance) obj;
 						if (npc.getClan() != null && monster.getClan() != null && monster.getClan().equals(npc.getClan()) &&
 								GeoData.getInstance().canSeeTarget(npc, monster)) {
 							monster.setTarget(target);

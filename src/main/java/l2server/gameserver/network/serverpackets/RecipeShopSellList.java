@@ -17,7 +17,7 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2ManufactureItem;
 import l2server.gameserver.model.L2ManufactureList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * This class ...
@@ -27,9 +27,9 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class RecipeShopSellList extends L2GameServerPacket {
 	
-	private L2PcInstance buyer, manufacturer;
+	private Player buyer, manufacturer;
 	
-	public RecipeShopSellList(L2PcInstance buyer, L2PcInstance manufacturer) {
+	public RecipeShopSellList(Player buyer, Player manufacturer) {
 		this.buyer = buyer;
 		this.manufacturer = manufacturer;
 	}

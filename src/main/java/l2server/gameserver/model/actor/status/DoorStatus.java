@@ -15,15 +15,15 @@
 
 package l2server.gameserver.model.actor.status;
 
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
+import l2server.gameserver.model.actor.instance.DoorInstance;
 
 public class DoorStatus extends CharStatus {
-	public DoorStatus(L2DoorInstance activeChar) {
+	public DoorStatus(DoorInstance activeChar) {
 		super(activeChar);
 	}
 
 	@Override
-	public L2DoorInstance getActiveChar() {
-		return (L2DoorInstance) super.getActiveChar();
+	public DoorInstance getActiveChar() {
+		return (DoorInstance) super.getActiveChar();
 	}
 }

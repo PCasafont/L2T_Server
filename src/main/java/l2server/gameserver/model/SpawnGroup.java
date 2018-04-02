@@ -17,8 +17,9 @@ package l2server.gameserver.model;
 
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.instancemanager.SearchDropManager;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.xml.XmlNode;
 
 import java.util.ArrayList;
@@ -28,6 +29,9 @@ import java.util.List;
  * @author Pere
  */
 public class SpawnGroup {
+	private static Logger log = LoggerFactory.getLogger(SpawnGroup.class.getName());
+
+
 	private final int minZ;
 	private final int maxZ;
 	private final L2Territory territory = new L2Territory(0);
@@ -48,9 +52,9 @@ public class SpawnGroup {
 				int randomRespawn = subNode.getInt("randomRespawn", 0);
 				String dbName = subNode.getString("dbName", "");
 
-				L2NpcTemplate t = NpcTable.getInstance().getTemplate(npcId);
+				NpcTemplate t = NpcTable.getInstance().getTemplate(npcId);
 				if (t == null) {
-					Log.warning("Spawn group: no npc template with id " + npcId);
+					log.warn("Spawn group: no npc template with id " + npcId);
 					continue;
 				}
 

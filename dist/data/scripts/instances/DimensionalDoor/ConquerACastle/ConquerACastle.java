@@ -9,14 +9,14 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.GrandBossInstance;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
@@ -27,7 +27,8 @@ import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.VisualEffect;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -38,6 +39,9 @@ import java.util.List;
  */
 
 public class ConquerACastle extends L2AttackableAIScript {
+	private static Logger log = LoggerFactory.getLogger(ConquerACastle.class.getName());
+
+
 	private static final String qn = "ConquerACastle";
 
 	//Config
@@ -51,8 +55,8 @@ public class ConquerACastle extends L2AttackableAIScript {
 	private static final int crystalOfProtection = 80202;
 	private static final int shilensProtector = 80210;
 	private static final int[] raidMinions = {80208, 80209, 80211, 80212};
-	private static final L2Skill wildCannon = SkillTable.getInstance().getInfo(4230, 1);
-	private static final L2Skill dummyCast = SkillTable.getInstance().getInfo(299, 1);
+	private static final Skill wildCannon = SkillTable.getInstance().getInfo(4230, 1);
+	private static final Skill dummyCast = SkillTable.getInstance().getInfo(299, 1);
 	private static final Location[] enterCords = {new Location(-14968, 117129, -3217, 14944), //Gludio
 			new Location(19343, 152802, -3269, 6867), //Dion
 			new Location(107211, 145573, -3381, 47854), //Giran
@@ -96,22 +100,22 @@ public class ConquerACastle extends L2AttackableAIScript {
 
 	private class ConquerACastleWorld extends InstanceWorld {
 		private int castleId;
-		private L2Npc finalBoss;
-		private L2Npc dwarf;
-		private L2Npc golem;
+		private Npc finalBoss;
+		private Npc dwarf;
+		private Npc golem;
 		private boolean isGolemAttacking;
-		private ArrayList<L2PcInstance> rewardedPlayers;
+		private ArrayList<Player> rewardedPlayers;
 
 		private ConquerACastleWorld() {
 			isGolemAttacking = false;
-			rewardedPlayers = new ArrayList<L2PcInstance>();
+			rewardedPlayers = new ArrayList<Player>();
 		}
 	}
 
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill) {
+	public String onSpellFinished(Npc npc, Player player, Skill skill) {
 		if (debug) {
-			Log.warning(getName() + ": onSpellFinished: " + skill.getName());
+			log.warn(getName() + ": onSpellFinished: " + skill.getName());
 		}
 
 		InstanceWorld wrld = null;
@@ -120,7 +124,7 @@ public class ConquerACastle extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onSpellFinished: Unable to get world.");
+			log.warn(getName() + ": onSpellFinished: Unable to get world.");
 			return null;
 		}
 
@@ -147,7 +151,7 @@ public class ConquerACastle extends L2AttackableAIScript {
 	}
 
 	private static void attackDoor(ConquerACastleWorld world) {
-		L2DoorInstance door = getClosestDoor(world);
+		DoorInstance door = getClosestDoor(world);
 		if (door == null) {
 			world.isGolemAttacking = false;
 			world.golem.deleteMe();
@@ -167,9 +171,9 @@ public class ConquerACastle extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public final String onSpawn(Npc npc) {
 		if (debug) {
-			Log.warning(getName() + ": onSpawn: " + npc.getName());
+			log.warn(getName() + ": onSpawn: " + npc.getName());
 		}
 
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -194,9 +198,9 @@ public class ConquerACastle extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -206,7 +210,7 @@ public class ConquerACastle extends L2AttackableAIScript {
 				world.status++;
 
 				if (debug) {
-					Log.warning(getName() + ": world status: " + world.status);
+					log.warn(getName() + ": world status: " + world.status);
 				}
 
 				if (world.status == 6 && world.castleId != 9 && world.castleId != 7 ||
@@ -215,7 +219,7 @@ public class ConquerACastle extends L2AttackableAIScript {
 					world.finalBoss.setIsInvul(false);
 					world.finalBoss.setIsParalyzed(false);
 
-					for (L2MonsterInstance minion : ((L2GrandBossInstance) world.finalBoss).getMinionList().getSpawnedMinions()) {
+					for (MonsterInstance minion : ((GrandBossInstance) world.finalBoss).getMinionList().getSpawnedMinions()) {
 						if (minion == null) {
 							continue;
 						}
@@ -265,7 +269,7 @@ public class ConquerACastle extends L2AttackableAIScript {
 				}
 			} else if (npc.getNpcId() == shilensProtector) {
 				if (player.isInParty()) {
-					for (L2PcInstance pMember : player.getParty().getPartyMembers()) {
+					for (Player pMember : player.getParty().getPartyMembers()) {
 						if (pMember == null || pMember.getInstanceId() != world.instanceId) {
 							continue;
 						}
@@ -297,9 +301,9 @@ public class ConquerACastle extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		InstanceWorld wrld = null;
@@ -308,7 +312,7 @@ public class ConquerACastle extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onAdvEvent: Unable to get world.");
+			log.warn(getName() + ": onAdvEvent: Unable to get world.");
 			return null;
 		}
 
@@ -373,7 +377,7 @@ public class ConquerACastle extends L2AttackableAIScript {
 
 					return "";
 				} else if (event.endsWith("attack")) {
-					L2Object door = getClosestDoor(world);
+					WorldObject door = getClosestDoor(world);
 					if (door == null) {
 						InstanceManager.getInstance()
 								.sendPacket(world.instanceId,
@@ -413,11 +417,11 @@ public class ConquerACastle extends L2AttackableAIScript {
 		return null;
 	}
 
-	private static L2DoorInstance getClosestDoor(ConquerACastleWorld world) {
-		L2DoorInstance door = null;
+	private static DoorInstance getClosestDoor(ConquerACastleWorld world) {
+		DoorInstance door = null;
 
 		double distSq = 1000000000;
-		for (L2DoorInstance instanceDoor : InstanceManager.getInstance().getInstance(world.instanceId).getDoors()) {
+		for (DoorInstance instanceDoor : InstanceManager.getInstance().getInstance(world.instanceId).getDoors()) {
 			if (instanceDoor == null || instanceDoor.isDead() || instanceDoor.isWall() || instanceDoor.getCastle().getCastleId() != world.castleId) {
 				continue;
 			}
@@ -444,9 +448,9 @@ public class ConquerACastle extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onFirstTalk: " + player);
+			log.warn(getName() + ": onFirstTalk: " + player);
 		}
 
 		if (npc.getNpcId() == helperDwarf) {
@@ -457,9 +461,9 @@ public class ConquerACastle extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 
 		int npcId = npc.getNpcId();
@@ -470,7 +474,7 @@ public class ConquerACastle extends L2AttackableAIScript {
 		return "";
 	}
 
-	private final synchronized void enterInstance(L2PcInstance player) {
+	private final synchronized void enterInstance(Player player) {
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
 			if (!(world instanceof ConquerACastleWorld)) {
@@ -508,14 +512,14 @@ public class ConquerACastle extends L2AttackableAIScript {
 
 			wrld.castleId = castleId;
 
-			List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+			List<Player> allPlayers = new ArrayList<Player>();
 			if (debug) {
 				allPlayers.add(player);
 			} else {
 				allPlayers.addAll(player.getParty().getPartyMembers());
 			}
 
-			for (L2PcInstance enterPlayer : allPlayers) {
+			for (Player enterPlayer : allPlayers) {
 				if (enterPlayer == null) {
 					continue;
 				}
@@ -529,7 +533,7 @@ public class ConquerACastle extends L2AttackableAIScript {
 
 			startQuestTimer("stage_1_start", 1, null, player);
 
-			Log.fine(getName() + ":  instance started: " + instanceId + " created by player: " + player.getName());
+			log.debug(getName() + ":  instance started: " + instanceId + " created by player: " + player.getName());
 
 			return;
 		}

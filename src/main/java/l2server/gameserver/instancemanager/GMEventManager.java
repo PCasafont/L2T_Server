@@ -20,26 +20,26 @@ import l2server.gameserver.*;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.datatables.*;
 import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2ColosseumFence;
-import l2server.gameserver.model.actor.L2ColosseumFence.FenceState;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2NpcInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.ColosseumFence;
+import l2server.gameserver.model.actor.ColosseumFence.FenceState;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.NpcInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.StaticObjectInstance;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.zone.L2ZoneType;
-import l2server.gameserver.model.zone.type.L2ArenaZone;
-import l2server.gameserver.model.zone.type.L2PeaceZone;
+import l2server.gameserver.model.zone.ZoneType;
+import l2server.gameserver.model.zone.type.ArenaZone;
+import l2server.gameserver.model.zone.type.PeaceZone;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.L2GameServerPacket;
@@ -47,7 +47,8 @@ import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.gameserver.util.NpcUtil;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -61,6 +62,9 @@ import java.util.Map.Entry;
  */
 
 public class GMEventManager {
+	private static Logger log = LoggerFactory.getLogger(GMEventManager.class.getName());
+
+
 	
 	private static final int bufferNpcId = 8508;
 	private static final int dummyArenaSignNpcId = 50013;
@@ -70,7 +74,7 @@ public class GMEventManager {
 	private static Map<String, SubEvent> subEvents = new HashMap<>();
 	private static Event currentEvent;
 
-	public String getCustomEventPanel(L2PcInstance player, int pageToShow) {
+	public String getCustomEventPanel(Player player, int pageToShow) {
 		StringBuilder sb = new StringBuilder();
 		if (player.isGM()) {
 			sb.append("<table><tr>" + "<td>" +
@@ -131,7 +135,7 @@ public class GMEventManager {
 
 					String arenaZoneName = "";
 					if (currentEvent != null && currentEvent.getArenaZones() != null) {
-						for (L2ArenaZone zone : currentEvent.getArenaZones()) {
+						for (ArenaZone zone : currentEvent.getArenaZones()) {
 							if (zone == null) {
 								continue;
 							}
@@ -141,7 +145,7 @@ public class GMEventManager {
 
 					String peaceZoneName = "";
 					if (currentEvent != null && currentEvent.getPeaceZones() != null) {
-						for (L2PeaceZone zone : currentEvent.getPeaceZones()) {
+						for (PeaceZone zone : currentEvent.getPeaceZones()) {
 							if (zone == null) {
 								continue;
 							}
@@ -288,7 +292,7 @@ public class GMEventManager {
 						continue;
 					}
 
-					L2PcInstance pl = L2World.getInstance().getPlayer(i.getKey());
+					Player pl = World.getInstance().getPlayer(i.getKey());
 					if (pl == null) {
 						continue;
 					}
@@ -312,7 +316,7 @@ public class GMEventManager {
 						continue;
 					}
 
-					L2PcInstance pl = L2World.getInstance().getPlayer(i.getKey());
+					Player pl = World.getInstance().getPlayer(i.getKey());
 					if (pl == null) {
 						continue;
 					}
@@ -340,13 +344,13 @@ public class GMEventManager {
 
 				sb.append("<tr><td><table width=850 bgcolor=999999 border=0><tr><td FIXWIDTH=750>Waiting Players</td></tr></table></td></tr>");
 				sb.append("<tr><td>");
-				List<L2PcInstance> allPlayers = new ArrayList<>();
-				for (L2PeaceZone zone : currentEvent.getPeaceZones()) {
+				List<Player> allPlayers = new ArrayList<>();
+				for (PeaceZone zone : currentEvent.getPeaceZones()) {
 					if (zone == null) {
 						continue;
 					}
 
-					for (L2PcInstance pl : zone.getPlayersInside()) {
+					for (Player pl : zone.getPlayersInside()) {
 						if (pl == null || allPlayers.contains(pl)) {
 							continue;
 						}
@@ -376,7 +380,7 @@ public class GMEventManager {
 
 				int x = 0;
 				for (int i = pageStart; i < pageEnd; i++) {
-					L2PcInstance pl = allPlayers.get(i);
+					Player pl = allPlayers.get(i);
 					if (pl == null) {
 						continue;
 					}
@@ -404,7 +408,7 @@ public class GMEventManager {
 				sb.append("<tr><td align=center><font color=LEVEL>There are no GM event right now!</font></td></tr>");
 			} else {
 				boolean isInsidePeaceZone = false;
-				for (L2PeaceZone zone : currentEvent.getPeaceZones()) {
+				for (PeaceZone zone : currentEvent.getPeaceZones()) {
 					if (zone == null) {
 						continue;
 					}
@@ -535,7 +539,7 @@ public class GMEventManager {
 		}
 	}
 
-	public void handleEventCommand(L2PcInstance player, String command) {
+	public void handleEventCommand(Player player, String command) {
 		if (player == null) {
 			return;
 		}
@@ -584,14 +588,14 @@ public class GMEventManager {
 					break;
 
 				case "setPeace":
-					L2PeaceZone peace = ZoneManager.getInstance().getZone(player, L2PeaceZone.class);
+					PeaceZone peace = ZoneManager.getInstance().getZone(player, PeaceZone.class);
 					if (peace != null) {
 						currentEvent.setPeaceZone(peace);
 					}
 					break;
 
 				case "setArena":
-					L2ArenaZone arena = ZoneManager.getInstance().getArena(player);
+					ArenaZone arena = ZoneManager.getInstance().getArena(player);
 					if (arena != null) {
 						currentEvent.setArenaZone(arena);
 					}
@@ -618,10 +622,10 @@ public class GMEventManager {
 					break;
 
 				case "setArenaSign":
-					L2StaticObjectInstance arenaSign = null;
-					L2Object target = player.getTarget();
-					if (target != null && target instanceof L2StaticObjectInstance) {
-						arenaSign = (L2StaticObjectInstance) target;
+					StaticObjectInstance arenaSign = null;
+					WorldObject target = player.getTarget();
+					if (target != null && target instanceof StaticObjectInstance) {
+						arenaSign = (StaticObjectInstance) target;
 					}
 
 					int staticId = 0;
@@ -640,7 +644,7 @@ public class GMEventManager {
 					break;
 
 				case "addDoor":
-					currentEvent.addDoor(((L2DoorInstance) player.getTarget()).getDoorId());
+					currentEvent.addDoor(((DoorInstance) player.getTarget()).getDoorId());
 					break;
 
 				case "delDoor":
@@ -759,7 +763,7 @@ public class GMEventManager {
 
 				case "manageDoors":
 					for (int i : currentEvent.getDoors()) {
-						L2DoorInstance door = DoorTable.getInstance().getDoor(i);
+						DoorInstance door = DoorTable.getInstance().getDoor(i);
 						if (door == null) {
 							continue;
 						}
@@ -822,7 +826,7 @@ public class GMEventManager {
 						if (currentEvent.canUseMoreBuffs(player.getObjectId())) {
 							currentEvent.addUsedBuff(player.getObjectId());
 
-							L2Skill buff = SkillTable.getInstance().getInfo(Integer.valueOf(st.nextToken()), 1);
+							Skill buff = SkillTable.getInstance().getInfo(Integer.valueOf(st.nextToken()), 1);
 							if (buff != null) {
 								buff.getEffects(player, player);
 							}
@@ -880,7 +884,7 @@ public class GMEventManager {
 		}
 	}
 
-	private boolean teleportConditions(L2PcInstance player) {
+	private boolean teleportConditions(Player player) {
 		if (player == null) {
 			return false;
 		}
@@ -927,14 +931,14 @@ public class GMEventManager {
 		private String description;
 		private String location;
 		private List<Integer> doors;
-		private List<L2ArenaZone> arenaZones;
-		private List<L2Npc> buffers;
-		private List<L2Npc> arenaSigns;
+		private List<ArenaZone> arenaZones;
+		private List<Npc> buffers;
+		private List<Npc> arenaSigns;
 		private List<Integer> rewardedPlayers;
-		private List<L2PeaceZone> peaceZones;
+		private List<PeaceZone> peaceZones;
 		private List<Integer> arenaSignIds;
 		private List<Location> arenaSignSpawns;
-		private List<L2ColosseumFence> areaFences;
+		private List<ColosseumFence> areaFences;
 		private Map<Integer, Bets> bets;
 		private Map<Integer, Integer> usedBuffs;
 		private Map<Integer, Integer> participants;
@@ -975,8 +979,8 @@ public class GMEventManager {
 		              String description,
 		              String locationName,
 		              List<Integer> doors,
-		              List<L2ArenaZone> arenaZones,
-		              List<L2PeaceZone> peaceZones,
+		              List<ArenaZone> arenaZones,
+		              List<PeaceZone> peaceZones,
 		              Location teamOneSpawn,
 		              Location teamTwoSpawn,
 		              Location bufferTeamOneSpawn,
@@ -1074,7 +1078,7 @@ public class GMEventManager {
 			return isFightStarted;
 		}
 
-		private List<L2ColosseumFence> getFences() {
+		private List<ColosseumFence> getFences() {
 			return areaFences;
 		}
 
@@ -1082,15 +1086,15 @@ public class GMEventManager {
 			return doors;
 		}
 
-		private List<L2ArenaZone> getArenaZones() {
+		private List<ArenaZone> getArenaZones() {
 			return arenaZones;
 		}
 
-		private List<L2PeaceZone> getPeaceZones() {
+		private List<PeaceZone> getPeaceZones() {
 			return peaceZones;
 		}
 
-		private void setArenaZone(L2ArenaZone z) {
+		private void setArenaZone(ArenaZone z) {
 			if (z == null) {
 				arenaZones.clear();
 			} else if (!arenaZones.contains(z)) {
@@ -1098,7 +1102,7 @@ public class GMEventManager {
 			}
 		}
 
-		private void setPeaceZone(L2PeaceZone z) {
+		private void setPeaceZone(PeaceZone z) {
 			if (z == null) {
 				peaceZones.clear();
 			} else if (!peaceZones.contains(z)) {
@@ -1222,7 +1226,7 @@ public class GMEventManager {
 		}
 
 		private void addBannedIp(int playerId) {
-			L2PcInstance player = L2World.getInstance().getPlayer(playerId);
+			Player player = World.getInstance().getPlayer(playerId);
 			if (player == null) {
 				return;
 			}
@@ -1232,12 +1236,12 @@ public class GMEventManager {
 			kickPlayer(playerId);
 
 			//Revalidate the zone to kick dualbox
-			for (L2PeaceZone zone : peaceZones) {
+			for (PeaceZone zone : peaceZones) {
 				if (zone == null) {
 					continue;
 				}
 
-				for (L2PcInstance pl : zone.getPlayersInside()) {
+				for (Player pl : zone.getPlayersInside()) {
 					if (pl == null) {
 						continue;
 					}
@@ -1376,7 +1380,7 @@ public class GMEventManager {
 
 		private void addFeances() {
 			if (!arenaZones.isEmpty() && arenaZones.size() == 1) {
-				L2ColosseumFence feance = addDynamic(arenaZones.get(0).getZone().getCenterX(),
+				ColosseumFence feance = addDynamic(arenaZones.get(0).getZone().getCenterX(),
 						arenaZones.get(0).getZone().getCenterY(),
 						-3775,
 						-3775 + 100,
@@ -1390,7 +1394,7 @@ public class GMEventManager {
 		}
 
 		private void removeFences() {
-			for (L2ColosseumFence fence : areaFences) {
+			for (ColosseumFence fence : areaFences) {
 				if (fence == null) {
 					continue;
 				}
@@ -1417,7 +1421,7 @@ public class GMEventManager {
 				deleteBuffers();
 
 				for (Entry<Integer, Integer> i : currentEvent.getParticipants().entrySet()) {
-					L2PcInstance player = L2World.getInstance().getPlayer(i.getKey());
+					Player player = World.getInstance().getPlayer(i.getKey());
 					if (player != null) {
 						player.heal();
 					}
@@ -1429,7 +1433,7 @@ public class GMEventManager {
 		}
 
 		private void spawnBuffers() {
-			L2Npc bufferOne = NpcUtil.addSpawn(bufferNpcId,
+			Npc bufferOne = NpcUtil.addSpawn(bufferNpcId,
 					bufferSpawnOne.getX(),
 					bufferSpawnOne.getY(),
 					bufferSpawnOne.getZ(),
@@ -1440,7 +1444,7 @@ public class GMEventManager {
 					0);
 			buffers.add(bufferOne);
 
-			L2Npc bufferTwo = NpcUtil.addSpawn(bufferNpcId,
+			Npc bufferTwo = NpcUtil.addSpawn(bufferNpcId,
 					bufferSpawnTwo.getX(),
 					bufferSpawnTwo.getY(),
 					bufferSpawnTwo.getZ(),
@@ -1455,7 +1459,7 @@ public class GMEventManager {
 		private void spawnArenaSigns() {
 			if (arenaSignIds.isEmpty()) {
 				for (Location loc : arenaSignSpawns) {
-					L2Npc npc = NpcUtil.addSpawn(dummyArenaSignNpcId, loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), false, 0, false, 0);
+					Npc npc = NpcUtil.addSpawn(dummyArenaSignNpcId, loc.getX(), loc.getY(), loc.getZ(), loc.getHeading(), false, 0, false, 0);
 					arenaSigns.add(npc);
 				}
 			}
@@ -1463,20 +1467,20 @@ public class GMEventManager {
 
 		private void deleteArenaSigns() {
 			if (arenaSignIds.isEmpty()) {
-				for (L2Npc arenaSign : arenaSigns) {
+				for (Npc arenaSign : arenaSigns) {
 					arenaSign.deleteMe();
 				}
 			}
 		}
 
 		private void deleteBuffers() {
-			for (L2Npc buffer : buffers) {
+			for (Npc buffer : buffers) {
 				buffer.deleteMe();
 			}
 		}
 
 		private void sendPacketToFighterPlayers(L2GameServerPacket p) {
-			for (L2ArenaZone zone : arenaZones) {
+			for (ArenaZone zone : arenaZones) {
 				if (zone == null) {
 					continue;
 				}
@@ -1485,7 +1489,7 @@ public class GMEventManager {
 		}
 
 		private void kickPlayersFromPeaceZones() {
-			for (L2PeaceZone zone : peaceZones) {
+			for (PeaceZone zone : peaceZones) {
 				if (zone == null) {
 					continue;
 				}
@@ -1494,7 +1498,7 @@ public class GMEventManager {
 		}
 
 		private void kickPlayersFromArenaZones() {
-			for (L2ArenaZone zone : arenaZones) {
+			for (ArenaZone zone : arenaZones) {
 				if (zone == null) {
 					continue;
 				}
@@ -1503,7 +1507,7 @@ public class GMEventManager {
 		}
 
 		private void sendPacketToWaitingPlayers(L2GameServerPacket p) {
-			for (L2PeaceZone zone : peaceZones) {
+			for (PeaceZone zone : peaceZones) {
 				if (zone == null) {
 					continue;
 				}
@@ -1527,7 +1531,7 @@ public class GMEventManager {
 			isFightStarted = false;
 
 			for (Entry<Integer, Integer> i : participants.entrySet()) {
-				L2PcInstance player = L2World.getInstance().getPlayer(i.getKey());
+				Player player = World.getInstance().getPlayer(i.getKey());
 				if (player == null) {
 					continue;
 				}
@@ -1573,7 +1577,7 @@ public class GMEventManager {
 		}
 
 		private void addParticipant(int playerId, int team) {
-			L2PcInstance player = L2World.getInstance().getPlayer(playerId);
+			Player player = World.getInstance().getPlayer(playerId);
 			if (player == null) {
 				return;
 			}
@@ -1603,7 +1607,7 @@ public class GMEventManager {
 			if (isParticipant(playerId)) {
 				participants.remove(playerId);
 
-				L2PcInstance player = L2World.getInstance().getPlayer(playerId);
+				Player player = World.getInstance().getPlayer(playerId);
 				if (player != null) {
 					if (player.isDead()) {
 						player.doRevive();
@@ -1630,7 +1634,7 @@ public class GMEventManager {
 				acceptedEventRules.remove(playerId);
 			}
 
-			L2PcInstance toKick = L2World.getInstance().getPlayer(playerId);
+			Player toKick = World.getInstance().getPlayer(playerId);
 			if (toKick != null) {
 				toKick.teleToLocation(TeleportWhereType.Town);
 			}
@@ -1643,7 +1647,7 @@ public class GMEventManager {
 						continue;
 					}
 
-					L2PcInstance player = L2World.getInstance().getPlayer(i.getKey());
+					Player player = World.getInstance().getPlayer(i.getKey());
 					if (player == null) {
 						continue;
 					}
@@ -1683,13 +1687,13 @@ public class GMEventManager {
 		}
 	}
 
-	private L2ColosseumFence addDynamic(int x, int y, int z, int minZ, int maxZ, int width, int height) {
-		L2ColosseumFence fence = new L2ColosseumFence(0, x, y, z, minZ, maxZ, width, height, FenceState.CLOSED);
+	private ColosseumFence addDynamic(int x, int y, int z, int minZ, int maxZ, int width, int height) {
+		ColosseumFence fence = new ColosseumFence(0, x, y, z, minZ, maxZ, width, height, FenceState.CLOSED);
 		fence.spawnMe();
 		return fence;
 	}
 
-	public void onKill(L2Character killer, L2Character killed) {
+	public void onKill(Creature killer, Creature killed) {
 		if (killer == null || killed == null || currentEvent == null) {
 			return;
 		}
@@ -1708,23 +1712,23 @@ public class GMEventManager {
 	}
 
 	//Lets auto control who enter to the zone instead of kick every one who illegally enter, also banned ppl
-	public boolean onEnterZone(L2Character character, L2ZoneType zone) {
+	public boolean onEnterZone(Creature character, ZoneType zone) {
 		if (character == null) {
 			return true;
 		}
 
-		L2PcInstance player = character.getActingPlayer();
+		Player player = character.getActingPlayer();
 		if (player == null) {
 			return true;
 		}
 
 		if (currentEvent != null && currentEvent.isStarted() && !player.isGM()) {
-			if (zone instanceof L2ArenaZone && currentEvent.getArenaZones().contains(zone)) {
+			if (zone instanceof ArenaZone && currentEvent.getArenaZones().contains(zone)) {
 				if (!player.getIsInsideGMEvent()) {
 					currentEvent.kickPlayer(character.getObjectId());
 					return false;
 				}
-			} else if (zone instanceof L2PeaceZone && currentEvent.getPeaceZones().contains(zone)) {
+			} else if (zone instanceof PeaceZone && currentEvent.getPeaceZones().contains(zone)) {
 				if (currentEvent.isBannedIp(player.getExternalIP())) {
 					player.sendPacket(new ExShowScreenMessage(" ", 5000));
 					currentEvent.kickPlayer(character.getObjectId());
@@ -1743,30 +1747,30 @@ public class GMEventManager {
 		return true;
 	}
 
-	public void onNpcTalk(L2Object obj, L2PcInstance player) {
+	public void onNpcTalk(WorldObject obj, Player player) {
 		if (obj == null || player == null || currentEvent == null) {
 			return;
 		}
 
 		if (currentEvent.isStarted()) {
-			if (obj instanceof L2StaticObjectInstance &&
-					currentEvent.getArenaSignIds().contains(((L2StaticObjectInstance) obj).getStaticObjectId()) ||
-					obj instanceof L2NpcInstance && ((L2NpcInstance) obj).getNpcId() == dummyArenaSignNpcId) {
+			if (obj instanceof StaticObjectInstance &&
+					currentEvent.getArenaSignIds().contains(((StaticObjectInstance) obj).getStaticObjectId()) ||
+					obj instanceof NpcInstance && ((NpcInstance) obj).getNpcId() == dummyArenaSignNpcId) {
 				CustomCommunityBoard.getInstance().parseCmd("bypass _bbscustom;info;gmEventRules", player);
 			}
 		}
 	}
 
-	public boolean canAttack(L2PcInstance attacker, L2Object target) {
+	public boolean canAttack(Player attacker, WorldObject target) {
 		if (attacker == null || target == null) {
 			return false;
 		}
 
-		L2PcInstance tgt = null;
-		if (target instanceof L2Summon) {
-			tgt = ((L2Summon) target).getOwner();
-		} else if (target instanceof L2PcInstance) {
-			tgt = (L2PcInstance) target;
+		Player tgt = null;
+		if (target instanceof Summon) {
+			tgt = ((Summon) target).getOwner();
+		} else if (target instanceof Player) {
+			tgt = (Player) target;
 		}
 
 		if (attacker == tgt) {
@@ -1809,8 +1813,8 @@ public class GMEventManager {
 				String[] arenaSignSpawnTwo = d.hasAttribute("arenaSignSpawnTwo") ? d.getString("arenaSignSpawnTwo").split(",") : null;
 
 				List<Integer> doorList = new ArrayList<>();
-				List<L2ArenaZone> arenaZones = new ArrayList<>();
-				List<L2PeaceZone> peaceZones = new ArrayList<>();
+				List<ArenaZone> arenaZones = new ArrayList<>();
+				List<PeaceZone> peaceZones = new ArrayList<>();
 				List<Integer> arenaSignList = new ArrayList<>();
 				List<Location> arenaSignSpawnList = new ArrayList<>();
 
@@ -1821,11 +1825,11 @@ public class GMEventManager {
 				}
 
 				for (String zone : arenaZoneNames) {
-					arenaZones.add(ZoneManager.getInstance().getZoneByName(zone, L2ArenaZone.class));
+					arenaZones.add(ZoneManager.getInstance().getZoneByName(zone, ArenaZone.class));
 				}
 
 				for (String zone : peaceZoneNames) {
-					peaceZones.add(ZoneManager.getInstance().getZoneByName(zone, L2PeaceZone.class));
+					peaceZones.add(ZoneManager.getInstance().getZoneByName(zone, PeaceZone.class));
 				}
 
 				if (arenaSignsIds != null) {
@@ -1888,7 +1892,7 @@ public class GMEventManager {
 			}
 		}
 
-		Log.info("GMEventManager: loaded " + predefinedEvents.size() + " predefinied events " + currencies.size() + " bet currencies and " +
+		log.info("GMEventManager: loaded " + predefinedEvents.size() + " predefinied events " + currencies.size() + " bet currencies and " +
 				subEvents.size() + " sub events!");
 	}
 

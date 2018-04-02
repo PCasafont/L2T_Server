@@ -22,17 +22,16 @@ import l2server.gameserver.datatables.ScenePlayerDataTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.GrandBossInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.QuestTimer;
-import l2server.gameserver.model.zone.type.L2BossZone;
+import l2server.gameserver.model.zone.type.BossZone;
 import l2server.gameserver.network.serverpackets.Earthquake;
 import l2server.gameserver.util.Broadcast;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -64,21 +63,21 @@ public class Kelbim extends L2AttackableAIScript {
 	private static final int kelbimAltar = 26130;
 	private static final int[] kelbimMinions = {guardianSinistra, guardianDestra, kelbimGuard};
 	private static final int[] allMobs = {kelbimId, kelbimMinions[0], kelbimMinions[1], kelbimMinions[2], kelbimAltar};
-	private static final L2BossZone bossZone = GrandBossManager.getInstance().getZone(-55505, 58781, -274);
+	private static final BossZone bossZone = GrandBossManager.getInstance().getZone(-55505, 58781, -274);
 	private static final Location enterCords = new Location(-55386, 58939, -274);
 
 	//Skills
-	private static final L2Skill meteorCrash = SkillTable.getInstance().getInfo(23692, 1);
-	private static final L2Skill waterDrop = SkillTable.getInstance().getInfo(23693, 1);
-	private static final L2Skill tornadoShackle = SkillTable.getInstance().getInfo(23694, 1);
-	private static final L2Skill flameThrower = SkillTable.getInstance().getInfo(23699, 1);
-	private static final L2Skill[] areaSkills = {meteorCrash, waterDrop, tornadoShackle, flameThrower};
+	private static final Skill meteorCrash = SkillTable.getInstance().getInfo(23692, 1);
+	private static final Skill waterDrop = SkillTable.getInstance().getInfo(23693, 1);
+	private static final Skill tornadoShackle = SkillTable.getInstance().getInfo(23694, 1);
+	private static final Skill flameThrower = SkillTable.getInstance().getInfo(23699, 1);
+	private static final Skill[] areaSkills = {meteorCrash, waterDrop, tornadoShackle, flameThrower};
 
 	//Vars
-	private static L2Npc kelbimBoss;
+	private static Npc kelbimBoss;
 	private static long lastAction;
 	private static int bossStage;
-	private static ArrayList<L2Npc> minions = new ArrayList<L2Npc>();
+	private static ArrayList<Npc> minions = new ArrayList<Npc>();
 
 	public Kelbim(int id, String name, String descr) {
 		super(id, name, descr);
@@ -105,9 +104,9 @@ public class Kelbim extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onFirstTalk: " + player.getName());
+			log.warn(getName() + ": onFirstTalk: " + player.getName());
 		}
 
 		if (npc.getNpcId() == teleDevice) {
@@ -117,15 +116,15 @@ public class Kelbim extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 
 		int npcId = npc.getNpcId();
 		if (npcId == npcEnterId) {
 			int kelbimStatus = GrandBossManager.getInstance().getBossStatus(kelbimId);
-			final List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+			final List<Player> allPlayers = new ArrayList<Player>();
 			if (kelbimStatus == GrandBossManager.getInstance().DEAD) {
 				return "34052-1.htm";
 			} else {
@@ -155,7 +154,7 @@ public class Kelbim extends L2AttackableAIScript {
 						player.getParty().getCommandChannel().getMembers() : player.getParty().getPartyMembers());
 			}
 
-			for (L2PcInstance enterPlayer : allPlayers) {
+			for (Player enterPlayer : allPlayers) {
 				if (enterPlayer == null) {
 					continue;
 				}
@@ -169,9 +168,9 @@ public class Kelbim extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		if (event.equalsIgnoreCase("unlock_kelbim")) {
@@ -195,7 +194,7 @@ public class Kelbim extends L2AttackableAIScript {
 			startQuestTimer("stage_1_kelbim_spawn", ScenePlayerDataTable.getInstance().getVideoDuration(81) + 2000, null, null);
 		} else if (event.equalsIgnoreCase("stage_1_kelbim_spawn")) {
 			kelbimBoss = addSpawn(kelbimId, -56340, 60801, -269, 54262, false, 0);
-			GrandBossManager.getInstance().addBoss((L2GrandBossInstance) kelbimBoss);
+			GrandBossManager.getInstance().addBoss((GrandBossInstance) kelbimBoss);
 
 			lastAction = System.currentTimeMillis();
 
@@ -204,15 +203,15 @@ public class Kelbim extends L2AttackableAIScript {
 			startQuestTimer("stage_all_random_area_attack", Rnd.get(2, 3) * 60000, null, null);
 		} else if (event.equalsIgnoreCase("stage_all_spawn_minions")) {
 			for (int i = 0; i < Rnd.get(bossStage * 5 / 2, bossStage * 5); i++) {
-				L2Npc minion = addSpawn(kelbimGuard, kelbimBoss.getX(), kelbimBoss.getY(), kelbimBoss.getZ(), 0, true, 0, true, 0);
+				Npc minion = addSpawn(kelbimGuard, kelbimBoss.getX(), kelbimBoss.getY(), kelbimBoss.getZ(), 0, true, 0, true, 0);
 				minion.setIsRunning(true);
-				((L2Attackable) minion).setIsRaidMinion(true);
+				((Attackable) minion).setIsRaidMinion(true);
 
 				minions.add(minion);
 			}
 
 			for (int i = 0; i < Rnd.get(bossStage * 2 / 2, bossStage * 2); i++) {
-				L2Npc minion = addSpawn(kelbimGuardians[Rnd.get(kelbimGuardians.length)],
+				Npc minion = addSpawn(kelbimGuardians[Rnd.get(kelbimGuardians.length)],
 						kelbimBoss.getX(),
 						kelbimBoss.getY(),
 						kelbimBoss.getZ(),
@@ -222,29 +221,29 @@ public class Kelbim extends L2AttackableAIScript {
 						true,
 						0);
 				minion.setIsRunning(true);
-				((L2Attackable) minion).setIsRaidMinion(true);
+				((Attackable) minion).setIsRaidMinion(true);
 
 				minions.add(minion);
 			}
 		} else if (event.equalsIgnoreCase("stage_all_random_area_attack")) {
 			if (bossStage > 0 && bossStage < 7) {
 				if (kelbimBoss.isInCombat()) {
-					L2Skill randomAttackSkill = areaSkills[Rnd.get(areaSkills.length)];
-					ArrayList<L2Npc> skillNpcs = new ArrayList<L2Npc>();
-					for (L2PcInstance pl : bossZone.getPlayersInside()) {
+					Skill randomAttackSkill = areaSkills[Rnd.get(areaSkills.length)];
+					ArrayList<Npc> skillNpcs = new ArrayList<Npc>();
+					for (Player pl : bossZone.getPlayersInside()) {
 						if (pl == null) {
 							continue;
 						}
 
 						if (Rnd.get(100) > 40) {
-							L2Npc skillMob = addSpawn(kelbimShout, pl.getX(), pl.getY(), pl.getZ() + 10, 0, true, 60000, false, 0);
+							Npc skillMob = addSpawn(kelbimShout, pl.getX(), pl.getY(), pl.getZ() + 10, 0, true, 60000, false, 0);
 							skillNpcs.add(skillMob);
 
 							minions.add(skillMob);
 						}
 					}
 
-					for (L2Npc skillNpc : skillNpcs) {
+					for (Npc skillNpc : skillNpcs) {
 						if (skillNpc == null) {
 							continue;
 						}
@@ -271,7 +270,7 @@ public class Kelbim extends L2AttackableAIScript {
 			}
 
 			if (!minions.isEmpty()) {
-				for (L2Npc minion : minions) {
+				for (Npc minion : minions) {
 					if (minion == null) {
 						continue;
 					}
@@ -290,9 +289,9 @@ public class Kelbim extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 
 		if (npc.getNpcId() == kelbimId) {
@@ -324,9 +323,9 @@ public class Kelbim extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		if (npc.getNpcId() == kelbimId) {

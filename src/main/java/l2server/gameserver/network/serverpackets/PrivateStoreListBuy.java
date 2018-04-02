@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.TradeList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * This class ...
@@ -28,7 +28,7 @@ public class PrivateStoreListBuy extends L2ItemListPacket {
 	private long playerAdena;
 	private TradeList.TradeItem[] items;
 	
-	public PrivateStoreListBuy(L2PcInstance player, L2PcInstance storePlayer) {
+	public PrivateStoreListBuy(Player player, Player storePlayer) {
 		objId = storePlayer.getObjectId();
 		playerAdena = player.getAdena();
 		storePlayer.getSellList().updateItems(); // Update SellList for case inventory content has changed

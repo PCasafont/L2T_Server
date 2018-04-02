@@ -15,8 +15,8 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
 
 import java.util.ArrayList;
 
@@ -107,20 +107,20 @@ public final class StatusUpdate extends L2GameServerPacket {
 	}
 	
 	/**
-	 * Create {@link StatusUpdate} packet for given {@link L2Object}.
+	 * Create {@link StatusUpdate} packet for given {@link WorldObject}.
 	 *
 	 * @param object
 	 */
-	public StatusUpdate(L2Object object) {
+	public StatusUpdate(WorldObject object) {
 		attributes = new ArrayList<>();
 		objectId = object.getObjectId();
-		/*if (object instanceof L2Attackable || object instanceof L2Playable
+		/*if (object instanceof Attackable || object instanceof Playable
                 && getClient() != null && getClient().getActiveChar() != null
 				&& getClient().getActiveChar().getObjectId() != objectId)
-			maxHp = ((L2Character) object).getMaxVisibleHp();*/
+			maxHp = ((Creature) object).getMaxVisibleHp();*/
 	}
 	
-	public StatusUpdate(L2Object object, L2Character causer, StatusUpdateDisplay display) {
+	public StatusUpdate(WorldObject object, Creature causer, StatusUpdateDisplay display) {
 		this(object);
 		causerId = causer != null ? causer.getObjectId() : 0;
 		this.display = display.ordinal();

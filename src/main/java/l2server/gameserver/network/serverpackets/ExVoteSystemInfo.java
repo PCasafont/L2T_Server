@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.RecoBonus;
 
 /**
@@ -29,7 +29,7 @@ public class ExVoteSystemInfo extends L2GameServerPacket {
 	private int bonusVal;
 	private int bonusType;
 
-	public ExVoteSystemInfo(L2PcInstance player) {
+	public ExVoteSystemInfo(Player player) {
 		recomLeft = player.getRecomLeft();
 		recomHave = player.getRecomHave();
 		bonusTime = player.getRecomBonusTime();

@@ -15,9 +15,9 @@
 
 package ai.group_template;
 
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,10 +44,10 @@ public class PolymorphingAngel extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		int npcId = npc.getNpcId();
 		if (ANGELSPAWNS.containsKey(npcId)) {
-			L2Attackable newNpc = (L2Attackable) this.addSpawn(ANGELSPAWNS.get(npcId), npc);
+			Attackable newNpc = (Attackable) this.addSpawn(ANGELSPAWNS.get(npcId), npc);
 			newNpc.setRunning();
 		}
 		return super.onKill(npc, killer, isPet);

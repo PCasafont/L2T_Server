@@ -16,12 +16,16 @@
 package l2server.gameserver.script;
 
 import l2server.gameserver.scripting.L2ScriptEngineManager;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.script.ScriptContext;
 import java.util.logging.Level;
 
 public class Expression {
+	private static Logger log = LoggerFactory.getLogger(Expression.class.getName());
+
+
 	private final ScriptContext context;
 	@SuppressWarnings("unused")
 	private final String lang;
@@ -32,7 +36,7 @@ public class Expression {
 		try {
 			return L2ScriptEngineManager.INSTANCE.eval(lang, code);
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 			return null;
 		}
 	}
@@ -41,7 +45,7 @@ public class Expression {
 		try {
 			return L2ScriptEngineManager.INSTANCE.eval(lang, code, context);
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 			return null;
 		}
 	}
@@ -50,7 +54,7 @@ public class Expression {
 		try {
 			return new Expression(context, lang, code);
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 			return null;
 		}
 	}
@@ -65,7 +69,7 @@ public class Expression {
 		try {
 			context.setAttribute(name, value, ScriptContext.ENGINE_SCOPE);
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 		}
 	}
 
@@ -73,7 +77,7 @@ public class Expression {
 		try {
 			context.removeAttribute(name, ScriptContext.ENGINE_SCOPE);
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 		}
 	}
 }

@@ -15,7 +15,7 @@
 
 package l2server.log;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.L2GameClient;
 import l2server.util.StringUtil;
 
@@ -72,8 +72,8 @@ public class AccountingFormatter extends Formatter {
 					default:
 						throw new IllegalStateException("Missing state on switch");
 				}
-			} else if (p instanceof L2PcInstance) {
-				L2PcInstance player = (L2PcInstance) p;
+			} else if (p instanceof Player) {
+				Player player = (Player) p;
 				StringUtil.append(output, player.getName());
 				StringUtil.append(output, "(", String.valueOf(player.getObjectId()), ")");
 			} else {

@@ -16,18 +16,18 @@
 package l2server.loginserver.network.gameserverpackets;
 
 import l2server.Config;
-import l2server.log.Log;
 import l2server.loginserver.GameServerTable;
 import l2server.loginserver.GameServerThread;
 import l2server.util.network.BaseRecievePacket;
-
-import java.util.logging.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author -Wooden-
  */
 public class PlayerLogout extends BaseRecievePacket {
-	protected static Logger log = Logger.getLogger(PlayerLogout.class.getName());
+	private static org.slf4j.Logger log = LoggerFactory.getLogger(PlayerLogout.class.getName());
+
+
 
 	/**
 	 * @param decrypt
@@ -38,7 +38,7 @@ public class PlayerLogout extends BaseRecievePacket {
 
 		server.removeAccountOnGameServer(account);
 		if (Config.DEBUG) {
-			Log.info("Player " + account + " logged out from gameserver [" + server.getServerId() + "] " +
+			log.info("Player " + account + " logged out from gameserver [" + server.getServerId() + "] " +
 					GameServerTable.getInstance().getServerNameById(server.getServerId()));
 		}
 	}

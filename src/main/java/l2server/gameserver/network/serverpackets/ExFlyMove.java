@@ -16,7 +16,7 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.L2FlyMove.L2FlyMoveType;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.util.Point3D;
 
 import java.util.HashMap;
@@ -31,7 +31,7 @@ public class ExFlyMove extends L2GameServerPacket {
 	private int id;
 	Map<Integer, Point3D> moves;
 	
-	public ExFlyMove(L2PcInstance activeChar, int id, Map<Integer, Point3D> options) {
+	public ExFlyMove(Player activeChar, int id, Map<Integer, Point3D> options) {
 		objectId = activeChar.getObjectId();
 		type = L2FlyMoveType.CHOOSE;
 		this.id = id;
@@ -42,7 +42,7 @@ public class ExFlyMove extends L2GameServerPacket {
 		}
 	}
 	
-	public ExFlyMove(L2PcInstance activeChar, int id, int ordinal, int x, int y, int z) {
+	public ExFlyMove(Player activeChar, int id, int ordinal, int x, int y, int z) {
 		objectId = activeChar.getObjectId();
 		type = L2FlyMoveType.MOVE;
 		this.id = id;

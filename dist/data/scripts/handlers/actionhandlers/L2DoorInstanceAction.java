@@ -17,12 +17,12 @@ package handlers.actionhandlers;
 
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.handler.IActionHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Object.InstanceType;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.WorldObject.InstanceType;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ConfirmDlg;
 import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.gameserver.network.serverpackets.StaticObject;
@@ -30,20 +30,20 @@ import l2server.gameserver.network.serverpackets.ValidateLocation;
 
 public class L2DoorInstanceAction implements IActionHandler {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact) {
-		// Check if the L2PcInstance already target the L2NpcInstance
+	public boolean action(Player activeChar, WorldObject target, boolean interact) {
+		// Check if the Player already target the NpcInstance
 		if (activeChar.getTarget() != target) {
-			// Set the target of the L2PcInstance activeChar
+			// Set the target of the Player activeChar
 			activeChar.setTarget(target);
 
-			// Send a Server->Client packet MyTargetSelected to the L2PcInstance activeChar
+			// Send a Server->Client packet MyTargetSelected to the Player activeChar
 			activeChar.sendPacket(new MyTargetSelected(target.getObjectId(), 0));
 
-			StaticObject su = new StaticObject((L2DoorInstance) target, activeChar.isGM());
+			StaticObject su = new StaticObject((DoorInstance) target, activeChar.isGM());
 			activeChar.sendPacket(su);
 
-			// Send a Server->Client packet ValidateLocation to correct the L2NpcInstance position and heading on the client
-			activeChar.sendPacket(new ValidateLocation((L2Character) target));
+			// Send a Server->Client packet ValidateLocation to correct the NpcInstance position and heading on the client
+			activeChar.sendPacket(new ValidateLocation((Creature) target));
 		} else if (interact) {
 			//            MyTargetSelected my = new MyTargetSelected(getObjectId(), activeChar.getLevel());
 			//            activeChar.sendPacket(my);
@@ -52,26 +52,26 @@ public class L2DoorInstanceAction implements IActionHandler {
 				{
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 				}
-			} else if (activeChar.getClan() != null && ((L2DoorInstance) target).getClanHall() != null &&
-					activeChar.getClanId() == ((L2DoorInstance) target).getClanHall().getOwnerId()) {
-				if (!((L2Character) target).isInsideRadius(activeChar, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false)) {
+			} else if (activeChar.getClan() != null && ((DoorInstance) target).getClanHall() != null &&
+					activeChar.getClanId() == ((DoorInstance) target).getClanHall().getOwnerId()) {
+				if (!((Creature) target).isInsideRadius(activeChar, Npc.DEFAULT_INTERACTION_DISTANCE, false, false)) {
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 				} else {
-					activeChar.gatesRequest((L2DoorInstance) target);
-					if (!((L2DoorInstance) target).getOpen()) {
+					activeChar.gatesRequest((DoorInstance) target);
+					if (!((DoorInstance) target).getOpen()) {
 						activeChar.sendPacket(new ConfirmDlg(1140));
 					} else {
 						activeChar.sendPacket(new ConfirmDlg(1141));
 					}
 				}
-			} else if (activeChar.getClan() != null && ((L2DoorInstance) target).getFort() != null &&
-					activeChar.getClan() == ((L2DoorInstance) target).getFort().getOwnerClan() && ((L2DoorInstance) target).isOpenableBySkill() &&
-					!((L2DoorInstance) target).getFort().getSiege().getIsInProgress()) {
-				if (!((L2Character) target).isInsideRadius(activeChar, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false)) {
+			} else if (activeChar.getClan() != null && ((DoorInstance) target).getFort() != null &&
+					activeChar.getClan() == ((DoorInstance) target).getFort().getOwnerClan() && ((DoorInstance) target).isOpenableBySkill() &&
+					!((DoorInstance) target).getFort().getSiege().getIsInProgress()) {
+				if (!((Creature) target).isInsideRadius(activeChar, Npc.DEFAULT_INTERACTION_DISTANCE, false, false)) {
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 				} else {
-					activeChar.gatesRequest((L2DoorInstance) target);
-					if (!((L2DoorInstance) target).getOpen()) {
+					activeChar.gatesRequest((DoorInstance) target);
+					if (!((DoorInstance) target).getOpen()) {
 						activeChar.sendPacket(new ConfirmDlg(1140));
 					} else {
 						activeChar.sendPacket(new ConfirmDlg(1141));

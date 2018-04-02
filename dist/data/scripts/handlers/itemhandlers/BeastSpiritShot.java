@@ -16,12 +16,12 @@
 package handlers.itemhandlers;
 
 import l2server.gameserver.handler.IItemHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -34,17 +34,17 @@ import l2server.gameserver.util.Broadcast;
  */
 public class BeastSpiritShot implements IItemHandler {
 	/**
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(Playable, Item, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
+	public void useItem(Playable playable, Item item, boolean forceUse) {
 		if (playable == null) {
 			return;
 		}
 
-		L2PcInstance summoner = playable.getActingPlayer();
+		Player summoner = playable.getActingPlayer();
 
-		if (playable instanceof L2Summon) {
+		if (playable instanceof Summon) {
 			summoner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PET_CANNOT_USE_ITEM));
 			return;
 		}
@@ -52,12 +52,12 @@ public class BeastSpiritShot implements IItemHandler {
 		if (summoner.getPet() != null) {
 			useShot(summoner, summoner.getPet(), item);
 		}
-		for (L2SummonInstance summon : summoner.getSummons()) {
+		for (SummonInstance summon : summoner.getSummons()) {
 			useShot(summoner, summon, item);
 		}
 	}
 
-	public void useShot(L2PcInstance summoner, L2Summon summon, L2ItemInstance item) {
+	public void useShot(Player summoner, Summon summon, Item item) {
 		if (summon == null) {
 			summoner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PETS_ARE_NOT_AVAILABLE_AT_THIS_TIME));
 			return;
@@ -81,32 +81,32 @@ public class BeastSpiritShot implements IItemHandler {
 			return;
 		}
 
-		L2ItemInstance weaponInst = null;
+		Item weaponInst = null;
 
-		if (summon instanceof L2PetInstance) {
-			weaponInst = ((L2PetInstance) summon).getActiveWeaponInstance();
+		if (summon instanceof PetInstance) {
+			weaponInst = ((PetInstance) summon).getActiveWeaponInstance();
 		}
 
 		if (weaponInst == null) {
-			if (summon.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE) {
+			if (summon.getChargedSpiritShot() != Item.CHARGED_NONE) {
 				return;
 			}
 
 			if (isBlessed) {
-				summon.setChargedSpiritShot(L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT);
+				summon.setChargedSpiritShot(Item.CHARGED_BLESSED_SPIRITSHOT);
 			} else {
-				summon.setChargedSpiritShot(L2ItemInstance.CHARGED_SPIRITSHOT);
+				summon.setChargedSpiritShot(Item.CHARGED_SPIRITSHOT);
 			}
 		} else {
-			if (weaponInst.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE) {
+			if (weaponInst.getChargedSpiritShot() != Item.CHARGED_NONE) {
 				// SpiritShots are already active.
 				return;
 			}
 
 			if (isBlessed) {
-				weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT);
+				weaponInst.setChargedSpiritShot(Item.CHARGED_BLESSED_SPIRITSHOT);
 			} else {
-				weaponInst.setChargedSpiritShot(L2ItemInstance.CHARGED_SPIRITSHOT);
+				weaponInst.setChargedSpiritShot(Item.CHARGED_SPIRITSHOT);
 			}
 		}
 

@@ -6,19 +6,18 @@ import l2server.gameserver.datatables.ScenePlayerDataTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.World;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -52,8 +51,8 @@ public class Tauti extends L2AttackableAIScript {
 	private static final int[] templates = {218, 219};
 
 	//Skills
-	private static final L2Skill leapAtkUp = SkillTable.getInstance().getInfo(16036, 1);
-	private static final L2Skill leapAtkDown = SkillTable.getInstance().getInfo(16037, 1);
+	private static final Skill leapAtkUp = SkillTable.getInstance().getInfo(16036, 1);
+	private static final Skill leapAtkDown = SkillTable.getInstance().getInfo(16037, 1);
 
 	//Cords
 	private static final Location[] enterCords =
@@ -70,14 +69,14 @@ public class Tauti extends L2AttackableAIScript {
 			{{-147580, 213653, -10056, 53698}, {-148038, 212574, -10056, 4019}, {-146941, 212114, -10056, 20521}, {-146490, 213216, -10056, 36842}};
 
 	private class TautiWorld extends InstanceWorld {
-		private L2Npc Tauti;
+		private Npc Tauti;
 		private int TautiId;
 		private int TautiAxeId;
 		private boolean isHardMode;
-		private List<L2Npc> fakeTautis;
+		private List<Npc> fakeTautis;
 
 		public TautiWorld() {
-			fakeTautis = new ArrayList<L2Npc>();
+			fakeTautis = new ArrayList<Npc>();
 			isHardMode = false;
 		}
 	}
@@ -100,9 +99,9 @@ public class Tauti extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill) {
+	public String onSpellFinished(Npc npc, Player player, Skill skill) {
 		if (debug) {
-			Log.warning(getName() + ": onSpellFinished: " + skill.getName());
+			log.warn(getName() + ": onSpellFinished: " + skill.getName());
 		}
 
 		InstanceWorld wrld = null;
@@ -111,7 +110,7 @@ public class Tauti extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onSpellFinished: Unable to get world.");
+			log.warn(getName() + ": onSpellFinished: Unable to get world.");
 			return null;
 		}
 
@@ -145,9 +144,9 @@ public class Tauti extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		InstanceWorld wrld = null;
@@ -156,26 +155,26 @@ public class Tauti extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onAdvEvent: Unable to get world.");
+			log.warn(getName() + ": onAdvEvent: Unable to get world.");
 			return null;
 		}
 
 		if (wrld != null && wrld instanceof TautiWorld) {
 			TautiWorld world = (TautiWorld) wrld;
 			if (event.equalsIgnoreCase("stage_1_open_doors")) {
-				for (L2DoorInstance door : InstanceManager.getInstance().getInstance(world.instanceId).getDoors()) {
+				for (DoorInstance door : InstanceManager.getInstance().getInstance(world.instanceId).getDoors()) {
 					door.openMe();
 				}
 				startQuestTimer("stage_1_intro", debug ? 60000 : 5 * 60000, null, player);
 			} else if (event.equalsIgnoreCase("stage_1_intro")) {
-				for (L2DoorInstance door : InstanceManager.getInstance().getInstance(world.instanceId).getDoors()) {
+				for (DoorInstance door : InstanceManager.getInstance().getInstance(world.instanceId).getDoors()) {
 					door.closeMe();
 				}
 
 				//kick buggers
 				ArrayList<Integer> allowedPlayers = new ArrayList<Integer>(world.allowed);
 				for (int objId : allowedPlayers) {
-					L2PcInstance pl = L2World.getInstance().getPlayer(objId);
+					Player pl = World.getInstance().getPlayer(objId);
 					if (pl != null && pl.isOnline() && pl.getInstanceId() == world.instanceId) {
 						if (pl.getY() < 210980) {
 							world.allowed.remove((Integer) pl.getObjectId());
@@ -210,12 +209,12 @@ public class Tauti extends L2AttackableAIScript {
 								world.fakeTautis.clear();
 								for (int i = 1; i <= Rnd.get(1, 3); i++) {
 									int randObjId = world.allowed.get(Rnd.get(world.allowed.size()));
-									L2PcInstance target = L2World.getInstance().getPlayer(randObjId);
+									Player target = World.getInstance().getPlayer(randObjId);
 									if (target == null) {
 										continue;
 									}
 
-									L2Npc dummyTauti = addSpawn(fakeLeapTauti,
+									Npc dummyTauti = addSpawn(fakeLeapTauti,
 											target.getX(),
 											target.getY(),
 											target.getZ(),
@@ -234,7 +233,7 @@ public class Tauti extends L2AttackableAIScript {
 					startQuestTimer("stage_all_leap_attack_up", nextLeap, world.Tauti, null);
 				}
 			} else if (event.equalsIgnoreCase("stage_all_leap_attack_down_clones")) {
-				for (L2Npc fake : world.fakeTautis) {
+				for (Npc fake : world.fakeTautis) {
 					fake.setTarget(fake);
 					fake.doCast(leapAtkDown);
 				}
@@ -253,7 +252,7 @@ public class Tauti extends L2AttackableAIScript {
 					inst.setDuration(300000);
 				}
 			} else if (event.equalsIgnoreCase("stage_all_unspawn_zahaks")) {
-				for (L2Npc minion : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs()) {
+				for (Npc minion : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs()) {
 					if (minion == null) {
 						continue;
 					}
@@ -278,9 +277,9 @@ public class Tauti extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public final String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -292,7 +291,7 @@ public class Tauti extends L2AttackableAIScript {
 					world.status++;
 
 					for (int[] loc : world.isHardMode ? zahakExtremeCords : zahakEasyeCords) {
-						L2Npc minion = addSpawn(zahakId, loc[0], loc[1], loc[2], loc[3], false, 0, false, world.instanceId);
+						Npc minion = addSpawn(zahakId, loc[0], loc[1], loc[2], loc[3], false, 0, false, world.instanceId);
 						minion.setIsInvul(true);
 						minion.setIsImmobilized(true);
 						minion.broadcastPacket(new NpcSay(minion.getObjectId(),
@@ -320,9 +319,9 @@ public class Tauti extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -340,9 +339,9 @@ public class Tauti extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 
 		int npcId = npc.getNpcId();
@@ -369,7 +368,7 @@ public class Tauti extends L2AttackableAIScript {
 		}
 	}
 
-	private final synchronized void enterInstance(L2PcInstance player, int template_id) {
+	private final synchronized void enterInstance(Player player, int template_id) {
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
 			if (!(world instanceof TautiWorld)) {
@@ -401,7 +400,7 @@ public class Tauti extends L2AttackableAIScript {
 
 			setupIDs((TautiWorld) world, template_id);
 
-			List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+			List<Player> allPlayers = new ArrayList<Player>();
 			if (debug) {
 				allPlayers.add(player);
 			} else {
@@ -410,7 +409,7 @@ public class Tauti extends L2AttackableAIScript {
 								player.getParty().getPartyMembers());
 			}
 
-			for (L2PcInstance enterPlayer : allPlayers) {
+			for (Player enterPlayer : allPlayers) {
 				if (enterPlayer == null) {
 					continue;
 				}
@@ -424,7 +423,7 @@ public class Tauti extends L2AttackableAIScript {
 
 			startQuestTimer("stage_1_open_doors", 5000, null, player);
 
-			Log.fine(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " + player.getName());
+			log.debug(getName() + ": [" + template_id + "] instance started: " + instanceId + " created by player: " + player.getName());
 			return;
 		}
 	}

@@ -5,8 +5,8 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.MagicSkillLaunched;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SetupGauge;
@@ -21,11 +21,11 @@ import java.util.Vector;
 public class NodesManager {
 	private int maxNodes = 4;
 	public int currentNodes;
-	public Vector<L2Node> nodes = new Vector<L2Node>();
+	public Vector<Node> nodes = new Vector<Node>();
 	
-	public boolean SpawnNewNode(L2PcInstance player) {
+	public boolean SpawnNewNode(Player player) {
 		
-		L2Node newNode = new L2Node(1999999968, NpcTable.getInstance().getTemplate(95000), 1, 1, 3);
+		Node newNode = new Node(1999999968, NpcTable.getInstance().getTemplate(95000), 1, 1, 3);
 
 		currentNodes++;
 		//nodes.add(newNode);
@@ -37,12 +37,12 @@ public class NodesManager {
 		return true;
 	}
 	
-	public void tryOwnNode(L2PcInstance activeChar, L2Npc npc) {
+	public void tryOwnNode(Player activeChar, Npc npc) {
 		if (activeChar == null) {
 			return;
 		}
 		
-		L2Node node = (L2Node) npc;
+		Node node = (Node) npc;
 
 		if (node.ownersId.contains(activeChar.getObjectId())) {
 			activeChar.sendMessage("You're already part of the owners !");
@@ -61,11 +61,11 @@ public class NodesManager {
 	}
 	
 	class OwnNodeCastFinalizer implements Runnable {
-		private L2PcInstance player;
-		private L2Npc npc;
-		private L2Node node;
+		private Player player;
+		private Npc npc;
+		private Node node;
 		
-		OwnNodeCastFinalizer(L2PcInstance player, L2Npc npc, L2Node node) {
+		OwnNodeCastFinalizer(Player player, Npc npc, Node node) {
 			this.player = player;
 			this.npc = npc;
 			this.node = node;

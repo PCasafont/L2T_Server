@@ -16,7 +16,8 @@
 package l2server.gameserver.model.base;
 
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.HashMap;
@@ -30,6 +31,9 @@ import java.util.logging.Level;
  *
  */
 public class Experience {
+	private static Logger log = LoggerFactory.getLogger(Experience.class.getName());
+
+
 	private static long LEVEL[];
 	
 	static {
@@ -66,9 +70,9 @@ public class Experience {
 				}
 			}
 		} catch (FileNotFoundException e) {
-			Log.warning("stats/experience.dat is missing in data folder");
+			log.warn("stats/experience.dat is missing in data folder");
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error while loading Experience table " + e.getMessage(), e);
+			log.warn("Error while loading Experience table " + e.getMessage(), e);
 		} finally {
 			try {
 				lnr.close();
@@ -78,7 +82,7 @@ public class Experience {
 		}
 		
 		if (levels.size() < maxLevel) {
-			Log.warning("Experience table: some level entry is missing!");
+			log.warn("Experience table: some level entry is missing!");
 		}
 		
 		LEVEL = new long[levels.size() + 1];

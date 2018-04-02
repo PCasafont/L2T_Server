@@ -19,10 +19,11 @@ import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ItemsAutoDestroy;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.templates.item.L2EtcItemType;
-import l2server.log.Log;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.World;
+import l2server.gameserver.templates.item.EtcItemType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.sql.*;
@@ -38,7 +39,10 @@ import java.util.logging.Level;
  * @version $Revision: $ $Date: $
  */
 public class ItemsOnGroundManager {
-	protected List<L2ItemInstance> items = new ArrayList<>();
+	private static Logger log = LoggerFactory.getLogger(ItemsOnGroundManager.class.getName());
+
+
+	protected List<Item> items = new ArrayList<>();
 	private final StoreInDb task = new StoreInDb();
 
 	private ItemsOnGroundManager() {
@@ -81,7 +85,7 @@ public class ItemsOnGroundManager {
 				statement.execute();
 				statement.close();
 			} catch (Exception e) {
-				Log.log(Level.SEVERE, "Error while updating table ItemsOnGround " + e.getMessage(), e);
+				log.error("Error while updating table ItemsOnGround " + e.getMessage(), e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
@@ -89,7 +93,7 @@ public class ItemsOnGroundManager {
 
 		//Add items to world
 		Connection con = null;
-		L2ItemInstance item;
+		Item item;
 		try {
 			con = L2DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();
@@ -97,8 +101,8 @@ public class ItemsOnGroundManager {
 			int count = 0;
 			result = s.executeQuery("SELECT object_id,item_id,count,enchant_level,x,y,z,drop_time,equipable FROM itemsonground");
 			while (result.next()) {
-				item = new L2ItemInstance(result.getInt(1), result.getInt(2));
-				L2World.getInstance().storeObject(item);
+				item = new Item(result.getInt(1), result.getInt(2));
+				World.getInstance().storeObject(item);
 				if (item.isStackable() && result.getInt(3) > 1) //this check and..
 				{
 					item.setCount(result.getInt(3));
@@ -108,19 +112,19 @@ public class ItemsOnGroundManager {
 					item.setEnchantLevel(result.getInt(4));
 				}
 				item.getPosition().setWorldPosition(result.getInt(5), result.getInt(6), result.getInt(7));
-				item.getPosition().setWorldRegion(L2World.getInstance().getRegion(item.getPosition().getWorldPosition()));
+				item.getPosition().setWorldRegion(World.getInstance().getRegion(item.getPosition().getWorldPosition()));
 				item.getPosition().getWorldRegion().addVisibleObject(item);
 				item.setDropTime(result.getLong(8));
 				item.setProtected(result.getLong(8) == -1);
 				item.setIsVisible(true);
-				L2World.getInstance().addVisibleObject(item, item.getPosition().getWorldRegion());
+				World.getInstance().addVisibleObject(item, item.getPosition().getWorldRegion());
 				items.add(item);
 				count++;
 				// add to ItemsAutoDestroy only items not protected
 				if (!Config.LIST_PROTECTED_ITEMS.contains(item.getItemId())) {
 					if (result.getLong(8) > -1) {
-						if (Config.AUTODESTROY_ITEM_AFTER * 1000 > 0 && item.getItemType() != L2EtcItemType.HERB ||
-								Config.HERB_AUTO_DESTROY_TIME * 1000 > 0 && item.getItemType() == L2EtcItemType.HERB) {
+						if (Config.AUTODESTROY_ITEM_AFTER * 1000 > 0 && item.getItemType() != EtcItemType.HERB ||
+								Config.HERB_AUTO_DESTROY_TIME * 1000 > 0 && item.getItemType() == EtcItemType.HERB) {
 							ItemsAutoDestroy.getInstance().addItem(item);
 						}
 					}
@@ -129,12 +133,12 @@ public class ItemsOnGroundManager {
 			result.close();
 			s.close();
 			if (count > 0) {
-				Log.info("ItemsOnGroundManager: restored " + count + " items.");
+				log.info("ItemsOnGroundManager: restored " + count + " items.");
 			} else {
-				Log.info("Initializing ItemsOnGroundManager.");
+				log.info("Initializing ItemsOnGroundManager.");
 			}
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "Error while loading ItemsOnGround " + e.getMessage(), e);
+			log.error("Error while loading ItemsOnGround " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -143,14 +147,14 @@ public class ItemsOnGroundManager {
 		}
 	}
 
-	public void save(L2ItemInstance item) {
+	public void save(Item item) {
 		if (!Config.SAVE_DROPPED_ITEM) {
 			return;
 		}
 		items.add(item);
 	}
 
-	public void removeObject(L2ItemInstance item) {
+	public void removeObject(Item item) {
 		if (Config.SAVE_DROPPED_ITEM && items != null) {
 			items.remove(item);
 		}
@@ -172,7 +176,7 @@ public class ItemsOnGroundManager {
 			del.execute();
 			del.close();
 		} catch (Exception e1) {
-			Log.log(Level.SEVERE, "Error while cleaning table ItemsOnGround " + e1.getMessage(), e1);
+			log.error("Error while cleaning table ItemsOnGround " + e1.getMessage(), e1);
 		} finally {
 			L2DatabaseFactory.close(conn);
 		}
@@ -189,7 +193,7 @@ public class ItemsOnGroundManager {
 
 			if (items.isEmpty()) {
 				if (Config.DEBUG) {
-					Log.warning("ItemsOnGroundManager: nothing to save...");
+					log.warn("ItemsOnGroundManager: nothing to save...");
 				}
 				return;
 			}
@@ -202,7 +206,7 @@ public class ItemsOnGroundManager {
 				statement = con.prepareStatement(
 						"INSERT INTO itemsonground(object_id,item_id,count,enchant_level,x,y,z,drop_time,equipable) VALUES(?,?,?,?,?,?,?,?,?)");
 
-				for (L2ItemInstance item : items) {
+				for (Item item : items) {
 					if (item == null) {
 						continue;
 					}
@@ -233,18 +237,18 @@ public class ItemsOnGroundManager {
 						statement.execute();
 						statement.clearParameters();
 					} catch (Exception e) {
-						Log.log(Level.SEVERE, "Error while inserting into table ItemsOnGround: " + e.getMessage(), e);
+						log.error("Error while inserting into table ItemsOnGround: " + e.getMessage(), e);
 					}
 				}
 				statement.close();
 			} catch (SQLException e) {
-				Log.log(Level.SEVERE, "SQL error while storing items on ground: " + e.getMessage(), e);
+				log.error("SQL error while storing items on ground: " + e.getMessage(), e);
 			} finally {
 				L2DatabaseFactory.close(con);
 			}
 
 			if (Config.DEBUG) {
-				Log.warning("ItemsOnGroundManager: " + items.size() + " items on ground saved");
+				log.warn("ItemsOnGroundManager: " + items.size() + " items on ground saved");
 			}
 		}
 	}

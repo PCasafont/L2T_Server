@@ -9,16 +9,15 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
 import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2NpcBufferInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.NpcBufferInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
-import l2server.log.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +50,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 	private static final int instanceTemplateId = 503;
 	private static final int[] herbs = {8605, 8602};
 	private static final int[] allmobs = {mob1, mob2, mob3, mob3, mob4, mob5, mob6, mob7, mob8, bossId};
-	private static final L2Skill powerHealSkill = SkillTable.getInstance().getInfo(14625, 1);
+	private static final Skill powerHealSkill = SkillTable.getInstance().getInfo(14625, 1);
 	
 	private static final int[][] secondRoom1 = {{-107776, 209248}, {-108096, 209248}, {-107926, 209248}};
 	
@@ -62,19 +61,19 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 	private static final int[][] lastGuardSpawns = {{-108500, 211232}, {-108500, 211596}, {-107349, 211596}, {-107349, 211232}};
 	
 	private class RescueOfTheLastGiantWorld extends InstanceWorld {
-		private L2PcInstance instancedPlayer;
+		private Player instancedPlayer;
 		private int mobToAttack;
 		private int specificMobClass;
 		private boolean playerFail;
 		private boolean deviceSpawned;
-		private L2Npc dummyNpc;
-		private L2Npc lastPower;
-		private List<L2Npc> mobs;
+		private Npc dummyNpc;
+		private Npc lastPower;
+		private List<Npc> mobs;
 		
 		private RescueOfTheLastGiantWorld() {
 			playerFail = false;
 			deviceSpawned = false;
-			mobs = new ArrayList<L2Npc>();
+			mobs = new ArrayList<Npc>();
 		}
 	}
 	
@@ -95,9 +94,9 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onFirstTalk: " + player);
+			log.warn(getName() + ": onFirstTalk: " + player);
 		}
 		
 		if (npc.getNpcId() == controlDevice) {
@@ -108,9 +107,9 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onAggroRangeEnter(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onAggroRangeEnter: " + player.getName());
+			log.warn(getName() + ": onAggroRangeEnter: " + player.getName());
 		}
 		
 		InstanceWorld wrld = null;
@@ -143,9 +142,9 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 		
 		InstanceWorld wrld = null;
@@ -154,7 +153,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onAdvEvent: Unable to get world.");
+			log.warn(getName() + ": onAdvEvent: Unable to get world.");
 			return null;
 		}
 		
@@ -193,7 +192,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 				world.instancedPlayer.sendPacket(new ExShowScreenMessage(1811214, 0, true, 10000));
 				
 				//Cast the skill to the player
-				for (L2Npc power : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs()) {
+				for (Npc power : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs()) {
 					if (power != null && power.getNpcId() >= 80285 && power.getNpcId() <= 80287) {
 						power.setTarget(world.instancedPlayer);
 						power.doCast(powerHealSkill);
@@ -240,21 +239,21 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 				world.instancedPlayer.sendPacket(new ExShowScreenMessage(1811222, 0, true, 4000));
 				
 				//The power
-				L2Skill powerSkill = SkillTable.getInstance().getInfo(14700, 1);
+				Skill powerSkill = SkillTable.getInstance().getInfo(14700, 1);
 				
-				L2Npc power = addSpawn(80287, -107925, 208869, -10877, 8191, false, 10000, false, world.instanceId);
+				Npc power = addSpawn(80287, -107925, 208869, -10877, 8191, false, 10000, false, world.instanceId);
 				power.setTarget(world.instancedPlayer);
 				power.doCast(powerSkill);
 				
 				//11minions
 				synchronized (world.mobs) {
 					for (int[] spawns : secondRoom2) {
-						L2Npc mob = addSpawn(world.specificMobClass, spawns[0], spawns[1], -10872, 49536, false, 0, false, world.instanceId);
+						Npc mob = addSpawn(world.specificMobClass, spawns[0], spawns[1], -10872, 49536, false, 0, false, world.instanceId);
 						world.mobs.add(mob);
 					}
 					
 					//Send to attack
-					for (L2Npc mobs : world.mobs) {
+					for (Npc mobs : world.mobs) {
 						if (mobs != null && mobs.getNpcId() == world.specificMobClass) {
 							sendToAttack(world.instancedPlayer, mobs);
 						}
@@ -263,7 +262,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 			} else if (event.equalsIgnoreCase("stage_2_round_3")) {
 				world.status = 4;
 				
-				L2Npc newNpc = addSpawn(world.specificMobClass, -107926, 209248, -10872, 49536, false, 0, false, world.instanceId);
+				Npc newNpc = addSpawn(world.specificMobClass, -107926, 209248, -10872, 49536, false, 0, false, world.instanceId);
 				
 				sendToAttack(world.instancedPlayer, newNpc);
 			} else if (event.equalsIgnoreCase("stage_3_spawns")) {
@@ -277,7 +276,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 				startQuestTimer("stage_last_last_power", 6000, world.lastPower, null);
 				
 				//Spawn FlyNpc
-				L2Npc flyNpc = addSpawn(80289, -107926, 212489, -10824, 49536, false, 0, false, world.instanceId);
+				Npc flyNpc = addSpawn(80289, -107926, 212489, -10824, 49536, false, 0, false, world.instanceId);
 				
 				//flyNpc effect
 				flyNpc.setDisplayEffect(1);
@@ -334,9 +333,9 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 	}
 	
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public final String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 		
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -348,7 +347,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 					
 					//If player attack one mob without kill first the boss (status = 1), send all mobs to attack he
 					synchronized (world.mobs) {
-						for (L2Npc mob : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs()) {
+						for (Npc mob : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs()) {
 							if (mob != null && !mob.isDead() && mob.getNpcId() >= mob8 && mob.getNpcId() <= mob7) {
 								world.mobs.add(mob);
 								
@@ -366,14 +365,14 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 					world.instancedPlayer.sendPacket(new ExSendUIEvent(1, 0, 60, 0, 1811302));
 					
 					//Spawn device
-					L2Npc device = addSpawn(controlDevice, -107790, 211409, -10872, 32768, false, 60000, false, world.instanceId);
+					Npc device = addSpawn(controlDevice, -107790, 211409, -10872, 32768, false, 60000, false, world.instanceId);
 					device.sendPacket(new NpcSay(device.getObjectId(), 0, device.getTemplate().TemplateId, 1300171));
 					
 					addSpawn(controlDevice, -108046, 211409, -10872, 32768, false, 60000, false, world.instanceId);
 					
 					//Spawn guards
 					for (int[] spawn : lastGuardSpawns) {
-						L2Npc mob = addSpawn(world.specificMobClass, spawn[0], spawn[1], -10872, 49536, false, 0, false, world.instanceId);
+						Npc mob = addSpawn(world.specificMobClass, spawn[0], spawn[1], -10872, 49536, false, 0, false, world.instanceId);
 						
 						sendToAttack(world.instancedPlayer, mob);
 					}
@@ -386,9 +385,9 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 		
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -467,12 +466,12 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 				world.status = 2;
 				synchronized (world.mobs) {
 					for (int[] spawn : secondRoom1) {
-						L2Npc mob = addSpawn(world.specificMobClass, spawn[0], spawn[1], -10872, 49536, false, 0, false, world.instanceId);
+						Npc mob = addSpawn(world.specificMobClass, spawn[0], spawn[1], -10872, 49536, false, 0, false, world.instanceId);
 						world.mobs.add(mob);
 					}
 					
 					//Send to attack
-					for (L2Npc mobs : world.mobs) {
+					for (Npc mobs : world.mobs) {
 						if (mobs != null && mobs.getNpcId() == world.specificMobClass) {
 							sendToAttack(world.instancedPlayer, mobs);
 						}
@@ -528,7 +527,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 	}
 	
 	private static void sendText(int inst, int npcid, int chatId, int npcstring1, int npcstring2) {
-		for (L2Npc mob : InstanceManager.getInstance().getInstance(inst).getNpcs()) {
+		for (Npc mob : InstanceManager.getInstance().getInstance(inst).getNpcs()) {
 			if (mob != null && mob.getNpcId() == npcid) {
 				if (npcstring1 != 0) {
 					mob.broadcastPacket(new NpcSay(mob.getObjectId(), chatId, mob.getTemplate().TemplateId, npcstring1));
@@ -542,7 +541,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 	}
 	
 	private static void sendToCenter(int inst, int npcid, int x, int y, int z, int head) {
-		for (L2Npc mob : InstanceManager.getInstance().getInstance(inst).getNpcs()) {
+		for (Npc mob : InstanceManager.getInstance().getInstance(inst).getNpcs()) {
 			if (mob != null && mob.getNpcId() == npcid) {
 				mob.setIsRunning(true);
 				mob.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new L2CharPosition(x, y, z, head));
@@ -553,27 +552,27 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 		}
 	}
 	
-	private static void sendToAttack(L2PcInstance player, L2Npc npc) {
+	private static void sendToAttack(Player player, Npc npc) {
 		if (player == null || npc == null) {
 			return;
 		}
 		
 		npc.setIsRunning(true);
 		npc.setTarget(player);
-		((L2Attackable) npc).addDamageHate(player, 500, 99999);
+		((Attackable) npc).addDamageHate(player, 500, 99999);
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player, null);
 	}
 	
-	private static void dropHerb(L2Npc mob, L2PcInstance player) {
+	private static void dropHerb(Npc mob, Player player) {
 		for (int i = 0; i < 2; i++) {
-			((L2MonsterInstance) mob).dropItem(player, herbs[i], 1);
+			((MonsterInstance) mob).dropItem(player, herbs[i], 1);
 		}
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 		
 		if (npc.getNpcId() == DimensionalDoor.getNpcManagerId()) {
@@ -583,7 +582,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 		return super.onTalk(npc, player);
 	}
 	
-	private final synchronized void enterInstance(L2PcInstance player) {
+	private final synchronized void enterInstance(Player player) {
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
 			if (!(world instanceof RescueOfTheLastGiantWorld)) {
@@ -597,7 +596,7 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(-107917, 205824, -10872, true);
 					
-					L2NpcBufferInstance.giveBasicBuffs(player);
+					NpcBufferInstance.giveBasicBuffs(player);
 				}
 			}
 			return;
@@ -619,11 +618,11 @@ public class RescueOfTheLastGiant extends L2AttackableAIScript {
 			player.setInstanceId(instanceId);
 			player.teleToLocation(-107917, 205824, -10872, true);
 			
-			L2NpcBufferInstance.giveBasicBuffs(player);
+			NpcBufferInstance.giveBasicBuffs(player);
 			
 			startQuestTimer("stage_1_start", 4000, null, player);
 			
-			Log.fine(getName() + ": instance started: " + instanceId + " created by player: " + player.getName());
+			log.debug(getName() + ": instance started: " + instanceId + " created by player: " + player.getName());
 			return;
 		}
 	}

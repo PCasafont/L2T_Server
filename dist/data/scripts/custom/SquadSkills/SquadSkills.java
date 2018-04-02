@@ -20,9 +20,9 @@ import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2Clan.SubPledge;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -131,7 +131,7 @@ public class SquadSkills extends Quest {
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		L2Clan playerClan = player.getClan();
 		
 		if (playerClan == null || !player.isClanLeader() || playerClan.getLeaderId() != player.getObjectId()) {
@@ -205,7 +205,7 @@ public class SquadSkills extends Quest {
 				return null; //cheating
 			}
 			
-			L2Skill newSkill = SkillTable.getInstance().getInfo(skillId, level);
+			Skill newSkill = SkillTable.getInstance().getInfo(skillId, level);
 			
 			if (newSkill == null) {
 				return null;
@@ -255,11 +255,11 @@ public class SquadSkills extends Quest {
 		Map<Integer, Integer> pledgeSkills = new HashMap<Integer, Integer>();
 		
 		if (pledgeType == 0) {
-			for (Entry<Integer, L2Skill> skill : clan.getMainClanSubSkills().entrySet()) {
+			for (Entry<Integer, Skill> skill : clan.getMainClanSubSkills().entrySet()) {
 				pledgeSkills.put(skill.getKey(), skill.getValue().getLevelHash());
 			}
 		} else {
-			for (L2Skill skill : clan.getSubPledge(pledgeType).getSkills()) {
+			for (Skill skill : clan.getSubPledge(pledgeType).getSkills()) {
 				pledgeSkills.put(skill.getId(), skill.getLevelHash());
 			}
 		}
@@ -291,7 +291,7 @@ public class SquadSkills extends Quest {
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		notifyEvent("show_subPledges", npc, player);
 		return null;
 	}

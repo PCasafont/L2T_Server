@@ -16,26 +16,26 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.L2GameClientPacket;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * This class manages requests (transactions) between two L2PcInstance.
+ * This class manages requests (transactions) between two Player.
  *
  * @author kriau
  */
 public class L2Request {
 	private static final int REQUEST_TIMEOUT = 15; //in secs
 
-	protected L2PcInstance player;
-	protected L2PcInstance partner;
+	protected Player player;
+	protected Player partner;
 	protected boolean isRequestor;
 	protected boolean isAnswerer;
 	protected L2GameClientPacket requestPacket;
 
-	public L2Request(L2PcInstance player) {
+	public L2Request(Player player) {
 		this.player = player;
 	}
 
@@ -47,16 +47,16 @@ public class L2Request {
 	}
 
 	/**
-	 * Set the L2PcInstance member of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).<BR><BR>
+	 * Set the Player member of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).<BR><BR>
 	 */
-	private synchronized void setPartner(L2PcInstance partner) {
+	private synchronized void setPartner(Player partner) {
 		this.partner = partner;
 	}
 
 	/**
-	 * Return the L2PcInstance member of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).<BR><BR>
+	 * Return the Player member of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).<BR><BR>
 	 */
-	public L2PcInstance getPartner() {
+	public Player getPartner() {
 		return partner;
 	}
 
@@ -77,7 +77,7 @@ public class L2Request {
 	/**
 	 * Checks if request can be made and in success case puts both PC on request state.<BR><BR>
 	 */
-	public synchronized boolean setRequest(L2PcInstance partner, L2GameClientPacket packet) {
+	public synchronized boolean setRequest(Player partner, L2GameClientPacket packet) {
 		if (partner == null) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_INVITED_THE_WRONG_TARGET));
 			return false;

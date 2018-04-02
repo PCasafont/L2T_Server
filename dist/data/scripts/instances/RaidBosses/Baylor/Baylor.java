@@ -21,15 +21,14 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -62,17 +61,17 @@ public class Baylor extends L2AttackableAIScript {
 			{{153571, 142858, -12744, 48779}, {152777, 142075, -12744, 82}, {153573, 141275, -12744, 16219}, {154359, 142075, -12744, 33274}};
 
 	//Others
-	private static final L2Skill baylorBerserk = SkillTable.getInstance().getInfo(5224, 1);
-	private static final L2Skill baylorInvincibility = SkillTable.getInstance().getInfo(5225, 1);
+	private static final Skill baylorBerserk = SkillTable.getInstance().getInfo(5224, 1);
+	private static final Skill baylorInvincibility = SkillTable.getInstance().getInfo(5225, 1);
 
 	private class BaylorWorld extends InstanceWorld {
-		private L2Npc baylorOne;
-		private L2Npc baylorTwo;
-		private L2Npc camera;
-		private List<L2Npc> cameraMinions;
+		private Npc baylorOne;
+		private Npc baylorTwo;
+		private Npc camera;
+		private List<Npc> cameraMinions;
 
 		private BaylorWorld() {
-			cameraMinions = new ArrayList<L2Npc>();
+			cameraMinions = new ArrayList<Npc>();
 		}
 	}
 
@@ -89,9 +88,9 @@ public class Baylor extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		InstanceWorld wrld = null;
@@ -100,7 +99,7 @@ public class Baylor extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onAdvEvent: Unable to get world.");
+			log.warn(getName() + ": onAdvEvent: Unable to get world.");
 			return null;
 		}
 
@@ -126,7 +125,7 @@ public class Baylor extends L2AttackableAIScript {
 					int x = (int) (radius * Math.cos(i * 0.618));
 					int y = (int) (radius * Math.sin(i * 0.618));
 
-					L2Npc mob = addSpawn(cameraMinionId, 153571 + x, 142075 + y, -12737, 0, false, 0, false, world.instanceId);
+					Npc mob = addSpawn(cameraMinionId, 153571 + x, 142075 + y, -12737, 0, false, 0, false, world.instanceId);
 					mob.setIsParalyzed(true);
 					world.cameraMinions.add(mob);
 				}
@@ -161,7 +160,7 @@ public class Baylor extends L2AttackableAIScript {
 				world.baylorOne.setIsParalyzed(false);
 				world.baylorTwo.setIsParalyzed(false);
 
-				for (L2Npc mob : world.cameraMinions) {
+				for (Npc mob : world.cameraMinions) {
 					mob.doDie(mob);
 				}
 
@@ -177,7 +176,7 @@ public class Baylor extends L2AttackableAIScript {
 
 				if (Rnd.nextBoolean()) {
 					int[] rndAlarm = alarmSpawns[Rnd.get(alarmSpawns.length)];
-					L2Npc alarm = addSpawn(alarmId, rndAlarm[0], rndAlarm[1], rndAlarm[2], rndAlarm[3], false, 0, false, world.instanceId);
+					Npc alarm = addSpawn(alarmId, rndAlarm[0], rndAlarm[1], rndAlarm[2], rndAlarm[3], false, 0, false, world.instanceId);
 					alarm.broadcastPacket(new NpcSay(alarm.getObjectId(), 0, alarm.getTemplate().TemplateId, 1800031));
 
 					startQuestTimer("stage_all_alarm_check", 15000, alarm, null);
@@ -210,15 +209,15 @@ public class Baylor extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public final String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpWorld instanceof BaylorWorld) {
 			if (npc.getNpcId() == baylorId) {
-				L2Abnormal ab = npc.getFirstEffect(baylorInvincibility);
+				Abnormal ab = npc.getFirstEffect(baylorInvincibility);
 				if (ab != null) {
 					if (attacker.isBehindTarget()) {
 						if (Rnd.get(100) == 50) {
@@ -232,9 +231,9 @@ public class Baylor extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -258,9 +257,9 @@ public class Baylor extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 
 		if (npc.getNpcId() == crystalPortal) {
@@ -270,7 +269,7 @@ public class Baylor extends L2AttackableAIScript {
 		return super.onTalk(npc, player);
 	}
 
-	private final synchronized void enterInstance(L2PcInstance player) {
+	private final synchronized void enterInstance(Player player) {
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
 			if (!(world instanceof BaylorWorld)) {
@@ -299,14 +298,14 @@ public class Baylor extends L2AttackableAIScript {
 
 			InstanceManager.getInstance().addWorld(world);
 
-			List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+			List<Player> allPlayers = new ArrayList<Player>();
 			if (debug) {
 				allPlayers.add(player);
 			} else {
 				allPlayers.addAll(player.getParty().getPartyMembers());
 			}
 
-			for (L2PcInstance enterPlayer : allPlayers) {
+			for (Player enterPlayer : allPlayers) {
 				if (enterPlayer == null) {
 					continue;
 				}
@@ -322,7 +321,7 @@ public class Baylor extends L2AttackableAIScript {
 
 			startQuestTimer("stage_1_start", 60000, null, player);
 
-			Log.fine(getName() + ": instance started: " + instanceId + " created by player: " + player.getName());
+			log.debug(getName() + ": instance started: " + instanceId + " created by player: " + player.getName());
 			return;
 		}
 	}

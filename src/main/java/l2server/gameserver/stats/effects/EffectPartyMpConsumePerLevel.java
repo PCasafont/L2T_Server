@@ -16,14 +16,14 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.VisualEffect;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.EffectTemplate;
 import l2server.gameserver.util.Util;
 
 /**
@@ -31,7 +31,7 @@ import l2server.gameserver.util.Util;
  */
 
 public class EffectPartyMpConsumePerLevel extends L2Effect {
-	public EffectPartyMpConsumePerLevel(Env env, L2EffectTemplate template) {
+	public EffectPartyMpConsumePerLevel(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -39,7 +39,7 @@ public class EffectPartyMpConsumePerLevel extends L2Effect {
 	public boolean onStart() {
 		if (getEffector() == getEffected()) {
 			if (getEffector().getParty() != null) {
-				for (L2PcInstance member : getEffector().getParty().getPartyMembers()) {
+				for (Player member : getEffector().getParty().getPartyMembers()) {
 					if (!Util.checkIfInRange(700, getEffector(), member, false)) {
 						continue;
 					}
@@ -62,9 +62,9 @@ public class EffectPartyMpConsumePerLevel extends L2Effect {
 			}
 			/*else
             {
-				if (getEffector() instanceof L2PcInstance)
+				if (getEffector() instanceof Player)
 				{
-					for (L2SummonInstance summon : ((L2PcInstance)getEffector()).getSummons())
+					for (SummonInstance summon : ((Player)getEffector()).getSummons())
 					{
 						if (summon != null)
 						{
@@ -86,14 +86,14 @@ public class EffectPartyMpConsumePerLevel extends L2Effect {
 	public void onExit() {
 		if (getEffector() == getEffected()) {
 			if (getEffector().getParty() != null) {
-				for (L2PcInstance member : getEffector().getParty().getPartyMembers()) {
+				for (Player member : getEffector().getParty().getPartyMembers()) {
 					if (member == null) {
 						continue;
 					}
 
 					if (member.getObjectId() != getEffector().getObjectId()) {
 						int newSkillId = getSkill().getPartyChangeSkill() == -1 ? getSkill().getId() : getSkill().getPartyChangeSkill();
-						L2Abnormal removingEffect = member.getFirstEffect(newSkillId);
+						Abnormal removingEffect = member.getFirstEffect(newSkillId);
 
 						if (removingEffect == null) {
 							continue;
@@ -143,7 +143,7 @@ public class EffectPartyMpConsumePerLevel extends L2Effect {
 			// To check if party member have toggle.
 			if (getEffector() == getEffected()) {
 				if (getEffector().getParty() != null) {
-					for (L2PcInstance member : getEffector().getParty().getPartyMembers()) {
+					for (Player member : getEffector().getParty().getPartyMembers()) {
 						if (member.getObjectId() == getEffector().getObjectId()) {
 							continue;
 						}

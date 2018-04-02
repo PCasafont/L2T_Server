@@ -16,8 +16,8 @@
 package ai.individual;
 
 import ai.group_template.L2AttackableAIScript;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author LasTravel
@@ -39,7 +39,7 @@ public class Legah extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		addSpawn(legahMinion, killer.getX(), killer.getY(), killer.getZ(), 0, true, 60000, true);
 
 		return super.onKill(npc, killer, isPet);

@@ -16,8 +16,8 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.instancemanager.BoatManager;
-import l2server.gameserver.model.actor.instance.L2BoatInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.BoatInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.GetOnVehicle;
 import l2server.util.Point3D;
@@ -44,12 +44,12 @@ public final class RequestGetOnVehicle extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
 
-		L2BoatInstance boat;
+		BoatInstance boat;
 		if (activeChar.isInBoat()) {
 			boat = activeChar.getBoat();
 			if (boat.getObjectId() != boatId) {

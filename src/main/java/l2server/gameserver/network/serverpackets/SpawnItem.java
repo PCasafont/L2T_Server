@@ -15,8 +15,8 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
 
 /**
  * 15
@@ -39,14 +39,14 @@ public final class SpawnItem extends L2GameServerPacket {
 	private int stackable;
 	private long count;
 
-	public SpawnItem(L2Object obj) {
+	public SpawnItem(WorldObject obj) {
 		objectId = obj.getObjectId();
 		x = obj.getX();
 		y = obj.getY();
 		z = obj.getZ();
 
-		if (obj instanceof L2ItemInstance) {
-			L2ItemInstance item = (L2ItemInstance) obj;
+		if (obj instanceof Item) {
+			Item item = (Item) obj;
 			itemId = item.getItemId();
 			stackable = item.isStackable() ? 0x01 : 0x00;
 			count = item.getCount();

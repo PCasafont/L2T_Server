@@ -17,9 +17,9 @@ package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.TransformationManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SetupGauge;
@@ -38,23 +38,23 @@ public class AdminPolymorph implements IAdminCommandHandler {
 					"admin_transform_menu", "admin_untransform_menu",};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (activeChar.isMounted()) {
 			activeChar.sendMessage("You can't transform while mounted, please dismount and try again.");
 			return false;
 		}
 
 		if (command.startsWith("admin_untransform")) {
-			L2Object obj = activeChar.getTarget();
-			if (obj instanceof L2Character) {
-				((L2Character) obj).stopTransformation(true);
+			WorldObject obj = activeChar.getTarget();
+			if (obj instanceof Creature) {
+				((Creature) obj).stopTransformation(true);
 			} else {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			}
 		} else if (command.startsWith("admin_transform")) {
-			L2Object obj = activeChar.getTarget();
-			if (obj instanceof L2PcInstance) {
-				L2PcInstance cha = (L2PcInstance) obj;
+			WorldObject obj = activeChar.getTarget();
+			if (obj instanceof Player) {
+				Player cha = (Player) obj;
 
 				String[] parts = command.split(" ");
 				if (parts.length >= 2) {
@@ -77,7 +77,7 @@ public class AdminPolymorph implements IAdminCommandHandler {
 		}
 		if (command.startsWith("admin_polymorph")) {
 			StringTokenizer st = new StringTokenizer(command);
-			L2Object target = activeChar.getTarget();
+			WorldObject target = activeChar.getTarget();
 			try {
 				st.nextToken();
 				String p1 = st.nextToken();
@@ -110,12 +110,12 @@ public class AdminPolymorph implements IAdminCommandHandler {
 	 * @param id
 	 * @param type
 	 */
-	private void doPolymorph(L2PcInstance activeChar, L2Object obj, String id, String type) {
+	private void doPolymorph(Player activeChar, WorldObject obj, String id, String type) {
 		if (obj != null) {
 			obj.getPoly().setPolyInfo(type, id);
 			//animation
-			if (obj instanceof L2Character) {
-				L2Character Char = (L2Character) obj;
+			if (obj instanceof Creature) {
+				Creature Char = (Creature) obj;
 				MagicSkillUse msk = new MagicSkillUse(Char, 1008, 1, 4000, 0);
 				Char.broadcastPacket(msk);
 				SetupGauge sg = new SetupGauge(0, 4000);
@@ -134,7 +134,7 @@ public class AdminPolymorph implements IAdminCommandHandler {
 	 * @param activeChar
 	 * @param target
 	 */
-	private void doUnpoly(L2PcInstance activeChar, L2Object target) {
+	private void doUnpoly(Player activeChar, WorldObject target) {
 		if (target != null) {
 			target.getPoly().setPolyInfo(null, "1");
 			target.decayMe();
@@ -145,7 +145,7 @@ public class AdminPolymorph implements IAdminCommandHandler {
 		}
 	}
 
-	private void showMainPage(L2PcInstance activeChar, String command) {
+	private void showMainPage(Player activeChar, String command) {
 		if (command.contains("transform")) {
 			AdminHelpPage.showHelpPage(activeChar, "transform.htm");
 		} else if (command.contains("abnormal")) {

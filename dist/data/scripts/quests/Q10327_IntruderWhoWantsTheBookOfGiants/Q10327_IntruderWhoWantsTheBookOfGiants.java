@@ -19,13 +19,13 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2GuardInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.GuardInstance;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.GlobalQuest;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
@@ -58,7 +58,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 
@@ -105,7 +105,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, final L2PcInstance player) {
+	public String onFirstTalk(Npc npc, final Player player) {
 		String htmltext = null;
 		final QuestState st = player.getQuestState(qn);
 		if (st == null) {
@@ -124,9 +124,9 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest {
 				st.giveItems(bookItem, 1);
 				st.playSound("ItemSound.quest_middle");
 				player.sendPacket(new ExShowScreenMessage(1032322, 0, true, 7000));
-				final L2Npc intruder1 = addSpawn(intruder, -114835, 244966, -7976, 16072, false, 0, false, player.getObjectId());
-				final L2Npc intruder2 = addSpawn(intruder, -114564, 244954, -7976, 16072, false, 0, false, player.getObjectId());
-				final L2GuardInstance guard = (L2GuardInstance) L2World.getInstance().findObject(st.getInt("guardId"));
+				final Npc intruder1 = addSpawn(intruder, -114835, 244966, -7976, 16072, false, 0, false, player.getObjectId());
+				final Npc intruder2 = addSpawn(intruder, -114564, 244954, -7976, 16072, false, 0, false, player.getObjectId());
+				final GuardInstance guard = (GuardInstance) World.getInstance().findObject(st.getInt("guardId"));
 				guard.setRunning();
 
 				ThreadPoolManager.getInstance().executeAi(new Runnable() {
@@ -137,7 +137,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest {
 						}
 
 						if (guard.getHateList() == null) {
-							L2Npc moveTo = intruder1;
+							Npc moveTo = intruder1;
 							if (moveTo.isDead()) {
 								moveTo = intruder2;
 							}
@@ -148,8 +148,8 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest {
 						}
 
 						boolean allDead = true;
-						for (L2Npc iNpc : InstanceManager.getInstance().getInstance(player.getObjectId()).getNpcs()) {
-							if (iNpc instanceof L2MonsterInstance && !iNpc.isDead()) {
+						for (Npc iNpc : InstanceManager.getInstance().getInstance(player.getObjectId()).getNpcs()) {
+							if (iNpc instanceof MonsterInstance && !iNpc.isDead()) {
 								allDead = false;
 							}
 						}
@@ -180,7 +180,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
 		if (st == null) {
@@ -211,19 +211,19 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest {
 	}
 
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet) {
-		if (!(npc instanceof L2GuardInstance)) {
+	public String onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isPet) {
+		if (!(npc instanceof GuardInstance)) {
 			return null;
 		}
 
-		L2GuardInstance guard = (L2GuardInstance) npc;
+		GuardInstance guard = (GuardInstance) npc;
 
-		for (L2Object o : targets) {
-			if (!(o instanceof L2MonsterInstance)) {
+		for (WorldObject o : targets) {
+			if (!(o instanceof MonsterInstance)) {
 				continue;
 			}
 
-			L2MonsterInstance intruder = (L2MonsterInstance) o;
+			MonsterInstance intruder = (MonsterInstance) o;
 
 			guard.addDamageHate(intruder, 0, 100000);
 		}
@@ -232,7 +232,7 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest {
 	}
 
 	@Override
-	public boolean canStart(L2PcInstance player) {
+	public boolean canStart(Player player) {
 		return player.getGlobalQuestFlag(GlobalQuest.STARTING, 7) && player.getLevel() <= 20;
 	}
 

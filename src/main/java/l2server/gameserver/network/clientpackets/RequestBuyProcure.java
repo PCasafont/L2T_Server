@@ -18,20 +18,20 @@ package l2server.gameserver.network.clientpackets;
 import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.instancemanager.CastleManorManager;
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Manor;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2ManorManagerInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.ManorManagerInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.item.ItemTemplate;
 
-import static l2server.gameserver.model.actor.L2Npc.DEFAULT_INTERACTION_DISTANCE;
+import static l2server.gameserver.model.actor.Npc.DEFAULT_INTERACTION_DISTANCE;
 
 @Deprecated
 public class RequestBuyProcure extends L2GameClientPacket {
@@ -65,7 +65,7 @@ public class RequestBuyProcure extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -84,13 +84,13 @@ public class RequestBuyProcure extends L2GameClientPacket {
 			return;
 		}
 
-		L2Object manager = player.getTarget();
+		WorldObject manager = player.getTarget();
 
-		if (!(manager instanceof L2ManorManagerInstance)) {
+		if (!(manager instanceof ManorManagerInstance)) {
 			manager = player.getLastFolkNPC();
 		}
 
-		if (!(manager instanceof L2ManorManagerInstance)) {
+		if (!(manager instanceof ManorManagerInstance)) {
 			return;
 		}
 
@@ -98,14 +98,14 @@ public class RequestBuyProcure extends L2GameClientPacket {
 			return;
 		}
 
-		Castle castle = ((L2ManorManagerInstance) manager).getCastle();
+		Castle castle = ((ManorManagerInstance) manager).getCastle();
 		int slots = 0;
 		int weight = 0;
 
 		for (Procure i : items) {
 			i.setReward(castle);
 
-			L2Item template = ItemTable.getInstance().getTemplate(i.getReward());
+			ItemTemplate template = ItemTable.getInstance().getTemplate(i.getReward());
 			weight += i.getCount() * template.getWeight();
 
 			if (!template.isStackable()) {
@@ -130,12 +130,12 @@ public class RequestBuyProcure extends L2GameClientPacket {
 
 		for (Procure i : items) {
 			// check if player have correct items count
-			L2ItemInstance item = player.getInventory().getItemByItemId(i.getItemId());
+			Item item = player.getInventory().getItemByItemId(i.getItemId());
 			if (item == null || item.getCount() < i.getCount()) {
 				continue;
 			}
 
-			L2ItemInstance iteme = player.getInventory().destroyItemByItemId("Manor", i.getItemId(), i.getCount(), player, manager);
+			Item iteme = player.getInventory().destroyItemByItemId("Manor", i.getItemId(), i.getCount(), player, manager);
 			if (iteme == null) {
 				continue;
 			}

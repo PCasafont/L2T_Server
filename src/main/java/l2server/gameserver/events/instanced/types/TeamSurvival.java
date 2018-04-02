@@ -3,8 +3,8 @@ package l2server.gameserver.events.instanced.types;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.events.instanced.*;
 import l2server.gameserver.instancemanager.PlayerAssistsManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.util.Point3D;
@@ -41,7 +41,7 @@ public class TeamSurvival extends EventInstance {
 	}
 
 	@Override
-	public String getRunningInfo(L2PcInstance player) {
+	public String getRunningInfo(Player player) {
 		String html = "";
 
 		int i = 0;
@@ -53,7 +53,7 @@ public class TeamSurvival extends EventInstance {
 
 			if (team.getParticipatedPlayerCount() > 0 && team.isAlive()) {
 				html += "Team " + team.getName() + " survivors:<br>";
-				for (L2PcInstance participant : team.getParticipatedPlayers().values()) {
+				for (Player participant : team.getParticipatedPlayers().values()) {
 					if (participant != null && !participant.isDead()) {
 						html += EventsManager.getInstance().getPlayerString(participant, player) + ", ";
 					}
@@ -78,12 +78,12 @@ public class TeamSurvival extends EventInstance {
 	}
 
 	@Override
-	public void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance) {
+	public void onKill(Creature killerCharacter, Player killedPlayerInstance) {
 		if (killedPlayerInstance == null || !isState(EventState.STARTED)) {
 			return;
 		}
 
-		L2PcInstance killerPlayer = killerCharacter.getActingPlayer();
+		Player killerPlayer = killerCharacter.getActingPlayer();
 		if (killerPlayer == null) {
 			return;
 		}
@@ -99,8 +99,8 @@ public class TeamSurvival extends EventInstance {
 			if (killerTeam != team) {
 				killerTeam.increasePoints();
 				killerPlayer.addEventPoints(3);
-				List<L2PcInstance> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayerInstance, true);
-				for (L2PcInstance assistant : assistants) {
+				List<Player> assistants = PlayerAssistsManager.getInstance().getAssistants(killerPlayer, killedPlayerInstance, true);
+				for (Player assistant : assistants) {
 					assistant.addEventPoints(1);
 				}
 			} else {
@@ -114,7 +114,7 @@ public class TeamSurvival extends EventInstance {
 		}
 
 		if (!team.isAlive()) {
-			for (L2PcInstance player : team.getParticipatedPlayers().values()) {
+			for (Player player : team.getParticipatedPlayers().values()) {
 				player.sendMessage("Since there weren't alive participants, your team has been disqualified from the event.");
 				new EventTeleporter(player, new Point3D(0, 0, 0), false, true);
 			}

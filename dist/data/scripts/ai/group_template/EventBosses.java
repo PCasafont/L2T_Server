@@ -19,10 +19,10 @@ import l2server.gameserver.Announcements;
 import l2server.gameserver.GmListTable;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.util.Rnd;
 
@@ -36,9 +36,9 @@ import java.util.Map;
 public class EventBosses extends L2AttackableAIScript {
 	private static boolean isBossActive = false;
 	private static int bossStatus = 0;
-	private static final L2Skill knightFrenzy = SkillTable.getInstance().getInfo(10025, 4);
-	private static final L2Skill finalUltimateDefense = SkillTable.getInstance().getInfo(10017, 4);
-	private static Map<L2PcInstance, String> attackerIps = new HashMap<L2PcInstance, String>();
+	private static final Skill knightFrenzy = SkillTable.getInstance().getInfo(10025, 4);
+	private static final Skill finalUltimateDefense = SkillTable.getInstance().getInfo(10017, 4);
+	private static Map<Player, String> attackerIps = new HashMap<Player, String>();
 
 	private static final String[][] individualDrop = {
 			//Boss id, itemId, chance, min, max;
@@ -96,7 +96,7 @@ public class EventBosses extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isPet, L2Skill skill) {
+	public String onAttack(Npc npc, Player player, int damage, boolean isPet, Skill skill) {
 		if (!attackerIps.containsValue(player.getExternalIP())) {
 			attackerIps.put(player, player.getExternalIP());
 		}
@@ -119,14 +119,14 @@ public class EventBosses extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (npc != null && npc.getInstanceId() == 0) {
-			for (Map.Entry<L2PcInstance, String> playerInfo : attackerIps.entrySet()) {
+			for (Map.Entry<Player, String> playerInfo : attackerIps.entrySet()) {
 				if (playerInfo == null) {
 					continue;
 				}
 
-				L2PcInstance playerToReward = playerInfo.getKey();
+				Player playerToReward = playerInfo.getKey();
 
 				if (playerToReward == null || !playerToReward.isOnline() || !playerToReward.isInsideRadius(npc, 4000, false, false)) {
 					continue;
@@ -185,7 +185,7 @@ public class EventBosses extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public final String onSpawn(Npc npc) {
 		if (npc != null && npc.getInstanceId() == 0) {
 			L2Spawn spawn = npc.getSpawn();
 

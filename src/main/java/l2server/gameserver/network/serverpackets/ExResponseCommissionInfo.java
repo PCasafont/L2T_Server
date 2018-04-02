@@ -15,8 +15,8 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Erlandys
@@ -24,12 +24,12 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class ExResponseCommissionInfo extends L2GameServerPacket {
 	
 	@SuppressWarnings("unused")
-	private L2PcInstance player;
+	private Player player;
 	@SuppressWarnings("unused")
-	private L2ItemInstance item;
+	private Item item;
 	private boolean success;
 	
-	public ExResponseCommissionInfo(L2PcInstance player, int itemOID, boolean success) {
+	public ExResponseCommissionInfo(Player player, int itemOID, boolean success) {
 		this.player = player;
 		item = player.getInventory().getItemByObjectId(itemOID);
 		this.success = success;

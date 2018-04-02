@@ -21,30 +21,30 @@ package handlers.itemhandlers;
 
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.handler.IItemHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
 
 public class MagicVisor implements IItemHandler {
 	/**
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance visorItem, boolean forcedUse) {
-		if (!(playable instanceof L2PcInstance)) {
+	public void useItem(Playable playable, Item visorItem, boolean forcedUse) {
+		if (!(playable instanceof Player)) {
 			return;
 		}
 
-		L2PcInstance player = (L2PcInstance) playable;
-		L2Object target = player.getTarget();
+		Player player = (Player) playable;
+		WorldObject target = player.getTarget();
 
-		if (target == null || !(target instanceof L2Npc)) {
+		if (target == null || !(target instanceof Npc)) {
 			player.sendMessage("You should target a monster to see its drop list!");
 			return;
 		}
 
-		L2Npc mob = (L2Npc) player.getTarget();
+		Npc mob = (Npc) player.getTarget();
 		if (mob != null) {
 			CustomCommunityBoard.getInstance().sendDropPage(player, mob.getNpcId(), 1, mob);
 		}

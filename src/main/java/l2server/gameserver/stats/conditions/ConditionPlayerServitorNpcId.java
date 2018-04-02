@@ -15,8 +15,8 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.stats.Env;
 
 import java.util.ArrayList;
@@ -45,11 +45,11 @@ public class ConditionPlayerServitorNpcId extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		if (!(env.player instanceof L2PcInstance)) {
+		if (!(env.player instanceof Player)) {
 			return false;
 		}
 
-		L2PcInstance player = (L2PcInstance) env.player;
+		Player player = (Player) env.player;
 
 		if (player.getPet() == null) {
 			return false;
@@ -57,7 +57,7 @@ public class ConditionPlayerServitorNpcId extends Condition {
 
 		boolean hasInSummons = false;
 		if (npcIds != null) {
-			for (L2SummonInstance summon : player.getSummons()) {
+			for (SummonInstance summon : player.getSummons()) {
 				if (!summon.isDead() && npcIds.contains(summon.getNpcId())) {
 					hasInSummons = true;
 				}

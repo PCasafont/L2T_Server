@@ -17,13 +17,10 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.PledgeShowMemberListDelete;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
-
-import java.util.logging.Logger;
 
 /**
  * This class ...
@@ -31,7 +28,6 @@ import java.util.logging.Logger;
  * @version $Revision: 1.3.2.1.2.3 $ $Date: 2005/03/27 15:29:30 $
  */
 public final class RequestOustPledgeMember extends L2GameClientPacket {
-	static Logger log = Logger.getLogger(RequestOustPledgeMember.class.getName());
 	
 	private String target;
 	
@@ -42,7 +38,7 @@ public final class RequestOustPledgeMember extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -63,7 +59,7 @@ public final class RequestOustPledgeMember extends L2GameClientPacket {
 		
 		L2ClanMember member = clan.getClanMember(target);
 		if (member == null) {
-			Log.warning("Target (" + target + ") is not member of the clan");
+			log.warn("Target (" + target + ") is not member of the clan");
 			return;
 		}
 		if (member.isOnline() && member.getPlayerInstance().isInCombat()) {
@@ -87,7 +83,7 @@ public final class RequestOustPledgeMember extends L2GameClientPacket {
 		clan.broadcastToOnlineMembers(new PledgeShowMemberListDelete(target));
 		
 		if (member.isOnline()) {
-			L2PcInstance player = member.getPlayerInstance();
+			Player player = member.getPlayerInstance();
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CLAN_MEMBERSHIP_TERMINATED));
 		}
 	}

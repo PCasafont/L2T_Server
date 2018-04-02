@@ -18,7 +18,7 @@ package ai.individual;
 import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.util.Util;
 
 /**
@@ -47,7 +47,7 @@ public class BlackAnvilGuild extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onSpawn(L2Npc npc) {
+	public final String onSpawn(Npc npc) {
 		npc.setIsInvul(true);
 
 		return super.onSpawn(npc);

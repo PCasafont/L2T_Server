@@ -3,7 +3,7 @@ package transformations;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.TransformationManager;
 import l2server.gameserver.model.L2Transformation;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 
 /*
  * TODO: Skill levels. How do they work? Transformation is given at level 83, there are 6 levels of the skill. How are they assigned? Based on player level somehow? Based on servitor?
@@ -25,7 +25,7 @@ public class DemonRace extends L2Transformation {
 		if (getPlayer().getPet() != null) {
 			getPlayer().getPet().unSummon(getPlayer());
 		}
-		for (L2SummonInstance summon : getPlayer().getSummons()) {
+		for (SummonInstance summon : getPlayer().getSummons()) {
 			summon.unSummon(getPlayer());
 		}
 		

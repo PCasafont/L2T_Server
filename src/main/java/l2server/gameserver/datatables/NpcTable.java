@@ -16,19 +16,19 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.instancemanager.SearchDropManager;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.templates.SpawnData;
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.gameserver.templates.item.L2EtcItemType;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import l2server.gameserver.templates.item.EtcItemType;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -41,7 +41,10 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public class NpcTable {
-	private Map<Integer, L2NpcTemplate> npcs;
+	private static Logger log = LoggerFactory.getLogger(NpcTable.class.getName());
+
+
+	private Map<Integer, NpcTemplate> npcs;
 	
 	public static NpcTable getInstance() {
 		return SingletonHolder.instance;
@@ -60,12 +63,12 @@ public class NpcTable {
 		// Remove shit drops from highrate servers
 		if (Config.isServer(Config.TENKAI)) {
 			for (int npcId : npcs.keySet()) {
-				L2NpcTemplate npc = npcs.get(npcId);
+				NpcTemplate npc = npcs.get(npcId);
 				List<L2DropData> dropsToRemove = new ArrayList<>();
 				for (L2DropData dd : npc.getDropData()) {
-					L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
-					if (item.isCommon() || item.getItemType() == L2EtcItemType.ARROW || item.getItemType() == L2EtcItemType.RECIPE ||
-							item.getItemType() == L2EtcItemType.MATERIAL) {
+					ItemTemplate item = ItemTable.getInstance().getTemplate(dd.getItemId());
+					if (item.isCommon() || item.getItemType() == EtcItemType.ARROW || item.getItemType() == EtcItemType.RECIPE ||
+							item.getItemType() == EtcItemType.MATERIAL) {
 						dropsToRemove.add(dd);
 					}
 				}
@@ -77,9 +80,9 @@ public class NpcTable {
 				for (L2DropCategory dc : npc.getMultiDropData()) {
 					dropsToRemove.clear();
 					for (L2DropData dd : dc.getAllDrops()) {
-						L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
-						if (item.isCommon() || item.getItemType() == L2EtcItemType.ARROW || item.getItemType() == L2EtcItemType.RECIPE ||
-								item.getItemType() == L2EtcItemType.MATERIAL) {
+						ItemTemplate item = ItemTable.getInstance().getTemplate(dd.getItemId());
+						if (item.isCommon() || item.getItemType() == EtcItemType.ARROW || item.getItemType() == EtcItemType.RECIPE ||
+								item.getItemType() == EtcItemType.MATERIAL) {
 							dropsToRemove.add(dd);
 						}
 					}
@@ -103,7 +106,7 @@ public class NpcTable {
 		try {
 			File dir = new File(dataPath);
 			if (!dir.exists()) {
-				Log.warning("Dir " + dir.getAbsolutePath() + " doesn't exist");
+				log.warn("Dir " + dir.getAbsolutePath() + " doesn't exist");
 				return;
 			}
 			
@@ -147,24 +150,24 @@ public class NpcTable {
 								set.set("dark", set.getString("elemAtkValue"));
 								break;
 							default:
-								Log.severe("NPCElementals: Elementals Error with id : " + npcId + "; unknown elementType: " +
+								log.error("NPCElementals: Elementals Error with id : " + npcId + "; unknown elementType: " +
 										set.getByte("elemAtkType"));
 								continue;
 						}
 						
-						L2NpcTemplate npc;
+						NpcTemplate npc;
 						// Already loaded
 						if (npcs.containsKey(npcId)) {
-							L2NpcTemplate original = npcs.get(npcId);
+							NpcTemplate original = npcs.get(npcId);
 							StatsSet completeSet = new StatsSet();
 							completeSet.add(original.getBaseSet());
 							completeSet.add(set);
-							npc = new L2NpcTemplate(completeSet, original);
+							npc = new NpcTemplate(completeSet, original);
 							if (completeSet.getString("aiType", null) != null) {
 								npc.setAIData(new L2NpcAIData(completeSet));
 							}
 						} else {
-							npc = new L2NpcTemplate(set);
+							npc = new NpcTemplate(set);
 							if (set.getString("aiType", null) != null) {
 								npc.setAIData(new L2NpcAIData(set));
 							}
@@ -208,15 +211,15 @@ public class NpcTable {
 									npc.setRace(level);
 								}
 								
-								L2Skill npcSkill = SkillTable.getInstance().getInfo(skillId, level);
+								Skill npcSkill = SkillTable.getInstance().getInfo(skillId, level);
 								
 								if (npcSkill == null) {
-									Log.warning("NPC " + npcId + " has a skill that doesn't exist (" + skillId + "-" + level + ")");
+									log.warn("NPC " + npcId + " has a skill that doesn't exist (" + skillId + "-" + level + ")");
 									continue;
 								}
 								
-								//if (npcSkill.getSkillType() == L2SkillType.NOTDONE)
-								//	Log.warning("NPC " + npcId + " has a not implemented skill (" + skillId + "-" + level + ")");
+								//if (npcSkill.getSkillType() == SkillType.NOTDONE)
+								//	log.warn("NPC " + npcId + " has a not implemented skill (" + skillId + "-" + level + ")");
 								
 								npc.addSkill(npcSkill);
 							}
@@ -229,9 +232,9 @@ public class NpcTable {
 								
 								L2DropData dd = new L2DropData(itemId, min, max, chance);
 								
-								L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
+								ItemTemplate item = ItemTable.getInstance().getTemplate(dd.getItemId());
 								if (item == null) {
-									Log.warning("Drop data for undefined item template! NpcId: " + npc.NpcId + " itemId: " + dd.getItemId());
+									log.warn("Drop data for undefined item template! NpcId: " + npc.NpcId + " itemId: " + dd.getItemId());
 									continue;
 								}
 								
@@ -254,9 +257,9 @@ public class NpcTable {
 										float chance2 = dropCategoryNode.getFloat("chance");
 										L2DropData dd = new L2DropData(itemId, min, max, chance2);
 										
-										L2Item item = ItemTable.getInstance().getTemplate(dd.getItemId());
+										ItemTemplate item = ItemTable.getInstance().getTemplate(dd.getItemId());
 										if (item == null) {
-											Log.warning("Drop data for undefined item template! NpcId: " + npc.NpcId + " itemId: " + dd.getItemId());
+											log.warn("Drop data for undefined item template! NpcId: " + npc.NpcId + " itemId: " + dd.getItemId());
 											continue;
 										}
 										
@@ -293,8 +296,8 @@ public class NpcTable {
 						}
 						
 						if (!npcs.containsKey(npc.NpcId)) {
-							L2NpcTemplate original = npc;
-							npc = new L2NpcTemplate(original.getBaseSet(), original);
+							NpcTemplate original = npc;
+							npc = new NpcTemplate(original.getBaseSet(), original);
 						}
 						npcs.put(npc.NpcId, npc);
 						SearchDropManager.getInstance().addLootInfo(npc, overrideDrops);
@@ -305,9 +308,9 @@ public class NpcTable {
 			}
 			
 			if (!overrideDrops) {
-				Log.info("Npc Table: Loaded " + loadedNpcs + " npcs.");
+				log.info("Npc Table: Loaded " + loadedNpcs + " npcs.");
 			} else {
-				Log.info("Npc Table: Overridden " + loadedNpcs + " npcs with custom data.");
+				log.info("Npc Table: Overridden " + loadedNpcs + " npcs with custom data.");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -338,7 +341,7 @@ public class NpcTable {
 				out.write("<list>\r\n");
 				
 				for (int j = i * 1000; j < (i + 1) * 1000; j++) {
-					L2NpcTemplate t = npcs.get(j);
+					NpcTemplate t = npcs.get(j);
 					
 					if (t == null) {
 						continue;
@@ -389,7 +392,7 @@ public class NpcTable {
 					if (t.getMinionData() != null) {
 						for (L2MinionData md : t.getMinionData()) {
 							String comment = "";
-							L2NpcTemplate mt = getTemplate(md.getMinionId());
+							NpcTemplate mt = getTemplate(md.getMinionId());
 							if (mt != null && mt.getName() != null) {
 								comment = " <!-- " + mt.getName() + " -->";
 							}
@@ -399,7 +402,7 @@ public class NpcTable {
 					}
 					
 					if (t.getSkills() != null) {
-						for (L2Skill skill : t.getSkills().values()) {
+						for (Skill skill : t.getSkills().values()) {
 							String comment = "";
 							if (skill.getName() != null) {
 								comment = " <!-- " + skill.getName() + " -->";
@@ -414,7 +417,7 @@ public class NpcTable {
 						}
 						
 						String comment = "";
-						L2Item it = ItemTable.getInstance().getTemplate(dd.getItemId());
+						ItemTemplate it = ItemTable.getInstance().getTemplate(dd.getItemId());
 						if (it != null && it.getName() != null) {
 							comment = " <!-- " + it.getName() + " -->";
 						}
@@ -428,7 +431,7 @@ public class NpcTable {
 						}
 						
 						String comment = "";
-						L2Item it = ItemTable.getInstance().getTemplate(dd.getItemId());
+						ItemTemplate it = ItemTable.getInstance().getTemplate(dd.getItemId());
 						if (it != null && it.getName() != null) {
 							comment = " <!-- " + it.getName() + " -->";
 						}
@@ -444,7 +447,7 @@ public class NpcTable {
 						out.write("\t\t<dropCategory chance=\"" + Util.getDecimalString(dc.getChance()) + "\">\r\n");
 						for (L2DropData dd : dc.getAllDrops()) {
 							String comment = "";
-							L2Item it = ItemTable.getInstance().getTemplate(dd.getItemId());
+							ItemTemplate it = ItemTable.getInstance().getTemplate(dd.getItemId());
 							if (it != null && it.getName() != null) {
 								comment = " <!-- " + it.getName() + " -->";
 							}
@@ -477,64 +480,64 @@ public class NpcTable {
 		}
 	}
 	
-	public L2NpcTemplate getTemplate(int id) {
+	public NpcTemplate getTemplate(int id) {
 		return npcs.get(id);
 	}
 	
-	public L2NpcTemplate getTemplateByName(String name) {
+	public NpcTemplate getTemplateByName(String name) {
 		for (Object npcTemplate : npcs.values()) {
-			if (((L2NpcTemplate) npcTemplate).Name.equalsIgnoreCase(name)) {
-				return (L2NpcTemplate) npcTemplate;
+			if (((NpcTemplate) npcTemplate).Name.equalsIgnoreCase(name)) {
+				return (NpcTemplate) npcTemplate;
 			}
 		}
 		
 		return null;
 	}
 	
-	public L2NpcTemplate[] getAllTemplates() {
-		List<L2NpcTemplate> list = new ArrayList<>();
+	public NpcTemplate[] getAllTemplates() {
+		List<NpcTemplate> list = new ArrayList<>();
 		
 		for (Object t : npcs.values()) {
-			list.add((L2NpcTemplate) t);
+			list.add((NpcTemplate) t);
 		}
 		
-		return list.toArray(new L2NpcTemplate[list.size()]);
+		return list.toArray(new NpcTemplate[list.size()]);
 	}
 	
-	public L2NpcTemplate[] getAllOfLevel(int lvl) {
-		List<L2NpcTemplate> list = new ArrayList<>();
+	public NpcTemplate[] getAllOfLevel(int lvl) {
+		List<NpcTemplate> list = new ArrayList<>();
 		
 		for (Object t : npcs.values()) {
-			if (((L2NpcTemplate) t).Level == lvl) {
-				list.add((L2NpcTemplate) t);
+			if (((NpcTemplate) t).Level == lvl) {
+				list.add((NpcTemplate) t);
 			}
 		}
 		
-		return list.toArray(new L2NpcTemplate[list.size()]);
+		return list.toArray(new NpcTemplate[list.size()]);
 	}
 	
-	public L2NpcTemplate[] getAllMonstersOfLevel(int lvl) {
-		List<L2NpcTemplate> list = new ArrayList<>();
+	public NpcTemplate[] getAllMonstersOfLevel(int lvl) {
+		List<NpcTemplate> list = new ArrayList<>();
 		
 		for (Object t : npcs.values()) {
-			if (((L2NpcTemplate) t).Level == lvl && "L2Monster".equals(((L2NpcTemplate) t).Type)) {
-				list.add((L2NpcTemplate) t);
+			if (((NpcTemplate) t).Level == lvl && "L2Monster".equals(((NpcTemplate) t).Type)) {
+				list.add((NpcTemplate) t);
 			}
 		}
 		
-		return list.toArray(new L2NpcTemplate[list.size()]);
+		return list.toArray(new NpcTemplate[list.size()]);
 	}
 	
-	public L2NpcTemplate[] getAllNpcStartingWith(String letter) {
-		List<L2NpcTemplate> list = new ArrayList<>();
+	public NpcTemplate[] getAllNpcStartingWith(String letter) {
+		List<NpcTemplate> list = new ArrayList<>();
 		
 		for (Object t : npcs.values()) {
-			if (((L2NpcTemplate) t).Name.startsWith(letter) && "L2Npc".equals(((L2NpcTemplate) t).Type)) {
-				list.add((L2NpcTemplate) t);
+			if (((NpcTemplate) t).Name.startsWith(letter) && "Npc".equals(((NpcTemplate) t).Type)) {
+				list.add((NpcTemplate) t);
 			}
 		}
 		
-		return list.toArray(new L2NpcTemplate[list.size()]);
+		return list.toArray(new NpcTemplate[list.size()]);
 	}
 	
 	/**
@@ -560,66 +563,66 @@ public class NpcTable {
 		return null;
 	}
 	
-	public final L2NpcTemplate[] getAllRaidBoss() {
-		final ArrayList<L2NpcTemplate> list = new ArrayList<>();
+	public final NpcTemplate[] getAllRaidBoss() {
+		final ArrayList<NpcTemplate> list = new ArrayList<>();
 		
 		for (final Object t : npcs.values()) {
-			if ("L2Raidboss".equalsIgnoreCase(((L2NpcTemplate) t).Type)) {
-				list.add((L2NpcTemplate) t);
+			if ("L2Raidboss".equalsIgnoreCase(((NpcTemplate) t).Type)) {
+				list.add((NpcTemplate) t);
 			}
 		}
 		
-		return list.toArray(new L2NpcTemplate[list.size()]);
+		return list.toArray(new NpcTemplate[list.size()]);
 	}
 	
-	public final L2NpcTemplate[] getAllMonsters() {
-		final ArrayList<L2NpcTemplate> list = new ArrayList<>();
+	public final NpcTemplate[] getAllMonsters() {
+		final ArrayList<NpcTemplate> list = new ArrayList<>();
 		
 		for (final Object t : npcs.values()) {
-			if ("L2Monster".equalsIgnoreCase(((L2NpcTemplate) t).Type)) {
-				list.add((L2NpcTemplate) t);
+			if ("L2Monster".equalsIgnoreCase(((NpcTemplate) t).Type)) {
+				list.add((NpcTemplate) t);
 			}
 		}
-		return list.toArray(new L2NpcTemplate[list.size()]);
+		return list.toArray(new NpcTemplate[list.size()]);
 	}
 	
-	public final L2NpcTemplate[] getAllNpcByType(final String type) {
-		final ArrayList<L2NpcTemplate> list = new ArrayList<>();
+	public final NpcTemplate[] getAllNpcByType(final String type) {
+		final ArrayList<NpcTemplate> list = new ArrayList<>();
 		
 		for (final Object t : npcs.values()) {
-			if (type.equalsIgnoreCase(((L2NpcTemplate) t).Type)) {
-				list.add((L2NpcTemplate) t);
+			if (type.equalsIgnoreCase(((NpcTemplate) t).Type)) {
+				list.add((NpcTemplate) t);
 			}
 		}
-		return list.toArray(new L2NpcTemplate[list.size()]);
+		return list.toArray(new NpcTemplate[list.size()]);
 	}
 	
-	public final L2NpcTemplate[] getAllMonstersBetweenLevels(final int minLevel, final int maxLevel) {
-		final ArrayList<L2NpcTemplate> list = new ArrayList<>();
+	public final NpcTemplate[] getAllMonstersBetweenLevels(final int minLevel, final int maxLevel) {
+		final ArrayList<NpcTemplate> list = new ArrayList<>();
 		
 		for (final Object t : npcs.values()) {
-			if (!((L2NpcTemplate) t).Type.equals("L2Monster")) {
+			if (!((NpcTemplate) t).Type.equals("L2Monster")) {
 				continue;
-			} else if (((L2NpcTemplate) t).Level < minLevel || ((L2NpcTemplate) t).Level > maxLevel) {
+			} else if (((NpcTemplate) t).Level < minLevel || ((NpcTemplate) t).Level > maxLevel) {
 				continue;
-			} else if (((L2NpcTemplate) t).getKnownSpawns().size() == 0) {
+			} else if (((NpcTemplate) t).getKnownSpawns().size() == 0) {
 				continue;
 			}
 			
-			list.add((L2NpcTemplate) t);
+			list.add((NpcTemplate) t);
 		}
 		
-		return list.toArray(new L2NpcTemplate[list.size()]);
+		return list.toArray(new NpcTemplate[list.size()]);
 	}
 	
 	//From MagicVisor
-	public DropChances calculateRewardChances(L2NpcTemplate template,
-	                                          L2PcInstance player,
+	public DropChances calculateRewardChances(NpcTemplate template,
+	                                          Player player,
 	                                          L2DropData drop,
 	                                          float catChance,
 	                                          int levelModifier,
 	                                          boolean isSweep,
-	                                          L2Npc mob) {
+	                                          Npc mob) {
 		float dropChance = drop.getChance() * catChance / 100.0f;
 		int deepBlueDrop = 1;
 		

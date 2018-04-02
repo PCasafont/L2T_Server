@@ -16,9 +16,9 @@
 package handlers.itemhandlers;
 
 import l2server.Config;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -28,11 +28,11 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
  */
 public class ItemSkills extends ItemSkillsTemplate {
 	/**
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(Playable, Item, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
-		final L2PcInstance activeChar = playable.getActingPlayer();
+	public void useItem(Playable playable, Item item, boolean forceUse) {
+		final Player activeChar = playable.getActingPlayer();
 		if (activeChar != null && activeChar.isInOlympiadMode() && item.getItemId() != 5589) // Momentum Stone
 		{
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));

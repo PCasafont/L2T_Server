@@ -1,11 +1,12 @@
 package dragonvalley.DragonVortex;
 
 import l2server.gameserver.instancemanager.QuestManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 /**
@@ -13,9 +14,12 @@ import l2server.util.Rnd;
  */
 
 public class DragonVortex extends Quest {
+	private static Logger log = LoggerFactory.getLogger(DragonVortex.class.getName());
+
+
 	private static final boolean Debug = false;
 
-	private static L2Npc raid = null;
+	private static Npc raid = null;
 	private static final int dragonVortex = 32871;
 	private static final int largeDragonBone = 17248;
 	private static final int[] bosses = {25718, 25719, 25720, 25721, 25722, 25723, 25724};
@@ -32,9 +36,9 @@ public class DragonVortex extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (Debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		raid = null;
@@ -43,7 +47,7 @@ public class DragonVortex extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		QuestState st = player.getQuestState(getName());
 		if (st == null) {
 			Quest q = QuestManager.getInstance().getQuest(getName());
@@ -53,9 +57,9 @@ public class DragonVortex extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (Debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		QuestState st = player.getQuestState(getName());

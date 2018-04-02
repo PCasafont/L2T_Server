@@ -15,40 +15,40 @@
 
 package l2server.gameserver.stats.effects;
 
-import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Playable;
+import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2EffectType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.EffectType;
 
 public class EffectRemoveInvul extends L2Effect {
-	public EffectRemoveInvul(Env env, L2EffectTemplate template) {
+	public EffectRemoveInvul(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.DEBUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.DEBUFF;
 	}
 	
 	@Override
-	public L2EffectType getEffectType() {
-		return L2EffectType.BLOCK_INVUL;
+	public EffectType getEffectType() {
+		return EffectType.BLOCK_INVUL;
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		if (!(getEffected() instanceof L2Playable)) {
+		if (!(getEffected() instanceof Playable)) {
 			return false;
 		}
 		
 		if (getEffected().isInvul(getEffector())) {
-			for (L2Abnormal e : getEffected().getAllEffects()) {
+			for (Abnormal e : getEffected().getAllEffects()) {
 				if (e == null) {
 					continue;
 				}
@@ -58,7 +58,7 @@ public class EffectRemoveInvul extends L2Effect {
 						continue;
 					}
 					
-					if (eff.getEffectType() == L2EffectType.INVINCIBLE) {
+					if (eff.getEffectType() == EffectType.INVINCIBLE) {
 						getEffected().onExitChanceEffect(e.getSkill(), e.getSkill().getElement());
 						e.exit();
 						break;
@@ -71,7 +71,7 @@ public class EffectRemoveInvul extends L2Effect {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

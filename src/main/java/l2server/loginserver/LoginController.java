@@ -18,7 +18,6 @@ package l2server.loginserver;
 import l2server.Base64;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import l2server.log.Log;
 import l2server.loginserver.GameServerTable.GameServerInfo;
 import l2server.loginserver.network.L2LoginClient;
 import l2server.loginserver.network.gameserverpackets.ServerStatus;
@@ -26,6 +25,8 @@ import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import l2server.util.Rnd;
 import l2server.util.crypt.ScrambledKeyPair;
 import l2server.util.lib.LoginLog;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.crypto.Cipher;
 import java.net.InetAddress;
@@ -42,7 +43,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
 
 /**
  * This class ...
@@ -50,6 +50,9 @@ import java.util.logging.Level;
  * @version $Revision: 1.7.4.3 $ $Date: 2005/03/27 15:30:09 $
  */
 public class LoginController {
+	private static Logger log = LoggerFactory.getLogger(LoginController.class.getName());
+
+
 	
 	private static LoginController instance;
 	
@@ -89,7 +92,7 @@ public class LoginController {
 	}
 	
 	private LoginController() throws GeneralSecurityException {
-		Log.info("Loading LoginController...");
+		log.info("Loading LoginController...");
 		
 		hackProtection = new HashMap<>();
 		
@@ -105,7 +108,7 @@ public class LoginController {
 		for (int i = 0; i < 10; i++) {
 			keyPairs[i] = new ScrambledKeyPair(keygen.generateKeyPair());
 		}
-		Log.info("Cached 10 KeyPairs for RSA communication");
+		log.info("Cached 10 KeyPairs for RSA communication");
 		
 		testCipher((RSAPrivateKey) keyPairs[0].pair.getPrivate());
 		
@@ -138,7 +141,7 @@ public class LoginController {
 				blowfishKeys[i][j] = (byte) (Rnd.nextInt(255) + 1);
 			}
 		}
-		Log.info("Stored " + blowfishKeys.length + " keys for Blowfish communication");
+		log.info("Stored " + blowfishKeys.length + " keys for Blowfish communication");
 	}
 	
 	/**
@@ -389,7 +392,7 @@ public class LoginController {
 					statement.executeUpdate();
 					statement.close();
 				} catch (Exception e) {
-					Log.log(Level.WARNING, "Could not set lastServer: " + e.getMessage(), e);
+					log.warn("Could not set lastServer: " + e.getMessage(), e);
 				} finally {
 					L2DatabaseFactory.close(con);
 				}
@@ -412,7 +415,7 @@ public class LoginController {
 			statement.executeUpdate();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not set accessLevel: " + e.getMessage(), e);
+			log.warn("Could not set accessLevel: " + e.getMessage(), e);
 		} finally {
 			try {
 				L2DatabaseFactory.close(con);
@@ -439,7 +442,7 @@ public class LoginController {
 			statement.executeUpdate();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not set last tracert: " + e.getMessage(), e);
+			log.warn("Could not set last tracert: " + e.getMessage(), e);
 		} finally {
 			try {
 				L2DatabaseFactory.close(con);
@@ -482,7 +485,7 @@ public class LoginController {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not check gm state:" + e.getMessage(), e);
+			log.warn("Could not check gm state:" + e.getMessage(), e);
 			ok = false;
 		} finally {
 			try {
@@ -544,7 +547,7 @@ public class LoginController {
 					lastServer = 1; // minServerId is 1 in Interlude
 				}
 				if (Config.DEBUG) {
-					Log.fine("account exists");
+					log.debug("account exists");
 				}
 			}
 			rset.close();
@@ -564,24 +567,24 @@ public class LoginController {
 						statement.close();
 						
 						if (Config.LOG_LOGIN_CONTROLLER) {
-							LoginLog.add("'" + user + "' " + address.getHostAddress() + " - OK : AccountCreate", "loginlog");
+							LoginLog.add("'" + user + "' " + address.getHostAddress() + " - OK : AccountCreate", "LoginLog");
 						}
 						
-						Log.info("Created new account for " + user);
+						log.info("Created new account for " + user);
 						return true;
 					}
 					if (Config.LOG_LOGIN_CONTROLLER) {
-						LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : ErrCreatingACC", "loginlog");
+						LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : ErrCreatingACC", "LoginLog");
 					}
 					
-					Log.warning("Invalid username creation/use attempt: " + user);
+					log.warn("Invalid username creation/use attempt: " + user);
 					return false;
 				} else {
 					if (Config.LOG_LOGIN_CONTROLLER) {
-						LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : AccountMissing", "loginlog");
+						LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : AccountMissing", "LoginLog");
 					}
 					
-					Log.warning("Account missing for user " + user);
+					log.warn("Account missing for user " + user);
 					FailedLoginAttempt failedAttempt = hackProtection.get(address);
 					int failedCount;
 					if (failedAttempt == null) {
@@ -593,7 +596,7 @@ public class LoginController {
 					}
 					
 					if (failedCount >= Config.LOGIN_TRY_BEFORE_BAN) {
-						Log.info("Banning '" + address.getHostAddress() + "' for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds due to " + failedCount +
+						log.info("Banning '" + address.getHostAddress() + "' for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds due to " + failedCount +
 								" invalid user name(" + user + ") attempts");
 						this.addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
 					}
@@ -603,7 +606,7 @@ public class LoginController {
 				// is this account banned?
 				if (access < 0) {
 					if (Config.LOG_LOGIN_CONTROLLER) {
-						LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : AccountBanned", "loginlog");
+						LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : AccountBanned", "LoginLog");
 					}
 					
 					client.setAccessLevel(access);
@@ -622,7 +625,7 @@ public class LoginController {
 					}
 					if (!address.getHostAddress().equalsIgnoreCase(userIP)) {
 						if (Config.LOG_LOGIN_CONTROLLER) {
-							LoginLog.add("'" + user + "' " + address.getHostAddress() + "/" + userIP + " - ERR : INCORRECT IP", "loginlog");
+							LoginLog.add("'" + user + "' " + address.getHostAddress() + "/" + userIP + " - ERR : INCORRECT IP", "LoginLog");
 						}
 						
 						return false;
@@ -671,7 +674,7 @@ public class LoginController {
 				}
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not check password(" + user + "):" + e.getMessage(), e);
+			log.warn("Could not check password(" + user + "):" + e.getMessage(), e);
 			ok = false;
 		} finally {
 			L2DatabaseFactory.close(con);
@@ -679,7 +682,7 @@ public class LoginController {
 		
 		if (!ok) {
 			if (Config.LOG_LOGIN_CONTROLLER) {
-				LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : LoginFailed", "loginlog");
+				LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : LoginFailed", "LoginLog");
 			}
 			
 			FailedLoginAttempt failedAttempt = hackProtection.get(address);
@@ -693,14 +696,14 @@ public class LoginController {
 			}
 			
 			if (failedCount >= Config.LOGIN_TRY_BEFORE_BAN) {
-				Log.info("Banning '" + address.getHostAddress() + "' for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds due to " + failedCount +
+				log.info("Banning '" + address.getHostAddress() + "' for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds due to " + failedCount +
 						" invalid user/pass attempts");
 				this.addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
 			}
 		} else {
 			hackProtection.remove(address);
 			if (Config.LOG_LOGIN_CONTROLLER) {
-				LoginLog.add("'" + user + "' " + address.getHostAddress() + " - OK : LoginOk", "loginlog");
+				LoginLog.add("'" + user + "' " + address.getHostAddress() + " - OK : LoginOk", "LoginLog");
 			}
 		}
 		
@@ -787,7 +790,7 @@ public class LoginController {
 				}
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Could not check password(" + sessionKey + "):" + e.getMessage(), e);
+			log.warn("Could not check password(" + sessionKey + "):" + e.getMessage(), e);
 			ok = false;
 		} finally {
 			L2DatabaseFactory.close(con);
@@ -796,7 +799,7 @@ public class LoginController {
 		if (!ok) {
 			login = null;
 			if (Config.LOG_LOGIN_CONTROLLER) {
-				LoginLog.add("'" + sessionKey + "' " + address.getHostAddress() + " - ERR : LoginFailed", "loginlog");
+				LoginLog.add("'" + sessionKey + "' " + address.getHostAddress() + " - ERR : LoginFailed", "LoginLog");
 			}
 			
 			FailedLoginAttempt failedAttempt = hackProtection.get(address);
@@ -810,14 +813,14 @@ public class LoginController {
 			}
 			
 			if (failedCount >= Config.LOGIN_TRY_BEFORE_BAN) {
-				Log.info("Banning '" + address.getHostAddress() + "' for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds due to " + failedCount +
+				log.info("Banning '" + address.getHostAddress() + "' for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds due to " + failedCount +
 						" invalid user/pass attempts");
 				this.addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
 			}
 		} else {
 			hackProtection.remove(address);
 			if (Config.LOG_LOGIN_CONTROLLER) {
-				LoginLog.add("'" + sessionKey + "' " + address.getHostAddress() + " - OK : LoginOk", "loginlog");
+				LoginLog.add("'" + sessionKey + "' " + address.getHostAddress() + " - OK : LoginOk", "LoginLog");
 			}
 		}
 		
@@ -844,7 +847,7 @@ public class LoginController {
 		} catch (Exception e) {
 			// digest algo not found ??
 			// out of bounds should not be possible
-			Log.log(Level.WARNING, "Could not check ban state:" + e.getMessage(), e);
+			log.warn("Could not check ban state:" + e.getMessage(), e);
 			ok = false;
 		} finally {
 			try {

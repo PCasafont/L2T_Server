@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * Format: (chd) dddddd
@@ -33,7 +33,7 @@ public class ExCubeGameExtendedChangePoints extends L2GameServerPacket {
 	int bluePoints;
 	int redPoints;
 	boolean isRedTeam;
-	L2PcInstance player;
+	Player player;
 	int playerPoints;
 	
 	/**
@@ -46,7 +46,7 @@ public class ExCubeGameExtendedChangePoints extends L2GameServerPacket {
 	 * @param player       Player Instance
 	 * @param playerPoints Current Player Points
 	 */
-	public ExCubeGameExtendedChangePoints(int timeLeft, int bluePoints, int redPoints, boolean isRedTeam, L2PcInstance player, int playerPoints) {
+	public ExCubeGameExtendedChangePoints(int timeLeft, int bluePoints, int redPoints, boolean isRedTeam, Player player, int playerPoints) {
 		this.timeLeft = timeLeft;
 		this.bluePoints = bluePoints;
 		this.redPoints = redPoints;

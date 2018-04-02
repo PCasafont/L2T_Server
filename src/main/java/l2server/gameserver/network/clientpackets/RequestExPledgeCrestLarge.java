@@ -35,7 +35,7 @@ public final class RequestExPledgeCrestLarge extends L2GameClientPacket {
 	protected void readImpl() {
 		crestId = readD();
 		@SuppressWarnings("unused") int unk = readD();
-		//Log.info(unk + "");
+		//log.info(unk + "");
 	}
 	
 	@Override

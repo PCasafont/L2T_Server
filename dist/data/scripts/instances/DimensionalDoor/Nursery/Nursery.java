@@ -8,19 +8,18 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2Abnormal;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2NpcBufferInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.NpcBufferInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExSendUIEvent;
 import l2server.gameserver.network.serverpackets.ExSendUIEventRemove;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 /**
@@ -64,7 +63,7 @@ public class Nursery extends L2AttackableAIScript {
 	}
 	
 	private class NurseryWorld extends InstanceWorld {
-		private L2PcInstance instancePlayer;
+		private Player instancePlayer;
 		private Long enterTime;
 		private int energyBuffId;
 		private int points;
@@ -76,9 +75,9 @@ public class Nursery extends L2AttackableAIScript {
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public final String onFirstTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onFirstTalk: " + player.getName());
+			log.warn(getName() + ": onFirstTalk: " + player.getName());
 		}
 		
 		InstanceWorld wrld = null;
@@ -94,7 +93,7 @@ public class Nursery extends L2AttackableAIScript {
 				if (world.status == 0) {
 					return "Tie.html";
 				} else if (world.status == 1) {
-					L2Abnormal buff = world.instancePlayer.getFirstEffect(world.energyBuffId);
+					Abnormal buff = world.instancePlayer.getFirstEffect(world.energyBuffId);
 					if (buff != null) {
 						buff.exit();
 						
@@ -133,9 +132,9 @@ public class Nursery extends L2AttackableAIScript {
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 		
 		if (npc.getNpcId() == DimensionalDoor.getNpcManagerId()) {
@@ -146,9 +145,9 @@ public class Nursery extends L2AttackableAIScript {
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 		
 		InstanceWorld wrld = null;
@@ -157,7 +156,7 @@ public class Nursery extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onAdvEvent: Unable to get world.");
+			log.warn(getName() + ": onAdvEvent: Unable to get world.");
 			return null;
 		}
 		
@@ -178,7 +177,7 @@ public class Nursery extends L2AttackableAIScript {
 						continue;
 					}
 					
-					L2Npc iNpc = addSpawn(iSpawn.getNpcId(),
+					Npc iNpc = addSpawn(iSpawn.getNpcId(),
 							iSpawn.getX(),
 							iSpawn.getY(),
 							iSpawn.getZ(),
@@ -211,7 +210,7 @@ public class Nursery extends L2AttackableAIScript {
 				world.instancePlayer.sendPacket(new ExSendUIEventRemove());
 				world.instancePlayer.sendPacket(new ExShowScreenMessage("Now talk with Tie!", 3000));
 				
-				for (L2Npc iNpc : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs()) {
+				for (Npc iNpc : InstanceManager.getInstance().getInstance(world.instanceId).getNpcs()) {
 					if (iNpc == null || iNpc.getNpcId() == tieId) {
 						continue;
 					}
@@ -273,9 +272,9 @@ public class Nursery extends L2AttackableAIScript {
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 		
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -294,7 +293,7 @@ public class Nursery extends L2AttackableAIScript {
 					world.isMaguenSpawned = true;
 					world.instancePlayer.sendPacket(new ExShowScreenMessage(1801149, 0, true, 2000)); //Maguen appearance!!!
 					
-					L2MonsterInstance maguen = (L2MonsterInstance) addSpawn(maguenId,
+					MonsterInstance maguen = (MonsterInstance) addSpawn(maguenId,
 							world.instancePlayer.getX(),
 							world.instancePlayer.getY(),
 							world.instancePlayer.getZ(),
@@ -357,7 +356,7 @@ public class Nursery extends L2AttackableAIScript {
 		return "";
 	}
 	
-	private final synchronized void enterInstance(L2PcInstance player) {
+	private final synchronized void enterInstance(Player player) {
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
 			if (!(world instanceof NurseryWorld)) {
@@ -371,7 +370,7 @@ public class Nursery extends L2AttackableAIScript {
 					player.setInstanceId(world.instanceId);
 					player.teleToLocation(-185859, 147886, -15315, true);
 					
-					L2NpcBufferInstance.giveBasicBuffs(player);
+					NpcBufferInstance.giveBasicBuffs(player);
 				}
 			}
 			return;
@@ -393,9 +392,9 @@ public class Nursery extends L2AttackableAIScript {
 			player.setInstanceId(instanceId);
 			player.teleToLocation(-185859, 147886, -15315, true);
 			
-			L2NpcBufferInstance.giveBasicBuffs(player);
+			NpcBufferInstance.giveBasicBuffs(player);
 			
-			Log.fine(getName() + ": instance started: " + instanceId + " created by player: " + player.getName());
+			log.debug(getName() + ": instance started: " + instanceId + " created by player: " + player.getName());
 			return;
 		}
 	}

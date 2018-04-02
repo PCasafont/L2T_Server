@@ -23,19 +23,19 @@ import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.GraciaSeedsManager;
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.QuestState;
-import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.model.zone.ZoneType;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
@@ -51,7 +51,7 @@ public class EnergySeeds extends L2AttackableAIScript {
 	private static final int RESPAWN = 480000;
 	private static final int RANDOM_RESPAWN_OFFSET = 180000;
 	private static Map<Integer, ESSpawn> spawns = new HashMap<Integer, ESSpawn>();
-	private static ConcurrentHashMap<L2Npc, Integer> spawnedNpcs = new ConcurrentHashMap<L2Npc, Integer>();
+	private static ConcurrentHashMap<Npc, Integer> spawnedNpcs = new ConcurrentHashMap<Npc, Integer>();
 
 	private static final int TEMPORARY_TELEPORTER = 32602;
 	private static final int[] SEEDIDS = {18678, 18679, 18680, 18681, 18682, 18683};
@@ -128,7 +128,7 @@ public class EnergySeeds extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet) {
+	public String onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isPet) {
 		if (!Util.contains(targets, npc) || skill.getId() != 5780) {
 			return super.onSkillSee(npc, caster, skill, targets, isPet);
 		}
@@ -179,10 +179,10 @@ public class EnergySeeds extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.equalsIgnoreCase("StartSoDAi")) {
 			for (int doorId : SEED_OF_DESTRUCTION_DOORS) {
-				L2DoorInstance doorInstance = DoorTable.getInstance().getDoor(doorId);
+				DoorInstance doorInstance = DoorTable.getInstance().getDoor(doorId);
 				if (doorInstance != null) {
 					doorInstance.openMe();
 				}
@@ -190,13 +190,13 @@ public class EnergySeeds extends L2AttackableAIScript {
 			startAI(GraciaSeeds.DESTRUCTION);
 		} else if (event.equalsIgnoreCase("StopSoDAi")) {
 			for (int doorId : SEED_OF_DESTRUCTION_DOORS) {
-				L2DoorInstance doorInstance = DoorTable.getInstance().getDoor(doorId);
+				DoorInstance doorInstance = DoorTable.getInstance().getDoor(doorId);
 				if (doorInstance != null) {
 					doorInstance.closeMe();
 				}
 			}
-			for (L2Character chars : ZoneManager.getInstance().getZoneById(SOD_ZONE).getCharactersInside().values()) {
-				if (chars instanceof L2PcInstance) {
+			for (Creature chars : ZoneManager.getInstance().getZoneById(SOD_ZONE).getCharactersInside().values()) {
+				if (chars instanceof Player) {
 					chars.teleToLocation(SOD_EXIT_POINT[0], SOD_EXIT_POINT[1], SOD_EXIT_POINT[2]);
 				}
 			}
@@ -212,7 +212,7 @@ public class EnergySeeds extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		if (npc.getNpcId() == TEMPORARY_TELEPORTER) {
 			player.teleToLocation(SOD_EXIT_POINT[0], SOD_EXIT_POINT[1], SOD_EXIT_POINT[2]);
 		}
@@ -221,7 +221,7 @@ public class EnergySeeds extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (spawnedNpcs.containsKey(npc) && spawns.containsKey(spawnedNpcs.get(npc))) {
 			spawns.get(spawnedNpcs.get(npc)).scheduleRespawn(RESPAWN + Rnd.get(RANDOM_RESPAWN_OFFSET));
 			spawnedNpcs.remove(npc);
@@ -230,12 +230,12 @@ public class EnergySeeds extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onEnterZone(L2Character character, L2ZoneType zone) {
+	public String onEnterZone(Creature character, ZoneType zone) {
 		if (character.getInstanceId() != 0) {
 			return super.onEnterZone(character, zone);
 		}
 
-		if (character instanceof L2PcInstance) {
+		if (character instanceof Player) {
 			switch (zone.getId()) {
 				case SOD_ZONE:
 					if (!isSeedActive(GraciaSeeds.DESTRUCTION) && !character.isGM()) {
@@ -266,14 +266,14 @@ public class EnergySeeds extends L2AttackableAIScript {
 	}
 
 	public void stopAI(GraciaSeeds type) {
-		for (L2Npc seed : spawnedNpcs.keySet()) {
+		for (Npc seed : spawnedNpcs.keySet()) {
 			if (type == spawns.get(spawnedNpcs.get(seed)).seedId) {
 				seed.deleteMe();
 			}
 		}
 	}
 
-	public void seedCollectEvent(L2PcInstance player, L2Npc seedEnergy, GraciaSeeds seedType) {
+	public void seedCollectEvent(Player player, Npc seedEnergy, GraciaSeeds seedType) {
 		if (player == null) {
 			return;
 		}
@@ -294,7 +294,7 @@ public class EnergySeeds extends L2AttackableAIScript {
 					handleQuestDrop(st, 15535);
 				}
 				if (Rnd.get(100) < 50) {
-					L2MonsterInstance mob =
+					MonsterInstance mob =
 							spawnSupriseMob(seedEnergy, ANNIHILATION_SUPRISE_MOB_IDS[0][Rnd.get(ANNIHILATION_SUPRISE_MOB_IDS[0].length)]);
 					mob.setRunning();
 					mob.addDamageHate(player, 0, 999);
@@ -306,7 +306,7 @@ public class EnergySeeds extends L2AttackableAIScript {
 					handleQuestDrop(st, 15535);
 				}
 				if (Rnd.get(100) < 50) {
-					L2MonsterInstance mob =
+					MonsterInstance mob =
 							spawnSupriseMob(seedEnergy, ANNIHILATION_SUPRISE_MOB_IDS[1][Rnd.get(ANNIHILATION_SUPRISE_MOB_IDS[1].length)]);
 					mob.setRunning();
 					mob.addDamageHate(player, 0, 999);
@@ -318,7 +318,7 @@ public class EnergySeeds extends L2AttackableAIScript {
 					handleQuestDrop(st, 15535);
 				}
 				if (Rnd.get(100) < 50) {
-					L2MonsterInstance mob =
+					MonsterInstance mob =
 							spawnSupriseMob(seedEnergy, ANNIHILATION_SUPRISE_MOB_IDS[2][Rnd.get(ANNIHILATION_SUPRISE_MOB_IDS[2].length)]);
 					mob.setRunning();
 					mob.addDamageHate(player, 0, 999);
@@ -328,12 +328,12 @@ public class EnergySeeds extends L2AttackableAIScript {
 		}
 	}
 
-	private L2MonsterInstance spawnSupriseMob(L2Npc energy, int npcId) {
+	private MonsterInstance spawnSupriseMob(Npc energy, int npcId) {
 		// Get the template of the Minion to spawn
-		L2NpcTemplate supriseMobTemplate = NpcTable.getInstance().getTemplate(npcId);
+		NpcTemplate supriseMobTemplate = NpcTable.getInstance().getTemplate(npcId);
 
 		// Create and Init the Minion and generate its Identifier
-		L2MonsterInstance monster = new L2MonsterInstance(IdFactory.getInstance().getNextId(), supriseMobTemplate);
+		MonsterInstance monster = new MonsterInstance(IdFactory.getInstance().getNextId(), supriseMobTemplate);
 
 		// Set the Minion HP, MP and Heading
 		monster.setCurrentHpMp(monster.getMaxHp(), monster.getMaxMp());

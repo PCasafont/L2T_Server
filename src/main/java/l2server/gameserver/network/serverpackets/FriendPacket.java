@@ -15,9 +15,8 @@ package l2server.gameserver.network.serverpackets;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.CharNameTable;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.log.Log;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -42,7 +41,7 @@ public class FriendPacket extends L2GameServerPacket {
 	private boolean action, online;
 	private int objid;
 	private String name;
-	private L2PcInstance player;
+	private Player player;
 	private int level = 0;
 	private int classId = 0;
 	private String memo;
@@ -50,12 +49,12 @@ public class FriendPacket extends L2GameServerPacket {
 	/**
 	 * @param action - true for adding, false for remove
 	 */
-	public FriendPacket(boolean action, int objId, L2PcInstance activeChar) {
+	public FriendPacket(boolean action, int objId, Player activeChar) {
 		this.action = action;
 		this.objid = objId;
 		name = CharNameTable.getInstance().getNameById(objId);
-		online = L2World.getInstance().getPlayer(objId) != null;
-		player = L2World.getInstance().getPlayer(objId);
+		online = World.getInstance().getPlayer(objId) != null;
+		player = World.getInstance().getPlayer(objId);
 		memo = activeChar.getFriendMemo(objId);
 		if (player != null) {
 			level = player.getLevel();
@@ -83,7 +82,7 @@ public class FriendPacket extends L2GameServerPacket {
 		Connection con = null;
 		
 		try {
-			// Retrieve the L2PcInstance from the characters table of the database
+			// Retrieve the Player from the characters table of the database
 			con = L2DatabaseFactory.getInstance().getConnection();
 			
 			PreparedStatement statement = con.prepareStatement("SELECT level, classid, base_class FROM characters WHERE charId=?");
@@ -97,14 +96,14 @@ public class FriendPacket extends L2GameServerPacket {
 			rset.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.warning("Failed loading character.");
+			log.warn("Failed loading character.");
 			e.printStackTrace();
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
 		if (classId != bClassId) {
 			try {
-				// Retrieve the L2PcInstance from the characters table of the database
+				// Retrieve the Player from the characters table of the database
 				con = L2DatabaseFactory.getInstance().getConnection();
 				
 				PreparedStatement statement = con.prepareStatement("SELECT level FROM character_subclasses WHERE charId=? AND class_id=?");
@@ -119,7 +118,7 @@ public class FriendPacket extends L2GameServerPacket {
 				rset.close();
 				statement.close();
 			} catch (Exception e) {
-				Log.warning("Failed loading character_subclasses.");
+				log.warn("Failed loading character_subclasses.");
 				e.printStackTrace();
 			} finally {
 				L2DatabaseFactory.close(con);

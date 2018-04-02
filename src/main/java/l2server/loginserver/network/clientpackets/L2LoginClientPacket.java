@@ -15,16 +15,16 @@
 
 package l2server.loginserver.network.clientpackets;
 
-import l2server.log.Log;
 import l2server.loginserver.network.L2LoginClient;
 import l2server.network.ReceivablePacket;
-
-import java.util.logging.Level;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author KenM
  */
 public abstract class L2LoginClientPacket extends ReceivablePacket<L2LoginClient> {
+	private static Logger log = LoggerFactory.getLogger(L2LoginClientPacket.class.getName());
 	
 	/**
 	 */
@@ -33,7 +33,7 @@ public abstract class L2LoginClientPacket extends ReceivablePacket<L2LoginClient
 		try {
 			return readImpl();
 		} catch (Exception e) {
-			Log.log(Level.SEVERE, "ERROR READING: " + this.getClass().getSimpleName() + ": " + e.getMessage(), e);
+			log.error("ERROR READING: " + this.getClass().getSimpleName() + ": " + e.getMessage(), e);
 			return false;
 		}
 	}

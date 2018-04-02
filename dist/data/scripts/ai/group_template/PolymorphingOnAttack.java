@@ -17,10 +17,10 @@ package ai.group_template;
 
 import java.util.HashMap; import java.util.Map;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.util.Rnd;
@@ -60,7 +60,7 @@ public class PolymorphingOnAttack extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (npc.isVisible() && !npc.isDead()) {
 			final Integer[] tmp = MOBSPAWNS.get(npc.getNpcId());
 			if (tmp != null) {
@@ -70,8 +70,9 @@ public class PolymorphingOnAttack extends L2AttackableAIScript {
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), Say2.ALL_NOT_RECORDED, npc.getName(), text));
 					}
 					npc.deleteMe();
-					L2Attackable newNpc = (L2Attackable) addSpawn(tmp[0], npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
-					L2Character originalAttacker = isPet ? attacker.getPet() : attacker;
+					Attackable
+							newNpc = (Attackable) addSpawn(tmp[0], npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
+					Creature originalAttacker = isPet ? attacker.getPet() : attacker;
 					newNpc.setRunning();
 					newNpc.addDamageHate(originalAttacker, 0, 500);
 					newNpc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, originalAttacker);

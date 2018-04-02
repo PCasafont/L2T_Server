@@ -1,9 +1,9 @@
 package ai.zones;
 
 import l2server.gameserver.datatables.DoorTable;
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.model.zone.ZoneType;
 
 /**
  * @author LasTravel
@@ -26,7 +26,7 @@ public class OrbisTemple extends Quest {
 	}
 
 	@Override
-	public String onEnterZone(L2Character character, L2ZoneType zone) {
+	public String onEnterZone(Creature character, ZoneType zone) {
 		//System.out.println("Zone Id = " + zone.getId());
 		switch (zone.getId()) {
 			case 60011:

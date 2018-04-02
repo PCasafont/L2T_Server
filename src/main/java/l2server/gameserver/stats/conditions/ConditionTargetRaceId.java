@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.stats.Env;
 
 import java.util.ArrayList;
@@ -43,9 +43,9 @@ public class ConditionTargetRaceId extends Condition {
 	 */
 	@Override
 	public boolean testImpl(Env env) {
-		if (!(env.target instanceof L2Npc)) {
+		if (!(env.target instanceof Npc)) {
 			return false;
 		}
-		return raceIds.contains(((L2Npc) env.target).getTemplate().getRace().ordinal() + 1);
+		return raceIds.contains(((Npc) env.target).getTemplate().getRace().ordinal() + 1);
 	}
 }

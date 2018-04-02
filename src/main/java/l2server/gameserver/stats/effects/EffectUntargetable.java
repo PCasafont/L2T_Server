@@ -16,46 +16,47 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.ai.CtrlIntention;
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2EffectType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.EffectType;
 
 /**
  * @author mkizub
  */
 public class EffectUntargetable extends L2Effect {
-	public EffectUntargetable(Env env, L2EffectTemplate template) {
+	public EffectUntargetable(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#getType()
+	 * @see Abnormal#getType()
 	 */
 	@Override
-	public L2EffectType getEffectType() {
-		return L2EffectType.UNTARGETABLE;
+	public EffectType getEffectType() {
+		return EffectType.UNTARGETABLE;
 	}
 	
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.BUFF;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.BUFF;
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		if (getEffected() instanceof L2PcInstance && ((L2PcInstance) getEffected()).isCombatFlagEquipped()) {
+		if (getEffected() instanceof Player && ((Player) getEffected()).isCombatFlagEquipped()) {
 			return false;
 		}
 		
-		for (L2Character target : getEffected().getKnownList().getKnownCharacters()) {
+		for (Creature target : getEffected().getKnownList().getKnownCharacters()) {
 			if (target != null && target != getEffected()) {
 				if (target.getActingPlayer() != null && getEffected().getActingPlayer() != null && target.getActingPlayer().getParty() != null &&
 						target.getActingPlayer().getParty() == getEffected().getActingPlayer().getParty()) {
@@ -69,8 +70,8 @@ public class EffectUntargetable extends L2Effect {
 					//target.abortCast();
 					target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 					
-					if (target instanceof L2Attackable) {
-						((L2Attackable) target).reduceHate(getEffected(), ((L2Attackable) target).getHating(getEffected()));
+					if (target instanceof Attackable) {
+						((Attackable) target).reduceHate(getEffected(), ((Attackable) target).getHating(getEffected()));
 					}
 				}
 			}
@@ -80,14 +81,14 @@ public class EffectUntargetable extends L2Effect {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onExit()
+	 * @see Abnormal#onExit()
 	 */
 	@Override
 	public void onExit() {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

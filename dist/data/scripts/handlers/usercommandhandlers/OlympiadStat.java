@@ -16,7 +16,7 @@
 package handlers.usercommandhandlers;
 
 import l2server.gameserver.handler.IUserCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.model.olympiad.OlympiadNobleInfo;
 import l2server.gameserver.network.SystemMessageId;
@@ -30,16 +30,16 @@ public class OlympiadStat implements IUserCommandHandler {
 	private static final int[] COMMAND_IDS = {109};
 
 	/**
-	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, l2server.gameserver.model.actor.instance.L2PcInstance)
+	 * @see l2server.gameserver.handler.IUserCommandHandler#useUserCommand(int, Player)
 	 */
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar) {
+	public boolean useUserCommand(int id, Player activeChar) {
 		if (id != COMMAND_IDS[0]) {
 			return false;
 		}
 
-		L2PcInstance noble = activeChar;
-		if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2PcInstance) {
+		Player noble = activeChar;
+		if (activeChar.getTarget() != null && activeChar.getTarget() instanceof Player) {
 			noble = activeChar.getTarget().getActingPlayer();
 		}
 

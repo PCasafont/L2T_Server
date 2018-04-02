@@ -2,9 +2,9 @@ package ai.individual.AltarOfFantasyIsle;
 
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 
 import java.util.HashMap;
@@ -38,12 +38,12 @@ public class AltarOfFantasyIsle extends Quest {
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		return "AltarOfFantasyIsle.html";
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.startsWith("trySpawnBoss")) {
 			int bossId = Integer.valueOf(event.split(" ")[1]);
 			int stoneId = 0;
@@ -69,7 +69,7 @@ public class AltarOfFantasyIsle extends Quest {
 				Announcements.getInstance().announceToAll("Jisoo: One of the Descendants has been summoned... Death is coming...");
 				spawnInfo.put(bossId, true); //Boss is spawned
 
-				L2Attackable boss = (L2Attackable) addSpawn(bossId, npc.getX(), npc.getY() + 200, npc.getZ(), 0, false, 0, true);
+				Attackable boss = (Attackable) addSpawn(bossId, npc.getX(), npc.getY() + 200, npc.getZ(), 0, false, 0, true);
 				boss.setTarget(player);
 				boss.addDamageHate(player, 9999, 9999);
 				boss.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
@@ -80,7 +80,7 @@ public class AltarOfFantasyIsle extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		synchronized (spawnInfo) {
 			spawnInfo.put(npc.getNpcId(), false);
 		}
@@ -88,7 +88,7 @@ public class AltarOfFantasyIsle extends Quest {
 		return super.onKill(npc, player, isPet);
 	}
 
-	public String onTalkNpc(L2Npc npc, L2PcInstance player) {
+	public String onTalkNpc(Npc npc, Player player) {
 		return null;
 	}
 	

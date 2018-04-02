@@ -22,19 +22,20 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2GuardInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.GuardInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -45,6 +46,9 @@ import java.util.List;
  * @author LasTravel
  */
 public class FaeronSiege extends Quest {
+	private static Logger log = LoggerFactory.getLogger(FaeronSiege.class.getName());
+
+
 	private static final boolean debug = false;
 	private static final String qn = "FaeronSiege";
 
@@ -62,17 +66,17 @@ public class FaeronSiege extends Quest {
 	private static final int[] invadeMobs = {23477, 23478, 19555}; //Abyssal Shaman, Abyssal Berserker, Abyssal Imp
 	private static final int[] fullBuffsIds = {15129, 15133, 15137};
 	//Skills
-	private static final L2Skill protectionSkill = SkillTable.getInstance().getInfo(14085, 1);
-	private static final L2Skill weakMoment = SkillTable.getInstance().getInfo(14558, 1);
-	private static final L2Skill portalEffect1 = SkillTable.getInstance().getInfo(6783, 1);
-	private static final L2Skill portalEffect2 = SkillTable.getInstance().getInfo(6799, 1);
-	private static final L2Skill warriorsSpawnEffect = SkillTable.getInstance().getInfo(6176, 1);
-	private static final L2Skill buffPresentation = SkillTable.getInstance().getInfo(15368, 6);
-	private static final L2Skill resSkill = SkillTable.getInstance().getInfo(1016, 6);
-	private static final L2Skill healSkill = SkillTable.getInstance().getInfo(11570, 1);
-	private static final L2Skill summonTree = SkillTable.getInstance().getInfo(14902, 1);
-	private static final L2Skill ultimateDef = SkillTable.getInstance().getInfo(23451, 3);
-	private static final L2Skill summonCore = SkillTable.getInstance().getInfo(6848, 1);
+	private static final Skill protectionSkill = SkillTable.getInstance().getInfo(14085, 1);
+	private static final Skill weakMoment = SkillTable.getInstance().getInfo(14558, 1);
+	private static final Skill portalEffect1 = SkillTable.getInstance().getInfo(6783, 1);
+	private static final Skill portalEffect2 = SkillTable.getInstance().getInfo(6799, 1);
+	private static final Skill warriorsSpawnEffect = SkillTable.getInstance().getInfo(6176, 1);
+	private static final Skill buffPresentation = SkillTable.getInstance().getInfo(15368, 6);
+	private static final Skill resSkill = SkillTable.getInstance().getInfo(1016, 6);
+	private static final Skill healSkill = SkillTable.getInstance().getInfo(11570, 1);
+	private static final Skill summonTree = SkillTable.getInstance().getInfo(14902, 1);
+	private static final Skill ultimateDef = SkillTable.getInstance().getInfo(23451, 3);
+	private static final Skill summonCore = SkillTable.getInstance().getInfo(6848, 1);
 
 	public FaeronSiege(int questId, String name, String descr) {
 		super(questId, name, descr);
@@ -98,27 +102,27 @@ public class FaeronSiege extends Quest {
 
 	private class FearonSiegeWorld extends InstanceWorld {
 		private int eventRound;
-		private L2Npc warriorLeona;
-		private L2Npc warriorKain;
-		private L2Npc warriorMageSup;
-		private L2Npc protectionStone;
-		private L2Npc summonGravityCore;
-		private L2Npc bossMakkum;
-		private List<L2Npc> allMinions;
-		private List<L2Npc> guardArmy;
-		private ArrayList<L2PcInstance> rewardedPlayers;
+		private Npc warriorLeona;
+		private Npc warriorKain;
+		private Npc warriorMageSup;
+		private Npc protectionStone;
+		private Npc summonGravityCore;
+		private Npc bossMakkum;
+		private List<Npc> allMinions;
+		private List<Npc> guardArmy;
+		private ArrayList<Player> rewardedPlayers;
 
 		private FearonSiegeWorld() {
-			allMinions = new ArrayList<L2Npc>();
-			guardArmy = new ArrayList<L2Npc>();
-			rewardedPlayers = new ArrayList<L2PcInstance>();
+			allMinions = new ArrayList<Npc>();
+			guardArmy = new ArrayList<Npc>();
+			rewardedPlayers = new ArrayList<Player>();
 		}
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 
 		if (npc.getNpcId() == DimensionalDoor.getNpcManagerId()) {
@@ -129,9 +133,9 @@ public class FaeronSiege extends Quest {
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		InstanceWorld wrld = null;
@@ -140,7 +144,7 @@ public class FaeronSiege extends Quest {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onAdvEvent: Unable to get world.");
+			log.warn(getName() + ": onAdvEvent: Unable to get world.");
 			return null;
 		}
 
@@ -191,13 +195,13 @@ public class FaeronSiege extends Quest {
 											"The Protection Stone now can debuff the enemies!"));
 				}
 
-				L2Skill passiveSkill = SkillTable.getInstance().getInfo(passiveSkillId, world.eventRound < 10 ? world.eventRound * 2 : 10);
+				Skill passiveSkill = SkillTable.getInstance().getInfo(passiveSkillId, world.eventRound < 10 ? world.eventRound * 2 : 10);
 				if (world.eventRound < 10) {
 					for (int i = 0; i < 61; i++) {
 						int x = (int) (1200 * Math.cos(i * 0.618));
 						int y = (int) (1200 * Math.sin(i * 0.618));
 
-						L2Npc minion = addSpawn(invadeMobs[Rnd.get(invadeMobs.length)],
+						Npc minion = addSpawn(invadeMobs[Rnd.get(invadeMobs.length)],
 								-79660 + x,
 								244954 + y,
 								-3651 + 20,
@@ -233,15 +237,15 @@ public class FaeronSiege extends Quest {
                   Protection Stone AI
                   This NPC will cast non-stop one buff to all the players that are inside his activity radius.
                  */
-				Collection<L2Character> chars = world.protectionStone.getKnownList().getKnownCharactersInRadius(protectionSkill.getSkillRadius());
+				Collection<Creature> chars = world.protectionStone.getKnownList().getKnownCharactersInRadius(protectionSkill.getSkillRadius());
 				if (chars != null && !chars.isEmpty()) {
-					for (L2Character chara : chars) {
+					for (Creature chara : chars) {
 						if (chara == null) {
 							continue;
 						}
 
 						if (chara.isInsideRadius(world.protectionStone, protectionSkill.getSkillRadius(), false, false)) {
-							if (chara instanceof L2Playable) {
+							if (chara instanceof Playable) {
 								protectionSkill.getEffects(chara, chara);
 							} else {
 								if (world.eventRound >= 7) {
@@ -258,11 +262,11 @@ public class FaeronSiege extends Quest {
                   This NPC will cast non-stop a UD skill to all players inside
                  */
 				if (world.summonGravityCore != null && !world.summonGravityCore.isDecayed()) {
-					Collection<L2Character> chars = world.summonGravityCore.getKnownList().getKnownCharactersInRadius(ultimateDef.getSkillRadius());
+					Collection<Creature> chars = world.summonGravityCore.getKnownList().getKnownCharactersInRadius(ultimateDef.getSkillRadius());
 					if (chars != null && !chars.isEmpty()) {
-						for (L2Character chara : chars) {
+						for (Creature chara : chars) {
 							if (chara == null || !chara.isInsideRadius(world.summonGravityCore, ultimateDef.getSkillRadius(), false, false) ||
-									!(chara instanceof L2Playable)) {
+									!(chara instanceof Playable)) {
 								continue;
 							}
 
@@ -276,7 +280,7 @@ public class FaeronSiege extends Quest {
                   Guard Army
                   We will just start the attack to the boss
                  */
-				for (L2Npc guard : world.guardArmy) {
+				for (Npc guard : world.guardArmy) {
 					if (guard == null) {
 						continue;
 					}
@@ -284,11 +288,11 @@ public class FaeronSiege extends Quest {
 					guard.setIsRunning(true);
 					guard.setIsInvul(true);
 
-					if (guard instanceof L2GuardInstance) {
-						((L2GuardInstance) guard).setCanReturnToSpawnPoint(false);
+					if (guard instanceof GuardInstance) {
+						((GuardInstance) guard).setCanReturnToSpawnPoint(false);
 						if (guard != world.warriorMageSup) {
 							guard.setTarget(world.bossMakkum);
-							((L2GuardInstance) guard).addDamageHate(world.bossMakkum, 500, 9999);
+							((GuardInstance) guard).addDamageHate(world.bossMakkum, 500, 9999);
 							guard.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, world.bossMakkum);
 						}
 					}
@@ -301,7 +305,7 @@ public class FaeronSiege extends Quest {
                   		- Summon a protective shield that will full-protect all the players inside
                   		- Res dead players that are inside the resurrection cast skill range
                  */
-				final Collection<L2PcInstance> chars = world.warriorMageSup.getKnownList().getKnownPlayersInRadius(1600);
+				final Collection<Player> chars = world.warriorMageSup.getKnownList().getKnownPlayersInRadius(1600);
 				if (chars != null && !chars.isEmpty()) {
 					if (world.warriorMageSup.getCurrentMp() < 800) {
 						world.warriorMageSup.broadcastPacket(new CreatureSay(world.warriorMageSup.getObjectId(),
@@ -310,9 +314,9 @@ public class FaeronSiege extends Quest {
 								"My mana power are decreasing so fast...!"));
 					}
 
-					List<L2PcInstance> fuckedPlayers = new ArrayList<L2PcInstance>();
-					List<L2PcInstance> deadPlayers = new ArrayList<L2PcInstance>();
-					for (L2PcInstance chara : chars) {
+					List<Player> fuckedPlayers = new ArrayList<Player>();
+					List<Player> deadPlayers = new ArrayList<Player>();
+					for (Player chara : chars) {
 						if (chara == null) {
 							continue;
 						}
@@ -328,7 +332,7 @@ public class FaeronSiege extends Quest {
 					int nextActionTime = 10000;
 					if (deadPlayers.size() > 0) //RES
 					{
-						final L2PcInstance target = deadPlayers.get(Rnd.get(deadPlayers.size() - 1));
+						final Player target = deadPlayers.get(Rnd.get(deadPlayers.size() - 1));
 						if (target != null && target.isDead() && world.warriorMageSup.isInsideRadius(target, resSkill.getCastRange(), false, false) &&
 								!target.isReviveRequested()) {
 							world.warriorMageSup.broadcastPacket(new CreatureSay(world.warriorMageSup.getObjectId(),
@@ -343,7 +347,7 @@ public class FaeronSiege extends Quest {
 						}
 					} else if (fuckedCount > 0 && fuckedCount <= 3) //HEAL
 					{
-						L2PcInstance target = fuckedPlayers.get(Rnd.get(fuckedPlayers.size() - 1));
+						Player target = fuckedPlayers.get(Rnd.get(fuckedPlayers.size() - 1));
 						if (target != null && world.warriorMageSup.getCurrentMp() >= healSkill.getMpConsume()) {
 							world.warriorMageSup.broadcastPacket(new CreatureSay(world.warriorMageSup.getObjectId(),
 									1,
@@ -403,7 +407,8 @@ public class FaeronSiege extends Quest {
 							buffLevel = 3;
 						}
 
-						final L2Skill buffSkill = SkillTable.getInstance().getInfo(fullBuffsIds[Rnd.get(fullBuffsIds.length)] + buffLevel, 1);
+						final Skill
+								buffSkill = SkillTable.getInstance().getInfo(fullBuffsIds[Rnd.get(fullBuffsIds.length)] + buffLevel, 1);
 						if (buffSkill != null && world.warriorMageSup.getCurrentMp() >= buffSkill.getMpConsume()) {
 							String skillType = buffSkill.getName().split(" ")[2];
 
@@ -418,7 +423,7 @@ public class FaeronSiege extends Quest {
 							ThreadPoolManager.getInstance().scheduleAi(new Runnable() {
 								@Override
 								public void run() {
-									for (L2PcInstance chara : chars) {
+									for (Player chara : chars) {
 										if (chara == null || !chara.isInsideRadius(world.warriorMageSup, 150, false, false)) {
 											continue;
 										}
@@ -447,9 +452,9 @@ public class FaeronSiege extends Quest {
 	}
 
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public final String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -483,7 +488,7 @@ public class FaeronSiege extends Quest {
 													portalEffect2.getReuseDelay()));
 
 							for (int i = 0; i < 15; i++) {
-								L2Npc guard = addSpawn(warriorGuard,
+								Npc guard = addSpawn(warriorGuard,
 										world.protectionStone.getX(),
 										world.protectionStone.getY(),
 										world.protectionStone.getZ(),
@@ -520,7 +525,7 @@ public class FaeronSiege extends Quest {
 															0,
 															"The Royal Army Guards from the Aden realm has been arrived!"));
 
-									L2Npc randomGuard = world.guardArmy.get(Rnd.get(world.guardArmy.size()));
+									Npc randomGuard = world.guardArmy.get(Rnd.get(world.guardArmy.size()));
 									if (randomGuard != null) {
 										InstanceManager.getInstance()
 												.sendDelayedPacketToInstance(world.instanceId,
@@ -539,7 +544,7 @@ public class FaeronSiege extends Quest {
 				} else if (world.status == 1 && npc.getCurrentHp() < npc.getMaxHp() * 0.50) {
 					world.status = 2;
 
-					L2Skill passiveSkill = SkillTable.getInstance().getInfo(passiveSkillId, 15);
+					Skill passiveSkill = SkillTable.getInstance().getInfo(passiveSkillId, 15);
 					npc.addSkill(passiveSkill);
 
 					InstanceManager.getInstance().stopWholeInstance(world.instanceId);
@@ -609,7 +614,7 @@ public class FaeronSiege extends Quest {
 									warriorsSpawnEffect.getHitTime(),
 									warriorsSpawnEffect.getReuseDelay()));
 
-							L2Npc randomGuard = world.guardArmy.get(Rnd.get(world.guardArmy.size()));
+							Npc randomGuard = world.guardArmy.get(Rnd.get(world.guardArmy.size()));
 							if (randomGuard != null) {
 								InstanceManager.getInstance()
 										.sendDelayedPacketToInstance(world.instanceId,
@@ -663,7 +668,7 @@ public class FaeronSiege extends Quest {
 				} else if (world.status == 2 && npc.getCurrentHp() < npc.getMaxHp() * 0.10) {
 					world.status = 3;
 
-					L2Skill passiveSkill = SkillTable.getInstance().getInfo(passiveSkillId, 20);
+					Skill passiveSkill = SkillTable.getInstance().getInfo(passiveSkillId, 20);
 					npc.addSkill(passiveSkill);
 				}
 			}
@@ -672,9 +677,9 @@ public class FaeronSiege extends Quest {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -695,7 +700,7 @@ public class FaeronSiege extends Quest {
 				}
 			} else if (npc.getNpcId() == makkumBossId) {
 				if (player.isInParty()) {
-					for (L2PcInstance pMember : player.getParty().getPartyMembers()) {
+					for (Player pMember : player.getParty().getPartyMembers()) {
 						if (pMember == null || pMember.getInstanceId() != world.instanceId) {
 							continue;
 						}
@@ -715,7 +720,7 @@ public class FaeronSiege extends Quest {
 		return super.onKill(npc, player, isPet);
 	}
 
-	private final synchronized void enterInstance(L2PcInstance player) {
+	private final synchronized void enterInstance(Player player) {
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
 			if (!(world instanceof FearonSiegeWorld)) {
@@ -743,14 +748,14 @@ public class FaeronSiege extends Quest {
 
 			InstanceManager.getInstance().addWorld(world);
 
-			List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+			List<Player> allPlayers = new ArrayList<Player>();
 			if (debug) {
 				allPlayers.add(player);
 			} else {
 				allPlayers.addAll(player.getParty().getPartyMembers());
 			}
 
-			for (L2PcInstance enterPlayer : allPlayers) {
+			for (Player enterPlayer : allPlayers) {
 				if (enterPlayer == null) {
 					continue;
 				}
@@ -764,7 +769,7 @@ public class FaeronSiege extends Quest {
 
 			startQuestTimer("stage_1_start", 1000, null, player);
 
-			Log.fine(getName() + ": instance started: " + instanceId + " created by player: " + player.getName());
+			log.debug(getName() + ": instance started: " + instanceId + " created by player: " + player.getName());
 			return;
 		}
 	}

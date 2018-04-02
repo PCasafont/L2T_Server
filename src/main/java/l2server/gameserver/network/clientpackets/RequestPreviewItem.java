@@ -19,12 +19,12 @@ import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TradeController;
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.L2TradeList;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MercManagerInstance;
-import l2server.gameserver.model.actor.instance.L2MerchantInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MercManagerInstance;
+import l2server.gameserver.model.actor.instance.MerchantInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.model.itemcontainer.PcInventory;
 import l2server.gameserver.network.SystemMessageId;
@@ -34,7 +34,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.gameserver.templates.item.*;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
 
 import java.util.HashMap;
 import java.util.List;
@@ -46,7 +45,7 @@ import java.util.logging.Level;
  */
 public final class RequestPreviewItem extends L2GameClientPacket {
 
-	private L2PcInstance activeChar;
+	private Player activeChar;
 	private Map<Integer, Integer> _item_list;
 	@SuppressWarnings("unused")
 	private int unk;
@@ -61,7 +60,7 @@ public final class RequestPreviewItem extends L2GameClientPacket {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NO_LONGER_TRYING_ON));
 				activeChar.sendPacket(new UserInfo(activeChar));
 			} catch (Exception e) {
-				Log.log(Level.SEVERE, "", e);
+				log.error("", e);
 			}
 		}
 	}
@@ -111,10 +110,10 @@ public final class RequestPreviewItem extends L2GameClientPacket {
 		}
 
 		// Check current target of the player and the INTERACTION_DISTANCE
-		L2Object target = activeChar.getTarget();
-		if (!activeChar.isGM() && (target == null || !(target instanceof L2MerchantInstance || target instanceof L2MercManagerInstance)
+		WorldObject target = activeChar.getTarget();
+		if (!activeChar.isGM() && (target == null || !(target instanceof MerchantInstance || target instanceof MercManagerInstance)
 				// Target not a merchant and not mercmanager
-				|| !activeChar.isInsideRadius(target, L2Npc.DEFAULT_INTERACTION_DISTANCE, false, false) // Distance is too far
+				|| !activeChar.isInsideRadius(target, Npc.DEFAULT_INTERACTION_DISTANCE, false, false) // Distance is too far
 		)) {
 			return;
 		}
@@ -127,7 +126,7 @@ public final class RequestPreviewItem extends L2GameClientPacket {
 		L2TradeList list = null;
 
 		// Get the current merchant targeted by the player
-		L2MerchantInstance merchant = target instanceof L2MerchantInstance ? (L2MerchantInstance) target : null;
+		MerchantInstance merchant = target instanceof MerchantInstance ? (MerchantInstance) target : null;
 
 		List<L2TradeList> lists = TradeController.INSTANCE.getBuyListByNpcId(merchant.getNpcId());
 
@@ -168,7 +167,7 @@ public final class RequestPreviewItem extends L2GameClientPacket {
 				return;
 			}
 
-			L2Item template = ItemTable.getInstance().getTemplate(itemId);
+			ItemTemplate template = ItemTable.getInstance().getTemplate(itemId);
 			if (template == null) {
 				continue;
 			}
@@ -178,18 +177,18 @@ public final class RequestPreviewItem extends L2GameClientPacket {
 				continue;
 			}
 
-			if (template instanceof L2Weapon) {
+			if (template instanceof WeaponTemplate) {
 				if (activeChar.getRace().ordinal() == 5) {
-					if (template.getItemType() == L2WeaponType.NONE) {
+					if (template.getItemType() == WeaponType.NONE) {
 						continue;
-					} else if (template.getItemType() == L2WeaponType.RAPIER || template.getItemType() == L2WeaponType.CROSSBOWK ||
-							template.getItemType() == L2WeaponType.ANCIENTSWORD) {
+					} else if (template.getItemType() == WeaponType.RAPIER || template.getItemType() == WeaponType.CROSSBOWK ||
+							template.getItemType() == WeaponType.ANCIENTSWORD) {
 						continue;
 					}
 				}
-			} else if (template instanceof L2Armor) {
+			} else if (template instanceof ArmorTemplate) {
 				if (activeChar.getRace().ordinal() == 5) {
-					if (template.getItemType() == L2ArmorType.HEAVY || template.getItemType() == L2ArmorType.MAGIC) {
+					if (template.getItemType() == ArmorType.HEAVY || template.getItemType() == ArmorType.MAGIC) {
 						continue;
 					}
 				}

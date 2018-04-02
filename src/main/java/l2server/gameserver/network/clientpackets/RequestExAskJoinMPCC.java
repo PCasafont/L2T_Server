@@ -16,9 +16,9 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.L2Party;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExAskJoinMPCC;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -41,12 +41,12 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
 		
-		L2PcInstance player = L2World.getInstance().getPlayer(name);
+		Player player = World.getInstance().getPlayer(name);
 		if (player == null) {
 			return;
 		}
@@ -107,7 +107,7 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket {
 		}
 	}
 	
-	private void askJoinMPCC(L2PcInstance requestor, L2PcInstance target) {
+	private void askJoinMPCC(Player requestor, Player target) {
 		boolean hasRight = false;
 		if (requestor.getClan() != null && requestor.getClan().getLeaderId() == requestor.getObjectId() &&
 				requestor.getClan().getLevel() >= 5) // Clanleader of lvl5 Clan or higher
@@ -118,7 +118,7 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket {
 			hasRight = true;
 		} else if (requestor.getPledgeClass() >= 5) // At least Baron or higher and the skill Clan Imperium
 		{
-			for (L2Skill skill : requestor.getAllSkills()) {
+			for (Skill skill : requestor.getAllSkills()) {
 				// Skill Clan Imperium
 				if (skill.getId() == 391) {
 					hasRight = true;

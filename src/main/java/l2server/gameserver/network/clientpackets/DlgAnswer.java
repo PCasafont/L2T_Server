@@ -19,10 +19,9 @@ import l2server.Config;
 import l2server.gameserver.datatables.AdminCommandAccessRights;
 import l2server.gameserver.handler.AdminCommandHandler;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.util.GMAudit;
-import l2server.log.Log;
 
 /**
  * @author Dezmond_snz
@@ -43,13 +42,13 @@ public final class DlgAnswer extends L2GameClientPacket {
 
 	@Override
 	public void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
 
 		if (Config.DEBUG) {
-			Log.fine(getType() + ": Answer accepted. Message ID " + messageId + ", answer " + answer + ", Requester ID " + requesterId);
+			log.debug(getType() + ": Answer accepted. Message ID " + messageId + ", answer " + answer + ", Requester ID " + requesterId);
 		}
 		if (messageId == SystemMessageId.RESSURECTION_REQUEST_BY_C1_FOR_S2_XP.getId() ||
 				messageId == SystemMessageId.RESURRECT_USING_CHARM_OF_COURAGE.getId()) {

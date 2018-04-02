@@ -17,13 +17,13 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.templates.skills.SkillTargetType;
 
 /**
  * @author nBd
@@ -32,29 +32,29 @@ public class TargetPartyOther implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
 		if (target != null && target != activeChar && activeChar.getParty() != null && target.getParty() != null &&
 				activeChar.getParty().getPartyLeaderOID() == target.getParty().getPartyLeaderOID()) {
 			if (!target.isDead()) {
-				if (target instanceof L2PcInstance) {
-					L2PcInstance player = (L2PcInstance) target;
+				if (target instanceof Player) {
+					Player player = (Player) target;
 					switch (skill.getId()) {
 						// FORCE BUFFS may cancel here but there should be a proper condition
 						case 426:
 							if (!player.isMageClass()) {
-								return new L2Character[]{target};
+								return new Creature[]{target};
 							} else {
 								return null;
 							}
 						case 427:
 							if (player.isMageClass()) {
-								return new L2Character[]{target};
+								return new Creature[]{target};
 							} else {
 								return null;
 							}
 					}
 				}
-				return new L2Character[]{target};
+				return new Creature[]{target};
 			} else {
 				return null;
 			}
@@ -67,9 +67,9 @@ public class TargetPartyOther implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
+	public Enum<SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub
-		return L2SkillTargetType.TARGET_PARTY_OTHER;
+		return SkillTargetType.TARGET_PARTY_OTHER;
 	}
 
 	public static void main(String[] args) {

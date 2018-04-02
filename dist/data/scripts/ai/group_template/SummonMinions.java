@@ -18,9 +18,9 @@ package ai.group_template;
 import gnu.trove.TIntHashSet;
 import java.util.HashMap; import java.util.Map;
 import l2server.gameserver.ai.CtrlIntention;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.util.Rnd;
 
@@ -30,7 +30,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SummonMinions extends L2AttackableAIScript {
 	private static int HasSpawned;
 	private static TIntHashSet myTrackingSet = new TIntHashSet(); //Used to track instances of npcs
-	private ConcurrentHashMap<Integer, ArrayList<L2PcInstance>> attackersList = new ConcurrentHashMap<Integer, ArrayList<L2PcInstance>>();
+	private ConcurrentHashMap<Integer, ArrayList<Player>> attackersList = new ConcurrentHashMap<Integer, ArrayList<Player>>();
 	private static final Map<Integer, int[]> MINIONS = new HashMap<Integer, int[]>();
 
 	static {
@@ -61,7 +61,7 @@ public class SummonMinions extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		int npcId = npc.getNpcId();
 		int npcObjId = npc.getObjectId();
 		if (MINIONS.containsKey(npcId)) {
@@ -84,7 +84,7 @@ public class SummonMinions extends L2AttackableAIScript {
 							{
 								int[] minions = MINIONS.get(npcId);
 								for (int val : minions) {
-									L2Attackable newNpc = (L2Attackable) this.addSpawn(val,
+									Attackable newNpc = (Attackable) this.addSpawn(val,
 											npc.getX() + Rnd.get(-150, 150),
 											npc.getY() + Rnd.get(-150, 150),
 											npc.getZ(),
@@ -114,9 +114,9 @@ public class SummonMinions extends L2AttackableAIScript {
 						//if (isPet)
 						//	attacker = attacker.getPet().getOwner();
 						if (attacker.getParty() != null) {
-							for (L2PcInstance member : attacker.getParty().getPartyMembers()) {
+							for (Player member : attacker.getParty().getPartyMembers()) {
 								if (attackersList.get(npcObjId) == null) {
-									ArrayList<L2PcInstance> player = new ArrayList<L2PcInstance>();
+									ArrayList<Player> player = new ArrayList<Player>();
 									player.add(member);
 									attackersList.put(npcObjId, player);
 								} else if (!attackersList.get(npcObjId).contains(member)) {
@@ -125,7 +125,7 @@ public class SummonMinions extends L2AttackableAIScript {
 							}
 						} else {
 							if (attackersList.get(npcObjId) == null) {
-								ArrayList<L2PcInstance> player = new ArrayList<L2PcInstance>();
+								ArrayList<Player> player = new ArrayList<Player>();
 								player.add(attacker);
 								attackersList.put(npcObjId, player);
 							} else if (!attackersList.get(npcObjId).contains(attacker)) {
@@ -137,7 +137,7 @@ public class SummonMinions extends L2AttackableAIScript {
 						{
 							HasSpawned = 0;
 							for (int val : MINIONS.get(npcId)) {
-								L2Attackable newNpc = (L2Attackable) this.addSpawn(val,
+								Attackable newNpc = (Attackable) this.addSpawn(val,
 										npc.getX() + Rnd.get(-150, 150),
 										npc.getY() + Rnd.get(-150, 150),
 										npc.getZ(),
@@ -156,7 +156,7 @@ public class SummonMinions extends L2AttackableAIScript {
 						HasSpawned = 0;
 						if (npcId != 20767) {
 							for (int val : MINIONS.get(npcId)) {
-								L2Attackable newNpc = (L2Attackable) this.addSpawn(val,
+								Attackable newNpc = (Attackable) this.addSpawn(val,
 										npc.getX() + Rnd.get(-150, 150),
 										npc.getY() + Rnd.get(-150, 150),
 										npc.getZ(),
@@ -184,7 +184,7 @@ public class SummonMinions extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		int npcId = npc.getNpcId();
 		int npcObjId = npc.getObjectId();
 		if (MINIONS.containsKey(npcId)) {

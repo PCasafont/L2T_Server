@@ -22,10 +22,9 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.PlayerClassTable;
-import l2server.gameserver.datatables.SpawnTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.L2GameClient.GameClientState;
 import l2server.gameserver.network.SystemMessageId;
@@ -34,10 +33,11 @@ import l2server.gameserver.network.serverpackets.SetupGauge;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillTargetType;
+import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
@@ -54,6 +54,9 @@ import java.util.Map.Entry;
  */
 
 public class CustomOfflineBuffersManager {
+	private static Logger log = LoggerFactory.getLogger(CustomOfflineBuffersManager.class.getName());
+
+
 	private static final String TRUNCATE = "DELETE FROM offline_buffers";
 	private static final String STORE_BUFFERS = "INSERT INTO offline_buffers (`charId`, `description`, `buffs`, `coinId`) VALUES (?, ?, ?, ?)";
 	private static final String RESTORE_BUFFERS = "SELECT * FROM offline_buffers";
@@ -109,8 +112,8 @@ public class CustomOfflineBuffersManager {
 			return coinName;
 		}
 
-		private L2PcInstance getBuffer(boolean deleteIfIllegal) {
-			L2PcInstance buffer = L2World.getInstance().getPlayer(playerId);
+		private Player getBuffer(boolean deleteIfIllegal) {
+			Player buffer = World.getInstance().getPlayer(playerId);
 			if (buffer != null && deleteIfIllegal && !buffer.getIsOfflineBuffer()) {
 				synchronized (customBufferTable) {
 					customBufferTable.remove(playerId);
@@ -152,7 +155,7 @@ public class CustomOfflineBuffersManager {
 					continue;
 				}
 
-				L2PcInstance buffer = buffTable.getBuffer(false);
+				Player buffer = buffTable.getBuffer(false);
 				if (buffer == null || !buffer.getIsOfflineBuffer()) {
 					continue;
 				}
@@ -170,7 +173,7 @@ public class CustomOfflineBuffersManager {
 		return sb.toString();
 	}
 
-	public void getSpecificBufferInfo(L2PcInstance player, Integer playerId) {
+	public void getSpecificBufferInfo(Player player, Integer playerId) {
 		if (player == null) {
 			return;
 		}
@@ -182,7 +185,7 @@ public class CustomOfflineBuffersManager {
 				return;
 			}
 
-			L2PcInstance buffer = buffTable.getBuffer(true);
+			Player buffer = buffTable.getBuffer(true);
 			if (buffer == null) {
 				return;
 			}
@@ -199,7 +202,7 @@ public class CustomOfflineBuffersManager {
 				}
 
 				int skillId = i.getKey();
-				L2Skill buffInfo = buffer.getKnownSkill(skillId);
+				Skill buffInfo = buffer.getKnownSkill(skillId);
 				if (buffInfo != null) {
 					sb.append("<table width=300 " + (loc % 2 == 0 ? "bgcolor=131210" : "") + " border=0><tr><td FIXWIDTH=32><img src=\"" +
 							getCorrectSkillIcon(buffInfo.getName(), buffInfo.getId()) +
@@ -214,7 +217,7 @@ public class CustomOfflineBuffersManager {
 		player.sendPacket(new NpcHtmlMessage(0, sb.toString()));
 	}
 
-	public void getBuffFromBuffer(final L2PcInstance player, Integer playerId, Integer skillId) {
+	public void getBuffFromBuffer(final Player player, Integer playerId, Integer skillId) {
 		if (player == null) {
 			return;
 		}
@@ -234,7 +237,7 @@ public class CustomOfflineBuffersManager {
 				return;
 			}
 
-			L2PcInstance buffer = buffTable.getBuffer(true);
+			Player buffer = buffTable.getBuffer(true);
 			if (buffer == null) {
 				return;
 			}
@@ -245,7 +248,7 @@ public class CustomOfflineBuffersManager {
 			}
 
 			//Lil check
-			final L2Skill skill = buffer.getKnownSkill(skillId);
+			final Skill skill = buffer.getKnownSkill(skillId);
 			if (skill == null) {
 				return;
 			}
@@ -298,7 +301,7 @@ public class CustomOfflineBuffersManager {
 		}
 	}
 
-	private boolean canGetBuffs(L2PcInstance player) {
+	private boolean canGetBuffs(Player player) {
 		if (player == null) {
 			return false;
 		}
@@ -310,18 +313,18 @@ public class CustomOfflineBuffersManager {
 		return true;
 	}
 
-	public void offlineBuffPannel(L2PcInstance player) {
+	public void offlineBuffPannel(Player player) {
 		if (!Config.OFFLINE_BUFFERS_ENABLE) {
 			return;
 		}
 		BufferTable buffTable = customBufferTable.get(player.getObjectId());
-		List<L2Skill> buffSkills = new ArrayList<>();
-		for (L2Skill sk : player.getAllSkills()) {
+		List<Skill> buffSkills = new ArrayList<>();
+		for (Skill sk : player.getAllSkills()) {
 			if (sk == null) {
 				continue;
 			}
-			if (!sk.isPassive() && sk.getTransformId() == 0 && sk.getSkillType() == L2SkillType.BUFF &&
-					(sk.getTargetType() == L2SkillTargetType.TARGET_ONE || sk.getTargetType() == L2SkillTargetType.TARGET_PARTY)) {
+			if (!sk.isPassive() && sk.getTransformId() == 0 && sk.getSkillType() == SkillType.BUFF &&
+					(sk.getTargetType() == SkillTargetType.TARGET_ONE || sk.getTargetType() == SkillTargetType.TARGET_PARTY)) {
 				buffSkills.add(sk);
 			}
 		}
@@ -375,7 +378,7 @@ public class CustomOfflineBuffersManager {
 		sb.append("</table></center><br>");
 
 		int loc = 0;
-		for (L2Skill sk : buffSkills) {
+		for (Skill sk : buffSkills) {
 			if (sk == null) {
 				continue;
 			}
@@ -404,7 +407,7 @@ public class CustomOfflineBuffersManager {
 		player.sendPacket(new NpcHtmlMessage(0, sb.toString()));
 	}
 
-	public void addBuffToBuffer(L2PcInstance player, int skillId, Long price) {
+	public void addBuffToBuffer(Player player, int skillId, Long price) {
 		if (player == null) {
 			return;
 		}
@@ -422,12 +425,12 @@ public class CustomOfflineBuffersManager {
 
 				offlineBuffPannel(player);
 			} else {
-				Log.severe("CustomOfflineBuffersManager: The player: " + player.getName() + " is trying to add an invalid skill!");
+				log.error("CustomOfflineBuffersManager: The player: " + player.getName() + " is trying to add an invalid skill!");
 			}
 		}
 	}
 
-	public void delBuffToBuffer(L2PcInstance player, int skillId) {
+	public void delBuffToBuffer(Player player, int skillId) {
 		if (player == null) {
 			return;
 		}
@@ -448,7 +451,7 @@ public class CustomOfflineBuffersManager {
 		}
 	}
 
-	public void addDescription(L2PcInstance player, String description) {
+	public void addDescription(Player player, String description) {
 		if (player == null) {
 			return;
 		}
@@ -466,7 +469,7 @@ public class CustomOfflineBuffersManager {
 		}
 	}
 
-	public void changeCurrencyId(L2PcInstance player, String coin) {
+	public void changeCurrencyId(Player player, String coin) {
 		if (player == null) {
 			return;
 		}
@@ -485,7 +488,7 @@ public class CustomOfflineBuffersManager {
 		}
 	}
 
-	public void removeDescription(L2PcInstance player, String description) {
+	public void removeDescription(Player player, String description) {
 		if (player == null) {
 			return;
 		}
@@ -499,7 +502,7 @@ public class CustomOfflineBuffersManager {
 		}
 	}
 
-	public boolean setUpOfflineBuffer(L2PcInstance player) {
+	public boolean setUpOfflineBuffer(Player player) {
 		if (player == null) {
 			return false;
 		}
@@ -525,7 +528,7 @@ public class CustomOfflineBuffersManager {
 		return false;
 	}
 
-	@Load(dependencies = L2World.class)
+	@Load(dependencies = World.class)
 	public void restoreOfflineBuffers() {
 		if (!Config.OFFLINE_BUFFERS_RESTORE) {
 			return;
@@ -555,11 +558,11 @@ public class CustomOfflineBuffersManager {
 					continue;
 				}
 
-				L2PcInstance player = null;
+				Player player = null;
 				try {
 					L2GameClient client = new L2GameClient(null);
 					client.setDetached(true);
-					player = L2PcInstance.load(charId);
+					player = Player.load(charId);
 					client.setActiveChar(player);
 					player.setOnlineStatus(true, false);
 					client.setAccountName(player.getAccountNamePlayer());
@@ -599,7 +602,7 @@ public class CustomOfflineBuffersManager {
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
-		Log.info("CustomOfflineBuffers: restored " + customBufferTable.size() + " offline buffers!");
+		log.info("CustomOfflineBuffers: restored " + customBufferTable.size() + " offline buffers!");
 	}
 
 	public void storeOfflineBuffers() {
@@ -641,7 +644,7 @@ public class CustomOfflineBuffersManager {
 			}
 			sq.close();
 
-			Log.info("CustomOfflineBuffers: Buffers stored!");
+			log.info("CustomOfflineBuffers: Buffers stored!");
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

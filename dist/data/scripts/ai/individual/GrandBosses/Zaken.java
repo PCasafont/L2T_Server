@@ -23,26 +23,23 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.zone.type.L2BossZone;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.GrandBossInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.zone.type.BossZone;
 import l2server.gameserver.network.serverpackets.PlaySound;
 import l2server.gameserver.templates.StatsSet;
 import l2server.util.Rnd;
-
-import java.util.logging.Logger;
 
 /**
  * Zaken AI
  */
 public class Zaken extends L2AttackableAIScript {
-	protected static final Logger log = Logger.getLogger(Zaken.class.getName());
 
 	private int timer1001 = 0; // used for first cancel of QuestTimer "1001"
 	private int ai0 = 0; // used for zaken coords updater
@@ -54,11 +51,11 @@ public class Zaken extends L2AttackableAIScript {
 	private int quest1 = 0; // used for most hated players progress
 	@SuppressWarnings("unused")
 	private int quest2 = 0; // used for zaken HP check for teleport
-	private L2PcInstance c_quest0 = null; // 1st player used for area teleport
-	private L2PcInstance c_quest1 = null; // 2nd player used for area teleport
-	private L2PcInstance c_quest2 = null; // 3rd player used for area teleport
-	private L2PcInstance c_quest3 = null; // 4th player used for area teleport
-	private L2PcInstance c_quest4 = null; // 5th player used for area teleport
+	private Player c_quest0 = null; // 1st player used for area teleport
+	private Player c_quest1 = null; // 2nd player used for area teleport
+	private Player c_quest2 = null; // 3rd player used for area teleport
+	private Player c_quest3 = null; // 4th player used for area teleport
+	private Player c_quest4 = null; // 5th player used for area teleport
 	private static final int ZAKEN = 29022;
 	private static final int doll_blader_b = 29023;
 	private static final int vale_master_b = 29024;
@@ -73,7 +70,7 @@ public class Zaken extends L2AttackableAIScript {
 	private static final byte ALIVE = 0; //Zaken is spawned.
 	private static final byte DEAD = 1; //Zaken has been killed.
 
-	private static L2BossZone Zone;
+	private static BossZone Zone;
 
 	public Zaken(int questId, String name, String descr) {
 		super(questId, name, descr);
@@ -103,7 +100,7 @@ public class Zaken extends L2AttackableAIScript {
 						hour += 24;
 					}
 				} catch (Throwable e) {
-					log.warning("Cannot open door ID: 21240006 " + e);
+					log.warn("Cannot open door ID: 21240006 " + e);
 				}
 			}
 		}, 1000, 1000);
@@ -123,7 +120,7 @@ public class Zaken extends L2AttackableAIScript {
 				startQuestTimer("zaken_unlock", temp, null, null);
 			} else {
 				// the time has already expired while the server was offline. Immediately spawn zaken.
-				L2GrandBossInstance zaken = (L2GrandBossInstance) addSpawn(ZAKEN, 55312, 219168, -3223, 0, false, 0);
+				GrandBossInstance zaken = (GrandBossInstance) addSpawn(ZAKEN, 55312, 219168, -3223, 0, false, 0);
 				GrandBossManager.getInstance().setBossStatus(ZAKEN, ALIVE);
 				spawnBoss(zaken);
 			}
@@ -134,15 +131,15 @@ public class Zaken extends L2AttackableAIScript {
 			int heading = info.getInteger("heading");
 			int hp = info.getInteger("currentHP");
 			int mp = info.getInteger("currentMP");
-			L2GrandBossInstance zaken = (L2GrandBossInstance) addSpawn(ZAKEN, loc_x, loc_y, loc_z, heading, false, 0);
+			GrandBossInstance zaken = (GrandBossInstance) addSpawn(ZAKEN, loc_x, loc_y, loc_z, heading, false, 0);
 			zaken.setCurrentHpMp(hp, mp);
 			spawnBoss(zaken);
 		}
 	}
 
-	public void spawnBoss(L2GrandBossInstance npc) {
+	public void spawnBoss(GrandBossInstance npc) {
 		if (npc == null) {
-			log.warning("Zaken AI failed to load, missing Zaken in grandboss_data.sql");
+			log.warn("Zaken AI failed to load, missing Zaken in grandboss_data.sql");
 			return;
 		}
 		GrandBossManager.getInstance().addBoss(npc);
@@ -156,7 +153,7 @@ public class Zaken extends L2AttackableAIScript {
 		quest1 = 0;
 		quest2 = 3;
 		if (Zone == null) {
-			log.warning("Zaken AI failed to load, missing zone for Zaken");
+			log.warn("Zaken AI failed to load, missing zone for Zaken");
 			return;
 		}
 		if (Zone.isInsideZone(npc)) {
@@ -168,7 +165,7 @@ public class Zaken extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		int status = GrandBossManager.getInstance().getBossStatus(ZAKEN);
 		if (status == DEAD && !event.equalsIgnoreCase("zaken_unlock")) {
 			return super.onAdvEvent(event, npc, player);
@@ -181,9 +178,9 @@ public class Zaken extends L2AttackableAIScript {
 			}
 			int sk_4223 = 0;
 			int sk_4227 = 0;
-			L2Abnormal[] effects = npc.getAllEffects();
+			Abnormal[] effects = npc.getAllEffects();
 			if (effects.length != 0) {
-				for (L2Abnormal e : effects) {
+				for (Abnormal e : effects) {
 					if (e.getSkill().getId() == 4227) {
 						sk_4227 = 1;
 					}
@@ -209,9 +206,9 @@ public class Zaken extends L2AttackableAIScript {
 				if (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK && ai0 == 0) {
 					int i0 = 0;
 					int i1 = 1;
-					if (((L2Attackable) npc).getMostHated() != null) {
-						if ((((L2Attackable) npc).getMostHated().getX() - ai1) * (((L2Attackable) npc).getMostHated().getX() - ai1) +
-								(((L2Attackable) npc).getMostHated().getY() - ai2) * (((L2Attackable) npc).getMostHated().getY() - ai2) >
+					if (((Attackable) npc).getMostHated() != null) {
+						if ((((Attackable) npc).getMostHated().getX() - ai1) * (((Attackable) npc).getMostHated().getX() - ai1) +
+								(((Attackable) npc).getMostHated().getY() - ai2) * (((Attackable) npc).getMostHated().getY() - ai2) >
 								1500 * 1500) {
 							i0 = 1;
 						} else {
@@ -302,19 +299,19 @@ public class Zaken extends L2AttackableAIScript {
 					ai2 = npc.getY();
 					ai3 = npc.getZ();
 				}
-				L2Character c_ai0 = null;
+				Creature c_ai0 = null;
 				if (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK && quest1 == 0) {
-					if (((L2Attackable) npc).getMostHated() != null) {
-						c_ai0 = ((L2Attackable) npc).getMostHated();
+					if (((Attackable) npc).getMostHated() != null) {
+						c_ai0 = ((Attackable) npc).getMostHated();
 						quest1 = 1;
 					}
 				} else if (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK && quest1 != 0) {
-					if (((L2Attackable) npc).getMostHated() != null) {
-						if (c_ai0 == ((L2Attackable) npc).getMostHated()) {
+					if (((Attackable) npc).getMostHated() != null) {
+						if (c_ai0 == ((Attackable) npc).getMostHated()) {
 							quest1 = quest1 + 1;
 						} else {
 							quest1 = 1;
-							c_ai0 = ((L2Attackable) npc).getMostHated();
+							c_ai0 = ((Attackable) npc).getMostHated();
 						}
 					}
 				}
@@ -322,8 +319,8 @@ public class Zaken extends L2AttackableAIScript {
 					quest1 = 0;
 				}
 				if (quest1 > 5) {
-					((L2Attackable) npc).stopHating(c_ai0);
-					L2Character nextTarget = ((L2Attackable) npc).getMostHated();
+					((Attackable) npc).stopHating(c_ai0);
+					Creature nextTarget = ((Attackable) npc).getMostHated();
 					if (nextTarget != null) {
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, nextTarget);
 					}
@@ -491,7 +488,7 @@ public class Zaken extends L2AttackableAIScript {
 				cancelQuestTimer("1003", null, null);
 			}
 		} else if (event.equalsIgnoreCase("zaken_unlock")) {
-			L2GrandBossInstance zaken = (L2GrandBossInstance) addSpawn(ZAKEN, 55312, 219168, -3223, 0, false, 0);
+			GrandBossInstance zaken = (GrandBossInstance) addSpawn(ZAKEN, 55312, 219168, -3223, 0, false, 0);
 			GrandBossManager.getInstance().setBossStatus(ZAKEN, ALIVE);
 			spawnBoss(zaken);
 		} else if (event.equalsIgnoreCase("CreateOnePrivateEx")) {
@@ -501,7 +498,7 @@ public class Zaken extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onFactionCall(L2Npc npc, L2Npc caller, L2PcInstance attacker, boolean isPet) {
+	public String onFactionCall(Npc npc, Npc caller, Player attacker, boolean isPet) {
 		if (caller == null || npc == null) {
 			return super.onFactionCall(npc, caller, attacker, isPet);
 		}
@@ -524,7 +521,7 @@ public class Zaken extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill) {
+	public String onSpellFinished(Npc npc, Player player, Skill skill) {
 		if (npc.getNpcId() == ZAKEN) {
 			int skillId = skill.getId();
 			if (skillId == 4222) {
@@ -534,8 +531,8 @@ public class Zaken extends L2AttackableAIScript {
 				int i1 = Rnd.get(15);
 				int[] XYZ = nextSpawn(Xcoords[i1], Ycoords[i1], Zcoords[i1], 650);
 				player.teleToLocation(XYZ[0], XYZ[1], XYZ[2]);
-				((L2Attackable) npc).stopHating(player);
-				L2Character nextTarget = ((L2Attackable) npc).getMostHated();
+				((Attackable) npc).stopHating(player);
+				Creature nextTarget = ((Attackable) npc).getMostHated();
 				if (nextTarget != null) {
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, nextTarget);
 				}
@@ -544,7 +541,7 @@ public class Zaken extends L2AttackableAIScript {
 				int i1 = Rnd.get(15);
 				int[] XYZ = nextSpawn(Xcoords[i1], Ycoords[i1], Zcoords[i1], 650);
 				player.teleToLocation(XYZ[0], XYZ[1], XYZ[2]);
-				((L2Attackable) npc).stopHating(player);
+				((Attackable) npc).stopHating(player);
 
 				if (c_quest0 != null && quest0 > 0 && c_quest0 != player && c_quest0.getZ() > player.getZ() - 100 &&
 						c_quest0.getZ() < player.getZ() + 100) {
@@ -558,7 +555,7 @@ public class Zaken extends L2AttackableAIScript {
 						i1 = Rnd.get(15);
 						XYZ = nextSpawn(Xcoords[i1], Ycoords[i1], Zcoords[i1], 650);
 						c_quest0.teleToLocation(XYZ[0], XYZ[1], XYZ[2]);
-						((L2Attackable) npc).stopHating(c_quest0);
+						((Attackable) npc).stopHating(c_quest0);
 					}
 				}
 				if (c_quest1 != null && quest0 > 1 && c_quest1 != player && c_quest1.getZ() > player.getZ() - 100 &&
@@ -573,7 +570,7 @@ public class Zaken extends L2AttackableAIScript {
 						i1 = Rnd.get(15);
 						XYZ = nextSpawn(Xcoords[i1], Ycoords[i1], Zcoords[i1], 650);
 						c_quest1.teleToLocation(XYZ[0], XYZ[1], XYZ[2]);
-						((L2Attackable) npc).stopHating(c_quest1);
+						((Attackable) npc).stopHating(c_quest1);
 					}
 				}
 				if (c_quest2 != null && quest0 > 2 && c_quest2 != player && c_quest2.getZ() > player.getZ() - 100 &&
@@ -588,7 +585,7 @@ public class Zaken extends L2AttackableAIScript {
 						i1 = Rnd.get(15);
 						XYZ = nextSpawn(Xcoords[i1], Ycoords[i1], Zcoords[i1], 650);
 						c_quest2.teleToLocation(XYZ[0], XYZ[1], XYZ[2]);
-						((L2Attackable) npc).stopHating(c_quest2);
+						((Attackable) npc).stopHating(c_quest2);
 					}
 				}
 				if (c_quest3 != null && quest0 > 3 && c_quest3 != player && c_quest3.getZ() > player.getZ() - 100 &&
@@ -603,7 +600,7 @@ public class Zaken extends L2AttackableAIScript {
 						i1 = Rnd.get(15);
 						XYZ = nextSpawn(Xcoords[i1], Ycoords[i1], Zcoords[i1], 650);
 						c_quest3.teleToLocation(XYZ[0], XYZ[1], XYZ[2]);
-						((L2Attackable) npc).stopHating(c_quest3);
+						((Attackable) npc).stopHating(c_quest3);
 					}
 				}
 				if (c_quest4 != null && quest0 > 4 && c_quest4 != player && c_quest4.getZ() > player.getZ() - 100 &&
@@ -618,10 +615,10 @@ public class Zaken extends L2AttackableAIScript {
 						i1 = Rnd.get(15);
 						XYZ = nextSpawn(Xcoords[i1], Ycoords[i1], Zcoords[i1], 650);
 						c_quest4.teleToLocation(XYZ[0], XYZ[1], XYZ[2]);
-						((L2Attackable) npc).stopHating(c_quest4);
+						((Attackable) npc).stopHating(c_quest4);
 					}
 				}
-				L2Character nextTarget = ((L2Attackable) npc).getMostHated();
+				Creature nextTarget = ((Attackable) npc).getMostHated();
 				if (nextTarget != null) {
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, nextTarget);
 				}
@@ -631,14 +628,14 @@ public class Zaken extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		int npcId = npc.getNpcId();
 		if (npcId == ZAKEN) {
 			if (attacker.getMountType() == 1) {
 				int sk_4258 = 0;
-				L2Abnormal[] effects = attacker.getAllEffects();
+				Abnormal[] effects = attacker.getAllEffects();
 				if (effects.length != 0) {
-					for (L2Abnormal e : effects) {
+					for (Abnormal e : effects) {
 						if (e.getSkill().getId() == 4258) {
 							sk_4258 = 1;
 						}
@@ -649,9 +646,9 @@ public class Zaken extends L2AttackableAIScript {
 					npc.doCast(SkillTable.getInstance().getInfo(4258, 1));
 				}
 			}
-			L2Character originalAttacker = isPet ? attacker.getPet() : attacker;
+			Creature originalAttacker = isPet ? attacker.getPet() : attacker;
 			int hate = (int) (damage / npc.getMaxHp() / 0.05 * 20000);
-			((L2Attackable) npc).addDamageHate(originalAttacker, 0, hate);
+			((Attackable) npc).addDamageHate(originalAttacker, 0, hate);
 			if (Rnd.get(10) < 1) {
 				int i0 = Rnd.get(15 * 15);
 				if (i0 < 1) {
@@ -667,18 +664,18 @@ public class Zaken extends L2AttackableAIScript {
 					npc.setTarget(attacker);
 					npc.doCast(SkillTable.getInstance().getInfo(4218, 1));
 				} else if (i0 < 15) {
-					for (L2Character character : npc.getKnownList().getKnownCharactersInRadius(100)) {
+					for (Creature character : npc.getKnownList().getKnownCharactersInRadius(100)) {
 						if (character != attacker) {
 							continue;
 						}
-						if (attacker != ((L2Attackable) npc).getMostHated()) {
+						if (attacker != ((Attackable) npc).getMostHated()) {
 							npc.setTarget(attacker);
 							npc.doCast(SkillTable.getInstance().getInfo(4221, 1));
 						}
 					}
 				}
 				if (Rnd.get(2) < 1) {
-					if (attacker == ((L2Attackable) npc).getMostHated()) {
+					if (attacker == ((Attackable) npc).getMostHated()) {
 						npc.setTarget(attacker);
 						npc.doCast(SkillTable.getInstance().getInfo(4220, 1));
 					}
@@ -705,7 +702,7 @@ public class Zaken extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		int npcId = npc.getNpcId();
 		if (npcId == ZAKEN) {
 			npc.broadcastPacket(new PlaySound(1, "BS02_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
@@ -728,11 +725,11 @@ public class Zaken extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet) {
+	public String onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isPet) {
 		int npcId = npc.getNpcId();
 		if (npcId == ZAKEN) {
 			if (skill.getAggroPoints() > 0) {
-				((L2Attackable) npc).addDamageHate(caster, 0, skill.getAggroPoints() / npc.getMaxHp() * 10 * 150);
+				((Attackable) npc).addDamageHate(caster, 0, skill.getAggroPoints() / npc.getMaxHp() * 10 * 150);
 			}
 			if (Rnd.get(12) < 1) {
 				int i0 = Rnd.get(15 * 15);
@@ -749,18 +746,18 @@ public class Zaken extends L2AttackableAIScript {
 					npc.setTarget(caster);
 					npc.doCast(SkillTable.getInstance().getInfo(4218, 1));
 				} else if (i0 < 15) {
-					for (L2Character character : npc.getKnownList().getKnownCharactersInRadius(100)) {
+					for (Creature character : npc.getKnownList().getKnownCharactersInRadius(100)) {
 						if (character != caster) {
 							continue;
 						}
-						if (caster != ((L2Attackable) npc).getMostHated()) {
+						if (caster != ((Attackable) npc).getMostHated()) {
 							npc.setTarget(caster);
 							npc.doCast(SkillTable.getInstance().getInfo(4221, 1));
 						}
 					}
 				}
 				if (Rnd.get(2) < 1) {
-					if (caster == ((L2Attackable) npc).getMostHated()) {
+					if (caster == ((Attackable) npc).getMostHated()) {
 						npc.setTarget(caster);
 						npc.doCast(SkillTable.getInstance().getInfo(4220, 1));
 					}
@@ -771,12 +768,12 @@ public class Zaken extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onAggroRangeEnter(Npc npc, Player player, boolean isPet) {
 		int npcId = npc.getNpcId();
 		if (npcId == ZAKEN) {
 			if (Zone.isInsideZone(npc)) {
-				L2Character target = isPet ? player.getPet() : player;
-				((L2Attackable) npc).addDamageHate(target, 1, 200);
+				Creature target = isPet ? player.getPet() : player;
+				((Attackable) npc).addDamageHate(target, 1, 200);
 			}
 			if (player.getZ() > npc.getZ() - 100 && player.getZ() < npc.getZ() + 100) {
 				if (quest0 < 5 && Rnd.get(3) < 1) {
@@ -808,18 +805,18 @@ public class Zaken extends L2AttackableAIScript {
 						npc.setTarget(player);
 						npc.doCast(SkillTable.getInstance().getInfo(4218, 1));
 					} else if (i0 < 15) {
-						for (L2Character character : npc.getKnownList().getKnownCharactersInRadius(100)) {
+						for (Creature character : npc.getKnownList().getKnownCharactersInRadius(100)) {
 							if (character != player) {
 								continue;
 							}
-							if (player != ((L2Attackable) npc).getMostHated()) {
+							if (player != ((Attackable) npc).getMostHated()) {
 								npc.setTarget(player);
 								npc.doCast(SkillTable.getInstance().getInfo(4221, 1));
 							}
 						}
 					}
 					if (Rnd.get(2) < 1) {
-						if (player == ((L2Attackable) npc).getMostHated()) {
+						if (player == ((Attackable) npc).getMostHated()) {
 							npc.setTarget(player);
 							npc.doCast(SkillTable.getInstance().getInfo(4220, 1));
 						}

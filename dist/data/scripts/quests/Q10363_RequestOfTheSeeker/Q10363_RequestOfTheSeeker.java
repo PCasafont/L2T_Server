@@ -16,8 +16,8 @@
 package quests.Q10363_RequestOfTheSeeker;
 
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.GlobalQuest;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
@@ -46,7 +46,7 @@ public class Q10363_RequestOfTheSeeker extends Quest {
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		String htmltext = event;
 		QuestState st = player.getQuestState(qn);
 		
@@ -74,7 +74,7 @@ public class Q10363_RequestOfTheSeeker extends Quest {
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = player.getQuestState(qn);
 		if (st == null) {
@@ -112,7 +112,7 @@ public class Q10363_RequestOfTheSeeker extends Quest {
 	}
 	
 	@Override
-	public String onSocialAction(final L2Npc npc, final L2PcInstance player, final int actionId) {
+	public String onSocialAction(final Npc npc, final Player player, final int actionId) {
 		final QuestState st = player.getQuestState(qn);
 		if (st == null) {
 			return null;
@@ -149,7 +149,7 @@ public class Q10363_RequestOfTheSeeker extends Quest {
 	}
 	
 	@Override
-	public boolean canStart(L2PcInstance player) {
+	public boolean canStart(Player player) {
 		return player.getLevel() >= 12 && player.getLevel() <= 20 && player.getGlobalQuestFlag(GlobalQuest.YE_SAGIRA, 11);
 	}
 	

@@ -1,7 +1,7 @@
 package l2server.gameserver.instancemanager.arena;
 
 import l2server.gameserver.instancemanager.ArenaManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.Vector;
 
@@ -33,7 +33,7 @@ public class Fight {
 		rewardTeam(teamId);
 	}
 
-	public boolean addFighter(int teamId, L2PcInstance player) {
+	public boolean addFighter(int teamId, Player player) {
 
 		if (teamId > rules.getTeamNumbers()) {
 			return false;
@@ -47,7 +47,7 @@ public class Fight {
 		return true;
 	}
 
-	public void removeFighter(L2PcInstance player) {
+	public void removeFighter(Player player) {
 
 		if (ArenaManager.getInstance().isInFight(player)) {
 			Fighter fighter = ArenaManager.getInstance().getFighter(player);
@@ -144,7 +144,7 @@ public class Fight {
 			if (f == null) {
 				continue;
 			}
-			L2PcInstance p = f.getPlayerInstance();
+			Player p = f.getPlayerInstance();
 			if (p != null) {
 				p.sendMessage(s);
 			}

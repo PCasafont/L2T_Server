@@ -25,7 +25,7 @@
 
 package l2server.util;
 
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -37,7 +37,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
 
-public class WorldObjectMap<T extends L2Object> extends L2ObjectMap<T> {
+public class WorldObjectMap<T extends WorldObject> extends L2ObjectMap<T> {
 	Map<Integer, T> objectMap = new ConcurrentHashMap<>();
 
 	/* (non-Javadoc)

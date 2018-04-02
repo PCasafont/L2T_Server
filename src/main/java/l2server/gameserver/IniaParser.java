@@ -1,8 +1,8 @@
 package l2server.gameserver;
 
 import l2server.gameserver.Nodes.NodesManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.L2GameClient;
 
 import java.util.StringTokenizer;
@@ -13,7 +13,7 @@ import java.util.StringTokenizer;
  */
 public class IniaParser {
 	public void handleCommands(L2GameClient client, String command) {
-		L2PcInstance activeChar = client.getActiveChar();
+		Player activeChar = client.getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -26,7 +26,7 @@ public class IniaParser {
 		}
 	}
 	
-	public void parseNode(L2PcInstance player, String command) {
+	public void parseNode(Player player, String command) {
 		StringTokenizer st = new StringTokenizer(command, ";");
 		st.nextToken();
 		
@@ -34,7 +34,7 @@ public class IniaParser {
 		val = st.nextToken();
 		switch (val) {
 			case "conquer": {
-				NodesManager.getInstance().tryOwnNode(player, (L2Npc) player.getTarget());
+				NodesManager.getInstance().tryOwnNode(player, (Npc) player.getTarget());
 				break;
 			}
 		}

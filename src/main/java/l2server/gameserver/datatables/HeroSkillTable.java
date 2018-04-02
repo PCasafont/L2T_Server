@@ -15,14 +15,14 @@
 
 package l2server.gameserver.datatables;
 
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.util.loader.annotations.Load;
 
 /**
  * @author BiTi
  */
 public class HeroSkillTable {
-	private static final L2Skill[] heroSkills = new L2Skill[5];
+	private static final Skill[] heroSkills = new Skill[5];
 	private static final int[] heroSkillsId = {395, 396, 1374, 1375, 1376};
 
 	private HeroSkillTable() {
@@ -39,13 +39,13 @@ public class HeroSkillTable {
 		return SingletonHolder.instance;
 	}
 
-	public static L2Skill[] getHeroSkills() {
+	public static Skill[] getHeroSkills() {
 		return heroSkills;
 	}
 
 	public static boolean isHeroSkill(int skillid) {
 		/*
-		 * Do not perform checks directly on L2Skill array,
+		 * Do not perform checks directly on Skill array,
 		 * it will cause errors due to SkillTable not initialized
 		 */
 		for (int id : heroSkillsId) {

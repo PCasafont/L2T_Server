@@ -19,9 +19,8 @@ import l2server.Config;
 import l2server.gameserver.datatables.AdminCommandAccessRights;
 import l2server.gameserver.handler.AdminCommandHandler;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.util.GMAudit;
-import l2server.log.Log;
 
 /**
  * This class handles all GM commands triggered by //command
@@ -45,7 +44,7 @@ public final class SendBypassBuildCmd extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -59,13 +58,13 @@ public final class SendBypassBuildCmd extends L2GameClientPacket {
 				activeChar.sendMessage("The command " + command.substring(6) + " does not exists!");
 			}
 
-			Log.warning("No handler registered for admin command '" + command + "'");
+			log.warn("No handler registered for admin command '" + command + "'");
 			return;
 		}
 
 		if (!AdminCommandAccessRights.getInstance().hasAccess(command, activeChar.getAccessLevel())) {
 			activeChar.sendMessage("You don't have the access right to use this command!");
-			Log.warning("Character " + activeChar.getName() + " tryed to use admin command " + command + ", but have no access to it!");
+			log.warn("Character " + activeChar.getName() + " tryed to use admin command " + command + ", but have no access to it!");
 			return;
 		}
 

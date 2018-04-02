@@ -18,17 +18,16 @@ import l2server.Config;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.entity.Fort;
-import l2server.log.Log;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Vice - 2008
  * Class managing periodical events with castle
  */
 public class FortUpdater implements Runnable {
-	protected static Logger log = Logger.getLogger(FortUpdater.class.getName());
+	private static Logger log = LoggerFactory.getLogger(FortUpdater.class.getName());
+	
 	private L2Clan clan;
 	private Fort fort;
 	@SuppressWarnings("unused")
@@ -81,7 +80,7 @@ public class FortUpdater implements Runnable {
 					break;
 			}
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "", e);
+			log.warn("", e);
 		}
 	}
 }

@@ -22,11 +22,10 @@ import l2server.gameserver.instancemanager.ClanHallManager;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.model.L2SiegeClan;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.ClanHall;
 import l2server.gameserver.model.entity.Fort;
-import l2server.log.Log;
 
 /**
  * This class ...
@@ -44,9 +43,9 @@ public final class RequestRestartPoint extends L2GameClientPacket {
 	}
 	
 	class DeathTask implements Runnable {
-		final L2PcInstance activeChar;
+		final Player activeChar;
 		
-		DeathTask(L2PcInstance activeChar) {
+		DeathTask(Player activeChar) {
 			this.activeChar = activeChar;
 		}
 		
@@ -66,7 +65,7 @@ public final class RequestRestartPoint extends L2GameClientPacket {
 			switch (requestedPointType) {
 				case 1: // to clanhall
 					if (activeChar.getClan() == null || activeChar.getClan().getHasHideout() == 0) {
-						Log.warning("Player [" + activeChar.getName() + "] called RestartPointPacket - To Clanhall and he doesn't have Clanhall!");
+						log.warn("Player [" + activeChar.getName() + "] called RestartPointPacket - To Clanhall and he doesn't have Clanhall!");
 						return;
 					}
 					loc = MapRegionTable.getInstance().getTeleToLocation(activeChar, MapRegionTable.TeleportWhereType.ClanHall);
@@ -92,7 +91,7 @@ public final class RequestRestartPoint extends L2GameClientPacket {
 						else if (castle.getSiege().checkIsAttacker(activeChar.getClan())) {
 							loc = MapRegionTable.getInstance().getTeleToLocation(activeChar, MapRegionTable.TeleportWhereType.Town);
 						} else {
-							Log.warning("Player [" + activeChar.getName() + "] called RestartPointPacket - To Castle and he doesn't have Castle!");
+							log.warn("Player [" + activeChar.getName() + "] called RestartPointPacket - To Castle and he doesn't have Castle!");
 							return;
 						}
 					} else {
@@ -115,7 +114,7 @@ public final class RequestRestartPoint extends L2GameClientPacket {
 					//fort = FortManager.getInstance().getFort(activeChar);
 					
 					if ((activeChar.getClan() == null || activeChar.getClan().getHasFort() == 0) && !isInDefense) {
-						Log.warning("Player [" + activeChar.getName() + "] called RestartPointPacket - To Fortress and he doesn't have Fortress!");
+						log.warn("Player [" + activeChar.getName() + "] called RestartPointPacket - To Fortress and he doesn't have Fortress!");
 						return;
 					}
 					loc = MapRegionTable.getInstance().getTeleToLocation(activeChar, MapRegionTable.TeleportWhereType.Fortress);
@@ -140,7 +139,7 @@ public final class RequestRestartPoint extends L2GameClientPacket {
 					}
 					
 					if (siegeClan == null || siegeClan.getFlag().isEmpty()) {
-						Log.warning("Player [" + activeChar.getName() + "] called RestartPointPacket - To Siege HQ and he doesn't have Siege HQ!");
+						log.warn("Player [" + activeChar.getName() + "] called RestartPointPacket - To Siege HQ and he doesn't have Siege HQ!");
 						return;
 					}
 					loc = MapRegionTable.getInstance().getTeleToLocation(activeChar, MapRegionTable.TeleportWhereType.SiegeFlag);
@@ -148,7 +147,7 @@ public final class RequestRestartPoint extends L2GameClientPacket {
 				
 				case 5: // Fixed
 					if (!activeChar.isGM()) {
-						Log.warning("Player [" + activeChar.getName() + "] called RestartPointPacket - Fixed and he isn't GM!");
+						log.warn("Player [" + activeChar.getName() + "] called RestartPointPacket - Fixed and he isn't GM!");
 						return;
 					}
 					instanceId = activeChar.getInstanceId();
@@ -177,7 +176,7 @@ public final class RequestRestartPoint extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		L2PcInstance activeChar = getClient().getActiveChar();
+		Player activeChar = getClient().getActiveChar();
 		
 		if (activeChar == null) {
 			return;
@@ -195,7 +194,7 @@ public final class RequestRestartPoint extends L2GameClientPacket {
 			activeChar.stopFakeDeath(true);
 			return;
 		} else if (!activeChar.isDead()) {
-			Log.warning("Living player [" + activeChar.getName() + "] called RestartPointPacket! Ban this player!");
+			log.warn("Living player [" + activeChar.getName() + "] called RestartPointPacket! Ban this player!");
 			return;
 		}
 		

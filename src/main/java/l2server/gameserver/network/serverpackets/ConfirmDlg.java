@@ -15,16 +15,16 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.templates.chars.NpcTemplate;
+import l2server.gameserver.templates.item.ItemTemplate;
 
 import java.util.ArrayList;
 
@@ -77,32 +77,32 @@ public class ConfirmDlg extends L2GameServerPacket {
 		return this;
 	}
 
-	public ConfirmDlg addCharName(L2Character cha) {
-		if (cha instanceof L2Npc) {
-			return addNpcName((L2Npc) cha);
+	public ConfirmDlg addCharName(Creature cha) {
+		if (cha instanceof Npc) {
+			return addNpcName((Npc) cha);
 		}
-		if (cha instanceof L2PcInstance) {
-			return addPcName((L2PcInstance) cha);
+		if (cha instanceof Player) {
+			return addPcName((Player) cha);
 		}
-		if (cha instanceof L2Summon) {
-			return addNpcName((L2Summon) cha);
+		if (cha instanceof Summon) {
+			return addNpcName((Summon) cha);
 		}
 		return addString(cha.getName());
 	}
 
-	public ConfirmDlg addPcName(L2PcInstance pc) {
+	public ConfirmDlg addPcName(Player pc) {
 		return addString(pc.getAppearance().getVisibleName());
 	}
 
-	public ConfirmDlg addNpcName(L2Npc npc) {
+	public ConfirmDlg addNpcName(Npc npc) {
 		return addNpcName(npc.getTemplate());
 	}
 
-	public ConfirmDlg addNpcName(L2Summon npc) {
+	public ConfirmDlg addNpcName(Summon npc) {
 		return addNpcName(npc.getNpcId());
 	}
 
-	public ConfirmDlg addNpcName(L2NpcTemplate tpl) {
+	public ConfirmDlg addNpcName(NpcTemplate tpl) {
 		if (tpl.isCustom()) {
 			return addString(tpl.Name);
 		}
@@ -114,11 +114,11 @@ public class ConfirmDlg extends L2GameServerPacket {
 		return this;
 	}
 
-	public ConfirmDlg addItemName(L2ItemInstance item) {
+	public ConfirmDlg addItemName(Item item) {
 		return addItemName(item.getItem().getItemId());
 	}
 
-	public ConfirmDlg addItemName(L2Item item) {
+	public ConfirmDlg addItemName(ItemTemplate item) {
 		// TODO: template id for items
 		return addItemName(item.getItemId());
 	}
@@ -134,11 +134,11 @@ public class ConfirmDlg extends L2GameServerPacket {
 		return this;
 	}
 
-	public ConfirmDlg addSkillName(L2Abnormal effect) {
+	public ConfirmDlg addSkillName(Abnormal effect) {
 		return addSkillName(effect.getSkill());
 	}
 
-	public ConfirmDlg addSkillName(L2Skill skill) {
+	public ConfirmDlg addSkillName(Skill skill) {
 		if (skill.getId() != skill.getDisplayId()) //custom skill -  need nameId or smth like this.
 		{
 			return addString(skill.getName());

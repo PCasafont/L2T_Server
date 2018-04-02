@@ -26,7 +26,7 @@
 package l2server.gameserver.model.base;
 
 import l2server.gameserver.model.L2SkillLearn;
-import l2server.gameserver.templates.item.L2Henna;
+import l2server.gameserver.templates.item.HennaTemplate;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -49,7 +49,7 @@ public class PlayerClass {
 
 	private Map<Long, L2SkillLearn> skills = new LinkedHashMap<>();
 
-	private List<L2Henna> allowedDyes = new ArrayList<>();
+	private List<HennaTemplate> allowedDyes = new ArrayList<>();
 
 	public PlayerClass(int id, String name, PlayerClass parent, int awakensTo, boolean isMage, int raceId, int level) {
 		this.id = id;
@@ -97,11 +97,11 @@ public class PlayerClass {
 		return skills;
 	}
 
-	public void addAllowedDye(L2Henna henna) {
+	public void addAllowedDye(HennaTemplate henna) {
 		allowedDyes.add(henna);
 	}
 
-	public final List<L2Henna> getAllowedDyes() {
+	public final List<HennaTemplate> getAllowedDyes() {
 		return allowedDyes;
 	}
 

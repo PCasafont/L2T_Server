@@ -15,27 +15,28 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 public class EffectKillMonster extends L2Effect {
-	public EffectKillMonster(Env env, L2EffectTemplate template) {
+	public EffectKillMonster(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		if (getEffected() == null || !(getEffected() instanceof L2MonsterInstance) || getEffected().isRaid() || getEffected().isChampion()) {
+		if (getEffected() == null || !(getEffected() instanceof MonsterInstance) || getEffected().isRaid() || getEffected().isChampion()) {
 			return false;
 		}
 		
-		L2PcInstance player = getEffector().getActingPlayer();
+		Player player = getEffector().getActingPlayer();
 		if (player == null) {
 			return false;
 		}
@@ -45,7 +46,7 @@ public class EffectKillMonster extends L2Effect {
 	}
 	
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

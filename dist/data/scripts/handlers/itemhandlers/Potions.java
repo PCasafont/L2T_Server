@@ -16,12 +16,12 @@
 package handlers.itemhandlers;
 
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance.TimeStamp;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.Player.TimeStamp;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -35,13 +35,13 @@ import java.util.Map;
 public class Potions extends ItemSkills {
 	/**
 	 */
-	public synchronized void useItem(L2Playable playable, L2ItemInstance item) {
-		L2PcInstance activeChar; // use activeChar only for L2PcInstance checks where cannot be used PetInstance
+	public synchronized void useItem(Playable playable, Item item) {
+		Player activeChar; // use activeChar only for Player checks where cannot be used PetInstance
 
-		if (playable instanceof L2PcInstance) {
-			activeChar = (L2PcInstance) playable;
-		} else if (playable instanceof L2PetInstance) {
-			activeChar = ((L2PetInstance) playable).getOwner();
+		if (playable instanceof Player) {
+			activeChar = (Player) playable;
+		} else if (playable instanceof PetInstance) {
+			activeChar = ((PetInstance) playable).getOwner();
 		} else {
 			return;
 		}
@@ -66,9 +66,9 @@ public class Potions extends ItemSkills {
 	 * @param level
 	 * @return
 	 */
-	public boolean usePotion(L2Playable activeChar, int magicId, int level) {
+	public boolean usePotion(Playable activeChar, int magicId, int level) {
 
-		L2Skill skill = SkillTable.getInstance().getInfo(magicId, level);
+		Skill skill = SkillTable.getInstance().getInfo(magicId, level);
 
 		if (skill != null) {
 			if (!skill.checkCondition(activeChar, activeChar, false)) {
@@ -85,8 +85,8 @@ public class Potions extends ItemSkills {
 				activeChar.doCast(skill);
 			}
 
-			if (activeChar instanceof L2PcInstance) {
-				L2PcInstance player = (L2PcInstance) activeChar;
+			if (activeChar instanceof Player) {
+				Player player = (Player) activeChar;
 				// Only for Heal potions
 				if (magicId == 2031 || magicId == 2032 || magicId == 2037) {
 					player.shortBuffStatusUpdate(magicId, level, 15);
@@ -95,18 +95,18 @@ public class Potions extends ItemSkills {
 				if (!(player.isSitting() && !skill.isPotion())) {
 					return true;
 				}
-			} else if (activeChar instanceof L2PetInstance) {
+			} else if (activeChar instanceof PetInstance) {
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PET_USES_S1);
 				sm.addString(skill.getName());
-				((L2PetInstance) activeChar).getOwner().sendPacket(sm);
+				((PetInstance) activeChar).getOwner().sendPacket(sm);
 				return true;
 			}
 		}
 		return false;
 	}
 
-	private final void displayReuse(L2Playable activeChar, L2Skill skill) {
-		final L2PcInstance player = activeChar.getActingPlayer();
+	private final void displayReuse(Playable activeChar, Skill skill) {
+		final Player player = activeChar.getActingPlayer();
 		if (player == null) {
 			return;
 		}

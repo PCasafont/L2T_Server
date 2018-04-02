@@ -1,5 +1,5 @@
 <list>
-	<npc id="4301" name="Queen of Hearts" title="Valentine Messenger" level="70" type="L2Npc" atkRange="40" hpMax="3858"
+	<npc id="4301" name="Queen of Hearts" title="Valentine Messenger" level="70" type="Npc" atkRange="40" hpMax="3858"
 		 hpReg="7.5"
 		 mpMax="1642" mpReg="2.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" sp="10" pAtk="1315" mAtk="781"
 		 pDef="471"
@@ -19,7 +19,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="4302" name="Master Dugi" title="Soul Healer" level="1" type="L2Npc" atkRange="40" hpMax="63" hpReg="2.0"
+	<npc id="4302" name="Master Dugi" title="Soul Healer" level="1" type="Npc" atkRange="40" hpMax="63" hpReg="2.0"
 		 mpMax="49"
 		 mpReg="0.9" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="10" mAtk="4" pDef="40" mDef="36"
 		 pAtkSpd="253"
@@ -38,7 +38,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="4303" name="Skooldie" title="Halloween's Three Siblings" level="85" type="L2Npc" atkRange="40" hpMax="3858"
+	<npc id="4303" name="Skooldie" title="Halloween's Three Siblings" level="85" type="Npc" atkRange="40" hpMax="3858"
 		 hpReg="7.5"
 		 mpMax="1642" mpReg="2.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="723" sp="10" pAtk="1439"
 		 mAtk="935"
@@ -58,7 +58,7 @@
 		<skill id="4415" level="5" /> <!-- Blunt Weapon -->
 		<skill id="4390" level="1" /> <!-- Mystic Immunity -->
 	</npc>
-	<npc id="4304" name="White-Bearded Santa" title="Happy Holidays~" level="70" type="L2Npc" atkRange="40" hpMax="3858"
+	<npc id="4304" name="White-Bearded Santa" title="Happy Holidays~" level="70" type="Npc" atkRange="40" hpMax="3858"
 		 hpReg="7.5"
 		 mpMax="1642" mpReg="2.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="490" sp="10" pAtk="1315"
 		 mAtk="781"
@@ -78,7 +78,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="4305" name="Rosalia" title="Helpless Romantic" level="70" type="L2Npc" atkRange="40" hpMax="3858"
+	<npc id="4305" name="Rosalia" title="Helpless Romantic" level="70" type="Npc" atkRange="40" hpMax="3858"
 		 hpReg="7.5" mpMax="1642"
 		 mpReg="2.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="1315" mAtk="781" pDef="471" mDef="421"
 		 pAtkSpd="253"
@@ -97,7 +97,7 @@
 		<skill id="4415" level="1" /> <!-- Bare Hands -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="4306" name="Jack Sage" title="Eva's High Priest" level="85" type="L2Npc" atkRange="40" hpMax="3858"
+	<npc id="4306" name="Jack Sage" title="Eva's High Priest" level="85" type="Npc" atkRange="40" hpMax="3858"
 		 hpReg="7.5"
 		 mpMax="1642" mpReg="2.7" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="723" sp="10" pAtk="1439"
 		 mAtk="935"
@@ -117,7 +117,7 @@
 		<skill id="4415" level="3" /> <!-- One-handed Sword -->
 		<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
 	</npc>
-	<npc id="4307" name="Santa" title="Event Manager" level="80" type="L2Npc" atkRange="40" hpMax="5691" hpReg="10.0"
+	<npc id="4307" name="Santa" title="Event Manager" level="80" type="Npc" atkRange="40" hpMax="5691" hpReg="10.0"
 		 mpMax="2044"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -125,7 +125,7 @@
 		 fireRes="160"
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="4308" name="Angel Cat" title="Love's Envoy" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0"
+	<npc id="4308" name="Angel Cat" title="Love's Envoy" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0"
 		 mpMax="1642"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -133,7 +133,7 @@
 		 fireRes="160"
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="4309" name="Follower" title="Sinister" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0"
+	<npc id="4309" name="Follower" title="Sinister" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0"
 		 mpMax="1642"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -142,7 +142,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="14" /> <!-- Humans -->
 	</npc>
-	<npc id="4310" name="Follower" title="Sinister" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0"
+	<npc id="4310" name="Follower" title="Sinister" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0"
 		 mpMax="1642"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -151,7 +151,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="14" /> <!-- Humans -->
 	</npc>
-	<npc id="4311" name="Follower" title="Sinister" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0"
+	<npc id="4311" name="Follower" title="Sinister" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0"
 		 mpMax="1642"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -160,7 +160,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="14" /> <!-- Humans -->
 	</npc>
-	<npc id="4312" name="Follower" title="Sinister" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0"
+	<npc id="4312" name="Follower" title="Sinister" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0"
 		 mpMax="1642"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -169,7 +169,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="14" /> <!-- Humans -->
 	</npc>
-	<npc id="4313" name="Angel Cat" title="Letter Collector" level="70" type="L2Npc" atkRange="40" hpMax="4228"
+	<npc id="4313" name="Angel Cat" title="Letter Collector" level="70" type="Npc" atkRange="40" hpMax="4228"
 		 hpReg="10.0"
 		 mpMax="1642" mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250"
@@ -177,7 +177,7 @@
 		 collisionHeight="16"
 		 fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 	</npc>
-	<npc id="4314" name="Teleport Device" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
+	<npc id="4314" name="Teleport Device" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0" mpMax="1642"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -186,7 +186,7 @@
 		 windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="2" /> <!-- Magic Creatures -->
 	</npc>
-	<npc id="4315" name="Warehouse Keeper" title="Fantasy Isle Warehouse Keeper" level="70" type="L2Npc" atkRange="40"
+	<npc id="4315" name="Warehouse Keeper" title="Fantasy Isle Warehouse Keeper" level="70" type="Npc" atkRange="40"
 		 hpMax="4228"
 		 hpReg="10.0" mpMax="1642" mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971"
 		 mAtk="663" pDef="341"
@@ -195,7 +195,7 @@
 		 fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="18" /> <!-- Dwarves -->
 	</npc>
-	<npc id="4316" name="Snow" title="Photographer" level="55" type="L2Npc" atkRange="40" hpMax="2894" hpReg="10.0"
+	<npc id="4316" name="Snow" title="Photographer" level="55" type="Npc" atkRange="40" hpMax="2894" hpReg="10.0"
 		 mpMax="1139"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -204,7 +204,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="4317" name="Snow" title="Photographer" level="55" type="L2Npc" atkRange="40" hpMax="2894" hpReg="10.0"
+	<npc id="4317" name="Snow" title="Photographer" level="55" type="Npc" atkRange="40" hpMax="2894" hpReg="10.0"
 		 mpMax="1139"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -213,7 +213,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="4318" name="Snow" title="Photographer" level="55" type="L2Npc" atkRange="40" hpMax="2894" hpReg="10.0"
+	<npc id="4318" name="Snow" title="Photographer" level="55" type="Npc" atkRange="40" hpMax="2894" hpReg="10.0"
 		 mpMax="1139"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -222,7 +222,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="4319" name="Snow" title="Photographer" level="55" type="L2Npc" atkRange="40" hpMax="2894" hpReg="10.0"
+	<npc id="4319" name="Snow" title="Photographer" level="55" type="Npc" atkRange="40" hpMax="2894" hpReg="10.0"
 		 mpMax="1139"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -231,7 +231,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="4320" name="Snow" title="Photographer" level="55" type="L2Npc" atkRange="40" hpMax="2894" hpReg="10.0"
+	<npc id="4320" name="Snow" title="Photographer" level="55" type="Npc" atkRange="40" hpMax="2894" hpReg="10.0"
 		 mpMax="1139"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -240,7 +240,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="4321" name="Snow" title="Photographer" level="55" type="L2Npc" atkRange="40" hpMax="2894" hpReg="10.0"
+	<npc id="4321" name="Snow" title="Photographer" level="55" type="Npc" atkRange="40" hpMax="2894" hpReg="10.0"
 		 mpMax="1139"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -249,7 +249,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="4322" name="Snow" title="Photographer" level="55" type="L2Npc" atkRange="40" hpMax="2894" hpReg="10.0"
+	<npc id="4322" name="Snow" title="Photographer" level="55" type="Npc" atkRange="40" hpMax="2894" hpReg="10.0"
 		 mpMax="1139"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -258,7 +258,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="4323" name="Snow" title="Photographer" level="55" type="L2Npc" atkRange="40" hpMax="2894" hpReg="10.0"
+	<npc id="4323" name="Snow" title="Photographer" level="55" type="Npc" atkRange="40" hpMax="2894" hpReg="10.0"
 		 mpMax="1139"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -267,7 +267,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="4" /> <!-- Animals -->
 	</npc>
-	<npc id="4324" name="Worshipper" title="Sinister" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="10.0"
+	<npc id="4324" name="Worshipper" title="Sinister" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="10.0"
 		 mpMax="1642"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -276,7 +276,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="14" /> <!-- Humans -->
 	</npc>
-	<npc id="4325" name="Altar Guard" level="80" type="L2Npc" atkRange="40" hpMax="5691" hpReg="10.0" mpMax="2044"
+	<npc id="4325" name="Altar Guard" level="80" type="Npc" atkRange="40" hpMax="5691" hpReg="10.0" mpMax="2044"
 		 mpReg="3.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -285,7 +285,7 @@
 		 fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="14" /> <!-- Humans -->
 	</npc>
-	<npc id="4326" name="Tersi's Herald" title="Invoker" level="80" type="L2Npc" atkRange="40" hpMax="5691" hpReg="10.0"
+	<npc id="4326" name="Tersi's Herald" title="Invoker" level="80" type="Npc" atkRange="40" hpMax="5691" hpReg="10.0"
 		 mpMax="2044"
 		 mpReg="3.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -294,7 +294,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="14" /> <!-- Humans -->
 	</npc>
-	<npc id="4327" name="Worshipper" title="Sinister" level="70" type="L2Npc" atkRange="40" hpMax="4228" hpReg="0.0"
+	<npc id="4327" name="Worshipper" title="Sinister" level="70" type="Npc" atkRange="40" hpMax="4228" hpReg="0.0"
 		 mpMax="1642"
 		 mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
 		 pAtkSpd="253"
@@ -303,7 +303,7 @@
 		 waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="14" /> <!-- Humans -->
 	</npc>
-	<npc id="4328" name="Altar Guard" level="80" type="L2Npc" atkRange="40" hpMax="5691" hpReg="0.0" mpMax="2044"
+	<npc id="4328" name="Altar Guard" level="80" type="Npc" atkRange="40" hpMax="5691" hpReg="0.0" mpMax="2044"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250" pAtkSpd="253"
 		 mAtkSpd="333"
@@ -312,7 +312,7 @@
 		 fireRes="160" waterRes="160" windRes="160" earthRes="160" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="14" /> <!-- Humans -->
 	</npc>
-	<npc id="4329" name="Queen of Hearts" title="Happy Messenger" level="80" type="L2Npc" atkRange="40" hpMax="5691"
+	<npc id="4329" name="Queen of Hearts" title="Happy Messenger" level="80" type="Npc" atkRange="40" hpMax="5691"
 		 hpReg="0.0"
 		 mpMax="2044" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341"
 		 mDef="250"
@@ -321,7 +321,7 @@
 		 fireRes="160" waterRes="160" windRes="250" earthRes="135" holyRes="160" darkRes="160" aiType="fighter">
 		<skill id="4416" level="7" /> <!-- Spirits -->
 	</npc>
-	<npc id="4330" name="Seira" title="Exorcist" level="80" type="L2Npc" atkRange="40" hpMax="5691" hpReg="0.0"
+	<npc id="4330" name="Seira" title="Exorcist" level="80" type="Npc" atkRange="40" hpMax="5691" hpReg="0.0"
 		 mpMax="2044"
 		 mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -329,7 +329,7 @@
 		 fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4331" name="Einhasad Priest" title="Exorcist" level="80" type="L2Npc" atkRange="40" hpMax="5691"
+	<npc id="4331" name="Einhasad Priest" title="Exorcist" level="80" type="Npc" atkRange="40" hpMax="5691"
 		 hpReg="0.0" mpMax="2044"
 		 mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -337,7 +337,7 @@
 		 fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4332" name="Alestina" title="Zombie Shaman" level="80" type="L2Npc" atkRange="40" hpMax="5691" hpReg="0.0"
+	<npc id="4332" name="Alestina" title="Zombie Shaman" level="80" type="Npc" atkRange="40" hpMax="5691" hpReg="0.0"
 		 mpMax="2044"
 		 mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -345,7 +345,7 @@
 		 collisionHeight="30.6" fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4333" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4333" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -353,7 +353,7 @@
 		 fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4334" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4334" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -361,7 +361,7 @@
 		 fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4335" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4335" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -369,7 +369,7 @@
 		 fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4336" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4336" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -377,7 +377,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4337" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4337" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -385,7 +385,7 @@
 		 fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4338" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4338" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -393,7 +393,7 @@
 		 fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4339" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4339" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -401,7 +401,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4340" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4340" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -409,7 +409,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4341" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4341" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -417,7 +417,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4342" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4342" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -425,7 +425,7 @@
 		 fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4343" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4343" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -433,7 +433,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4344" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4344" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -441,7 +441,7 @@
 		 fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4345" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4345" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -449,7 +449,7 @@
 		 fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4346" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4346" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -457,7 +457,7 @@
 		 fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4347" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4347" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -465,7 +465,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4348" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4348" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -473,7 +473,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4349" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4349" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -481,7 +481,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4350" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4350" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -489,7 +489,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4351" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4351" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -497,7 +497,7 @@
 		 fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4352" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4352" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -505,7 +505,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4353" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4353" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -513,7 +513,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4354" name="" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
+	<npc id="4354" name="" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066" mpReg="0.0"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -521,7 +521,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4355" name="Excited Child" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4355" name="Excited Child" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -529,7 +529,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4356" name="Ecstatic Child" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4356" name="Ecstatic Child" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -537,7 +537,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4357" name="Daemon Angma" title="Helpful" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0"
+	<npc id="4357" name="Daemon Angma" title="Helpful" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0"
 		 mpMax="3066"
 		 mpReg="0.0" STR="79" CON="75" DEX="42" INT="74" WIT="65" MEN="72" pAtk="4900" mAtk="2550" pDef="3840"
 		 mDef="825" pAtkSpd="253"
@@ -545,7 +545,7 @@
 		 collisionHeight="12.5" fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4358" name="Daemon Angma" title="Aggressive" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+	<npc id="4358" name="Daemon Angma" title="Aggressive" level="99" type="Npc" atkRange="40" hpMax="14612"
 		 hpReg="0.0" mpMax="3066"
 		 mpReg="0.0" STR="79" CON="75" DEX="42" INT="74" WIT="65" MEN="72" pAtk="4900" mAtk="2550" pDef="3840"
 		 mDef="825" pAtkSpd="253"
@@ -553,7 +553,7 @@
 		 collisionHeight="12.5" fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4359" name="Daemon Angma" title="Distracted" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+	<npc id="4359" name="Daemon Angma" title="Distracted" level="99" type="Npc" atkRange="40" hpMax="14612"
 		 hpReg="0.0" mpMax="3066"
 		 mpReg="0.0" STR="79" CON="75" DEX="42" INT="74" WIT="65" MEN="72" pAtk="4900" mAtk="2550" pDef="3840"
 		 mDef="825" pAtkSpd="253"
@@ -561,7 +561,7 @@
 		 collisionHeight="12.5" fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4360" name="Bard" title="Joyful" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0"
+	<npc id="4360" name="Bard" title="Joyful" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0"
 		 mpMax="3066" mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -569,7 +569,7 @@
 		 waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4361" name="Small Bard" title="Fantasy Isle Festival Manager" level="99" type="L2Npc" atkRange="40"
+	<npc id="4361" name="Small Bard" title="Fantasy Isle Festival Manager" level="99" type="Npc" atkRange="40"
 		 hpMax="14612"
 		 hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900"
 		 mAtk="2550" pDef="3840"
@@ -578,7 +578,7 @@
 		 collisionHeight="18.5" fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150"
 		 aiType="fighter">
 	</npc>
-	<npc id="4362" name="Festival Informer" title="Fantasy Isle Manager" level="99" type="L2Npc" atkRange="40"
+	<npc id="4362" name="Festival Informer" title="Fantasy Isle Manager" level="99" type="Npc" atkRange="40"
 		 hpMax="14612"
 		 hpReg="0.0" mpMax="3066" mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900"
 		 mAtk="2550" pDef="3840"
@@ -586,7 +586,7 @@
 		 collisionRadius="9" collisionHeight="28.3"
 		 fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4363" name="Festival Goer" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4363" name="Festival Goer" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -594,7 +594,7 @@
 		 waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4364" name="Festival Goer" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4364" name="Festival Goer" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -602,7 +602,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4366" name="Festival Goer" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4366" name="Festival Goer" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -610,7 +610,7 @@
 		 waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4367" name="Festival Goer" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4367" name="Festival Goer" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -618,7 +618,7 @@
 		 waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4368" name="Festival Goer" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4368" name="Festival Goer" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -626,7 +626,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4369" name="Festival Goer" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4369" name="Festival Goer" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -634,7 +634,7 @@
 		 waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4370" name="Festival Goer" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4370" name="Festival Goer" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -642,7 +642,7 @@
 		 waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4371" name="Festival Goer" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4371" name="Festival Goer" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -650,7 +650,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4372" name="Festival Goer" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4372" name="Festival Goer" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -658,7 +658,7 @@
 		 waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4373" name="Festival Goer" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4373" name="Festival Goer" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -666,7 +666,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4374" name="Festival Goer" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4374" name="Festival Goer" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -674,7 +674,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4375" name="Festival Goer" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4375" name="Festival Goer" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -682,7 +682,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4376" name="Festival Goer" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4376" name="Festival Goer" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -690,7 +690,7 @@
 		 waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4377" name="Festival Goer" level="99" type="L2Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
+	<npc id="4377" name="Festival Goer" level="99" type="Npc" atkRange="40" hpMax="14612" hpReg="0.0" mpMax="3066"
 		 mpReg="0.0"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="4900" mAtk="2550" pDef="3840" mDef="825"
 		 pAtkSpd="253" mAtkSpd="500"
@@ -698,7 +698,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4378" name="Manager" title="Royal Training Camp" level="99" type="L2Npc" atkRange="40" hpMax="4228"
+	<npc id="4378" name="Manager" title="Royal Training Camp" level="99" type="Npc" atkRange="40" hpMax="4228"
 		 hpReg="7.4"
 		 mpMax="881" mpReg="5.37" STR="80" CON="91" DEX="61" INT="35" WIT="31" MEN="50" pAtk="2" mAtk="2" pDef="4"
 		 mDef="2" pAtkSpd="299"
@@ -706,7 +706,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="4601" name="Vesterman" title="Mysterious Agitator" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+	<npc id="4601" name="Vesterman" title="Mysterious Agitator" level="99" type="Npc" atkRange="40" hpMax="14612"
 		 hpReg="12.27"
 		 mpMax="3066" mpReg="8.9" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100"
 		 mDef="100"
@@ -714,7 +714,7 @@
 		 collisionHeight="23"
 		 fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4602" name="Caroline" title="Mysterious Agitator" level="99" type="L2Npc" atkRange="40" hpMax="14612"
+	<npc id="4602" name="Caroline" title="Mysterious Agitator" level="99" type="Npc" atkRange="40" hpMax="14612"
 		 hpReg="12.27"
 		 mpMax="3066" mpReg="8.9" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100"
 		 mDef="100"
@@ -722,7 +722,7 @@
 		 collisionHeight="23.5"
 		 fireRes="150" waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4603" name="Aden Castle Siege Camp" level="99" type="L2Npc" atkRange="40" hpMax="4630" hpReg="8.2"
+	<npc id="4603" name="Aden Castle Siege Camp" level="99" type="Npc" atkRange="40" hpMax="4630" hpReg="8.2"
 		 mpMax="3066"
 		 mpReg="5.95" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -730,7 +730,7 @@
 		 collisionHeight="72" fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4604" name="Rune Castle Siege Camp" level="99" type="L2Npc" atkRange="40" hpMax="4630" hpReg="8.2"
+	<npc id="4604" name="Rune Castle Siege Camp" level="99" type="Npc" atkRange="40" hpMax="4630" hpReg="8.2"
 		 mpMax="3066"
 		 mpReg="5.95" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -738,7 +738,7 @@
 		 collisionHeight="72" fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4605" name="Broken Ballista" level="55" type="L2Npc" atkRange="40" hpMax="865" hpReg="4.56" mpMax="1139"
+	<npc id="4605" name="Broken Ballista" level="55" type="Npc" atkRange="40" hpMax="865" hpReg="4.56" mpMax="1139"
 		 mpReg="3.31"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -746,7 +746,7 @@
 		 waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4606" name="Repaired Ballista" level="97" type="L2Npc" atkRange="40" hpMax="13190" hpReg="11.84"
+	<npc id="4606" name="Repaired Ballista" level="97" type="Npc" atkRange="40" hpMax="13190" hpReg="11.84"
 		 mpMax="3066" mpReg="8.59"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -754,7 +754,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4607" name="Broken Ballista" level="55" type="L2Npc" atkRange="40" hpMax="865" hpReg="4.56" mpMax="1139"
+	<npc id="4607" name="Broken Ballista" level="55" type="Npc" atkRange="40" hpMax="865" hpReg="4.56" mpMax="1139"
 		 mpReg="3.31"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -762,7 +762,7 @@
 		 waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4608" name="Repaired Ballista" level="97" type="L2Npc" atkRange="40" hpMax="13190" hpReg="11.84"
+	<npc id="4608" name="Repaired Ballista" level="97" type="Npc" atkRange="40" hpMax="13190" hpReg="11.84"
 		 mpMax="3066" mpReg="8.59"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -770,7 +770,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4609" name="Castle Siege Ballista Guard" level="99" type="L2Npc" atkRange="40" hpMax="4630" hpReg="8.2"
+	<npc id="4609" name="Castle Siege Ballista Guard" level="99" type="Npc" atkRange="40" hpMax="4630" hpReg="8.2"
 		 mpMax="3066"
 		 mpReg="5.95" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -778,7 +778,7 @@
 		 fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4610" name="Castle Siege Ballista Guard" level="99" type="L2Npc" atkRange="40" hpMax="4630" hpReg="0.0"
+	<npc id="4610" name="Castle Siege Ballista Guard" level="99" type="Npc" atkRange="40" hpMax="4630" hpReg="0.0"
 		 mpMax="3066"
 		 mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -786,7 +786,7 @@
 		 fireRes="150"
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4611" name="Castle Siege Ballista Guard" level="99" type="L2Npc" atkRange="40" hpMax="4630" hpReg="8.2"
+	<npc id="4611" name="Castle Siege Ballista Guard" level="99" type="Npc" atkRange="40" hpMax="4630" hpReg="8.2"
 		 mpMax="3066"
 		 mpReg="5.95" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -795,7 +795,7 @@
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="14" /> <!-- Humans -->
 	</npc>
-	<npc id="4612" name="Castle Siege Ballista Guard" level="99" type="L2Npc" atkRange="40" hpMax="4630" hpReg="0.0"
+	<npc id="4612" name="Castle Siege Ballista Guard" level="99" type="Npc" atkRange="40" hpMax="4630" hpReg="0.0"
 		 mpMax="3066"
 		 mpReg="0.0" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100"
 		 pAtkSpd="253"
@@ -804,7 +804,7 @@
 		 waterRes="150" windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 		<skill id="4416" level="14" /> <!-- Humans -->
 	</npc>
-	<npc id="4613" name="" level="99" type="L2Npc" atkRange="40" hpMax="4983" hpReg="8.42" mpMax="3066" mpReg="6.11"
+	<npc id="4613" name="" level="99" type="Npc" atkRange="40" hpMax="4983" hpReg="8.42" mpMax="3066" mpReg="6.11"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -812,7 +812,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4614" name="" level="99" type="L2Npc" atkRange="40" hpMax="4983" hpReg="8.42" mpMax="3066" mpReg="6.11"
+	<npc id="4614" name="" level="99" type="Npc" atkRange="40" hpMax="4983" hpReg="8.42" mpMax="3066" mpReg="6.11"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -820,7 +820,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4615" name="Maker Creator" level="99" type="L2Npc" atkRange="0" hpMax="173000000" hpReg="326.89"
+	<npc id="4615" name="Maker Creator" level="99" type="Npc" atkRange="0" hpMax="173000000" hpReg="326.89"
 		 mpMax="3066" mpReg="237.2"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -828,7 +828,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4616" name="Maker Creator" level="99" type="L2Npc" atkRange="0" hpMax="173000000" hpReg="326.89"
+	<npc id="4616" name="Maker Creator" level="99" type="Npc" atkRange="0" hpMax="173000000" hpReg="326.89"
 		 mpMax="3066" mpReg="237.2"
 		 STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -836,7 +836,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4617" name="" level="99" type="L2Npc" atkRange="40" hpMax="4983" hpReg="8.42" mpMax="3066" mpReg="6.11"
+	<npc id="4617" name="" level="99" type="Npc" atkRange="40" hpMax="4983" hpReg="8.42" mpMax="3066" mpReg="6.11"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"
@@ -844,7 +844,7 @@
 		 fireRes="150" waterRes="150"
 		 windRes="150" earthRes="150" holyRes="150" darkRes="150" aiType="fighter">
 	</npc>
-	<npc id="4618" name="" level="99" type="L2Npc" atkRange="40" hpMax="4983" hpReg="8.42" mpMax="3066" mpReg="6.11"
+	<npc id="4618" name="" level="99" type="Npc" atkRange="40" hpMax="4983" hpReg="8.42" mpMax="3066" mpReg="6.11"
 		 STR="88"
 		 CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="100" mAtk="100" pDef="100" mDef="100" pAtkSpd="253"
 		 mAtkSpd="500"

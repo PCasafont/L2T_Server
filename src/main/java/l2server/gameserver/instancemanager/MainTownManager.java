@@ -20,10 +20,11 @@ import l2server.gameserver.Announcements;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SpawnTable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.zone.type.L2DummyZone;
-import l2server.gameserver.model.zone.type.L2TownZone;
-import l2server.log.Log;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.zone.type.DummyZone;
+import l2server.gameserver.model.zone.type.TownZone;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -36,6 +37,9 @@ import java.util.*;
  * @author Pere
  */
 public class MainTownManager {
+	private static Logger log = LoggerFactory.getLogger(MainTownManager.class.getName());
+
+
 	public class MainTownInfo {
 		private final int townId;
 		private final String name;
@@ -85,21 +89,21 @@ public class MainTownManager {
 			SpawnTable.getInstance().despawnSpecificTable(name + "_custom_spawns");
 		}
 
-		public List<L2PcInstance> getPlayersInside() {
-			L2TownZone zone = TownManager.getTown(townId);
+		public List<Player> getPlayersInside() {
+			TownZone zone = TownManager.getTown(townId);
 			return zone.getPlayersInside();
 		}
 
-		public void teleportPlayers(List<L2PcInstance> players) {
-			L2DummyZone zone = ZoneManager.getInstance().getZoneByName(name + "DummyZone", L2DummyZone.class);
-			for (L2PcInstance player : players) {
+		public void teleportPlayers(List<Player> players) {
+			DummyZone zone = ZoneManager.getInstance().getZoneByName(name + "DummyZone", DummyZone.class);
+			for (Player player : players) {
 				int[] coords = zone.getZone().getRandomPoint();
 				player.teleToLocation(coords[0], coords[1], GeoData.getInstance().getHeight(coords[0], coords[1], coords[2]));
 			}
 		}
 
 		public int[] getRandomCoords() {
-			L2DummyZone zone = ZoneManager.getInstance().getZoneByName(name + "DummyZone", L2DummyZone.class);
+			DummyZone zone = ZoneManager.getInstance().getZoneByName(name + "DummyZone", DummyZone.class);
 			int[] coords = zone.getZone().getRandomPoint();
 			coords[2] = GeoData.getInstance().getHeight(coords[0], coords[1], coords[2]);
 			return coords;
@@ -127,7 +131,7 @@ public class MainTownManager {
 
 		File file = new File(Config.DATAPACK_ROOT, "/data_" + Config.SERVER_NAME + "/mainTowns.xml");
 		if (!file.exists()) {
-			Log.warning("Dir " + file.getAbsolutePath() + " doesn't exist");
+			log.warn("Dir " + file.getAbsolutePath() + " doesn't exist");
 			return;
 		}
 
@@ -194,8 +198,8 @@ public class MainTownManager {
 		}, nextTownTimer - System.currentTimeMillis(), ROTATION_INTERVAL_DAYS * 24 * 3600 * 1000);
 		//}, 3600000L * 5, 3600000L * 5);
 
-		Log.info("MainTownManager: Loaded " + mainTowns.size() + " main towns.");
-		Log.info("MainTownManager: The current main town is " + currentMainTown.getName() + ".");
+		log.info("MainTownManager: Loaded " + mainTowns.size() + " main towns.");
+		log.info("MainTownManager: The current main town is " + currentMainTown.getName() + ".");
 	}
 
 	private void changeMainTown() {

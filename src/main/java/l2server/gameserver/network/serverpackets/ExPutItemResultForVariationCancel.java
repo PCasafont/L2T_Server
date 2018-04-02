@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 
 /**
  * Format: (ch)ddd
@@ -28,7 +28,7 @@ public class ExPutItemResultForVariationCancel extends L2GameServerPacket {
 	private int itemAug2;
 	private int price;
 	
-	public ExPutItemResultForVariationCancel(L2ItemInstance item, int price) {
+	public ExPutItemResultForVariationCancel(Item item, int price) {
 		itemObjId = item.getObjectId();
 		itemId = item.getItemId();
 		this.price = price;

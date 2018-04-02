@@ -17,13 +17,13 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.skills.SkillTargetType;
 
 import java.util.ArrayList;
 
@@ -34,19 +34,19 @@ import java.util.ArrayList;
  */
 public class HerbTarget implements ISkillTargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		L2PcInstance aPlayer = null;
-		L2Summon aSummon = null;
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		Player aPlayer = null;
+		Summon aSummon = null;
 		
-		final ArrayList<L2Character> aResult = new ArrayList<L2Character>();
+		final ArrayList<Creature> aResult = new ArrayList<Creature>();
 		
-		if (activeChar instanceof L2PcInstance) {
-			aPlayer = (L2PcInstance) activeChar;
+		if (activeChar instanceof Player) {
+			aPlayer = (Player) activeChar;
 			aSummon = aPlayer.getPet();
-		} else if (activeChar instanceof L2Summon) {
-			aSummon = (L2Summon) activeChar;
-		} else if (activeChar instanceof L2PetInstance) {
-			aSummon = (L2PetInstance) activeChar;
+		} else if (activeChar instanceof Summon) {
+			aSummon = (Summon) activeChar;
+		} else if (activeChar instanceof PetInstance) {
+			aSummon = (PetInstance) activeChar;
 		}
 		
 		// If it's a player that picked up the herb...
@@ -55,7 +55,7 @@ public class HerbTarget implements ISkillTargetTypeHandler {
 			aResult.add(aPlayer);
 			
 			// As well as his summon, if it's a summon and NOT a pet.
-			if (aSummon != null && !(aSummon instanceof L2PetInstance)) {
+			if (aSummon != null && !(aSummon instanceof PetInstance)) {
 				aResult.add(aSummon);
 			}
 		} else {
@@ -63,12 +63,12 @@ public class HerbTarget implements ISkillTargetTypeHandler {
 			aResult.add(aSummon);
 		}
 		
-		return aResult.toArray(new L2Character[aResult.size()]);
+		return aResult.toArray(new Creature[aResult.size()]);
 	}
 	
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.HERB_TARGET;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.HERB_TARGET;
 	}
 	
 	public static void main(String[] args) {

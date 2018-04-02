@@ -20,7 +20,7 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.chars.L2NpcTemplate.AIType;
+import l2server.gameserver.templates.chars.NpcTemplate.AIType;
 
 /**
  * Author: ShanSoft

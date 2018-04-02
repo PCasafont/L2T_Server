@@ -16,10 +16,10 @@
 package events.FreyaCelebration;
 
 import l2server.gameserver.instancemanager.QuestManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
@@ -60,7 +60,7 @@ public class FreyaCelebration extends Quest {
 					{43966, -47709, -792, 49999}, {43165, -48461, -792, 17000}};
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		QuestState st = player.getQuestState(getName());
 		Quest q = QuestManager.getInstance().getQuest(getName());
 		if (st == null || q == null) {
@@ -99,7 +99,7 @@ public class FreyaCelebration extends Quest {
 	}
 
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet) {
+	public String onSkillSee(Npc npc, Player caster, Skill skill, WorldObject[] targets, boolean isPet) {
 		if (caster == null || npc == null) {
 			return null;
 		}
@@ -122,7 +122,7 @@ public class FreyaCelebration extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		QuestState st = player.getQuestState(getName());
 		if (st == null) {
 			Quest q = QuestManager.getInstance().getQuest(getName());

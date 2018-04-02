@@ -1,14 +1,14 @@
 package l2server.gameserver.instancemanager.arena;
 
 import l2server.gameserver.instancemanager.ArenaManager;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 public class Fighter {
 
 	private int arenaPoints;
 	private int charId;
 	private Fight fight;
-	private L2PcInstance playerInstance;
+	private Player playerInstance;
 	private int wins;
 	private int loses;
 	private int teamId;
@@ -25,7 +25,7 @@ public class Fighter {
 		return charId;
 	}
 
-	public L2PcInstance getPlayerInstance() {
+	public Player getPlayerInstance() {
 		return playerInstance;
 	}
 
@@ -42,18 +42,18 @@ public class Fighter {
 	}
 
 	//LINKED
-	public void onDie(L2PcInstance killer) {
+	public void onDie(Player killer) {
 
 	}
 
 	//LINKED
-	public void onKill(L2PcInstance victim) {
+	public void onKill(Player victim) {
 		Fighter fVictim = ArenaManager.getInstance().getFighter(victim);
 		fight.fighterKilled(this, fVictim);
 	}
 
 	//LINKED
-	public void onHit(L2PcInstance victim) {
+	public void onHit(Player victim) {
 
 	}
 
@@ -67,7 +67,7 @@ public class Fighter {
 		this.fight = fight;
 	}
 
-	public Fighter(Fight fight, L2PcInstance player, int teamId) {
+	public Fighter(Fight fight, Player player, int teamId) {
 		this.fight = fight;
 		this.playerInstance = player;
 		this.charId = player.getObjectId();

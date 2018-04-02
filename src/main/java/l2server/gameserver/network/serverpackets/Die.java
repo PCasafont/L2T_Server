@@ -20,9 +20,9 @@ import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2SiegeClan;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.Fort;
 
@@ -43,23 +43,23 @@ public class Die extends L2GameServerPacket {
 	private boolean sweepable;
 	private boolean allowFixedRess;
 	private L2Clan clan;
-	L2Character activeChar;
+	Creature activeChar;
 
 	/**
 	 * @param cha
 	 */
-	public Die(L2Character cha) {
+	public Die(Creature cha) {
 		activeChar = cha;
 
-		canTeleport = !(cha instanceof L2PcInstance && ((L2PcInstance) cha).isPlayingEvent() || cha.isPendingRevive()) ||
+		canTeleport = !(cha instanceof Player && ((Player) cha).isPlayingEvent() || cha.isPendingRevive()) ||
 				cha.getX() == 0 && cha.getY() == 0;
 
 		charObjId = cha.getObjectId();
 
-		if (cha instanceof L2Attackable) {
-			sweepable = ((L2Attackable) cha).isSweepActive();
-		} else if (cha instanceof L2PcInstance) {
-			L2PcInstance player = (L2PcInstance) cha;
+		if (cha instanceof Attackable) {
+			sweepable = ((Attackable) cha).isSweepActive();
+		} else if (cha instanceof Player) {
+			Player player = (Player) cha;
 			allowFixedRess = player.getAccessLevel().allowFixedRes();
 			clan = player.getClan();
 

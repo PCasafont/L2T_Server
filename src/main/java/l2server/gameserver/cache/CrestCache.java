@@ -20,7 +20,8 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2Clan;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.io.*;
@@ -34,6 +35,9 @@ import java.util.logging.Level;
  * @author Layane
  */
 public class CrestCache {
+	private static Logger log = LoggerFactory.getLogger(CrestCache.class.getName());
+
+
 	private ConcurrentHashMap<Integer, byte[]> mapPledge = new ConcurrentHashMap<>();
 
 	private ConcurrentHashMap<Integer, byte[][]> mapPledgeLarge = new ConcurrentHashMap<>();
@@ -99,7 +103,7 @@ public class CrestCache {
 					loadedFiles++;
 					bytesBuffLen += content.length;
 				} catch (Exception e) {
-					Log.log(Level.WARNING, "Problem with crest bmp file " + e.getMessage(), e);
+					log.warn("Problem with crest bmp file " + e.getMessage(), e);
 				} finally {
 					try {
 						f.close();
@@ -109,7 +113,7 @@ public class CrestCache {
 			}
 		}
 
-		Log.info("Cache[Crest]: " + String.format("%.3f", getMemoryUsage()) + "MB on " + getLoadedFiles() + " files loaded.");
+		log.info("Cache[Crest]: " + String.format("%.3f", getMemoryUsage()) + "MB on " + getLoadedFiles() + " files loaded.");
 	}
 
 	public void convertOldPedgeFiles() {
@@ -120,7 +124,7 @@ public class CrestCache {
 		for (File file : files) {
 			int clanId = Integer.parseInt(file.getName().substring(7, file.getName().length() - 4));
 
-			Log.info("Found old crest file \"" + file.getName() + "\" for clanId " + clanId);
+			log.info("Found old crest file \"" + file.getName() + "\" for clanId " + clanId);
 
 			int newId = IdFactory.getInstance().getNextId();
 
@@ -130,7 +134,7 @@ public class CrestCache {
 				removeOldPledgeCrest(clan.getCrestId());
 
 				file.renameTo(new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "crests/Crest_" + newId + ".bmp"));
-				Log.info("Renamed Clan crest to new format: Crest_" + newId + ".bmp");
+				log.info("Renamed Clan crest to new format: Crest_" + newId + ".bmp");
 
 				Connection con = null;
 
@@ -142,14 +146,14 @@ public class CrestCache {
 					statement.executeUpdate();
 					statement.close();
 				} catch (SQLException e) {
-					Log.log(Level.WARNING, "Could not update the crest id:" + e.getMessage(), e);
+					log.warn("Could not update the crest id:" + e.getMessage(), e);
 				} finally {
 					L2DatabaseFactory.close(con);
 				}
 
 				clan.setCrestId(newId);
 			} else {
-				Log.info("Clan Id: " + clanId + " does not exist in table.. deleting.");
+				log.info("Clan Id: " + clanId + " does not exist in table.. deleting.");
 				file.delete();
 			}
 		}
@@ -223,7 +227,7 @@ public class CrestCache {
 			mapPledge.put(newId, data);
 			return true;
 		} catch (IOException e) {
-			Log.log(Level.INFO, "Error saving pledge crest" + crestFile + ":", e);
+			log.info("Error saving pledge crest" + crestFile + ":", e);
 			return false;
 		} finally {
 			try {
@@ -248,7 +252,7 @@ public class CrestCache {
 			mapPledgeLarge.put(newId, array);
 			return true;
 		} catch (IOException e) {
-			Log.log(Level.INFO, "Error saving Large pledge crest" + crestFile + ":", e);
+			log.info("Error saving Large pledge crest" + crestFile + ":", e);
 			return false;
 		} finally {
 			try {
@@ -268,7 +272,7 @@ public class CrestCache {
 			mapAlly.put(newId, data);
 			return true;
 		} catch (IOException e) {
-			Log.log(Level.INFO, "Error saving ally crest" + crestFile + ":", e);
+			log.info("Error saving ally crest" + crestFile + ":", e);
 			return false;
 		} finally {
 			try {

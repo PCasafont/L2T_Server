@@ -16,16 +16,16 @@
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Stats;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 
 /**
  * This class ...
@@ -34,20 +34,20 @@ import l2server.gameserver.templates.skills.L2SkillType;
  */
 
 public class ManaHeal implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.MANAHEAL, L2SkillType.MANARECHARGE};
+	private static final SkillType[] SKILL_IDS = {SkillType.MANAHEAL, SkillType.MANARECHARGE};
 
 	/**
-	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(l2server.gameserver.model.actor.L2Character, l2server.gameserver.model.L2Skill, l2server.gameserver.model.L2Object[])
+	 * @see l2server.gameserver.handler.ISkillHandler#useSkill(Creature, Skill, WorldObject[])
 	 */
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		for (L2Character target : (L2Character[]) targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		for (Creature target : (Creature[]) targets) {
 			if (target.isInvul(activeChar) || target != activeChar && target.getFaceoffTarget() != null && target.getFaceoffTarget() != activeChar) {
 				continue;
 			}
 
 			double mp = skill.getPower();
-			mp = skill.getSkillType() == L2SkillType.MANARECHARGE ? target.calcStat(Stats.RECHARGE_MP_RATE, mp, null, null) : mp;
+			mp = skill.getSkillType() == SkillType.MANARECHARGE ? target.calcStat(Stats.RECHARGE_MP_RATE, mp, null, null) : mp;
 
 			//from CT2 u will receive exact MP, u can't go over it, if u have full MP and u get MP buff, u will receive 0MP restored message
 			if (target.getCurrentMp() + mp >= target.getMaxMp()) {
@@ -62,7 +62,7 @@ public class ManaHeal implements ISkillHandler {
 			target.sendPacket(sump);
 
 			SystemMessage sm;
-			if (activeChar instanceof L2PcInstance && activeChar != target) {
+			if (activeChar instanceof Player && activeChar != target) {
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S2_MP_RESTORED_BY_C1);
 				sm.addString(activeChar.getName());
 				sm.addNumber((int) mp);
@@ -83,7 +83,7 @@ public class ManaHeal implements ISkillHandler {
 		}
 
 		if (skill.hasSelfEffects()) {
-			L2Abnormal effect = activeChar.getFirstEffect(skill.getId());
+			Abnormal effect = activeChar.getFirstEffect(skill.getId());
 			if (effect != null && effect.isSelfEffect()) {
 				//Replace old effect with new one.
 				effect.exit();
@@ -97,7 +97,7 @@ public class ManaHeal implements ISkillHandler {
 	 * @see l2server.gameserver.handler.ISkillHandler#getSkillIds()
 	 */
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

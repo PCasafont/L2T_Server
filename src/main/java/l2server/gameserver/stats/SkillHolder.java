@@ -16,7 +16,7 @@
 package l2server.gameserver.stats;
 
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 
 /**
  * @author BiggBoss
@@ -31,7 +31,7 @@ public final class SkillHolder {
 		this.skillLvl = skillLvl;
 	}
 
-	public SkillHolder(L2Skill skill) {
+	public SkillHolder(Skill skill) {
 		skillId = skill.getId();
 		skillLvl = skill.getLevelHash();
 	}
@@ -44,7 +44,7 @@ public final class SkillHolder {
 		return skillLvl;
 	}
 
-	public final L2Skill getSkill() {
+	public final Skill getSkill() {
 		return SkillTable.getInstance().getInfo(skillId, skillLvl);
 	}
 }

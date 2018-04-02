@@ -17,18 +17,22 @@ package l2server.gameserver.model.actor.stat;
 
 import l2server.Config;
 import l2server.gameserver.datatables.PetDataTable;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.PetInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.Stats;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PetStat extends SummonStat {
-	public PetStat(L2PetInstance activeChar) {
+	private static Logger log = LoggerFactory.getLogger(PetStat.class.getName());
+
+
+	public PetStat(PetInstance activeChar) {
 		super(activeChar);
 	}
 
@@ -80,7 +84,7 @@ public class PetStat extends SummonStat {
 		if (levelIncreased) {
 			getActiveChar().broadcastPacket(new SocialAction(getActiveChar().getObjectId(), SocialAction.LEVEL_UP));
 		}
-		// Send a Server->Client packet PetInfo to the L2PcInstance
+		// Send a Server->Client packet PetInfo to the Player
 		getActiveChar().updateAndBroadcastStatus(1);
 
 		if (getActiveChar().getControlItem() != null) {
@@ -96,7 +100,7 @@ public class PetStat extends SummonStat {
 			return PetDataTable.getInstance().getPetLevelData(getActiveChar().getNpcId(), level).getPetMaxExp();
 		} catch (NullPointerException e) {
 			if (getActiveChar() != null) {
-				Log.warning("Pet objectId:" + getActiveChar().getObjectId() + ", NpcId:" + getActiveChar().getNpcId() + ", level:" + level +
+				log.warn("Pet objectId:" + getActiveChar().getObjectId() + ", NpcId:" + getActiveChar().getNpcId() + ", level:" + level +
 						" is missing data from pets_stats table!");
 			}
 			throw e;
@@ -104,8 +108,8 @@ public class PetStat extends SummonStat {
 	}
 
 	@Override
-	public L2PetInstance getActiveChar() {
-		return (L2PetInstance) super.getActiveChar();
+	public PetInstance getActiveChar() {
+		return (PetInstance) super.getActiveChar();
 	}
 
 	public final int getFeedBattle() {
@@ -147,7 +151,7 @@ public class PetStat extends SummonStat {
 	}
 
 	@Override
-	public int getMAtk(L2Character target, L2Skill skill) {
+	public int getMAtk(Creature target, Skill skill) {
 		double attack = getActiveChar().getPetLevelData().getPetMAtk();
 		if (skill != null) {
 			attack += skill.getPower();
@@ -157,18 +161,18 @@ public class PetStat extends SummonStat {
 	}
 
 	@Override
-	public int getMDef(L2Character target, L2Skill skill) {
+	public int getMDef(Creature target, Skill skill) {
 		double defence = getActiveChar().getPetLevelData().getPetMDef();
 		return (int) calcStat(Stats.MAGIC_DEFENSE, defence, target, skill);
 	}
 
 	@Override
-	public int getPAtk(L2Character target) {
+	public int getPAtk(Creature target) {
 		return (int) calcStat(Stats.PHYS_ATTACK, getActiveChar().getPetLevelData().getPetPAtk(), target, null);
 	}
 
 	@Override
-	public int getPDef(L2Character target) {
+	public int getPDef(Creature target) {
 		return (int) calcStat(Stats.PHYS_DEFENSE, getActiveChar().getPetLevelData().getPetPDef(), target, null);
 	}
 

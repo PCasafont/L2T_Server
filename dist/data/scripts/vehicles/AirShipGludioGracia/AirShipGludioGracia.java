@@ -17,13 +17,13 @@ package vehicles.AirShipGludioGracia;
 
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.AirShipManager;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.World;
 import l2server.gameserver.model.Location;
 import l2server.gameserver.model.VehiclePathPoint;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2AirShipInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.AirShipInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.Say2;
@@ -70,16 +70,16 @@ public class AirShipGludioGracia extends Quest implements Runnable {
 					new VehiclePathPoint(-146672, 254239, 221), new VehiclePathPoint(-147855, 252712, 206),
 					new VehiclePathPoint(-149378, 252552, 198)};
 
-	private final L2AirShipInstance ship;
+	private final AirShipInstance ship;
 	private int cycle = 0;
 
 	private boolean foundAtcGludio = false;
-	private L2Npc atcGludio = null;
+	private Npc atcGludio = null;
 	private boolean foundAtcGracia = false;
-	private L2Npc atcGracia = null;
+	private Npc atcGracia = null;
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (player.isTransformed()) {
 			player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_TRANSFORMED);
 			return null;
@@ -133,7 +133,7 @@ public class AirShipGludioGracia extends Quest implements Runnable {
 	}
 
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public final String onFirstTalk(Npc npc, Player player) {
 		if (player.getQuestState(getName()) == null) {
 			newQuestState(player);
 		}
@@ -226,13 +226,13 @@ public class AirShipGludioGracia extends Quest implements Runnable {
 		}
 	}
 
-	private final L2Npc findController() {
+	private final Npc findController() {
 		// check objects around the ship
-		for (L2Object obj : L2World.getInstance().getVisibleObjects(ship, 600)) {
-			if (obj instanceof L2Npc) {
+		for (WorldObject obj : World.getInstance().getVisibleObjects(ship, 600)) {
+			if (obj instanceof Npc) {
 				for (int id : CONTROLLERS) {
-					if (((L2Npc) obj).getNpcId() == id) {
-						return (L2Npc) obj;
+					if (((Npc) obj).getNpcId() == id) {
+						return (Npc) obj;
 					}
 				}
 			}

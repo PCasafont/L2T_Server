@@ -15,7 +15,7 @@
 
 package l2server.util;
 
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 
 import java.util.Iterator;
 import java.util.TreeMap;
@@ -25,7 +25,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 /**
  * @author dishkols
  */
-public class WorldObjectTree<T extends L2Object> extends L2ObjectMap<T> {
+public class WorldObjectTree<T extends WorldObject> extends L2ObjectMap<T> {
 	private final TreeMap<Integer, T> objectMap = new TreeMap<>();
 	private final ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();
 	private final Lock r = rwl.readLock();

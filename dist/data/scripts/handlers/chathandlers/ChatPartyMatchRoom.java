@@ -18,7 +18,7 @@ package handlers.chathandlers;
 import l2server.gameserver.handler.IChatHandler;
 import l2server.gameserver.model.PartyMatchRoom;
 import l2server.gameserver.model.PartyMatchRoomList;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 
 /**
@@ -33,12 +33,12 @@ public class ChatPartyMatchRoom implements IChatHandler {
 	 * Handle chat type 'partymatchroom'
 	 */
 	@Override
-	public void handleChat(int type, L2PcInstance activeChar, String target, String text) {
+	public void handleChat(int type, Player activeChar, String target, String text) {
 		if (activeChar.isInPartyMatchRoom()) {
 			PartyMatchRoom room = PartyMatchRoomList.getInstance().getPlayerRoom(activeChar);
 			if (room != null) {
 				CreatureSay cs = new CreatureSay(activeChar, type, activeChar.getName(), text);
-				for (L2PcInstance member : room.getPartyMembers()) {
+				for (Player member : room.getPartyMembers()) {
 					member.sendPacket(cs);
 				}
 			}

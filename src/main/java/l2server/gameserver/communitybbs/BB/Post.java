@@ -17,7 +17,8 @@ package l2server.gameserver.communitybbs.BB;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.communitybbs.Manager.PostBBSManager;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,6 +31,9 @@ import java.util.logging.Level;
  * @author Maktakien
  */
 public class Post {
+	private static Logger log = LoggerFactory.getLogger(Post.class.getName());
+
+
 
 	public static class CPost {
 		public int postId;
@@ -76,7 +80,7 @@ public class Post {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error while saving new Post to db " + e.getMessage(), e);
+			log.warn("Error while saving new Post to db " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -108,7 +112,7 @@ public class Post {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error while deleting post: " + e.getMessage(), e);
+			log.warn("Error while deleting post: " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -139,7 +143,7 @@ public class Post {
 			result.close();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Data error on Post " + t.getForumID() + "/" + t.getID() + " : " + e.getMessage(), e);
+			log.warn("Data error on Post " + t.getForumID() + "/" + t.getID() + " : " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
@@ -161,7 +165,7 @@ public class Post {
 			statement.execute();
 			statement.close();
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error while saving new Post to db " + e.getMessage(), e);
+			log.warn("Error while saving new Post to db " + e.getMessage(), e);
 		} finally {
 			L2DatabaseFactory.close(con);
 		}

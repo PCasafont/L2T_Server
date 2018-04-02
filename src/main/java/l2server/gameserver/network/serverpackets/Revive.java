@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 
 /**
  * sample
@@ -28,7 +28,7 @@ import l2server.gameserver.model.L2Object;
 public final class Revive extends L2GameServerPacket {
 	private int objectId;
 
-	public Revive(L2Object obj) {
+	public Revive(WorldObject obj) {
 		objectId = obj.getObjectId();
 	}
 

@@ -19,16 +19,17 @@ import l2server.Config;
 import l2server.gameserver.events.MonsterInvasion;
 import l2server.gameserver.instancemanager.*;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.ClanHall;
 import l2server.gameserver.model.entity.Fort;
 import l2server.gameserver.model.entity.Instance;
-import l2server.gameserver.model.zone.type.L2ArenaZone;
-import l2server.gameserver.model.zone.type.L2ClanHallZone;
-import l2server.log.Log;
+import l2server.gameserver.model.zone.type.ArenaZone;
+import l2server.gameserver.model.zone.type.ClanHallZone;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 
 import java.io.*;
@@ -40,6 +41,9 @@ import java.util.logging.Level;
  * This class ...
  */
 public class MapRegionTable {
+	private static Logger log = LoggerFactory.getLogger(MapRegionTable.class.getName());
+
+
 
 	private final int[][] regions = new int[16][18];
 
@@ -76,13 +80,13 @@ public class MapRegionTable {
 				int region = Integer.parseInt(st.nextToken().trim());
 				for (int j = 0; j < 16; j++) {
 					regions[j][region] = Integer.parseInt(st.nextToken().trim());
-					//Log.fine(j+","+region+" -> "+rset.getInt(j+2));
+					//log.debug(j+","+region+" -> "+rset.getInt(j+2));
 				}
 			}
 		} catch (FileNotFoundException e) {
-			Log.warning("mapregion.csv is missing in data folder");
+			log.warn("mapregion.csv is missing in data folder");
 		} catch (Exception e) {
-			Log.log(Level.WARNING, "Error while loading MapRegion table " + e.getMessage(), e);
+			log.warn("Error while loading MapRegion table " + e.getMessage(), e);
 		}
 	}
 	
@@ -92,7 +96,7 @@ public class MapRegionTable {
 		} catch (ArrayIndexOutOfBoundsException e) {
 			// Position sent is outside MapRegionTable area.
 			if (Config.DEBUG) {
-				Log.log(Level.WARNING, "MapRegionTable: Player outside map regions at X,Y=" + posX + "," + posY, e);
+				log.warn("MapRegionTable: Player outside map regions at X,Y=" + posX + "," + posY, e);
 			}
 			return 0;
 		}
@@ -106,7 +110,7 @@ public class MapRegionTable {
 		return (posY >> 15) + 10;// + centerTileX;
 	}
 
-	public int getAreaCastle(L2Character activeChar) {
+	public int getAreaCastle(Creature activeChar) {
 		int area = getClosestTownNumber(activeChar);
 		int castle;
 		switch (area) {
@@ -180,7 +184,7 @@ public class MapRegionTable {
 		return castle;
 	}
 
-	public int getClosestTownNumber(L2Character activeChar) {
+	public int getClosestTownNumber(Creature activeChar) {
 		return getMapRegion(activeChar.getX(), activeChar.getY());
 	}
 
@@ -190,7 +194,7 @@ public class MapRegionTable {
 	 * @param activeChar
 	 * @return String
 	 */
-	public String getClosestTownName(L2Character activeChar) {
+	public String getClosestTownName(Creature activeChar) {
 		return getTownName(getMapRegion(activeChar.getX(), activeChar.getY()));
 	}
 
@@ -322,7 +326,7 @@ public class MapRegionTable {
 		return nearestTown;
 	}
 
-	public String getClosestTownSimpleName(L2Character activeChar) {
+	public String getClosestTownSimpleName(Creature activeChar) {
 		int nearestTownId = getMapRegion(activeChar.getX(), activeChar.getY());
 		return getTownSimpleName(nearestTownId);
 	}
@@ -449,14 +453,14 @@ public class MapRegionTable {
 		return nearestTown;
 	}
 
-	public Location getTeleToLocation(L2Character activeChar, TeleportWhereType teleportWhere) {
+	public Location getTeleToLocation(Creature activeChar, TeleportWhereType teleportWhere) {
 		int[] coord;
 
-		if (activeChar instanceof L2PcInstance) {
-			L2PcInstance player = (L2PcInstance) activeChar;
+		if (activeChar instanceof Player) {
+			Player player = (Player) activeChar;
 
 			// If in Monster Derby Track
-			if (player.isInsideZone(L2Character.ZONE_MONSTERTRACK)) {
+			if (player.isInsideZone(Creature.ZONE_MONSTERTRACK)) {
 				return new Location(12661, 181687, -3560);
 			}
 
@@ -472,7 +476,7 @@ public class MapRegionTable {
 
 					clanhall = ClanHallManager.getInstance().getClanHallByOwner(player.getClan());
 					if (clanhall != null) {
-						L2ClanHallZone zone = clanhall.getZone();
+						ClanHallZone zone = clanhall.getZone();
 						if (zone != null && !player.isFlyingMounted()) {
 							return zone.getSpawnLoc();
 						}
@@ -521,20 +525,20 @@ public class MapRegionTable {
 					if (castle != null) {
 						if (castle.getSiege().getIsInProgress()) {
 							// Check if player's clan is attacker
-							List<L2Npc> flags = castle.getSiege().getFlag(player.getClan());
+							List<Npc> flags = castle.getSiege().getFlag(player.getClan());
 							if (flags != null && !flags.isEmpty()) {
 								// Spawn to flag - Need more work to get player to the nearest flag
-								L2Npc flag = flags.get(0);
+								Npc flag = flags.get(0);
 								return new Location(flag.getX(), flag.getY(), flag.getZ());
 							}
 						}
 					} else if (fort != null) {
 						if (fort.getSiege().getIsInProgress()) {
 							// Check if player's clan is attacker
-							List<L2Npc> flags = fort.getSiege().getFlag(player.getClan());
+							List<Npc> flags = fort.getSiege().getFlag(player.getClan());
 							if (flags != null && !flags.isEmpty()) {
 								// Spawn to flag - Need more work to get player to the nearest flag
-								L2Npc flag = flags.get(0);
+								Npc flag = flags.get(0);
 								return new Location(flag.getX(), flag.getY(), flag.getZ());
 							}
 						}
@@ -557,7 +561,7 @@ public class MapRegionTable {
 			}
 
 			// Checking if in arena
-			L2ArenaZone arena = ZoneManager.getInstance().getArena(player);
+			ArenaZone arena = ZoneManager.getInstance().getArena(player);
 			if (arena != null) {
 				return arena.getSpawnLoc();
 			}

@@ -18,17 +18,17 @@ package handlers.bypasshandlers;
 import l2server.gameserver.datatables.HelperBuffTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.L2HelperBuff;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.HelperBuff;
+import l2server.gameserver.templates.skills.SkillType;
 
 public class SupportMagic implements IBypassHandler {
 	private static final String[] COMMANDS = {"supportmagicservitor", "supportmagic"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
 		if (target == null) {
 			return false;
 		}
@@ -53,9 +53,9 @@ public class SupportMagic implements IBypassHandler {
 	 * <p>
 	 * <FONT COLOR=#FF0000><B> Newbie Helper Buff list is define in sql table helper_buff_list</B></FONT><BR><BR>
 	 *
-	 * @param player The L2PcInstance that talk with the L2NpcInstance
+	 * @param player The Player that talk with the NpcInstance
 	 */
-	public static boolean makeSupportMagic(L2PcInstance player, L2Npc npc, boolean isSummon) {
+	public static boolean makeSupportMagic(Player player, Npc npc, boolean isSummon) {
 		if (player == null) {
 			return false;
 		}
@@ -112,9 +112,9 @@ public class SupportMagic implements IBypassHandler {
 			return true;
 		}
 		
-		L2Skill skill = null;
+		Skill skill = null;
 		if (isSummon) {
-			for (L2HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable()) {
+			for (HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable()) {
 				if (helperBuffItem.isForSummon()) {
 					skill = SkillTable.getInstance().getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
 					if (skill != null) {
@@ -124,11 +124,11 @@ public class SupportMagic implements IBypassHandler {
 			}
 		} else {
 			// 	Go through the Helper Buff list define in sql table helper_buff_list and cast skill
-			for (L2HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable()) {
+			for (HelperBuff helperBuffItem : HelperBuffTable.getInstance().getHelperBuffTable()) {
 				if (helperBuffItem.isMagicClassBuff() == player.isMageClass()) {
 					if (player_level >= helperBuffItem.getLowerLevel() && player_level <= helperBuffItem.getUpperLevel()) {
 						skill = SkillTable.getInstance().getInfo(helperBuffItem.getSkillID(), helperBuffItem.getSkillLevel());
-						if (skill.getSkillType() == L2SkillType.SUMMON) {
+						if (skill.getSkillType() == SkillType.SUMMON) {
 							player.doSimultaneousCast(skill);
 						} else {
 							npc.doCast(skill);

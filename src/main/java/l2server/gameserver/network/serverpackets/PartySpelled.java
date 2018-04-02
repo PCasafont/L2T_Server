@@ -15,9 +15,9 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PetInstance;
-import l2server.gameserver.model.actor.instance.L2SummonInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.SummonInstance;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ import java.util.List;
  */
 public class PartySpelled extends L2GameServerPacket {
 	private List<Effect> effects;
-	private L2Character activeChar;
+	private Creature activeChar;
 	
 	private static class Effect {
 		protected int skillId;
@@ -43,14 +43,14 @@ public class PartySpelled extends L2GameServerPacket {
 		}
 	}
 	
-	public PartySpelled(L2Character cha) {
+	public PartySpelled(Creature cha) {
 		effects = new ArrayList<>();
 		activeChar = cha;
 	}
 	
 	@Override
 	protected final void writeImpl() {
-		writeD(activeChar instanceof L2SummonInstance ? 2 : activeChar instanceof L2PetInstance ? 1 : 0);
+		writeD(activeChar instanceof SummonInstance ? 2 : activeChar instanceof PetInstance ? 1 : 0);
 		writeD(activeChar.getObjectId());
 		writeD(effects.size());
 		for (Effect temp : effects) {

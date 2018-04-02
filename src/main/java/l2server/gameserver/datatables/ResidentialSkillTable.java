@@ -2,8 +2,9 @@ package l2server.gameserver.datatables;
 
 import java.util.HashMap; import java.util.Map;
 import l2server.Config;
-import l2server.gameserver.model.L2Skill;
-import l2server.log.Log;
+import l2server.gameserver.model.Skill;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -17,9 +18,12 @@ import java.util.ArrayList;
  * @author DrHouse
  */
 public class ResidentialSkillTable {
+	private static Logger log = LoggerFactory.getLogger(ResidentialSkillTable.class.getName());
+
+
 
 	private static ResidentialSkillTable instance = null;
-	private static Map<Integer, ArrayList<L2Skill>> list;
+	private static Map<Integer, ArrayList<Skill>> list;
 
 	private ResidentialSkillTable() {
 	}
@@ -41,14 +45,14 @@ public class ResidentialSkillTable {
 				int skillId = d.getInt("id");
 				int skillLvl = d.getInt("level");
 
-				L2Skill sk = SkillTable.getInstance().getInfo(skillId, skillLvl);
+				Skill sk = SkillTable.getInstance().getInfo(skillId, skillLvl);
 				if (sk == null) {
-					Log.warning("ResidentialSkillTable: SkillTable has returned null for ID/level: " + skillId + "/" + skillLvl);
+					log.warn("ResidentialSkillTable: SkillTable has returned null for ID/level: " + skillId + "/" + skillLvl);
 					continue;
 				}
 
 				if (!list.containsKey(entityId)) {
-					ArrayList<L2Skill> aux = new ArrayList<>();
+					ArrayList<Skill> aux = new ArrayList<>();
 					aux.add(sk);
 					list.put(entityId, aux);
 				} else {
@@ -57,10 +61,10 @@ public class ResidentialSkillTable {
 			}
 		}
 
-		Log.info("ResidentialSkillTable: Loaded " + list.size() + " entities with associated skills.");
+		log.info("ResidentialSkillTable: Loaded " + list.size() + " entities with associated skills.");
 	}
 
-	public ArrayList<L2Skill> getSkills(int entityId) {
+	public ArrayList<Skill> getSkills(int entityId) {
 		if (list.containsKey(entityId)) {
 			return list.get(entityId);
 		}

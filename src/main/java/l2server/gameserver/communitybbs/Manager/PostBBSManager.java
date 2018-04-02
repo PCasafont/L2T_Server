@@ -23,7 +23,7 @@ import l2server.gameserver.communitybbs.BB.Forum;
 import l2server.gameserver.communitybbs.BB.Post;
 import l2server.gameserver.communitybbs.BB.Post.CPost;
 import l2server.gameserver.communitybbs.BB.Topic;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ShowBoard;
 import l2server.util.StringUtil;
 
@@ -54,7 +54,7 @@ public class PostBBSManager extends BaseBBSManager {
 	}
 
 	@Override
-	public void parsecmd(String command, L2PcInstance activeChar) {
+	public void parsecmd(String command, Player activeChar) {
 		if (command.startsWith("_bbsposts;read;")) {
 			StringTokenizer st = new StringTokenizer(command, ";");
 			st.nextToken();
@@ -95,7 +95,7 @@ public class PostBBSManager extends BaseBBSManager {
 	 * @param activeChar
 	 * @param idp
 	 */
-	private void showEditPost(Topic topic, Forum forum, L2PcInstance activeChar, int idp) {
+	private void showEditPost(Topic topic, Forum forum, Player activeChar, int idp) {
 		Post p = getGPosttByTopic(topic);
 		if (forum == null || topic == null || p == null) {
 			ShowBoard sb =
@@ -115,7 +115,7 @@ public class PostBBSManager extends BaseBBSManager {
 	 * @param activeChar
 	 * @param ind
 	 */
-	private void showPost(Topic topic, Forum forum, L2PcInstance activeChar, int ind) {
+	private void showPost(Topic topic, Forum forum, Player activeChar, int ind) {
 		if (forum == null || topic == null) {
 			ShowBoard sb = new ShowBoard("<html><body><br><br><center></center><br><br></body></html>", "101");
 			activeChar.sendPacket(sb);
@@ -137,7 +137,7 @@ public class PostBBSManager extends BaseBBSManager {
 	 * @param forum
 	 * @param p
 	 */
-	private void showHtmlEditPost(Topic topic, L2PcInstance activeChar, Forum forum, Post p) {
+	private void showHtmlEditPost(Topic topic, Player activeChar, Forum forum, Post p) {
 		final String html = StringUtil.concat(
 				"<html><body><br><br><table border=0 width=610><tr><td width=10></td><td width=600 align=left><a action=\"bypass _bbshome\">HOME</a>&nbsp;>&nbsp;<a action=\"bypass _bbsmemo\">",
 				forum.getName(),
@@ -157,7 +157,7 @@ public class PostBBSManager extends BaseBBSManager {
 	 * @param activeChar
 	 * @param forum
 	 */
-	private void showMemoPost(Topic topic, L2PcInstance activeChar, Forum forum) {
+	private void showMemoPost(Topic topic, Player activeChar, Forum forum) {
 		//
 		Post p = getGPosttByTopic(topic);
 		Locale locale = Locale.getDefault();
@@ -189,7 +189,7 @@ public class PostBBSManager extends BaseBBSManager {
 	}
 
 	@Override
-	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, L2PcInstance activeChar) {
+	public void parsewrite(String ar1, String ar2, String ar3, String ar4, String ar5, Player activeChar) {
 		StringTokenizer st = new StringTokenizer(ar1, ";");
 		int idf = Integer.parseInt(st.nextToken());
 		int idt = Integer.parseInt(st.nextToken());

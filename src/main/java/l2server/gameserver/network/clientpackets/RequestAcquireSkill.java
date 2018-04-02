@@ -19,14 +19,15 @@ import l2server.Config;
 import l2server.gameserver.datatables.*;
 import l2server.gameserver.datatables.SubPledgeSkillTree.SubUnitSkill;
 import l2server.gameserver.model.*;
-import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -36,6 +37,9 @@ import java.util.List;
  * @version $Revision: 1.7.2.1.2.4 $ $Date: 2005/03/27 15:29:30 $
  */
 public class RequestAcquireSkill extends L2GameClientPacket {
+	private static Logger log = LoggerFactory.getLogger(RequestAcquireSkill.class.getName());
+
+
 
 	private int id;
 	private int level;
@@ -57,7 +61,7 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 
 	@Override
 	protected void runImpl() {
-		final L2PcInstance player = getClient().getActiveChar();
+		final Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -70,11 +74,11 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 
 		if (level < 1 || level > 100 || id < 1 || id > 32000) {
 			Util.handleIllegalPlayerAction(player, "Wrong Packet Data in Aquired Skill", Config.DEFAULT_PUNISH);
-			Log.warning("Recived Wrong Packet Data in Aquired Skill - id: " + id + " level: " + level + " for " + player);
+			log.warn("Recived Wrong Packet Data in Aquired Skill - id: " + id + " level: " + level + " for " + player);
 			return;
 		}
 
-		final L2Npc trainer = player.getLastFolkNPC();
+		final Npc trainer = player.getLastFolkNPC();
 
 		/* If current skill lvl + 1 is not equal to the skill lvl you wanna learn (eg: You have Aggression lvl 3 and the packet sends info that
 		 * you want to learn Aggression lvl 5, thus skipping lvl 4.) or the packet sends the same level or lower (eg: Aggression lvl 3 and the
@@ -85,17 +89,17 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 		}
 
 		int knownEnchant = 0;
-		L2Skill knownSkill = player.getKnownSkill(id);
+		Skill knownSkill = player.getKnownSkill(id);
 		if (knownSkill != null) {
 			knownEnchant = knownSkill.getEnchantHash();
 		}
-		final L2Skill skill = SkillTable.getInstance().getInfo(id, level, knownEnchant);
+		final Skill skill = SkillTable.getInstance().getInfo(id, level, knownEnchant);
 
 		// Finding out if it's a clan skill
 		if (player.getClan() != null) {
 			L2PledgeSkillLearn[] tempSkills = PledgeSkillTree.getInstance().getAvailableSkills(player);
 			for (L2PledgeSkillLearn s : tempSkills) {
-				L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
+				Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
 				if (sk == skill) {
 					skillType = 2;
 					break;
@@ -108,14 +112,14 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 
 		switch (skillType) {
 			case 0: {
-				if (trainer instanceof L2TransformManagerInstance) // transform skills
+				if (trainer instanceof TransformManagerInstance) // transform skills
 				{
 					int costId = 0;
 
 					// Skill Learn bug Fix
 					L2TransformSkillLearn[] skillst = SkillTreeTable.getInstance().getAvailableTransformSkills(player);
 					for (L2TransformSkillLearn s : skillst) {
-						L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
+						Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
 						if (sk == null || sk != skill) {
 							continue;
 						}
@@ -159,7 +163,7 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 						continue;
 					}
 
-					L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
+					Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
 					if (sk == null || sk.getId() != skill.getId() || sk.getLevel() != skill.getLevel()) {
 						continue;
 					}
@@ -180,7 +184,7 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 					int spbId = -1;
 
 					// divine inspiration require book for each level
-					if (Config.DIVINE_SP_BOOK_NEEDED && skill.getId() == L2Skill.SKILL_DIVINE_INSPIRATION) {
+					if (Config.DIVINE_SP_BOOK_NEEDED && skill.getId() == Skill.SKILL_DIVINE_INSPIRATION) {
 						switch (level) {
 							case 1:
 								spbId = 8618; // Ancient Book - Divine Inspiration (Modern Language Version)
@@ -230,7 +234,7 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 						continue;
 					}
 
-					L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
+					Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
 					if (sk == null || sk != skill) {
 						continue;
 					}
@@ -274,7 +278,7 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 				// Skill Learn bug Fix
 				L2PledgeSkillLearn[] skills = PledgeSkillTree.getInstance().getAvailableSkills(player);
 				for (L2PledgeSkillLearn s : skills) {
-					L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
+					Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
 					if (sk == null || sk != skill) {
 						continue;
 					}
@@ -292,7 +296,7 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 
 				if (player.getClan().getReputationScore() < repCost) {
 					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ACQUIRE_SKILL_FAILED_BAD_CLAN_REP_SCORE));
-					L2VillageMasterInstance.showPledgeSkillList(player);
+					VillageMasterInstance.showPledgeSkillList(player);
 					return;
 				}
 
@@ -300,7 +304,7 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 				player.getClan().addNewSkill(skill);
 
 				if (Config.DEBUG) {
-					Log.fine("Learned pledge skill " + id + " for " + requiredSp + " SP.");
+					log.debug("Learned pledge skill " + id + " for " + requiredSp + " SP.");
 				}
 
 				SystemMessage cr = SystemMessage.getSystemMessage(SystemMessageId.S1_DEDUCTED_FROM_CLAN_REP);
@@ -311,7 +315,7 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 
 				player.getClan().broadcastToOnlineMembers(new PledgeSkillList(player.getClan()));
 
-				L2VillageMasterInstance.showPledgeSkillList(player); //Maybe we should add a check here...
+				VillageMasterInstance.showPledgeSkillList(player); //Maybe we should add a check here...
 				return;
 			}
 			case 3: {
@@ -427,7 +431,7 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 				// Skill Learn bug Fix
 				L2SkillLearn[] skillsc = SkillTreeTable.getInstance().getAvailableSpecialSkills(player);
 				for (L2SkillLearn s : skillsc) {
-					L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
+					Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
 					if (sk == null || sk != skill) {
 						continue;
 					}
@@ -466,7 +470,7 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 				break;
 			}
 			default: {
-				Log.warning("Recived Wrong Packet Data in Aquired Skill - unk1:" + skillType);
+				log.warn("Recived Wrong Packet Data in Aquired Skill - unk1:" + skillType);
 				return;
 			}
 		}
@@ -485,7 +489,7 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 					return;
 				}
 
-				for (L2Skill sk : player.getAllSkills()) {
+				for (Skill sk : player.getAllSkills()) {
 					for (int reqSkillId : reqSkillIds) {
 						if (sk.getId() == reqSkillId) {
 							player.removeSkill(sk);
@@ -494,14 +498,14 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 				}
 			}
 		} else {
-			if (!(trainer instanceof L2TransformManagerInstance)) {
-				Log.warning("RequestAcquireSkill: null skill (id: " + id + " class: " + player.getActiveClass() + ")");
+			if (!(trainer instanceof TransformManagerInstance)) {
+				log.warn("RequestAcquireSkill: null skill (id: " + id + " class: " + player.getActiveClass() + ")");
 				return;
 			}
 		}
 
 		if (Config.DEBUG) {
-			Log.fine("Learned skill " + id + " for " + requiredSp + " SP.");
+			log.debug("Learned skill " + id + " for " + requiredSp + " SP.");
 		}
 
 		if (skillType != 3 && skillType != 2) {
@@ -521,7 +525,7 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 			player.sendSkillList();
 
 			updateShortCuts(player);
-			if (trainer instanceof L2NpcInstance) {
+			if (trainer instanceof NpcInstance) {
 				showSkillList(trainer, player);
 			}
 		} else if (skillType == 4) {
@@ -531,7 +535,7 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 		}
 	}
 
-	private void updateShortCuts(L2PcInstance player) {
+	private void updateShortCuts(Player player) {
 		// update all the shortcuts to this skill
 		if (level > 1) {
 			L2ShortCut[] allShortCuts = player.getAllShortCuts();
@@ -546,14 +550,14 @@ public class RequestAcquireSkill extends L2GameClientPacket {
 		}
 	}
 
-	private void showSkillList(L2Npc trainer, L2PcInstance player) {
+	private void showSkillList(Npc trainer, Player player) {
 		if (skillType == 4) {
 			Quest[] qlst = trainer.getTemplate().getEventQuests(Quest.QuestEventType.ON_SKILL_LEARN);
 			qlst[0].notifyAcquireSkillList(trainer, player);
-		} else if (trainer instanceof L2FishermanInstance) {
-			L2FishermanInstance.showFishSkillList(player);
-		} else if (trainer instanceof L2TransformManagerInstance) {
-			L2TransformManagerInstance.showTransformSkillList(player);
+		} else if (trainer instanceof FishermanInstance) {
+			FishermanInstance.showFishSkillList(player);
+		} else if (trainer instanceof TransformManagerInstance) {
+			TransformManagerInstance.showTransformSkillList(player);
 		}
 
 		// if skill is expand sendpacket :)

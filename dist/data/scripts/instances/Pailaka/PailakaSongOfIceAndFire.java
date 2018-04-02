@@ -4,15 +4,15 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
-import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.model.zone.ZoneType;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.util.Rnd;
@@ -79,23 +79,23 @@ public class PailakaSongOfIceAndFire extends Quest {
 
 	private static final int[] REWARDS = {13294, 13293, 13129};
 
-	private static void dropHerb(L2Npc mob, L2PcInstance player, int[][] drop) {
+	private static void dropHerb(Npc mob, Player player, int[][] drop) {
 		final int chance = Rnd.get(100);
 		for (int[] element : drop) {
 			if (chance < element[2]) {
-				((L2MonsterInstance) mob).dropItem(player, element[0], element[1]);
+				((MonsterInstance) mob).dropItem(player, element[0], element[1]);
 				return;
 			}
 		}
 	}
 
-	private static void dropItem(L2Npc mob, L2PcInstance player) {
+	private static void dropItem(Npc mob, Player player) {
 		final int npcId = mob.getNpcId();
 		final int chance = Rnd.get(100);
 		for (int[] drop : DROPLIST) {
 			if (npcId == drop[0]) {
 				if (chance < drop[2]) {
-					((L2MonsterInstance) mob).dropItem(player, drop[1], Rnd.get(1, 6));
+					((MonsterInstance) mob).dropItem(player, drop[1], Rnd.get(1, 6));
 					return;
 				}
 			}
@@ -105,13 +105,13 @@ public class PailakaSongOfIceAndFire extends Quest {
 		}
 	}
 
-	private static void teleportPlayer(L2PcInstance player, int[] coords, int instanceId) {
+	private static void teleportPlayer(Player player, int[] coords, int instanceId) {
 		player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		player.setInstanceId(instanceId);
 		player.teleToLocation(coords[0], coords[1], coords[2], true);
 	}
 
-	private final synchronized void enterInstance(L2PcInstance player) {
+	private final synchronized void enterInstance(Player player) {
 		//check for existing instances for this player
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
@@ -140,7 +140,7 @@ public class PailakaSongOfIceAndFire extends Quest {
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		final QuestState st = player.getQuestState(qn);
 		if (st == null) {
 			return getNoQuestMsg(player);
@@ -204,12 +204,12 @@ public class PailakaSongOfIceAndFire extends Quest {
 	}
 
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public final String onFirstTalk(Npc npc, Player player) {
 		return npc.getNpcId() + ".htm";
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		final QuestState st = player.getQuestState(qn);
 		if (st == null) {
 			return getNoQuestMsg(player);
@@ -271,7 +271,7 @@ public class PailakaSongOfIceAndFire extends Quest {
 	}
 
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public final String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (!npc.isDead()) {
 			npc.doDie(attacker);
 		}
@@ -280,7 +280,7 @@ public class PailakaSongOfIceAndFire extends Quest {
 	}
 
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public final String onKill(Npc npc, Player player, boolean isPet) {
 		QuestState st = player.getQuestState(qn);
 		if (st == null || st.getState() != State.STARTED) {
 			return null;
@@ -349,8 +349,8 @@ public class PailakaSongOfIceAndFire extends Quest {
 	}
 
 	@Override
-	public String onExitZone(L2Character character, L2ZoneType zone) {
-		if (character instanceof L2PcInstance && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline()) {
+	public String onExitZone(Creature character, ZoneType zone) {
+		if (character instanceof Player && !character.isDead() && !character.isTeleporting() && ((Player) character).isOnline()) {
 			InstanceWorld world = InstanceManager.getInstance().getWorld(character.getInstanceId());
 			if (world != null && world.templateId == INSTANCE_ID) {
 				ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(character, world.instanceId), 1000);
@@ -360,10 +360,10 @@ public class PailakaSongOfIceAndFire extends Quest {
 	}
 
 	static final class Teleport implements Runnable {
-		private final L2Character cha;
+		private final Creature cha;
 		private final int instanceId;
 
-		public Teleport(L2Character c, int id) {
+		public Teleport(Creature c, int id) {
 			cha = c;
 			instanceId = id;
 		}
@@ -371,7 +371,7 @@ public class PailakaSongOfIceAndFire extends Quest {
 		@Override
 		public void run() {
 			try {
-				teleportPlayer((L2PcInstance) cha, TELEPORT, instanceId);
+				teleportPlayer((Player) cha, TELEPORT, instanceId);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

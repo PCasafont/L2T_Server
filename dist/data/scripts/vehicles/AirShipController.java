@@ -21,26 +21,26 @@ import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.Location;
 import l2server.gameserver.model.VehiclePathPoint;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2AirShipInstance;
-import l2server.gameserver.model.actor.instance.L2ControllableAirShipInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.AirShipInstance;
+import l2server.gameserver.model.actor.instance.ControllableAirShipInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.zone.L2ZoneType;
-import l2server.gameserver.model.zone.type.L2ScriptZone;
+import l2server.gameserver.model.zone.ZoneType;
+import l2server.gameserver.model.zone.type.ScriptZone;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.Future;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public abstract class AirShipController extends Quest {
-	public static final Logger log = Logger.getLogger(AirShipController.class.getName());
-
+	private static Logger log = LoggerFactory.getLogger(AirShipController.class.getName());
+	
 	protected int dockZone = 0;
 
 	protected int shipSpawnX = 0;
@@ -61,7 +61,7 @@ public abstract class AirShipController extends Quest {
 
 	protected boolean isBusy = false;
 
-	protected L2ControllableAirShipInstance dockedShip = null;
+	protected ControllableAirShipInstance dockedShip = null;
 
 	private final Runnable decayTask = new DecayTask();
 	private final Runnable departTask = new DepartTask();
@@ -87,7 +87,7 @@ public abstract class AirShipController extends Quest {
 	private static final SystemMessage SM_NEED_MORE = SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_NEED_MORE_S1).addItemName(STARSTONE);
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.equalsIgnoreCase("summon")) {
 			if (dockedShip != null) {
 				if (dockedShip.isOwner(player)) {
@@ -118,7 +118,8 @@ public abstract class AirShipController extends Quest {
 			}
 
 			isBusy = true;
-			final L2AirShipInstance ship = AirShipManager.getInstance().getNewAirShip(shipSpawnX, shipSpawnY, shipSpawnZ, shipHeading, ownerId);
+			final AirShipInstance
+					ship = AirShipManager.getInstance().getNewAirShip(shipSpawnX, shipSpawnY, shipSpawnZ, shipHeading, ownerId);
 			if (ship != null) {
 				if (arrivalPath != null) {
 					ship.executePath(arrivalPath);
@@ -209,7 +210,7 @@ public abstract class AirShipController extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		if (player.getQuestState(getName()) == null) {
 			newQuestState(player);
 		}
@@ -218,17 +219,17 @@ public abstract class AirShipController extends Quest {
 	}
 
 	@Override
-	public String onEnterZone(L2Character character, L2ZoneType zone) {
-		if (character instanceof L2ControllableAirShipInstance) {
+	public String onEnterZone(Creature character, ZoneType zone) {
+		if (character instanceof ControllableAirShipInstance) {
 			if (dockedShip == null) {
-				dockedShip = (L2ControllableAirShipInstance) character;
+				dockedShip = (ControllableAirShipInstance) character;
 				dockedShip.setInDock(dockZone);
 				dockedShip.setOustLoc(oustLoc);
 
 				// Ship is not empty - display movie to passengers and dock
 				if (!dockedShip.isEmpty()) {
 					if (movieId != 0) {
-						for (L2PcInstance passenger : dockedShip.getPassengers()) {
+						for (Player passenger : dockedShip.getPassengers()) {
 							if (passenger != null) {
 								passenger.showQuestMovie(movieId);
 							}
@@ -245,8 +246,8 @@ public abstract class AirShipController extends Quest {
 	}
 
 	@Override
-	public String onExitZone(L2Character character, L2ZoneType zone) {
-		if (character instanceof L2ControllableAirShipInstance) {
+	public String onExitZone(Creature character, ZoneType zone) {
+		if (character instanceof ControllableAirShipInstance) {
 			if (character.equals(dockedShip)) {
 				if (departSchedule != null) {
 					departSchedule.cancel(false);
@@ -262,9 +263,9 @@ public abstract class AirShipController extends Quest {
 	}
 
 	protected void validityCheck() {
-		L2ScriptZone zone = ZoneManager.getInstance().getZoneById(dockZone, L2ScriptZone.class);
+		ScriptZone zone = ZoneManager.getInstance().getZoneById(dockZone, ScriptZone.class);
 		if (zone == null) {
-			log.log(Level.WARNING, getName() + ": Invalid zone " + dockZone + ", controller disabled");
+			log.warn(getName() + ": Invalid zone " + dockZone + ", controller disabled");
 			isBusy = true;
 			return;
 		}
@@ -272,19 +273,19 @@ public abstract class AirShipController extends Quest {
 		VehiclePathPoint p;
 		if (arrivalPath != null) {
 			if (arrivalPath.length == 0) {
-				log.log(Level.WARNING, getName() + ": Zero arrival path length.");
+				log.warn(getName() + ": Zero arrival path length.");
 				arrivalPath = null;
 			} else {
 				p = arrivalPath[arrivalPath.length - 1];
 				if (!zone.isInsideZone(p.x, p.y, p.z)) {
-					log.log(Level.WARNING, getName() + ": Arrival path finish point (" + p.x + "," + p.y + "," + p.z + ") not in zone " + dockZone);
+					log.warn(getName() + ": Arrival path finish point (" + p.x + "," + p.y + "," + p.z + ") not in zone " + dockZone);
 					arrivalPath = null;
 				}
 			}
 		}
 		if (arrivalPath == null) {
-			if (!ZoneManager.getInstance().getZoneById(dockZone, L2ScriptZone.class).isInsideZone(shipSpawnX, shipSpawnY, shipSpawnZ)) {
-				log.log(Level.WARNING, getName() + ": Arrival path is null and spawn point not in zone " + dockZone + ", controller disabled");
+			if (!ZoneManager.getInstance().getZoneById(dockZone, ScriptZone.class).isInsideZone(shipSpawnX, shipSpawnY, shipSpawnZ)) {
+				log.warn(getName() + ": Arrival path is null and spawn point not in zone " + dockZone + ", controller disabled");
 				isBusy = true;
 				return;
 			}
@@ -292,12 +293,12 @@ public abstract class AirShipController extends Quest {
 
 		if (departPath != null) {
 			if (departPath.length == 0) {
-				log.log(Level.WARNING, getName() + ": Zero depart path length.");
+				log.warn(getName() + ": Zero depart path length.");
 				departPath = null;
 			} else {
 				p = departPath[departPath.length - 1];
 				if (zone.isInsideZone(p.x, p.y, p.z)) {
-					log.log(Level.WARNING, getName() + ": Departure path finish point (" + p.x + "," + p.y + "," + p.z + ") in zone " + dockZone);
+					log.warn(getName() + ": Departure path finish point (" + p.x + "," + p.y + "," + p.z + ") in zone " + dockZone);
 					departPath = null;
 				}
 			}
@@ -305,10 +306,10 @@ public abstract class AirShipController extends Quest {
 
 		if (teleportsTable != null) {
 			if (fuelTable == null) {
-				log.log(Level.WARNING, getName() + ": Fuel consumption not defined.");
+				log.warn(getName() + ": Fuel consumption not defined.");
 			} else {
 				if (teleportsTable.length != fuelTable.length) {
-					log.log(Level.WARNING, getName() + ": Fuel consumption not match teleport list.");
+					log.warn(getName() + ": Fuel consumption not match teleport list.");
 				} else {
 					AirShipManager.getInstance().registerAirShipTeleportList(dockZone, locationId, teleportsTable, fuelTable);
 				}

@@ -21,9 +21,9 @@ package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.Elementals;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
@@ -39,7 +39,7 @@ public class AdminElement implements IAdminCommandHandler {
 			{"admin_setlh", "admin_setlc", "admin_setll", "admin_setlg", "admin_setlb", "admin_setlw", "admin_setls"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		int armorType = -1;
 
 		if (command.startsWith("admin_setlh")) {
@@ -84,24 +84,24 @@ public class AdminElement implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	private void setElement(L2PcInstance activeChar, byte type, int value, int armorType) {
+	private void setElement(Player activeChar, byte type, int value, int armorType) {
 		// get the target
-		L2Object target = activeChar.getTarget();
+		WorldObject target = activeChar.getTarget();
 		if (target == null) {
 			target = activeChar;
 		}
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance) {
-			player = (L2PcInstance) target;
+		Player player = null;
+		if (target instanceof Player) {
+			player = (Player) target;
 		} else {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return;
 		}
 
-		L2ItemInstance itemInstance = null;
+		Item itemInstance = null;
 
 		// only attempt to enchant if there is a weapon equipped
-		L2ItemInstance parmorInstance = player.getInventory().getPaperdollItem(armorType);
+		Item parmorInstance = player.getInventory().getPaperdollItem(armorType);
 		if (parmorInstance != null && parmorInstance.getLocationSlot() == armorType) {
 			itemInstance = parmorInstance;
 		}

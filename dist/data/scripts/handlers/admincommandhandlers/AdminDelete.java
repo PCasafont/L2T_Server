@@ -17,10 +17,10 @@ package handlers.admincommandhandlers;
 
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * This class handles following admin commands: - delete = deletes target
@@ -31,7 +31,7 @@ public class AdminDelete implements IAdminCommandHandler {
 	private static final String[] ADMIN_COMMANDS = {"admin_delete"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.equals("admin_delete")) {
 			handleDelete(activeChar);
 		}
@@ -43,10 +43,10 @@ public class AdminDelete implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	private void handleDelete(L2PcInstance activeChar) {
-		L2Object obj = activeChar.getTarget();
-		if (obj instanceof L2Npc) {
-			L2Npc target = (L2Npc) obj;
+	private void handleDelete(Player activeChar) {
+		WorldObject obj = activeChar.getTarget();
+		if (obj instanceof Npc) {
+			Npc target = (Npc) obj;
 			target.deleteMe();
 
 			L2Spawn spawn = target.getSpawn();

@@ -15,17 +15,17 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 
 /**
  * @author Maktakien
  */
 public class VehicleCheckLocation extends L2GameServerPacket {
-	private L2Character boat;
+	private Creature boat;
 	
 	/**
 	 */
-	public VehicleCheckLocation(L2Character boat) {
+	public VehicleCheckLocation(Creature boat) {
 		this.boat = boat;
 	}
 	

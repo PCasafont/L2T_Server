@@ -6,11 +6,11 @@ import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2ArmyMonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.ArmyMonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 
@@ -62,7 +62,7 @@ public class MonsterInvasion {
 		Announcements.getInstance().announceToAll("A monster army is trying to invade " + eventTownName + "!");
 		Announcements.getInstance().announceToAll("No monster can survive! Charge!");
 
-		int nMobs = L2World.getInstance().getAllPlayersCount() / 5;
+		int nMobs = World.getInstance().getAllPlayersCount() / 5;
 		int rows = (int) Math.round(Math.sqrt(nMobs) / 1.6);
 		int columns = (int) Math.round(Math.sqrt(nMobs) / 1.6 * 2.5);
 		nMobs = rows * columns;
@@ -133,7 +133,7 @@ public class MonsterInvasion {
 		int interY = despY / rows;
 
 		try {
-			L2NpcTemplate[] tmpls = new L2NpcTemplate[5];
+			NpcTemplate[] tmpls = new NpcTemplate[5];
 			int race = Rnd.get(8) + 1;
 			int types = 2;
 			switch (race) {
@@ -214,16 +214,16 @@ public class MonsterInvasion {
 		}
 
 		try {
-			L2ArmyMonsterInstance mob;
+			ArmyMonsterInstance mob;
 
-			mob = (L2ArmyMonsterInstance) armyCommanderSpawn.getNpc();
+			mob = (ArmyMonsterInstance) armyCommanderSpawn.getNpc();
 			if (heading == 0 || heading == 32768) {
 				mob.move(cDespY, x, cDespZ);
 			} else {
 				mob.move(x, cDespY, cDespZ);
 			}
 			for (int i = 0; i < nMobs; i++) {
-				mob = (L2ArmyMonsterInstance) armySpawns[i].getNpc();
+				mob = (ArmyMonsterInstance) armySpawns[i].getNpc();
 				if (heading == 0) {
 					mob.move(cDespY, (int) Math.round(x + 20 * (i % 2 - 0.5)), cDespZ);
 				} else if (heading == 16384) {
@@ -235,7 +235,7 @@ public class MonsterInvasion {
 				}
 			}
 
-			mob = (L2ArmyMonsterInstance) armyCommanderSpawn.getNpc();
+			mob = (ArmyMonsterInstance) armyCommanderSpawn.getNpc();
 			if (heading == 0 || heading == 32768) {
 				mob.move(fDespY + 100, x, fDespZ);
 			} else if (heading == 16384) {
@@ -246,7 +246,7 @@ public class MonsterInvasion {
 				mob.move(x, fDespY - 100, fDespZ);
 			}
 			for (int i = 0; i < nMobs; i++) {
-				mob = (L2ArmyMonsterInstance) armySpawns[i].getNpc();
+				mob = (ArmyMonsterInstance) armySpawns[i].getNpc();
 				if (heading == 0) {
 					mob.move(fDespY - (i - i % columns) / columns * interY, x - columns * interX / 2 + i % columns * interX, fDespZ);
 				} else if (heading == 16384) {
@@ -290,7 +290,7 @@ public class MonsterInvasion {
 				}
 			}
 			if (armyCommanderSpawn != null && armyCommanderSpawn.getNpc() != null) {
-				L2ArmyMonsterInstance commander = (L2ArmyMonsterInstance) armyCommanderSpawn.getNpc();
+				ArmyMonsterInstance commander = (ArmyMonsterInstance) armyCommanderSpawn.getNpc();
 				commander.setIsInvul(false);
 				commander.shout("ATTACK!");
 			}
@@ -338,7 +338,7 @@ public class MonsterInvasion {
 		return task;
 	}
 
-	public void showInfo(L2PcInstance activeChar) {
+	public void showInfo(Player activeChar) {
 		Calendar now = Calendar.getInstance();
 		Calendar startTime = Calendar.getInstance();
 		startTime.setTimeInMillis(task.getStartTime());

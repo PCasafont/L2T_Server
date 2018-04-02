@@ -27,9 +27,9 @@ package l2server.gameserver.model.waypoint;
 
 import l2server.Config;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.util.Point3D;
 
@@ -41,7 +41,7 @@ import java.util.*;
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
  */
 
-public class WayPointNode extends L2Object {
+public class WayPointNode extends WorldObject {
 	private int id;
 	private String title, type;
 	private static final String NORMAL = "Node", SELECTED = "Selected", LINKED = "Linked";
@@ -58,10 +58,10 @@ public class WayPointNode extends L2Object {
 	}
 
 	/* (non-Javadoc)
-	 * @see l2server.gameserver.model.L2Object#isAutoAttackable(l2server.gameserver.model.L2Character)
+	 * @see l2server.gameserver.model.WorldObject#isAutoAttackable(l2server.gameserver.model.Creature)
 	 */
 	@Override
-	public boolean isAutoAttackable(L2Character attacker) {
+	public boolean isAutoAttackable(Creature attacker) {
 		return false;
 	}
 
@@ -72,7 +72,7 @@ public class WayPointNode extends L2Object {
 		return newNode;
 	}
 
-	public static WayPointNode spawn(boolean isItemId, int id, L2PcInstance player) {
+	public static WayPointNode spawn(boolean isItemId, int id, Player player) {
 		return spawn(isItemId ? "item" : "npc", id, player.getX(), player.getY(), player.getZ());
 	}
 
@@ -84,12 +84,12 @@ public class WayPointNode extends L2Object {
 		return spawn(Config.NEW_NODE_TYPE, Config.NEW_NODE_ID, point.getX(), point.getY(), point.getZ());
 	}
 
-	public static WayPointNode spawn(L2PcInstance player) {
+	public static WayPointNode spawn(Player player) {
 		return spawn(Config.NEW_NODE_TYPE, Config.NEW_NODE_ID, player.getX(), player.getY(), player.getZ());
 	}
 
 	@Override
-	public void onAction(L2PcInstance player, boolean interact) {
+	public void onAction(Player player, boolean interact) {
 		if (player.getTarget() != this) {
 			player.setTarget(this);
 			MyTargetSelected my = new MyTargetSelected(getObjectId(), 0);

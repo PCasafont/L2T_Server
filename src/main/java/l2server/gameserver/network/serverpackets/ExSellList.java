@@ -16,10 +16,10 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2TradeList;
 import l2server.gameserver.model.L2TradeList.L2TradeItem;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,11 +30,11 @@ import java.util.List;
 public class ExSellList extends L2ItemListPacket {
 
 	private List<L2TradeItem> buyList = new ArrayList<>();
-	private L2ItemInstance[] sellList = null;
-	private L2ItemInstance[] refundList = null;
+	private Item[] sellList = null;
+	private Item[] refundList = null;
 	private boolean done;
 
-	public ExSellList(L2PcInstance player, L2TradeList list, double taxRate, boolean done) {
+	public ExSellList(Player player, L2TradeList list, double taxRate, boolean done) {
 		for (L2TradeItem item : list.getItems()) {
 			if (item.hasLimitedStock() && item.getCurrentCount() <= 0) {
 				continue;
@@ -54,7 +54,7 @@ public class ExSellList extends L2ItemListPacket {
 
 		if (sellList != null && sellList.length > 0) {
 			writeH(sellList.length);
-			for (L2ItemInstance item : sellList) {
+			for (Item item : sellList) {
 				writeItem(item);
 
 				writeQ(item.getItem().getSalePrice());
@@ -66,7 +66,7 @@ public class ExSellList extends L2ItemListPacket {
 		if (refundList != null && refundList.length > 0) {
 			writeH(refundList.length);
 			int itemIndex = 0;
-			for (L2ItemInstance item : refundList) {
+			for (Item item : refundList) {
 				writeItem(item);
 
 				writeD(itemIndex++); // Index

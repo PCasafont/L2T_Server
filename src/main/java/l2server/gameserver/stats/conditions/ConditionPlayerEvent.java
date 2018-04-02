@@ -15,7 +15,7 @@
 
 package l2server.gameserver.stats.conditions;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
 
 public class ConditionPlayerEvent extends Condition {
@@ -27,7 +27,7 @@ public class ConditionPlayerEvent extends Condition {
 
 	@Override
 	public boolean testImpl(Env env) {
-		final L2PcInstance player = env.player.getActingPlayer();
+		final Player player = env.player.getActingPlayer();
 		if (player == null || !player.isPlayingEvent()) {
 			return !val;
 		}

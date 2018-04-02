@@ -6,12 +6,13 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.events.instanced.EventInstance.EventState;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,6 +24,9 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author Pere
  */
 public class EventsMatchMaker {
+	private static Logger log = LoggerFactory.getLogger(EventsMatchMaker.class.getName());
+
+
 	public static EventsMatchMaker instance = null;
 
 	private MatchMakingTask pvpTask;
@@ -43,9 +47,9 @@ public class EventsMatchMaker {
 			specialTask = new MatchMakingTask(false);
 			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(pvpTask, 60000L, 10000L);
 			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(specialTask, 60000L, 10000L);
-			Log.info("Instanced Events scheduled.");
+			log.info("Instanced Events scheduled.");
 		} else {
-			Log.info("Instanced Events are disabled.");
+			log.info("Instanced Events are disabled.");
 		}
 	}
 
@@ -60,7 +64,7 @@ public class EventsMatchMaker {
 	class MatchMakingTask implements Runnable {
 		private boolean pvp = true;
 		private EventConfig currentConfig = null;
-		private Map<Integer, L2PcInstance> registeredPlayers = new HashMap<>();
+		private Map<Integer, Player> registeredPlayers = new HashMap<>();
 		private int prepareAttempts = 0;
 		private int fillProgress = 0;
 
@@ -100,7 +104,7 @@ public class EventsMatchMaker {
 			return currentConfig;
 		}
 
-		public Map<Integer, L2PcInstance> getRegisteredPlayers() {
+		public Map<Integer, Player> getRegisteredPlayers() {
 			return registeredPlayers;
 		}
 
@@ -116,7 +120,7 @@ public class EventsMatchMaker {
 			// First sort the registered players
 			int[][] sorted = new int[registeredPlayers.size()][2];
 			int i = 0;
-			for (L2PcInstance player : registeredPlayers.values()) {
+			for (Player player : registeredPlayers.values()) {
 				if (player == null || OlympiadManager.getInstance().isRegisteredInComp(player) || player.isInOlympiadMode() ||
 						player.isOlympiadStart() || player.isFlyingMounted() || player.inObserverMode()) {
 					continue;
@@ -220,11 +224,11 @@ public class EventsMatchMaker {
 		}
 	}
 
-	public void onLogin(L2PcInstance playerInstance) {
+	public void onLogin(Player playerInstance) {
 		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId())) {
 			removeParticipant(playerInstance.getObjectId());
 			if (playerInstance.getEvent() != null) {
-				for (L2Abnormal effect : playerInstance.getAllEffects()) {
+				for (Abnormal effect : playerInstance.getAllEffects()) {
 					if (effect != null) {
 						effect.exit();
 					}
@@ -235,10 +239,10 @@ public class EventsMatchMaker {
 		}
 	}
 
-	public void onLogout(L2PcInstance playerInstance) {
+	public void onLogout(Player playerInstance) {
 		if (playerInstance != null && isPlayerParticipant(playerInstance.getObjectId())) {
 			if (playerInstance.getEvent() != null) {
-				for (L2Abnormal effect : playerInstance.getAllEffects()) {
+				for (Abnormal effect : playerInstance.getAllEffects()) {
 					if (effect != null) {
 						effect.exit();
 					}
@@ -251,7 +255,7 @@ public class EventsMatchMaker {
 		}
 	}
 
-	public void join(L2PcInstance playerInstance, boolean pvp) {
+	public void join(Player playerInstance, boolean pvp) {
 		if (isPlayerParticipant(playerInstance.getObjectId())) {
 			return;
 		}
@@ -291,7 +295,7 @@ public class EventsMatchMaker {
 		playerInstance.sendPacket(npcHtmlMessage);
 	}
 
-	public synchronized boolean addParticipant(L2PcInstance playerInstance, boolean pvp) {
+	public synchronized boolean addParticipant(Player playerInstance, boolean pvp) {
 		// Check for nullpoitner
 		if (playerInstance == null) {
 			return false;
@@ -306,7 +310,7 @@ public class EventsMatchMaker {
 		return true;
 	}
 
-	public void leave(L2PcInstance playerInstance) {
+	public void leave(Player playerInstance) {
 		if (!isPlayerParticipant(playerInstance.getObjectId())) {
 			return;
 		}
@@ -334,7 +338,7 @@ public class EventsMatchMaker {
 		return false;
 	}
 
-	public String getEventInfoPage(L2PcInstance player) {
+	public String getEventInfoPage(Player player) {
 		if (!player.getFloodProtectors().getEventBypass().tryPerformAction("Event Info")) {
 			return "";
 		}
@@ -440,14 +444,14 @@ public class EventsMatchMaker {
 		return a;
 	}
 
-	private String getPvPEventRegistredPlayers(L2PcInstance player) {
+	private String getPvPEventRegistredPlayers(Player player) {
 		String a = "";
 
 		if (pvpTask.getRegisteredPlayers().isEmpty()) {
 			return a;
 		}
 
-		for (L2PcInstance participant : pvpTask.getRegisteredPlayers().values()) {
+		for (Player participant : pvpTask.getRegisteredPlayers().values()) {
 			if (participant == null) {
 				continue;
 			}
@@ -462,14 +466,14 @@ public class EventsMatchMaker {
 		return a;
 	}
 
-	private String getSpecialEventRegistredPlayers(L2PcInstance player) {
+	private String getSpecialEventRegistredPlayers(Player player) {
 		String a = "";
 
 		if (specialTask.getRegisteredPlayers().isEmpty()) {
 			return a;
 		}
 
-		for (L2PcInstance participant : specialTask.getRegisteredPlayers().values()) {
+		for (Player participant : specialTask.getRegisteredPlayers().values()) {
 			if (participant == null) {
 				continue;
 			}
@@ -484,7 +488,7 @@ public class EventsMatchMaker {
 		return a;
 	}
 
-	public String getPlayerString(L2PcInstance player, L2PcInstance reader) {
+	public String getPlayerString(Player player, Player reader) {
 		String color = "FFFFFF";
 		if (player == reader) {
 			color = "FFFF00";
@@ -561,20 +565,20 @@ public class EventsMatchMaker {
 
 	public EventInstance createInstance(int id, int[] group, EventConfig config) {
 		// A map of lists to access the players sorted by class
-		Map<Integer, List<L2PcInstance>> playersByClass = new HashMap<>();
+		Map<Integer, List<Player>> playersByClass = new HashMap<>();
 		// Classify the players according to their class
 		for (int playerId : group) {
 			if (playerId == 0) {
 				continue;
 			}
 
-			L2PcInstance player = L2World.getInstance().getPlayer(playerId);
+			Player player = World.getInstance().getPlayer(playerId);
 			int classId = player.getCurrentClass().getAwakeningClassId();
 			if (classId == -1) {
 				classId = 147;
 			}
 
-			List<L2PcInstance> players = playersByClass.get(classId);
+			List<Player> players = playersByClass.get(classId);
 			if (players == null) {
 				players = new ArrayList<>();
 				playersByClass.put(classId, players);
@@ -591,12 +595,12 @@ public class EventsMatchMaker {
 		// Create the event and fill it with the players, in class order
 		EventInstance event = config.createInstance(id);
 		for (int classId = 139; classId <= 147; classId++) {
-			List<L2PcInstance> players = playersByClass.get(classId);
+			List<Player> players = playersByClass.get(classId);
 			if (players == null) {
 				continue;
 			}
 
-			for (L2PcInstance player : players) {
+			for (Player player : players) {
 				event.addParticipant(player);
 			}
 		}
@@ -604,12 +608,12 @@ public class EventsMatchMaker {
 		return event;
 	}
 
-	private boolean checkDualBox(L2PcInstance player) {
+	private boolean checkDualBox(Player player) {
 		if (player == null) {
 			return false;
 		}
 
-		for (L2PcInstance registered : pvpTask.getRegisteredPlayers().values()) {
+		for (Player registered : pvpTask.getRegisteredPlayers().values()) {
 			if (registered == null) {
 				continue;
 			}
@@ -620,7 +624,7 @@ public class EventsMatchMaker {
 			}
 		}
 
-		for (L2PcInstance registered : specialTask.getRegisteredPlayers().values()) {
+		for (Player registered : specialTask.getRegisteredPlayers().values()) {
 			if (registered == null) {
 				continue;
 			}
@@ -635,7 +639,7 @@ public class EventsMatchMaker {
 
 		//TODO LasTravel: Hwid check don't work if we don't have LG
 		/*String hwId = player.getClient().getHWId();
-        for (L2PcInstance registered : registeredPlayers.values())
+        for (Player registered : registeredPlayers.values())
 		{
 			if (registered.getClient() != null
 					&& registered.getClient().getHWId() != null
@@ -649,7 +653,7 @@ public class EventsMatchMaker {
 	 * @param activeChar
 	 * @param command
 	 */
-	public void handleEventBypass(L2PcInstance activeChar, String command) {
+	public void handleEventBypass(Player activeChar, String command) {
 		if (activeChar == null) {
 			return;
 		}

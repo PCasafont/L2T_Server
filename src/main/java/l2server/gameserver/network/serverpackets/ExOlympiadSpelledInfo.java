@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +43,7 @@ public class ExOlympiadSpelledInfo extends L2GameServerPacket {
 		}
 	}
 	
-	public ExOlympiadSpelledInfo(L2PcInstance player) {
+	public ExOlympiadSpelledInfo(Player player) {
 		effects = new ArrayList<>();
 		playerID = player.getObjectId();
 	}

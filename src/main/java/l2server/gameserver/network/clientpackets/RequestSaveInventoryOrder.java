@@ -15,9 +15,9 @@
 
 package l2server.gameserver.network.clientpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2ItemInstance.ItemLocation;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.Item.ItemLocation;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
 
 import java.util.ArrayList;
@@ -55,11 +55,11 @@ public final class RequestSaveInventoryOrder extends L2GameClientPacket {
 	 */
 	@Override
 	protected void runImpl() {
-		L2PcInstance player = getClient().getActiveChar();
+		Player player = getClient().getActiveChar();
 		if (player != null) {
 			Inventory inventory = player.getInventory();
 			for (InventoryOrder order : order) {
-				L2ItemInstance item = inventory.getItemByObjectId(order.objectID);
+				Item item = inventory.getItemByObjectId(order.objectID);
 				if (item != null && item.getLocation() == ItemLocation.INVENTORY) {
 					item.setLocation(ItemLocation.INVENTORY, order.order);
 				}

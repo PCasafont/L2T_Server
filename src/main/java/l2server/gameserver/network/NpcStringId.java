@@ -15,14 +15,15 @@
 
 package l2server.gameserver.network;
 
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.logging.Level;
 
 /**
  * NpcStringId implementation, based on
@@ -31,6 +32,7 @@ import java.util.logging.Level;
  * @author mrTJO
  */
 public final class NpcStringId {
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
 	
 	private static final NSLocalisation[] EMPTY_NSL_ARRAY = new NSLocalisation[0];
 	public static final NpcStringId[] EMPTY_ARRAY = new NpcStringId[0];
@@ -25333,7 +25335,7 @@ public final class NpcStringId {
 					maxId = Math.max(maxId, nsId.getId());
 					nsIds.add(nsId);
 				} catch (final Exception e) {
-					Log.log(Level.WARNING, "NpcStringId: Failed field access for '" + field.getName() + "'", e);
+					log.warn("NpcStringId: Failed field access for '" + field.getName() + "'", e);
 				}
 			}
 		}
@@ -25455,8 +25457,6 @@ public final class NpcStringId {
 	
 	/**
 	 * You better don`t touch this!
-	 *
-	 * @param params
 	 */
 	public final void setParamCount(final int params) {
 		if (params < 0) {

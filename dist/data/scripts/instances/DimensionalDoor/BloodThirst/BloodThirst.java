@@ -8,13 +8,12 @@ import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2NpcBufferInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.NpcBufferInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.log.Log;
 
 /**
  * @author LasTravel
@@ -46,16 +45,16 @@ public class BloodThirst extends L2AttackableAIScript {
 	}
 
 	private class BloodThirstWorld extends InstanceWorld {
-		private L2Npc bloodThirst;
+		private Npc bloodThirst;
 
 		private BloodThirstWorld() {
 		}
 	}
 
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public final String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		InstanceWorld wrld = null;
@@ -64,7 +63,7 @@ public class BloodThirst extends L2AttackableAIScript {
 		} else if (player != null) {
 			wrld = InstanceManager.getInstance().getPlayerWorld(player);
 		} else {
-			Log.warning(getName() + ": onAdvEvent: Unable to get world.");
+			log.warn(getName() + ": onAdvEvent: Unable to get world.");
 			return null;
 		}
 
@@ -81,7 +80,7 @@ public class BloodThirst extends L2AttackableAIScript {
 						continue;
 					}
 
-					L2Npc iNpc = addSpawn(iSpawn.getNpcId(),
+					Npc iNpc = addSpawn(iSpawn.getNpcId(),
 							iSpawn.getX(),
 							iSpawn.getY(),
 							iSpawn.getZ(),
@@ -115,9 +114,9 @@ public class BloodThirst extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet) {
+	public String onKill(Npc npc, Player player, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -134,9 +133,9 @@ public class BloodThirst extends L2AttackableAIScript {
 	}
 
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player) {
+	public final String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 
 		if (npc.getNpcId() == DimensionalDoor.getNpcManagerId()) {
@@ -146,7 +145,7 @@ public class BloodThirst extends L2AttackableAIScript {
 		return super.onTalk(npc, player);
 	}
 
-	private final synchronized void enterInstance(L2PcInstance player) {
+	private final synchronized void enterInstance(Player player) {
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null) {
 			if (!(world instanceof BloodThirstWorld)) {
@@ -181,11 +180,11 @@ public class BloodThirst extends L2AttackableAIScript {
 			player.setInstanceId(instanceId);
 			player.teleToLocation(56164, -185809, -7944, true);
 
-			L2NpcBufferInstance.giveBasicBuffs(player);
+			NpcBufferInstance.giveBasicBuffs(player);
 
 			startQuestTimer("stage_1_start", 20000, null, player);
 
-			Log.fine(getName() + ":  instance started: " + instanceId + " created by player: " + player.getName());
+			log.debug(getName() + ":  instance started: " + instanceId + " created by player: " + player.getName());
 
 			return;
 		}

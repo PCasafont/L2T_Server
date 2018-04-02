@@ -16,9 +16,9 @@
 package handlers.itemhandlers;
 
 import l2server.gameserver.handler.IItemHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
@@ -30,12 +30,12 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public class TeleportBookmark implements IItemHandler {
 
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
-		if (playable == null || item == null || !(playable instanceof L2PcInstance)) {
+	public void useItem(Playable playable, Item item, boolean forceUse) {
+		if (playable == null || item == null || !(playable instanceof Player)) {
 			return;
 		}
 
-		L2PcInstance player = (L2PcInstance) playable;
+		Player player = (Player) playable;
 
 		if (player.getBookMarkSlot() >= 9) {
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_NUMBER_OF_MY_TELEPORTS_SLOTS_HAS_REACHED_ITS_MAXIMUM_LIMIT));

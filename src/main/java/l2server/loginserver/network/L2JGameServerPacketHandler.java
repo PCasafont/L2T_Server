@@ -15,19 +15,18 @@
 
 package l2server.loginserver.network;
 
-import l2server.log.Log;
 import l2server.loginserver.GameServerThread;
 import l2server.loginserver.network.gameserverpackets.*;
 import l2server.loginserver.network.loginserverpackets.LoginServerFail;
 import l2server.util.network.BaseRecievePacket;
-
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author mrTJO
  */
 public class L2JGameServerPacketHandler {
-	protected static Logger log = Logger.getLogger(L2JGameServerPacketHandler.class.getName());
+	private static Logger log = LoggerFactory.getLogger(L2JGameServerPacketHandler.class.getName());
 
 	public enum GameServerState {
 		CONNECTED,
@@ -46,7 +45,7 @@ public class L2JGameServerPacketHandler {
 						msg = new BlowFishKey(data, server);
 						break;
 					default:
-						Log.warning("Unknown Opcode (" + Integer.toHexString(opcode).toUpperCase() + ") in state " + state.name() +
+						log.warn("Unknown Opcode (" + Integer.toHexString(opcode).toUpperCase() + ") in state " + state.name() +
 								" from GameServer, closing connection.");
 						server.forceClose(LoginServerFail.NOT_AUTHED);
 						break;
@@ -58,7 +57,7 @@ public class L2JGameServerPacketHandler {
 						msg = new GameServerAuth(data, server);
 						break;
 					default:
-						Log.warning("Unknown Opcode (" + Integer.toHexString(opcode).toUpperCase() + ") in state " + state.name() +
+						log.warn("Unknown Opcode (" + Integer.toHexString(opcode).toUpperCase() + ") in state " + state.name() +
 								" from GameServer, closing connection.");
 						server.forceClose(LoginServerFail.NOT_AUTHED);
 						break;
@@ -91,7 +90,7 @@ public class L2JGameServerPacketHandler {
 						msg = new RequestTempBan(data);
 						break;
 					default:
-						Log.warning("Unknown Opcode (" + Integer.toHexString(opcode).toUpperCase() + ") in state " + state.name() +
+						log.warn("Unknown Opcode (" + Integer.toHexString(opcode).toUpperCase() + ") in state " + state.name() +
 								" from GameServer, closing connection.");
 						server.forceClose(LoginServerFail.NOT_AUTHED);
 						break;

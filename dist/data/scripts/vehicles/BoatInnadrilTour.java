@@ -15,23 +15,24 @@
 
 package vehicles;
 
+import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.BoatManager;
 import l2server.gameserver.model.VehiclePathPoint;
-import l2server.gameserver.model.actor.instance.L2BoatInstance;
+import l2server.gameserver.model.actor.instance.BoatInstance;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.PlaySound;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author DS
  */
 public class BoatInnadrilTour implements Runnable {
-	private static final Logger log = Logger.getLogger(BoatInnadrilTour.class.getName());
-
+	
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
 	// Time: 1867s
 	private static final VehiclePathPoint[] TOUR =
 			{new VehiclePathPoint(105129, 226240, -3610, 150, 800), new VehiclePathPoint(90604, 238797, -3610, 150, 800),
@@ -53,7 +54,7 @@ public class BoatInnadrilTour implements Runnable {
 
 	private static final VehiclePathPoint DOCK = TOUR[TOUR.length - 1];
 
-	private final L2BoatInstance boat;
+	private final BoatInstance boat;
 	private int cycle = 0;
 
 	private final CreatureSay ARRIVED_AT_INNADRIL;
@@ -70,7 +71,7 @@ public class BoatInnadrilTour implements Runnable {
 
 	private final PlaySound INNADRIL_SOUND;
 
-	public BoatInnadrilTour(L2BoatInstance boat) {
+	public BoatInnadrilTour(BoatInstance boat) {
 		this.boat = boat;
 
 		ARRIVED_AT_INNADRIL = new CreatureSay(0, Say2.BOAT, 801, 998);
@@ -139,12 +140,12 @@ public class BoatInnadrilTour implements Runnable {
 				cycle = 0;
 			}
 		} catch (Exception e) {
-			log.log(Level.WARNING, e.getMessage());
+			log.warn(e.getMessage());
 		}
 	}
 
 	public static void main(String[] args) {
-		final L2BoatInstance boat = BoatManager.INSTANCE.getNewBoat(4, 111264, 226240, -3610, 32768);
+		final BoatInstance boat = BoatManager.INSTANCE.getNewBoat(4, 111264, 226240, -3610, 32768);
 		if (boat != null) {
 			boat.registerEngine(new BoatInnadrilTour(boat));
 			boat.runEngine(180000);

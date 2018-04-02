@@ -1,8 +1,8 @@
 package events.HeavyMedal;
 
 import l2server.gameserver.instancemanager.QuestManager;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.util.Rnd;
@@ -63,7 +63,7 @@ public class HeavyMedal extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		String htmltext = "";
 		QuestState st = player.getQuestState(getName());
 		htmltext = event;
@@ -101,7 +101,7 @@ public class HeavyMedal extends Quest {
 	}
 
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player) {
+	public String onFirstTalk(Npc npc, Player player) {
 		QuestState st = player.getQuestState(getName());
 		if (st == null) {
 			Quest q = QuestManager.getInstance().getQuest(getName());

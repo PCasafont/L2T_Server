@@ -15,7 +15,7 @@
 
 package l2server.gameserver.instancemanager;
 
-import l2server.gameserver.model.actor.instance.L2RaidBossInstance;
+import l2server.gameserver.model.actor.instance.RaidBossInstance;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,26 +24,26 @@ import java.util.Map;
  * @author Pere
  */
 public class BossManager {
-	private static Map<Integer, L2RaidBossInstance> bosses = new HashMap<>();
+	private static Map<Integer, RaidBossInstance> bosses = new HashMap<>();
 
 	public static BossManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
-	public void registerBoss(L2RaidBossInstance boss) {
+	public void registerBoss(RaidBossInstance boss) {
 		bosses.put(boss.getNpcId(), boss);
 	}
 
-	public Map<Integer, L2RaidBossInstance> getBosses() {
+	public Map<Integer, RaidBossInstance> getBosses() {
 		return bosses;
 	}
 
-	public L2RaidBossInstance getBoss(int id) {
+	public RaidBossInstance getBoss(int id) {
 		return bosses.get(id);
 	}
 
 	public boolean isAlive(int id) {
-		L2RaidBossInstance boss = bosses.get(id);
+		RaidBossInstance boss = bosses.get(id);
 		return boss != null && !boss.isDead();
 	}
 

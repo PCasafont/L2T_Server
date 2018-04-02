@@ -17,9 +17,9 @@ package handlers.admincommandhandlers;
 
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.item.L2Item;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.item.ItemTemplate;
 
 import java.util.Collection;
 import java.util.StringTokenizer;
@@ -36,7 +36,7 @@ public class AdminCreateItem implements IAdminCommandHandler {
 			{"admin_itemcreate", "admin_create_item", "admin_create_coin", "admin_give_item_target", "admin_give_item_to_all"};
 
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		if (command.equals("admin_itemcreate")) {
 			AdminHelpPage.showHelpPage(activeChar, "itemcreation.htm");
 		} else if (command.startsWith("admin_create_item")) {
@@ -85,9 +85,9 @@ public class AdminCreateItem implements IAdminCommandHandler {
 			AdminHelpPage.showHelpPage(activeChar, "itemcreation.htm");
 		} else if (command.startsWith("admin_give_item_target")) {
 			try {
-				L2PcInstance target;
-				if (activeChar.getTarget() instanceof L2PcInstance) {
-					target = (L2PcInstance) activeChar.getTarget();
+				Player target;
+				if (activeChar.getTarget() instanceof Player) {
+					target = (Player) activeChar.getTarget();
 				} else {
 					activeChar.sendMessage("Invalid target.");
 					return false;
@@ -128,7 +128,7 @@ public class AdminCreateItem implements IAdminCommandHandler {
 				numval = 1;
 			}
 			int counter = 0;
-			L2Item template = ItemTable.getInstance().getTemplate(idval);
+			ItemTemplate template = ItemTable.getInstance().getTemplate(idval);
 			if (template == null) {
 				activeChar.sendMessage("This item doesn't exist.");
 				return false;
@@ -137,9 +137,9 @@ public class AdminCreateItem implements IAdminCommandHandler {
 				activeChar.sendMessage("This item does not stack - Creation aborted.");
 				return false;
 			}
-			Collection<L2PcInstance> pls = L2World.getInstance().getAllPlayers().values();
+			Collection<Player> pls = World.getInstance().getAllPlayers().values();
 			{
-				for (L2PcInstance onlinePlayer : pls) {
+				for (Player onlinePlayer : pls) {
 					if (onlinePlayer != null && activeChar != onlinePlayer && onlinePlayer.isOnline() && onlinePlayer.getClient() != null &&
 							!onlinePlayer.getClient().isDetached()) {
 						onlinePlayer.getInventory().addItem("Admin", idval, numval, onlinePlayer, activeChar);
@@ -158,8 +158,8 @@ public class AdminCreateItem implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	private void createItem(L2PcInstance activeChar, L2PcInstance target, int id, long num) {
-		L2Item template = ItemTable.getInstance().getTemplate(id);
+	private void createItem(Player activeChar, Player target, int id, long num) {
+		ItemTemplate template = ItemTable.getInstance().getTemplate(id);
 		if (template == null) {
 			activeChar.sendMessage("This item doesn't exist.");
 			return;

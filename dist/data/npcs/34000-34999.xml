@@ -1,5 +1,5 @@
 <list>
-	<npc id="34000" name="Ferin" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="34000" name="Ferin" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391"
 		 pCritRate="40"
@@ -7,7 +7,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34001" name="Ferin" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="34001" name="Ferin" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391"
 		 pCritRate="40"
@@ -15,7 +15,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34002" name="Dolkin" title="Maestro" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+	<npc id="34002" name="Dolkin" title="Maestro" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298"
 		 mAtkSpd="391"
@@ -23,7 +23,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34003" name="Victri" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="34003" name="Victri" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391"
 		 pCritRate="40"
@@ -31,7 +31,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34004" name="Sayha's Herald" title="Victorious" level="120" type="L2Npc" atkRange="40" hpMax="2"
+	<npc id="34004" name="Sayha's Herald" title="Victorious" level="120" type="Npc" atkRange="40" hpMax="2"
 		 hpReg="0.0" mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2"
 		 pAtkSpd="298"
@@ -39,7 +39,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34005" name="Dia" level="99" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="34005" name="Dia" level="99" type="Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80" CON="86"
 		 DEX="60" INT="42" WIT="40" MEN="40" pAtk="2" mAtk="2" pDef="3" mDef="2" pAtkSpd="298" mAtkSpd="391"
 		 pCritRate="40" mCritRate="40"
@@ -48,7 +48,7 @@
 		 holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-79188" y="250227" z="-2976" heading="14600" respawn="60" randomRespawn="14600" />
 	</npc>
-	<npc id="34006" name="" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+	<npc id="34006" name="" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 		 CON="86"
 		 DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298" mAtkSpd="391"
 		 pCritRate="40" mCritRate="40"
@@ -57,7 +57,7 @@
 		 holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-79165" y="250223" z="-2976" heading="13964" respawn="60" randomRespawn="13964" />
 	</npc>
-	<npc id="34007" name="Nomi" title="Unlicensed Buff Manager" level="70" type="L2Npc" atkRange="40" hpMax="2"
+	<npc id="34007" name="Nomi" title="Unlicensed Buff Manager" level="70" type="Npc" atkRange="40" hpMax="2"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="2" mAtk="1" pDef="3" mDef="2"
 		 pAtkSpd="298"
@@ -65,7 +65,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34008" name="Noelle" title="Event Manager" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0"
+	<npc id="34008" name="Noelle" title="Event Manager" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2"
 		 pAtkSpd="298"
@@ -73,7 +73,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34009" name="Holiday Tree" title="Holiday Spirit" level="120" type="L2Npc" atkRange="40" hpMax="2"
+	<npc id="34009" name="Holiday Tree" title="Holiday Spirit" level="120" type="Npc" atkRange="40" hpMax="2"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2"
 		 pAtkSpd="298"
@@ -82,7 +82,7 @@
 		 showName="false" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter"
 		 canMove="false">
 	</npc>
-	<npc id="34010" name="Galup" title="High Horse" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0"
+	<npc id="34010" name="Galup" title="High Horse" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298"
 		 mAtkSpd="391"
@@ -90,7 +90,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34011" name="Dandy" title="Dreaming" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+	<npc id="34011" name="Dandy" title="Dreaming" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298"
 		 mAtkSpd="391"
@@ -98,7 +98,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34012" name="Dandy" title="Dreaming" level="120" type="L2Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
+	<npc id="34012" name="Dandy" title="Dreaming" level="120" type="Npc" atkRange="40" hpMax="2" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="3" mAtk="2" pDef="4" mDef="2" pAtkSpd="298"
 		 mAtkSpd="391"
@@ -106,7 +106,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34013" name="Infinite Chest" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34013" name="Infinite Chest" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -114,7 +114,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34014" name="Harp Zu Hestui" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34014" name="Harp Zu Hestui" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -122,7 +122,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34015" name="Bora" title="GM Helper" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34015" name="Bora" title="GM Helper" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -130,7 +130,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34016" name="Goldeen" title="Event Manager" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34016" name="Goldeen" title="Event Manager" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -138,7 +138,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34017" name="Yuna" title="Maphr's Agent" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34017" name="Yuna" title="Maphr's Agent" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -146,7 +146,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34018" name="Merlot" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="34018" name="Merlot" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40"
@@ -154,7 +154,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34019" name="Merlot" title="Dimensional Guide" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34019" name="Merlot" title="Dimensional Guide" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -162,7 +162,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34020" name="Coni" title="Troupe Leader" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34020" name="Coni" title="Troupe Leader" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -170,7 +170,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34021" name="Airi" title="Happy Bride" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34021" name="Airi" title="Happy Bride" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -178,7 +178,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34022" name="Taeyo" title="Happy Groom" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34022" name="Taeyo" title="Happy Groom" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -186,7 +186,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34023" name="Jan" title="Beer Artisan" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34023" name="Jan" title="Beer Artisan" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -194,7 +194,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34024" name="Gibbs" title="Nostra" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34024" name="Gibbs" title="Nostra" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -202,7 +202,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34025" name="Kabaleon" title="Talkative" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34025" name="Kabaleon" title="Talkative" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -210,7 +210,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34026" name="Transformer" title="Transformation Expert" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="34026" name="Transformer" title="Transformation Expert" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -218,7 +218,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34027" name="Kableon" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="34027" name="Kableon" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40"
@@ -226,7 +226,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34028" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+	<npc id="34028" name="" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 		 CON="86"
 		 DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40" mCritRate="40"
@@ -234,7 +234,7 @@
 		 earthRes="0"
 		 holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34029" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+	<npc id="34029" name="" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 		 CON="86"
 		 DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40" mCritRate="40"
@@ -242,7 +242,7 @@
 		 earthRes="0"
 		 holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34030" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+	<npc id="34030" name="" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 		 CON="86"
 		 DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40" mCritRate="40"
@@ -250,7 +250,7 @@
 		 earthRes="0"
 		 holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34031" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+	<npc id="34031" name="" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 		 CON="86"
 		 DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40" mCritRate="40"
@@ -258,7 +258,7 @@
 		 earthRes="0"
 		 holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34032" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+	<npc id="34032" name="" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 		 CON="86"
 		 DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40" mCritRate="40"
@@ -266,7 +266,7 @@
 		 earthRes="0"
 		 holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34033" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+	<npc id="34033" name="" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 		 CON="86"
 		 DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40" mCritRate="40"
@@ -274,7 +274,7 @@
 		 earthRes="0"
 		 holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34034" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+	<npc id="34034" name="" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 		 CON="86"
 		 DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40" mCritRate="40"
@@ -282,7 +282,7 @@
 		 earthRes="0"
 		 holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34035" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+	<npc id="34035" name="" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 		 CON="86"
 		 DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40" mCritRate="40"
@@ -290,7 +290,7 @@
 		 earthRes="0"
 		 holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34036" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+	<npc id="34036" name="" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 		 CON="86"
 		 DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40" mCritRate="40"
@@ -298,7 +298,7 @@
 		 earthRes="0"
 		 holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34037" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+	<npc id="34037" name="" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 		 CON="86"
 		 DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40" mCritRate="40"
@@ -306,7 +306,7 @@
 		 earthRes="0"
 		 holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34038" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+	<npc id="34038" name="" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 		 CON="86"
 		 DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40" mCritRate="40"
@@ -314,7 +314,7 @@
 		 earthRes="0"
 		 holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34039" name="" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
+	<npc id="34039" name="" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0" STR="80"
 		 CON="86"
 		 DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40" mCritRate="40"
@@ -322,7 +322,7 @@
 		 earthRes="0"
 		 holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34040" name="Festi" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="34040" name="Festi" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40"
@@ -330,7 +330,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34041" name="Stival" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="34041" name="Stival" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40"
@@ -338,7 +338,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34042" name="Town of Aden Herald" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34042" name="Town of Aden Herald" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -346,7 +346,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34043" name="Town of Giran Herald" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34043" name="Town of Giran Herald" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -354,7 +354,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34044" name="Town of Goddard Herald" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34044" name="Town of Goddard Herald" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -362,7 +362,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34045" name="Town of Gludio Herald" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34045" name="Town of Gludio Herald" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -370,7 +370,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34046" name="Gludin Village Herald" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34046" name="Gludin Village Herald" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -378,7 +378,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34047" name="Town of Schuttgart Herald" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34047" name="Town of Schuttgart Herald" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -386,7 +386,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34048" name="Town of Oren Herald" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34048" name="Town of Oren Herald" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -394,7 +394,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34049" name="Gainak Herald" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34049" name="Gainak Herald" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -402,7 +402,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34050" name="Treasure Chest" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34050" name="Treasure Chest" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -410,7 +410,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34051" name="Kaysia" title="Shadai's Disciple" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34051" name="Kaysia" title="Shadai's Disciple" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -419,7 +419,7 @@
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="83224" y="55327" z="-1520" heading="26081" respawn="60" randomRespawn="14600" />
 	</npc>
-	<npc id="34052" name="Teleport Device" title="Atelia Castle" level="99" type="L2Npc" atkRange="40" hpMax="8090"
+	<npc id="34052" name="Teleport Device" title="Atelia Castle" level="99" type="Npc" atkRange="40" hpMax="8090"
 		 hpReg="11.66"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -428,7 +428,7 @@
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-55821" y="56164" z="-1872" heading="0" respawn="60" />
 	</npc>
-	<npc id="34053" name="Teleport Device" title="Atelia Fortress" level="120" type="L2Npc" atkRange="40" hpMax="8090"
+	<npc id="34053" name="Teleport Device" title="Atelia Fortress" level="120" type="Npc" atkRange="40" hpMax="8090"
 		 hpReg="11.66"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -436,7 +436,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34054" name="Ferin" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="34054" name="Ferin" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40"
@@ -444,7 +444,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34055" name="Cyphona" title="Master" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34055" name="Cyphona" title="Master" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -453,7 +453,7 @@
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-48004" y="69674" z="-3080" heading="39238" respawn="60" randomRespawn="39238" />
 	</npc>
-	<npc id="34056" name="Belas" title="Magister" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34056" name="Belas" title="Magister" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -461,7 +461,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34057" name="Elikia" title="Verdure Elder" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34057" name="Elikia" title="Verdure Elder" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -469,7 +469,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34058" name="Adolph" title="Aden Vanguard Captain" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="34058" name="Adolph" title="Aden Vanguard Captain" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -478,7 +478,7 @@
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-48629" y="69713" z="-3080" heading="62181" respawn="60" randomRespawn="62181" />
 	</npc>
-	<npc id="34059" name="Barton" title="Aden Vanguard" level="99" type="L2Npc" atkRange="40" hpMax="8090" hpReg="11.66"
+	<npc id="34059" name="Barton" title="Aden Vanguard" level="99" type="Npc" atkRange="40" hpMax="8090" hpReg="11.66"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -487,7 +487,7 @@
 		 fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-45675" y="59130" z="-2904" heading="54353" respawn="60" randomRespawn="54353" />
 	</npc>
-	<npc id="34060" name="Hayuk" title="Aden Vanguard" level="120" type="L2Npc" atkRange="40" hpMax="8090" hpReg="11.66"
+	<npc id="34060" name="Hayuk" title="Aden Vanguard" level="120" type="Npc" atkRange="40" hpMax="8090" hpReg="11.66"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -496,7 +496,7 @@
 		 fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-41820" y="50390" z="-2024" heading="51814" respawn="60" randomRespawn="51814" />
 	</npc>
-	<npc id="34061" name="Elise" title="Aden Vanguard" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34061" name="Elise" title="Aden Vanguard" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -504,7 +504,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34062" name="Eliyah" title="Aden Vanguard" level="99" type="L2Npc" atkRange="40" hpMax="8090" hpReg="11.66"
+	<npc id="34062" name="Eliyah" title="Aden Vanguard" level="99" type="Npc" atkRange="40" hpMax="8090" hpReg="11.66"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -513,7 +513,7 @@
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-58480" y="44000" z="-1552" heading="25300" respawn="60" randomRespawn="25300" />
 	</npc>
-	<npc id="34063" name="Glenkinchie" title="Blackbird Clan Member" level="99" type="L2Npc" atkRange="40" hpMax="8090"
+	<npc id="34063" name="Glenkinchie" title="Blackbird Clan Member" level="99" type="Npc" atkRange="40" hpMax="8090"
 		 hpReg="11.66"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -522,7 +522,7 @@
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-45579" y="59169" z="-2904" heading="55286" respawn="60" randomRespawn="55286" />
 	</npc>
-	<npc id="34064" name="Hurak" title="Blackbird Clan Member" level="120" type="L2Npc" atkRange="40" hpMax="8090"
+	<npc id="34064" name="Hurak" title="Blackbird Clan Member" level="120" type="Npc" atkRange="40" hpMax="8090"
 		 hpReg="11.66"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -531,7 +531,7 @@
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-41752" y="50392" z="-2024" heading="50934" respawn="60" randomRespawn="50934" />
 	</npc>
-	<npc id="34065" name="Laffian" title="Blackbird Clan Member" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="34065" name="Laffian" title="Blackbird Clan Member" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -539,7 +539,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34066" name="Sherry" title="Blackbird Clan Member" level="99" type="L2Npc" atkRange="40" hpMax="8090"
+	<npc id="34066" name="Sherry" title="Blackbird Clan Member" level="99" type="Npc" atkRange="40" hpMax="8090"
 		 hpReg="11.66"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -548,7 +548,7 @@
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-58395" y="43905" z="-1552" heading="28798" respawn="60" randomRespawn="28798" />
 	</npc>
-	<npc id="34067" name="Treasure Chest" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34067" name="Treasure Chest" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -556,7 +556,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34068" name="Treasure Chest" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34068" name="Treasure Chest" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -564,7 +564,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34069" name="Treasure Chest" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34069" name="Treasure Chest" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -572,7 +572,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34070" name="Treasure Chest" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34070" name="Treasure Chest" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -580,7 +580,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34071" name="Treasure Chest" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34071" name="Treasure Chest" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -588,7 +588,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34072" name="Secret Teleport Device" title="Atelia Castle" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="34072" name="Secret Teleport Device" title="Atelia Castle" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -596,7 +596,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34073" name="Atelia Control Device" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34073" name="Atelia Control Device" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -604,7 +604,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34074" name="Julia" title="Warehouse Keeper" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34074" name="Julia" title="Warehouse Keeper" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -612,7 +612,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34075" name="Saylem" title="Warehouse Keeper" level="99" type="L2Npc" atkRange="40" hpMax="8090"
+	<npc id="34075" name="Saylem" title="Warehouse Keeper" level="99" type="Npc" atkRange="40" hpMax="8090"
 		 hpReg="11.66"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -621,7 +621,7 @@
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-58327" y="43957" z="-1552" heading="25179" respawn="60" randomRespawn="25179" />
 	</npc>
-	<npc id="34076" name="Mion" title="Grocer" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34076" name="Mion" title="Grocer" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -629,7 +629,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34077" name="Nika" title="Grocer" level="99" type="L2Npc" atkRange="40" hpMax="8090" hpReg="11.66"
+	<npc id="34077" name="Nika" title="Grocer" level="99" type="Npc" atkRange="40" hpMax="8090" hpReg="11.66"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -638,7 +638,7 @@
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-58450" y="43843" z="-1552" heading="32767" respawn="60" randomRespawn="32767" />
 	</npc>
-	<npc id="34078" name="Training Soldier" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34078" name="Training Soldier" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -650,7 +650,7 @@
 		<spawn x="-48641" y="69648" z="-3080" heading="63372" respawn="60" randomRespawn="63372" />
 		<spawn x="-48447" y="70043" z="-3080" heading="21505" respawn="60" randomRespawn="21505" />
 	</npc>
-	<npc id="34079" name="Goody" title="Equipment Merchant" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34079" name="Goody" title="Equipment Merchant" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -658,7 +658,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34080" name="Pritty" title="Beauty Merchant" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34080" name="Pritty" title="Beauty Merchant" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -666,7 +666,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34081" name="Supree" title="Grocer" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34081" name="Supree" title="Grocer" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -674,7 +674,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34082" name="Tyke" title="Rewards Manager" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34082" name="Tyke" title="Rewards Manager" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -682,7 +682,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34083" name="Eleven" title="Event Manager" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34083" name="Eleven" title="Event Manager" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -690,7 +690,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34084" name="Piero" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="34084" name="Piero" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40"
@@ -698,7 +698,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34085" name="Eleveny" title="Group Reward Box" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34085" name="Eleveny" title="Group Reward Box" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -706,7 +706,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34086" name="Eleveny" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
+	<npc id="34086" name="Eleveny" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0" mpReg="0.0"
 		 STR="80"
 		 CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250" mAtkSpd="333"
 		 pCritRate="40"
@@ -714,7 +714,7 @@
 		 windRes="0"
 		 earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34087" name="Herb Collector" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34087" name="Herb Collector" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -722,7 +722,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34088" name="Santa Claus" title="Event Manager" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="34088" name="Santa Claus" title="Event Manager" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0" mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -730,7 +730,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34089" name="Devianne" title="Truth Seeker" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34089" name="Devianne" title="Truth Seeker" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -738,7 +738,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34090" name="Adolph" title="Aden Vanguard" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34090" name="Adolph" title="Aden Vanguard" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -746,7 +746,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34091" name="Barton" title="Aden Vanguard" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34091" name="Barton" title="Aden Vanguard" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -754,7 +754,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34092" name="Hayuk" title="Aden Vanguard" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34092" name="Hayuk" title="Aden Vanguard" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -762,7 +762,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34093" name="Elise" title="Aden Vanguard" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34093" name="Elise" title="Aden Vanguard" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -770,7 +770,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34094" name="Eliyah" title="Aden Vanguard" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34094" name="Eliyah" title="Aden Vanguard" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -778,7 +778,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34095" name="Neti" title="Refugee" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34095" name="Neti" title="Refugee" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -786,7 +786,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34096" name="Sir Klaus Vasper" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34096" name="Sir Klaus Vasper" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -794,7 +794,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34097" name="Adonius" title="Priest" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34097" name="Adonius" title="Priest" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -802,7 +802,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34098" name="Kluto" title="Blacksmith" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34098" name="Kluto" title="Blacksmith" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -810,7 +810,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34099" name="Yeniche" title="Grand Master" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34099" name="Yeniche" title="Grand Master" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -818,7 +818,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34100" name="Yuyuria" title="Wanderer" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34100" name="Yuyuria" title="Wanderer" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -826,7 +826,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34101" name="Treasure Chest" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34101" name="Treasure Chest" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -834,7 +834,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34102" name="Transport Goods" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34102" name="Transport Goods" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -842,7 +842,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34103" name="Revolutionaries' Altar" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34103" name="Revolutionaries' Altar" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -850,7 +850,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34104" name="Levian" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34104" name="Levian" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -858,7 +858,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34105" name="Zigaunt" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34105" name="Zigaunt" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -866,7 +866,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34106" name="Iris" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34106" name="Iris" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -874,7 +874,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34107" name="Nell" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34107" name="Nell" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -882,7 +882,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34108" name="Baenedes" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34108" name="Baenedes" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -890,7 +890,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34109" name="Auron" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34109" name="Auron" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -898,7 +898,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34110" name="Ramos" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34110" name="Ramos" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -906,7 +906,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34111" name="Celma" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34111" name="Celma" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -914,7 +914,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34112" name="Rhodiell" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34112" name="Rhodiell" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -922,7 +922,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34113" name="Kalinta" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34113" name="Kalinta" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -930,7 +930,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34114" name="Estella" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34114" name="Estella" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -938,7 +938,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34115" name="Talbot" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34115" name="Talbot" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -946,7 +946,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34116" name="Xenos" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34116" name="Xenos" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -954,7 +954,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34117" name="Colleen" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34117" name="Colleen" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -962,7 +962,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34118" name="Galatea" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34118" name="Galatea" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -970,7 +970,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34119" name="Asha" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34119" name="Asha" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -978,7 +978,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34120" name="Marsden" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34120" name="Marsden" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -986,7 +986,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34121" name="Raminya" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34121" name="Raminya" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -994,7 +994,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34122" name="Poesia" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34122" name="Poesia" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1002,7 +1002,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34123" name="Bleaker" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34123" name="Bleaker" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1010,7 +1010,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34124" name="Nestle" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34124" name="Nestle" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1018,7 +1018,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34125" name="Umos" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34125" name="Umos" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1026,7 +1026,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34126" name="Kasman" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34126" name="Kasman" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1034,7 +1034,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34127" name="Arodin" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34127" name="Arodin" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1042,7 +1042,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34128" name="Damion" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34128" name="Damion" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1050,7 +1050,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34129" name="Rogen" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34129" name="Rogen" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1058,7 +1058,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34130" name="Lyann" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34130" name="Lyann" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1066,7 +1066,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34131" name="Shubain" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34131" name="Shubain" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1074,7 +1074,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34132" name="Sione" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34132" name="Sione" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1082,7 +1082,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34133" name="Norman" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34133" name="Norman" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1090,7 +1090,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34134" name="Moke" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34134" name="Moke" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1098,7 +1098,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34135" name="Raut" title="Captive" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34135" name="Raut" title="Captive" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1106,7 +1106,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34136" name="Tapoy" title="Head Blacksmith" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34136" name="Tapoy" title="Head Blacksmith" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -1114,7 +1114,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34137" name="Embryo Supply Box" level="120" type="L2Npc" atkRange="40" hpMax="8090" hpReg="11.66" mpMax="0"
+	<npc id="34137" name="Embryo Supply Box" level="120" type="Npc" atkRange="40" hpMax="8090" hpReg="11.66" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1142,7 +1142,7 @@
 		<spawn x="-46119" y="57716" z="-3184" heading="0" respawn="60" />
 		<spawn x="-47966" y="57823" z="-3096" heading="0" respawn="60" />
 	</npc>
-	<npc id="34138" name="Devianne" title="Truth Seeker" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34138" name="Devianne" title="Truth Seeker" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -1150,7 +1150,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34139" name="Karrod" title="Captive Blacksmith" level="120" type="L2Npc" atkRange="40" hpMax="8090"
+	<npc id="34139" name="Karrod" title="Captive Blacksmith" level="120" type="Npc" atkRange="40" hpMax="8090"
 		 hpReg="11.66"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -1159,7 +1159,7 @@
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-48853" y="53439" z="-2360" heading="0" respawn="60" />
 	</npc>
-	<npc id="34140" name="Aios" title="Captive Blacksmith" level="120" type="L2Npc" atkRange="40" hpMax="8090"
+	<npc id="34140" name="Aios" title="Captive Blacksmith" level="120" type="Npc" atkRange="40" hpMax="8090"
 		 hpReg="11.66"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -1168,7 +1168,7 @@
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-46909" y="50991" z="-2376" heading="0" respawn="60" />
 	</npc>
-	<npc id="34141" name="Bronk" title="Captive Head Blacksmith" level="120" type="L2Npc" atkRange="40" hpMax="8090"
+	<npc id="34141" name="Bronk" title="Captive Head Blacksmith" level="120" type="Npc" atkRange="40" hpMax="8090"
 		 hpReg="11.66"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -1177,7 +1177,7 @@
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-49660" y="50672" z="-2400" heading="0" respawn="60" />
 	</npc>
-	<npc id="34142" name="Brunon" title="Captive Blacksmith" level="120" type="L2Npc" atkRange="40" hpMax="8090"
+	<npc id="34142" name="Brunon" title="Captive Blacksmith" level="120" type="Npc" atkRange="40" hpMax="8090"
 		 hpReg="11.66"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -1186,7 +1186,7 @@
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-48128" y="49095" z="-2400" heading="0" respawn="60" />
 	</npc>
-	<npc id="34143" name="Sumari" title="Captive Blacksmith" level="120" type="L2Npc" atkRange="40" hpMax="8090"
+	<npc id="34143" name="Sumari" title="Captive Blacksmith" level="120" type="Npc" atkRange="40" hpMax="8090"
 		 hpReg="11.66"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -1195,7 +1195,7 @@
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-43718" y="50770" z="-2088" heading="0" respawn="60" />
 	</npc>
-	<npc id="34144" name="Lansia" title="Captive Blacksmith Trainee" level="120" type="L2Npc" atkRange="40" hpMax="8090"
+	<npc id="34144" name="Lansia" title="Captive Blacksmith Trainee" level="120" type="Npc" atkRange="40" hpMax="8090"
 		 hpReg="11.66"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -1204,7 +1204,7 @@
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 		<spawn x="-47233" y="47998" z="-2400" heading="0" respawn="60" />
 	</npc>
-	<npc id="34145" name="Karrod" title="Freed Blacksmith" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34145" name="Karrod" title="Freed Blacksmith" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -1212,7 +1212,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34146" name="Aios" title="Freed Blacksmith" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34146" name="Aios" title="Freed Blacksmith" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -1220,7 +1220,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34147" name="Bronk" title="Freed Head Blacksmith" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="34147" name="Bronk" title="Freed Head Blacksmith" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -1228,7 +1228,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34148" name="Brunon" title="Freed Blacksmith" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34148" name="Brunon" title="Freed Blacksmith" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -1236,7 +1236,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34149" name="Sumari" title="Freed Blacksmith" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34149" name="Sumari" title="Freed Blacksmith" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -1244,7 +1244,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34150" name="Lansia" title="Freed Blacksmith Trainee" level="120" type="L2Npc" atkRange="40" hpMax="1"
+	<npc id="34150" name="Lansia" title="Freed Blacksmith Trainee" level="120" type="Npc" atkRange="40" hpMax="1"
 		 hpReg="0.0"
 		 mpMax="0" mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -1252,7 +1252,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34151" name="Sir Klaus Vasper" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34151" name="Sir Klaus Vasper" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1260,7 +1260,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34152" name="Adonius" title="Priest" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
+	<npc id="34152" name="Adonius" title="Priest" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0" mpMax="0"
 		 mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1268,7 +1268,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34153" name="Kluto" title="Blacksmith" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34153" name="Kluto" title="Blacksmith" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"
@@ -1276,7 +1276,7 @@
 		 waterRes="0"
 		 windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34154" name="Yeniche" title="Grand Master" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34154" name="Yeniche" title="Grand Master" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0"
 		 mpReg="0.0" STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1"
 		 pAtkSpd="250"
@@ -1284,7 +1284,7 @@
 		 fireRes="0"
 		 waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0" aiType="fighter">
 	</npc>
-	<npc id="34155" name="Yuyuria" title="Wanderer" level="120" type="L2Npc" atkRange="40" hpMax="1" hpReg="0.0"
+	<npc id="34155" name="Yuyuria" title="Wanderer" level="120" type="Npc" atkRange="40" hpMax="1" hpReg="0.0"
 		 mpMax="0" mpReg="0.0"
 		 STR="80" CON="86" DEX="60" INT="42" WIT="40" MEN="40" pAtk="1" mAtk="1" pDef="1" mDef="1" pAtkSpd="250"
 		 mAtkSpd="333"

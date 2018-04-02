@@ -17,15 +17,15 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.instancemanager.MailManager;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ExChangePostState;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
 
-import static l2server.gameserver.model.actor.L2Character.ZONE_PEACE;
+import static l2server.gameserver.model.actor.Creature.ZONE_PEACE;
 
 /**
  * @author Pere, DS
@@ -45,7 +45,7 @@ public final class RequestRejectPostAttachment extends L2GameClientPacket {
 			return;
 		}
 		
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null) {
 			return;
 		}
@@ -80,7 +80,7 @@ public final class RequestRejectPostAttachment extends L2GameClientPacket {
 		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.MAIL_SUCCESSFULLY_RETURNED));
 		activeChar.sendPacket(new ExChangePostState(true, msgId, Message.REJECTED));
 		
-		final L2PcInstance sender = L2World.getInstance().getPlayer(msg.getSenderId());
+		final Player sender = World.getInstance().getPlayer(msg.getSenderId());
 		if (sender != null) {
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_RETURNED_MAIL);
 			sm.addCharName(activeChar);

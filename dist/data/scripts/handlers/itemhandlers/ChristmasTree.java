@@ -17,21 +17,21 @@ package handlers.itemhandlers;
 
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.handler.IItemHandler;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.chars.L2NpcTemplate;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.chars.NpcTemplate;
 
 public class ChristmasTree implements IItemHandler {
 	/**
-	 * @see l2server.gameserver.handler.IItemHandler#useItem(l2server.gameserver.model.actor.L2Playable, l2server.gameserver.model.L2ItemInstance, boolean)
+	 * @see l2server.gameserver.handler.IItemHandler#useItem(Playable, Item, boolean)
 	 */
 	@Override
-	public void useItem(L2Playable playable, L2ItemInstance item, boolean forceUse) {
-		L2PcInstance activeChar = (L2PcInstance) playable;
-		L2NpcTemplate template1 = null;
+	public void useItem(Playable playable, Item item, boolean forceUse) {
+		Player activeChar = (Player) playable;
+		NpcTemplate template1 = null;
 
 		switch (item.getItemId()) {
 			case 5560:
@@ -46,7 +46,7 @@ public class ChristmasTree implements IItemHandler {
 			return;
 		}
 
-		L2Object target = activeChar.getTarget();
+		WorldObject target = activeChar.getTarget();
 		if (target == null) {
 			target = activeChar;
 		}

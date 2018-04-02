@@ -15,7 +15,7 @@
 
 package l2server.gameserver.ai;
 
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 
 /**
  * Interface of AI and client state.
@@ -62,7 +62,7 @@ public interface Ctrl {
 	/**
 	 * the character this AI serves
 	 */
-	L2Character getActor();
+	Creature getActor();
 
 	/**
 	 * get current intention
@@ -72,7 +72,7 @@ public interface Ctrl {
 	/**
 	 * get current ATTACK target
 	 */
-	L2Character getAttackTarget();
+	Creature getAttackTarget();
 
 	/**
 	 * Set general state/intention for AI, with optional data

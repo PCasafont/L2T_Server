@@ -15,14 +15,15 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2NpcInstance;
-import l2server.gameserver.model.actor.instance.L2SiegeSummonInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.NpcInstance;
+import l2server.gameserver.model.actor.instance.SiegeSummonInstance;
 import l2server.gameserver.network.serverpackets.StartRotation;
 import l2server.gameserver.network.serverpackets.StopRotation;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @author decad
@@ -30,24 +31,24 @@ import l2server.gameserver.templates.skills.L2EffectTemplate;
  * Implementation of the Bluff Effect
  */
 public class EffectBluff extends L2Effect {
-	public EffectBluff(Env env, L2EffectTemplate template) {
+	public EffectBluff(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
-		if (getEffected() instanceof L2NpcInstance) {
+		if (getEffected() instanceof NpcInstance) {
 			return false;
 		}
 
-		if (getEffected() instanceof L2Npc && ((L2Npc) getEffected()).getNpcId() == 35062) {
+		if (getEffected() instanceof Npc && ((Npc) getEffected()).getNpcId() == 35062) {
 			return false;
 		}
 
-		if (getEffected() instanceof L2SiegeSummonInstance) {
+		if (getEffected() instanceof SiegeSummonInstance) {
 			return false;
 		}
 
@@ -58,7 +59,7 @@ public class EffectBluff extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

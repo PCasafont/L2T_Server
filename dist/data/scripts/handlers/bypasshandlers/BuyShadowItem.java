@@ -16,17 +16,17 @@
 package handlers.bypasshandlers;
 
 import l2server.gameserver.handler.IBypassHandler;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2MerchantInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.MerchantInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class BuyShadowItem implements IBypassHandler {
 	private static final String[] COMMANDS = {"BuyShadowItem"};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Npc target) {
-		if (!(target instanceof L2MerchantInstance)) {
+	public boolean useBypass(String command, Player activeChar, Npc target) {
+		if (!(target instanceof MerchantInstance)) {
 			return false;
 		}
 		

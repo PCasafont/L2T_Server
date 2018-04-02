@@ -16,16 +16,18 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.GameApplication;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.templates.StatsSet;
-import l2server.gameserver.templates.chars.L2PcTemplate;
-import l2server.log.Log;
+import l2server.gameserver.templates.chars.PcTemplate;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 
@@ -33,12 +35,13 @@ import java.io.File;
  * @author Unknown, Forsaiken
  */
 public final class CharTemplateTable {
+	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
 	
 	public static CharTemplateTable getInstance() {
 		return SingletonHolder.instance;
 	}
 	
-	private final L2PcTemplate[] templates = new L2PcTemplate[Race.values().length * 2];
+	private final PcTemplate[] templates = new PcTemplate[Race.values().length * 2];
 	
 	private CharTemplateTable() {
 	}
@@ -100,7 +103,7 @@ public final class CharTemplateTable {
 						set.set("startZ", raceNode.getInt("startZ"));
 						set.set("startRandom", raceNode.getInt("startRandom"));
 						
-						L2PcTemplate ct = new L2PcTemplate(set);
+						PcTemplate ct = new PcTemplate(set);
 						
 						for (XmlNode itemNode : raceNode.getChildren()) {
 							if (itemNode.getName().equalsIgnoreCase("creationItem")) {
@@ -111,7 +114,7 @@ public final class CharTemplateTable {
 								if (ItemTable.getInstance().getTemplate(itemId) != null) {
 									ct.addItem(itemId, amount, equipped);
 								} else {
-									Log.warning("races: No data for itemId: " + itemId + " defined for race id " + raceId);
+									log.warn("races: No data for itemId: " + itemId + " defined for race id " + raceId);
 								}
 							}
 						}
@@ -129,30 +132,30 @@ public final class CharTemplateTable {
 				boolean equipped = d.getBool("equipped");
 				
 				if (ItemTable.getInstance().getTemplate(itemId) != null) {
-					for (L2PcTemplate pct : templates) {
+					for (PcTemplate pct : templates) {
 						if (pct != null) {
 							pct.addItem(itemId, amount, equipped);
 						}
 					}
 				} else {
-					Log.warning("races: No data for itemId: " + itemId + " defined for all the pc templates");
+					log.warn("races: No data for itemId: " + itemId + " defined for all the pc templates");
 				}
 			}
 		}
-		Log.info("CharTemplateTable: Loaded " + count + " Character Templates.");
+		log.info("CharTemplateTable: Loaded " + count + " Character Templates.");
 	}
 	
 	@Reload("charTemplates")
 	public boolean reload() {
 		load();
-		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values()) {
+		for (Player player : World.getInstance().getAllPlayers().values()) {
 			player.setTemplate(templates[player.getRace().ordinal() * 2 + (player.getTemplate().isMage ? 1 : 0)]);
 			player.broadcastUserInfo();
 		}
 		return true;
 	}
 	
-	public L2PcTemplate getTemplate(int tId) {
+	public PcTemplate getTemplate(int tId) {
 		return templates[tId];
 	}
 	

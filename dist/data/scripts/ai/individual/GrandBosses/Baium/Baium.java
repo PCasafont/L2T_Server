@@ -23,18 +23,17 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.L2Spawn;
-import l2server.gameserver.model.actor.L2Attackable;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2GrandBossInstance;
-import l2server.gameserver.model.actor.instance.L2MonsterInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.GrandBossInstance;
+import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.QuestTimer;
-import l2server.gameserver.model.zone.type.L2BossZone;
+import l2server.gameserver.model.zone.type.BossZone;
 import l2server.gameserver.network.serverpackets.*;
-import l2server.log.Log;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
@@ -61,13 +60,13 @@ public class Baium extends L2AttackableAIScript {
 	private static final int vortex = 31862;
 	private static final int exitCubic = 31842;
 	private static final int[] allMobs = {liveBaium, stoneBaium, archangel};
-	private static final L2BossZone bossZone = GrandBossManager.getInstance().getZone(113100, 14500, 10077);
-	private static final L2Skill baiumGift = SkillTable.getInstance().getInfo(4136, 1);
+	private static final BossZone bossZone = GrandBossManager.getInstance().getZone(113100, 14500, 10077);
+	private static final Skill baiumGift = SkillTable.getInstance().getInfo(4136, 1);
 
 	//Others
 	private static long lastAction;
-	private static L2Npc baiumBoss;
-	private static L2PcInstance firstAttacker;
+	private static Npc baiumBoss;
+	private static Player firstAttacker;
 
 	public Baium(int id, String name, String descr) {
 		super(id, name, descr);
@@ -93,15 +92,15 @@ public class Baium extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player) {
+	public String onTalk(Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onTalk: " + player.getName());
+			log.warn(getName() + ": onTalk: " + player.getName());
 		}
 
 		if (npc.getNpcId() == vortex) {
 			int baiumStatus = GrandBossManager.getInstance().getBossStatus(liveBaium);
 
-			final List<L2PcInstance> allPlayers = new ArrayList<L2PcInstance>();
+			final List<Player> allPlayers = new ArrayList<Player>();
 
 			if (baiumStatus == GrandBossManager.getInstance().DEAD) {
 				return "31862-02.html";
@@ -140,7 +139,7 @@ public class Baium extends L2AttackableAIScript {
 								player.getParty().getPartyMembers());
 			}
 
-			for (L2PcInstance enterPlayer : allPlayers) {
+			for (Player enterPlayer : allPlayers) {
 				if (enterPlayer == null) {
 					continue;
 				}
@@ -158,9 +157,9 @@ public class Baium extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (debug) {
-			Log.warning(getName() + ": onAdvEvent: " + event);
+			log.warn(getName() + ": onAdvEvent: " + event);
 		}
 
 		if (event.equalsIgnoreCase("unlock_baium")) {
@@ -187,7 +186,7 @@ public class Baium extends L2AttackableAIScript {
 
 				firstAttacker = player;
 
-				GrandBossManager.getInstance().addBoss((L2GrandBossInstance) baiumBoss);
+				GrandBossManager.getInstance().addBoss((GrandBossInstance) baiumBoss);
 
 				bossZone.sendDelayedPacketToZone(50, new SocialAction(baiumBoss.getObjectId(), 2));
 
@@ -223,7 +222,7 @@ public class Baium extends L2AttackableAIScript {
 						firstAttacker.getName() + ", How dare you wake me! Now you shall die!"));
 			}
 
-			for (L2PcInstance players : bossZone.getPlayersInside()) {
+			for (Player players : bossZone.getPlayersInside()) {
 				if (players == null || !players.isHero()) {
 					continue;
 				}
@@ -243,12 +242,12 @@ public class Baium extends L2AttackableAIScript {
 			baiumBoss.disableCoreAI(false);
 		} else if (event.equalsIgnoreCase("minions_attack_task")) {
 			//Let's do it simple, minions should attack baium & players, by default due the enemy clan attacks almost all time baium instead of players so call this each time..
-			List<L2PcInstance> insidePlayers = bossZone.getPlayersInside();
-			L2Character target = null;
+			List<Player> insidePlayers = bossZone.getPlayersInside();
+			Creature target = null;
 
 			if (insidePlayers != null && !insidePlayers.isEmpty()) {
-				for (L2Npc zoneMob : bossZone.getNpcsInside()) {
-					if (!(zoneMob instanceof L2MonsterInstance)) {
+				for (Npc zoneMob : bossZone.getNpcsInside()) {
+					if (!(zoneMob instanceof MonsterInstance)) {
 						continue;
 					}
 
@@ -258,16 +257,16 @@ public class Baium extends L2AttackableAIScript {
 							target = insidePlayers.get(Rnd.get(insidePlayers.size()));
 						} else {
 							//Lets use that code to take a lil look into the baiums target, if baim is attacking a minion set a random player as a target
-							if (zoneMob == baiumBoss && zoneMob.getTarget() instanceof L2MonsterInstance) {
+							if (zoneMob == baiumBoss && zoneMob.getTarget() instanceof MonsterInstance) {
 								target = insidePlayers.get(Rnd.get(insidePlayers.size()));
 							} else {
 								target = baiumBoss;
 							}
 						}
 						if (target != null) {
-							((L2Attackable) zoneMob).getAggroList().clear();
+							((Attackable) zoneMob).getAggroList().clear();
 							zoneMob.setTarget(target);
-							((L2MonsterInstance) zoneMob).addDamageHate(target, 500, 99999);
+							((MonsterInstance) zoneMob).addDamageHate(target, 500, 99999);
 							zoneMob.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 						}
 					}
@@ -306,9 +305,9 @@ public class Baium extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet) {
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onAttack: " + npc.getName());
+			log.warn(getName() + ": onAttack: " + npc.getName());
 		}
 
 		lastAction = System.currentTimeMillis();
@@ -319,7 +318,7 @@ public class Baium extends L2AttackableAIScript {
 			attacker.doDie(null);
 
 			if (debug) {
-				Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " out of the boss zone!");
+				log.warn(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " out of the boss zone!");
 			}
 		}
 
@@ -332,7 +331,7 @@ public class Baium extends L2AttackableAIScript {
 			}
 
 			if (debug) {
-				Log.warning(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " wich is out of the boss zone!");
+				log.warn(getName() + ": Character: " + attacker.getName() + " attacked: " + npc.getName() + " wich is out of the boss zone!");
 			}
 		}
 
@@ -340,9 +339,9 @@ public class Baium extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet) {
+	public String onKill(Npc npc, Player killer, boolean isPet) {
 		if (debug) {
-			Log.warning(getName() + ": onKill: " + npc.getName());
+			log.warn(getName() + ": onKill: " + npc.getName());
 		}
 
 		if (npc.getNpcId() == liveBaium) {
@@ -365,13 +364,13 @@ public class Baium extends L2AttackableAIScript {
 	}
 
 	@Override
-	public String onSpawn(L2Npc npc) {
+	public String onSpawn(Npc npc) {
 		if (debug) {
-			Log.warning(getName() + ": onSpawn: " + npc.getName());
+			log.warn(getName() + ": onSpawn: " + npc.getName());
 		}
 
 		npc.setIsRunning(true);
-		((L2Attackable) npc).setIsRaidMinion(true);
+		((Attackable) npc).setIsRaidMinion(true);
 
 		return super.onSpawn(npc);
 	}

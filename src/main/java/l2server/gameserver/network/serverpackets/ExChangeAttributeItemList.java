@@ -15,8 +15,8 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 
@@ -25,12 +25,12 @@ import java.util.ArrayList;
  */
 public class ExChangeAttributeItemList extends L2ItemListPacket {
 	
-	private ArrayList<L2ItemInstance> itemsList;
+	private ArrayList<Item> itemsList;
 	private int itemOID;
 	
-	public ExChangeAttributeItemList(L2PcInstance player, int itemOID) {
+	public ExChangeAttributeItemList(Player player, int itemOID) {
 		itemsList = new ArrayList<>();
-		for (L2ItemInstance item : player.getInventory().getItems()) {
+		for (Item item : player.getInventory().getItems()) {
 			if (item.isWeapon()) {
 				if (item.getAttackElementPower() > 0) {
 					itemsList.add(item);
@@ -44,7 +44,7 @@ public class ExChangeAttributeItemList extends L2ItemListPacket {
 	protected final void writeImpl() {
 		writeD(itemOID);
 		writeD(itemsList.size());
-		for (L2ItemInstance item : itemsList) {
+		for (Item item : itemsList) {
 			writeItem(item);
 		}
 	}

@@ -2,14 +2,13 @@ package handlers.admincommandhandlers;
 
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.ArtificialPlayersManager;
-import l2server.gameserver.model.actor.instance.L2ApInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.ApInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
-import java.util.logging.Logger;
 
 /**
  * This class handles all commands made for control and manage Artificial Players (APlayers).
@@ -20,10 +19,8 @@ public class AdminAPlayer implements IAdminCommandHandler {
 
 	private static final String[] ADMIN_COMMANDS = {"admin_spawn_aplayer", "admin_spawn_aparty", "admin_delete_all_aplayers"};
 
-	public static Logger log = Logger.getLogger(AdminAPlayer.class.getName());
-
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar) {
+	public boolean useAdminCommand(String command, Player activeChar) {
 		StringTokenizer st = new StringTokenizer(command, " ");
 		String param = null;
 
@@ -35,7 +32,7 @@ public class AdminAPlayer implements IAdminCommandHandler {
 				activeChar.sendMessage("use: //spawn_aplayer <classId | className>");
 			}
 		} else if (command.equalsIgnoreCase("admin_delete_all_aplayers")) {
-			for (L2ApInstance aplayer : ArtificialPlayersManager.getInstance().getAllAPlayers()) {
+			for (ApInstance aplayer : ArtificialPlayersManager.getInstance().getAllAPlayers()) {
 				if (aplayer != null) {
 					aplayer.deleteMe();
 				}

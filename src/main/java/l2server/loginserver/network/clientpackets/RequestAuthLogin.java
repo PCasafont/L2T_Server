@@ -16,7 +16,8 @@
 package l2server.loginserver.network.clientpackets;
 
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.loginserver.GameServerTable;
 import l2server.loginserver.LoginController;
 import l2server.loginserver.network.L2LoginClient;
@@ -35,6 +36,9 @@ import java.util.logging.Level;
  * x: the rsa encrypted block with the login an password
  */
 public class RequestAuthLogin extends L2LoginClientPacket {
+	private static Logger log = LoggerFactory.getLogger(RequestAuthLogin.class.getName());
+
+
 	private byte[] raw = new byte[256];
 	
 	private String user;
@@ -80,7 +84,7 @@ public class RequestAuthLogin extends L2LoginClientPacket {
 			decrypted = rsaCipher.doFinal(raw, 0x00, 0x80);
 			decrypted2 = rsaCipher.doFinal(raw, 0x80, 0x80);
 		} catch (GeneralSecurityException e) {
-			Log.log(Level.INFO, "", e);
+			log.info("", e);
 			return;
 		}
 		
@@ -150,7 +154,7 @@ public class RequestAuthLogin extends L2LoginClientPacket {
 		{
 			InetAddress address = getClient().getConnection().getInetAddress();
 			lc.addBanForAddress(address, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
-			Log.info("Banned (" + address + ") for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds, due to " +
+			log.info("Banned (" + address + ") for " + Config.LOGIN_BLOCK_AFTER_BAN + " seconds, due to " +
 					e.getConnects() + " incorrect login attempts.");
 		}*/
 	}

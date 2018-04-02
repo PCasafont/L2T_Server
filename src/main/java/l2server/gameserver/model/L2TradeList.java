@@ -17,8 +17,9 @@ package l2server.gameserver.model;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.templates.item.L2Item;
-import l2server.log.Log;
+import l2server.gameserver.templates.item.ItemTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -32,6 +33,9 @@ import java.util.logging.Level;
  * @version $Revision: 1.4.2.1.2.5 $ $Date: 2005/03/27 15:29:33 $
  */
 public class L2TradeList {
+	private static Logger log = LoggerFactory.getLogger(L2TradeList.class.getName());
+
+
 	private final Map<Integer, L2TradeItem> items = new LinkedHashMap<>();
 	private final int listId;
 
@@ -143,7 +147,7 @@ public class L2TradeList {
 	public static class L2TradeItem {
 		private final int listId;
 		private final int itemId;
-		private final L2Item template;
+		private final ItemTemplate template;
 		private long price;
 
 		// count related
@@ -179,7 +183,7 @@ public class L2TradeList {
 			return price;
 		}
 
-		public L2Item getTemplate() {
+		public ItemTemplate getTemplate() {
 			return template;
 		}
 
@@ -275,8 +279,8 @@ public class L2TradeList {
 				statement.executeUpdate();
 				statement.close();
 			} catch (Exception e) {
-				Log.log(Level.SEVERE, "L2TradeItem: Could not update Timer save in Buylist");
-				Log.warning(e.getMessage());
+				log.error("L2TradeItem: Could not update Timer save in Buylist");
+				log.warn(e.getMessage());
 				e.printStackTrace();
 			} finally {
 				L2DatabaseFactory.close(con);

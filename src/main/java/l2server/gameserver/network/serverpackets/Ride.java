@@ -15,7 +15,7 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 
 public final class Ride extends L2GameServerPacket {
 	public static final int ACTION_MOUNT = 1;
@@ -26,7 +26,7 @@ public final class Ride extends L2GameServerPacket {
 	private final int rideClassID;
 	private final int x, y, z;
 
-	public Ride(L2PcInstance cha, boolean mount, int rideClassId) {
+	public Ride(Player cha, boolean mount, int rideClassId) {
 		id = cha.getObjectId();
 		bRide = mount ? 1 : 0;
 		rideClassID = rideClassId + 1000000; // npcID

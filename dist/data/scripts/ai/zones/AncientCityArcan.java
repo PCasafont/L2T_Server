@@ -17,11 +17,11 @@ package ai.zones;
 
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.instancemanager.ZoneManager;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
-import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.model.zone.ZoneType;
 import l2server.gameserver.network.serverpackets.Earthquake;
 import l2server.gameserver.network.serverpackets.EventTrigger;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -38,7 +38,7 @@ public class AncientCityArcan extends Quest {
 	private static final int redEffectId = 262003;
 	private static int currentEffect = blueEffectId;
 	private static final int ancientCityArcanId = 60010;
-	private static final L2ZoneType ancientCityZone = ZoneManager.getInstance().getZoneById(ancientCityArcanId);
+	private static final ZoneType ancientCityZone = ZoneManager.getInstance().getZoneById(ancientCityArcanId);
 
 	public AncientCityArcan(int questId, String name, String descr) {
 		super(questId, name, descr);
@@ -49,8 +49,8 @@ public class AncientCityArcan extends Quest {
 	}
 
 	@Override
-	public final String onEnterZone(L2Character character, L2ZoneType zone) {
-		if (character instanceof L2PcInstance) {
+	public final String onEnterZone(Creature character, ZoneType zone) {
+		if (character instanceof Player) {
 			character.broadcastPacket(new EventTrigger(currentEffect == blueEffectId ? blueEffectId : redEffectId, false));
 			character.broadcastPacket(new EventTrigger(currentEffect, true));
 		}
@@ -58,7 +58,7 @@ public class AncientCityArcan extends Quest {
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player) {
+	public String onAdvEvent(String event, Npc npc, Player player) {
 		if (event.equalsIgnoreCase("ancient_city_arcan_change")) {
 			int deleteEffect = 0;
 			int messageId = 0;

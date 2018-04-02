@@ -16,27 +16,27 @@
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.L2Abnormal;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.model.Abnormal;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.SkillType;
 
 /**
  * @author ZaKax
  */
 
 public class Detection implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.DETECTION};
+	private static final SkillType[] SKILL_IDS = {SkillType.DETECTION};
 
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
 		final boolean hasParty;
 		final boolean hasClan;
 		final boolean hasAlly;
-		final L2PcInstance player = activeChar.getActingPlayer();
+		final Player player = activeChar.getActingPlayer();
 		if (player != null) {
 			hasParty = player.isInParty();
 			hasClan = player.getClanId() > 0;
@@ -47,7 +47,7 @@ public class Detection implements ISkillHandler {
 			hasAlly = false;
 		}
 
-		for (L2PcInstance target : activeChar.getKnownList().getKnownPlayersInRadius(skill.getSkillRadius())) {
+		for (Player target : activeChar.getKnownList().getKnownPlayersInRadius(skill.getSkillRadius())) {
 			if (target != null && target.getAppearance().getInvisible()) {
 				if (hasParty && target.getParty() != null && player.getParty().getPartyLeaderOID() == target.getParty().getPartyLeaderOID()) {
 					continue;
@@ -59,7 +59,7 @@ public class Detection implements ISkillHandler {
 					continue;
 				}
 
-				L2Abnormal eHide = target.getFirstEffect(L2AbnormalType.HIDE);
+				Abnormal eHide = target.getFirstEffect(AbnormalType.HIDE);
 				if (eHide != null) {
 					eHide.exit();
 				}
@@ -68,7 +68,7 @@ public class Detection implements ISkillHandler {
 	}
 
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

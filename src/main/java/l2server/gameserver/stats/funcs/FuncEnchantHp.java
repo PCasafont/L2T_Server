@@ -16,7 +16,7 @@
 package l2server.gameserver.stats.funcs;
 
 import l2server.gameserver.datatables.EnchantHPBonusData;
-import l2server.gameserver.model.L2ItemInstance;
+import l2server.gameserver.model.Item;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Stats;
 
@@ -39,7 +39,7 @@ public class FuncEnchantHp extends Func {
 			return;
 		}
 		
-		final L2ItemInstance item = (L2ItemInstance) funcOwner;
+		final Item item = (Item) funcOwner;
 		if (item.getEnchantLevel() > 0) {
 			env.value += EnchantHPBonusData.getInstance().getHPBonus(item);
 		}

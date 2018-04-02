@@ -15,14 +15,15 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.network.serverpackets.StatusUpdate;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 public class EffectCombatPointHealOverTime extends L2Effect {
-	public EffectCombatPointHealOverTime(Env env, L2EffectTemplate template) {
+	public EffectCombatPointHealOverTime(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
@@ -32,7 +33,7 @@ public class EffectCombatPointHealOverTime extends L2Effect {
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#effectCanBeStolen()
+	 * @see Abnormal#effectCanBeStolen()
 	 */
 	@Override
 	protected boolean effectCanBeStolen() {
@@ -40,12 +41,12 @@ public class EffectCombatPointHealOverTime extends L2Effect {
 	}
 
 	@Override
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.HEAL_OVER_TIME;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.HEAL_OVER_TIME;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

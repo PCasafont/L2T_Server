@@ -18,34 +18,34 @@ package handlers.skillhandlers;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.instance.L2DoorInstance;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.gameserver.templates.skills.SkillType;
 
 public class NornilsPower implements ISkillHandler {
-	private static final L2SkillType[] SKILL_IDS = {L2SkillType.NORNILS_POWER};
+	private static final SkillType[] SKILL_IDS = {SkillType.NORNILS_POWER};
 
 	@Override
-	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets) {
-		if (!(activeChar instanceof L2PcInstance)) {
+	public void useSkill(Creature activeChar, Skill skill, WorldObject[] targets) {
+		if (!(activeChar instanceof Player)) {
 			return;
 		}
 		InstanceWorld world = null;
 
 		final int instanceId = activeChar.getInstanceId();
 		if (instanceId > 0) {
-			world = InstanceManager.getInstance().getPlayerWorld((L2PcInstance) activeChar);
+			world = InstanceManager.getInstance().getPlayerWorld((Player) activeChar);
 		}
 
 		if (world != null && world.instanceId == instanceId && world.templateId == 11) {
 			if (activeChar.isInsideRadius(-107393, 83677, 100, true)) {
 				activeChar.destroyItemByItemId("NornilsPower", 9713, 1, activeChar, true);
-				L2DoorInstance door = InstanceManager.getInstance().getInstance(world.instanceId).getDoor(16200010);
+				DoorInstance door = InstanceManager.getInstance().getInstance(world.instanceId).getDoor(16200010);
 				if (door != null) {
 					door.setMeshIndex(1);
 					//door.setTargetable(true);
@@ -62,7 +62,7 @@ public class NornilsPower implements ISkillHandler {
 	}
 
 	@Override
-	public L2SkillType[] getSkillIds() {
+	public SkillType[] getSkillIds() {
 		return SKILL_IDS;
 	}
 }

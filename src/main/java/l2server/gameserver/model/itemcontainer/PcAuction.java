@@ -15,16 +15,16 @@
 
 package l2server.gameserver.model.itemcontainer;
 
-import l2server.gameserver.model.L2ItemInstance.ItemLocation;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.Item.ItemLocation;
+import l2server.gameserver.model.actor.instance.Player;
 
 /**
  * @author Erlandys
  */
 public class PcAuction extends ItemContainer {
-	private L2PcInstance owner;
+	private Player owner;
 
-	public PcAuction(L2PcInstance owner) {
+	public PcAuction(Player owner) {
 		this.owner = owner;
 	}
 
@@ -34,7 +34,7 @@ public class PcAuction extends ItemContainer {
 	}
 
 	@Override
-	public L2PcInstance getOwner() {
+	public Player getOwner() {
 		return owner;
 	}
 

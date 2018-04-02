@@ -15,24 +15,25 @@
 
 package l2server.gameserver.stats.effects;
 
+import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.L2Effect;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
+import l2server.gameserver.templates.skills.EffectTemplate;
 
 /**
  * @author DS
  * <p>
- * Effect will generate charges for L2PcInstance targets
+ * Effect will generate charges for Player targets
  * Number of charges in "value", maximum number in "count" effect variables
  */
 public class EffectIncreaseCharges extends L2Effect {
-	public EffectIncreaseCharges(Env env, L2EffectTemplate template) {
+	public EffectIncreaseCharges(Env env, EffectTemplate template) {
 		super(env, template);
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onStart()
+	 * @see Abnormal#onStart()
 	 */
 	@Override
 	public boolean onStart() {
@@ -40,26 +41,26 @@ public class EffectIncreaseCharges extends L2Effect {
 			return false;
 		}
 
-		if (!(getEffected() instanceof L2PcInstance)) {
+		if (!(getEffected() instanceof Player)) {
 			return false;
 		}
 
 		int count = getAbnormal().getCount();
 		if (count == 15) {
-			if (((L2PcInstance) getEffected()).getClassId() < 140) {
+			if (((Player) getEffected()).getClassId() < 140) {
 				count = 2;
-			} else if (((L2PcInstance) getEffected()).getClassId() != 152 && ((L2PcInstance) getEffected()).getClassId() != 155) {
+			} else if (((Player) getEffected()).getClassId() != 152 && ((Player) getEffected()).getClassId() != 155) {
 				count = 10;
 			}
 		}
 
-		((L2PcInstance) getEffected()).increaseCharges((int) calc(), count);
+		((Player) getEffected()).increaseCharges((int) calc(), count);
 
 		return true;
 	}
 
 	/**
-	 * @see l2server.gameserver.model.L2Abnormal#onActionTime()
+	 * @see Abnormal#onActionTime()
 	 */
 	@Override
 	public boolean onActionTime() {

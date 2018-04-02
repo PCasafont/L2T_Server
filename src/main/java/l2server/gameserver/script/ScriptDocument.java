@@ -15,7 +15,8 @@
 
 package l2server.gameserver.script;
 
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -31,6 +32,9 @@ import java.util.logging.Level;
  *
  */
 public class ScriptDocument {
+	private static Logger log = LoggerFactory.getLogger(ScriptDocument.class.getName());
+
+
 	private Document document;
 	private String name;
 
@@ -50,7 +54,7 @@ public class ScriptDocument {
 			x.printStackTrace();
 		} catch (ParserConfigurationException | IOException pce) {
 			// Parser with specified options can't be built
-			Log.log(Level.WARNING, "", pce);
+			log.warn("", pce);
 		}
 	}
 

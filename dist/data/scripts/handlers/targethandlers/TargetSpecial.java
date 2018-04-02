@@ -20,18 +20,18 @@ import l2server.gameserver.GeoEngine;
 import l2server.gameserver.events.instanced.EventInstance;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2WorldRegion;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.actor.instance.L2TrapInstance;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldRegion;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.TrapInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.skills.L2SkillTargetDirection;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.templates.skills.SkillTargetDirection;
+import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.gameserver.util.Util;
 
 import java.util.ArrayList;
@@ -45,35 +45,35 @@ import java.util.Collection;
  */
 public class TargetSpecial implements ISkillTargetTypeHandler {
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		final L2PcInstance aPlayer = activeChar.getActingPlayer();
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		final Player aPlayer = activeChar.getActingPlayer();
 
 		if (!skill.isUseableWithoutTarget() && target == null) {
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 			return null;
 		}
 
-		final ArrayList<L2Character> result = new ArrayList<L2Character>();
+		final ArrayList<Creature> result = new ArrayList<Creature>();
 
-		final L2Summon aPet = aPlayer.getPet();
+		final Summon aPet = aPlayer.getPet();
 		if (aPet != null && !aPet.isDead()) {
 			result.add(aPet);
 		}
 
-		if (skill.getTargetDirection() == L2SkillTargetDirection.SUBLIMES) {
+		if (skill.getTargetDirection() == SkillTargetDirection.SUBLIMES) {
 			result.add(activeChar);
-			for (L2Character o : aPlayer.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
+			for (Creature o : aPlayer.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius())) {
 				if (!GeoEngine.getInstance().canSeeTarget(aPlayer, o)) {
 					continue;
 				}
 
-				final L2PcInstance kTarget = o.getActingPlayer();
+				final Player kTarget = o.getActingPlayer();
 				if (kTarget != null) {
 					if (kTarget == aPlayer) {
 						continue;
 					}
 
-					final L2Summon kPet = kTarget.getPet();
+					final Summon kPet = kTarget.getPet();
 					if (kPet != null) {
 						if (!isReacheableBySublime(aPlayer, kPet)) {
 							continue;
@@ -87,29 +87,29 @@ public class TargetSpecial implements ISkillTargetTypeHandler {
 					result.add(o);
 				}
 			}
-		} else if (skill.getTargetDirection() == L2SkillTargetDirection.CHAIN_HEAL) {
-			if (activeChar.getTarget() instanceof L2PcInstance) {
-				final L2PcInstance targetedCharacter = (L2PcInstance) activeChar.getTarget();
+		} else if (skill.getTargetDirection() == SkillTargetDirection.CHAIN_HEAL) {
+			if (activeChar.getTarget() instanceof Player) {
+				final Player targetedCharacter = (Player) activeChar.getTarget();
 
 				if (!isReachableByChainHeal(aPlayer, targetedCharacter)) {
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 					return null;
 				}
 
-				Collection<L2Character> knownCharacters = targetedCharacter.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius());
+				Collection<Creature> knownCharacters = targetedCharacter.getKnownList().getKnownCharactersInRadius(skill.getSkillRadius());
 
-				for (L2Character o : knownCharacters) {
+				for (Creature o : knownCharacters) {
 					//activeChar.sendMessage("Checking " + o);
 					//if (!GeoEngine.getInstance().canSeeTarget(target, o))
 					//	continue;
 
-					final L2PcInstance kTarget = o.getActingPlayer();
+					final Player kTarget = o.getActingPlayer();
 					if (kTarget != null) {
 						if (kTarget == aPlayer) {
 							continue;
 						}
 
-						final L2Summon kPet = kTarget.getPet();
+						final Summon kPet = kTarget.getPet();
 						if (kPet != null) {
 							if (!isReachableByChainHeal(aPlayer, kPet)) {
 								continue;
@@ -137,18 +137,18 @@ public class TargetSpecial implements ISkillTargetTypeHandler {
 					result.add(aPlayer);
 				}
 
-				return result.toArray(new L2Character[result.size()]);
+				return result.toArray(new Creature[result.size()]);
 			}
-		} else if (skill.getTargetDirection() == L2SkillTargetDirection.PARTY_ANYWHERE) {
+		} else if (skill.getTargetDirection() == SkillTargetDirection.PARTY_ANYWHERE) {
 			if (aPlayer.getParty() != null) {
 				// FIXME return activeChar.getParty().getPartyMembers();
 			}
-		} else if (skill.getTargetDirection() == L2SkillTargetDirection.INVISIBLE_TRAP) {
-			final L2WorldRegion region = activeChar.getWorldRegion();
+		} else if (skill.getTargetDirection() == SkillTargetDirection.INVISIBLE_TRAP) {
+			final WorldRegion region = activeChar.getWorldRegion();
 			if (region != null) {
-				for (final L2Object obj : region.getVisibleObjects().values()) {
-					if (obj instanceof L2TrapInstance && activeChar.isInsideRadius(obj.getX(), obj.getY(), skill.getSkillRadius(), false)) {
-						final L2TrapInstance dTrap = (L2TrapInstance) obj;
+				for (final WorldObject obj : region.getVisibleObjects().values()) {
+					if (obj instanceof TrapInstance && activeChar.isInsideRadius(obj.getX(), obj.getY(), skill.getSkillRadius(), false)) {
+						final TrapInstance dTrap = (TrapInstance) obj;
 
 						if (dTrap.getOwner() == activeChar /*|| dTrap.isDetected() FIXME */) {
 							continue;
@@ -160,16 +160,16 @@ public class TargetSpecial implements ISkillTargetTypeHandler {
 			}
 		}
 
-		return result.toArray(new L2Character[result.size()]);
+		return result.toArray(new Creature[result.size()]);
 	}
 
-	private final boolean isReacheableBySublime(final L2PcInstance activeChar, final L2Character target) {
+	private final boolean isReacheableBySublime(final Player activeChar, final Creature target) {
 		if (target.isDead()) {
 			return false;
 		}
 
-		if (target instanceof L2Playable) {
-			final L2PcInstance pTarget = target.getActingPlayer();
+		if (target instanceof Playable) {
+			final Player pTarget = target.getActingPlayer();
 
 			// FIXME if (pTarget.isInvisible())
 			//	return false;
@@ -188,7 +188,7 @@ public class TargetSpecial implements ISkillTargetTypeHandler {
 			if (pTarget.isAvailableForCombat() || pTarget.isInsidePvpZone() || activeChar.isInSameClanWar(pTarget)) {
 				return false;
 			}
-			if (target.isInsideZone(L2Character.ZONE_TOWN)) {
+			if (target.isInsideZone(Creature.ZONE_TOWN)) {
 				return true;
 			}
 		} else {
@@ -198,13 +198,13 @@ public class TargetSpecial implements ISkillTargetTypeHandler {
 		return true;
 	}
 
-	private final boolean isReachableByChainHeal(final L2PcInstance activeChar, final L2Character target) {
+	private final boolean isReachableByChainHeal(final Player activeChar, final Creature target) {
 		if (target.isDead()) {
 			return false;
 		}
 
-		if (target instanceof L2Playable) {
-			final L2PcInstance player = target.getActingPlayer();
+		if (target instanceof Playable) {
+			final Player player = target.getActingPlayer();
 
 			if (player == activeChar) {
 				return true;
@@ -215,8 +215,8 @@ public class TargetSpecial implements ISkillTargetTypeHandler {
 			return false;
 		}
 
-		if (target instanceof L2Playable) {
-			final L2PcInstance pTarget = target.getActingPlayer();
+		if (target instanceof Playable) {
+			final Player pTarget = target.getActingPlayer();
 
 			if (pTarget.isInOlympiadMode()) {
 				return false;
@@ -262,8 +262,8 @@ public class TargetSpecial implements ISkillTargetTypeHandler {
 	}
 
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
-		return L2SkillTargetType.TARGET_SPECIAL;
+	public Enum<SkillTargetType> getTargetType() {
+		return SkillTargetType.TARGET_SPECIAL;
 	}
 
 	public static void main(String[] args) {

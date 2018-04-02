@@ -19,14 +19,14 @@ import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.actor.L2Character;
-import l2server.gameserver.model.actor.L2Npc;
-import l2server.gameserver.model.actor.L2Playable;
-import l2server.gameserver.model.actor.L2Summon;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.skills.L2SkillTargetType;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.gameserver.util.Util;
 
 import java.util.ArrayList;
@@ -40,18 +40,18 @@ public class TargetClan implements ISkillTargetTypeHandler {
 	/**
 	 */
 	@Override
-	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target) {
-		List<L2Character> targetList = new ArrayList<L2Character>();
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
+		List<Creature> targetList = new ArrayList<Creature>();
 
-		if (activeChar instanceof L2Playable) {
+		if (activeChar instanceof Playable) {
 			int radius = skill.getSkillRadius();
 
-			L2PcInstance player = null;
+			Player player = null;
 
-			if (activeChar instanceof L2Summon) {
-				player = ((L2Summon) activeChar).getOwner();
+			if (activeChar instanceof Summon) {
+				player = ((Summon) activeChar).getOwner();
 			} else {
-				player = (L2PcInstance) activeChar;
+				player = (Player) activeChar;
 			}
 
 			if (player == null) {
@@ -61,13 +61,13 @@ public class TargetClan implements ISkillTargetTypeHandler {
 			L2Clan clan = player.getClan();
 
 			if (player.isInOlympiadMode()) {
-				return new L2Character[]{player};
+				return new Creature[]{player};
 			}
 
 			if (!onlyFirst) {
 				targetList.add(player);
 			} else {
-				return new L2Character[]{player};
+				return new Creature[]{player};
 			}
 
 			/* FIXME
@@ -78,10 +78,10 @@ public class TargetClan implements ISkillTargetTypeHandler {
 			}*/
 
 			if (clan != null) {
-				// Get all visible objects in a spheric area near the L2Character
+				// Get all visible objects in a spheric area near the Creature
 				// Get Clan Members
 				for (L2ClanMember member : clan.getMembers()) {
-					L2PcInstance newTarget = member.getPlayerInstance();
+					Player newTarget = member.getPlayerInstance();
 
 					if (newTarget == null || newTarget == player) {
 						continue;
@@ -112,21 +112,21 @@ public class TargetClan implements ISkillTargetTypeHandler {
 					if (!onlyFirst) {
 						targetList.add(newTarget);
 					} else {
-						return new L2Character[]{newTarget};
+						return new Creature[]{newTarget};
 					}
 				}
 			}
-		} else if (activeChar instanceof L2Npc) {
-			L2Npc npc = (L2Npc) activeChar;
-			Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
+		} else if (activeChar instanceof Npc) {
+			Npc npc = (Npc) activeChar;
+			Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
 			//synchronized (activeChar.getKnownList().getKnownObjects())
 			{
-				for (L2Object newTarget : objs) {
-					if (newTarget instanceof L2Npc && ((L2Npc) newTarget).getFactionId() == npc.getFactionId()) {
+				for (WorldObject newTarget : objs) {
+					if (newTarget instanceof Npc && ((Npc) newTarget).getFactionId() == npc.getFactionId()) {
 						if (!Util.checkIfInRange(skill.getCastRange(), activeChar, newTarget, true)) {
 							continue;
 						}
-						targetList.add((L2Npc) newTarget);
+						targetList.add((Npc) newTarget);
 					}
 				}
 			}
@@ -135,15 +135,15 @@ public class TargetClan implements ISkillTargetTypeHandler {
 			}
 		}
 
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(new Creature[targetList.size()]);
 	}
 
 	/**
 	 */
 	@Override
-	public Enum<L2SkillTargetType> getTargetType() {
+	public Enum<SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub
-		return L2SkillTargetType.TARGET_CLAN;
+		return SkillTargetType.TARGET_CLAN;
 	}
 
 	public static void main(String[] args) {

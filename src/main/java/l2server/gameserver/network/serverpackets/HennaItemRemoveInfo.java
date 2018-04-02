@@ -15,15 +15,15 @@
 
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.templates.item.L2Henna;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.templates.item.HennaTemplate;
 
 public class HennaItemRemoveInfo extends L2GameServerPacket {
 	
-	private L2PcInstance activeChar;
-	private L2Henna henna;
+	private Player activeChar;
+	private HennaTemplate henna;
 	
-	public HennaItemRemoveInfo(L2Henna henna, L2PcInstance player) {
+	public HennaItemRemoveInfo(HennaTemplate henna, Player player) {
 		this.henna = henna;
 		activeChar = player;
 	}

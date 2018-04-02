@@ -19,8 +19,8 @@ import l2server.gameserver.instancemanager.ClanRecruitManager;
 import l2server.gameserver.instancemanager.ClanRecruitManager.ClanRecruitWaitingUser;
 import l2server.gameserver.instancemanager.MailManager;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2World;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.World;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.entity.Message.SendBySystem;
 import l2server.gameserver.network.SystemMessageId;
@@ -44,7 +44,7 @@ public final class RequestPledgeApplicationAccept extends L2GameClientPacket {
 	
 	@Override
 	protected void runImpl() {
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final Player activeChar = getClient().getActiveChar();
 		if (activeChar == null || !activeChar.isClanLeader()) {
 			return;
 		}
@@ -60,7 +60,7 @@ public final class RequestPledgeApplicationAccept extends L2GameClientPacket {
 				return;
 			}
 			
-			final L2PcInstance target = L2World.getInstance().getPlayer(applicantId);
+			final Player target = World.getInstance().getPlayer(applicantId);
 			if (target == null) {
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_INVITED_THE_WRONG_TARGET));
 				return;

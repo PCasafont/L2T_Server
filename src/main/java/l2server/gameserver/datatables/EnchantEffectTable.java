@@ -19,7 +19,8 @@ import l2server.Config;
 import l2server.gameserver.model.EnchantEffect;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.stats.funcs.*;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -35,6 +36,9 @@ import java.util.logging.Level;
  * @author Pere
  */
 public class EnchantEffectTable {
+	private static Logger log = LoggerFactory.getLogger(EnchantEffectTable.class.getName());
+
+
 	public static EnchantEffectTable getInstance() {
 		return SingletonHolder.instance;
 	}
@@ -50,7 +54,7 @@ public class EnchantEffectTable {
 	public void load() {
 		File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "enchanteffects");
 		if (!dir.exists()) {
-			Log.warning("Dir " + dir.getAbsolutePath() + " does not exist");
+			log.warn("Dir " + dir.getAbsolutePath() + " does not exist");
 			return;
 		}
 
@@ -102,12 +106,12 @@ public class EnchantEffectTable {
 					effects.put(id, effect);
 				}
 			} catch (Exception e) {
-				Log.log(Level.SEVERE, "Error loading enchant effects", e);
+				log.error("Error loading enchant effects", e);
 				return;
 			}
 		}
 
-		Log.info("EnchantEffectTable: Loaded " + effects.size() + " enchant effects.");
+		log.info("EnchantEffectTable: Loaded " + effects.size() + " enchant effects.");
 	}
 
 	public final EnchantEffect getEffect(int id) {

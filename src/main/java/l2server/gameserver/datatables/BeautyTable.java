@@ -16,7 +16,8 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.log.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
@@ -32,6 +33,9 @@ import java.util.Map;
  */
 
 public class BeautyTable {
+	private static Logger log = LoggerFactory.getLogger(BeautyTable.class.getName());
+
+
 	public class BeautyTemplate {
 		private int id;
 		private Map<Integer, BeautyInfo> hairStyles = new HashMap<>();
@@ -137,7 +141,7 @@ public class BeautyTable {
 
 		beautyTable.put(0, template);
 
-		Log.info("BeautyTable: Loaded " + template.getHairStyles().size() + " hair styles, " + template.getFaceStyles().size() + " face styles and " +
+		log.info("BeautyTable: Loaded " + template.getHairStyles().size() + " hair styles, " + template.getFaceStyles().size() + " face styles and " +
 				template.getHairColors().size() + " hair colors!");
 	}
 

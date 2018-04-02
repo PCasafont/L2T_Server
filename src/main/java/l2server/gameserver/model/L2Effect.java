@@ -15,12 +15,12 @@
 
 package l2server.gameserver.model;
 
-import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.funcs.Lambda;
-import l2server.gameserver.templates.skills.L2AbnormalType;
-import l2server.gameserver.templates.skills.L2EffectTemplate;
-import l2server.gameserver.templates.skills.L2EffectType;
+import l2server.gameserver.templates.skills.AbnormalType;
+import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.gameserver.templates.skills.EffectType;
 
 /**
  * This class ...
@@ -35,24 +35,24 @@ public abstract class L2Effect {
 		FINISHING
 	}
 
-	//member effector is the instance of L2Character that cast/used the spell/skill that is
-	//causing this effect.  Do not confuse with the instance of L2Character that
+	//member effector is the instance of Creature that cast/used the spell/skill that is
+	//causing this effect.  Do not confuse with the instance of Creature that
 	//is being affected by this effect.
-	private final L2Character effector;
+	private final Creature effector;
 
-	//member effected is the instance of L2Character that was affected
-	//by this effect.  Do not confuse with the instance of L2Character that
+	//member effected is the instance of Creature that was affected
+	//by this effect.  Do not confuse with the instance of Creature that
 	//casted/used this effect.
-	private final L2Character effected;
+	private final Creature effected;
 
 	// the value of an update
 	private final Lambda lambda;
 
 	//the skill that was used.
-	private final L2Skill skill;
+	private final Skill skill;
 
-	private L2Abnormal abnormal;
-	private L2EffectTemplate template;
+	private Abnormal abnormal;
+	private EffectTemplate template;
 
 	public boolean preventExitUpdate;
 
@@ -60,7 +60,7 @@ public abstract class L2Effect {
 	 * <font color="FF0000"><b>WARNING: scheduleEffect nolonger inside constructor</b></font><br>
 	 * So you must call it explicitly
 	 */
-	protected L2Effect(Env env, L2EffectTemplate template) {
+	protected L2Effect(Env env, EffectTemplate template) {
 		skill = env.skill;
 		//item = env.item == null ? null : env.item.getItem();
 		this.template = template;
@@ -95,15 +95,15 @@ public abstract class L2Effect {
 		return lambda.calc(env);
 	}
 
-	public final L2Skill getSkill() {
+	public final Skill getSkill() {
 		return skill;
 	}
 
-	public final L2Character getEffector() {
+	public final Creature getEffector() {
 		return effector;
 	}
 
-	public final L2Character getEffected() {
+	public final Creature getEffected() {
 		return effected;
 	}
 
@@ -111,7 +111,7 @@ public abstract class L2Effect {
 	 * Stop the L2Effect task and send Server->Client update packet.<BR><BR>
 	 * <p>
 	 * <B><U> Actions</U> :</B><BR><BR>
-	 * <li>Cancel the effect in the the abnormal effect map of the L2Character </li>
+	 * <li>Cancel the effect in the the abnormal effect map of the Creature </li>
 	 * <li>Stop the task of the L2Effect, remove it and update client magic icon </li><BR><BR>
 	 */
 	public final void exit() {
@@ -125,12 +125,12 @@ public abstract class L2Effect {
 	/**
 	 * returns effect type
 	 */
-	public L2EffectType getEffectType() {
-		return L2EffectType.NONE;
+	public EffectType getEffectType() {
+		return EffectType.NONE;
 	}
 
-	public L2AbnormalType getAbnormalType() {
-		return L2AbnormalType.NONE;
+	public AbnormalType getAbnormalType() {
+		return AbnormalType.NONE;
 	}
 
 	public long getEffectMask() {
@@ -145,7 +145,7 @@ public abstract class L2Effect {
 	}
 
 	/**
-	 * Cancel the effect in the the abnormal effect map of the effected L2Character.<BR><BR>
+	 * Cancel the effect in the the abnormal effect map of the effected Creature.<BR><BR>
 	 */
 	public void onExit() {
 	}
@@ -159,15 +159,15 @@ public abstract class L2Effect {
 		return getSkill().getLevelHash();
 	}
 
-	public L2Abnormal getAbnormal() {
+	public Abnormal getAbnormal() {
 		return abnormal;
 	}
 
-	public void setAbnormal(L2Abnormal abnormal) {
+	public void setAbnormal(Abnormal abnormal) {
 		this.abnormal = abnormal;
 	}
 
-	public L2EffectTemplate getTemplate() {
+	public EffectTemplate getTemplate() {
 		return template;
 	}
 

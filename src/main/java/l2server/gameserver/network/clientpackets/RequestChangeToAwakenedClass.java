@@ -18,9 +18,9 @@ package l2server.gameserver.network.clientpackets;
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.PlayerClassTable;
-import l2server.gameserver.model.L2Skill;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.L2SkillLearn;
-import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.network.serverpackets.SocialAction;
 
@@ -43,7 +43,7 @@ public final class RequestChangeToAwakenedClass extends L2GameClientPacket {
 			return;
 		}
 		
-		final L2PcInstance player = getClient().getActiveChar();
+		final Player player = getClient().getActiveChar();
 		if (player == null) {
 			return;
 		}
@@ -86,7 +86,7 @@ public final class RequestChangeToAwakenedClass extends L2GameClientPacket {
 		}
 		// TODO: More items?
 		
-		for (L2Skill skill : player.getAllSkills()) {
+		for (Skill skill : player.getAllSkills()) {
 			int skillId = skill.getId();
 			boolean remove = true;
 			for (L2SkillLearn sl : cl.getSkills().values()) {
