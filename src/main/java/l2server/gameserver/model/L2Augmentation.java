@@ -90,7 +90,6 @@ public final class L2Augmentation {
 	/**
 	 * Applies the bonuses to the player.
 	 *
-	 * @param player
 	 */
 	public void applyBonus(Player player) {
 		effect1.applyBonus(player);
@@ -128,7 +127,6 @@ public final class L2Augmentation {
 	/**
 	 * Removes the augmentation bonuses from the player.
 	 *
-	 * @param player
 	 */
 	public void removeBonus(Player player) {
 		effect1.removeBonus(player);

@@ -17,8 +17,8 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.instance.SummonInstance;
@@ -33,8 +33,6 @@ import java.util.List;
  * @author One
  */
 public class TargetUndead implements ISkillTargetTypeHandler {
-	/**
-	 */
 	@Override
 	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
 		List<Creature> targetList = new ArrayList<Creature>();
@@ -58,8 +56,6 @@ public class TargetUndead implements ISkillTargetTypeHandler {
 		}
 	}
 
-	/**
-	 */
 	@Override
 	public Enum<SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub

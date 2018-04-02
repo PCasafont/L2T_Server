@@ -25,9 +25,6 @@ public class AuthResponse extends BaseRecievePacket {
 	private int serverId;
 	private String serverName;
 
-	/**
-	 * @param decrypt
-	 */
 	public AuthResponse(byte[] decrypt) {
 		super(decrypt);
 		serverId = readC();

@@ -16,8 +16,8 @@
 package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.model.Skill;
-import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Trap;
 import l2server.gameserver.model.olympiad.OlympiadGameManager;
 import l2server.gameserver.model.quest.Quest;
@@ -35,11 +35,6 @@ public class TrapInstance extends Trap {
 	private boolean isInArena = false;
 	private final List<Integer> playersWhoDetectedMe = new ArrayList<>();
 
-	/**
-	 * @param objectId
-	 * @param template
-	 * @param owner
-	 */
 	public TrapInstance(int objectId, NpcTemplate template, Player owner, int lifeTime, Skill skill) {
 		super(objectId, template, lifeTime, skill);
 		setInstanceType(InstanceType.L2TrapInstance);

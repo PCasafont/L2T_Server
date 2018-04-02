@@ -45,7 +45,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
-import java.util.logging.Level;
 
 /**
  * This class ...
@@ -249,8 +248,6 @@ public class L2Clan {
 		return leader;
 	}
 
-	/**
-	 */
 	public void setLeader(L2ClanMember leader) {
 		this.leader = leader;
 		members.put(leader.getObjectId(), leader);
@@ -569,16 +566,10 @@ public class L2Clan {
 		return count;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getAllyId() {
 		return allyId;
 	}
 
-	/**
-	 * @return
-	 */
 	public String getAllyName() {
 		return allyName;
 	}
@@ -587,37 +578,22 @@ public class L2Clan {
 		this.allyCrestId = allyCrestId;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getAllyCrestId() {
 		return allyCrestId;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getLevel() {
 		return level;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getHasCastle() {
 		return hasCastle;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getHasFort() {
 		return hasFort;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getHasHideout() {
 		return hasHideout;
 	}
@@ -709,7 +685,6 @@ public class L2Clan {
 
 	/**
 	 * @param id Player id
-	 * @return
 	 */
 	public boolean isMember(int id) {
 		return id != 0 && members.containsKey(id);
@@ -1994,10 +1969,6 @@ public class L2Clan {
 	/**
 	 * Checks if activeChar and target meet various conditions to join a clan
 	 *
-	 * @param activeChar
-	 * @param target
-	 * @param pledgeType
-	 * @return
 	 */
 	public boolean checkClanJoinCondition(Player activeChar, Player target, int pledgeType) {
 		if (activeChar == null) {
@@ -2082,9 +2053,6 @@ public class L2Clan {
 	/**
 	 * Checks if activeChar and target meet various conditions to join a clan
 	 *
-	 * @param activeChar
-	 * @param target
-	 * @return
 	 */
 	public boolean checkAllyJoinCondition(Player activeChar, Player target) {
 		if (activeChar == null) {
@@ -2707,7 +2675,6 @@ public class L2Clan {
 	/**
 	 * Check if clan learn this squad skill
 	 *
-	 * @param skill
 	 * @return true if can be added
 	 */
 	public boolean isLearnableSubSkill(Skill skill) {

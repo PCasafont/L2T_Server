@@ -37,8 +37,6 @@ public class MyTargetSelected extends L2GameServerPacket {
 	private int objectId;
 	private int color;
 	
-	/**
-	 */
 	public MyTargetSelected(int objectId, int color) {
 		this.objectId = objectId;
 		this.color = color;

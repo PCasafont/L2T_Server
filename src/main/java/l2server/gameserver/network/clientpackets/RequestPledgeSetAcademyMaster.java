@@ -38,8 +38,6 @@ public final class RequestPledgeSetAcademyMaster extends L2GameClientPacket {
 		targetPlayerName = readS();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		Player activeChar = getClient().getActiveChar();

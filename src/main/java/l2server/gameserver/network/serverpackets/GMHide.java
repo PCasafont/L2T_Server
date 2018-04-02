@@ -23,8 +23,6 @@ public class GMHide extends L2GameServerPacket {
 	// cd
 	private static int mode;
 
-	/**
-	 */
 	public GMHide(int mode) {
 		this.mode = mode;
 	}

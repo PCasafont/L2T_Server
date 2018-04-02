@@ -190,7 +190,6 @@ public class SortedWareHouseWithdrawalList extends L2ItemListPacket {
 	 * This public method return the integer of the Sortorder by its name.
 	 * If you want to have another, add the Comparator and the Constant.
 	 *
-	 * @param order
 	 * @return the integer of the sortorder or 1 as default value
 	 */
 	public static byte getOrder(String order) {

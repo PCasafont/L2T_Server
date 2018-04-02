@@ -29,8 +29,6 @@ public final class AnswerJoinPartyRoom extends L2GameClientPacket {
 		requesterID = readD();
 	}
 
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		// TODO

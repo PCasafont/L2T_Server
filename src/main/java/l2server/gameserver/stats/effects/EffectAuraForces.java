@@ -169,8 +169,6 @@ public class EffectAuraForces extends L2Effect {
 		super.onExit();
 	}
 
-	/**
-	 */
 	@Override
 	public boolean onActionTime() {
 		if (getEffected().isDead()) {

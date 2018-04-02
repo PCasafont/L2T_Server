@@ -29,11 +29,6 @@ public class AuthRequest extends BaseSendablePacket {
 	 * d hexid size
 	 * b hexid
 	 *
-	 * @param id
-	 * @param acceptAlternate
-	 * @param hexid
-	 * @param reserveHost
-	 * @param maxplayer
 	 */
 	public AuthRequest(int id,
 	                   boolean acceptAlternate,

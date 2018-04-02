@@ -25,8 +25,6 @@ public class GetOnVehicle extends L2GameServerPacket {
 	private int boatObjId;
 	private Point3D pos;
 	
-	/**
-	 */
 	public GetOnVehicle(int charObjId, int boatObjId, Point3D pos) {
 		this.charObjId = charObjId;
 		this.boatObjId = boatObjId;

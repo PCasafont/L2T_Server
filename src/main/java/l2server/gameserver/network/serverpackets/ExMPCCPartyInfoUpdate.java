@@ -29,7 +29,6 @@ public class ExMPCCPartyInfoUpdate extends L2GameServerPacket {
 	private String name;
 	
 	/**
-	 * @param party
 	 * @param mode  0 = Remove, 1 = Add
 	 */
 	public ExMPCCPartyInfoUpdate(L2Party party, int mode) {

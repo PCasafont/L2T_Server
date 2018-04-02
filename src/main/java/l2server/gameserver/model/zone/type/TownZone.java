@@ -119,7 +119,6 @@ public class TownZone extends SpawnZone {
 	/**
 	 * Returns this zones town id (if any)
 	 *
-	 * @return
 	 */
 	public int getTownId() {
 		return townId;
@@ -128,7 +127,6 @@ public class TownZone extends SpawnZone {
 	/**
 	 * Returns this town zones castle id
 	 *
-	 * @return
 	 */
 	public final int getTaxById() {
 		return taxById;

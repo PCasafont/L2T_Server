@@ -32,8 +32,6 @@ public class FriendAddRequest extends L2GameServerPacket {
 
 	private String requestorName;
 
-	/**
-	 */
 	public FriendAddRequest(String requestorName) {
 		this.requestorName = requestorName;
 	}

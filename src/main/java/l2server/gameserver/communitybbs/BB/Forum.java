@@ -28,7 +28,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
 
 public class Forum {
 	private static Logger log = LoggerFactory.getLogger(Forum.class.getName());
@@ -74,12 +73,6 @@ public class Forum {
 		getChildren();	*/
 	}
 
-	/**
-	 * @param name
-	 * @param parent
-	 * @param type
-	 * @param perm
-	 */
 	public Forum(String name, Forum parent, int type, int perm, int OwnerID) {
 		forumName = name;
 		forumId = ForumsBBSManager.getInstance().getANewID();
@@ -192,9 +185,6 @@ public class Forum {
 		topic.put(t.getID(), t);
 	}
 
-	/**
-	 * @return
-	 */
 	public int getID() {
 		return forumId;
 	}
@@ -209,10 +199,6 @@ public class Forum {
 		return forumType;
 	}
 
-	/**
-	 * @param name
-	 * @return
-	 */
 	public Forum getChildByName(String name) {
 		vload();
 		for (Forum f : children) {
@@ -223,9 +209,6 @@ public class Forum {
 		return null;
 	}
 
-	/**
-	 * @param id
-	 */
 	public void rmTopicByID(int id) {
 		topic.remove(id);
 	}

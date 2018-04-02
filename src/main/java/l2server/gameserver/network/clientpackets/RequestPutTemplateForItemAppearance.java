@@ -23,9 +23,10 @@ import l2server.gameserver.network.serverpackets.ExItemAppearanceResult;
 import l2server.gameserver.network.serverpackets.ExPutTemplateResultForItemAppearance;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.templates.item.*;
 import l2server.gameserver.templates.item.ArmorType;
+import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.templates.item.ItemType;
+import l2server.gameserver.templates.item.WeaponType;
 import l2server.gameserver.util.Util;
 
 import java.util.HashMap;
@@ -44,8 +45,6 @@ public final class RequestPutTemplateForItemAppearance extends L2GameClientPacke
 		objectId2 = readD();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		if (objectId1 == objectId2) {

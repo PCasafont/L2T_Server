@@ -17,8 +17,8 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.network.SystemMessageId;
@@ -65,8 +65,6 @@ public class TargetCorpseMob implements ISkillTargetTypeHandler {
 		}
 	}
 
-	/**
-	 */
 	@Override
 	public Enum<SkillTargetType> getTargetType() {
 		return SkillTargetType.TARGET_CORPSE_MOB;

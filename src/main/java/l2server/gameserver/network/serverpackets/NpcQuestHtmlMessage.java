@@ -127,10 +127,6 @@ public final class NpcQuestHtmlMessage extends L2GameServerPacket {
 	private String html;
 	private int questId = 0;
 	
-	/**
-	 * @param npcObjId
-	 * @param questId
-	 */
 	public NpcQuestHtmlMessage(int npcObjId, int questId) {
 		this.npcObjId = npcObjId;
 		this.questId = questId;

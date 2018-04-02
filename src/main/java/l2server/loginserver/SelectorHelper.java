@@ -35,15 +35,11 @@ public class SelectorHelper implements IMMOExecutor<L2LoginClient>, IClientFacto
 		ipv4filter = new IPv4Filter();
 	}
 	
-	/**
-	 */
 	@Override
 	public void execute(ReceivablePacket<L2LoginClient> packet) {
 		generalPacketsThreadPool.execute(packet);
 	}
 	
-	/**
-	 */
 	@Override
 	public L2LoginClient create(MMOConnection<L2LoginClient> con) {
 		L2LoginClient client = new L2LoginClient(con);
@@ -51,8 +47,6 @@ public class SelectorHelper implements IMMOExecutor<L2LoginClient>, IClientFacto
 		return client;
 	}
 	
-	/**
-	 */
 	@Override
 	public boolean accept(SocketChannel sc) {
 		return ipv4filter.accept(sc) && !LoginController.getInstance().isBannedAddress(sc.socket().getInetAddress());

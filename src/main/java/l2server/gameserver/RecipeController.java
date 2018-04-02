@@ -17,8 +17,8 @@ package l2server.gameserver;
 
 import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.model.*;
 import l2server.gameserver.model.Item;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.network.SystemMessageId;
@@ -28,12 +28,12 @@ import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.*;
@@ -698,7 +698,6 @@ public class RecipeController {
 			private String itemName;
 
 			/**
-			 * @param item
 			 * @param quantity of that item
 			 */
 			public TempItem(Item item, int quantity) {

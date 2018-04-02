@@ -125,8 +125,6 @@ public final class L2ArmorSet {
 	/**
 	 * Returns the minimum enchant level of the set for the given player
 	 *
-	 * @param player
-	 * @return
 	 */
 	public int getEnchantLevel(Player player) {
 		if (!containsAll(player)) {

@@ -30,8 +30,6 @@ public class ChairSit extends L2GameServerPacket {
 	private Player activeChar;
 	private int staticObjectId;
 
-	/**
-	 */
 	public ChairSit(Player player, int staticObjectId) {
 		activeChar = player;
 		this.staticObjectId = staticObjectId;

@@ -32,8 +32,6 @@ public class CastleWyvernManagerInstance extends WyvernManagerInstance {
 		return false;
 	}
 	
-	/**
-	 */
 	@Override
 	public boolean isInSiege() {
 		return getCastle().getZone().isActive();

@@ -38,8 +38,6 @@ public final class RequestRefineCancel extends L2GameClientPacket {
 		targetItemObjId = readD();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		Player activeChar = getClient().getActiveChar();

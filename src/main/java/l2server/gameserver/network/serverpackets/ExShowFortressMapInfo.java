@@ -80,10 +80,6 @@ public class ExShowFortressMapInfo extends L2GameServerPacket {
 		}
 	}
 	
-	/**
-	 * @param npcId
-	 * @return
-	 */
 	private boolean isSpawned(int npcId) {
 		boolean ret = false;
 		for (L2Spawn spawn : fortress.getCommanderSpawns()) {

@@ -31,9 +31,6 @@ public class RequestTempBan extends BaseRecievePacket {
 	String accountName, banReason, ip;
 	long banTime;
 
-	/**
-	 * @param decrypt
-	 */
 	public RequestTempBan(byte[] decrypt) {
 		super(decrypt);
 		accountName = readS();

@@ -618,9 +618,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		return character;
 	}
 	
-	/**
-	 * @param chars
-	 */
 	public void setCharSelection(CharSelectInfoPackage[] chars) {
 		charSlotMapping = chars;
 	}
@@ -677,10 +674,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		getConnection().close(gspArray);
 	}
 	
-	/**
-	 * @param charslot
-	 * @return
-	 */
 	private int getObjectIdForSlot(int charslot) {
 		final CharSelectInfoPackage info = getCharSelection(charslot);
 		if (info == null) {

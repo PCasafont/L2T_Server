@@ -30,8 +30,6 @@ public class ExMPCCShowPartyMemberInfo extends L2GameServerPacket {
 		this.party = party;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(party.getMemberCount()); // Number of Members

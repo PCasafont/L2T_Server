@@ -179,7 +179,6 @@ public abstract class PathFinding {
 	 * Convert pathnode x to World x position
 	 *
 	 * @param node_x, rx
-	 * @return
 	 */
 	public int calculateWorldX(short node_x) {
 		return World.MAP_MIN_X + node_x * 128 + 48;
@@ -189,7 +188,6 @@ public abstract class PathFinding {
 	 * Convert pathnode y to World y position
 	 *
 	 * @param node_y
-	 * @return
 	 */
 	public int calculateWorldY(short node_y) {
 		return World.MAP_MIN_Y + node_y * 128 + 48;

@@ -32,10 +32,6 @@ public class CompiledScriptHolder implements Serializable {
 	private long size;
 	private CompiledScript compiledScript;
 	
-	/**
-	 * @param compiledScript
-	 * @param scriptFile
-	 */
 	public CompiledScriptHolder(CompiledScript compiledScript, File scriptFile) {
 		this.compiledScript = compiledScript;
 		lastModified = scriptFile.lastModified();

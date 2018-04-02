@@ -38,9 +38,6 @@ public class MerchantInstance extends NpcInstance {
 
 	private MerchantPriceConfig mpc;
 	
-	/**
-	 * @param template
-	 */
 	public MerchantInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2MerchantInstance);

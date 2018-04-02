@@ -17,8 +17,8 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.Player;
@@ -35,8 +35,6 @@ import java.util.List;
  * @author nBd
  */
 public class TargetMultiface implements ISkillTargetTypeHandler {
-	/**
-	 */
 	@Override
 	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
 		List<Creature> targetList = new ArrayList<Creature>();
@@ -76,8 +74,6 @@ public class TargetMultiface implements ISkillTargetTypeHandler {
 		//TODO multiface targets all around right now.  need it to just get targets the character is facing.
 	}
 
-	/**
-	 */
 	@Override
 	public Enum<SkillTargetType> getTargetType() {
 		return SkillTargetType.TARGET_MULTIFACE;

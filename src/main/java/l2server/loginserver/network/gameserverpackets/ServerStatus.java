@@ -62,9 +62,6 @@ public class ServerStatus extends BaseRecievePacket {
 	public static final int ON = 0x01;
 	public static final int OFF = 0x00;
 
-	/**
-	 * @param decrypt
-	 */
 	public ServerStatus(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 

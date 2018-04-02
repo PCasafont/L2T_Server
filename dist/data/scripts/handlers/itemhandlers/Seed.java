@@ -20,8 +20,8 @@ import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.instancemanager.CastleManorManager;
 import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Manor;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.Playable;
@@ -91,11 +91,6 @@ public class Seed implements IItemHandler {
 		}
 	}
 
-	/**
-	 * @param seedId
-	 * @param castleId
-	 * @return
-	 */
 	private boolean areaValid(int seedId, int castleId) {
 		return L2Manor.getInstance().getCastleIdForSeed(seedId) == castleId;
 	}

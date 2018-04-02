@@ -40,8 +40,6 @@ public final class AuthLogin extends L2GameClientPacket {
 	private int loginKey1;
 	private int loginKey2;
 
-	/**
-	 */
 	@Override
 	protected void readImpl() {
 		loginName = readS().toLowerCase();

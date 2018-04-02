@@ -27,8 +27,6 @@ public class ExRedSky extends L2GameServerPacket {
 		this.duration = duration;
 	}
 
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(duration);

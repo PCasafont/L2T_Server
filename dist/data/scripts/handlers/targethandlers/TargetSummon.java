@@ -17,8 +17,8 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Summon;
 import l2server.gameserver.model.actor.instance.Player;
@@ -32,8 +32,6 @@ import java.util.List;
  * @author nBd
  */
 public class TargetSummon implements ISkillTargetTypeHandler {
-	/**
-	 */
 	@Override
 	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
 		if (skill.getTargetDirection() == SkillTargetDirection.ALL_SUMMONS) {
@@ -67,8 +65,6 @@ public class TargetSummon implements ISkillTargetTypeHandler {
 		return null;
 	}
 
-	/**
-	 */
 	@Override
 	public Enum<SkillTargetType> getTargetType() {
 		return SkillTargetType.TARGET_SUMMON;

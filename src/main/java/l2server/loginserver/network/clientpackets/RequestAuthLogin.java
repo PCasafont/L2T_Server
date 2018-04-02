@@ -16,8 +16,6 @@
 package l2server.loginserver.network.clientpackets;
 
 import l2server.Config;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.loginserver.GameServerTable;
 import l2server.loginserver.LoginController;
 import l2server.loginserver.network.L2LoginClient;
@@ -25,10 +23,11 @@ import l2server.loginserver.network.serverpackets.AccountKicked;
 import l2server.loginserver.network.serverpackets.LoginFail;
 import l2server.loginserver.network.serverpackets.LoginOk;
 import l2server.loginserver.network.serverpackets.ServerList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.crypto.Cipher;
 import java.security.GeneralSecurityException;
-import java.util.logging.Level;
 
 /**
  * Format: x
@@ -45,16 +44,10 @@ public class RequestAuthLogin extends L2LoginClientPacket {
 	private String password;
 	private int ncotp;
 	
-	/**
-	 * @return
-	 */
 	public String getPassword() {
 		return password;
 	}
 	
-	/**
-	 * @return
-	 */
 	public String getUser() {
 		return user;
 	}

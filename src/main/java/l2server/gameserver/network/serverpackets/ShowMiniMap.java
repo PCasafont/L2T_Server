@@ -26,8 +26,6 @@ package l2server.gameserver.network.serverpackets;
 public class ShowMiniMap extends L2GameServerPacket {
 	private int mapId;
 	
-	/**
-	 */
 	public ShowMiniMap(int mapId) {
 		this.mapId = mapId;
 	}

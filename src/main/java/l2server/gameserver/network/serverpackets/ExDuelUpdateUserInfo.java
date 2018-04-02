@@ -29,8 +29,6 @@ public class ExDuelUpdateUserInfo extends L2GameServerPacket {
 		activeChar = cha;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeS(activeChar.getName());

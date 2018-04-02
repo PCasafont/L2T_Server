@@ -552,9 +552,6 @@ public final class NpcTemplate extends CreatureTemplate {
 	 * This is true if, and only if, obj is the same class represented by value,
 	 * or a subclass of it or obj implements the interface represented by value.
 	 *
-	 * @param obj
-	 * @param clazz
-	 * @return
 	 */
 	public static boolean isAssignableTo(Object obj, Class<?> clazz) {
 		return NpcTemplate.isAssignableTo(obj.getClass(), clazz);

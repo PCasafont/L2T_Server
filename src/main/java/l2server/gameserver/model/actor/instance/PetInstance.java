@@ -187,9 +187,6 @@ public class PetInstance extends Summon {
 			}
 		}
 		
-		/**
-		 * @return
-		 */
 		private int getFeedConsume() {
 			// if pet is attacking
 			if (isAttackingNow()) {
@@ -218,10 +215,6 @@ public class PetInstance extends Summon {
 	/**
 	 * Constructor for new pet
 	 *
-	 * @param objectId
-	 * @param template
-	 * @param owner
-	 * @param control
 	 */
 	public PetInstance(int objectId, NpcTemplate template, Player owner, Item control) {
 		this(objectId, template, owner, control, (byte) (template.TemplateId == 12564 ? owner.getLevel() : template.Level));
@@ -230,11 +223,6 @@ public class PetInstance extends Summon {
 	/**
 	 * Constructor for restored pet
 	 *
-	 * @param objectId
-	 * @param template
-	 * @param owner
-	 * @param control
-	 * @param level
 	 */
 	public PetInstance(int objectId, NpcTemplate template, Player owner, Item control, byte level) {
 		super(objectId, template, owner);

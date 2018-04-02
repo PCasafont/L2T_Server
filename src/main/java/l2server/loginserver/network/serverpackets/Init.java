@@ -45,8 +45,6 @@ public final class Init extends L2LoginServerPacket {
 		this.blowfishKey = blowfishkey;
 	}
 	
-	/**
-	 */
 	@Override
 	protected void write() {
 		writeC(0x00); // init packet id

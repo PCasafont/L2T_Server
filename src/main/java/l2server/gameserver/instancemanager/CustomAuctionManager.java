@@ -16,13 +16,13 @@ import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
@@ -399,8 +399,6 @@ public class CustomAuctionManager {
 	/**
 	 * This is the community page, where we display all the auction item information
 	 *
-	 * @param playerId
-	 * @return
 	 */
 	public String getAuctionInfo(int playerId) {
 		StringBuilder sb = new StringBuilder();
@@ -607,9 +605,6 @@ public class CustomAuctionManager {
 	/**
 	 * Called at each player bid try, we do all the checks here to deceide if it's avalid or not
 	 *
-	 * @param activeChar
-	 * @param bidId
-	 * @param playerBid
 	 */
 	public void tryToBid(Player activeChar, int bidId, long playerBid, String coin) {
 		if (activeChar == null) {
@@ -791,9 +786,6 @@ public class CustomAuctionManager {
 	/**
 	 * Used for add the reward item to the player or give back the bids
 	 *
-	 * @param playerId
-	 * @param itemId
-	 * @param count
 	 */
 	private void giveItemToPlayer(int playerId, int itemId, long count, String text) {
 		if (CharNameTable.getInstance().getNameById(playerId) ==

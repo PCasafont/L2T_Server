@@ -29,8 +29,6 @@ public class ExItemAppearanceResult extends L2GameServerPacket {
 		this.result = result;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(answer);

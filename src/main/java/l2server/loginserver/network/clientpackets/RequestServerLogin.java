@@ -17,17 +17,16 @@ package l2server.loginserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.loginserver.LoginController;
 import l2server.loginserver.SessionKey;
 import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import l2server.loginserver.network.serverpackets.PlayFail.PlayFailReason;
 import l2server.loginserver.network.serverpackets.PlayOk;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.logging.Level;
 
 /**
  * Fromat is ddc
@@ -43,23 +42,14 @@ public class RequestServerLogin extends L2LoginClientPacket {
 	private int skey2;
 	private int serverId;
 	
-	/**
-	 * @return
-	 */
 	public int getSessionKey1() {
 		return skey1;
 	}
 	
-	/**
-	 * @return
-	 */
 	public int getSessionKey2() {
 		return skey2;
 	}
 	
-	/**
-	 * @return
-	 */
 	public int getServerID() {
 		return serverId;
 	}
@@ -76,8 +66,6 @@ public class RequestServerLogin extends L2LoginClientPacket {
 		}
 	}
 	
-	/**
-	 */
 	@Override
 	public void run() {
 		SessionKey sk = getClient().getSessionKey();

@@ -30,8 +30,6 @@ public class ExDuelAskStart extends L2GameServerPacket {
 		this.partyDuel = partyDuel;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeS(requestorName);

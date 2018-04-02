@@ -24,9 +24,6 @@ import l2server.util.network.BaseRecievePacket;
  * Thanks to mochitto
  */
 public class ReplyCharacters extends BaseRecievePacket {
-	/**
-	 * @param decrypt
-	 */
 	public ReplyCharacters(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 		String account = readS();

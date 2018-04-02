@@ -48,7 +48,6 @@ public class NpcWalkerAI extends CreatureAI implements Runnable {
 	/**
 	 * Constructor of CreatureAI.<BR><BR>
 	 *
-	 * @param creature
 	 */
 	public NpcWalkerAI(Creature creature) {
 		super(creature);

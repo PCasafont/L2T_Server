@@ -26,8 +26,6 @@ public class CharSelected extends L2GameServerPacket {
 	private Player activeChar;
 	private int sessionId;
 	
-	/**
-	 */
 	public CharSelected(Player cha, int sessionId) {
 		activeChar = cha;
 		this.sessionId = sessionId;

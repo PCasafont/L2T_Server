@@ -601,12 +601,6 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame {
 		}
 	}
 
-	/**
-	 * @param char1Id
-	 * @param char2Id
-	 * @param points
-	 * @param competitionType
-	 */
 	private void logFight(int char1Id, int char2Id, double char1Hp, double char2Hp, int char1Dmg, int char2Dmg, int points, String competitionType) {
 		Connection con = null;
 		try {

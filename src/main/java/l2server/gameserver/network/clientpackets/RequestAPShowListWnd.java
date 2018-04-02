@@ -25,8 +25,6 @@ public final class RequestAPShowListWnd extends L2GameClientPacket {
 	protected void readImpl() {
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		sendPacket(new ExShowAPListWnd());

@@ -105,11 +105,6 @@ public class AdminPolymorph implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	/**
-	 * @param activeChar
-	 * @param id
-	 * @param type
-	 */
 	private void doPolymorph(Player activeChar, WorldObject obj, String id, String type) {
 		if (obj != null) {
 			obj.getPoly().setPolyInfo(type, id);
@@ -130,10 +125,6 @@ public class AdminPolymorph implements IAdminCommandHandler {
 		}
 	}
 
-	/**
-	 * @param activeChar
-	 * @param target
-	 */
 	private void doUnpoly(Player activeChar, WorldObject target) {
 		if (target != null) {
 			target.getPoly().setPolyInfo(null, "1");

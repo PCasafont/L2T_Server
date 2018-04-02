@@ -22,11 +22,12 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.Item;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
-import l2server.gameserver.model.actor.*;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Summon;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.actor.instance.SiegeSummonInstance;
 import l2server.gameserver.network.SystemMessageId;
@@ -467,23 +468,10 @@ public class Disablers implements ISkillHandler {
 		}
 	} //end void
 
-	/**
-	 * @param target
-	 * @param type
-	 * @param maxRemoved
-	 * @return
-	 */
 	private int negateEffect(Creature target, AbnormalType type, int maxRemoved) {
 		return negateEffect(target, type, 0, maxRemoved);
 	}
 
-	/**
-	 * @param target
-	 * @param type
-	 * @param skillId
-	 * @param maxRemoved
-	 * @return
-	 */
 	private int negateEffect(Creature target, AbnormalType type, int skillId, int maxRemoved) {
 		Abnormal[] effects = target.getAllEffects();
 		int count = maxRemoved <= 0 ? -2 : 0;

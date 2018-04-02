@@ -151,7 +151,6 @@ public class Instance {
 	/**
 	 * Checks if the player exists within this instance
 	 *
-	 * @param objectId
 	 * @return true if player exists in instance
 	 */
 	public boolean containsPlayer(int objectId) {
@@ -188,7 +187,6 @@ public class Instance {
 	/**
 	 * Removes the player from the instance by setting InstanceId to 0 and teleporting to nearest town.
 	 *
-	 * @param objectId
 	 */
 	public void ejectPlayer(int objectId) {
 		Player player = World.getInstance().getPlayer(objectId);

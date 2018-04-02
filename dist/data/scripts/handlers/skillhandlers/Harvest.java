@@ -18,8 +18,8 @@ package handlers.skillhandlers;
 import l2server.Config;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.Item;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.MonsterInstance;
@@ -128,9 +128,6 @@ public class Harvest implements ISkillHandler {
 		}
 	}
 
-	/**
-	 * @return
-	 */
 	private boolean calcSuccess(Creature activeChar, Creature target) {
 		int basicSuccess = 100;
 		final int levelPlayer = activeChar.getLevel();

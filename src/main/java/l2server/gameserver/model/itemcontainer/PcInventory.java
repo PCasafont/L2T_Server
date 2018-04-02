@@ -41,7 +41,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 public class PcInventory extends Inventory {
 	private static Logger log = LoggerFactory.getLogger(PcInventory.class.getName());
@@ -258,7 +257,6 @@ public class PcInventory extends Inventory {
 	/**
 	 * Get all augmented items
 	 *
-	 * @return
 	 */
 	public Item[] getAugmentedItems() {
 		ArrayList<Item> list = new ArrayList<>();
@@ -274,7 +272,6 @@ public class PcInventory extends Inventory {
 	/**
 	 * Get all element items
 	 *
-	 * @return
 	 */
 	public Item[] getElementItems() {
 		ArrayList<Item> list = new ArrayList<>();

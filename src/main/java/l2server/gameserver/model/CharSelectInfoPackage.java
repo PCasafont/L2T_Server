@@ -58,8 +58,6 @@ public class CharSelectInfoPackage {
 	private int vitalityPoints = 0;
 	private int vitalityLevel = 0;
 	
-	/**
-	 */
 	public CharSelectInfoPackage(int objectId, String name) {
 		setObjectId(objectId);
 		this.name = name;

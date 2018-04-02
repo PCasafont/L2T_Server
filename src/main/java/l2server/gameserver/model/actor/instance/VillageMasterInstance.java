@@ -21,9 +21,9 @@ import l2server.gameserver.datatables.PlayerClassTable;
 import l2server.gameserver.datatables.PledgeSkillTree;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.instancemanager.CastleManager;
+import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.instancemanager.FortSiegeManager;
-import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2Clan.SubPledge;
 import l2server.gameserver.model.L2ClanMember;
@@ -39,9 +39,9 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.util.Util;
+import l2server.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.StringUtil;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -58,9 +58,6 @@ public class VillageMasterInstance extends NpcInstance {
 
 	//
 	
-	/**
-	 * @param template
-	 */
 	public VillageMasterInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2VillageMasterInstance);
@@ -1045,7 +1042,6 @@ public class VillageMasterInstance extends NpcInstance {
 	/**
 	 * this displays PledgeSkillList to the player.
 	 *
-	 * @param player
 	 */
 	public static void showPledgeSkillList(Player player) {
 		if (player.getClan() == null || !player.isClanLeader()) {

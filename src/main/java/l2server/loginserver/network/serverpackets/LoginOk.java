@@ -36,8 +36,6 @@ public final class LoginOk extends L2LoginServerPacket {
 		loginOk2 = sessionKey.loginOkID2;
 	}
 	
-	/**
-	 */
 	@Override
 	protected void write() {
 		writeC(0x03);

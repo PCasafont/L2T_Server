@@ -29,9 +29,6 @@ public class PlayerLogout extends BaseRecievePacket {
 
 
 
-	/**
-	 * @param decrypt
-	 */
 	public PlayerLogout(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 		String account = readS();

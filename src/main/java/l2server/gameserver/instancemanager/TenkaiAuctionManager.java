@@ -14,13 +14,13 @@ import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.sql.Connection;
@@ -396,8 +396,6 @@ public class TenkaiAuctionManager {
 	/**
 	 * This is the community page, where we display all the auction item information
 	 *
-	 * @param playerId
-	 * @return
 	 */
 	public String getAuctionInfo(int playerId, int pageToShow) {
 		StringBuilder sb = new StringBuilder();
@@ -611,9 +609,6 @@ public class TenkaiAuctionManager {
 	/**
 	 * Called at each player bid try, we do all the checks here to deceide if it's avalid or not
 	 *
-	 * @param activeChar
-	 * @param bidId
-	 * @param playerBid
 	 */
 	public void tryToBid(Player activeChar, int bidId, long playerBid, String coin) {
 		if (activeChar == null) {
@@ -722,9 +717,6 @@ public class TenkaiAuctionManager {
 	/**
 	 * Used for add the reward item to the player or give back the bids
 	 *
-	 * @param playerId
-	 * @param itemId
-	 * @param count
 	 */
 	private void giveItemToPlayer(int playerId, int itemId, long count, String text) {
 		//Lets use ALWAYS the mail, it's nice because the player will notice much better that his bid has been overcome

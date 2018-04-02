@@ -54,8 +54,6 @@ public final class RelationChanged extends L2GameServerPacket {
 		invisibleCharacter = activeChar.getActingPlayer().getAppearance().getInvisible() ? activeChar.getActingPlayer().getObjectId() : 0;
 	}
 
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeC(2);

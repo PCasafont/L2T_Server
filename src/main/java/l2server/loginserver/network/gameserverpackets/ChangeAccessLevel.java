@@ -28,9 +28,6 @@ public class ChangeAccessLevel extends BaseRecievePacket {
 
 
 
-	/**
-	 * @param decrypt
-	 */
 	public ChangeAccessLevel(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 		int level = readD();

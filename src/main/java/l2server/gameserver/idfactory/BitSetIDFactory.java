@@ -26,13 +26,12 @@
 package l2server.gameserver.idfactory;
 
 import l2server.gameserver.ThreadPoolManager;
+import l2server.util.PrimeFinder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.PrimeFinder;
 
 import java.util.BitSet;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Level;
 
 /**
  * This class ..
@@ -143,16 +142,10 @@ public class BitSetIDFactory extends IdFactory {
 		return freeIdCount.get();
 	}
 	
-	/**
-	 * @return
-	 */
 	protected synchronized int usedIdCount() {
 		return size() - FIRST_OID;
 	}
 	
-	/**
-	 * @return
-	 */
 	protected synchronized boolean reachingBitSetCapacity() {
 		return PrimeFinder.nextPrime(usedIdCount() * 11 / 10) > freeIds.size();
 	}

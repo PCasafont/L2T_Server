@@ -16,13 +16,13 @@
 package l2server.gameserver;
 
 import l2server.Config;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.Location;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.instance.Player;
+import l2server.util.Point3D;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Point3D;
 
 /**
  * @author -Nemesiss-
@@ -48,8 +48,6 @@ public class GeoData {
 	// Public Methods
 
 	/**
-	 * @param x
-	 * @param y
 	 * @return Geo Block Type
 	 */
 	public short getType(int x, int y) {
@@ -57,38 +55,21 @@ public class GeoData {
 	}
 
 	/**
-	 * @param x
-	 * @param y
-	 * @param z
 	 * @return Nearles Z
 	 */
 	public short getHeight(int x, int y, int z) {
 		return (short) z;
 	}
 
-	/**
-	 * @param x
-	 * @param y
-	 * @param zmin
-	 * @param zmax
-	 * @return
-	 */
 	public short getSpawnHeight(int x, int y, int zmin, int zmax, L2Spawn spawn) {
 		return (short) zmin;
 	}
 
-	/**
-	 * @param x
-	 * @param y
-	 * @return
-	 */
 	public String geoPosition(int x, int y) {
 		return "";
 	}
 
 	/**
-	 * @param cha
-	 * @param target
 	 * @return True if cha can see target (LOS)
 	 */
 	public boolean canSeeTarget(WorldObject cha, WorldObject target) {
@@ -110,7 +91,6 @@ public class GeoData {
 	}
 
 	/**
-	 * @param target
 	 * @return True if cha can see target (LOS) and send usful info to PC
 	 */
 	public boolean canSeeTargetDebug(Player gm, WorldObject target) {
@@ -118,9 +98,6 @@ public class GeoData {
 	}
 
 	/**
-	 * @param x
-	 * @param y
-	 * @param z
 	 * @return Geo NSWE (0-15)
 	 */
 	public short getNSWE(int x, int y, int z) {
@@ -132,13 +109,6 @@ public class GeoData {
 	}
 
 	/**
-	 * @param x
-	 * @param y
-	 * @param z
-	 * @param tx
-	 * @param ty
-	 * @param tz
-	 * @param instanceId
 	 * @return Last Location (x,y,z) where player can walk - just before wall
 	 */
 	public Location moveCheck(int x, int y, int z, int tx, int ty, int tz, int instanceId) {
@@ -149,10 +119,6 @@ public class GeoData {
 		return true;
 	}
 
-	/**
-	 * @param gm
-	 * @param comment
-	 */
 	public void addGeoDataBug(Player gm, String comment) {
 		//Do Nothing
 	}

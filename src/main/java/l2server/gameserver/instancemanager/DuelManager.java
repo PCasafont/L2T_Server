@@ -143,7 +143,6 @@ public class DuelManager {
 	/**
 	 * Registers a debuff which will be removed if the duel ends
 	 *
-	 * @param player
 	 */
 	public void onBuff(Player player, Abnormal buff) {
 		if (player == null || !player.isInDuel() || buff == null) {
@@ -173,8 +172,6 @@ public class DuelManager {
 	/**
 	 * Broadcasts a packet to the team opposing the given player.
 	 *
-	 * @param player
-	 * @param packet
 	 */
 	public void broadcastToOppositTeam(Player player, L2GameServerPacket packet) {
 		if (player == null || !player.isInDuel()) {

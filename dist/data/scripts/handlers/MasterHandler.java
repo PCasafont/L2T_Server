@@ -332,9 +332,6 @@ public class MasterHandler {
 		log.debug("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
 	}
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		log.debug("Loading Handlers...");
 		loadActionHandlers();

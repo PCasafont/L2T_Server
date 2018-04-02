@@ -276,7 +276,6 @@ public final class WorldRegion {
 	/**
 	 * this function turns this region's AI and geodata on or off
 	 *
-	 * @param value
 	 */
 	public void setActive(boolean value) {
 		if (active == value) {

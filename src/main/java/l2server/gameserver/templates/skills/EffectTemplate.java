@@ -100,9 +100,6 @@ public class EffectTemplate {
 	/**
 	 * Creates an L2Effect instance from an existing one and an Env object.
 	 *
-	 * @param env
-	 * @param stolen
-	 * @return
 	 */
 	public static L2Effect getStolenEffect(Env env, L2Effect stolen) {
 		Class<?> func;

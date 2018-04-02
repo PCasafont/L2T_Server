@@ -32,9 +32,6 @@ import java.util.StringTokenizer;
 public final class CastleTeleporterInstance extends Npc {
 	private boolean currentTask = false;
 	
-	/**
-	 * @param template
-	 */
 	public CastleTeleporterInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2CastleTeleporterInstance);

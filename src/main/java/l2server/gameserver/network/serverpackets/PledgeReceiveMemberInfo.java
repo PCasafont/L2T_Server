@@ -23,15 +23,10 @@ import l2server.gameserver.model.L2ClanMember;
 public class PledgeReceiveMemberInfo extends L2GameServerPacket {
 	private L2ClanMember member;
 	
-	/**
-	 * @param member
-	 */
 	public PledgeReceiveMemberInfo(L2ClanMember member) {
 		this.member = member;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(member.getPledgeType());

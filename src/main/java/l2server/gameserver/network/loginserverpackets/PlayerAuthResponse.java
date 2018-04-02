@@ -24,9 +24,6 @@ public class PlayerAuthResponse extends BaseRecievePacket {
 	private String account;
 	private boolean authed;
 
-	/**
-	 * @param decrypt
-	 */
 	public PlayerAuthResponse(byte[] decrypt) {
 		super(decrypt);
 

@@ -75,15 +75,11 @@ public class CellPathFinding extends PathFinding {
 		}
 	}
 
-	/**
-	 */
 	@Override
 	public boolean pathNodesExist(short regionoffset) {
 		return false;
 	}
 
-	/**
-	 */
 	@Override
 	public List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean playable) {
 		int gx = x - World.MAP_MIN_X >> 4;

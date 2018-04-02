@@ -380,7 +380,6 @@ public class TradeList {
 	 *
 	 * @param objectId : int
 	 * @param count    : int
-	 * @return
 	 */
 	public synchronized TradeItem addItem(int objectId, long count) {
 		return addItem(objectId, count, 0);
@@ -392,7 +391,6 @@ public class TradeList {
 	 * @param objectId : int
 	 * @param count    : long
 	 * @param price    : long
-	 * @return
 	 */
 	public synchronized TradeItem addItem(int objectId, long count, long price) {
 		if (isLocked()) {
@@ -449,7 +447,6 @@ public class TradeList {
 	 *
 	 * @param count : long
 	 * @param price : long
-	 * @return
 	 */
 	public synchronized TradeItem addItemByItemId(int itemId, long count, long price) {
 		if (isLocked()) {
@@ -490,7 +487,6 @@ public class TradeList {
 	 *
 	 * @param objectId : int
 	 * @param count    : int
-	 * @return
 	 */
 	public synchronized TradeItem removeItem(int objectId, int itemId, long count) {
 		if (isLocked()) {

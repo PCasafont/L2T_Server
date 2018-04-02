@@ -25,15 +25,10 @@ import l2server.gameserver.model.L2ClanMember;
 public class PledgeReceivePowerInfo extends L2GameServerPacket {
 	private L2ClanMember member;
 	
-	/**
-	 * @param member
-	 */
 	public PledgeReceivePowerInfo(L2ClanMember member) {
 		this.member = member;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(member.getPowerGrade()); //power grade

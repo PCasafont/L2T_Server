@@ -42,9 +42,6 @@ public class PostBBSManager extends BaseBBSManager {
 		return post;
 	}
 
-	/**
-	 * @param t
-	 */
 	public void delPostByTopic(Topic t) {
 		postByTopic.remove(t);
 	}
@@ -89,12 +86,6 @@ public class PostBBSManager extends BaseBBSManager {
 		}
 	}
 
-	/**
-	 * @param topic
-	 * @param forum
-	 * @param activeChar
-	 * @param idp
-	 */
 	private void showEditPost(Topic topic, Forum forum, Player activeChar, int idp) {
 		Post p = getGPosttByTopic(topic);
 		if (forum == null || topic == null || p == null) {
@@ -109,12 +100,6 @@ public class PostBBSManager extends BaseBBSManager {
 		}
 	}
 
-	/**
-	 * @param topic
-	 * @param forum
-	 * @param activeChar
-	 * @param ind
-	 */
 	private void showPost(Topic topic, Forum forum, Player activeChar, int ind) {
 		if (forum == null || topic == null) {
 			ShowBoard sb = new ShowBoard("<html><body><br><br><center></center><br><br></body></html>", "101");
@@ -131,12 +116,6 @@ public class PostBBSManager extends BaseBBSManager {
 		}
 	}
 
-	/**
-	 * @param topic
-	 * @param activeChar
-	 * @param forum
-	 * @param p
-	 */
 	private void showHtmlEditPost(Topic topic, Player activeChar, Forum forum, Post p) {
 		final String html = StringUtil.concat(
 				"<html><body><br><br><table border=0 width=610><tr><td width=10></td><td width=600 align=left><a action=\"bypass _bbshome\">HOME</a>&nbsp;>&nbsp;<a action=\"bypass _bbsmemo\">",
@@ -152,11 +131,6 @@ public class PostBBSManager extends BaseBBSManager {
 		send1002(activeChar, p.getCPost(0).postTxt, topic.getName(), DateFormat.getInstance().format(new Date(topic.getDate())));
 	}
 
-	/**
-	 * @param topic
-	 * @param activeChar
-	 * @param forum
-	 */
 	private void showMemoPost(Topic topic, Player activeChar, Forum forum) {
 		//
 		Post p = getGPosttByTopic(topic);

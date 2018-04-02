@@ -55,8 +55,6 @@ public class StaticObjectInstance extends Creature {
 		return staticObjectId;
 	}
 	
-	/**
-	 */
 	public StaticObjectInstance(int objectId, CreatureTemplate template, int staticId) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2StaticObjectInstance);
@@ -152,7 +150,6 @@ public class StaticObjectInstance extends Creature {
 	 * <li> default textures : 0</li>
 	 * <li> alternate textures : 1 </li><BR><BR>
 	 *
-	 * @param meshIndex
 	 */
 	public void setMeshIndex(int meshIndex) {
 		this.meshIndex = meshIndex;

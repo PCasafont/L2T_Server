@@ -32,8 +32,6 @@ import l2server.gameserver.model.itemcontainer.Inventory;
 public class GMViewCharacterInfo extends L2GameServerPacket {
 	private Player activeChar;
 	
-	/**
-	 */
 	public GMViewCharacterInfo(Player character) {
 		activeChar = character;
 	}

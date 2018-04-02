@@ -27,8 +27,6 @@ public class ExShowItemAppearanceWindow extends L2GameServerPacket {
 		this.stoneId = stoneId;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(type);

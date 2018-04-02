@@ -19,8 +19,8 @@ import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.Playable;
@@ -37,8 +37,6 @@ import java.util.List;
  * @author nBd
  */
 public class TargetClan implements ISkillTargetTypeHandler {
-	/**
-	 */
 	@Override
 	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
 		List<Creature> targetList = new ArrayList<Creature>();
@@ -138,8 +136,6 @@ public class TargetClan implements ISkillTargetTypeHandler {
 		return targetList.toArray(new Creature[targetList.size()]);
 	}
 
-	/**
-	 */
 	@Override
 	public Enum<SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub

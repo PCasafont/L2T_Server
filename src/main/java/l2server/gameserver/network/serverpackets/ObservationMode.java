@@ -24,8 +24,6 @@ public class ObservationMode extends L2GameServerPacket {
 	// ddSS
 	private int x, y, z;
 	
-	/**
-	 */
 	public ObservationMode(int x, int y, int z) {
 		this.x = x;
 		this.y = y;

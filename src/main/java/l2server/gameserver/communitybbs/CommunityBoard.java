@@ -80,15 +80,6 @@ public class CommunityBoard {
 		}
 	}
 
-	/**
-	 * @param client
-	 * @param url
-	 * @param arg1
-	 * @param arg2
-	 * @param arg3
-	 * @param arg4
-	 * @param arg5
-	 */
 	public void handleWriteCommands(L2GameClient client, String url, String arg1, String arg2, String arg3, String arg4, String arg5) {
 		Player activeChar = client.getActiveChar();
 		if (activeChar == null) {

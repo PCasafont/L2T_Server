@@ -166,8 +166,6 @@ public class L2CommandChannel {
 		return channelLvl;
 	}
 	
-	/**
-	 */
 	public void setChannelLeader(Player leader) {
 		commandLeader = leader;
 	}
@@ -180,7 +178,6 @@ public class L2CommandChannel {
 	}
 	
 	/**
-	 * @param obj
 	 * @return true if proper condition for RaidWar
 	 */
 	public boolean meetRaidWarCondition(WorldObject obj) {

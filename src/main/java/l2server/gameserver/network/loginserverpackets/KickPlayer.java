@@ -21,9 +21,6 @@ public class KickPlayer extends BaseRecievePacket {
 
 	private String account;
 
-	/**
-	 * @param decrypt
-	 */
 	public KickPlayer(byte[] decrypt) {
 		super(decrypt);
 		account = readS();

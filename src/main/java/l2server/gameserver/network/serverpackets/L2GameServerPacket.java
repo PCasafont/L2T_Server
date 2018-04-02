@@ -40,14 +40,11 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient> {
 	 * Set "invisible" boolean flag in the packet.
 	 * Packets from invisible characters will not be broadcasted to players.
 	 *
-	 * @param objectId
 	 */
 	public void setInvisibleCharacter(final int objectId) {
 		invisibleCharacter = objectId;
 	}
 	
-	/**
-	 */
 	@Override
 	protected void write() {
 		try {

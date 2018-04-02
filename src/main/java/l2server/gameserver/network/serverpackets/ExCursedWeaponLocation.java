@@ -31,8 +31,6 @@ public class ExCursedWeaponLocation extends L2GameServerPacket {
 		this.cursedWeaponInfo = cursedWeaponInfo;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		if (!cursedWeaponInfo.isEmpty()) {

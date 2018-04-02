@@ -23,8 +23,6 @@ public final class RequestCrystallizeItemCancel extends L2GameClientPacket {
 	protected void readImpl() {
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 	}

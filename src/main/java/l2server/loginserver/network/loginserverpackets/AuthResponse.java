@@ -23,9 +23,6 @@ import l2server.util.network.BaseSendablePacket;
  */
 public class AuthResponse extends BaseSendablePacket {
 
-	/**
-	 * @param serverId
-	 */
 	public AuthResponse(int serverId) {
 		writeC(0x02);
 		writeC(serverId);

@@ -15,8 +15,8 @@
 
 package l2server.gameserver.stats.skills;
 
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.templates.StatsSet;
 
@@ -27,9 +27,6 @@ public class SkillSweeper extends Skill {
 	private boolean absorbHp;
 	private int absorbAbs;
 
-	/**
-	 * @param set
-	 */
 	public SkillSweeper(StatsSet set) {
 		super(set);
 		absorbHp = set.getBool("absorbHp", true);

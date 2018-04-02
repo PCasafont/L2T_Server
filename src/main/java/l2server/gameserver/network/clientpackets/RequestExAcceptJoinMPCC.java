@@ -29,8 +29,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 public final class RequestExAcceptJoinMPCC extends L2GameClientPacket {
 	private int response;
 	
-	/**
-	 */
 	@Override
 	protected void readImpl() {
 		response = readD();

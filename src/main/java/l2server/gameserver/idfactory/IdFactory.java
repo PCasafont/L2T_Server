@@ -219,7 +219,6 @@ public abstract class IdFactory {
 	}
 	
 	/**
-	 * @return
 	 * @throws SQLException
 	 */
 	protected final int[] extractUsedObjectIDTable() throws Exception {

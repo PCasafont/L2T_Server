@@ -33,8 +33,6 @@ public class ExGetBossRecord extends L2GameServerPacket {
 		bossRecordInfo = list;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(ranking);

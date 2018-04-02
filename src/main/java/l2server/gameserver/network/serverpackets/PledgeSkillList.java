@@ -45,8 +45,6 @@ public class PledgeSkillList extends L2GameServerPacket {
 		subSkills = clan.getAllSubSkills();
 	}
 
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(skills.length);

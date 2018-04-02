@@ -15,17 +15,18 @@
 
 package l2server.gameserver.datatables;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.L2TeleportLocation;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class ...
@@ -77,9 +78,6 @@ public class TeleportLocationTable {
 		log.info("TeleportLocationTable: Loaded " + teleports.size() + " Teleport Location Templates.");
 	}
 
-	/**
-	 * @return
-	 */
 	public L2TeleportLocation getTemplate(int id) {
 		return teleports.get(id);
 	}

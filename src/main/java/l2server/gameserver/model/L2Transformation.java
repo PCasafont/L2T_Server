@@ -84,7 +84,6 @@ public abstract class L2Transformation implements Cloneable, Runnable {
 	/**
 	 * Return true if this is a stance (vanguard/inquisitor)
 	 *
-	 * @return
 	 */
 	public boolean isStance() {
 		return isStance;

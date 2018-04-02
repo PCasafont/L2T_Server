@@ -39,8 +39,6 @@ public class RequestGetBossRecord extends L2GameClientPacket {
 		bossId = readD();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		Player activeChar = getClient().getActiveChar();

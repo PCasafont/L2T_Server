@@ -32,7 +32,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
-import java.util.logging.Level;
 
 /**
  * @author nBd
@@ -107,9 +106,6 @@ public class Trap extends Creature {
 		deleteMe();
 	}
 
-	/**
-	 * @return
-	 */
 	public final int getNpcId() {
 		return getTemplate().NpcId;
 	}
@@ -127,8 +123,6 @@ public class Trap extends Creature {
 		return true;
 	}
 
-	/**
-	 */
 	@Override
 	public void deleteMe() {
 		decayMe();
@@ -136,8 +130,6 @@ public class Trap extends Creature {
 		super.deleteMe();
 	}
 
-	/**
-	 */
 	public synchronized void unSummon() {
 		if (isVisible() && !isDead()) {
 			if (getWorldRegion() != null) {
@@ -242,7 +234,6 @@ public class Trap extends Creature {
 	/**
 	 * Reveal trap to the detector (if possible)
 	 *
-	 * @param detector
 	 */
 	public void setDetected(Creature detector) {
 		detector.sendPacket(new NpcInfo(this));
@@ -251,8 +242,6 @@ public class Trap extends Creature {
 	/**
 	 * Check if target can trigger trap
 	 *
-	 * @param target
-	 * @return
 	 */
 	protected boolean checkTarget(Creature target) {
 		return getOwner().isAbleToCastOnTarget(target, null, true);
@@ -309,7 +298,6 @@ public class Trap extends Creature {
 	/**
 	 * Trigger trap
 	 *
-	 * @param target
 	 */
 	public void trigger(Creature target) {
 		isTriggered = true;

@@ -249,10 +249,6 @@ public class TownManager {
 	/**
 	 * Returns the town at that position (if any)
 	 *
-	 * @param x
-	 * @param y
-	 * @param z
-	 * @return
 	 */
 	public static TownZone getTown(int x, int y, int z) {
 		for (ZoneType temp : ZoneManager.getInstance().getZones(x, y, z)) {

@@ -106,9 +106,6 @@ public abstract class FloodProtectedListener extends Thread {
 		public long lastConnection;
 		public boolean isFlooding = false;
 
-		/**
-		 * @param time
-		 */
 		public ForeignConnection(long time) {
 			lastConnection = time;
 			connectionNumber = 1;

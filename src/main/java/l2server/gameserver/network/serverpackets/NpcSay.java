@@ -32,8 +32,6 @@ public final class NpcSay extends L2GameServerPacket {
 	private int npcString;
 	private List<String> parameters;
 
-	/**
-	 */
 	public NpcSay(int objectId, int messageType, int npcId, String text) {
 		this.objectId = objectId;
 		textType = messageType;
@@ -61,7 +59,6 @@ public final class NpcSay extends L2GameServerPacket {
 	/**
 	 * String parameter for argument S1,S2,.. in npcstring-e.dat
 	 *
-	 * @param text
 	 */
 	public void addStringParameter(String text) {
 		if (parameters == null) {

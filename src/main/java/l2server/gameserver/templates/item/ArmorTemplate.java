@@ -137,7 +137,6 @@ public final class ArmorTemplate extends ItemTemplate {
 	/**
 	 * Returns skill that player get when has equiped armor +4  or more
 	 *
-	 * @return
 	 */
 	public Skill getEnchantSkill(int enchant) {
 		SkillHolder sh = enchantSkills.get(enchant);

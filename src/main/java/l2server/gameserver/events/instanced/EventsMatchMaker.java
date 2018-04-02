@@ -649,10 +649,6 @@ public class EventsMatchMaker {
 		return false;*/
 	}
 
-	/**
-	 * @param activeChar
-	 * @param command
-	 */
 	public void handleEventBypass(Player activeChar, String command) {
 		if (activeChar == null) {
 			return;

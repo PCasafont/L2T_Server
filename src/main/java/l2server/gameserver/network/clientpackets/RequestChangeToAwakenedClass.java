@@ -18,8 +18,8 @@ package l2server.gameserver.network.clientpackets;
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.PlayerClassTable;
-import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.L2SkillLearn;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.network.serverpackets.SocialAction;
@@ -35,8 +35,6 @@ public final class RequestChangeToAwakenedClass extends L2GameClientPacket {
 		change = readD() == 1;
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		if (!change) {

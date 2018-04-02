@@ -22,10 +22,10 @@ import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.instancemanager.InstanceManager;
-import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.Item;
-import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.model.actor.knownlist.DoorKnownList;
@@ -532,8 +532,6 @@ public class DoorInstance extends Creature {
 	/**
 	 * All doors are stored at DoorTable except instance doors
 	 *
-	 * @param doorId
-	 * @return
 	 */
 	private DoorInstance getSiblingDoor(int doorId) {
 		if (getInstanceId() == 0) {

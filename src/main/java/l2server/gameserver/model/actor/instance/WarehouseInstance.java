@@ -18,9 +18,6 @@ package l2server.gameserver.model.actor.instance;
 import l2server.gameserver.templates.chars.NpcTemplate;
 
 public class WarehouseInstance extends NpcInstance {
-	/**
-	 * @param template
-	 */
 	public WarehouseInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2WarehouseInstance);

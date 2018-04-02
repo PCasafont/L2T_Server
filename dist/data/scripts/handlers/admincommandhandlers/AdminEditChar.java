@@ -695,9 +695,6 @@ public class AdminEditChar implements IAdminCommandHandler {
 	/**
 	 * Retrieve and replace player's info in filename htm file, sends it to activeChar as NpcHtmlMessage.
 	 *
-	 * @param activeChar
-	 * @param player
-	 * @param filename
 	 */
 	private void gatherCharacterInfo(Player activeChar, Player player, String filename) {
 		String ip = "N/A";
@@ -888,10 +885,6 @@ public class AdminEditChar implements IAdminCommandHandler {
 		}
 	}
 	
-	/**
-	 * @param activeChar
-	 * @param CharacterToFind
-	 */
 	private void findCharacter(Player activeChar, String CharacterToFind) {
 		int CharactersFound = 0;
 		String name;
@@ -946,8 +939,6 @@ public class AdminEditChar implements IAdminCommandHandler {
 	}
 	
 	/**
-	 * @param activeChar
-	 * @param IpAdress
 	 * @throws IllegalArgumentException
 	 */
 	private void findCharactersPerIp(Player activeChar, String IpAdress) throws IllegalArgumentException {
@@ -1032,8 +1023,6 @@ public class AdminEditChar implements IAdminCommandHandler {
 	}
 	
 	/**
-	 * @param activeChar
-	 * @param characterName
 	 * @throws IllegalArgumentException
 	 */
 	private void findCharactersPerAccount(Player activeChar, String characterName) throws IllegalArgumentException {
@@ -1062,9 +1051,6 @@ public class AdminEditChar implements IAdminCommandHandler {
 		}
 	}
 	
-	/**
-	 * @param activeChar
-	 */
 	private void findDualbox(Player activeChar, int multibox) {
 		Collection<Player> allPlayers = World.getInstance().getAllPlayers().values();
 		Player[] players = allPlayers.toArray(new Player[allPlayers.size()]);

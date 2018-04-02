@@ -17,8 +17,8 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Playable;
@@ -34,8 +34,6 @@ import java.util.List;
  * @author Sandro
  */
 public class TargetAreaSummon implements ISkillTargetTypeHandler {
-	/**
-	 */
 	@Override
 	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
 		List<Creature> targetList = new ArrayList<Creature>();
@@ -74,8 +72,6 @@ public class TargetAreaSummon implements ISkillTargetTypeHandler {
 		return targetList.toArray(new Creature[targetList.size()]);
 	}
 
-	/**
-	 */
 	@Override
 	public Enum<SkillTargetType> getTargetType() {
 		return SkillTargetType.TARGET_AREA_SUMMON;

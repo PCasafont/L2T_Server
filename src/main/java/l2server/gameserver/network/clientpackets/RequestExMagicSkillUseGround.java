@@ -47,8 +47,6 @@ public final class RequestExMagicSkillUseGround extends L2GameClientPacket {
 		shiftPressed = readC() != 0;
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		// Get the current Player of the player

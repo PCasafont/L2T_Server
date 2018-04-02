@@ -34,8 +34,6 @@ public class AskJoinParty extends L2GameServerPacket {
 	private String requestorName;
 	private int itemDistribution;
 	
-	/**
-	 */
 	public AskJoinParty(String requestorName, int itemDistribution) {
 		this.requestorName = requestorName;
 		this.itemDistribution = itemDistribution;

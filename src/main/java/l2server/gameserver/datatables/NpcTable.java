@@ -27,11 +27,11 @@ import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.templates.item.EtcItemType;
 import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -540,25 +540,14 @@ public class NpcTable {
 		return list.toArray(new NpcTemplate[list.size()]);
 	}
 	
-	/**
-	 * @param classType
-	 * @return
-	 */
 	public Set<Integer> getAllNpcOfClassType(String classType) {
 		return null;
 	}
 	
-	/**
-	 * @return
-	 */
 	public Set<Integer> getAllNpcOfL2jClass(Class<?> clazz) {
 		return null;
 	}
 	
-	/**
-	 * @param aiType
-	 * @return
-	 */
 	public Set<Integer> getAllNpcOfAiType(String aiType) {
 		return null;
 	}

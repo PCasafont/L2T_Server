@@ -36,8 +36,6 @@ public class PledgeReceiveWarList extends L2GameServerPacket {
 		this.tab = tab;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(0); // ???

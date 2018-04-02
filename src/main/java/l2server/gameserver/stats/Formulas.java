@@ -2731,10 +2731,6 @@ public final class Formulas {
 	 * 1 = shield defense succeed<br>
 	 * 2 = perfect block<br>
 	 *
-	 * @param attacker
-	 * @param target
-	 * @param sendSysMsg
-	 * @return
 	 */
 	public static byte calcShldUse(Creature attacker, Creature target, Skill skill, boolean sendSysMsg) {
 		if (skill != null && (skill.ignoreShield() || skill.isMagic())) {
@@ -3762,8 +3758,6 @@ public final class Formulas {
 	 * for skills with skilltype PDAM, BLOW, CHARGEDAM, MDAM or DEATHLINK</U></li>
 	 * <br><br>
 	 *
-	 * @param target
-	 * @param skill
 	 * @return SKILL_REFLECTED_FAILED, SKILL_REFLECT_SUCCEED or SKILL_REFLECT_VENGEANCE
 	 */
 	public static byte calcSkillReflect(Creature target, Skill skill) {
@@ -3821,8 +3815,6 @@ public final class Formulas {
 	/**
 	 * Calculate damage caused by falling
 	 *
-	 * @param cha
-	 * @param fallHeight
 	 * @return damage
 	 */
 	public static double calcFallDam(Creature cha, int fallHeight) {

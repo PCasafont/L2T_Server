@@ -45,8 +45,6 @@ public final class RequestRefine extends L2GameClientPacket {
 		gemStoneCount = readQ();
 	}
 
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		final Player activeChar = getClient().getActiveChar();

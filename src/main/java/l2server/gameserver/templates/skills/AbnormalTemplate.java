@@ -97,9 +97,6 @@ public class AbnormalTemplate {
 	/**
 	 * Creates an L2Effect instance from an existing one and an Env object.
 	 *
-	 * @param env
-	 * @param stolen
-	 * @return
 	 */
 	public Abnormal getStolenEffect(Env env, Abnormal stolen) {
 		List<L2Effect> list = new ArrayList<>();

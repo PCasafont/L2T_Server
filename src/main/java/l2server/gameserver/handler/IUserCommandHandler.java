@@ -31,7 +31,6 @@ public interface IUserCommandHandler {
 	/**
 	 * this is the worker method that is called when someone uses an admin command.
 	 *
-	 * @param activeChar
 	 * @return command success
 	 */
 	boolean useUserCommand(int id, Player activeChar);

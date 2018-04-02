@@ -20,8 +20,8 @@ import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.FortManager;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2SiegeClan;
-import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.Fort;
@@ -45,9 +45,6 @@ public class Die extends L2GameServerPacket {
 	private L2Clan clan;
 	Creature activeChar;
 
-	/**
-	 * @param cha
-	 */
 	public Die(Creature cha) {
 		activeChar = cha;
 

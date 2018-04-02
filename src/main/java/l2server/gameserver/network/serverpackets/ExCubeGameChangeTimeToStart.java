@@ -27,7 +27,6 @@ public class ExCubeGameChangeTimeToStart extends L2GameServerPacket {
 	/**
 	 * Update Minigame Waiting List Time to Start
 	 *
-	 * @param seconds
 	 */
 	public ExCubeGameChangeTimeToStart(int seconds) {
 		this.seconds = seconds;

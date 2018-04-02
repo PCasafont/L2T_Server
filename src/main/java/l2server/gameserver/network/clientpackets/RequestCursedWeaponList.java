@@ -34,8 +34,6 @@ public class RequestCursedWeaponList extends L2GameClientPacket {
 		//nothing to read it's just a trigger
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		Creature activeChar = getClient().getActiveChar();

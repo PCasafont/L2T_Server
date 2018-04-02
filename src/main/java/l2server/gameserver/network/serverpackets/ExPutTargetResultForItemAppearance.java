@@ -27,8 +27,6 @@ public class ExPutTargetResultForItemAppearance extends L2GameServerPacket {
 		this.cost = cost;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(answer);

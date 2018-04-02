@@ -271,8 +271,6 @@ public abstract class Playable extends Creature {
 		return effects.isAffected(EffectType.PROTECTION_BLESSING.getMask());
 	}
 	
-	/**
-	 */
 	public void stopProtectionBlessing(Abnormal effect) {
 		if (effect == null) {
 			stopEffects(EffectType.PROTECTION_BLESSING);

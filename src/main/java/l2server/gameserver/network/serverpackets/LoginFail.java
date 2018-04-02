@@ -36,9 +36,6 @@ public class LoginFail extends L2GameServerPacket {
 
 	private int reason;
 
-	/**
-	 * @param reason
-	 */
 	public LoginFail(int reason) {
 		this.reason = reason;
 	}

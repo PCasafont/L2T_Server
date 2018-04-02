@@ -28,10 +28,6 @@ import l2server.gameserver.templates.chars.NpcTemplate;
 public class MercenaryManagerInstance extends Npc {
 	// private int[] TW_BADGE_IDS = { 13757, 13758, 13759, 13760, 13761, 13762, 13763, 13764, 13765 };
 	
-	/**
-	 * @param objectId
-	 * @param template
-	 */
 	public MercenaryManagerInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2MercenaryManagerInstance);

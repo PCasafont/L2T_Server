@@ -17,8 +17,8 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
@@ -29,8 +29,6 @@ import l2server.gameserver.templates.skills.SkillTargetType;
  * @author nBd
  */
 public class TargetPartyOther implements ISkillTargetTypeHandler {
-	/**
-	 */
 	@Override
 	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
 		if (target != null && target != activeChar && activeChar.getParty() != null && target.getParty() != null &&
@@ -64,8 +62,6 @@ public class TargetPartyOther implements ISkillTargetTypeHandler {
 		}
 	}
 
-	/**
-	 */
 	@Override
 	public Enum<SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub

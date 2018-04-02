@@ -28,8 +28,6 @@ public final class RequestFlyMove extends L2GameClientPacket {
 		stepId = readD();
 	}
 
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		Player activeChar = getClient().getActiveChar();

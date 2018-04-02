@@ -36,7 +36,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 /**
  * This class ...
@@ -53,8 +52,6 @@ public class CharSelectionInfo extends L2GameServerPacket {
 	private int sessionId, activeId;
 	private CharSelectInfoPackage[] characterPackages;
 	
-	/**
-	 */
 	public CharSelectionInfo(String loginName, int sessionId) {
 		this.sessionId = sessionId;
 		this.loginName = loginName;

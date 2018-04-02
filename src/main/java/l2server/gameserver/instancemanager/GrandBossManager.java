@@ -400,10 +400,6 @@ public class GrandBossManager {
 	
 	//LasTravel
 	
-	/**
-	 * @param npcId
-	 * @return
-	 */
 	public int getRespawnTime(int npcId) {
 		switch (npcId) {
 			case 29001:
@@ -436,13 +432,6 @@ public class GrandBossManager {
 	/**
 	 * Used for reuses like: Tuesday (21:00) and Saturday (16:00) or Thursday (21:00) and Saturday (14:00)
 	 *
-	 * @param day1Minute
-	 * @param day1Hour
-	 * @param day1Day
-	 * @param day2Minute
-	 * @param day2Hour
-	 * @param day2Day
-	 * @return
 	 */
 	private long calcReuseFromDays(int day1Minute, int day1Hour, int day1Day, int day2Minute, int day2Hour, int day2Day) {
 		Calendar now = Calendar.getInstance();
@@ -471,10 +460,6 @@ public class GrandBossManager {
 		return reenter.getTimeInMillis() - System.currentTimeMillis();
 	}
 	
-	/**
-	 * @param npcId
-	 * @return
-	 */
 	public int getRandomRespawnTime(int npcId) {
 		switch (npcId) {
 			case 29001:
@@ -500,10 +485,6 @@ public class GrandBossManager {
 		return 0;
 	}
 	
-	/**
-	 * @param bossId
-	 * @return
-	 */
 	public long getUnlockTime(int bossId) {
 		long respawnTime = 0;
 		int bossStatus = getBossStatus(bossId);
@@ -525,9 +506,6 @@ public class GrandBossManager {
 		return respawnTime;
 	}
 	
-	/**
-	 * @param bossId
-	 */
 	public void notifyBossKilled(int bossId) {
 		setBossStatus(bossId, DEAD);
 		
@@ -538,11 +516,6 @@ public class GrandBossManager {
 		setStatsSet(bossId, info);
 	}
 	
-	/**
-	 * @param bossId
-	 * @param lastAction
-	 * @return
-	 */
 	public boolean isActive(int bossId, long lastAction) {
 		Long temp = System.currentTimeMillis() - lastAction;
 		

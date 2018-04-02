@@ -36,8 +36,6 @@ public class ExPutItemResultForVariationCancel extends L2GameServerPacket {
 		itemAug2 = item.getAugmentation().getAugment2().getId();
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(itemObjId);

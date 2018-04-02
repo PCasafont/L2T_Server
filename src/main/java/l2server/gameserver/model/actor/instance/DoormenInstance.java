@@ -35,9 +35,6 @@ public class DoormenInstance extends NpcInstance {
 	private static Logger log = LoggerFactory.getLogger(DoormenInstance.class.getName());
 
 
-	/**
-	 * @param template
-	 */
 	public DoormenInstance(int objectID, NpcTemplate template) {
 		super(objectID, template);
 		setInstanceType(InstanceType.L2DoormenInstance);

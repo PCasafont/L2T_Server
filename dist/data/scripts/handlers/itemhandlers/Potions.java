@@ -33,8 +33,6 @@ import java.util.Map;
  * here u can found items that yet cannot be unhardcoded due to missing better core support
  */
 public class Potions extends ItemSkills {
-	/**
-	 */
 	public synchronized void useItem(Playable playable, Item item) {
 		Player activeChar; // use activeChar only for Player checks where cannot be used PetInstance
 
@@ -60,12 +58,6 @@ public class Potions extends ItemSkills {
 		playable.destroyItem("Consume", item.getObjectId(), 1, null, false);
 	}
 
-	/**
-	 * @param activeChar
-	 * @param magicId
-	 * @param level
-	 * @return
-	 */
 	public boolean usePotion(Playable activeChar, int magicId, int level) {
 
 		Skill skill = SkillTable.getInstance().getInfo(magicId, level);

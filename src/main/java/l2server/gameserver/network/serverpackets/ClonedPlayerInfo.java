@@ -67,8 +67,6 @@ public class ClonedPlayerInfo extends L2GameServerPacket {
 	 */
 	private int walkSpd;
 
-	/**
-	 */
 	public ClonedPlayerInfo(Npc npc, Player cha) {
 		this.npc = npc;
 		activeChar = cha;

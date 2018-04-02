@@ -29,8 +29,6 @@ public class PledgeSkillListAdd extends L2GameServerPacket {
 		this.lvl = lvl;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(id);

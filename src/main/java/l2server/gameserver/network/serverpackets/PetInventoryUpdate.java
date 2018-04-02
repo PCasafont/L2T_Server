@@ -38,9 +38,6 @@ public class PetInventoryUpdate extends L2ItemListPacket {
 	
 	private List<ItemInfo> items;
 	
-	/**
-	 * @param items
-	 */
 	public PetInventoryUpdate(List<ItemInfo> items) {
 		this.items = items;
 		if (Config.DEBUG) {

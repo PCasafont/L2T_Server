@@ -18,8 +18,8 @@ package handlers.targethandlers;
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Playable;
@@ -36,8 +36,6 @@ import java.util.List;
  * @author nBd
  */
 public class TargetAura implements ISkillTargetTypeHandler {
-	/**
-	 */
 	@SuppressWarnings("unused")
 	@Override
 	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
@@ -141,8 +139,6 @@ public class TargetAura implements ISkillTargetTypeHandler {
 		return targetList.toArray(new Creature[targetList.size()]);
 	}
 
-	/**
-	 */
 	@Override
 	public Enum<SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub

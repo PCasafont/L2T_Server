@@ -932,7 +932,6 @@ public final class Item extends WorldObject implements ItemInstanceInfo {
 	/**
 	 * Sets a new ensoul effect
 	 *
-	 * @param effect
 	 * @return return true if sucessful
 	 */
 	public boolean setEnsoulEffect(int index, EnsoulEffect effect) {
@@ -1004,7 +1003,6 @@ public final class Item extends WorldObject implements ItemInstanceInfo {
 	/**
 	 * Sets a new augmentation
 	 *
-	 * @param augmentation
 	 * @return return true if sucessfull
 	 */
 	public boolean setAugmentation(L2Augmentation augmentation) {
@@ -1266,8 +1264,6 @@ public final class Item extends WorldObject implements ItemInstanceInfo {
 	/**
 	 * Add elemental attribute to item and save to db
 	 *
-	 * @param element
-	 * @param value
 	 */
 	public void setElementAttr(byte element, int value) {
 		applyAttribute(element, value);
@@ -1348,7 +1344,6 @@ public final class Item extends WorldObject implements ItemInstanceInfo {
 	 * Returns true if this item is a shadow item
 	 * Shadow items have a limited life-time
 	 *
-	 * @return
 	 */
 	public boolean isShadowItem() {
 		return mana >= 0;

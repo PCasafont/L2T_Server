@@ -31,9 +31,6 @@ import l2server.util.StringUtil;
  * @version $Revision: 1.4.2.1.2.7 $ $Date: 2005/03/27 15:29:32 $
  */
 public final class ClassMasterInstance extends MerchantInstance {
-	/**
-	 * @param template
-	 */
 	public ClassMasterInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2ClassMasterInstance);
@@ -210,7 +207,6 @@ public final class ClassMasterInstance extends MerchantInstance {
 	 *
 	 * @param oldC current player ClassId
 	 * @param val  new class index
-	 * @return
 	 */
 	private static boolean validateClassId(PlayerClass oldC, int val) {
 		try {

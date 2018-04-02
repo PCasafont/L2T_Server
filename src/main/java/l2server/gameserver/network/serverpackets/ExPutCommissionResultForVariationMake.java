@@ -36,8 +36,6 @@ public class ExPutCommissionResultForVariationMake extends L2GameServerPacket {
 		unk3 = 1;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(gemstoneObjId);

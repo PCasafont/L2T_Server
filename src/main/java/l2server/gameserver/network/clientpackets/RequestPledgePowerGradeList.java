@@ -32,8 +32,6 @@ public final class RequestPledgePowerGradeList extends L2GameClientPacket {
 		// trigger
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		Player player = getClient().getActiveChar();

@@ -78,8 +78,6 @@ public final class LoginFail extends L2LoginServerPacket {
 		this.reason = reason;
 	}
 	
-	/**
-	 */
 	@Override
 	protected void write() {
 		writeC(0x01);

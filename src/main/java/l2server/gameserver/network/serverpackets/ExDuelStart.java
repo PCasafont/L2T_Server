@@ -27,8 +27,6 @@ public class ExDuelStart extends L2GameServerPacket {
 		this.unk1 = unk1;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(unk1);

@@ -26,8 +26,6 @@ public class ObservationReturn extends L2GameServerPacket {
 	// ddSS
 	private Player activeChar;
 	
-	/**
-	 */
 	public ObservationReturn(Player observer) {
 		activeChar = observer;
 	}

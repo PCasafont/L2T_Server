@@ -34,8 +34,6 @@ public class ExPutIntensiveResultForVariationMake extends L2GameServerPacket {
 		unk2 = 1;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(refinerItemObjId);

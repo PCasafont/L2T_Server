@@ -26,8 +26,6 @@ public final class RequestExRemoveEnchantSupportItem extends L2GameClientPacket 
 	protected void readImpl() {
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		Player activeChar = getClient().getActiveChar();

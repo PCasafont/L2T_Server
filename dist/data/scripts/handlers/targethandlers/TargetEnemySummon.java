@@ -17,8 +17,8 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Summon;
 import l2server.gameserver.model.actor.instance.Player;
@@ -28,8 +28,6 @@ import l2server.gameserver.templates.skills.SkillTargetType;
  * @author nBd
  */
 public class TargetEnemySummon implements ISkillTargetTypeHandler {
-	/**
-	 */
 	@Override
 	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
 		if (target instanceof Summon) {
@@ -47,8 +45,6 @@ public class TargetEnemySummon implements ISkillTargetTypeHandler {
 		return null;
 	}
 
-	/**
-	 */
 	@Override
 	public Enum<SkillTargetType> getTargetType() {
 		// TODO Auto-generated method stub

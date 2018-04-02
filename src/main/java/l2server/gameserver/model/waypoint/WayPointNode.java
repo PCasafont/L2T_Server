@@ -49,9 +49,6 @@ public class WayPointNode extends WorldObject {
 	private static final String LINE_TYPE = "item";
 	private Map<WayPointNode, List<WayPointNode>> linkLists;
 
-	/**
-	 * @param objectId
-	 */
 	public WayPointNode(int objectId) {
 		super(objectId);
 		linkLists = Collections.synchronizedMap(new WeakHashMap<WayPointNode, List<WayPointNode>>());
@@ -156,8 +153,6 @@ public class WayPointNode extends WorldObject {
 		this.type = type;
 	}
 
-	/**
-	 */
 	public static void drawLine(WayPointNode nodeA, WayPointNode nodeB) {
 		int x1 = nodeA.getX(), y1 = nodeA.getY(), z1 = nodeA.getZ();
 		int x2 = nodeB.getX(), y2 = nodeB.getY(), z2 = nodeB.getZ();
@@ -191,10 +186,6 @@ public class WayPointNode extends WorldObject {
 		linkLists.put(node, line);
 	}
 
-	/**
-	 * @param target
-	 * @param selectedNode
-	 */
 	public static void eraseLine(WayPointNode target, WayPointNode selectedNode) {
 		List<WayPointNode> lineNodes = target.getLineInfo(selectedNode);
 		if (lineNodes == null) {
@@ -207,17 +198,10 @@ public class WayPointNode extends WorldObject {
 		selectedNode.eraseLine(target);
 	}
 
-	/**
-	 * @param target
-	 */
 	public void eraseLine(WayPointNode target) {
 		linkLists.remove(target);
 	}
 
-	/**
-	 * @param selectedNode
-	 * @return
-	 */
 	private List<WayPointNode> getLineInfo(WayPointNode selectedNode) {
 		return linkLists.get(selectedNode);
 	}

@@ -28,7 +28,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.logging.Level;
 
 public class Duel {
 	private static Logger log = LoggerFactory.getLogger(Duel.class.getName());
@@ -487,9 +486,6 @@ public class Duel {
 	/**
 	 * teleport all players to the given coordinates
 	 *
-	 * @param x
-	 * @param y
-	 * @param z
 	 */
 	public void teleportPlayers(int x, int y, int z) {
 		//TODO: adjust the values if needed... or implement something better (especially using more then 1 arena)
@@ -772,7 +768,6 @@ public class Duel {
 	/**
 	 * Register a surrender request
 	 *
-	 * @param player
 	 */
 	public void doSurrender(Player player) {
 		// already recived a surrender request

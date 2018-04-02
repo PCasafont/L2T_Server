@@ -137,8 +137,6 @@ public class GUserInterface extends BaseGameServerRegister implements ActionList
 		SwingUtilities.invokeLater(() -> progressBar.setVisible(false));
 	}
 
-	/**
-	 */
 	@Override
 	public void showError(String msg, Throwable t) {
 		String title;

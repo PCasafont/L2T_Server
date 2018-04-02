@@ -51,8 +51,6 @@ public class ScriptPackage {
 		return scriptFiles;
 	}
 
-	/**
-	 */
 	private void addFiles(ZipFile pack) {
 		for (Enumeration<? extends ZipEntry> e = pack.entries(); e.hasMoreElements(); ) {
 			ZipEntry entry = e.nextElement();

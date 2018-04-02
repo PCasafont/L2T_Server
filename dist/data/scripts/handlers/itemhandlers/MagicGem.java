@@ -30,8 +30,6 @@ import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 
 public class MagicGem implements IItemHandler {
-	/**
-	 */
 	@Override
 	public void useItem(Playable playable, Item magicGem, boolean forcedUse) {
 		if (!(playable instanceof Player)) {

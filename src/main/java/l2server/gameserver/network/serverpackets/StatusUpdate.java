@@ -109,7 +109,6 @@ public final class StatusUpdate extends L2GameServerPacket {
 	/**
 	 * Create {@link StatusUpdate} packet for given {@link WorldObject}.
 	 *
-	 * @param object
 	 */
 	public StatusUpdate(WorldObject object) {
 		attributes = new ArrayList<>();

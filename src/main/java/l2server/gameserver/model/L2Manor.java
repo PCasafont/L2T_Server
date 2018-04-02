@@ -18,11 +18,11 @@ package l2server.gameserver.model;
 import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.templates.item.ItemTemplate;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -100,7 +100,6 @@ public class L2Manor {
 	/**
 	 * Returns price which lord pays to buy one seed
 	 *
-	 * @param seedId
 	 * @return seed price
 	 */
 	public long getSeedBuyPrice(int seedId) {
@@ -186,8 +185,6 @@ public class L2Manor {
 	/**
 	 * Return all crops which can be purchased by given castle
 	 *
-	 * @param castleId
-	 * @return
 	 */
 	public ArrayList<Integer> getCropsForCastle(int castleId) {
 		ArrayList<Integer> crops = new ArrayList<>();
@@ -222,7 +219,6 @@ public class L2Manor {
 	/**
 	 * Returns castle id where seed can be sowned<br>
 	 *
-	 * @param seedId
 	 * @return castleId
 	 */
 	public int getCastleIdForSeed(int seedId) {

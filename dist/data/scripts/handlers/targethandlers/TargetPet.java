@@ -17,8 +17,8 @@ package handlers.targethandlers;
 
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.templates.skills.SkillTargetType;
 
@@ -26,8 +26,6 @@ import l2server.gameserver.templates.skills.SkillTargetType;
  * @author nBd
  */
 public class TargetPet implements ISkillTargetTypeHandler {
-	/**
-	 */
 	@Override
 	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
 		// FIXME target = activeChar.getPet();
@@ -39,8 +37,6 @@ public class TargetPet implements ISkillTargetTypeHandler {
 		return null;
 	}
 	
-	/**
-	 */
 	@Override
 	public Enum<SkillTargetType> getTargetType() {
 		return SkillTargetType.TARGET_PET;

@@ -18,8 +18,6 @@ package l2server.gameserver.network.clientpackets;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.RecipeItemMakeInfo;
 
-/**
- */
 public final class RequestRecipeItemMakeInfo extends L2GameClientPacket {
 	//
 	

@@ -25,8 +25,6 @@ public class ExPutTemplateResultForItemAppearance extends L2GameServerPacket {
 		this.answer = answer;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(answer);

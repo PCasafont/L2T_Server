@@ -43,8 +43,6 @@ public class LandingZone extends ZoneType {
 		}
 	}
 
-	/**
-	 */
 	@Override
 	public void onDieInside(Creature character, Creature killer) {
 	}

@@ -23,8 +23,6 @@ public final class RequestExEscapeScene extends L2GameClientPacket {
 	protected void readImpl() {
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 	}

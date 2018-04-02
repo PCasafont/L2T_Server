@@ -32,8 +32,6 @@ public class TargetUnselected extends L2GameServerPacket {
 	private int y;
 	private int z;
 	
-	/**
-	 */
 	public TargetUnselected(Creature character) {
 		targetObjId = character.getObjectId();
 		x = character.getX();

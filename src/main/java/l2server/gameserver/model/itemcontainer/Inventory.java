@@ -103,7 +103,6 @@ public abstract class Inventory extends ItemContainer {
 		/**
 		 * Constructor of the ChangeRecorder
 		 *
-		 * @param inventory
 		 */
 		ChangeRecorder(Inventory inventory) {
 			this.inventory = inventory;

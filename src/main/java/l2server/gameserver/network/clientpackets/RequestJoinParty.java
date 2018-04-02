@@ -146,10 +146,6 @@ public final class RequestJoinParty extends L2GameClientPacket {
 		}
 	}
 	
-	/**
-	 * @param target
-	 * @param requestor
-	 */
 	private void addTargetToParty(Player target, Player requestor) {
 		SystemMessage msg;
 		L2Party party = requestor.getParty();
@@ -198,10 +194,6 @@ public final class RequestJoinParty extends L2GameClientPacket {
 		msg = null;
 	}
 	
-	/**
-	 * @param target
-	 * @param requestor
-	 */
 	private void createNewParty(Player target, Player requestor) {
 		if (requestor.isGM()) {
 			if (!target.isInParty()) {

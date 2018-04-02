@@ -49,9 +49,6 @@ public class TeleporterInstance extends Npc {
 	private static final int COND_OWNER = 2;
 	private static final int COND_REGULAR = 3;
 	
-	/**
-	 * @param template
-	 */
 	public TeleporterInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2TeleporterInstance);

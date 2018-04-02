@@ -25,8 +25,6 @@ public final class RequestAPSkillList extends L2GameClientPacket {
 	protected void readImpl() {
 	}
 
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		if (getClient().getActiveChar() == null) {

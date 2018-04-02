@@ -483,7 +483,6 @@ public class LoginServerThread extends Thread {
 	}
 	
 	/**
-	 * @param sl
 	 * @throws IOException
 	 */
 	private void sendPacket(BaseSendablePacket sl) throws IOException {
@@ -519,8 +518,6 @@ public class LoginServerThread extends Thread {
 		return maxPlayer;
 	}
 	
-	/**
-	 */
 	public void sendServerStatus(int id, int value) {
 		ServerStatus ss = new ServerStatus();
 		ss.addAttribute(id, value);
@@ -548,16 +545,10 @@ public class LoginServerThread extends Thread {
 		}
 	}
 	
-	/**
-	 * @return
-	 */
 	public String getStatusString() {
 		return ServerStatus.STATUS_STRING[status];
 	}
 	
-	/**
-	 * @return
-	 */
 	public boolean isBracketShown() {
 		return Config.SERVER_LIST_BRACKET;
 	}

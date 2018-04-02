@@ -119,8 +119,6 @@ public final class SystemMessage extends L2GameServerPacket {
 	/**
 	 * Use {@link #getSystemMessage(SystemMessageId)} where possible instead
 	 *
-	 * @param id
-	 * @return
 	 */
 	public static SystemMessage getSystemMessage(int id) {
 		return getSystemMessage(SystemMessageId.getSystemMessageId(id));
@@ -168,8 +166,6 @@ public final class SystemMessage extends L2GameServerPacket {
 	 * 81-89 Territory names<br>
 	 * 101-121 Fortress names<br>
 	 *
-	 * @param number
-	 * @return
 	 */
 	public final SystemMessage addFortId(final int number) {
 		append(new SMParam(TYPE_CASTLE_NAME, number));
@@ -272,8 +268,6 @@ public final class SystemMessage extends L2GameServerPacket {
 	/**
 	 * Elemental name - 0(Fire) ...
 	 *
-	 * @param type
-	 * @return
 	 */
 	public final SystemMessage addElemental(final int type) {
 		append(new SMParam(TYPE_ELEMENT_NAME, type));
@@ -283,8 +277,6 @@ public final class SystemMessage extends L2GameServerPacket {
 	/**
 	 * ID from sysstring-e.dat
 	 *
-	 * @param type
-	 * @return
 	 */
 	public final SystemMessage addSystemString(final int type) {
 		append(new SMParam(TYPE_SYSTEM_STRING, type));
@@ -295,7 +287,6 @@ public final class SystemMessage extends L2GameServerPacket {
 	 * Instance name from instantzonedata-e.dat
 	 *
 	 * @param type id of instance
-	 * @return
 	 */
 	public final SystemMessage addInstanceName(final int type) {
 		append(new SMParam(TYPE_INSTANCE_NAME, type));

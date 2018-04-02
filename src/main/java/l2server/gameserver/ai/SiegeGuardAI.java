@@ -20,17 +20,18 @@ import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.model.Abnormal;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.*;
-import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.model.actor.instance.DefenderInstance;
+import l2server.gameserver.model.actor.instance.DoorInstance;
 import l2server.gameserver.model.actor.instance.NpcInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.Util;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 import java.util.concurrent.Future;
 
@@ -78,7 +79,6 @@ public class SiegeGuardAI extends CreatureAI implements Runnable {
 	/**
 	 * Constructor of AttackableAI.<BR><BR>
 	 *
-	 * @param creature
 	 */
 	public SiegeGuardAI(Creature creature) {
 		super(creature);

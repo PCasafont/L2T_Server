@@ -34,8 +34,6 @@ public final class RequestPledgeWarList extends L2GameClientPacket {
 		tab = readD();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		//Logozo.info("C5: RequestPledgeWarList d:"+unk1);

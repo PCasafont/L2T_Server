@@ -89,7 +89,6 @@ public class ClanHallZone extends SpawnZone {
 	/**
 	 * Removes all foreigners from the clan hall
 	 *
-	 * @param owningClanId
 	 */
 	public void banishForeigners(int owningClanId) {
 		for (Creature temp : characterList.values()) {

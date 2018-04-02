@@ -32,8 +32,6 @@ public final class RequestExMPCCShowPartyMembersInfo extends L2GameClientPacket 
 		partyLeaderId = readD();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		Player player = World.getInstance().getPlayer(partyLeaderId);

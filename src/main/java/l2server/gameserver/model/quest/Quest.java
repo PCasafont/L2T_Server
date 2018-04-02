@@ -212,7 +212,6 @@ public class Quest extends ManagedScript {
 	/**
 	 * Add a new QuestState to the database and return it.
 	 *
-	 * @param player
 	 * @return QuestState : QuestState created
 	 */
 	public QuestState newQuestState(Player player) {
@@ -1224,8 +1223,6 @@ public class Quest extends ManagedScript {
 	/**
 	 * Return default html page "You are either not on a quest that involves this NPC.."
 	 *
-	 * @param player
-	 * @return
 	 */
 	public static String getNoQuestMsg(Player player) {
 		final String result = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "noquest.htm");
@@ -1239,8 +1236,6 @@ public class Quest extends ManagedScript {
 	/**
 	 * Return default html page "This quest has already been completed."
 	 *
-	 * @param player
-	 * @return
 	 */
 	public static String getAlreadyCompletedMsg(Player player) {
 		final String result = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "alreadycompleted.htm");
@@ -1275,7 +1270,6 @@ public class Quest extends ManagedScript {
 	/**
 	 * Add the quest to the NPC's startQuest
 	 *
-	 * @param npcId
 	 * @return NpcTemplate : Start NPC
 	 */
 	public NpcTemplate addStartNpc(int npcId) {
@@ -1285,7 +1279,6 @@ public class Quest extends ManagedScript {
 	/**
 	 * Add the quest to the NPC's first-talk (default action dialog)
 	 *
-	 * @param npcId
 	 * @return NpcTemplate : Start NPC
 	 */
 	public NpcTemplate addFirstTalkId(int npcId) {
@@ -1295,7 +1288,6 @@ public class Quest extends ManagedScript {
 	/**
 	 * Add the NPC to the AcquireSkill dialog
 	 *
-	 * @param npcId
 	 * @return NpcTemplate : NPC
 	 */
 	public NpcTemplate addAcquireSkillId(int npcId) {
@@ -1305,7 +1297,6 @@ public class Quest extends ManagedScript {
 	/**
 	 * Add this quest to the list of quests that the passed mob will respond to for Attack Events.<BR><BR>
 	 *
-	 * @param attackId
 	 * @return int : attackId
 	 */
 	public NpcTemplate addAttackId(int attackId) {
@@ -1319,7 +1310,6 @@ public class Quest extends ManagedScript {
 	/**
 	 * Add this quest to the list of quests that the passed mob will respond to for Kill Events.<BR><BR>
 	 *
-	 * @param killId
 	 * @return int : killId
 	 */
 	public NpcTemplate addKillId(int killId) {
@@ -1575,7 +1565,6 @@ public class Quest extends ManagedScript {
 	/**
 	 * Show HTML file to client
 	 *
-	 * @param fileName
 	 * @return String : message sent to client
 	 */
 	public String showHtmlFile(Player player, String fileName) {
@@ -1613,8 +1602,6 @@ public class Quest extends ManagedScript {
 	/**
 	 * Return HTML file contents
 	 *
-	 * @param fileName
-	 * @return
 	 */
 	public String getHtm(String prefix, String fileName) {
 		String content =

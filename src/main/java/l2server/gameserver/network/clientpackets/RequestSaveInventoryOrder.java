@@ -51,8 +51,6 @@ public final class RequestSaveInventoryOrder extends L2GameClientPacket {
 		}
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		Player player = getClient().getActiveChar();

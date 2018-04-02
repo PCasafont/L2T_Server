@@ -17,13 +17,13 @@ package l2server.gameserver.instancemanager
 
 import l2server.Config
 import l2server.gameserver.idfactory.IdFactory
-import l2server.gameserver.model.World
 import l2server.gameserver.model.VehiclePathPoint
+import l2server.gameserver.model.World
 import l2server.gameserver.model.actor.instance.BoatInstance
 import l2server.gameserver.network.serverpackets.L2GameServerPacket
 import l2server.gameserver.templates.StatsSet
 import l2server.gameserver.templates.chars.CreatureTemplate
-import java.util.HashMap
+import java.util.*
 
 object BoatManager {
 
@@ -85,10 +85,6 @@ object BoatManager {
         return boat
     }
 
-    /**
-     * @param boatId
-     * @return
-     */
     fun getBoat(boatId: Int): BoatInstance? {
         return boats[boatId]
     }

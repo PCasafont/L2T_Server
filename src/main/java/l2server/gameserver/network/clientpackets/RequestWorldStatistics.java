@@ -30,8 +30,6 @@ public final class RequestWorldStatistics extends L2GameClientPacket {
 		pId2 = readD();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		if (getClient().getActiveChar() == null)

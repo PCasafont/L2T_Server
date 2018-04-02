@@ -133,8 +133,6 @@ public class PcAppearance {
 		return face;
 	}
 
-	/**
-	 */
 	public final void setFace(int value) {
 		face = value;
 	}
@@ -143,8 +141,6 @@ public class PcAppearance {
 		return hairColor;
 	}
 
-	/**
-	 */
 	public final void setHairColor(int value) {
 		hairColor = value;
 	}
@@ -153,8 +149,6 @@ public class PcAppearance {
 		return hairStyle;
 	}
 
-	/**
-	 */
 	public final void setHairStyle(int value) {
 		hairStyle = value;
 	}
@@ -166,8 +160,6 @@ public class PcAppearance {
 		return sex;
 	}
 
-	/**
-	 */
 	public final void setSex(boolean isfemale) {
 		sex = isfemale;
 	}

@@ -24,8 +24,6 @@ import l2server.gameserver.model.actor.instance.Player;
 public class PartyMatchDetail extends L2GameServerPacket {
 	private PartyMatchRoom room;
 	
-	/**
-	 */
 	public PartyMatchDetail(Player player, PartyMatchRoom room) {
 		this.room = room;
 	}

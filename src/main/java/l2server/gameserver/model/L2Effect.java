@@ -76,8 +76,6 @@ public abstract class L2Effect {
 	 * <font color="FF0000"><b>WARNING: scheduleEffect nolonger inside constructor</b></font>
 	 * <br>So you must call it explicitly
 	 *
-	 * @param env
-	 * @param effect
 	 */
 	protected L2Effect(Env env, L2Effect effect) {
 		template = effect.template;
@@ -178,7 +176,6 @@ public abstract class L2Effect {
 	/**
 	 * Return true if effect itself can be stolen
 	 *
-	 * @return
 	 */
 	protected boolean effectCanBeStolen() {
 		return false;

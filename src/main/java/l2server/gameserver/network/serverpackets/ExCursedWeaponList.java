@@ -29,8 +29,6 @@ public class ExCursedWeaponList extends L2GameServerPacket {
 		this.cursedWeaponIds = cursedWeaponIds;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(cursedWeaponIds.size());

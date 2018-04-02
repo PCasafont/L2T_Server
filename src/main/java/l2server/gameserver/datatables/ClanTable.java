@@ -34,15 +34,14 @@ import l2server.gameserver.model.entity.Siege;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.Util;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.*;
-import java.util.logging.Level;
 
 /**
  * This class ...
@@ -143,10 +142,6 @@ public class ClanTable {
 		}
 	}
 
-	/**
-	 * @param clanId
-	 * @return
-	 */
 	public L2Clan getClan(int clanId) {
 
 		return clans.get(clanId);
@@ -165,7 +160,6 @@ public class ClanTable {
 	/**
 	 * Creates a new clan and store clan info to database
 	 *
-	 * @param player
 	 * @return NULL if clan with same name already exists
 	 */
 	public L2Clan createClan(Player player, String clanName) {

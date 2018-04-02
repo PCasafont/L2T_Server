@@ -31,8 +31,6 @@ public final class TargetSelected extends L2GameServerPacket {
 	private int y;
 	private int z;
 	
-	/**
-	 */
 	public TargetSelected(int objectId, int targetId, int x, int y, int z) {
 		this.objectId = objectId;
 		targetObjId = targetId;

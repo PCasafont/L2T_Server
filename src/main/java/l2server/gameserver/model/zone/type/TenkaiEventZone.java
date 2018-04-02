@@ -38,14 +38,10 @@ public class TenkaiEventZone extends ZoneType {
 		}
 	}
 
-	/**
-	 */
 	@Override
 	public void onDieInside(Creature character, Creature killer) {
 	}
 
-	/**
-	 */
 	@Override
 	public void onReviveInside(Creature character) {
 	}

@@ -28,8 +28,6 @@ public class ShowTownMap extends L2GameServerPacket {
 	private int x;
 	private int y;
 	
-	/**
-	 */
 	public ShowTownMap(String texture, int x, int y) {
 		this.texture = texture;
 		this.x = x;

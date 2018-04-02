@@ -34,8 +34,6 @@ public final class RequestConfirmGemStone extends L2GameClientPacket {
 	private int gemstoneItemObjId;
 	private long gemStoneCount;
 	
-	/**
-	 */
 	@Override
 	protected void readImpl() {
 		targetItemObjId = readD();
@@ -44,8 +42,6 @@ public final class RequestConfirmGemStone extends L2GameClientPacket {
 		gemStoneCount = readQ();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		final Player activeChar = getClient().getActiveChar();

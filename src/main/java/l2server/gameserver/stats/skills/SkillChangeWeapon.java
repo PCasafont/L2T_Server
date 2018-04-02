@@ -17,8 +17,8 @@ package l2server.gameserver.stats.skills;
 
 import l2server.gameserver.model.Elementals;
 import l2server.gameserver.model.Item;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.itemcontainer.Inventory;
@@ -33,9 +33,6 @@ import l2server.gameserver.templates.item.WeaponTemplate;
  */
 public class SkillChangeWeapon extends Skill {
 
-	/**
-	 * @param set
-	 */
 	public SkillChangeWeapon(StatsSet set) {
 		super(set);
 	}

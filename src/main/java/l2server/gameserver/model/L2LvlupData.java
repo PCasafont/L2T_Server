@@ -87,8 +87,6 @@ public class L2LvlupData {
 		return classCpAdd;
 	}
 
-	/**
-	 */
 	public void setClassCpAdd(float cpAdd) {
 		classCpAdd = cpAdd;
 	}
@@ -101,8 +99,6 @@ public class L2LvlupData {
 		return classCpBase;
 	}
 
-	/**
-	 */
 	public void setClassCpBase(float cpBase) {
 		classCpBase = cpBase;
 	}
@@ -129,8 +125,6 @@ public class L2LvlupData {
 		return classid;
 	}
 
-	/**
-	 */
 	public void setClassid(int pClassid) {
 		classid = pClassid;
 	}

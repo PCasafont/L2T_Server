@@ -32,8 +32,6 @@ public class FortWyvernManagerInstance extends WyvernManagerInstance {
 		return false;
 	}
 	
-	/**
-	 */
 	@Override
 	public boolean isInSiege() {
 		return getFort().getZone().isActive();

@@ -32,10 +32,6 @@ public class ClanBBSManager extends BaseBBSManager {
 		return SingletonHolder.instance;
 	}
 
-	/**
-	 * @param command
-	 * @param activeChar
-	 */
 	@Override
 	public void parsecmd(String command, Player activeChar) {
 		if (command.equals("_bbsclan")) {
@@ -122,10 +118,6 @@ public class ClanBBSManager extends BaseBBSManager {
 		}
 	}
 
-	/**
-	 * @param activeChar
-	 * @param index
-	 */
 	private void clanlist(Player activeChar, int index) {
 		if (index < 1) {
 			index = 1;
@@ -198,9 +190,6 @@ public class ClanBBSManager extends BaseBBSManager {
 		separateAndSend(html.toString(), activeChar);
 	}
 
-	/**
-	 * @param activeChar
-	 */
 	private void clanhome(Player activeChar) {
 		clanhome(activeChar, activeChar.getClan().getClanId());
 	}
@@ -209,10 +198,6 @@ public class ClanBBSManager extends BaseBBSManager {
 		protected static final ClanBBSManager instance = new ClanBBSManager();
 	}
 
-	/**
-	 * @param activeChar
-	 * @param clanId
-	 */
 	private void clanhome(Player activeChar, int clanId) {
 		L2Clan cl = ClanTable.getInstance().getClan(clanId);
 		if (cl != null) {

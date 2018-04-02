@@ -27,10 +27,6 @@ public class MoveToLocationInVehicle extends L2GameServerPacket {
 	private Point3D destination;
 	private Point3D origin;
 	
-	/**
-	 * @param destination
-	 * @param origin
-	 */
 	public MoveToLocationInVehicle(Player player, Point3D destination, Point3D origin) {
 		charObjId = player.getObjectId();
 		boatId = player.getBoat().getObjectId();

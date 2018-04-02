@@ -133,7 +133,6 @@ public final class QuestState {
 	/**
 	 * Return true if quest just created, false otherwise
 	 *
-	 * @return
 	 */
 	public boolean isCreated() {
 		return getState() == State.CREATED;
@@ -166,7 +165,6 @@ public final class QuestState {
 	 * <LI>Update information in database</LI>
 	 * <LI>Send packet QuestList to client</LI>
 	 *
-	 * @param state
 	 * @return object
 	 */
 	public Object setState(byte state) {
@@ -567,8 +565,6 @@ public final class QuestState {
 	/**
 	 * Give adena to the player
 	 *
-	 * @param count
-	 * @param applyRates
 	 */
 	public void giveAdena(long count, boolean applyRates) {
 		giveItems(57, count, applyRates ? 0 : 1);
@@ -577,8 +573,6 @@ public final class QuestState {
 	/**
 	 * Give reward to player using multiplier's
 	 *
-	 * @param itemId
-	 * @param count
 	 */
 	public void rewardItems(int itemId, long count) {
 		if (count <= 0) {
@@ -653,8 +647,6 @@ public final class QuestState {
 	/**
 	 * Give item/reward to the player
 	 *
-	 * @param itemId
-	 * @param count
 	 */
 	public void giveItems(int itemId, long count) {
 		giveItems(itemId, count, 0);
@@ -874,7 +866,6 @@ public final class QuestState {
 	/**
 	 * Send a packet in order to play sound at client terminal
 	 *
-	 * @param sound
 	 */
 	public void playSound(String sound) {
 		getPlayer().sendPacket(new PlaySound(sound));
@@ -883,8 +874,6 @@ public final class QuestState {
 	/**
 	 * Add XP and SP as quest reward
 	 *
-	 * @param exp
-	 * @param sp
 	 */
 	public void addExpAndSp(int exp, int sp) {
 		getPlayer().addExpAndSp((int) getPlayer().calcStat(Stats.EXP_RATE, exp * Config.RATE_QUEST_REWARD_XP, null, null),
@@ -1042,7 +1031,6 @@ public final class QuestState {
 	/**
 	 * Destroy element used by quest when quest is exited
 	 *
-	 * @param repeatable
 	 * @return QuestState
 	 */
 	public QuestState exitQuest(boolean repeatable) {

@@ -38,8 +38,6 @@ public final class RequestDuelStart extends L2GameClientPacket {
 		partyDuel = readD();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		Player activeChar = getClient().getActiveChar();

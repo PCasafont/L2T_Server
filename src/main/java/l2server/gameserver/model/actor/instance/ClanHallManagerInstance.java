@@ -21,8 +21,8 @@ import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.TeleportLocationTable;
 import l2server.gameserver.instancemanager.ClanHallManager;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.L2TeleportLocation;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.entity.ClanHall;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
@@ -47,10 +47,6 @@ public class ClanHallManagerInstance extends MerchantInstance {
 	protected static final int COND_OWNER = 3;
 	private int clanHallId = -1;
 	
-	/**
-	 * @param objectId
-	 * @param template
-	 */
 	public ClanHallManagerInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2ClanHallManagerInstance);

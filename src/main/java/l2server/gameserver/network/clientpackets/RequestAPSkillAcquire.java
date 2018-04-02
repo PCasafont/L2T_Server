@@ -57,8 +57,6 @@ public final class RequestAPSkillAcquire extends L2GameClientPacket {
 		}
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		Player player = getClient().getActiveChar();

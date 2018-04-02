@@ -30,15 +30,14 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.skills.AbnormalType;
 import l2server.gameserver.templates.skills.EffectType;
 import l2server.gameserver.templates.skills.SkillTargetType;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.logging.Level;
 import java.util.stream.Collectors;
 
 public class CharEffectList {
@@ -78,7 +77,6 @@ public class CharEffectList {
 	/**
 	 * Returns all effects affecting stored in this CharEffectList
 	 *
-	 * @return
 	 */
 	public final Abnormal[] getAllEffects() {
 		// If no effect is active, return EMPTY_EFFECTS
@@ -137,8 +135,6 @@ public class CharEffectList {
 	/**
 	 * Returns the first effect matching the given EffectType
 	 *
-	 * @param tp
-	 * @return
 	 */
 	public final Abnormal getFirstEffect(AbnormalType tp) {
 		Abnormal effectNotInUse = null;
@@ -188,8 +184,6 @@ public class CharEffectList {
 	/**
 	 * Returns the first effect matching the given Skill
 	 *
-	 * @param skill
-	 * @return
 	 */
 	public final Abnormal getFirstEffect(Skill skill) {
 		Abnormal effectNotInUse = null;
@@ -250,7 +244,6 @@ public class CharEffectList {
 	/**
 	 * Returns the first effect matching the given skillId
 	 *
-	 * @return
 	 */
 	public final Abnormal getFirstEffect(int skillId) {
 		Abnormal effectNotInUse = null;
@@ -359,7 +352,6 @@ public class CharEffectList {
 	/**
 	 * Returns the first effect matching the given skillId
 	 *
-	 * @return
 	 */
 	public final Abnormal getFirstEffect(final String stackType) {
 		Abnormal effectNotInUse = null;
@@ -410,7 +402,6 @@ public class CharEffectList {
 	/**
 	 * Return the number of buffs in this CharEffectList not counting Songs/Dances
 	 *
-	 * @return
 	 */
 	public int getBuffCount() {
 		if (buffs == null) {
@@ -442,7 +433,6 @@ public class CharEffectList {
 	/**
 	 * Return the number of Songs/Dances in this CharEffectList
 	 *
-	 * @return
 	 */
 	public int getDanceCount() {
 		if (buffs == null) {
@@ -468,7 +458,6 @@ public class CharEffectList {
 	/**
 	 * Return the number of Activation buffs in this CharEffectList
 	 *
-	 * @return
 	 */
 	public int getActivationCount() {
 		if (buffs == null) {
@@ -538,7 +527,6 @@ public class CharEffectList {
 	/**
 	 * Exit all effects having a specified type
 	 *
-	 * @param type
 	 */
 	public final void stopEffects(AbnormalType type) {
 		// Go through all active skills effects
@@ -567,7 +555,6 @@ public class CharEffectList {
 	/**
 	 * Exit all effects having a specified type
 	 *
-	 * @param type
 	 */
 	public final void stopEffects(EffectType type) {
 		// Go through all active skills effects
@@ -596,7 +583,6 @@ public class CharEffectList {
 	/**
 	 * Exits all effects created by a specific skillId
 	 *
-	 * @param skillId
 	 */
 	public final void stopSkillEffects(int skillId) {
 		// Go through all active skills effects
@@ -1332,8 +1318,6 @@ public class CharEffectList {
 	/**
 	 * Returns effect if contains in buffs or debuffs and null if not found
 	 *
-	 * @param effect
-	 * @return
 	 */
 	private Abnormal listsContains(Abnormal effect) {
 		if (buffs != null && !buffs.isEmpty() && buffs.contains(effect)) {

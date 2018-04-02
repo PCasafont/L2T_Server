@@ -31,9 +31,6 @@ import java.util.List;
  * @author Pere
  */
 public final class ServicesNpcInstance extends NpcInstance {
-	/**
-	 * @param template
-	 */
 	public ServicesNpcInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 	}
@@ -860,7 +857,6 @@ public final class ServicesNpcInstance extends NpcInstance {
 	 *
 	 * @param oldC current player ClassId
 	 * @param val  new class index
-	 * @return
 	 */
 	private static boolean validateClass(PlayerClass oldC, int val) {
 		try {

@@ -67,7 +67,6 @@ public class FortZone extends SpawnZone {
 	/**
 	 * Removes all foreigners from the fort
 	 *
-	 * @param owningClan
 	 */
 	public void banishForeigners(L2Clan owningClan) {
 		for (Creature temp : characterList.values()) {

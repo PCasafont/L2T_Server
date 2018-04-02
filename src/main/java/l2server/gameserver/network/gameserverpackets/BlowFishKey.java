@@ -15,14 +15,13 @@
 
 package l2server.gameserver.network.gameserverpackets;
 
+import l2server.util.network.BaseSendablePacket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.network.BaseSendablePacket;
 
 import javax.crypto.Cipher;
 import java.security.GeneralSecurityException;
 import java.security.interfaces.RSAPublicKey;
-import java.util.logging.Level;
 
 /**
  * @author -Wooden-
@@ -32,10 +31,6 @@ public class BlowFishKey extends BaseSendablePacket {
 
 
 
-	/**
-	 * @param blowfishKey
-	 * @param publicKey
-	 */
 	public BlowFishKey(byte[] blowfishKey, RSAPublicKey publicKey) {
 		writeC(0x00);
 		byte[] encrypted = null;

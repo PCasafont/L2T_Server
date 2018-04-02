@@ -39,8 +39,6 @@ public final class RequestPledgeReorganizeMember extends L2GameClientPacket {
 		selectedMember = readS();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		final Player activeChar = getClient().getActiveChar();

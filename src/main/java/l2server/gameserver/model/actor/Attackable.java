@@ -39,9 +39,9 @@ import l2server.gameserver.stats.Stats;
 import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.templates.item.EtcItemType;
 import l2server.gameserver.util.Util;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,7 +49,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
 
 public class Attackable extends Npc {
 	private static Logger log = LoggerFactory.getLogger(Attackable.class.getName());
@@ -2183,7 +2182,6 @@ public class Attackable extends Npc {
 	 * Set delay for onKill() call, in ms
 	 * Default: 5000 ms
 	 *
-	 * @param delay
 	 */
 	public final void setOnKillDelay(int delay) {
 		onKillDelay = delay;
@@ -2306,7 +2304,6 @@ public class Attackable extends Npc {
 	/**
 	 * Set this Npc as a Raid instance.<BR><BR>
 	 *
-	 * @param isRaid
 	 */
 	public void setIsRaid(boolean isRaid) {
 		this.isRaid = isRaid;
@@ -2315,7 +2312,6 @@ public class Attackable extends Npc {
 	/**
 	 * Set this Npc as a Minion instance.<BR><BR>
 	 *
-	 * @param val
 	 */
 	public void setIsRaidMinion(boolean val) {
 		isRaid = val;

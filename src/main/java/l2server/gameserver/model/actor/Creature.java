@@ -201,7 +201,6 @@ public abstract class Creature extends WorldObject {
 	/**
 	 * Sets Creature instance, to which debug packets will be send
 	 *
-	 * @param d
 	 */
 	public void setDebug(Creature d) {
 		debugger = d;
@@ -210,7 +209,6 @@ public abstract class Creature extends WorldObject {
 	/**
 	 * Send debug packet.
 	 *
-	 * @param pkt
 	 */
 	public void sendDebugPacket(L2GameServerPacket pkt) {
 		if (debugger != null) {
@@ -248,10 +246,6 @@ public abstract class Creature extends WorldObject {
 		return true;
 	}
 	
-	/**
-	 * @param zone
-	 * @return
-	 */
 	public final boolean isInsideZone(final byte zone) {
 		Instance instance = InstanceManager.getInstance().getInstance(getInstanceId());
 		switch (zone) {
@@ -269,10 +263,6 @@ public abstract class Creature extends WorldObject {
 		return zones[zone] > 0;
 	}
 	
-	/**
-	 * @param zone
-	 * @param state
-	 */
 	public final void setInsideZone(final byte zone, final boolean state) {
 		if (state) {
 			zones[zone]++;
@@ -2055,7 +2045,6 @@ public abstract class Creature extends WorldObject {
 	/**
 	 * Check if casting of skill is possible
 	 *
-	 * @param skill
 	 * @return True if casting is possible
 	 */
 	protected boolean checkDoCastConditions(Skill skill) {
@@ -3550,7 +3539,6 @@ public abstract class Creature extends WorldObject {
 	 * Player<BR>
 	 * Summon<BR>
 	 *
-	 * @param partyOnly
 	 */
 	public void updateEffectIcons(boolean partyOnly) {
 		// overridden
@@ -6563,7 +6551,6 @@ public abstract class Creature extends WorldObject {
 	/**
 	 * Disable this skill id for the duration of the delay in milliseconds.
 	 *
-	 * @param skill
 	 * @param delay (seconds * 1000)
 	 */
 	public void disableSkill(Skill skill, long delay) {
@@ -7626,7 +7613,6 @@ public abstract class Creature extends WorldObject {
 	 * @param obj            (The targeted object)
 	 * @param skill          (The used skill)
 	 * @param isMassiveCheck (Define either this is supposed to be a massive or non massive attack)
-	 * @return
 	 */
 	public boolean isAbleToCastOnTarget(WorldObject obj, Skill skill, final boolean isMassiveCheck) {
 		if (this instanceof Playable || this instanceof DecoyInstance || this instanceof TrapInstance) {

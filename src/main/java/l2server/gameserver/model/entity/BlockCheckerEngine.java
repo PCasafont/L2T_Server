@@ -107,7 +107,6 @@ public final class BlockCheckerEngine {
 	 * Updates the player holder before the event starts
 	 * to synchronize all info
 	 *
-	 * @param holder
 	 */
 	public void updatePlayersOnStart(ArenaParticipantsHolder holder) {
 		this.holder = holder;
@@ -168,8 +167,6 @@ public final class BlockCheckerEngine {
 	/**
 	 * Returns the player points
 	 *
-	 * @param player
-	 * @param isRed
 	 * @return int
 	 */
 	public int getPlayerPoints(Player player, boolean isRed) {
@@ -187,8 +184,6 @@ public final class BlockCheckerEngine {
 	/**
 	 * Increases player points for his teams
 	 *
-	 * @param player
-	 * @param team
 	 */
 	public synchronized void increasePlayerPoints(Player player, int team) {
 		if (player == null) {
@@ -212,7 +207,6 @@ public final class BlockCheckerEngine {
 	 * Will add a new drop into the list of
 	 * dropped items
 	 *
-	 * @param item
 	 */
 	public void addNewDrop(Item item) {
 		if (item != null) {
@@ -579,7 +573,6 @@ public final class BlockCheckerEngine {
 		 * 1) Higher score - 8 extra
 		 * 2) Higher score - 5 extra
 		 *
-		 * @param isRed
 		 */
 		private void rewardAsWinner(boolean isRed) {
 			HashMap<Player, Integer> tempPoints = isRed ? redTeamPoints : blueTeamPoints;
@@ -628,7 +621,6 @@ public final class BlockCheckerEngine {
 		 * Player got >= 10 points: 2 coins
 		 * Player got < 10 points: 0 coins
 		 *
-		 * @param isRed
 		 */
 		private void rewardAsLooser(boolean isRed) {
 			HashMap<Player, Integer> tempPoints = isRed ? redTeamPoints : blueTeamPoints;

@@ -30,8 +30,6 @@ public class ExUseSharedGroupItem extends L2GameServerPacket {
 		this.totalTime = totalTime / 1000;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(itemId);

@@ -370,9 +370,6 @@ public class LoginController {
 		return 0;
 	}
 	
-	/**
-	 * @return
-	 */
 	public boolean isLoginPossible(L2LoginClient client, int serverId) {
 		GameServerInfo gsi = GameServerTable.getInstance().getRegisteredGameServerById(serverId);
 		int access = client.getAccessLevel();
@@ -509,9 +506,6 @@ public class LoginController {
 	/**
 	 * user name is not case sensitive any more
 	 *
-	 * @param user
-	 * @param password
-	 * @return
 	 */
 	public boolean loginValid(String user, String password, L2LoginClient client)// throws HackingException
 	{
@@ -713,7 +707,6 @@ public class LoginController {
 	/**
 	 * user name is not case sensitive any more
 	 *
-	 * @return
 	 */
 	public String loginValid(String sessionKey, L2LoginClient client)// throws HackingException
 	{

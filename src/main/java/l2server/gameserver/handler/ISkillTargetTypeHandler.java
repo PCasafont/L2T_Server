@@ -15,8 +15,8 @@
 
 package l2server.gameserver.handler;
 
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.templates.skills.SkillTargetType;
 
@@ -24,17 +24,7 @@ import l2server.gameserver.templates.skills.SkillTargetType;
  * @author Max
  */
 public interface ISkillTargetTypeHandler {
-	/**
-	 * @param skill
-	 * @param activeChar
-	 * @param onlyFirst
-	 * @param target
-	 * @return
-	 */
 	WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target);
 
-	/**
-	 * @return
-	 */
 	Enum<SkillTargetType> getTargetType();
 }

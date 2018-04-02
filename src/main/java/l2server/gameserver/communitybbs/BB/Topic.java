@@ -22,7 +22,6 @@ import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.logging.Level;
 
 public class Topic {
 	private static Logger log = LoggerFactory.getLogger(Topic.class.getName());
@@ -41,8 +40,6 @@ public class Topic {
 	private int type;
 	private int cReply;
 
-	/**
-	 */
 	public Topic(ConstructorType ct, int id, int fid, String name, long date, String oname, int oid, int type, int Creply) {
 		this.id = id;
 		forumId = fid;
@@ -91,9 +88,6 @@ public class Topic {
 		CREATE
 	}
 
-	/**
-	 * @return
-	 */
 	public int getID() {
 		return id;
 	}
@@ -102,9 +96,6 @@ public class Topic {
 		return forumId;
 	}
 
-	/**
-	 * @return
-	 */
 	public String getName() {
 		return topicName;
 	}
@@ -134,9 +125,6 @@ public class Topic {
 		}
 	}
 
-	/**
-	 * @return
-	 */
 	public long getDate() {
 		return date;
 	}

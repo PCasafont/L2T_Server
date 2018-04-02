@@ -47,7 +47,6 @@ public class L2AttackableAIScript extends QuestJython {
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method register ID for all QuestEventTypes<BR>
 	 * Do not use for group_template AIs</B></FONT><BR>
 	 *
-	 * @param mobs
 	 * @see #registerMobs(int[], QuestEventType...)
 	 */
 	public void registerMobs(int[] mobs) {
@@ -66,8 +65,6 @@ public class L2AttackableAIScript extends QuestJython {
 	 * This is used to register all monsters contained in mobs for a particular script
 	 * event types defined in types.
 	 *
-	 * @param mobs
-	 * @param types
 	 */
 	public void registerMobs(int[] mobs, QuestEventType... types) {
 		for (int id : mobs) {

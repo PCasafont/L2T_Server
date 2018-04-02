@@ -18,9 +18,9 @@ package l2server.gameserver.stats.skills;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.idfactory.IdFactory;
-import l2server.gameserver.model.WorldObject;
-import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.L2Spawn;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Trap;
 import l2server.gameserver.model.actor.instance.Player;
@@ -34,9 +34,6 @@ public class SkillTrap extends SkillSummon {
 	private int trapNpcId = 0;
 	protected L2Spawn trapSpawn;
 	
-	/**
-	 * @param set
-	 */
 	public SkillTrap(StatsSet set) {
 		super(set);
 		triggerSkillId = set.getInteger("triggerSkillId");

@@ -35,8 +35,6 @@ public final class RequestPutTargetForItemAppearance extends L2GameClientPacket 
 		objectId = readD();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		Player player = getClient().getActiveChar();

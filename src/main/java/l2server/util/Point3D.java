@@ -52,9 +52,6 @@ public class Point3D implements Serializable {
 		z = 0;
 	}
 
-	/**
-	 * @param worldPosition
-	 */
 	public Point3D(Point3D worldPosition) {
 		synchronized (worldPosition) {
 			x = worldPosition.x;

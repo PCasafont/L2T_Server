@@ -15,12 +15,11 @@ import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 import java.util.*;
-import java.util.logging.Level;
 
 public class Kamaloka extends Quest {
 	private static Logger log = LoggerFactory.getLogger(Kamaloka.class.getName());
@@ -359,9 +358,7 @@ public class Kamaloka extends Quest {
 	/**
 	 * Teleport player and pet to/from instance
 	 *
-	 * @param player
 	 * @param coords     x,y,z
-	 * @param instanceId
 	 */
 	private static void teleportPlayer(Player player, int[] coords, int instanceId) {
 		player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);

@@ -25,8 +25,6 @@ public final class RequestAPCloseListWnd extends L2GameClientPacket {
 	protected void readImpl() {
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		sendPacket(new ExCloseAPListWnd());

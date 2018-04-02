@@ -49,9 +49,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener {
 
 	private ResourceBundle bundle;
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -202,7 +199,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * @param file
 	 * @throws IOException
 	 */
 	private void parsePropertiesFile(File file) throws IOException {
@@ -250,9 +246,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener {
 		lnr.close();
 	}
 
-	/**
-	 * @param value
-	 */
 	private Object parseValue(String value) {
 		if (value.equalsIgnoreCase("false") || value.equalsIgnoreCase("true")) {
 			return Boolean.parseBoolean(value);
@@ -358,9 +351,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener {
 
 			private String comments;
 
-			/**
-			 * @param comments
-			 */
 			public ConfigComment(String comments) {
 				this.comments = comments;
 			}
@@ -394,12 +384,6 @@ public class ConfigUserInterface extends JFrame implements ActionListener {
 			private ValueType type;
 			private JComponent component;
 
-			/**
-			 * @param name
-			 * @param value
-			 * @param type
-			 * @param comments
-			 */
 			public ConfigProperty(String name, Object value, ValueType type, String comments) {
 				super(comments);
 				if (!type.getType().isAssignableFrom(value.getClass())) {

@@ -44,9 +44,6 @@ public class TopicBBSManager extends BaseBBSManager {
 		table.add(tt);
 	}
 
-	/**
-	 * @param topic
-	 */
 	public void delTopic(Topic topic) {
 		table.remove(topic);
 	}
@@ -209,11 +206,6 @@ public class TopicBBSManager extends BaseBBSManager {
 		}
 	}
 
-	/**
-	 * @param forum
-	 * @param activeChar
-	 * @param idf
-	 */
 	private void showNewTopic(Forum forum, Player activeChar, int idf) {
 		if (forum == null) {
 			ShowBoard sb = new ShowBoard("<html><body><br><br><center></center><br><br></body></html>", "101");
@@ -230,10 +222,6 @@ public class TopicBBSManager extends BaseBBSManager {
 		}
 	}
 
-	/**
-	 * @param forum
-	 * @param activeChar
-	 */
 	private void showMemoNewTopics(Forum forum, Player activeChar) {
 		final String html = StringUtil.concat(
 				"<html><body><br><br><table border=0 width=610><tr><td width=10></td><td width=600 align=left><a action=\"bypass _bbshome\">HOME</a>&nbsp;>&nbsp;<a action=\"bypass _bbsmemo\">Memo Form</a></td></tr></table><img src=\"L2UI.squareblank\" width=\"1\" height=\"10\"><center><table border=0 cellspacing=0 cellpadding=0><tr><td width=610><img src=\"sek.cbui355\" width=\"610\" height=\"1\"><br1><img src=\"sek.cbui355\" width=\"610\" height=\"1\"></td></tr></table><table fixwidth=610 border=0 cellspacing=0 cellpadding=0><tr><td><img src=\"l2ui.mini_logo\" width=5 height=20></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=1></td><td align=center FIXWIDTH=60 height=29>&$413;</td><td FIXWIDTH=540><edit var = \"Title\" width=540 height=13></td><td><img src=\"l2ui.mini_logo\" width=5 height=1></td></tr></table><table fixwidth=610 border=0 cellspacing=0 cellpadding=0><tr><td><img src=\"l2ui.mini_logo\" width=5 height=10></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=1></td><td align=center FIXWIDTH=60 height=29 valign=top>&$427;</td><td align=center FIXWIDTH=540><MultiEdit var =\"Content\" width=535 height=313></td><td><img src=\"l2ui.mini_logo\" width=5 height=1></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=10></td></tr></table><table fixwidth=610 border=0 cellspacing=0 cellpadding=0><tr><td><img src=\"l2ui.mini_logo\" width=5 height=10></td></tr><tr><td><img src=\"l2ui.mini_logo\" width=5 height=1></td><td align=center FIXWIDTH=60 height=29>&nbsp;</td><td align=center FIXWIDTH=70><button value=\"&$140;\" action=\"Write Topic crea ",
@@ -243,12 +231,6 @@ public class TopicBBSManager extends BaseBBSManager {
 		send1002(activeChar);
 	}
 
-	/**
-	 * @param forum
-	 * @param activeChar
-	 * @param index
-	 * @param idf
-	 */
 	private void showTopics(Forum forum, Player activeChar, int index, int idf) {
 		if (forum == null) {
 			ShowBoard sb = new ShowBoard("<html><body><br><br><center></center><br><br></body></html>", "101");
@@ -265,11 +247,6 @@ public class TopicBBSManager extends BaseBBSManager {
 		}
 	}
 
-	/**
-	 * @param forum
-	 * @param activeChar
-	 * @param index
-	 */
 	private void showMemoTopics(Forum forum, Player activeChar, int index) {
 		forum.vload();
 		final StringBuilder html = StringUtil.startAppend(2000,

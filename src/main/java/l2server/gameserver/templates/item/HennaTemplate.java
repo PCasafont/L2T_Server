@@ -96,30 +96,18 @@ public class HennaTemplate {
 		return symbolId;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getDyeId() {
 		return dye;
 	}
 
-	/**
-	 * @return
-	 */
 	public String getName() {
 		return name;
 	}
 
-	/**
-	 * @return
-	 */
 	public long getPrice() {
 		return price;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getAmountDyeRequire() {
 		if (isFourthSlot()) {
 			return 1;
@@ -128,72 +116,42 @@ public class HennaTemplate {
 		return 10;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getStatINT() {
 		return INT;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getStatSTR() {
 		return STR;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getStatCON() {
 		return CON;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getStatMEM() {
 		return MEN;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getStatDEX() {
 		return DEX;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getStatWIT() {
 		return WIT;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getStatLUC() {
 		return LUC;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getStatCHA() {
 		return CHA;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getStatElemId() {
 		return elemId;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getStatElemVal() {
 		return elemVal;
 	}

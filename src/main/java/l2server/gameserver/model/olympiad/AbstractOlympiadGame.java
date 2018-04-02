@@ -100,7 +100,6 @@ public abstract class AbstractOlympiadGame {
 	 * Function return null if player passed all checks
 	 * or SystemMessage with reason for broadcast to opponent(s).
 	 *
-	 * @return
 	 */
 	protected final SystemMessage checkDefaulted(OlympiadParticipant par) {
 		Player player = par.player;

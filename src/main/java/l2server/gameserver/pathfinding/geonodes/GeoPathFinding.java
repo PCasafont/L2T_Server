@@ -17,8 +17,8 @@ package l2server.gameserver.pathfinding.geonodes;
 
 import l2server.Config;
 import l2server.gameserver.GeoData;
-import l2server.gameserver.model.World;
 import l2server.gameserver.model.Location;
+import l2server.gameserver.model.World;
 import l2server.gameserver.pathfinding.AbstractNode;
 import l2server.gameserver.pathfinding.AbstractNodeLoc;
 import l2server.gameserver.pathfinding.PathFinding;
@@ -32,7 +32,6 @@ import java.nio.IntBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.*;
-import java.util.logging.Level;
 
 /**
  * @author -Nemesiss-
@@ -49,15 +48,11 @@ public class GeoPathFinding extends PathFinding {
 		return SingletonHolder.instance;
 	}
 
-	/**
-	 */
 	@Override
 	public boolean pathNodesExist(short regionoffset) {
 		return pathNodesIndex.containsKey(regionoffset);
 	}
 
-	/**
-	 */
 	@Override
 	public List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean playable) {
 		int gx = x - World.MAP_MIN_X >> 4;

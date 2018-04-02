@@ -369,12 +369,6 @@ public class AdminTeleport implements IAdminCommandHandler {
 		}
 	}
 	
-	/**
-	 * @param player
-	 * @param x
-	 * @param y
-	 * @param z
-	 */
 	private void teleportCharacter(Player player, int x, int y, int z, Player activeChar) {
 		if (player != null) {
 			// Check for jail

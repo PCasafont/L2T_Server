@@ -18,11 +18,12 @@ package handlers.targethandlers;
 import l2server.gameserver.GeoEngine;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
-import l2server.gameserver.model.actor.*;
-import l2server.gameserver.model.actor.Summon;
+import l2server.gameserver.model.WorldObject;
+import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Playable;
+import l2server.gameserver.model.actor.Summon;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -190,8 +191,6 @@ public class TargetFrontArea implements ISkillTargetTypeHandler {
 		return targetList.toArray(new Creature[targetList.size()]);
 	}
 
-	/**
-	 */
 	@Override
 	public Enum<SkillTargetType> getTargetType() {
 		return SkillTargetType.TARGET_FRONT_AREA;

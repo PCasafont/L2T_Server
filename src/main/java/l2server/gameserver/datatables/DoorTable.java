@@ -25,12 +25,12 @@ import l2server.gameserver.model.entity.ClanHall;
 import l2server.gameserver.pathfinding.AbstractNodeLoc;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.DoorTemplate;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.*;
@@ -136,10 +136,6 @@ public class DoorTable {
 		}
 	}
 
-	/**
-	 * @param id
-	 * @param set
-	 */
 	private void makeDoor(int id, StatsSet set) {
 		insertCollisionData(set);
 		insertStatsData(set);

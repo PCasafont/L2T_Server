@@ -72,9 +72,6 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 
 	private long connectionStartTime;
 
-	/**
-	 * @param con
-	 */
 	public L2LoginClient(MMOConnection<L2LoginClient> con) {
 		super(con);
 		state = LoginClientState.CONNECTED;

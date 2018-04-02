@@ -25,8 +25,6 @@ public class AutoAttackStop extends L2GameServerPacket {
 	
 	private int targetObjId;
 	
-	/**
-	 */
 	public AutoAttackStop(int targetObjId) {
 		this.targetObjId = targetObjId;
 	}

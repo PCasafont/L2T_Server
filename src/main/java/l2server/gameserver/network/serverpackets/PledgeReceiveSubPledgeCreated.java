@@ -27,15 +27,11 @@ public class PledgeReceiveSubPledgeCreated extends L2GameServerPacket {
 	private SubPledge subPledge;
 	private L2Clan clan;
 	
-	/**
-	 */
 	public PledgeReceiveSubPledgeCreated(SubPledge subPledge, L2Clan clan) {
 		this.subPledge = subPledge;
 		this.clan = clan;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(0x01);

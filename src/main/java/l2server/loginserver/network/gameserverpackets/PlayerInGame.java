@@ -16,11 +16,11 @@
 package l2server.loginserver.network.gameserverpackets;
 
 import l2server.Config;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.loginserver.GameServerTable;
 import l2server.loginserver.GameServerThread;
 import l2server.util.network.BaseRecievePacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author -Wooden-
@@ -30,9 +30,6 @@ public class PlayerInGame extends BaseRecievePacket {
 
 
 
-	/**
-	 * @param decrypt
-	 */
 	public PlayerInGame(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 		int size = readH();

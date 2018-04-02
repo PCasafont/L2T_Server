@@ -37,7 +37,6 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 
 /**
  * This class ...
@@ -189,8 +188,6 @@ public class Abnormal {
 	 * <font color="FF0000"><b>WARNING: scheduleEffect nolonger inside constructor</b></font>
 	 * <br>So you must call it explicitly
 	 *
-	 * @param env
-	 * @param effect
 	 */
 	protected Abnormal(Env env, Abnormal effect) {
 		template = effect.template;
@@ -697,7 +694,6 @@ public class Abnormal {
 	/**
 	 * Return true if effect itself can be stolen
 	 *
-	 * @return
 	 */
 	protected boolean effectCanBeStolen() {
 		for (L2Effect effect : effects) {

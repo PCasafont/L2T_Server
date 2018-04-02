@@ -72,8 +72,6 @@ public class CharInfo extends L2GameServerPacket {
 
 	private int vehicleId, airShipHelm;
 
-	/**
-	 */
 	public CharInfo(Player cha) {
 		activeChar = cha;
 		objId = cha.getObjectId();

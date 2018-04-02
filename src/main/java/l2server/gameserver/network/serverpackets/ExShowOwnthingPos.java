@@ -25,8 +25,6 @@ public class ExShowOwnthingPos extends L2GameServerPacket {
 	public ExShowOwnthingPos() {
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(0);

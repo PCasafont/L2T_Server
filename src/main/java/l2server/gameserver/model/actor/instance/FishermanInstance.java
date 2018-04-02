@@ -17,8 +17,8 @@ package l2server.gameserver.model.actor.instance;
 
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.SkillTreeTable;
-import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.L2SkillLearn;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.network.serverpackets.ExAcquireSkillList;
@@ -26,10 +26,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.chars.NpcTemplate;
 
 public class FishermanInstance extends MerchantInstance {
-	/**
-	 * @param objectId
-	 * @param template
-	 */
 	public FishermanInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2FishermanInstance);

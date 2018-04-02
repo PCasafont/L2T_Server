@@ -203,7 +203,6 @@ public class SiegeZone extends ZoneType {
 	/**
 	 * Sends a message to all players in this zone
 	 *
-	 * @param message
 	 */
 	public void announceToPlayers(String message) {
 		for (Creature temp : characterList.values()) {
@@ -216,7 +215,6 @@ public class SiegeZone extends ZoneType {
 	/**
 	 * Returns all players within this zone
 	 *
-	 * @return
 	 */
 	public ArrayList<Player> getAllPlayers() {
 		ArrayList<Player> players = new ArrayList<>();
@@ -249,7 +247,6 @@ public class SiegeZone extends ZoneType {
 	/**
 	 * Removes all foreigners from the zone
 	 *
-	 * @param owningClan
 	 */
 	public void banishForeigners(L2Clan owningClan) {
 		for (Creature temp : characterList.values()) {

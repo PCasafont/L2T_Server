@@ -326,7 +326,6 @@ public class SpawnTable {
 	 * Get all the spawn of a NPC<BR><BR>
 	 *
 	 * @param npcId : ID of the NPC to find.
-	 * @return
 	 */
 	public void findNPCInstances(Player activeChar, int npcId, int teleportIndex, boolean showposition) {
 		int index = 0;

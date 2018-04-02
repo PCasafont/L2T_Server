@@ -30,8 +30,6 @@ public final class RequestDivideAdenaConfirm extends L2GameClientPacket {
 		adenaCount = readQ();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		Player player = getClient().getActiveChar();

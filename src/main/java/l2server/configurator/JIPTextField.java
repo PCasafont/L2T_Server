@@ -54,9 +54,6 @@ public class JIPTextField extends JPanel implements FocusListener {
 		this("...");
 	}
 
-	/**
-	 * @param value
-	 */
 	public JIPTextField(Inet4Address value) {
 		this(value.getHostAddress());
 	}

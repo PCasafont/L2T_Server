@@ -50,8 +50,6 @@ public class AuthGameGuard extends L2LoginClientPacket {
 		return data4;
 	}
 	
-	/**
-	 */
 	@Override
 	protected boolean readImpl() {
 		if (super.buf.remaining() >= 20) {
@@ -66,8 +64,6 @@ public class AuthGameGuard extends L2LoginClientPacket {
 		}
 	}
 	
-	/**
-	 */
 	@Override
 	public void run() {
 		if (sessionId == getClient().getSessionId()) {

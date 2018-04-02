@@ -316,7 +316,6 @@ public class ClanHall {
 	/**
 	 * Sets this clan halls zone
 	 *
-	 * @param zone
 	 */
 	public void setZone(ClanHallZone zone) {
 		this.zone = zone;

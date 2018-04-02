@@ -44,7 +44,6 @@ import java.sql.ResultSet;
 import java.util.*;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 
 public class Fort {
 	private static Logger log = LoggerFactory.getLogger(Fort.class.getName());
@@ -333,7 +332,6 @@ public class Fort {
 	/**
 	 * Get the objects distance to this fort
 	 *
-	 * @return
 	 */
 	public double getDistance(WorldObject obj) {
 		return getZone().getDistanceToZone(obj);
@@ -365,7 +363,6 @@ public class Fort {
 	/**
 	 * This method will set owner for Fort
 	 *
-	 * @param clan
 	 */
 	public boolean setOwner(L2Clan clan, boolean updateClansReputation) {
 		L2Clan oldowner = getOwnerClan();
@@ -878,8 +875,6 @@ public class Fort {
 		return state;
 	}
 
-	/**
-	 */
 	public final void setFortState(int state, int castleId) {
 		this.state = state;
 		this.castleId = castleId;

@@ -19,15 +19,14 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.L2Macro.L2MacroCmd;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.SendMacroList;
+import l2server.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.StringUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.*;
-import java.util.logging.Level;
 
 /**
  * This class ...
@@ -150,8 +149,6 @@ public class MacroList {
 		}
 	}
 
-	/**
-	 */
 	private void deleteMacroFromDb(L2Macro macro) {
 		Connection con = null;
 		try {

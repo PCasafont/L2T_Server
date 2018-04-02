@@ -205,8 +205,6 @@ public class TimeController {
 		}
 	}
 	
-	/**
-	 */
 	class BroadcastSunState implements Runnable {
 		int h;
 		boolean tempIsNight;

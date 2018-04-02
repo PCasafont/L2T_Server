@@ -698,7 +698,6 @@ public final class World {
 	 * Returns the whole 2d array containing the world regions
 	 * used by ZoneData.java to setup zones inside the world regions
 	 *
-	 * @return
 	 */
 	public WorldRegion[][] getAllWorldRegions() {
 		return worldRegions;

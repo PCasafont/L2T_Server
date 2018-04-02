@@ -20,15 +20,15 @@ import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.model.Abnormal;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.*;
 import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.Util;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 import java.util.concurrent.Future;
 
@@ -73,7 +73,6 @@ public class FortSiegeGuardAI extends CreatureAI implements Runnable {
 	/**
 	 * Constructor of AttackableAI.<BR><BR>
 	 *
-	 * @param creature
 	 */
 	public FortSiegeGuardAI(Creature creature) {
 		super(creature);

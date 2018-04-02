@@ -2555,9 +2555,6 @@ public abstract class Skill implements IChanceSkillTrigger {
 	}
 	
 	/**
-	 * @param skillId
-	 * @param skillLvl
-	 * @param values
 	 * @return L2ExtractableSkill
 	 * @author Zoey76
 	 */
@@ -2650,7 +2647,6 @@ public abstract class Skill implements IChanceSkillTrigger {
 	/**
 	 * Return the additional alter skill info.<BR><BR>
 	 *
-	 * @return
 	 */
 	public final int getAlterSkillId() {
 		return alterSkillId;

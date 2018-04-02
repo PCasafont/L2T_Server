@@ -42,8 +42,6 @@ public final class AccountKicked extends L2LoginServerPacket {
 		this.reason = reason;
 	}
 	
-	/**
-	 */
 	@Override
 	protected void write() {
 		writeC(0x02);

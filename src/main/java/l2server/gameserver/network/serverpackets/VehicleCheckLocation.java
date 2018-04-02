@@ -23,8 +23,6 @@ import l2server.gameserver.model.actor.Creature;
 public class VehicleCheckLocation extends L2GameServerPacket {
 	private Creature boat;
 	
-	/**
-	 */
 	public VehicleCheckLocation(Creature boat) {
 		this.boat = boat;
 	}

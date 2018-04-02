@@ -19,9 +19,9 @@ import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.instance.ChestInstance;
@@ -35,7 +35,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.Collection;
 import java.util.StringTokenizer;
-import java.util.logging.Level;
 
 /**
  * This class handles following admin commands:
@@ -490,7 +489,6 @@ public class AdminEffects implements IAdminCommandHandler {
 
 	/**
 	 * @param action bitmask that should be applied over target's abnormal
-	 * @param target
 	 * @return <i>true</i> if target's abnormal state was affected , <i>false</i> otherwise.
 	 */
 	private boolean performAbnormal(int action, WorldObject target) {
@@ -535,7 +533,6 @@ public class AdminEffects implements IAdminCommandHandler {
 	/**
 	 * @param type     - atmosphere type (signssky,sky)
 	 * @param state    - atmosphere state(night,day)
-	 * @param duration
 	 */
 	private void adminAtmosphere(String type, String state, int duration, Player activeChar) {
 		L2GameServerPacket packet = null;

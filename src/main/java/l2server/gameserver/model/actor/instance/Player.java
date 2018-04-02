@@ -1463,7 +1463,6 @@ public class Player extends Playable {
 	 * </li> <BR>
 	 * <BR>
 	 *
-	 * @param closeClient
 	 */
 	public void logout(boolean closeClient) {
 		try {
@@ -2270,7 +2269,6 @@ public class Player extends Playable {
 	/**
 	 * Set the exp of the Player before a death
 	 *
-	 * @param exp
 	 */
 	public void setExpBeforeDeath(long exp) {
 		expBeforeDeath = exp;
@@ -2665,7 +2663,6 @@ public class Player extends Playable {
 	/**
 	 * Return the Fame of this Player <BR><BR>
 	 *
-	 * @return
 	 */
 	public int getFame() {
 		return fame;
@@ -2674,7 +2671,6 @@ public class Player extends Playable {
 	/**
 	 * Set the Fame of this L2PcInstane <BR><BR>
 	 *
-	 * @param fame
 	 */
 	public void setFame(int fame) {
 		if (fame > Config.MAX_PERSONAL_FAME_POINTS) {
@@ -6414,7 +6410,6 @@ public class Player extends Playable {
 	/**
 	 * Set the Trap of this Player<BR><BR>
 	 *
-	 * @param trap
 	 */
 	public void setTrap(Trap trap) {
 		this.trap = trap;
@@ -6489,7 +6484,6 @@ public class Player extends Playable {
 	/**
 	 * Return true if last request is expired.
 	 *
-	 * @return
 	 */
 	public boolean isRequestExpired() {
 		return !(requestExpireTime > TimeController.getGameTicks());
@@ -7664,9 +7658,6 @@ public class Player extends Playable {
 		return player;
 	}
 	
-	/**
-	 * @return
-	 */
 	public Forum getMail() {
 		if (forumMail == null) {
 			setMail(ForumsBBSManager.getInstance().getForumByName("MailRoot").getChildByName(getName()));
@@ -7685,16 +7676,10 @@ public class Player extends Playable {
 		return forumMail;
 	}
 	
-	/**
-	 * @param forum
-	 */
 	public void setMail(Forum forum) {
 		forumMail = forum;
 	}
 	
-	/**
-	 * @return
-	 */
 	public Forum getMemo() {
 		if (forumMemo == null) {
 			setMemo(ForumsBBSManager.getInstance().getForumByName("MemoRoot").getChildByName(accountName));
@@ -7713,9 +7698,6 @@ public class Player extends Playable {
 		return forumMemo;
 	}
 	
-	/**
-	 * @param forum
-	 */
 	public void setMemo(Forum forum) {
 		forumMemo = forum;
 	}
@@ -10923,8 +10905,6 @@ public class Player extends Playable {
 	 * 2. This method no longer changes the active classIndex of the player. This is only
 	 * done by the calling of setActiveClass() method as that should be the only way to do so.
 	 *
-	 * @param classId
-	 * @param classIndex
 	 * @return boolean subclassAdded
 	 */
 	public boolean addSubClass(int classId, int classIndex, int certsCount) {
@@ -11027,8 +11007,6 @@ public class Player extends Playable {
 	 * 2. Send over the newClassId to addSubClass()to create a new instance on this classIndex.<BR>
 	 * 3. Upon Exception, revert the player to their BaseClass to avoid further problems.<BR>
 	 *
-	 * @param classIndex
-	 * @param newClassId
 	 * @return boolean subclassAdded
 	 */
 	public boolean modifySubClass(int classIndex, int newClassId) {
@@ -11177,7 +11155,6 @@ public class Player extends Playable {
 	 * <br><br>
 	 * <font color="00FF00">WARNING: Use only on subclase change</font>
 	 *
-	 * @param classIndex
 	 */
 	public boolean setActiveClass(int classIndex) {
 		if (!subclassLock.tryLock()) {
@@ -11952,7 +11929,6 @@ public class Player extends Playable {
 	 *
 	 * @param objectId: item object id
 	 * @param action:   just for login porpouse
-	 * @return
 	 */
 	public boolean validateItemManipulation(int objectId, String action) {
 		Item item = getInventory().getItemByObjectId(objectId);
@@ -11998,9 +11974,6 @@ public class Player extends Playable {
 		return vehicle != null && vehicle.isBoat();
 	}
 	
-	/**
-	 * @return
-	 */
 	public BoatInstance getBoat() {
 		return (BoatInstance) vehicle;
 	}
@@ -12054,9 +12027,6 @@ public class Player extends Playable {
 		return inCrystallize;
 	}
 	
-	/**
-	 * @return
-	 */
 	public Point3D getInVehiclePosition() {
 		return inVehiclePosition;
 	}
@@ -13044,7 +13014,6 @@ public class Player extends Playable {
 	/**
 	 * returns punishment level of player
 	 *
-	 * @return
 	 */
 	public PunishLevel getPunishLevel() {
 		return punishLevel;
@@ -13092,7 +13061,6 @@ public class Player extends Playable {
 	/**
 	 * Sets punish level for player based on delay
 	 *
-	 * @param state
 	 * @param delayInMinutes 0 - Indefinite
 	 */
 	public void setPunishLevel(PunishLevel state, int delayInMinutes) {
@@ -13298,16 +13266,10 @@ public class Player extends Playable {
 		}
 	}
 	
-	/**
-	 * @return
-	 */
 	public int getPowerGrade() {
 		return powerGrade;
 	}
 	
-	/**
-	 * @return
-	 */
 	public void setPowerGrade(int power) {
 		powerGrade = power;
 	}
@@ -13348,7 +13310,6 @@ public class Player extends Playable {
 	/**
 	 * Returns the Number of Souls this Player got.
 	 *
-	 * @return
 	 */
 	public int getSouls() {
 		return souls;
@@ -13377,7 +13338,6 @@ public class Player extends Playable {
 	/**
 	 * Increase Souls
 	 *
-	 * @param count
 	 */
 	public void increaseSouls(int count) {
 		if (count < 0 || count > 45) {
@@ -13403,7 +13363,6 @@ public class Player extends Playable {
 	/**
 	 * Decreases existing Souls.
 	 *
-	 * @param count
 	 */
 	public boolean decreaseSouls(int count, Skill skill) {
 		if (getSouls() <= 0 && skill.getSoulConsumeCount() > 0) {
@@ -13467,11 +13426,6 @@ public class Player extends Playable {
 		}
 	}
 	
-	/**
-	 * @param magicId
-	 * @param level
-	 * @param time
-	 */
 	public void shortBuffStatusUpdate(int magicId, int level, int time) {
 		if (shortBuffTask != null) {
 			shortBuffTask.cancel(false);
@@ -13600,7 +13554,6 @@ public class Player extends Playable {
 	 * Index according to skill id the current
 	 * timestamp of use.
 	 *
-	 * @param skill
 	 * @param reuse delay
 	 */
 	@Override
@@ -13672,16 +13625,10 @@ public class Player extends Playable {
 		sendPacket(sm);
 	}
 	
-	/**
-	 * @param npcId
-	 */
 	public void setAgathionId(int npcId) {
 		agathionId = npcId;
 	}
 	
-	/**
-	 * @return
-	 */
 	public int getAgathionId() {
 		return agathionId;
 	}
@@ -14156,7 +14103,6 @@ public class Player extends Playable {
 	/**
 	 * Returns the Number of Charges this Player got.
 	 *
-	 * @return
 	 */
 	public int getCharges() {
 		return charges.get();
@@ -15091,9 +15037,6 @@ public class Player extends Playable {
 		return bookmarkslot;
 	}
 	
-	/**
-	 * @return
-	 */
 	public int getQuestInventoryLimit() {
 		return Config.INVENTORY_MAXIMUM_QUEST_ITEMS;
 	}
@@ -15146,7 +15089,6 @@ public class Player extends Playable {
 	 * Test if player inventory is under 90% capacity
 	 *
 	 * @param includeQuestInv check also quest inventory
-	 * @return
 	 */
 	public boolean isInventoryUnder90(boolean includeQuestInv) {
 		if (getInventory().getSize(false) <= getInventoryLimit() * 0.9) {
@@ -17707,9 +17649,6 @@ public class Player extends Playable {
 		}
 	}
 	
-	/**
-	 * @param itemId
-	 */
 	public void deleteAllItemsById(int itemId) {
 		long playerItemCount = getInventory().getInventoryItemCount(itemId, 0);
 		
@@ -18425,10 +18364,6 @@ public class Player extends Playable {
 		return getPvpFlag() > 0 || getReputation() < 0;
 	}
 	
-	/**
-	 * @param target
-	 * @return
-	 */
 	public final boolean isInSameChannel(final Player target) {
 		final L2Party activeCharP = getParty();
 		final L2Party targetP = target.getParty();
@@ -18446,42 +18381,22 @@ public class Player extends Playable {
 		return getParty() != null && target.getParty() != null && getParty().getLeader() == target.getParty().getLeader();
 	}
 	
-	/**
-	 * @param target
-	 * @return
-	 */
 	public final boolean isInSameClan(final Player target) {
 		return getClanId() != 0 && getClanId() == target.getClanId();
 	}
 	
-	/**
-	 * @param target
-	 * @return
-	 */
 	public final boolean isInSameAlly(final Player target) {
 		return getAllyId() != 0 && getAllyId() == target.getAllyId();
 	}
 	
-	/**
-	 * @param target
-	 * @return
-	 */
 	public final boolean isInSameDuel(final Player target) {
 		return getDuelId() != 0 && getDuelId() == target.getDuelId();
 	}
 	
-	/**
-	 * @param target
-	 * @return
-	 */
 	public final boolean isInSameOlympiadGame(final Player target) {
 		return getOlympiadGameId() != 0 && getOlympiadGameId() == target.getOlympiadGameId();
 	}
 	
-	/**
-	 * @param target
-	 * @return
-	 */
 	public final boolean isInSameClanWar(final Player target) {
 		final L2Clan aClan = getClan();
 		final L2Clan tClan = target.getClan();
@@ -18494,10 +18409,6 @@ public class Player extends Playable {
 		return false;
 	}
 	
-	/**
-	 * @param target
-	 * @return
-	 */
 	public final boolean isInSameSiegeSide(final Player target) {
 		if (getSiegeState() == 0 || target.getSiegeState() == 0) {
 			return false;
@@ -18519,7 +18430,6 @@ public class Player extends Playable {
 	
 	/***
 	 *
-	 * @return
 	 */
 	public final boolean isInsidePvpZone() {
 		return isInsideZone(Creature.ZONE_PVP) || isInsideZone(Creature.ZONE_SIEGE);

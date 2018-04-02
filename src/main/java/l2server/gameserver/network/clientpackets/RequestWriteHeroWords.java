@@ -30,8 +30,6 @@ public final class RequestWriteHeroWords extends L2GameClientPacket {
 	
 	private String heroWords;
 	
-	/**
-	 */
 	@Override
 	protected void readImpl() {
 		heroWords = readS();

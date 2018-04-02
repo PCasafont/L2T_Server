@@ -75,10 +75,6 @@ public class PcTemplate extends CreatureTemplate {
 		private final int amount;
 		private final boolean equipped;
 
-		/**
-		 * @param amount
-		 * @param itemId
-		 */
 		public PcTemplateItem(int itemId, int amount, boolean equipped) {
 			this.itemId = itemId;
 			this.amount = amount;

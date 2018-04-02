@@ -31,10 +31,6 @@ public class SocialAction extends L2GameServerPacket {
 	private int charObjId;
 	private int actionId;
 	
-	/**
-	 * @param objectId
-	 * @param actionId
-	 */
 	public SocialAction(int objectId, int actionId) {
 		charObjId = objectId;
 		this.actionId = actionId;

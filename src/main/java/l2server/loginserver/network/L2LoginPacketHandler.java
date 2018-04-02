@@ -35,8 +35,6 @@ public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient>
 	
 	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
 	
-	/**
-	 */
 	@Override
 	public ReceivablePacket<L2LoginClient> handlePacket(ByteBuffer buf, L2LoginClient client) {
 		int opcode = buf.get() & 0xFF;

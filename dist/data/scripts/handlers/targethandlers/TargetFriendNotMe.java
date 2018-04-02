@@ -18,9 +18,9 @@ package handlers.targethandlers;
 import l2server.gameserver.handler.ISkillTargetTypeHandler;
 import l2server.gameserver.handler.SkillTargetTypeHandler;
 import l2server.gameserver.model.L2CommandChannel;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.L2Party;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Summon;
 import l2server.gameserver.model.actor.instance.Player;
@@ -42,8 +42,6 @@ public class TargetFriendNotMe implements ISkillTargetTypeHandler {
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 */
 	@Override
 	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target) {
 		List<Creature> targetList = new ArrayList<Creature>();
@@ -103,8 +101,6 @@ public class TargetFriendNotMe implements ISkillTargetTypeHandler {
 		return targetList.toArray(new Creature[targetList.size()]);
 	}
 
-	/**
-	 */
 	@Override
 	public Enum<SkillTargetType> getTargetType() {
 		return SkillTargetType.TARGET_FRIEND_NOTME;

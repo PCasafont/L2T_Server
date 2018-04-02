@@ -28,9 +28,6 @@ public class PlayerTracert extends BaseRecievePacket {
 
 
 
-	/**
-	 * @param decrypt
-	 */
 	public PlayerTracert(byte[] decrypt) {
 		super(decrypt);
 		String account = readS();

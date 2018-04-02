@@ -28,8 +28,6 @@ public final class RequestCharacterNameCreatable extends L2GameClientPacket {
 		name = readS();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		sendPacket(new ExIsCharNameCreatable(name));

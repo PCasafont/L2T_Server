@@ -602,7 +602,6 @@ public abstract class ItemTemplate {
 	/**
 	 * Returns if item is hero-only
 	 *
-	 * @return
 	 */
 	public final boolean isHeroItem() {
 		return heroItem;
@@ -611,7 +610,6 @@ public abstract class ItemTemplate {
 	/**
 	 * Returns if item is pvp
 	 *
-	 * @return
 	 */
 	public final boolean isPvpItem() {
 		return pvpItem;

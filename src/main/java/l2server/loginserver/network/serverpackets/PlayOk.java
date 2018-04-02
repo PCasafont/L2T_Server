@@ -28,8 +28,6 @@ public final class PlayOk extends L2LoginServerPacket {
 		playOk2 = sessionKey.playOkID2;
 	}
 	
-	/**
-	 */
 	@Override
 	protected void write() {
 		writeC(0x07);

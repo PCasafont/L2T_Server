@@ -29,9 +29,6 @@ public interface IBypassHandler {
 	/**
 	 * this is the worker method that is called when someone uses an bypass command
 	 *
-	 * @param command
-	 * @param activeChar
-	 * @param target
 	 * @return success
 	 */
 	boolean useBypass(String command, Player activeChar, Npc target);

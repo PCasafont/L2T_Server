@@ -249,7 +249,6 @@ public final class WeaponTemplate extends ItemTemplate {
 	/**
 	 * Returns skill that player get when has equiped weapon +4  or more  (for duals SA)
 	 *
-	 * @return
 	 */
 	public Skill getEnchant4Skill() {
 		if (enchant4Skill == null) {
@@ -261,7 +260,6 @@ public final class WeaponTemplate extends ItemTemplate {
 	/**
 	 * Returns the Id in wich weapon this weapon can be changed
 	 *
-	 * @return
 	 */
 	public int getChangeWeaponId() {
 		return changeWeaponId;

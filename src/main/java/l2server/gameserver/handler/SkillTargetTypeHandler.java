@@ -50,9 +50,6 @@ public class SkillTargetTypeHandler {
 		return datatable.get(skillTargetType);
 	}
 
-	/**
-	 * @return
-	 */
 	public int size() {
 		return datatable.size();
 	}

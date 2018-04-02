@@ -30,8 +30,6 @@ public class ExVariationResult extends L2GameServerPacket {
 		this.unk3 = unk3;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(stat12);

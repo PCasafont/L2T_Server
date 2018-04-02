@@ -30,8 +30,6 @@ public class ExShowFortressSiegeInfo extends L2GameServerPacket {
 	private int csize;
 	private int csize2;
 	
-	/**
-	 */
 	public ExShowFortressSiegeInfo(Fort fort) {
 		this.fort = fort;
 		fortId = fort.getFortId();

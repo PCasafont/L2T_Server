@@ -63,7 +63,6 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	 * Reads <B>byte</B> from the buffer. <BR>
 	 * 8bit integer (00)
 	 *
-	 * @return
 	 */
 	protected final int readC() {
 		return buf.get() & 0xFF;
@@ -73,7 +72,6 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	 * Reads <B>short</B> from the buffer. <BR>
 	 * 16bit integer (00 00)
 	 *
-	 * @return
 	 */
 	protected final int readH() {
 		return buf.getShort() & 0xFFFF;
@@ -83,7 +81,6 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	 * Reads <B>int</B> from the buffer. <BR>
 	 * 32bit integer (00 00 00 00)
 	 *
-	 * @return
 	 */
 	protected final int readD() {
 		return buf.getInt();
@@ -93,7 +90,6 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	 * Reads <B>long</B> from the buffer. <BR>
 	 * 64bit integer (00 00 00 00 00 00 00 00)
 	 *
-	 * @return
 	 */
 	protected final long readQ() {
 		return buf.getLong();
@@ -103,7 +99,6 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	 * Reads <B>double</B> from the buffer. <BR>
 	 * 64bit double precision float (00 00 00 00 00 00 00 00)
 	 *
-	 * @return
 	 */
 	protected final double readF() {
 		return buf.getDouble();
@@ -112,7 +107,6 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	/**
 	 * Reads <B>String</B> from the buffer.
 	 *
-	 * @return
 	 */
 	protected final String readS() {
 		sbuf.clear();
@@ -128,9 +122,6 @@ public abstract class ReceivablePacket<T extends MMOClient<?>> extends AbstractP
 	/**
 	 * packet forge purpose
 	 *
-	 * @param data
-	 * @param client
-	 * @param sBuffer
 	 */
 	public void setBuffers(ByteBuffer data, T client, NioNetStringBuffer sBuffer) {
 		buf = data;

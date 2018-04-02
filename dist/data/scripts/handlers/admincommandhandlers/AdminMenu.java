@@ -226,9 +226,6 @@ public class AdminMenu implements IAdminCommandHandler {
 		showMainPage(activeChar);
 	}
 
-	/**
-	 * @param activeChar
-	 */
 	private void showMainPage(Player activeChar) {
 		AdminHelpPage.showHelpPage(activeChar, "charmanage.htm");
 	}

@@ -255,9 +255,6 @@ public abstract class Vehicle extends Creature {
 	 *
 	 * @param itemId Ticket itemId
 	 * @param count  Ticket count
-	 * @param oustX
-	 * @param oustY
-	 * @param oustZ
 	 */
 	public void payForRide(int itemId, int count, int oustX, int oustY, int oustZ) {
 		final Collection<Player> passengers = getKnownList().getKnownPlayersInRadius(1000);

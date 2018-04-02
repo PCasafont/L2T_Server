@@ -36,8 +36,6 @@ public final class RequestPledgeMemberPowerInfo extends L2GameClientPacket {
 		player = readS();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		//Logozo.info("C5: RequestPledgeMemberPowerInfo d:"+unk1);

@@ -27,9 +27,6 @@ public class CastleWarehouseInstance extends WarehouseInstance {
 	protected static final int COND_BUSY_BECAUSE_OF_SIEGE = 1;
 	protected static final int COND_OWNER = 2;
 	
-	/**
-	 * @param template
-	 */
 	public CastleWarehouseInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2CastleWarehouseInstance);

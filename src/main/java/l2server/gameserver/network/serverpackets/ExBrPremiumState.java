@@ -29,8 +29,6 @@ public class ExBrPremiumState extends L2GameServerPacket {
 		this.state = state;
 	}
 
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(objId);

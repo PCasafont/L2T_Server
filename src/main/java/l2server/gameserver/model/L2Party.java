@@ -27,23 +27,23 @@ import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.model.actor.Summon;
-import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.model.actor.instance.ApInstance;
+import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.util.Util;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Future;
-import java.util.logging.Level;
 
 /**
  * This class ...
@@ -98,7 +98,6 @@ public class L2Party {
 	/**
 	 * constructor ensures party has always one member - leader
 	 *
-	 * @param leader
 	 */
 	public L2Party(Player leader, int itemDistribution) {
 		members = new CopyOnWriteArrayList<>();
@@ -110,7 +109,6 @@ public class L2Party {
 	/**
 	 * returns number of party members
 	 *
-	 * @return
 	 */
 	public int getMemberCount() {
 		return getPartyMembers().size();
@@ -147,7 +145,6 @@ public class L2Party {
 	/**
 	 * returns all party members
 	 *
-	 * @return
 	 */
 	public final CopyOnWriteArrayList<Player> getPartyMembers() {
 		return members;
@@ -156,7 +153,6 @@ public class L2Party {
 	/**
 	 * get random member from party
 	 *
-	 * @return
 	 */
 	private Player getCheckedRandomMember(int ItemId, Creature target) {
 		List<Player> availableMembers = new ArrayList<>();
@@ -175,7 +171,6 @@ public class L2Party {
 	/**
 	 * get next item looter
 	 *
-	 * @return
 	 */
 	private Player getCheckedNextLooter(int ItemId, Creature target) {
 		for (int i = 0; i < getMemberCount(); i++) {
@@ -199,7 +194,6 @@ public class L2Party {
 	/**
 	 * get next item looter
 	 *
-	 * @return
 	 */
 	private Player getActualLooter(Player player, int ItemId, boolean spoil, Creature target) {
 		Player looter = player;
@@ -232,8 +226,6 @@ public class L2Party {
 	/**
 	 * true if player is party leader
 	 *
-	 * @param player
-	 * @return
 	 */
 	public boolean isLeader(Player player) {
 		return getLeader().equals(player);
@@ -251,7 +243,6 @@ public class L2Party {
 	/**
 	 * Broadcasts packet to every party member
 	 *
-	 * @param msg
 	 */
 	public void broadcastToPartyMembers(L2GameServerPacket msg) {
 		for (Player member : getPartyMembers()) {
@@ -293,7 +284,6 @@ public class L2Party {
 	/**
 	 * adds new member to party
 	 *
-	 * @param player
 	 */
 	public synchronized void addPartyMember(Player player) {
 		if (getPartyMembers().contains(player)) {
@@ -384,7 +374,6 @@ public class L2Party {
 	 * Remove player from party
 	 * Overloaded method that takes player's name as parameter
 	 *
-	 * @param name
 	 */
 	public void removePartyMember(String name, messageType type) {
 		Player player = getPlayerByName(name);
@@ -513,7 +502,6 @@ public class L2Party {
 	/**
 	 * Change party leader (used for string arguments)
 	 *
-	 * @param name
 	 */
 	public void changePartyLeader(String name) {
 		Player player = getPlayerByName(name);
@@ -554,8 +542,6 @@ public class L2Party {
 	/**
 	 * finds a player in the party by name
 	 *
-	 * @param name
-	 * @return
 	 */
 	private Player getPlayerByName(String name) {
 		for (Player member : getPartyMembers()) {
@@ -569,8 +555,6 @@ public class L2Party {
 	/**
 	 * distribute item(s) to party members
 	 *
-	 * @param player
-	 * @param item
 	 */
 	public void distributeItem(Player player, Item item) {
 		/*switch (item.getItemId())
@@ -620,8 +604,6 @@ public class L2Party {
 	/**
 	 * distribute item(s) to party members
 	 *
-	 * @param player
-	 * @param item
 	 */
 	public void distributeItem(Player player, Attackable.RewardItem item, boolean spoil, Attackable target) {
 		if (item == null) {

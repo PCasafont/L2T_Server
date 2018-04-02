@@ -28,8 +28,6 @@ import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.model.actor.instance.Player;
 
 public class MagicVisor implements IItemHandler {
-	/**
-	 */
 	@Override
 	public void useItem(Playable playable, Item visorItem, boolean forcedUse) {
 		if (!(playable instanceof Player)) {

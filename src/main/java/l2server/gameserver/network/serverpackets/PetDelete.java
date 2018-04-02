@@ -15,8 +15,6 @@
 
 package l2server.gameserver.network.serverpackets;
 
-/**
- */
 public class PetDelete extends L2GameServerPacket {
 	private int petType;
 	private int petObjId;

@@ -34,11 +34,6 @@ public class ExSendUIEvent extends L2GameServerPacket {
 	/**
 	 * Used for cold down types.
 	 *
-	 * @param uiType
-	 * @param isIncrease
-	 * @param startTime
-	 * @param endTime
-	 * @param text
 	 */
 	public ExSendUIEvent(int uiType, int isIncrease, int startTime, int endTime, String text) {
 		this.uiType = uiType;
@@ -52,11 +47,6 @@ public class ExSendUIEvent extends L2GameServerPacket {
 	/**
 	 * Used for cold down types.
 	 *
-	 * @param uiType
-	 * @param isIncrease
-	 * @param startTime
-	 * @param endTime
-	 * @param npcStringId
 	 */
 	public ExSendUIEvent(int uiType, int isIncrease, int startTime, int endTime, int npcStringId) {
 		this.uiType = uiType;
@@ -70,10 +60,6 @@ public class ExSendUIEvent extends L2GameServerPacket {
 	/**
 	 * Used for BAR UIs
 	 *
-	 * @param uiType
-	 * @param currentPoints
-	 * @param maxPoints
-	 * @param npcStringId
 	 */
 	public ExSendUIEvent(int uiType, int currentPoints, int maxPoints, int npcStringId) {
 		this.uiType = uiType;

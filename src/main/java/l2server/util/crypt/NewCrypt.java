@@ -30,9 +30,6 @@ public class NewCrypt {
 	BlowfishEngine crypt;
 	BlowfishEngine decrypt;
 
-	/**
-	 * @param blowfishKey
-	 */
 	public NewCrypt(byte[] blowfishKey) {
 		crypt = new BlowfishEngine();
 		crypt.init(true, blowfishKey);

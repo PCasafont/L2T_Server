@@ -34,7 +34,6 @@ public interface ISkillHandler {
 	/**
 	 * this is the worker method that is called when using an item.
 	 *
-	 * @param activeChar
 	 * @return count reduction after usage
 	 */
 	void useSkill(Creature activeChar, Skill skill, WorldObject[] targets);

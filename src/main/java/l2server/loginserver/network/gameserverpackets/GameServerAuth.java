@@ -54,9 +54,6 @@ public class GameServerAuth extends BaseRecievePacket {
 	private int port;
 	private String[] hosts;
 
-	/**
-	 * @param decrypt
-	 */
 	public GameServerAuth(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 		this.server = server;

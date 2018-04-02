@@ -29,9 +29,6 @@ public class InitLS extends BaseRecievePacket {
 		return key;
 	}
 
-	/**
-	 * @param decrypt
-	 */
 	public InitLS(byte[] decrypt) {
 		super(decrypt);
 		rev = readD();

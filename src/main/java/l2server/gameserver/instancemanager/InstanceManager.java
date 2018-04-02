@@ -300,7 +300,6 @@ public class InstanceManager {
 	 * Create a new instance with a dynamic instance id based on a template (or null)
 	 *
 	 * @param template xml file
-	 * @return
 	 */
 	public int createDynamicInstance(String template) {
 		
@@ -323,10 +322,6 @@ public class InstanceManager {
 		return dynamic;
 	}
 	
-	/**
-	 * @param vidId
-	 * @param instId
-	 */
 	public void showVidToInstance(int vidId, final int instId) {
 		stopWholeInstance(instId);
 		broadcastMovie(vidId, instId);
@@ -335,9 +330,6 @@ public class InstanceManager {
 				.scheduleGeneral(() -> startWholeInstance(instId), ScenePlayerDataTable.getInstance().getVideoDuration(vidId) + 1000);
 	}
 	
-	/**
-	 * @param instId
-	 */
 	public void stopWholeInstance(int instId) {
 		for (Npc mobs : getInstance(instId).getNpcs()) {
 			if (mobs == null || !(mobs instanceof Attackable)) {
@@ -364,10 +356,6 @@ public class InstanceManager {
 		}
 	}
 	
-	/**
-	 * @param vidId
-	 * @param instId
-	 */
 	public void broadcastMovie(int vidId, int instId) {
 		for (Player pl : World.getInstance().getAllPlayers().values()) {
 			if (pl != null && pl.getInstanceId() == instId) {
@@ -377,9 +365,6 @@ public class InstanceManager {
 		}
 	}
 	
-	/**
-	 * @param instId
-	 */
 	public void startWholeInstance(int instId) {
 		Instance inst = getInstance(instId);
 		if (inst == null) {
@@ -404,10 +389,6 @@ public class InstanceManager {
 		}
 	}
 	
-	/**
-	 * @param instanceId
-	 * @param packet
-	 */
 	public void sendPacket(int instanceId, L2GameServerPacket packet) {
 		for (Player player : World.getInstance().getAllPlayersArray()) {
 			if (player != null && player.isOnline() && player.getInstanceId() == instanceId) {
@@ -416,21 +397,10 @@ public class InstanceManager {
 		}
 	}
 	
-	/**
-	 * @param instanceId
-	 * @param delaySec
-	 * @param packet
-	 */
 	public void sendDelayedPacketToInstance(final int instanceId, final int delaySec, final L2GameServerPacket packet) {
 		ThreadPoolManager.getInstance().scheduleGeneral(() -> sendPacket(instanceId, packet), delaySec * 1000);
 	}
 	
-	/**
-	 * @param player
-	 * @param delaySec
-	 * @param instanceId
-	 * @param packet
-	 */
 	public void sendDelayedPacketToPlayer(final Player player, int delaySec, final int instanceId, final L2GameServerPacket packet) {
 		ThreadPoolManager.getInstance().scheduleGeneral(() -> {
 			if (player != null && player.getInstanceId() == instanceId) {
@@ -439,10 +409,6 @@ public class InstanceManager {
 		}, delaySec * 1000);
 	}
 	
-	/**
-	 * @param instanceId
-	 * @return
-	 */
 	public List<Player> getPlayers(int instanceId) {
 		List<Player> instancePlayers = new ArrayList<>();
 		for (Player player : World.getInstance().getAllPlayersArray()) {
@@ -453,10 +419,6 @@ public class InstanceManager {
 		return instancePlayers;
 	}
 	
-	/**
-	 * @param isHard
-	 * @return
-	 */
 	private long calcInstanceReuse(boolean isHard) {
 		Calendar now = Calendar.getInstance();
 		Calendar reenterPointWed = (Calendar) now.clone();
@@ -482,9 +444,6 @@ public class InstanceManager {
 		return reenter.getTimeInMillis();
 	}
 	
-	/**
-	 * @param instId
-	 */
 	public void despawnAll(int instId) {
 		if (getInstance(instId) == null || getInstance(instId).getNpcs() == null) {
 			return;
@@ -504,10 +463,6 @@ public class InstanceManager {
 		}
 	}
 	
-	/**
-	 * @param instId
-	 * @param despawnAll
-	 */
 	public void finishInstance(int instId, boolean despawnAll) {
 		if (despawnAll) {
 			despawnAll(instId);
@@ -520,8 +475,6 @@ public class InstanceManager {
 	}
 	
 	/**
-	 * @param instanceId
-	 * @param templateId
 	 * @param isHard     (true: every Wednesday at 6.30 AM, otherwise: every Wednesday and Saturday at 6.30 AM)
 	 */
 	public void setInstanceReuse(int instanceId, int templateId, boolean isHard) {
@@ -535,8 +488,6 @@ public class InstanceManager {
 	}
 	
 	/**
-	 * @param instanceId
-	 * @param templateId
 	 * @param reuseTime  in minutes
 	 */
 	public void setInstanceReuse(int instanceId, int templateId, int reuseTime) {
@@ -548,12 +499,6 @@ public class InstanceManager {
 		}
 	}
 	
-	/**
-	 * @param instanceId
-	 * @param templateId
-	 * @param hour
-	 * @param minute
-	 */
 	public void setInstanceReuse(int instanceId, int templateId, int hour, int minute) {
 		InstanceWorld instance = instanceWorlds.get(instanceId);
 		if (instance != null) {
@@ -573,9 +518,6 @@ public class InstanceManager {
 	/**
 	 * Under test
 	 *
-	 * @param player
-	 * @param rewardedPlayers
-	 * @return
 	 */
 	public boolean canGetUniqueReward(Player player, ArrayList<Player> rewardedPlayers) {
 		if (player == null) {
@@ -602,15 +544,6 @@ public class InstanceManager {
 		return true;
 	}
 	
-	/**
-	 * @param player
-	 * @param templateId
-	 * @param minPlayers
-	 * @param maxPlayers
-	 * @param minLevel
-	 * @param maxLevel
-	 * @return
-	 */
 	public boolean checkInstanceConditions(Player player, int templateId, int minPlayers, int maxPlayers, int minLevel, int maxLevel) {
 		if (player == null) {
 			return false;

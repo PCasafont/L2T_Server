@@ -21,11 +21,6 @@ package l2server.gameserver.network.serverpackets;
 public class GetOffVehicle extends L2GameServerPacket {
 	private int charObjId, boatObjId, x, y, z;
 	
-	/**
-	 * @param x
-	 * @param y
-	 * @param z
-	 */
 	public GetOffVehicle(int charObjId, int boatObjId, int x, int y, int z) {
 		this.charObjId = charObjId;
 		this.boatObjId = boatObjId;

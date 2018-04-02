@@ -23,9 +23,6 @@ import l2server.gameserver.templates.chars.NpcTemplate;
  * @version $Revision: 1.5.4.8 $ $Date: 2005/04/02 15:57:52 $
  */
 public final class TrainerInstance extends NpcInstance {
-	/**
-	 * @param template
-	 */
 	public TrainerInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		setInstanceType(InstanceType.L2TrainerInstance);

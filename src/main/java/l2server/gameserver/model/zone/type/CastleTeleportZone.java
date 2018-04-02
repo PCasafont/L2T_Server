@@ -86,7 +86,6 @@ public class CastleTeleportZone extends ZoneType {
 	/**
 	 * Returns all players within this zone
 	 *
-	 * @return
 	 */
 	public ArrayList<Player> getAllPlayers() {
 		ArrayList<Player> players = new ArrayList<>();
@@ -128,7 +127,6 @@ public class CastleTeleportZone extends ZoneType {
 	/**
 	 * Get the spawn locations
 	 *
-	 * @return
 	 */
 	public int[] getSpawn() {
 		return spawnLoc;

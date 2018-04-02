@@ -32,15 +32,11 @@ import l2server.gameserver.util.Util;
 public final class RequestConfirmCancelItem extends L2GameClientPacket {
 	private int objectId;
 	
-	/**
-	 */
 	@Override
 	protected void readImpl() {
 		objectId = readD();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		final Player activeChar = getClient().getActiveChar();

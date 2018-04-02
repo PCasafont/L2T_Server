@@ -26,8 +26,6 @@ public final class RequestDivideAdena extends L2GameClientPacket {
 	protected void readImpl() {
 	}
 
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		Player player = getClient().getActiveChar();

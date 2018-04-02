@@ -32,9 +32,6 @@ import java.security.GeneralSecurityException;
 public class BlowFishKey extends BaseRecievePacket {
 	private static Logger log = LoggerFactory.getLogger(BlowFishKey.class.getName());
 
-	/**
-	 * @param decrypt
-	 */
 	public BlowFishKey(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 		int size = readD();

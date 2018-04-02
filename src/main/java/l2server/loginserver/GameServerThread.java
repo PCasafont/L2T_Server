@@ -16,8 +16,6 @@
 package l2server.loginserver;
 
 import l2server.Config;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.loginserver.GameServerTable.GameServerInfo;
 import l2server.loginserver.network.L2JGameServerPacketHandler;
 import l2server.loginserver.network.L2JGameServerPacketHandler.GameServerState;
@@ -29,6 +27,8 @@ import l2server.util.Rnd;
 import l2server.util.Util;
 import l2server.util.crypt.NewCrypt;
 import l2server.util.network.BaseSendablePacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
@@ -188,10 +188,6 @@ public class GameServerThread extends Thread {
 		}
 	}
 	
-	/**
-	 * @param ipAddress
-	 * @return
-	 */
 	public static boolean isBannedGameserverIP(String ipAddress) {
 		return false;
 	}
@@ -214,7 +210,6 @@ public class GameServerThread extends Thread {
 	}
 	
 	/**
-	 * @param sl
 	 * @throws IOException
 	 */
 	public void sendPacket(BaseSendablePacket sl) {
@@ -248,8 +243,6 @@ public class GameServerThread extends Thread {
 		sendPacket(new RequestCharacters(account));
 	}
 	
-	/**
-	 */
 	public void setGameHosts(String[] hosts) {
 		log.info("Updated Gameserver [" + getServerId() + "] " + GameServerTable.getInstance().getServerNameById(getServerId()) + " IP's:");
 		

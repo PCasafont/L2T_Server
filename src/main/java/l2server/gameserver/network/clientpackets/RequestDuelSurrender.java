@@ -30,8 +30,6 @@ public final class RequestDuelSurrender extends L2GameClientPacket {
 		// trigger
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		DuelManager.getInstance().doSurrender(getClient().getActiveChar());

@@ -34,9 +34,6 @@ public class HackingException extends Exception {
 		this.connects = connects;
 	}
 	
-	/**
-	 * @return
-	 */
 	public String getIP() {
 		return ip;
 	}

@@ -32,9 +32,6 @@ public class GameServerRegister extends BaseGameServerRegister {
 		BaseGameServerRegister.main(args);
 	}
 
-	/**
-	 * @param bundle
-	 */
 	public GameServerRegister(ResourceBundle bundle) {
 		super(bundle);
 		load();

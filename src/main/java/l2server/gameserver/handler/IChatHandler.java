@@ -30,16 +30,12 @@ public interface IChatHandler {
 	/**
 	 * Handles a specific type of chat messages
 	 *
-	 * @param type
-	 * @param activeChar
-	 * @param target
 	 */
 	void handleChat(int type, Player activeChar, String target, String text);
 
 	/**
 	 * Returns a list of all chat types registered to this handler
 	 *
-	 * @return
 	 */
 	int[] getChatTypeList();
 }

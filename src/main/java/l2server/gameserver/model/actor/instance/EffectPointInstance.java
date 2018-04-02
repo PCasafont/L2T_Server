@@ -39,7 +39,6 @@ public class EffectPointInstance extends Npc {
 	/**
 	 * this is called when a player interacts with this NPC
 	 *
-	 * @param player
 	 */
 	@Override
 	public void onAction(Player player, boolean interact) {

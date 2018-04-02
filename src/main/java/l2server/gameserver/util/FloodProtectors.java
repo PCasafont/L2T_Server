@@ -241,7 +241,6 @@ public final class FloodProtectors {
 	/**
 	 * Returns .
 	 *
-	 * @return
 	 */
 	public FloodProtectorAction getMultiSell() {
 		return multiSell;

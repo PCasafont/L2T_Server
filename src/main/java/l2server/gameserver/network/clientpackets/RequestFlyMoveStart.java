@@ -28,8 +28,6 @@ public final class RequestFlyMoveStart extends L2GameClientPacket {
 	protected void readImpl() {
 	}
 
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		Player activeChar = getClient().getActiveChar();

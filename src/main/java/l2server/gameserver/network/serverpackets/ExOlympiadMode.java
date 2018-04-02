@@ -25,8 +25,6 @@ public class ExOlympiadMode extends L2GameServerPacket {
 	// chc
 	private int mode;
 	
-	/**
-	 */
 	public ExOlympiadMode(int mode) {
 		this.mode = mode;
 	}

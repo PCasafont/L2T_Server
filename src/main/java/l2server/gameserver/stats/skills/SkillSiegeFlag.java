@@ -21,8 +21,8 @@ import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.instancemanager.CastleSiegeManager;
 import l2server.gameserver.instancemanager.FortManager;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.actor.instance.SiegeFlagInstance;
@@ -31,8 +31,6 @@ import l2server.gameserver.model.entity.Fort;
 import l2server.gameserver.templates.StatsSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.logging.Level;
 
 public class SkillSiegeFlag extends Skill {
 	private static Logger log = LoggerFactory.getLogger(SkillSiegeFlag.class.getName());
@@ -114,12 +112,6 @@ public class SkillSiegeFlag extends Skill {
 		return false;
 	}
 
-	/**
-	 * @param activeChar
-	 * @param castle
-	 * @param isCheckOnly
-	 * @return
-	 */
 	public static boolean checkIfOkToPlaceFlag(Creature activeChar, Castle castle, boolean isCheckOnly) {
 		if (!(activeChar instanceof Player)) {
 			return false;
@@ -150,12 +142,6 @@ public class SkillSiegeFlag extends Skill {
 		return false;
 	}
 
-	/**
-	 * @param activeChar
-	 * @param fort
-	 * @param isCheckOnly
-	 * @return
-	 */
 	public static boolean checkIfOkToPlaceFlag(Creature activeChar, Fort fort, boolean isCheckOnly) {
 		if (!(activeChar instanceof Player)) {
 			return false;

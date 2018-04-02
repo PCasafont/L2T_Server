@@ -52,8 +52,6 @@ public class RequestSetSeed extends L2GameClientPacket {
 	private int manorId;
 	private Seed items[] = null;
 
-	/**
-	 */
 	@Override
 	protected void readImpl() {
 		manorId = readD();

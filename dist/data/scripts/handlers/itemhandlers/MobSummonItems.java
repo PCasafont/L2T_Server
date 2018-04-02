@@ -30,8 +30,6 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.chars.NpcTemplate;
 
 public class MobSummonItems implements IItemHandler {
-	/**
-	 */
 	@Override
 	public void useItem(Playable playable, Item item, boolean forcedUse) {
 		if (!(playable instanceof Player)) {

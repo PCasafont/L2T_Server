@@ -132,17 +132,11 @@ public final class NpcHtmlMessage extends L2GameServerPacket {
 	private boolean isFirstTalk = false;
 	private boolean validate = true;
 	
-	/**
-	 * @param npcObjId
-	 * @param itemId
-	 */
 	public NpcHtmlMessage(int npcObjId, int itemId) {
 		this.npcObjId = npcObjId;
 		this.itemId = itemId;
 	}
 	
-	/**
-	 */
 	public NpcHtmlMessage(int npcObjId, String text) {
 		this.npcObjId = npcObjId;
 		setHtml(text);

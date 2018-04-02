@@ -46,7 +46,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Calendar;
-import java.util.logging.Level;
 
 /**
  * Enter World Packet Handler<p>
@@ -667,9 +666,6 @@ public class EnterWorld extends L2GameClientPacket {
 		}*/
 	}
 
-	/**
-	 * @param cha
-	 */
 	private void engage(Player cha) {
 		int chaid = cha.getObjectId();
 
@@ -690,10 +686,6 @@ public class EnterWorld extends L2GameClientPacket {
 		}
 	}
 
-	/**
-	 * @param cha
-	 * @param partnerId
-	 */
 	private void notifyPartner(Player cha, int partnerId) {
 		if (cha.getPartnerId() != 0) {
 			int objId = cha.getPartnerId();
@@ -713,9 +705,6 @@ public class EnterWorld extends L2GameClientPacket {
 		}
 	}
 
-	/**
-	 * @param activeChar
-	 */
 	private void notifyClanMembers(Player activeChar) {
 		if (activeChar == null) {
 			return;
@@ -735,9 +724,6 @@ public class EnterWorld extends L2GameClientPacket {
 		clan.broadcastToOnlineMembers(new ExPledgeCount(clan.getOnlineMembersCount()));
 	}
 
-	/**
-	 * @param activeChar
-	 */
 	private void notifySponsorOrApprentice(Player activeChar) {
 		if (activeChar.getSponsor() != 0) {
 			Player sponsor = World.getInstance().getPlayer(activeChar.getSponsor());

@@ -1074,8 +1074,6 @@ public class Npc extends Creature {
 	/**
 	 * Returns true if html exists
 	 *
-	 * @param player
-	 * @param type
 	 * @return boolean
 	 */
 	private boolean showPkDenyChatWindow(Player player, String type) {

@@ -91,7 +91,6 @@ public abstract class ZoneType {
 	/**
 	 * Setup new parameters for this zone
 	 *
-	 * @param value
 	 */
 	public void setParameter(String name, String value) {
 		checkAffected = true;
@@ -167,8 +166,6 @@ public abstract class ZoneType {
 	/**
 	 * Checks if the given character is affected by this zone
 	 *
-	 * @param character
-	 * @return
 	 */
 	private boolean isAffected(Creature character) {
 		// Check lvl
@@ -231,7 +228,6 @@ public abstract class ZoneType {
 	/**
 	 * Set the zone for this ZoneType Instance
 	 *
-	 * @param zone
 	 */
 	public void setZone(L2ZoneForm zone) {
 		if (this.zone != null) {
@@ -243,7 +239,6 @@ public abstract class ZoneType {
 	/**
 	 * Returns this zones zone form
 	 *
-	 * @return
 	 */
 	public L2ZoneForm getZone() {
 		return zone;
@@ -252,7 +247,6 @@ public abstract class ZoneType {
 	/**
 	 * Set the zone name.
 	 *
-	 * @param name
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -261,7 +255,6 @@ public abstract class ZoneType {
 	/**
 	 * Returns zone name
 	 *
-	 * @return
 	 */
 	public String getName() {
 		return name;
@@ -270,8 +263,6 @@ public abstract class ZoneType {
 	/**
 	 * Checks if the given coordinates are within zone's plane
 	 *
-	 * @param x
-	 * @param y
 	 */
 	public boolean isInsideZone(int x, int y) {
 		return zone.isInsideZone(x, y, zone.getHighZ());
@@ -340,7 +331,6 @@ public abstract class ZoneType {
 	 * Force fully removes a character from the zone
 	 * Should use during teleport / logoff
 	 *
-	 * @param character
 	 */
 	public void removeCharacter(Creature character) {
 		if (characterList.containsKey(character.getObjectId())) {
@@ -358,8 +348,6 @@ public abstract class ZoneType {
 	/**
 	 * Will scan the zones char list for the character
 	 *
-	 * @param character
-	 * @return
 	 */
 	public boolean isCharacterInZone(Creature character) {
 		return characterList.containsKey(character.getObjectId());

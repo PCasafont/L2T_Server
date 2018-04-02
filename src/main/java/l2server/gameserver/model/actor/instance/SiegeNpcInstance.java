@@ -39,7 +39,6 @@ public class SiegeNpcInstance extends NpcInstance {
 	 * If siege is in progress shows the Busy HTML<BR>
 	 * else Shows the SiegeInfo window
 	 *
-	 * @param player
 	 */
 	public void showSiegeInfoWindow(Player player) {
 		if (validateCondition(player)) {

@@ -45,7 +45,6 @@ import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.util.GMAudit;
 
 import java.util.StringTokenizer;
-import java.util.logging.Level;
 
 /**
  * This class ...
@@ -351,8 +350,6 @@ public final class RequestBypassToServer extends L2GameClientPacket {
 		}
 	}
 	
-	/**
-	 */
 	private static void comeHere(Player activeChar) {
 		WorldObject obj = activeChar.getTarget();
 		if (obj == null) {

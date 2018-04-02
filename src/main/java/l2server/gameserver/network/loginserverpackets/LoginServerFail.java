@@ -24,9 +24,6 @@ public class LoginServerFail extends BaseRecievePacket {
 					"Reason: already logged in"};
 	private int reason;
 
-	/**
-	 * @param decrypt
-	 */
 	public LoginServerFail(byte[] decrypt) {
 		super(decrypt);
 		reason = readC();

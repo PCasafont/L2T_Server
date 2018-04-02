@@ -27,17 +27,16 @@ import l2server.gameserver.model.zone.form.ZoneCylinder;
 import l2server.gameserver.model.zone.form.ZoneNPoly;
 import l2server.gameserver.model.zone.type.ArenaZone;
 import l2server.gameserver.model.zone.type.OlympiadStadiumZone;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.lang.reflect.Constructor;
 import java.util.*;
-import java.util.logging.Level;
 
 /**
  * This class manages the zones
@@ -353,7 +352,6 @@ public class ZoneManager {
 	/**
 	 * Add new zone
 	 *
-	 * @param zone
 	 */
 	@SuppressWarnings("unchecked")
 	public <T extends ZoneType> void addZone(Integer id, T zone) {
@@ -399,8 +397,6 @@ public class ZoneManager {
 	/**
 	 * Get zone by ID
 	 *
-	 * @param id
-	 * @return
 	 * @see #getZoneById(int, Class)
 	 */
 	public ZoneType getZoneById(int id) {
@@ -428,8 +424,6 @@ public class ZoneManager {
 	/**
 	 * Get zone by ID and zone class
 	 *
-	 * @param id
-	 * @param zoneType
 	 * @return zone
 	 */
 	@SuppressWarnings("unchecked")
@@ -440,7 +434,6 @@ public class ZoneManager {
 	/**
 	 * Returns all zones from where the object is located
 	 *
-	 * @param object
 	 * @return zones
 	 */
 	public ArrayList<ZoneType> getZones(WorldObject object) {
@@ -450,8 +443,6 @@ public class ZoneManager {
 	/**
 	 * Returns zone from where the object is located by type
 	 *
-	 * @param object
-	 * @param type
 	 * @return zone
 	 */
 	public <T extends ZoneType> T getZone(WorldObject object, Class<T> type) {
@@ -464,8 +455,6 @@ public class ZoneManager {
 	/**
 	 * Returns all zones from given coordinates (plane)
 	 *
-	 * @param x
-	 * @param y
 	 * @return zones
 	 */
 	public ArrayList<ZoneType> getZones(int x, int y) {
@@ -482,9 +471,6 @@ public class ZoneManager {
 	/**
 	 * Returns all zones from given coordinates
 	 *
-	 * @param x
-	 * @param y
-	 * @param z
 	 * @return zones
 	 */
 	public ArrayList<ZoneType> getZones(int x, int y, int z) {
@@ -501,10 +487,6 @@ public class ZoneManager {
 	/**
 	 * Returns zone from given coordinates
 	 *
-	 * @param x
-	 * @param y
-	 * @param z
-	 * @param type
 	 * @return zone
 	 */
 	@SuppressWarnings("unchecked")
@@ -549,9 +531,6 @@ public class ZoneManager {
 	 * For testing purposes only
 	 *
 	 * @param <T>
-	 * @param obj
-	 * @param type
-	 * @return
 	 */
 	@SuppressWarnings("unchecked")
 	public <T extends ZoneType> T getClosestZone(WorldObject obj, Class<T> type) {

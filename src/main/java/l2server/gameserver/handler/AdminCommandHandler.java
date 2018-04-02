@@ -15,10 +15,12 @@
 
 package l2server.gameserver.handler;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class ...
@@ -62,9 +64,6 @@ public class AdminCommandHandler {
 		return datatable.get(command.hashCode());
 	}
 
-	/**
-	 * @return
-	 */
 	public int size() {
 		return datatable.size();
 	}

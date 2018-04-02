@@ -34,8 +34,6 @@ public final class RequestPledgeSetMemberPowerGrade extends L2GameClientPacket {
 		powerGrade = readD();
 	}
 	
-	/**
-	 */
 	@Override
 	protected void runImpl() {
 		final Player activeChar = getClient().getActiveChar();

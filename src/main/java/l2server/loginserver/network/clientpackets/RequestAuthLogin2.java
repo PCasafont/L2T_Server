@@ -66,8 +66,6 @@ public class RequestAuthLogin2 extends L2LoginClientPacket {
 		return s;
 	}
 	
-	/**
-	 */
 	@Override
 	public void run() {
 		L2LoginClient client = getClient();

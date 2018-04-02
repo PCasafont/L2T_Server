@@ -24,8 +24,6 @@ public class VehicleDeparture extends L2GameServerPacket {
 	// Store parameters because they can be changed during broadcast
 	private final int objId, x, y, z, moveSpeed, rotationSpeed;
 	
-	/**
-	 */
 	public VehicleDeparture(BoatInstance boat) {
 		objId = boat.getObjectId();
 		x = boat.getXdestination();

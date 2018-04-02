@@ -55,8 +55,6 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler {
 	 * level. Else if a character name is provided, will try to reach it either
 	 * from World or from a database connection.
 	 *
-	 * @param command
-	 * @param activeChar
 	 */
 	private void handleChangeLevel(String command, Player activeChar) {
 		String[] parts = command.split(" ");
@@ -104,11 +102,6 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler {
 		}
 	}
 
-	/**
-	 * @param activeChar
-	 * @param player
-	 * @param lvl
-	 */
 	private void onLineChange(Player activeChar, Player player, int lvl) {
 		player.setAccessLevel(lvl);
 		if (lvl >= 0) {

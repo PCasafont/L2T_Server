@@ -81,8 +81,6 @@ public class GeoEngine extends GeoData {
 		return nGetHeight(x - World.MAP_MIN_X >> 4, y - World.MAP_MIN_Y >> 4, z);
 	}
 
-	/**
-	 */
 	@Override
 	public short getSpawnHeight(int x, int y, int zmin, int zmax, L2Spawn spawn) {
 		return nGetSpawnHeight(x - World.MAP_MIN_X >> 4, y - World.MAP_MIN_Y >> 4, zmin, zmax, spawn);
@@ -754,8 +752,6 @@ public class GeoEngine extends GeoData {
 	//Geodata Methods
 
 	/**
-	 * @param x
-	 * @param y
 	 * @return Region Offset
 	 */
 	private static short getRegionOffset(int x, int y) {
@@ -781,8 +777,6 @@ public class GeoEngine extends GeoData {
 	//Geodata Functions
 
 	/**
-	 * @param x
-	 * @param y
 	 * @return Type of geo_block: 0-2
 	 */
 	private static short nGetType(int x, int y) {
@@ -811,7 +805,6 @@ public class GeoEngine extends GeoData {
 	}
 
 	/**
-	 * @param z
 	 * @return Nearest Z
 	 */
 	private static short nGetHeight(int geox, int geoy, int z) {
@@ -885,7 +878,6 @@ public class GeoEngine extends GeoData {
 	}
 
 	/**
-	 * @param z
 	 * @return One layer higher Z than parameter Z
 	 */
 	private static short nGetUpperHeight(int geox, int geoy, int z) {
@@ -961,8 +953,6 @@ public class GeoEngine extends GeoData {
 	}
 
 	/**
-	 * @param zmin
-	 * @param zmax
 	 * @return Z betwen zmin and zmax
 	 */
 	private static short nGetSpawnHeight(int geox, int geoy, int zmin, int zmax, L2Spawn spawn) {
@@ -1051,12 +1041,6 @@ public class GeoEngine extends GeoData {
 	}
 
 	/**
-	 * @param x
-	 * @param y
-	 * @param z
-	 * @param tx
-	 * @param ty
-	 * @param tz
 	 * @return True if char can move to (tx,ty,tz)
 	 */
 	private static double nCanMoveNext(int x, int y, int z, int tx, int ty, int tz) {
@@ -1149,12 +1133,8 @@ public class GeoEngine extends GeoData {
 	}
 
 	/**
-	 * @param x
-	 * @param y
-	 * @param z
 	 * @param inc_x
 	 * @param inc_y
-	 * @param tz
 	 * @return True if Char can see target
 	 */
 	private static boolean nLOS(int x, int y, int z, int inc_x, int inc_y, double inc_z, int tz, boolean debug) {
@@ -1295,9 +1275,6 @@ public class GeoEngine extends GeoData {
 	}
 
 	/**
-	 * @param x
-	 * @param y
-	 * @param z
 	 * @return NSWE: 0-15
 	 */
 	private static short nGetNSWE(int x, int y, int z) {
@@ -1375,9 +1352,6 @@ public class GeoEngine extends GeoData {
 	}
 
 	/**
-	 * @param x
-	 * @param y
-	 * @param z
 	 * @return array [0] - height, [1] - NSWE
 	 */
 	@Override
@@ -1453,11 +1427,6 @@ public class GeoEngine extends GeoData {
 	}
 
 	/**
-	 * @param NSWE
-	 * @param x
-	 * @param y
-	 * @param tx
-	 * @param ty
 	 * @return True if NSWE dont block given direction
 	 */
 	private static boolean checkNSWE(short NSWE, int x, int y, int tx, int ty) {

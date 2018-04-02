@@ -36,9 +36,10 @@ import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Npc;
-import l2server.gameserver.model.actor.instance.*;
 import l2server.gameserver.model.actor.instance.GuardInstance;
 import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
+import l2server.gameserver.model.actor.instance.RaidBossInstance;
 import l2server.gameserver.model.actor.stat.PcStat;
 import l2server.gameserver.model.entity.ClanWarManager;
 import l2server.gameserver.model.entity.ClanWarManager.ClanWar;
@@ -51,9 +52,9 @@ import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Util;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -882,10 +883,6 @@ public class AdminTest implements IAdminCommandHandler {
 		return true;
 	}
 
-	/**
-	 * @param activeChar
-	 * @param id
-	 */
 	private void adminTestSkill(Player activeChar, int id, boolean msu) {
 		Creature caster;
 		WorldObject target = activeChar.getTarget();

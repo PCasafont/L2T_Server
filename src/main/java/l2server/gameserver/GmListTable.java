@@ -94,7 +94,6 @@ public class GmListTable {
 	/**
 	 * GM will be displayed on clients gmlist
 	 *
-	 * @param player
 	 */
 	public void showGm(Player player) {
 		if (gmList.containsKey(player)) {
@@ -105,7 +104,6 @@ public class GmListTable {
 	/**
 	 * GM will no longer be displayed on clients gmlist
 	 *
-	 * @param player
 	 */
 	public void hideGm(Player player) {
 		if (gmList.containsKey(player)) {

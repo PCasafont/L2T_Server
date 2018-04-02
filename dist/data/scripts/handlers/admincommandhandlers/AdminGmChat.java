@@ -49,10 +49,6 @@ public class AdminGmChat implements IAdminCommandHandler {
 		return true;
 	}
 
-	/**
-	 * @param command
-	 * @param activeChar
-	 */
 	private void snoop(String command, Player activeChar) {
 		WorldObject target = null;
 		if (command.length() > 12) {
@@ -80,10 +76,6 @@ public class AdminGmChat implements IAdminCommandHandler {
 		return ADMIN_COMMANDS;
 	}
 
-	/**
-	 * @param command
-	 * @param activeChar
-	 */
 	private void handleGmChat(String command, Player activeChar) {
 		try {
 			int offset = 0;

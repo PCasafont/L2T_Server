@@ -27,8 +27,6 @@ public class ExVitalityEffectInfo extends L2GameServerPacket {
 		this.effectId = effectId;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(vitality);

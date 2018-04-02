@@ -107,10 +107,6 @@ public class Util {
 		return number;
 	}
 	
-	/**
-	 * @param raw
-	 * @return
-	 */
 	public static String printData(byte[] raw) {
 		return printData(raw, raw.length);
 	}

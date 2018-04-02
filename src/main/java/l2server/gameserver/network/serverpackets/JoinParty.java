@@ -32,8 +32,6 @@ public final class JoinParty extends L2GameServerPacket {
 
 	private int response;
 
-	/**
-	 */
 	public JoinParty(int response) {
 		this.response = response;
 	}

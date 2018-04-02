@@ -28,14 +28,13 @@ import l2server.gameserver.model.entity.Fort;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.zone.type.ArenaZone;
 import l2server.gameserver.model.zone.type.ClanHallZone;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.io.*;
 import java.util.List;
 import java.util.StringTokenizer;
-import java.util.logging.Level;
 
 /**
  * This class ...
@@ -191,7 +190,6 @@ public class MapRegionTable {
 	/**
 	 * Get town name by character position
 	 *
-	 * @param activeChar
 	 * @return String
 	 */
 	public String getClosestTownName(Creature activeChar) {
@@ -201,7 +199,6 @@ public class MapRegionTable {
 	/**
 	 * Get town name by town id
 	 *
-	 * @param townId
 	 * @return String
 	 */
 	public String getTownName(int townId) {

@@ -27,8 +27,6 @@ public class ExCastleTendency extends L2GameServerPacket {
 		this.tendency = tendency;
 	}
 
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(castleId);

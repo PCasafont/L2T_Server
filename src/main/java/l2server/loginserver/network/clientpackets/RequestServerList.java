@@ -29,23 +29,14 @@ public class RequestServerList extends L2LoginClientPacket {
 	private int skey2;
 	private int data3;
 	
-	/**
-	 * @return
-	 */
 	public int getSessionKey1() {
 		return skey1;
 	}
 	
-	/**
-	 * @return
-	 */
 	public int getSessionKey2() {
 		return skey2;
 	}
 	
-	/**
-	 * @return
-	 */
 	public int getData3() {
 		return data3;
 	}
@@ -61,8 +52,6 @@ public class RequestServerList extends L2LoginClientPacket {
 		}
 	}
 	
-	/**
-	 */
 	@Override
 	public void run() {
 		if (getClient().getSessionKey().checkLoginPair(skey1, skey2)) {

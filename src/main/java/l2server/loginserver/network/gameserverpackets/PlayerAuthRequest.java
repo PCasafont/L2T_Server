@@ -16,14 +16,14 @@
 package l2server.loginserver.network.gameserverpackets;
 
 import l2server.Config;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.loginserver.GameServerThread;
 import l2server.loginserver.LoginController;
 import l2server.loginserver.SessionKey;
 import l2server.loginserver.network.L2LoginClient;
 import l2server.loginserver.network.loginserverpackets.PlayerAuthResponse;
 import l2server.util.network.BaseRecievePacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author -Wooden-
@@ -32,9 +32,6 @@ public class PlayerAuthRequest extends BaseRecievePacket {
 	private static Logger log = LoggerFactory.getLogger(PlayerAuthRequest.class.getName());
 
 
-	/**
-	 * @param decrypt
-	 */
 	public PlayerAuthRequest(byte[] decrypt, GameServerThread server) {
 		super(decrypt);
 		String account = readS();

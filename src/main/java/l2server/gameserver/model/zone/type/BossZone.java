@@ -18,8 +18,8 @@ package l2server.gameserver.model.zone.type;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
-import l2server.gameserver.model.World;
 import l2server.gameserver.model.Location;
+import l2server.gameserver.model.World;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Playable;
@@ -211,9 +211,6 @@ public class BossZone extends ZoneType {
 	 * rather than just removing them all. If this is the case, this command should
 	 * be used. If this is no the case, then use oustAllPlayers().
 	 *
-	 * @param x
-	 * @param y
-	 * @param z
 	 */
 	public void movePlayersTo(int x, int y, int z) {
 		if (characterList.isEmpty()) {

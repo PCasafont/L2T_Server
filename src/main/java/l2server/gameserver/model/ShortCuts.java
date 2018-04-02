@@ -29,7 +29,6 @@ import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.logging.Level;
 
 /**
  * This class ...
@@ -195,9 +194,6 @@ public class ShortCuts {
 		shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel()).put(shortcut.getSlot() + shortcut.getPage() * 12, shortcut);
 	}
 
-	/**
-	 * @param slot
-	 */
 	public synchronized void deleteShortCut(int slot, int page) {
 		if (shortCuts.get(owner.getClassIndex()) == null || shortCuts.get(owner.getClassIndex()).get(owner.getGearGradeForCurrentLevel()) == null) {
 			return;
@@ -240,9 +236,6 @@ public class ShortCuts {
 		}
 	}
 
-	/**
-	 * @param shortcut
-	 */
 	private void deleteShortCutFromDb(L2ShortCut shortcut) {
 		Connection con = null;
 

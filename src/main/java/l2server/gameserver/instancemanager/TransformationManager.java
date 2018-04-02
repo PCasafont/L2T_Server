@@ -15,13 +15,13 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import l2server.gameserver.model.L2Transformation;
 import l2server.gameserver.model.actor.instance.Player;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author KenM
@@ -68,10 +68,6 @@ public class TransformationManager {
 		protected static final TransformationManager instance = new TransformationManager();
 	}
 
-	/**
-	 * @param transformId
-	 * @return
-	 */
 	public boolean isMountable(int transformId) {
 		switch (transformId) {
 			case 109: //TawnyManedLion

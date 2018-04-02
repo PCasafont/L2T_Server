@@ -45,7 +45,6 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 	 * Write <B>byte</B> to the buffer. <BR>
 	 * 8bit integer (00)
 	 *
-	 * @param data
 	 */
 	protected final void writeC(final int data) {
 		buf.put((byte) data);
@@ -55,7 +54,6 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 	 * Write <B>double</B> to the buffer. <BR>
 	 * 64bit double precision float (00 00 00 00 00 00 00 00)
 	 *
-	 * @param value
 	 */
 	protected final void writeF(final double value) {
 		buf.putDouble(value);
@@ -65,7 +63,6 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 	 * Write <B>float</B> to the buffer. <BR>
 	 * 64bit double precision float (00 00 00 00 00 00 00 00)
 	 *
-	 * @param value
 	 */
 	protected final void writeFl(final float value) {
 		buf.putFloat(value);
@@ -75,7 +72,6 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 	 * Write <B>short</B> to the buffer. <BR>
 	 * 16bit integer (00 00)
 	 *
-	 * @param value
 	 */
 	protected final void writeH(final int value) {
 		buf.putShort((short) value);
@@ -85,7 +81,6 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 	 * Write <B>int</B> to the buffer. <BR>
 	 * 32bit integer (00 00 00 00)
 	 *
-	 * @param value
 	 */
 	protected final void writeD(final int value) {
 		buf.putInt(value);
@@ -95,7 +90,6 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 	 * Write <B>long</B> to the buffer. <BR>
 	 * 64bit integer (00 00 00 00 00 00 00 00)
 	 *
-	 * @param value
 	 */
 	protected final void writeQ(final long value) {
 		buf.putLong(value);
@@ -105,7 +99,6 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 	 * Write <B>byte[]</B> to the buffer. <BR>
 	 * 8bit integer array (00 ...)
 	 *
-	 * @param data
 	 */
 	protected final void writeB(final byte[] data) {
 		buf.put(data);
@@ -114,7 +107,6 @@ public abstract class SendablePacket<T extends MMOClient<?>> extends AbstractPac
 	/**
 	 * Write <B>String</B> to the buffer.
 	 *
-	 * @param text
 	 */
 	protected final void writeS(final String text) {
 		if (text != null) {

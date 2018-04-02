@@ -122,16 +122,10 @@ public final class EtcItemTemplate extends ItemTemplate {
 		return handler;
 	}
 
-	/**
-	 * @return
-	 */
 	public int getSharedReuseGroup() {
 		return sharedReuseGroup;
 	}
 
-	/**
-	 * @return
-	 */
 	@Override
 	public final boolean isBlessed() {
 		return isBlessed;

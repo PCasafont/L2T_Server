@@ -131,7 +131,6 @@ public class AntiFeedManager {
 	 * Register new event for dualbox check.
 	 * Should be called only once.
 	 *
-	 * @param eventId
 	 */
 	public final void registerEvent(int eventId) {
 		if (!eventIPs.containsKey(eventId)) {
@@ -145,10 +144,6 @@ public class AntiFeedManager {
 	 * Returns false if number of all simultaneous connections from player's IP address
 	 * higher than max.
 	 *
-	 * @param eventId
-	 * @param player
-	 * @param max
-	 * @return
 	 */
 	public final boolean tryAddPlayer(int eventId, Player player, int max) {
 		return tryAddClient(eventId, player.getClient(), max);
@@ -160,9 +155,6 @@ public class AntiFeedManager {
 	 * Returns false if number of all simultaneous connections from player's IP address
 	 * higher than max.
 	 *
-	 * @param eventId
-	 * @param max
-	 * @return
 	 */
 	public final boolean tryAddClient(int eventId, L2GameClient client, int max) {
 		return true;
@@ -196,9 +188,6 @@ public class AntiFeedManager {
 	 * Decreasing number of active connection from player's IP address
 	 * Returns true if success and false if any problem detected.
 	 *
-	 * @param eventId
-	 * @param player
-	 * @return
 	 */
 	public final boolean removePlayer(int eventId, Player player) {
 		final L2GameClient client = player.getClient();
@@ -241,7 +230,6 @@ public class AntiFeedManager {
 	/**
 	 * Clear all entries for this eventId.
 	 *
-	 * @param eventId
 	 */
 	public final void clear(int eventId) {
 		final Map<Integer, Connections> event = eventIPs.get(eventId);
@@ -253,9 +241,6 @@ public class AntiFeedManager {
 	/**
 	 * Returns maximum number of allowed connections (whitelist + max)
 	 *
-	 * @param player
-	 * @param max
-	 * @return
 	 */
 	public final int getLimit(Player player, int max) {
 		return getLimit(player.getClient(), max);
@@ -264,9 +249,6 @@ public class AntiFeedManager {
 	/**
 	 * Returns maximum number of allowed connections (whitelist + max)
 	 *
-	 * @param client
-	 * @param max
-	 * @return
 	 */
 	public final int getLimit(L2GameClient client, int max) {
 		if (client == null) {

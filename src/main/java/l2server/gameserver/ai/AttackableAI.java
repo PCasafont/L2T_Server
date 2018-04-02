@@ -21,8 +21,8 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.*;
 import l2server.gameserver.model.actor.Attackable.AggroInfo;
 import l2server.gameserver.model.actor.instance.*;
@@ -34,14 +34,13 @@ import l2server.gameserver.templates.skills.EffectType;
 import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.Util;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.Future;
-import java.util.logging.Level;
 
 import static l2server.gameserver.ai.CtrlIntention.*;
 
@@ -85,7 +84,6 @@ public class AttackableAI extends CreatureAI implements Runnable {
 	/**
 	 * Constructor of AttackableAI.<BR><BR>
 	 *
-	 * @param creature
 	 */
 	public AttackableAI(Creature creature) {
 		super(creature);
@@ -2262,8 +2260,6 @@ public class AttackableAI extends CreatureAI implements Runnable {
 		globalAggro = value;
 	}
 
-	/**
-	 */
 	public void setTimepass(int TP) {
 		timepass = TP;
 	}

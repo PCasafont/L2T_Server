@@ -46,9 +46,6 @@ public class SkillHandler {
 		return datatable.get(skillType.ordinal());
 	}
 
-	/**
-	 * @return
-	 */
 	public int size() {
 		return datatable.size();
 	}

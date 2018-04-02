@@ -25,7 +25,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 /**
  * @author Maktakien
@@ -47,8 +46,6 @@ public class Post {
 
 	private List<CPost> post;
 
-	/**
-	 */
 	//public enum ConstructorType {REPLY, CREATE };
 	public Post(String PostOwner, int PostOwnerID, long date, int tid, int PostForumID, String txt) {
 		post = new ArrayList<>();
@@ -118,9 +115,6 @@ public class Post {
 		}
 	}
 
-	/**
-	 * @param t
-	 */
 	private void load(Topic t) {
 		Connection con = null;
 		try {
@@ -149,9 +143,6 @@ public class Post {
 		}
 	}
 
-	/**
-	 * @param i
-	 */
 	public void updatetxt(int i) {
 		Connection con = null;
 		try {

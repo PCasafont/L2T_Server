@@ -57,7 +57,6 @@ public final class HandysBlockCheckerManager {
 	 * Return the number of event-start votes for the spcified
 	 * arena id
 	 *
-	 * @param arenaId
 	 * @return int (number of votes)
 	 */
 	public synchronized int getArenaVotes(int arenaId) {
@@ -68,7 +67,6 @@ public final class HandysBlockCheckerManager {
 	 * Add a new vote to start the event for the specified
 	 * arena id
 	 *
-	 * @param arena
 	 */
 	public synchronized void increaseArenaVotes(int arena) {
 		int newVotes = arenaVotes.get(arena) + 1;
@@ -92,7 +90,6 @@ public final class HandysBlockCheckerManager {
 	 * Will clear the votes queue (of event start) for the
 	 * specified arena id
 	 *
-	 * @param arena
 	 */
 	public synchronized void clearArenaVotes(int arena) {
 		arenaVotes.put(arena, 0);
@@ -112,7 +109,6 @@ public final class HandysBlockCheckerManager {
 	/**
 	 * Returns the players holder
 	 *
-	 * @param arena
 	 * @return ArenaParticipantsHolder
 	 */
 	public ArenaParticipantsHolder getHolder(int arena) {
@@ -134,8 +130,6 @@ public final class HandysBlockCheckerManager {
 	 * Add the player to the specified arena (throught the specified
 	 * arena manager) and send the needed server ->  client packets
 	 *
-	 * @param player
-	 * @param arenaId
 	 */
 	public boolean addPlayerToArena(Player player, int arenaId) {
 		ArenaParticipantsHolder holder = arenaPlayers[arenaId];
@@ -201,8 +195,6 @@ public final class HandysBlockCheckerManager {
 	 * team and arena and will send the needed packet to all
 	 * his team mates / enemy team mates
 	 *
-	 * @param player
-	 * @param arenaId
 	 */
 	public void removePlayer(Player player, int arenaId, int team) {
 		ArenaParticipantsHolder holder = arenaPlayers[arenaId];
@@ -230,9 +222,6 @@ public final class HandysBlockCheckerManager {
 	 * Will change the player from one team to other (if possible)
 	 * and will send the needed packets
 	 *
-	 * @param player
-	 * @param arena
-	 * @param team
 	 */
 	public void changePlayerToTeam(Player player, int arena, int team) {
 		ArenaParticipantsHolder holder = arenaPlayers[arena];
@@ -263,7 +252,6 @@ public final class HandysBlockCheckerManager {
 	/**
 	 * Will erase all participants from the specified holder
 	 *
-	 * @param arenaId
 	 */
 	public synchronized void clearPaticipantQueueByArenaId(int arenaId) {
 		arenaPlayers[arenaId].clearPlayers();
@@ -272,7 +260,6 @@ public final class HandysBlockCheckerManager {
 	/**
 	 * Returns true if arena is holding an event at this momment
 	 *
-	 * @param arenaId
 	 * @return boolean
 	 */
 	public boolean arenaIsBeingUsed(int arenaId) {
@@ -285,7 +272,6 @@ public final class HandysBlockCheckerManager {
 	/**
 	 * Set the specified arena as being used
 	 *
-	 * @param arenaId
 	 */
 	public void setArenaBeingUsed(int arenaId) {
 		arenaStatus.put(arenaId, true);
@@ -295,7 +281,6 @@ public final class HandysBlockCheckerManager {
 	 * Set as free the specified arena for future
 	 * events
 	 *
-	 * @param arenaId
 	 */
 	public void setArenaFree(int arenaId) {
 		arenaStatus.put(arenaId, false);

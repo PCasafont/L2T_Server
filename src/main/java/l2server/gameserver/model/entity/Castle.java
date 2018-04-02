@@ -51,7 +51,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.*;
-import java.util.logging.Level;
 
 public class Castle {
 	private static Logger log = LoggerFactory.getLogger(Castle.class.getName());
@@ -410,8 +409,6 @@ public class Castle {
 	/**
 	 * Get the objects distance to this castle
 	 *
-	 * @param obj
-	 * @return
 	 */
 	public double getDistance(WorldObject obj) {
 		return getZone().getDistanceToZone(obj);
@@ -1260,7 +1257,6 @@ public class Castle {
 	/**
 	 * Register Artefact to castle
 	 *
-	 * @param artefact
 	 */
 	public void registerArtefact(ArtefactInstance artefact) {
 		if (Config.DEBUG) {

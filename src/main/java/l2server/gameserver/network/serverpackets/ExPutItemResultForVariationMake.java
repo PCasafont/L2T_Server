@@ -28,8 +28,6 @@ public class ExPutItemResultForVariationMake extends L2GameServerPacket {
 		this.itemId = itemId;
 	}
 	
-	/**
-	 */
 	@Override
 	protected final void writeImpl() {
 		writeD(itemObjId);

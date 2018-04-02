@@ -69,7 +69,6 @@ public class CastleZone extends SpawnZone {
 	/**
 	 * Removes all foreigners from the castle
 	 *
-	 * @param owningClanId
 	 */
 	public void banishForeigners(int owningClanId) {
 		for (Creature temp : characterList.values()) {

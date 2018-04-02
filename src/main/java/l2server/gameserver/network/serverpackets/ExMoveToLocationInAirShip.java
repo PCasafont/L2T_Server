@@ -24,8 +24,6 @@ public class ExMoveToLocationInAirShip extends L2GameServerPacket {
 	private Point3D destination;
 	private int heading;
 	
-	/**
-	 */
 	public ExMoveToLocationInAirShip(Player player) {
 		charObjId = player.getObjectId();
 		airShipId = player.getAirShip().getObjectId();

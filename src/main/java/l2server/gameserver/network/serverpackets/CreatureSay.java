@@ -33,8 +33,6 @@ public final class CreatureSay extends L2GameServerPacket {
 	private int msgId = -1;
 	private byte level = 0;
 	
-	/**
-	 */
 	public CreatureSay(int objectId, int messageType, String charName, String text) {
 		this.objectId = objectId;
 		textType = messageType;

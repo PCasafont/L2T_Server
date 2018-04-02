@@ -24,7 +24,6 @@ import org.slf4j.LoggerFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.logging.Level;
 
 /**
  * Clan member class.
@@ -239,9 +238,6 @@ public class L2ClanMember {
 		return powerGrade;
 	}
 
-	/**
-	 * @param powerGrade
-	 */
 	public void setPowerGrade(int powerGrade) {
 		this.powerGrade = powerGrade;
 		if (player != null) {

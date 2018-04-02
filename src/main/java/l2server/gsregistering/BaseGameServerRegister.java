@@ -277,7 +277,6 @@ public abstract class BaseGameServerRegister {
 	public abstract void showError(String msg, Throwable t);
 
 	/**
-	 * @param id
 	 * @throws SQLException
 	 */
 	public static void unregisterGameServer(int id) throws SQLException {

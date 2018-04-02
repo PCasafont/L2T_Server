@@ -30,10 +30,6 @@ import l2server.util.Rnd;
 public class BlockInstance extends MonsterInstance {
 	private int colorEffect;
 
-	/**
-	 * @param objectId
-	 * @param template
-	 */
 	public BlockInstance(int objectId, NpcTemplate template) {
 		super(objectId, template);
 		setHideName(true);
@@ -79,7 +75,6 @@ public class BlockInstance extends MonsterInstance {
 	 * Sets if the block is red or blue. Mainly used in
 	 * block spawn
 	 *
-	 * @param isRed
 	 */
 	public void setRed(boolean isRed) {
 		colorEffect = isRed ? 0x53 : 0x00;
@@ -88,7 +83,6 @@ public class BlockInstance extends MonsterInstance {
 	/**
 	 * Return if the block is red at this momment
 	 *
-	 * @return
 	 */
 	@Override
 	public int getColorEffect() {

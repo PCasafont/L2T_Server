@@ -49,29 +49,16 @@ public abstract class BaseBBSManager {
 		}
 	}
 
-	/**
-	 * @param html
-	 * @param acha
-	 */
 	protected void send1001(String html, Player acha) {
 		if (html.length() < 8192) {
 			acha.sendPacket(new ShowBoard(html, "1001"));
 		}
 	}
 
-	/**
-	 * @param acha
-	 */
 	protected void send1002(Player acha) {
 		send1002(acha, " ", " ", "0");
 	}
 
-	/**
-	 * @param activeChar
-	 * @param string
-	 * @param string2
-	 * @param string3
-	 */
 	protected void send1002(Player activeChar, String string, String string2, String string3) {
 		List<String> arg = new ArrayList<>();
 		arg.add("0");
