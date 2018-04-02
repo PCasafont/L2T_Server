@@ -20,6 +20,7 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.taskmanager.tasks.*;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -128,12 +129,13 @@ public final class TaskManager {
 	public static TaskManager getInstance() {
 		return SingletonHolder.instance;
 	}
-
-	private TaskManager() {
+	
+	@Load
+	public void init() {
 		initialize();
 		startAllTasks();
 	}
-
+	
 	private void initialize() {
 		registerTask(new TaskCleanUp());
 		registerTask(new TaskScript());

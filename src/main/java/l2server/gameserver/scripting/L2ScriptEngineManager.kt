@@ -17,6 +17,10 @@ package l2server.gameserver.scripting
 
 import com.l2jserver.script.jython.JythonScriptEngine
 import l2server.Config
+import l2server.gameserver.datatables.SpawnTable
+import l2server.gameserver.instancemanager.QuestManager
+import l2server.gameserver.instancemanager.TransformationManager
+import l2server.gameserver.templates.SpawnData
 import l2server.log.Log
 import l2server.util.loader.annotations.Load
 
@@ -77,7 +81,7 @@ object L2ScriptEngineManager {
      */
     private val PURGE_ERROR_LOG = true
 
-    @Load
+    @Load(dependencies = [SpawnTable::class])
     fun initialize() {
         val scriptEngineManager = ScriptEngineManager()
         val factories = scriptEngineManager.engineFactories
@@ -125,6 +129,42 @@ object L2ScriptEngineManager {
         }
 
         preConfigure()
+
+        try {
+            Log.info("Loading Server Scripts")
+            var scripts = File(Config.DATAPACK_ROOT.toString() + "/" + Config.DATA_FOLDER + "scripts.cfg")
+            if (!Config.ALT_DEV_NO_HANDLERS || !Config.ALT_DEV_NO_QUESTS) {
+                L2ScriptEngineManager.executeScriptList(scripts)
+
+                scripts = File(Config.DATAPACK_ROOT.toString() + "/data_" + Config.SERVER_NAME + "/scripts.cfg")
+                if (scripts.exists()) {
+                    L2ScriptEngineManager.executeScriptList(scripts)
+                }
+            }
+        } catch (ioe: IOException) {
+            Log.severe("Failed loading scripts.cfg, no script going to be loaded")
+        }
+
+        try {
+            val compiledScriptCache = L2ScriptEngineManager.cache
+            if (compiledScriptCache == null) {
+                Log.info("Compiled Scripts Cache is disabled.")
+            } else {
+                compiledScriptCache.purge()
+
+                if (compiledScriptCache.isModified) {
+                    compiledScriptCache.save()
+                    Log.info("Compiled Scripts Cache was saved.")
+                } else {
+                    Log.info("Compiled Scripts Cache is up-to-date.")
+                }
+            }
+        } catch (e: IOException) {
+            Log.log(Level.SEVERE, "Failed to store Compiled Scripts Cache.", e)
+        }
+
+        QuestManager.getInstance().report()
+        TransformationManager.getInstance().report()
     }
 
     private fun preConfigure() {

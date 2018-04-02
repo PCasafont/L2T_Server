@@ -33,7 +33,6 @@ import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.L2GamePacketHandler;
 import l2server.gameserver.pathfinding.PathFinding;
-import l2server.gameserver.script.faenor.FaenorScriptEngine;
 import l2server.gameserver.scripting.CompiledScriptCache;
 import l2server.gameserver.scripting.L2ScriptEngineManager;
 import l2server.gameserver.taskmanager.AutoAnnounceTaskManager;
@@ -108,84 +107,14 @@ public class Server {
 			PathFinding.getInstance();
 		}
 		
-		try {
-			Log.info("Loading Server Scripts");
-			File scripts = new File(Config.DATAPACK_ROOT + "/" + Config.DATA_FOLDER + "scripts.cfg");
-			if (!Config.ALT_DEV_NO_HANDLERS || !Config.ALT_DEV_NO_QUESTS) {
-				L2ScriptEngineManager.INSTANCE.executeScriptList(scripts);
-				
-				scripts = new File(Config.DATAPACK_ROOT + "/data_" + Config.SERVER_NAME + "/scripts.cfg");
-				if (scripts.exists()) {
-					L2ScriptEngineManager.INSTANCE.executeScriptList(scripts);
-				}
-			}
-		} catch (IOException ioe) {
-			Log.severe("Failed loading scripts.cfg, no script going to be loaded");
-		}
-		try {
-			CompiledScriptCache compiledScriptCache = L2ScriptEngineManager.INSTANCE.getCache();
-			if (compiledScriptCache == null) {
-				Log.info("Compiled Scripts Cache is disabled.");
-			} else {
-				compiledScriptCache.purge();
-				
-				if (compiledScriptCache.isModified()) {
-					compiledScriptCache.save();
-					Log.info("Compiled Scripts Cache was saved.");
-				} else {
-					Log.info("Compiled Scripts Cache is up-to-date.");
-				}
-			}
-		} catch (IOException e) {
-			Log.log(Level.SEVERE, "Failed to store Compiled Scripts Cache.", e);
-		}
-		QuestManager.getInstance().report();
-		TransformationManager.getInstance().report();
-		
-		if (Config.AUTODESTROY_ITEM_AFTER * 1000 > 0 || Config.HERB_AUTO_DESTROY_TIME * 1000 > 0) {
-			ItemsAutoDestroy.getInstance();
-		}
-		
-		MonsterRace.getInstance();
-		
-		AutoSpawnHandler.getInstance();
-		AutoChatHandler.getInstance();
-		
-		FaenorScriptEngine.getInstance();
-		// Init of a cursed weapon manager
-		
-		Log.info("AutoChatHandler: Loaded " + AutoChatHandler.getInstance().size() + " handlers in total.");
-		Log.info("AutoSpawnHandler: Loaded " + AutoSpawnHandler.getInstance().size() + " handlers in total.");
-		
-		AdminCommandHandler.getInstance();
-		ChatHandler.getInstance();
-		ItemHandler.getInstance();
-		SkillHandler.getInstance();
-		UserCommandHandler.getInstance();
-		VoicedCommandHandler.getInstance();
-		
-		if (Config.L2JMOD_ALLOW_WEDDING) {
-			CoupleManager.getInstance();
-		}
-		
-		printSection("Others");
-		TaskManager.getInstance();
-		
-		AntiFeedManager.getInstance().registerEvent(AntiFeedManager.GAME_ID);
 		MerchantPriceConfigTable.getInstance().updateReferences();
 		CastleManager.getInstance().activateInstances();
 		FortManager.getInstance().activateInstances();
-		
-		if (Config.ALLOW_MAIL) {
-			MailManager.getInstance();
-		}
 		
 		if (Config.ACCEPT_GEOEDITOR_CONN) {
 			GeoEditorListener.getInstance();
 		}
 		
-		OfflineAdminCommandsManager.getInstance();
-		GlobalDropTable.getInstance();
 		EventsManager.getInstance().start();
 		
 		if (Config.isServer(Config.TENKAI)) {
@@ -194,21 +123,9 @@ public class Server {
 			MonsterInvasion.getInstance().scheduleEventStart();
 			//Curfew.getInstance().scheduleEventStart();
 			//ChessEvent.start();
-			
-			//LasTravel
-			CustomCommunityBoard.getInstance();
-			GMEventManager.getInstance();
 		}
 		
 		//CustomWarAreas.getInstance();
-		
-		if (Config.ENABLE_CUSTOM_KILL_INFO) {
-			RankingKillInfo.getInstance();
-		}
-		
-		if (Config.ENABLE_WORLD_ALTARS) {
-			CustomWorldAltars.getInstance();
-		}
 		
 		if (Config.OFFLINE_BUFFERS_ENABLE) {
 			CustomOfflineBuffersManager.getInstance();

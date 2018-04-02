@@ -7,6 +7,7 @@ import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.NpcTable.DropChances;
+import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.events.DamageManager;
 import l2server.gameserver.events.LotterySystem;
 import l2server.gameserver.events.Ranked2v2;
@@ -30,6 +31,7 @@ import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -263,7 +265,8 @@ public class CustomCommunityBoard {
 		return sb.toString();
 	}
 
-	private void loadRaidData() {
+	@Load(dependencies = SpawnTable.class)
+	public void loadRaidData() {
 		Map<Object, Long> raidIds = new HashMap<>();
 		for (L2RaidBossInstance raid : BossManager.getInstance().getBosses().values()) {
 			if (raid != null && raid.getSpawn().getRespawnDelay() >= 3600) {
@@ -1520,7 +1523,6 @@ public class CustomCommunityBoard {
 	}
 
 	private CustomCommunityBoard() {
-		loadRaidData();
 	}
 
 	public static CustomCommunityBoard getInstance() {

@@ -137,10 +137,10 @@ public final class RequestSellItem extends L2GameClientPacket {
 		if (merchant != null) {
 			List<L2TradeList> lists;
 			if (merchant instanceof L2MerchantInstance) {
-				lists = TradeController.getInstance().getBuyListByNpcId(((L2MerchantInstance) merchant).getNpcId());
+				lists = TradeController.INSTANCE.getBuyListByNpcId(((L2MerchantInstance) merchant).getNpcId());
 				taxRate = ((L2MerchantInstance) merchant).getMpc().getTotalTaxRate();
 			} else {
-				lists = TradeController.getInstance().getBuyListByNpcId(((L2MerchantSummonInstance) merchant).getNpcId());
+				lists = TradeController.INSTANCE.getBuyListByNpcId(((L2MerchantSummonInstance) merchant).getNpcId());
 				taxRate = 50;
 			}
 
@@ -158,10 +158,10 @@ public final class RequestSellItem extends L2GameClientPacket {
 					}
 				}
 			} else {
-				list = TradeController.getInstance().getBuyList(listId);
+				list = TradeController.INSTANCE.getBuyList(listId);
 			}
 		} else {
-			list = TradeController.getInstance().getBuyList(listId);
+			list = TradeController.INSTANCE.getBuyList(listId);
 		}
 
 		if (list == null) {

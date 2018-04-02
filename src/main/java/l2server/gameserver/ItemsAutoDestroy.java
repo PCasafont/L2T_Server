@@ -21,6 +21,7 @@ import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.templates.item.L2EtcItemType;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -30,6 +31,13 @@ public class ItemsAutoDestroy {
 	protected static long sleep;
 
 	private ItemsAutoDestroy() {
+	}
+	
+	@Load
+	public void initialize() {
+		if (Config.AUTODESTROY_ITEM_AFTER * 1000 <= 0 && Config.HERB_AUTO_DESTROY_TIME * 1000 <= 0) {
+			return;
+		}
 		Log.info("Initializing ItemsAutoDestroy.");
 		items = new CopyOnWriteArrayList<>();
 		sleep = Config.AUTODESTROY_ITEM_AFTER * 1000;
@@ -39,7 +47,7 @@ public class ItemsAutoDestroy {
 		}
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new CheckItemsForDestroy(), 5000, 5000);
 	}
-
+	
 	public static ItemsAutoDestroy getInstance() {
 		return SingletonHolder.instance;
 	}

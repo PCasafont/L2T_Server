@@ -18,6 +18,7 @@ package l2server.gameserver.instancemanager;
 import l2server.Config;
 import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.Location;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Npc;
@@ -28,6 +29,7 @@ import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.util.NpcUtil;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -313,7 +315,12 @@ public class CustomWorldAltars {
 		return sb.toString();
 	}
 	
+	@Load(dependencies = SpawnTable.class)
 	private void load() {
+		if (!Config.ENABLE_WORLD_ALTARS) {
+			return;
+		}
+		
 		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "scripts/ai/WorldAltars/WorldAltars.xml");
 		XmlDocument doc = new XmlDocument(file);
 		for (XmlNode d : doc.getChildren()) {
@@ -356,9 +363,6 @@ public class CustomWorldAltars {
 	}
 	
 	private CustomWorldAltars() {
-		if (Config.ENABLE_WORLD_ALTARS) {
-			load();
-		}
 	}
 	
 	public static CustomWorldAltars getInstance() {

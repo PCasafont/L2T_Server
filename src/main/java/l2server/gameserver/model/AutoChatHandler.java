@@ -25,6 +25,7 @@ import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,11 +47,15 @@ public class AutoChatHandler implements SpawnListener {
 
 	private static final int DEFAULT_CHAT_DELAY = 60000; // 60 secs by default
 
-	protected final Map<Integer, AutoChatInstance> registeredChats;
+	protected final Map<Integer, AutoChatInstance> registeredChats = new HashMap<>();
 
 	private AutoChatHandler() {
-		registeredChats = new HashMap<>();
+	}
+	
+	@Load
+	public void initialize() {
 		L2Spawn.addSpawnListener(this);
+		Log.info("AutoChatHandler: Loaded " + AutoChatHandler.getInstance().size() + " handlers in total.");
 	}
 
 	public void reload() {

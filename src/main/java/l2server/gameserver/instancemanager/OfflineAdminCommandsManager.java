@@ -10,6 +10,7 @@ import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.util.GMAudit;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -29,10 +30,14 @@ public class OfflineAdminCommandsManager {
 	}
 
 	public OfflineAdminCommandsManager() {
+	}
+	
+	@Load(dependencies = AdminCommandAccessRights.class)
+	public void initialize() {
 		loadDummy();
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new CheckCommandsTask(), TIME_BETWEEN_CHECKS, TIME_BETWEEN_CHECKS);
 	}
-
+	
 	public void loadDummy() {
 		Connection con = null;
 

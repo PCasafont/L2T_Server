@@ -20,6 +20,7 @@ import l2server.Config;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.L2GameClient;
+import l2server.util.loader.annotations.Load;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,16 +31,19 @@ public class AntiFeedManager {
 	public static final int OLYMPIAD_ID = 1;
 	public static final int TVT_ID = 2;
 
-	private Map<Integer, Long> lastDeathTimes;
-	private Map<Integer, Map<Integer, Connections>> eventIPs;
+	private Map<Integer, Long> lastDeathTimes = new ConcurrentHashMap<>();
+	private Map<Integer, Map<Integer, Connections>> eventIPs = new HashMap<>();
 
 	public static AntiFeedManager getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private AntiFeedManager() {
-		lastDeathTimes = new ConcurrentHashMap<>();
-		eventIPs = new HashMap<>();
+	}
+	
+	@Load
+	public void initialize() {
+		registerEvent(AntiFeedManager.GAME_ID);
 	}
 
 	/**

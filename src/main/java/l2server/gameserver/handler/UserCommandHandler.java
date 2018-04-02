@@ -26,14 +26,13 @@ import l2server.log.Log;
  */
 public class UserCommandHandler {
 
-	private Map<Integer, IUserCommandHandler> datatable;
+	private Map<Integer, IUserCommandHandler> datatable = new HashMap<>();
 
 	public static UserCommandHandler getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private UserCommandHandler() {
-		datatable = new HashMap<>();
 	}
 
 	public void registerUserCommandHandler(IUserCommandHandler handler) {

@@ -26,14 +26,13 @@ import l2server.log.Log;
  */
 public class VoicedCommandHandler {
 
-	private Map<Integer, IVoicedCommandHandler> datatable;
+	private Map<Integer, IVoicedCommandHandler> datatable = new HashMap<>();
 
 	public static VoicedCommandHandler getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private VoicedCommandHandler() {
-		datatable = new HashMap<>();
 	}
 
 	public void registerVoicedCommandHandler(IVoicedCommandHandler handler) {

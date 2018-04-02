@@ -26,6 +26,7 @@ import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.log.Log;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -70,16 +71,12 @@ public class AutoSpawnHandler {
 	private static final int DEFAULT_RESPAWN = 3600000; // 1 hour in millisecs
 	private static final int DEFAULT_DESPAWN = 3600000; // 1 hour in millisecs
 	
-	protected Map<Integer, AutoSpawnInstance> registeredSpawns;
-	protected Map<Integer, ScheduledFuture<?>> runningSpawns;
+	protected Map<Integer, AutoSpawnInstance> registeredSpawns = new HashMap<>();
+	protected Map<Integer, ScheduledFuture<?>> runningSpawns = new HashMap<>();
 	
 	protected boolean activeState = true;
 	
 	private AutoSpawnHandler() {
-		registeredSpawns = new HashMap<>();
-		runningSpawns = new HashMap<>();
-		
-		restoreSpawnData();
 	}
 	
 	public static AutoSpawnHandler getInstance() {
@@ -104,6 +101,7 @@ public class AutoSpawnHandler {
 		restoreSpawnData();
 	}
 	
+	@Load(dependencies = SpawnTable.class)
 	private void restoreSpawnData() {
 		int numLoaded = 0;
 		Connection con = null;
@@ -154,6 +152,8 @@ public class AutoSpawnHandler {
 		} finally {
 			L2DatabaseFactory.close(con);
 		}
+		
+		Log.info("AutoSpawnHandler: Loaded " + AutoSpawnHandler.getInstance().size() + " handlers in total.");
 	}
 	
 	/**

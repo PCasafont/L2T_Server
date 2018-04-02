@@ -51,6 +51,7 @@ import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.gameserver.util.NpcUtil;
 import l2server.gameserver.util.Util;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
 
@@ -63,6 +64,7 @@ import java.util.Map.Entry;
  */
 
 public class GMEventManager {
+	
 	private static final int bufferNpcId = 8508;
 	private static final int dummyArenaSignNpcId = 50013;
 	private static final int rewardCoinId = 37559;
@@ -1781,7 +1783,8 @@ public class GMEventManager {
 		return false;
 	}
 
-	private void loadPredefinedEvents() {
+	@Load
+	public void loadPredefinedEvents() {
 		File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/predefinedGMEvents.xml");
 		if (!file.exists()) {
 			return;
@@ -1893,7 +1896,6 @@ public class GMEventManager {
 	}
 
 	private GMEventManager() {
-		loadPredefinedEvents();
 	}
 
 	public static GMEventManager getInstance() {

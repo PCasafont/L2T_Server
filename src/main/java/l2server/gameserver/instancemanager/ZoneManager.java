@@ -90,7 +90,7 @@ public class ZoneManager {
 		}
 	}
 	
-	@Load(dependencies = {ClanHallManager.class, GrandBossManager.class})
+	@Load(dependencies = {ClanHallManager.class, GrandBossManager.class, L2World.class})
 	public void load() {
 		Log.info("Loading zones...");
 		Connection con = null;

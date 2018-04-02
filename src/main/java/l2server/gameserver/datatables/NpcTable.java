@@ -51,7 +51,7 @@ public class NpcTable {
 	}
 	
 	// just wrapper
-	@Load(dependencies = SkillTable.class)
+	@Load(dependencies = {SkillTable.class, ItemTable.class, ExtraDropTable.class})
 	public void load() {
 		npcs = new HashMap<>();
 		

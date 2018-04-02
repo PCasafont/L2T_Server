@@ -15,11 +15,14 @@
 
 package l2server.gameserver.instancemanager;
 
+import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.entity.Couple;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
+import l2server.util.loader.annotations.Reload;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -33,8 +36,6 @@ import java.util.logging.Level;
 public class CoupleManager {
 
 	private CoupleManager() {
-		Log.info("L2JMOD: Initializing CoupleManager");
-		load();
 	}
 
 	public static CoupleManager getInstance() {
@@ -47,16 +48,19 @@ public class CoupleManager {
 	// Data Field
 	private ArrayList<Couple> couples;
 
-	// =========================================================
-	// Method - Public
+	@Reload("couples")
 	public void reload() {
 		getCouples().clear();
 		load();
 	}
 
-	// =========================================================
-	// Method - Private
-	private void load() {
+	@Load
+	public void load() {
+		if (!Config.L2JMOD_ALLOW_WEDDING) {
+			return;
+		}
+		
+		Log.info("L2JMOD: Initializing CoupleManager");
 		Connection con = null;
 		try {
 			PreparedStatement statement;

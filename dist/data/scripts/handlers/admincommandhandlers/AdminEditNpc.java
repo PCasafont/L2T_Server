@@ -167,7 +167,7 @@ public class AdminEditNpc implements IAdminCommandHandler {
 	private void editShopItem(L2PcInstance activeChar, String[] args) {
 		int tradeListID = Integer.parseInt(args[1]);
 		int itemID = Integer.parseInt(args[2]);
-		L2TradeList tradeList = TradeController.getInstance().getBuyList(tradeListID);
+		L2TradeList tradeList = TradeController.INSTANCE.getBuyList(tradeListID);
 
 		L2Item item = ItemTable.getInstance().getTemplate(itemID);
 		if (tradeList.getPriceForItemId(itemID) < 0) {
@@ -215,7 +215,7 @@ public class AdminEditNpc implements IAdminCommandHandler {
 	private void delShopItem(L2PcInstance activeChar, String[] args) {
 		int tradeListID = Integer.parseInt(args[1]);
 		int itemID = Integer.parseInt(args[2]);
-		L2TradeList tradeList = TradeController.getInstance().getBuyList(tradeListID);
+		L2TradeList tradeList = TradeController.INSTANCE.getBuyList(tradeListID);
 
 		if (tradeList.getPriceForItemId(itemID) < 0) {
 			return;
@@ -256,7 +256,7 @@ public class AdminEditNpc implements IAdminCommandHandler {
 	private void addShopItem(L2PcInstance activeChar, String[] args) {
 		int tradeListID = Integer.parseInt(args[1]);
 
-		L2TradeList tradeList = TradeController.getInstance().getBuyList(tradeListID);
+		L2TradeList tradeList = TradeController.INSTANCE.getBuyList(tradeListID);
 		if (tradeList == null) {
 			activeChar.sendMessage("TradeList not found!");
 			return;
@@ -297,7 +297,7 @@ public class AdminEditNpc implements IAdminCommandHandler {
 	}
 
 	private void showShopList(L2PcInstance activeChar, int tradeListID, int page) {
-		L2TradeList tradeList = TradeController.getInstance().getBuyList(tradeListID);
+		L2TradeList tradeList = TradeController.INSTANCE.getBuyList(tradeListID);
 		if (page > tradeList.getItems().size() / PAGE_LIMIT + 1 || page < 1) {
 			return;
 		}
@@ -377,7 +377,7 @@ public class AdminEditNpc implements IAdminCommandHandler {
 	}
 
 	private void showShop(L2PcInstance activeChar, int merchantID) {
-		List<L2TradeList> tradeLists = TradeController.getInstance().getBuyListByNpcId(merchantID);
+		List<L2TradeList> tradeLists = TradeController.INSTANCE.getBuyListByNpcId(merchantID);
 		if (tradeLists == null) {
 			activeChar.sendMessage("Unknown npc template Id: " + merchantID);
 			return;

@@ -258,7 +258,7 @@ public class Shutdown extends Thread {
 		Log.info("SpawnDataManager: All spawn dynamic data saved");
 		GrandBossManager.getInstance().cleanUp();
 		Log.info("GrandBossManager: All Grand Boss info saved");
-		TradeController.getInstance().dataCountStore();
+		TradeController.INSTANCE.dataCountStore();
 		Log.info("TradeController: All count Item Saved");
 		ItemAuctionManager.getInstance().shutdown();
 		Log.info("Item Auctions shut down");

@@ -17,6 +17,7 @@ package l2server.gameserver.instancemanager;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.InstanceListManager;
+import l2server.gameserver.datatables.ResidentialSkillTable;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.L2ClanMember;
@@ -248,7 +249,7 @@ public class CastleManager implements InstanceListManager {
 		}
 	}
 	
-	@Load
+	@Load(dependencies = {ResidentialSkillTable.class, ZoneManager.class})
 	@Override
 	public void load() {
 		Log.info("Initializing CastleManager");

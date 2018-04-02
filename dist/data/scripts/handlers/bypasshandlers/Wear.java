@@ -62,7 +62,7 @@ public class Wear implements IBypassHandler {
 			log.fine("Showing wearlist");
 		}
 
-		L2TradeList list = TradeController.getInstance().getBuyList(val);
+		L2TradeList list = TradeController.INSTANCE.getBuyList(val);
 
 		if (list != null) {
 			ShopPreviewList bl = new ShopPreviewList(list, player.getAdena(), player.getExpertiseIndex());

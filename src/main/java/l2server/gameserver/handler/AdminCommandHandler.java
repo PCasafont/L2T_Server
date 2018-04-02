@@ -26,14 +26,13 @@ import l2server.log.Log;
  */
 public class AdminCommandHandler {
 
-	private Map<Integer, IAdminCommandHandler> datatable;
+	private Map<Integer, IAdminCommandHandler> datatable = new HashMap<>();
 
 	public static AdminCommandHandler getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private AdminCommandHandler() {
-		datatable = new HashMap<>();
 	}
 
 	public void registerAdminCommandHandler(IAdminCommandHandler handler) {

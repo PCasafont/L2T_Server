@@ -24,7 +24,7 @@ import l2server.gameserver.templates.item.L2EtcItem;
  * @version $Revision: 1.1.4.3 $ $Date: 2005/03/27 15:30:09 $
  */
 public class ItemHandler {
-	private Map<Integer, IItemHandler> datatable;
+	private Map<Integer, IItemHandler> datatable = new HashMap<>();
 
 	/**
 	 * Create ItemHandler if doesn't exist and returns ItemHandler
@@ -48,7 +48,6 @@ public class ItemHandler {
 	 * Constructor of ItemHandler
 	 */
 	private ItemHandler() {
-		datatable = new HashMap<>();
 	}
 
 	/**

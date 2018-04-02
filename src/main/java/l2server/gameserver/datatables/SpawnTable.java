@@ -18,6 +18,7 @@ package l2server.gameserver.datatables;
 import l2server.Config;
 import l2server.gameserver.instancemanager.CastleManager;
 import l2server.gameserver.model.L2Spawn;
+import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.SpawnGroup;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2MonsterInstance;
@@ -114,7 +115,7 @@ public class SpawnTable {
 		}
 	}
 	
-	@Load(dependencies = {NpcTable.class, CastleManager.class})
+	@Load(dependencies = {NpcTable.class, CastleManager.class, L2World.class})
 	public void load() {
 		if (Config.ALT_DEV_NO_SPAWNS) {
 			return;

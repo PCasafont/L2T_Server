@@ -24,14 +24,13 @@ import l2server.gameserver.templates.skills.L2SkillType;
  * @version $Revision: 1.1.4.4 $ $Date: 2005/04/03 15:55:06 $
  */
 public class SkillHandler {
-	private Map<Integer, ISkillHandler> datatable;
+	private Map<Integer, ISkillHandler> datatable = new HashMap<>();
 
 	public static SkillHandler getInstance() {
 		return SingletonHolder.instance;
 	}
 
 	private SkillHandler() {
-		datatable = new HashMap<>();
 	}
 
 	public void registerSkillHandler(ISkillHandler handler) {

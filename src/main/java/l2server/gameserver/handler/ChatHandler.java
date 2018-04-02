@@ -26,7 +26,7 @@ import l2server.log.Log;
  */
 public class ChatHandler {
 
-	private Map<Integer, IChatHandler> datatable;
+	private Map<Integer, IChatHandler> datatable = new HashMap<>();
 
 	public static ChatHandler getInstance() {
 		return SingletonHolder.instance;
@@ -36,7 +36,6 @@ public class ChatHandler {
 	 * Singleton constructor
 	 */
 	private ChatHandler() {
-		datatable = new HashMap<>();
 	}
 
 	/**

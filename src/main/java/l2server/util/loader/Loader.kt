@@ -34,9 +34,9 @@ import java.util.*
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.TimeUnit
-import java.util.stream.Collectors
 
 /**
+ * @author Pere
  * @author NosKun
  */
 object Loader {
@@ -212,28 +212,28 @@ object Loader {
 		return reloads
 	}
 
-	private fun <T> getInstance(clazz: Class<T>): T {
-		val instanceGetterMethod = clazz.declaredMethods.firstOrNull { it.parameterCount == 0 && it.name == "getInstance" }
-		if (instanceGetterMethod != null) {
+    private fun <T> getInstance(clazz: Class<T>): T {
+        val instanceGetterMethod = clazz.declaredMethods.firstOrNull { it.parameterCount == 0 && it.name == "getInstance" }
+        if (instanceGetterMethod != null) {
             if (!Modifier.isPublic(instanceGetterMethod.modifiers)) {
-                throw UnsupportedOperationException("non public instance getter method ${instanceGetterMethod}")
+                throw UnsupportedOperationException("non public instance getter method $instanceGetterMethod")
             }
 
             if (!Modifier.isStatic(instanceGetterMethod.modifiers)) {
-                throw UnsupportedOperationException("non static instance getter method ${instanceGetterMethod}")
+                throw UnsupportedOperationException("non static instance getter method $instanceGetterMethod")
             }
 
             return instanceGetterMethod.invoke(null) as T
-		}
+        }
 
         val instance = clazz.declaredFields.firstOrNull { it.name == "INSTANCE"}
         if (instance != null) {
             if (!Modifier.isPublic(instance.modifiers)) {
-                throw UnsupportedOperationException("non public instance attribute ${instance}")
+                throw UnsupportedOperationException("non public instance attribute $instance")
             }
 
             if (!Modifier.isStatic(instance.modifiers)) {
-                throw UnsupportedOperationException("non static instance attribute ${instance}")
+                throw UnsupportedOperationException("non static instance attribute $instance")
             }
 
             return instance.get(null) as T
@@ -241,5 +241,5 @@ object Loader {
 
         throw UnsupportedOperationException(
                 "$clazz contains Load annotated method(s) but it does not have an instance getter.")
-	}
+    }
 }
