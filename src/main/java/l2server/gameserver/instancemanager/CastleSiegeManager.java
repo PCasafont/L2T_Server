@@ -19,16 +19,16 @@ import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.WorldObject;
-import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.Location;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.Siege;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -39,7 +39,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-import java.util.logging.Level;
 
 public class CastleSiegeManager {
 	private static Logger log = LoggerFactory.getLogger(CastleSiegeManager.class.getName());

@@ -15,11 +15,12 @@
 
 package l2server.gameserver.model;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.gameserver.datatables.SkillTable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Class hold information about basic pet stats which are same on each level

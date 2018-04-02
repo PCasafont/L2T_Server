@@ -16,10 +16,10 @@
 package handlers.skillhandlers;
 
 import l2server.gameserver.handler.ISkillHandler;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.templates.skills.SkillType;
 import l2server.util.Rnd;

@@ -16,8 +16,8 @@
 package l2server.gameserver.stats.effects;
 
 import l2server.gameserver.model.Abnormal;
-import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.model.Item;
+import l2server.gameserver.model.L2Effect;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Env;

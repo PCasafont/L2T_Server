@@ -16,7 +16,6 @@
 package ai.group_template;
 
 import gnu.trove.TIntHashSet;
-import java.util.HashMap; import java.util.Map;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Npc;
@@ -25,6 +24,8 @@ import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.util.Rnd;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SummonMinions extends L2AttackableAIScript {

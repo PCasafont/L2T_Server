@@ -18,9 +18,9 @@ package l2server.gameserver.model;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.instancemanager.SearchDropManager;
 import l2server.gameserver.templates.chars.NpcTemplate;
+import l2server.util.xml.XmlNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.xml.XmlNode;
 
 import java.util.ArrayList;
 import java.util.List;

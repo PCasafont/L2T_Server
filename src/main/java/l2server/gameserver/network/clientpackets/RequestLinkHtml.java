@@ -18,8 +18,6 @@ package l2server.gameserver.network.clientpackets;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
-import java.util.logging.Level;
-
 /**
  * @author zabbix
  * Lets drink to code!

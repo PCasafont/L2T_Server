@@ -22,9 +22,9 @@
 
 package l2server.gameserver.model;
 
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 import java.util.ArrayList;
 import java.util.List;

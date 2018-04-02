@@ -27,9 +27,9 @@ import l2server.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 public class EffectThrowUp extends L2Effect {
 	private static Logger log = LoggerFactory.getLogger(EffectThrowUp.class.getName());

@@ -17,8 +17,8 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.model.Item;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.World;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.serverpackets.ExRpItemLink;
 import org.slf4j.Logger;

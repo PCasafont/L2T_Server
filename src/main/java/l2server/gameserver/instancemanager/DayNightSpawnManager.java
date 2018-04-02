@@ -19,13 +19,12 @@ import l2server.gameserver.TimeController;
 import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.actor.instance.RaidBossInstance;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
 
 /**
  * @author godson

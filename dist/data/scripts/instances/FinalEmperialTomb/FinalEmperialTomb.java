@@ -15,7 +15,6 @@
 
 package instances.FinalEmperialTomb;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
@@ -23,16 +22,17 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
 import l2server.gameserver.model.L2CharPosition;
+import l2server.gameserver.model.L2Territory;
+import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.World;
 import l2server.gameserver.model.WorldObject.InstanceType;
-import l2server.gameserver.model.Skill;
-import l2server.gameserver.model.L2Territory;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Npc;
-import l2server.gameserver.model.actor.instance.*;
+import l2server.gameserver.model.actor.instance.DoorInstance;
 import l2server.gameserver.model.actor.instance.GrandBossInstance;
 import l2server.gameserver.model.actor.instance.MonsterInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.network.NpcStringId;
@@ -41,18 +41,17 @@ import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.Util;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.*;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.logging.Level;
 
 /*
 TODO:

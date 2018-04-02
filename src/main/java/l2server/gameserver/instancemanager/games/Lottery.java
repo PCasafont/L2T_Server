@@ -22,16 +22,15 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.Item;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Calendar;
-import java.util.logging.Level;
 
 public class Lottery {
 	private static Logger log = LoggerFactory.getLogger(Lottery.class.getName());

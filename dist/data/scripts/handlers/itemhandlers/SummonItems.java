@@ -24,9 +24,9 @@ import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SummonItemsData;
 import l2server.gameserver.handler.IItemHandler;
 import l2server.gameserver.model.Item;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.L2SummonItem;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.Playable;
@@ -39,7 +39,6 @@ import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.util.Broadcast;
 
 import java.util.Collection;
-import java.util.logging.Level;
 
 public class SummonItems implements IItemHandler {
 	/**

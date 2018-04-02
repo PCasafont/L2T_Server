@@ -17,8 +17,8 @@ package quests.Q350_EnhanceYourWeapon;
 
 import l2server.Config;
 import l2server.gameserver.model.Item;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Attackable.AbsorberInfo;
 import l2server.gameserver.model.actor.Npc;
@@ -36,7 +36,6 @@ import l2server.util.xml.XmlNode;
 import java.io.File;
 import java.util.HashMap;
 import java.util.StringTokenizer;
-import java.util.logging.Level;
 
 public class Q350_EnhanceYourWeapon extends Quest {
 	private static final String qn = "350_EnhanceYourWeapon";

@@ -19,9 +19,9 @@ import l2server.gameserver.model.World;
 import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.WorldRegion;
 import l2server.gameserver.model.actor.Creature;
+import l2server.util.Point3D;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Point3D;
 
 public class ObjectPosition {
 	private static Logger log = LoggerFactory.getLogger(ObjectPosition.class.getName());

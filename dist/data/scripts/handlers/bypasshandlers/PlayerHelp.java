@@ -21,7 +21,6 @@ import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 
 import java.util.StringTokenizer;
-import java.util.logging.Level;
 
 public class PlayerHelp implements IBypassHandler {
 	private static final String[] COMMANDS = {"player_help"};

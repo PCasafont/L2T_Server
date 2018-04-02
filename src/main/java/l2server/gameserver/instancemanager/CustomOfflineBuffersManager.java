@@ -36,9 +36,9 @@ import l2server.gameserver.taskmanager.AttackStanceTaskManager;
 import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.Util;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

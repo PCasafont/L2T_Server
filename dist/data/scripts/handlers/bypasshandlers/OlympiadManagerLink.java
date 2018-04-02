@@ -21,8 +21,9 @@ import l2server.gameserver.handler.IBypassHandler;
 import l2server.gameserver.model.Item;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.actor.Npc;
-import l2server.gameserver.model.actor.instance.*;
+import l2server.gameserver.model.actor.instance.OlympiadManagerInstance;
 import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.actor.instance.SummonInstance;
 import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.model.olympiad.OlympiadManager;
@@ -32,7 +33,6 @@ import l2server.gameserver.network.serverpackets.*;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.logging.Level;
 
 /**
  * @author DS

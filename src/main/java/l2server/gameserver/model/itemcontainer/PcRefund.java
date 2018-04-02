@@ -22,8 +22,6 @@ import l2server.gameserver.model.actor.instance.Player;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.logging.Level;
-
 /**
  * @author DS
  */

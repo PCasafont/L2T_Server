@@ -14,7 +14,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Vector;
-import java.util.logging.Level;
 
 /**
  * @author Inia

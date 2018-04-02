@@ -22,7 +22,6 @@ import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**

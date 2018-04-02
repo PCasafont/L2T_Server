@@ -18,13 +18,12 @@ package l2server.gameserver.stats;
 import l2server.Config;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.model.actor.Creature;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.util.logging.Level;
 
 /**
  * @author Nik

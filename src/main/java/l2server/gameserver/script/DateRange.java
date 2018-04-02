@@ -21,7 +21,6 @@ import org.slf4j.LoggerFactory;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.Date;
-import java.util.logging.Level;
 
 /**
  * @author Luis Arias

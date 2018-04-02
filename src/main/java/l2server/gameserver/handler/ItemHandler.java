@@ -15,9 +15,10 @@
 
 package l2server.gameserver.handler;
 
-import java.util.HashMap; import java.util.Map;
-
 import l2server.gameserver.templates.item.EtcItemTemplate;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class manages handlers of items

@@ -20,9 +20,9 @@ import l2server.gameserver.instancemanager.ItemsOnGroundManager;
 import l2server.gameserver.model.Item;
 import l2server.gameserver.model.World;
 import l2server.gameserver.templates.item.EtcItemType;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

@@ -17,8 +17,8 @@ package l2server.gameserver.model.itemcontainer;
 
 import l2server.Config;
 import l2server.gameserver.model.Item;
-import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.Item.ItemLocation;
+import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.actor.instance.Player;
 
 public final class ClanWarehouse extends Warehouse {

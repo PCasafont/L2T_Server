@@ -20,17 +20,16 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.World;
 import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.WorldRegion;
-import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.model.actor.instance.GuardInstance;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.logging.Level;
 
 public class KnownListUpdateTaskManager {
 	private static Logger log = LoggerFactory.getLogger(KnownListUpdateTaskManager.class.getName());

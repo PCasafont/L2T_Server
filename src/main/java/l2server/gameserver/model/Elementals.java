@@ -15,11 +15,13 @@
 
 package l2server.gameserver.model;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.stats.Stats;
 import l2server.gameserver.stats.funcs.FuncAdd;
 import l2server.gameserver.stats.funcs.LambdaConst;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public final class Elementals {
 	private static final Map<Integer, ElementalItems> TABLE = new HashMap<>();

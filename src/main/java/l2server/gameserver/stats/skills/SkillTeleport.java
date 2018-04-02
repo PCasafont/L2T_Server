@@ -18,9 +18,9 @@ package l2server.gameserver.stats.skills;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
-import l2server.gameserver.model.WorldObject;
-import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.Location;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;
@@ -30,8 +30,6 @@ import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.skills.SkillType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.logging.Level;
 
 public class SkillTeleport extends Skill {
 	private static Logger log = LoggerFactory.getLogger(SkillTeleport.class.getName());

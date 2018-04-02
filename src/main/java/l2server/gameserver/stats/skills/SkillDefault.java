@@ -15,8 +15,8 @@
 
 package l2server.gameserver.stats.skills;
 
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.network.serverpackets.ActionFailed;
 import l2server.gameserver.templates.StatsSet;

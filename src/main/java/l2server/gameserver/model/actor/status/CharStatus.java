@@ -24,14 +24,13 @@ import l2server.gameserver.model.actor.stat.CharStat;
 import l2server.gameserver.network.serverpackets.StatusUpdate.StatusUpdateDisplay;
 import l2server.gameserver.stats.BaseStats;
 import l2server.gameserver.stats.Formulas;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.Future;
-import java.util.logging.Level;
 
 public class CharStatus {
 	private static Logger log = LoggerFactory.getLogger(CharStatus.class.getName());

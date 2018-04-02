@@ -17,9 +17,9 @@ package l2server.gameserver.stats.skills;
 
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.model.Abnormal;
-import l2server.gameserver.model.WorldObject;
-import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.L2Spawn;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.instance.Player;
@@ -27,12 +27,10 @@ import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.templates.skills.SkillTargetType;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
-
-import java.util.logging.Level;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SkillSpawn extends Skill {
 	private static Logger log = LoggerFactory.getLogger(SkillSpawn.class.getName());

@@ -35,9 +35,9 @@ import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.templates.skills.AbnormalType;
 import l2server.gameserver.templates.skills.SkillTargetType;
 import l2server.gameserver.util.Util;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 public class SkillSummon extends Skill {
 	private static Logger log = LoggerFactory.getLogger(SkillSummon.class.getName());

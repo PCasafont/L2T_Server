@@ -17,11 +17,11 @@ package ai.group_template;
 
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.*;
-import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.actor.instance.PetInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.templates.skills.SkillType;
 import l2server.gameserver.util.Util;

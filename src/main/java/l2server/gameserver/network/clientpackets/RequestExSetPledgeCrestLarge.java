@@ -24,7 +24,6 @@ import l2server.gameserver.network.serverpackets.ExSetPledgeEmblemAck;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**

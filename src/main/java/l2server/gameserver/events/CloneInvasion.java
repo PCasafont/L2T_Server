@@ -9,9 +9,9 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.templates.item.WeaponType;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 import java.util.Calendar;
 

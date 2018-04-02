@@ -32,11 +32,11 @@ import l2server.gameserver.model.base.PlayerClass;
 import l2server.gameserver.model.base.Race;
 import l2server.gameserver.templates.chars.PcTemplate;
 import l2server.gameserver.templates.chars.PcTemplate.PcTemplateItem;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

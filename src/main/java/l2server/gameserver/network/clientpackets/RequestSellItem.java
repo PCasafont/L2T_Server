@@ -17,8 +17,8 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.gameserver.TradeController;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.L2TradeList;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.MerchantInstance;
 import l2server.gameserver.model.actor.instance.MerchantSummonInstance;

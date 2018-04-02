@@ -32,7 +32,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 public class FortSiegeManager {
 	private static Logger log = LoggerFactory.getLogger(FortSiegeManager.class.getName());

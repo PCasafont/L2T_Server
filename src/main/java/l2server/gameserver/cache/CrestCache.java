@@ -20,16 +20,15 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.L2Clan;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.io.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
 
 /**
  * @author Layane

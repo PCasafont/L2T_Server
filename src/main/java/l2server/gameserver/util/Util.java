@@ -26,7 +26,6 @@
 package l2server.gameserver.util;
 
 import l2server.Config;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.WorldObject;

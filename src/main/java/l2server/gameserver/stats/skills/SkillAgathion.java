@@ -16,8 +16,8 @@
 package l2server.gameserver.stats.skills;
 
 import l2server.gameserver.Ranked1v1;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.SystemMessageId;

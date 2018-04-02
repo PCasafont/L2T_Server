@@ -18,8 +18,8 @@ package handlers.skillhandlers;
 import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.model.Abnormal;
 import l2server.gameserver.model.Item;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.Summon;
@@ -36,7 +36,6 @@ import l2server.util.Rnd;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 public class StealBuffs implements ISkillHandler {
 	private static final SkillType[] SKILL_IDS = {SkillType.STEAL_BUFF};

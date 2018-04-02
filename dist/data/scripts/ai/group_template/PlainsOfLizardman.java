@@ -21,9 +21,10 @@ import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.SkillHandler;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.Skill;
-import l2server.gameserver.model.actor.*;
 import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Npc;
+import l2server.gameserver.model.actor.Playable;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 

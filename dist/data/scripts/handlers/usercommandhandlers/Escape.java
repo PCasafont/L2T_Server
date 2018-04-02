@@ -30,8 +30,6 @@ import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SetupGauge;
 import l2server.gameserver.util.Broadcast;
 
-import java.util.logging.Level;
-
 /**
  *
  *

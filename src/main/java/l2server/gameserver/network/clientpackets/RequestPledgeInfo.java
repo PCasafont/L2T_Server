@@ -21,8 +21,6 @@ import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.PledgeInfo;
 
-import java.util.logging.Level;
-
 /**
  * This class ...
  *

@@ -38,7 +38,6 @@ import java.sql.PreparedStatement;
 import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.StringTokenizer;
-import java.util.logging.Level;
 
 public class CustomVoiced implements IVoicedCommandHandler {
 	private static Logger log = LoggerFactory.getLogger(CustomVoiced.class.getName());

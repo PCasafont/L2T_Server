@@ -23,11 +23,11 @@ import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.zone.type.DummyZone;
 import l2server.gameserver.model.zone.type.TownZone;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

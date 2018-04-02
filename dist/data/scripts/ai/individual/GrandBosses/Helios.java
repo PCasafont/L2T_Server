@@ -19,12 +19,12 @@ import ai.group_template.L2AttackableAIScript;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.instancemanager.GrandBossManager;
-import l2server.gameserver.model.WorldObject;
-import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.Location;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.instance.GrandBossInstance;
 import l2server.gameserver.model.actor.instance.Player;
@@ -32,9 +32,9 @@ import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.model.zone.type.BossZone;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.network.serverpackets.PlaySound;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 /**
  * @author Inia

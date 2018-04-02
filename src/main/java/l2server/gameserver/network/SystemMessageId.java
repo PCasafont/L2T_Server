@@ -15,7 +15,6 @@
 
 package l2server.gameserver.network;
 
-import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

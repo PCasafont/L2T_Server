@@ -21,11 +21,11 @@ import l2server.gameserver.handler.ISkillHandler;
 import l2server.gameserver.handler.SkillHandler;
 import l2server.gameserver.instancemanager.DuelManager;
 import l2server.gameserver.model.Abnormal;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.L2Party;
 import l2server.gameserver.model.Skill;
-import l2server.gameserver.model.actor.Creature;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.MagicSkillUse;
 import l2server.gameserver.network.serverpackets.SystemMessage;
@@ -41,7 +41,6 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Future;
-import java.util.logging.Level;
 
 public class CubicInstance {
 	private static Logger log = LoggerFactory.getLogger(CubicInstance.class.getName());

@@ -43,7 +43,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
 
 public class FortSiege implements Siegable {
 	private static Logger log = LoggerFactory.getLogger(FortSiege.class.getName());

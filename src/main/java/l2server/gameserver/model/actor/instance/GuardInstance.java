@@ -21,8 +21,8 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.L2CharPosition;
 import l2server.gameserver.model.World;
 import l2server.gameserver.model.WorldRegion;
-import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.knownlist.GuardKnownList;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.serverpackets.ActionFailed;
@@ -30,9 +30,9 @@ import l2server.gameserver.network.serverpackets.MyTargetSelected;
 import l2server.gameserver.network.serverpackets.SocialAction;
 import l2server.gameserver.network.serverpackets.ValidateLocation;
 import l2server.gameserver.templates.chars.NpcTemplate;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 /**
  * This class manages all Guards in the world.

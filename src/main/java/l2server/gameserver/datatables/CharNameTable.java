@@ -22,9 +22,9 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.CharacterCreate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Util;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,7 +35,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
 
 /**
  * This class ...

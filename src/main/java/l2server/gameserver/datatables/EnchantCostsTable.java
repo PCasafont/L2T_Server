@@ -15,20 +15,21 @@
 
 package l2server.gameserver.datatables;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.L2EnchantSkillLearn;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.model.actor.instance.Player;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Pere

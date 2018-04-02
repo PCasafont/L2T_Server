@@ -20,8 +20,8 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.events.instanced.EventInstance.EventType;
 import l2server.gameserver.model.Abnormal;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Summon;
 import l2server.gameserver.network.serverpackets.SetSummonRemainTime;
@@ -33,7 +33,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.Future;
-import java.util.logging.Level;
 
 public class SummonInstance extends Summon {
 	private static Logger log = LoggerFactory.getLogger(SummonInstance.class.getName());

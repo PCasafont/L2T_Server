@@ -9,9 +9,9 @@ import l2server.gameserver.handler.AdminCommandHandler;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.util.GMAudit;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -28,9 +28,9 @@ import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.util.Util;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 import java.util.Collection;
 import java.util.concurrent.Future;

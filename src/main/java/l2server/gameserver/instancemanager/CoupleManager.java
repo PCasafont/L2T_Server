@@ -20,16 +20,15 @@ import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.World;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Couple;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.loader.annotations.Load;
 import l2server.util.loader.annotations.Reload;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.logging.Level;
 
 /**
  * @author evill33t

@@ -16,7 +16,6 @@
 package l2server.gameserver.instancemanager;
 
 import gnu.trove.TIntIntHashMap;
-import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.ThreadPoolManager;
@@ -26,7 +25,8 @@ import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.Item;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.actor.Npc;
-import l2server.gameserver.model.actor.instance.*;
+import l2server.gameserver.model.actor.instance.DoorInstance;
+import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.actor.instance.SepulcherMonsterInstance;
 import l2server.gameserver.model.actor.instance.SepulcherNpcInstance;
 import l2server.gameserver.model.quest.QuestState;
@@ -35,17 +35,16 @@ import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.chars.NpcTemplate;
 import l2server.gameserver.util.Util;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.loader.annotations.Load;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.*;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
 
 /**
  * @author sandman

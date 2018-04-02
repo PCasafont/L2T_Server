@@ -17,9 +17,9 @@ package l2server.gameserver.instancemanager;
 
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.actor.instance.Player;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,7 +27,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.Map.Entry;
-import java.util.logging.Level;
 
 /**
  * @author Kerberos

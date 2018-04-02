@@ -16,9 +16,9 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.L2DatabaseFactory;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

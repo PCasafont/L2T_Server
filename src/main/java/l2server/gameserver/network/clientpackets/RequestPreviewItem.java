@@ -19,8 +19,8 @@ import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TradeController;
 import l2server.gameserver.datatables.ItemTable;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.L2TradeList;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.instance.MercManagerInstance;
 import l2server.gameserver.model.actor.instance.MerchantInstance;
@@ -38,7 +38,6 @@ import l2server.gameserver.util.Util;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
 
 /**
  * * @author Gnacik

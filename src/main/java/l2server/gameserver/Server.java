@@ -22,12 +22,12 @@ import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.L2GamePacketHandler;
 import l2server.gameserver.pathfinding.PathFinding;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.network.Core;
 import l2server.network.CoreConfig;
 import l2server.util.DeadLockDetector;
 import l2server.util.IPv4Filter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import java.awt.*;
@@ -36,7 +36,6 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Calendar;
-import java.util.logging.Level;
 
 public class Server {
 	private static Logger log = LoggerFactory.getLogger(Server.class.getName());

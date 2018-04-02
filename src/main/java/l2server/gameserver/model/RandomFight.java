@@ -7,15 +7,14 @@ import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.SkillCoolTime;
 import l2server.gameserver.util.Broadcast;
 import l2server.gameserver.util.NpcUtil;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Vector;
-import java.util.logging.Level;
 
 /**
  * @author Inia

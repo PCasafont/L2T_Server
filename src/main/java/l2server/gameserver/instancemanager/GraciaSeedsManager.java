@@ -17,11 +17,10 @@ package l2server.gameserver.instancemanager;
 
 import l2server.Config;
 import l2server.gameserver.ThreadPoolManager;
-import l2server.gameserver.datatables.ClanTable;
 import l2server.gameserver.model.quest.Quest;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.util.Calendar;
 

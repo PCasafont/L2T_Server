@@ -15,7 +15,6 @@
 
 package ai.group_template;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;
@@ -24,6 +23,9 @@ import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.util.Rnd;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Slyce

@@ -22,7 +22,6 @@ import java.io.DataInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.logging.Level;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 

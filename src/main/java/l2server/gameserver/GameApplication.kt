@@ -27,7 +27,6 @@ fun main(args: Array<String>) {
     L2DatabaseFactory.getInstance()
 
     val idFactory = IdFactory.getInstance()
-
     if (!idFactory.isInitialized()) {
         log.error("Could not read object IDs from DB. Please Check Your Data.")
         throw Exception("Could not initialize the ID factory")
@@ -40,7 +39,6 @@ fun main(args: Array<String>) {
 
 	Loader.initialize(GameApplication::class.java.`package`.name)
 	Loader.run()
-	log.info(Loader.getDependencyTreeString())
 
 	// FIXME I'M DIRTY! Use spring to initialize the server
 	Server()

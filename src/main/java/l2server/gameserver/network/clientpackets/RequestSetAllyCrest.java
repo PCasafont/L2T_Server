@@ -22,7 +22,6 @@ import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.AllyCrest;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**

@@ -22,14 +22,13 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.Item;
 import l2server.gameserver.model.World;
 import l2server.gameserver.templates.item.EtcItemType;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 /**
  * This class manage all items on ground

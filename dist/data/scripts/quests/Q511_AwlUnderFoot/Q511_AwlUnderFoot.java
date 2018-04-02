@@ -15,7 +15,6 @@
 
 package quests.Q511_AwlUnderFoot;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.instancemanager.InstanceManager.InstanceWorld;
@@ -34,6 +33,9 @@ import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Gigiikun

@@ -17,8 +17,8 @@ package l2server.gameserver.ai;
 
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.L2CharPosition;
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.instance.DefenderInstance;
 import l2server.gameserver.model.actor.instance.DoorInstance;

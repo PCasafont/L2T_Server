@@ -19,12 +19,11 @@ import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.templates.chars.NpcTemplate;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 import java.lang.reflect.Constructor;
-import java.util.logging.Level;
 
 public class MonsterRace {
 	private static Logger log = LoggerFactory.getLogger(MonsterRace.class.getName());

@@ -24,9 +24,9 @@ import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.ExAirShipTeleportList;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.chars.CreatureTemplate;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -34,7 +34,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
 
 public class AirShipManager {
 	private static Logger log = LoggerFactory.getLogger(AirShipManager.class.getName());

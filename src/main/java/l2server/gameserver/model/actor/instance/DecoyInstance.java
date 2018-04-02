@@ -22,8 +22,8 @@ import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.model.Item;
 import l2server.gameserver.model.Skill;
-import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Attackable;
+import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.knownlist.DecoyKnownList;
 import l2server.gameserver.model.actor.stat.DecoyStat;
 import l2server.gameserver.network.serverpackets.CharInfo;
@@ -38,7 +38,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.Future;
-import java.util.logging.Level;
 
 public class DecoyInstance extends Attackable {
 	private static Logger log = LoggerFactory.getLogger(DecoyInstance.class.getName());

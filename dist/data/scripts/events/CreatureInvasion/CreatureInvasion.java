@@ -31,11 +31,11 @@ import l2server.gameserver.model.quest.QuestTimer;
 import l2server.gameserver.network.serverpackets.NpcSay;
 import l2server.gameserver.templates.item.WeaponTemplate;
 import l2server.gameserver.util.Util;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.Rnd;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.ArrayList;

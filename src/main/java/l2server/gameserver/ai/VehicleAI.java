@@ -15,8 +15,8 @@
 
 package l2server.gameserver.ai;
 
-import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.Skill;
+import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.Creature;
 import l2server.gameserver.model.actor.Vehicle;
 

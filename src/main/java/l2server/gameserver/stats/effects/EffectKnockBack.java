@@ -29,9 +29,9 @@ import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.VisualEffect;
 import l2server.gameserver.templates.skills.AbnormalType;
 import l2server.gameserver.templates.skills.EffectTemplate;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
 
 /**
  * @author Pere

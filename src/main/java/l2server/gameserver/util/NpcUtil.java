@@ -19,11 +19,9 @@ import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.templates.chars.NpcTemplate;
+import l2server.util.Rnd;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.Rnd;
-
-import java.util.logging.Level;
 
 public class NpcUtil {
 	private static Logger log = LoggerFactory.getLogger(NpcUtil.class.getName());

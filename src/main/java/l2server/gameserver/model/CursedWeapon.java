@@ -29,16 +29,15 @@ import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.item.ItemTemplate;
 import l2server.gameserver.util.Broadcast;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import l2server.util.Point3D;
 import l2server.util.Rnd;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
 
 public class CursedWeapon {
 	private static Logger log = LoggerFactory.getLogger(CursedWeapon.class.getName());

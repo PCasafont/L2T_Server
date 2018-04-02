@@ -4,9 +4,9 @@ import gov.nasa.worldwind.formats.dds.DDSConverter;
 import l2server.Config;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.network.serverpackets.PledgeCrest;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.io.File;
 import java.util.HashMap;

@@ -26,16 +26,15 @@ import l2server.gameserver.model.L2ClanMember;
 import l2server.gameserver.model.WorldObject;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.entity.Castle;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 public class CastleManager implements InstanceListManager {
 	private static Logger log = LoggerFactory.getLogger(CastleManager.class.getName());

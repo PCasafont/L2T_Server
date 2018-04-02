@@ -15,13 +15,15 @@
 
 package quests.Q692_HowtoOpposeEvil;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.gameserver.model.actor.Npc;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.quest.QuestState;
 import l2server.gameserver.model.quest.State;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Gigiikun

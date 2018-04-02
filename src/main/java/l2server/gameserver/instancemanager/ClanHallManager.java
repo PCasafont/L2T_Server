@@ -21,16 +21,15 @@ import l2server.gameserver.model.L2Clan;
 import l2server.gameserver.model.entity.Auction;
 import l2server.gameserver.model.entity.ClanHall;
 import l2server.gameserver.model.zone.type.ClanHallZone;
+import l2server.util.loader.annotations.Load;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
 
 /**
  * @author Steuf

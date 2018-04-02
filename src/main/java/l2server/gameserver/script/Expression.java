@@ -20,7 +20,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.script.ScriptContext;
-import java.util.logging.Level;
 
 public class Expression {
 	private static Logger log = LoggerFactory.getLogger(Expression.class.getName());
