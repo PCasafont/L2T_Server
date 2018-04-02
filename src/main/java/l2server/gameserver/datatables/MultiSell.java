@@ -176,7 +176,7 @@ public class MultiSell {
 		}
 	}
 
-	@Load
+	@Load(dependencies = ItemTable.class)
 	@Reload("multisell")
 	void load() {
 		entries.clear();

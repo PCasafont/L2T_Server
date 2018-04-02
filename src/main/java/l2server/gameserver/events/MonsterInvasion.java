@@ -4,6 +4,7 @@ import l2server.gameserver.Announcements;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.datatables.NpcTable;
+import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2Spawn;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2ArmyMonsterInstance;
@@ -11,6 +12,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.util.Rnd;
+import l2server.util.loader.annotations.Load;
 
 import java.util.Calendar;
 
@@ -310,6 +312,7 @@ public class MonsterInvasion {
 		return -1;//eventTown;
 	}
 
+	@Load(dependencies = SpawnTable.class)
 	public void scheduleEventStart() {
 		try {
 			Calendar currentTime = Calendar.getInstance();

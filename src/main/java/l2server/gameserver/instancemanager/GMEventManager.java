@@ -16,10 +16,7 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.Config;
-import l2server.gameserver.Announcements;
-import l2server.gameserver.GmListTable;
-import l2server.gameserver.Ranked1v1;
-import l2server.gameserver.ThreadPoolManager;
+import l2server.gameserver.*;
 import l2server.gameserver.communitybbs.Manager.CustomCommunityBoard;
 import l2server.gameserver.datatables.*;
 import l2server.gameserver.datatables.MapRegionTable.TeleportWhereType;
@@ -1783,7 +1780,7 @@ public class GMEventManager {
 		return false;
 	}
 
-	@Load
+	@Load(dependencies = {ItemTable.class, ZoneManager.class})
 	public void loadPredefinedEvents() {
 		File file = new File(Config.DATAPACK_ROOT, "data_" + Config.SERVER_NAME + "/predefinedGMEvents.xml");
 		if (!file.exists()) {

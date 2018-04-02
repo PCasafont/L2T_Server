@@ -19,6 +19,7 @@ import l2server.Config;
 import l2server.gameserver.stats.SkillHolder;
 import l2server.gameserver.templates.StatsSet;
 import l2server.gameserver.templates.skills.L2SkillType;
+import l2server.log.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +81,7 @@ public class L2Henna {
 
 				SkillHolder sk = new SkillHolder(Integer.valueOf(skInfo[0]), Integer.valueOf(skInfo[1]));
 				if (sk.getSkill().getSkillType() == L2SkillType.NOTDONE) {
-					System.out.println(sk.getSkillId() + " is not done!");
+					Log.warning(sk.getSkillId() + " is not done!");
 				}
 				skills.add(sk);
 			}

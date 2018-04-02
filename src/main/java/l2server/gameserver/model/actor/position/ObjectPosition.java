@@ -89,7 +89,6 @@ public class ObjectPosition {
 	 * <li> Restore L2PcInstance</li><BR>
 	 */
 	public final void setXYZInvisible(int x, int y, int z) {
-		assert getWorldRegion() == null;
 		if (x > L2World.MAP_MAX_X) {
 			x = L2World.MAP_MAX_X - 5000;
 		}

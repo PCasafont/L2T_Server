@@ -504,7 +504,7 @@ public class TenkaiAuctionManager {
 	@Reload("customauctions")
 	@Load(dependencies = ItemTable.class)
 	private void load() {
-		if (!Config.ENABLE_CUSTOM_AUCTIONS) {
+		if (!Config.ENABLE_CUSTOM_AUCTIONS || !Config.isServer(Config.TENKAI)) {
 			return;
 		}
 		

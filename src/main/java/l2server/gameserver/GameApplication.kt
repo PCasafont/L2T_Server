@@ -3,18 +3,15 @@ package l2server.gameserver
 import l2server.Config
 import l2server.L2DatabaseFactory
 import l2server.ServerMode
-import l2server.gameserver.Server.gameServer
-import l2server.gameserver.gui.ServerGui
 import l2server.gameserver.idfactory.IdFactory
-import l2server.gameserver.script.EngineInterface.idFactory
 import l2server.log.Log
+import l2server.util.concurrent.ThreadPool
 import l2server.util.loader.Loader
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import java.io.File
 import java.io.FileInputStream
 import java.util.logging.LogManager
-import javax.swing.UIManager
 
 @SpringBootApplication
 class GameApplication
@@ -37,6 +34,8 @@ fun main(args: Array<String>) {
 
     // Initialize config
     Config.load()
+
+    ThreadPool.initThreadPools(GameThreadPools())
 
     L2DatabaseFactory.getInstance()
 

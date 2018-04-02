@@ -52,7 +52,7 @@ public class DoorTable {
 	}
 
 	@Reload("doors")
-	@Load(dependencies = L2World.class)
+	@Load(dependencies = {L2World.class, MapRegionTable.class})
 	public void parseData() {
 		doors.clear();
 		regions.clear();

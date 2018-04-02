@@ -15,9 +15,9 @@
 
 package l2server.gameserver.instancemanager;
 
-import java.util.HashMap; import java.util.Map;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
+import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.model.itemauction.ItemAuctionInstance;
 import l2server.log.Log;
 import l2server.util.loader.annotations.Load;
@@ -29,6 +29,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 
@@ -46,7 +48,7 @@ public final class ItemAuctionManager {
 	private ItemAuctionManager() {
 	}
 	
-	@Load
+	@Load(dependencies = ItemTable.class)
 	public void load() {
 		if (!Config.ALT_ITEM_AUCTION_ENABLED || Config.IS_CLASSIC) {
 			Log.info("ItemAuctionManager: Disabled by config.");

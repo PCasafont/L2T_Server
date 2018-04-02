@@ -25,7 +25,6 @@ import l2server.util.loader.annotations.Load
 import l2server.util.loader.annotations.Reload
 import java.io.IOException
 import java.lang.reflect.InvocationTargetException
-import java.lang.reflect.Method
 import java.lang.reflect.Modifier
 import java.nio.file.Files
 import java.nio.file.Path
@@ -46,14 +45,14 @@ object Loader {
 
 	fun initialize(prefix: String) {
 		try {
-            val loadMethods = ClassPathUtil.getAllMethodsAnnotatedWith(prefix, Load::class.java).associateBy { it.declaringClass }
-			for (loadable in loadMethods) {
-                val loadMethod = loadable.value
+            val loadMethods = ClassPathUtil.getAllMethodsAnnotatedWith(prefix, Load::class.java)
+            val loadMethodsByClass = loadMethods.filter { it.getAnnotation(Load::class.java).main }.associateBy { it.declaringClass }
+            for (loadMethod in loadMethods.shuffled()) {
 				val loadTreeNode = TreeNode(LoadHolder(getInstance(loadMethod.declaringClass), loadMethod))
 				val loadAnnotation = loadMethod.getAnnotation(Load::class.java)
 				for (dependency in loadAnnotation.dependencies) {
 						try {
-                            val dependencyLoader = loadMethods[dependency.java]
+                            val dependencyLoader = loadMethodsByClass[dependency.java]
                                     ?: throw RuntimeException("Loader not found for class ${dependency.simpleName}")
 							val dependencyLoadHolder = LoadHolder(getInstance(dependency.java), dependencyLoader)
 
@@ -212,6 +211,7 @@ object Loader {
 		return reloads
 	}
 
+    @Suppress("UNCHECKED_CAST")
     private fun <T> getInstance(clazz: Class<T>): T {
         val instanceGetterMethod = clazz.declaredMethods.firstOrNull { it.parameterCount == 0 && it.name == "getInstance" }
         if (instanceGetterMethod != null) {

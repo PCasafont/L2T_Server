@@ -12,6 +12,7 @@ import l2server.gameserver.model.entity.Message;
 import l2server.gameserver.model.itemcontainer.Mail;
 import l2server.gameserver.network.serverpackets.CreatureSay;
 import l2server.log.Log;
+import l2server.util.loader.annotations.Load;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -244,6 +245,7 @@ public class DamageManager {
 		}
 	}
 
+	@Load
 	private void load() {
 		Log.info("Damage Manager: Loading DMG Ranking information..!");
 		Connection con = null;
@@ -271,7 +273,6 @@ public class DamageManager {
 	}
 
 	private DamageManager() {
-		load();
 	}
 
 	public static DamageManager getInstance() {

@@ -16,7 +16,6 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.Config;
-import l2server.L2DatabaseFactory;
 import l2server.gameserver.model.L2Object;
 import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.L2WorldRegion;
@@ -36,9 +35,6 @@ import l2server.util.xml.XmlNode;
 
 import java.io.File;
 import java.lang.reflect.Constructor;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.*;
 import java.util.logging.Level;
 
@@ -93,8 +89,6 @@ public class ZoneManager {
 	@Load(dependencies = {ClanHallManager.class, GrandBossManager.class, L2World.class})
 	public void load() {
 		Log.info("Loading zones...");
-		Connection con = null;
-		PreparedStatement statement = null;
 		classZones.clear();
 		
 		// Get the world regions
@@ -102,10 +96,6 @@ public class ZoneManager {
 		
 		// Load the zone xml
 		try {
-			// Get a sql connection here
-			con = L2DatabaseFactory.getInstance().getConnection();
-			statement = con.prepareStatement("SELECT x,y FROM zone_vertices WHERE id=? ORDER BY 'order' ASC ");
-			
 			File dir = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "zones");
 			if (!dir.exists()) {
 				Log.config("Dir " + dir.getAbsolutePath() + " does not exist");
@@ -205,24 +195,6 @@ public class ZoneManager {
 										point[0] = cd.getInt("X");
 										point[1] = cd.getInt("Y");
 										rs.add(point);
-									}
-								}
-								
-								// does not try to load dynamic zoneId from sql
-								if (rs.size() == 0 && zoneId < 300000) {
-									// loading from SQL
-									try {
-										statement.setInt(1, zoneId);
-										ResultSet rset = statement.executeQuery();
-										while (rset.next()) {
-											point = new int[2];
-											point[0] = rset.getInt("x");
-											point[1] = rset.getInt("y");
-											rs.add(point);
-										}
-										rset.close();
-									} finally {
-										statement.clearParameters();
 									}
 								}
 								
@@ -352,8 +324,6 @@ public class ZoneManager {
 		} catch (Exception e) {
 			Log.log(Level.SEVERE, "Error while loading zones.", e);
 			return;
-		} finally {
-			L2DatabaseFactory.close(con);
 		}
 		
 		Log.info("Zone: loaded " + classZones.size() + " zone classes and " + getSize() + " zones.");

@@ -17,6 +17,7 @@ package l2server.gameserver.scripting
 
 import com.l2jserver.script.jython.JythonScriptEngine
 import l2server.Config
+import l2server.gameserver.datatables.DoorTable
 import l2server.gameserver.datatables.SpawnTable
 import l2server.gameserver.instancemanager.QuestManager
 import l2server.gameserver.instancemanager.TransformationManager
@@ -81,7 +82,7 @@ object L2ScriptEngineManager {
      */
     private val PURGE_ERROR_LOG = true
 
-    @Load(dependencies = [SpawnTable::class])
+    @Load(dependencies = [SpawnTable::class, DoorTable::class])
     fun initialize() {
         val scriptEngineManager = ScriptEngineManager()
         val factories = scriptEngineManager.engineFactories

@@ -338,10 +338,6 @@ public class AdminTest implements IAdminCommandHandler {
 			} else if (secondaryCommand.equals("FixAuction")) {
 				CustomAuctionManager.getInstance().tryToBid(activeChar, 268929159, 1, "Adena");
 				activeChar.sendMessage("BLA");
-			} else if (secondaryCommand.equals("ReloadAuctions")) {
-				CustomAuctionManager.getInstance().load(true);
-
-				activeChar.sendMessage("Auctions have been reloaded.");
 			} else if (secondaryCommand.equals("SetObserver")) {
 				if (activeChar.getTarget() instanceof L2PcInstance) {
 					final L2PcInstance player = (L2PcInstance) activeChar.getTarget();

@@ -7,4 +7,4 @@ import kotlin.reflect.KClass
  */
 @Retention(AnnotationRetention.RUNTIME)
 @Target(AnnotationTarget.FUNCTION)
-annotation class Load(val dependencies: Array<KClass<*>> = [])
+annotation class Load(val main: Boolean = true, val dependencies: Array<KClass<*>> = [])

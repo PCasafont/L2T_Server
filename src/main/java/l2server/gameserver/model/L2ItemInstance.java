@@ -543,7 +543,6 @@ public final class L2ItemInstance extends L2Object implements ItemInstanceInfo {
 	 */
 	@Override
 	public int getLocationSlot() {
-		assert loc == ItemLocation.PAPERDOLL || loc == ItemLocation.PET_EQUIP || loc == ItemLocation.INVENTORY || loc == ItemLocation.MAIL;
 		return locData;
 	}
 	

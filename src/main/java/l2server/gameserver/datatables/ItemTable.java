@@ -144,7 +144,7 @@ public class ItemTable {
 	
 	@Reload("items")
 	@Load
-	private void load() {
+	public void load() {
 		int highest = 0;
 		armors.clear();
 		etcItems.clear();
@@ -215,7 +215,7 @@ public class ItemTable {
 	 */
 	private void buildFastLookupTable(int size) {
 		// Create a FastLookUp Table called allTemplates of size : value of the highest item ID
-		Log.info("Highest item id used:" + size);
+		Log.info("Highest item id used: " + size);
 		allTemplates = new L2Item[size + 1];
 		
 		// Insert armor item in Fast Look Up Table
