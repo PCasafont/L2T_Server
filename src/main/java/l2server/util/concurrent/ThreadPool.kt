@@ -88,7 +88,8 @@ object ThreadPool {
     @Throws(Exception::class)
     fun initThreadPools(initializer: IThreadPoolInitializer) {
         if (::scheduledThreadPoolExecutor.isInitialized || ::threadPoolExecutor.isInitialized) {
-            throw Exception("The thread pool has been already initialized!")
+			return
+			//throw Exception("The thread pool has been already initialized!")
         }
 
         scheduledThreadPoolExecutor = ScheduledThreadPoolExecutor(initializer.scheduledThreadPoolSize, PoolThreadFactory("L2-SP-", Thread.NORM_PRIORITY))
