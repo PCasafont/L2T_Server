@@ -100,27 +100,23 @@ public class ThreadPoolManager {
 	private ThreadPoolManager() {
 		effectsScheduledThreadPool =
 				new ScheduledThreadPoolExecutor(Config.THREAD_P_EFFECTS, new PriorityThreadFactory("EffectsSTPool", Thread.NORM_PRIORITY));
-		generalScheduledThreadPool =
-				new ScheduledThreadPoolExecutor(Config.THREAD_P_GENERAL, new PriorityThreadFactory("GeneralSTPool", Thread.NORM_PRIORITY));
+		generalScheduledThreadPool = new ScheduledThreadPoolExecutor(Config.THREAD_P_GENERAL, new PriorityThreadFactory("gn", Thread.NORM_PRIORITY));
 		ioPacketsThreadPool = new ThreadPoolExecutor(Config.IO_PACKET_THREAD_CORE_SIZE,
 				Integer.MAX_VALUE,
 				5L,
 				TimeUnit.SECONDS,
-				new LinkedBlockingQueue<>(),
-				new PriorityThreadFactory("I/O Packet Pool", Thread.NORM_PRIORITY + 1));
+				new LinkedBlockingQueue<>(), new PriorityThreadFactory("io", Thread.NORM_PRIORITY + 1));
 		generalPacketsThreadPool = new ThreadPoolExecutor(Config.GENERAL_PACKET_THREAD_CORE_SIZE,
 				Config.GENERAL_PACKET_THREAD_CORE_SIZE + 2,
 				15L,
 				TimeUnit.SECONDS,
-				new LinkedBlockingQueue<>(),
-				new PriorityThreadFactory("Normal Packet Pool", Thread.NORM_PRIORITY + 1));
+				new LinkedBlockingQueue<>(), new PriorityThreadFactory("pp", Thread.NORM_PRIORITY + 1));
 		generalThreadPool = new ThreadPoolExecutor(Config.GENERAL_THREAD_CORE_SIZE,
 				Config.GENERAL_THREAD_CORE_SIZE + 2,
 				5L,
 				TimeUnit.SECONDS,
-				new LinkedBlockingQueue<>(),
-				new PriorityThreadFactory("General Pool", Thread.NORM_PRIORITY));
-		aiScheduledThreadPool = new ScheduledThreadPoolExecutor(Config.AI_MAX_THREAD, new PriorityThreadFactory("AISTPool", Thread.NORM_PRIORITY));
+				new LinkedBlockingQueue<>(), new PriorityThreadFactory("gp", Thread.NORM_PRIORITY));
+		aiScheduledThreadPool = new ScheduledThreadPoolExecutor(Config.AI_MAX_THREAD, new PriorityThreadFactory("ai", Thread.NORM_PRIORITY));
 		
 		scheduleGeneralAtFixedRate(new PurgeTask(), 10 * 60 * 1000L, 5 * 60 * 1000L);
 	}

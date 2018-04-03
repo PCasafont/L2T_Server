@@ -19,6 +19,7 @@ import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.GameApplication;
 import l2server.gameserver.datatables.ItemTable;
+import l2server.gameserver.model.World;
 import l2server.gameserver.model.itemauction.ItemAuctionInstance;
 import l2server.util.loader.annotations.Load;
 import l2server.util.xml.XmlDocument;
@@ -51,7 +52,7 @@ public final class ItemAuctionManager {
 	private ItemAuctionManager() {
 	}
 	
-	@Load(dependencies = ItemTable.class)
+	@Load(dependencies = {ItemTable.class, World.class})
 	public void load() {
 		if (!Config.ALT_ITEM_AUCTION_ENABLED || Config.IS_CLASSIC) {
 			log.info("ItemAuctionManager: Disabled by config.");

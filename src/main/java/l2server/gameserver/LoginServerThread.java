@@ -97,7 +97,7 @@ public class LoginServerThread extends Thread {
 	private String[] hosts;
 	
 	private LoginServerThread() {
-		super("LoginServerThread");
+		super("lgnt");
 		port = Config.GAME_SERVER_LOGIN_PORT;
 		gamePort = Config.PORT_GAME;
 		hostname = Config.GAME_SERVER_LOGIN_HOST;

@@ -38,8 +38,7 @@ public class L2DatabaseFactory {
 	// =========================================================
 	// Data Field
 	private ProviderType providerType;
-	private BoneCP gameDatabase;
-	private BoneCP webDatabase;
+	private BoneCP database;
 
 	private final int PARTITION_COUNT = 4;
 
@@ -78,11 +77,11 @@ public class L2DatabaseFactory {
 			 */
 			//config.setCloseConnectionWatch(true);
 			//config.setCloseConnectionWatchTimeout(300000);
-
-			gameDatabase = new BoneCP(config);
+			
+			database = new BoneCP(config);
 
 			// Test the connection
-			gameDatabase.getConnection().close();
+			database.getConnection().close();
 
 			if (Config.DEBUG) {
 				log.debug("Database Connection Working");
@@ -117,27 +116,19 @@ public class L2DatabaseFactory {
 	}
 
 	public void shutdown() {
-		log.info("During this session the connection pool initialized " + gameDatabase.getTotalCreatedConnections() + " connections.");
-		if (gameDatabase.getTotalLeased() > 0) {
-			log.info(gameDatabase.getTotalLeased() + " of them are still in use by the application at this moment.");
+		log.info("During this session the connection pool initialized " + database.getTotalCreatedConnections() + " connections.");
+		if (database.getTotalLeased() > 0) {
+			log.info(database.getTotalLeased() + " of them are still in use by the application at this moment.");
 		}
 		log.info("Shutting down pool...");
 
 		try {
-			gameDatabase.close();
+			database.close();
 		} catch (Exception e) {
 			log.info("", e);
 		}
-
-		gameDatabase = null;
-
-		try {
-			webDatabase.close();
-		} catch (Exception e) {
-			log.info("", e);
-		}
-
-		webDatabase = null;
+		
+		database = null;
 	}
 
 	public final String safetyString(String... whatToCheck) {
@@ -184,22 +175,9 @@ public class L2DatabaseFactory {
 		Connection con = null;
 		while (con == null) {
 			try {
-				con = gameDatabase.getConnection();
+				con = database.getConnection();
 			} catch (SQLException e) {
 				log.warn("L2DatabaseFactory: getConnection() failed for GameDatabase, trying again " + e.getMessage(), e);
-			}
-		}
-
-		return con;
-	}
-
-	public Connection getWebConnection() {
-		Connection con = null;
-		while (con == null) {
-			try {
-				con = webDatabase.getConnection();
-			} catch (SQLException e) {
-				log.warn("L2DatabaseFactory: getConnection() failed for WebDatabase, trying again " + e.getMessage(), e);
 			}
 		}
 
@@ -219,11 +197,11 @@ public class L2DatabaseFactory {
 	}
 
 	public int getBusyConnectionCount() {
-		return gameDatabase.getTotalLeased();
+		return database.getTotalLeased();
 	}
 
 	public int getIdleConnectionCount() {
-		return gameDatabase.getTotalFree();
+		return database.getTotalFree();
 	}
 
 	public final ProviderType getProviderType() {

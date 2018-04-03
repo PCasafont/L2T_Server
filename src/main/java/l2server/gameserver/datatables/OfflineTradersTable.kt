@@ -300,7 +300,7 @@ object OfflineTradersTable {
             log.info("Asynch restoring of " + nTraders + " offline traders took " + (finishTime - startTime) / 1000000 + " ms")
         }
         restoreThread.priority = Thread.MIN_PRIORITY
-        restoreThread.name = "restoreOfflineTraders"
+		restoreThread.name = "offt"
         restoreThread.start()
     }
 }

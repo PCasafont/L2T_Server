@@ -737,7 +737,7 @@ public class TenkaiAuctionManager {
 		return 0;
 	}
 	
-	public void addAuction(Auction auction) {
+	public synchronized void addAuction(Auction auction) {
 		auctions.put(auction.getId(), auction);
 		
 		// Stupid naive sort

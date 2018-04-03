@@ -18,6 +18,7 @@ package l2server.gameserver.instancemanager;
 import l2server.Config;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.datatables.NpcTable;
+import l2server.gameserver.datatables.SpawnTable;
 import l2server.gameserver.model.L2DropCategory;
 import l2server.gameserver.model.L2DropData;
 import l2server.gameserver.model.L2Spawn;
@@ -71,8 +72,8 @@ public class FarmZoneManager {
 
 	private FarmZoneManager() {
 	}
-
-	@Load(dependencies = NpcTable.class)
+	
+	@Load(dependencies = {SpawnTable.class})
 	private void load() {
 		if (!Config.isServer(Config.TENKAI)) {
 			return;

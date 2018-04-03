@@ -52,8 +52,6 @@ import java.util.concurrent.ScheduledFuture;
 public class FourSepulchersManager {
 	private static Logger log = LoggerFactory.getLogger(FourSepulchersManager.class.getName());
 
-
-
 	private static final String QUEST_ID = "620_FourGoblets";
 
 	private static final int ENTRANCE_PASS = 7075;
@@ -123,7 +121,7 @@ public class FourSepulchersManager {
 		return SingletonHolder.instance;
 	}
 	
-	@Load(dependencies = {SpawnTable.class, GrandBossManager.class})
+	@Load(dependencies = {SpawnTable.class, GrandBossManager.class, DoorTable.class})
 	public void init() {
 		if (Config.IS_CLASSIC) {
 			return;
