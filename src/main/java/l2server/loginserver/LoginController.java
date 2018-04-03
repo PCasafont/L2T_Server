@@ -24,7 +24,6 @@ import l2server.loginserver.network.gameserverpackets.ServerStatus;
 import l2server.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import l2server.util.Rnd;
 import l2server.util.crypt.ScrambledKeyPair;
-import l2server.util.lib.LoginLog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -51,8 +50,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class LoginController {
 	private static Logger log = LoggerFactory.getLogger(LoginController.class.getName());
-
-
+	private static Logger loginLog = LoggerFactory.getLogger("login");
 	
 	private static LoginController instance;
 	
@@ -561,21 +559,21 @@ public class LoginController {
 						statement.close();
 						
 						if (Config.LOG_LOGIN_CONTROLLER) {
-							LoginLog.add("'" + user + "' " + address.getHostAddress() + " - OK : AccountCreate", "LoginLog");
+							loginLog.info("'" + user + "' " + address.getHostAddress() + " - OK : AccountCreate", "loginLog");
 						}
 						
 						log.info("Created new account for " + user);
 						return true;
 					}
 					if (Config.LOG_LOGIN_CONTROLLER) {
-						LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : ErrCreatingACC", "LoginLog");
+						loginLog.info("'" + user + "' " + address.getHostAddress() + " - ERR : ErrCreatingACC", "loginLog");
 					}
 					
 					log.warn("Invalid username creation/use attempt: " + user);
 					return false;
 				} else {
 					if (Config.LOG_LOGIN_CONTROLLER) {
-						LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : AccountMissing", "LoginLog");
+						loginLog.info("'" + user + "' " + address.getHostAddress() + " - ERR : AccountMissing", "loginLog");
 					}
 					
 					log.warn("Account missing for user " + user);
@@ -600,7 +598,7 @@ public class LoginController {
 				// is this account banned?
 				if (access < 0) {
 					if (Config.LOG_LOGIN_CONTROLLER) {
-						LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : AccountBanned", "LoginLog");
+						loginLog.info("'" + user + "' " + address.getHostAddress() + " - ERR : AccountBanned", "loginLog");
 					}
 					
 					client.setAccessLevel(access);
@@ -619,7 +617,7 @@ public class LoginController {
 					}
 					if (!address.getHostAddress().equalsIgnoreCase(userIP)) {
 						if (Config.LOG_LOGIN_CONTROLLER) {
-							LoginLog.add("'" + user + "' " + address.getHostAddress() + "/" + userIP + " - ERR : INCORRECT IP", "LoginLog");
+							loginLog.info("'" + user + "' " + address.getHostAddress() + "/" + userIP + " - ERR : INCORRECT IP", "loginLog");
 						}
 						
 						return false;
@@ -676,7 +674,7 @@ public class LoginController {
 		
 		if (!ok) {
 			if (Config.LOG_LOGIN_CONTROLLER) {
-				LoginLog.add("'" + user + "' " + address.getHostAddress() + " - ERR : LoginFailed", "LoginLog");
+				loginLog.info("'" + user + "' " + address.getHostAddress() + " - ERR : LoginFailed", "loginLog");
 			}
 			
 			FailedLoginAttempt failedAttempt = hackProtection.get(address);
@@ -697,7 +695,7 @@ public class LoginController {
 		} else {
 			hackProtection.remove(address);
 			if (Config.LOG_LOGIN_CONTROLLER) {
-				LoginLog.add("'" + user + "' " + address.getHostAddress() + " - OK : LoginOk", "LoginLog");
+				loginLog.info("'" + user + "' " + address.getHostAddress() + " - OK : LoginOk", "loginLog");
 			}
 		}
 		
@@ -792,7 +790,7 @@ public class LoginController {
 		if (!ok) {
 			login = null;
 			if (Config.LOG_LOGIN_CONTROLLER) {
-				LoginLog.add("'" + sessionKey + "' " + address.getHostAddress() + " - ERR : LoginFailed", "LoginLog");
+				loginLog.info("'" + sessionKey + "' " + address.getHostAddress() + " - ERR : LoginFailed", "loginLog");
 			}
 			
 			FailedLoginAttempt failedAttempt = hackProtection.get(address);
@@ -813,7 +811,7 @@ public class LoginController {
 		} else {
 			hackProtection.remove(address);
 			if (Config.LOG_LOGIN_CONTROLLER) {
-				LoginLog.add("'" + sessionKey + "' " + address.getHostAddress() + " - OK : LoginOk", "LoginLog");
+				loginLog.info("'" + sessionKey + "' " + address.getHostAddress() + " - OK : LoginOk", "loginLog");
 			}
 		}
 		

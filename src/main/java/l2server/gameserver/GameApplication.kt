@@ -35,7 +35,6 @@ fun main(args: Array<String>) {
     ThreadPoolManager.getInstance()
 
     File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "crests").mkdirs()
-    File("log/game").mkdirs()
 
 	Loader.initialize(GameApplication::class.java.`package`.name)
 	Loader.run()

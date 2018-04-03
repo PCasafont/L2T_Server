@@ -31,7 +31,6 @@ import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -44,7 +43,6 @@ public class Server {
 	private final Core<L2GameClient> selectorThread;
 	private final L2GamePacketHandler gamePacketHandler;
 	private final DeadLockDetector deadDetectThread;
-	private final IdFactory idFactory;
 	public static Server gameServer;
 	public static ServerGui gui;
 	private LoginServerThread loginThread;
@@ -75,18 +73,6 @@ public class Server {
 		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		gui = new ServerGui();
 		gui.init();
-		
-		idFactory = IdFactory.getInstance();
-		
-		if (!idFactory.isInitialized()) {
-			log.error("Could not read object IDs from DB. Please Check Your Data.");
-			throw new Exception("Could not initialize the ID factory");
-		}
-		
-		ThreadPoolManager.getInstance();
-		
-		new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "crests").mkdirs();
-		new File("log/game").mkdirs();
 		
 		printSection("Geodata");
 		GeoData.getInstance();
