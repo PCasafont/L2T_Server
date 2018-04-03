@@ -92,8 +92,8 @@ object ThreadPool {
 			//throw Exception("The thread pool has been already initialized!")
         }
 
-        scheduledThreadPoolExecutor = ScheduledThreadPoolExecutor(initializer.scheduledThreadPoolSize, PoolThreadFactory("L2-SP-", Thread.NORM_PRIORITY))
-        threadPoolExecutor = ThreadPoolExecutor(initializer.threadPoolSize, initializer.threadPoolSize, 1, TimeUnit.MINUTES, LinkedBlockingQueue(), PoolThreadFactory("L2-IT-", Thread.NORM_PRIORITY))
+		scheduledThreadPoolExecutor = ScheduledThreadPoolExecutor(initializer.scheduledThreadPoolSize, PoolThreadFactory("SP-", Thread.NORM_PRIORITY))
+		threadPoolExecutor = ThreadPoolExecutor(initializer.threadPoolSize, initializer.threadPoolSize, 1, TimeUnit.MINUTES, LinkedBlockingQueue(), PoolThreadFactory("IT-", Thread.NORM_PRIORITY))
 
         threadPools.forEach { tp ->
             tp.rejectedExecutionHandler = RejectedExecutionHandlerImpl()

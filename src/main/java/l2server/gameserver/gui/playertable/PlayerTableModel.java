@@ -67,7 +67,7 @@ class PlayerTableModel extends AbstractTableModel {
 			}
 		}
 		
-		ServerGui.Frame.setTitle(
+		ServerGui.getMainFrame().setTitle(
 				"L2 Server [" + Config.SERVER_NAME + "] | Players online: " + playerCount + " | Offline shops: " + shopCount + " | Total: " +
 						(playerCount + shopCount));
 		if (players.length == players.length && !(players.length > 0 && players[0] == players[0])) {

@@ -7,7 +7,8 @@ import java.awt.*;
  * @author Pere
  */
 public class ServerGui {
-	public static JFrame Frame;
+	
+	private static JFrame frame;
 
 	//private JMenuBar menuBar = new JMenuBar();
 
@@ -23,7 +24,7 @@ public class ServerGui {
 	private static AdminTab adminTab;
 
 	public void init() {
-		Frame = new JFrame("L2 Server");
+		frame = new JFrame("L2 Server");
 
 		//Menu Bar Items
 		//File Menu
@@ -46,23 +47,23 @@ public class ServerGui {
 		// Console Tab
 		consoleTab = new ConsoleTab(true);
 		adminTab = new AdminTab();
-
-		Frame.setLayout(new BorderLayout());
-		Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		frame.setLayout(new BorderLayout());
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		tabPane.add("Console", consoleTab);
 		tabPane.add("Admin", adminTab);
 
 		//build the frame
-		Frame.add(tabPane, BorderLayout.CENTER);
+		frame.add(tabPane, BorderLayout.CENTER);
 
 		//add the window listeners
 		addListeners();
-
-		Frame.setLocation(50, 50);
-		Frame.setMinimumSize(new Dimension(930, 700));
+		
+		frame.setLocation(50, 50);
+		frame.setMinimumSize(new Dimension(930, 700));
 		//frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		Frame.setVisible(true);
+		frame.setVisible(true);
 	}
 
 	public JTabbedPane getTabPane() {
@@ -92,16 +93,16 @@ public class ServerGui {
 			}
 		}
 	}*/
-
-	public JFrame getMainFrame() {
-		return Frame;
+	
+	public static JFrame getMainFrame() {
+		return frame;
 	}
-
-	public ConsoleTab getConsoleTab() {
+	
+	public static ConsoleTab getConsoleTab() {
 		return consoleTab;
 	}
-
-	public AdminTab getAdminTab() {
+	
+	public static AdminTab getAdminTab() {
 		return adminTab;
 	}
 }
