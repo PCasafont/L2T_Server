@@ -1,10 +1,69 @@
 
 repositories {
 	mavenCentral()
+	mavenLocal()
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-spring'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'distribution'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+compileKotlin {
+	kotlinOptions {
+		jvmTarget = "1.8"
+	}
+}
+compileTestKotlin {
+	kotlinOptions {
+		jvmTarget = "1.8"
+	}
+}
+
+springBoot {
+	mainClassName = "l2server.gameserver.GameApplicationKt"
 }
 
 dependencies {
 	compile project(':common')
+
+	// Good old libs
+	compile('com.jolbox:bonecp:0.7.1.RELEASE')
+	compile('bsh:bsh:2.0b4')
+	compile('org.eclipse.jdt.core.compiler:ecj:4.3.1')
+	compile('com.google.guava:guava:21.0')
+	compile('org.hamcrest:hamcrest-core:1.3')
+	compile('org.python:jython:2.2.1')
+	compile('net.sf.trove4j:trove4j:2.1.0')
+
+	// MySQL
+	runtime('mysql:mysql-connector-java:5.1.14')
+
+	// Kotlin
+	compile('com.fasterxml.jackson.module:jackson-module-kotlin')
+	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
+	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+
+	// Spring
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-security')
+
+	// JUnit
+	testCompile("junit:junit:4.12")
+
+	// Spring test
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.springframework.security:spring-security-test')
+}
+
+test {
+	workingDir = new File('../dist')
 }
 
 task loginJar(type: Jar, dependsOn: classes) {
