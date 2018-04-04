@@ -16,7 +16,7 @@
 package ai.individual;
 
 import ai.group_template.L2AttackableAIScript;
-import l2server.L2DatabaseFactory;
+import l2server.DatabasePool;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.SpawnTable;
@@ -81,7 +81,7 @@ public class SuperMewCatZ extends L2AttackableAIScript {
 			Connection con = null;
 
 			try {
-				con = L2DatabaseFactory.getInstance().getConnection();
+				con = DatabasePool.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement("SELECT * FROM newbiehelper_data WHERE account_name = ? OR hardwareId = ?");
 				statement.setString(1, player.getAccountName());
 				statement.setString(2, player.getHWID());
@@ -96,7 +96,7 @@ public class SuperMewCatZ extends L2AttackableAIScript {
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
-				L2DatabaseFactory.close(con);
+				DatabasePool.close(con);
 			}
 
 			NpcInstance cat = Util.getNpcCloseTo(1603, player);

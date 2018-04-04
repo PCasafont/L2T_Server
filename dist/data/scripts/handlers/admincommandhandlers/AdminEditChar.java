@@ -16,7 +16,7 @@
 package handlers.admincommandhandlers;
 
 import l2server.Config;
-import l2server.L2DatabaseFactory;
+import l2server.DatabasePool;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.CharNameTable;
 import l2server.gameserver.datatables.PlayerClassTable;
@@ -450,7 +450,7 @@ public class AdminEditChar implements IAdminCommandHandler {
 				player = World.getInstance().getPlayer(playerName);
 				
 				if (player == null) {
-					Connection con = L2DatabaseFactory.getInstance().getConnection();
+					Connection con = DatabasePool.getInstance().getConnection();
 					PreparedStatement ps = con.prepareStatement(
 							"UPDATE characters SET " + (changeCreateExpiryTime ? "clan_create_expiry_time" : "clan_join_expiry_time") +
 									" WHERE char_name=? LIMIT 1");

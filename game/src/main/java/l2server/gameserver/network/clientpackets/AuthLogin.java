@@ -1,0 +1,162 @@
+/*
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option) any later
+ * version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+package l2server.gameserver.network.clientpackets;
+
+import l2server.Config;
+import l2server.DatabasePool;
+import l2server.gameserver.LoginServerThread;
+import l2server.gameserver.LoginServerThread.SessionKey;
+import l2server.gameserver.network.L2GameClient;
+import l2server.gameserver.network.serverpackets.ExLoginVitalityEffectInfo;
+import l2server.gameserver.network.serverpackets.L2GameServerPacket;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+/**
+ * This class ...
+ *
+ * @version $Revision: 1.9.2.3.2.4 $ $Date: 2005/03/27 15:29:30 $
+ */
+public final class AuthLogin extends L2GameClientPacket {
+	// loginName + keys must match what the loginserver used.
+	private String loginName;
+	private int playKey1;
+	private int playKey2;
+	private int loginKey1;
+	private int loginKey2;
+
+	@Override
+	protected void readImpl() {
+		loginName = readS().toLowerCase();
+		playKey2 = readD();
+		playKey1 = readD();
+		loginKey1 = readD();
+		loginKey2 = readD();
+	}
+
+	@Override
+	protected void runImpl() {
+		final L2GameClient client = getClient();
+		if (loginName.length() == 0 || !client.isProtocolOk()) {
+			client.close((L2GameServerPacket) null);
+			return;
+		}
+		SessionKey key = new SessionKey(loginKey1, loginKey2, playKey1, playKey2);
+		if (Config.DEBUG) {
+			log.info("user:" + loginName);
+			log.info("key:" + key);
+		}
+
+		// avoid potential exploits
+		if (client.getAccountName() == null) {
+			if (!loginName.equalsIgnoreCase("IdEmpty")) {
+				client.setAccountName(loginName);
+				LoginServerThread.getInstance().addGameServerLogin(loginName, client);
+			}
+			LoginServerThread.getInstance().addWaitingClientAndSendRequest(loginName, client, key);
+		}
+		//sendVitalityInfo(client);
+	}
+
+	@SuppressWarnings("unused")
+	private void sendVitalityInfo(L2GameClient client) {
+		Connection con = null;
+		int vitalityPoints = Config.STARTING_VITALITY_POINTS;
+		int vitalityItemsUsed = 0;
+		/*
+         *
+			Connection con = null;
+			try
+			{
+				con = DatabasePool.getInstance().getConnection();
+				PreparedStatement statement = con.prepareStatement("SELECT value FROM account_gsdata WHERE account_name=? AND var=?");
+				statement.setString(1, getAccountName());
+				statement.setString(2, "vit_items_used");
+				ResultSet rs = statement.executeQuery();
+				if (rs.next())
+				{
+					vitalityItemsUsed = Integer.parseInt(rs.getString("value"));
+				}
+				else
+				{
+					statement.close();
+					statement = con.prepareStatement("INSERT INTO account_gsdata(account_name,var,value) VALUES(?,?,?)");
+					statement.setString(1, getAccountName());
+					statement.setString(2, "vit_items_used");
+					statement.setString(3, String.valueOf(0));
+					statement.execute();
+				}
+				rs.close();
+				statement.close();
+			}
+			catch (Exception e)
+			{
+				Logozo.warn( "Could not load player vitality items used count: " + e.getMessage(), e);
+			}
+			finally
+			{
+				DatabasePool.close(con);
+			}
+
+		 */
+		try {
+			con = DatabasePool.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("SELECT value FROM account_gsdata WHERE account_name=? AND var=?");
+			statement.setString(1, client.getAccountName());
+			statement.setString(2, "vitality");
+			ResultSet rset = statement.executeQuery();
+
+			if (rset.next()) {
+				vitalityPoints = rset.getInt("value");
+			} else {
+				statement.close();
+				statement = con.prepareStatement("INSERT INTO account_gsdata(account_name,var,value) VALUES(?,?,?)");
+				statement.setString(1, client.getAccountName());
+				statement.setString(2, "vitality");
+				statement.setInt(3, Config.STARTING_VITALITY_POINTS);
+				statement.execute();
+			}
+
+			rset.close();
+			statement.close();
+
+			statement = con.prepareStatement("SELECT value FROM account_gsdata WHERE account_name=? AND var=?");
+			statement.setString(1, client.getAccountName());
+			statement.setString(2, "vit_items_used");
+			rset = statement.executeQuery();
+			if (rset.next()) {
+				vitalityItemsUsed = rset.getInt("value");
+			} else {
+				statement.close();
+				statement = con.prepareStatement("INSERT INTO account_gsdata(account_name,var,value) VALUES(?,?,?)");
+				statement.setString(1, client.getAccountName());
+				statement.setString(2, "vit_items_used");
+				statement.setInt(3, 0);
+				statement.execute();
+			}
+
+			rset.close();
+			statement.close();
+		} catch (Exception e) {
+			log.warn("Could not restore account vitality points: " + e.getMessage(), e);
+		} finally {
+			DatabasePool.close(con);
+		}
+		client.sendPacket(new ExLoginVitalityEffectInfo(vitalityPoints, vitalityItemsUsed));
+	}
+}

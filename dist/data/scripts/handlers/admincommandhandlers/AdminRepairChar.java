@@ -15,7 +15,7 @@
 
 package handlers.admincommandhandlers;
 
-import l2server.L2DatabaseFactory;
+import l2server.DatabasePool;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.actor.instance.Player;
 
@@ -51,7 +51,7 @@ public class AdminRepairChar implements IAdminCommandHandler {
 		String cmd = "UPDATE characters SET x=-114462, y=253179, z=-1544 WHERE char_name=?";
 		java.sql.Connection connection = null;
 		try {
-			connection = L2DatabaseFactory.getInstance().getConnection();
+			connection = DatabasePool.getInstance().getConnection();
 			PreparedStatement statement = connection.prepareStatement(cmd);
 			statement.setString(1, parts[1]);
 			statement.execute();
@@ -73,13 +73,13 @@ public class AdminRepairChar implements IAdminCommandHandler {
 				return;
 			}
 
-			//connection = L2DatabaseFactory.getInstance().getConnection();
+			//connection = DatabasePool.getInstance().getConnection();
 			statement = connection.prepareStatement("DELETE FROM character_shortcuts WHERE charId=?");
 			statement.setInt(1, objId);
 			statement.execute();
 			statement.close();
 
-			//connection = L2DatabaseFactory.getInstance().getConnection();
+			//connection = DatabasePool.getInstance().getConnection();
 			statement = connection.prepareStatement("UPDATE items SET loc=\"INVENTORY\" WHERE owner_id=?");
 			statement.setInt(1, objId);
 			statement.execute();

@@ -16,7 +16,7 @@
 package handlers.voicedcommandhandlers;
 
 import l2server.Config;
-import l2server.L2DatabaseFactory;
+import l2server.DatabasePool;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.ai.CtrlIntention;
@@ -160,7 +160,7 @@ public class Wedding implements IVoicedCommandHandler {
 		int objectId;
 		java.sql.Connection con = null;
 		try {
-			con = L2DatabaseFactory.getInstance().getConnection();
+			con = DatabasePool.getInstance().getConnection();
 			PreparedStatement statement;
 			statement = con.prepareStatement("SELECT friendId FROM character_friends WHERE charId=?");
 			statement.setInt(1, ptarget.getObjectId());
@@ -176,7 +176,7 @@ public class Wedding implements IVoicedCommandHandler {
 		} catch (Exception e) {
 			log.warn("could not read friend data:" + e);
 		} finally {
-			L2DatabaseFactory.close(con);
+			DatabasePool.close(con);
 		}
 
 		if (!FoundOnFriendList) {

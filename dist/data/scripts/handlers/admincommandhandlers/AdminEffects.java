@@ -16,7 +16,7 @@
 package handlers.admincommandhandlers;
 
 import l2server.Config;
-import l2server.L2DatabaseFactory;
+import l2server.DatabasePool;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.Skill;
@@ -132,7 +132,7 @@ public class AdminEffects implements IAdminCommandHandler {
 
 			Connection coni = null;
 			try {
-				coni = L2DatabaseFactory.getInstance().getConnection();
+				coni = DatabasePool.getInstance().getConnection();
 
 				PreparedStatement statement = coni.prepareStatement("UPDATE characters SET rankedPoints=? WHERE char_name=?");
 				statement.setInt(1, Points);
@@ -144,7 +144,7 @@ public class AdminEffects implements IAdminCommandHandler {
 			} catch (Exception e) {
 				log.error("Failed updating Ranked Points", e);
 			} finally {
-				L2DatabaseFactory.close(coni);
+				DatabasePool.close(coni);
 			}
 		} else if (command.equals("admin_para_all")) {
 			try {

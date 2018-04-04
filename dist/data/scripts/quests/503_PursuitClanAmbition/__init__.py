@@ -1,7 +1,7 @@
 # Written by
 # questdevs Team
 
-from l2server import L2DatabaseFactory
+from l2server import DatabasePool
 from l2server.gameserver.model.quest import State
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
 from l2server.gameserver.network.serverpackets import NpcSay
@@ -55,7 +55,7 @@ DROPLIST = {
 
 def suscribe_members(st):
     clan = st.getPlayer().getClan().getClanId()
-    con = L2DatabaseFactory.getInstance().getConnection()
+    con = DatabasePool.getInstance().getConnection()
     offline = con.prepareStatement("SELECT charId FROM characters WHERE clanid=? AND online=0")
     offline.setInt(1, clan)
     rs = offline.executeQuery()
@@ -82,7 +82,7 @@ def suscribe_members(st):
 
 def offlineMemberExit(st):
     clan = st.getPlayer().getClan().getClanId()
-    con = L2DatabaseFactory.getInstance().getConnection()
+    con = DatabasePool.getInstance().getConnection()
     offline = con.prepareStatement(
         "DELETE FROM character_quests WHERE name = ? AND charId IN (SELECT charId FROM characters WHERE clanId =? AND online=0")
     offline.setString(1, qn)
@@ -110,7 +110,7 @@ def getLeaderVar(st, var):
     except:
         pass
     leaderId = st.getPlayer().getClan().getLeaderId()
-    con = L2DatabaseFactory.getInstance().getConnection()
+    con = DatabasePool.getInstance().getConnection()
     offline = con.prepareStatement("SELECT value FROM character_quests WHERE charId=? AND var=? AND name=?")
     offline.setInt(1, leaderId)
     offline.setString(2, var)
@@ -143,7 +143,7 @@ def setLeaderVar(st, var, value):
         leader.getQuestState(qn).set(var, value)
     else:
         leaderId = st.getPlayer().getClan().getLeaderId()
-        con = L2DatabaseFactory.getInstance().getConnection()
+        con = DatabasePool.getInstance().getConnection()
         offline = con.prepareStatement("UPDATE character_quests SET value=? WHERE charId=? AND var=? AND name=?")
         offline.setString(1, value)
         offline.setInt(2, leaderId)

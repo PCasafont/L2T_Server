@@ -25,7 +25,7 @@
 package handlers.admincommandhandlers;
 
 import l2server.Config;
-import l2server.L2DatabaseFactory;
+import l2server.DatabasePool;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.*;
@@ -175,7 +175,7 @@ public class AdminTest implements IAdminCommandHandler {
 				Connection con = null;
 
 				try {
-					con = L2DatabaseFactory.getInstance().getConnection();
+					con = DatabasePool.getInstance().getConnection();
 					PreparedStatement statement = con.prepareStatement(OLYMPIAD_GET_HEROES);
 					for (int classId : HERO_IDS) {
 						String characterName = "";
@@ -200,7 +200,7 @@ public class AdminTest implements IAdminCommandHandler {
 
 							Connection con2 = null;
 							try {
-								con2 = L2DatabaseFactory.getInstance().getConnection();
+								con2 = DatabasePool.getInstance().getConnection();
 								PreparedStatement statement2 = con.prepareStatement("SELECT * FROM characters WHERE char_name = ?");
 
 								statement2.setString(1, characterName);
@@ -216,11 +216,11 @@ public class AdminTest implements IAdminCommandHandler {
 							} catch (SQLException e) {
 								log.warn("ERR 1");
 							} finally {
-								L2DatabaseFactory.close(con2);
+								DatabasePool.close(con2);
 							}
 
 							try {
-								con2 = L2DatabaseFactory.getInstance().getConnection();
+								con2 = DatabasePool.getInstance().getConnection();
 								PreparedStatement statement2 = con2.prepareStatement("SELECT * FROM accounts WHERE login = ?");
 
 								statement2.setString(1, accountName);
@@ -236,7 +236,7 @@ public class AdminTest implements IAdminCommandHandler {
 							} catch (SQLException e) {
 								log.warn("ERR 2");
 							} finally {
-								L2DatabaseFactory.close(con2);
+								DatabasePool.close(con2);
 							}
 						}
 
@@ -246,7 +246,7 @@ public class AdminTest implements IAdminCommandHandler {
 				} catch (SQLException e) {
 					log.warn("Olympiad System: Couldnt load heros from DB");
 				} finally {
-					L2DatabaseFactory.close(con);
+					DatabasePool.close(con);
 				}
 			} else if (secondaryCommand.equals("DeleteIstina")) {
 				WorldObject target = activeChar.getTarget();

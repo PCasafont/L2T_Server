@@ -1,0 +1,40 @@
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile project(':common')
+}
+
+task loginJar(type: Jar, dependsOn: classes) {
+	from(sourceSets.main.output)
+	archiveName = 'l2t-login-server.jar'
+	manifest {
+		attributes(
+				'Class-Path': configurations.runtime.collect({ './lib/' + it.getName() }).join(' '),
+				'Main-Class': 'l2server.loginserver.LoginApplicationKt')
+	}
+}
+
+artifacts {
+	archives loginJar
+}
+
+distributions {
+	main {
+		contents {
+			from('dist') {
+				includeEmptyDirs(false)
+				exclude('log/')
+			}
+			into('lib') {
+				from(configurations.runtime)
+				//from('/lib')
+			}
+			from(loginJar)
+			exclude('.gitignore')
+			exclude('log/')
+		}
+	}
+}

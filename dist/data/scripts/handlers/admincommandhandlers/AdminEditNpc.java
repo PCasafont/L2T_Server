@@ -15,7 +15,7 @@
 
 package handlers.admincommandhandlers;
 
-import l2server.L2DatabaseFactory;
+import l2server.DatabasePool;
 import l2server.gameserver.TradeController;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.ItemTable;
@@ -425,7 +425,7 @@ public class AdminEditNpc implements IAdminCommandHandler {
 	private boolean storeTradeList(int itemID, long price, int tradeListID, int order) {
 		Connection con = null;
 		try {
-			con = L2DatabaseFactory.getInstance().getConnection();
+			con = DatabasePool.getInstance().getConnection();
 
 			String table = "merchant_buylists";
 
@@ -440,7 +440,7 @@ public class AdminEditNpc implements IAdminCommandHandler {
 			log.warn("Could not store trade list (" + itemID + ", " + price + ", " + tradeListID + ", " + order + "): " + e);
 			return false;
 		} finally {
-			L2DatabaseFactory.close(con);
+			DatabasePool.close(con);
 		}
 		return true;
 	}
@@ -448,7 +448,7 @@ public class AdminEditNpc implements IAdminCommandHandler {
 	private void updateTradeList(int itemID, long price, int tradeListID, int order) {
 		Connection con = null;
 		try {
-			con = L2DatabaseFactory.getInstance().getConnection();
+			con = DatabasePool.getInstance().getConnection();
 
 			PreparedStatement stmt = con.prepareStatement("UPDATE `merchant_buylists` SET `price` = ? WHERE `shop_id` = ? AND `order` = ?");
 			stmt.setLong(1, price);
@@ -458,14 +458,14 @@ public class AdminEditNpc implements IAdminCommandHandler {
 		} catch (Exception e) {
 			log.warn("Could not update trade list (" + itemID + ", " + price + ", " + tradeListID + ", " + order + "): " + e);
 		} finally {
-			L2DatabaseFactory.close(con);
+			DatabasePool.close(con);
 		}
 	}
 
 	private void deleteTradeList(int tradeListID, int order) {
 		Connection con = null;
 		try {
-			con = L2DatabaseFactory.getInstance().getConnection();
+			con = DatabasePool.getInstance().getConnection();
 
 			PreparedStatement stmt = con.prepareStatement("DELETE FROM `merchant_buylists` WHERE `shop_id` = ? AND `order` = ?");
 			stmt.setInt(1, tradeListID);
@@ -474,7 +474,7 @@ public class AdminEditNpc implements IAdminCommandHandler {
 		} catch (Exception e) {
 			log.warn("Could not delete trade list (" + tradeListID + ", " + order + "): " + e);
 		} finally {
-			L2DatabaseFactory.close(con);
+			DatabasePool.close(con);
 		}
 	}
 
@@ -482,7 +482,7 @@ public class AdminEditNpc implements IAdminCommandHandler {
 		Connection con = null;
 		int order = -1;
 		try {
-			con = L2DatabaseFactory.getInstance().getConnection();
+			con = DatabasePool.getInstance().getConnection();
 			PreparedStatement stmt =
 					con.prepareStatement("SELECT `order` FROM `merchant_buylists` WHERE `shop_id` = ? AND `item_id` = ? AND `price` = ?");
 			stmt.setInt(1, tradeListID);
@@ -499,7 +499,7 @@ public class AdminEditNpc implements IAdminCommandHandler {
 		} catch (Exception e) {
 			log.warn("Could not get order for (" + itemID + ", " + price + ", " + tradeListID + "): " + e);
 		} finally {
-			L2DatabaseFactory.close(con);
+			DatabasePool.close(con);
 		}
 		return order;
 	}

@@ -16,7 +16,7 @@
 package handlers.admincommandhandlers;
 
 import l2server.Config;
-import l2server.L2DatabaseFactory;
+import l2server.DatabasePool;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.World;
 import l2server.gameserver.model.actor.instance.Player;
@@ -78,7 +78,7 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler {
 			} else {
 				Connection con = null;
 				try {
-					con = L2DatabaseFactory.getInstance().getConnection();
+					con = DatabasePool.getInstance().getConnection();
 					PreparedStatement statement = con.prepareStatement("UPDATE characters SET accesslevel=? WHERE char_name=?");
 					statement.setInt(1, lvl);
 					statement.setString(2, name);
@@ -96,7 +96,7 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler {
 						se.printStackTrace();
 					}
 				} finally {
-					L2DatabaseFactory.close(con);
+					DatabasePool.close(con);
 				}
 			}
 		}

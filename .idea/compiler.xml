@@ -2,8 +2,14 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
+      <module name="common_main" target="1.8" />
+      <module name="common_test" target="1.8" />
+      <module name="game_main" target="1.8" />
+      <module name="game_test" target="1.8" />
       <module name="L2T_Server_main" target="1.8" />
       <module name="L2T_Server_test" target="1.8" />
+      <module name="login_main" target="1.8" />
+      <module name="login_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

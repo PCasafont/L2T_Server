@@ -1,3 +1,4 @@
+
 buildscript {
 	ext {
 		kotlinVersion = '1.2.30'
@@ -5,9 +6,6 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
-		maven {
-			url "https://plugins.gradle.org/m2/"
-		}
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -16,130 +14,72 @@ buildscript {
 	}
 }
 
-apply plugin: 'java'
-apply plugin: 'kotlin'
-apply plugin: 'kotlin-spring'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-apply plugin: 'distribution'
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'idea'
+	apply plugin: 'kotlin'
+	apply plugin: 'kotlin-spring'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+	apply plugin: 'distribution'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+	sourceCompatibility = 1.8
+	targetCompatibility = 1.8
 
-compileKotlin {
-	kotlinOptions {
-		jvmTarget = "1.8"
-	}
-}
-compileTestKotlin {
-	kotlinOptions {
-		jvmTarget = "1.8"
-	}
-}
-
-springBoot {
-	mainClassName = "l2server.gameserver.GameApplicationKt"
-}
-
-repositories {
-	mavenCentral()
-	mavenLocal()
-	flatDir {
-		dirs 'lib'
-	}
-}
-
-dependencies {
-	// Good old libs
-	compile('com.jolbox:bonecp:0.7.1.RELEASE')
-	compile('bsh:bsh:2.0b4')
-	compile('org.eclipse.jdt.core.compiler:ecj:4.3.1')
-	compile('com.google.guava:guava:21.0')
-	compile('org.hamcrest:hamcrest-core:1.3')
-	compile('org.python:jython:2.2.1')
-	compile('net.sf.trove4j:trove4j:2.1.0')
-
-	// Local files
-	compile(name: 'worldwind')
-	compile(name: 'bsh-engine')
-	compile(name: 'java-engine')
-	compile(name: 'jython-engine')
-
-	// MySQL
-	runtime('mysql:mysql-connector-java:5.1.14')
-
-	// Kotlin
-	compile('com.fasterxml.jackson.module:jackson-module-kotlin')
-	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
-	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
-
-	// Spring
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.boot:spring-boot-starter-security')
-
-	// JUnit
-	testCompile("junit:junit:4.12")
-
-	// Spring test
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile('org.springframework.security:spring-security-test')
-}
-
-sourceSets {
-	main {
-		java {
-			srcDirs 'dist/data/scripts'
+	compileKotlin {
+		kotlinOptions {
+			jvmTarget = "1.8"
 		}
 	}
-}
-
-task gameJar(type: Jar, dependsOn: classes) {
-	from(sourceSets.main.output)
-	archiveName = 'l2t-game-server.jar'
-	exclude('**/loginserver/**')
-	exclude('**/accountmanager/**')
-	exclude('**/gsregistering/**')
-	manifest {
-		attributes(
-				'Class-Path': configurations.runtime.collect({ './lib/' + it.getName() }).join(' '),
-				'Main-Class': 'l2server.gameserver.GameApplicationKt')
-	}
-}
-
-task loginJar(type: Jar, dependsOn: classes) {
-	from(sourceSets.main.output)
-	archiveName = 'l2t-login-server.jar'
-	manifest {
-		attributes(
-				'Class-Path': configurations.runtime.collect({ './lib/' + it.getName() }).join(' '),
-				'Main-Class': 'l2server.loginserver.LoginApplicationKt')
-	}
-}
-
-artifacts {
-	archives gameJar, loginJar
-}
-
-test{
-	workingDir = new File('./dist')
-}
-
-distributions {
-	main {
-		contents {
-			from('dist') {
-				includeEmptyDirs(false)
-				exclude('log/')
-			}
-			into('lib') {
-				from(configurations.runtime)
-				//from('/lib')
-			}
-			from(gameJar)
-			from(loginJar)
-			exclude('.gitignore')
-			exclude('log/')
+	compileTestKotlin {
+		kotlinOptions {
+			jvmTarget = "1.8"
 		}
+	}
+
+	springBoot {
+		mainClassName = "l2server.gameserver.GameApplicationKt"
+	}
+
+	dependencies {
+		// Good old libs
+		compile('com.jolbox:bonecp:0.7.1.RELEASE')
+		compile('bsh:bsh:2.0b4')
+		compile('org.eclipse.jdt.core.compiler:ecj:4.3.1')
+		compile('com.google.guava:guava:21.0')
+		compile('org.hamcrest:hamcrest-core:1.3')
+		compile('org.python:jython:2.2.1')
+		compile('net.sf.trove4j:trove4j:2.1.0')
+
+		// MySQL
+		runtime('mysql:mysql-connector-java:5.1.14')
+
+		// Kotlin
+		compile('com.fasterxml.jackson.module:jackson-module-kotlin')
+		compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
+		compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+
+		// Spring
+		compile('org.springframework.boot:spring-boot-starter-web')
+		compile('org.springframework.boot:spring-boot-starter-security')
+
+		// JUnit
+		testCompile("junit:junit:4.12")
+
+		// Spring test
+		testCompile('org.springframework.boot:spring-boot-starter-test')
+		testCompile('org.springframework.security:spring-security-test')
+	}
+
+	sourceSets {
+		main {
+			java {
+				srcDirs 'dist/data/scripts'
+			}
+		}
+	}
+
+	test {
+		workingDir = new File('./dist')
 	}
 }

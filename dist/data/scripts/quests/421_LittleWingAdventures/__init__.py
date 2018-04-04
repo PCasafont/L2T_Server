@@ -2,7 +2,7 @@
 # by DrLecter & DraX_
 # last modify by Kerberos
 
-from l2server import L2DatabaseFactory
+from l2server import DatabasePool
 from l2server.gameserver.datatables import SkillTable
 from l2server.gameserver.model.quest import State
 from l2server.gameserver.model.quest.jython import QuestJython as JQuest
@@ -23,7 +23,7 @@ MIMYU = 30747
 
 # kinda bugged, missing refresh, works only when player relog so far
 def EvolvePet(player, item, striderControlItem):
-    con = L2DatabaseFactory.getInstance().getConnection()
+    con = DatabasePool.getInstance().getConnection()
     statement = con.prepareStatement("UPDATE items SET item_id =? WHERE object_id=? AND owner_id=?")
     statement.setInt(1, striderControlItem)
     statement.setInt(2, item.getObjectId())

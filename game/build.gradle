@@ -1,0 +1,53 @@
+
+
+repositories {
+	mavenCentral()
+	flatDir {
+		dirs 'lib'
+	}
+}
+
+dependencies {
+	compile project(':common')
+
+	// Local files
+	compile(name: 'worldwind')
+	compile(name: 'bsh-engine')
+	compile(name: 'java-engine')
+	compile(name: 'jython-engine')
+}
+
+task gameJar(type: Jar, dependsOn: classes) {
+	from(sourceSets.main.output)
+	archiveName = 'l2t-game-server.jar'
+	exclude('**/loginserver/**')
+	exclude('**/accountmanager/**')
+	exclude('**/gsregistering/**')
+	manifest {
+		attributes(
+				'Class-Path': configurations.runtime.collect({ './lib/' + it.getName() }).join(' '),
+				'Main-Class': 'l2server.gameserver.GameApplicationKt')
+	}
+}
+
+artifacts {
+	archives gameJar
+}
+
+distributions {
+	main {
+		contents {
+			from('dist') {
+				includeEmptyDirs(false)
+				exclude('log/')
+			}
+			into('lib') {
+				from(configurations.runtime)
+				//from('/lib')
+			}
+			from(gameJar)
+			exclude('.gitignore')
+			exclude('log/')
+		}
+	}
+}

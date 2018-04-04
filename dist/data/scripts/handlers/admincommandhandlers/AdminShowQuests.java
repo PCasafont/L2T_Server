@@ -15,7 +15,7 @@
 
 package handlers.admincommandhandlers;
 
-import l2server.L2DatabaseFactory;
+import l2server.DatabasePool;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.instancemanager.QuestManager;
 import l2server.gameserver.model.World;
@@ -156,7 +156,7 @@ public class AdminShowQuests implements IAdminCommandHandler {
 
 			StringBuilder replyMSG = new StringBuilder("<html><body>");
 			NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
-			con = L2DatabaseFactory.getInstance().getConnection();
+			con = DatabasePool.getInstance().getConnection();
 
 			if (val[0].equals("full")) {
 				replyMSG.append("<table width=250><tr><td>Full Quest List for <font color=\"LEVEL\">" + target.getName() + "</font> (ID:" + ID +
@@ -169,7 +169,7 @@ public class AdminShowQuests implements IAdminCommandHandler {
 							rs.getString(1) + "</a></td></tr>");
 				}
 				replyMSG.append("</table></body></html>");
-				L2DatabaseFactory.close(con);
+				DatabasePool.close(con);
 			} else if (val[0].equals("name")) {
 				String[] states = {"CREATED", "STARTED", "COMPLETED"};
 				String state = states[target.getQuestState(val[1]).getState()];
@@ -202,7 +202,7 @@ public class AdminShowQuests implements IAdminCommandHandler {
 								target.getName() + " " + val[1] +
 								" state DELETE\" width=120 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 				replyMSG.append("</center></body></html>");
-				L2DatabaseFactory.close(con);
+				DatabasePool.close(con);
 			} else if (val[0].equals("var")) {
 				replyMSG.append(
 						"Character: <font color=\"LEVEL\">" + target.getName() + "</font><br>Quests with state: <font color=\"LEVEL\">" + val[1] +
@@ -217,7 +217,7 @@ public class AdminShowQuests implements IAdminCommandHandler {
 							rs.getString(1) + "</a></td></tr>");
 				}
 				replyMSG.append("</table></body></html>");
-				L2DatabaseFactory.close(con);
+				DatabasePool.close(con);
 			} else if (val[0].equals("custom")) {
 				boolean exqdb = true;
 				boolean exqch = true;
@@ -276,7 +276,7 @@ public class AdminShowQuests implements IAdminCommandHandler {
 										target.getName() + " " + qname +
 										" state DELETE\" width=100 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 						replyMSG.append("</center></body></html>");
-						L2DatabaseFactory.close(con);
+						DatabasePool.close(con);
 					} else {
 						replyMSG.append("Character: <font color=\"LEVEL\">" + target.getName() + "</font><br>Quest: <font color=\"LEVEL\">" + qname +
 								"</font><br>State: <font color=\"LEVEL\">" + state + "</font><br><br>");
@@ -300,7 +300,7 @@ public class AdminShowQuests implements IAdminCommandHandler {
 			actor.sendMessage("Error!");
 			//e.printStackTrace();
 		} finally {
-			L2DatabaseFactory.close(con);
+			DatabasePool.close(con);
 		}
 	}
 

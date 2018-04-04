@@ -15,7 +15,7 @@
 
 package handlers.admincommandhandlers;
 
-import l2server.L2DatabaseFactory;
+import l2server.DatabasePool;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SpawnTable;
@@ -86,7 +86,7 @@ public class AdminTenkai implements IAdminCommandHandler {
 				int playerId = 0;
 				Connection con = null;
 				try {
-					con = L2DatabaseFactory.getInstance().getConnection();
+					con = DatabasePool.getInstance().getConnection();
 					PreparedStatement statement = con.prepareStatement("SELECT charId FROM characters WHERE char_name LIKE ?");
 					statement.setString(1, playerName);
 					ResultSet rset = statement.executeQuery();

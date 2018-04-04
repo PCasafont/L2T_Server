@@ -16,7 +16,7 @@
 package handlers.admincommandhandlers;
 
 import l2server.Config;
-import l2server.L2DatabaseFactory;
+import l2server.DatabasePool;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.MapRegionTable;
@@ -429,7 +429,7 @@ public class AdminTeleport implements IAdminCommandHandler {
 		final int y = activeChar.getY();
 		final int z = activeChar.getZ();
 		try {
-			con = L2DatabaseFactory.getInstance().getConnection();
+			con = DatabasePool.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("UPDATE characters SET x=?, y=?, z=? WHERE char_name=?");
 			statement.setInt(1, x);
 			statement.setInt(2, y);
@@ -446,7 +446,7 @@ public class AdminTeleport implements IAdminCommandHandler {
 		} catch (SQLException se) {
 			activeChar.sendMessage("SQLException while changing offline character's position");
 		} finally {
-			L2DatabaseFactory.close(con);
+			DatabasePool.close(con);
 		}
 	}
 	

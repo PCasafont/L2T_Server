@@ -16,7 +16,7 @@
 package handlers.admincommandhandlers;
 
 import l2server.Config;
-import l2server.L2DatabaseFactory;
+import l2server.DatabasePool;
 import l2server.gameserver.LoginServerThread;
 import l2server.gameserver.handler.IAdminCommandHandler;
 import l2server.gameserver.model.World;
@@ -102,7 +102,7 @@ public class AdminBan implements IAdminCommandHandler {
 			} else if (targetPlayer == null) {
 				Connection con = null;
 				try {
-					con = L2DatabaseFactory.getInstance().getConnection();
+					con = DatabasePool.getInstance().getConnection();
 					PreparedStatement statement = con.prepareStatement("SELECT account_name FROM characters WHERE char_name LIKE ?");
 					statement.setString(1, player);
 					ResultSet rset = statement.executeQuery();
@@ -146,7 +146,7 @@ public class AdminBan implements IAdminCommandHandler {
 
 			Connection con = null;
 			try {
-				con = L2DatabaseFactory.getInstance().getConnection();
+				con = DatabasePool.getInstance().getConnection();
 
 				PreparedStatement statement = con.prepareStatement("REPLACE INTO ban_timers (identity, timer, author, reason) VALUES (?, ?, ?, ?);");
 
@@ -335,7 +335,7 @@ public class AdminBan implements IAdminCommandHandler {
 		}
 
 		try {
-			con = L2DatabaseFactory.getInstance().getConnection();
+			con = DatabasePool.getInstance().getConnection();
 
 			PreparedStatement statement = con.prepareStatement("UPDATE characters SET punish_level=?, punish_timer=? WHERE char_name=?");
 			statement.setInt(1, level);
@@ -359,14 +359,14 @@ public class AdminBan implements IAdminCommandHandler {
 				se.printStackTrace();
 			}
 		} finally {
-			L2DatabaseFactory.close(con);
+			DatabasePool.close(con);
 		}
 	}
 
 	private void jailOfflinePlayer(Player activeChar, String name, int delay) {
 		Connection con = null;
 		try {
-			con = L2DatabaseFactory.getInstance().getConnection();
+			con = DatabasePool.getInstance().getConnection();
 
 			PreparedStatement statement =
 					con.prepareStatement("UPDATE characters SET x=?, y=?, z=?, punish_level=?, punish_timer=? WHERE char_name=?");
@@ -392,14 +392,14 @@ public class AdminBan implements IAdminCommandHandler {
 				se.printStackTrace();
 			}
 		} finally {
-			L2DatabaseFactory.close(con);
+			DatabasePool.close(con);
 		}
 	}
 
 	private void unjailOfflinePlayer(Player activeChar, String name) {
 		Connection con = null;
 		try {
-			con = L2DatabaseFactory.getInstance().getConnection();
+			con = DatabasePool.getInstance().getConnection();
 			PreparedStatement statement =
 					con.prepareStatement("UPDATE characters SET x=?, y=?, z=?, punish_level=?, punish_timer=? WHERE char_name=?");
 			statement.setInt(1, 17836);
@@ -422,7 +422,7 @@ public class AdminBan implements IAdminCommandHandler {
 				se.printStackTrace();
 			}
 		} finally {
-			L2DatabaseFactory.close(con);
+			DatabasePool.close(con);
 		}
 	}
 
@@ -435,7 +435,7 @@ public class AdminBan implements IAdminCommandHandler {
 		} else {
 			Connection con = null;
 			try {
-				con = L2DatabaseFactory.getInstance().getConnection();
+				con = DatabasePool.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement("UPDATE characters SET accesslevel=? WHERE char_name=?");
 				statement.setInt(1, lvl);
 				statement.setString(2, player);
@@ -455,7 +455,7 @@ public class AdminBan implements IAdminCommandHandler {
 				}
 				return false;
 			} finally {
-				L2DatabaseFactory.close(con);
+				DatabasePool.close(con);
 			}
 		}
 		return true;
