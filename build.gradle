@@ -71,14 +71,6 @@ subprojects {
 		testCompile('org.springframework.security:spring-security-test')
 	}
 
-	sourceSets {
-		main {
-			java {
-				srcDirs 'dist/data/scripts'
-			}
-		}
-	}
-
 	test {
 		workingDir = new File('./dist')
 	}
