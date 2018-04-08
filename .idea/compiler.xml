@@ -5,6 +5,7 @@
       <module name="common_main" target="1.8" />
       <module name="common_test" target="1.8" />
       <module name="game_main" target="1.8" />
+      <module name="game_scripts" target="1.8" />
       <module name="game_test" target="1.8" />
       <module name="L2T_Server_main" target="1.8" />
       <module name="L2T_Server_test" target="1.8" />

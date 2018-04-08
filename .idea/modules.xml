@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/common_test.iml" filepath="$PROJECT_DIR$/.idea/modules/common/common_test.iml" group="common" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/game/game.iml" filepath="$PROJECT_DIR$/.idea/modules/game/game.iml" group="game" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/game/game_main.iml" filepath="$PROJECT_DIR$/.idea/modules/game/game_main.iml" group="game" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/game/game_scripts.iml" filepath="$PROJECT_DIR$/.idea/modules/game/game_scripts.iml" group="game" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/game/game_test.iml" filepath="$PROJECT_DIR$/.idea/modules/game/game_test.iml" group="game" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/login/login.iml" filepath="$PROJECT_DIR$/.idea/modules/login/login.iml" group="login" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/login/login_main.iml" filepath="$PROJECT_DIR$/.idea/modules/login/login_main.iml" group="login" />
