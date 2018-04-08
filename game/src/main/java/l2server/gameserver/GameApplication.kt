@@ -15,10 +15,8 @@ import l2server.util.loader.Loader
 import org.slf4j.LoggerFactory
 import java.io.File
 
-class GameApplication
-
 fun main(args: Array<String>) {
-    val log = LoggerFactory.getLogger(GameApplication::class.java)
+    val log = LoggerFactory.getLogger("GameApplication")
 
     ServerMode.serverMode = ServerMode.MODE_GAMESERVER
 
@@ -39,7 +37,7 @@ fun main(args: Array<String>) {
 
     File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "crests").mkdirs()
 
-	Loader.initialize(GameApplication::class.java.`package`.name)
+	Loader.initialize("l2server.gameserver")
 	Loader.run()
 
 	// FIXME I'M DIRTY!

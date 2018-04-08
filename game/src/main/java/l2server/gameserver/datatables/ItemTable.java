@@ -17,7 +17,6 @@ package l2server.gameserver.datatables;
 
 import l2server.Config;
 import l2server.DatabasePool;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.Item;
@@ -55,7 +54,7 @@ import static l2server.gameserver.model.itemcontainer.PcInventory.ADENA_ID;
  */
 public class ItemTable {
 	
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(ItemTable.class.getName());
 	
 	public static final Map<String, Integer> crystalTypes = new HashMap<>();
 	public static final Map<String, Integer> slots = new HashMap<>();

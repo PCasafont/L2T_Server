@@ -17,7 +17,6 @@ package l2server.gameserver.model.actor;
 
 import l2server.Config;
 import l2server.DatabasePool;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ai.CreatureAI;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.ai.SummonAI;
@@ -50,7 +49,8 @@ import java.util.Collection;
 import java.util.List;
 
 public abstract class Summon extends Playable {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	private static Logger log = LoggerFactory.getLogger(Summon.class.getName());
 	
 	protected Player owner;
 	private int attackRange = 36; //Melee range

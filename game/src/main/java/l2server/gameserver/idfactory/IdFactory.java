@@ -16,7 +16,6 @@ package l2server.gameserver.idfactory;
 import gnu.trove.TIntArrayList;
 import l2server.Config;
 import l2server.DatabasePool;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,8 +28,8 @@ import java.sql.*;
  * @version $Revision: 1.3.2.1.2.7 $ $Date: 2005/04/11 10:06:12 $
  */
 public abstract class IdFactory {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
 	
+	private static Logger log = LoggerFactory.getLogger(IdFactory.class.getName());
 	
 	protected static final String[] ID_CHECKS = {"SELECT owner_id	FROM items				 WHERE object_id >= ?   AND object_id < ?",
 			"SELECT object_id   FROM items				 WHERE object_id >= ?   AND object_id < ?",

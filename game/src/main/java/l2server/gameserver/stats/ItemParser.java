@@ -15,7 +15,6 @@
 
 package l2server.gameserver.stats;
 
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.model.L2CrystallizeReward;
 import l2server.gameserver.model.L2ExtractableProduct;
 import l2server.gameserver.stats.conditions.Condition;
@@ -35,7 +34,7 @@ import java.util.Map.Entry;
  */
 public final class ItemParser extends StatsParser {
 	
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(ItemParser.class.getName());
 	
 	private String type;
 	private StatsSet set;

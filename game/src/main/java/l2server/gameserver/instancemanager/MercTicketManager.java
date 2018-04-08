@@ -16,7 +16,6 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.DatabasePool;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.AutoChatHandler;
@@ -53,8 +52,8 @@ import java.util.List;
  * help avoid mixing them up.
  */
 public class MercTicketManager {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
 	
+	private static Logger log = LoggerFactory.getLogger(MercTicketManager.class.getName());
 	
 	public static MercTicketManager getInstance() {
 		return SingletonHolder.instance;

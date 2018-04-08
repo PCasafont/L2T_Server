@@ -16,7 +16,6 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.model.World;
 import l2server.gameserver.model.actor.instance.Player;
 import l2server.gameserver.model.base.Race;
@@ -35,7 +34,8 @@ import java.io.File;
  * @author Unknown, Forsaiken
  */
 public final class CharTemplateTable {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	private static Logger log = LoggerFactory.getLogger(CharTemplateTable.class.getName());
 	
 	public static CharTemplateTable getInstance() {
 		return SingletonHolder.instance;

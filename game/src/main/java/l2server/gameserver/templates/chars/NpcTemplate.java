@@ -16,7 +16,6 @@
 package l2server.gameserver.templates.chars;
 
 import l2server.Config;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.datatables.ExtraDropTable;
 import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.Npc;
@@ -49,7 +48,7 @@ import java.util.*;
  * @version $Revision: 1.1.2.4 $ $Date: 2005/04/02 15:57:51 $
  */
 public final class NpcTemplate extends CreatureTemplate {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(NpcTemplate.class.getName());
 	public static final int AIST_BUFF = 0;
 	public static final int AIST_NEGATIVE = 1;
 	public static final int AIST_DEBUFF = 2;

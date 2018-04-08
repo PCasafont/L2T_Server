@@ -15,7 +15,6 @@
 
 package l2server.gameserver.geoeditorcon;
 
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.model.actor.instance.Player;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,7 +30,7 @@ import java.util.List;
  */
 public class GeoEditorThread extends Thread {
 	
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(GeoEditorThread.class.getName());
 	
 	private boolean working = false;
 

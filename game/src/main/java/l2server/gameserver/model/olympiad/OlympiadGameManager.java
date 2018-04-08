@@ -15,7 +15,6 @@
 
 package l2server.gameserver.model.olympiad;
 
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.datatables.DoorTable;
 import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.World;
@@ -32,7 +31,8 @@ import java.util.List;
  * @author GodKratos, DS
  */
 public class OlympiadGameManager implements Runnable {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	private static Logger log = LoggerFactory.getLogger(OlympiadGameManager.class.getName());
 	
 	
 	private volatile boolean battleStarted = false;

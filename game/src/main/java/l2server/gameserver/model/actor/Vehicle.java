@@ -16,7 +16,6 @@
 package l2server.gameserver.model.actor;
 
 import l2server.Config;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.TimeController;
 import l2server.gameserver.ai.CreatureAI;
@@ -45,7 +44,8 @@ import java.util.List;
  * @author DS
  */
 public abstract class Vehicle extends Creature {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	private static Logger log = LoggerFactory.getLogger(Vehicle.class.getName());
 	
 	protected int dockId = 0;
 	protected final ArrayList<Player> passengers = new ArrayList<>();

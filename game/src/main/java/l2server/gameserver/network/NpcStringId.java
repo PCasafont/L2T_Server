@@ -32,7 +32,7 @@ import java.util.Arrays;
  * @author mrTJO
  */
 public final class NpcStringId {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(NpcStringId.class.getName());
 	
 	private static final NSLocalisation[] EMPTY_NSL_ARRAY = new NSLocalisation[0];
 	public static final NpcStringId[] EMPTY_ARRAY = new NpcStringId[0];

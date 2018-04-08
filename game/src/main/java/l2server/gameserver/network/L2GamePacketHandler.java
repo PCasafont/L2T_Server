@@ -16,7 +16,6 @@
 package l2server.gameserver.network;
 
 import l2server.Config;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.network.L2GameClient.GameClientState;
 import l2server.gameserver.network.PacketOpcodes.PacketFamily;
 import l2server.gameserver.network.clientpackets.L2GameClientPacket;
@@ -39,7 +38,7 @@ import java.nio.ByteBuffer;
  */
 public final class L2GamePacketHandler implements IPacketHandler<L2GameClient>, IClientFactory<L2GameClient>, IMMOExecutor<L2GameClient> {
 	
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(L2GamePacketHandler.class.getName());
 	
 	// implementation
 	@Override

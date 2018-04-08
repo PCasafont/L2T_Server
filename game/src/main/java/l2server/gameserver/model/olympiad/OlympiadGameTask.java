@@ -16,7 +16,6 @@
 package l2server.gameserver.model.olympiad;
 
 import l2server.Config;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SpawnTable;
@@ -39,7 +38,8 @@ import java.util.List;
  * @author DS
  */
 public final class OlympiadGameTask implements Runnable {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	private static Logger log = LoggerFactory.getLogger(OlympiadGameTask.class.getName());
 	
 	protected static final long BATTLE_PERIOD = Config.ALT_OLY_BATTLE; // 6 mins
 

@@ -17,7 +17,6 @@ package l2server.gameserver.model;
 
 import l2server.Config;
 import l2server.DatabasePool;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.MapRegionTable;
 import l2server.gameserver.datatables.NpcTable;
@@ -67,8 +66,8 @@ import java.util.stream.Collectors;
  * @author Tempy
  */
 public class AutoSpawnHandler {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
 	
+	private static Logger log = LoggerFactory.getLogger(AutoSpawnHandler.class.getName());
 	
 	private static final int DEFAULT_INITIAL_SPAWN = 30000; // 30 seconds after registration
 	private static final int DEFAULT_RESPAWN = 3600000; // 1 hour in millisecs

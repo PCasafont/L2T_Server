@@ -17,7 +17,6 @@ package l2server.gameserver.instancemanager;
 
 import l2server.Config;
 import l2server.DatabasePool;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.World;
@@ -43,7 +42,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author Pere, DS
  */
 public class MailManager {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	private static Logger log = LoggerFactory.getLogger(MailManager.class.getName());
 	
 	private Map<Integer, Message> messages = new ConcurrentHashMap<>();
 

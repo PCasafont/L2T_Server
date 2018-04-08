@@ -16,7 +16,6 @@
 package l2server.gameserver.model.actor;
 
 import l2server.Config;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.NewbieHelperAI;
 import l2server.gameserver.cache.HtmCache;
@@ -70,7 +69,8 @@ import static l2server.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
  * @version $Revision: 1.32.2.7.2.24 $ $Date: 2005/04/11 10:06:09 $
  */
 public class Npc extends Creature {
-	protected static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	protected static Logger log = LoggerFactory.getLogger(Npc.class.getName());
 	
 	/**
 	 * The interaction distance of the NpcInstance(is used as offset in MovetoLocation method)

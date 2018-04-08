@@ -15,7 +15,6 @@
 
 package l2server.gameserver.templates.item;
 
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.model.Item;
 import l2server.gameserver.model.Skill;
 import l2server.gameserver.stats.SkillHolder;
@@ -36,7 +35,7 @@ import java.util.Map;
  * @version $Revision: 1.2.2.1.2.6 $ $Date: 2005/03/27 15:30:10 $
  */
 public final class ArmorTemplate extends ItemTemplate {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(ArmorTemplate.class.getName());
 	public static final int MAX_ENCHANT_SKILL = 10;
 
 	private Map<Integer, SkillHolder> enchantSkills = new HashMap<>();

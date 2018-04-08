@@ -15,7 +15,6 @@
 
 package l2server.gameserver.taskmanager;
 
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.actor.Attackable;
 import l2server.gameserver.model.actor.Creature;
@@ -33,7 +32,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class DecayTaskManager {
 	
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(DecayTaskManager.class.getName());
 	
 	protected Map<Creature, Long> decayTasks = new ConcurrentHashMap<>();
 

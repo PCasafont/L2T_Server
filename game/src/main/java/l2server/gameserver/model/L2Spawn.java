@@ -16,7 +16,6 @@
 package l2server.gameserver.model;
 
 import l2server.Config;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.idfactory.IdFactory;
@@ -49,7 +48,8 @@ import java.util.List;
  * @version $Revision: 1.9.2.3.2.8 $ $Date: 2005/03/27 15:29:32 $
  */
 public class L2Spawn {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	private static Logger log = LoggerFactory.getLogger(L2Spawn.class.getName());
 	/**
 	 * The link on the NpcTemplate object containing generic and static properties of this spawn (ex : RewardExp, RewardSP, AggroRange...)
 	 */

@@ -16,7 +16,6 @@
 package l2server.gameserver.datatables;
 
 import l2server.Config;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ai.NpcWalkerAI;
 import l2server.gameserver.model.L2NpcWalkerNode;
 import l2server.gameserver.model.L2Spawn;
@@ -41,7 +40,8 @@ import java.util.Map;
  * @since 927
  */
 public class NpcWalkersTable {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	private static Logger log = LoggerFactory.getLogger(NpcWalkersTable.class.getName());
 	
 	private Map<Integer, List<L2NpcWalkerNode>> routes = new HashMap<>();
 

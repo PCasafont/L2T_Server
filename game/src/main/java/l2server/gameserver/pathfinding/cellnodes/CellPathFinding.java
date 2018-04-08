@@ -16,7 +16,6 @@
 package l2server.gameserver.pathfinding.cellnodes;
 
 import l2server.Config;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.Item;
@@ -37,7 +36,7 @@ import java.util.ListIterator;
  * Credits to Diamond
  */
 public class CellPathFinding extends PathFinding {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(CellPathFinding.class.getName());
 	private BufferInfo[] allBuffers;
 	private int findSuccess = 0;
 	private int findFails = 0;

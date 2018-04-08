@@ -17,7 +17,6 @@ package l2server.gameserver.instancemanager;
 
 import l2server.Config;
 import l2server.DatabasePool;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.model.World;
 import l2server.gameserver.model.itemauction.ItemAuctionInstance;
@@ -40,7 +39,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author Forsaiken
  */
 public final class ItemAuctionManager {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	private static Logger log = LoggerFactory.getLogger(ItemAuctionManager.class.getName());
 	
 	public static ItemAuctionManager getInstance() {
 		return SingletonHolder.instance;

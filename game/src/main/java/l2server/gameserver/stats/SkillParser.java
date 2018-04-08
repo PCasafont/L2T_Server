@@ -16,7 +16,6 @@
 package l2server.gameserver.stats;
 
 import l2server.Config;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.datatables.EnchantCostsTable;
 import l2server.gameserver.model.ChanceCondition;
 import l2server.gameserver.model.Skill;
@@ -37,7 +36,7 @@ import java.util.*;
  * @author mkizub
  */
 public final class SkillParser extends StatsParser {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(SkillParser.class.getName());
 	
 	private enum SkillEnchantBonusType {
 		SET,

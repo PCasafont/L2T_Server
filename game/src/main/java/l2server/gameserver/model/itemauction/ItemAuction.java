@@ -17,7 +17,6 @@ package l2server.gameserver.model.itemauction;
 
 import l2server.Config;
 import l2server.DatabasePool;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.Item;
 import l2server.gameserver.model.ItemInfo;
@@ -39,7 +38,8 @@ import java.util.concurrent.TimeUnit;
  * @author Forsaiken
  */
 public final class ItemAuction {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	private static Logger log = LoggerFactory.getLogger(ItemAuction.class.getName());
 	
 	private static final long ENDING_TIME_EXTEND_5 = TimeUnit.MILLISECONDS.convert(5, TimeUnit.MINUTES);
 	private static final long ENDING_TIME_EXTEND_3 = TimeUnit.MILLISECONDS.convert(3, TimeUnit.MINUTES);

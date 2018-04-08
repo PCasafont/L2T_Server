@@ -15,7 +15,6 @@
 
 package l2server.gameserver.ai.aplayer;
 
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.GeoData;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.ai.CtrlIntention;
@@ -46,7 +45,8 @@ import java.util.concurrent.ScheduledFuture;
  * This is the abstract superclass of APlayer AI
  */
 public abstract class APlayerAI extends PlayerAI implements Runnable {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	private static Logger log = LoggerFactory.getLogger(APlayerAI.class.getName());
 	
 	protected ApInstance player;
 	protected long timer;

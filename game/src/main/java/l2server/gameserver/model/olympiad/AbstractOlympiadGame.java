@@ -16,7 +16,6 @@
 package l2server.gameserver.model.olympiad;
 
 import l2server.Config;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ai.CtrlIntention;
 import l2server.gameserver.datatables.HeroSkillTable;
 import l2server.gameserver.events.instanced.EventsManager;
@@ -47,7 +46,8 @@ import java.util.List;
  * @author godson, GodKratos, Pere, DS
  */
 public abstract class AbstractOlympiadGame {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	private static Logger log = LoggerFactory.getLogger(AbstractOlympiadGame.class.getName());
 
 	protected static final String POINTS = "olympiad_points";
 	protected static final String COMP_DONE = "competitions_done";

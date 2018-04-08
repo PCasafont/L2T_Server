@@ -16,7 +16,6 @@
 package l2server.gameserver.model.actor.instance;
 
 import l2server.Config;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.datatables.SkillTable;
 import l2server.gameserver.datatables.TeleportLocationTable;
@@ -40,7 +39,8 @@ import java.util.StringTokenizer;
  * Area Teleports, Support Magic, Clan Warehouse, Exp Loss Reduction
  */
 public class FortManagerInstance extends MerchantInstance {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	private static Logger log = LoggerFactory.getLogger(FortManagerInstance.class.getName());
 	
 	protected static final int COND_ALL_FALSE = 0;
 	protected static final int COND_BUSY_BECAUSE_OF_SIEGE = 1;

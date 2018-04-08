@@ -17,7 +17,6 @@ package l2server.gameserver.model.olympiad;
 
 import l2server.Config;
 import l2server.DatabasePool;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.model.Location;
 import l2server.gameserver.model.World;
 import l2server.gameserver.model.actor.Creature;
@@ -41,7 +40,8 @@ import java.util.List;
  * @author GodKratos, Pere, DS
  */
 abstract public class OlympiadGameNormal extends AbstractOlympiadGame {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	
+	private static Logger log = LoggerFactory.getLogger(OlympiadGameNormal.class.getName());
 	
 	protected OlympiadParticipant playerOne;
 	protected OlympiadParticipant playerTwo;

@@ -16,7 +16,6 @@
 package l2server.gameserver.instancemanager;
 
 import l2server.Config;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.GmListTable;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.model.actor.instance.Player;
@@ -39,8 +38,8 @@ import java.util.*;
  * @author Tempy
  */
 public final class PetitionManager {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
 	
+	private static Logger log = LoggerFactory.getLogger(PetitionManager.class.getName());
 	
 	private Map<Integer, Petition> pendingPetitions;
 	private Map<Integer, Petition> completedPetitions;

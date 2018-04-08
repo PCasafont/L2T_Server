@@ -17,7 +17,6 @@ package l2server.gameserver.taskmanager;
 
 import l2server.Config;
 import l2server.DatabasePool;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.taskmanager.tasks.*;
 import l2server.util.loader.annotations.Load;
@@ -41,7 +40,7 @@ import static l2server.gameserver.taskmanager.TaskTypes.*;
  * @author Layane
  */
 public final class TaskManager {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(TaskManager.class.getName());
 
 	protected static final String[] SQL_STATEMENTS =
 			{"SELECT id,task,type,last_activation,param1,param2,param3 FROM global_tasks", "UPDATE global_tasks SET last_activation=? WHERE id=?",
