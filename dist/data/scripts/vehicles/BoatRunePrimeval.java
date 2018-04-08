@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
  */
 public class BoatRunePrimeval implements Runnable {
 	
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(BoatRunePrimeval.class.getName());
 	
 	// Time: 239s
 	private static final VehiclePathPoint[] RUNE_TO_PRIMEVAL =

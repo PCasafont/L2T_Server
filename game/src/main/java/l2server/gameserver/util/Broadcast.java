@@ -26,7 +26,6 @@
 package l2server.gameserver.util;
 
 import l2server.Config;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.gui.ConsoleTab;
 import l2server.gameserver.gui.ConsoleTab.ConsoleFilter;
 import l2server.gameserver.model.World;
@@ -51,7 +50,7 @@ import java.util.Collection;
 
 public final class Broadcast {
 	
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(Broadcast.class.getName());
 	
 	/**
 	 * Send a packet to all Player in the KnownPlayers of the Creature that have the Character targetted.<BR><BR>

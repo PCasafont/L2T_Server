@@ -15,7 +15,6 @@
 
 package vehicles;
 
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.BoatManager;
 import l2server.gameserver.model.VehiclePathPoint;
@@ -31,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public class BoatGludinRune implements Runnable {
 	
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(BoatInnadrilTour.class.getName());
 	
 	// Time: 1151s
 	private static final VehiclePathPoint[] GLUDIN_TO_RUNE =

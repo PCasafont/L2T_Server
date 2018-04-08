@@ -17,7 +17,6 @@ package l2server.gameserver.util;
 
 import l2server.Config;
 import l2server.DatabasePool;
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.datatables.SummonItemsData;
@@ -37,7 +36,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 public final class Evolve {
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(Evolve.class.getName());
 	
 	public static boolean doEvolve(Player player, Npc npc, int itemIdtake, int itemIdgive, int petminlvl) {
 		if (itemIdtake == 0 || itemIdgive == 0 || petminlvl == 0) {

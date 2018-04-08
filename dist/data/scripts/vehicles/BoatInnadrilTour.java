@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
  */
 public class BoatInnadrilTour implements Runnable {
 	
-	private static Logger log = LoggerFactory.getLogger(GameApplication.class.getName());
+	private static Logger log = LoggerFactory.getLogger(BoatInnadrilTour.class.getName());
 	
 	// Time: 1867s
 	private static final VehiclePathPoint[] TOUR =

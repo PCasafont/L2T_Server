@@ -2,15 +2,13 @@
 buildscript {
 	ext {
 		kotlinVersion = '1.2.30'
-		springBootVersion = '2.0.0.RELEASE'
+		ktorVersion = '0.9.1'
 	}
 	repositories {
 		mavenCentral()
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
-		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
 	}
 }
 
@@ -22,6 +20,11 @@ subprojects {
 	sourceCompatibility = 1.8
 	targetCompatibility = 1.8
 
+	kotlin {
+		experimental {
+			coroutines "enable"
+		}
+	}
 	compileKotlin {
 		kotlinOptions {
 			jvmTarget = "1.8"

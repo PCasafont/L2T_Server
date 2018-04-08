@@ -2,16 +2,11 @@
 repositories {
 	mavenCentral()
 	mavenLocal()
+	maven { url "https://dl.bintray.com/kotlin/kotlinx" }
+	maven { url "https://dl.bintray.com/kotlin/ktor" }
 }
 
-apply plugin: 'kotlin-spring'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
 apply plugin: 'distribution'
-
-springBoot {
-	mainClassName = "l2server.loginserver.LoginApplicationKt"
-}
 
 dependencies {
 	compile project(':common')
@@ -20,20 +15,17 @@ dependencies {
 	runtime('mysql:mysql-connector-java:5.1.14')
 
 	// Kotlin
-	compile('com.fasterxml.jackson.module:jackson-module-kotlin')
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 
-	// Spring
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.boot:spring-boot-starter-security')
+	// Ktor
+	compile("io.ktor:ktor-server-netty:$ktorVersion")
+
+	// Logging
+	compile "ch.qos.logback:logback-classic:1.2.1"
 
 	// JUnit
 	testCompile("junit:junit:4.12")
-
-	// Spring test
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile('org.springframework.security:spring-security-test')
 }
 
 test {

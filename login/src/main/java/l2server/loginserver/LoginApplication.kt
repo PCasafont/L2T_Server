@@ -1,14 +1,23 @@
 package l2server.loginserver
 
-import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.runApplication
-
-@SpringBootApplication
-class LoginApplication
+import io.ktor.application.call
+import io.ktor.response.respondText
+import io.ktor.routing.get
+import io.ktor.routing.routing
+import io.ktor.server.engine.embeddedServer
+import io.ktor.server.netty.Netty
 
 fun main(args: Array<String>) {
-	// FIXME I'M DIRTY! Use spring to initialize the server
+	// FIXME I'M DIRTY!
 	L2LoginServer()
-	// Run spring application
-	runApplication<LoginApplication>(*args)
+
+	// Run ktor application
+	val server = embeddedServer(Netty, port = 8088) {
+		routing {
+			get("/") {
+				call.respondText("Ktor UP!")
+			}
+		}
+	}
+	server.start(wait = true)
 }
