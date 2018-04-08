@@ -1,6 +1,5 @@
-package l2server
+package l2server.gameserver
 
-import l2server.gameserver.GameApplication
 import l2server.util.loader.Loader
 import org.junit.Ignore
 import org.junit.Test
@@ -17,7 +16,7 @@ class ServerTest : LoadTest() {
 	fun testFullLoad() {
 		val executionTime = measureTimeMillis {
 			initializeServer()
-			Loader.initialize(GameApplication::class.java.`package`.name)
+			Loader.initialize("l2server.gameserver")
 			//Loader.run()
 			Loader.runAsync().join()
 		}

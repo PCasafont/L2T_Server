@@ -1,7 +1,7 @@
-package l2server
+package l2server.gameserver
 
-import l2server.gameserver.GameApplication
-import l2server.gameserver.GameThreadPools
+import l2server.Config
+import l2server.ServerMode
 import l2server.util.concurrent.ThreadPool
 import org.slf4j.LoggerFactory
 
@@ -11,13 +11,13 @@ import org.slf4j.LoggerFactory
  */
 open class LoadTest {
 
-	protected val log = LoggerFactory.getLogger(GameApplication::class.java.name)
+	protected val log = LoggerFactory.getLogger(LoadTest::class.java.name)
 
 	protected fun initializeServer() {
         ServerMode.serverMode = ServerMode.MODE_GAMESERVER
 
         // Initialize config
-        Config.load()
+		Config.load()
         ThreadPool.initThreadPools(GameThreadPools())
     }
 }

@@ -15,7 +15,6 @@
 
 package vehicles;
 
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.BoatManager;
 import l2server.gameserver.model.VehiclePathPoint;

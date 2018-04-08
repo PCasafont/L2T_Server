@@ -15,7 +15,6 @@
 
 package l2server.gameserver.network;
 
-import l2server.gameserver.GameApplication;
 import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
